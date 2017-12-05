@@ -7,18 +7,18 @@ const State        = require('../../../../_common/storage').State;
 const urlFor       = require('../../../../_common/url').urlFor;
 
 const MetaTraderConfig = (() => {
-    const types_info = {
-        demo_vanuatu_cent    : { account_type: 'demo',      mt5_account_type: 'cent',     title: localize('Demo Cent'),       order: 1, max_leverage: 1000, is_demo: true },
-        demo_vanuatu_standard: { account_type: 'demo',      mt5_account_type: 'standard', title: localize('Demo Standard'),   order: 3, max_leverage: 300,  is_demo: true },
-        demo_vanuatu_stp     : { account_type: 'demo',      mt5_account_type: 'stp',      title: localize('Demo STP'),        order: 5, max_leverage: 100,  is_demo: true },
-        real_vanuatu_cent    : { account_type: 'financial', mt5_account_type: 'cent',     title: localize('Real Cent'),       order: 2, max_leverage: 1000 },
-        real_vanuatu_standard: { account_type: 'financial', mt5_account_type: 'standard', title: localize('Real Standard'),   order: 4, max_leverage: 300 },
-        real_vanuatu_stp     : { account_type: 'financial', mt5_account_type: 'stp',      title: localize('Real STP'),        order: 6, max_leverage: 100 },
-        demo_costarica       : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 7, max_leverage: 500,  is_demo: true },
-        real_costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 8, max_leverage: 500 },
-        demo_malta           : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo Volatility'), order: 9, max_leverage: 500,  is_demo: true },
-        real_malta           : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), order: 10, max_leverage: 500 },
+    const mt_companies = {
+        financial: {
+            cent    : { mt5_account_type: 'cent',     max_leverage: 1000, title: 'Cent' },
+            standard: { mt5_account_type: 'standard', max_leverage: 300,  title: 'Standard' },
+            stp     : { mt5_account_type: 'stp',      max_leverage: 100,  title: 'STP' },
+        },
+        gaming: {
+            volatility: { mt5_account_type: '', max_leverage: 500, title: 'Volatility' },
+        },
     };
+
+    const accounts_info = {};
 
     const needsRealMessage = () => $(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
@@ -28,11 +28,11 @@ const MetaTraderConfig = (() => {
             login        : response => response.mt5_new_account.login,
             prerequisites: acc_type => (
                 new Promise((resolve) => {
-                    if (types_info[acc_type].is_demo) {
+                    if (accounts_info[acc_type].is_demo) {
                         resolve();
                     } else if (Client.get('is_virtual')) {
                         resolve(needsRealMessage());
-                    } else if (types_info[acc_type].account_type === 'financial') {
+                    } else if (accounts_info[acc_type].account_type === 'financial') {
                         BinarySocket.wait('get_account_status').then((response_get_account_status) => {
                             const $message = $('#msg_real_financial').clone();
                             let is_ok = true;
@@ -94,7 +94,7 @@ const MetaTraderConfig = (() => {
             prerequisites: acc_type => new Promise((resolve) => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
-                } else if (types_info[acc_type].account_type === 'financial') {
+                } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                         // There are cases that prompt_client_to_authenticate=0
                         // but websocket returns authentication required error when trying to withdraw
@@ -109,7 +109,7 @@ const MetaTraderConfig = (() => {
             pre_submit: ($form, acc_type, displayFormMessage) => (
                 BinarySocket.send({
                     mt5_password_check: 1,
-                    login             : types_info[acc_type].account_info.login,
+                    login             : accounts_info[acc_type].info.login,
                     password          : $form.find(fields.withdrawal.txt_main_pass.id).val(),
                 }).then((response) => {
                     if (+response.mt5_password_check === 1) {
@@ -133,12 +133,12 @@ const MetaTraderConfig = (() => {
             additional_fields:
                 acc_type => ($.extend(
                     {
-                        account_type: types_info[acc_type].account_type,
+                        account_type: accounts_info[acc_type].account_type,
                         email       : Client.get('email'),
-                        leverage    : types_info[acc_type].max_leverage,
+                        leverage    : accounts_info[acc_type].max_leverage,
                     },
-                    types_info[acc_type].mt5_account_type ? {
-                        mt5_account_type: types_info[acc_type].mt5_account_type,
+                    accounts_info[acc_type].mt5_account_type ? {
+                        mt5_account_type: accounts_info[acc_type].mt5_account_type,
                     } : {})),
         },
         password_change: {
@@ -147,7 +147,7 @@ const MetaTraderConfig = (() => {
             txt_re_new_password: { id: '#txt_re_new_password' },
             additional_fields  :
                 acc_type => ({
-                    login: types_info[acc_type].account_info.login,
+                    login: accounts_info[acc_type].info.login,
                 }),
         },
         deposit: {
@@ -155,7 +155,7 @@ const MetaTraderConfig = (() => {
             additional_fields:
                 acc_type => ({
                     from_binary: Client.get('loginid'),
-                    to_mt5     : types_info[acc_type].account_info.login,
+                    to_mt5     : accounts_info[acc_type].info.login,
                 }),
         },
         withdrawal: {
@@ -163,7 +163,7 @@ const MetaTraderConfig = (() => {
             txt_main_pass    : { id: '#txt_main_pass' },
             additional_fields:
                 acc_type => ({
-                    from_mt5 : types_info[acc_type].account_info.login,
+                    from_mt5 : accounts_info[acc_type].info.login,
                     to_binary: Client.get('loginid'),
                 }),
         },
@@ -191,7 +191,8 @@ const MetaTraderConfig = (() => {
     };
 
     return {
-        types_info,
+        mt_companies,
+        accounts_info,
         actions_info,
         fields,
         validations,

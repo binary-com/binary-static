@@ -17,10 +17,10 @@ const MetaTraderUI = (() => {
         $main_msg,
         submit;
 
-    const types_info   = MetaTraderConfig.types_info;
-    const actions_info = MetaTraderConfig.actions_info;
-    const validations  = MetaTraderConfig.validations;
-    const mt5_currency = MetaTraderConfig.mt5Currency();
+    const accounts_info = MetaTraderConfig.accounts_info;
+    const actions_info  = MetaTraderConfig.actions_info;
+    const validations   = MetaTraderConfig.validations;
+    const mt5_currency  = MetaTraderConfig.mt5Currency();
 
     const init = (submit_func) => {
         submit       = submit_func;
@@ -39,8 +39,8 @@ const MetaTraderUI = (() => {
 
     const populateAccountList = () => {
         const $acc_name = $templates.find('> .acc-name');
-        Object.keys(types_info)
-            .sort((a, b) => types_info[a].order > types_info[b].order)
+        Object.keys(accounts_info)
+            .sort((a, b) => accounts_info[a].order > accounts_info[b].order) // TODO
             .forEach((acc_type) => {
                 if ($list.find(`[value="${acc_type}"]`).length === 0) {
                     const $acc_item = $acc_name.clone();
@@ -76,7 +76,7 @@ const MetaTraderUI = (() => {
     const setAccountType = (acc_type, should_set_account) => {
         if ($mt5_account.attr('value') !== acc_type) {
             Client.set('mt5_account', acc_type);
-            $mt5_account.attr('value', acc_type).html(types_info[acc_type].title).removeClass('empty');
+            $mt5_account.attr('value', acc_type).html(accounts_info[acc_type].title).removeClass('empty');
             $list.find('.acc-name').removeClass('selected');
             $list.find(`[value="${acc_type}"]`).addClass('selected');
             $action.setVisibility(0);
@@ -94,14 +94,14 @@ const MetaTraderUI = (() => {
 
     const updateListItem = (acc_type) => {
         const $acc_item = $list.find(`[value="${acc_type}"]`);
-        $acc_item.find('.mt-type').text(`${types_info[acc_type].title}`);
-        if (types_info[acc_type].account_info) {
-            $acc_item.find('.mt-login').text(types_info[acc_type].account_info.login);
+        $acc_item.find('.mt-type').text(`${accounts_info[acc_type].title}`);
+        if (accounts_info[acc_type].info) {
+            $acc_item.find('.mt-login').text(accounts_info[acc_type].info.login);
             $acc_item.setVisibility(1);
             if (acc_type === Client.get('mt5_account')) {
-                $acc_item.find('.mt-balance').html(formatMoney(mt5_currency, +types_info[acc_type].account_info.balance));
+                $acc_item.find('.mt-balance').html(formatMoney(mt5_currency, +accounts_info[acc_type].info.balance));
             }
-            if (Object.keys(types_info).every(type => types_info[type].account_info || !types_info[type].is_enabled)) {
+            if (Object.keys(accounts_info).every(type => accounts_info[type].info.login)) {
                 $container.find('.act_new_account').remove();
             }
         } else {
@@ -116,14 +116,14 @@ const MetaTraderUI = (() => {
     const setCurrentAccount = (acc_type) => {
         if (Client.get('mt5_account') && Client.get('mt5_account') !== acc_type) return;
 
-        $detail.find('#acc_icon').attr('class', types_info[acc_type].mt5_account_type || 'volatility');
+        $detail.find('#acc_icon').attr('class', acc_type.split('_')[2] || 'volatility');
         displayAccountDescription(acc_type);
 
-        if (types_info[acc_type].account_info) {
+        if (accounts_info[acc_type].info) {
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
                 const key     = $(this).attr('data');
-                const info    = types_info[acc_type].account_info[key];
+                const info    = accounts_info[acc_type].info[key];
                 const mapping = {
                     balance : () => formatMoney(mt5_currency, +info),
                     leverage: () => `1:${info}`,
@@ -147,8 +147,8 @@ const MetaTraderUI = (() => {
 
     const defaultAction = acc_type => {
         let type = 'new_account';
-        if (types_info[acc_type].account_info) {
-            type = types_info[acc_type].is_demo ? 'password_change' : 'cashier';
+        if (accounts_info[acc_type].info) {
+            type = accounts_info[acc_type].is_demo ? 'password_change' : 'cashier';
         }
         return type;
     };
@@ -191,8 +191,8 @@ const MetaTraderUI = (() => {
             cloneForm();
             $form.find('.binary-account').text(`Binary ${Client.get('loginid')}`);
             $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
-            $form.find('.mt5-account').text(`${types_info[acc_type].title} ${types_info[acc_type].account_info.login}`);
-            $form.find('.mt5-balance').html(`${formatMoney(mt5_currency, types_info[acc_type].account_info.balance)}`);
+            $form.find('.mt5-account').text(`${accounts_info[acc_type].title} ${accounts_info[acc_type].info.login}`);
+            $form.find('.mt5-balance').html(`${formatMoney(mt5_currency, accounts_info[acc_type].info.balance)}`);
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {
                     if (error_msg) {
@@ -266,7 +266,7 @@ const MetaTraderUI = (() => {
     };
 
     const newAccountSetTitle = (acc_type) => {
-        $container.find('.acc-actions .new-account span').text(template($templates.find('#title_new_account').text(), [acc_type ? types_info[acc_type].title : '']));
+        $container.find('.acc-actions .new-account span').text(template($templates.find('#title_new_account').text(), [acc_type ? accounts_info[acc_type].title : '']));
     };
 
     const newAccountGetType = () => `${$form.find('.step-1 .selected').attr('data-acc-type')}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
@@ -301,13 +301,10 @@ const MetaTraderUI = (() => {
     };
 
     const updateAccountTypesUI = (type) => {
-        Object.keys(types_info)
+        Object.keys(accounts_info)
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
-                let class_name = 'existed';
-                if (!types_info[acc_type].account_info) {
-                    class_name = !types_info[acc_type].is_enabled ? 'disabled' : '';
-                }
+                const class_name = accounts_info[acc_type].info ? 'existed' : '';
                 $form.find(`.step-2 #${acc_type.replace(type, 'rbtn')}`)
                     .removeClass('existed disabled selected')
                     .addClass(class_name);

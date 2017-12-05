@@ -5,21 +5,19 @@ const BinarySocket     = require('../../../base/socket');
 const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
-const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
+const toTitleCase      = require('../../../../_common/string_util').toTitleCase;
 
 const MetaTrader = (() => {
-    const types_info   = MetaTraderConfig.types_info;
-    const actions_info = MetaTraderConfig.actions_info;
-    const fields       = MetaTraderConfig.fields;
+    const mt_companies  = MetaTraderConfig.mt_companies;
+    const accounts_info = MetaTraderConfig.accounts_info;
+    const actions_info  = MetaTraderConfig.actions_info;
+    const fields        = MetaTraderConfig.fields;
 
-    let has_financial_company,
-        has_gaming_company;
+    const mt_company = {};
 
     const onLoad = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-            if (isEligible(State.getResponse('landing_company'))) {
-                updateEnabledStatus('gaming', has_gaming_company);
-                updateEnabledStatus('financial', has_financial_company);
+            if (isEligible()) {
                 getAllAccountsInfo();
                 MetaTraderUI.init(submit);
             } else {
@@ -28,27 +26,37 @@ const MetaTrader = (() => {
         });
     };
 
-    const isEligible = (landing_company) => {
-        let is_eligible = false;
-        if (landing_company) {
-            has_financial_company = /^vanuatu$/.test(getPropertyValue(landing_company, ['mt_financial_company', 'shortcode']));
-            has_gaming_company    = /^(costarica|malta)$/.test(getPropertyValue(landing_company, ['mt_gaming_company', 'shortcode']));
-            const is_ico_only     = /ico_only/.test(State.getResponse('get_account_status.status'));
-
-            if (!is_ico_only &&
-                (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'costarica' || getPropertyValue(landing_company, ['gaming_company', 'shortcode']) === 'malta') &&
-                (has_financial_company || has_gaming_company)) {
-                is_eligible = true;
+    const isEligible = () => {
+        let has_mt_company = false;
+        Object.keys(mt_companies).forEach((company) => {
+            mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.shortcode`);
+            if (mt_company[company]) {
+                has_mt_company = true;
+                addAccount(company);
             }
-        }
-        return is_eligible;
+        });
+
+        const is_ico_only = /ico_only/.test(State.getResponse('get_account_status.status'));
+
+        return (!is_ico_only && has_mt_company);
     };
 
-    const updateEnabledStatus = (account_type, is_enabled) => {
-        Object.keys(types_info).forEach((acc_type) => {
-            if (types_info[acc_type].account_type === account_type) {
-                types_info[acc_type].is_enabled = is_enabled;
-            }
+    const addAccount = (company) => {
+        ['demo', 'real'].forEach((type) => {
+            Object.keys(mt_companies[company]).forEach((acc_type) => {
+                const company_info     = mt_companies[company][acc_type];
+                const mt5_account_type = company_info.mt5_account_type;
+                const title            = localize(`${toTitleCase(type)} ${company_info.title}`);
+                const is_demo          = type === 'demo';
+
+                accounts_info[`${type}_${mt_company[company]}${mt5_account_type ? `_${mt5_account_type}` : ''}`] = {
+                    title,
+                    is_demo,
+                    mt5_account_type,
+                    account_type: is_demo ? 'demo' : company,
+                    max_leverage: company_info.max_leverage,
+                };
+            });
         });
     };
 
@@ -56,20 +64,20 @@ const MetaTrader = (() => {
         BinarySocket.wait('mt5_login_list').then((response) => {
             // Ignore old accounts which are not linked to any group or has deprecated group
             const mt5_login_list = (response.mt5_login_list || []).filter(obj => (
-                obj.group && Client.getMT5AccountType(obj.group) in types_info
+                obj.group && Client.getMT5AccountType(obj.group) in accounts_info
             ));
 
             // Update account info
             mt5_login_list.forEach((obj) => {
                 const acc_type = Client.getMT5AccountType(obj.group);
-                types_info[acc_type].account_info = { login: obj.login };
+                accounts_info[acc_type].info = { login: obj.login };
                 getAccountDetails(obj.login, acc_type);
             });
 
             Client.set('mt5_account', getDefaultAccount());
 
             // Update types with no account
-            Object.keys(types_info)
+            Object.keys(accounts_info)
                 .filter(acc_type => !hasAccount(acc_type))
                 .forEach((acc_type) => { MetaTraderUI.updateAccount(acc_type); });
         });
@@ -83,14 +91,14 @@ const MetaTrader = (() => {
         } else if (hasAccount(Client.get('mt5_account'))) {
             default_account = Client.get('mt5_account');
         } else {
-            default_account = Object.keys(types_info)
+            default_account = Object.keys(accounts_info)
                 .filter(acc_type => hasAccount(acc_type))
-                .sort(acc_type => (types_info[acc_type].is_demo ? 1 : -1))[0] || ''; // real first
+                .sort(acc_type => (accounts_info[acc_type].is_demo ? 1 : -1))[0] || ''; // real first
         }
         return default_account;
     };
 
-    const hasAccount = acc_type => (types_info[acc_type] || {}).account_info;
+    const hasAccount = acc_type => (accounts_info[acc_type] || {}).info;
 
     const getAccountDetails = (login, acc_type) => {
         BinarySocket.send({
@@ -98,7 +106,7 @@ const MetaTrader = (() => {
             login,
         }).then((response) => {
             if (response.mt5_get_settings) {
-                types_info[acc_type].account_info = response.mt5_get_settings;
+                accounts_info[acc_type].info = response.mt5_get_settings;
                 MetaTraderUI.updateAccount(acc_type);
             }
         });
@@ -145,9 +153,9 @@ const MetaTrader = (() => {
                         MetaTraderUI.enableButton(action);
                     } else {
                         const login = actions_info[action].login ?
-                            actions_info[action].login(response) : types_info[acc_type].account_info.login;
-                        if (!types_info[acc_type].account_info) {
-                            types_info[acc_type].account_info = { login };
+                            actions_info[action].login(response) : accounts_info[acc_type].info.login;
+                        if (!accounts_info[acc_type].info) {
+                            accounts_info[acc_type].info = { login };
                             MetaTraderUI.setAccountType(acc_type, true);
                         }
                         MetaTraderUI.loadAction(null, acc_type);
