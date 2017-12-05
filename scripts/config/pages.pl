@@ -139,7 +139,6 @@ sub all_pages {
 
         ['metatrader/contract-specifications', 'static/metatrader/contract_specifications', 'default',     'Contract Specifications'],
         ['metatrader/download',                'static/metatrader/download',                'default',     'Start Trading with MetaTrader 5'],
-        ['metatrader/margin-policy',           'static/metatrader/margin_policy',           'full_width',  'MetaTrader Margin Policy'],
 
         ['affiliate_disclaimer',               'static/japan/affiliates/popup',             undef,          '',                                'NOT-ja,en'],
 
