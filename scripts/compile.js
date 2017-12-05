@@ -6,6 +6,18 @@ const Url = require('url');
 const Gettext = require('./gettext');
 const Colors = require('colors');
 const Crypto = require('crypto');
+const readFile = (path) => new Promise((resolve, reject) => {
+    fs.readFile(path, 'utf8', (err, result) => {
+        if(err) { reject(err); }
+        else resolve(result);
+    });
+})
+const writeFile = (path, data) => new Promise((resolve, reject) => {
+    fs.writeFile(path, data, (err) => {
+        if(err) { reject(err); }
+        else resolve();
+    });
+})
 
 const CONTENT_PLACEHOLDER = "CONTENT_PLACEHOLDER"; // used in layout.vash
 
@@ -143,7 +155,7 @@ const createBuilder = async () => {
 
     const static_hash = Math.random().toString(36).substring(2, 10);
     const vendor_hash = await file_hash_async(Path.join(config.dist_path, 'js/vendor.min.js'))
-    fs.writeFileSync(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
+    await writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
 
     const html = Vash.helpers;
 
@@ -214,12 +226,16 @@ const createBuilder = async () => {
     }
 
     return {
-        build_template_for: (input_file) => {
-            const input_content = fs.readFileSync(input_file, 'utf8');
+        build_template_for: async (input_file) => {
+            const input_content = await readFile(input_file);
             const template = Vash.compile(input_content);
             return template
         },
         run_template: ({template, model}) => {
+            Vash.helpers.L = createTranslator(model.language);
+            Vash.helpers.rawL = (text, ...args) => Vash.helpers.raw(Vash.helpers.L(text, ...args));
+            Vash.helpers.url_for = createUrlFinder(model.language);
+
             const merged = Object.assign({ }, model, extra);
             const output_content = template(merged);
 
@@ -233,27 +249,28 @@ const createBuilder = async () => {
  **********************************************************************/
 
 async function compile(page) {
+    console.time(page.save_as);
+    console.log(`Compiling ${page.save_as}`.green);
     const config = getConfig();
     const languages = config.languages.filter(lang => should_compile(page.excludes, lang));
     const builder = await createBuilder();
 
     const layout = {
         file: Path.join(config.root_path, `src/templates/global/layout.vash`),
-        model: null,
         template: null,
     };
-    layout.template = builder.build_template_for(layout.file);
+    layout.template = await builder.build_template_for(layout.file);
+    const input = {
+        file: Path.join(config.root_path, `src/templates/${page.tpl_path}.vash`),
+        template: null,
+    };
+    input.template = await builder.build_template_for(input.file);
 
-
-    console.time(page.save_as);
-    languages.forEach(lang => {
-        Vash.helpers.L = createTranslator(lang);
-        Vash.helpers.rawL = (text, ...args) => Vash.helpers.raw(Vash.helpers.L(text, ...args));
-        Vash.helpers.url_for = createUrlFinder(lang);
+    const tasks = languages.map(async lang => {
 
         const model = {
             website_name : 'Binary.com',
-            browser_title: page.title ? `${Vash.helpers.L(page.title)} | ` : '',
+            title        : page.title,
             layout       : page.layout,
             language     : lang.toUpperCase(),
             root_url     : config.root_url,
@@ -265,36 +282,25 @@ async function compile(page) {
             is_pjax_request : true,
         }
 
-        const input = {
-            file: Path.join(config.root_path, `src/templates/${page.tpl_path}.vash`),
-            model: model,
-            template: null,
-            result: null
-        };
-        input.template = builder.build_template_for(input.file);
-        input.result = builder.run_template({template: input.template, model: input.model});
+        const result_input = builder.run_template({template: input.template, model: model});
+        const result_pjax = builder.run_template({template: layout.template, model: model})
 
-        layout.model = model;
-        layout.result = builder.run_template({template: layout.template, model: layout.model})
+        await writeFile( // pjax layout
+            Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`),
+            result_pjax.replace(CONTENT_PLACEHOLDER, result_input),
+            'utf8'
+        );
 
-        const pjax = {
-            file: Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`),
-            result: layout.result.replace(CONTENT_PLACEHOLDER, input.result)
-        };
-        fs.writeFileSync(pjax.file, pjax.result, 'utf8');
+        model.is_pjax_request = false;
+        const result_normal = builder.run_template({template: layout.template, model: model})
 
-        layout.model.is_pjax_request = false;
-        layout.result = builder.run_template({template: layout.template, model: layout.model})
-
-        const normal = {
-            file: Path.join(config.dist_path, `${lang}/${page.save_as}.html`),
-            result: layout.result.replace(CONTENT_PLACEHOLDER, input.result)
-        }
-        fs.writeFileSync(normal.file, normal.result, 'utf8');
-
-        print(`Compiling ${pjax.file.replace(config.root_path, '')}`.green);
+        await writeFile( // normal layout
+            Path.join(config.dist_path, `${lang}/${page.save_as}.html`),
+            result_normal.replace(CONTENT_PLACEHOLDER, result_input),
+            'utf8'
+        );
     });
-    process.stdout.write('\n');
+    await Promise.all(tasks);
     console.timeEnd(page.save_as);
 }
 
