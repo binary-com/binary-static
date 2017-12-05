@@ -30,7 +30,7 @@
 
 <div id="mt5_types_of_accounts" class="static_full">
     <h1>[% l("MetaTrader 5 Types of Accounts") %]</h1>
-    <p>[% l("[_1] Binary.com offers a variety of account types to cater to the diverse needs of traders everywhere, whether you are an experienced trader or just starting out. Each account has been tailored to provide you with a unique opportunity in the world of Forex trading.", website_name) %]</p>
+    <p>[% l("[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you are an experienced trader or just starting out. Each account has been tailored to provide you with a unique opportunity in the world of Forex trading.", website_name) %]</p>
     <p>[% l("Best of all, there is no minimum deposit requirement and no commission per trade.") %]</p>
     [% INCLUDE box title=l("Cent")       text=l("The Cent account offers the highest leverage, as well as low margin call and stop out level. It is ideal for new traders who want to start trading with a smaller capital.") %]
     [% INCLUDE box title=l("Standard")   text=l("The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.") %]
