@@ -5,6 +5,10 @@ module.exports = {
         ]
     },
     dist: {
-        src: global.dist + '/css/binary.css'
+        src: [
+            global.dist + '/css/common.css',
+            global.dist + '/css/app.css',
+            global.dist + '/css/static.css',
+        ]
     }
 };

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        [% INCLUDE global/anti_clickjack.html.tt %]
+        [% INCLUDE _common/includes/anti_clickjack.html.tt %]
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
         <meta name="description" content="
@@ -16,9 +16,9 @@
         <meta property="og:type" content="website" />
         <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
 
-        [% PROCESS global/title.html.tt %]
+        [% PROCESS _common/components/title.html.tt %]
 
-        [% PROCESS global/favicons.html.tt %]
+        [% PROCESS _common/includes/favicons.html.tt %]
 
         <link href="[% request.url_for('css/ico.css') _ '?' _ static_hash %]" rel="stylesheet" />
         <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
@@ -26,7 +26,7 @@
     </head>
 
     <body>
-        [% PROCESS global/gtm.html.tt %]
+        [% PROCESS _common/includes/gtm.html.tt %]
         <div class="navbar-fixed-top" role="navigation" id="navigation">
             <div class="navbar-header">
                 <span id="toggle-menu" href="button" class="navbar-toggle"></span>
@@ -93,7 +93,7 @@
                     </div>
                     <div id="coming-soon" class="content-section center-text transparent-dark-blue-bg">
                         <div class="gr-row">
-                            <div id="status_loading">[% INCLUDE global/loading.html.tt theme='white' %]</div>
+                            <div id="status_loading">[% INCLUDE _common/components/loading.html.tt theme='white' %]</div>
                             <div id="status_container" class="gr-12 invisible">
                                 <div class="status-toggle status-started">
                                     <h2 class="content-inverse-color text-uppercase">[% l("ICO is live, participate now!") %]</h2>

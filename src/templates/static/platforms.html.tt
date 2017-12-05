@@ -1,4 +1,4 @@
-[% PROCESS components/elements.html.tt %]
+[% PROCESS _common/components/elements.html.tt %]
 
 [% BLOCK platform %]
 <div class="gr-6 gr-12-m gr-12-p">
@@ -31,7 +31,7 @@
 <div class="gr-row static_full">
     <div class="gr-3 gr-hide-m gr-hide-p sidebar-container">
         <div class="sidebar">
-            [% INCLUDE list class='sidebar-nav' items=[
+            [% INCLUDE list id='sidebar-nav' items=[
                 { href='#trading-platforms',    text=l("Trading Platforms") },
                 { href='#platforms-comparison', text=l("Platform Comparison"), class='invisible' },
                 { href='#more-tools',           text=l("More Tools") },
