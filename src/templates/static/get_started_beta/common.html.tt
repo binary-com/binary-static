@@ -87,3 +87,11 @@
         </div>
     </div>
 [% END %]
+
+[% BLOCK mt_box %]
+<div class="gr-12 gr-centered gr-padding-10">
+    <div class="mt-img mr1-icon"></div>
+    <p class="fill-bg-color gr-padding-20 gr-gutter">[% text %]</p>
+    <div class="mt-img mr2-icon"></div>
+</div>
+[% END %]

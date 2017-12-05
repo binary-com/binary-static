@@ -108,6 +108,8 @@
                 <p>[% l("For example, if you wanted to purchase 100 units of a particular asset that's trading at USD 50 per unit through a traditional broker, it would typically cost you USD 5,000 for this transaction.") %]</p>
                 <p>[% l("However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform.") %]</p>
 
+                [% PROCESS mt_box text=l("If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:") %]
+
                 [% PROCESS header_secondary header=l("How to calculate margin") %]
                 <p>[% l("You can determine the margin for our currency pairs by using the formula below:") %]</p>
                 [% INCLUDE box text=l("Volume (lots)") _ ' x ' _ l("lot size") _ ' / ' _ l("leverage") _ ' = ' _ l("Margin") %]

@@ -60,6 +60,8 @@
                 <p>[% l("For example, if you buy one lot of an underlying asset at a price of USD 20,000 and a margin rate of 0.01, the margin required to purchase that one lot will be calculated as follows:") %]</p>
                 [% INCLUDE box text='1 * 20000 * 0.01 = ' _ l("USD") _ ' 200' %]
 
+                [% PROCESS mt_box text=l("If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:") %]
+
                 [% PROCESS header_secondary header=l("What's a margin call and how is it applied") %]
                 <p>[% l("When your account equity is unable to cover the margin requirement, your account will be placed under margin call. This does not affect your ability to open new positions.") %]</p>
 
