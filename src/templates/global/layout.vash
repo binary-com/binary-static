@@ -90,7 +90,7 @@
     if(model.is_pjax_request) {
         inner_content()
     } else {
-        html.raw(`<!DOCTYPE html>`)
+        @html.raw(`<!DOCTYPE html>`)
         <html>
             @view.head()
             <body @html.class(model.language) >

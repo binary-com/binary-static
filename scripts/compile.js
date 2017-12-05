@@ -281,6 +281,7 @@ async function compile(page) {
             japan_docs_url  : 'https://japan-docs.binary.com',
             is_pjax_request : true,
         }
+        console.warn(model);
 
         const result_input = builder.run_template({template: input.template, model: model});
         const result_pjax = builder.run_template({template: layout.template, model: model})
