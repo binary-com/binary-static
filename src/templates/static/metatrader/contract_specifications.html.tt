@@ -3,10 +3,11 @@
 <div class="static_full">
     <h1>[% l('Contract Specifications') %]</h1>
     [% WRAPPER tab_container class='cs-content' theme='light full-width' %]
-        [% INCLUDE tabs_subtabs id='cs-menu' items=[
+        [% INCLUDE tabs_subtabs id='cs_tabs' items=[
             { id='forex',      text=l('Forex'), class='active' },
             { id='volatility', text=l('Volatility Indices') },
             { id='metals',     text=l('Metals') },
+            { id='cs_tabs_selector', class='tab-selector' },
         ] %]
         <div class="tab-content">
             [% WRAPPER tab_content_container %]

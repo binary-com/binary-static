@@ -117,7 +117,7 @@ const pages_config = {
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStartedBeta.BinaryOptions },
     'cfds'                   : { module: GetStartedBeta.CFDs },
-    'contract-specifications': { module: StaticPages.handleTab },
+    'contract-specifications': { module: StaticPages.ContractSpecifications },
     'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'forex'                  : { module: GetStartedBeta.Forex },

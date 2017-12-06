@@ -31,6 +31,10 @@ module.exports = {
         onLoad  : () => { TabSelector.init('how_to_tabs', false, ['forex', 'volatility', 'metals']); },
         onUnload: () => { TabSelector.clean(); },
     },
+    ContractSpecifications: {
+        onLoad  : () => { TabSelector.init('cs_tabs', false, ['forex', 'volatility', 'metals']); },
+        onUnload: () => { TabSelector.clean(); },
+    },
     handleTab: {
         onLoad: () => { tabListener(); handleHash(); },
     },
