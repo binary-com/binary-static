@@ -70,7 +70,6 @@
                             <div class="gr-2"></div>
                             [% INCLUDE platform image_class='gr-7 gr-5-p gr-7-m' image='tick-trade' header=l("Binary Tick Trade App") description=l("Ultra fast on-the-go trading")
                                 text=l("Enjoy our fastest type of trading with our Tick Trade app, wherever you are.")
-                                app_store_url='https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=platforms_page&mt=8'
                                 google_play_url='https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' %]
                         </div>
                         <div class="gr-row gr-padding-30">
@@ -81,7 +80,6 @@
                             [% INCLUDE platform image_class='gr-12 gr-7-p gr-10-m' image='nextgen' header=l("Binary Next-Gen") description=l("Advanced trading app for web and mobile")
                                 text=l("Explore advanced trading features with the Next-Gen app for web and mobile.")
                                 url='https://app.binary.com' target='_blank' button_text=l("Try Next-Gen")
-                                app_store_url='https://itunes.apple.com/app/apple-store/id1134884301?pt=117911266&ct=platforms_page&mt=8'
                                 google_play_url='https://play.google.com/store/apps/details?id=app.binary.com&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' %]
                         </div>
                         <div class="gr-row gr-padding-30">
@@ -123,7 +121,7 @@
                                 <div class="gr-row center-text enhanced">
                                     [% INCLUDE enhanced_items image='trade'      text=l("Trade Forex and CFD asset classes with an award winning broker") %]
                                     [% INCLUDE enhanced_items image='leverage'   text=l("Trade the Forex markets with leverage up to 100:1, and Volatility Indices with leverage up to 500:1") %]
-                                    [% INCLUDE enhanced_items image='demo'       text=l("Open a free Demo account. Upgrade to a Real account by depositing funds thru your Binary.com account cashier") %]
+                                    [% INCLUDE enhanced_items image='demo'       text=l("Open a free Demo account. Upgrade to a Real account by depositing funds through your [_1] account cashier", website_name) %]
                                     [% INCLUDE enhanced_items image='tools'      text=l("Access advanced tools for fundamental and technical analysis, all available in one platform") %]
                                     [% INCLUDE enhanced_items image='algorithms' text=l("Subscribe to a wide range of algorithmic trading strategies from the built-in MetaTrader Market") %]
                                     [% INCLUDE enhanced_items image='platforms'  text=l("Trade using the mobile and desktop apps, or use the web platform from any web browser") %]
@@ -161,7 +159,7 @@
                                     </div>
                                     <p class="center-text">
                                         <a class="button button-secondary full-width" href="[% request.url_for('metatrader/download') %]">
-                                            <span>[% l("Lear more") %]</span>
+                                            <span>[% l("Learn more") %]</span>
                                         </a>
                                     </p>
                                 </div>
