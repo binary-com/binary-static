@@ -188,6 +188,11 @@ const MetaTraderUI = (() => {
             handleNewAccountUI(action, acc_type, $target);
         };
 
+        if (action === 'new_account') {
+            cloneForm();
+            return;
+        }
+
         if (!actions_info[action]) { // Manage Fund
             cloneForm();
             $form.find('.binary-account').text(`Binary ${Client.get('loginid')}`);
@@ -305,9 +310,12 @@ const MetaTraderUI = (() => {
         Object.keys(accounts_info)
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
-                const class_name = accounts_info[acc_type].info ? 'existed' : '';
+                let class_name = (type === 'real' && Client.get('is_virtual')) ? 'disabled' : '';
+                if (accounts_info[acc_type].info) {
+                    class_name = 'existed';
+                }
                 $form.find(`.step-2 #${acc_type.replace(type, 'rbtn')}`)
-                    .removeClass('existed selected')
+                    .removeClass('existed disabled selected')
                     .addClass(class_name);
             });
     };
