@@ -71,7 +71,7 @@ foreach my $m (@m) {
     my $layout   = $m->[2];
     my $title    = $m->[3];
     my $excludes = $m->[4];
-    my $only_ja  = $excludes and $excludes =~ /^NOT-ja,en$/;
+    my $only_ja  = ($excludes and $excludes =~ /^NOT-ja,en$/);
 
     $index++;
 
