@@ -5,59 +5,14 @@
 @html.include('app/_layout/main_menu.vash')
 @html.include('app/_layout/mobile_menu.vash')
 @html.include('app/_layout/footer.vash')
-@html.include('app/get_started/signup_tour.vash')
 @{
     const CONTENT_PLACEHOLDER = "CONTENT_PLACEHOLDER";
-    const nav = ({items}) => {
-        <ul class="nav">
-            @items.forEach(item => {
-                <li><a href="@html.url_for(`/get-started/${item.section}`)">@item.text</a></li>
-            })
-        </ul>
-    }
 
-    const get_started = () => {
-        view.ico_banner({_class: 'top-margin'})
-        <div class="get-started static_full">
-            <div class="gr-row">
-                <div class="gr-3 gr-hide-m">
-                    <div class="sidebar">
-                        @nav({
-                            items: [
-                                { section: 'what-is-binary-trading', text: html.L("Why choose binary trading?") },
-                                { section: 'types-of-trades',        text: html.L("Types of trades") },
-                                { section: 'binary-options-basics',  text: html.L("Binary options basics") },
-                                { section: 'why-trade-with-us',      text: html.L("Why trade with [_1]", model.website_name) },
-                                { section: 'how-to-trade-binaries',  text: html.L("How to trade binary options?") },
-                                { section: 'volidx-markets',         text: html.L("How to trade the Volatility Indices markets?") },
-                                { section: 'smart-indices',          text: html.L("Smart Markets") },
-                                { section: 'otc-indices-stocks',     text: html.L("OTC Indices and Stocks") },
-                                { section: 'beginners-faq',          text: html.L("FAQ") },
-                                { section: 'glossary',               text: html.L("Glossary") },
-                            ]
-                        })
-                    </div>
-                </div>
-
-                <div class="gr-6 gr-12-m gr-parent">
-                    @CONTENT_PLACEHOLDER
-                </div>
-
-                @view.signup_tour()
-            </div>
-        </div>
-    }
-
-    const with_layout = ({
-        children
-    }) => {
+    function with_layout({ children }) {
         const _class = `${model.current_route || ''}-content`;
+        const _class_ico = 'top-margin' + (model.layout === 'default' ? ' bottom-margin' : '');
         <div id="content" @html.when(model.current_route, `class="${_class}"`) >
-            @if(model.layout == 'full_width') {
-                view.ico_banner({ container: 'ico-banner-container', _class: 'top-margin' })
-            } else {
-                view.ico_banner({ container: 'ico-banner-container', _class: 'top-margin bottom-margin' })
-            }
+            @view.ico_banner({ container: 'ico-banner-container', _class: _class_ico })
             <div id="page_info" style="display:none;">
                 @view.title()
                 <div id="content_class">@_class</div>
@@ -73,16 +28,12 @@
     }
     const inner_content = function() {
         const wrap_children = function() {
-            if(model.layout === 'get_started') {
-                @get_started()
-            } else {
-                @CONTENT_PLACEHOLDER
-            }
+            @CONTENT_PLACEHOLDER
         }
         if(model.layout) {
             with_layout({children: wrap_children})
         } else {
-            wrap_children()
+            @CONTENT_PLACEHOLDER
         }
     }
 

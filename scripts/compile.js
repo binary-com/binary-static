@@ -70,7 +70,7 @@ function getConfig() {
 
         if(key === 'dev' || key === '--dev') { config.is_dev = true; }
         if(key === 'branch' || key === '--branch') { config.branch = value; }
-        if(key === 'path' || key === '--path') { config.branch = value; }
+        if(key === 'path' || key === '--path') { config.path = value; }
     }
     if (config.branch === 'translations') {
         config.languages = ['ACH'];
@@ -332,8 +332,9 @@ async function compile(page) {
 
 create_directories();
 (async () => {
+    const config = getConfig();
     try {
-        await compile(pages.find(p => p.save_as === 'home'));
+        await compile(pages.find(p => p.save_as === (config.path || 'home')));
     } catch(e) {
         console.log(e);
     }

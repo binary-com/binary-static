@@ -50,10 +50,10 @@ const diff = (save_as) => {
     languages.forEach(lang => {
         lang = lang.toLowerCase();
 
-        // impl(
-        //     `dist/${lang}/${save_as}.html`,
-        //     `dist-perl/${lang}/${save_as}.html`
-        // )
+        impl(
+            `dist/${lang}/${save_as}.html`,
+            `dist-perl/${lang}/${save_as}.html`
+        )
         impl(
             `dist/${lang}/pjax/${save_as}.html`,
             `dist-perl/${lang}/pjax/${save_as}.html`

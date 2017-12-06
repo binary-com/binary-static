@@ -17,7 +17,7 @@
     const footer_column = ({header, items}) => {
         <div class="gr-4">
             <h4 class="secondary-color"><strong>@header</strong></h4>
-            @view.list({items, _class: 'top-margin'})
+            @view.list({items, _class: 'top-margin bottom-margin'})
         </div>
     }
 
@@ -112,7 +112,7 @@
                     <div class="gr-padding-10">
                         <p class="gambling content-inverse-color no-para-margin">
                             @html.rawL(
-                                `Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href="[_1]">Responsible Trading</a>.`,
+                                'Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href="[_1]">Responsible Trading</a>.',
                                 html.url_for('responsible-trading')
                             )
                         </p>
