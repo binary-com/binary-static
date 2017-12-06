@@ -18,6 +18,7 @@ const MetaTrader = (() => {
     const onLoad = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
             if (isEligible()) {
+                MetaTraderUI.switchToMT5();
                 getAllAccountsInfo();
                 MetaTraderUI.init(submit);
             } else {
@@ -174,8 +175,13 @@ const MetaTrader = (() => {
         }
     };
 
+    const onUnload = () => {
+        MetaTraderUI.switchToMT5(false);
+    };
+
     return {
         onLoad,
+        onUnload,
         isEligible,
     };
 })();
