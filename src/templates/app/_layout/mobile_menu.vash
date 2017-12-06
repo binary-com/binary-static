@@ -1,4 +1,4 @@
-@html.include('./src/templates/components/elements.vash')
+@html.include('_common/components/elements.vash')
 
 @{
     view.mobile_menu = () => {
@@ -31,7 +31,7 @@
                             @if(item.sub_items) {
                                 <ul class="sub_items">
                                     @item.sub_items.forEach(sub_item => {
-                                        <li id="@sub_item.id" class="sub_item @sub_item.class">
+                                        <li id="@sub_item.id" class="sub_item @sub_item._class">
                                             <a class="link" href="@html.url_for(sub_item.url)">@html.L(sub_item.text)</a>
                                         </li>
                                     })

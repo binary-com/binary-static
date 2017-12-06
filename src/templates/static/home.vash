@@ -1,6 +1,6 @@
-@html.include('./src/templates/components/elements.vash')
-@html.include('./src/templates/global/form_verify_email.vash')
-@html.include('./src/templates/global/separator_line.vash')
+@html.include('_common/components/elements.vash')
+@html.include('_common/components/separator_line.vash')
+@html.include('_common/includes/form_verify_email.vash')
 @{
     function payment_logo({ items }) {
         items.forEach(item => {

@@ -1,4 +1,4 @@
-@html.include('./src/templates/components/elements.vash')
+@html.include('_common/components/elements.vash')
 
 @{
     const language_ul = ({type, color}) => {

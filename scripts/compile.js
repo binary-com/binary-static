@@ -6,6 +6,8 @@ const Url = require('url');
 const Gettext = require('./gettext');
 const Colors = require('colors');
 const Crypto = require('crypto');
+const appRoot = require('app-root-path').path;
+
 const readFile = (path) => new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, result) => {
         if(err) { reject(err); }
@@ -21,7 +23,7 @@ const writeFile = (path, data) => new Promise((resolve, reject) => {
 
 const CONTENT_PLACEHOLDER = "CONTENT_PLACEHOLDER"; // used in layout.vash
 
-const pages = require('./config/pages.json').map(p => ({
+const pages = require('./pages').map(p => ({
     save_as  : p[0],
     tpl_path : p[1],
     layout   : p[2],
@@ -42,6 +44,13 @@ Vash.helpers.when = (condition, value) => {
 }
 Vash.helpers.class = value =>  Vash.helpers.when(value, `class="${value}"`);
 Vash.helpers.id    = value =>  Vash.helpers.when(value, `id="${value}"`);
+Vash.config.debug  = true;
+Vash.config.debugparser = true;
+Vash.config.debugcompiler = true;
+Vash.config.cache = true;
+Vash.config.settings = {
+    views: Path.join(appRoot, 'src/templates')
+}
 
 /**********************************************************************
  * Common functions
@@ -50,18 +59,18 @@ function getConfig() {
     const config = {
         branch    : '',
         path      : '',
-        is_dev    : true,
+        is_dev    : false,
         languages : ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW'],
-        root_path : Path.join(__dirname, '..'),
+        sections  : ['app', 'static'],
+        root_path : appRoot,
     }
     for (let i = 2; i < process.argv.length; i++) {
         const arg = process.argv[i];
         const [key, value] = arg.split('=');
 
-        if (key && value) {
-            const field = key.replace('--', '');
-            config[field] = value;
-        }
+        if(key === 'dev' || key === '--dev') { config.is_dev = true; }
+        if(key === 'branch' || key === '--branch') { config.branch = value; }
+        if(key === 'path' || key === '--path') { config.branch = value; }
     }
     if (config.branch === 'translations') {
         config.languages = ['ACH'];
@@ -164,11 +173,13 @@ const createBuilder = async () => {
             `${config.root_url}js/texts/{PLACEHOLDER_FOR_LANG}.js?${static_hash}`,
             `${config.root_url}js/manifest.js?${static_hash}`,
             `${config.root_url}js/vendor.min.js?${vendor_hash}`,
-            `${config.root_url}js/binary.js?${static_hash}`,
-            `${config.root_url}js/binary.min.js?${static_hash}`,
+            config.is_dev ?
+                `${config.root_url}js/binary.js?${static_hash}` :
+                `${config.root_url}js/binary.min.js?${static_hash}`,
         ],
         css_files: [
-            `${config.root_url}css/binary.min.css?${static_hash}`
+            `${config.root_url}css/common.min.css?${static_hash}`,
+            ...config.sections.map(section => `${config.root_url}css/${section}.min.css?${static_hash}`)
         ],
         menu: [
             {
@@ -181,7 +192,7 @@ const createBuilder = async () => {
             },
             {
                 id: 'topMenuPortfolio', url: '/user/portfoliows', text: 'Portfolio',
-                class: 'client_logged_in invisible ico-only-hide',
+                _class: 'client_logged_in invisible ico-only-hide',
             },
             {
                 id: 'topMenuProfitTable', url: '/user/profit_tablews', text: 'Profit Table',
@@ -255,11 +266,16 @@ async function compile(page) {
     const languages = config.languages.filter(lang => should_compile(page.excludes, lang));
     const builder = await createBuilder();
 
-    const layout = {
-        file: Path.join(config.root_path, `src/templates/global/layout.vash`),
-        template: null,
-    };
-    layout.template = await builder.build_template_for(layout.file);
+    const layouts = { };
+    await Promise.all(
+        config.sections.map(async section => {
+            layouts[section] = {
+                file: Path.join(config.root_path, `src/templates/${section}/_layout/layout.vash`),
+            }
+            layouts[section].template = await builder.build_template_for(layouts[section].file);
+        })
+    );
+
     const input = {
         file: Path.join(config.root_path, `src/templates/${page.tpl_path}.vash`),
         template: null,
@@ -281,25 +297,34 @@ async function compile(page) {
             japan_docs_url  : 'https://japan-docs.binary.com',
             is_pjax_request : true,
         }
-        console.warn(model);
 
         const result_input = builder.run_template({template: input.template, model: model});
-        const result_pjax = builder.run_template({template: layout.template, model: model})
 
-        await writeFile( // pjax layout
-            Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`),
-            result_pjax.replace(CONTENT_PLACEHOLDER, result_input),
-            'utf8'
-        );
+        if (page.layout) {
+            const layout = layouts[page.tpl_path.split('/')[0]];
+            const result_pjax = builder.run_template({template: layout.template, model: model})
 
-        model.is_pjax_request = false;
-        const result_normal = builder.run_template({template: layout.template, model: model})
+            await writeFile( // pjax layout
+                Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`),
+                result_pjax.replace(CONTENT_PLACEHOLDER, result_input),
+                'utf8'
+            );
 
-        await writeFile( // normal layout
-            Path.join(config.dist_path, `${lang}/${page.save_as}.html`),
-            result_normal.replace(CONTENT_PLACEHOLDER, result_input),
-            'utf8'
-        );
+            model.is_pjax_request = false;
+            const result_normal = builder.run_template({template: layout.template, model: model})
+
+            await writeFile( // normal layout
+                Path.join(config.dist_path, `${lang}/${page.save_as}.html`),
+                result_normal.replace(CONTENT_PLACEHOLDER, result_input),
+                'utf8'
+            );
+        } else {
+            await writeFile( // landing pages
+                Path.join(config.dist_path, `${lang}/${page.save_as}.html`),
+                result_input,
+                'utf8'
+            );
+        }
     });
     await Promise.all(tasks);
     console.timeEnd(page.save_as);
@@ -308,7 +333,7 @@ async function compile(page) {
 create_directories();
 (async () => {
     try {
-        await compile(pages[0]);
+        await compile(pages.find(p => p.save_as === 'home'));
     } catch(e) {
         console.log(e);
     }

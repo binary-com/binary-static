@@ -7,12 +7,12 @@
                     @model.menu.forEach(item => {
                         const url = item.url ? html.url_for(item.url) : item.absolute_url;
                         <li id="@item.id" class="item @item._class">
-                            <a class="link" @html.when(item.target !== undefined, `target="${item.target}"`)  href="@url">@html.L(item.text)</a>
+                            <a class="link" target="@item.target"  href="@url">@html.L(item.text)</a>
                             @if(item.sub_items) {
                                 <ul class="sub_items">
                                 @item.sub_items.forEach(sub_item => {
                                     <li @html.id(sub_item.id) class="sub_item @sub_item._class">
-                                        <a class="link" @html.when(sub_item.target !== undefined, `target="${item.target}"`) href="@html.url_for(sub_item.url)">
+                                        <a class="link" target="@sub_item.target" href="@html.url_for(sub_item.url)">
                                             @html.L(sub_item.text)
                                         </a>
                                     </li>

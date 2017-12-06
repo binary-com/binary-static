@@ -19,7 +19,7 @@
                 let attrs = `href="${href}${param}"`;
                 /^http/.test(href) && (attrs += ` rel="noopener noreferrer"`);
 
-                <a @html.raw(attrs) > @children() </a>
+                <a @html.when(target, `target=${target}`) @html.raw(attrs) > @children() </a>
             } else {
                 @children()
             }

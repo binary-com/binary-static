@@ -1,11 +1,11 @@
-@html.include('./src/templates/global/header.vash')
-@html.include('./src/templates/global/ico_banner.vash')
-@html.include('./src/templates/global/signup_tour.vash')
-@html.include('./src/templates/global/footer.vash')
-@html.include('./src/templates/global/main_menu.vash')
-@html.include('./src/templates/global/mobile_menu.vash')
-@html.include('./src/templates/global/gtm.vash')
-@html.include('./src/templates/global/head.vash')
+@html.include('_common/includes/gtm.vash')
+@html.include('_common/includes/ico_banner.vash')
+@html.include('app/_layout/head.vash')
+@html.include('app/_layout/header.vash')
+@html.include('app/_layout/main_menu.vash')
+@html.include('app/_layout/mobile_menu.vash')
+@html.include('app/_layout/footer.vash')
+@html.include('app/get_started/signup_tour.vash')
 @{
     const CONTENT_PLACEHOLDER = "CONTENT_PLACEHOLDER";
     const nav = ({items}) => {
@@ -59,7 +59,7 @@
                 view.ico_banner({ container: 'ico-banner-container', _class: 'top-margin bottom-margin' })
             }
             <div id="page_info" style="display:none;">
-                @view.title();
+                @view.title()
                 <div id="content_class">@_class</div>
             </div>
             @if(model.layout !== 'full_width') {

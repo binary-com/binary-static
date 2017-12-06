@@ -1,4 +1,4 @@
-@html.include('./src/templates/components/elements.vash')
+@html.include('_common/components/elements.vash')
 
 @{
     const regulatory_text =  html.rawL(
@@ -17,7 +17,7 @@
     const footer_column = ({header, items}) => {
         <div class="gr-4">
             <h4 class="secondary-color"><strong>@header</strong></h4>
-            @view.list({items})
+            @view.list({items, _class: 'top-margin'})
         </div>
     }
 
