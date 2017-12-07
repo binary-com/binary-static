@@ -37,7 +37,7 @@
                 <p>[% l("Metals trading lets you speculate on the price movement of a particular metal asset in order to profit from the price difference when the asset value rises or falls.") %]</p>
 
                 [% PROCESS header_secondary header=l("Metal – a hard commodity") %]
-                <p>[% l("Metals are also known as \"hard\" commoditiies as they are natural resources that must be mined or extracted.") %]</p>
+                <p>[% l("Metals are also known as \"hard\" commodities as they are natural resources that must be mined or extracted.") %]</p>
                 <p>[% l("Metals are categorised into two types:") %]</p>
                 <ul class="bullet">
                     <li>[% l("Industrial metals") %]<br/>[% l("Industrial metals – also known as base metals – are abundant, but oxidise or corrode easily. Industrial metals feature heavily across a wide range of industrial and commercial applications, including electrical wiring, automobiles, and batteries.") %]</li>
@@ -48,7 +48,7 @@
                 <ul class="checked">
                     [% PROCESS list_strong header=l("Competitive spreads") text=l("Trade metals on competitive fixed and variable spreads.") %]
                     [% PROCESS list_strong header=l("Commission-free")     text=l("Pay no commission on all metal contracts.") %]
-                    [% PROCESS list_strong header=l("Comprehensive")       text=l("Trade metals on competitive spreads with [_1] on MetaTrader 5", website_name) %]
+                    [% PROCESS list_strong header=l("Comprehensive")       text=l("Trade all four precious metals on one platform.") %]
                 </ul>
             [% END %]
             [% WRAPPER section id='how-trade-metals' header=l("How to trade metals") %]

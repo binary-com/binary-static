@@ -107,13 +107,10 @@
                 <p>[% l("For example, if you wanted to purchase 100 units of a particular asset that's trading at USD 50 per unit through a traditional broker, it would typically cost you USD 5,000 for this transaction.") %]</p>
                 <p>[% l("However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform.") %]</p>
 
-                [% PROCESS mt_box text=l("If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:") %]
-
                 [% PROCESS header_secondary header=l("How to calculate margin") %]
                 <p>[% l("You can determine the margin for our currency pairs by using the formula below:") %]</p>
-                [% INCLUDE box text=l("Volume (lots)") _ ' x ' _ l("lot size") _ ' / ' _ l("leverage") _ ' = ' _ l("Margin") %]
-                <p>[% l("For example, if you buy one lot of the EUR/USD pair with a contract size of 100,000 and leverage of 100:1, the margin that you need to purchase one lof of EUR/USD will be calculated as follows:") %]</p>
-                [% INCLUDE box text='1 x 100,000 / 100 = ' _ l("EUR") _ '1,000' %]
+
+                [% PROCESS mt_box text=l("For example, if you buy one lot of the EUR/USD pair with a contract size of 100,000 and leverage of 100:1, the margin that you need to purchase one lot of EUR/USD will be calculated as follows:") %]
 
                 [% PROCESS header_secondary header=l("What's a margin call and how is it applied") %]
                 <p>[% l("When your account equity is unable to cover the margin requirement, your account will be placed under margin call. This does not affect your ability to open new positions.") %]</p>
@@ -210,7 +207,7 @@
                 } %]
 
                 [% PROCESS header_secondary header=l("How to read the contract specifications table") %]
-                <p>[% l("The Forex is typically traded in lots. One standard lot is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of 0.01 lots.") %]</p>
+                <p>[% l("The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>.") %]</p>
                 <p>[% l("Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.") %]</p>
                 <p>[% l("To learn more, read our Margin Policy that further explains our 100% forced liquidation level for Forex.") %]</p>
 
