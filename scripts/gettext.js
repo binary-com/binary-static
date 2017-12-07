@@ -5,7 +5,40 @@ const Gettext = require('node-gettext');
 const { po } = require('gettext-parser');
 const colors = require('colors');
 
-exports.createGettextInstance = ({record = false} = {}) => {
+Gettext.prototype.dnpgettext = function(domain, msgctxt, msgid, msgidPlural, count) {
+    var defaultTranslation = msgid;
+    var translation;
+    var index;
+
+    msgctxt = msgctxt || '';
+
+    if (!isNaN(count) && count !== 1) {
+        defaultTranslation = msgidPlural || msgid;
+    }
+
+    translation = this._getTranslation(domain, msgctxt, msgid);
+
+    if (translation) {
+        if (typeof count === 'number') {
+            var pluralsFunc = plurals[Gettext.getLanguageCode(this.locale)].pluralsFunc;
+            index = pluralsFunc(count);
+            if (typeof index === 'boolean') {
+                index = index ? 1 : 0;
+            }
+        } else {
+            index = 0;
+        }
+
+        return translation.msgstr[index] || defaultTranslation;
+    }
+    else {
+        this.emit('no-translation', msgid); // changed default implementation here!
+    }
+
+    return defaultTranslation;
+};
+
+exports.createGettextInstance = () => {
     console.time("Loading .po files")
 
     const translations_dir = './src/translations/'
@@ -27,13 +60,12 @@ exports.createGettextInstance = ({record = false} = {}) => {
     })
     process.stdout.write(" Done\n".cyan);
 
-    const recorded = [];
-    if (record) {
-        gt.on('error', error => {
-            recorded.push(error);
-            console.log('Not translated: ', error);
-        });
-    }
+    const not_translated = [];
+    gt.on('no-translation', function(error) {
+        if(not_translated.indexOf(error) === -1) {
+            not_translated.push(error);
+        }
+    });
 
    console.timeEnd("Loading .po files");
     return {
@@ -53,6 +85,31 @@ exports.createGettextInstance = ({record = false} = {}) => {
                 translation = translation.split(`%${inx}`).join(args[inx-1]);
             }
             return translation;
+        },
+        update_translations: () => {
+            process.stdout.write("Updating translations ... ".green);
+            if (not_translated.length === 0) {
+                process.stdout.write("Skipped\n".green);
+                return;
+            }
+            const messages_file = Path.join(translations_dir, `messages.pot`);
+            const content = fs.readFileSync(messages_file, 'utf8');
+            const parsed = po.parse(content)
+
+            not_translated.forEach(entry => {
+                parsed.translations[""][entry] = {
+                    msgid: entry,
+                    msgstr: [""]
+                }
+            })
+
+            const output = po.compile(parsed, {foldLength: 0});
+            fs.writeFileSync(
+                Path.join(translations_dir, "messages.pot"),
+                output,
+                "utf8"
+            )
+            process.stdout.write(`Updated messages.pot with ${not_translated.length} new entries\n`.green);
         }
     }
 }

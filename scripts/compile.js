@@ -63,6 +63,7 @@ function getConfig() {
         languages : ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW'],
         sections  : ['app', 'static'],
         root_path : appRoot,
+        add_translations: false,
     }
     for (let i = 2; i < process.argv.length; i++) {
         const arg = process.argv[i];
@@ -71,6 +72,7 @@ function getConfig() {
         if(key === 'dev' || key === '--dev') { config.is_dev = true; }
         if(key === 'branch' || key === '--branch') { config.branch = value; }
         if(key === 'path' || key === '--path') { config.path = value; }
+        if(key === 'add-translations' || key === '--add-translations') { config.add_translations = true; }
     }
     if (config.branch === 'translations') {
         config.languages = ['ACH'];
@@ -130,7 +132,7 @@ function file_hash_async(path, cb) {
  * Factory functions
  **********************************************************************/
 
-const gettext = Gettext.createGettextInstance({record: true});
+const gettext = Gettext.createGettextInstance();
 const createTranslator = lang => {
     lang = lang.toLowerCase(lang);
     gettext.setLang(lang);
@@ -335,9 +337,10 @@ create_directories();
     const config = getConfig();
     try {
         await compile(pages.find(p => p.save_as === (config.path || 'home')));
+        if(config.add_translations) {
+            gettext.update_translations();
+        }
     } catch(e) {
         console.log(e);
     }
 })();
-// var tpl = Vash.compile('<p>I am a @model.t!</p>');
-// var out = tpl({ t: 'template' });
