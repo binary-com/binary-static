@@ -132,17 +132,15 @@
     <div class="section-header primary-bg-color">
         <h2>[% l("Software development teams") %]</h2>
     </div>
-    <div id="dev-teams" class="container">
-        <div class="tab-menu">
-            <ul>
-                <li class="tab active"><a href="#frontend">Frontend</a></li>
-                <li class="tab"><a href="#backend">Backend</a></li>
-                <li class="tab"><a href="#quants">Quants</a></li>
-                <span id="active-tab-indicator"></span>
-            </ul>
-        </div>
-        <div class="tab-content">
-            <div id="frontend">
+    <div id="teams-tab" class="container tab-with-indicator">
+        <ul class="tab-menu">
+            <li class="tab active"><a href="#frontend">Frontend</a></li>
+            <li class="tab"><a href="#backend">Backend</a></li>
+            <li class="tab"><a href="#quants">Quants</a></li>
+            <span id="active-tab-indicator"></span>
+        </ul>
+        <div class="tab-content-wrapper">
+            <div id="frontend" class="tab-content">
                 <div class="gr-row inline-flex">
                     <div class="gr-7 gr-12-m">
                         <h2>[% l("Front-end Developer") %]</h2>
@@ -156,7 +154,7 @@
                     </div>
                 </div>
             </div>
-            <div id="backend">
+            <div id="backend" class="tab-content">
                 <div class="gr-row inline-flex">
                     <div class="gr-7 gr-12-m">
                         <h2>[% l("Back-end Developer") %]</h2>
@@ -170,7 +168,7 @@
                     </div>
                 </div>
             </div>
-            <div id="quants">
+            <div id="quants" class="tab-content">
                 <div class="gr-row inline-flex">
                     <div class="gr-7 gr-12-m">
                         <h2>[% l("Quantitative Developer") %]</h2>
@@ -229,12 +227,12 @@
     <div class="section-header primary-bg-color">
         <h2>[% l("Meet our employees") %]</h2>
     </div>
-    <div id="employees-quote" class="container">
-        <div class="inline-flex gr-row">
-            <a id="prev" class="gr-1 ic_chevron_left"></a>
-            <div id="content" class="gr-10 gr-7-m">
+    <div id="employees-tab" class="container">
+        <div class="inline-flex gr-row tab-with-buttons">
+            <a id="prev" class="gr-1 ic_chevron_left twb-button"></a>
+            <div class="gr-10 gr-7-m twb-content-wrapper">
                 [% FOREACH item IN quotes %]
-                <div class="gr-row inline-flex">
+                <div class="gr-row inline-flex twb-content">
                     <div class="gr-4 gr-12-m center-text">
                         <img class="img-rounded" src="http://via.placeholder.com/150x150" />
                     </div>
@@ -247,7 +245,7 @@
                 </div>
                 [% END %]
             </div>
-            <a id="next" class="gr-1 ic_chevron_right"></a>
+            <a id="next" class="gr-1 ic_chevron_right twb-button"></a>
         </div>
     </div>
 </section>

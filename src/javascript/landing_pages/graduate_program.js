@@ -6,8 +6,8 @@ window.onload = function() {
         el.addEventListener('click', scrollToSection);
     });
 
-    tabWithIndicator();
-    tabWithButtons();
+    tabWithIndicator('teams-tab');
+    tabWithButtons('employees-tab');
 };
 
 function scrollToSection(e) {
@@ -20,10 +20,11 @@ function scrollToSection(e) {
     collapseMenu();
 }
 
-function tabWithIndicator() {
-    const indicator = document.getElementById('active-tab-indicator');
-    const tabs      = document.querySelectorAll('.tab');
-    const contents  = document.querySelectorAll('.tab-content > div');
+function tabWithIndicator(id) {
+    const container = document.getElementById(id) ? document.getElementById(id) : document.body;
+    const indicator = container.querySelector('.tab-menu #active-tab-indicator');
+    const tabs      = container.querySelectorAll('.tab-menu .tab');
+    const contents  = container.querySelectorAll('.tab-content-wrapper > div.tab-content');
     const numOfTabs = tabs.length;
 
     indicator.style.width = `${(100 / numOfTabs)}%`;
@@ -55,8 +56,9 @@ function tabWithIndicator() {
     }
 }
 
-function tabWithButtons() {
-    const contents   = document.querySelectorAll('#content > div');
+function tabWithButtons(id) {
+    const container  = document.getElementById(id) ? document.getElementById(id) : document.body;
+    const contents   = container.querySelectorAll('div.twb-content');
     const numOfItems = contents.length;
 
     contents.forEach(function(el, index) {
@@ -76,7 +78,7 @@ function tabWithButtons() {
     });
 
     function updateTabContent(target_index) {
-        document.querySelectorAll('#content > div').forEach(function(el, index) {
+        contents.forEach(function(el, index) {
             const toShow = target_index % numOfItems < 0 ? (target_index % numOfItems) + numOfItems : target_index % numOfItems;
             el.classList[toShow === index ? 'remove' : 'add']('invisible');
         });
