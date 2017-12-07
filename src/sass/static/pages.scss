@@ -371,6 +371,61 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.platforms-content {
+    #binary-content img.responsive {
+        max-height: 150px;
+    }
+    #mt5-content {
+        .enhanced img.responsive, img.step {
+            max-height: 128px;
+        }
+        img.step-arrow {
+            max-height: 24px;
+        }
+    }
+}
+
+#mt5_types_of_accounts {
+    .box {
+        border: 1px solid $COLOR_GRAY;
+        border-radius: $BORDER_RADIUS;
+        padding: 20px;
+
+        img {
+            width: 40px;
+        }
+    }
+}
+
+#how_to_trade_mt5 {
+    .border-box {
+        display: inline-flex;
+        border: 1px solid $COLOR_BLUE;
+        border-radius: $BORDER_RADIUS;
+        padding: 25px 50px;
+        margin: 20px auto;
+    }
+    .vertical-dashed {
+        height: calc(100% - 100px);
+        width: 1px;
+        margin: 30px auto;
+        background-image: linear-gradient(to bottom, $COLOR_BLACK 70%, rgba(255, 255, 255, 0) 0%);
+        background-position: left;
+        background-size: 1px 15px;
+        background-repeat: repeat-y;
+    }
+    table.thin-border {
+        width: auto;
+
+        td {
+            padding: 15px 20px;
+        }
+    }
+    img.math-sign {
+        margin: 0 15px;
+    }
+}
+
 .landing_page-content {
     .bordered {
         border: 1px solid $COLOR_LIGHT_GRAY;
