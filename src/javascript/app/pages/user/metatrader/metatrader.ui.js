@@ -217,7 +217,7 @@ const MetaTraderUI = (() => {
                 msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.mt5Currency()]);
             }
             if (msg) {
-                displayMainMessage(msg);
+                displayMainMessage(msg, false);
                 $action.find('#frm_cashier').setVisibility(0);
             }
             return;
@@ -373,9 +373,11 @@ const MetaTraderUI = (() => {
         actions_info[action].$form.find('#msg_form').html(message).setVisibility(1);
     };
 
-    const displayMainMessage = (message) => {
+    const displayMainMessage = (message, should_scroll = true) => {
         $main_msg.html(message).setVisibility(1);
-        $.scrollTo($action, 500, { offset: -80 });
+        if (should_scroll) {
+            $.scrollTo($action, 500, { offset: -80 });
+        }
     };
 
     const displayMessage = (selector, message, is_centered) => {
