@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    [% INCLUDE _common/includes/anti_clickjack.html.tt %]
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
+    <meta name="description" content="[%= broker_name _ ' Hackathon Competition' =%]" />
+    <meta name="keywords" content="binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading, hackathon" />
+    <meta name="author" content="[%= broker_name =%]" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="dcterms.rightsHolder" content="[%= broker_name =%]" />
+    <meta name="dcterms.rights" content="[%= broker_name =%]" />
+    <meta property="og:title" content="[%= broker_name =%]" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
+
+    [% PROCESS _common/components/title.html.tt %]
+
+    [% PROCESS _common/includes/favicons.html.tt %]
+
+    <link href="[% request.url_for('css/graduate_program.css') _ '?' _ static_hash %]" rel="stylesheet" />
+    <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
+</head>
+
+<body>
+<div class="navbar-fixed-top" role="navigation" id="navigation">
+    <div class="container">
+    <div class="navbar-header">
+        <span id="toggle-menu" href="button" class="navbar-toggle"></span>
+        <a class="navbar-brand logo" href="[% request.url_for('home') %]"></a>
+    </div>
+    <div class="navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="invisible">
+                <a href="#page-top"></a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#who-we-are">[% l("Who we are") %]</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#application-process">[% l("Application process") %]</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#teams">[% l("Teams") %]</a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#programs">[% l("Programs") %]</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+<section id="page-top" class="intro">
+    <div class="intro-body">
+        <h1 class="intro-text">[% l("[_1] <span class=''>Graduate Program</span>", website_name) %]</h1>
+        <p class="intro-subtext">[% l("We\'re the best option for your career") %]</p>
+    </div>
+    <div class="intro-bg"></div>
+    <div id="register" class="primary-bg-color-dark section-header">
+        <a href="" class="button-outline"><span>[% l("Apply now") %]</span></a>
+    </div>
+</section>
+
+<section id="who-we-are" class="container">
+    <div class="section-header-inverse">
+        <h2>[% l("Who we are") %]</h2>
+    </div>
+    <p>[% l("[_1] is an exciting, challenging, and highly rewarding working environment, built on the strengths of our people. We aim to recruit the best of the best and to empower them in their careers so that they can flourish and grow with our business.", '<span class="text-bold">'_ website_name _'</span>') %]</p>
+    <p>[% l("As a graduate at [_1], you will be given responsibility from Day 1. Through training and development, you will build your existing skills and learn new ones. You will grow into a respected professional who is encouraged to break the norm and push the boundaries of technology and finance.", website_name) %]</p>
+    <p>[% l("We offer graduates and undergraduates the opportunity to work in highly-rewarding tech environment with exceptional people.") %]</p>
+</section>
+
+<section class="container">
+    <div class="section-header-inverse">
+        <h2>[% l("Who we\'re looking for") %]</h2>
+    </div>
+    <div class="gr-row">
+        <div class="gr-6 gr-12-m">
+            <div class="box fill-bg-color">
+                <p>[% l("The journey that we are on demands the right company technologists with a passion for their field and a strong will to resolve complex problems.") %]</p>
+                <p>[% l("When faced with a problem that you don\'t immedietly have the answer to, your determination and curiosity will drive you to a solution. You are a fast learner, and are open to adapting a wide range of technologies. You work well with others, and can collaborate in a fast-paced environment.") %]</p>
+            </div>
+        </div>
+        <div class="separator gr-padding-30 gr-12-m"></div>
+        <div class="gr-6 gr-12-m">
+            <h4 class="center-text">[% l("[_1]Education and experience requirements[_2]", '<span class="text-bold">', '</span>') %]</h4>
+            <div class="inline-flex">
+                <img class="icon" src="[% request.url_for('images/graduate_program/education_icon.svg') %]" />
+                <p>[% l("A Bachelors, Masters, or PhD in Computer Science, IT, Mathematics, Physics, or Engineering and is graduating by March 2018") %]</p>
+            </div>
+            <div class="inline-flex">
+                <img class="icon" src="[% request.url_for('images/graduate_program/coding_icon.svg') %]" />
+                <p>[% l("Experience with lower-level programming languages such as C, C++, Java, or Perl") %]</p>
+            </div>
+            <div class="inline-flex">
+                <img class="icon" src="[% request.url_for('images/graduate_program/experience_icon.svg') %]" />
+                <p>[% l("If already working, the candidate must have less than 1 year\'s working experience") %]</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+[% steps=[
+        { icon="one"    title="Send us your resume" description="Begin your application for our Graduate Program by uploading your resume. Be sure to include your contact detail. Feel free to emphasise any awards, achievements, and projects that will make you stand out!" },
+        { icon="two"    title="Phone screening" description="If your resume meets our basic requirements, we will give you a call to give us a better picture of who you are and what your interests are." },
+        { icon="three"  title="Technical tests" description="If you have passed our phone screening, you will be invited to a technical test either on-site or online. Depending on your qualifications and background, you will be asked technical questions, which may include writing code." },
+        { icon="four"   title="Self-Assessment Questionnaire (SATI)" description="Once you\'ve passed our Technical Test, we will send out a Self-Assessment Questionnaire to you to try to understand your background and personality better." },
+        { icon="five"   title="A Day @ Binary and Interviews" description="If you\'ve been successful with the SATI so far, you will be invited to A Day @ Binary, a full day event at Binary\'s office in Cyberjaya. This is an opportunity for you to learn more about us, experience our culture, and meet with some of your potential team members. You will participate in interviews and group exercises, and will be given a chance to ask us questions about life at Binary." },
+        { icon="six"    title="Job offer" description="If you were successful at the interviews and A Day @ Binary, congratulations! We will contact you with an official offer to join the Graduate Program."}
+    ] %]
+<section id="application-process">
+    <div class="section-header primary-bg-color">
+        <h2>[% l("Application process") %]</h2>
+    </div>
+    <div class="container">
+        <div class="gr-row">
+            <div class="gr-12">
+                [% FOREACH step IN steps %]
+                <div class="boxed-steps">
+                    <span class="[% step.icon %]_icon icon"></span>
+                    <h3>[% step.title %]</h3>
+                    <p>[% step.description %]</p>
+                </div>
+                [% END %]
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="teams">
+    <div class="section-header primary-bg-color">
+        <h2>[% l("Software development teams") %]</h2>
+    </div>
+    <div id="dev-teams" class="container">
+        <div class="tab-menu">
+            <ul>
+                <li class="tab active"><a href="#frontend">Frontend</a></li>
+                <li class="tab"><a href="#backend">Backend</a></li>
+                <li class="tab"><a href="#quants">Quants</a></li>
+                <span id="active-tab-indicator"></span>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div id="frontend">
+                <div class="gr-row inline-flex">
+                    <div class="gr-7 gr-12-m">
+                        <h2>[% l("Front-end Developer") %]</h2>
+                        <div class="box fill-bg-color">
+                            <p>[% l("Our Frontend team develops and maintains our user-facing projects, namely our website and mobile applications. The team uses the company\'s API in the backend to build websites and applications. Implement new features in our trading platforms, fix bugs and maintain existing platforms") %]</p>
+                            <p>[% l("Technologies: HTML, JavaScript, CSS") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-5 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/graduate_program/frontend_icon.svg') %]" />
+                    </div>
+                </div>
+            </div>
+            <div id="backend">
+                <div class="gr-row inline-flex">
+                    <div class="gr-7 gr-12-m">
+                        <h2>[% l("Back-end Developer") %]</h2>
+                        <div class="box fill-bg-color">
+                            <p>[% l("Our Backend team is responsible for developing our service side logic. Build and maintain our APIs, add product features, scale up our services, and build integrations into third-party financial systems. The team is always looking for ways to make their product more efficient, without sacrificing stability.") %]</p>
+                            <p>[% l("Technologies: Perl, C++, Redis, PostgreSQL") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-5 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/graduate_program/backend_icon.svg') %]" />
+                    </div>
+                </div>
+            </div>
+            <div id="quants">
+                <div class="gr-row inline-flex">
+                    <div class="gr-7 gr-12-m">
+                        <h2>[% l("Quantitative Developer") %]</h2>
+                        <div class="box fill-bg-color">
+                            <p>[% l("Quants are the statisticians of the company. The team is responsible for pricing our binary options and risk management, as well as coming up with various financial models and predicting market movements during economic events.") %]</p>
+                            <p>[% l("Technologies: Perl, R, Python, MATLAB") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-5 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/graduate_program/quants_icon.svg') %]" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="programs">
+    <div class="section-header primary-bg-color">
+        <h2>[% l("What\'s in the program?") %]</h2>
+    </div>
+    <div class="container">
+        <p>[% l("[_1]The Graduate Program[_2] is our framework that is designed to make the most of your potential, as well as to give you as much exposure to our business as possible.", '<span class="text-bold">', '</span>') %]</p>
+        <div class="inline-flex">
+            <img class="icon-lg" src="[% request.url_for('images/graduate_program/program1_icon.svg') %]" />
+            <p>[% l("You will begin your career with us with an Orientation Week - A week away from the office packed with fun and learning! Here you will participate in team-building activities and receive training on how to navigate through the workplace at Binary. You will also be given a chance to participate in a mini-Hackathon, where you will get the chance to make pull requests and contribute to our codebase in your first week!") %]</p>
+        </div>
+        <div class="inline-flex">
+            <img class="icon-lg" src="[% request.url_for('images/graduate_program/program2_icon.svg') %]" />
+            <p>[% l("You will be assigned a Buddy and a Mentor to guide you throughout the Graduate Program. You will get the opportunity to participate in pair programming sessions and have a friend to help you during your learning journey.") %]</p>
+        </div>
+        <div class="inline-flex">
+            <img class="icon-lg" src="[% request.url_for('images/graduate_program/program3_icon.svg') %]" />
+            <p>[% l("You will be placed in three rotations - namely in the Backend, Frontend, and Quants teams. In each of these placements, you will be able to get a feel for what each team does in their day-to-day work, and will be tasked to contribute to our codebase. Tasks will be assigned to you in increasing complexity, helping you build your confidence.") %]</p>
+        </div>
+        <div class="inline-flex">
+            <img class="icon-lg" src="[% request.url_for('images/graduate_program/program4_icon.svg') %]" />
+            <p>[% l("Throughout the Graduate Program, you will be able to attend our Software Craftsmanship Workshops - interactive lessons on various Engineering topics to help you better understand our codebase.") %]</p>
+        </div>
+        <div class="inline-flex">
+            <img class="icon-lg" src="[% request.url_for('images/graduate_program/program5_icon.svg') %]" />
+            <p>[% l("At the end of the three rotations, you will move on to a full-time positions, and will be assigned to one of the three teams based on your previous experience, your perfomance in each of the teams, and your preferences.") %]</p>
+        </div>
+    </div>
+</section>
+
+[% quotes=[
+        { image='' quote=l("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dolor nisl, eleifend vitae velit eget, venenatis molestie mauris. Curabitur ornare elementum nunc at viverra. Cras at est id justo tempus.")
+          by='John Smith' position=l("Front-end Developer") },
+        { image='' quote=l("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dolor nisl, eleifend vitae velit eget, venenatis molestie mauris. Curabitur ornare elementum nunc at viverra. Cras at est id justo tempus.")
+          by='Jane Doe' position=l("Back-end Developer") },
+        { image='' quote=l("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dolor nisl, eleifend vitae velit eget, venenatis molestie mauris. Curabitur ornare elementum nunc at viverra. Cras at est id justo tempus.")
+          by='Sherlock Holmes' position=l("Quantitative Developer") },
+    ] %]
+<section>
+    <div class="section-header primary-bg-color">
+        <h2>[% l("Meet our employees") %]</h2>
+    </div>
+    <div id="employees-quote" class="container">
+        <div class="inline-flex gr-row">
+            <a id="prev" class="gr-1 ic_chevron_left"></a>
+            <div id="content" class="gr-10 gr-7-m">
+                [% FOREACH item IN quotes %]
+                <div class="gr-row inline-flex">
+                    <div class="gr-4 gr-12-m center-text">
+                        <img class="img-rounded" src="http://via.placeholder.com/150x150" />
+                    </div>
+                    <div class="gr-8 gr-12-m">
+                        <div class="quotes">
+                            <h3>[% item.quote %]</h3>
+                            <p class="title">[% item.by %], [% item.position %], Binary Group Services</p>
+                        </div>
+                    </div>
+                </div>
+                [% END %]
+            </div>
+            <a id="next" class="gr-1 ic_chevron_right"></a>
+        </div>
+    </div>
+</section>
+
+<footer class="center-text">
+    <p>[% l("Visit our <a class='link' target='_blank' href='[_1]'>careers page[_2] for more opportunities at Binary.com!", request.url_for('careers.html'), '</a>') %]</p>
+</footer>
+
+<script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
+<script src="[% request.url_for('js/landing_pages/graduate_program.js') _ '?' _ static_hash %]"></script>
+</body>
+</html>
