@@ -196,18 +196,6 @@ const MetaTraderUI = (() => {
         }
 
         if (!actions_info[action]) { // Manage Fund
-            let msg = '';
-            if (Client.get('is_virtual')) {
-                msg = MetaTraderConfig.needsRealMessage();
-            } else if (Client.get('currency') !== MetaTraderConfig.mt5Currency()) {
-                msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.mt5Currency()]);
-            }
-            if (msg) {
-                displayMainMessage(msg);
-                $action.setVisibility(1);
-                return;
-            }
-
             cloneForm();
             $form.find('.binary-account').text(`Binary ${Client.get('loginid')}`);
             $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
@@ -221,6 +209,17 @@ const MetaTraderUI = (() => {
                     }
                 });
             });
+
+            let msg = '';
+            if (Client.get('is_virtual') && !accounts_info[acc_type].is_demo) {
+                msg = MetaTraderConfig.needsRealMessage();
+            } else if (Client.get('currency') !== MetaTraderConfig.mt5Currency()) {
+                msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.mt5Currency()]);
+            }
+            if (msg) {
+                displayMainMessage(msg);
+                $action.find('#frm_cashier').setVisibility(0);
+            }
             return;
         }
 
