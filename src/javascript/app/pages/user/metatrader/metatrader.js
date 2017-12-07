@@ -152,7 +152,6 @@ const MetaTrader = (() => {
                 BinarySocket.send(req).then((response) => {
                     if (response.error) {
                         MetaTraderUI.displayFormMessage(response.error.message, action);
-                        MetaTraderUI.enableButton(action);
                     } else {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : accounts_info[acc_type].info.login;
