@@ -159,6 +159,7 @@ const MetaTrader = (() => {
                         if (!accounts_info[acc_type].info) {
                             accounts_info[acc_type].info = { login };
                             MetaTraderUI.setAccountType(acc_type, true);
+                            BinarySocket.send({ mt5_login_list: 1 });
                         }
                         MetaTraderUI.loadAction(null, acc_type);
                         getAccountDetails(login, acc_type);
