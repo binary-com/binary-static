@@ -265,7 +265,7 @@ const MetaTraderUI = (() => {
         $form.find('#btn_cancel').click(() => {
             loadAction(null, acc_type);
             displayAccountDescription(acc_type);
-            $.scrollTo($container, 300, { offset: -10 });
+            $.scrollTo($('h1'), 300, { offset: -10 });
         });
         const displayStep = (step) => {
             $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
