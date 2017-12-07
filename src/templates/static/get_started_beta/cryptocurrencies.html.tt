@@ -16,9 +16,13 @@
         </div>
         <div class="gr-9 gr-12-m">
             [% WRAPPER section id='what-crypto-trading' header=l("What is cryptocurrency trading") %]
-                <p>[% l("Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital currencies that enable instant payments to anywhere in the world.") %]</p>
-                <p>[% l("The decentralised nature of cryptocurrencies means that no single government body or financial authority has control over them.") %]</p>
-                <p>[% l("All cryptocurrencies use a variation of the blockchain technology (a kind of public ledger) to store records of each transaction. Plus, each transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit.") %]</p>
+                <p>[% l("Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital currencies on the blockchain.") %]</p>
+                <p>[% l("Some of the things that cryptocurrencies have in common include:") %]</p>
+                <ul class="bullet">
+                    <li>[% l("Decentralisation – The decentralised nature of cryptocurrencies means that no single government body or financial authority has control over them") %]</li>
+                    <li>[% l("Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. ") %]</li>
+                    <li>[% l("High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit") %]</li>
+                </ul>
                 <p>[% l("Trading cryptocurrencies on our MetaTrader 5 platform means taking a position on a cryptocurrency pair when you expect it to rise or fall in value so you can make a profit when your prediction is correct.") %]</p>
             [% END %]
             [% WRAPPER section id='how-trade-crypto' header=l("How to trade cryptocurrencies") %]

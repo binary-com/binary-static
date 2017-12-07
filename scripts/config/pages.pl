@@ -140,7 +140,6 @@ sub all_pages {
         ['metatrader/contract-specifications', 'static/metatrader/contract_specifications', 'default',     'Contract Specifications'],
         ['metatrader/download',                'static/metatrader/download',                'default',     'Start Trading with MetaTrader 5'],
         ['metatrader/how-to-trade-mt5',        'static/metatrader/how_to_trade_mt5',        'default',     'How to Trade in MetaTrader 5'],
-        ['metatrader/margin-policy',           'static/metatrader/margin_policy',           'full_width',  'MetaTrader 5 Margin Policy'],
         ['metatrader/types-of-accounts',       'static/metatrader/types_of_accounts',       'default',     'Types of MetaTrader 5 accounts'],
 
         ['affiliate_disclaimer',               'static/japan/affiliates/popup',             undef,          '',                                'NOT-ja,en'],
