@@ -22,7 +22,7 @@ function scrollToSection(e) {
 
 function tabWithIndicator(id) {
     const container = document.getElementById(id) ? document.getElementById(id) : document.body;
-    const indicator = container.querySelector('.tab-menu #active-tab-indicator');
+    const indicator = container.querySelector('.tab-menu .active-tab-indicator');
     const tabs      = container.querySelectorAll('.tab-menu .tab');
     const contents  = container.querySelectorAll('.tab-content-wrapper > div.tab-content');
     const numOfTabs = tabs.length;

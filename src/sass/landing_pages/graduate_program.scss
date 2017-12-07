@@ -7,6 +7,15 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px;
 }
 
+footer {
+    padding: 5px;
+    margin-top: 60px;
+}
+
+a.link {
+    color: $COLOR_ORANGE !important;
+}
+
 .button-outline {
     border: 2px solid $COLOR_WHITE;
     background: none;
@@ -21,15 +30,64 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-footer {
-    background-color: $COLOR_BLUE;
-    padding: 5px;
-    color: $COLOR_WHITE;
-    margin-top: 60px;
+.text-bold {
+    font-weight: bold;
 }
 
-a.link {
-    color: $COLOR_ORANGE !important;
+.orange-underline {
+    position: absolute;
+    content: '';
+    background: $COLOR_ORANGE;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 4px;
+    width: 80px;
+}
+
+.inline-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-rounded {
+    border-radius: 50%;
+}
+
+.icon-sm, .icon-md, .icon-lg {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    &.icon-sm {
+        height: 32px;
+        width: 32px;
+    }
+    &.icon-md {
+        height: 48px;
+        width: 48px;
+
+        &.margin-30 {
+            margin: 30px;
+            @media (max-width: 575px) {
+                margin: 20px;
+            }
+        }
+    }
+    &.icon-lg {
+        height: 64px;
+        width: 64px;
+
+        &.margin-left-0 {
+            margin: 50px 60px 50px 0;
+            @media (max-width: 575px) {
+                margin: 20px 30px 20px 0;
+            }
+        }
+    }
 }
 
 // Navbar
@@ -124,7 +182,6 @@ a.link {
         }
         &.expand {
             max-height: 440px;
-            padding-bottom: 0;
         }
         .navbar-header {
             width: 100%;
@@ -193,67 +250,42 @@ a.link {
             position: relative;
 
             &:after {
-                content: '';
-                background: $COLOR_ORANGE;
-                position: absolute;
-                bottom: -20px;
-                left: 0;
-                right: 0;
-                margin: auto;
-                height: 4px;
-                width: 80px;
+                @extend .orange-underline;
             }
         }
     }
 }
 
-.section-header {
+.section-title, .section-title-inverse {
+    @extend .inline-flex;
     min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 60px 0;
     padding: 15px;
 
     h2 {
-        color: $COLOR_WHITE;
         font-weight: 300 !important;
         text-align: center;
         position: relative;
 
         &:after {
-            content: '';
-            background: $COLOR_ORANGE;
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            right: 0;
-            margin: auto;
-            height: 4px;
-            width: 80px;
+            @extend .orange-underline;
         }
     }
-}
+    &.section-title-inverse {
+        h2 {
+            color: $COLOR_WHITE;
+        }
+    }
+    &.section-title {
+        justify-content: flex-start;
+        padding: 15px 0;
 
-.section-header-inverse {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    margin: 60px 0;
+        h2 {
+            color: $COLOR_DARK_BLUE;
 
-    h2 {
-        color: $COLOR_DARK_BLUE;
-        font-weight: 300 !important;
-        position: relative;
-
-        &:after {
-            content: '';
-            background: $COLOR_ORANGE;
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            height: 4px;
-            width: 80px;
+            &:after {
+                margin: 0;
+            }
         }
     }
 }
@@ -270,61 +302,25 @@ a.link {
     text-align: center;
 
     .icon {
+        @extend .icon-lg;
         position: absolute;
         top: -30px;
-        height: 64px;
-        max-width: 100%;
-        display: block;
-        width: 64px;
         margin: auto;
         left: 0;
         right: 0;
-        background-repeat: no-repeat;
-        background-size: contain;
     }
     &:not(:last-child):after {
+        position: absolute;
         content: '';
         background: $COLOR_LIGHT_GRAY;
-        position: absolute;
         top: 100%;
-        bottom: 0px;
+        bottom: 0;
         left: 0;
         right: 0;
         margin: auto;
         height: 110px;
         width: 2px;
     }
-}
-
-.text-bold {
-    font-weight: bold;
-}
-
-.icon {
-    height: 48px;
-    max-width: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: block;
-    margin: 30px;
-    @media (max-width: 575px) {
-        margin: 20px;
-    }
-}
-
-.icon-lg {
-    height: 64px;
-    min-width: 64px;
-    margin: 50px 60px 50px 0;
-    @media (max-width: 575px) {
-        margin: 20px 30px 20px 0;
-    }
-}
-
-.inline-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .one_icon {
@@ -359,18 +355,6 @@ a.link {
     background-image: url('../images/graduate_program/ic_chevron_right.svg');
 }
 
-#next, #prev {
-    display: block;
-    max-width: 30px;
-    height: 30px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.img-rounded {
-    border-radius: 50%;
-}
-
 .quotes {
     position: relative;
 
@@ -388,11 +372,10 @@ a.link {
     }
 }
 
-.tab-menu {
-    ul {
-        display: inline-flex;
+.tab-with-indicator {
+    ul.tab-menu {
+        @extend .inline-flex;
         width: 100%;
-        text-align: center;
         position: relative;
 
         li {
@@ -400,8 +383,8 @@ a.link {
             margin: 0;
             padding: 10px;
             font-size: $FONT_SIZE_XL;
+            text-align: center;
             border-bottom: 1px solid $COLOR_GRAY;
-            position: relative;
 
             a {
                 font-weight: 300;
@@ -411,7 +394,7 @@ a.link {
                 }
             }
         }
-        #active-tab-indicator {
+        .active-tab-indicator {
             position: absolute;
             bottom: -2px;
             height: 4px;
@@ -421,12 +404,18 @@ a.link {
             transition: left 0.3s;
         }
     }
+    .tab-content-wrapper {
+        margin: 40px 0;
+
+        .box {
+            min-height: 250px;
+        }
+    }
 }
 
-.tab-content {
-    margin: 40px 0;
-
-    .box {
-        min-height: 250px;
+.tab-with-buttons {
+    .twb-button {
+        @extend .icon-sm;
+        cursor: pointer;
     }
 }
