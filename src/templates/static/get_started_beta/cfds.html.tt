@@ -42,7 +42,7 @@
                 [% PROCESS header_secondary header=l("How to calculate your profits and losses") %]
                 <p>[% l("Let's say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to 'go long' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.") %]</p>
                 <p>[% l("However, if the asset price falls by 10 points, that represents a USD 10 loss for you.") %]</p>
-                <p>[% l("To learn more, please read our <a href='[_1]'>contract specifications</a>.", request.url_for('cfd.html#contract-specification') ) %]</p>
+                <p>[% l("To learn more, please read our <a href='[_1]'>contract specifications</a>.", request.url_for('cfds.html#contract-specification') ) %]</p>
 
                 [% PROCESS header_secondary header=l("How to close a position") %]
                 <p>[% l("When you decide to close an open contract, you only need to take the opposite position in order to close the contract.") %]</p>
