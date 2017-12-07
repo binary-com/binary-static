@@ -326,6 +326,7 @@
                 <div id="title_new_account">[% l('Create MetaTrader 5 [_1] account', '[_1]') %]</div>
                 <div id="msg_switch">[% l('To perform this action, please switch to your [_1] Real Account.', website_name) %]</div>
                 <div id="msg_upgrade">[% l('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', request.url_for('new_account/realws'), website_name) %]</div>
+                <div id="msg_currency_not_match">[% l('Please switch to a [_1] account to manage funds.', '[_1]') %]</div>
                 <div id="msg_real_financial">
                     [% l('To create a real financial MT5 account, please complete the following:') %]
                     <ul class="bullet">

@@ -195,6 +195,20 @@ const MetaTraderUI = (() => {
             return;
         }
 
+        if (action === 'cashier') {
+            let msg = '';
+            if (Client.get('is_virtual')) {
+                msg = MetaTraderConfig.needsRealMessage();
+            } else if (Client.get('currency') === MetaTraderConfig.mt5Currency()) {
+                msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.mt5Currency()]);
+            }
+            if (msg) {
+                displayMainMessage(msg);
+                $action.setVisibility(1);
+                return;
+            }
+        }
+
         if (!actions_info[action]) { // Manage Fund
             cloneForm();
             $form.find('.binary-account').text(`Binary ${Client.get('loginid')}`);
