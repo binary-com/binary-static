@@ -51,6 +51,7 @@ const Price = (() => {
         const high_barrier  = document.getElementById('barrier_high');
         const low_barrier   = document.getElementById('barrier_low');
         const prediction    = document.getElementById('prediction');
+        const lots          = document.getElementById('lots');
 
         if (payout && isVisible(payout) && payout.value) {
             proposal.amount = parseFloat(payout.value);
@@ -115,6 +116,10 @@ const Price = (() => {
 
         if (prediction && isVisible(prediction)) {
             proposal.barrier = parseInt(prediction.value);
+        }
+
+        if(lots && isVisible(lots) && lots.value) {
+            proposal.amount = lots.value;
         }
 
         if (contract_type) {

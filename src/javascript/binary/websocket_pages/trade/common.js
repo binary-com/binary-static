@@ -215,6 +215,8 @@ const commonTrading = (() => {
             barrier = 'euro_atm';
         } else if (/overunder|evenodd|matchdiff/.test(form_name)) {
             name = 'digits';
+        } else if (/lookback/.test(form_name)) {
+            name = 'lookback'
         }
         return {
             form_name       : name,
@@ -283,6 +285,9 @@ const commonTrading = (() => {
             ['digits',
                 ['matchdiff', 'evenodd', 'overunder'],
             ],
+            ['lookback',
+                ['lookbackhigh', 'lookbacklow', 'lookbackhighlow']
+            ]
         ];
 
         if (elements) {

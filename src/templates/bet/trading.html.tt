@@ -115,6 +115,14 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="row" id="lots_row">
+                                <div class="col form_label">
+                                    <label for="lots" id="lots_label">[% l("Lots") %]</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="lots" id="lots" class="small_width_input" />
+                                </div>
+                            </div>
                             <div class="row" id="payout_row">
                                 <div class="col form_label">
                                     <select id="amount_type">
