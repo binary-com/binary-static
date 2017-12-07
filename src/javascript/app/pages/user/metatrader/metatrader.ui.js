@@ -100,7 +100,9 @@ const MetaTraderUI = (() => {
             $acc_item.find('.mt-login').text(accounts_info[acc_type].info.login);
             $acc_item.setVisibility(1);
             if (acc_type === Client.get('mt5_account')) {
-                $acc_item.find('.mt-balance').html(formatMoney(mt5_currency, +accounts_info[acc_type].info.balance));
+                const mt_balance = formatMoney(mt5_currency, +accounts_info[acc_type].info.balance);
+                $acc_item.find('.mt-balance').html(mt_balance);
+                $action.find('.mt5-balance').html(mt_balance);
             }
             if (Object.keys(accounts_info).every(type => accounts_info[type].info)) {
                 $container.find('.act_new_account').remove();
@@ -126,7 +128,7 @@ const MetaTraderUI = (() => {
                 const key     = $(this).attr('data');
                 const info    = accounts_info[acc_type].info[key];
                 const mapping = {
-                    balance : () => formatMoney(mt5_currency, +info),
+                    balance : () => (isNaN(info) ? '' : formatMoney(mt5_currency, +info)),
                     leverage: () => `1:${info}`,
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
