@@ -1,6 +1,6 @@
 [% PROCESS _common/components/forms.html.tt %]
 <div class="container">
-    <div>
+    <div class="static_full">
         <h1>[% l('MetaTrader 5 Dashboard') %]</h1>
     </div>
     <p id="page_msg" class="notice-msg center-text invisible"></p>
