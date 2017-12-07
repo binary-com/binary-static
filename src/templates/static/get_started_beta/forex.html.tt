@@ -16,7 +16,7 @@
         </div>
         <div class="gr-9 gr-12-m">
             [% WRAPPER section id='what-forex-trading' header=l("What is Forex trading") %]
-                <p>[% l("The Foreign Exchange Market (Forex) is the world's most liquid and most traded market, where USD 5.3 trillion worth of trades are completed each day.") %]</p>
+                <p>[% l("The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions completed each day.") %]</p>
                 <p>[% l("Forex trading involves buying one currency and selling another currency at the same time. This is why you always see them quoted in pairs. For example: EUR/USD and GBP/USD.") %]</p>
 
                 [% PROCESS header_secondary header=l("Which currencies can I trade") %]
@@ -66,7 +66,6 @@
             [% END %]
             [% WRAPPER section id='how-to-trade-forex' header=l("How to trade Forex") %]
                 <p>[% l("A Forex trader always has one objective in mind when trading: to exchange one currency for another in order to make a profit.") %]</p>
-                <p>[% l("But if you're new to Forex or financial trading of any kind, there's still a long way to go before you even purchase your first contract.") %]</p>
                 <p>[% l("This is why we've come up with the following three-step tutorial to help you bridge that gap and make your first trade:") %]</p>
 
                 [% PROCESS header_secondary header=l("Step 1: Learn to read currency pairs") %]
