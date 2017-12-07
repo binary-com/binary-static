@@ -83,7 +83,7 @@ const MetaTraderUI = (() => {
             $action.setVisibility(0);
             if (should_set_account) {
                 setCurrentAccount(acc_type);
-                $.scrollTo($container, 300, { offset: -10 });
+                $.scrollTo($('h1'), 300, { offset: -10 });
             }
         }
     };
