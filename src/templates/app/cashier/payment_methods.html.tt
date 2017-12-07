@@ -21,7 +21,13 @@
 
     [% BLOCK row %]
         <div class="gr-row gr-padding-10 [% is_header ? 'table-header' : 'table-body' %]">
-            <div class="gr-2 gr-6-m">[% IF id %]<div id="[% id %]" class="payment-logo"></div>[% ELSE %][% method %][% END %]</div>
+            <div class="gr-2 gr-6-m">
+                [% IF logo %]
+                    <img src="[% request.url_for('images/pages/home-beta/payment/' _ logo _ '.svg') %]" />
+                [% ELSE %]
+                    [% method %]
+                [% END %]
+            </div>
             <div class="gr-2 gr-6-m">[% currencies %]</div>
             <div class="gr-2 gr-hide-m">[% deposit.join('<br />') %]</div>
             <div class="gr-3 gr-hide-m">[% withdrawal.join('<br />') %]</div>
@@ -40,33 +46,33 @@
 
     <div id="payment_methods">
     [% INCLUDE section title=l('Bank wire/Money transfer') %]
-    [% INCLUDE row id='int_bank_wire'       currencies='USD GBP EUR AUD' deposit='500 - 100,000'  withdrawal='500 - 100,000' time=[l('Deposit: [_1] working day', 1), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='local_bank_transfer' currencies='USD GBP EUR AUD' deposit='25 - 10,000'    withdrawal='25 - 10,000' time=[l('Deposit: [_1] working day', 1), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='western_union'       currencies='USD GBP EUR AUD' deposit='50 - 250'       withdrawal='50 - 250'    time=[l('Deposit: [_1] working day', 1), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='int_bank_wire'       logo='bank_transfer'          currencies='USD GBP EUR AUD' deposit='500 - 100,000'  withdrawal='500 - 100,000' time=[l('Deposit: [_1] working day', 1), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='local_bank_transfer' logo='internet_bank_transfer' currencies='USD GBP EUR AUD' deposit='25 - 10,000'    withdrawal='25 - 10,000' time=[l('Deposit: [_1] working day', 1), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='western_union'       logo='western_union'          currencies='USD GBP EUR AUD' deposit='50 - 250'       withdrawal='50 - 250'    time=[l('Deposit: [_1] working day', 1), l('Withdrawal: [_1] working day', 1)] %]
 
     [% INCLUDE section title=l('Credit/Debit Card') %]
-    [% INCLUDE row id='visa'            currencies='USD GBP EUR AUD' deposit='10 - 10,000' withdrawal='10 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='mastercard'      currencies='USD EUR AUD'     deposit='10 - 10,000' withdrawal='10 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='cuo_credit_card' currencies='USD'             deposit='10 - 1,000'  withdrawal='N/A'         time=[l('Deposit: Instant'), l('Withdrawal: Not applicable')] %]
+    [% INCLUDE row id='visa'                logo='visa'          currencies='USD GBP EUR AUD' deposit='10 - 10,000' withdrawal='10 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='mastercard'          logo='mastercard'    currencies='USD EUR AUD'     deposit='10 - 10,000' withdrawal='10 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='cuo_credit_card'     logo='union_pay'     currencies='USD'             deposit='10 - 1,000'  withdrawal='N/A'         time=[l('Deposit: Instant'), l('Withdrawal: Not applicable')] %]
 
     [% INCLUDE section title=l('E-cash') %]
-    [% INCLUDE row id='okpay'         currencies='USD EUR'         deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='fastpay'       currencies='USD'             deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='perfect_money' currencies='USD EUR'         deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='moneybrokers'  currencies='USD GBP EUR AUD' deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='neteller'      currencies='USD GBP EUR AUD' deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='moneta'        currencies='USD GBP EUR AUD' deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='webmoney'      currencies='USD EUR'         deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='qiwi'          currencies='USD EUR'         deposit=['5 - 200 (USD)', '5 - 150 (EUR)'] withdrawal=['5 - 200 (USD)', '5 - 150 (EUR)'] time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='yandex'        currencies='USD'             deposit='25 - 10,000' withdrawal='N/A'        time=[l('Deposit: Instant'), l('Withdrawal: Not Applicable')] %]
-    [% INCLUDE row id='paysafecard'   currencies='USD GBP EUR AUD' deposit='5 - 1,000'   withdrawal='5 - 750'    time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='okpay'               logo='okpay'         currencies='USD EUR'         deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='fastpay'             logo='fasapay'       currencies='USD'             deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='perfect_money'       logo='perfect_money' currencies='USD EUR'         deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='moneybrokers'        logo='skrill'        currencies='USD GBP EUR AUD' deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='neteller'            logo='neteller'      currencies='USD GBP EUR AUD' deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='moneta'              logo='monetaru'      currencies='USD GBP EUR AUD' deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='webmoney'            logo='webmoney'      currencies='USD EUR'         deposit='5 - 10,000'  withdrawal='5 - 10,000' time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='qiwi'                logo='qiwi'          currencies='USD EUR'         deposit=['5 - 200 (USD)', '5 - 150 (EUR)'] withdrawal=['5 - 200 (USD)', '5 - 150 (EUR)'] time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='yandex'              logo='yandex'        currencies='USD'             deposit='25 - 10,000' withdrawal='N/A'        time=[l('Deposit: Instant'), l('Withdrawal: Not Applicable')] %]
+    [% INCLUDE row id='paysafecard'         logo='paysafe'       currencies='USD GBP EUR AUD' deposit='5 - 1,000'   withdrawal='5 - 750'    time=[l('Deposit: Instant'), l('Withdrawal: [_1] working day', 1)] %]
 
     [% INCLUDE section title=l('Cryptocurrencies') withdrawal=l('Min Withdrawal') %]
-    [% INCLUDE row id='btc' currencies='BTC' deposit='0.002' withdrawal='0.002' time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='bch' currencies='BCH' deposit='0.01'  withdrawal='0.01'  time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='eth' currencies='ETH' deposit='0.01'  withdrawal='0.01'  time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='btc' logo='bitcoin'          currencies='BTC' deposit='0.002' withdrawal='0.002' time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='bch' logo='bitcoin_cash'     currencies='BCH' deposit='0.01'  withdrawal='0.01'  time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='eth' logo='ethereum_black'   currencies='ETH' deposit='0.01'  withdrawal='0.01'  time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
     [%# INCLUDE row id='etc' currencies='ETC' deposit='0.002' withdrawal='0.002' time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='ltc' currencies='LTC' deposit='0.1'   withdrawal='0.1'   time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='ltc' logo='litecoin'         currencies='LTC' deposit='0.1'   withdrawal='0.1'   time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
     </div>
 
     <div class="gr-padding-10">

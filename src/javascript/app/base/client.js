@@ -6,7 +6,7 @@ const isCryptocurrency   = require('../common/currency').isCryptocurrency;
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 const LocalStore         = require('../../_common/storage').LocalStore;
 const State              = require('../../_common/storage').State;
-const Url                = require('../../_common/url');
+const urlFor             = require('../../_common/url').urlFor;
 const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 const isEmptyObject      = require('../../_common/utility').isEmptyObject;
@@ -417,7 +417,15 @@ const Client = (() => {
 
     };
 
-    const defaultRedirectUrl = () => Url.urlFor(jpClient() ? 'multi_barriers_trading' : get('is_ico_only') ? 'user/ico-subscribe' : 'trading');
+    const defaultRedirectUrl = () => {
+        let redirect_url = 'trading';
+        if (jpClient()) {
+            redirect_url = 'multi_barriers_trading';
+        } else if (get('is_ico_only')) {
+            redirect_url = 'user/ico-subscribe';
+        }
+        return urlFor(redirect_url);
+    };
 
     return {
         init,
