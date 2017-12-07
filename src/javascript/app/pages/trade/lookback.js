@@ -23,13 +23,13 @@ const Lookback = (() => {
             lot_element.hide();
             payout_element.show(); // Show payout
         }
-    }
+    };
 
     return {
-        display: displayLookback
-    }
+        display: displayLookback,
+    };
 })();
 
 module.exports = {
-    Lookback
+    Lookback,
 };

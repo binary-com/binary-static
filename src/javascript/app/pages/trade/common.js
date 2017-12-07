@@ -216,7 +216,7 @@ const commonTrading = (() => {
         } else if (/overunder|evenodd|matchdiff/.test(form_name)) {
             name = 'digits';
         } else if (/lookback/.test(form_name)) {
-            name = 'lookback'
+            name = 'lookback';
         }
         return {
             form_name       : name,
@@ -252,6 +252,9 @@ const commonTrading = (() => {
         UPORDOWN    : 'bottom',
         ONETOUCH    : 'top',
         NOTOUCH     : 'bottom',
+        LBFLOATCALL : 'middle',
+        LBFLOATPUT  : 'middle',
+        LBHIGHLOW   : 'middle',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');
@@ -286,8 +289,8 @@ const commonTrading = (() => {
                 ['matchdiff', 'evenodd', 'overunder'],
             ],
             ['lookback',
-                ['lookbackhigh', 'lookbacklow', 'lookbackhighlow']
-            ]
+                ['lookbackhigh', 'lookbacklow', 'lookbackhighlow'],
+            ],
         ];
 
         if (elements) {

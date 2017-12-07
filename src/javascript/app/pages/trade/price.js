@@ -168,6 +168,7 @@ const Price = (() => {
         const payout        = container.getElementsByClassName('payout')[0];
         const purchase      = container.getElementsByClassName('purchase_button')[0];
         const description   = container.getElementsByClassName('contract_description')[0];
+        const longcode      = container.getElementsByClassName('contract_longcode')[0];
         const comment       = container.getElementsByClassName('price_comment')[0];
         const error         = container.getElementsByClassName('contract_error')[0];
         const currency      = document.getElementById('currency');
@@ -192,7 +193,8 @@ const Price = (() => {
             elementInnerHtml(payout_amount, data.payout ? formatMoney((currency.value || currency.getAttribute('value')), data.payout) : '-');
 
             if (data.longcode && window.innerWidth > 500) {
-                description.setAttribute('data-balloon', data.longcode);
+                if (description) description.setAttribute('data-balloon', data.longcode);
+                if (longcode) elementTextContent(longcode, data.longcode);
             } else {
                 description.removeAttribute('data-balloon');
             }
@@ -217,11 +219,13 @@ const Price = (() => {
             }
             comment.show();
             error.hide();
-            commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
+            if(!/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
+                commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
+            }
             const old_price  = purchase.getAttribute('data-display_value');
             const old_payout = purchase.getAttribute('data-payout');
-            displayPriceMovement(amount, old_price, proposal.display_value);
-            displayPriceMovement(payout_amount, old_payout, proposal.payout);
+            if(amount) displayPriceMovement(amount, old_price, proposal.display_value);
+            if(payout_amount) displayPriceMovement(payout_amount, old_payout, proposal.payout);
             purchase.setAttribute('data-purchase-id', id);
             purchase.setAttribute('data-ask-price', proposal.ask_price);
             purchase.setAttribute('data-display_value', proposal.display_value);
@@ -289,6 +293,29 @@ const Price = (() => {
                     break;
             }
         }
+
+        if (Contract.form() === 'lookback') {
+            switch (sessionStorage.getItem('formname')) {
+                case 'lookbackhigh':
+                    types = {
+                        LBFLOATCALL: 1,
+                    };
+                    break;
+                case 'lookbacklow':
+                    types = {
+                        LBFLOATPUT: 1,
+                    };
+                    break;
+                case 'lookbackhighlow':
+                    types = {
+                        LBHIGHLOW: 1,
+                    };
+                    break;
+                default:
+                    break;
+            }
+        }
+
         processForgetProposals().then(() => {
             Object.keys(types).forEach((type_of_contract) => {
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {

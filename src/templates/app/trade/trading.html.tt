@@ -218,6 +218,25 @@
                     <div class="col price_comment"></div>
                     <div class="col contract_error"></div>
                 </div>
+                <div class="col price_container row-inner" id="price_container_middle">
+                    <div class="col gr-row">
+                        <div class="price_wrapper">
+                            <div class="contract_longcode"></div>
+                            <h4 class="contract_heading"></h4>
+                            <span class="amount_wrapper">
+                                <div class="stake_wrapper">
+                                    <span class="stake"></span>
+                                    <span class="contract_amount"></span>
+                                </div>
+                                <div class="contract_purchase button">
+                                    <span class="purchase_button no-underline" id="purchase_button_middle" data-balloon-length="xlarge" value="purchase">[% l("Purchase") %]</span>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col price_comment"></div>
+                    <div class="col contract_error"></div>
+                </div>
             </div>
         </div>
     </div>
