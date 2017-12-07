@@ -33,19 +33,12 @@
         </div>
         <div class="gr-9 gr-12-m">
             [% WRAPPER section id='what-metals-trading' header=l("What is metals trading") %]
-                <p>[% l("Diversify your portfolio with precious metals that are popularly known as \"safe haven\" investments.") %]</p>
-                <p>[% l("Metals trading lets you speculate on the price movement of a particular metal asset – such as gold – in order to profit from the price difference when the asset value rises or falls.") %]</p>
+                <p>[% l("Diversify your portfolio with some of the most popular commodities in the world including gold and silver.") %]</p>
+                <p>[% l("Metals trading lets you speculate on the price movement of a particular metal asset in order to profit from the price difference when the asset value rises or falls.") %]</p>
 
                 [% PROCESS header_secondary header=l("Metal – a hard commodity") %]
-                <p>[% l("Traded commodities come in four categories:") %]</p>
-                <ul class="bullet">
-                    <li>[% l("Agriculture") %]</li>
-                    <li>[% l("Livestock and meat") %]</li>
-                    <li>[% l("Energy") %]</li>
-                    <li>[% l("Metals") %]</li>
-                </ul>
-                <p>[% l("Energy and metals are also known as \"hard\" commodities as they are natural resources that must be mined or extracted. \"Soft\" commodities refer to agriculture, livestock, and meat as these are typically grown, rather than mined.") %]</p>
-                <p>[% l("Metals are further categorised into two types:") %]</p>
+                <p>[% l("Metals are also known as \"hard\" commodities as they are natural resources that must be mined or extracted.") %]</p>
+                <p>[% l("Metals are categorised into two types:") %]</p>
                 <ul class="bullet">
                     <li>[% l("Industrial metals") %]<br/>[% l("Industrial metals – also known as base metals – are abundant, but oxidise or corrode easily. Industrial metals feature heavily across a wide range of industrial and commercial applications, including electrical wiring, automobiles, and batteries.") %]</li>
                     <li>[% l("Precious metals") %]<br/>[% l("Precious metals are harder to come by and are more valuable than industrial metals. Because precious metals are softer and less reactive, they are widely used in jewellery, medical devices, and electronics.") %]</li>
@@ -53,9 +46,9 @@
 
                 [% PROCESS header_secondary header=l("Why you should trade precious metals with [_1]", website_name) %]
                 <ul class="checked">
-                    [% PROCESS list_strong header=l("Competitive gold spreads") text=l("Trade gold on competitive fixed and variable spreads.") %]
-                    [% PROCESS list_strong header=l("Commission-free")          text=l("Pay no commission on all precious metal contracts.") %]
-                    [% PROCESS list_strong header=l("Comprehensive")            text=l("Trade all four precious metals on one platform.") %]
+                    [% PROCESS list_strong header=l("Competitive spreads") text=l("Trade metals on competitive fixed and variable spreads.") %]
+                    [% PROCESS list_strong header=l("Commission-free")     text=l("Pay no commission on all metal contracts.") %]
+                    [% PROCESS list_strong header=l("Comprehensive")       text=l("Trade all four precious metals on one platform.") %]
                 </ul>
             [% END %]
             [% WRAPPER section id='how-trade-metals' header=l("How to trade metals") %]
@@ -70,8 +63,8 @@
                 <p>[% l("If you decide to buy or 'go long' on the XAU/USD, you will profit if the price of the XAU/USD rises, and incur losses if the price falls.") %]</p>
                 <p>[% l("If you decide to sell or 'go short' on XAU/USD, you will profit if the price of the XAU/USD falls, and incur losses if the price rises.") %]</p>
 
-                [% PROCESS header_secondary header=l("Factors that affect precious metal prices") %]
-                <p>[% l("Knowing when to buy and sell precious metals largely depends on how well you know the factors that influence market prices. The most common influencing factors are:") %]</p>
+                [% PROCESS header_secondary header=l("Factors that affect metal prices") %]
+                <p>[% l("Knowing when to buy and sell metals largely depends on how well you know the factors that influence market prices. The most common influencing factors are:") %]</p>
                 <ul class="checked">
                     <li>[% l("Supply – Decline or increase in supply") %]</li>
                     <li>[% l("Demand – Driven by industrial and commercial applications, including new technological products or fashion trends") %]</li>
