@@ -83,9 +83,9 @@ const BinarySocketGeneral = (() => {
                 break;
             case 'landing_company':
                 Header.upgradeMessageVisibility();
-                if (!response.error) {
-                    Header.metatraderMenuItemVisibility();
-                }
+                // if (!response.error) { // to be uncommented when planning to launch MetaTrader
+                //     Header.metatraderMenuItemVisibility();
+                // }
                 break;
             case 'get_self_exclusion':
                 SessionDurationLimit.exclusionResponseHandler(response);
