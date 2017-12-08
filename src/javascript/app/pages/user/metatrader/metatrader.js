@@ -19,8 +19,11 @@ const MetaTrader = (() => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
             if (isEligible()) {
                 MetaTraderUI.switchToMT5();
-                getAllAccountsInfo();
-                MetaTraderUI.init(submit);
+                if (Client.get('is_virtual')) {
+                    getAllAccountsInfo();
+                } else {
+                    BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
+                }
             } else {
                 MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
             }
@@ -63,6 +66,7 @@ const MetaTrader = (() => {
     };
 
     const getAllAccountsInfo = () => {
+        MetaTraderUI.init(submit);
         BinarySocket.wait('mt5_login_list').then((response) => {
             // Ignore old accounts which are not linked to any group or has deprecated group
             const mt5_login_list = (response.mt5_login_list || []).filter(obj => (
