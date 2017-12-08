@@ -4,9 +4,9 @@ const fs = require('fs');
 const Path = require('path');
 const Url = require('url');
 const Gettext = require('./gettext');
-const Colors = require('colors');
 const Crypto = require('crypto');
-const appRoot = require('app-root-path').path;
+const common = require('./common');
+const generate_static_data = require('./generate-static-data');
 
 const readFile = (path) => new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, result) => {
@@ -22,16 +22,6 @@ const writeFile = (path, data) => new Promise((resolve, reject) => {
 })
 
 const CONTENT_PLACEHOLDER = "CONTENT_PLACEHOLDER"; // used in layout.vash
-
-const pages = require('./pages').map(p => ({
-    save_as  : p[0],
-    tpl_path : p[1],
-    layout   : p[2],
-    title    : p[3],
-    excludes : p[4],
-    only_ja  : p[4] && /^NOT-ja,en$/.test(p[4]),
-    current_route: p[0].replace(/^(.+)\//, ''),
-}));
 
 /**********************************************************************
  * Vash helpers
@@ -49,7 +39,7 @@ Vash.config.debugparser = true;
 Vash.config.debugcompiler = true;
 Vash.config.cache = true;
 Vash.config.settings = {
-    views: Path.join(appRoot, 'src/templates')
+    views: Path.join(common.root_path, 'src/templates')
 }
 
 /**********************************************************************
@@ -60,9 +50,9 @@ function getConfig() {
         branch    : '',
         path      : '',
         is_dev    : false,
-        languages : ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW'],
+        languages : common.languages,
         sections  : ['app', 'static'],
-        root_path : appRoot,
+        root_path : common.root_path,
         add_translations: false,
     }
     for (let i = 2; i < process.argv.length; i++) {
@@ -107,11 +97,6 @@ function should_compile(excludes, lang) {
     return true;
 }
 
-const print = (text) => {
-    process.stdout.clearLine();
-    process.stdout.cursorTo(0);
-    process.stdout.write(text);
-};
 function file_hash_async(path, cb) {
     return new Promise((res, rej) => {
         var fd = fs.createReadStream(path);
@@ -132,7 +117,7 @@ function file_hash_async(path, cb) {
  * Factory functions
  **********************************************************************/
 
-const gettext = Gettext.createGettextInstance();
+const gettext = Gettext.getInstance();
 const createTranslator = lang => {
     lang = lang.toLowerCase(lang);
     gettext.setLang(lang);
@@ -152,7 +137,7 @@ const createUrlFinder  = lang => {
 
         const p = Url.parse(url, true);
         const pathname = p.pathname.replace(/^\//, '');
-        if(pages.filter(p => p.save_as === pathname).length) {
+        if(common.pages.filter(p => p.save_as === pathname).length) {
             p.pathname = Path.join(config.root_url, `${lang}/${pathname}.html`)
             return Url.format(p);
         }
@@ -336,8 +321,9 @@ create_directories();
 (async () => {
     const config = getConfig();
     try {
-        await compile(pages.find(p => p.save_as === (config.path || 'home')));
+        await compile(common.pages.find(p => p.save_as === (config.path || 'home')));
         if(config.add_translations) {
+            generate_static_data.build();
             gettext.update_translations();
         }
     } catch(e) {

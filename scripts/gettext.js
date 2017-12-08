@@ -3,7 +3,7 @@ const fs = require('fs');
 const Path = require('path');
 const Gettext = require('node-gettext');
 const { po } = require('gettext-parser');
-const colors = require('colors');
+const common = require('./common');
 
 Gettext.prototype.dnpgettext = function(domain, msgctxt, msgid, msgidPlural, count) {
     var defaultTranslation = msgid;
@@ -38,10 +38,10 @@ Gettext.prototype.dnpgettext = function(domain, msgctxt, msgid, msgidPlural, cou
     return defaultTranslation;
 };
 
-exports.createGettextInstance = () => {
+const createGettextInstance = () => {
     console.time("Loading .po files")
 
-    const translations_dir = './src/translations/'
+    const translations_dir = 'src/translations/'
     const locales = [
         'en', 'ach_UG', 'fr_FR', 'it_IT', 'pt_PT', 'th_TH', 'zh_CN',
         'de_DE', 'es_ES', 'id_ID', 'ja_JP', 'pl_PL', 'ru_RU', 'vi_VN', 'zh_TW'
@@ -51,7 +51,7 @@ exports.createGettextInstance = () => {
     const gt = new Gettext()
 
     locales.forEach((locale) => {
-        const po_file = Path.join(translations_dir, `${locale}.po`);
+        const po_file = Path.join(common.root_path, translations_dir, `${locale}.po`);
         const po_content = fs.readFileSync(po_file, 'utf8');
 
         const parsed = po.parse(po_content)
@@ -92,7 +92,7 @@ exports.createGettextInstance = () => {
                 process.stdout.write("Skipped\n".green);
                 return;
             }
-            const messages_file = Path.join(translations_dir, `messages.pot`);
+            const messages_file = Path.join(common.root_path, translations_dir, `messages.pot`);
             const content = fs.readFileSync(messages_file, 'utf8');
             const parsed = po.parse(content)
 
@@ -105,11 +105,21 @@ exports.createGettextInstance = () => {
 
             const output = po.compile(parsed, {foldLength: 0});
             fs.writeFileSync(
-                Path.join(translations_dir, "messages.pot"),
+                Path.join(common.root_path, translations_dir, "messages.pot"),
                 output,
                 "utf8"
             )
             process.stdout.write(`Updated messages.pot with ${not_translated.length} new entries\n`.green);
         }
     }
+}
+
+let gt_instance = null;
+exports.getInstance = () => {
+    if(gt_instance) {
+        return gt_instance;
+    }
+
+    gt_instance = createGettextInstance();
+    return gt_instance;
 }
