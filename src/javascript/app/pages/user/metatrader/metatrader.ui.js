@@ -1,5 +1,6 @@
 const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
+const BinarySocket     = require('../../../base/socket');
 const formatMoney      = require('../../../common/currency').formatMoney;
 const Validation       = require('../../../common/form_validation');
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
@@ -16,11 +17,11 @@ const MetaTraderUI = (() => {
         $templates,
         $form,
         $main_msg,
+        validations,
         submit;
 
     const accounts_info = MetaTraderConfig.accounts_info;
     const actions_info  = MetaTraderConfig.actions_info;
-    const validations   = MetaTraderConfig.validations;
     const mt5_currency  = MetaTraderConfig.mt5Currency();
 
     const init = (submit_func) => {
@@ -35,8 +36,17 @@ const MetaTraderUI = (() => {
         $main_msg    = $container.find('#main_msg');
         $container.find('[class*="act_"]').click(populateForm);
 
-        populateAccountTypes();
-        populateAccountList();
+        const populateAll = () => {
+            validations = MetaTraderConfig.validations();
+            populateAccountTypes();
+            populateAccountList();
+        };
+
+        if (Client.get('is_virtual')) {
+            populateAll();
+        } else {
+            BinarySocket.send({ get_limits: 1 }).then(populateAll);
+        }
     };
 
     const populateAccountList = () => {
