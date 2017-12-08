@@ -268,7 +268,7 @@ const MetaTraderUI = (() => {
         // Navigation buttons: cancel, next, back
         $form.find('#btn_cancel').click(() => {
             loadAction(null, acc_type);
-            displayAccountDescription(acc_type);
+            displayAccountDescription(accounts_info[acc_type].info ? acc_type : 'new_account');
             $.scrollTo($('h1'), 300, { offset: -10 });
         });
         const displayStep = (step) => {
