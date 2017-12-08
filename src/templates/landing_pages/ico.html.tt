@@ -812,7 +812,7 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How will you issue dividends to tokenholders?") %]</h4>
-                            <p>[% l("We are adopting the ‘Mini Me’ ERC20 token for our ICO. This type of token possesses unique features that are suited to securities tokens. One of its unique features is the ability to clone itself, thus creating a mini version of itself.") %]</p>
+                            <p>[% l("We are adopting the \‘Mini Me\’ ERC20 token for our ICO. This type of token possesses unique features that are suited to securities tokens. One of its unique features is the ability to clone itself, thus creating a mini version of itself.") %]</p>
                             <p>[% l("To implement our dividend payments feature, we will clone our tokens and each cloned token will represent dividend rights.") %]</p>
                             <p>[% l("At this stage, tokenholders can cash out their dividends in one of two ways:") %]</p>
                             <ul class="bullet">
