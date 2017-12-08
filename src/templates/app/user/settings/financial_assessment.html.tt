@@ -12,7 +12,7 @@
             [% INCLUDE app/_includes/authenticate_message_financial.html.tt %]
         </div>
         <div class="center-text">
-            <a class="button" href="[% request.url_for('user/metatrader') %]"><span>[% l('MetaTrader account management') %]</span></a>
+            <a class="button" href="[% request.url_for('user/metatrader') %]"><span>[% l('Go to MetaTrader 5 Dashboard') %]</span></a>
         </div>
     </div>
 

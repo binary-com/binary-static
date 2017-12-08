@@ -108,7 +108,7 @@
                                     <p>[% l("Trade Forex and Contracts for Difference (CFD) assets with highly-competitive leverage and zero commission.") %]</p>
                                     <p>
                                         <a class="button" href="[% request.url_for('user/metatrader') %]">
-                                            <span>[% l("Create MetaTrader 5 Account in [_1]", website_name) %]</span>
+                                            <span>[% l("Go to MetaTrader 5 Dashboard") %]</span>
                                         </a>
                                     </p>
                                 </div>
@@ -175,7 +175,7 @@
                             </div>
                             <div class="center-text">
                                 <a class="button" href="[% request.url_for('user/metatrader') %]">
-                                    <span>[% l("Create MetaTrader 5 Account in [_1]", website_name) %]</span>
+                                    <span>[% l("Go to MetaTrader 5 Dashboard") %]</span>
                                 </a>
                             </div>
                         </div>
