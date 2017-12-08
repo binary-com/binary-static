@@ -4,6 +4,19 @@ const HtmlDiffer = require('html-differ').HtmlDiffer;
 const logger = require('html-differ/lib/logger');
 const path = require('path');
 const common = require('./common');
+const program = require('commander');
+
+program
+    .version('0.1.0')
+    .description('Get html diff between two files in /dist & /dist-perl folder')
+    .option('-p, --path [save_as]', 'Template save_as url, REQUIRED')
+    .parse(process.argv);
+
+if(!program.path) {
+    console.log("validate.js --path option is required, try --help to see the options.".red);
+    process.exit(0);
+}
+
 
 const options = {
     ignoreAttributes: [],
@@ -50,5 +63,4 @@ const diff = (save_as) => {
     });
 }
 
-const pattern = process.argv[2] || 'home';
-diff(common.pages.find(p => p.save_as === pattern).save_as);
+diff(common.pages.find(p => p.save_as === program.path).save_as);

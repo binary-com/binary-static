@@ -556,11 +556,11 @@ const texts = [
     '[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.',
 ]
 
-const gt = GetText.getInstance();
 const map = { };
 
 const all_languages = [...common.languages, 'ach'].map(l => l.toLowerCase());
 const build = () => {
+    const gt = GetText.getInstance();
     all_languages.forEach(lang =>  {
         gt.setLang(lang);
         map[lang] = { };

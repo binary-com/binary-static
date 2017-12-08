@@ -7,21 +7,18 @@ const Gettext = require('./gettext');
 const Crypto = require('crypto');
 const common = require('./common');
 const generate_static_data = require('./generate-static-data');
-
-const readFile = (path) => new Promise((resolve, reject) => {
-    fs.readFile(path, 'utf8', (err, result) => {
-        if(err) { reject(err); }
-        else resolve(result);
-    });
-})
-const writeFile = (path, data) => new Promise((resolve, reject) => {
-    fs.writeFile(path, data, (err) => {
-        if(err) { reject(err); }
-        else resolve();
-    });
-})
+const program = require('commander');
 
 const CONTENT_PLACEHOLDER = "CONTENT_PLACEHOLDER"; // used in layout.vash
+
+program
+    .version('0.1.0')
+    .description('Build .vash templates into /dist folder')
+    .option('-d, --dev', 'Build for your gh-pages')
+    .option('-b, --branch [branchname]', 'Build your changes to a sub-folder named: br_branchname')
+    .option('-p, --path [save_as]', 'Re-compile only the template with save_as in its URL')
+    .option('-t, --add-translations', 'Update messages.pot with new translations')
+    .parse(process.argv);
 
 /**********************************************************************
  * Vash helpers
@@ -47,28 +44,16 @@ Vash.config.settings = {
  **********************************************************************/
 function getConfig() {
     const config = {
-        branch    : '',
-        path      : '',
-        is_dev    : false,
         languages : common.languages,
         sections  : ['app', 'static'],
         root_path : common.root_path,
         add_translations: false,
     }
-    for (let i = 2; i < process.argv.length; i++) {
-        const arg = process.argv[i];
-        const [key, value] = arg.split('=');
-
-        if(key === 'dev' || key === '--dev') { config.is_dev = true; }
-        if(key === 'branch' || key === '--branch') { config.branch = value; }
-        if(key === 'path' || key === '--path') { config.path = value; }
-        if(key === 'add-translations' || key === '--add-translations') { config.add_translations = true; }
-    }
-    if (config.branch === 'translations') {
+    if (program.branch === 'translations') {
         config.languages = ['ACH'];
     }
     config.dist_path = Path.join(config.root_path, 'dist');
-    config.root_url  = `/${config.is_dev ? 'binary-static/' : ''}${config.branch ? `${config.branch}/` : ''}`;
+    config.root_url  = `/${program.dev ? 'binary-static/' : ''}${program.branch ? `${program.branch}/` : ''}`;
     return config;
 }
 
@@ -117,8 +102,8 @@ function file_hash_async(path, cb) {
  * Factory functions
  **********************************************************************/
 
-const gettext = Gettext.getInstance();
 const createTranslator = lang => {
+    const gettext = Gettext.getInstance();
     lang = lang.toLowerCase(lang);
     gettext.setLang(lang);
     return (text, ...args) => gettext.gettext(text, ...args);
@@ -151,7 +136,7 @@ const createBuilder = async () => {
 
     const static_hash = Math.random().toString(36).substring(2, 10);
     const vendor_hash = await file_hash_async(Path.join(config.dist_path, 'js/vendor.min.js'))
-    await writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
+    await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
 
     const html = Vash.helpers;
 
@@ -160,7 +145,7 @@ const createBuilder = async () => {
             `${config.root_url}js/texts/{PLACEHOLDER_FOR_LANG}.js?${static_hash}`,
             `${config.root_url}js/manifest.js?${static_hash}`,
             `${config.root_url}js/vendor.min.js?${vendor_hash}`,
-            config.is_dev ?
+            program.dev ?
                 `${config.root_url}js/binary.js?${static_hash}` :
                 `${config.root_url}js/binary.min.js?${static_hash}`,
         ],
@@ -225,7 +210,7 @@ const createBuilder = async () => {
 
     return {
         build_template_for: async (input_file) => {
-            const input_content = await readFile(input_file);
+            const input_content = await common.readFile(input_file);
             const template = Vash.compile(input_content);
             return template
         },
@@ -291,7 +276,7 @@ async function compile(page) {
             const layout = layouts[page.tpl_path.split('/')[0]];
             const result_pjax = builder.run_template({template: layout.template, model: model})
 
-            await writeFile( // pjax layout
+            await common.writeFile( // pjax layout
                 Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`),
                 result_pjax.replace(CONTENT_PLACEHOLDER, result_input),
                 'utf8'
@@ -300,13 +285,13 @@ async function compile(page) {
             model.is_pjax_request = false;
             const result_normal = builder.run_template({template: layout.template, model: model})
 
-            await writeFile( // normal layout
+            await common.writeFile( // normal layout
                 Path.join(config.dist_path, `${lang}/${page.save_as}.html`),
                 result_normal.replace(CONTENT_PLACEHOLDER, result_input),
                 'utf8'
             );
         } else {
-            await writeFile( // landing pages
+            await common.writeFile( // landing pages
                 Path.join(config.dist_path, `${lang}/${page.save_as}.html`),
                 result_input,
                 'utf8'
@@ -321,8 +306,9 @@ create_directories();
 (async () => {
     const config = getConfig();
     try {
-        await compile(common.pages.find(p => p.save_as === (config.path || 'home')));
-        if(config.add_translations) {
+        await compile(common.pages.find(p => p.save_as === (program.path || 'home')));
+        if(program.addTranslations) {
+            const gettext = Gettext.getInstance();
             generate_static_data.build();
             gettext.update_translations();
         }

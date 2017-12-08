@@ -1,5 +1,6 @@
 /* eslint-disable */
 const colors = require('colors');
+const fs = require('fs');
 
 exports.root_path = require('app-root-path').path;
 
@@ -20,3 +21,16 @@ exports.print = (text) => {
     process.stdout.cursorTo(0);
     process.stdout.write(text);
 };
+
+exports.readFile = (path) => new Promise((resolve, reject) => {
+    fs.readFile(path, 'utf8', (err, result) => {
+        if(err) { reject(err); }
+        else resolve(result);
+    });
+})
+exports.writeFile = (path, data) => new Promise((resolve, reject) => {
+    fs.writeFile(path, data, (err) => {
+        if(err) { reject(err); }
+        else resolve();
+    });
+})
