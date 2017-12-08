@@ -216,7 +216,7 @@ const MetaTraderUI = (() => {
             let msg = '';
             if (Client.get('is_virtual') && !accounts_info[acc_type].is_demo) {
                 msg = MetaTraderConfig.needsRealMessage();
-            } else if (Client.get('currency') !== MetaTraderConfig.mt5Currency()) {
+            } else if (Client.get('currency') !== MetaTraderConfig.mt5Currency() && !accounts_info[acc_type].is_demo) {
                 msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.mt5Currency()]);
             }
             if (msg) {
