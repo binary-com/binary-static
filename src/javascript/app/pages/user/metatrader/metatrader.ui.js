@@ -273,7 +273,7 @@ const MetaTraderUI = (() => {
         };
         $form.find('#btn_next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
-                $form.find('#view_2 #btn_submit').attr('acc_type', newAccountGetType());
+                $form.find('#view_2 #btn_submit_new_account').attr('acc_type', newAccountGetType());
                 displayStep(2);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }

@@ -160,7 +160,7 @@ const MetaTraderConfig = (() => {
         },
         withdrawal: {
             txt_amount       : { id: '#txt_amount_withdrawal', request_field: 'amount' },
-            txt_main_pass    : { id: '#txt_main_pass' },
+            txt_main_pass    : { id: '#txt_main_pass_wd' },
             additional_fields:
                 acc_type => ({
                     from_mt5 : accounts_info[acc_type].info.login,
