@@ -7,7 +7,7 @@ module.exports = {
         onUnload: () => { TabSelector.clean(); },
     },
     BinaryOptions: {
-        onLoad  : () => { MenuSelector.init(['what-are-binary-options', 'range-of-markets', 'types-of-trades', 'how-to-trade-binary']); },
+        onLoad  : () => { MenuSelector.init(['what-are-binary-options', 'range-of-markets', 'types-of-trades', 'how-to-trade-binary', 'glossary']); },
         onUnload: () => { MenuSelector.clean(); },
     },
     CFDs: {
