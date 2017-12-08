@@ -23,16 +23,16 @@
     </div>
     <div class="gr-9 gr-12-p gr-12-m gr-padding-10">
         [% WRAPPER sidebar_content_container %]
-            [% WRAPPER sidebar_content id='legal-binary' %][% PROCESS legal/terms_and_conditions.html.tt %][% END %]
-            [% WRAPPER sidebar_content id='legal-mt' %][% PROCESS legal/metatrader/terms_and_conditions.html.tt %][% END %]
-            [% WRAPPER sidebar_content id='datafeed' %][% PROCESS legal/datafeed.html.tt %][% END %]
-            [% WRAPPER sidebar_content id='privacy' %][% PROCESS legal/privacy.html.tt %][% END %]
-            [% WRAPPER sidebar_content id='copyright' %][% PROCESS legal/copyright.html.tt %][% END %]
-            [% WRAPPER sidebar_content id='risk-binary' %][% PROCESS legal/risk_disclaimer.html.tt %][% END %]
-            [% WRAPPER sidebar_content id='risk-mt' %][% PROCESS legal/metatrader/risk_disclaimer.html.tt %][% END %]
-            [% WRAPPER sidebar_content id='order-execution-binary' %][% PROCESS legal/order_execution.html.tt %][% END %]
-            [% WRAPPER sidebar_content id='order-execution-mt' %][% PROCESS legal/metatrader/order_execution.html.tt %][% END %]
-            [% WRAPPER sidebar_content id='payment-agents' %][% PROCESS legal/payment_agents.html.tt %][% END %]
+            [% WRAPPER sidebar_content id='legal-binary' %][% PROCESS static/legal/terms_and_conditions.html.tt %][% END %]
+            [% WRAPPER sidebar_content id='legal-mt' %][% PROCESS static/legal/metatrader/terms_and_conditions.html.tt %][% END %]
+            [% WRAPPER sidebar_content id='datafeed' %][% PROCESS static/legal/datafeed.html.tt %][% END %]
+            [% WRAPPER sidebar_content id='privacy' %][% PROCESS static/legal/privacy.html.tt %][% END %]
+            [% WRAPPER sidebar_content id='copyright' %][% PROCESS static/legal/copyright.html.tt %][% END %]
+            [% WRAPPER sidebar_content id='risk-binary' %][% PROCESS static/legal/risk_disclaimer.html.tt %][% END %]
+            [% WRAPPER sidebar_content id='risk-mt' %][% PROCESS static/legal/metatrader/risk_disclaimer.html.tt %][% END %]
+            [% WRAPPER sidebar_content id='order-execution-binary' %][% PROCESS static/legal/order_execution.html.tt %][% END %]
+            [% WRAPPER sidebar_content id='order-execution-mt' %][% PROCESS static/legal/metatrader/order_execution.html.tt %][% END %]
+            [% WRAPPER sidebar_content id='payment-agents' %][% PROCESS static/legal/payment_agents.html.tt %][% END %]
         [% END %]
     </div>
 </div>
