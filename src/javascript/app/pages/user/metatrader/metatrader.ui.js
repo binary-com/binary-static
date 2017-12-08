@@ -261,6 +261,9 @@ const MetaTraderUI = (() => {
         newAccountSetTitle();
         displayAccountDescription(action);
         $form = actions_info[action].$form;
+        if (Object.keys(accounts_info).every(a_type => !accounts_info[a_type].info)) {
+            $form.find('#view_1 #btn_cancel').addClass('invisible');
+        }
 
         // Navigation buttons: cancel, next, back
         $form.find('#btn_cancel').click(() => {
@@ -316,6 +319,7 @@ const MetaTraderUI = (() => {
             actions_info[action].prerequisites(new_acc_type).then((error_msg) => {
                 displayMessage('#new_account_msg', error_msg || '');
                 $form.find('#view_1 #btn_next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
+                $form.find('#view_1 #btn_cancel').removeClass('invisible');
             });
         }
     };
