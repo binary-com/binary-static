@@ -842,7 +842,7 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
                             <h4>[% l("What is a Dutch auction? How does [_1] determine the final bid price per token and how will I know if my bid is successful?", broker_name) %]</h4>
                             <p>[% l("The price per token is determined by a Dutch auction where investors will enter bids for how many tokens they want to purchase at different prices. Once the bidding period is over, all accepted bids will be arranged from the highest to lowest price until all our tokens have been assigned, as per the process described in the Information Memorandum. The lowest price among all allotted tokens will be the final price that everyone pays.") %]</p>
                             <p>[% l("This means that the price of the token is determined by market demand, and not [_1].", broker_name) %]</p>
-                            <p>[% l("To find out if your bid is successful, you may refer to the ‘ICO Auction Bids’ section on the [_1]ICO bidding page[_2].", '<a href="' _ request.url_for('user/ico-subscribe') _ '" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
+                            <p>[% l("To find out if your bid is successful, you may refer to the \‘ICO Auction Bids\’ section on the [_1]ICO bidding page[_2].", '<a href="' _ request.url_for('user/ico-subscribe') _ '" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
