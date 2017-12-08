@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     <div class="gr-5 gr-12-m">
-                        <img class="responsive" src="[% request.url_for('images/graduate_program/frontend_icon.svg') %]" />
+                        <img class="gr-padding-30 responsive" src="[% request.url_for('images/graduate_program/frontend_icon.svg') %]" />
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                     <div class="gr-5 gr-12-m">
-                        <img class="responsive" src="[% request.url_for('images/graduate_program/backend_icon.svg') %]" />
+                        <img class="gr-padding-30 responsive" src="[% request.url_for('images/graduate_program/backend_icon.svg') %]" />
                     </div>
                 </div>
             </div>
@@ -178,7 +178,7 @@
                         </div>
                     </div>
                     <div class="gr-5 gr-12-m">
-                        <img class="responsive" src="[% request.url_for('images/graduate_program/quants_icon.svg') %]" />
+                        <img class="gr-padding-30 responsive" src="[% request.url_for('images/graduate_program/quants_icon.svg') %]" />
                     </div>
                 </div>
             </div>
