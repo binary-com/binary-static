@@ -68,13 +68,11 @@ function tabWithButtons(id) {
     });
 
     let index = 0;
-    document.getElementById('next').addEventListener('click', function(e) {
-        e.preventDefault();
-        updateTabContent(++index);
-    });
-    document.getElementById('prev').addEventListener('click', function(e) {
-        e.preventDefault();
-        updateTabContent(--index);
+    container.querySelectorAll('.twb-button').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            el.id === 'next' ? updateTabContent(++index) : updateTabContent(--index);
+        });
     });
 
     function updateTabContent(target_index) {
