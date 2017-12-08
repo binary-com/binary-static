@@ -78,6 +78,7 @@
                     { id='range-of-markets',        href='#range-of-markets',        text=l("Range of markets")},
                     { id='types-of-trades',         href='#types-of-trades',         text=l("Types of trades")},
                     { id='how-to-trade-binary',     href='#how-to-trade-binary',     text=l("How to trade binary options")},
+                    { id='glossary',                href='#glossary',                text=l("Glossary")},
                 ] %]
             </div>
         </div>
@@ -243,6 +244,76 @@
                     <img class="responsive" src="[% request.url_for('images/pages/get-started-beta/binary-options/how-to-trade-binary/step-3.svg') %]" />
                 </div>
                 <p>[% l("When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there's no risk of 'slippage' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions.") %]</p>
+            [% END %]
+
+            [% glossary=[
+                { word=l("Barrier(s)")
+                  definition=l("The barrier of a binary option trade is the price target you set for the underlying. You can choose trades that stay below or go above a price target, or stay between two targets.") },
+                { word=l("Binary option")
+                  definition=l("A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct.") },
+                { word=l("Commodities")
+                  definition=l("Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On [_1], they are priced in US dollars.", website_name) },
+                { word=l("Contract period")
+                  definition=l("The contract period is the timeframe of a trade. It is also called the duration.") },
+                { word=l("Derivative")
+                  definition=l("A derivative is a financial instrument whose value is determined by reference to an underlying market. Derivatives are commonly traded in the inter-bank market, and binaries are one of the simplest forms of derivatives.") },
+                { word=l("Duration")
+                  definition=l("The duration is the length of a purchased trade (see 'contract period').") },
+                { word=l("Ends Between/Ends Outside trades")
+                  definition=l("An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target.") },
+                { word=l("Entry spot price")
+                  definition=l("The entry spot price is the starting price of the trade purchased by a trader.") },
+                { word=l("Expiry price")
+                  definition=l("The expiry price is the price of the underlying when the contract expires.") },
+                { word=l("Forex")
+                  definition=l("In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar.") },
+                { word=l("GMT")
+                  definition=l("GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the [_1] site use GMT all year round.", website_name) },
+                { word=l("Higher/Lower trades")
+                  definition=l("These are trades where the trader predicts if a market will finish higher or lower than a specified price target.") },
+                { word=l("Indices")
+                  definition=l("Stock market indices measure the value of a selection of companies in the stock market.") },
+                { word=l("In/Out trades")
+                  definition=l("These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also 'Stays Between/Goes Outside trades').") },
+                { word=l("Market exit price")
+                  definition=l("The market exit price is the price in effect at the end of the contract period.") },
+                { word=l("No Touch trades")
+                  definition=l("These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade.") },
+                { word=l("(One) Touch trades")
+                  definition=l("These are trades where the trader selects a price target, and predicts that the market will touch the target before the expiry of the trade.") },
+                { word=l("Payout")
+                  definition=l("The payout is the amount paid to an options trader if their prediction is correct.") },
+                { word=l("Pip")
+                  definition=l("Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001).") },
+                { word=l("Profit")
+                  definition=l("The profit is the difference between the purchase price (the stake) and the payout on a winning trade.") },
+                { word=l("Volatility Indices")
+                  definition=l("The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends.") },
+                { word=l("Resale price")
+                  definition=l("The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry.") },
+                { word=l("Return")
+                  definition=l("The return is the money realized when the contract expires (see 'Payout').") },
+                { word=l("Rise/Fall trades")
+                  definition=l("These are trades where the trader predicts if a market will rise or fall at the end of a selected time period.") },
+                { word=l("Sell option")
+                  definition=l("It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a blue 'Sell' button next to your trade in the portfolio.") },
+                { word=l("Spot price")
+                  definition=l("This is the current price at which an underlying can be bought or sold at a particular time.") },
+                { word=l("Stake")
+                  definition=l("The stake is the amount that a trader must pay to enter into a trade.") },
+                { word=l("Stays Between/Goes Outside trades")
+                  definition=l("A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader.") },
+                { word=l("Tick")
+                  definition=l("A tick is the minimum upward or downward movement in the price of a market.") },
+                { word=l("Underlying")
+                  definition=l("Each binary option is a prediction on the future movement of an underlying market.") },
+
+            ] %]
+            [% WRAPPER section id='glossary' header=l("Glossary") %]
+                [% FOREACH item IN glossary %]
+                    [% PROCESS header_secondary header=item.word %]
+                    <p>[% item.definition %]</p>
+                [% END %]
             [% END %]
 
             [% PROCESS nav_buttons parent='binary' %]

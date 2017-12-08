@@ -117,9 +117,9 @@ const Header = (() => {
         }
     };
 
-    const metatraderMenuItemVisibility = (landing_company_response) => {
-        BinarySocket.wait('get_account_status').then(() => {
-            if (MetaTrader.isEligible(landing_company_response)) {
+    const metatraderMenuItemVisibility = () => {
+        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
+            if (MetaTrader.isEligible()) {
                 const metatrader = document.getElementById('user_menu_metatrader');
                 if (metatrader) metatrader.setVisibility(1);
             }
