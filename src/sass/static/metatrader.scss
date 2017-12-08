@@ -15,7 +15,7 @@
     margin: 1em 0 1em 2em !important;
 }
 
-#margin_policy {
+#margin-policy {
     .mt-img {
         background-repeat: no-repeat;
         background-position: center;
@@ -83,4 +83,8 @@
             }
         }
     }
+}
+
+#mt_download .browsers img {
+    max-height: 100px;
 }
