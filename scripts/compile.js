@@ -134,7 +134,10 @@ const createUrlFinder  = lang => {
 const createBuilder = async () => {
     const config = getConfig();
 
-    const static_hash = Math.random().toString(36).substring(2, 10);
+    let static_hash = Math.random().toString(36).substring(2, 10);
+    try {
+        static_hash = await common.readFile(Path.join(config.dist_path, 'version'));
+    } catch(e) { }
     const vendor_hash = await file_hash_async(Path.join(config.dist_path, 'js/vendor.min.js'))
     await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
 
@@ -313,6 +316,16 @@ create_directories();
             gettext.update_translations();
         }
     } catch(e) {
-        console.log(e);
+        if(e.message.indexOf('html.reportError') !== -1 && e.name === 'SyntaxError') {
+            console.log("---------------------- Javascript SyntaxError -------------------- ".red);
+            console.log("------------------------------------------------------------------ ".red);
+            const msg = e.message.slice(e.message.indexOf('html.reportError') + 40)
+                                 .replace(/!LB!/g, '\n')
+                                 .split('\n').slice(0, -5).join('\n')
+                                 .replace(/\\'/g, "'").replace(/\\"/g, '"');
+            console.log(msg.red)
+        } else {
+            console.log(e.toString().red);
+        }
     }
 })();

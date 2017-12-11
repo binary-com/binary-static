@@ -1,0 +1,90 @@
+@{
+    view.fieldset = ({children, legend, id, _class}) => {
+        <fieldset @html.id(id) @html.class(_class) >
+            @if(legend) {
+                <legend>@legend</legend>
+            }
+            @children()
+        </fieldset>
+    }
+
+    view.form_row = ({
+        spaced, type, id, _class, label, checked, row_class, row_id, html_row_id, label_row_id,
+        is_two_rows, is_bold, tooltip, hint, attributes, input_prefix, children = () => '',
+    }) => {
+        @if(type == 'checkbox' && !spaced) {
+            <div class="gr-row @row_class" @html.id(row_id) >
+                <div class="gr-12 gr-padding-20 gr-centered">
+                    <input id="@id" type="checkbox" @html.when(checked, 'checked') />
+                    <label for="@id">@label</label>
+                </div>
+            </div>
+        } else {
+            <div class="gr-row form-row center-text-m @html.when(is_two_rows, 'two-rows') @row_class" @html.id(row_id) >
+                <div class="@(is_two_rows ? 'gr-12' : 'gr-4 gr-12-m')" @html.id(label_row_id) >
+                    <label @html.when(type != 'label', `for="${id}"`) >
+                        @if(tooltip) {
+                            <span data-balloon-length="xlarge" data-balloon="@tooltip">
+                                @label
+                            </span>
+                        } else {
+                            @label
+                        }
+                    </label>
+                </div>
+                <div class="@(is_two_rows ? 'gr-12' : 'gr-8 gr-12-m')">
+                    @if(type == 'select') {
+                        <select id="@id" class="form_input @_class" @html.when(attributes, attributes) >
+                            @children()
+                        </select>
+                    } else if(['text', 'password', 'number', 'checkbox'].indexOf(type) !== -1) {
+                        @input_prefix <input type="@type" @html.class(_class) id="@id" @html.when(type=='password' , 'maxlength="25"') @html.when(attributes, attributes) />
+                    } else if(type == 'label') {
+                        <span class="text-display">
+                            @if(is_bold) {
+                                <strong id="@id" @html.when(attributes, attributes) ></strong>
+                            } else {
+                                <span id="@id" @html.when(attributes, attributes) ></span>
+                            }
+                        </span>
+                    } else if(type == 'custom') {
+                        @children()
+                    }
+                    @if(hint) { <p class="hint no-margin">@hint</p> }
+                </div>
+            </div>
+        }
+    }
+    view.submit_button = ({ 
+        is_centered, _class, type, text, id, is_full_width, is_left_align, no_error, msg_id, attributes,
+        no_wrapper, custom_btn_text, custom_btn_class, custom_btn_href, custom_btn_id
+    }) => {
+        const content = () => {
+            @if(!no_error) {
+                <p id="@(msg_id || 'msg_form')" class="error-msg no-margin invisible"></p>
+            }
+            <div class="gr-padding-10">
+                @if(custom_btn_text) {
+                    <a class="button @custom_btn_class" href="@(custom_btn_href || 'javascript:;')" id="@custom_btn_id">
+                        <span class="button">@custom_btn_text</span>
+                    </a>
+                }
+                <button id="@(id || 'btn_submit')" @html.when(type=='submit', 'type="submit"')
+                    @html.when(attributes, attributes) @html.when(is_full_width, ' class="full-width"') >@text</button>
+            </div>
+        }
+        @if(!no_wrapper) {
+            <div class="@(is_centered ? 'center-text' : 'gr-row') @_class" @html.id(id) >
+                @if(!is_centered) {
+                    <div class="@html.when(!is_left_align, 'gr-8 gr-push-4 gr-12-m gr-push-0-m') center-text-m">
+                        @content()
+                    </div>
+                } else {
+                    @content()
+                }
+            </div>
+        } else {
+            @content()
+        }
+    }
+}

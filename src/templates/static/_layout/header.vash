@@ -79,14 +79,27 @@
                                     id: 'menu-top',
                                     _class: "center-text nowrap",
                                     items: [
-                                        { text: html.L('Why Us?'),     href: html.url_for('why-us'),                 _class: 'ja-hide' },
-                                        { text: html.L('Why Us?'),     href: html.url_for('why-us-jp'),              _class: 'invisible ja-show' },
-                                        { text: html.L("Get Started"), href: html.url_for('get-started'),            _class: 'ja-hide' },
-                                        { text: html.L("Get Started"), href: html.url_for('get-started-jp'),         _class: 'invisible ja-show' },
-                                        { text: html.L('Tour'),        href: html.url_for('tour'),                   _class: 'ja-hide' },
-                                        { text: html.L('Tour'),        href: html.url_for('tour-jp'),                _class: 'invisible ja-show' },
-                                        { text: html.L("Platforms"),   href: html.url_for('platforms'),              _class: 'ja-hide',           id: 'main-navigation-trading' },
-                                        { text: html.L("Trade"),       href: html.url_for('multi_barriers_trading'), _class: 'invisible ja-show', id: 'main-navigation-jptrading' },
+                                        // General
+                                        { text: html.L('Why Us?'),     href: html.url_for('why-us'),                      _class: 'ja-hide mt-hide' },
+                                        { text: html.L("Get Started"), href: html.url_for('get-started'),                 _class: 'ja-hide mt-hide' },
+                                        { text: html.L('Tour'),        href: html.url_for('tour'),                        _class: 'ja-hide mt-hide' },
+                                        {
+                                            text: html.L("Platforms"),   href: html.url_for('platforms'),                   _class: 'ja-hide mt-hide',
+                                            id: 'main-navigation-trading'
+                                        },
+                                        // Japan
+                                        { text: html.L('Why Us?'),     href: html.url_for('why-us-jp'),                   _class: 'invisible ja-show mt-hide' },
+                                        { text: html.L("Get Started"), href: html.url_for('get-started-jp'),              _class: 'invisible ja-show mt-hide' },
+                                        { text: html.L('Tour'),        href: html.url_for('tour-jp'),                     _class: 'invisible ja-show mt-hide' },
+                                        {
+                                            text: html.L("Trade"),       href: html.url_for('multi_barriers_trading'),
+                                            _class: 'invisible ja-show mt-hide', id: 'main-navigation-jptrading'
+                                        },
+                                        // MetaTrader
+                                        { text: html.L('MetaTrader'),  href: html.url_for('user/metatrader'),             _class: 'invisible mt-show' },
+                                        { text: html.L('Cashier'),     href: html.url_for('cashier'),                     _class: 'invisible mt-show' },
+                                        { text: html.L("Get Started"), href: html.url_for('get-started-beta?parent=mt5'), _class: 'invisible mt-show' },
+                                        { text: html.L("Platforms"),   href: html.url_for('platforms?parent=mt5'),        _class: 'invisible mt-show' },
                                     ]
                                 })
                             </div>
