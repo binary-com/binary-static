@@ -58,7 +58,7 @@
                                         { text: html.L('{JAPAN ONLY}Service Announcements'), href: html.url_for('service-announcements') },
                                         { text: html.L('Affiliate Program'),                 href: html.url_for('affiliate/signup-jp') },
                                     ]
-                                });
+                                })
 
                                 @footer_column({
                                     header: html.L('Banking'),
