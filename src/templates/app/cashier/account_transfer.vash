@@ -19,10 +19,10 @@
     <p class="center-text notice-msg">
         <span class="invisible" id="no_account">@html.L("Fund transfers between accounts are unavailable.")</span>
         <span class="invisible" id="not_enough_balance">
-          @html.rawL("The minimum required amount for using the account transfer facility is [_1].", '<span id="min_required_amount"></span>')
+          @html.L("The minimum required amount for using the account transfer facility is [_1].", '<span id="min_required_amount"></span>')
         </span>
         <span class="invisible" id="no_balance">
-          @html.rawL("Please [_1]deposit[_2] to your account.", '<a href="' + html.url_for('/cashier/forwardws#deposit') + '">', '</a>')
+          @html.L("Please [_1]deposit[_2] to your account.", '<a href="' + html.url_for('/cashier/forwardws#deposit') + '">', '</a>')
         </span>
         <span class="invisible" id="limit_reached">@html.L("You have reached your withdrawal limit.")</span>
     </p>

@@ -12,8 +12,8 @@
 
 <div id="banner">
     <div class="container gr-padding-30">
-        <h1 class="dark center-text gr-padding-10">@html.rawL("The <strong>Premier Platform</strong> for Binary Options Trading")</h1>
-        <p class="center-text gr-padding-10">@html.rawL("Trade <strong>24/7</strong>, even on weekends.")</p>
+        <h1 class="dark center-text gr-padding-10">@html.L("The <strong>Premier Platform</strong> for Binary Options Trading")</h1>
+        <p class="center-text gr-padding-10">@html.L("Trade <strong>24/7</strong>, even on weekends.")</p>
 
         @view.form_verify_email({
             _class      : 'secondary-bg-color',
@@ -115,20 +115,20 @@
             padding: '6',
             align_left: true,
             em: true,
-            text: html.rawL(`"We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide."`),
+            text: html.L(`"We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide."`),
             children: function() {
                 <div class="xbubble-left"></div>
-                <div class="xquoter-left"><p>@html.rawL("Joshua Cavallaro <span> Markets And You Trader</span>")</p></div>
+                <div class="xquoter-left"><p>@html.L("Joshua Cavallaro <span> Markets And You Trader</span>")</p></div>
             }
         })
         @view.fill_box({
             padding: '6',
             em: true,
             align_left: true,
-            text: html.rawL(`"[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years."`, model.website_name),
+            text: html.L(`"[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years."`, model.website_name),
             children: function() {
                 <div class="xbubble-right"></div>
-                <div class="xquoter-right"><p>@html.rawL("Andrei Asavei <span>Top Binary Options Brokers</span>")</p></div>
+                <div class="xquoter-right"><p>@html.L("Andrei Asavei <span>Top Binary Options Brokers</span>")</p></div>
             }
         })
     </div>

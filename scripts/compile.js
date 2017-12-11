@@ -218,8 +218,8 @@ const createBuilder = async () => {
             return template
         },
         run_template: ({template, model}) => {
-            Vash.helpers.L = createTranslator(model.language);
-            Vash.helpers.rawL = (text, ...args) => Vash.helpers.raw(Vash.helpers.L(text, ...args));
+            const translator = createTranslator(model.language);
+            Vash.helpers.L = (text, ...args) => Vash.helpers.raw(translator(text, ...args));
             Vash.helpers.url_for = createUrlFinder(model.language);
 
             const merged = Object.assign({ }, model, extra);
