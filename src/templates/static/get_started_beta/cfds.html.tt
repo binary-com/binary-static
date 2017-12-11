@@ -18,11 +18,10 @@
             [% WRAPPER section id='what-cfds-trading' header=l("What is CFD trading") %]
                 <p>[% l("A Contract for Difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset.") %]</p>
                 <p>[% l("The movement of a CFD follows the movement of its underlying asset. This also determines your profit or loss – depending on the position that you have taken.") %]</p>
-                <p>[% l("One important thing to note is the similarity of CFDs and binary options – they are essentially contracts between you and a broker. You do not actually own the underlying asset. There's also a wide range of underlying markets available for you to trade, depending on your broker.") %]</p>
 
                 [% PROCESS header_secondary header=l("Advantages of CFD trading") %]
                 <ul class="checked">
-                    [% PROCESS list_strong header=l("Trade with leverage")  text=l("Trade underlying markets and assets using more capital than you own.") %]
+                    [% PROCESS list_strong header=l("Trade with leverage")  text=l("Trade a larger position than your exisiting capital.") %]
                     [% PROCESS list_strong header=l("Hedge your portfolio") text=l("Offset potential losses to your investment portfolio by hedging with CFDs.") %]
                     [% PROCESS list_strong header=l("Go long and short")    text=l("Trade long and short positions, depending on your preferred strategy.") %]
                 </ul>
@@ -43,7 +42,7 @@
                 [% PROCESS header_secondary header=l("How to calculate your profits and losses") %]
                 <p>[% l("Let's say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to 'go long' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.") %]</p>
                 <p>[% l("However, if the asset price falls by 10 points, that represents a USD 10 loss for you.") %]</p>
-                <p>[% l("To learn more, please read our contract specifications.") %]</p>
+                <p>[% l("To learn more, please read our <a href='[_1]'>contract specifications</a>.", request.url_for('cfds.html#contract-specification') ) %]</p>
 
                 [% PROCESS header_secondary header=l("How to close a position") %]
                 <p>[% l("When you decide to close an open contract, you only need to take the opposite position in order to close the contract.") %]</p>
@@ -56,9 +55,7 @@
 
                 [% PROCESS header_secondary header=l("How to calculate margin") %]
                 <p>[% l("You can determine the margin for our CFDs by using the formula below:") %]</p>
-                [% INCLUDE box text=l("Volume (trade size)") _ ' x ' _ l("Price") _ ' x ' _ l("Margin rate") _ ' = ' _ l("Margin") %]
-                <p>[% l("For example, if you buy one lot of an underlying asset at a price of USD 20,000 and a margin rate of 0.01, the margin required to purchase that one lot will be calculated as follows:") %]</p>
-                [% INCLUDE box text='1 * 20000 * 0.01 = ' _ l("USD") _ ' 200' %]
+                [% PROCESS mt_box text=l("For example, if you buy one lot of an underlying asset at a price of USD 20,000 and a margin rate of 0.01, the margin required to purchase that one lot will be calculated as follows:") %]
 
                 [% PROCESS header_secondary header=l("What's a margin call and how is it applied") %]
                 <p>[% l("When your account equity is unable to cover the margin requirement, your account will be placed under margin call. This does not affect your ability to open new positions.") %]</p>

@@ -16,7 +16,7 @@
         </div>
         <div class="gr-9 gr-12-m">
             [% WRAPPER section id='what-forex-trading' header=l("What is Forex trading") %]
-                <p>[% l("The Foreign Exchange Market (Forex) is the world's most liquid and most traded market, where USD 5.3 trillion worth of trades are completed each day.") %]</p>
+                <p>[% l("The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions completed each day.") %]</p>
                 <p>[% l("Forex trading involves buying one currency and selling another currency at the same time. This is why you always see them quoted in pairs. For example: EUR/USD and GBP/USD.") %]</p>
 
                 [% PROCESS header_secondary header=l("Which currencies can I trade") %]
@@ -50,7 +50,6 @@
                         [{ text='AUD/NZD' }, { text='1.06683', class='profit' }, { text='1.06691', class='profit' }, { text='1.06682', class='profit' } ],
                         [{ text='AUD/CAD' }, { text='1.01043', class='profit' }, { text='1.01050', class='loss'   }, { text='1.01042', class='loss'   } ],
                         [{ text='AUD/CHF' }, { text='0.77652', class='loss'   }, { text='0.77658', class='profit' }, { text='0.77649'                 } ],
-                        [{ text='AUD/JPY' }, { text='87.060',  class='loss'   }, { text='87.066',  class='profit' }, { text='87.059', class='loss'    } ],
                     ],
                 } %]
 
@@ -66,7 +65,6 @@
             [% END %]
             [% WRAPPER section id='how-to-trade-forex' header=l("How to trade Forex") %]
                 <p>[% l("A Forex trader always has one objective in mind when trading: to exchange one currency for another in order to make a profit.") %]</p>
-                <p>[% l("But if you're new to Forex or financial trading of any kind, there's still a long way to go before you even purchase your first contract.") %]</p>
                 <p>[% l("This is why we've come up with the following three-step tutorial to help you bridge that gap and make your first trade:") %]</p>
 
                 [% PROCESS header_secondary header=l("Step 1: Learn to read currency pairs") %]
@@ -110,9 +108,8 @@
 
                 [% PROCESS header_secondary header=l("How to calculate margin") %]
                 <p>[% l("You can determine the margin for our currency pairs by using the formula below:") %]</p>
-                [% INCLUDE box text=l("Volume (lots)") _ ' x ' _ l("lot size") _ ' / ' _ l("leverage") _ ' = ' _ l("Margin") %]
-                <p>[% l("For example, if you buy one lot of the EUR/USD pair with a contract size of 100,000 and leverage of 100:1, the margin that you need to purchase one lof of EUR/USD will be calculated as follows:") %]</p>
-                [% INCLUDE box text='1 x 100,000 / 100 = ' _ l("EUR") _ '1,000' %]
+
+                [% PROCESS mt_box text=l("For example, if you buy one lot of the EUR/USD pair with a contract size of 100,000 and leverage of 100:1, the margin that you need to purchase one lot of EUR/USD will be calculated as follows:") %]
 
                 [% PROCESS header_secondary header=l("What's a margin call and how is it applied") %]
                 <p>[% l("When your account equity is unable to cover the margin requirement, your account will be placed under margin call. This does not affect your ability to open new positions.") %]</p>
@@ -209,7 +206,7 @@
                 } %]
 
                 [% PROCESS header_secondary header=l("How to read the contract specifications table") %]
-                <p>[% l("The Forex is typically traded in lots. One standard lot is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of 0.01 lots.") %]</p>
+                <p>[% l("The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>.") %]</p>
                 <p>[% l("Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.") %]</p>
                 <p>[% l("To learn more, read our Margin Policy that further explains our 100% forced liquidation level for Forex.") %]</p>
 
