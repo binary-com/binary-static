@@ -117,10 +117,10 @@
                             </div>
                             <div class="row" id="lots_row">
                                 <div class="col form_label">
-                                    <label for="lots" id="lots_label">[% l("Lots") %]</label>
+                                    <label for="lots" id="lots_label">[% l("Quantity") %]</label>
                                 </div>
                                 <div class="col">
-                                    <input type="text" name="lots" id="lots" class="small_width_input" />
+                                    <input type="text" value="1" name="lots" id="lots" class="small_width_input" />
                                 </div>
                             </div>
                             <div class="row" id="payout_row">
@@ -221,7 +221,6 @@
                 <div class="col price_container row-inner" id="price_container_middle">
                     <div class="col gr-row">
                         <div class="price_wrapper">
-                            <div class="contract_longcode"></div>
                             <h4 class="contract_heading"></h4>
                             <span class="amount_wrapper">
                                 <div class="stake_wrapper">
@@ -233,6 +232,7 @@
                                 </div>
                             </span>
                         </div>
+                        <div class="contract_longcode"></div>
                     </div>
                     <div class="col price_comment"></div>
                     <div class="col contract_error"></div>

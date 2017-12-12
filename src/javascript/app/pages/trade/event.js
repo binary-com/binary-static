@@ -261,6 +261,22 @@ const TradingEvents = (() => {
             }));
         }
 
+        /*
+         * attach event to change in amount, request new price only
+         */
+        const lots_element = document.getElementById('lots');
+        if (lots_element) {
+            lots_element.addEventListener('keypress', onlyNumericOnKeypress);
+
+            lots_element.addEventListener('input', commonTrading.debounce((e) => {
+                e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                const currency = Defaults.get('currency');
+                Defaults.set('lot', e.target.value);
+                Price.processPriceRequest();
+                commonTrading.submitForm(document.getElementById('websocket_form'));
+            }));
+        }
+
         let timepicker_initialized = false;
         const initTimePicker       = () => {
             if (timepicker_initialized) return;

@@ -215,15 +215,15 @@
         }
         &.LBFLOATPUT {
             background: url('../images/pages/trade/Low_ICON.svg') no-repeat top center;
-            background-size: 9%;
+            background-size: 40%;
         }
         &.LBFLOATCALL {
             background: url('../images/pages/trade/High_ICON.svg') no-repeat top center;
-            background-size: 9%;
+            background-size: 40%;
         }
         &.LBHIGHLOW {
             background: url('../images/pages/trade/high-low_ICON.svg') no-repeat top center;
-            background-size: 9%;
+            background-size: 40%;
         }
     }
     #contract_prices_container {
@@ -280,17 +280,14 @@
 
                 .contract_heading {
                     float: none;
-                    width: auto;
+                    width: 100px;
                     padding-left: 0;
-                    margin-bottom: 5px;
+                    margin: 10px auto 0;
                 }
-                .contract_longcode {
-                    text-align: justify;
-                    padding: 5px 20px;
-                    border: 1px solid $COLOR_LIGHT_GRAY;
-                    margin: 5px 10px;
-                    border-radius: 5px;
-                }
+            }
+            .contract_longcode {
+                text-align: center;
+                margin: 10px 15px;
             }
         }
         .price_comment, .contract_error, #contract_purchase_balance {
