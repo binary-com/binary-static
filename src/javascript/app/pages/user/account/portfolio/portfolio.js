@@ -1,6 +1,4 @@
-const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
-const jpClient            = require('../../../../common/country_base').jpClient;
-const formatMoney         = require('../../../../common/currency').formatMoney;
+const formatMoney = require('../../../../common/currency').formatMoney;
 
 const Portfolio = (() => {
     const getBalance = (balance, currency) => {
@@ -14,7 +12,7 @@ const Portfolio = (() => {
             contract_id   : c.contract_id,
             payout        : parseFloat(c.payout),
             expiry_time   : c.expiry_time,
-            longcode      : jpClient() ? toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode,
+            longcode      : c.longcode,
             shortcode     : c.shortcode,
             currency      : c.currency,
             buy_price     : c.buy_price,

@@ -8,7 +8,6 @@ describe('Clock', () => {
 
         const gmt_time_str = '2017-06-14 20:34:56';
         const jp_time_str  = '2017-06-15 05:34:56';
-        const longCode     = time => (`Win payout if AUD/JPY is higher than or equal to 82.676 at ${time}.`);
 
         describe('General', () => {
             it('returns null on empty input', () => {
@@ -29,12 +28,8 @@ describe('Clock', () => {
                     .and.to.be.eq(`${gmt_time_str} +00:00`);
             });
             it('returns the correct time without seconds', () => {
-                expect(toJapanTimeIfNeeded(gmt_time_str, false, '', true)).to.be.a('string')
+                expect(toJapanTimeIfNeeded(gmt_time_str, false, true)).to.be.a('string')
                     .and.to.be.eq(gmt_time_str.replace(/:\d{2}$/, ''));
-            });
-            it('returns the correct time inside the long_code', () => {
-                expect(toJapanTimeIfNeeded(null, false, longCode(gmt_time_str))).to.be.a('string')
-                    .and.to.be.eq(longCode(gmt_time_str));
             });
         });
 
@@ -50,12 +45,8 @@ describe('Clock', () => {
                     .and.to.be.eq(`${jp_time_str} UTC+09:00`);
             });
             it('returns the correct time without seconds', () => {
-                expect(toJapanTimeIfNeeded(gmt_time_str, false, '', true)).to.be.a('string')
+                expect(toJapanTimeIfNeeded(gmt_time_str, false, true)).to.be.a('string')
                     .and.to.be.eq(jp_time_str.replace(/:\d{2}$/, ''));
-            });
-            it('returns the correct time inside the long_code', () => {
-                expect(toJapanTimeIfNeeded(null, false, longCode(gmt_time_str))).to.be.a('string')
-                    .and.to.be.eq(longCode(jp_time_str));
             });
         });
     });
