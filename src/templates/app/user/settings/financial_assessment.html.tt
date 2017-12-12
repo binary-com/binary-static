@@ -6,7 +6,7 @@
     <div id="assessment_loading">[% PROCESS _common/components/loading.html.tt %]</div>
 
     <div id="msg_main" class="invisible">
-        <p>[% l('Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5.') %]</p>
+        <p>[% l('Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5.') %]</p>
         <div id="msg_authenticate" class="invisible">
             <div><strong>[% l('Important') %]</strong></div>
             [% INCLUDE app/_includes/authenticate_message_financial.html.tt %]
