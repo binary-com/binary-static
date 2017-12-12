@@ -58,10 +58,10 @@
                         <span></span>
                     </span>
                     <a href="javascript:;" class="act_cashier has-account center-text invisible">
-                        <span>[% l('Manage Funds') %]</span>
+                        <span>[% l('Manage funds') %]</span>
                     </a>
                     <a href="javascript:;" class="act_password_change has-account center-text invisible">
-                        <span>[% l('Change Password') %]</span>
+                        <span>[% l('Change password') %]</span>
                     </a>
                 </div>
                 <div class="fst-container mt-container">
@@ -76,7 +76,7 @@
             <div class="mt-panel">
                 <div id="account_desc" class="mt-container border-bottom"></div>
                 <div class="mt-container">
-                    <p>[% l('Trade platform quick links:') %]</p>
+                    <p>[% l('Trading platform quick links:') %]</p>
                     <ul class="platforms">
                         <li>
                             <img src="[% request.url_for('images/pages/metatrader/dashboard/web.svg') %]" />
@@ -262,20 +262,20 @@
             [% END %]
             <div id="frm_cashier">
                 <div class="gr-row demo-only invisible">
-                    <p class="gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30">[% l('This demo account comes with [_1] of the virtual fund. Contact our customer service to top up your demo account once virtual fund reaches zero.', '$10,000.00') %]</p>
+                    <p class="gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30">[% l('This demo account comes with [_1] of virtual funds. Please [_2]contact our customer support team[_3] to replenish virtual funds if your account balance is empty.', '$10,000.00', '<a href="' _ request.url_for('contact') _ '">', '</a>') %]</p>
                 </div>
                 <div class="real-only invisible">
                     <div class="gr-padding-20 gr-parent">
                         <div class="fill-bg-color center-text mt-container">
                             <div class="gr-10 gr-push-1 gr-12-m gr-push-0-m">
-                                <h3 class="secondary-color">[% l('Fund overview') %]</h3>
-                                <p class="hint">[% l('To deposit your MetaTrader 5 Account, please top up the fund in your Binary Cashier then transfer the fund from Cashier to your MetaTrader 5 account.') %]</p>
+                                <h3 class="secondary-color">[% l('How to manage your funds') %]</h3>
+                                <p class="hint">[% l('Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account.') %]</p>
                                 <div class="gr-row">
                                     <div class="gr-5">
                                         <img src="[% request.url_for('images/pages/metatrader/dashboard/binary_wallet.svg') %]" />
                                         <div class="binary-account gr-padding-10"></div>
                                         <div class="binary-balance gr-padding-10 gr-parent"></div>
-                                        <a class="secondary-color hint" href="[% request.url_for('cashier') %]">[% l('Add fund') %]</a>
+                                        <a class="secondary-color hint" href="[% request.url_for('cashier') %]">[% l('Add funds') %]</a>
                                     </div>
                                     <div class="gr-2 gr-padding-20">
                                         <img src="[% request.url_for('images/pages/metatrader/dashboard/transfer.svg') %]" />
@@ -294,8 +294,8 @@
                         <div class="gr-6 gr-12-m flex">
                             <div class="mt-panel mt-container">
                                 <form id="frm_deposit">
-                                    [% INCLUDE cashier_desc title=l('Deposit into MT5 account') arrow_direction='right'
-                                        desc=l('Deposit funds from your Binary account into MetaTrader 5 account.') %]
+                                    [% INCLUDE cashier_desc title=l('Deposit funds into your MT5 account') arrow_direction='right'
+                                        desc=l('Transfer funds from your binary options account into your MetaTrader 5 account.') %]
 
                                     <div class="form">
                                         [% INCLUDE form_row is_two_rows=1 type='text'  id='txt_amount_deposit' label=l("Amount") attributes='maxlength="10"' %]
@@ -307,8 +307,8 @@
                         <div class="gr-6 gr-12-m flex">
                             <div class="mt-panel mt-container">
                                 <form id="frm_withdrawal">
-                                    [% INCLUDE cashier_desc title=l('Withdraw from MT5 account') arrow_direction='left'
-                                        desc=l('Withdraw funds from MetaTrader 5 account into your Binary account.') %]
+                                    [% INCLUDE cashier_desc title=l('Withdraw funds from your MT5 account') arrow_direction='left'
+                                        desc=l('Transfer funds from your MetaTrader 5 account into your binary options account.') %]
 
                                     <div class="form">
                                         [% INCLUDE form_row is_two_rows=1 type='text'     id='txt_amount_withdrawal' label=l("Amount") attributes='maxlength="10"' %]
