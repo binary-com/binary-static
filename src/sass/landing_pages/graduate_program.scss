@@ -260,6 +260,9 @@ a.link {
     @extend .inline-flex;
     min-height: 60px;
     margin: 60px 0;
+    @media (max-width: 575px) {
+        margin: 20px 0;
+    }
     padding: 15px;
 
     h2 {
@@ -279,7 +282,7 @@ a.link {
     &.section-title {
         justify-content: flex-start;
         padding: 15px 0;
-        margin-bottom: 20px;
+        margin: 20px 0;
 
         h2 {
             color: $COLOR_DARK_BLUE;

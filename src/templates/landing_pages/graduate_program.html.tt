@@ -208,7 +208,7 @@
         </div>
         <div class="inline-flex">
             <img class="icon-lg margin-left-0" src="[% request.url_for('images/graduate_program/program3_icon.svg') %]" />
-            <p>[% l("You\'ll rotate through front-end, back-end, and quants. Each rotation will give you a feel for what each team does on a day-to-day basis while also allowing you to contribute to our codebase. Tasks will be assigned to you in increasing complexity to gradually build your confidence") %]</p>
+            <p>[% l("You\'ll rotate through front-end, back-end, and quants. Each rotation will give you a feel for what each team does on a day-to-day basis while also allowing you to contribute to our codebase. Tasks will be assigned to you in increasing complexity to gradually build your confidence.") %]</p>
         </div>
         <div class="inline-flex">
             <img class="icon-lg margin-left-0" src="[% request.url_for('images/graduate_program/program4_icon.svg') %]" />
