@@ -346,9 +346,11 @@ const MetaTraderUI = (() => {
         const $parent       = $templates.find('#view_1 .step-2 .type-group');
         if (!$acc_template.length || !$parent.length) return;
 
+        let count = 0;
         Object.keys(accounts_info)
             .filter(acc_type => !accounts_info[acc_type].is_demo)
             .forEach((acc_type) => {
+                count++;
                 const $acc  = $acc_template.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
                 const title = accounts_info[acc_type].short_title;
@@ -357,6 +359,7 @@ const MetaTraderUI = (() => {
                 $acc.find('p').text(title);
                 $parent.append($acc);
             });
+        $('.hl-types-of-accounts').setVisibility(count > 1);
     };
 
     // -------------------

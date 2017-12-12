@@ -135,7 +135,7 @@
                         [% END %]
                     </ul>
                     <p>
-                        <a href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Compare MetaTrader 5 accounts') %]</a>
+                        <a class="hl-types-of-accounts" href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Compare MetaTrader 5 accounts') %]</a>
                     </p>
                 </div>
             [% END %]
@@ -207,10 +207,10 @@
                         </div>
                         <div class="step-2 invisible">
                             <div class="separator-line gr-padding-10"></div>
-                            [% WRAPPER type_group title=l('Step 2: Choose types of accounts') types=[
+                            [% WRAPPER type_group title=l('Step 2: Choose account type') types=[
                                 { type='template' desc='Cent' },
                             ] %]
-                                <a class="hint" href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Which account is right for me?') %]</a>
+                                <a class="hint hl-types-of-accounts" href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Which account is right for me?') %]</a>
                             [% END %]
                         </div>
                         <p id="new_account_msg" class="notice-msg center-text invisible"></p>
