@@ -717,7 +717,7 @@
                         <div class="faq">
                             <h4>[% l("How are the tokens offered?") %]</h4>
                             <p>[% l("The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price.") %]</p>
-                            <p>[% l("This means that you won’t have to tie up important funds in order to keep your bids active.") %]</p>
+                            <p>[% l("This means that you won\’t have to tie up important funds in order to keep your bids active.") %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
@@ -806,14 +806,118 @@ cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a curre
                     <div class="gr-12">
                         <div class="faq">
                             <h4>[% l("How can I learn more about ICOs and cryptocurrencies?") %]</h4>
-                            <p>[% l("Head over to our <a href=[_1] target='_blank'  rel='noopener noreferrer'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business.", 'https://www.youtube.com/user/BinaryTradingVideos') %]</p>
+                            <p>[% l("Head over to our <a href=[_1] target='_blank'  rel='noopener noreferrer'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We\’ll show you how they work and how they are changing the way we do business.", 'https://www.youtube.com/user/BinaryTradingVideos') %]</p>
                         </div>
                     </div>
                     <div class="gr-12">
                         <div class="faq">
-                            <h4>[% l("How do I stay informed on the [_1] ICO?", broker_name) %]</h4>
-                            <p>[% l("Please subscribe to our mailing list using the form below for occasional announcements relating to the ICO.") %]</p>
-                            <p>[% l("You may also [_1]open a free [_2] account[_3].", '<a href="' _ request.url_for('home') _ '" target="_blank" rel="noopener noreferrer">', broker_name, '</a>') %]</p>
+                            <h4>[% l("How will you issue dividends to tokenholders?") %]</h4>
+                            <p>[% l("We are adopting the \‘Mini Me\’ ERC20 token for our ICO. This type of token possesses unique features that are suited to securities tokens. One of its unique features is the ability to clone itself, thus creating a mini version of itself.") %]</p>
+                            <p>[% l("To implement our dividend payments feature, we will clone our tokens and each cloned token will represent dividend rights.") %]</p>
+                            <p>[% l("At this stage, tokenholders can cash out their dividends in one of two ways:") %]</p>
+                            <ul class="bullet">
+                                <li>[% l("Trade your cloned tokens on a cryptocurrency exchange") %]</li>
+                                <li>[% l("Redeem the cloned tokens for dividends from Binary Group Ltd") %]</li>
+                            </ul>
+                            <p>[% l("In the latter case, tokenholders will need to log in to their [_1] account, authenticate their account in accordance with KYC requirements, and deposit the cloned tokens using the facilities that we\’ll provide in return for dividends.", broker_name) %]</p>
+                            <p>[% l("Dividends will generally be distributed once a year.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("How can I convert my tokens into ordinary shares?") %]</h4>
+                            <p>[% l("Tokenholders who wish to convert their tokens into ordinary shares must serve us with a conversion notice – in line with the terms of the tokens.") %]</p>
+                            <p>[% l("The terms cover market value, jurisdictions, KYC and AML procedures, and necessary regulatory approvals. You may refer to the Information Memorandum (pp. 20-21) for more details.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("What\’s the difference between securities tokens and utility tokens?") %]</h4>
+                            <p>[% l("Securities tokens are tokens that derive their value from an external asset or represent traditional financial assets.") %]</p>
+                            <p>[% l("Utility tokens are tokens that give you access to decentralised networks or applications.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("What is a Dutch auction? How does [_1] determine the final bid price per token and how will I know if my bid is successful?", broker_name) %]</h4>
+                            <p>[% l("The price per token is determined by a Dutch auction where investors will enter bids for how many tokens they want to purchase at different prices. Once the bidding period is over, all accepted bids will be arranged from the highest to lowest price until all our tokens have been assigned, as per the process described in the Information Memorandum. The lowest price among all allotted tokens will be the final price that everyone pays.") %]</p>
+                            <p>[% l("This means that the price of the token is determined by market demand, and not [_1].", broker_name) %]</p>
+                            <p>[% l("To find out if your bid is successful, you may refer to the \‘ICO Auction Bids\’ section on the [_1]ICO bidding page[_2].", '<a href="' _ request.url_for('user/ico-subscribe') _ '" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("How can I place a bid?") %]</h4>
+                            <p>[% l("To place a bid, just enter the number of tokens you\’d like to purchase and the price you\’re willing to pay per token into the bid form on the [_1]ICO bidding page[_2].", '<a href="' _ request.url_for('user/ico-subscribe') _ '" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
+                            <p>[% l("To place a bid, you only need to place an initial deposit equivalent to 5% of the total amount. Your bids can be cancelled at any time before the end of the auction at no cost.") %]</p>
+                            <p>[% l("After the bidding period is over and the final price of the token has been decided, you will have two weeks to pay the balance owed depending on the final price of the token.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("What is the definition of a professional investor?") %]</h4>
+                            <p>[% l("The definition of a professional investor varies based on jurisdiction. In essence, a professional investor refers to an investor who\’s more experienced and is able to evaluate an investment opportunity with a full understanding of the risks involved.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Can I bid on your tokens in cryptocurrencies such as Bitcoin?") %]</h4>
+                            <p>[% l("Yes, we support multiple crypto (Bitcoin, Bitcoin Cash, Ethereum, and Litecoin) and fiat (AUD, EUR, GBP, and USD) currencies.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Are there any minimum requirements per bid?") %]</h4>
+                            <p>[% l("Yes. Bidding starts at USD 1.35 per token with a minimum number of 25 tokens per bid. The final token price will be determined after the bidding period is over.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Why was my bid unsuccessful?") %]</h4>
+                            <p>[% l("Your bid was unsuccessful because it was lower than the final token price. A higher bid will give you a higher chance for a successful bid.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("What happens once I\’ve claimed the tokens?") %]</h4>
+                            <p>[% l("Once you\’ve claimed your tokens, you are entitled to the following rights:") %]</p>
+                            <ul class="bullet">
+                                <li>[% l("The right to receive dividend payments equivalent to dividends paid on Binary Group Ltd ordinary shares") %]</li>
+                                <li>[% l("The right to convert your tokens into ordinary shares") %]</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("What is an ERC20 token?") %]</h4>
+                            <p>[% l("An ERC20 token is a type of token based on the ERC20 token standard used for Ethereum smart contracts. It\’s considered to be one of the most significant token standards ever created for the Ethereum blockchain.") %]</p>
+                            <p>[% l("We decided to adopt the ERC20 token as it possesses unique features that are appropriate for a securities token.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Can I sell my ERC20 tokens once they are listed on the [_1]Lykke.com[_2] Exchange?", '<a href="https://www.lykke.com/" target="_blank" rel="noopener noreferrer">', '</a>') %]</h4>
+                            <p>[% l("Yes, you can freely trade your tokens after they are listed on the [_1]Lykke.com[_2] exchange or any other cryptocurrency exchange that chooses to list our tokens in the future.", '<a href="https://www.lykke.com/" target="_blank" rel="noopener noreferrer">', '</a>') %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Can [_1] tokens be mined?", broker_name) %]</h4>
+                            <p>[% l("No. [_1] tokens are securities-backed tokens which come with exclusive tokenholder rights. They cannot be mined.", broker_name) %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("What will be the total shares issued after the ICO?") %]</h4>
+                            <p>[% l("This depends on the number of tokens that will be issued after the ICO.") %]</p>
+                            <p>[% l("If the maximum number of tokens (10 million) offered in the token sale are issued, then the number of shares issued after the ICO will total 220,257,430 shares.") %]</p>
+                            <p>[% l("If the minimum number of tokens (three million) offered in the token sale are issued, then the number of shares issued after the ICO will total 213,257,430 shares.") %]</p>
+                        </div>
+                    </div>
+                    <div class="gr-12">
+                        <div class="faq">
+                            <h4>[% l("Is there a pre-ICO?") %]</h4>
+                            <p>[% l("No.") %]</p>
                         </div>
                     </div>
                 </div>
