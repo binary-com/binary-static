@@ -71,6 +71,43 @@
     }
 }
 
+.get-started-beta {
+    a:hover {
+        text-decoration: none;
+    }
+    .circle-wrapper {
+        display: flex;
+
+        .orange-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $COLOR_ORANGE;
+            margin-left: -30px;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: $COLOR_WHITE;
+
+            @media screen and (max-width: 480px) {
+                margin-left: 0;
+            }
+        }
+    }
+    .notice-circle {
+        width: 16px;
+        height: 16px;
+        border: 2px solid $COLOR_RED;
+        border-radius: 50%;
+        color: $COLOR_RED;
+        line-height: 16px;
+        font-size: 14px;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
 .get-started-jp {
     .link-size-box {
         display: table-cell;
