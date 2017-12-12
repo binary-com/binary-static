@@ -89,7 +89,7 @@ const SelfExclusion = (() => {
             }
             if (!/session_duration_limit|max_open_bets/.test(id)) {
                 options.type     = 'float';
-                options.decimals = `0, ${Currency.getDecimalPlaces(Client.get('currency'))}`;
+                options.decimals = Currency.getDecimalPlaces(Client.get('currency'));
             }
             checks.push(['number', options]);
 
