@@ -77,7 +77,12 @@ const MetaTraderConfig = (() => {
                             resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', [
                                 urlFor('user/security/cashier_passwordws')]));
                         } else {
-                            resolve();
+                            const limit = State.getResponse('get_limits.remainder');
+                            if (typeof limit !== 'undefined' && limit < 1) {
+                                resolve(localize('You have reached the limit.'));
+                            } else {
+                                resolve();
+                            }
                         }
                     });
                 }

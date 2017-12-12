@@ -492,6 +492,7 @@ sub _texts {
         push @texts, localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.');
         push @texts, localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.');
         push @texts, localize('Sorry, this feature is not available in your jurisdiction.');
+        push @texts, localize('You have reached the limit.');
         push @texts, localize('Main password');
         push @texts, localize('Investor password');
         push @texts, localize('Current password');
