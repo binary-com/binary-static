@@ -62,7 +62,6 @@ const Page = (() => {
                 }
             });
             scrollToTop();
-            showNotificationOutdatedBrowser();
         });
     };
 
@@ -211,6 +210,7 @@ const Page = (() => {
     return {
         onLoad,
         onUnload,
+        showNotificationOutdatedBrowser,
     };
 })();
 
