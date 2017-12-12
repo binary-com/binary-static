@@ -276,6 +276,7 @@ const MetaTraderUI = (() => {
         const displayStep = (step) => {
             $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
             $form.find(`#view_${step}`).setVisibility(1);
+            $form.find('#view_2 .error-msg').setVisibility(0);
         };
         $form.find('#btn_next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
