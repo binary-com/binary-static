@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-12-10 20:05-0500\n"
+"PO-Revision-Date: 2017-12-11 20:09-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1013,6 +1013,9 @@ msgstr "โปรแกรมพันธมิตร"
 msgid "After a lengthy process, we were awarded a financial license to operate in the country, in compliance with its new regulations."
 msgstr "หลังจากผ่านกระบวนการที่ใช้เวลายาวนาน เราได้รับใบอนุญาตทางการเงินให้ปฏิบัติงานในประเทศ โดยให้เป็นไปตามระเบียบข้อบังคับใหม่"
 
+msgid "After the bidding period is over and the final price of the token has been decided, you will have two weeks to pay the balance owed depending on the final price of the token."
+msgstr ""
+
 msgid "After you have decided which position you want to take whether long or short you are well on your way to buying your first currency pair."
 msgstr ""
 
@@ -1187,6 +1190,9 @@ msgstr "จำนวนของสินทรัพย์ข้างต้น
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "สำเร็จการศึกษาระดับสูงกว่ามหาวิทยาลัย หรือ ปริญญาตรี หรือ อนุปริญญา"
 
+msgid "An ERC20 token is a type of token based on the ERC20 token standard used for Ethereum smart contracts. It’s considered to be one of the most significant token standards ever created for the Ethereum blockchain."
+msgstr ""
+
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "การซื้อขาย Ends Between จะชำระเงิน หากราคาปิดของตลาดมีค่าสูงกว่า หรือ มูลค่าราคาเป้าหมายต่ำ และ ต่ำกว่ามูลค่าราคาเป้าหมายสูง การซื้อขาย Ends Outside จะชำระเงิน หากราคาปิดของตลาดมีค่าใดค่าหนึ่ง สูงกว่ามูลค่าราคาเป้าหมายสูง หรือ ต่ำกว่ามูลค่าราคาเป้าหมายต่ำ"
 
@@ -1321,6 +1327,9 @@ msgstr "เมษายน"
 
 msgid "Are over 18."
 msgstr "มีอายุมากกว่า 18 ปี"
+
+msgid "Are there any minimum requirements per bid?"
+msgstr ""
 
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr "ท่านเป็นตัวแทนรับชำระเงิน หรือ สนใจที่จะเป็นตัวแทนกับเราหรือเปล่า?"
@@ -1465,6 +1474,9 @@ msgstr "มีประสบการณ์อย่างน้อย 1 ปี
 
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "มีประสบการณ์อย่างน้อย 5 ปี ในการทำการตลาดกับพันธมิตร การทำให้ธุรกิจเติบโตโดยเทคนิคใหม่ๆ การพัฒนาธุรกิจ และทักษะอื่นๆ ที่เกี่ยวข้อง"
+
+msgid "At this stage, tokenholders can cash out their dividends in one of two ways:"
+msgstr ""
 
 msgid "Audit"
 msgstr "ตรวจสอบ"
@@ -2033,8 +2045,14 @@ msgstr ""
 msgid "CFDs Derivatives that profit by speculating on the movement of underlying assets."
 msgstr ""
 
+msgid "Can %1 tokens be mined?"
+msgstr ""
+
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "ฉันสามารถเป็นพันธมิตรได้ไหม หากฉันไม่มีเว็บไซต์?"
+
+msgid "Can I bid on your tokens in cryptocurrencies such as Bitcoin?"
+msgstr ""
 
 msgid "Can I contribute to back-end code?"
 msgstr "ฉันช่วยพัฒนาระบบส่วนหลังบ้านได้ไหม?"
@@ -2044,6 +2062,9 @@ msgstr "สามารถปรึกษาหารือเรื่อง co
 
 msgid "Can I offer my referrals an incentive to sign up through my link rather than sign up directly?"
 msgstr "ฉันสามารถให้ค่าตอบแทนกับผู้อ้างอิงของฉันในการลงทะเบียนผ่านลิงค์ของฉันแทนการลงทะเบียนโดยตรงได้หรือไม่?"
+
+msgid "Can I sell my ERC20 tokens once they are listed on the %1Lykke.com%2 Exchange?"
+msgstr ""
 
 msgid "Can I submit security vulnerabilities?"
 msgstr "สามารถส่งช่องโหว่ด้านความปลอดภัยได้หรือไม่"
@@ -3103,6 +3124,9 @@ msgstr ""
 
 msgid "Dividends paid out"
 msgstr "เงินปันผลที่ได้รับ"
+
+msgid "Dividends will generally be distributed once a year."
+msgstr ""
 
 msgid "Divorce Settlement"
 msgstr "ข้อตกลงการหย่า"
@@ -4374,11 +4398,17 @@ msgstr "มีการบริการของโทเค่นอย่า
 msgid "How can I become an affiliate?"
 msgstr "ฉันจะเป็นพันธมิตรได้อย่างไร?"
 
+msgid "How can I convert my tokens into ordinary shares?"
+msgstr ""
+
 msgid "How can I find out more about %1?"
 msgstr "ฉันสามารถหาข้อมูลเพิ่มเติมเกี่ยวกับ %1ได้อย่างไร?"
 
 msgid "How can I learn more about ICOs and cryptocurrencies?"
 msgstr "ฉันจะศึกษาข้อมูลเกี่ยวกับ ICO และเงินดิจิทัลได้อย่างไร?"
+
+msgid "How can I place a bid?"
+msgstr ""
 
 msgid "How can I purchase tokens?"
 msgstr "ฉันสามารถซื้อโทเค่นได้อย่างไร?"
@@ -4391,9 +4421,6 @@ msgstr "ฉันจะฝากเงินเข้าบัญชีของ
 
 msgid "How do I know how much I have earned?"
 msgstr "ฉันจะทราบได้อย่างไรว่าฉันได้รับเงิน หรือ กำไรเท่าไร?"
-
-msgid "How do I stay informed on the %1 ICO?"
-msgstr "ฉันจะได้รับทราบข้อมูลเกี่ยวกับ %1 ICO ได้อย่างไร?"
 
 msgid "How do I submit a pull request?"
 msgstr "จะส่งแจ้งความเปลี่ยนแปลง (pull request) อย่างไร"
@@ -4502,6 +4529,9 @@ msgstr "จะใช้ตัวแทนรับชำระเงินอย
 
 msgid "How will I get paid?"
 msgstr "ฉันจะได้รับชำระเงินอย่างไร?"
+
+msgid "How will you issue dividends to tokenholders?"
+msgstr ""
 
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
 msgstr ""
@@ -4657,6 +4687,12 @@ msgid "If the Margin Level for your Real Account reaches or falls below the Stop
 msgstr "ถ้าระดับมาร์จินของบัญชีจริงของคุณถึงหรือตกลงจากระดับยุติการซื้อขาย จะถูกจัดว่าเป็นกรณีเพิกเฉยต่อสัญญา ในสถานการณ์ดังกล่าว โพซิชั่นเปิดจะถูกปิดอัตโนมัติตามลำดับต่อไปนี้ (i) เซิร์ฟเวอร์วิเคราะห์คำสั่งซื้อของลูกค้าซึ่งยังไม่ถูกดำเนินการในขณะนี้ (ii) เซิร์ฟเวอร์ลบคำสั่งซื้อที่มีมาร์จินมากที่สุด (iii) ถ้าระดับมาร์จินยังคงต่ำกว่าระดับยุติการซื้อขาย คำสั่งซื้อต่อไปจะถูกลบออก (คำสั่งซื้อที่ไม่มีการกำหนดมาร์จินจะไม่ถูกลบ) (iv) ถ้าระดับมาร์จินยังคงต่ำกว่าระดับยุติการซื้อขาย เซิร์ฟเวอร์ปิดโพซิชั่นที่มีความสูญเสียสูงสุด (v) โพซิชั่นเปิดจะถูกปิดจนกว่าระดับมาร์จินจะสูงกว่าระดับยุติการซื้อขาย"
 
 msgid "If the ask price is 1.05382, you'll buy USD 1.05382 for every EUR 1 you sell."
+msgstr ""
+
+msgid "If the maximum number of tokens (10 million) offered in the token sale are issued, then the number of shares issued after the ICO will total 220,257,430 shares."
+msgstr ""
+
+msgid "If the minimum number of tokens (three million) offered in the token sale are issued, then the number of shares issued after the ICO will total 213,257,430 shares."
 msgstr ""
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
@@ -5019,6 +5055,9 @@ msgstr "ในกรณีใดๆ อันจะพึงเกิดขึ�
 msgid "In the last two years alone, over 276 million contracts were bought and sold on our platform."
 msgstr "แค่ในระยะเวลาสองปีที่ผ่านมา มีสัญญามากกว่า 276 ล้านสัญญาที่มีการซื้อและขายบนแพลตฟอร์มของเรา"
 
+msgid "In the latter case, tokenholders will need to log in to their %1 account, authenticate their account in accordance with KYC requirements, and deposit the cloned tokens using the facilities that we’ll provide in return for dividends."
+msgstr ""
+
 msgid "In the unlikely event of BIEL suffering an investment default and not being able to meet its obligations, BIEL is a member of the Malta Investor Compensation Scheme which covers the first €20,000 of any claim. Whether you are able to claim depends on the type of business and your personal circumstances."
 msgstr "ในเหตุการณ์ที่ไม่แน่นอน BIEL ประสบภาวะการลงทุนที่ล้มเหลวและไม่เป็นไปตามเงื่อนไข BIEL เป็นสมาชิกภายของ Malta Investor Compensation Scheme ให้ความคุ้มครอง 20,000 ยูโรแรก ของข้อเรียกร้องใดๆ ท่านสามารถเรียกร้องสิทธิ์ตามประเภทของธุรกิจ หรือ สิทธิ์ส่วนบุคคลของท่านตามสถานการณ์"
 
@@ -5258,6 +5297,9 @@ msgstr "มี ICO ในทุกพื้นที่ไหม?"
 
 msgid "Is there a cost for joining?"
 msgstr "มีค่าใช้จ่ายในการเข้าร่วมไหม?"
+
+msgid "Is there a pre-ICO?"
+msgstr ""
 
 msgid "Isle of Man"
 msgstr "เกาะ Isle of Man"
@@ -6891,6 +6933,12 @@ msgstr "ไม่มีความเสี่ยง 10,000 เหรียญ�
 msgid "No, return to the ICO auction page"
 msgstr "ไม่ กลับไปหน้าประมูล ICO"
 
+msgid "No."
+msgstr ""
+
+msgid "No. %1 tokens are securities-backed tokens which come with exclusive tokenholder rights. They cannot be mined."
+msgstr ""
+
 msgid "No. Once your pull request is merged into master by our development team, and you have been paid, you have effectively handed over the rights to the code. It then becomes part of the master %1 codebase under the open-source license of the relevant repository."
 msgstr "ไม่ เมื่อข้อมูลแจ้งความเปลี่ยนแปลงของคุณได้ถูกรวมเข้ากับตัวหลักโดยทีมพัฒนาของเรา และคุณได้รับเงินแล้ว มีผลว่าคุณได้มอบสิทธิ์ของรหัส จากนั้นข้อมูลดังกล่าวจะกลายเป็นส่วนหนึ่งของ codebase %1 หลักภายใต้ใบรับรองโอเพ่นซอสของสถานที่เก็บที่เกี่ยวข้อง"
 
@@ -7079,6 +7127,9 @@ msgstr "เมื่อท่านกดปุ่ม 'Submit' เงินห�
 
 msgid "Once you click the 'Submit' button, the funds will be withdrawn from your account and transferred to your Client's account."
 msgstr "เมื่อท่านกดปุ่ม 'Submit' เงินหลักประกันของท่านจะถูกถอนจากบัญชีของท่านและโอนไปที่บัญชีลูกค้าของท่าน"
+
+msgid "Once you’ve claimed your tokens, you are entitled to the following rights:"
+msgstr ""
 
 msgid "One Zero"
 msgstr "หนึ่งศูนย์"
@@ -7770,9 +7821,6 @@ msgstr "กรุณาระบุประเทศ (หรือประเ�
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "โปรดส่งข้อมูลข้างต้นมาที่ <a href='mailto:%1'>%1</a>"
 
-msgid "Please subscribe to our mailing list using the form below for occasional announcements relating to the ICO."
-msgstr "กรุณาลงทะเบียนสมาชิกในรายการจดหมายของเราโดยในแบบฟอร์มด้านล่างเพื่อรับข่าวสารข้อมูลที่เกี่ยวกับ ICO "
-
 msgid "Please switch to a %1 account to manage funds."
 msgstr ""
 
@@ -8237,6 +8285,9 @@ msgstr ""
 msgid "Receive your activation code by secure"
 msgstr "ได้รับรหัสเปิดใช้งาน โดยปลอดภัย"
 
+msgid "Redeem the cloned tokens for dividends from Binary Group Ltd"
+msgstr ""
+
 msgid "Reduce fees associated with deposits and withdrawals."
 msgstr "ลดค่าธรรมเนียมที่เกี่ยวข้องกับการฝากและถอนเงิน"
 
@@ -8539,6 +8590,9 @@ msgstr "วินาที"
 
 msgid "Secret question"
 msgstr "คำถามลับ"
+
+msgid "Securities tokens are tokens that derive their value from an external asset or represent traditional financial assets."
+msgstr ""
 
 msgid "Security"
 msgstr "หลักทรัพย์"
@@ -9749,6 +9803,9 @@ msgstr "เวลาตัดยอดของการทำโรลโอเ
 msgid "The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavour to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level."
 msgstr "ระดับการยุติการซื้อขายเริ่มแรกที่เกี่ยวข้องกับบัญชีของคุณจะมีการแจ้งบนเว็บไซต์ของเรา อย่างไรก็ตาม ระดับการยุติการซื้อขายสามารถเปลี่ยนแปลงได้ตามดุลยพินิจของเรา การเปลี่ยนแปลงในระดับการยุติการซื้อขายจะมีผลทันที เราจะพยายามแจ้งเตือนคุณเกี่ยวกับการเปลี่ยนแปลงของระดับการยุติการซื้อขายเริ่มแรกของเราโดยการแจ้งระดับการยุติการซื้อขายเริ่มแรกที่ถูกแก้ไขบนเว็บไซต์ของเรา เป็นหน้าที่ของคุณที่ต้องตรวจสอบเว็บไซต์ของเราอย่างสม่ำเสมอ เพื่อรับทราบเกี่ยวกับระดับการยุติการซื้อขายเริ่มแรก"
 
+msgid "The definition of a professional investor varies based on jurisdiction. In essence, a professional investor refers to an investor who’s more experienced and is able to evaluate an investment opportunity with a full understanding of the risks involved."
+msgstr ""
+
 msgid "The detailed report shows you your detailed traffic and income statistics. Use the filters and column selectors to break down your reporting as desired."
 msgstr "รายงานอย่างละเอียดจะให้รายละเอียดเกี่ยวกับปริมาณการค้าขายอย่างละเอียดและสถิติรายได้ของคุณ ใช้ตัวกรองและตัวเลือกคอลัมน์เพื่อแบ่งแยกการรายงานตามที่คุณต้องการ"
 
@@ -9914,6 +9971,9 @@ msgstr ""
 msgid "The price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
 msgstr ""
 
+msgid "The price per token is determined by a Dutch auction where investors will enter bids for how many tokens they want to purchase at different prices. Once the bidding period is over, all accepted bids will be arranged from the highest to lowest price until all our tokens have been assigned, as per the process described in the Information Memorandum. The lowest price among all allotted tokens will be the final price that everyone pays."
+msgstr ""
+
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "กำไร คือ ผลต่างของราคาซื้อ (ที่วางเงิน) และการชำระเงินเมื่อท่านชนะการซื้อขาย"
 
@@ -9940,6 +10000,12 @@ msgstr "สิทธิ์ในการแก้ไข หรือ เปล�
 
 msgid "The right to convert tokens into Ordinary Shares."
 msgstr "สิทธิ์ที่จะแปลงโทเค่นเป็นหุ้นสามัญ"
+
+msgid "The right to convert your tokens into ordinary shares"
+msgstr ""
+
+msgid "The right to receive dividend payments equivalent to dividends paid on Binary Group Ltd ordinary shares"
+msgstr ""
 
 msgid "The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares; and"
 msgstr "สิทธิ์ในการรับเงินเทียบเท่าเงินปันผลที่จ่ายบน Binary Group Ltd หุ้นสามัญ และ"
@@ -9987,6 +10053,9 @@ msgstr "คำว่า 'เรา' 'ของเรา' 'บริษัท' �
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "คำว่า 'เรา' 'ของเรา' 'บริษัท' หรือ '%1' จะหมายถึง Binary (V) Ltd. หรือ Binary (C.R.) S.A. ขึ้นอยู่กับเขตพื้นที่ของบัญชีของลูกค้าที่ถูกแนบมาตามวิธีการเปิดบัญชีของเว็บไซต์"
+
+msgid "The terms cover market value, jurisdictions, KYC and AML procedures, and necessary regulatory approvals. You may refer to the Information Memorandum (pp. 20-21) for more details."
+msgstr ""
 
 msgid "The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price."
 msgstr "โทเค่นถูกเสนอผ่านทางการประมูล การเสนอราคา คุณจะต้องฝากเงิน 5% ของราคาทั้งหมดที่เสนอล่วงหน้า หลังจากการประมูลเสร็จสิ้น และได้มีการกำหนดราคาสุดท้ายแล้ว คุณมีเวลาสองอาทิตย์ที่จะฝากยอดเงินคงเหลือขึ้นอยู่กับราคาสุดท้ายของโทเค่น"
@@ -10190,6 +10259,9 @@ msgstr "สัญญานี้กำไร"
 msgid "This demo account comes with %1 of the virtual fund. Contact our customer service to top up your demo account once virtual fund reaches zero."
 msgstr ""
 
+msgid "This depends on the number of tokens that will be issued after the ICO."
+msgstr ""
+
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the %1 Application Program Interface (\"API\"); \"you\", or \"your\")."
 msgstr "เอกสารฉบับนี้ (\"ข้อตกลง\") กำหนดข้อตกลงและเงื่อนไข (\"เงื่อนไข\") ระหว่าง \"บริษัทฯ\" คือ บริษัท Binary Services Ltd (\"พวกเรา,\" \"เรา,\" และ \"ของพวกเรา\") และท่าน (ผู้สมัครใช้งาน API แอพพลิเคชันของ %1 (\"API\"); \"ท่าน\", หรือ \"ของท่าน\")"
 
@@ -10236,6 +10308,9 @@ msgid "This is the current price at which an underlying can be bought or sold at
 msgstr "นี้คือราคาปัจจุบันที่ผลิตภัณฑ์อ้างอิงสามารถถูกซื้อ หรือ ขาย ณ เวลาใดๆ"
 
 msgid "This is why we've come up with the following three-step tutorial to help you bridge that gap and make your first trade:"
+msgstr ""
+
+msgid "This means that the price of the token is determined by market demand, and not %1."
 msgstr ""
 
 msgid "This means that you won’t have to tie up important funds in order to keep your bids active."
@@ -10353,6 +10428,9 @@ msgstr ""
 msgid "To find out if the ICO is available in your jurisdiction, and, if so, if you are qualified to subscribe for tokens, please select your country from the dropdown list on the %1Information Memorandum%2 page."
 msgstr "ค้นหาว่า ICO มีอยู่ในเขตพื้นที่ของท่านหรือไม่ และถ้ามี ท่านมีคุณสมบัติที่จะเข้าซื้อโทเค่นหรือไม่ กรุณาเลือกประเทศของท่านจากรายการในหน้า %1สรุปข้อสนเทศ%2"
 
+msgid "To find out if your bid is successful, you may refer to the ‘ICO Auction Bids’ section on the %1ICO bidding page%2."
+msgstr ""
+
 msgid "To find out more about %1, you can read about our %2group history%3, %4regulatory status%3, and %5company culture%3. You can also read the %6company blog%3."
 msgstr "ถ้าต้องการค้นหาเพิ่มเติมเกี่ยวกับ %1 ท่านสามารถศึกษาข้อมูลเกี่ยวกับ %2 ประวัติของกลุ่ม %3 %4 สถานะทางกฎหมาย %3 และ %5 วัฒนธรรมของบริษัท %3 นอกจากนี้ท่านยังสามารถอ่านที่ %6 บล็อกของบริษัท %3 ได้อีกด้วย"
 
@@ -10363,6 +10441,9 @@ msgid "To go long, you'll want to click on 'Buy' to purchase EUR 1 for USD 1.177
 msgstr ""
 
 msgid "To go short, you'll click on 'Sell' to sell EUR 1 and receive USD 1.17725 in return."
+msgstr ""
+
+msgid "To implement our dividend payments feature, we will clone our tokens and each cloned token will represent dividend rights."
 msgstr ""
 
 msgid "To learn more, please read our <a href='%1'>contract specifications</a>."
@@ -10410,8 +10491,14 @@ msgstr "เพื่อดำเนินการ โปรด <a href=\"%1\"> 
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "เพื่อดำเนินการส่วนนี้ โปรดเปลี่ยนบัญชีของท่านเป็นบัญชีเงินจริง %1"
 
+msgid "To place a bid, just enter the number of tokens you’d like to purchase and the price you’re willing to pay per token into the bid form on the %1ICO bidding page%2."
+msgstr ""
+
 msgid "To place a bid, you only need to deposit 5% of the total bid value. At the end of the auction, the final price of the token will be decided and you will have two weeks to settle the remaining balance that’s due on each active bid."
 msgstr "การวางการเสนอราคา ท่านจะต้องวางเงิน 5% ของยอดรวมมูลค่าการประมูล เมื่อสิ้นสุดการประมูล ราคาสุดท้ายของโทเค่นจะถูกตัดสิน และท่านจะมีเวลาสองสัปดาห์ในการชำระยอดคงเหลือที่เป็นไปตามเงื่อนไขการประมูล"
+
+msgid "To place a bid, you only need to place an initial deposit equivalent to 5% of the total amount. Your bids can be cancelled at any time before the end of the auction at no cost."
+msgstr ""
 
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "สำหรับตำแหน่งนี้ ท่านต้องสำเร็จการศึกษาขั้นสูงในสาขา ฟิสิกส์ วิศวกรรมการเงิน หรือ คณิตศาสตร์"
@@ -10436,6 +10523,9 @@ msgstr "เงินปันผลโทเค่น"
 
 msgid "Token sale ends in"
 msgstr "สิ้นสุดการระดมทุนเมื่อ "
+
+msgid "Tokenholders who wish to convert their tokens into ordinary shares must serve us with a conversion notice – in line with the terms of the tokens."
+msgstr ""
 
 msgid "Tokens"
 msgstr "โทเค่น"
@@ -10634,6 +10724,9 @@ msgstr ""
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "ซื้อขายกับผู้บุกเบิกอุตสาหกรรมและผู้ได้รับสิทธิบัตรในเทคโนโลยีการกำหนดราคา"
+
+msgid "Trade your cloned tokens on a cryptocurrency exchange"
+msgstr ""
 
 msgid "Trade your tokens on the Lykke Exchange"
 msgstr "ซื้อขายโทเค่นของท่านบน Lykke Exchange"
@@ -11004,6 +11097,9 @@ msgstr "ใบแจ้งหนี้ค่าสาธารณูปโภค
 msgid "Utility bills (electricity, water, gas, broadband and landline)"
 msgstr "ค่าสาธารณูปโภค (ไฟฟ้า น้ำ ก๊าซ บรอดแบนด์ และโทรศัพท์พื้นฐาน)"
 
+msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
+msgstr ""
+
 msgid "Variable"
 msgstr ""
 
@@ -11205,6 +11301,9 @@ msgstr "พวกเราเสนอโครงสร้างการมอ
 msgid "We analyse your pending orders"
 msgstr ""
 
+msgid "We are adopting the ‘Mini Me’ ERC20 token for our ICO. This type of token possesses unique features that are suited to securities tokens. One of its unique features is the ability to clone itself, thus creating a mini version of itself."
+msgstr ""
+
 msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
 msgstr "พวกเราเตรียมพร้อมสำหรับองค์กรการกุศลขนาดเล็ก องค์กรท้องถิ่น ซึ่งพวกเราสามารถเป็นส่วนหนึ่งในการบริจาคให้โดยตรง หากท่านต้องการพูดคุยกับเราเกี่ยวกับการขอการสนับสนุนองค์กรของท่าน โปรดติดต่อเราที่ %1"
 
@@ -11249,6 +11348,9 @@ msgstr "เรากำลังตรวจสอบเอกสารของ
 
 msgid "We charge a 2% fee on top of market rates."
 msgstr "เราเรียกเก็บค่าธรรมเนียม 2% นอกเหนือจากอัตราของตลาด"
+
+msgid "We decided to adopt the ERC20 token as it possesses unique features that are appropriate for a securities token."
+msgstr ""
 
 msgid "We delete an order with the largest margin reserved"
 msgstr ""
@@ -11475,10 +11577,19 @@ msgstr "สิ่งที่ฉันคาดหวังว่าจะได
 msgid "What commission plan do you offer?"
 msgstr "แผนค่าตอบแทนที่นำเสนอน่าสนใจแค่ไหน?"
 
+msgid "What happens once I’ve claimed the tokens?"
+msgstr ""
+
 msgid "What is CFD trading"
 msgstr ""
 
 msgid "What is Forex trading"
+msgstr ""
+
+msgid "What is a Dutch auction? How does %1 determine the final bid price per token and how will I know if my bid is successful?"
+msgstr ""
+
+msgid "What is an ERC20 token?"
 msgstr ""
 
 msgid "What is an ICO?"
@@ -11495,6 +11606,9 @@ msgstr "โปรแกรมพันธมิตรของ %1 คืออ�
 
 msgid "What is the definition of a 'client'?"
 msgstr "นิยามของ 'ลูกค้า' คืออะไร?"
+
+msgid "What is the definition of a professional investor?"
+msgstr ""
 
 msgid "What is the minimum bid price?"
 msgstr "ราคาต่ำที่สุสดในการประมูลคือเท่าไร?"
@@ -11520,6 +11634,9 @@ msgstr ""
 msgid "What will be the token symbol?"
 msgstr "สัญลักษณ์ของโทเค่นคืออะไร?"
 
+msgid "What will be the total shares issued after the ICO?"
+msgstr ""
+
 msgid "What you can trade with CFDs"
 msgstr ""
 
@@ -11527,6 +11644,9 @@ msgid "What's a margin call and how is it applied"
 msgstr ""
 
 msgid "What's a stop out level and how is it applied"
+msgstr ""
+
+msgid "What’s the difference between securities tokens and utility tokens?"
 msgstr ""
 
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
@@ -11763,6 +11883,9 @@ msgstr "ทำไมควรจะเป็นพันธมิตรกับ
 msgid "Why trade with %1"
 msgstr "ทำไมจึงต้องซื้อขายกับ %1"
 
+msgid "Why was my bid unsuccessful?"
+msgstr ""
+
 msgid "Why you should trade binary options with %1"
 msgstr ""
 
@@ -11912,6 +12035,15 @@ msgstr "ใช่ แต่เราต้องการให้ท่าน�
 
 msgid "Yes, cancel my bid"
 msgstr "ใช่ ยกเลิกคำสั่งซื้อของฉัน"
+
+msgid "Yes, we support multiple crypto (Bitcoin, Bitcoin Cash, Ethereum, and Litecoin) and fiat (AUD, EUR, GBP, and USD) currencies."
+msgstr ""
+
+msgid "Yes, you can freely trade your tokens after they are listed on the %1Lykke.com%2 exchange or any other cryptocurrency exchange that chooses to list our tokens in the future."
+msgstr ""
+
+msgid "Yes. Bidding starts at USD 1.35 per token with a minimum number of 25 tokens per bid. The final token price will be determined after the bidding period is over."
+msgstr ""
 
 msgid "Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:"
 msgstr "ใช่ กรุณาติดต่อผู้จัดการบัญชีของท่าน หากท่านต้องการปรับแต่งแบนเนอร์เอง โดยเตรียมข้อมูลให้พวกเขา ดังต่อไปนี้:"
@@ -12158,9 +12290,6 @@ msgstr "ท่านไม่อาจเพิกถอนใบอนุญา
 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
 msgstr "คุณให้การรับรองและรับประกันดังต่อไปนี้กับเราว่าเมื่อใดก็ตามที่คุณอยู่ในสัญญา คุณตกลงว่าการรับรองและรับประกันดังกล่าวจะถูกทวนซ้ำทุกครั้งที่คุณเปิดหรือปิดธุรกรรม"
-
-msgid "You may also %1open a free %2 account%3."
-msgstr "ท่านอาจจะ %1 เปิดบัญชี %2 %3 ฟรี"
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "ท่านอาจจะบันทึกเนื้อหาเป็นเวลาไม่เกิน 24 ชั่วโมง จากคำสั่งของเนื้อหาที่ได้จาก API ของ %1"
@@ -12411,6 +12540,9 @@ msgstr "บัญชีของท่านไม่ควรใช้สำห
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "ใบสมัครของท่านจะถูกทวนสอบโดยฝ่ายการตลาดและธรรมาภิบาลของเรา เมื่อมีการอนุมัติ ท่านจะสามารถใช้งานระบบ <a href='%1'>ตัวแทนรับชำระเงิน</a> ของเราได้"
+
+msgid "Your bid was unsuccessful because it was lower than the final token price. A higher bid will give you a higher chance for a successful bid."
+msgstr ""
 
 msgid "Your breach of any of %1's rights;"
 msgstr "การฝ่าฝืนสิทธิ์ %1 ของท่าน"
