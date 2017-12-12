@@ -120,7 +120,7 @@
                         image="images/pages/home-beta/trade/forex.svg" %]
                 [% END %]
                 [% WRAPPER tab_content id='cfds' %]
-                    [% PROCESS markets_tab_content header=l("CFDs") text=l("Derivatives that reflect the movement of underlying assets.")
+                    [% PROCESS markets_tab_content header=l("CFDs") text=l("CFDs Derivatives that profit by speculating on the movement of underlying assets.")
                         image="images/pages/home-beta/trade/cfds.svg" %]
                 [% END %]
                 [% WRAPPER tab_content id='metals' %]
@@ -242,8 +242,8 @@
                             'perfect_money',
                             'skrill',
                             'ecopayz',
+                            'qiwi',
                             'ethereum_black',
-                            'ethereum_classic',
                             'bitcoin',
                             'bitcoin_cash',
                             'litecoin',
