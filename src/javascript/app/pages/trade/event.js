@@ -270,7 +270,6 @@ const TradingEvents = (() => {
 
             lots_element.addEventListener('input', commonTrading.debounce((e) => {
                 e.target.value = e.target.value.replace(/[^0-9]/g, '');
-                const currency = Defaults.get('currency');
                 Defaults.set('lot', e.target.value);
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));

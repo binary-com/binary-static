@@ -156,18 +156,18 @@ const Price = (() => {
         }
 
         // hide all containers except current one
-        if ('middle' !== position) {
-          const ele = document.getElementById(`price_container_middle`);
-          if($(ele).is(':visible')) {
-            $(ele).fadeOut(200);
-          }
+        if (position !== 'middle') {
+            const ele = document.getElementById('price_container_middle');
+            if($(ele).is(':visible')) {
+                $(ele).fadeOut(200);
+            }
         } else {
-          const ele_top = document.getElementById(`price_container_top`);
-          const ele_bottom = document.getElementById(`price_container_bottom`);
-          if($(ele_top).is(':visible') || $(ele_bottom).is(':visible')) {
-            $(ele_top).fadeOut(200);
-            $(ele_bottom).fadeOut(200);
-          }
+            const ele_top = document.getElementById('price_container_top');
+            const ele_bottom = document.getElementById('price_container_bottom');
+            if($(ele_top).is(':visible') || $(ele_bottom).is(':visible')) {
+                $(ele_top).fadeOut(200);
+                $(ele_bottom).fadeOut(200);
+            }
         }
 
         const container = document.getElementById(`price_container_${position}`);
@@ -210,9 +210,7 @@ const Price = (() => {
             if (data.longcode && window.innerWidth > 500) {
                 if (description) description.setAttribute('data-balloon', data.longcode);
                 if (longcode) elementTextContent(longcode, data.longcode);
-            } else {
-                if (description) description.removeAttribute('data-balloon');
-            }
+            } else if (description) description.removeAttribute('data-balloon');
         };
 
         const setPurchaseStatus = (enable) => {
