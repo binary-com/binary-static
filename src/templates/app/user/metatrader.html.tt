@@ -311,8 +311,8 @@
                                         desc=l('Withdraw funds from MetaTrader 5 account into your Binary account.') %]
 
                                     <div class="form">
-                                        [% INCLUDE form_row is_two_rows=1 type='password' id='txt_main_pass_wd'      label=l("MetaTrader 5 main password") %]
                                         [% INCLUDE form_row is_two_rows=1 type='text'     id='txt_amount_withdrawal' label=l("Amount") attributes='maxlength="10"' %]
+                                        [% INCLUDE form_row is_two_rows=1 type='password' id='txt_main_pass_wd'      label=l("MetaTrader 5 main password") %]
                                         [% INCLUDE submit_button id='btn_submit_withdrawal' is_centered=1 is_full_width=1 text=l("Withdraw") type='submit' attributes='action="withdrawal"' %]
                                     </div>
                                 </form>
