@@ -221,14 +221,7 @@
     </div>
 </section>
 
-[% quotes=[
-        { image='' quote=l("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dolor nisl, eleifend vitae velit eget, venenatis molestie mauris. Curabitur ornare elementum nunc at viverra. Cras at est id justo tempus.")
-          by='John Smith' position=l("Front-end Developer") },
-        { image='' quote=l("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dolor nisl, eleifend vitae velit eget, venenatis molestie mauris. Curabitur ornare elementum nunc at viverra. Cras at est id justo tempus.")
-          by='Jane Doe' position=l("Back-end Developer") },
-        { image='' quote=l("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dolor nisl, eleifend vitae velit eget, venenatis molestie mauris. Curabitur ornare elementum nunc at viverra. Cras at est id justo tempus.")
-          by='Sherlock Holmes' position=l("Quantitative Developer") },
-    ] %]
+[% quotes=[] %]
 <!-- section>
     <div class="section-title-inverse primary-bg-color">
         <h2>[% l("Meet our employees") %]</h2>
