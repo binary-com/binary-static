@@ -288,6 +288,7 @@ sub _texts {
         #strings for portfolio
         push @texts, localize('Ref.');
         push @texts, localize('Resale not offered');
+        push @texts, localize('Expiry');
         #strings for profit table and statement pages
         push @texts, localize('Date');
         push @texts, localize('Action');

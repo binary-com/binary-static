@@ -17,7 +17,8 @@ const PortfolioInit = (() => {
         oauth_apps,
         is_initialized,
         is_first_response,
-        $portfolio_loading;
+        $portfolio_loading,
+        jp_client;
 
     const init = () => {
         updateBalance();
@@ -28,6 +29,7 @@ const PortfolioInit = (() => {
         currency           = '';
         oauth_apps         = {};
         $portfolio_loading = $('#portfolio-loading');
+        jp_client          = jpClient();
         $portfolio_loading.show();
         showLoadingImage($portfolio_loading[0]);
         is_first_response = true;
@@ -49,7 +51,7 @@ const PortfolioInit = (() => {
     };
 
     const createPortfolioRow = (data, is_first) => {
-        const long_code = jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode;
+        const long_code = jp_client ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode;
 
         const new_class = is_first ? '' : 'new';
         const $div      = $('<div/>');
@@ -61,6 +63,12 @@ const PortfolioInit = (() => {
             .append($('<td/>', { class: 'indicative' }).append($('<strong/>', { class: 'indicative_price', text: '--.--' })))
             .append($('<td/>', { class: 'button' }).append($('<button/>', { class: 'button open_contract_details nowrap', contract_id: data.contract_id, text: localize('View') }))))
             .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));
+
+        if (jp_client) {
+            const $td = $('<td/>', { class: 'expires nowrap' }).append($('<strong/>', { text: toJapanTimeIfNeeded(data.expiry_time), class: 'date' }));
+            $td.insertAfter($div.find('.payout'));
+        }
+
         $('#portfolio-body').prepend($div.html());
     };
 
@@ -82,12 +90,18 @@ const PortfolioInit = (() => {
             return;
         }
 
+        const $portfolio_table = $('#portfolio-table');
+
         let portfolio_data;
         if (data.portfolio.contracts.length !== 0) {
             /**
              * User has at least one contract
              **/
             $('#portfolio-no-contract').hide();
+            if (jp_client) {
+                $('<th/>', { class: 'expires', text: localize('Expiry') }).insertAfter($portfolio_table.find('thead .payout'));
+                $portfolio_table.find('tfoot .ref').attr('colspan', '3');
+            }
             $.each(data.portfolio.contracts, (ci, c) => {
                 if (!getPropertyValue(values, c.contract_id) && c.contract_type !== 'BINARYICO') {
                     values[c.contract_id]           = {};
@@ -104,9 +118,9 @@ const PortfolioInit = (() => {
         // no open contracts
         if (!portfolio_data) {
             $('#portfolio-no-contract').show();
-            $('#portfolio-table').setVisibility(0);
+            $portfolio_table.setVisibility(0);
         } else {
-            $('#portfolio-table').setVisibility(1);
+            $portfolio_table.setVisibility(1);
             // update footer area data
             updateFooter();
 
