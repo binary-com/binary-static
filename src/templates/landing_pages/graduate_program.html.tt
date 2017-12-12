@@ -78,8 +78,8 @@
     <div class="gr-row">
         <div class="gr-6 gr-12-m">
             <div class="box fill-bg-color">
-                <p>[% l("The journey that we are on demands the right company technologists with a passion for their field and a strong will to resolve complex problems.") %]</p>
-                <p>[% l("When faced with a problem that you don\'t immedietly have the answer to, your determination and curiosity will drive you to a solution. You are a fast learner, and are open to adapting a wide range of technologies. You work well with others, and can collaborate in a fast-paced environment.") %]</p>
+                <p>[% l("The journey that we are on demands the right company. We seek technologists with a passion for their field and a strong will to resolve complex problems.") %]</p>
+                <p>[% l("When faced with a problem that you don\'t immediately have the answer to, your determination and curiosity will drive you to a solution. You are a fast learner, and are open to adapting a wide range of technologies. You work well with others, and can collaborate in a fast-paced environment.") %]</p>
             </div>
         </div>
         <div class="separator gr-padding-30 gr-12-m"></div>
@@ -87,7 +87,7 @@
             <h4 class="center-text">[% l("[_1]Education and experience requirements[_2]", '<span class="text-bold">', '</span>') %]</h4>
             <div class="inline-flex">
                 <img class="icon-md margin-30" src="[% request.url_for('images/graduate_program/education_icon.svg') %]" />
-                <p>[% l("A bachelor\'s, master\'s, or PhD in computer science, IT, mathematics, physics, or engineering and is Graduating by June 2018.") %]</p>
+                <p>[% l("A bachelor\'s, master\'s, or PhD in computer science, IT, mathematics, physics, or engineering and is graduating by June 2018.") %]</p>
             </div>
             <div class="inline-flex">
                 <img class="icon-md margin-30" src="[% request.url_for('images/graduate_program/coding_icon.svg') %]" />
@@ -102,9 +102,9 @@
 </section>
 
 [% steps=[
-        { icon="one"    title=l("Send us your resume") description=l("Begin your application for our graduate programme by uploading your resume. Be sure to include your contact detail. Feel free to emphasise any awards, achievements, and projects that will make you stand out.") },
+        { icon="one"    title=l("Send us your resume") description=l("Begin your application for our graduate programme by uploading your resume. Be sure to include your contact details. Feel free to emphasise any awards, achievements, and projects that will make you stand out.") },
         { icon="two"    title=l("Phone screening") description=l("If your resume meets our basic requirements, we\'ll call you to get a better picture of who you are and what your interests are.") },
-        { icon="three"  title=l("Technical test") description=l("If you passed our phone screening, we\'ll invite you to a technical test either on-site or online. Depending on your qualifications and background, you\'ll be asked technical questions, which may require you to write code.") },
+        { icon="three"  title=l("Technical test") description=l("If you pass our phone screening, we\'ll invite you to a technical test either on-site or online. Depending on your qualifications and background, you\'ll be asked technical questions, which may require you to write code.") },
         { icon="four"   title=l("Self-Assessment Questionnaire (SATI)") description=l("Once you\'ve passed our technical test, we\'ll send you a SATI to understand you better.") },
         { icon="five"   title=l("A Day @ [_1]", website_name) description=l("Do well on the SATI and earn yourself a trip to an all-day event at our office in Cyberjaya. This is an opportunity for you to learn more about what we do, experience our culture first-hand, meet potential team members, and ask us questions about life at Binary.com. We’ll also put you through interviews and group exercises to assess your skills and cultural fit.") },
         { icon="six"    title=l("Job offer") description=l("Aced your interviews and made a real impression on us? Congratulations! We\'ll contact you with an official offer to join our graduate programme.") }
@@ -208,7 +208,7 @@
         </div>
         <div class="inline-flex">
             <img class="icon-lg margin-left-0" src="[% request.url_for('images/graduate_program/program3_icon.svg') %]" />
-            <p>[% l("You\'ll rotate through front-end, back-end, and quants. Each rotation will give you a feel for what each team does on a day-to-day basis while also allowing you to contribute to our codebase. Tasks will be assigned to you in increasing complexity to gradually build your confidence.") %]</p>
+            <p>[% l("You\'ll rotate through front-end, back-end, and quants team. Each rotation will give you a feel for what each team does on a day-to-day basis while also allowing you to contribute to our codebase. Tasks will be assigned to you in increasing complexity to gradually build your confidence.") %]</p>
         </div>
         <div class="inline-flex">
             <img class="icon-lg margin-left-0" src="[% request.url_for('images/graduate_program/program4_icon.svg') %]" />
