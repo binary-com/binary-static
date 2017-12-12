@@ -87,7 +87,7 @@
             <h4 class="center-text">[% l("[_1]Education and experience requirements[_2]", '<span class="text-bold">', '</span>') %]</h4>
             <div class="inline-flex">
                 <img class="icon-md margin-30" src="[% request.url_for('images/graduate_program/education_icon.svg') %]" />
-                <p>[% l("A bachelor\'s, master\'s, or PhD in computer science, IT, mathematics, physics, or engineering and is Graduating by March 2018.") %]</p>
+                <p>[% l("A bachelor\'s, master\'s, or PhD in computer science, IT, mathematics, physics, or engineering and is Graduating by June 2018.") %]</p>
             </div>
             <div class="inline-flex">
                 <img class="icon-md margin-30" src="[% request.url_for('images/graduate_program/coding_icon.svg') %]" />
