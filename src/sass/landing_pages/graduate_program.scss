@@ -24,7 +24,6 @@ a.link {
 
     span {
         color: $COLOR_WHITE;
-        text-transform: uppercase;
         font-weight: 400;
         font-size: 14px;
     }
@@ -388,6 +387,7 @@ a.link {
 
             a {
                 font-weight: 300;
+                white-space: nowrap;
 
                 &:hover {
                     text-decoration: none;
