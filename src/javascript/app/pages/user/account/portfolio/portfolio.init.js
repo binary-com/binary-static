@@ -88,18 +88,12 @@ const PortfolioInit = (() => {
             return;
         }
 
-        const $portfolio_table = $('#portfolio-table');
-
         let portfolio_data;
         if (data.portfolio.contracts.length !== 0) {
             /**
              * User has at least one contract
              **/
             $('#portfolio-no-contract').hide();
-            if (jp_client) {
-                $('<th/>', { class: 'expires', text: localize('Expiry') }).insertAfter($portfolio_table.find('thead .payout'));
-                $portfolio_table.find('tfoot .ref').attr('colspan', '3');
-            }
             $.each(data.portfolio.contracts, (ci, c) => {
                 if (!getPropertyValue(values, c.contract_id) && c.contract_type !== 'BINARYICO') {
                     values[c.contract_id]           = {};
@@ -116,9 +110,9 @@ const PortfolioInit = (() => {
         // no open contracts
         if (!portfolio_data) {
             $('#portfolio-no-contract').show();
-            $portfolio_table.setVisibility(0);
+            $('#portfolio-table').setVisibility(0);
         } else {
-            $portfolio_table.setVisibility(1);
+            $('#portfolio-table').setVisibility(1);
             // update footer area data
             updateFooter();
 
