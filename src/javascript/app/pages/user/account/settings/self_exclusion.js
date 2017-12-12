@@ -203,7 +203,9 @@ const SelfExclusion = (() => {
             let error_fld   = response.error.field;
             if (error_fld) {
                 error_fld = /^timeout_until$/.test(error_fld) ? 'timeout_until_date' : error_fld;
-                $(`#${error_fld}`).siblings('.error-msg').setVisibility(1).html(error_msg);
+                const $error_fld = $(`#${error_fld}`);
+                $error_fld.siblings('.error-msg').setVisibility(1).html(error_msg);
+                $.scrollTo($error_fld, 500, { offset: -10 });
             } else {
                 showFormMessage(localize(error_msg), false);
             }
