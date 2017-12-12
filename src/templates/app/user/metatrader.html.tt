@@ -1,7 +1,7 @@
 [% PROCESS _common/components/forms.html.tt %]
 <div class="container">
     <div class="static_full">
-        <h1>[% l('MetaTrader 5 Dashboard') %]</h1>
+        <h1>[% l('MetaTrader 5 dashboard') %]</h1>
     </div>
     <p id="page_msg" class="notice-msg center-text invisible"></p>
     <div id="mt_loading">[% PROCESS _common/components/loading.html.tt %]</div>
@@ -80,7 +80,7 @@
                     <ul class="platforms">
                         <li>
                             <img src="[% request.url_for('images/pages/metatrader/dashboard/web.svg') %]" />
-                            <a href="https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server" target="_blank">[% l('Web platform') %]</a>
+                            <a href="https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server" target="_blank">[% l('Trade on web platform') %]</a>
                         </li>
                         <li>
                             <img src="[% request.url_for('images/pages/metatrader/dashboard/mac.svg') %]" />
@@ -92,7 +92,7 @@
                         </li>
                         <li>
                             <img src="[% request.url_for('images/pages/metatrader/dashboard/linux.svg') %]" />
-                            <a href="https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux" target="_blank">[% l('Instructions for Linux') %]</a>
+                            <a href="https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux" target="_blank">[% l('Read instructions for Linux') %]</a>
                         </li>
                         <p class="badges">
                             <a href="https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server" target="_blank">
@@ -135,7 +135,7 @@
                         [% END %]
                     </ul>
                     <p>
-                        <a href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('MetaTrader 5 Account Comparison') %]</a>
+                        <a href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Compare MetaTrader 5 accounts') %]</a>
                     </p>
                 </div>
             [% END %]
@@ -143,15 +143,15 @@
                 [% INCLUDE account_desc title=l('Choose an account')
                     description=l('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out.', website_name) %]
                 [% INCLUDE account_desc account_type=['vanuatu_cent'] title=l('Cent Account')
-                    description=l('Our MetaTrader 5 Cent account is ideal for new traders who want to start trading with a smaller capital.')
+                    description=l('Our MetaTrader 5 Cent account is ideal for new traders who wish to start trading with a smaller capital.')
                     items=[
                             l('Offers the highest leverage – up to 1:1,000'),
                             l('Fixed spreads'),
-                            l('Instant execution'),
+                            l('Market execution'),
                             l('No commission'),
                         ] %]
                 [% INCLUDE account_desc account_type=['vanuatu_standard'] title=l('Standard Account')
-                    description=l('Our MetaTrader 5 Standard account comes with mid-range leverage and variable spreads suitable for a wide range of traders.')
+                    description=l('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')
                     items=[
                             l('Leverage up to 1:300'),
                             l('Variable spreads'),
@@ -167,7 +167,7 @@
                             l('No commission'),
                         ] %]
                 [% INCLUDE account_desc account_type=['costarica', 'malta'] title=l('Volatility Account')
-                    description=l('The Volatility account allows you to profit by speculating on the rise or fall of an instrument.')
+                    description=l('Our Volatility account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')
                     items=[
                             l('Leverage up to 1:500'),
                             l('Variable spreads'),
@@ -200,17 +200,17 @@
                 <div id="mv_new_account">
                     <div id="view_1" class="center-text">
                         <div class="step-1">
-                            [% INCLUDE type_group title=l('Step 1 : Choose demo or real account') types=[
-                                { type='demo' id='rbtn_demo' title=l('Demo') desc=l('Each demo account comes with [_1] virtual money', '$10,000') },
-                                { type='real' id='rbtn_real' title=l('Real') desc=l('Real account allows you to trade in USD real currency') },
+                            [% INCLUDE type_group title=l('Step 1: Choose demo or real account') types=[
+                                { type='demo' id='rbtn_demo' title=l('Demo') desc=l('Practise your trading strategy with [_1] of virtual funds in a risk-free environment.', '$10,000') },
+                                { type='real' id='rbtn_real' title=l('Real') desc=l('Trade with real funds, access to competitive trading conditions, and zero commission.') },
                             ] %]
                         </div>
                         <div class="step-2 invisible">
                             <div class="separator-line gr-padding-10"></div>
-                            [% WRAPPER type_group title=l('Step 2 : Choose types of accounts') types=[
+                            [% WRAPPER type_group title=l('Step 2: Choose types of accounts') types=[
                                 { type='template' desc='Cent' },
                             ] %]
-                                <a class="hint" href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Which one suits me?') %]</a>
+                                <a class="hint" href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Which account is right for me?') %]</a>
                             [% END %]
                         </div>
                         <p id="new_account_msg" class="notice-msg center-text invisible"></p>
@@ -328,9 +328,9 @@
                 <div id="msg_upgrade">[% l('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', request.url_for('new_account/realws'), website_name) %]</div>
                 <div id="msg_currency_not_match">[% l('Please switch to a [_1] account to manage funds.', '[_1]') %]</div>
                 <div id="msg_real_financial">
-                    [% l('To create a real financial MT5 account, please complete the following:') %]
+                    [% l('To create a MetaTrader 5 real account, please:') %]
                     <ul class="bullet">
-                        <li class="assessment invisible">[% l('Complete your <a href="[_1]">Financial Assessment</a>.', request.url_for('user/settings/assessmentws')) %]</li>
+                        <li class="assessment invisible">[% l('Complete the <a href="[_1]">Financial Assessment</a>.', request.url_for('user/settings/assessmentws')) %]</li>
                         <li class="authenticate invisible">[% l('<a href="[_1]">Authenticate</a> your account by verifying your identity and address.', request.url_for('user/authenticate')) %]</li>
                     </ul>
                 </div>
