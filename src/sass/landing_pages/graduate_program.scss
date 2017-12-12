@@ -17,6 +17,7 @@ a.link {
 }
 
 .button-outline {
+    @extend .inline-flex;
     border: 2px solid $COLOR_WHITE;
     background: none;
     padding: 5px 10px;
