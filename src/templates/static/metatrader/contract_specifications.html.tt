@@ -3,10 +3,12 @@
 <div class="static_full">
     <h1>[% l('Contract Specifications') %]</h1>
     [% WRAPPER tab_container class='cs-content' theme='light full-width' %]
-        [% INCLUDE tabs_subtabs id='cs_tabs' items=[
-            { id='forex',      text=l('Forex'), class='active' },
-            { id='volatility', text=l('Volatility Indices') },
-            { id='metals',     text=l('Metals') },
+        [% selector_id  = 'cs_tabs' %]
+        [% url_contract = request.url_for('metatrader/contract-specifications') %]
+        [% INCLUDE tabs_subtabs id=selector_id class='tab-selector-wrapper' items=[
+            { id='forex',      href=url_contract _ '?' _ selector_id _ '=forex',      text=l('Forex'), class='active' },
+            { id='volatility', href=url_contract _ '?' _ selector_id _ '=volatility', text=l('Volatility Indices') },
+            { id='metals',     href=url_contract _ '?' _ selector_id _ '=metals',     text=l('Metals') },
             { id='cs_tabs_selector', class='tab-selector' },
         ] %]
         <div class="tab-content">

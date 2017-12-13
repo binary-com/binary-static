@@ -1,3 +1,6 @@
+// ==================== _common ====================
+const TabSelector = require('../../_common/tab_selector');
+
 // ==================== app ====================
 const LoggedInHandler      = require('./logged_in');
 const Redirect             = require('./redirect');
@@ -55,7 +58,6 @@ const Contact            = require('../../static/pages/contact');
 const GetStarted         = require('../../static/pages/get_started');
 const GetStartedBeta     = require('../../static/pages/get_started_beta');
 const Home               = require('../../static/pages/home');
-const HomeBeta           = require('../../static/pages/home_beta');
 const JobDetails         = require('../../static/pages/job_details');
 const Regulation         = require('../../static/pages/regulation');
 const StaticPages        = require('../../static/pages/static_pages');
@@ -95,7 +97,7 @@ const pages_config = {
     multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
     payment_agent_listws     : { module: PaymentAgentList },
     payment_methods          : { module: Cashier.PaymentMethods },
-    platforms                : { module: StaticPages.Platforms },
+    platforms                : { module: TabSelector },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     professional             : { module: professionalClient,         is_authenticated: true, only_real: true },
@@ -117,16 +119,16 @@ const pages_config = {
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStartedBeta.BinaryOptions },
     'cfds'                   : { module: GetStartedBeta.CFDs },
-    'contract-specifications': { module: StaticPages.ContractSpecifications },
+    'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'forex'                  : { module: GetStartedBeta.Forex },
     'get-started'            : { module: GetStarted },
-    'get-started-beta'       : { module: GetStartedBeta.GetStartedBeta },
+    'get-started-beta'       : { module: TabSelector },
     'get-started-jp'         : { module: GetStartedJP },
-    'home-beta'              : { module: HomeBeta,                   not_authenticated: true },
+    'home-beta'              : { module: TabSelector,                   not_authenticated: true },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
-    'how-to-trade-mt5'       : { module: StaticPages.HowToTradeMT5 },
+    'how-to-trade-mt5'       : { module: TabSelector },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
     'ico-info'               : { module: ICOInfo,                    is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },

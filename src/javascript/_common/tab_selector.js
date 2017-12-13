@@ -5,24 +5,19 @@ const applyToAllElements = require('./utility').applyToAllElements;
 const TabSelector = (() => {
     const obj_tabs = {};
 
-    /**
-     * @param {String|Array} tab_ids can be the ID of single set of tabs or an array of all elements
-     */
-    const init = (tab_ids) => {
+    const onLoad = () => {
         tabListener();
-        const array_tabs = Array.isArray(tab_ids) ? tab_ids : [tab_ids];
-        array_tabs.forEach((tab_id) => {
-            obj_tabs[tab_id] = { selected_tab: '', subtabs: [] };
-            const tab = document.getElementById(tab_id);
-            if (tab) {
-                applyToAllElements('li', (subtab) => {
-                    if (!obj_tabs[tab_id].selected_tab) {
-                        // take the first subtab as the selected tab
-                        obj_tabs[tab_id].selected_tab = subtab;
+        applyToAllElements('.tab-selector-wrapper ul', (tab_selector) => {
+            const tab_selector_id = tab_selector.getAttribute('id');
+            applyToAllElements('.tm-li', (tab) => {
+                if (!/tab-selector/.test(tab.className)) {
+                    const tab_id = tab.getAttribute('id');
+                    if (!obj_tabs[tab_selector_id]) {
+                        obj_tabs[tab_selector_id] = { el_selected_tab: tab, tabs_id: [] };
                     }
-                    obj_tabs[tab_id].subtabs.push(subtab.getAttribute('id'));
-                }, '', tab);
-            }
+                    obj_tabs[tab_selector_id].tabs_id.push(tab_id);
+                }
+            }, '', tab_selector);
         });
         // set initial width and margin-left of tab selector
         repositionSelector();
@@ -52,11 +47,11 @@ const TabSelector = (() => {
         }
         const selector = e.target.closest('ul').getAttribute('id');
         slideSelector(selector, e.target);
-        updateURL(selector, e.target.getAttribute('href').slice(1));
+        updateURL(selector, e.target.parentNode.getAttribute('id'));
     };
 
     const updateURL = (selector, tab_id) => {
-        if (obj_tabs[selector].subtabs.length) {
+        if (obj_tabs[selector].tabs_id.length) {
             const params_hash = Url.paramsHash();
             params_hash[selector] = tab_id;
             const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params_hash)}`;
@@ -77,7 +72,7 @@ const TabSelector = (() => {
         let el_parent,
             el_to_show_from_hash;
         const params_hash = Url.paramsHash();
-        if (params_hash[selector] && obj_tabs[selector].subtabs.indexOf(params_hash[selector]) > -1) {
+        if (params_hash[selector] && obj_tabs[selector].tabs_id.indexOf(params_hash[selector]) > -1) {
             el_to_show_from_hash = document.getElementById(params_hash[selector]);
             if (el_to_show_from_hash) {
                 el_parent = el_to_show_from_hash.parentNode;
@@ -90,7 +85,7 @@ const TabSelector = (() => {
             return;
         }
         if (typeof go_left === 'undefined' && !el_to_show_from_hash) {
-            slideSelector(selector, obj_tabs[selector].selected_tab);
+            slideSelector(selector, obj_tabs[selector].el_selected_tab);
             return;
         }
         const elements = el_parent.getElementsByTagName('li');
@@ -108,7 +103,7 @@ const TabSelector = (() => {
                     }
                     el_to_show = elements[index_to_show];
                 }
-                obj_tabs[selector].selected_tab = el_to_show;
+                obj_tabs[selector].el_selected_tab = el_to_show;
                 if (!selector_id) {
                     updateURL(selector, el_to_show.getAttribute('id'));
                 }
@@ -142,7 +137,7 @@ const TabSelector = (() => {
         }
     };
 
-    const clean = () => {
+    const onUnload = () => {
         window.removeEventListener('resize', repositionSelector);
 
         applyToAllElements('.tm-li', (element) => {
@@ -158,8 +153,8 @@ const TabSelector = (() => {
     };
 
     return {
-        init,
-        clean,
+        onLoad,
+        onUnload,
     };
 })();
 

@@ -48,7 +48,7 @@
                         [% END %]
                     </ul>
                 [% ELSIF item.text %]
-                    <a href="#[% item.id %]" class="tm-a">[% item.text %]</a>
+                    <a href="[% item.href || '#' _ item.id %]" class="tm-a">[% item.text %]</a>
                 [% END %]
                 </li>
             [% END %]

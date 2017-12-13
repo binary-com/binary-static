@@ -1,5 +1,6 @@
 [% PROCESS _common/components/elements.html.tt %]
 [% PROCESS _common/components/tabs.html.tt %]
+[% url_home_beta = request.url_for('home-beta') %]
 [% BLOCK payment_logo %]
     [% FOREACH item IN items %]
         <div class="gr-2 gr-4-m gr-padding-30 center-text">
@@ -121,12 +122,13 @@
  <div class="container">
     <h2 class="center-text gr-padding-10">[% l("Trade in the world's financial markets") %]</h2>
     [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
-        [% INCLUDE tabs_subtabs id='market_tabs' class='gr-padding-20 gr-parent gr-hide-m' items=[
-            { id='binary', text=l('Binary options'), class='active' },
-            { id='forex',  text=l('Forex') },
-            { id='cfds',   text=l('CFDs') },
-            { id='metals', text=l('Metals') },
-            { id='crypto', text=l('Crypto') },
+        [% selector_id = 'market_tabs' %]
+        [% INCLUDE tabs_subtabs id=selector_id class='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper' items=[
+            { id='binary', href=url_home_beta _ '?' _ selector_id _ '=binary', text=l('Binary options'), class='active' },
+            { id='forex',  href=url_home_beta _ '?' _ selector_id _ '=forex',  text=l('Forex') },
+            { id='cfds',   href=url_home_beta _ '?' _ selector_id _ '=cfds',   text=l('CFDs') },
+            { id='metals', href=url_home_beta _ '?' _ selector_id _ '=metals', text=l('Metals') },
+            { id='crypto', href=url_home_beta _ '?' _ selector_id _ '=crypto', text=l('Crypto') },
             { id='market_tabs_selector', class='tab-selector' },
         ] %]
         <div class="tab-content">
@@ -168,9 +170,10 @@
     <div class="container gr-padding-30">
         <h2 class="center-text">[% l("Diverse platforms and account types") %]</h2>
         [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
-            [% INCLUDE tabs_subtabs id='account_tabs' class='gr-padding-20 gr-parent gr-hide-m' items=[
-                { id='binary_options', text=l('Binary Options'), class='active' },
-                { id='mt5',            text=l('MetaTrader 5') },
+            [% selector_id = 'account_tabs' %]
+            [% INCLUDE tabs_subtabs id=selector_id class='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper' items=[
+                { id='binary_options', href=url_home_beta _ '?' _ selector_id _ '=binary_options', text=l('Binary Options'), class='active' },
+                { id='mt5',            href=url_home_beta _ '?' _ selector_id _ '=mt5',            text=l('MetaTrader 5') },
                 { id='account_tabs_selector', class='tab-selector' },
             ] %]
             <div class="tab-content">
