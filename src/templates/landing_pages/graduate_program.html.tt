@@ -58,7 +58,7 @@
     </div>
     <div class="intro-bg"></div>
     <div id="register" class="primary-bg-color-dark section-title-inverse">
-        <a href="https://goo.gl/forms/GWIuCPurg8D1ZlbR2" target="_blank" rel="noopener noreferrer" class="button-outline"><span>Apply now</span></a>
+        <a href="https://goo.gl/forms/GWIuCPurg8D1ZlbR2" target="_blank" rel="noopener noreferrer" class="button"><span>Apply now</span></a>
     </div>
 </section>
 
@@ -87,11 +87,11 @@
             <h4 class="center-text"><span class="text-bold">Education and experience requirement</span></h4>
             <div class="inline-flex">
                 <img class="icon-md margin-30" src="[% request.url_for('images/graduate_program/education_icon.svg') %]" />
-                <p>A bachelor's, master's, or PhD in computer science, IT, mathematics, physics, or engineering and is graduating by June 2018.</p>
+                <p>A bachelor's, master's, or PhD in computer science, IT, mathematics, physics, or engineering and is graduating by June.</p>
             </div>
             <div class="inline-flex">
                 <img class="icon-md margin-30" src="[% request.url_for('images/graduate_program/coding_icon.svg') %]" />
-                <p>Experience with lower-level programming languages such as C, C++, Java, or Perl.</p>
+                <p>Experience with any of the following technologies: HTML, CSS, JavaScript, C, C++, Java, Perl, MATLAB, R, and AWS</p>
             </div>
             <div class="inline-flex">
                 <img class="icon-md margin-30" src="[% request.url_for('images/graduate_program/experience_icon.svg') %]" />
@@ -102,11 +102,11 @@
 </section>
 
 [% steps=[
-        { icon="one"    title="Send us your resume" description="Begin your application for our graduate programme by uploading your resume. Be sure to include your contact details. Feel free to emphasise any awards, achievements, and projects that will make you stand out." },
+        { icon="one"    title="Send us your resume" description="Begin your application for our graduate programme by uploading your resume. Be sure to include your contact details. Feel free to emphasise any awards, achievements, projects, and open-source contributions that will make you stand out." },
         { icon="two"    title="Phone screening"     description="If your resume meets our basic requirements, we'll call you to get a better picture of who you are and what your interests are." },
         { icon="three"  title="Technical test"      description="If you pass our phone screening, we'll invite you to a technical test either on-site or online. Depending on your qualifications and background, you'll be asked technical questions, which may require you to write code." },
-        { icon="four"   title="Self-Assessment Questionnaire (SATI)" description="Once you've passed our technical test, we'll send you a SATI to understand you better." },
-        { icon="five"   title="A Day @ [% website_name %]"  description="Do well on the SATI and earn yourself a trip to an all-day event at our office in Cyberjaya. This is an opportunity for you to learn more about what we do, experience our culture first-hand, meet potential team members, and ask us questions about life at [% website_name %]. We’ll also put you through interviews and group exercises to assess your skills and cultural fit." },
+        { icon="four"   title="Self-Assessment Topgrading Interview (SATI) Questionnaire" description="Once you've passed our technical test, we'll send you a SATI to understand you better." },
+        { icon="five"   title="A Day @ "_ website_name  description="Do well on the SATI and earn yourself a trip to an all-day event at our office in Cyberjaya. This is an opportunity for you to learn more about what we do, experience our culture first-hand, meet potential team members, and ask us questions about life at "_ website_name _". We’ll also put you through interviews and group exercises to assess your skills and cultural fit." },
         { icon="six"    title="Job offer"           description="Aced your interviews and made a real impression on us? Congratulations! we'll contact you with an official offer to join our graduate programme." }
     ] %]
 <section id="application-process">
