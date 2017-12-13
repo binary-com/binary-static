@@ -27,6 +27,8 @@ const BinaryLoader = (() => {
             document.getElementById('btn_login').classList.add('button-disabled');
         }
 
+        Page.showNotificationOutdatedBrowser();
+
         Client.init();
         BinarySocket.init(BinarySocketGeneral.initOptions());
 

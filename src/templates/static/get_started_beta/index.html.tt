@@ -51,6 +51,9 @@
                         [% PROCESS get_started_section link='get-started-beta/binary-options' hash='how-to-trade-binary'
                             image='binary-options/how-to-trade-binary' header=l("How to trade binary options")
                             text=l("Learn how to trade with our award-winning binary options platform in this simple step-by-step guide.") %]
+                        [% PROCESS get_started_section link='get-started-beta/binary-options' hash='glossary'
+                            image='binary-options/glossary' header=l("Glossary")
+                            text=l("Check out some technical terms before you start.") %]
                     </div>
                 [% END %]
                 [% WRAPPER tab_content id='mt5' %]

@@ -1,4 +1,5 @@
 const BinaryPjax       = require('../../../../base/binary_pjax');
+const Client           = require('../../../../base/client');
 const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
 const jpClient         = require('../../../../common/country_base').jpClient;
@@ -114,7 +115,7 @@ const FinancialAssessment = (() => {
             $(form_selector).setVisibility(0);
             $('#msg_main').setVisibility(1);
             BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                if (+response_status.get_account_status.prompt_client_to_authenticate) {
+                if (+response_status.get_account_status.prompt_client_to_authenticate && Client.isAccountOfType('financial')) {
                     $('#msg_authenticate').setVisibility(1);
                 }
             });

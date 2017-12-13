@@ -65,6 +65,11 @@
                 border-right: 1px solid $COLOR_DARK_GRAY;
                 margin-right: -1px;
                 padding: 0;
+
+                .error-msg {
+                    text-align: center;
+                    margin: 1em 0;
+                }
             }
             #sell_details_table, #sell_details_audit {
                 padding: 0;
