@@ -3,7 +3,7 @@ const TabSelector  = require('../../_common/tab_selector');
 
 module.exports = {
     GetStartedBeta: {
-        onLoad  : () => { TabSelector.init('get_started_tabs', false, ['binary-options', 'mt5']); },
+        onLoad  : () => { TabSelector.init('get_started_tabs'); },
         onUnload: () => { TabSelector.clean(); },
     },
     BinaryOptions: {

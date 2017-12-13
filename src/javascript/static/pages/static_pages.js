@@ -24,15 +24,15 @@ module.exports = {
         onUnload: () => { Scroll.offScroll(); },
     },
     Platforms: {
-        onLoad  : () => { TabSelector.init('platforms_tabs', false, ['binary', 'mt5']); },
+        onLoad  : () => { TabSelector.init('platforms_tabs'); },
         onUnload: () => { TabSelector.clean(); },
     },
     HowToTradeMT5: {
-        onLoad  : () => { TabSelector.init('how_to_tabs', false, ['forex', 'volatility', 'metals']); },
+        onLoad  : () => { TabSelector.init('how_to_tabs'); },
         onUnload: () => { TabSelector.clean(); },
     },
     ContractSpecifications: {
-        onLoad  : () => { TabSelector.init('cs_tabs', false, ['forex', 'volatility', 'metals']); },
+        onLoad  : () => { TabSelector.init('cs_tabs'); },
         onUnload: () => { TabSelector.clean(); },
     },
     handleTab: {

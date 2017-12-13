@@ -1,24 +1,29 @@
 const tabListener        = require('binary-style').tabListener;
-const paramsHash         = require('./url').paramsHash;
+const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
 
 const TabSelector = (() => {
-    let selected_tab  = '';
-    let has_arrows    = false;
-    let array_tab     = [];
-    let array_sub_tab = [];
+    const obj_tabs = {};
 
     /**
      * @param {String|Array} tab_ids can be the ID of single set of tabs or an array of all elements
-     * @param {Boolean} has_left_right_arrows send true if .go-left and .go-right arrows need to work with tabs
-     * @param {String|Array} sub_tabs optional ID of available sub_tabs, to work with parameters in the URL to show certain tab
      */
-    const init = (tab_ids, has_left_right_arrows = false, sub_tabs = undefined) => {
+    const init = (tab_ids) => {
         tabListener();
-        if (sub_tabs) {
-            array_sub_tab = Array.isArray(sub_tabs) ? sub_tabs : [sub_tabs];
-        }
-        array_tab = Array.isArray(tab_ids) ? tab_ids : [tab_ids];
+        const array_tabs = Array.isArray(tab_ids) ? tab_ids : [tab_ids];
+        array_tabs.forEach((tab_id) => {
+            obj_tabs[tab_id] = { selected_tab: '', subtabs: [] };
+            const tab = document.getElementById(tab_id);
+            if (tab) {
+                applyToAllElements('li', (subtab) => {
+                    if (!obj_tabs[tab_id].selected_tab) {
+                        // take the first subtab as the selected tab
+                        obj_tabs[tab_id].selected_tab = subtab;
+                    }
+                    obj_tabs[tab_id].subtabs.push(subtab.getAttribute('id'));
+                }, '', tab);
+            }
+        });
         // set initial width and margin-left of tab selector
         repositionSelector();
         window.addEventListener('resize', repositionSelector);
@@ -27,19 +32,16 @@ const TabSelector = (() => {
             element.addEventListener('click', slideSelectorOnMenuClick);
         });
 
-        has_arrows = has_left_right_arrows;
-        if (has_arrows) {
-            applyToAllElements('.go-left', (element) => {
-                element.addEventListener('click', goLeft);
-            });
-            applyToAllElements('.go-right', (element) => {
-                element.addEventListener('click', goRight);
-            });
-        }
+        applyToAllElements('.go-left', (element) => {
+            element.addEventListener('click', goLeft);
+        });
+        applyToAllElements('.go-right', (element) => {
+            element.addEventListener('click', goRight);
+        });
     };
 
     const repositionSelector = () => {
-        array_tab.forEach((tab_id) => {
+        Object.keys(obj_tabs).forEach((tab_id) => {
             changeTab(undefined, undefined, tab_id);
         });
     };
@@ -48,9 +50,16 @@ const TabSelector = (() => {
         if (e.target.nodeName !== 'A' || /a-active/.test(e.target.classList)) {
             return;
         }
-        slideSelector(e.target.closest('ul').getAttribute('id'), e.target);
-        if (array_sub_tab.length) {
-            const updated_url = `${window.location.origin}${window.location.pathname}?parent=${e.target.getAttribute('href').slice(1)}`;
+        const selector = e.target.closest('ul').getAttribute('id');
+        slideSelector(selector, e.target);
+        updateURL(selector, e.target.getAttribute('href').slice(1));
+    };
+
+    const updateURL = (selector, tab_id) => {
+        if (obj_tabs[selector].subtabs.length) {
+            const params_hash = Url.paramsHash();
+            params_hash[selector] = tab_id;
+            const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params_hash)}`;
             window.history.replaceState({ url: updated_url }, null, updated_url);
         }
     };
@@ -67,9 +76,9 @@ const TabSelector = (() => {
         let selector = selector_id || e.target.getAttribute('data-parent');
         let el_parent,
             el_to_show_from_hash;
-        const params_hash = paramsHash();
-        if (array_sub_tab.length && params_hash.parent && array_sub_tab.indexOf(params_hash.parent) > -1) {
-            el_to_show_from_hash = document.getElementById(params_hash.parent);
+        const params_hash = Url.paramsHash();
+        if (params_hash[selector] && obj_tabs[selector].subtabs.indexOf(params_hash[selector]) > -1) {
+            el_to_show_from_hash = document.getElementById(params_hash[selector]);
             if (el_to_show_from_hash) {
                 el_parent = el_to_show_from_hash.parentNode;
                 selector  = el_parent.getAttribute('id');
@@ -80,20 +89,16 @@ const TabSelector = (() => {
         if (!el_parent) {
             return;
         }
-        if (typeof go_left === 'undefined' && !el_to_show_from_hash && selected_tab) {
-            slideSelector(selector, selected_tab);
+        if (typeof go_left === 'undefined' && !el_to_show_from_hash) {
+            slideSelector(selector, obj_tabs[selector].selected_tab);
             return;
         }
         const elements = el_parent.getElementsByTagName('li');
         for (let i = 0; i < elements.length - 1; i++) {
             if (/active/.test(elements[i].classList)) {
-                if (typeof go_left === 'undefined' && !el_to_show_from_hash) {
-                    slideSelector(selector, elements[i]);
-                    break;
-                }
-                let index_to_show,
-                    el_to_show;
-                if (params_hash.parent) {
+                let index_to_show = 0;
+                let el_to_show;
+                if (params_hash[selector] && selector_id) {
                     el_to_show = el_to_show_from_hash;
                 } else {
                     if (go_left) {
@@ -103,7 +108,10 @@ const TabSelector = (() => {
                     }
                     el_to_show = elements[index_to_show];
                 }
-                selected_tab = el_to_show;
+                obj_tabs[selector].selected_tab = el_to_show;
+                if (!selector_id) {
+                    updateURL(selector, el_to_show.getAttribute('id'));
+                }
 
                 selectCircle(selector, i, index_to_show);
                 slideSelector(selector, el_to_show);
@@ -141,14 +149,12 @@ const TabSelector = (() => {
             element.removeEventListener('click', slideSelectorOnMenuClick);
         });
 
-        if (has_arrows) {
-            applyToAllElements('.go-left', (element) => {
-                element.removeEventListener('click', goLeft);
-            });
-            applyToAllElements('.go-right', (element) => {
-                element.removeEventListener('click', goRight);
-            });
-        }
+        applyToAllElements('.go-left', (element) => {
+            element.removeEventListener('click', goLeft);
+        });
+        applyToAllElements('.go-right', (element) => {
+            element.removeEventListener('click', goRight);
+        });
     };
 
     return {

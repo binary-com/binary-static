@@ -38,7 +38,7 @@
         <div class="tab-content">
             [% WRAPPER tab_content_container %]
                 [% WRAPPER tab_content id='binary' visible=1 %]
-                    <div class="gr-row">
+                    <div class="gr-row" id="binary-options">
                         [% PROCESS get_started_section link='get-started-beta/binary-options' hash='what-are-binary-options'
                             image='binary-options/what-are-binary-option' header=l("What are binary options")
                             text=l("Understand the simple idea behind binary options and their advantages over other financial instruments.") %]

@@ -4,7 +4,7 @@ const TabSelector = require('../../_common/tab_selector');
 const HomeBeta = (() => {
     const onLoad = () => {
         Home.onLoad();
-        TabSelector.init(['market_tabs', 'account_tabs'], true);
+        TabSelector.init(['market_tabs', 'account_tabs']);
     };
 
     const onUnLoad = () => {
