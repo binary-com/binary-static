@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    [% INCLUDE _common/includes/anti_clickjack.html.tt %]
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
+    <meta name="description" content="
+        [%= l('[_1] gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities.', broker_name) =%]" />
+    <meta name="keywords" content="binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading, hackathon" />
+    <meta name="author" content="[%= broker_name =%]" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="dcterms.rightsHolder" content="[%= broker_name =%]" />
+    <meta name="dcterms.rights" content="[%= broker_name =%]" />
+    <meta property="og:title" content="[%= broker_name =%]" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
+
+    [% PROCESS _common/components/title.html.tt %]
+
+    [% PROCESS _common/includes/favicons.html.tt %]
+
+    <link href="[% request.url_for('css/japan.css') _ '?' _ static_hash %]" rel="stylesheet" />
+    <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
+</head>
+
+<body>
+<div class="navbar-fixed-top" role="navigation" id="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <span id="toggle-menu" href="button" class="navbar-toggle"></span>
+            <a class="navbar-brand logo" href="[% request.url_for('home') %]"></a>
+        </div>
+        <div class="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="invisible">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <img class="" src="[% request.url_for('images/japan/version1/fsa-logo@2x.png') %]" />
+                </li>
+                <li>
+                    <img class="" src="[% request.url_for('images/japan/version1/binarykk-logo@2x.png') %]" />
+                </li>
+                <li>
+                    <img class="" src="[% request.url_for('images/japan/version1/jsf@2x.png') %]" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section id="page-top" class="intro">
+    <div class="intro-body container">
+        <div class="gr-row inline-flex">
+            <div class="gr-6 gr-12-m">
+                <h1 class="intro-text">[% l("Binary Options", website_name) %]</h1>
+                <img class="responsive" src="[% request.url_for('images/japan/version1/pair.svg') %]" />
+                <h3 class="intro-subtext">[% l("Now you can trade fx markets using binary options with one of the origical pioneers of binary options worldwide") %]</h3>
+                <div id="register" class="primary-bg-color-dark section-title-inverse">
+                    <a href="" target="_blank" rel="noopener noreferrer" class="button-outline"><span>[% l("Account Opening") %]</span></a>
+                </div>
+            </div>
+            <div class="gr-6 gr-12-m">
+                <img class="responsive" src="[% request.url_for('images/japan/version1/retro.svg') %]" />
+            </div>
+        </div>
+        <h1 class="center-text content-inverse-color">[% l("What are Binary Options?") %]</h1>
+    </div>
+</section>
+
+<section class="pattern-wave padding-150">
+    <div class="container">
+    <div class="section-title">
+        <h1 class="rounded-bubble">[% l("What?") %]</h1>
+        <h1 class="bg-blue">[% l("What trading options do we have?") %]</h1>
+    </div>
+    <h2 class="blue-bold">[% l("Binary option offer the chance to predit whether the future price of a FX will be above or below a target rate, or between, or outside a target range:") %]</h2>
+    <div class="gr-row">
+        <div class="gr-6 gr-12-m">
+            <div class="box-orange-o">
+                <div class="gr-row">
+                    <div class="gr-6 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/japan/version1/higher-lower-1.svg') %]" />
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/japan/version1/higher-lower-2.svg') %]" />
+                    </div>
+                </div>
+                <div class="icon-pair">
+                    <span class="icon-sm icon-1"></span>
+                    <span class="icon-sm icon-2"></span>
+                </div>
+                <h4 class="orange-bold">[% l("Ladder Options") %]</h4>
+                <p>[% l("At the time of the judgement time predice the judgement rate above the barrier price or below the barrier price") %]</p>
+                <span class="box-text-xs">[% l("We offer a minimum trading period of 2 hours up to 1 year") %]</span>
+            </div>
+        </div>
+        <div class="gr-6 gr-12-m">
+            <div class="box-orange-o">
+                <div class="gr-row">
+                    <div class="gr-6 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/japan/version1/touch-notouch-1.svg') %]" />
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/japan/version1/touch-notouch-2.svg') %]" />
+                    </div>
+                </div>
+                <div class="icon-pair">
+                    <span class="icon-sm icon-3"></span>
+                    <span class="icon-sm icon-4"></span>
+                </div>
+                <h4 class="orange-bold">[% l("Touch Options") %]</h4>
+                <p>[% l("We predict whether market price will touch barrier price by the end of trading period") %]</p>
+                <span class="box-text-xs">[% l("We will offer a minimum trading period of one week up to one year") %]</span>
+            </div>
+        </div>
+        <div class="gr-6 gr-12-m">
+            <div class="box-orange-o">
+                <div class="gr-row">
+                    <div class="gr-6 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/japan/version1/in-out-1.svg') %]" />
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/japan/version1/in-out-2.svg') %]" />
+                    </div>
+                </div>
+                <div class="icon-pair">
+                    <span class="icon-sm icon-5"></span>
+                    <span class="icon-sm icon-6"></span>
+                </div>
+                <h4 class="orange-bold">[% l("Range Options: End-In / End-Out") %]</h4>
+                <p>[% l("At the judgement time, predit the judgement rate to be less thatn the upper limit barrier and above the lower limit barrier, or above the upper limit barrier or below the lower limit barrier") %]</p>
+                <span class="box-text-xs">[% l("We will offer a minimum trading period of one week up to one year") %]</span>
+            </div>
+        </div>
+        <div class="gr-6 gr-12-m">
+            <div class="box-orange-o">
+                <div class="gr-row">
+                    <div class="gr-6 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/japan/version1/in-out-3.svg') %]" />
+                    </div>
+                    <div class="gr-6 gr-12-m">
+                        <img class="responsive" src="[% request.url_for('images/japan/version1/in-out-4.svg') %]" />
+                    </div>
+                </div>
+                <div class="icon-pair">
+                    <span class="icon-sm icon-1"></span>
+                    <span class="icon-sm icon-2"></span>
+                </div>
+                <h4 class="orange-bold">[% l("Range Option: Stay-In / Break-Out") %]</h4>
+                <p>[% l("It predicts whether the market price during the trading period is less than the upper limit barrier and maintains the lower limit barrier excess, or becomes equal to or higher than the upper limit barrier or belowe the lower limit barrier") %]</p>
+                <span class="box-text-xs">[% l("We will offer a minimum trading period of one week up to one year") %]</span>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="pattern-polkadots">
+    <div class="section-title">
+        <h1 class="rounded-bubble">[% l("How?") %]</h1>
+        <h1 class="bg-blue">[% l("Trade with 3 simple steps") %]</h1>
+    </div>
+    <div class="container">
+        <div class="gr-row">
+            <div class="gr-4 gr-12-m">
+                <div class="box-orange-o">
+                    <h4 class="bubble">[% l("Set exchange rate") %]</h4>
+                    <img class="fixed-height" src="[% request.url_for('images/japan/version1/coin.svg') %]" />
+                </div>
+            </div>
+            <div class="gr-4 gr-12-m">
+                <div class="box-orange-o">
+                    <h4 class="bubble">[% l("Set amount (lot number)") %]</h4>
+                    <img class="fixed-height" src="[% request.url_for('images/japan/version1/slider.svg') %]" />
+                </div>
+            </div>
+            <div class="gr-4 gr-12-m">
+                <div class="box-orange-o">
+                    <h4 class="bubble">[% l("Higher/lower rate") %]</h4>
+                    <img class="fixed-height" src="[% request.url_for('images/japan/version1/high-low.svg') %]" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pattern-geometric">
+    <div class="section-title">
+        <h1 class="bg-ribbon">[% l("Fast execution with one click") %]</h1>
+    </div>
+    <div class="container">
+        <div class="gr-row">
+            <div class="gr-6 gr-12-m center-text">
+                <div class="bg-bubble-box">
+                    <h1>[% l("High speed execution") %]</h1>
+                </div>
+                <img class="" src="[% request.url_for('images/japan/version1/bg-light-blue.svg') %]" />
+            </div>
+            <div class="gr-4 gr-12-m bottom-left">
+                <h2 class="orange-bold">[% l("You can purchase a trade with one click") %]</h2>
+                <p>[% l("Just switch this button to prevent misoperation") %]</p>
+                <img class="" src="[% request.url_for('images/japan/version1/lock-switch.svg') %]" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pattern-confetti">
+    <div class="section-title">
+        <h1 class="bg-orange">[% l("Why choose binary options over foreign exchange") %]</h1>
+    </div>
+    <div class="container">
+        <h2 class="center-text blue-bold">[% l("A binary option can provide profit opportunities even in a small price range, where FX normally doesn’t. Here is a table comparison of foreign exchange and binary options:") %]</h2>
+        <div class="gr-row">
+            <div class="gr-6">
+                <div class="box-orange-o--light">
+                    <h3 class="title-bubble">[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</h3>
+                    <div class="separator"></div>
+                    <p>[% l("") %]</p>
+                </div>
+            </div>
+            <div class="gr-6">
+                <div class="box-orange-o--light">
+                    <h3 class="title-bubble">[% l("Binary option can make a higher profit, for the same risk but less margin") %]</h3>
+                    <div class="separator"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>[% l("Key plus point") %]</h2>
+    </div>
+    <div  class="container">
+        <div class="gr-row">
+            <div class="gr-2">
+                <div class="box-orange-o">
+                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
+                </div>
+            </div>
+            <div class="gr-2">
+                <div class="box-orange-o">
+                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
+                </div>
+            </div>
+            <div class="gr-2">
+                <div class="box-orange-o">
+                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
+                </div>
+            </div>
+            <div class="gr-2">
+                <div class="box-orange-o">
+                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
+                </div>
+            </div>
+            <div class="gr-2">
+                <div class="box-orange-o">
+                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
+                </div>
+            </div>
+            <div class="gr-2">
+                <div class="box-orange-o">
+                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-title-inverse primary-bg-color">
+        <h3>[% l("Sign up for a free account") %]</h3>
+    </div>
+    <div  class="container">
+
+    </div>
+</section>
+
+<section>
+    <div class="section-title-inverse primary-bg-color">
+        <h2>[% l("The learning center") %]</h2>
+    </div>
+    <div  class="container">
+
+    </div>
+</section>
+
+<section>
+    <div class="section-title-inverse primary-bg-color">
+        <h2>[% l("How to open an account") %]</h2>
+    </div>
+    <div  class="container">
+
+    </div>
+</section>
+
+
+<footer class="center-text primary-bg-color content-inverse-color">
+
+</footer>
+
+<script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
+<!-- script src="[% request.url_for('js/landing_pages/graduate_program.js') _ '?' _ static_hash %]"></script -->
+</body>
+</html>

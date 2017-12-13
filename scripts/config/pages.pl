@@ -151,6 +151,7 @@ sub all_pages {
         ['hackathon',                          'landing_pages/hackathon',                   undef,        'Hackathon Competition',            'NOT-en'],
         ['landing/signup-frame',               'landing_pages/signup_frame',                undef,        'Sign up'],
         ['graduates',                          'landing_pages/graduate_program',            undef,        'Binary.com Graduate Program',      'NOT-en'],
+        ['binary-japan-landing',               'landing_pages/binary_japan',                undef,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
     );
 }
 
