@@ -57,19 +57,20 @@ function getConfig() {
     return config;
 }
 
-function create_directories() {
+function createDirectories() {
     const config = getConfig();
     const mkdir = path => fs.existsSync(path) || fs.mkdirSync(path);
 
     console.log(`Target: ${config.dist_path}`.yellow);
     mkdir(Path.join(config.dist_path));
     config.languages.forEach(lang => {
+        lang = lang.toLowerCase();
         mkdir(Path.join(config.dist_path, lang));
         mkdir(Path.join(config.dist_path, `${lang}/pjax`));
     });
 }
 
-function should_compile(excludes, lang) {
+function shouldCompile(excludes, lang) {
     if (excludes && !/^ACH$/i.test(lang)) {
 
         excludes = excludes.toUpperCase();
@@ -82,7 +83,7 @@ function should_compile(excludes, lang) {
     return true;
 }
 
-function file_hash_async(path, cb) {
+function fileHash(path, cb) {
     return new Promise((res, rej) => {
         var fd = fs.createReadStream(path);
         var hash = Crypto.createHash('sha1');
@@ -135,10 +136,12 @@ const createBuilder = async () => {
     const config = getConfig();
 
     let static_hash = Math.random().toString(36).substring(2, 10);
-    try {
-        static_hash = await common.readFile(Path.join(config.dist_path, 'version'));
-    } catch(e) { }
-    const vendor_hash = await file_hash_async(Path.join(config.dist_path, 'js/vendor.min.js'))
+    if (program.path) {
+        try {
+            static_hash = await common.readFile(Path.join(config.dist_path, 'version'));
+        } catch(e) { }
+    }
+    const vendor_hash = await fileHash(Path.join(config.dist_path, 'js/vendor.min.js'))
     await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
 
     const html = Vash.helpers;
@@ -238,7 +241,7 @@ async function compile(page) {
     console.time(page.save_as);
     console.log(`Compiling ${page.save_as}`.green);
     const config = getConfig();
-    const languages = config.languages.filter(lang => should_compile(page.excludes, lang));
+    const languages = config.languages.filter(lang => shouldCompile(page.excludes, lang));
     const builder = await createBuilder();
 
     const layouts = { };
@@ -305,7 +308,7 @@ async function compile(page) {
     console.timeEnd(page.save_as);
 }
 
-create_directories();
+createDirectories();
 (async () => {
     const config = getConfig();
     try {
