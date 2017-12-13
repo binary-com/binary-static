@@ -3,10 +3,10 @@ const paramsHash         = require('./url').paramsHash;
 const applyToAllElements = require('./utility').applyToAllElements;
 
 const TabSelector = (() => {
-    let current_tab_id = '';
-    let has_arrows     = false;
-    let array_tab      = [];
-    let array_sub_tab  = [];
+    let selected_tab  = '';
+    let has_arrows    = false;
+    let array_tab     = [];
+    let array_sub_tab = [];
 
     /**
      * @param {String|Array} tab_ids can be the ID of single set of tabs or an array of all elements
@@ -20,11 +20,8 @@ const TabSelector = (() => {
         }
         array_tab = Array.isArray(tab_ids) ? tab_ids : [tab_ids];
         // set initial width and margin-left of tab selector
-        array_tab.forEach((tab_id) => {
-            current_tab_id = tab_id;
-            repositionSelector();
-            window.addEventListener('resize', repositionSelector);
-        });
+        repositionSelector();
+        window.addEventListener('resize', repositionSelector);
 
         applyToAllElements('.tm-li', (element) => {
             element.addEventListener('click', slideSelectorOnMenuClick);
@@ -42,7 +39,9 @@ const TabSelector = (() => {
     };
 
     const repositionSelector = () => {
-        changeTab(undefined, undefined, current_tab_id);
+        array_tab.forEach((tab_id) => {
+            changeTab(undefined, undefined, tab_id);
+        });
     };
 
     const slideSelectorOnMenuClick = (e) => {
@@ -57,11 +56,11 @@ const TabSelector = (() => {
     };
 
     const goLeft = (e) => {
-        changeTab(e, true);
+        changeTab(e, true, undefined);
     };
 
     const goRight = (e) => {
-        changeTab(e, false);
+        changeTab(e, false, undefined);
     };
 
     const changeTab = (e, go_left, selector_id) => {
@@ -81,7 +80,11 @@ const TabSelector = (() => {
         if (!el_parent) {
             return;
         }
-        const elements  = el_parent.getElementsByTagName('li');
+        if (typeof go_left === 'undefined' && !el_to_show_from_hash && selected_tab) {
+            slideSelector(selector, selected_tab);
+            return;
+        }
+        const elements = el_parent.getElementsByTagName('li');
         for (let i = 0; i < elements.length - 1; i++) {
             if (/active/.test(elements[i].classList)) {
                 if (typeof go_left === 'undefined' && !el_to_show_from_hash) {
@@ -100,6 +103,8 @@ const TabSelector = (() => {
                     }
                     el_to_show = elements[index_to_show];
                 }
+                selected_tab = el_to_show;
+
                 selectCircle(selector, i, index_to_show);
                 slideSelector(selector, el_to_show);
                 elements[i].classList.remove('active');
@@ -130,10 +135,7 @@ const TabSelector = (() => {
     };
 
     const clean = () => {
-        array_tab.forEach((tab_id) => {
-            current_tab_id = tab_id;
-            window.removeEventListener('resize', repositionSelector);
-        });
+        window.removeEventListener('resize', repositionSelector);
 
         applyToAllElements('.tm-li', (element) => {
             element.removeEventListener('click', slideSelectorOnMenuClick);
