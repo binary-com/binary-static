@@ -166,44 +166,42 @@
     </div>
 </div>
 
-<div id="financial_banner">
-    <div class="container gr-padding-30">
-        <h2 class="center-text">[% l("Diverse platforms and account types") %]</h2>
-        [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
-            [% selector_id = 'account_tabs' %]
-            [% INCLUDE tabs_subtabs id=selector_id class='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper' items=[
-                { id='binary_options', href=url_home_beta _ '?' _ selector_id _ '=binary_options', text=l('Binary Options'), class='active' },
-                { id='mt5',            href=url_home_beta _ '?' _ selector_id _ '=mt5',            text=l('MetaTrader 5') },
-                { id='account_tabs_selector', class='tab-selector' },
-            ] %]
-            <div class="tab-content">
-                [% WRAPPER tab_content_container %]
-                    [% WRAPPER tab_content id='binary_options' visible=1 %]
-                        [% PROCESS accounts_tab_content header=l("Trade binary options on a wide range of web and mobile apps. Each comes with unique strengths that complement a variety of trading strategies.")
-                            mobile_header=l("Binary Options")
-                            image="images/pages/home-beta/binary_options.svg"
-                            image_one="images/pages/home-beta/icons/demo.svg" list_header_one=l("Virtual Account") list_text_one=l("Practice account with replenishable USD 10,000 virtual credit.")
-                            image_two="images/pages/home-beta/icons/real.svg" list_header_two=l("Real Account") list_text_two=l("Real-money accounts with your choice of fiat currency.")
-                            image_three="images/pages/home-beta/icons/crypto.svg" list_header_three=l("Crypto Account") list_text_three=l("Real-money accounts with your choice of cryptocurrency.") %]
-                    [% END %]
-                    [% WRAPPER tab_content id='mt5' %]
-                        [% PROCESS accounts_tab_content header=l("Trade Forex and CFD assets with up to 1,000:1 leverage on the world's most popular institutional multi-asset platform.")
-                            mobile_class='padding-top-20'
-                            mobile_header=l("MetaTrader 5")
-                            image="images/pages/home-beta/MT5.svg"
-                            image_one="images/pages/home-beta/icons/demo.svg" list_header_one=l("MT5 Demo") list_text_one=l("Practice account with replenishable USD 5,000 virtual credit.")
-                            image_two="images/pages/home-beta/icons/mt5_financial.svg" list_header_two=l("MT5 Financial") list_text_two=l("MT5 real-money account for Forex and CFDs.")
-                            image_three="images/pages/home-beta/icons/mt5_volatility.svg" list_header_three=l("MT5 Volatility") list_text_three=l("MT5 real-money account for Volatility Indices only.") %]
-                    [% END %]
+<div class="container gr-padding-30">
+    <h2 class="center-text">[% l("Diverse platforms and account types") %]</h2>
+    [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
+        [% selector_id = 'account_tabs' %]
+        [% INCLUDE tabs_subtabs id=selector_id class='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper' items=[
+            { id='binary_options', href=url_home_beta _ '?' _ selector_id _ '=binary_options', text=l('Binary Options'), class='active' },
+            { id='mt5',            href=url_home_beta _ '?' _ selector_id _ '=mt5',            text=l('MetaTrader 5') },
+            { id='account_tabs_selector', class='tab-selector' },
+        ] %]
+        <div class="tab-content">
+            [% WRAPPER tab_content_container %]
+                [% WRAPPER tab_content id='binary_options' visible=1 %]
+                    [% PROCESS accounts_tab_content header=l("Trade binary options on a wide range of web and mobile apps. Each comes with unique strengths that complement a variety of trading strategies.")
+                        mobile_header=l("Binary Options")
+                        image="images/pages/home-beta/binary_options.svg"
+                        image_one="images/pages/home-beta/icons/demo.svg" list_header_one=l("Virtual Account") list_text_one=l("Practice account with replenishable USD 10,000 virtual credit.")
+                        image_two="images/pages/home-beta/icons/real.svg" list_header_two=l("Real Account") list_text_two=l("Real-money accounts with your choice of fiat currency.")
+                        image_three="images/pages/home-beta/icons/crypto.svg" list_header_three=l("Crypto Account") list_text_three=l("Real-money accounts with your choice of cryptocurrency.") %]
                 [% END %]
-            </div>
-            [% INCLUDE tab_circles number=2 id='account_tabs_circles' %]
-        [% END %]
-
-        <div class="center-text gr-padding-20 gr-parent">
-            <h3 class="center-text gr-padding-20 gr-parent">[% l("Choose the platforms and accounts you need, based on your personal trading style") %]</h3>
-            <a class="button-secondary" href="[% request.url_for('platforms') %]"><span>[% l("View our platforms") %]</span></a>
+                [% WRAPPER tab_content id='mt5' %]
+                    [% PROCESS accounts_tab_content header=l("Trade Forex and CFD assets with up to 1,000:1 leverage on the world's most popular institutional multi-asset platform.")
+                        mobile_class='padding-top-20'
+                        mobile_header=l("MetaTrader 5")
+                        image="images/pages/home-beta/MT5.svg"
+                        image_one="images/pages/home-beta/icons/demo.svg" list_header_one=l("MT5 Demo") list_text_one=l("Practice account with replenishable USD 5,000 virtual credit.")
+                        image_two="images/pages/home-beta/icons/mt5_financial.svg" list_header_two=l("MT5 Financial") list_text_two=l("MT5 real-money account for Forex and CFDs.")
+                        image_three="images/pages/home-beta/icons/mt5_volatility.svg" list_header_three=l("MT5 Volatility") list_text_three=l("MT5 real-money account for Volatility Indices only.") %]
+                [% END %]
+            [% END %]
         </div>
+        [% INCLUDE tab_circles number=2 id='account_tabs_circles' %]
+    [% END %]
+
+    <div class="center-text gr-padding-20 gr-parent">
+        <h3 class="center-text gr-padding-20 gr-parent">[% l("Choose the platforms and accounts you need, based on your personal trading style") %]</h3>
+        <a class="button-secondary" href="[% request.url_for('platforms') %]"><span>[% l("View our platforms") %]</span></a>
     </div>
 </div>
 
@@ -241,10 +239,8 @@
     </div>
 
     [% INCLUDE _common/components/separator_line.html.tt class="gr-padding-30" show_mobile=1 %]
-</div>
 
-<div id="payment_banner">
-    <div class="container" id="payment_methods">
+    <div id="payment_methods">
         <div class="gr-12 gr-padding-20">
             <h2 class="center-text">[% l("Payment methods") %]</h2>
             <p class="center-text">[% l("We support hundreds of deposit and withdrawal options, including Bitcoin.") %]</p>
