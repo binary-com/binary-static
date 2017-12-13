@@ -7,15 +7,15 @@ const TabSelector = (() => {
 
     const onLoad = () => {
         tabListener();
-        applyToAllElements('.tab-selector-wrapper ul', (tab_selector) => {
+        applyToAllElements('.tab-selector-wrapper .tm-ul', (tab_selector) => {
             const tab_selector_id = tab_selector.getAttribute('id');
             applyToAllElements('.tm-li', (tab) => {
                 if (!/tab-selector/.test(tab.className)) {
                     const tab_id = tab.getAttribute('id');
                     if (!obj_tabs[tab_selector_id]) {
-                        obj_tabs[tab_selector_id] = { el_selected_tab: tab, tabs_id: [] };
+                        obj_tabs[tab_selector_id] = { el_selected_tab: tab, id_tabs: [] };
                     }
-                    obj_tabs[tab_selector_id].tabs_id.push(tab_id);
+                    obj_tabs[tab_selector_id].id_tabs.push(tab_id);
                 }
             }, '', tab_selector);
         });
@@ -51,7 +51,7 @@ const TabSelector = (() => {
     };
 
     const updateURL = (selector, tab_id) => {
-        if (obj_tabs[selector].tabs_id.length) {
+        if (obj_tabs[selector].id_tabs.length) {
             const params_hash = Url.paramsHash();
             params_hash[selector] = tab_id;
             const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params_hash)}`;
@@ -72,7 +72,7 @@ const TabSelector = (() => {
         let el_parent,
             el_to_show_from_hash;
         const params_hash = Url.paramsHash();
-        if (params_hash[selector] && obj_tabs[selector].tabs_id.indexOf(params_hash[selector]) > -1) {
+        if (params_hash[selector] && obj_tabs[selector].id_tabs.indexOf(params_hash[selector]) > -1) {
             el_to_show_from_hash = document.getElementById(params_hash[selector]);
             if (el_to_show_from_hash) {
                 el_parent = el_to_show_from_hash.parentNode;
