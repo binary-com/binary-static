@@ -213,93 +213,222 @@
     <div class="container">
         <h2 class="center-text blue-bold">[% l("A binary option can provide profit opportunities even in a small price range, where FX normally doesn’t. Here is a table comparison of foreign exchange and binary options:") %]</h2>
         <div class="gr-row">
-            <div class="gr-6">
+            <div class="gr-5 gr-push-1 gr-12-m gr-push-0-m">
                 <div class="box-orange-o--light">
                     <h3 class="title-bubble">[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</h3>
+                    <div class="gr-row">
+                        <div class="box-o">
+                            <img class="icon-sm" src="[% request.url_for('images/japan/version1/jpy.svg') %]" />
+                            <span class="box-text-s">[% l("¥110.50 / lot") %]</span>
+                        </div>
+                        <div class="box">
+                            <img class="icon-sm" src="[% request.url_for('images/japan/version1/clock.svg') %]" />
+                            <span class="box-text-s">[% l("1 hour") %]</span>
+                        </div>
+                    </div>
                     <div class="separator"></div>
-                    <p>[% l("") %]</p>
+                    <p class="box-text-xxs">[% l("1 lot = $ 100,000, margin: ") %]</p>
+                    <p class="font-12">[% l("Profit / loss per point (0.01) = ¥ 1,000") %]</p>
+                    <p class="bg-gray box-text-s">[% l("1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000") %]</p>
+                    <div class="flex">
+                        <img class="icon-md" src="[% request.url_for('images/japan/version1/sad-face.svg') %]" />
+                        <p>[% l("Margin: ¥ 442,000") %]<br>[% l("Maximum loss: not guaranteed") %]</p>
+                    </div>
+                    <p class="box-text-xxs">[% l("$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000") %]</p>
                 </div>
             </div>
-            <div class="gr-6">
+            <div class="gr-5 gr-push-1 gr-12-m gr-push-0-m">
                 <div class="box-orange-o--light">
                     <h3 class="title-bubble">[% l("Binary option can make a higher profit, for the same risk but less margin") %]</h3>
+                    <div class="gr-row">
+                        <div class="box-o">
+                            <img class="icon-sm" src="[% request.url_for('images/japan/version1/jpy.svg') %]" />
+                            <span class="box-text-s">[% l("¥200 /  lot") %]</span>
+                        </div>
+                        <div class="box">
+                            <img class="icon-sm" src="[% request.url_for('images/japan/version1/clock.svg') %]" />
+                            <span class="box-text-s">[% l("1 hour") %]</span>
+                        </div>
+                    </div>
                     <div class="separator"></div>
+                    <p class="box-text-xxs">[% l("If spot rate is at above target rate at judgment time, the profil will be:") %]</p>
+                    <p class="font-12">[% l("Option price assumes 1 hour to judgment time, volatility = 8.5%, spread = 40 yen") %]</p>
+                    <p class="bg-gray box-text-s">[% l("50 lots: maximum loss: - ¥ 10,000 | target profit: ¥ 40,000") %]</p>
+                    <div class="flex">
+                        <img class="icon-md" src="[% request.url_for('images/japan/version1/happy-face.svg') %]" />
+                        <p>[% l("Margin: ¥ 10,000") %]<br>[% l("Maximum loss: guaranteed") %]</p>
+                    </div>
+                    <p class="box-text-xxs">[% l("50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000") %]</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section>
+<section class="pattern-semicircle">
     <div class="section-title">
-        <h2>[% l("Key plus point") %]</h2>
+        <h1 class="bg-bubble">[% l("Key plus point") %]</h1>
+    </div>
+    <div  class="container">
+        <div class="gr-row box-wrapper">
+            <div class="gr-2 gr-6-m">
+                <div class="box-orange-o--light heart">
+                    <p>[% l("trade with 50 yen to 999 yen") %]</p>
+                </div>
+            </div>
+            <div class="gr-2 gr-6-m">
+                <div class="box-orange-o--light heart">
+                    <p>[% l("set daily loss limit") %]</p>
+                </div>
+            </div>
+            <div class="gr-2 gr-6-m">
+                <div class="box-orange-o--light heart">
+                    <p>[% l("no transaction fees") %]</p>
+                </div>
+            </div>
+            <div class="gr-2 gr-6-m">
+                <div class="box-orange-o--light heart">
+                    <p>[% l("trade 9 currencies") %]</p>
+                </div>
+            </div>
+            <div class="gr-2 gr-6-m">
+                <div class="box-orange-o--light heart">
+                    <p>[% l("4 options types") %]</p>
+                </div>
+            </div>
+            <div class="gr-2 gr-6-m">
+                <div class="box-orange-o--light heart">
+                    <p>[% l("trading periods from 2 hours to 1 year") %]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pattern-geometric">
+    <div class="section-title bg-polygon">
+        <h1 class="">[% l("Sign up for a free account") %]</h1>
+    </div>
+    <div  class="container">
+        <h1 class="center-text orange-bold">[% l("Easy to use design. Fast execution; multifunction charting system and smartphone optimized display.") %]</h1>
+        <div class="gr-row">
+            <div class="gr-9">
+                <img class="responsive" src="[% request.url_for('images/japan/version1/apple-macbook-pro-15/apple-macbook-pro-15@2x.jpg') %]" />
+            </div>
+            <div class="gr-3">
+                <img class="img-172" src="[% request.url_for('images/japan/version1/apple-i-phone-7/apple-i-phone-7-silver@2x.jpg') %]" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pattern-confetti">
+    <div class="section-title">
+        <h1 class="bg-orange">[% l("YOUR FUNDS ARE HELD SECURELY") %]</h1>
+    </div>
+    <div  class="container">
+        <h2 class="blue-bold">[% l("All customer funds are deposited with JSF Trust & Banking, and in the event of our business failure, they will be refunde via an independent attorney acting as beneficiary agent") %]</h2>
+        <div class="gr-row">
+            <div class="gr-5 gr-push-1 gr-12-m gr-push-0-m">
+                <div class="box-orange-o--light">
+                    <h3 class="title-bubble">[% l("Normal time") %]</h3>
+                    <img class="responsive" src="[% request.url_for('images/japan/version1/secure-1.svg') %]" />
+                </div>
+            </div>
+            <div class="gr-5 gr-push-1 gr-12-m gr-push-0-m">
+                <div class="box-orange-o--light">
+                    <h3 class="title-bubble">[% l("When our company collapse") %]</h3>
+                    <img class="responsive" src="[% request.url_for('images/japan/version1/secure-2.svg') %]" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pattern-semicircle">
+    <div class="section-title">
+        <h1 class="bg-ribbon">[% l("The learning center") %]</h1>
     </div>
     <div  class="container">
         <div class="gr-row">
-            <div class="gr-2">
+            <div class="gr-10 gr-push-1 gr-12-m gr-push-0-m">
                 <div class="box-orange-o">
-                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
-                </div>
-            </div>
-            <div class="gr-2">
-                <div class="box-orange-o">
-                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
-                </div>
-            </div>
-            <div class="gr-2">
-                <div class="box-orange-o">
-                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
-                </div>
-            </div>
-            <div class="gr-2">
-                <div class="box-orange-o">
-                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
-                </div>
-            </div>
-            <div class="gr-2">
-                <div class="box-orange-o">
-                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
-                </div>
-            </div>
-            <div class="gr-2">
-                <div class="box-orange-o">
-                    <p>[% l("Foreign exchange one cancellation order - profit take & stop-loss order") %]</p>
+                    <div class="gr-row">
+                        <div class="gr-2 gr-push-1 gr-12-m gr-push-0-m">
+                            <img class="img-md" src="[% request.url_for('images/japan/version1/customer-support.svg') %]" />
+                            <h3 class="box-text-s">[% l("We have a support team to answer your questions: support@binary.com") %]</h3>
+                        </div>
+                        <div class="gr-2 gr-push-3 gr-12-m gr-push-0-m">
+                            <img class="img-md" src="[% request.url_for('images/japan/version1/accounting-book.svg') %]" />
+                            <h3 class="box-text-s">[% l("We will give you a virtual account that already has ¥ 1,000,000.") %]</h3>
+                        </div>
+                        <div class="gr-2 gr-push-5 gr-12-m gr-push-0-m">
+                            <img class="img-md" src="[% request.url_for('images/japan/version1/school.svg') %]" />
+                            <h3 class="box-text-s">[% l("Learn more about binary options for academies using webinars, ebooks, videos.") %]</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section>
-    <div class="section-title-inverse primary-bg-color">
-        <h3>[% l("Sign up for a free account") %]</h3>
+<section class="pattern-polkadots">
+    <div class="section-title">
+        <h1 class="rounded-bubble">[% l("How?") %]</h1>
+        <h1 class="bg-blue">[% l("How to open an account") %]</h1>
     </div>
-    <div  class="container">
-
+    <div class="container">
+        <div class="gr-row">
+            <div class="gr-2 gr-push-2 gr-6-m gr-push-0-m">
+                <div class="bubble-outline">
+                    <p>[% l("Apply for an account & provide ID") %]</p>
+                </div>
+                <img class="icon-lg" src="[% request.url_for('images/japan/version1/new-acc.svg') %]" />
+            </div>
+            <div class="gr-2 gr-push-2 gr-6-m gr-push-0-m">
+                <div class="bubble-outline">
+                    <p>[% l("Take the knowledge confirmation test") %]</p>
+                </div>
+                <img class="icon-lg" src="[% request.url_for('images/japan/version1/knowledge-test.svg') %]" />
+            </div>
+            <div class="gr-2 gr-push-2 gr-6-m gr-push-0-m">
+                <div class="bubble-outline">
+                    <p>[% l("Enable account with secure e-mail") %]</p>
+                </div>
+                <img class="icon-lg" src="[% request.url_for('images/japan/version1/secure-email.svg') %]" />
+            </div>
+            <div class="gr-2 gr-push-2 gr-6-m gr-push-0-m">
+                <div class="bubble-outline">
+                    <p>[% l("Start trading after depositing money") %]</p>
+                </div>
+                <img class="icon-lg" src="[% request.url_for('images/japan/version1/deposit-money.svg') %]" />
+            </div>
+        </div>
     </div>
 </section>
 
-<section>
-    <div class="section-title-inverse primary-bg-color">
-        <h2>[% l("The learning center") %]</h2>
-    </div>
-    <div  class="container">
-
-    </div>
-</section>
-
-<section>
-    <div class="section-title-inverse primary-bg-color">
-        <h2>[% l("How to open an account") %]</h2>
-    </div>
-    <div  class="container">
-
+<section class="pattern-wave">
+    <div class="container">
+        <div class="box-orange-o--light">
+            <h3>[% l("Award-winning trading excellence") %]</h3>
+        </div>
     </div>
 </section>
 
+<section class="bg-polygon">
+    <div class="container">
+        <h1>[% l("Sign up for a free account") %]</h1>
+    </div>
+</section>
 
-<footer class="center-text primary-bg-color content-inverse-color">
-
+<footer class="content-inverse-color">
+    <div class="primary-bg-color-dark">
+        <p>[% l("■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合は支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。1)1取引の取引上限は100ロット。2)1日の取引上限額は50万円。前記2)に達した時点でその日は取引ができなくなります。■取引手数料は無料。当該日から遡り12ヶ月間、新規又は売却取引がなかった場合は口座維持手数料（2,500円税込）が発生、引き続き取引等がない場合、6ヶ月毎に同額が発生します。3,000円未満を出金の際は250円（税込）の出金手数料がかかります。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引開始前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。") %]</p>
+    </div>
+    <div class="primary-bg-color">
+        <p>[% l("【商号】Binary株式会社　金融商品取引業者　関東財務局長（金商）第2949号【加入協会】一般社団法人金融先物取引業協会 Copyright (c) 2017 Binary K.K. All Rights Reserved.") %]</p>
+    </div>
 </footer>
 
 <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>

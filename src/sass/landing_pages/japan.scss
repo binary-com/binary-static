@@ -13,10 +13,22 @@ section {
     padding: 80px 0;
 }
 
+footer {
+    text-align: justify;
+
+    * {
+        padding: 10px;
+    }
+    p {
+        margin: 0;
+    }
+}
+
 .container {
     max-width: 1200px !important;
 }
 
+/* Helpers */
 @function border-width($el) {
     @return $el * 2;
 }
@@ -57,14 +69,58 @@ section {
     }
 }
 
-.flex-center {
+.bubble-outline {
+    @include speech-bubble($COLOR_WHITE, 10px, 'down');
+    border: 1px solid $COLOR_ORANGE;
+    padding: 15px;
+    text-align: center;
+
+    &:after {
+        @include triangle($COLOR_WHITE, 10px, 'down');
+        bottom: -8px;
+        z-index: 2;
+    }
+    &:before {
+        @include triangle($COLOR_ORANGE, 10px, 'down');
+        bottom: -10px;
+        z-index: 1;
+    }
+    p {
+        margin: 0;
+        font-size: 16px;
+    }
+}
+
+@mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-// Components
-// Navbar
+.pattern {
+    display: block;
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+
+    &-wave {
+        background-image: url('../images/japan/version1/wave.svg');
+    }
+    &-polkadots {
+        background-image: url('../images/japan/version1/polkadots.svg');
+    }
+    &-confetti {
+        background-image: url('../images/japan/version1/confetti.svg');
+    }
+    &-geometric {
+        background-image: url('../images/japan/version1/geometric.png');
+    }
+    &-semicircle {
+        background-image: url('../images/japan/version1/semicircle.svg');
+    }
+}
+
+/* Components */
 .navbar-fixed-top {
     // position: fixed;
     right: 0;
@@ -207,16 +263,13 @@ section {
     }
 }
 
+// First section
 .intro {
     background: linear-gradient(0deg, $COLOR_DARK_BLUE, $COLOR_BLUE);
     position: relative;
     height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
 
-    &:before {
-        @include triangle($COLOR_DARK_BLUE, 100px, 'down');
-        border-left: 50vw solid transparent;
-        border-right: 50vw solid transparent;
-    }
     .intro-text, .intro-subtext {
         color: $COLOR_WHITE;
 
@@ -226,28 +279,9 @@ section {
     }
 }
 
-.pattern {
-    display: block;
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center;
-
-    &-wave {
-        background-image: url('../images/japan/version1/wave.svg');
-    }
-    &-polkadots {
-        background-image: url('../images/japan/version1/polkadots.svg');
-    }
-    &-confetti {
-        background-image: url('../images/japan/version1/confetti.svg');
-    }
-    &-geometric {
-        background-image: url('../images/japan/version1/geometric.png');
-    }
-}
-
+// Sections' heading
 .section-title {
-    @extend .flex-center;
+    @include flex-center;
 
     * {
         color: $COLOR_WHITE;
@@ -274,16 +308,28 @@ section {
         width: 100%;
         text-align: center;
     }
+    .bg-bubble {
+        @include speech-bubble($COLOR_BLUE, 30px, 'down');
+        padding: 30px;
+        font-size: 48px;
+    }
+    &.bg-polygon {
+        margin-top: -80px;
+        margin-bottom: 80px;
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+    }
 }
 
-.blue-bold {
-    font-weight: 500;
-    color: $COLOR_BLUE;
-}
-
-.orange-bold {
-    font-weight: bold;
-    color: $COLOR_ORANGE;
+.bg-polygon {
+    background-color: $COLOR_DARK_BLUE;
+    width: 100%;
+    height: 280px;
+    border-radius: 0;
+    text-align: center;
+    background-image: url('../images/japan/version1/retro-transparent.svg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .box-orange-o {
@@ -302,8 +348,11 @@ section {
         margin-top: 10px;
         margin-bottom: 20px;
     }
+    .font-12 {
+        font-size: 12px;
+    }
     .box-text-xxs {
-        color: $COLOR_LIGHT_GRAY;
+        color: $COLOR_GRAY;
         font-size: 10px;
     }
     .box-text-xs {
@@ -313,6 +362,11 @@ section {
     }
     .box-text-s {
         font-size: 14px;
+    }
+    .bg-gray {
+        background-color: $COLOR_LIGHT_GRAY;
+        border-radius: 5px;
+        padding: 15px;
     }
     .bubble {
         @include speech-bubble($COLOR_LIGHT_GRAY, 10px, 'down');
@@ -338,19 +392,42 @@ section {
         width: 70%;
         height: 86px;
     }
+    > div:first-child {
+        padding-top: 40px;
+    }
 }
 
 .box-orange-o--light {
     @extend .box-orange-o;
     border: solid 1px $COLOR_ORANGE;
     padding: 15px;
+    position: relative;
 
     .title-bubble {
         margin: -16px;
         padding: 15px;
+        margin-bottom: 20px;
     }
     .separator {
         border-top: 1px solid $COLOR_ORANGE;
+        margin: 0 -15px;
+    }
+    &.heart:before {
+        position: absolute;
+        content: url('../images/japan/version1/heart.svg');
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: -15px;
+    }
+}
+
+.box-wrapper {
+    .box-orange-o--light {
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -412,7 +489,7 @@ section {
 }
 
 .bg-bubble-box {
-    @extend .flex-center;
+    @include flex-center;
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url('../images/japan/version1/bubble-box.svg');
@@ -439,5 +516,66 @@ section {
     p {
         margin-top: 10px;
         margin-bottom: 20px;
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+.box-o, .box {
+    &.box-o {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+    }
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blue-bold {
+    font-weight: bold;
+    color: $COLOR_BLUE;
+}
+
+.orange-bold {
+    font-weight: bold;
+    color: $COLOR_ORANGE;
+}
+
+.img-md {
+    width: 145px;
+    height: 145px;
+}
+
+.img-172 {
+    width: 172px;
+}
+
+.img-772 {
+    width: 772px;
+}
+
+.base {
+    background: $COLOR_DARK_BLUE;
+    display: inline-block;
+    height: 55px;
+    margin-left: 20px;
+    margin-top: 55px;
+    position: relative;
+    width: 100px;
+
+    &:before {
+        border-top: 35px solid $COLOR_DARK_BLUE;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        content: '';
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: 100%;
+        width: 0;
     }
 }
