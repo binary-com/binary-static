@@ -1,3 +1,4 @@
+const tabListener        = require('binary-style').tabListener;
 const paramsHash         = require('./url').paramsHash;
 const applyToAllElements = require('./utility').applyToAllElements;
 
@@ -13,6 +14,7 @@ const TabSelector = (() => {
      * @param {String|Array} sub_tabs optional ID of available sub_tabs, to work with parameters in the URL to show certain tab
      */
     const init = (tab_ids, has_left_right_arrows = false, sub_tabs = undefined) => {
+        tabListener();
         if (sub_tabs) {
             array_sub_tab = Array.isArray(sub_tabs) ? sub_tabs : [sub_tabs];
         }
