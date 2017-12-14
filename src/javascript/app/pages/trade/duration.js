@@ -253,7 +253,7 @@ const Durations = (() => {
                 selector: duration_id,
                 type    : 'diff',
                 minDate : 1,
-                maxDate : 364,
+                maxDate : 365,
                 native  : false,
             });
             amount_element.change((value) => {
@@ -322,7 +322,7 @@ const Durations = (() => {
                 DatePicker.init({
                     selector: '#expiry_date',
                     minDate : 0,
-                    maxDate : 364,
+                    maxDate : 365,
                 });
             } else {
                 const min_date    = moment.utc(+date_start_val * 1000);
