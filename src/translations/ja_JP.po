@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-12-11 20:07-0500\n"
+"PO-Revision-Date: 2017-12-13 20:47-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -2055,7 +2055,7 @@ msgid "CFDs Derivatives that profit by speculating on the movement of underlying
 msgstr ""
 
 msgid "Can %1 tokens be mined?"
-msgstr ""
+msgstr "%1トークンの所有権は私に移りますか？"
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "ウェブサイトを持っていなくても、アフィリエイトプログラムに参加することはできますか？"
@@ -4411,7 +4411,7 @@ msgid "How can I become an affiliate?"
 msgstr "アフィリエイトプログラムの参加方法について教えて下さい。"
 
 msgid "How can I convert my tokens into ordinary shares?"
-msgstr ""
+msgstr "トークンを普通株に変換する方法は？"
 
 msgid "How can I find out more about %1?"
 msgstr "%1の詳細はどこで確認できますか？"
@@ -4420,7 +4420,7 @@ msgid "How can I learn more about ICOs and cryptocurrencies?"
 msgstr "ICOと暗号通貨の詳細はどこで確認できますか？"
 
 msgid "How can I place a bid?"
-msgstr ""
+msgstr "入札方法を教えてください"
 
 msgid "How can I purchase tokens?"
 msgstr "トークンの購入方法は？"
@@ -4703,10 +4703,10 @@ msgid "If the ask price is 1.05382, you'll buy USD 1.05382 for every EUR 1 you s
 msgstr ""
 
 msgid "If the maximum number of tokens (10 million) offered in the token sale are issued, then the number of shares issued after the ICO will total 220,257,430 shares."
-msgstr ""
+msgstr "最大数である1,000万のトークンがこのトークン販売で提供された場合、ICO後に発行される株式の数は合計で220,257,430になります。"
 
 msgid "If the minimum number of tokens (three million) offered in the token sale are issued, then the number of shares issued after the ICO will total 213,257,430 shares."
-msgstr ""
+msgstr "最小である300万のトークンがこのトークン販売で提供された場合、ICO後に発行される株式の数は合計で213,257,430になります。"
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "政府機関によって課せられた法律や義務に違反した場合を除き、いかなる理由で本契約が終了した場合、すべてのコンテンツを完全に削除していただく必要があります。"
@@ -5314,7 +5314,7 @@ msgid "Is there a cost for joining?"
 msgstr "アフィリエイトプログラムの参加費用について教えて下さい。"
 
 msgid "Is there a pre-ICO?"
-msgstr ""
+msgstr "プレICOはありますか？"
 
 msgid "Isle of Man"
 msgstr "マン島"
@@ -6962,10 +6962,10 @@ msgid "No, return to the ICO auction page"
 msgstr "No, return to the ICO auction page"
 
 msgid "No."
-msgstr ""
+msgstr "いいえ、ありません。"
 
 msgid "No. %1 tokens are securities-backed tokens which come with exclusive tokenholder rights. They cannot be mined."
-msgstr ""
+msgstr "いいえ。%1トークンは、トークンフォルダ限定の権利が付帯する証券担保トークンです。"
 
 msgid "No. Once your pull request is merged into master by our development team, and you have been paid, you have effectively handed over the rights to the code. It then becomes part of the master %1 codebase under the open-source license of the relevant repository."
 msgstr "No. Once your pull request is merged into master by our development team, and you have been paid, you have effectively handed over the rights to the code. It then becomes part of the master %1 codebase under the open-source license of the relevant repository."
@@ -8626,7 +8626,7 @@ msgid "Secret question"
 msgstr "秘密の質問"
 
 msgid "Securities tokens are tokens that derive their value from an external asset or represent traditional financial assets."
-msgstr ""
+msgstr "セキュリティトークンとは、対外資産から値を引き出す、若しくは従来の金融資産を表すトークンです。"
 
 msgid "Security"
 msgstr "セキュリティ情報"
@@ -10373,7 +10373,7 @@ msgid "This demo account comes with %1 of the virtual fund. Contact our customer
 msgstr ""
 
 msgid "This depends on the number of tokens that will be issued after the ICO."
-msgstr ""
+msgstr "ICO後に発行されるトークンの数によります。"
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the %1 Application Program Interface (\"API\"); \"you\", or \"your\")."
 msgstr "当文書（以下、”本契約”）は「当社」Binary Ltdとお客さま（Binary.comアプリケーションプログラムインターフェース（API）にご登録いただいた）の間で、利用規約（以下、規約）が適用されます。"
@@ -11213,7 +11213,7 @@ msgid "Utility bills (electricity, water, gas, broadband and landline)"
 msgstr "Utility bills (electricity, water, gas, broadband and landline)"
 
 msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
-msgstr ""
+msgstr "ユーティリティトークンは、分散型のネットワークやアプリーケーションにアクセスできるようにするトークンです。"
 
 msgid "Variable"
 msgstr ""
@@ -11702,7 +11702,7 @@ msgid "What is Forex trading"
 msgstr ""
 
 msgid "What is a Dutch auction? How does %1 determine the final bid price per token and how will I know if my bid is successful?"
-msgstr ""
+msgstr "ダッチオークションとは何ですか？%1ではどのようにトークンごとの最終入札価格を決めていますか？また、入札結果はどのようにして知ることができますか？"
 
 msgid "What is an ERC20 token?"
 msgstr ""
@@ -11750,7 +11750,7 @@ msgid "What will be the token symbol?"
 msgstr "トークンシンボルは何ですか？"
 
 msgid "What will be the total shares issued after the ICO?"
-msgstr ""
+msgstr "ICO後に発行される総株式は？"
 
 msgid "What you can trade with CFDs"
 msgstr ""
@@ -11762,7 +11762,7 @@ msgid "What's a stop out level and how is it applied"
 msgstr ""
 
 msgid "What’s the difference between securities tokens and utility tokens?"
-msgstr ""
+msgstr "セキュリティトークンとユーティリティトークンの違いは何ですか？"
 
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
 msgstr "獲得会員がBinaryグループの口座を開設した場合、獲得会員の氏名、トレード情報、その他データの所有権を当社が引き受けます。"
@@ -13951,16 +13951,16 @@ msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if 
 msgstr "２つのオプションを用い、バリア価格の高いバイナリーコールオプションとバリア価格の低いバイナリープットオプションを購入すれば、判定レートが２つのオプションのバリア価格で作られた価格帯の外となった場合に収益が得られ、判定レートが所定の価格帯の外であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができます。"
 
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "2017/11/30"
+msgstr "12/14/2017"
 
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "11/10/2017"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "契約締結前交付書面の改定のお知らせ"
+msgstr "12月25日（月曜日）及び2018年1月1日（月曜日）は取引休止とさせて頂きます。<br>カスタマーサポート時間について<br>12月25日（月曜日）の受付時間は通常通りです。<br>年内の受付につきましては、12月29日（金曜日）の17時までとさせて頂います。<br>また、翌年の受付時間につきましては、1月4日（木曜日）9時から受付開始となります。"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "2017年11月29日付けで契約締結前交付書面を改定いたします。契約締結前交付書面を必ずご確認いただく必要がございます。<br>店頭通貨バイナリーオプション取引の概要と仕組みについて(P16)<br>当社の概要について"
+msgstr "年内の入金反映について<br>年内の入金受付は12月29日(金)15時までに当社の指定口座にて確定ができた金額をお客様の口座に反映いたします。<br>それ以降の着金につきましては2018年1月4日(木)以降の反映となります。<br>年内の出金依頼とお客様口座への着金予定日について<br>12月27日15時までの出金依頼は、29日以降となります。<br>12月28日(木)15時までの出金依頼は、2018年1月4日(木)以降となります。<br>12月29日(金)15時までの出金依頼は、2018年1月5日(金)以降となります。<br>12月29日(金)15時以降から2018年1月4日(木)15時までの出金依頼は、2018年1月9日(火)以降となります。"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
 msgstr "取引概要　改定のお知らせ"
@@ -13972,7 +13972,7 @@ msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
 msgstr "."
 
 msgid "{JAPAN ONLY}JSA_Title_1"
-msgstr "重要：お知らせ"
+msgstr "クリスマス及び年末年始の取引時間・カスタマーサポート時間・入出金等についてのお知らせ"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
 msgstr "重要：お知らせ"
@@ -14883,4 +14883,7 @@ msgstr "イニシャル・コイン・オファリングに関する免責事項
 
 msgid "Hackathon Competition"
 msgstr "Hackathon Competition"
+
+msgid "Binary.com Graduate Program"
+msgstr ""
 
