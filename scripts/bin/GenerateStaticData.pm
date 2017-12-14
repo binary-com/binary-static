@@ -205,6 +205,8 @@ sub _texts {
         push @texts, localize('Your settings have been updated successfully.');
         push @texts, localize('Female');
         push @texts, localize('Male');
+        #strings for welcome landing page
+        push @texts, localize('Upgrade now');
         #strings for home and virtual account opening page
         push @texts, localize('verification token');
         push @texts, localize('email address');

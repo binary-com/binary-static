@@ -33,6 +33,7 @@ sub all_pages {
         ['new_account/account_type',           'app/new_account/account_type',              'default',    'Account Type Selection',         'ja'],
         ['new_account/virtualws',              'app/new_account/virtual',                   'default',    'Create New Account'],
         ['new_account/landing_page',           'app/new_account/landing_page',              'default',    'Welcome to Binary.com',          'NOT-ja,en'],
+        ['new_account/welcome',                'app/new_account/welcome_page',              'default',    'Welcome to Binary.com'],
 
         ['resources',                          'app/resources/index',                       'default',    'Resources'],
         ['resources/asset_indexws',            'app/resources/asset_index',                 'default',    'Asset Index', 'ja'],

@@ -29,6 +29,11 @@
     .table-container {
         overflow-x: auto;
     }
+    .welcome-content {
+        .box-grid:first-child div {
+            margin-bottom: 15px;
+        }
+    }
     #ico_banner_container .ico-banner .ico-box {
         div:nth-child(1) {
             padding-left: unset;
