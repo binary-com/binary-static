@@ -92,7 +92,7 @@ const TabSelector = (() => {
 
         selectCircle(options.selector, current_index, index_to_show);
         slideSelector(options.selector, options.el_to_show);
-        showContent(options.selector, document.getElementById(id_selected_tab), options.el_to_show);
+        options.el_to_show.getElementsByTagName('a')[0].click();
 
         if (params_hash.section) {
             setTimeout(() => { $.scrollTo($(`#${params_hash.section}`), 500, { offset: -10 }); }, 500);
@@ -110,13 +110,6 @@ const TabSelector = (() => {
             all_circles[old_index].classList.remove('selected');
             all_circles[index_to_show].classList.add('selected');
         }
-    };
-
-    const showContent = (selector, old_content, new_content) => {
-        old_content.classList.remove('active');
-        document.getElementById(`${old_content.getAttribute('id')}-content`).classList.add('invisible');
-        new_content.classList.add('active');
-        document.getElementById(`${new_content.getAttribute('id')}-content`).classList.remove('invisible');
     };
 
     const onUnload = () => {
