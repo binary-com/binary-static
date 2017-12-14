@@ -30,12 +30,14 @@ const ICOPortfolio = (() => {
     };
 
     const createPortfolioRow = (data, is_first) => {
-        const long_code        = data.longcode;
-        const shortcode        = data.shortcode.split('_');
-        const ico_status       = (State.getResponse('ico_status.ico_status') || '').toLowerCase();
-        const final_price      = +State.getResponse('ico_status.final_price');
-        const is_claim_allowed = State.getResponse('ico_status.is_claim_allowed');
-        const bid              = +shortcode[1];
+        const long_code         = data.longcode;
+        const shortcode         = data.shortcode.split('_');
+        const ico_status        = (State.getResponse('ico_status.ico_status') || '').toLowerCase();
+        const final_price       = +State.getResponse('ico_status.final_price');
+        const is_claim_allowed  = State.getResponse('ico_status.is_claim_allowed');
+        const bid               = +shortcode[1];
+        const pending_claim_msg = `data-balloon="${localize('The auction has ended. Clients have 2 weeks to deposit the balance amount for their bids. The closing value will be determined after that.')}"
+          data-balloon-length="large" data-balloon-pos="left"`;
 
         let status_text = localize('Ended');
         let button_class = 'button-secondary';
@@ -44,10 +46,14 @@ const ICOPortfolio = (() => {
             status_text = localize('Refund Bid');
             action = 'refund';
             button_class = 'button';
-        } else if (ico_status === 'closed' && final_price <= bid && is_claim_allowed) {
+        } else if (ico_status === 'closed' && final_price <= bid) {
             status_text = localize('Claim Tokens');
             action = 'claim';
-            button_class = 'button';
+            // if !is_claim_allowed then disable the claim button
+            button_class += ' button-disabled';
+            if( is_claim_allowed ) {
+              button_class = 'button';
+            }
         } else if (ico_status === 'open') {
             status_text = localize('Cancel Bid');
             action = 'cancel';
@@ -62,7 +68,7 @@ const ICOPortfolio = (() => {
         }
 
         const $button = $('<a/>', { class: `${button_class} nowrap`, contract_id: data.contract_id, action});
-        $button.append($(`<span>${localize(status)}</span>`));
+        $button.append($(`<span ${!is_claim_allowed && pending_claim_msg}>${localize(status)}</span>`));
 
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref', text: data.transaction_id }))

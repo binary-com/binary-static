@@ -539,6 +539,7 @@ sub _texts {
         push @texts, localize('The ICO is currently unavailable.');
         push @texts, localize('Please select a value for account_opening_reason.');
         push @texts, localize('Minimum bid');
+        push @texts, localize('The auction has ended. Clients have 2 weeks to deposit the balance amount for their bids. The closing value will be determined after that.');
 
         # binaryico histogram chart
         push @texts, localize('Final Price');
