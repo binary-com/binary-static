@@ -11,24 +11,26 @@
 [% END %]
 
 [% BLOCK sidebar_submenu %]
-<div class="sidebar-collapsible">
-    <ul id="[% id %]">
-        [% FOREACH item IN items %]
-            [% IF item.submenu %]
-                <li id="[% item.id %]" class="has-submenu [% item.class %]">
-                    <a href="#[% item.id %]">[% item.text %]</a>
-                    <ul>
-                        [% FOREACH submenu IN item.submenu %]
-                            <li id="[% submenu.id %]"><a href="#[% submenu.id %]">[% submenu.text %]</a></li>
-                        [% END %]
-                    </ul>
-                </li>
-            [% ELSE %]
-                <li id="[% item.id %]" class="[% item.class %]">
-                    <a href="#[% item.id %]">[% item.text %]</a>
-                </li>
+<div class="sidebar-container">
+    <div class="sidebar-collapsible">
+        <ul id="[% id %]">
+            [% FOREACH item IN items %]
+                [% IF item.submenu %]
+                    <li id="[% item.id %]" class="has-submenu [% item.class %]">
+                        <a href="#[% item.id %]">[% item.text %]</a>
+                        <ul>
+                            [% FOREACH submenu IN item.submenu %]
+                                <li id="[% submenu.id %]"><a href="#[% submenu.id %]">[% submenu.text %]</a></li>
+                            [% END %]
+                        </ul>
+                    </li>
+                [% ELSE %]
+                    <li id="[% item.id %]" class="[% item.class %]">
+                        <a href="#[% item.id %]">[% item.text %]</a>
+                    </li>
+                [% END %]
             [% END %]
-        [% END %]
-    </ul>
+        </ul>
+    </div>
 </div>
 [% END %]
