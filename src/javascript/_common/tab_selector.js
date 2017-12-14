@@ -51,20 +51,18 @@ const TabSelector = (() => {
     };
 
     const updateURL = (selector, tab_id) => {
-        if (obj_tabs[selector].id_tabs.length) {
-            const params_hash = Url.paramsHash();
-            params_hash[selector] = tab_id;
-            const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params_hash)}`;
-            window.history.replaceState({ url: updated_url }, null, updated_url);
-        }
+        const params_hash = Url.paramsHash();
+        params_hash[selector] = tab_id;
+        const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params_hash)}`;
+        window.history.replaceState({ url: updated_url }, null, updated_url);
     };
 
     const goLeft = (e) => {
-        changeTab(e, true, undefined);
+        changeTab(e, true);
     };
 
     const goRight = (e) => {
-        changeTab(e, false, undefined);
+        changeTab(e, false);
     };
 
     const changeTab = (e, go_left, selector_id) => {
@@ -72,7 +70,7 @@ const TabSelector = (() => {
         let el_parent,
             el_to_show_from_hash;
         const params_hash = Url.paramsHash();
-        if (params_hash[selector] && obj_tabs[selector].id_tabs.indexOf(params_hash[selector]) > -1) {
+        if (obj_tabs[selector].id_tabs.indexOf(params_hash[selector]) > -1) {
             el_to_show_from_hash = document.getElementById(params_hash[selector]);
             if (el_to_show_from_hash) {
                 el_parent = el_to_show_from_hash.parentNode;
