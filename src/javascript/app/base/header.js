@@ -53,8 +53,8 @@ const Header = (() => {
         }
 
         applyToAllElements('a.logout', (el) => {
-            el.removeEventListener('click', () => { Client.sendLogoutRequest(); });
-            el.addEventListener('click', () => { Client.sendLogoutRequest(); });
+            el.removeEventListener('click', logoutOnClick);
+            el.addEventListener('click', logoutOnClick);
         });
     };
 
@@ -68,12 +68,16 @@ const Header = (() => {
         Login.redirectToLogin();
     };
 
+    const logoutOnClick = () => {
+        Client.sendLogoutRequest();
+    };
+
     const showOrHideLoginForm = () => {
         if (!Client.isLoggedIn()) return;
         BinarySocket.wait('authorize').then(() => {
             const loginid_select = document.createElement('div');
             Client.getAllLoginids().forEach((loginid) => {
-                if (!Client.get('is_disabled', loginid)) {
+                if (!Client.get('is_disabled', loginid) && !Client.get('excluded_until', loginid)) {
                     const account_title  = Client.getAccountTitle(loginid);
                     const is_real        = /real/i.test(account_title);
                     const currency       = Client.get('currency', loginid);
@@ -113,9 +117,9 @@ const Header = (() => {
         }
     };
 
-    const metatraderMenuItemVisibility = (landing_company_response) => {
-        BinarySocket.wait('get_account_status').then(() => {
-            if (MetaTrader.isEligible(landing_company_response)) {
+    const metatraderMenuItemVisibility = () => {
+        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
+            if (MetaTrader.isEligible()) {
                 const metatrader = document.getElementById('user_menu_metatrader');
                 if (metatrader) metatrader.setVisibility(1);
             }

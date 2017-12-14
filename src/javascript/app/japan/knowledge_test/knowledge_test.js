@@ -214,8 +214,8 @@ const KnowledgeTest = (() => {
 
     const showDisallowedMsg = jp_status => (
         showMessage(localize('{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].', [
-            toJapanTimeIfNeeded(jp_status.next_test_epoch),
-            toJapanTimeIfNeeded(jp_status.last_test_epoch),
+            toJapanTimeIfNeeded(+jp_status.next_test_epoch),
+            toJapanTimeIfNeeded(+jp_status.last_test_epoch),
         ]))
     );
 
