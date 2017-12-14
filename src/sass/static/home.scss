@@ -1,4 +1,4 @@
-.home-content, .home-jp-content {
+.home-content, .home-beta-content, .home-jp-content {
     .signup-box {
         border-radius: $BORDER_RADIUS;
 
@@ -22,7 +22,7 @@
     }
 }
 
-.home-content {
+.home-content, .home-beta-content {
     #banner {
         background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
     }
@@ -81,6 +81,47 @@
     .xquoter-left p span, .xquoter-right p span {
         font-size: $FONT_SIZE_XS;
         font-style: italic;
+    }
+}
+
+#content.home-beta-content {
+    .go-left, .go-right {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    h3 {
+        line-height: 30px;
+    }
+    .border-right {
+        border-right: 2px solid $COLOR_GRAY;
+    }
+    #financial_banner {
+        background: url('../images/pages/home-beta/background/diverse.svg') 0 0/100% 108% no-repeat;
+    }
+    #payment_banner {
+        background: url('../images/pages/home-beta/background/payment.png') 0 0/100% 108% no-repeat;
+    }
+    .tab-circles {
+        display: flex;
+
+        .tab-circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid $COLOR_ORANGE;
+            margin: 0 3px;
+
+            &.selected {
+                background-color: $COLOR_ORANGE;
+            }
+            &:first-child {
+                margin-left: auto;
+            }
+            &:last-child {
+                margin-right: auto;
+            }
+        }
     }
 }
 
@@ -162,12 +203,33 @@
 }
 
 @media screen and (max-width: 480px) {
-    .home-content {
+    .home-content, .home-beta-content {
         .small-image {
             width: 30%;
         }
         .mena {
             width: 32%;
+        }
+    }
+    #content.home-beta-content {
+        .border-right {
+            border-right: none;
+        }
+        .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li {
+            font-size: $FONT_SIZE_S;
+        }
+        #market_tabs_selector, #account_tabs_selector {
+            top: 24px;
+        }
+        #frm_verify_email input {
+            width: calc(100% - 10px);
+        }
+        .order-2-m {
+            order: 2;
+            padding-top: 30px;
+        }
+        .padding-top-20 {
+            padding-top: 20px;
         }
     }
     .home-jp-content {

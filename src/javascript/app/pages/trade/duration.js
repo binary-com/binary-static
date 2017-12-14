@@ -253,7 +253,7 @@ const Durations = (() => {
                 selector: duration_id,
                 type    : 'diff',
                 minDate : 1,
-                maxDate : 364,
+                maxDate : 365,
                 native  : false,
             });
             amount_element.change((value) => {
@@ -308,7 +308,7 @@ const Durations = (() => {
         let requested = -1;
         if (document.getElementById('expiry_type').value === 'endtime') {
             let $expiry_date     = $('#expiry_date');
-            const date_start_val = document.getElementById('date_start').value;
+            const date_start_val = document.getElementById('date_start').value || 'now';
             const is_now         = isNow(date_start_val);
             const is_risefall    = /risefall/.test(Defaults.get('formname')) || false;
 
@@ -322,7 +322,7 @@ const Durations = (() => {
                 DatePicker.init({
                     selector: '#expiry_date',
                     minDate : 0,
-                    maxDate : 364,
+                    maxDate : 365,
                 });
             } else {
                 const min_date    = moment.utc(+date_start_val * 1000);
@@ -408,7 +408,7 @@ const Durations = (() => {
     };
 
     const isNow = date_start => (date_start ? date_start === 'now' : (!State.get('is_start_dates_displayed') || document.getElementById('date_start').value === 'now'));
-
+    
     const isSameDay = () => {
         let date_start_val = document.getElementById('date_start').value;
         // if 'now' is selected, take first option's value
