@@ -3,6 +3,9 @@ const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
 
 const TabSelector = (() => {
+    // obj_tabs will be built in the following format:
+    // obj_tabs = { first_tab_group_selector_id: { id_tabs: [ id_of_tab_one, id_of_tab_two ] }
+    // we will use id_tabs to handle which tab to show when going to the left or right tab
     const obj_tabs = {};
 
     const onLoad = () => {
@@ -13,7 +16,7 @@ const TabSelector = (() => {
                 if (!/tab-selector/.test(tab.className)) {
                     const tab_id = tab.getAttribute('id');
                     if (!obj_tabs[tab_selector_id]) {
-                        obj_tabs[tab_selector_id] = { el_selected_tab: tab, id_tabs: [] };
+                        obj_tabs[tab_selector_id] = { id_tabs: [] };
                     }
                     obj_tabs[tab_selector_id].id_tabs.push(tab_id);
                 }
@@ -36,8 +39,12 @@ const TabSelector = (() => {
     };
 
     const repositionSelector = () => {
+        const params_hash = Url.paramsHash();
         Object.keys(obj_tabs).forEach((tab_id) => {
-            changeTab(undefined, undefined, tab_id);
+            const id_to_show = params_hash[tab_id] || obj_tabs[tab_id].id_tabs[0];
+            const el_to_show = document.getElementById(id_to_show);
+            const selector   = el_to_show.parentNode.getAttribute('id');
+            changeTab({ selector, el_to_show });
         });
     };
 
@@ -58,67 +65,39 @@ const TabSelector = (() => {
     };
 
     const goLeft = (e) => {
-        changeTab(e, true);
+        changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
     };
 
     const goRight = (e) => {
-        changeTab(e, false);
+        changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'right' });
     };
 
-    const changeTab = (e, go_left, selector_id) => {
-        let selector = selector_id || e.target.getAttribute('data-parent');
-        let el_parent,
-            el_to_show_from_hash;
-        const params_hash = Url.paramsHash();
-        if (obj_tabs[selector].id_tabs.indexOf(params_hash[selector]) > -1) {
-            el_to_show_from_hash = document.getElementById(params_hash[selector]);
-            if (el_to_show_from_hash) {
-                el_parent = el_to_show_from_hash.parentNode;
-                selector  = el_parent.getAttribute('id');
+    const changeTab = (options) => {
+        const params_hash     = Url.paramsHash();
+        const arr_id_tabs     = obj_tabs[options.selector].id_tabs;
+        const id_selected_tab = params_hash[options.selector] || obj_tabs[options.selector].id_tabs[0];
+        const current_index   = arr_id_tabs.indexOf(id_selected_tab);
+        let index_to_show = current_index;
+        if (options.direction) {
+            if (options.direction === 'left') {
+                index_to_show = current_index > 0 ? current_index - 1 : arr_id_tabs.length - 1;
+            } else {
+                index_to_show = current_index === arr_id_tabs.length - 1 ? 0 : current_index + 1;
             }
-        } else {
-            el_parent = document.getElementById(selector);
+            options.el_to_show = document.getElementById(arr_id_tabs[index_to_show]);
+            updateURL(options.selector, options.el_to_show.getAttribute('id'));
         }
-        if (!el_parent) {
+
+        if (!options.el_to_show || !options.selector) {
             return;
         }
-        if (typeof go_left === 'undefined' && !el_to_show_from_hash) {
-            slideSelector(selector, obj_tabs[selector].el_selected_tab);
-            return;
-        }
-        const elements = el_parent.getElementsByTagName('li');
-        for (let i = 0; i < elements.length - 1; i++) {
-            if (/active/.test(elements[i].classList)) {
-                let index_to_show = 0;
-                let el_to_show;
-                if (params_hash[selector] && selector_id) {
-                    el_to_show = el_to_show_from_hash;
-                } else {
-                    if (go_left) {
-                        index_to_show = elements[i - 1] ? i - 1 : elements.length - 2;
-                    } else {
-                        index_to_show = i + 1 !== elements.length - 1 && elements[i + 1] ? i + 1 : 0;
-                    }
-                    el_to_show = elements[index_to_show];
-                }
-                obj_tabs[selector].el_selected_tab = el_to_show;
-                if (!selector_id) {
-                    updateURL(selector, el_to_show.getAttribute('id'));
-                }
 
-                selectCircle(selector, i, index_to_show);
-                slideSelector(selector, el_to_show);
-                elements[i].classList.remove('active');
-                document.getElementById(`${elements[i].getAttribute('id')}-content`).classList.add('invisible');
-                el_to_show.classList.add('active');
-                document.getElementById(`${el_to_show.getAttribute('id')}-content`).classList.remove('invisible');
+        selectCircle(options.selector, current_index, index_to_show);
+        slideSelector(options.selector, options.el_to_show);
+        showContent(options.selector, document.getElementById(id_selected_tab), options.el_to_show);
 
-                if (params_hash.section) {
-                    setTimeout(() => { $.scrollTo($(`#${params_hash.section}`), 500, { offset: -10 }); }, 500);
-                }
-
-                break;
-            }
+        if (params_hash.section) {
+            setTimeout(() => { $.scrollTo($(`#${params_hash.section}`), 500, { offset: -10 }); }, 500);
         }
     };
 
@@ -133,6 +112,13 @@ const TabSelector = (() => {
             all_circles[old_index].classList.remove('selected');
             all_circles[index_to_show].classList.add('selected');
         }
+    };
+
+    const showContent = (selector, old_content, new_content) => {
+        old_content.classList.remove('active');
+        document.getElementById(`${old_content.getAttribute('id')}-content`).classList.add('invisible');
+        new_content.classList.add('active');
+        document.getElementById(`${new_content.getAttribute('id')}-content`).classList.remove('invisible');
     };
 
     const onUnload = () => {
