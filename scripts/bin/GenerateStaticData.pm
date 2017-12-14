@@ -536,10 +536,11 @@ sub _texts {
         push @texts, localize('Refund Bid');
         push @texts, localize('Claim Tokens');
         push @texts, localize('Ended');
+        push @texts, localize('Pending');
         push @texts, localize('The ICO is currently unavailable.');
         push @texts, localize('Please select a value for account_opening_reason.');
         push @texts, localize('Minimum bid');
-        push @texts, localize('The auction has ended. Clients have 2 weeks to deposit the balance amount for their bids. The closing value will be determined after that.');
+        push @texts, localize('The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018.');
 
         # binaryico histogram chart
         push @texts, localize('Final Price');

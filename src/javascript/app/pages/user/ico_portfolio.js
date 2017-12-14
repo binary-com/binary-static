@@ -36,8 +36,8 @@ const ICOPortfolio = (() => {
         const final_price       = +State.getResponse('ico_status.final_price');
         const is_claim_allowed  = State.getResponse('ico_status.is_claim_allowed');
         const bid               = +shortcode[1];
-        const pending_claim_msg = `data-balloon="${localize('The auction has ended. Clients have 2 weeks to deposit the balance amount for their bids. The closing value will be determined after that.')}"
-          data-balloon-length="large" data-balloon-pos="left"`;
+        const pending_text      = localize('The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018.');
+        const pending_claim_msg = `data-balloon="${pending_text}" data-balloon-length="large" data-balloon-pos="left"`;
 
         let status_text = localize('Pending');
         let button_class = 'button-secondary';

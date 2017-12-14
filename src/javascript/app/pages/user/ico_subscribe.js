@@ -36,6 +36,7 @@ const ICOSubscribe = (() => {
         }
 
         const language = (getLanguage() || '').toLowerCase();
+        const pending_text      = localize('The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018.');
         const image = language.match(/(ru|id|pt)/gi)
             ? Url.urlForStatic(`images/pages/ico/auction-${language}.svg`)
             : Url.urlForStatic('images/pages/ico/auction.svg');
@@ -51,7 +52,7 @@ const ICOSubscribe = (() => {
 
         BinarySocket.wait('ico_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             if (State.getResponse('ico_status.ico_status') === 'closed') {
-                $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
+                $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: pending_text }));
                 ICOPortfolio.onLoad();
                 showContent();
             } else {
