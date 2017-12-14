@@ -22,33 +22,27 @@ const Clock = (() => {
         });
     };
 
-    const toJapanTimeIfNeeded = (gmt_time_str, show_time_zone, longcode, hide_seconds) => {
-        let match,
-            time;
-        if (longcode && longcode !== '') {
-            match = longcode.match(/((?:\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?(?:\sGMT)?)/);
-            if (!match) return longcode;
-        }
+    const toJapanTimeIfNeeded = (gmt_time_str, show_time_zone, hide_seconds) => {
+        let time;
 
         if (typeof gmt_time_str === 'number') {
             time = moment.utc(gmt_time_str * 1000);
         } else if (gmt_time_str) {
             time = moment.utc(gmt_time_str, 'YYYY-MM-DD HH:mm:ss');
-        } else if (match) {
-            time = moment.utc(match[0], 'YYYY-MM-DD HH:mm:ss');
         }
 
         if (!time || !time.isValid()) {
             return null;
         }
 
-        const jp_client = jpClient();
+        let offset    = '+00:00';
+        let time_zone = 'Z';
+        if (jpClient()) {
+            offset    = '+09:00';
+            time_zone = 'zZ';
+        }
 
-        const getTimeZone = () => jp_client ? ' zZ' : ' Z';
-
-        const time_str = time.utcOffset(jp_client ? '+09:00' : '+00:00').format((hide_seconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss') + (show_time_zone ? getTimeZone() : ''));
-
-        return (longcode ? longcode.replace(match[0], time_str) : time_str);
+        return time.utcOffset(offset).format(`YYYY-MM-DD HH:mm${hide_seconds ? '' : ':ss'}${show_time_zone ? ` ${time_zone}` : ''}`);
     };
 
     const getTime = () => {
@@ -87,7 +81,7 @@ const Clock = (() => {
             window.time = moment((server_time_at_response + moment().valueOf()) - client_time_at_response).utc();
             const time_str = `${window.time.format('YYYY-MM-DD HH:mm:ss')} GMT`;
             if (jpClient()) {
-                elementInnerHtml(el_clock, toJapanTimeIfNeeded(time_str, 1, '', 1));
+                elementInnerHtml(el_clock, toJapanTimeIfNeeded(time_str, 1, 1));
             } else {
                 elementInnerHtml(el_clock, time_str);
                 showLocalTimeOnHover('#gmt-clock');

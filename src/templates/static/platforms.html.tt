@@ -54,7 +54,7 @@
     <div class="container">
         <h1 class="center-text">[% l("Trading Platforms") %]</h1>
         [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
-            [% INCLUDE tabs_subtabs id='platforms_tabs' class='gr-padding-20 gr-parent' items=[
+            [% INCLUDE tabs_subtabs id='platforms_tabs' class='gr-padding-20 gr-parent invisible' items=[
                 { id='binary', text=l('Binary Options'), class='active' },
                 { id='mt5',    text=l('MetaTrader 5') },
                 { id='platforms_tabs_selector', class='tab-selector' },
