@@ -30,26 +30,33 @@ const ICOPortfolio = (() => {
     };
 
     const createPortfolioRow = (data, is_first) => {
-        const long_code          = data.longcode;
-        const ico_status         = (State.getResponse('ico_status.ico_status') || '').toLowerCase();
-        let status_text = 'Ended';
-        if (/unsuccessful/i.test(long_code)) {
-            status_text = 'Refund Bid';
-        } else if (/successful/i.test(long_code)) {
-            status_text = 'Claim Tokens';
+        const long_code        = data.longcode;
+        const shortcode        = data.shortcode.split('_');
+        const ico_status       = (State.getResponse('ico_status.ico_status') || '').toLowerCase();
+        const final_price      = +State.getResponse('ico_status.final_price');
+        const is_claim_allowed = State.getResponse('ico_status.is_claim_allowed');
+        const bid              = +shortcode[1];
+
+        let status_text = localize('Ended');
+        let button_class = 'button-secondary';
+        let action = '';
+        if (ico_status === 'closed' && final_price > bid) {
+            status_text = localize('Refund Bid');
+            action = 'refund';
+            button_class = 'button';
+        } else if (ico_status === 'closed' && final_price <= bid && is_claim_allowed) {
+            status_text = localize('Claim Tokens');
+            action = 'claim';
+            button_class = 'button';
         } else if (ico_status === 'open') {
-            status_text = 'Cancel Bid';
+            status_text = localize('Cancel Bid');
+            action = 'cancel';
         }
 
-        const new_class    = is_first ? '' : 'new';
-        const status       = status_text;
-        let button_class = /cancel|end/i.test(status) ? 'button-secondary' : 'button';
-        const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
-        const shortcode    = data.shortcode.split('_');
-
-        const buy_price          = +shortcode[1] * +shortcode[2];
-
-        const $div         = $('<div/>');
+        const new_class = is_first ? '' : 'new';
+        const status    = status_text;
+        const buy_price = +shortcode[1] * +shortcode[2];
+        const $div      = $('<div/>');
         if (+State.getResponse('ico_status.final_price') === 0) {
             button_class = 'button-disabled';
         }
@@ -98,10 +105,19 @@ const ICOPortfolio = (() => {
             $('#portfolio-no-contract').show();
             $('#portfolio-table').setVisibility(0);
         } else {
+            // Cancel bid
             $('a[action="cancel"]:not(.button-disabled)').on('click', function (e) {
                 e.preventDefault();
                 const contract_id = $(this).attr('contract_id');
                 cancelBid(contract_id);
+            });
+            // Refund Bid
+            $('a[action="refund"]:not(.button-disabled)').on('click', function (e) {
+                e.preventDefault();
+                BinarySocket.send({
+                    sell : $(this).attr('contract_id'),
+                    price: 0,
+                });
             });
 
             $('#portfolio-table').setVisibility(1);
