@@ -30,16 +30,14 @@
 <div class="static_full get-started-beta">
     <h1 class="center-text">[% l("Get Started") %]</h1>
     [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
-        [% selector_id = 'get_started_tabs' %]
-        [% url_get_started_beta = request.url_for('get-started-beta') %]
-        [% INCLUDE tabs_subtabs id=selector_id class='gr-padding-20 gr-parent tab-selector-wrapper' items=[
-            { id='binary', href=url_get_started_beta _ '?' _ selector_id _ '=binary', text=l('Binary Options'), class='active' },
-            { id='mt5',    href=url_get_started_beta _ '?' _ selector_id _ '=mt5',    text=l('MetaTrader 5') },
+        [% INCLUDE tabs_subtabs id='get_started_tabs' class='gr-padding-20 gr-parent tab-selector-wrapper' items=[
+            { id='binary', text=l('Binary Options') },
+            { id='mt5',    text=l('MetaTrader 5') },
             { id='get_started_tabs_selector', class='tab-selector' },
         ] %]
         <div class="tab-content">
             [% WRAPPER tab_content_container %]
-                [% WRAPPER tab_content id='binary' visible=1 %]
+                [% WRAPPER tab_content id='binary' %]
                     <div class="gr-row" id="binary-options">
                         [% PROCESS get_started_section link='get-started-beta/binary-options' hash='what-are-binary-options'
                             image='binary-options/what-are-binary-option' header=l("What are binary options")

@@ -35,11 +35,16 @@
     <div class="tab-menu-wrap">
         <ul id="[% id %]" class="tm-ul">
             [% FOREACH item IN items %]
+                [% IF class.match('tab-selector-wrapper') %]
+                    [% href = '?' _ id _ '=' _ item.id %]
+                [% ELSE %]
+                    [% href = '#' _ item.id %]
+                [% END %]
                 <li id="[% item.id %]" class="tm-li [% item.class %]">
                 [% IF item.subtabs %]
                     <span class="menu-wrap-a">
                         <span class="menu-wrap-b">
-                            <a href="#[% item.id %]" class="tm-a">[% item.text %]</a>
+                            <a href="[% href %]" class="tm-a">[% item.text %]</a>
                         </span>
                     </span>
                     <ul class="tm-ul-2">
@@ -48,7 +53,7 @@
                         [% END %]
                     </ul>
                 [% ELSIF item.text %]
-                    <a href="[% item.href || '#' _ item.id %]" class="tm-a">[% item.text %]</a>
+                    <a href="[% href %]" class="tm-a">[% item.text %]</a>
                 [% END %]
                 </li>
             [% END %]

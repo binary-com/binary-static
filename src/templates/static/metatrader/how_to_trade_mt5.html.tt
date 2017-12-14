@@ -3,17 +3,15 @@
 <div id="how_to_trade_mt5" class="static_full">
     <h1>[% l('How to Trade in MetaTrader 5') %]</h1>
     [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light full-width' %]
-        [% selector_id = 'how_to_tabs' %]
-        [% url_mt5     = request.url_for('metatrader/how-to-trade-mt5') %]
-        [% INCLUDE tabs_subtabs id=selector_id class='tab-selector-wrapper' items=[
-            { id='forex',      href=url_mt5 _ '?' _ selector_id _ '=forex',      text=l('Forex'), class='active' },
-            { id='volatility', href=url_mt5 _ '?' _ selector_id _ '=volatility', text=l('Volatility Indices') },
-            { id='metals',     href=url_mt5 _ '?' _ selector_id _ '=metals',     text=l('Metals') },
+        [% INCLUDE tabs_subtabs id='how_to_tabs' class='tab-selector-wrapper' items=[
+            { id='forex',      text=l('Forex') },
+            { id='volatility', text=l('Volatility Indices') },
+            { id='metals',     text=l('Metals') },
             { id='how_to_tabs_selector', class='tab-selector' },
         ] %]
         <div class="tab-content">
             [% WRAPPER tab_content_container %]
-                [% WRAPPER tab_content id='forex' visible=1 %][% PROCESS static/metatrader/how_to_trade_mt5/forex.html.tt %][% END %]
+                [% WRAPPER tab_content id='forex' %][% PROCESS static/metatrader/how_to_trade_mt5/forex.html.tt %][% END %]
                 [% WRAPPER tab_content id='volatility' %][% PROCESS static/metatrader/how_to_trade_mt5/volatility_indices.html.tt %][% END %]
                 [% WRAPPER tab_content id='metals' %][% PROCESS static/metatrader/how_to_trade_mt5/metals.html.tt %][% END %]
             [% END %]

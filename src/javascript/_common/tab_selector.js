@@ -20,15 +20,12 @@ const TabSelector = (() => {
                     }
                     obj_tabs[tab_selector_id].id_tabs.push(tab_id);
                 }
+                tab.addEventListener('click', slideSelectorOnMenuClick);
             }, '', tab_selector);
         });
         // set initial width and margin-left of tab selector
         repositionSelector();
         window.addEventListener('resize', repositionSelector);
-
-        applyToAllElements('.tm-li', (element) => {
-            element.addEventListener('click', slideSelectorOnMenuClick);
-        });
 
         applyToAllElements('.go-left', (element) => {
             element.addEventListener('click', goLeft);
@@ -85,7 +82,7 @@ const TabSelector = (() => {
                 index_to_show = current_index === arr_id_tabs.length - 1 ? 0 : current_index + 1;
             }
             options.el_to_show = document.getElementById(arr_id_tabs[index_to_show]);
-            updateURL(options.selector, options.el_to_show.getAttribute('id'));
+            updateURL(options.selector, arr_id_tabs[index_to_show]);
         }
 
         if (!options.el_to_show || !options.selector) {
