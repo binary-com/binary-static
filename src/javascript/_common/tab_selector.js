@@ -6,10 +6,11 @@ const TabSelector = (() => {
     // obj_tabs will be built in the following format:
     // obj_tabs = { first_tab_group_selector_id: { id_tabs: [ id_of_tab_one, id_of_tab_two ] }
     // we will use id_tabs to handle which tab to show when going to the left or right tab
-    const obj_tabs = {};
+    let obj_tabs = {};
 
     const onLoad = () => {
         tabListener();
+        obj_tabs = {};
         applyToAllElements('.tab-selector-wrapper .tm-ul', (tab_selector) => {
             const tab_selector_id = tab_selector.getAttribute('id');
             applyToAllElements('.tm-li', (tab) => {
