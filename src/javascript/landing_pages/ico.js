@@ -541,5 +541,5 @@ function getLykkeReport(lang = 'en') {
 }
 
 function getNishantReport(lang = 'en') {
-    return `https://ico_documents.binary.com/research/nishantsah/report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+    return `https://ico_documents.binary.com/research/nishantsah/report${/^(id|zh_cn|zh_tw|ru|th)$/i.test(lang) ? `_${lang}` : ''}.pdf`
 }

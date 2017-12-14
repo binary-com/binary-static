@@ -16,7 +16,8 @@ const SelfExclusion = (() => {
     let $form,
         fields,
         self_exclusion_data,
-        set_30day_turnover;
+        set_30day_turnover,
+        currency;
 
     const form_id          = '#frm_self_exclusion';
     const timeout_date_id  = '#timeout_until_date';
@@ -32,7 +33,9 @@ const SelfExclusion = (() => {
             fields[this.name] = '';
         });
 
-        $('.prepend_currency').parent().prepend(Currency.formatCurrency(Client.get('currency')));
+        currency = Client.get('currency');
+
+        $('.prepend_currency').parent().prepend(Currency.formatCurrency(currency));
 
         initDatePicker();
         getData(true);
@@ -72,7 +75,8 @@ const SelfExclusion = (() => {
     };
 
     const bindValidation = () => {
-        const validations = [{ request_field: 'set_self_exclusion', value: 1 }];
+        const validations    = [{ request_field: 'set_self_exclusion', value: 1 }];
+        const decimal_places = Currency.getDecimalPlaces(currency);
 
         $form.find('input[type="text"]').each(function () {
             const id = $(this).attr('id');
@@ -89,7 +93,7 @@ const SelfExclusion = (() => {
             }
             if (!/session_duration_limit|max_open_bets/.test(id)) {
                 options.type     = 'float';
-                options.decimals = `0, ${Currency.getDecimalPlaces(Client.get('currency'))}`;
+                options.decimals = decimal_places;
             }
             checks.push(['number', options]);
 
@@ -199,7 +203,9 @@ const SelfExclusion = (() => {
             let error_fld   = response.error.field;
             if (error_fld) {
                 error_fld = /^timeout_until$/.test(error_fld) ? 'timeout_until_date' : error_fld;
-                $(`#${error_fld}`).siblings('.error-msg').setVisibility(1).html(error_msg);
+                const $error_fld = $(`#${error_fld}`);
+                $error_fld.siblings('.error-msg').setVisibility(1).html(error_msg);
+                $.scrollTo($error_fld, 500, { offset: -10 });
             } else {
                 showFormMessage(localize(error_msg), false);
             }

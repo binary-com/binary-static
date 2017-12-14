@@ -56,9 +56,10 @@ const HomeJP             = require('../../static/japan/home');
 const Charity            = require('../../static/pages/charity');
 const Contact            = require('../../static/pages/contact');
 const GetStarted         = require('../../static/pages/get_started');
+const GetStartedBeta     = require('../../static/pages/get_started_beta');
 const Home               = require('../../static/pages/home');
+const HomeBeta           = require('../../static/pages/home_beta');
 const JobDetails         = require('../../static/pages/job_details');
-const Platforms          = require('../../static/pages/platforms');
 const Regulation         = require('../../static/pages/regulation');
 const StaticPages        = require('../../static/pages/static_pages');
 const TermsAndConditions = require('../../static/pages/tnc');
@@ -112,12 +113,15 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
+    'binary-options'         : { module: GetStartedBeta.BinaryOptions },
+    'cfds'                   : { module: GetStartedBeta.CFDs },
+    'contract-specifications': { module: StaticPages.ContractSpecifications },
+    'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
     'ico-info'               : { module: ICOInfo,                    is_authenticated: true, only_real: true, needs_currency: true },
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
-    'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'withdraw-jp'            : { module: CashierJP.Withdraw,         is_authenticated: true, only_real: true },
     // ==================== app_2 ====================
     trade                    : { module: Trading,                  needs_currency: true },
@@ -125,18 +129,25 @@ const pages_config = {
     charity                  : { module: Charity },
     contact                  : { module: Contact },
     home                     : { module: Home,                       not_authenticated: true },
-    platforms                : { module: Platforms },
+    platforms                : { module: StaticPages.Platforms },
     regulation               : { module: Regulation },
-    signup                   : { module: StaticPages.AffiliateSignup },
+    signup                   : { module: StaticPages.handleTab },
+    'forex'                  : { module: GetStartedBeta.Forex },
     'get-started'            : { module: GetStarted },
+    'get-started-beta'       : { module: GetStartedBeta.GetStartedBeta },
     'get-started-jp'         : { module: GetStartedJP },
+    'home-beta'              : { module: HomeBeta,                   not_authenticated: true },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
+    'how-to-trade-mt5'       : { module: StaticPages.HowToTradeMT5 },
     'job-details'            : { module: JobDetails },
+    'metals'                 : { module: GetStartedBeta.Metals },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
     'terms-and-conditions'   : { module: TermsAndConditions },
     'terms-and-conditions-jp': { module: TermsAndConditions },
+    'types-of-accounts'      : { module: StaticPages.TypesOfAccounts },
+    'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'volidx-markets'         : { module: StaticPages.VolidxMarkets },
     'why-us'                 : { module: WhyUs },
     'why-us-jp'              : { module: WhyUs },

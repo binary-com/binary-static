@@ -44,7 +44,7 @@ sub all_pages {
         ['user/ico-subscribe',                 'app/user/ico_subscribe',                    'default',    'Subscribe to ICO',               'ja'],
         ['user/ico-info',                      'app/user/ico_info',                         'default',    'ICO Histogram',                  'ja'],
         ['user/lost_passwordws',               'app/user/lost_password',                    'default',    'Password Reset'],
-        ['user/metatrader',                    'app/user/metatrader',                       'full_width', 'MetaTrader account management'],
+        ['user/metatrader',                    'app/user/metatrader',                       'default',    'MetaTrader account management'],
         ['user/portfoliows',                   'app/user/portfolio',                        'default',    'Portfolio'],
         ['user/profit_tablews',                'app/user/profit_table',                     'default',    'Profit Table'],
         ['user/securityws',                    'app/user/security',                         'default',    'Security'],
@@ -82,12 +82,13 @@ sub all_pages {
         # ==================== Section: "static" ====================
         ['404',                                'static/404',                                'full_width', '404'],
         ['home',                               'static/home',                               'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'ja'],
+        ['home-beta',                          'static/home_beta',                          'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'ja'],
         ['home-jp',                            'static/japan/home',                         'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
         ['tour',                               'static/tour',                               'full_width', 'Tour',                 'ja'],
         ['tour-jp',                            'static/japan/tour',                         'full_width', 'Tour',                 'NOT-ja,en'],
         ['why-us',                             'static/why_us',                             'full_width', 'Why Us',               'ja'],
         ['why-us-jp',                          'static/japan/why_us',                       'full_width', 'Why Us',               'NOT-ja,en'],
-        ['platforms',                          'static/platforms',                          'default',    'Platforms',            'ja'],
+        ['platforms',                          'static/platforms',                          'full_width', 'Trading Platforms',    'ja'],
 
         ['about-us',                           'static/about/index',                        'full_width', 'About Us'],
         ['binary-in-numbers',                  'static/about/binary_in_numbers',            'default',    'Binary in Numbers'],
@@ -131,11 +132,19 @@ sub all_pages {
         ['get-started/what-is-binary-trading', 'static/get_started/what_is_binary_trading', 'get_started', 'Why Choose Binary Trading?',       'ja'],
         ['get-started/why-trade-with-us',      'static/get_started/why_trade_with_us',      'get_started', 'Why Trade with Binary.com',        'ja'],
 
+        ['get-started-beta',                  'static/get_started_beta/index',            'default', 'Get Started',      'ja'],
+        ['get-started-beta/binary-options',   'static/get_started_beta/binary_options',   'default', 'Binary Options',   'ja'],
+        ['get-started-beta/cfds',             'static/get_started_beta/cfds',             'default', 'CFDs',             'ja'],
+        ['get-started-beta/cryptocurrencies', 'static/get_started_beta/cryptocurrencies', 'default', 'Cryptocurrencies', 'ja'],
+        ['get-started-beta/metals',           'static/get_started_beta/metals',           'default', 'Metals',           'ja'],
+        ['get-started-beta/forex',            'static/get_started_beta/forex',            'default', 'Forex',            'ja'],
+
         ['get-started-jp',                     'static/japan/get_started',                  'default',     'Get Started',                      'NOT-ja,en'],
 
         ['metatrader/contract-specifications', 'static/metatrader/contract_specifications', 'default',     'Contract Specifications'],
         ['metatrader/download',                'static/metatrader/download',                'default',     'Start Trading with MetaTrader 5'],
-        ['metatrader/margin-policy',           'static/metatrader/margin_policy',           'full_width',  'MetaTrader Margin Policy'],
+        ['metatrader/how-to-trade-mt5',        'static/metatrader/how_to_trade_mt5',        'default',     'How to Trade in MetaTrader 5'],
+        ['metatrader/types-of-accounts',       'static/metatrader/types_of_accounts',       'default',     'Types of MetaTrader 5 accounts'],
 
         ['affiliate_disclaimer',               'static/japan/affiliates/popup',             undef,          '',                                'NOT-ja,en'],
 
@@ -145,6 +154,7 @@ sub all_pages {
         ['ico-disclaimer',                     'landing_pages/ico_disclaimer',              undef,        'Initial Coin Offering Disclaimer', 'ja'],
         ['hackathon',                          'landing_pages/hackathon',                   undef,        'Hackathon Competition',            'NOT-en'],
         ['landing/signup-frame',               'landing_pages/signup_frame',                undef,        'Sign up'],
+        ['graduates',                          'landing_pages/graduate_program',            undef,        'Binary.com Graduate Program',      'NOT-en'],
     );
 }
 
