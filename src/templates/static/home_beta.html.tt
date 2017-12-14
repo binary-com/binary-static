@@ -26,7 +26,7 @@
         <div class="gr-10 gr-12-m">
             <div class="gr-row">
                 <div class="gr-6 gr-12-m center-text-m order-2-m">
-                    <div class="gr-8-m gr-centered gr-gutter">
+                    <div class="gr-10-m gr-centered gr-gutter">
                         <div class="gr-row">
                             [% PROCESS arrows_mobile parent="market_tabs" direction="left" %]
                             <strong class="align-self-center gr-centered-m">[% header %]</strong>
@@ -68,7 +68,7 @@
                     <img class="responsive" src="[% request.url_for(image) %]">
                 </div>
                 <div class="center-text gr-12 gr-hide gr-show-m [% mobile_class %]">
-                    <div class="gr-7 gr-centered">
+                    <div class="gr-8 gr-centered">
                         <div class="gr-row">
                             [% PROCESS arrows_mobile parent="account_tabs" direction="left" %]
                             <strong class="align-self-center gr-centered">[% mobile_header %]</strong>
