@@ -52,7 +52,7 @@ const ICOPortfolio = (() => {
             // if !is_claim_allowed then disable the claim button
             button_class += ' button-disabled';
             if( is_claim_allowed ) {
-              button_class = 'button';
+                button_class = 'button';
             }
         } else if (ico_status === 'open') {
             status_text = localize('Cancel Bid');
