@@ -30,20 +30,22 @@
         [% INCLUDE table scroll=1 id='portfolio-table' tbody_id='portfolio-body' data={
             thead=[
                 [
-                    { class='ref',               text=l('Ref.') },
-                    { class='payout nowrap',     text=l('Potential Payout') },
-                    { class='details',           text=l('Contract Details') },
-                    { class='purchase',          text=l('Purchase') },
-                    { class='indicative nowrap', text=l('Indicative') },
-                    { class='button',            text='' },
+                    { class='ref',                              text=l('Ref.') },
+                    { class='payout nowrap',                    text=l('Potential Payout') },
+                    { class='expires nowrap invisible ja-show', text=l('Expiry') },
+                    { class='details',                          text=l('Contract Details') },
+                    { class='purchase',                         text=l('Purchase') },
+                    { class='indicative nowrap',                text=l('Indicative') },
+                    { class='button',                           text='' },
                 ],
             ],
             tfoot=[
                 [
                     { text=l('Total') },
-                    { class='ref',   attributes='colspan="2"' },
-                    { class='cost',  id="cost-of-open-positions" },
-                    { class='value', id="value-of-open-positions", attributes='colspan="2"' },
+                    { class='ref ja-hide',           attributes='colspan="2"' },
+                    { class='ref invisible ja-show', attributes='colspan="3"' },
+                    { class='cost',                  id="cost-of-open-positions" },
+                    { class='value',                 id="value-of-open-positions", attributes='colspan="2"' },
                 ],
             ],
         } %]

@@ -13,7 +13,7 @@ function toggleMobileMenu() {
         e.stopPropagation();
         navbar.classList.toggle('expand');
         navbar_item.classList.toggle('expand');
-        if (/show/.test(el_language_dropdown.classList)) {
+        if (el_language_dropdown && /show/.test(el_language_dropdown.classList)) {
             toggleAllSiblings(el_language_dropdown.parentNode, filterById, 'invisible');
             el_language_dropdown.classList.remove('show');
         }
