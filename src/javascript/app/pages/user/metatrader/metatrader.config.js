@@ -19,7 +19,8 @@ const MetaTraderConfig = (() => {
 
     const accounts_info = {};
 
-    const needsRealMessage = () => $(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
+    let $messages;
+    const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
     const actions_info = {
         new_account: {
@@ -33,7 +34,7 @@ const MetaTraderConfig = (() => {
                         resolve(needsRealMessage());
                     } else if (accounts_info[acc_type].account_type === 'financial') {
                         BinarySocket.wait('get_account_status').then((response_get_account_status) => {
-                            const $message = $('#msg_real_financial').clone();
+                            const $message = $messages.find('#msg_real_financial').clone();
                             let is_ok = true;
                             if (/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status)) {
                                 $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`);
@@ -110,7 +111,7 @@ const MetaTraderConfig = (() => {
                         // but websocket returns authentication required error when trying to withdraw
                         // so we check for 'authenticated' status as well to display a user friendly message instead
                         resolve(+response_status.get_account_status.prompt_client_to_authenticate || !/authenticated/.test(response_status.get_account_status.status) ?
-                            $('#msg_authenticate').html() : '');
+                            $messages.find('#msg_authenticate').html() : '');
                     });
                 } else {
                     resolve();
@@ -207,6 +208,7 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
+        setMessages: ($msg) => { $messages = $msg; },
         mt5Currency: () => 'USD',
     };
 })();

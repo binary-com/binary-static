@@ -31,9 +31,11 @@ const MetaTraderUI = (() => {
         $list        = $list_cont.find('> div.list');
         $detail      = $container.find('#account_details');
         $action      = $container.find('#fst_action');
-        $templates   = $container.find('#templates');
+        $templates   = $container.find('#templates').remove();
         $main_msg    = $container.find('#main_msg');
         $container.find('[class*="act_"]').click(populateForm);
+
+        MetaTraderConfig.setMessages($templates.find('#messages'));
 
         validations = MetaTraderConfig.validations();
 
