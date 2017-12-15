@@ -59,8 +59,7 @@
         [% END -%]
     [% END %]
         [% UNLESS no_error %]
-        <p id="[% msg_id || 'msg_form' %]" class="[% is_centered ? 'error-msg no-margin center-text invisible' : 'error-msg no-margin
-invisible' %]"></p>
+        <p id="[% msg_id || 'msg_form' %]" class="error-msg no-margin invisible[% is_centered ? ' center-text' : '' %]"></p>
         [% END %]
         <div class="gr-padding-10">
         [% IF custom_btn_text %]
