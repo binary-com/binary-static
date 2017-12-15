@@ -44,9 +44,17 @@ program
     .description('Build .jsx templates into /dist folder')
     .option('-d, --dev', 'Build for your gh-pages')
     .option('-b, --branch [branchname]', 'Build your changes to a sub-folder named: br_branchname')
-    .option('-p, --path [save_as]', 'Re-compile only the template with save_as in its URL')
+    .option('-p, --path [save_as]', 'Compile only the template/s that match the regex save_as')
     .option('-t, --add-translations', 'Update messages.pot with new translations')
     .parse(process.argv);
+
+if(!program.path) {
+    program.outputHelp(str => {
+        console.error('  ERROR: --path is missing'.red);
+        console.error(str.red);
+        process.exit(0);
+    });
+}
 
 /** *********************************************
  * Common functions
@@ -326,10 +334,20 @@ async function compile(page) {
 
 createDirectories();
 (async () => {
-    await compile(common.pages.find(p => p.save_as === (program.path || 'home')));
-    if (program.addTranslations) {
-        const gettext = Gettext.getInstance();
-        generate_static_data.build();
-        gettext.update_translations();
+    try {
+        const regx = new RegExp(program.path, 'i');
+        await Promise.all(
+            common.pages
+                .filter(p => regx.test(p.save_as))
+                .map(compile)
+        );
+
+        if (program.addTranslations) {
+            const gettext = Gettext.getInstance();
+            generate_static_data.build();
+            gettext.update_translations();
+        }
+    } catch (e) {
+        console.error(e);
     }
 })();
