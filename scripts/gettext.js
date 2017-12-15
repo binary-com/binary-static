@@ -39,8 +39,6 @@ Gettext.prototype.dnpgettext = function(domain, msgctxt, msgid, msgidPlural, cou
 };
 
 const createGettextInstance = () => {
-    console.time("Loading .po files")
-
     const translations_dir = 'src/translations/'
     const locales = [
         'en', 'ach_UG', 'fr_FR', 'it_IT', 'pt_PT', 'th_TH', 'zh_CN',
@@ -67,7 +65,6 @@ const createGettextInstance = () => {
         }
     });
 
-   console.timeEnd("Loading .po files");
     return {
         setLang: lang => {
             const [locale]  = locales.filter(l => l.toLocaleLowerCase().startsWith(lang));

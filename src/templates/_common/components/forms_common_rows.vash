@@ -1,0 +1,184 @@
+@html.include('_common/components/forms.vash')
+
+@{
+    view.salutation = ({
+        _class
+    }) => view.form_row({
+        type: 'select',
+        _class: _class,
+        id: 'salutation',
+        label: html.L('Title'),
+        children: function() {
+            <option value="Mr">@html.L('Mr')</option>
+            <option value="Mrs" class="ru-hide">@html.L('Mrs')</option>
+            <option value="Ms">@html.L('Ms')</option>
+            <option value="Miss" class="ru-hide">@html.L('Miss')</option>
+        }
+    })
+
+    view.first_name = ({
+        _class,
+        hint
+    }) => view.form_row({
+        type: 'text',
+        id: 'first_name',
+        label: html.L('First name'),
+        attributes: 'maxlength="30"' + (_class ? ` class="${_class}"` : ''),
+        hint: hint
+    })
+
+    view.last_name = ({
+        _class,
+        hint
+    }) => view.form_row({
+        type: 'text',
+        id: 'last_name',
+        label: html.L('Family name'),
+        attributes: 'maxlength="30"' + (_class ? ` class="${_class}"` : ''),
+        hint: hint
+    })
+
+    view.date_of_birth = ({
+        _class,
+    }) => view.form_row({
+        type: 'text',
+        id: 'date_of_birth',
+        label: html.L('Date of birth'),
+        attributes='size="12" readonly="readonly"' + (_class ? ` class="${_class}"` : ''),
+    })
+
+    view.residence = ({}) => view.form_row({
+        type: 'custom',
+        id: 'residence',
+        label: html.L('Country of residence'),
+        children: function() {
+            <label id="lbl_residence"></label>
+        }
+    })
+
+    view.account_opening_reason  = ({
+        row_id,
+        row_class,
+    }) => view.form_row({
+        type: 'select',
+        id: 'account_opening_reason',
+        label: html.L('Account opening reason'),
+        row_id: row_id,
+        row_class: row_class,
+        children: function() {
+            <option value="">@html.L('Please select')</option>
+            <option value="Speculative">@html.L('Speculative')</option>
+            <option value="Income Earning">@html.L("Income earning")</option>
+            <option value="Hedging">@html.L('Hedging')</option>
+        }
+    })
+
+    view.address_line_1 = ({
+        hint,
+        no_hint,
+    }) => view.form_row({
+        type: 'text',
+        id: 'address_line_1',
+        label: html.L('First line of home address'),
+        attributes: 'maxlength="70"',
+        hint: hint || (no_hint ? '' : html.L('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.')),
+    })
+
+    view.address_line_2 = ({
+        hint
+    }) => view.form_row({
+        type: 'text',
+        id: 'address_line_2',
+        label: html.L('Second line of home address'),
+        attributes: 'maxlength="70"',
+        hint: hint
+    })
+
+    view.address_city = ({
+        hint
+    }) => view.form_row({
+        type: 'text',
+        id: 'address_city',
+        label: html.L('Town/City'),
+        attributes: 'maxlength="35"',
+        hint: hint,
+    })
+
+    view.address_state = ({}) => view.form_row({
+        type: 'select',
+        id: 'address_state',
+        label: html.L('State/Province'),
+    })
+
+    view.address_postcode = ({
+        hint,
+    }) => view.form_row({
+        type: 'text',
+        id: 'address_postcode',
+        label: html.L('Postal code/ZIP'),
+        attributes: 'maxlength="20"',
+        hint: hint,
+    })
+
+    view.phone = ({
+        hint
+    }) => view.form_row({
+        type: 'text',
+        id: 'phone',
+        label: html.L('Telephone'),
+        attributes: 'maxlength="35"',
+        hint: hint,
+    })
+
+    view.secret_question = ({}) => view.form_row({
+        type: 'select',
+        id: 'secret_question',
+        label: html.L('Secret question'),
+        children: function() {
+            <option value="Favourite dish">@html.L('Favourite dish')</option>
+            <option value="Mother's maiden name">@html.L("Mother's maiden name")</option>
+            <option value="Name of your pet">@html.L('Name of your pet')</option>
+            <option value="Name of first love">@html.L('Name of first love')</option>
+            <option value="Memorable town/city">@html.L('Memorable town/city')</option>
+            <option value="Memorable date">@html.L('Memorable date')</option>
+            <option value="Brand of first car">@html.L('Brand of first car')</option>
+            <option value="Favourite artist">@html.L('Favourite artist')</option>
+        }
+    })
+
+    view.secret_answer = ({}) => view.form_row({
+        type: 'text',
+        id: 'secret_answer',
+        label: html.L('Answer to secret question'),
+        attributes: 'maxlength="50" autocomplete="off"',
+    })
+
+    view.tnc = ({}) => {
+        <div class="center-text">
+            <div class="gr-row">
+                <div class="gr-12-m gr-padding-10 gr-centered">
+                    <input type="checkbox" name="tnc" id="tnc">
+                    <label for="tnc">
+                        @html.L(
+                            'I have read and agree to the [_1]terms and conditions[_2] of the site.',
+                            '<a target="_blank" href="' + html.url_for('/terms-and-conditions') + '">',
+                            '</a>'
+                        )
+                    </label>
+                </div>
+            </div>
+
+            <button class="button" type="submit">@html.L('Open Account')</button>
+        </div>
+    }
+
+    view.client_message = ({}) =>  {
+        <div class="errorbox rbox invisible" id="client_message">
+            <div class="rbox-wrap">
+                <div class="gr-12 rbox-content" id="client_message_content">
+                    <p class="center-text notice-msg"></p>
+                </div>
+            </div>
+        </div>
+    }
+}
