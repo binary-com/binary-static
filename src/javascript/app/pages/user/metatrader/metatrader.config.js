@@ -77,12 +77,18 @@ const MetaTraderConfig = (() => {
                             resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', [
                                 urlFor('user/security/cashier_passwordws')]));
                         } else {
-                            const limit = State.getResponse('get_limits.remainder');
-                            if (typeof limit !== 'undefined' && limit < 1) {
-                                resolve(localize('You have reached the limit.'));
-                            } else {
-                                resolve();
-                            }
+                            BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+                                if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
+                                    resolve(localize('Your cashier is locked.')); // Locked from BO
+                                } else {
+                                    const limit = State.getResponse('get_limits.remainder');
+                                    if (typeof limit !== 'undefined' && limit < 1) {
+                                        resolve(localize('You have reached the limit.'));
+                                    } else {
+                                        resolve();
+                                    }
+                                }
+                            });
                         }
                     });
                 }
