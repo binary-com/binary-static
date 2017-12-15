@@ -498,11 +498,9 @@ sub _texts {
         push @texts, localize('Investor password');
         push @texts, localize('Current password');
         push @texts, localize('New password');
-        push @texts, localize('Demo Cent');
         push @texts, localize('Demo Standard');
         push @texts, localize('Demo STP');
         push @texts, localize('Demo Volatility');
-        push @texts, localize('Real Cent');
         push @texts, localize('Real Standard');
         push @texts, localize('Real STP');
         push @texts, localize('Real Volatility');

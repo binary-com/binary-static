@@ -32,7 +32,6 @@
     <h1>[% l("Types of MetaTrader 5 accounts") %]</h1>
     <p>[% l("[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you are an experienced trader or just starting out. Each account has been tailored to provide you with a unique opportunity to trade financial instruments.", website_name) %]</p>
     <p>[% l("Best of all, there is no minimum deposit requirement and no commission per trade.") %]</p>
-    [% INCLUDE box title=l("Cent")       text=l("The Cent account offers the highest leverage, as well as low margin call and stop out level. It is ideal for new traders who want to start trading with a smaller capital.") %]
     [% INCLUDE box title=l("Standard")   text=l("The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.") %]
     [% INCLUDE box title=l("STP")        text=l("The STP account provides you with the tightest spreads and connects you directly to the market. STP stands for 'Straight Through Processing' –– meaning your orders are sent directly to our liquidity providers.") %]
     [% INCLUDE box title=l("Volatility") text=l("The Volatility account allows you to trade CFDs on Volatility Indices –– our proprietary synthetic assets that simulate real-world events and market forces.") %]
@@ -45,21 +44,20 @@
             thead= [
                 [
                     { text='' },
-                    { text=l("Cent") },
                     { text=l("Standard") },
                     { text=l("STP") },
                     { text=l("Volatility") },
                 ],
             ],
             tbody= [
-                [{ text=l("Account currency")    _ '<a href="#note-1" class="sup">1</a>' }, { text=l('USD') },           { text=l('USD') },         { text=l('USD') },         { text=l('USD') }],
-                [{ text=l("Maximum leverage")    _ '<a href="#note-2" class="sup">2</a>' }, { text=l('Up to 1:1,000') }, { text=l('Up to 1:300') }, { text=l('Up to 1:100') }, { text=l('Up to 1:500') }],
-                [{ text=l("Order execution")     _ '<a href="#note-3" class="sup">3</a>' }, { text=l('Market') },        { text=l('Market') },      { text=l('Market') },      { text=l('Market') }],
-                [{ text=l("Spread")              _ '<a href="#note-4" class="sup">4</a>' }, { text=l('Fixed') },         { text=l('Variable') },    { text=l('Variable') },    { text=l('Variable spreads') }],
-                [{ text=l("Commission")          _ '<a href="#note-5" class="sup">5</a>' }, { text=l('No') },            { text=l('No') },          { text=l('No') },          { text=l('No') }],
-                [{ text=l("Margin call")         _ '<a href="#note-6" class="sup">6</a>' }, { text=l('50%') },           { text=l('100%') },        { text=l('100%') },        { text=l('100%') }],
-                [{ text=l("Stop out level")      _ '<a href="#note-7" class="sup">7</a>' }, { text=l('20%') },           { text=l('50%') },         { text=l('50%') },         { text=l('50%') }],
-                [{ text=l("Maximum ticket size") _ '<a href="#note-8" class="sup">8</a>' }, { text=l('20 lots') },       { text=l('50 lots') },     { text=l('100 lots') },    { text=l('50 lots') }],
+                [{ text=l("Account currency")    _ '<a href="#note-1" class="sup">1</a>' }, { text=l('USD') },         { text=l('USD') },         { text=l('USD') }],
+                [{ text=l("Maximum leverage")    _ '<a href="#note-2" class="sup">2</a>' }, { text=l('Up to 1:300') }, { text=l('Up to 1:100') }, { text=l('Up to 1:500') }],
+                [{ text=l("Order execution")     _ '<a href="#note-3" class="sup">3</a>' }, { text=l('Market') },      { text=l('Market') },      { text=l('Market') }],
+                [{ text=l("Spread")              _ '<a href="#note-4" class="sup">4</a>' }, { text=l('Variable') },    { text=l('Variable') },    { text=l('Variable') }],
+                [{ text=l("Commission")          _ '<a href="#note-5" class="sup">5</a>' }, { text=l('No') },          { text=l('No') },          { text=l('No') }],
+                [{ text=l("Margin call")         _ '<a href="#note-6" class="sup">6</a>' }, { text=l('100%') },        { text=l('100%') },        { text=l('100%') }],
+                [{ text=l("Stop out level")      _ '<a href="#note-7" class="sup">7</a>' }, { text=l('50%') },         { text=l('50%') },         { text=l('50%') }],
+                [{ text=l("Maximum ticket size") _ '<a href="#note-8" class="sup">8</a>' }, { text=l('50 lots') },     { text=l('100 lots') },    { text=l('50 lots') }],
             ],
         } %]
     </div>

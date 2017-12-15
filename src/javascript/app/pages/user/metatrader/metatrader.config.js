@@ -9,7 +9,6 @@ const urlFor       = require('../../../../_common/url').urlFor;
 const MetaTraderConfig = (() => {
     const mt_companies = {
         financial: {
-            cent    : { mt5_account_type: 'cent',     max_leverage: 1000, title: 'Cent' },
             standard: { mt5_account_type: 'standard', max_leverage: 300,  title: 'Standard' },
             stp     : { mt5_account_type: 'stp',      max_leverage: 100,  title: 'STP' },
         },

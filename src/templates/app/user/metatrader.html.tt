@@ -142,14 +142,6 @@
             <div class="account-desc">
                 [% INCLUDE account_desc title=l('Choose an account')
                     description=l('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out.', website_name) %]
-                [% INCLUDE account_desc account_type=['vanuatu_cent'] title=l('Cent Account')
-                    description=l('Our MetaTrader 5 Cent account is ideal for new traders who wish to start trading with a smaller capital.')
-                    items=[
-                            l('Offers the highest leverage – up to 1:1,000'),
-                            l('Fixed spreads'),
-                            l('Market execution'),
-                            l('No commission'),
-                        ] %]
                 [% INCLUDE account_desc account_type=['vanuatu_standard'] title=l('Standard Account')
                     description=l('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')
                     items=[
@@ -208,7 +200,7 @@
                         <div class="step-2 invisible">
                             <div class="separator-line gr-padding-10"></div>
                             [% WRAPPER type_group title=l('Step 2: Choose account type') types=[
-                                { type='template' desc='Cent' },
+                                { type='template' desc='standard' },
                             ] %]
                                 <a class="hint hl-types-of-accounts" href="[% request.url_for('metatrader/types-of-accounts') %]">[% l('Which account is right for me?') %]</a>
                             [% END %]

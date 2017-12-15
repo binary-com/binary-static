@@ -26,7 +26,6 @@
             <div class="gr-prefix-1">
                 <h2>[% l('Maximum Leverage') %]</h2>
                 [% INCLUDE list class='bullet' items=[
-                    { text=l("Cent account: 1:1,000") },
                     { text=l("Standard account: 1:300") },
                     { text=l("STP account: 1:100") },
                     { text=l("Volatility account: 1:500") },
