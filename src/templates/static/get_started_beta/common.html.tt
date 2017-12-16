@@ -42,7 +42,7 @@
             <a class="button" id="go_next"><span>[% l("Next") %] ></span></a>
         </div>
         <div class="center-text">
-            <a class="button-secondary" href="[% request.url_for('get-started-beta') _ '?parent=' _ parent _ (section ? '&section=' _ section : '') %]"><span>[% l("Back to Menu") %]</span></a>
+            <a class="button-secondary" href="[% request.url_for('get-started-beta') _ '?get_started_tabs=' _ parent _ '&section=' _ section %]"><span>[% l("Back to Menu") %]</span></a>
         </div>
     </div>
 
