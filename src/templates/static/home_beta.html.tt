@@ -9,18 +9,30 @@
 [% END %]
 
 [% BLOCK arrows %]
-    <div class="align-self-center gr-1 gr-no-gutter-m">
-        <img class="go-[% direction %] gr-10 gr-12-p gr-12-m gr-no-gutter-p gr-no-gutter-m gr-centered" data-parent="[% parent %]" src="[% request.url_for('images/pages/home-beta/arrow_' _ direction _ '.svg') %]">
+    <div class="align-self-center gr-1 gr-hide-m">
+        <img class="go-[% direction %] gr-10 gr-12-p gr-no-gutter-p gr-centered" data-parent="[% parent %]" src="[% request.url_for('images/pages/home-beta/arrow_' _ direction _ '.svg') %]">
+    </div>
+[% END %]
+
+[% BLOCK arrows_mobile %]
+    <div class="align-self-center gr-2 gr-hide gr-show-m gr-no-gutter">
+        <img class="go-[% direction %] gr-5 gr-no-gutter gr-centered" data-parent="[% parent %]" src="[% request.url_for('images/pages/home-beta/arrow_' _ direction _ '.svg') %]">
     </div>
 [% END %]
         
 [% BLOCK markets_tab_content %]
     <div class="gr-row gr-row-align-middle">
         [% PROCESS arrows parent="market_tabs" direction="left" %]
-        <div class="gr-10">
+        <div class="gr-10 gr-12-m">
             <div class="gr-row">
                 <div class="gr-6 gr-12-m center-text-m order-2-m">
-                    <strong>[% header %]</strong>
+                    <div class="gr-10-m gr-centered gr-gutter">
+                        <div class="gr-row">
+                            [% PROCESS arrows_mobile parent="market_tabs" direction="left" %]
+                            <strong class="align-self-center gr-centered-m">[% header %]</strong>
+                            [% PROCESS arrows_mobile parent="market_tabs" direction="right" %]
+                        </div>
+                    </div>
                     <p>[% text %]</p>
                 </div>
                 <div class="gr-6 gr-12-m center-text">
@@ -45,17 +57,25 @@
 [% END %]
 
 [% BLOCK accounts_tab_content %]
-    <p class="center-text gr-10 gr-no-gutter gr-centered gr-hide-m">[% header %]</p>
+    <div class="gr-hide-m">
+        <p class="center-text gr-10 gr-no-gutter gr-centered">[% header %]</p>
+    </div>
     <div class="gr-row gr-padding-30">
         [% PROCESS arrows parent="account_tabs" direction="left" %]
-        <div class="gr-10">
+        <div class="gr-10 gr-12-m">
             <div class="gr-row">
                 <div class="gr-6 gr-10-m gr-centered align-self-center">
                     <img class="responsive" src="[% request.url_for(image) %]">
                 </div>
                 <div class="center-text gr-12 gr-hide gr-show-m [% mobile_class %]">
-                    <strong>[% mobile_header %]</strong>
-                    <p>[% header %]</p>
+                    <div class="gr-8 gr-centered">
+                        <div class="gr-row">
+                            [% PROCESS arrows_mobile parent="account_tabs" direction="left" %]
+                            <strong class="align-self-center gr-centered">[% mobile_header %]</strong>
+                            [% PROCESS arrows_mobile parent="account_tabs" direction="right" %]
+                        </div>
+                    </div>
+                    <div class="gr-12"><p>[% header %]</p></div>
                 </div>
                 <div class="gr-6 gr-12-m">
                     [% PROCESS accounts_list_item image=image_one   list_header=list_header_one   list_text=list_text_one %]
@@ -80,7 +100,7 @@
     <div class="gr-hide gr-show-m center-text">
         <div class="tab-circles" id="[% id %]">
             [% FOREACH i IN [1..number] %]
-                <div class="tab-circle [% IF i==1 %]selected[% END %]"></div>
+                <div class="tab-circle"></div>
             [% END %]
         </div>
     </div>
@@ -101,8 +121,8 @@
  <div class="container">
     <h2 class="center-text gr-padding-10">[% l("Trade in the world's financial markets") %]</h2>
     [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
-        [% INCLUDE tabs_subtabs id='market_tabs' class='gr-padding-20 gr-parent gr-hide-m' items=[
-            { id='binary', text=l('Binary options'), class='active' },
+        [% INCLUDE tabs_subtabs id='market_tabs' class='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper' items=[
+            { id='binary', text=l('Binary options') },
             { id='forex',  text=l('Forex') },
             { id='cfds',   text=l('CFDs') },
             { id='metals', text=l('Metals') },
@@ -111,7 +131,7 @@
         ] %]
         <div class="tab-content">
             [% WRAPPER tab_content_container %]
-                [% WRAPPER tab_content id='binary' visible=1 %]
+                [% WRAPPER tab_content id='binary' %]
                     [% PROCESS markets_tab_content header=l("Binary options") text=l("Options that offer a fixed payout based on a simple yes/no proposition.")
                         image="images/pages/home-beta/trade/binary.svg" %]
                 [% END %]
@@ -144,43 +164,41 @@
     </div>
 </div>
 
-<div id="financial_banner">
-    <div class="container gr-padding-30">
-        <h2 class="center-text">[% l("Diverse platforms and account types") %]</h2>
-        [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
-            [% INCLUDE tabs_subtabs id='account_tabs' class='gr-padding-20 gr-parent gr-hide-m' items=[
-                { id='binary_options', text=l('Binary Options'), class='active' },
-                { id='mt5',            text=l('MetaTrader 5') },
-                { id='account_tabs_selector', class='tab-selector' },
-            ] %]
-            <div class="tab-content">
-                [% WRAPPER tab_content_container %]
-                    [% WRAPPER tab_content id='binary_options' visible=1 %]
-                        [% PROCESS accounts_tab_content header=l("Trade binary options on a wide range of web and mobile apps. Each comes with unique strengths that complement a variety of trading strategies.")
-                            mobile_header=l("Binary Options")
-                            image="images/pages/home-beta/binary_options.svg"
-                            image_one="images/pages/home-beta/icons/demo.svg" list_header_one=l("Virtual Account") list_text_one=l("Practice account with replenishable USD 10,000 virtual credit.")
-                            image_two="images/pages/home-beta/icons/real.svg" list_header_two=l("Real Account") list_text_two=l("Real-money accounts with your choice of fiat currency.")
-                            image_three="images/pages/home-beta/icons/crypto.svg" list_header_three=l("Crypto Account") list_text_three=l("Real-money accounts with your choice of cryptocurrency.") %]
-                    [% END %]
-                    [% WRAPPER tab_content id='mt5' %]
-                        [% PROCESS accounts_tab_content header=l("Trade Forex and CFD assets with up to 1,000:1 leverage on the world's most popular institutional multi-asset platform.")
-                            mobile_class='padding-top-20'
-                            mobile_header=l("MetaTrader 5")
-                            image="images/pages/home-beta/MT5.svg"
-                            image_one="images/pages/home-beta/icons/demo.svg" list_header_one=l("MT5 Demo") list_text_one=l("Practice account with replenishable USD 5,000 virtual credit.")
-                            image_two="images/pages/home-beta/icons/mt5_financial.svg" list_header_two=l("MT5 Financial") list_text_two=l("MT5 real-money account for Forex and CFDs.")
-                            image_three="images/pages/home-beta/icons/mt5_volatility.svg" list_header_three=l("MT5 Volatility") list_text_three=l("MT5 real-money account for Volatility Indices only.") %]
-                    [% END %]
+<div class="container gr-padding-30">
+    <h2 class="center-text">[% l("Diverse platforms and account types") %]</h2>
+    [% WRAPPER tab_container class='gr-padding-30 gr-parent full-width' theme='light' %]
+        [% INCLUDE tabs_subtabs id='account_tabs' class='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper' items=[
+            { id='binary_options', text=l('Binary Options') },
+            { id='mt5',            text=l('MetaTrader 5') },
+            { id='account_tabs_selector', class='tab-selector' },
+        ] %]
+        <div class="tab-content">
+            [% WRAPPER tab_content_container %]
+                [% WRAPPER tab_content id='binary_options' %]
+                    [% PROCESS accounts_tab_content header=l("Trade binary options on a wide range of web and mobile apps. Each comes with unique strengths that complement a variety of trading strategies.")
+                        mobile_header=l("Binary Options")
+                        image="images/pages/home-beta/binary_options.svg"
+                        image_one="images/pages/home-beta/icons/demo.svg" list_header_one=l("Virtual Account") list_text_one=l("Practice account with replenishable USD 10,000 virtual credit.")
+                        image_two="images/pages/home-beta/icons/real.svg" list_header_two=l("Real Account") list_text_two=l("Real-money accounts with your choice of fiat currency.")
+                        image_three="images/pages/home-beta/icons/crypto.svg" list_header_three=l("Crypto Account") list_text_three=l("Real-money accounts with your choice of cryptocurrency.") %]
                 [% END %]
-            </div>
-            [% INCLUDE tab_circles number=2 id='account_tabs_circles' %]
-        [% END %]
-
-        <div class="center-text gr-padding-20 gr-parent">
-            <h3 class="center-text gr-padding-20 gr-parent">[% l("Choose the platforms and accounts you need, based on your personal trading style") %]</h3>
-            <a class="button-secondary" href="[% request.url_for('platforms') %]"><span>[% l("View our platforms") %]</span></a>
+                [% WRAPPER tab_content id='mt5' %]
+                    [% PROCESS accounts_tab_content header=l("Trade Forex and CFD assets with up to 1,000:1 leverage on the world's most popular institutional multi-asset platform.")
+                        mobile_class='padding-top-20'
+                        mobile_header=l("MetaTrader 5")
+                        image="images/pages/home-beta/MT5.svg"
+                        image_one="images/pages/home-beta/icons/demo.svg" list_header_one=l("MT5 Demo") list_text_one=l("Practice account with replenishable USD 5,000 virtual credit.")
+                        image_two="images/pages/home-beta/icons/mt5_financial.svg" list_header_two=l("MT5 Financial") list_text_two=l("MT5 real-money account for Forex and CFDs.")
+                        image_three="images/pages/home-beta/icons/mt5_volatility.svg" list_header_three=l("MT5 Volatility") list_text_three=l("MT5 real-money account for Volatility Indices only.") %]
+                [% END %]
+            [% END %]
         </div>
+        [% INCLUDE tab_circles number=2 id='account_tabs_circles' %]
+    [% END %]
+
+    <div class="center-text gr-padding-20 gr-parent">
+        <h3 class="center-text gr-padding-20 gr-parent">[% l("Choose the platforms and accounts you need, based on your personal trading style") %]</h3>
+        <a class="button-secondary" href="[% request.url_for('platforms') %]"><span>[% l("View our platforms") %]</span></a>
     </div>
 </div>
 
@@ -218,10 +236,8 @@
     </div>
 
     [% INCLUDE _common/components/separator_line.html.tt class="gr-padding-30" show_mobile=1 %]
-</div>
 
-<div id="payment_banner">
-    <div class="container" id="payment_methods">
+    <div id="payment_methods">
         <div class="gr-12 gr-padding-20">
             <h2 class="center-text">[% l("Payment methods") %]</h2>
             <p class="center-text">[% l("We support hundreds of deposit and withdrawal options, including Bitcoin.") %]</p>
