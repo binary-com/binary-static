@@ -1,0 +1,140 @@
+/* eslint-disable no-script-url, no-unused-vars, import/no-extraneous-dependencies */
+import React from 'react';
+
+export const Fieldset = ({children, legend, id, className}) => (
+    <fieldset id={id} className={className} >
+        {legend &&
+            <legend>{legend}</legend>
+        }
+        {children}
+    </fieldset>
+);
+
+export const FormRow = ({
+    spaced,
+    type,
+    id,
+    className,
+    label,
+    checked,
+    row_class,
+    row_id,
+    html_row_id,
+    label_row_id,
+    is_two_rows,
+    is_bold,
+    tooltip,
+    hint,
+    attributes = {},
+    input_prefix,
+    children,
+}) => {
+    if (type === 'checkbox' && !spaced) {
+        return (
+            <div class={`gr-row ${row_class || ''}`} id={row_id} >
+                <div class="gr-12 gr-padding-20 gr-centered">
+                    <input id={id} type="checkbox" checked={!!checked} />
+                    <label for={id}>{label}</label>
+                </div>
+            </div>
+        );
+    }
+    return (
+        <div class={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`} id={row_id}>
+            <div class={`${is_two_rows ? 'gr-12' : 'gr-4 gr-12-m'}`} id={label_row_id} >
+                <label for={type !== 'label' ? id : undefined} >
+                    {tooltip ?
+                        <span data-balloon-length="xlarge" data-balloon={tooltip}>
+                            {label}
+                        </span> :
+                        label
+                    }
+                </label>
+            </div>
+            <div class={is_two_rows ? 'gr-12' : 'gr-8 gr-12-m'}>
+                {type === 'select' ?
+                    <select id={id} class={`form_input ${className||''}`} {...attributes} >
+                        {children}
+                    </select>
+                    : ['text', 'password', 'number', 'checkbox'].indexOf(type) !== -1 ?
+                        <React.Fragment>
+                            {input_prefix}
+                            <input
+                                type={type}
+                                className={className}
+                                id={id}
+                                maxLength={type === 'password' ? 25 : undefined}
+                                {...attributes}
+                            />
+                        </React.Fragment>
+                        : type === 'label' ?
+                            <span class="text-display">
+                                {is_bold ?
+                                    <strong id={id} {...attributes}></strong> :
+                                    <span id={id} {...attributes}></span>
+                                }
+                            </span>
+                            : type === 'custom' ?
+                                children
+                                : undefined
+                }
+                {hint &&
+                    <p class="hint no-margin">{hint}</p>
+                }
+            </div>
+        </div>
+    );
+};
+
+export const SubmitButton = ({
+    is_centered,
+    className,
+    type,
+    text,
+    id,
+    is_full_width,
+    is_left_align,
+    no_error,
+    msg_id,
+    attributes,
+    no_wrapper,
+    custom_btn_text,
+    custom_btn_class,
+    custom_btn_href,
+    custom_btn_id,
+}) => {
+    const content = <React.Fragment>
+        {!no_error &&
+            <p id={msg_id || 'msg_form'} class="error-msg no-margin invisible"></p>
+        }
+        <div class="gr-padding-10">
+            {custom_btn_text &&
+                <a class={`button ${custom_btn_class||''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
+                    <span class="button">{custom_btn_text}</span>
+                </a>
+            }
+            <button
+                id={id || 'btn_submit'}
+                type={type === 'submit' ? 'submit' : undefined}
+                {...attributes}
+                className={is_full_width ? 'full-width' : undefined}
+            >
+                {text}
+            </button>
+        </div>
+    </React.Fragment>;
+
+    if(!no_wrapper) {
+        return (
+            <div class={`${is_centered ? 'center-text' : 'gr-row'} ${className||''}`} id={id}>
+                {!is_centered ?
+                    <div class={`${!is_left_align? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
+                        {content}
+                    </div> :
+                    content
+                }
+            </div>
+        );
+    }
+    return content;
+};

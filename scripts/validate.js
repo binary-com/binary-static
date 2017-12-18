@@ -9,7 +9,7 @@ const program = require('commander');
 program
     .version('0.1.0')
     .description('Get html diff between two files in /dist & /dist-perl folder')
-    .option('-p, --path [save_as]', 'Template save_as url, REQUIRED')
+    .option('-p, --path [save_as]', 'Diff only the template/s that match the regex save_as, REQUIRED')
     .parse(process.argv);
 
 if(!program.path) {
@@ -63,4 +63,8 @@ const diff = (save_as) => {
     });
 }
 
-diff(common.pages.find(p => p.save_as === program.path).save_as);
+const regx = new RegExp(program.path, 'i');
+common.pages
+    .filter(p => regx.test(p.save_as))
+    .map(p => p.save_as)
+    .forEach(diff)
