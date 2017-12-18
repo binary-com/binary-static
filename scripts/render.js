@@ -300,7 +300,7 @@ async function compile(page) {
             const layout_pjax = renderComponent(context, layout_path);
 
             context.is_pjax_request = false;
-            const layout_normal = `<DOCTYPE! HTML>\n${renderComponent(context, layout_path)}`;
+            const layout_normal = `<!DOCTYPE html>\n${renderComponent(context, layout_path)}`;
 
             await common.writeFile( // pjax layout
                 Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`),
