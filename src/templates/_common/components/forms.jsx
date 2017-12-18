@@ -31,18 +31,18 @@ export const FormRow = ({
 }) => {
     if (type === 'checkbox' && !spaced) {
         return (
-            <div class={`gr-row ${row_class || ''}`} id={row_id} >
-                <div class="gr-12 gr-padding-20 gr-centered">
+            <div className={`gr-row ${row_class || ''}`} id={row_id} >
+                <div className="gr-12 gr-padding-20 gr-centered">
                     <input id={id} type="checkbox" checked={!!checked} />
-                    <label for={id}>{label}</label>
+                    <label htmlFor={id}>{label}</label>
                 </div>
             </div>
         );
     }
     return (
-        <div class={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`} id={row_id}>
-            <div class={`${is_two_rows ? 'gr-12' : 'gr-4 gr-12-m'}`} id={label_row_id} >
-                <label for={type !== 'label' ? id : undefined} >
+        <div className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`} id={row_id}>
+            <div className={`${is_two_rows ? 'gr-12' : 'gr-4 gr-12-m'}`} id={label_row_id} >
+                <label htmlFor={type !== 'label' ? id : undefined} >
                     {tooltip ?
                         <span data-balloon-length="xlarge" data-balloon={tooltip}>
                             {label}
@@ -51,9 +51,9 @@ export const FormRow = ({
                     }
                 </label>
             </div>
-            <div class={is_two_rows ? 'gr-12' : 'gr-8 gr-12-m'}>
+            <div className={is_two_rows ? 'gr-12' : 'gr-8 gr-12-m'}>
                 {type === 'select' ?
-                    <select id={id} class={`form_input ${className||''}`} {...attributes} >
+                    <select id={id} className={`form_input ${className||''}`} {...attributes} >
                         {children}
                     </select>
                     : ['text', 'password', 'number', 'checkbox'].indexOf(type) !== -1 ?
@@ -68,7 +68,7 @@ export const FormRow = ({
                             />
                         </React.Fragment>
                         : type === 'label' ?
-                            <span class="text-display">
+                            <span className="text-display">
                                 {is_bold ?
                                     <strong id={id} {...attributes}></strong> :
                                     <span id={id} {...attributes}></span>
@@ -79,7 +79,7 @@ export const FormRow = ({
                                 : undefined
                 }
                 {hint &&
-                    <p class="hint no-margin">{hint}</p>
+                    <p className="hint no-margin">{hint}</p>
                 }
             </div>
         </div>
@@ -105,12 +105,12 @@ export const SubmitButton = ({
 }) => {
     const content = <React.Fragment>
         {!no_error &&
-            <p id={msg_id || 'msg_form'} class="error-msg no-margin invisible"></p>
+            <p id={msg_id || 'msg_form'} className="error-msg no-margin invisible"></p>
         }
-        <div class="gr-padding-10">
+        <div className="gr-padding-10">
             {custom_btn_text &&
-                <a class={`button ${custom_btn_class||''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
-                    <span class="button">{custom_btn_text}</span>
+                <a className={`button ${custom_btn_class||''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
+                    <span className="button">{custom_btn_text}</span>
                 </a>
             }
             <button
@@ -126,9 +126,9 @@ export const SubmitButton = ({
 
     if(!no_wrapper) {
         return (
-            <div class={`${is_centered ? 'center-text' : 'gr-row'} ${className||''}`} id={id}>
+            <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className||''}`} id={id}>
                 {!is_centered ?
-                    <div class={`${!is_left_align? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
+                    <div className={`${!is_left_align? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
                         {content}
                     </div> :
                     content
