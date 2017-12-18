@@ -1,4 +1,3 @@
-/* eslint-disable no-script-url, no-unused-vars, import/no-extraneous-dependencies */
 import React from 'react';
 import { FormRow } from '../../_common/components/forms.jsx';
 
@@ -12,9 +11,9 @@ export const Salutation = ({
         label={it.L('Title')}
     >
         <option value="Mr">${it.L('Mr')}</option>
-        <option value="Mrs" class="ru-hide">{it.L('Mrs')}</option>
+        <option value="Mrs" className="ru-hide">{it.L('Mrs')}</option>
         <option value="Ms">{it.L('Ms')}</option>
-        <option value="Miss" class="ru-hide">{it.L('Miss')}</option>
+        <option value="Miss" className="ru-hide">{it.L('Miss')}</option>
     </FormRow>
 );
 
@@ -179,9 +178,9 @@ export const SecretAnswer = () => (
 );
 
 export const Tnc = () => (
-    <div class="center-text">
-        <div class="gr-row">
-            <div class="gr-12-m gr-padding-10 gr-centered">
+    <div className="center-text">
+        <div className="gr-row">
+            <div className="gr-12-m gr-padding-10 gr-centered">
                 <input type="checkbox" name="tnc" id="tnc" />
                 <label htmlFor="tnc">
                     {it.L(
@@ -193,15 +192,15 @@ export const Tnc = () => (
             </div>
         </div>
 
-        <button class="button" type="submit">{it.L('Open Account')}</button>
+        <button className="button" type="submit">{it.L('Open Account')}</button>
     </div>
 );
 
 export const ClientMessage = () => (
-    <div class="errorbox rbox invisible" id="client_message">
-        <div class="rbox-wrap">
-            <div class="gr-12 rbox-content" id="client_message_content">
-                <p class="center-text notice-msg"></p>
+    <div className="errorbox rbox invisible" id="client_message">
+        <div className="rbox-wrap">
+            <div className="gr-12 rbox-content" id="client_message_content">
+                <p className="center-text notice-msg"></p>
             </div>
         </div>
     </div>

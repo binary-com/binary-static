@@ -1,4 +1,3 @@
-/* eslint-disable no-script-url, no-unused-vars, import/no-extraneous-dependencies */
 import React from 'react';
 
 export const Fieldset = ({children, legend, id, className}) => (
@@ -19,7 +18,6 @@ export const FormRow = ({
     checked,
     row_class,
     row_id,
-    html_row_id,
     label_row_id,
     is_two_rows,
     is_bold,

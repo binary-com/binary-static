@@ -10,12 +10,12 @@ export const Li = ({
     header,
     p,
 }) => {
-    const content = p ? <p> {text} </p> : text;
+    const content = p ? <p>{text}</p> : text;
 
     return (
         <li id={id} className={className}>
             {header && (
-                text ? <strong> {header} </strong> : <h3> {header} </h3>
+                text ? <strong>{header}</strong> : <h3>{header}</h3>
             )}
             {href ?
                 <a {...{
@@ -37,7 +37,7 @@ export const List = ({
     className,
 }) => (
     <ul id={id} className={className}>
-        {items.map(item => <Li {...item} />)}
+        {items.map((item, idx) => <Li key={idx} {...item} />)}
     </ul>
 );
 
@@ -102,8 +102,8 @@ export const Select = ({
     options,
 }) => (
     <select id={id} className={className} >
-        {options.map(option => (
-            <option value={option.value || undefined} selected={!!option.selected} >
+        {options.map((option, idx) => (
+            <option key={idx} value={option.value || undefined} selected={!!option.selected} >
                 {option.text}
             </option>
         ))}
@@ -161,12 +161,12 @@ export const Table = ({
                     {data.tfoot.map((row, tr_inx) => (
                         <tr key={tr_inx}>
                             {row.map((th, th_inx) => (
-                            <th
-                                key={th_inx}
-                                className={th.className}
-                                id={th.id}
-                                {... (th.attributes || {}) }
-                            >
+                                <th
+                                    key={th_inx}
+                                    className={th.className}
+                                    id={th.id}
+                                    {... (th.attributes || {}) }
+                                >
                                     {th.text}
                                 </th>
                             ))}

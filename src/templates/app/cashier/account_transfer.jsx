@@ -1,4 +1,3 @@
-/* eslint-disable no-script-url, no-unused-vars, import/no-extraneous-dependencies */
 import React from 'react';
 import {FormRow, SubmitButton, Fieldset} from '../../_common/components/forms.jsx';
 

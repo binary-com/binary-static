@@ -1,4 +1,3 @@
-/* eslint-disable no-script-url, no-unused-vars, import/no-extraneous-dependencies */
 import React from 'react';
 import {List} from '../../_common/components/elements.jsx';
 
@@ -11,8 +10,8 @@ const FooterColumn = ({header, items}) => (
 
 const SocialIcons = ({networks, is_centered}) => (
     <div className={`gr-padding-10 gr-row ${is_centered && 'gr-row-align-center' || ''}`}>
-        {networks.map(net => (
-            <a href={net.href} target="_blank" className={`${is_centered ? 'gr-2 gr-1-m' : 'gr-3'} gr-no-gutter-right`} rel="noopener noreferrer">
+        {networks.map((net, idx) => (
+            <a key={idx} href={net.href} target="_blank" className={`${is_centered ? 'gr-2 gr-1-m' : 'gr-3'} gr-no-gutter-right`} rel="noopener noreferrer">
                 <img className="responsive" src={it.url_for(`images/pages/footer/${net.media}.svg`)}/>
             </a>
         ))}
