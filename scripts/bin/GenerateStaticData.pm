@@ -213,7 +213,7 @@ sub _texts {
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');
         push @texts, localize('Your session duration limit will end in [_1] seconds.');
-        push @texts, localize('Invalid email address');
+        push @texts, localize('Invalid email address.');
         push @texts, localize('Thank you for signing up! Please check your email to complete the registration process.');
         #strings for real account opening page
         push @texts, localize('ICO Account Opening');
@@ -463,7 +463,7 @@ sub _texts {
         push @texts, localize('There was a problem accessing the server during purchase.');
 
         # strings for form_validation
-        push @texts, localize('Should be a valid number');
+        push @texts, localize('Should be a valid number.');
         push @texts, localize('Should be more than [_1]');
         push @texts, localize('Should be less than [_1]');
         push @texts, localize('Should be between [_1] and [_2]');

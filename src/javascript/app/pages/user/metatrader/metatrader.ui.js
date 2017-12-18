@@ -364,7 +364,7 @@ const MetaTraderUI = (() => {
                 $acc.find('p').text(title);
                 $parent.append($acc);
             });
-        $('.hl-types-of-accounts').setVisibility(count > 1);
+        $templates.find('.hl-types-of-accounts').setVisibility(count > 1);
     };
 
     // -------------------

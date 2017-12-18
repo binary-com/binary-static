@@ -139,7 +139,7 @@
                                                     <div class="gr-row gr-padding-10" id="signup">
                                                         <div class="gr-7 gr-7-p gr-12-m gr-centered">
                                                             <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
-                                                            <div id="error_validate_email" class="invisible error-msg">[% l('Invalid email address') %]</div>
+                                                            <div id="error_validate_email" class="invisible error-msg">[% l('Invalid email address.') %]</div>
                                                             <div id="error_no_email" class="invisible error-msg">[% l('This field is required.') %]</div>
                                                         </div>
                                                         <div class="gr-5 gr-5-p gr-12-m gr-centered">
