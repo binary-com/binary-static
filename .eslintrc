@@ -20,15 +20,15 @@
     },
     'rules': {
         'array-callback-return': 0,
+        'camelcase':             0,
         'func-names':            ['error', 'never'],
         'no-param-reassign':     ['error', { props: false }],
+        'no-script-url':         0,
         'one-var':               ['error', { initialized: 'never', uninitialized: 'always' }],
         'semi':                  ['error', 'always'],
-        'camelcase':             0,
-        'no-script-url':         0,
         // react rules
-        'react/prop-types':      0,
         'import/no-extraneous-dependencies': [0, {'extensions': ['.jsx']}],
+        'react/prop-types':      0,
     },
     'extends': [
         'airbnb-base',
@@ -38,7 +38,7 @@
     'parserOptions': {
         'ecmaVersion': 6,
         'ecmaFeatures': {
-            "jsx": true
+            'jsx': true
         },
     },
 }

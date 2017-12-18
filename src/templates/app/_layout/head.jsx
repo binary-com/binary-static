@@ -1,7 +1,7 @@
-import React from 'react'; // eslint-disable-line
-import Title from '../../_common/components/title.jsx'; // eslint-disable-line
-import Favicons from '../../_common/includes/favicons.jsx'; // eslint-disable-line
-import AntiClickjack from '../../_common/includes/anti_clickjack.jsx'; // eslint-disable-line
+import React from 'react';
+import Title from '../../_common/components/title.jsx';
+import Favicons from '../../_common/includes/favicons.jsx';
+import AntiClickjack from '../../_common/includes/anti_clickjack.jsx';
 
 const Head = () => (
     <head>
