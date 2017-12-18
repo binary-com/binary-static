@@ -37,7 +37,7 @@ export const List = ({
     className,
 }) => (
     <ul id={id} className={className}>
-        {items.map(item => <Li {...item} />)}
+        {items.map((item, idx) => <Li key={idx} {...item} />)}
     </ul>
 );
 
@@ -102,8 +102,8 @@ export const Select = ({
     options,
 }) => (
     <select id={id} className={className} >
-        {options.map(option => (
-            <option value={option.value || undefined} selected={!!option.selected} >
+        {options.map((option, idx) => (
+            <option key={idx} value={option.value || undefined} selected={!!option.selected} >
                 {option.text}
             </option>
         ))}

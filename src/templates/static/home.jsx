@@ -7,12 +7,12 @@ import {List, FillBox} from '../_common/components/elements.jsx';
 
 const PaymentLogo = ({
     items,
-}) => items.map(item => (
-    <div className="payment-logo" id={item}>
+}) => items.map((item, idx) => (
+    <div key={idx} className="payment-logo" id={item}>
     </div>
 ));
 
-export default () => (
+const Home = () => (
     <React.Fragment>
         <div id="banner">
             <div className="container gr-padding-30">
@@ -100,7 +100,7 @@ export default () => (
 
             <div className="gr-12 gr-6-p gr-centered">
                 <div className="gr-row gr-row-align-center gr-padding-10">
-                    <a className="button" href="https://academy.binary.com" target="_blank">
+                    <a className="button" href="https://academy.binary.com" target="_blank" rel="noopener noreferrer">
                         <span>{it.L('Start learning')}</span>
                     </a>
                 </div>
@@ -165,3 +165,5 @@ export default () => (
         </div>
     </React.Fragment>
 );
+
+export default Home;
