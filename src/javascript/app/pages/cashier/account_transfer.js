@@ -87,7 +87,16 @@ const AccountTransfer = (() => {
     };
 
     // TODO: change values when back-end updates logic
-    const getMinAmount = () => (isCryptocurrency(client_currency) ? 0.004 : 1);
+    const getMinAmount = () => {
+        const currency = client_currency;
+        if (isCryptocurrency(currency)) {
+            if (currency === 'BTC') {
+                return 0.004;
+            }
+            return 0.002;
+        }
+        return 1;
+    };
 
     const getDecimals = () => (isCryptocurrency(client_currency) ? 8 : 2);
 
