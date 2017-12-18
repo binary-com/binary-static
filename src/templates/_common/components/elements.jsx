@@ -10,12 +10,12 @@ export const Li = ({
     header,
     p,
 }) => {
-    const content = p ? <p> {text} </p> : text;
+    const content = p ? <p>{text}</p> : text;
 
     return (
         <li id={id} className={className}>
             {header && (
-                text ? <strong> {header} </strong> : <h3> {header} </h3>
+                text ? <strong>{header}</strong> : <h3>{header}</h3>
             )}
             {href ?
                 <a {...{
@@ -161,12 +161,12 @@ export const Table = ({
                     {data.tfoot.map((row, tr_inx) => (
                         <tr key={tr_inx}>
                             {row.map((th, th_inx) => (
-                            <th
-                                key={th_inx}
-                                className={th.className}
-                                id={th.id}
-                                {... (th.attributes || {}) }
-                            >
+                                <th
+                                    key={th_inx}
+                                    className={th.className}
+                                    id={th.id}
+                                    {... (th.attributes || {}) }
+                                >
                                     {th.text}
                                 </th>
                             ))}
