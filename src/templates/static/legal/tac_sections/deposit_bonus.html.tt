@@ -13,6 +13,7 @@
     <p>[% l("The bonus will be added to the account when the required minimum deposit has been made via a single transaction. Clients who make multiple deposits in an attempt to accumulate the required deposit amount will not be eligible for this bonus.") %]</p>
     <p>[% l("The company reserves the right to cancel/prohibit the use of this promotion at its own discretion at any time.") %]</p>
 
+    <a id="free-bonus" href="javascript:;"></a>
     <h2>[% l("Free Bonus") %]</h2>
     <ol>
         <li>[% l("The bonus code can only be entered and activated upon account opening.") %]</li>

@@ -13,7 +13,7 @@ function toggleMobileMenu() {
         e.stopPropagation();
         navbar.classList.toggle('expand');
         navbar_item.classList.toggle('expand');
-        if (/show/.test(el_language_dropdown.classList)) {
+        if (el_language_dropdown && /show/.test(el_language_dropdown.classList)) {
             toggleAllSiblings(el_language_dropdown.parentNode, filterById, 'invisible');
             el_language_dropdown.classList.remove('show');
         }
@@ -87,9 +87,11 @@ function wsConnect() {
     const server_url    = config_server || 'frontend.binaryws.com';
     endpointNotification(config_server);
 
-    const app_id        = localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
+    return new WebSocket(`wss://${server_url}/websockets/v3?app_id=${getAppId()}&l=${getLanguage()}`);
+}
 
-    return new WebSocket(`wss://${server_url}/websockets/v3?app_id=${app_id}&l=${getLanguage()}`);
+function getAppId() {
+    return localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
 }
 
 function wsSend(ws, request) {
