@@ -58,7 +58,7 @@ const crypto_config = {
     BCH: { name: 'Bitcoin Cash',  min_withdrawal: 0.003 },
     ETH: { name: 'Ether',         min_withdrawal: 0.01  },
     ETC: { name: 'Ether Classic', min_withdrawal: 0.002 },
-    LTC: { name: 'Litecoin',      min_withdrawal: 0.002 },
+    LTC: { name: 'Litecoin',      min_withdrawal: 0.02 },
 };
 
 const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'min_withdrawal']) || 0.002 : 1);
