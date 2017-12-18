@@ -50,8 +50,20 @@ const ICOSubscribe = (() => {
             .attr('src', image);
 
         BinarySocket.wait('ico_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
-            if (State.getResponse('ico_status.ico_status') === 'closed') {
-                $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
+            const ico_status = State.getResponse('ico_status');
+
+            if (ico_status.ico_status === 'closed') {
+                let notice_msg = '';
+                $('.ico-ended-hide').remove();
+                if(ico_status.is_claim_allowed && +ico_status.final_price) {
+                    const curr  = (Client.get('currency') || 'USD').toUpperCase();
+                    const price_str = `${curr !=='USD' ? `${formatMoney(curr, ico_status.final_price)} / ` : ''}${formatMoney('USD', ico_status.final_price_usd)}`;
+                    notice_msg = localize(`Thank you for participating in our ICO. The final price of the tokens has been set at ${price_str} per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance.`);
+                } else {
+                    notice_msg = localize('The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018.');
+                }
+
+                $(form_id).replaceWith($('<p/>', {class: 'notice-msg center-text', html: notice_msg}));
                 ICOPortfolio.onLoad();
                 showContent();
             } else {
@@ -106,7 +118,7 @@ const ICOSubscribe = (() => {
 
                 FormManager.init(form_id, [
                     { selector: '#duration', validations: ['req', ['number', { min: 25, max: 10000000 }]], parent_node: 'parameters', no_scroll: 1 },
-                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: `1, ${decimal_places}`, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]], no_scroll: 1 },
+                    { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: decimal_places, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]], no_scroll: 1 },
 
                     { request_field: 'buy', value: 1 },
                     { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },

@@ -22,8 +22,11 @@ module.exports = {
         onLoad  : () => { Scroll.sidebarScroll($('.payment-agent')); },
         onUnload: () => { Scroll.offScroll(); },
     },
-    AffiliateSignup: {
+    handleTab: {
         onLoad: () => { tabListener(); handleHash(); },
+    },
+    TypesOfAccounts: {
+        onLoad: () => { Scroll.goToHashSection(); return false; },
     },
     LandingPage: {
         onLoad: () => {

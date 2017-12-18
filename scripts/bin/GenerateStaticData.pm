@@ -241,7 +241,7 @@ sub _texts {
         push @texts, localize('Invalid amount, minimum is');
         push @texts, localize('Invalid amount, maximum is');
         push @texts, localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.');
-        push @texts, localize('Only [_1] decimal points are allowed.');
+        push @texts, localize('Up to [_1] decimal places are allowed.');
         push @texts, localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.');
         #strings for api_token page
         push @texts, localize('New token created.');
@@ -490,12 +490,16 @@ sub _texts {
         push @texts, localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]');
         push @texts, localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]');
         push @texts, localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.');
+        push @texts, localize('You have insufficient fund in your Binary account, please <a href="[_1]">add fund</a>.');
         push @texts, localize('Sorry, this feature is not available in your jurisdiction.');
         push @texts, localize('Main password');
         push @texts, localize('Investor password');
         push @texts, localize('Current password');
         push @texts, localize('New password');
-        push @texts, localize('Demo');
+        push @texts, localize('Demo Cent');
+        push @texts, localize('Demo Standard');
+        push @texts, localize('Demo STP');
+        push @texts, localize('Demo Volatility');
         push @texts, localize('Real Cent');
         push @texts, localize('Real Standard');
         push @texts, localize('Real STP');
@@ -532,9 +536,12 @@ sub _texts {
         push @texts, localize('Refund Bid');
         push @texts, localize('Claim Tokens');
         push @texts, localize('Ended');
+        push @texts, localize('Pending');
         push @texts, localize('The ICO is currently unavailable.');
+        push @texts, localize('Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance.');
         push @texts, localize('Please select a value for account_opening_reason.');
         push @texts, localize('Minimum bid');
+        push @texts, localize('The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018.');
 
         # binaryico histogram chart
         push @texts, localize('Final Price');
@@ -558,6 +565,8 @@ sub _texts {
         push @texts, localize('Virtual');
         push @texts, localize('Real');
         push @texts, localize('Counterparty');
+        push @texts, localize('This account is disabled');
+        push @texts, localize('This account is excluded until [_1]');
 
         # currency names
         push @texts, localize('Bitcoin');

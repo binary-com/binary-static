@@ -1,5 +1,5 @@
 [% BLOCK tab_container %]
-    <div class="content-tab-container [% class %]">
+    <div class="content-tab-container [% class %] [% theme || '' %]">
         [% content %]
     </div>
 [% END %]
@@ -35,11 +35,16 @@
     <div class="tab-menu-wrap">
         <ul id="[% id %]" class="tm-ul">
             [% FOREACH item IN items %]
+                [% IF class.match('tab-selector-wrapper') %]
+                    [% href = '?' _ id _ '=' _ item.id %]
+                [% ELSE %]
+                    [% href = '#' _ item.id %]
+                [% END %]
                 <li id="[% item.id %]" class="tm-li [% item.class %]">
                 [% IF item.subtabs %]
                     <span class="menu-wrap-a">
                         <span class="menu-wrap-b">
-                            <a href="#[% item.id %]" class="tm-a">[% item.text %]</a>
+                            <a href="[% href %]" class="tm-a">[% item.text %]</a>
                         </span>
                     </span>
                     <ul class="tm-ul-2">
@@ -47,8 +52,8 @@
                             <li id="[% subtab.id %]" class="tm-li-2"><a href="#[% subtab.id %]" class="tm-a-2">[% subtab.text %]</a></li>
                         [% END %]
                     </ul>
-                [% ELSE %]
-                <a href="#[% item.id %]" class="tm-a">[% item.text %]</a>
+                [% ELSIF item.text %]
+                    <a href="[% href %]" class="tm-a">[% item.text %]</a>
                 [% END %]
                 </li>
             [% END %]

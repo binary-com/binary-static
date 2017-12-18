@@ -7,8 +7,8 @@ window.onload = function() {
     signUpInit();
     checkUserSession();
 
-    dataLayer.push({ language: getLanguage().toUpperCase() });
-    dataLayer.push({ event: 'page_load' });
+    gtmPushDataLayer({ language: getLanguage().toUpperCase() });
+    gtmPushDataLayer({ event: 'page_load' });
 
     function switchView(path) {
         document.getElementById('faq').classList[path === 'faq' ? 'remove' : 'add']('invisible');
@@ -19,8 +19,8 @@ window.onload = function() {
         const hash = window.location.hash.substr(1);
 
         if (/done/.test(hash)) {
-            dataLayer.push({ bom_country_abbrev: clients_country || '' });
-            dataLayer.push({ event: 'ico_success' });
+            gtmPushDataLayer({ bom_country_abbrev: clients_country || '' });
+            gtmPushDataLayer({ event: 'ico_success' });
             clearHash();
             document.getElementById('subscribe_success').classList.remove('invisible');
             document.getElementById('binary_ico_subscribe').classList.add('invisible');
@@ -541,5 +541,11 @@ function getLykkeReport(lang = 'en') {
 }
 
 function getNishantReport(lang = 'en') {
-    return `https://ico_documents.binary.com/research/nishantsah/report${/^(id)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+    return `https://ico_documents.binary.com/research/nishantsah/report${/^(id|zh_cn|zh_tw|ru|th)$/i.test(lang) ? `_${lang}` : ''}.pdf`
+}
+
+function gtmPushDataLayer(obj) {
+    if (obj && /^(1|1098)$/.test(getAppId())) {
+        dataLayer.push(obj);
+    }
 }
