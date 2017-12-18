@@ -43,7 +43,7 @@ sub all_pages {
         ['user/video-facility',                'app/user/video_facility',                   'default',    'Video Room Facility'],
         ['user/ico-subscribe',                 'app/user/ico_subscribe',                    'default',    'Subscribe to ICO',                        'ja'],
         ['user/ico-info',                      'app/user/ico_info',                         'default',    'ICO Histogram',                           'ja'],
-        ['user/ico-claim-form',              'user/ico_claim_form',                         'default',    'Electronic Subscription Form for Tokens', 'ja'],
+        ['user/ico-claim-form',                'app/user/ico_claim_form',                   'default',    'Electronic Subscription Form for Tokens', 'ja'],
         ['user/lost_passwordws',               'app/user/lost_password',                    'default',    'Password Reset'],
         ['user/metatrader',                    'app/user/metatrader',                       'default',    'MetaTrader account management'],
         ['user/portfoliows',                   'app/user/portfolio',                        'default',    'Portfolio'],
