@@ -1,10 +1,10 @@
 const moment           = require('moment');
-const BinarySocket     = require('../socket');
+const BinarySocket     = require('../../base/socket');
 const loadPreviousUrl  = require('../../base/binary_pjax').loadPreviousUrl;
 const Client           = require('../../base/client');
-const State            = require('../../base/storage').State;
-const getDecimalPlaces = require('../../common_functions/currency').getDecimalPlaces;
-const toTitleCase      = require('../../common_functions/string_util').toTitleCase;
+const State            = require('../../../_common/storage').State;
+const getDecimalPlaces = require('../../common/currency').getDecimalPlaces;
+const toTitleCase      = require('../../../_common/string_util').toTitleCase;
 
 const ICOClaimForm = (() => {
     const onLoad = () => {
