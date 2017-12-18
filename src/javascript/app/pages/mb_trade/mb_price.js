@@ -276,9 +276,10 @@ const MBPrice = (() => {
         if (!proposal || proposal.error) return;
 
         const req = {
-            buy       : 1,
-            price     : proposal.ask_price,
-            parameters: {
+            buy         : 1,
+            price       : proposal.ask_price,
+            product_type: 'multi_barrier',
+            parameters  : {
                 contract_type,
                 amount               : proposal.echo_req.amount,
                 barrier              : proposal.barrier,
