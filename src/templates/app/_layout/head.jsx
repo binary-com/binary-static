@@ -32,16 +32,16 @@ const Head = () => (
         {!it.only_ja &&
             it.languages
             .filter(lang => lang.toLowerCase() !== 'ja' && lang !== it.language)
-            .map(lang => (
-                    <link rel="alternate" href={it.url_for(it.current_path, lang.toLowerCase())} hrefLang={lang} />
+            .map((lang, inx) => (
+                    <link key={inx} rel="alternate" href={it.url_for(it.current_path, lang.toLowerCase())} hrefLang={lang} />
             ))
         }
 
-        {it.css_files.map(css_file => (
-            <link rel="stylesheet" href={css_file} />
+        {it.css_files.map((css_file, inx) => (
+            <link key={inx} rel="stylesheet" href={css_file} />
         ))}
-        {it.js_files.map(js_file => (
-            <script src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())}></script>
+        {it.js_files.map((js_file, inx) => (
+            <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())}></script>
         ))}
     </head>
 );

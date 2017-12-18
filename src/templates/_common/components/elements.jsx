@@ -115,15 +115,15 @@ export const Tbody = ({
     tbody_id,
 }) => (
     <tbody id={tbody_id}>
-        {trs.map(tr => (
-            <tr>
-                {tr.map(td => (
+        {trs.map((tr, inx_tr) => (
+            <tr key={inx_tr}>
+                {tr.map((td, inx_td) => (
                     td.header ?
-                        <th className={td.className} {...td.balloon ? { 'data-balloon': td.balloon } : {}}>
+                        <th key={inx_td} className={td.className} {...td.balloon ? { 'data-balloon': td.balloon } : {}}>
                             {td.header}
                         </th>
                         :
-                        <td className={td.className} id={td.id}>
+                        <td key={inx_td} className={td.className} id={td.id}>
                             {td.text}
                         </td>
                 ))}
@@ -143,10 +143,10 @@ export const Table = ({
         <table id={id} className={className}>
             { data.thead &&
                 <thead>
-                    {data.thead.map(row => (
-                        <tr>
-                            {row.map(th => (
-                                <th className={th.className} >{th.text}</th>
+                    {data.thead.map((row, tr_inx) => (
+                        <tr key={tr_inx}>
+                            {row.map((th, th_inx) => (
+                                <th key={th_inx} className={th.className} >{th.text}</th>
                             ))}
                         </tr>
                     ))}
@@ -158,10 +158,11 @@ export const Table = ({
             />
             { data.tfoot &&
                 <tfoot>
-                    {data.tfoot.map(row => (
-                        <tr>
-                            {row.map(th => (
+                    {data.tfoot.map((row, tr_inx) => (
+                        <tr key={tr_inx}>
+                            {row.map((th, th_inx) => (
                             <th
+                                key={th_inx}
                                 className={th.className}
                                 id={th.id}
                                 {... (th.attributes || {}) }

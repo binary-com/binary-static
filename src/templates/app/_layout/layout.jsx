@@ -18,7 +18,7 @@ const WithLayout = ({ children }) => {
     return (
         <div id="content" className={it.current_route ? content_class : undefined} >
             <IcoBanner container='ico-banner-container'  className={ico_class} />
-            <div id="page_info" style={{display: 'none;'}}>
+            <div id="page_info" style={{display: 'none'}}>
                 <Title />
                 <div id="content_class">{content_class}</div>
             </div>

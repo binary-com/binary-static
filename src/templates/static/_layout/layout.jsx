@@ -14,8 +14,10 @@ const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 
 const Nav = ({items}) => (
     <ul className="nav">
-        {items.map(item => (
-            <li><a href={it.url_for(`/get-started/${item.section}`)}>{item.text}</a></li>
+        {items.map((item, inx) => (
+            <li key={inx}>
+                <a href={it.url_for(`/get-started/${item.section}`)}>{item.text}</a>
+            </li>
         ))}
     </ul>
 );
@@ -62,7 +64,7 @@ const WithLayout = ({ children }) => {
                 <IcoBanner container='ico-banner-container' className='top-margin' /> :
                 <IcoBanner container='ico-banner-container' className='top-margin bottom-margin' />
             }
-            <div id="page_info" style={{display: 'none;'}}>
+            <div id="page_info" style={{display: 'none'}}>
                 <Title />
                 <div id="content_class">{className}</div>
             </div>
