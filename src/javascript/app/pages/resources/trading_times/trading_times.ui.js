@@ -179,7 +179,7 @@ const TradingTimesUI = (() => {
     const sendRequest = (date, should_request_active_symbols) => {
         const req = { active_symbols: 'brief' };
         if (jpClient()) {
-            req.landing_company = 'japan';
+            req.landing_company = 'custom_grid';
         }
         if (should_request_active_symbols) {
             BinarySocket.wait('authorize').then(() => {

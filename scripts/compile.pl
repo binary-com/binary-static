@@ -111,7 +111,7 @@ foreach my $m (@m) {
             current_route   => $current_route,
             only_ja         => $only_ja,
             affiliate_email => 'affiliates@binary.com',
-            japan_docs_url  => 'https://japan-docs.binary.com'
+            japan_docs_url  => 'https://custom_grid-docs.binary.com'
         );
 
         if ($title) {

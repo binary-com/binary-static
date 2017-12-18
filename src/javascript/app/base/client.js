@@ -345,7 +345,7 @@ const Client = (() => {
 
     const canUpgradeVirtualToFinancial = data => (!data.gaming_company && hasShortCode(data.financial_company, 'maltainvest'));
 
-    const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'japan'));
+    const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'custom_grid'));
 
     const canUpgradeVirtualToReal = data => (hasShortCode(data.financial_company, 'costarica'));
 
@@ -386,7 +386,7 @@ const Client = (() => {
         } else if (loginid.real || isAccountOfType('real', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'gaming_company');
 
-            // handle accounts such as japan that don't have gaming company
+            // handle accounts such as custom_grid that don't have gaming company
             if (!landing_company_object) {
                 landing_company_object = getPropertyValue(landing_company, 'financial_company');
             }

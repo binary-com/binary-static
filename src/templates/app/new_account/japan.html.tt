@@ -33,7 +33,7 @@
 
 <div class='gr-12 static_full'>
     <h1>[% l('Real Money Account Opening') %]</h1>
-    <form id="japan-form" class="gr-padding-10">
+    <form id="custom_grid-form" class="gr-padding-10">
         [% WRAPPER fieldset legend=l('Details') %]
             [% WRAPPER form_row type='select' id='gender' label=l('Gender') %]
                 <option value="">[% l('Please select') %]</option>

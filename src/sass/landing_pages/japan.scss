@@ -1,12 +1,19 @@
 body {
     overflow-x: hidden;
     width: 100%;
-    box-sizing: border-box;
+
+    * {
+        box-sizing: border-box;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px;
     line-height: 1.5;
+}
+
+h1 {
+    font-weight: 500;
 }
 
 section {
@@ -16,21 +23,49 @@ section {
 footer {
     text-align: justify;
 
-    * {
-        padding: 10px;
+    > div {
+        font-size: 14px;
+        padding: 10px 15px;
     }
     p {
         margin: 0;
     }
+    .logo {
+        max-height: 40px;
+        width: 180px;
+    }
 }
 
-.container {
-    max-width: 1200px !important;
+form {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 575px) {
+        flex-direction: row;
+        justify-content: center;
+        margin: 40px 0;
+    }
+
+    input {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+        border: none;
+        margin: 5px 0;
+        max-width: 340px;
+    }
+    .button {
+        margin: 5px;
+
+        span {
+            width: 100%;
+            max-width: 340px;
+        }
+    }
 }
 
 /* Helpers */
-@function border-width($el) {
-    @return $el * 2;
+@function border-width($width) {
+    @return $width * 2;
 }
 
 @mixin triangle($color, $size, $direction) {
@@ -69,11 +104,107 @@ footer {
     }
 }
 
+@mixin card($border-width) {
+    border: solid $border-width $COLOR_ORANGE;
+    background-color: $COLOR_WHITE;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+
+    h1, h2, h3, h4 {
+        margin: 10px 0;
+    }
+    .card-divider {
+        border-top: $border-width solid $COLOR_ORANGE;
+        display: block;
+    }
+    .card-header {
+        &__bubble {
+            @include speech-bubble($COLOR_BLUE, 20px, 'down');
+        }
+        &__ribbon {
+            background-color: $COLOR_BLUE;
+            clip-path: polygon(100% 0, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0);
+        }
+    }
+    .card-body {
+        .size-1 {
+            font-size: 10px;
+        }
+        .size-2 {
+            font-size: 12px;
+        }
+        .size-3 {
+            font-size: 14px;
+        }
+        .color-gray {
+            color: $COLOR_DARK_WHITE;
+        }
+        .bg-gray {
+            background-color: $COLOR_LIGHT_GRAY;
+            border-radius: 5px;
+            padding: 15px;
+        }
+    }
+    .card-footer {
+        display: flex;
+        flex: 1;
+        align-items: flex-end;
+        justify-content: center;
+        color: $COLOR_BLUE;
+        font-size: 13px;
+        font-weight: 300;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bubble-outline-wrapper {
+    counter-reset: section;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+
+    .bubble-outline {
+        position: relative;
+
+        .numbered:before {
+            position: absolute;
+            counter-increment: section;
+            content: counter(section);
+            background: $COLOR_BLUE;
+            color: $COLOR_WHITE;
+            border-radius: 50%;
+            top: -15px;
+            left: -15px;
+            width: 32px;
+            height: 32px;
+            @include flex-center;
+        }
+    }
+}
+
 .bubble-outline {
     @include speech-bubble($COLOR_WHITE, 10px, 'down');
+    @include flex-center;
     border: 1px solid $COLOR_ORANGE;
     padding: 15px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    max-width: 154px;
+    min-height: 50%;
 
     &:after {
         @include triangle($COLOR_WHITE, 10px, 'down');
@@ -91,17 +222,11 @@ footer {
     }
 }
 
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .pattern {
     display: block;
     background-repeat: repeat;
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    background-position: center center;
 
     &-wave {
         background-image: url('../images/japan/version1/wave.svg');
@@ -140,7 +265,7 @@ footer {
         float: left;
     }
     .logo {
-        background: url('../images/japan/version1/logo.svg') no-repeat center;
+        background: url('../images/japan/version1/logo.svg') no-repeat;
         background-size: contain;
         width: 180px !important;
         height: 40px;
@@ -160,13 +285,6 @@ footer {
 
                 img {
                     height: 30px;
-                }
-            }
-            &.word-wrap {
-                > li {
-                    white-space: normal;
-                    width: 120px;
-                    font-size: 16px;
                 }
             }
             a, a:visited {
@@ -195,93 +313,111 @@ footer {
     }
 }
 
-@media (max-width: 1199px) {
-    .navbar-fixed-top {
-        margin-bottom: 0;
-        padding: 15px;
-        overflow: hidden;
-        flex-direction: column;
-        max-height: 50px;
-        -webkit-transition: max-height 0.3s;
-        -moz-transition: max-height 0.3s;
-        -ms-transition: max-height 0.3s;
-        -o-transition: max-height 0.3s;
-        transition: max-height 0.3s;
-
-        .container {
-            display: block;
-        }
-        &.expand {
-            max-height: 440px;
-        }
-        .navbar-header {
-            width: 100%;
-
-            .navbar-brand {
-                float: none;
-                margin: 0;
-                height: 30px;
-            }
-            .navbar-toggle {
-                display: block;
-                height: 30px;
-                width: 30px;
-            }
-        }
-        .navbar-collapse {
-            margin: 0;
-            width: 100%;
-            height: 0;
-            -webkit-transition: height 0.3s;
-            -moz-transition: height 0.3s;
-            -ms-transition: height 0.3s;
-            -o-transition: height 0.3s;
-            transition: height 0.3s;
-
-            .navbar-nav {
-                display: block;
-                padding-top: 5px;
-                width: 100%;
-
-                > li {
-                    margin: 10px 0;
-                    padding: 0;
-                    text-align: left;
-                }
-                &.word-wrap {
-                    > li {
-                        white-space: nowrap;
-                        width: 100%;
-                        font-size: 18px;
-                    }
-                }
-            }
-            &.expand {
-                height: 100%;
-            }
-        }
-    }
-}
+//@media (max-width: 1199px) {
+//    .navbar-fixed-top {
+//        margin-bottom: 0;
+//        padding: 15px;
+//        overflow: hidden;
+//        flex-direction: column;
+//        max-height: 50px;
+//        -webkit-transition: max-height 0.3s;
+//        -moz-transition: max-height 0.3s;
+//        -ms-transition: max-height 0.3s;
+//        -o-transition: max-height 0.3s;
+//        transition: max-height 0.3s;
+//
+//        .container {
+//            display: block;
+//        }
+//        &.expand {
+//            max-height: 440px;
+//        }
+//        .navbar-header {
+//            width: 100%;
+//
+//            .navbar-brand {
+//                float: none;
+//                margin: 0;
+//                height: 30px;
+//            }
+//            .navbar-toggle {
+//                display: block;
+//                height: 30px;
+//                width: 30px;
+//            }
+//        }
+//        .navbar-collapse {
+//            margin: 0;
+//            width: 100%;
+//            height: 0;
+//            -webkit-transition: height 0.3s;
+//            -moz-transition: height 0.3s;
+//            -ms-transition: height 0.3s;
+//            -o-transition: height 0.3s;
+//            transition: height 0.3s;
+//
+//            .navbar-nav {
+//                display: block;
+//                padding-top: 5px;
+//                width: 100%;
+//
+//                > li {
+//                    margin: 10px 0;
+//                    padding: 0;
+//                    text-align: left;
+//                }
+//                &.word-wrap {
+//                    > li {
+//                        white-space: nowrap;
+//                        width: 100%;
+//                        font-size: 18px;
+//                    }
+//                }
+//            }
+//            &.expand {
+//                height: 100%;
+//            }
+//        }
+//    }
+//}
 
 // First section
 .intro {
     background: linear-gradient(0deg, $COLOR_DARK_BLUE, $COLOR_BLUE);
     position: relative;
     height: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+    padding-top: 0;
 
+    .intro-body {
+        .gr-row {
+            @include flex-center;
+        }
+    }
     .intro-text, .intro-subtext {
         color: $COLOR_WHITE;
 
         &.intro-text {
             font-size: 72px;
+            font-weight: 500;
         }
+        &.intro-subtext {
+            max-width: 500px;
+            margin: 35px 0;
+        }
+    }
+    h1 {
+        font-weight: 500;
+    }
+    form {
+        justify-content: flex-start;
     }
 }
 
 // Sections' heading
 .section-title {
     @include flex-center;
+    margin-bottom: 10px;
 
     * {
         color: $COLOR_WHITE;
@@ -301,83 +437,115 @@ footer {
         font-weight: 500;
     }
     .bg-ribbon {
-        background-image: url('../images/japan/version1/blue-ribbon.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center center;
-        width: 100%;
+        background-color: $COLOR_BLUE;
+        clip-path: polygon(100% 0, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0);
+        padding: 15px 60px;
+        margin: auto;
+        margin-bottom: 40px;
         text-align: center;
+        border-radius: 0;
     }
     .bg-bubble {
         @include speech-bubble($COLOR_BLUE, 30px, 'down');
         padding: 30px;
         font-size: 48px;
     }
-    &.bg-polygon {
-        margin-top: -80px;
-        margin-bottom: 80px;
-        clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
-    }
 }
 
 .bg-polygon {
     background-color: $COLOR_DARK_BLUE;
     width: 100%;
-    height: 280px;
+    height: 200px;
     border-radius: 0;
     text-align: center;
     background-image: url('../images/japan/version1/retro-transparent.svg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    &.clip {
+        margin-top: -80px;
+        margin-bottom: 80px;
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+    }
+    &.sign-up-form {
+        height: 100%;
+        padding: 40px 0;
+    }
 }
 
-.box-orange-o {
-    border-radius: 5px;
-    background-color: $COLOR_WHITE;
-    border: solid 3px $COLOR_ORANGE;
-    // min-height: 400px;
-    padding: 30px;
-    text-align: center;
-    margin: 25px 0;
-
-    h1, h2, h3, h4 {
-        margin: 10px 0;
-    }
-    p {
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-    .font-12 {
-        font-size: 12px;
-    }
-    .box-text-xxs {
-        color: $COLOR_GRAY;
-        font-size: 10px;
-    }
-    .box-text-xs {
-        color: $COLOR_BLUE;
-        font-size: 13px;
-        font-weight: 300;
-    }
-    .box-text-s {
-        font-size: 14px;
-    }
-    .bg-gray {
-        background-color: $COLOR_LIGHT_GRAY;
-        border-radius: 5px;
-        padding: 15px;
-    }
-    .bubble {
-        @include speech-bubble($COLOR_LIGHT_GRAY, 10px, 'down');
-        color: $COLOR_BLUE;
-        padding: 15px;
-    }
-    .title-bubble {
-        @include speech-bubble($COLOR_BLUE, 20px, 'down');
+.sign-up-form {
+    h1 {
         color: $COLOR_WHITE;
-        margin: -30px;
-        padding: 30px;
+        font-weight: 500;
+    }
+}
+
+// Cards group
+.cards {
+    > [class*='gr-'] {
+        margin: 15px 0;
+    }
+    .card, .card--light {
+        height: 100%;   // equal-height cards
+    }
+    &--numbered {       // auto-numbering cards
+        counter-reset: section;
+
+        .card:before, .card--light:before {
+            position: absolute;
+            counter-increment: section;
+            content: counter(section);
+            background: $COLOR_BLUE;
+            color: $COLOR_WHITE;
+            border-radius: 50%;
+            top: -20px;
+            left: -20px;
+            width: 40px;
+            height: 40px;
+            @include flex-center;
+        }
+    }
+}
+
+// Card - thick border
+.card {
+    @include card(3px);
+    padding: 30px;
+    position: relative;
+
+    .card-header {
+        color: $COLOR_WHITE;
+
+        &__bubble {
+            @include speech-bubble($COLOR_BLUE, 20px, 'down');
+            margin: -30px;
+            padding: 30px;
+        }
+        &__ribbon {
+            background-color: $COLOR_BLUE;
+            clip-path: polygon(100% 0, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0);
+            width: 60%;
+            padding: 10px 60px;
+            margin: -69px auto 40px;
+
+            h1 {
+                margin: 0;
+                color: $COLOR_WHITE;
+            }
+        }
+    }
+    .card-body {
+        .bg-bubble {
+            @include speech-bubble($COLOR_LIGHT_GRAY, 10px, 'down');
+            color: $COLOR_BLUE;
+            padding: 15px;
+            margin: 0 0 20px;
+        }
+        img.equal-height {
+            width: 70%;
+            height: 86px;
+        }
     }
     .icon-pair {
         margin-top: 20px;
@@ -388,31 +556,36 @@ footer {
             margin: 0;
         }
     }
-    img.fixed-height {
-        width: 70%;
-        height: 86px;
-    }
-    > div:first-child {
-        padding-top: 40px;
-    }
 }
 
-.box-orange-o--light {
-    @extend .box-orange-o;
-    border: solid 1px $COLOR_ORANGE;
-    padding: 15px;
+// Card - thin border
+.card--light {
+    @include card(1px);
+    padding: 20px;
     position: relative;
 
-    .title-bubble {
-        margin: -16px;
-        padding: 15px;
-        margin-bottom: 20px;
+    .card-header {
+        &__bubble {
+            margin: -21px;
+            padding: 15px;
+            margin-bottom: 40px;
+
+            h3 {
+                text-align: center;
+                color: $COLOR_WHITE;
+                margin-bottom: 0;
+            }
+        }
+        &__ribbon {
+            margin: auto;
+            margin-top: -74px;
+            margin-bottom: 40px;
+        }
     }
-    .separator {
-        border-top: 1px solid $COLOR_ORANGE;
-        margin: 0 -15px;
+    &.card-icon-heart {
+        justify-content: center;
     }
-    &.heart:before {
+    &.card-icon-heart:before {
         position: absolute;
         content: url('../images/japan/version1/heart.svg');
         left: 0;
@@ -420,15 +593,23 @@ footer {
         margin: auto;
         bottom: -15px;
     }
+    .card-divider {
+        margin: 20px -20px;
+    }
+    .icon-sm, .icon-md {
+        margin: 10px;
+    }
+    .color-light-blue {
+        color: $COLOR_LIGHT_BLUE;
+    }
+    .color-red {
+        color: $COLOR_RED;
+    }
 }
 
-.box-wrapper {
-    .box-orange-o--light {
-        min-height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.negative-margin-top {
+    margin-top: -150px;
+    padding-top: 230px;
 }
 
 .icon-sm, .icon-md, .icon-lg {
@@ -436,7 +617,7 @@ footer {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin: 10px;
+    margin: 10px auto;
 
     &.icon-sm {
         height: 32px;
@@ -494,6 +675,7 @@ footer {
     background-position: center center;
     background-image: url('../images/japan/version1/bubble-box.svg');
     height: 130px;
+    position: relative;
 
     h1 {
         color: $COLOR_WHITE;
@@ -522,17 +704,32 @@ footer {
 .flex {
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: left;
+
+    .box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .box ~ .box {
+        margin: 60px 0 0;
+    }
 }
 
 .box-o, .box {
+    @include flex-center;
+    padding: 0 10px;
+    text-align: center;
+
     &.box-o {
         border: 1px solid $COLOR_LIGHT_GRAY;
     }
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    p {
+        margin: 0;
+    }
+    &-column {
+        flex-direction: column;
+    }
 }
 
 .blue-bold {
@@ -541,7 +738,7 @@ footer {
 }
 
 .orange-bold {
-    font-weight: bold;
+    font-weight: 500;
     color: $COLOR_ORANGE;
 }
 
@@ -550,32 +747,21 @@ footer {
     height: 145px;
 }
 
-.img-172 {
-    width: 172px;
+.flex-end {
+    align-self: flex-end;
 }
 
-.img-772 {
-    width: 772px;
+.flex-space-between {
+    justify-content: space-between;
 }
 
-.base {
-    background: $COLOR_DARK_BLUE;
-    display: inline-block;
-    height: 55px;
-    margin-left: 20px;
-    margin-top: 55px;
-    position: relative;
-    width: 100px;
+.flex-justify-content-center {
+    justify-content: center;
+}
 
-    &:before {
-        border-top: 35px solid $COLOR_DARK_BLUE;
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
-        content: '';
-        height: 0;
-        left: 0;
-        position: absolute;
-        top: 100%;
-        width: 0;
-    }
+.img-f {
+    max-width: 128px;
+    max-height: 128px;
+    margin-left: 10px;
+    margin-right: 10px;
 }

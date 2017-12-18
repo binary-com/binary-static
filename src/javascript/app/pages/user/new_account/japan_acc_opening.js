@@ -8,7 +8,7 @@ const JapanAccOpening = (() => {
     const onLoad = () => {
         if (AccountOpening.redirectAccount()) return;
         AccountOpening.populateForm();
-        const form_id = '#japan-form';
+        const form_id = '#custom_grid-form';
 
         FormManager.init(form_id, [
             { selector: '#first_name',         validations: ['req', 'letter_symbol'] },
