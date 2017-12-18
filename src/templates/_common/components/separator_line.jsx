@@ -1,6 +1,6 @@
 import React from 'react'; // eslint-disable-line
 
-export default ({
+const SeparatorLine = ({
     no_wrapper,
     show_mobile,
     className,
@@ -16,3 +16,5 @@ export default ({
         </div>
     );
 };
+
+export default SeparatorLine;

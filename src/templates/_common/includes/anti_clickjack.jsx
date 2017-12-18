@@ -1,6 +1,6 @@
 import React from 'react'; // eslint-disable-line
 
-export default () => (
+const AntiClickjack = () => (
     <React.Fragment>
         <style id="antiClickjack">{'body{display:none !important;}'}</style>
         <script type="text/javascript" dangerouslySetInnerHTML={{__html: `
@@ -13,3 +13,5 @@ export default () => (
         `}}></script>
     </React.Fragment>
 );
+
+export default AntiClickjack;
