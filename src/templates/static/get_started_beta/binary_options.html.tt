@@ -316,7 +316,7 @@
                 [% END %]
             [% END %]
 
-            [% PROCESS nav_buttons parent='binary' %]
+            [% PROCESS nav_buttons parent='binary' section='binary-options' %]
         </div>
     </div>
 </div>

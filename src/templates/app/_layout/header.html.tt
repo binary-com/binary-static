@@ -82,10 +82,10 @@
                                 { text=l('Tour'),        href=request.url_for('tour-jp'),                     class='invisible ja-show mt-hide' },
                                 { text=l("Trade"),       href=request.url_for('multi_barriers_trading'),      class='invisible ja-show mt-hide', id='main-navigation-jptrading' },
                                 # MetaTrader
-                                { text=l('MetaTrader'),  href=request.url_for('user/metatrader'),             class='invisible mt-show' },
-                                { text=l('Cashier'),     href=request.url_for('cashier'),                     class='invisible mt-show' },
-                                { text=l("Get Started"), href=request.url_for('get-started-beta?parent=mt5'), class='invisible mt-show' },
-                                { text=l("Platforms"),   href=request.url_for('platforms?parent=mt5'),        class='invisible mt-show' },
+                                { text=l('MetaTrader'),  href=request.url_for('user/metatrader'),                       class='invisible mt-show' },
+                                { text=l('Cashier'),     href=request.url_for('cashier'),                               class='invisible mt-show' },
+                                { text=l("Get Started"), href=request.url_for('get-started-beta?get_started_tabs=mt5'), class='invisible mt-show' },
+                                { text=l("Platforms"),   href=request.url_for('platforms?platforms_tabs=mt5'),          class='invisible mt-show' },
                             ] %]
                         </div>
                     </div>
