@@ -2,7 +2,7 @@ const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
 const isCryptocurrency   = require('../../common/currency').isCryptocurrency;
-const getCryptoMinimum   = require('../../common/currency').getCryptoMinimum;
+const getMinWithdrawal   = require('../../common/currency').getMinWithdrawal;
 const FormManager        = require('../../common/form_manager');
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const localize           = require('../../../_common/localize').localize;
@@ -87,8 +87,7 @@ const AccountTransfer = (() => {
         document.getElementById(messages.error).setVisibility(1);
     };
 
-    // TODO: change values when back-end updates logic
-    const getMinAmount = () => (isCryptocurrency(client_currency) ? getCryptoMinimum(client_currency) : 1);
+    const getMinAmount = () => getMinWithdrawal(client_currency);
 
     const getDecimals = () => (isCryptocurrency(client_currency) ? 8 : 2);
 

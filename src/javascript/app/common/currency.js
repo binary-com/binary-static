@@ -61,7 +61,7 @@ const crypto_config = {
     LTC: { name: 'Litecoin', min_withdrawal: 0.002 },
 };
 
-const getCryptoMinimum = currency => getPropertyValue(crypto_config, [currency, 'min_withdrawal']) || '';
+const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'min_withdrawal']) || '' : 1);
 
 const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
 
@@ -92,7 +92,7 @@ module.exports = {
     setCurrencies,
     isCryptocurrency,
     getCurrencyName,
-    getCryptoMinimum,
+    getMinWithdrawal,
     getMinPayout,
     getCurrencyList,
     getCurrencies: () => currencies_config,
