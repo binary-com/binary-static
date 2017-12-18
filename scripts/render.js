@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, no-param-reassign */
+/* eslint-disable import/no-extraneous-dependencies, no-param-reassign, no-console */
 require('babel-register')({
     plugins: [
         'babel-plugin-transform-es2015-modules-commonjs',
@@ -48,6 +48,7 @@ program
     .option('-t, --add-translations', 'Update messages.pot with new translations')
     .parse(process.argv);
 
+// TODO: to be removed
 if(!program.path) {
     program.outputHelp(str => {
         console.error('  ERROR: --path is missing'.red);
@@ -144,7 +145,7 @@ const createUrlFinder  = default_lang => {
 
         const p = Url.parse(url, true);
         const pathname = p.pathname.replace(/^\//, '');
-        if(common.pages.filter(p => p.save_as === pathname).length) {
+        if(common.pages.filter(page => page.save_as === pathname).length) {
             p.pathname = Path.join(config.root_url, `${lang}/${pathname}.html`);
             return Url.format(p);
         }
