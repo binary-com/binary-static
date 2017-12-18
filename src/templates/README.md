@@ -125,11 +125,11 @@ Workflow
 ====
 1. Pick a template (lets say `/src/templates/static/charity.html.tt`) and duplicate it with `.jsx` extension (`/src/templates/static/charity.jsx`).  
     - Update the trello card, let everyone know you are working on this template :-)
-2. After converting it to `.jsx` syntax, compile with `node scripts/compile.js [options]`.
-    - You can pass `node scripts/compile.js -h` to see available options. 
-    - Usually something like `node scripts/compile.js --dev --path charity$` will do.
+2. After converting it to `.jsx` syntax, render with `scripts/render.js [options]`.
+    - You can pass `scripts/render.js -h` to see available options. 
+    - Usually something like `scripts/render.js --dev --path charity$` will do.
     - `--path` is a Regex.
 3. Make sure eslint is happy, you may try `grunt eslint` command.
-4. Validate your changes with `node scripts/validate --path <save_as_regex>`;
-    - example `node scripts/validate --path charity$`
+4. Validate your changes with `scripts/validate.js --path <save_as_regex>`;
+    - example `scripts/validate.js --path charity$`
 5. Send a PR to the same branch.

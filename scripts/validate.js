@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /* eslint-disable import/no-extraneous-dependencies, no-console */
 const program    = require('commander');
 const fs         = require('fs');
