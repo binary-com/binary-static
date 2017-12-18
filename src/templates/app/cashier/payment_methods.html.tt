@@ -69,10 +69,10 @@
 
     [% INCLUDE section title=l('Cryptocurrencies') withdrawal=l('Min Withdrawal') %]
     [% INCLUDE row id='btc' logo='bitcoin'          currencies='BTC' deposit='0.002' withdrawal='0.004' time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='bch' logo='bitcoin_cash'     currencies='BCH' deposit='0.01'  withdrawal='0.01'  time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='bch' logo='bitcoin_cash'     currencies='BCH' deposit='0.01'  withdrawal='0.003'  time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
     [% INCLUDE row id='eth' logo='ethereum_black'   currencies='ETH' deposit='0.01'  withdrawal='0.01'  time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
     [%# INCLUDE row id='etc' currencies='ETC' deposit='0.002' withdrawal='0.002' time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
-    [% INCLUDE row id='ltc' logo='litecoin'         currencies='LTC' deposit='0.1'   withdrawal='0.1'   time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
+    [% INCLUDE row id='ltc' logo='litecoin'         currencies='LTC' deposit='0.1'   withdrawal='0.02'   time=[l('Deposit: 3 blockchain confirmations'), l('Withdrawal: [_1] working day', 1)] %]
     </div>
 
     <div class="gr-padding-10">

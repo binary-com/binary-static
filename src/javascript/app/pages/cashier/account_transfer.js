@@ -87,8 +87,6 @@ const AccountTransfer = (() => {
         document.getElementById(messages.error).setVisibility(1);
     };
 
-    const getMinAmount = () => getMinWithdrawal(client_currency);
-
     const getDecimals = () => (isCryptocurrency(client_currency) ? 8 : 2);
 
     const showForm = () => {
@@ -97,7 +95,7 @@ const AccountTransfer = (() => {
         document.getElementById(form_id).setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: Math.min(+withdrawal_limit, +client_balance), format_money: true }]] },
+            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinWithdrawal(client_currency), max: Math.min(+withdrawal_limit, +client_balance), format_money: true }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -146,7 +144,7 @@ const AccountTransfer = (() => {
         BinarySocket.wait('balance').then((response) => {
             client_balance   = getPropertyValue(response, ['balance', 'balance']);
             client_currency  = Client.get('currency');
-            const min_amount = getMinAmount();
+            const min_amount = getMinWithdrawal(client_currency);
             if (!client_balance || +client_balance < min_amount) {
                 document.getElementById(messages.parent).setVisibility(1);
                 if (client_currency) {
