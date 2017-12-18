@@ -34,7 +34,7 @@ const ICOClaimForm = (() => {
             $('.button')
                 .off('click')
                 .on('click', () => {
-                    //TODO add api call for claim token.
+                    // TODO add api call for claim token.
                 });
             $('#cancel')
                 .off('click')
