@@ -1,4 +1,3 @@
-/* eslint-disable no-script-url, no-unused-vars, import/no-extraneous-dependencies */
 import React from 'react';
 
 const gambling_link = '<a href=\'%\' target=\'_blank\' rel=\'noopener noreferrer\'>%</a>'.replace(/%/g, 'http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx');

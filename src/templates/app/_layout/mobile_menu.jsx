@@ -1,4 +1,3 @@
-/* eslint-disable no-script-url, no-unused-vars, import/no-extraneous-dependencies */
 import React from 'react';
 
 import {Li} from '../../_common/components/elements.jsx';
@@ -22,7 +21,7 @@ const MobileMenu = () => (
                             {item.sub_items &&
                                 <ul className="sub_items">
                                     {item.sub_items.map((sub_item, sub_idx) => (
-                                        <li key={idx} id={sub_item.id} className={`sub_item ${sub_item.className || ''}`}>
+                                        <li key={sub_idx} id={sub_item.id} className={`sub_item ${sub_item.className || ''}`}>
                                             <a className="link" href={it.url_for(sub_item.url)}>{it.L(sub_item.text)}</a>
                                         </li>
                                     ))}
