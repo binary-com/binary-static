@@ -37,6 +37,7 @@ const TopUpVirtual         = require('../pages/user/account/top_up_virtual');
 const Accounts             = require('../pages/user/accounts');
 const ICOInfo              = require('../pages/user/ico_info');
 const ICOSubscribe         = require('../pages/user/ico_subscribe');
+const ICOClaimForm         = require('../pages/user/ico_claim_form');
 const LostPassword         = require('../pages/user/lost_password');
 const MetaTrader           = require('../pages/user/metatrader/metatrader');
 const AccountTypeSelection = require('../pages/user/new_account/account_type');
@@ -131,6 +132,7 @@ const pages_config = {
     'how-to-trade-mt5'       : { module: TabSelector },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
     'ico-info'               : { module: ICOInfo,                    is_authenticated: true, only_real: true, needs_currency: true },
+    'ico-claim-form'         : { module: ICOClaimForm,               is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
     'metals'                 : { module: GetStartedBeta.Metals },
     'open-positions'         : { module: StaticPages.OpenPositions },
