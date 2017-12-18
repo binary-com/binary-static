@@ -71,7 +71,7 @@ function getConfig() {
     if (program.branch === 'translations') {
         config.languages = ['ACH'];
     }
-    config.dist_path = Path.join(config.root_path, 'dist');
+    config.dist_path = Path.join(config.root_path, (program.branch || ''), 'dist');
     config.root_url  = `/${program.dev ? 'binary-static/' : ''}${program.branch ? `${program.branch}/` : ''}`;
     return config;
 }
