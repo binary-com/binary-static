@@ -25,9 +25,18 @@
         'one-var':               ['error', { initialized: 'never', uninitialized: 'always' }],
         'semi':                  ['error', 'always'],
         'camelcase':             0,
+        // react rules
+        'react/prop-types':      0,
     },
     'extends': [
         'airbnb-base',
         'binary',
+        'plugin:react/recommended',
     ],
+    'parserOptions': {
+        'ecmaVersion': 6,
+        'ecmaFeatures': {
+            "jsx": true
+        },
+    },
 }
