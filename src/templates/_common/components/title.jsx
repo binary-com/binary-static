@@ -1,4 +1,4 @@
-import React from 'react'; // eslint-disable-line
+import React from 'react';
 
 const Title = () => {
     const browser_title = it.title ? `${it.L(it.title)} | ` : '';

@@ -1,7 +1,6 @@
-/* eslint-disable no-unneeded-ternary */
-import React from 'react'; // eslint-disable-line
+import React from 'react';
 
-const Link = ({ // eslint-disable-line
+const Link = ({
     favicons,
 }) => favicons.map((fav, idx) => {
     const sizes = `${fav.size}x${fav.size}`;
@@ -11,7 +10,8 @@ const Link = ({ // eslint-disable-line
     return (
         <link
             key={idx}
-            rel={rel ? rel : undefined} sizes={sizes}
+            rel={rel || undefined}
+            sizes={sizes}
             type={fav.is_image && 'image/png' || undefined}
             href={it.url_for(url)}
         />
