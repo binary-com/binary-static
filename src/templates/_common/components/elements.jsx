@@ -18,11 +18,11 @@ export const Li = ({
                 text ? <strong>{header}</strong> : <h3>{header}</h3>
             )}
             {href ?
-                <a {...{
-                    href  : `${href}${param}`,
-                    rel   : /^http/.test(href) ? 'noopener noreferrer' : undefined,
-                    target: target || undefined,
-                }}>
+                <a
+                    href={`${href}${param}`}
+                    rel={/^http/.test(href) ? 'noopener noreferrer' : undefined}
+                    target={target || undefined}
+                >
                     {content}
                 </a>
                 : content
