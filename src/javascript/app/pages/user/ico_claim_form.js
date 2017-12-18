@@ -2,8 +2,8 @@ const moment           = require('moment');
 const BinarySocket     = require('../../base/socket');
 const loadPreviousUrl  = require('../../base/binary_pjax').loadPreviousUrl;
 const Client           = require('../../base/client');
-const State            = require('../../../_common/storage').State;
 const getDecimalPlaces = require('../../common/currency').getDecimalPlaces;
+const State            = require('../../../_common/storage').State;
 const toTitleCase      = require('../../../_common/string_util').toTitleCase;
 
 const ICOClaimForm = (() => {
@@ -21,8 +21,8 @@ const ICOClaimForm = (() => {
             const last_name      = toTitleCase(State.getResponse('get_settings.last_name'));
             const full_name      = `${first_name} ${last_name}`;
             const decimal_places = getDecimalPlaces(currency);
-            const final_price    = (State.getResponse('ico_status.final_price')).toFixed(decimal_places);
-            const date_today     = (window.time || moment()).format('DD MMM YYYY');
+            const final_price    = (State.getResponse('ico_status.final_price') || 0).toFixed(decimal_places);
+            const date_today     = (window.time || moment.utc()).format('DD MMM YYYY');
             const tokens         = State.get('ico_token_count');
             // Set input values for form.
             $('.claimer_name').val(full_name);
@@ -34,7 +34,7 @@ const ICOClaimForm = (() => {
             $('.button')
                 .off('click')
                 .on('click', () => {
-                    // Make some api call?
+                    //TODO add api call for claim token.
                 });
             $('#cancel')
                 .off('click')
