@@ -56,9 +56,17 @@
                 <h1 class="intro-text">[% l("{JAPAN ONLY}Binary Options", website_name) %]</h1>
                 <img class="responsive" src="[% request.url_for('images/japan/version1/pair.svg') %]" />
                 <h3 class="intro-subtext">[% l("{JAPAN ONLY}Now you can trade fx markets using binary options with one of the origical pioneers of binary options worldwide") %]</h3>
-                <form>
-                    <input type="input" placeholder="[% l("{JAPAN ONLY}Enter your email") %]" />
-                    <a href="" class="button"><span>[% l("{JAPAN ONLY}Account Opening") %]</span></a>
+                <form class="signup-form">
+                    <div class="signup-form-input">
+                        <div class="input-group">
+                            <input autocomplete="off" name="email" id="email" maxlength="50" type="email" placeholder="[% l("{JAPAN ONLY}Enter your email") %]" />
+                            <button type="submit" id="btn-submit-email"><span>[% l("{JAPAN ONLY}Account Opening") %]</span></button>
+                        </div>
+                        <span class="error-msg invisible">[% l("{JAPAN ONLY}This field is required") %]</span>
+                    </div>
+                    <div class="signup-form-success invisible">
+                        <p>[% l("{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.") %]</p>
+                    </div>
                 </form>
             </div>
             <div class="gr-6 gr-12-m">
@@ -385,9 +393,17 @@
             <div class="gr-row">
                 <div class="gr-12">
                     <h1 class="">[% l("{JAPAN ONLY}Sign up for a free account") %]</h1>
-                    <form>
-                        <input type="input" placeholder="[% l("{JAPAN ONLY}Enter your email") %]"/>
-                        <a href="" class="button"><span>[% l("{JAPAN ONLY}Create free account") %]</span></a>
+                    <form class="signup-form">
+                        <div class="signup-form-input">
+                            <div class="input-group">
+                                <input autocomplete="off" name="email" id="email" maxlength="50" type="email" placeholder="[% l("{JAPAN ONLY}Enter your email") %]" />
+                                <button type="submit" id="btn-submit-email"><span>[% l("{JAPAN ONLY}Account Opening") %]</span></button>
+                            </div>
+                            <span class="error-msg invisible">[% l("{JAPAN ONLY}This field is required") %]</span>
+                        </div>
+                        <div class="signup-form-success invisible">
+                            <p>[% l("{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.") %]</p>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -526,9 +542,17 @@
         <div class="gr-row">
             <div class="gr-12">
                 <h1 class="">[% l("{JAPAN ONLY}Sign up for a free account") %]</h1>
-                <form>
-                    <input type="input" placeholder="[% l("{JAPAN ONLY}Enter your email") %]" />
-                    <a href="" class="button"><span>[% l("{JAPAN ONLY}Create free account") %]</span></a>
+                <form class="signup-form">
+                    <div class="signup-form-input">
+                        <div class="input-group">
+                            <input autocomplete="off" name="email" id="email" maxlength="50" type="email" placeholder="[% l("{JAPAN ONLY}Enter your email") %]" />
+                            <button type="submit" id="btn-submit-email"><span>[% l("{JAPAN ONLY}Account Opening") %]</span></button>
+                        </div>
+                        <span class="error-msg invisible">[% l("{JAPAN ONLY}This field is required") %]</span>
+                    </div>
+                    <div class="signup-form-success invisible">
+                        <p>[% l("{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.") %]</p>
+                    </div>
                 </form>
             </div>
         </div>
@@ -546,6 +570,6 @@
 </footer>
 
 <script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
-<!-- script src="[% request.url_for('js/landing_pages/graduate_program.js') _ '?' _ static_hash %]"></script -->
+<script src="[% request.url_for('js/landing_pages/japan.js') _ '?' _ static_hash %]"></script>
 </body>
 </html>
