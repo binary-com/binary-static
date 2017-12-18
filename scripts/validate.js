@@ -1,10 +1,10 @@
-/* eslint-disable */
-const fs = require('fs');
+/* eslint-disable import/no-extraneous-dependencies, no-console */
+const program    = require('commander');
+const fs         = require('fs');
 const HtmlDiffer = require('html-differ').HtmlDiffer;
-const logger = require('html-differ/lib/logger');
-const path = require('path');
-const common = require('./common');
-const program = require('commander');
+const logger     = require('html-differ/lib/logger');
+const path       = require('path');
+const common     = require('./common');
 
 program
     .version('0.1.0')
@@ -12,19 +12,19 @@ program
     .option('-p, --path [save_as]', 'Diff only the template/s that match the regex save_as, REQUIRED')
     .parse(process.argv);
 
-if(!program.path) {
-    console.log("validate.js --path option is required, try --help to see the options.".red);
+if (!program.path) {
+    console.log('validate.js --path option is required, try --help to see the options.'.red);
     process.exit(0);
 }
 
 
 const options = {
-    ignoreAttributes: [],
-    compareAttributesAsJSON: [],
-    ignoreWhitespaces: true,
-    ignoreComments: false,
-    ignoreEndTags: false,
-    ignoreDuplicateAttributes: false
+    ignoreAttributes         : [],
+    compareAttributesAsJSON  : [],
+    ignoreWhitespaces        : true,
+    ignoreComments           : false,
+    ignoreEndTags            : false,
+    ignoreDuplicateAttributes: false,
 };
 
 const htmlDiffer = new HtmlDiffer(options);
@@ -33,38 +33,39 @@ const diff = (save_as) => {
 
     const impl = (p1, p2) => {
         console.warn(`${p1} VS ${p2}`);
-        p1 = path.join(common.root_path, p1);
-        p2 = path.join(common.root_path, p2);
-        if(!fs.existsSync(p1) || !fs.existsSync(p2)) {
-            console.error('NOT FOUND ', p1, p2);
+        const path1 = path.join(common.root_path, p1);
+        const path2 = path.join(common.root_path, p2);
+        if (!fs.existsSync(path1) || !fs.existsSync(path2)) {
+            console.error('NOT FOUND ', path1, path2);
             return ;
         }
 
-        const html1 = fs.readFileSync(p1, 'utf-8');
-        const html2 = fs.readFileSync(p2, 'utf-8');
+        const html1 = fs.readFileSync(path1, 'utf-8');
+        const html2 = fs.readFileSync(path2, 'utf-8');
 
-        const diff = htmlDiffer.diffHtml(html1, html2);
-        const isEqual = htmlDiffer.isEqual(html1, html2);
-        const res = logger.getDiffText(diff, { charsAroundDiff: 40 });
+        const diffHTML = htmlDiffer.diffHtml(html1, html2);
+        const isEqual  = htmlDiffer.isEqual(html1, html2);
 
-        logger.logDiffText(diff, { charsAroundDiff: 40 });
-    }
+        if (!isEqual) {
+            logger.logDiffText(diffHTML, { charsAroundDiff: 40 });
+        }
+    };
     common.languages.forEach(lang => {
-        lang = lang.toLowerCase();
+        const language = lang.toLowerCase();
 
         impl(
-            `dist/${lang}/${save_as}.html`,
-            `dist-perl/${lang}/${save_as}.html`
-        )
+            `dist/${language}/${save_as}.html`,
+            `dist-perl/${language}/${save_as}.html`
+        );
         impl(
-            `dist/${lang}/pjax/${save_as}.html`,
-            `dist-perl/${lang}/pjax/${save_as}.html`
-        )
+            `dist/${language}/pjax/${save_as}.html`,
+            `dist-perl/${language}/pjax/${save_as}.html`
+        );
     });
-}
+};
 
 const regx = new RegExp(program.path, 'i');
 common.pages
     .filter(p => regx.test(p.save_as))
     .map(p => p.save_as)
-    .forEach(diff)
+    .forEach(diff);

@@ -1,6 +1,6 @@
 import React from 'react'; // eslint-disable-line
 
-export default ({
+const FormVerifyEmail = ({
     className = '',
     padding = 8,
     email_padding = 7,
@@ -28,3 +28,5 @@ export default ({
         </div>
     </form>
 );
+
+export default FormVerifyEmail;

@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies, no-param-reassign, no-console */
+/* eslint-disable import/no-extraneous-dependencies, no-console */
 require('babel-register')({
     plugins: [
         'babel-plugin-transform-es2015-modules-commonjs',
@@ -9,10 +9,9 @@ require('babel-register')({
     cache     : true,
 });
 
-
-const React = require('react');
-const ReactDOMServer  = require('../node_modules/react-dom/server.js');
-const RenderHTML = require('react-render-html');
+const React          = require('react');
+const RenderHTML     = require('react-render-html');
+const ReactDOMServer = require('../node_modules/react-dom/server.js');
 
 const renderComponent = (context, path) => {
     const Component = require(path).default; // eslint-disable-line
@@ -27,17 +26,14 @@ const renderComponent = (context, path) => {
         .replace(/GTM_END_PLACEHOLDER/g, '<!-- End Google Tag Manager --><!-- FlushHead -->');
 };
 
-const fs = require('fs');
-const Path = require('path');
-const Url = require('url');
-const Gettext = require('./gettext');
-const Crypto = require('crypto');
-const common = require('./common');
+const program              = require('commander');
+const Crypto               = require('crypto');
+const fs                   = require('fs');
+const Path                 = require('path');
+const Url                  = require('url');
+const common               = require('./common');
 const generate_static_data = require('./generate-static-data');
-const program = require('commander');
-
-
-const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER'; // used in layout.jsx
+const Gettext              = require('./gettext');
 
 program
     .version('0.2.0')
@@ -49,7 +45,7 @@ program
     .parse(process.argv);
 
 // TODO: to be removed
-if(!program.path) {
+if (!program.path) {
     program.outputHelp(str => {
         console.error('  ERROR: --path is missing'.red);
         console.error(str.red);
@@ -61,52 +57,48 @@ if(!program.path) {
  * Common functions
  */
 
-function getConfig() {
-    const config = {
-        languages       : common.languages,
-        sections        : ['app', 'static'],
-        root_path       : common.root_path,
+const getConfig = () => (
+    {
         add_translations: false,
-    };
-    if (program.branch === 'translations') {
-        config.languages = ['ACH'];
+        dist_path       : Path.join(common.root_path, (program.branch || ''), 'dist'),
+        languages       : program.branch === 'translations' ? ['ACH'] : common.languages,
+        root_path       : common.root_path,
+        root_url        : `/${program.dev ? 'binary-static/' : ''}${program.branch ? `${program.branch}/` : ''}`,
+        sections        : ['app', 'static'],
     }
-    config.dist_path = Path.join(config.root_path, (program.branch || ''), 'dist');
-    config.root_url  = `/${program.dev ? 'binary-static/' : ''}${program.branch ? `${program.branch}/` : ''}`;
-    return config;
-}
+);
 
-function createDirectories() {
+const createDirectories = () => {
     const config = getConfig();
-    const mkdir = path => fs.existsSync(path) || fs.mkdirSync(path);
 
     console.log(`Target: ${config.dist_path}`.yellow);
 
+    const mkdir = path => fs.existsSync(path) || fs.mkdirSync(path);
     mkdir(Path.join(config.dist_path));
+
+    let language;
     config.languages.forEach(lang => {
-        lang = lang.toLowerCase();
-        mkdir(Path.join(config.dist_path, lang));
-        mkdir(Path.join(config.dist_path, `${lang}/pjax`));
+        language = lang.toLowerCase();
+        mkdir(Path.join(config.dist_path, language));
+        mkdir(Path.join(config.dist_path, `${language}/pjax`));
     });
-}
+};
 
-function shouldCompile(excludes, lang) {
+const shouldCompile = (excludes, lang) => {
     if (excludes && !/^ACH$/i.test(lang)) {
+        const language_is_excluded = excludes.toUpperCase().indexOf(lang.toUpperCase()) !== -1;
 
-        excludes = excludes.toUpperCase();
-        lang = lang.toUpperCase();
-
-        if(/^NOT-/.test(excludes)) {
-            return excludes.indexOf(lang) !== -1;
+        if (/^NOT-/i.test(excludes)) {
+            return language_is_excluded;
         }
-        return excludes.indexOf(lang) === -1;
+        return !language_is_excluded;
     }
     return true;
-}
+};
 
-function fileHash(path) {
-    return new Promise((res) => {
-        const fd = fs.createReadStream(path);
+const fileHash = (path) => (
+    new Promise((res) => {
+        const fd   = fs.createReadStream(path);
         const hash = Crypto.createHash('sha1');
         hash.setEncoding('hex');
 
@@ -116,8 +108,8 @@ function fileHash(path) {
         });
 
         fd.pipe(hash);
-    });
-};
+    })
+);
 
 
 /** **************************************
@@ -126,31 +118,31 @@ function fileHash(path) {
 
 const createTranslator = lang => {
     const gettext = Gettext.getInstance();
-    lang = lang.toLowerCase(lang);
-    gettext.setLang(lang);
+    gettext.setLang(lang.toLowerCase());
     return (text, ...args) => gettext.gettext(text, ...args);
 };
 
-const createUrlFinder  = default_lang => {
-    default_lang = default_lang.toLowerCase();
-    const config = getConfig();
-    return (url, lang = default_lang) => {
-        if(url === '' || url === '/') {
-            url = '/home';
+const createUrlFinder = default_lang => {
+    const default_language = default_lang.toLowerCase();
+    const config           = getConfig();
+    return (url, lang = default_language) => {
+        let new_url = url;
+        if (new_url === '' || new_url === '/') {
+            new_url = '/home';
         }
 
-        if(/^\/?(images|js|css|scripts|download)/.test(url)) {
-            return Path.join(config.root_url, url);
+        if (/^\/?(images|js|css|scripts|download)/.test(new_url)) {
+            return Path.join(config.root_url, new_url);
         }
 
-        const p = Url.parse(url, true);
+        const p        = Url.parse(new_url, true);
         const pathname = p.pathname.replace(/^\//, '');
-        if(common.pages.filter(page => page.save_as === pathname).length) {
+        if (common.pages.filter(page => page.save_as === pathname).length) {
             p.pathname = Path.join(config.root_url, `${lang}/${pathname}.html`);
             return Url.format(p);
         }
 
-        throw new TypeError(`Invalid url ${url}`);
+        throw new TypeError(`Invalid url ${new_url}`);
     };
 };
 
@@ -277,12 +269,13 @@ const createContextBuilder = async () => {
 
 async function compile(page) {
     console.log(`Compiling ${page.save_as}`.green);
-    const config = getConfig();
-    const languages = config.languages.filter(lang => shouldCompile(page.excludes, lang));
-    const contextBuilder = await createContextBuilder();
+    const config              = getConfig();
+    const languages           = config.languages.filter(lang => shouldCompile(page.excludes, lang));
+    const context_builder     = await createContextBuilder();
+    const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER'; // used in layout.jsx
 
     console.time(page.save_as);
-    const tasks = languages.map(async lang => { // eslint-disable-line
+    const tasks = languages.map(async lang => {
 
         const model = {
             website_name   : 'Binary.com',
@@ -298,10 +291,10 @@ async function compile(page) {
             is_pjax_request: true,
         };
 
-        const context = contextBuilder.buildFor(model);
+        const context   = context_builder.buildFor(model);
         const page_html = renderComponent(context, `../src/templates/${page.tpl_path}.jsx`);
 
-        if(page.layout) {
+        if (page.layout) {
             const layout_path = `../src/templates/${page.tpl_path.split('/')[0]}/_layout/layout.jsx`;
 
             const layout_pjax = renderComponent(context, layout_path);

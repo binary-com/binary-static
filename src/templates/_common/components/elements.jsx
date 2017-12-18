@@ -57,9 +57,9 @@ export const FillBox = ({
     children,
 }) => {
     let classes1 = '';
-    classes1 += padding ? 'gr-12-m gr-6-p gr-padding-10 ' : '';
-    classes1 += (padding && center) ? `gr-${padding || 9} gr-centered` : '';
-    classes1 += (padding && !center) ? `gr-${padding || 6}` : '';
+    if (padding) {
+        classes1 = `gr-12-m gr-6-p gr-padding-10 gr-${padding}${center ? ' gr-centered' : ''}`;
+    }
 
     let classes2 = '';
     classes2 += align_left ? '' : 'center-text ';

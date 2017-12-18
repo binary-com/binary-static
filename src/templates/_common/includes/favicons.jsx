@@ -3,13 +3,14 @@ import React from 'react'; // eslint-disable-line
 
 const Link = ({ // eslint-disable-line
     favicons,
-}) => favicons.map(fav => {
+}) => favicons.map((fav, idx) => {
     const sizes = `${fav.size}x${fav.size}`;
     const rel = fav.is_image ? 'icon' : 'apple-touch-icon';
     const url = `images/favicons/${fav.is_image ? 'fav' : 'apple-touch-'}icon-${sizes}.png`;
 
     return (
         <link
+            key={idx}
             rel={rel ? rel : undefined} sizes={sizes}
             type={fav.is_image && 'image/png' || undefined}
             href={it.url_for(url)}
@@ -17,7 +18,7 @@ const Link = ({ // eslint-disable-line
     );
 });
 
-export default () => (
+const Favicons = () => (
     <Link
         favicons={[
             { size: '57' },
@@ -37,3 +38,5 @@ export default () => (
         ]}
     />
 );
+
+export default Favicons;
