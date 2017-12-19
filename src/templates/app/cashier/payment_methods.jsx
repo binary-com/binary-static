@@ -272,7 +272,7 @@ const PaymentMethods = () => (
                 logo='bitcoin'
                 currencies='BTC'
                 deposit='0.002'
-                withdrawal='0.002'
+                withdrawal='0.004'
                 time={[
                     it.L('Deposit: 3 blockchain confirmations'),
                     it.L('Withdrawal: [_1] working day', 1),
@@ -283,7 +283,7 @@ const PaymentMethods = () => (
                 logo='bitcoin_cash'
                 currencies='BCH'
                 deposit='0.01'
-                withdrawal='0.01'
+                withdrawal='0.003'
                 time={[
                     it.L('Deposit: 3 blockchain confirmations'),
                     it.L('Withdrawal: [_1] working day', 1),
@@ -315,7 +315,7 @@ const PaymentMethods = () => (
                 logo='litecoin'
                 currencies='LTC'
                 deposit='0.1'
-                withdrawal='0.1'
+                withdrawal='0.02'
                 time={[
                     it.L('Deposit: 3 blockchain confirmations'),
                     it.L('Withdrawal: [_1] working day', 1),
