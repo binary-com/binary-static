@@ -70,9 +70,9 @@ export const FillBox = ({
     return (
         <div className={[classes1, className].join(' ')}>
             <div className={classes2}>
-                <div className="inline-flex center-align gr-gutter">
+                <div className='inline-flex center-align gr-gutter'>
                     {image &&
-                        <img className="half-sized-picture gr-gutter-right" src={it.url_for(image)} />
+                        <img className='half-sized-picture gr-gutter-right' src={it.url_for(image)} />
                     }
                     {href ?
                         <a
@@ -85,7 +85,7 @@ export const FillBox = ({
                             {em ? <em> {text} </em> : text}
                         </a>
                         :
-                        <p className="gr-gutter">
+                        <p className='gr-gutter'>
                             {em ? <em> {text} </em> : text}
                         </p>
                     }
@@ -178,7 +178,7 @@ export const Table = ({
     );
     return (
         scroll ?
-            <div className="table-container">
+            <div className='table-container'>
                 {content}
             </div>
             :

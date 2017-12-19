@@ -2,8 +2,8 @@ import React from 'react';
 import {List} from '../../_common/components/elements.jsx';
 
 const FooterColumn = ({header, items}) => (
-    <div className="gr-4">
-        <h4 className="secondary-color"><strong>{header}</strong></h4>
+    <div className='gr-4'>
+        <h4 className='secondary-color'><strong>{header}</strong></h4>
         <List items={items} className='bottom-margin top-margin' />
     </div>
 );
@@ -11,20 +11,20 @@ const FooterColumn = ({header, items}) => (
 const SocialIcons = ({networks, is_centered}) => (
     <div className={`gr-padding-10 gr-row ${is_centered && 'gr-row-align-center' || ''}`}>
         {networks.map((net, idx) => (
-            <a key={idx} href={net.href} target="_blank" className={`${is_centered ? 'gr-2 gr-1-m' : 'gr-3'} gr-no-gutter-right`} rel="noopener noreferrer">
-                <img className="responsive" src={it.url_for(`images/pages/footer/${net.media}.svg`)}/>
+            <a key={idx} href={net.href} target='_blank' className={`${is_centered ? 'gr-2 gr-1-m' : 'gr-3'} gr-no-gutter-right`} rel='noopener noreferrer'>
+                <img className='responsive' src={it.url_for(`images/pages/footer/${net.media}.svg`)}/>
             </a>
         ))}
     </div>
 );
 
 const FooterJA = () => (
-    <div id="footer" className="no-print">
-        <div id="footer-menu" className="primary-bg-color gr-padding-10">
-            <div className="container">
-                <div className="gr-row gr-padding-10">
-                    <div className="gr-6 gr-12-m gr-parent gr-no-gutter">
-                        <div className="gr-row">
+    <div id='footer' className='no-print'>
+        <div id='footer-menu' className='primary-bg-color gr-padding-10'>
+            <div className='container'>
+                <div className='gr-row gr-padding-10'>
+                    <div className='gr-6 gr-12-m gr-parent gr-no-gutter'>
+                        <div className='gr-row'>
                             <FooterColumn
                                 header={it.L('Our Company')}
                                 items={[
@@ -55,8 +55,8 @@ const FooterJA = () => (
                             />
                         </div>
                     </div>
-                    <div className="gr-6 gr-12-m gr-parent gr-no-gutter">
-                        <div className="gr-row">
+                    <div className='gr-6 gr-12-m gr-parent gr-no-gutter'>
+                        <div className='gr-row'>
                             <FooterColumn
                                 header={it.L('Legal')}
                                 items={[
@@ -72,8 +72,8 @@ const FooterJA = () => (
                                 ]}
                             />
 
-                            <div className="gr-4">
-                                <h4 className="secondary-color"><strong>{it.L('{JAPAN ONLY}Social Media')}</strong></h4>
+                            <div className='gr-4'>
+                                <h4 className='secondary-color'><strong>{it.L('{JAPAN ONLY}Social Media')}</strong></h4>
                                 <SocialIcons
                                     networks={[
                                         { media: 'youtube',  href: 'https://www.youtube.com/channel/UC0BZmStXHJdsrjboyLgcf8A' },
@@ -87,17 +87,17 @@ const FooterJA = () => (
                 </div>
             </div>
         </div>
-        <div id="footer-regulatory" className="primary-bg-color-dark gr-padding-10 gr-child">
-            <div className="container">
-                <p id="regulatory-text" className="gr-padding-10 gr-parent content-inverse-color no-margin">
+        <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10 gr-child'>
+            <div className='container'>
+                <p id='regulatory-text' className='gr-padding-10 gr-parent content-inverse-color no-margin'>
                     {it.L('{JAPAN ONLY}Footer regulatory text')}
                 </p>
             </div>
         </div>
-        <div id="footer-last" className="primary-bg-color">
-            <div className="container">
-                <div className="gr-padding-10">
-                    <p className="gambling content-inverse-color no-para-margin">
+        <div id='footer-last' className='primary-bg-color'>
+            <div className='container'>
+                <div className='gr-padding-10'>
+                    <p className='gambling content-inverse-color no-para-margin'>
                         {it.L(
                             'Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href="[_1]">Responsible Trading</a>.',
                             it.url_for('responsible-trading')
@@ -106,17 +106,17 @@ const FooterJA = () => (
                 </div>
             </div>
         </div>
-        <div id="end-note" className="invisible content-inverse-color center-text"></div>
+        <div id='end-note' className='invisible content-inverse-color center-text'></div>
     </div>
 );
 
 const FooterNormal = () => (
-    <div id="footer" className="no-print">
-        <div id="footer-menu" className="primary-bg-color gr-padding-10">
-            <div className="container">
-                <div className="gr-row gr-padding-10">
-                    <div className="gr-6 gr-12-m gr-parent gr-no-gutter">
-                        <div className="gr-row">
+    <div id='footer' className='no-print'>
+        <div id='footer-menu' className='primary-bg-color gr-padding-10'>
+            <div className='container'>
+                <div className='gr-row gr-padding-10'>
+                    <div className='gr-6 gr-12-m gr-parent gr-no-gutter'>
+                        <div className='gr-row'>
                             <FooterColumn
                                 header={it.L('Our Company')}
                                 items={[
@@ -151,8 +151,8 @@ const FooterNormal = () => (
                             />
                         </div>
                     </div>
-                    <div className="gr-6 gr-12-m gr-parent gr-no-gutter">
-                        <div className="gr-row">
+                    <div className='gr-6 gr-12-m gr-parent gr-no-gutter'>
+                        <div className='gr-row'>
                             <FooterColumn
                                 header={it.L('Legal')}
                                 items={[
@@ -187,10 +187,10 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        <div id="footer-regulatory" className="primary-bg-color-dark gr-padding-10 gr-child">
-            <div className="container">
-                <div className="gr-row">
-                    <p id="regulatory-text" className="gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color no-margin">
+        <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10 gr-child'>
+            <div className='container'>
+                <div className='gr-row'>
+                    <p id='regulatory-text' className='gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color no-margin'>
                         {
                             it.L(
                                 'This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - [_1]view license[_2]. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - [_3]view license[_2], and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker\'s Licence issued on 1 July 2017 (licence no. 1010285). This website\'s services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.',
@@ -200,16 +200,16 @@ const FooterNormal = () => (
                             )
                         }
                     </p>
-                    <div className="gr-3 gr-12-m gr-5-p center-text" id="social-networks">
-                        <div className="gr-row id-hide">
-                            <div className="gr-5">
-                                <a href="https://www.gov.im/gambling/" target="_blank" rel="noopener noreferrer">
-                                    <img id="iom_icon_footer" className="responsive" src={it.url_for('images/pages/footer/isle-of-man.png')}/>
+                    <div className='gr-3 gr-12-m gr-5-p center-text' id='social-networks'>
+                        <div className='gr-row id-hide'>
+                            <div className='gr-5'>
+                                <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
+                                    <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')}/>
                                 </a>
                             </div>
-                            <div className="gr-7">
-                                <a href="https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1" target="_blank" rel="noopener noreferrer">
-                                    <img id="lga_icon_footer" className="responsive" src={it.url_for('images/pages/footer/mga-logo-footer.svg')}/>
+                            <div className='gr-7'>
+                                <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
+                                    <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')}/>
                                 </a>
                             </div>
                         </div>
@@ -229,10 +229,10 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        <div id="footer-last" className="primary-bg-color">
-            <div className="container">
-                <div className="gr-padding-10">
-                    <p className="gambling content-inverse-color no-para-margin">
+        <div id='footer-last' className='primary-bg-color'>
+            <div className='container'>
+                <div className='gr-padding-10'>
+                    <p className='gambling content-inverse-color no-para-margin'>
                         {
                             it.L(
                                 'Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about [_1]Responsible Trading[_2].',
@@ -244,7 +244,7 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        <div id="end-note" className="invisible content-inverse-color center-text"></div>
+        <div id='end-note' className='invisible content-inverse-color center-text'></div>
     </div>
 );
 

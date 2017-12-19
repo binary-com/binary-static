@@ -25,20 +25,20 @@ const Row = ({
     const times = Array.isArray(time) ? time : [time];
     return (
         <div className={`gr-row gr-padding-10 ${is_header ? 'table-header' : 'table-body' }`}>
-            <div className="gr-2 gr-6-m">
+            <div className='gr-2 gr-6-m'>
                 {logo ?
                     <img src={it.url_for(`images/pages/home-beta/payment/${  logo  }.svg`)} />
                     : method
                 }
             </div>
-            <div className="gr-2 gr-6-m">{currencies}</div>
-            <div className="gr-2 gr-hide-m">
+            <div className='gr-2 gr-6-m'>{currencies}</div>
+            <div className='gr-2 gr-hide-m'>
                 { deposits.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
             </div>
-            <div className="gr-3 gr-hide-m">
+            <div className='gr-3 gr-hide-m'>
                 { withdrawals.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
             </div>
-            <div className="gr-3 gr-hide-m">
+            <div className='gr-3 gr-hide-m'>
                 { times.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
                 {is_header ? '*' : ''}
             </div>
@@ -51,8 +51,8 @@ const Section = ({
     withdrawal,
 }) => (
     <React.Fragment>
-        <div className="gr-row gr-padding-10">
-            <div className="gr-12">
+        <div className='gr-row gr-padding-10'>
+            <div className='gr-12'>
                 <h3>{title}</h3>
             </div>
         </div>
@@ -70,10 +70,10 @@ const Section = ({
 const PaymentMethods = () => (
     <div id='cashier-content'>
         <h1>{it.L('Available payment methods')}</h1>
-        <div className="gr-12">
-            <div id="payment_method_suggestions gr-padding-10" className='center-text'>
-                <div className="gr-padding-10 invisible upgrademessage">
-                    <a className="button"></a>
+        <div className='gr-12'>
+            <div id='payment_method_suggestions gr-padding-10' className='center-text'>
+                <div className='gr-padding-10 invisible upgrademessage'>
+                    <a className='button'></a>
                 </div>
                 <p>
                     <Button url='/' text={it.L('Open an account now')} />
@@ -83,7 +83,7 @@ const PaymentMethods = () => (
             </div>
         </div>
 
-        <div id="payment_methods">
+        <div id='payment_methods'>
             <Section title={it.L('Bank wire/Money transfer')} />
             <Row
                 id='int_bank_wire'
@@ -323,8 +323,8 @@ const PaymentMethods = () => (
             />
         </div>
 
-        <div className="gr-padding-10">
-            <p className="hint">*{it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
+        <div className='gr-padding-10'>
+            <p className='hint'>*{it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
         </div>
     </div>
 );

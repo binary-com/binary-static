@@ -17,12 +17,12 @@ const MobileMenu = () => (
 
                     return (
                         <li key={idx} id={item.id} className={`item ${item.className || ''}`}>
-                            <a className="link" href={url}>{it.L(item.text)}</a>
+                            <a className='link' href={url}>{it.L(item.text)}</a>
                             {item.sub_items &&
-                                <ul className="sub_items">
+                                <ul className='sub_items'>
                                     {item.sub_items.map((sub_item, sub_idx) => (
                                         <li key={sub_idx} id={sub_item.id} className={`sub_item ${sub_item.className || ''}`}>
-                                            <a className="link" href={it.url_for(sub_item.url)}>{it.L(sub_item.text)}</a>
+                                            <a className='link' href={it.url_for(sub_item.url)}>{it.L(sub_item.text)}</a>
                                         </li>
                                     ))}
                                 </ul>

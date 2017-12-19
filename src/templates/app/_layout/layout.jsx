@@ -15,14 +15,14 @@ const WithLayout = ({ children }) => {
     const content_class = `${it.current_route || ''}-content`;
     const ico_class = `top-margin${  it.layout === 'default' ? ' bottom-margin' : ''}`;
     return (
-        <div id="content" className={it.current_route ? content_class : undefined} >
+        <div id='content' className={it.current_route ? content_class : undefined} >
             <IcoBanner container='ico-banner-container'  className={ico_class} />
-            <div id="page_info" style={{display: 'none'}}>
+            <div id='page_info' style={{display: 'none'}}>
                 <Title />
-                <div id="content_class">{content_class}</div>
+                <div id='content_class'>{content_class}</div>
             </div>
             {it.layout !== 'full_width' ?
-                <div className="container">
+                <div className='container'>
                     {children}
                 </div> :
                 children
@@ -44,14 +44,14 @@ const Layout = () => {
         <html>
             <Head />
             <body className={it.language} >
-                <div id="msg_notification" className="notice-msg center-text"></div>
+                <div id='msg_notification' className='notice-msg center-text'></div>
                 <div id='page-wrapper'>
                     <Header />
-                    <div id="content-holder">
+                    <div id='content-holder'>
                         <MainMenu />
                         <MobileMenu />
                         <Gtm />
-                        <a href="javascript:;" id="scrollup"></a>
+                        <a href='javascript:;' id='scrollup'></a>
                         <InnerContent />
                     </div>
                     <Footer />

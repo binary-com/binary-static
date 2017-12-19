@@ -7,9 +7,9 @@ const Browsers = ({
     header,
     items = [],
 }) => (
-    <div className="gr-6 gr-12-m">
-        <a id={id} target="_blank" href={href} className="li-boxes-content-icon" rel="noopener noreferrer">{company}</a>
-        <div className="li-2-boxes-content li-boxes-content-extra-height">
+    <div className='gr-6 gr-12-m'>
+        <a id={id} target='_blank' href={href} className='li-boxes-content-icon' rel='noopener noreferrer'>{company}</a>
+        <div className='li-2-boxes-content li-boxes-content-extra-height'>
             <h2>{header}</h2>
             <ul>
                 {items.map((item, idx) => (
@@ -22,14 +22,14 @@ const Browsers = ({
 
 const BrowserSupport = () => (
     <React.Fragment>
-        <div className="gr-12 static_full">
+        <div className='gr-12 static_full'>
             <h1>{it.L('Login trouble')}</h1>
             <p>{it.L('If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session.')}</p>
             <p>{it.L('To enable cookies, follow the instructions below for the browser version that you are using.')}</p>
         </div>
 
-        <div className="gr-parent clear">
-            <div className="gr-row">
+        <div className='gr-parent clear'>
+            <div className='gr-row'>
                 <Browsers id='chrome' href='https://www.google.com/chrome/' company='Binary (C.R.) S.A.' header='Chrome 51+' items={[
                     it.L('Go to "<strong>Chrome Menu (Customize and control Google Chrome)</strong>" dropdown and select <strong>Settings</strong>.'),
                     it.L('Click on the <strong>Show advanced settings</strong>.'),
@@ -46,8 +46,8 @@ const BrowserSupport = () => (
         </div>
         </div>
 
-        <div className="gr-parent clear">
-            <div className="gr-row">
+        <div className='gr-parent clear'>
+            <div className='gr-row'>
                 <Browsers id='safari' href='https://www.apple.com/safari/' company='Binary (Europe) Ltd' header='Safari 9.x+' items={[
                     it.L('Go to the <strong>Safari</strong> menu and select <strong>Preferences</strong>.'),
                     it.L('Click on the <strong>Privacy</strong> tab.'),
@@ -64,8 +64,8 @@ const BrowserSupport = () => (
             </div>
         </div>
 
-        <div className="gr-parent">
-            <div className="gr-row">
+        <div className='gr-parent'>
+            <div className='gr-row'>
                 <Browsers id='internet_explorer' href='https://www.microsoft.com/windows/internet-explorer/default.aspx' company='Binary Ltd' header='Microsoft Internet Explorer 11+' items={[
                     it.L('Go to the <strong>Tools</strong> menu and select <strong>Internet Options</strong>.'),
                     it.L('Click on the <strong>Privacy</strong> tab.'),
@@ -82,7 +82,7 @@ const BrowserSupport = () => (
                 ]}browser_supp />
             </div>
         </div>
-        <div className="gr-padding-20 clear"></div>
+        <div className='gr-padding-20 clear'></div>
     </React.Fragment>
 );
 

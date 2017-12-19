@@ -8,43 +8,43 @@ const LanguageUl = ({type, color}) => {
         <ul id={id}>
             <li>
                 <span className={`world ${world_color}`}></span>
-                <div className="language-wrapper">
-                    <span className="language"></span>
+                <div className='language-wrapper'>
+                    <span className='language'></span>
                 </div>
-                <span className="nav-caret"></span>
+                <span className='nav-caret'></span>
             </li>
         </ul>
     );
 };
 const Account = () => (
-    <a href="javascript:;">
-        <div className="main-account">
-            <div className="account-type nowrap"></div>
-            <div className="account-id"></div>
-            <div className="topMenuBalance">0</div>
+    <a href='javascript:;'>
+        <div className='main-account'>
+            <div className='account-type nowrap'></div>
+            <div className='account-id'></div>
+            <div className='topMenuBalance'>0</div>
         </div>
-        <div className="nav-caret"></div>
+        <div className='nav-caret'></div>
     </a>
 );
 
 const Topbar = () => (
-    <div id="topbar" className="no-print primary-bg-color-dark">
-        <div className="container">
-            <div className="gr-row">
-                <div id="topbar-msg" className='gr-6 gr-5-t gr-12-p gr-12-m invisible upgrademessage center-text'>
+    <div id='topbar' className='no-print primary-bg-color-dark'>
+        <div className='container'>
+            <div className='gr-row'>
+                <div id='topbar-msg' className='gr-6 gr-5-t gr-12-p gr-12-m invisible upgrademessage center-text'>
                     <span className='gr-hide-m invisible'>
                         <span id='virtual-text'>{it.L('You\'re using a Virtual Account.')}</span>
                     </span>
-                    <a className="pulser invisible"></a>
+                    <a className='pulser invisible'></a>
                 </div>
                 <div className='gr-6 gr-7-t gr-12-p gr-12-m' id='topbar-info'>
-                    <div className="gr-row">
-                        <div className='gr-5 gr-6-m no-underline nowrap' id="gmt-clock" data-balloon-pos="down"></div>
+                    <div className='gr-row'>
+                        <div className='gr-5 gr-6-m no-underline nowrap' id='gmt-clock' data-balloon-pos='down'></div>
                         <div className='gr-2 gr-hide-m' id='contact-us'>
                             <a href={it.url_for('contact')}>{it.L('Contact Us')}</a>
                         </div>
                         <div className='gr-5 gr-6-m'>
-                            <div className="languages invisible">
+                            <div className='languages invisible'>
                                 <LanguageUl type='display'  color='white' />
                                 <LanguageUl type='select'   color='black' />
                             </div>
@@ -60,12 +60,12 @@ const Header = () => (
     <React.Fragment>
         <Topbar />
 
-        <div id="header" className="no-print">
+        <div id='header' className='no-print'>
             <div className='container'>
                 <div className='gr-12'>
                     <div className='gr-row gr-row-align-middle'>
                         <div className='gr-3 gr-2-m gr-2-p'>
-                            <a id="logo" href="javascript:;">
+                            <a id='logo' href='javascript:;'>
                                 <div className='gr-row logo-parent'>
                                     <div className='gr-3 gr-12-m gr-12-p gr-no-gutter logo'>
                                         <div></div>
@@ -101,35 +101,35 @@ const Header = () => (
                                 />
                             </div>
                         </div>
-                        <div id="client-logged-in" className="gr-3 gr-7-m gr-8-p gr-no-gutter client_real client_virtual center-text invisible">
-                            <div id="main-logout">
-                                <ul id="main-account" className="nav-menu main-nav">
-                                    <li className="account">
+                        <div id='client-logged-in' className='gr-3 gr-7-m gr-8-p gr-no-gutter client_real client_virtual center-text invisible'>
+                            <div id='main-logout'>
+                                <ul id='main-account' className='nav-menu main-nav'>
+                                    <li className='account'>
                                         <Account />
                                     </li>
                                 </ul>
-                                <ul id="all-accounts" className="nav-menu main-nav">
-                                    <li className="account">
+                                <ul id='all-accounts' className='nav-menu main-nav'>
+                                    <li className='account'>
                                         <Account />
                                         <ul>
-                                            <div className="login-id-list"></div>
-                                            <a className="link" href={it.url_for('/user/settingsws')}>
-                                                <li className="topMenuProfile">{it.L('Profile')}</li>
+                                            <div className='login-id-list'></div>
+                                            <a className='link' href={it.url_for('/user/settingsws')}>
+                                                <li className='topMenuProfile'>{it.L('Profile')}</li>
                                             </a>
-                                            <a className="link" href={it.url_for('/user/securityws')}>
-                                                <li className="topMenuSecurity">{it.L('Security & Limits')}</li>
+                                            <a className='link' href={it.url_for('/user/securityws')}>
+                                                <li className='topMenuSecurity'>{it.L('Security & Limits')}</li>
                                             </a>
-                                            <a className="link ja-hide" id="user_accounts" href={it.url_for('/user/accounts')}>
-                                                <li className="topMenuAccounts">{it.L('Accounts List')}</li>
+                                            <a className='link ja-hide' id='user_accounts' href={it.url_for('/user/accounts')}>
+                                                <li className='topMenuAccounts'>{it.L('Accounts List')}</li>
                                             </a>
-                                            <a className="link invisible" id="user_menu_metatrader" href={it.url_for('/user/metatrader')}>
-                                                <li className="topMenuMetaTrader">{it.L('MetaTrader')}</li>
+                                            <a className='link invisible' id='user_menu_metatrader' href={it.url_for('/user/metatrader')}>
+                                                <li className='topMenuMetaTrader'>{it.L('MetaTrader')}</li>
                                             </a>
-                                            <a className="link invisible" id="user_menu_account_transfer" href={it.url_for('/cashier/account_transfer')}>
+                                            <a className='link invisible' id='user_menu_account_transfer' href={it.url_for('/cashier/account_transfer')}>
                                                 <li>{it.L('Transfer Between Accounts')}</li>
                                             </a>
-                                            <div className="separator-line-thin-gray"></div>
-                                            <a href="javascript:;" id="btn_logout" className="logout">
+                                            <div className='separator-line-thin-gray'></div>
+                                            <a href='javascript:;' id='btn_logout' className='logout'>
                                                 <li>{it.L('Sign out')}</li>
                                             </a>
                                         </ul>
@@ -137,8 +137,8 @@ const Header = () => (
                                 </ul>
                             </div>
                         </div>
-                        <div id="client-logged-out" className="gr-3 gr-8-m gr-8-p gr-no-gutter client_logged_out invisible gr-padding-10">
-                            <a id="btn_login" className="button" href="javascript:;"><span>{it.L('Log in')}</span></a>
+                        <div id='client-logged-out' className='gr-3 gr-8-m gr-8-p gr-no-gutter client_logged_out invisible gr-padding-10'>
+                            <a id='btn_login' className='button' href='javascript:;'><span>{it.L('Log in')}</span></a>
                         </div>
                         <div className='gr-hide gr-show-m gr-2-m gr-show-p gr-1-p gr-no-gutter-mobile align-end'>
                             <div id='mobile-menu-icon-container'>
