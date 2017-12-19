@@ -12,12 +12,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.5;
 }
 
-h1 {
-    font-weight: 500;
-}
-
 section {
     padding: 80px 0;
+
+    .bg-shine-v {
+        margin-top: -80px;
+    }
 }
 
 footer {
@@ -33,19 +33,28 @@ footer {
     .logo {
         max-height: 40px;
         width: 180px;
+        @media (max-width: 575px) {
+            display: none;
+        }
     }
 }
 
 form {
     margin-bottom: 40px;
 
+    h1 {
+        font-weight: bold;
+        color: $COLOR_WHITE;
+        text-align: center;
+        margin-top: 50px;
+    }
     .input-group {
         display: flex;
         flex-direction: column;
+        position: relative;
         @media (min-width: 575px) {
             flex-direction: row;
             justify-content: center;
-            margin-top: 40px;
         }
 
         input[type='email'] {
@@ -54,18 +63,31 @@ form {
             padding: 10px;
             margin: 5px 0;
             max-width: 340px;
-        }
-        button {
-            margin: 5px;
+            outline: none;
+            @media (max-width: 575px) {
+                margin: 5px auto;
+            }
 
-            span {
-                width: 100%;
-                max-width: 340px;
+            &.error-field {
+                border: 1px solid $COLOR_RED;
             }
         }
-    }
-    .error-field {
-        border: 1px solid $COLOR_RED;
+        button {
+            max-width: 340px;
+            margin: 5px 20px;
+            outline: none;
+            @media (max-width: 575px) {
+                margin: 5px auto;
+            }
+        }
+        .error-msg {
+            position: absolute;
+            top: 100%;
+            @media (max-width: 575px) {
+                position: relative;
+                margin: 5px 0;
+            }
+        }
     }
     .signup-form-success {
         background-color: $COLOR_ORANGE;
@@ -137,8 +159,15 @@ form {
             @include speech-bubble($COLOR_BLUE, 20px, 'down');
         }
         &__ribbon {
-            background-color: $COLOR_BLUE;
-            clip-path: polygon(100% 0, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0);
+            background-image: url('../images/japan/version1/blue-ribbon.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+
+            h1 {
+                margin: 0;
+                color: $COLOR_WHITE;
+            }
         }
     }
     .card-body {
@@ -181,63 +210,34 @@ form {
     align-items: center;
 }
 
-.bubble-outline-wrapper {
-    counter-reset: section;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
+.flex {
+    @include flex-center;
+    text-align: left;
 
-    .bubble-outline {
-        position: relative;
-
-        .numbered:before {
-            position: absolute;
-            counter-increment: section;
-            content: counter(section);
-            background: $COLOR_BLUE;
-            color: $COLOR_WHITE;
-            border-radius: 50%;
-            top: -15px;
-            left: -15px;
-            width: 32px;
-            height: 32px;
-            @include flex-center;
-        }
+    .box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .box ~ .box {
+        margin: 60px 0 0;
     }
 }
 
-.bubble-outline {
-    @include speech-bubble($COLOR_WHITE, 10px, 'down');
-    @include flex-center;
-    border: 1px solid $COLOR_ORANGE;
-    padding: 15px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    max-width: 154px;
-    min-height: 50%;
+.flex-end {
+    align-self: flex-end;
+}
 
-    &:after {
-        @include triangle($COLOR_WHITE, 10px, 'down');
-        bottom: -8px;
-        z-index: 2;
-    }
-    &:before {
-        @include triangle($COLOR_ORANGE, 10px, 'down');
-        bottom: -10px;
-        z-index: 1;
-    }
-    p {
-        margin: 0;
-        font-size: 16px;
-    }
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.flex-justify-content-center {
+    justify-content: center;
 }
 
 .pattern {
     display: block;
     background-repeat: repeat;
-    background-size: contain;
     background-position: center center;
 
     &-wave {
@@ -255,6 +255,56 @@ form {
     &-semicircle {
         background-image: url('../images/japan/version1/semicircle.svg');
     }
+}
+
+.bg {
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    &-shine-v {
+        background-image: url('../images/japan/version1/bg-shine-v.svg');
+        background-size: cover;
+
+        .container {
+            padding-bottom: 80px;
+        }
+    }
+    &-shine-rectangle {
+        background-color: $COLOR_DARK_BLUE;
+        background-image: url('../images/japan/version1/bg-shine-v.svg');
+        background-size: cover;
+    }
+    &-ribbon {
+        background-image: url('../images/japan/version1/blue-ribbon.svg');
+        background-size: contain;
+    }
+    &-bubble-box {
+        @include flex-center;
+        background-image: url('../images/japan/version1/bubble-box.svg');
+        background-size: contain;
+        position: relative;
+
+        h1 {
+            color: $COLOR_WHITE;
+            padding: 15px;
+            font-weight: bold;
+        }
+        & + img {
+            margin-top: -20px;
+        }
+    }
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.color-blue {
+    color: $COLOR_BLUE;
+}
+
+.color-orange {
+    color: $COLOR_ORANGE;
 }
 
 /* Components */
@@ -312,7 +362,7 @@ form {
     .navbar-toggle {
         position: relative;
         float: right;
-        background: url('../images/ico/icons/main_menu.svg') no-repeat;
+        background: url('../images/japan/version1/main_menu.svg') no-repeat;
         border: 1px solid transparent;
         border-radius: 4px;
         width: 36px;
@@ -328,10 +378,10 @@ form {
 @media (max-width: 1199px) {
     .navbar-fixed-top {
         margin-bottom: 0;
-        padding: 15px;
+        padding: 15px 0;
         overflow: hidden;
         flex-direction: column;
-        max-height: 50px;
+        max-height: 64px;
         -webkit-transition: max-height 0.3s;
         -moz-transition: max-height 0.3s;
         -ms-transition: max-height 0.3s;
@@ -397,31 +447,38 @@ form {
     background: linear-gradient(0deg, $COLOR_DARK_BLUE, $COLOR_BLUE);
     position: relative;
     height: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
     padding-top: 0;
+    padding-bottom: 0;
 
-    .intro-body {
-        > .gr-row {
-            @include flex-center;
-        }
+    &:before {
+        @include triangle($COLOR_DARK_BLUE, 100px, 'down');
+        border-left: 50vw solid transparent;
+        border-right: 50vw solid transparent;
     }
     .intro-text, .intro-subtext {
         color: $COLOR_WHITE;
 
         &.intro-text {
             font-size: 72px;
-            font-weight: 500;
+            font-weight: bold;
+            white-space: nowrap;
+            margin-top: 80px;
         }
         &.intro-subtext {
             max-width: 500px;
             margin: 35px 0;
         }
     }
-    h1 {
-        font-weight: 500;
-    }
     form .input-group {
         justify-content: flex-start;
+    }
+}
+
+.spacing {
+    padding-top: 100px;
+
+    .section-title {
+        margin-top: 80px;
     }
 }
 
@@ -438,57 +495,25 @@ form {
     .rounded-bubble {
         @include speech-bubble($COLOR_ORANGE, 10px, 'left');
         border-radius: 50%;
-        font-weight: 500;
+        font-weight: bold;
     }
     .bg-blue {
         background-color: $COLOR_BLUE;
     }
     .bg-orange {
         background-color: $COLOR_ORANGE;
-        font-weight: 500;
+        font-weight: bold;
     }
     .bg-ribbon {
-        background-color: $COLOR_BLUE;
-        clip-path: polygon(100% 0, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0);
-        padding: 15px 60px;
-        margin: auto;
-        margin-bottom: 40px;
         text-align: center;
-        border-radius: 0;
+        @media (max-width: 575px) {
+            font-size: 18px;
+        }
     }
     .bg-bubble {
         @include speech-bubble($COLOR_BLUE, 30px, 'down');
         padding: 30px;
         font-size: 48px;
-    }
-}
-
-.bg-polygon {
-    background-color: $COLOR_DARK_BLUE;
-    width: 100%;
-    height: 200px;
-    border-radius: 0;
-    text-align: center;
-    background-image: url('../images/japan/version1/retro-transparent.svg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    &.clip {
-        margin-top: -80px;
-        margin-bottom: 80px;
-        clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
-    }
-    &.sign-up-form {
-        height: 100%;
-        padding: 40px 0;
-    }
-}
-
-.sign-up-form {
-    h1 {
-        color: $COLOR_WHITE;
-        font-weight: 500;
     }
 }
 
@@ -498,9 +523,9 @@ form {
         margin: 15px 0;
     }
     .card, .card--light {
-        height: 100%;   // equal-height cards
+        height: 100%;   // equal-height card
     }
-    &--numbered {       // auto-numbering cards
+    &--numbered {       // auto-numbering card
         counter-reset: section;
 
         .card:before, .card--light:before {
@@ -534,15 +559,23 @@ form {
             padding: 30px;
         }
         &__ribbon {
-            background-color: $COLOR_BLUE;
-            clip-path: polygon(100% 0, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0);
-            width: 60%;
-            padding: 10px 60px;
-            margin: -69px auto 40px;
+            position: absolute;
+            top: -45px;
+            padding: 15px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            @media (max-width: 575px) {
+                top: -20px;
+                padding: 5px;
 
-            h1 {
-                margin: 0;
-                color: $COLOR_WHITE;
+                h1 {
+                    font-size: 18px;
+                }
+            }
+
+            & + .card-body {
+                margin-top: 40px;
             }
         }
     }
@@ -618,9 +651,75 @@ form {
     }
 }
 
-.negative-margin-top {
-    margin-top: -150px;
-    padding-top: 230px;
+// Speech bubble with outline
+.bubble-outline-wrapper {
+    counter-reset: section;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+
+    .bubble-outline {
+        position: relative;
+        height: 60%;        // equal-height
+
+        .numbered:before {  // auto-numbering
+            position: absolute;
+            counter-increment: section;
+            content: counter(section);
+            background: $COLOR_BLUE;
+            color: $COLOR_WHITE;
+            border-radius: 50%;
+            top: -15px;
+            left: -15px;
+            width: 32px;
+            height: 32px;
+            @include flex-center;
+        }
+    }
+}
+
+.bubble-outline {
+    @include speech-bubble($COLOR_WHITE, 10px, 'down');
+    @include flex-center;
+    border: 1px solid $COLOR_ORANGE;
+    padding: 15px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    max-width: 154px;
+    min-height: 50%;
+
+    &:after {
+        @include triangle($COLOR_WHITE, 10px, 'down');
+        bottom: -8px;
+        z-index: 2;
+    }
+    &:before {
+        @include triangle($COLOR_ORANGE, 10px, 'down');
+        bottom: -10px;
+        z-index: 1;
+    }
+    p {
+        margin: 0;
+        font-size: 16px;
+    }
+}
+
+.box-o, .box {
+    @include flex-center;
+    padding: 0 10px;
+    text-align: center;
+
+    &.box-o {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+    }
+    p {
+        margin: 0;
+    }
+    &-column {
+        flex-direction: column;
+    }
 }
 
 .icon-sm, .icon-md, .icon-lg {
@@ -672,105 +771,12 @@ form {
     background-image: url('../images/japan/version1/lock-switch.svg');
 }
 
-.padding-150 {
-    padding-top: 150px;
-}
-
-.ribbon {
-    background-image: url('../images/japan/version1/blue-ribbon.svg');
-}
-
-.bg-bubble-box {
-    @include flex-center;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url('../images/japan/version1/bubble-box.svg');
-    height: 130px;
-    position: relative;
-
-    h1 {
-        color: $COLOR_WHITE;
-        padding: 15px;
-        font-weight: bold;
-    }
-    & + img {
-        margin-top: -20px;
-    }
-}
-
-.bottom-left {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-
-    h2 {
-        margin-bottom: 0;
-    }
-    p {
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-}
-
-.flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-
-    .box {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .box ~ .box {
-        margin: 60px 0 0;
-    }
-}
-
-.box-o, .box {
-    @include flex-center;
-    padding: 0 10px;
-    text-align: center;
-
-    &.box-o {
-        border: 1px solid $COLOR_LIGHT_GRAY;
-    }
-    p {
-        margin: 0;
-    }
-    &-column {
-        flex-direction: column;
-    }
-}
-
-.blue-bold {
-    font-weight: bold;
-    color: $COLOR_BLUE;
-}
-
-.orange-bold {
-    font-weight: 500;
-    color: $COLOR_ORANGE;
-}
-
 .img-md {
     width: 145px;
     height: 145px;
 }
 
-.flex-end {
-    align-self: flex-end;
-}
-
-.flex-space-between {
-    justify-content: space-between;
-}
-
-.flex-justify-content-center {
-    justify-content: center;
-}
-
-.img-f {
+.responsive-lg {
     max-width: 128px;
     max-height: 128px;
     margin-left: 10px;
