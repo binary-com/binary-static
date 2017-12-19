@@ -2,10 +2,23 @@ import React from 'react';
 import GTM from '../_common/includes/gtm.jsx';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
 
+const style = () =>
+    `body {
+        background: transparent !important;
+        display: flex;
+        flex-direction: column;
+    }
+    .home-content {
+        margin-top: auto;
+        margin-bottom: auto;
+    }`;
+
 const Head = () => (
     <head>
         {it.css_files.map((css_file, inx) => <link key={inx} rel='stylesheet' href={css_file} />)}
-
+        <style type='text/css'>
+            {style()}
+        </style>
         <script src={it.url_for(`js/landing_pages/common.js?${it.static_hash}`)} />
         <script src={it.url_for(`js/landing_pages/signup_frame.js?${it.static_hash}`)} />
     </head>
