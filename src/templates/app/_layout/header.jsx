@@ -93,10 +93,10 @@ const Header = () => (
                                         { text: it.L('Tour'),        href: it.url_for('tour-jp'),                     className: 'invisible ja-show mt-hide' },
                                         { text: it.L('Trade'),       href: it.url_for('multi_barriers_trading'),      className: 'invisible ja-show mt-hide', id: 'main-navigation-jptrading' },
                                         // MetaTrader
-                                        { text: it.L('MetaTrader'),  href: it.url_for('user/metatrader'),             className: 'invisible mt-show' },
-                                        { text: it.L('Cashier'),     href: it.url_for('cashier'),                     className: 'invisible mt-show' },
-                                        { text: it.L('Get Started'), href: it.url_for('get-started-beta?parent=mt5'), className: 'invisible mt-show' },
-                                        { text: it.L('Platforms'),   href: it.url_for('platforms?parent=mt5'),        className: 'invisible mt-show' },
+                                        { text: it.L('MetaTrader'),  href: it.url_for('user/metatrader'),                       className: 'invisible mt-show' },
+                                        { text: it.L('Cashier'),     href: it.url_for('cashier'),                               className: 'invisible mt-show' },
+                                        { text: it.L('Get Started'), href: it.url_for('get-started-beta?get_started_tabs=mt5'), className: 'invisible mt-show' },
+                                        { text: it.L('Platforms'),   href: it.url_for('platforms?platforms_tabs=mt5'),          className: 'invisible mt-show' },
                                     ]}
                                 />
                             </div>
