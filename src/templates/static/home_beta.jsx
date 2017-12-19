@@ -352,7 +352,7 @@ const HomeBeta = () => (
                 />
             </div>
             <div className='center-text gr-padding-30'>
-                <a className='button-secondary' href='https://academy.binary.com' target='_blank'>
+                <a className='button-secondary' href='https://academy.binary.com' target='_blank' rel='noopener noreferrer'>
                     <span>{it.L('Learn more')}</span>
                 </a>
             </div>
