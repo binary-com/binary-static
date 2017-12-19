@@ -278,7 +278,6 @@ const MBPrice = (() => {
         const req = {
             buy         : 1,
             price       : proposal.ask_price,
-            product_type: 'multi_barrier',
             parameters  : {
                 contract_type,
                 amount               : proposal.echo_req.amount,
@@ -288,6 +287,7 @@ const MBPrice = (() => {
                 symbol               : proposal.echo_req.symbol,
                 date_expiry          : proposal.echo_req.date_expiry,
                 trading_period_start : proposal.echo_req.trading_period_start,
+                product_type: 'multi_barrier',
                 app_markup_percentage: '0',
             },
         };
