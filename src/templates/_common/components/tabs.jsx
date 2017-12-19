@@ -59,7 +59,7 @@ export const TabsSubtabs = ({
             <div className='tab-menu-wrap'>
                 <ul id={id} className='tm-ul'>
                     {items.map((item, idx) => (
-                        <li key={idx} id={item.id} className={`tm-li ${item.class || ''}`}>
+                        <li key={idx} id={item.id} className={`tm-li ${item.className || ''}`}>
                             {(item.subtabs &&
                                 <React.Fragment>
                                     <span className='menu-wrap-a'>
