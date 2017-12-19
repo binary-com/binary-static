@@ -4,7 +4,7 @@ import {List} from '../../_common/components/elements.jsx';
 const FooterColumn = ({header, items}) => (
     <div className='gr-4'>
         <h4 className='secondary-color'><strong>{header}</strong></h4>
-        <List items={items} className='top-margin' />
+        <List items={items} className='bottom-margin top-margin' />
     </div>
 );
 
