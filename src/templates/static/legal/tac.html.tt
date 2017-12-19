@@ -1,4 +1,4 @@
-[% PROCESS components/sidebar.html.tt %]
+[% PROCESS _common/components/sidebar.html.tt %]
 
 <div class="gr-row">
     <div class="gr-3 gr-12-p gr-12-m gr-padding-10">
