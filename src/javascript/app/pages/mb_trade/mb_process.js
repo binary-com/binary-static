@@ -35,9 +35,9 @@ const MBProcess = (() => {
                 product_type  : 'multi_barrier',
             };
             if (landing_company_obj) {
-                req.landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'custom_grid';
+                req.landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
             } else if (website_status.website_status.clients_country === 'jp' || getLanguage() === 'JA') {
-                req.landing_company = 'custom_grid';
+                req.landing_company = 'japan';
             }
             BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
                 processActiveSymbols(response);
