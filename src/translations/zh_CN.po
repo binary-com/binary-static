@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-12-15 20:12-0500\n"
+"PO-Revision-Date: 2017-12-18 21:14-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -83,6 +83,9 @@ msgstr "%4闭市时如果%3在障碍价格最低和最高价位范围内，可�
 
 msgid "%1 %2 payout if %3 touches Barrier through close on %4."
 msgstr "%4闭市时如果%3触及障碍价格，可获取%1 %2 赔付额。"
+
+msgid "%1 (Issuer)"
+msgstr "%1 (发售者)"
 
 msgid "%1 (Toll Free)"
 msgstr "%1(免费电话)"
@@ -804,9 +807,6 @@ msgstr "学院"
 msgid "Accept"
 msgstr "接受"
 
-msgid "Accept Terms and Conditions"
-msgstr "接受条款和条件"
-
 msgid "Accept local bank wires"
 msgstr "接受本地银行电汇"
 
@@ -1026,6 +1026,9 @@ msgstr "经过分析，您得出的结论是，英国经济将超越美国经济
 
 msgid "Agent's Obligations"
 msgstr "代理商的义务"
+
+msgid "Agree"
+msgstr "同意"
 
 msgid "Agreement Restrictions"
 msgstr "协议限制"
@@ -1564,9 +1567,6 @@ msgstr "二、开始和取消"
 msgid "B. Scope"
 msgstr "二、范围"
 
-msgid "BIEL Terms"
-msgstr "BIEL条款"
-
 msgid "BIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "BIEL 是%1投资者补偿方案%2 ( \"方案\") 的一部分，该方案是专为获得MFSA准证而经营失败的投资者设立的救济基金。根据投资服务规定每人最多只补偿20,000欧元的限制，此基金向每位合格者提供的补偿金额为公司对客户投资负债净额的90%。此方案依据欧盟第97/9指令设定。"
 
@@ -2040,6 +2040,9 @@ msgstr "差价合约"
 
 msgid "CFDs Derivatives that profit by speculating on the movement of underlying assets."
 msgstr "差价合约衍生品, 通过推测标的资产走势而获利。"
+
+msgid "CONVERTIBLE DIGITAL TOKENS"
+msgstr "转换型数字代币"
 
 msgid "Can %1 tokens be mined?"
 msgstr "%1代币可以开采吗？"
@@ -2524,6 +2527,9 @@ msgstr "为预测金融市场而设的电脑系统和方法"
 
 msgid "Computer trading system for offering custom financial market speculations"
 msgstr "提供自订金融市场预测的电脑交易系统"
+
+msgid "Conditions of Application"
+msgstr "使用条件"
 
 msgid "Conduct disaster and recovery planning and execution"
 msgstr "灾难恢复规划和执行"
@@ -3266,6 +3272,9 @@ msgstr "E.g. Shibuya-ku"
 msgid "EGR Operator Award"
 msgstr "EGR操作员奖"
 
+msgid "ELECTRONIC SUBSCRIPTION FORM FOR TOKENS"
+msgstr "代币的电子认购表格"
+
 msgid "ELECTRONIC VERSIONS OF THE MATERIALS YOU ARE SEEKING TO ACCESS ARE BEING MADE AVAILABLE ON THIS WEBPAGE BY BINARY GROUP LTD. IN GOOD FAITH AND FOR INFORMATION PURPOSES ONLY."
 msgstr "Binary集团有限公司真诚地将您正在查找的材料的电子版本在此网页上公开，供用户使用，但其用途仅限于提供信息。"
 
@@ -3388,6 +3397,9 @@ msgstr "当以下情况发生时，一方可以通过书面通知的形式终止
 
 msgid "Either party may terminate this Agreement on delivery of one weeks' prior written notice to the other party."
 msgstr "任何一方都可以在一周之前发出书面通知，以终止本协议。"
+
+msgid "Electronically signed by the Subscriber/for and on behalf of the Subscriber"
+msgstr "由订购者/订购者代表以电子方式签署"
 
 msgid "Eligible Counterparty"
 msgstr "合格交易对手"
@@ -6779,6 +6791,9 @@ msgstr "十四、不可抗力事件"
 msgid "Name"
 msgstr "姓名"
 
+msgid "Name of Subscriber(s) of Tokens:"
+msgstr "代币订购者姓名:"
+
 msgid "Name of first love"
 msgstr "初恋情人姓名"
 
@@ -7027,6 +7042,9 @@ msgstr "交易新手可使用我们的直观视觉式平台学习交易、练习
 
 msgid "Now"
 msgstr "现在"
+
+msgid "Number of Tokens:"
+msgstr "代币数目:"
 
 msgid "Number of employees and contractors"
 msgstr "雇员和承包商数目"
@@ -7557,7 +7575,7 @@ msgid "Payout per lot = 1,000"
 msgstr "每手赔付额 = 1,000"
 
 msgid "Pending"
-msgstr ""
+msgstr "待定"
 
 msgid "Pension"
 msgstr "养老金"
@@ -7997,6 +8015,9 @@ msgstr "价格带"
 
 msgid "Price Per Point"
 msgstr "每点价格"
+
+msgid "Price per Token"
+msgstr "每个代币的价格"
 
 msgid "Price per unit:"
 msgstr "单价:"
@@ -9180,6 +9201,9 @@ msgstr "从内置的 MetaTrader 市场订阅种类繁多的算法交易策略"
 msgid "Subscribe to our mailing list"
 msgstr "订阅邮件列表"
 
+msgid "Subscriber"
+msgstr "订购者"
+
 msgid "Successful"
 msgstr "成功"
 
@@ -9322,7 +9346,7 @@ msgid "Thank you for completing the Financial Assessment and registering your Fi
 msgstr "谢谢您完成财务评估及注册金融账户。现在您可以存入资金并在MT5以真实资金开始外汇交易。"
 
 msgid "Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance."
-msgstr ""
+msgstr "谢谢您参与我们的 ICO。代币的最终价格已定为每代币X.XX 美元。投资者必须在2018年1月8日之前根据最终价格将每项成功得标的余款存入。您可以开始领取已付清余款的代币。"
 
 msgid "Thank you for signing up! Please check your email to complete the registration process."
 msgstr "谢谢您的注册！请查看邮件以完成注册程序。"
@@ -9664,6 +9688,9 @@ msgstr "标准账户适合广泛的新手和经验丰富的交易者。它为您
 msgid "The Stop Out Level applicable to your Real Account may differ from the default Stop Out Level published on our website."
 msgstr "适用于您真实账户的强制平仓水平可能与我们网站公布的默认强制平仓水平不一样。"
 
+msgid "The Subscriber represents, warrants, acknowledges and agrees that:"
+msgstr "订购者声明、保证、承认并同意:"
+
 msgid "The Tokens have not been and will not be registered under the Financial Instruments and Exchange Act, as amended (the “FIEA”). This document is not an offer of securities for sale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan (which term as used herein means any person resident in Japan, including any corporation or entity organized under the laws of Japan) or to others for reoffer or resale, directly or indirectly, in Japan or to, or for the benefit of, any resident of Japan, except pursuant to an exemption from the securities registration requirements under the FIEA and otherwise in compliance with such law and any other applicable laws, regulations, and ministerial guidelines of Japan."
 msgstr "令牌未曾，也不会根据修正版金融工具和交易法(FIFA) 登记。本文档不是为在日本或为其利益的任何日本居民（此处使用的术语表示任何在日本居住的人士，包括任何根据日本法律组织的公司或实体）或对他人直接或间接出价出售、或转出价、转售证券， 直接或间给在日本或为其利益的任何日本居民，除了根据 FIEA 的证券登记所规定受豁免以外，否则将遵循日本的相关法律和任何其他适用的法律、法规和部门级准则。"
 
@@ -9725,7 +9752,7 @@ msgid "The application shall be reviewed and assessed by our compliance and mark
 msgstr "申请须由我们的合规及市场部审核及评估。我们注意到, 遵守和执行反洗钱政策并按照法律和条例进行尽职调查的合规部门须按照H章节规定要求和收集所有必要的资料和文件 。"
 
 msgid "The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018."
-msgstr ""
+msgstr "拍卖已经结束。代币的最终价格将很快公布。投资者必须在2018年1月8日之前根据最终价格将每项成功得标的余款存入。"
 
 msgid "The average is the average of the ticks, including the first and the last tick."
 msgstr "平均价位是所有跳动点的平均值，包括第一个和最后一个跳动点。"
@@ -10518,6 +10545,9 @@ msgstr "今天我们已成为市场的先驱者，也是全球最受欢迎的在
 
 msgid "Token"
 msgstr "代币"
+
+msgid "Token count"
+msgstr "代币数目"
 
 msgid "Token dividends"
 msgstr "代币红利"
@@ -12711,6 +12741,9 @@ msgstr "能够对代理履行本协议规定的任何职责和/或义务的能�
 msgid "consolidating liquidity from several providers into a single stream of blended feed; and"
 msgstr "将数个供应商集合成单股混合输入，以加强流动性; 和"
 
+msgid "convertible digital tokens constituted by an Instrument entered into by the Issuer on 15th November 2017 (<strong>Instrument</strong>) and issued with the benefit of and subject to the provisions contained in the Instrument and the conditions set out in the Instrument (<strong>Conditions</strong>)."
+msgstr "发售者于2017年11月15日订立的工具 (<strong>工具</strong>) 所构成的转换型数字代币，并根据该工具所订立的条文及列出的条件 (<strong>条件</strong>) 为提供得益而发售。"
+
 msgid "currencies, stocks, indices, and commodities."
 msgstr "外汇、股指和大宗商品。"
 
@@ -12765,6 +12798,9 @@ msgstr "他采取一切必要的措施, 以全力获得和高效率保持所有�
 msgid "he takes all reasonable steps to comply with the law or Rules whatsoever applicable to the jurisdiction in which he resides;"
 msgstr "他采取一切合理步骤, 遵守适用于其居住地管辖权下的法律或规则。"
 
+msgid "hereby applies for:"
+msgstr "特此申请:"
+
 msgid "hour"
 msgstr "小时"
 
@@ -12773,6 +12809,18 @@ msgstr "小时"
 
 msgid "iOS"
 msgstr "iOS"
+
+msgid "if the Subscriber is a financial intermediary, as that term is used in Article 3(2) of the Prospectus Directive, any Tokens subscribed for by it will not be acquired on a non-discretionary basis on behalf of, nor will they be acquired with a view to their offer or resale to, persons in a member state of the European Economic Area which has implemented the Prospectus Directive other than qualified investors, or in circumstances in which the prior consent of the Issuer has not been given to the offer or resale;"
+msgstr "如果订购者是一个金融中介，基于该条款在招股说明书第 3 (2) 条款中使用，那么其所订购的任何代币将不会以非自主裁决的方式获得，也不会以其售或转售予在执行招股说明书的欧洲经济区成员国的人士（合格投资者除外）的方式获得,, 或在事先未获发售者同意发售或转售的情况下;"
+
+msgid "if the Subscriber is located or resident in the European Economic Area, it is a qualified investor within the meaning of the law in the Relevant Member State implementing Article 2(1)(e)(i), (ii) or (iii) of the Prospectus Directive (Directive 2003/71/EC (and amendments thereto)) (the “<strong>Prospectus Directive</strong>”) or is otherwise able to subscribe to the Tokens under an applicable exemption under the Prospectus Directive; "
+msgstr "如果订购者位于或居住在欧洲经济区，在相关会员国招股说明书实施章程第 2 (1) (e) (i)、(ii) 或 (iii) (指令 2003/71/EC (和任何修订版本)) (\"<strong>招股说明书</strong>\") 法律的定义下属于一名合格投资者或根据招股说明书的适用豁免下可认购代币; "
+
+msgid "if the Subscriber is located or resident in the United Kingdom, it is a person of a kind described in Articles 19, 43 and/or 49 of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (the “<strong>Order</strong>”) or to whom this Subscription Form and any other documents relating to the offer of Tokens may otherwise be lawfully distributed to it pursuant another applicable exemption under the Order and that it understands that this Subscription Form and any other documents relating to the offer of Tokens is only directed at (A) persons who have professional experience in matters relating to investments who fall within the definition of \"investment professionals\" in Article 19(5) of the Order, (B) persons falling within Article 43(2) of the Order, (C) high net worth entities (including companies and unincorporated associations of high net worth and trusts of high value) or other persons falling within Article 49(2)(a) to (d) of the Order, and (D) persons to whom such information may otherwise be lawfully distributed, and that, accordingly, any investment or investment activity to which this Electronic Subscription Form relates is available only to the Subscriber as such a person or will be engaged in only with the Subscriber as such a person;"
+msgstr ""
+
+msgid "in the normal course of business, the Subscriber invests in or purchases securities similar to the Tokens and has such knowledge and experience in financial and business matters as to be capable of evaluating the merits and risks of its respective investment in the Tokens, and each Subscriber and any accounts for which each Subscriber is acting are each able to bear the economic risk of its investment; "
+msgstr ""
 
 msgid "include a disclaimer and/or notice that any intellectual property rights including any Trademark or slogan whatsoever belong to the Company and any unauthorised use is strictly prohibited."
 msgstr "包括免责声明和/或通知, 说明任何知识产权, 包括任何商标或标语均属于公司所有，并严格禁止任何未经授权的使用。"
@@ -12785,6 +12833,9 @@ msgstr "提供国际化界面，支持的语言包括英语、西班牙语、法
 
 msgid "it is the leading binary option trading platform."
 msgstr "领先的二元期权交易平台。"
+
+msgid "its offer to subscribe shall be accepted by the Issuer taking payment of the aggregate subscription price for the Tokens applied for, being computed by reference to the final price of the Dutch Auction (the “<strong>Auction</strong>”) as declared by the Issuer, and issuing such Tokens in accordance with the Instrument and the Conditions;"
+msgstr ""
 
 msgid "letters"
 msgstr "信件"
@@ -12869,6 +12920,33 @@ msgstr "違反任何管制任何交易所、金融市場或金融監管環境運
 
 msgid "the %1 affiliate program is competitive and adaptive to your unique requirements."
 msgstr "%1 联盟计划具有竞争力，可适应您的独特需求。"
+
+msgid "the Subscriber has not and will not distribute or publish this Electronic Subscription Form or any advertisement or other offering material in relation to the Tokens directly or indirectly in, into or within any Restricted Territory;"
+msgstr ""
+
+msgid "the Subscriber has observed the laws of all relevant jurisdictions, obtained any requisite governmental exchange controls or other consents, complied with all relevant formalities and paid any issue, transfer or other taxes due in connection with its participation in the Auction in any applicable territory and that it has not taken any action which will or may result in the Issuer being in breach of the legal or regulatory requirements of any jurisdiction;"
+msgstr ""
+
+msgid "the Subscriber has read and understood the Information Memorandum of the Company dated 15 November 2017 and in particular has read and understood the Risk Factors detailed therein;"
+msgstr ""
+
+msgid "the Subscriber holds an account on the %1 website, with an account identifier that shall be identified as the initial holder of the Tokens, and that Subscriber has satisfactorily completed KYC (Know Your Client), AML (Anti-Money Laundering) procedures, and has accurately updated his or her name, address, country of residence, and ID details in such account;"
+msgstr ""
+
+msgid "the Subscriber is purchasing the Tokens for its own account or for one or more separate accounts maintained by such Subscriber and not with a view to the distribution thereof, provided that the disposition of such Subscriber’s property shall at all times be within their control; "
+msgstr ""
+
+msgid "the Subscriber understands that neither the Tokens nor the Ordinary Shares have been, nor will they be, registered under the U.S. Securities Act of 1933, as amended (the “Securities Act”) and may not be offered or sold within the United States except pursuant to an exemption from, or in a transaction not subject to, the registration requirements of the Securities Act. The Subscriber understands that neither the Issuer, its affiliates, nor any person acting on any of their behalf has offered or sold, and will not offer or sell, any Tokens or Ordinary Shares within the United States except in accordance with Regulation S under the Securities Act. Accordingly, neither the Issuer, its affiliates nor any person acting on its or their behalf have engaged or will engage in any directed selling efforts with respect to the Tokens or the Ordinary Shares. Terms used herein have the meanings given to them by Regulation S. Neither the Issuer, its affiliates nor any person acting on behalf of such persons has entered or will enter into any contractual arrangement with respect to the distribution of Tokens or Ordinary Shares in the United States"
+msgstr ""
+
+msgid "the Subscriber understands that the Tokens are a risky investment, that he/she is investing entirely at his/her own risk, and may lose the entirety of his/her investment; and"
+msgstr ""
+
+msgid "the Subscriber understands that the Tokens have not been registered under the applicable laws of Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, Jersey, Malaysia, New Zealand, Singapore, Switzerland, USA, or any other jurisdiction where the extension of the availability of the Tokens would breach any applicable law or regulation (a “<strong>Restricted Territory</strong>”). To the extent that the Subscriber is a resident of any such Restricted Territory or a corporation, partnership or other entity organised under the laws of any such Restricted Territory, it will only subscribe for Tokens pursuant to an available exemption under applicable law; "
+msgstr ""
+
+msgid "the Tokens will be issued on, and the Subscriber will be bound by, the Instrument and the Conditions, including the representations made herein"
+msgstr ""
 
 msgid "the characteristics of financial instruments that are the subject of that order;"
 msgstr "属于订单主题的金融工具特点；"
@@ -14657,6 +14735,9 @@ msgstr "ICO 订阅"
 
 msgid "ICO Histogram"
 msgstr "ICO 直方图"
+
+msgid "Electronic Subscription Form for Tokens"
+msgstr ""
 
 msgid "Settings"
 msgstr "设置"

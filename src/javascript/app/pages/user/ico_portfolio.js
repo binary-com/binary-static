@@ -1,8 +1,10 @@
 const Portfolio        = require('./account/portfolio/portfolio').Portfolio;
 const ViewPopup        = require('./view_popup/view_popup');
 const BinarySocket     = require('../../base/socket');
+const loadUrl          = require('../../base/binary_pjax').load;
 const formatMoney      = require('../../common/currency').formatMoney;
 const Validation       = require('../../common/form_validation');
+const urlFor           = require('../../../_common/url').urlFor;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
@@ -65,7 +67,7 @@ const ICOPortfolio = (() => {
             button_class = 'button-disabled';
         }
 
-        const $button = $('<a/>', { class: `${button_class} nowrap`, contract_id: data.contract_id, action});
+        const $button = $('<a/>', { class: `${button_class} nowrap`, contract_id: data.contract_id, tokens: shortcode[2],action});
         $button.append($(`<span ${is_pending && pending_claim_msg}>${localize(status)}</span>`));
 
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
@@ -123,6 +125,20 @@ const ICOPortfolio = (() => {
                     price: 0,
                 });
             });
+            // Claim bid
+            $('a[action="claim"]:not(.button-disabled)')
+                .off('click')
+                .on('click', (e) => {
+                    e.preventDefault();
+                    const url = urlFor('user/ico-claim-form');
+                    // set the contract id for ico-claim-form page.
+                    const $col        = $(e.target).parent();
+                    const contract_id = $col.attr('contract_id');
+                    const tokens      = $col.attr('tokens');
+                    State.set('ico_contract_id', contract_id);
+                    State.set('ico_token_count', tokens);
+                    loadUrl(url);
+                });
 
             $('#portfolio-table').setVisibility(1);
         }
