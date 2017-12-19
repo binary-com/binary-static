@@ -7,10 +7,10 @@ const Table = ({
     <table>
         {trs.map((tr,inx) => (
             <tr key={inx}>
-                <td colSpan="1">{tr.text}</td>
-                <td colSpan="3">
+                <td colSpan='1'>{tr.text}</td>
+                <td colSpan='3'>
                     {(tr.href || tr.mailto) ?
-                        <a href={`${tr.mailto ? 'mailto:' :''}${tr.placeholder}`} target="_blank">
+                        <a href={`${tr.mailto ? 'mailto:' :''}${tr.placeholder}`} target='_blank'>
                             {tr.placeholder}
                         </a>
                         : tr.placeholder
@@ -22,7 +22,7 @@ const Table = ({
 );
 
 const PaymentAgentList = () => (
-    <div id="paymentagent_deposit">
+    <div id='paymentagent_deposit'>
         <h1>{it.L('How to use a payment agent?')}</h1>
         <p>{it.L('You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by [_1]. It\'s easy to do.', it.website_name)}</p>
         <ol>
@@ -32,14 +32,14 @@ const PaymentAgentList = () => (
             <li>{it.L('Send your funds to the payment agent. The deposited funds, less the agent\'s commission, will show up in your account.')}</li>
         </ol>
 
-        <p><label htmlFor="target_country">{it.L('Show payment agents for:')}</label> <select id="target_country" className="invisible"></select></p>
+        <p><label htmlFor='target_country'>{it.L('Show payment agents for:')}</label> <select id='target_country' className='invisible'></select></p>
 
-        <div className="loading">
+        <div className='loading'>
             <Loading />
         </div>
 
-        <div id="pa_list">
-            <div id="accordion" className="invisible">
+        <div id='pa_list'>
+            <div id='accordion' className='invisible'>
                 <h3>%name</h3>
                 <div>
                     <p></p>
@@ -55,15 +55,15 @@ const PaymentAgentList = () => (
                             { text: it.L('Further information')      , placeholder: '%further_information' },
                         ]}
                     />
-                    <div className="supported_banks">%supported_banks</div>
+                    <div className='supported_banks'>%supported_banks</div>
                 </div>
             </div>
         </div>
 
-        <p id="no_paymentagent" className="notice-msg center-text invisible">{it.L('Payment agent is unavailable in your country.')}</p>
+        <p id='no_paymentagent' className='notice-msg center-text invisible'>{it.L('Payment agent is unavailable in your country.')}</p>
 
         <p>{it.L('Apply to become a [_1] <a href="[_2]">payment agent</a>.', it.website_name, it.url_for('/payment-agent'))}</p>
-        <p className="comment">
+        <p className='comment'>
             <strong>{it.L('IMPORTANT DISCLAIMER')}</strong> - {it.L('[_1] is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and payment agents.', it.website_name)}
         </p>
     </div>

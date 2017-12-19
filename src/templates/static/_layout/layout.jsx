@@ -12,7 +12,7 @@ import SignupTour from '../get_started/signup_tour.jsx';
 const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 
 const Nav = ({items}) => (
-    <ul className="nav">
+    <ul className='nav'>
         {items.map((item, inx) => (
             <li key={inx}>
                 <a href={it.url_for(`/get-started/${item.section}`)}>{item.text}</a>
@@ -24,10 +24,10 @@ const Nav = ({items}) => (
 const GetStarted = () => (
     <React.Fragment>
         <IcoBanner className='top-margin' />
-        <div className="get-started static_full">
-            <div className="gr-row">
-                <div className="gr-3 gr-hide-m">
-                    <div className="sidebar">
+        <div className='get-started static_full'>
+            <div className='gr-row'>
+                <div className='gr-3 gr-hide-m'>
+                    <div className='sidebar'>
                         <Nav
                             items={[
                                 { section: 'what-is-binary-trading', text: it.L('Why choose binary trading?') },
@@ -45,7 +45,7 @@ const GetStarted = () => (
                     </div>
                 </div>
 
-                <div className="gr-6 gr-12-m gr-parent">
+                <div className='gr-6 gr-12-m gr-parent'>
                     {CONTENT_PLACEHOLDER}
                 </div>
 
@@ -58,17 +58,17 @@ const GetStarted = () => (
 const WithLayout = ({ children }) => {
     const className = `${it.current_route || ''}-content`;
     return (
-        <div id="content" className={it.current_route ? className : undefined}>
+        <div id='content' className={it.current_route ? className : undefined}>
             {it.layout === 'full_width' ?
                 <IcoBanner container='ico-banner-container' className='top-margin' /> :
                 <IcoBanner container='ico-banner-container' className='top-margin bottom-margin' />
             }
-            <div id="page_info" style={{display: 'none'}}>
+            <div id='page_info' style={{display: 'none'}}>
                 <Title />
-                <div id="content_class">{className}</div>
+                <div id='content_class'>{className}</div>
             </div>
             {it.layout !== 'full_width' ?
-                <div className="container">
+                <div className='container'>
                     {children}
                 </div> :
                 children
@@ -100,14 +100,14 @@ const Layout = () => {
             <html>
                 <Head />
                 <body className={it.language} >
-                    <div id="msg_notification" className="notice-msg center-text"></div>
+                    <div id='msg_notification' className='notice-msg center-text'></div>
                     <div id='page-wrapper'>
                         <Header />
-                        <div id="content-holder">
+                        <div id='content-holder'>
                             <MainMenu />
                             <MobileMenu />
                             <Gtm />
-                            <a href="javascript:;" id="scrollup"></a>
+                            <a href='javascript:;' id='scrollup'></a>
                             <InnerContent />
                         </div>
                         <Footer />

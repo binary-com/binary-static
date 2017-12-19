@@ -30,8 +30,8 @@ export const FormRow = ({
     if (type === 'checkbox' && !spaced) {
         return (
             <div className={`gr-row ${row_class || ''}`} id={row_id} >
-                <div className="gr-12 gr-padding-20 gr-centered">
-                    <input id={id} type="checkbox" checked={!!checked} />
+                <div className='gr-12 gr-padding-20 gr-centered'>
+                    <input id={id} type='checkbox' checked={!!checked} />
                     <label htmlFor={id}>{label}</label>
                 </div>
             </div>
@@ -42,7 +42,7 @@ export const FormRow = ({
             <div className={`${is_two_rows ? 'gr-12' : 'gr-4 gr-12-m'}`} id={label_row_id} >
                 <label htmlFor={type !== 'label' ? id : undefined} >
                     {tooltip ?
-                        <span data-balloon-length="xlarge" data-balloon={tooltip}>
+                        <span data-balloon-length='xlarge' data-balloon={tooltip}>
                             {label}
                         </span> :
                         label
@@ -66,7 +66,7 @@ export const FormRow = ({
                             />
                         </React.Fragment>
                         : type === 'label' ?
-                            <span className="text-display">
+                            <span className='text-display'>
                                 {is_bold ?
                                     <strong id={id} {...attributes}></strong> :
                                     <span id={id} {...attributes}></span>
@@ -77,7 +77,7 @@ export const FormRow = ({
                                 : undefined
                 }
                 {hint &&
-                    <p className="hint no-margin">{hint}</p>
+                    <p className='hint no-margin'>{hint}</p>
                 }
             </div>
         </div>
@@ -103,12 +103,12 @@ export const SubmitButton = ({
 }) => {
     const content = <React.Fragment>
         {!no_error &&
-            <p id={msg_id || 'msg_form'} className="error-msg no-margin invisible"></p>
+            <p id={msg_id || 'msg_form'} className='error-msg no-margin invisible'></p>
         }
-        <div className="gr-padding-10">
+        <div className='gr-padding-10'>
             {custom_btn_text &&
                 <a className={`button ${custom_btn_class||''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
-                    <span className="button">{custom_btn_text}</span>
+                    <span className='button'>{custom_btn_text}</span>
                 </a>
             }
             <button

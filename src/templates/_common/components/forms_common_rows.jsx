@@ -10,10 +10,10 @@ export const Salutation = ({
         id='salutation'
         label={it.L('Title')}
     >
-        <option value="Mr">${it.L('Mr')}</option>
-        <option value="Mrs" className="ru-hide">{it.L('Mrs')}</option>
-        <option value="Ms">{it.L('Ms')}</option>
-        <option value="Miss" className="ru-hide">{it.L('Miss')}</option>
+        <option value='Mr'>${it.L('Mr')}</option>
+        <option value='Mrs' className='ru-hide'>{it.L('Mrs')}</option>
+        <option value='Ms'>{it.L('Ms')}</option>
+        <option value='Miss' className='ru-hide'>{it.L('Miss')}</option>
     </FormRow>
 );
 
@@ -60,7 +60,7 @@ export const Residence = () => (
         id='residence'
         label={it.L('Country of residence')}
     >
-        <label id="lbl_residence"></label>
+        <label id='lbl_residence'></label>
     </FormRow>
 );
 
@@ -75,10 +75,10 @@ export const AccountOpeningReason  = ({
         row_id={row_id}
         row_class={row_class}
     >
-        <option value="">{it.L('Please select')}</option>
-        <option value="Speculative">{it.L('Speculative')}</option>
-        <option value="Income Earning">{it.L('Income earning')}</option>
-        <option value="Hedging">{it.L('Hedging')}</option>
+        <option value=''>{it.L('Please select')}</option>
+        <option value='Speculative'>{it.L('Speculative')}</option>
+        <option value='Income Earning'>{it.L('Income earning')}</option>
+        <option value='Hedging'>{it.L('Hedging')}</option>
     </FormRow>
 );
 
@@ -157,14 +157,14 @@ export const SecretQuestion = () => (
         id='secret_question'
         label={it.L('Secret question')}
     >
-        <option value="Favourite dish">{it.L('Favourite dish')}</option>
+        <option value='Favourite dish'>{it.L('Favourite dish')}</option>
         <option value="Mother's maiden name">{it.L('Mother\'s maiden name')}</option>
-        <option value="Name of your pet">{it.L('Name of your pet')}</option>
-        <option value="Name of first love">{it.L('Name of first love')}</option>
-        <option value="Memorable town/city">{it.L('Memorable town/city')}</option>
-        <option value="Memorable date">{it.L('Memorable date')}</option>
-        <option value="Brand of first car">{it.L('Brand of first car')}</option>
-        <option value="Favourite artist">{it.L('Favourite artist')}</option>
+        <option value='Name of your pet'>{it.L('Name of your pet')}</option>
+        <option value='Name of first love'>{it.L('Name of first love')}</option>
+        <option value='Memorable town/city'>{it.L('Memorable town/city')}</option>
+        <option value='Memorable date'>{it.L('Memorable date')}</option>
+        <option value='Brand of first car'>{it.L('Brand of first car')}</option>
+        <option value='Favourite artist'>{it.L('Favourite artist')}</option>
     </FormRow>
 );
 
@@ -178,11 +178,11 @@ export const SecretAnswer = () => (
 );
 
 export const Tnc = () => (
-    <div className="center-text">
-        <div className="gr-row">
-            <div className="gr-12-m gr-padding-10 gr-centered">
-                <input type="checkbox" name="tnc" id="tnc" />
-                <label htmlFor="tnc">
+    <div className='center-text'>
+        <div className='gr-row'>
+            <div className='gr-12-m gr-padding-10 gr-centered'>
+                <input type='checkbox' name='tnc' id='tnc' />
+                <label htmlFor='tnc'>
                     {it.L(
                         'I have read and agree to the [_1]terms and conditions[_2] of the site.',
                         `<a target="_blank" href="${it.url_for('/terms-and-conditions')}">`,
@@ -192,15 +192,15 @@ export const Tnc = () => (
             </div>
         </div>
 
-        <button className="button" type="submit">{it.L('Open Account')}</button>
+        <button className='button' type='submit'>{it.L('Open Account')}</button>
     </div>
 );
 
 export const ClientMessage = () => (
-    <div className="errorbox rbox invisible" id="client_message">
-        <div className="rbox-wrap">
-            <div className="gr-12 rbox-content" id="client_message_content">
-                <p className="center-text notice-msg"></p>
+    <div className='errorbox rbox invisible' id='client_message'>
+        <div className='rbox-wrap'>
+            <div className='gr-12 rbox-content' id='client_message_content'>
+                <p className='center-text notice-msg'></p>
             </div>
         </div>
     </div>

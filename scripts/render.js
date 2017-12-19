@@ -295,6 +295,7 @@ async function compile(page) {
 
         const context   = context_builder.buildFor(model);
         const page_html = renderComponent(context, `../src/templates/${page.tpl_path}.jsx`);
+        const language  = lang.toLowerCase();
 
         if (page.layout) {
             const layout_path = `../src/templates/${page.tpl_path.split('/')[0]}/_layout/layout.jsx`;
@@ -305,19 +306,19 @@ async function compile(page) {
             const layout_normal = `<!DOCTYPE html>\n${renderComponent(context, layout_path)}`;
 
             await common.writeFile( // pjax layout
-                Path.join(config.dist_path, `${lang}/pjax/${page.save_as}.html`),
+                Path.join(config.dist_path, `${language}/pjax/${page.save_as}.html`),
                 layout_pjax.replace(CONTENT_PLACEHOLDER, page_html),
                 'utf8'
             );
 
             await common.writeFile( // normal layout
-                Path.join(config.dist_path, `${lang}/${page.save_as}.html`),
+                Path.join(config.dist_path, `${language}/${page.save_as}.html`),
                 layout_normal.replace(CONTENT_PLACEHOLDER, page_html),
                 'utf8'
             );
         } else {
             await common.writeFile( // landing pages
-                Path.join(config.dist_path, `${lang}/${page.save_as}.html`),
+                Path.join(config.dist_path, `${language}/${page.save_as}.html`),
                 page_html,
                 'utf8'
             );
