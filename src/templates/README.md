@@ -70,7 +70,7 @@ Rules
 - Use functional stateless components (`FSC`).
 - Use destructuring to capture parameters if needed.
 - Use `{condition && <el/> ...</el>}` syntax to conditionally render an element.
-- Use `<el attr={value || undefined}` to conditionally render an attribute, React omits attributes with null or undefined values.  
+- Use `<el attr={value || undefined}` to conditionally render an attribute, React omits attributes with null or undefined values.
 - Use `it.L('...')` instead of `l("...")` for translations.
 - Use `it.url_for('...')` instead of `request.url_for("...")`.
 - Use `it.website_name` instead of `website_name`.
@@ -113,12 +113,12 @@ Setup
 
 1. Make sure you have `node >= 8` installed.
 2. Git checkout a new branch from [This branch](https://github.com/aminroosta/binary-static/tree/no_perl) and do `npm install`.
-    - `git add remote noperl git@github.com:aminroosta/binary-static.git`
+    - `git remote add noperl git@github.com:aminroosta/binary-static.git`
     - `git fetch noperl no_perl`
     - `git checkout -b no_perl noperl/no_perl`
     - `npm install`
 3. Compile your templates with perl and rename `dist` folder to `dist-perl`, we will use it later to validate the changes.
-    - `grunt shell:compile_dev`
+    - `grunt default && grunt shell:compile_dev`
     - `mv dist dist-perl`
     - `grunt default`
 
