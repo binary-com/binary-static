@@ -315,6 +315,6 @@ const BinaryOptions = () => {
             </div>
         </div>
     );
-}
+};
 
 export default BinaryOptions;
