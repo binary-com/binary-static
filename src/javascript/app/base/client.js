@@ -240,11 +240,11 @@ const Client = (() => {
                     client_logged_in.classList.add('gr-centered');
                 }
 
-                const is_ico_only = get('is_ico_only');
+                const is_ico_only = !is_jp && get('is_ico_only');
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
                 }
-                if (is_ico_only || Client.get('landing_company_shortcode') === 'costarica') {
+                if (!is_jp && (is_ico_only || Client.get('landing_company_shortcode') === 'costarica')) {
                     applyToAllElements('.ico-only-show', (el) => { el.setVisibility(1); });
                 }
 
