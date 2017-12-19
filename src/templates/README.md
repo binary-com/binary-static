@@ -120,6 +120,7 @@ Setup
 3. Compile your templates with perl and rename `dist` folder to `dist-perl`, we will use it later to validate the changes.
     - `grunt shell:compile_dev`
     - `mv dist dist-perl`
+    - `grunt default`
 
 Workflow
 ====
