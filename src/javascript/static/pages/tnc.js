@@ -1,6 +1,6 @@
 const tabListener = require('binary-style').tabListener;
+const sidebar     = require('binary-style').sidebarCollapsible;
 const localize    = require('../../_common/localize').localize;
-const Scroll      = require('../../_common/scroll');
 const urlParam    = require('../../_common/url').param;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
 
@@ -11,8 +11,12 @@ const TermsAndConditions = (() => {
             $('#btn_accept'),
             () => { $('.tnc_accept').setVisibility(1); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
-        Scroll.sidebarScroll($('.tac-binary'));
         tabListener();
+        sidebar();
+
+        handleSidebar();
+        checkWidth();
+        window.onresize = checkWidth;
 
         $('.currentYear').text(new Date().getFullYear());
     };
@@ -69,8 +73,46 @@ const TermsAndConditions = (() => {
         }
     };
 
+    const handleSidebar = () => {
+        const hash     = window.location.hash;
+        const $sidebar = $('.sidebar-collapsible');
+        const $content = $('.sidebar-collapsible-content');
+
+        $sidebar.on('click', () => {
+            if (!checkWidth()) $.scrollTo($content, 250, { offset: -10 });
+        });
+        $sidebar.find(hash ? `${hash} a` : 'a:first').trigger('click');
+    };
+
+    const checkWidth = () => {
+        const mq = window.matchMedia('(max-width: 1023px)').matches;
+        if (mq) {
+            $('.sidebar-collapsible').css({ position: 'relative' });
+            $(window).off('scroll', stickySidebar);
+        } else {
+            $(window).on('scroll', stickySidebar);
+        }
+        return mq;
+    };
+
+    const stickySidebar = () => {
+        const $sidebar = $('.sidebar-collapsible');
+        const $content = $('.sidebar-collapsible-content');
+
+        if (!$sidebar.is(':visible')) return;
+
+        const width = $sidebar.width();
+        if (window.scrollY < $content.offset().top) {
+            $sidebar.css({ position: 'relative' });
+        } else if (window.scrollY > $content[0].offsetHeight - 50) {
+            $sidebar.css({ position: 'absolute', bottom: '20px', top: '', 'min-width': width });
+        } else {
+            $sidebar.css({ position: 'fixed', top: '0px', bottom: '', 'min-width': width });
+        }
+    };
+
     const onUnload = () => {
-        Scroll.offScroll();
+        $('.sidebar-collapsible a').off('click');
     };
 
     return {
