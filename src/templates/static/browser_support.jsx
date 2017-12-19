@@ -79,7 +79,7 @@ const BrowserSupport = () => (
                     it.L('Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button.'),
                     it.L('Under the <strong>Cookies</strong> section, select the "<strong>Don\'t block cookies</strong>" option.'),
                     it.L('Click anywhere outside the menu to save and close.'),
-                ]}browser_supp />
+                ]} />
             </div>
         </div>
         <div className='gr-padding-20 clear'></div>
