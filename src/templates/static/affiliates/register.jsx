@@ -9,8 +9,8 @@ const Register = ({ lang = 'en' }) => {
                 <h4><strong>{language_is_ja ? it.L('{JAPAN ONLY}Register') : it.L('Register')}</strong></h4>
             </div>
 
-            <div className="center-text gr-padding-10">
-                <a className="button" href={`https://login.binary.com/signup.php${language_is_ja ? '?lang=13' : ''}`}>
+            <div className='center-text gr-padding-10'>
+                <a className='button' href={`https://login.binary.com/signup.php${language_is_ja ? '?lang=13' : ''}`}>
                     <span>{language_is_ja ? it.L('{JAPAN ONLY}Sign me up') : it.L('Sign me up')}</span>
                 </a>
             </div>
