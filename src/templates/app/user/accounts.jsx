@@ -15,7 +15,7 @@ const Accounts = () => (
         <div className='invisible' id='new_accounts_wrapper'>
             <form id='new_accounts'>
                 <Table 
-                    scroll={true} 
+                    scroll 
                     data={{
                         thead: [
                             [
@@ -41,7 +41,7 @@ const Accounts = () => (
         <SeparatorLine className='gr-padding-20' show_mobile invisible />
 
         <h1>{it.L('Your Existing Accounts')}</h1>
-        <Table  scroll={true} id='existing_accounts' data={{
+        <Table  scroll id='existing_accounts' data={{
             thead: [
                 [
                     { text: it.L('Account') }, 

@@ -74,6 +74,7 @@ Rules
 - Use `it.L('...')` instead of `l("...")` for translations.
 - Use `it.url_for('...')` instead of `request.url_for("...")`.
 - Use `it.website_name` instead of `website_name`.
+- Do NOT use `<Element attributeName={true} />`; just use `<Element attributeName />`.
 - Always name your components before default exporting them, for example:
 
 ```html
