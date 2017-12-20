@@ -18,9 +18,9 @@ export const Tabs = ({
 }) => (
     <div id={id}>
         <ul id={id_ul} className='tm-ul follow-default'>
-            {arr_tabs.map((tab) => (
+            {arr_tabs.map((tab, idx) => (
                 !tab.disabled &&
-                    <li id={tab.id} className={`tm-li ${tab.class || ''}`}>
+                    <li key={idx} id={tab.id} className={`tm-li ${tab.className || ''}`}>
                         <a href={no_href ? 'javascript:;' : `#${tab.id}`} className='tm-a'>{tab.text}</a>
                     </li>
             ))}
@@ -59,7 +59,7 @@ export const TabsSubtabs = ({
             <div className='tab-menu-wrap'>
                 <ul id={id} className='tm-ul'>
                     {items.map((item, idx) => (
-                        <li key={idx} id={item.id} className={`tm-li ${item.class || ''}`}>
+                        <li key={idx} id={item.id} className={`tm-li ${item.className || ''}`}>
                             {(item.subtabs &&
                                 <React.Fragment>
                                     <span className='menu-wrap-a'>
