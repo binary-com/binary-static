@@ -20,13 +20,13 @@ module.exports = [
     ['trading',                            'app/trade/trading',                         'default',    'Trusted by traders since 2000'],
     ['trading_beta',                       'app/trade/beta/trading',                    'default',    'Trusted by traders since 2000',     'ja'],
 
+    ['new_account/account_type',           'app/new_account/account_type',              'default',    'Account Type Selection',            'ja'],
     ['new_account/japanws',                'app/new_account/japan',                     'default',    'Real Money Account Opening',        'NOT-ja,en'],
     ['new_account/knowledge_testws',       'app/japan/knowledge_test',                  'default',    'Real Money Account Opening',        'NOT-ja,en'],
+    ['new_account/landing_page',           'app/new_account/landing_page',              'default',    'Welcome to Binary.com',             'NOT-ja,en'],
     ['new_account/maltainvestws',          'app/new_account/financial',                 'default',    'Financial Account Opening'],
     ['new_account/realws',                 'app/new_account/real',                      'default',    'Real Money Account Opening'],
-    ['new_account/account_type',           'app/new_account/account_type',              'default',    'Account Type Selection',            'ja'],
     ['new_account/virtualws',              'app/new_account/virtual',                   'default',    'Create New Account'],
-    ['new_account/landing_page',           'app/new_account/landing_page',              'default',    'Welcome to Binary.com',             'NOT-ja,en'],
 
     ['resources',                          'app/resources/index',                       'default',    'Resources'],
     ['resources/asset_indexws',            'app/resources/asset_index',                 'default',    'Asset Index', 'ja'],
@@ -34,20 +34,17 @@ module.exports = [
 
     ['user/accounts',                      'app/user/accounts',                         'default',    'Accounts',                          'ja'],
     ['user/authenticate',                  'app/user/authenticate',                     'default',    'Authenticate',                      'ja'],
-    ['user/video-facility',                'app/user/video_facility',                   'default',    'Video Room Facility'],
-    ['user/ico-subscribe',                 'app/user/ico_subscribe',                    'default',    'Subscribe to ICO',                  'ja'],
+    ['user/ico-claim-form',                'app/user/ico_claim_form',                   'default',    'Electronic Subscription Form for Tokens', 'ja'],
     ['user/ico-info',                      'app/user/ico_info',                         'default',    'ICO Histogram',                     'ja'],
+    ['user/ico-subscribe',                 'app/user/ico_subscribe',                    'default',    'Subscribe to ICO',                  'ja'],
     ['user/lost_passwordws',               'app/user/lost_password',                    'default',    'Password Reset'],
     ['user/metatrader',                    'app/user/metatrader',                       'full_width', 'MetaTrader account management'],
     ['user/portfoliows',                   'app/user/portfolio',                        'default',    'Portfolio'],
     ['user/profit_tablews',                'app/user/profit_table',                     'default',    'Profit Table'],
-    ['user/securityws',                    'app/user/security',                         'default',    'Security'],
-    ['user/settingsws',                    'app/user/settings',                         'default',    'Settings'],
-    ['user/statementws',                   'app/user/statement',                        'default',    'Statement'],
-    ['user/tnc_approvalws',                'app/user/tnc_approval',                     'default',    'Terms and Conditions Approval'],
-    ['user/reset_passwordws',              'app/user/reset_password',                   'default',    'Password Reset'],
     ['user/reality_check_frequency',       'app/user/reality_check/frequency',          'default',    'Reality Check'],
     ['user/reality_check_summary',         'app/user/reality_check/summary',            'default',    'Reality Check'],
+    ['user/reset_passwordws',              'app/user/reset_password',                   'default',    'Password Reset'],
+    ['user/securityws',                    'app/user/security',                         'default',    'Security'],
     ['user/security/api_tokenws',          'app/user/security/api_token',               'default',    'API Token',                         'ja'],
     ['user/security/authorised_appsws',    'app/user/security/authorised_apps',         'default',    'Authorised Applications',           'ja'],
     ['user/security/cashier_passwordws',   'app/user/security/cashier_password',        'default',    'Cashier Password'],
@@ -55,18 +52,22 @@ module.exports = [
     ['user/security/iphistoryws',          'app/user/security/iphistory',               'default',    'Login History',                     'ja'],
     ['user/security/limitsws',             'app/user/security/limits',                  'default',    'Account Limits'],
     ['user/security/self_exclusionws',     'app/user/security/self_exclusion',          'default',    'Self Exclusion'],
+    ['user/set-currency',                  'app/user/set_currency',                     'default',    'Set Currency',                      'ja'],
+    ['user/settingsws',                    'app/user/settings',                         'default',    'Settings'],
     ['user/settings/assessmentws',         'app/user/settings/financial_assessment',    'default',    'Financial Assessment',              'ja'],
     ['user/settings/detailsws',            'app/user/settings/personal_details',        'default',    'Personal Details'],
     ['user/settings/professional',         'app/user/settings/professional',            'default',    'Professional Client'],
-    ['user/set-currency',                  'app/user/set_currency',                     'default',    'Set Currency',                      'ja'],
+    ['user/statementws',                   'app/user/statement',                        'default',    'Statement'],
     ['user/telegram-bot',                  'app/user/telegram_bot',                     'default',    'Telegram Bot'],
+    ['user/tnc_approvalws',                'app/user/tnc_approval',                     'default',    'Terms and Conditions Approval'],
+    ['user/video-facility',                'app/user/video_facility',                   'default',    'Video Room Facility'],
     ['user/warning',                       'app/user/warning',                          'default',    'Warning'],
 
     ['endpoint',                           'app/endpoint',                              'default',    'Endpoint'],
 
+    ['explanation',                        'app/trade/explanation',                     null],
     ['logged_inws',                        'app/logged_in',                             null],
     ['redirect',                           'app/logged_in',                             null,         'Redirecting...'],
-    ['explanation',                        'app/trade/explanation',                     null],
 
 
     // ==================== Section: "static" ====================
@@ -92,7 +93,7 @@ module.exports = [
     ['affiliate/signup',                   'static/affiliates/signup',                  'default',    'Affiliate',                         'ja'],
     ['affiliate/signup-jp',                'static/japan/affiliates/signup',            'default',    'Affiliate',                         'NOT-ja,en'],
     ['charity',                            'static/charity',                            'default',    'Charity'],
-    ['company-profile',                    'static/japan/company_profile',              'default',    'Company Profile',                    'NOT-ja,en'],
+    ['company-profile',                    'static/japan/company_profile',              'default',    'Company Profile',                   'NOT-ja,en'],
     ['legal/us_patents',                   'static/legal/us_patents',                   'default',    'US Patents',                        'ja'],
     ['regulation',                         'static/legal/regulation',                   'default',    'Regulation',                        'id'],
     ['responsible-trading',                'static/responsible_trading',                'full_width', 'Responsible Trading',               'ja'],
@@ -126,19 +127,21 @@ module.exports = [
     ['get-started-beta/binary-options',   'static/get_started_beta/binary_options',     'default',     'Binary Options',                   'ja'],
     ['get-started-beta/cfds',             'static/get_started_beta/cfds',               'default',     'CFDs',                             'ja'],
     ['get-started-beta/cryptocurrencies', 'static/get_started_beta/cryptocurrencies',   'default',     'Cryptocurrencies',                 'ja'],
-    ['get-started-beta/metals',           'static/get_started_beta/metals',             'default',     'Metals',                           'ja'],
     ['get-started-beta/forex',            'static/get_started_beta/forex',              'default',     'Forex',                            'ja'],
+    ['get-started-beta/metals',           'static/get_started_beta/metals',             'default',     'Metals',                           'ja'],
 
     ['get-started-jp',                     'static/japan/get_started',                  'default',     'Get Started',                      'NOT-ja,en'],
 
     ['metatrader/contract-specifications', 'static/metatrader/contract_specifications', 'default',     'Contract Specifications'],
     ['metatrader/download',                'static/metatrader/download',                'default',     'Start Trading with MetaTrader 5'],
-    ['metatrader/margin-policy',           'static/metatrader/margin_policy',           'full_width',  'MetaTrader Margin Policy'],
+    ['metatrader/how-to-trade-mt5',        'static/metatrader/how_to_trade_mt5',        'default',     'How to Trade in MetaTrader 5'],
+    ['metatrader/types-of-accounts',       'static/metatrader/types_of_accounts',       'default',     'Types of MetaTrader 5 accounts'],
 
     ['affiliate_disclaimer',               'static/japan/affiliates/popup',             null,          '',                                 'NOT-ja,en'],
 
 
     // ==================== Section: "landing_pages" ====================
+    ['graduates',                          'landing_pages/graduate_program',            null,        'Binary.com Graduate Program',        'NOT-en'],
     ['ico',                                'landing_pages/ico',                         null,        'Initial Coin Offering',              'ja'],
     ['ico-disclaimer',                     'landing_pages/ico_disclaimer',              null,        'Initial Coin Offering Disclaimer',   'ja'],
     ['hackathon',                          'landing_pages/hackathon',                   null,        'Hackathon Competition',              'NOT-en'],

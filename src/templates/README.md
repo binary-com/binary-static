@@ -70,7 +70,7 @@ Rules
 - Use functional stateless components (`FSC`).
 - Use destructuring to capture parameters if needed.
 - Use `{condition && <el/> ...</el>}` syntax to conditionally render an element.
-- Use `<el attr={value || undefined}` to conditionally render an attribute, React omits attributes with null or undefined values.  
+- Use `<el attr={value || undefined}` to conditionally render an attribute, React omits attributes with null or undefined values.
 - Use `it.L('...')` instead of `l("...")` for translations.
 - Use `it.url_for('...')` instead of `request.url_for("...")`.
 - Use `it.website_name` instead of `website_name`.
@@ -87,6 +87,7 @@ Rules
 
 [% PROCESS loading %]
 ```
+- Adjacent JSX components needs to be wrapped in an enclosing tag. Wrap them in `<React.Fragment />`
 
 Becomes:
 ```jsx
@@ -113,12 +114,12 @@ Setup
 
 1. Make sure you have `node >= 8` installed.
 2. Git checkout a new branch from [This branch](https://github.com/aminroosta/binary-static/tree/no_perl) and do `npm install`.
-    - `git add remote noperl git@github.com:aminroosta/binary-static.git`
+    - `git remote add noperl git@github.com:aminroosta/binary-static.git`
     - `git fetch noperl no_perl`
     - `git checkout -b no_perl noperl/no_perl`
     - `npm install`
 3. Compile your templates with perl and rename `dist` folder to `dist-perl`, we will use it later to validate the changes.
-    - `grunt shell:compile_dev`
+    - `grunt default && grunt shell:compile_dev`
     - `mv dist dist-perl`
     - `grunt default`
 
@@ -127,7 +128,7 @@ Workflow
 1. Pick a template (lets say `/src/templates/static/charity.html.tt`) and duplicate it with `.jsx` extension (`/src/templates/static/charity.jsx`).  
     - Update the trello card, let everyone know you are working on this template :-)
 2. After converting it to `.jsx` syntax, render with `scripts/render.js [options]`.
-    - You can pass `scripts/render.js -h` to see available options. 
+    - You can pass `scripts/render.js -h` to see available options.
     - Usually something like `scripts/render.js --dev --path charity$` will do.
     - `--path` is a Regex.
 3. Make sure eslint is happy, you may try `grunt eslint` command.
