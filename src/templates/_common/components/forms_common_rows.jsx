@@ -10,7 +10,7 @@ export const Salutation = ({
         id='salutation'
         label={it.L('Title')}
     >
-        <option value='Mr'>${it.L('Mr')}</option>
+        <option value='Mr'>{it.L('Mr')}</option>
         <option value='Mrs' className='ru-hide'>{it.L('Mrs')}</option>
         <option value='Ms'>{it.L('Ms')}</option>
         <option value='Miss' className='ru-hide'>{it.L('Miss')}</option>
@@ -50,7 +50,7 @@ export const DateOfBirth = ({
         type='text'
         id='date_of_birth'
         label={it.L('Date of birth')}
-        attributes={{size: '12', readonly: 'readonly', className: className || undefined }}
+        attributes={{size: '12', readOnly: true, className: className || undefined }}
     />
 );
 
@@ -114,7 +114,7 @@ export const AddressCity = ({
         type='text'
         id='address_city'
         label={it.L('Town/City')}
-        attributes={{maxLength: '70'}}
+        attributes={{maxLength: 35}}
         hint={hint}
     />
 );
