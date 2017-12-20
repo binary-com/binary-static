@@ -18,9 +18,9 @@ export const Tabs = ({
 }) => (
     <div id={id}>
         <ul id={id_ul} className='tm-ul follow-default'>
-            {arr_tabs.map((tab) => (
+            {arr_tabs.map((tab, idx) => (
                 !tab.disabled &&
-                    <li id={tab.id} className={`tm-li ${tab.class || ''}`}>
+                    <li key={idx} id={tab.id} className={`tm-li ${tab.className || ''}`}>
                         <a href={no_href ? 'javascript:;' : `#${tab.id}`} className='tm-a'>{tab.text}</a>
                     </li>
             ))}

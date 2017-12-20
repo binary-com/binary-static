@@ -153,7 +153,7 @@ export const Table = ({
                 </thead>
             }
             <Tbody
-                trs={data.tbody}
+                trs={data.tbody || []}
                 tbody_id={tbody_id}
             />
             { data.tfoot &&
@@ -165,7 +165,7 @@ export const Table = ({
                                     key={th_inx}
                                     className={th.className}
                                     id={th.id}
-                                    {... (th.attributes || {}) }
+                                    {...(th.attributes || {})}
                                 >
                                     {th.text}
                                 </th>
