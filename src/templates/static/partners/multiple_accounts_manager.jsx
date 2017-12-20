@@ -143,7 +143,7 @@ const MultipleAccountsManager = () => (
                 <div className='gr-parent gr-padding-20'>
                     <a className='button' href='https://s3.amazonaws.com/binary-mt5/binarycom_mam.rar' rel='noopener noreferrer'><span>{it.L('Download Now')}</span></a>
                 </div>
-                <p>{it.L('Interested in our MAM tool for MetaTrader 5? Contact us at [_1] for more info.', '<a href=\'mailto:marketing@binary.com\'>marketing@binary.com</a>')}</p>
+                <p>{it.L('Interested in our MAM tool for MetaTrader 5? Contact us at [_1] for more info.', '<a href="mailto:marketing@binary.com">marketing@binary.com</a>')}</p>
             </div>
         </div>
     </React.Fragment>

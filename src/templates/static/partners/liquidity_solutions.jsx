@@ -85,7 +85,7 @@ const LiquiditySolutions = () => (
                 <li>{it.L('Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients')}</li>
                 <li>{it.L('Access to STP trading')}</li>
             </ul>
-            <p>{it.L('Interested in our liquidity solutions? Contact us at [_1] for more info.', '<a href=\'mailto:marketing@binary.com\'>marketing@binary.com</a>')}</p>
+            <p>{it.L('Interested in our liquidity solutions? Contact us at [_1] for more info.', '<a href="mailto:marketing@binary.com">marketing@binary.com</a>')}</p>
         </div>
     </React.Fragment>
 );

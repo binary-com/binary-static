@@ -16,7 +16,7 @@ const PullRequests = () => (
             <div className=' gr-padding-30 container'>
                 <div className='gr-padding-10'>
                     <h2>{it.L('Which projects are available?')}</h2>
-                    <p>{it.L('All [_1] [_2]front-end platforms and libraries[_3] are eligible.', it.website_name, '<a target=\'_blank\' href=\'https://developers.binary.com/open-source/\'>', '</a>')}</p>
+                    <p>{it.L('All [_1] [_2]front-end platforms and libraries[_3] are eligible.', it.website_name, '<a target="_blank" href="https://developers.binary.com/open-source/">', '</a>')}</p>
                 </div>
 
                 <div className='gr-padding-10'>
@@ -25,7 +25,7 @@ const PullRequests = () => (
                         <li className='gr-6 gr-12-m'>{it.L('Fork the relevant Github repository')}</li>
                         <li className='gr-6 gr-12-m'>{it.L('Make your code changes in your fork')}</li>
                         <li className='gr-6 gr-12-m'>{it.L('Submit a pull request to master in the original GitHub repository ')}</li>
-                        <li className='gr-6 gr-12-m'>{it.L('Send an email to [_1] to ask our development team to review your pull request', '<a href=\'mailto:pull-requests@binary.com\'>pull-requests@binary.com</a>')}</li>
+                        <li className='gr-6 gr-12-m'>{it.L('Send an email to [_1] to ask our development team to review your pull request', '<a href="mailto:pull-requests@binary.com">pull-requests@binary.com</a>')}</li>
                     </ul>
                 </div>
 
@@ -93,7 +93,7 @@ const PullRequests = () => (
                 </div>
                 <div className='gr-padding-10'>
                     <h2>{it.L('Can I work for [_1] full-time?', it.website_name)}</h2>
-                    <p>{it.L('We are always on the lookout for talent – please apply via our <a target=\'_blank\' href=\'[_1]\'>careers</a> page.', it.url_for('careers'))}</p>
+                    <p>{it.L('We are always on the lookout for talent – please apply via our <a target="_blank" href="[_1]">careers</a> page.', it.url_for('careers'))}</p>
                 </div>
 
                 <div className='gr-padding-10'>

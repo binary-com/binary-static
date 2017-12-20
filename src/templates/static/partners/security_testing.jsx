@@ -22,7 +22,7 @@ const SecurityTesting = () => (
                 <li>{it.L('Read and understand our HackerOne bug bounty programme policy.')}</li>
                 <li>{it.L('Analyse and test the domains and subdomains listed in the scope.')}</li>
                 <li>{it.L('Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue.')}</li>
-                <li>{it.L('If you find any vulnerabilities in our [_1]open-source code[_2], feel free to submit a pull request on GitHub.', '<a target=\'_blank\' href=\'https://github.com/binary-com\' rel=\'noopener noreferrer\'>', '</a>')}</li>
+                <li>{it.L('If you find any vulnerabilities in our [_1]open-source code[_2], feel free to submit a pull request on GitHub.', '<a target="_blank" href="https://github.com/binary-com" rel="noopener noreferrer">', '</a>')}</li>
             </ul>
 
             <FillBox center padding='6' href='https://hackerone.com/binary' target='_blank'

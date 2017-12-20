@@ -59,7 +59,7 @@ const Omnibus = () => (
         </div>
 
         <div className='container'>
-            <p className='center-text'>{it.L('Interested in our omnibus account facility? [_1]Contact us now and apply as an omnibus broker[_2].', '<a href=\'mailto:marketing@binary.com\'>', '</a>')}</p>
+            <p className='center-text'>{it.L('Interested in our omnibus account facility? [_1]Contact us now and apply as an omnibus broker[_2].', '<a href="mailto:marketing@binary.com">', '</a>')}</p>
             <SeparatorLine invisible className='gr-parent gr-padding-20' />
         </div>
     </React.Fragment>
