@@ -1,7 +1,6 @@
 import React from 'react';
 import Loading from '../../../_common/components/loading.jsx';
 
-
 const AuthorisedApps = () => (
 <React.Fragment>
 <div id='applications-container'>
