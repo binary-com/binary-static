@@ -74,6 +74,7 @@ Rules
 - Use `it.L('...')` instead of `l("...")` for translations.
 - Use `it.url_for('...')` instead of `request.url_for("...")`.
 - Use `it.website_name` instead of `website_name`.
+- Do NOT use `<Element attributeName={true} />`; just use `<Element attributeName />`.
 - Always name your components before default exporting them, for example:
 
 ```html
@@ -87,6 +88,7 @@ Rules
 
 [% PROCESS loading %]
 ```
+- Adjacent JSX components needs to be wrapped in an enclosing tag. Wrap them in `<React.Fragment />`
 
 Becomes:
 ```jsx
@@ -102,7 +104,11 @@ const Loading = ({theme}) => (
 
 export default Loading;
 ```
+- There are cases where you do not want your strings to be escaped (i.g. when you place `<a/>` tags inside a `<Table />`). To bypass HTML escape, you can use `it.dangreouslyRenderHtml()` (under normal circumstances do NOT use this!):
 
+```js
+it.dangreouslyRenderHtml('<a href="https://binary.com"></a>');
+```
 
 Contributing
 ===
@@ -127,7 +133,7 @@ Workflow
 1. Pick a template (lets say `/src/templates/static/charity.html.tt`) and duplicate it with `.jsx` extension (`/src/templates/static/charity.jsx`).  
     - Update the trello card, let everyone know you are working on this template :-)
 2. After converting it to `.jsx` syntax, render with `scripts/render.js [options]`.
-    - You can pass `scripts/render.js -h` to see available options. 
+    - You can pass `scripts/render.js -h` to see available options.
     - Usually something like `scripts/render.js --dev --path charity$` will do.
     - `--path` is a Regex.
 3. Make sure eslint is happy, you may try `grunt eslint` command.

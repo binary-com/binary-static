@@ -17,6 +17,7 @@ const ReactDOMServer = require('../node_modules/react-dom/server.js');
 
 const renderComponent = (context, path) => {
     const Component = require(path).default; // eslint-disable-line
+
     global.it = context;
     const result = ReactDOMServer.renderToStaticMarkup(
         React.createElement(
@@ -259,7 +260,8 @@ const createContextBuilder = async () => {
                     const translated = translator(text, ...args);
                     return RenderHTML(translated);
                 },
-                url_for: createUrlFinder(model.language),
+                url_for              : createUrlFinder(model.language),
+                dangreouslyRenderHtml: RenderHTML,
             });
         },
     };

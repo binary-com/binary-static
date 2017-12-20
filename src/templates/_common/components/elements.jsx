@@ -151,7 +151,7 @@ export const Tbody = ({
     tbody_id,
 }) => (
     <tbody id={tbody_id}>
-        {trs.map((tr, inx_tr) => (
+        {trs && trs.map((tr, inx_tr) => (
             <tr key={inx_tr}>
                 {tr.map((td, inx_td) => (
                     td.header ?
@@ -189,7 +189,7 @@ export const Table = ({
                 </thead>
             }
             <Tbody
-                trs={data.tbody}
+                trs={data.tbody || []}
                 tbody_id={tbody_id}
             />
             { data.tfoot &&
@@ -201,7 +201,7 @@ export const Table = ({
                                     key={th_inx}
                                     className={th.className}
                                     id={th.id}
-                                    {... (th.attributes || {}) }
+                                    {...(th.attributes || {})}
                                 >
                                     {th.text}
                                 </th>
