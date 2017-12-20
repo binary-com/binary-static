@@ -1,7 +1,7 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-const FileSelector = ({heading, allowed_documents, instructions, accepted_documents, type}) => (
+const FileSelector = ({ heading, allowed_documents, instructions, accepted_documents, type }) => (
     <div className='gr-row gr-12'>
         <fieldset>
             <div className='gr-padding-30 gr-gutter-left gr-gutter-right'>
@@ -29,47 +29,47 @@ const FileSelector = ({heading, allowed_documents, instructions, accepted_docume
                         <div className='files'>
                             {accepted_documents.map((document, i) => (
                                 <React.Fragment key={i}>
-                                <h3>{document.name}</h3>
-                                <div className='fields'>
-                                    {type === 'poi' && (
-                                    <React.Fragment>
-                                        <div className='gr-row form-row center-text-m'>
-                                            <div className='gr-4 gr-12-m'>
-                                                <label htmlFor={`id_number_${i+1}`}>{it.L('ID number')}:</label>
+                                    <h3>{document.name}</h3>
+                                    <div className='fields'>
+                                        {type === 'poi' && (
+                                            <React.Fragment>
+                                                <div className='gr-row form-row center-text-m'>
+                                                    <div className='gr-4 gr-12-m'>
+                                                        <label htmlFor={`id_number_${i + 1}`}>{it.L('ID number')}:</label>
+                                                    </div>
+                                                    <div className='gr-8 gr-12-m'>
+                                                        <input id={`id_number_${i + 1}`} type='text' maxLength='30' />
+                                                    </div>
+                                                </div>
+                                                <div className='gr-row form-row center-text-m'>
+                                                    <div className='gr-4 gr-12-m'>
+                                                        <label htmlFor={`exp_date_${i + 1}`}>{it.L('Expiry date')}:</label>
+                                                    </div>
+                                                    <div className='gr-8 gr-12-m'>
+                                                        <input className='date-picker' id={`exp_date_${i + 1}`} type='text' maxLength='200' readOnly='true' />
+                                                    </div>
+                                                </div>
+                                                <div className='gr-row form-row center-text-m'>
+                                                    <div className='gr-12'>
+                                                        <input id={`front_file${i + 1}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
+                                                        <label htmlFor={`front_file${i + 1}`} className='button'>{it.L('Front Side')} <span className='add' /></label>
+                                                    </div>
+                                                    <div className='gr-12'>
+                                                        <input id={`back_file${i + 1}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
+                                                        <label htmlFor={`back_file${i + 1}`} className='button'>{it.L('Reverse Side')} <span className='add' /></label>
+                                                    </div>
+                                                </div>
+                                            </React.Fragment>
+                                        )}
+                                        {type === 'poa' && (
+                                            <div className='gr-row form-row gr-centered'>
+                                                <div className='gr-12'>
+                                                    <input id={`add_file${i + 1}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
+                                                    <label htmlFor={`add_file${i + 1}`} className='button'>{it.L('Add')} <span className='add' /></label>
+                                                </div>
                                             </div>
-                                            <div className='gr-8 gr-12-m'>
-                                                <input id={`id_number_${i+1}`} type='text' maxLength='30'/>
-                                            </div>
-                                        </div>
-                                        <div className='gr-row form-row center-text-m'>
-                                            <div className='gr-4 gr-12-m'>
-                                                <label htmlFor={`exp_date_${i+1}`}>{it.L('Expiry date')}:</label>
-                                            </div>
-                                            <div className='gr-8 gr-12-m'>
-                                                <input className='date-picker' id={`exp_date_${i+1}`} type='text' maxLength='200' readOnly='true'/>
-                                            </div>
-                                        </div>
-                                        <div className='gr-row form-row center-text-m'>
-                                            <div className='gr-12'>
-                                                <input id={`front_file${i+1}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value}/>
-                                                <label htmlFor={`front_file${i+1}`} className='button'>{it.L('Front Side')} <span className='add' /></label>
-                                            </div>
-                                            <div className='gr-12'>
-                                                <input id={`back_file${i+1}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value}/>
-                                                <label htmlFor={`back_file${i+1}`} className='button'>{it.L('Reverse Side')} <span className='add' /></label>
-                                            </div>
-                                        </div>
-                                    </React.Fragment>
-                                    )}
-                                    {type === 'poa' && (
-                                        <div className='gr-row form-row gr-centered'>
-                                            <div className='gr-12'>
-                                                <input id={`add_file${i+1}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value}/>
-                                                <label htmlFor={`add_file${i+1}`} className='button'>{it.L('Add')} <span className='add' /></label>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
+                                        )}
+                                    </div>
                                 </React.Fragment>
                             ))}
                         </div>
@@ -82,58 +82,58 @@ const FileSelector = ({heading, allowed_documents, instructions, accepted_docume
 
 
 const AuthenticateMessage = () => (
-<React.Fragment>
-<p>{it.L('Authenticate your account by verifying your identity and address.')}</p>
+    <React.Fragment>
+        <p>{it.L('Authenticate your account by verifying your identity and address.')}</p>
 
-<FileSelector
-    heading={it.L('1. Proof of identity')}
-    allowed_documents={[
-        it.L('Passport'),
-        it.L('Driving licence'),
-        it.L('National ID card or any government issued document which contains a photo, your name, and date of birth'),
-    ]}
-    instructions={[
-        it.L('Must be a clear, colour photo or scanned image'), it.L('Minimum of six months validity'),
-        it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
-        it.L('Maximum upload size for each file is 3MB'),
-    ]}
-    type='poi'
-    accepted_documents={[
-        {name: it.L('Passport'),        value: 'passport'},
-        {name: it.L('Identity card'),   value: 'proofid'},
-        {name: it.L('Driving licence'), value: 'driverslicense'},
-    ]}
-/>
+        <FileSelector
+            heading={it.L('1. Proof of identity')}
+            allowed_documents={[
+                it.L('Passport'),
+                it.L('Driving licence'),
+                it.L('National ID card or any government issued document which contains a photo, your name, and date of birth'),
+            ]}
+            instructions={[
+                it.L('Must be a clear, colour photo or scanned image'), it.L('Minimum of six months validity'),
+                it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
+                it.L('Maximum upload size for each file is 3MB'),
+            ]}
+            type='poi'
+            accepted_documents={[
+                { name: it.L('Passport'), value: 'passport' },
+                { name: it.L('Identity card'), value: 'proofid' },
+                { name: it.L('Driving licence'), value: 'driverslicense' },
+            ]}
+        />
 
-<SeparatorLine className='gr-padding-10' invisible />
+        <SeparatorLine className='gr-padding-10' invisible />
 
-<FileSelector
-    heading={it.L('2. Proof of address')}
-    allowed_documents={[
-        it.L('Utility bills (electricity, water, gas, broadband and landline)'),
-        it.L('Latest bank statement or any government-issued letter which contains your name and address')]}
-    instructions={[
-        it.L('Must be a clear, colour photo or scanned image'),
-        it.L('Issued under your own name'), it.L('Dated within the last six months'),
-        it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
-        it.L('Maximum upload size for each file is 3MB'),
-    ]}
-    type='poa'
-    accepted_documents={[
-        {name: it.L('Utility bill'),   value: 'proofaddress'},
-        {name: it.L('Bank statement'), value: 'bankstatement'},
-    ]}
-/>
+        <FileSelector
+            heading={it.L('2. Proof of address')}
+            allowed_documents={[
+                it.L('Utility bills (electricity, water, gas, broadband and landline)'),
+                it.L('Latest bank statement or any government-issued letter which contains your name and address')]}
+            instructions={[
+                it.L('Must be a clear, colour photo or scanned image'),
+                it.L('Issued under your own name'), it.L('Dated within the last six months'),
+                it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
+                it.L('Maximum upload size for each file is 3MB'),
+            ]}
+            type='poa'
+            accepted_documents={[
+                { name: it.L('Utility bill'), value: 'proofaddress' },
+                { name: it.L('Bank statement'), value: 'bankstatement' },
+            ]}
+        />
 
-<div className='center-text'>
-    <div id='msg_form' className='error-msg invisible'></div>
-    <div className='gr-padding-10'>
-        <a className='button-disabled' id='btn_submit' type='submit'>
-            <span>{it.L('Submit for review')}</span>
-        </a>
-    </div>
-</div>
-</React.Fragment>
+        <div className='center-text'>
+            <div id='msg_form' className='error-msg invisible'></div>
+            <div className='gr-padding-10'>
+                <a className='button-disabled' id='btn_submit' type='submit'>
+                    <span>{it.L('Submit for review')}</span>
+                </a>
+            </div>
+        </div>
+    </React.Fragment>
 );
 
 export default AuthenticateMessage;
