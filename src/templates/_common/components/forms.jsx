@@ -23,11 +23,10 @@ export const FormRow = ({
     is_bold,
     tooltip,
     hint,
-    attributes,
+    attributes = {},
     input_prefix,
     children,
 }) => {
-    attributes = attributes || {};
     if (type === 'checkbox' && !spaced) {
         return (
             <div className={`gr-row ${row_class || ''}`} id={row_id} >
