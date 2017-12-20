@@ -963,7 +963,9 @@ const Ico = () => {
                                     </div>
                                 </div>
                             </form>
+                            {/* eslint-disable quotes */}
                             <script type='text/javascript' dangerouslySetInnerHTML={{ __html: `document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';` }}></script>
+                            {/* eslint-enable quotes */}
                             {/* /AWeber Web Form Generator 3.0.1*/}
                             <div id='subscribe_success' className='gr-8 gr-12-m gr-centered invisible'>
                                 <p className='notice-msg'>{it.L('Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.')}</p>
