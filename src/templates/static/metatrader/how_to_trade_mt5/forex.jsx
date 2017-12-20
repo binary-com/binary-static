@@ -43,7 +43,7 @@ const Forex = () => (
 
         <SeparatorLine className='gr-padding-30' />
 
-        <Step title={it.L('Learn to read currency pairs')} step={it.L('Step 1')} number={1} is_first={true}>
+        <Step title={it.L('Learn to read currency pairs')} step={it.L('Step 1')} number={1} is_first>
             <div>{it.L('Can\'t make heads or tails of currency pairs? Here is a simple way of looking at it:')}</div>
             <Table
                 className='middle thin-border'
@@ -102,7 +102,7 @@ const Forex = () => (
             <p>{it.L('If you decided that the British economy will underperform instead, then you will go short on the GBP/USD.')}</p>
         </Step>
 
-        <Step title={it.L('Buy your first currency pairs')} step={it.L('Step 3')} number={3} is_last={true}>
+        <Step title={it.L('Buy your first currency pairs')} step={it.L('Step 3')} number={3} is_last>
             <div>{it.L('After you have decided which position you want to take whether long or short you are well on your way to buying your first currency pair.')}</div>
             <p>{it.L('Example:')}</p>
             <div className='gr-row gr-nowrap gr-wrap-m gr-padding-20 gr-row-align-middle'>
