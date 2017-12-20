@@ -151,7 +151,7 @@ const IcoSubscribe = () => (
             <p id='message_gaming' className='invisible'>{it.L('To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Gaming Authority.')}</p>
             <p id='message_financial' className='invisible'>{it.L('To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Financial Services Authority.')}</p>
             <p id='message_iom' className='invisible'>{it.L('To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission.')}</p>
-            <AccountOpeningReason row_id='row_account_opening_reason' row_className='gr-padding-20 invisible' />
+            <AccountOpeningReason row_id='row_account_opening_reason' row_class='gr-padding-20 invisible' />
             <div className='center-text'>
                 <a href='javascript:;' className='button' id='ico_new_account'><span>{it.L('Sign up')}</span></a>
                 <p className='error-msg invisible' id='new_account_error'></p>
