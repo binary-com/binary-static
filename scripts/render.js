@@ -139,7 +139,8 @@ const createUrlFinder = default_lang => {
         }
 
         const p        = Url.parse(new_url, true);
-        const pathname = p.pathname.replace(/^\//, '');
+        let pathname = p.pathname.replace(/^\//, '');
+        pathname = Path.join(pathname); // convert a/b/../c to a/c
         if (common.pages.filter(page => page.save_as === pathname).length) {
             p.pathname = Path.join(config.root_url, `${lang}/${pathname}.html`);
             return Url.format(p);
