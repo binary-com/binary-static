@@ -104,7 +104,7 @@ const TermsAndConditions = (() => {
         const width = $sidebar.width();
         if (window.scrollY < $content.offset().top) {
             $sidebar.css({ position: 'relative' });
-        } else if (window.scrollY > $content[0].offsetHeight - 50) {
+        } else if (window.scrollY > $content[0].offsetHeight - 180) {
             $sidebar.css({ position: 'absolute', bottom: '20px', top: '', 'min-width': width });
         } else {
             $sidebar.css({ position: 'fixed', top: '0px', bottom: '', 'min-width': width });
