@@ -77,7 +77,7 @@ const TypesOfAccounts = () => (
         <h2 className='center-text'>{it.L('Account comparison')}</h2>
         <div className='gr-padding-10'>
             <Table
-                scroll={true}
+                scroll
                 data={{
                     thead: [
                         [{ text: '' }, { text: it.L('Cent') }, { text: it.L('Standard') }, { text: it.L('STP') }, { text: it.L('Volatility') }],

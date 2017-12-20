@@ -115,7 +115,7 @@ export const Tbody = ({
     tbody_id,
 }) => (
     <tbody id={tbody_id}>
-        {trs.map((tr, inx_tr) => (
+        {trs && trs.map((tr, inx_tr) => (
             <tr key={inx_tr}>
                 {tr.map((td, inx_td) => (
                     td.header ?
