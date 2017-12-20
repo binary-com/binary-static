@@ -34,7 +34,7 @@ const htmlDiffer = new HtmlDiffer(options);
 
 const diff = (save_as) => {
 
-    const impl = (p1, p2) => {
+    const impl = (p2, p1) => {
         console.warn('\n\n', p1.white.bold, ' <=====> '.yellow.bold, p2.white.bold);
         const path1 = path.join(common.root_path, p1);
         const path2 = path.join(common.root_path, p2);
