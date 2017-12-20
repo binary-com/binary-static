@@ -6,6 +6,8 @@ window.onload = function() {
     collapseNavbar();
     signUpInit();
     checkUserSession();
+    handleViewMemorandum();
+    handleEmailBlurFocus();
 
     gtmPushDataLayer({ language: getLanguage().toUpperCase() });
     gtmPushDataLayer({ event: 'page_load' });
@@ -332,6 +334,7 @@ function initCountdown(start_epoch) {
         if (is_started) {
             const ico_bottom_banner = document.getElementById('ico-bottom-banner');
             if(ico_bottom_banner){
+                handleICOClose(ico_bottom_banner);
                 ico_bottom_banner.classList.remove(hidden_class);
             }
         }
@@ -547,5 +550,36 @@ function getNishantReport(lang = 'en') {
 function gtmPushDataLayer(obj) {
     if (obj && /^(1|1098)$/.test(getAppId())) {
         dataLayer.push(obj);
+    }
+}
+
+function handleICOClose(el_banner) {
+    el_banner.addEventListener('click', function() {
+        openLink(this.getAttribute('data-url'));
+    });
+}
+
+function handleViewMemorandum() {
+    const el_view_memorandum = document.getElementById('view_memorandum');
+    if (el_view_memorandum) {
+        el_view_memorandum.addEventListener('click', function () {
+            window.location.href = this.getAttribute('data-url');
+        });
+    }
+}
+
+function handleEmailBlurFocus() {
+    const el_email = document.getElementById('awf_field-90867273');
+    if (el_email) {
+        el_email.addEventListener('focus', function () {
+            if (this.value === '') {
+                this.value = '';
+            }
+        });
+        el_email.addEventListener('blur', function () {
+            if (this.value === '') {
+                this.value = '';
+            }
+        });
     }
 }

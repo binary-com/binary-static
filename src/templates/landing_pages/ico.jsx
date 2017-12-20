@@ -13,7 +13,7 @@ const Ico = () => {
         { id: 'seconds', text: it.L('Seconds') },
     ];
 
-// news order: latest to oldest
+    // news order: latest to oldest
     const news = [
         { logo: 'chipin',                 timestamp: 'Nov 24, 2017',    headlines: 'Meet the Boss – Exclusive Interview with Binary.com CEO Jean-Yves Sireau',                 url: 'https://www.chipin.com/binary-ceo-jean-yves-sireau-interview/' },
         { logo: 'cryptoreader',           timestamp: 'Nov 22, 2017',    headlines: 'Binary.com launches world’s first ICO with 18 years of history',                           url: 'https://cryptoreader.com/press_release/binary-com-launches-worlds-first-ico-18-years-history/' },
@@ -58,13 +58,12 @@ const Ico = () => {
                 <AntiClickjack />
                 <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
                 <meta httpEquiv='Content-Language' content={it.language} />
-                <meta name='description' content={` ${it.L('[_1] gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities.', it.broker_name)}`} />
+                <meta name='description' content={` ${it.L('[_1] ICO, Invest in the world\'s premier platform for binary options trading', it.broker_name)}`} />
                 <meta name='keywords' content={` ${it.L('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading')}`} />
                 <meta name='author' content={it.broker_name} />
                 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
                 <meta name='dcterms.rightsHolder' content={it.broker_name} />
                 <meta name='dcterms.rights' content={it.broker_name} />
-                <meta name='google-site-verification' content='roReCEK-wNa1EMA6ZM9a4zCOQOMqxfJjvfsZMC9qh_k' />
                 <meta property='og:title' content={it.broker_name} />
                 <meta property='og:type' content='website' />
                 <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
@@ -273,7 +272,7 @@ const Ico = () => {
                             <div className='gr-10 gr-push-1'>
                                 <h2>{it.L('Trade your tokens on the Lykke Exchange')}</h2>
                                 <img src={it.url_for('images/ico/icons/lykke_logo.svg')}/>
-                                <p>{it.L('We\'ve reached an agreement to list the tokens on the <a href=\'[_1]\' target=\'_blank\' rel=\'noreferrer noopener\'>Lykke Exchange</a>.', 'https://www.lykke.com/')}</p>
+                                <p>{it.L('We\'ve reached an agreement to list the tokens on the <a href="[_1]" target="_blank" rel="noreferrer noopener">Lykke Exchange</a>.', 'https://www.lykke.com/')}</p>
                                 <a className='button' href='https://www.lykke.com/company/news/binary' target='_blank' rel='noreferrer noopener'>
                                     <span>{it.L('Read the official press release')}</span>
                                 </a>
@@ -310,7 +309,7 @@ const Ico = () => {
                     <div className='gr-row'>
                         <div className='gr-6 gr-push-3 gr-12-m gr-push-0-m'>
                             <h2 className='content-inverse-color'>{it.L('Read the Information Memorandum for further information about the proposed offer.')}</h2>
-                            <button onClick={`window.location.href=${it.url_for('ico-disclaimer')}`} className='button'>{it.L('View memorandum')}</button>
+                            <button data-url={it.url_for('ico-disclaimer')} id='view_memorandum' className='button'>{it.L('View memorandum')}</button>
                         </div>
                     </div>
                 </div>
@@ -766,7 +765,7 @@ const Ico = () => {
                         <div className='gr-12'>
                             <div className='faq'>
                                 <h4>{it.L('How can I purchase tokens?')}</h4>
-                                <p>{it.L('You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies (including cryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.', it.broker_name, `<a href=${it.url_for('/cashier/payment_methods')} target='_blank' rel='noopener noreferrer'>`, '</a>')}</p>
+                                <p>{it.L('You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies (including\ncryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.', it.broker_name, `<a href=${it.url_for('/cashier/payment_methods')} target='_blank' rel='noopener noreferrer'>`, '</a>')}</p>
                             </div>
                         </div>
                         <div className='gr-12'>
@@ -952,7 +951,7 @@ const Ico = () => {
                                     <div id='af-body-713141817' className='gr-12 gr-12-m af-body af-standards'>
                                         <div className='af-element gr-row'>
                                             <div className='gr-8 gr-12-m'>
-                                                <input className='text' placeholder={it.L('Enter your email')} id='awf_field-90867273' type='text' name='email' value='' tabIndex='500' onFocus=" if (this.value == '') { this.value = ''; }" onBlur="if (this.value == '') { this.value='';} " />
+                                                <input className='text' placeholder={it.L('Enter your email')} id='awf_field-90867273' type='text' name='email' value='' tabIndex='500' />
                                             </div>
                                             <div className='gr-4 gr-12-m'>
                                                 <input name='submit' id='af-submit-image-713141817' type='submit' className='image' alt='Submit' tabIndex='501' value={it.L('Submit')}/>
@@ -964,9 +963,7 @@ const Ico = () => {
                                     </div>
                                 </div>
                             </form>
-                            <script type='text/javascript'>{`
-                                document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';
-                            `}</script>
+                            <script type='text/javascript' dangerouslySetInnerHTML={{ __html: `document.getElementById('redirect_600c7e6a647457c51ede13e8b4d377e6').value = document.location + '#done';` }}></script>
                             {/* /AWeber Web Form Generator 3.0.1*/}
                             <div id='subscribe_success' className='gr-8 gr-12-m gr-centered invisible'>
                                 <p className='notice-msg'>{it.L('Thanks for subscribing! Keep an eye on your inbox for the latest updates on our ICO.')}</p>
@@ -989,7 +986,7 @@ const Ico = () => {
             <div id='address' className='primary-bg-color-dark content-inverse-color center-text gr-padding-20'>
                 <span>Binary Group Ltd., Kingston Chambers, Road Town, Tortola, British Virgin Islands</span>
             </div>
-            <div id='ico-bottom-banner' className='gr-hide gr-show-m gr-12-m invisible' onClick="openLink(it.url_for('user/ico-subscribe'))">
+            <div id='ico-bottom-banner' className='gr-hide gr-show-m gr-12-m invisible' data-url={it.url_for('user/ico-subscribe')}>
                 <p className='center-text'>{it.L('The [_1] ICO is now live. Participate now!', it.broker_name)}</p>
             </div>
             {/* [if (lt IE 9)]><script src='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js'></script><![endif] */}
@@ -999,6 +996,6 @@ const Ico = () => {
             </body>
         </html>
     );
-}
+};
 
 export default Ico;
