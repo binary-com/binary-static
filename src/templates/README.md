@@ -87,6 +87,7 @@ Rules
 
 [% PROCESS loading %]
 ```
+- Adjacent JSX components needs to be wrapped in an enclosing tag. Wrap them in `<React.Fragment />`
 
 Becomes:
 ```jsx
@@ -127,7 +128,7 @@ Workflow
 1. Pick a template (lets say `/src/templates/static/charity.html.tt`) and duplicate it with `.jsx` extension (`/src/templates/static/charity.jsx`).  
     - Update the trello card, let everyone know you are working on this template :-)
 2. After converting it to `.jsx` syntax, render with `scripts/render.js [options]`.
-    - You can pass `scripts/render.js -h` to see available options. 
+    - You can pass `scripts/render.js -h` to see available options.
     - Usually something like `scripts/render.js --dev --path charity$` will do.
     - `--path` is a Regex.
 3. Make sure eslint is happy, you may try `grunt eslint` command.
