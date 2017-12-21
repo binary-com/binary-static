@@ -1,22 +1,43 @@
 import React from 'react';
 
-const Index = () => (
-[% BLOCK box_inner %]
-    <div className='gr-6 center-text[% IF class %] [% class %][% END %]'>
-        [% IF href %]<a href={it.url_for(href)}>[% END %]
-            <img className='gr-7 gr-centered' src={it.url_for('images/pages/about/\' _ image _ \'.svg')}/>
-        [% IF href %]</a>[% END %]
-        <p>[% text %]</p>
-    </div>
-[% END %]
+const BoxInner = ({
+    className,
+    href,
+    image,
+    text,
+}) => {
+    const class1 = className ? `${className}` : '';
+    return (
+        <div className={`gr-6 center-text ${class1}`}>
+            {href ?
+                <React.Fragment>
+                    <a href={it.url_for(href)}>
+                    <img className='gr-7 gr-centered' src={it.url_for(`images/pages/about/${image}.svg`)}/>
+                    </a>
+                    <p>{text}</p>
+                </React.Fragment>
+                :
+                <React.Fragment>
+                    <img className='gr-7 gr-centered' src={it.url_for(`images/pages/about/${image}.svg`)}/>
+                    <p>{text}</p>
+                </React.Fragment>
+            }
+        </div>
+    );
+};
 
-[% BLOCK box %]
+const Box = ({
+    children,
+}) => (
     <div className='gr-6 gr-12-m'>
         <div className='gr-row'>
-            [% content %]
+            {children}
         </div>
     </div>
-[% END %]
+);
+
+
+const Index = () => (
 
 <div className='about-us box-inlay-borders static_full'>
     <div className='container section'>
@@ -44,24 +65,24 @@ const Index = () => (
             <div className='gr-padding-10 facts'>
                 <h1 className='center-text gr-padding-20'>{it.L('Key facts')}</h1>
                 <div className='gr-row border-bottom no-padding'>
-                    [% WRAPPER box %]
-                        [% INCLUDE box_inner className=\'border-right-top\' href=\'/group-history\' image=\'founded\' text=l('<a href=\'[_1]\'>Founded</a> October 1999', it.url_for('/group-history')) %]
-                        [% INCLUDE box_inner className=\'border-right-top\' image=\'debt-free\' text=l('Debt-free') %]
-                    [% END %]
-                    [% WRAPPER box %]
-                        [% INCLUDE box_inner className=\'border-right-top\' href=\'/careers\' image=\'staff\' text=l('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '130', it.url_for('/careers')) %]
-                        [% INCLUDE box_inner image=\'1mil\' text=l('Over 1 million registered accounts worldwide') %]
-                    [% END %]
+                    <Box>
+                        <BoxInner className='border-right-top' href='/group-history' image='founded' text={it.L('<a href=\'[_1]\'>Founded</a> October 1999', it.url_for('/group-history'))} />
+                        <BoxInner className='border-right-top' image='debt-free' text={it.L('Debt-free')} />
+                    </Box>
+                    <Box>
+                        <BoxInner className='border-right-top' href='/careers' image='staff' text={it.L('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '130', it.url_for('/careers'))} />
+                        <BoxInner image='1mil' text={it.L('Over 1 million registered accounts worldwide')} />
+                    </Box>
                 </div>
                 <div className='gr-row gr-parent'>
-                    [% WRAPPER box %]
-                        [% INCLUDE box_inner className=\'border-right-bottom gr-padding-30\' image=\'transacts\' text=l('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href=\'https://binarycom.statuspage.io/\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>') %]
-                        [% INCLUDE box_inner className=\'border-right-bottom gr-padding-30\' href=\'/contact\' image=\'locations\' text=l('<a href=\'[_1]\'>Offices</a> in Malta, Malaysia and Japan', it.url_for('/contact')) %]
-                    [% END %]
-                    [% WRAPPER box %]
-                        [% INCLUDE box_inner className=\'border-right-bottom gr-padding-30\' image=\'license\' text=l('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan') %]
-                        [% INCLUDE box_inner className=\'gr-padding-30\' image=\'languages\' text=l('Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai') %]
-                    [% END %]
+                    <Box>
+                        <BoxInner className='border-right-bottom gr-padding-30' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href=\'https://binarycom.statuspage.io/\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>')} />
+                        <BoxInner className='border-right-bottom gr-padding-30' href='/contact' image='locations' text={it.L('<a href=\'[_1]\'>Offices</a> in Malta, Malaysia and Japan', it.url_for('/contact'))} />
+                    </Box>
+                    <Box>
+                        <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan')} />
+                        <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai')} />
+                    </Box>
                 </div>
             </div>
         </div>

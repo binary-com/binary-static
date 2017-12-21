@@ -1,29 +1,53 @@
 import React from 'react';
+import CareersShared from '../about/careers_shared.jsx';
+import { FillBox } from '../../_common/components/elements.jsx';
+import SeparatorLine from '../../_common/components/separator_line.jsx';
+
+const ColumnSM = ({
+    header,
+    paragraph,
+}) => (
+    <div className='gr-3 gr-12-m'>
+        <h4><strong>{header}</strong></h4>
+        <SeparatorLine no_wrapper />
+        <p>{paragraph}</p>
+    </div>
+);
+
+const ColumnMD = ({
+    header,
+    paragraph,
+}) => (
+    <div className='gr-4 gr-12-m'>
+        <h2>{header}</h2>
+        <p>{paragraph}</p>
+    </div>
+);
+
+const ColumnLG = ({
+    center,
+    image,
+    text,
+}) => {
+    let class1 = '';
+    let class2 = '';
+    class1 = 'gr-6 gr-12-m';
+    if (center) {
+        class2 = 'center-text';
+    }
+    return (
+    <div className={[class1, class2].join(' ')}>
+        <img className='responsive' src={it.url_for(`/images/pages/careers/${image}.jpg`)}/>
+        {center ?
+            <p className='gr-padding-10 hint'>{text}</p>
+            :
+            <p>{text}</p>
+        }
+    </div>
+    );
+};
 
 const Careers = () => (
-[% PROCESS _common/components/elements.html.tt %]
-
-[% BLOCK column_sm %]
-    <div className='gr-3 gr-12-m'>
-        <h4><strong>[% header %]</strong></h4>
-        [% INCLUDE _common/components/separator_line.html.tt no_wrapper=1 %]
-        <p>[% paragraph %]</p>
-    </div>
-[% END %]
-
-[% BLOCK column_md %]
-    <div className='gr-4 gr-12-m'>
-        <h2>[% header %]</h2>
-        <p>[% paragraph %]</p>
-    </div>
-[% END %]
-
-[% BLOCK column_lg %]
-    <div className='gr-6 gr-12-m[% IF center %] center-text[% END %]'>
-        <img className='responsive' src={it.url_for('images/pages/careers/\' _ image _ \'.jpg')}/>
-        <p[% IF center %] className='gr-padding-10 hint'[% END %]>[% text %]</p>
-    </div>
-[% END %]
 
 <div className='static_full career'>
     <div className='container'>
@@ -34,28 +58,28 @@ const Careers = () => (
 
         <div className='gr-padding-30'>
             <img className='responsive' src={it.url_for('images/pages/careers/main@1.jpg')}/>
-            [% INCLUDE fill_box image=\'images/pages/careers/view-positions-icon-white.svg\' color=\'dark\' no_padding=1
-                href=it.url_for('/open-positions') text=l('View open positions') %]
+            <FillBox image='images/pages/careers/view-positions-icon-white.svg' color='dark' no_padding
+                href={it.url_for('/open-positions')} text={it.L('View open positions')} />
         </div>
 
         <div className='gr-row gr-padding-30'>
-            [% INCLUDE column_sm header=l('Ideas')      paragraph=l('Where new ideas trump safe, old ones. And you\'re free to work your way, free from hierarchies and red tape.') %]
-            [% INCLUDE column_sm header=l('Experience') paragraph=l('Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers.') %]
-            [% INCLUDE column_sm header=l('Teamwork')   paragraph=l('Where teamwork and a collaborative culture form the platform for personal and corporate growth.') %]
-            [% INCLUDE column_sm header=l('Support')    paragraph=l('Where supportive colleagues are like a second family.') %]
+            <ColumnSM header={it.L('Ideas')}      paragraph={it.L('Where new ideas trump safe, old ones. And you\'re free to work your way, free from hierarchies and red tape.')} />
+            <ColumnSM header={it.L('Experience')} paragraph={it.L('Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers.')} />
+            <ColumnSM header={it.L('Teamwork')}   paragraph={it.L('Where teamwork and a collaborative culture form the platform for personal and corporate growth.')} />
+            <ColumnSM header={it.L('Support')}    paragraph={it.L('Where supportive colleagues are like a second family.')} />
         </div>
 
         <div className='gr-row center-text'>
-            [% INCLUDE fill_box image=\'images/pages/careers/corporate-culture.svg\' href=\'https://my.wobb.co/users/companies/binary-group-services-sdn-bhd\'
-                text=l('Learn more about our corporate culture') padding=\'6\' target=\'_blank\' %]
+            <FillBox image='images/pages/careers/corporate-culture.svg' href='https://my.wobb.co/users/companies/binary-group-services-sdn-bhd'
+                text={it.L('Learn more about our corporate culture')} padding='6' target='_blank' />
 
-            [% INCLUDE fill_box image=\'images/pages/careers/handbook.svg\' href=it.url_for('/download/binary-employee-handbook.pdf') download=1
-                text=l('Employee handbook') padding=\'6\' target=\'_blank\' %]
+            <FillBox image='images/pages/careers/handbook.svg' href={it.url_for('/download/binary-employee-handbook.pdf')} download
+                text={it.L('Employee handbook')} padding='6' target='_blank' />
         </div>
 
         <div className='gr-row gr-padding-30'>
-            [% INCLUDE column_lg center=1 image=\'fsb@1\' text=l('Imagine a workplace that often doesn\'t feel like work.') %]
-            [% INCLUDE column_lg center=1 image=\'pt@1\'  text=l('Where we\'re one big, multicultural family.') %]
+            <ColumnLG center image='fsb@1' text={it.L('Imagine a workplace that often doesn\'t feel like work.')} />
+            <ColumnLG center image='pt@1'  text={it.L('Where we\'re one big, multicultural family.')} />
 
             <div className='container'>
                 <p>{it.L('And your weekends can take you to some of the world\'s most exotic and beautiful places.')}</p>
@@ -64,25 +88,25 @@ const Careers = () => (
             </div>
         </div>
 
-        [% INCLUDE _common/components/separator_line.html.tt %]
+        <SeparatorLine />
 
         <div className='gr-row gr-padding-30'>
-            [% INCLUDE column_md header=l('Want to telecommute?') paragraph=l('[_1] is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we\'re open to it.', it.website_name) %]
-            [% INCLUDE column_md header=l('Where you can go')     paragraph=l('Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.') %]
-            [% INCLUDE column_md header=l('More benefits')        paragraph=l('We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\'re in Malta, Malaysia, or Japan.') %]
+            <ColumnMD header={it.L('Want to telecommute?')} paragraph={it.L('[_1] is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we\'re open to it.', it.website_name) } />
+            <ColumnMD header={it.L('Where you can go')}     paragraph={it.L('Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.') } />
+            <ColumnMD header={it.L('More benefits')}        paragraph={it.L('We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\'re in Malta, Malaysia, or Japan.')} />
         </div>
 
-        [% INCLUDE _common/components/separator_line.html.tt %]
+        <SeparatorLine />
 
         <div className='gr-row gr-padding-30 center-text'>
             <div className='gr-12'>
                 <h1>{it.L('Ideas, opinions, and insights from the people behind [_1]', it.website_name)}</h1>
                 <p>{it.L('Passionate about people, culture, management, and software development? Explore what we do, what matters to us, and how we bring our ideas to life.')}</p>
             </div>
-            [% INCLUDE fill_box image=\'images/pages/careers/bb-icon.svg\' href=\'https://blog.binary.com\' padding=\'6\'
-                text=l('Read the [_1] company blog', it.website_name) target=\'_blank\' %]
-            [% INCLUDE fill_box image=\'images/pages/careers/tb-icon.svg\' href=\'https://tech.binary.com\' padding=\'6\'
-                text=l('Read the [_1] tech blog', it.website_name) target=\'_blank\' %]
+            <FillBox image='images/pages/careers/bb-icon.svg' href='https://blog.binary.com' padding='6'
+                text={it.L('Read the [_1] company blog', it.website_name)} target='_blank' />
+            <FillBox image='images/pages/careers/tb-icon.svg' href='https://tech.binary.com' padding='6'
+                text={it.L('Read the [_1] tech blog', it.website_name)} target='_blank' />
         </div>
     </div>
 
@@ -93,8 +117,8 @@ const Careers = () => (
                     <h1>{it.L('Our locations')}</h1>
                 </div>
 
-                [% INCLUDE column_lg image=\'my@2\'      text=l('Malaysia') %]
-                [% INCLUDE column_lg image=\'malta@1\'   text=l('Malta') %]
+                <ColumnLG image='my@2'      text={it.L('Malaysia')} />
+                <ColumnLG image='malta@1'   text={it.L('Malta')} />
                 <div className='gr-6 gr-push-3 gr-12-m gr-push-0-m'>
                     <img className='responsive' src={it.url_for('images/pages/careers/japan@1.jpg')}/>
                     <p>{it.L('Japan')}</p>
@@ -110,10 +134,10 @@ const Careers = () => (
                 <p>{it.L('Looking for a new and exciting career in a country that\'s modern, diverse and tolerant? [_1] is one of the world\'s most progressive companies, with offices in Asia and Europe.', it.website_name)}</p>
             </div>
 
-            [% INCLUDE fill_box center=1 padding=\'4\' href=it.url_for('/careers-for-americans') text=l('Learn more') %]
+            <FillBox center padding='4' href={it.url_for('careers-for-americans')} text={it.L('Learn more')} />
         </div>
 
-        [% INCLUDE _common/components/separator_line.html.tt %]
+        <SeparatorLine />
 
         <div className='gr-padding-30 center-text'>
             <h1>{it.L('Open positions')}</h1>
@@ -143,7 +167,7 @@ const Careers = () => (
             </div>
         </div>
 
-        [% PROCESS static/about/careers_shared.html.tt %]
+        <CareersShared />
     </div>
 </div>
 

@@ -36,9 +36,16 @@ export const List = ({
     id,
     className,
 }) => (
-    <ul id={id} className={className}>
-        {items.map((item, idx) => <Li key={idx} {...item} />)}
-    </ul>
+    <React.Fragment>
+        {items.length ?
+          <ul id={id} className={className}>
+              {items.map((item, idx) => <Li key={idx} {...item} />)}
+          </ul>
+        :
+          undefined
+        }
+    </React.Fragment>
+
 );
 
 export const InfoBox = ({
