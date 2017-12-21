@@ -14,17 +14,14 @@ const Section = ({
     className,
     children,
     sectionNum,
-}) => {
-    let counter = 1;
-    return (
-        <div id={id || ''} className={`section ${className || ''}`}>
-            <a id={link_id}></a>
-            <div className='section-content'>
-                <div id={`section-${sectionNum}`}>{children}</div>
-            </div>
+}) => (
+    <div id={id || ''} className={`section ${className || ''}`}>
+        <a id={link_id}></a>
+        <div className='section-content'>
+            <div id={`section-${sectionNum}`}>{children}</div>
         </div>
-    )
-};
+    </div>
+);
 
 const TermsAndConditions = () => (
     <div className='tac-binary gr-row'>

@@ -147,7 +147,7 @@ const PersonalDetails = () => (
         </form>
 
         <p className='required invisible RealAcc JpAcc rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}</p>
-    </React.Fragment >
+    </React.Fragment>
 );
 
 export default PersonalDetails;

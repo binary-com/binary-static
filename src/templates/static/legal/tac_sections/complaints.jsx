@@ -34,13 +34,13 @@ const Complaints = () => (
     <p>
       {it.L(
         'Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority [_1] at ',
-        '<a href="http://www.mga.org.mt/" target="_blank">(www.mga.org.mt)</a>'
+        '<a href="http://www.mga.org.mt/" target="_blank" rel="noopener noreferrer">(www.mga.org.mt)</a>'
       )}
       support.mga@mga.org.mt.
       {it.L(
         ' UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity\'s'
       )}
-      <a href='http://www.ibas-uk.com/adjudicationForm.php' target='_blank'>
+      <a href='http://www.ibas-uk.com/adjudicationForm.php' target='_blank' rel='noopener noreferrer'>
         {it.L('website')}
       </a>
       .
