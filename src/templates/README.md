@@ -74,6 +74,7 @@ Rules
 - Use `it.L('...')` instead of `l("...")` for translations.
 - Use `it.url_for('...')` instead of `request.url_for("...")`.
 - Use `it.website_name` instead of `website_name`.
+- Do NOT use `<Element attributeName={true} />`; just use `<Element attributeName />`.
 - Always name your components before default exporting them, for example:
 
 ```html
@@ -103,7 +104,11 @@ const Loading = ({theme}) => (
 
 export default Loading;
 ```
+- There are cases where you do not want your strings to be escaped (i.g. when you place `<a/>` tags inside a `<Table />`). To bypass HTML escape, you can use `it.dangreouslyRenderHtml()` (under normal circumstances do NOT use this!):
 
+```js
+it.dangreouslyRenderHtml('<a href="https://binary.com"></a>');
+```
 
 Contributing
 ===

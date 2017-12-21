@@ -12,6 +12,7 @@ program
     .version('0.1.0')
     .description('Get html diff between two files in /dist & /dist-perl folder')
     .option('-p, --path [save_as]', 'Diff only the template/s that match the regex save_as, REQUIRED')
+    .option('-l, --lang [language]', 'Diff only for the language that matches the regex')
     .parse(process.argv);
 
 if (!program.path) {
@@ -34,7 +35,7 @@ const htmlDiffer = new HtmlDiffer(options);
 const diff = (save_as) => {
 
     const impl = (p2, p1) => {
-        console.warn(`${p1} VS ${p2}`);
+        console.warn('\n\n', p1.white.bold, ' <=====> '.yellow.bold, p2.white.bold);
         const path1 = path.join(common.root_path, p1);
         const path2 = path.join(common.root_path, p2);
         if (!fs.existsSync(path1) || !fs.existsSync(path2)) {
@@ -52,18 +53,22 @@ const diff = (save_as) => {
             logger.logDiffText(diffHTML, { charsAroundDiff: 40 });
         }
     };
-    common.languages.forEach(lang => {
-        const language = lang.toLowerCase();
 
-        impl(
-            `dist/${language}/${save_as}.html`,
-            `dist-perl/${language}/${save_as}.html`
-        );
-        impl(
-            `dist/${language}/pjax/${save_as}.html`,
-            `dist-perl/${language}/pjax/${save_as}.html`
-        );
-    });
+    const reg_lang = new RegExp(program.lang, 'i');
+    common.languages
+        .filter(l => reg_lang.test(l))
+        .forEach(lang => {
+            const language = lang.toLowerCase();
+
+            impl(
+                `dist/${language}/${save_as}.html`,
+                `dist-perl/${language}/${save_as}.html`
+            );
+            impl(
+                `dist/${language}/pjax/${save_as}.html`,
+                `dist-perl/${language}/pjax/${save_as}.html`
+            );
+        });
 };
 
 const regx = new RegExp(program.path, 'i');

@@ -32,7 +32,7 @@ const Portfolio = () => (
             <Table
                 id='portfolio-table'
                 tbody_id='portfolio-body'
-                scroll={true}
+                scroll
                 data={{
                     thead: [
                         [

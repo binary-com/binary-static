@@ -17,6 +17,7 @@ const ReactDOMServer = require('../node_modules/react-dom/server.js');
 
 const renderComponent = (context, path) => {
     const Component = require(path).default; // eslint-disable-line
+
     global.it = context;
     const result = ReactDOMServer.renderToStaticMarkup(
         React.createElement(
@@ -138,7 +139,8 @@ const createUrlFinder = default_lang => {
         }
 
         const p        = Url.parse(new_url, true);
-        const pathname = p.pathname.replace(/^\//, '');
+        let pathname = p.pathname.replace(/^\//, '');
+        pathname = Path.join(pathname); // convert a/b/../c to a/c
         if (common.pages.filter(page => page.save_as === pathname).length) {
             p.pathname = Path.join(config.root_url, `${lang}/${pathname}.html`);
             return Url.format(p);
@@ -259,7 +261,8 @@ const createContextBuilder = async () => {
                     const translated = translator(text, ...args);
                     return RenderHTML(translated);
                 },
-                url_for: createUrlFinder(model.language),
+                url_for              : createUrlFinder(model.language),
+                dangreouslyRenderHtml: RenderHTML,
             });
         },
     };
@@ -270,7 +273,6 @@ const createContextBuilder = async () => {
  */
 
 async function compile(page) {
-    console.log(`Compiling ${page.save_as}`.green);
     const config              = getConfig();
     const languages           = config.languages.filter(lang => shouldCompile(page.excludes, lang));
     const context_builder     = await createContextBuilder();
@@ -333,6 +335,9 @@ createDirectories();
 (async () => {
     try {
         const regx = new RegExp(program.path, 'i');
+        const pages_filtered = common.pages
+                .filter(p => regx.test(p.save_as));
+        console.log(`Compiling ${pages_filtered.length} page(s) ...`.green);
         await Promise.all(
             common.pages
                 .filter(p => regx.test(p.save_as))

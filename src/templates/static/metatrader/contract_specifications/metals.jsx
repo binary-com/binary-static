@@ -5,7 +5,7 @@ const Metals = () => (
     <div id='metals_specs' className='gr-row'>
         <div className='gr-12 gr-padding-10'>
             <Table
-                scroll={true}
+                scroll
                 data={{
                     thead: [
                         [

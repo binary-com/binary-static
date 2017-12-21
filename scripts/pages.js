@@ -38,7 +38,7 @@ module.exports = [
     ['user/ico-info',                      'app/user/ico_info',                         'default',    'ICO Histogram',                     'ja'],
     ['user/ico-subscribe',                 'app/user/ico_subscribe',                    'default',    'Subscribe to ICO',                  'ja'],
     ['user/lost_passwordws',               'app/user/lost_password',                    'default',    'Password Reset'],
-    ['user/metatrader',                    'app/user/metatrader',                       'full_width', 'MetaTrader account management'],
+    ['user/metatrader',                    'app/user/metatrader',                       'default',    'MetaTrader account management'],
     ['user/portfoliows',                   'app/user/portfolio',                        'default',    'Portfolio'],
     ['user/profit_tablews',                'app/user/profit_table',                     'default',    'Profit Table'],
     ['user/reality_check_frequency',       'app/user/reality_check/frequency',          'default',    'Reality Check'],
@@ -79,7 +79,7 @@ module.exports = [
     ['tour-jp',                            'static/japan/tour',                         'full_width', 'Tour',                              'NOT-ja,en'],
     ['why-us',                             'static/why_us',                             'full_width', 'Why Us',                            'ja'],
     ['why-us-jp',                          'static/japan/why_us',                       'full_width', 'Why Us',                            'NOT-ja,en'],
-    ['platforms',                          'static/platforms',                          'default',    'Platforms',                         'ja'],
+    ['platforms',                          'static/platforms',                          'full_width', 'Trading Platforms',                 'ja'],
 
     ['about-us',                           'static/about/index',                        'full_width', 'About Us'],
     ['binary-in-numbers',                  'static/about/binary_in_numbers',            'default',    'Binary in Numbers'],

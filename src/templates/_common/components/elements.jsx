@@ -36,10 +36,53 @@ export const List = ({
     id,
     className,
 }) => (
-    <ul id={id} className={className}>
-        {items.map((item, idx) => <Li key={idx} {...item} />)}
-    </ul>
+    <React.Fragment>
+        {items.length ?
+          <ul id={id} className={className}>
+              {items.map((item, idx) => <Li key={idx} {...item} />)}
+          </ul>
+        :
+          undefined
+        }
+    </React.Fragment>
+
 );
+
+export const InfoBox = ({
+    padding,
+    header,
+    sub_header,
+    text,
+}) => {
+    let class1 = '';
+    let class2 = '';
+    if (padding) {
+        class1 = padding ? `gr-${padding}` : 'gr-4';
+        class2 = /^6/.test(padding) ? '' : 'gr-12-p';
+        class2 += ' gr-12-m';
+    }
+    return (
+        <div className={[class1, class2].join(' ')}>
+            <div className='border-bottom'>
+                <div className='fill-bg-color gr-padding-10'>
+                    <h3 className='gr-gutter no-margin'>{header}</h3>
+                </div>
+                {sub_header ?
+                    <React.Fragment>
+                        <div className='gr-gutter gr-padding-10'>{sub_header}</div>
+                        <p className='gr-gutter gr-parent gr-padding-10 no-margin'>
+                            {text}
+                        </p>
+                    </React.Fragment>
+                    :
+                    <p className='gr-gutter gr-parent gr-padding-10'>
+                        {text}
+                    </p>
+                }
+            </div>
+        </div>
+    );
+};
 
 export const FillBox = ({
     padding,
@@ -79,7 +122,7 @@ export const FillBox = ({
                             href={href}
                             target={target || undefined}
                             download={!!download}
-                            className={color === 'dark' && 'content-inverse-color'}
+                            className={color === 'dark' ? 'content-inverse-color' : undefined}
                             rel={/^http/.test(href) ? 'noopener noreferrer' : undefined}
                         >
                             {em ? <em> {text} </em> : text}
@@ -115,7 +158,7 @@ export const Tbody = ({
     tbody_id,
 }) => (
     <tbody id={tbody_id}>
-        {trs.map((tr, inx_tr) => (
+        {trs && trs.map((tr, inx_tr) => (
             <tr key={inx_tr}>
                 {tr.map((td, inx_td) => (
                     td.header ?

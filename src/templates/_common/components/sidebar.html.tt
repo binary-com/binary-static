@@ -11,7 +11,7 @@
 [% END %]
 
 [% BLOCK sidebar_submenu %]
-<div class="sidebar-container">
+<div class="sidebar-collapsible-container">
     <div class="sidebar-collapsible">
         <ul id="[% id %]">
             [% FOREACH item IN items %]
