@@ -1,24 +1,24 @@
 import React from 'react';
 import {
-  SidebarMenu,
+  SidebarSubmenu,
   SidebarContent,
   SidebarContentContainer,
 } from '../../_common/components/sidebar.jsx';
 import Copyright from './copyright.jsx';
 import Datafeed from './datafeed.jsx';
 import OrderExecutionBinary from './order_execution.jsx';
-// import OrderExecutionMT from './metatrader/order_execution.jsx';
+import OrderExecutionMT from './metatrader/order_execution.jsx';
 import RiskDisclaimerBinary from './risk_disclaimer.jsx';
-// import RiskDisclaimerMT from './metatrader/risk_disclaimer.jsx';
+import RiskDisclaimerMT from './metatrader/risk_disclaimer.jsx';
 import PaymentAgents from './payment_agents.jsx';
 import Privacy from './privacy.jsx';
 import TermsAndConditionsBinary from './terms_and_conditions.jsx';
-// import TermsAndConditionsMT from './metatrader/terms_and_conditions.jsx';
+import TermsAndConditionsMT from './metatrader/terms_and_conditions.jsx';
 
 const TAC = () => (
   <div className='gr-row'>
     <div className='gr-3 gr-12-p gr-12-m gr-padding-10'>
-      <SidebarMenu
+      <SidebarSubmenu
         id='legal-menu'
         items={[
             {
@@ -59,7 +59,7 @@ const TAC = () => (
         </SidebarContent>
 
         <SidebarContent id='legal-mt'>
-          {/*<TermsAndConditionsMT />*/}
+          <TermsAndConditionsMT />
         </SidebarContent>
 
         <SidebarContent id='datafeed'>
@@ -79,7 +79,7 @@ const TAC = () => (
         </SidebarContent>
 
         <SidebarContent id='risk-mt'>
-            {/*<RiskDisclaimerMT />*/}
+            <RiskDisclaimerMT />
         </SidebarContent>
 
         <SidebarContent id='order-execution-binary'>
@@ -87,7 +87,7 @@ const TAC = () => (
         </SidebarContent>
 
         <SidebarContent id='order-execution-mt'>
-         {/*<OrderExecutionMT />*/}
+         <OrderExecutionMT />
         </SidebarContent>
 
         <SidebarContent id='payment-agents'>

@@ -500,10 +500,9 @@ const api = () => (
         header={it.L('Security')}
         items={[
             {
-                text: it.L(
-              'You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to [_1] by writing in to [_2] or by raising a discussion  thread on [_3] which is part of our Developer Site. You will work with [_1] to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from [_1] in each instance.',
+                text: it.L('You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to [_1] by writing in to [_2] or by raising a discussion thread on [_3] which is part of our Developer Site. You will work with [_1] to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from [_1] in each instance.',
               it.website_name,
-              '<a href="https://hackerone.com/binary" target="_blank" rel="noopener noreferrer">Hackerone</a>","<a href="https://binary.vanillacommunity.com" target="_blank" rel="noopener noreferrer">Vanilla Community</a>'
+              '<a href="https://hackerone.com/binary" target="_blank" rel="noopener noreferrer">Hackerone</a>"','<a href="https://binary.vanillacommunity.com" target="_blank" rel="noopener noreferrer">Vanilla Community</a>'
             ),
             },
         ]}

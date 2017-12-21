@@ -371,7 +371,7 @@ const Affiliate = () => (
             {
                 text: it.L(
               'Any notice given or made under this Agreement to the Company shall be by email to [_1]. The Company shall send you any notices given or made under this Agreement to the email address supplied on your application form or such other email address as notified by you to the Company.',
-              'affiliate_email'
+              'affiliates@binary.com'
             ),
             },
             {
