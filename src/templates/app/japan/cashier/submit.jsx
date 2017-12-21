@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Submit = () => (
+const Submit = () => (
     <React.Fragment>
         <h1>{it.L('{JAPAN ONLY}Acknowledgment')}</h1>
         <p>{it.L('{JAPAN ONLY}Thank you for your withdrawal request.')}</p>

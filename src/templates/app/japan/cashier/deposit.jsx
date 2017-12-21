@@ -1,7 +1,7 @@
 import React from 'react';
 import {Tbody} from '../../../_common/components/elements.jsx';
 
-export const Deposit = () => {
+const Deposit = () => {
     const trs = [
         [{text: it.L('{JAPAN ONLY}Bank')}, {text: it.L('{JAPAN ONLY}Rakuten Bank')}],
         [{text: it.L('{JAPAN ONLY}Branch')}, {text: it.L('{JAPAN ONLY}#1 Sales Division')}],
