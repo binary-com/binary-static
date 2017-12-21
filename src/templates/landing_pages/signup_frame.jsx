@@ -42,8 +42,9 @@ const SignUpFrame = () => (
                     text='Create Free Account'
                     className='secondary-bg-color'
                     dark_button='1'
-                    children={FormVerifyEmailChildren()}
-                />
+                >
+                    <FormVerifyEmailChildren />
+                </FormVerifyEmail>
             </div>
         </body>
     </html>

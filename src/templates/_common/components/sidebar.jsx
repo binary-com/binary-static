@@ -29,9 +29,9 @@ export const SidebarSubmenu = ({ id, items = [] }) => {
             >
               {item.submenu &&
                 <React.Fragment>
-                  <a href={getHref(item.id)} className='tm-a'>{item.text}</a>
+                  <a href={getHref(item.id)}>{item.text}</a>
                   <ul>
-                    {item.subtabs.map((submenu, idx_submenu) => (
+                    {item.submenu.map((submenu, idx_submenu) => (
                       <li key={idx_submenu} id={submenu.id}>
                         <a href={getHref(submenu.id)}>{submenu.text}</a>
                       </li>
