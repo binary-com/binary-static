@@ -273,7 +273,6 @@ const createContextBuilder = async () => {
  */
 
 async function compile(page) {
-    console.log(`Compiling ${page.save_as}`.green);
     const config              = getConfig();
     const languages           = config.languages.filter(lang => shouldCompile(page.excludes, lang));
     const context_builder     = await createContextBuilder();
@@ -336,6 +335,9 @@ createDirectories();
 (async () => {
     try {
         const regx = new RegExp(program.path, 'i');
+        const pages_filtered = common.pages
+                .filter(p => regx.test(p.save_as));
+        console.log(`Compiling ${pages_filtered.length} page(s) ...`.green);
         await Promise.all(
             common.pages
                 .filter(p => regx.test(p.save_as))
