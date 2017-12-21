@@ -13,7 +13,7 @@ const AccountDesc = ({ title, description, account_type, items }) => {
     }
 
     return (
-        <div className={types} >
+        <div className={types}>
             <h3>{title}</h3>
             <p>{description}</p>
             <ul className='checked small no-padding'>
@@ -24,7 +24,7 @@ const AccountDesc = ({ title, description, account_type, items }) => {
             <p>
                 <a href={it.url_for('metatrader/types-of-accounts')}>{it.L('MetaTrader 5 Account Comparison')}</a>
             </p>
-        </div >
+        </div>
     );
 };
 
@@ -232,7 +232,7 @@ const Metatrader = () => (
                                     <div className='separator-line gr-padding-10'></div>
                                     <TypeGroup title={it.L('Step 2 : Choose types of accounts')} types={[
                                         { type: 'template', desc: 'Cent' },
-                                    ]} >
+                                    ]}>
                                         <a className='hint' href={it.url_for('metatrader/types-of-accounts')}>{it.L('Which one suits me?')}</a>
                                     </TypeGroup>
                                 </div>
