@@ -60,8 +60,10 @@ const WithLayout = ({ children }) => {
     return (
         <div id='content' className={it.current_route ? className : undefined}>
             {it.layout === 'full_width' ?
-                <IcoBanner container='ico-banner-container' className='top-margin' /> :
-                <IcoBanner container='ico-banner-container' className='top-margin bottom-margin' />
+                <IcoBanner container='ico-banner-container' className='top-margin'/> : undefined
+            }
+            {it.layout === 'default' ?
+                <IcoBanner container='ico-banner-container' className='top-margin bottom-margin' /> : undefined
             }
             <div id='page_info' style={{display: 'none'}}>
                 <Title />
