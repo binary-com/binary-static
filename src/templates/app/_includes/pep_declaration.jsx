@@ -1,7 +1,7 @@
 import React from 'react';
 import {Fieldset} from '../../_common/components/forms.jsx';
 
-const ComponentName = () => (
+const PepDeclaration = () => (
 <Fieldset legend={it.L('PEP Declaration')}>
     <div className='gr-12'>
         <p>{it.L('A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP\'s relatives and close associates.')}</p>
@@ -20,4 +20,4 @@ const ComponentName = () => (
 
 );
 
-export default ComponentName;
+export default PepDeclaration;
