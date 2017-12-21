@@ -44,6 +44,7 @@ program
     .option('-d, --dev', 'Build for your gh-pages')
     .option('-b, --branch [branchname]', 'Build your changes to a sub-folder named: br_branchname')
     .option('-p, --path [save_as]', 'Compile only the template/s that match the regex save_as')
+    .option('-v, --verbose [verbose]', 'Displays the list of paths to be compiled')
     .option('-t, --add-translations', 'Update messages.pot with new translations')
     .parse(process.argv);
 
@@ -278,7 +279,6 @@ async function compile(page) {
     const context_builder     = await createContextBuilder();
     const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER'; // used in layout.jsx
 
-    console.time(page.save_as);
     const tasks = languages.map(async lang => {
 
         const model = {
@@ -328,7 +328,6 @@ async function compile(page) {
 
     });
     await Promise.all(tasks);
-    console.timeEnd(page.save_as);
 }
 
 createDirectories();
@@ -341,11 +340,27 @@ createDirectories();
             console.warn('No page matched your request.'.yellow);
             return;
         }
-        console.group(`Compiling ${count} page${count > 1 ? 's' : ''} ...`.green);
+
+        Gettext.getInstance(); // initialize before starting the compilation
+
+        const start = Date.now();
+        process.stdout.write(`Compiling ${count} page${count > 1 ? 's' : ''} ... `.green);
+
+        if (count <= 10 || program.verbose) {
+            console.log();
+            pages_filtered
+                .sort((a, b) => a.save_as > b.save_as)
+                .forEach((p) => {
+                    console.log('  - '.green, p.save_as);
+                });
+        }
+
         await Promise.all(
             pages_filtered.map(compile)
         );
-        console.groupEnd();
+
+        process.stdout.write(' Done'.green);
+        process.stdout.write(`  (${(Date.now() - start).toLocaleString()} ms)\n`.gray);
 
         if (program.addTranslations) {
             const gettext = Gettext.getInstance();

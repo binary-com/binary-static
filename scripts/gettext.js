@@ -41,6 +41,7 @@ const createGettextInstance = () => {
         'de_DE', 'es_ES', 'id_ID', 'ja_JP', 'pl_PL', 'ru_RU', 'vi_VN', 'zh_TW',
     ];
 
+    const start = Date.now();
     process.stdout.write('Loading .po files '.cyan);
     const gt = new Gettext();
 
@@ -52,7 +53,8 @@ const createGettextInstance = () => {
         gt.addTranslations(locale, 'messages', parsed);
         process.stdout.write('.'.cyan);
     });
-    process.stdout.write(' Done\n'.cyan);
+    process.stdout.write(' Done'.cyan);
+    process.stdout.write(`  (${(Date.now() - start).toLocaleString()} ms)\n`.gray);
 
     const not_translated = [];
     gt.on('no-translation', (error) => {
