@@ -37,12 +37,12 @@ const Omnibus = () => (
             </div>
         </div>
 
-        <SeparatorLine show_mobile invisible className='gr-parent gr-padding-20'  />
+        <SeparatorLine className='gr-parent gr-padding-20' invisible />
 
         <div className='fill-bg-color center-text gr-padding-20'>
             <h2 className='gr-padding-20 gr-child'>{it.L('Key features')}</h2>
             <div className='container gr-row'>
-                <Box image='trade' header={it.L('Multi-asset execution')} text={it.L('Trade on behalf of your clients through one account.')} />
+                <Box image='trade' header={it.L('More efficient')} text={it.L('Trade on behalf of your clients through one account.')} />
                 <Box image='low-fees' header={it.L('Lower fees')} text={it.L('Reduce fees associated with deposits and withdrawals.')} />
                 <Box image='privacy' header={it.L('Privacy')} text={it.L('Maintain complete anonymity of your clients.')} />
             </div>
@@ -50,7 +50,7 @@ const Omnibus = () => (
 
         <div className='container gr-padding-30 gr-child'>
             <h2 className='center-text'>{it.L('How it works')}</h2>
-            <SeparatorLine invisible className='gr-parent' />
+            <SeparatorLine className='gr-parent' invisible />
             <Steps has_arrow text={it.L('Create your own white-label application with the omnibus facility, plus all the features supported by our extensive API library. We won’t know who your clients are and vice versa')} />
             <Steps has_arrow text={it.L('Create sub-accounts to record transactions you make on behalf of your clients')} />
             <Steps has_arrow text={it.L('Customise individual access for clients who wish to trade for themselves')} />
@@ -60,7 +60,7 @@ const Omnibus = () => (
 
         <div className='container'>
             <p className='center-text'>{it.L('Interested in our omnibus account facility? [_1]Contact us now and apply as an omnibus broker[_2].', '<a href="mailto:marketing@binary.com">', '</a>')}</p>
-            <SeparatorLine invisible className='gr-parent gr-padding-20' />
+            <SeparatorLine className='gr-parent gr-padding-20' invisible />
         </div>
     </React.Fragment>
 );

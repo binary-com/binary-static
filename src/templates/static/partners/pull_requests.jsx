@@ -93,7 +93,7 @@ const PullRequests = () => (
                 </div>
                 <div className='gr-padding-10'>
                     <h2>{it.L('Can I work for [_1] full-time?', it.website_name)}</h2>
-                    <p>{it.L('We are always on the lookout for talent – please apply via our <a target="_blank" href="[_1]">careers</a> page.', it.url_for('careers'))}</p>
+                    <p>{it.L('We are always on the lookout for talent – please apply via our <a target=\'_blank\' href=\'[_1]\'>careers</a> page.', it.url_for('careers'))}</p>
                 </div>
 
                 <div className='gr-padding-10'>
