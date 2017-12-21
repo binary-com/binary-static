@@ -74,7 +74,7 @@ const getConfig = () => (
 const createDirectories = () => {
     const config = getConfig();
 
-    console.log(`Target: ${config.dist_path}`.yellow);
+    console.log('Target: '.cyan, config.dist_path.yellow);
 
     const mkdir = path => fs.existsSync(path) || fs.mkdirSync(path);
     mkdir(Path.join(config.dist_path));
@@ -335,14 +335,17 @@ createDirectories();
 (async () => {
     try {
         const regx = new RegExp(program.path, 'i');
-        const pages_filtered = common.pages
-                .filter(p => regx.test(p.save_as));
-        console.log(`Compiling ${pages_filtered.length} page(s) ...`.green);
+        const pages_filtered = common.pages.filter(p => regx.test(p.save_as));
+        const count = pages_filtered.length;
+        if (!count) {
+            console.warn('No page matched your request.'.yellow);
+            return;
+        }
+        console.group(`Compiling ${count} page${count > 1 ? 's' : ''} ...`.green);
         await Promise.all(
-            common.pages
-                .filter(p => regx.test(p.save_as))
-                .map(compile)
+            pages_filtered.map(compile)
         );
+        console.groupEnd();
 
         if (program.addTranslations) {
             const gettext = Gettext.getInstance();
