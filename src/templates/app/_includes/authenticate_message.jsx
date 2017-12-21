@@ -27,51 +27,54 @@ const FileSelector = ({ heading, allowed_documents, instructions, accepted_docum
                     <div className='gr-5 gr-12-m'>
                         <p className='font-s'>{it.L('Submit one of the documents below')}:</p>
                         <div className='files'>
-                            {accepted_documents.map((document, i) => (
-                                <React.Fragment key={i}>
-                                    <h3>{document.name}</h3>
-                                    <div className='fields'>
-                                        {type === 'poi' && (
-                                            <React.Fragment>
-                                                <div className='gr-row form-row center-text-m'>
-                                                    <div className='gr-4 gr-12-m'>
-                                                        <label htmlFor={`id_number_${i + 1}`}>{it.L('ID number')}:</label>
+                            {accepted_documents.map((document, i) => {
+                                const j = i + 1;
+                                return (
+                                    <React.Fragment key={i}>
+                                        <h3>{document.name}</h3>
+                                        <div className='fields'>
+                                            {type === 'poi' && (
+                                                <React.Fragment>
+                                                    <div className='gr-row form-row center-text-m'>
+                                                        <div className='gr-4 gr-12-m'>
+                                                            <label htmlFor={`id_number_${j}`}>{it.L('ID number')}:</label>
+                                                        </div>
+                                                        <div className='gr-8 gr-12-m'>
+                                                            <input id={`id_number_${j}`} type='text' maxLength='30' />
+                                                        </div>
                                                     </div>
-                                                    <div className='gr-8 gr-12-m'>
-                                                        <input id={`id_number_${i + 1}`} type='text' maxLength='30' />
+                                                    <div className='gr-row form-row center-text-m'>
+                                                        <div className='gr-4 gr-12-m'>
+                                                            <label htmlFor={`exp_date_${j}`}>{it.L('Expiry date')}:</label>
+                                                        </div>
+                                                        <div className='gr-8 gr-12-m'>
+                                                            <input className='date-picker' id={`exp_date_${j}`} type='text' maxLength='200' readOnly='true' />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div className='gr-row form-row center-text-m'>
-                                                    <div className='gr-4 gr-12-m'>
-                                                        <label htmlFor={`exp_date_${i + 1}`}>{it.L('Expiry date')}:</label>
+                                                    <div className='gr-row form-row center-text-m'>
+                                                        <div className='gr-12'>
+                                                            <input id={`front_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
+                                                            <label htmlFor={`front_file${j}`} className='button'>{it.L('Front Side')} <span className='add' /></label>
+                                                        </div>
+                                                        <div className='gr-12'>
+                                                            <input id={`back_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
+                                                            <label htmlFor={`back_file${j}`} className='button'>{it.L('Reverse Side')} <span className='add' /></label>
+                                                        </div>
                                                     </div>
-                                                    <div className='gr-8 gr-12-m'>
-                                                        <input className='date-picker' id={`exp_date_${i + 1}`} type='text' maxLength='200' readOnly='true' />
-                                                    </div>
-                                                </div>
-                                                <div className='gr-row form-row center-text-m'>
+                                                </React.Fragment>
+                                            )}
+                                            {type === 'poa' && (
+                                                <div className='gr-row form-row gr-centered'>
                                                     <div className='gr-12'>
-                                                        <input id={`front_file${i + 1}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
-                                                        <label htmlFor={`front_file${i + 1}`} className='button'>{it.L('Front Side')} <span className='add' /></label>
-                                                    </div>
-                                                    <div className='gr-12'>
-                                                        <input id={`back_file${i + 1}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
-                                                        <label htmlFor={`back_file${i + 1}`} className='button'>{it.L('Reverse Side')} <span className='add' /></label>
+                                                        <input id={`add_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
+                                                        <label htmlFor={`add_file${j}`} className='button'>{it.L('Add')} <span className='add' /></label>
                                                     </div>
                                                 </div>
-                                            </React.Fragment>
-                                        )}
-                                        {type === 'poa' && (
-                                            <div className='gr-row form-row gr-centered'>
-                                                <div className='gr-12'>
-                                                    <input id={`add_file${i + 1}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
-                                                    <label htmlFor={`add_file${i + 1}`} className='button'>{it.L('Add')} <span className='add' /></label>
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
-                                </React.Fragment>
-                            ))}
+                                            )}
+                                        </div>
+                                    </React.Fragment>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
