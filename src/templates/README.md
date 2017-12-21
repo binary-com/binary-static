@@ -110,10 +110,6 @@ export default Loading;
 it.dangreouslyRenderHtml('<a href="https://binary.com"></a>');
 ```
 
-Contributing
-===
-
-
 Setup
 ====
 
