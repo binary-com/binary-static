@@ -13,8 +13,6 @@ require('./_common/lib/polyfills/nodelist.foreach');
 require('binary-style');
 require('binary-style/binary.more');
 
-// created for handling global onclick
-exportAllFunctions(require('./app/common/attach_dom/handle_click'));
 // used by gtm to update page after a new release
 exportAllFunctions(require('./_common/check_new_release'));
 
