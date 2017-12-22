@@ -48,7 +48,7 @@ const Ico = () => {
         { logo: 'bitcoins-channel-news',  timestamp: 'Oct 10, 2017',    headlines: 'Binary.com Announces Initial Coin Offering (ICO)',                                         url: 'http://bitcoinschannel.com/binary-com-announces-initial-coin-offering-ico' },
         { logo: 'blockchain-news',        timestamp: 'Oct 6, 2017',     headlines: 'Binary.com Announces Initial Coin Offering (ICO)',                                         url: 'http://www.the-blockchain.com/2017/10/06/binary-com-announces-initial-coin-offering-ico/' },
         { logo: 'leap-rate',              timestamp: 'Sept 20, 2017',   headlines: 'Binary.com ICO provides a peek into the workings and finances of a Binary Options broker', url: 'https://www.leaprate.com/binary-options/broker/binary-com-ico-finances-binary-options-broker/' },
-        { logo: 'finance-magnates',       timestamp: 'Sept 15, 2017',   headlines: 'Exclusive: Binary.com ICO Info Shows Profits to Surpass \$20m in 2017',                    url: 'https://www.financemagnates.com/binary-options/brokers/exclusive-binary-com-ico-shows-company-profits-surpass-20-mln-2017/' },
+        { logo: 'finance-magnates',       timestamp: 'Sept 15, 2017',   headlines: 'Exclusive: Binary.com ICO Info Shows Profits to Surpass $20m in 2017',                     url: 'https://www.financemagnates.com/binary-options/brokers/exclusive-binary-com-ico-shows-company-profits-surpass-20-mln-2017/' },
         { logo: 'finance-magnates',       timestamp: 'Sept 13, 2017',   headlines: 'Exclusive: Binary.com Preparing an ICO, Looking for Blockchain Talent',                    url: 'https://www.financemagnates.com/cryptocurrency/news/exclusive-binary-com-preparing-ico-looking-blockchain-talent/' },
     ];
 
@@ -682,7 +682,7 @@ const Ico = () => {
                         <div className='gr-12'>
                             <div className='faq'>
                                 <h4>{it.L('What is an ICO?')}</h4>
-                                <p>{it.L('An \‘Initial Coin Offering\’ (or \‘ICO\’) is a fundraising method that is relatively similar to an Initial Public Offering (IPO). However, in an ICO, cryptocurrency - such as \‘coloured coins\’ or \‘Ethereum tokens\’ - is issued to investors instead of shares.')}</p>
+                                <p>{it.L('An ‘Initial Coin Offering’ (or ‘ICO’) is a fundraising method that is relatively similar to an Initial Public Offering (IPO). However, in an ICO, cryptocurrency - such as ‘coloured coins’ or ‘Ethereum tokens’ - is issued to investors instead of shares.')}</p>
                             </div>
                         </div>
                         <div className='gr-12'>
@@ -696,7 +696,7 @@ const Ico = () => {
                         <div className='gr-12'>
                             <div className='faq'>
                                 <h4>{it.L('How does the ICO work?')}</h4>
-                                <p>{it.L('[_1] will offer a number of blockchain tokens to investors. These tokens will be \‘ERC20\’ tokens on the Ethereum blockchain, however the Company may issue tokens on other blockchains if there is sufficient investor demand for different token types.', it.broker_name)}</p>
+                                <p>{it.L('[_1] will offer a number of blockchain tokens to investors. These tokens will be ‘ERC20’ tokens on the Ethereum blockchain, however the Company may issue tokens on other blockchains if there is sufficient investor demand for different token types.', it.broker_name)}</p>
                                 <p>{it.L('Regardless of the type of token issued, each token will provide investors with two rights:')}</p>
                                 <ol>
                                     <li>{it.L('The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares; and')}</li>
@@ -722,7 +722,7 @@ const Ico = () => {
                             <div className='faq'>
                                 <h4>{it.L('How are the tokens offered?')}</h4>
                                 <p>{it.L('The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price.')}</p>
-                                <p>{it.L('This means that you won\’t have to tie up important funds in order to keep your bids active.')}</p>
+                                <p>{it.L('This means that you won’t have to tie up important funds in order to keep your bids active.')}</p>
                             </div>
                         </div>
                         <div className='gr-12'>
@@ -810,20 +810,20 @@ const Ico = () => {
                         <div className='gr-12'>
                             <div className='faq'>
                                 <h4>{it.L('How can I learn more about ICOs and cryptocurrencies?')}</h4>
-                                <p>{it.L('Head over to our <a href=[_1] target=\'_blank\'  rel=\'noopener noreferrer\'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We\’ll show you how they work and how they are changing the way we do business.', 'https://www.youtube.com/user/BinaryTradingVideos')}</p>
+                                <p>{it.L('Head over to our <a href=[_1] target=\'_blank\'  rel=\'noopener noreferrer\'>YouTube</a> channel to learn more about ICOs, popular cryptocurrencies, and blockchain technology. We’ll show you how they work and how they are changing the way we do business.', 'https://www.youtube.com/user/BinaryTradingVideos')}</p>
                             </div>
                         </div>
                         <div className='gr-12'>
                             <div className='faq'>
                                 <h4>{it.L('How will you issue dividends to tokenholders?')}</h4>
-                                <p>{it.L('We are adopting the \‘Mini Me\’ ERC20 token for our ICO. This type of token possesses unique features that are suited to securities tokens. One of its unique features is the ability to clone itself, thus creating a mini version of itself.')}</p>
+                                <p>{it.L('We are adopting the ‘Mini Me’ ERC20 token for our ICO. This type of token possesses unique features that are suited to securities tokens. One of its unique features is the ability to clone itself, thus creating a mini version of itself.')}</p>
                                 <p>{it.L('To implement our dividend payments feature, we will clone our tokens and each cloned token will represent dividend rights.')}</p>
                                 <p>{it.L('At this stage, tokenholders can cash out their dividends in one of two ways:')}</p>
                                 <ul className='bullet'>
                                     <li>{it.L('Trade your cloned tokens on a cryptocurrency exchange')}</li>
                                     <li>{it.L('Redeem the cloned tokens for dividends from Binary Group Ltd')}</li>
                                 </ul>
-                                <p>{it.L('In the latter case, tokenholders will need to log in to their [_1] account, authenticate their account in accordance with KYC requirements, and deposit the cloned tokens using the facilities that we\’ll provide in return for dividends.', it.broker_name)}</p>
+                                <p>{it.L('In the latter case, tokenholders will need to log in to their [_1] account, authenticate their account in accordance with KYC requirements, and deposit the cloned tokens using the facilities that we’ll provide in return for dividends.', it.broker_name)}</p>
                                 <p>{it.L('Dividends will generally be distributed once a year.')}</p>
                             </div>
                         </div>
@@ -836,7 +836,7 @@ const Ico = () => {
                         </div>
                         <div className='gr-12'>
                             <div className='faq'>
-                                <h4>{it.L('What\’s the difference between securities tokens and utility tokens?')}</h4>
+                                <h4>{it.L('What’s the difference between securities tokens and utility tokens?')}</h4>
                                 <p>{it.L('Securities tokens are tokens that derive their value from an external asset or represent traditional financial assets.')}</p>
                                 <p>{it.L('Utility tokens are tokens that give you access to decentralised networks or applications.')}</p>
                             </div>
@@ -846,13 +846,13 @@ const Ico = () => {
                                 <h4>{it.L('What is a Dutch auction? How does [_1] determine the final bid price per token and how will I know if my bid is successful?', it.broker_name)}</h4>
                                 <p>{it.L('The price per token is determined by a Dutch auction where investors will enter bids for how many tokens they want to purchase at different prices. Once the bidding period is over, all accepted bids will be arranged from the highest to lowest price until all our tokens have been assigned, as per the process described in the Information Memorandum. The lowest price among all allotted tokens will be the final price that everyone pays.')}</p>
                                 <p>{it.L('This means that the price of the token is determined by market demand, and not [_1].', it.broker_name)}</p>
-                                <p>{it.L('To find out if your bid is successful, you may refer to the \‘ICO Auction Bids\’ section on the [_1]ICO bidding page[_2].', `<a href=${it.url_for('user/ico-subscribe')} target='_blank' rel='noopener noreferrer'>`, '</a>')}</p>
+                                <p>{it.L('To find out if your bid is successful, you may refer to the ‘ICO Auction Bids’ section on the [_1]ICO bidding page[_2].', `<a href=${it.url_for('user/ico-subscribe')} target='_blank' rel='noopener noreferrer'>`, '</a>')}</p>
                             </div>
                         </div>
                         <div className='gr-12'>
                             <div className='faq'>
                                 <h4>{it.L('How can I place a bid?')}</h4>
-                                <p>{it.L('To place a bid, just enter the number of tokens you\’d like to purchase and the price you\’re willing to pay per token into the bid form on the [_1]ICO bidding page[_2].', `<a href=${it.url_for('user/ico-subscribe')} target='_blank' rel='noopener noreferrer'>`, '</a>')}</p>
+                                <p>{it.L('To place a bid, just enter the number of tokens you’d like to purchase and the price you’re willing to pay per token into the bid form on the [_1]ICO bidding page[_2].', `<a href=${it.url_for('user/ico-subscribe')} target='_blank' rel='noopener noreferrer'>`, '</a>')}</p>
                                 <p>{it.L('To place a bid, you only need to place an initial deposit equivalent to 5% of the total amount. Your bids can be cancelled at any time before the end of the auction at no cost.')}</p>
                                 <p>{it.L('After the bidding period is over and the final price of the token has been decided, you will have two weeks to pay the balance owed depending on the final price of the token.')}</p>
                             </div>
@@ -860,7 +860,7 @@ const Ico = () => {
                         <div className='gr-12'>
                             <div className='faq'>
                                 <h4>{it.L('What is the definition of a professional investor?')}</h4>
-                                <p>{it.L('The definition of a professional investor varies based on jurisdiction. In essence, a professional investor refers to an investor who\’s more experienced and is able to evaluate an investment opportunity with a full understanding of the risks involved.')}</p>
+                                <p>{it.L('The definition of a professional investor varies based on jurisdiction. In essence, a professional investor refers to an investor who’s more experienced and is able to evaluate an investment opportunity with a full understanding of the risks involved.')}</p>
                             </div>
                         </div>
                         <div className='gr-12'>
@@ -883,8 +883,8 @@ const Ico = () => {
                         </div>
                         <div className='gr-12'>
                             <div className='faq'>
-                                <h4>{it.L('What happens once I\’ve claimed the tokens?')}</h4>
-                                <p>{it.L('Once you\’ve claimed your tokens, you are entitled to the following rights:')}</p>
+                                <h4>{it.L('What happens once I’ve claimed the tokens?')}</h4>
+                                <p>{it.L('Once you’ve claimed your tokens, you are entitled to the following rights:')}</p>
                                 <ul className='bullet'>
                                     <li>{it.L('The right to receive dividend payments equivalent to dividends paid on Binary Group Ltd ordinary shares')}</li>
                                     <li>{it.L('The right to convert your tokens into ordinary shares')}</li>
@@ -894,7 +894,7 @@ const Ico = () => {
                         <div className='gr-12'>
                             <div className='faq'>
                                 <h4>{it.L('What is an ERC20 token?')}</h4>
-                                <p>{it.L('An ERC20 token is a type of token based on the ERC20 token standard used for Ethereum smart contracts. It\’s considered to be one of the most significant token standards ever created for the Ethereum blockchain.')}</p>
+                                <p>{it.L('An ERC20 token is a type of token based on the ERC20 token standard used for Ethereum smart contracts. It’s considered to be one of the most significant token standards ever created for the Ethereum blockchain.')}</p>
                                 <p>{it.L('We decided to adopt the ERC20 token as it possesses unique features that are appropriate for a securities token.')}</p>
                             </div>
                         </div>

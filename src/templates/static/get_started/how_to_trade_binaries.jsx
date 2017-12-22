@@ -117,7 +117,7 @@ const HowToTradeBinaries = () => (
 
             <div className='gr-padding-10 center-text client_logged_out invisible'>
                 <a className='button' href={it.url_for('/')}><span>{it.L('Try it now')}</span></a>
-                <p>{it.L('No risk, \$10K virtual money account')}</p>
+                <p>{it.L('No risk, $10K virtual money account')}</p>
             </div>
         </div>
 

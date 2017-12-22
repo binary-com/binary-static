@@ -27,7 +27,7 @@ const BeginnersFaq = () => (
 
         <h2>{it.L('Learning to trade')}</h2>
         <h3>{it.L('Do you offer virtual-money accounts?')}</h3>
-        <p>{it.L('[_1] offers a virtual-money account so you can get the hang of trading binaries. Why not <a href=\'[_2]\'>open a free \$10k fully-functional virtual-money account</a>, and start learning how to trade.', it.website_name, it.url_for('/'))}</p>
+        <p>{it.L('[_1] offers a virtual-money account so you can get the hang of trading binaries. Why not <a href=\'[_2]\'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade.', it.website_name, it.url_for('/'))}</p>
 
         <h3>{it.L('Will I need to install any software?')}</h3>
         <p>{it.L('[_1] is entirely web-based and requires no software installation.', it.website_name)}</p>

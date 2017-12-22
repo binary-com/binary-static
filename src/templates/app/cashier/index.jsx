@@ -6,10 +6,20 @@ const DepositWithdraw = ({
     id,
     show_upgrade,
 }) => {
-    const deposit_url = ja_hide ? '/cashier/forwardws#deposit' : ja_show ? '/cashier/deposit-jp' : '/cashier/payment_agent_listws';
-    const withdraw_url = ja_hide ? '/cashier/forwardws#withdraw' : ja_show ? '/cashier/withdraw-jp' : '/paymentagent/withdrawws';
+    let deposit_url     = '/cashier/payment_agent_listws';
+    let withdraw_url    = '/paymentagent/withdrawws';
+    let class_hide_show = 'gr-5 gr-12-m';
+    if (ja_hide) {
+        deposit_url     = '/cashier/forwardws#deposit';
+        withdraw_url    = '/cashier/forwardws#withdraw';
+        class_hide_show += ' ja-hide';
+    } else if (ja_show) {
+        deposit_url     = '/cashier/deposit-jp';
+        withdraw_url    = '/cashier/withdraw-jp';
+        class_hide_show += ' invisible ja-show';
+    }
     return (
-        <div className={`gr-5 gr-12-m ${ja_hide ? 'ja-hide' : ja_show ? 'invisible ja-show' : ''}`}>
+        <div className={class_hide_show}>
             <div className='gr-padding-10 client_real invisible gr-parent'>
                 <a className='toggle button client_real invisible' href={it.url_for(deposit_url)} id={id}>
                     <span className='deposit'>{it.L('Deposit')}</span>

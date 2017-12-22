@@ -24,7 +24,7 @@ const BinaryOptionsBasics = () => (
         <br />
 
         <h2>4. {it.L('Choose your Stake and Potential Return')}</h2>
-        <p>{it.L('Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. [_1] offers payouts from \$1 to \$50,000.', it.website_name)}</p>
+        <p>{it.L('Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. [_1] offers payouts from $1 to $50,000.', it.website_name)}</p>
     </div>
 );
 
