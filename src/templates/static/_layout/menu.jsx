@@ -89,7 +89,7 @@ const Menu = () => (
                     <ul className='sub_items'>
                         {item.sub_items.map((sub_item, sub_idx) => (
                             <li key={sub_idx} id={sub_item.id} className={`sub_item ${sub_item.className || ''}`}>
-                                <a className='link' href={it.url_for(sub_item.url)}>
+                                <a className='link' href={it.url_for(sub_item.url)} target={sub_item.target || undefined}>
                                     {it.L(sub_item.text)}
                                 </a>
                             </li>
