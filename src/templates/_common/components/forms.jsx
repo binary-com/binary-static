@@ -27,6 +27,38 @@ export const FormRow = ({
     input_prefix,
     children,
 }) => {
+    const getInnerElement = () => {
+        if (type === 'select') {
+            return (
+                <select id={id} className={`form_input ${className||''}`} {...attributes} >
+                    {children}
+                </select>
+            );
+        }
+        if (['text', 'password', 'number', 'checkbox'].indexOf(type) !== -1) {
+            return (
+                <React.Fragment>
+                    {input_prefix}
+                    <input
+                        type={type}
+                        className={className}
+                        id={id}
+                        maxLength={type === 'password' ? 25 : undefined}
+                        {...attributes}
+                    />
+                </React.Fragment>
+            );
+        }
+        if (type === 'label') {
+            return (
+                <span className='text-display'>
+                    {is_bold ? <strong id={id} {...attributes}></strong> : <span id={id} {...attributes}></span>}
+                </span>
+            );
+        }
+        return type === 'custom' ? children : undefined;
+    };
+
     if (type === 'checkbox' && !spaced) {
         return (
             <div className={`gr-row ${row_class || ''}`} id={row_id} >
@@ -50,32 +82,7 @@ export const FormRow = ({
                 </label>
             </div>
             <div className={is_two_rows ? 'gr-12' : 'gr-8 gr-12-m'}>
-                {type === 'select' ?
-                    <select id={id} className={`form_input ${className||''}`} {...attributes} >
-                        {children}
-                    </select>
-                    : ['text', 'password', 'number', 'checkbox'].indexOf(type) !== -1 ?
-                        <React.Fragment>
-                            {input_prefix}
-                            <input
-                                type={type}
-                                className={className}
-                                id={id}
-                                maxLength={type === 'password' ? 25 : undefined}
-                                {...attributes}
-                            />
-                        </React.Fragment>
-                        : type === 'label' ?
-                            <span className='text-display'>
-                                {is_bold ?
-                                    <strong id={id} {...attributes}></strong> :
-                                    <span id={id} {...attributes}></span>
-                                }
-                            </span>
-                            : type === 'custom' ?
-                                children
-                                : undefined
-                }
+                {getInnerElement()}
                 {hint &&
                     <p className='hint no-margin'>{hint}</p>
                 }
