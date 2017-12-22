@@ -1,11 +1,6 @@
 import React from 'react';
 
-const LiP = ({
-    children,
-    header,
-    id,
-    paragraphs,
-}) => (
+const LiP = ({ children, header, id, paragraphs }) => (
     <li id={id} className='gr-padding-10'>
         <strong>{header}</strong>
         { paragraphs.map((p, idx) =>(

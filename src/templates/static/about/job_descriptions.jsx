@@ -19,12 +19,7 @@ const Column = ({
     </div>
 );
 
-const Row = ({
-    title,
-    id,
-    sections = [],
-    last,
-}) => (
+const Row = ({ title, id, sections = [], last }) => (
     <React.Fragment>
         <div className='gr-row gr-padding-10' id={id}>
             <div className='gr-3 gr-12-m'>

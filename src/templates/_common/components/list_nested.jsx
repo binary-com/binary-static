@@ -1,11 +1,6 @@
 import React from 'react';
 
-const ListNested = ({
-    strong,
-    header,
-    items = [],
-    children,
-}) => (
+const ListNested = ({ strong, header, items = [], children }) => (
     <li>
         { strong ? <strong>{header}</strong> : header}
         <ol className='reset_ol'>

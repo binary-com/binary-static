@@ -1,11 +1,6 @@
 import React from 'react';
 
-const DepositWithdraw = ({
-    ja_hide,
-    ja_show,
-    id,
-    show_upgrade,
-}) => {
+const DepositWithdraw = ({ ja_hide, ja_show, id, show_upgrade }) => {
     let deposit_url     = '/cashier/payment_agent_listws';
     let withdraw_url    = '/paymentagent/withdrawws';
     let class_hide_show = 'gr-5 gr-12-m';

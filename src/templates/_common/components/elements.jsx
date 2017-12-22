@@ -44,12 +44,7 @@ export const List = ({ items, id, className }) => (
 
 );
 
-export const InfoBox = ({
-    padding,
-    header,
-    sub_header,
-    text,
-}) => {
+export const InfoBox = ({ padding, header, sub_header, text }) => {
     let class1 = '';
     let class2 = '';
     if (padding) {

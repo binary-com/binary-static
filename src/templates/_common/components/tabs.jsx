@@ -6,12 +6,7 @@ export const TabContainer = ({ className = '', theme = '', children }) => (
     </div>
 );
 
-export const Tabs = ({
-    id,
-    id_ul,
-    arr_tabs = [],
-    no_href,
-}) => (
+export const Tabs = ({ id, id_ul, arr_tabs = [], no_href }) => (
     <div id={id}>
         <ul id={id_ul} className='tm-ul follow-default'>
             { arr_tabs.map((tab, idx) => (

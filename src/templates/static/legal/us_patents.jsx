@@ -1,9 +1,6 @@
 import React from 'react';
 
-const Patents = ({
-    items,
-}) => (
-
+const Patents = ({ items }) => (
         <ul>
             {items.map((item, idx) => (
                 <li key={idx}>

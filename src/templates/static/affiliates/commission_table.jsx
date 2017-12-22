@@ -1,11 +1,6 @@
 import React from 'react';
 
-const TableRow = ({
-    header,
-    text_1,
-    text_2,
-    text_3,
-}) => (
+const TableRow = ({ header, text_1, text_2, text_3 }) => (
     <div className={`gr-row gr-padding-10 ${header ? 'table-header' : 'table-body table-body-lines'}`}>
         <div className='gr-2 center-text'>{text_1}</div>
         <div className='gr-6'>{text_2}</div>

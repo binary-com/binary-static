@@ -1,9 +1,6 @@
 import React from 'react';
 
-const CharityHelper = ({
-    country,
-    charities,
-}) => (
+const CharityHelper = ({ country, charities }) => (
     <div className='charity-country gr-padding-30'>
         <div className='fill-bg-color center-text'>
             <h3 className='gr-padding-10'>{country}</h3>

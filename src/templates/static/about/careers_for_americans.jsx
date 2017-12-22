@@ -3,12 +3,7 @@ import CareersShared from '../about/careers_shared.jsx';
 import { InfoBox } from '../../_common/components/elements.jsx';
 
 
-const LgColumnLink = ({
-    image,
-    title,
-    text,
-    section,
-}) => (
+const LgColumnLink = ({ image, title, text, section }) => (
     <div className='gr-6 gr-12-m'>
         <img className='gr-3 gr-centered' src={it.url_for(`images/pages/careers_for_americans/${image}.svg`)} />
         <p><strong>{title}</strong></p>

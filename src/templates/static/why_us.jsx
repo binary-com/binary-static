@@ -1,12 +1,7 @@
 import React from 'react';
 import { List } from '../_common/components/elements.jsx';
 
-const Section = ({
-    className,
-    id,
-    header,
-    children,
-}) => (
+const Section = ({ className, id, header, children }) => (
     <div className={`section ${className || ''}`}>
         <a id={id}></a>
         <div className='section-content'>

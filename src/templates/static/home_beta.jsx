@@ -3,18 +3,13 @@ import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
 import {TabContainer, TabContentContainer, TabsSubtabs, TabContent} from  '../_common/components/tabs.jsx';
 
-const PaymentLogo = ({
-    items,
-}) => items.map((item, inx) => (
+const PaymentLogo = ({ items }) => items.map((item, inx) => (
         <div key={inx} className='gr-2 gr-4-m gr-padding-30 center-text'>
             <img src={it.url_for(`images/pages/home-beta/payment/${item}.svg`)} />
         </div>
     ));
 
-const Arrows = ({
-    direction,
-    parent,
-}) => (
+const Arrows = ({ direction, parent }) => (
     <div className='align-self-center gr-1 gr-hide-m'>
         <img
             className={`go-${direction} gr-10 gr-12-p gr-no-gutter-p gr-centered`}
@@ -24,10 +19,7 @@ const Arrows = ({
     </div>
 );
 
-const ArrowsMobile = ({
-    direction,
-    parent,
-}) => (
+const ArrowsMobile = ({ direction, parent }) => (
     <div className='align-self-center gr-2 gr-hide gr-show-m gr-no-gutter'>
         <img
             className={`go-${direction} gr-5 gr-no-gutter gr-centered`}
@@ -37,11 +29,7 @@ const ArrowsMobile = ({
     </div>
 );
 
-const MarketsTabContent = ({
-    text,
-    header,
-    image,
-}) => (
+const MarketsTabContent = ({ text, header, image }) => (
     <div className='gr-row gr-row-align-middle'>
         <Arrows parent='market_tabs' direction='left' />
         <div className='gr-10 gr-12-m'>
@@ -65,11 +53,7 @@ const MarketsTabContent = ({
     </div>
 );
 
-const AccountsListItem = ({
-    image,
-    list_header,
-    list_text,
-}) => (
+const AccountsListItem = ({ image, list_header, list_text }) => (
     <div className='gr-row gr-padding-10'>
         <div className='gr-2 gr-no-gutter gr-gutter-left-m'>
             <img className='responsive' src={it.url_for(image)} />
@@ -141,11 +125,7 @@ const AccountsTabContent = ({
     </React.Fragment>
 );
 
-const AcademySection = ({
-    image,
-    header,
-    text,
-}) => (
+const AcademySection = ({ image, header, text }) => (
     <div className='gr-4 gr-12-m center-text'>
         <div className='gr-4 gr-3-m gr-centered gr-padding-10'>
             <img className='responsive' src={it.url_for(image)} />
@@ -155,10 +135,7 @@ const AcademySection = ({
     </div>
 );
 
-const TabCircles = ({
-    id,
-    number,
-}) => (
+const TabCircles = ({ id, number }) => (
     <div className='gr-hide gr-show-m center-text'>
         <div className='tab-circles' id={id || undefined}>
             {Array.from(new Array(number)).map((x, inx) => (

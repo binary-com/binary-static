@@ -1,11 +1,6 @@
 import React from 'react';
 
-const Button = ({
-    url,
-    real,
-    className,
-    text,
-}) => (
+const Button = ({ url, real, className, text }) => (
     <a href={it.url_for(url)} className={`toggle button ${real ? 'client_real' : 'client_logged_out'} invisible`}>
         <span className={className || undefined}>{text}</span>
     </a>

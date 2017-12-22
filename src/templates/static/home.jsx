@@ -4,9 +4,7 @@ import SeparatorLine from '../_common/components/separator_line.jsx';
 import {List, FillBox} from '../_common/components/elements.jsx';
 
 
-const PaymentLogo = ({
-    items,
-}) => items.map((item, idx) => (
+const PaymentLogo = ({ items }) => items.map((item, idx) => (
     <div key={idx} className='payment-logo' id={item}>
     </div>
 ));

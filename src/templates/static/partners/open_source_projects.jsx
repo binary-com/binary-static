@@ -1,21 +1,14 @@
 import React from 'react';
 import { List } from '../../_common/components/elements.jsx';
 
-const TextBlock = ({
-    text,
-    children,
-}) => (
+const TextBlock = ({ text, children }) => (
     <div className='gr-8 gr-12-m'>
         <p>{text}</p>
         {children}
     </div>
 );
 
-const ImageBlock = ({
-    order_first,
-    image_padding,
-    image,
-}) => {
+const ImageBlock = ({ order_first, image_padding, image }) => {
     const order = order_first ? 'gr-order-first-m' : '';
     const image_class = image_padding ? `${image_padding}` : 'gr-8';
     return (

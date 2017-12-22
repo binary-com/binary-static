@@ -9,12 +9,7 @@ const InvisibleHeading = ({ headers=[] }) => (
     </div>
 );
 
-const UlText = ({
-    text,
-    paragraph,
-    className,
-    items = [],
-}) => (
+const UlText = ({ text, paragraph, className, items = [] }) => (
     <React.Fragment>
         <p><strong>{text}</strong></p>
         { paragraph && <p>{paragraph}</p> }

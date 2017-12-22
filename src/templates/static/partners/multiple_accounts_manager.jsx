@@ -1,11 +1,7 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-const BoxInner = ({
-    className,
-    image,
-    text,
-}) => {
+const BoxInner = ({ className, image, text }) => {
     const class1 = className ? `${className}` : '';
     return (
         <div className={`gr-4 gr-12-m center-text ${class1}`}>
@@ -15,10 +11,7 @@ const BoxInner = ({
     );
 };
 
-const Box = ({
-    children,
-    className,
-}) => {
+const Box = ({ children, className }) => {
     const class1 = className ? `${className}` : '';
     return (
         <div className={`gr-12 ${class1}`}>
@@ -29,12 +22,7 @@ const Box = ({
     );
 };
 
-const Step = ({
-    image,
-    circle_no,
-    header,
-    text,
-}) => {
+const Step = ({ image, circle_no, header, text }) => {
     const circle = circle_no ? <div className='circle'>{circle_no}</div> : '';
     return (
         <div className='step'>

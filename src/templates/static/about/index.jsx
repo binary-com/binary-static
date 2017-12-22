@@ -1,11 +1,6 @@
 import React from 'react';
 
-const BoxInner = ({
-    className = '',
-    href,
-    image,
-    text,
-}) => (
+const BoxInner = ({ className = '', href, image, text }) => (
     <div className={`gr-6 center-text ${className}`}>
         { href ?
             <React.Fragment>

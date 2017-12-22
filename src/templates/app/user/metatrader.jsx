@@ -2,12 +2,7 @@ import React from 'react';
 import Loading from '../../_common/components/loading.jsx';
 import { FormRow, SubmitButton } from '../../_common/components/forms.jsx';
 
-const AccountDesc = ({
-    title,
-    description,
-    account_type,
-    items,
-}) => {
+const AccountDesc = ({ title, description, account_type, items }) => {
     let types = '';
     if (account_type) {
         account_type.forEach((type) => {

@@ -1,11 +1,7 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-const Box = ({
-    image,
-    header,
-    text,
-}) => (
+const Box = ({ image, header, text }) => (
     <div className='gr-4 gr-12-p gr-12-m gr-parent'>
         <div className='box gr-gutter gr-padding-10'>
             <img className='responsive gr-padding-20' src={it.url_for(`images/pages/omnibus/${image}.svg`)} />
@@ -15,10 +11,7 @@ const Box = ({
     </div>
 );
 
-const Steps = ({
-    has_arrow,
-    text,
-}) => {
+const Steps = ({ has_arrow, text }) => {
     const arrow = has_arrow ? <img className='responsive' src={it.url_for('images/pages/omnibus/arrow-down.svg')} />: '';
     return (
         <div className='steps gr-12 gr-12-p gr-12-m gr-parent'>

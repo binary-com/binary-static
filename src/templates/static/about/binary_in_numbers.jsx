@@ -1,11 +1,6 @@
 import React from 'react';
 
-const Numbers = ({
-    className,
-    header,
-    text,
-    image,
-}) => (
+const Numbers = ({ className, header, text, image }) => (
     <div className={className}>
         <span className='icon'></span>
         <div className='inner center-text'>
