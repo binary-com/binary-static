@@ -143,7 +143,7 @@ const Header = () => (
                         <div className='gr-hide gr-show-m gr-2-m gr-show-p gr-1-p gr-no-gutter-mobile align-end'>
                             <div id='mobile-menu-icon-container'>
                                 <a href='#mobile-menu' id='mobile-menu-icon'>
-                                    <img className='responsive' src={it.url_for('images/pages/binary-mobile-menu.svg')}/>
+                                    <img className='responsive' src={it.url_for('images/pages/binary-mobile-menu.svg')} />
                                 </a>
                             </div>
                         </div>

@@ -78,7 +78,7 @@ const Ico = () => {
             </head>
 
             <body>
-            <Gtm/>
+            <Gtm />
             <div className='navbar-fixed-top' role='navigation' id='navigation'>
                 <div className='navbar-header'>
                     <span id='toggle-menu' href='button' className='navbar-toggle'></span>
@@ -271,7 +271,7 @@ const Ico = () => {
                         <div className='gr-row'>
                             <div className='gr-10 gr-push-1'>
                                 <h2>{it.L('Trade your tokens on the Lykke Exchange')}</h2>
-                                <img src={it.url_for('images/ico/icons/lykke_logo.svg')}/>
+                                <img src={it.url_for('images/ico/icons/lykke_logo.svg')} />
                                 <p>{it.L('We\'ve reached an agreement to list the tokens on the <a href="[_1]" target="_blank" rel="noreferrer noopener">Lykke Exchange</a>.', 'https://www.lykke.com/')}</p>
                                 <a className='button' href='https://www.lykke.com/company/news/binary' target='_blank' rel='noreferrer noopener'>
                                     <span>{it.L('Read the official press release')}</span>
@@ -954,7 +954,7 @@ const Ico = () => {
                                                 <input className='text' placeholder={it.L('Enter your email')} id='awf_field-90867273' type='text' name='email' value='' tabIndex='500' />
                                             </div>
                                             <div className='gr-4 gr-12-m'>
-                                                <input name='submit' id='af-submit-image-713141817' type='submit' className='image' alt='Submit' tabIndex='501' value={it.L('Submit')}/>
+                                                <input name='submit' id='af-submit-image-713141817' type='submit' className='image' alt='Submit' tabIndex='501' value={it.L('Submit')} />
                                             </div>
                                         </div>
                                     </div>

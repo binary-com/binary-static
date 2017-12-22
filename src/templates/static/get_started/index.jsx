@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Box = ({boxes}) => (
+const Box = ({ boxes }) => (
     <div className='gr-row'>
-        {boxes.map((box, idx) => (
+        { boxes.map((box, idx) => (
             <div className='list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m' key={idx}>
                 <div className='section fill-bg-color'>
                     <a href={it.url_for(`/get-started/${box.id}`)}>

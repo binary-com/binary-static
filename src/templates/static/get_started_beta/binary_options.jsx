@@ -55,7 +55,7 @@ const Step = ({ header, text }) => {
             <div className='circle'>{ circle_no }</div>
             <div className='gr-padding-20 gr-gutter center-text'>
                 <div className='gr-8 gr-centered'>
-                    <img className='responsive' src={it.url_for(`images/pages/get-started-beta/binary-options/how-to-trade-binary/easy-step-${circle_no}.svg`)}/>
+                    <img className='responsive' src={it.url_for(`images/pages/get-started-beta/binary-options/how-to-trade-binary/easy-step-${circle_no}.svg`)} />
                 </div>
                 <div className='gr-padding-20 gr-child'><strong>{header}</strong></div>
                 <p className='no-margin gr-padding-10'>{text}</p>
@@ -66,6 +66,7 @@ const Step = ({ header, text }) => {
 
 const CircleHeader = ({ className, header, text, children }) => {
     circle += 1;
+
     return (
         <React.Fragment>
             <SeparatorLine invisible show_mobile className={className || 'gr-padding-20'} />

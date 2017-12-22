@@ -61,7 +61,7 @@ const Home = () => {
                         <h1 className='center-text gr-padding-20'>{it.L('First-Class FX Binary Options Trading Platform')}</h1>
                         <h3 className='center-text gr-padding-20 gr-child'>{it.L('Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform.')}</h3>
 
-                        <FormVerifyEmail padding='8' email_padding='8' button_padding='4' text={it.L('Get started')}/>
+                        <FormVerifyEmail padding='8' email_padding='8' button_padding='4' text={it.L('Get started')} />
                     </div>
                 </div>
 
@@ -73,12 +73,12 @@ const Home = () => {
                                     <a href='http://www.fsa.go.jp/index.html' target='_blank'
                                        className='gr-4 gr-no-gutter' rel='noopener noreferrer'>
                                         <img className='responsive'
-                                             src={it.url_for('images/pages/regulation/fsa-logo.png')}/>
+                                             src={it.url_for('images/pages/regulation/fsa-logo.png')} />
                                     </a>
                                     <a href='http://www.ffaj.or.jp/index.html' target='_blank'
                                        className='gr-8 gr-no-gutter' rel='noopener noreferrer'>
                                         <img className='responsive'
-                                             src={it.url_for('images/pages/regulation/binarykk-logo.gif')}/>
+                                             src={it.url_for('images/pages/regulation/binarykk-logo.gif')} />
                                     </a>
                                 </div>
                                 <div className='gr-padding-20 gr-child'>
@@ -92,7 +92,7 @@ const Home = () => {
                             <div className='gr-7 gr-8-m gr-centered gr-padding-30 gr-child'>
                                 <div className='gr-8 gr-no-gutter'>
                                     <a href='https://www.jsftb.co.jp/' target='_blank' rel='noopener noreferrer'>
-                                        <img className='responsive' src={it.url_for('images/pages/home-jp/JSF.png')}/>
+                                        <img className='responsive' src={it.url_for('images/pages/home-jp/JSF.png')} />
                                     </a>
                                 </div>
                                 <div className='gr-padding-20 gr-child'>
@@ -103,7 +103,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <SeparatorLine no_wrapper/>
+                    <SeparatorLine no_wrapper />
                 </div>
             </div>
 
@@ -111,11 +111,11 @@ const Home = () => {
                 <h2 className='center-text gr-padding-10'>{it.L('A leading innovator of Binary Options trading for over 15 Years')}</h2>
                 <div className='gr-row'>
                     <FillBox className='box' padding='5' center align_left
-                             text={it.L('Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!')}/>
+                             text={it.L('Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!')} />
 
                     <div className='gr-5 gr-centered gr-6-p gr-8-m gr-padding-30'>
                         <img className='gr-11 gr-12-p gr-12-m gr-centered'
-                             src={it.url_for('images/pages/home-jp/currencies.svg')}/>
+                             src={it.url_for('images/pages/home-jp/currencies.svg')} />
                     </div>
                 </div>
 
@@ -124,14 +124,14 @@ const Home = () => {
                         <span>{it.L('Try our trading page')}</span>
                     </a>
                 </div>
-                <SeparatorLine no_wrapper/>
+                <SeparatorLine no_wrapper />
             </div>
 
             <div className='container gr-padding-10 center-text'>
                 <div className='gr-row gr-row-align-center'>
                     <div className='align-self-center gr-gutter-right'>
                         <img className='go-left disabled'
-                             src={it.url_for('images/pages/home-jp/icons/left_disabled.svg')}/>
+                             src={it.url_for('images/pages/home-jp/icons/left_disabled.svg')} />
                     </div>
                     <div className='no-scroll'>
                         <ul id='product_wrapper'>
@@ -178,7 +178,7 @@ const Home = () => {
                         </ul>
                     </div>
                     <div className='align-self-center gr-gutter-left'>
-                        <img className='go-right' src={it.url_for('images/pages/home-jp/icons/right_enabled.svg')}/>
+                        <img className='go-right' src={it.url_for('images/pages/home-jp/icons/right_enabled.svg')} />
                     </div>
                 </div>
             </div>
@@ -189,18 +189,18 @@ const Home = () => {
 
                     <div className='gr-11 gr-centered'>
                         <div className='gr-row'>
-                            <Steps step='1' image='demo' text={it.L('Open a Demo Account')}/>
-                            <Steps step='2' image='personal_info' text={it.L('Input personal information')}/>
+                            <Steps step='1' image='demo' text={it.L('Open a Demo Account')} />
+                            <Steps step='2' image='personal_info' text={it.L('Input personal information')} />
                         </div>
 
                         <div className='gr-row'>
-                            <Steps step='3' image='test' text={it.L('Pass our Knowledge Test')}/>
-                            <Steps step='4' image='email' text={it.L('Email us your Identity Documents')}/>
+                            <Steps step='3' image='test' text={it.L('Pass our Knowledge Test')} />
+                            <Steps step='4' image='email' text={it.L('Email us your Identity Documents')} />
                         </div>
 
                         <div className='gr-row'>
-                            <Steps step='5' image='secure' text={it.L('Receive your activation code by secure')}/>
-                            <Steps step='6' image='fund' text={it.L('Deposit funds and begin trading')}/>
+                            <Steps step='5' image='secure' text={it.L('Receive your activation code by secure')} />
+                            <Steps step='6' image='fund' text={it.L('Deposit funds and begin trading')} />
                         </div>
                     </div>
 

@@ -301,7 +301,7 @@ const HomeBeta = () => (
                         </TabContent>
                     </TabContentContainer>
                 </div>
-                <TabCircles number={2} id='account_tabs_circles'/>
+                <TabCircles number={2} id='account_tabs_circles' />
             </TabContainer>
 
             <div className='center-text gr-padding-20 gr-parent'>

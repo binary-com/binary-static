@@ -9,7 +9,7 @@ const BoxInner = ({
     const class1 = className ? `${className}` : '';
     return (
         <div className={`gr-4 gr-12-m center-text ${class1}`}>
-            <img className='gr-4 gr-2-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)}/>
+            <img className='gr-4 gr-2-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)} />
             <p>{text}</p>
         </div>
     );
@@ -42,7 +42,7 @@ const Step = ({
             {circle}
             <div className='gr-padding-20 gr-gutter'>
                 <div className='center-text'>
-                    <img className='gr-4 gr-8-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)}/>
+                    <img className='gr-4 gr-8-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)} />
                 </div>
                 <div className='gr-padding-20 gr-child'><strong>{header}</strong></div>
                 <p className='no-margin gr-padding-10'>{text}</p>

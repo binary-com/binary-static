@@ -20,7 +20,7 @@ const ColumnMD = ({ header, paragraph }) => (
 
 const ColumnLG = ({ center, image, text }) => (
     <div className={`gr-6 gr-12-m${center ? ' center-text' : ''}`}>
-        <img className='responsive' src={it.url_for(`/images/pages/careers/${image}.jpg`)}/>
+        <img className='responsive' src={it.url_for(`/images/pages/careers/${image}.jpg`)} />
         <p className={center ? 'gr-padding-10 hint' : undefined}>{text}</p>
     </div>
 );
@@ -34,7 +34,7 @@ const Careers = () => (
             </div>
 
             <div className='gr-padding-30'>
-                <img className='responsive' src={it.url_for('images/pages/careers/main@1.jpg')}/>
+                <img className='responsive' src={it.url_for('images/pages/careers/main@1.jpg')} />
                 <FillBox
                     image='images/pages/careers/view-positions-icon-white.svg'
                     color='dark'
@@ -122,7 +122,7 @@ const Careers = () => (
                     <ColumnLG image='my@2'      text={it.L('Malaysia')} />
                     <ColumnLG image='malta@1'   text={it.L('Malta')} />
                     <div className='gr-6 gr-push-3 gr-12-m gr-push-0-m'>
-                        <img className='responsive' src={it.url_for('images/pages/careers/japan@1.jpg')}/>
+                        <img className='responsive' src={it.url_for('images/pages/careers/japan@1.jpg')} />
                         <p>{it.L('Japan')}</p>
                     </div>
                 </div>

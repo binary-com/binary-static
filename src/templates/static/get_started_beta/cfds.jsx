@@ -25,10 +25,10 @@ const Cfds = () => (
             <div className='gr-3 gr-hide-m sidebar-container'>
                 <div className='sidebar'>
                     <List id='sidebar-nav' items={[
-                        { id: 'what-cfds-trading',      href: '#what-cfds-trading',      text: it.L('What is CFD trading')},
-                        { id: 'how-trade-cfds',         href: '#how-trade-cfds',         text: it.L('How to trade CFDs')},
-                        { id: 'margin-policy',          href: '#margin-policy',          text: it.L('Margin policy')},
-                        { id: 'contract-specification', href: '#contract-specification', text: it.L('Contract specifications')},
+                        { id: 'what-cfds-trading',      href: '#what-cfds-trading',      text: it.L('What is CFD trading') },
+                        { id: 'how-trade-cfds',         href: '#how-trade-cfds',         text: it.L('How to trade CFDs')} ,
+                        { id: 'margin-policy',          href: '#margin-policy',          text: it.L('Margin policy') },
+                        { id: 'contract-specification', href: '#contract-specification', text: it.L('Contract specifications') },
                     ]} />
                 </div>
             </div>
@@ -51,7 +51,7 @@ const Cfds = () => (
     
                     <HeaderSecondary header={it.L('When to buy and sell')} />
                     <p>{it.L('When you are trading CFDs, you can choose to open a buy position (if you think that the price will rise) or a sell position (if you think that the price will fall).')}</p>
-                    <BuySellImage/>
+                    <BuySellImage />
                     <p>{it.L('Let\'s use the US 100 index as an example:')}</p>
                     <p>{it.L('If you decide to buy or \'go long\' on the US 100 index, your profit will continue to increase as long as the price of the US 100 index keeps rising. However, if the price falls, the losses you incur will also increase.')}</p>
                     <p>{it.L('The opposite is true if you decide to sell or \'go short\' on the US 100 index. This means that your profit will continue to increase as long as the price of the US 100 index keeps falling. However, if the price rises, the losses you incur will also increase.')}</p>

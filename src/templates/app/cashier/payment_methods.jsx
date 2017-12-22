@@ -33,13 +33,13 @@ const Row = ({
             </div>
             <div className='gr-2 gr-6-m'>{currencies}</div>
             <div className='gr-2 gr-hide-m'>
-                { deposits.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
+                { deposits.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx} />, e], null) }
             </div>
             <div className='gr-3 gr-hide-m'>
-                { withdrawals.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
+                { withdrawals.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx} />, e], null) }
             </div>
             <div className='gr-3 gr-hide-m'>
-                { times.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
+                { times.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx} />, e], null) }
                 {is_header ? '*' : ''}
             </div>
         </div>

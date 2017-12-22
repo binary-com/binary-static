@@ -68,7 +68,7 @@ const FAQ = () => (
             <div className='gr-padding-20 gr-parent'>
             <h3>{it.L('What commission plan do you offer?')}</h3>
             <p>{it.L('Please refer to the following commission plan.')}</p>
-                <CommissionTable/>
+                <CommissionTable />
             </div>
 
             <div className='gr-padding-20 gr-parent'>

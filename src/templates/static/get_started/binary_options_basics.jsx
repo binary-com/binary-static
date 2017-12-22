@@ -4,7 +4,7 @@ const BinaryOptionsBasics = () => (
     <div className='section-content section-3'>
         <h1>{it.L('Binary Options Basics')}</h1>
         <p>{it.L('Binary options are easy to understand. They\'re called \'binary\' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake.')}</p>
-        <img className='responsive' id='lga_icon_footer' src={it.url_for('images/pages/get-started/binary-option-basics.svg')}/>
+        <img className='responsive' id='lga_icon_footer' src={it.url_for('images/pages/get-started/binary-option-basics.svg')} />
         <p>{it.L('You only need to make four decisions to execute a binary contract.')}</p>
 
         <h2>1. {it.L('Choose the Underlying')}</h2>

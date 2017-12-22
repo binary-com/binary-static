@@ -5,7 +5,7 @@ import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 const LoggedIn = () => (
     <html>
         <head>
-            <AntiClickjack/>
+            <AntiClickjack />
             {it.js_files.map((js_file, inx) => (
                 <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())}></script>
             ))}
@@ -29,7 +29,7 @@ const LoggedIn = () => (
             <div id='content'>
                 <div id='login_loading'>
                     <a href={it.url_for('/')} id='loading_link'>
-                        <Loading/>
+                        <Loading />
                     </a>
                 </div>
             </div>

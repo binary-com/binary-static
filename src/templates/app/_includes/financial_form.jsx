@@ -121,7 +121,7 @@ const FinancialForm = () => (
         </FormRow>
 
         <FormRow id='net_income' label={it.L('Net Annual Income')} type='select'>
-            <Values/>
+            <Values />
         </FormRow>
 
         <FormRow id='estimated_worth' label={it.L('Estimated Net Worth')} type='select'>
@@ -134,7 +134,7 @@ const FinancialForm = () => (
         </FormRow>
 
         <FormRow id='account_turnover' label={it.L('Anticipated Account Turnover')} type='select'>
-            <Values/>
+            <Values />
         </FormRow>
     </Fieldset>
 );

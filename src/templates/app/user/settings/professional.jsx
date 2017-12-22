@@ -9,11 +9,11 @@ const Professional = () => (
             <h1>{it.L('Professional Trader')}</h1>
 
             <div id='loading'>
-                <Loading/>
+                <Loading />
             </div>
 
             <form className='form gr-padding-10 invisible' id='frm_professional'>
-                <ProfessionalClient/>
+                <ProfessionalClient />
 
                 <SubmitButton msg_id='form_message' type='submit' text={it.L('Submit')} />
             </form>

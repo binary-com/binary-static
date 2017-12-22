@@ -12,7 +12,7 @@ const MobileMenu = () => (
                 <Li text={it.L('Get Started')} href={it.url_for('get-started-jp')} className='invisible ja-show' />
                 <Li text={it.L('Tour')}        href={it.url_for('tour')}           className='ja-hide' />
                 <Li text={it.L('Tour')}        href={it.url_for('tour-jp')}        className='invisible ja-show' />
-                <Menu/>
+                <Menu />
                 <Li
                     text={it.L('Platforms')}
                     href={it.url_for('platforms')}

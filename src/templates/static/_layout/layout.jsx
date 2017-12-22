@@ -59,17 +59,17 @@ const WithLayout = ({ children }) => {
     const className = `${it.current_route || ''}-content`;
     return (
         <div id='content' className={it.current_route ? className : undefined}>
-            {it.layout === 'full_width' ?
-                <IcoBanner container='ico-banner-container' className='top-margin'/> : undefined
+            { it.layout === 'full_width' &&
+                <IcoBanner container='ico-banner-container' className='top-margin' />
             }
-            {it.layout === 'default' ?
-                <IcoBanner container='ico-banner-container' className='top-margin bottom-margin' /> : undefined
+            { it.layout === 'default' &&
+                <IcoBanner container='ico-banner-container' className='top-margin bottom-margin' />
             }
             <div id='page_info' style={{display: 'none'}}>
                 <Title />
                 <div id='content_class'>{className}</div>
             </div>
-            {it.layout !== 'full_width' ?
+            { it.layout !== 'full_width' ?
                 <div className='container'>
                     {children}
                 </div> :
@@ -83,7 +83,7 @@ const InnerContent = () => {
     const content = it.layout === 'get_started'  ?
             <GetStarted /> : CONTENT_PLACEHOLDER;
 
-    if(it.layout) {
+    if (it.layout) {
         return (
             <WithLayout>
                 {content}
@@ -94,7 +94,7 @@ const InnerContent = () => {
 };
 
 const Layout = () => {
-    if(it.is_pjax_request) {
+    if (it.is_pjax_request) {
         return <InnerContent />;
     }
     return (

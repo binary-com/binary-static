@@ -48,8 +48,8 @@ const Metals = () => (
                     <p>{it.L('Metals are also known as "hard" commodities as they are natural resources that must be mined or extracted.')}</p>
                     <p>{it.L('Metals are categorised into two types:')}</p>
                     <ul className='bullet'>
-                        <li>{it.L('Industrial metals')}<br/>{it.L('Industrial metals – also known as base metals – are abundant, but oxidise or corrode easily. Industrial metals feature heavily across a wide range of industrial and commercial applications, including electrical wiring, automobiles, and batteries.')}</li>
-                        <li>{it.L('Precious metals')}<br/>{it.L('Precious metals are harder to come by and are more valuable than industrial metals. Because precious metals are softer and less reactive, they are widely used in jewellery, medical devices, and electronics.')}</li>
+                        <li>{it.L('Industrial metals')}<br />{it.L('Industrial metals – also known as base metals – are abundant, but oxidise or corrode easily. Industrial metals feature heavily across a wide range of industrial and commercial applications, including electrical wiring, automobiles, and batteries.')}</li>
+                        <li>{it.L('Precious metals')}<br />{it.L('Precious metals are harder to come by and are more valuable than industrial metals. Because precious metals are softer and less reactive, they are widely used in jewellery, medical devices, and electronics.')}</li>
                     </ul>
     
                     <HeaderSecondary header={it.L('Why you should trade precious metals with [_1]', it.website_name)} />
@@ -65,7 +65,7 @@ const Metals = () => (
                     <HeaderSecondary header={it.L('When to buy and sell')} />
                     <p>{it.L('When you are trading metals, you can choose to open a buy position (if you think that the price of an asset will rise) or a sell position (if you think that the price of an asset will fall).')}</p>
     
-                    <BuySellImage/>
+                    <BuySellImage />
     
                     <p>{it.L('Let\'s use the XAU/USD (Gold vs US dollar) metal pair as an example.')}</p>
                     <p>{it.L('If you decide to buy or \'go long\' on the XAU/USD, you will profit if the price of the XAU/USD rises, and incur losses if the price falls.')}</p>
@@ -87,7 +87,7 @@ const Metals = () => (
                     <p>{it.L('Your profit or loss is calculated as follows:')}</p>
                     <Box text={`(${it.L('Closing price')} – ${it.L('Opening price')}) x ${it.L('Lot units')} = ${it.L('Profit/Loss')}`} text_two={`(1,255.80 – 1,255.06) x 100 = ${it.L('USD')} 74`} />
     
-                    <Lot/>
+                    <Lot />
                 </Section>
                 <Section id='margin-policy' header={it.L('Margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital.')}</p>
@@ -102,7 +102,7 @@ const Metals = () => (
                     <p>{it.L('Without margin, purchasing one lot of the XAU/USD pair will cost you:')}</p>
                     <Box text={`100 * 1250.15 = ${it.L('USD')} 125,015`} />
 
-                    <Lot/>
+                    <Lot />
 
                     <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
                     <p>{it.L('When your account equity is unable to cover the margin requirement, your account will be placed under margin call. This does not affect your ability to open new positions.')}</p>
@@ -128,10 +128,10 @@ const Metals = () => (
                             { text: it.L('Minimum volume increment'), class: 'gr-padding-10' },
                         ]],
                         tbody: [
-                        [{ text: 'XAU/USD' }, { text: it.L('Gold vs US dollar')      }, { text: hundred }, { text: hundredth }, { text: hundredth }],
-                        [{ text: 'XAG/USD' }, { text: it.L('Silver vs US dollar')    }, { text: 5000    }, { text: hundredth }, { text: hundredth }],
-                        [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US dollar') }, { text: hundred }, { text: hundredth }, { text: hundredth }],
-                        [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US dollar')  }, { text: hundred }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'XAU/USD' }, { text: it.L('Gold vs US dollar')      }, { text: hundred }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'XAG/USD' }, { text: it.L('Silver vs US dollar')    }, { text: 5000    }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US dollar') }, { text: hundred }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US dollar')  }, { text: hundred }, { text: hundredth }, { text: hundredth }],
                         ],
                     }} />
 

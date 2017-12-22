@@ -1,11 +1,7 @@
 import React from 'react';
-import {Tbody} from '../../_common/components/elements.jsx';
+import { Tbody } from '../../_common/components/elements.jsx';
 
-const Info = ({
-    header,
-    text,
-    doc,
-}) => (
+const Info = ({ header, text, doc }) => (
     <div className='gr-parent gr-padding-10'>
         <h2>{header}</h2>
         <p>{text}</p>
@@ -39,14 +35,21 @@ const CompanyProfile = () => {
                 </table>
             </div>
 
-            <Info header={it.L('{JAPAN ONLY}Capital Adequacy Ratio (CAR)')} text={it.L('{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)')}
-               doc='binary_report_capital_adequacy' />
-
-            <Info header={it.L('{JAPAN ONLY}Win Loss Ratio')} text={it.L('{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA')}
-               doc='binary_report_ratios' />
-
-            <Info header={it.L('{JAPAN ONLY}Financial Condition')} text={it.L('{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA')}
-               doc='binary_disclosure' />
+            <Info
+                header={it.L('{JAPAN ONLY}Capital Adequacy Ratio (CAR)')}
+                text={it.L('{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)')}
+                doc='binary_report_capital_adequacy'
+            />
+            <Info
+                header={it.L('{JAPAN ONLY}Win Loss Ratio')}
+                text={it.L('{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA')}
+                doc='binary_report_ratios'
+            />
+            <Info
+                header={it.L('{JAPAN ONLY}Financial Condition')}
+                text={it.L('{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA')}
+                doc='binary_disclosure'
+            />
         </React.Fragment>
     );
 };

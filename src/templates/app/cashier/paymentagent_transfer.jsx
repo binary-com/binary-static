@@ -11,7 +11,7 @@ const PaymentagentTransfer = () => (
         <h1>{it.L('Payment Agent transfer')}</h1>
 
         <div id='pa_transfer_loading' className='center-text'>
-            <Loading/>
+            <Loading />
         </div>
 
         <form id='frm_confirm_transfer' className='invisible'>

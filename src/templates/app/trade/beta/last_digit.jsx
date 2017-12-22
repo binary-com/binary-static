@@ -7,12 +7,12 @@ const LastDigit = () => (
             <div className='smallfont gr-row'>
                 <div className='gr-6 gr-12-m center-text'>
                     <label className='gr-padding-10' htmlFor='digit_underlying'>{it.L('Select market:')}</label>
-                    <br/>
+                    <br />
                     <select className='smallfont' id='digit_underlying'></select>
                 </div>
                 <div className='gr-6 gr-12-m center-text'>
                     <label className='gr-padding-10' htmlFor='tick_count'>{it.L('Number of ticks:')}</label>
-                    <br/>
+                    <br />
                     <Select
                         className='smallfont'
                         id='tick_count'

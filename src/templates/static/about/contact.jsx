@@ -7,7 +7,7 @@ const Contact = () => (
     <div className='container' id='contact_content'>
         <div className='gr-row gr-parent static_full border-bottom gr-padding-30'>
             <div className='gr-2 gr-hide-m ja-hide'>
-                <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')}/>
+                <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
             </div>
             <div className='gr-10 gr-12-m gr-padding-10 gr-parent'>
                 <h1>{it.L('Contact us')}</h1>

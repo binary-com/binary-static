@@ -15,7 +15,7 @@ const Deposit = () => {
             <div className='gr-row'>
                 <h1 className='gr-11 gr-10-m'>{it.L('Deposit')}</h1>
                 <a className='gr-1 gr-2-m no-print align-end' href='javascript:window.print()'>
-                    <img className='responsive' src={it.url_for('images/common/print.svg')}/>
+                    <img className='responsive' src={it.url_for('images/common/print.svg')} />
                 </a>
             </div>
             <p>{it.L('{JAPAN ONLY}Please make a bank transfer from your designated bank account to:')}</p>
