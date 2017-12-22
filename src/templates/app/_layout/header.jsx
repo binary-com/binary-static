@@ -1,7 +1,7 @@
 import React from 'react';
 import {List} from '../../_common/components/elements.jsx';
 
-const LanguageUl = ({type, color}) => {
+const LanguageUl = ({ type, color }) => {
     const id = `${type}_language`;
     const world_color = `world-${color}`;
     return (
@@ -113,19 +113,19 @@ const Header = () => (
                                         <Account />
                                         <ul>
                                             <div className='login-id-list'></div>
-                                            <a className='link' href={it.url_for('/user/settingsws')}>
+                                            <a className='link' href={it.url_for('user/settingsws')}>
                                                 <li className='topMenuProfile'>{it.L('Profile')}</li>
                                             </a>
-                                            <a className='link' href={it.url_for('/user/securityws')}>
+                                            <a className='link' href={it.url_for('user/securityws')}>
                                                 <li className='topMenuSecurity'>{it.L('Security & Limits')}</li>
                                             </a>
-                                            <a className='link ja-hide' id='user_accounts' href={it.url_for('/user/accounts')}>
+                                            <a className='link ja-hide' id='user_accounts' href={it.url_for('user/accounts')}>
                                                 <li className='topMenuAccounts'>{it.L('Accounts List')}</li>
                                             </a>
-                                            <a className='link invisible' id='user_menu_metatrader' href={it.url_for('/user/metatrader')}>
+                                            <a className='link invisible' id='user_menu_metatrader' href={it.url_for('user/metatrader')}>
                                                 <li className='topMenuMetaTrader'>{it.L('MetaTrader')}</li>
                                             </a>
-                                            <a className='link invisible' id='user_menu_account_transfer' href={it.url_for('/cashier/account_transfer')}>
+                                            <a className='link invisible' id='user_menu_account_transfer' href={it.url_for('cashier/account_transfer')}>
                                                 <li>{it.L('Transfer Between Accounts')}</li>
                                             </a>
                                             <div className='separator-line-thin-gray'></div>

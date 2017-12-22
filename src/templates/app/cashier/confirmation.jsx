@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormRow} from '../../_common/components/forms.jsx';
+import { FormRow } from '../../_common/components/forms.jsx';
 
 const Confirmation = () => (
     <div id='confirm_content' className='gr-padding-30 gr-gutter'>

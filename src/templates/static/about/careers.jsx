@@ -20,7 +20,7 @@ const ColumnMD = ({ header, paragraph }) => (
 
 const ColumnLG = ({ center, image, text }) => (
     <div className={`gr-6 gr-12-m${center ? ' center-text' : ''}`}>
-        <img className='responsive' src={it.url_for(`/images/pages/careers/${image}.jpg`)} />
+        <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
         <p className={center ? 'gr-padding-10 hint' : undefined}>{text}</p>
     </div>
 );
@@ -39,7 +39,7 @@ const Careers = () => (
                     image='images/pages/careers/view-positions-icon-white.svg'
                     color='dark'
                     no_padding
-                    href={it.url_for('/open-positions')} text={it.L('View open positions')}
+                    href={it.url_for('open-positions')} text={it.L('View open positions')}
                 />
             </div>
 
@@ -61,7 +61,7 @@ const Careers = () => (
 
                 <FillBox
                     image='images/pages/careers/handbook.svg'
-                    href={it.url_for('/download/binary-employee-handbook.pdf')}
+                    href={it.url_for('download/binary-employee-handbook.pdf')}
                     download
                     text={it.L('Employee handbook')}
                     padding='6'

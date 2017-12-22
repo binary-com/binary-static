@@ -9,7 +9,7 @@ const ResetPassword = () => (
 
             <div className='invisible' id='form_error'>
                 <p id='form_error_msg'></p>
-                <a href={it.url_for('/user/lost_passwordws')}>{it.L('Click here to retry')}</a>
+                <a href={it.url_for('user/lost_passwordws')}>{it.L('Click here to retry')}</a>
             </div>
 
             <div className='gr-parent gr-padding-10' id='container_reset_password'>

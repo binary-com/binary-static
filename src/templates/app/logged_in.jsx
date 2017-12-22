@@ -6,7 +6,7 @@ const LoggedIn = () => (
     <html>
         <head>
             <AntiClickjack />
-            {it.js_files.map((js_file, inx) => (
+            { it.js_files.map((js_file, inx) => (
                 <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())}></script>
             ))}
             <style>{`

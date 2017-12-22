@@ -10,7 +10,7 @@ const LgColumnLink = ({
     section,
 }) => (
     <div className='gr-6 gr-12-m'>
-        <img className='gr-3 gr-centered' src={it.url_for(`/images/pages/careers_for_americans/${image}.svg`)} />
+        <img className='gr-3 gr-centered' src={it.url_for(`images/pages/careers_for_americans/${image}.svg`)} />
         <p><strong>{title}</strong></p>
         <p>{text}</p>
         <p>
@@ -27,7 +27,7 @@ const CareersForAmericans = () => (
                 <div className='center-text gr-padding-10 gr-parent'>
                     <h1 className='gr-padding-10'>{('Career Opportunities for Americans')}</h1>
                     <p>{('Looking for a way out of Donald Trump\'s America? Want to do your best work and fulfil your potential in a country that\'s modern, diverse, and tolerant?')}</p>
-                    <img className='gr-6 gr-centered gr-padding-10' src={it.url_for('/images/pages/careers_for_americans/usa.jpg')} />
+                    <img className='gr-6 gr-centered gr-padding-10' src={it.url_for('images/pages/careers_for_americans/usa.jpg')} />
                     <p>{it.website_name}{(' is one of the world\'s most progressive companies, spread across multiple cities in Asia and Europe. We value experience, drive, and talent. Your moral standards are equally important. You must hold the same core values that define who we are, including integrity, tolerance, diversity, and equal opportunity. If you share our feelings about your new president, you might be on the right track.')}</p>
                 </div>
                 <div className='gr-padding-20'>

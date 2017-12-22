@@ -1,7 +1,6 @@
-const colors = require('colors'); // eslint-disable-line no-unused-vars
-const fs     = require('fs');
-const Path   = require('path');
-const util   = require('util');
+const fs   = require('fs');
+const Path = require('path');
+const util = require('util');
 
 exports.root_path = require('app-root-path').path;
 
@@ -24,16 +23,20 @@ exports.print = (text) => {
 };
 
 
-const exitsAsync = util.promisify(fs.exists);
-const mkdirAsync = util.promisify(fs.mkdir);
+const existsAsync = util.promisify(fs.exists);
+const mkdirAsync  = util.promisify(fs.mkdir);
 
 const ensureDirectoryExistence = async (filePath) => {
-    const dirname = Path.dirname(filePath);
-    if (await exitsAsync(dirname)) {
-        return;
+    try {
+        const dirname = Path.dirname(filePath);
+        if (await existsAsync(dirname)) {
+            return;
+        }
+        await ensureDirectoryExistence(dirname);
+        await mkdirAsync(dirname);
+    } catch (e) {
+        //
     }
-    await ensureDirectoryExistence(dirname);
-    await mkdirAsync(dirname);
 };
 
 const readFileAsync = util.promisify(fs.readFile);

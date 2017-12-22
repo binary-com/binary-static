@@ -1,5 +1,5 @@
 import React from 'react';
-import {Select} from '../../../_common/components/elements.jsx';
+import { Select } from '../../../_common/components/elements.jsx';
 
 const LastDigit = () => (
     <div className='gr-parent'>

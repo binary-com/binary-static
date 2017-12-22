@@ -134,7 +134,7 @@ export const SubmitButton = ({
         </div>
     </React.Fragment>;
 
-    if(!no_wrapper) {
+    if (!no_wrapper) {
         return (
             <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className||''}`} id={id}>
                 { !is_centered ?

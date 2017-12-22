@@ -19,7 +19,9 @@ const FinancialAssessment = () => (
                 <AuthenticateMessageFinancial />
             </div>
             <div className='center-text'>
-                <a className='button' href={it.url_for('user/metatrader')}><span>{it.L('MetaTrader account management')}</span></a>
+                <a className='button' href={it.url_for('user/metatrader')}>
+                    <span>{it.L('MetaTrader account management')}</span>
+                </a>
             </div>
         </div>
 

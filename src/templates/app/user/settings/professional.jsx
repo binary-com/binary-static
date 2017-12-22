@@ -1,6 +1,6 @@
 import React from 'react';
-import Loading from '../../../_common/components/loading.jsx';
 import ProfessionalClient from '../../_includes/professional_client.jsx';
+import Loading from '../../../_common/components/loading.jsx';
 import { SubmitButton } from '../../../_common/components/forms.jsx';
 
 const Professional = () => (

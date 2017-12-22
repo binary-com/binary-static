@@ -1,5 +1,5 @@
 import React from 'react';
-import {Li} from '../../_common/components/elements.jsx';
+import { Li } from '../../_common/components/elements.jsx';
 import Menu from '../../_common/components/menu.jsx';
 
 const MobileMenu = () => (

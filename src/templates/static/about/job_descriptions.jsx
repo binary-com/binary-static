@@ -15,7 +15,7 @@ const Column = ({
             <h3>{header}</h3>
         }
         <p>{text}</p>
-        <a href={it.url_for(`/open-positions/job-details?dept=${id}#${subsection}`)}>{it.L('Learn more')}</a>
+        <a href={it.url_for(`open-positions/job-details?dept=${id}#${subsection}`)}>{it.L('Learn more')}</a>
     </div>
 );
 

@@ -43,7 +43,7 @@ const Metals = () => (
                 <Section id='what-metals-trading' header={it.L('What is metals trading')}>
                     <p>{it.L('Diversify your portfolio with some of the most popular commodities in the world including gold and silver.')}</p>
                     <p>{it.L('Metals trading lets you speculate on the price movement of a particular metal asset in order to profit from the price difference when the asset value rises or falls.')}</p>
-    
+
                     <HeaderSecondary header={it.L('Metal – a hard commodity')} />
                     <p>{it.L('Metals are also known as "hard" commodities as they are natural resources that must be mined or extracted.')}</p>
                     <p>{it.L('Metals are categorised into two types:')}</p>
@@ -51,7 +51,7 @@ const Metals = () => (
                         <li>{it.L('Industrial metals')}<br />{it.L('Industrial metals – also known as base metals – are abundant, but oxidise or corrode easily. Industrial metals feature heavily across a wide range of industrial and commercial applications, including electrical wiring, automobiles, and batteries.')}</li>
                         <li>{it.L('Precious metals')}<br />{it.L('Precious metals are harder to come by and are more valuable than industrial metals. Because precious metals are softer and less reactive, they are widely used in jewellery, medical devices, and electronics.')}</li>
                     </ul>
-    
+
                     <HeaderSecondary header={it.L('Why you should trade precious metals with [_1]', it.website_name)} />
                     <ul className='checked'>
                         <ListStrong header={it.L('Competitive spreads')} text={it.L('Trade metals on competitive fixed and variable spreads.')} />
@@ -61,16 +61,16 @@ const Metals = () => (
                 </Section>
                 <Section id='how-trade-metals' header={it.L('How to trade metals')}>
                     <p>{it.L('Learn the basic concepts of trading metal pairs on our MetaTrader 5 platform.')}</p>
-    
+
                     <HeaderSecondary header={it.L('When to buy and sell')} />
                     <p>{it.L('When you are trading metals, you can choose to open a buy position (if you think that the price of an asset will rise) or a sell position (if you think that the price of an asset will fall).')}</p>
-    
+
                     <BuySellImage />
     
                     <p>{it.L('Let\'s use the XAU/USD (Gold vs US dollar) metal pair as an example.')}</p>
                     <p>{it.L('If you decide to buy or \'go long\' on the XAU/USD, you will profit if the price of the XAU/USD rises, and incur losses if the price falls.')}</p>
                     <p>{it.L('If you decide to sell or \'go short\' on XAU/USD, you will profit if the price of the XAU/USD falls, and incur losses if the price rises.')}</p>
-    
+
                     <HeaderSecondary header={it.L('Factors that affect metal prices')} />
                     <p>{it.L('Knowing when to buy and sell metals largely depends on how well you know the factors that influence market prices. The most common influencing factors are:')}</p>
                     <ul className='checked'>
@@ -79,14 +79,14 @@ const Metals = () => (
                         <li>{it.L('Market volatility – Political, economic, or social instability may lead to more volatile financial markets that affect the prices of certain metals')}</li>
                     </ul>
                     <p>{it.L('Keeping up with market news and trends in a certain sector can help you tremendously, especially if you\'re just starting out.')}</p>
-    
+
                     <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
                     <p>{it.L('Let\'s use the XAU/USD metal pair again as an example.')}</p>
                     <p>{it.L('Due to market volatility and gold\'s reputation as a safe-haven asset, you predict that the price of gold will rise.')}</p>
                     <p>{it.L('After you purchase one lot of XAU/USD at a price of USD 1,255.06, the price of gold increases and you decide to sell when it reaches USD 1,255.80. Your profit or loss comes down to the price difference multiplied by the total lots you purchased.')}</p>
                     <p>{it.L('Your profit or loss is calculated as follows:')}</p>
                     <Box text={`(${it.L('Closing price')} – ${it.L('Opening price')}) x ${it.L('Lot units')} = ${it.L('Profit/Loss')}`} text_two={`(1,255.80 – 1,255.06) x 100 = ${it.L('USD')} 74`} />
-    
+
                     <Lot />
                 </Section>
                 <Section id='margin-policy' header={it.L('Margin policy')}>

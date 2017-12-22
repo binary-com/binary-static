@@ -59,129 +59,126 @@ const MBTrading = () => (
         <div id='mb-trading-wrapper' className='mb-trading-wrapper gr-centered gr-12-p gr-12-m invisible'>
             <div className='gr-row'>
 
-            <div className='gr-7 gr-12-m gr-12-p gr-order-2-m gr-order-2-p' id='chart_wrapper'>
-                <p className='error-msg' id='chart-error'></p>
-                <div id='trade_live_chart'>
-                    <div id='webtrader_chart'></div>
+                <div className='gr-7 gr-12-m gr-12-p gr-order-2-m gr-order-2-p' id='chart_wrapper'>
+                    <p className='error-msg' id='chart-error'></p>
+                    <div id='trade_live_chart'>
+                        <div id='webtrader_chart'></div>
+                    </div>
                 </div>
-            </div>
 
-            <div className='gr-5 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m'>
-            <div id='mb_trading' className='gr-12'>
+                <div className='gr-5 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m'>
+                    <div id='mb_trading' className='gr-12'>
 
-                <div id='notifications_wrapper' className='gr-row'></div>
+                        <div id='notifications_wrapper' className='gr-row'></div>
 
-                <div className='ja-hide' id='panel'>
-                    <div className='gr-row selection_wrapper less-margin-top'>
-                        <div className='trade_form gr-7 gr-6-m gr-no-gutter-left'>
-                            <FormItem id='underlying' className='gr-12' class_current='gr-row' class_list='gr-row' />
-                        </div>
-                        <div className='gr-5 gr-6-m'>
-                            <div className='gr-row'>
-                                <div className='trade_form gr-4 align-self-center gr-no-gutter'>
-                                    <div id='payout_amount'>{it.L('Payout')}</div>
+                        <div className='ja-hide' id='panel'>
+                            <div className='gr-row selection_wrapper less-margin-top'>
+                                <div className='trade_form gr-7 gr-6-m gr-no-gutter-left'>
+                                    <FormItem id='underlying' className='gr-12' class_current='gr-row' class_list='gr-row' />
                                 </div>
-                                <div className='trade_form gr-8 gr-no-gutter'>
+                                <div className='gr-5 gr-6-m'>
                                     <div className='gr-row'>
-                                        <FormItem id='currency' className='gr-3 gr-no-gutter' class_current='gr-row' class_list='gr-3 gr-no-gutter' />
-                                        <input className='gr-9 center-text' type='text' id='payout' maxLength='15' />
+                                        <div className='trade_form gr-4 align-self-center gr-no-gutter'>
+                                            <div id='payout_amount'>{it.L('Payout')}</div>
+                                        </div>
+                                        <div className='trade_form gr-8 gr-no-gutter'>
+                                            <div className='gr-row'>
+                                                <FormItem id='currency' className='gr-3 gr-no-gutter' class_current='gr-row' class_list='gr-3 gr-no-gutter' />
+                                                <input className='gr-9 center-text' type='text' id='payout' maxLength='15' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='gr-row selection_wrapper'>
+                                <div className='gr-12 gr-no-gutter'>
+                                    <div className='trade_form'>
+                                        <FormItem id='period' class_list='gr-12' />
+                                    </div>
+                                    <div className='trade_form'>
+                                        <FormItem id='category' class_list='gr-12' />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className='gr-row selection_wrapper'>
-                        <div className='gr-12 gr-no-gutter'>
-                            <div className='trade_form'>
-                                <FormItem id='period' class_list='gr-12' />
+
+                        <div className='invisible ja-show' id='ja-panel'>
+                            <div className='gr-row selection_wrapper'>
+                                <div id='trading_status' className='gr-4 gr-no-gutter-left'>
+                                    <div className='gr-row'>
+                                        <div className='gr-6 gr-no-gutter'>
+                                            <a className='button-secondary trading-status' href='javascript:;'>
+                                                <span className='selected' id='allow'></span>
+                                            </a>
+                                        </div>
+                                        <div className='gr-6 gr-no-gutter'>
+                                            <a className='button-secondary trading-status' href='javascript:;'>
+                                                <span id='disallow'></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='trade_form gr-8 gr-no-gutter-left'>
+                                    <FormItem id='underlying' className='gr-12' class_current='gr-row' class_list='gr-row' />
+                                </div>
                             </div>
-                            <div className='trade_form'>
-                                <FormItem id='category' class_list='gr-12' />
+
+                            <div className='gr-row selection_wrapper'>
+                                <div className='trade_form gr-4 gr-no-gutter-left'>
+                                    <div id='currency_wrapper'>
+                                        <FormItem id='currency' />
+                                        <FormItem id='payout' exclude_list={true} class_list='gr-12' />
+                                    </div>
+                                </div>
+                                <div className='gr-8 gr-no-gutter-left'>
+                                    <div className='trade_form'>
+                                        <FormItem id='period' class_list='gr-12' />
+                                    </div>
+                                    <div className='trade_form'>
+                                        <FormItem id='category' class_list='gr-12' />
+                                    </div>
+                                    <div className='trade_form no-margin'>
+                                        <FormItem id='payout_list' className='invisible gr-12' exclude_current={true} class_list='gr-row'>
+                                            <PayoutItem value='+1'     text='+1'         className='plus' />
+                                            <PayoutItem value='+10'    text='+10'        className='plus' />
+                                            <PayoutItem value='50'     text='50' />
+                                            <PayoutItem value='100'    text='100'        hint={it.L('(max)')} hint_class='invisible ja-show' />
+                                            <PayoutItem value='-1'     text='-1'         className='minus' />
+                                            <PayoutItem value='-10'    text='-10'        className='minus' />
+                                            <PayoutItem value='ok'     text={it.L('OK')} className='green' />
+                                            <PayoutItem value='cancel' text={it.L('Cancel')} />
+                                        </FormItem>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='price-table gr-row'>
+                            <div id='disable-overlay' className='invisible'></div>
+                            <div className='prices-wrapper gr-12'>
+                                <div className='gr-row heading'>
+                                    <div className='gr-4 barrier align-self-center'>{it.L('Barrier')}</div>
+                                    <div className='gr-4 buy-price gr-no-gutter-left'>
+                                        {it.L('Buy Price')}
+                                        <div className='hint sell-price'>{it.L('Sell Price')}</div>
+                                    </div>
+                                    <div className='gr-4 buy-price gr-no-gutter-left'>
+                                        {it.L('Buy Price')}
+                                        <div className='hint sell-price'>{it.L('Sell Price')}</div>
+                                    </div>
+                                </div>
+                                <div className='price-rows'></div>
+                            </div>
+                            <div id='loading-overlay' className='invisible'>
+                                <Loading />
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div className='invisible ja-show' id='ja-panel'>
-                    <div className='gr-row selection_wrapper'>
-                        <div id='trading_status' className='gr-4 gr-no-gutter-left'>
-                            <div className='gr-row'>
-                                <div className='gr-6 gr-no-gutter'>
-                                    <a className='button-secondary trading-status' href='javascript:;'>
-                                        <span className='selected' id='allow'></span>
-                                    </a>
-                                </div>
-                                <div className='gr-6 gr-no-gutter'>
-                                    <a className='button-secondary trading-status' href='javascript:;'>
-                                        <span id='disallow'></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='trade_form gr-8 gr-no-gutter-left'>
-                            <FormItem id='underlying' className='gr-12' class_current='gr-row' class_list='gr-row' />
-                        </div>
-                    </div>
-
-                    <div className='gr-row selection_wrapper'>
-                        <div className='trade_form gr-4 gr-no-gutter-left'>
-                            <div id='currency_wrapper'>
-                                <FormItem id='currency' />
-                                <FormItem id='payout' exclude_list={true} class_list='gr-12' />
-                            </div>
-                        </div>
-                        <div className='gr-8 gr-no-gutter-left'>
-                            <div className='trade_form'>
-                                <FormItem id='period' class_list='gr-12' />
-                            </div>
-                            <div className='trade_form'>
-                                <FormItem id='category' class_list='gr-12' />
-                            </div>
-                            <div className='trade_form no-margin'>
-                                <FormItem id='payout_list' className='invisible gr-12' exclude_current={true} class_list='gr-row'>
-                                    <PayoutItem value='+1'     text='+1'         className='plus' />
-                                    <PayoutItem value='+10'    text='+10'        className='plus' />
-                                    <PayoutItem value='50'     text='50' />
-                                    <PayoutItem value='100'    text='100'        hint={it.L('(max)')} hint_class='invisible ja-show' />
-                                    <PayoutItem value='-1'     text='-1'         className='minus' />
-                                    <PayoutItem value='-10'    text='-10'        className='minus' />
-                                    <PayoutItem value='ok'     text={it.L('OK')} className='green' />
-                                    <PayoutItem value='cancel' text={it.L('Cancel')} />
-                                </FormItem>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='price-table gr-row'>
-                    <div id='disable-overlay' className='invisible'></div>
-                    <div className='prices-wrapper gr-12'>
-                        <div className='gr-row heading'>
-                            <div className='gr-4 barrier align-self-center'>{it.L('Barrier')}</div>
-                            <div className='gr-4 buy-price gr-no-gutter-left'>
-                                {it.L('Buy Price')}
-                                <div className='hint sell-price'>
-                                    {it.L('Sell Price')}
-                                </div>
-                            </div>
-                            <div className='gr-4 buy-price gr-no-gutter-left'>
-                                {it.L('Buy Price')}
-                                <div className='hint sell-price'>
-                                    {it.L('Sell Price')}
-                                </div>
-                            </div>
-                        </div>
-                        <div className='price-rows'></div>
-                    </div>
-                    <div id='loading-overlay' className='invisible'>
-                        <Loading />
-                    </div>
-                </div>
-            </div>
-            </div>
             </div>
 
             <Analysis no_graph={true} />
+
             <div id='open_positions_container'>
                 <Portfolio />
             </div>

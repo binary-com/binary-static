@@ -1,6 +1,6 @@
 import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
 import Loading from '../../_common/components/loading.jsx';
+import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const Currencies = ({ text, id }) => (
     <React.Fragment>

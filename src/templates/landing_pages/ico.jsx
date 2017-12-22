@@ -765,7 +765,7 @@ const Ico = () => {
                         <div className='gr-12'>
                             <div className='faq'>
                                 <h4>{it.L('How can I purchase tokens?')}</h4>
-                                <p>{it.L('You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies (including\ncryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.', it.broker_name, `<a href=${it.url_for('/cashier/payment_methods')} target='_blank' rel='noopener noreferrer'>`, '</a>')}</p>
+                                <p>{it.L('You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies (including\ncryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.', it.broker_name, `<a href=${it.url_for('cashier/payment_methods')} target='_blank' rel='noopener noreferrer'>`, '</a>')}</p>
                             </div>
                         </div>
                         <div className='gr-12'>

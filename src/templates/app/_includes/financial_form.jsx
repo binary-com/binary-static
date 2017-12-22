@@ -20,9 +20,7 @@ const Frequency = () => (
 );
 
 const SelectRow = ({ id, label, con }) => (
-    <FormRow id={id} label={label} type='select'>
-        {con()}
-    </FormRow>
+    <FormRow id={id} label={label} type='select'>{con()}</FormRow>
 );
 
 const Values = () => (

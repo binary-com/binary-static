@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 /* eslint-disable import/no-extraneous-dependencies, no-console */
+const color      = require('cli-color');
 const program    = require('commander');
 const fs         = require('fs');
 const HtmlDiffer = require('html-differ').HtmlDiffer;
@@ -16,7 +17,7 @@ program
     .parse(process.argv);
 
 if (!program.path) {
-    console.log('validate.js --path option is required, try --help to see the options.'.red);
+    console.log(color.red('validate.js --path option is required, try --help to see the options.'));
     process.exit(0);
 }
 
@@ -35,11 +36,11 @@ const htmlDiffer = new HtmlDiffer(options);
 const diff = (save_as) => {
 
     const impl = (p2, p1) => {
-        console.warn('\n\n', p1.white.bold, ' <=====> '.yellow.bold, p2.white.bold);
+        console.warn('\n\n', color.white.bold(p1), color.yellow.bold(' <=====> '), color.white.bold(p2));
         const path1 = path.join(common.root_path, p1);
         const path2 = path.join(common.root_path, p2);
         if (!fs.existsSync(path1) || !fs.existsSync(path2)) {
-            console.error('NOT FOUND ', path1, path2);
+            console.error(color.red('NOT FOUND '), path1, path2);
             return ;
         }
 

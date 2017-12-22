@@ -29,6 +29,7 @@ const renderComponent = (context, path) => {
         .replace(/GTM_END_PLACEHOLDER/g, '<!-- End Google Tag Manager --><!-- FlushHead -->');
 };
 
+const color                = require('cli-color');
 const program              = require('commander');
 const Crypto               = require('crypto');
 const fs                   = require('fs');
@@ -48,15 +49,6 @@ program
     .option('-t, --add-translations', 'Update messages.pot with new translations')
     .parse(process.argv);
 
-// TODO: to be removed
-if (!program.path) {
-    program.outputHelp(str => {
-        console.error('  ERROR: --path is missing'.red);
-        console.error(str.red);
-        process.exit(0);
-    });
-}
-
 /** *********************************************
  * Common functions
  */
@@ -75,7 +67,7 @@ const getConfig = () => (
 const createDirectories = () => {
     const config = getConfig();
 
-    console.log('Target: '.cyan, config.dist_path.yellow);
+    console.log(color.cyan('Target: '), color.yellow(config.dist_path));
 
     const mkdir = path => fs.existsSync(path) || fs.mkdirSync(path);
     mkdir(Path.join(config.dist_path));
@@ -264,21 +256,21 @@ createDirectories();
         const pages_filtered = common.pages.filter(p => regx.test(p.save_as));
         const count = pages_filtered.length;
         if (!count) {
-            console.warn('No page matched your request.'.yellow);
+            console.error(color.red('No page matched your request.'));
             return;
         }
 
         Gettext.getInstance(); // initialize before starting the compilation
 
         const start = Date.now();
-        process.stdout.write(`Compiling ${count} page${count > 1 ? 's' : ''} ... `.green);
+        process.stdout.write(color.green(`Compiling ${count} page${count > 1 ? 's' : ''} ... `));
 
         if (count <= 10 || program.verbose) {
             console.log();
             pages_filtered
                 .sort((a, b) => a.save_as > b.save_as)
                 .forEach((p) => {
-                    console.log('  - '.green, p.save_as);
+                    console.log(color.green('  - '), p.save_as);
                 });
         }
 
@@ -286,8 +278,8 @@ createDirectories();
             pages_filtered.map(compile)
         );
 
-        process.stdout.write(' Done'.green);
-        process.stdout.write(`  (${(Date.now() - start).toLocaleString()} ms)\n`.gray);
+        process.stdout.write(color.green(' Done'));
+        process.stdout.write(color.blackBright(`  (${(Date.now() - start).toLocaleString()} ms)\n`));
 
         if (program.addTranslations) {
             const gettext = Gettext.getInstance();

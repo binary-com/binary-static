@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table} from '../../_common/components/elements.jsx';
+import { Table } from '../../_common/components/elements.jsx';
 
 const Portfolio = () => (
     <div id='portfolio'>

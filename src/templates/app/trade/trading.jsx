@@ -1,7 +1,7 @@
 import React from 'react';
 import Analysis from './analysis.jsx';
-import Loading from '../../_common/components/loading.jsx';
 import Portfolio from '../user/portfolio.jsx';
+import Loading from '../../_common/components/loading.jsx';
 
 const Trading = () => (
     <React.Fragment>

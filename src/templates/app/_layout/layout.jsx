@@ -1,21 +1,20 @@
 import React from 'react';
-
-import Gtm from '../../_common/includes/gtm.jsx';
-import IcoBanner from '../..//_common/includes/ico_banner.jsx';
-import Title from '../../_common/components/title.jsx';
 import Head from './head.jsx';
 import Header from './header.jsx';
 import MainMenu from './main_menu.jsx';
 import MobileMenu from './mobile_menu.jsx';
 import Footer from './footer.jsx';
+import Gtm from '../../_common/includes/gtm.jsx';
+import IcoBanner from '../../_common/includes/ico_banner.jsx';
+import Title from '../../_common/components/title.jsx';
 
 const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 
 const WithLayout = ({ children }) => {
     const content_class = `${it.current_route || ''}-content`;
-    const ico_class = `top-margin${  it.layout === 'default' ? ' bottom-margin' : ''}`;
+    const ico_class = `top-margin${it.layout === 'default' ? ' bottom-margin' : ''}`;
     return (
-        <div id='content' className={it.current_route ? content_class : undefined} >
+        <div id='content' className={it.current_route ? content_class : undefined}>
             <IcoBanner container='ico-banner-container'  className={ico_class} />
             <div id='page_info' style={{display: 'none'}}>
                 <Title />
@@ -37,13 +36,13 @@ const InnerContent = () => (
 );
 
 const Layout = () => {
-    if(it.is_pjax_request) {
+    if (it.is_pjax_request) {
         return <InnerContent />;
     }
     return (
         <html>
             <Head />
-            <body className={it.language} >
+            <body className={it.language}>
                 <div id='msg_notification' className='notice-msg center-text'></div>
                 <div id='page-wrapper'>
                     <Header />

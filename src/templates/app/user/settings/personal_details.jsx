@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/forms.jsx';
 import {
     AccountOpeningReason,
@@ -35,7 +34,6 @@ const Experience = () => (
     </React.Fragment>
 );
 
-
 const PersonalDetails = () => (
     <React.Fragment>
         <h1>{it.L('Personal Details')}</h1>
@@ -70,6 +68,7 @@ const PersonalDetails = () => (
                     <option value='Others'>{it.L('Others')}</option>
                 </FormRow>
             </Fieldset>
+
             <Fieldset className='invisible RealAcc ja-hide' legend={it.L('Tax Information')}>
                 <FormRow type='select' label={it.L('Tax residence')}
                     tooltip={it.L('Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional.')}
@@ -78,6 +77,7 @@ const PersonalDetails = () => (
                     tooltip={it.L('Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission.')}
                     id='tax_identification_number' attributes={{ maxLength: 20 }} />
             </Fieldset>
+
             <Fieldset className='invisible RealAcc ja-hide' legend={it.L('Address')}>
                 <AddressLine1 no_hint />
                 <AddressLine2 />
@@ -86,6 +86,7 @@ const PersonalDetails = () => (
                 <AddressPostcode />
                 <Phone />
             </Fieldset>
+
             <Fieldset className='invisible JpAcc' legend={it.L('Address')}>
                 <FormRow type='label' label={it.L('Postal Code / ZIP')} id='lbl_address_postcode' attributes={{className: 'jp_value'}} />
                 <FormRow type='label' label={it.L('State/Province')} id='lbl_address_state' attributes={{className: 'jp_value'}} />
@@ -94,6 +95,7 @@ const PersonalDetails = () => (
                 <FormRow type='label' label={it.L('Second line of home address')} id='lbl_address_line_2' attributes={{className: 'jp_value'}} />
                 <FormRow type='label' label={it.L('Telephone')} id='lbl_phone' attributes={{className: 'jp_value'}} />
             </Fieldset>
+
             <Fieldset className='invisible JpAcc' legend={it.L('Status')}>
                 <FormRow type='select' label={it.L('Annual income')} id='annual_income' className='jp_value'>
                     <Money />
@@ -104,6 +106,7 @@ const PersonalDetails = () => (
                 <FormRow type='label' id='daily_loss_limit' label={it.L('Daily limit on losses')} attributes={{ className: 'jp_value format_money' }}
                     hint={it.L('Maximum aggregate loss per day. Update this value in our [_1]self exclusion facility[_2].', `<a href="${it.url_for('user/security/self_exclusionws#max_losses')}">`, '</a>')} />
             </Fieldset>
+
             <Fieldset className='invisible JpAcc' legend={it.L('Trading Experience')}>
                 <FormRow type='select' label={it.L('Equities')} id='trading_experience_equities' className='jp_value'>
                     <Experience />
@@ -139,6 +142,7 @@ const PersonalDetails = () => (
                 </FormRow>
                 <FormRow type='text' label={it.L('Amount of above assets')} id='hedge_asset_amount' attributes={{ maxLength: 20 }} row_class='hedge invisible' input_prefix='¥' />
             </Fieldset>
+
             <Fieldset className='invisible' id='fieldset_email_consent' legend={it.L('Preferences')}>
                 <FormRow type='checkbox' label={it.L('Receive news and special offers')} id='email_consent' label_row_id='email_consent_label' />
             </Fieldset>

@@ -14,7 +14,7 @@ const SignupTour = ({ is_jp }) => (
                 <p className='gr-padding-20 gr-gutter center-text'>
                     {it.L('Want to learn more?')}
                     <br />
-                    <a href={it.url_for(`/tour${is_jp ? '-jp' : ''}`)}>{it.L('View the Tour')}</a>
+                    <a href={it.url_for(`tour${is_jp ? '-jp' : ''}`)}>{it.L('View the Tour')}</a>
                 </p>
             </div>
         </div>
