@@ -73,7 +73,7 @@ const TAC = () => (
                 </TabContentContainer>
             </div>
         </TabContainer>
-    </div>s
+    </div>
 );
 
 export default TAC;
