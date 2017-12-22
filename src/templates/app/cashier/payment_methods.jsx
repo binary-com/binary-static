@@ -1,11 +1,6 @@
 import React from 'react';
 
-const Button = ({
-    url,
-    real,
-    className,
-    text,
-}) => (
+const Button = ({ url, real, className, text }) => (
     <a href={it.url_for(url)} className={`toggle button ${real ? 'client_real' : 'client_logged_out'} invisible`}>
         <span className={className || undefined}>{text}</span>
     </a>
@@ -26,30 +21,27 @@ const Row = ({
     return (
         <div className={`gr-row gr-padding-10 ${is_header ? 'table-header' : 'table-body' }`}>
             <div className='gr-2 gr-6-m'>
-                {logo ?
+                { logo ?
                     <img src={it.url_for(`images/pages/home-beta/payment/${  logo  }.svg`)} />
                     : method
                 }
             </div>
             <div className='gr-2 gr-6-m'>{currencies}</div>
             <div className='gr-2 gr-hide-m'>
-                { deposits.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
+                { deposits.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx} />, e], null) }
             </div>
             <div className='gr-3 gr-hide-m'>
-                { withdrawals.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
+                { withdrawals.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx} />, e], null) }
             </div>
             <div className='gr-3 gr-hide-m'>
                 { times.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
-                {is_header ? '*' : ''}
+                { is_header ? '*' : '' }
             </div>
         </div>
     );
 };
 
-const Section = ({
-    title,
-    withdrawal,
-}) => (
+const Section = ({ title, withdrawal }) => (
     <React.Fragment>
         <div className='gr-row gr-padding-10'>
             <div className='gr-12'>

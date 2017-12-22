@@ -1,13 +1,8 @@
 import React from 'react';
 import { List } from '../_common/components/elements.jsx';
 
-const Section = ({
-    className,
-    id,
-    header,
-    children,
-}) => (
-    <div className={`section ${className || ''}`}>
+const Section = ({ className = '', id, header, children }) => (
+    <div className={`section ${className}`}>
         <a id={id}></a>
         <div className='section-content'>
             <h1>{header}</h1>
@@ -49,13 +44,14 @@ const WhyUs = () => (
                             </ul>
                         </div>
                         <div className='gr-5 gr-10-m gr-centered-m'>
-                            <img className='responsive' src={it.url_for('images/pages/why-us/why-us-sharp-prices.png')}/>
+                            <img className='responsive' src={it.url_for('images/pages/why-us/why-us-sharp-prices.png')} />
                         </div>
                     </div>
                 </Section>
+
                 <Section id='flexible-trades' header={it.L('Trade your way')}>
                     <p>{it.L('Why limit yourself? Whatever your market view, [_1] allows you to put your strategy to work and profit from your predictions.', it.website_name)}</p>
-                    <img className='responsive' src={it.url_for('images/pages/tour/trade-tutorial_1.svg')}/>
+                    <img className='responsive' src={it.url_for('images/pages/tour/trade-tutorial_1.svg')} />
                     <ul className='checked'>
                         <li>{it.L('Choose a payout from $1 to $50,000.')}</li>
                         <li>{it.L('Trade all major currencies, indices, stocks, and commodities.')}</li>
@@ -63,6 +59,7 @@ const WhyUs = () => (
                         <li>{it.L('Choose your own strike.')}</li>
                     </ul>
                 </Section>
+
                 <Section id='controlled-risk' header={it.L('Know what you stand to win or lose')}>
                     <div className='gr-row'>
                         <div className='gr-7 gr-12-m'>
@@ -74,15 +71,16 @@ const WhyUs = () => (
                             </ul>
                         </div>
                         <div className='gr-5 gr-8-m gr-centered-m'>
-                            <img className='responsive' src={it.url_for('images/pages/why-us/why-us-do-not-lose.svg')}/>
+                            <img className='responsive' src={it.url_for('images/pages/why-us/why-us-do-not-lose.svg')} />
                         </div>
                     </div>
                 </Section>
+
                 <Section id='power-and-simplicity' header={it.L('One simple platform')}>
                     <p>{it.L('[_1] offers the world\'s financial markets in a simple, user-friendly platform.', it.website_name)}</p>
                     <div className='gr-row'>
                         <div className='gr-8 gr-12-m gr-parent gr-padding-10'>
-                            <img className='responsive' src={it.url_for('images/pages/why-us/simple-platform.svg')}/>
+                            <img className='responsive' src={it.url_for('images/pages/why-us/simple-platform.svg')} />
                         </div>
                         <div className='gr-4 gr-12-m'>
                             <ul className='checked'>
@@ -94,6 +92,7 @@ const WhyUs = () => (
                         </div>
                     </div>
                 </Section>
+
                 <Section className='id-hide' id='security' header={it.L('Licensed, trusted, and secure')}>
                     <div className='gr-row'>
                         <div className='gr-8 gr-12-m'>
@@ -107,36 +106,37 @@ const WhyUs = () => (
                         <div className='gr-4 gr-12-m gr-parent'>
                             <div className='gr-row'>
                                 <div className='gr-11 gr-8-m gr-padding-10 gr-centered'>
-                                    <img className='responsive' src={it.url_for('images/pages/why-us/mga-logo2.svg')}/>
+                                    <img className='responsive' src={it.url_for('images/pages/why-us/mga-logo2.svg')} />
                                 </div>
                                 <div className='gr-parent gr-8-m gr-centered'>
                                     <div className='gr-6 gr-padding-10'>
-                                        <img className='responsive' src={it.url_for('images/pages/why-us/why-us-proven-record_1.svg')}/>
+                                        <img className='responsive' src={it.url_for('images/pages/why-us/why-us-proven-record_1.svg')} />
                                     </div>
                                     <div className='gr-6 gr-padding-10'>
-                                        <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')}/>
+                                        <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </Section>
+
                 <Section id='trust' header={it.L('Go with the leader')}>
                     <div className='gr-row'>
                         <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-t2w.png')}/>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards-t2w.png')} />
                         </div>
                         <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg')}/>
+                            <img className='responsive' src={it.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg')} />
                         </div>
                         <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-egr.png')}/>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards-egr.png')} />
                         </div>
                         <div className='gr-3 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-mena.png')}/>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards-mena.png')} />
                         </div>
                         <div className='gr-3 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-opwa.svg')}/>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards-opwa.svg')} />
                         </div>
                     </div>
                     <p>{it.L('[_1] is the award-winning industry pioneer in online options trading. We boast:', it.website_name)}</p>

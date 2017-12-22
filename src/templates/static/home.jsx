@@ -1,14 +1,11 @@
 import React from 'react';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
-import {List, FillBox} from '../_common/components/elements.jsx';
+import { List, FillBox } from '../_common/components/elements.jsx';
 
 
-const PaymentLogo = ({
-    items,
-}) => items.map((item, idx) => (
-    <div key={idx} className='payment-logo' id={item}>
-    </div>
+const PaymentLogo = ({ items }) => items.map((item, idx) => (
+    <div key={idx} className='payment-logo' id={item}></div>
 ));
 
 const Home = () => (
@@ -18,11 +15,7 @@ const Home = () => (
                 <h1 className='dark center-text gr-padding-10'>{it.L('The <strong>Premier Platform</strong> for Binary Options Trading')}</h1>
                 <p className='center-text gr-padding-10'>{it.L('Trade <strong>24/7</strong>, even on weekends.')}</p>
 
-                <FormVerifyEmail
-                    className='secondary-bg-color'
-                    text={it.L('Create Free Account')}
-                    dark_button
-                />
+                <FormVerifyEmail className='secondary-bg-color' text={it.L('Create Free Account')} dark_button />
             </div>
         </div>
 
@@ -57,22 +50,22 @@ const Home = () => (
                     <p>{ it.L('[_1] is the award-winning industry pioneer in online options trading.', it.website_name)}</p>
 
                     <div className='gr-3 gr-8-m gr-centered'>
-                        <img className='responsive' src={it.url_for('images/pages/home/awards-opwa.svg')}/>
+                        <img className='responsive' src={it.url_for('images/pages/home/awards-opwa.svg')} />
                     </div>
                     <div className='gr-padding-10'>
-                        <img className='small-image' src={it.url_for('images/pages/home/awards-t2w.png')}/>
-                        <img className='small-image' src={it.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg')}/>
-                        <img className='small-image' src={it.url_for('images/pages/home/awards-egr.png')}/>
-                        <img className='mena' src={it.url_for('images/pages/home/awards-mena.png')}/>
+                        <img className='small-image' src={it.url_for('images/pages/home/awards-t2w.png')} />
+                        <img className='small-image' src={it.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg')} />
+                        <img className='small-image' src={it.url_for('images/pages/home/awards-egr.png')} />
+                        <img className='mena' src={it.url_for('images/pages/home/awards-mena.png')} />
                     </div>
 
                     <List
+                        className='gr-row gr-row-align-center'
                         items={[
                             { header: it.L('Sharp prices'),           className: 'xlist1' },
                             { header: it.L('Trade your way'),         className: 'xlist3' },
                             { header: it.L('Licensed and regulated'), className: 'xlist2' },
                         ]}
-                        className='gr-row gr-row-align-center'
                     />
                 </div>
             </div>
@@ -86,7 +79,7 @@ const Home = () => (
             </div>
 
             <div className='gr-row gr-row-align-center'>
-                <div className='gr-3 gr-12-m gr-6-p'><img className='responsive' src={it.url_for('images/pages/home/academy-icon.svg')}/></div>
+                <div className='gr-3 gr-12-m gr-6-p'><img className='responsive' src={it.url_for('images/pages/home/academy-icon.svg')} /></div>
                 <div className='gr-4 gr-12-m gr-6-p'>
                     <ul className='checked'>
                         <li>{it.L('Free webinars')}</li>
@@ -140,7 +133,7 @@ const Home = () => (
                 <h2 className='center-text'>{it.L('Payment methods')}</h2>
 
                 <div className='gr-12'>
-                    <a href={it.url_for('/cashier/payment_methods')}>
+                    <a href={it.url_for('cashier/payment_methods')}>
                         <div className='gr-row gr-row-align-center'>
                             <PaymentLogo
                                 items ={[

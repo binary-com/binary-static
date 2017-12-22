@@ -6,7 +6,7 @@ const MainMenu = () => (
         <div className='tab-menu-wrap container gr-hide-m gr-hide-p'>
             <div className='gr-12 gr-no-gutter'>
                 <ul className='items'>
-                    <Menu/>
+                    <Menu />
                 </ul>
             </div>
         </div>

@@ -11,7 +11,7 @@ const PaymentagentTransfer = () => (
         <h1>{it.L('Payment Agent transfer')}</h1>
 
         <div id='pa_transfer_loading' className='center-text'>
-            <Loading/>
+            <Loading />
         </div>
 
         <form id='frm_confirm_transfer' className='invisible'>
@@ -35,14 +35,14 @@ const PaymentagentTransfer = () => (
         <div id='pa_transfer_done' className='invisible'>
             <p id='confirm_msg' className='invisible'></p>
             <p>
-                <a className='button' href={it.url_for('/user/statementws')}>
+                <a className='button' href={it.url_for('user/statementws')}>
                     <span className='button'>{it.L('View your statement')}</span>
                 </a>
             </p>
         </div>
 
         <div id='no_balance_error' className='invisible'>
-            <p className='center-text notice-msg'>{it.L('Please <a href="[_1]">deposit</a> before transferring to client.', `${it.url_for('/cashier/forwardws')}#deposit`)}</p>
+            <p className='center-text notice-msg'>{it.L('Please <a href="[_1]">deposit</a> before transferring to client.', `${it.url_for('cashier/forwardws')}#deposit`)}</p>
         </div>
 
         <div id='not_pa_error' className='invisible'>

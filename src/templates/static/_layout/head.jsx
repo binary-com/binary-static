@@ -26,21 +26,21 @@ const Head = () => (
 
         <Favicons />
 
-        {(it.only_ja && it.language.toLowerCase() === 'en') &&
+        { it.only_ja && it.language.toLowerCase() === 'en' &&
             <meta name='robots' content='noindex' />
         }
-        {!it.only_ja &&
+        { !it.only_ja &&
             it.languages
-            .filter(lang => lang.toLowerCase() !== 'ja' && lang !== it.language)
-            .map((lang, inx) => (
+                .filter(lang => lang.toLowerCase() !== 'ja' && lang !== it.language)
+                .map((lang, inx) => (
                     <link key={inx} rel='alternate' href={it.url_for(it.current_path, lang.toLowerCase())} hrefLang={lang} />
-            ))
+                ))
         }
 
-        {it.css_files.map((css_file, inx) => (
+        { it.css_files.map((css_file, inx) => (
             <link key={inx} rel='stylesheet' href={css_file} />
         ))}
-        {it.js_files.map((js_file, inx) => (
+        { it.js_files.map((js_file, inx) => (
             <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())}></script>
         ))}
     </head>

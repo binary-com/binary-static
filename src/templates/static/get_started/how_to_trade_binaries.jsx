@@ -2,8 +2,8 @@ import React from 'react';
 
 const Image = () => (
     <div className='gr-row'>
-        {Array.from(new Array(3)).map((x, inx) => (
-            <div key={inx} className='gr-4'><img className='responsive' src={it.url_for(`images/pages/home/step-${  inx+1  }.svg`)}/></div>
+        { Array.from(new Array(3)).map((x, inx) => (
+            <div key={inx} className='gr-4'><img className='responsive' src={it.url_for(`images/pages/home/step-${  inx+1  }.svg`)} /></div>
         ))}
     </div>
 );
@@ -13,7 +13,7 @@ const StrongP = () => {
 
     return (
         <div className='gr-row'>
-            {paragraphs.map((p, inx) => (
+            { paragraphs.map((p, inx) => (
                 <div key={inx} className='gr-4'>
                     <p className='center-text'>
                         <strong>{p}</strong>
@@ -24,11 +24,7 @@ const StrongP = () => {
     );
 };
 
-const Li = ({
-    header,
-    description,
-    children,
-}) => (
+const Li = ({ header, description, children }) => (
     <li>
         <strong>{header}</strong>
         <p>{description}</p>
@@ -53,7 +49,7 @@ const HowToTradeBinaries = () => (
                 <p>{it.L('First, you need to set the parameters of your trade. Here\'s what you need to consider.')}</p>
             </div>
 
-            <img className='responsive' src={it.url_for('images/pages/get-started/define-your-position.svg')}/>
+            <img className='responsive' src={it.url_for('images/pages/get-started/define-your-position.svg')} />
             <ol>
                 <Li
                     header={it.L('Underlying market')}
@@ -68,10 +64,7 @@ const HowToTradeBinaries = () => (
                         <li>{it.L('Volatility indices - [_1]\'s proprietary indices that simulate market forces', it.website_name)}</li>
                     </ul>
                 </Li>
-                <Li
-                    header={it.L('Trade type')}
-                    description={it.L('There are four main trade types for you to choose from:')}
-                >
+                <Li header={it.L('Trade type')} description={it.L('There are four main trade types for you to choose from:')}>
                     <ul className='bullet'>
                         <li>{it.L('Rise/Fall - Predict if the market will rise or fall from its current level')}</li>
                         <li>{it.L('Higher/Lower - Predict if the market will end higher or lower than a target price')}</li>
@@ -79,18 +72,9 @@ const HowToTradeBinaries = () => (
                         <li>{it.L('In/Out - Predict if the market will stay between or outside two target prices')}</li>
                     </ul>
                 </Li>
-                <Li
-                    header={it.L('Duration')}
-                    description={it.L('Set the length of your trade, from 10 seconds to 365 days.')}
-                />
-                <Li
-                    header={it.L('Barrier(s)')}
-                    description={it.L('Set barrier(s) to define your position and trigger the payout you will receive.')}
-                />
-                <Li
-                    header={it.L('Payout')}
-                    description={it.L('Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake.')}
-                />
+                <Li header={it.L('Duration')}   description={it.L('Set the length of your trade, from 10 seconds to 365 days.')} />
+                <Li header={it.L('Barrier(s)')} description={it.L('Set barrier(s) to define your position and trigger the payout you will receive.')} />
+                <Li header={it.L('Payout')}     description={it.L('Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake.')} />
             </ol>
         </div>
 

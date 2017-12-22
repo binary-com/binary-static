@@ -30,7 +30,6 @@ const RiskDisclaimer = () => (
         <h2>{it.L('External forces')}</h2>
         <p>{it.L('Your forex and contracts for differences transactions with [_1] are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution.', it.brand_name)}</p>
     </div>
-
 );
 
 export default RiskDisclaimer;

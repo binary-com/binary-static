@@ -1,13 +1,8 @@
 import React from 'react';
 import SeparatorLine from '../../../_common/components/separator_line.jsx';
-import {List, Table} from '../../../_common/components/elements.jsx';
+import { List, Table } from '../../../_common/components/elements.jsx';
 
-const Equation = ({
-    operand_1,
-    operand_2,
-    operand_3,
-    operand_4,
-}) => (
+const Equation = ({ operand_1, operand_2, operand_3, operand_4 }) => (
     <React.Fragment>
         {operand_1}
         <img className='math-sign' src={it.url_for('images/pages/metatrader/how-to/minus.svg')} />

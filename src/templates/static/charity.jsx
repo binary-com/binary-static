@@ -1,20 +1,17 @@
 import React from 'react';
 
-const CharityHelper = ({
-    country,
-    charities,
-}) => (
+const CharityHelper = ({ country, charities }) => (
     <div className='charity-country gr-padding-30'>
         <div className='fill-bg-color center-text'>
             <h3 className='gr-padding-10'>{country}</h3>
         </div>
-        {charities.map((charity, inx) => (
+        { charities.map((charity, inx) => (
             <div key={inx} className='gr-row'>
-                <div className='gr-4 gr-12-m'><img className='responsive gr-padding-20' src={it.url_for(`/images/pages/charity/${  charity.image  }.jpg`)} /></div>
+                <div className='gr-4 gr-12-m'><img className='responsive gr-padding-20' src={it.url_for(`/images/pages/charity/${charity.image}.jpg`)} /></div>
                 <div className='gr-8 gr-12-m'>
                     <p><strong>{charity.title}</strong></p>
                     <p>{charity.text}</p>
-                    {charity.contacts && charity.contacts.map((contact, inxc) => (
+                    { charity.contacts && charity.contacts.map((contact, inxc) => (
                         <p key={inxc}>
                             <strong>
                                 {contact.text}:
@@ -40,9 +37,9 @@ const Charity = () => (
                     <p>{it.L('[_1]’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities.', it.website_name)}</p>
                 </div>
                 <div className='gallery'>
-                    <img className='responsive' src={it.url_for('/images/pages/charity/charity-1.jpg')} />
-                    <img className='responsive' src={it.url_for('/images/pages/charity/charity-2.jpg')} />
-                    <img className='responsive' src={it.url_for('/images/pages/charity/charity-3.jpg')} />
+                    <img className='responsive' src={it.url_for('images/pages/charity/charity-1.jpg')} />
+                    <img className='responsive' src={it.url_for('images/pages/charity/charity-2.jpg')} />
+                    <img className='responsive' src={it.url_for('images/pages/charity/charity-3.jpg')} />
                 </div>
             </div>
 
@@ -86,8 +83,7 @@ const Charity = () => (
                                 },
                             ],
                         },
-                    ]
-                    }
+                    ]}
                 />
             </div>
 

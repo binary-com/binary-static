@@ -1,12 +1,10 @@
 import React from 'react';
-import {List} from '../../_common/components/elements.jsx';
+import { List } from '../../_common/components/elements.jsx';
 import SignupTour from '../get_started/signup_tour.jsx';
 
-const Box = ({
-    boxes,
-}) => (
+const Box = ({ boxes }) => (
     <div className='gr-row center-text'>
-        {boxes.map((box, inx) => (
+        { boxes.map((box, inx) => (
             <div key={inx} className='list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m'>
                 <div className='section fill-bg-color section-jp'>
                     <a href={`#${box.id}`}>
@@ -19,11 +17,7 @@ const Box = ({
     </div>
 );
 
-const Download = ({
-    doc,
-    text,
-    className,
-}) => (
+const Download = ({ doc, text, className }) => (
     <div className='center-text gr-padding-10'>
         <a className='button' href={`${it.japan_docs_url  }/documents/${  doc  }.pdf`} target='_blank'>
             <span className={className || undefined}>{text || it.L('{JAPAN ONLY}Download')}</span>
@@ -50,24 +44,18 @@ const GetStarted = () => (
         </div>
 
         <div className='gr-6 gr-12-m gr-parent' id='index'>
-            <Box
-                boxes={[
-                    { id: 'how-to-open-an-account',   header: it.L('{JAPAN ONLY}How to Open an Account') },
-                    { id: 'identification-documents', header: it.L('{JAPAN ONLY}Identification Documents') },
-                ]}
-            />
-            <Box
-                boxes={[
-                    { id: 'options-basic-knowledge', header: it.L('{JAPAN ONLY}Options Basic Knowledge') },
-                    { id: 'trading-guide',           header: it.L('{JAPAN ONLY}Trading Guide') },
-                ]}
-            />
-            <Box
-                boxes={[
-                    { id: 'summary-of-specifications', header: it.L('{JAPAN ONLY}Summary of Specifications') },
-                    { id: 'pre-contract-documents',    header: it.L('{JAPAN ONLY}Pre-Contract Documents') },
-                ]}
-            />
+            <Box boxes={[
+                { id: 'how-to-open-an-account',   header: it.L('{JAPAN ONLY}How to Open an Account') },
+                { id: 'identification-documents', header: it.L('{JAPAN ONLY}Identification Documents') },
+            ]} />
+            <Box boxes={[
+                { id: 'options-basic-knowledge', header: it.L('{JAPAN ONLY}Options Basic Knowledge') },
+                { id: 'trading-guide',           header: it.L('{JAPAN ONLY}Trading Guide') },
+            ]} />
+            <Box boxes={[
+                { id: 'summary-of-specifications', header: it.L('{JAPAN ONLY}Summary of Specifications') },
+                { id: 'pre-contract-documents',    header: it.L('{JAPAN ONLY}Pre-Contract Documents') },
+            ]} />
         </div>
 
         <div className='gr-6 gr-12-m gr-parent contents' style={{display: 'none'}}>

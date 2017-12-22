@@ -1,5 +1,5 @@
 import React from 'react';
-import {List, Table} from '../../../_common/components/elements.jsx';
+import { List, Table } from '../../../_common/components/elements.jsx';
 
 const Metals = () => (
     <div id='metals_specs' className='gr-row'>

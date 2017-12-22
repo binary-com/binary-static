@@ -1,11 +1,7 @@
 import React from 'react';
-import {Table} from '../../_common/components/elements.jsx';
+import { Table } from '../../_common/components/elements.jsx';
 
-const Box = ({
-    image,
-    text,
-    title,
-}) => (
+const Box = ({ image, text, title }) => (
     <div className='gr-padding-10'>
         <div className='box'>
             <div className='gr-row gr-row-align-middle'>
@@ -21,25 +17,18 @@ const Box = ({
     </div>
 );
 
-const FootNote = ({
-    number,
-    texts,
-    title,
-}) => (
+const FootNote = ({ number, texts, title }) => (
     <div className='gr-padding-30'>
         <a name={`note-${number}`}></a>
         <h3 className='secondary-color'>{`${number}. ${title}`}</h3>
         <div className='separator-line border-bottom'></div>
-        {texts.map((text, idx) => (
+        { texts.map((text, idx) => (
             <p key={idx}>{text}</p>
         ))}
     </div>
 );
 
-const Row = ({
-    number,
-    text,
-}) => (
+const Row = ({ number, text }) => (
     <React.Fragment>
         {text}
         <a href={`#note-${number}`} className='sup'>{number}</a>

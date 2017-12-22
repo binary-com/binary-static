@@ -1,11 +1,7 @@
 import React from 'react';
-import {List} from '../../_common/components/elements.jsx';
+import { List } from '../../_common/components/elements.jsx';
 
-const Section = ({
-    id,
-    header,
-    children,
-}) => (
+const Section = ({ id, header, children }) => (
     <div className='section'>
         <a id={id}></a>
         <div className='section-content'>
@@ -65,7 +61,7 @@ const WhyUs = () => {
                             <li>{it.L('{JAPAN ONLY}Select payout size')}</li>
                         </ol>
                         <div className='gr-padding-10'>
-                            <img className='responsive' src={it.url_for('images/pages/why-us-jp/trade_form.png')}/>
+                            <img className='responsive' src={it.url_for('images/pages/why-us-jp/trade_form.png')} />
                         </div>
                         <ol className='split'>
                             <li>{it.L('{JAPAN ONLY}Choose direction of the market and the exercise price you wish to target, and hit the green buy button to instantly trade')}</li>
@@ -73,7 +69,7 @@ const WhyUs = () => {
                         <p>{it.L('{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button.')}</p>
                         <p>{it.L('{JAPAN ONLY}Track your trade in real time:')}</p>
                         <div className='gr-padding-10'>
-                            <img className='responsive' src={it.url_for('images/pages/why-us-jp/track_trade.png')}/>
+                            <img className='responsive' src={it.url_for('images/pages/why-us-jp/track_trade.png')} />
                         </div>
                         <ul className='checked'>
                             <li>{it.L('{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers')}</li>
@@ -90,7 +86,7 @@ const WhyUs = () => {
                             <li>{it.L('{JAPAN ONLY}You can see the real-time value of your portfolio and access the trade view and analysis screen from which you can then choose to close the position:')}</li>
                         </ul>
                         <div className='gr-padding-10'>
-                            <img className='responsive' src={it.url_for('images/pages/why-us-jp/portfolio.png')}/>
+                            <img className='responsive' src={it.url_for('images/pages/why-us-jp/portfolio.png')} />
                         </div>
                     </Section>
                     <Section id='section-four' header={it.L('{JAPAN ONLY}Your funds are safe')}>
@@ -105,7 +101,7 @@ const WhyUs = () => {
                             <li>{it.L('{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly')}</li>
                         </ul>
                         <div className='gr-padding-10'>
-                            <img className='responsive' src={it.url_for('images/pages/why-us-jp/fund_safe.svg')}/>
+                            <img className='responsive' src={it.url_for('images/pages/why-us-jp/fund_safe.svg')} />
                         </div>
                     </Section>
                     <Section id='section-five' header={it.L('Our track-record')}>

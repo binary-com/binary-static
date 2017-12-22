@@ -1,9 +1,7 @@
 import React from 'react';
 import { FormRow } from '../../_common/components/forms.jsx';
 
-export const Salutation = ({
-    className,
-}) => (
+export const Salutation = ({ className }) => (
     <FormRow
         type='select'
         className={className}
@@ -17,10 +15,7 @@ export const Salutation = ({
     </FormRow>
 );
 
-export const FirstName = ({
-    className,
-    hint,
-}) => (
+export const FirstName = ({ className, hint }) => (
     <FormRow
         type='text'
         id='first_name'
@@ -30,10 +25,7 @@ export const FirstName = ({
     />
 );
 
-export const LastName = ({
-    className,
-    hint,
-}) => (
+export const LastName = ({ className, hint }) => (
     <FormRow
         type='text'
         id='last_name'
@@ -43,9 +35,7 @@ export const LastName = ({
     />
 );
 
-export const DateOfBirth = ({
-    className,
-}) => (
+export const DateOfBirth = ({ className }) => (
     <FormRow
         type='text'
         id='date_of_birth'
@@ -55,19 +45,12 @@ export const DateOfBirth = ({
 );
 
 export const Residence = () => (
-    <FormRow
-        type='custom'
-        id='residence'
-        label={it.L('Country of residence')}
-    >
+    <FormRow type='custom' id='residence' label={it.L('Country of residence')}>
         <label id='lbl_residence'></label>
     </FormRow>
 );
 
-export const AccountOpeningReason  = ({
-    row_id,
-    row_class,
-}) => (
+export const AccountOpeningReason  = ({ row_id, row_class }) => (
     <FormRow
         type='select'
         id='account_opening_reason'
@@ -82,10 +65,7 @@ export const AccountOpeningReason  = ({
     </FormRow>
 );
 
-export const AddressLine1 = ({
-    hint,
-    no_hint,
-}) => (
+export const AddressLine1 = ({ hint, no_hint }) => (
     <FormRow
         type='text'
         id='address_line_1'
@@ -95,9 +75,7 @@ export const AddressLine1 = ({
     />
 );
 
-export const AddressLine2 = ({
-    hint,
-}) => (
+export const AddressLine2 = ({ hint }) => (
     <FormRow
         type='text'
         id='address_line_2'
@@ -107,9 +85,7 @@ export const AddressLine2 = ({
     />
 );
 
-export const AddressCity = ({
-    hint,
-}) => (
+export const AddressCity = ({ hint }) => (
     <FormRow
         type='text'
         id='address_city'
@@ -120,16 +96,10 @@ export const AddressCity = ({
 );
 
 export const AddressState = () => (
-    <FormRow
-        type='select'
-        id='address_state'
-        label={it.L('State/Province')}
-    />
+    <FormRow type='select' id='address_state' label={it.L('State/Province')} />
 );
 
-export const AddressPostcode = ({
-    hint,
-}) => (
+export const AddressPostcode = ({ hint }) => (
     <FormRow
         type='text'
         id='address_postcode'
@@ -139,9 +109,7 @@ export const AddressPostcode = ({
     />
 );
 
-export const Phone = ({
-    hint,
-}) => (
+export const Phone = ({ hint }) => (
     <FormRow
         type='text'
         id='phone'
@@ -152,11 +120,7 @@ export const Phone = ({
 );
 
 export const SecretQuestion = () => (
-    <FormRow
-        type='select'
-        id='secret_question'
-        label={it.L('Secret question')}
-    >
+    <FormRow type='select' id='secret_question' label={it.L('Secret question')}>
         <option value='Favourite dish'>{it.L('Favourite dish')}</option>
         <option value="Mother's maiden name">{it.L('Mother\'s maiden name')}</option>
         <option value='Name of your pet'>{it.L('Name of your pet')}</option>
@@ -185,7 +149,7 @@ export const Tnc = () => (
                 <label htmlFor='tnc'>
                     {it.L(
                         'I have read and agree to the [_1]terms and conditions[_2] of the site.',
-                        `<a target="_blank" href="${it.url_for('/terms-and-conditions')}">`,
+                        `<a target="_blank" href="${it.url_for('terms-and-conditions')}">`,
                         '</a>'
                     )}
                 </label>

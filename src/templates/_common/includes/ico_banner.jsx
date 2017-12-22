@@ -1,9 +1,6 @@
 import React from 'react';
 
-const IcoBanner = ({
-    container,
-    className,
-}) => (
+const IcoBanner = ({ container, className }) => (
     <div id='ico_banner_container' className={container}>
         <div id='ico_banner' className={`ico-banner invisible ja-hide ${className || ''}`}>
             <div className='gr-row gr-centered'>

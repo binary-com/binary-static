@@ -20,12 +20,12 @@ const Platforms = ({
             <h3>{header}</h3>
             <strong>{description}</strong>
             <p>{text}</p>
-            {url &&
+            { url &&
                 <p>
                     <a className='button' href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                 </p>
             }
-            {google_play_url &&
+            { google_play_url &&
                 <div className='gr-row'>
                     <a className='gr-5 gr-6-m' href={google_play_url} target='_blank' rel='noopener noreferrer'>
                         <div className='google-play-badge'></div>
@@ -45,7 +45,7 @@ const EnhancedItems = ({ image, text }) => (
 
 const Steps = ({ items = [] }) => (
     <div className='steps gr-row'>
-        {items.map((step, idx) => (
+        { items.map((step, idx) => (
             <div key={idx} className='gr-4 gr-12-m gr-no-gutter gr-padding-30 gr-parent'>
                 <div className='step'>
                     <div className='border-bottom'></div>
@@ -65,11 +65,16 @@ const Platform = () => (
         <div className='container'>
             <h1 className='center-text'>{it.L('Trading Platforms')}</h1>
             <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
-                <TabsSubtabs id='platforms_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper invisible' items={[
-                    { id: 'binary', text: it.L('Binary Options') },
-                    { id: 'mt5',    text: it.L('MetaTrader 5') },
-                    { id: 'platforms_tabs_selector', className: 'tab-selector' },
-                ]} />
+                <TabsSubtabs
+                    id='platforms_tabs'
+                    className='gr-padding-20 gr-parent tab-selector-wrapper invisible'
+                    items={[
+                        { id: 'binary', text: it.L('Binary Options') },
+                        { id: 'mt5',    text: it.L('MetaTrader 5') },
+                        { id: 'platforms_tabs_selector', className: 'tab-selector' },
+                    ]}
+                />
+
                 <div className='tab-content'>
                     <TabContentContainer>
                         <TabContent id='binary'>
@@ -143,27 +148,28 @@ const Platform = () => (
                                 </div>
                             </div>
                         </TabContent>
+
                         <TabContent id='mt5'>
                             <div id='mt5'>
                                 <div className='container'>
                                     <h2 className='center-text'>{it.L('Introducing MetaTrader 5 for [_1]', it.website_name)}</h2>
-                                        <p className='center-text'>{it.L('MetaTrader 5 is an institutional multi-asset platform offering outstanding trading possibilities and technical analysis tools. It allows trading Foex, Stocks, Futures, CFDs and it provides everything needed for full-fledged and flexible trading operations.')}</p>
-                                        <div className='gr-row gr-padding-30'>
-                                            <div className='gr-6 gr-12-m gr-padding-30 gr-parent'>
-                                                <img className='responsive' src={it.url_for('images/pages/home/mt5.png')} />
-                                            </div>
-                                            <div className='gr-5 gr-push-1 gr-12-m gr-push-0-m'>
-                                                <h3>{it.L('MetaTrader 5')}</h3>
-                                                <p>{it.L('[_1] enters Forex and CFD trading with the universally acclaimed MetaTrader 5 to its continued leadership presence in the binary options market.', it.website_name)}</p>
-                                                <p>{it.L('Trade Forex and Contracts for Difference (CFD) assets with highly-competitive leverage and zero commission.')}</p>
-                                                <p>
-                                                    <a className='button' href={it.url_for('user/metatrader')}>
-                                                        <span>{it.L('Create MetaTrader 5 Account in [_1]', it.website_name)}</span>
-                                                    </a>
-                                                </p>
-                                            </div>
+                                    <p className='center-text'>{it.L('MetaTrader 5 is an institutional multi-asset platform offering outstanding trading possibilities and technical analysis tools. It allows trading Foex, Stocks, Futures, CFDs and it provides everything needed for full-fledged and flexible trading operations.')}</p>
+                                    <div className='gr-row gr-padding-30'>
+                                        <div className='gr-6 gr-12-m gr-padding-30 gr-parent'>
+                                            <img className='responsive' src={it.url_for('images/pages/home/mt5.png')} />
+                                        </div>
+                                        <div className='gr-5 gr-push-1 gr-12-m gr-push-0-m'>
+                                            <h3>{it.L('MetaTrader 5')}</h3>
+                                            <p>{it.L('[_1] enters Forex and CFD trading with the universally acclaimed MetaTrader 5 to its continued leadership presence in the binary options market.', it.website_name)}</p>
+                                            <p>{it.L('Trade Forex and Contracts for Difference (CFD) assets with highly-competitive leverage and zero commission.')}</p>
+                                            <p>
+                                                <a className='button' href={it.url_for('user/metatrader')}>
+                                                    <span>{it.L('Create MetaTrader 5 Account in [_1]', it.website_name)}</span>
+                                                </a>
+                                            </p>
                                         </div>
                                     </div>
+                                </div>
                                 <div className='gr-padding-10 fill-bg-color'>
                                     <div className='container gr-padding-30'>
                                         <h2 className='center-text'>{it.L('Enhanced Trading with MetaTrader 5')}</h2>
@@ -180,55 +186,55 @@ const Platform = () => (
 
                                 <div className='container gr-padding-30'>
                                     <h2 className='center-text gr-padding-20'>{it.L('Trade with a powerful interface provided')}</h2>
-                                        <div className='gr-row gr-padding-30 gr-parent'>
-                                            <div className='gr-6 gr-12-m'>
-                                                <img className='responsive' src={it.url_for('images/pages/platforms/mt5/interface.svg')} alt='' />
-                                            </div>
-                                            <div className='gr-5 gr-push-1 gr-12-m gr-push-0-m'>
-                                                <p>{it.L('We provide powerful interface platforms of desktop, mobile and browsers.')}</p>
-                                                <div className='gr-row'>
-                                                    <div className='gr-6'>
-                                                        <ul className='checked'>
-                                                            <li>{it.L('iOS')}</li>
-                                                            <li>{it.L('Android')}</li>
-                                                            <li>{it.L('Windows')}</li>
-                                                            <li>{it.L('MacOS')}</li>
-                                                            <li>{it.L('Linux')}</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div className='gr-6'>
-                                                        <ul className='checked'>
-                                                            <li>{it.L('Chrome')}</li>
-                                                            <li>{it.L('Safari')}</li>
-                                                            <li>{it.L('Firefox')}</li>
-                                                            <li>{it.L('Edge')}</li>
-                                                            <li>{it.L('Opera')}</li>
-                                                        </ul>
-                                                    </div>
+                                    <div className='gr-row gr-padding-30 gr-parent'>
+                                        <div className='gr-6 gr-12-m'>
+                                            <img className='responsive' src={it.url_for('images/pages/platforms/mt5/interface.svg')} alt='' />
+                                        </div>
+                                        <div className='gr-5 gr-push-1 gr-12-m gr-push-0-m'>
+                                            <p>{it.L('We provide powerful interface platforms of desktop, mobile and browsers.')}</p>
+                                            <div className='gr-row'>
+                                                <div className='gr-6'>
+                                                    <ul className='checked'>
+                                                        <li>{it.L('iOS')}</li>
+                                                        <li>{it.L('Android')}</li>
+                                                        <li>{it.L('Windows')}</li>
+                                                        <li>{it.L('MacOS')}</li>
+                                                        <li>{it.L('Linux')}</li>
+                                                    </ul>
                                                 </div>
-                                                <p className='center-text'>
-                                                    <a className='button button-secondary full-width' href={it.url_for('metatrader/download')}>
-                                                        <span>{it.L('Learn more')}</span>
-                                                    </a>
-                                                </p>
+                                                <div className='gr-6'>
+                                                    <ul className='checked'>
+                                                        <li>{it.L('Chrome')}</li>
+                                                        <li>{it.L('Safari')}</li>
+                                                        <li>{it.L('Firefox')}</li>
+                                                        <li>{it.L('Edge')}</li>
+                                                        <li>{it.L('Opera')}</li>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                        </div>
-
-                                        <h2 className='center-text gr-padding-30'>{it.L('How to start trading with MetaTrader 5?')}</h2>
-                                        <div className='gr-row center-text'>
-                                            <Steps items={[
-                                                { text: it.L('Open a [_1] account', it.website_name) },
-                                                { text: it.L('Create a MetaTrader 5 account') },
-                                                { text: it.L('Make a deposit into your account and start trading') },
-                                            ]} />
-                                        </div>
-                                        <div className='center-text'>
-                                            <a className='button' href={it.url_for('user/metatrader')}>
-                                                <span>{it.L('Create MetaTrader 5 Account in [_1]', it.website_name)}</span>
-                                            </a>
+                                            <p className='center-text'>
+                                                <a className='button button-secondary full-width' href={it.url_for('metatrader/download')}>
+                                                    <span>{it.L('Learn more')}</span>
+                                                </a>
+                                            </p>
                                         </div>
                                     </div>
+
+                                    <h2 className='center-text gr-padding-30'>{it.L('How to start trading with MetaTrader 5?')}</h2>
+                                    <div className='gr-row center-text'>
+                                        <Steps items={[
+                                            { text: it.L('Open a [_1] account', it.website_name) },
+                                            { text: it.L('Create a MetaTrader 5 account') },
+                                            { text: it.L('Make a deposit into your account and start trading') },
+                                        ]} />
+                                    </div>
+                                    <div className='center-text'>
+                                        <a className='button' href={it.url_for('user/metatrader')}>
+                                            <span>{it.L('Create MetaTrader 5 Account in [_1]', it.website_name)}</span>
+                                        </a>
+                                    </div>
                                 </div>
+                            </div>
                         </TabContent>
                     </TabContentContainer>
                 </div>

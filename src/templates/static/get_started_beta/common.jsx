@@ -16,19 +16,19 @@ export const HeaderSecondary = ({header}) => (
 );
 
 export const ListStrong = ({ header, text }) => (
-    <li><strong>{header}</strong><br/>{text}</li>
+    <li><strong>{header}</strong><br />{text}</li>
 );
 
 export const BoxText = ({ text, text_two }) => (
     <React.Fragment>
         <p className={`no-margin${text_two ? ' gr-padding-10 gr-parent' : ''}`}><strong>{text}</strong></p>
-        {text_two && <p className='no-margin'><strong>{text_two}</strong></p>}
+        { text_two && <p className='no-margin'><strong>{text_two}</strong></p> }
     </React.Fragment>
 );
 
 export const Box = ({ text, text_two, children }) => (
     <div className='gr-padding-20 fill-bg-color center-text primary-color'>
-        {text ? <BoxText text={text} text_two={text_two} /> : children}
+        { text ? <BoxText text={text} text_two={text_two} /> : children }
     </div>
 );
 

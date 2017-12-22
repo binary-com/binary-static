@@ -1,27 +1,20 @@
 import React from 'react';
 import { List } from '../../_common/components/elements.jsx';
 
-const TextBlock = ({
-    text,
-    children,
-}) => (
+const TextBlock = ({ text, children }) => (
     <div className='gr-8 gr-12-m'>
         <p>{text}</p>
         {children}
     </div>
 );
 
-const ImageBlock = ({
-    order_first,
-    image_padding,
-    image,
-}) => {
+const ImageBlock = ({ order_first, image_padding, image }) => {
     const order = order_first ? 'gr-order-first-m' : '';
     const image_class = image_padding ? `${image_padding}` : 'gr-8';
     return (
         <div className={`gr-4 gr-parent ${order}`}>
             <div className={image_class}>
-                <img className='responsive' src={it.url_for(`images/pages/open-source-projects/open-source-projects-${image}`)}/>
+                <img className='responsive' src={it.url_for(`images/pages/open-source-projects/open-source-projects-${image}`)} />
             </div>
         </div>
     );
@@ -43,13 +36,13 @@ const Section = ({
         <div className='gr-padding-10'>{header_2}</div>
         <div className='gr-row'>
             {order_first ?
-              <React.Fragment>
-              <TextBlock text={text}>{children}</TextBlock>
-              <ImageBlock order_first image={image} image_padding={image_padding} />
-              </React.Fragment>
-              : <React.Fragment>
-                <ImageBlock image={image} image_padding={image_padding} />
-                <TextBlock text={text}>{children}</TextBlock>
+                <React.Fragment>
+                    <TextBlock text={text}>{children}</TextBlock>
+                    <ImageBlock order_first image={image} image_padding={image_padding} />
+                </React.Fragment>
+                : <React.Fragment>
+                    <ImageBlock image={image} image_padding={image_padding} />
+                    <TextBlock text={text}>{children}</TextBlock>
                 </React.Fragment>
             }
         </div>
@@ -57,7 +50,6 @@ const Section = ({
 );
 
 const OpenSourceProjects = () => (
-
     <div className='container'>
         <div className='open-source-projects static_full gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>
@@ -76,7 +68,7 @@ const OpenSourceProjects = () => (
                     text={it.L('[_1] is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase.', it.website_name)} />
 
                 <Section id='static-content' image_padding='gr-11 gr-padding-20' image='3.png' header={it.L('Static content')} header_2={it.L('Improve [_1]\'s front-end content', it.website_name)}
-                text={it.L('The [_1] website\'s static content (CSS, Javascript) is available as the [_2]binary-static[_3] open-source project on github. Would you like to re-skin the [_1] website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes.', it.website_name, '<a target=\'_blank\' href=\'https://github.com/binary-com/binary-static\' rel=\'noopener noreferrer\'>', '</a>') }/>
+                text={it.L('The [_1] website\'s static content (CSS, Javascript) is available as the [_2]binary-static[_3] open-source project on github. Would you like to re-skin the [_1] website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes.', it.website_name, '<a target=\'_blank\' href=\'https://github.com/binary-com/binary-static\' rel=\'noopener noreferrer\'>', '</a>') } />
 
 
                 <Section id='perl-modules' image='4.svg' order_first header={it.L('Perl modules')} header_2={it.L('[_1]\'s CPAN contributions', it.website_name)}

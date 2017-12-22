@@ -14,7 +14,7 @@ const ResponsibleTrading = () => (
             </ol>
 
             <h2>{it.L('Written limits and self-exclusion')}</h2>
-            <p>{it.L('[_1] provides you with the opportunity to either self-exclude or <a href=\'[_2]\'>set limits on your trading activities</a> on this website. You may also <a href=\'[_3]\'>contact us</a> to state the limits you wish to set via email or phone. Available limits are:', it.website_name, it.url_for('/user/security/self_exclusionws'), it.url_for('contact'))}</p>
+            <p>{it.L('[_1] provides you with the opportunity to either self-exclude or <a href=\'[_2]\'>set limits on your trading activities</a> on this website. You may also <a href=\'[_3]\'>contact us</a> to state the limits you wish to set via email or phone. Available limits are:', it.website_name, it.url_for('user/security/self_exclusionws'), it.url_for('contact'))}</p>
             <ol>
                 <li>{it.L('a limit on the amount you may trade within a specified period of time;')}</li>
                 <li>{it.L('a limit on the losses you may incur within a specified period of time;')}</li>

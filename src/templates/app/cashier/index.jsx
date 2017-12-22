@@ -1,11 +1,6 @@
 import React from 'react';
 
-const DepositWithdraw = ({
-    ja_hide,
-    ja_show,
-    id,
-    show_upgrade,
-}) => {
+const DepositWithdraw = ({ ja_hide, ja_show, id, show_upgrade }) => {
     let deposit_url     = '/cashier/payment_agent_listws';
     let withdraw_url    = '/paymentagent/withdrawws';
     let class_hide_show = 'gr-5 gr-12-m';
@@ -30,7 +25,7 @@ const DepositWithdraw = ({
                     <span className='withdraw'>{it.L('Withdraw')}</span>
                 </a>
             </div>
-            {show_upgrade &&
+            { show_upgrade &&
                 <div className='gr-padding-10 invisible upgrademessage'>
                     <a className='button'></a>
                 </div>
@@ -81,10 +76,10 @@ const Cashier = () => (
             <div className='gr-padding-10 invisible eu-only'></div>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>
-                    <a className='ja-hide' href={it.url_for('/cashier/forwardws#deposit')} id='payment_methods'>
+                    <a className='ja-hide' href={it.url_for('cashier/forwardws#deposit')} id='payment_methods'>
                         <img className='responsive' id='payment_methods_icon' src={it.url_for('images/pages/cashier/payment-methods.svg')} />
                     </a>
-                    <a className='invisible ja-show' href={it.url_for('/cashier/deposit-jp')} id='payment_methods'>
+                    <a className='invisible ja-show' href={it.url_for('cashier/deposit-jp')} id='payment_methods'>
                         <img className='responsive' id='payment_methods_icon' src={it.url_for('images/pages/cashier/japan_cashier.svg')} />
                     </a>
                 </div>
@@ -106,7 +101,7 @@ const Cashier = () => (
             <h3 className='gr-padding-10'>{it.L('Payment Agent')}</h3>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>
-                    <a href={it.url_for('/cashier/payment_agent_listws')} id='payment_agent'>
+                    <a href={it.url_for('cashier/payment_agent_listws')} id='payment_agent'>
                         <img className='responsive' id='payment_agent_icon' src={it.url_for('images/pages/cashier/payment-agents.svg')} />
                     </a>
                 </div>

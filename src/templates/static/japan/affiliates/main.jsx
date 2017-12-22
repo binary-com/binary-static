@@ -38,7 +38,7 @@ const Main = () => (
 
     <div className='gr-padding-20'>
         <h2>{it.L('{JAPAN ONLY}Generous Commission Structure')}</h2>
-        <p>{it.L('{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=[_1]>opens and trades a real money account.</a>', `${it.url_for('/terms-and-conditions-jp')}#affiliates&section-8'`)}</p>
+        <p>{it.L('{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=[_1]>opens and trades a real money account.</a>', `${it.url_for('terms-and-conditions-jp')}#affiliates&section-8'`)}</p>
         </div>
 
         <div className='gr-padding-20'>
@@ -55,7 +55,7 @@ const Main = () => (
             <h2>{it.L('{JAPAN ONLY}A True Partnership')}</h2>
 
             <p>{it.L('{JAPAN ONLY}We offer an informative and entertaining way to advertise online; including text ads, customer landing pages and invitations to promotional and educational events for your site visitors.')}</p>
-            <p>{it.L('{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with [_1] and begins trading. ', it.broker_name)}<span>{it.L('Please see our <a href=[_1]>terms and conditions</a> for details of payout qualifications.', it.url_for('/terms-and-conditions-jp') )}</span></p>
+            <p>{it.L('{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with [_1] and begins trading. ', it.broker_name)}<span>{it.L('Please see our <a href=[_1]>terms and conditions</a> for details of payout qualifications.', it.url_for('terms-and-conditions-jp') )}</span></p>
             <p>{it.L('{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away.')}</p>
             <p>{it.L('{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today.')}</p>
     </div>

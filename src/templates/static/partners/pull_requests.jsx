@@ -107,7 +107,6 @@ const PullRequests = () => (
             </div>
         </div>
     </React.Fragment>
-
 );
 
 export default PullRequests;

@@ -1,8 +1,8 @@
 import React from 'react';
-import {TabContainer, TabsSubtabs, TabContentContainer, TabContent} from '../../_common/components/tabs.jsx';
 import Forex from './contract_specifications/forex.jsx';
 import Metals from './contract_specifications/metals.jsx';
 import VolatilityIndices from './contract_specifications/volatility_indices.jsx';
+import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../_common/components/tabs.jsx';
 
 const ContractSpecifications = () => (
     <div className='static_full'>

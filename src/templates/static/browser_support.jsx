@@ -12,7 +12,7 @@ const Browsers = ({
         <div className='li-2-boxes-content li-boxes-content-extra-height'>
             <h2>{header}</h2>
             <ul>
-                {items.map((item, idx) => (
+                { items.map((item, idx) => (
                     <li key={idx}>{item}</li>
                 ))}
             </ul>
@@ -43,7 +43,7 @@ const BrowserSupport = () => (
                     it.L('Set "<strong>Firefox will</strong>" to "<strong>Remember history</strong>".'),
                     it.L('Click on the <strong>OK</strong> button to save your settings.'),
                 ]} />
-        </div>
+            </div>
         </div>
 
         <div className='gr-parent clear'>

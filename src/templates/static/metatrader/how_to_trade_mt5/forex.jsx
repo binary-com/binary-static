@@ -1,6 +1,6 @@
 import React from 'react';
 import SeparatorLine from '../../../_common/components/separator_line.jsx';
-import {List, Table} from '../../../_common/components/elements.jsx';
+import { List, Table } from '../../../_common/components/elements.jsx';
 
 const Step = ({
     is_first,
@@ -13,7 +13,7 @@ const Step = ({
     <React.Fragment>
         <div className='gr-row'>
             <div className='gr-9 gr-push-3'>
-                {!is_first && <SeparatorLine className='gr-padding-30' />}
+                { !is_first && <SeparatorLine className='gr-padding-30' /> }
                 <h2>{title}</h2>
             </div>
         </div>
@@ -21,7 +21,7 @@ const Step = ({
             <div className='gr-3 center-text'>
                 <h3 className='secondary-color'>{step}</h3>
                 <img src={it.url_for(`images/pages/metatrader/how-to/step${number}.svg`)} />
-                {!is_last && <div className='vertical-dashed'></div>}
+                { !is_last && <div className='vertical-dashed'></div> }
             </div>
             <div className='gr-9'>
                 {children}

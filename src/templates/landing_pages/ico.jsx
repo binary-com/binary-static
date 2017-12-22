@@ -78,7 +78,7 @@ const Ico = () => {
             </head>
 
             <body>
-            <Gtm/>
+            <Gtm />
             <div className='navbar-fixed-top' role='navigation' id='navigation'>
                 <div className='navbar-header'>
                     <span id='toggle-menu' href='button' className='navbar-toggle'></span>
@@ -158,7 +158,7 @@ const Ico = () => {
                                         <p className='intro-subtext'>{it.L('See your winning bids and claim your tokens')}</p>
                                     </div>
                                     <div className='status-toggle status-started' id='countdown'>
-                                        {items.map((item, idx) => (
+                                        { items.map((item, idx) => (
                                             <span key={idx} className='cd-item' id={`cd_${item.id}`}>
                                                     <span className='arcs'>
                                                         <span className='arc_q'></span>
@@ -271,7 +271,7 @@ const Ico = () => {
                         <div className='gr-row'>
                             <div className='gr-10 gr-push-1'>
                                 <h2>{it.L('Trade your tokens on the Lykke Exchange')}</h2>
-                                <img src={it.url_for('images/ico/icons/lykke_logo.svg')}/>
+                                <img src={it.url_for('images/ico/icons/lykke_logo.svg')} />
                                 <p>{it.L('We\'ve reached an agreement to list the tokens on the <a href="[_1]" target="_blank" rel="noreferrer noopener">Lykke Exchange</a>.', 'https://www.lykke.com/')}</p>
                                 <a className='button' href='https://www.lykke.com/company/news/binary' target='_blank' rel='noreferrer noopener'>
                                     <span>{it.L('Read the official press release')}</span>
@@ -765,7 +765,7 @@ const Ico = () => {
                         <div className='gr-12'>
                             <div className='faq'>
                                 <h4>{it.L('How can I purchase tokens?')}</h4>
-                                <p>{it.L('You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies (including\ncryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.', it.broker_name, `<a href=${it.url_for('/cashier/payment_methods')} target='_blank' rel='noopener noreferrer'>`, '</a>')}</p>
+                                <p>{it.L('You will be able to purchase tokens using the funds in your [_1] account. You may use any of the available currencies (including\ncryptocurrencies) in our [_2]cashier system[_3]. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends.', it.broker_name, `<a href=${it.url_for('cashier/payment_methods')} target='_blank' rel='noopener noreferrer'>`, '</a>')}</p>
                             </div>
                         </div>
                         <div className='gr-12'>
@@ -954,7 +954,7 @@ const Ico = () => {
                                                 <input className='text' placeholder={it.L('Enter your email')} id='awf_field-90867273' type='text' name='email' value='' tabIndex='500' />
                                             </div>
                                             <div className='gr-4 gr-12-m'>
-                                                <input name='submit' id='af-submit-image-713141817' type='submit' className='image' alt='Submit' tabIndex='501' value={it.L('Submit')}/>
+                                                <input name='submit' id='af-submit-image-713141817' type='submit' className='image' alt='Submit' tabIndex='501' value={it.L('Submit')} />
                                             </div>
                                         </div>
                                     </div>

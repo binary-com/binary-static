@@ -1,8 +1,8 @@
 import React from 'react';
-import {TabContainer, TabsSubtabs, TabContentContainer, TabContent} from '../../_common/components/tabs.jsx';
 import Forex from './how_to_trade_mt5/forex.jsx';
 import Metals from './how_to_trade_mt5/metals.jsx';
 import VolatilityIndices from './how_to_trade_mt5/volatility_indices.jsx';
+import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../_common/components/tabs.jsx';
 
 const HowToTradeMT5 = () => (
     <div id='how_to_trade_mt5' className='static_full'>

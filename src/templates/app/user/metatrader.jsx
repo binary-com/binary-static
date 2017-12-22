@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormRow, SubmitButton } from '../../_common/components/forms.jsx';
 import Loading from '../../_common/components/loading.jsx';
+import { FormRow, SubmitButton } from '../../_common/components/forms.jsx';
 
 const AccountDesc = ({ title, description, account_type, items }) => {
     let types = '';
@@ -17,7 +17,7 @@ const AccountDesc = ({ title, description, account_type, items }) => {
             <h3>{title}</h3>
             <p>{description}</p>
             <ul className='checked small no-padding'>
-                {items && items.map((item, i) => (
+                { items && items.map((item, i) => (
                     <li key={i}>{item}</li>
                 ))}
             </ul>
@@ -34,7 +34,7 @@ const TypeGroup = ({ title, children, types }) => (
             <h3>{title}</h3>
             {children}
         </div>
-        {types.map((box, i) => (
+        { types.map((box, i) => (
             <div key={i} className={box.title ? 'gr-6' : 'gr-3 gr-6-p gr-6-m gr-centered'}>
                 <div id={box.id || `rbtn_${box.type}`} className='mt5_type_box' data-acc-type={box.type}>
                     {box.title ?
@@ -248,13 +248,19 @@ const Metatrader = () => (
                             </div>
                             <div id='view_2' className='gr-row invisible'>
                                 <div className='gr-8 gr-12-m'>
-                                    <FormRow is_two_rows type='text' id='txt_name' label={it.L('Name')} attributes={{ maxLength: 30, autoComplete: 'off' }} />
-                                    <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('Main password (trading access)')}
-                                        hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
-                                    <FormRow is_two_rows type='password' id='txt_re_main_pass' label={it.L('Verify main password')} />
+                                    <FormRow is_two_rows type='text'     id='txt_name'          label={it.L('Name')} attributes={{ maxLength: 30, autoComplete: 'off' }} />
+                                    <FormRow is_two_rows type='password' id='txt_main_pass'     label={it.L('Main password (trading access)')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
+                                    <FormRow is_two_rows type='password' id='txt_re_main_pass'  label={it.L('Verify main password')} />
                                     <FormRow is_two_rows type='password' id='txt_investor_pass' label={it.L('Investor password (read-only access)')} />
-                                    <SubmitButton no_wrapper text={it.L('Create Account')} type='submit' attributes={{ action: 'new_account' }}
-                                        custom_btn_text={it.L('Back')} custom_btn_id='btn_back' custom_btn_class='button-secondary' />
+                                    <SubmitButton
+                                        no_wrapper
+                                        type='submit'
+                                        text={it.L('Create Account')}
+                                        attributes={{ action: 'new_account' }}
+                                        custom_btn_text={it.L('Back')}
+                                        custom_btn_id='btn_back'
+                                        custom_btn_class='button-secondary'
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -263,11 +269,15 @@ const Metatrader = () => (
                     <form id='frm_password_change'>
                         <div className='gr-row'>
                             <div className='gr-8 gr-12-m'>
-                                <FormRow is_two_rows type='password' id='txt_old_password' label={it.L('Current password')} />
-                                <FormRow is_two_rows type='password' id='txt_new_password' label={it.L('New password')}
-                                    hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
+                                <FormRow is_two_rows type='password' id='txt_old_password'    label={it.L('Current password')} />
+                                <FormRow is_two_rows type='password' id='txt_new_password'    label={it.L('New password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                 <FormRow is_two_rows type='password' id='txt_re_new_password' label={it.L('Verify new password')} />
-                                <SubmitButton no_wrapper text={it.L('Change Password')} type='submit' attributes={{ action: 'password_change' }} />
+                                <SubmitButton
+                                    no_wrapper
+                                    type='submit'
+                                    text={it.L('Change Password')}
+                                    attributes={{ action: 'password_change' }}
+                                />
                             </div>
                         </div>
                     </form>
@@ -306,12 +316,17 @@ const Metatrader = () => (
                                 <div className='gr-6 gr-12-m flex'>
                                     <div className='mt-panel mt-container'>
                                         <form id='frm_deposit'>
-                                            <CashierDesc title={it.L('Deposit into MT5 account')} arrow_direction='right'
-                                                desc={it.L('Deposit funds from your Binary account into MetaTrader 5 account.')} />
+                                            <CashierDesc title={it.L('Deposit into MT5 account')} arrow_direction='right' desc={it.L('Deposit funds from your Binary account into MetaTrader 5 account.')} />
 
                                             <div className='form'>
                                                 <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} />
-                                                <SubmitButton is_centered is_full_width text={it.L('Deposit')} type='submit' attributes={{ action: 'deposit' }} />
+                                                <SubmitButton
+                                                    is_centered
+                                                    is_full_width
+                                                    type='submit'
+                                                    text={it.L('Deposit')}
+                                                    attributes={{ action: 'deposit' }}
+                                                />
                                             </div>
                                         </form>
                                     </div>
@@ -319,13 +334,18 @@ const Metatrader = () => (
                                 <div className='gr-6 gr-12-m flex'>
                                     <div className='mt-panel mt-container'>
                                         <form id='frm_withdrawal'>
-                                            <CashierDesc title={it.L('Withdraw from MT5 account')} arrow_direction='left'
-                                                desc={it.L('Withdraw funds from MetaTrader 5 account into your Binary account.')} />
+                                            <CashierDesc title={it.L('Withdraw from MT5 account')} arrow_direction='left' desc={it.L('Withdraw funds from MetaTrader 5 account into your Binary account.')} />
 
                                             <div className='form'>
                                                 <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('MetaTrader 5 main password')} />
                                                 <FormRow is_two_rows type='text' id='txt_amount_withdrawal' label={it.L('Amount')} attributes={{ maxLength: 10 }} />
-                                                <SubmitButton is_centered is_full_width text={it.L('Withdraw')} type='submit' attributes={{ action: 'withdrawal' }} />
+                                                <SubmitButton
+                                                    is_centered
+                                                    is_full_width
+                                                    type='submit'
+                                                    text={it.L('Withdraw')}
+                                                    attributes={{ action: 'withdrawal' }}
+                                                />
                                             </div>
                                         </form>
                                     </div>

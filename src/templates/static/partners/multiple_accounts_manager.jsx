@@ -1,40 +1,22 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-const BoxInner = ({
-    className,
-    image,
-    text,
-}) => {
-    const class1 = className ? `${className}` : '';
-    return (
-        <div className={`gr-4 gr-12-m center-text ${class1}`}>
-            <img className='gr-4 gr-2-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)}/>
-            <p>{text}</p>
-        </div>
-    );
-};
+const BoxInner = ({ className = '', image, text }) => (
+    <div className={`gr-4 gr-12-m center-text ${className}`}>
+        <img className='gr-4 gr-2-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)}/>
+        <p>{text}</p>
+    </div>
+);
 
-const Box = ({
-    children,
-    className,
-}) => {
-    const class1 = className ? `${className}` : '';
-    return (
-        <div className={`gr-12 ${class1}`}>
-            <div className='gr-row'>
-                {children}
-            </div>
+const Box = ({ className = '', children }) => (
+    <div className={`gr-12 ${className}`}>
+        <div className='gr-row'>
+            {children}
         </div>
-    );
-};
+    </div>
+);
 
-const Step = ({
-    image,
-    circle_no,
-    header,
-    text,
-}) => {
+const Step = ({ image, circle_no, header, text }) => {
     const circle = circle_no ? <div className='circle'>{circle_no}</div> : '';
     return (
         <div className='step'>
@@ -42,7 +24,7 @@ const Step = ({
             {circle}
             <div className='gr-padding-20 gr-gutter'>
                 <div className='center-text'>
-                    <img className='gr-4 gr-8-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)}/>
+                    <img className='gr-4 gr-8-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)} />
                 </div>
                 <div className='gr-padding-20 gr-child'><strong>{header}</strong></div>
                 <p className='no-margin gr-padding-10'>{text}</p>
