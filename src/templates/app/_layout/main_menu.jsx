@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from './menu.jsx';
+import Menu from '../../_common/components/menu.jsx';
 
 const MainMenu = () => (
     <div id='main-menu' className='tab-menu no-print fill-bg-color mt-hide'>
