@@ -12,15 +12,11 @@ Gettext.prototype.dnpgettext = function(domain, msg_txt, msg_id, msg_id_plural, 
         default_translation = msg_id_plural || msg_id;
     }
 
-    /* eslint-disable no-underscore-dangle */
-    const translation = this._getTranslation(domain, msg_txt || '', msg_id);
-    /* eslint-enable no-underscore-dangle */
+    const translation = this._getTranslation(domain, msg_txt || '', msg_id); // eslint-disable-line no-underscore-dangle
 
     if (translation) {
         if (typeof count === 'number') {
-            /* eslint-disable no-undef */
-            const pluralsFunc = plurals[Gettext.getLanguageCode(this.locale)].pluralsFunc;
-            /* eslint-enable no-undef */
+            const pluralsFunc = plurals[Gettext.getLanguageCode(this.locale)].pluralsFunc; // eslint-disable-line no-undef
             index = pluralsFunc(count);
             if (typeof index === 'boolean') {
                 index = index ? 1 : 0;

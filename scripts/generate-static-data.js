@@ -582,9 +582,7 @@ const generate = () => {
         content += `${JSON.stringify(map[lang])};`;
         fs.writeFileSync(js_path, content, 'utf8');
     });
-    /* eslint-disable no-console */
-    console.log(' ... Done');
-    /* eslint-enable no-console */
+    console.log(' ... Done'); // eslint-disable-line no-console
 };
 
 exports.build = build;

@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-const colors = require('colors');
-/* eslint-enable no-unused-vars */
+const colors = require('colors'); // eslint-disable-line no-unused-vars
 const fs     = require('fs');
 const Path   = require('path');
 const util   = require('util');
