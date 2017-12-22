@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table} from '../../_common/components/elements.jsx';
+import { Table } from '../../_common/components/elements.jsx';
 
 const Box = ({ image, text, title }) => (
     <div className='gr-padding-10'>
@@ -22,7 +22,7 @@ const FootNote = ({ number, texts, title }) => (
         <a name={`note-${number}`}></a>
         <h3 className='secondary-color'>{`${number}. ${title}`}</h3>
         <div className='separator-line border-bottom'></div>
-        {texts.map((text, idx) => (
+        { texts.map((text, idx) => (
             <p key={idx}>{text}</p>
         ))}
     </div>

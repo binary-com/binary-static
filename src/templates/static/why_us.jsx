@@ -1,8 +1,8 @@
 import React from 'react';
 import { List } from '../_common/components/elements.jsx';
 
-const Section = ({ className, id, header, children }) => (
-    <div className={`section ${className || ''}`}>
+const Section = ({ className = '', id, header, children }) => (
+    <div className={`section ${className}`}>
         <a id={id}></a>
         <div className='section-content'>
             <h1>{header}</h1>
@@ -48,6 +48,7 @@ const WhyUs = () => (
                         </div>
                     </div>
                 </Section>
+
                 <Section id='flexible-trades' header={it.L('Trade your way')}>
                     <p>{it.L('Why limit yourself? Whatever your market view, [_1] allows you to put your strategy to work and profit from your predictions.', it.website_name)}</p>
                     <img className='responsive' src={it.url_for('images/pages/tour/trade-tutorial_1.svg')} />
@@ -58,6 +59,7 @@ const WhyUs = () => (
                         <li>{it.L('Choose your own strike.')}</li>
                     </ul>
                 </Section>
+
                 <Section id='controlled-risk' header={it.L('Know what you stand to win or lose')}>
                     <div className='gr-row'>
                         <div className='gr-7 gr-12-m'>
@@ -73,6 +75,7 @@ const WhyUs = () => (
                         </div>
                     </div>
                 </Section>
+
                 <Section id='power-and-simplicity' header={it.L('One simple platform')}>
                     <p>{it.L('[_1] offers the world\'s financial markets in a simple, user-friendly platform.', it.website_name)}</p>
                     <div className='gr-row'>
@@ -89,6 +92,7 @@ const WhyUs = () => (
                         </div>
                     </div>
                 </Section>
+
                 <Section className='id-hide' id='security' header={it.L('Licensed, trusted, and secure')}>
                     <div className='gr-row'>
                         <div className='gr-8 gr-12-m'>
@@ -116,6 +120,7 @@ const WhyUs = () => (
                         </div>
                     </div>
                 </Section>
+
                 <Section id='trust' header={it.L('Go with the leader')}>
                     <div className='gr-row'>
                         <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>

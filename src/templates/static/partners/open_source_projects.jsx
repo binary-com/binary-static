@@ -36,13 +36,13 @@ const Section = ({
         <div className='gr-padding-10'>{header_2}</div>
         <div className='gr-row'>
             {order_first ?
-              <React.Fragment>
-              <TextBlock text={text}>{children}</TextBlock>
-              <ImageBlock order_first image={image} image_padding={image_padding} />
-              </React.Fragment>
-              : <React.Fragment>
-                <ImageBlock image={image} image_padding={image_padding} />
-                <TextBlock text={text}>{children}</TextBlock>
+                <React.Fragment>
+                    <TextBlock text={text}>{children}</TextBlock>
+                    <ImageBlock order_first image={image} image_padding={image_padding} />
+                </React.Fragment>
+                : <React.Fragment>
+                    <ImageBlock image={image} image_padding={image_padding} />
+                    <TextBlock text={text}>{children}</TextBlock>
                 </React.Fragment>
             }
         </div>
@@ -50,7 +50,6 @@ const Section = ({
 );
 
 const OpenSourceProjects = () => (
-
     <div className='container'>
         <div className='open-source-projects static_full gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>

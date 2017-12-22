@@ -1,13 +1,13 @@
 import React from 'react';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
-import {TabContainer, TabContentContainer, TabsSubtabs, TabContent} from  '../_common/components/tabs.jsx';
+import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
 
 const PaymentLogo = ({ items }) => items.map((item, inx) => (
-        <div key={inx} className='gr-2 gr-4-m gr-padding-30 center-text'>
-            <img src={it.url_for(`images/pages/home-beta/payment/${item}.svg`)} />
-        </div>
-    ));
+    <div key={inx} className='gr-2 gr-4-m gr-padding-30 center-text'>
+        <img src={it.url_for(`images/pages/home-beta/payment/${item}.svg`)} />
+    </div>
+));
 
 const Arrows = ({ direction, parent }) => (
     <div className='align-self-center gr-1 gr-hide-m'>
@@ -138,7 +138,7 @@ const AcademySection = ({ image, header, text }) => (
 const TabCircles = ({ id, number }) => (
     <div className='gr-hide gr-show-m center-text'>
         <div className='tab-circles' id={id || undefined}>
-            {Array.from(new Array(number)).map((x, inx) => (
+            { Array.from(new Array(number)).map((x, inx) => (
                 <div key={inx} className='tab-circle'></div>
             ))}
         </div>

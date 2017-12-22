@@ -1,12 +1,11 @@
 import React from 'react';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
-import {List, FillBox} from '../_common/components/elements.jsx';
+import { List, FillBox } from '../_common/components/elements.jsx';
 
 
 const PaymentLogo = ({ items }) => items.map((item, idx) => (
-    <div key={idx} className='payment-logo' id={item}>
-    </div>
+    <div key={idx} className='payment-logo' id={item}></div>
 ));
 
 const Home = () => (
@@ -16,11 +15,7 @@ const Home = () => (
                 <h1 className='dark center-text gr-padding-10'>{it.L('The <strong>Premier Platform</strong> for Binary Options Trading')}</h1>
                 <p className='center-text gr-padding-10'>{it.L('Trade <strong>24/7</strong>, even on weekends.')}</p>
 
-                <FormVerifyEmail
-                    className='secondary-bg-color'
-                    text={it.L('Create Free Account')}
-                    dark_button
-                />
+                <FormVerifyEmail className='secondary-bg-color' text={it.L('Create Free Account')} dark_button />
             </div>
         </div>
 
@@ -65,12 +60,12 @@ const Home = () => (
                     </div>
 
                     <List
+                        className='gr-row gr-row-align-center'
                         items={[
                             { header: it.L('Sharp prices'),           className: 'xlist1' },
                             { header: it.L('Trade your way'),         className: 'xlist3' },
                             { header: it.L('Licensed and regulated'), className: 'xlist2' },
                         ]}
-                        className='gr-row gr-row-align-center'
                     />
                 </div>
             </div>

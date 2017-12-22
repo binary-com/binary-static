@@ -5,13 +5,13 @@ const CharityHelper = ({ country, charities }) => (
         <div className='fill-bg-color center-text'>
             <h3 className='gr-padding-10'>{country}</h3>
         </div>
-        {charities.map((charity, inx) => (
+        { charities.map((charity, inx) => (
             <div key={inx} className='gr-row'>
-                <div className='gr-4 gr-12-m'><img className='responsive gr-padding-20' src={it.url_for(`images/pages/charity/${  charity.image  }.jpg`)} /></div>
+                <div className='gr-4 gr-12-m'><img className='responsive gr-padding-20' src={it.url_for(`/images/pages/charity/${charity.image}.jpg`)} /></div>
                 <div className='gr-8 gr-12-m'>
                     <p><strong>{charity.title}</strong></p>
                     <p>{charity.text}</p>
-                    {charity.contacts && charity.contacts.map((contact, inxc) => (
+                    { charity.contacts && charity.contacts.map((contact, inxc) => (
                         <p key={inxc}>
                             <strong>
                                 {contact.text}:
@@ -83,8 +83,7 @@ const Charity = () => (
                                 },
                             ],
                         },
-                    ]
-                    }
+                    ]}
                 />
             </div>
 
