@@ -77,7 +77,6 @@ const OrderExecution = () => (
         <p>{it.L('Depending on the level of risk that we are exposed to acting as your counterparty, we largely act in a principal capacity of your trades. As such, the execution venue will usually be [_1]. However, we may transmit your order to third party liquidity providers, in which case we will determine the execution venue ourselves on the basis described above.', it.website_name)}</p>
         <p>{it.L('The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients.')}</p>
     </div>
-
 );
 
 export default OrderExecution;

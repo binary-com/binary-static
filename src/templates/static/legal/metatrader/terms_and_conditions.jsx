@@ -2,10 +2,9 @@ import React from 'react';
 
 const TermsAndConditions = () => (
     <div id='mt-tnc'>
-        <h2>
-            {it.L('Terms and Conditions')}
-        </h2>
+        <h2>{it.L('Terms and Conditions')}</h2>
         <p><i>{it.L('Version 4. Last modified 2016-12-30.')}</i></p>
+
         <h2>{it.L('A. Introduction and Scope of Agreement')}</h2>
         <ol>
             <li>{it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website.', it.website_name)}</li>
@@ -14,21 +13,25 @@ const TermsAndConditions = () => (
             <li>{it.L('You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks.')}</li>
             <li>{it.L('This Agreement is supplied to you in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. We will not be made responsible for any damage or loss caused by an error, inaccuracy, misunderstanding or misspelling with regards to the translations.')}</li>
         </ol>
+
         <h2>{it.L('B. Commencement and Cancellation')}</h2>
         <ol>
             <li>{it.L('This Agreement will commence on the date you receive your Real Account number, and, for any new versions thereafter, on the date the new versions are published on our website.')}</li>
         </ol>
+
         <h2>{it.L('C. Provision of Services')}</h2>
         <ol>
             <li>{it.L('Under no circumstances shall we provide investment advice or recommendation to you or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written information, which we may publish on our website or provide to you in any other manner. We will endeavour to ensure the accuracy and completeness of this written information but it will not constitute investment advice or recommendation provided by us to you.')}</li>
             <li>{it.L('The provision of the margin trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sublicensable, terminable licence from the third-party system provider/licensor (the \'MT5 Trading Platform\'). You acknowledge that we reserve the right to change the third-party system provider/licensor during the course of providing the margin trading services described in this Agreement to you.')}</li>
             <li>{it.L('The provision of the margin trading services described in this Agreement is not available in the European Union.')}</li>
         </ol>
+
         <h2>{it.L('D. Capacity')}</h2>
         <ol>
             <li>{it.L('[_1] shall act, at times, as a principal and at other times as an agent on your behalf, for all Transactions entered into, by you.', it.website_name)}</li>
             <li>{it.L('We will hold you responsible for all your obligations under this Agreement in our course of providing the margin trading service described in this Agreement to you, even if you notify us that you are acting as the agent of an identified principal.')}</li>
         </ol>
+
         <h2>{it.L('E. Account Management')}</h2>
         <ol>
             <li>{it.L('Opening an Account')}
@@ -106,7 +109,6 @@ const TermsAndConditions = () => (
                         </ol>
                     </li>
                 </ol>
-
             </li>
             <li>{it.L('Closing an Account')}
                 <ol>
@@ -114,6 +116,7 @@ const TermsAndConditions = () => (
                 </ol>
             </li>
         </ol>
+
         <h2>{it.L('F. Orders')}</h2>
         <ol>
             <li>{it.L('Order Execution/Cancellation/Modification')}
@@ -137,6 +140,7 @@ const TermsAndConditions = () => (
                 </ol>
             </li>
         </ol>
+
         <h2>{it.L('G. Margin')}</h2>
         <ol>
             <li>{it.L('General Provisions')}
@@ -168,6 +172,7 @@ const TermsAndConditions = () => (
                 </ol>
             </li>
         </ol>
+
         <h2>{it.L('H. Regulatory Provisions')}</h2>
         <ol>
             <li>{it.L('Potential Conflicts of Interest')}
@@ -205,6 +210,7 @@ const TermsAndConditions = () => (
                 </ol>
             </li>
         </ol>
+
         <h2>{it.L('I. Quotes')}</h2>
         <ol>
             <li>{it.L('Quote Provision')}
@@ -215,6 +221,7 @@ const TermsAndConditions = () => (
                 </ol>
             </li>
         </ol>
+
         <h2>{it.L('J. Trading Transactions')}</h2>
         <ol>
             <li>{it.L('Opening a Transaction')}
@@ -252,6 +259,7 @@ const TermsAndConditions = () => (
                 </ol>
             </li>
         </ol>
+
         <h2>{it.L('K. Electronic Trading Platform and Transactions')}</h2>
         <ol>
             <li>{it.L('All intellectual property rights in the MT5 Trading Platform are owned by the Licensor and shall remain the exclusive property of the Licensor. Nothing in this Agreement intends to transfer any such rights or to vest any such rights in you.')}</li>
@@ -262,6 +270,7 @@ const TermsAndConditions = () => (
             <li>{it.L('You hereby agree that you will not participate in any illegal, deceptive, misleading or unethical practices including, but not limited to, disparagement of the MT5 Trading Platform or other practices which may be detrimental to the MT5 Trading Platform, Licensor or the public interest.')}</li>
             <li>{it.L('The Company sources market data from prime brokers who act as liquidity providers, thus executing your Transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by us or the prime brokers to yourselves. You acknowledge and agree that such data is proprietary to us and any such provider, and you will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. You represent and warrant that you will only use such data for purposes of facilitating your entry into Transactions with us on your Real Account in accordance with this Agreement and not for any other purpose. This clause does not apply to Volatility Indices.')}</li>
         </ol>
+
         <h2>{it.L('L. Event of Default')}</h2>
         <ol>
             <li>{it.L('Each of the following event constitutes an \'Event of Default\':')}
@@ -284,12 +293,14 @@ const TermsAndConditions = () => (
             </li>
             <li>{it.L('In the event of your failing to make a Margin Payment, we may, at our absolute discretion, allow your Open Positions to remain open and allow you to place new Orders to open a Transaction. You acknowledge that, upon allowing your Open Positions to remain open, you may incur further losses.')}</li>
         </ol>
+
         <h2>{it.L('M. Manifest Error')}</h2>
         <ol>
             <li>{it.L('We reserve the right to void or amend the contractual terms of any Transactions that we reasonably believe are entered into at prices that do not reflect fair market prices or that are entered into at an abnormally low level of risk due to an obvious or palpable error (a “Manifest Error”). In deciding whether an error is a Manifest Error, we may take into account any relevant information, including the state of the underlying market at the time of the error and any error within, or lack of clarity of, any information source or pronouncement. You have a duty to report to us any such problems, errors, or suspected system inadequacies that you may experience and may not abuse or arbitrage such system problems or errors for profit. We will endeavour to resolve any such difficulties in the shortest time possible.')}</li>
             <li>{it.L('Any amendments to the contractual terms of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between you and us in connection with the Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms and conditions of this Agreement.')}</li>
             <li>{it.L('You further acknowledge and agree that we will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused, or alleged to be caused by, or in connection with a Manifest Error.')}</li>
         </ol>
+
         <h2>{it.L('N. Force Majeure Events')}</h2>
         <ol>
             <li>{it.L('A force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from, or hindered or delayed, in delivering or receiving, or is impossible to deliver or receive, any quotation of the bid and offer price of a market in one or more of the instruments which we ordinarily deal in Transactions; (ii) an excessive movement in the market of the instrument or our reasonable anticipation of the potential occurrence of market disruption.')}</li>
@@ -306,6 +317,7 @@ const TermsAndConditions = () => (
             <li>{it.L('Nothing in this Force Majeure Event section shall be taken as indicating that it constitutes an event of default.')}</li>
             <li>{it.L('This section on Force Majeure Events does not apply to Volatility Indices.')}</li>
         </ol>
+
         <h2>{it.L('O. Representations and Warranties')}</h2>
         <ol>
             <li>{it.L('You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:')}
@@ -328,12 +340,14 @@ const TermsAndConditions = () => (
             </li>
             <li>{it.L('You acknowledge that we reserve the right to void or close out one or more of your Transactions if we observe any breaches of warranty given under this Agreement.')}</li>
         </ol>
+
         <h2>{it.L('P. Indemnification')}</h2>
         <ol>
             <li>{it.L('Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of, or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney\'s fees) incurred arising out of your failure to comply with any and all of your obligations set forth in this Agreement and/or the Company\'s enforcement against you of any and all of its rights under this Agreement.')}</li>
             <li>{it.L('Without prejudice to any other terms of this Agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to you in relation to any loss that you incurred whether directly or indirectly by any cause beyond our control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 Trading Platform or any systems or network links.')}</li>
             <li>{it.L('The Company does not make any warranty, express or implied, that any pricing or other information provided through the MT5 Trading Platform or otherwise is correct. Furthermore, if a quote (bid or offer price) error occurs due to a system malfunction (whether or not it\'s a third party or a proprietary system), the Company will not be liable for any resulting losses that have incurred.')}</li>
         </ol>
+
         <h2>{it.L('Q. Miscellaneous')}</h2>
         <ol>
             <li>{it.L('Unless proven to be wrong, our records shall be used as evidence of your dealings with us in connection with the margin trading services described in this Agreement. You agree to use our records as evidence in any such legal or regulatory proceedings and you agree to keep your own record of your dealings with us that will help us investigate any complaints or disputes. If the records used as evidence of your dealings with us are not originals, are in the form of diagrams or charts, or are system generated content, you will not object to the use of such records as evidence.')}</li>
@@ -341,6 +355,7 @@ const TermsAndConditions = () => (
             <li>{it.L('If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect.')}</li>
             <li>{it.L('In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident.')}</li>
         </ol>
+
         <h2>{it.L('R. Interpretation of Terms')}</h2>
         <ol>
             <li>{it.L('Account Balance &mdash; Your account balance represents:')}
@@ -371,7 +386,6 @@ const TermsAndConditions = () => (
             <li>{it.L('Transaction &mdash; A contract entered into by you pursuant to this Agreement.')}</li>
         </ol>
     </div>
-
 );
 
 export default TermsAndConditions;
