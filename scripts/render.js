@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-/* eslint-disable import/no-extraneous-dependencies, no-console */
+/* eslint-disable no-console */
 require('babel-register')({
     plugins: [
         'babel-plugin-transform-es2015-modules-commonjs',
@@ -175,79 +175,6 @@ const createContextBuilder = async () => {
         css_files: [
             `${config.root_url}css/common.min.css?${static_hash}`,
             ...config.sections.map(section => `${config.root_url}css/${section}.min.css?${static_hash}`),
-        ],
-        menu: [
-            {
-                id       : 'topMenuTrading',
-                url      : '/trading',
-                text     : 'Trade',
-                className: 'ja-hide gr-hide-m gr-hide-p ico-only-hide',
-            },
-            {
-                id       : 'topMenuJPTrading',
-                url      : '/multi_barriers_trading',
-                text     : 'Trade',
-                className: 'invisible ja-show gr-hide-m gr-hide-p',
-            },
-            {
-                id       : 'topMenuPortfolio',
-                url      : '/user/portfoliows',
-                text     : 'Portfolio',
-                className: 'client_logged_in invisible ico-only-hide',
-            },
-            {
-                id       : 'topMenuProfitTable',
-                url      : '/user/profit_tablews',
-                text     : 'Profit Table',
-                className: 'client_logged_in invisible ico-only-hide',
-            },
-            {
-                id       : 'topMenuStatement',
-                url      : '/user/statementws',
-                text     : 'Statement',
-                className: 'client_logged_in invisible',
-            },
-            { // cashier
-                id  : 'topMenuCashier',
-                url : '/cashier',
-                text: 'Cashier',
-            },
-            { // resources
-                id       : 'topMenuResources', url      : '/resources', text     : 'Resources',
-                className: 'client_logged_out client_logged_in invisible ico-only-hide',
-                sub_items: [
-                    {
-                        id       : 'topMenuAssetIndex',
-                        url      : '/resources/asset_indexws',
-                        text     : 'Asset Index',
-                        className: 'ja-hide',
-                    },
-                    {
-                        id  : 'topMenuTradingTimes',
-                        url : '/resources/market_timesws',
-                        text: 'Trading Times',
-                    },
-                ],
-            },
-            {
-                id          : 'topMenuShop',
-                text        : 'Shop',
-                absolute_url: 'https://shop.binary.com',
-                className   : 'ja-hide ico-only-hide',
-                target      : '_blank',
-            },
-            {
-                id       : 'topMenuPaymentAgent',
-                url      : '/paymentagent/transferws',
-                text     : 'Payment Agent',
-                className: 'invisible',
-            },
-            { // Link to ico-subscribe, ICO Bids.
-                id       : 'topMenuIcoBids',
-                url      : '/user/ico-subscribe',
-                text     : 'ICO Bids',
-                className: 'invisible ico-only-show',
-            },
         ],
         languages  : config.languages,
         broker_name: 'Binary.com',
