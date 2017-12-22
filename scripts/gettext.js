@@ -1,3 +1,4 @@
+const color   = require('cli-color');
 const fs      = require('fs');
 const { po }  = require('gettext-parser');
 const Gettext = require('node-gettext');
@@ -41,7 +42,7 @@ const createGettextInstance = () => {
     ];
 
     const start = Date.now();
-    process.stdout.write('Loading .po files '.cyan);
+    process.stdout.write(color.cyan('Loading .po files '));
     const gt = new Gettext();
 
     locales.forEach((locale) => {
@@ -50,10 +51,10 @@ const createGettextInstance = () => {
 
         const parsed = po.parse(po_content);
         gt.addTranslations(locale, 'messages', parsed);
-        process.stdout.write('.'.cyan);
+        process.stdout.write(color.cyan('.'));
     });
-    process.stdout.write(' Done'.cyan);
-    process.stdout.write(`  (${(Date.now() - start).toLocaleString()} ms)\n`.gray);
+    process.stdout.write(color.cyan(' Done'));
+    process.stdout.write(color.blackBright(`  (${(Date.now() - start).toLocaleString()} ms)\n`));
 
     const not_translated = [];
     gt.on('no-translation', (error) => {
@@ -82,9 +83,9 @@ const createGettextInstance = () => {
             return translation;
         },
         update_translations: () => {
-            process.stdout.write('Updating translations ... '.green);
+            process.stdout.write(color.green('Updating translations ... '));
             if (not_translated.length === 0) {
-                process.stdout.write('Skipped\n'.green);
+                process.stdout.write(color.green('Skipped\n'));
                 return;
             }
             const messages_file = Path.join(common.root_path, translations_dir, 'messages.pot');
@@ -104,7 +105,7 @@ const createGettextInstance = () => {
                 output,
                 'utf8'
             );
-            process.stdout.write(`Updated messages.pot with ${not_translated.length} new entries\n`.green);
+            process.stdout.write(color.green(`Updated messages.pot with ${not_translated.length} new entries\n`));
         },
     };
 };

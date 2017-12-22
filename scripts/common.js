@@ -1,7 +1,6 @@
-const colors = require('colors'); // eslint-disable-line no-unused-vars
-const fs     = require('fs');
-const Path   = require('path');
-const util   = require('util');
+const fs   = require('fs');
+const Path = require('path');
+const util = require('util');
 
 exports.root_path = require('app-root-path').path;
 
