@@ -21,11 +21,26 @@ const Summary = () => (
             <div className='table-container'>
                 <Table data={{
                     tbody: [
-                        [{ header: it.L('Login ID') }, { header: it.L('Currency') }, { header: it.L('Turnover') }, { header: it.L('Profit / Loss') },
-                        { header: it.L('Contracts bought') }, { header: it.L('Contracts sold') }, { header: it.L('Open contracts') }, { header: it.L('Potential profit') }],
-
-                        [{ id: 'loginid' }, { id: 'rc_currency' }, { id: 'turnover' }, { id: 'profit_loss' },
-                        { id: 'bought' }, { id: 'sold' }, { id: 'open' }, { id: 'potential' }],
+                        [
+                            { header: it.L('Login ID') },
+                            { header: it.L('Currency') },
+                            { header: it.L('Turnover') },
+                            { header: it.L('Profit / Loss') },
+                            { header: it.L('Contracts bought') },
+                            { header: it.L('Contracts sold') },
+                            { header: it.L('Open contracts') },
+                            { header: it.L('Potential profit') },
+                        ],
+                        [
+                            { id: 'loginid' },
+                            { id: 'rc_currency' },
+                            { id: 'turnover' },
+                            { id: 'profit_loss' },
+                            { id: 'bought' },
+                            { id: 'sold' },
+                            { id: 'open' },
+                            { id: 'potential' },
+                        ],
                     ],
                 }} />
             </div>

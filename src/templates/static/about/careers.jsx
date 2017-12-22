@@ -59,7 +59,7 @@ const Careers = () => (
         <div className='gr-padding-30'>
             <img className='responsive' src={it.url_for('images/pages/careers/main@1.jpg')}/>
             <FillBox image='images/pages/careers/view-positions-icon-white.svg' color='dark' no_padding
-                href={it.url_for('/open-positions')} text={it.L('View open positions')} />
+                href={it.url_for('open-positions')} text={it.L('View open positions')} />
         </div>
 
         <div className='gr-row gr-padding-30'>
@@ -73,7 +73,7 @@ const Careers = () => (
             <FillBox image='images/pages/careers/corporate-culture.svg' href='https://my.wobb.co/users/companies/binary-group-services-sdn-bhd'
                 text={it.L('Learn more about our corporate culture')} padding='6' target='_blank' />
 
-            <FillBox image='images/pages/careers/handbook.svg' href={it.url_for('/download/binary-employee-handbook.pdf')} download
+            <FillBox image='images/pages/careers/handbook.svg' href={it.url_for('download/binary-employee-handbook.pdf')} download
                 text={it.L('Employee handbook')} padding='6' target='_blank' />
         </div>
 

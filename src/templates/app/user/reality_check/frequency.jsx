@@ -1,7 +1,6 @@
 import React from 'react';
 import Wrapper from './wrapper.jsx';
 
-
 const Frequency = () => (
     <React.Fragment>
         <Wrapper>

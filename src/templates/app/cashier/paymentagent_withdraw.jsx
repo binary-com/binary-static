@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormRow, Fieldset, SubmitButton} from '../../_common/components/forms.jsx';
+import { FormRow, Fieldset, SubmitButton } from '../../_common/components/forms.jsx';
 
 const PaymentAgentWithdraw = () => (
     <React.Fragment>
@@ -20,7 +20,7 @@ const PaymentAgentWithdraw = () => (
             <div id='viewSuccess' className='viewItem invisible'>
                 <p id='successMessage'></p>
                 <p>
-                    <a className='button' href={it.url_for('/user/statementws')}>
+                    <a className='button' href={it.url_for('user/statementws')}>
                         <span className='button'>{it.L('View your statement')}</span>
                     </a>
                 </p>

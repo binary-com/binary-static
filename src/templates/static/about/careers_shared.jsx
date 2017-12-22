@@ -8,7 +8,7 @@ const CareersShared = () => (
     <React.Fragment>
         <div className='gr-padding-30'>
             <FillBox image='images/pages/careers/view-positions-icon.svg' center padding='4'
-                href={it.url_for('/open-positions')} text={it.L('View open positions')} />
+                href={it.url_for('open-positions')} text={it.L('View open positions')} />
         </div>
 
         <SeparatorLine />

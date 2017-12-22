@@ -16,7 +16,7 @@ const Signup = () => (
             <div className='tab-content container'>
                 <div className='tab-content-wrapper'>
                     <div id='general_info-content' className='toggle-content'>
-                        <Main/>
+                        <Main />
                     </div>
                 </div>
             </div>

@@ -1,8 +1,8 @@
 import React from 'react';
-import {TabContainer, Tabs, TabContentContainer, TabContent} from '../../../_common/components/tabs.jsx';
 import Explanation from './explanation.jsx';
 import LastDigit from './last_digit.jsx';
 import Portfolio from '../../user/portfolio.jsx';
+import { TabContainer, Tabs, TabContentContainer, TabContent } from '../../../_common/components/tabs.jsx';
 
 const Analysis = () => (
     <div id='trading_analysis_content'>
@@ -17,6 +17,7 @@ const Analysis = () => (
                     { text: it.L('Last Digit Stats'), id: 'tab_last_digit',    className: 'invisible', no_href: true },
                 ]}
             />
+
             <TabContentContainer id='analysis_content'>
                 <TabContent id='tab_graph'>
                     <p className='error-msg' id='chart-error'></p>
@@ -24,12 +25,15 @@ const Analysis = () => (
                         <div id='webtrader_chart'></div>
                     </div>
                 </TabContent>
+
                 <TabContent id='tab_portfolio'>
                     <Portfolio />
                 </TabContent>
+
                 <TabContent id='tab_explanation' className='selectedTab'>
                     <Explanation />
                 </TabContent>
+
                 <TabContent id='tab_last_digit'>
                     <LastDigit />
                 </TabContent>

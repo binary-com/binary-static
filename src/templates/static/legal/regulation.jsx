@@ -124,7 +124,7 @@ const Regulation = () => (
       <p>
         {it.L(
           'Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href="[_1]" target="_blank" download=1>licence no. IS/70156</a>). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd.',
-          it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf')
+          it.url_for('download/WS-Binary-Investments-Europe-Limited.pdf')
         )}
       </p>
 
@@ -220,7 +220,7 @@ const Regulation = () => (
           center='1'
           border='border-dark-gray'
           image='images/pages/regulation/pillar.svg'
-          href={it.url_for('/download/BIEL_Pillar_3_Report_20170426.pdf')}
+          href={it.url_for('download/BIEL_Pillar_3_Report_20170426.pdf')}
           target='_blank'
           download='1'
           text={it.L('Pillar 3 disclosure report')}
@@ -239,7 +239,7 @@ const Regulation = () => (
           center='1'
           border='border-dark-gray'
           image='images/pages/regulation/prospectus.svg'
-          href={it.url_for('/download/BIEL_Product_Disclosure_Statement.pdf')}
+          href={it.url_for('download/BIEL_Product_Disclosure_Statement.pdf')}
           target='_blank'
           download='1'
           text={it.L('Product Disclosure Statement')}

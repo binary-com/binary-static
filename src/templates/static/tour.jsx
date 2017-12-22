@@ -50,7 +50,7 @@ const Tour = () => (
                       <span>{it.L('View payment methods')}</span>
                   </a>
                   <p>{it.L('Trade with ease with [_1]\'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions.', it.website_name)}</p>
-                  <a className='button' href={it.url_for('/cashier/payment_methods')}>
+                  <a className='button' href={it.url_for('cashier/payment_methods')}>
                       <img className='responsive' src={it.url_for('images/pages/tour/tour-flexible-banking.png')}/>
                   </a>
               </div>
@@ -60,7 +60,7 @@ const Tour = () => (
                   <h1>{it.L('Learn from us')}</h1>
                   <p>{it.L('Stay informed. [_1] offers daily market reports and market research, as well as frequent trading webinars.', it.website_name)}</p>
                   <span id='edu-research-tool'></span>
-                  <a className='button' href={it.url_for('/resources')}>
+                  <a className='button' href={it.url_for('resources')}>
                       <img className='responsive' src={it.url_for('images/pages/tour/tour-tools-education.svg')}/>
                   </a>
               </div>

@@ -1,7 +1,14 @@
 import React from 'react';
 
-const Column = ({ id, header, text, url, image, className }) => (
-    <div className={`gr-3 gr-6-m gr-parent ${className || ''}`} id={id}>
+const Column = ({
+    id,
+    header,
+    text,
+    url,
+    image,
+    className = '',
+}) => (
+    <div className={`gr-3 gr-6-m gr-parent ${className}`} id={id}>
         <div className='gr-8 gr-padding-10'>
             <a href={it.url_for(`user/settings/${url}`)}>
                 <img className='responsive' src={it.url_for(`images/pages/settings/${image}.svg`)} />

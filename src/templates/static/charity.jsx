@@ -40,9 +40,9 @@ const Charity = () => (
                     <p>{it.L('[_1]’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities.', it.website_name)}</p>
                 </div>
                 <div className='gallery'>
-                    <img className='responsive' src={it.url_for('/images/pages/charity/charity-1.jpg')} />
-                    <img className='responsive' src={it.url_for('/images/pages/charity/charity-2.jpg')} />
-                    <img className='responsive' src={it.url_for('/images/pages/charity/charity-3.jpg')} />
+                    <img className='responsive' src={it.url_for('images/pages/charity/charity-1.jpg')} />
+                    <img className='responsive' src={it.url_for('images/pages/charity/charity-2.jpg')} />
+                    <img className='responsive' src={it.url_for('images/pages/charity/charity-3.jpg')} />
                 </div>
             </div>
 

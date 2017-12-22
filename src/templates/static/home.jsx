@@ -140,7 +140,7 @@ const Home = () => (
                 <h2 className='center-text'>{it.L('Payment methods')}</h2>
 
                 <div className='gr-12'>
-                    <a href={it.url_for('/cashier/payment_methods')}>
+                    <a href={it.url_for('cashier/payment_methods')}>
                         <div className='gr-row gr-row-align-center'>
                             <PaymentLogo
                                 items ={[

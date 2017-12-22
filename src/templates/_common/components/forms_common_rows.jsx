@@ -185,7 +185,7 @@ export const Tnc = () => (
                 <label htmlFor='tnc'>
                     {it.L(
                         'I have read and agree to the [_1]terms and conditions[_2] of the site.',
-                        `<a target="_blank" href="${it.url_for('/terms-and-conditions')}">`,
+                        `<a target="_blank" href="${it.url_for('terms-and-conditions')}">`,
                         '</a>'
                     )}
                 </label>

@@ -1,6 +1,13 @@
 import React from 'react';
 
-const Column = ({ text, id, className, url, image, header }) => (
+const Column = ({
+    className,
+    header,
+    id,
+    image,
+    text,
+    url,
+}) => (
     <div className={`gr-3 gr-6-m gr-parent ${className}`} id={id}>
         <div className='gr-8 gr-padding-10'>
             <a href={it.url_for(`user/security/${url}`)}>

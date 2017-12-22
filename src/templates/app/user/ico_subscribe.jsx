@@ -69,16 +69,16 @@ const IcoSubscribe = () => (
                                 <button id='btn_submit' type='submit'>{it.L('Place bid')}</button>
                                 <div className='gr-row invisible hint' id='topup_wrapper'>
                                     <div className='gr-8 align-start error-msg'>{it.L('You have insufficient funds in your account.')}</div>
-                                    <div className='gr-4 align-end'><a href={`${it.url_for('/cashier/forwardws')}#deposit`}>{it.L('Top up in cashier')}</a></div>
+                                    <div className='gr-4 align-end'><a href={`${it.url_for('cashier/forwardws')}#deposit`}>{it.L('Top up in cashier')}</a></div>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            
+
             <SeparatorLine show_mobile invisible className='gr-padding-20' />
-            
+
             <div id='ico_bids'>
                 <div className='gr-row'>
                     <h1 className='gr-7 gr-12-m gr-order-2-m'>{it.L('[_1] ICO Auction Bids', it.website_name)}</h1>
@@ -130,7 +130,7 @@ const IcoSubscribe = () => (
                 </div>
             </a>
         </div>
-    
+
         <div className='invisible' id='ico_professional_message'>
             <p>{it.L('Please confirm that you are a [_1]professional trader[_2] to proceed.', `<a href="${it.url_for('user/settings/professional')}">`, '</a>')}</p>
         </div>
@@ -161,7 +161,7 @@ const IcoSubscribe = () => (
         <div className='invisible' id='feature_not_allowed'>
             <p className='center-text notice-msg'>{it.L('This feature is not available in your jurisdiction.')}</p>
         </div>
-        
+
         <div id='cancel_bid_confirmation' className='lightbox invisible'>
             <div className='gr-padding-30 gr-gutter'>
                 <div className='gr-gutter'>

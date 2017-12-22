@@ -83,7 +83,7 @@ const InnerContent = () => {
     const content = it.layout === 'get_started'  ?
             <GetStarted /> : CONTENT_PLACEHOLDER;
 
-    if(it.layout) {
+    if (it.layout) {
         return (
             <WithLayout>
                 {content}
@@ -94,7 +94,7 @@ const InnerContent = () => {
 };
 
 const Layout = () => {
-    if(it.is_pjax_request) {
+    if (it.is_pjax_request) {
         return <InnerContent />;
     }
     return (

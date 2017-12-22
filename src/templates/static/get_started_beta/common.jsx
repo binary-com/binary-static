@@ -16,7 +16,7 @@ export const HeaderSecondary = ({header}) => (
 );
 
 export const ListStrong = ({ header, text }) => (
-    <li><strong>{header}</strong><br/>{text}</li>
+    <li><strong>{header}</strong><br />{text}</li>
 );
 
 export const BoxText = ({ text, text_two }) => (

@@ -103,7 +103,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <SeparatorLine no_wrapper/>
+                    <SeparatorLine no_wrapper />
                 </div>
             </div>
 
@@ -120,11 +120,11 @@ const Home = () => {
                 </div>
 
                 <div className='gr-padding-30 center-text'>
-                    <a className='button' href={it.url_for('/multi_barriers_trading')}>
+                    <a className='button' href={it.url_for('multi_barriers_trading')}>
                         <span>{it.L('Try our trading page')}</span>
                     </a>
                 </div>
-                <SeparatorLine no_wrapper/>
+                <SeparatorLine no_wrapper />
             </div>
 
             <div className='container gr-padding-10 center-text'>
@@ -214,7 +214,7 @@ const Home = () => {
                 <h2 className='gr-padding-10'>{it.L('FX Bloggers, Mentors & Gurus')}</h2>
                 <p>{it.L('Join our affiliate program to earn income by leveraging your hard-earned network of contact')}</p>
                 <div className='gr-padding-30'>
-                    <a className='button' href={it.url_for('/affiliate/signup-jp')}>
+                    <a className='button' href={it.url_for('affiliate/signup-jp')}>
                         <span>{it.L('Join now')}</span>
                     </a>
                 </div>

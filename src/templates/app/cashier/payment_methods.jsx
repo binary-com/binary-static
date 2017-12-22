@@ -26,7 +26,7 @@ const Row = ({
     return (
         <div className={`gr-row gr-padding-10 ${is_header ? 'table-header' : 'table-body' }`}>
             <div className='gr-2 gr-6-m'>
-                {logo ?
+                { logo ?
                     <img src={it.url_for(`images/pages/home-beta/payment/${  logo  }.svg`)} />
                     : method
                 }
@@ -40,16 +40,13 @@ const Row = ({
             </div>
             <div className='gr-3 gr-hide-m'>
                 { times.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
-                {is_header ? '*' : ''}
+                { is_header ? '*' : '' }
             </div>
         </div>
     );
 };
 
-const Section = ({
-    title,
-    withdrawal,
-}) => (
+const Section = ({ title, withdrawal }) => (
     <React.Fragment>
         <div className='gr-row gr-padding-10'>
             <div className='gr-12'>

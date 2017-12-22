@@ -1,6 +1,6 @@
 import React from 'react';
-import Loading from '../../../_common/components/loading.jsx';
 import ProfessionalClient from '../../_includes/professional_client.jsx';
+import Loading from '../../../_common/components/loading.jsx';
 import { SubmitButton } from '../../../_common/components/forms.jsx';
 
 const Professional = () => (
@@ -9,11 +9,11 @@ const Professional = () => (
             <h1>{it.L('Professional Trader')}</h1>
 
             <div id='loading'>
-                <Loading/>
+                <Loading />
             </div>
 
             <form className='form gr-padding-10 invisible' id='frm_professional'>
-                <ProfessionalClient/>
+                <ProfessionalClient />
 
                 <SubmitButton msg_id='form_message' type='submit' text={it.L('Submit')} />
             </form>

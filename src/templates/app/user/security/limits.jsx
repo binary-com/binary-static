@@ -3,9 +3,9 @@ import { Table } from '../../../_common/components/elements.jsx';
 
 const Limits = () => {
     const data_balloon = `<a href="javascript:;" data-balloon-length="xlarge" class='no-underline' data-balloon="%"><img src="${it.url_for('images/common/question_1.png')}"></a>`;
-    const balloonReplace = (txt, balloonTxt) => 
-        it.dangreouslyRenderHtml(it.L(txt) + data_balloon.replace('%', it.L(balloonTxt)));
-        
+    const balloonReplace = (txt, balloon_txt) =>
+        it.dangreouslyRenderHtml(it.L(txt) + data_balloon.replace('%', it.L(balloon_txt)));
+
     const open_position = balloonReplace(
         'Maximum number of open positions',
         'Represents the maximum number of outstanding contracts in your portfolio. Each line in your portfolio counts for one open position. Once the maximum is reached, you will not be able to open new positions without closing an existing position first.'
@@ -26,7 +26,7 @@ const Limits = () => {
         'Maximum daily turnover',
         'Represents the maximum volume of contracts that you may purchase in any given trading day.'
     );
-    
+
     return (
         <React.Fragment>
             <div id='limits-container' className='gr-12 gr-padding-10'>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/forms.jsx';
 import Loading from '../../../_common/components/loading.jsx';
+import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/forms.jsx';
 
 const SelfExclusion = () => (
     <React.Fragment>
@@ -15,7 +15,9 @@ const SelfExclusion = () => (
 
         <p id='msg_error' className='center-text notice-msg invisible'></p>
 
-        <div id='loading'><Loading /></div>
+        <div id='loading'>
+            <Loading />
+        </div>
 
         <form id='frm_self_exclusion' className='invisible'>
             <Fieldset>

@@ -1,7 +1,13 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-const FileSelector = ({ heading, allowed_documents, instructions, accepted_documents, type }) => (
+const FileSelector = ({
+    heading,
+    allowed_documents,
+    instructions,
+    accepted_documents,
+    type,
+}) => (
     <div className='gr-row gr-12'>
         <fieldset>
             <div className='gr-padding-30 gr-gutter-left gr-gutter-right'>
@@ -10,13 +16,13 @@ const FileSelector = ({ heading, allowed_documents, instructions, accepted_docum
                     <div className='gr-7 gr-12-m'>
                         <strong>{it.L('We accept')}:</strong>
                         <ul className='bullet'>
-                            {allowed_documents.map((document, i) => (
+                            { allowed_documents.map((document, i) => (
                                 <li key={i}>{document}</li>
                             ))}
                         </ul>
                         <strong>{it.L('Requirements')}:</strong>
                         <ul className='bullet'>
-                            {instructions.map((instruction, i) => (
+                            { instructions.map((instruction, i) => (
                                 <li key={i}>{instruction}</li>
                             ))}
                         </ul>
@@ -27,13 +33,13 @@ const FileSelector = ({ heading, allowed_documents, instructions, accepted_docum
                     <div className='gr-5 gr-12-m'>
                         <p className='font-s'>{it.L('Submit one of the documents below')}:</p>
                         <div className='files'>
-                            {accepted_documents.map((document, i) => {
+                            { accepted_documents.map((document, i) => {
                                 const j = i + 1;
                                 return (
                                     <React.Fragment key={i}>
                                         <h3>{document.name}</h3>
                                         <div className='fields'>
-                                            {type === 'poi' && (
+                                            { type === 'poi' && (
                                                 <React.Fragment>
                                                     <div className='gr-row form-row center-text-m'>
                                                         <div className='gr-4 gr-12-m'>
@@ -63,7 +69,7 @@ const FileSelector = ({ heading, allowed_documents, instructions, accepted_docum
                                                     </div>
                                                 </React.Fragment>
                                             )}
-                                            {type === 'poa' && (
+                                            { type === 'poa' && (
                                                 <div className='gr-row form-row gr-centered'>
                                                     <div className='gr-12'>
                                                         <input id={`add_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />

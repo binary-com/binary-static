@@ -8,14 +8,14 @@ const SignupTour = ({
             <div className='client_logged_out invisible fill-bg-color gr-gutter'>
                 <p className='gr-padding-20 no-margin gr-gutter center-text'>
                     <a href={it.url_for(is_jp ? 'home-jp' : '/') }>{it.L('Try it now')}</a>
-                    <br/>
+                    <br />
                     {it.L('No risk, $10K virtual money account')}
                 </p>
             </div>
             <div className='fill-bg-color gr-gutter'>
                 <p className='gr-padding-20 gr-gutter center-text'>
                     {it.L('Want to learn more?')}
-                    <br/>
+                    <br />
                     <a href={it.url_for(`/tour${is_jp ? '-jp' : ''}`)}>{it.L('View the Tour')}</a>
                 </p>
             </div>

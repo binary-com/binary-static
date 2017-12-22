@@ -26,7 +26,7 @@ const Withdraw = () => (
             <input id='id123-control22598118' name='control22598118' type='hidden' />
             <input id='id123-control22598060' name='control22598060' type='hidden' />
             <button type='submit' style={{marginLeft: '16px', marginTop: '-5px'}}>送信</button>
-	</form>
+	    </form>
     </div>
 );
 
