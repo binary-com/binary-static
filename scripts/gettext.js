@@ -53,7 +53,7 @@ const createGettextInstance = () => {
         gt.addTranslations(locale, 'messages', parsed);
         process.stdout.write(color.cyan('.'));
     });
-    process.stdout.write(color.cyan(' Done'));
+    process.stdout.write(color.cyan(' ✓ Done'));
     process.stdout.write(color.blackBright(`  (${(Date.now() - start).toLocaleString()} ms)\n`));
 
     const not_translated = [];

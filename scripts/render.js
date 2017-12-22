@@ -30,6 +30,7 @@ const renderComponent = (context, path) => {
 };
 
 const color                = require('cli-color');
+const Spinner              = require('cli-spinner').Spinner;
 const program              = require('commander');
 const Crypto               = require('crypto');
 const fs                   = require('fs');
@@ -263,7 +264,9 @@ createDirectories();
         Gettext.getInstance(); // initialize before starting the compilation
 
         const start = Date.now();
-        process.stdout.write(color.green(`Compiling ${count} page${count > 1 ? 's' : ''} ... `));
+        const spinner = new Spinner(color.green(`Compiling ${count} page${count > 1 ? 's' : ''} ... %s`));
+        spinner.setSpinnerString(18);
+        spinner.start();
 
         if (count <= 10 || program.verbose) {
             console.log();
@@ -278,7 +281,8 @@ createDirectories();
             pages_filtered.map(compile)
         );
 
-        process.stdout.write(color.green(' Done'));
+        spinner.stop();
+        process.stdout.write(color.green('\b✓ Done'));
         process.stdout.write(color.blackBright(`  (${(Date.now() - start).toLocaleString()} ms)\n`));
 
         if (program.addTranslations) {
