@@ -1,23 +1,26 @@
-/* eslint-disable import/no-extraneous-dependencies, no-underscore-dangle, no-undef */
 const fs      = require('fs');
 const { po }  = require('gettext-parser');
 const Gettext = require('node-gettext');
 const Path    = require('path');
 const common  = require('./common');
 
-Gettext.prototype.dnpgettext = function(domain, msgctxt, msgid, msgidPlural, count) {
-    let defaultTranslation = msgid;
+Gettext.prototype.dnpgettext = function(domain, msg_txt, msg_id, msg_id_plural, count) {
+    let default_translation = msg_id;
     let index;
 
     if (!isNaN(count) && count !== 1) {
-        defaultTranslation = msgidPlural || msgid;
+        default_translation = msg_id_plural || msg_id;
     }
 
-    const translation = this._getTranslation(domain, msgctxt || '', msgid);
+    /* eslint-disable no-underscore-dangle */
+    const translation = this._getTranslation(domain, msg_txt || '', msg_id);
+    /* eslint-enable no-underscore-dangle */
 
     if (translation) {
         if (typeof count === 'number') {
+            /* eslint-disable no-undef */
             const pluralsFunc = plurals[Gettext.getLanguageCode(this.locale)].pluralsFunc;
+            /* eslint-enable no-undef */
             index = pluralsFunc(count);
             if (typeof index === 'boolean') {
                 index = index ? 1 : 0;
@@ -26,12 +29,12 @@ Gettext.prototype.dnpgettext = function(domain, msgctxt, msgid, msgidPlural, cou
             index = 0;
         }
 
-        return translation.msgstr[index] || defaultTranslation;
+        return translation.msgstr[index] || default_translation;
     }
     // else
-    this.emit('no-translation', msgid); // changed default implementation here!
+    this.emit('no-translation', msg_id); // changed default implementation here!
 
-    return defaultTranslation;
+    return default_translation;
 };
 
 const createGettextInstance = () => {
