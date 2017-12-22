@@ -48,15 +48,6 @@ program
     .option('-t, --add-translations', 'Update messages.pot with new translations')
     .parse(process.argv);
 
-// TODO: to be removed
-if (!program.path) {
-    program.outputHelp(str => {
-        console.error('  ERROR: --path is missing'.red);
-        console.error(str.red);
-        process.exit(0);
-    });
-}
-
 /** *********************************************
  * Common functions
  */

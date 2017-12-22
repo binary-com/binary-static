@@ -4,7 +4,7 @@ var CircularDependencyPlugin = require('circular-dependency-plugin');
 // var UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin')["default"];
 
 module.exports = function (grunt) {
-    var isProduction = grunt.cli.tasks[0] === 'release',
+    var isProduction = grunt.cli.tasks[0] === 'release' || grunt.cli.tasks[0] === 'release_test', // TODO: remove release_test
         plugins = [
             new CircularDependencyPlugin({
                 failOnError: true,

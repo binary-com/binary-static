@@ -24,16 +24,20 @@ exports.print = (text) => {
 };
 
 
-const exitsAsync = util.promisify(fs.exists);
-const mkdirAsync = util.promisify(fs.mkdir);
+const existsAsync = util.promisify(fs.exists);
+const mkdirAsync  = util.promisify(fs.mkdir);
 
 const ensureDirectoryExistence = async (filePath) => {
-    const dirname = Path.dirname(filePath);
-    if (await exitsAsync(dirname)) {
-        return;
+    try {
+        const dirname = Path.dirname(filePath);
+        if (await existsAsync(dirname)) {
+            return;
+        }
+        await ensureDirectoryExistence(dirname);
+        await mkdirAsync(dirname);
+    } catch (e) {
+        //
     }
-    await ensureDirectoryExistence(dirname);
-    await mkdirAsync(dirname);
 };
 
 const readFileAsync = util.promisify(fs.readFile);

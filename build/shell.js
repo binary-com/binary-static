@@ -29,6 +29,12 @@ module.exports = function (grunt) {
                 stdout: true
             }
         },
+        compile_jsx: {
+            command: global.compileJsxCommand(),
+            options: {
+                stdout: true
+            }
+        },
         sitemap: {
             command: `cd ${process.cwd()}/scripts && carton exec perl sitemap.pl`,
             options: {
@@ -37,6 +43,12 @@ module.exports = function (grunt) {
         },
         trigger_tests: {
             command: grunt.option('staging') ? 'grunt gh-pages:trigger_tests --staging' : prompt('Tests are triggered only when releasing to Staging.', 'warn'),
+            options: {
+                stdout: true
+            }
+        },
+        make_cname_test: { // TODO: to be removed
+            command: `cd ${process.cwd()} && printf "${global.release_config.test.CNAME}\n" > dist/CNAME`,
             options: {
                 stdout: true
             }
