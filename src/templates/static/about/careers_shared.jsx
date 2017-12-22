@@ -2,8 +2,6 @@ import React from 'react';
 import { FillBox } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-const HrLink = '<a href="mailto:hr@binary.com" rel="nofollow">hr@binary.com</a>';
-
 const CareersShared = () => (
     <React.Fragment>
         <div className='gr-padding-30'>
@@ -21,7 +19,7 @@ const CareersShared = () => (
             <p>{it.L('If we\'re happy with your results, we\'ll contact you for an interview and then do background and reference checks.')}</p>
             <p>{it.L('If all that sounds a bit daunting, you\'re right. But it\'s how we make sure we get the best people for our team.')}</p>
 
-            <p className='center-text'>{it.L('To apply, please submit your CV and a cover letter to [_1].', HrLink)}</p>
+            <p className='center-text'>{it.L('To apply, please submit your CV and a cover letter to [_1].', '<a href="mailto:hr@binary.com" rel="nofollow">hr@binary.com</a>')}</p>
         </div>
     </React.Fragment>
 );

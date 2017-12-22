@@ -1,6 +1,6 @@
 import React from 'react';
-import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 import Title from '../_common/components/title.jsx';
+import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 import Favicons from '../_common/includes/favicons.jsx';
 
 
@@ -43,29 +43,29 @@ const GraduateProgram = () => {
             <body>
             <div className='navbar-fixed-top' role='navigation' id='navigation'>
                 <div className='container'>
-                <div className='navbar-header'>
-                    <span id='toggle-menu' href='button' className='navbar-toggle'></span>
-                    <a className='navbar-brand logo' href={it.url_for('home')}></a>
-                </div>
-                <div className='navbar-collapse'>
-                    <ul className='nav navbar-nav'>
-                        <li className='invisible'>
-                            <a href='#page-top'></a>
-                        </li>
-                        <li>
-                            <a className='page-scroll' href='#who-we-are'>{('Who we are')}</a>
-                        </li>
-                        <li>
-                            <a className='page-scroll' href='#application-process'>{('Application process')}</a>
-                        </li>
-                        <li>
-                            <a className='page-scroll' href='#teams'>{('Teams')}</a>
-                        </li>
-                        <li>
-                            <a className='page-scroll' href='#programs'>{('Programs')}</a>
-                        </li>
-                    </ul>
-                </div>
+                    <div className='navbar-header'>
+                        <span id='toggle-menu' href='button' className='navbar-toggle'></span>
+                        <a className='navbar-brand logo' href={it.url_for('home')}></a>
+                    </div>
+                    <div className='navbar-collapse'>
+                        <ul className='nav navbar-nav'>
+                            <li className='invisible'>
+                                <a href='#page-top'></a>
+                            </li>
+                            <li>
+                                <a className='page-scroll' href='#who-we-are'>{('Who we are')}</a>
+                            </li>
+                            <li>
+                                <a className='page-scroll' href='#application-process'>{('Application process')}</a>
+                            </li>
+                            <li>
+                                <a className='page-scroll' href='#teams'>{('Teams')}</a>
+                            </li>
+                            <li>
+                                <a className='page-scroll' href='#programs'>{('Programs')}</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

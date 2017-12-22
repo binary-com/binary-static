@@ -14,10 +14,10 @@ export const Li = ({
 
     return (
         <li id={id} className={className}>
-            {header && (
+            { header && (
                 text ? <strong>{header}</strong> : <h3>{header}</h3>
             )}
-            {href ?
+            { href ?
                 <a
                     href={`${href}${param}`}
                     rel={/^http/.test(href) ? 'noopener noreferrer' : undefined}
@@ -31,13 +31,9 @@ export const Li = ({
     );
 };
 
-export const List = ({
-    items,
-    id,
-    className,
-}) => (
+export const List = ({ items, id, className }) => (
     <React.Fragment>
-        {items.length ?
+        { items.length ?
           <ul id={id} className={className}>
               {items.map((item, idx) => <Li key={idx} {...item} />)}
           </ul>
@@ -67,7 +63,7 @@ export const InfoBox = ({
                 <div className='fill-bg-color gr-padding-10'>
                     <h3 className='gr-gutter no-margin'>{header}</h3>
                 </div>
-                {sub_header ?
+                { sub_header ?
                     <React.Fragment>
                         <div className='gr-gutter gr-padding-10'>{sub_header}</div>
                         <p className='gr-gutter gr-parent gr-padding-10 no-margin'>
@@ -114,10 +110,10 @@ export const FillBox = ({
         <div className={[classes1, className].join(' ')}>
             <div className={classes2}>
                 <div className='inline-flex center-align gr-gutter'>
-                    {image &&
+                    { image &&
                         <img className='half-sized-picture gr-gutter-right' src={it.url_for(image)} />
                     }
-                    {href ?
+                    { href ?
                         <a
                             href={href}
                             target={target || undefined}
@@ -139,11 +135,7 @@ export const FillBox = ({
     );
 };
 
-export const Select = ({
-    id,
-    className,
-    options,
-}) => (
+export const Select = ({ id, className, options }) => (
     <select id={id} className={className} >
         {options.map((option, idx) => (
             <option key={idx} value={option.value || undefined} selected={!!option.selected} >
@@ -153,10 +145,7 @@ export const Select = ({
     </select>
 );
 
-export const Tbody = ({
-    trs,
-    tbody_id,
-}) => (
+export const Tbody = ({ trs, tbody_id }) => (
     <tbody id={tbody_id}>
         {trs && trs.map((tr, inx_tr) => (
             <tr key={inx_tr}>
@@ -186,7 +175,7 @@ export const Table = ({
         <table id={id} className={className}>
             { data.thead &&
                 <thead>
-                    {data.thead.map((row, tr_inx) => (
+                    { data.thead.map((row, tr_inx) => (
                         <tr key={tr_inx}>
                             {row.map((th, th_inx) => (
                                 <th key={th_inx} className={th.className} >{th.text}</th>
@@ -201,7 +190,7 @@ export const Table = ({
             />
             { data.tfoot &&
                 <tfoot>
-                    {data.tfoot.map((row, tr_inx) => (
+                    { data.tfoot.map((row, tr_inx) => (
                         <tr key={tr_inx}>
                             {row.map((th, th_inx) => (
                                 <th

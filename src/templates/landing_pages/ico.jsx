@@ -158,7 +158,7 @@ const Ico = () => {
                                         <p className='intro-subtext'>{it.L('See your winning bids and claim your tokens')}</p>
                                     </div>
                                     <div className='status-toggle status-started' id='countdown'>
-                                        {items.map((item, idx) => (
+                                        { items.map((item, idx) => (
                                             <span key={idx} className='cd-item' id={`cd_${item.id}`}>
                                                     <span className='arcs'>
                                                         <span className='arc_q'></span>

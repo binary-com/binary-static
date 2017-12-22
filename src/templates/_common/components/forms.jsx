@@ -1,6 +1,11 @@
 import React from 'react';
 
-export const Fieldset = ({children, legend, id, className}) => (
+export const Fieldset = ({
+    children,
+    legend,
+    id,
+    className,
+}) => (
     <fieldset id={id} className={className} >
         {legend &&
             <legend>{legend}</legend>
@@ -109,11 +114,11 @@ export const SubmitButton = ({
     custom_btn_id,
 }) => {
     const content = <React.Fragment>
-        {!no_error &&
+        { !no_error &&
             <p id={msg_id || 'msg_form'} className={`${is_centered ? 'center-text' : ''} error-msg no-margin invisible`}></p>
         }
         <div className='gr-padding-10'>
-            {custom_btn_text &&
+            { custom_btn_text &&
                 <a className={`button ${custom_btn_class||''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
                     <span className='button'>{custom_btn_text}</span>
                 </a>
@@ -132,7 +137,7 @@ export const SubmitButton = ({
     if(!no_wrapper) {
         return (
             <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className||''}`} id={id}>
-                {!is_centered ?
+                { !is_centered ?
                     <div className={`${!is_left_align? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
                         {content}
                     </div> :
