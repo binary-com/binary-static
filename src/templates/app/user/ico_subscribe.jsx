@@ -170,7 +170,7 @@ const IcoSubscribe = () => (
                         <p className='gr-padding-10 gr-child'>{it.L('Are you sure you want to cancel the bid?')}</p>
                         <form id='frm_confirm'>
                             <div className='center-text gr-centered'>
-                                <button className='button' type='submit'>{it.L('Yes, cancel my bid')}</button>
+                                <button className='button' type='submit'>{it.L('Yes, cancel my bid')}</button>&nbsp;
                                 <a className='button-secondary' id='cancel' href='javascript:;'><span>{it.L('No, return to the ICO auction page')}</span></a>
                             </div>
                         </form>
