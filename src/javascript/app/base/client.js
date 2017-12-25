@@ -405,11 +405,9 @@ const Client = (() => {
 
     const hasCostaricaAccount = () => getAllLoginids().find(loginid => /^CR/.test(loginid));
 
-    // const canOpenICO = () =>
-    //     /malta|iom/.test(State.getResponse('landing_company.financial_company.shortcode')) ||
-    //     /malta|iom/.test(State.getResponse('landing_company.gaming_company.shortcode'));
-
-    const canOpenICO = () => false;
+    const canOpenICO = () =>
+        /malta|iom/.test(State.getResponse('landing_company.financial_company.shortcode')) ||
+        /malta|iom/.test(State.getResponse('landing_company.gaming_company.shortcode'));
 
     const canRequestProfessional = () => {
         const residence = get('residence');
