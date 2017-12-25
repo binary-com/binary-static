@@ -12,7 +12,13 @@ const AccountType = (() => {
             url_ico  = `${urlFor('new_account/realws')  }#ico`;
             url_real = urlFor(Client.getUpgradeInfo(response_lc).upgrade_link);
             container = document.getElementById('account_type_container');
-            BinaryPjax.load(url_real);
+
+            if(false && container) {
+                container.setVisibility(1);
+                onSubmit();
+            } else {
+                BinaryPjax.load(url_real);
+            }
         });
 
         const onSubmit = () => {
