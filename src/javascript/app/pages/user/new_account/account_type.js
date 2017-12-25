@@ -13,7 +13,7 @@ const AccountType = (() => {
             url_real = urlFor(Client.getUpgradeInfo(response_lc).upgrade_link);
             container = document.getElementById('account_type_container');
 
-            if(Client.canOpenICO() && container) {
+            if(false && container) {
                 container.setVisibility(1);
                 onSubmit();
             } else {

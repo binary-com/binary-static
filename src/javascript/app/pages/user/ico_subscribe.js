@@ -218,10 +218,10 @@ const ICOSubscribe = (() => {
                 }
 
                 // Check if user has account_opening_reason
-                if(!State.getResponse('get_settings.account_opening_reason')
-                    && !Client.isAccountOfType('virtual')) {
-                    askForAccountOpeningReason();
-                }
+                // if(!State.getResponse('get_settings.account_opening_reason')
+                //     && !Client.isAccountOfType('virtual')) {
+                //     askForAccountOpeningReason();
+                // }
 
                 // Show message to client.
                 document.getElementById(message_show).setVisibility(1);
@@ -307,10 +307,10 @@ const ICOSubscribe = (() => {
         return req;
     };
 
-    const askForAccountOpeningReason = () => {
-        const el_to_show = document.getElementById('row_account_opening_reason');
-        el_to_show.setVisibility(1);
-    };
+    // const askForAccountOpeningReason = () => {
+    //     const el_to_show = document.getElementById('row_account_opening_reason');
+    //     el_to_show.setVisibility(1);
+    // };
 
     const updateMinimumBid = (ico_status) => {
         const status      = ico_status.ico_status || {};
