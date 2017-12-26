@@ -216,8 +216,6 @@ sub _texts {
         push @texts, localize('Invalid email address');
         push @texts, localize('Thank you for signing up! Please check your email to complete the registration process.');
         #strings for real account opening page
-        push @texts, localize('ICO Account Opening');
-        push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
         push @texts, localize('Minimum of [_1] characters required.');
         push @texts, localize('Please confirm that you are not a politically exposed person.');
@@ -539,7 +537,6 @@ sub _texts {
         push @texts, localize('Pending');
         push @texts, localize('The ICO is currently unavailable.');
         push @texts, localize('Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance.');
-        push @texts, localize('Please select a value for account_opening_reason.');
         push @texts, localize('Minimum bid');
         push @texts, localize('The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018.');
 

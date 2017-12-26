@@ -1,4 +1,3 @@
-const moment                = require('moment');
 const ICOPortfolio          = require('./ico_portfolio');
 const BinaryPjax            = require('../../base/binary_pjax');
 const Client                = require('../../base/client');
@@ -12,8 +11,6 @@ const getLanguage           = require('../../../_common/language').get;
 const localize              = require('../../../_common/localize').localize;
 const State                 = require('../../../_common/storage').State;
 const Url                   = require('../../../_common/url');
-const urlFor                = require('../../../_common/url').urlFor;
-const getPropertyValue      = require('../../../_common/utility').getPropertyValue;
 
 const ICOSubscribe = (() => {
     const form_id = '#frm_ico_bid';
@@ -217,20 +214,8 @@ const ICOSubscribe = (() => {
                     message_show = 'message_iom';
                 }
 
-                // Check if user has account_opening_reason
-                // if(!State.getResponse('get_settings.account_opening_reason')
-                //     && !Client.isAccountOfType('virtual')) {
-                //     askForAccountOpeningReason();
-                // }
-
                 // Show message to client.
                 document.getElementById(message_show).setVisibility(1);
-
-                const button_new_account = document.getElementById('ico_new_account');
-                if (button_new_account) {
-                    button_new_account.removeEventListener('click', newAccountOnClick);
-                    button_new_account.addEventListener('click', newAccountOnClick);
-                }
             }
         }
         const el_to_show = document.getElementById(to_show);
@@ -239,78 +224,6 @@ const ICOSubscribe = (() => {
         }
         return to_show;
     };
-
-    const newAccountOnClick = () => {
-        const el_account_opening_reason = document.getElementById('account_opening_reason');
-        const el_error = document.getElementById('new_account_error');
-        if (Client.hasAccountType('real')) {
-            BinarySocket.wait('get_settings').then((response) => {
-                const req = populateReq(response.get_settings);
-
-                // Check if client has account_opening_reason set.
-                if($(el_account_opening_reason).is(':visible') && !req.account_opening_reason) {
-                    const value = el_account_opening_reason.value;
-                    if(value) {
-                        req.account_opening_reason = value;
-                    } else {
-                        el_error.setVisibility(1).textContent = localize('Please select a value for account_opening_reason.');
-                        return;
-                    }
-                }
-
-                BinarySocket.send(req).then((response_new_account_real) => {
-                    if (response_new_account_real.error) {
-                        if (el_error) {
-                            el_error.setVisibility(1).textContent = response_new_account_real.error.message;
-                        }
-                    } else {
-                        localStorage.setItem('is_new_account', 1);
-                        Client.processNewAccount({
-                            email       : Client.get('email'),
-                            loginid     : response_new_account_real.new_account_real.client_id,
-                            token       : response_new_account_real.new_account_real.oauth_token,
-                            redirect_url: urlFor('user/set-currency'),
-                            is_ico_only : getPropertyValue(response_new_account_real, ['echo_req', 'account_type']) === 'ico',
-                        });
-                    }
-                });
-            });
-        } else {
-            BinaryPjax.load(urlFor('new_account/realws') + (Client.canUpgradeVirtualToReal(State.getResponse('landing_company')) ? '' : '#ico'));
-        }
-    };
-
-    const populateReq = (get_settings) => {
-        const dob = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
-        const req = {
-            new_account_real      : 1,
-            account_type          : 'ico',
-            date_of_birth         : dob,
-            salutation            : get_settings.salutation,
-            first_name            : get_settings.first_name,
-            last_name             : get_settings.last_name,
-            address_line_1        : get_settings.address_line_1,
-            address_line_2        : get_settings.address_line_2,
-            address_city          : get_settings.address_city,
-            address_state         : get_settings.address_state,
-            address_postcode      : get_settings.address_postcode,
-            phone                 : get_settings.phone,
-            account_opening_reason: get_settings.account_opening_reason,
-            residence             : Client.get('residence'),
-        };
-        if (get_settings.tax_identification_number) {
-            req.tax_identification_number = get_settings.tax_identification_number;
-        }
-        if (get_settings.tax_residence) {
-            req.tax_residence = get_settings.tax_residence;
-        }
-        return req;
-    };
-
-    // const askForAccountOpeningReason = () => {
-    //     const el_to_show = document.getElementById('row_account_opening_reason');
-    //     el_to_show.setVisibility(1);
-    // };
 
     const updateMinimumBid = (ico_status) => {
         const status      = ico_status.ico_status || {};

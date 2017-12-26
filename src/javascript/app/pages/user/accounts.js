@@ -29,7 +29,7 @@ const Accounts = (() => {
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
-            const upgrade_info  = Client.getUpgradeInfo(landing_company, undefined, is_ico_only);
+            const upgrade_info  = Client.getUpgradeInfo(landing_company);
             if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
@@ -194,7 +194,6 @@ const Accounts = (() => {
                 loginid     : new_account.client_id,
                 token       : new_account.oauth_token,
                 redirect_url: urlFor('user/set-currency'),
-                is_ico_only : getPropertyValue(response, ['echo_req', 'account_type']) === 'ico',
             });
         }
     };
@@ -209,7 +208,7 @@ const Accounts = (() => {
         const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
         const req          = [
             { request_field: 'new_account_real',       value: 1 },
-            { request_field: 'account_type',           value: is_ico_only ? 'ico' : 'default' },
+            { request_field: 'account_type',           value: 'default' },
             { request_field: 'date_of_birth',          value: dob },
             { request_field: 'salutation',             value: get_settings.salutation },
             { request_field: 'first_name',             value: get_settings.first_name },

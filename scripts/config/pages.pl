@@ -30,7 +30,6 @@ sub all_pages {
         ['new_account/knowledge_testws',       'app/japan/knowledge_test',                  'default',    'Real Money Account Opening',     'NOT-ja,en'],
         ['new_account/maltainvestws',          'app/new_account/financial',                 'default',    'Financial Account Opening'],
         ['new_account/realws',                 'app/new_account/real',                      'default',    'Real Money Account Opening'],
-        ['new_account/account_type',           'app/new_account/account_type',              'default',    'Account Type Selection',         'ja'],
         ['new_account/virtualws',              'app/new_account/virtual',                   'default',    'Create New Account'],
         ['new_account/landing_page',           'app/new_account/landing_page',              'default',    'Welcome to Binary.com',          'NOT-ja,en'],
 

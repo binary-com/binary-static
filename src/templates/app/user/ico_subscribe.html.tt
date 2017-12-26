@@ -142,7 +142,7 @@
 </div>
 
 <div class="invisible" id="ico_new_account_message">
-    <p id="message_common" class="invisible">[% l("This feature is only available to CR clients. Please sign up to proceed.") %]</p>
+    <p id="message_common" class="invisible">[% l("This feature is only available to CR clients.") %]</p>
     <p id="message_gaming" class="invisible">[% l("The Binary.com token sale has ended.") %]</p>
     <p id="message_financial" class="invisible">[% l("The Binary.com token sale has ended.") %]</p>
     <p id="message_iom" class="invisible">[% l("The Binary.com token sale has ended.") %]</p>
