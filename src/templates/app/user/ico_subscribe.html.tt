@@ -126,9 +126,6 @@
     </a>
 </div>
 
-<div class="invisible" id="ico_professional_message">
-    <p>[% l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") %]</p>
-</div>
 <div class="invisible" id="ico_virtual_message">
     <p>[% l("The Binary.com token sale has ended.") %]</p>
 </div>

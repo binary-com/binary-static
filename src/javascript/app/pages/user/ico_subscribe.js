@@ -184,13 +184,7 @@ const ICOSubscribe = (() => {
         $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
-            const arr_professional_required_countries = State.getResponse('ico_status.ico_countries_config.professional');
-            if (arr_professional_required_countries && arr_professional_required_countries.indexOf(Client.get('residence')) > -1
-                && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
-                to_show = 'ico_professional_message';
-            } else {
-                to_show = 'ico_subscribe';
-            }
+            to_show = 'ico_subscribe';
         } else if (Client.hasCostaricaAccount()) {
             if(Client.canOpenICO()) {
                 to_show = 'ico_account_message';
