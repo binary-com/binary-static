@@ -73,7 +73,7 @@ const CircleHeader = ({ className, header, text, children }) => {
 
             <div className='circle-wrapper'>
                 <span className='orange-circle'>{circle}</span>
-                <h3>[{header}</h3>
+                <h3>{header}</h3>
             </div>
             <p className='no-margin'>{text}</p>
             {children}

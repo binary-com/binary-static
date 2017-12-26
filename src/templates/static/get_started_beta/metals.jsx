@@ -66,7 +66,7 @@ const Metals = () => (
                     <p>{it.L('When you are trading metals, you can choose to open a buy position (if you think that the price of an asset will rise) or a sell position (if you think that the price of an asset will fall).')}</p>
 
                     <BuySellImage />
-    
+
                     <p>{it.L('Let\'s use the XAU/USD (Gold vs US dollar) metal pair as an example.')}</p>
                     <p>{it.L('If you decide to buy or \'go long\' on the XAU/USD, you will profit if the price of the XAU/USD rises, and incur losses if the price falls.')}</p>
                     <p>{it.L('If you decide to sell or \'go short\' on XAU/USD, you will profit if the price of the XAU/USD falls, and incur losses if the price rises.')}</p>
@@ -121,11 +121,11 @@ const Metals = () => (
                 <Section id='contract-specification' header={it.L('Contract specifications')}>
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                   class: 'gr-padding-10' },
-                            { text: it.L('Description'),              class: 'gr-padding-10' },
-                            { text: it.L('Lot size (Volume = 1.0)'),  class: 'gr-padding-10' },
-                            { text: it.L('Minimum volume'),           class: 'gr-padding-10' },
-                            { text: it.L('Minimum volume increment'), class: 'gr-padding-10' },
+                            { text: it.L('Symbol'),                   className: 'gr-padding-10' },
+                            { text: it.L('Description'),              className: 'gr-padding-10' },
+                            { text: it.L('Lot size (Volume = 1.0)'),  className: 'gr-padding-10' },
+                            { text: it.L('Minimum volume'),           className: 'gr-padding-10' },
+                            { text: it.L('Minimum volume increment'), className: 'gr-padding-10' },
                         ]],
                         tbody: [
                             [{ text: 'XAU/USD' }, { text: it.L('Gold vs US dollar')      }, { text: hundred }, { text: hundredth }, { text: hundredth }],

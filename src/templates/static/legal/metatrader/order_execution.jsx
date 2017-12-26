@@ -6,14 +6,14 @@ const OrderExecution = () => (
 
         <h2>{it.L('A. Introduction')}</h2>
         <p>{it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote Binary (V) Ltd.', it.website_name)}</p>
-        <p>{it.L('Our Order Execution Policy (the \'Policy\') sets out the overview and approach of how [_1] executes orders on behalf of our clients.', it.website_name)}</p>
+        <p>{it.L('Our Order Execution Policy (the "Policy") sets out the overview and approach of how [_1] executes orders on behalf of our clients.', it.website_name)}</p>
         <p>{it.L('The Policy is supplemented by Appendix A which provide further details to our considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy.')}</p>
 
         <h2>{it.L('B. Scope')}</h2>
         <p>{it.L('This Policy applies to retail and professional clients of [_1] dealing in financial products offered by [_1].', it.website_name)}</p>
 
         <h2>{it.L('C. Definition of Best Execution')}</h2>
-        <p>{it.L('Best execution is the requirement to take all sufficient steps to obtain, when executing orders, the best possible result for you taking into account price, costs, speed, likelihood of execution and settlement, size, nature or any other consideration relevant (hereinafter referred to as the \'execution factors\') to the execution of the order.')}</p>
+        <p>{it.L('Best execution is the requirement to take all sufficient steps to obtain, when executing orders, the best possible result for you taking into account price, costs, speed, likelihood of execution and settlement, size, nature or any other consideration relevant (hereinafter referred to as the "execution factors") to the execution of the order.')}</p>
 
         <h2>{it.L('D. Client Instructions')}</h2>
         <p>{it.L('When we accept an order from you to open or close a transaction, or any other specific instructions in relation to your order, we will endeavour to follow your instructions as far as reasonably possible, acting in accordance with our duty of best execution in accordance with your instructions. These specific instructions include, but are not limited to:')}</p>

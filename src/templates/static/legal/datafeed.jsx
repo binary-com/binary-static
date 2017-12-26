@@ -7,10 +7,10 @@ const DataFeed = () => (
 
         <h2>{it.L('Filtering Stray Ticks')}</h2>
         <p>{it.L('Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers.')}</p>
-        <p>{it.L('The filtering algorithm may for example be similar to the \'Bollinger Bands\' volatility system - i.e., short-term volatility bands are determined around the present market value, and ticks that are manifestly outside of such bands are removed.')}</p>
+        <p>{it.L('The filtering algorithm may for example be similar to the "Bollinger Bands" volatility system - i.e., short-term volatility bands are determined around the present market value, and ticks that are manifestly outside of such bands are removed.')}</p>
 
         <h2>{it.L('Smoothing out random noise')}</h2>
-        <p>{it.L('Depending on the quality of the feeds received from our feed providers, our servers might also apply a very short-term smoothing algorithm to the data feed. This smoothing algorithm removes a little of the \'random noise\' surrounding the data feed, and ensures that clients who buy path-dependent contracts (such as the one-touch or barrier-range contracts) will not have their contracts knocked-in or knocked-out by random short-term market noise that does not reflect the true market price.')}</p>
+        <p>{it.L('Depending on the quality of the feeds received from our feed providers, our servers might also apply a very short-term smoothing algorithm to the data feed. This smoothing algorithm removes a little of the "random noise" surrounding the data feed, and ensures that clients who buy path-dependent contracts (such as the one-touch or barrier-range contracts) will not have their contracts knocked-in or knocked-out by random short-term market noise that does not reflect the true market price.')}</p>
 
         <h2>{it.L('Differences with other data feeds')}</h2>
         <p>{it.L('Our data feed may at times differ slightly from other data feeds found on the internet (who may themselves differ between each other). Reasons for differences in feed providers include:')}</p>

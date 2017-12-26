@@ -38,7 +38,7 @@ const Main = () => (
 
     <div className='gr-padding-20'>
         <h2>{it.L('{JAPAN ONLY}Generous Commission Structure')}</h2>
-        <p>{it.L('{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=[_1]>opens and trades a real money account.</a>', `${it.url_for('terms-and-conditions-jp')}#affiliates&section-8'`)}</p>
+        <p>{it.L('{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=[_1]>opens and trades a real money account.</a>', `${it.url_for('terms-and-conditions-jp')}#affiliates&section-8`)}</p>
         </div>
 
         <div className='gr-padding-20'>

@@ -8,7 +8,7 @@ const TermsAndConditions = () => (
         <h2>{it.L('A. Introduction and Scope of Agreement')}</h2>
         <ol>
             <li>{it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website.', it.website_name)}</li>
-            <li>{it.L('You understand that products based on a random number generator (the \'Volatility Indices\') are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments.')}</li>
+            <li>{it.L('You understand that products based on a random number generator (the "Volatility Indices") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments.')}</li>
             <li>{it.L('All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading services described in this Agreement is not suitable for everyone. You acknowledge that the margin trading services described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us.')}</li>
             <li>{it.L('You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks.')}</li>
             <li>{it.L('This Agreement is supplied to you in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. We will not be made responsible for any damage or loss caused by an error, inaccuracy, misunderstanding or misspelling with regards to the translations.')}</li>
@@ -22,7 +22,7 @@ const TermsAndConditions = () => (
         <h2>{it.L('C. Provision of Services')}</h2>
         <ol>
             <li>{it.L('Under no circumstances shall we provide investment advice or recommendation to you or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written information, which we may publish on our website or provide to you in any other manner. We will endeavour to ensure the accuracy and completeness of this written information but it will not constitute investment advice or recommendation provided by us to you.')}</li>
-            <li>{it.L('The provision of the margin trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sublicensable, terminable licence from the third-party system provider/licensor (the \'MT5 Trading Platform\'). You acknowledge that we reserve the right to change the third-party system provider/licensor during the course of providing the margin trading services described in this Agreement to you.')}</li>
+            <li>{it.L('The provision of the margin trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sublicensable, terminable licence from the third-party system provider/licensor (the "MT5 Trading Platform"). You acknowledge that we reserve the right to change the third-party system provider/licensor during the course of providing the margin trading services described in this Agreement to you.')}</li>
             <li>{it.L('The provision of the margin trading services described in this Agreement is not available in the European Union.')}</li>
         </ol>
 
@@ -85,7 +85,7 @@ const TermsAndConditions = () => (
                     </li>
                 </ol>
             </li>
-            <li>{it.L('Accounts with debit balance (i.e. credit exposure to [_1])', it.brand_name)}
+            <li>{it.L('Accounts with debit balance (i.e. credit exposure to [_1])', it.website_name)}
                 <ol>
                     <li>{it.L('The Company does not offer any credit facilities or arrangement to its clients in normal trading circumstances. You acknowledge and agree that you will not be dealing with us on credit, regardless of the amount of your Account Balance and Transactions entered into with us.')}</li>
                     <li>{it.L('Accounts with debit balances are required to settle the full amount immediately by making a payment to us.')}</li>
@@ -130,7 +130,7 @@ const TermsAndConditions = () => (
             <li>{it.L('Stop and Limit Orders')}
                 <ol>
                     <li>{it.L('We may, at our absolute discretion, accept a Stop Order or a Limit Order from you. We may enable other types of Orders (for example, a trailing stop order) for your execution at any point in time.')}</li>
-                    <li>{it.L('You may specify your instruction of a Stop Order or a Limit Order may be applied for a limited duration or for an indefinite period (a \'good till cancelled\' or \'GTC\' Order).')}</li>
+                    <li>{it.L('You may specify your instruction of a Stop Order or a Limit Order may be applied for a limited duration or for an indefinite period (a "good till cancelled" or "GTC" Order).')}</li>
                     <li>{it.L('In the case of a Stop Order, you acknowledge that we will endeavour to open/close a Transaction at the Next Available Price.')}</li>
                     <li>{it.L('In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you.')}</li>
                     <li>{it.L('You may not cancel or amend the level of your Stop and Limit Order prior to the closing of your Transaction once the level has been reached.')}</li>
@@ -145,14 +145,14 @@ const TermsAndConditions = () => (
         <ol>
             <li>{it.L('General Provisions')}
                 <ol>
-                    <li>{it.L('Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account\'s Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \'Margin Requirement\'), and to continuously meet the Margin Requirement.')}</li>
+                    <li>{it.L('Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account\'s Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the "Margin Requirement"), and to continuously meet the Margin Requirement.')}</li>
                     <li>{it.L('Throughout the duration of the Transaction and for as long as the Transaction is open, you are required to maintain a sufficient Account Equity to cover any Margin Requirement. If your Account Equity is less than the Margin Requirement in relation to the open Transaction you wish to create, you have entered into a Margin Call and you are required to fund the shortfall immediately. You may not be able to place an Order to open a Transaction until the shortfall has been funded and there is sufficient Account Equity to cover the Total Margin.')}</li>
                     <li>{it.L('You acknowledge that it is your responsibility to monitor your Account Balance and Margin Requirement and we are not under any obligation to keep you informed (i.e., to make a Margin Call).')}</li>
                 </ol>
             </li>
             <li>{it.L('Margin Requirement and Calculation')}
                 <ol>
-                    <li>{it.L('The Margin Requirement is a percentage of the value of the Open Positions and will continue to fluctuate in accordance with the value of the Open Positions throughout the duration of the relevant contracts (the \'Contract Value\').')}</li>
+                    <li>{it.L('The Margin Requirement is a percentage of the value of the Open Positions and will continue to fluctuate in accordance with the value of the Open Positions throughout the duration of the relevant contracts (the "Contract Value").')}</li>
                     <li>{it.L('Margin Requirements can increase/decrease based on the aggregated size of your Open Position determined by the volume (number of lots), contract size (value per point in the original currency of the contract), market price, and margin rate.')}</li>
                     <li>{it.L('We may modify Margin Requirements for any Open Positions or new Transactions entered into, at our sole discretion. Formulas for Margin Requirements published on the website are indicative only and may be changed by the Company at its discretion at any time, due to changing market conditions or other factors.')}</li>
                     <li>{it.L('Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level.')}</li>
@@ -226,7 +226,7 @@ const TermsAndConditions = () => (
         <ol>
             <li>{it.L('Opening a Transaction')}
                 <ol>
-                    <li>{it.L('A Transaction is opened by either executing a \'Buy\' or \'Sell\' Order based on a specified number of lots (volume) that constitute the underlying instrument of the relevant market.')}</li>
+                    <li>{it.L('A Transaction is opened by either executing a "Buy" or "Sell" Order based on a specified number of lots (volume) that constitute the underlying instrument of the relevant market.')}</li>
                     <li>{it.L('Any Transaction opened by you must be within any credit or position limit in effect with respect to the Real Account or any Transactions.')}</li>
                     <li>{it.L('Upon opening a Transaction, the sum due and payable by you to us are deducted from your Account Balance.')}</li>
                 </ol>
@@ -273,7 +273,7 @@ const TermsAndConditions = () => (
 
         <h2>{it.L('L. Event of Default')}</h2>
         <ol>
-            <li>{it.L('Each of the following event constitutes an \'Event of Default\':')}
+            <li>{it.L('Each of the following event constitutes an "Event of Default":')}
                 <ol>
                     <li>{it.L('Your death, your incapacity, become of unsound mind or your inability to pay your debts as they fall due, or is bankrupt or insolvent, as defined under any bankruptcy or insolvency law applicable to you, if you are an individual;')}</li>
                     <li>{it.L('The Margin Level of your Real Account reaches or falls below the Stop Out Level;')}</li>
@@ -351,7 +351,7 @@ const TermsAndConditions = () => (
         <h2>{it.L('Q. Miscellaneous')}</h2>
         <ol>
             <li>{it.L('Unless proven to be wrong, our records shall be used as evidence of your dealings with us in connection with the margin trading services described in this Agreement. You agree to use our records as evidence in any such legal or regulatory proceedings and you agree to keep your own record of your dealings with us that will help us investigate any complaints or disputes. If the records used as evidence of your dealings with us are not originals, are in the form of diagrams or charts, or are system generated content, you will not object to the use of such records as evidence.')}</li>
-            <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \'Copyright 1999-2017 Binary Ltd. All rights reserved.\' These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name)}</li>
+            <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: "Copyright 1999-2017 Binary Ltd. All rights reserved." These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name)}</li>
             <li>{it.L('If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect.')}</li>
             <li>{it.L('In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident.')}</li>
         </ol>

@@ -41,7 +41,7 @@ const Tac = () => (
         <h2>G. {it.L('Customer Funds')}</h2>
         <p>{it.L('Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients.')}</p>
         <p>{it.L('We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency [_1].',
-            '<a href="http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx" target="_blank" rel="noopener noreferrer"></a>')}</p>
+            '<a href="%" target="_blank" rel="noopener noreferrer">%</a>'.replace(/%/g, 'http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx'))}</p>
         <p>{it.L('The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level: medium protection.')}</p>
         <p>{it.L('The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href="[_1]">here.</a>',
             it.url_for('cashier/payment_methods')

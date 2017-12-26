@@ -176,7 +176,7 @@ const HomeBeta = () => (
                         { id: 'cfds', text: it.L('CFDs') },
                         { id: 'metals', text: it.L('Metals') },
                         { id: 'crypto', text: it.L('Crypto') },
-                        { id: 'market_tabs_selector', class: 'tab-selector' },
+                        { id: 'market_tabs_selector', className: 'tab-selector' },
                     ]}
                 />
                 <div className='tab-content'>
@@ -238,7 +238,7 @@ const HomeBeta = () => (
                     items={[
                         { id: 'binary_options', text: it.L('Binary Options') },
                         { id: 'mt5', text: it.L('MetaTrader 5') },
-                        { id: 'account_tabs_selector', class: 'tab-selector' },
+                        { id: 'account_tabs_selector', className: 'tab-selector' },
                     ]}
                 />
                 <div className='tab-content'>

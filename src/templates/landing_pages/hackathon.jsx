@@ -11,7 +11,7 @@ const Head = () => (
         <meta name='description' content={` ${it.L('[_1] Hackathon Competition', it.broker_name)}`} />
         <meta
             name='keywords'
-            content={` ${it.L('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading')}`}
+            content={` ${it.L('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading, hackathon')}`}
         />
         <meta name='author' content={it.broker_name} />
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
@@ -35,7 +35,6 @@ const Hackathon = () => (
             <div className='navbar' id='navigation'>
                 <div className='container'>
                     <div className='navbar-header'>
-                        <span id='toggle-menu' href='button' className='navbar-toggle'></span>
                         <a className='navbar-brand page-scroll logo' href='#page-top' />
                     </div>
                     <div className='navbar-collapse'>

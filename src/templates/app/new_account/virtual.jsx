@@ -19,7 +19,7 @@ const Virtual = () => (
 
                 <FormRow
                     type='checkbox'
-                    defaultChecked
+                    checked
                     id='email_consent'
                     row_class='invisible'
                     label_row_id='email_consent_label'

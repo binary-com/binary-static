@@ -15,7 +15,7 @@ export const SidebarContent = ({ id, visible, children }) => (
 export const SidebarSubmenu = ({ id, items = [] }) => {
     const getHref = item_id => `#${item_id}`;
     return (
-        <div className='sidebar-container'>
+        <div className='sidebar-collapsible-container'>
             <div className='sidebar-collapsible'>
                 <ul id={id}>
                     {items.map((item, idx) => (

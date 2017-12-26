@@ -63,7 +63,7 @@ export const FormRow = ({
         return (
             <div className={`gr-row ${row_class || ''}`} id={row_id} >
                 <div className='gr-12 gr-padding-20 gr-centered'>
-                    <input id={id} type='checkbox' checked={!!checked} />
+                    <input id={id} type='checkbox' defaultChecked={!!checked} />
                     &nbsp;
                     <label htmlFor={id}>{label}</label>
                 </div>
