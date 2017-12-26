@@ -345,18 +345,20 @@ const Client = (() => {
         let type         = 'real';
         let can_upgrade  = false;
         let upgrade_link = 'realws';
-        if (get('is_virtual')) {
-            if (canUpgradeVirtualToFinancial(landing_company)) {
+        if (!get('is_ico_only')) {
+            if (get('is_virtual')) {
+                if (canUpgradeVirtualToFinancial(landing_company)) {
+                    type         = 'financial';
+                    upgrade_link = 'maltainvestws';
+                } else if (canUpgradeVirtualToJapan(landing_company)) {
+                    upgrade_link = 'japanws';
+                }
+                can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
+            } else if (canUpgradeGamingToFinancial(landing_company)) {
                 type         = 'financial';
+                can_upgrade  = !hasAccountType('financial');
                 upgrade_link = 'maltainvestws';
-            } else if (canUpgradeVirtualToJapan(landing_company)) {
-                upgrade_link = 'japanws';
             }
-            can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
-        } else if (canUpgradeGamingToFinancial(landing_company)) {
-            type         = 'financial';
-            can_upgrade  = !hasAccountType('financial');
-            upgrade_link = 'maltainvestws';
         }
         return {
             type,
