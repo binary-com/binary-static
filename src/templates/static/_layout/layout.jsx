@@ -1,6 +1,5 @@
 import React from 'react';
 import Gtm from '../../_common/includes/gtm.jsx';
-import IcoBanner from '../../_common/includes/ico_banner.jsx';
 import Title from '../../_common/components/title.jsx';
 import Head from './head.jsx';
 import Header from './header.jsx';
@@ -23,7 +22,6 @@ const Nav = ({items}) => (
 
 const GetStarted = () => (
     <React.Fragment>
-        <IcoBanner className='top-margin' />
         <div className='get-started static_full'>
             <div className='gr-row'>
                 <div className='gr-3 gr-hide-m'>
@@ -59,12 +57,6 @@ const WithLayout = ({ children }) => {
     const className = `${it.current_route || ''}-content`;
     return (
         <div id='content' className={it.current_route ? className : undefined}>
-            { it.layout === 'full_width' &&
-                <IcoBanner container='ico-banner-container' className='top-margin' />
-            }
-            { it.layout === 'default' &&
-                <IcoBanner container='ico-banner-container' className='top-margin bottom-margin' />
-            }
             <div id='page_info' style={{display: 'none'}}>
                 <Title />
                 <div id='content_class'>{className}</div>

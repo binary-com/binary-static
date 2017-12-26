@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table } from '../../_common/components/elements.jsx';
-import { AccountOpeningReason } from '../../_common/components/forms_common_rows.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const IcoSubscribe = () => (
@@ -135,7 +134,7 @@ const IcoSubscribe = () => (
             <p>{it.L('Please confirm that you are a [_1]professional trader[_2] to proceed.', `<a href="${it.url_for('user/settings/professional')}">`, '</a>')}</p>
         </div>
         <div className='invisible' id='ico_virtual_message'>
-            <p>{it.L('Unable to create ICO account while virtual account is selected. Please select your real money account and try again.')}</p>
+            <p>{it.L('The [_1] token sale has ended.', it.website_name)}</p>
         </div>
 
         <div className='invisible' id='ico_account_message'>
@@ -148,18 +147,13 @@ const IcoSubscribe = () => (
 
         <div className='invisible' id='ico_new_account_message'>
             <p id='message_common' className='invisible'>{it.L('This feature is only available to CR clients. Please sign up to proceed.')}</p>
-            <p id='message_gaming' className='invisible'>{it.L('To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Gaming Authority.')}</p>
-            <p id='message_financial' className='invisible'>{it.L('To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Financial Services Authority.')}</p>
-            <p id='message_iom' className='invisible'>{it.L('To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission.')}</p>
-            <AccountOpeningReason row_id='row_account_opening_reason' row_class='gr-padding-20 invisible' />
-            <div className='center-text'>
-                <a href='javascript:;' className='button' id='ico_new_account'><span>{it.L('Sign up')}</span></a>
-                <p className='error-msg invisible' id='new_account_error'></p>
-            </div>
+            <p id='message_gaming' className='invisible'>{it.L('The [_1] token sale has ended.', it.website_name)}</p>
+            <p id='message_financial' className='invisible'>{it.L('The [_1] token sale has ended.', it.website_name)}</p>
+            <p id='message_iom' className='invisible'>{it.L('The [_1] token sale has ended.', it.website_name)}</p>
         </div>
 
         <div className='invisible' id='feature_not_allowed'>
-            <p className='center-text notice-msg'>{it.L('This feature is not available in your jurisdiction.')}</p>
+            <p className='center-text notice-msg'>{it.L('The [_1] token sale has ended.', it.website_name)}</p>
         </div>
 
         <div id='cancel_bid_confirmation' className='lightbox invisible'>

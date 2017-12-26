@@ -155,7 +155,6 @@ const Ico = () => {
                                     </div>
                                     <div className='status-toggle status-ended'>
                                         <h3 className='content-inverse-color'>{it.L('The [_1] token sale has ended', it.broker_name)}</h3>
-                                        <p className='intro-subtext'>{it.L('See your winning bids and claim your tokens')}</p>
                                     </div>
                                     <div className='status-toggle status-started' id='countdown'>
                                         { items.map((item, idx) => (
@@ -173,11 +172,11 @@ const Ico = () => {
                                         ))}
                                     </div>
                                     <div id='sign-up-section' className='invisible'>
-                                        <div className='signup-desc'>
+                                        <div className='signup-desc invisible'>
                                             <p>{it.L('Investors need to open a [_1] real money account to take part in the ICO.', it.broker_name)}</p>
                                             <p>{it.L('Sign up now for free.')}</p>
                                         </div>
-                                        <div className='signup-container gr-9 gr-12-p gr-12-m gr-centered'>
+                                        <div className='signup-container gr-9 gr-12-p gr-12-m gr-centered invisible'>
                                             <form id='frm_verify_email'>
                                                 <div className='gr-row gr-row-align-center'>
                                                     <div className='signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color'>
