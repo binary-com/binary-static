@@ -119,9 +119,9 @@
                     text=l("Pillar 3 disclosure report") %]
             </div>
 
-            <h3>[% l("Key Information Document") %]</h3>
+            <h3>[% l("Key Information Documents") %]</h3>
             <div>
-                <p>[% l("These documents provide you with key information about our investment products and the information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare it with other products.") %]</p>
+                <p>[% l("These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.") %]</p>
                 <div class="gr-row">
                     [% INCLUDE fill_box padding='4' border='border-dark-gray'
                         href=request.url_for('/download/key_information_document/Up_Down.pdf') target='_blank' download=1
