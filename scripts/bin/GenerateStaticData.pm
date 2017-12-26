@@ -538,7 +538,7 @@ sub _texts {
         push @texts, localize('The ICO is currently unavailable.');
         push @texts, localize('Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance.');
         push @texts, localize('Minimum bid');
-        push @texts, localize('The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018.');
+        push @texts, localize('The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids.');
 
         # binaryico histogram chart
         push @texts, localize('Final Price');
