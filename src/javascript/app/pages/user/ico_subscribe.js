@@ -60,7 +60,7 @@ const ICOSubscribe = (() => {
                     const price_str = `${curr !=='USD' ? `${formatMoney(curr, ico_status.final_price)} / ` : ''}${formatMoney('USD', ico_status.final_price_usd)}`;
                     notice_msg = localize(`Thank you for participating in our ICO. The final price of the tokens has been set at ${price_str} per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance.`);
                 } else {
-                    notice_msg = localize('The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018.');
+                    notice_msg = localize('The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids.');
                 }
 
                 $(form_id).replaceWith($('<p/>', {class: 'notice-msg center-text', html: notice_msg}));
@@ -218,10 +218,10 @@ const ICOSubscribe = (() => {
                 }
 
                 // Check if user has account_opening_reason
-                if(!State.getResponse('get_settings.account_opening_reason')
-                    && !Client.isAccountOfType('virtual')) {
-                    askForAccountOpeningReason();
-                }
+                // if(!State.getResponse('get_settings.account_opening_reason')
+                //     && !Client.isAccountOfType('virtual')) {
+                //     askForAccountOpeningReason();
+                // }
 
                 // Show message to client.
                 document.getElementById(message_show).setVisibility(1);
@@ -307,10 +307,10 @@ const ICOSubscribe = (() => {
         return req;
     };
 
-    const askForAccountOpeningReason = () => {
-        const el_to_show = document.getElementById('row_account_opening_reason');
-        el_to_show.setVisibility(1);
-    };
+    // const askForAccountOpeningReason = () => {
+    //     const el_to_show = document.getElementById('row_account_opening_reason');
+    //     el_to_show.setVisibility(1);
+    // };
 
     const updateMinimumBid = (ico_status) => {
         const status      = ico_status.ico_status || {};

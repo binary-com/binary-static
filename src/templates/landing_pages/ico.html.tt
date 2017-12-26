@@ -101,7 +101,6 @@
                                 </div>
                                 <div class="status-toggle status-ended">
                                     <h3 class="content-inverse-color">[% l("The [_1] token sale has ended", broker_name) %]</h3>
-                                    <p class="intro-subtext">[% l("See your winning bids and claim your tokens") %]</p>
                                 </div>
                                 <div class="status-toggle status-started" id="countdown">
                                     [% BLOCK arcs %]
@@ -128,11 +127,11 @@
                                     [% END %]
                                 </div>
                                 <div id="sign-up-section" class="invisible">
-                                    <div class="signup-desc">
+                                    <div class="signup-desc invisible">
                                         <p>[% l("Investors need to open a [_1] real money account to take part in the ICO.", broker_name) %]</p>
                                         <p>[% l("Sign up now for free.") %]</p>
                                     </div>
-                                    <div class="signup-container gr-9 gr-12-p gr-12-m gr-centered">
+                                    <div class="signup-container gr-9 gr-12-p gr-12-m gr-centered invisible">
                                         <form id="frm_verify_email">
                                             <div class="gr-row gr-row-align-center">
                                                 <div class="signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
