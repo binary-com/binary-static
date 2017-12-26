@@ -119,12 +119,20 @@
                     text=l("Pillar 3 disclosure report") %]
             </div>
 
-            <h3>[% l("Product Disclosure Statement") %]</h3>
+            <h3>[% l("Key Information Document") %]</h3>
             <div>
-                <p>[% l("Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options.") %]</p>
-                [% INCLUDE fill_box padding='4' center=1 border='border-dark-gray' image='images/pages/regulation/prospectus.svg'
-                    href=request.url_for('/download/BIEL_Product_Disclosure_Statement.pdf') target='_blank' download=1
-                    text=l("Product Disclosure Statement") %]
+                <p>[% l("These documents provide you with key information about our investment products and the information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare it with other products.") %]</p>
+                <div class="gr-row">
+                    [% INCLUDE fill_box padding='4' border='border-dark-gray'
+                        href=request.url_for('/download/key_information_document/Up_Down.pdf') target='_blank' download=1
+                        text=l("Up/Down") %]
+                    [% INCLUDE fill_box padding='4' border='border-dark-gray'
+                        href=request.url_for('/download/key_information_document/Touch_No_Touch.pdf') target='_blank' download=1
+                        text=l("Touch/No Touch") %]
+                    [% INCLUDE fill_box padding='4' border='border-dark-gray'
+                        href=request.url_for('/download/key_information_document/In_and_Out.pdf') target='_blank' download=1
+                        text=l("In/Out") %]
+                </div>
             </div>
         </div>
     [% END %]
