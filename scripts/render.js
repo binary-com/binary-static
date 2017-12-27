@@ -68,7 +68,9 @@ const getConfig = () => (
 const createDirectories = () => {
     const config = getConfig();
 
-    console.log(color.cyan('Target: '), color.yellow(config.dist_path));
+    if (!program.addTranslations) {
+        console.log(color.cyan('Target: '), color.yellow(config.dist_path));
+    }
 
     const mkdir = path => fs.existsSync(path) || fs.mkdirSync(path);
     mkdir(Path.join(config.dist_path));
@@ -154,7 +156,9 @@ const createContextBuilder = async () => {
         } catch(e) { } // eslint-disable-line
     }
     const vendor_hash = await fileHash(Path.join(config.dist_path, 'js/vendor.min.js'));
-    await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
+    if (!program.addTranslations) {
+        await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
+    }
 
     const extra = {
         js_files: [
@@ -200,7 +204,6 @@ async function compile(page) {
     const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER'; // used in layout.jsx
 
     const tasks = languages.map(async lang => {
-
         const model = {
             website_name   : 'Binary.com',
             title          : page.title,
@@ -218,6 +221,8 @@ async function compile(page) {
         const context   = context_builder.buildFor(model);
         const page_html = renderComponent(context, `../src/templates/${page.tpl_path}.jsx`);
         const language  = lang.toLowerCase();
+
+        if (program.addTranslations) return; // Do not save files if it's a translation update
 
         if (page.layout) {
             const layout_path = `../src/templates/${page.tpl_path.split('/')[0]}/_layout/layout.jsx`;
@@ -245,7 +250,6 @@ async function compile(page) {
                 'utf8'
             );
         }
-
     });
     await Promise.all(tasks);
 }
@@ -264,7 +268,7 @@ createDirectories();
         Gettext.getInstance(); // initialize before starting the compilation
 
         const start = Date.now();
-        const spinner = new Spinner(color.green(`Compiling ${count} page${count > 1 ? 's' : ''} ... %s`));
+        const spinner = new Spinner(color.green(`${program.addTranslations ? 'Parsing' : 'Compiling'} ${count} page${count > 1 ? 's' : ''} ... %s`));
         spinner.setSpinnerString(18);
         spinner.start();
 
@@ -289,6 +293,7 @@ createDirectories();
             const gettext = Gettext.getInstance();
             generate_static_data.build();
             gettext.update_translations();
+            generate_static_data.generate();
         }
     } catch (e) {
         console.error(e);
