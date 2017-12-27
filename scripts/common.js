@@ -14,7 +14,7 @@ exports.pages = require('./pages.js').map(p => ({
     current_route: p[0].replace(/^(.+)\//, ''),
 }));
 
-exports.languages = ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
+exports.languages = ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'JA', 'KO', 'PL', 'PT', 'RU', 'TH', 'VI', 'ZH_CN', 'ZH_TW'];
 
 exports.print = (text) => {
     process.stdout.clearLine();

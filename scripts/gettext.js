@@ -37,8 +37,8 @@ Gettext.prototype.dnpgettext = function(domain, msg_txt, msg_id, msg_id_plural, 
 const createGettextInstance = () => {
     const translations_dir = 'src/translations/';
     const locales = [
-        'en', 'ach_UG', 'fr_FR', 'it_IT', 'pt_PT', 'th_TH', 'zh_CN',
-        'de_DE', 'es_ES', 'id_ID', 'ja_JP', 'pl_PL', 'ru_RU', 'vi_VN', 'zh_TW',
+        'en', 'ach_UG', 'de_DE', 'es_ES', 'fr_FR', 'id_ID', 'it_IT', 'ja_JP',
+        'ko_KR', 'pl_PL', 'pt_PT', 'ru_RU', 'th_TH', 'vi_VN', 'zh_CN', 'zh_TW',
     ];
 
     const start = Date.now();
