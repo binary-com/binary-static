@@ -246,7 +246,7 @@ async function compile(page) {
         } else {
             await common.writeFile( // landing pages
                 Path.join(config.dist_path, `${language}/${page.save_as}.html`),
-                page_html,
+                /^\s*<html>/.test(page_html) ? `<!DOCTYPE html>\n${page_html}` : page_html,
                 'utf8'
             );
         }
