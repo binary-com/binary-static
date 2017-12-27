@@ -111,7 +111,7 @@ const PaymentAgents = () => (
                     <li>{it.L('any other information as requested by the Company.')}</li>
                 </ul>
             </li>
-            <li>{it.L('Information outlined in Paragraph 1 of this Section shall be submitted to <a href="mailto:[_1]">[_1]</a>.', 'affiliates@binary.com')}</li>
+            <li>{it.L('Information outlined in Paragraph 1 of this Section shall be submitted to <a href="mailto:[_1]">[_1]</a>.', 'affiliates@binary.com')}</li>
             <li>{it.L('The application shall be reviewed and assessed by our compliance and marketing departments. It is noted that our compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H.')}</li>
             <li>{it.L('The Company, exercising its absolute discretion, may accept or reject Agent’s Application. Where Agent’s Application is accepted, we shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by such Agent in the Payment Agent list which is disclosed on our website, <a href="[_1]">www.binary.com</a>.', it.url_for('home'))}</li>
         </ol>

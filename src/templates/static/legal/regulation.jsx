@@ -103,7 +103,7 @@ const Regulation = () => (
     </Box>
 
     <Box header={it.L('Binary Investments (Europe) Ltd')} >
-        <p>{it.L('Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href="[_1]" target="_blank" download=1>licence no. IS/70156</a>). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd.', it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf'))}</p>
+        <p>{it.L('Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href=\'[_1]\' target=\'_blank\' download=1>licence no. IS/70156</a>). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd.', it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf'))}</p>
         <div className='gr-padding-30 gr-12' id='accordion'>
             <h3 aria-expanded='true' aria-selected='true'>{it.L('EU Passport Rights')}</h3>
             <div>

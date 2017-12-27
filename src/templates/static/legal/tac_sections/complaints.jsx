@@ -9,10 +9,10 @@ const Complaints = () => (
         <p>{it.L('Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity\'s')}
             <a href='http://www.ibas-uk.com/adjudicationForm.php' target='_blank' rel='noopener noreferrer'>{it.L('website')}</a>.
         </p>
-        <p>{it.L('Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority [_1] at ',
+        <p>{it.L('Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority [_1] at',
             '<a href="http://www.mga.org.mt/" target="_blank" rel="noopener noreferrer">(www.mga.org.mt)</a>')}
-            support.mga@mga.org.mt.
-            {it.L(' UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity\'s')}
+            support.mga@mga.org.mt.&nbsp;
+            {it.L('UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity\'s')}
             <a href='http://www.ibas-uk.com/adjudicationForm.php' target='_blank' rel='noopener noreferrer'>{it.L('website')}</a>.
         </p>
         <p>{it.L('Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission\'s Online Dispute Resolution (ODR) platform available [_1]here[_2].',

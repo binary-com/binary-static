@@ -17,7 +17,7 @@ const Privacy = () => (
 
         <h2>{it.L('Access to Personal Data')}</h2>
         <p>{it.L('Access to your personal data is strictly prohibited with the exception of key personnel of the Company and only as needed in the performance of their duties.')}</p>
-        <p>{it.L('If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement.')}</p>
+        <p>{it.L('If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement.')}</p>
 
         <h2>{it.L('Security Statement')}</h2>
         <p>{it.L('We are committed to making sure your personal data and transactions are secure:')}</p>
