@@ -213,7 +213,6 @@ const Client = (() => {
         set('email',       options.email,       options.loginid);
         set('is_virtual',  +options.is_virtual, options.loginid);
         set('loginid',     options.loginid);
-        set('is_ico_only', options.is_ico_only);
 
         // need to redirect not using pjax
         window.location.href = options.redirect_url || defaultRedirectUrl();
@@ -254,13 +253,6 @@ const Client = (() => {
                         el.setVisibility(1);
                     }
                 });
-
-                // Show to eu clients only
-                if(/^malta|maltainvest|iom$/.test(get('landing_company_shortcode'))) {
-                    applyToAllElements('.eu-only', (el) => {
-                        el.setVisibility(1);
-                    });
-                }
 
                 if (get('is_virtual')) {
                     applyToAllElements('.client_virtual', (el) => { el.setVisibility(1); }, '', el_section);
@@ -339,26 +331,21 @@ const Client = (() => {
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
-    const getUpgradeInfo = (landing_company, account_type_ico = false) => {
+    const getUpgradeInfo = () => {
         const upgradeable_accounts = State.getResponse('authorize.upgradeable_accounts');
-        let can_upgrade,
-            type,
+        const can_upgrade          = !!upgradeable_accounts.length;
+        let type,
             upgrade_link;
-        if (account_type_ico) {
-            can_upgrade = !hasCostaricaAccount();
-        } else {
-            can_upgrade = !!upgradeable_accounts.length;
-            if (can_upgrade) {
-                if (upgradeable_accounts.indexOf('costarica') > -1 || upgradeable_accounts.indexOf('malta') > -1) {
-                    type         = 'real';
-                    upgrade_link = 'realws';
-                } else if (upgradeable_accounts.indexOf('maltainvest') > -1) {
-                    type         = 'financial';
-                    upgrade_link = 'maltainvestws';
-                } else if (upgradeable_accounts.indexOf('japan') > -1) {
-                    type         = 'real';
-                    upgrade_link = 'japanws';
-                }
+        if (can_upgrade) {
+            if (upgradeable_accounts.indexOf('costarica') > -1 || upgradeable_accounts.indexOf('malta') > -1) {
+                type         = 'real';
+                upgrade_link = 'realws';
+            } else if (upgradeable_accounts.indexOf('maltainvest') > -1) {
+                type         = 'financial';
+                upgrade_link = 'maltainvestws';
+            } else if (upgradeable_accounts.indexOf('japan') > -1) {
+                type         = 'real';
+                upgrade_link = 'japanws';
             }
         }
         return {
