@@ -200,7 +200,7 @@ const ICOSubscribe = (() => {
             } else {
                 to_show = 'ico_account_message_real';
             }
-        } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
+        } else if (Client.canOpenICO() || State.getResponse('authorize.upgradeable_accounts').indexOf('costarica') !== -1) {
             if(Client.isAccountOfType('virtual') && (Client.hasAccountType('gaming')
                 || Client.hasAccountType('financial') || Client.hasAccountType('real'))){
                 to_show = 'ico_virtual_message';
@@ -276,7 +276,7 @@ const ICOSubscribe = (() => {
                 });
             });
         } else {
-            BinaryPjax.load(urlFor('new_account/realws') + (Client.canUpgradeVirtualToReal(State.getResponse('landing_company')) ? '' : '#ico'));
+            BinaryPjax.load(urlFor('new_account/realws') + (State.getResponse('authorize.upgradeable_accounts').indexOf('costarica') === -1 ? '#ico' : ''));
         }
     };
 

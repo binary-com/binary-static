@@ -23,7 +23,7 @@ const AccountOpening = (() => {
     };
 
     const redirect = (account_type_ico, response_landing_company) => {
-        const upgrade_info = Client.getUpgradeInfo(response_landing_company || State.getResponse('landing_company'), undefined, account_type_ico);
+        const upgrade_info = Client.getUpgradeInfo(response_landing_company || State.getResponse('landing_company'), account_type_ico);
 
         if (!upgrade_info.can_upgrade) {
             BinaryPjax.loadPreviousUrl();

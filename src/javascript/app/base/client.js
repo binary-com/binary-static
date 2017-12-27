@@ -339,34 +339,27 @@ const Client = (() => {
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
-    const hasShortCode = (data, code) => ((data || {}).shortcode === code);
-
-    const canUpgradeGamingToFinancial = data => (hasShortCode(data.financial_company, 'maltainvest'));
-
-    const canUpgradeVirtualToFinancial = data => (!data.gaming_company && hasShortCode(data.financial_company, 'maltainvest'));
-
-    const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'japan'));
-
-    const canUpgradeVirtualToReal = data => (hasShortCode(data.financial_company, 'costarica'));
-
-    const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status'), account_type_ico = false) => {
-        let type         = 'real';
-        let can_upgrade  = false;
-        let upgrade_link = 'realws';
+    const getUpgradeInfo = (landing_company, account_type_ico = false) => {
+        const upgradeable_accounts = State.getResponse('authorize.upgradeable_accounts');
+        let can_upgrade,
+            type,
+            upgrade_link;
         if (account_type_ico) {
             can_upgrade = !hasCostaricaAccount();
-        } else if (get('is_virtual')) {
-            if (canUpgradeVirtualToFinancial(landing_company)) {
-                type         = 'financial';
-                upgrade_link = 'maltainvestws';
-            } else if (canUpgradeVirtualToJapan(landing_company)) {
-                upgrade_link = 'japanws';
+        } else {
+            can_upgrade = !!upgradeable_accounts.length;
+            if (can_upgrade) {
+                if (upgradeable_accounts.indexOf('costarica') > -1 || upgradeable_accounts.indexOf('malta') > -1) {
+                    type         = 'real';
+                    upgrade_link = 'realws';
+                } else if (upgradeable_accounts.indexOf('maltainvest') > -1) {
+                    type         = 'financial';
+                    upgrade_link = 'maltainvestws';
+                } else if (upgradeable_accounts.indexOf('japan') > -1) {
+                    type         = 'real';
+                    upgrade_link = 'japanws';
+                }
             }
-            can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
-        } else if (canUpgradeGamingToFinancial(landing_company)) {
-            type         = 'financial';
-            can_upgrade  = !hasAccountType('financial');
-            upgrade_link = 'maltainvestws';
         }
         return {
             type,
@@ -449,7 +442,6 @@ const Client = (() => {
         shouldCompleteTax,
         getMT5AccountType,
         getUpgradeInfo,
-        canUpgradeVirtualToReal,
         getAccountTitle,
         activateByClientType,
         currentLandingCompany,

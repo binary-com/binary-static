@@ -29,7 +29,7 @@ const Accounts = (() => {
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
-            const upgrade_info  = Client.getUpgradeInfo(landing_company, undefined, is_ico_only);
+            const upgrade_info  = Client.getUpgradeInfo(landing_company, is_ico_only);
             if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';

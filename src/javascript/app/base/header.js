@@ -169,7 +169,7 @@ const Header = (() => {
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
             const status            = State.getResponse('get_account_status.status');
             const is_ico_account    = /ico_only/.test(status);
-            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status, is_ico_account);
+            const upgrade_info      = Client.getUpgradeInfo(landing_company, is_ico_account);
             const show_upgrade_msg  = upgrade_info.can_upgrade;
             const virtual_text      = document.getElementById('virtual-text');
 
