@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-12-19 20:16-0500\n"
+"PO-Revision-Date: 2017-12-27 01:25-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -2763,12 +2763,6 @@ msgstr "Создать новый ключ"
 msgid "Create a MetaTrader 5 account"
 msgstr ""
 
-msgid "Create a standard real money account to trade on %1"
-msgstr "Откройте стандартный счёт с реальными деньгами, чтобы торговать на %1"
-
-msgid "Create an ICO account to take part in our token sale only. <a href=\"%1\" target=\"_blank\">Learn more</a>"
-msgstr "Откройте счёт ICO для участия в нашем аукционе токенов. <a href=\"%1\" target=\"_blank\">Подробнее</a>"
-
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Создание чёткого, точного и интересного контента для вебсайта, блога, публикаций в соц. сетях и маркетинговых материалов компании"
 
@@ -4611,9 +4605,6 @@ msgstr "I. Котировки"
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "Например, (20010 - 20000) x 1 x 1 = USD 10"
 
-msgid "ICO Account Opening"
-msgstr "Открытие счета ICO"
-
 msgid "ICO Bids"
 msgstr "Ставки ICO"
 
@@ -4910,9 +4901,6 @@ msgstr ""
 
 msgid "If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as \"forced liquidation\")."
 msgstr ""
-
-msgid "If you’d like to participate in the %1 ICO, please fund your ICO account instead of your trading account."
-msgstr "Если Вы хотите принять участие в ICO от %1, пожалуйста, пополните свой счёт ICO, а не торговый счёт."
 
 msgid "If:"
 msgstr "В случае, если:"
@@ -7701,9 +7689,6 @@ msgstr "Прежде, чем продолжить, пожалуйста, зап�
 msgid "Please complete the tax information before proceeding."
 msgstr "Пожалуйста, внесите информацию о налогах, прежде чем продолжить."
 
-msgid "Please confirm that you are a %1professional trader%2 to proceed."
-msgstr "Чтобы продолжить, пожалуйста, подтвердите, что Вы являетесь %1pпрофессиональным трейдером%2."
-
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Пожалуйста подтвердите, что Вы не являетесь политически-значимым лицом."
 
@@ -7730,9 +7715,6 @@ msgstr "Просим указать логин и сумму, которую В�
 
 msgid "Please follow the pattern 3 numbers, a dash, followed by 4 numbers."
 msgstr "Пожалуйста, следуйте данной схеме: 3 цифры, тире, а затем 4 цифры."
-
-msgid "Please input a valid date"
-msgstr "Пожалуйста, введите правильную дату"
 
 msgid "Please log in."
 msgstr "Пожалуйста, войдите в систему."
@@ -7800,9 +7782,6 @@ msgstr "Пожалуйста, выберите правильное время."
 msgid "Please select a value"
 msgstr "Пожалуйста, выберите значение"
 
-msgid "Please select a value for account_opening_reason."
-msgstr "Выберите значение для account_opening_reason."
-
 msgid "Please select at least one scope"
 msgstr "Пожалуйста, выберите минимум один параметр"
 
@@ -7811,9 +7790,6 @@ msgstr "Пожалуйста, выберите нужный ответ."
 
 msgid "Please select the currency of this account:"
 msgstr "Пожалуйста, выберите валюту для данного счёта:"
-
-msgid "Please select the type of account you wish to create."
-msgstr "Пожалуйста, выберите вид счёта, который Вы хотите открыть."
 
 msgid "Please select your ICO account to proceed."
 msgstr "Чтобы продолжить, выберите счёт ICO."
@@ -8643,9 +8619,6 @@ msgstr "Безопасность"
 msgid "Security testing opportunities"
 msgstr "Возможности проверки безопасности"
 
-msgid "See your winning bids and claim your tokens"
-msgstr "Просмотрите выигравшие ставки и получите токены"
-
 msgid "Segregated Funds"
 msgstr "Отделённые средства"
 
@@ -8660,9 +8633,6 @@ msgstr "Выберите <strong>Разрешить установку внут�
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "Выберите <strong>Куки</strong> в левой колонке."
-
-msgid "Select account type"
-msgstr "Выберите вид счёта"
 
 msgid "Select currency"
 msgstr "Выберите валюту"
@@ -8849,9 +8819,6 @@ msgstr "Открыть счет"
 
 msgid "Sign out"
 msgstr "Выход"
-
-msgid "Sign up"
-msgstr "Регистрация"
 
 msgid "Sign up now for free."
 msgstr "Зарегистрируйтесь бесплатно."
@@ -9363,9 +9330,6 @@ msgstr "Спасибо за подписку! Регулярно проверя�
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "API %1 имеет ограничения использования, введённые с целью предотвращения злоупотреблений и/или использования API %1 для других целей. Данные ограничения использования могут быть изменены в будущем без предварительного уведомления. Если Вы регулярно превышаете лимиты использования или иным образом злоупотребляете услугами, мы можем заблокировать Ваш доступ к API %1."
 
-msgid "The %1 ICO is now live"
-msgstr "Началось ICO от %1"
-
 msgid "The %1 ICO is now live. Participate now!"
 msgstr "Началось ICO от %1. Примите участие сейчас!"
 
@@ -9464,6 +9428,9 @@ msgstr "Агент вышлет Вам выведенную сумму (мину
 
 msgid "The Average"
 msgstr "Среднее"
+
+msgid "The Binary.com token sale has ended."
+msgstr ""
 
 msgid "The Cent account offers the highest leverage, as well as low margin call and stop out level. It is ideal for new traders who want to start trading with a smaller capital."
 msgstr ""
@@ -9753,7 +9720,7 @@ msgstr "Процедуры по предотвращению отмывания 
 msgid "The application shall be reviewed and assessed by our compliance and marketing departments. It is noted that our compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H."
 msgstr "Заявление должно быть рассмотрено и принято нашими отделами маркетинга и нормативно-правового соответствия. Следует учесть, что, следуя требованиям политики против отмывания денег и проводя проверку, в соответствии с законами и правилами, наш отдел нормативно-правового соответствия должен запрашивать или собирать всю необходимую информацию и документы, перечисленные в Разделе H."
 
-msgid "The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018."
+msgid "The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids."
 msgstr ""
 
 msgid "The average is the average of the ticks, including the first and the last tick."
@@ -10302,14 +10269,11 @@ msgstr "Данный документ (далее именуемый \"Согл�
 msgid "This equity research report by Lykke Accelerator gives you an overview of our company structure, financial performance, forecasts of future revenue, and more."
 msgstr "Исследование ценных бумаг, выполненное Lykke Accelerator, даёт представление о структуре нашей компании, финансовых показателях, прогнозов будущей прибыли и др. аспектов."
 
-msgid "This feature is not available in your jurisdiction."
-msgstr "Данная функция недоступна в Вашей юрисдикции."
-
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Данная функция недоступна на демо-счетах."
 
-msgid "This feature is only available to CR clients. Please sign up to proceed."
-msgstr "Данная функция доступна лишь для клиентов CR. Зарегистрируйтесь, чтобы продолжить."
+msgid "This feature is only available to CR clients."
+msgstr ""
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "Данная функция доступна лишь на счетах платёжных агентов."
@@ -10505,15 +10469,6 @@ msgstr "Чтобы открыть текущий Реальный счёт, Вы
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
-
-msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission."
-msgstr "Чтобы принять участие в ICO от Binary.com, необходимо открыть отдельный счёт. Продолжая данное действие, Вы соглашаетесь открыть новый счёт, который будет находиться вне юрисдикции Комиссии по надзору за азартными играми острова Мэн."
-
-msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Financial Services Authority."
-msgstr "Чтобы принять участие в ICO от Binary.com, необходимо открыть отдельный счёт. Продолжая данное действие, Вы соглашаетесь открыть новый счёт, который будет находиться вне юрисдикции Мальтийского управления финансовых услуг."
-
-msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Gaming Authority."
-msgstr "Чтобы принять участие в первичном предложении средств (ICO) от Binary.com, необходимо открыть отдельный счёт. Продолжая данное действие, Вы соглашаетесь открыть новый счёт, который находится вне юрисдикции Управления по лотереям и азартным играм Мальты."
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "Чтобы выполнить данное действие, <a href=\"%1\">откройте Реальный счет %2</a>."
@@ -10976,9 +10931,6 @@ msgstr "Опыт в области дизайна интерфейсов UX / UI
 
 msgid "Ultra fast on-the-go trading"
 msgstr "Мгновенная торговля на ходу"
-
-msgid "Unable to create ICO account while virtual account is selected. Please select your real money account and try again."
-msgstr "не удалось открыть Счёт ICO, т. к. выбран демо-счёт. Пожалуйста, выберите реальный счёт и повторите попытку."
 
 msgid "Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button."
 msgstr "Во вкладке <strong>Дополнительные настройки</strong> нажмите кнопку <strong>Просмотреть дополнительные настройки</strong>."
@@ -14719,9 +14671,6 @@ msgstr "Перевод через агента"
 msgid "Trusted by traders since 2000"
 msgstr "Выбор трейдеров с 2000 года"
 
-msgid "Account Type Selection"
-msgstr "Выбор вида счёта"
-
 msgid "Welcome to Binary.com"
 msgstr "Добро пожаловать на Binary.com"
 
@@ -14820,6 +14769,9 @@ msgstr "Отказ от ответственности в связи с Перв
 
 msgid "Hackathon Competition"
 msgstr "Соревнование Hackathon"
+
+msgid "Sign up"
+msgstr "Регистрация"
 
 msgid "Binary.com Graduate Program"
 msgstr ""
