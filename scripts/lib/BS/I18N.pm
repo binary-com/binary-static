@@ -15,6 +15,7 @@ my %__language_map = (
     id    => 'id_ID',
     it    => 'it_IT',
     ja    => 'ja_JP',
+    ko    => 'ko_KR',
     pl    => 'pl_PL',
     pt    => 'pt_PT',
     ru    => 'ru_RU',

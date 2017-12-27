@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-12-19 20:15-0500\n"
+"PO-Revision-Date: 2017-12-27 01:24-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -2775,12 +2775,6 @@ msgstr "新しいトークンを作成"
 msgid "Create a MetaTrader 5 account"
 msgstr ""
 
-msgid "Create a standard real money account to trade on %1"
-msgstr "Create a standard real money account to trade on %1"
-
-msgid "Create an ICO account to take part in our token sale only. <a href=\"%1\" target=\"_blank\">Learn more</a>"
-msgstr "Create an ICO account to take part in our token sale only. <a href=\"%1\" target=\"_blank\">Learn more</a>"
-
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "ウェブサイト、ブログ、メディア、マーケティング資料に使用する明確かつ魅力的なコンテンツの作成"
 
@@ -4624,9 +4618,6 @@ msgstr "I. 引用"
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "(20010 - 20000) x 1 x 1 = USD 10"
 
-msgid "ICO Account Opening"
-msgstr "ICO Account Opening"
-
 msgid "ICO Bids"
 msgstr "ICO Bids"
 
@@ -4924,9 +4915,6 @@ msgstr ""
 msgid "If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as \"forced liquidation\")."
 msgstr ""
 
-msgid "If you’d like to participate in the %1 ICO, please fund your ICO account instead of your trading account."
-msgstr "If you’d like to participate in the %1 ICO, please fund your ICO account instead of your trading account."
-
 msgid "If:"
 msgstr "以下の場合を対象とする："
 
@@ -4985,7 +4973,7 @@ msgid "In any event of an error in current prices, published odds or trading sof
 msgstr "現行価格、公開されたオッズ、トレーディングソフトウェアでのあらゆるエラーにおいても"
 
 msgid "In business since 2000, %1 is the world’s leading binary options company."
-msgstr "2000年の設立依頼、%1が世界のバイナリーオプション会社をリードしてきました。"
+msgstr "2000年の設立以来、%1が世界のバイナリーオプション会社をリードしてきました。"
 
 msgid "In carrying out OTC binary option trading, a customer needs expert knowledge such as the theoretical value of options, in order to make reasonable investment decisions."
 msgstr "バイナリーオプション取引について、合理的な投資判断をもって行うためには、オプション取引の理論的根拠などに関する専門知識が必要であること。（契約締結前交付書面「店頭バイナリーオプション取引のリスクについての説明」-①参照）"
@@ -7732,9 +7720,6 @@ msgstr "取引上限と出金限度額を引き上げるには下記財務評価
 msgid "Please complete the tax information before proceeding."
 msgstr "続行する前に、税務情報を入力してください。"
 
-msgid "Please confirm that you are a %1professional trader%2 to proceed."
-msgstr "続行するにはお客様が%1プロの投資家%2である必要があります。"
-
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Please confirm that you are not a politically exposed person."
 
@@ -7761,9 +7746,6 @@ msgstr "下記フォームにログインIDとご希望の送金額をご入力�
 
 msgid "Please follow the pattern 3 numbers, a dash, followed by 4 numbers."
 msgstr "ハイフンを入れて半角で入力してください"
-
-msgid "Please input a valid date"
-msgstr "有効な日にちを入力して下さい。"
 
 msgid "Please log in."
 msgstr "ログインをしてください。"
@@ -7831,9 +7813,6 @@ msgstr "有効な時間を選択してください"
 msgid "Please select a value"
 msgstr "値を選択してください。"
 
-msgid "Please select a value for account_opening_reason."
-msgstr "「口座開設理由」を選択してください。"
-
 msgid "Please select at least one scope"
 msgstr "範囲を1つ以上選択してください"
 
@@ -7842,9 +7821,6 @@ msgstr "チェックボックスを選択してください"
 
 msgid "Please select the currency of this account:"
 msgstr "この口座に使用される通貨を選択してください："
-
-msgid "Please select the type of account you wish to create."
-msgstr "Please select the type of account you wish to create."
 
 msgid "Please select your ICO account to proceed."
 msgstr "Please select your ICO account to proceed."
@@ -8679,9 +8655,6 @@ msgstr "口座開設時確認書類"
 msgid "Security testing opportunities"
 msgstr "セキュリティテストの機会"
 
-msgid "See your winning bids and claim your tokens"
-msgstr "入札状況とクレームトークンを確認"
-
 msgid "Segregated Funds"
 msgstr "資産の保全(区分管理)"
 
@@ -8696,9 +8669,6 @@ msgstr "<strong>ローカルへのデータ設定を許可する（推奨）</st
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "左の欄にある<strong>Cookie</strong>を選択してください。"
-
-msgid "Select account type"
-msgstr "Select account type"
 
 msgid "Select currency"
 msgstr "通貨を選択してください"
@@ -8885,9 +8855,6 @@ msgstr "登録"
 
 msgid "Sign out"
 msgstr "サインアウト"
-
-msgid "Sign up"
-msgstr "Sign up"
 
 msgid "Sign up now for free."
 msgstr "今すぐ無料で登録する"
@@ -9399,9 +9366,6 @@ msgstr "hanks for subscribing! Keep an eye on your inbox for the latest updates 
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "%1 APIの乱用及び転用を防ぐため、使用制限が適用されます。使用制限は通知なしに変更されることがあります。使用制限を一貫して超過されたり、サービスを乱用された場合、お客さまの%1 APIへのアクセスをブロックさせていただく可能性があります。"
 
-msgid "The %1 ICO is now live"
-msgstr "The %1 ICO is now live"
-
 msgid "The %1 ICO is now live. Participate now!"
 msgstr "%1ICOが開始！今すぐ参加しましょう！"
 
@@ -9500,6 +9464,9 @@ msgstr "決済代行会社がお客さまの選択いただいたお支払い方
 
 msgid "The Average"
 msgstr "平均"
+
+msgid "The Binary.com token sale has ended."
+msgstr ""
 
 msgid "The Cent account offers the highest leverage, as well as low margin call and stop out level. It is ideal for new traders who want to start trading with a smaller capital."
 msgstr ""
@@ -9814,7 +9781,7 @@ msgstr "（免責事項）\n"
 msgid "The application shall be reviewed and assessed by our compliance and marketing departments. It is noted that our compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H."
 msgstr "The application shall be reviewed and assessed by our compliance and marketing departments. It is noted that our compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H."
 
-msgid "The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018."
+msgid "The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids."
 msgstr ""
 
 msgid "The average is the average of the ticks, including the first and the last tick."
@@ -10423,14 +10390,11 @@ msgstr "本文書（以下「本契約」という。）は、本プログラム
 msgid "This equity research report by Lykke Accelerator gives you an overview of our company structure, financial performance, forecasts of future revenue, and more."
 msgstr "Lykke Acceleratorによるこの資本調査報告書では、会社の体制、業績、収益予想などをご覧いただけます。"
 
-msgid "This feature is not available in your jurisdiction."
-msgstr "This feature is not available in your jurisdiction."
-
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "この機能は、デモ口座ではご利用頂けません。"
 
-msgid "This feature is only available to CR clients. Please sign up to proceed."
-msgstr "This feature is only available to CR clients. Please sign up to proceed."
+msgid "This feature is only available to CR clients."
+msgstr ""
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "この機能は、決済サービスアカウントのみご利用いただけます。"
@@ -10626,15 +10590,6 @@ msgstr "リアル口座を開設するには、%1にてバイナリーオプシ�
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "お客さまが当社とバイナリーオプション取引口座を開設にあたり、取引の仕組みやリスクを十分に理解いただく必要があります。下記事項につき、ご理解、同意いただけましたら、チェックをお願いいたします。"
-
-msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission."
-msgstr "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission."
-
-msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Financial Services Authority."
-msgstr "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission."
-
-msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Gaming Authority."
-msgstr "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission."
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "このアクションを実行するには、<a href=\"%1\">%2リアル口座へアップグレード</a>いただく必要があります。"
@@ -11100,9 +11055,6 @@ msgstr "UX / UI の経験"
 
 msgid "Ultra fast on-the-go trading"
 msgstr "出先でも超高速取引を"
-
-msgid "Unable to create ICO account while virtual account is selected. Please select your real money account and try again."
-msgstr "デモ口座を選択されている限り、ICO口座を開設いただくことはできません。リアルマネー口座を選択してから再度お試しください。"
 
 msgid "Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button."
 msgstr "<strong>設定</strong>にある<strong>高度な設定を表示</strong>ボタンをクリックしてください。"
@@ -14041,15 +13993,21 @@ msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if 
 msgstr "２つのオプションを用い、バリア価格の高いバイナリーコールオプションとバリア価格の低いバイナリープットオプションを購入すれば、判定レートが２つのオプションのバリア価格で作られた価格帯の外となった場合に収益が得られ、判定レートが所定の価格帯の外であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができます。"
 
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "12/19/2017"
+msgstr "12/27/2017"
 
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "12/19/2017"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "12月25日及び2018年1月1日は取引休止とさせて頂きます。<br><br>カスタマーサポート時間について<br><br>12月25日は臨時休業日とさせて頂きます。翌26日は9 時から受付開始となります。<br>年内の受付につきましては、12月29日の17時までとさせて頂います。<br>また、翌年の受付時間につきましては、1月4日9時から受付開始となります。"
+msgstr "2017年分の損益金合計額の証明書を2018年1月中旬までに郵送にて順次発送させていただきます。<br>なお、ご住所変更をされているお客様は、証明書の到着が遅れる場合がございますので、登録内容変更をお早めにお手続きをいただきますようお願い申し上げます。"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
+msgstr "登録内容変更について<br><br>support@binary.comに現住所が記載されている個人番号カード（マイナンバーカード）と本人確認書類のご提出をお願いいたします。"
+
+msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
+msgstr "12月25日及び2018年1月1日は取引休止とさせて頂きます。<br><br>カスタマーサポート時間について<br><br>12月25日は臨時休業日とさせて頂きます。翌26日は9 時から受付開始となります。<br>年内の受付につきましては、12月29日の17時までとさせて頂います。<br>また、翌年の受付時間につきましては、1月4日9時から受付開始となります。"
+
+msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
 msgstr "<p class=MsoNormal>年内の入金反映について</p>\n\n"
 "<p class=MsoNormal>　年内の入金受付は<span lang=EN-US>12</span>月<span lang=EN-US>29</span>日午後<span\n"
 "lang=EN-US>3</span>時までに当社の指定口座にて確認ができた金額をお客様の口座に反映いたします。それ以降の着金につきましては<span\n"
@@ -14082,20 +14040,14 @@ msgstr "<p class=MsoNormal>年内の入金反映について</p>\n\n"
 "lang=EN-US>4</span>日午後<span lang=EN-US>3</span>時まで　 　　　　→　<span lang=EN-US>2018</span>年<span\n"
 "lang=EN-US>1</span>月<span lang=EN-US>4</span>日以降</p>"
 
-msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
-msgstr "契約締結前交付書面の改定のお知らせ"
-
-msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
-msgstr "2017年12月22日（金）付けで契約締結前交付書面を改定いたします。契約締結前交付書面を必ずご確認いただく必要がございます。<br>投資勧誘方針<br>店頭通貨バイナリーオプション取引の概要と仕組みについて<br>取引可能時間、取引期間および回号<br>当社の概要について<br>店頭バイナリーオプション取引概要\n"
-
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
 msgstr "."
 
 msgid "{JAPAN ONLY}JSA_Title_1"
-msgstr "クリスマス及び年末年始の取引時間・カスタマーサポート時間・入出金等についてのお知らせ"
+msgstr "2017年分の損益金合計額の証明書の発送について"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
-msgstr "重要：お知らせ"
+msgstr "クリスマス及び年末年始の取引時間・カスタマーサポート時間・入出金等についてのお知らせ"
 
 msgid "{JAPAN ONLY}Japan Service Announcements"
 msgstr "お知らせ"
@@ -14905,9 +14857,6 @@ msgstr "決済サービスでのご送金"
 msgid "Trusted by traders since 2000"
 msgstr "Trusted by traders since 2000"
 
-msgid "Account Type Selection"
-msgstr "Account Type Selection"
-
 msgid "Welcome to Binary.com"
 msgstr "Binary.comへようこそ"
 
@@ -15006,6 +14955,9 @@ msgstr "イニシャル・コイン・オファリングに関する免責事項
 
 msgid "Hackathon Competition"
 msgstr "Hackathon Competition"
+
+msgid "Sign up"
+msgstr "Sign up"
 
 msgid "Binary.com Graduate Program"
 msgstr ""

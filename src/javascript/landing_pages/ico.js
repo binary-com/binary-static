@@ -441,15 +441,8 @@ function setLanguage(el, name) {
 }
 
 function setupCrowdin() {
-    const all_languages = [
-        'ACH', 'EN', 'DE', 'ES',
-        'FR', 'ID', 'IT', 'JA',
-        'PL', 'PT', 'RU', 'TH',
-        'VI', 'ZH_CN', 'ZH_TW',
-    ];
-
     const isInContextEnvironment = () => {
-        const lang_regex = new RegExp(`^(${all_languages.join('|')})$`, 'i');
+        const lang_regex = new RegExp(`^(${allLanguages().join('|')})$`, 'i');
         const url_params = window.location.href.split('/').slice(3);
         const language   = (url_params.find(lang => lang_regex.test(lang)) || '');
 
