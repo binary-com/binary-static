@@ -202,6 +202,7 @@ async function compile(page) {
     const languages           = config.languages.filter(lang => shouldCompile(page.excludes, lang));
     const context_builder     = await createContextBuilder();
     const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER'; // used in layout.jsx
+    const translated_layouts  = [];
 
     const tasks = languages.map(async lang => {
         const model = {
@@ -215,36 +216,41 @@ async function compile(page) {
             current_route  : page.current_route,
             affiliate_email: 'affiliates@binary.com',
             japan_docs_url : 'https://japan-docs.binary.com',
-            is_pjax_request: true,
+            is_pjax_request: false,
         };
 
         const context   = context_builder.buildFor(model);
         const page_html = renderComponent(context, `../src/templates/${page.tpl_path}.jsx`);
         const language  = lang.toLowerCase();
+        const layout_path = `../src/templates/${page.tpl_path.split('/')[0]}/_layout/layout.jsx`;
 
-        if (program.addTranslations) return; // Do not save files if it's a translation update
+        if (program.addTranslations) {
+            if (page.layout && translated_layouts.indexOf(layout_path) === -1) {
+                renderComponent(context, layout_path);
+                translated_layouts.push(layout_path);
+            }
+            return; // Skip saving files when it's a translation update
+        }
 
         if (page.layout) {
-            const layout_path = `../src/templates/${page.tpl_path.split('/')[0]}/_layout/layout.jsx`;
-
-            const layout_pjax = renderComponent(context, layout_path);
-
-            context.is_pjax_request = false;
+            // normal layout
             const layout_normal = `<!DOCTYPE html>\n${renderComponent(context, layout_path)}`;
-
-            await common.writeFile( // pjax layout
-                Path.join(config.dist_path, `${language}/pjax/${page.save_as}.html`),
-                layout_pjax.replace(CONTENT_PLACEHOLDER, page_html),
-                'utf8'
-            );
-
-            await common.writeFile( // normal layout
+            await common.writeFile(
                 Path.join(config.dist_path, `${language}/${page.save_as}.html`),
                 layout_normal.replace(CONTENT_PLACEHOLDER, page_html),
                 'utf8'
             );
+
+            // pjax layout
+            context.is_pjax_request = true;
+            const layout_pjax = renderComponent(context, layout_path);
+            await common.writeFile(
+                Path.join(config.dist_path, `${language}/pjax/${page.save_as}.html`),
+                layout_pjax.replace(CONTENT_PLACEHOLDER, page_html),
+                'utf8'
+            );
         } else {
-            await common.writeFile( // landing pages
+            await common.writeFile(
                 Path.join(config.dist_path, `${language}/${page.save_as}.html`),
                 /^\s*<html>/.test(page_html) ? `<!DOCTYPE html>\n${page_html}` : page_html,
                 'utf8'
