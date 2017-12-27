@@ -70,10 +70,6 @@ const Cashier = () => (
                 <span className='invisible normal_currency client_logged_out'>{it.L('Bank-wire, credit card, e-cash wallet')}</span>
                 <span className='invisible crypto_currency'>{it.L('Cryptocurrency')}</span>
             </h3>
-            <div className='notice-msg invisible eu-only gr-padding-20'>
-                {it.L('If you’d like to participate in the [_1] ICO, please fund your ICO account instead of your trading account.', it.website_name)}
-            </div>
-            <div className='gr-padding-10 invisible eu-only'></div>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>
                     <a className='ja-hide' href={it.url_for('cashier/forwardws#deposit')} id='payment_methods'>

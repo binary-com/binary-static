@@ -130,9 +130,6 @@ const IcoSubscribe = () => (
             </a>
         </div>
 
-        <div className='invisible' id='ico_professional_message'>
-            <p>{it.L('Please confirm that you are a [_1]professional trader[_2] to proceed.', `<a href="${it.url_for('user/settings/professional')}">`, '</a>')}</p>
-        </div>
         <div className='invisible' id='ico_virtual_message'>
             <p>{it.L('The [_1] token sale has ended.', it.website_name)}</p>
         </div>
@@ -146,7 +143,7 @@ const IcoSubscribe = () => (
         </div>
 
         <div className='invisible' id='ico_new_account_message'>
-            <p id='message_common' className='invisible'>{it.L('This feature is only available to CR clients. Please sign up to proceed.')}</p>
+            <p id='message_common' className='invisible'>{it.L('This feature is only available to CR clients.')}</p>
             <p id='message_gaming' className='invisible'>{it.L('The [_1] token sale has ended.', it.website_name)}</p>
             <p id='message_financial' className='invisible'>{it.L('The [_1] token sale has ended.', it.website_name)}</p>
             <p id='message_iom' className='invisible'>{it.L('The [_1] token sale has ended.', it.website_name)}</p>

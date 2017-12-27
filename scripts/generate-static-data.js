@@ -188,8 +188,6 @@ const texts = [
     'Invalid email address',
     'Thank you for signing up! Please check your email to complete the registration process.',
     // strings for real account opening page
-    'ICO Account Opening',
-    'Please input a valid date',
     'Please select',
     'Minimum of [_1] characters required.',
     'Please confirm that you are not a politically exposed person.',
@@ -505,8 +503,8 @@ const texts = [
     'Claim Tokens',
     'Ended',
     'The ICO is currently unavailable.',
-    'Please select a value for account_opening_reason.',
     'Minimum bid',
+    'The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids.',
 
     // binaryico histogram chart
     'Final Price',

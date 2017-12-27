@@ -20,7 +20,6 @@ module.exports = [
     ['trading',                            'app/trade/trading',                         'default',    'Trusted by traders since 2000'],
     ['trading_beta',                       'app/trade/beta/trading',                    'default',    'Trusted by traders since 2000',     'ja'],
 
-    ['new_account/account_type',           'app/new_account/account_type',              'default',    'Account Type Selection',            'ja'],
     ['new_account/japanws',                'app/new_account/japan',                     'default',    'Real Money Account Opening',        'NOT-ja,en'],
     ['new_account/knowledge_testws',       'app/japan/knowledge_test',                  'default',    'Real Money Account Opening',        'NOT-ja,en'],
     ['new_account/landing_page',           'app/new_account/landing_page',              'default',    'Welcome to Binary.com',             'NOT-ja,en'],
