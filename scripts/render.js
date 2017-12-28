@@ -67,7 +67,7 @@ if (is_translation && (program.dev || program.path)) {
 const getConfig = () => (
     {
         add_translations: false,
-        dist_path       : Path.join(common.root_path, (program.branch || ''), 'dist'),
+        dist_path       : Path.join(common.root_path, 'dist', (program.branch || '')),
         languages       : program.branch === 'translations' ? ['ACH'] : common.languages,
         root_path       : common.root_path,
         root_url        : `/${program.dev ? 'binary-static/' : ''}${program.branch ? `${program.branch}/` : ''}`,
