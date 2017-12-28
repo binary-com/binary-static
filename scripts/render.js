@@ -76,11 +76,11 @@ const getConfig = () => (
 );
 
 const createDirectories = () => {
+    if (is_translation) return;
+
     const config = getConfig();
 
-    if (!is_translation) {
-        console.log(color.cyan('Target: '), color.yellow(config.dist_path));
-    }
+    console.log(color.cyan('Target: '), color.yellow(config.dist_path));
 
     const mkdir = path => fs.existsSync(path) || fs.mkdirSync(path);
     mkdir(Path.join(config.dist_path));
@@ -212,7 +212,6 @@ async function compile(page) {
     const languages           = config.languages.filter(lang => shouldCompile(page.excludes, lang));
     const context_builder     = await createContextBuilder();
     const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER'; // used in layout.jsx
-    const translated_layouts  = [];
 
     const tasks = languages.map(async lang => {
         const model = {
@@ -234,18 +233,12 @@ async function compile(page) {
         const language  = lang.toLowerCase();
         const layout_path = `../src/templates/${page.tpl_path.split('/')[0]}/_layout/layout.jsx`;
 
-        if (is_translation) {
-            if (page.layout && translated_layouts.indexOf(layout_path) === -1) {
-                renderComponent(context, layout_path);
-                translated_layouts.push(layout_path);
-            }
-            return; // Skip saving files when it's a translation update
-        }
-
         if (page.layout) {
             const layout_normal = `<!DOCTYPE html>\n${renderComponent(context, layout_path)}`;
             context.is_pjax_request = true;
             const layout_pjax = renderComponent(context, layout_path);
+
+            if (is_translation) return; // Skip saving files when it's a translation update
 
             // normal layout
             await common.writeFile(
@@ -261,6 +254,7 @@ async function compile(page) {
                 'utf8'
             );
         } else {
+            if (is_translation) return; // Skip saving files when it's a translation update
             await common.writeFile(
                 Path.join(config.dist_path, `${language}/${page.save_as}.html`),
                 /^\s*<html>/.test(page_html) ? `<!DOCTYPE html>\n${page_html}` : page_html,
