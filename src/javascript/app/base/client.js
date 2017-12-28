@@ -332,18 +332,19 @@ const Client = (() => {
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
     const getUpgradeInfo = () => {
-        const upgradeable_accounts = State.getResponse('authorize.upgradeable_accounts');
-        const can_upgrade          = !!(upgradeable_accounts && upgradeable_accounts.length);
+        const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
+        const can_upgrade                   = !!(upgradeable_landing_companies && upgradeable_landing_companies.length);
         let type,
             upgrade_link;
         if (can_upgrade) {
-            if (upgradeable_accounts.indexOf('costarica') > -1 || upgradeable_accounts.indexOf('malta') > -1 || upgradeable_accounts.indexOf('iom') > -1) {
-                type         = 'real';
-                upgrade_link = 'realws';
-            } else if (upgradeable_accounts.indexOf('maltainvest') > -1) {
+            const joined_accounts = upgradeable_landing_companies.join(', ');
+            if (/maltainvest/.test(joined_accounts)) {
                 type         = 'financial';
                 upgrade_link = 'maltainvestws';
-            } else if (upgradeable_accounts.indexOf('japan') > -1) {
+            } else if (/costarica|malta|iom/.test(joined_accounts)) {
+                type         = 'real';
+                upgrade_link = 'realws';
+            } else if (/japan/.test(joined_accounts)) {
                 type         = 'real';
                 upgrade_link = 'japanws';
             }

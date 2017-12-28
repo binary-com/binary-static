@@ -191,7 +191,7 @@ const ICOSubscribe = (() => {
             } else {
                 to_show = 'ico_account_message_real';
             }
-        } else if (Client.canOpenICO() || State.getResponse('authorize.upgradeable_accounts').indexOf('costarica') !== -1) {
+        } else if (Client.canOpenICO() || State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
             if(Client.isAccountOfType('virtual') && (Client.hasAccountType('gaming')
                 || Client.hasAccountType('financial') || Client.hasAccountType('real'))){
                 to_show = 'ico_virtual_message';
