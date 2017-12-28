@@ -4,7 +4,7 @@ const Form = () => (
     <React.Fragment>
         <form id='frm_reality_check'>
             <div className='gr-padding-10'>
-                <label htmlFor='num_reality_duration'>{it.L('Please specify your preferred reality-check interval in minutes')}</label>
+                <label htmlFor='num_reality_duration' className='gr-gutter-right'>{it.L('Please specify your preferred reality-check interval in minutes')}</label>
                 &nbsp;
                 <input id='num_reality_duration' step='1' min='1' size='6' type='number' />
             </div>
