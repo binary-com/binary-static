@@ -12,9 +12,11 @@ const texts = [
     'Year',
     'Sorry, an error occurred while processing your request.',
     'Please <a href="[_1]">log in</a> to view this page.',
+
     // top bar
     'Open a Real Account',
     'Open a Financial Account',
+
     // menu items
     'Trade',
     'Portfolio',
@@ -27,11 +29,13 @@ const texts = [
     'Shop',
     'Payment Agent',
     'ICO Bids',
+
     // account drop down
     'Virtual Account',
     'Real Account',
     'Investment Account',
     'Gaming Account',
+
     // datepicker texts
     'Sunday',
     'Monday',
@@ -73,6 +77,7 @@ const texts = [
     'Dec',
     'Next',
     'Previous',
+
     // timepicker texts
     'Hour',
     'Minute',
@@ -80,6 +85,7 @@ const texts = [
     'PM',
     'End time must be after start time.',
     'Time is in the wrong format.',
+
     // highchart localization text
     'Start time',
     'Entry spot',
@@ -88,7 +94,8 @@ const texts = [
     'End time',
     'Sell time',
     'Charting for this underlying is delayed',
-    // text used by websocket trading page javascript
+
+    // trading page
     'year',
     'month',
     'week',
@@ -148,7 +155,8 @@ const texts = [
     'Session',
     'Cryptocurrency',
     'Fiat Currency',
-    // strings for limits page
+
+    // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
     'Your withdrawal limit is [_1] [_2].',
     'Your withdrawal limit is [_1] [_2] (or equivalent in other currency).',
@@ -164,10 +172,12 @@ const texts = [
     'Non-ATM',
     'Duration up to 7 days',
     'Duration above 7 days',
+
     // back-end strings for limits page
     'Major Pairs',
     'Forex',
-    // strings for personal details
+
+    // personal details
     'This field is required.',
     'Please select the checkbox.',
     'Please accept the terms and conditions.',
@@ -180,7 +190,8 @@ const texts = [
     'Your settings have been updated successfully.',
     'Female',
     'Male',
-    // strings for home and virtual account opening page
+
+    // home and virtual account opening page
     'verification token',
     'email address',
     'Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.',
@@ -190,16 +201,19 @@ const texts = [
     'Your session duration limit will end in [_1] seconds.',
     'Invalid email address',
     'Thank you for signing up! Please check your email to complete the registration process.',
-    // strings for real account opening page
+
+    // real account opening
     'Please select',
     'Minimum of [_1] characters required.',
     'Please confirm that you are not a politically exposed person.',
-    // strings for trading times page
+
+    // trading times
     'Asset',
     'Opens',
     'Closes',
     'Settles',
     'Upcoming Events',
+
     // back-end strings for trading times page
     'Closes early (at 21:00)',
     'Closes early (at 18:00)',
@@ -208,7 +222,8 @@ const texts = [
     'Fridays',
     'today',
     'today, Fridays',
-    // strings for paymentagent_withdraw page
+
+    // paymentagent_withdraw
     'Please select a payment agent',
     'The Payment Agent facility is currently not available in your country.',
     'Invalid amount, minimum is',
@@ -216,7 +231,8 @@ const texts = [
     'Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.',
     'Up to [_1] decimal places are allowed.',
     'Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.',
-    // strings for api_token page
+
+    // api_token
     'New token created.',
     'The maximum number of tokens ([_1]) has been reached.',
     'Name',
@@ -227,20 +243,24 @@ const texts = [
     'Delete',
     'Are you sure that you want to permanently delete token',
     'Please select at least one scope',
-    // strings for Guide
+
+    // Guide
     'Guide',
     'Finish',
     'Step',
-    // strings for Guide -> trading page
+
+    // Guide -> trading page
     'Select your market',
     'Select your underlying asset',
     'Select your trade type',
     'Adjust trade parameters',
     'Predict the direction<br />and purchase',
-    // strings for top_up_virtual
+
+    // top_up_virtual
     'Sorry, this feature is available to virtual accounts only.',
     '[_1] [_2] has been credited to your Virtual money account [_3]',
-    // strings for self_exclusion
+
+    // self_exclusion
     'years',
     'months',
     'weeks',
@@ -256,12 +276,15 @@ const texts = [
     'Exclude time cannot be less than 6 months.',
     'Exclude time cannot be for more than 5 years.',
     'When you click "OK" you will be excluded from trading on the site until the selected date.',
-    // strings for change_password
+
+    // change_password
     'Old password is wrong.',
-    // strings for portfolio
+
+    // portfolio
     'Ref.',
     'Resale not offered',
-    // strings for profit table and statement pages
+
+    // profit table and statement
     'Date',
     'Action',
     'Contract',
@@ -271,13 +294,16 @@ const texts = [
     'Your account has no trading activity.',
     'Today',
     'Details',
+
     // back-end string for statement page
     'Sell',
     'Buy',
     'Virtual money credit to account',
-    // strings for authenticate page
+
+    // authenticate
     'This feature is not relevant to virtual-money accounts.',
-    // strings for japan account opening page
+
+    // japan account opening
     'Japan',
     'Questions',
     'True',
@@ -300,7 +326,8 @@ const texts = [
     '{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.',
     'Processing your request...',
     'Please check the above form for pending errors.',
-    // strings for multi_barriers_trading page
+
+    // multi_barriers_trading
     '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
     '[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].',
     '[_1] [_2] payout if [_3] does not touch Barrier through close on [_4].',
@@ -326,17 +353,20 @@ const texts = [
     'Sorry, your account is not authorised for any further contract purchases.',
     'Lots',
     'Payout per lot = 1,000',
-    // strings for digit_info
+
+    // digit_info
     'Select market',
     'Number of ticks',
     'Percentage',
     'Digit',
-    // strings for paymentagent
+
+    // paymentagent
     'Amount',
     'Deposit',
     'Withdrawal',
     'Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.',
-    // strings for iphistory
+
+    // iphistory
     'Date and Time',
     'Browser',
     'IP Address',
@@ -345,18 +375,21 @@ const texts = [
     'Failed',
     'Your account has no Login/Logout activity.',
     'logout',
-    // strings for reality_check
+
+    // reality_check
     'Please enter a number between [_1].',
     '[_1] days [_2] hours [_3] minutes',
     'Your trading statistics since [_1].',
-    // strings for security
+
+    // security
     'Unlock Cashier',
     'Your cashier is locked as per your request - to unlock it, please enter the password.',
     'Lock Cashier',
     'An additional password can be used to restrict access to the cashier.',
     'Update',
     'Sorry, you have entered an incorrect cashier password',
-    // strings for view popup
+
+    // view popup
     'Start Time',
     'Entry Spot',
     'Low Barrier',
@@ -406,9 +439,12 @@ const texts = [
     'Contract Ends',
     'Start Time and Entry Spot',
     'Exit Time and Exit Spot',
-    // strings for financial assessment
+
+    // financial assessment
     'Please select a value',
-    // Strings for authorised_apps
+
+
+    // authorised_apps
     'You have not granted access to any applications.',
     'Permissions',
     'Never',
@@ -418,24 +454,29 @@ const texts = [
     'Admin',
     'Read',
     'Payments',
-    // Strings for lost_password
+
+    // lost_password
     '[_1] Please click the link below to restart the password recovery process.',
     'Your password has been successfully reset. Please log into your account using your new password.',
     'Please check your email for the password reset link.',
-    // strings for cashier page
+
+    // cashier page
     'details',
     'Withdraw',
     'Insufficient balance.',
-    // strings for endpoint notification
+
+    // endpoint notification
     'This is a staging server - For testing purposes only',
     'The server <a href="[_1]">endpoint</a> is: [_2]',
-    // strings for account signup error
+
+    // account signup error
     'Sorry, account signup is not available in your country.',
+
     // strings from back-end
     'There was a problem accessing the server.',
     'There was a problem accessing the server during purchase.',
 
-    // strings for form_validation
+    // form_validation
     'Should be a valid number',
     'Should be more than [_1]',
     'Should be less than [_1]',
@@ -457,18 +498,22 @@ const texts = [
     'million',
     'Should start with letter or number, and may contain hyphen and underscore.',
 
-    // strings for metatrader
+    // metatrader
     'Congratulations! Your [_1] Account has been created.',
     'The main password of account number [_1] has been changed.',
     '[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]',
     '[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]',
     'Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.',
+    'You have insufficient fund in your Binary account, please <a href="[_1]">add fund</a>.',
     'Sorry, this feature is not available in your jurisdiction.',
     'Main password',
     'Investor password',
     'Current password',
     'New password',
-    'Demo',
+    'Demo Cent',
+    'Demo Standard',
+    'Demo STP',
+    'Demo Volatility',
     'Real Cent',
     'Real Standard',
     'Real STP',
@@ -476,13 +521,13 @@ const texts = [
     'Create Account',
     'Change Password',
 
-    // strings for account_transfer
+    // account_transfer
     'Min',
     'Max',
     'Current balance',
     'Withdrawal limit',
 
-    // strings for header notification
+    // header notification
     '[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',
     'Please set the [_1]currency[_2] of your account.',
     'Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.',
@@ -495,6 +540,7 @@ const texts = [
     'You have reached the rate limit of requests per second. Please try later.',
     '[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.',
     'We are reviewing your documents. For more details [_1]contact us[_2].',
+
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
 
@@ -505,7 +551,9 @@ const texts = [
     'Refund Bid',
     'Claim Tokens',
     'Ended',
+    'Pending',
     'The ICO is currently unavailable.',
+    'Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance.',
     'Minimum bid',
     'The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids.',
 
@@ -514,7 +562,7 @@ const texts = [
     'Total Bids',
     'Price Band',
 
-    // strings for accounts page
+    // accounts
     'Create',
     'Commodities',
     'Indices',
