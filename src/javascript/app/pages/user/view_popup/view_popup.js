@@ -261,7 +261,7 @@ const ViewPopup = (() => {
         const el = document.getElementById(element_id);
         if (!el) return;
 
-        const link = createElement('a', { href: `${'java'}${'script:;'}`, class: 'link-audit button-secondary' });
+        const link = createElement('a', { href: `${'javascript:;'}`, class: 'link-audit button-secondary' });
         const span = createElement('span', { text: localize('Audit') });
         link.appendChild(span);
         link.addEventListener('click', () => { initAuditTable(1); });
