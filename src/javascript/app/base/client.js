@@ -333,11 +333,11 @@ const Client = (() => {
 
     const getUpgradeInfo = () => {
         const upgradeable_accounts = State.getResponse('authorize.upgradeable_accounts');
-        const can_upgrade          = !!upgradeable_accounts.length;
+        const can_upgrade          = !!(upgradeable_accounts && upgradeable_accounts.length);
         let type,
             upgrade_link;
         if (can_upgrade) {
-            if (upgradeable_accounts.indexOf('costarica') > -1 || upgradeable_accounts.indexOf('malta') > -1) {
+            if (upgradeable_accounts.indexOf('costarica') > -1 || upgradeable_accounts.indexOf('malta') > -1 || upgradeable_accounts.indexOf('iom') > -1) {
                 type         = 'real';
                 upgrade_link = 'realws';
             } else if (upgradeable_accounts.indexOf('maltainvest') > -1) {
