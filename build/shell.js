@@ -18,19 +18,13 @@ module.exports = function (grunt) {
 
     return {
         compile_dev: {
-            command: global.compileCommand('-f -d'),
+            command: global.compileCommand('-d'),
             options: {
                 stdout: true
             }
         },
         compile_production: {
-            command: global.compileCommand('-f'),
-            options: {
-                stdout: true
-            }
-        },
-        compile_jsx: {
-            command: global.compileJsxCommand(),
+            command: global.compileCommand(),
             options: {
                 stdout: true
             }
@@ -43,12 +37,6 @@ module.exports = function (grunt) {
         },
         trigger_tests: {
             command: grunt.option('staging') ? 'grunt gh-pages:trigger_tests --staging' : prompt('Tests are triggered only when releasing to Staging.', 'warn'),
-            options: {
-                stdout: true
-            }
-        },
-        make_cname_test: { // TODO: to be removed
-            command: `cd ${process.cwd()} && printf "${global.release_config.test.CNAME}\n" > dist/CNAME`,
             options: {
                 stdout: true
             }

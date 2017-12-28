@@ -3,11 +3,10 @@ module.exports = function (grunt) {
     global.release_config = {
         production  : { branch: 'master',       target_folder: '',             origin: 'git@github.com:binary-static-deployed/binary-static.git', CNAME: 'www.binary.com' },
         staging     : { branch: 'master',       target_folder: '',             origin: 'git@github.com:binary-com/binary-static.git',             CNAME: 'staging.binary.com' },
-        test        : { branch: 'master',       target_folder: '',             origin: 'git@github.com:ashkanx/binary-static.git',                CNAME: 't45791.binary.com' },
         translations: { branch: 'translations', target_folder: 'translations', origin: 'git@github.com:binary-com/binary-static.git',             CNAME: 'staging.binary.com' },
     };
 
-    if (grunt.cli.tasks[0] === 'release' || grunt.cli.tasks[0] === 'release_test') { // TODO: remove release_test
+    if (grunt.cli.tasks[0] === 'release') {
         Object.keys(global.release_config).forEach(function (target) {
             if (grunt.option(target)) {
                 global.release_target = target;
@@ -28,11 +27,7 @@ module.exports = function (grunt) {
     global.path = grunt.option('path');
 
     global.compileCommand = function(params) {
-        return 'cd ' + process.cwd() + '/scripts && carton exec perl compile.pl ' + params + (global.branch ? ' -b ' + global.branch_prefix + global.branch : '') + (global.path ? ' -p ' + global.path : '') + ' && cd ..';
-    };
-
-    global.compileJsxCommand = function(params) {
-        return `cd ${process.cwd()} && ./scripts/render.js ${params} ${global.branch ? '-b ' + global.branch_prefix + global.branch : ''} ${global.path ? '-p ' + global.path : ''}`;
+        return `cd ${process.cwd()} && ./scripts/render.js ${params | ''} ${global.branch ? '-b ' + global.branch_prefix + global.branch : ''} ${global.path ? '-p ' + global.path : ''}`;
     };
 
     require('time-grunt')(grunt);
