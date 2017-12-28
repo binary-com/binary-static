@@ -21,7 +21,7 @@ const GraduateProgram = () => {
 
                 <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
                 <meta httpEquiv='Content-Language' content={it.language} />
-                <meta name='description' content={`${it.broker_name} Graduate Program`} />
+                <meta name='description' content={`${it.broker_name} Graduate Programme`} />
                 <meta name='keywords' content='binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading' />
                 <meta name='author' content={it.broker_name} />
                 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
