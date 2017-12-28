@@ -13,6 +13,7 @@ Gettext.prototype.dnpgettext = function(domain, msg_txt, msg_id, msg_id_plural, 
         default_translation = msg_id_plural || msg_id;
     }
 
+    this.emit('source-string', msg_id);
     const translation = this._getTranslation(domain, msg_txt || '', msg_id); // eslint-disable-line no-underscore-dangle
 
     if (translation) {
@@ -29,15 +30,13 @@ Gettext.prototype.dnpgettext = function(domain, msg_txt, msg_id, msg_id_plural, 
         return translation.msgstr[index] || default_translation;
     }
     // else
-    this.emit('no-translation', msg_id); // changed default implementation here!
-
     return default_translation;
 };
 
 const createGettextInstance = () => {
     const translations_dir = 'src/translations/';
     const locales = [
-        'en', 'ach_UG', 'de_DE', 'es_ES', 'fr_FR', 'id_ID', 'it_IT', 'ja_JP',
+        'en',   'ach_UG', 'de_DE', 'es_ES', 'fr_FR', 'id_ID', 'it_IT', 'ja_JP',
         'ko_KR', 'pl_PL', 'pt_PT', 'ru_RU', 'th_TH', 'vi_VN', 'zh_CN', 'zh_TW',
     ];
 
@@ -56,10 +55,10 @@ const createGettextInstance = () => {
     process.stdout.write(color.cyan(' ✓ Done'));
     process.stdout.write(color.blackBright(`  (${(Date.now() - start).toLocaleString()} ms)\n`));
 
-    const not_translated = [];
-    gt.on('no-translation', (error) => {
-        if (not_translated.indexOf(error) === -1) {
-            not_translated.push(error);
+    const source_strings = [];
+    gt.on('source-string', (str) => {
+        if (source_strings.indexOf(str) === -1) {
+            source_strings.push(str);
         }
     });
 
@@ -84,15 +83,13 @@ const createGettextInstance = () => {
         },
         update_translations: () => {
             process.stdout.write(color.green('Updating translations ... '));
-            if (not_translated.length === 0) {
-                process.stdout.write(color.green('Skipped\n'));
-                return;
-            }
+
             const messages_file = Path.join(common.root_path, translations_dir, 'messages.pot');
             const content = fs.readFileSync(messages_file, 'utf8');
             const parsed = po.parse(content);
 
-            not_translated.forEach(entry => {
+            parsed.translations[''] = {};
+            source_strings.sort().forEach(entry => {
                 parsed.translations[''][entry] = {
                     msgid : entry,
                     msgstr: [''],
@@ -105,7 +102,8 @@ const createGettextInstance = () => {
                 output,
                 'utf8'
             );
-            process.stdout.write(color.green(`Updated messages.pot with ${not_translated.length} new entries\n`));
+
+            process.stdout.write(color.green(`Updated messages.pot (total: ${source_strings.length} entries)\n`));
         },
     };
 };
