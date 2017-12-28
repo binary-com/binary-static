@@ -126,9 +126,6 @@
     </a>
 </div>
 
-<div class="invisible" id="ico_professional_message">
-    <p>[% l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") %]</p>
-</div>
 <div class="invisible" id="ico_virtual_message">
     <p>[% l("The Binary.com token sale has ended.") %]</p>
 </div>
@@ -142,7 +139,7 @@
 </div>
 
 <div class="invisible" id="ico_new_account_message">
-    <p id="message_common" class="invisible">[% l("This feature is only available to CR clients. Please sign up to proceed.") %]</p>
+    <p id="message_common" class="invisible">[% l("This feature is only available to CR clients.") %]</p>
     <p id="message_gaming" class="invisible">[% l("The Binary.com token sale has ended.") %]</p>
     <p id="message_financial" class="invisible">[% l("The Binary.com token sale has ended.") %]</p>
     <p id="message_iom" class="invisible">[% l("The Binary.com token sale has ended.") %]</p>
