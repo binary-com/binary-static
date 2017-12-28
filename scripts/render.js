@@ -268,6 +268,13 @@ async function compile(page) {
 createDirectories();
 (async () => {
     try {
+        if (program.jsTranslations) {
+            Gettext.getInstance();
+            generate_static_data.build();
+            generate_static_data.generate();
+            return;
+        }
+
         const regx = new RegExp(program.path, 'i');
         const pages_filtered = common.pages.filter(p => regx.test(p.save_as));
         const count = pages_filtered.length;
@@ -304,12 +311,6 @@ createDirectories();
             const gettext = Gettext.getInstance();
             generate_static_data.build();
             gettext.update_translations();
-        }
-
-        if (program.jsTranslations) {
-            Gettext.getInstance();
-            generate_static_data.build();
-            generate_static_data.generate();
         }
     } catch (e) {
         console.error(e);
