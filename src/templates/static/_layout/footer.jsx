@@ -98,7 +98,7 @@ const FooterJA = () => (
             <div className='container'>
                 <div className='gr-padding-10'>
                     <p className='gambling content-inverse-color no-para-margin'>
-                        {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href="[_1]">Responsible Trading</a>.', it.url_for('responsible-trading'))}
+                        {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about [_1]Responsible Trading[_2].', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
                     </p>
                 </div>
             </div>
