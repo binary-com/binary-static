@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const color   = require('cli-color');
 const fs      = require('fs');
 const path    = require('path');
@@ -644,8 +642,3 @@ const generate = () => {
 
 exports.build = build;
 exports.generate = generate;
-
-if (require.main === module) { // executed directly from commandline
-    build();
-    generate();
-}
