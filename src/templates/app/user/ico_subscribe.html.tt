@@ -126,11 +126,8 @@
     </a>
 </div>
 
-<div class="invisible" id="ico_professional_message">
-    <p>[% l("Please confirm that you are a [_1]professional trader[_2] to proceed.", "<a href='" _ request.url_for('user/settings/professional')  _"'>", "</a>") %]</p>
-</div>
 <div class="invisible" id="ico_virtual_message">
-    <p>[% l("Unable to create ICO account while virtual account is selected. Please select your real money account and try again.") %]</p>
+    <p>[% l("The Binary.com token sale has ended.") %]</p>
 </div>
 
 <div class="invisible" id="ico_account_message">
@@ -142,19 +139,14 @@
 </div>
 
 <div class="invisible" id="ico_new_account_message">
-    <p id="message_common" class="invisible">[% l("This feature is only available to CR clients. Please sign up to proceed.") %]</p>
-    <p id="message_gaming" class="invisible">[% l("To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Gaming Authority.") %]</p>
-    <p id="message_financial" class="invisible">[% l("To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Financial Services Authority.") %]</p>
-    <p id="message_iom" class="invisible">[% l("To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission.") %]</p>
-    [% INCLUDE account_opening_reason row_id='row_account_opening_reason' row_class='gr-padding-20 invisible' %]
-    <div class="center-text">
-        <a href="javascript:;" class="button" id="ico_new_account"><span>[% l("Sign up") %]</span></a>
-        <p class="error-msg invisible" id="new_account_error"></p>
-    </div>
+    <p id="message_common" class="invisible">[% l("This feature is only available to CR clients.") %]</p>
+    <p id="message_gaming" class="invisible">[% l("The Binary.com token sale has ended.") %]</p>
+    <p id="message_financial" class="invisible">[% l("The Binary.com token sale has ended.") %]</p>
+    <p id="message_iom" class="invisible">[% l("The Binary.com token sale has ended.") %]</p>
 </div>
 
 <div class="invisible" id="feature_not_allowed">
-    <p class="center-text notice-msg">[% l("This feature is not available in your jurisdiction.") %]</p>
+    <p class="center-text notice-msg">[% l("The Binary.com token sale has ended.") %]</p>
 </div>
 
 <div id="cancel_bid_confirmation" class="lightbox invisible">

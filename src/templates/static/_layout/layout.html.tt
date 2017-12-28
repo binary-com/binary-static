@@ -21,11 +21,6 @@
 [% END %]
 [% IF layout %]
         <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
-            [% IF layout == 'full_width' %]
-                [% PROCESS _common/includes/ico_banner.html.tt container='ico-banner-container' class='top-margin' %]
-            [% ELSIF layout == 'default' %]
-                [% PROCESS _common/includes/ico_banner.html.tt container='ico-banner-container' class='top-margin bottom-margin' %]
-            [% END %]
             <div id="page_info" style="display:none;">
                 [% PROCESS _common/components/title.html.tt %]
                 <div id="content_class">[% current_route %]-content</div>
@@ -36,7 +31,6 @@
 [% END %]
 
 [% IF layout == 'get_started' %]
-[% PROCESS _common/includes/ico_banner.html.tt class='top-margin' %]
 <div class="get-started static_full">
     <div class="gr-row">
         <div class="gr-3 gr-hide-m">
