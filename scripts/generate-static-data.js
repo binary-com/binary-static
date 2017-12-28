@@ -603,7 +603,7 @@ const texts = [
 ];
 
 /* eslint-disable no-console */
-const map = {};
+const map           = {};
 const all_languages = [...common.languages, 'ach'].map(l => l.toLowerCase());
 
 const build = () => {
@@ -640,5 +640,5 @@ const generate = () => {
     });
 };
 
-exports.build = build;
+exports.build    = build;
 exports.generate = generate;

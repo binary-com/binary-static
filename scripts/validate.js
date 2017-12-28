@@ -41,7 +41,7 @@ const diff = (save_as) => {
         const path2 = path.join(common.root_path, p2);
         if (!fs.existsSync(path1) || !fs.existsSync(path2)) {
             console.error(color.red('NOT FOUND '), path1, path2);
-            return ;
+            return;
         }
 
         const html1 = fs.readFileSync(path1, 'utf-8');

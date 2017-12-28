@@ -18,15 +18,13 @@ const ReactDOMServer = require('../node_modules/react-dom/server.js');
 const renderComponent = (context, path) => {
     const Component = require(path).default; // eslint-disable-line
 
-    global.it = context;
+    global.it    = context;
     const result = ReactDOMServer.renderToStaticMarkup(
         React.createElement(
             Component
         )
     );
-    return result
-        .replace(/GTM_START_PLACEHOLDER/g, '<!-- Google Tag Manager -->')
-        .replace(/GTM_END_PLACEHOLDER/g, '<!-- End Google Tag Manager --><!-- FlushHead -->');
+    return result;
 };
 
 const color                = require('cli-color');
@@ -144,9 +142,9 @@ const createUrlFinder = default_lang => {
             return Path.join(config.root_url, new_url);
         }
 
-        const p        = Url.parse(new_url, true);
+        const p      = Url.parse(new_url, true);
         let pathname = p.pathname.replace(/^\//, '');
-        pathname = Path.join(pathname); // convert a/b/../c to a/c
+        pathname     = Path.join(pathname); // convert a/b/../c to a/c
         if (common.pages.filter(page => page.save_as === pathname).length) {
             p.pathname = Path.join(config.root_url, `${lang}/${pathname}.html`);
             return Url.format(p);
@@ -163,7 +161,7 @@ const createContextBuilder = async () => {
     if (program.path) {
         try {
             static_hash = await common.readFile(Path.join(config.dist_path, 'version'));
-        } catch(e) { } // eslint-disable-line
+        } catch (e) { } // eslint-disable-line
     }
     const vendor_hash = await fileHash(Path.join(config.dist_path, 'js/vendor.min.js'));
     if (!is_translation) {
@@ -228,15 +226,15 @@ async function compile(page) {
             is_pjax_request: false,
         };
 
-        const context   = context_builder.buildFor(model);
-        const page_html = renderComponent(context, `../src/templates/${page.tpl_path}.jsx`);
-        const language  = lang.toLowerCase();
+        const context     = context_builder.buildFor(model);
+        const page_html   = renderComponent(context, `../src/templates/${page.tpl_path}.jsx`);
+        const language    = lang.toLowerCase();
         const layout_path = `../src/templates/${page.tpl_path.split('/')[0]}/_layout/layout.jsx`;
 
         if (page.layout) {
-            const layout_normal = `<!DOCTYPE html>\n${renderComponent(context, layout_path)}`;
+            const layout_normal     = `<!DOCTYPE html>\n${renderComponent(context, layout_path)}`;
             context.is_pjax_request = true;
-            const layout_pjax = renderComponent(context, layout_path);
+            const layout_pjax       = renderComponent(context, layout_path);
 
             if (is_translation) return; // Skip saving files when it's a translation update
 
@@ -275,9 +273,9 @@ createDirectories();
             return;
         }
 
-        const regx = new RegExp(program.path, 'i');
+        const regx           = new RegExp(program.path, 'i');
         const pages_filtered = common.pages.filter(p => regx.test(p.save_as));
-        const count = pages_filtered.length;
+        const count          = pages_filtered.length;
         if (!count) {
             console.error(color.red('No page matched your request.'));
             return;
@@ -285,7 +283,7 @@ createDirectories();
 
         Gettext.getInstance(); // initialize before starting the compilation
 
-        const start = Date.now();
+        const start   = Date.now();
         const spinner = new Spinner(color.green(`${is_translation ? 'Parsing' : 'Compiling'} ${count} page${count > 1 ? 's' : ''} ... %s`));
         spinner.setSpinnerString(18);
         spinner.start();

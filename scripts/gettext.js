@@ -5,7 +5,7 @@ const Gettext = require('node-gettext');
 const Path    = require('path');
 const common  = require('./common');
 
-Gettext.prototype.dnpgettext = function(domain, msg_txt, msg_id, msg_id_plural, count) {
+Gettext.prototype.dnpgettext = function (domain, msg_txt, msg_id, msg_id_plural, count) {
     let default_translation = msg_id;
     let index;
 
@@ -19,7 +19,7 @@ Gettext.prototype.dnpgettext = function(domain, msg_txt, msg_id, msg_id_plural, 
     if (translation) {
         if (typeof count === 'number') {
             const pluralsFunc = plurals[Gettext.getLanguageCode(this.locale)].pluralsFunc; // eslint-disable-line no-undef
-            index = pluralsFunc(count);
+            index             = pluralsFunc(count);
             if (typeof index === 'boolean') {
                 index = index ? 1 : 0;
             }
@@ -45,7 +45,7 @@ const createGettextInstance = () => {
     const gt = new Gettext();
 
     locales.forEach((locale) => {
-        const po_file = Path.join(common.root_path, translations_dir, `${locale}.po`);
+        const po_file    = Path.join(common.root_path, translations_dir, `${locale}.po`);
         const po_content = fs.readFileSync(po_file, 'utf8');
 
         const parsed = po.parse(po_content);
@@ -64,7 +64,7 @@ const createGettextInstance = () => {
 
     return {
         setLang: lang => {
-            const [locale]  = locales.filter(l => l.toLocaleLowerCase().startsWith(lang));
+            const [locale] = locales.filter(l => l.toLocaleLowerCase().startsWith(lang));
             if (!locale) {
                 throw new TypeError(`locale for ${lang} not found!`);
             }
@@ -72,12 +72,12 @@ const createGettextInstance = () => {
         },
         gettext: (text, ...args) => {
             let txt = text;
-            for(let inx = 1; inx <= args.length; ++inx) {
+            for (let inx = 1; inx <= args.length; ++inx) {
                 txt = txt.split(`[_${inx}]`).join(`%${inx}`);
             }
             let translation = gt.gettext(txt);
-            for(let inx = 1; inx <= args.length; ++inx) {
-                translation = translation.split(`%${inx}`).join(args[inx-1]);
+            for (let inx = 1; inx <= args.length; ++inx) {
+                translation = translation.split(`%${inx}`).join(args[inx - 1]);
             }
             return translation;
         },
@@ -85,8 +85,8 @@ const createGettextInstance = () => {
             process.stdout.write(color.green('Updating translations ... '));
 
             const messages_file = Path.join(common.root_path, translations_dir, 'messages.pot');
-            const content = fs.readFileSync(messages_file, 'utf8');
-            const parsed = po.parse(content);
+            const content       = fs.readFileSync(messages_file, 'utf8');
+            const parsed        = po.parse(content);
 
             parsed.translations[''] = {};
             source_strings.sort().forEach(entry => {
@@ -96,7 +96,7 @@ const createGettextInstance = () => {
                 };
             });
 
-            const output = po.compile(parsed, {foldLength: 0});
+            const output = po.compile(parsed, { foldLength: 0 });
             fs.writeFileSync(
                 Path.join(common.root_path, translations_dir, 'messages.pot'),
                 output,
