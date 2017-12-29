@@ -1,6 +1,7 @@
-const fs   = require('fs');
-const Path = require('path');
-const util = require('util');
+const color = require('cli-color');
+const fs    = require('fs');
+const Path  = require('path');
+const util  = require('util');
 
 exports.root_path = require('app-root-path').path;
 
@@ -22,6 +23,10 @@ exports.print = (text) => {
     process.stdout.write(text);
 };
 
+exports.messageStart = (msg, no_pad) => `${color.cyan('>')} ${msg} ${no_pad ? '' : '.'.repeat(33 - msg.length)}`;
+exports.messageEnd   = (duration, no_new_line) => (
+    `${color.green(' ✓ Done')}${duration ? color.blackBright(`  (${duration.toLocaleString().padStart(6)} ms)`) : ''}${no_new_line ? '' : '\n'}`
+);
 
 const existsAsync = util.promisify(fs.exists);
 const mkdirAsync  = util.promisify(fs.mkdir);

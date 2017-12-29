@@ -284,12 +284,13 @@ createDirectories();
         Gettext.getInstance(); // initialize before starting the compilation
 
         const start   = Date.now();
-        const spinner = new Spinner(color.green(`${is_translation ? 'Parsing' : 'Compiling'} ${count} page${count > 1 ? 's' : ''} ... %s`));
+        const message = common.messageStart(`${is_translation ? 'Parsing' : 'Compiling'} ${count} page${count > 1 ? 's' : ''}`);
+        const spinner = new Spinner(`${message} ${color.cyan('%s')}`);
         spinner.setSpinnerString(18);
         spinner.start();
 
         if (count <= 10 || program.verbose) {
-            console.log();
+            console.log(common.messageStart('Output list:', true));
             pages_filtered
                 .sort((a, b) => a.save_as > b.save_as)
                 .forEach((p) => {
@@ -302,8 +303,7 @@ createDirectories();
         );
 
         spinner.stop();
-        process.stdout.write(color.green('\b✓ Done'));
-        process.stdout.write(color.blackBright(`  (${(Date.now() - start).toLocaleString()} ms)\n`));
+        process.stdout.write(`\b\b${common.messageEnd(Date.now() - start)}`);
 
         if (program.translations) {
             const gettext = Gettext.getInstance();
