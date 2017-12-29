@@ -33,6 +33,7 @@ const Menu = (() => {
             main_menu.setVisibility(1);
         }
         activateMainMenu();
+        Client.activateByClientType('main-menu');
     };
 
     const hideMainMenu = () => {
