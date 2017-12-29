@@ -188,7 +188,7 @@ const Metatrader = () => (
                         <AccountDesc account_type={['vanuatu_standard']} title={it.L('Standard Account')}
                             description={it.L('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')}
                             items={[
-                                it.L('Leverage up to 1:300'),
+                                it.L('Leverage up to 1:500'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
