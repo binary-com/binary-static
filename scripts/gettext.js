@@ -87,9 +87,18 @@ const createGettextInstance = () => {
             const messages_file = Path.join(common.root_path, translations_dir, 'messages.pot');
             const content       = fs.readFileSync(messages_file, 'utf8');
             const parsed        = po.parse(content);
+            const old_strings   = Object.keys(parsed.translations['']).filter(s => s);
+            const old_count     = old_strings.length;
+            const new_strings   = [];
 
             parsed.translations[''] = {};
             source_strings.sort().forEach(entry => {
+                const idx = old_strings.indexOf(entry);
+                if (idx === -1) {
+                    new_strings.push(entry);
+                } else {
+                    old_strings.splice(idx, 1);
+                }
                 parsed.translations[''][entry] = {
                     msgid : entry,
                     msgstr: [''],
@@ -104,9 +113,36 @@ const createGettextInstance = () => {
             );
 
             process.stdout.write(color.green(`Updated messages.pot (total: ${source_strings.length} entries)\n`));
+
+            printList('New strings', new_strings, 'greenBright');
+            printList('Deleted strings', old_strings, 'redBright');
+
+            console.log(
+                '\n\n',
+                color.cyanBright('Summary\n'),
+                color.yellowBright(`${'='.repeat(20)}\n`),
+                formatValue(old_count, 'was'),
+                formatValue(new_strings.length, 'new', '+'),
+                formatValue(old_strings.length, 'deleted', '-'),
+                color.yellowBright(`${'-'.repeat(20)}\n`),
+                formatValue(Object.keys(parsed.translations['']).length, 'result'));
         },
     };
 };
+
+const printList = (title, items, color_name) => {
+    console.log();
+    console.log(color.yellowBright(`${title}:`), ` (${items.length} items)`);
+    console.log(color.yellow('-'.repeat(title.length + 1)));
+    items.forEach((s, idx) => {
+        console.log(color.yellow(`  ${(idx + 1).toString().padStart(3)}.`), color[color_name](s));
+    });
+};
+
+const formatValue = (value, comment, sign) => (
+    `${sign ? color.cyan(` ${sign} `) : ''}${color.whiteBright(value.toLocaleString().padStart(sign ? 5 : 8))} ${` (${comment})\n`}`
+);
+
 
 let gt_instance = null;
 exports.getInstance = () => {
