@@ -68,8 +68,8 @@ const PaymentMethods = () => (
                     <a className='button'></a>
                 </div>
                 <p>
-                    <Button url='/' text={it.L('Open an account now')} />&nbsp;
-                    <Button url='cashier/forwardws#deposit' real className='deposit' text={it.L('Deposit')} />&nbsp;
+                    <Button url='/' text={it.L('Open an account now')} />
+                    <Button url='cashier/forwardws#deposit' real className='deposit' text={it.L('Deposit')} />
                     <Button url='cashier/forwardws#withdraw' real className='withdraw' text={it.L('Withdraw')} />
                 </p>
             </div>
