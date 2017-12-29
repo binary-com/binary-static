@@ -79,17 +79,7 @@ const IcoSubscribe = () => (
             <SeparatorLine show_mobile invisible className='gr-padding-20' />
 
             <div id='ico_bids'>
-                <div className='gr-row'>
-                    <h1 className='gr-7 gr-12-m gr-order-2-m'>{it.L('[_1] ICO Auction Bids', it.website_name)}</h1>
-                    <div className='gr-5 gr-12-m gr-order-1-m invisible' id='view_ico_info'>
-                        <a className='button gr-float-right gr-float-left-m' href={it.url_for('user/ico-info')}>
-                            <span>
-                                <img src={it.url_for('images/ico/icons/bar_chart.svg')} />
-                                {it.L('Histogram of Active Bids')}
-                            </span>
-                        </a>
-                    </div>
-                </div>
+                <h1>{it.L('[_1] ICO Auction Bids', it.website_name)}</h1>
 
                 <div id='portfolio'>
                     <p className='notice-msg center-text invisible' id='error-msg'></p>
