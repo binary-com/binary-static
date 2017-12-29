@@ -14,7 +14,8 @@ function scrollToSection(e) {
     if (e) e.preventDefault();
     const target = this.getAttribute('href').substr(1);
     const offset = /who-we-are|page-top/.test(target) ? 70 : 75;
-    const to = document.getElementById(target).offsetTop - offset;
+    const el_target = document.getElementById(target);
+    const to = el_target ? el_target.offsetTop - offset : '';
 
     scrollTo(to, 500);
     collapseMenu();
