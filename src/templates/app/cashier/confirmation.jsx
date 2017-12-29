@@ -11,8 +11,7 @@ const Confirmation = () => (
                     <FormRow type='checkbox' label={it.L('Yes, I understand')} id='chk_confirm' />
                     <div className='center-text gr-centered'>
                         <button className='button' type='submit'>{it.L('Proceed')}</button>
-                        &nbsp;
-                        <a className='button-secondary' id='cancel' href='javascript:;'><span>{it.L('Cancel')}</span></a>
+                        <a className='button button-secondary' id='cancel' href='javascript:;'><span>{it.L('Cancel')}</span></a>
                     </div>
                 </form>
             </div>

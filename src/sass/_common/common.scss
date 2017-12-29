@@ -503,3 +503,7 @@ ul.bullet.gr-row > li {
     font-size: $FONT_SIZE_XS;
     color: $COLOR_GRAY_SHADE;
 }
+
+.button + .button {
+    margin-left: 10px;
+}
