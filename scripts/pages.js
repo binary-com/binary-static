@@ -34,7 +34,6 @@ module.exports = [
     ['user/accounts',                      'app/user/accounts',                         'default',    'Accounts',                          'ja'],
     ['user/authenticate',                  'app/user/authenticate',                     'default',    'Authenticate',                      'ja'],
     ['user/ico-claim-form',                'app/user/ico_claim_form',                   'default',    'Electronic Subscription Form for Tokens', 'ja'],
-    ['user/ico-info',                      'app/user/ico_info',                         'default',    'ICO Histogram',                     'ja'],
     ['user/ico-subscribe',                 'app/user/ico_subscribe',                    'default',    'Subscribe to ICO',                  'ja'],
     ['user/lost_passwordws',               'app/user/lost_password',                    'default',    'Password Reset'],
     ['user/metatrader',                    'app/user/metatrader',                       'default',    'MetaTrader account management'],
