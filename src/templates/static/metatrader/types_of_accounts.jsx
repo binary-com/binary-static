@@ -70,10 +70,10 @@ const TypesOfAccounts = () => (
                         [{ text: <Row number={1} text={it.L('Account currency')} />},    { text: it.L('USD') },         { text: it.L('USD') },         { text: it.L('USD') }],
                         [{ text: <Row number={2} text={it.L('Maximum leverage')} />},    { text: it.L('Up to 1:500') }, { text: it.L('Up to 1:100') }, { text: it.L('Up to 1:500') }],
                         [{ text: <Row number={3} text={it.L('Order execution')} />},     { text: it.L('Market') },      { text: it.L('Market') },      { text: it.L('Market') }],
-                        [{ text: <Row number={4} text={it.L('Spread')} />},              { text: it.L('Variable') },    { text: it.L('Variable') },    { text: it.L('Variable') }],
+                        [{ text: <Row number={4} text={it.L('Spread')} />},              { text: it.L('Variable') },    { text: it.L('Variable') },    { text: it.L('Fixed') }],
                         [{ text: <Row number={5} text={it.L('Commission')} />},          { text: it.L('No') },          { text: it.L('No') },          { text: it.L('No') }],
-                        [{ text: <Row number={6} text={it.L('Margin call')} />},         { text: it.L('100%') },        { text: it.L('100%') },        { text: it.L('100%') }],
-                        [{ text: <Row number={7} text={it.L('Stop out level')} />},      { text: it.L('50%') },         { text: it.L('50%') },         { text: it.L('50%') }],
+                        [{ text: <Row number={6} text={it.L('Margin call')} />},         { text: it.L('150%') },        { text: it.L('150%') },        { text: it.L('100%') }],
+                        [{ text: <Row number={7} text={it.L('Stop out level')} />},      { text: it.L('75%') },         { text: it.L('75%') },         { text: it.L('50%') }],
                         [{ text: <Row number={8} text={it.L('Maximum ticket size')} />}, { text: it.L('50 lots') },     { text: it.L('100 lots') },    { text: it.L('50 lots') }],
                     ],
                 }}

@@ -205,7 +205,7 @@ const Metatrader = () => (
                             description={it.L('Our Volatility account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
                             items={[
                                 it.L('Leverage up to 1:500'),
-                                it.L('Variable spreads'),
+                                it.L('Fixed spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
                             ]} />
