@@ -21,7 +21,6 @@ const MetaTraderUI = (() => {
 
     const accounts_info = MetaTraderConfig.accounts_info;
     const actions_info  = MetaTraderConfig.actions_info;
-    const mt5_currency  = MetaTraderConfig.mt5Currency();
 
     const init = (submit_func) => {
         submit       = submit_func;
@@ -105,7 +104,8 @@ const MetaTraderUI = (() => {
             $acc_item.find('.mt-login').text(accounts_info[acc_type].info.login);
             $acc_item.setVisibility(1);
             if (acc_type === Client.get('mt5_account')) {
-                const mt_balance = formatMoney(mt5_currency, +accounts_info[acc_type].info.balance);
+                const mt_balance = formatMoney(MetaTraderConfig.getCurrency(acc_type),
+                    +accounts_info[acc_type].info.balance);
                 $acc_item.find('.mt-balance').html(mt_balance);
                 $action.find('.mt5-balance').html(mt_balance);
             }
@@ -133,7 +133,7 @@ const MetaTraderUI = (() => {
                 const key     = $(this).attr('data');
                 const info    = accounts_info[acc_type].info[key];
                 const mapping = {
-                    balance : () => (isNaN(info) ? '' : formatMoney(mt5_currency, +info)),
+                    balance : () => (isNaN(info) ? '' : formatMoney(MetaTraderConfig.getCurrency(acc_type), +info)),
                     leverage: () => `1:${info}`,
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
@@ -205,7 +205,7 @@ const MetaTraderUI = (() => {
             $form.find('.binary-account').text(`Binary ${Client.get('loginid')}`);
             $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${accounts_info[acc_type].title} ${accounts_info[acc_type].info.login}`);
-            $form.find('.mt5-balance').html(`${formatMoney(mt5_currency, accounts_info[acc_type].info.balance)}`);
+            $form.find('.mt5-balance').html(`${formatMoney(MetaTraderConfig.getCurrency(acc_type), accounts_info[acc_type].info.balance)}`);
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {
                     if (error_msg) {
@@ -219,8 +219,8 @@ const MetaTraderUI = (() => {
                 let msg = '';
                 if (Client.get('is_virtual')) {
                     msg = MetaTraderConfig.needsRealMessage();
-                } else if (Client.get('currency') !== MetaTraderConfig.mt5Currency()) {
-                    msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.mt5Currency()]);
+                } else if (Client.get('currency') !== MetaTraderConfig.getCurrency(acc_type)) {
+                    msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.getCurrency(acc_type)]);
                 }
                 if (msg) {
                     displayMainMessage(msg, false);

@@ -209,7 +209,7 @@ const MetaTraderConfig = (() => {
         validations,
         needsRealMessage,
         setMessages: ($msg) => { $messages = $msg; },
-        mt5Currency: () => 'USD',
+        getCurrency: acc_type => accounts_info[acc_type].info.currency,
     };
 })();
 
