@@ -149,12 +149,14 @@ const Regulation = () => (
                     href={it.url_for('/download/BIEL_Pillar_3_Report_20170426.pdf')} target='_blank' download={ 1 } text={it.L('Pillar 3 disclosure report')} />
             </div>
 
-            <h3>{it.L('Product Disclosure Statement')}</h3>
+            <h3>{it.L('Key Information Documents')}</h3>
             <div>
-                <p>{it.L('Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the "Schedules" section are investment examples of contract types to help you get to grips with the basics of binary options.')}</p>
-                <FillBox padding='4' center={ 1 } border='border-dark-gray' image='images/pages/regulation/prospectus.svg'
-                    href={it.url_for('/download/BIEL_Product_Disclosure_Statement.pdf')} target='_blank' download={1}
-                    text={it.L('Product Disclosure Statement')} />
+                <p>{it.L('These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.')}</p>
+                <div className='gr-row'>
+                    <FillBox padding='4' center border='border-dark-gray' href={it.url_for('/download/key_information_document/Up_Down.pdf')}        target='_blank' download text={it.L('Up/Down')} />
+                    <FillBox padding='4' center border='border-dark-gray' href={it.url_for('/download/key_information_document/Touch_No_Touch.pdf')} target='_blank' download text={it.L('Touch/No Touch')} />
+                    <FillBox padding='4' center border='border-dark-gray' href={it.url_for('/download/key_information_document/In_and_Out.pdf')}     target='_blank' download text={it.L('In/Out')} />
+                </div>
             </div>
         </div>
     </Box>
