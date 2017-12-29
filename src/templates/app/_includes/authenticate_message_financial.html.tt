@@ -1,1 +1,0 @@
-<p>[% l('As an EU citizen, you are also required to verify the above documents by [_1]video call[_2].', '<a href="' _ request.url_for('user/video-facility') _ '">', '</a>') %]</p>

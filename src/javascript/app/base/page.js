@@ -1,5 +1,4 @@
 const Cookies          = require('js-cookie');
-const BinaryPjax       = require('./binary_pjax');
 const Client           = require('./client');
 const Contents         = require('./contents');
 const Header           = require('./header');
@@ -83,27 +82,6 @@ const Page = (() => {
         Menu.init();
         Contents.onLoad();
 
-        const ico_banner = document.getElementById('ico_banner');
-        const page_allows_banner = () => (!/(ico-subscribe|ico-info)/.test(window.location.pathname));
-
-        if (!sessionStorage.getItem('hide_ico_banner') && ico_banner && page_allows_banner()) {
-            ico_banner.removeEventListener('click', clickIcoBannerButton);
-            ico_banner.addEventListener('click', clickIcoBannerButton);
-            ico_banner.classList.remove('invisible');
-            const ico_banner_btn = document.getElementById('ico_link_button');
-            if (ico_banner_btn) {
-                ico_banner_btn.removeEventListener('click', clickIcoBannerButton);
-                ico_banner_btn.addEventListener('click', clickIcoBannerButton);
-            }
-
-        }
-
-        const close_ico_banner = document.getElementById('close_ico_banner');
-        if (close_ico_banner) {
-            close_ico_banner.removeEventListener('click', removeIcoBanner);
-            close_ico_banner.addEventListener('click', removeIcoBanner);
-        }
-
         if (sessionStorage.getItem('showLoginPage')) {
             sessionStorage.removeItem('showLoginPage');
             Login.redirectToLogin();
@@ -121,17 +99,6 @@ const Page = (() => {
 
     const onUnload = () => {
         Menu.onUnload();
-    };
-
-    const clickIcoBannerButton = (e) => {
-        e.stopPropagation();
-        BinaryPjax.load(Url.urlFor('user/ico-subscribe'));
-    };
-
-    const removeIcoBanner = (e) => {
-        e.stopPropagation();
-        document.getElementById('ico_banner').classList.add('invisible');
-        sessionStorage.setItem('hide_ico_banner', true);
     };
 
     const recordAffiliateExposure = () => {

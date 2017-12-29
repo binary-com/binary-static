@@ -40,7 +40,6 @@ const ICOSubscribe         = require('../pages/user/ico_subscribe');
 const ICOClaimForm         = require('../pages/user/ico_claim_form');
 const LostPassword         = require('../pages/user/lost_password');
 const MetaTrader           = require('../pages/user/metatrader/metatrader');
-const AccountTypeSelection = require('../pages/user/new_account/account_type');
 const FinancialAccOpening  = require('../pages/user/new_account/financial_acc_opening');
 const JapanAccOpening      = require('../pages/user/new_account/japan_acc_opening');
 const RealAccOpening       = require('../pages/user/new_account/real_acc_opening');
@@ -68,7 +67,6 @@ const WhyUs              = require('../../static/pages/why_us');
 /* eslint-disable max-len */
 const pages_config = {
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true, needs_currency: true },
-    account_type             : { module: AccountTypeSelection,       is_authenticated: true },
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
