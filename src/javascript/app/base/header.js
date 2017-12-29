@@ -89,7 +89,7 @@ const Header = (() => {
                         applyToAllElements('.account-type', (el) => { elementInnerHtml(el, localized_type); });
                         applyToAllElements('.account-id', (el) => { elementInnerHtml(el, loginid); });
                     } else {
-                        const link    = createElement('a', { href: `${'java'}${'script:;'}`, 'data-value': loginid });
+                        const link    = createElement('a', { href: `${'javascript:;'}`, 'data-value': loginid });
                         const li_type = createElement('li', { text: localized_type });
 
                         li_type.appendChild(createElement('div', { text: loginid }));
@@ -167,9 +167,7 @@ const Header = (() => {
             };
 
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
-            const status            = State.getResponse('get_account_status.status');
-            const is_ico_account    = /ico_only/.test(status);
-            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status, is_ico_account);
+            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
             const show_upgrade_msg  = upgrade_info.can_upgrade;
             const virtual_text      = document.getElementById('virtual-text');
 
@@ -222,7 +220,8 @@ const Header = (() => {
     const showHideNewAccount = (can_upgrade) => {
         const landing_company = State.getResponse('landing_company');
         // only allow opening of multi account to costarica clients with remaining currency
-        if (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length)) {
+        if (!Client.get('is_ico_only') &&
+            (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length))) {
             changeAccountsText(1, 'Create Account');
         } else {
             changeAccountsText(0, 'Accounts List');

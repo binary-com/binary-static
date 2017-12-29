@@ -213,7 +213,6 @@ const Client = (() => {
         set('email',       options.email,       options.loginid);
         set('is_virtual',  +options.is_virtual, options.loginid);
         set('loginid',     options.loginid);
-        set('is_ico_only', options.is_ico_only);
 
         // need to redirect not using pjax
         window.location.href = options.redirect_url || defaultRedirectUrl();
@@ -254,13 +253,6 @@ const Client = (() => {
                         el.setVisibility(1);
                     }
                 });
-
-                // Show to eu clients only
-                if(/^malta|maltainvest|iom$/.test(get('landing_company_shortcode'))) {
-                    applyToAllElements('.eu-only', (el) => {
-                        el.setVisibility(1);
-                    });
-                }
 
                 if (get('is_virtual')) {
                     applyToAllElements('.client_virtual', (el) => { el.setVisibility(1); }, '', el_section);
@@ -349,24 +341,24 @@ const Client = (() => {
 
     const canUpgradeVirtualToReal = data => (hasShortCode(data.financial_company, 'costarica'));
 
-    const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status'), account_type_ico = false) => {
+    const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status')) => {
         let type         = 'real';
         let can_upgrade  = false;
         let upgrade_link = 'realws';
-        if (account_type_ico) {
-            can_upgrade = !hasCostaricaAccount();
-        } else if (get('is_virtual')) {
-            if (canUpgradeVirtualToFinancial(landing_company)) {
+        if (!get('is_ico_only')) {
+            if (get('is_virtual')) {
+                if (canUpgradeVirtualToFinancial(landing_company)) {
+                    type         = 'financial';
+                    upgrade_link = 'maltainvestws';
+                } else if (canUpgradeVirtualToJapan(landing_company)) {
+                    upgrade_link = 'japanws';
+                }
+                can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
+            } else if (canUpgradeGamingToFinancial(landing_company)) {
                 type         = 'financial';
+                can_upgrade  = !hasAccountType('financial');
                 upgrade_link = 'maltainvestws';
-            } else if (canUpgradeVirtualToJapan(landing_company)) {
-                upgrade_link = 'japanws';
             }
-            can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
-        } else if (canUpgradeGamingToFinancial(landing_company)) {
-            type         = 'financial';
-            can_upgrade  = !hasAccountType('financial');
-            upgrade_link = 'maltainvestws';
         }
         return {
             type,
