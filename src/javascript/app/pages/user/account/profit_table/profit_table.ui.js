@@ -79,7 +79,7 @@ const ProfitTableUI = (() => {
         const data = [
             jp_client ? toJapanTimeIfNeeded(parseInt(transaction.purchase_time)) : profit_table_data.buyDate,
             `<span ${showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id])}>${profit_table_data.ref}</span>`,
-            /binaryico/i.test(profit_table_data.shortcode) ? '-' : profit_table_data.payout,
+            profit_table_data.payout,
             '',
             profit_table_data.buyPrice,
             jp_client ? toJapanTimeIfNeeded(parseInt(transaction.sell_time)) : profit_table_data.sellDate,
@@ -95,11 +95,9 @@ const ProfitTableUI = (() => {
             $(this).wrapInner('<div class="new-width"></div>');
         });
 
-        if (!/binaryico/i.test(profit_table_data.shortcode)) {
-            // create view button and append
-            const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: profit_table_data.id });
-            $row.children('.contract,.details').append($view_button);
-        }
+        // create view button and append
+        const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: profit_table_data.id });
+        $row.children('.contract,.details').append($view_button);
 
         return $row[0];
     };

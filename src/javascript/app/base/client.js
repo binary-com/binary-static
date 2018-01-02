@@ -95,12 +95,10 @@ const Client = (() => {
 
     const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
         const this_type   = getAccountType(loginid);
-        const is_ico_only = get('is_ico_only', loginid);
         return ((
             (type === 'virtual' && this_type === 'virtual') ||
             (type === 'real'    && this_type !== 'virtual') ||
-            type === this_type) && !is_ico_only &&              // Account shouldn't be ICO_ONLY.
-            (only_enabled ? !get('is_disabled', loginid) : true));
+            type === this_type) && (only_enabled ? !get('is_disabled', loginid) : true));
     };
 
     const getAccountOfType = (type, only_enabled) => {
@@ -239,17 +237,8 @@ const Client = (() => {
                     client_logged_in.classList.add('gr-centered');
                 }
 
-                const is_ico_only = !is_jp && get('is_ico_only');
-                if (is_ico_only) {
-                    applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
-                }
-                if (!is_jp && (is_ico_only || Client.get('landing_company_shortcode') === 'costarica')) {
-                    applyToAllElements('.ico-only-show', (el) => { el.setVisibility(1); });
-                }
-
                 applyToAllElements('.client_logged_in', (el) => {
-                    if ((!is_jp || !/ja-hide/.test(el.classList)) &&
-                        (!/ico-only-hide/.test(el.classList) || !is_ico_only)) {
+                    if (!is_jp || !/ja-hide/.test(el.classList)) {
                         el.setVisibility(1);
                     }
                 });
@@ -260,8 +249,7 @@ const Client = (() => {
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
                     applyToAllElements('.client_real', (el) => {
-                        if ((!is_jp || !/ja-hide/.test(el.classList)) &&
-                            !/ico-only-hide/.test(el.classList) || !is_ico_only) {
+                        if (!is_jp || !/ja-hide/.test(el.classList)) {
                             el.setVisibility(1);
                         }}, '', el_section);
                     topbar_class.add(primary_bg_color_dark);
@@ -345,20 +333,18 @@ const Client = (() => {
         let type         = 'real';
         let can_upgrade  = false;
         let upgrade_link = 'realws';
-        if (!get('is_ico_only')) {
-            if (get('is_virtual')) {
-                if (canUpgradeVirtualToFinancial(landing_company)) {
-                    type         = 'financial';
-                    upgrade_link = 'maltainvestws';
-                } else if (canUpgradeVirtualToJapan(landing_company)) {
-                    upgrade_link = 'japanws';
-                }
-                can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
-            } else if (canUpgradeGamingToFinancial(landing_company)) {
+        if (get('is_virtual')) {
+            if (canUpgradeVirtualToFinancial(landing_company)) {
                 type         = 'financial';
-                can_upgrade  = !hasAccountType('financial');
                 upgrade_link = 'maltainvestws';
+            } else if (canUpgradeVirtualToJapan(landing_company)) {
+                upgrade_link = 'japanws';
             }
+            can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
+        } else if (canUpgradeGamingToFinancial(landing_company)) {
+            type         = 'financial';
+            can_upgrade  = !hasAccountType('financial');
+            upgrade_link = 'maltainvestws';
         }
         return {
             type,
@@ -368,10 +354,7 @@ const Client = (() => {
         };
     };
 
-    const getLandingCompanyValue = (loginid, landing_company, key, is_ico_only) => {
-        if (is_ico_only) {
-            return 'Binary (C.R.) S.A.';
-        }
+    const getLandingCompanyValue = (loginid, landing_company, key) => {
         let landing_company_object;
         if (loginid.financial || isAccountOfType('financial', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
@@ -397,10 +380,6 @@ const Client = (() => {
 
     const hasCostaricaAccount = () => getAllLoginids().find(loginid => /^CR/.test(loginid));
 
-    const canOpenICO = () =>
-        /malta|iom/.test(State.getResponse('landing_company.financial_company.shortcode')) ||
-        /malta|iom/.test(State.getResponse('landing_company.gaming_company.shortcode'));
-
     const canRequestProfessional = () => {
         const residence = get('residence');
         /* Austria, Italy, Belgium, Latvia, Bulgaria,	Lithuania, Croatia, Luxembourg, Cyprus, Malta, Czech Republic,	Netherlands, Denmark, Poland, Estonia, Portugal, Finland, Romania, France, Slovakia, Germany, Slovenia, Greece, Spain, Hungary, Sweden, Ireland, United Kingdom, Australia, New Zealand, Singapore, Canada, Switzerland */
@@ -409,15 +388,7 @@ const Client = (() => {
 
     };
 
-    const defaultRedirectUrl = () => {
-        let redirect_url = 'trading';
-        if (jpClient()) {
-            redirect_url = 'multi_barriers_trading';
-        } else if (get('is_ico_only')) {
-            redirect_url = 'user/ico-subscribe';
-        }
-        return urlFor(redirect_url);
-    };
+    const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');
 
     return {
         init,
@@ -448,7 +419,6 @@ const Client = (() => {
         getLandingCompanyValue,
         canTransferFunds,
         hasCostaricaAccount,
-        canOpenICO,
         canRequestProfessional,
         defaultRedirectUrl,
     };

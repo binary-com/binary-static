@@ -28,16 +28,15 @@ const Accounts = (() => {
 
             let element_to_show = '#no_new_accounts_wrapper';
             const upgrade_info  = Client.getUpgradeInfo(landing_company);
-            const is_ico_only   = Client.get('is_ico_only');
 
-            if (!is_ico_only && upgrade_info.can_upgrade) {
+            if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
             }
 
             const currencies = getCurrencies(landing_company);
             // only allow opening of multi account to costarica clients with remaining currency
-            if (!is_ico_only && Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
+            if (Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
                 populateMultiAccount(currencies);
             } else {
                 doneLoading(element_to_show);
@@ -51,7 +50,7 @@ const Accounts = (() => {
         $('#accounts_wrapper').setVisibility(1);
     };
 
-    const getCompanyName = (account, account_is_ico_only) => Client.getLandingCompanyValue(account, landing_company, 'name', account_is_ico_only);
+    const getCompanyName = account => Client.getLandingCompanyValue(account, landing_company, 'name');
 
     const populateNewAccounts = (upgrade_info) => {
         const new_account = upgrade_info;
@@ -91,7 +90,7 @@ const Accounts = (() => {
         const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
 
         if (!Client.isAccountOfType('virtual', loginid)) {
-            const company_name = getCompanyName(loginid , Client.get('is_ico_only', loginid));
+            const company_name = getCompanyName(loginid);
             account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
         }
 
@@ -120,9 +119,6 @@ const Accounts = (() => {
     };
 
     const getAvailableMarkets = (loginid) => {
-        if (Client.get('is_ico_only', loginid)) {
-            return [localize('None')];
-        }
         let legal_allowed_markets = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_markets') || '';
         if (Array.isArray(legal_allowed_markets) && legal_allowed_markets.length) {
             legal_allowed_markets =

@@ -16,19 +16,19 @@ const professionalClient = (() => {
                 BinaryPjax.loadPreviousUrl();
                 return;
             }
-            init(Client.isAccountOfType('financial'), true, Client.get('is_ico_only'));
+            init(Client.isAccountOfType('financial'), true);
         });
     };
 
-    const init = (is_financial, is_page, is_ico_only) => {
+    const init = (is_financial, is_page) => {
         is_in_page = !!is_page;
-        BinarySocket.wait('landing_company').then(() => { populateProfessionalClient(is_financial, is_ico_only); });
+        BinarySocket.wait('landing_company').then(() => { populateProfessionalClient(is_financial); });
     };
 
-    const populateProfessionalClient = (is_financial, is_ico_only) => {
+    const populateProfessionalClient = (is_financial) => {
         const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-        if ((!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
-            (financial_company === 'maltainvest' && !is_financial)) && !is_ico_only) { // then it's not upgrading to financial
+        if (!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
+            (financial_company === 'maltainvest' && !is_financial)) { // then it's not upgrading to financial
             if(is_in_page) {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -79,11 +79,7 @@ const professionalClient = (() => {
                                     $error.text(response.error.message).removeClass('invisible');
                                 } else {
                                     BinarySocket.send({get_account_status: 1}).then(() => {
-                                        if(Client.get('is_ico_only')){
-                                            BinaryPjax.load(Url.urlFor('user/ico-subscribe'));
-                                        } else {
-                                            BinaryPjax.loadPreviousUrl();
-                                        }
+                                        BinaryPjax.loadPreviousUrl();
                                     });
                                 }
                             });

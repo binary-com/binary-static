@@ -35,8 +35,6 @@ const professionalClient   = require('../pages/user/account/settings/professiona
 const Statement            = require('../pages/user/account/statement/statement.init');
 const TopUpVirtual         = require('../pages/user/account/top_up_virtual');
 const Accounts             = require('../pages/user/accounts');
-const ICOSubscribe         = require('../pages/user/ico_subscribe');
-const ICOClaimForm         = require('../pages/user/ico_claim_form');
 const LostPassword         = require('../pages/user/lost_password');
 const MetaTrader           = require('../pages/user/metatrader/metatrader');
 const FinancialAccOpening  = require('../pages/user/new_account/financial_acc_opening');
@@ -127,8 +125,6 @@ const pages_config = {
     'home-beta'              : { module: TabSelector,                   not_authenticated: true },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'how-to-trade-mt5'       : { module: TabSelector },
-    'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
-    'ico-claim-form'         : { module: ICOClaimForm,               is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
     'metals'                 : { module: GetStartedBeta.Metals },
     'open-positions'         : { module: StaticPages.OpenPositions },

@@ -95,7 +95,7 @@ const PortfolioInit = (() => {
              **/
             $('#portfolio-no-contract').hide();
             $.each(data.portfolio.contracts, (ci, c) => {
-                if (!getPropertyValue(values, c.contract_id) && c.contract_type !== 'BINARYICO') {
+                if (!getPropertyValue(values, c.contract_id)) {
                     values[c.contract_id]           = {};
                     values[c.contract_id].buy_price = c.buy_price;
                     portfolio_data                  = Portfolio.getPortfolioData(c);
