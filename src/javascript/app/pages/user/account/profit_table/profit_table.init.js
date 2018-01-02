@@ -109,7 +109,7 @@ const ProfitTableInit = (() => {
     };
 
     const onLoad = () => {
-        batch_size            = 100;
+        batch_size            = 50;
         chunk_size            = batch_size / 2;
         transactions_received = 0;
         transaction_consumed  = 0;

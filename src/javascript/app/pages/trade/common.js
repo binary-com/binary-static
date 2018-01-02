@@ -614,11 +614,12 @@ const commonTrading = (() => {
 
     const timeIsValid = ($element) => {
         let end_date_value   = document.getElementById('expiry_date').getAttribute('data-value');
-        let start_date_value = document.getElementById('date_start').value;
+        const date_start     = document.getElementById('date_start');
+        let start_date_value = date_start.value;
         let end_time_value   = document.getElementById('expiry_time').value;
         const $invalid_time  = $('#invalid-time');
 
-        if ($element.attr('id') === $('#expiry_time') && end_time_value &&
+        if ($element.attr('id') === 'expiry_time' && end_time_value &&
             !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(end_time_value)) {
             $element.addClass('error-field');
             if ($invalid_time.length === 0) {

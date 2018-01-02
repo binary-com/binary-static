@@ -17,7 +17,8 @@ const PortfolioInit = (() => {
         oauth_apps,
         is_initialized,
         is_first_response,
-        $portfolio_loading;
+        $portfolio_loading,
+        jp_client;
 
     const init = () => {
         updateBalance();
@@ -28,6 +29,7 @@ const PortfolioInit = (() => {
         currency           = '';
         oauth_apps         = {};
         $portfolio_loading = $('#portfolio-loading');
+        jp_client          = jpClient();
         $portfolio_loading.show();
         showLoadingImage($portfolio_loading[0]);
         is_first_response = true;
@@ -49,18 +51,22 @@ const PortfolioInit = (() => {
     };
 
     const createPortfolioRow = (data, is_first) => {
-        const long_code = jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode;
-
         const new_class = is_first ? '' : 'new';
         const $div      = $('<div/>');
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref' }).append($(`<span ${GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id])} data-balloon-position="right">${data.transaction_id}</span>`)))
             .append($('<td/>', { class: 'payout' }).append($('<strong/>', { html: formatMoney(data.currency, data.payout) })))
-            .append($('<td/>', { class: 'details', text: long_code }))
+            .append($('<td/>', { class: 'details', text: data.longcode }))
             .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price) })))
             .append($('<td/>', { class: 'indicative' }).append($('<strong/>', { class: 'indicative_price', text: '--.--' })))
             .append($('<td/>', { class: 'button' }).append($('<button/>', { class: 'button open_contract_details nowrap', contract_id: data.contract_id, text: localize('View') }))))
-            .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: long_code })));
+            .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: data.longcode })));
+
+        if (jp_client) {
+            const $td = $('<td/>', { class: 'expires nowrap' }).append($('<strong/>', { text: toJapanTimeIfNeeded(data.expiry_time) }));
+            $td.insertAfter($div.find('.payout'));
+        }
+
         $('#portfolio-body').prepend($div.html());
     };
 

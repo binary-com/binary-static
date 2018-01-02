@@ -53,8 +53,8 @@ const Header = (() => {
         }
 
         applyToAllElements('a.logout', (el) => {
-            el.removeEventListener('click', () => { Client.sendLogoutRequest(); });
-            el.addEventListener('click', () => { Client.sendLogoutRequest(); });
+            el.removeEventListener('click', logoutOnClick);
+            el.addEventListener('click', logoutOnClick);
         });
     };
 
@@ -68,12 +68,16 @@ const Header = (() => {
         Login.redirectToLogin();
     };
 
+    const logoutOnClick = () => {
+        Client.sendLogoutRequest();
+    };
+
     const showOrHideLoginForm = () => {
         if (!Client.isLoggedIn()) return;
         BinarySocket.wait('authorize').then(() => {
             const loginid_select = document.createElement('div');
             Client.getAllLoginids().forEach((loginid) => {
-                if (!Client.get('is_disabled', loginid)) {
+                if (!Client.get('is_disabled', loginid) && !Client.get('excluded_until', loginid)) {
                     const account_title  = Client.getAccountTitle(loginid);
                     const is_real        = /real/i.test(account_title);
                     const currency       = Client.get('currency', loginid);
@@ -85,7 +89,7 @@ const Header = (() => {
                         applyToAllElements('.account-type', (el) => { elementInnerHtml(el, localized_type); });
                         applyToAllElements('.account-id', (el) => { elementInnerHtml(el, loginid); });
                     } else {
-                        const link    = createElement('a', { href: `${'java'}${'script:;'}`, 'data-value': loginid });
+                        const link    = createElement('a', { href: `${'javascript:;'}`, 'data-value': loginid });
                         const li_type = createElement('li', { text: localized_type });
 
                         li_type.appendChild(createElement('div', { text: loginid }));
@@ -113,9 +117,9 @@ const Header = (() => {
         }
     };
 
-    const metatraderMenuItemVisibility = (landing_company_response) => {
-        BinarySocket.wait('get_account_status').then(() => {
-            if (MetaTrader.isEligible(landing_company_response)) {
+    const metatraderMenuItemVisibility = () => {
+        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
+            if (MetaTrader.isEligible()) {
                 const metatrader = document.getElementById('user_menu_metatrader');
                 if (metatrader) metatrader.setVisibility(1);
             }
@@ -163,9 +167,7 @@ const Header = (() => {
             };
 
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
-            const status            = State.getResponse('get_account_status.status');
-            const is_ico_account    = /ico_only/.test(status);
-            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status, is_ico_account);
+            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
             const show_upgrade_msg  = upgrade_info.can_upgrade;
             const virtual_text      = document.getElementById('virtual-text');
 
@@ -218,7 +220,8 @@ const Header = (() => {
     const showHideNewAccount = (can_upgrade) => {
         const landing_company = State.getResponse('landing_company');
         // only allow opening of multi account to costarica clients with remaining currency
-        if (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length)) {
+        if (!Client.get('is_ico_only') &&
+            (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length))) {
             changeAccountsText(1, 'Create Account');
         } else {
             changeAccountsText(0, 'Accounts List');

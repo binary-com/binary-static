@@ -1,39 +1,7 @@
-## INSTALL
-
-* $ curl -L https://cpanmin.us | perl - App::cpanminus
-* $ cpanm Carton
-* $ cd scripts
-* $ carton install
-
-## FAQ
-
-### (1) compile.pl usage (require `cd scripts`)
-
- * build HTMLs by `carton exec perl compile.pl`
- * re-build all HTML by `carton exec perl compile.pl -f`
- * build specified url by `carton exec perl compile.pl -p why-us`
-
-#### Local test
-
-After HTML build, you can run `sudo grunt connect` then visits [https://localhost/en/home.html] for test
-
-#### github.io deploy
-
-* `carton exec perl compile.pl -d`
-
-
-#### Compile Parameters
-
-* `-f` force to overwrite the existing HTMLs
-* `-d` compile for use in gh-pages of a binary-static fork
-* `-p pathname` only compile the files having *pathname* in path
-* `-b branchname` to compile the changes to sub-folder named br_branchname
-* `-vr` to display list of all generated files
-
-### (2) Make translation
+### Update translations
 
 #### Setup
-* Please make sure you have done main installations above.
+* Please make sure you have done `npm install`.
 * Install `Homebrew` by `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 * Install `Crowdin CLI` by `brew install crowdin` or follow the instructions here: [https://support.crowdin.com/cli-tool/#installation](https://support.crowdin.com/cli-tool/#installation)
 * Get [Crowdin API Key](https://crowdin.com/project/binary-static/settings#api) and add this line to your _.bash_profile_: `export CROWDIN_API_KEY='put API Key here'`<br/>

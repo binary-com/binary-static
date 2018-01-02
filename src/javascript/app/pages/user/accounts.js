@@ -13,8 +13,7 @@ const urlFor             = require('../../../_common/url').urlFor;
 const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const Accounts = (() => {
-    let landing_company,
-        is_ico_only;
+    let landing_company;
     const form_id = '#new_accounts';
 
     const onLoad = () => {
@@ -22,22 +21,23 @@ const Accounts = (() => {
             // ask client to set residence first since cannot wait landing_company otherwise
             BinaryPjax.load(urlFor('user/settings/detailsws'));
         }
-        BinarySocket.wait('landing_company', 'get_settings', 'get_account_status').then(() => {
+        BinarySocket.wait('landing_company', 'get_settings').then(() => {
             landing_company = State.getResponse('landing_company');
-            is_ico_only     = Client.get('is_ico_only');
 
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
-            const upgrade_info  = Client.getUpgradeInfo(landing_company, undefined, is_ico_only);
-            if (upgrade_info.can_upgrade) {
+            const upgrade_info  = Client.getUpgradeInfo(landing_company);
+            const is_ico_only   = Client.get('is_ico_only');
+
+            if (!is_ico_only && upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
             }
 
             const currencies = getCurrencies(landing_company);
             // only allow opening of multi account to costarica clients with remaining currency
-            if (Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
+            if (!is_ico_only && Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
                 populateMultiAccount(currencies);
             } else {
                 doneLoading(element_to_show);
@@ -62,7 +62,7 @@ const Accounts = (() => {
 
         $(form_id).find('tbody')
             .append($('<tr/>')
-                .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account, is_ico_only)}` })))
+                .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account)}` })))
                 .append($('<td/>', { text: getAvailableMarkets(account) }))
                 .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', ') }))
                 .append($('<td/>')
@@ -71,28 +71,56 @@ const Accounts = (() => {
     };
 
     const populateExistingAccounts = () => {
-        Client.getAllLoginids()
+        const all_login_ids = Client.getAllLoginids();
+        all_login_ids
+            .filter(loginid => !Client.get('is_disabled', loginid) && !Client.get('excluded_until', loginid))
             .sort((a, b) => a > b)
             .forEach((loginid) => {
-                const account_currency  = Client.get('currency', loginid);
-                const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
-
-                if (!Client.isAccountOfType('virtual', loginid)) {
-                    const company_name = getCompanyName(loginid , Client.get('is_ico_only', loginid));
-                    account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
-                }
-                $('#existing_accounts').find('tbody')
-                    .append($('<tr/>', { id: loginid })
-                        .append($('<td/>', { text: loginid }))
-                        .append($('<td/>').html($('<span/>', account_type_prop)))
-                        .append($('<td/>', { text: getAvailableMarkets(loginid) }))
-                        .append($('<td/>')
-                            .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
+                appendExistingAccounts(loginid);
+            });
+        all_login_ids
+            .filter(loginid => Client.get('is_disabled', loginid) || Client.get('excluded_until', loginid))
+            .sort((a, b) => a > b)
+            .forEach((loginid) => {
+                appendExistingAccounts(loginid);
             });
     };
 
-    const getAvailableMarkets = (loginid, is_type_ico_only) => {
-        if (Client.get('is_ico_only', loginid) || is_type_ico_only) {
+    const appendExistingAccounts = (loginid) => {
+        const account_currency  = Client.get('currency', loginid);
+        const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
+
+        if (!Client.isAccountOfType('virtual', loginid)) {
+            const company_name = getCompanyName(loginid , Client.get('is_ico_only', loginid));
+            account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
+        }
+
+        const is_disabled    = Client.get('is_disabled', loginid);
+        const excluded_until = Client.get('excluded_until', loginid);
+        let txt_markets = '';
+        if (is_disabled) {
+            txt_markets = localize('This account is disabled');
+        } else if (excluded_until) {
+            txt_markets = localize('This account is excluded until [_1]', [moment(+excluded_until * 1000).format('YYYY-MM-DD HH:mm:ss Z')]);
+        } else {
+            txt_markets = getAvailableMarkets(loginid);
+        }
+
+        $('#existing_accounts').find('tbody')
+            .append($('<tr/>', { id: loginid, class: ((is_disabled || excluded_until) ? 'color-dark-white' : '') })
+                .append($('<td/>', { text: loginid }))
+                .append($('<td/>').html($('<span/>', account_type_prop)))
+                .append($('<td/>', { text: txt_markets }))
+                .append($('<td/>')
+                    .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
+
+        if (is_disabled || excluded_until) {
+            $('#note_support').setVisibility(1);
+        }
+    };
+
+    const getAvailableMarkets = (loginid) => {
+        if (Client.get('is_ico_only', loginid)) {
             return [localize('None')];
         }
         let legal_allowed_markets = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_markets') || '';
@@ -119,8 +147,8 @@ const Accounts = (() => {
     const populateMultiAccount = (currencies) => {
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
-                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 }, is_ico_only)}` })))
-                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }, is_ico_only) }))
+                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 })}` })))
+                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
 
@@ -166,7 +194,6 @@ const Accounts = (() => {
                 loginid     : new_account.client_id,
                 token       : new_account.oauth_token,
                 redirect_url: urlFor('user/set-currency'),
-                is_ico_only : getPropertyValue(response, ['echo_req', 'account_type']) === 'ico',
             });
         }
     };
@@ -181,7 +208,7 @@ const Accounts = (() => {
         const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
         const req          = [
             { request_field: 'new_account_real',       value: 1 },
-            { request_field: 'account_type',           value: is_ico_only ? 'ico' : 'default' },
+            { request_field: 'account_type',           value: 'default' },
             { request_field: 'date_of_birth',          value: dob },
             { request_field: 'salutation',             value: get_settings.salutation },
             { request_field: 'first_name',             value: get_settings.first_name },

@@ -27,6 +27,8 @@ const BinaryLoader = (() => {
             document.getElementById('btn_login').classList.add('button-disabled');
         }
 
+        Page.showNotificationOutdatedBrowser();
+
         Client.init();
         BinarySocket.init(BinarySocketGeneral.initOptions());
 
@@ -61,7 +63,7 @@ const BinaryLoader = (() => {
     };
 
     const error_messages = {
-        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [`${'java'}${'script:;'}`]),
+        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [`${'javascript:;'}`]),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
     };

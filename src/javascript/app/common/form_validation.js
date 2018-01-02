@@ -75,8 +75,8 @@ const Validation = (() => {
                                 has_required = true;
                             }
                         }
-                        if ($parent.find(`div.${error_class}`).length === 0) {
-                            $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
+                        if ($parent.find(`p.${error_class}`).length === 0) {
+                            $parent.append($('<p/>', { class: `${error_class} ${hidden_class} no-margin` }));
                         }
                         field.$error = $parent.find(`.${error_class}`);
                     }
@@ -148,9 +148,9 @@ const Validation = (() => {
             is_ok   = false;
             message = localize('Should be a valid number');
         } else if (options.type === 'float' && options.decimals &&
-            !(new RegExp(`^\\d+(\\.\\d{${options.decimals.replace(/ /g, '')}})?$`).test(value))) {
+            !(new RegExp(`^\\d+(\\.\\d{0,${options.decimals}})?$`).test(value))) {
             is_ok   = false;
-            message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
+            message = localize('Up to [_1] decimal places are allowed.', [options.decimals]);
         } else if ('min' in options && 'max' in options && +options.min === +options.max && +value !== +options.min) {
             is_ok   = false;
             message = localize('Should be [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined )]);
@@ -261,7 +261,7 @@ const Validation = (() => {
     const showError = (field, message) => {
         clearError(field);
         Password.removeCheck(field.selector);
-        field.$error.text(localize(message)).setVisibility(1);
+        field.$error.html(localize(message)).setVisibility(1);
     };
 
     const validate = (form_selector) => {

@@ -1,3 +1,5 @@
+require('./lib/polyfills/element.matches');
+
 /**
  * Write loading image to a container for ajax request
  *
@@ -158,26 +160,14 @@ const applyToAllElements = (selector, funcToRun, func_selector, el_parent) => {
 };
 
 /**
- * Checks if the element matches the selector - equivalent to jquery is()
- *
- * @param {Element} el      : element to check
- * @param {String}  selector: selector to check against, e.g. '.class', '#id', 'tag', or a combination of them
- */
-const isMatch = (el, selector) => {
-    const div = document.createElement('div');
-    div.innerHTML = el.outerHTML;
-    return !!div.querySelector(selector);
-};
-
-/**
  * Returns the first parent element that matches the selector (including el itself)
  *
  * @param {Element} el      : element to start looking for parent
  * @param {String}  selector: selector to find the element that matches to, e.g. '.class', '#id', 'tag', or a combination of them
  */
 const findParent = (el, selector) => {
-    if (el && el.nodeName !== 'BODY') {
-        return isMatch(el, selector) ? el : findParent(el.parentNode, selector);
+    if (el && el.nodeName !== 'BODY' && typeof el.matches === 'function') {
+        return el.matches(selector) ? el : findParent(el.parentNode, selector);
     }
     return null;
 };

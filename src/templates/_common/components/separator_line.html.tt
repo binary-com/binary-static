@@ -1,3 +1,0 @@
-<div [% UNLESS no_wrapper %]class="[% UNLESS show_mobile %]gr-hide-m[% END %][% IF class %] [% class %][% END %]"[% END %]>
-    <div class="separator-line [% IF sub_class %][% sub_class %] [% END %][% UNLESS invisible %]border-bottom[% END %]"></div>
-</div>

@@ -5,6 +5,7 @@ const Url                = require('../../_common/url');
 const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const createElement      = require('../../_common/utility').createElement;
 const findParent         = require('../../_common/utility').findParent;
+require('custom-event-polyfill');
 
 const BinaryPjax = (() => {
     let previous_url;

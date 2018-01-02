@@ -10,7 +10,7 @@ const showPopup = (options) => {
 
         const div      = createElement('div', { html: this.responseText });
         const lightbox = createElement('div', { id: options.popup_id, class: 'lightbox' });
-        lightbox.append(div.querySelector(options.content_id));
+        lightbox.appendChild(div.querySelector(options.content_id));
         document.body.appendChild(lightbox);
 
         if (options.validations) {

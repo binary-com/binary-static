@@ -1,9 +1,0 @@
-<h1>[% l("{JAPAN ONLY}Acknowledgment") %]</h1>
-<p>[% l("{JAPAN ONLY}Thank you for your withdrawal request.") %]</p>
-<p>[% l("{JAPAN ONLY}We will process your request and transfer the funds to your designated bank account within 5 business days.") %]</p>
-<p>[% l("{JAPAN ONLY}Please ensure you maintain sufficient balance in your trading account.") %]</p>
-<p>[% l("{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:[_1]'>Customer Support</a>.", "support@binary.com") %]</p>
-
-<a class='button' href="[% request.url_for('/multi_barriers_trading') %]">
-    <span>[% l('{JAPAN ONLY}Continue Trading') %]</span>
-</a>

@@ -18,6 +18,10 @@ const CashierJP = (() => {
             } else if (action === 'withdraw') {
                 $('#id123-control22598118').val(Client.get('loginid'));
                 $('#id123-control22598060').val(Client.get('email'));
+                $('#japan_cashier_container button').on('click', (e) => {
+                    const result = errorHandler();
+                    if (!result) e.preventDefault();
+                });
             }
         });
     };

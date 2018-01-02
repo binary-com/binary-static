@@ -18,13 +18,13 @@ module.exports = function (grunt) {
 
     return {
         compile_dev: {
-            command: global.compileCommand('-f -d'),
+            command: global.compileCommand('-d'),
             options: {
                 stdout: true
             }
         },
         compile_production: {
-            command: global.compileCommand('-f'),
+            command: global.compileCommand(),
             options: {
                 stdout: true
             }

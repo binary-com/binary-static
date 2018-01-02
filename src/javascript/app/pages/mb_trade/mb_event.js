@@ -146,6 +146,7 @@ const MBTradingEvents = (() => {
                 );
 
                 $payout
+                    .on('click', function() { $(this).select(); })
                     .on('keypress', onlyNumericOnKeypress)
                     .on('input', debounce((e) => {
                         old_value      = e.target.getAttribute('value');
@@ -191,6 +192,7 @@ const MBTradingEvents = (() => {
                         MBProcess.processPriceRequest();
                     }
                 }));
+                $payout_list.find('div[unselectable]').on('selectstart mousedown', () => false);
             }
         }
 

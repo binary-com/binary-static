@@ -6,7 +6,7 @@ const isCryptocurrency   = require('../common/currency').isCryptocurrency;
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 const LocalStore         = require('../../_common/storage').LocalStore;
 const State              = require('../../_common/storage').State;
-const Url                = require('../../_common/url');
+const urlFor             = require('../../_common/url').urlFor;
 const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 const isEmptyObject      = require('../../_common/utility').isEmptyObject;
@@ -213,7 +213,6 @@ const Client = (() => {
         set('email',       options.email,       options.loginid);
         set('is_virtual',  +options.is_virtual, options.loginid);
         set('loginid',     options.loginid);
-        set('is_ico_only', options.is_ico_only);
 
         // need to redirect not using pjax
         window.location.href = options.redirect_url || defaultRedirectUrl();
@@ -240,11 +239,11 @@ const Client = (() => {
                     client_logged_in.classList.add('gr-centered');
                 }
 
-                const is_ico_only = get('is_ico_only');
+                const is_ico_only = !is_jp && get('is_ico_only');
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
                 }
-                if (is_ico_only || Client.get('landing_company_shortcode') === 'costarica') {
+                if (!is_jp && (is_ico_only || Client.get('landing_company_shortcode') === 'costarica')) {
                     applyToAllElements('.ico-only-show', (el) => { el.setVisibility(1); });
                 }
 
@@ -254,13 +253,6 @@ const Client = (() => {
                         el.setVisibility(1);
                     }
                 });
-
-                // Show to eu clients only
-                if(/^malta|maltainvest|iom$/.test(get('landing_company_shortcode'))) {
-                    applyToAllElements('.eu-only', (el) => {
-                        el.setVisibility(1);
-                    });
-                }
 
                 if (get('is_virtual')) {
                     applyToAllElements('.client_virtual', (el) => { el.setVisibility(1); }, '', el_section);
@@ -349,24 +341,24 @@ const Client = (() => {
 
     const canUpgradeVirtualToReal = data => (hasShortCode(data.financial_company, 'costarica'));
 
-    const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status'), account_type_ico = false) => {
+    const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status')) => {
         let type         = 'real';
         let can_upgrade  = false;
         let upgrade_link = 'realws';
-        if (account_type_ico) {
-            can_upgrade = !hasCostaricaAccount();
-        } else if (get('is_virtual')) {
-            if (canUpgradeVirtualToFinancial(landing_company)) {
+        if (!get('is_ico_only')) {
+            if (get('is_virtual')) {
+                if (canUpgradeVirtualToFinancial(landing_company)) {
+                    type         = 'financial';
+                    upgrade_link = 'maltainvestws';
+                } else if (canUpgradeVirtualToJapan(landing_company)) {
+                    upgrade_link = 'japanws';
+                }
+                can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
+            } else if (canUpgradeGamingToFinancial(landing_company)) {
                 type         = 'financial';
+                can_upgrade  = !hasAccountType('financial');
                 upgrade_link = 'maltainvestws';
-            } else if (canUpgradeVirtualToJapan(landing_company)) {
-                upgrade_link = 'japanws';
             }
-            can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
-        } else if (canUpgradeGamingToFinancial(landing_company)) {
-            type         = 'financial';
-            can_upgrade  = !hasAccountType('financial');
-            upgrade_link = 'maltainvestws';
         }
         return {
             type,
@@ -417,7 +409,15 @@ const Client = (() => {
 
     };
 
-    const defaultRedirectUrl = () => Url.urlFor(jpClient() ? 'multi_barriers_trading' : get('is_ico_only') ? 'user/ico-subscribe' : 'trading');
+    const defaultRedirectUrl = () => {
+        let redirect_url = 'trading';
+        if (jpClient()) {
+            redirect_url = 'multi_barriers_trading';
+        } else if (get('is_ico_only')) {
+            redirect_url = 'user/ico-subscribe';
+        }
+        return urlFor(redirect_url);
+    };
 
     return {
         init,

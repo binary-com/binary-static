@@ -35,7 +35,7 @@ const LimitsUI = (() => {
     };
 
     const addTooltip = ($el, text) => {
-        $el.append($('<a/>', { class: 'no-underline', href: `${'java'}${'script:;'}`, 'data-balloon-length': 'xlarge', 'data-balloon': text })
+        $el.append($('<a/>', { class: 'no-underline', href: `${'javascript:;'}`, 'data-balloon-length': 'xlarge', 'data-balloon': text })
             .append($('<img/>', { src: urlForStatic('images/common/question_1.png') })));
     };
 
