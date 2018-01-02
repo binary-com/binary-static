@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function(){
             const target = e.target.getAttribute('href').substr(1);
             const offset = target === 'page-top' ? 55 : 0;
             const navbarHeight = checkWidth();
-            const to = document.getElementById(target).offsetTop - navbarHeight - offset;
+            const el_target = document.getElementById(target);
+            const to = el_target ? el_target.offsetTop - navbarHeight - offset : '';
             scrollTo(to, 500);
             if (navbar.classList.contains('expand')) {
                 navbar.classList.remove('expand');
