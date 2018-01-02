@@ -93,7 +93,7 @@ const Cashier = () => (
 
         <div className='gr-padding-10'></div>
 
-        <div className='gr-padding-10 table-body ja-hide payment-agent invisible ico-only-hide' id='payment-agent-section'>
+        <div className='gr-padding-10 table-body ja-hide payment-agent invisible' id='payment-agent-section'>
             <h3 className='gr-padding-10'>{it.L('Payment Agent')}</h3>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>

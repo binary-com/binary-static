@@ -552,7 +552,6 @@ const texts = [
     'Create Account',
     'Accounts List',
     '[_1] Account',
-    'None',
     'Investment',
     'Gaming',
     'Virtual',

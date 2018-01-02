@@ -5,7 +5,7 @@ const menu = [
         id       : 'topMenuTrading',
         url      : '/trading',
         text     : 'Trade',
-        className: 'ja-hide gr-hide-m gr-hide-p ico-only-hide',
+        className: 'ja-hide gr-hide-m gr-hide-p',
     },
     {
         id       : 'topMenuJPTrading',
@@ -17,13 +17,13 @@ const menu = [
         id       : 'topMenuPortfolio',
         url      : '/user/portfoliows',
         text     : 'Portfolio',
-        className: 'client_logged_in invisible ico-only-hide',
+        className: 'client_logged_in invisible',
     },
     {
         id       : 'topMenuProfitTable',
         url      : '/user/profit_tablews',
         text     : 'Profit Table',
-        className: 'client_logged_in invisible ico-only-hide',
+        className: 'client_logged_in invisible',
     },
     {
         id       : 'topMenuStatement',
@@ -40,7 +40,7 @@ const menu = [
         id       : 'topMenuResources',
         url      : '/resources',
         text     : 'Resources',
-        className: 'client_logged_out client_logged_in invisible ico-only-hide',
+        className: 'client_logged_out client_logged_in invisible',
         sub_items: [
             {
                 id       : 'topMenuAssetIndex',
@@ -59,7 +59,7 @@ const menu = [
         id          : 'topMenuShop',
         text        : 'Shop',
         absolute_url: 'https://shop.binary.com',
-        className   : 'ja-hide ico-only-hide',
+        className   : 'ja-hide',
         target      : '_blank',
     },
     {

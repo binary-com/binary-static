@@ -36,7 +36,6 @@ my @urls = (
     ['group-history'          , 'monthly', '0.80'],
     ['open-positions'         , 'monthly', '0.80'],
     ['service-announcements'  , 'monthly', '0.80' , 'NOT-ja'],
-    ['ico'                    , 'monthly', '0.80' , 'ja'],
 
     ['liquidity-solutions'    , 'monthly', '0.80'],
     ['open-source-projects'   , 'monthly', '0.80' , 'ja'],

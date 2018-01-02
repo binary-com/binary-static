@@ -98,7 +98,8 @@ const Client = (() => {
         return ((
             (type === 'virtual' && this_type === 'virtual') ||
             (type === 'real'    && this_type !== 'virtual') ||
-            type === this_type) && (only_enabled ? !get('is_disabled', loginid) : true));
+            type === this_type) &&
+            (only_enabled ? !get('is_disabled', loginid) : true));
     };
 
     const getAccountOfType = (type, only_enabled) => {
