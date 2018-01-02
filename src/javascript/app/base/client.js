@@ -338,20 +338,24 @@ const Client = (() => {
         let type,
             upgrade_link;
         if (can_upgrade) {
-            const joined_accounts         = upgradeable_landing_companies.join(', ');
             const current_landing_company = get('landing_company_shortcode');
 
             // only show upgrade message to landing companies other than current
-            const canUpgrade = regex_landing_company =>
-                regex_landing_company.test(joined_accounts) && !regex_landing_company.test(current_landing_company);
+            const canUpgrade = arr_landing_company => {
+                const upgradeable = arr_landing_company.find(landing_company => (
+                    upgradeable_landing_companies.indexOf(landing_company) !== -1 &&
+                    landing_company !== current_landing_company
+                ));
+                return !!(upgradeable && upgradeable.length);
+            };
 
-            if (canUpgrade(new RegExp('maltainvest'))) {
+            if (canUpgrade(['maltainvest'])) {
                 type         = 'financial';
                 upgrade_link = 'maltainvestws';
-            } else if (canUpgrade(new RegExp('costarica|malta|iom'))) {
+            } else if (canUpgrade(['costarica', 'malta', 'iom'])) {
                 type         = 'real';
                 upgrade_link = 'realws';
-            } else if (canUpgrade(new RegExp('japan'))) {
+            } else if (canUpgrade(['japan'])) {
                 type         = 'real';
                 upgrade_link = 'japanws';
             } else {
