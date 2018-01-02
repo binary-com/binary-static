@@ -51,7 +51,7 @@ const IcoClaimForm = () => (
 
         <div className='center-text gr-centered'>
             <button className='button' type='submit'>{it.L('Agree')}</button>
-            <a className='button-secondary' id='cancel' href='javascript:;'><span>{it.L('Return')}</span></a>
+            <a className='button button-secondary' id='cancel' href='javascript:;'><span>{it.L('Return')}</span></a>
         </div>
     </React.Fragment>
 );

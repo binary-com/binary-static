@@ -127,7 +127,7 @@ const MBTrading = () => (
                                 <div className='trade_form gr-4 gr-no-gutter-left'>
                                     <div id='currency_wrapper'>
                                         <FormItem id='currency' />
-                                        <FormItem id='payout' exclude_list={true} class_list='gr-12' />
+                                        <FormItem id='payout' exclude_list class_list='gr-12' />
                                     </div>
                                 </div>
                                 <div className='gr-8 gr-no-gutter-left'>
@@ -138,7 +138,7 @@ const MBTrading = () => (
                                         <FormItem id='category' class_list='gr-12' />
                                     </div>
                                     <div className='trade_form no-margin'>
-                                        <FormItem id='payout_list' className='invisible gr-12' exclude_current={true} class_list='gr-row'>
+                                        <FormItem id='payout_list' className='invisible gr-12' exclude_current class_list='gr-row'>
                                             <PayoutItem value='+1'     text='+1'         className='plus' />
                                             <PayoutItem value='+10'    text='+10'        className='plus' />
                                             <PayoutItem value='50'     text='50' />
@@ -177,7 +177,7 @@ const MBTrading = () => (
                 </div>
             </div>
 
-            <Analysis no_graph={true} />
+            <Analysis no_graph />
 
             <div id='open_positions_container'>
                 <Portfolio />
