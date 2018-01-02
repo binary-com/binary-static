@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-12-18 21:14-0500\n"
+"PO-Revision-Date: 2017-12-29 00:31-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: zh_CN\n"
+
+msgid "404"
+msgstr "404"
 
 msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
 msgstr " (<span class=\"initial_deposit_percent\"></span>总金额的百分比)"
@@ -871,6 +874,9 @@ msgstr "账户资金 &mdash; 您的账户资金是指您的账户余额与未实
 msgid "Account Free Margin &mdash; Your Account Equity minus your Total Margin."
 msgstr "帐户可用保证金 &mdash; 您的账户资金减去保证金总额。"
 
+msgid "Account Limits"
+msgstr "账户限额"
+
 msgid "Account Management and Tracking"
 msgstr "账户管理及追踪"
 
@@ -910,6 +916,9 @@ msgstr "开立账户的原因"
 msgid "Accounting"
 msgstr "会计"
 
+msgid "Accounts"
+msgstr "账户"
+
 msgid "Accounts And Payments Executive"
 msgstr "账户与支付执行"
 
@@ -927,6 +936,9 @@ msgstr "收入/储蓄积累"
 
 msgid "Accuracy of Information"
 msgstr "信息的准确性"
+
+msgid "Acknowledgement"
+msgstr "确认"
 
 msgid "Acquisition of financial contracts through this site must be effected in accordance with the terms and conditions presented on the pages of this site. Acquisition of a financial contract is completed when the financial contract has been customised, the premium (or the payout, as the case may be) has been calculated and payment has been verified."
 msgstr "通过本网站金融期权合约的买入必须遵守网站页面上的条款和条件。金融期权合约完成定制，并且已计算并确认支付期权费用（或赔付额，视情况而定）时，金融期权合约的买入即可完成。"
@@ -1510,6 +1522,9 @@ msgstr "澳元兑瑞士法郎"
 msgid "Australian dollar vs US dollar"
 msgstr "澳元兑美元"
 
+msgid "Authenticate"
+msgstr "验证"
+
 msgid "Authenticate your account by verifying your identity and address."
 msgstr "请提交身份与地址证明，立刻进行账户验证。"
 
@@ -1885,6 +1900,9 @@ msgstr "Binary 的马耳他附属公司 Binary Investments (Europe) Ltd. 由 Mal
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Binary 平台平均每秒钟进行 %1宗%2交易%3，全天候提供服务，整年无休"
 
+msgid "Binary.com Graduate Program"
+msgstr "Binary.com 研究生课程"
+
 msgid "Binary.com intends to deploy the <a href='%1' target='_blank' rel='noopener noreferrer'>Mini Me</a> token. Please view our <a href='%2' target='_blank' rel='noopener noreferrer'>blog post</a> detailing our reasons for choosing this token."
 msgstr "Binary.com 打算部署 <a href='%1' target='_blank' rel='noopener noreferrer'> 迷你我 </a>代币。请查看我们的 <a href='%2' target='_blank' rel='noopener noreferrer'> 博客文章 </a>, 内含为何选择此代币的详细说明。"
 
@@ -2119,6 +2137,9 @@ msgstr "美国居民的工作机会"
 msgid "Careers"
 msgstr "工作机会"
 
+msgid "Careers For Americans"
+msgstr "美国居民的工作机会"
+
 msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
 msgstr "经过仔细挑选的流动性提供商网络使我们能够向零售和机构客户提供低价差和低保证金费率服务"
 
@@ -2168,6 +2189,9 @@ msgid "Change your main login password."
 msgstr "更改主要登录密码。"
 
 msgid "Charitable Activities"
+msgstr "慈善活动"
+
+msgid "Charity"
 msgstr "慈善活动"
 
 msgid "Chart"
@@ -2480,6 +2504,9 @@ msgstr "大宗商品交易频率"
 msgid "Company Ownership"
 msgstr "公司所有权"
 
+msgid "Company Profile"
+msgstr "公司详细信息"
+
 msgid "Company addresses"
 msgstr "公司地址"
 
@@ -2758,12 +2785,6 @@ msgstr "创建新代币"
 
 msgid "Create a MetaTrader 5 account"
 msgstr "创建 MetaTrader 5 账户"
-
-msgid "Create a standard real money account to trade on %1"
-msgstr "开立标准真实资金账户在%1交易"
-
-msgid "Create an ICO account to take part in our token sale only. <a href=\"%1\" target=\"_blank\">Learn more</a>"
-msgstr "开立 ICO 账户专用于参与代币销售。<a href=\"%1\" target=\"_blank\">了解详情</a>"
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "为公司网站、博客、社交媒体和营销材料创作清晰、简洁、引人入胜的内容"
@@ -3398,6 +3419,9 @@ msgstr "当以下情况发生时，一方可以通过书面通知的形式终止
 msgid "Either party may terminate this Agreement on delivery of one weeks' prior written notice to the other party."
 msgstr "任何一方都可以在一周之前发出书面通知，以终止本协议。"
 
+msgid "Electronic Subscription Form for Tokens"
+msgstr "代币的电子认购表格"
+
 msgid "Electronically signed by the Subscriber/for and on behalf of the Subscriber"
 msgstr "由订购者/订购者代表以电子方式签署"
 
@@ -3442,6 +3466,9 @@ msgstr "结束时间必须在开始时间之后。"
 
 msgid "Ended"
 msgstr "已结束"
+
+msgid "Endpoint"
+msgstr "终结点"
 
 msgid "Ends Between"
 msgstr "区间之内结束"
@@ -4196,6 +4223,9 @@ msgstr "优厚的佣金结构"
 msgid "Get JPY 1,000,000"
 msgstr "获取1,000,000日元"
 
+msgid "Get Paid for Pull Requests"
+msgstr "提交拉动请求获得报酬"
+
 msgid "Get Started"
 msgstr "开始交易"
 
@@ -4315,6 +4345,9 @@ msgstr "八、监测和审查"
 
 msgid "H. Regulatory Provisions"
 msgstr "八、管理规定"
+
+msgid "Hackathon Competition"
+msgstr "黑客松竞争"
 
 msgid "Hands-on test automation experience a plus"
 msgstr "有自动化测试设备使用经验者优先考虑"
@@ -4481,6 +4514,9 @@ msgstr "我需要多久才能开始交易？"
 msgid "How the ICO works"
 msgstr "ICO如何运作"
 
+msgid "How to Trade Binary Options?"
+msgstr "二元期权如何交易？"
+
 msgid "How to Trade in MetaTrader 5"
 msgstr "如何在MetaTrader 5交易"
 
@@ -4607,11 +4643,11 @@ msgstr "九、 报价"
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "即 (20010 - 20000) x 1 x 1 = 10 美元"
 
-msgid "ICO Account Opening"
-msgstr "开立ICO账户"
-
 msgid "ICO Bids"
 msgstr "ICO 出价"
+
+msgid "ICO Histogram"
+msgstr "ICO 直方图"
 
 msgid "ICO is live, participate now!"
 msgstr "ICO 已经启动, 立刻参与!"
@@ -4907,9 +4943,6 @@ msgstr "如果您的保证金水平仍处于强制平仓水平，您的下一个
 msgid "If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as \"forced liquidation\")."
 msgstr "如果您的保证金额达到更低水平（通常是50%），在无法继续持仓时将达到强制平仓水平。这将导致您的部分或全部持仓头寸被强制平仓 （也称为“强制清算”）。"
 
-msgid "If you’d like to participate in the %1 ICO, please fund your ICO account instead of your trading account."
-msgstr "如要参与 %1 ICO, 请把资金存入您的 ICO账户, 而不是交易账户。"
-
 msgid "If:"
 msgstr "如："
 
@@ -5168,8 +5201,14 @@ msgstr "本条款第一段所列资料须提交给 <a href=\"mailto:%1\">%1</a>�
 msgid "Inheritance"
 msgstr "继承"
 
+msgid "Initial Coin Offering"
+msgstr "首次代币预售"
+
 msgid "Initial Coin Offering (ICO)"
 msgstr "首次代币发售 (ICO)"
+
+msgid "Initial Coin Offering Disclaimer"
+msgstr "首次硬币发行免责声明"
 
 msgid "Initial deposit required: "
 msgstr "所需初期存款: "
@@ -5855,6 +5894,9 @@ msgstr "Jim Mellon是知名和成功的企业家。他的职业生涯从基金�
 msgid "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 msgstr "Joanna监督%1集团各种发牌司法管辖区的程序和法规遵从性。除了监督集团的各个领域如付款和客户账户管理等关键性业务以外，Joanna自 1999 年以来曾是马耳他管理研究所成员，拥有金融服务运营与法规遵从性文凭， 以及国际法规遵从性协会的金融犯罪法规遵从性专业研究生文凭。"
 
+msgid "Job Details"
+msgstr "工作详情"
+
 msgid "Join now"
 msgstr "立即加入"
 
@@ -5893,6 +5935,9 @@ msgstr "跟踪您的授权应用程序。"
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
 msgstr "跟上某个行业的市场新闻和趋势，可以为您提供很大的帮助，特别是如果您刚刚入门。"
+
+msgid "Key Information Documents"
+msgstr ""
 
 msgid "Key facts"
 msgstr "关键资料"
@@ -6764,6 +6809,9 @@ msgstr "女士"
 msgid "Multi award-winning trading platform."
 msgstr "屡获殊荣的交易平台。"
 
+msgid "Multi-asset Liquidity Solutions"
+msgstr "多个资产的流动性解决方案"
+
 msgid "Multi-asset execution"
 msgstr "多个资产交易执行"
 
@@ -6772,6 +6820,9 @@ msgstr "多个资产的流动性解决方案"
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "支持多种语言和货币"
+
+msgid "Multiple Accounts Manager"
+msgstr "多个账户管理器"
 
 msgid "Multiple Accounts Manager (MAM)"
 msgstr "多个账户管理器 (MAM)"
@@ -7115,6 +7166,9 @@ msgstr "与差价合约对冲，以抵消投资组合的潜在损失。"
 msgid "Old password is wrong."
 msgstr "旧密码不正确。"
 
+msgid "Omnibus"
+msgstr "综合"
+
 msgid "Omnibus account"
 msgstr "综合账户"
 
@@ -7159,6 +7213,9 @@ msgstr "一个简单的平台"
 
 msgid "Online Marketing"
 msgstr "在线市场营销"
+
+msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
+msgstr "可交易外汇、指数、大宗商品及智能指数的二元期权在线交易平台"
 
 msgid "Online Trading with %1"
 msgstr "%1网上交易"
@@ -7249,6 +7306,9 @@ msgstr "订立合约"
 
 msgid "Open positions"
 msgstr "空缺"
+
+msgid "Open-Source Projects"
+msgstr "开源项目"
 
 msgid "Open-source projects"
 msgstr "开源项目"
@@ -7541,6 +7601,12 @@ msgstr "所有金属合约不需付佣金费。"
 msgid "Payment Agent"
 msgstr "付款代理"
 
+msgid "Payment Agent Deposit"
+msgstr "支付代理存款"
+
+msgid "Payment Agent Transfer"
+msgstr "支付代理转账"
+
 msgid "Payment Agent Withdrawal"
 msgstr "支付代理取款"
 
@@ -7697,9 +7763,6 @@ msgstr "请完成%1财务评估表格%2，以便提升您的取款和交易限�
 msgid "Please complete the tax information before proceeding."
 msgstr "继续执行之前，请填写完整税务信息。"
 
-msgid "Please confirm that you are a %1professional trader%2 to proceed."
-msgstr "请确认您是%1专业交易者%2以便继续操作。"
-
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "请确认您不是政治公众人士。"
 
@@ -7726,9 +7789,6 @@ msgstr "请在下表中填写登录 ID 以及要转给客户的金额："
 
 msgid "Please follow the pattern 3 numbers, a dash, followed by 4 numbers."
 msgstr "请按照以下格式填写：3个数字，1个短划线，加上4个数字。"
-
-msgid "Please input a valid date"
-msgstr "请输入有效日期"
 
 msgid "Please log in."
 msgstr "请登录。"
@@ -7796,9 +7856,6 @@ msgstr "请选择ั有效时间。"
 msgid "Please select a value"
 msgstr "请选择一个数值"
 
-msgid "Please select a value for account_opening_reason."
-msgstr "请为 account_opening_reason 选择一个值。"
-
 msgid "Please select at least one scope"
 msgstr "请选择至少一个范围"
 
@@ -7807,9 +7864,6 @@ msgstr "请选择复选框。"
 
 msgid "Please select the currency of this account:"
 msgstr "请选择此账户的币种："
-
-msgid "Please select the type of account you wish to create."
-msgstr "请选择您要开立的账户类型。"
 
 msgid "Please select your ICO account to proceed."
 msgstr "请选择您的ICO账户继续操作。"
@@ -8070,9 +8124,6 @@ msgstr "您的请求在处理中..."
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "为公司网站、博客、社交媒体渠道和营销材料创建内容"
 
-msgid "Product Disclosure Statement"
-msgstr "产品披露声明"
-
 msgid "Professional Client"
 msgstr "专业客户"
 
@@ -8216,9 +8267,6 @@ msgstr "重新输入密码"
 
 msgid "Read"
 msgstr "阅读"
-
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
-msgstr "请参阅以下Binary Investments (Europe) Limited 产品披露声明中关于二元期权的功能、特点、好处，以及风险。\"时间表\"一节中包含了合同类型的投资范例，以帮助您了解二元期权交易的基本概念。"
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "查看 %1 提供的 5 种交易。"
@@ -8369,6 +8417,9 @@ msgstr "注册"
 
 msgid "Regular monitoring of open positions"
 msgstr "定期监测未平仓头寸"
+
+msgid "Regulation"
+msgstr "规则"
 
 msgid "Regulator:"
 msgstr "监管机构："
@@ -8640,9 +8691,6 @@ msgstr "安全隐私"
 msgid "Security testing opportunities"
 msgstr "安全测试机会"
 
-msgid "See your winning bids and claim your tokens"
-msgstr "查看您赢得的标价并领取代币"
-
 msgid "Segregated Funds"
 msgstr "集合资金"
 
@@ -8657,9 +8705,6 @@ msgstr "选择<strong>允许设置局部数据（推荐）</strong>。"
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "从左列选择<strong>Cookies</strong>。"
-
-msgid "Select account type"
-msgstr "选择账户类型"
 
 msgid "Select currency"
 msgstr "选择货币"
@@ -8745,6 +8790,9 @@ msgstr "九月"
 msgid "Server"
 msgstr "服务器"
 
+msgid "Service Announcements"
+msgstr "服务公告"
+
 msgid "Session"
 msgstr "会话"
 
@@ -8783,6 +8831,9 @@ msgstr "设定交易期限，从10 秒至 365 天。"
 
 msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
 msgstr "设置并管理有效集中针对潜在客户和合作伙伴的社交媒体广告活动"
+
+msgid "Settings"
+msgstr "设置"
 
 msgid "Settles"
 msgstr "结算"
@@ -8846,9 +8897,6 @@ msgstr "我要注册"
 
 msgid "Sign out"
 msgstr "注销"
-
-msgid "Sign up"
-msgstr "注册"
 
 msgid "Sign up now for free."
 msgstr "立刻免费注册。"
@@ -9195,6 +9243,9 @@ msgstr "提交下列文件之一"
 msgid "Submit your CV and Cover Letter"
 msgstr "提交您的简历和求职信"
 
+msgid "Subscribe to ICO"
+msgstr "ICO 订阅"
+
 msgid "Subscribe to a wide range of algorithmic trading strategies from the built-in MetaTrader Market"
 msgstr "从内置的 MetaTrader 市场订阅种类繁多的算法交易策略"
 
@@ -9327,6 +9378,9 @@ msgstr "本协议的终止并不影响任何一方在终止日及之前的权利
 msgid "Terms and Conditions"
 msgstr "条款和条件"
 
+msgid "Terms and Conditions Approval"
+msgstr "条款和条件审批"
+
 msgid "Terms and conditions"
 msgstr "Terms and conditions"
 
@@ -9360,9 +9414,6 @@ msgstr "感谢您订阅 ！留意收件箱收取ICO最新消息 。"
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "%1 API的使用受到限制，以防止%1 API被滥用和/或改变用途。将来这些使用限制可能不另行通知而更改。如果你持续超出使用限制，或以其他方式滥用该服务，我们可能会阻止您访问%1 API。"
 
-msgid "The %1 ICO is now live"
-msgstr "%1 ICO 已经启动"
-
 msgid "The %1 ICO is now live. Participate now!"
 msgstr "%1 ICO 已经启动。立刻参与!"
 
@@ -9383,6 +9434,9 @@ msgstr "%1 团队"
 
 msgid "The %1 token sale has ended"
 msgstr "%1 代币出售已结束"
+
+msgid "The %1 token sale has ended."
+msgstr "%1 代币出售已结束."
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1网站受版权保护。"
@@ -9751,8 +9805,8 @@ msgstr "反洗钱程序对客户有以下影响："
 msgid "The application shall be reviewed and assessed by our compliance and marketing departments. It is noted that our compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H."
 msgstr "申请须由我们的合规及市场部审核及评估。我们注意到, 遵守和执行反洗钱政策并按照法律和条例进行尽职调查的合规部门须按照H章节规定要求和收集所有必要的资料和文件 。"
 
-msgid "The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018."
-msgstr "拍卖已经结束。代币的最终价格将很快公布。投资者必须在2018年1月8日之前根据最终价格将每项成功得标的余款存入。"
+msgid "The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids."
+msgstr "拍卖已经结束。由于未能达到最低目标价，所有活跃投资者将收到投标退款。"
 
 msgid "The average is the average of the ticks, including the first and the last tick."
 msgstr "平均价位是所有跳动点的平均值，包括第一个和最后一个跳动点。"
@@ -10204,6 +10258,9 @@ msgstr "交易者选择一个目标价并预测市场在合约到期前将不会
 msgid "These are trades where the trader selects a price target, and predicts that the market will touch the target before the expiry of the trade."
 msgstr "交易者选择一个目标价并预测市场在合约到期前将会触及该价位的交易。"
 
+msgid "These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products."
+msgstr ""
+
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "这些关键指标将显示一个屡获殊荣的二元期权交易平台增长与成功的一面。"
 
@@ -10300,14 +10357,11 @@ msgstr "本文件（“协议”）规定了“公司”（即 Binary Services L
 msgid "This equity research report by Lykke Accelerator gives you an overview of our company structure, financial performance, forecasts of future revenue, and more."
 msgstr "这份由Lykke Accelerator撰写的资产研究报告概述了我们公司的结构、财务业绩、未来的收入预测等信息。"
 
-msgid "This feature is not available in your jurisdiction."
-msgstr "您的管辖权内无法使用此功能。"
-
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "此功能不适用于虚拟资金账户。"
 
-msgid "This feature is only available to CR clients. Please sign up to proceed."
-msgstr "此功能仅 CR 客户可用。请注册以继续。"
+msgid "This feature is only available to CR clients."
+msgstr "此功能仅适用于CR 客户。"
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "此功能仅适用于支付代理账户。"
@@ -10503,15 +10557,6 @@ msgstr "要开立真实账户，您必须在%1拥有已通过身份验证的二�
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
-
-msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Isle of Man Gambling Supervision Commission."
-msgstr "要参与Binary.com ICO, 您必须另外开立一个账户。继续此操作的同时，您确认开立一个不受马恩岛赌博监督委员会监管的账户 。"
-
-msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Financial Services Authority."
-msgstr "要参与Binary.com ICO, 您必须另外开立一个账户。继续此操作的同时，您确认开立一个不受马耳他金融服务管理局监管的账户 。"
-
-msgid "To participate in the Binary.com ICO, you are required to open a separate account. By proceeding, you acknowledge that you are creating another account that is not under the jurisdiction of the Malta Gaming Authority."
-msgstr "要参与Binary.com ICO, 您必须另外开立一个账户。继续此操作的同时，您确认开立一个不受马耳他博彩管理局监管的账户 。"
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "如要执行此操作，请<a href=\"%1\">升级到 %2 真实账户</a>。"
@@ -10795,9 +10840,6 @@ msgstr "二元期权交易非常简单，仅需执行三个简单的步骤即可
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
 msgstr "二元期权交易并不适合所有人。因此，请确保您完全明白有关的风险。您的亏损可能会超越起始资金存款，而您并不拥有或占有任何标的资产。在进行博彩产品交易的二元期权交易时，请务必记住博彩活动可能会上瘾，并提醒自己要承担责任。请查阅%1负责任交易%2。"
 
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href=\"%1\">Responsible Trading</a>."
-msgstr "二元期权交易并不适合所有人。因此，请确保您完全明白有关的风险。您的亏损可能会超越起始资金存款，而您并不拥有或占有任何标的资产。在进行博彩产品交易的二元期权交易时，请务必记住博彩活动可能会上瘾，并提醒自己要承担责任。请查阅 <a href=\"%1\">负责任交易</a>。"
-
 msgid "Trading cryptocurrencies on our MetaTrader 5 platform means taking a position on a cryptocurrency pair when you expect it to rise or fall in value so you can make a profit when your prediction is correct."
 msgstr "在我们的MetaTrader 5平台交易加密货币意味着在您认为某种加密货币对的价格会上涨或下跌的时候开仓，如果您的预测正确的话可赚取利润。"
 
@@ -10870,6 +10912,9 @@ msgstr "True"
 msgid "Trust"
 msgstr "信任"
 
+msgid "Trusted by traders since 2000"
+msgstr "自2000年以来备受交易员信赖"
+
 msgid "Try Binary Bot"
 msgstr "试试 Binary Bot"
 
@@ -10914,6 +10959,9 @@ msgstr "类型"
 
 msgid "Types of MetaTrader 5 accounts"
 msgstr "MetaTrader 5 账户的类型"
+
+msgid "Types of Trades"
+msgstr "交易类型"
 
 msgid "Types of trades"
 msgstr "交易类型"
@@ -10974,9 +11022,6 @@ msgstr "UX / UI 经验"
 
 msgid "Ultra fast on-the-go trading"
 msgstr "超快旅途中交易服务"
-
-msgid "Unable to create ICO account while virtual account is selected. Please select your real money account and try again."
-msgstr "选择虚拟账户时无法开立 ICO 账户。请选择真实资金账户并重试。"
 
 msgid "Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button."
 msgstr "前往<strong>高级设置</strong>，点击<strong>查看高级设置</strong> button.按钮。"
@@ -11305,6 +11350,9 @@ msgstr "想了解更多？"
 msgid "Want to telecommute?"
 msgstr "想在家办公？"
 
+msgid "Warning"
+msgstr "警告"
+
 msgid "Warranties"
 msgstr "保证条款"
 
@@ -11575,6 +11623,9 @@ msgstr "交易日"
 msgid "Weekend quotes"
 msgstr "周末报价"
 
+msgid "Welcome to Binary.com"
+msgstr "欢迎来到 Binary.com"
+
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "具备良好的组织、行政、和/或会计技能"
 
@@ -11586,6 +11637,9 @@ msgstr "多年来，无论在人力和办公室方面，&mdash;&mdash; 我们的
 
 msgid "We’ve obtained financial and gambling licenses to operate in key countries and regions such as Europe, the Isle of Man, the United Kingdom, and Japan."
 msgstr "我们已经在欧洲、马恩岛、英国和日本等关键国家和地区获得金融和博彩经营许可证。"
+
+msgid "What Are OTC Indices and Stocks?"
+msgstr "场外交易指数和股票有哪些？"
 
 msgid "What about instant execution? In this case, your order is placed at the price that’s available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr "即时执行是怎么回事？在这种情况下，您的订单是以当时可用的价格确定的。如果在订单执行完成之前价格波动很大，可重新报价。"
@@ -11812,8 +11866,8 @@ msgstr "如果代理在合理时间内遗漏或不履行或拒绝向公司提供
 msgid "Where the Agent owns, or operates website/s, shall:"
 msgstr "如果代理拥有或经营网站/公司, 须:"
 
-msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws.\n"
-msgstr "如公司查明任何与%1 代理账户或%1 客户账户存款或提款有关的错误或破绽, 须在合理时间内采取一切调整措施纠正此类错误或破绽。\n"
+msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
+msgstr "如公司查明任何与%1 代理账户或%1 客户账户存款或提款有关的错误或破绽, 须在合理时间内采取一切调整措施纠正此类错误或破绽。"
 
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
 msgstr "根据您提供的信息，如果我们认为您不具备应对投资风险的知识和经验，就会向您提出警告。该警告将显示在网站上。"
@@ -11877,6 +11931,12 @@ msgstr "我们是谁"
 
 msgid "Why Choose Binary Trading?"
 msgstr "为何选择二元期权交易？"
+
+msgid "Why Trade with Binary.com"
+msgstr "为何通过Binary.com进行交易"
+
+msgid "Why Us"
+msgstr "为何选择我们"
 
 msgid "Why Us?"
 msgstr "为何选择我们？"
@@ -12464,8 +12524,7 @@ msgstr "如果您认为基础货币将上涨，您会买入某个货币对。反
 msgid "You want to sell that currency pair if you think the base currency will go down."
 msgstr "如果您认为基础货币将下跌，您会卖出此货币对。"
 
-msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including\n"
-"cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
+msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
 msgstr "您可使用 %1 账户中的资金购买代币。您可使用我们 %2收银台系统%3内的任何适用货币（包括加密货币）。如果您选择以美元以外的货币出价，买入金额须在拍卖结束时按照现行汇率转换成美元。"
 
 msgid "You will be asked to prove that you are the owner of the account being authenticated."
@@ -12817,10 +12876,10 @@ msgid "if the Subscriber is located or resident in the European Economic Area, i
 msgstr "如果订购者位于或居住在欧洲经济区，在相关会员国招股说明书实施章程第 2 (1) (e) (i)、(ii) 或 (iii) (指令 2003/71/EC (和任何修订版本)) (\"<strong>招股说明书</strong>\") 法律的定义下属于一名合格投资者或根据招股说明书的适用豁免下可认购代币; "
 
 msgid "if the Subscriber is located or resident in the United Kingdom, it is a person of a kind described in Articles 19, 43 and/or 49 of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (the “<strong>Order</strong>”) or to whom this Subscription Form and any other documents relating to the offer of Tokens may otherwise be lawfully distributed to it pursuant another applicable exemption under the Order and that it understands that this Subscription Form and any other documents relating to the offer of Tokens is only directed at (A) persons who have professional experience in matters relating to investments who fall within the definition of \"investment professionals\" in Article 19(5) of the Order, (B) persons falling within Article 43(2) of the Order, (C) high net worth entities (including companies and unincorporated associations of high net worth and trusts of high value) or other persons falling within Article 49(2)(a) to (d) of the Order, and (D) persons to whom such information may otherwise be lawfully distributed, and that, accordingly, any investment or investment activity to which this Electronic Subscription Form relates is available only to the Subscriber as such a person or will be engaged in only with the Subscriber as such a person;"
-msgstr ""
+msgstr "如订购者位于或居于英国，则属于《金融服务及市场法》2000 (财务促进) 法令 2005 (\"<strong>法令</strong>\") 第19、43及/或49条款所述的人士，或该认购表格及任何其它与代币的发售文件有关的均可根据该法令的另一项适用豁免，合法地向其分配，而且公认为该认购表格及与代币发售有关的任何其它文件只针对 (A) 《法令》第 19 (5) 条款中 \"投资专业人员\" 的定义中具投资专业经验的人，(B) 属于该法令第 43 (2) 条款所述的人，(C) 该法令第 49 (2) (a) 至 (d) 条款所指的高净值实体 (包括高净值公司和未注册但拥高价值信托的协会) 或其他人，以及 (D) 可合法获得此种资料分配的人。因此，与本电子认购表格有关的任何投资或投资活动，只可供属于上述人士的订购者使用，或只可与属于上述人士的订购者相合作。"
 
 msgid "in the normal course of business, the Subscriber invests in or purchases securities similar to the Tokens and has such knowledge and experience in financial and business matters as to be capable of evaluating the merits and risks of its respective investment in the Tokens, and each Subscriber and any accounts for which each Subscriber is acting are each able to bear the economic risk of its investment; "
-msgstr ""
+msgstr "在正常业务运作过程中，订购者投资或购买类似于代币的证券，并具有在财务和商业事务方面的知识和经验，能够评估其个别代币投资的优势和风险、每个订购者和每个订购者所代理的任何账户都能够承担其投资的经济风险; "
 
 msgid "include a disclaimer and/or notice that any intellectual property rights including any Trademark or slogan whatsoever belong to the Company and any unauthorised use is strictly prohibited."
 msgstr "包括免责声明和/或通知, 说明任何知识产权, 包括任何商标或标语均属于公司所有，并严格禁止任何未经授权的使用。"
@@ -12835,7 +12894,7 @@ msgid "it is the leading binary option trading platform."
 msgstr "领先的二元期权交易平台。"
 
 msgid "its offer to subscribe shall be accepted by the Issuer taking payment of the aggregate subscription price for the Tokens applied for, being computed by reference to the final price of the Dutch Auction (the “<strong>Auction</strong>”) as declared by the Issuer, and issuing such Tokens in accordance with the Instrument and the Conditions;"
-msgstr ""
+msgstr "其认购的出价须由发售者接受，并领取所申请代币总认购价的支付款项，其计算方式是根据发售者宣布的荷兰式拍卖最终价格 (\"<strong>拍卖</strong>\") 算出，并按照“工具及条件”发售代币;"
 
 msgid "letters"
 msgstr "信件"
@@ -12922,31 +12981,31 @@ msgid "the %1 affiliate program is competitive and adaptive to your unique requi
 msgstr "%1 联盟计划具有竞争力，可适应您的独特需求。"
 
 msgid "the Subscriber has not and will not distribute or publish this Electronic Subscription Form or any advertisement or other offering material in relation to the Tokens directly or indirectly in, into or within any Restricted Territory;"
-msgstr ""
+msgstr "订购者没有也不会在任何受限制区域内直接或间接发售或发布与代币有关的本电子认购表格或任何广告或其它提供的材料;"
 
 msgid "the Subscriber has observed the laws of all relevant jurisdictions, obtained any requisite governmental exchange controls or other consents, complied with all relevant formalities and paid any issue, transfer or other taxes due in connection with its participation in the Auction in any applicable territory and that it has not taken any action which will or may result in the Issuer being in breach of the legal or regulatory requirements of any jurisdiction;"
-msgstr ""
+msgstr "订购者已遵守所有有关司法管辖区的法律，取得任何必要的政府外汇管制或其他许可，遵守执行所有相关的手续，并支付任何与发售、转让或其它因其参与任何适用地区的拍卖有关的税费，而且并没有采取任何将会或可能导致发售者违反任何司法管辖区的法律或法规的法律行动;"
 
 msgid "the Subscriber has read and understood the Information Memorandum of the Company dated 15 November 2017 and in particular has read and understood the Risk Factors detailed therein;"
-msgstr ""
+msgstr "订购者已阅读并理解公司于2017年11月15日发布的信息备忘录，特别是已阅读并理解其中详述的风险因素;"
 
 msgid "the Subscriber holds an account on the %1 website, with an account identifier that shall be identified as the initial holder of the Tokens, and that Subscriber has satisfactorily completed KYC (Know Your Client), AML (Anti-Money Laundering) procedures, and has accurately updated his or her name, address, country of residence, and ID details in such account;"
-msgstr ""
+msgstr "订购者在%1 网站上持有账户，其账户标识符应被标识为代币的初始持有者，并且该订购者已成功完成 KYC (了解您的客户) 与反洗钱程序，并已准确地透过账户更新了他或她的姓名、住址、居住地和身份证的详细资料;"
 
 msgid "the Subscriber is purchasing the Tokens for its own account or for one or more separate accounts maintained by such Subscriber and not with a view to the distribution thereof, provided that the disposition of such Subscriber’s property shall at all times be within their control; "
-msgstr ""
+msgstr "订购者正在为其自己的账户购买代币，或为该订购者所维护的一个或多个单独账户但不是为了要发配而订购，条件是该订购者的财产必须随时都在其自己控制下; "
 
 msgid "the Subscriber understands that neither the Tokens nor the Ordinary Shares have been, nor will they be, registered under the U.S. Securities Act of 1933, as amended (the “Securities Act”) and may not be offered or sold within the United States except pursuant to an exemption from, or in a transaction not subject to, the registration requirements of the Securities Act. The Subscriber understands that neither the Issuer, its affiliates, nor any person acting on any of their behalf has offered or sold, and will not offer or sell, any Tokens or Ordinary Shares within the United States except in accordance with Regulation S under the Securities Act. Accordingly, neither the Issuer, its affiliates nor any person acting on its or their behalf have engaged or will engage in any directed selling efforts with respect to the Tokens or the Ordinary Shares. Terms used herein have the meanings given to them by Regulation S. Neither the Issuer, its affiliates nor any person acting on behalf of such persons has entered or will enter into any contractual arrangement with respect to the distribution of Tokens or Ordinary Shares in the United States"
-msgstr ""
+msgstr "订购者理解，无论是代币还是普通股，都不曾也不会根据1933年《美国证券法》或修正版 (\"证券法\") 进行登记，也不会在美国境内发售或出售，除非依据《证券法》的登记要求获豁免或不受其管制下进行交易。订购者理解，无论是发售者、其附属公司或是任何以其名义代替行事的人员都不曾也不会在美国境内发售或出售任何代币或普通股，除非按照《证券法》的S法规进行。因此，无论是发售者、其附属公司或是以其名义代表行事的任何人，均未曾参与或将会从事任何关于代币或普通股的直销工作。此处使用的术语具有S法规赋予的含义。发售者、其附属公司或代表该等人士行事的任何人均未曾或将会就在美国发售代币或普通股事宜订立任何合约。"
 
 msgid "the Subscriber understands that the Tokens are a risky investment, that he/she is investing entirely at his/her own risk, and may lose the entirety of his/her investment; and"
-msgstr ""
+msgstr "订购者明白，代币是一项有风险的投资。他/她自己需对投资承担一切风险，并可能会损失全部投资金额。还有，"
 
 msgid "the Subscriber understands that the Tokens have not been registered under the applicable laws of Australia, the British Virgin Islands, Canada, the European Union, Hong Kong, Japan, Jersey, Malaysia, New Zealand, Singapore, Switzerland, USA, or any other jurisdiction where the extension of the availability of the Tokens would breach any applicable law or regulation (a “<strong>Restricted Territory</strong>”). To the extent that the Subscriber is a resident of any such Restricted Territory or a corporation, partnership or other entity organised under the laws of any such Restricted Territory, it will only subscribe for Tokens pursuant to an available exemption under applicable law; "
-msgstr ""
+msgstr "订购者了解，这些代币尚未根据澳大利亚、英属维尔京群岛、加拿大、欧盟、香港、日本、泽西岛、马来西亚、新西兰、新加坡、瑞士、美国或任何其他如果代币被应用将违反任何适用法律或条例的管辖区(\"<strong>限制领土</strong>\") 的适用法律注册。如订购者是任何该等受限制领土的居民或根据该等受限制地区的法律开设的公司、合伙或其它实体，则该订购者只可根据适用法律的豁免范围订购代币; "
 
 msgid "the Tokens will be issued on, and the Subscriber will be bound by, the Instrument and the Conditions, including the representations made herein"
-msgstr ""
+msgstr "代币将按照“工具和条件”, 包括这里列出的陈述发售， 同时订购者将受其约束"
 
 msgid "the characteristics of financial instruments that are the subject of that order;"
 msgstr "属于订单主题的金融工具特点；"
@@ -14705,121 +14764,4 @@ msgstr "{JAPANY ONLY}Touch Options"
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
-
-msgid "Payment Agent Deposit"
-msgstr "支付代理存款"
-
-msgid "Acknowledgement"
-msgstr "确认"
-
-msgid "Payment Agent Transfer"
-msgstr "支付代理转账"
-
-msgid "Trusted by traders since 2000"
-msgstr "自2000年以来备受交易员信赖"
-
-msgid "Account Type Selection"
-msgstr "账户类型选择"
-
-msgid "Welcome to Binary.com"
-msgstr "欢迎来到 Binary.com"
-
-msgid "Accounts"
-msgstr "账户"
-
-msgid "Authenticate"
-msgstr "验证"
-
-msgid "Subscribe to ICO"
-msgstr "ICO 订阅"
-
-msgid "ICO Histogram"
-msgstr "ICO 直方图"
-
-msgid "Electronic Subscription Form for Tokens"
-msgstr ""
-
-msgid "Settings"
-msgstr "设置"
-
-msgid "Terms and Conditions Approval"
-msgstr "条款和条件审批"
-
-msgid "Account Limits"
-msgstr "账户限额"
-
-msgid "Warning"
-msgstr "警告"
-
-msgid "Endpoint"
-msgstr "终结点"
-
-msgid "Redirecting..."
-msgstr "正在重定向"
-
-msgid "404"
-msgstr "404"
-
-msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
-msgstr "可交易外汇、指数、大宗商品及智能指数的二元期权在线交易平台"
-
-msgid "Why Us"
-msgstr "为何选择我们"
-
-msgid "Careers For Americans"
-msgstr "美国居民的工作机会"
-
-msgid "Job Details"
-msgstr "工作详情"
-
-msgid "Charity"
-msgstr "慈善活动"
-
-msgid "Company Profile"
-msgstr "公司详细信息"
-
-msgid "Regulation"
-msgstr "规则"
-
-msgid "Service Announcements"
-msgstr "服务公告"
-
-msgid "Multi-asset Liquidity Solutions"
-msgstr "多个资产的流动性解决方案"
-
-msgid "Multiple Accounts Manager"
-msgstr "多个账户管理器"
-
-msgid "Omnibus"
-msgstr "综合"
-
-msgid "Open-Source Projects"
-msgstr "开源项目"
-
-msgid "Get Paid for Pull Requests"
-msgstr "提交拉动请求获得报酬"
-
-msgid "How to Trade Binary Options?"
-msgstr "二元期权如何交易？"
-
-msgid "What Are OTC Indices and Stocks?"
-msgstr "场外交易指数和股票有哪些？"
-
-msgid "Types of Trades"
-msgstr "交易类型"
-
-msgid "Why Trade with Binary.com"
-msgstr "为何通过Binary.com进行交易"
-
-msgid "Initial Coin Offering"
-msgstr "首次代币预售"
-
-msgid "Initial Coin Offering Disclaimer"
-msgstr "首次硬币发行免责声明"
-
-msgid "Hackathon Competition"
-msgstr "黑客松竞争"
-
-msgid "Binary.com Graduate Program"
-msgstr "Binary.com 研究生课程"
 

@@ -70,9 +70,12 @@ function getParamValue(url, key) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+function allLanguages() {
+    return [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ko', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
+}
+
 function getLanguage() {
-    let all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
-    let language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return all_languages.indexOf(l) >= 0; });
+    let language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return allLanguages().indexOf(l) >= 0; });
     return language || 'en';
 }
 
