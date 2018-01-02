@@ -208,7 +208,7 @@ const Header = (() => {
                 if (virtual_text.parentNode) {
                     virtual_text.parentNode.setVisibility(0);
                 }
-                showUpgrade(upgrade_info.upgrade_link, 'Open a Financial Account');
+                showUpgrade(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
             } else {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
             }

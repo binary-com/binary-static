@@ -333,26 +333,35 @@ const Client = (() => {
 
     const getUpgradeInfo = () => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
-        const can_upgrade                   = !!(upgradeable_landing_companies && upgradeable_landing_companies.length);
+
+        let can_upgrade = !!(upgradeable_landing_companies && upgradeable_landing_companies.length);
         let type,
             upgrade_link;
         if (can_upgrade) {
-            const joined_accounts = upgradeable_landing_companies.join(', ');
-            if (/maltainvest/.test(joined_accounts)) {
+            const joined_accounts         = upgradeable_landing_companies.join(', ');
+            const current_landing_company = get('landing_company_shortcode');
+
+            // only show upgrade message to landing companies other than current
+            const canUpgrade = regex_landing_company =>
+                regex_landing_company.test(joined_accounts) && !regex_landing_company.test(current_landing_company);
+
+            if (canUpgrade(new RegExp('maltainvest'))) {
                 type         = 'financial';
                 upgrade_link = 'maltainvestws';
-            } else if (/costarica|malta|iom/.test(joined_accounts)) {
+            } else if (canUpgrade(new RegExp('costarica|malta|iom'))) {
                 type         = 'real';
                 upgrade_link = 'realws';
-            } else if (/japan/.test(joined_accounts)) {
+            } else if (canUpgrade(new RegExp('japan'))) {
                 type         = 'real';
                 upgrade_link = 'japanws';
+            } else {
+                can_upgrade = false;
             }
         }
         return {
             type,
             can_upgrade,
-            upgrade_link   : `new_account/${upgrade_link}`,
+            upgrade_link   : upgrade_link ? `new_account/${upgrade_link}` : undefined,
             is_current_path: new RegExp(upgrade_link, 'i').test(window.location.pathname),
         };
     };
