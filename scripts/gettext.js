@@ -5,6 +5,7 @@ const Gettext = require('node-gettext');
 const Path    = require('path');
 const common  = require('./common');
 
+/* eslint-disable no-console */
 Gettext.prototype.dnpgettext = function (domain, msg_txt, msg_id, msg_id_plural, count) {
     let default_translation = msg_id;
     let index;
@@ -41,7 +42,7 @@ const createGettextInstance = () => {
     ];
 
     const start = Date.now();
-    process.stdout.write(color.cyan('Loading .po files '));
+    process.stdout.write(common.messageStart('Loading .po files', true));
     const gt = new Gettext();
 
     locales.forEach((locale) => {
@@ -50,10 +51,9 @@ const createGettextInstance = () => {
 
         const parsed = po.parse(po_content);
         gt.addTranslations(locale, 'messages', parsed);
-        process.stdout.write(color.cyan('.'));
+        process.stdout.write('.');
     });
-    process.stdout.write(color.cyan(' ✓ Done'));
-    process.stdout.write(color.blackBright(`  (${(Date.now() - start).toLocaleString()} ms)\n`));
+    process.stdout.write(common.messageEnd(Date.now() - start));
 
     const source_strings = [];
     gt.on('source-string', (str) => {
@@ -82,14 +82,24 @@ const createGettextInstance = () => {
             return translation;
         },
         update_translations: () => {
-            process.stdout.write(color.green('Updating translations ... '));
+            process.stdout.write(common.messageStart('Updating translations'));
 
+            const start_time    = Date.now();
             const messages_file = Path.join(common.root_path, translations_dir, 'messages.pot');
             const content       = fs.readFileSync(messages_file, 'utf8');
             const parsed        = po.parse(content);
+            const old_strings   = Object.keys(parsed.translations['']).filter(s => s);
+            const old_count     = old_strings.length;
+            const new_strings   = [];
 
             parsed.translations[''] = {};
             source_strings.sort().forEach(entry => {
+                const idx = old_strings.indexOf(entry);
+                if (idx === -1) {
+                    new_strings.push(entry);
+                } else {
+                    old_strings.splice(idx, 1);
+                }
                 parsed.translations[''][entry] = {
                     msgid : entry,
                     msgstr: [''],
@@ -103,10 +113,38 @@ const createGettextInstance = () => {
                 'utf8'
             );
 
-            process.stdout.write(color.green(`Updated messages.pot (total: ${source_strings.length} entries)\n`));
+            process.stdout.write(common.messageEnd(Date.now() - start_time, true));
+            process.stdout.write(`  (messages.pot: ${source_strings.length.toLocaleString()} entries)\n`);
+
+            printList('New strings', new_strings, 'greenBright');
+            printList('Deleted strings', old_strings, 'redBright');
+
+            console.log(
+                '\n\n',
+                color.cyanBright('Summary\n'),
+                color.yellowBright(`${'='.repeat(20)}\n`),
+                formatValue(old_count, 'was'),
+                formatValue(new_strings.length, 'added', '+'),
+                formatValue(old_strings.length, 'deleted', '-'),
+                color.yellowBright(`${'-'.repeat(20)}\n`),
+                formatValue(Object.keys(parsed.translations['']).length, 'result'));
         },
     };
 };
+
+const printList = (title, items, color_name) => {
+    console.log();
+    console.log(color.yellowBright(`${title}:`), ` (${items.length} item${items.length > 1 ? 's' : ''})`);
+    console.log(color.yellow('-'.repeat(title.length + 1)));
+    items.forEach((s, idx) => {
+        console.log(color.yellow(`  ${(idx + 1).toString().padStart(3)}.`), color[color_name](s));
+    });
+};
+
+const formatValue = (value, comment, sign) => (
+    `${sign ? color.cyan(` ${sign} `) : ''}${color.whiteBright(value.toLocaleString().padStart(sign ? 5 : 8))} ${` (${comment})\n`}`
+);
+
 
 let gt_instance = null;
 exports.getInstance = () => {
