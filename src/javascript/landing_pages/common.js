@@ -29,12 +29,6 @@ function collapseMenu() {
     }
 }
 
-function checkBrowser() {
-    const isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
-    const isIE = /*@cc_on!@*/false || !!document.documentMode; // Internet Explorer 6-11
-    return (isFirefox || isIE);
-}
-
 // scrollTo function with animation
 // - Gist reference: https://gist.github.com/andjosh/6764939
 function scrollTo(to, duration) {
