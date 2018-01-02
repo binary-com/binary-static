@@ -5,11 +5,14 @@ const MBTradingEvents     = require('./mb_event');
 const MBPrice             = require('./mb_price');
 const MBProcess           = require('./mb_process');
 const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupChart;
+const BinaryPjax          = require('../../base/binary_pjax');
+const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
 const jpClient            = require('../../common/country_base').jpClient;
 const JapanPortfolio      = require('../../japan/portfolio');
 const localize            = require('../../../_common/localize').localize;
 const State               = require('../../../_common/storage').State;
+const urlFor              = require('../../../_common/url').urlFor;
 
 const MBTradePage = (() => {
     let events_initialized = 0;
@@ -21,6 +24,10 @@ const MBTradePage = (() => {
     };
 
     const init = () => {
+        if (Client.get('landing_company_shortcode') === 'malta') {
+            BinaryPjax.load(urlFor('trading'));
+            return;
+        }
         if (jpClient()) {
             disableTrading();
             $('#panel').remove();
