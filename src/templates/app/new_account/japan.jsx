@@ -97,7 +97,7 @@ const Japan = () => (
             <Fieldset legend={it.L('Status')}>
                 <FormRow
                     type='checkbox'
-                    spaced={1}
+                    spaced
                     id='declare_not_fatca'
                     label={it.L('Not FATCA*')}
                     hint={it.L('You must not be a USA resident, citizen, or have any tax reporting to the USA')}

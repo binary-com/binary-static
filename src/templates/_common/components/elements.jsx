@@ -15,7 +15,7 @@ export const Li = ({
     return (
         <li id={id} className={className}>
             { header && (
-                text ? <strong>{header}</strong> : <h3>{header}</h3>
+                text ? <strong className='margin-right'>{header}</strong> : <h3>{header}</h3>
             )}
             { href ?
                 <a
