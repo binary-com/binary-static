@@ -215,7 +215,7 @@ const MBPrice = (() => {
 
         el_buy.btn.classList[values.is_active ? 'remove' : 'add']('inactive');
         el_buy.btn[values.message ? 'setAttribute' : 'removeAttribute']('data-balloon', values.message);
-        el_buy.btn[values.message ? 'setAttribute' : 'removeAttribute']('data-balloon-length', 'large');
+        el_buy.btn[values.message ? 'setAttribute' : 'removeAttribute']('data-balloon-length', 'medium');
         el_buy.dyn.setAttribute('class', `dynamics ${values.ask_price_movement || ''}`);
         el_buy.val.textContent = formatPrice(values.ask_price);
 
