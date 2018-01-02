@@ -334,27 +334,31 @@ const Client = (() => {
     const getUpgradeInfo = () => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
 
-        let can_upgrade = !!(upgradeable_landing_companies && upgradeable_landing_companies.length);
+        let can_upgrade    = !!(upgradeable_landing_companies && upgradeable_landing_companies.length);
+        let can_open_multi = false;
         let type,
             upgrade_link;
         if (can_upgrade) {
             const current_landing_company = get('landing_company_shortcode');
 
-            // only show upgrade message to landing companies other than current
-            const canUpgrade = arr_landing_company => {
-                const upgradeable = arr_landing_company.find(landing_company => (
-                    upgradeable_landing_companies.indexOf(landing_company) !== -1 &&
-                    landing_company !== current_landing_company
-                ));
-                return !!(upgradeable && upgradeable.length);
-            };
+            can_open_multi = !!((upgradeable_landing_companies.find(landing_company => (
+                landing_company === current_landing_company
+            ))) || []).length;
 
-            if (canUpgrade(['maltainvest'])) {
-                type         = 'financial';
-                upgrade_link = 'maltainvestws';
-            } else if (canUpgrade(['costarica', 'malta', 'iom'])) {
+            // only show upgrade message to landing companies other than current
+            const canUpgrade = arr_landing_company => (
+                !!((arr_landing_company.find(landing_company => (
+                    landing_company !== current_landing_company &&
+                    upgradeable_landing_companies.indexOf(landing_company) !== -1
+                )) || []).length)
+            );
+
+            if (canUpgrade(['costarica', 'malta', 'iom'])) {
                 type         = 'real';
                 upgrade_link = 'realws';
+            } else if (canUpgrade(['maltainvest'])) {
+                type         = 'financial';
+                upgrade_link = 'maltainvestws';
             } else if (canUpgrade(['japan'])) {
                 type         = 'real';
                 upgrade_link = 'japanws';
@@ -365,6 +369,7 @@ const Client = (() => {
         return {
             type,
             can_upgrade,
+            can_open_multi,
             upgrade_link   : upgrade_link ? `new_account/${upgrade_link}` : undefined,
             is_current_path: new RegExp(upgrade_link, 'i').test(window.location.pathname),
         };

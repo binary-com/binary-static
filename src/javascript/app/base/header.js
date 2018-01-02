@@ -5,7 +5,6 @@ const Login               = require('./login');
 const BinarySocket        = require('./socket');
 const checkClientsCountry = require('../common/country_base').checkClientsCountry;
 const jpClient            = require('../common/country_base').jpClient;
-const getCurrencies       = require('../pages/user/get_currency').getCurrencies;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
 const elementInnerHtml    = require('../../_common/common_functions').elementInnerHtml;
 const elementTextContent  = require('../../_common/common_functions').elementTextContent;
@@ -212,15 +211,12 @@ const Header = (() => {
             } else {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
             }
-            showHideNewAccount(show_upgrade_msg);
+            showHideNewAccount(upgrade_info);
         });
     };
 
-    const showHideNewAccount = (can_upgrade) => {
-        const landing_company = State.getResponse('landing_company');
-        // only allow opening of multi account to costarica clients with remaining currency
-        if (!Client.get('is_ico_only') &&
-            (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length))) {
+    const showHideNewAccount = (upgrade_info) => {
+        if (upgrade_info.can_upgrade || upgrade_info.can_open_multi) {
             changeAccountsText(1, 'Create Account');
         } else {
             changeAccountsText(0, 'Accounts List');
