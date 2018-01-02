@@ -38,7 +38,7 @@ function checkBrowser() {
 // scrollTo function with animation
 // - Gist reference: https://gist.github.com/andjosh/6764939
 function scrollTo(to, duration) {
-    if (!to) return;
+    if (typeof to === 'undefined') return;
     if (!duration) duration = 1000;
     let start = window.pageYOffset,
         change = to - start,
