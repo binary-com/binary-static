@@ -7,7 +7,7 @@ const LandingPage = () => (
         <h3>{it.L('{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money.')}</h3>
         <p>{it.L('{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform.')}</p>
 
-        <SeparatorLine className='gr-padding-10' invisible={1} />
+        <SeparatorLine className='gr-padding-10' invisible />
 
         <div className='box bordered gr-10 gr-centered'>
             <p>{it.L('{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:')}</p>
@@ -27,7 +27,7 @@ const LandingPage = () => (
             </div>
         </div>
 
-        <SeparatorLine className='gr-padding-10' invisible={1} />
+        <SeparatorLine className='gr-padding-10' invisible />
     </div>
 );
 

@@ -80,7 +80,6 @@ const ICOSubscribe = (() => {
     const init = () => {
         BinarySocket.wait('balance').then((response) => {
             ICOPortfolio.onLoad();
-            $('#view_ico_info').setVisibility(1);
             currency = Client.get('currency') || '';
             if (currency) {
                 $('.currency').text(currency);
@@ -181,7 +180,6 @@ const ICOSubscribe = (() => {
     };
 
     const showContent = () => {
-        $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
             to_show = 'ico_subscribe';

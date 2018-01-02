@@ -10,10 +10,8 @@ const Form = () => (
             </div>
             <div className='center-text gr-centered gr-padding-20 gr-child' id='reality_check_nav'>
                 <button className='button' type='submit'>{it.L('Continue Trading')}</button>
-                &nbsp;
-                <a className='button-secondary' id='statement' href='javascript:;'><span>{it.L('View Statement')}</span></a>
-                &nbsp;
-                <a className='button-secondary' id='logout' href='javascript:;'><span>{it.L('Log out')}</span></a>
+                <a className='button button-secondary' id='statement' href='javascript:;'><span>{it.L('View Statement')}</span></a>
+                <a className='button button-secondary' id='logout' href='javascript:;'><span>{it.L('Log out')}</span></a>
             </div>
         </form>
     </React.Fragment>

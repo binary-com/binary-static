@@ -123,7 +123,7 @@ export const SubmitButton = ({
                 id={id || 'btn_submit'}
                 type={type === 'submit' ? 'submit' : undefined}
                 {...attributes}
-                className={is_full_width ? 'full-width' : undefined}
+                className={`button${is_full_width ? ' full-width' : ''}`}
             >
                 {text}
             </button>
