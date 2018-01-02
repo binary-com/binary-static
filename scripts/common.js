@@ -52,3 +52,11 @@ exports.writeFile = async (path, data) => {
     await ensureDirectoryExistence(path);
     return await writefileAsync(path, data);
 };
+
+exports.isExcluded = (excludes, lang) => {
+    if (excludes && !/^ACH$/i.test(lang)) {
+        const language_is_excluded = new RegExp(lang, 'i').test(excludes);
+        return /^NOT-/i.test(excludes) ? !language_is_excluded : language_is_excluded;
+    }
+    return false;
+};

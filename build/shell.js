@@ -30,7 +30,7 @@ module.exports = function (grunt) {
             }
         },
         sitemap: {
-            command: `cd ${process.cwd()}/scripts && carton exec perl sitemap.pl`,
+            command: `cd ${process.cwd()} && ./scripts/sitemap.js`,
             options: {
                 stdout: true
             }

@@ -91,18 +91,6 @@ const createDirectories = () => {
     });
 };
 
-const shouldCompile = (excludes, lang) => {
-    if (excludes && !/^ACH$/i.test(lang)) {
-        const language_is_excluded = excludes.toUpperCase().indexOf(lang.toUpperCase()) !== -1;
-
-        if (/^NOT-/i.test(excludes)) {
-            return language_is_excluded;
-        }
-        return !language_is_excluded;
-    }
-    return true;
-};
-
 const fileHash = (path) => (
     new Promise((res) => {
         const fd   = fs.createReadStream(path);
@@ -207,7 +195,7 @@ const createContextBuilder = async () => {
 
 async function compile(page) {
     const config              = getConfig();
-    const languages           = config.languages.filter(lang => shouldCompile(page.excludes, lang));
+    const languages           = config.languages.filter(lang => !common.isExcluded(page.excludes, lang));
     const context_builder     = await createContextBuilder();
     const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER'; // used in layout.jsx
 

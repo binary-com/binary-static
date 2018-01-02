@@ -5,6 +5,7 @@ const Gettext = require('node-gettext');
 const Path    = require('path');
 const common  = require('./common');
 
+/* eslint-disable no-console */
 Gettext.prototype.dnpgettext = function (domain, msg_txt, msg_id, msg_id_plural, count) {
     let default_translation = msg_id;
     let index;
