@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+    [% INCLUDE _common/includes/anti_clickjack.html.tt %]
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
+    <meta name="description" content="
+        [%= l('[_1] gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities.', broker_name) =%]" />
+    <meta name="keywords" content="binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading, hackathon" />
+    <meta name="author" content="[%= broker_name =%]" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="dcterms.rightsHolder" content="[%= broker_name =%]" />
+    <meta name="dcterms.rights" content="[%= broker_name =%]" />
+    <meta property="og:title" content="[%= broker_name =%]" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
+
+    [% PROCESS _common/components/title.html.tt %]
+
+    [% PROCESS _common/includes/favicons.html.tt %]
+
+    <link href="[% request.url_for('css/japan_2.css') _ '?' _ static_hash %]" rel="stylesheet" />
+    <link href="https://style.binary.com/binary.css?[% static_hash %]" rel="stylesheet" />
+</head>
+
+<body>
+<div class="navbar-fixed-top" role="navigation" id="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <span id="toggle-menu" href="button" class="navbar-toggle"></span>
+            <a class="navbar-brand logo" href="[% request.url_for('home') %]"></a>
+        </div>
+        <div class="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="invisible">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a href="#key-plus" class="page-scroll">[% l("{JAPAN ONLY}Key plus points") %]</a>
+                </li>
+                <li>
+                    <a href="#bo-vs-fx" class="page-scroll">[% l("{JAPAN ONLY}Binary Options vs FX") %]</a>
+                </li>
+                <li>
+                    <a href="#academy" class="page-scroll">[% l("{JAPAN ONLY}Academy") %]</a>
+                </li>
+                <li>
+                    <a href="#open-account" class="page-scroll">[% l("{JAPAN ONLY}How to open account") %]</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section id="page-top" class="intro">
+    <div class="container">
+        <div class="intro-body">
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m">
+                    <h3 class="intro-subtext">[% l("{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world") %]</h3>
+                    <form class="signup-form">
+                        <div class="signup-form-input">
+                            <div class="input-group">
+                                <input autocomplete="off" name="email" id="email" maxlength="50" type="email" placeholder="[% l("{JAPAN ONLY}Enter your email") %]" />
+                                <span class="error-msg center-text invisible">[% l("{JAPAN ONLY}This field is required") %]</span>
+                                <button type="submit" id="btn-submit-email"><span>[% l("{JAPAN ONLY}Account Opening") %]</span></button>
+                            </div>
+                        </div>
+                        <div class="signup-form-success invisible">
+                            <p>[% l("{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.") %]</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-bg"></div>
+    <div class="primary-bg-color-dark"></div>
+</section>
+
+[% BLOCK product %]
+<div class="twb-content">
+    <div class="gr-row gr-row-align-center">
+        <div class="[% icon_1 %] icon-sm"></div>
+        <div class="[% icon_2 %] icon-sm"></div>
+    </div>
+    <h3 class="center-text gr-padding-10">[% header %]</h3>
+    <p>[% description %]</p>
+    <div class="gr-row gr-row-align-center">
+        <div class="gr-3 gr-8-m">
+            <img class="responsive" src="[% request.url_for('images/pages/trade-explanation/ja/' _ image_1 _ '.svg') %]">
+        </div>
+        <div class="gr-12-m gr-padding-10"></div>
+        <div class="gr-3 gr-8-m">
+            <img class="responsive" src="[% request.url_for('images/pages/trade-explanation/ja/' _ image_2 _ '.svg') %]">
+        </div>
+    </div>
+    <p>[% duration %]</p>
+</div>
+[% END %]
+
+<section class="bg-white edge--top edge--bottom--reverse">
+    <div class="container padding-bottom-50">
+        <div class="tab-with-buttons">
+            <div class="twb-content-wrapper">
+                <div class="twb-content-container">
+                    [% PROCESS product icon_1='ic-1' icon_2='ic-2'
+                        image_1='higher-lower-1' image_2='higher-lower-2'
+                        header=l('{JAPAN ONLY}Ladder Options')
+                        description=l("{JAPAN ONLY}Predict whether a FX rate will finish higher or lower than a target barrier.")
+                        duration=l("{JAPAN ONLY}2 hours to 1 year terms") %]
+
+                    [% PROCESS product icon_1='ic-3' icon_2='ic-4'
+                        image_1='touch-notouch-1' image_2='touch-notouch-2'
+                        header=l('{JAPAN ONLY}Touch Options')
+                        description=l("{JAPAN ONLY}Predict whether a FX rate will touch a target barrier or not.")
+                        duration=l("{JAPAN ONLY}1 week to 1 year terms") %]
+
+                    [% PROCESS product icon_1='ic-5' icon_2='ic-6'
+                        image_1='in-out-1' image_2='in-out-2'
+                        header=l('{JAPAN ONLY}Range Options: End-In / End-Out')
+                        description=l("{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range.")
+                        duration=l("{JAPAN ONLY}1 week to 1 year terms") %]
+
+                    [% PROCESS product icon_1='ic-1' icon_2='ic-2'
+                        image_1='in-out-3' image_2='in-out-4'
+                        header=l('{JAPAN ONLY}Range Options: Stay-In / Break-Out')
+                        description=l("{JAPAN ONLY}Predict whether a FX rate will touch either target barrier before expiry.")
+                        duration=l("{JAPAN ONLY}1 week to 1 year terms") %]
+                </div>
+            </div>
+            <div class="twb-buttons"></div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-orange bg-lines">
+    <div class="container padding-top-bottom-500">
+        <div id="key-plus" class="section-title center-text">
+            <h1 class="content-inverse-color">[% l("{JAPAN ONLY}Key plus point") %]</h1>
+            <p class="content-inverse-color">[% l("{JAPAN ONLY}Here are some random texts.") %]</p>
+        </div>
+        <div class="cards cards--numbered cards--less-margin gr-row">
+            <div class="gr-4 gr-6-m">
+                <div class="card-leaf">
+                    <p>[% l("{JAPAN ONLY}trade with 50 yen to 999 yen") %]</p>
+                </div>
+            </div>
+            <div class="gr-4 gr-6-m">
+                <div class="card-leaf">
+                    <p>[% l("{JAPAN ONLY}set daily loss limit") %]</p>
+                </div>
+            </div>
+            <div class="gr-4 gr-6-m">
+                <div class="card-leaf">
+                    <p>[% l("{JAPAN ONLY}no transaction fees") %]</p>
+                </div>
+            </div>
+            <div class="gr-4 gr-6-m">
+                <div class="card-leaf">
+                    <p>[% l("{JAPAN ONLY}trade 9 currencies") %]</p>
+                </div>
+            </div>
+            <div class="gr-4 gr-6-m">
+                <div class="card-leaf">
+                    <p>[% l("{JAPAN ONLY}4 options types") %]</p>
+                </div>
+            </div>
+            <div class="gr-4 gr-6-m">
+                <div class="card-leaf">
+                    <p>[% l("{JAPAN ONLY}trading periods from 2 hours to 1 year") %]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="bo-vs-fx" class="fill-bg-color edge--top">
+    <div class="container padding-bottom-500">
+        <div class="section-title center-text">
+            <h1 class="color-blue">[% l("{JAPAN ONLY}Why choose binary options over foreign exchange") %]</h1>
+            <p>[% l("{JAPAN ONLY}The binary option can provide profit opportunities even at a small price range. Here is a table comparison of foreign exchange and binary options") %]</p>
+        </div>
+        <div class="gr-row cards">
+            <div class="gr-6 gr-12-m">
+                <div class="card">
+                    <div class="card-header__bubble">
+                        <h3>[% l("{JAPAN ONLY}Foreign exchange one cancellation order - profit take & stop-loss order") %]</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="gr-row gr-row-align-center-m gr-row-align-between">
+                            <div class="box-o">
+                                <img class="icon-sm" src="[% request.url_for('images/japan/version1/jpy.svg') %]" />
+                                <span class="size-3">[% l("{JAPAN ONLY}¥110.50 / lot") %]</span>
+                            </div>
+                            <div class="box">
+                                <img class="icon-sm" src="[% request.url_for('images/japan/version1/clock.svg') %]" />
+                                <span class="size-3">[% l("{JAPAN ONLY}1 hour") %]</span>
+                            </div>
+                        </div>
+                        <div class="flex gr-padding-30">
+                            <div class="box">
+                                <p class="size-1 color-gray">[% l("{JAPAN ONLY}spot") %]</p>
+                                <p>[% l("{JAPAN ONLY}1 lot") %]</p>
+                            </div>
+                            <div>
+                                <img class="icon-sm" src="[% request.url_for('images/japan/version1/ic_arrow_up.svg') %]" />
+                                <img class="icon-sm" src="[% request.url_for('images/japan/version1/ic_arrow_down.svg') %]" />
+                            </div>
+                            <div>
+                                <div class="box">
+                                    <p class="size-1 color-gray">[% l("{JAPAN ONLY}profit take sell") %]</p>
+                                    <p class="color-red">[% l("{JAPAN ONLY}¥110.65") %]</p>
+                                </div>
+                                <div class="box">
+                                    <p class="size-1 color-gray">[% l("{JAPAN ONLY}stop-loss sell") %]</p>
+                                    <p class="color-light-blue">[% l("{JAPAN ONLY}¥110.40") %]</p>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="card-divider"></span>
+                        <p class="size-1 color-gray">[% l("{JAPAN ONLY}1 lot = $ 100,000, margin: ") %]</p>
+                        <p class="size-2">[% l("{JAPAN ONLY}Profit / loss per point (0.01) = ¥ 1,000") %]</p>
+                        <p class="bg-gray size-3">[% l("{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000") %]</p>
+                        <div class="flex">
+                            <img class="icon-md" src="[% request.url_for('images/japan/version1/sad-face.svg') %]" />
+                            <p class="color-light-blue">[% l("{JAPAN ONLY}Margin: ¥ 442,000") %]<br>[% l("{JAPAN ONLY}Maximum loss: not guaranteed") %]</p>
+                        </div>
+                        <p class="size-1 color-gray">[% l("{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000") %]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gr-6 gr-12-m">
+                <div class="card">
+                    <div class="card-header__bubble">
+                        <h3>[% l("{JAPAN ONLY}Binary option can make a higher profit, for the same risk but less margin") %]</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="gr-row gr-row-align-center-m gr-row-align-between">
+                            <div class="box-o">
+                                <img class="icon-sm" src="[% request.url_for('images/japan/version1/jpy.svg') %]" />
+                                <span class="sixe-3">[% l("{JAPAN ONLY}¥200 /  lot") %]</span>
+                            </div>
+                            <div class="box">
+                                <img class="icon-sm" src="[% request.url_for('images/japan/version1/clock.svg') %]" />
+                                <span class="size-3">[% l("{JAPAN ONLY}1 hour") %]</span>
+                            </div>
+                        </div>
+                        <div class="flex gr-padding-30">
+                            <div class="box">
+                                <p class="size-1 color-gray">[% l("{JAPAN ONLY}call option buy") %]</p>
+                                <p>[% l("{JAPAN ONLY}50ロット") %]</p>
+                            </div>
+                            <div>
+                                <img class="icon-sm" src="[% request.url_for('images/japan/version1/ic_arrow_up.svg') %]" />
+                                <img class="icon-sm" src="[% request.url_for('images/japan/version1/ic_arrow_down.svg') %]" />
+                            </div>
+                            <div>
+                                <div class="box">
+                                    <p class="size-1 color-gray">[% l("{JAPAN ONLY}payout (if spot 110.65 or higher)") %]</p>
+                                    <p class="color-red">[% l("{JAPAN ONLY}¥1,000") %]</p>
+                                </div>
+                                <div class="box">
+                                    <p class="size-1 color-gray">[% l("{JAPAN ONLY}if not") %]</p>
+                                    <p class="color-light-blue">[% l("{JAPAN ONLY}¥0") %]</p>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="card-divider"></span>
+                        <p class="size-1 color-gray">[% l("{JAPAN ONLY}If spot rate is at above target rate at judgment time, the profil will be:") %]</p>
+                        <p class="size-2">[% l("{JAPAN ONLY}Option price assumes 1 hour to judgment time, volatility = 8.5%, spread = 40 yen") %]</p>
+                        <p class="bg-gray size-3">[% l("{JAPAN ONLY}50 lots: maximum loss: - ¥ 10,000 | target profit: ¥ 40,000") %]</p>
+                        <div class="flex">
+                            <img class="icon-md" src="[% request.url_for('images/japan/version1/happy-face.svg') %]" />
+                            <p class="color-red">[% l("{JAPAN ONLY}Margin: ¥ 10,000") %]<br>[% l("{JAPAN ONLY}Maximum loss: guaranteed") %]</p>
+                        </div>
+                        <p class="size-1 color-gray">[% l("{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000") %]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white edge--top edge--bottom">
+    <div class="bg-platforms"></div>
+    <div class="container center-text padding-bottom-50">
+        <div class="section-title">
+            <h1 class="color-blue">[% l("{JAPAN ONLY}Available on desktop and mobile platforms") %]</h1>
+            <p>[% l("{JAPAN ONLY}Here are some random texts.") %]</p>
+        </div>
+        <div class="gr-row">
+            <div class="gr-12">
+                <img class="responsive bg-overflow" src="[% request.url_for('images/japan/version2/img-devices@2x.png') %]" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-orange bg-confetti">
+    <div class="container center-text padding-top-bottom-500">
+        <div id="academy" class="section-title content-inverse-color">
+            <h1 class="content-inverse-color">[% l("{JAPAN ONLY}Academy") %]</h1>
+            <p>[% l("{JAPAN ONLY}Learn to become a better trader and get all the latest news and trends on financial transactions for free.") %]</p>
+        </div>
+        <div class="gr-row content-inverse-color">
+            <div class="gr-3 gr-6-m">
+                <img class="icon-lg" src="[% request.url_for('images/japan/version2/ic-webinar-2.svg') %]" />
+                <p>[% l("{JAPAN ONLY}Interactive webinar") %]</p>
+            </div>
+            <div class="gr-3 gr-6-m">
+                <img class="icon-lg" src="[% request.url_for('images/japan/version2/ic-marketreport-2.svg') %]" />
+                <p>[% l("{JAPAN ONLY}Daily market report") %]</p>
+            </div>
+            <div class="gr-3 gr-6-m">
+                <img class="icon-lg" src="[% request.url_for('images/japan/version2/ic-ebook-video-2.svg') %]" />
+                <p>[% l("{JAPAN ONLY}E-book and video") %]</p>
+            </div>
+            <div class="gr-3 gr-6-m">
+                <img class="icon-lg" src="[% request.url_for('images/japan/version2/ic-practice-account-2.svg') %]" />
+                <p>[% l("{JAPAN ONLY}Practice account") %]</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="fill-bg-color edge--top--reverse">
+    <div class="container center-text padding-bottom-500">
+        <div class="section-title">
+            <h1 class="color-blue">[% l("{JAPAN ONLY}Your funds are kept safe") %]</h1>
+            <p>[% l("{JAPAN ONLY}All customer funds are deposited with JSF Trust Bank and will be refunded by an independent attorney as a beneficiary agent in case of business failure") %]</p>
+        </div>
+        <div class="gr-row">
+            <div class="gr-6 gr-12-m">
+                <img class="responsive" src="[% request.url_for('images/japan/version1/secure-1.svg') %]" />
+            </div>
+            <div class="gr-6 gr-12-m">
+                <img class="responsive" src="[% request.url_for('images/japan/version1/secure-2.svg') %]" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="open-account" class="bg-white edge--top--reverse">
+    <div class="container center-text padding-bottom-50">
+        <div class="section-title">
+            <h1 class="color-blue">[% l("{JAPAN ONLY}How to open an account") %]</h1>
+        </div>
+        <div class="gr-row numbered">
+            <div class="gr-6 gr-12-m">
+                <div class="flex-inline">
+                    <span class="icon-md rounded ic-new-account"></span>
+                    <p>[% l("{JAPAN ONLY}Apply for an account & provide ID") %]</p>
+                </div>
+            </div>
+            <div class="gr-6 gr-12-m">
+                <div class="flex-inline">
+                    <span class="icon-md rounded ic-knowledge-test"></span>
+                    <p>[% l("{JAPAN ONLY}Pass our Knowledge Test") %]</p>
+                </div>
+            </div>
+            <div class="gr-6 gr-12-m">
+                <div class="flex-inline">
+                    <span class="icon-md rounded ic-secure-email"></span>
+                    <p>[% l("{JAPAN ONLY}Receive account activation code by secure mail and activate account") %]</p>
+                </div>
+            </div>
+            <div class="gr-6 gr-12-m">
+                <div class="flex-inline">
+                    <span class="icon-md rounded ic-deposit-money"></span>
+                    <p>[% l("{JAPAN ONLY}Deposit funds and begin trading") %]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="fill-bg-color">
+    <div class="container center-text padding-bottom-50">
+        <div class="section-title">
+            <h1 class="color-blue">[% l("{JAPAN ONLY}Why choose us") %]</h1>
+            <p>[% l("{JAPAN ONLY}[_1] is a pioneer in the award-winning online option deal.", website_name) %]</p>
+        </div>
+        <img class="ic-award" src="[% request.url_for('images/japan/version2/img-award-1.svg') %]" />
+        <img class="ic-award" src="[% request.url_for('images/japan/version2/img-award-2@2x.png') %]" />
+        <img class="ic-award" src="[% request.url_for('images/japan/version2/img-award-3@2x.png') %]" />
+        <img class="ic-award" src="[% request.url_for('images/japan/version2/img-award-4@2x.png') %]" />
+    </div>
+</section>
+
+<div class="bg-orange bg-semicircles">
+    <div class="container">
+        <div class="gr-row">
+            <div class="gr-12">
+                <form class="signup-form">
+                    <h1 class="">[% l("{JAPAN ONLY}Sign up for a free account") %]</h1>
+                    <div class="signup-form-input">
+                        <div class="input-group">
+                            <input autocomplete="off" name="email" id="email" maxlength="50" type="email" placeholder="[% l("{JAPAN ONLY}Enter your email") %]" />
+                            <span class="error-msg center-text invisible">[% l("{JAPAN ONLY}This field is required") %]</span>
+                            <button type="submit" id="btn-submit-email"><span>[% l("{JAPAN ONLY}Account Opening") %]</span></button>
+                        </div>
+                    </div>
+                    <div class="signup-form-success invisible">
+                        <p>[% l("{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.") %]</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="content-inverse-color">
+    <div class="primary-bg-color">
+        <div class="container">
+            <p>[% l("{JAPAN ONLY}This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - view license. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - view license, and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.") %]</p>
+        </div>
+    </div>
+    <div class="primary-bg-color-dark">
+        <div class="container">
+            <p>[% l("{JAPAN ONLY}Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about Responsible Trading.") %]</p>
+        </div>
+    </div>
+</footer>
+
+<script src="[% request.url_for('js/landing_pages/common.js') _ '?' _ static_hash %]"></script>
+<script src="[% request.url_for('js/landing_pages/japan_2.js') _ '?' _ static_hash %]"></script>
+</body>
+</html>
