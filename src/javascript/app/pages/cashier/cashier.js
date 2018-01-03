@@ -6,6 +6,7 @@ const jpClient         = require('../../common/country_base').jpClient;
 const jpResidence      = require('../../common/country_base').jpResidence;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const urlFor           = require('../../../_common/url').urlFor;
+const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
 const Cashier = (() => {
     let href = '';
@@ -50,7 +51,8 @@ const Cashier = (() => {
                 const residence = Client.get('residence');
                 if (residence) {
                     BinarySocket.send({ paymentagent_list: residence }).then((response) => {
-                        if (response.paymentagent_list && response.paymentagent_list.length) {
+                        const list = getPropertyValue(response, ['paymentagent_list', 'list']);
+                        if (list && list.length) {
                             $('#payment-agent-section').setVisibility(1);
                         }
                     });
