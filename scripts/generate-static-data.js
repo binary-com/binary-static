@@ -129,7 +129,7 @@ const texts = [
     'Up/Down',
     'Ends In/Out',
     'Touch/No Touch',
-    'Stays In/Goes Out',
+    'Stays In/Out',
     'Potential Payout',
     'Total Cost',
     'Potential Profit',
