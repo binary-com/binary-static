@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-12-27 01:25-0500\n"
+"PO-Revision-Date: 2018-01-01 20:59-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: pl\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: pl_PL\n"
+
+msgid "404"
+msgstr "404"
 
 msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
 msgstr " (<span class=\"initial_deposit_percent\"></span>% całkowitej kwoty)"
@@ -113,9 +116,6 @@ msgstr "ICO %1 – Często zadawane pytania"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "ICO %1 – Zainwestuj w najlepszą na świecie platformę do handlowania opcjami binarnymi"
-
-msgid "%1 ICO: Histogram of Active Bids"
-msgstr "ICO %1: Histogram aktywnych ofert kupna"
 
 msgid "%1 Initial Coin Offering (ICO)"
 msgstr "%1 ICO (Initial Coin Offering)"
@@ -875,6 +875,9 @@ msgstr "Środki na koncie &mdash; jest to suma Twojego salda na koncie oraz wart
 msgid "Account Free Margin &mdash; Your Account Equity minus your Total Margin."
 msgstr "Konto bez depozytu zabezpieczającego &mdash; Twoje środki na koncie minus całkowita kwota depozytu zabezpieczającego."
 
+msgid "Account Limits"
+msgstr "Limity na koncie"
+
 msgid "Account Management and Tracking"
 msgstr "Zarządzanie kontem i śledzenie działań na koncie"
 
@@ -914,6 +917,9 @@ msgstr "Powód otwarcia konta"
 msgid "Accounting"
 msgstr "Rachunkowość"
 
+msgid "Accounts"
+msgstr "Konta"
+
 msgid "Accounts And Payments Executive"
 msgstr "Starszy specjalista ds. księgowości i płatności"
 
@@ -931,6 +937,9 @@ msgstr "Zgromadzony dochód/ oszczędności"
 
 msgid "Accuracy of Information"
 msgstr "Dokładność informacji"
+
+msgid "Acknowledgement"
+msgstr "Potwierdzenie"
 
 msgid "Acquisition of financial contracts through this site must be effected in accordance with the terms and conditions presented on the pages of this site. Acquisition of a financial contract is completed when the financial contract has been customised, the premium (or the payout, as the case may be) has been calculated and payment has been verified."
 msgstr "Nabywanie kontraktów finansowych za pośrednictwem niniejszego portalu musi być dokonywane zgodnie z warunkami przedstawionymi na łamach tego portalu. Nabycie kontraktu finansowego uznaje się za zakończone, gdy kontrakt finansowy został dostosowany, premia (lub wypłata, jeśli taka występuje) została obliczona i płatność została zweryfikowana."
@@ -1514,6 +1523,9 @@ msgstr "Dolar australijski vs frank szwajcarski"
 msgid "Australian dollar vs US dollar"
 msgstr "Dolar australijski vs dolar amerykański"
 
+msgid "Authenticate"
+msgstr "Zweryfikuj"
+
 msgid "Authenticate your account by verifying your identity and address."
 msgstr "Zweryfikuj swoje konto, potwierdzając swoją tożsamość i dane adresowe."
 
@@ -1709,9 +1721,6 @@ msgstr "Oferta kupna"
 msgid "Bid Price Per Token"
 msgstr "Cena oferowana za token"
 
-msgid "Bid Price Per Token ($USD)"
-msgstr "Cena oferowana za token ($ USD)"
-
 msgid "Bid on the ICO:"
 msgstr "Złóż ofertę kupna ICO:"
 
@@ -1888,6 +1897,9 @@ msgstr "Urząd ds. Usług Finansowych (Malta Financial Services Authority) na Ma
 
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Na platformie Binary.com dokonywanych jest średnio %1 %2transakcji%3 na sekundę, 24 godz. na dobę 7 dni w tygodniu"
+
+msgid "Binary.com Graduate Program"
+msgstr ""
 
 msgid "Binary.com intends to deploy the <a href='%1' target='_blank' rel='noopener noreferrer'>Mini Me</a> token. Please view our <a href='%2' target='_blank' rel='noopener noreferrer'>blog post</a> detailing our reasons for choosing this token."
 msgstr "Binary.com zamierza wprowadzić token <a href='%1' target='_blank' rel='noopener noreferrer'>Mini Me</a>. Zapoznaj się z naszym <a href='%2' target='_blank' rel='noopener noreferrer'>postem na blogu</a> wyjaśniającym, dlaczego zdecydowaliśmy się wybrać ten token."
@@ -2123,6 +2135,9 @@ msgstr "Oferty pracy dla obywateli USA"
 msgid "Careers"
 msgstr "Praca"
 
+msgid "Careers For Americans"
+msgstr "Oferty pracy dla obywateli USA"
+
 msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
 msgstr "Starannie dobrana sieć dostawców płynności umożliwia nam oferowanie niskich spreadów i konkurencyjnych marż zarówno dla klientów detalicznych, jak i instytucjonalnych"
 
@@ -2172,6 +2187,9 @@ msgid "Change your main login password."
 msgstr "Zmień swoje główne hasło do logowania."
 
 msgid "Charitable Activities"
+msgstr "Działalność charytatywna"
+
+msgid "Charity"
 msgstr "Działalność charytatywna"
 
 msgid "Chart"
@@ -2482,6 +2500,9 @@ msgstr "Częstotliwość handlowania towarami"
 
 msgid "Company Ownership"
 msgstr "Właściciel firmy"
+
+msgid "Company Profile"
+msgstr "Profil firmy"
 
 msgid "Company addresses"
 msgstr "Adresy firmy"
@@ -3395,6 +3416,9 @@ msgstr "Każda ze stron może niezwłocznie rozwiązać niniejszą Umowę za pis
 msgid "Either party may terminate this Agreement on delivery of one weeks' prior written notice to the other party."
 msgstr "Każda ze stron ma prawo wypowiedzieć Umowę za pisemnym wypowiedzeniem dostarczonym drugiej stronie. Okres wypowiedzenia wynosi tydzień."
 
+msgid "Electronic Subscription Form for Tokens"
+msgstr ""
+
 msgid "Electronically signed by the Subscriber/for and on behalf of the Subscriber"
 msgstr ""
 
@@ -3439,6 +3463,9 @@ msgstr "Czas zakończenia musi być późniejszy niż czas rozpoczęcia."
 
 msgid "Ended"
 msgstr "Zakończono"
+
+msgid "Endpoint"
+msgstr "punkt końcowy"
 
 msgid "Ends Between"
 msgstr "Kończy się pomiędzy"
@@ -4193,6 +4220,9 @@ msgstr "Bogata struktura prowizji"
 msgid "Get JPY 1,000,000"
 msgstr "Uzyskaj 1 000 000 JPY"
 
+msgid "Get Paid for Pull Requests"
+msgstr "Zarabiaj, wysyłając żądania typu „pull”"
+
 msgid "Get Started"
 msgstr "Start"
 
@@ -4313,6 +4343,9 @@ msgstr "H. Monitorowanie i przegląd"
 msgid "H. Regulatory Provisions"
 msgstr "H. Przepisy ustawowe"
 
+msgid "Hackathon Competition"
+msgstr "Konkurs Hackathon"
+
 msgid "Hands-on test automation experience a plus"
 msgstr "Doświadczenie w automatyzacji testów będzie dodatkowym atutem"
 
@@ -4381,9 +4414,6 @@ msgstr "Najważniejsze zalety"
 
 msgid "Hint: it would take approximately %1%2 to crack this password."
 msgstr "Podpowiedź: Złamanie tego hasła zajmie około %1%2."
-
-msgid "Histogram of Active Bids"
-msgstr "Histogram aktywnych ofert kupna"
 
 msgid "Hone your security testing skills."
 msgstr "Dojdź do perfekcji w testach bezpieczeństwa."
@@ -4477,6 +4507,9 @@ msgstr "Jak szybko mogę zacząć handlować?"
 
 msgid "How the ICO works"
 msgstr "Na czym polega ICO"
+
+msgid "How to Trade Binary Options?"
+msgstr "Jak handlować opcjami binarnymi?"
 
 msgid "How to Trade in MetaTrader 5"
 msgstr "Jak handlować na MetaTrader 5"
@@ -5159,8 +5192,14 @@ msgstr "Informacje przedstawione w paragrafie 1 niniejszej sekcji zostaną dosta
 msgid "Inheritance"
 msgstr "Spadek"
 
+msgid "Initial Coin Offering"
+msgstr "Initial Coin Offering (ICO)"
+
 msgid "Initial Coin Offering (ICO)"
 msgstr "ICO (Initial Coin Offering)"
+
+msgid "Initial Coin Offering Disclaimer"
+msgstr "Zastrzeżenie dotyczące ICO"
 
 msgid "Initial deposit required: "
 msgstr "Wymagany jest depozyt początkowy: "
@@ -5846,6 +5885,9 @@ msgstr "Jim Mellon to znany, odnoszący sukcesy przedsiębiorca, który rozpoczy
 msgid "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 msgstr "Joanna nadzoruje zachowanie zgodności z procedurami i przepisami, których Grupa %1 musi przestrzegać, aby zachować licencje w różnych jurysdykcjach. Sprawuje również nadzór nad kilkoma obszarami operacyjnymi Grupy, takimi jak płatności czy zarządzanie kontami klientów. Od 1999 r. Joanna jest członkiem Maltańskiego Instytutu Zarządzania (Malta Institute of Management), posiada dyplom z zakresu usług finansowych i zgodności oraz dyplom zawodowy studiów podyplomowych z zakresu zgodności i przestępstw finansowych prowadzonych przez Międzynarodowe Stowarzyszenie ds. Zgodności (International Compliance Association)."
 
+msgid "Job Details"
+msgstr "Opis stanowiska"
+
 msgid "Join now"
 msgstr "Dołącz teraz"
 
@@ -5883,6 +5925,9 @@ msgid "Keep track of your authorised applications."
 msgstr "Obserwuj swoje zatwierdzone aplikacje."
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
+msgstr ""
+
+msgid "Key Information Documents"
 msgstr ""
 
 msgid "Key facts"
@@ -6755,6 +6800,9 @@ msgstr "Pani"
 msgid "Multi award-winning trading platform."
 msgstr "Platforma uhonorowana wieloma wyróżnieniami."
 
+msgid "Multi-asset Liquidity Solutions"
+msgstr "Zarządzanie płynności przy wykorzystaniu wielu aktywów"
+
 msgid "Multi-asset execution"
 msgstr "Realizacja przy wykorzystaniu wielu aktywów"
 
@@ -6763,6 +6811,9 @@ msgstr "Zarządzanie płynnością przy wykorzystaniu wielu aktywów"
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "Wsparcie w wielu językach i dla różnych walut"
+
+msgid "Multiple Accounts Manager"
+msgstr "Menedżer wielu kont"
 
 msgid "Multiple Accounts Manager (MAM)"
 msgstr "Menedżer wielu kont (MAM)"
@@ -6898,9 +6949,6 @@ msgstr "Żadna ze stron nie ponosi odpowiedzialności za częściowe lub całkow
 
 msgid "No Touch trades"
 msgstr "Zakłady typu „nie osiągnie”"
-
-msgid "No bids to show"
-msgstr "Brak ofert do wyświetlenia"
 
 msgid "No commission"
 msgstr "Brak prowizji"
@@ -7065,7 +7113,7 @@ msgid "OTC Derivative (Option) Trading"
 msgstr "OTC Derivative (Option) Trading"
 
 msgid "OTC Indices"
-msgstr ""
+msgstr "Wskaźniki OTC"
 
 msgid "OTC Indices and Stocks"
 msgstr "Wskaźniki i akcje OTC"
@@ -7105,6 +7153,9 @@ msgstr ""
 
 msgid "Old password is wrong."
 msgstr "Stare hasło jest nieprawidłowe."
+
+msgid "Omnibus"
+msgstr "Wszechstronne"
 
 msgid "Omnibus account"
 msgstr "Wszechstronne konto"
@@ -7150,6 +7201,9 @@ msgstr "Jedna prosta platforma"
 
 msgid "Online Marketing"
 msgstr "Marketing internetowy"
+
+msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
+msgstr "Internetowa platforma handlowa umożliwiająca handel opcjami binarnymi różnego rodzaju: forex, wskaźniki, towary i inteligentne wskaźniki"
 
 msgid "Online Trading with %1"
 msgstr "Handlowanie online z %1"
@@ -7240,6 +7294,9 @@ msgstr "Otwórz kontrakty"
 
 msgid "Open positions"
 msgstr "Wolne stanowiska"
+
+msgid "Open-Source Projects"
+msgstr "Projekty open-source"
 
 msgid "Open-source projects"
 msgstr "Projekty open-source"
@@ -7531,6 +7588,12 @@ msgstr ""
 
 msgid "Payment Agent"
 msgstr "Pośrednik płatności"
+
+msgid "Payment Agent Deposit"
+msgstr "Wpłata dla pośrednika płatności"
+
+msgid "Payment Agent Transfer"
+msgstr "Przelew dla pośrednika płatności"
 
 msgid "Payment Agent Withdrawal"
 msgstr "Wypłata od pośrednika płatności"
@@ -8048,9 +8111,6 @@ msgstr "Twa przetwarzanie Twojego żądania..."
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "Twrzenie treści umieszczonych na stronie internetowej i blogach firmowych oraz w mediach społecznościowych i materiałach marketingowych"
 
-msgid "Product Disclosure Statement"
-msgstr "Oświadczenie dot. zapoznania się z produktem"
-
 msgid "Professional Client"
 msgstr "Klient profesjonalny"
 
@@ -8194,9 +8254,6 @@ msgstr "Proszę ponownie wpisać hasło"
 
 msgid "Read"
 msgstr "Odczyt"
-
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
-msgstr "W poniższym Oświadczeniu dot. zapoznania się z produktem firmy Binary Investments (Europe) Limited znajdziesz informacje na temat funkcji i cech opcji binarnych, a także związanych z nimi korzyści i możliwym ryzyku. W sekcji „Harmonogramy” zawarte są przykłady inwestycji dla poszczególnych rodzajów zakładów, które pomogą Ci zrozumieć podstawy handlowania opcjami binarnymi."
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "Przeczytaj o pięciu rodzajach zakładów oferowanych na %1."
@@ -8347,6 +8404,9 @@ msgstr "Zarejestruj się"
 
 msgid "Regular monitoring of open positions"
 msgstr "Regularne monitorowanie otwartych pozycji"
+
+msgid "Regulation"
+msgstr "Przepisy regulacyjne"
 
 msgid "Regulator:"
 msgstr "Instytucja nadzorcza:"
@@ -8717,6 +8777,9 @@ msgstr "Wrzesień"
 msgid "Server"
 msgstr "Serwer"
 
+msgid "Service Announcements"
+msgstr "Ogłoszenia dotyczące usług"
+
 msgid "Session"
 msgstr "Sesja"
 
@@ -8755,6 +8818,9 @@ msgstr "Określ długość swojego zakładu od 10 sekund do 365 dni."
 
 msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
 msgstr "Tworzenie i prowadzenie kampanii reklamowych w mediach społecznościowych skutecznie docierających do potencjalnych klientów i partnerów"
+
+msgid "Settings"
+msgstr "Ustawienia"
 
 msgid "Settles"
 msgstr "Rozliczenie"
@@ -9164,6 +9230,9 @@ msgstr "Prześlij jeden z poniższych dokumentów"
 msgid "Submit your CV and Cover Letter"
 msgstr "Prześlij CV i list motywacyjny"
 
+msgid "Subscribe to ICO"
+msgstr "Subskrybuj ICO"
+
 msgid "Subscribe to a wide range of algorithmic trading strategies from the built-in MetaTrader Market"
 msgstr ""
 
@@ -9296,6 +9365,9 @@ msgstr "Zakończenie niniejszej Umowy nie uprawnia którejkolwiek ze stron do ż
 msgid "Terms and Conditions"
 msgstr "Regulamin"
 
+msgid "Terms and Conditions Approval"
+msgstr "Akceptacja regulaminu"
+
 msgid "Terms and conditions"
 msgstr "Terms and conditions"
 
@@ -9349,6 +9421,9 @@ msgstr "Zespół %1"
 
 msgid "The %1 token sale has ended"
 msgstr "Zakończono sprzedaż tokenów %1"
+
+msgid "The %1 token sale has ended."
+msgstr ""
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Portal %1 jest chroniony prawami autorskimi."
@@ -9427,9 +9502,6 @@ msgstr "Pośrednik prześle Ci kwotę wypłaty (z odliczoną prowizją) za pomoc
 
 msgid "The Average"
 msgstr "Średnia"
-
-msgid "The Binary.com token sale has ended."
-msgstr ""
 
 msgid "The Cent account offers the highest leverage, as well as low margin call and stop out level. It is ideal for new traders who want to start trading with a smaller capital."
 msgstr ""
@@ -10172,6 +10244,9 @@ msgstr "Są to zakłady, w których gracz wybiera cenę docelową oraz prognozuj
 msgid "These are trades where the trader selects a price target, and predicts that the market will touch the target before the expiry of the trade."
 msgstr "Są to zakłady, w których gracz wybiera cenę docelową oraz prognozuje, że rynek osiągnie cenę docelową przed wygaśnięciem zakładu."
 
+msgid "These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products."
+msgstr ""
+
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "Te kluczowe wskaźniki przedstawią Ci rozwój i sukces nagradzanej platformy do handlu opcjami binarnymi."
 
@@ -10538,9 +10613,6 @@ msgstr "Całkowita cena oferowana"
 msgid "Total Bids"
 msgstr "Oferty łacznie"
 
-msgid "Total Bids ($USD)"
-msgstr "Oferty łącznie ($USD)"
-
 msgid "Total Cost"
 msgstr "Całkowity koszt"
 
@@ -10751,9 +10823,6 @@ msgstr "Handel opcjami binarnymi jest stosunkowo prosty, a zakup zakładu wymaga
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
 msgstr "Handlowanie opcjami binarnymi może nie być odpowiednie dla każdego, więc prosimy o upewnienie się, że w pełni rozumiesz związane z nim ryzyko. Twoje straty mogą przewyższyć Twój wkład początkowy, dodatkowo nie posiadasz żadnego interesu w odniesieniu do aktywów bazowych. W przypadku opcji binarnych, które stanowią produkt hazardowy, należy pamiętać, że hazard może uzależniać – prosimy o rozsądną grę. Dowiedz się więcej o %1Odpowiedzialnym handlu%2."
 
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href=\"%1\">Responsible Trading</a>."
-msgstr "Handlowanie opcjami binarnymi może nie być odpowiednie dla każdego, więc prosimy o upewnienie się, że w pełni rozumiesz związane z nim ryzyko. Twoje straty mogą przewyższyć Twój wkład początkowy, dodatkowo nie posiadasz żadnego interesu w odniesieniu do aktywów bazowych. W przypadku opcji binarnych, które stanowią produkt hazardowy, należy pamiętać, że hazard może uzależniać – prosimy o rozsądną grę. Dowiedz się więcej o <a href=\"%1\">Odpowiedzialnym handlu</a>."
-
 msgid "Trading cryptocurrencies on our MetaTrader 5 platform means taking a position on a cryptocurrency pair when you expect it to rise or fall in value so you can make a profit when your prediction is correct."
 msgstr ""
 
@@ -10826,6 +10895,9 @@ msgstr "Prawda"
 msgid "Trust"
 msgstr "Zaufanie"
 
+msgid "Trusted by traders since 2000"
+msgstr "Zaufanie graczy od 2000 r."
+
 msgid "Try Binary Bot"
 msgstr "Wypróbuj Binary Bot"
 
@@ -10870,6 +10942,9 @@ msgstr "Typ"
 
 msgid "Types of MetaTrader 5 accounts"
 msgstr "Rodzaje kont MetaTrader 5"
+
+msgid "Types of Trades"
+msgstr "Rodzaje zakładów"
 
 msgid "Types of trades"
 msgstr "Rodzaje zakładów"
@@ -11258,6 +11333,9 @@ msgstr "Chcesz dowiedzieć się więcej?"
 msgid "Want to telecommute?"
 msgstr "Chcesz pracować zdalnie?"
 
+msgid "Warning"
+msgstr "Ostrzeżenie"
+
 msgid "Warranties"
 msgstr "Gwarancje"
 
@@ -11528,6 +11606,9 @@ msgstr "Dzień roboczy"
 msgid "Weekend quotes"
 msgstr "Oferty weekendowe"
 
+msgid "Welcome to Binary.com"
+msgstr "Witamy w Binary.com"
+
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "Dobrze rozwinięte umiejętności organizacyjne, administracyjne i/lub rachunkowe"
 
@@ -11539,6 +11620,9 @@ msgstr "W ciągu ostatnich lat nasza firma rozwinęła się, &mdash;&mdash; bior
 
 msgid "We’ve obtained financial and gambling licenses to operate in key countries and regions such as Europe, the Isle of Man, the United Kingdom, and Japan."
 msgstr "Otrzymaliśmy licencje finansowe i hazardowe umożliwiające nam działanie w najważniejszych państwach i regionach: na terenie Europy, Wyspy Man, Zjednoczonego Królestwa czy Japonii."
+
+msgid "What Are OTC Indices and Stocks?"
+msgstr "Czym są wskaźniki i akcje OTC?"
 
 msgid "What about instant execution? In this case, your order is placed at the price that’s available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr ""
@@ -11765,8 +11849,8 @@ msgstr "Firma zastrzega sobie prawo zakończenia współpracy z Pośrednikiem, j
 msgid "Where the Agent owns, or operates website/s, shall:"
 msgstr "Jeśli Pośrednik posiada lub prowadzi witrynę internetową lub witryny internetowe, powinien on:"
 
-msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws.\n"
-msgstr "Jeśli Firma stwierdzi jakikolwiek błąd lub uchybienie związane z wpłatami na %1Konto Pośrednika %1 lub Konto Klienta lub z wypłatami z tych kont, w rozsądnym terminie podejmie środki zaradcze w celu skorygowania takiego błędu lub uchybienia.\n"
+msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
+msgstr ""
 
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
 msgstr "Jeśli, na podstawie dostarczonych nam informacji, uznamy, że nie posiadasz wystarczającej wiedzy i doświadczenia, aby odpowiednio ocenić ryzyko związane z inwestowaniem w proponowany instrument, wyślemy Ci ostrzeżenie. Takie ostrzeżenie będzie widoczne na stronie internetowej."
@@ -11830,6 +11914,12 @@ msgstr "Kim jesteśmy"
 
 msgid "Why Choose Binary Trading?"
 msgstr "Dlaczego warto wybrać handel opcjami binarnymi?"
+
+msgid "Why Trade with Binary.com"
+msgstr "Dlaczego warto handlować z Binary.com"
+
+msgid "Why Us"
+msgstr "Dlaczego my"
 
 msgid "Why Us?"
 msgstr "Dlaczego my?"
@@ -12416,9 +12506,8 @@ msgstr ""
 msgid "You want to sell that currency pair if you think the base currency will go down."
 msgstr ""
 
-msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including\n"
-"cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
-msgstr "Zakup tokenów będzie możliwy za środki zgromadzone na Twoim koncie %1. Możesz użyć dowolnej waluty (w tym kryptowaluty) dostępnej w naszym %2systemie Kasjer%3. Jeśli zdecydujesz się złożyć ofertę w innej walucie niż USD, kwota oferty zostanie przewalutowana na USD według kursu wymiany walut obowiązującego w momencie zakończenia aukcji."
+msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
+msgstr ""
 
 msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr "Poprosimy Cię o udowodnienie, że konto podlegające weryfikacji należy do Ciebie."
@@ -14657,121 +14746,4 @@ msgstr "{JAPANY ONLY}Touch Options"
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
-
-msgid "Payment Agent Deposit"
-msgstr "Wpłata dla pośrednika płatności"
-
-msgid "Acknowledgement"
-msgstr "Potwierdzenie"
-
-msgid "Payment Agent Transfer"
-msgstr "Przelew dla pośrednika płatności"
-
-msgid "Trusted by traders since 2000"
-msgstr "Zaufanie graczy od 2000 r."
-
-msgid "Welcome to Binary.com"
-msgstr "Witamy w Binary.com"
-
-msgid "Accounts"
-msgstr "Konta"
-
-msgid "Authenticate"
-msgstr "Zweryfikuj"
-
-msgid "Subscribe to ICO"
-msgstr "Subskrybuj ICO"
-
-msgid "ICO Histogram"
-msgstr "Histogram ICO"
-
-msgid "Electronic Subscription Form for Tokens"
-msgstr ""
-
-msgid "Settings"
-msgstr "Ustawienia"
-
-msgid "Terms and Conditions Approval"
-msgstr "Akceptacja regulaminu"
-
-msgid "Account Limits"
-msgstr "Limity na koncie"
-
-msgid "Warning"
-msgstr "Ostrzeżenie"
-
-msgid "Endpoint"
-msgstr "punkt końcowy"
-
-msgid "Redirecting..."
-msgstr "Przekierowywanie..."
-
-msgid "404"
-msgstr "404"
-
-msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
-msgstr "Internetowa platforma handlowa umożliwiająca handel opcjami binarnymi różnego rodzaju: forex, wskaźniki, towary i inteligentne wskaźniki"
-
-msgid "Why Us"
-msgstr "Dlaczego my"
-
-msgid "Careers For Americans"
-msgstr "Oferty pracy dla obywateli USA"
-
-msgid "Job Details"
-msgstr "Opis stanowiska"
-
-msgid "Charity"
-msgstr "Działalność charytatywna"
-
-msgid "Company Profile"
-msgstr "Profil firmy"
-
-msgid "Regulation"
-msgstr "Przepisy regulacyjne"
-
-msgid "Service Announcements"
-msgstr "Ogłoszenia dotyczące usług"
-
-msgid "Multi-asset Liquidity Solutions"
-msgstr "Zarządzanie płynności przy wykorzystaniu wielu aktywów"
-
-msgid "Multiple Accounts Manager"
-msgstr "Menedżer wielu kont"
-
-msgid "Omnibus"
-msgstr "Wszechstronne"
-
-msgid "Open-Source Projects"
-msgstr "Projekty open-source"
-
-msgid "Get Paid for Pull Requests"
-msgstr "Zarabiaj, wysyłając żądania typu „pull”"
-
-msgid "How to Trade Binary Options?"
-msgstr "Jak handlować opcjami binarnymi?"
-
-msgid "What Are OTC Indices and Stocks?"
-msgstr "Czym są wskaźniki i akcje OTC?"
-
-msgid "Types of Trades"
-msgstr "Rodzaje zakładów"
-
-msgid "Why Trade with Binary.com"
-msgstr "Dlaczego warto handlować z Binary.com"
-
-msgid "Initial Coin Offering"
-msgstr "Initial Coin Offering (ICO)"
-
-msgid "Initial Coin Offering Disclaimer"
-msgstr "Zastrzeżenie dotyczące ICO"
-
-msgid "Hackathon Competition"
-msgstr "Konkurs Hackathon"
-
-msgid "Sign up"
-msgstr "Zarejestruj się"
-
-msgid "Binary.com Graduate Program"
-msgstr ""
 

@@ -36,7 +36,8 @@ window.onload = function() {
         });
         document.getElementById('country_name').appendChild(document.createTextNode(country_name));
         document.getElementById('notice_msg').classList.remove('invisible');
-        document.getElementById(val).classList.remove('invisible');
+        const el = document.getElementById(val);
+        if (el) el.classList.remove('invisible');
     }
 
     function showDisclaimer(val) {

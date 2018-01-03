@@ -89,7 +89,7 @@ const Header = (() => {
                         applyToAllElements('.account-type', (el) => { elementInnerHtml(el, localized_type); });
                         applyToAllElements('.account-id', (el) => { elementInnerHtml(el, loginid); });
                     } else {
-                        const link    = createElement('a', { href: `${'java'}${'script:;'}`, 'data-value': loginid });
+                        const link    = createElement('a', { href: `${'javascript:;'}`, 'data-value': loginid });
                         const li_type = createElement('li', { text: localized_type });
 
                         li_type.appendChild(createElement('div', { text: loginid }));

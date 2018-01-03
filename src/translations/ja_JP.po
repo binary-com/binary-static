@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-12-27 01:24-0500\n"
+"PO-Revision-Date: 2018-01-01 20:59-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: ja_JP\n"
+
+msgid "404"
+msgstr "404"
 
 msgid " (<span class=\"initial_deposit_percent\"></span>% of total amount)"
 msgstr " (<span class=\"initial_deposit_percent\"></span>合計金額の%)"
@@ -86,13 +89,13 @@ msgid "%1 %2 payout if %3 touches Barrier through close on %4."
 msgstr "%3のTOUCHは、取引期間(%4)が終了するまでバリア価格に達すると予測"
 
 msgid "%1 (Issuer)"
-msgstr ""
+msgstr "%1 (発行者)"
 
 msgid "%1 (Toll Free)"
 msgstr "==フリーダイヤル=="
 
 msgid "%1 Academy"
-msgstr ""
+msgstr "%1 アカデミー"
 
 msgid "%1 Account"
 msgstr "%1口座"
@@ -114,9 +117,6 @@ msgstr "%1 ICO よくあるご質問"
 
 msgid "%1 ICO, Invest in the world's premier platform for binary options trading"
 msgstr "%1 ICO: 世界最高水準のバイナリーオプションプラットフォームでお取引"
-
-msgid "%1 ICO: Histogram of Active Bids"
-msgstr "%1 ICO: 入札状況統計グラフ"
 
 msgid "%1 Initial Coin Offering (ICO)"
 msgstr "%1 イニシャル・コイン・オファリング（ICO）"
@@ -155,7 +155,7 @@ msgid "%1 by the numbers"
 msgstr "数字で見る%1"
 
 msgid "%1 clients can trade Forex from Sunday 21:00 GMT to Friday 21:00 GMT."
-msgstr ""
+msgstr "%1 のお客様は土曜日21:00 GMTから金曜日21:00 GMTまで外国為替のお取引が可能です。"
 
 msgid "%1 continues to innovate and grow"
 msgstr "日々進化、成長への歩みを止めません"
@@ -515,10 +515,10 @@ msgid "10-30 million JPY"
 msgstr "1,000〜3,000万円"
 
 msgid "100 lots"
-msgstr ""
+msgstr "100 ロット"
 
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 msgid "2-3 years of applicable experience in a web application testing role"
 msgstr "Webアプリケーションテストの実施経験 2-3年"
@@ -530,10 +530,10 @@ msgid "2. Proof of address"
 msgstr "2. 住所証明"
 
 msgid "20 lots"
-msgstr ""
+msgstr "20 ロット"
 
 msgid "20%"
-msgstr ""
+msgstr "20%"
 
 msgid "3-5 million JPY"
 msgstr "300〜500万円"
@@ -557,10 +557,10 @@ msgid "5-10 million JPY"
 msgstr "500〜1,000万円"
 
 msgid "50 lots"
-msgstr ""
+msgstr "50 ロット"
 
 msgid "50%"
-msgstr ""
+msgstr "50%"
 
 msgid "50-100 million JPY"
 msgstr "5,000万円〜1億円"
@@ -581,7 +581,7 @@ msgid "<< Back to Job Descriptions"
 msgstr "<<職務内容に戻る"
 
 msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr ""
+msgstr "お客さまの個人情報（身分と住所証明）を確認して、アカウントの<a href=\"%1\">認証</a>を行います。"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">取引ページヘ戻る</a>"
@@ -875,6 +875,9 @@ msgstr "有効証拠金 - 口座残高と含み益、含み損の合計をいい
 msgid "Account Free Margin &mdash; Your Account Equity minus your Total Margin."
 msgstr "マージン口座 &mdash; 有効証拠金はお客さまの総利益から差し引かれます。"
 
+msgid "Account Limits"
+msgstr "ご利用制限額"
+
 msgid "Account Management and Tracking"
 msgstr "ご口座管理とデータ照合"
 
@@ -897,10 +900,10 @@ msgid "Account balance: "
 msgstr "口座残高： "
 
 msgid "Account comparison"
-msgstr ""
+msgstr "口座の比較"
 
 msgid "Account currency"
-msgstr ""
+msgstr "アカウント通貨"
 
 msgid "Account needs age verification, please contact <a href=\"%1\">customer support</a> for more information."
 msgstr "年齢確認が必要です。詳細は<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
@@ -913,6 +916,9 @@ msgstr "口座開設の理由"
 
 msgid "Accounting"
 msgstr "会計"
+
+msgid "Accounts"
+msgstr "口座"
 
 msgid "Accounts And Payments Executive"
 msgstr "顧客・支払担当者"
@@ -931,6 +937,9 @@ msgstr "収入と貯蓄"
 
 msgid "Accuracy of Information"
 msgstr "情報の精度"
+
+msgid "Acknowledgement"
+msgstr "受取確認"
 
 msgid "Acquisition of financial contracts through this site must be effected in accordance with the terms and conditions presented on the pages of this site. Acquisition of a financial contract is completed when the financial contract has been customised, the premium (or the payout, as the case may be) has been calculated and payment has been verified."
 msgstr "（遅延損害金の支払い）\n"
@@ -958,7 +967,7 @@ msgid "Add"
 msgstr "追加"
 
 msgid "Add fund"
-msgstr ""
+msgstr "ご入金"
 
 msgid "Additional business exposure:"
 msgstr "Additional business exposure:"
@@ -991,7 +1000,7 @@ msgid "Advanced trading app for web and mobile"
 msgstr "高度なCFD取引プラットフォーム"
 
 msgid "Advantages of CFD trading"
-msgstr ""
+msgstr "CFD取引の利点"
 
 msgid "Advantages of binary options trading"
 msgstr "バイナリーオプション取引の利点"
@@ -1033,7 +1042,7 @@ msgid "Agent's Obligations"
 msgstr "Agent's Obligations"
 
 msgid "Agree"
-msgstr ""
+msgstr "同意する"
 
 msgid "Agreement Restrictions"
 msgstr "制限契約"
@@ -1084,7 +1093,7 @@ msgid "All deposits and withdrawals are made through your omnibus master account
 msgstr "全ての入出金手続きは、お客さまのマスター口座を通して行われます"
 
 msgid "All durations"
-msgstr ""
+msgstr "全ての期間"
 
 msgid "All durations:"
 msgstr "全取引期間："
@@ -1105,7 +1114,7 @@ msgid "All major worldwide stock indices sourced from the over-the-counter marke
 msgstr "店頭市場から全主要インデックスをご利用いただけます"
 
 msgid "All market conditions"
-msgstr ""
+msgstr "全ての市場状況"
 
 msgid "All market conditions and durations"
 msgstr "どんな市場状況でもトレード戦略を実行可能"
@@ -1114,7 +1123,7 @@ msgid "All market conditions:"
 msgstr "全ての市場状況："
 
 msgid "All markets"
-msgstr ""
+msgstr "全ての市場"
 
 msgid "All markets and conditions"
 msgstr "あらゆる市場および条件"
@@ -1129,7 +1138,7 @@ msgid "All opinions, news, research, analysis, prices or other information conta
 msgstr "当社サイトに掲載されているご意見、ニュース、リサーチ、分析、価格などの情報は、一般的な市場に関するコメントであり、投資に関する助言ではありません。％1ではそのような情報の使用または依存から直接または間接的に生じる可能性がある利益の損失、損害についての責任を一切負いません。"
 
 msgid "All payouts"
-msgstr ""
+msgstr "全てのペイアウト"
 
 msgid "All payouts:"
 msgstr "全てのペイアウト："
@@ -1141,16 +1150,16 @@ msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。"
 
 msgid "All versions of Android"
-msgstr ""
+msgstr "Android全てのバージョン"
 
 msgid "All versions of Linux"
-msgstr ""
+msgstr "Linux全てのバージョン"
 
 msgid "All versions of MacOS"
-msgstr ""
+msgstr "MacOS全てのバージョン"
 
 msgid "All versions of iOS"
-msgstr ""
+msgstr "iOS全てのバージョン"
 
 msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
 msgstr "資金の入出金は銀行振込をご利用いただけます。"
@@ -1238,7 +1247,7 @@ msgid "Andrei Asavei <span>Top Binary Options Brokers</span>"
 msgstr "Andrei Asavei氏<span>（Top Binary Options Brokers）</span>"
 
 msgid "Android"
-msgstr ""
+msgstr "Android"
 
 msgid "Annual Income"
 msgstr "年間所得"
@@ -1436,10 +1445,10 @@ msgid "Aside from the three main trade types above, you also get Asians and Digi
 msgstr "上記の主要取引タイプの他にも、Asianと数字取引タイプもご利用いただけます。"
 
 msgid "Ask"
-msgstr ""
+msgstr "売値"
 
 msgid "Ask price"
-msgstr ""
+msgstr "売値"
 
 msgid "Aspects of a client order not affected by specific instructions are subject to the application of %1's Order Execution Policy. In the absence of specific instructions from our clients, we will exercise our own discretion in determining the factors that are required to be taken into account for the purpose of providing you with best execution, having regard to the execution criteria listed below:"
 msgstr "お客さまから具体的な指示のない注文に関ししては、%1の注文執行ポリシーが適用されます。\n"
@@ -1518,6 +1527,9 @@ msgstr ""
 msgid "Australian dollar vs US dollar"
 msgstr ""
 
+msgid "Authenticate"
+msgstr "口座アップグレード"
+
 msgid "Authenticate your account by verifying your identity and address."
 msgstr "お客さまの個人情報（身分と住所証明）を確認して、アカウントの認証を行います。"
 
@@ -1582,7 +1594,7 @@ msgid "BIEL is a company established in Malta under registration number C70156 a
 msgstr "BIELは登録番号C70156の下マルタに設立され、Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Maltaに登録事務所を有しています。"
 
 msgid "BTC"
-msgstr ""
+msgstr "ビットコイン"
 
 msgid "BY CLICKING ON THE \"AGREE\" BUTTON, YOU CERTIFY (BOTH TO BINARY GROUP LTD., ITS EMPLOYEES, OFFICERS AND ITS ADVISORS) THAT:"
 msgstr "BY CLICKING ON THE \"AGREE\" BUTTON, YOU CERTIFY (BOTH TO BINARY GROUP LTD., ITS EMPLOYEES, OFFICERS AND ITS ADVISORS) THAT:"
@@ -1639,10 +1651,10 @@ msgid "Barrier(s)"
 msgstr "バリア価格"
 
 msgid "Base currency"
-msgstr ""
+msgstr "基本通貨"
 
 msgid "Based currency"
-msgstr ""
+msgstr "基本通貨"
 
 msgid "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
 msgstr ""
@@ -1713,14 +1725,11 @@ msgstr "入札"
 msgid "Bid Price Per Token"
 msgstr "トークンごとの入札価格"
 
-msgid "Bid Price Per Token ($USD)"
-msgstr "トークンごとの入札価格（$USD）"
-
 msgid "Bid on the ICO:"
 msgstr "ICOに入札する："
 
 msgid "Bid price"
-msgstr ""
+msgstr "購入金額"
 
 msgid "Bids can be cancelled at any time before the end of the auction at no cost."
 msgstr "オークション終了前でしたら、費用無しで入札をいつでもキャンセルいただけます。"
@@ -1853,7 +1862,7 @@ msgid "Binary option"
 msgstr "バイナリーオプション"
 
 msgid "Binary options"
-msgstr ""
+msgstr "バイナリーオプション"
 
 msgid "Binary options allow you to trade on a wide range of underlying markets. One of the advantages of trading binary options is that you are not buying or selling an actual asset, only a contract that determines how that asset performs over a period of time. This limits your risk and makes it easy for anyone to start trading."
 msgstr ""
@@ -1897,6 +1906,9 @@ msgstr "Binaryの子会社 Binary Investments (Europe) Ltdはマルタ金融サ�
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Binaryのプラットフォームでは、毎秒%1件の取引が行われています。"
 
+msgid "Binary.com Graduate Program"
+msgstr ""
+
 msgid "Binary.com intends to deploy the <a href='%1' target='_blank' rel='noopener noreferrer'>Mini Me</a> token. Please view our <a href='%2' target='_blank' rel='noopener noreferrer'>blog post</a> detailing our reasons for choosing this token."
 msgstr "Binary.com intends to deploy the <a href='%1' target='_blank' rel='noopener noreferrer'>Mini Me</a> token. Please view our <a href='%2' target='_blank' rel='noopener noreferrer'>blog post</a> detailing our reasons for choosing this token."
 
@@ -1907,10 +1919,10 @@ msgid "Bitcoin Cash"
 msgstr "ビットコインキャッシュ"
 
 msgid "Bitcoin vs Euro"
-msgstr ""
+msgstr "ビットコイン vs ユーロ"
 
 msgid "Bitcoin vs US dollar"
-msgstr ""
+msgstr "ビットコイン vs 米ドル"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr ""
@@ -1937,28 +1949,28 @@ msgid "Brand of first car"
 msgstr "初めて購入した車のブランド名"
 
 msgid "British pound vs Australian dollar"
-msgstr ""
+msgstr "英ポンド vs 豪ドル"
 
 msgid "British pound vs Canadian dollar"
-msgstr ""
+msgstr "英ポンド vs 加ドル"
 
 msgid "British pound vs Japanese yen"
-msgstr ""
+msgstr "英ポンド vs 日本円"
 
 msgid "British pound vs New Zealand dollar"
-msgstr ""
+msgstr "英ポンド vs NZドル"
 
 msgid "British pound vs Norwegian krone"
-msgstr ""
+msgstr "英ポンド vs ノルウェー クローネ"
 
 msgid "British pound vs Swedish krona"
-msgstr ""
+msgstr "英ポンド vs スウェーデンクローナ"
 
 msgid "British pound vs Swiss franc"
-msgstr ""
+msgstr "英ポンド vs スイスフラン"
 
 msgid "British pound vs US dollar"
-msgstr ""
+msgstr "英ポンド vs米ドル"
 
 msgid "Browser"
 msgstr "ブラウザ"
@@ -2115,7 +2127,7 @@ msgid "Canadian dollar vs Japanese yen"
 msgstr ""
 
 msgid "Canadian dollar vs Swiss franc"
-msgstr ""
+msgstr "加ドル vs スイスフラン"
 
 msgid "Cancel"
 msgstr "取消"
@@ -2131,6 +2143,9 @@ msgstr "採用情報（アメリカ出身の方）"
 
 msgid "Careers"
 msgstr "採用情報"
+
+msgid "Careers For Americans"
+msgstr "採用情報（アメリカ出身の方）"
 
 msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
 msgstr "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
@@ -2151,13 +2166,13 @@ msgid "Cashier password"
 msgstr "入出金パスワード"
 
 msgid "Cent"
-msgstr ""
+msgstr "セント"
 
 msgid "Cent Account"
-msgstr ""
+msgstr "セント口座"
 
 msgid "Cent account: 1:1,000"
-msgstr ""
+msgstr "セント口座：1:1,000"
 
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "トレードのバリアと取引価格に対して特定の制限が課されます。一般的に、バリアと取引価格はその時点での取引市場のレベルに近過ぎたり遠過ぎる値を指定することはできません。"
@@ -2182,6 +2197,9 @@ msgstr "パスワードを変更してください"
 
 msgid "Charitable Activities"
 msgstr "慈善活動"
+
+msgid "Charity"
+msgstr "チャリティー"
 
 msgid "Chart"
 msgstr "チャート"
@@ -2217,7 +2235,7 @@ msgid "Choose a payout from $1 to $50,000."
 msgstr "ペイアウトは1ロット1,000円、最大100ロットまで選択可能です"
 
 msgid "Choose an account"
-msgstr ""
+msgstr "口座選択"
 
 msgid "Choose from 100+ tradable instruments, backed by award-winning technology and innovation since 2000."
 msgstr ""
@@ -2286,7 +2304,7 @@ msgid "Christmas Day"
 msgstr "クリスマス"
 
 msgid "Chrome"
-msgstr ""
+msgstr "クローム"
 
 msgid "Citizens of Belgium, Bosnia and Herzegovina, Democratic People's Republic of Korea (DPRK), Ethiopia, Iran, Iraq, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "ベルギー、ボスニアヘルツェゴビナ、朝鮮民主主義人民共和国（北朝鮮）、エチオピア、イラン、イラク、シリア、ウガンダ、バヌアツ、イエメンの方はBinary Investments (Europe) Ltd.で口座を開設いただくことはできません。"
@@ -2455,7 +2473,7 @@ msgid "Commencement Date"
 msgstr "Commencement Date"
 
 msgid "Commission"
-msgstr ""
+msgstr "手数料"
 
 msgid "Commission Rates"
 msgstr "報酬還元率"
@@ -2467,7 +2485,7 @@ msgid "Commission on withdrawals"
 msgstr "出金手数料"
 
 msgid "Commission-free"
-msgstr ""
+msgstr "手数料無料"
 
 msgid "Commissions will be earned throughout the life of the client, on all transactions the client undertakes at the merchant, for as long as you, the Affiliate, remain a member of this affiliate program. The company reserves the right to cancel the commissions that are not reclaimed after 2 years."
 msgstr "アフィリエイト会員が携わった全ての取引、すなわち獲得会員から発生するアフィリエイト報酬はアフィリエイトプログラムに参加されている限り、無期限でアフィリエイト会員の報酬となります。当社は２年間請求のなかった報酬をキャンセルする権利を有します。"
@@ -2496,6 +2514,9 @@ msgstr "コモデティ取引頻度"
 msgid "Company Ownership"
 msgstr "会社所有権"
 
+msgid "Company Profile"
+msgstr "会社概要"
+
 msgid "Company addresses"
 msgstr "会社所在地"
 
@@ -2521,7 +2542,7 @@ msgid "Complaints and disputes"
 msgstr "苦情の申し立て"
 
 msgid "Complete your <a href=\"%1\">Financial Assessment</a>."
-msgstr ""
+msgstr "<a href=\"%1\">財務評価</a>の入力をしてください。"
 
 msgid "Compliance"
 msgstr "コンプライアンス"
@@ -2650,7 +2671,7 @@ msgid "Contract period"
 msgstr "取引期間"
 
 msgid "Contract specifications"
-msgstr ""
+msgstr "トレード詳細"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "当社のサーバがリクエストを受理した時点での市場価格で売却取引が成立します。実際の約定価格と注文時の表示価格と異なる場合があります。"
@@ -2968,16 +2989,16 @@ msgid "Demo"
 msgstr "デモ"
 
 msgid "Demo Cent"
-msgstr ""
+msgstr "デモセント"
 
 msgid "Demo STP"
 msgstr ""
 
 msgid "Demo Standard"
-msgstr ""
+msgstr "デモ スタンダード"
 
 msgid "Demo Volatility"
-msgstr ""
+msgstr "デモ ボラティリティ"
 
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "効果的なキャンペーンの実施に必要な迅速な試行と行動及びマルチタスク能力の実証"
@@ -3016,7 +3037,7 @@ msgid "Deposit funds from your Binary account into MetaTrader 5 account."
 msgstr ""
 
 msgid "Deposit into MT5 account"
-msgstr ""
+msgstr "MT5口座へのご入金"
 
 msgid "Deposit or withdraw below"
 msgstr ""
@@ -3211,10 +3232,10 @@ msgid "Download Now"
 msgstr "今すぐダウンロード"
 
 msgid "Download for Mac"
-msgstr ""
+msgstr "Mac用をダウンロード"
 
 msgid "Download for Windows"
-msgstr ""
+msgstr "Windows用をダウンロード"
 
 msgid "Download the MAM application after setup is completed. Log in with your master account credentials."
 msgstr "Download the MAM application after setup is completed. Log in with your master account credentials."
@@ -3408,6 +3429,9 @@ msgstr "他方当事者の資産の全体または一部に管財人、検査者
 msgid "Either party may terminate this Agreement on delivery of one weeks' prior written notice to the other party."
 msgstr "いずれの当事者も、他方当事者への１週間の書面の通知を以て本契約を終了させることができます。"
 
+msgid "Electronic Subscription Form for Tokens"
+msgstr ""
+
 msgid "Electronically signed by the Subscriber/for and on behalf of the Subscriber"
 msgstr ""
 
@@ -3452,6 +3476,9 @@ msgstr "取引終了時間は明日以降として設定して下さい。"
 
 msgid "Ended"
 msgstr "終了しました"
+
+msgid "Endpoint"
+msgstr "ポイント"
 
 msgid "Ends Between"
 msgstr "END-IN"
@@ -3610,7 +3637,7 @@ msgid "Everyone else can use the FIX API to connect to our One Zero bridge – s
 msgstr "Everyone else can use the FIX API to connect to our One Zero bridge – subject to a conformance test."
 
 msgid "Example:"
-msgstr ""
+msgstr "例："
 
 msgid "Example: XAU/USD (Gold vs US Dollar) symbol pair"
 msgstr ""
@@ -3910,7 +3937,7 @@ msgid "Finish"
 msgstr "完了"
 
 msgid "Firefox"
-msgstr ""
+msgstr "Firefox"
 
 msgid "First line of home address"
 msgstr "番地"
@@ -4206,6 +4233,9 @@ msgstr "優れた報酬体系"
 msgid "Get JPY 1,000,000"
 msgstr "1,000,000円を入手する"
 
+msgid "Get Paid for Pull Requests"
+msgstr "Get Paid for Pull Requests"
+
 msgid "Get Started"
 msgstr "はじめに"
 
@@ -4326,6 +4356,9 @@ msgstr "H. 本ポリシーのモニターとレビュー"
 msgid "H. Regulatory Provisions"
 msgstr "H. 監督機関の提供"
 
+msgid "Hackathon Competition"
+msgstr "Hackathon Competition"
+
 msgid "Hands-on test automation experience a plus"
 msgstr "実践的なテスト自動化の経験があると好ましい"
 
@@ -4394,9 +4427,6 @@ msgstr "Highlights"
 
 msgid "Hint: it would take approximately %1%2 to crack this password."
 msgstr "ヒント：このパスワードをクラックするには約%1%2分を要します。"
-
-msgid "Histogram of Active Bids"
-msgstr "入札状況統計グラフ"
 
 msgid "Hone your security testing skills."
 msgstr "セキュリティテストスキルを磨きましょう"
@@ -4491,6 +4521,9 @@ msgstr "口座開設の所要時間は？"
 msgid "How the ICO works"
 msgstr "ICOの仕組み"
 
+msgid "How to Trade Binary Options?"
+msgstr "バイナリーオプションの取引方法とは？"
+
 msgid "How to Trade in MetaTrader 5"
 msgstr ""
 
@@ -4498,7 +4531,7 @@ msgid "How to begin"
 msgstr "口座開設から取引開始までの流れ"
 
 msgid "How to calculate margin"
-msgstr ""
+msgstr "マージン算出方法"
 
 msgid "How to calculate your profit and losses?"
 msgstr ""
@@ -5174,8 +5207,14 @@ msgstr "Information outlined in Paragraph 1 of this Section shall be submitted t
 msgid "Inheritance"
 msgstr "相続"
 
+msgid "Initial Coin Offering"
+msgstr "イニシャル・コイン・オファリング（IPO）"
+
 msgid "Initial Coin Offering (ICO)"
 msgstr "イニシャル・コイン・オファリング（ICO) 日本を除く"
+
+msgid "Initial Coin Offering Disclaimer"
+msgstr "イニシャル・コイン・オファリングに関する免責事項"
 
 msgid "Initial deposit required: "
 msgstr "初回入金が必要です："
@@ -5871,6 +5910,9 @@ msgstr "Jim Mellon is a well-known and successful entrepreneur, starting his car
 msgid "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 msgstr "Joanna oversees the Group's procedural and regulatory compliance with the various licensing compliance jurisdictions of the %1 Group, in addition to overseeing a number of the Group's key operational areas such as payments and client account management. Joanna has been a member of the Malta Institute of Management since 1999, holds a diploma in Financial Services Operations and Compliance, and a Professional Post-Graduate Diploma in Financial Crime Compliance with the International Compliance Association."
 
+msgid "Job Details"
+msgstr "職務内容"
+
 msgid "Join now"
 msgstr "アフィリエイト申込み"
 
@@ -5908,6 +5950,9 @@ msgid "Keep track of your authorised applications."
 msgstr "認証済みアプリケーションを引き続き追跡してください。"
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
+msgstr ""
+
+msgid "Key Information Documents"
 msgstr ""
 
 msgid "Key facts"
@@ -6182,7 +6227,7 @@ msgid "Links"
 msgstr "サイト内のリンクについて"
 
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 msgid "Liquidity solutions"
 msgstr "流動性ソリューション"
@@ -6254,10 +6299,10 @@ msgid "Lot Size (Volume = 1.0)"
 msgstr "ロット数（数量=1.0）"
 
 msgid "Lot size (Volume = 1.0)"
-msgstr ""
+msgstr "ロット数（数量=1.0）"
 
 msgid "Lot units"
-msgstr ""
+msgstr "ロット単位"
 
 msgid "Lots"
 msgstr "ロット数"
@@ -6299,13 +6344,13 @@ msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero
 msgstr "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 
 msgid "MT5 Demo"
-msgstr ""
+msgstr "MT5 デモ"
 
 msgid "MT5 Financial"
 msgstr ""
 
 msgid "MT5 Volatility"
-msgstr ""
+msgstr "MT5 ボラティリティ"
 
 msgid "MT5 real-money account for Forex and CFDs."
 msgstr ""
@@ -6314,7 +6359,7 @@ msgid "MT5 real-money account for Volatility Indices only."
 msgstr ""
 
 msgid "MacOS"
-msgstr ""
+msgstr "MacOS"
 
 msgid "Main password"
 msgstr "メインパスワード"
@@ -6443,7 +6488,7 @@ msgid "Margin allows you to trade on leverage – meaning your existing capital 
 msgstr ""
 
 msgid "Margin call"
-msgstr ""
+msgstr "マージンコール"
 
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
@@ -6452,10 +6497,10 @@ msgid "Margin indicates how much investment you can control based on your initia
 msgstr "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
 
 msgid "Margin policy"
-msgstr ""
+msgstr "証拠金取引ポリシー"
 
 msgid "Margin rate"
-msgstr ""
+msgstr "マージン率"
 
 msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
 msgstr ""
@@ -6783,6 +6828,9 @@ msgstr "Ms"
 msgid "Multi award-winning trading platform."
 msgstr "数々の受賞履歴を誇るプラットフォーム"
 
+msgid "Multi-asset Liquidity Solutions"
+msgstr "複数資産流動性ソリューション"
+
 msgid "Multi-asset execution"
 msgstr "Multi-asset execution"
 
@@ -6791,6 +6839,9 @@ msgstr "Multi-asset liquidity solutions"
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "多言語、及び複数の通貨によるサポート"
+
+msgid "Multiple Accounts Manager"
+msgstr "複数アカウントマネージャー"
 
 msgid "Multiple Accounts Manager (MAM)"
 msgstr "複数アカウントマネージャー（MAM）"
@@ -6926,9 +6977,6 @@ msgstr "No Party shall be deemed liable for a partial or complete failure to mee
 
 msgid "No Touch trades"
 msgstr "NO-TOUCHトレード"
-
-msgid "No bids to show"
-msgstr "表示する入札がありません"
 
 msgid "No commission"
 msgstr "No commission"
@@ -7135,6 +7183,9 @@ msgstr ""
 msgid "Old password is wrong."
 msgstr "旧パスワードの値が不正です。"
 
+msgid "Omnibus"
+msgstr "オムニバス"
+
 msgid "Omnibus account"
 msgstr "アカウントの統括"
 
@@ -7179,6 +7230,9 @@ msgstr "簡単な取引システム"
 
 msgid "Online Marketing"
 msgstr "オンラインマーケティング"
+
+msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
+msgstr "FXバイナリーオプションオンライン取引"
 
 msgid "Online Trading with %1"
 msgstr ""
@@ -7272,6 +7326,9 @@ msgstr "契約をオープンにする"
 
 msgid "Open positions"
 msgstr "オープンポジション"
+
+msgid "Open-Source Projects"
+msgstr "オープンソースプロジェクト"
 
 msgid "Open-source projects"
 msgstr "オープンソースプロジェクト"
@@ -7564,6 +7621,12 @@ msgstr ""
 msgid "Payment Agent"
 msgstr "決済サービス"
 
+msgid "Payment Agent Deposit"
+msgstr "決済サービスでのご入金"
+
+msgid "Payment Agent Transfer"
+msgstr "決済サービスでのご送金"
+
 msgid "Payment Agent Withdrawal"
 msgstr "決済サービスへのご出金"
 
@@ -7598,7 +7661,7 @@ msgid "Payout per lot = 1,000"
 msgstr "ペイアウトは1ロットあたり1,000円"
 
 msgid "Pending"
-msgstr ""
+msgstr "保留中"
 
 msgid "Pension"
 msgstr "年金"
@@ -8081,9 +8144,6 @@ msgstr "ただいま処理中です。しばらくお待ち下さい。"
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "当社のブログ、ソーシャルメディア、マーケティング資料のコンテンツ作成"
 
-msgid "Product Disclosure Statement"
-msgstr "Product Disclosure Statement"
-
 msgid "Professional Client"
 msgstr "Professional Client"
 
@@ -8227,10 +8287,6 @@ msgstr "パスワード再入力"
 
 msgid "Read"
 msgstr "読む"
-
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
-msgstr "Binary Investments (Europe) Limitedの金融商品開示文書におけるバイナリーオプションの機能、特徴、利点、リスクについて読む。\n"
-"バイナリーオプションの基礎をつかむのに役立つ、トレードタイプ別の投資例は「スケジュール」セクションに含まれています。"
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "%1が提供する５種類のトレードについて"
@@ -8381,6 +8437,9 @@ msgstr "ご登録はこちらから"
 
 msgid "Regular monitoring of open positions"
 msgstr "オープン中のポジションを定期的に監視"
+
+msgid "Regulation"
+msgstr "規制"
 
 msgid "Regulator:"
 msgstr "レギュレーター："
@@ -8754,6 +8813,9 @@ msgstr "９月"
 msgid "Server"
 msgstr "サーバー"
 
+msgid "Service Announcements"
+msgstr "サービス情報"
+
 msgid "Session"
 msgstr "セッション"
 
@@ -8792,6 +8854,9 @@ msgstr "取引期間は2時間以上からご選択いただけます。"
 
 msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
 msgstr "潜在顧客やパートナーをマイクロターゲティングとするソーシャルメディア広告キャンペーンの構成と管理"
+
+msgid "Settings"
+msgstr "各種設定"
 
 msgid "Settles"
 msgstr "決済時間"
@@ -9201,6 +9266,9 @@ msgstr "下記文書のうち一つを提出してください"
 msgid "Submit your CV and Cover Letter"
 msgstr "履歴書とカバーレターを提出してください"
 
+msgid "Subscribe to ICO"
+msgstr "ICOの購読登録をする"
+
 msgid "Subscribe to a wide range of algorithmic trading strategies from the built-in MetaTrader Market"
 msgstr ""
 
@@ -9333,6 +9401,9 @@ msgstr "本契約の解除は、終了日またはそれ以前に生じうるい
 msgid "Terms and Conditions"
 msgstr "店頭バイナリーオプション取引約款"
 
+msgid "Terms and Conditions Approval"
+msgstr "利用規約の承認"
+
 msgid "Terms and conditions"
 msgstr "取引約款、契約締結前交付書面"
 
@@ -9386,6 +9457,9 @@ msgstr "%1チーム"
 
 msgid "The %1 token sale has ended"
 msgstr "%1トークン販売は終了しました"
+
+msgid "The %1 token sale has ended."
+msgstr ""
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1のウェブサイトは特定の著作権で保護されています。"
@@ -9464,9 +9538,6 @@ msgstr "決済代行会社がお客さまの選択いただいたお支払い方
 
 msgid "The Average"
 msgstr "平均"
-
-msgid "The Binary.com token sale has ended."
-msgstr ""
 
 msgid "The Cent account offers the highest leverage, as well as low margin call and stop out level. It is ideal for new traders who want to start trading with a smaller capital."
 msgstr ""
@@ -10294,6 +10365,9 @@ msgstr "ターゲット価格を設定し、取引対象の価格が取引終了
 msgid "These are trades where the trader selects a price target, and predicts that the market will touch the target before the expiry of the trade."
 msgstr "ターゲット価格を設定し、取引対象の価格が取引終了時までにターゲット価格に触れることを予測するトレードタイプのことです。"
 
+msgid "These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products."
+msgstr ""
+
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "受賞歴を誇る当社のバイナリーオプション取引プラットフォームのこれまでの発展をグラフでご紹介します。"
 
@@ -10660,9 +10734,6 @@ msgstr "合計入札価格"
 msgid "Total Bids"
 msgstr "合計入札"
 
-msgid "Total Bids ($USD)"
-msgstr "合計入札（$USD）"
-
 msgid "Total Cost"
 msgstr "合計投資額"
 
@@ -10874,10 +10945,6 @@ msgid "Trading binary options may not be suitable for everyone, so please ensure
 msgstr "【商号】Binary株式会社　金融商品取引業者　関東財務局長（金商）第2949号【加入協会】一般社団法人金融先物取引業協会 \n"
 "Copyright (c) 2017 Binary K.K. All Rights Reserved."
 
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href=\"%1\">Responsible Trading</a>."
-msgstr "【商号】Binary株式会社　金融商品取引業者　関東財務局長（金商）第2949号【加入協会】一般社団法人金融先物取引業協会 \n"
-"Copyright (c) 2017 Binary K.K. All Rights Reserved."
-
 msgid "Trading cryptocurrencies on our MetaTrader 5 platform means taking a position on a cryptocurrency pair when you expect it to rise or fall in value so you can make a profit when your prediction is correct."
 msgstr ""
 
@@ -10951,6 +11018,9 @@ msgstr "正"
 msgid "Trust"
 msgstr "当社の実績について"
 
+msgid "Trusted by traders since 2000"
+msgstr "Trusted by traders since 2000"
+
 msgid "Try Binary Bot"
 msgstr "Binary Botを試す"
 
@@ -10995,6 +11065,9 @@ msgstr "タイプ"
 
 msgid "Types of MetaTrader 5 accounts"
 msgstr ""
+
+msgid "Types of Trades"
+msgstr "トレードの種類"
 
 msgid "Types of trades"
 msgstr "トレードの種類"
@@ -11383,6 +11456,9 @@ msgstr "詳細はこちら"
 msgid "Want to telecommute?"
 msgstr "在宅勤務にご興味がありますか？"
 
+msgid "Warning"
+msgstr "警告"
+
 msgid "Warranties"
 msgstr "保証内容"
 
@@ -11653,6 +11729,9 @@ msgstr "平日"
 msgid "Weekend quotes"
 msgstr "週末の引用値について"
 
+msgid "Welcome to Binary.com"
+msgstr "Binary.comへようこそ"
+
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "優れた組織・管理能力および/または会計スキル"
 
@@ -11664,6 +11743,9 @@ msgstr "人材・拠点ともに年々成長をしています&mdash;&mdash; 現
 
 msgid "We’ve obtained financial and gambling licenses to operate in key countries and regions such as Europe, the Isle of Man, the United Kingdom, and Japan."
 msgstr "ヨーロッパ・マン島・イギリス・日本の主要国と地域において運営するうえで必要となる金融ライセンスを取得。"
+
+msgid "What Are OTC Indices and Stocks?"
+msgstr "店頭インデックス・店頭株とは？"
 
 msgid "What about instant execution? In this case, your order is placed at the price that’s available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr ""
@@ -11890,8 +11972,8 @@ msgstr "Where the Agent omits or fails or refuse whatsoever to provide the Compa
 msgid "Where the Agent owns, or operates website/s, shall:"
 msgstr "Where the Agent owns, or operates website/s, shall:"
 
-msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws.\n"
-msgstr "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
+msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
+msgstr ""
 
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
 msgstr "お客さまから提供いただいた情報を基に、お客さまには提案された計測器での投資に伴うリスクを理解する知識と経験が不足していると判断たため、お客さまに警告をさせていただきいます。この警告はウェブサイト上に表示されます。"
@@ -11955,6 +12037,12 @@ msgstr "Binary.comとは"
 
 msgid "Why Choose Binary Trading?"
 msgstr "バイナリー取引が選ばれる理由"
+
+msgid "Why Trade with Binary.com"
+msgstr "Binary.com (バイナリードットコム)が選ばれる理由"
+
+msgid "Why Us"
+msgstr "サービス概要"
 
 msgid "Why Us?"
 msgstr "サービス概要"
@@ -12546,10 +12634,8 @@ msgstr ""
 msgid "You want to sell that currency pair if you think the base currency will go down."
 msgstr ""
 
-msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including\n"
-"cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
-msgstr "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including\n"
-"cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
+msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
+msgstr ""
 
 msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr "認証する口座の所有者であることを証明いただくよう伺います。"
@@ -14844,121 +14930,4 @@ msgstr "タッチオプション"
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "店頭バイナリーオプション取引約款"
-
-msgid "Payment Agent Deposit"
-msgstr "決済サービスでのご入金"
-
-msgid "Acknowledgement"
-msgstr "受取確認"
-
-msgid "Payment Agent Transfer"
-msgstr "決済サービスでのご送金"
-
-msgid "Trusted by traders since 2000"
-msgstr "Trusted by traders since 2000"
-
-msgid "Welcome to Binary.com"
-msgstr "Binary.comへようこそ"
-
-msgid "Accounts"
-msgstr "口座"
-
-msgid "Authenticate"
-msgstr "口座アップグレード"
-
-msgid "Subscribe to ICO"
-msgstr "ICOの購読登録をする"
-
-msgid "ICO Histogram"
-msgstr "ICO統計グラフ"
-
-msgid "Electronic Subscription Form for Tokens"
-msgstr ""
-
-msgid "Settings"
-msgstr "各種設定"
-
-msgid "Terms and Conditions Approval"
-msgstr "利用規約の承認"
-
-msgid "Account Limits"
-msgstr "ご利用制限額"
-
-msgid "Warning"
-msgstr "警告"
-
-msgid "Endpoint"
-msgstr "ポイント"
-
-msgid "Redirecting..."
-msgstr "リダイレクト中…"
-
-msgid "404"
-msgstr "404"
-
-msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
-msgstr "FXバイナリーオプションオンライン取引"
-
-msgid "Why Us"
-msgstr "サービス概要"
-
-msgid "Careers For Americans"
-msgstr "採用情報（アメリカ出身の方）"
-
-msgid "Job Details"
-msgstr "職務内容"
-
-msgid "Charity"
-msgstr "チャリティー"
-
-msgid "Company Profile"
-msgstr "会社概要"
-
-msgid "Regulation"
-msgstr "規制"
-
-msgid "Service Announcements"
-msgstr "サービス情報"
-
-msgid "Multi-asset Liquidity Solutions"
-msgstr "複数資産流動性ソリューション"
-
-msgid "Multiple Accounts Manager"
-msgstr "複数アカウントマネージャー"
-
-msgid "Omnibus"
-msgstr "オムニバス"
-
-msgid "Open-Source Projects"
-msgstr "オープンソースプロジェクト"
-
-msgid "Get Paid for Pull Requests"
-msgstr "Get Paid for Pull Requests"
-
-msgid "How to Trade Binary Options?"
-msgstr "バイナリーオプションの取引方法とは？"
-
-msgid "What Are OTC Indices and Stocks?"
-msgstr "店頭インデックス・店頭株とは？"
-
-msgid "Types of Trades"
-msgstr "トレードの種類"
-
-msgid "Why Trade with Binary.com"
-msgstr "Binary.com (バイナリードットコム)が選ばれる理由"
-
-msgid "Initial Coin Offering"
-msgstr "イニシャル・コイン・オファリング（IPO）"
-
-msgid "Initial Coin Offering Disclaimer"
-msgstr "イニシャル・コイン・オファリングに関する免責事項"
-
-msgid "Hackathon Competition"
-msgstr "Hackathon Competition"
-
-msgid "Sign up"
-msgstr "Sign up"
-
-msgid "Binary.com Graduate Program"
-msgstr ""
 
