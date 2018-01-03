@@ -642,3 +642,4 @@ const generate = () => {
 
 exports.build    = build;
 exports.generate = generate;
+exports.texts    = texts;
