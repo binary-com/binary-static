@@ -65,7 +65,6 @@ const texts = [
     'Feb',
     'Mar',
     'Apr',
-    'May',
     'Jun',
     'Jul',
     'Aug',
@@ -134,7 +133,6 @@ const texts = [
     'Total Cost',
     'Potential Profit',
     'View',
-    'Statement',
     'Tick',
     'Buy price',
     'Final price',
@@ -516,7 +514,6 @@ const texts = [
     'Real Standard',
     'Real STP',
     'Real Volatility',
-    'Create Account',
     'Change Password',
 
     // account_transfer
