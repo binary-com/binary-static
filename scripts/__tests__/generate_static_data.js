@@ -16,7 +16,7 @@ describe('generate-static-data.js', () => {
         });
     });
 
-    it('strings are not duplicated', () => {
+    it('strings should not be duplicated', () => {
         expect(Object.keys(duplicates)).to.have.lengthOf(0);
     });
 
