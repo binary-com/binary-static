@@ -70,7 +70,8 @@ window.onload = function() {
             const target = e.target.getAttribute('href').substr(1);
             const offset = /who-we-are|page-top/.test(target) ? 55 : 0;
             const navbarHeight = checkWidth();
-            const to = document.getElementById(target).offsetTop - navbarHeight - offset;
+            const el_target = document.getElementById(target);
+            const to = el_target ? el_target.offsetTop - navbarHeight - offset : '';
             scrollTo(to);
             collapseMenu();
         }
