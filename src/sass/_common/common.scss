@@ -121,6 +121,10 @@ fieldset {
     margin-top: 5px;
 }
 
+.secondary-bg-color .error-msg {
+    color: $COLOR_WHITE;
+}
+
 textarea {
     height: 8em;
     width: 25em;
