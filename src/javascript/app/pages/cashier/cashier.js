@@ -47,8 +47,13 @@ const Cashier = (() => {
                 if (is_virtual) {
                     displayTopUpButton();
                 }
-                if (is_virtual || (/CR/.test(Client.get('loginid')) && !is_crypto)) {
-                    $('#payment-agent-section').setVisibility(1);
+                const residence = Client.get('residence');
+                if (residence) {
+                    BinarySocket.send({ paymentagent_list: residence }).then((response) => {
+                        if (response.paymentagent_list && response.paymentagent_list.length) {
+                            $('#payment-agent-section').setVisibility(1);
+                        }
+                    });
                 }
                 $(is_crypto ? '.crypto_currency' : '.normal_currency').setVisibility(1);
                 if (/^BCH/.test(Client.get('currency'))) {
