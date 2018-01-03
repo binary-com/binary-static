@@ -120,13 +120,13 @@ const Cashier = () => (
                     </a>
                 </div>
                 <div className='gr-5 gr-12-m'>
-                    <span>{it.L('Withdraw bitcoin.co.id IDR vouchers.', it.website_name)}</span>
+                    <span>{it.L('Withdraw funds in the form of Bitcoin.co.id IDR vouchers.', it.website_name)}</span>
                     <p className='faded'>{it.L('Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients.')}</p>
                 </div>
                 <div className='gr-5 gr-12-m'>
                     <div className='gr-padding-10 client_real invisible gr-parent'>
                         <a className='button' href={it.url_for('cashier/bitcoin-voucher')}>
-                            <span>{it.L('Bitcoin.Co.Id IDR Voucher')}</span>
+                            <span>{it.L('Create Voucher')}</span>
                         </a>
                     </div>
                 </div>
