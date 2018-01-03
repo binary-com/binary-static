@@ -3,8 +3,8 @@ import { FormRow, Fieldset } from '../../_common/components/forms.jsx';
 
 const BitcoinVoucher = () => (
     <div id='voucher_container' className='invisible'>
-        <h1>{it.L('Bitcoin Voucher')}</h1>
-        <p>{it.L('Descriptions')}</p>
+        <h1>{it.L('Bitcoin.Co.Id IDR voucher withdrawal')}</h1>
+        <p>{it.L('Request a withdrawal in the form of Bitcoin.co.id voucher. Vouchers are denominated in IDR and will be issued at the prevailing USD/IDR exchange rate.')}</p>
         <div id='form_container' className='gr-padding-10 invisible'>
             <form className='form js-form' action='http://www.123formbuilder.com/form-3295599/Bitcoin-Voucher' id='mainform123' method='post' name='mainform123' encType='multipart/form-data' noValidate>
                 <Fieldset legend='Details'>
@@ -14,7 +14,7 @@ const BitcoinVoucher = () => (
                 </Fieldset>
 
                 <div className='center-text'>
-                    <button className='button' type='submit' id='id123-button-send'>{it.L('Send')}</button>
+                    <button className='button' type='submit' id='id123-button-send'>{it.L('Withdraw')}</button>
                     <p className='errorfield invisible' id='error-account-opening'></p>
                 </div>
 

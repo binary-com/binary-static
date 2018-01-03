@@ -112,7 +112,7 @@ const Cashier = () => (
         <div className='gr-padding-10 invisible id-clients'></div>
 
         <div className='gr-padding-10 table-body invisible id-clients'>
-            <h3 className='gr-padding-10'>{it.L('Bitcoin Voucher')}</h3>
+            <h3 className='gr-padding-10'>{it.L('Bitcoin.co.id voucher withdrawal')}</h3>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>
                     <a href={it.url_for('cashier/bitcoin-voucher')}>
@@ -120,13 +120,13 @@ const Cashier = () => (
                     </a>
                 </div>
                 <div className='gr-5 gr-12-m'>
-                    <span>{it.L('Bitcoin vouchers by [_1].', it.website_name)}</span>
-                    <p className='faded'>{it.L('Note: Bitcoin vouchers are only available for Indonesian clients')}</p>
+                    <span>{it.L('Withdraw bitcoin.co.id IDR vouchers.', it.website_name)}</span>
+                    <p className='faded'>{it.L('Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients.')}</p>
                 </div>
                 <div className='gr-5 gr-12-m'>
                     <div className='gr-padding-10 client_real invisible gr-parent'>
                         <a className='button' href={it.url_for('cashier/bitcoin-voucher')}>
-                            <span>{it.L('Bitcoin Voucher')}</span>
+                            <span>{it.L('Bitcoin.Co.Id IDR Voucher')}</span>
                         </a>
                     </div>
                 </div>
