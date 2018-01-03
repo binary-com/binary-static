@@ -341,16 +341,16 @@ const Client = (() => {
         if (can_upgrade) {
             const current_landing_company = get('landing_company_shortcode');
 
-            can_open_multi = !!((upgradeable_landing_companies.find(landing_company => (
+            can_open_multi = !!(upgradeable_landing_companies.find(landing_company => (
                 landing_company === current_landing_company
-            ))) || []).length;
+            )));
 
             // only show upgrade message to landing companies other than current
             const canUpgrade = arr_landing_company => (
-                !!((arr_landing_company.find(landing_company => (
+                !!(arr_landing_company.find(landing_company => (
                     landing_company !== current_landing_company &&
                     upgradeable_landing_companies.indexOf(landing_company) !== -1
-                )) || []).length)
+                )))
             );
 
             if (canUpgrade(['costarica', 'malta', 'iom'])) {
