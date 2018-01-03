@@ -93,7 +93,7 @@ const pages_config = {
     market_timesws           : { module: TradingTimesUI },
     metatrader               : { module: MetaTrader,                 is_authenticated: true, needs_currency: true },
     multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
-    payment_agent_listws     : { module: PaymentAgentList },
+    payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
     platforms                : { module: TabSelector },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
