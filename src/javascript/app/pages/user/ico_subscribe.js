@@ -207,7 +207,8 @@ const ICOSubscribe = (() => {
                 }
 
                 // Show message to client.
-                document.getElementById(message_show).setVisibility(1);
+                const el_message_show = document.getElementById(message_show);
+                if (el_message_show) el_message_show.setVisibility(1);
             }
         }
         const el_to_show = document.getElementById(to_show);
