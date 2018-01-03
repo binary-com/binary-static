@@ -22,6 +22,9 @@ const Cashier = (() => {
             const can_topup = (currency !== 'JPY' && balance <= 1000) || (currency === 'JPY' && balance <= 100000);
             const top_up_id = '#VRT_topup_link';
             const $a        = $(top_up_id);
+            if (!$a) {
+                return;
+            }
             const classes   = ['toggle', 'button-disabled'];
             const new_el    = { class: $a.attr('class').replace(classes[+can_topup], classes[1 - +can_topup]), html: $a.html(), id: $a.attr('id') };
             if (can_topup) {

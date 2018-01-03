@@ -630,13 +630,13 @@ const generate = () => {
 
     all_languages.forEach(lang => {
         process.stdout.write(color.cyan('    -'));
-        process.stdout.write(` ${lang}.js ${' '.repeat(5 - lang.length)} ..... `);
+        process.stdout.write(` ${lang}.js ${'.'.repeat(15 - lang.length)}`);
 
         const js_path = path.join(common.root_path, `${target_path}${lang}.js`);
         const content = `const texts_json = {};\ntexts_json['${lang.toUpperCase()}'] = ${JSON.stringify(map[lang])};`;
         fs.writeFileSync(js_path, content, 'utf8');
 
-        process.stdout.write(color.green(' ✓ Done\n'));
+        process.stdout.write(common.messageEnd());
     });
 };
 
