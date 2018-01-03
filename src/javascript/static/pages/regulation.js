@@ -5,11 +5,19 @@ const BinarySocket = require('../../app/base/socket');
 const Regulation = (() => {
     const onLoad = () => {
         $(() => {
-            $('#accordion').accordion({
+            const $accordion = $('#accordion');
+            const hash       = window.location.hash;
+            const $element   = hash ? $accordion.find(hash) : undefined;
+
+            $accordion.accordion({
                 heightStyle: 'content',
                 collapsible: true,
-                active     : 0,
+                active     : $element && $element.length && $element.index('h3') !== -1 ? $element.index('h3') : 0,
             });
+
+            if ($element && $element.length) {
+                $.scrollTo($element, 500);
+            }
         });
 
         const coords    = [];
