@@ -189,7 +189,7 @@ const ICOSubscribe = (() => {
             } else {
                 to_show = 'ico_account_message_real';
             }
-        } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
+        } else if (Client.canOpenICO() || State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
             if(Client.isAccountOfType('virtual') && (Client.hasAccountType('gaming')
                 || Client.hasAccountType('financial') || Client.hasAccountType('real'))){
                 to_show = 'ico_virtual_message';
@@ -207,7 +207,8 @@ const ICOSubscribe = (() => {
                 }
 
                 // Show message to client.
-                document.getElementById(message_show).setVisibility(1);
+                const el_message_show = document.getElementById(message_show);
+                if (el_message_show) el_message_show.setVisibility(1);
             }
         }
         const el_to_show = document.getElementById(to_show);

@@ -524,11 +524,17 @@ const Durations = (() => {
 
     const validateMinDurationAmount = () => {
         const duration_amount_element  = document.getElementById('duration_amount');
-        const duration_min_element     = document.getElementById('duration_minimum');
-        const duration_max_element     = document.getElementById('duration_maximum');
         const duration_wrapper_element = document.getElementById('duration_wrapper');
+        if (!duration_amount_element || !duration_wrapper_element) {
+            return;
+        }
         if (!isVisible(duration_amount_element)) {
             duration_wrapper_element.setVisibility(0);
+            return;
+        }
+        const duration_min_element = document.getElementById('duration_minimum');
+        const duration_max_element = document.getElementById('duration_maximum');
+        if (!duration_min_element || !duration_max_element) {
             return;
         }
         duration_wrapper_element.setVisibility(1);
