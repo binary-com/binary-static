@@ -116,7 +116,7 @@ const Cashier = () => (
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>
                     <a href={it.url_for('cashier/bitcoin-voucher')}>
-                        <img className='responsive' id='payment_agent_icon' src={it.url_for('images/pages/cashier/payment-methods.svg')} />
+                        <img className='responsive' id='payment_agent_icon' src={it.url_for('images/pages/cashier/bitcoin_voucher.svg')} />
                     </a>
                 </div>
                 <div className='gr-5 gr-12-m'>
