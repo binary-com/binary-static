@@ -56,7 +56,7 @@ const Cashier = (() => {
                     document.getElementById('message_bitcoin_cash').setVisibility(1);
                 }
                 // bitcoin voucher
-                if (Language.get() === 'ID' && Client.get('residence') === 'id') {
+                if (!is_virtual && Language.get() === 'ID' && Client.get('residence') === 'id') {
                     $('.id-clients').setVisibility(1);
                 }
             });
