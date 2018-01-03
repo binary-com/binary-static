@@ -1,4 +1,5 @@
 const localize = require('../../_common/localize').localize;
+const getAppId = require('../../config').getAppId;
 
 const buildOauthApps = (response) => {
     if (!response || !response.oauth_apps) return {};
@@ -16,7 +17,7 @@ const addTooltip = (oauth_apps) => {
 };
 
 const addAppIdName = (app_id, app_name) => (
-    app_id ? localize('Transaction performed by [_1] (App ID: [_2])', [app_name || '', app_id]) : ''
+    app_id === getAppId() ? '' : localize('Transaction performed by [_1] (App ID: [_2])', [app_name || '', app_id])
 );
 
 const showTooltip = (app_id, oauth_app_id) => (
