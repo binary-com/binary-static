@@ -271,8 +271,10 @@ const ViewPopup = (() => {
     // by default shows audit table and hides chart
     const setAuditVisibility = (show = true) => {
         setAuditButtonsVisibility(!show);
-        document.getElementById('sell_details_chart_wrapper').setVisibility(!show);
-        document.getElementById('sell_details_audit').setVisibility(show);
+        const sell_details_chart_wrapper = document.getElementById('sell_details_chart_wrapper');
+        if (sell_details_chart_wrapper) sell_details_chart_wrapper.setVisibility(!show);
+        const sell_details_audit = document.getElementById('sell_details_audit');
+        if (sell_details_audit) sell_details_audit.setVisibility(show);
         ViewPopupUI.repositionConfirmation();
     };
 
