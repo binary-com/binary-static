@@ -10,7 +10,8 @@ const BitcoinVoucher = () => (
                 <Fieldset legend='Details'>
                     <FormRow type='label' id='lbl_loginid' label={it.L('Login ID:')} />
                     <FormRow type='label' id='lbl_email' label={it.L('Email:')} />
-                    <FormRow type='text' id='id123-control36043409' label={it.L('Amount (USD):')} attributes={{ name: 'control36043409' }} />
+                    <FormRow type='text' id='id123-control36043409' label={it.L('Amount:')} attributes={{ name: 'control36043409' }}
+                        input_prefix={<label id='lbl_currency'></label>} />
                 </Fieldset>
 
                 <div className='center-text'>
@@ -20,6 +21,7 @@ const BitcoinVoucher = () => (
 
                 <input id='id123-control36043376' name='control36043376' type='hidden' value=''  />
                 <input id='id123-control36043400' name='control36043400' type='hidden' value=''  />
+                <input id='id123-control36104883' name='control36104883' type='hidden' value=''  />
 
                 <input type='hidden' name='action' value='verify'/>
                 <input type='hidden' size='30' name='viewformr' id='viewformr' value='cfr_1514876794.494' />
