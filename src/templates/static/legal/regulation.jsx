@@ -83,10 +83,10 @@ const Regulation = () => (
     <div className='gr-parent gr-padding-30'>
         <p className='center-text'>{it.L('[_1] is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements.', it.website_name)}</p>
 
-        <SeparatorLine className='gr-parent gr-padding-20' invisible={ 1 } />
+        <SeparatorLine className='gr-parent gr-padding-20' invisible />
     </div>
 
-    <Box header={it.L('Binary Group Ltd.')} first={ 1 } >
+    <Box header={it.L('Binary Group Ltd.')} first >
         <p>{it.L('Binary Group Ltd., with registered office address situated at Kingston Chambers, Road Town, Tortola, British Virgin Islands, is the holding company for the Binary group.')}</p>
     </Box>
 
@@ -145,16 +145,18 @@ const Regulation = () => (
             <h3>{it.L('Pillar 3 Disclosures')}</h3>
             <div>
                 <p>{it.L('The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant.')}</p>
-                <FillBox padding='5' center={ 1 } border='border-dark-gray' image='images/pages/regulation/pillar.svg'
-                    href={it.url_for('/download/BIEL_Pillar_3_Report_20170426.pdf')} target='_blank' download={ 1 } text={it.L('Pillar 3 disclosure report')} />
+                <FillBox padding='5' center border='border-dark-gray' image='images/pages/regulation/pillar.svg'
+                    href={it.url_for('/download/BIEL_Pillar_3_Report_20170426.pdf')} target='_blank' download text={it.L('Pillar 3 disclosure report')} />
             </div>
 
-            <h3>{it.L('Product Disclosure Statement')}</h3>
+            <h3 id='key_information_documents'>{it.L('Key Information Documents')}</h3>
             <div>
-                <p>{it.L('Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the "Schedules" section are investment examples of contract types to help you get to grips with the basics of binary options.')}</p>
-                <FillBox padding='4' center={ 1 } border='border-dark-gray' image='images/pages/regulation/prospectus.svg'
-                    href={it.url_for('/download/BIEL_Product_Disclosure_Statement.pdf')} target='_blank' download={1}
-                    text={it.L('Product Disclosure Statement')} />
+                <p>{it.L('These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.')}</p>
+                <div className='gr-row'>
+                    <FillBox padding='4' center border='border-dark-gray' href={it.url_for('/download/key_information_document/Up_Down.pdf')}        target='_blank' download text={it.L('Up/Down')} />
+                    <FillBox padding='4' center border='border-dark-gray' href={it.url_for('/download/key_information_document/Touch_No_Touch.pdf')} target='_blank' download text={it.L('Touch/No Touch')} />
+                    <FillBox padding='4' center border='border-dark-gray' href={it.url_for('/download/key_information_document/In_and_Out.pdf')}     target='_blank' download text={it.L('In/Out')} />
+                </div>
             </div>
         </div>
     </Box>
@@ -178,7 +180,7 @@ const Regulation = () => (
         <p>{it.L('[_1] is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system.', it.website_name)}</p>
     </Box>
 
-    <Box header={it.L('Binary (V) Ltd')} last={1} >
+    <Box header={it.L('Binary (V) Ltd')} last >
         <p>{it.L('Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href="https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf" target="_blank">view licence</a>.')}</p>
         <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
         <RegulatorText />

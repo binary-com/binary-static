@@ -79,17 +79,7 @@ const IcoSubscribe = () => (
             <SeparatorLine show_mobile invisible className='gr-padding-20' />
 
             <div id='ico_bids'>
-                <div className='gr-row'>
-                    <h1 className='gr-7 gr-12-m gr-order-2-m'>{it.L('[_1] ICO Auction Bids', it.website_name)}</h1>
-                    <div className='gr-5 gr-12-m gr-order-1-m invisible' id='view_ico_info'>
-                        <a className='button gr-float-right gr-float-left-m' href={it.url_for('user/ico-info')}>
-                            <span>
-                                <img src={it.url_for('images/ico/icons/bar_chart.svg')} />
-                                {it.L('Histogram of Active Bids')}
-                            </span>
-                        </a>
-                    </div>
-                </div>
+                <h1>{it.L('[_1] ICO Auction Bids', it.website_name)}</h1>
 
                 <div id='portfolio'>
                     <p className='notice-msg center-text invisible' id='error-msg'></p>
@@ -161,8 +151,8 @@ const IcoSubscribe = () => (
                         <p className='gr-padding-10 gr-child'>{it.L('Are you sure you want to cancel the bid?')}</p>
                         <form id='frm_confirm'>
                             <div className='center-text gr-centered'>
-                                <button className='button' type='submit'>{it.L('Yes, cancel my bid')}</button>&nbsp;
-                                <a className='button-secondary' id='cancel' href='javascript:;'><span>{it.L('No, return to the ICO auction page')}</span></a>
+                                <button className='button' type='submit'>{it.L('Yes, cancel my bid')}</button>
+                                <a className='button button-secondary' id='cancel' href='javascript:;'><span>{it.L('No, return to the ICO auction page')}</span></a>
                             </div>
                         </form>
                     </div>

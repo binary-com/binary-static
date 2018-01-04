@@ -3,6 +3,7 @@ module.exports = [
     // ==================== Section: "app" ====================
     ['cashier',                            'app/cashier/index',                         'default',    'Cashier'],
     ['cashier/account_transfer',           'app/cashier/account_transfer',              'default',    'Transfer Between Accounts'],
+    ['cashier/bitcoin-voucher',            'app/cashier/bitcoin_voucher',               'default',    'Bitcoin Voucher',                   'NOT-id'],
     ['cashier/confirmation',               'app/cashier/confirmation',                  'default',    'Confirm'],
     ['cashier/deposit-jp',                 'app/japan/cashier/deposit',                 'default',    'Deposit',                           'NOT-ja,en'],
     ['cashier/epg_forwardws',              'app/cashier/deposit_withdraw',              'default',    'Cashier'],
@@ -34,7 +35,6 @@ module.exports = [
     ['user/accounts',                      'app/user/accounts',                         'default',    'Accounts',                          'ja'],
     ['user/authenticate',                  'app/user/authenticate',                     'default',    'Authenticate',                      'ja'],
     ['user/ico-claim-form',                'app/user/ico_claim_form',                   'default',    'Electronic Subscription Form for Tokens', 'ja'],
-    ['user/ico-info',                      'app/user/ico_info',                         'default',    'ICO Histogram',                     'ja'],
     ['user/ico-subscribe',                 'app/user/ico_subscribe',                    'default',    'Subscribe to ICO',                  'ja'],
     ['user/lost_passwordws',               'app/user/lost_password',                    'default',    'Password Reset'],
     ['user/metatrader',                    'app/user/metatrader',                       'default',    'MetaTrader account management'],

@@ -80,7 +80,6 @@ const ICOSubscribe = (() => {
     const init = () => {
         BinarySocket.wait('balance').then((response) => {
             ICOPortfolio.onLoad();
-            $('#view_ico_info').setVisibility(1);
             currency = Client.get('currency') || '';
             if (currency) {
                 $('.currency').text(currency);
@@ -181,7 +180,6 @@ const ICOSubscribe = (() => {
     };
 
     const showContent = () => {
-        $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
             to_show = 'ico_subscribe';
@@ -191,7 +189,7 @@ const ICOSubscribe = (() => {
             } else {
                 to_show = 'ico_account_message_real';
             }
-        } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
+        } else if (Client.canOpenICO() || State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
             if(Client.isAccountOfType('virtual') && (Client.hasAccountType('gaming')
                 || Client.hasAccountType('financial') || Client.hasAccountType('real'))){
                 to_show = 'ico_virtual_message';
@@ -209,7 +207,8 @@ const ICOSubscribe = (() => {
                 }
 
                 // Show message to client.
-                document.getElementById(message_show).setVisibility(1);
+                const el_message_show = document.getElementById(message_show);
+                if (el_message_show) el_message_show.setVisibility(1);
             }
         }
         const el_to_show = document.getElementById(to_show);
