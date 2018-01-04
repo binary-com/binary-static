@@ -4,8 +4,8 @@ import { FormRow, Fieldset } from '../../_common/components/forms.jsx';
 const BitcoinVoucher = () => (
     <div id='voucher_container' className='invisible'>
         <h1>{it.L('Create Bitcoin.co.id IDR voucher')}</h1>
-        <p>{it.L('Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate.')}</p>
         <div id='form_container' className='gr-padding-10 invisible'>
+            <p>{it.L('Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate.')}</p>
             <form className='form js-form' action='http://www.123formbuilder.com/form-3295599/Bitcoin-Voucher' id='mainform123' method='post' name='mainform123' encType='multipart/form-data' noValidate>
                 <Fieldset legend='Details'>
                     <FormRow type='label' id='lbl_loginid' label={it.L('Login ID:')} />
