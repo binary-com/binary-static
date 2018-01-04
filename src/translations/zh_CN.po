@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-01 20:59-0500\n"
+"PO-Revision-Date: 2018-01-04 02:56-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -591,7 +591,7 @@ msgstr "<a href='%1'>公司</a>位于马耳他、马来西亚和日本"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>所有合约期限</strong> - 从10 秒到 365 天。"
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
 msgstr "<strong>所有市场条件</strong> - 上涨/下跌，触及/未触及，范围内/范围外。"
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -1194,6 +1194,9 @@ msgstr "金额"
 
 msgid "Amount of above assets"
 msgstr "Amount of above assets"
+
+msgid "Amount:"
+msgstr "金额:"
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "高等/高级/研究生文凭或学士学位"
@@ -1906,11 +1909,17 @@ msgstr "比特币"
 msgid "Bitcoin Cash"
 msgstr "比特币现金"
 
+msgid "Bitcoin Voucher"
+msgstr "比特币凭证"
+
 msgid "Bitcoin vs Euro"
 msgstr "比特币兑欧元"
 
 msgid "Bitcoin vs US dollar"
 msgstr "比特币兑美元"
+
+msgid "Bitcoin.co.id voucher withdrawal"
+msgstr "Bitcoin.co.id 凭证提取"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "区块链技术 - 所有加密货币使用各式的区块链技术（一种公开账本）为每笔交易保存记录。 "
@@ -2392,11 +2401,11 @@ msgstr "客户必须亲自注册。"
 msgid "Clients registered with Binary (C.R.) S.A. can raise their unresolved disputes with management by submitting an email to complaints@binary.com."
 msgstr "在 Binary (C.R.) S.A. 注册的客户可以发送电子邮件到 complaints@binary.com，就尚未解决的纠纷向管理层投诉。"
 
-msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at"
-msgstr "在 Binary (Europe) Ltd 注册的客户可以在此就尚未解决的纠纷向马耳他博彩管理局 %1 投诉"
+msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at %2. UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %3website%4."
+msgstr "在 Binary (欧洲) 有限公司注册的客户可以在%2就尚未解决的纠纷向马耳他博彩管理局%1投诉。在 Binary (欧洲) 有限公司注册的英国客户可以通过在ADR 实体的%3网站%4 填写仲裁表格向替代性争议解决机构 IBAS 投诉。"
 
-msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "在 Binary (IOM) Ltd 注册的客户可以在替代性争议解决机构 IBAS 填写仲裁表格，并提交申诉"
+msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2."
+msgstr "在 Binary (IOM) 有限公司注册的客户可以通过在ADR 实体的%3网站%4 填写仲裁表格就尚未解决的纠纷向替代性争议解决机构 IBAS 投诉。"
 
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found %1here%2."
 msgstr "如有任何无法解决的争议，在 Binary Investments (Europe) Ltd 注册的客户可向金融服务仲裁办事处投诉。详细的投诉方法和联系信息可在%1此处%2查看。"
@@ -2762,6 +2771,9 @@ msgstr "创建"
 msgid "Create Account"
 msgstr "开立账户"
 
+msgid "Create Bitcoin.co.id IDR voucher"
+msgstr "创建Bitcoin.co.id 印尼卢比凭证"
+
 msgid "Create Free Account"
 msgstr "开立免费账户"
 
@@ -2776,6 +2788,9 @@ msgstr "开立新账户"
 
 msgid "Create New Token"
 msgstr "创建新代币"
+
+msgid "Create Voucher"
+msgstr "创建凭证"
 
 msgid "Create a MetaTrader 5 account"
 msgstr "创建 MetaTrader 5 账户"
@@ -3433,6 +3448,9 @@ msgstr "电子邮件地址"
 
 msgid "Email us your Identity Documents"
 msgstr "将身份证件以电子邮件方式发送给我们"
+
+msgid "Email:"
+msgstr "电子邮件："
 
 msgid "Email: "
 msgstr "电子邮件: "
@@ -5925,7 +5943,7 @@ msgid "Keeping up with market news and trends in a certain sector can help you t
 msgstr "跟上某个行业的市场新闻和趋势，可以为您提供很大的帮助，特别是如果您刚刚入门。"
 
 msgid "Key Information Documents"
-msgstr ""
+msgstr "关键信息文件"
 
 msgid "Key facts"
 msgstr "关键资料"
@@ -7031,6 +7049,9 @@ msgstr "附注"
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "注： 2017年数字是根据 8 月中期数字估计得出"
 
+msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
+msgstr "注：Bitcoin.co.id 印尼卢比凭证仅适用于印尼客户。"
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "注: 如有任何关于禁用或隔离账户的查询, 请与<a href=\"%1\">客服部</a>联系。"
 
@@ -7757,6 +7778,9 @@ msgstr "请确认交易详情以完成转账："
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "无论您有什么想法，请发送邮件至<a href='mailto:%1'>%1</a>与我们联系。我们十分乐意听取您的反馈和提供协助。请随时将您的意见和建议与我们分享。"
 
+msgid "Please ensure that your current account has been authenticated before you proceed."
+msgstr "继续操作前请确保您的当前账户已通过验证。"
+
 msgid "Please enter a number between %1."
 msgstr "请输入%1之间的数字。"
 
@@ -8445,6 +8469,9 @@ msgstr "表示您的投资组合中未平仓合约的最大数量。您投资组
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "表示任一既定交易日您可以买入的最大合约数量。"
 
+msgid "Request successful. We will notify you via email once your voucher is ready."
+msgstr "请求成功。一旦您的凭证准备好, 我们将通过电子邮件通知您。"
+
 msgid "Requirements"
 msgstr "需求"
 
@@ -8874,9 +8901,6 @@ msgstr "应以字母或数字开始，可包含连字符和下划线。"
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "如果您账户的资金不足以覆盖这些费用，我们有权考虑其他替代方法：如果您的账户产生了购买账户，我们将会截留此等账户的佣金款项，直至损害赔偿的账户结清。"
 
-msgid "Show payment agents for:"
-msgstr "支付代理列表："
-
 msgid "Sign me up"
 msgstr "我要注册"
 
@@ -9072,10 +9096,10 @@ msgstr "位于区间之内"
 msgid "Stays Between/Goes Outside trades"
 msgstr "“保持在范围内/超出范围”的交易"
 
-msgid "Stays In/Goes Out"
-msgstr "“保持在范围之内/超出范围之外”"
+msgid "Stays In/Out"
+msgstr "范围内/范围外"
 
-msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "如果开始和结束期间价格跳动次数少于2，“保持在范围内/超出范围”合约购入价将全额退还。"
 
 msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
@@ -10244,7 +10268,7 @@ msgid "These are trades where the trader selects a price target, and predicts th
 msgstr "交易者选择一个目标价并预测市场在合约到期前将会触及该价位的交易。"
 
 msgid "These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products."
-msgstr ""
+msgstr "这些文件为您提供关于我们投资产品的关键信息。根据法律要求，我们必须提供这些信息以便帮助您了解这些产品的性质、风险、成本、潜在收益和损失, 并帮助您与其他产品相比较。"
 
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "这些关键指标将显示一个屡获殊荣的二元期权交易平台增长与成功的一面。"
@@ -10950,9 +10974,6 @@ msgstr "交易类型"
 
 msgid "UK and Manx residents will have their account opened with Binary (IOM) Ltd."
 msgstr "英国和马恩岛居民将在Binary (IOM) Ltd开户。"
-
-msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "在 Binary (Europe) Ltd 注册的英国客户可以在替代性纠纷解决机构 IBAS 填写仲裁表格并提交申诉"
 
 msgid "URL"
 msgstr "网址"
@@ -12007,6 +12028,12 @@ msgstr "从MT5账户提款"
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr "从MetaTrader 5 账户提款存入Binary账户。"
 
+msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
+msgstr "以Bitcoin.co.id 印尼卢比凭证形式提取资金。"
+
+msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
+msgstr "以 Bitcoin.co.id 凭证形式提取资金。凭证以印尼卢比计价, 并以当前美元/印尼卢比汇率发行。"
+
 msgid "Withdrawal"
 msgstr "提款"
 
@@ -12308,7 +12335,7 @@ msgstr "您已开立所有可用的账户。"
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "向我们请求开立真实账户前，您已经完整阅读并理解此协议附上的: (i) 风险披露声明;（ii）订单执行政策; (iii) 条款和条件;"
 
-msgid "You have insufficient fund in your Binary account, please <a href=\"%1\">add fund</a>."
+msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr "您的Binary账户资金不足，请<a href=\"%1\">添加资金</a>。"
 
 msgid "You have insufficient funds in your account."
@@ -13037,7 +13064,7 @@ msgstr "今天"
 msgid "today, Fridays"
 msgstr "今天、周五"
 
-msgid "up/down, touch/no-touch, stays in/goes out."
+msgid "up/down, touch/no-touch, stays in/out."
 msgstr "上涨/下跌，触及/未触及，范围内/范围外。"
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
@@ -13060,9 +13087,6 @@ msgstr "验证代币"
 
 msgid "volume (units)"
 msgstr "交易量（单位）"
-
-msgid "website"
-msgstr "网站"
 
 msgid "week"
 msgstr "周"
