@@ -41,7 +41,7 @@ const BitcoinVoucher = (() => {
 
         // Form validation
         const min_fiat = 50;
-        if (!Currency.isCryptocurrency(currency)) {
+        if (Currency.isCryptocurrency(currency)) {
             $.getJSON('https://api.coinmarketcap.com/v1/ticker/', (rates) => {
                 const rate       = rates.find(r => r.symbol === currency);
                 const min_amount = rate && rate.price_usd ? (min_fiat / rate.price_usd).toFixed(4) :
@@ -62,7 +62,17 @@ const BitcoinVoucher = (() => {
         const balance   = Client.get('balance');
         const amount_id = '#id123-control36043409';
         Validation.init(form_selector, [
-            { selector: amount_id, validations: ['req', ['number', { type: 'float', min: min_amount, decimals }], ['custom', { func: () => (balance && (+balance >= +$(amount_id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
+            {
+                selector   : amount_id,
+                validations: [
+                    'req',
+                    ['number', { type: 'float', min: min_amount, decimals }],
+                    ['custom', {
+                        func   : () => (balance && (+balance >= +$(amount_id).val())),
+                        message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]),
+                    }],
+                ],
+            },
         ]);
     };
 
