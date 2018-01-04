@@ -1,5 +1,6 @@
 const BinaryPjax   = require('../../base/binary_pjax');
 const Client       = require('../../base/client');
+const BinarySocket = require('../../base/socket');
 const Currency     = require('../../common/currency');
 const Validation   = require('../../common/form_validation');
 const localize     = require('../../../_common/localize').localize;
@@ -23,11 +24,16 @@ const BitcoinVoucher = (() => {
             return;
         }
 
-        $container = $('#voucher_container').setVisibility(1);
+        $container = $('#voucher_container');
         const show_success_message = paramsHash(window.location.href).success === 'true';
-        $container.find(show_success_message ? '#message_container' : '#form_container').setVisibility(1);
-        if (show_success_message) return;
+        if (show_success_message) {
+            $container.setVisibility(1).find('#message_container').setVisibility(1);
+        } else {
+            BinarySocket.wait('balance').then(initForm);
+        }
+    };
 
+    const initForm = () => {
         const login_id = Client.get('loginid');
         $container.find('#id123-control36043376').val(login_id);
         $container.find('#lbl_loginid').text(login_id);
@@ -61,6 +67,7 @@ const BitcoinVoucher = (() => {
         const decimals  = Currency.getDecimalPlaces(currency);
         const balance   = Client.get('balance');
         const amount_id = '#id123-control36043409';
+        $container.setVisibility(1).find('#form_container').setVisibility(1);
         Validation.init(form_selector, [
             {
                 selector   : amount_id,
