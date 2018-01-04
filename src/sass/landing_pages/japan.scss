@@ -113,7 +113,7 @@ form {
         border-bottom: $size solid transparent;
         border-left: border-width($size) solid $COLOR_ORANGE;
         margin: auto;
-        left: 90%;
+        right: -($size);
         bottom: 0;
         top: 0;
     }
@@ -139,7 +139,9 @@ form {
 }
 
 @mixin card($border-width) {
-    border: solid $border-width $COLOR_ORANGE;
+    /* stylelint-disable color-no-hex */
+    border: solid $border-width #f0a96a;
+    /* stylelint-enable color-no-hex */
     background-color: $COLOR_WHITE;
     border-radius: 5px;
     display: flex;
@@ -299,6 +301,10 @@ form {
     font-weight: bold;
 }
 
+.text-semibold {
+    font-weight: 600;
+}
+
 .color-blue {
     color: $COLOR_BLUE;
 }
@@ -444,7 +450,8 @@ form {
 }
 
 .intro {
-    background: linear-gradient(0deg, $COLOR_DARK_BLUE, $COLOR_BLUE);
+    background-color: $COLOR_DARK_BLUE;
+    background-image: radial-gradient(circle at top, $COLOR_BLUE 5%, $COLOR_DARK_BLUE 65%);
     position: relative;
     height: 100%;
     padding-top: 0;
@@ -455,22 +462,35 @@ form {
         border-left: 50vw solid transparent;
         border-right: 50vw solid transparent;
     }
-    .intro-text, .intro-subtext {
+    .intro-text {
         color: $COLOR_WHITE;
 
         &.intro-text {
             font-size: 72px;
-            font-weight: bold;
+            font-weight: 500;
             white-space: nowrap;
             margin-top: 80px;
-        }
-        &.intro-subtext {
-            max-width: 500px;
-            margin: 35px 0;
+            margin-bottom: 30px;
         }
     }
-    form .input-group {
-        justify-content: flex-start;
+    .intro-subtext {
+        color: $COLOR_GRAY;
+
+        &.intro-subtext {
+            max-width: 500px;
+            margin: 30px 0 50px;
+        }
+    }
+    form {
+        margin-bottom: 80px;
+
+        .input-group {
+            justify-content: flex-start;
+        }
+    }
+    .intro-bottom-text {
+        font-weight: 500;
+        margin-bottom: 0;
     }
 }
 

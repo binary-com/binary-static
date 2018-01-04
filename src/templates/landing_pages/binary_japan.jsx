@@ -78,7 +78,7 @@ const BinaryJapan = () => (
                         <img className='responsive' src={it.url_for('images/japan/version1/retro.svg')} />
                     </div>
                 </div>
-                <h1 className='center-text content-inverse-color'>{it.L('{JAPAN ONLY}What are Binary Options?')}</h1>
+                <h1 className='center-text content-inverse-color intro-bottom-text'>{it.L('{JAPAN ONLY}What are Binary Options?')}</h1>
             </div>
         </section>
 
@@ -88,7 +88,7 @@ const BinaryJapan = () => (
                 <h1 className='rounded-bubble'>{it.L('{JAPAN ONLY}What?')}</h1>
                 <h1 className='bg-blue'>{it.L('{JAPAN ONLY}What trading options do we have?')}</h1>
             </div>
-            <h2 className='color-blue text-bold'>{it.L('{JAPAN ONLY}Binary option offer the chance to predit whether the future price of a FX will be above or below a target rate, or between, or outside a target range:')}</h2>
+            <h2 className='color-blue text-semibold'>{it.L('{JAPAN ONLY}Binary option offer the chance to predit whether the future price of a FX will be above or below a target rate, or between, or outside a target range:')}</h2>
             <div className='gr-row cards cards--numbered'>
                 <div className='gr-6 gr-10-m gr-push-1-m'>
                     <div className='card'>
