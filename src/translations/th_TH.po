@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-03 01:02-0500\n"
+"PO-Revision-Date: 2018-01-04 00:59-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -591,8 +591,8 @@ msgstr "<a href='%1'>สำนักงาน</a> ที่ประเทศม
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>ระยะเวลาทั้งหมด</strong> - 10 วินาที ถึง 365 วัน"
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>เงื่อนไขทางการตลาด</strong> - Up/Down, Touch/No-Touch, Stays In/Goes Out"
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>ประเภทตลาด</strong> - สกุลเงินต่างๆ ดัชนีหลักทรัพย์ต่างๆ และ สินค้าโภคภัณฑ์ต่างๆ"
@@ -1198,6 +1198,9 @@ msgstr "จำนวน"
 
 msgid "Amount of above assets"
 msgstr "จำนวนของสินทรัพย์ข้างต้น"
+
+msgid "Amount:"
+msgstr ""
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "สำเร็จการศึกษาระดับสูงกว่ามหาวิทยาลัย หรือ ปริญญาตรี หรือ อนุปริญญา"
@@ -1910,11 +1913,17 @@ msgstr "บิทคอยน์"
 msgid "Bitcoin Cash"
 msgstr "เงินบิทคอยน์"
 
+msgid "Bitcoin Voucher"
+msgstr ""
+
 msgid "Bitcoin vs Euro"
 msgstr "บิทคอยน์ และยูโร"
 
 msgid "Bitcoin vs US dollar"
 msgstr "บิทคอยน์ และดอลล่าร์สหรัฐ"
+
+msgid "Bitcoin.co.id voucher withdrawal"
+msgstr ""
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "เทคโนโลยีบล็อกเชน - เงินดิจิทัลใช้เทคโนโลยีบล็อกเชนหลายรูปแบบ (ประเภทหนึ่งของบัญชีสาธารณะ) เพื่อให้ได้บันทึกในแต่ละธุรกรรม "
@@ -2396,11 +2405,11 @@ msgstr "ลูกค้าต้องลงทะเบียนโดยตร
 msgid "Clients registered with Binary (C.R.) S.A. can raise their unresolved disputes with management by submitting an email to complaints@binary.com."
 msgstr "ลูกค้าที่ลงทะเบียนกับ Binary (C.R.) S.A. สามารถส่งข้อคัดค้านของเขาให้กับผู้บริหารผ่านทางอีเมล์ complaints@binary.com"
 
-msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at"
-msgstr "ลูกค้าที่ลงทะเบียนกับ Binary (Europe) Ltd สามารถส่งข้อคัดค้านของเขาให้กับ Malta Gaming Authority %1 ที่"
+msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at %2. UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %3website%4."
+msgstr ""
 
-msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "ลูกค้าที่ลงทะเบียนกับ Binary (IOM) Ltd สามารถส่งข้อคัดค้านของเขาให้กับหน่วยงานแก้ไขข้อโต้แย้ง IBAS โดยกรอกแบบฟอร์ม Adjudication Form กับ ADR"
+msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2."
+msgstr ""
 
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found %1here%2."
 msgstr "ลูกค้าที่ลงทะเบียนกับ Binary Investments (Europe) Ltd สามารถแจ้งข้อพิพาทที่ยังไม่ได้รับการแก้ไขให้กับสำนักงานตุลาการด้านการให้บริการทางการเงิน (Office of the Arbiter for Financial Services) สามารถหารายละเอียดติดต่อและแนวทางในการยื่นคำร้องเรียนกับสำนักงานตุลาการได้ %1heที่นี่%2."
@@ -2765,6 +2774,9 @@ msgstr "สร้าง"
 msgid "Create Account"
 msgstr "สร้างบัญชี"
 
+msgid "Create Bitcoin.co.id IDR voucher"
+msgstr ""
+
 msgid "Create Free Account"
 msgstr "สร้างบัญชีฟรี"
 
@@ -2779,6 +2791,9 @@ msgstr "สร้างบัญชีใหม่"
 
 msgid "Create New Token"
 msgstr "สร้างโทเค่นใหม่"
+
+msgid "Create Voucher"
+msgstr ""
 
 msgid "Create a MetaTrader 5 account"
 msgstr "สร้างบัญชี MetaTrader 5"
@@ -3436,6 +3451,9 @@ msgstr "อีเมล์"
 
 msgid "Email us your Identity Documents"
 msgstr "โปรดส่งเอกสารของท่านให้เราทางอีเมล์"
+
+msgid "Email:"
+msgstr ""
 
 msgid "Email: "
 msgstr "อีเมล์: "
@@ -7035,6 +7053,9 @@ msgstr "บันทึก"
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "หมายเหตุ: ปี 2017 เป็นคาดการณ์มูลค่าจากเดือนสิงหาคม"
 
+msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
+msgstr ""
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "หมายเหตุ: สำหรับคำถามใด ๆ เกี่ยวกับบัญชีถูกปิดใช้งาน หรือบัญชีที่ถูกตัดออก โปรดติดต่อ<a href=\"%1\">ฝ่ายสนับสนุนลูกค้า</a>"
 
@@ -7761,6 +7782,9 @@ msgstr "โปรดยืนยันรายละเอียดของธ
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "โปรดให้เราได้รับฟังทุกข้อสงสัยของท่านที่ <a href='mailto:%1'>%1</a> พวกเรายินดีที่จะรับฟังและปรารถนาที่จะให้ความช่วยเหลือท่าน โปรดแสดงความคิดเห็นและข้อเสนอแนะของท่านให้เราทราบโดยไม่ต้องลังเล"
 
+msgid "Please ensure that your current account has been authenticated before you proceed."
+msgstr ""
+
 msgid "Please enter a number between %1."
 msgstr "โปรดป้อนตัวเลขระหว่าง %1"
 
@@ -8450,6 +8474,9 @@ msgstr "แสดงจำนวนสัญญามากที่สุดท
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "แสดงถึงจำนวนมากที่สุดของสัญญาที่ท่านซื้อ"
 
+msgid "Request successful. We will notify you via email once your voucher is ready."
+msgstr ""
+
 msgid "Requirements"
 msgstr "ข้อกำหนดความต้องการ"
 
@@ -8879,9 +8906,6 @@ msgstr "ควรเริ่มต้นด้วยอักษรหรือ
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "ค่าใช้จ่ายเหล่านี้ไม่ครอบคลุมในการรวมเข้าในบัญชีของท่าน พวกเราขอสงวนสิทธิ์ในการตรวจสอบทางเลือกอื่นๆ สำหรับการชำระเงิน ตัวอย่างเช่น หากบัญชีของท่านมีการแนะนำบัญชีอื่นที่มีการซื้อขาย พวกเราจะชำระค่านายหน้าของบัญชีเหล่านี้กระทั่งบัญชีเหล่านั้นจะไม่ได้ใช้งาน"
 
-msgid "Show payment agents for:"
-msgstr "แสดงตัวแทนรับชำระเงินสำหรับ:"
-
 msgid "Sign me up"
 msgstr "ลงทะเบียน / สมัครใช้งาน"
 
@@ -9077,11 +9101,11 @@ msgstr "อยู่ระหว่าง"
 msgid "Stays Between/Goes Outside trades"
 msgstr "Stays Between/Goes Outside trades"
 
-msgid "Stays In/Goes Out"
-msgstr "Stays In/Goes Out"
+msgid "Stays In/Out"
+msgstr ""
 
-msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "สัญญา Stays In/Goes Out จะถูกคืนมูลค่าที่ราคาซื้อหาก มีช่วงราคาน้อยกว่า 2 ช่วงระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด"
+msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
 
 msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr "Stays In/Out - พยากรณ์ราคาเป้าหมายในตลาดว่า จะอยู่ใน หรือ ออกนอก ขอบเขตของ 2 ราคาเป้าหมายในระยะเวลาของสัญญา"
@@ -10962,9 +10986,6 @@ msgstr "ประเภทของการซื้อขาย"
 msgid "UK and Manx residents will have their account opened with Binary (IOM) Ltd."
 msgstr "ลูกค้าในสหราชอาณาจักร และประชาชนบนเกาะ Isle of Man จะได้รับการดูแลบัญชีโดยบริษัท Binary (IOM) Ltd."
 
-msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "ลูกค้าในสหราชอาณาจักรที่ลงทะเบียนกับ Binary (Europe) Ltd สามารถส่งข้อร้องเรียนให้กับหน่วยงานทางเลือกที่รับข้อโต้แย้ง IBAS โดยกรอกแบบฟอร์ม Adjudication Formของ ADR"
-
 msgid "URL"
 msgstr "URL"
 
@@ -12018,6 +12039,12 @@ msgstr "ถอนจากบัญชี MT5"
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr "ถอนจากบัญชี MetaTrader 5 ไปยังบัญชีไบนารีออปชันของคุณ"
 
+msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
+msgstr ""
+
+msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
+msgstr ""
+
 msgid "Withdrawal"
 msgstr "ถอนเงิน"
 
@@ -12318,8 +12345,8 @@ msgstr "ท่านได้สร้างบัญชีทั้งหมด
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "ท่านได้อ่านและเข้าใจอย่างสมบูรณ์ในหัวข้อต่อไปนี้ 1. การสงวนสิทธิ์ความเสี่ยง 2. นโยบายการจัดการคำสั่ง 3. ข้อตกลงและเงื่อนไขที่แนบกับสัญญาฉบับนี้ ก่อนการเปิดบัญชีเงินจริงกับเรา"
 
-msgid "You have insufficient fund in your Binary account, please <a href=\"%1\">add fund</a>."
-msgstr "คุณมีเงินไม่เพียงพอในบัญชีของไบนารี กรุณา<a href=\"%1\">เพิ่มเงิน</a>"
+msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
+msgstr ""
 
 msgid "You have insufficient funds in your account."
 msgstr "บัญชีของท่านมีเงินไม่เพียงพอ"
@@ -13048,8 +13075,8 @@ msgstr "วันนี้"
 msgid "today, Fridays"
 msgstr "วันนี้วันศุกร์"
 
-msgid "up/down, touch/no-touch, stays in/goes out."
-msgstr "ขึ้น/ลง สัมผัส/ไม่สัมผัส อยู่ใน/อยู่นอก"
+msgid "up/down, touch/no-touch, stays in/out."
+msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "เมื่อเราร้องขอ เขาให้ข้อมูลใดๆหรือทั้งหมดแก่บริษัทตามที่กำหนดอย่างเหมาะสมเพื่อตอบสนองความต้องการ คำร้อง หรือคำสั่งซื้อ หรือข้อกำหนดใดๆหรือทั้งหมด หรืออะไรก็ตามของเจ้าหน้าที่รัฐบาลหรือผู้มีอำนาจอื่นๆ"
@@ -13071,9 +13098,6 @@ msgstr "โทเค่นเพื่อการตรวจสอบ"
 
 msgid "volume (units)"
 msgstr "ปริมาณ (หน่วย)"
-
-msgid "website"
-msgstr "เว็บไซต์"
 
 msgid "week"
 msgstr "สัปดาห์"

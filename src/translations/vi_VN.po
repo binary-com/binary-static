@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-03 01:02-0500\n"
+"PO-Revision-Date: 2018-01-04 00:59-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -591,8 +591,8 @@ msgstr "<a href='%1'>Đặt văn phòng</a> ở Malta, Malaysia và Nhật"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Tất cả thời hạn</strong> - từ 10 giây đến 365 ngày."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Tất cả điều kiện thị trường</strong> - lên/xuống, chạm/không chạm, ở trong/ra ngoài."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Tất cả thị trường</strong> - tiền tệ, chỉ số cổ phiếu, và hàng hóa."
@@ -1198,6 +1198,9 @@ msgstr "Số tiền"
 
 msgid "Amount of above assets"
 msgstr "Amount of above assets"
+
+msgid "Amount:"
+msgstr ""
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Tốt nghiệp loại Trung bình/ Khá/ Giỏi hoặc có Bằng cử nhân"
@@ -1910,11 +1913,17 @@ msgstr "Bitcoin"
 msgid "Bitcoin Cash"
 msgstr "Bitcoin tiền mặt"
 
+msgid "Bitcoin Voucher"
+msgstr ""
+
 msgid "Bitcoin vs Euro"
 msgstr "Bitcoin vs Euro"
 
 msgid "Bitcoin vs US dollar"
 msgstr "Bitcoin vs đô-la Mỹ"
+
+msgid "Bitcoin.co.id voucher withdrawal"
+msgstr ""
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Công nghệ Blockchain - tất cả cryptocurrencies sử dụng một biến thể của công nghệ blockchain (một loại sổ sách công khai) ghi hồ sơ của mỗi giao dịch. "
@@ -2049,25 +2058,25 @@ msgid "CFD (Contract for Difference): CFD is an instrument that allows you to pr
 msgstr "CFD (hợp đồng cho sự khác biệt): CFD là một công cụ cho phép bạn có lợi nhuận bằng cách dự đoán về tăng hoặc sụp đổ của một phương tiện. Lợi nhuận/tổn thất ước tính như là một chức năng của sự khác biệt trong mức giá mua/bán của các phương tiện nằm bên dưới."
 
 msgid "CFD margin policy"
-msgstr ""
+msgstr "Chính sách lượng CFD"
 
 msgid "CFDs"
-msgstr ""
+msgstr "Các thị trường CFD"
 
 msgid "CFDs Derivatives that profit by speculating on the movement of underlying assets."
-msgstr ""
+msgstr "Thị trường phái sinh CFD kiếm lợi nhuận bằng cách dự đoán về sự chuyển động của tài sản cơ bản."
 
 msgid "CONVERTIBLE DIGITAL TOKENS"
-msgstr ""
+msgstr "CHUYỂN ĐỔI THẺ KỸ THUẬT SỐ"
 
 msgid "Can %1 tokens be mined?"
-msgstr ""
+msgstr "%1 thẻ có thể được khai thác không?"
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Nếu tôi không có trang web, tôi có trở thành một thành viên được không?"
 
 msgid "Can I bid on your tokens in cryptocurrencies such as Bitcoin?"
-msgstr ""
+msgstr "Liệu tôi có thể đặt giá thầu trên thẻ của bạn trong cryptocurrencies như Bitcoin?"
 
 msgid "Can I contribute to back-end code?"
 msgstr "Tôi có thể đóng góp vào mã back-end không?"
@@ -2079,7 +2088,7 @@ msgid "Can I offer my referrals an incentive to sign up through my link rather t
 msgstr "Tôi có thể mời người tôi giới thiệu đăng nhập qua đường dẫn của tôi thay vì đăng nhập trực tiếp không?"
 
 msgid "Can I sell my ERC20 tokens once they are listed on the %1Lykke.com%2 Exchange?"
-msgstr ""
+msgstr "Tôi có thể bán thẻ ERC20 của tôi sau khi chúng được liệt kê trên %1Lykke.com%2 Exchange?"
 
 msgid "Can I submit security vulnerabilities?"
 msgstr "Tôi có thể nộp các lỗ hổng bảo mật không?"
@@ -2106,19 +2115,19 @@ msgid "Can you customize a banner for my site?"
 msgstr "Bạn có thể tùy chỉnh biểu ngữ cho trang web của tôi không?"
 
 msgid "Can't figure it out on when to buy and sell? Here is a simple way of looking at it:"
-msgstr ""
+msgstr "Không thể xác định được lúc nào thì mua và bán? Dưới đây là một cách đơn giản để nhìn vào nó:"
 
 msgid "Can't make heads or tails of currency pairs? Here is a simple way of looking at it:"
-msgstr ""
+msgstr "Không thể tạo điểm đầu hoặc đuôi của các cặp tiền tệ? Dưới đây là một cách đơn giản để nhìn vào nó:"
 
 msgid "Canada"
 msgstr "Canada"
 
 msgid "Canadian dollar vs Japanese yen"
-msgstr ""
+msgstr "Đô-la Canada vs đồng yên Nhật"
 
 msgid "Canadian dollar vs Swiss franc"
-msgstr ""
+msgstr "Đô-la Canada vs Đồng Frank Thụy sĩ"
 
 msgid "Cancel"
 msgstr "Hủy bỏ"
@@ -2157,13 +2166,13 @@ msgid "Cashier password"
 msgstr "Mật khẩu Thu ngân"
 
 msgid "Cent"
-msgstr ""
+msgstr "Phần trăm"
 
 msgid "Cent Account"
-msgstr ""
+msgstr "Tài khoản Cent"
 
 msgid "Cent account: 1:1,000"
-msgstr ""
+msgstr "Tài khoản Cent: 1:1,000"
 
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Giới hạn nhất định được hiểu là giá đạt tới mức có thể chấp nhận được đối với giá thực hiện/ giá tới hạn của hợp đồng. Thông thường, giá thực hiện có thể không quá gần hoặc quá xa với mức giá thị trường tài sản cơ sở hiện tại."
@@ -2226,13 +2235,13 @@ msgid "Choose a payout from $1 to $50,000."
 msgstr "Chọn tiền thưởng từ $1 tới $50,000."
 
 msgid "Choose an account"
-msgstr ""
+msgstr "Chọn một tài khoản"
 
 msgid "Choose from 100+ tradable instruments, backed by award-winning technology and innovation since 2000."
-msgstr ""
+msgstr "Chọn từ 100+ công cụ có thể giao dịch được, được ủng hộ bởi công nghệ đoạt giải thưởng và đổi mới từ năm 2000."
 
 msgid "Choose from five available markets:"
-msgstr ""
+msgstr "Chọn từ năm thị trường có sẵn:"
 
 msgid "Choose from five types of markets and their respective assets:"
 msgstr "Lựa chọn từ năm loại hình thị trường và các tài sản tương ứng của nó:"
@@ -2241,10 +2250,10 @@ msgid "Choose from over one million possible trade variations at any time, and c
 msgstr "Chọn từ hơn một triệu các biến thể giao dịch khả thi tại bất kỳ lúc nào, và tùy chỉnh giao dịch của bạn theo chiến lược ưa thích của bạn"
 
 msgid "Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy."
-msgstr ""
+msgstr "Chọn từ hơn một triệu các biến thể giao dịch khả thi tại bất kỳ lúc nào, và tùy chỉnh giao dịch của bạn theo chiến lược ưa thích của bạn."
 
 msgid "Choose from three main trade types:"
-msgstr ""
+msgstr "Chọn từ ba loại giao dịch chính:"
 
 msgid "Choose how you want to Trade the Market"
 msgstr "Chọn cách bạn muốn giao dịch thị trường"
@@ -2256,7 +2265,7 @@ msgid "Choose the Touch/No Touch trade if you want to predict the market touchin
 msgstr "Chọn Chạm/ Không Chạm khi bạn muốn thu lợi nhuận từ thời điểm thị trường chạm hoặc không chạm với giá mục tiêu bất kì lúc nào trong suốt kì hợp đồng."
 
 msgid "Choose the Touch/No touch trade if you want to predict the market touching or not touching a target any time during the contract period."
-msgstr ""
+msgstr "Chọn Chạm/ Không Chạm khi bạn muốn thu lợi nhuận từ thời điểm thị trường chạm hoặc không chạm với giá mục tiêu bất kì lúc nào trong suốt kì hợp đồng."
 
 msgid "Choose the Underlying"
 msgstr "Chọn các gạch chân"
@@ -2265,16 +2274,16 @@ msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currenc
 msgstr "Chọn tài sản bạn muốn giao dịch, như vàng, dầu, cổ phiếu hay các cặp tiền tệ. Giá trị của một lựa chọn nhị phân có nguồn gốc từ giá của tài sản nằm bên dưới. Một lợi thế của giao dịch tùy chọn nhị phân là bạn không mua hoặc bán các tài sản thực tế, chỉ có một hợp đồng mà xác định cách thực hiện của tài sản đó."
 
 msgid "Choose the market, trade type, duration, barrier, and payout."
-msgstr ""
+msgstr "Chọn thị trường, loại giao dịch, thời lượng, hàng rào, và thanh toán."
 
 msgid "Choose the payment method you'd like to use."
 msgstr "Chọn phương thức thanh toán bạn muốn sử dụng."
 
 msgid "Choose the payout you wish to receive from correctly predicting this contract."
-msgstr ""
+msgstr "Chọn thanh toán bạn muốn nhận được từ việc dự đoán một cách chính xác bản hợp đồng này."
 
 msgid "Choose the platforms and accounts you need, based on your personal trading style"
-msgstr ""
+msgstr "Chọn nền tảng và các tài khoản bạn cần, dựa trên phong cách giao dịch cá nhân của bạn"
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "Chọn kiểu token API bạn cần, dựa trên khả năng mà bạn muốn làm cho nó khả dụng."
@@ -2295,7 +2304,7 @@ msgid "Christmas Day"
 msgstr "Lễ Giáng Sinh"
 
 msgid "Chrome"
-msgstr ""
+msgstr "Chrome"
 
 msgid "Citizens of Belgium, Bosnia and Herzegovina, Democratic People's Republic of Korea (DPRK), Ethiopia, Iran, Iraq, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Các công dân Bỉ, Bosnia và Herzegovina, nhân dân chủ Cộng hòa Hàn Quốc (Triều tiên), Ethiopia, Iran, Iraq, Syria, Uganda, Vanuatu hoặc Yemen sẽ được hạn chế từ việc mở một tài khoản với đầu tư nhị phân (Châu Âu) Ltd."
@@ -2396,11 +2405,11 @@ msgstr "Khách hàng cần phải đăng kí cá nhân."
 msgid "Clients registered with Binary (C.R.) S.A. can raise their unresolved disputes with management by submitting an email to complaints@binary.com."
 msgstr "Khách hàng đã đăng kí với Binary (C.R.) S.A.có thể trình các vấn đề tranh chấp chưa được giải quyết lên ban quản lý bằng cách gửi qua địa chỉ email complaints@binary.com."
 
-msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at"
-msgstr "Khách hàng đã đăng kí với Công ty TNHH Binary (Châu Âu) có thể trình các vấn đề tranh chấp chưa được giải quyết với Cơ quan Giám sát Cá cược Malta %1 tại"
+msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at %2. UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %3website%4."
+msgstr ""
 
-msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "Khách hàng đã đăng ký với công ty TNHH Binary (IOM) Ltd có thể đệ trình các tranh chấp chưa được xử lý với các tổ chức giải quyết tranh chấp thay thế IBAS bằng cách điền vào biểu mẫu phân xử trên thực thể ADR"
+msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2."
+msgstr ""
 
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found %1here%2."
 msgstr "Khách hàng đã đăng ký với khoản đầu tư nhị phân (Châu Âu) Ltd có thể nâng cao các tranh chấp chưa được giải quyết với các văn phòng của trọng tài cho các dịch vụ tài chính. Chi tiết liên hệ và hướng dẫn thực hiện một khiếu nại với văn phòng của trọng tài có thể được tìm thấy %1here%2."
@@ -2451,7 +2460,7 @@ msgid "Closing or part-closing all, or any, of your Open Positions based on the 
 msgstr "Bán đóng hoặc đóng cửa tất cả hoặc bất kỳ một thế mở nào của bạn dựa trên các mức giá hiện hành tại các thị trường có liên quan;"
 
 msgid "Closing price"
-msgstr ""
+msgstr "Giá đóng cửa"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "Cộng tác với các thành viên của nhóm IT nhằm đưa ra những ý tưởng sáng tạo để cải thiện khả năng và hiệu suất của trang web của chúng tôi"
@@ -2460,7 +2469,7 @@ msgid "Commencement Date"
 msgstr "Ngày bắt đầu"
 
 msgid "Commission"
-msgstr ""
+msgstr "Hoa hồng"
 
 msgid "Commission Rates"
 msgstr "Tỉ lệ Hoa hồng"
@@ -2472,7 +2481,7 @@ msgid "Commission on withdrawals"
 msgstr "Hoa hồng rút tiền"
 
 msgid "Commission-free"
-msgstr ""
+msgstr "Miễn phí hoa hồng"
 
 msgid "Commissions will be earned throughout the life of the client, on all transactions the client undertakes at the merchant, for as long as you, the Affiliate, remain a member of this affiliate program. The company reserves the right to cancel the commissions that are not reclaimed after 2 years."
 msgstr "Chỉ cần Chi nhánh vẫn coi bạn là một thành viên của chương trình liên kết, khách hàng sẽ được nhận hoa hồng suốt đời, trên tất cả các giao dịch mà khách hàng cam kết tại thương nghiệp. Công ty có quyền hủy bỏ khoản các khoản hoa hồng nếu không được đòi lại trong vòng 2 năm."
@@ -2481,7 +2490,7 @@ msgid "Commissions:"
 msgstr "Hoa hồng:"
 
 msgid "Commitment to the highest ethical standards and regulatory compliance"
-msgstr ""
+msgstr "Cam kết đạt các tiêu chuẩn đạo đức cao nhất và tuân thủ quy định"
 
 msgid "Commodities"
 msgstr "Hàng hóa"
@@ -2517,7 +2526,7 @@ msgid "Competitive and transparent pricing"
 msgstr "Giá cả cạnh tranh và minh bạch"
 
 msgid "Competitive spreads"
-msgstr ""
+msgstr "Cạnh tranh mở rộng"
 
 msgid "Complaints"
 msgstr "Các khiếu nại"
@@ -2529,7 +2538,7 @@ msgid "Complaints and disputes"
 msgstr "Khiếu nại và Tranh chấp"
 
 msgid "Complete your <a href=\"%1\">Financial Assessment</a>."
-msgstr ""
+msgstr "Hoàn thành <a href=\"%1\"> Đánh giá tài chính</a>của bạn."
 
 msgid "Compliance"
 msgstr "Pháp Chế"
@@ -2544,7 +2553,7 @@ msgid "Comply with the applicable laws, rules, and regulations (including, but n
 msgstr "Tuân thủ các điều luật, quy tắc và quy định tại nơi bạn hoạt động kinh doanh hoặc nhắm mục tiêu kinh doanh tới (bao gồm, nhưng không giới hạn với các quảng cáo, bảo mật dữ liệu và các điều luật, quy tắc và quy định về quyền riêng tư)."
 
 msgid "Comprehensive"
-msgstr ""
+msgstr "Toàn diện"
 
 msgid "Computer system and method for speculating on a financial market"
 msgstr "Hệ thống máy tính và phương pháp suy đoán trên thị trường tài chính"
@@ -2553,7 +2562,7 @@ msgid "Computer trading system for offering custom financial market speculations
 msgstr "Hệ thống giao dịch máy tính cung cấp suy đoán thị trường tài chính tùy chỉnh"
 
 msgid "Conditions of Application"
-msgstr ""
+msgstr "Điều kiện áp dụng"
 
 msgid "Conduct disaster and recovery planning and execution"
 msgstr "Kiểm soát thảm họa và kế hoạch phục hồi và thực hiện"
@@ -2607,7 +2616,7 @@ msgid "Continuous Indices"
 msgstr "Những chỉ số liên tiếp"
 
 msgid "Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively."
-msgstr ""
+msgstr "Các chỉ số liên tục - chọn từ chỉ số Độ biến động 10, Độ bất ổn 25, Khả năng biến động 50, Khả năng biến động 75 và Chỉ số biến động 100. Các chỉ số này tương ứng với các thị trường mô phỏng với các biến động không đổi là 10%, 25%, 50%, 75% và 100%."
 
 msgid "Contract"
 msgstr "Hợp đồng"
@@ -2658,7 +2667,7 @@ msgid "Contract period"
 msgstr "Thời hạn hợp đồng"
 
 msgid "Contract specifications"
-msgstr ""
+msgstr "Điều khoản đặc biệt của hợp đồng"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Hợp đồng sẽ được bán ở giá thị trường hiện hành khi máy chủ nhận được yêu cầu. Giá này có thể khác với giá đã được chỉ định."
@@ -2673,10 +2682,10 @@ msgid "Contracts bought"
 msgstr "Hợp đồng đã được mua"
 
 msgid "Contracts for Difference (CFDs) are financial derivatives that allow you to speculate on the movement of an underlying asset without owning it."
-msgstr ""
+msgstr "Hợp đồng cho sự khác biệt (CFDs) là phái sinh tài chính cho phép bạn suy đoán về sự chuyển động của một tài sản nằm cơ bản mà không phải sở hữu nó."
 
 msgid "Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At Binary.com, we offer popular cash indices as well as proprietary Volatility Indices that simulate market movement."
-msgstr ""
+msgstr "Hợp đồng cho sự khác biệt (CFDs) cho phép bạn để suy đoán về một số thị trường, bao gồm cả chỉ số, cổ phần và hàng hóa. Tại Binary.com, chúng tôi cung cấp chỉ số tiền mặt phổ biến cũng như sở hữu chỉ số biến động mà mô phỏng các phong trào thị trường."
 
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "Hợp đồng không hết hạn vào cuối tuần; vì vậy ngày hết hạn của hợp đồng có thể được đẩy sang ngày thứ Hai tiếp theo trong trường hợp ngày hết hạn hợp đồng rơi vào ngày thứ Bảy hoặc Chủ Nhật."
@@ -2765,14 +2774,17 @@ msgstr "Tạo"
 msgid "Create Account"
 msgstr "Tạo Tài khoản"
 
+msgid "Create Bitcoin.co.id IDR voucher"
+msgstr ""
+
 msgid "Create Free Account"
 msgstr "Tạo Tài Khoản Miễn Phí"
 
 msgid "Create MetaTrader 5 %1 account"
-msgstr ""
+msgstr "Tạo tài khoản MetaTrader 5 %1"
 
 msgid "Create MetaTrader 5 Account in %1"
-msgstr ""
+msgstr "Tạo tài khoản MetaTrader 5 trong %1"
 
 msgid "Create New Account"
 msgstr "Tạo Tài khoản Mới"
@@ -2780,8 +2792,11 @@ msgstr "Tạo Tài khoản Mới"
 msgid "Create New Token"
 msgstr "Tạo Token Mới"
 
-msgid "Create a MetaTrader 5 account"
+msgid "Create Voucher"
 msgstr ""
+
+msgid "Create a MetaTrader 5 account"
+msgstr "Tạo một tài khoản MetaTrader 5"
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Đưa ra nội dung rõ ràng, súc tích và hấp dẫn để hiển thị trên trang web, blog, phương tiện truyền thông công cộng và tài liệu tiếp thị của công ty"
@@ -2811,25 +2826,25 @@ msgid "Credit/Debit Card"
 msgstr "Thẻ tín dụng/Thẻ ghi nợ"
 
 msgid "Crypto"
-msgstr ""
+msgstr "Crypto"
 
 msgid "Crypto Account"
-msgstr ""
+msgstr "Tài khoản Crypto"
 
 msgid "Cryptocurrencies"
 msgstr "Cryptocurrencies"
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
-msgstr ""
+msgstr "Cryptocurrencies như Bitcoin và Ethereum là tài sản kỹ thuật số phi tập trung hóa cho phép thanh toán ngay lập tức bất cứ nơi nào trên thế giới."
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital currencies on the blockchain."
-msgstr ""
+msgstr "Cryptocurrencies như Bitcoin và Ethereum là các loại tiền tệ kỹ thuật số phi tập trung hóa trên blockchain."
 
 msgid "Cryptocurrency"
 msgstr "Cryptocurrency"
 
 msgid "Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin."
-msgstr ""
+msgstr "Các cặp Cryptocurrency bao gồm Bitcoin, Ethereum và Litecoin."
 
 msgid "Currencies"
 msgstr "Đơn vị tiền tệ"
@@ -2844,10 +2859,10 @@ msgid "Currency Symbol"
 msgstr "Ký hiệu tiền tệ"
 
 msgid "Currency of the funds accepted in your trading account."
-msgstr ""
+msgstr "Loại tiền tệ của các khoản tiền được chấp nhận trong tài khoản giao dịch của bạn."
 
 msgid "Currency pairs are categorised as follows:"
-msgstr ""
+msgstr "Các cặp tiền tệ được phân loại như sau:"
 
 msgid "Current"
 msgstr "Tiền tệ"
@@ -2904,13 +2919,13 @@ msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bull
 msgstr ""
 
 msgid "Daily insights into markets around the world."
-msgstr ""
+msgstr "Hàng ngày cái nhìn chuyên sâu vào các thị trường trên toàn thế giới."
 
 msgid "Daily limit on losses"
 msgstr "Giới hạn mức thua lỗ hàng ngày"
 
 msgid "Daily market reports"
-msgstr ""
+msgstr "Báo cáo thị trường hàng ngày"
 
 msgid "Daily turnover limit"
 msgstr "Giới hạn doanh thu hàng ngày"
@@ -3436,6 +3451,9 @@ msgstr "Địa chỉ hòm thư"
 
 msgid "Email us your Identity Documents"
 msgstr "Gửi email cho chúng tôi các tài liệu nhân dạng của bạn"
+
+msgid "Email:"
+msgstr ""
 
 msgid "Email: "
 msgstr "Email: "
@@ -7035,6 +7053,9 @@ msgstr "Chú ý"
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "Lưu ý: các con số năm 2017 được phỏng đoán từ cáccon số tạm thời trong tháng tám"
 
+msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
+msgstr ""
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Lưu ý: Đối với bất kỳ thắc mắc liên quan đến các tài khoản bị vô hiệu hóa hoặc bị loại trừ, xin vui lòng liên hệ với <a href=\"%1\"> Hỗ trợ khách hàng</a>."
 
@@ -7762,6 +7783,9 @@ msgstr "Xin vui lòng xác nhận chi tiết giao dịch để hoàn thà
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "Xin vui lòng liên hệ với chúng tôi với bất cứ điều gì mà bạn thắc mắc tại <a href='mailto:%1'> %1</a>. Chúng tôi  luôn sẵn lòng để nghe từ bạn và sẵn sàng hỗ trợ bạn. Vì vậy, cảm thấy thoải mái để chia sẻ ý tưởng và đề xuất của bạn với chúng tôi."
 
+msgid "Please ensure that your current account has been authenticated before you proceed."
+msgstr ""
+
 msgid "Please enter a number between %1."
 msgstr "Vui lòng nhập một số giữa %1."
 
@@ -8449,6 +8473,9 @@ msgstr "Hãy trình bày số hợp đồng xuất sắc tối đa có
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Hiển thị số lượng hợp đồng tối đa bạn có thể mua trong ngày giao dịch."
 
+msgid "Request successful. We will notify you via email once your voucher is ready."
+msgstr ""
+
 msgid "Requirements"
 msgstr "Yêu cầu"
 
@@ -8878,9 +8905,6 @@ msgstr "Nên bắt đầu bằng chữ hoặc số, và có thể chứa các g�
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "Nếu tiền của bạn gửi vào tài khoản không đủ bù đắp những khoản chi phí này chúng tôi có quyền điều tra những phương tiện thay thế khác để có được khoản thanh toán này, ví dụ: nếu tài khoản của bạn vừa tạo tài khoản mua, chúng tôi sẽ giữ lại tiền thanh toán hoa hồng của những tài khoản này tới khi trả hết khoản nợ trong tài khoản."
 
-msgid "Show payment agents for:"
-msgstr "Hiển thị đại lý thanh toán cho:"
-
 msgid "Sign me up"
 msgstr "Đăng nhập"
 
@@ -9076,11 +9100,11 @@ msgstr "Nằm giữa"
 msgid "Stays Between/Goes Outside trades"
 msgstr "Giao dịch Ở Giữa/ Đi ra ngoài"
 
-msgid "Stays In/Goes Out"
-msgstr "Vẫn ở trong /Đi ra Ngoài"
+msgid "Stays In/Out"
+msgstr ""
 
-msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Hợp đồng trong/ ngoài sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 sự thay đổi giá giữa thời điểm hợp đồng bắt đầu và kết thúc."
+msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
 
 msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr "Giữ nguyên/ Thoát - dự đoán rằng thị trường vẫn ở bên trong hoặc ra bên ngoài 2 mức giá mục tiêu bất kì lúc nào trong suốt kì hợp đồng"
@@ -10954,9 +10978,6 @@ msgstr "Loại giao dịch"
 msgid "UK and Manx residents will have their account opened with Binary (IOM) Ltd."
 msgstr "Người dân Anh và Manx sẽ có tài khoản được mở bởi công ty TNHH Binary (IOM)."
 
-msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "Các khách hàng Anh đăng kí với công ty TNHH Binary (Châu Âu) có thể gửi khiếu nại lên các cơ quan giải quyết khiếu nại IBAS bằng cách điền vào mẫu phán quyết trên cơ quan ADR"
-
 msgid "URL"
 msgstr "URL"
 
@@ -12012,6 +12033,12 @@ msgstr ""
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr ""
 
+msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
+msgstr ""
+
+msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
+msgstr ""
+
 msgid "Withdrawal"
 msgstr "Rút tiền"
 
@@ -12312,7 +12339,7 @@ msgstr "Bạn đã tạo ra tất cả các tài khoản khả dụng cho bạn.
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "Bạn có đầy đủ đọc và hiểu là: (i) báo cáo công bố rủi ro; (ii) chính sách thực hiện lệnh; (iii) điều khoản và điều kiện kèm theo thỏa thuận này; trước khi yêu cầu để mở một tài khoản với chúng tôi;"
 
-msgid "You have insufficient fund in your Binary account, please <a href=\"%1\">add fund</a>."
+msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr ""
 
 msgid "You have insufficient funds in your account."
@@ -13042,8 +13069,8 @@ msgstr "hôm nay"
 msgid "today, Fridays"
 msgstr "hôm nay, Thứ Sáu"
 
-msgid "up/down, touch/no-touch, stays in/goes out."
-msgstr "lên/xuống, chạm/không chạm, giữ trong/đẩy ra."
+msgid "up/down, touch/no-touch, stays in/out."
+msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "theo yêu cầu của chúng tôi, ông ấy cung cấp cho công ty với bất kỳ và tất cả các thông tin hợp lý cần thiết để đáp ứng một cách hời hợt mọi nhu cầu hoặc yêu cầu hoặc đơn đặt hàng hoặc những yêu cầu nào của bất kỳ chính phủ hoặc bất kỳ quyền nào khác;"
@@ -13065,9 +13092,6 @@ msgstr "chuỗi số xác minh"
 
 msgid "volume (units)"
 msgstr ""
-
-msgid "website"
-msgstr "trang web"
 
 msgid "week"
 msgstr "tuần"
