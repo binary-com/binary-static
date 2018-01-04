@@ -4,7 +4,7 @@ import { Fieldset, FormRow, SubmitButton } from '../../_common/components/forms.
 const LostPassword = () => (
     <div className='static_full'>
         <h1>{it.L('Password reset')}</h1>
-        <p>{it.L('To reset your password, enter the email address you used to create your account into the field below and click \'Reset password\'.')}</p>
+        <p id='password_reset_description'>{it.L('To reset your password, enter the email address you used to create your account into the field below and click \'Reset password\'.')}</p>
 
         <form id='frm_lost_password'>
             <Fieldset>
