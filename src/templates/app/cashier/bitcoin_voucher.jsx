@@ -41,7 +41,7 @@ const BitcoinVoucher = () => (
             </form>
         </div>
         <div id='message_container' className='invisible'>
-            <p className='center-text'>{it.L('Request successful. We will notify you via email once your voucher is ready.')}</p>
+            <p className='notice-msg center-text'>{it.L('Request successful. We will notify you via email once your voucher is ready.')}</p>
         </div>
     </div>
 );
