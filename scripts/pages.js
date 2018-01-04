@@ -3,6 +3,7 @@ module.exports = [
     // ==================== Section: "app" ====================
     ['cashier',                            'app/cashier/index',                         'default',    'Cashier'],
     ['cashier/account_transfer',           'app/cashier/account_transfer',              'default',    'Transfer Between Accounts'],
+    ['cashier/bitcoin-voucher',            'app/cashier/bitcoin_voucher',               'default',    'Bitcoin Voucher',                   'NOT-id'],
     ['cashier/confirmation',               'app/cashier/confirmation',                  'default',    'Confirm'],
     ['cashier/deposit-jp',                 'app/japan/cashier/deposit',                 'default',    'Deposit',                           'NOT-ja,en'],
     ['cashier/epg_forwardws',              'app/cashier/deposit_withdraw',              'default',    'Cashier'],

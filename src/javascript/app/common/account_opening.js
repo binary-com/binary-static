@@ -12,28 +12,19 @@ const urlFor             = require('../../_common/url').urlFor;
 require('select2');
 
 const AccountOpening = (() => {
-    const redirectAccount = () => { // eslint-disable-line consistent-return
-        const response_landing_company = State.getResponse('landing_company');
-        const response_get_settings    = State.getResponse('get_settings');
-        if (response_landing_company && response_get_settings) {
-            return redirect(response_landing_company);
-        }
-        BinarySocket.wait('landing_company', 'get_settings').then(() => redirect());
-    };
-
-    const redirect = (response_landing_company) => {
-        const upgrade_info = Client.getUpgradeInfo(response_landing_company || State.getResponse('landing_company'));
+    const redirectAccount = () => {
+        const upgrade_info = Client.getUpgradeInfo();
 
         if (!upgrade_info.can_upgrade) {
             BinaryPjax.loadPreviousUrl();
-            return true;
+            return -1;
         }
 
         if (!upgrade_info.is_current_path) {
             BinaryPjax.load(upgrade_info.upgrade_link);
-            return true;
+            return 1;
         }
-        return false;
+        return 0;
     };
 
     const populateForm = (form_id, getValidations, is_financial, is_ico_only) => {

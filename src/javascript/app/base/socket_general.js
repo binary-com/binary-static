@@ -8,6 +8,7 @@ const showPopup            = require('../common/attach_dom/popup');
 const setCurrencies        = require('../common/currency').setCurrencies;
 const SessionDurationLimit = require('../common/session_duration_limit');
 const updateBalance        = require('../pages/user/update_balance');
+const State                = require('../../_common/storage').State;
 const urlFor               = require('../../_common/url').urlFor;
 const getPropertyValue     = require('../../_common/utility').getPropertyValue;
 
@@ -47,7 +48,7 @@ const BinarySocketGeneral = (() => {
                         window.alert(response.error.message);
                     }
                     Client.sendLogoutRequest(is_active_tab);
-                } else if (!Login.isLoginPages()) {
+                } else if (!Login.isLoginPages() && !/authorize/.test(State.get('skip_response'))) {
                     if (response.authorize.loginid !== Client.get('loginid')) {
                         Client.sendLogoutRequest(true);
                     } else {
