@@ -19,6 +19,11 @@ const FinancialAccOpening = (() => {
         }
 
         if (AccountOpening.redirectAccount()) return;
+
+        if (Client.get('landing_company_shortcode') === 'iom') {
+            $('#authentication_notice_message').setVisibility(1);
+        }
+
         AccountOpening.populateForm(form_id, getValidations, true);
 
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {

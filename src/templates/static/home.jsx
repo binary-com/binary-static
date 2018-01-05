@@ -33,7 +33,7 @@ const Home = () => (
                         <List
                             items={[
                                 { header: it.L('All markets:'),           text: it.L('currencies, stocks, indices, and commodities.') },
-                                { header: it.L('All market conditions:'), text: it.L('up/down, touch/no-touch, stays in/goes out.') },
+                                { header: it.L('All market conditions:'), text: it.L('up/down, touch/no-touch, stays in/out.') },
                                 { header: it.L('All durations:'),         text: it.L('from 10 seconds to 365 days.') },
                                 { header: it.L('All payouts:'),           text: it.L('from $1 to $50,000.') },
                             ]}
