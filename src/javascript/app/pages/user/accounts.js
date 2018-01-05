@@ -27,17 +27,14 @@ const Accounts = (() => {
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
-            const upgrade_info  = Client.getUpgradeInfo(landing_company);
-
+            const upgrade_info  = Client.getUpgradeInfo();
             if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            const currencies = getCurrencies(landing_company);
-            // only allow opening of multi account to costarica clients with remaining currency
-            if (Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
-                populateMultiAccount(currencies);
+            if (upgrade_info.can_open_multi) {
+                populateMultiAccount();
             } else {
                 doneLoading(element_to_show);
             }
@@ -140,7 +137,8 @@ const Accounts = (() => {
 
     const getMarketName = market => localize(markets[market] || '');
 
-    const populateMultiAccount = (currencies) => {
+    const populateMultiAccount = () => {
+        const currencies = getCurrencies(landing_company);
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
                 .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 })}` })))

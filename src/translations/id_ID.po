@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-01 21:00-0500\n"
+"PO-Revision-Date: 2018-01-04 02:57-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -591,8 +591,8 @@ msgstr "<a href='%1'>Kantor</a> di Malta, Malaysia dan Jepang"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Semua durasi</strong> - dari 10 detik hingga 365 hari."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgstr "<strong>Semua kondisi pasar</strong> - up/down, touch/no-touch, stays in/out."
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Semua pasar</strong> - valuta asing, indeks saham dan komoditas."
@@ -1193,6 +1193,9 @@ msgstr "Jumlah"
 
 msgid "Amount of above assets"
 msgstr "Jumlah untuk aset diatas"
+
+msgid "Amount:"
+msgstr "Jumlah:"
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Diploma Lanjutan/Tinggi atau Sarjana"
@@ -1905,11 +1908,17 @@ msgstr "Bitcoin"
 msgid "Bitcoin Cash"
 msgstr "Bitcoin Cash"
 
+msgid "Bitcoin Voucher"
+msgstr "Voucher Bitcoin"
+
 msgid "Bitcoin vs Euro"
 msgstr "Bitcoin vs Euro"
 
 msgid "Bitcoin vs US dollar"
 msgstr "Bitcoin vs dolar AS"
+
+msgid "Bitcoin.co.id voucher withdrawal"
+msgstr "Penarikan voucher Bitcoin.co.id"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Teknologi Blockchain - Semua mata uang kripto menggunakan variasi teknologi blockchain (semacam buku besar) untuk mencetak catatan setiap transaksi. "
@@ -2391,11 +2400,11 @@ msgstr "Klien harus mendaftar secara pribadi."
 msgid "Clients registered with Binary (C.R.) S.A. can raise their unresolved disputes with management by submitting an email to complaints@binary.com."
 msgstr "Pelanggan yang terdaftar dibawah Binary (C.R.) S.A. dapat melanjutkan sengketa yang belum terselesaikan dengan manajemen dengan mengirimkan email ke complaints@binary.com."
 
-msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at"
-msgstr "  "
+msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at %2. UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %3website%4."
+msgstr "Klien yang terdaftar pada Binary (Europe) Ltd dapat mengangkat permasalahan mereka melalui Malta Gaming Authority %1 di %2. Klien Inggris yang terdaftar di Binary (Europe) Ltd dapat mengangkat permasalahan mereka melalui alternatif penyelesaian perselisihan IBAS dengan mengisi formulir pada %3website%4 ADR."
 
-msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr " "
+msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2."
+msgstr "Klien yang terdaftar pada Binary (IOM) Ltd dapat mengangkat permasalahan mereka melalui alternatif penyelesaian perselisihan IBAS dengan mengisi formulir pada %1website%2 ADR."
 
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found %1here%2."
 msgstr "Klien yang terdaftar pada Binary Investments (Europe) Ltd dapat melaporkan sengketa yang belum terselesaikan dengan Kantor Arbiter mengenai Jasa Keuangan. Rincian kontak dan panduan untuk mengajukan keluhan mengenai Kantor Arbiter dapat ditemukan %1disini%2."
@@ -2760,6 +2769,9 @@ msgstr "Membuat"
 msgid "Create Account"
 msgstr "Daftar Akun"
 
+msgid "Create Bitcoin.co.id IDR voucher"
+msgstr "Membuat voucher Bitcoin.co.id dalam IDR"
+
 msgid "Create Free Account"
 msgstr "Daftar Akun Gratis"
 
@@ -2774,6 +2786,9 @@ msgstr "Daftar Akun Baru"
 
 msgid "Create New Token"
 msgstr "Membuat Token Baru"
+
+msgid "Create Voucher"
+msgstr "Membuat Voucher"
 
 msgid "Create a MetaTrader 5 account"
 msgstr "Daftar akun MetaTrader 5"
@@ -3431,6 +3446,9 @@ msgstr "Alamat email"
 
 msgid "Email us your Identity Documents"
 msgstr "Email kami Dokumen Identitas Anda"
+
+msgid "Email:"
+msgstr "Email:"
 
 msgid "Email: "
 msgstr "Email: "
@@ -7029,6 +7047,9 @@ msgstr "Catatan"
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "Catatan: angka 2017 diproyeksikan dari angka sementara bulan Agustus"
 
+msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
+msgstr "Catatan: voucher IDR Bitcoin.co.id hanya tersedia untuk pelanggan Indonesia."
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Nota: Untuk pertanyaan mengenai akun non aktif atau pembatalan akun, silahkan hubungi <a href=\"%1\">Customer Support</a>."
 
@@ -7755,6 +7776,9 @@ msgstr "Pastikan Anda telah memilih Agen Pembayaran yang benar, salah transfer a
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "Silahkan hubungi kami kapan saja di <a href='mailto:%1'>%1</a>. Kami dengan senang hati akan membantu Anda. Jadi, jangan ragu untuk berbagi ide dan saran dengan kami."
 
+msgid "Please ensure that your current account has been authenticated before you proceed."
+msgstr "Pastikan akun Anda telah melengkapi otentikasi sebelum melanjutkan."
+
 msgid "Please enter a number between %1."
 msgstr "Silakan masukkan nomor antara %1."
 
@@ -8442,6 +8466,9 @@ msgstr "Mewakili jumlah kontrak pada portopolio Anda. Setiap baris pada portopol
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Mewakili jumlah maksimum pembelian kontrak dalam satu hari trading."
 
+msgid "Request successful. We will notify you via email once your voucher is ready."
+msgstr "Permintaan berhasil. Kami akan menghubungi Anda setelah voucher tersedia."
+
 msgid "Requirements"
 msgstr "Persyaratan"
 
@@ -8871,9 +8898,6 @@ msgstr "Harus dimulai dengan huruf atau angka, dan mungkin mengandung tanda hubu
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "Jika biaya ini tidak cukup ditutupi oleh sisa saldo pada akun Anda maka kami berhak untuk mencari alternatif untuk meneliti  pilihan lain untuk memperoleh pembayaran, seperti: jika akun Anda menghasilkan hasil komisi, maka kami akan menahan komisi tersebut untuk akun bersangkutan hingga kerugian habis tertutupi."
 
-msgid "Show payment agents for:"
-msgstr "Lihat agen pembayaran untuk:"
-
 msgid "Sign me up"
 msgstr "Daftarkan saya"
 
@@ -9069,11 +9093,11 @@ msgstr "Stays Between"
 msgid "Stays Between/Goes Outside trades"
 msgstr "Kontrak Tetap Antara/Bergerak Keluar"
 
-msgid "Stays In/Goes Out"
-msgstr "Stays In/Goes Out"
+msgid "Stays In/Out"
+msgstr "Stays In/Out"
 
-msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Kontrak In/Goes Out akan mendapat pengembalian harga beli jika terdapat kurang dari 2 tik penyelesaian dari waktu mulai hingga akhir."
+msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr "Kontrak In/Out akan dikembalikan berdasarkan harga beli jika terdapat kurang dari 2 tik antara waktu mulai dan akhir."
 
 msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr "Stays In/Out – Menganalisa pasar akan tetap didalam atau bergerak keluar dua harga target kapan saja selama periode kontrak berlangsung"
@@ -10948,9 +10972,6 @@ msgstr "Jenis kontrak"
 msgid "UK and Manx residents will have their account opened with Binary (IOM) Ltd."
 msgstr "Warga Inggris dan Manx akan memiliki akun mereka didaftar dengan Binary (IOM) Ltd."
 
-msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr " "
-
 msgid "URL"
 msgstr "URL"
 
@@ -12004,6 +12025,12 @@ msgstr "Penarikan dari akun MT5"
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr "Menarik dana dari akun MetaTrader 5 kedalam akun Binary Anda."
 
+msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
+msgstr "Menarik dana dalam voucher IDR Bitcoin.co.id."
+
+msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
+msgstr "Tarik dana Anda dalam voucher IDR Bitcoin.co.id. Voucher dalam mata uang IDR dan nilai adalah berdasarkan nilai tukar yang berlaku."
+
 msgid "Withdrawal"
 msgstr "Penarikan"
 
@@ -12304,7 +12331,7 @@ msgstr "Anda telah mendaftar berbagai akun yang tersedia bagi Anda."
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "Anda telah sepenuhnya membaca dan memahami: (i) pernyataan pengungkapan resiko; (ii) kebijakan eksekusi order; (iii) syarat dan ketentuan yang melekat pada perjanjian ini; sebelum meminta untuk mendaftar Akun Riil bersama kami;"
 
-msgid "You have insufficient fund in your Binary account, please <a href=\"%1\">add fund</a>."
+msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr "Anda tidak memiliki dana yang cukup di akun Binary Anda, silahkan <a href=\"%1\">tambah dana</a>."
 
 msgid "You have insufficient funds in your account."
@@ -13033,8 +13060,8 @@ msgstr "hari ini"
 msgid "today, Fridays"
 msgstr "hari ini, Jumat"
 
-msgid "up/down, touch/no-touch, stays in/goes out."
-msgstr "up/down, touch/no-touch, stays in/goes out."
+msgid "up/down, touch/no-touch, stays in/out."
+msgstr "up/down, touch/no-touch, stays in/out."
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "atas permintaan dari kami, yang bersangkutan akan memberikan segala informasi yang diperlukan kepada Perusahaan untuk memenuhi semua tuntutan atau permintaan atau Pesanan atau persyaratan apapun dari pemerintah atau otoritas lainnya;"
@@ -13056,9 +13083,6 @@ msgstr "token verifikasi"
 
 msgid "volume (units)"
 msgstr "volume (unit)"
-
-msgid "website"
-msgstr "situs web"
 
 msgid "week"
 msgstr "minggu"

@@ -6,6 +6,7 @@ const LostPassword = (() => {
 
     const responseHandler = (response) => {
         if (response.verify_email) {
+            $('#password_reset_description').setVisibility(0);
             $(form_id).html($('<div/>', { class: 'notice-msg', text: localize('Please check your email for the password reset link.') }));
         } else if (response.error) {
             $('#form_error').setVisibility(1).text(localize(response.error.message));

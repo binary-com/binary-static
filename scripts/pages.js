@@ -3,6 +3,7 @@ module.exports = [
     // ==================== Section: "app" ====================
     ['cashier',                            'app/cashier/index',                         'default',    'Cashier'],
     ['cashier/account_transfer',           'app/cashier/account_transfer',              'default',    'Transfer Between Accounts'],
+    ['cashier/bitcoin-voucher',            'app/cashier/bitcoin_voucher',               'default',    'Bitcoin Voucher',                   'NOT-id'],
     ['cashier/confirmation',               'app/cashier/confirmation',                  'default',    'Confirm'],
     ['cashier/deposit-jp',                 'app/japan/cashier/deposit',                 'default',    'Deposit',                           'NOT-ja,en'],
     ['cashier/epg_forwardws',              'app/cashier/deposit_withdraw',              'default',    'Cashier'],
@@ -140,4 +141,5 @@ module.exports = [
     ['graduates',                          'landing_pages/graduate_program',            null,        'Binary.com Graduate Program',        'NOT-en'],
     ['hackathon',                          'landing_pages/hackathon',                   null,        'Hackathon Competition',              'NOT-en'],
     ['landing/signup-frame',               'landing_pages/signup_frame',                null,        'Sign up'],
+    ['binary-japan-landing',               'landing_pages/binary_japan',                null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
 ];

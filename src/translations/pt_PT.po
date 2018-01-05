@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-01 20:59-0500\n"
+"PO-Revision-Date: 2018-01-04 02:56-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -592,8 +592,8 @@ msgstr "<a href='%1'>Escritórios</a> em Malta, Malásia e Japão"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Todas as durações</strong> - de 10 segundos a 365 dias."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Todas as condições do mercado</strong> - acima/abaixo, toca/não toca, fica dentro/sai fora."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Todos os mercados</strong> - moedas, índices de ações e matérias-primas."
@@ -1200,6 +1200,9 @@ msgstr "Quantia"
 
 msgid "Amount of above assets"
 msgstr "Quantidade de ativos acima"
+
+msgid "Amount:"
+msgstr ""
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Um diploma de ensino avançado/superior/pós-graduação ou Bacharel"
@@ -1914,11 +1917,17 @@ msgstr "Bitcoin"
 msgid "Bitcoin Cash"
 msgstr "Bitcoin Cash"
 
+msgid "Bitcoin Voucher"
+msgstr ""
+
 msgid "Bitcoin vs Euro"
 msgstr "Bitcoin vs Euro"
 
 msgid "Bitcoin vs US dollar"
 msgstr "Bitcoin vs dólar dos EUA"
+
+msgid "Bitcoin.co.id voucher withdrawal"
+msgstr ""
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr " "
@@ -2401,11 +2410,11 @@ msgstr "Os clientes devem registrar-se pessoalmente."
 msgid "Clients registered with Binary (C.R.) S.A. can raise their unresolved disputes with management by submitting an email to complaints@binary.com."
 msgstr "Os clientes registrados na Binary (C.R.) S.A. podem dar continuidade às disputas com a gerência enviando um e-mail para complaints@binary.com."
 
-msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at"
-msgstr "Os clientes registrados na Binary (Europe) Ltd podem dar continuidade às disputas não resolvidas com a Malta Gaming Authority (Autoridade do Jogo de Malta) %1 em"
+msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at %2. UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %3website%4."
+msgstr ""
 
-msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "Os clientes registrados na Binary (IOM) Ltd podem levantar as suas disputas não resolvidas juntos à entidade de resolução de disputas alternativa, IBAS, ao preencher e entregar o formulário ADR dessa entidade"
+msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2."
+msgstr ""
 
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found %1here%2."
 msgstr "Os clientes registrados na Binary Investments (Europe) Ltd podem dar levar as suas disputas não resolvidas ao Escritório do Árbitro de Serviços Financeiros. Dados de contato e diretrizes sobre como formular uma queixa junto do Escritório do Árbitro encontram-se %1aqui%2."
@@ -2770,6 +2779,9 @@ msgstr "Criar"
 msgid "Create Account"
 msgstr "Criar conta"
 
+msgid "Create Bitcoin.co.id IDR voucher"
+msgstr ""
+
 msgid "Create Free Account"
 msgstr "Criar uma conta gratuita"
 
@@ -2784,6 +2796,9 @@ msgstr "Criar uma conta nova"
 
 msgid "Create New Token"
 msgstr "Criar um novo token"
+
+msgid "Create Voucher"
+msgstr ""
 
 msgid "Create a MetaTrader 5 account"
 msgstr ""
@@ -3441,6 +3456,9 @@ msgstr "Endereço de e-mail"
 
 msgid "Email us your Identity Documents"
 msgstr "Envie-nos os seus documentos de identificação por e-mail"
+
+msgid "Email:"
+msgstr ""
 
 msgid "Email: "
 msgstr "E-mail: "
@@ -7040,6 +7058,9 @@ msgstr "Nota"
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "Nota: os números de 2017 são projeções dos números intercalares de agosto"
 
+msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
+msgstr ""
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Nota: Para quaisquer dúvidas relacionadas com contas desativadas ou excluídas, contate o <a href=\"%1\">Apoio ao cliente</a>."
 
@@ -7766,6 +7787,9 @@ msgstr "Confirme os detalhes da transação para concluir a transferência:"
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "Contate-nos para expor as suas questões, quaisquer que sejam, através de <a href='mailto:%1'>%1</a>. Teremos muito prazer em receber os seus comentários e estamos prontos para ajudá-lo. Portanto, sinta-se à vontade para compartilhar as suas ideias e sugestões conosco."
 
+msgid "Please ensure that your current account has been authenticated before you proceed."
+msgstr ""
+
 msgid "Please enter a number between %1."
 msgstr "Digite um número entre %1."
 
@@ -8453,6 +8477,9 @@ msgstr "Representa o número máximo de contratos pendentes no seu portfólio. C
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Representa o volume máximo de contratos que pode comprar em qualquer dia de negociações."
 
+msgid "Request successful. We will notify you via email once your voucher is ready."
+msgstr ""
+
 msgid "Requirements"
 msgstr "Requisitos"
 
@@ -8882,9 +8909,6 @@ msgstr "Deve começar com uma letra ou um número e pode conter um hífen e subl
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "Caso as despesas não sejam cobertas por fundos na sua conta, reservamo-nos o direito de investigar outros meios alternativos para obtermos o pagamento, por exemplo: se a sua conta tiver gerado contas de compras, iremos reter o pagamento da comissão dessas contas até ao momento em que a conta de prejuízos tenha sido saldada."
 
-msgid "Show payment agents for:"
-msgstr "Exibir Agentes de Pagamentos para:"
-
 msgid "Sign me up"
 msgstr "Registrar-me"
 
@@ -9080,11 +9104,11 @@ msgstr "Fica entre"
 msgid "Stays Between/Goes Outside trades"
 msgstr "Negociações Fica entre/Sai fora"
 
-msgid "Stays In/Goes Out"
-msgstr "Fica dentro/Sai fora"
+msgid "Stays In/Out"
+msgstr ""
 
-msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Os contratos \"Fica Dentro/Sai Fora\" serão reembolsados ao preço de compra caso existam menos de 2 tique-taques entre a hora de início e a hora final."
+msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
 
 msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr "Fica dentro/Sai fora – Preveja que o mercado permanecerá dentro ou sairá fora de dois preços-alvo em qualquer momento durante o período do contrato"
@@ -10960,9 +10984,6 @@ msgstr "Tipos de negociações"
 msgid "UK and Manx residents will have their account opened with Binary (IOM) Ltd."
 msgstr "Os residentes no RU e Manx abrirão as suas contas pela Binary (IOM) Ltd."
 
-msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "Os clientes do Reino Unido registrados na Binary (Europe) Ltd podem levantar as suas disputas juntos à entidade de resolução de disputas alternativa, IBAS, ao preencher e entregar o formulário de adjudicação na ADR dessa entidade"
-
 msgid "URL"
 msgstr "URL"
 
@@ -12016,6 +12037,12 @@ msgstr ""
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr ""
 
+msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
+msgstr ""
+
+msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
+msgstr ""
+
 msgid "Withdrawal"
 msgstr "Retirada"
 
@@ -12316,7 +12343,7 @@ msgstr "Você já criou todas as contas disponíveis para você."
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "Você leu e compreendeu na totalidade: (i) a Declaração de divulgação de risco; (ii) a Política de execução de ordens; (iii) os termos e condições que acompanham este Acordo; antes de solicitar a abertura de uma conta real conosco;"
 
-msgid "You have insufficient fund in your Binary account, please <a href=\"%1\">add fund</a>."
+msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr ""
 
 msgid "You have insufficient funds in your account."
@@ -13045,8 +13072,8 @@ msgstr "hoje"
 msgid "today, Fridays"
 msgstr "hoje, sextas-feiras"
 
-msgid "up/down, touch/no-touch, stays in/goes out."
-msgstr "acima/abaixo, toca/não toca, fica dentro/sai fora"
+msgid "up/down, touch/no-touch, stays in/out."
+msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "mediante o nosso pedido, ele forneça à Empresa quaisquer informações razoavelmente necessárias para totalmente satisfazer quaisquer exigências ou pedidos ou ordens ou necessidades de qualquer governo ou outra autoridade;"
@@ -13068,9 +13095,6 @@ msgstr "token de verificação"
 
 msgid "volume (units)"
 msgstr ""
-
-msgid "website"
-msgstr "página Web"
 
 msgid "week"
 msgstr "semana"

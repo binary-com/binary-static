@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-01 20:59-0500\n"
+"PO-Revision-Date: 2018-01-04 02:56-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -179,7 +179,7 @@ msgid "%1 employs over 130 people across its offices in Malta, Malaysia and Japa
 msgstr "マルタ、マレーシア、日本オフィス全体で130人以上の従業員が活躍しています。"
 
 msgid "%1 enters Forex and CFD trading with the universally acclaimed MetaTrader 5 to its continued leadership presence in the binary options market."
-msgstr ""
+msgstr "%1 enters Forex and CFD trading with the universally acclaimed MetaTrader 5 to its continued leadership presence in the binary options market."
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "最高水準 のFXバイナリーオプション取引環境を提供し、又、業界最多の9通貨ペアとラダー、タッチ、レンジにより多数の取引機会を提供します。"
@@ -596,8 +596,8 @@ msgstr "<a href='%1'>事務所</a>\n"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>幅広い取引期間</strong>：2時間以上から取引期間の指定が可能です"
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>どのような市場状況でもトレードが可能</strong>： ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>取引対象</strong>- 外国為替市場の主要通貨ペア"
@@ -1199,6 +1199,9 @@ msgstr "金額"
 
 msgid "Amount of above assets"
 msgstr "上記資産額"
+
+msgid "Amount:"
+msgstr ""
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "高度専門士、専門士、準修士または学士"
@@ -1918,11 +1921,17 @@ msgstr "ビットコイン"
 msgid "Bitcoin Cash"
 msgstr "ビットコインキャッシュ"
 
+msgid "Bitcoin Voucher"
+msgstr ""
+
 msgid "Bitcoin vs Euro"
 msgstr "ビットコイン vs ユーロ"
 
 msgid "Bitcoin vs US dollar"
 msgstr "ビットコイン vs 米ドル"
+
+msgid "Bitcoin.co.id voucher withdrawal"
+msgstr ""
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr ""
@@ -2408,11 +2417,11 @@ msgstr "（準拠法）\n"
 msgid "Clients registered with Binary (C.R.) S.A. can raise their unresolved disputes with management by submitting an email to complaints@binary.com."
 msgstr "Binary (C.R.) S.A.にご口座を開設されたお客さまは、 complaints@binary.comまでご連絡頂くことで当社のマネージメントに苦情を申し立てることができます。"
 
-msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at"
-msgstr "Binary (Europe) Ltdで口座を開設されたお客さまは、%1からMalta Gaming Authority（マルタギャンブル監督機関）に解決できていない問題をご提起いただけます。"
+msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at %2. UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %3website%4."
+msgstr ""
 
-msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "Binary (IOM) Ltdでご登録されたお客様は、ADR法人の裁定フォームにご記入いただくことで、IBASの裁判外紛争解決法人に未解決の抵触内容をご提出いただけます"
+msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2."
+msgstr ""
 
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found %1here%2."
 msgstr "Binary Investments (Europe) Ltdで登録されたお客さまは、Office of the Arbiter for Financial Servicesに未解決の紛争を提出することができます。%1heこちら%2からArbiter’s Officeへの苦情提出に関する詳細とガイドラインをご覧いただけます。"
@@ -2778,6 +2787,9 @@ msgstr "作成"
 msgid "Create Account"
 msgstr "口座開設"
 
+msgid "Create Bitcoin.co.id IDR voucher"
+msgstr ""
+
 msgid "Create Free Account"
 msgstr "口座開設"
 
@@ -2792,6 +2804,9 @@ msgstr "次へ"
 
 msgid "Create New Token"
 msgstr "新しいトークンを作成"
+
+msgid "Create Voucher"
+msgstr ""
 
 msgid "Create a MetaTrader 5 account"
 msgstr ""
@@ -3449,6 +3464,9 @@ msgstr "メールアドレス"
 
 msgid "Email us your Identity Documents"
 msgstr "マイナンバー確認書類＆本人確認書類の送付"
+
+msgid "Email:"
+msgstr ""
 
 msgid "Email: "
 msgstr "Email: "
@@ -7063,6 +7081,9 @@ msgstr "注意"
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "注：2017年の数字は8月の中間決済からの予測を含みます"
 
+msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
+msgstr ""
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 
@@ -7792,6 +7813,9 @@ msgstr "送金を完了するために、取引明細をご確認ください。
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "ご不明な点がございましたら、<a href='mailto:%1'>%1</a>までお問い合わせください。喜んでサポートさせていただきます。ご希望、ご要望等ございましたらお気軽にご連絡ください。"
 
+msgid "Please ensure that your current account has been authenticated before you proceed."
+msgstr ""
+
 msgid "Please enter a number between %1."
 msgstr "%1の間の数字を入力してください。"
 
@@ -8480,6 +8504,9 @@ msgstr "最大保有ポジションの総数を示し、各行を１件分のオ
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "購入可能な１日あたりのトレードの総額を示します。"
 
+msgid "Request successful. We will notify you via email once your voucher is ready."
+msgstr ""
+
 msgid "Requirements"
 msgstr "必須項目"
 
@@ -8912,9 +8939,6 @@ msgstr "文字または数字から始める必要があり、ハイフンや下
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "万が一、スパム行為への対策費用がアフィリエイト会員のアフィリエイト口座から回収できない場合、当社は別途回収方法を調査する権利を有します。例として、対策費用を全て回収できるまでアフィリエイト口座に発生した報酬を差し引くなどという方法が適用されます。"
 
-msgid "Show payment agents for:"
-msgstr "決済サービスを表示する"
-
 msgid "Sign me up"
 msgstr "登録"
 
@@ -9110,11 +9134,11 @@ msgstr "STAY-IN"
 msgid "Stays Between/Goes Outside trades"
 msgstr "STAY-IN/BREAK-OUT トレード"
 
-msgid "Stays In/Goes Out"
-msgstr "STAY-IN/BREAK-OUT"
+msgid "Stays In/Out"
+msgstr ""
 
-msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください。"
+msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
 
 msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr "取引期間中に設定した上下バリア価格の「範囲内にとどまり続ける」か「範囲外へ出る」かを予測して取引をされたい場合は「STAY-IN/BREAK-OUT」を選択して下さい。"
@@ -11075,9 +11099,6 @@ msgstr "トレードの種類"
 msgid "UK and Manx residents will have their account opened with Binary (IOM) Ltd."
 msgstr "イギリス及びマン島に居住のお客さまのご口座は、この会社の下に開設されます。"
 
-msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "Binary (Europe) Ltdでご登録されたイギリス在住のお客さまは、ADR法人上の裁定フォームにご記入いただくことで、IBASの裁判外紛争解決法人に抵触内容をご提出いただけます。"
-
 msgid "URL"
 msgstr "URL"
 
@@ -12134,6 +12155,12 @@ msgstr ""
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr ""
 
+msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
+msgstr ""
+
+msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
+msgstr ""
+
 msgid "Withdrawal"
 msgstr "出金"
 
@@ -12434,7 +12461,7 @@ msgstr "現在開設いただける口座はありません。"
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 
-msgid "You have insufficient fund in your Binary account, please <a href=\"%1\">add fund</a>."
+msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr ""
 
 msgid "You have insufficient funds in your account."
@@ -13182,8 +13209,8 @@ msgstr "本日"
 msgid "today, Fridays"
 msgstr "本日：金曜日"
 
-msgid "up/down, touch/no-touch, stays in/goes out."
-msgstr "ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
+msgid "up/down, touch/no-touch, stays in/out."
+msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
@@ -13205,9 +13232,6 @@ msgstr "ワンタイムパスワード"
 
 msgid "volume (units)"
 msgstr ""
-
-msgid "website"
-msgstr "ウェブサイト"
 
 msgid "week"
 msgstr "週間"

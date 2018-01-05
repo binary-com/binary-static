@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-01 20:58-0500\n"
+"PO-Revision-Date: 2018-01-04 02:56-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -591,8 +591,8 @@ msgstr "<a href='%1'>Niederlassungen</a> in Malta, Malaysia und Japan"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Alle Laufzeiten</strong> - von 10 Sekunden bis 365 Tage."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Alle Marktbedingungen</strong> - hoch/tief, Ziel/kein Ziel, bleibt unter/geht über."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Alle Märkte</strong> - Währungen, Aktienindizes und Rohstoffe."
@@ -1193,6 +1193,9 @@ msgstr "Betrag"
 
 msgid "Amount of above assets"
 msgstr "Betrag für obige Anlagen"
+
+msgid "Amount:"
+msgstr ""
 
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Ein akademischer Grad, Graduiertendiplom oder Bachelor-Abschluss"
@@ -1905,11 +1908,17 @@ msgstr "Bitcoin"
 msgid "Bitcoin Cash"
 msgstr "Bitcoin-Cash"
 
+msgid "Bitcoin Voucher"
+msgstr ""
+
 msgid "Bitcoin vs Euro"
 msgstr "Bitcoin gegen Euro"
 
 msgid "Bitcoin vs US dollar"
 msgstr "Bitcoin gegen US Dollar"
+
+msgid "Bitcoin.co.id voucher withdrawal"
+msgstr ""
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Blockchain Technologie – Alle Kryptowährungen verwenden eine Variante der Blockchain-Technologie (eine Art öffentlicher Ledger), um Aufzeichnungen über jede Transaktion zu erhalten. "
@@ -2391,11 +2400,11 @@ msgstr "Kunden müssen sich in eigener Person anmelden."
 msgid "Clients registered with Binary (C.R.) S.A. can raise their unresolved disputes with management by submitting an email to complaints@binary.com."
 msgstr "Kunden, die bei Binary (C.R.) S.A angemeldet sind, können ihre ungelösten Streitfälle durch die Übersendung einer E-Mail an complaints@binary.com der Geschäftsleitung vorlegen."
 
-msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at"
-msgstr "Kunden, die bei Binary (Europe) Ltd angemeldet sind, können ihre ungelösten Streitfälle der Malta Gaming Authority %1 unter vorlegen"
+msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at %2. UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %3website%4."
+msgstr ""
 
-msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "Britische Kunden, die bei Binary (IOM) Ltd. angemeldet sind, können Ihre ungelösten Streitfälle bei der außergerichtlichen Schlichtungsstelle IBAS einreichen, indem sie das Schiedsgerichtsformular auf der Plattform der Schlichtungsstelle ausfüllen"
+msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2."
+msgstr ""
 
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found %1here%2."
 msgstr "Kunden die mit Binary Investments (Europe) Ltd registriert sind, können ihre ungelösten Streitfälle mit dem Amt des Vermittlers für Finanzdienstleistungen (Office of the Arbiter for Financial Services) erheben. Kontaktdaten und eine Anleitung zur Einreichung einer Beschwerde mit dem Vermittler-Büro finden Sie %1hier%2."
@@ -2760,6 +2769,9 @@ msgstr "Erstellen"
 msgid "Create Account"
 msgstr "Konto einrichten"
 
+msgid "Create Bitcoin.co.id IDR voucher"
+msgstr ""
+
 msgid "Create Free Account"
 msgstr "Gratis Konto eröffnen"
 
@@ -2774,6 +2786,9 @@ msgstr "Neues Konto einrichten"
 
 msgid "Create New Token"
 msgstr "Neuen Token erstellen"
+
+msgid "Create Voucher"
+msgstr ""
 
 msgid "Create a MetaTrader 5 account"
 msgstr "Erstellen Sie ein MetaTrader 5 Konto"
@@ -3432,6 +3447,9 @@ msgstr "E-Mail Adresse"
 
 msgid "Email us your Identity Documents"
 msgstr "Senden Sie uns Ihre Ausweispapiere per E-Mail"
+
+msgid "Email:"
+msgstr ""
 
 msgid "Email: "
 msgstr "E-Mail:"
@@ -7030,6 +7048,9 @@ msgstr "Anmerkung"
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "Hinweis: 2017-Zahlen werden auf die vorläufigen Zahlen von August projiziert"
 
+msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
+msgstr ""
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Hinweis: Kontaktieren Sie bitte für alle Anfragen bezüglich deaktivierter oder ausgeschlossener Konten den <a href=\"%1\">Kundenservice</a>."
 
@@ -7619,7 +7640,7 @@ msgid "Payments"
 msgstr "Zahlungen"
 
 msgid "Payout"
-msgstr "Auszahlung"
+msgstr "Ausz"
 
 msgid "Payout per lot = 1,000"
 msgstr "Auszahlung pro Lot = 1.000"
@@ -7755,6 +7776,9 @@ msgstr "Bitte bestätigen Sie die Transaktionsdaten, um den Transfer zu vervolls
 
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "Setzen Sie sich bitte mit uns unter <a href='mailto:%1'>%1</a> in Verbindung und teilen Sie uns Ihre Anliegen mit. Wir freuen uns, von Ihnen zu hören und helfen Ihnen gerne. Also zögern Sie nicht, uns Ihre Ideen und Vorschläge mitzuteilen."
+
+msgid "Please ensure that your current account has been authenticated before you proceed."
+msgstr ""
 
 msgid "Please enter a number between %1."
 msgstr "Bitte geben Sie eine Zahl zwischen %1 ein."
@@ -8443,6 +8467,9 @@ msgstr "Stellt die maximale Anzahl an ausstehenden Verträgen Ihres Portfolios d
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Stellt das maximale Volumen an Kontrakten dar, die Sie an einem einzelnen Börsentag erwerben können."
 
+msgid "Request successful. We will notify you via email once your voucher is ready."
+msgstr ""
+
 msgid "Requirements"
 msgstr "Voraussetzungen"
 
@@ -8872,9 +8899,6 @@ msgstr "Sollte mit Buchstaben oder Zahlen beginnen, und kann einen Bindestrich u
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "Sollte das Guthaben auf Ihrem Konto zur Deckung dieser Kosten nicht ausreichen, behalten wir uns das Recht vor, andere Maßnahmen zu ergreifen, um diese Beträge zu erhalten. Falls beispielsweise Ihr Konto Kaufkonten generiert hat, werden wir die Zahlung der Provision für diese Konten bis zu dem Zeitpunkt zurückhalten, an dem der von Ihnen als Schadensersatz geschuldete Betrag vollständig beglichen ist."
 
-msgid "Show payment agents for:"
-msgstr "Zahlungsagent anzeigen für:"
-
 msgid "Sign me up"
 msgstr "Nehmen Sie mich auf"
 
@@ -9070,11 +9094,11 @@ msgstr "Bleibt Zwischen"
 msgid "Stays Between/Goes Outside trades"
 msgstr "Bleibt Innerhalb/Geht Außerhalb Kontrakte"
 
-msgid "Stays In/Goes Out"
-msgstr "Bleibt in/Geht außerhalb"
+msgid "Stays In/Out"
+msgstr ""
 
-msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Bleibt innerhalb/geht über Kontrakte werden zum Kaufkurs erstattet, wenn weniger als 2 Ticks zwischen der Start- und der Endzeit liegen."
+msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
 
 msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr "Bleibt Innerhalb/Au­ßer­halb - Sagen Sie voraus, dass der Kurs sich innerhalb oder außerhalb zwischen zwei Zielkursen zu jeder Zeit während der Kontraktlaufzeit bewegt"
@@ -10948,9 +10972,6 @@ msgstr "Kontraktarten"
 msgid "UK and Manx residents will have their account opened with Binary (IOM) Ltd."
 msgstr "Personen mit gewöhnlichem Wohnsitz in GB und Manx können ihr Konto bei Binary (IOM) Ltd. eröffnen."
 
-msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
-msgstr "Britische Kunden, die bei Binary (Europa) Ltd. angemeldet sind, können Ihren Streitfall bei der außergerichtlichen Schlichtungsstelle, der IBAS einreichen, indem sie das Schiedsgerichtsformular auf der Plattform der Schlichtungsstelle ausfüllen"
-
 msgid "URL"
 msgstr "URL"
 
@@ -12004,6 +12025,12 @@ msgstr ""
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr ""
 
+msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
+msgstr ""
+
+msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
+msgstr ""
+
 msgid "Withdrawal"
 msgstr "Abhebung"
 
@@ -12308,7 +12335,7 @@ msgstr "Sie haben alle für Sie verfügbaren Konten erstellt."
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr "Sie haben die: (i) Haftungsausschlusserklärung; (ii) Regeln der Orderausführung; (iii) allgemeinen Geschäftsbedingungen, die in dieser Vereinbarung angehängt sind; völlig gelesen und verstanden; bevor Sie anfragen, ein Echtgeldkonto mit uns zu eröffnen;"
 
-msgid "You have insufficient fund in your Binary account, please <a href=\"%1\">add fund</a>."
+msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr ""
 
 msgid "You have insufficient funds in your account."
@@ -13037,8 +13064,8 @@ msgstr "heute"
 msgid "today, Fridays"
 msgstr "heute, Freitage"
 
-msgid "up/down, touch/no-touch, stays in/goes out."
-msgstr "auf/ab, Ziel/kein Ziel, bleibt innerhalb/geht außerhalb."
+msgid "up/down, touch/no-touch, stays in/out."
+msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "auf unser Verlangen hin, stellt er dem Unternehmen alle vernünftigerweise erforderlichen Auskünfte zur Verfügung, um alle Anforderungen, Wünsche, Bestellungen, oder die Anforderungen von einer Regierung oder einer anderen Behörde zu erfüllen;"
@@ -13060,9 +13087,6 @@ msgstr "Verifikationstoken"
 
 msgid "volume (units)"
 msgstr ""
-
-msgid "website"
-msgstr "Website"
 
 msgid "week"
 msgstr "Woche"
