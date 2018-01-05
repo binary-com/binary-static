@@ -8,6 +8,8 @@ window.onload = function() {
 
     tabWithIndicator('teams-tab');
     tabWithButtons('employees-tab');
+
+    commonOnload();
 };
 
 function scrollToSection(e) {

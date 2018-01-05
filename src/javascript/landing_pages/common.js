@@ -66,7 +66,7 @@ function getParamValue(url, key) {
 }
 
 function allLanguages() {
-    return [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ko', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
+    return [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ko', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw', 'ach' ];
 }
 
 function getLanguage() {
@@ -143,3 +143,28 @@ function toggleAllSiblings(elem, filter, class_name) {
     } while (elem = elem.nextSibling)
 }
 
+function setupCrowdin() {
+    const isInContextEnvironment = () => (
+        /^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href) &&
+            /ach/i.test(getLanguage())
+    );
+
+    if (isInContextEnvironment()) {
+        const el_lang = document.getElementById('language');
+        if (el_lang) el_lang.style.display = 'none';
+        /* eslint-disable no-underscore-dangle */
+        window._jipt = [];
+        window._jipt.push(['project', 'binary-static']);
+        /* eslint-enable no-underscore-dangle */
+        if (document.body) {
+            const crowdinScript = document.createElement('script');
+            crowdinScript.setAttribute('src', `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`);
+            crowdinScript.setAttribute('type', 'text/javascript');
+            document.body.appendChild(crowdinScript);
+        }
+    }
+}
+
+function commonOnload() {
+    setupCrowdin();
+}
