@@ -253,7 +253,7 @@ const Durations = (() => {
                 selector: duration_id,
                 type    : 'diff',
                 minDate : 1,
-                maxDate : 364,
+                maxDate : 365,
                 native  : false,
             });
             amount_element.change((value) => {
@@ -322,7 +322,7 @@ const Durations = (() => {
                 DatePicker.init({
                     selector: '#expiry_date',
                     minDate : 0,
-                    maxDate : 364,
+                    maxDate : 365,
                 });
             } else {
                 const min_date    = moment.utc(+date_start_val * 1000);
@@ -524,11 +524,17 @@ const Durations = (() => {
 
     const validateMinDurationAmount = () => {
         const duration_amount_element  = document.getElementById('duration_amount');
-        const duration_min_element     = document.getElementById('duration_minimum');
-        const duration_max_element     = document.getElementById('duration_maximum');
         const duration_wrapper_element = document.getElementById('duration_wrapper');
+        if (!duration_amount_element || !duration_wrapper_element) {
+            return;
+        }
         if (!isVisible(duration_amount_element)) {
             duration_wrapper_element.setVisibility(0);
+            return;
+        }
+        const duration_min_element = document.getElementById('duration_minimum');
+        const duration_max_element = document.getElementById('duration_maximum');
+        if (!duration_min_element || !duration_max_element) {
             return;
         }
         duration_wrapper_element.setVisibility(1);

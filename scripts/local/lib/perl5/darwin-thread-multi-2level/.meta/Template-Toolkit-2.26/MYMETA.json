@@ -1,0 +1,51 @@
+{
+   "abstract" : "comprehensive template processing system",
+   "author" : [
+      "Andy Wardley <abw@wardley.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "ExtUtils::MakeMaker version 6.88, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.150010",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Template-Toolkit",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "AppConfig" : "1.56",
+            "File::Spec" : "0.8",
+            "File::Temp" : "0.12",
+            "Scalar::Util" : "0",
+            "Test::LeakTrace" : "0"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "repository" : {
+         "url" : "https://github.com/abw/Template2"
+      }
+   },
+   "version" : "2.26",
+   "x_serialization_backend" : "JSON::PP version 2.27400"
+}

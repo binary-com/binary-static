@@ -1,11 +1,6 @@
 const MenuSelector = require('../../_common/menu_selector');
-const TabSelector  = require('../../_common/tab_selector');
 
 module.exports = {
-    GetStartedBeta: {
-        onLoad  : () => { TabSelector.init('get_started_tabs', false, ['binary-options', 'mt5']); },
-        onUnload: () => { TabSelector.clean(); },
-    },
     BinaryOptions: {
         onLoad  : () => { MenuSelector.init(['what-are-binary-options', 'range-of-markets', 'types-of-trades', 'how-to-trade-binary', 'glossary']); },
         onUnload: () => { MenuSelector.clean(); },

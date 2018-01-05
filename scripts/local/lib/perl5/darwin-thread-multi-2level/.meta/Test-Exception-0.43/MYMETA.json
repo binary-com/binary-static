@@ -1,0 +1,69 @@
+{
+   "abstract" : "Test exception-based code",
+   "author" : [
+      "Adrian Howard <adrianh@quietstars.com>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "ExtUtils::MakeMaker version 7.0401, CPAN::Meta::Converter version 2.150001, CPAN::Meta::Converter version 2.150010",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Test-Exception",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {}
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Carp" : "0",
+            "Exporter" : "0",
+            "Sub::Uplevel" : "0.18",
+            "Test::Builder" : "0.7",
+            "Test::Builder::Tester" : "1.07",
+            "Test::Harness" : "2.03",
+            "base" : "0",
+            "perl" : "5.006001",
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0.7",
+            "overload" : "0"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/Test-More/test-exception/issues"
+      },
+      "homepage" : "https://github.com/Test-More/test-exception",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/Test-More/test-exception.git",
+         "web" : "https://github.com/Test-More/test-exception"
+      }
+   },
+   "version" : "0.43",
+   "x_IRC" : "irc://irc.perl.org/#perl-qa",
+   "x_MailingList" : "http://lists.perl.org/list/perl-qa.html",
+   "x_authority" : "cpan:ADIE",
+   "x_serialization_backend" : "JSON::PP version 2.27400"
+}

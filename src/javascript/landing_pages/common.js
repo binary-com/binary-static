@@ -13,7 +13,7 @@ function toggleMobileMenu() {
         e.stopPropagation();
         navbar.classList.toggle('expand');
         navbar_item.classList.toggle('expand');
-        if (/show/.test(el_language_dropdown.classList)) {
+        if (el_language_dropdown && /show/.test(el_language_dropdown.classList)) {
             toggleAllSiblings(el_language_dropdown.parentNode, filterById, 'invisible');
             el_language_dropdown.classList.remove('show');
         }
@@ -29,15 +29,10 @@ function collapseMenu() {
     }
 }
 
-function checkBrowser() {
-    const isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
-    const isIE = /*@cc_on!@*/false || !!document.documentMode; // Internet Explorer 6-11
-    return (isFirefox || isIE);
-}
-
 // scrollTo function with animation
 // - Gist reference: https://gist.github.com/andjosh/6764939
 function scrollTo(to, duration) {
+    if (typeof to === 'undefined') return;
     if (!duration) duration = 1000;
     let start = window.pageYOffset,
         change = to - start,
@@ -70,9 +65,12 @@ function getParamValue(url, key) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+function allLanguages() {
+    return [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ko', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
+}
+
 function getLanguage() {
-    let all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
-    let language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return all_languages.indexOf(l) >= 0; });
+    let language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return allLanguages().indexOf(l) >= 0; });
     return language || 'en';
 }
 
@@ -87,9 +85,11 @@ function wsConnect() {
     const server_url    = config_server || 'frontend.binaryws.com';
     endpointNotification(config_server);
 
-    const app_id        = localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
+    return new WebSocket(`wss://${server_url}/websockets/v3?app_id=${getAppId()}&l=${getLanguage()}`);
+}
 
-    return new WebSocket(`wss://${server_url}/websockets/v3?app_id=${app_id}&l=${getLanguage()}`);
+function getAppId() {
+    return localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
 }
 
 function wsSend(ws, request) {

@@ -9,32 +9,22 @@ const makeOption         = require('../../_common/common_functions').makeOption;
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
-const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 require('select2');
 
 const AccountOpening = (() => {
-    const redirectAccount = (account_type_ico) => { // eslint-disable-line consistent-return
-        const response_landing_company = State.getResponse('landing_company');
-        const response_get_settings    = State.getResponse('get_settings');
-        if (response_landing_company && response_get_settings) {
-            return redirect(account_type_ico, response_landing_company);
-        }
-        BinarySocket.wait('landing_company', 'get_settings').then(() => redirect(account_type_ico));
-    };
-
-    const redirect = (account_type_ico, response_landing_company) => {
-        const upgrade_info = Client.getUpgradeInfo(response_landing_company || State.getResponse('landing_company'), undefined, account_type_ico);
+    const redirectAccount = () => {
+        const upgrade_info = Client.getUpgradeInfo();
 
         if (!upgrade_info.can_upgrade) {
             BinaryPjax.loadPreviousUrl();
-            return true;
+            return -1;
         }
 
         if (!upgrade_info.is_current_path) {
             BinaryPjax.load(upgrade_info.upgrade_link);
-            return true;
+            return 1;
         }
-        return false;
+        return 0;
     };
 
     const populateForm = (form_id, getValidations, is_financial, is_ico_only) => {
@@ -134,7 +124,6 @@ const AccountOpening = (() => {
                 loginid     : response[message_type].client_id,
                 token       : response[message_type].oauth_token,
                 redirect_url: urlFor('user/set-currency'),
-                is_ico_only : getPropertyValue(response, ['echo_req', 'account_type']) === 'ico',
             });
         }
     };

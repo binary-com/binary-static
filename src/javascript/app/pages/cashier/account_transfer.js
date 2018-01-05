@@ -2,6 +2,7 @@ const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
 const isCryptocurrency   = require('../../common/currency').isCryptocurrency;
+const getMinWithdrawal   = require('../../common/currency').getMinWithdrawal;
 const FormManager        = require('../../common/form_manager');
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const localize           = require('../../../_common/localize').localize;
@@ -82,22 +83,22 @@ const AccountTransfer = (() => {
     };
 
     const showError = () => {
-        document.getElementById(messages.parent).setVisibility(1);
-        document.getElementById(messages.error).setVisibility(1);
+        const el_parent = document.getElementById(messages.parent);
+        if (el_parent) el_parent.setVisibility(1);
+        const el_error = document.getElementById(messages.error);
+        if (el_error) el_error.setVisibility(1);
     };
-
-    // TODO: change values when back-end updates logic
-    const getMinAmount = () => (isCryptocurrency(client_currency) ? 0.002 : 1);
 
     const getDecimals = () => (isCryptocurrency(client_currency) ? 8 : 2);
 
     const showForm = () => {
         elementTextContent(document.querySelector(`${form_id_hash} #currency`), client_currency);
 
-        document.getElementById(form_id).setVisibility(1);
+        const el_form = document.getElementById(form_id);
+        if (el_form) el_form.setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinAmount(), max: Math.min(+withdrawal_limit, +client_balance), format_money: true }]] },
+            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinWithdrawal(client_currency), max: Math.min(+withdrawal_limit, +client_balance), format_money: true }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -122,7 +123,8 @@ const AccountTransfer = (() => {
     };
 
     const populateReceipt = (response_submit_success, response) => {
-        document.getElementById(form_id).setVisibility(0);
+        const el_form = document.getElementById(form_id);
+        if (el_form) el_form.setVisibility(0);
 
         elementTextContent(document.getElementById('from_loginid'), client_loginid);
         elementTextContent(document.getElementById('to_loginid'), response_submit_success.client_to_loginid);
@@ -146,7 +148,7 @@ const AccountTransfer = (() => {
         BinarySocket.wait('balance').then((response) => {
             client_balance   = getPropertyValue(response, ['balance', 'balance']);
             client_currency  = Client.get('currency');
-            const min_amount = getMinAmount();
+            const min_amount = getMinWithdrawal(client_currency);
             if (!client_balance || +client_balance < min_amount) {
                 document.getElementById(messages.parent).setVisibility(1);
                 if (client_currency) {

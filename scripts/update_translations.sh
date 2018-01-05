@@ -49,7 +49,7 @@ confirm "Update the source file (messages.pot) and push to Crowdin?" &&
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     message "Updating translations source file" &&
-    ./scripts/translation.sh &&
+    ./scripts/render.js -t &&
     message "Uploading source file to Crowdin"
     crowdin upload sources
 fi &&
@@ -60,7 +60,7 @@ then
     message "Downloading translation files from Crowdin (*.po)" &&
     crowdin download &&
     message "Updating javascript translation files (*.js)"
-    ./scripts/js_translation.sh
+    ./scripts/render.js -j
 fi &&
 
 confirm "Commit changes and push to origin?" &&

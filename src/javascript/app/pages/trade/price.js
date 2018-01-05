@@ -74,9 +74,10 @@ const Price = (() => {
         }
 
         if (start_date && isVisible(start_date) && start_date.value !== 'now') {
-            const time = start_time.value.split(':');
+            const time     = start_time.value.split(':');
+            const set_time = moment.utc(Number(start_date.value) * 1000).hour(time[0]).minute(time[1]);
 
-            proposal.date_start = moment.utc(Number(start_date.value) * 1000).hour(time[0]).minute(time[1]).unix();
+            proposal.date_start = set_time ? set_time.unix() : undefined;
         }
 
         if (expiry_type && isVisible(expiry_type) && expiry_type.value === 'duration') {
