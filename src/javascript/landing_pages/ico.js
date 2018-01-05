@@ -148,7 +148,7 @@ window.onload = function() {
         }
     });
 
-    setupCrowdin();
+    commonOnload();
 };
 
 function clearHash() {
@@ -442,31 +442,6 @@ function setLanguage(el, name) {
 
     el_navbar_nav.classList.remove('invisible');
     el.classList.remove('invisible');
-}
-
-function setupCrowdin() {
-    const isInContextEnvironment = () => {
-        const lang_regex = new RegExp(`^(${allLanguages().join('|')})$`, 'i');
-        const url_params = window.location.href.split('/').slice(3);
-        const language   = (url_params.find(lang => lang_regex.test(lang)) || '');
-
-        return /^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href) &&
-        /ach/i.test(language)
-    };
-
-    if (isInContextEnvironment()) {
-        document.getElementById('language').style.display = 'none';
-        /* eslint-disable no-underscore-dangle */
-        window._jipt = [];
-        window._jipt.push(['project', 'binary-static']);
-        /* eslint-enable no-underscore-dangle */
-        if (document.body) {
-            const crowdinScript = document.createElement('script');
-            crowdinScript.setAttribute('src', `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`);
-            crowdinScript.setAttribute('type', 'text/javascript');
-            document.body.appendChild(crowdinScript);
-        }
-    }
 }
 
 function checkUserSession() {
