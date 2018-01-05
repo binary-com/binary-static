@@ -79,7 +79,7 @@ const Index = () => (
         <div className='container'>
             <div className='gr-parent'>
                 <p>{it.L('[_1] is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href=\'[_2]\'>visit our history page</a>.', it.website_name, it.url_for('group-history'))}</p>
-                <p>{it.L('In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A.')}</p>
+                <p>{it.L('In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A.')}</p>
             </div>
         </div>
     </div>

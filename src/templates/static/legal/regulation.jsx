@@ -103,7 +103,7 @@ const Regulation = () => (
     </Box>
 
     <Box header={it.L('Binary Investments (Europe) Ltd')} >
-        <p>{it.L('Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href=\'[_1]\' target=\'_blank\' download=1>licence no. IS/70156</a>). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd.', it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf'))}</p>
+        <p>{it.L('Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href=\'[_1]\' target=\'_blank\' download=1>licence no. IS/70156</a>). European Union residents who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd.', it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf'))}</p>
         <div className='gr-padding-30 gr-12' id='accordion'>
             <h3 aria-expanded='true' aria-selected='true'>{it.L('EU Passport Rights')}</h3>
             <div>
@@ -163,7 +163,7 @@ const Regulation = () => (
 
     <Box header={it.L('Binary (Europe) Ltd')} >
         <p>{it.L('Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - [_1]\'s Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href="https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495" target="_blank">view licence</a>.', it.website_name)}</p>
-        <p>{it.L('European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd.')}</p>
+        <p>{it.L('European Union residents who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd.')}</p>
         <RegulatorText />
         <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
     </Box>
