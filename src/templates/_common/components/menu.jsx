@@ -68,12 +68,6 @@ const menu = [
         text     : 'Payment Agent',
         className: 'invisible',
     },
-    { // Link to ico-subscribe, ICO Bids.
-        id       : 'topMenuIcoBids',
-        url      : '/user/ico-subscribe',
-        text     : 'ICO Bids',
-        className: 'invisible ico-only-show',
-    },
 ];
 
 const Menu = () => (
