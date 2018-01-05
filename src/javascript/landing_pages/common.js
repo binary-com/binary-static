@@ -7,6 +7,7 @@ function checkWidth() {
 
 function toggleMobileMenu() {
     const toggleButton = document.getElementById('toggle-menu');
+    if (!toggleButton) return;
     const navbar       = document.getElementById('navigation');
     const navbar_item  = document.getElementsByClassName('navbar-collapse')[0];
     const el_language_dropdown = document.getElementsByClassName('language-dropdown')[0];
