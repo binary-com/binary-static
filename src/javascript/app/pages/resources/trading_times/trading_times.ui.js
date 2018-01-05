@@ -1,14 +1,13 @@
-const moment                 = require('moment');
-const TradingTimes           = require('./trading_times');
-const BinarySocket           = require('../../../base/socket');
-const Table                  = require('../../../common/attach_dom/table');
-const jpClient               = require('../../../common/country_base').jpClient;
-const DatePicker             = require('../../../components/date_picker');
-const dateValueChanged       = require('../../../../_common/common_functions').dateValueChanged;
-const localize               = require('../../../../_common/localize').localize;
-const showLoadingImage       = require('../../../../_common/utility').showLoadingImage;
-const toISOFormat            = require('../../../../_common/string_util').toISOFormat;
-const toReadableFormat       = require('../../../../_common/string_util').toReadableFormat;
+const moment           = require('moment');
+const TradingTimes     = require('./trading_times');
+const BinarySocket     = require('../../../base/socket');
+const Table            = require('../../../common/attach_dom/table');
+const jpClient         = require('../../../common/country_base').jpClient;
+const DatePicker       = require('../../../components/date_picker');
+const dateValueChanged = require('../../../../_common/common_functions').dateValueChanged;
+const localize         = require('../../../../_common/localize').localize;
+const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
+const toISOFormat      = require('../../../../_common/string_util').toISOFormat;
 
 const TradingTimesUI = (() => {
     let $date,
@@ -32,12 +31,13 @@ const TradingTimesUI = (() => {
         }
 
         const date = moment.utc();
-        $date.val(toReadableFormat(date)).attr('data-value', toISOFormat(date));
+        $date.attr('data-value', toISOFormat(date));
         DatePicker.init({
             selector: '#trading-date',
             minDate : 0,
             maxDate : 364,
         });
+        $date.val(localize('Today'));
         $date.change(function () {
             if (!dateValueChanged(this, 'date')) {
                 return false;
