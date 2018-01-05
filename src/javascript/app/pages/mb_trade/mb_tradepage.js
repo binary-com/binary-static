@@ -24,7 +24,7 @@ const MBTradePage = (() => {
     };
 
     const init = () => {
-        if (Client.get('landing_company_shortcode') === 'malta') {
+        if (/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) {
             BinaryPjax.load(urlFor('trading'));
             return;
         }
