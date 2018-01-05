@@ -9,6 +9,8 @@ window.onload = function () {
     if (gclid) {
         localStorage.setItem('gclid', gclid);
     }
+
+    commonOnload();
 };
 
 function initForm() {
