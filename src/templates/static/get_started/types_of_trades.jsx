@@ -33,7 +33,7 @@ const TypesOfTrades = () => (
                 <h2><a href={it.url_for('trading?market=forex&formname=staysinout')}>{it.L('In/Out')}</a></h2>
                 <p>{it.L('There are two types of In/Out trades:')}</p>
                 <ol>
-                    <li>{it.L('Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period')}</li>
+                    <li>{it.L('Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period')}</li>
                     <li>{it.L('Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period')}</li>
                 </ol>
             </div>
