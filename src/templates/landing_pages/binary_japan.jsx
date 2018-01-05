@@ -467,7 +467,7 @@ const BinaryJapan = () => (
             <div  className='container'>
                 <div className='gr-row'>
                     <div className='gr-12'>
-                        <div className='card'>
+                        <div className='card header-offset'>
                             <div className='card-header__ribbon'>
                                 <h1>{it.L('{JAPAN ONLY}The learning center')}</h1>
                             </div>

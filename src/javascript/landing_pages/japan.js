@@ -15,13 +15,29 @@ window.onload = function () {
 
 function initForm() {
     const signup_forms = document.querySelectorAll('.signup-form');
-    const ws = wsConnect();
+    let ws = wsConnect();
 
     function sendVerifyEmail(val) {
+        const trimmed_email = trimEmail(val);
         wsSend(ws, {
-            verify_email: val,
+            verify_email: trimmed_email,
             type        : 'account_opening'
         });
+    }
+
+    function verifySubmit(msg) {
+        const response = JSON.parse(msg.data);
+        setValidationStyle(el_email, response.error);
+        if (!response.error) {
+            signup_forms.forEach(function(el) {
+                el.querySelector('.signup-form-input').classList.add('invisible');
+                el.querySelector('.signup-form-success').classList.remove('invisible');
+            });
+        }
+    }
+
+    function trimEmail(str) {
+        return str.replace(/\s/g, "");
     }
 
     let validation_set = false; // To prevent validating before submit
@@ -52,20 +68,13 @@ function initForm() {
         if (ws.readyState === 1) {
             sendVerifyEmail(el_email.value);
         } else {
-            ws.onopen = sendVerifyEmail;
+            ws = wsConnect();
+            ws.onopen = sendVerifyEmail(el_email.value);
+            ws.onmessage = verifySubmit;
         }
     }
 
-    ws.onmessage = function(msg) {
-        const response = JSON.parse(msg.data);
-        setValidationStyle(el_email, response.error);
-        if (!response.error) {
-            signup_forms.forEach(function(el) {
-                el.querySelector('.signup-form-input').classList.add('invisible');
-                el.querySelector('.signup-form-success').classList.remove('invisible');
-            });
-        }
-    };
+    ws.onmessage = verifySubmit;
 }
 
 function validateEmail(email) {

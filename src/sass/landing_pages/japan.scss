@@ -101,6 +101,10 @@ form {
         padding: 5px;
         color: $COLOR_WHITE;
         border-radius: 5px;
+
+        p {
+            text-align: center;
+        }
     }
 }
 
@@ -221,6 +225,9 @@ form {
         p {
             margin: 0;
         }
+    }
+    &.header-offset {
+        margin-top: 40px;
     }
 }
 
