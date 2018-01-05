@@ -18,6 +18,9 @@ section {
     .bg-shine-v {
         margin-top: -80px;
     }
+    .margin-bottom-40 {
+        margin-bottom: 40px;
+    }
 }
 
 footer {
@@ -47,6 +50,10 @@ form {
         color: $COLOR_WHITE;
         text-align: center;
         margin-top: 50px;
+
+        &.margin-bottom-30 {
+            margin-bottom: 30px;
+        }
     }
     .input-group {
         display: flex;
@@ -185,10 +192,21 @@ form {
         .color-gray {
             color: $COLOR_DARK_WHITE;
         }
+        .color-dark-gray {
+            /* stylelint-disable color-no-hex */
+            color: #a4a8b6;
+            /* stylelint-enable color-no-hex */
+        }
         .bg-gray {
             background-color: $COLOR_LIGHT_GRAY;
             border-radius: 5px;
             padding: 15px;
+        }
+        .image {
+            padding: 0 5px;
+        }
+        .text-desc {
+            margin: 0.5em 0 1em;
         }
     }
     .card-footer {
@@ -223,6 +241,9 @@ form {
     .box ~ .box {
         margin: 60px 0 0;
     }
+    &.margin-top-20 {
+        margin: 20px 0 0;
+    }
 }
 
 .flex-end {
@@ -231,6 +252,10 @@ form {
 
 .flex-space-between {
     justify-content: space-between;
+}
+
+.flex-space-evenly {
+    justify-content: space-evenly;
 }
 
 .flex-justify-content-center {
@@ -256,6 +281,10 @@ form {
     }
     &-semicircle {
         background-image: url('../images/japan/version1/semicircle.svg');
+    }
+    &-stretch {
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
@@ -302,7 +331,11 @@ form {
 }
 
 .text-semibold {
-    font-weight: 600;
+    font-weight: 600 !important;
+}
+
+.text-medium {
+    font-weight: 500 !important;
 }
 
 .color-blue {
@@ -519,10 +552,15 @@ form {
     }
     .bg-blue {
         background-color: $COLOR_BLUE;
+        padding: 10px 15px;
     }
     .bg-orange {
         background-color: $COLOR_ORANGE;
         font-weight: bold;
+
+        &.v-padding {
+            padding: 10px 15px;
+        }
     }
     .bg-ribbon {
         text-align: center;
@@ -534,6 +572,10 @@ form {
         @include speech-bubble($COLOR_BLUE, 30px, 'down');
         padding: 30px;
         font-size: 48px;
+
+        &.margin-bottom {
+            margin-bottom: 1em;
+        }
     }
 }
 
@@ -595,7 +637,8 @@ form {
             }
 
             & + .card-body {
-                margin-top: 40px;
+                margin-top: 60px;
+                margin-bottom: 40px;
             }
         }
     }
@@ -617,7 +660,7 @@ form {
         span {
             display: inline-block;
             text-align: center;
-            margin: 0;
+            margin: 0 5px;
         }
     }
 }
@@ -638,6 +681,7 @@ form {
                 text-align: center;
                 color: $COLOR_WHITE;
                 margin-bottom: 0;
+                font-size: 20px;
             }
         }
         &__ribbon {
@@ -655,7 +699,7 @@ form {
         left: 0;
         right: 0;
         margin: auto;
-        bottom: -15px;
+        bottom: -18px;
     }
     .card-divider {
         margin: 20px -20px;
@@ -668,6 +712,17 @@ form {
     }
     .color-red {
         color: $COLOR_RED;
+    }
+    &.key-plus {
+        font-weight: 500;
+        padding: 15px 15px 30px;
+
+        p {
+            margin: 0;
+        }
+    }
+    &.no-padding {
+        padding: 0;
     }
 }
 
@@ -733,6 +788,7 @@ form {
 
     &.box-o {
         border: 1px solid $COLOR_LIGHT_GRAY;
+        border-radius: 6px;
     }
     p {
         margin: 0;
@@ -752,14 +808,19 @@ form {
     &.icon-sm {
         height: 32px;
         width: 32px;
+
+        &.big {
+            height: 40px;
+            width: 40px;
+        }
     }
     &.icon-md {
         height: 48px;
         width: 48px;
     }
     &.icon-lg {
-        height: 64px;
-        min-width: 64px;
+        height: 50px;
+        min-width: 50px;
     }
 }
 
