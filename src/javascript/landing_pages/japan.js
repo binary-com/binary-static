@@ -22,7 +22,7 @@ function initForm() {
         const trimmed_email = trimEmail(val);
         wsSend(ws, {
             verify_email: trimmed_email,
-            type        : 'account_opening'
+            type        : 'account_opening',
         });
     }
 
@@ -30,7 +30,7 @@ function initForm() {
         const response = JSON.parse(msg.data);
         setValidationStyle(el_email, response.error);
         if (!response.error) {
-            signup_forms.forEach(function(el) {
+            signup_forms.forEach((el) => {
                 el.querySelector('.signup-form-input').classList.add('invisible');
                 el.querySelector('.signup-form-success').classList.remove('invisible');
             });
@@ -38,7 +38,7 @@ function initForm() {
     }
 
     function trimEmail(str) {
-        return str.replace(/\s/g, "");
+        return str.replace(/\s/g, '');
     }
 
     let validation_set = false; // To prevent validating before submit
