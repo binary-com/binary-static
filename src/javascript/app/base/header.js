@@ -140,7 +140,7 @@ const Header = (() => {
         Client.set('accepted_bch', 0);
         Client.set('loginid', loginid);
         // Load page based on account type.
-        if(Client.get('is_ico_only', loginid)) {
+        if (Client.get('is_ico_only', loginid)) {
             window.location.assign(Client.defaultRedirectUrl());
         } else {
             window.location.reload();

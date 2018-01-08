@@ -101,7 +101,9 @@ window.onload = function() {
         } else {
             document.getElementById('frm_accept_notice_error').classList.remove('invisible');
         }
-    })
+    });
+
+    commonOnload();
 };
 
 function validateResidence(el) {
