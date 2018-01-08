@@ -107,7 +107,9 @@ function tabWithButtons(id) {
     let current_index  = 0;
     let navs;
     let touchstartX = 0;
+    let touchstartY = 0;
     let touchendX = 0;
+    let touchendY = 0;
 
     (() => {
         const parent = el_tab_container.querySelector('.twb-buttons');
@@ -145,17 +147,21 @@ function tabWithButtons(id) {
 
         el_content_wrapper.addEventListener('touchstart', (event) => {
             touchstartX = event.changedTouches[0].screenX;
+            touchstartY = event.changedTouches[0].screenY;
         }, false);
         el_content_wrapper.addEventListener('touchend', (event) => {
             touchendX = event.changedTouches[0].screenX;
+            touchendY = event.changedTouches[0].screenY;
             touchEventsHandler();
         }, false);
 
         function touchEventsHandler() {
-            if (touchendX <= touchstartX) {
+            const diffY = touchendY - touchstartY;
+            const nochangeY = diffY >= -5 && diffY <= 5 ;
+            if (touchendX <= touchstartX && nochangeY) {
                 updateTabContent(++current_index); // swipe left
             }
-            if (touchendX >= touchstartX) {
+            if (touchendX >= touchstartX && nochangeY) {
                 updateTabContent(--current_index); // swipe right
             }
         }
