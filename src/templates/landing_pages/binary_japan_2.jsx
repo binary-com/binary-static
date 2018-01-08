@@ -20,11 +20,11 @@ const Product = ({
         <h3 className='center-text gr-padding-10'>{header}</h3>
         <p>{description}</p>
         <div className='gr-row gr-row-align-center'>
-            <div className='gr-3 gr-8-m'>
+            <div className='gr-3 gr-8-m tab-image'>
                 <img className='responsive' src={it.url_for(`images/pages/trade-explanation/ja/${image_1}.svg`)} />
             </div>
             <div className='gr-12-m gr-padding-10'></div>
-            <div className='gr-3 gr-8-m'>
+            <div className='gr-3 gr-8-m tab-image'>
                 <img className='responsive' src={it.url_for(`images/pages/trade-explanation/ja/${image_2}.svg`)} />
             </div>
         </div>
@@ -113,7 +113,7 @@ const BinaryJapan2 = () => (
             </section>
 
             <section className='bg-white edge--top edge--bottom--reverse'>
-                <div className='container padding-bottom-50 edge--top edge--bottom-reverse white-gap'>
+                <div className='container padding-bottom-50 edge--top edge--bottom-reverse tab-container white-gap'>
                     <div className='tab-with-buttons'>
                         <div className='twb-content-wrapper'>
                             <div className='twb-content-container'>
@@ -148,7 +148,7 @@ const BinaryJapan2 = () => (
             </section>
 
             <section className='bg-orange bg-lines'>
-                <div className='container padding-top-bottom-500'>
+                <div className='container padding-top-bottom-400'>
                     <div id='key-plus' className='section-title center-text'>
                         <h1 className='content-inverse-color'>{it.L('{JAPAN ONLY}Key plus point')}</h1>
                         <p className='content-inverse-color'>{it.L('{JAPAN ONLY}Here are some random texts.')}</p>

@@ -212,7 +212,7 @@
 @mixin gap($bgcolor, $flip: false, $angle: 12.4deg) {
     &:before {
         background-color: $bgcolor;
-        padding: 50px 0 60px;
+        padding: 20px;
         width: 100vw;
         content: '';
         display: block;

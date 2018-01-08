@@ -98,6 +98,11 @@ form {
 }
 
 /** Helpers **/
+.padding-top-bottom-400 {
+    padding-top: 400px;
+    padding-bottom: 400px;
+}
+
 .padding-top-bottom-500 {
     padding-top: 500px;
     padding-bottom: 500px;
@@ -583,6 +588,26 @@ form {
         }
         &-next {
             background-image: url('../images/pages/home-jp/icons/right_enabled.svg');
+        }
+    }
+}
+
+.tab-container {
+    @media (min-width: 1439px) {
+        padding-bottom: 0;
+        padding-top: 0;
+        width: 55vw;
+
+        .ic-1, .ic-2, .ic-3, .ic-4, .ic-5, .ic-6 {
+            background-size: cover;
+        }
+        .icon-sm {
+            width: 48px;
+            height: 48px;
+        }
+        .tab-image {
+            max-width: 50%;
+            flex-basis: 50%;
         }
     }
 }
