@@ -5,7 +5,11 @@ const urlParam    = require('../../_common/url').param;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
 
 const TermsAndConditions = (() => {
+    let sidebar_width;
+
     const onLoad = () => {
+        sidebar_width = $('.sidebar-collapsible-container').width();
+
         handleActiveTab();
         TNCApproval.requiresTNCApproval(
             $('#btn_accept'),
@@ -101,13 +105,12 @@ const TermsAndConditions = (() => {
 
         if (!$sidebar.is(':visible')) return;
 
-        const width = $sidebar.width();
         if (window.scrollY < $content.offset().top) {
             $sidebar.css({ position: 'relative' });
         } else if (window.scrollY > $content[0].offsetHeight - 118) { // 118 is the height difference between default and active sidebar state
-            $sidebar.css({ position: 'absolute', bottom: '20px', top: '', 'min-width': width });
+            $sidebar.css({ position: 'absolute', bottom: '20px', top: '', width: sidebar_width });
         } else {
-            $sidebar.css({ position: 'fixed', top: '0px', bottom: '', 'min-width': width });
+            $sidebar.css({ position: 'fixed', top: '0px', bottom: '', width: sidebar_width });
         }
     };
 
