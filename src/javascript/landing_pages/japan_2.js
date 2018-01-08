@@ -1,12 +1,11 @@
 window.onload = function () {
-    console.log('jp-2 init');
     toggleMobileMenu();
     initForm();
     tabWithButtons();
 
     window.onresize = checkWidth;
 
-    document.querySelectorAll('.page-scroll').forEach(function(el) {
+    document.querySelectorAll('.page-scroll').forEach((el) => {
         el.addEventListener('click', function(e) {
             e.preventDefault();
             scrollToSection(this);
@@ -34,13 +33,13 @@ function initForm() {
     function sendVerifyEmail(val) {
         wsSend(ws, {
             verify_email: val,
-            type        : 'account_opening'
+            type        : 'account_opening',
         });
     }
 
     let validation_set = false; // To prevent validating before submit
 
-    signup_forms.forEach(function(form) {
+    signup_forms.forEach((form) => {
         form.addEventListener('submit', handleSubmit);
     });
 
@@ -52,8 +51,8 @@ function initForm() {
         el_email = el_form.querySelector('input[type="email"]');
         if (!validateEmail(el_email.value)) {
             if (!validation_set) {
-                ['input', 'change'].forEach(function (evt) {
-                    el_email.addEventListener(evt, function () {
+                ['input', 'change'].forEach((evt) => {
+                    el_email.addEventListener(evt, () => {
                         setValidationStyle(!validateEmail(el_email.value));
                     });
                 });
@@ -71,13 +70,14 @@ function initForm() {
         } else {
             ws.onopen = sendVerifyEmail;
         }
+        return true;
     }
 
     ws.onmessage = function(msg) {
         const response = JSON.parse(msg.data);
         setValidationStyle(el_email, response.error);
         if (!response.error) {
-            signup_forms.forEach(function(el) {
+            signup_forms.forEach((el) => {
                 el.querySelector('.signup-form-input').classList.add('invisible');
                 el.querySelector('.signup-form-success').classList.remove('invisible');
             });
@@ -109,14 +109,14 @@ function tabWithButtons(id) {
     let touchstartX = 0;
     let touchendX = 0;
 
-    (function init() {
+    (() => {
         const parent = el_tab_container.querySelector('.twb-buttons');
 
         const ul = document.createElement('ul');
         for (let idx = 0; idx < num_of_items; idx++) {
             const li = document.createElement('li');
             li.classList[idx ? 'remove' : 'add']('active');
-            li.addEventListener('click', function(e) {
+            li.addEventListener('click', (e) => {
                 e.preventDefault();
                 updateTabContent(idx, false);
                 current_index = idx;
@@ -127,7 +127,7 @@ function tabWithButtons(id) {
         const btn_prev = document.createElement('a');
         btn_prev.classList.add('twb-button', 'twb-button-prev');
         btn_prev.setAttribute('href', 'javascript:;');
-        btn_prev.addEventListener('click', function(e) {
+        btn_prev.addEventListener('click', (e) => {
             e.preventDefault();
             updateTabContent(--current_index);
         });
@@ -135,7 +135,7 @@ function tabWithButtons(id) {
         const btn_next = document.createElement('a');
         btn_next.classList.add('twb-button', 'twb-button-next');
         btn_next.setAttribute('href', 'javascript:;');
-        btn_next.addEventListener('click', function(e) {
+        btn_next.addEventListener('click', (e) => {
             e.preventDefault();
             updateTabContent(++current_index);
         });
@@ -150,10 +150,10 @@ function tabWithButtons(id) {
             updateTabContent(current_index);
         };
 
-        el_content_wrapper.addEventListener('touchstart', function(event) {
+        el_content_wrapper.addEventListener('touchstart', (event) => {
             touchstartX = event.changedTouches[0].screenX;
         }, false);
-        el_content_wrapper.addEventListener('touchend', function(event) {
+        el_content_wrapper.addEventListener('touchend', (event) => {
             touchendX = event.changedTouches[0].screenX;
             touchEventsHandler();
         }, false);
@@ -181,7 +181,7 @@ function tabWithButtons(id) {
             el_content_container.style.left = `${((offset > 0 ? -offset : offset) % (num_of_items * width))}px`;
         }
         function updateActiveNav(idx) {
-            navs.forEach(function(el, i) {
+            navs.forEach((el, i) => {
                 el.classList[idx === i ? 'add' : 'remove']('active');
             });
         }
