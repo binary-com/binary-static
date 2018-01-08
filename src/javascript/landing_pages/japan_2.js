@@ -150,7 +150,7 @@ function tabWithButtons(id) {
             touchendX = event.changedTouches[0].screenX;
             touchEventsHandler();
         }, false);
-        
+
         function touchEventsHandler() {
             if (touchendX <= touchstartX) {
                 updateTabContent(++current_index); // swipe left
