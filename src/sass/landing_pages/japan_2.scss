@@ -238,6 +238,16 @@ form {
     @include angle(both, true);
 }
 
+.white-gap {
+    @include gap($COLOR_WHITE, true);
+}
+
+@media (max-width: 1650px) {
+    [class*='white-gap']:before, [class*='white-gap']:after {
+        content: none;
+    }
+}
+
 @media (max-width: 1199px) {
     [class*='edge--']:before, [class*='edge--']:after {
         content: none;

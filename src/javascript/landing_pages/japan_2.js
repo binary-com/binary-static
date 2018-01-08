@@ -1,4 +1,5 @@
 window.onload = function () {
+    console.log('jp-2 init');
     toggleMobileMenu();
     initForm();
     tabWithButtons();

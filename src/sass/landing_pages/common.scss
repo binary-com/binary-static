@@ -130,7 +130,7 @@
 }
 
 // Slanted edges
-@mixin angle($pseudo, $flip: false, $angle: 17.4deg) {
+@mixin angle($pseudo, $flip: false, $angle: 12.4deg) {
     // Possible values for $pseudo are: before, after, both
     @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
         position: relative;
@@ -205,6 +205,55 @@
                     transform-origin: 100%;
                 }
             }
+        }
+    }
+}
+
+@mixin gap($bgcolor, $flip: false, $angle: 12.4deg) {
+    &:before {
+        background-color: $bgcolor;
+        padding: 50px 0 60px;
+        width: 100vw;
+        content: '';
+        display: block;
+        height: 100%;
+        left: -100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+
+        @if $flip {
+            transform: skewY($angle);
+            transform-origin: 100% 0;
+        }
+        @else {
+            transform: skewY($angle * -1);
+            transform-origin: 0 0;
+        }
+        @media (max-width: 1650px) {
+            padding: 0;
+        }
+    }
+    &:after {
+        background-color: $bgcolor;
+        padding: 50px;
+        width: 100vw;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        bottom: 0;
+
+        @if $flip {
+            transform: skewY($angle);
+            transform-origin: 0 0;
+        }
+        @else {
+            transform: skewY($angle * -1);
+            transform-origin: 100%;
         }
     }
 }
