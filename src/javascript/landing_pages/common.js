@@ -29,15 +29,10 @@ function collapseMenu() {
     }
 }
 
-function checkBrowser() {
-    const isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
-    const isIE = /*@cc_on!@*/false || !!document.documentMode; // Internet Explorer 6-11
-    return (isFirefox || isIE);
-}
-
 // scrollTo function with animation
 // - Gist reference: https://gist.github.com/andjosh/6764939
 function scrollTo(to, duration) {
+    if (typeof to === 'undefined') return;
     if (!duration) duration = 1000;
     let start = window.pageYOffset,
         change = to - start,
@@ -70,9 +65,12 @@ function getParamValue(url, key) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+function allLanguages() {
+    return [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ko', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw', 'ach' ];
+}
+
 function getLanguage() {
-    let all_languages = [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw' ];
-    let language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return all_languages.indexOf(l) >= 0; });
+    let language = window.location.href.toLowerCase().split('/').slice(3).find(function(l) { return allLanguages().indexOf(l) >= 0; });
     return language || 'en';
 }
 
@@ -145,3 +143,28 @@ function toggleAllSiblings(elem, filter, class_name) {
     } while (elem = elem.nextSibling)
 }
 
+function setupCrowdin() {
+    const isInContextEnvironment = () => (
+        /^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href) &&
+            /ach/i.test(getLanguage())
+    );
+
+    if (isInContextEnvironment()) {
+        const el_lang = document.getElementById('language');
+        if (el_lang) el_lang.style.display = 'none';
+        /* eslint-disable no-underscore-dangle */
+        window._jipt = [];
+        window._jipt.push(['project', 'binary-static']);
+        /* eslint-enable no-underscore-dangle */
+        if (document.body) {
+            const crowdinScript = document.createElement('script');
+            crowdinScript.setAttribute('src', `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`);
+            crowdinScript.setAttribute('type', 'text/javascript');
+            document.body.appendChild(crowdinScript);
+        }
+    }
+}
+
+function commonOnload() {
+    setupCrowdin();
+}

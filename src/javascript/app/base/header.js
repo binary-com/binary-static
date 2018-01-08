@@ -5,7 +5,6 @@ const Login               = require('./login');
 const BinarySocket        = require('./socket');
 const checkClientsCountry = require('../common/country_base').checkClientsCountry;
 const jpClient            = require('../common/country_base').jpClient;
-const getCurrencies       = require('../pages/user/get_currency').getCurrencies;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
 const elementInnerHtml    = require('../../_common/common_functions').elementInnerHtml;
 const elementTextContent  = require('../../_common/common_functions').elementTextContent;
@@ -89,7 +88,7 @@ const Header = (() => {
                         applyToAllElements('.account-type', (el) => { elementInnerHtml(el, localized_type); });
                         applyToAllElements('.account-id', (el) => { elementInnerHtml(el, loginid); });
                     } else {
-                        const link    = createElement('a', { href: `${'java'}${'script:;'}`, 'data-value': loginid });
+                        const link    = createElement('a', { href: `${'javascript:;'}`, 'data-value': loginid });
                         const li_type = createElement('li', { text: localized_type });
 
                         li_type.appendChild(createElement('div', { text: loginid }));
@@ -141,7 +140,7 @@ const Header = (() => {
         Client.set('accepted_bch', 0);
         Client.set('loginid', loginid);
         // Load page based on account type.
-        if(Client.get('is_ico_only', loginid)) {
+        if (Client.get('is_ico_only', loginid)) {
             window.location.assign(Client.defaultRedirectUrl());
         } else {
             window.location.reload();
@@ -150,8 +149,7 @@ const Header = (() => {
 
     const upgradeMessageVisibility = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings', 'get_account_status').then(() => {
-            const landing_company = State.getResponse('landing_company');
-            const upgrade_msg     = document.getElementsByClassName('upgrademessage');
+            const upgrade_msg = document.getElementsByClassName('upgrademessage');
 
             if (!upgrade_msg) {
                 return;
@@ -167,9 +165,7 @@ const Header = (() => {
             };
 
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
-            const status            = State.getResponse('get_account_status.status');
-            const is_ico_account    = /ico_only/.test(status);
-            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status, is_ico_account);
+            const upgrade_info      = Client.getUpgradeInfo();
             const show_upgrade_msg  = upgrade_info.can_upgrade;
             const virtual_text      = document.getElementById('virtual-text');
 
@@ -211,18 +207,16 @@ const Header = (() => {
                 if (virtual_text.parentNode) {
                     virtual_text.parentNode.setVisibility(0);
                 }
-                showUpgrade(upgrade_info.upgrade_link, 'Open a Financial Account');
+                showUpgrade(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
             } else {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
             }
-            showHideNewAccount(show_upgrade_msg);
+            showHideNewAccount(upgrade_info);
         });
     };
 
-    const showHideNewAccount = (can_upgrade) => {
-        const landing_company = State.getResponse('landing_company');
-        // only allow opening of multi account to costarica clients with remaining currency
-        if (can_upgrade || (Client.get('landing_company_shortcode') === 'costarica' && getCurrencies(landing_company).length)) {
+    const showHideNewAccount = (upgrade_info) => {
+        if (upgrade_info.can_upgrade || upgrade_info.can_open_multi) {
             changeAccountsText(1, 'Create Account');
         } else {
             changeAccountsText(0, 'Accounts List');

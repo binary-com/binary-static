@@ -7,6 +7,7 @@ const Redirect             = require('./redirect');
 const CashierJP            = require('../japan/cashier');
 const KnowledgeTest        = require('../japan/knowledge_test/knowledge_test');
 const AccountTransfer      = require('../pages/cashier/account_transfer');
+const BitcoinVoucher       = require('../pages/cashier/bitcoin_voucher');
 const Cashier              = require('../pages/cashier/cashier');
 const DepositWithdraw      = require('../pages/cashier/deposit_withdraw');
 const PaymentAgentList     = require('../pages/cashier/payment_agent_list');
@@ -35,12 +36,10 @@ const professionalClient   = require('../pages/user/account/settings/professiona
 const Statement            = require('../pages/user/account/statement/statement.init');
 const TopUpVirtual         = require('../pages/user/account/top_up_virtual');
 const Accounts             = require('../pages/user/accounts');
-const ICOInfo              = require('../pages/user/ico_info');
 const ICOSubscribe         = require('../pages/user/ico_subscribe');
 const ICOClaimForm         = require('../pages/user/ico_claim_form');
 const LostPassword         = require('../pages/user/lost_password');
 const MetaTrader           = require('../pages/user/metatrader/metatrader');
-const AccountTypeSelection = require('../pages/user/new_account/account_type');
 const FinancialAccOpening  = require('../pages/user/new_account/financial_acc_opening');
 const JapanAccOpening      = require('../pages/user/new_account/japan_acc_opening');
 const RealAccOpening       = require('../pages/user/new_account/real_acc_opening');
@@ -68,7 +67,6 @@ const WhyUs              = require('../../static/pages/why_us');
 /* eslint-disable max-len */
 const pages_config = {
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true, needs_currency: true },
-    account_type             : { module: AccountTypeSelection,       is_authenticated: true },
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
@@ -96,7 +94,7 @@ const pages_config = {
     market_timesws           : { module: TradingTimesUI },
     metatrader               : { module: MetaTrader,                 is_authenticated: true, needs_currency: true },
     multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
-    payment_agent_listws     : { module: PaymentAgentList },
+    payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
     platforms                : { module: TabSelector },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
@@ -119,6 +117,7 @@ const pages_config = {
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStartedBeta.BinaryOptions },
+    'bitcoin-voucher'        : { module: BitcoinVoucher,             is_authenticated: true, only_real: true },
     'cfds'                   : { module: GetStartedBeta.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
@@ -131,7 +130,6 @@ const pages_config = {
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'how-to-trade-mt5'       : { module: TabSelector },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
-    'ico-info'               : { module: ICOInfo,                    is_authenticated: true, only_real: true, needs_currency: true },
     'ico-claim-form'         : { module: ICOClaimForm,               is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
     'metals'                 : { module: GetStartedBeta.Metals },

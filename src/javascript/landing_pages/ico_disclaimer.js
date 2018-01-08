@@ -36,7 +36,8 @@ window.onload = function() {
         });
         document.getElementById('country_name').appendChild(document.createTextNode(country_name));
         document.getElementById('notice_msg').classList.remove('invisible');
-        document.getElementById(val).classList.remove('invisible');
+        const el = document.getElementById(val);
+        if (el) el.classList.remove('invisible');
     }
 
     function showDisclaimer(val) {
@@ -100,7 +101,9 @@ window.onload = function() {
         } else {
             document.getElementById('frm_accept_notice_error').classList.remove('invisible');
         }
-    })
+    });
+
+    commonOnload();
 };
 
 function validateResidence(el) {

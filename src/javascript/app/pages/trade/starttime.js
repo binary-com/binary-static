@@ -93,8 +93,10 @@ const StartDates = (() => {
                     fragment.appendChild(option);
                 }
             });
-            target.appendChild(fragment);
-            Defaults.set('date_start', target.value);
+            if (target) {
+                target.appendChild(fragment);
+                Defaults.set('date_start', target.value);
+            }
             State.set('is_start_dates_displayed', true);
             if (first) {
                 Durations.onStartDateChange(first);

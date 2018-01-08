@@ -1,9 +1,0 @@
-[% BLOCK loading %]
-<div class="barspinner [% theme || 'dark' %]">
-    [% FOREACH i IN [1..5] %]
-    <div class="rect[% i %]"></div>
-    [% END %]
-</div>
-[% END %]
-
-[% PROCESS loading %]

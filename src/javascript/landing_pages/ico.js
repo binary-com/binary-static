@@ -6,6 +6,8 @@ window.onload = function() {
     collapseNavbar();
     signUpInit();
     checkUserSession();
+    handleViewMemorandum();
+    handleEmailBlurFocus();
 
     gtmPushDataLayer({ language: getLanguage().toUpperCase() });
     gtmPushDataLayer({ event: 'page_load' });
@@ -68,7 +70,8 @@ window.onload = function() {
             const target = e.target.getAttribute('href').substr(1);
             const offset = /who-we-are|page-top/.test(target) ? 55 : 0;
             const navbarHeight = checkWidth();
-            const to = document.getElementById(target).offsetTop - navbarHeight - offset;
+            const el_target = document.getElementById(target);
+            const to = el_target ? el_target.offsetTop - navbarHeight - offset : '';
             scrollTo(to);
             collapseMenu();
         }
@@ -145,7 +148,7 @@ window.onload = function() {
         }
     });
 
-    setupCrowdin();
+    commonOnload();
 };
 
 function clearHash() {
@@ -332,6 +335,7 @@ function initCountdown(start_epoch) {
         if (is_started) {
             const ico_bottom_banner = document.getElementById('ico-bottom-banner');
             if(ico_bottom_banner){
+                handleICOClose(ico_bottom_banner);
                 ico_bottom_banner.classList.remove(hidden_class);
             }
         }
@@ -440,38 +444,6 @@ function setLanguage(el, name) {
     el.classList.remove('invisible');
 }
 
-function setupCrowdin() {
-    const all_languages = [
-        'ACH', 'EN', 'DE', 'ES',
-        'FR', 'ID', 'IT', 'JA',
-        'PL', 'PT', 'RU', 'TH',
-        'VI', 'ZH_CN', 'ZH_TW',
-    ];
-
-    const isInContextEnvironment = () => {
-        const lang_regex = new RegExp(`^(${all_languages.join('|')})$`, 'i');
-        const url_params = window.location.href.split('/').slice(3);
-        const language   = (url_params.find(lang => lang_regex.test(lang)) || '');
-
-        return /^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href) &&
-        /ach/i.test(language)
-    };
-
-    if (isInContextEnvironment()) {
-        document.getElementById('language').style.display = 'none';
-        /* eslint-disable no-underscore-dangle */
-        window._jipt = [];
-        window._jipt.push(['project', 'binary-static']);
-        /* eslint-enable no-underscore-dangle */
-        if (document.body) {
-            const crowdinScript = document.createElement('script');
-            crowdinScript.setAttribute('src', `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`);
-            crowdinScript.setAttribute('type', 'text/javascript');
-            document.body.appendChild(crowdinScript);
-        }
-    }
-}
-
 function checkUserSession() {
 
     const getAllAccountsObject = () => JSON.parse(localStorage.getItem('client.accounts'));
@@ -547,5 +519,36 @@ function getNishantReport(lang = 'en') {
 function gtmPushDataLayer(obj) {
     if (obj && /^(1|1098)$/.test(getAppId())) {
         dataLayer.push(obj);
+    }
+}
+
+function handleICOClose(el_banner) {
+    el_banner.addEventListener('click', function() {
+        openLink(this.getAttribute('data-url'));
+    });
+}
+
+function handleViewMemorandum() {
+    const el_view_memorandum = document.getElementById('view_memorandum');
+    if (el_view_memorandum) {
+        el_view_memorandum.addEventListener('click', function () {
+            window.location.href = this.getAttribute('data-url');
+        });
+    }
+}
+
+function handleEmailBlurFocus() {
+    const el_email = document.getElementById('awf_field-90867273');
+    if (el_email) {
+        el_email.addEventListener('focus', function () {
+            if (this.value === '') {
+                this.value = '';
+            }
+        });
+        el_email.addEventListener('blur', function () {
+            if (this.value === '') {
+                this.value = '';
+            }
+        });
     }
 }

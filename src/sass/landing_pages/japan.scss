@@ -18,6 +18,9 @@ section {
     .bg-shine-v {
         margin-top: -80px;
     }
+    .margin-bottom-40 {
+        margin-bottom: 40px;
+    }
 }
 
 footer {
@@ -47,6 +50,10 @@ form {
         color: $COLOR_WHITE;
         text-align: center;
         margin-top: 50px;
+
+        &.margin-bottom-30 {
+            margin-bottom: 30px;
+        }
     }
     .input-group {
         display: flex;
@@ -94,6 +101,10 @@ form {
         padding: 5px;
         color: $COLOR_WHITE;
         border-radius: 5px;
+
+        p {
+            text-align: center;
+        }
     }
 }
 
@@ -113,7 +124,7 @@ form {
         border-bottom: $size solid transparent;
         border-left: border-width($size) solid $COLOR_ORANGE;
         margin: auto;
-        left: 90%;
+        right: -($size);
         bottom: 0;
         top: 0;
     }
@@ -139,7 +150,9 @@ form {
 }
 
 @mixin card($border-width) {
-    border: solid $border-width $COLOR_ORANGE;
+    /* stylelint-disable color-no-hex */
+    border: solid $border-width #f0a96a;
+    /* stylelint-enable color-no-hex */
     background-color: $COLOR_WHITE;
     border-radius: 5px;
     display: flex;
@@ -183,10 +196,21 @@ form {
         .color-gray {
             color: $COLOR_DARK_WHITE;
         }
+        .color-dark-gray {
+            /* stylelint-disable color-no-hex */
+            color: #a4a8b6;
+            /* stylelint-enable color-no-hex */
+        }
         .bg-gray {
             background-color: $COLOR_LIGHT_GRAY;
             border-radius: 5px;
             padding: 15px;
+        }
+        .image {
+            padding: 0 5px;
+        }
+        .text-desc {
+            margin: 0.5em 0 1em;
         }
     }
     .card-footer {
@@ -201,6 +225,9 @@ form {
         p {
             margin: 0;
         }
+    }
+    &.header-offset {
+        margin-top: 40px;
     }
 }
 
@@ -221,6 +248,9 @@ form {
     .box ~ .box {
         margin: 60px 0 0;
     }
+    &.margin-top-20 {
+        margin: 20px 0 0;
+    }
 }
 
 .flex-end {
@@ -229,6 +259,10 @@ form {
 
 .flex-space-between {
     justify-content: space-between;
+}
+
+.flex-space-evenly {
+    justify-content: space-evenly;
 }
 
 .flex-justify-content-center {
@@ -254,6 +288,10 @@ form {
     }
     &-semicircle {
         background-image: url('../images/japan/version1/semicircle.svg');
+    }
+    &-stretch {
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
@@ -297,6 +335,14 @@ form {
 
 .text-bold {
     font-weight: bold;
+}
+
+.text-semibold {
+    font-weight: 600 !important;
+}
+
+.text-medium {
+    font-weight: 500 !important;
 }
 
 .color-blue {
@@ -444,7 +490,8 @@ form {
 }
 
 .intro {
-    background: linear-gradient(0deg, $COLOR_DARK_BLUE, $COLOR_BLUE);
+    background-color: $COLOR_DARK_BLUE;
+    background-image: radial-gradient(circle at top, $COLOR_BLUE 5%, $COLOR_DARK_BLUE 65%);
     position: relative;
     height: 100%;
     padding-top: 0;
@@ -455,22 +502,35 @@ form {
         border-left: 50vw solid transparent;
         border-right: 50vw solid transparent;
     }
-    .intro-text, .intro-subtext {
+    .intro-text {
         color: $COLOR_WHITE;
 
         &.intro-text {
             font-size: 72px;
-            font-weight: bold;
+            font-weight: 500;
             white-space: nowrap;
             margin-top: 80px;
-        }
-        &.intro-subtext {
-            max-width: 500px;
-            margin: 35px 0;
+            margin-bottom: 30px;
         }
     }
-    form .input-group {
-        justify-content: flex-start;
+    .intro-subtext {
+        color: $COLOR_GRAY;
+
+        &.intro-subtext {
+            max-width: 500px;
+            margin: 30px 0 50px;
+        }
+    }
+    form {
+        margin-bottom: 80px;
+
+        .input-group {
+            justify-content: flex-start;
+        }
+    }
+    .intro-bottom-text {
+        font-weight: 500;
+        margin-bottom: 0;
     }
 }
 
@@ -499,10 +559,15 @@ form {
     }
     .bg-blue {
         background-color: $COLOR_BLUE;
+        padding: 10px 15px;
     }
     .bg-orange {
         background-color: $COLOR_ORANGE;
         font-weight: bold;
+
+        &.v-padding {
+            padding: 10px 15px;
+        }
     }
     .bg-ribbon {
         text-align: center;
@@ -514,6 +579,10 @@ form {
         @include speech-bubble($COLOR_BLUE, 30px, 'down');
         padding: 30px;
         font-size: 48px;
+
+        &.margin-bottom {
+            margin-bottom: 1em;
+        }
     }
 }
 
@@ -560,7 +629,7 @@ form {
         }
         &__ribbon {
             position: absolute;
-            top: -45px;
+            top: -43px;
             padding: 15px;
             left: 0;
             right: 0;
@@ -575,7 +644,8 @@ form {
             }
 
             & + .card-body {
-                margin-top: 40px;
+                margin-top: 60px;
+                margin-bottom: 40px;
             }
         }
     }
@@ -597,7 +667,7 @@ form {
         span {
             display: inline-block;
             text-align: center;
-            margin: 0;
+            margin: 0 5px;
         }
     }
 }
@@ -618,6 +688,7 @@ form {
                 text-align: center;
                 color: $COLOR_WHITE;
                 margin-bottom: 0;
+                font-size: 20px;
             }
         }
         &__ribbon {
@@ -635,7 +706,7 @@ form {
         left: 0;
         right: 0;
         margin: auto;
-        bottom: -15px;
+        bottom: -18px;
     }
     .card-divider {
         margin: 20px -20px;
@@ -648,6 +719,17 @@ form {
     }
     .color-red {
         color: $COLOR_RED;
+    }
+    &.key-plus {
+        font-weight: 500;
+        padding: 15px 15px 30px;
+
+        p {
+            margin: 0;
+        }
+    }
+    &.no-padding {
+        padding: 0;
     }
 }
 
@@ -713,6 +795,7 @@ form {
 
     &.box-o {
         border: 1px solid $COLOR_LIGHT_GRAY;
+        border-radius: 6px;
     }
     p {
         margin: 0;
@@ -732,14 +815,19 @@ form {
     &.icon-sm {
         height: 32px;
         width: 32px;
+
+        &.big {
+            height: 40px;
+            width: 40px;
+        }
     }
     &.icon-md {
         height: 48px;
         width: 48px;
     }
     &.icon-lg {
-        height: 64px;
-        min-width: 64px;
+        height: 50px;
+        min-width: 50px;
     }
 }
 

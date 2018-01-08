@@ -18,19 +18,19 @@ module.exports = function (grunt) {
 
     return {
         compile_dev: {
-            command: global.compileCommand('-f -d'),
+            command: global.compileCommand('-d'),
             options: {
                 stdout: true
             }
         },
         compile_production: {
-            command: global.compileCommand('-f'),
+            command: global.compileCommand(),
             options: {
                 stdout: true
             }
         },
         sitemap: {
-            command: `cd ${process.cwd()}/scripts && carton exec perl sitemap.pl`,
+            command: `cd ${process.cwd()} && ./scripts/sitemap.js`,
             options: {
                 stdout: true
             }
@@ -114,6 +114,13 @@ module.exports = function (grunt) {
                     ghpagesCommand(),
                     prompt('Resetting to the first commit...'),
                     'git reset $(git rev-list --max-parents=0 --abbrev-commit HEAD) --quiet',
+                    prompt('Removing .gitignore...'),
+                    'rm -f .gitignore',
+                    'git add .gitignore',
+                    prompt('Adding CNAME...'),
+                    `echo '${global.release_config.staging.CNAME}' > CNAME`,
+                    'git add CNAME',
+                    'git commit -m "Add CNAME" --quiet',
                     prompt('Pushing to origin...'),
                     'git push origin gh-pages -f --quiet',
                     prompt('Cleaning up...'),

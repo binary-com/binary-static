@@ -38,7 +38,7 @@ const ICOPortfolio = (() => {
         const final_price       = +State.getResponse('ico_status.final_price');
         const is_claim_allowed  = State.getResponse('ico_status.is_claim_allowed');
         const bid               = +shortcode[1];
-        const pending_text      = localize('The auction has ended. The final price of the tokens will be announced soon. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018.');
+        const pending_text      = localize('The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids.');
         const pending_claim_msg = `data-balloon="${pending_text}" data-balloon-length="large" data-balloon-pos="left"`;
 
         let status_text = localize('Pending');
@@ -52,7 +52,7 @@ const ICOPortfolio = (() => {
         } else if (ico_status === 'closed' && final_price <= bid && is_claim_allowed) {
             status_text = localize('Claim Tokens');
             action = 'claim';
-        } else if(ico_status === 'closed' && !is_claim_allowed) {
+        } else if (ico_status === 'closed' && !is_claim_allowed) {
             is_pending = true;
         } else if (ico_status === 'open') {
             status_text = localize('Cancel Bid');

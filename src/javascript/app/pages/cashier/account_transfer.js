@@ -83,8 +83,10 @@ const AccountTransfer = (() => {
     };
 
     const showError = () => {
-        document.getElementById(messages.parent).setVisibility(1);
-        document.getElementById(messages.error).setVisibility(1);
+        const el_parent = document.getElementById(messages.parent);
+        if (el_parent) el_parent.setVisibility(1);
+        const el_error = document.getElementById(messages.error);
+        if (el_error) el_error.setVisibility(1);
     };
 
     const getDecimals = () => (isCryptocurrency(client_currency) ? 8 : 2);
@@ -92,7 +94,8 @@ const AccountTransfer = (() => {
     const showForm = () => {
         elementTextContent(document.querySelector(`${form_id_hash} #currency`), client_currency);
 
-        document.getElementById(form_id).setVisibility(1);
+        const el_form = document.getElementById(form_id);
+        if (el_form) el_form.setVisibility(1);
 
         FormManager.init(form_id_hash, [
             { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinWithdrawal(client_currency), max: Math.min(+withdrawal_limit, +client_balance), format_money: true }]] },
@@ -120,7 +123,8 @@ const AccountTransfer = (() => {
     };
 
     const populateReceipt = (response_submit_success, response) => {
-        document.getElementById(form_id).setVisibility(0);
+        const el_form = document.getElementById(form_id);
+        if (el_form) el_form.setVisibility(0);
 
         elementTextContent(document.getElementById('from_loginid'), client_loginid);
         elementTextContent(document.getElementById('to_loginid'), response_submit_success.client_to_loginid);
