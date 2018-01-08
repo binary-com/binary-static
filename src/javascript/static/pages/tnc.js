@@ -8,7 +8,7 @@ const TermsAndConditions = (() => {
     let sidebar_width;
 
     const onLoad = () => {
-        sidebar_width = $('.sidebar-collapsible-container').width();
+        sidebar_width = document.getElementsByClassName('sidebar-collapsible-container')[0].offsetWidth;
 
         handleActiveTab();
         TNCApproval.requiresTNCApproval(
@@ -100,14 +100,16 @@ const TermsAndConditions = (() => {
     };
 
     const stickySidebar = () => {
-        const $sidebar = $('.sidebar-collapsible');
-        const $content = $('.sidebar-collapsible-content');
+        const $sidebar   = $('.sidebar-collapsible');
+        const $content   = $('.sidebar-collapsible-content');
+        const $container = $('.sidebar-collapsible-container');
 
         if (!$sidebar.is(':visible')) return;
 
         if (window.scrollY < $content.offset().top) {
             $sidebar.css({ position: 'relative' });
-        } else if (window.scrollY > $content[0].offsetHeight - 118) { // 118 is the height difference between default and active sidebar state
+        } else if (window.scrollY + $sidebar[0].offsetHeight + 20 >=
+            $container[0].offsetHeight + $container.offset().top) { // 20 is the padding for content from bottom, to avoid menu snapping back up
             $sidebar.css({ position: 'absolute', bottom: '20px', top: '', width: sidebar_width });
         } else {
             $sidebar.css({ position: 'fixed', top: '0px', bottom: '', width: sidebar_width });
