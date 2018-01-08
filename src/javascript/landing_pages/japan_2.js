@@ -90,10 +90,10 @@ function validateEmail(email) {
 }
 
 function setValidationStyle(has_error) {
-    document.querySelectorAll('input[type="email"]').forEach(function(el) {
+    document.querySelectorAll('input[type="email"]').forEach((el) => {
         el.classList[has_error ? 'add' : 'remove']('error-field');
     });
-    document.querySelectorAll('.error-msg').forEach(function(el) {
+    document.querySelectorAll('.error-msg').forEach((el) => {
         el.classList[has_error ? 'remove' : 'add']('invisible');
     });
 }
@@ -111,16 +111,9 @@ function tabWithButtons(id) {
 
     (() => {
         const parent = el_tab_container.querySelector('.twb-buttons');
-
         const ul = document.createElement('ul');
         for (let idx = 0; idx < num_of_items; idx++) {
-            const li = document.createElement('li');
-            li.classList[idx ? 'remove' : 'add']('active');
-            li.addEventListener('click', (e) => {
-                e.preventDefault();
-                updateTabContent(idx, false);
-                current_index = idx;
-            });
+            const li = createLIElement(idx);
             ul.appendChild(li);
         }
 
@@ -166,12 +159,32 @@ function tabWithButtons(id) {
                 updateTabContent(--current_index); // swipe right
             }
         }
+
+        function createLIElement(index) {
+            const li = document.createElement('li');
+            li.classList[index ? 'remove' : 'add']('active');
+            li.addEventListener('click', (e) => {
+                e.preventDefault();
+                updateTabContent(index, false);
+                current_index = index;
+            });
+            return li;
+        }
     })();
 
     function updateTabContent(target_index, direction = true) {
         const width = el_content_container.getBoundingClientRect().width;
         const mod   = target_index % num_of_items;
-        const active_index = direction ? (mod < 0 ? (mod + num_of_items) : mod) : target_index;
+        let active_index;
+
+        if (direction) {
+            active_index = mod;
+            if (mod < 0) {
+                active_index = mod + num_of_items;
+            }
+        } else {
+            active_index = target_index;
+        }
 
         updateActiveContent(active_index);
         updateActiveNav(active_index);
