@@ -105,6 +105,8 @@ function tabWithButtons(id) {
     const num_of_items = el_contents.length;
     let current_index  = 0;
     let navs;
+    let touchstartX = 0;
+    let touchendX = 0;
 
     (function init() {
         const parent = el_tab_container.querySelector('.twb-buttons');
@@ -145,6 +147,23 @@ function tabWithButtons(id) {
 
         window.onresize = function() {
             updateTabContent(current_index);
+        };
+
+        el_content_container.addEventListener('touchstart', function(event) {
+            touchstartX = event.changedTouches[0].screenX;
+        }, false);
+        el_content_container.addEventListener('touchend', function(event) {
+            touchendX = event.changedTouches[0].screenX;
+            touchEventsHandler();
+        }, false);
+        
+        function touchEventsHandler() {
+            if (touchendX <= touchstartX) {
+                updateTabContent(++current_index); // swipe left
+            }
+            if (touchendX >= touchstartX) {
+                updateTabContent(--current_index); // swipe right
+            }
         }
     })();
 
