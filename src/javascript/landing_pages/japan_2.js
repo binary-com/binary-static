@@ -101,6 +101,7 @@ function setValidationStyle(has_error) {
 function tabWithButtons(id) {
     const el_tab_container     = document.getElementById(id) ? document.getElementById(id) : document.body;
     const el_content_container = el_tab_container.getElementsByClassName('twb-content-container')[0];
+    const el_content_wrapper   = el_tab_container.getElementsByClassName('twb-content-wrapper')[0];
     const el_contents          = el_tab_container.querySelectorAll('div.twb-content');
     const num_of_items = el_contents.length;
     let current_index  = 0;
@@ -149,10 +150,10 @@ function tabWithButtons(id) {
             updateTabContent(current_index);
         };
 
-        el_content_container.addEventListener('touchstart', function(event) {
+        el_content_wrapper.addEventListener('touchstart', function(event) {
             touchstartX = event.changedTouches[0].screenX;
         }, false);
-        el_content_container.addEventListener('touchend', function(event) {
+        el_content_wrapper.addEventListener('touchend', function(event) {
             touchendX = event.changedTouches[0].screenX;
             touchEventsHandler();
         }, false);
