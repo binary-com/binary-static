@@ -16,29 +16,13 @@ window.onload = function() {
 
 function initForm() {
     const signup_forms = document.querySelectorAll('.signup-form');
-    let ws = wsConnect();
+    const ws = wsConnect();
 
     function sendVerifyEmail(val) {
-        const trimmed_email = trimEmail(val);
         wsSend(ws, {
-            verify_email: trimmed_email,
+            verify_email: val,
             type        : 'account_opening',
         });
-    }
-
-    function verifySubmit(msg) {
-        const response = JSON.parse(msg.data);
-        setValidationStyle(el_email, response.error);
-        if (!response.error) {
-            signup_forms.forEach((el) => {
-                el.querySelector('.signup-form-input').classList.add('invisible');
-                el.querySelector('.signup-form-success').classList.remove('invisible');
-            });
-        }
-    }
-
-    function trimEmail(str) {
-        return str.replace(/\s/g, '');
     }
 
     let validation_set = false; // To prevent validating before submit
@@ -63,22 +47,27 @@ function initForm() {
                 setValidationStyle(!validateEmail(el_email.value));
                 validation_set = true;
             }
-            const to = this.offsetTop - 50;
-            scrollTo(to, 500); // Scroll to nearest form
             return false;
         }
 
         if (ws.readyState === 1) {
             sendVerifyEmail(el_email.value);
         } else {
-            ws = wsConnect();
-            ws.onopen = sendVerifyEmail(el_email.value);
-            ws.onmessage = verifySubmit;
+            ws.onopen = sendVerifyEmail;
         }
         return true;
     }
 
-    ws.onmessage = verifySubmit;
+    ws.onmessage = function(msg) {
+        const response = JSON.parse(msg.data);
+        setValidationStyle(el_email, response.error);
+        if (!response.error) {
+            signup_forms.forEach((el) => {
+                el.querySelector('.signup-form-input').classList.add('invisible');
+                el.querySelector('.signup-form-success').classList.remove('invisible');
+            });
+        }
+    };
 }
 
 function validateEmail(email) {
