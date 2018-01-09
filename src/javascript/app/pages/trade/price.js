@@ -235,6 +235,9 @@ const Price = (() => {
             error.hide();
             if(!/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
                 commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
+            } else {
+                // Look back comment.
+                elementInnerHtml(comment, `${localize('Payout')}: ${formatMoney((currency.value || currency.getAttribute('value')), proposal.multiplier)}/${localize('point difference')}`);
             }
             const old_price  = purchase.getAttribute('data-display_value');
             const old_payout = purchase.getAttribute('data-payout');
@@ -312,12 +315,12 @@ const Price = (() => {
             switch (sessionStorage.getItem('formname')) {
                 case 'lookbackhigh':
                     types = {
-                        LBFLOATCALL: 1,
+                        LBFLOATPUT: 1,
                     };
                     break;
                 case 'lookbacklow':
                     types = {
-                        LBFLOATPUT: 1,
+                        LBFLOATCALL: 1,
                     };
                     break;
                 case 'lookbackhighlow':
