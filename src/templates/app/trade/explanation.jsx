@@ -169,6 +169,57 @@ const Explanation = () => (
                 <p>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')}</p>
             </div>
+            <div id="explain_lookbacklow" className="invisible">
+                <h3>{it.L('Pay-off')}</h3>
+                <p>{it.L('By purchasing the ‘Low’ contract, you’ll receive a pre-specified amount per lot for each point of difference between the [_1]highest value[_2] and the [_1]exit spot[_2].', '<strong>', '</strong>')}</p>
+                <h3>{it.L('Highest and lowest values')}</h3>
+                <p>{it.L('The highest value is the [_1]highest[_2] point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <p>{it.L('The lowest value is the [_1]lowest[_2] point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <h3>{it.L('Highest and lowest values')}</h3>
+                <p>{it.L('The [_1]highest[_2] value is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <p>{it.L('The [_1]lowest[_2] value is the lowest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <h3>{it.L('Exit spot')}</h3>
+                <p>{it.L('The [_1]exit spot[_2] is the last tick before or at the [_1]end time[_2].', '<strong>','</strong>')}</p>
+                <p>{it.L('If you selected a specific [_1]end time[_2], that will be the time used to mark the [_1]exit spot[_2].', '<strong>','</strong>')}</p>
+                <h3>{it.L('Contract period')}</h3>
+                <p>{it.L('The [_1]contract period[_2] is the period between the [_1]first tick[_2] (after start time) and the [_1]end time[_2].', '<strong>','</strong>')}</p>
+                <p>{it.L('The [_1]start time[_2] begins when the contract is processed by our servers.', '<strong>','</strong>')}</p>
+                <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2] (if it’s less than one day in duration), or at the end of the trading day (if it’s one day or more in duration).', '<strong>','</strong>')}</p>
+            </div>
+            <div id="explain_lookbackhigh" className="invisible">
+                <h3>{it.L('Pay-off')}</h3>
+                <p>{it.L('By purchasing the ‘High’ contract, you’ll receive a pre-specified amount per lot for each point of difference between the [_1]exit spot[_2] and the [_1]lowest value[_2].', '<strong>', '</strong>')}</p>
+                <h3>{it.L('Highest and lowest values')}</h3>
+                <p>{it.L('The highest value is the [_1]highest[_2] point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <p>{it.L('The lowest value is the [_1]lowest[_2] point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <h3>{it.L('Highest and lowest values')}</h3>
+                <p>{it.L('The [_1]highest[_2] value is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <p>{it.L('The [_1]lowest[_2] value is the lowest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <h3>{it.L('Exit spot')}</h3>
+                <p>{it.L('The [_1]exit spot[_2] is the last tick before or at the [_1]end time[_2].', '<strong>','</strong>')}</p>
+                <p>{it.L('If you selected a specific [_1]end time[_2], that will be the time used to mark the [_1]exit spot[_2].', '<strong>','</strong>')}</p>
+                <h3>{it.L('Contract period')}</h3>
+                <p>{it.L('The [_1]contract period[_2] is the period between the [_1]first tick[_2] (after start time) and the [_1]end time[_2].', '<strong>','</strong>')}</p>
+                <p>{it.L('The [_1]start time[_2] begins when the contract is processed by our servers.', '<strong>','</strong>')}</p>
+                <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2] (if it’s less than one day in duration), or at the end of the trading day (if it’s one day or more in duration).', '<strong>','</strong>')}</p>
+            </div>
+            <div id="explain_lookbackhighlow" className="invisible">
+                <h3>{it.L('Pay-off')}</h3>
+                <p>{it.L('By purchasing the ‘High-Low’ contract, you’ll receive a pre-specified amount per lot for each point of difference between the [_1]highest value[_2] and the [_1]lowest value[_2].', '<strong>', '</strong>')}</p>
+                <h3>{it.L('Highest and lowest values')}</h3>
+                <p>{it.L('The highest value is the [_1]highest[_2] point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <p>{it.L('The lowest value is the [_1]lowest[_2] point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <h3>{it.L('Highest and lowest values')}</h3>
+                <p>{it.L('The [_1]highest[_2] value is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <p>{it.L('The [_1]lowest[_2] value is the lowest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
+                <h3>{it.L('Exit spot')}</h3>
+                <p>{it.L('The [_1]exit spot[_2] is the last tick before or at the [_1]end time[_2].', '<strong>','</strong>')}</p>
+                <p>{it.L('If you selected a specific [_1]end time[_2], that will be the time used to mark the [_1]exit spot[_2].', '<strong>','</strong>')}</p>
+                <h3>{it.L('Contract period')}</h3>
+                <p>{it.L('The [_1]contract period[_2] is the period between the [_1]first tick[_2] (after start time) and the [_1]end time[_2].', '<strong>','</strong>')}</p>
+                <p>{it.L('The [_1]start time[_2] begins when the contract is processed by our servers.', '<strong>','</strong>')}</p>
+                <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2] (if it’s less than one day in duration), or at the end of the trading day (if it’s one day or more in duration).', '<strong>','</strong>')}</p>
+            </div>
         </div>
     </div>
 );
