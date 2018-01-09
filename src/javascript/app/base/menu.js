@@ -1,4 +1,5 @@
 const Client             = require('./client');
+const getElementById     = require('../../_common/common_functions').getElementById;
 const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const findParent         = require('../../_common/utility').findParent;
 require('../../_common/lib/mmenu/jquery.mmenu.min.all.js');
@@ -9,11 +10,8 @@ const Menu = (() => {
         items;
 
     const init = () => {
-        main_menu = document.getElementById('main-menu');
-        menu_top  = document.getElementById('menu-top');
-        if (!main_menu || !menu_top) {
-            return;
-        }
+        main_menu = getElementById('main-menu');
+        menu_top  = getElementById('menu-top');
 
         items = main_menu.getElementsByClassName('item');
 
@@ -104,12 +102,10 @@ const Menu = (() => {
     const activeMainMenu = () => {
         let pathname = window.location.pathname;
         if (/cashier/i.test(pathname) && !(/cashier_password|payment_methods/.test(pathname))) {
-            const cashier = document.getElementById('topMenuCashier');
-            if (cashier) {
-                const link = cashier.getElementsByTagName('a')[0];
-                if (link) {
-                    pathname = link.getAttribute('href');
-                }
+            const cashier = getElementById('topMenuCashier');
+            const link = cashier.getElementsByTagName('a')[0];
+            if (link) {
+                pathname = link.getAttribute('href');
             }
         }
         if (!main_menu) {
@@ -133,16 +129,13 @@ const Menu = (() => {
     };
 
     const makeMobileMenu = () => {
-        const mobile_menu = document.getElementById('mobile-menu-container');
-        if (mobile_menu && mobile_menu.offsetParent) {
-            $('#mobile-menu').mmenu({
-                position       : 'right',
-                zposition      : 'front',
-                slidingSubmenus: false,
-                searchfield    : true,
-                onClick        : { close: true },
-            }, { selectedClass: 'active' });
-        }
+        $('#mobile-menu').mmenu({
+            position       : 'right',
+            zposition      : 'front',
+            slidingSubmenus: false,
+            searchfield    : true,
+            onClick        : { close: true },
+        }, { selectedClass: 'active' });
     };
 
     return {

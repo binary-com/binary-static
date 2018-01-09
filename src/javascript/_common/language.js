@@ -1,5 +1,6 @@
 const Cookies            = require('js-cookie');
 const elementTextContent = require('./common_functions').elementTextContent;
+const getElementById     = require('./common_functions').getElementById;
 const CookieStorage      = require('./storage').CookieStorage;
 const applyToAllElements = require('./utility').applyToAllElements;
 
@@ -68,14 +69,11 @@ const Language = (() => {
                 if (e.target.nodeName !== 'LI') return;
                 const lang = e.target.getAttribute('class');
                 if (getLanguage() === lang) return;
-                const display_language = document.getElementById('display_language');
-                if (display_language) {
-                    elementTextContent(display_language.getElementsByClassName('language'), e.target.textContent);
-                }
+                elementTextContent(getElementById('display_language').getElementsByClassName('language'), e.target.textContent);
                 setCookieLanguage(lang);
                 document.location = urlForLanguage(lang);
             });
-        }, '', document.getElementById('select_language'));
+        }, '', getElementById('select_language'));
     };
 
     return {

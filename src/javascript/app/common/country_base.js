@@ -1,5 +1,6 @@
 const createLanguageDropDown = require('./attach_dom/language_dropdown');
 const BinarySocket           = require('../base/socket');
+const getElementById         = require('../../_common/common_functions').getElementById;
 const Crowdin                = require('../../_common/crowdin');
 const Language               = require('../../_common/language');
 const LocalStore             = require('../../_common/storage').LocalStore;
@@ -24,7 +25,7 @@ const limitLanguage = (lang) => {
     if (Language.get() !== lang) {
         window.location.href = Language.urlFor(lang); // need to redirect not using pjax
     }
-    if (document.getElementById('select_language')) {
+    if (getElementById('select_language')) {
         $('.languages').remove();
         $('#gmt-clock').addClass('gr-6 gr-12-m').removeClass('gr-5 gr-6-m');
         $('#contact-us').addClass('gr-6').removeClass('gr-2');

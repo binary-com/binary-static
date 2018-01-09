@@ -7,6 +7,7 @@ const Client             = require('../../../base/client');
 const formatMoney        = require('../../../common/currency').formatMoney;
 const elementInnerHtml   = require('../../../../_common/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../../_common/common_functions').elementTextContent;
+const getElementById     = require('../../../../_common/common_functions').getElementById;
 const isVisible          = require('../../../../_common/common_functions').isVisible;
 const localize           = require('../../../../_common/localize').localize;
 const toTitleCase        = require('../../../../_common/string_util').toTitleCase;
@@ -25,21 +26,21 @@ const Purchase_Beta = (() => {
 
         const receipt                     = details.buy;
         const passthrough                 = details.echo_req.passthrough;
-        const container                   = document.getElementById('contract_confirmation_container');
-        const message_container           = document.getElementById('confirmation_message');
-        const heading                     = document.getElementById('contract_purchase_heading');
-        const descr                       = document.getElementById('contract_purchase_descr');
-        const barrier_element             = document.getElementById('contract_purchase_barrier');
-        const chart                       = document.getElementById('tick_chart');
-        const brief                       = document.getElementById('contract_purchase_brief');
-        const balance                     = document.getElementById('contract_purchase_balance');
-        const payout                      = document.getElementById('contract_purchase_payout');
-        const cost                        = document.getElementById('contract_purchase_cost');
-        const spots                       = document.getElementById('contract_purchase_spots');
-        const confirmation_error          = document.getElementById('confirmation_error');
-        const confirmation_error_contents = document.getElementById('confirmation_error_contents');
-        const contracts_list              = document.getElementById('contracts_list');
-        const button                      = document.getElementById('contract_purchase_button');
+        const container                   = getElementById('contract_confirmation_container');
+        const message_container           = getElementById('confirmation_message');
+        const heading                     = getElementById('contract_purchase_heading');
+        const descr                       = getElementById('contract_purchase_descr');
+        const barrier_element             = getElementById('contract_purchase_barrier');
+        const chart                       = getElementById('tick_chart');
+        const brief                       = getElementById('contract_purchase_brief');
+        const balance                     = getElementById('contract_purchase_balance');
+        const payout                      = getElementById('contract_purchase_payout');
+        const cost                        = getElementById('contract_purchase_cost');
+        const spots                       = getElementById('contract_purchase_spots');
+        const confirmation_error          = getElementById('confirmation_error');
+        const confirmation_error_contents = getElementById('confirmation_error_contents');
+        const contracts_list              = getElementById('contracts_list');
+        const button                      = getElementById('contract_purchase_button');
 
         const error      = details.error;
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
@@ -52,10 +53,7 @@ const Purchase_Beta = (() => {
             confirmation_error.show();
             elementInnerHtml(confirmation_error_contents, error.message);
         } else {
-            const guide_btn = document.getElementById('guideBtn');
-            if (guide_btn) {
-                guide_btn.style.display = 'none';
-            }
+            getElementById('guideBtn').style.display = 'none';
             container.style.display = 'block';
             message_container.show();
             confirmation_error.hide();
@@ -68,7 +66,7 @@ const Purchase_Beta = (() => {
 
             elementTextContent(heading, localize('Contract Confirmation'));
             elementTextContent(descr, receipt.longcode);
-            if (barrier_element) commonTrading.labelValue(barrier_element, '', '', true);
+            commonTrading.labelValue(barrier_element, '', '', true);
             [].forEach.call(document.getElementsByClassName('contract_purchase_reference'), (ref) => {
                 elementTextContent(ref, `${localize('Ref.')} ${receipt.transaction_id}`);
             });
@@ -168,13 +166,13 @@ const Purchase_Beta = (() => {
             return;
         }
 
-        const container = document.getElementById('contract_purchase_spots');
-        const tick_elem = document.getElementById('current_tick_number');
-        const spot_elem = document.getElementById('current_tick_spot');
-        const list_elem = document.getElementById('last_digits_list');
-        if (container) {
-            tick_elem.innerHTML = spot_elem.innerHTML = list_elem.innerHTML = '&nbsp;';
-        }
+        const container = getElementById('contract_purchase_spots');
+        const tick_elem = getElementById('current_tick_number');
+        const spot_elem = getElementById('current_tick_spot');
+        const list_elem = getElementById('last_digits_list');
+
+        tick_elem.innerHTML = spot_elem.innerHTML = list_elem.innerHTML = '&nbsp;';
+
         for (let i = 1; i <= duration; i++) {
             const fragment = createElement('div', { class: 'gr-row' });
 
@@ -220,7 +218,7 @@ const Purchase_Beta = (() => {
                 elementTextContent(tick_elem, `${localize('Tick')} ${tick_number}`);
                 elementInnerHtml(spot_elem, tick_d.quote.replace(/\d$/, replace));
 
-                const this_digit_elem = document.getElementById(`tick_digit_${tick_number}`);
+                const this_digit_elem = getElementById(`tick_digit_${tick_number}`);
                 this_digit_elem.classList.add(is_win(last_digit) ? 'profit' : 'loss');
                 elementTextContent(this_digit_elem, last_digit);
 

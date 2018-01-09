@@ -6,6 +6,7 @@ const BinarySocket         = require('../../../../base/socket');
 const FlexTableUI          = require('../../../../common/attach_dom/flextable');
 const jpClient             = require('../../../../common/country_base').jpClient;
 const elementTextContent   = require('../../../../../_common/common_functions').elementTextContent;
+const getElementById       = require('../../../../../_common/common_functions').getElementById;
 const localize             = require('../../../../../_common/localize').localize;
 const State                = require('../../../../../_common/storage').State;
 const toTitleCase          = require('../../../../../_common/string_util').toTitleCase;
@@ -34,7 +35,7 @@ const AuthorisedApps = (() => {
             return;
         }
         Object.keys(element_ids).forEach((id) => {
-            elements[id] = document.getElementById(element_ids[id]);
+            elements[id] = getElementById(element_ids[id]);
         });
         updateApps();
     };
@@ -112,7 +113,7 @@ const AuthorisedApps = (() => {
             },
             formatter: formatApp,
         });
-        elements.table = document.getElementById(element_ids.table);
+        elements.table = getElementById(element_ids.table);
         return showLocalTimeOnHover('td.last_used');
     };
 

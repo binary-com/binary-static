@@ -1,4 +1,5 @@
 const tabListener        = require('binary-style').tabListener;
+const getElementById     = require('./common_functions').getElementById;
 const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
 
@@ -40,9 +41,11 @@ const TabSelector = (() => {
         const params_hash = Url.paramsHash();
         Object.keys(obj_tabs).forEach((tab_id) => {
             const id_to_show = params_hash[tab_id] || obj_tabs[tab_id].id_tabs[0];
-            const el_to_show = document.getElementById(id_to_show);
-            const selector   = el_to_show.parentNode.getAttribute('id');
-            changeTab({ selector, el_to_show });
+            const el_to_show = getElementById(id_to_show);
+            if (el_to_show.parentNode) {
+                const selector = el_to_show.parentNode.getAttribute('id');
+                changeTab({ selector, el_to_show });
+            }
         });
     };
 
@@ -82,7 +85,7 @@ const TabSelector = (() => {
             } else {
                 index_to_show = current_index === arr_id_tabs.length - 1 ? 0 : current_index + 1;
             }
-            options.el_to_show = document.getElementById(arr_id_tabs[index_to_show]);
+            options.el_to_show = getElementById(arr_id_tabs[index_to_show]);
             updateURL(options.selector, arr_id_tabs[index_to_show]);
         }
 
@@ -100,11 +103,11 @@ const TabSelector = (() => {
     };
 
     const slideSelector = (selector, el_to_show) => {
-        document.getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
+        getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
     };
 
     const selectCircle = (selector, old_index, index_to_show) => {
-        const el_circle = document.getElementById(`${selector}_circles`);
+        const el_circle = getElementById(`${selector}_circles`);
         if (el_circle) {
             const all_circles = el_circle.children;
             all_circles[old_index].classList.remove('selected');
