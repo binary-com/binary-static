@@ -107,9 +107,9 @@ const TabSelector = (() => {
     };
 
     const selectCircle = (selector, old_index, index_to_show) => {
-        const el_circle = getElementById(`${selector}_circles`);
-        if (el_circle) {
-            const all_circles = el_circle.children;
+        const el_circle   = getElementById(`${selector}_circles`);
+        const all_circles = el_circle.children;
+        if (all_circles.length) {
             all_circles[old_index].classList.remove('selected');
             all_circles[index_to_show].classList.add('selected');
         }

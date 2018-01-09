@@ -108,8 +108,8 @@ const PersonalDetails = (() => {
             el_lbl_key,
             data_key;
         Object.keys(data).forEach((key) => {
-            el_key     = CommonFunctions.getElementById(key);
-            el_lbl_key = CommonFunctions.getElementById(`lbl_${key}`);
+            el_key     = document.getElementById(key);
+            el_lbl_key = document.getElementById(`lbl_${key}`);
             // prioritise labels for japan account
             el_key     = is_jp ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
             if (el_key) {
