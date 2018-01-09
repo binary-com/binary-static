@@ -1,10 +1,10 @@
 // Handler when the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener('DOMContentLoaded', () => {
     toggleMobileMenu();
 
     const navbar = document.getElementsByClassName('navbar')[0];
     // Scroll to section
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', (e) => {
         if (e.target.classList.contains('page-scroll')) {
             const target = e.target.getAttribute('href').substr(1);
             const offset = target === 'page-top' ? 55 : 0;
