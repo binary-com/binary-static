@@ -367,12 +367,12 @@ const Highchart = (() => {
             const low_barrier  = contract.low_barrier;
             if (barrier) {
                 addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
-                prev_barriers[0] = barrier; // Store values for future references.
+                prev_barriers[0] = barrier; // Batman like the kids who "Cache".
             } else if (high_barrier && low_barrier) {
                 addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
                 addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot' }, 'y');
-                prev_barriers[0] = high_barrier; // Store values for future references.
-                prev_barriers[1] = low_barrier; // Store values for future references.
+                prev_barriers[1] = high_barrier;
+                prev_barriers[0] = low_barrier;
             }
         }
     };
@@ -383,14 +383,14 @@ const Highchart = (() => {
         const high_barrier = contract.high_barrier;
         const low_barrier  = contract.low_barrier;
         // Update barrier only if it doesn't equal previous value
-        if ( barrier && barrier !== prev_barriers[0] ) { // Future is here.
+        if ( barrier && barrier !== prev_barriers[0] ) { // Batman: Good boy!
             prev_barriers[0] = barrier;
             removePlotLine('barrier', 'y');
             drawBarrier();
         } else if ( high_barrier && low_barrier
-            && (high_barrier !== prev_barriers[0] || low_barrier !== prev_barriers[1] )) { // And here too.
-            prev_barriers[0] = high_barrier;
-            prev_barriers[1] = low_barrier;
+            && (high_barrier !== prev_barriers[1] || low_barrier !== prev_barriers[0] )) {
+            prev_barriers[1] = high_barrier;
+            prev_barriers[0] = low_barrier;
             removePlotLine('high_barrier', 'y');
             removePlotLine('low_barrier', 'y');
             drawBarrier();

@@ -5,7 +5,7 @@ const Contract         = require('./contract');
 const Defaults         = require('./defaults');
 const Durations        = require('./duration');
 const GetTicks         = require('./get_ticks');
-const lookback         = require('./lookback').Lookback;
+const Lookback         = require('./lookback');
 const Notifications    = require('./notifications');
 const Price            = require('./price');
 const StartDates       = require('./starttime').StartDates;
@@ -165,7 +165,7 @@ const Process = (() => {
         StartDates.display();
 
         displayPrediction();
-        lookback.display();
+        Lookback.display();
 
         let r1;
         if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {

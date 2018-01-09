@@ -1,5 +1,5 @@
-const Contract         = require('./contract');
-const Defaults         = require('./defaults');
+const Contract = require('./contract');
+const Defaults = require('./defaults');
 
 /*
  * Handles lookback option form
@@ -30,6 +30,4 @@ const Lookback = (() => {
     };
 })();
 
-module.exports = {
-    Lookback,
-};
+module.exports = Lookback;

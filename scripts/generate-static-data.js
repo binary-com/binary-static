@@ -152,6 +152,9 @@ const texts = [
     'Cryptocurrency',
     'Fiat Currency',
     'point difference',
+    'High',
+    'Low',
+    'High-Low',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',

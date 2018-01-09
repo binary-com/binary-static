@@ -57,6 +57,10 @@ const Price = (() => {
             proposal.amount = parseFloat(payout.value);
         }
 
+        if (lots && isVisible(lots) && lots.value) {
+            proposal.amount = lots.value;
+        }
+
         if (amount_type && isVisible(amount_type) && amount_type.value) {
             proposal.basis = amount_type.value;
         }
@@ -119,10 +123,6 @@ const Price = (() => {
             proposal.barrier = parseInt(prediction.value);
         }
 
-        if (lots && isVisible(lots) && lots.value) {
-            proposal.amount = lots.value;
-        }
-
         if (contract_type) {
             proposal.contract_type = type_of_contract;
         }
@@ -157,18 +157,13 @@ const Price = (() => {
         }
 
         // hide all containers except current one
-        if (position !== 'middle') {
-            const ele = document.getElementById('price_container_middle');
-            if ($(ele).is(':visible')) {
-                $(ele).fadeOut(200);
+        if (position === 'middle') {
+            if ($('price_container_top').is(':visible') || $('price_container_bottom').is(':visible')) {
+                $('price_container_top').fadeOut(200);
+                $('price_container_bottom').fadeOut(200);
             }
-        } else {
-            const ele_top = document.getElementById('price_container_top');
-            const ele_bottom = document.getElementById('price_container_bottom');
-            if ($(ele_top).is(':visible') || $(ele_bottom).is(':visible')) {
-                $(ele_top).fadeOut(200);
-                $(ele_bottom).fadeOut(200);
-            }
+        } else if ($('price_container_middle').is(':visible')) {
+            $('price_container_middle').fadeOut(200);
         }
 
         const container = document.getElementById(`price_container_${position}`);
@@ -233,11 +228,11 @@ const Price = (() => {
             }
             comment.show();
             error.hide();
-            if (!/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
-                commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
-            } else {
+            if (/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
                 // Look back comment.
                 elementInnerHtml(comment, `${localize('Payout')}: ${formatMoney((currency.value || currency.getAttribute('value')), proposal.multiplier)}/${localize('point difference')}`);
+            } else {
+                commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }
             const old_price  = purchase.getAttribute('data-display_value');
             const old_payout = purchase.getAttribute('data-payout');
