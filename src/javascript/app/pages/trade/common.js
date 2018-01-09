@@ -177,7 +177,9 @@ const commonTrading = (() => {
 
     const generateUnderlyingOptions = (elements, selected) => {
         const fragment   = document.createDocumentFragment();
-        const keys       = Object.keys(elements).sort((a, b) => elements[a].display.localeCompare(elements[b].display));
+        const keys       = Object.keys(elements).sort((a, b) => (
+            elements[a].display.localeCompare(elements[b].display, {}, { numeric: true }))
+        );
         const submarkets = {};
         for (let i = 0; i < keys.length; i++) {
             if (!getPropertyValue(submarkets, elements[keys[i]].submarket)) {

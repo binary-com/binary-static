@@ -8,6 +8,7 @@ js:
   - 'babel:landing_pages'
 
 test:
+  - 'checkDependencies'
   - 'stylelint'
   - 'eslint'
   - 'mochaTest'
