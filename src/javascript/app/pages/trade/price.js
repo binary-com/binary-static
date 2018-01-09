@@ -119,7 +119,7 @@ const Price = (() => {
             proposal.barrier = parseInt(prediction.value);
         }
 
-        if(lots && isVisible(lots) && lots.value) {
+        if (lots && isVisible(lots) && lots.value) {
             proposal.amount = lots.value;
         }
 
@@ -159,13 +159,13 @@ const Price = (() => {
         // hide all containers except current one
         if (position !== 'middle') {
             const ele = document.getElementById('price_container_middle');
-            if($(ele).is(':visible')) {
+            if ($(ele).is(':visible')) {
                 $(ele).fadeOut(200);
             }
         } else {
             const ele_top = document.getElementById('price_container_top');
             const ele_bottom = document.getElementById('price_container_bottom');
-            if($(ele_top).is(':visible') || $(ele_bottom).is(':visible')) {
+            if ($(ele_top).is(':visible') || $(ele_bottom).is(':visible')) {
                 $(ele_top).fadeOut(200);
                 $(ele_bottom).fadeOut(200);
             }
@@ -233,7 +233,7 @@ const Price = (() => {
             }
             comment.show();
             error.hide();
-            if(!/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
+            if (!/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
                 commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             } else {
                 // Look back comment.
@@ -241,8 +241,8 @@ const Price = (() => {
             }
             const old_price  = purchase.getAttribute('data-display_value');
             const old_payout = purchase.getAttribute('data-payout');
-            if(amount) displayPriceMovement(amount, old_price, proposal.display_value);
-            if(payout_amount) displayPriceMovement(payout_amount, old_payout, proposal.payout);
+            if (amount) displayPriceMovement(amount, old_price, proposal.display_value);
+            if (payout_amount) displayPriceMovement(payout_amount, old_payout, proposal.payout);
             purchase.setAttribute('data-purchase-id', id);
             purchase.setAttribute('data-ask-price', proposal.ask_price);
             purchase.setAttribute('data-display_value', proposal.display_value);

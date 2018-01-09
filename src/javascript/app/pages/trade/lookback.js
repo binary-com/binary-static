@@ -11,7 +11,7 @@ const Lookback = (() => {
         const lot_input      = document.getElementById('lots');
         const payout_element = document.getElementById('payout_row');
 
-        if(Contract.form() === 'lookback') {
+        if (Contract.form() === 'lookback') {
             lot_element.show();
             payout_element.hide(); // Hide payout
             if (Defaults.get('lot')) {
