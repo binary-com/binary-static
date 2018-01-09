@@ -74,7 +74,8 @@ const TypesOfAccounts = () => (
                         [{ text: <Row number={5} text={it.L('Commission')} />},          { text: it.L('No') },          { text: it.L('No') },          { text: it.L('No') }],
                         [{ text: <Row number={6} text={it.L('Margin call')} />},         { text: it.L('150%') },        { text: it.L('150%') },        { text: it.L('100%') }],
                         [{ text: <Row number={7} text={it.L('Stop out level')} />},      { text: it.L('75%') },         { text: it.L('75%') },         { text: it.L('50%') }],
-                        [{ text: <Row number={8} text={it.L('Maximum ticket size')} />}, { text: it.L('50 lots') },     { text: it.L('100 lots') },    { text: it.L('50 lots') }],
+                        [{ text: <Row number={8} text={it.L('Minimum ticket size')} />}, { text: it.L('0.01 lots') },   { text: it.L('0.01 lots') },   { text: it.L('0.01 lots') }],
+                        [{ text: <Row number={9} text={it.L('Step size')} />},           { text: it.L('0.01 lots') },   { text: it.L('0.01 lots') },   { text: it.L('0.01 lots') }],
                     ],
                 }}
             />
@@ -122,8 +123,13 @@ const TypesOfAccounts = () => (
         />
         <FootNote
             number={8}
-            title={it.L('Maximum ticket size')}
-            texts={[it.L('The maximum ticket size refers to the maximum volume or number of lots.')]}
+            title={it.L('Minimum ticket size')}
+            texts={[it.L('The minimum ticket size refers to the minimum volume or number of lots.')]}
+        />
+        <FootNote
+            number={9}
+            title={it.L('Step size')}
+            texts={[it.L('Step size is the minimum allowable increment applied to all order types. It is the volume from which the increase of the position is based. You can only trade in the minimum ticket size or its multiples.')]}
         />
     </div>
 );
