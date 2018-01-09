@@ -145,4 +145,5 @@ module.exports = [
     ['ico-disclaimer',                     'landing_pages/ico_disclaimer',              null,        'Initial Coin Offering Disclaimer',   'ja'],
     ['hackathon',                          'landing_pages/hackathon',                   null,        'Hackathon Competition',              'NOT-en'],
     ['landing/signup-frame',               'landing_pages/signup_frame',                null,        'Sign up'],
+    ['binary-japan-landing',               'landing_pages/binary_japan',                null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
 ];
