@@ -361,34 +361,34 @@ const BinaryJapan = () => (
                 <h1 className='bg-bubble margin-bottom'>{it.L('{JAPAN ONLY}Key plus point')}</h1>
             </div>
             <div  className='container'>
-                <div className='gr-row cards flex-justify-content-center'>
+                <div className='gr-row cards'>
                     <div className='gr-2 gr-4-p gr-6-m'>
-                        <div className='card--light key-plus card-icon-heart'>
+                        <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}trade with 50 yen to 999 yen')}</p>
                         </div>
                     </div>
                     <div className='gr-2 gr-4-p gr-6-m'>
-                        <div className='card--light key-plus card-icon-heart'>
+                        <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}set daily loss limit')}</p>
                         </div>
                     </div>
                     <div className='gr-2 gr-4-p gr-6-m'>
-                        <div className='card--light key-plus card-icon-heart'>
+                        <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}no transaction fees')}</p>
                         </div>
                     </div>
                     <div className='gr-2 gr-4-p gr-6-m'>
-                        <div className='card--light key-plus card-icon-heart'>
+                        <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}trade 9 currencies')}</p>
                         </div>
                     </div>
                     <div className='gr-2 gr-4-p gr-6-m'>
-                        <div className='card--light key-plus card-icon-heart'>
+                        <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}4 options types')}</p>
                         </div>
                     </div>
                     <div className='gr-2 gr-4-p gr-6-m'>
-                        <div className='card--light key-plus card-icon-heart'>
+                        <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}trading periods from 2 hours to 1 year')}</p>
                         </div>
                     </div>
