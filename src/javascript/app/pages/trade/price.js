@@ -158,12 +158,12 @@ const Price = (() => {
 
         // hide all containers except current one
         if (position === 'middle') {
-            if ($('price_container_top').is(':visible') || $('price_container_bottom').is(':visible')) {
-                $('price_container_top').fadeOut(200);
-                $('price_container_bottom').fadeOut(200);
+            if ($('#price_container_top').is(':visible') || $('#price_container_bottom').is(':visible')) {
+                $('#price_container_top').fadeOut(200);
+                $('#price_container_bottom').fadeOut(200);
             }
-        } else if ($('price_container_middle').is(':visible')) {
-            $('price_container_middle').fadeOut(200);
+        } else if ($('#price_container_middle').is(':visible')) {
+            $('#price_container_middle').fadeOut(200);
         }
 
         const container = document.getElementById(`price_container_${position}`);
