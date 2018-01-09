@@ -21,11 +21,11 @@ const Product = ({
         <p>{description}</p>
         <div className='gr-row gr-row-align-center'>
             <div className='gr-3 gr-8-m tab-image'>
-                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/ja/${image_1}.svg`)} />
+                <img className='responsive' src={it.url_for(`images/japan/version2/chart/${image_1}.svg`)} />
             </div>
             <div className='gr-12-m gr-padding-10'></div>
             <div className='gr-3 gr-8-m tab-image'>
-                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/ja/${image_2}.svg`)} />
+                <img className='responsive' src={it.url_for(`images/japan/version2/chart/${image_2}.svg`)} />
             </div>
         </div>
         <p>{duration}</p>
@@ -113,7 +113,7 @@ const BinaryJapan2 = () => (
             </section>
 
             <section className='bg-white edge--top edge--bottom--reverse'>
-                <div className='container padding-bottom-50 edge--top edge--bottom-reverse tab-container white-gap'>
+                <div className='container edge--top edge--bottom-reverse tab-container white-gap-before white-gap-after'>
                     <div className='tab-with-buttons'>
                         <div className='twb-content-wrapper'>
                             <div className='twb-content-container'>
@@ -148,7 +148,7 @@ const BinaryJapan2 = () => (
             </section>
 
             <section className='bg-orange bg-lines'>
-                <div className='container padding-top-bottom-400'>
+                <div className='container padding-top-bottom-500'>
                     <div id='key-plus' className='section-title center-text'>
                         <h1 className='content-inverse-color'>{it.L('{JAPAN ONLY}Key plus point')}</h1>
                         <p className='content-inverse-color'>{it.L('{JAPAN ONLY}Here are some random texts.')}</p>
@@ -355,7 +355,7 @@ const BinaryJapan2 = () => (
             </section>
 
             <section id='open-account' className='bg-white edge--top--reverse'>
-                <div className='container center-text padding-bottom-50'>
+                <div className='container center-text padding-bottom-50 small-gap-before'>
                     <div className='section-title'>
                         <h1 className='color-blue'>{it.L('{JAPAN ONLY}How to open an account')}</h1>
                     </div>
@@ -414,7 +414,7 @@ const BinaryJapan2 = () => (
                                         <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                     </div>
                                 </div>
-                                <div className='signup-form-success invisible'>
+                                <div className='signup-form-success white invisible'>
                                     <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
                                 </div>
                             </form>

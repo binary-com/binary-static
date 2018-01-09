@@ -94,22 +94,46 @@ form {
         padding: 5px;
         color: $COLOR_WHITE;
         border-radius: 5px;
+        text-align: center;
+
+        &.white {
+            background-color: $COLOR_WHITE;
+            color: $COLOR_BLACK;
+        }
     }
 }
 
 /** Helpers **/
-.padding-top-bottom-400 {
-    padding-top: 400px;
-    padding-bottom: 400px;
-}
-
 .padding-top-bottom-500 {
     padding-top: 500px;
     padding-bottom: 500px;
+
+    @media only screen and (max-width: 1919px) and (min-width: 1650px) {
+        padding-top: 400px;
+        padding-bottom: 400px;
+    }
+    @media only screen and (max-width: 1649px) and (min-width: 1200px) {
+        padding-top: 300px;
+        padding-bottom: 300px;
+    }
+    @media (max-width: 1199px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 }
 
 .padding-bottom-500 {
-    padding-bottom: 500px;
+    padding-bottom: 400px;
+
+    @media only screen and (max-width: 1919px) and (min-width: 1650px) {
+        padding-bottom: 350px;
+    }
+    @media only screen and (max-width: 1649px) and (min-width: 1200px) {
+        padding-bottom: 300px;
+    }
+    @media (max-width: 1199px) {
+        padding-bottom: 50px;
+    }
 }
 
 .padding-bottom-50 {
@@ -127,6 +151,10 @@ form {
 
 .bg-lines {
     background-image: url('../images/japan/version2/ptn-section-keypoints.svg');
+
+    @media (max-width: 1199px) {
+        background-image: url('../images/japan/version2/ptn-section-keypoints-mobile.svg');
+    }
 }
 
 .bg-confetti {
@@ -143,9 +171,12 @@ form {
     width: 100%;
     height: 230%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     top: -300px;
     z-index: -1;
+    @media only screen and (max-width: 1919px) and (min-width: 1200px) {
+        top: -200px;
+    }
     @media (max-width: 1199px) {
         top: 0;
         height: 100%;
@@ -243,11 +274,23 @@ form {
     @include angle(both, true);
 }
 
-.white-gap {
-    @include gap($COLOR_WHITE, true);
+.white-gap-before {
+    @include gap('before', $COLOR_WHITE, 20px, 12.4deg, -100%, true);
 }
 
-@media (max-width: 1650px) {
+.white-gap-after {
+    @include gap('after', $COLOR_WHITE, 50px, 12.4deg, 0, true);
+}
+
+.small-gap-before {
+    @include gap('before', $COLOR_WHITE, 20px, 0deg, 0, true, 100px, 50px, -10%);
+
+    @media (max-width: 1199px) {
+        content: none;
+    }
+}
+
+@media (max-width: 1649px) {
     [class*='white-gap']:before, [class*='white-gap']:after {
         content: none;
     }
@@ -593,6 +636,9 @@ form {
 }
 
 .tab-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
     @media (min-width: 1439px) {
         padding-bottom: 0;
         padding-top: 0;
