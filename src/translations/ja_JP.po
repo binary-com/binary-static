@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-04 20:23-0500\n"
+"PO-Revision-Date: 2018-01-09 01:23-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -596,7 +596,7 @@ msgstr "<a href='%1'>事務所</a>\n"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>幅広い取引期間</strong>：2時間以上から取引期間の指定が可能です"
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -1810,8 +1810,8 @@ msgstr "Binary Investments (Europe) Ltd"
 msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA とその全てのバイナリーグループのメンバーは\"%1\", \"私達（us）\" or \"当社（we）\"と総称されことがあります。"
 
-msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href='%1' target='_blank' download=1>licence no. IS/70156</a>). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
-msgstr "Binary Investments (Europe) Ltdはマルタ金融サービス庁（MFSA ）によりカテゴリー3　投資サービス・プロバイダとしてライセンス認定、監督されています。"
+msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href='%1' target='_blank' download=1>licence no. IS/70156</a>)."
+msgstr ""
 
 msgid "Binary K.K."
 msgstr "Binary K.K."
@@ -3504,14 +3504,17 @@ msgstr "END-IN"
 msgid "Ends Between/Ends Outside trades"
 msgstr "END-IN/END-OUT トレード"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "END-IN/END-OUT"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください。"
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Ends In/Out：取引終了時の判定価格が、設定された上下バリア価格の「レンジ内」か「レンジ外」にあるかを予測します"
 
 msgid "Ends Outside"
 msgstr "END-OUT"
@@ -3633,8 +3636,11 @@ msgstr ""
 msgid "Eurobasket Wolves"
 msgstr "Eurobasket Wolves"
 
-msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
-msgstr "口座開設をご希望の欧州連合の居住者（英国を除く）は、Binary (Europe) Ltdの下で口座を開設されます。"
+msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
+msgstr ""
+
+msgid "European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd."
+msgstr ""
 
 msgid "Even/Odd"
 msgstr "偶数/奇数"
@@ -5090,8 +5096,8 @@ msgstr "このような状況下では当社は事前通達の有無に関わら
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "詳細説明欄ではエージェントの決済方法、振込先の口座番号を記入して下さい。"
 
-msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
-msgstr "英国とマン島の居住者は、Binary (IOM) Ltd.の下に口座開設されます。日本の方はBinary株式会社 (和文名称 バイナリー株式会社)を通してのお取引となり、英国をのぞく欧州連合では、Binary (Europe) Ltd.とBinary Investments (Europe) Ltd.を介します。英国を除く欧州連合の居住者は、Binary (Europe) LtdとBinary Investments (Europe) Ltd.の下に口座を開設されます。その他以外の国は、Binary Investments (Europe) Ltd.の下に口座開設されます。"
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
+msgstr ""
 
 msgid "In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
 msgstr "In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
@@ -8060,8 +8066,8 @@ msgstr "設定価格より終了時の価格が上がるか、下がるかを予
 msgid "Predict the market rising or falling from its current level."
 msgstr "現在の市場価格から値上がりするか？値下がりするか？を予想してください。"
 
-msgid "Predict the market staying inside or going outside two price targets."
-msgstr "上下にバリアを設定した価格内に留まるか？留まらないか？を予想してください。"
+msgid "Predict the market staying between or going outside two price targets."
+msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
 msgstr "バリア設定をした価格にタッチするか、しないか？を予想してください。"
@@ -9131,17 +9137,20 @@ msgstr "マーケット情報を得ましょう。当社では、マーケット
 msgid "Stays Between"
 msgstr "STAY-IN"
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "STAY-IN/BREAK-OUT トレード"
 
-msgid "Stays In/Out"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr ""
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "取引期間中に設定した上下バリア価格の「範囲内にとどまり続ける」か「範囲外へ出る」かを予測して取引をされたい場合は「STAY-IN/BREAK-OUT」を選択して下さい。"
 
 msgid "Step"
 msgstr "ステップ"
@@ -11096,8 +11105,8 @@ msgstr "トレードの種類"
 msgid "Types of trades"
 msgstr "トレードの種類"
 
-msgid "UK and Manx residents will have their account opened with Binary (IOM) Ltd."
-msgstr "イギリス及びマン島に居住のお客さまのご口座は、この会社の下に開設されます。"
+msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Ltd."
+msgstr ""
 
 msgid "URL"
 msgstr "URL"
@@ -13209,7 +13218,7 @@ msgstr "本日"
 msgid "today, Fridays"
 msgstr "本日：金曜日"
 
-msgid "up/down, touch/no-touch, stays in/out."
+msgid "up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
@@ -13726,7 +13735,7 @@ msgid "{JAPAN ONLY}Account Number"
 msgstr "口座番号"
 
 msgid "{JAPAN ONLY}Account Opening"
-msgstr ""
+msgstr "口座開設"
 
 msgid "{JAPAN ONLY}Account Type"
 msgstr "口座種類"
@@ -13741,7 +13750,7 @@ msgid "{JAPAN ONLY}After we complete mandatory regulatory checks on your website
 msgstr "当社でご登録頂いた情報をもとに審査をさせて頂きます。審査が終了、当社のアフィリエイトプログラムを開始するにあたり販促材料としてアフィリエイトIDを含むリンクを提供されます。"
 
 msgid "{JAPAN ONLY}All customer funds are deposited with JSF Trust & Banking, and in the event of our business failure, they will be refunde via an independent attorney acting as beneficiary agent"
-msgstr ""
+msgstr "店頭バイナリーオプション取引は、法令によりお客様から預託を受けた資産と会社の資産を区分して管理することが義務付けられております。弊社では、関係法令に則り、日証金信託銀行へ全額信託を実施しております。 もし、弊社が破綻した場合、日証金信託銀行に信託保全されているお客様の資産は保全されます。"
 
 msgid "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
 msgstr "日本国内でバイナリーオプションを提供している各業者はお客さまとの取引に限度額を定めているが、一定期間の取引額や損失額、お客さまが保有する建玉が基準を超えた場合であっても、お客さまとの取引を中断あるいは中止することはありません。"
@@ -13759,7 +13768,7 @@ msgid "{JAPAN ONLY}Apply for Real Money Account"
 msgstr "JPY口座申込み"
 
 msgid "{JAPAN ONLY}Apply for an account & provide ID"
-msgstr ""
+msgstr "口座開設のお申し込み"
 
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 msgstr "投資についてよくご存知ですか?"
@@ -13786,16 +13795,16 @@ msgid "{JAPAN ONLY}Association of join"
 msgstr "加入する協会"
 
 msgid "{JAPAN ONLY}At the judgement time, predit the judgement rate to be less thatn the upper limit barrier and above the lower limit barrier, or above the upper limit barrier or below the lower limit barrier"
-msgstr ""
+msgstr "判定時刻の時点で、判定レートが上限バリア未満、下限バリア以上を予測する"
 
 msgid "{JAPAN ONLY}At the time of the judgement time predice the judgement rate above the barrier price or below the barrier price"
-msgstr ""
+msgstr "判定時刻の時点で、判定レートがバリア以上または未満を予測します"
 
 msgid "{JAPAN ONLY}At the top of the page as shown above."
 msgstr "バーチャル取引画面上の上部にも表示されております。"
 
 msgid "{JAPAN ONLY}Award-winning trading excellence"
-msgstr ""
+msgstr "多数の最優秀賞を受賞"
 
 msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
 msgstr "当社は、数々の受賞歴があり、米国特許取得済みの価格設定テクノロジーによりインターバンク市場でのトレードと同等の環境を提供しています"
@@ -13819,13 +13828,13 @@ msgid "{JAPAN ONLY}Binary K.K. Customer Account"
 msgstr "バイナリー（カ）コキャクグチ"
 
 msgid "{JAPAN ONLY}Binary Options"
-msgstr ""
+msgstr "バイナリーオプション"
 
 msgid "{JAPAN ONLY}Binary option can make a higher profit, for the same risk but less margin"
 msgstr ""
 
 msgid "{JAPAN ONLY}Binary option offer the chance to predit whether the future price of a FX will be above or below a target rate, or between, or outside a target range:"
-msgstr ""
+msgstr "当社では、ラダー、タッチ、レンジと複数の種類のバイナリーオプションを提供しています"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "売り手の損失が限定されておりますが、バイナリーオプションはバニラオプションに比べ、ローリスクハイリターンな取引となります。"
@@ -13929,10 +13938,10 @@ msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Numbe
 msgstr "本人確認書類およびマイナンバー「個人番号カード」書類を当社から送信したメールに添付して返信してください。"
 
 msgid "{JAPAN ONLY}Enable account with secure e-mail"
-msgstr ""
+msgstr "簡易書留にて口座認証コードを郵送"
 
 msgid "{JAPAN ONLY}Enter your email"
-msgstr ""
+msgstr "メールアドレスを入力"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "お客さまの基本情報を記入して頂き交付書面等に同意後、口座開設ボタンをクリックしてください。"
@@ -14049,7 +14058,7 @@ msgid "{JAPAN ONLY}High quality promotional materials with online reporting tool
 msgstr "アフィリエイト会員様は、オンラインレポート機能で広告活動を把握できます"
 
 msgid "{JAPAN ONLY}High speed execution"
-msgstr ""
+msgstr "ハイスピード注文"
 
 msgid "{JAPAN ONLY}Higher/lower rate"
 msgstr ""
@@ -14064,7 +14073,7 @@ msgid "{JAPAN ONLY}How to Open an Account"
 msgstr "口座開設について"
 
 msgid "{JAPAN ONLY}How to open an account"
-msgstr ""
+msgstr "口座開設から取引開始までの流れ"
 
 msgid "{JAPAN ONLY}How?"
 msgstr ""
@@ -14285,7 +14294,7 @@ msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "・問題の複写を禁止します。また、第三者に漏えいしないことに同意いただくものとします。"
 
 msgid "{JAPAN ONLY}Ladder Options"
-msgstr ""
+msgstr "ラダーオプション"
 
 msgid "{JAPAN ONLY}Learn more about binary options for academies using webinars, ebooks, videos."
 msgstr ""
@@ -14330,7 +14339,7 @@ msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "姓と名の間にスペースは不要"
 
 msgid "{JAPAN ONLY}Normal time"
-msgstr ""
+msgstr "通常"
 
 msgid "{JAPAN ONLY}November 7, 2014"
 msgstr "2014年11月7日"
@@ -14465,10 +14474,10 @@ msgid "{JAPAN ONLY}Rakuten Bank"
 msgstr "楽天銀行"
 
 msgid "{JAPAN ONLY}Range Option: Stay-In / Break-Out"
-msgstr ""
+msgstr "レンジオプション：Stay-In/Break-Out"
 
 msgid "{JAPAN ONLY}Range Options: End-In / End-Out"
-msgstr ""
+msgstr "レンジオプション：End-In/End-Out"
 
 msgid "{JAPAN ONLY}Register"
 msgstr "アフィリエイトプログラム参加への申込み"
@@ -14531,7 +14540,7 @@ msgid "{JAPAN ONLY}Sign me up"
 msgstr "申し込み"
 
 msgid "{JAPAN ONLY}Sign up for a free account"
-msgstr ""
+msgstr "口座申込みはこちら"
 
 msgid "{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today."
 msgstr "ご興味がある方は、是非ご連絡ください。"
@@ -14543,7 +14552,7 @@ msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 ho
 msgstr "残念ながら、合格点に達しませんでした。24時間以降（週末を除く）に再受験してください。"
 
 msgid "{JAPAN ONLY}Start trading after depositing money"
-msgstr ""
+msgstr "預託金入金後に取引開始"
 
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "取引概要"
@@ -14855,7 +14864,7 @@ msgid "{JAPAN ONLY}Take our Knowledge Test to confirm your understanding of opti
 msgstr "バイナリーオプションへの理解をチェックするため知識確認テストを受けてください。"
 
 msgid "{JAPAN ONLY}Take the knowledge confirmation test"
-msgstr ""
+msgstr "知識確認テストの受験"
 
 msgid "{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process."
 msgstr ""
@@ -14930,7 +14939,7 @@ msgid "{JAPAN ONLY}There are two types of option delivery: One requires exchangi
 msgstr "オプション取引には、権利行使によって、実際に原資産を受け渡すものと、原資産の時価と権利行使価格の差額を授受するものがあります。このうち、原資産の時価と権利行使価格が一定の条件を満たした場合には一定の金銭を支払うものをバイナリーオプションと呼びます。"
 
 msgid "{JAPAN ONLY}This field is required"
-msgstr ""
+msgstr "必須項目"
 
 msgid "{JAPAN ONLY}This popup window can also be activated from the portfolio panel, and portfolio page, by clicking the Trade View button."
 msgstr "詳細な取引情報が記載された約定済み通知画面は、取引画面の下部にあるポジション一覧タブ、もしくはポジション一覧メニューから確認できます。"
@@ -14945,7 +14954,7 @@ msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asse
 msgstr "将来購入する予定の原資産の値上がりを補うため、原資産のコールオプションを購入しました。"
 
 msgid "{JAPAN ONLY}Touch Options"
-msgstr ""
+msgstr "タッチオプション"
 
 msgid "{JAPAN ONLY}Track your trade in real time:"
 msgstr "取引成立後の状況はリアルタイムで確認できます:"
@@ -14992,7 +15001,7 @@ msgid "{JAPAN ONLY}We offer a full range of binary option types including ladder
 msgstr "ラダー、タッチ、レンジと複数の種類のバイナリーオプションを提供いたします"
 
 msgid "{JAPAN ONLY}We offer a minimum trading period of 2 hours up to 1 year"
-msgstr ""
+msgstr "最短2時間から最長1年の取引期間を提供"
 
 msgid "{JAPAN ONLY}We offer an informative and entertaining way to advertise online; including text ads, customer landing pages and invitations to promotional and educational events for your site visitors."
 msgstr "当社は、アフィリエイト会員様に広告素材（バナー、テキスト）を提供します。"
@@ -15007,7 +15016,7 @@ msgid "{JAPAN ONLY}We offer transparent 2-way pricing, allowing equal chance to 
 msgstr "2ウェイ・プライス（購入・売却）を表示し、公平で透明な価格を提供いたします"
 
 msgid "{JAPAN ONLY}We predict whether market price will touch barrier price by the end of trading period"
-msgstr ""
+msgstr "取引期間が終了するまでに市場価格がバリア価格にタッチするかしないかを予測する"
 
 msgid "{JAPAN ONLY}We pride ourselves on our responsible trading and high ethical standards, and we only offer our service in jurisdictions where we hold the necessary licenses and legal registrations."
 msgstr "当社は、責任ある取引環境を提供するとともに高い倫理基準をもって業務に取り組んでいます。登録金融業者として各国の当局の監督下でサービスを提供しております。"
@@ -15016,7 +15025,7 @@ msgid "{JAPAN ONLY}We will give you a virtual account that already has ¥ 1,000,
 msgstr ""
 
 msgid "{JAPAN ONLY}We will offer a minimum trading period of one week up to one year"
-msgstr ""
+msgstr "最短1週間から最長1年の取引期間を提供"
 
 msgid "{JAPAN ONLY}We will pass on any possible price improvements for orders in fast moving markets."
 msgstr "判定時刻2分前までならいつでも決済取引を行うことができます"
@@ -15034,7 +15043,7 @@ msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
 msgstr "Binary株式会社のウェブサイトへようこそ"
 
 msgid "{JAPAN ONLY}What are Binary Options?"
-msgstr ""
+msgstr "バイナリーオプション取引とは？"
 
 msgid "{JAPAN ONLY}What trading options do we have?"
 msgstr ""
@@ -15049,7 +15058,7 @@ msgid "{JAPAN ONLY}When buying a vanilla put option, the break-even price at the
 msgstr "プットオプションの買いの損益分岐点は、バリア価格に原資産1単位当たりのオプション料を減算した価格となります。"
 
 msgid "{JAPAN ONLY}When our company collapse"
-msgstr ""
+msgstr "当社破綻時"
 
 msgid "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 msgstr "店頭取引の金融商品の価格について、金融商品取引業者が買値と売値（又は買戻取価格、解約価格）の２つの価格をお客様に提示する場合、一般的には２つの価格には差（スプレッド）がありますが、このスプレッドはオプションの権利行使期限が近付くにつれて広がる傾向があります。"
@@ -15067,7 +15076,7 @@ msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "バイナリーオプション取引月次取引実績"
 
 msgid "{JAPAN ONLY}YOUR FUNDS ARE HELD SECURELY"
-msgstr ""
+msgstr "信託により区分管理"
 
 msgid "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
 msgstr "Virtual口座を使用して擬似取引を行い、取引プラットフォームに慣れ親しむことをお勧めいたします。\n"
