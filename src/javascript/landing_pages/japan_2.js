@@ -157,7 +157,7 @@ function tabWithButtons(id) {
         
         function touchEventsHandler() {
             const diffY = touchendY - touchstartY;
-            const nochangeY = diffY >= -5 && diffY <= 5 ;
+            const nochangeY = diffY >= -15 && diffY <= 15 ;
             if (touchendX <= touchstartX && nochangeY) {
                 updateTabContent(++current_index); // swipe left
             }
