@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:12-0500\n"
+"PO-Revision-Date: 2018-01-09 01:22-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -591,7 +591,7 @@ msgstr "<a href='%1'>Bureaux</a> à Malte, en Malaisie et au Japon"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Toutes les durées</strong> : de 10 secondes à 365 jours."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -3486,14 +3486,17 @@ msgstr "Termine dans la zone"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Contrats « Termine dans/hors de la zone »"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "Termine dans/hors de la zone"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Les contrats « Termine dans/hors de la zone » seront remboursés à leur prix d'achat si moins de 2 ticks sont enregistrés entre le début et la fin de l'opération."
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Termine dans/hors de la zone : vous prédisez que le marché terminera à l'intérieur ou à l'extérieur de la zone délimitée par deux prix-cibles à la fin de la période d'activité de l'option"
 
 msgid "Ends Outside"
 msgstr "Termine hors de la zone"
@@ -8025,8 +8028,8 @@ msgstr "Prédisez si le marché affichera un cours supérieur ou inférieur au p
 msgid "Predict the market rising or falling from its current level."
 msgstr "Prédisez qu'un marché augmente ou baisse par rapport à son niveau actuel."
 
-msgid "Predict the market staying inside or going outside two price targets."
-msgstr "Prédisez qu'un marché reste à l'intérieur ou sort de la zone entre deux prix-cibles."
+msgid "Predict the market staying between or going outside two price targets."
+msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
 msgstr "Prédisez qu'un marché touche ou ne touche pas un prix-cible."
@@ -9093,17 +9096,20 @@ msgstr "Restez informé. %1 offre quotidiennement des rapports et études de mar
 msgid "Stays Between"
 msgstr "Reste dans la zone"
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "Options « Reste dans/Sort de la zone »"
 
-msgid "Stays In/Out"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr ""
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "Reste dans/Sort de la zone : vous déterminez si le marché fluctera à l'intérieur ou à l'extérieur de la zone définie entre deux prix-cibles, à tout moment de la période du contrat"
 
 msgid "Step"
 msgstr "Étape"
@@ -13062,7 +13068,7 @@ msgstr "aujourd'hui"
 msgid "today, Fridays"
 msgstr "aujourd'hui, vendredis"
 
-msgid "up/down, touch/no-touch, stays in/out."
+msgid "up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"

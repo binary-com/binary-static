@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:12-0500\n"
+"PO-Revision-Date: 2018-01-09 01:23-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -591,7 +591,7 @@ msgstr "<a href='%1'>Biura</a> na Malcie, w Malezji i Japonii"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Wszystkie okresy</strong> - od 10 sekund do 365 dni."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -3491,14 +3491,17 @@ msgstr "Kończy się pomiędzy"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Zakłady typu „zakończy się w/ zakończy się poza”"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "Zakończy się w/poza"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Kwota zakupu kontraktu typu „zakończy się w/poza” zostanie zwrócona, jeśli od rozpoczęcia do zakończenia kontraktu odnotowane zostaną nie więcej niż 2 zmiany ceny."
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Zakończy się w/poza – Prognoza, czy cena rynkowa zatrzyma się pod koniec okresu w przedziale między dwiema cenami docelowymi czy poza nim"
 
 msgid "Ends Outside"
 msgstr "Kończy się poza"
@@ -8030,8 +8033,8 @@ msgstr "Prognozuj, czy cena rynkowa będzie wyższa czy niższa od ceny docelowe
 msgid "Predict the market rising or falling from its current level."
 msgstr "Prognozuj, czy cena rynkowa wzrośnie czy spadnie w odniesieniu do jej obecnego poziomu."
 
-msgid "Predict the market staying inside or going outside two price targets."
-msgstr "Prognozuj, czy cena rynkowa pozostanie w przedziale dwóch cen docelowych, czy wyjdzie poza ten przedział."
+msgid "Predict the market staying between or going outside two price targets."
+msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
 msgstr "Prognozuj, czy cena rynkowa osiągnie poziom ceny docelowej."
@@ -9098,17 +9101,20 @@ msgstr "Bądź na bieżąco. %1 oferuje codzienne raporty rynkowe i analizy rynk
 msgid "Stays Between"
 msgstr "Pozostaje pomiędzy"
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "Zakłady typu pozostanie pomiędzy/przekroczy"
 
-msgid "Stays In/Out"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr ""
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "Pozostaje w/poza – Prognozuj, czy cena rynkowa pozostanie w przedziale cen docelowych lub przekroczy ten przedział w dowolnym momencie w danym okresie trwania kontraktu"
 
 msgid "Step"
 msgstr "Krok"
@@ -13067,7 +13073,7 @@ msgstr "dziś"
 msgid "today, Fridays"
 msgstr "dziś, piątki"
 
-msgid "up/down, touch/no-touch, stays in/out."
+msgid "up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:13-0500\n"
+"PO-Revision-Date: 2018-01-09 01:23-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -591,8 +591,8 @@ msgstr "<a href='%1'>公司</a>位於馬爾他、馬來西亞和日本"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>所有合約期限</strong> - 從10 秒到365 天。"
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
-msgstr "<strong>所有市場條件</strong> - 上漲/下跌，觸及/未觸及，範圍內/範圍外。"
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
+msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>所有市場</strong> - 外匯、股指和商品。"
@@ -1798,7 +1798,7 @@ msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, B
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA 和所有其他 Binary Group 成員，有時總稱為「%1」，「我們」 或「本公司」。"
 
 msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href='%1' target='_blank' download=1>licence no. IS/70156</a>)."
-msgstr ""
+msgstr "Binary Investments (Europe) Ltd，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構授予執照及監管為3級投資服務提供商，(<a href='%1' target='_blank' download=1>執照號碼為IS/70156</a>)。"
 
 msgid "Binary K.K."
 msgstr "Binary K.K."
@@ -3486,14 +3486,17 @@ msgstr "區間之內結束"
 msgid "Ends Between/Ends Outside trades"
 msgstr "「收於範圍之內/之外」的交易"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "收盤價在「範圍之內/之外」"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "如果開始和結束期間價格跳動次數少於2，「收於範圍之內/之外」合約購入價將全額退還。"
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "到期時價格處於範圍之內/之外 - 預測市場價格在合約到期時處於兩個目標價格範圍之內或之外"
 
 msgid "Ends Outside"
 msgstr "區間之外結束"
@@ -3616,10 +3619,10 @@ msgid "Eurobasket Wolves"
 msgstr "Eurobasket Wolves"
 
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
-msgstr ""
+msgstr "想要進行產品博彩交易的歐盟居民將在 Binary (Europe) Ltd 開設帳戶。"
 
 msgid "European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "想要進行產品博彩交易的歐盟居民將在 Binary Investments (Europe) Ltd 開設帳戶。"
 
 msgid "Even/Odd"
 msgstr "偶/奇"
@@ -5074,7 +5077,7 @@ msgid "In the 'Further Instructions' field please specify the payment method and
 msgstr "請在「詳細說明」欄位指定支付方式及代理將轉帳的帳號。"
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
-msgstr ""
+msgstr "在英國，我們的客戶通過 Binary (IOM) Ltd. 和 Binary Investments (Europe) Ltd. 進行交易。在曼島，他們通過 Binary (IOM) Ltd. 進行交易。在日本通過Binary KK進行交易。在歐盟（除了英國），他們通過 Binary (Europe) Ltd 和 Binary Investments (Europe) Ltd. 進行交易。在全世界其他地區，他們通過 Binary (C.R.) S.A. 進行交易。"
 
 msgid "In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
 msgstr "如果是限價訂單，您確認我們將根據限價可用性努力以與您指定的限價相同或更佳價格水平開盤/平倉。您確認，訂單執行期間，我們的買價/賣價可能對您不利。"
@@ -8025,8 +8028,8 @@ msgstr "預測到期時市場價格是高於還是低於目標價格。"
 msgid "Predict the market rising or falling from its current level."
 msgstr "預測市場價格是否會從目前水平上漲或下跌。"
 
-msgid "Predict the market staying inside or going outside two price targets."
-msgstr "預測市場價格是否會在兩個目標價格的範圍之內。"
+msgid "Predict the market staying between or going outside two price targets."
+msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
 msgstr "預測市場價格是否會觸及目標價格。"
@@ -9093,17 +9096,20 @@ msgstr "通過 %1 的每日市場報告及市場研究，還有經常舉行的�
 msgid "Stays Between"
 msgstr "位於區間之內"
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "「保持在範圍之內/超出範圍之外」的交易"
 
-msgid "Stays In/Out"
-msgstr "範圍內/範圍外"
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "如果開始和結束期間價格跳動次數少於2，「保持在範圍之內/超出範圍之外」合約購入價將全額退還。"
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "保持在範圍之內/之外 - 預測市價在合約期限內的任何時間都保持在兩個目標價位範圍之內或超出範圍之外"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
+msgstr ""
 
 msgid "Step"
 msgstr "步驟"
@@ -10972,7 +10978,7 @@ msgid "Types of trades"
 msgstr "交易類型"
 
 msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Ltd."
-msgstr ""
+msgstr "想要進行產品博彩交易的歐盟和曼島居民將在 Binary (IOM) Ltd 開設帳戶。"
 
 msgid "URL"
 msgstr "網址"
@@ -13062,8 +13068,8 @@ msgstr "今天"
 msgid "today, Fridays"
 msgstr "今天、週五"
 
-msgid "up/down, touch/no-touch, stays in/out."
-msgstr "上漲/下跌，觸及/未觸及，範圍內/範圍外。"
+msgid "up/down, touch/no-touch, stays between/goes outside."
+msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "根據我們的要求, 他須按照公司的合理要求提供任何和所有資訊, 以滿足任何政府或任何其他當局的任何和所有指示或請求或規定或要求。"
