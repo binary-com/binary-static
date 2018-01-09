@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:13-0500\n"
+"PO-Revision-Date: 2018-01-09 01:23-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -592,7 +592,7 @@ msgstr "<a href='%1'>Escritórios</a> em Malta, Malásia e Japão"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Todas as durações</strong> - de 10 segundos a 365 dias."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -3496,14 +3496,17 @@ msgstr "Termina entre"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Negociações Termina Entre/Termina Fora"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "Termina Dentro/Fora"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Os contratos \"Termina Dentro/Fora\" serão reembolsados ao preço de compra caso existam menos de 2 tique-taques entre a hora de início e a hora final."
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Escolha Termina Dentro/Fora – Preveja que o mercado termina dentro ou fora de dois preços-alvo no fim do período de tempo"
 
 msgid "Ends Outside"
 msgstr "Termina fora"
@@ -8036,8 +8039,8 @@ msgstr "Preveja se mercado irá terminar mais alto ou mais baixo do que um preç
 msgid "Predict the market rising or falling from its current level."
 msgstr "Preveja se o mercado irá subir ou descer do seu nível atual."
 
-msgid "Predict the market staying inside or going outside two price targets."
-msgstr "Preveja se o mercado ficará dentro ou se sairá fora de dois preços-alvo."
+msgid "Predict the market staying between or going outside two price targets."
+msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
 msgstr "Preveja se o mercado irá tocar ou não num preço-alvo."
@@ -9104,17 +9107,20 @@ msgstr "Mantenha-se informado. A %1 oferece relatórios diários sobre mercados 
 msgid "Stays Between"
 msgstr "Fica entre"
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "Negociações Fica entre/Sai fora"
 
-msgid "Stays In/Out"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr ""
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "Fica dentro/Sai fora – Preveja que o mercado permanecerá dentro ou sairá fora de dois preços-alvo em qualquer momento durante o período do contrato"
 
 msgid "Step"
 msgstr "Etapa"
@@ -13075,7 +13081,7 @@ msgstr "hoje"
 msgid "today, Fridays"
 msgstr "hoje, sextas-feiras"
 
-msgid "up/down, touch/no-touch, stays in/out."
+msgid "up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:13-0500\n"
+"PO-Revision-Date: 2018-01-09 01:24-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -591,7 +591,7 @@ msgstr "<a href='%1'>Đặt văn phòng</a> ở Malta, Malaysia và Nhật"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Tất cả thời hạn</strong> - từ 10 giây đến 365 ngày."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -3491,14 +3491,17 @@ msgstr "Kết thúc giữa"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Giao dịch Kết thúc ở Giữa/ Kết thúc bên ngoài"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "Kết thúc Trong/Ngoài"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Hợp đồng kết thúc trong/ ngoài sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 sự thay đổi giá giữa thời điểm hợp đồng bắt đầu và kết thúc."
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Kết thúc trong/ngoài - Dự đoán rằng thị trường sẽ dừng lại ở trong hay ngoài 2 khoảng giá mục tiêu vào phiên kết thúc"
 
 msgid "Ends Outside"
 msgstr "Kết thúc bên ngoài"
@@ -8032,8 +8035,8 @@ msgstr "-Dự đoán nếu thị trường kết thúc cao hơn hoặc thấp h�
 msgid "Predict the market rising or falling from its current level."
 msgstr "-Dự đoán thị trường tăng hay giảm từ mức hiện tại."
 
-msgid "Predict the market staying inside or going outside two price targets."
-msgstr "Dự đoán thị trường ở bên trong hoặc ra ngoài hai giá mục tiêu."
+msgid "Predict the market staying between or going outside two price targets."
+msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
 msgstr "Dự đoán thị trường chạm vào hoặc không chạm vào giá tiêu."
@@ -9100,17 +9103,20 @@ msgstr "Hãy theo dõi thông báo. %1 cung cấp báo cáo thị trườ
 msgid "Stays Between"
 msgstr "Nằm giữa"
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "Giao dịch Ở Giữa/ Đi ra ngoài"
 
-msgid "Stays In/Out"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr ""
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "Giữ nguyên/ Thoát - dự đoán rằng thị trường vẫn ở bên trong hoặc ra bên ngoài 2 mức giá mục tiêu bất kì lúc nào trong suốt kì hợp đồng"
 
 msgid "Step"
 msgstr "Bước"
@@ -13072,7 +13078,7 @@ msgstr "hôm nay"
 msgid "today, Fridays"
 msgstr "hôm nay, Thứ Sáu"
 
-msgid "up/down, touch/no-touch, stays in/out."
+msgid "up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
