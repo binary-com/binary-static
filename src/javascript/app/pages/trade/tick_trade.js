@@ -61,7 +61,7 @@ const TickDisplay = (() => {
         const end_time = parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * 5);
 
         setXIndicators();
-        CommonFunctions.getHighstock((Highstock) => {
+        CommonFunctions.requireHighstock((Highstock) => {
             Highcharts = Highstock;
             initializeChart({
                 minimize,
