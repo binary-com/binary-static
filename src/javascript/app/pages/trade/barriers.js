@@ -33,9 +33,12 @@ const Barriers = (() => {
                 const indicative_low_barrier_tooltip  = document.getElementById('indicative_low_barrier_tooltip');
 
                 if (barrier.count === 1) {
-                    document.getElementById('high_barrier_row').style.display = 'none';
-                    document.getElementById('low_barrier_row').style.display  = 'none';
-                    document.getElementById('barrier_row').setAttribute('style', '');
+                    const high_barrier_row = document.getElementById('high_barrier_row');
+                    const low_barrier_row  = document.getElementById('low_barrier_row');
+                    const barrier_row      = document.getElementById('barrier_row');
+                    if (high_barrier_row) high_barrier_row.style.display = 'none';
+                    if (low_barrier_row) low_barrier_row.style.display  = 'none';
+                    if (barrier_row) barrier_row.setAttribute('style', '');
 
                     const defaults_barrier = Defaults.get('barrier');
                     const elm              = document.getElementById('barrier');
@@ -74,9 +77,12 @@ const Barriers = (() => {
                     Barriers.validateBarrier();
                     return;
                 } else if (barrier.count === 2) {
-                    document.getElementById('barrier_row').style.display = 'none';
-                    document.getElementById('high_barrier_row').setAttribute('style', '');
-                    document.getElementById('low_barrier_row').setAttribute('style', '');
+                    const barrier_row      = document.getElementById('barrier_row');
+                    const high_barrier_row = document.getElementById('high_barrier_row');
+                    const low_barrier_row  = document.getElementById('low_barrier_row');
+                    if (barrier_row) barrier_row.style.display = 'none';
+                    if (high_barrier_row) high_barrier_row.setAttribute('style', '');
+                    if (low_barrier_row) low_barrier_row.setAttribute('style', '');
 
                     const high_elm     = document.getElementById('barrier_high');
                     const low_elm      = document.getElementById('barrier_low');

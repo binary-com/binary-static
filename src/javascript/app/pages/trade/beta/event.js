@@ -334,8 +334,10 @@ const TradingEvents_Beta = (() => {
         $('#close_confirmation_container, #contract_purchase_new_trade').on('click dblclick', (e) => {
             if (e.target) {
                 e.preventDefault();
-                document.getElementById('contract_confirmation_container').style.display = 'none';
-                document.getElementById('contracts_list').style.display                  = 'flex';
+                const contract_confirmation_container = document.getElementById('contract_confirmation_container');
+                if (contract_confirmation_container) contract_confirmation_container.style.display = 'none';
+                const contracts_list = document.getElementById('contracts_list');
+                if (contracts_list) contracts_list.style.display = 'flex';
                 Price_Beta.processPriceRequest_Beta();
             }
         });
@@ -412,7 +414,7 @@ const TradingEvents_Beta = (() => {
     };
 
     const attachTimePicker = () => {
-        const date_start     = document.getElementById('date_start').value;
+        const date_start     = (document.getElementById('date_start') || '').value;
         const now            = !date_start || date_start === 'now';
         const current_moment = now ? (window.time || moment.utc()) : parseInt(date_start) * 1000;
         TimePicker.init({

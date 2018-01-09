@@ -43,7 +43,8 @@ const LoggedInHandler = (() => {
                     redirect_url = redirect_url.replace(new RegExp(`/${language}/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
                 }
             }
-            document.getElementById('loading_link').setAttribute('href', redirect_url);
+            const link = document.getElementById('loading_link');
+            if (link) link.setAttribute('href', redirect_url);
             window.location.href = redirect_url; // need to redirect not using pjax
         });
     };

@@ -37,14 +37,17 @@ const Regulation = (() => {
         $(document).ready(relocateLinks);
         $(window).resize(relocateLinks);
 
-        document.getElementById('visit_japan').addEventListener('click', () => {
-            const redirect_to = urlFor('home-jp', '', 'ja');
-            if (Client.isLoggedIn()) {
-                BinarySocket.send({ logout: '1', passthrough: { redirect_to } });
-            } else {
-                window.location.href = redirect_to;
-            }
-        });
+        const visit_japan = document.getElementById('visit_japan');
+        if (visit_japan) {
+            visit_japan.addEventListener('click', () => {
+                const redirect_to = urlFor('home-jp', '', 'ja');
+                if (Client.isLoggedIn()) {
+                    BinarySocket.send({ logout: '1', passthrough: { redirect_to } });
+                } else {
+                    window.location.href = redirect_to;
+                }
+            });
+        }
     };
 
     return {

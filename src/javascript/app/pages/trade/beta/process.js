@@ -118,7 +118,8 @@ const Process_Beta = (() => {
 
         State.set('is_chart_allowed', !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly'));
 
-        document.getElementById('trading_socket_container_beta').classList.add('show');
+        const trading_socket_container_beta = document.getElementById('trading_socket_container_beta');
+        if (trading_socket_container_beta) trading_socket_container_beta.classList.add('show');
         const init_logo = document.getElementById('trading_init_progress');
         if (init_logo.style.display !== 'none') {
             init_logo.style.display = 'none';
@@ -169,11 +170,19 @@ const Process_Beta = (() => {
             Durations_Beta.display();
         }
 
-        if (Defaults.get('amount')) $('#amount').val(Defaults.get('amount'));
-        else Defaults.set('amount', document.getElementById('amount').value);
+        if (Defaults.get('amount')) {
+            $('#amount').val(Defaults.get('amount'));
+        } else {
+            const amount = document.getElementById('amount');
+            if (amount) Defaults.set('amount', amount.value);
+        }
 
-        if (Defaults.get('amount_type')) commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
-        else Defaults.set('amount_type', document.getElementById('amount_type').value);
+        if (Defaults.get('amount_type')) {
+            commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
+        } else {
+            const amount_type = document.getElementById('amount_type');
+            if (amount_type) Defaults.set('amount_type', amount_type.value);
+        }
 
         if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
 
@@ -192,7 +201,8 @@ const Process_Beta = (() => {
             if (Defaults.get('prediction')) {
                 commonTrading.selectOption(Defaults.get('prediction'), document.getElementById('prediction'));
             } else {
-                Defaults.set('prediction', document.getElementById('prediction').value);
+                const prediction = document.getElementById('prediction');
+                if (prediction) Defaults.set('prediction', prediction.value);
             }
         } else {
             prediction_element.hide();

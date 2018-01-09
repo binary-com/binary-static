@@ -67,16 +67,22 @@ const AccountTransfer = (() => {
         showForm();
 
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
-            document.getElementById('transfer_fee').setVisibility(1);
+            const fee = document.getElementById('transfer_fee');
+            if (fee) fee.setVisibility(1);
         }
     };
 
     const hasError = (response) => {
         const error = response.error;
         if (error) {
-            const el_error = document.getElementById('error_message').getElementsByTagName('p')[0];
-            elementTextContent(el_error, error.message);
-            el_error.parentNode.setVisibility(1);
+            const el_message = document.getElementById('error_message');
+            if (el_message) {
+                const el_error = el_message.getElementsByTagName('p')[0];
+                if (el_error) {
+                    elementTextContent(el_error, error.message);
+                    el_error.parentNode.setVisibility(1);
+                }
+            }
             return true;
         }
         return false;
@@ -137,8 +143,10 @@ const AccountTransfer = (() => {
             }
         });
 
-        document.getElementById('transfer_fee').setVisibility(0);
-        document.getElementById('success_form').setVisibility(1);
+        const fee = document.getElementById('transfer_fee');
+        if (fee) fee.setVisibility(0);
+        const form = document.getElementById('success_form');
+        if (form) form.setVisibility(1);
     };
 
     const onLoad = () => {
@@ -150,12 +158,16 @@ const AccountTransfer = (() => {
             client_currency  = Client.get('currency');
             const min_amount = getMinWithdrawal(client_currency);
             if (!client_balance || +client_balance < min_amount) {
-                document.getElementById(messages.parent).setVisibility(1);
+                const el_parent = document.getElementById(messages.parent);
+                if (el_parent) el_parent.setVisibility(1);
                 if (client_currency) {
-                    document.getElementById('min_required_amount').textContent = `${client_currency} ${min_amount}`;
-                    document.getElementById(messages.balance).setVisibility(1);
+                    const min_required = document.getElementById('min_required_amount');
+                    if (min_required) min_required.textContent = `${client_currency} ${min_amount}`;
+                    const balance = document.getElementById(messages.balance);
+                    if (balance) balance.setVisibility(1);
                 }
-                document.getElementById(messages.deposit).setVisibility(1);
+                const deposit = document.getElementById(messages.deposit);
+                if (deposit) deposit.setVisibility(1);
             } else {
                 BinarySocket.send({ transfer_between_accounts: 1 }).then((response_transfer) => {
                     if (hasError(response_transfer)) {
@@ -171,12 +183,15 @@ const AccountTransfer = (() => {
                             return;
                         }
                         if (+response_limits.get_limits.remainder < min_amount) {
-                            document.getElementById(messages.limit).setVisibility(1);
-                            document.getElementById(messages.parent).setVisibility(1);
+                            const limit = document.getElementById(messages.limit);
+                            if (limit) limit.setVisibility(1);
+                            const el_parent = document.getElementById(messages.parent);
+                            if (el_parent) el_parent.setVisibility(1);
                             return;
                         }
                         withdrawal_limit = response_limits.get_limits.remainder;
-                        document.getElementById('range_hint').textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${localize(+client_balance <= +withdrawal_limit ? 'Current balance' : 'Withdrawal limit')}`;
+                        const hint = document.getElementById('range_hint');
+                        if (hint) hint.textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${localize(+client_balance <= +withdrawal_limit ? 'Current balance' : 'Withdrawal limit')}`;
                         populateAccounts(accounts);
                     });
                 });

@@ -153,7 +153,8 @@ const commonTrading = (() => {
 
             if (current.disabled) { // there is no open market
                 Notifications.show({ text: localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
-                document.getElementById('trading_init_progress').style.display = 'none';
+                const trading_init_progress = document.getElementById('trading_init_progress');
+                if (trading_init_progress) trading_init_progress.style.display = 'none';
             }
         }
     };
@@ -415,7 +416,9 @@ const commonTrading = (() => {
      * this is invoked when submit button is clicked and prevents reloading of page
      */
     const addEventListenerForm = () => {
-        document.getElementById('websocket_form').addEventListener('submit', (evt) => {
+        const form = document.getElementById('websocket_form');
+        if (!form) return;
+        form.addEventListener('submit', (evt) => {
             evt.currentTarget.classList.add('submitted');
             evt.preventDefault();
             return false;
@@ -482,11 +485,12 @@ const commonTrading = (() => {
     };
 
     const displayTooltip = (market, symbol) => {
-        const tip     = document.getElementById('symbol_tip');
-        const markets = document.getElementById('contract_markets').value;
+        const tip        = document.getElementById('symbol_tip');
+        const el_markets = document.getElementById('contract_markets');
 
-        if (!market || !symbol) return;
+        if (!market || !symbol || !tip || !el_markets) return;
 
+        const markets = el_markets.value;
         if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
             tip.show();
             tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
@@ -581,9 +585,11 @@ const commonTrading = (() => {
     };
 
     const displayTooltip_Beta = (market, symbol) => {
-        const tip     = document.getElementById('symbol_tip');
-        const markets = document.getElementById('contract_markets').value;
-        if (!market || !symbol) return;
+        const tip        = document.getElementById('symbol_tip');
+        const el_markets = document.getElementById('contract_markets');
+        if (!market || !symbol || !tip || !el_markets) return;
+
+        const markets = el_markets.value;
         if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
             tip.show();
             tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
@@ -615,10 +621,11 @@ const commonTrading = (() => {
     };
 
     const timeIsValid = ($element) => {
-        let end_date_value   = document.getElementById('expiry_date').getAttribute('data-value');
+        const expiry_date    = document.getElementById('expiry_date');
+        let end_date_value   = expiry_date ? expiry_date.getAttribute('data-value') : '';
         const date_start     = document.getElementById('date_start');
         let start_date_value = date_start.value;
-        let end_time_value   = document.getElementById('expiry_time').value;
+        let end_time_value   = (document.getElementById('expiry_time') || '').value;
         const $invalid_time  = $('#invalid-time');
 
         if ($element.attr('id') === 'expiry_time' && end_time_value &&

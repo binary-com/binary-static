@@ -103,8 +103,10 @@ const StartDates = (() => {
             }
         } else {
             State.remove('is_start_dates_displayed');
-            document.getElementById('date_start_row').style.display = 'none';
-            document.getElementById('date_start').value = 'now';
+            const date_start_row = document.getElementById('date_start_row');
+            if (date_start_row) date_start_row.style.display = 'none';
+            const date_start = document.getElementById('date_start');
+            if (date_start) date_start.value = 'now';
             Defaults.remove('date_start');
         }
     };

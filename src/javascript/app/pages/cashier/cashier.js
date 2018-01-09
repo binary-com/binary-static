@@ -60,7 +60,8 @@ const Cashier = (() => {
                 }
                 $(is_crypto ? '.crypto_currency' : '.normal_currency').setVisibility(1);
                 if (/^BCH/.test(Client.get('currency'))) {
-                    document.getElementById('message_bitcoin_cash').setVisibility(1);
+                    const message_bch = document.getElementById('message_bitcoin_cash');
+                    message_bch.setVisibility(1);
                 }
                 // bitcoin voucher
                 if (!is_virtual && Language.get() === 'ID' && Client.get('residence') === 'id') {

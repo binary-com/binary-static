@@ -286,7 +286,7 @@ const Price = (() => {
             }
         }
         processForgetProposals().then(() => {
-            Object.keys(types).forEach((type_of_contract) => {
+            Object.keys(types || {}).forEach((type_of_contract) => {
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
                     if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
                         response.echo_req.passthrough.form_id === form_id) {

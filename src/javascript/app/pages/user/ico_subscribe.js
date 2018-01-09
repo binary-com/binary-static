@@ -117,7 +117,7 @@ const ICOSubscribe = (() => {
                     { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: decimal_places, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]], no_scroll: 1 },
 
                     { request_field: 'buy', value: 1 },
-                    { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
+                    { request_field: 'amount',        parent_node: 'parameters', value: () => (document.getElementById('price') || '').value },
                     { request_field: 'contract_type', parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'symbol',        parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'basis',         parent_node: 'parameters', value: 'stake' },

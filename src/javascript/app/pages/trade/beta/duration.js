@@ -40,7 +40,8 @@ const Durations_Beta = (() => {
 
         const durations = Contract_Beta.durations();
         if (durations === false) {
-            document.getElementById('expiry_row').style.display = 'none';
+            const expiry = document.getElementById('expiry_row');
+            if (expiry) expiry.style.display = 'none';
             Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time');
             return false;
         }
@@ -157,7 +158,7 @@ const Durations_Beta = (() => {
     };
 
     const displayEndTime = () => {
-        const date_start     = document.getElementById('date_start').value;
+        const date_start     = (document.getElementById('date_start') || '').value;
         const now            = !date_start || date_start === 'now';
         const current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
         let expiry_date      = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment;
@@ -224,7 +225,8 @@ const Durations_Beta = (() => {
         if (selected_duration.amount && selected_duration.unit > unit_value) {
             unit_value = selected_duration.amount;
         }
-        document.getElementById('duration_amount').value = unit_value;
+        const duration_amount = document.getElementById('duration_amount');
+        if (duration_amount) duration_amount.value = unit_value;
         Defaults.set('duration_amount', unit_value);
         displayExpiryType();
         Defaults.set('duration_units', unit.value);

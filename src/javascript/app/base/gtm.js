@@ -107,7 +107,7 @@ const GTM = (() => {
             event             : 'buy_contract',
             visitorId         : Client.get('loginid'),
             bom_symbol        : req.symbol,
-            bom_market        : document.getElementById('contract_markets').value,
+            bom_market        : (document.getElementById('contract_markets') || '').value,
             bom_currency      : req.currency,
             bom_contract_type : req.contract_type,
             bom_contract_id   : buy.contract_id,
@@ -118,7 +118,7 @@ const GTM = (() => {
         $.extend(data, {
             bom_amount     : req.amount,
             bom_basis      : req.basis,
-            bom_expiry_type: document.getElementById('expiry_type').value,
+            bom_expiry_type:(document.getElementById('expiry_type') || '').value,
         });
         if (data.bom_expiry_type === 'duration') {
             $.extend(data, {

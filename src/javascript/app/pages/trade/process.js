@@ -173,7 +173,7 @@ const Process = (() => {
             Durations.display();
         }
 
-        const currency  = Defaults.get('currency') || document.getElementById('currency').value;
+        const currency  = Defaults.get('currency') || (document.getElementById('currency') || '').value;
         const is_crypto = isCryptocurrency(currency);
         const amount    = is_crypto ? 'amount_crypto' : 'amount';
         if (Defaults.get(amount)) {
@@ -181,13 +181,21 @@ const Process = (() => {
         } else if (is_crypto) {
             const default_crypto_value = getMinPayout(currency);
             Defaults.set(amount, default_crypto_value);
-            document.getElementById('amount').value = default_crypto_value;
+            const el_amount = document.getElementById('amount');
+            if (el_amount) el_amount.value = default_crypto_value;
         } else {
-            Defaults.set(amount, document.getElementById('amount').value);
+            const el_amount = document.getElementById('amount');
+            if (el_amount) Defaults.set(amount, el_amount.value);
         }
-        if (Defaults.get('amount_type')) commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
-        else Defaults.set('amount_type', document.getElementById('amount_type').value);
-        if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
+        if (Defaults.get('amount_type')) {
+            commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
+        } else {
+            const amount_type = document.getElementById('amount_type');
+            if (amount_type) Defaults.set('amount_type', amount_type.value);
+        }
+        if (Defaults.get('currency')) {
+            commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
+        }
 
         const expiry_type        = Defaults.get('expiry_type') || 'duration';
         const make_price_request = onExpiryTypeChange(expiry_type);
@@ -198,16 +206,23 @@ const Process = (() => {
     };
 
     const displayPrediction = () => {
-        const prediction_element = document.getElementById('prediction_row');
+        const prediction_row = document.getElementById('prediction_row');
+        if (!prediction_row) {
+            return;
+        }
         if (Contract.form() === 'digits' && sessionStorage.getItem('formname') !== 'evenodd') {
-            prediction_element.show();
+            prediction_row.show();
+            const prediction = document.getElementById('prediction');
+            if (!prediction) {
+                return;
+            }
             if (Defaults.get('prediction')) {
-                commonTrading.selectOption(Defaults.get('prediction'), document.getElementById('prediction'));
+                commonTrading.selectOption(Defaults.get('prediction'), prediction);
             } else {
-                Defaults.set('prediction', document.getElementById('prediction').value);
+                Defaults.set('prediction', prediction.value);
             }
         } else {
-            prediction_element.hide();
+            prediction_row.hide();
             Defaults.remove('prediction');
         }
     };
