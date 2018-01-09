@@ -171,8 +171,8 @@ const BinaryJapan = () => (
                             </div>
                         </div>
                         <div className='icon-pair'>
-                            <span className='icon-sm icon-1'></span>
-                            <span className='icon-sm icon-2'></span>
+                            <span className='icon-sm icon-7'></span>
+                            <span className='icon-sm icon-8'></span>
                         </div>
                         <h4 className='color-orange text-medium'>{it.L('{JAPAN ONLY}Range Option: Stay-In / Break-Out')}</h4>
                         <p className='text-desc'>{it.L('{JAPAN ONLY}It predicts whether the market price during the trading period is less than the upper limit barrier and maintains the lower limit barrier excess, or becomes equal to or higher than the upper limit barrier or belowe the lower limit barrier')}</p>
