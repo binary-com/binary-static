@@ -577,7 +577,7 @@ msgstr ""
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr ""
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -3472,13 +3472,16 @@ msgstr ""
 msgid "Ends Between/Ends Outside trades"
 msgstr ""
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
-msgstr ""
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
 msgstr ""
 
 msgid "Ends Outside"
@@ -8011,7 +8014,7 @@ msgstr ""
 msgid "Predict the market rising or falling from its current level."
 msgstr ""
 
-msgid "Predict the market staying inside or going outside two price targets."
+msgid "Predict the market staying between or going outside two price targets."
 msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
@@ -9079,16 +9082,19 @@ msgstr ""
 msgid "Stays Between"
 msgstr ""
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr ""
 
-msgid "Stays In/Out"
-msgstr ""
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr ""
 
 msgid "Step"
@@ -13048,7 +13054,7 @@ msgstr ""
 msgid "today, Fridays"
 msgstr ""
 
-msgid "up/down, touch/no-touch, stays in/out."
+msgid "up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:13-0500\n"
+"PO-Revision-Date: 2018-01-09 01:24-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -591,8 +591,8 @@ msgstr "<a href='%1'>สำนักงาน</a> ที่ประเทศม
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>ระยะเวลาทั้งหมด</strong> - 10 วินาที ถึง 365 วัน"
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
-msgstr "<strong>ทุกเงื่อนไขตลาด</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
+msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>ประเภทตลาด</strong> - สกุลเงินต่างๆ ดัชนีหลักทรัพย์ต่างๆ และ สินค้าโภคภัณฑ์ต่างๆ"
@@ -3491,14 +3491,17 @@ msgstr "สิ้นสุดระหว่าง"
 msgid "Ends Between/Ends Outside trades"
 msgstr "สิ้นสุดระหว่าง/สิ้นสุดนอกขอบเขต"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "Ends In/Out"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "สัญญา Ends In/Out จะถูกคืนมูลค่าที่ราคาซื้อหาก มีจำนวนช่วงราคาน้อยกว่า 2 ช่วง ระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด"
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Ends In/Out - ทำนาย หากตลาดสิ้นสุดที่ราคา ใน หรือ นอกของราคาเป้าหมาย 2 ค่าเมื่อหมดช่วงเวลา"
 
 msgid "Ends Outside"
 msgstr "สิ้นสุดภายนอก"
@@ -8031,8 +8034,8 @@ msgstr "คาดการณ์ว่าตลาดจะปิดที่ส
 msgid "Predict the market rising or falling from its current level."
 msgstr "คาดการณ์ตลาดเพิ่มขึ้น หรือลดลงจากระดับปัจจุบัน"
 
-msgid "Predict the market staying inside or going outside two price targets."
-msgstr "คาดการณ์ตลาดจะอยู่ภายในหรือออกนอกราคาเป้าหมายทั้งสอง"
+msgid "Predict the market staying between or going outside two price targets."
+msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
 msgstr "คาดการณ์ตลาดจะแตะ หรือไม่แตะราคาเป้าหมาย"
@@ -9101,17 +9104,20 @@ msgstr "เราให้ข้อมูลที่เพียงพออย
 msgid "Stays Between"
 msgstr "อยู่ระหว่าง"
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "Stays Between/Goes Outside trades"
 
-msgid "Stays In/Out"
-msgstr "Stays In/Out"
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "สัญญา Stays In/Out จะถูกคืนมูลค่าที่ราคาซื้อ หากมีช่วงราคาน้อยกว่า 2 ช่วงในระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด"
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "Stays In/Out - พยากรณ์ราคาเป้าหมายในตลาดว่า จะอยู่ใน หรือ ออกนอก ขอบเขตของ 2 ราคาเป้าหมายในระยะเวลาของสัญญา"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
+msgstr ""
 
 msgid "Step"
 msgstr "ขั้น"
@@ -13078,8 +13084,8 @@ msgstr "วันนี้"
 msgid "today, Fridays"
 msgstr "วันนี้วันศุกร์"
 
-msgid "up/down, touch/no-touch, stays in/out."
-msgstr "up/down, touch/no-touch, stays in/out"
+msgid "up/down, touch/no-touch, stays between/goes outside."
+msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "เมื่อเราร้องขอ เขาให้ข้อมูลใดๆหรือทั้งหมดแก่บริษัทตามที่กำหนดอย่างเหมาะสมเพื่อตอบสนองความต้องการ คำร้อง หรือคำสั่งซื้อ หรือข้อกำหนดใดๆหรือทั้งหมด หรืออะไรก็ตามของเจ้าหน้าที่รัฐบาลหรือผู้มีอำนาจอื่นๆ"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:13-0500\n"
+"PO-Revision-Date: 2018-01-09 01:24-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -591,8 +591,8 @@ msgstr "<a href='%1'>Kantor</a> di Malta, Malaysia dan Jepang"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Semua durasi</strong> - dari 10 detik hingga 365 hari."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
-msgstr "<strong>Semua kondisi pasar</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
+msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Semua pasar</strong> - valuta asing, indeks saham dan komoditas."
@@ -1798,7 +1798,7 @@ msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, B
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA dan semua anggota Group Binary lainnya yang kadang disebut secara kolektif sebagai \"%1\", \"kita\" atau \"kami\"."
 
 msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href='%1' target='_blank' download=1>licence no. IS/70156</a>)."
-msgstr ""
+msgstr "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Berlisensi dan diatur sebagai penyedia Layanan Investasi Kategori 3 oleh Otoritas Jasa Keuangan Malta (<a href='%1' target='_blank' download=1>lisensi no. IS/70156</a>)."
 
 msgid "Binary K.K."
 msgstr "Binary K.K."
@@ -3486,14 +3486,17 @@ msgstr "Ends Between"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Kontrak Berakhir Antara/Berakhir Keluar"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "Ends In/Out"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Kontrak Ends In/Out akan mendapat pengembalian harga beli jika terdapat kurang dari 2 tik penyelesaian dari waktu mulai hingga akhir."
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Ends In/Out – Menganalisa pasar akan berakhir didalam atau diluar harga target pada akhir periode"
 
 msgid "Ends Outside"
 msgstr "Ends Outside"
@@ -3616,10 +3619,10 @@ msgid "Eurobasket Wolves"
 msgstr "Eurobasket Wolves"
 
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
-msgstr ""
+msgstr "Warga Uni Eropa yang ingin melakukan trading produk trading akan mendaftar akun mereka pada Binary (Europe) Ltd."
 
 msgid "European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "Warga Uni Eropa yang ingin melakukan trading produk investasi akan mendaftar akun mereka pada Binary Investments (Europe) Ltd."
 
 msgid "Even/Odd"
 msgstr "Even/Odd"
@@ -5074,7 +5077,7 @@ msgid "In the 'Further Instructions' field please specify the payment method and
 msgstr "Dalam kolom 'Instruksi Tambahan' silahkan cantumkan metode pembayaran dan keterangan lain seperti nama bank dan nomor rekening dimana agen akan mengirimkan dana tersebut, jika perlu cantumkan juga nama, alamat email dan nomor telepon Anda."
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
-msgstr ""
+msgstr "Di Inggris, klien kami bertrading melalui Binary (IOM) Ltd Binary Investments (Europe) Ltd. Di Isle of Man, mereka bertrading melalui Binary (IOM) Ltd. Di Jepang, mereka bertrading melalui Binary KK. Di Uni Eropa (kecuali Inggris), mereka bertrading melalui Binary (Europe) Ltd dan Binary Investments (Europe) Ltd. Sisa bagian dunia lainnya, mereka bertrading melalui Binary (C.R.) S.A."
 
 msgid "In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
 msgstr "Dalam hal Limit Order, Anda mengetahui bahwa kami akan berusaha untuk membuka/menutup transaksi pada tingkat yang sama atau lebih baik daripada batas yang Anda tentukan, ketersediaan harga batas. Anda mengetahui bahwa pada waktu eksekusi order, harga bid/offer kami mungkin menjadi kurang menguntungkan untuk Anda."
@@ -8025,8 +8028,8 @@ msgstr "Menganalisa pasar akan berakhir lebih tinggi atau lebih rendah dari targ
 msgid "Predict the market rising or falling from its current level."
 msgstr "Menganalisa pasar naik atau turun dari tingkat saat ini."
 
-msgid "Predict the market staying inside or going outside two price targets."
-msgstr "Menganalisa pasar akan tetap berada atau keluar dua target harga."
+msgid "Predict the market staying between or going outside two price targets."
+msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
 msgstr "Menganalisa pasar akan menyentuh atau tidak target harga."
@@ -9093,17 +9096,20 @@ msgstr "Pengetahuan terkini. %1 menawarkan laporan dan penelitian pasar harian t
 msgid "Stays Between"
 msgstr "Stays Between"
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "Kontrak Tetap Antara/Bergerak Keluar"
 
-msgid "Stays In/Out"
-msgstr "Stays In/Out"
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Kontrak In/Out akan dikembalikan berdasarkan harga beli jika terdapat kurang dari 2 tik antara waktu mulai dan akhir."
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "Stays In/Out – Menganalisa pasar akan tetap didalam atau bergerak keluar dua harga target kapan saja selama periode kontrak berlangsung"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
+msgstr ""
 
 msgid "Step"
 msgstr "Langkah"
@@ -10973,7 +10979,7 @@ msgid "Types of trades"
 msgstr "Jenis kontrak"
 
 msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Ltd."
-msgstr ""
+msgstr "Warga Inggris dan Manx yang ingin menukar produk trading akan mendaftar akun mereka dibawah Binary (IOM) Ltd."
 
 msgid "URL"
 msgstr "URL"
@@ -13063,8 +13069,8 @@ msgstr "hari ini"
 msgid "today, Fridays"
 msgstr "hari ini, Jumat"
 
-msgid "up/down, touch/no-touch, stays in/out."
-msgstr "up/down, touch/no-touch, stays in/out."
+msgid "up/down, touch/no-touch, stays between/goes outside."
+msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "atas permintaan dari kami, yang bersangkutan akan memberikan segala informasi yang diperlukan kepada Perusahaan untuk memenuhi semua tuntutan atau permintaan atau Pesanan atau persyaratan apapun dari pemerintah atau otoritas lainnya;"

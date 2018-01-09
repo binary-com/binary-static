@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:12-0500\n"
+"PO-Revision-Date: 2018-01-09 01:22-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -591,7 +591,7 @@ msgstr "<a href='%1'>Niederlassungen</a> in Malta, Malaysia und Japan"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Alle Laufzeiten</strong> - von 10 Sekunden bis 365 Tage."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -3487,14 +3487,17 @@ msgstr "Schließt Zwischen"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Schließt zwischen/Schließt außerhalb Kontrakte"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "Endet innerhalb/außerhalb"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Endet innerhalb/außerhalb Kontrakte werden zum Kaufkurs erstattet, wenn weniger als 2 Ticks zwischen der Start- und der Endzeit liegen."
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Schließt unter/Schließt über - Sagen Sie voraus, dass der Kurs zum Ende eines Zeitraums innerhalb oder außerhalb zweier Kursziele schließt"
 
 msgid "Ends Outside"
 msgstr "Endet Außerhalb"
@@ -8026,8 +8029,8 @@ msgstr "Sagen Sie voraus ob der Kurs höher oder niedriger als ein Kursziel ende
 msgid "Predict the market rising or falling from its current level."
 msgstr "Sagen Sie voraus, ob der Kurs von seinem aktuellen Level steigen oder fallen wird."
 
-msgid "Predict the market staying inside or going outside two price targets."
-msgstr "Sagen Sie voraus ob der Kurs innerhalb oder außerhalb zweier Kursziele sein wird."
+msgid "Predict the market staying between or going outside two price targets."
+msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
 msgstr "Sagen Sie voraus, oben der Kurs einen Zielkurs erreichen oder nicht erreichen wird."
@@ -9094,17 +9097,20 @@ msgstr "Bleiben Sie auf dem Laufenden. %1 bietet tägliche Marktberichte und Mar
 msgid "Stays Between"
 msgstr "Bleibt Zwischen"
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "Bleibt Innerhalb/Geht Außerhalb Kontrakte"
 
-msgid "Stays In/Out"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr ""
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "Bleibt Innerhalb/Au­ßer­halb - Sagen Sie voraus, dass der Kurs sich innerhalb oder außerhalb zwischen zwei Zielkursen zu jeder Zeit während der Kontraktlaufzeit bewegt"
 
 msgid "Step"
 msgstr "Schritt"
@@ -13067,7 +13073,7 @@ msgstr "heute"
 msgid "today, Fridays"
 msgstr "heute, Freitage"
 
-msgid "up/down, touch/no-touch, stays in/out."
+msgid "up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
