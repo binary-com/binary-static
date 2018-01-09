@@ -426,12 +426,12 @@ const BinaryJapan2 = () => (
             <footer className='content-inverse-color'>
                 <div className='primary-bg-color'>
                     <div className='container'>
-                        <p>{it.L('{JAPAN ONLY}This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - view license. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - view license, and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker\'s Licence issued on 1 July 2017 (licence no. 1010285). This website\'s services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.')}</p>
+                        <p>{it.L('{JAPAN ONLY}Disclaimer text here')}</p>
                     </div>
                 </div>
                 <div className='primary-bg-color-dark'>
                     <div className='container'>
-                        <p>{it.L('{JAPAN ONLY}Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about Responsible Trading.')}</p>
+                        <p>{it.L('{JAPAN ONLY}Footer text here')}</p>
                     </div>
                 </div>
             </footer>
