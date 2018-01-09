@@ -16,6 +16,7 @@ const MBTradePage          = require('../pages/mb_trade/mb_tradepage');
 const AssetIndexUI         = require('../pages/resources/asset_index/asset_index.ui');
 const TradingTimesUI       = require('../pages/resources/trading_times/trading_times.ui');
 const TradePage            = require('../pages/trade/tradepage');
+const Trade                = require('../pages/react/trade');
 const Authenticate         = require('../pages/user/account/authenticate');
 const ChangePassword       = require('../pages/user/account/change_password');
 const PaymentAgentTransfer = require('../pages/user/account/payment_agent_transfer/payment_agent_transfer');
@@ -101,6 +102,7 @@ const pages_config = {
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     professional             : { module: professionalClient,         is_authenticated: true, only_real: true },
+    react                    : { module: Trade },
     realws                   : { module: RealAccOpening,             is_authenticated: true },
     redirect                 : { module: Redirect },
     regulation               : { module: Regulation },
