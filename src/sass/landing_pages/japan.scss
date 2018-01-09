@@ -509,6 +509,9 @@ form {
             font-size: 72px;
             font-weight: 500;
             white-space: nowrap;
+            @media (max-width: 1199px) {
+                white-space: pre-wrap; // wrap text on mobile
+            }
             margin-top: 80px;
             margin-bottom: 30px;
         }
