@@ -77,7 +77,7 @@ const AccountTransfer = (() => {
         if (error) {
             const el_error = getElementById('error_message').getElementsByTagName('p')[0];
             elementTextContent(el_error, error.message);
-            if (el_error.parentNpde) {
+            if (el_error.parentNode) {
                 el_error.parentNode.setVisibility(1);
             }
             return true;
