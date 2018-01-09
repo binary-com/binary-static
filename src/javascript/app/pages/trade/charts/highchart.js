@@ -157,9 +157,9 @@ const Highchart = (() => {
     };
 
     // Remove plotLines by id
-    const removePlotLine = (id, type = y) => {
+    const removePlotLine = (id, type = 'y') => {
         chart[(`${type}Axis`)][0].removePlotLine(id);
-    }
+    };
 
     const handleResponse = (response) => {
         const type  = response.msg_type;
@@ -395,7 +395,7 @@ const Highchart = (() => {
             removePlotLine('low_barrier', 'y');
             drawBarrier();
         }
-    }
+    };
 
     // set an orange circle on the entry/exit tick
     const selectTick = (value, tick_type) => {

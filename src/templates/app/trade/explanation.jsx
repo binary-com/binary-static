@@ -169,7 +169,7 @@ const Explanation = () => (
                 <p>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')}</p>
             </div>
-            <div id="explain_lookbacklow" className="invisible">
+            <div id='explain_lookbacklow' className='invisible'>
                 <h3>{it.L('Pay-off')}</h3>
                 <p>{it.L('By purchasing the ‘Low’ contract, you’ll receive a pre-specified amount per lot for each point of difference between the [_1]highest value[_2] and the [_1]exit spot[_2].', '<strong>', '</strong>')}</p>
                 <h3>{it.L('Highest and lowest values')}</h3>
@@ -186,7 +186,7 @@ const Explanation = () => (
                 <p>{it.L('The [_1]start time[_2] begins when the contract is processed by our servers.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2] (if it’s less than one day in duration), or at the end of the trading day (if it’s one day or more in duration).', '<strong>','</strong>')}</p>
             </div>
-            <div id="explain_lookbackhigh" className="invisible">
+            <div id='explain_lookbackhigh' className='invisible'>
                 <h3>{it.L('Pay-off')}</h3>
                 <p>{it.L('By purchasing the ‘High’ contract, you’ll receive a pre-specified amount per lot for each point of difference between the [_1]exit spot[_2] and the [_1]lowest value[_2].', '<strong>', '</strong>')}</p>
                 <h3>{it.L('Highest and lowest values')}</h3>
@@ -203,7 +203,7 @@ const Explanation = () => (
                 <p>{it.L('The [_1]start time[_2] begins when the contract is processed by our servers.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2] (if it’s less than one day in duration), or at the end of the trading day (if it’s one day or more in duration).', '<strong>','</strong>')}</p>
             </div>
-            <div id="explain_lookbackhighlow" className="invisible">
+            <div id='explain_lookbackhighlow' className='invisible'>
                 <h3>{it.L('Pay-off')}</h3>
                 <p>{it.L('By purchasing the ‘High-Low’ contract, you’ll receive a pre-specified amount per lot for each point of difference between the [_1]highest value[_2] and the [_1]lowest value[_2].', '<strong>', '</strong>')}</p>
                 <h3>{it.L('Highest and lowest values')}</h3>
