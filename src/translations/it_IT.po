@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:12-0500\n"
+"PO-Revision-Date: 2018-01-09 01:22-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -591,7 +591,7 @@ msgstr "<a href='%1'>Uffici</a> in Malta, Malesia e Giappone"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Tutte le durate</strong> - da 10 secondi a 365 giorni."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -3492,14 +3492,17 @@ msgstr "Finisce tra"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Trade Ends Between (Finisce tra)/Ends Outside (Termina fuori)"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "Termina In/Out"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "I contratti ends in/out verranno rimborsati al prezzo d'acquisto nel caso in cui si verifichino meno di 2 tick tra l'orario di inizio e quello di fine."
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Ends In/Out - prevedi che il mercato chiuderà all'interno o all'esterno di due prezzi scelti alla fine del periodo di tempo"
 
 msgid "Ends Outside"
 msgstr "Termina fuori"
@@ -8031,7 +8034,7 @@ msgstr "Prevedi se il mercato chiuderà a un prezzo più alto o più basso rispe
 msgid "Predict the market rising or falling from its current level."
 msgstr "Prevedi se il mercato incrementerà o decrementerà rispetto al livello attuale."
 
-msgid "Predict the market staying inside or going outside two price targets."
+msgid "Predict the market staying between or going outside two price targets."
 msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
@@ -9099,17 +9102,20 @@ msgstr "Tieniti informato. %1 offre resoconti giornalieri del mercato, ricerche 
 msgid "Stays Between"
 msgstr ""
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "Trade Stays Between (Staziona fra) / Goes Outside (Esce fuori)"
 
-msgid "Stays In/Out"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr ""
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "Stays In/Out - prevedi che il mercato rimarrà sempre all'interno di due prezzi scelti o ne uscirà in un qualsiasi momento durante il periodo del contratto"
 
 msgid "Step"
 msgstr "Step"
@@ -13068,7 +13074,7 @@ msgstr "oggi"
 msgid "today, Fridays"
 msgstr "oggi, Venerdì"
 
-msgid "up/down, touch/no-touch, stays in/out."
+msgid "up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
