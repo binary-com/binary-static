@@ -24,6 +24,12 @@ section {
         .container {
             padding-top: 50px;
             padding-bottom: 50px;
+
+            &.tab-container {
+                @media (max-width: 1199px) {
+                    margin-top: -60px;
+                }
+            }
         }
     }
 }
@@ -52,7 +58,7 @@ form {
         display: flex;
         flex-direction: column;
         position: relative;
-        @media (min-width: 575px) {
+        @media (min-width: 576px) {
             flex-direction: row;
             justify-content: center;
         }
@@ -78,6 +84,7 @@ form {
             outline: none;
             @media (max-width: 575px) {
                 margin: 5px auto;
+                width: 100%;
             }
         }
         .error-msg {
@@ -123,8 +130,21 @@ form {
 }
 
 .padding-bottom-500 {
-    padding-bottom: 400px;
+    padding-bottom: 500px;
 
+    &.override {
+        padding-bottom: 400px;
+
+        @media only screen and (max-width: 1919px) and (min-width: 1650px) {
+            padding-bottom: 300px;
+        }
+        @media only screen and (max-width: 1649px) and (min-width: 1200px) {
+            padding-bottom: 250px;
+        }
+        @media (max-width: 1199px) {
+            padding-bottom: 50px;
+        }
+    }
     @media only screen and (max-width: 1919px) and (min-width: 1650px) {
         padding-bottom: 350px;
     }
@@ -291,7 +311,7 @@ form {
 }
 
 @media (max-width: 1649px) {
-    [class*='white-gap']:before, [class*='white-gap']:after {
+    [class*='white-gap']:before, [class*='white-gap']:after, [class*='small-gap']:before {
         content: none;
     }
 }
@@ -392,11 +412,17 @@ form {
         .navbar-header {
             width: 100%;
             display: flex;
+            align-items: center;
 
             .navbar-brand {
                 height: 30px;
                 width: 180px !important;
                 margin: 0 15px;
+
+                @media (max-width: 575px) {
+                    height: 50px;
+                    margin: 0 auto;
+                }
             }
             .navbar-toggle {
                 display: block;
@@ -465,6 +491,12 @@ form {
     .container {
         padding-top: 200px;
         padding-bottom: 400px;
+
+        .intro-subtext {
+            @media (max-width: 575px) {
+                text-align: justify;
+            }
+        }
         @media (max-width: 1199px) {
             padding-top: 150px;
             padding-bottom: 50px;
@@ -655,6 +687,9 @@ form {
             max-width: 50%;
             flex-basis: 50%;
         }
+    }
+    @media (max-width: 575px) {
+        margin-top: -60px;
     }
 }
 

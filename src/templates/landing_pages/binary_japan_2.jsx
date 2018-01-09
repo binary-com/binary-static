@@ -338,7 +338,7 @@ const BinaryJapan2 = () => (
             </section>
 
             <section className='fill-bg-color edge--top--reverse'>
-                <div className='container center-text padding-bottom-500'>
+                <div className='container center-text padding-bottom-500 override'>
                     <div className='section-title'>
                         <h1 className='color-blue'>{it.L('{JAPAN ONLY}Your funds are kept safe')}</h1>
                         <p>{it.L('{JAPAN ONLY}All customer funds are deposited with JSF Trust Bank and will be refunded by an independent attorney as a beneficiary agent in case of business failure')}</p>
