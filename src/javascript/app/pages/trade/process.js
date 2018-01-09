@@ -118,7 +118,7 @@ const Process = (() => {
 
         State.set('is_chart_allowed', !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly'));
 
-        getElementById('trading_socket_container').setVisibility(1);
+        getElementById('trading_socket_container').classList.add('show');
 
         const init_logo = getElementById('trading_init_progress');
         if (init_logo && init_logo.style.display !== 'none') {
