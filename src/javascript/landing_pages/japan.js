@@ -1,4 +1,5 @@
-window.onload = function () {
+/* global toggleMobileMenu:false */
+window.onload = function() {
     toggleMobileMenu();
     initForm();
 
@@ -21,7 +22,7 @@ function initForm() {
         const trimmed_email = trimEmail(val);
         wsSend(ws, {
             verify_email: trimmed_email,
-            type        : 'account_opening'
+            type        : 'account_opening',
         });
     }
 
@@ -29,7 +30,7 @@ function initForm() {
         const response = JSON.parse(msg.data);
         setValidationStyle(el_email, response.error);
         if (!response.error) {
-            signup_forms.forEach(function(el) {
+            signup_forms.forEach((el) => {
                 el.querySelector('.signup-form-input').classList.add('invisible');
                 el.querySelector('.signup-form-success').classList.remove('invisible');
             });
@@ -37,12 +38,12 @@ function initForm() {
     }
 
     function trimEmail(str) {
-        return str.replace(/\s/g, "");
+        return str.replace(/\s/g, '');
     }
 
     let validation_set = false; // To prevent validating before submit
 
-    signup_forms.forEach(function(form) {
+    signup_forms.forEach((form) => {
         form.addEventListener('submit', handleSubmit);
     });
 
@@ -54,8 +55,8 @@ function initForm() {
         el_email = el_form.querySelector('input[type="email"]');
         if (!validateEmail(el_email.value)) {
             if (!validation_set) {
-                ['input', 'change'].forEach(function (evt) {
-                    el_email.addEventListener(evt, function () {
+                ['input', 'change'].forEach((evt) => {
+                    el_email.addEventListener(evt, () => {
                         setValidationStyle(!validateEmail(el_email.value));
                     });
                 });
@@ -72,6 +73,7 @@ function initForm() {
             ws.onopen = sendVerifyEmail(el_email.value);
             ws.onmessage = verifySubmit;
         }
+        return true;
     }
 
     ws.onmessage = verifySubmit;
@@ -82,10 +84,10 @@ function validateEmail(email) {
 }
 
 function setValidationStyle(has_error) {
-    document.querySelectorAll('input[type="email"]').forEach(function(el) {
+    document.querySelectorAll('input[type="email"]').forEach((el) => {
         el.classList[has_error ? 'add' : 'remove']('error-field');
     });
-    document.querySelectorAll('.error-msg').forEach(function(el) {
+    document.querySelectorAll('.error-msg').forEach((el) => {
         el.classList[has_error ? 'remove' : 'add']('invisible');
     });
 }
