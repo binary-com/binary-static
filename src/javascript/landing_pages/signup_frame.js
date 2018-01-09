@@ -1,30 +1,30 @@
-var error_class = 'error-field';
+const error_class = 'error-field';
 
 window.onload = function () {
     dataLayer.push({ event: 'page_load' });
 
-    var el_email   = document.getElementById('email');
-    var el_signup  = document.getElementById('signup');
-    var el_success = document.getElementById('success');
+    const el_email   = document.getElementById('email');
+    const el_signup  = document.getElementById('signup');
+    const el_success = document.getElementById('success');
 
-    var ws = wsConnect();
+    const ws = wsConnect();
 
     function sendVerifyEmail() {
         wsSend(ws, {
             verify_email: el_email.value,
-            type        : 'account_opening'
+            type        : 'account_opening',
         });
     }
 
-    var validation_set = false; // To prevent validating before submit
+    let validation_set = false; // To prevent validating before submit
 
-    document.getElementById('frm_verify_email').addEventListener('submit', function (evt) {
-        evt.preventDefault();
+    document.getElementById('frm_verify_email').addEventListener('submit', (e) => {
+        e.preventDefault();
 
         if (!validateEmail(el_email.value)) {
             if (!validation_set) {
-                ['input', 'change'].forEach(function (evt) {
-                    el_email.addEventListener(evt, function () {
+                ['input', 'change'].forEach((event) => {
+                    el_email.addEventListener(event, () => {
                         setValidationStyle(el_email, !validateEmail(el_email.value));
                     });
                 });
@@ -39,10 +39,11 @@ window.onload = function () {
         } else {
             ws.onopen = sendVerifyEmail;
         }
+        return true;
     });
 
     ws.onmessage = function(msg) {
-        var response = JSON.parse(msg.data);
+        const response = JSON.parse(msg.data);
         setValidationStyle(el_email, response.error);
         if (!response.error) {
             el_signup.classList.add('invisible');
@@ -51,7 +52,7 @@ window.onload = function () {
     };
 
     // Store gclid
-    var gclid = getParamValue(document.referrer, 'gclid');
+    const gclid = getParamValue(document.referrer, 'gclid');
     if (gclid) {
         localStorage.setItem('gclid', gclid);
     }
