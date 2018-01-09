@@ -159,6 +159,12 @@ form {
 .padding-bottom-50 {
     padding-top: 50px;
     padding-bottom: 50px;
+
+    &.override {
+        @media (min-width: 1650px) {
+            padding-top: 0;
+        }
+    }
 }
 
 .bg-orange {
@@ -303,7 +309,7 @@ form {
 }
 
 .small-gap-before {
-    @include gap('before', $COLOR_WHITE, 20px, 0deg, 0, true, 100px, 50px, -10%);
+    @include gap('before', $COLOR_WHITE, 20px, 0deg, 0, true, 250px, 80px, -20%);
 
     @media (max-width: 1199px) {
         content: none;

@@ -355,7 +355,7 @@ const BinaryJapan2 = () => (
             </section>
 
             <section id='open-account' className='bg-white edge--top--reverse'>
-                <div className='container center-text padding-bottom-50 small-gap-before'>
+                <div className='container center-text padding-bottom-50 override small-gap-before'>
                     <div className='section-title'>
                         <h1 className='color-blue'>{it.L('{JAPAN ONLY}How to open an account')}</h1>
                     </div>
