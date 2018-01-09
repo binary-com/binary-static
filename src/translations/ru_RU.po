@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:13-0500\n"
+"PO-Revision-Date: 2018-01-09 01:23-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -591,7 +591,7 @@ msgstr "<a href='%1'>Офисы</a> на Мальте, в Малайзии и Я
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>С любой длительностью</strong> – от 10 секунд до 365 дней."
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -2167,7 +2167,7 @@ msgid "Cashier password"
 msgstr "Пароль кассы"
 
 msgid "Cent"
-msgstr "Клиент"
+msgstr "Цент"
 
 msgid "Cent Account"
 msgstr "Центовый счёт"
@@ -2845,7 +2845,7 @@ msgid "Cryptocurrency"
 msgstr "Криптовалюта"
 
 msgid "Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin."
-msgstr "Криптовалюты, как Bitcoin, Ethereum и Litecoin."
+msgstr "Криптовалютные пары с Bitcoin, Ethereum и Litecoin."
 
 msgid "Currencies"
 msgstr "Валюты"
@@ -3492,14 +3492,17 @@ msgstr "закончится внутри"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Закончится внутри/Закончится вне"
 
+msgid "Ends Between/Goes Outside"
+msgstr ""
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
 msgid "Ends In/Out"
 msgstr "Закончится Внутри/Вне"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Цена покупки контрактов Закончится Внутри/Вне будет возмещена трейдеру, если разница между временем начала и окончания контракта составляет менее двух тиков."
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Закончится внутри/вне – укажите, останется рынок внутри или вне выбранных барьеров на момент окончания контракта"
 
 msgid "Ends Outside"
 msgstr "закончится вне"
@@ -5188,7 +5191,7 @@ msgid "Industrial metals"
 msgstr "Промышленные металлы"
 
 msgid "Industrial metals – also known as base metals – are abundant, but oxidise or corrode easily. Industrial metals feature heavily across a wide range of industrial and commercial applications, including electrical wiring, automobiles, and batteries."
-msgstr "Промышленные металлы (также известные как чёрные металлы), встречаются достаточно часто, но легко окисляются образуют коррозию. Промышленные металлы широко и активно применяют в самых разных областях промышленности и производства, в том числе для изготовления электрического кабеля, автомобилей аккумуляторов."
+msgstr "Промышленные металлы (также известные как чёрные металлы), встречаются достаточно часто, но легко окисляются и подвержены коррозии. Промышленные металлы широко и активно применяют в самых разных областях промышленности и производства, в том числе для изготовления электрического кабеля, автомобилей и аккумуляторов."
 
 msgid "Industry of Employment"
 msgstr "Сфера занятости"
@@ -8031,8 +8034,8 @@ msgstr "Сделайте прогноз: закроется ли контрак�
 msgid "Predict the market rising or falling from its current level."
 msgstr "Предскажите, упадёт или вырастет цена относительно текущего уровня."
 
-msgid "Predict the market staying inside or going outside two price targets."
-msgstr "Сделайте прогноз: останется ли цена между двумя заданными барьерами или выйдет за их пределы."
+msgid "Predict the market staying between or going outside two price targets."
+msgstr ""
 
 msgid "Predict the market touching or not touching a price target."
 msgstr "Предскажите, коснётся ли рынок выбранного ценового барьера."
@@ -9099,17 +9102,20 @@ msgstr "Будьте в курсе всех событий. %1 предлага�
 msgid "Stays Between"
 msgstr "Останется внутри"
 
+msgid "Stays Between/Goes Out"
+msgstr ""
+
+msgid "Stays Between/Goes Outside"
+msgstr ""
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "Контракты Останется внутри/Выйдет за пределы"
 
-msgid "Stays In/Out"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr ""
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "Останется внутри/Вне – укажите, будет ли цена находиться внутри или выйдет за пределы двух барьеров в любой момент на протяжении действия контракта"
 
 msgid "Step"
 msgstr "Шаг"
@@ -10819,7 +10825,7 @@ msgid "Trade your tokens on the Lykke Exchange"
 msgstr "Торгуйте токенами на бирже Lykke"
 
 msgid "Trade your way"
-msgstr "Торгуйте на сайте"
+msgstr "Торгуйте по своей методике"
 
 msgid "Traders choose to buy a certain currency pair if they think the value of the base currency will rise. The opposite is also true: they sell a certain currency pair if they think the value of the base currency will fall."
 msgstr ""
@@ -13068,7 +13074,7 @@ msgstr "сегодня"
 msgid "today, Fridays"
 msgstr "сегодня, по пятницам"
 
-msgid "up/down, touch/no-touch, stays in/out."
+msgid "up/down, touch/no-touch, stays between/goes outside."
 msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
