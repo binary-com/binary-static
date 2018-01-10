@@ -30,7 +30,7 @@
         border-bottom: $size solid transparent;
         border-left: border-width($size) solid $color;
         margin: auto;
-        left: 90%;
+        right: -10px;
         bottom: 0;
         top: 0;
     }
@@ -103,7 +103,9 @@
             color: $COLOR_DARK_WHITE;
         }
         .bg-gray {
-            background-color: $COLOR_LIGHT_GRAY;
+            /* stylelint-disable color-no-hex */
+            background-color: #f4f4f6 !important;
+            /* stylelint-enable color-no-hex */
             border-radius: 5px;
             padding: 15px;
         }

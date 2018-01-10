@@ -1,6 +1,5 @@
 /* global toggleMobileMenu:false */
 window.onload = function() {
-    toggleMobileMenu();
     initForm();
 
     window.onresize = checkWidth;
