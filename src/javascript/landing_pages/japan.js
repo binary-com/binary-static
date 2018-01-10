@@ -62,7 +62,7 @@ function initForm() {
                 setValidationStyle(!validateEmail(el_email.value));
                 validation_set = true;
             }
-            
+
             const to = this.offsetTop - 50;
             scrollTo(to, 500); // Scroll to nearest form
             return false;

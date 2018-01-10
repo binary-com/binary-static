@@ -8,7 +8,8 @@ const TermsAndConditions = (() => {
     let sidebar_width;
 
     const onLoad = () => {
-        sidebar_width = document.getElementsByClassName('sidebar-collapsible-container')[0].offsetWidth;
+        const container = document.getElementsByClassName('sidebar-collapsible-container')[0];
+        if (container) sidebar_width = container.offsetWidth;
 
         handleActiveTab();
         TNCApproval.requiresTNCApproval(
