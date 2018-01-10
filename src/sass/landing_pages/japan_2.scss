@@ -161,7 +161,7 @@ form {
     padding-bottom: 50px;
 
     &.override {
-        @media (min-width: 1650px) {
+        @media (min-width: 1199px) {
             padding-top: 0;
         }
     }

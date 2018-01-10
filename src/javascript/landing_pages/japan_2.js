@@ -30,7 +30,7 @@ window.onload = function () {
 
 function scrollToSection(target_el) {
     const target_href = target_el.getAttribute('href').substr(1);
-    const to = document.getElementById(target_href).offsetTop - 72;
+    const to = document.getElementById(target_href).offsetTop - 70;
     scrollTo(to, 500);
     collapseMenu();
 }
