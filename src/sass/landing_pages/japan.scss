@@ -200,6 +200,12 @@ form {
     }
 }
 
+.fill-bg-color {
+    /* stylelint-disable color-no-hex */
+    background-color: #f4f4f6 !important;
+    /* stylelint-enable color-no-hex */
+}
+
 .text-bold {
     font-weight: bold;
 }
@@ -607,6 +613,7 @@ form {
     counter-reset: section;
     margin-right: 0 !important;
     margin-left: 0 !important;
+    margin-top: 40px;
 
     .bubble-outline {
         position: relative;
@@ -632,11 +639,10 @@ form {
     @include speech-bubble($COLOR_WHITE, 10px, 'down');
     @include flex-center;
     border: 1px solid $COLOR_ORANGE;
-    padding: 15px;
+    padding: 15px 10px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
     margin-bottom: 20px;
     max-width: 154px;
     min-height: 50%;

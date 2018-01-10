@@ -56,8 +56,8 @@ const BinaryJapan = () => (
 
         <section id='page-top' className='intro'>
             <div className='intro-body container'>
-                <div className='gr-row'>
-                    <div className='gr-6 gr-12-m'>
+                <div className='gr-row flex'>
+                    <div className='gr-7 gr-12-m'>
                         <h1 className='intro-text'>{it.L('{JAPAN ONLY}Binary Options', it.website_name)}</h1>
                         <img className='responsive' src={it.url_for('images/japan/version1/pair.svg')} />
                         <h3 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade fx markets using binary options with one of the origical pioneers of binary options worldwide')}</h3>
@@ -74,7 +74,7 @@ const BinaryJapan = () => (
                             </div>
                         </form>
                     </div>
-                    <div className='gr-6 gr-12-m'>
+                    <div className='gr-5 gr-12-m'>
                         <img className='responsive' src={it.url_for('images/japan/version1/retro.svg')} />
                     </div>
                 </div>
