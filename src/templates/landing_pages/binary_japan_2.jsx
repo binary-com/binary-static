@@ -91,7 +91,7 @@ const BinaryJapan2 = () => (
                     <div className='intro-body'>
                         <div className='gr-row'>
                             <div className='gr-6 gr-12-m'>
-                                <h3 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world')}</h3>
+                                <h2 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world')}</h2>
                                 <form className='signup-form'>
                                     <div className='signup-form-input'>
                                         <div className='input-group'>
@@ -344,11 +344,11 @@ const BinaryJapan2 = () => (
                         <p>{it.L('{JAPAN ONLY}All customer funds are deposited with JSF Trust Bank and will be refunded by an independent attorney as a beneficiary agent in case of business failure')}</p>
                     </div>
                     <div className='gr-row'>
-                        <div className='gr-6 gr-12-m'>
-                            <img className='responsive' src={it.url_for('images/japan/version1/secure-1.svg')} />
+                        <div className='gr-6 gr-12-m gr-centered box-divider'>
+                            <img className='responsive fundsafe' src={it.url_for('images/japan/version2/img-fundsafe-left.svg')} />
                         </div>
-                        <div className='gr-6 gr-12-m'>
-                            <img className='responsive' src={it.url_for('images/japan/version1/secure-2.svg')} />
+                        <div className='gr-6 gr-12-m gr-centered'>
+                            <img className='responsive fundsafe' src={it.url_for('images/japan/version2/img-fundsafe-right.svg')} />
                         </div>
                     </div>
                 </div>

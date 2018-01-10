@@ -34,6 +34,16 @@ section {
     }
 }
 
+.fundsafe {
+    width: 90% !important;
+}
+
+.box-divider {
+    @media (min-width: 480px) {
+        border-right: 1px solid $COLOR_GRAY;
+    }
+}
+
 footer {
     text-align: justify;
 
@@ -380,8 +390,10 @@ form {
                 }
             }
             a, a:visited {
-                font-weight: 100 !important;
+                font-weight: 400 !important;
                 padding: 15px 0;
+                color: $COLOR_BLACK;
+                font-size: $FONT_SIZE_L;
             }
             a:hover, a:focus {
                 text-decoration: none;
@@ -508,6 +520,8 @@ form {
         padding-bottom: 400px;
 
         .intro-subtext {
+            color: $COLOR_BLUE;
+
             @media (max-width: 575px) {
                 text-align: justify;
             }
@@ -658,7 +672,7 @@ form {
             counter-increment: section;
             content: counter(section);
             background-color: $COLOR_WHITE;
-            border: 1px solid $COLOR_BLUE;
+            border: 2px solid $COLOR_BLUE;
             border-radius: 50%;
             padding: 2px;
             margin: 0 10px;
@@ -670,14 +684,15 @@ form {
         }
     }
     .twb-button {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
+        background-size: cover;
 
         &-prev {
-            background-image: url('../images/pages/home-jp/icons/left_enabled.svg');
+            background-image: url('../images/japan/version2/left_enabled.svg');
         }
         &-next {
-            background-image: url('../images/pages/home-jp/icons/right_enabled.svg');
+            background-image: url('../images/japan/version2/right_enabled.svg');
         }
     }
 }
