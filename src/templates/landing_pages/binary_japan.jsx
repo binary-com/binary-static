@@ -87,7 +87,7 @@ const BinaryJapan = () => (
 
                 </div>
                 <div className='gr-row gr-row-align-center cards cards--numbered'>
-                    <div className='gr-6 gr-11-m'>
+                    <div className='gr-6 gr-5-p gr-5-t gr-11-m'>
                         <div className='card'>
                             <div className='card-body'>
                                 <div className='gr-row'>
@@ -110,7 +110,7 @@ const BinaryJapan = () => (
                             </div>
                         </div>
                     </div>
-                    <div className='gr-6 gr-11-m'>
+                    <div className='gr-6 gr-5-p gr-5-t gr-11-m'>
                         <div className='card'>
                             <div className='card-body'>
                                 <div className='gr-row'>
@@ -133,7 +133,7 @@ const BinaryJapan = () => (
                             </div>
                         </div>
                     </div>
-                    <div className='gr-6 gr-11-m'>
+                    <div className='gr-6 gr-5-p gr-5-t gr-11-m'>
                         <div className='card'>
                             <div className='card-body'>
                                 <div className='gr-row'>
@@ -156,7 +156,7 @@ const BinaryJapan = () => (
                             </div>
                         </div>
                     </div>
-                    <div className='gr-6 gr-11-m'>
+                    <div className='gr-6 gr-5-p gr-5-t gr-11-m'>
                         <div className='card'>
                             <div className='card-body'>
                             <div className='gr-row'>
