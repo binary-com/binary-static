@@ -106,11 +106,8 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
-                    BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                        // There are cases that prompt_client_to_authenticate=0
-                        // but websocket returns authentication required error when trying to withdraw
-                        // so we check for 'authenticated' status as well to display a user friendly message instead
-                        resolve(+response_status.get_account_status.prompt_client_to_authenticate || !/authenticated/.test(response_status.get_account_status.status) ?
+                    BinarySocket.send({ get_account_status: 1, mt5_related: 1 }).then((response_status) => {
+                        resolve(+response_status.get_account_status.prompt_client_to_authenticate ?
                             $messages.find('#msg_authenticate').html() : '');
                     });
                 } else {

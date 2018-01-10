@@ -9,7 +9,7 @@ const showLoadingImage    = require('../../../../_common/utility').showLoadingIm
 
 const Authenticate = (() => {
     const onLoad = () => {
-        BinarySocket.send({ get_account_status: 1 }).then((response) => {
+        BinarySocket.send({ get_account_status: 1, mt5_related: 1 }).then((response) => {
             if (response.error) {
                 $('#error_message').setVisibility(1).text(response.error.message);
             } else {
