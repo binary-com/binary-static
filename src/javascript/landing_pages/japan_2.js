@@ -1,6 +1,7 @@
 window.onload = function () {
     toggleMobileMenu();
     initForm();
+    collapseNavbar();
     tabWithButtons();
 
     window.onresize = checkWidth;
@@ -17,11 +18,19 @@ window.onload = function () {
     if (gclid) {
         localStorage.setItem('gclid', gclid);
     }
+
+    // Collapse navbar on scroll
+    function collapseNavbar() {
+        const navbarFixedTopEl = document.getElementsByClassName('navbar-fixed-top');
+        navbarFixedTopEl[0].classList[window.scrollY < 50 ? 'add' : 'remove']('top-nav-collapse');
+    }
+
+    window.onscroll = collapseNavbar;
 };
 
 function scrollToSection(target_el) {
     const target_href = target_el.getAttribute('href').substr(1);
-    const to = document.getElementById(target_href).offsetTop - 50;
+    const to = document.getElementById(target_href).offsetTop - 72;
     scrollTo(to, 500);
     collapseMenu();
 }

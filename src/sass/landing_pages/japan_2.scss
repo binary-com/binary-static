@@ -330,19 +330,28 @@ form {
 
 /** Components **/
 .navbar-fixed-top {
-    position: absolute;
+    position: fixed;
     right: 0;
     left: 0;
     z-index: 999;
     top: 0;
     border-width: 0 0 1px;
-    background-color: transparent;
+    background-color: $COLOR_WHITE;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-box-shadow: -1px -1px 1px 2px rgba(255, 255, 255, 1);
+    -moz-box-shadow: -1px -1px 1px 2px rgba(255, 255, 255, 1);
+    box-shadow: -1px -1px 1px 2px rgba(255, 255, 255, 1);
 
     .container {
         display: flex;
     }
     &.top-nav-collapse {
         background: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
     }
     .navbar-brand {
         float: left;
@@ -401,7 +410,7 @@ form {
         padding: 15px 0;
         overflow: hidden;
         flex-direction: column;
-        max-height: 64px;
+        max-height: 70px;
         -webkit-transition: max-height 0.3s;
         -moz-transition: max-height 0.3s;
         -ms-transition: max-height 0.3s;
@@ -426,7 +435,7 @@ form {
                 margin: 0 15px;
 
                 @media (max-width: 575px) {
-                    height: 50px;
+                    height: 40px;
                     margin: 0 auto;
                 }
             }
@@ -483,7 +492,7 @@ form {
         top: 0;
         height: 100%;
         width: 100%;
-        background-image: url('../images/japan/version2/bg-header.png');
+        background-image: url('../images/japan/version2/bg-header.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
