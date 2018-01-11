@@ -21,6 +21,7 @@ const Language = (() => {
         ZH_CN: '简体中文',
         ZH_TW: '繁體中文',
     };
+    const default_language = 'EN';
 
     const setCookieLanguage = (lang) => {
         if (!Cookies.get('language') || lang) {
@@ -55,12 +56,12 @@ const Language = (() => {
                 }
             }
         }
-        current_lang = (current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase());
+        current_lang = (current_lang || (languageFromUrl() || Cookies.get('language') || default_language).toUpperCase());
         return current_lang;
     };
 
     const urlForLanguage = (lang, url = window.location.href) =>
-        url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${lang.trim().toLowerCase()}/`);
+        url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${(lang || default_language).trim().toLowerCase()}/`);
 
     const onChangeLanguage = () => {
         applyToAllElements('li', (el) => {

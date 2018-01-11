@@ -109,7 +109,7 @@ const BinaryLoader = (() => {
     };
 
     const displayMessage = (message) => {
-        const content       = container.querySelector('#content .container');
+        const content = container.querySelector('#content .container');
         if (!content) {
             return;
         }
