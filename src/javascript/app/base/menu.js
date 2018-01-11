@@ -6,36 +6,33 @@ require('../../_common/lib/mmenu/jquery.mmenu.min.all.js');
 
 const Menu = (() => {
     let main_menu,
-        menu_top,
         items;
 
     const init = () => {
         main_menu = getElementById('main-menu');
-        menu_top  = getElementById('menu-top');
+        items     = main_menu.getElementsByClassName('item');
 
-        items = main_menu.getElementsByClassName('item');
-
-        applyToAllElements('li', (el) => { el.classList.remove('active'); }, '', menu_top);
-        hideMainMenu();
-
-        activeMenuTop();
+        activateMenuTop();
 
         if (Client.isLoggedIn() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
-            showMainMenu();
-        }
-    };
-
-    const showMainMenu = () => {
-        if (main_menu) {
             main_menu.setVisibility(1);
+            activateMainMenu();
+            Client.activateByClientType('main-menu');
+        } else {
+            main_menu.setVisibility(0);
         }
-        activateMainMenu();
-        Client.activateByClientType('main-menu');
     };
 
-    const hideMainMenu = () => {
-        if (main_menu) {
-            main_menu.setVisibility(0);
+    const activateMenuTop = () => {
+        const menu_top = getElementById('menu-top');
+
+        applyToAllElements('li', (el) => { el.classList.remove('active'); }, '', menu_top);
+
+        const menu_top_item_for_page =  Array.from(menu_top.getElementsByTagName('a'))
+            .find(link => link.offsetParent && window.location.pathname.indexOf(link.pathname.replace(/\.html/, '')) >= 0);
+
+        if (menu_top_item_for_page) {
+            findParent(menu_top_item_for_page, 'li').classList.add('active');
         }
     };
 
@@ -44,59 +41,9 @@ const Menu = (() => {
         applyToAllElements(items, (el) => { el.classList.remove('active', 'hover'); });
         applyToAllElements('.sub_item a', (el) => { el.classList.remove('a-active'); }, '', main_menu);
 
-        const active         = activeMainMenu();
-        const active_item    = active.item;
-        const active_subitem = active.subitem;
-        if (active_subitem) {
-            active_subitem.classList.add('a-active');
-        }
-
-        if (active_item) {
-            active_item.classList.add('active', 'hover');
-            onMouseHover(active_item);
-        }
-    };
-
-    const onUnload = () => {
-        if (main_menu) {
-            main_menu.removeEventListener('mouseleave', onMouseLeave);
-        }
-        applyToAllElements(items, (el) => { el.removeEventListener('mouseenter', onMouseEnter); });
-    };
-
-    const removeHover = () => {
-        applyToAllElements(items, (el) => { el.classList.remove('hover'); });
-    };
-
-    const onMouseHover = (active_item) => {
-        main_menu.addEventListener('mouseleave', () => {
-            onMouseLeave(active_item);
-        });
-        applyToAllElements(items, (el) => { el.addEventListener('mouseenter', onMouseEnter); });
-    };
-
-    const onMouseLeave = (active_item) => {
-        removeHover();
-        if (/active/.test(active_item.classList)) active_item.classList.add('hover');
-    };
-
-    const onMouseEnter = (e) => {
-        removeHover();
-        e.target.classList.add('hover');
-    };
-
-    const activeMenuTop = () => {
-        const path       = window.location.pathname;
-        const menu_items = Array.from(menu_top.getElementsByTagName('a'));
-        const active     = menu_items.find(link => link.offsetParent && path.indexOf(link.pathname.replace(/\.html/, '')) >= 0);
-
-        if (active) {
-            findParent(active, 'li').classList.add('active');
-        }
-    };
-
-    const activeMainMenu = () => {
         let pathname = window.location.pathname;
+
+        // this is so cashier item becomes highlighted in deposit/withdrawal pages
         if (/cashier/i.test(pathname) && !(/cashier_password|payment_methods/.test(pathname))) {
             const cashier = getElementById('topMenuCashier');
             const link = cashier.getElementsByTagName('a')[0];
@@ -104,24 +51,40 @@ const Menu = (() => {
                 pathname = link.getAttribute('href');
             }
         }
-        if (!main_menu) {
-            return {};
-        }
-        let subitem;
-        let item = main_menu.querySelector(`a[href*="${pathname}"]`);
 
-        if (item) {
-            const parent = findParent(item, 'li');
+        let subitem;
+        let menu_item_for_page = main_menu.querySelector(`a[href*="${pathname}"]`);
+
+        if (menu_item_for_page) {
+            const parent = findParent(menu_item_for_page, 'li');
             // Is something selected in main items list
             if (parent && parent.classList.contains('sub_item')) {
-                subitem = item;
-                item    = findParent(subitem, '.item');
+                subitem            = menu_item_for_page;
+                menu_item_for_page = findParent(subitem, '.item');
             } else {
-                item = parent;
+                menu_item_for_page = parent;
             }
         }
 
-        return { item, subitem };
+        if (subitem) {
+            subitem.classList.add('a-active');
+        }
+
+        if (menu_item_for_page) {
+            menu_item_for_page.classList.add('active', 'hover');
+            applyToAllElements(items, (el) => {
+                el.addEventListener('mouseenter', onMouseEnter);
+                el.addEventListener('mouseleave', onMouseLeave);
+            });
+        }
+    };
+
+    const onMouseEnter = (e) => {
+        e.target.classList.add('hover');
+    };
+
+    const onMouseLeave = (e) => {
+        e.target.classList.remove('hover');
     };
 
     const makeMobileMenu = () => {
@@ -137,11 +100,17 @@ const Menu = (() => {
         }
     };
 
+    const onUnload = () => {
+        applyToAllElements(items, (el) => {
+            el.removeEventListener('mouseenter', onMouseEnter);
+            el.removeEventListener('mouseleave', onMouseLeave);
+        });
+    };
+
     return {
         init,
-        onUnload,
         makeMobileMenu,
-        activeMenuTop,
+        onUnload,
     };
 })();
 
