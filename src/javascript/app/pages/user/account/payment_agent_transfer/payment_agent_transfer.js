@@ -66,12 +66,32 @@ const PaymentAgentTransfer = (() => {
     };
 
     const checkBalance = (amount) => {
-        if (+amount > +balance) {
-            $form_error.text(localize('Insufficient balance.')).setVisibility(1);
-            return false;
+        const $amount              = $('#amount');
+        const $error_filed         = $amount.siblings('.error-msg');
+        const msg_insufficient_bal = localize('Insufficient balance.');
+        const msg_to_append        = ` (${msg_insufficient_bal})`;
+        const has_sufficient_bal   = +balance >= +amount;
+        const error_appended       = new RegExp(msg_insufficient_bal).test($error_filed.text());
+        const error_message        = $error_filed.text().split(msg_to_append);
+
+        // has insufficient balance and amount field already has an error field and error message has not been appended yet
+        if (!has_sufficient_bal && $error_filed.length && !error_appended) {
+            $error_filed.append(msg_to_append);
         }
-        $form_error.setVisibility(0);
-        return true;
+        // has insufficient balance and amount field does not have an error field
+        else if (!has_sufficient_bal && !$error_filed.length) {
+            $amount.parent().append($('<p/>', { class: 'error-msg no-margin', text: msg_insufficient_bal }));
+        }
+        // has sufficient balance and amount field has an error field and error message has been appended
+        else if (has_sufficient_bal && $error_filed.length && error_message[0] !== '') {
+            $error_filed.text(error_message[0]);
+        }
+        // has sufficient balance and amount field has an error field and error message has not been appended
+        else if (has_sufficient_bal && $error_filed.length && error_message[0] === '') {
+            $error_filed.remove();
+        }
+
+        return has_sufficient_bal;
     };
 
     const additionalCheck = req => checkBalance(req.amount);
