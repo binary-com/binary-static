@@ -4,6 +4,7 @@ const BinarySocket       = require('./socket');
 const jpClient           = require('../common/country_base').jpClient;
 const isCryptocurrency   = require('../common/currency').isCryptocurrency;
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
+const getElementById     = require('../../_common/common_functions').getElementById;
 const LocalStore         = require('../../_common/storage').LocalStore;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
@@ -169,26 +170,18 @@ const Client = (() => {
     };
 
     const activateByClientType = (section_id) => {
-        const topbar = document.getElementById('topbar');
-        if (!topbar) {
-            return;
-        }
-        const topbar_class = topbar.classList;
-        const el_section   = section_id ? document.getElementById(section_id) : document.body;
-        if (!el_section) {
-            return;
-        }
+        const topbar_class = getElementById('topbar').classList;
+        const el_section   = section_id ? getElementById(section_id) : document.body;
+
         const primary_bg_color_dark = 'primary-bg-color-dark';
         const secondary_bg_color    = 'secondary-bg-color';
 
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
-                const client_logged_in = document.getElementById('client-logged-in');
-                const is_jp = jpClient();
-                if (client_logged_in) {
-                    client_logged_in.classList.add('gr-centered');
-                }
+                const client_logged_in = getElementById('client-logged-in');
+                client_logged_in.classList.add('gr-centered');
 
+                const is_jp       = jpClient();
                 const is_ico_only = !is_jp && get('is_ico_only');
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });

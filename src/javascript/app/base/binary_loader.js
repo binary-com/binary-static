@@ -7,6 +7,7 @@ const Login               = require('./login');
 const Page                = require('./page');
 const BinarySocket        = require('./socket');
 const BinarySocketGeneral = require('./socket_general');
+const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const createElement       = require('../../_common/utility').createElement;
@@ -24,7 +25,7 @@ const BinaryLoader = (() => {
         if (!isStorageSupported(localStorage) || !isStorageSupported(sessionStorage)) {
             Header.displayNotification(localize('[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.', ['Binary.com']),
                 true, 'STORAGE_NOT_SUPPORTED');
-            document.getElementById('btn_login').classList.add('button-disabled');
+            getElementById('btn_login').classList.add('button-disabled');
         }
 
         Page.showNotificationOutdatedBrowser();
@@ -32,12 +33,10 @@ const BinaryLoader = (() => {
         Client.init();
         BinarySocket.init(BinarySocketGeneral.initOptions());
 
-        container = document.getElementById('content-holder');
-        if (container) {
-            container.addEventListener('binarypjax:before', beforeContentChange);
-            container.addEventListener('binarypjax:after',  afterContentChange);
-            BinaryPjax.init(container, '#content');
-        }
+        container = getElementById('content-holder');
+        container.addEventListener('binarypjax:before', beforeContentChange);
+        container.addEventListener('binarypjax:after',  afterContentChange);
+        BinaryPjax.init(container, '#content');
     };
 
     const beforeContentChange = () => {

@@ -6,6 +6,7 @@ const showPopup         = require('../../common/attach_dom/popup');
 const isCryptocurrency  = require('../../common/currency').isCryptocurrency;
 const FormManager       = require('../../common/form_manager');
 const validEmailToken   = require('../../common/form_validation').validEmailToken;
+const getElementById    = require('../../../_common/common_functions').getElementById;
 const localize          = require('../../../_common/localize').localize;
 const Url               = require('../../../_common/url');
 const template          = require('../../../_common/utility').template;
@@ -89,16 +90,14 @@ const DepositWithdraw = (() => {
                 content_id        : '#confirm_content',
                 validations       : [{ selector: '#chk_confirm', validations: [['req', { hide_asterisk: true }]] }],
                 additionalFunction: () => {
-                    const el_cancel = document.getElementById('cancel');
-                    const el_popup  = document.getElementById('confirm_popup');
-                    if (el_cancel) {
-                        el_cancel.addEventListener('click', () => {
-                            if (el_popup) {
-                                el_popup.remove();
-                            }
-                            BinaryPjax.load(Client.defaultRedirectUrl());
-                        });
-                    }
+                    const el_cancel = getElementById('cancel');
+                    const el_popup  = getElementById('confirm_popup');
+                    el_cancel.addEventListener('click', () => {
+                        if (el_popup) {
+                            el_popup.remove();
+                        }
+                        BinaryPjax.load(Client.defaultRedirectUrl());
+                    });
                 },
                 onAccept: () => {
                     Client.set('cashier_confirmed', 1);
@@ -215,7 +214,7 @@ const DepositWithdraw = (() => {
                 $iframe.css('height', '700px');
             }
             if (/^BCH/.test(Client.get('currency'))) {
-                document.getElementById('message_bitcoin_cash').setVisibility(1);
+                getElementById('message_bitcoin_cash').setVisibility(1);
             }
             $iframe.attr('src', response.cashier).parent().setVisibility(1);
         }
