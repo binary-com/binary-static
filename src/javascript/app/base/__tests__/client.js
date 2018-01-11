@@ -39,6 +39,19 @@ describe('Client', () => {
             expect(Client.get('currency', loginid_virtual)).to.eq('USD');
             expect(Client.get('currency', loginid_real)).to.eq('EUR');
         });
+        it('returns expected data types', () => {
+            Client.set('number', 1, loginid_real);
+            expect(Client.get('number', loginid_real)).to.be.a('Number').and.to.eq(1);
+            Client.set('float', 1.12345, loginid_real);
+            expect(Client.get('float', loginid_real)).to.be.a('Number').and.to.eq(1.12345);
+            const obj_nested = { a: { b: 'test' } };
+            Client.set('object', obj_nested, loginid_real);
+            expect(Client.get('object', loginid_real)).to.be.an('Object').and.to.deep.eq(obj_nested);
+            Client.set('bool', true, loginid_real);
+            expect(Client.get('bool', loginid_real)).to.be.a('boolean').and.to.eq(true);
+            Client.set('undef', undefined, loginid_real);
+            expect(Client.get('undef', loginid_real)).to.eq(undefined);
+        });
     });
 
     describe('.getAllLoginids()', () => {
