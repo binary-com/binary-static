@@ -129,13 +129,16 @@ const Menu = (() => {
     };
 
     const makeMobileMenu = () => {
-        $('#mobile-menu').mmenu({
-            position       : 'right',
-            zposition      : 'front',
-            slidingSubmenus: false,
-            searchfield    : true,
-            onClick        : { close: true },
-        }, { selectedClass: 'active' });
+        // avoid creating mobile menu in desktop view as it duplicates menu items with the same id
+        if (getElementById('mobile-menu-container').offsetParent) {
+            $('#mobile-menu').mmenu({
+                position       : 'right',
+                zposition      : 'front',
+                slidingSubmenus: false,
+                searchfield    : true,
+                onClick        : { close: true },
+            }, { selectedClass: 'active' });
+        }
     };
 
     return {
