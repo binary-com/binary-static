@@ -5,6 +5,7 @@ const GetTicks       = require('../get_ticks');
 const MBDefaults     = require('../../mb_trade/mb_defaults');
 const PortfolioInit  = require('../../user/account/portfolio/portfolio.init');
 const Client         = require('../../../base/client');
+const getElementById = require('../../../../_common/common_functions').getElementById;
 const getLanguage    = require('../../../../_common/language').get;
 const State          = require('../../../../_common/storage').State;
 const Url            = require('../../../../_common/url');
@@ -91,18 +92,16 @@ const TradingAnalysis_Beta = (() => {
      */
     const toggleActiveAnalysisTabs = () => {
         const current_tab        = getActiveTab();
-        const analysis_container = document.getElementById('analysis_content');
+        const analysis_container = getElementById('analysis_content');
 
         if (analysis_container) {
-            const child_elements      = analysis_container.children;
-            const current_tab_element = document.getElementById(`${current_tab}-content`);
-            const classes             = current_tab_element.classList;
-
+            const child_elements = analysis_container.children;
             for (let i = 0, len = child_elements.length; i < len; i++) {
                 child_elements[i].classList.remove('selectedTab');
                 child_elements[i].classList.add(hidden_class);
             }
 
+            const classes = getElementById(`${current_tab}-content`).classList;
             classes.add('selectedTab');
             classes.remove(hidden_class);
         }

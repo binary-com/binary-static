@@ -1,5 +1,5 @@
 const expect      = require('chai').expect;
-const setJPClient = require('./tests_common').setJPClient;
+const setJPClient = require('../../../_common/__tests__/tests_common').setJPClient;
 const Clock       = require('../clock');
 
 describe('Clock', () => {

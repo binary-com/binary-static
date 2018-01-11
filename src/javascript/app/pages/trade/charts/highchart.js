@@ -1,15 +1,16 @@
-const HighchartUI  = require('./highchart.ui');
-const MBContract   = require('../../mb_trade/mb_contract');
-const MBDefaults   = require('../../mb_trade/mb_defaults');
-const Defaults     = require('../../trade/defaults');
-const GetTicks     = require('../../trade/get_ticks');
-const ViewPopupUI  = require('../../user/view_popup/view_popup.ui');
-const BinarySocket = require('../../../base/socket');
-const jpClient     = require('../../../common/country_base').jpClient;
-const addComma     = require('../../../common/currency').addComma;
-const getHighstock = require('../../../../_common/common_functions').requireHighstock;
-const localize     = require('../../../../_common/localize').localize;
-const State        = require('../../../../_common/storage').State;
+const HighchartUI      = require('./highchart.ui');
+const MBContract       = require('../../mb_trade/mb_contract');
+const MBDefaults       = require('../../mb_trade/mb_defaults');
+const Defaults         = require('../../trade/defaults');
+const GetTicks         = require('../../trade/get_ticks');
+const ViewPopupUI      = require('../../user/view_popup/view_popup.ui');
+const BinarySocket     = require('../../../base/socket');
+const jpClient         = require('../../../common/country_base').jpClient;
+const addComma         = require('../../../common/currency').addComma;
+const getHighstock     = require('../../../../_common/common_functions').requireHighstock;
+const localize         = require('../../../../_common/localize').localize;
+const State            = require('../../../../_common/storage').State;
+const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const Highchart = (() => {
     let chart,
@@ -524,22 +525,23 @@ const Highchart = (() => {
     };
 
     const setStopStreaming = () => {
-        if (chart && (is_sold || is_settleable) &&
-            chart.series && chart.series[0].options.data.length > 0) {
-            const data    = chart.series[0].options.data;
-            let last_data = data[data.length - 1];
-            let i         = 2;
-            while (last_data.y === null) {
-                last_data = data[data.length - i];
-                i++;
-            }
-            const last = parseInt(last_data.x || last_data[0]);
-            if (last > (end_time * 1000) || last > ((sell_time || sell_spot_time) * 1000)) {
-                stop_streaming = true;
-            } else {
-                // add a null point if the last tick is before end time to bring end time line into view
-                const time = userSold() ? (sell_time || sell_spot_time) : end_time;
-                chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
+        if (chart && (is_sold || is_settleable)) {
+            const data = getPropertyValue(getPropertyValue(chart, ['series'])[0], ['options', 'data']);
+            if (data && data.length > 0) {
+                let last_data = data[data.length - 1];
+                let i         = 2;
+                while (last_data.y === null) {
+                    last_data = data[data.length - i];
+                    i++;
+                }
+                const last = parseInt(last_data.x || last_data[0]);
+                if (last > (end_time * 1000) || last > ((sell_time || sell_spot_time) * 1000)) {
+                    stop_streaming = true;
+                } else {
+                    // add a null point if the last tick is before end time to bring end time line into view
+                    const time = userSold() ? (sell_time || sell_spot_time) : end_time;
+                    chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
+                }
             }
         }
     };

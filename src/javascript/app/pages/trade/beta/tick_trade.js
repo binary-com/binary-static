@@ -1,11 +1,12 @@
-const moment        = require('moment');
-const commonTrading = require('../common');
-const Tick          = require('../tick');
-const ViewPopupUI   = require('../../user/view_popup/view_popup.ui');
-const BinarySocket  = require('../../../base/socket');
-const isVisible     = require('../../../../_common/common_functions').isVisible;
-const getHighstock  = require('../../../../_common/common_functions').requireHighstock;
-const localize      = require('../../../../_common/localize').localize;
+const moment         = require('moment');
+const commonTrading  = require('../common');
+const Tick           = require('../tick');
+const ViewPopupUI    = require('../../user/view_popup/view_popup.ui');
+const BinarySocket   = require('../../../base/socket');
+const getElementById = require('../../../../_common/common_functions').getElementById;
+const isVisible      = require('../../../../_common/common_functions').isVisible;
+const getHighstock   = require('../../../../_common/common_functions').requireHighstock;
+const localize       = require('../../../../_common/localize').localize;
 
 const TickDisplay_Beta = (() => {
     let number_of_ticks,
@@ -40,7 +41,7 @@ const TickDisplay_Beta = (() => {
         contract_type,
         tick_init,
         subscribe,
-        responseID;
+        response_id;
 
     const initialize = (data) => {
         // setting up globals
@@ -326,9 +327,8 @@ const TickDisplay_Beta = (() => {
             });
             contract_barrier = calc_barrier;
         }
-        const purchase_barrier = document.getElementById('contract_purchase_barrier');
-        if (contract_barrier && purchase_barrier) {
-            commonTrading.labelValue(purchase_barrier, localize('Barrier'), contract_barrier, true);
+        if (contract_barrier) {
+            commonTrading.labelValue(getElementById('contract_purchase_barrier'), localize('Barrier'), contract_barrier, true);
         }
     };
 
@@ -386,15 +386,13 @@ const TickDisplay_Beta = (() => {
     };
 
     const dispatch = (data) => {
-        const tick_chart = document.getElementById('tick_chart');
-
-        if (!tick_chart || !isVisible(tick_chart) || !data || (!data.tick && !data.history)) {
+        if (!isVisible(getElementById('tick_chart')) || !data || (!data.tick && !data.history)) {
             return;
         }
 
         if (subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-            responseID = data.tick.id;
-            ViewPopupUI.storeSubscriptionID(responseID);
+            response_id = data.tick.id;
+            ViewPopupUI.storeSubscriptionID(response_id);
         }
 
         let epoches,
@@ -442,8 +440,8 @@ const TickDisplay_Beta = (() => {
         }
         if (applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed) {
             evaluateContractOutcome();
-            if (responseID) {
-                BinarySocket.send({ forget: responseID });
+            if (response_id) {
+                BinarySocket.send({ forget: response_id });
             }
         } else {
             for (let d = 0; d < epoches.length; d++) {

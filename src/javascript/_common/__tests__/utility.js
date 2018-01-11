@@ -1,5 +1,5 @@
 const expect  = require('chai').expect;
-const Utility = require('../../../_common/utility');
+const Utility = require('../utility');
 global.$      = require('jquery');
 
 describe('Utility', () => {
