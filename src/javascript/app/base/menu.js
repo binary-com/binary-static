@@ -91,7 +91,7 @@ const Menu = (() => {
         const path = window.location.pathname;
         const link_menu_top = menu_top.getElementsByTagName('a');
         for (let i = 0; i < link_menu_top.length; i++) {
-            if (path.indexOf(link_menu_top[i].pathname.replace(/\.html/i, '')) >= 0) {
+            if (path.indexOf(link_menu_top[i].pathname) >= 0) {
                 active = findParent(link_menu_top[i], 'li');
                 break;
             }
