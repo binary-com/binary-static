@@ -17,7 +17,10 @@ const BinarySocketGeneral = (() => {
         Header.hideNotification();
         if (is_ready) {
             if (!Login.isLoginPages()) {
-                Client.validateLoginid();
+                if (!Client.isValidLoginid()) {
+                    Client.sendLogoutRequest();
+                    return;
+                }
                 BinarySocket.send({ website_status: 1, subscribe: 1 });
             }
             Clock.startClock();
