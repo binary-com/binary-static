@@ -608,6 +608,7 @@ form {
             margin: -21px;
             padding: 15px;
             margin-bottom: 40px;
+            min-height: 106px;
 
             h3 {
                 text-align: center;
@@ -701,7 +702,7 @@ form {
     padding-top: 50px;
     padding-bottom: 50px;
 
-    @media (min-width: 1439px) {
+    @media (min-width: 1200px) {
         padding-bottom: 0;
         padding-top: 0;
         width: 55vw;
