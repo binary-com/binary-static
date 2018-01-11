@@ -8,7 +8,8 @@ const TermsAndConditions = (() => {
     let sidebar_width;
 
     const onLoad = () => {
-        sidebar_width = document.getElementsByClassName('sidebar-collapsible-container')[0].offsetWidth;
+        const container = document.getElementsByClassName('sidebar-collapsible-container')[0];
+        if (container) sidebar_width = container.offsetWidth;
 
         handleActiveTab();
         TNCApproval.requiresTNCApproval(
@@ -78,14 +79,27 @@ const TermsAndConditions = (() => {
     };
 
     const handleSidebar = () => {
-        const hash     = window.location.hash;
+        const hash     = window.location.hash || '#legal';
         const $sidebar = $('.sidebar-collapsible');
         const $content = $('.sidebar-collapsible-content');
 
         $sidebar.on('click', () => {
             if (!checkWidth()) $.scrollTo($content, 250, { offset: -10 });
         });
-        $sidebar.find(hash ? `${hash} a` : 'a:first').trigger('click');
+
+        const is_submenu = /-binary|-mt/.test(hash);
+        if (is_submenu) {
+            let parent_hash = hash;
+            if (/-binary/.test(hash)) {
+                parent_hash = hash.split('-binary')[0];
+            } else if (/-mt/.test(hash)) {
+                parent_hash = hash.split('-mt')[0];
+            }
+            $sidebar.find(`${parent_hash} a:first`).trigger('click'); // click mainmenu
+            $sidebar.find(`${hash} a:first`).trigger('click');  // click submenu
+        } else {
+            $sidebar.find(`${hash} a:first`).trigger('click');
+        }
     };
 
     const checkWidth = () => {

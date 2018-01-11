@@ -12,7 +12,7 @@ const WhatIsBinaryTrading = () => (
             <p>{it.L('With [_1] you can trade:', it.website_name)}</p>
             <ul>
                 <li>{it.L('<strong>All markets</strong> - currencies, stock indices, and commodities.')}</li>
-                <li>{it.L('<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out.')}</li>
+                <li>{it.L('<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside.')}</li>
                 <li>{it.L('<strong>All durations</strong> - from 10 seconds to 365 days.')}</li>
                 <li>{it.L('<strong>All payouts</strong> - from $1 to $50,000.')}</li>
             </ul>
