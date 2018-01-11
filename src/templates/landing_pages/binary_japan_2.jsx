@@ -135,7 +135,7 @@ const BinaryJapan2 = () => (
                                     description={it.L('{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range.')}
                                     duration={it.L('{JAPAN ONLY}1 week to 1 year terms')} />
 
-                                <Product icon_1='ic-3' icon_2='ic-4'
+                                <Product icon_1='ic-7' icon_2='ic-8'
                                     image_1='in-out-3' image_2='in-out-4'
                                     header={it.L('{JAPAN ONLY}Range Options: Stay-In / Break-Out')}
                                     description={it.L('{JAPAN ONLY}Predict whether a FX rate will touch either target barrier before expiry.')}

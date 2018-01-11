@@ -708,7 +708,7 @@ form {
         padding-top: 0;
         width: 55vw;
 
-        .ic-1, .ic-2, .ic-3, .ic-4, .ic-5, .ic-6 {
+        .ic-1, .ic-2, .ic-3, .ic-4, .ic-5, .ic-6, .ic-7, .ic-8 {
             background-size: cover;
         }
         .icon-sm {
@@ -783,6 +783,14 @@ form {
 
 .ic-6 {
     background-image: url('../images/japan/version1/icon-6.svg');
+}
+
+.ic-7 {
+    background-image: url('../images/japan/version1/icon-7.svg');
+}
+
+.ic-8 {
+    background-image: url('../images/japan/version1/icon-8.svg');
 }
 
 .ic-new-account {
