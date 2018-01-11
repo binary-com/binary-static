@@ -89,7 +89,7 @@
             }
         }
     }
-    .card-body {
+    .card-body, .card-footer {
         .size-1 {
             font-size: 10px;
         }
@@ -109,18 +109,31 @@
             border-radius: 5px;
             padding: 15px;
         }
+        @media (max-width: 575px) {
+            .text-desc {
+                font-size: 14px;
+            }
+            .box, .box-o {
+                .size-3 {
+                    font-size: 12px;
+                }
+            }
+        }
     }
     .card-footer {
         display: flex;
         flex: 1;
         align-items: flex-end;
         justify-content: center;
-        color: $COLOR_BLUE;
-        font-size: 13px;
-        font-weight: 300;
 
         p {
             margin: 0;
+            color: $COLOR_BLUE;
+            font-size: 13px;
+            font-weight: 100;
+            @media (max-width: 575px) {
+                font-size: 12px;
+            }
         }
     }
 }
