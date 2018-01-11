@@ -18,8 +18,7 @@ const Menu = (() => {
         applyToAllElements('li', (el) => { el.classList.remove('active'); }, '', menu_top);
         hideMainMenu();
 
-        const active = activeMenuTop();
-        if (active) active.classList.add('active');
+        activeMenuTop();
 
         if (Client.isLoggedIn() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
             showMainMenu();
@@ -78,7 +77,7 @@ const Menu = (() => {
 
     const onMouseLeave = (active_item) => {
         removeHover();
-        if (active_item) active_item.classList.add('hover');
+        if (/active/.test(active_item.classList)) active_item.classList.add('hover');
     };
 
     const onMouseEnter = (e) => {
@@ -87,16 +86,13 @@ const Menu = (() => {
     };
 
     const activeMenuTop = () => {
-        let active = '';
-        const path = window.location.pathname;
-        const link_menu_top = menu_top.getElementsByTagName('a');
-        for (let i = 0; i < link_menu_top.length; i++) {
-            if (path.indexOf(link_menu_top[i].pathname) >= 0) {
-                active = findParent(link_menu_top[i], 'li');
-                break;
-            }
+        const path       = window.location.pathname;
+        const menu_items = Array.from(menu_top.getElementsByTagName('a'));
+        const active     = menu_items.find(link => link.offsetParent && path.indexOf(link.pathname.replace(/\.html/, '')) >= 0);
+
+        if (active) {
+            findParent(active, 'li').classList.add('active');
         }
-        return active;
     };
 
     const activeMainMenu = () => {
@@ -145,6 +141,7 @@ const Menu = (() => {
         init,
         onUnload,
         makeMobileMenu,
+        activeMenuTop,
     };
 })();
 

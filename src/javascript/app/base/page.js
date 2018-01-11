@@ -90,10 +90,12 @@ const Page = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
                 checkLanguage();
+                Menu.activeMenuTop();
                 RealityCheck.onLoad();
             });
         } else {
             checkLanguage();
+            Menu.activeMenuTop();
         }
         TrafficSource.setData();
     };
