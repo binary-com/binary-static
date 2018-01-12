@@ -213,6 +213,9 @@ form {
             color: $COLOR_WHITE;
             padding: 15px;
             font-weight: bold;
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
         }
         & + img {
             margin-top: -20px;
@@ -394,6 +397,7 @@ form {
         padding: 15px;
         border-radius: 5px;
         margin: 0;
+        text-align: center;
     }
     h1 {
         color: $COLOR_WHITE;
