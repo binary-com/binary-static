@@ -7,9 +7,7 @@ const getTradingTimes      = require('../common_independent').getTradingTimes;
 const Defaults             = require('../defaults');
 const BinarySocket         = require('../../../base/socket');
 const formatMoney          = require('../../../common/currency').formatMoney;
-const elementTextContent   = require('../../../../_common/common_functions').elementTextContent;
-const elementInnerHtml     = require('../../../../_common/common_functions').elementInnerHtml;
-const isVisible            = require('../../../../_common/common_functions').isVisible;
+const CommonFunctions      = require('../../../../_common/common_functions');
 const localize             = require('../../../../_common/localize').localize;
 const getPropertyValue     = require('../../../../_common/utility').getPropertyValue;
 
@@ -38,24 +36,24 @@ const Price_Beta = (() => {
 
         const contract_type = type_of_contract;
         const start_time    = getStartDateNode();
-        const underlying    = document.getElementById('underlying');
-        const amount_type   = document.getElementById('amount_type');
-        const currency      = document.getElementById('currency');
-        const payout        = document.getElementById('amount');
-        const expiry_type   = document.getElementById('expiry_type');
-        const duration      = document.getElementById('duration_amount');
-        const duration_unit = document.getElementById('duration_units');
-        const end_date      = document.getElementById('expiry_date');
-        const barrier       = document.getElementById('barrier');
-        const high_barrier  = document.getElementById('barrier_high');
-        const low_barrier   = document.getElementById('barrier_low');
-        const prediction    = document.getElementById('prediction');
+        const underlying    = CommonFunctions.getElementById('underlying');
+        const amount_type   = CommonFunctions.getElementById('amount_type');
+        const currency      = CommonFunctions.getElementById('currency');
+        const payout        = CommonFunctions.getElementById('amount');
+        const expiry_type   = CommonFunctions.getElementById('expiry_type');
+        const duration      = CommonFunctions.getElementById('duration_amount');
+        const duration_unit = CommonFunctions.getElementById('duration_units');
+        const end_date      = CommonFunctions.getElementById('expiry_date');
+        const barrier       = CommonFunctions.getElementById('barrier');
+        const high_barrier  = CommonFunctions.getElementById('barrier_high');
+        const low_barrier   = CommonFunctions.getElementById('barrier_low');
+        const prediction    = CommonFunctions.getElementById('prediction');
 
-        if (payout && isVisible(payout) && payout.value) {
+        if (payout && CommonFunctions.isVisible(payout) && payout.value) {
             proposal.amount = parseFloat(payout.value);
         }
 
-        if (amount_type && isVisible(amount_type) && amount_type.value) {
+        if (amount_type && CommonFunctions.isVisible(amount_type) && amount_type.value) {
             proposal.basis = amount_type.value;
         }
 
@@ -71,14 +69,14 @@ const Price_Beta = (() => {
             proposal.symbol = underlying.value;
         }
 
-        if (start_time && isVisible(start_time) && start_time.value !== 'now') {
+        if (start_time && CommonFunctions.isVisible(start_time) && start_time.value !== 'now') {
             proposal.date_start = start_time.value;
         }
 
-        if (expiry_type && isVisible(expiry_type) && expiry_type.value === 'duration') {
+        if (expiry_type && CommonFunctions.isVisible(expiry_type) && expiry_type.value === 'duration') {
             proposal.duration      = parseInt(duration.value);
             proposal.duration_unit = duration_unit.value;
-        } else if (expiry_type && isVisible(expiry_type) && expiry_type.value === 'endtime') {
+        } else if (expiry_type && CommonFunctions.isVisible(expiry_type) && expiry_type.value === 'endtime') {
             const end_date2 = end_date.getAttribute('data-value');
             let end_time2   = Defaults.get('expiry_time');
             if (!end_time2) {
@@ -98,19 +96,19 @@ const Price_Beta = (() => {
             proposal.duration_unit = 'm';
         }
 
-        if (barrier && isVisible(barrier) && barrier.value) {
+        if (barrier && CommonFunctions.isVisible(barrier) && barrier.value) {
             proposal.barrier = barrier.value;
         }
 
-        if (high_barrier && isVisible(high_barrier) && high_barrier.value) {
+        if (high_barrier && CommonFunctions.isVisible(high_barrier) && high_barrier.value) {
             proposal.barrier = high_barrier.value;
         }
 
-        if (low_barrier && isVisible(low_barrier) && low_barrier.value) {
+        if (low_barrier && CommonFunctions.isVisible(low_barrier) && low_barrier.value) {
             proposal.barrier2 = low_barrier.value;
         }
 
-        if (prediction && isVisible(prediction)) {
+        if (prediction && CommonFunctions.isVisible(prediction)) {
             proposal.barrier = parseInt(prediction.value);
         }
 
@@ -147,8 +145,7 @@ const Price_Beta = (() => {
             return;
         }
 
-        const container = document.getElementById(`price_container_${position}`);
-        if (!container) return;
+        const container = CommonFunctions.getElementById(`price_container_${position}`);
         if (!$(container).is(':visible')) {
             $(container).fadeIn(200, () => { $(container).css('display', 'flex'); });
         }
@@ -162,27 +159,27 @@ const Price_Beta = (() => {
         const description   = container.getElementsByClassName('contract_description')[0];
         const comment       = container.getElementsByClassName('price_comment')[0];
         const error         = container.getElementsByClassName('contract_error')[0];
-        const currency      = document.getElementById('currency');
+        const currency      = CommonFunctions.getElementById('currency');
 
         const display_type = type && contract_type ? contract_type[type] : '';
         if (display_type) {
             h4.setAttribute('class', `contract_heading ${type}`);
-            elementTextContent(h4, display_type);
+            CommonFunctions.elementTextContent(h4, display_type);
         }
 
         const setData = (data = {}) => {
             if (data.display_value) {
                 $('.stake:hidden').show();
-                elementTextContent(stake, `${localize('Stake')}: `);
-                elementInnerHtml(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
+                CommonFunctions.elementTextContent(stake, `${localize('Stake')}: `);
+                CommonFunctions.elementInnerHtml(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
                 $('.stake_wrapper:hidden').show();
             } else {
                 $('.stake_wrapper:visible').hide();
             }
 
             if (data.payout) {
-                elementTextContent(payout, `${localize('Payout')}: `);
-                elementInnerHtml(payout_amount, formatMoney((currency.value || currency.getAttribute('value')), +data.payout));
+                CommonFunctions.elementTextContent(payout, `${localize('Payout')}: `);
+                CommonFunctions.elementInnerHtml(payout_amount, formatMoney((currency.value || currency.getAttribute('value')), +data.payout));
                 $('.payout_wrapper:hidden').show();
             } else {
                 $('.payout_wrapper:visible').hide();
@@ -200,7 +197,7 @@ const Price_Beta = (() => {
             comment.hide();
             setData();
             error.show();
-            elementTextContent(error, details.error.message);
+            CommonFunctions.elementTextContent(error, details.error.message);
         } else {
             setData(proposal);
             if ($('#websocket_form').find('.error-field').length > 0) {
@@ -278,7 +275,7 @@ const Price_Beta = (() => {
                 // no default
             }
         }
-        Object.keys(types).forEach((type_of_contract) => {
+        Object.keys(types || {}).forEach((type_of_contract) => {
             BinarySocket.send(Price_Beta.proposal(type_of_contract), { callback: (response) => {
                 if (response.echo_req && response.echo_req.passthrough &&
                     response.echo_req.passthrough.form_id === form_id) {

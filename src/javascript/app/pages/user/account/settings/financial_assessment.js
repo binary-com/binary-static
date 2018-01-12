@@ -4,6 +4,7 @@ const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
 const jpClient         = require('../../../../common/country_base').jpClient;
 const Validation       = require('../../../../common/form_validation');
+const getElementById   = require('../../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const isEmptyObject    = require('../../../../../_common/utility').isEmptyObject;
@@ -79,7 +80,7 @@ const FinancialAssessment = (() => {
             }
 
             const data = { set_financial_assessment: 1 };
-            showLoadingImage(document.getElementById('msg_form'));
+            showLoadingImage(getElementById('msg_form'));
             $(form_selector).find('select').each(function () {
                 financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val();
             });
