@@ -4,6 +4,7 @@ const countDecimalPlaces = require('../common_independent').countDecimalPlaces;
 const Defaults           = require('../defaults');
 const Tick               = require('../tick');
 const elementTextContent = require('../../../../_common/common_functions').elementTextContent;
+const getElementById     = require('../../../../_common/common_functions').getElementById;
 const isVisible          = require('../../../../_common/common_functions').isVisible;
 
 /*
@@ -26,21 +27,21 @@ const Barriers_Beta = (() => {
                 const current_tick   = Tick.quote();
                 const decimal_places = countDecimalPlaces(current_tick);
 
-                const unit                            = document.getElementById('duration_units');
-                const end_time                        = document.getElementById('expiry_date');
-                const indicative_barrier_tooltip      = document.getElementById('indicative_barrier_tooltip');
-                const indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
-                const indicative_low_barrier_tooltip  = document.getElementById('indicative_low_barrier_tooltip');
+                const unit                            = getElementById('duration_units');
+                const end_time                        = getElementById('expiry_date');
+                const indicative_barrier_tooltip      = getElementById('indicative_barrier_tooltip');
+                const indicative_high_barrier_tooltip = getElementById('indicative_high_barrier_tooltip');
+                const indicative_low_barrier_tooltip  = getElementById('indicative_low_barrier_tooltip');
 
                 if (barrier.count === 1) {
-                    document.getElementById('high_barrier_row').style.display = 'none';
-                    document.getElementById('low_barrier_row').style.display  = 'none';
-                    document.getElementById('barrier_row').setAttribute('style', '');
+                    getElementById('high_barrier_row').style.display = 'none';
+                    getElementById('low_barrier_row').style.display  = 'none';
+                    getElementById('barrier_row').setAttribute('style', '');
 
                     const defaults_barrier = Defaults.get('barrier');
-                    const elm              = document.getElementById('barrier');
-                    const tooltip          = document.getElementById('barrier_tooltip');
-                    const span             = document.getElementById('barrier_span');
+                    const elm              = getElementById('barrier');
+                    const tooltip          = getElementById('barrier_tooltip');
+                    const span             = getElementById('barrier_span');
 
                     let barrier_def = defaults_barrier && !isNaN(defaults_barrier) ? defaults_barrier : barrier.barrier;
                     let value;
@@ -74,16 +75,16 @@ const Barriers_Beta = (() => {
                     Barriers_Beta.validateBarrier();
                     return;
                 } else if (barrier.count === 2) {
-                    document.getElementById('barrier_row').style.display = 'none';
-                    document.getElementById('high_barrier_row').setAttribute('style', '');
-                    document.getElementById('low_barrier_row').setAttribute('style', '');
+                    getElementById('barrier_row').style.display = 'none';
+                    getElementById('high_barrier_row').setAttribute('style', '');
+                    getElementById('low_barrier_row').setAttribute('style', '');
 
-                    const high_elm     = document.getElementById('barrier_high');
-                    const low_elm      = document.getElementById('barrier_low');
-                    const high_tooltip = document.getElementById('barrier_high_tooltip');
-                    const high_span    = document.getElementById('barrier_high_span');
-                    const low_tooltip  = document.getElementById('barrier_low_tooltip');
-                    const low_span     = document.getElementById('barrier_low_span');
+                    const high_elm     = getElementById('barrier_high');
+                    const low_elm      = getElementById('barrier_low');
+                    const high_tooltip = getElementById('barrier_high_tooltip');
+                    const high_span    = getElementById('barrier_high_span');
+                    const low_tooltip  = getElementById('barrier_low_tooltip');
+                    const low_span     = getElementById('barrier_low_span');
 
                     const defaults_barrier_high = Defaults.get('barrier_high');
                     const defaults_barrier_low  = Defaults.get('barrier_low');
@@ -154,7 +155,7 @@ const Barriers_Beta = (() => {
     };
 
     const validateBarrier = () => {
-        const barrier_element = document.getElementById('barrier');
+        const barrier_element = getElementById('barrier');
         if (isVisible(barrier_element) && (isNaN(parseFloat(barrier_element.value)) ||
                 parseFloat(barrier_element.value) === 0)) {
             barrier_element.classList.add('error-field');

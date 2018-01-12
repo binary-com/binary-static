@@ -17,30 +17,32 @@ window.onload = function () {
     }
 
     let validation_set = false; // To prevent validating before submit
+    const frm_verify_email = document.getElementById('frm_verify_email');
+    if (frm_verify_email) {
+        frm_verify_email.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-    document.getElementById('frm_verify_email').addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        if (!validateEmail(el_email.value)) {
-            if (!validation_set) {
-                ['input', 'change'].forEach((event) => {
-                    el_email.addEventListener(event, () => {
-                        setValidationStyle(el_email, !validateEmail(el_email.value));
+            if (!validateEmail(el_email.value)) {
+                if (!validation_set) {
+                    ['input', 'change'].forEach((event) => {
+                        el_email.addEventListener(event, () => {
+                            setValidationStyle(el_email, !validateEmail(el_email.value));
+                        });
                     });
-                });
-                setValidationStyle(el_email, !validateEmail(el_email.value));
-                validation_set = true;
+                    setValidationStyle(el_email, !validateEmail(el_email.value));
+                    validation_set = true;
+                }
+                return false;
             }
-            return false;
-        }
 
-        if (ws.readyState === 1) {
-            sendVerifyEmail();
-        } else {
-            ws.onopen = sendVerifyEmail;
-        }
-        return true;
-    });
+            if (ws.readyState === 1) {
+                sendVerifyEmail();
+            } else {
+                ws.onopen = sendVerifyEmail;
+            }
+            return true;
+        });
+    }
 
     ws.onmessage = function(msg) {
         const response = JSON.parse(msg.data);
