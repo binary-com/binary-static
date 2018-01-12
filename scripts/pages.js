@@ -142,4 +142,5 @@ module.exports = [
     ['hackathon',                          'landing_pages/hackathon',                   null,        'Hackathon Competition',              'NOT-en'],
     ['landing/signup-frame',               'landing_pages/signup_frame',                null,        'Sign up'],
     ['binary-japan-landing',               'landing_pages/binary_japan',                null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
+    ['binary-japan-landing-2',             'landing_pages/binary_japan_2',              null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
 ];

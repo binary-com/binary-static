@@ -19,7 +19,7 @@ const BinaryOptionsBasics = () => (
             <li><strong>{it.L('Rise/Fall')}</strong> - {it.L('Predict the market rising or falling from its current level.')}</li>
             <li><strong>{it.L('Higher/Lower')}</strong> - {it.L('Predict the market ending higher or lower than a price target.')}</li>
             <li><strong>{it.L('Touch/No Touch')}</strong> - {it.L('Predict the market touching or not touching a price target.')}</li>
-            <li><strong>{it.L('In/Out')}</strong> - {it.L('Predict the market staying inside or going outside two price targets.')}</li>
+            <li><strong>{it.L('In/Out')}</strong> - {it.L('Predict the market staying between or going outside two price targets.')}</li>
         </ul>
         <br />
 

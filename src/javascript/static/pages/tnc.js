@@ -5,7 +5,12 @@ const urlParam    = require('../../_common/url').param;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
 
 const TermsAndConditions = (() => {
+    let sidebar_width;
+
     const onLoad = () => {
+        const container = document.getElementsByClassName('sidebar-collapsible-container')[0];
+        if (container) sidebar_width = container.offsetWidth;
+
         handleActiveTab();
         TNCApproval.requiresTNCApproval(
             $('#btn_accept'),
@@ -74,14 +79,27 @@ const TermsAndConditions = (() => {
     };
 
     const handleSidebar = () => {
-        const hash     = window.location.hash;
+        const hash     = window.location.hash || '#legal';
         const $sidebar = $('.sidebar-collapsible');
         const $content = $('.sidebar-collapsible-content');
 
         $sidebar.on('click', () => {
             if (!checkWidth()) $.scrollTo($content, 250, { offset: -10 });
         });
-        $sidebar.find(hash ? `${hash} a` : 'a:first').trigger('click');
+
+        const is_submenu = /-binary|-mt/.test(hash);
+        if (is_submenu) {
+            let parent_hash = hash;
+            if (/-binary/.test(hash)) {
+                parent_hash = hash.split('-binary')[0];
+            } else if (/-mt/.test(hash)) {
+                parent_hash = hash.split('-mt')[0];
+            }
+            $sidebar.find(`${parent_hash} a:first`).trigger('click'); // click mainmenu
+            $sidebar.find(`${hash} a:first`).trigger('click');  // click submenu
+        } else {
+            $sidebar.find(`${hash} a:first`).trigger('click');
+        }
     };
 
     const checkWidth = () => {
@@ -96,18 +114,19 @@ const TermsAndConditions = (() => {
     };
 
     const stickySidebar = () => {
-        const $sidebar = $('.sidebar-collapsible');
-        const $content = $('.sidebar-collapsible-content');
+        const $sidebar   = $('.sidebar-collapsible');
+        const $content   = $('.sidebar-collapsible-content');
+        const $container = $('.sidebar-collapsible-container');
 
         if (!$sidebar.is(':visible')) return;
 
-        const width = $sidebar.width();
         if (window.scrollY < $content.offset().top) {
             $sidebar.css({ position: 'relative' });
-        } else if (window.scrollY > $content[0].offsetHeight - 118) { // 118 is the height difference between default and active sidebar state
-            $sidebar.css({ position: 'absolute', bottom: '20px', top: '', 'min-width': width });
+        } else if (window.scrollY + $sidebar[0].offsetHeight + 20 >=
+            $container[0].offsetHeight + $container.offset().top) { // 20 is the padding for content from bottom, to avoid menu snapping back up
+            $sidebar.css({ position: 'absolute', bottom: '20px', top: '', width: sidebar_width });
         } else {
-            $sidebar.css({ position: 'fixed', top: '0px', bottom: '', 'min-width': width });
+            $sidebar.css({ position: 'fixed', top: '0px', bottom: '', width: sidebar_width });
         }
     };
 

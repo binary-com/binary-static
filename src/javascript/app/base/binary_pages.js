@@ -124,7 +124,7 @@ const pages_config = {
     'get-started'            : { module: GetStarted },
     'get-started-beta'       : { module: TabSelector },
     'get-started-jp'         : { module: GetStartedJP },
-    'home-beta'              : { module: TabSelector,                   not_authenticated: true },
+    'home-beta'              : { module: TabSelector,                not_authenticated: true },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'how-to-trade-mt5'       : { module: TabSelector },
     'job-details'            : { module: JobDetails },
