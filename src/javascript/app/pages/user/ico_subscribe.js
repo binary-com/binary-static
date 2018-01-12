@@ -7,6 +7,7 @@ const getDecimalPlaces      = require('../../common/currency').getDecimalPlaces;
 const formatMoney           = require('../../common/currency').formatMoney;
 const onlyNumericOnKeypress = require('../../common/event_handler');
 const FormManager           = require('../../common/form_manager');
+const getElementById        = require('../../../_common/common_functions').getElementById;
 const getLanguage           = require('../../../_common/language').get;
 const localize              = require('../../../_common/localize').localize;
 const State                 = require('../../../_common/storage').State;
@@ -117,7 +118,7 @@ const ICOSubscribe = (() => {
                     { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: decimal_places, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]], no_scroll: 1 },
 
                     { request_field: 'buy', value: 1 },
-                    { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
+                    { request_field: 'amount',        parent_node: 'parameters', value: () => getElementById('price').value },
                     { request_field: 'contract_type', parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'symbol',        parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'basis',         parent_node: 'parameters', value: 'stake' },
@@ -207,14 +208,10 @@ const ICOSubscribe = (() => {
                 }
 
                 // Show message to client.
-                const el_message_show = document.getElementById(message_show);
-                if (el_message_show) el_message_show.setVisibility(1);
+                getElementById(message_show).setVisibility(1);
             }
         }
-        const el_to_show = document.getElementById(to_show);
-        if (el_to_show) {
-            el_to_show.setVisibility(1);
-        }
+        getElementById(to_show).setVisibility(1);
         return to_show;
     };
 
