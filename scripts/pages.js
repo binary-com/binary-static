@@ -19,7 +19,6 @@ module.exports = [
 
     ['multi_barriers_trading',             'app/trade/mb_trading',                      'full_width', 'Trusted by traders since 2000'],
     ['trading',                            'app/trade/trading',                         'default',    'Trusted by traders since 2000'],
-    ['trading_beta',                       'app/trade/beta/trading',                    'default',    'Trusted by traders since 2000',     'ja'],
 
     ['new_account/japanws',                'app/new_account/japan',                     'default',    'Real Money Account Opening',        'NOT-ja,en'],
     ['new_account/knowledge_testws',       'app/japan/knowledge_test',                  'default',    'Real Money Account Opening',        'NOT-ja,en'],

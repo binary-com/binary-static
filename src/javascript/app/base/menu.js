@@ -21,7 +21,7 @@ const Menu = (() => {
         const active = activeMenuTop();
         if (active) active.classList.add('active');
 
-        if (Client.isLoggedIn() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
+        if (Client.isLoggedIn() || /\/(cashier|resources|trading|multi_barriers_trading)/i.test(window.location.pathname)) {
             showMainMenu();
         }
     };
