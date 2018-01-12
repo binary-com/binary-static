@@ -38,8 +38,13 @@ const Menu = (() => {
 
     const activateMainMenu = () => {
         // First unset everything.
-        applyToAllElements(items, (el) => { el.classList.remove('active', 'hover'); });
         applyToAllElements('.sub_item a', (el) => { el.classList.remove('a-active'); }, '', main_menu);
+
+        applyToAllElements(items, (el) => {
+            el.classList.remove('active', 'hover');
+            el.addEventListener('mouseenter', onMouseEnter);
+            el.addEventListener('mouseleave', onMouseLeave);
+        });
 
         let pathname = window.location.pathname;
 
@@ -72,10 +77,6 @@ const Menu = (() => {
 
         if (menu_item_for_page) {
             menu_item_for_page.classList.add('active', 'hover');
-            applyToAllElements(items, (el) => {
-                el.addEventListener('mouseenter', onMouseEnter);
-                el.addEventListener('mouseleave', onMouseLeave);
-            });
         }
     };
 
