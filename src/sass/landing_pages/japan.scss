@@ -688,7 +688,7 @@ form {
     @include flex-center;
     padding: 0 10px;
     text-align: left;
-    @media (max-width: 575px) {
+    @media (max-width: 768px) {
         max-width: 200px;
     }
     @media (max-width: 320px) {
