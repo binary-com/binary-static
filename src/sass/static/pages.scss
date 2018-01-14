@@ -623,6 +623,25 @@ body #not_authenticated_financial ul.checked > li {
                 }
             }
         }
+        .role-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+
+            .role-btn {
+                cursor: pointer;
+
+                span {
+                    font-weight: 600;
+                }
+                &.active {
+                    background-color: $COLOR_BLUE;
+                    color: $COLOR_WHITE;
+                }
+            }
+        }
         .footer-email {
             background-color: $COLOR_ORANGE;
             margin-bottom: -20px;

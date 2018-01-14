@@ -203,6 +203,18 @@ const Careers = () => (
             <div className='gr-padding-30 center-text'>
                 <h1>{it.L('Interview process')}</h1>
             </div>
+            <div className='role-section'>
+                <div className='center-text gr-gutter gr-padding-20 fill-bg-color role-btn active'>
+                    <div className='inline-flex center-align gr-gutter'>
+                        <span>Technical roles</span>
+                    </div>
+                </div>
+                <div className='center-text gr-gutter gr-padding-20 fill-bg-color role-btn'>
+                    <div className='inline-flex center-align gr-gutter'>
+                        <span>Non-technical roles</span>
+                    </div>
+                </div>
+            </div>
             <div id='#technical'>
                 <div className='gr-padding-30'>
                     <div className='steps gr-padding-10'>
