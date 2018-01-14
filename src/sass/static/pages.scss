@@ -502,6 +502,9 @@ body #not_authenticated_financial ul.checked > li {
                     }
                 }
             }
+            @media (max-width: 768px) {
+                background-position: 75% -30px;
+            }
         }
         .center-banner {
             background: url('../images/pages/careers/careers-2_bg@3x.jpg') no-repeat;
