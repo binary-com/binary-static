@@ -98,6 +98,9 @@ body #topbar, .landing_page-content {
     .items li a {
         white-space: nowrap;
     }
+    .tab-menu-wrap ul li.hover ul {
+        z-index: 1;
+    }
 }
 
 /* mobile menu overrides */
