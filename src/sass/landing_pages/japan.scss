@@ -18,6 +18,9 @@ section {
     .bg-shine-v {
         margin-top: -80px;
     }
+    .margin-bottom-40 {
+        margin-bottom: 40px;
+    }
 }
 
 footer {
@@ -47,6 +50,10 @@ form {
         color: $COLOR_WHITE;
         text-align: center;
         margin-top: 50px;
+
+        &.margin-bottom-30 {
+            margin-bottom: 30px;
+        }
     }
     .input-group {
         display: flex;
@@ -78,6 +85,7 @@ form {
             outline: none;
             @media (max-width: 575px) {
                 margin: 5px auto;
+                width: 100%;
             }
         }
         .error-msg {
@@ -94,120 +102,11 @@ form {
         padding: 5px;
         color: $COLOR_WHITE;
         border-radius: 5px;
-    }
-}
-
-/* Helpers */
-@function border-width($width) {
-    @return $width * 2;
-}
-
-@mixin triangle($color, $size, $direction) {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-
-    @if $direction == 'left' {
-        border-top: $size solid transparent;
-        border-bottom: $size solid transparent;
-        border-left: border-width($size) solid $COLOR_ORANGE;
-        margin: auto;
-        left: 90%;
-        bottom: 0;
-        top: 0;
-    }
-    @else {
-        border-top: $size solid $color;
-        border-left: border-width($size) solid transparent;
-        border-right: border-width($size) solid transparent;
-        margin: auto;
-        left: 0;
-        right: 0;
-        top: 100%;
-    }
-}
-
-@mixin speech-bubble($color, $size, $direction) {
-    background-color: $color;
-    border-radius: 5px;
-    position: relative;
-
-    &:before {
-        @include triangle($color, $size, $direction);
-    }
-}
-
-@mixin card($border-width) {
-    border: solid $border-width $COLOR_ORANGE;
-    background-color: $COLOR_WHITE;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-
-    h1, h2, h3, h4 {
-        margin: 10px 0;
-    }
-    .card-divider {
-        border-top: $border-width solid $COLOR_ORANGE;
-        display: block;
-    }
-    .card-header {
-        &__bubble {
-            @include speech-bubble($COLOR_BLUE, 20px, 'down');
-        }
-        &__ribbon {
-            background-image: url('../images/japan/version1/blue-ribbon.svg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
-
-            h1 {
-                margin: 0;
-                color: $COLOR_WHITE;
-            }
-        }
-    }
-    .card-body {
-        .size-1 {
-            font-size: 10px;
-        }
-        .size-2 {
-            font-size: 12px;
-        }
-        .size-3 {
-            font-size: 14px;
-        }
-        .color-gray {
-            color: $COLOR_DARK_WHITE;
-        }
-        .bg-gray {
-            background-color: $COLOR_LIGHT_GRAY;
-            border-radius: 5px;
-            padding: 15px;
-        }
-    }
-    .card-footer {
-        display: flex;
-        flex: 1;
-        align-items: flex-end;
-        justify-content: center;
-        color: $COLOR_BLUE;
-        font-size: 13px;
-        font-weight: 300;
 
         p {
-            margin: 0;
+            text-align: center;
         }
     }
-}
-
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .flex {
@@ -221,6 +120,9 @@ form {
     .box ~ .box {
         margin: 60px 0 0;
     }
+    &.margin-top-20 {
+        margin: 20px 0 0;
+    }
 }
 
 .flex-end {
@@ -231,8 +133,8 @@ form {
     justify-content: space-between;
 }
 
-.flex-justify-content-center {
-    justify-content: center;
+.flex-space-evenly {
+    justify-content: space-evenly;
 }
 
 .pattern {
@@ -254,6 +156,10 @@ form {
     }
     &-semicircle {
         background-image: url('../images/japan/version1/semicircle.svg');
+    }
+    &-stretch {
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
@@ -291,12 +197,29 @@ form {
         }
         & + img {
             margin-top: -20px;
+            @media (max-width: 575px) {
+                margin-bottom: 20px;
+            }
         }
     }
 }
 
+.fill-bg-color {
+    /* stylelint-disable color-no-hex */
+    background-color: #f4f4f6 !important;
+    /* stylelint-enable color-no-hex */
+}
+
 .text-bold {
     font-weight: bold;
+}
+
+.text-semibold {
+    font-weight: 600 !important;
+}
+
+.text-medium {
+    font-weight: 500 !important;
 }
 
 .color-blue {
@@ -317,168 +240,119 @@ form {
     border-width: 0 0 1px;
     background-color: $COLOR_WHITE;
 
-    .container {
-        display: flex;
-    }
     &.top-nav-collapse {
         background: none;
-    }
-    .navbar-brand {
-        float: left;
     }
     .logo {
         background: url('../images/japan/version1/logo.svg') no-repeat;
         background-size: contain;
-        width: 180px !important;
         height: 40px;
+        width: 180px;
         margin: 15px 0;
+        float: left;
     }
-    .navbar-collapse {
-        margin: auto 0 auto auto;
+    .navbar-icon {
+        height: 30px;
+        margin: 15px 10px;
+        @media (max-width: 575px) {
+            height: 15px;
+            margin: 15px 5px;
+        }
+    }
+    .navbar-header {
+        align-items: center;
 
-        .navbar-nav {
+        .navbar-item-align-left, .navbar-item-align-right {
             display: flex;
-            align-items: center;
 
-            > li {
-                white-space: nowrap;
-                text-align: center;
-                margin: 0 25px 0 0;
-
-                img {
-                    height: 30px;
-                }
+            &.navbar-item-align-left {
+                justify-content: flex-start;
             }
-            a, a:visited {
-                color: $COLOR_WHITE !important;
-                font-weight: 100 !important;
-                padding: 15px 0;
+            &.navbar-item-align-right {
+                justify-content: flex-end;
             }
-            a:hover, a:focus {
-                text-decoration: none;
-            }
-        }
-    }
-    .navbar-toggle {
-        position: relative;
-        float: right;
-        background: url('../images/japan/version1/main_menu.svg') no-repeat;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        width: 36px;
-        height: 36px;
-        display: none; // hide on desktop
-
-        &:focus {
-            outline: 0;
-        }
-    }
-}
-
-@media (max-width: 1199px) {
-    .navbar-fixed-top {
-        margin-bottom: 0;
-        padding: 15px 0;
-        overflow: hidden;
-        flex-direction: column;
-        max-height: 64px;
-        -webkit-transition: max-height 0.3s;
-        -moz-transition: max-height 0.3s;
-        -ms-transition: max-height 0.3s;
-        -o-transition: max-height 0.3s;
-        transition: max-height 0.3s;
-
-        .container {
-            display: block;
-        }
-        &.expand {
-            max-height: 440px;
-        }
-        .navbar-header {
-            width: 100%;
-
-            .navbar-brand {
-                float: none;
-                margin: 0;
-                height: 30px;
-            }
-            .navbar-toggle {
-                display: block;
-                height: 30px;
-                width: 30px;
-            }
-        }
-        .navbar-collapse {
-            margin: 0;
-            width: 100%;
-            height: 0;
-            -webkit-transition: height 0.3s;
-            -moz-transition: height 0.3s;
-            -ms-transition: height 0.3s;
-            -o-transition: height 0.3s;
-            transition: height 0.3s;
-
-            .navbar-nav {
-                display: block;
-                padding-top: 5px;
-                width: 100%;
-
-                > li {
-                    margin: 10px 0;
-                    padding: 0;
-                    text-align: left;
-                }
-                &.word-wrap {
-                    > li {
-                        white-space: nowrap;
-                        width: 100%;
-                        font-size: 18px;
-                    }
-                }
-            }
-            &.expand {
-                height: 100%;
+            @media (max-width: 575px) {
+                justify-content: center !important;
             }
         }
     }
 }
 
 .intro {
-    background: linear-gradient(0deg, $COLOR_DARK_BLUE, $COLOR_BLUE);
+    background-color: $COLOR_DARK_BLUE;
+    background-image: radial-gradient(circle at top, $COLOR_BLUE 5%, $COLOR_DARK_BLUE 65%);
     position: relative;
     height: 100%;
     padding-top: 0;
     padding-bottom: 0;
+    @media (max-width: 575px) {
+        .intro-body .flex {
+            flex-direction: column-reverse;
+        }
+    }
 
     &:before {
         @include triangle($COLOR_DARK_BLUE, 100px, 'down');
         border-left: 50vw solid transparent;
         border-right: 50vw solid transparent;
+        @media (max-width: 575px) {
+            @include triangle($COLOR_DARK_BLUE, 40px, 'down');
+            border-left: 50vw solid transparent;
+            border-right: 50vw solid transparent;
+        }
     }
-    .intro-text, .intro-subtext {
+    .intro-text {
         color: $COLOR_WHITE;
 
         &.intro-text {
             font-size: 72px;
-            font-weight: bold;
+            font-weight: 500;
             white-space: nowrap;
             margin-top: 80px;
-        }
-        &.intro-subtext {
-            max-width: 500px;
-            margin: 35px 0;
+            margin-bottom: 30px;
+            @media (max-width: 575px) {
+                font-size: 36px;
+                white-space: pre-wrap; // wrap text on mobile
+                text-align: center;
+                margin-top: 0;
+            }
         }
     }
-    form .input-group {
-        justify-content: flex-start;
+    .intro-subtext {
+        color: $COLOR_GRAY;
+
+        &.intro-subtext {
+            max-width: 500px;
+            margin: 30px 0 50px;
+        }
+    }
+    form {
+        margin-bottom: 80px;
+
+        .input-group {
+            justify-content: flex-start;
+        }
+    }
+    .intro-bottom-text {
+        font-weight: 600;
+        margin-bottom: 0;
+        @media (max-width: 575px) {
+            font-size: 24px;
+        }
     }
 }
 
 .spacing {
     padding-top: 100px;
+    @media (max-width: 575px) {
+        padding-top: 50px;
+    }
 
     .section-title {
         margin-top: 80px;
+        @media (max-width: 575px) {
+            margin-top: 40px;
+        }
     }
 }
 
@@ -491,29 +365,54 @@ form {
         color: $COLOR_WHITE;
         padding: 15px;
         border-radius: 5px;
+        margin: 0;
+        @media (max-width: 575px) {
+            text-align: center;
+        }
     }
     .rounded-bubble {
-        @include speech-bubble($COLOR_ORANGE, 10px, 'left');
-        border-radius: 50%;
+        @include speech-bubble($COLOR_ORANGE, 10px, 'right');
         font-weight: bold;
+        border-radius: 50%;
+        padding: 20px;
+        @media (max-width: 575px) {
+            display: none;
+        }
     }
     .bg-blue {
         background-color: $COLOR_BLUE;
+        padding: 10px 15px;
     }
     .bg-orange {
         background-color: $COLOR_ORANGE;
         font-weight: bold;
+
+        &.v-padding {
+            padding: 10px 15px;
+        }
     }
     .bg-ribbon {
-        text-align: center;
-        @media (max-width: 575px) {
-            font-size: 18px;
+        padding: 0;
+
+        h1 {
+            padding: 15px 40px;
+            @media (max-width: 575px) {
+                font-size: 18px;
+            }
         }
     }
     .bg-bubble {
         @include speech-bubble($COLOR_BLUE, 30px, 'down');
-        padding: 30px;
+        padding: 15px 30px;
+        text-align: center;
         font-size: 48px;
+        @media (max-width: 575px) {
+            font-size: 28px;
+        }
+
+        &.margin-bottom {
+            margin-bottom: 1em;
+        }
     }
 }
 
@@ -546,7 +445,7 @@ form {
 
 // Card - thick border
 .card {
-    @include card(3px);
+    @include card(3px, $COLOR_ORANGE);
     padding: 30px;
     position: relative;
 
@@ -554,13 +453,12 @@ form {
         color: $COLOR_WHITE;
 
         &__bubble {
-            @include speech-bubble($COLOR_BLUE, 20px, 'down');
             margin: -30px;
             padding: 30px;
         }
         &__ribbon {
             position: absolute;
-            top: -45px;
+            top: -43px;
             padding: 15px;
             left: 0;
             right: 0;
@@ -575,19 +473,25 @@ form {
             }
 
             & + .card-body {
-                margin-top: 40px;
+                margin-top: 60px;
+                margin-bottom: 40px;
+                @media (max-width: 575px) {
+                    margin-top: 20px;
+                    margin-bottom: 0;
+                }
             }
         }
     }
     .card-body {
         .bg-bubble {
-            @include speech-bubble($COLOR_LIGHT_GRAY, 10px, 'down');
+            @include speech-bubble(#f4f4f6, 10px, 'down');
             color: $COLOR_BLUE;
+            font-weight: 600;
             padding: 15px;
             margin: 0 0 20px;
         }
         img.equal-height {
-            width: 70%;
+            width: 80%;
             height: 86px;
         }
     }
@@ -597,27 +501,36 @@ form {
         span {
             display: inline-block;
             text-align: center;
-            margin: 0;
+            margin: 0 5px;
         }
     }
 }
 
 // Card - thin border
 .card--light {
-    @include card(1px);
+    @include card(1px, $COLOR_ORANGE);
     padding: 20px;
     position: relative;
 
     .card-header {
         &__bubble {
+            @include flex-center;
             margin: -21px;
             padding: 15px;
             margin-bottom: 40px;
+            min-height: 106px;
+            @media (max-width: 768px) {
+                min-height: 130px;
+            }
 
+            &-sm {
+                min-height: 70px;
+            }
             h3 {
                 text-align: center;
                 color: $COLOR_WHITE;
                 margin-bottom: 0;
+                font-size: 20px;
             }
         }
         &__ribbon {
@@ -626,16 +539,16 @@ form {
             margin-bottom: 40px;
         }
     }
-    &.card-icon-heart {
+    &.icon-heart {
         justify-content: center;
     }
-    &.card-icon-heart:before {
+    &.icon-heart:before {
         position: absolute;
         content: url('../images/japan/version1/heart.svg');
         left: 0;
         right: 0;
         margin: auto;
-        bottom: -15px;
+        bottom: -18px;
     }
     .card-divider {
         margin: 20px -20px;
@@ -649,6 +562,17 @@ form {
     .color-red {
         color: $COLOR_RED;
     }
+    &.key-plus {
+        font-weight: 600;
+        padding: 15px 15px 30px;
+
+        p {
+            margin: 0;
+        }
+    }
+    &.no-padding {
+        padding: 0;
+    }
 }
 
 // Speech bubble with outline
@@ -656,6 +580,7 @@ form {
     counter-reset: section;
     margin-right: 0 !important;
     margin-left: 0 !important;
+    margin-top: 20px;
 
     .bubble-outline {
         position: relative;
@@ -681,11 +606,10 @@ form {
     @include speech-bubble($COLOR_WHITE, 10px, 'down');
     @include flex-center;
     border: 1px solid $COLOR_ORANGE;
-    padding: 15px;
+    padding: 15px 10px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
     margin-bottom: 20px;
     max-width: 154px;
     min-height: 50%;
@@ -713,6 +637,7 @@ form {
 
     &.box-o {
         border: 1px solid $COLOR_LIGHT_GRAY;
+        border-radius: 6px;
     }
     p {
         margin: 0;
@@ -732,14 +657,19 @@ form {
     &.icon-sm {
         height: 32px;
         width: 32px;
+
+        &.big {
+            height: 40px;
+            width: 40px;
+        }
     }
     &.icon-md {
         height: 48px;
         width: 48px;
     }
     &.icon-lg {
-        height: 64px;
-        min-width: 64px;
+        height: 50px;
+        min-width: 50px;
     }
 }
 
@@ -767,6 +697,14 @@ form {
     background-image: url('../images/japan/version1/icon-6.svg');
 }
 
+.icon-7 {
+    background-image: url('../images/japan/version1/icon-7.svg');
+}
+
+.icon-8 {
+    background-image: url('../images/japan/version1/icon-8.svg');
+}
+
 .icon-lock-switch {
     background-image: url('../images/japan/version1/lock-switch.svg');
 }
@@ -781,4 +719,16 @@ form {
     max-height: 128px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.responsive-md {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 575px) {
+    .gr-padding-5-m {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
 }

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-08 20:13-0500\n"
+"PO-Revision-Date: 2018-01-10 03:53-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -591,7 +591,7 @@ msgstr "<a href='%1'>公司</a>位于马耳他、马来西亚和日本"
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>所有合约期限</strong> - 从10 秒到 365 天。"
 
-msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/out."
+msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
 msgstr "<strong>所有市场条件</strong> - 上涨/下跌，触及/未触及，范围内/范围外。"
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
@@ -601,7 +601,7 @@ msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>所有赔付额</strong> - 从 1 美元到 5 万美元。"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
-msgstr "<strong>合适性测试:警告:</strong>为了给您提供服务，我们必须向您获取信息，以便确定产品或服务是否适合您（也就是说，看您是否拥有足够经验和知识，以了解相关的风险）。"
+msgstr "<strong>合适性测试:警告:</strong>为了给您提供服务，我们必须向您获取信息，以便确定产品或服务是否适合您（也就是说，看您是否拥有足够经验和知识，并了解相关的风险）。"
 
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>兑换率风险</strong>: 外汇兑换率可能会因为广泛的经济、政治和其他条件而快速改变，因此，您在进行标的投资产品交易时除了隐藏性损失风险之外，还冒着兑换率损失风险。如果您以某一种货币存入资金，但以另一种货币进行合同交易计价，您的标的投资收益或损失可能会受到两种货币间兑换率变动的影响。"
@@ -625,10 +625,10 @@ msgid "A Bachelor's degree in Marketing, Business Administration, or related dis
 msgstr "营销、工商管理或相关学科学士学位"
 
 msgid "A Contract for Difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset."
-msgstr "差价合约（CFD）是一种金融衍生产品，通过猜测相关资产的上涨或下跌，使您可能获利，而实际上并不拥有该资产。"
+msgstr "差价合约（CFD）是一种金融衍生产品，通过猜测相关资产的上涨或下跌，您可能获利，但实际上并不拥有该资产。"
 
 msgid "A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset."
-msgstr "差价合约（CFD）是一种金融衍生产品，通过猜测相关资产的上涨或下跌，使您可能获利。通过相关资产的买入和卖出价差算出您的利润和损失。"
+msgstr "差价合约（CFD）是一种金融衍生产品，通过猜测相关资产的上涨或下跌，您可能获利。通过相关资产的买入和卖出价差算出您的利润和损失。"
 
 msgid "A Forex trader always has one objective in mind when trading: to exchange one currency for another in order to make a profit."
 msgstr "外汇交易者在交易时总是有一个目标：用某一货币兑换成另一货币以获取利润。"
@@ -1799,7 +1799,7 @@ msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, B
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA 和所有其他 Binary Group 成员，有时总称为 \"%1\"， \"我们\" 或 \"本公司\"。"
 
 msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href='%1' target='_blank' download=1>licence no. IS/70156</a>)."
-msgstr ""
+msgstr "Binary Investments (Europe) Ltd，地址为 Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta。由马耳他金融服务机构授予牌照及监管为3级投资服务提供商，(<a href='%1' target='_blank' download=1>牌照号码为 IS/70156</a>)。"
 
 msgid "Binary K.K."
 msgstr "Binary K.K."
@@ -3488,14 +3488,17 @@ msgstr "区间之内结束"
 msgid "Ends Between/Ends Outside trades"
 msgstr "“收于范围之内/之外”的交易"
 
+msgid "Ends Between/Goes Outside"
+msgstr "到期时价格处于某个范围之内/之外"
+
+msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr "如果开始和结束期间价格跳动次数少于2，“到期时价格处于某个范围之内/之外”合约购入价将全额退还。"
+
+msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr "到期时价格处于某个范围之内/之外 - 预测市场价格在合约到期时处于两个目标价格范围之内或之外"
+
 msgid "Ends In/Out"
 msgstr "“范围之内/之外”收盘"
-
-msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "如果开始和结束期间价格跳动次数少于2，收于范围之内/之外合约购入价将全额退还。"
-
-msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "到期时价格处于某个范围之内/之外 - 预测市场价格在合约到期时处于两个目标价格范围之内或之外"
 
 msgid "Ends Outside"
 msgstr "区间之外结束"
@@ -3618,10 +3621,10 @@ msgid "Eurobasket Wolves"
 msgstr "Eurobasket Wolves"
 
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
-msgstr ""
+msgstr "想要进行产品博彩交易的欧盟居民将在 Binary (Europe) Ltd 开设账户。"
 
 msgid "European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "想要进行产品博彩交易的欧盟居民将在 Binary Investments (Europe) Ltd 开设账户。"
 
 msgid "Even/Odd"
 msgstr "偶/奇"
@@ -5076,7 +5079,7 @@ msgid "In the 'Further Instructions' field please specify the payment method and
 msgstr "请在“详细说明”字段指明支付方式及代理将转账的账号。"
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
-msgstr ""
+msgstr "在英国，我们的客户通过 Binary (IOM) Ltd. 和 Binary Investments (Europe) Ltd. 进行交易。在马恩岛，他们通过 Binary (IOM) Ltd. 进行交易。在日本通过 Binary KK 进行交易。在欧盟（除了英国），则通过 Binary (Europe) Ltd 和 Binary Investments (Europe) Ltd. 进行交易。在全世界其他地区，客户通过 Binary (C.R.) S.A.进行交易。"
 
 msgid "In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
 msgstr "如果是限价订单，您确认我们将根据限价可用性努力以与您指定的限价相同或更佳价格水平开盘/平仓。您确认，订单执行期间，我们的买价/卖价可能对您不利。"
@@ -6162,7 +6165,7 @@ msgid "Leverage up to 1:500"
 msgstr "杠杆率高达 1: 500"
 
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that you would be able to enter into a trade position that is of 50 times higher than your margin. When you invest in a leveraged product, your profit or loss is based on the leveraged position, i.e., the increased/amplified value of your trade determined based on the leverage ratio you set for your account."
-msgstr "融资融券交易中，杠杆指使用保证金增加/扩大交易数值。杠杆的表达方式是比率。举个例子，如果杠杆是50: 1，您将能够持有比保证金高出 50 倍的交易头寸。当您投资一种杠杆产品时，您的盈利或亏损将根据杠杆的头寸计算，也就是说，您为账户设置的杠杆比率决定了您的交易增加/扩大数值。"
+msgstr "融资融券交易中，杠杆指使用保证金增加/扩大交易数值。杠杆的表达方式是比率。举个例子，如果杠杆是50: 1，您将能够持有比保证金高出50倍的交易头寸。当您投资一种杠杆产品时，您的盈利或亏损将根据杠杆的头寸计算，也就是说，您为账户设置的杠杆比率决定了您的交易增加/扩大数值。"
 
 msgid "Liability"
 msgstr "责任"
@@ -6210,7 +6213,7 @@ msgid "Limits"
 msgstr "限额"
 
 msgid "Limits 1 to 3 may only be changed or increased after 7 days' notice."
-msgstr "1到 3的限额必须在7天的通知期过后才可更改或增加。"
+msgstr "1到3的限额必须在7天的通知期过后才可更改或增加。"
 
 msgid "Link to and direct our clients to your Application."
 msgstr "将我们客户与您的应用程序相连接。"
@@ -6279,7 +6282,7 @@ msgid "Long-term partnership:"
 msgstr "长期合作伙伴："
 
 msgid "Long:"
-msgstr "长仓:"
+msgstr "长仓："
 
 msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? %1 is one of the world's most progressive companies, with offices in Asia and Europe."
 msgstr "想要在一个现代化、多元化和开放的国家找份新的、吸引人的工作？%1是全球最具前景的公司之一，在亚洲和欧洲都拥有办公室。"
@@ -7713,7 +7716,7 @@ msgid "Place of birth"
 msgstr "出生地点"
 
 msgid "Plan to start trading CFDs? Learn when to buy and sell, how to calculate your profits and losses, and how to close a position."
-msgstr "计划开始差价合约交易？ 了解何时买入和卖出、如何计算利润和亏损，以及如何平仓。"
+msgstr "计划开始差价合约交易？了解何时买入和卖出、如何计算利润和亏损，以及如何平仓。"
 
 msgid "Plant and Machine Operators and Assemblers"
 msgstr "工厂和机器操作员及装配员"
@@ -8028,7 +8031,7 @@ msgstr "预测到期时市场价格是高于还是低于目标价格。"
 msgid "Predict the market rising or falling from its current level."
 msgstr "预测市价是否从目前价位上升或下跌。"
 
-msgid "Predict the market staying inside or going outside two price targets."
+msgid "Predict the market staying between or going outside two price targets."
 msgstr "预测市价是否保持在两个目标价格的范围之内，或超出范围之外。"
 
 msgid "Predict the market touching or not touching a price target."
@@ -9096,16 +9099,19 @@ msgstr "通过 %1 的每日市场报告、市场研究和经常举行的在线�
 msgid "Stays Between"
 msgstr "位于区间之内"
 
+msgid "Stays Between/Goes Out"
+msgstr "“保持在范围之内/超出范围之外”"
+
+msgid "Stays Between/Goes Outside"
+msgstr "“保持在范围之内/超出范围之外”"
+
+msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr "如果开始和结束期间价格跳动次数少于2，“保持在范围之内/之外”合约购入价将全额退还。"
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "“保持在范围内/超出范围”的交易"
 
-msgid "Stays In/Out"
-msgstr "范围内/范围外"
-
-msgid "Stays In/Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "如果开始和结束期间价格跳动次数少于2，“保持在范围内/超出范围”合约购入价将全额退还。"
-
-msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
+msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
 msgstr "保持在某个范围之内/之外 - 预测市价在合约期限内的任何时间都保持在两个目标价位范围之内或超出范围之外"
 
 msgid "Step"
@@ -10976,7 +10982,7 @@ msgid "Types of trades"
 msgstr "交易类型"
 
 msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Ltd."
-msgstr ""
+msgstr "想要进行产品博彩交易的欧盟和马恩岛居民将在 Binary (IOM) Ltd 开设账户。"
 
 msgid "URL"
 msgstr "网址"
@@ -13067,8 +13073,8 @@ msgstr "今天"
 msgid "today, Fridays"
 msgstr "今天、周五"
 
-msgid "up/down, touch/no-touch, stays in/out."
-msgstr "上涨/下跌，触及/未触及，范围内/范围外。"
+msgid "up/down, touch/no-touch, stays between/goes outside."
+msgstr "上涨/下跌，触及/未触及，保持在范围内/范围外。"
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "根据我们的要求, 他须按照公司的合理要求提供任何和所有信息, 以满足任何政府或任何其他当局的任何和所有指示或请求或规定或要求。"
@@ -13466,14 +13472,14 @@ msgstr "{JAPAN ONLY} Affiliate Program T&C Section Version Update"
 msgid "{JAPAN ONLY} Affiliate Program Terms & Conditions"
 msgstr "{JAPAN ONLY} Affiliate Program Terms & Conditions"
 
-msgid "{JAPAN ONLY} ■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合は支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。1)1取引の取引上限は100ロット。2)1日の取引上限額は50万円。前記2)に達した時点でその日は取引ができなくなります。■取引手数料は無料。当該日から遡り12ヶ月間、新規又は売却取引がなかった場合は口座維持手数料（2,500円税込）が発生、引き続き取引等がない場合、6ヶ月毎に同額が発生します。3,000円未満を出金の際は250円（税込）の出金手数料がかかります。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引開始前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
-msgstr "{JAPAN ONLY}■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合は支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。1)1取引の取引上限は100ロット。2)1日の取引上限額は50万円。前記2)に達した時点でその日は取引ができなくなります。■取引手数料は無料。当該日から遡り12ヶ月間、新規又は売却取引がなかった場合は口座維持手数料（2,500円税込）が発生、引き続き取引等がない場合、6ヶ月毎に同額が発生します。3,000円未満を出金の際は250円（税込）の出金手数料がかかります。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引開始前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
-
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr "{JAPAN ONLY}#1 Sales Division"
 
 msgid "{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000"
 msgstr "{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000"
+
+msgid "{JAPAN ONLY}%1 is a pioneer in the award-winning online option deal."
+msgstr ""
 
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
@@ -13492,6 +13498,12 @@ msgstr "{JAPAN ONLY}1 lot = $ 100,000, margin: "
 
 msgid "{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000"
 msgstr "{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000"
+
+msgid "{JAPAN ONLY}1 week to 1 year terms"
+msgstr ""
+
+msgid "{JAPAN ONLY}2 hours to 1 year terms"
+msgstr ""
 
 msgid "{JAPAN ONLY}251"
 msgstr "{JAPAN ONLY}251"
@@ -13574,6 +13586,9 @@ msgstr "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used
 msgid "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the profit and loss result of all transactions that have been made between the customer, to publish the information in the company's home page, at any time while the customer is doing the transaction before the start, or the transaction, the information Make sure, for that you're willing to trade under the calm judgment, we are committed to a variety of environmental improvement."
 msgstr "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the profit and loss result of all transactions that have been made between the customer, to publish the information in the company's home page, at any time while the customer is doing the transaction before the start, or the transaction, the information Make sure, for that you're willing to trade under the calm judgment, we are committed to a variety of environmental improvement."
 
+msgid "{JAPAN ONLY}Academy"
+msgstr ""
+
 msgid "{JAPAN ONLY}Account Name"
 msgstr "{JAPAN ONLY}Account Name"
 
@@ -13597,6 +13612,9 @@ msgstr "{JAPAN ONLY}After we complete mandatory regulatory checks on your websit
 
 msgid "{JAPAN ONLY}All customer funds are deposited with JSF Trust & Banking, and in the event of our business failure, they will be refunde via an independent attorney acting as beneficiary agent"
 msgstr "{JAPAN ONLY}All customer funds are deposited with JSF Trust & Banking, and in the event of our business failure, they will be refunde via an independent attorney acting as beneficiary agent"
+
+msgid "{JAPAN ONLY}All customer funds are deposited with JSF Trust Bank and will be refunded by an independent attorney as a beneficiary agent in case of business failure"
+msgstr ""
 
 msgid "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
 msgstr "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
@@ -13649,6 +13667,9 @@ msgstr "{JAPAN ONLY}At the time of the judgement time predice the judgement rate
 msgid "{JAPAN ONLY}At the top of the page as shown above."
 msgstr "{JAPAN ONLY}At the top of the page as shown above."
 
+msgid "{JAPAN ONLY}Available on desktop and mobile platforms"
+msgstr ""
+
 msgid "{JAPAN ONLY}Award-winning trading excellence"
 msgstr "{JAPAN ONLY}Award-winning trading excellence"
 
@@ -13675,6 +13696,9 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 
 msgid "{JAPAN ONLY}Binary Options"
 msgstr "{JAPAN ONLY}Binary Options"
+
+msgid "{JAPAN ONLY}Binary Options vs FX"
+msgstr ""
 
 msgid "{JAPAN ONLY}Binary option can make a higher profit, for the same risk but less margin"
 msgstr "{JAPAN ONLY}Binary option can make a higher profit, for the same risk but less margin"
@@ -13727,6 +13751,9 @@ msgstr "{JAPAN ONLY}Continue Trading"
 msgid "{JAPAN ONLY}Current or former member of category 1) or 2)"
 msgstr "{JAPAN ONLY}Current or former member of category 1) or 2)"
 
+msgid "{JAPAN ONLY}Daily market report"
+msgstr ""
+
 msgid "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
 msgstr "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
 
@@ -13736,8 +13763,14 @@ msgstr "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, 
 msgid "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
 msgstr "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
 
+msgid "{JAPAN ONLY}Deposit funds and begin trading"
+msgstr ""
+
 msgid "{JAPAN ONLY}Designated dispute resolution organization"
 msgstr "{JAPAN ONLY}Designated dispute resolution organization"
+
+msgid "{JAPAN ONLY}Disclaimer text here"
+msgstr ""
 
 msgid "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
 msgstr "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
@@ -13768,6 +13801,9 @@ msgstr "{JAPAN ONLY}Download"
 
 msgid "{JAPAN ONLY}Download our latest report here"
 msgstr "{JAPAN ONLY}Download our latest report here"
+
+msgid "{JAPAN ONLY}E-book and video"
+msgstr ""
 
 msgid "{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
 msgstr "{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
@@ -13838,6 +13874,9 @@ msgstr "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 msgid "{JAPAN ONLY}Footer regulatory text"
 msgstr "{JAPAN ONLY}Footer regulatory text"
 
+msgid "{JAPAN ONLY}Footer text here"
+msgstr ""
+
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 
@@ -13898,6 +13937,9 @@ msgstr "{JAPAN ONLY}Generous Commission Structure"
 msgid "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
 msgstr "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
 
+msgid "{JAPAN ONLY}Here are some random texts."
+msgstr ""
+
 msgid "{JAPAN ONLY}High quality promotional materials with online reporting tools"
 msgstr "{JAPAN ONLY}High quality promotional materials with online reporting tools"
 
@@ -13915,6 +13957,9 @@ msgstr "{JAPAN ONLY}Historical volatility is a prediction of the future rate of 
 
 msgid "{JAPAN ONLY}How to Open an Account"
 msgstr "{JAPAN ONLY}How to Open an Account"
+
+msgid "{JAPAN ONLY}How to open account"
+msgstr ""
 
 msgid "{JAPAN ONLY}How to open an account"
 msgstr "{JAPAN ONLY}How to open an account"
@@ -14033,6 +14078,9 @@ msgstr "{JAPAN ONLY}In the lower panel you can also choose to see your current p
 msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 msgstr "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 
+msgid "{JAPAN ONLY}Interactive webinar"
+msgstr ""
+
 msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "{JAPAN ONLY}Introduction to Binary Options"
 
@@ -14084,6 +14132,9 @@ msgstr "{JAPAN ONLY}Just switch this button to prevent misoperation"
 msgid "{JAPAN ONLY}Key plus point"
 msgstr "{JAPAN ONLY}Key plus point"
 
+msgid "{JAPAN ONLY}Key plus points"
+msgstr ""
+
 msgid "{JAPAN ONLY}Knowledge Test"
 msgstr "{JAPAN ONLY}Knowledge Test"
 
@@ -14110,6 +14161,9 @@ msgstr "{JAPAN ONLY}Ladder Options"
 
 msgid "{JAPAN ONLY}Learn more about binary options for academies using webinars, ebooks, videos."
 msgstr "{JAPAN ONLY}Learn more about binary options for academies using webinars, ebooks, videos."
+
+msgid "{JAPAN ONLY}Learn to become a better trader and get all the latest news and trends on financial transactions for free."
+msgstr ""
 
 msgid "{JAPAN ONLY}Learning to trade online?"
 msgstr "{JAPAN ONLY}Learning to trade online?"
@@ -14159,6 +14213,9 @@ msgstr "{JAPAN ONLY}November 7, 2014"
 msgid "{JAPAN ONLY}Now you can trade fx markets using binary options with one of the origical pioneers of binary options worldwide"
 msgstr "{JAPAN ONLY}Now you can trade fx markets using binary options with one of the origical pioneers of binary options worldwide"
 
+msgid "{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world"
+msgstr ""
+
 msgid "{JAPAN ONLY}On-time Payments Every Time"
 msgstr "{JAPAN ONLY}On-time Payments Every Time"
 
@@ -14206,6 +14263,9 @@ msgstr "{JAPAN ONLY}Our internal management control officer and beneficiary repr
 
 msgid "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
 msgstr "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
+
+msgid "{JAPAN ONLY}Pass our Knowledge Test"
+msgstr ""
 
 msgid "{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account."
 msgstr "{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account."
@@ -14261,8 +14321,20 @@ msgstr "{JAPAN ONLY}Please note we can only accept payments from your designated
 msgid "{JAPAN ONLY}Please note:"
 msgstr "{JAPAN ONLY}Please note:"
 
+msgid "{JAPAN ONLY}Practice account"
+msgstr ""
+
 msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgstr "{JAPAN ONLY}Pre-Contract Documents"
+
+msgid "{JAPAN ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
+msgstr ""
+
+msgid "{JAPAN ONLY}Predict whether a FX rate will touch a target barrier or not."
+msgstr ""
+
+msgid "{JAPAN ONLY}Predict whether a FX rate will touch either target barrier before expiry."
+msgstr ""
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
@@ -14290,6 +14362,12 @@ msgstr "{JAPAN ONLY}Range Option: Stay-In / Break-Out"
 
 msgid "{JAPAN ONLY}Range Options: End-In / End-Out"
 msgstr "{JAPAN ONLY}Range Options: End-In / End-Out"
+
+msgid "{JAPAN ONLY}Range Options: Stay-In / Break-Out"
+msgstr ""
+
+msgid "{JAPAN ONLY}Receive account activation code by secure mail and activate account"
+msgstr ""
 
 msgid "{JAPAN ONLY}Register"
 msgstr "{JAPAN ONLY}Register"
@@ -14699,6 +14777,9 @@ msgstr "{JAPAN ONLY}The Financial Futures Association of Japan"
 msgid "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly"
 msgstr "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly"
 
+msgid "{JAPAN ONLY}The binary option can provide profit opportunities even at a small price range. Here is a table comparison of foreign exchange and binary options"
+msgstr ""
+
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 
@@ -14882,6 +14963,9 @@ msgstr "{JAPAN ONLY}Why become an Affiliate?"
 msgid "{JAPAN ONLY}Why choose binary options over foreign exchange"
 msgstr "{JAPAN ONLY}Why choose binary options over foreign exchange"
 
+msgid "{JAPAN ONLY}Why choose us"
+msgstr ""
+
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "{JAPAN ONLY}Win Loss Ratio"
 
@@ -14939,6 +15023,9 @@ msgstr "{JAPAN ONLY}Your Funds"
 msgid "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 
+msgid "{JAPAN ONLY}Your funds are kept safe"
+msgstr ""
+
 msgid "{JAPAN ONLY}Your funds are safe"
 msgstr "{JAPAN ONLY}Your funds are safe"
 
@@ -14995,9 +15082,6 @@ msgstr "{JAPAN ONLY}¥110.65"
 
 msgid "{JAPAN ONLY}¥200 /  lot"
 msgstr "{JAPAN ONLY}¥200 /  lot"
-
-msgid "{JAPAN ONLY}【商号】Binary株式会社　金融商品取引業者　関東財務局長（金商）第2949号【加入協会】一般社団法人金融先物取引業協会 Copyright (c) 2017 Binary K.K. All Rights Reserved."
-msgstr "{JAPAN ONLY}【商号】Binary株式会社　金融商品取引業者　関東財務局長（金商）第2949号【加入協会】一般社団法人金融先物取引業協会 Copyright (c) 2017 Binary K.K. All Rights Reserved."
 
 msgid "{JAPANY ONLY}1 week to 1 year terms"
 msgstr "{JAPANY ONLY}1 week to 1 year terms"

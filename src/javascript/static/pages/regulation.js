@@ -1,6 +1,7 @@
-const urlFor       = require('../../_common/url').urlFor;
-const Client       = require('../../app/base/client');
-const BinarySocket = require('../../app/base/socket');
+const getElementById = require('../../_common/common_functions').getElementById;
+const urlFor         = require('../../_common/url').urlFor;
+const Client         = require('../../app/base/client');
+const BinarySocket   = require('../../app/base/socket');
 
 const Regulation = (() => {
     const onLoad = () => {
@@ -37,7 +38,7 @@ const Regulation = (() => {
         $(document).ready(relocateLinks);
         $(window).resize(relocateLinks);
 
-        document.getElementById('visit_japan').addEventListener('click', () => {
+        getElementById('visit_japan').addEventListener('click', () => {
             const redirect_to = urlFor('home-jp', '', 'ja');
             if (Client.isLoggedIn()) {
                 BinarySocket.send({ logout: '1', passthrough: { redirect_to } });

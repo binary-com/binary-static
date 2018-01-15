@@ -5,9 +5,7 @@ const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
 const formatMoney      = require('../../../../common/currency').formatMoney;
 const FormManager      = require('../../../../common/form_manager');
-const detectHedging    = require('../../../../../_common/common_functions').detectHedging;
-const elementInnerHtml = require('../../../../../_common/common_functions').elementInnerHtml;
-const makeOption       = require('../../../../../_common/common_functions').makeOption;
+const CommonFunctions  = require('../../../../../_common/common_functions');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 require('select2');
@@ -125,7 +123,7 @@ const PersonalDetails = (() => {
                             .val(data_key.split(','))
                             .trigger('change');
                     } else if (key !== 'country') {
-                        elementInnerHtml(el_key, data_key ? localize(data_key) : '-');
+                        CommonFunctions.elementInnerHtml(el_key, data_key ? localize(data_key) : '-');
                     }
                 }
             }
@@ -240,8 +238,8 @@ const PersonalDetails = (() => {
             const $options               = $('<div/>');
             const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
-                $options.append(makeOption({ text: res.text, value: res.value }));
-                $options_with_disabled.append(makeOption({
+                $options.append(CommonFunctions.makeOption({ text: res.text, value: res.value }));
+                $options_with_disabled.append(CommonFunctions.makeOption({
                     text       : res.text,
                     value      : res.value,
                     is_disabled: res.disabled,
@@ -297,7 +295,7 @@ const PersonalDetails = (() => {
         if (is_jp && !is_virtual) {
             // detect hedging needs to be called after FormManager.init
             // or all previously bound event listeners on form elements will be removed
-            detectHedging($('#trading_purpose'), $('.hedge'));
+            CommonFunctions.detectHedging($('#trading_purpose'), $('.hedge'));
         }
     };
 
