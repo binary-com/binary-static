@@ -626,22 +626,29 @@ body #not_authenticated_financial ul.checked > li {
                 }
             }
         }
-        .role-section {
+        ul.role-section {
             display: flex;
-            flex-direction: row;
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
+            border-bottom: 0;
 
-            .role-btn {
-                cursor: pointer;
+            li.role {
+                margin: 0;
+                border-radius: 0;
+                padding: 0;
 
-                span {
-                    font-weight: 600;
-                }
-                &.active {
-                    background-color: $COLOR_BLUE;
-                    color: $COLOR_WHITE;
+                a.role-btn {
+                    padding: 15px 20px !important;
+
+                    span {
+                        font-weight: 600;
+                        font-size: $FONT_SIZE_L;
+
+                        @media (max-width: 320px) {
+                            font-size: $FONT_SIZE_S;
+                        }
+                    }
                 }
             }
         }

@@ -118,6 +118,7 @@ const pages_config = {
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStartedBeta.BinaryOptions },
     'bitcoin-voucher'        : { module: BitcoinVoucher,             is_authenticated: true, only_real: true },
+    'careers'                : { module: StaticPages.Careers },
     'cfds'                   : { module: GetStartedBeta.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },

@@ -203,71 +203,65 @@ const Careers = () => (
             <div className='gr-padding-30 center-text'>
                 <h1>{it.L('Interview process')}</h1>
             </div>
-            <div className='role-section'>
-                <div className='center-text gr-gutter gr-padding-20 fill-bg-color role-btn active'>
-                    <div className='inline-flex center-align gr-gutter'>
-                        <span>Technical roles</span>
+            <div className='has-tabs'>
+                <ul className='role-section'>
+                    <li className='role'><a className='role-btn' href='#technical'><span>Technical roles</span></a></li>
+                    <li className='role'><a className='role-btn' href='#non-technical'><span>Non-technical roles</span></a></li>
+                </ul>
+                <div id='technical'>
+                    <div className='gr-padding-30'>
+                        <div className='steps gr-padding-10'>
+                            <Step text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
+                                  circle_no='1'
+                            />
+                            <Step text={it.L('If you\'re shortlisted, we\'ll invite you to a hackathon or send you a talent test.')}
+                                  circle_no='2'
+                            />
+                            <Step text={it.L('If you score well in the hackathon or talent test, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we\'ll invite you for an interview with a member of our recruitment team.')}
+                                  circle_no='3'
+                            />
+                        </div>
+                        <div className='steps gr-padding-10'>
+                            <Step text={it.L('Made an impression in the first interview? We\'ll invite you to a second interview with our CEO and/or hiring manager.')}
+                                  circle_no='4'
+                            />
+                            <Step text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
+                                  circle_no='5'
+                            />
+                            <Step text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and don\'t make you negotiate in order to eliminate salary inequities and stress.')}
+                                  circle_no='6'
+                            />
+                        </div>
                     </div>
                 </div>
-                <div className='center-text gr-gutter gr-padding-20 fill-bg-color role-btn'>
-                    <div className='inline-flex center-align gr-gutter'>
-                        <span>Non-technical roles</span>
-                    </div>
-                </div>
-            </div>
-            <div id='#technical'>
-                <div className='gr-padding-30'>
-                    <div className='steps gr-padding-10'>
-                        <Step text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
-                              circle_no='1'
-                        />
-                        <Step text={it.L('If you\'re shortlisted, we\'ll invite you to a hackathon or send you a talent test.')}
-                              circle_no='2'
-                        />
-                        <Step text={it.L('If you score well in the hackathon or talent test, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we\'ll invite you for an interview with a member of our recruitment team.')}
-                              circle_no='3'
-                        />
-                    </div>
-                    <div className='steps gr-padding-10'>
-                        <Step text={it.L('Made an impression in the first interview? We\'ll invite you to a second interview with our CEO and/or hiring manager.')}
-                              circle_no='4'
-                        />
-                        <Step text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
-                              circle_no='5'
-                        />
-                        <Step text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and don\'t make you negotiate in order to eliminate salary inequities and stress.')}
-                              circle_no='6'
-                        />
-                    </div>
-                </div>
-            </div>
-            <div id='#non-technical' className='invisible'>
-                <div className='gr-padding-30'>
-                    <div className='steps gr-padding-10'>
-                        <Step text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
-                              circle_no='1'
-                        />
-                        <Step text={it.L('If you\'re shortlisted, we\'ll invite you to a hackathon or send you a talent test.')}
-                              circle_no='2'
-                        />
-                        <Step text={it.L('If you score well in the hackathon or talent test, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we\'ll invite you for an interview with a member of our recruitment team.')}
-                              circle_no='3'
-                        />
-                    </div>
-                    <div className='steps gr-padding-10'>
-                        <Step text={it.L('Made an impression in the first interview? We\'ll invite you to a second interview with our CEO and/or hiring manager.')}
-                              circle_no='4'
-                        />
-                        <Step text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
-                              circle_no='5'
-                        />
-                        <Step text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and don\'t make you negotiate in order to eliminate salary inequities and stress.')}
-                              circle_no='6'
-                        />
+                <div id='nontechnical'>
+                    <div className='gr-padding-30'>
+                        <div className='steps gr-padding-10'>
+                            <Step text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
+                                  circle_no='1'
+                            />
+                            <Step text={it.L('If you\'re shortlisted, we\'ll invite you to a hackathon or send you a talent test.')}
+                                  circle_no='2'
+                            />
+                            <Step text={it.L('If you score well in the hackathon or talent test, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we\'ll invite you for an interview with a member of our recruitment team.')}
+                                  circle_no='3'
+                            />
+                        </div>
+                        <div className='steps gr-padding-10'>
+                            <Step text={it.L('Made an impression in the first interview? We\'ll invite you to a second interview with our CEO and/or hiring manager.')}
+                                  circle_no='4'
+                            />
+                            <Step text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
+                                  circle_no='5'
+                            />
+                            <Step text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and don\'t make you negotiate in order to eliminate salary inequities and stress.')}
+                                  circle_no='6'
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
-            <SeparatorLine />
+            <SeparatorLine show_mobile />
         </div>
 
         <div className='container'>
