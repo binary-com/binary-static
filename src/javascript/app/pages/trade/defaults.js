@@ -1,7 +1,8 @@
-const isVisible     = require('../../../_common/common_functions').isVisible;
-const State         = require('../../../_common/storage').State;
-const Url           = require('../../../_common/url');
-const isEmptyObject = require('../../../_common/utility').isEmptyObject;
+const getElementById = require('../../../_common/common_functions').getElementById;
+const isVisible      = require('../../../_common/common_functions').isVisible;
+const State          = require('../../../_common/storage').State;
+const Url            = require('../../../_common/url');
+const isEmptyObject  = require('../../../_common/utility').isEmptyObject;
 
 /*
  * Handles trading page default values
@@ -33,7 +34,7 @@ const Defaults = (() => {
         if (params[key] !== value) {
             params[key] = value;
             // to increase speed, do not set values when form is still loading
-            if (!isVisible(document.getElementById('trading_init_progress'))) {
+            if (!isVisible(getElementById('trading_init_progress'))) {
                 sessionStorage.setItem(key, value);
                 updateURL();
             }
