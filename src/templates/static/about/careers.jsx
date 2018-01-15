@@ -234,7 +234,7 @@ const Careers = () => (
                         </div>
                     </div>
                 </div>
-                <div id='nontechnical'>
+                <div id='non-technical'>
                     <div className='gr-padding-30'>
                         <div className='steps gr-padding-10'>
                             <Step text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
