@@ -6,6 +6,7 @@ const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
 const getCurrencyList    = require('../../common/currency').getCurrencyList;
 const FormManager        = require('../../common/form_manager');
+const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
 const State              = require('../../../_common/storage').State;
 const toTitleCase        = require('../../../_common/string_util').toTitleCase;
@@ -163,7 +164,7 @@ const Accounts = (() => {
         // need to make it visible before adding the form manager event on it
         doneLoading('#new_accounts_wrapper');
 
-        const el_select_currency = /select/i.test(document.getElementById('new_account_currency').nodeName);
+        const el_select_currency = /select/i.test(getElementById('new_account_currency').nodeName);
         FormManager.init(form_id, [{ selector: '#new_account_currency', request_field: 'currency', validations: [el_select_currency ? 'req' : ''], hide_asterisk: true }].concat(populateReq()));
 
         FormManager.handleSubmit({

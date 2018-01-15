@@ -1,4 +1,5 @@
 const moment           = require('moment');
+const getElementById   = require('../../../_common/common_functions').getElementById;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
 /*
@@ -53,9 +54,9 @@ const processTradingTimesAnswer = (response) => {
     }
 };
 
-const getElement = () => document.getElementById('date_start');
+const getElement = () => getElementById('date_start');
 
-const checkValidTime = (time_start_element = document.getElementById('time_start'), $date_start = $('#date_start'), time = time_start_element.value) => {
+const checkValidTime = (time_start_element = getElementById('time_start'), $date_start = $('#date_start'), time = time_start_element.value) => {
     let time_array = '';
     if (time) {
         time_array = time.split(':');
