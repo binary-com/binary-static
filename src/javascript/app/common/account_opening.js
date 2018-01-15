@@ -9,6 +9,7 @@ const makeOption         = require('../../_common/common_functions').makeOption;
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
+const Autocomplete       = require('../../_common/autocomplete_address');
 require('select2');
 
 const AccountOpening = (() => {
@@ -34,6 +35,7 @@ const AccountOpening = (() => {
         if (Client.canRequestProfessional()) {
             professionalClient.init(is_financial, false, is_ico_only);
         }
+        Autocomplete.init();
     };
 
     const getResidence = () => {

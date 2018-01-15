@@ -8,6 +8,7 @@ const FormManager      = require('../../../../common/form_manager');
 const CommonFunctions  = require('../../../../../_common/common_functions');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
+const Autocomplete     = require('../../../../../_common/autocomplete_address');
 require('select2');
 
 const PersonalDetails = (() => {
@@ -31,6 +32,9 @@ const PersonalDetails = (() => {
         is_jp             = residence === 'jp';
         if (is_jp && !is_virtual) {
             setVisibility('#fieldset_email_consent');
+        }
+        if (!is_virtual) {
+            Autocomplete.init();
         }
         showHideTaxMessage();
     };
