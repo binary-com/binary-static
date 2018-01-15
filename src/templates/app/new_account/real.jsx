@@ -20,6 +20,7 @@ import {
     ClientMessage,
     Tnc,
 } from '../../_common/components/forms_common_rows.jsx';
+import { Map } from '../../_common/components/elements.jsx';
 
 const Real = () => (
     <div className='gr-12 static_full'>
@@ -36,6 +37,7 @@ const Real = () => (
 
             <Fieldset legend={it.L('Address')}>
                 <AddressLine1 />
+                <Map />
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
