@@ -655,5 +655,10 @@ body #not_authenticated_financial ul.checked > li {
                 text-align: center;
             }
         }
+        .steps {
+            @media (max-width: 480px) {
+                flex-direction: column;
+            }
+        }
     }
 }
