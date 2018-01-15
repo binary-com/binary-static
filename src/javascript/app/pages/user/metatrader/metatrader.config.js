@@ -33,7 +33,7 @@ const MetaTraderConfig = (() => {
                     } else if (Client.get('is_virtual')) {
                         resolve(needsRealMessage());
                     } else if (accounts_info[acc_type].account_type === 'financial') {
-                        BinarySocket.wait('get_account_status').then((response_get_account_status) => {
+                        getAccountStatus().then((response_get_account_status) => {
                             const $message = $messages.find('#msg_real_financial').clone();
                             let is_ok = true;
                             if (/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status)) {
@@ -77,7 +77,7 @@ const MetaTraderConfig = (() => {
                             resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', [
                                 urlFor('user/security/cashier_passwordws')]));
                         } else {
-                            BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+                            getAccountStatus().then((response_status) => {
                                 if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
                                     resolve(localize('Your cashier is locked.')); // Locked from BO
                                 } else {
@@ -106,7 +106,7 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
-                    BinarySocket.send({ get_account_status: 1, mt5_related: 1 }).then((response_status) => {
+                    getAccountStatus().then((response_status) => {
                         resolve(+response_status.get_account_status.prompt_client_to_authenticate ?
                             $messages.find('#msg_authenticate').html() : '');
                     });
@@ -198,6 +198,14 @@ const MetaTraderConfig = (() => {
         ],
     });
 
+    const getAccountStatus = () => new Promise((resolve) => {
+        if (+State.get(['response', 'get_account_status', 'echo_req', 'mt5_related']) === 1) {
+            resolve(State.get(['response', 'get_account_status']));
+        } else {
+            BinarySocket.send({ get_account_status: 1, mt5_related: 1 }).then(resolve);
+        }
+    });
+
     return {
         mt_companies,
         accounts_info,
@@ -205,6 +213,7 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
+        getAccountStatus,
         setMessages: ($msg) => { $messages = $msg; },
         getCurrency: acc_type => accounts_info[acc_type].info.currency,
     };
