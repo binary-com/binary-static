@@ -48,8 +48,12 @@ const AutocompleteAddress = (() => {
 
                     marker = new google.maps.Marker({
                         map,
+                        draggable  : true,
+                        animation  : google.maps.Animation.DROP,
                         anchorPoint: new google.maps.Point(0, -29),
                     });
+
+                    marker.addListener('dragend', onDragEnd);
                     marker.setPosition(results[0].geometry.location);
 
                     autocomplete = new google.maps.places.Autocomplete(
@@ -64,26 +68,37 @@ const AutocompleteAddress = (() => {
                     // bounds option in the request.
                     autocomplete.bindTo('bounds', map);
 
-                    autocomplete.addListener('place_changed', fillInAddress);
+                    autocomplete.addListener('place_changed', () => {
+                        const place = autocomplete.getPlace();
+                        fillInAddress(place);
+                    });
 
                     if (el_address_line_1.value) {
                         geocoder.geocode({ address: el_address_line_1.value}, (res, stat) => {
                             if (stat === google.maps.GeocoderStatus.OK) {
-                                updateMap(res[0]);
+                                fillInAddress(res[0]);
                             }
                         });
                     }
                 }
             });
         });
+
+        const onDragEnd = () => {
+            geocoder.geocode({ location: marker.getPosition() }, (results, status) => {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    fillInAddress(results[0]);
+                }
+            });
+        };
     };
 
     /*
      * Fill in address form
+     *
+     * @param {Object} place - google autocomplete object
      */
-    const fillInAddress = () => {
-        const place = autocomplete.getPlace(); // Get the place details from the autocomplete object.
-
+    const fillInAddress = (place) => {
         const el_address_line_1   = document.getElementById('address_line_1');
         const el_address_line_2   = document.getElementById('address_line_2');
         const el_address_city     = document.getElementById('address_city');
