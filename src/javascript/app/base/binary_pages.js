@@ -7,7 +7,6 @@ const Redirect             = require('./redirect');
 const CashierJP            = require('../japan/cashier');
 const KnowledgeTest        = require('../japan/knowledge_test/knowledge_test');
 const AccountTransfer      = require('../pages/cashier/account_transfer');
-const BitcoinVoucher       = require('../pages/cashier/bitcoin_voucher');
 const Cashier              = require('../pages/cashier/cashier');
 const DepositWithdraw      = require('../pages/cashier/deposit_withdraw');
 const PaymentAgentList     = require('../pages/cashier/payment_agent_list');
@@ -115,7 +114,6 @@ const pages_config = {
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStartedBeta.BinaryOptions },
-    'bitcoin-voucher'        : { module: BitcoinVoucher,             is_authenticated: true, only_real: true },
     'cfds'                   : { module: GetStartedBeta.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
