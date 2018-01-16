@@ -568,6 +568,7 @@ body #not_authenticated_financial ul.checked > li {
                     }
                     p {
                         font-weight: 600;
+                        color: $COLOR_BLUE;
                     }
                     > .box-item-end {
                         padding: 0 30px;
@@ -641,13 +642,16 @@ body #not_authenticated_financial ul.checked > li {
                     padding: 15px 20px !important;
 
                     span {
+                        color: $COLOR_BLUE;
                         font-weight: 600;
                         font-size: $FONT_SIZE_L;
-
                         @media (max-width: 320px) {
                             font-size: $FONT_SIZE_S;
                         }
                     }
+                }
+                &.ui-tabs-active a span {
+                    color: $COLOR_WHITE;
                 }
             }
         }
