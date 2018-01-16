@@ -69,6 +69,8 @@ form {
         display: flex;
         flex-direction: column;
         position: relative;
+        max-width: 510px;
+        margin: auto;
         @media (min-width: 575px) {
             flex-direction: row;
             justify-content: center;
@@ -101,6 +103,7 @@ form {
         .error-msg {
             position: absolute;
             top: 100%;
+            left: 3px;
             @media (max-width: 575px) {
                 position: relative;
                 margin: 5px 0;
@@ -363,6 +366,7 @@ form {
 
         .input-group {
             justify-content: flex-start;
+            margin-left: 0;
         }
     }
     .intro-bottom-text {
