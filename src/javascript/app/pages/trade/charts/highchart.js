@@ -168,7 +168,7 @@ const Highchart = (() => {
             response_id   = response[type].id;
             // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
             if (response_id && !is_response_id_set) {
-                if (State.get('is_trading') || State.get('is_mb_trading') || State.get('is_beta_trading')) {
+                if (State.get('is_trading') || State.get('is_mb_trading')) {
                     const page_underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
                     if (page_underlying !== (tick || ohlc).symbol) {
                         ViewPopupUI.storeSubscriptionID(response_id, true);

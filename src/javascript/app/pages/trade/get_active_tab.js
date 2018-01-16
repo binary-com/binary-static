@@ -28,5 +28,4 @@ const getDefaultTab = (is_chart_allowed) => is_chart_allowed ? 'tab_graph' : 'ta
 
 module.exports = {
     getActiveTab,
-    getActiveTab_Beta: () => getActiveTab('currentAnalysisTab_Beta'),
 };
