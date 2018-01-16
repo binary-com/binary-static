@@ -34,7 +34,7 @@ const TypesOfTrades = () => (
                 <p>{it.L('There are two types of In/Out trades:')}</p>
                 <ol>
                     <li>{it.L('Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period')}</li>
-                    <li>{it.L('Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period')}</li>
+                    <li>{it.L('Ends Between/Ends Outside – Predict that the market stops inside or outside two price targets at the end of the time period')}</li>
                 </ol>
             </div>
 

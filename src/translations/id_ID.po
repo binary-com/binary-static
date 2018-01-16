@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-15 20:21-0500\n"
+"PO-Revision-Date: 2018-01-16 03:48-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1194,9 +1194,6 @@ msgstr "Jumlah"
 msgid "Amount of above assets"
 msgstr "Jumlah untuk aset diatas"
 
-msgid "Amount:"
-msgstr "Jumlah:"
-
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Diploma Lanjutan/Tinggi atau Sarjana"
 
@@ -1908,17 +1905,11 @@ msgstr "Bitcoin"
 msgid "Bitcoin Cash"
 msgstr "Bitcoin Cash"
 
-msgid "Bitcoin Voucher"
-msgstr "Voucher Bitcoin"
-
 msgid "Bitcoin vs Euro"
 msgstr "Bitcoin vs Euro"
 
 msgid "Bitcoin vs US dollar"
 msgstr "Bitcoin vs dolar AS"
-
-msgid "Bitcoin.co.id voucher withdrawal"
-msgstr "Penarikan voucher Bitcoin.co.id"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Teknologi Blockchain - Semua mata uang kripto menggunakan variasi teknologi blockchain (semacam buku besar) untuk mencetak catatan setiap transaksi. "
@@ -2769,9 +2760,6 @@ msgstr "Membuat"
 msgid "Create Account"
 msgstr "Daftar Akun"
 
-msgid "Create Bitcoin.co.id IDR voucher"
-msgstr "Membuat voucher Bitcoin.co.id dalam IDR"
-
 msgid "Create Free Account"
 msgstr "Daftar Akun Gratis"
 
@@ -2786,9 +2774,6 @@ msgstr "Daftar Akun Baru"
 
 msgid "Create New Token"
 msgstr "Membuat Token Baru"
-
-msgid "Create Voucher"
-msgstr "Membuat Voucher"
 
 msgid "Create a MetaTrader 5 account"
 msgstr "Daftar akun MetaTrader 5"
@@ -3447,9 +3432,6 @@ msgstr "Alamat email"
 msgid "Email us your Identity Documents"
 msgstr "Email kami Dokumen Identitas Anda"
 
-msgid "Email:"
-msgstr "Email:"
-
 msgid "Email: "
 msgstr "Email: "
 
@@ -3483,20 +3465,17 @@ msgstr "PoinAkhir"
 msgid "Ends Between"
 msgstr "Ends Between"
 
+msgid "Ends Between/Ends Outside"
+msgstr ""
+
+msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Kontrak Berakhir Antara/Berakhir Keluar"
 
-msgid "Ends Between/Goes Outside"
-msgstr "Ends Between/Goes Outside"
-
-msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Kontrak Ends Between/Goes Outside akan mendapat pengembalian harga beli jika terdapat kurang dari 2 tik penyelesaian antara waktu mulai hingga akhir."
-
-msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Ends Between/Goes Outside – Menganalisa pasar akan berakhir didalam atau diluar harga target pada akhir periode"
-
-msgid "Ends In/Out"
-msgstr "Ends In/Out"
+msgid "Ends Between/Ends Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
 
 msgid "Ends Outside"
 msgstr "Ends Outside"
@@ -6909,9 +6888,6 @@ msgstr "Baru"
 msgid "New Password"
 msgstr "Kata Sandi Baru"
 
-msgid "New Trade"
-msgstr "Trade Baru"
-
 msgid "New Year's Day"
 msgstr "Tahun Baru"
 
@@ -7052,9 +7028,6 @@ msgstr "Catatan"
 
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "Catatan: angka 2017 diproyeksikan dari angka sementara bulan Agustus"
-
-msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
-msgstr "Catatan: voucher IDR Bitcoin.co.id hanya tersedia untuk pelanggan Indonesia."
 
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Nota: Untuk pertanyaan mengenai akun non aktif atau pembatalan akun, silahkan hubungi <a href=\"%1\">Customer Support</a>."
@@ -8472,9 +8445,6 @@ msgstr "Mewakili jumlah kontrak pada portopolio Anda. Setiap baris pada portopol
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Mewakili jumlah maksimum pembelian kontrak dalam satu hari trading."
 
-msgid "Request successful. We will notify you via email once your voucher is ready."
-msgstr "Permintaan berhasil. Kami akan menghubungi Anda setelah voucher tersedia."
-
 msgid "Requirements"
 msgstr "Persyaratan"
 
@@ -9096,9 +9066,6 @@ msgstr "Pengetahuan terkini. %1 menawarkan laporan dan penelitian pasar harian t
 msgid "Stays Between"
 msgstr "Stays Between"
 
-msgid "Stays Between/Goes Out"
-msgstr "Stays Between/Goes Out"
-
 msgid "Stays Between/Goes Outside"
 msgstr "Stays Between/Goes Outside"
 
@@ -9477,9 +9444,6 @@ msgstr "<strong>Waktu akhir</strong> adalah detik/menit/jam yang dipilih setelah
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>Spot akhir</strong> adalah tik terakhir pada atau sebelum <strong>waktu akhir</strong>."
-
-msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
-msgstr "<strong>Spot akhir</strong> adalah harga spot pada <strong>waktu akhir</strong>."
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>Waktu mulai</strong> adalah waktu ketika kontrak diproses oleh server kami."
@@ -10465,9 +10429,6 @@ msgstr "Tik"
 msgid "Tier"
 msgstr "Tingkat"
 
-msgid "Time"
-msgstr "Waktu"
-
 msgid "Time is in the wrong format."
 msgstr "Waktu dalam format salah."
 
@@ -11220,9 +11181,6 @@ msgstr "Lihat laporan tahunan Binary Ltd. 2016"
 
 msgid "View Chart"
 msgstr "Lihat Chart"
-
-msgid "View Details"
-msgstr "Lihat Rincian"
 
 msgid "View Japanese website"
 msgstr "Lihat situs web Jepang"
@@ -12033,12 +11991,6 @@ msgstr "Penarikan dari akun MT5"
 
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr "Menarik dana dari akun MetaTrader 5 kedalam akun Binary Anda."
-
-msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
-msgstr "Menarik dana dalam voucher IDR Bitcoin.co.id."
-
-msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
-msgstr "Tarik dana Anda dalam voucher IDR Bitcoin.co.id. Voucher dalam mata uang IDR dan nilai adalah berdasarkan nilai tukar yang berlaku."
 
 msgid "Withdrawal"
 msgstr "Penarikan"
@@ -12924,9 +12876,6 @@ msgstr "juta"
 
 msgid "min"
 msgstr "min"
-
-msgid "minimum available duration"
-msgstr "durasi minimal yang tersedia"
 
 msgid "minute"
 msgstr "menit"

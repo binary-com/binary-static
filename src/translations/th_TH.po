@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-15 20:21-0500\n"
+"PO-Revision-Date: 2018-01-16 03:48-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1199,9 +1199,6 @@ msgstr "จำนวน"
 msgid "Amount of above assets"
 msgstr "จำนวนของสินทรัพย์ข้างต้น"
 
-msgid "Amount:"
-msgstr "จำนวน:"
-
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "สำเร็จการศึกษาระดับสูงกว่ามหาวิทยาลัย หรือ ปริญญาตรี หรือ อนุปริญญา"
 
@@ -1913,17 +1910,11 @@ msgstr "บิทคอยน์"
 msgid "Bitcoin Cash"
 msgstr "เงินบิทคอยน์"
 
-msgid "Bitcoin Voucher"
-msgstr "วอยเชอร์บิทคอยน์"
-
 msgid "Bitcoin vs Euro"
 msgstr "บิทคอยน์ และ ยูโร"
 
 msgid "Bitcoin vs US dollar"
 msgstr "บิทคอยน์ และ ดอลลาร์สหรัฐ"
-
-msgid "Bitcoin.co.id voucher withdrawal"
-msgstr "Bitcoin.co.id การถอนวอยเชอร์"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "เทคโนโลยีบล็อกเชน - เงินดิจิทัลใช้เทคโนโลยีบล็อกเชนหลายรูปแบบ (ประเภทหนึ่งของบัญชีสาธารณะ) เพื่อให้ได้บันทึกในแต่ละธุรกรรม "
@@ -2774,9 +2765,6 @@ msgstr "สร้าง"
 msgid "Create Account"
 msgstr "สร้างบัญชี"
 
-msgid "Create Bitcoin.co.id IDR voucher"
-msgstr "Bitcoin.co.id สร้างวอยเชอร์ IDR"
-
 msgid "Create Free Account"
 msgstr "สร้างบัญชีฟรี"
 
@@ -2791,9 +2779,6 @@ msgstr "สร้างบัญชีใหม่"
 
 msgid "Create New Token"
 msgstr "สร้างโทเค่นใหม่"
-
-msgid "Create Voucher"
-msgstr "สร้างวอยเชอร์"
 
 msgid "Create a MetaTrader 5 account"
 msgstr "สร้างบัญชี MetaTrader 5"
@@ -3452,9 +3437,6 @@ msgstr "อีเมล์"
 msgid "Email us your Identity Documents"
 msgstr "โปรดส่งเอกสารของท่านให้เราทางอีเมล์"
 
-msgid "Email:"
-msgstr "อีเมล์:"
-
 msgid "Email: "
 msgstr "อีเมล์: "
 
@@ -3488,20 +3470,17 @@ msgstr "จุดสิ้นสุด"
 msgid "Ends Between"
 msgstr "สิ้นสุดระหว่าง"
 
+msgid "Ends Between/Ends Outside"
+msgstr ""
+
+msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "สิ้นสุดระหว่าง/สิ้นสุดนอกขอบเขต"
 
-msgid "Ends Between/Goes Outside"
+msgid "Ends Between/Ends Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
 msgstr ""
-
-msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr ""
-
-msgid "Ends In/Out"
-msgstr "Ends In/Out"
 
 msgid "Ends Outside"
 msgstr "สิ้นสุดภายนอก"
@@ -6915,9 +6894,6 @@ msgstr "ใหม่"
 msgid "New Password"
 msgstr "รหัสผ่านใหม่"
 
-msgid "New Trade"
-msgstr "เริ่มเทรด"
-
 msgid "New Year's Day"
 msgstr "วันปีใหม่"
 
@@ -7058,9 +7034,6 @@ msgstr "บันทึก"
 
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "หมายเหตุ: ปี 2017 เป็นคาดการณ์มูลค่าจากเดือนสิงหาคม"
-
-msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
-msgstr "หมายเหตุ: Bitcoin.co.id วอยเชอร์ IDR สำหรับลูกค้าอินโดนีเซียเท่านั้น"
 
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "หมายเหตุ: สำหรับคำถามใด ๆ เกี่ยวกับบัญชีถูกปิดใช้งาน หรือบัญชีที่ถูกตัดออก โปรดติดต่อ<a href=\"%1\">ฝ่ายสนับสนุนลูกค้า</a>"
@@ -8480,9 +8453,6 @@ msgstr "แสดงจำนวนสัญญามากที่สุดท
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "แสดงถึงจำนวนมากที่สุดของสัญญาที่ท่านซื้อ"
 
-msgid "Request successful. We will notify you via email once your voucher is ready."
-msgstr "ดำเนินการคำร้องขอของท่านแล้ว เราจะแจ้งให้ท่านทราบผ่านทางอีเมล์เมื่อวอยเชอร์เรียบร้อยแล้ว"
-
 msgid "Requirements"
 msgstr "ข้อกำหนดความต้องการ"
 
@@ -9104,9 +9074,6 @@ msgstr "เราให้ข้อมูลที่เพียงพออย
 msgid "Stays Between"
 msgstr "อยู่ระหว่าง"
 
-msgid "Stays Between/Goes Out"
-msgstr ""
-
 msgid "Stays Between/Goes Outside"
 msgstr ""
 
@@ -9485,9 +9452,6 @@ msgstr "<strong>เวลาสิ้นสุด</strong> คือ กำห�
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอตสุดท้าย หรือ ก่อน<strong>เวลาสิ้นสุด</strong>"
-
-msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
-msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอต<strong>เมื่อเวลาสิ้นสุด</strong>"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>เวลาเริ่มต้น</strong> คือ เวลาที่สัญญาถูกนำเข้าประมวลผลโดยระบบของเรา"
@@ -10479,9 +10443,6 @@ msgstr "Tick"
 msgid "Tier"
 msgstr "ชั้น"
 
-msgid "Time"
-msgstr "เวลา"
-
 msgid "Time is in the wrong format."
 msgstr "เวลาอยู่ในรูปแบบที่ไม่ถูกต้อง"
 
@@ -11234,9 +11195,6 @@ msgstr "ดูรายงานประจำปี 2016 (พ.ศ. 2559) ข�
 
 msgid "View Chart"
 msgstr "ดูแผนภูมิ"
-
-msgid "View Details"
-msgstr "ดูรายละเอียด"
 
 msgid "View Japanese website"
 msgstr "ดูเว็บไซต์ภาษาญี่ปุ่น"
@@ -12047,12 +12005,6 @@ msgstr "ถอนจากบัญชี MT5"
 
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr "ถอนจากบัญชี MetaTrader 5 ไปยังบัญชีไบนารีออปชันของคุณ"
-
-msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
-msgstr "สามารถถอนเงินได้ในรูปแบบ Bitcoin.co.id วอยเชอร์ IDR"
-
-msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
-msgstr ""
 
 msgid "Withdrawal"
 msgstr "ถอนเงิน"
@@ -12939,9 +12891,6 @@ msgstr "ล้าน"
 
 msgid "min"
 msgstr "ค่าต่ำสุด"
-
-msgid "minimum available duration"
-msgstr "ช่วงเวลาต่ำสุด"
 
 msgid "minute"
 msgstr "นาที"

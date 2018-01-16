@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-15 20:20-0500\n"
+"PO-Revision-Date: 2018-01-16 03:46-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -1200,9 +1200,6 @@ msgstr "金額"
 msgid "Amount of above assets"
 msgstr "上記資産額"
 
-msgid "Amount:"
-msgstr "金額:"
-
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "高度専門士、専門士、準修士または学士"
 
@@ -1921,17 +1918,11 @@ msgstr "ビットコイン"
 msgid "Bitcoin Cash"
 msgstr "ビットコインキャッシュ"
 
-msgid "Bitcoin Voucher"
-msgstr ""
-
 msgid "Bitcoin vs Euro"
 msgstr "ビットコイン vs ユーロ"
 
 msgid "Bitcoin vs US dollar"
 msgstr "ビットコイン vs 米ドル"
-
-msgid "Bitcoin.co.id voucher withdrawal"
-msgstr ""
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr ""
@@ -2787,9 +2778,6 @@ msgstr "作成"
 msgid "Create Account"
 msgstr "口座開設"
 
-msgid "Create Bitcoin.co.id IDR voucher"
-msgstr ""
-
 msgid "Create Free Account"
 msgstr "口座開設"
 
@@ -2804,9 +2792,6 @@ msgstr "次へ"
 
 msgid "Create New Token"
 msgstr "新しいトークンを作成"
-
-msgid "Create Voucher"
-msgstr ""
 
 msgid "Create a MetaTrader 5 account"
 msgstr "MetaTrader 5 口座を開設"
@@ -3465,9 +3450,6 @@ msgstr "メールアドレス"
 msgid "Email us your Identity Documents"
 msgstr "マイナンバー確認書類＆本人確認書類の送付"
 
-msgid "Email:"
-msgstr "メール:"
-
 msgid "Email: "
 msgstr "Email: "
 
@@ -3501,20 +3483,17 @@ msgstr "ポイント"
 msgid "Ends Between"
 msgstr "END-IN"
 
+msgid "Ends Between/Ends Outside"
+msgstr ""
+
+msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "END-IN/END-OUT トレード"
 
-msgid "Ends Between/Goes Outside"
-msgstr "STAY-IN/BREAK-OUT"
-
-msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください。"
-
-msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "END-IN/END-OUT - 取引終了時の判定価格が、設定された上下のバリア価格の「レンジ内」か「レンジ外」にあるかを予測します"
-
-msgid "Ends In/Out"
-msgstr "END-IN/END-OUT"
+msgid "Ends Between/Ends Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
 
 msgid "Ends Outside"
 msgstr "END-OUT"
@@ -6942,9 +6921,6 @@ msgstr "New"
 msgid "New Password"
 msgstr "新しいパスワード"
 
-msgid "New Trade"
-msgstr "新しいトレード"
-
 msgid "New Year's Day"
 msgstr "元旦"
 
@@ -7086,9 +7062,6 @@ msgstr "注意"
 
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "注：2017年の数字は8月の中間決済からの予測を含みます"
-
-msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
-msgstr ""
 
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
@@ -8510,9 +8483,6 @@ msgstr "最大保有ポジションの総数を示し、各行を１件分のオ
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "購入可能な１日あたりのトレードの総額を示します。"
 
-msgid "Request successful. We will notify you via email once your voucher is ready."
-msgstr ""
-
 msgid "Requirements"
 msgstr "必須項目"
 
@@ -9137,9 +9107,6 @@ msgstr "マーケット情報を得ましょう。当社では、マーケット
 msgid "Stays Between"
 msgstr "STAY-IN"
 
-msgid "Stays Between/Goes Out"
-msgstr "STAY-IN/BREAK-OUT"
-
 msgid "Stays Between/Goes Outside"
 msgstr "STAY-IN/BREAK-OUT"
 
@@ -9516,9 +9483,6 @@ msgid "The <strong>end time</strong> is the selected number of seconds/minutes/h
 msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。購入・売却は<strong>判定時刻2分前</strong>まで可能です。判定時刻2分前から新規購入＆売却注文は行えません。"
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
-msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
-
-msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
@@ -10590,9 +10554,6 @@ msgstr "Tick"
 msgid "Tier"
 msgstr "レベル"
 
-msgid "Time"
-msgstr "日時"
-
 msgid "Time is in the wrong format."
 msgstr "開始時間に間違った値になっております"
 
@@ -11347,9 +11308,6 @@ msgstr "Binary Ltd.の2016年年次報告をみる"
 
 msgid "View Chart"
 msgstr "チャート表示"
-
-msgid "View Details"
-msgstr "お客さま基本情報"
 
 msgid "View Japanese website"
 msgstr "日本版サイトを表示"
@@ -12163,12 +12121,6 @@ msgstr "MT5口座から出金"
 
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr "MetaTrader 5口座からバイナリー口座に資金を出金"
-
-msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
-msgstr ""
-
-msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
-msgstr ""
 
 msgid "Withdrawal"
 msgstr "出金"
@@ -13073,9 +13025,6 @@ msgstr "百万"
 
 msgid "min"
 msgstr "最小値"
-
-msgid "minimum available duration"
-msgstr "最短取引期間"
 
 msgid "minute"
 msgstr "分"
