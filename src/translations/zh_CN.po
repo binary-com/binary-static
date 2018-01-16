@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-15 20:21-0500\n"
+"PO-Revision-Date: 2018-01-16 03:47-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -1195,9 +1195,6 @@ msgstr "金额"
 msgid "Amount of above assets"
 msgstr "Amount of above assets"
 
-msgid "Amount:"
-msgstr "金额:"
-
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "高等/高级/研究生文凭或学士学位"
 
@@ -1909,17 +1906,11 @@ msgstr "比特币"
 msgid "Bitcoin Cash"
 msgstr "比特币现金"
 
-msgid "Bitcoin Voucher"
-msgstr "比特币凭证"
-
 msgid "Bitcoin vs Euro"
 msgstr "比特币兑欧元"
 
 msgid "Bitcoin vs US dollar"
 msgstr "比特币兑美元"
-
-msgid "Bitcoin.co.id voucher withdrawal"
-msgstr "Bitcoin.co.id 凭证提取"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "区块链技术 - 所有加密货币使用各式的区块链技术（一种公开账本）为每笔交易保存记录。 "
@@ -2771,9 +2762,6 @@ msgstr "创建"
 msgid "Create Account"
 msgstr "开立账户"
 
-msgid "Create Bitcoin.co.id IDR voucher"
-msgstr "创建Bitcoin.co.id 印尼卢比凭证"
-
 msgid "Create Free Account"
 msgstr "开立免费账户"
 
@@ -2788,9 +2776,6 @@ msgstr "开立新账户"
 
 msgid "Create New Token"
 msgstr "创建新代币"
-
-msgid "Create Voucher"
-msgstr "创建凭证"
 
 msgid "Create a MetaTrader 5 account"
 msgstr "创建 MetaTrader 5 账户"
@@ -3449,9 +3434,6 @@ msgstr "电子邮件地址"
 msgid "Email us your Identity Documents"
 msgstr "将身份证件以电子邮件方式发送给我们"
 
-msgid "Email:"
-msgstr "电子邮件："
-
 msgid "Email: "
 msgstr "电子邮件: "
 
@@ -3485,20 +3467,17 @@ msgstr "终结点"
 msgid "Ends Between"
 msgstr "区间之内结束"
 
+msgid "Ends Between/Ends Outside"
+msgstr ""
+
+msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "“收于范围之内/之外”的交易"
 
-msgid "Ends Between/Goes Outside"
-msgstr "到期时价格处于某个范围之内/之外"
-
-msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "如果开始和结束期间价格跳动次数少于2，“到期时价格处于某个范围之内/之外”合约购入价将全额退还。"
-
-msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "到期时价格处于某个范围之内/之外 - 预测市场价格在合约到期时处于两个目标价格范围之内或之外"
-
-msgid "Ends In/Out"
-msgstr "“范围之内/之外”收盘"
+msgid "Ends Between/Ends Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
 
 msgid "Ends Outside"
 msgstr "区间之外结束"
@@ -6911,9 +6890,6 @@ msgstr "新增"
 msgid "New Password"
 msgstr "新密码"
 
-msgid "New Trade"
-msgstr "新交易"
-
 msgid "New Year's Day"
 msgstr "元旦"
 
@@ -7054,9 +7030,6 @@ msgstr "附注"
 
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "注： 2017年数字是根据 8 月中期数字估计得出"
-
-msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
-msgstr "注：Bitcoin.co.id 印尼卢比凭证仅适用于印尼客户。"
 
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "注: 如有任何关于禁用或隔离账户的查询, 请与<a href=\"%1\">客服部</a>联系。"
@@ -8475,9 +8448,6 @@ msgstr "表示您的投资组合中未平仓合约的最大数量。您投资组
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "表示任一既定交易日您可以买入的最大合约数量。"
 
-msgid "Request successful. We will notify you via email once your voucher is ready."
-msgstr "请求成功。一旦您的凭证准备好, 我们将通过电子邮件通知您。"
-
 msgid "Requirements"
 msgstr "需求"
 
@@ -9099,9 +9069,6 @@ msgstr "通过 %1 的每日市场报告、市场研究和经常举行的在线�
 msgid "Stays Between"
 msgstr "位于区间之内"
 
-msgid "Stays Between/Goes Out"
-msgstr "“保持在范围之内/超出范围之外”"
-
 msgid "Stays Between/Goes Outside"
 msgstr "“保持在范围之内/超出范围之外”"
 
@@ -9479,9 +9446,6 @@ msgstr "<strong>结束时间</strong>是在<strong>开始时间</strong>（如�
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>退市现价</strong>是合约<strong>结束时或之前的</strong>最后跳动价点。"
-
-msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
-msgstr "<strong>退市现价</strong>为合约<strong>结束时间</strong>的现价。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合约<strong>开始时间</strong>即我们的服务器处理合约的时间。"
@@ -10468,9 +10432,6 @@ msgstr "跳动点"
 msgid "Tier"
 msgstr "层级"
 
-msgid "Time"
-msgstr "时间"
-
 msgid "Time is in the wrong format."
 msgstr "时间格式错误。"
 
@@ -11223,9 +11184,6 @@ msgstr "查看Binary有限公司 2016年年度报告"
 
 msgid "View Chart"
 msgstr "查看图表"
-
-msgid "View Details"
-msgstr "查看详情"
 
 msgid "View Japanese website"
 msgstr "查看日文网站"
@@ -12036,12 +11994,6 @@ msgstr "从MT5账户提款"
 
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr "从MetaTrader 5 账户提款存入Binary账户。"
-
-msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
-msgstr "以Bitcoin.co.id 印尼卢比凭证形式提取资金。"
-
-msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
-msgstr "以 Bitcoin.co.id 凭证形式提取资金。凭证以印尼卢比计价, 并以当前美元/印尼卢比汇率发行。"
 
 msgid "Withdrawal"
 msgstr "提款"
@@ -12928,9 +12880,6 @@ msgstr "百万"
 
 msgid "min"
 msgstr "最小"
-
-msgid "minimum available duration"
-msgstr "最短可用期限"
 
 msgid "minute"
 msgstr "分钟"

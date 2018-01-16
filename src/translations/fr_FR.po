@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-15 20:20-0500\n"
+"PO-Revision-Date: 2018-01-16 03:46-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -1194,9 +1194,6 @@ msgstr "Montant"
 msgid "Amount of above assets"
 msgstr "Montant des actifs ci-dessus"
 
-msgid "Amount:"
-msgstr "Montant:"
-
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Un diplôme d'études supérieures ou une licence universitaire"
 
@@ -1908,17 +1905,11 @@ msgstr "Bitcoin"
 msgid "Bitcoin Cash"
 msgstr "Bitcoin Cash"
 
-msgid "Bitcoin Voucher"
-msgstr "Un Coupon Bitcoin"
-
 msgid "Bitcoin vs Euro"
 msgstr "Bitcoin vs Euro"
 
 msgid "Bitcoin vs US dollar"
 msgstr "Bitcoin vs dollar américain"
-
-msgid "Bitcoin.co.id voucher withdrawal"
-msgstr "Retrait du coupon Bitcoin.co.id"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Technologie Blockchain – Toutes les crypto devises utilisent une variante de technologie de blockchain (une sorte de registre public) pour marquer les enregistrements de chaque transaction. "
@@ -2769,9 +2760,6 @@ msgstr "Créer"
 msgid "Create Account"
 msgstr "Créer un compte"
 
-msgid "Create Bitcoin.co.id IDR voucher"
-msgstr ""
-
 msgid "Create Free Account"
 msgstr "Créer un compte gratuit"
 
@@ -2786,9 +2774,6 @@ msgstr "Créer un nouveau compte"
 
 msgid "Create New Token"
 msgstr "Créer un nouveau jeton"
-
-msgid "Create Voucher"
-msgstr ""
 
 msgid "Create a MetaTrader 5 account"
 msgstr ""
@@ -3447,9 +3432,6 @@ msgstr "Adresse e-mail"
 msgid "Email us your Identity Documents"
 msgstr "Envoyez nous un courriel avec vos documents d'identité"
 
-msgid "Email:"
-msgstr ""
-
 msgid "Email: "
 msgstr "E-mail : "
 
@@ -3483,20 +3465,17 @@ msgstr "Point terminal"
 msgid "Ends Between"
 msgstr "Termine dans la zone"
 
+msgid "Ends Between/Ends Outside"
+msgstr ""
+
+msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Contrats « Termine dans/hors de la zone »"
 
-msgid "Ends Between/Goes Outside"
+msgid "Ends Between/Ends Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
 msgstr ""
-
-msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr ""
-
-msgid "Ends In/Out"
-msgstr "Termine dans/hors de la zone"
 
 msgid "Ends Outside"
 msgstr "Termine hors de la zone"
@@ -6909,9 +6888,6 @@ msgstr ""
 msgid "New Password"
 msgstr "Nouveau mot de passe"
 
-msgid "New Trade"
-msgstr "Nouvelle opération"
-
 msgid "New Year's Day"
 msgstr "Jour de l'An"
 
@@ -7052,9 +7028,6 @@ msgstr "Remarque"
 
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "Remarque : les chiffes pour 2017 sont projetées à partir des chiffres provisoires d’août"
-
-msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
-msgstr ""
 
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr ""
@@ -8472,9 +8445,6 @@ msgstr "Représente le nombre maximal de contrats actifs dans votre portefeuille
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Représente le volume maximal de contrats que vous pouvez acheter au cours d'une journée de trading donnée."
 
-msgid "Request successful. We will notify you via email once your voucher is ready."
-msgstr ""
-
 msgid "Requirements"
 msgstr "Exigences"
 
@@ -9096,9 +9066,6 @@ msgstr "Restez informé. %1 offre quotidiennement des rapports et études de mar
 msgid "Stays Between"
 msgstr "Reste dans la zone"
 
-msgid "Stays Between/Goes Out"
-msgstr ""
-
 msgid "Stays Between/Goes Outside"
 msgstr ""
 
@@ -9476,9 +9443,6 @@ msgstr "Le <strong>moment de la fin</strong> correspond au nombre choisi de seco
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "Le <strong>point de sortie</strong> correspond au dernier tick enregistré à <strong>l'heure de fin</strong> ou avant."
-
-msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
-msgstr "Le <strong>point de sortie</strong> est le point au <strong>moment de la fin</strong>."
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "Le <strong>moment de départ</strong> correspond au moment où le contrat est traité par nos serveurs."
@@ -10464,9 +10428,6 @@ msgstr "Tick"
 msgid "Tier"
 msgstr "Niveau"
 
-msgid "Time"
-msgstr "Heure"
-
 msgid "Time is in the wrong format."
 msgstr "Le format de l'heure est incorrect."
 
@@ -11219,9 +11180,6 @@ msgstr "Voir le rapport annuel 2016 de Binary Ltd"
 
 msgid "View Chart"
 msgstr "Afficher le graphique"
-
-msgid "View Details"
-msgstr "Afficher les informations"
 
 msgid "View Japanese website"
 msgstr "Voir le site Web japonais"
@@ -12031,12 +11989,6 @@ msgid "Withdraw from MT5 account"
 msgstr ""
 
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
-msgstr ""
-
-msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
-msgstr ""
-
-msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
 msgstr ""
 
 msgid "Withdrawal"
@@ -12923,9 +12875,6 @@ msgstr "million"
 
 msgid "min"
 msgstr "min"
-
-msgid "minimum available duration"
-msgstr "durée minimale disponible"
 
 msgid "minute"
 msgstr "minute"
