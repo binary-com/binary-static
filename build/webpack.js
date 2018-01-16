@@ -1,45 +1,43 @@
-var path = require('path');
-var webpack = require('webpack');
-var CircularDependencyPlugin = require('circular-dependency-plugin');
-// var UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin')["default"];
+const path = require('path');
+const webpack = require('webpack');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
+// const UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin')['default'];
 
 module.exports = function (grunt) {
-    var isProduction = grunt.cli.tasks[0] === 'release',
-        plugins = [
-            new CircularDependencyPlugin({
-                failOnError: true,
-            }),
-            new webpack.SourceMapDevToolPlugin({
-                filename: '[file].map',
-                exclude: [/^(?!(binary)).*$/],
-            }),
-            new webpack.ContextReplacementPlugin(/moment[\/\\]locale/, /ja/),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'vendor',
-                filename: 'vendor.min.js',
-                minChunks: function (module) {
-                    return module.context && module.context.indexOf('node_modules') !== -1;
-                }
-            }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'manifest',
-                minChunks: Infinity,
-            }),
-            new webpack.optimize.UglifyJsPlugin({
-                include  : /(vendor|binary)\.min\.js$/,
-                minimize : true,
-                sourceMap: true,
-                compress : {
-                    warnings: false,
-                },
-            }),
-            // new UnusedFilesWebpackPlugin({
-            //     pattern: 'src/javascript/**/*.*',
-            //     globOptions: {
-            //         ignore: 'src/javascript/**/__tests__/*.*',
-            //     }
-            // }),
-        ];
+    const isProduction = grunt.cli.tasks[0] === 'release';
+    const plugins = [
+        new CircularDependencyPlugin({
+            failOnError: true,
+        }),
+        new webpack.SourceMapDevToolPlugin({
+            filename: '[file].map',
+            exclude : [/^(?!(binary)).*$/],
+        }),
+        new webpack.ContextReplacementPlugin(/moment[\/\\]locale/, /ja/),
+        new webpack.optimize.CommonsChunkPlugin({
+            name     : 'vendor',
+            filename : 'vendor.min.js',
+            minChunks: (module) => module.context && module.context.indexOf('node_modules') !== -1,
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name     : 'manifest',
+            minChunks: Infinity,
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            include  : /(vendor|binary)\.min\.js$/,
+            minimize : true,
+            sourceMap: true,
+            compress : {
+                warnings: false,
+            },
+        }),
+        // new UnusedFilesWebpackPlugin({
+        //     patterns: [
+        //         'src/javascript/**/*.*',
+        //         '!src/javascript/**/__tests__/*.*',
+        //     ],
+        // }),
+    ];
 
     if (!isProduction) {
         plugins.push(
@@ -63,7 +61,7 @@ module.exports = function (grunt) {
         );
     }
 
-    var common_options = {
+    const common_options = {
         node: {
             fs: 'empty',
         },
@@ -76,11 +74,10 @@ module.exports = function (grunt) {
             [isProduction ? 'binary.min' :'binary']: './src/javascript',
         },
         output: {
-            path         : path.resolve(__dirname, '../' + global.dist + '/js/'),
+            path         : path.resolve(__dirname, `../${global.dist}/js/`),
             filename     : '[name].js',
             chunkFilename: '[name]_[chunkhash].min.js',
-            publicPath   : (isProduction ? '' : '/binary-static') +
-                           (global.branch ? `/${global.branch_prefix}${global.branch}` : '') + '/js/',
+            publicPath   : `${isProduction ? '' : '/binary-static'}${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}/js/`,
         },
         module: {
             loaders: [
@@ -95,13 +92,13 @@ module.exports = function (grunt) {
                 },
             ],
         },
-        plugins: plugins,
+        plugins,
     };
 
-    var watch_options = Object.assign({ watch: true }, common_options);
+    const watch_options = Object.assign({ watch: true }, common_options);
 
     return {
         build: common_options,
         watch: watch_options,
-    }
+    };
 };
