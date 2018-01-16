@@ -51,6 +51,39 @@
     position: relative;
     opacity: 0;
 
+    #contract_form_name_nav {
+        border-bottom: none;
+        font-size: $FONT_SIZE_N;
+
+        > li {
+            cursor: pointer;
+            padding: 0;
+
+            a.tm-a {
+                padding: 0 5px;
+                width: auto;
+                font-size: $FONT_SIZE_S;
+                line-height: 28px;
+                white-space: nowrap;
+            }
+            .tm-ul-2 {
+                top: 29px;
+                margin-top: -1px;
+                border-top: 1px solid $COLOR_GRAY;
+            }
+        }
+    }
+    #spot {
+        line-height: 25px;
+        white-space: nowrap;
+        padding: 3px;
+        border-radius: 5px;
+        @include BIDIR_PROP(margin-right, margin-left, 8px);
+
+        &.error {
+            font-style: italic;
+        }
+    }
     &.show {
         animation: fade 1s;
         animation-fill-mode: forwards;
@@ -599,43 +632,6 @@
         }
         #expiry_time {
             width: 175px;
-        }
-    }
-}
-
-#trading_socket_container, #trading_socket_container_beta {
-    #spot {
-        line-height: 25px;
-        white-space: nowrap;
-        padding: 3px;
-        border-radius: 5px;
-        @include BIDIR_PROP(margin-right, margin-left, 8px);
-
-        &.error {
-            font-style: italic;
-        }
-    }
-}
-
-#trading_socket_container #contract_form_name_nav {
-    border-bottom: none;
-    font-size: $FONT_SIZE_N;
-
-    > li {
-        cursor: pointer;
-        padding: 0;
-
-        a.tm-a {
-            padding: 0 5px;
-            width: auto;
-            font-size: $FONT_SIZE_S;
-            line-height: 28px;
-            white-space: nowrap;
-        }
-        .tm-ul-2 {
-            top: 29px;
-            margin-top: -1px;
-            border-top: 1px solid $COLOR_GRAY;
         }
     }
 }
