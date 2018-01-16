@@ -1,6 +1,8 @@
 /* global toggleMobileMenu:false */
+/* global setSession:true */
 window.onload = function() {
     initForm();
+    getClientCountry();
 
     window.onresize = checkWidth;
 
@@ -107,4 +109,47 @@ function setValidationStyle(has_error) {
     document.querySelectorAll('.error-msg').forEach((el) => {
         el.classList[has_error ? 'remove' : 'add']('invisible');
     });
+}
+
+function getClientCountry() {
+    let clients_country = sessionStorage.getItem('clients_country');
+
+    // Try to get residence from client's info if logged-in
+    if (!clients_country) {
+        const accounts = JSON.parse(localStorage.getItem('client.accounts') || null);
+        if (accounts) {
+            Object.keys(accounts).some((loginid) => {
+                if (accounts[loginid].residence) {
+                    clients_country = accounts[loginid].residence;
+                    setSession('clients_country', clients_country);
+                    return true;
+                }
+                return false;
+            });
+        }
+    }
+
+    // Get required info from WebSocket
+    const ws = wsConnect();
+
+    function sendRequests() {
+        if (!clients_country) wsSend(ws, { website_status: 1 });
+        wsSend(ws, { time: 1 });
+    }
+
+    if (ws.readyState === 1) {
+        sendRequests();
+    } else {
+        ws.onopen = sendRequests;
+    }
+
+    ws.onmessage = function (msg) {
+        const response = JSON.parse(msg.data);
+        if (response.website_status) {
+            clients_country = response.website_status.clients_country;
+            setSession('clients_country', clients_country);
+        }
+    };
+
+    return clients_country;
 }

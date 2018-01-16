@@ -487,7 +487,7 @@ const BinaryJapan = () => (
                             <div className='card-body gr-row'>
                                 <div className='gr-2 gr-push-1 gr-4-p gr-push-0-p gr-10-m gr-push-1-m'>
                                     <img className='img-md' src={it.url_for('images/japan/version1/customer-support.svg')} />
-                                    <h3 className='size-3'>{it.L('{JAPAN ONLY}We have a support team to answer your questions: <a href=\"mailto:support@binary.com\">support@binary.com</a>')}</h3>
+                                    <h3 className='size-3'>{it.L('{JAPAN ONLY}We have a support team to answer your questions: <a href=\'mailto:support@binary.com\'>support@binary.com</a>')}</h3>
                                 </div>
                                 <div className='gr-2 gr-push-3 gr-4-p gr-push-0-p gr-10-m gr-push-1-m'>
                                     <img className='img-md' src={it.url_for('images/japan/version1/accounting-book.svg')} />
