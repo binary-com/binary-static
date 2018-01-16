@@ -6,7 +6,6 @@ const jpClient         = require('../../common/country_base').jpClient;
 const jpResidence      = require('../../common/country_base').jpResidence;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getElementById   = require('../../../_common/common_functions').getElementById;
-const Language         = require('../../../_common/language');
 const urlFor           = require('../../../_common/url').urlFor;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
@@ -62,10 +61,6 @@ const Cashier = (() => {
                 $(is_crypto ? '.crypto_currency' : '.normal_currency').setVisibility(1);
                 if (/^BCH/.test(Client.get('currency'))) {
                     getElementById('message_bitcoin_cash').setVisibility(1);
-                }
-                // bitcoin voucher
-                if (!is_virtual && Language.get() === 'ID' && Client.get('residence') === 'id') {
-                    $('.id-clients').setVisibility(1);
                 }
             });
         }
