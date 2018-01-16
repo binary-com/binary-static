@@ -240,7 +240,7 @@ const Careers = () => (
                             <Step text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
                                   circle_no='1'
                             />
-                            <Step text={it.L('If you\'re shortlisted, we\'ll invite you to a hackathon or send you a talent test.')}
+                            <Step text={it.L('If you\'re shortlisted, we\'ll you a Self-Assessment Topgrading Interview (SATI) questionnaire.')}
                                   circle_no='2'
                             />
                             <Step text={it.L('If you score well in the hackathon or talent test, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we\'ll invite you for an interview with a member of our recruitment team.')}
