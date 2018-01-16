@@ -57,6 +57,12 @@ function initForm() {
         return false;
     }
 
+    function connect() {
+        ws = wsConnect();
+        ws.onmessage = verifySubmit;
+        ws.onclose = connect;
+    }
+
     let validation_set = false; // To prevent validating before submit
 
     signup_forms.forEach((form) => {
@@ -82,7 +88,7 @@ function initForm() {
 
             const to = this.offsetTop - 50;
             scrollTo(to, 500); // Scroll to nearest form
-            return false;
+            return;
         }
 
         if (ws.readyState === 1) {
@@ -90,12 +96,11 @@ function initForm() {
         } else {
             ws = wsConnect();
             ws.onopen = sendVerifyEmail(el_email.value);
-            ws.onmessage = verifySubmit;
         }
-        return true;
     }
 
     ws.onmessage = verifySubmit;
+    ws.onclose = connect;
 }
 
 function validateEmail(email) {
