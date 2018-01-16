@@ -356,32 +356,34 @@ const BinaryJapan2 = () => (
 
             <section id='open-account' className='bg-white edge--top--reverse'>
                 <div className='container center-text padding-bottom-50 override small-gap-before'>
-                    <div className='section-title'>
-                        <h1 className='color-blue'>{it.L('{JAPAN ONLY}How to open an account')}</h1>
-                    </div>
-                    <div className='gr-row numbered'>
-                        <div className='gr-6 gr-12-m'>
-                            <div className='flex-inline'>
-                                <span className='icon-md rounded ic-new-account'></span>
-                                <p>{it.L('{JAPAN ONLY}Apply for an account & provide ID')}</p>
-                            </div>
+                    <div className='gr-12 gr-centered'>
+                        <div className='section-title'>
+                            <h1 className='color-blue'>{it.L('{JAPAN ONLY}How to open an account')}</h1>
                         </div>
-                        <div className='gr-6 gr-12-m'>
-                            <div className='flex-inline'>
-                                <span className='icon-md rounded ic-knowledge-test'></span>
-                                <p>{it.L('{JAPAN ONLY}Pass our Knowledge Test')}</p>
+                        <div className='gr-row numbered'>
+                            <div className='gr-6 gr-12-m'>
+                                <div className='flex-inline'>
+                                    <span className='icon-md rounded ic-new-account'></span>
+                                    <p className='desc-text'>{it.L('{JAPAN ONLY}Apply for an account & provide ID')}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className='gr-6 gr-12-m'>
-                            <div className='flex-inline'>
-                                <span className='icon-md rounded ic-secure-email'></span>
-                                <p>{it.L('{JAPAN ONLY}Receive account activation code by secure mail and activate account')}</p>
+                            <div className='gr-6 gr-12-m'>
+                                <div className='flex-inline'>
+                                    <span className='icon-md rounded ic-knowledge-test'></span>
+                                    <p className='desc-text'>{it.L('{JAPAN ONLY}Pass our Knowledge Test')}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className='gr-6 gr-12-m'>
-                            <div className='flex-inline'>
-                                <span className='icon-md rounded ic-deposit-money'></span>
-                                <p>{it.L('{JAPAN ONLY}Deposit funds and begin trading')}</p>
+                            <div className='gr-6 gr-12-m'>
+                                <div className='flex-inline'>
+                                    <span className='icon-md rounded ic-secure-email'></span>
+                                    <p className='desc-text'>{it.L('{JAPAN ONLY}Receive account activation code by secure mail and activate account')}</p>
+                                </div>
+                            </div>
+                            <div className='gr-6 gr-12-m'>
+                                <div className='flex-inline'>
+                                    <span className='icon-md rounded ic-deposit-money'></span>
+                                    <p className='desc-text'>{it.L('{JAPAN ONLY}Deposit funds and begin trading')}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -401,13 +403,14 @@ const BinaryJapan2 = () => (
                 </div>
             </section>
 
+
             <div className='bg-orange bg-semicircles'>
                 <div className='container'>
                     <div className='gr-row'>
                         <div className='gr-12'>
                             <form className='signup-form'>
                                 <h1 className=''>{it.L('{JAPAN ONLY}Sign up for a free account')}</h1>
-                                <div className='signup-form-input'>
+                                <div className='signup-form-input center'>
                                     <div className='input-group'>
                                         <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
                                         <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>

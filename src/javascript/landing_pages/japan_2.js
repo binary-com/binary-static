@@ -1,8 +1,12 @@
+/* global setSession:true */
+let email_sent = false;
+
 window.onload = function () {
     toggleMobileMenu();
     initForm();
     collapseNavbar();
     tabWithButtons();
+    getClientCountry();
 
     window.onresize = checkWidth;
 
@@ -56,6 +60,7 @@ function initForm() {
             signup_forms.forEach((el) => {
                 el.querySelector('.signup-form-input').classList.add('invisible');
                 el.querySelector('.signup-form-success').classList.remove('invisible');
+                email_sent = true;
             });
         }
     }
@@ -86,7 +91,7 @@ function initForm() {
                 setValidationStyle(!validateEmail(el_email.value));
                 validation_set = true;
             }
-            const to = this.offsetTop - 50;
+            const to = this.offsetTop - 100;
             scrollTo(to, 500); // Scroll to nearest form
             return false;
         }
@@ -94,7 +99,6 @@ function initForm() {
         if (ws.readyState === 1) {
             sendVerifyEmail(el_email.value);
         } else {
-            ws = wsConnect();
             ws.onopen = sendVerifyEmail(el_email.value);
             ws.onmessage = verifySubmit;
         }
@@ -102,6 +106,19 @@ function initForm() {
     }
 
     ws.onmessage = verifySubmit;
+    ws.onclose = function () {
+        connect();
+    };
+
+    function connect() {
+        if (email_sent === false) {
+            ws = wsConnect();
+            ws.onmessage = verifySubmit;
+            ws.onclose = function () {
+                connect();
+            };
+        }
+    }
 }
 
 function validateEmail(email) {
@@ -160,9 +177,9 @@ function tabWithButtons(id) {
 
         navs = ul.querySelectorAll('li');
 
-        window.onresize = function() {
+        window.addEventListener('resize', () => {
             updateTabContent(current_index);
-        };
+        });
 
         el_content_wrapper.addEventListener('touchstart', (event) => {
             touchstartX = event.changedTouches[0].screenX;
@@ -224,4 +241,47 @@ function tabWithButtons(id) {
             });
         }
     }
+}
+
+function getClientCountry() {
+    let clients_country = sessionStorage.getItem('clients_country');
+
+    // Try to get residence from client's info if logged-in
+    if (!clients_country) {
+        const accounts = JSON.parse(localStorage.getItem('client.accounts') || null);
+        if (accounts) {
+            Object.keys(accounts).some((loginid) => {
+                if (accounts[loginid].residence) {
+                    clients_country = accounts[loginid].residence;
+                    setSession('clients_country', clients_country);
+                    return true;
+                }
+                return false;
+            });
+        }
+    }
+
+    // Get required info from WebSocket
+    const ws = wsConnect();
+
+    function sendRequests() {
+        if (!clients_country) wsSend(ws, { website_status: 1 });
+        wsSend(ws, { time: 1 });
+    }
+
+    if (ws.readyState === 1) {
+        sendRequests();
+    } else {
+        ws.onopen = sendRequests;
+    }
+
+    ws.onmessage = function (msg) {
+        const response = JSON.parse(msg.data);
+        if (response.website_status) {
+            clients_country = response.website_status.clients_country;
+            setSession('clients_country', clients_country);
+        }
+    };
+
+    return clients_country;
 }
