@@ -649,6 +649,10 @@ body #not_authenticated_financial ul.checked > li {
                             font-size: $FONT_SIZE_S;
                         }
                     }
+                    &:focus {
+                        border: 0;
+                        outline: 0;
+                    }
                 }
                 &.ui-tabs-active a span {
                     color: $COLOR_WHITE;
