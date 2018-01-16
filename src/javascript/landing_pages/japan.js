@@ -18,6 +18,9 @@ function initForm() {
     let ws = wsConnect();
 
     function sendVerifyEmail(val) {
+        if (!checkCountry(val)) {
+            return;
+        }
         const trimmed_email = trimEmail(val);
         wsSend(ws, {
             verify_email: trimmed_email,
@@ -38,6 +41,18 @@ function initForm() {
 
     function trimEmail(str) {
         return str.replace(/\s/g, '');
+    }
+
+    function checkCountry(val) {
+        const clients_country = sessionStorage.getItem('clients_country');
+        if ((clients_country !== 'my') || /@binary\.com$/.test(val)) {
+            return true;
+        }
+        signup_forms.forEach((el) => {
+            el.querySelector('.signup-form-input').classList.add('invisible');
+            el.querySelector('.signup-form-error').classList.remove('invisible');
+        });
+        return false;
     }
 
     let validation_set = false; // To prevent validating before submit

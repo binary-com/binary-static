@@ -110,7 +110,7 @@ form {
             }
         }
     }
-    .signup-form-success {
+    .signup-form-success, .signup-form-error {
         background-color: $COLOR_ORANGE;
         padding: 5px;
         color: $COLOR_WHITE;

@@ -69,6 +69,9 @@ const BinaryJapan = () => (
                             <div className='signup-form-success invisible'>
                                 <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
                             </div>
+                            <div className='signup-form-error invisible'>
+                                <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -417,6 +420,9 @@ const BinaryJapan = () => (
                                 <div className='signup-form-success invisible'>
                                     <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
                                 </div>
+                                <div className='signup-form-error invisible'>
+                                    <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -572,6 +578,9 @@ const BinaryJapan = () => (
                             </div>
                             <div className='signup-form-success invisible'>
                                 <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
+                            </div>
+                            <div className='signup-form-error invisible'>
+                                <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
                             </div>
                         </form>
                     </div>
