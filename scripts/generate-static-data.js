@@ -126,7 +126,7 @@ const texts = [
     'Even/Odd',
     'Over/Under',
     'Up/Down',
-    'Ends Between/Goes Outside',
+    'Ends Between/Ends Outside',
     'Touch/No Touch',
     'Stays Between/Goes Outside',
     'Potential Payout',
