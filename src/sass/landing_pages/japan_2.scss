@@ -70,7 +70,7 @@ form {
         position: relative;
         @media (min-width: 576px) {
             flex-direction: row;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         input[type='email'] {
@@ -663,7 +663,6 @@ form {
 
 .twb-buttons {
     @include flex-center;
-    cursor: pointer;
 
     ul {
         display: flex;
