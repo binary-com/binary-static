@@ -56,6 +56,12 @@
             background-position-x: 15%;
         }
     }
+    #content .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li a {
+        font-size: $FONT_SIZE_S;
+    }
+    #content .light .tab-menu-wrap ul.tm-ul li.tm-li.tab-selector {
+        top: 30px;
+    }
 }
 
 @media print {

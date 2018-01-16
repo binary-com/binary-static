@@ -71,7 +71,7 @@ a.button:hover {
 button.full-width, .button.full-width {
     &, span {
         display: block;
-        width: 100%;
+        width: auto;
     }
     .barspinner {
         display: inline-block;
@@ -498,10 +498,6 @@ ul.bullet.gr-row > li {
             }
         }
     }
-}
-
-#content .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li {
-    font-size: $FONT_SIZE_XL;
 }
 
 .foot-note {
