@@ -476,11 +476,11 @@ body #not_authenticated_financial ul.checked > li {
         margin-top: 0;
 
         .top-banner {
-            background: url('../images/pages/careers/careers-1_bg@3x.jpg') no-repeat;
+            background: url('../images/pages/careers/careers-1_bg.jpg') no-repeat;
             background-size: cover;
             min-height: 300px;
             position: relative;
-            background-position: center center;
+            background-position: center;
 
             .banner-caption {
                 position: absolute;
@@ -506,13 +506,13 @@ body #not_authenticated_financial ul.checked > li {
             }
         }
         .center-banner {
-            background: url('../images/pages/careers/careers-2_bg@3x.jpg') no-repeat;
+            background: url('../images/pages/careers/careers-2_bg.jpg') no-repeat;
             background-size: cover;
             min-height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-position: center center;
+            background-position: center;
 
             .caption-text {
                 margin: 0 auto;
@@ -530,7 +530,7 @@ body #not_authenticated_financial ul.checked > li {
         .margin-top-100 {
             margin-top: 100px;
         }
-        .no-margin-top {
+        .column-margin {
             margin: 0 0 1em;
         }
         .header-line {
@@ -664,7 +664,6 @@ body #not_authenticated_financial ul.checked > li {
             }
         }
         .footer-email {
-            background-color: $COLOR_ORANGE;
             margin-bottom: -20px;
 
             p {

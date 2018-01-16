@@ -40,7 +40,7 @@ const ColumnSM = ({ gr, header, paragraph }) => (
     <div className={`gr-${gr ? `${gr} gr-12-m` : '3 gr-12-m'}`}>
         <h4>{header}</h4>
         <SeparatorLine no_wrapper sub_class='header-line' />
-        <p className='no-margin-top'>{paragraph}</p>
+        <p className='column-margin'>{paragraph}</p>
     </div>
 );
 
@@ -49,7 +49,7 @@ const ColumnLG = ({ center, image, text }) => (
     <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
         <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
         <div className='fill-bg-color'>
-            <p className='no-margin-top fill-text'>{text}</p>
+            <p className='column-margin fill-text'>{text}</p>
         </div>
     </div>
 );
@@ -100,11 +100,12 @@ const Careers = () => (
                 <ColumnSM gr='4' header={it.L('Where you can go')}     paragraph={it.L('Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.') } />
                 <ColumnSM gr='4' header={it.L('More benefits')}        paragraph={it.L('We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\'re in Malta, Malaysia, or Japan.')} />
             </div>
-
-            <div className='gr-padding-30 center-text'>
-                <a className='button' href={it.url_for('open-positions')}>
-                    <span>{it.L('View open positions')}</span>
-                </a>
+            <div className='gr-padding-20'>
+                <div className='gr-padding-30 center-text'>
+                    <a className='button' href={it.url_for('open-positions')}>
+                        <span>{it.L('View open positions')}</span>
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -170,13 +171,13 @@ const Careers = () => (
                 <Box gr='gr-6' text={it.L('Internal audit')} />
             </div>
 
-            <SeparatorLine no_wrapper sub_class='gr-padding-10' />
-
             <div className='gr-padding-10 center-text'>
                 <a className='button' href={it.url_for('open-positions')}>
                     <span>{it.L('View open positions')}</span>
                 </a>
             </div>
+
+            <SeparatorLine no_wrapper sub_class='gr-padding-10' />
         </div>
 
         <div className='container'>
@@ -275,7 +276,7 @@ const Careers = () => (
             </div>
         </div>
 
-        <div className='footer-email'>
+        <div className='footer-email secondary-bg-color'>
             <div className='container'>
                 <p>{it.L('To apply, please submit your CV and a cover letter to [_1]','<a href="mailto:hr@binary.com" rel="nofollow">hr@binary.com.</a>')}</p>
             </div>
