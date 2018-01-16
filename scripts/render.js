@@ -192,11 +192,10 @@ const createContextBuilder = async () => {
 /** **********************************************
  * Compile
  */
-
+let context_builder;
 async function compile(page) {
     const config              = getConfig();
     const languages           = config.languages.filter(lang => !common.isExcluded(page.excludes, lang));
-    const context_builder     = await createContextBuilder();
     const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER'; // used in layout.jsx
 
     const tasks = languages.map(async lang => {
@@ -285,6 +284,8 @@ createDirectories();
                     console.log(color.green('  - '), p.save_as);
                 });
         }
+
+        context_builder = await createContextBuilder();
 
         await Promise.all(
             pages_filtered.map(compile)
