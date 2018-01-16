@@ -15,7 +15,6 @@ const Endpoint             = require('../pages/endpoint');
 const MBTradePage          = require('../pages/mb_trade/mb_tradepage');
 const AssetIndexUI         = require('../pages/resources/asset_index/asset_index.ui');
 const TradingTimesUI       = require('../pages/resources/trading_times/trading_times.ui');
-const TradePage_Beta       = require('../pages/trade/beta/tradepage');
 const TradePage            = require('../pages/trade/tradepage');
 const Authenticate         = require('../pages/user/account/authenticate');
 const ChangePassword       = require('../pages/user/account/change_password');
@@ -111,7 +110,6 @@ const pages_config = {
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage,                  needs_currency: true },
-    trading_beta             : { module: TradePage_Beta,             needs_currency: true },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
