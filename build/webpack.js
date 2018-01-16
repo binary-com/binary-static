@@ -44,9 +44,19 @@ module.exports = function (grunt) {
     if (!isProduction) {
         plugins.push(
             function() {
-                this.plugin('watch-run', function(watching, callback) {
-                    console.log('');
-                    grunt.log.ok('Compile started at ' + new Date());
+                this.plugin('watch-run', (watching, callback) => {
+                    console.log('\n');
+                    grunt.log.ok('Build started at:', new Date().toString().grey);
+
+                    const changed_files = Object.keys(watching.compiler.watchFileSystem.watcher.mtimes);
+                    if (changed_files.length) {
+                        grunt.log.ok(`Changed file${changed_files.length > 1 ? 's' : ''}:`);
+                        changed_files.forEach((file) =>{
+                            const file_path = file.replace(process.cwd(), '.').match(/(.*\/)(.*(?!\/))$/);
+                            grunt.log.write('   -'.green, file_path[1].grey, `\b${file_path[2]}\n`);
+                        });
+                    }
+
                     callback();
                 });
             }
