@@ -14,7 +14,7 @@ const Menu = (() => {
 
         activateMenuTop();
 
-        if (Client.isLoggedIn() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
+        if (Client.isLoggedIn() || /\/(cashier|resources|trading|multi_barriers_trading)/i.test(window.location.pathname)) {
             main_menu.setVisibility(1);
             activateMainMenu();
             Client.activateByClientType('main-menu');
