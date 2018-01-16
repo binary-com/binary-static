@@ -243,7 +243,7 @@ const Careers = () => (
                             <Step text={it.L('If you\'re shortlisted, we\'ll you a Self-Assessment Topgrading Interview (SATI) questionnaire.')}
                                   circle_no='2'
                             />
-                            <Step text={it.L('If you score well in the hackathon or talent test, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we\'ll invite you for an interview with a member of our recruitment team.')}
+                            <Step text={it.L('If you score well on the SATI, we\'ll send you a talent test. Do well on the talent test and and we\'ll invite you for an interview with a member of our recruitment team.')}
                                   circle_no='3'
                             />
                         </div>

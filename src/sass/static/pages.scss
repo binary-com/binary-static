@@ -657,6 +657,10 @@ body #not_authenticated_financial ul.checked > li {
                 &.ui-tabs-active a span {
                     color: $COLOR_WHITE;
                 }
+                &:focus {
+                    border: 0;
+                    outline: 0;
+                }
             }
         }
         .footer-email {
