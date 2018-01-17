@@ -130,14 +130,14 @@ function initForm() {
 
         const el_form  = this;
         el_email = el_form.querySelector('input[type="email"]');
-        if (!validateEmail(el_email.value)) {
+        if (!validateEmail(trimEmail(el_email.value))) {
             if (!validation_set) {
                 ['input', 'change'].forEach((evt) => {
                     el_email.addEventListener(evt, () => {
-                        setValidationStyle(!validateEmail(el_email.value));
+                        setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
                     });
                 });
-                setValidationStyle(!validateEmail(el_email.value));
+                setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
                 validation_set = true;
             }
 
@@ -161,13 +161,29 @@ function validateEmail(email) {
     return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(email);
 }
 
-function setValidationStyle(has_error) {
-    document.querySelectorAll('input[type="email"]').forEach((el) => {
-        el.classList[has_error ? 'add' : 'remove']('error-field');
-    });
-    document.querySelectorAll('.error-msg').forEach((el) => {
-        el.classList[has_error ? 'remove' : 'add']('invisible');
-    });
+function setValidationStyle(element, has_error) {
+    const error_class = 'error-field';
+    const invisible_class = 'invisible';
+    element.classList[has_error ? 'add' : 'remove'](error_class);
+    
+    if (element.value.length < 1) {
+        const error_no_email = document.getElementById('error_no_email');
+        if (error_no_email) error_no_email.classList[has_error ? 'remove' : 'add'](invisible_class);
+        const error_validate_email = document.getElementById('error_validate_email');
+        if (error_validate_email) error_validate_email.classList[has_error ? 'add' : 'remove'](invisible_class);
+    }
+    else if (element.value.length >= 1) {
+        const error_validate_email = document.getElementById('error_validate_email');
+        if (error_validate_email) error_validate_email.classList[has_error ? 'remove' : 'add'](invisible_class);
+        const error_no_email = document.getElementById('error_no_email');
+        if (error_no_email) error_no_email.classList[has_error ? 'add' : 'remove'](invisible_class);
+    }
+    if (!has_error) {
+        const error_validate_email = document.getElementById('error_validate_email');
+        if (error_validate_email) error_validate_email.classList.add(invisible_class);
+        const error_no_email = document.getElementById('error_no_email');
+        if (error_no_email) error_no_email.classList.add(invisible_class);
+    }
 }
 
 function tabWithButtons(id) {

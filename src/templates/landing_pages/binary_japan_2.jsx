@@ -96,7 +96,8 @@ const BinaryJapan2 = () => (
                                     <div className='signup-form-input'>
                                         <div className='input-group'>
                                             <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
-                                            <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>
+                                            <div id='error_validate_email' className='invisible center-text error-msg'>{it.L('Invalid email address')}</div>
+                                            <div id='error_no_email' className='invisible center-text error-msg'>{it.L('This field is required.')}</div>
                                             <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                         </div>
                                     </div>
@@ -416,7 +417,8 @@ const BinaryJapan2 = () => (
                                 <div className='signup-form-input center'>
                                     <div className='input-group'>
                                         <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
-                                        <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>
+                                        <div id='error_validate_email' className='invisible center-text error-msg'>{it.L('Invalid email address')}</div>
+                                        <div id='error_no_email' className='invisible center-text error-msg'>{it.L('This field is required.')}</div>
                                         <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                     </div>
                                 </div>
