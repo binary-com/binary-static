@@ -1,17 +1,20 @@
 /* global setSession:true */
 /* global urlForLanguage:true */
 /* global getLanguage:true */
+/* global jpClient:true */
+/* global recordAffiliateExposure:true */
 
 window.onload = function () {
+    if (!jpClient()) {
+        window.location = urlForLanguage('ja');
+    }
+
     toggleMobileMenu();
     initForm();
+    recordAffiliateExposure();
     collapseNavbar();
     tabWithButtons();
     getClientCountry();
-
-    if (!isJPClient()) {
-        window.location = urlForLanguage('ja');
-    }
 
     window.onresize = checkWidth;
 
@@ -316,8 +319,4 @@ function getClientCountry() {
     };
 
     return clients_country;
-}
-
-function isJPClient() {
-    return /ja/.test(getLanguage()) || /ja/.test(getClientCountry());
 }

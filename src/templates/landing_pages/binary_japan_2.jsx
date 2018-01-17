@@ -445,6 +445,9 @@ const BinaryJapan2 = () => (
                 </div>
             </footer>
 
+            <div id='affiliate_disclaimer_popup'></div>
+
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js'></script>
             <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
             <script src={`${it.url_for('js/landing_pages/japan_2.js')}?${it.static_hash}`}></script>
         </body>
