@@ -118,14 +118,12 @@ const AutocompleteAddress = (() => {
                 if (/street_number|route|neighborhood/.test(address_type)) {
                     address_line_1_data.push(val);
                 }
-                if (/(administrative_area_level_3|administrative_area_level_4|administrative_area_level_5)/.test(address_type)) {
+                if (/administrative_area_level_(3|4|5)/.test(address_type)) {
                     address_line_2_data.push(val);
                 }
-                if (/locality|sublocality|ward|administrative_area_level_2/.test(address_type)) {
-                    if (!has_city) {
-                        el_address_city.value = trimString(val, 'Kota');
-                        has_city = true;
-                    }
+                if (/locality|sublocality|ward|administrative_area_level_2/.test(address_type) && !has_city) {
+                    el_address_city.value = trimString(val, 'Kota');
+                    has_city = true;
                 }
                 if (/administrative_area_level_1/.test(address_type)) {
                     if (val.length <= 2) { // search state by dd value attribute

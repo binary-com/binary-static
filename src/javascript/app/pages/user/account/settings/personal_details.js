@@ -5,10 +5,10 @@ const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
 const formatMoney      = require('../../../../common/currency').formatMoney;
 const FormManager      = require('../../../../common/form_manager');
+const Autocomplete     = require('../../../../../_common/autocomplete_address');
 const CommonFunctions  = require('../../../../../_common/common_functions');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
-const Autocomplete     = require('../../../../../_common/autocomplete_address');
 require('select2');
 
 const PersonalDetails = (() => {

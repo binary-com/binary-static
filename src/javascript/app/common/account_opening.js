@@ -5,11 +5,11 @@ const BinaryPjax         = require('../base/binary_pjax');
 const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
+const Autocomplete       = require('../../_common/autocomplete_address');
 const makeOption         = require('../../_common/common_functions').makeOption;
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
-const Autocomplete       = require('../../_common/autocomplete_address');
 require('select2');
 
 const AccountOpening = (() => {
