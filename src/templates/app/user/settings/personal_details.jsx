@@ -56,12 +56,12 @@ const PersonalDetails = () => (
                 <FormRow type='label' label={it.L('Name')} is_bold id='lbl_name' row_class='invisible' row_id='row_name' />
                 <FormRow type='label' label={it.L('Gender')} is_bold id='lbl_gender' row_class='invisible JpAcc' />
                 <FormRow type='label' label={it.L('Date of birth')} is_bold id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' />
-                <FormRow type='label' label={it.L('Place of birth')} id='lbl_place_of_birth' row_class='invisible' />
-                <FormRow type='select' label={it.L('Place of birth')} id='place_of_birth' row_class='invisible' />
+                <FormRow type='label' label={it.L('Place of birth')} id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible' />
+                <FormRow type='select' label={it.L('Place of birth')} id='place_of_birth' row_id='row_place_of_birth' row_class='invisible' />
                 <FormRow type='label' label={it.L('Country of Residence')} is_bold id='lbl_country' row_id='row_country' />
                 <FormRow type='label' label={it.L('Email address')} is_bold id='lbl_email' row_id='row_email' />
-                <FormRow type='label' label={it.L('Account Opening Reason')} id='lbl_account_opening_reason' row_class='invisible' />
-                <AccountOpeningReason row_class='invisible' />
+                <FormRow type='label' label={it.L('Account Opening Reason')} id='lbl_account_opening_reason' row_id='row_lbl_account_opening_reason' row_class='invisible' />
+                <AccountOpeningReason row_id='row_account_opening_reason' row_class='invisible' />
                 <FormRow type='select' label={it.L('Occupation')} id='occupation' className='jp_value' row_class='invisible JpAcc'>
                     <option value='Office worker'>{it.L('Office worker')}</option>
                     <option value='Director'>{it.L('Director')}</option>
