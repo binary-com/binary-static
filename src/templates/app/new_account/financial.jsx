@@ -34,7 +34,8 @@ const Financial = () => (
                 <FirstName className='input-disabled' />
                 <LastName className='input-disabled' />
                 <DateOfBirth className='input-disabled' />
-                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} />
+                <FormRow type='label' id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible input-disabled' label={it.L('Place of birth')} />
+                <FormRow type='select' id='place_of_birth' row_id='row_place_of_birth' row_class='invisible' label={it.L('Place of birth')} />
                 <Residence />
                 <AccountOpeningReason />
             </Fieldset>
