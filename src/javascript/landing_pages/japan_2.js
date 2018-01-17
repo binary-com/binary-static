@@ -3,6 +3,7 @@
 /* global getLanguage:true */
 /* global jpClient:true */
 /* global recordAffiliateExposure:true */
+/* global Hammer */
 
 window.onload = function () {
     if (!jpClient()) {
@@ -177,10 +178,6 @@ function tabWithButtons(id) {
     const num_of_items = el_contents.length;
     let current_index  = 0;
     let navs;
-    let touchstartX = 0;
-    let touchstartY = 0;
-    let touchendX = 0;
-    let touchendY = 0;
 
     (() => {
         const parent = el_tab_container.querySelector('.twb-buttons');
@@ -216,26 +213,16 @@ function tabWithButtons(id) {
             updateTabContent(current_index);
         });
 
-        el_content_wrapper.addEventListener('touchstart', (event) => {
-            touchstartX = event.changedTouches[0].screenX;
-            touchstartY = event.changedTouches[0].screenY;
-        }, false);
-        el_content_wrapper.addEventListener('touchend', (event) => {
-            touchendX = event.changedTouches[0].screenX;
-            touchendY = event.changedTouches[0].screenY;
-            touchEventsHandler();
-        }, false);
+        const mc = new Hammer(el_content_wrapper);
 
-        function touchEventsHandler() {
-            const diffY = touchendY - touchstartY;
-            const nochangeY = diffY >= -15 && diffY <= 15 ;
-            if (touchendX <= touchstartX && nochangeY) {
-                updateTabContent(++current_index); // swipe left
+        mc.on('swipeleft swiperight tap press', (ev) => {
+            if (ev.type === 'swipeleft') {
+                updateTabContent(++current_index);
             }
-            if (touchendX >= touchstartX && nochangeY) {
-                updateTabContent(--current_index); // swipe right
+            if (ev.type === 'swiperight') {
+                updateTabContent(--current_index);
             }
-        }
+        });
 
         function createLIElement(index) {
             const li = document.createElement('li');
