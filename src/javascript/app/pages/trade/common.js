@@ -111,7 +111,7 @@ const commonTrading = (() => {
     };
 
     const displayMarkets = (id, elements, selected) => {
-        const target   = getElementById(id);
+        const target   = document.getElementById(id);
         const fragment = document.createDocumentFragment();
 
         while (target && target.firstChild) {
@@ -162,7 +162,8 @@ const commonTrading = (() => {
      * display underlyings
      */
     const displayUnderlyings = (id, elements, selected) => {
-        const target = getElementById(id);
+        const target = document.getElementById(id);
+        if (!target) return;
 
         while (target.firstChild) {
             target.removeChild(target.firstChild);
@@ -580,7 +581,7 @@ const commonTrading = (() => {
 
         if (Moment.utc(`${end_date_value} ${end_time_value}`).unix() <= start_date_value) {
             $element.addClass('error-field');
-            if (!getElementById('end_time_validation')) {
+            if (!document.getElementById('end_time_validation')) {
                 $('#expiry_type_endtime').append($('<p/>', { class: 'error-msg', id: 'end_time_validation', text: localize('End time must be after start time.') }));
             }
             return false;
