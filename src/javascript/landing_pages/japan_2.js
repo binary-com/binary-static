@@ -1,7 +1,6 @@
 /* global setSession:true */
 /* global urlForLanguage:true */
 /* global getLanguage:true */
-let email_sent = false;
 
 window.onload = function () {
     toggleMobileMenu();
@@ -44,15 +43,22 @@ function scrollToSection(target_el) {
     const width = window.innerWidth
                   || document.documentElement.clientWidth
                   || document.body.clientWidth;
-
     const target_href = target_el.getAttribute('href').substr(1);
-    let to = document.getElementById(target_href).offsetTop - 70;
-    if (width > 1199) {
-        to = document.getElementById(target_href).offsetTop - 100;
-        if (target_href === 'key-plus' || target_href === 'academy' ){
-            to = document.getElementById(target_href).offsetTop + 200;
+    const offset_top = document.getElementById(target_href).offsetTop;
+
+    let to = offset_top - 50;
+
+    if (/^key-plus|^academy/i.test(target_href)) {
+        to = offset_top - 110;
+    }
+
+    if (width > 1199) { // for slanted pseudo element padding
+        to = offset_top - 100;
+        if (/^key-plus|^academy/i.test(target_href)) {
+            to = offset_top - 100;
         }
     }
+
     scrollTo(to, 500);
     collapseMenu();
 }
@@ -60,8 +66,12 @@ function scrollToSection(target_el) {
 function initForm() {
     const signup_forms = document.querySelectorAll('.signup-form');
     let ws = wsConnect();
+    let email_sent = false;
 
     function sendVerifyEmail(val) {
+        if (!checkCountry(val)) {
+            return;
+        }
         const trimmed_email = trimEmail(val);
         wsSend(ws, {
             verify_email: trimmed_email,
@@ -83,6 +93,25 @@ function initForm() {
 
     function trimEmail(str) {
         return str.replace(/\s/g, '');
+    }
+
+    function checkCountry(val) {
+        const clients_country = sessionStorage.getItem('clients_country');
+        if ((clients_country !== 'my') || /@binary\.com$/.test(val)) {
+            return true;
+        }
+        signup_forms.forEach((el) => {
+            el.querySelector('.signup-form-input').classList.add('invisible');
+            el.querySelector('.signup-form-error').classList.remove('invisible');
+        });
+        return false;
+    }
+
+    function connect() {
+        if (email_sent) return;
+        ws = wsConnect();
+        ws.onmessage = verifySubmit;
+        ws.onclose = connect;
     }
 
     let validation_set = false; // To prevent validating before submit
@@ -107,34 +136,21 @@ function initForm() {
                 setValidationStyle(!validateEmail(el_email.value));
                 validation_set = true;
             }
-            const to = this.offsetTop - 100;
+
+            const to = this.offsetTop - 50;
             scrollTo(to, 500); // Scroll to nearest form
-            return false;
+            return;
         }
 
         if (ws.readyState === 1) {
             sendVerifyEmail(el_email.value);
         } else {
             ws.onopen = sendVerifyEmail(el_email.value);
-            ws.onmessage = verifySubmit;
         }
-        return true;
     }
 
     ws.onmessage = verifySubmit;
-    ws.onclose = function () {
-        connect();
-    };
-
-    function connect() {
-        if (email_sent === false) {
-            ws = wsConnect();
-            ws.onmessage = verifySubmit;
-            ws.onclose = function () {
-                connect();
-            };
-        }
-    }
+    ws.onclose = connect;
 }
 
 function validateEmail(email) {

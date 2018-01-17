@@ -183,10 +183,14 @@ form {
     padding-bottom: 50px;
 
     &.override {
-        @media (min-width: 1199px) {
+        @media (min-width: 1200px) {
             padding-top: 0;
         }
     }
+}
+
+.uppercase-text {
+    text-transform: uppercase;
 }
 
 .bg-orange {

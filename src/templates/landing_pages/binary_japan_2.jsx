@@ -17,7 +17,7 @@ const Product = ({
             <div className={`${icon_1} icon-sm`}></div>
             <div className={`${icon_2} icon-sm`}></div>
         </div>
-        <h3 className='center-text gr-padding-10'>{header}</h3>
+        <h3 className='center-text uppercase-text gr-padding-10'>{header}</h3>
         <p>{description}</p>
         <div className='gr-row gr-row-align-center'>
             <div className='gr-3 gr-8-m tab-image'>
@@ -151,8 +151,8 @@ const BinaryJapan2 = () => (
             </section>
 
             <section className='bg-orange bg-lines'>
-                <div id='key-plus' className='container padding-top-bottom-500'>
-                    <div className='section-title center-text'>
+                <div className='container padding-top-bottom-500'>
+                    <div id='key-plus' className='section-title center-text'>
                         <h1 className='content-inverse-color'>{it.L('{JAPAN ONLY}Key plus point')}</h1>
                         <p className='content-inverse-color'>{it.L('{JAPAN ONLY}Here are some random texts.')}</p>
                     </div>
@@ -314,8 +314,8 @@ const BinaryJapan2 = () => (
             </section>
 
             <section className='bg-orange bg-confetti'>
-                <div id='academy' className='container center-text padding-top-bottom-500'>
-                    <div className='section-title content-inverse-color'>
+                <div className='container center-text padding-top-bottom-500'>
+                    <div id='academy' className='section-title content-inverse-color'>
                         <h1 className='content-inverse-color'>{it.L('{JAPAN ONLY}Academy')}</h1>
                         <p>{it.L('{JAPAN ONLY}Learn to become a better trader and get all the latest news and trends on financial transactions for free.')}</p>
                     </div>
@@ -423,7 +423,7 @@ const BinaryJapan2 = () => (
                                 <div className='signup-form-success white invisible'>
                                     <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
                                 </div>
-                                <div className='signup-form-error invisible'>
+                                <div className='signup-form-error white invisible'>
                                     <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
                                 </div>
                             </form>
