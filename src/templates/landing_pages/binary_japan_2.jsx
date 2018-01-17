@@ -92,7 +92,7 @@ const BinaryJapan2 = () => (
                         <div className='gr-row'>
                             <div className='gr-6 gr-12-m'>
                                 <h2 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world')}</h2>
-                                <form className='signup-form'>
+                                <form id='email_top' className='signup-form'>
                                     <div className='signup-form-input'>
                                         <div className='input-group'>
                                             <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
@@ -412,7 +412,7 @@ const BinaryJapan2 = () => (
                 <div className='container'>
                     <div className='gr-row'>
                         <div className='gr-12'>
-                            <form className='signup-form'>
+                            <form id='email_bottom' className='signup-form'>
                                 <h1 className=''>{it.L('{JAPAN ONLY}Sign up for a free account')}</h1>
                                 <div className='signup-form-input center'>
                                     <div className='input-group'>

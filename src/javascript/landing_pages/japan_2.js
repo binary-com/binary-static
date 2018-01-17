@@ -11,7 +11,8 @@ window.onload = function () {
     }
 
     toggleMobileMenu();
-    initForm();
+    initForm('email_top');
+    initForm('email_bottom');
     recordAffiliateExposure();
     collapseNavbar();
     tabWithButtons();
@@ -67,8 +68,13 @@ function scrollToSection(target_el) {
     collapseMenu();
 }
 
-function initForm() {
-    const signup_forms = document.querySelectorAll('.signup-form');
+function initForm(id) {
+    const signup_form = document.getElementById(id);
+
+    if (!signup_form) {
+        return;
+    }
+    
     let ws = wsConnect();
     let email_sent = false;
 
@@ -85,9 +91,9 @@ function initForm() {
 
     function verifySubmit(msg) {
         const response = JSON.parse(msg.data);
-        setValidationStyle(el_email, response.error);
+        setValidationStyle(signup_form, el_email, response.error);
         if (!response.error) {
-            signup_forms.forEach((el) => {
+            document.querySelectorAll('.signup-form').forEach((el) => {
                 el.querySelector('.signup-form-input').classList.add('invisible');
                 el.querySelector('.signup-form-success').classList.remove('invisible');
                 email_sent = true;
@@ -104,7 +110,7 @@ function initForm() {
         if ((clients_country !== 'my') || /@binary\.com$/.test(val)) {
             return true;
         }
-        signup_forms.forEach((el) => {
+        signup_form.forEach((el) => {
             el.querySelector('.signup-form-input').classList.add('invisible');
             el.querySelector('.signup-form-error').classList.remove('invisible');
         });
@@ -120,9 +126,7 @@ function initForm() {
 
     let validation_set = false; // To prevent validating before submit
 
-    signup_forms.forEach((form) => {
-        form.addEventListener('submit', handleSubmit);
-    });
+    signup_form.addEventListener('submit', handleSubmit);
 
     let el_email;
     function handleSubmit(e) {
@@ -134,10 +138,10 @@ function initForm() {
             if (!validation_set) {
                 ['input', 'change'].forEach((evt) => {
                     el_email.addEventListener(evt, () => {
-                        setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
+                        setValidationStyle(signup_form, el_email, !validateEmail(trimEmail(el_email.value)));
                     });
                 });
-                setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
+                setValidationStyle(signup_form, el_email, !validateEmail(trimEmail(el_email.value)));
                 validation_set = true;
             }
 
@@ -161,35 +165,35 @@ function validateEmail(email) {
     return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(email);
 }
 
-function setValidationStyle(element, has_error) {
+function setValidationStyle(form, element, has_error) {
     const error_class = 'error-field';
     const invisible_class = 'invisible';
 
-    document.querySelectorAll('input[type="email"]').forEach((el) => {
+    form.querySelectorAll('input[type="email"]').forEach((el) => {
         el.classList[has_error ? 'add' : 'remove'](error_class);
     });
 
     if (element.value.length < 1) {
-        document.querySelectorAll('.error_no_email').forEach((el) => {
+        form.querySelectorAll('.error_no_email').forEach((el) => {
             el.classList[has_error ? 'remove' : 'add'](invisible_class);
         });
-        document.querySelectorAll('.error_validate_email').forEach((el) => {
+        form.querySelectorAll('.error_validate_email').forEach((el) => {
             el.classList[has_error ? 'add' : 'remove'](invisible_class);
         });
     }
     else if (element.value.length >= 1) {
-        document.querySelectorAll('.error_validate_email').forEach((el) => {
+        form.querySelectorAll('.error_validate_email').forEach((el) => {
             el.classList[has_error ? 'remove' : 'add'](invisible_class);
         });
-        document.querySelectorAll('.error_no_email').forEach((el) => {
+        form.querySelectorAll('.error_no_email').forEach((el) => {
             el.classList[has_error ? 'add' : 'remove'](invisible_class);
         });
     }
     if (!has_error) {
-        document.querySelectorAll('.error_validate_email').forEach((el) => {
+        form.querySelectorAll('.error_validate_email').forEach((el) => {
             el.classList.add(invisible_class);
         });
-        document.querySelectorAll('.error_no_email').forEach((el) => {
+        form.querySelectorAll('.error_no_email').forEach((el) => {
             el.classList.add(invisible_class);
         });
     }
