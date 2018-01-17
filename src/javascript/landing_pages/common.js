@@ -2,7 +2,7 @@
 // Check view width, add navbar height as offset if on desktop
 function checkWidth() {
     const mq = window.matchMedia('(max-width: 1199px)');
-    return (mq.matches ? 50 : document.getElementById('navigation').scrollHeight);
+    return (mq.matches ? 50 : (document.getElementById('navigation') || '').scrollHeight);
 }
 
 function toggleMobileMenu() {

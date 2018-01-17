@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-10 03:54-0500\n"
+"PO-Revision-Date: 2018-01-16 20:43-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1199,9 +1199,6 @@ msgstr "จำนวน"
 msgid "Amount of above assets"
 msgstr "จำนวนของสินทรัพย์ข้างต้น"
 
-msgid "Amount:"
-msgstr "จำนวน:"
-
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "สำเร็จการศึกษาระดับสูงกว่ามหาวิทยาลัย หรือ ปริญญาตรี หรือ อนุปริญญา"
 
@@ -1913,17 +1910,11 @@ msgstr "บิทคอยน์"
 msgid "Bitcoin Cash"
 msgstr "เงินบิทคอยน์"
 
-msgid "Bitcoin Voucher"
-msgstr "วอยเชอร์บิทคอยน์"
-
 msgid "Bitcoin vs Euro"
 msgstr "บิทคอยน์ และ ยูโร"
 
 msgid "Bitcoin vs US dollar"
 msgstr "บิทคอยน์ และ ดอลลาร์สหรัฐ"
-
-msgid "Bitcoin.co.id voucher withdrawal"
-msgstr "Bitcoin.co.id การถอนวอยเชอร์"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "เทคโนโลยีบล็อกเชน - เงินดิจิทัลใช้เทคโนโลยีบล็อกเชนหลายรูปแบบ (ประเภทหนึ่งของบัญชีสาธารณะ) เพื่อให้ได้บันทึกในแต่ละธุรกรรม "
@@ -2774,9 +2765,6 @@ msgstr "สร้าง"
 msgid "Create Account"
 msgstr "สร้างบัญชี"
 
-msgid "Create Bitcoin.co.id IDR voucher"
-msgstr "Bitcoin.co.id สร้างวอยเชอร์ IDR"
-
 msgid "Create Free Account"
 msgstr "สร้างบัญชีฟรี"
 
@@ -2791,9 +2779,6 @@ msgstr "สร้างบัญชีใหม่"
 
 msgid "Create New Token"
 msgstr "สร้างโทเค่นใหม่"
-
-msgid "Create Voucher"
-msgstr "สร้างวอยเชอร์"
 
 msgid "Create a MetaTrader 5 account"
 msgstr "สร้างบัญชี MetaTrader 5"
@@ -3452,9 +3437,6 @@ msgstr "อีเมล์"
 msgid "Email us your Identity Documents"
 msgstr "โปรดส่งเอกสารของท่านให้เราทางอีเมล์"
 
-msgid "Email:"
-msgstr "อีเมล์:"
-
 msgid "Email: "
 msgstr "อีเมล์: "
 
@@ -3488,20 +3470,17 @@ msgstr "จุดสิ้นสุด"
 msgid "Ends Between"
 msgstr "สิ้นสุดระหว่าง"
 
+msgid "Ends Between/Ends Outside"
+msgstr ""
+
+msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "สิ้นสุดระหว่าง/สิ้นสุดนอกขอบเขต"
 
-msgid "Ends Between/Goes Outside"
+msgid "Ends Between/Ends Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
 msgstr ""
-
-msgid "Ends Between/Goes Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-
-msgid "Ends Between/Goes Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr ""
-
-msgid "Ends In/Out"
-msgstr "Ends In/Out"
 
 msgid "Ends Outside"
 msgstr "สิ้นสุดภายนอก"
@@ -6915,9 +6894,6 @@ msgstr "ใหม่"
 msgid "New Password"
 msgstr "รหัสผ่านใหม่"
 
-msgid "New Trade"
-msgstr "เริ่มเทรด"
-
 msgid "New Year's Day"
 msgstr "วันปีใหม่"
 
@@ -7058,9 +7034,6 @@ msgstr "บันทึก"
 
 msgid "Note: 2017 numbers are projected from August interim figures"
 msgstr "หมายเหตุ: ปี 2017 เป็นคาดการณ์มูลค่าจากเดือนสิงหาคม"
-
-msgid "Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients."
-msgstr "หมายเหตุ: Bitcoin.co.id วอยเชอร์ IDR สำหรับลูกค้าอินโดนีเซียเท่านั้น"
 
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "หมายเหตุ: สำหรับคำถามใด ๆ เกี่ยวกับบัญชีถูกปิดใช้งาน หรือบัญชีที่ถูกตัดออก โปรดติดต่อ<a href=\"%1\">ฝ่ายสนับสนุนลูกค้า</a>"
@@ -8480,9 +8453,6 @@ msgstr "แสดงจำนวนสัญญามากที่สุดท
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "แสดงถึงจำนวนมากที่สุดของสัญญาที่ท่านซื้อ"
 
-msgid "Request successful. We will notify you via email once your voucher is ready."
-msgstr "ดำเนินการคำร้องขอของท่านแล้ว เราจะแจ้งให้ท่านทราบผ่านทางอีเมล์เมื่อวอยเชอร์เรียบร้อยแล้ว"
-
 msgid "Requirements"
 msgstr "ข้อกำหนดความต้องการ"
 
@@ -9104,9 +9074,6 @@ msgstr "เราให้ข้อมูลที่เพียงพออย
 msgid "Stays Between"
 msgstr "อยู่ระหว่าง"
 
-msgid "Stays Between/Goes Out"
-msgstr ""
-
 msgid "Stays Between/Goes Outside"
 msgstr ""
 
@@ -9485,9 +9452,6 @@ msgstr "<strong>เวลาสิ้นสุด</strong> คือ กำห�
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอตสุดท้าย หรือ ก่อน<strong>เวลาสิ้นสุด</strong>"
-
-msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
-msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอต<strong>เมื่อเวลาสิ้นสุด</strong>"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>เวลาเริ่มต้น</strong> คือ เวลาที่สัญญาถูกนำเข้าประมวลผลโดยระบบของเรา"
@@ -10479,9 +10443,6 @@ msgstr "Tick"
 msgid "Tier"
 msgstr "ชั้น"
 
-msgid "Time"
-msgstr "เวลา"
-
 msgid "Time is in the wrong format."
 msgstr "เวลาอยู่ในรูปแบบที่ไม่ถูกต้อง"
 
@@ -11234,9 +11195,6 @@ msgstr "ดูรายงานประจำปี 2016 (พ.ศ. 2559) ข�
 
 msgid "View Chart"
 msgstr "ดูแผนภูมิ"
-
-msgid "View Details"
-msgstr "ดูรายละเอียด"
 
 msgid "View Japanese website"
 msgstr "ดูเว็บไซต์ภาษาญี่ปุ่น"
@@ -12047,12 +12005,6 @@ msgstr "ถอนจากบัญชี MT5"
 
 msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
 msgstr "ถอนจากบัญชี MetaTrader 5 ไปยังบัญชีไบนารีออปชันของคุณ"
-
-msgid "Withdraw funds in the form of Bitcoin.co.id IDR vouchers."
-msgstr "สามารถถอนเงินได้ในรูปแบบ Bitcoin.co.id วอยเชอร์ IDR"
-
-msgid "Withdraw your funds in the form of a Bitcoin.co.id voucher. Vouchers are denominated in IDR and are issued at the prevailing USD/IDR exchange rate."
-msgstr ""
 
 msgid "Withdrawal"
 msgstr "ถอนเงิน"
@@ -12940,9 +12892,6 @@ msgstr "ล้าน"
 msgid "min"
 msgstr "ค่าต่ำสุด"
 
-msgid "minimum available duration"
-msgstr "ช่วงเวลาต่ำสุด"
-
 msgid "minute"
 msgstr "นาที"
 
@@ -13490,7 +13439,7 @@ msgid "{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥
 msgstr "{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000"
 
 msgid "{JAPAN ONLY}%1 is a pioneer in the award-winning online option deal."
-msgstr ""
+msgstr "{JAPAN ONLY}%1 is a pioneer in the award-winning online option deal."
 
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
@@ -13511,10 +13460,10 @@ msgid "{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000"
 msgstr "{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000"
 
 msgid "{JAPAN ONLY}1 week to 1 year terms"
-msgstr ""
+msgstr "{JAPAN ONLY}1 week to 1 year terms"
 
 msgid "{JAPAN ONLY}2 hours to 1 year terms"
-msgstr ""
+msgstr "{JAPAN ONLY}2 hours to 1 year terms"
 
 msgid "{JAPAN ONLY}251"
 msgstr "{JAPAN ONLY}251"
@@ -13598,7 +13547,7 @@ msgid "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the
 msgstr "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the profit and loss result of all transactions that have been made between the customer, to publish the information in the company's home page, at any time while the customer is doing the transaction before the start, or the transaction, the information Make sure, for that you're willing to trade under the calm judgment, we are committed to a variety of environmental improvement."
 
 msgid "{JAPAN ONLY}Academy"
-msgstr ""
+msgstr "{JAPAN ONLY}Academy"
 
 msgid "{JAPAN ONLY}Account Name"
 msgstr "{JAPAN ONLY}Account Name"
@@ -13625,7 +13574,7 @@ msgid "{JAPAN ONLY}All customer funds are deposited with JSF Trust & Banking, an
 msgstr "{JAPAN ONLY}All customer funds are deposited with JSF Trust & Banking, and in the event of our business failure, they will be refunde via an independent attorney acting as beneficiary agent"
 
 msgid "{JAPAN ONLY}All customer funds are deposited with JSF Trust Bank and will be refunded by an independent attorney as a beneficiary agent in case of business failure"
-msgstr ""
+msgstr "{JAPAN ONLY}All customer funds are deposited with JSF Trust Bank and will be refunded by an independent attorney as a beneficiary agent in case of business failure"
 
 msgid "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
 msgstr "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
@@ -13679,7 +13628,7 @@ msgid "{JAPAN ONLY}At the top of the page as shown above."
 msgstr "{JAPAN ONLY}At the top of the page as shown above."
 
 msgid "{JAPAN ONLY}Available on desktop and mobile platforms"
-msgstr ""
+msgstr "{JAPAN ONLY}Available on desktop and mobile platforms"
 
 msgid "{JAPAN ONLY}Award-winning trading excellence"
 msgstr "{JAPAN ONLY}Award-winning trading excellence"
@@ -13709,7 +13658,7 @@ msgid "{JAPAN ONLY}Binary Options"
 msgstr "{JAPAN ONLY}Binary Options"
 
 msgid "{JAPAN ONLY}Binary Options vs FX"
-msgstr ""
+msgstr "{JAPAN ONLY}Binary Options vs FX"
 
 msgid "{JAPAN ONLY}Binary option can make a higher profit, for the same risk but less margin"
 msgstr "{JAPAN ONLY}Binary option can make a higher profit, for the same risk but less margin"
@@ -13763,7 +13712,7 @@ msgid "{JAPAN ONLY}Current or former member of category 1) or 2)"
 msgstr "{JAPAN ONLY}Current or former member of category 1) or 2)"
 
 msgid "{JAPAN ONLY}Daily market report"
-msgstr ""
+msgstr "{JAPAN ONLY}Daily market report"
 
 msgid "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
 msgstr "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
@@ -13775,13 +13724,13 @@ msgid "{JAPAN ONLY}Delta refers to  a percentage change of the option price with
 msgstr "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
 
 msgid "{JAPAN ONLY}Deposit funds and begin trading"
-msgstr ""
+msgstr "{JAPAN ONLY}Deposit funds and begin trading"
 
 msgid "{JAPAN ONLY}Designated dispute resolution organization"
 msgstr "{JAPAN ONLY}Designated dispute resolution organization"
 
 msgid "{JAPAN ONLY}Disclaimer text here"
-msgstr ""
+msgstr "{JAPAN ONLY}Disclaimer text here"
 
 msgid "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
 msgstr "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
@@ -13814,7 +13763,7 @@ msgid "{JAPAN ONLY}Download our latest report here"
 msgstr "{JAPAN ONLY}Download our latest report here"
 
 msgid "{JAPAN ONLY}E-book and video"
-msgstr ""
+msgstr "{JAPAN ONLY}E-book and video"
 
 msgid "{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
 msgstr "{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
@@ -13886,7 +13835,7 @@ msgid "{JAPAN ONLY}Footer regulatory text"
 msgstr "{JAPAN ONLY}Footer regulatory text"
 
 msgid "{JAPAN ONLY}Footer text here"
-msgstr ""
+msgstr "{JAPAN ONLY}Footer text here"
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
@@ -13949,7 +13898,7 @@ msgid "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral
 msgstr "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
 
 msgid "{JAPAN ONLY}Here are some random texts."
-msgstr ""
+msgstr "{JAPAN ONLY}Here are some random texts."
 
 msgid "{JAPAN ONLY}High quality promotional materials with online reporting tools"
 msgstr "{JAPAN ONLY}High quality promotional materials with online reporting tools"
@@ -13970,7 +13919,7 @@ msgid "{JAPAN ONLY}How to Open an Account"
 msgstr "{JAPAN ONLY}How to Open an Account"
 
 msgid "{JAPAN ONLY}How to open account"
-msgstr ""
+msgstr "{JAPAN ONLY}How to open account"
 
 msgid "{JAPAN ONLY}How to open an account"
 msgstr "{JAPAN ONLY}How to open an account"
@@ -14090,7 +14039,7 @@ msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior
 msgstr "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 
 msgid "{JAPAN ONLY}Interactive webinar"
-msgstr ""
+msgstr "{JAPAN ONLY}Interactive webinar"
 
 msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "{JAPAN ONLY}Introduction to Binary Options"
@@ -14144,7 +14093,7 @@ msgid "{JAPAN ONLY}Key plus point"
 msgstr "{JAPAN ONLY}Key plus point"
 
 msgid "{JAPAN ONLY}Key plus points"
-msgstr ""
+msgstr "{JAPAN ONLY}Key plus points"
 
 msgid "{JAPAN ONLY}Knowledge Test"
 msgstr "{JAPAN ONLY}Knowledge Test"
@@ -14174,7 +14123,7 @@ msgid "{JAPAN ONLY}Learn more about binary options for academies using webinars,
 msgstr "{JAPAN ONLY}Learn more about binary options for academies using webinars, ebooks, videos."
 
 msgid "{JAPAN ONLY}Learn to become a better trader and get all the latest news and trends on financial transactions for free."
-msgstr ""
+msgstr "{JAPAN ONLY}Learn to become a better trader and get all the latest news and trends on financial transactions for free."
 
 msgid "{JAPAN ONLY}Learning to trade online?"
 msgstr "{JAPAN ONLY}Learning to trade online?"
@@ -14225,7 +14174,7 @@ msgid "{JAPAN ONLY}Now you can trade fx markets using binary options with one of
 msgstr "{JAPAN ONLY}Now you can trade fx markets using binary options with one of the origical pioneers of binary options worldwide"
 
 msgid "{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world"
-msgstr ""
+msgstr "{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world"
 
 msgid "{JAPAN ONLY}On-time Payments Every Time"
 msgstr "{JAPAN ONLY}On-time Payments Every Time"
@@ -14276,7 +14225,7 @@ msgid "{JAPAN ONLY}Our trading page provides an overall view of all the option c
 msgstr "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
 
 msgid "{JAPAN ONLY}Pass our Knowledge Test"
-msgstr ""
+msgstr "{JAPAN ONLY}Pass our Knowledge Test"
 
 msgid "{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account."
 msgstr "{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account."
@@ -14333,19 +14282,19 @@ msgid "{JAPAN ONLY}Please note:"
 msgstr "{JAPAN ONLY}Please note:"
 
 msgid "{JAPAN ONLY}Practice account"
-msgstr ""
+msgstr "{JAPAN ONLY}Practice account"
 
 msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgstr "{JAPAN ONLY}Pre-Contract Documents"
 
 msgid "{JAPAN ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
-msgstr ""
+msgstr "{JAPAN ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
 
 msgid "{JAPAN ONLY}Predict whether a FX rate will touch a target barrier or not."
-msgstr ""
+msgstr "{JAPAN ONLY}Predict whether a FX rate will touch a target barrier or not."
 
 msgid "{JAPAN ONLY}Predict whether a FX rate will touch either target barrier before expiry."
-msgstr ""
+msgstr "{JAPAN ONLY}Predict whether a FX rate will touch either target barrier before expiry."
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of the underlying spot price, and are dependent on multiple factors which may vary."
@@ -14375,10 +14324,10 @@ msgid "{JAPAN ONLY}Range Options: End-In / End-Out"
 msgstr "{JAPAN ONLY}Range Options: End-In / End-Out"
 
 msgid "{JAPAN ONLY}Range Options: Stay-In / Break-Out"
-msgstr ""
+msgstr "{JAPAN ONLY}Range Options: Stay-In / Break-Out"
 
 msgid "{JAPAN ONLY}Receive account activation code by secure mail and activate account"
-msgstr ""
+msgstr "{JAPAN ONLY}Receive account activation code by secure mail and activate account"
 
 msgid "{JAPAN ONLY}Register"
 msgstr "{JAPAN ONLY}Register"
@@ -14789,7 +14738,7 @@ msgid "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is boun
 msgstr "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly"
 
 msgid "{JAPAN ONLY}The binary option can provide profit opportunities even at a small price range. Here is a table comparison of foreign exchange and binary options"
-msgstr ""
+msgstr "{JAPAN ONLY}The binary option can provide profit opportunities even at a small price range. Here is a table comparison of foreign exchange and binary options"
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
@@ -14975,7 +14924,7 @@ msgid "{JAPAN ONLY}Why choose binary options over foreign exchange"
 msgstr "{JAPAN ONLY}Why choose binary options over foreign exchange"
 
 msgid "{JAPAN ONLY}Why choose us"
-msgstr ""
+msgstr "{JAPAN ONLY}Why choose us"
 
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "{JAPAN ONLY}Win Loss Ratio"
@@ -15035,7 +14984,7 @@ msgid "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time 
 msgstr "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 
 msgid "{JAPAN ONLY}Your funds are kept safe"
-msgstr ""
+msgstr "{JAPAN ONLY}Your funds are kept safe"
 
 msgid "{JAPAN ONLY}Your funds are safe"
 msgstr "{JAPAN ONLY}Your funds are safe"

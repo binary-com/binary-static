@@ -5,7 +5,7 @@ import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../
 
 const PaymentLogo = ({ items }) => items.map((item, inx) => (
     <div key={inx} className='gr-2 gr-4-m gr-padding-30 center-text'>
-        <img src={it.url_for(`images/pages/home-beta/payment/${item}.svg`)} />
+        <img className='gr-12 gr-centered' src={it.url_for(`images/pages/home-beta/payment/${item}.svg`)} />
     </div>
 ));
 
