@@ -187,7 +187,7 @@ const Careers = () => (
                         <img className='responsive' src={it.url_for('images/pages/careers/graduate-@3x.jpg')} />
                     </div>
                     <div className='gr-8 gr-no-gutter gr-gutter-t gr-12-p gr-12-m graduate-box'>
-                        <h1>{it.L('[_1] Graduate Programme', it.website_name)}</h1>
+                        <h1>{it.L('[_1] Graduate programme', it.website_name)}</h1>
                             <p>{it.L('Build a successful career at the intersection of finance and technology. Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and empower your career.')}</p>
                         <div className='gr-padding-10'>
                             <a className='button no-ajax' href={it.url_for('graduates')}>
