@@ -101,7 +101,7 @@ const Forex = () => (
                     <HeaderSecondary header={it.L('Step 3: How to purchase your first currency pair')} />
                     <p>{it.L('After you\'ve decided which position you want to take, your next step is to purchase that currency pair on MetaTrader 5')}.</p>
                     <p>{it.L('Here\'s an example of the EUR/USD currency pair and its bid-ask price:')}</p>
-                    <img className='gr-6 gr-no-gutter' src={it.url_for('images/pages/get-started-beta/mt5/forex/price.png')} />
+                    <img className='gr-6 gr-12-m gr-no-gutter' src={it.url_for('images/pages/get-started-beta/mt5/forex/price.png')} />
                     <p>{it.L('To go long, you\'ll want to click on \'Buy\' to purchase EUR 1 for USD 1.17726')}</p>
                     <p>{it.L('To go short, you\'ll click on \'Sell\' to sell EUR 1 and receive USD 1.17725 in return.')}</p>
                 </Section>
