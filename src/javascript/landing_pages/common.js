@@ -225,6 +225,7 @@ function showAfffiliatePopup() {
     const clients_country = sessionStorage.getItem('clients_country');
     const xmlhttp = new XMLHttpRequest();
 
+    const scroll_lock = 'scroll-lock';
     const container_id       = 'affiliate_disclaimer_popup';
     const el_affiliate_popup = document.getElementById(container_id);
 
@@ -250,6 +251,7 @@ function showAfffiliatePopup() {
     }
 
     function close() {
+        document.body.classList.remove('scroll-lock');
         el_affiliate_popup.remove();
     }
 }
