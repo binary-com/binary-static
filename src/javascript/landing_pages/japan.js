@@ -18,6 +18,7 @@ window.onload = function() {
 function initForm() {
     const signup_forms = document.querySelectorAll('.signup-form');
     let ws = wsConnect();
+    let email_sent = false;
 
     function sendVerifyEmail(val) {
         if (!checkCountry(val)) {
@@ -37,6 +38,7 @@ function initForm() {
             signup_forms.forEach((el) => {
                 el.querySelector('.signup-form-input').classList.add('invisible');
                 el.querySelector('.signup-form-success').classList.remove('invisible');
+                email_sent = true;
             });
         }
     }
@@ -58,6 +60,7 @@ function initForm() {
     }
 
     function connect() {
+        if (email_sent) return;
         ws = wsConnect();
         ws.onmessage = verifySubmit;
         ws.onclose = connect;
@@ -94,7 +97,6 @@ function initForm() {
         if (ws.readyState === 1) {
             sendVerifyEmail(el_email.value);
         } else {
-            ws = wsConnect();
             ws.onopen = sendVerifyEmail(el_email.value);
         }
     }
