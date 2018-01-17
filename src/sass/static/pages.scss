@@ -475,9 +475,6 @@ body #not_authenticated_financial ul.checked > li {
     .career {
         margin-top: 0;
 
-        .button span {
-            text-transform: none;
-        }
         .top-banner {
             background: url('../images/pages/careers/careers-1_bg.jpg') no-repeat;
             background-size: cover;
@@ -620,7 +617,6 @@ body #not_authenticated_financial ul.checked > li {
                     background-color: $COLOR_WHITE;
                     color: $COLOR_BLUE;
                     border-radius: 0;
-                    text-transform: none;
                     font-weight: 600;
                 }
                 @media screen and (max-width: 1024px) and (min-width: 769px) {
@@ -674,6 +670,9 @@ body #not_authenticated_financial ul.checked > li {
                     outline: 0;
                 }
             }
+        }
+        .america-careers-link a {
+            text-transform: capitalize;
         }
         .footer-email {
             margin-bottom: -20px;

@@ -272,7 +272,7 @@ const Careers = () => (
                     <p>{it.L('Looking for a new and exciting career in a country that\'s modern, diverse, and tolerant? [_1] is one of the world\'s most progressive companies, with offices in Asia and Europe.', it.website_name)}</p>
                 </div>
 
-                <FillBox center padding='4' href={it.url_for('careers-for-americans')} text={it.L('Learn more')} />
+                <FillBox className='america-careers-link' center padding='4' href={it.url_for('careers-for-americans')} text={it.L('Learn more')} />
             </div>
         </div>
 
