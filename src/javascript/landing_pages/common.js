@@ -196,7 +196,7 @@ function recordAffiliateExposure() {
     const is_subsidiary = /\w{1}/.test(getParamValue(Url, 's'));
 
     /* global Cookies */
-    const cookie_token = Cookies.get('affiliate_tracking');
+    const cookie_token = Cookies.getJSON('affiliate_tracking');
     if (cookie_token) {
         // Already exposed to some other affiliate.
         if (is_subsidiary && cookie_token && cookie_token.t) {
@@ -231,22 +231,18 @@ function showAfffiliatePopup() {
 
     if (jpClient() || clients_country === 'jp') {
         xmlhttp.onreadystatechange = () => {
-            if (xmlhttp.readyState === XMLHttpRequest.DONE) {
-                if (xmlhttp.status === 200) {
-                    const div     = document.createElement('div');
-                    const parser  = new DOMParser();
-                    const el      = parser.parseFromString(xmlhttp.response, 'text/html');
-                    const element = el.body.firstChild;
-                    div.classList.add('lightbox');
-                    div.appendChild(element);
-                    el_affiliate_popup.appendChild(div);
+            if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
+                const div     = document.createElement('div');
+                const parser  = new DOMParser();
+                const el      = parser.parseFromString(xmlhttp.response, 'text/html');
+                const element = el.body.firstChild;
+                div.classList.add('lightbox');
+                div.appendChild(element);
+                el_affiliate_popup.appendChild(div);
 
-                    const el_affiliate_btn = document.getElementById('btn_affiliate_proceed');
-                    el_affiliate_btn.removeEventListener('click', close);
-                    el_affiliate_btn.addEventListener('click', close);
-
-                    document.body.classList.add('scroll-lock');
-                }
+                const el_affiliate_btn = document.getElementById('btn_affiliate_proceed');
+                el_affiliate_btn.removeEventListener('click', close);
+                el_affiliate_btn.addEventListener('click', close);
             }
         };
 
