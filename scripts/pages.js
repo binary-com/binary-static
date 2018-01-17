@@ -3,7 +3,6 @@ module.exports = [
     // ==================== Section: "app" ====================
     ['cashier',                            'app/cashier/index',                         'default',    'Cashier'],
     ['cashier/account_transfer',           'app/cashier/account_transfer',              'default',    'Transfer Between Accounts'],
-    ['cashier/bitcoin-voucher',            'app/cashier/bitcoin_voucher',               'default',    'Bitcoin Voucher',                   'NOT-id'],
     ['cashier/confirmation',               'app/cashier/confirmation',                  'default',    'Confirm'],
     ['cashier/deposit-jp',                 'app/japan/cashier/deposit',                 'default',    'Deposit',                           'NOT-ja,en'],
     ['cashier/epg_forwardws',              'app/cashier/deposit_withdraw',              'default',    'Cashier'],
@@ -19,7 +18,6 @@ module.exports = [
 
     ['multi_barriers_trading',             'app/trade/mb_trading',                      'full_width', 'Trusted by traders since 2000'],
     ['trading',                            'app/trade/trading',                         'default',    'Trusted by traders since 2000'],
-    ['trading_beta',                       'app/trade/beta/trading',                    'default',    'Trusted by traders since 2000',     'ja'],
 
     ['new_account/japanws',                'app/new_account/japan',                     'default',    'Real Money Account Opening',        'NOT-ja,en'],
     ['new_account/knowledge_testws',       'app/japan/knowledge_test',                  'default',    'Real Money Account Opening',        'NOT-ja,en'],

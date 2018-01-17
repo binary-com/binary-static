@@ -80,7 +80,6 @@ const Page = (() => {
             recordAffiliateExposure();
             endpointNotification();
         }
-        Menu.init();
         Contents.onLoad();
 
         if (sessionStorage.getItem('showLoginPage')) {
@@ -90,10 +89,12 @@ const Page = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
                 checkLanguage();
+                Menu.init();
                 RealityCheck.onLoad();
             });
         } else {
             checkLanguage();
+            Menu.init();
         }
         TrafficSource.setData();
     };

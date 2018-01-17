@@ -69,6 +69,8 @@ form {
         display: flex;
         flex-direction: column;
         position: relative;
+        max-width: 510px;
+        margin: auto;
         @media (min-width: 575px) {
             flex-direction: row;
             justify-content: center;
@@ -101,13 +103,14 @@ form {
         .error-msg {
             position: absolute;
             top: 100%;
+            left: 3px;
             @media (max-width: 575px) {
                 position: relative;
                 margin: 5px 0;
             }
         }
     }
-    .signup-form-success {
+    .signup-form-success, .signup-form-error {
         background-color: $COLOR_ORANGE;
         padding: 5px;
         color: $COLOR_WHITE;
@@ -213,6 +216,9 @@ form {
             color: $COLOR_WHITE;
             padding: 15px;
             font-weight: bold;
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
         }
         & + img {
             margin-top: -20px;
@@ -360,6 +366,7 @@ form {
 
         .input-group {
             justify-content: flex-start;
+            margin-left: 0;
         }
     }
     .intro-bottom-text {
@@ -394,6 +401,7 @@ form {
         padding: 15px;
         border-radius: 5px;
         margin: 0;
+        text-align: center;
     }
     h1 {
         color: $COLOR_WHITE;
@@ -688,7 +696,7 @@ form {
     @include flex-center;
     padding: 0 10px;
     text-align: left;
-    @media (max-width: 575px) {
+    @media (max-width: 768px) {
         max-width: 200px;
     }
     @media (max-width: 320px) {

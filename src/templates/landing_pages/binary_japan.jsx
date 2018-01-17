@@ -69,6 +69,9 @@ const BinaryJapan = () => (
                             <div className='signup-form-success invisible'>
                                 <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
                             </div>
+                            <div className='signup-form-error invisible'>
+                                <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -417,6 +420,9 @@ const BinaryJapan = () => (
                                 <div className='signup-form-success invisible'>
                                     <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
                                 </div>
+                                <div className='signup-form-error invisible'>
+                                    <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -481,7 +487,7 @@ const BinaryJapan = () => (
                             <div className='card-body gr-row'>
                                 <div className='gr-2 gr-push-1 gr-4-p gr-push-0-p gr-10-m gr-push-1-m'>
                                     <img className='img-md' src={it.url_for('images/japan/version1/customer-support.svg')} />
-                                    <h3 className='size-3'>{it.L('{JAPAN ONLY}We have a support team to answer your questions: support@binary.com')}</h3>
+                                    <h3 className='size-3'>{it.L('{JAPAN ONLY}We have a support team to answer your questions: <a href=\'mailto:support@binary.com\'>support@binary.com</a>')}</h3>
                                 </div>
                                 <div className='gr-2 gr-push-3 gr-4-p gr-push-0-p gr-10-m gr-push-1-m'>
                                     <img className='img-md' src={it.url_for('images/japan/version1/accounting-book.svg')} />
@@ -573,6 +579,9 @@ const BinaryJapan = () => (
                             <div className='signup-form-success invisible'>
                                 <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
                             </div>
+                            <div className='signup-form-error invisible'>
+                                <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -589,6 +598,9 @@ const BinaryJapan = () => (
             </div>
         </footer>
 
+        <div id='affiliate_disclaimer_popup'></div>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js'></script>
         <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
         <script src={`${it.url_for('js/landing_pages/japan.js')}?${it.static_hash}`}></script>
         </body>
