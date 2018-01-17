@@ -1,10 +1,13 @@
-/* global toggleMobileMenu:false */
 /* global setSession:true */
+/* global urlForLanguage:true */
+/* global getLanguage:true */
 window.onload = function() {
     initForm();
     getClientCountry();
 
-    window.onresize = checkWidth;
+    if (!isJPClient()) {
+        window.location = urlForLanguage('ja');
+    }
 
     // Store gclid
     const gclid = getParamValue(document.referrer, 'gclid');
@@ -159,4 +162,8 @@ function getClientCountry() {
     };
 
     return clients_country;
+}
+
+function isJPClient() {
+    return /ja/.test(getLanguage()) || /ja/.test(getClientCountry());
 }
