@@ -141,7 +141,7 @@ function initForm() {
                 validation_set = true;
             }
 
-            const to = this.offsetTop - 50;
+            const to = this.offsetTop - 100;
             scrollTo(to, 500); // Scroll to nearest form
             return;
         }
