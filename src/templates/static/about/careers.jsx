@@ -167,11 +167,11 @@ const Careers = () => (
                 <Box gr='gr-6' text={it.L('Compliance')} />
                 <Box gr='gr-6' text={it.L('Customer support')} />
                 <Box gr='gr-6' text={it.L('Human resources')} />
-                <Box gr='gr-6' text={it.L('Administrator and HR')} />
+                <Box gr='gr-6' text={it.L('Administration and HR')} />
                 <Box gr='gr-6' text={it.L('Internal audit')} />
             </div>
 
-            <div className='gr-padding-10 center-text'>
+            <div className='gr-padding-10 center-text btn-margin-top'>
                 <a className='button' href={it.url_for('open-positions')}>
                     <span>{it.L('View open positions')}</span>
                 </a>
@@ -190,7 +190,7 @@ const Careers = () => (
                         <h1>{it.L('[_1] Graduate Programme', it.website_name)}</h1>
                             <p>{it.L('Build a successful career at the intersection of finance and technology. Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and empower your career.')}</p>
                         <div className='gr-padding-10'>
-                            <a className='button' href={it.url_for('graduates')}>
+                            <a className='button no-ajax' href={it.url_for('graduates')}>
                                 <span>{it.L('Learn more')}</span>
                             </a>
                         </div>
@@ -229,7 +229,7 @@ const Careers = () => (
                             <Step text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
                                   circle_no='5'
                             />
-                            <Step text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and don\'t make you negotiate in order to eliminate salary inequities and stress.')}
+                            <Step text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and we don\'t make you negotiate in order to eliminate salary inequities and stress.')}
                                   circle_no='6'
                             />
                         </div>
@@ -241,7 +241,7 @@ const Careers = () => (
                             <Step text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
                                   circle_no='1'
                             />
-                            <Step text={it.L('If you\'re shortlisted, we\'ll you a Self-Assessment Topgrading Interview (SATI) questionnaire.')}
+                            <Step text={it.L('If you\'re shortlisted, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire.')}
                                   circle_no='2'
                             />
                             <Step text={it.L('If you score well on the SATI, we\'ll send you a talent test. Do well on the talent test and and we\'ll invite you for an interview with a member of our recruitment team.')}
@@ -255,7 +255,7 @@ const Careers = () => (
                             <Step text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
                                   circle_no='5'
                             />
-                            <Step text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and don\'t make you negotiate in order to eliminate salary inequities and stress.')}
+                            <Step text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and we don\'t make you negotiate in order to eliminate salary inequities and stress.')}
                                   circle_no='6'
                             />
                         </div>
@@ -269,7 +269,7 @@ const Careers = () => (
             <div className='gr-padding-30 center-text'>
                 <div className='gr-padding-30'>
                     <h1>{it.L('Career opportunities for Americans')}</h1>
-                    <p>{it.L('Looking for a new and exciting career in a country that\'s modern, diverse and tolerant? [_1] is one of the world\'s most progressive companies, with offices in Asia and Europe.', it.website_name)}</p>
+                    <p>{it.L('Looking for a new and exciting career in a country that\'s modern, diverse, and tolerant? [_1] is one of the world\'s most progressive companies, with offices in Asia and Europe.', it.website_name)}</p>
                 </div>
 
                 <FillBox center padding='4' href={it.url_for('careers-for-americans')} text={it.L('Learn more')} />
