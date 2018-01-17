@@ -107,7 +107,7 @@ const PersonalDetails = (() => {
             el_key     = document.getElementById(key);
             el_lbl_key = document.getElementById(`lbl_${key}`);
             // prioritise labels for japan account
-            el_key = is_jp || /^(place_of_birth|account_opening_reason)$/.test(key) ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
+            el_key = is_jp || (key === 'place_of_birth' && data[key]) || key === 'account_opening_reason' ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
             if (el_key) {
                 data_key             = /format_money/.test(el_key.className) && data[key] !== null ? formatMoney(currency, data[key]) : (data[key] || '');
                 editable_fields[key] = data_key;
