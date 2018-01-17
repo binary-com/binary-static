@@ -243,6 +243,8 @@ function showAfffiliatePopup() {
                 const el_affiliate_btn = document.getElementById('btn_affiliate_proceed');
                 el_affiliate_btn.removeEventListener('click', close);
                 el_affiliate_btn.addEventListener('click', close);
+
+                document.body.classList.add('scroll-lock');
             }
         };
 
