@@ -1,21 +1,23 @@
 /* global setSession:true */
 /* global urlForLanguage:true */
 /* global getLanguage:true */
+/* global jpClient:true */
+/* global recordAffiliateExposure:true */
 window.onload = function() {
-    initForm();
     getClientCountry();
-
-    if (!isJPClient()) {
+    if (!jpClient()) {
         window.location = urlForLanguage('ja');
     }
+
+    initForm();
+    recordAffiliateExposure();
+    commonOnload();
 
     // Store gclid
     const gclid = getParamValue(document.referrer, 'gclid');
     if (gclid) {
         localStorage.setItem('gclid', gclid);
     }
-
-    commonOnload();
 };
 
 function initForm() {
@@ -162,8 +164,4 @@ function getClientCountry() {
     };
 
     return clients_country;
-}
-
-function isJPClient() {
-    return /ja/.test(getLanguage()) || /ja/.test(getClientCountry());
 }

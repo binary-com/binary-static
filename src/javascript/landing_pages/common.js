@@ -174,3 +174,84 @@ function setupCrowdin() {
 function commonOnload() {
     setupCrowdin();
 }
+
+function jpClient() {
+    return (getLanguage() === 'ja' || jpResidence());
+}
+
+function jpResidence () {
+    return (JSON.parse(localStorage.getItem('client.accounts') || '{}')[localStorage.getItem('active_loginid')] || {}).residence === 'jp';
+}
+
+function recordAffiliateExposure() {
+    const Url   = window.location;
+    const token = getParamValue(Url, 't');
+    if (!token || token.length !== 32) {
+        return false;
+    }
+
+    showAfffiliatePopup();
+
+    const token_length  = token.length;
+    const is_subsidiary = /\w{1}/.test(getParamValue(Url, 's'));
+
+    /* global Cookies */
+    const cookie_token = Cookies.get('affiliate_tracking');
+    if (cookie_token) {
+        // Already exposed to some other affiliate.
+        if (is_subsidiary && cookie_token && cookie_token.t) {
+            return false;
+        }
+    }
+
+    // Record the affiliate exposure. Overwrite existing cookie, if any.
+    const cookie_hash = {};
+    if (token_length === 32) {
+        cookie_hash.t = token.toString();
+    }
+    if (is_subsidiary) {
+        cookie_hash.s = '1';
+    }
+
+    Cookies.set('affiliate_tracking', cookie_hash, {
+        expires: 365, // expires in 365 days
+        path   : '/',
+        domain : `.${location.hostname.split('.').slice(-2).join('.')}`,
+    });
+    return true;
+}
+
+function showAfffiliatePopup() {
+    const clients_country = sessionStorage.getItem('clients_country');
+    const xmlhttp = new XMLHttpRequest();
+
+    const container_id       = 'affiliate_disclaimer_popup';
+    const el_affiliate_popup = document.getElementById(container_id);
+
+    if (jpClient() || clients_country === 'jp') {
+        xmlhttp.onreadystatechange = () => {
+            if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+                if (xmlhttp.status === 200) {
+                    const div     = document.createElement('div');
+                    const parser  = new DOMParser();
+                    const el      = parser.parseFromString(xmlhttp.response, 'text/html');
+                    const element = el.body.firstChild;
+                    div.classList.add('lightbox');
+                    div.appendChild(element);
+                    el_affiliate_popup.appendChild(div);
+
+                    const el_affiliate_btn = document.getElementById('btn_affiliate_proceed');
+                    el_affiliate_btn.removeEventListener('click', close);
+                    el_affiliate_btn.addEventListener('click', close);
+                }
+            }
+        };
+
+        xmlhttp.open('GET', urlFor('affiliate_disclaimer'), true);
+        xmlhttp.send();
+    }
+
+    function close() {
+        el_affiliate_popup.remove();
+    }
+}
