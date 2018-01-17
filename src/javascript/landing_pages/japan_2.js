@@ -213,9 +213,9 @@ function tabWithButtons(id) {
             updateTabContent(current_index);
         });
 
-        const mc = new Hammer(el_content_wrapper);
+        const touch_swipe = new Hammer(el_content_wrapper);
 
-        mc.on('swipeleft swiperight tap press', (ev) => {
+        touch_swipe.on('swipeleft swiperight tap press', (ev) => {
             if (ev.type === 'swipeleft') {
                 updateTabContent(++current_index);
             }
