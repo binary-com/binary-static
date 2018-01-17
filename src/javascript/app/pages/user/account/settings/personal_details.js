@@ -43,6 +43,26 @@ const PersonalDetails = (() => {
         }
     };
 
+    const showHideLabel = (get_settings) => {
+        if (!is_jp) {
+            ['account_opening_reason', 'place_of_birth'].forEach((id) => {
+                if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
+                    if (get_settings[id]) {
+                        // we have to show text here instead of relying on displayGetSettingsData()
+                        // since it prioritizes showing data instead of label
+                        const $label = $(`#lbl_${id}`);
+                        $label.text(get_settings[id]);
+                        $(`#row_${id}`).setVisibility(0);
+                        $(`#row_lbl_${id}`).setVisibility(1);
+                    } else {
+                        $(`#row_lbl_${id}`).setVisibility(0);
+                        $(`#row_${id}`).setVisibility(1);
+                    }
+                }
+            });
+        }
+    };
+
     const getDetailsResponse = (data) => {
         const get_settings         = $.extend({}, data);
         get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
@@ -52,19 +72,6 @@ const PersonalDetails = (() => {
         if (!hide_name) {
             setVisibility('#row_name');
             get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
-        }
-
-        if (Object.prototype.hasOwnProperty.call(get_settings, 'account_opening_reason') && !is_jp) {
-            if (get_settings.account_opening_reason) {
-                // we have to show text here instead of relying on displayGetSettingsData() since it prioritizes
-                // showing data in account_opening_reason instead of lbl_account_opening_reason
-                $('#lbl_account_opening_reason').text(get_settings.account_opening_reason);
-                $('#row_account_opening_reason').setVisibility(0);
-                $('#row_lbl_account_opening_reason').setVisibility(1);
-            } else {
-                $('#row_lbl_account_opening_reason').setVisibility(0);
-                $('#row_account_opening_reason').setVisibility(1);
-            }
         }
 
         displayGetSettingsData(get_settings);
@@ -231,9 +238,7 @@ const PersonalDetails = (() => {
     };
 
     const populateResidence = (response) => {
-        const residence_list  = response.residence_list;
-        const $place_of_birth = $('#place_of_birth');
-        const $tax_residence  = $('#tax_residence');
+        const residence_list = response.residence_list;
         if (residence_list.length > 0) {
             const $options               = $('<div/>');
             const $options_with_disabled = $('<div/>');
@@ -247,16 +252,29 @@ const PersonalDetails = (() => {
             });
 
             if (residence) {
-                const tax_residence = get_settings_data.tax_residence;
-                $place_of_birth.html($options.html());
+                const $place_of_birth = $('#place_of_birth');
+                const get_settings    = $.extend({}, get_settings_data);
+                if (get_settings_data.place_of_birth) {
+                    get_settings.place_of_birth =
+                        (residence_list.find(obj => obj.value === get_settings_data.place_of_birth) || {}).text ||
+                        get_settings.place_of_birth;
+                } else {
+                    $place_of_birth
+                        .html($options.html())
+                        .val(residence);
+                }
+
+                // needs to be called after place_of_birth value has been determined
+                showHideLabel(get_settings);
+
+                const $tax_residence = $('#tax_residence');
                 $tax_residence.html($options.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
-                            .val(tax_residence ? tax_residence.split(',') : '').trigger('change');
+                            .val(get_settings_data.tax_residence ? get_settings_data.tax_residence.split(',') : '').trigger('change');
                         setVisibility('#tax_residence');
                     }, 500);
                 });
-                $place_of_birth.val(get_settings_data.place_of_birth || residence);
             } else {
                 $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
                 const $residence = $('#residence');
