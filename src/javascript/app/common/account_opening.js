@@ -67,9 +67,11 @@ const AccountOpening = (() => {
                 if (place_of_birth) {
                     const txt_place_of_birth =
                           (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
-                    $('#lbl_place_of_birth').text(txt_place_of_birth || place_of_birth).attr('data-value', place_of_birth).setVisibility(1);
+                    $('#lbl_place_of_birth').text(txt_place_of_birth || place_of_birth).attr('data-value', place_of_birth);
+                    $('#row_lbl_place_of_birth').setVisibility(1);
                 } else {
-                    $place_of_birth.html($options.html()).val(residence_value).setVisibility(1);
+                    $place_of_birth.html($options.html()).val(residence_value);
+                    $('#row_place_of_birth').setVisibility(1);
                 }
             }
 
