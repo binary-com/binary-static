@@ -82,6 +82,10 @@ function urlFor(path) {
     return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${path}.html`;
 }
 
+function urlForLanguage (lang, url = window.location.href, default_language = 'en') {
+    return url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${(lang || default_language).trim().toLowerCase()}/`);
+}
+
 function wsConnect() {
     const config_server = localStorage.getItem('config.server_url');
     const server_url    = config_server || 'frontend.binaryws.com';

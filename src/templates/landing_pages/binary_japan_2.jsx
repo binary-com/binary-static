@@ -151,8 +151,8 @@ const BinaryJapan2 = () => (
             </section>
 
             <section className='bg-orange bg-lines'>
-                <div className='container padding-top-bottom-500'>
-                    <div id='key-plus' className='section-title center-text'>
+                <div id='key-plus' className='container padding-top-bottom-500'>
+                    <div className='section-title center-text'>
                         <h1 className='content-inverse-color'>{it.L('{JAPAN ONLY}Key plus point')}</h1>
                         <p className='content-inverse-color'>{it.L('{JAPAN ONLY}Here are some random texts.')}</p>
                     </div>
@@ -314,8 +314,8 @@ const BinaryJapan2 = () => (
             </section>
 
             <section className='bg-orange bg-confetti'>
-                <div className='container center-text padding-top-bottom-500'>
-                    <div id='academy' className='section-title content-inverse-color'>
+                <div id='academy' className='container center-text padding-top-bottom-500'>
+                    <div className='section-title content-inverse-color'>
                         <h1 className='content-inverse-color'>{it.L('{JAPAN ONLY}Academy')}</h1>
                         <p>{it.L('{JAPAN ONLY}Learn to become a better trader and get all the latest news and trends on financial transactions for free.')}</p>
                     </div>

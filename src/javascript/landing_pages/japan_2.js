@@ -1,4 +1,6 @@
 /* global setSession:true */
+/* global urlForLanguage:true */
+/* global getLanguage:true */
 let email_sent = false;
 
 window.onload = function () {
@@ -7,6 +9,10 @@ window.onload = function () {
     collapseNavbar();
     tabWithButtons();
     getClientCountry();
+
+    if (!isJPClient()) {
+        window.location = urlForLanguage('ja');
+    }
 
     window.onresize = checkWidth;
 
@@ -35,8 +41,18 @@ window.onload = function () {
 };
 
 function scrollToSection(target_el) {
+    const width = window.innerWidth
+                  || document.documentElement.clientWidth
+                  || document.body.clientWidth;
+
     const target_href = target_el.getAttribute('href').substr(1);
-    const to = document.getElementById(target_href).offsetTop - 70;
+    let to = document.getElementById(target_href).offsetTop - 70;
+    if (width > 1199) {
+        to = document.getElementById(target_href).offsetTop - 100;
+        if (target_href === 'key-plus' || target_href === 'academy' ){
+            to = document.getElementById(target_href).offsetTop + 200;
+        }
+    }
     scrollTo(to, 500);
     collapseMenu();
 }
@@ -284,4 +300,8 @@ function getClientCountry() {
     };
 
     return clients_country;
+}
+
+function isJPClient() {
+    return /ja/.test(getLanguage()) || /ja/.test(getClientCountry());
 }
