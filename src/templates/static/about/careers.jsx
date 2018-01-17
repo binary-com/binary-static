@@ -206,8 +206,8 @@ const Careers = () => (
             </div>
             <div className='has-tabs'>
                 <ul className='role-section'>
-                    <li className='role'><a className='role-btn' href='#technical'><span>Technical roles</span></a></li>
-                    <li className='role'><a className='role-btn' href='#non-technical'><span>Non-technical roles</span></a></li>
+                    <li className='role'><a className='role-btn' href='#technical'><span>{it.L('Technical roles')}</span></a></li>
+                    <li className='role'><a className='role-btn' href='#non-technical'><span>{it.L('Non-technical roles')}</span></a></li>
                 </ul>
                 <div id='technical'>
                     <div className='gr-padding-30'>
