@@ -225,6 +225,7 @@ function showAfffiliatePopup() {
     const clients_country = sessionStorage.getItem('clients_country');
     const xmlhttp = new XMLHttpRequest();
 
+    const scroll_lock = 'scroll-lock';
     const container_id       = 'affiliate_disclaimer_popup';
     const el_affiliate_popup = document.getElementById(container_id);
 
@@ -243,6 +244,8 @@ function showAfffiliatePopup() {
                     const el_affiliate_btn = document.getElementById('btn_affiliate_proceed');
                     el_affiliate_btn.removeEventListener('click', close);
                     el_affiliate_btn.addEventListener('click', close);
+
+                    document.body.classList.add('scroll-lock');
                 }
             }
         };
@@ -252,6 +255,7 @@ function showAfffiliatePopup() {
     }
 
     function close() {
+        document.body.classList.remove('scroll-lock');
         el_affiliate_popup.remove();
     }
 }
