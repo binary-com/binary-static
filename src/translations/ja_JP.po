@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-17 22:27-0500\n"
+"PO-Revision-Date: 2018-01-18 02:40-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -12020,8 +12020,8 @@ msgstr "どのようなプロジェクトがありますか？"
 msgid "Whilst we act as principal in respect of your orders, we also assess the execution venues that we use and upon which we place significant reliance to provide the best possible result for the execution of your orders. These venues typically consist of third party investment firms, brokers, and/or liquidity providers."
 msgstr "Whilst we act as principal in respect of your orders, we also assess the execution venues that we use and upon which we place significant reliance to provide the best possible result for the execution of your orders. These venues typically consist of third party investment firms, brokers, and/or liquidity providers."
 
-msgid "Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level."
-msgstr "リアル口座のマージンレベルがロスカットレベルに達するか、ロスカットレベルを下回った際に、保有ポジションを閉じるよう努めますが、ロスカットレベルにお客様のリアル口座が達した際にお客様の保有ポジションを必ずしも閉じると保証するものではありません。"
+msgid "Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level. For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
+msgstr ""
 
 msgid "Whilst we endeavour to open or close the Transaction to which your orders relate at the requested price, acting in accordance with our duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that your order is not filled at the exact intended quoted price when you placed your order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to you) or a negative slippage (less favourable to you)."
 msgstr "お客様の注文がリクエストされた価格に近いものとなった際に、最良執行義務に従ってトレードをオープンまたはクローズするよう努めます。ボラティリティまたはボリュームが増加した場合、注文がスリップページの対象となる場合があります。注文が満たされた際の注文価格と約定価格の差額をスリップページといいます。スリップページは通常ボラティリティがかなり高いまたは低い期間に見られ、重要なニュースが報道されたり、限定的に流動性が高い期間に発生します。スリップページはポジティブスリップページ（有利）またはネガティブスリップページ（不利）のいずれかの結果になります。"
@@ -14590,6 +14590,9 @@ msgstr "ご興味がある方は、是非ご連絡ください。"
 msgid "{JAPAN ONLY}Social Media"
 msgstr "ソーシャルメディア"
 
+msgid "{JAPAN ONLY}Sorry, account signup is not available in your country."
+msgstr ""
+
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "残念ながら、合格点に達しませんでした。24時間以降（週末を除く）に再受験してください。"
 
@@ -14983,9 +14986,6 @@ msgstr "バイナリーオプションには、レンジバイナリーオプシ
 msgid "{JAPAN ONLY}There are two types of option delivery: One requires exchanging the underlying asset, and the other requires a payment which depends on the difference between the fair market price and the exercise price. A Binary Option is the second type where if the fair market price meets certain conditions with respect to the exercise price, then an agreed fixed amount will be paid to the option buyer."
 msgstr "オプション取引には、権利行使によって、実際に原資産を受け渡すものと、原資産の時価と権利行使価格の差額を授受するものがあります。このうち、原資産の時価と権利行使価格が一定の条件を満たした場合には一定の金銭を支払うものをバイナリーオプションと呼びます。"
 
-msgid "{JAPAN ONLY}This field is required"
-msgstr "必須項目"
-
 msgid "{JAPAN ONLY}This popup window can also be activated from the portfolio panel, and portfolio page, by clicking the Trade View button."
 msgstr "詳細な取引情報が記載された約定済み通知画面は、取引画面の下部にあるポジション一覧タブ、もしくはポジション一覧メニューから確認できます。"
 
@@ -15036,8 +15036,8 @@ msgstr "新規口座開設して頂くお客さまには、本人確認書類と
 msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr "2015年改正犯罪収益移転防止法政省令の犯罪により、外国PEPs（重要な公的地位を有する者）との取引に当該するお客さまは当社では口座開設を行うことができません。下記の者との取引する方が該当します。"
 
-msgid "{JAPAN ONLY}We have a support team to answer your questions: support@binary.com"
-msgstr "お問い合わせはカスタマースポートまで:support@binary.com"
+msgid "{JAPAN ONLY}We have a support team to answer your questions: <a href='mailto:support@binary.com'>support@binary.com</a>"
+msgstr ""
 
 msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
 msgstr "当社は仮想マネー100万円を付与したバーチャル口座（当社での呼称：Virtual口座）を<br>準備しております。"

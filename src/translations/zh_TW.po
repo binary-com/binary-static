@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-17 22:28-0500\n"
+"PO-Revision-Date: 2018-01-18 02:41-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -11892,8 +11892,8 @@ msgstr "哪些專案是可用的？"
 msgid "Whilst we act as principal in respect of your orders, we also assess the execution venues that we use and upon which we place significant reliance to provide the best possible result for the execution of your orders. These venues typically consist of third party investment firms, brokers, and/or liquidity providers."
 msgstr "作為您的訂單委託人，我們也對我們高度依賴的執行場地進行評估，以便為您的訂單執行提供最佳效益。這些場地通常由第三方投資公司、經紀人和/或流動性提供商組成。"
 
-msgid "Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level."
-msgstr "雖然我們在您真實帳戶保證金層次達到或低於止損層次時將盡力使您的持倉頭寸收盤，我們不保證當您真實帳戶的保證金層次達到止損層次時將能夠使您的持倉頭寸收盤。"
+msgid "Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level. For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
+msgstr ""
 
 msgid "Whilst we endeavour to open or close the Transaction to which your orders relate at the requested price, acting in accordance with our duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that your order is not filled at the exact intended quoted price when you placed your order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to you) or a negative slippage (less favourable to you)."
 msgstr "雖然我們將按照最佳執行職責行事，致力以要求價格對您的訂單涉及交易進行開盤或收盤，但有時訂單可能會由於波動率或交易量增加而受滑移。交易完成時訂單價格和執行價格的區別被稱為滑移。這意味著當您下訂單時，您的訂單沒有依照確切的預期報價完成交易。滑移通常發生在股市波動率非常高或低的期間以及重大新聞發布期間或流動性有限的時期。滑移可分為正滑移 （對您較有利） 或負滑移 （對您不利）。"
@@ -14403,6 +14403,9 @@ msgstr "{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate
 msgid "{JAPAN ONLY}Social Media"
 msgstr "{JAPAN ONLY}Social Media"
 
+msgid "{JAPAN ONLY}Sorry, account signup is not available in your country."
+msgstr ""
+
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 
@@ -14796,9 +14799,6 @@ msgstr "{JAPAN ONLY}There are some types of Binary Option, such as Range Binary 
 msgid "{JAPAN ONLY}There are two types of option delivery: One requires exchanging the underlying asset, and the other requires a payment which depends on the difference between the fair market price and the exercise price. A Binary Option is the second type where if the fair market price meets certain conditions with respect to the exercise price, then an agreed fixed amount will be paid to the option buyer."
 msgstr "{JAPAN ONLY}There are two types of option delivery: One requires exchanging the underlying asset, and the other requires a payment which depends on the difference between the fair market price and the exercise price. A Binary Option is the second type where if the fair market price meets certain conditions with respect to the exercise price, then an agreed fixed amount will be paid to the option buyer."
 
-msgid "{JAPAN ONLY}This field is required"
-msgstr "{JAPAN ONLY}This field is required"
-
 msgid "{JAPAN ONLY}This popup window can also be activated from the portfolio panel, and portfolio page, by clicking the Trade View button."
 msgstr "{JAPAN ONLY}This popup window can also be activated from the portfolio panel, and portfolio page, by clicking the Trade View button."
 
@@ -14847,8 +14847,8 @@ msgstr "{JAPAN ONLY}We are required to request copies of your My Number Card as 
 msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 
-msgid "{JAPAN ONLY}We have a support team to answer your questions: support@binary.com"
-msgstr "{JAPAN ONLY}We have a support team to answer your questions: support@binary.com"
+msgid "{JAPAN ONLY}We have a support team to answer your questions: <a href='mailto:support@binary.com'>support@binary.com</a>"
+msgstr ""
 
 msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
 msgstr "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
