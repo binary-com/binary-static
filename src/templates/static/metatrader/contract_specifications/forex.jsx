@@ -4,7 +4,7 @@ import { Table } from '../../../_common/components/elements.jsx';
 const Forex = () => {
     const txt_100000 = { text: '100,000' };
     const txt_01     = { text: '0.01' };
-    const txt_1000   = { text: '1000:1' };
+    const txt_500   =  { text: '500:1' };
     const txt_5000   = { text: '5000' };
     const txt_100    = { text: '100' };
 
@@ -24,30 +24,30 @@ const Forex = () => {
                             ],
                         ],
                         tbody: [
-                            [{ text: 'EUR/USD' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'GBP/USD' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'USD/CHF' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'USD/JPY' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'USD/CAD' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'AUD/USD' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'AUD/NZD' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'AUD/CAD' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'AUD/CHF' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'AUD/JPY' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'EUR/GBP' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'EUR/AUD' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'EUR/CHF' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'EUR/JPY' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'EUR/JPY' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'EUR/NZD' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'EUR/CAD' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'GBP/CHF' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'GBP/JPY' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'NZD/USD' }, txt_100000, txt_01, txt_01, txt_1000 ],
-                            [{ text: 'XAGUSD' },  txt_5000,   txt_01, txt_01, txt_1000 ],
-                            [{ text: 'XAUUSD' },  txt_100,    txt_01, txt_01, txt_1000 ],
-                            [{ text: 'XPDUSD' },  txt_100,    txt_01, txt_01, txt_1000 ],
-                            [{ text: 'XPTUSD' },  txt_100,    txt_01, txt_01, txt_1000 ],
+                            [{ text: 'EUR/USD' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'GBP/USD' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'USD/CHF' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'USD/JPY' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'USD/CAD' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'AUD/USD' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'AUD/NZD' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'AUD/CAD' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'AUD/CHF' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'AUD/JPY' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'EUR/GBP' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'EUR/AUD' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'EUR/CHF' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'EUR/JPY' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'EUR/JPY' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'EUR/NZD' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'EUR/CAD' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'GBP/CHF' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'GBP/JPY' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'NZD/USD' }, txt_100000, txt_01, txt_01, txt_500 ],
+                            [{ text: 'XAGUSD' },  txt_5000,   txt_01, txt_01, txt_500 ],
+                            [{ text: 'XAUUSD' },  txt_100,    txt_01, txt_01, txt_500 ],
+                            [{ text: 'XPDUSD' },  txt_100,    txt_01, txt_01, txt_500 ],
+                            [{ text: 'XPTUSD' },  txt_100,    txt_01, txt_01, txt_500 ],
                         ],
                     }}
                 />
