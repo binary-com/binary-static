@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-17 22:28-0500\n"
+"PO-Revision-Date: 2018-01-18 02:42-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -11892,8 +11892,8 @@ msgstr "crwdns41491:0crwdne41491:0"
 msgid "Whilst we act as principal in respect of your orders, we also assess the execution venues that we use and upon which we place significant reliance to provide the best possible result for the execution of your orders. These venues typically consist of third party investment firms, brokers, and/or liquidity providers."
 msgstr "crwdns40529:0crwdne40529:0"
 
-msgid "Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level."
-msgstr "crwdns40530:0crwdne40530:0"
+msgid "Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level. For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
+msgstr "crwdns43121:0crwdne43121:0"
 
 msgid "Whilst we endeavour to open or close the Transaction to which your orders relate at the requested price, acting in accordance with our duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that your order is not filled at the exact intended quoted price when you placed your order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to you) or a negative slippage (less favourable to you)."
 msgstr "crwdns40531:0crwdne40531:0"
@@ -14403,6 +14403,9 @@ msgstr "crwdns41211:0{JAPAN ONLY}crwdne41211:0"
 msgid "{JAPAN ONLY}Social Media"
 msgstr "crwdns41212:0{JAPAN ONLY}crwdne41212:0"
 
+msgid "{JAPAN ONLY}Sorry, account signup is not available in your country."
+msgstr "crwdns43122:0{JAPAN ONLY}crwdne43122:0"
+
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "crwdns41213:0{JAPAN ONLY}crwdne41213:0"
 
@@ -14796,9 +14799,6 @@ msgstr "crwdns41337:0{JAPAN ONLY}crwdne41337:0"
 msgid "{JAPAN ONLY}There are two types of option delivery: One requires exchanging the underlying asset, and the other requires a payment which depends on the difference between the fair market price and the exercise price. A Binary Option is the second type where if the fair market price meets certain conditions with respect to the exercise price, then an agreed fixed amount will be paid to the option buyer."
 msgstr "crwdns41338:0{JAPAN ONLY}crwdne41338:0"
 
-msgid "{JAPAN ONLY}This field is required"
-msgstr "crwdns43014:0{JAPAN ONLY}crwdne43014:0"
-
 msgid "{JAPAN ONLY}This popup window can also be activated from the portfolio panel, and portfolio page, by clicking the Trade View button."
 msgstr "crwdns41339:0{JAPAN ONLY}crwdne41339:0"
 
@@ -14847,8 +14847,8 @@ msgstr "crwdns41351:0{JAPAN ONLY}crwdne41351:0"
 msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr "crwdns41352:0{JAPAN ONLY}crwdne41352:0"
 
-msgid "{JAPAN ONLY}We have a support team to answer your questions: support@binary.com"
-msgstr "crwdns43017:0{JAPAN ONLY}crwdne43017:0"
+msgid "{JAPAN ONLY}We have a support team to answer your questions: <a href='mailto:support@binary.com'>support@binary.com</a>"
+msgstr "crwdns43123:0{JAPAN ONLY}crwdne43123:0"
 
 msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
 msgstr "crwdns41353:0{JAPAN ONLY}crwdne41353:0"
