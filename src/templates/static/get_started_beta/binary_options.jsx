@@ -201,7 +201,7 @@ const BinaryOptions = () => {
                         <SectionLarge header={it.L('Touch/No touch')} image='types-of-trades/touch_notouch' text={it.L('Choose the Touch/No touch trade if you want to predict the market touching or not touching a target any time during the contract period.')} />
 
                         <SectionLarge header={it.L('In/Out')} image='types-of-trades/in_out' text={it.L('There are two types of In/Out trades:')}>
-                            <ListStrong header={it.L('Ends Between/Goes Outside')}  text={it.L('Predict that the market stops inside or outside two price targets at the end of the time period')} />
+                            <ListStrong header={it.L('Ends Between/Ends Outside')}  text={it.L('Predict that the market stops inside or outside two price targets at the end of the time period')} />
                             <ListStrong header={it.L('Stays Between/Goes Outside')} text={it.L('Predict that the market stays inside or goes outside two price targets any time during the contract period')} />
                         </SectionLarge>
                         <SectionLarge header={it.L('Asians')} image='types-of-trades/asians' text={it.L('There are two types of Asians trades:')}>

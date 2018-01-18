@@ -26,7 +26,7 @@ const Metals = () => (
             />
         </div>
 
-        <div className='gr-4 gr-push-4 gr-padding-30'>
+        <div className='gr-4 gr-push-4 gr-8-p gr-push-2-p gr-12-m gr-push-0-m gr-padding-30'>
             <div className='fill-bg-color gr-padding-10'>
                 <div className='gr-prefix-1'>
                     <h2>{it.L('Maximum Leverage')}</h2>

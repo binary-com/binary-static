@@ -149,7 +149,8 @@ const Price = (() => {
             return;
         }
 
-        const container = CommonFunctions.getElementById(`price_container_${position}`);
+        const container = document.getElementById(`price_container_${position}`);
+        if (!container) return;
         if (!$(container).is(':visible')) {
             $(container).fadeIn(200);
         }
