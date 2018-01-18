@@ -58,7 +58,7 @@ const BinaryJapan = () => (
                         <h1 className='intro-text gr-10-m'>{it.L('{JAPAN ONLY}Binary Options', it.website_name)}</h1>
                         <img className='responsive' src={it.url_for('images/japan/version1/pair.svg')} />
                         <h3 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade fx markets using binary options with one of the origical pioneers of binary options worldwide')}</h3>
-                        <form id='email_top' className='signup-form'>
+                        <form id='email_top' className='signup-form' noValidate>
                             <div className='signup-form-input'>
                                 <div className='input-group'>
                                     <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
@@ -409,7 +409,7 @@ const BinaryJapan = () => (
                 <div className='container center-text'>
                     <div className='gr-row'>
                         <div className='gr-12'>
-                            <form id='email_middle' className='signup-form'>
+                            <form id='email_middle' className='signup-form' noValidate>
                                 <h1 className='text-medium'>{it.L('{JAPAN ONLY}Sign up for a free account')}</h1>
                                 <div className='signup-form-input'>
                                     <div className='input-group'>
@@ -569,7 +569,7 @@ const BinaryJapan = () => (
             <div className='container'>
                 <div className='gr-row'>
                     <div className='gr-12'>
-                        <form id='email_bottom' className='signup-form'>
+                        <form id='email_bottom' className='signup-form' noValidate>
                             <h1 className='text-semibold margin-bottom-30'>{it.L('{JAPAN ONLY}Sign up for a free account')}</h1>
                             <div className='signup-form-input'>
                                 <div className='input-group'>
