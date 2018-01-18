@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-18 02:41-0500\n"
+"PO-Revision-Date: 2018-01-18 04:39-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -495,6 +495,9 @@ msgstr "0-1 года"
 msgid "0-5 transactions in the past 12 months"
 msgstr "0-5 транзакций за последние 12 месяцев"
 
+msgid "0.01 lots"
+msgstr ""
+
 msgid "1 million transactions/day"
 msgstr "1 миллион транзакций в день"
 
@@ -513,11 +516,11 @@ msgstr "1. Подтверждение личности"
 msgid "10-30 million JPY"
 msgstr "10-30 million JPY"
 
-msgid "100 lots"
-msgstr "100 лотов"
-
 msgid "100%"
 msgstr "100%"
+
+msgid "150%"
+msgstr ""
 
 msgid "2-3 years of applicable experience in a web application testing role"
 msgstr "2-3 года работы в области тестирования веб-приложений"
@@ -527,12 +530,6 @@ msgstr "Оцените движение рынка в двух направле�
 
 msgid "2. Proof of address"
 msgstr "2. Подтверждение адреса"
-
-msgid "20 lots"
-msgstr "20 лотов"
-
-msgid "20%"
-msgstr "20%"
 
 msgid "3-5 million JPY"
 msgstr "3-5 million JPY"
@@ -555,9 +552,6 @@ msgstr "40 или более транзакций за последние 12 м�
 msgid "5-10 million JPY"
 msgstr "5-10 million JPY"
 
-msgid "50 lots"
-msgstr "50 лотов"
-
 msgid "50%"
 msgstr "50%"
 
@@ -575,6 +569,9 @@ msgstr "7-дневный лимит на убытки"
 
 msgid "7-day turnover limit"
 msgstr "7-дневный лимит на объём покупок"
+
+msgid "75%"
+msgstr ""
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Вернуться к вакансиям"
@@ -968,8 +965,8 @@ msgstr "Адаптация стиля текста согласно нуждам
 msgid "Add"
 msgstr "Добавить"
 
-msgid "Add fund"
-msgstr "Пополнить"
+msgid "Add funds"
+msgstr ""
 
 msgid "Additional business exposure:"
 msgstr "Дополнительные возможности для бизнеса:"
@@ -2157,15 +2154,6 @@ msgstr "Пароль Кассы"
 msgid "Cashier password"
 msgstr "Пароль кассы"
 
-msgid "Cent"
-msgstr "Цент"
-
-msgid "Cent Account"
-msgstr "Центовый счёт"
-
-msgid "Cent account: 1:1,000"
-msgstr "Центовый счёт: 1:1000"
-
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Налагаются определенные ограничения на приемлемые уровни рыночных цен для выигрыша контрактов. Обычно уровень рынка для выигрыша не может быть слишком близок к настоящему уровню рынка."
 
@@ -2174,6 +2162,9 @@ msgstr "Изменить конечную точку API"
 
 msgid "Change Password"
 msgstr "Сменить пароль"
+
+msgid "Change password"
+msgstr ""
 
 msgid "Change the Stop Out Level in relation to your account."
 msgstr "изменить уровень стоп-аут (уровень принудительного закрытия позиции) в отношении Вашего счёта."
@@ -2514,6 +2505,9 @@ msgstr "Обязательства Компании"
 msgid "Company's Right"
 msgstr "Права Компании"
 
+msgid "Compare MetaTrader 5 accounts"
+msgstr ""
+
 msgid "Competitive and transparent pricing"
 msgstr "Прозрачные и конкурентоспособные цены"
 
@@ -2529,8 +2523,8 @@ msgstr "Жалобы и иски"
 msgid "Complaints and disputes"
 msgstr "Жалобы и споры"
 
-msgid "Complete your <a href=\"%1\">Financial Assessment</a>."
-msgstr "Пройдите <a href=\"%1\">финансовую оценку</a>."
+msgid "Complete the <a href=\"%1\">Financial Assessment</a>."
+msgstr ""
 
 msgid "Compliance"
 msgstr "Служба контроля"
@@ -2775,9 +2769,6 @@ msgstr "Открыть бесплатный счет"
 msgid "Create MetaTrader 5 %1 account"
 msgstr ""
 
-msgid "Create MetaTrader 5 Account in %1"
-msgstr ""
-
 msgid "Create New Account"
 msgstr "Открыть новый счет"
 
@@ -2982,9 +2973,6 @@ msgstr "Спрос, зависящий от промышленного и ком
 msgid "Demo"
 msgstr "Демо"
 
-msgid "Demo Cent"
-msgstr ""
-
 msgid "Demo STP"
 msgstr ""
 
@@ -3027,10 +3015,7 @@ msgstr "Внесите на счёт всего USD 5 и начните торг
 msgid "Deposit funds and begin trading"
 msgstr "Пополните счёт и начните торговлю"
 
-msgid "Deposit funds from your Binary account into MetaTrader 5 account."
-msgstr ""
-
-msgid "Deposit into MT5 account"
+msgid "Deposit funds into your MT5 account"
 msgstr ""
 
 msgid "Deposit or withdraw below"
@@ -3050,6 +3035,9 @@ msgstr "Пополнения: Мгновенно"
 
 msgid "Depositing and withdrawing funds"
 msgstr "Пополнение и вывод средств"
+
+msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
+msgstr ""
 
 msgid "Derivative"
 msgstr "Производные"
@@ -3323,9 +3311,6 @@ msgstr "Каждый бинарный опцион имеет определен
 
 msgid "Each binary option is a prediction on the future movement of an underlying market."
 msgstr "Каждый бинарный опцион является прогнозом будущего движения конкретного актива."
-
-msgid "Each demo account comes with %1 virtual money"
-msgstr ""
 
 msgid "Each of the following event constitutes an \"Event of Default\":"
 msgstr "Каждая из нижеперечисленных ситуаций является \"случаем невыполнения обязательств\":"
@@ -4143,9 +4128,6 @@ msgstr "Необходимы фотографии лицевой и обратн
 msgid "Fund Transfers"
 msgstr "Перевод средств"
 
-msgid "Fund overview"
-msgstr ""
-
 msgid "Fund transfers between accounts are unavailable."
 msgstr "Перевод средств между счетами недоступен."
 
@@ -4283,6 +4265,9 @@ msgstr "Короткая позиция = продажа"
 
 msgid "Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>."
 msgstr "Перейдите в выпадающее меню \"<strong>Chrome Меню (Настройка и управление Google Chrome/ Customize and control Google Chrome)</strong>\" и выберите <strong>Настройки</strong>."
+
+msgid "Go to MetaTrader 5 Dashboard"
+msgstr ""
 
 msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
 msgstr "Пройдите по ссылке <a href=\"https://login.binary.com/password-retrieve.php\">смены пароля</a>, введите свой логин и электронный адрес в запрашиваемые поля, чтобы мы выслали Вам ссылку на получение нового пароля."
@@ -4529,6 +4514,9 @@ msgstr "Как рассчитать прибыль и убыток"
 
 msgid "How to close a position"
 msgstr "Как закрыть контракт"
+
+msgid "How to manage your funds"
+msgstr ""
 
 msgid "How to participate in the %1 ICO"
 msgstr "Как принять участие в ICO от %1"
@@ -5223,14 +5211,8 @@ msgstr "Ввод личных данных"
 msgid "Instant access"
 msgstr "Мгновенный доступ"
 
-msgid "Instant execution"
-msgstr "Мгновенное исполнение"
-
 msgid "Instant, daily, and monthly commissions available to money managers"
 msgstr "К услугам инвестиционных менеджеров мгновенные, ежедневные и ежемесячные комиссии"
-
-msgid "Instructions for Linux"
-msgstr "Инструкции для Linux"
 
 msgid "Insufficient balance."
 msgstr "Недостаточно средств на счете."
@@ -5297,6 +5279,9 @@ msgstr "Недопустимый формат документа: \"%1\""
 
 msgid "Invalid email address"
 msgstr "Недействительный e-mail"
+
+msgid "Invalid email address."
+msgstr ""
 
 msgid "Invest in the world's premier platform for binary options trading"
 msgstr "Инвестируйте в ведущую мировую платформу для торговли бинарными опционами"
@@ -6153,9 +6138,6 @@ msgstr "Использование информационных инструме
 msgid "Leverage up to 1:100"
 msgstr "Кредитный рычаг до 1:100"
 
-msgid "Leverage up to 1:300"
-msgstr "Кредитный рычаг до 1:300"
-
 msgid "Leverage up to 1:500"
 msgstr ""
 
@@ -6420,7 +6402,7 @@ msgstr "Male"
 msgid "Malta"
 msgstr "Мальта"
 
-msgid "Manage Funds"
+msgid "Manage funds"
 msgstr ""
 
 msgid "Manage security, intrusion detection, DDoS protection and PCI compliance measures related to each of our deployed servers"
@@ -6606,9 +6588,6 @@ msgstr "Максимальное число контрактов, открыты
 msgid "Maximum number of open positions"
 msgstr "Максимальное количество открытых позиций"
 
-msgid "Maximum ticket size"
-msgstr ""
-
 msgid "Maximum upload size for each file is 3MB"
 msgstr "Максимальный размер каждого файла: 3MB"
 
@@ -6639,10 +6618,7 @@ msgstr "MetaTrader"
 msgid "MetaTrader 5"
 msgstr "MetaTrader 5"
 
-msgid "MetaTrader 5 Account Comparison"
-msgstr ""
-
-msgid "MetaTrader 5 Dashboard"
+msgid "MetaTrader 5 dashboard"
 msgstr ""
 
 msgid "MetaTrader 5 is an institutional multi-asset platform offering outstanding trading possibilities and technical analysis tools. It allows trading Foex, Stocks, Futures, CFDs and it provides everything needed for full-fledged and flexible trading operations."
@@ -6719,6 +6695,9 @@ msgstr "Минимальный срок действия: 6 месяцев"
 
 msgid "Minimum spread"
 msgstr "Мин. спред"
+
+msgid "Minimum ticket size"
+msgstr ""
 
 msgid "Minimum volume"
 msgstr "Минимальный объём"
@@ -7161,9 +7140,6 @@ msgstr "Конечно! Отправьте имейл на адрес <a href=\"
 msgid "Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
 msgstr "К Вашим услугам самый большой выбор валют, видов опционов и сроков контрактов на быстрой, простой и инновационной торговой платформе."
 
-msgid "Offers the highest leverage – up to 1:1,000"
-msgstr "Самый высокий кредитный рычаг – до 1:1 000"
-
 msgid "Office worker"
 msgstr "Office worker"
 
@@ -7386,14 +7362,11 @@ msgstr "Наша компания"
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "Комиссия в рамках нашей международной Патрнёрской программы выплачивается своевременно и без исключений с момента запуска программы в марте 2004 года. Комиссия партнёров из Японии будет внесена на их партнерские счета в течение 30 дней после закрытия календарного месяца, на протяжении которого направленные ими клиенты соблюдали условия программы."
 
-msgid "Our MetaTrader 5 Cent account is ideal for new traders who want to start trading with a smaller capital."
-msgstr "Наш Центовый счёт на платформе MetaTrader 5 идеально подходит для начинающих трейдеров, желающих начать торговлю с небольших сумм."
-
 msgid "Our MetaTrader 5 STP account provides you with the tightest spreads and connects you directly to the market."
 msgstr "Счёт STP на MetaTrader 5 предоставляет самые узкие спреды и соединяет Вас с рынком напрямую."
 
-msgid "Our MetaTrader 5 Standard account comes with mid-range leverage and variable spreads suitable for a wide range of traders."
-msgstr "Стандартный счёт на MetaTrader 5 предоставляет средний размер кредитного плеча и большой выбор спредов, которые подойдут каждому трейдеру."
+msgid "Our MetaTrader 5 Standard account is suitable for both new and experienced traders."
+msgstr ""
 
 msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how %1 executes orders on behalf of our clients."
 msgstr "Наша Политика исполнения ордеров (далее именуемая \"Политика\") представляет собой общие сведения и подход %1 к исполнению ордеров от имени наших клиентов."
@@ -7403,6 +7376,9 @@ msgstr "Наша политика"
 
 msgid "Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices."
 msgstr "Наши цены основаны на ценах основных активов, указанных сторонними биржами или соответствующими агентствами, выбранными про нашему единоличному усмотрению. Наша IT-инфраструктура и агрегатор цен способствуют получению цен от узкого круга ведущих брокеров, выступающих в качестве поставщиков ликвидности, а также за передачу котировок, поставляемых Вам со ссылкой на соответствующие организации и рынки. Настоящим Вы признаёте, что наши Цены могут отличаться от цены бид и цены предложения, доступных у сторонних бирж или соответствующих агентств, а мы не несём ответственности за любые убытки, понесённые Вами ввиду данных отличий. Данное положение не относится к Индексам волатильности."
+
+msgid "Our Volatility account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces."
+msgstr ""
 
 msgid "Our back-end code is mainly in Perl, and our open-source contributions may be found on %1CPAN%2. The corresponding source code can be found in our %3Github repositories%2 that start with the prefix \"perl-\". We welcome contributions to these repositories, notably improved documentation and test coverage."
 msgstr "Наш бэк-энд код преимущественно написан на языке Perl, а наши дополнения для открытого кода можно найти на %1CPAN%2. Соответствующий исходный код можно найти в нашем %3репозитории Github%2; он начинается с префикса \"perl-\". Мы будем рады узнать о Ваших дополнениях в данные репозитории, в частности, в отношении улучшения документации и полноты текста."
@@ -7968,6 +7944,9 @@ msgstr ""
 msgid "Practice account with replenishable USD 5,000 virtual credit."
 msgstr ""
 
+msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
+msgstr ""
+
 msgid "Pre-contract Document"
 msgstr "Pre-contract Document"
 
@@ -8283,6 +8262,9 @@ msgstr "Узнайте о пяти типах контрактов, предла
 msgid "Read and understand our HackerOne bug bounty programme policy."
 msgstr "Прочитайте и примите политику нашей программы поощрения HackerOne."
 
+msgid "Read instructions for Linux"
+msgstr ""
+
 msgid "Read our FAQ"
 msgstr "Частые вопросы"
 
@@ -8313,9 +8295,6 @@ msgstr "Реальный счет"
 msgid "Real Account &mdash; Your real money account opened with %1's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
 msgstr "Реальный счёт &mdash; Ваш счёт с реальными деньгами, открытый на Торговой платформе MT5 (для торговли на %1), лицензия на которую принадлежит MetaQuotes Software Corporation."
 
-msgid "Real Cent"
-msgstr "Реальный центовый"
-
 msgid "Real Money Account Opening"
 msgstr "Открытие реального счета"
 
@@ -8327,9 +8306,6 @@ msgstr "Реальный стандартный"
 
 msgid "Real Volatility"
 msgstr "Реальный волатильный"
-
-msgid "Real account allows you to trade in USD real currency"
-msgstr ""
 
 msgid "Real-money accounts with your choice of cryptocurrency."
 msgstr ""
@@ -8883,8 +8859,8 @@ msgstr "Если поток котировок прерывается по пр�
 msgid "Should any client for whom you are receiving commissions process a chargeback, the Company reserves the right to deduct the commission portion of the chargeback from the total balance due to you for the current month. Should this deduction of the accumulated revenue exceed your current amount due, your balance will then revert to a negative balance, and you will have to earn revenue to cover the chargeback before you can start earning revenue again. The Company reserves the right, in special cases, to exclude revenue sharing  on promotional funds deposited into the client's account by the Company."
 msgstr "Если какой-либо из клиентов, от кого Вы получаете комиссии, сделает запрос на отзыв средств, Компания оставляет за собой право вычесть его комиссию из Ваших выплат за месяц. Если это отчисление превысит полагающиеся Вам на данный момент комиссии, негативный баланс будет перенесен на следующий месяц, и отчисление будет сделано из будущих комиссий. В редких случаях Компания оставляет за собой право исключать начисление комиссий по бонусам, полученным клиентами."
 
-msgid "Should be a valid number"
-msgstr "Введите правильное число"
+msgid "Should be a valid number."
+msgstr ""
 
 msgid "Should be between %1 and %2"
 msgstr "Допустимые значения: от %1 до %2"
@@ -9042,7 +9018,7 @@ msgstr ""
 msgid "Standard Account"
 msgstr ""
 
-msgid "Standard account: 1:300"
+msgid "Standard account: 1:500"
 msgstr ""
 
 msgid "Start Time"
@@ -9108,7 +9084,7 @@ msgstr "Шаг"
 msgid "Step 1"
 msgstr ""
 
-msgid "Step 1 : Choose demo or real account"
+msgid "Step 1: Choose demo or real account"
 msgstr ""
 
 msgid "Step 1: Define your position"
@@ -9120,7 +9096,7 @@ msgstr "Шаг 1: Научитесь читать валютные пары"
 msgid "Step 2"
 msgstr ""
 
-msgid "Step 2 : Choose types of accounts"
+msgid "Step 2: Choose account type"
 msgstr ""
 
 msgid "Step 2: Get your contract price"
@@ -9140,6 +9116,12 @@ msgstr "Шаг 3: Как купить первую валютную пару"
 
 msgid "Step 3: Make your trade"
 msgstr "Шаг 3: Купите контракт"
+
+msgid "Step size"
+msgstr ""
+
+msgid "Step size is the minimum allowable increment applied to all order types. It is the volume from which the increase of the position is based. You can only trade in the minimum ticket size or its multiples."
+msgstr ""
 
 msgid "Stock market indices measure the value of a selection of companies in the stock market."
 msgstr "Индексы показывают стоимость определенного набора акций компаний, котирующихся на бирже."
@@ -9405,8 +9387,8 @@ msgstr "Попробуйте прямо сейчас работу на демо-
 msgid "Th"
 msgstr "Чт"
 
-msgid "Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5."
-msgstr "Спасибо за то, что заполнили форму Финансовой оценки и зарегистрировали Финансовый счёт. Теперь Вы можете внести на счёт средства и торговать на рынке Forex на реальные деньги, пользуюсь счётом на MT5."
+msgid "Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5."
+msgstr ""
 
 msgid "Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance."
 msgstr ""
@@ -9521,9 +9503,6 @@ msgstr "Агент вышлет Вам выведенную сумму (мину
 
 msgid "The Average"
 msgstr "Среднее"
-
-msgid "The Cent account offers the highest leverage, as well as low margin call and stop out level. It is ideal for new traders who want to start trading with a smaller capital."
-msgstr ""
 
 msgid "The Client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his %1 Account (hereinafter referred to as the “%1 Agent Account”)."
 msgstr "Клиент может перевести Агенту средства для пополнения счёта, используя электронные платежи и банковские переводы. Получая средства, Агент должен впоследствии внести средства на свой счёт %1 (далее именуемый “счётом Агента на %1”)."
@@ -9765,9 +9744,6 @@ msgstr "Индекс USD является взвешенным индексом,
 msgid "The Volatility 100 Index is twice as volatile as the Volatility 50 Index, and four times as volatile as the Volatility 25 Index."
 msgstr "Индекс волатильности 100 в два раза волатильнее, чем Индекс волатильности 50, и в четыре раза волатильнее, чем Индекс волатильности 25."
 
-msgid "The Volatility account allows you to profit by speculating on the rise or fall of an instrument."
-msgstr "Волатильный счёт позволяет получать прибыль, делая ставки на рост или снижение цены инструмента."
-
 msgid "The Volatility account allows you to trade CFDs on Volatility Indices –– our proprietary synthetic assets that simulate real-world events and market forces."
 msgstr ""
 
@@ -10008,9 +9984,6 @@ msgstr "Максимальный убыток, который может пот�
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Достигнуто максимальное число ключей (%1)."
 
-msgid "The maximum ticket size refers to the maximum volume or number of lots."
-msgstr ""
-
 msgid "The minimum bid is USD 1.35/token or equivalent in other currency/cryptocurrency."
 msgstr "Минимальная цена ставки составляет USD 1.35/токен или эквивалентную сумму в другой валюте/криптовалюте."
 
@@ -10022,6 +9995,9 @@ msgstr "Минимальная сумма для для перевода: %1."
 
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 msgstr "Минимальный спред (состоящий из рыночного спреда и нашего спреда), опубликованный на нашем сайте, может быть изменён по нашему единоличному усмотрению. Настоящим Вы признаёте, что несмотря на наши усилия поддерживать конкурентоспособный спред, в ряде случаев рыночный спред и наш спред могут значительно возрасти; данный размер спреда будет установлен по нашему единоличному усмотрению."
+
+msgid "The minimum ticket size refers to the minimum volume or number of lots."
+msgstr ""
 
 msgid "The minimum, incremental and maximum transaction amount;"
 msgstr "минимального, постепенно растущего и максимального размера контракта;"
@@ -10347,7 +10323,7 @@ msgstr "Вы проиграли"
 msgid "This contract won"
 msgstr "Вы выиграли"
 
-msgid "This demo account comes with %1 of the virtual fund. Contact our customer service to top up your demo account once virtual fund reaches zero."
+msgid "This demo account comes with %1 of virtual funds. Please %2contact our customer support team%3 to replenish virtual funds if your account balance is empty."
 msgstr ""
 
 msgid "This depends on the number of tokens that will be issued after the ICO."
@@ -10497,10 +10473,7 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Чтобы изменить имя, дату рождения, страну проживания или эл. адрес, пожалуйста, обратитесь в <a href=\"%1\">службу поддержки</a>."
 
-msgid "To create a real financial MT5 account, please complete the following:"
-msgstr ""
-
-msgid "To deposit your MetaTrader 5 Account, please top up the fund in your Binary Cashier then transfer the fund from Cashier to your MetaTrader 5 account."
+msgid "To create a MetaTrader 5 real account, please:"
 msgstr ""
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
@@ -10755,11 +10728,11 @@ msgstr "Торгуйте от имени Ваших клиентов с одно
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "Торгуйте на всех основных рынках, включая Forex, индексы, сырьевые товары и многое другое."
 
+msgid "Trade on web platform"
+msgstr ""
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Покупайте контракты только на те суммы, которые можете позволить себе потерять. Никогда не покупайте контракты на занятые деньги."
-
-msgid "Trade platform quick links:"
-msgstr ""
 
 msgid "Trade popular cryptocurrencies on our MT5 platform with leverage and variable spreads. No wallets are required to start trading."
 msgstr "Торгуйте популярными криптовалютами на платформе MT5 с применением кредитного рычага и спредов. Для торговли Вам не нужен криптовалютный кошелёк."
@@ -10799,6 +10772,9 @@ msgstr "Работайте, имея возможность легко попо�
 
 msgid "Trade with leverage"
 msgstr "Торгуйте с применением кредитного рычага "
+
+msgid "Trade with real funds, access to competitive trading conditions, and zero commission."
+msgstr ""
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "Торгуйте с признанным новатором и обладателем уникальной ценовой технологии"
@@ -10854,6 +10830,9 @@ msgstr "Торговля бинарными опционами является 
 msgid "Trading manual"
 msgstr "Trading manual"
 
+msgid "Trading platform quick links:"
+msgstr ""
+
 msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
 msgstr "Торговля на финансовых рынках может перерасти в зависимость. Заполните форму для ограничения Вашего участия на сайте или вышлите в службу поддержки подписанное письмо в отсканированном виде или по факсу. После установки ограничений Вы можете только усилить их. Ограничения могут быть сняты или смягчены по истечении 7 дней, за исключением даты самоисключения, которая не может быть изменена или отменена после её подтверждения. Для снятия или увеличения лимитов ограничения, пожалуйста, свяжитесь со <a href=\"%1\">службой поддержки</a>."
 
@@ -10883,6 +10862,12 @@ msgstr "Переводите средства между универсальн�
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Перевод средств между реальными счетами."
+
+msgid "Transfer funds from your MetaTrader 5 account into your binary options account."
+msgstr ""
+
+msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
+msgstr ""
 
 msgid "Transfer to"
 msgstr "Перевести на имя"
@@ -11097,14 +11082,8 @@ msgstr ""
 msgid "Up to 10 million tokens are available via the auction."
 msgstr "В рамках аукциона будет предложено до 10 миллионов токенов."
 
-msgid "Up to 1:1,000"
-msgstr "До 1:1000"
-
 msgid "Up to 1:100"
 msgstr "До 1:100"
-
-msgid "Up to 1:300"
-msgstr "До 1:300"
 
 msgid "Up to 1:500"
 msgstr "До 1:500"
@@ -11601,9 +11580,6 @@ msgstr "Мы достигли соглашения разместить токе
 msgid "Web design / development experience"
 msgstr "Опыт в области веб-дизайна / веб-разработки"
 
-msgid "Web platform"
-msgstr ""
-
 msgid "Webinars"
 msgstr "Вебинары"
 
@@ -11886,11 +11862,11 @@ msgstr "Когда Вы даете нам конкретные указания,
 msgid "Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers."
 msgstr "Где Ваш опыт, энергия и талант могут привести Вас к неожиданным высотам. При этом у Вас будет свобода поиска новых границ."
 
+msgid "Which account is right for me?"
+msgstr ""
+
 msgid "Which currencies can I trade"
 msgstr "Какими валютами можно торговать"
-
-msgid "Which one suits me?"
-msgstr ""
 
 msgid "Which projects are available?"
 msgstr "Какие проекты доступны?"
@@ -12012,10 +11988,7 @@ msgstr "В отношении отслеживания Ваших реферал
 msgid "Withdraw"
 msgstr "Вывод"
 
-msgid "Withdraw from MT5 account"
-msgstr ""
-
-msgid "Withdraw funds from MetaTrader 5 account into your Binary account."
+msgid "Withdraw funds from your MT5 account"
 msgstr ""
 
 msgid "Withdrawal"
@@ -12336,6 +12309,9 @@ msgstr "Вы не получили и не обладаете всеми нео�
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of Forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr ""
 
+msgid "You have reached the limit."
+msgstr ""
+
 msgid "You have reached the rate limit of requests per second. Please try later."
 msgstr "Вы достигли лимита курса или количества запросов в секунду. Пожалуйста, повторите попытку позже."
 
@@ -12635,6 +12611,9 @@ msgstr "Ваша касса закрыта по Вашему запросу - д
 
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Ваша касса закрыта по Вашему запросу – для открытия, пожалуйста, введите пароль."
+
+msgid "Your cashier is locked."
+msgstr ""
 
 msgid "Your changes have been updated successfully."
 msgstr "Ваши изменения успешно обновлены."
