@@ -2,6 +2,7 @@ import React from 'react';
 import Forex from './how_to_trade_mt5/forex.jsx';
 import Metals from './how_to_trade_mt5/metals.jsx';
 import VolatilityIndices from './how_to_trade_mt5/volatility_indices.jsx';
+import Cryptocurrencies from './how_to_trade_mt5/cryptocurrencies.jsx';
 import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../_common/components/tabs.jsx';
 
 const HowToTradeMT5 = () => (
@@ -15,6 +16,7 @@ const HowToTradeMT5 = () => (
                     { id: 'forex',                text: it.L('Forex') },
                     { id: 'volatility',           text: it.L('Volatility Indices') },
                     { id: 'metals',               text: it.L('Metals') },
+                    { id: 'cryptocurrencies',     text: it.L('Cryptocurrencies') },
                     { id: 'how_to_tabs_selector', className: 'tab-selector' },
                 ]}
             />
@@ -28,6 +30,9 @@ const HowToTradeMT5 = () => (
                     </TabContent>
                     <TabContent id='metals'>
                         <Metals />
+                    </TabContent>
+                    <TabContent id='cryptocurrencies'>
+                        <Cryptocurrencies />
                     </TabContent>
                 </TabContentContainer>
             </div>
