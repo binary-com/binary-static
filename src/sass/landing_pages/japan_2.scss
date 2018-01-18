@@ -114,6 +114,7 @@ form {
             }
             .error-msg {
                 position: absolute;
+                left: 0;
                 top: 100%;
                 @media (max-width: 575px) {
                     position: relative;
@@ -704,6 +705,7 @@ form {
             border-radius: 50%;
             padding: 2px;
             margin: 0 10px;
+            cursor: pointer;
 
             &.active {
                 background-color: $COLOR_ORANGE;

@@ -82,6 +82,10 @@ function urlFor(path) {
     return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${path}.html`;
 }
 
+function urlForLanguage (lang, url = window.location.href, default_language = 'en') {
+    return url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${(lang || default_language).trim().toLowerCase()}/`);
+}
+
 function wsConnect() {
     const config_server = localStorage.getItem('config.server_url');
     const server_url    = config_server || 'frontend.binaryws.com';
@@ -192,7 +196,7 @@ function recordAffiliateExposure() {
     const is_subsidiary = /\w{1}/.test(getParamValue(Url, 's'));
 
     /* global Cookies */
-    const cookie_token = Cookies.get('affiliate_tracking');
+    const cookie_token = Cookies.getJSON('affiliate_tracking');
     if (cookie_token) {
         // Already exposed to some other affiliate.
         if (is_subsidiary && cookie_token && cookie_token.t) {
@@ -212,7 +216,7 @@ function recordAffiliateExposure() {
     Cookies.set('affiliate_tracking', cookie_hash, {
         expires: 365, // expires in 365 days
         path   : '/',
-        domain : `.${location.hostname.split('.').slice(-2).join('.')}`,
+        domain : /\.binary\.com/i.test(location.hostname) ? `.${location.hostname.split('.').slice(-2).join('.')}` : location.hostname,
     });
     return true;
 }
@@ -221,28 +225,26 @@ function showAfffiliatePopup() {
     const clients_country = sessionStorage.getItem('clients_country');
     const xmlhttp = new XMLHttpRequest();
 
-    const scroll_lock = 'scroll-lock';
     const container_id       = 'affiliate_disclaimer_popup';
     const el_affiliate_popup = document.getElementById(container_id);
 
+    if (isLoggedIn()) return;
     if (jpClient() || clients_country === 'jp') {
         xmlhttp.onreadystatechange = () => {
-            if (xmlhttp.readyState === XMLHttpRequest.DONE) {
-                if (xmlhttp.status === 200) {
-                    const div     = document.createElement('div');
-                    const parser  = new DOMParser();
-                    const el      = parser.parseFromString(xmlhttp.response, 'text/html');
-                    const element = el.body.firstChild;
-                    div.classList.add('lightbox');
-                    div.appendChild(element);
-                    el_affiliate_popup.appendChild(div);
+            if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
+                const div     = document.createElement('div');
+                const parser  = new DOMParser();
+                const el      = parser.parseFromString(xmlhttp.response, 'text/html');
+                const element = el.body.firstChild;
+                div.classList.add('lightbox');
+                div.appendChild(element);
+                el_affiliate_popup.appendChild(div);
 
-                    const el_affiliate_btn = document.getElementById('btn_affiliate_proceed');
-                    el_affiliate_btn.removeEventListener('click', close);
-                    el_affiliate_btn.addEventListener('click', close);
+                const el_affiliate_btn = document.getElementById('btn_affiliate_proceed');
+                el_affiliate_btn.removeEventListener('click', close);
+                el_affiliate_btn.addEventListener('click', close);
 
-                    document.body.classList.add('scroll-lock');
-                }
+                document.body.classList.add('scroll-lock');
             }
         };
 
@@ -254,4 +256,34 @@ function showAfffiliatePopup() {
         document.body.classList.remove('scroll-lock');
         el_affiliate_popup.remove();
     }
+}
+
+function isLoggedIn () {
+    /**
+     * Returns the client information
+     *
+     * @param {String|null} key     The property name to return the value from, if missing returns the account object
+     * @param {String|null} loginid The account to return the value from
+     */
+    function get(key, loginid = localStorage.getItem('active_loginid')) {
+        let value;
+        const client_object = getAllAccountsObject();
+        if (key === 'loginid') {
+            value = loginid || localStorage.getItem('active_loginid');
+        } else {
+            const current_client = client_object[loginid] || getAllAccountsObject()[loginid] || {};
+
+            value = key ? current_client[key] : current_client;
+        }
+        if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
+            value = JSON.parse(value || false);
+        }
+        return value;
+    }
+
+    function getAllAccountsObject() {
+        return JSON.parse(localStorage.getItem('client.accounts'));
+    }
+
+    return get('loginid') && get('token');
 }

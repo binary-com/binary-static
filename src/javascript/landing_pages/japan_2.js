@@ -74,7 +74,6 @@ function initForm(id) {
     if (!signup_form) {
         return;
     }
-    
     let ws = wsConnect();
     let email_sent = false;
 
@@ -110,7 +109,7 @@ function initForm(id) {
         if ((clients_country !== 'my') || /@binary\.com$/.test(val)) {
             return true;
         }
-        signup_form.forEach((el) => {
+        document.querySelectorAll('.signup-form').forEach((el) => {
             el.querySelector('.signup-form-input').classList.add('invisible');
             el.querySelector('.signup-form-error').classList.remove('invisible');
         });
