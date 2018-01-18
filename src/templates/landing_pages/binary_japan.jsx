@@ -58,11 +58,12 @@ const BinaryJapan = () => (
                         <h1 className='intro-text gr-10-m'>{it.L('{JAPAN ONLY}Binary Options', it.website_name)}</h1>
                         <img className='responsive' src={it.url_for('images/japan/version1/pair.svg')} />
                         <h3 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade fx markets using binary options with one of the origical pioneers of binary options worldwide')}</h3>
-                        <form className='signup-form'>
+                        <form id='email_top' className='signup-form'>
                             <div className='signup-form-input'>
                                 <div className='input-group'>
                                     <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
-                                    <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>
+                                    <div className='invisible center-text error-msg error_validate_email'>{it.L('Invalid email address')}</div>
+                                    <div className='invisible center-text error-msg error_no_email'>{it.L('This field is required.')}</div>
                                     <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                 </div>
                             </div>
@@ -408,12 +409,13 @@ const BinaryJapan = () => (
                 <div className='container center-text'>
                     <div className='gr-row'>
                         <div className='gr-12'>
-                            <form className='signup-form'>
+                            <form id='email_middle' className='signup-form'>
                                 <h1 className='text-medium'>{it.L('{JAPAN ONLY}Sign up for a free account')}</h1>
                                 <div className='signup-form-input'>
                                     <div className='input-group'>
                                         <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
-                                        <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>
+                                        <div className='invisible center-text error-msg error_validate_email'>{it.L('Invalid email address')}</div>
+                                        <div className='invisible center-text error-msg error_no_email'>{it.L('This field is required.')}</div>
                                         <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                     </div>
                                 </div>
@@ -567,12 +569,13 @@ const BinaryJapan = () => (
             <div className='container'>
                 <div className='gr-row'>
                     <div className='gr-12'>
-                        <form className='signup-form'>
+                        <form id='email_bottom' className='signup-form'>
                             <h1 className='text-semibold margin-bottom-30'>{it.L('{JAPAN ONLY}Sign up for a free account')}</h1>
                             <div className='signup-form-input'>
                                 <div className='input-group'>
                                     <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
-                                    <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>
+                                    <div className='invisible center-text error-msg error_validate_email'>{it.L('Invalid email address')}</div>
+                                    <div className='invisible center-text error-msg error_no_email'>{it.L('This field is required.')}</div>
                                     <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                 </div>
                             </div>

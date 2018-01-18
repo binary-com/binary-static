@@ -9,7 +9,9 @@ window.onload = function() {
         window.location = urlForLanguage('ja');
     }
 
-    initForm();
+    initForm('email_top');
+    initForm('email_middle');
+    initForm('email_bottom');
     recordAffiliateExposure();
     commonOnload();
 
@@ -20,8 +22,12 @@ window.onload = function() {
     }
 };
 
-function initForm() {
-    const signup_forms = document.querySelectorAll('.signup-form');
+function initForm(id) {
+    const signup_form = document.getElementById(id);
+
+    if (!signup_form) {
+        return;
+    }
     let ws = wsConnect();
     let email_sent = false;
 
@@ -38,9 +44,9 @@ function initForm() {
 
     function verifySubmit(msg) {
         const response = JSON.parse(msg.data);
-        setValidationStyle(el_email, response.error);
+        setValidationStyle(signup_form, el_email, response.error);
         if (!response.error) {
-            signup_forms.forEach((el) => {
+            document.querySelectorAll('.signup-form').forEach((el) => {
                 el.querySelector('.signup-form-input').classList.add('invisible');
                 el.querySelector('.signup-form-success').classList.remove('invisible');
                 email_sent = true;
@@ -57,7 +63,7 @@ function initForm() {
         if ((clients_country !== 'my') || /@binary\.com$/.test(val)) {
             return true;
         }
-        signup_forms.forEach((el) => {
+        document.querySelectorAll('.signup-form').forEach((el) => {
             el.querySelector('.signup-form-input').classList.add('invisible');
             el.querySelector('.signup-form-error').classList.remove('invisible');
         });
@@ -73,9 +79,7 @@ function initForm() {
 
     let validation_set = false; // To prevent validating before submit
 
-    signup_forms.forEach((form) => {
-        form.addEventListener('submit', handleSubmit);
-    });
+    signup_form.addEventListener('submit', handleSubmit);
 
     let el_email;
     function handleSubmit(e) {
@@ -83,18 +87,18 @@ function initForm() {
 
         const el_form  = this;
         el_email = el_form.querySelector('input[type="email"]');
-        if (!validateEmail(el_email.value)) {
+        if (!validateEmail(trimEmail(el_email.value))) {
             if (!validation_set) {
                 ['input', 'change'].forEach((evt) => {
                     el_email.addEventListener(evt, () => {
-                        setValidationStyle(!validateEmail(el_email.value));
+                        setValidationStyle(signup_form, el_email, !validateEmail(trimEmail(el_email.value)));
                     });
                 });
-                setValidationStyle(!validateEmail(el_email.value));
+                setValidationStyle(signup_form, el_email, !validateEmail(trimEmail(el_email.value)));
                 validation_set = true;
             }
 
-            const to = this.offsetTop - 50;
+            const to = this.offsetTop - 100;
             scrollTo(to, 500); // Scroll to nearest form
             return;
         }
@@ -114,13 +118,38 @@ function validateEmail(email) {
     return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(email);
 }
 
-function setValidationStyle(has_error) {
-    document.querySelectorAll('input[type="email"]').forEach((el) => {
-        el.classList[has_error ? 'add' : 'remove']('error-field');
+function setValidationStyle(form, element, has_error) {
+    const error_class = 'error-field';
+    const invisible_class = 'invisible';
+
+    form.querySelectorAll('input[type="email"]').forEach((el) => {
+        el.classList[has_error ? 'add' : 'remove'](error_class);
     });
-    document.querySelectorAll('.error-msg').forEach((el) => {
-        el.classList[has_error ? 'remove' : 'add']('invisible');
-    });
+
+    if (element.value.length < 1) {
+        form.querySelectorAll('.error_no_email').forEach((el) => {
+            el.classList[has_error ? 'remove' : 'add'](invisible_class);
+        });
+        form.querySelectorAll('.error_validate_email').forEach((el) => {
+            el.classList[has_error ? 'add' : 'remove'](invisible_class);
+        });
+    }
+    else if (element.value.length >= 1) {
+        form.querySelectorAll('.error_validate_email').forEach((el) => {
+            el.classList[has_error ? 'remove' : 'add'](invisible_class);
+        });
+        form.querySelectorAll('.error_no_email').forEach((el) => {
+            el.classList[has_error ? 'add' : 'remove'](invisible_class);
+        });
+    }
+    if (!has_error) {
+        form.querySelectorAll('.error_validate_email').forEach((el) => {
+            el.classList.add(invisible_class);
+        });
+        form.querySelectorAll('.error_no_email').forEach((el) => {
+            el.classList.add(invisible_class);
+        });
+    }
 }
 
 function getClientCountry() {
