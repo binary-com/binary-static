@@ -1,4 +1,5 @@
 import React from 'react';
+import SeparatorLine from '../../../_common/components/separator_line.jsx';
 
 const Cryptocurrencies = () => {
     const currency_one = 'BTC';
@@ -14,6 +15,8 @@ const Cryptocurrencies = () => {
                 <p>{it.L('Let\'s compare the differences between buying and selling, using the BTC/USD as an example:')}</p>
             </div>
 
+            <SeparatorLine className='gr-padding-30' />
+
             <div className='gr-centered gr-6 gr-12-m'>
                 <h2 className='center-text primary-color'>{it.L('Buy')}</h2>
                 <ul className='bullet'>
@@ -22,6 +25,11 @@ const Cryptocurrencies = () => {
                     <li>{it.L('Buy = go long')}</li>
                 </ul>
             </div>
+
+            <div className='gr-6 gr-centered'>
+                <SeparatorLine className='gr-padding-30' />
+            </div>
+
             <div className='gr-centered gr-6 gr-12-m'>
                 <h2 className='center-text primary-color'>{it.L('Sell')}</h2>
                 <ul className='bullet'>
@@ -30,6 +38,8 @@ const Cryptocurrencies = () => {
                     <li>{it.L('Sell = go short')}</li>
                 </ul>
             </div>
+
+            <SeparatorLine className='gr-padding-30' />
 
             <div className='center-text'>
                 <p>{it.L('In a nutshell, when you go long on the BTC/USD with Binary.com, you are not purchasing bitcoin directly. Instead, you\'re taking a position that the BTC/USD will rise in value whereby you will make a profit. If you go long on the BTC/USD and its value falls, then you will make a loss.')}</p>
