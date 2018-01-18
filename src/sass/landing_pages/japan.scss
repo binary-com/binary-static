@@ -7,6 +7,10 @@ body {
     }
 }
 
+.scroll-lock {
+    overflow: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px;
     line-height: 1.5;
@@ -20,6 +24,13 @@ section {
     }
     .margin-bottom-40 {
         margin-bottom: 40px;
+    }
+    @media (max-width: 575px) {
+        padding: 50px 0;
+
+        .bg-shine-v {
+            margin-top: -50px;
+        }
     }
 }
 
@@ -54,11 +65,16 @@ form {
         &.margin-bottom-30 {
             margin-bottom: 30px;
         }
+        @media (max-width: 575px) {
+            font-size: 24px;
+        }
     }
     .input-group {
         display: flex;
         flex-direction: column;
         position: relative;
+        max-width: 510px;
+        margin: auto;
         @media (min-width: 575px) {
             flex-direction: row;
             justify-content: center;
@@ -91,13 +107,14 @@ form {
         .error-msg {
             position: absolute;
             top: 100%;
+            left: 3px;
             @media (max-width: 575px) {
                 position: relative;
                 margin: 5px 0;
             }
         }
     }
-    .signup-form-success {
+    .signup-form-success, .signup-form-error {
         background-color: $COLOR_ORANGE;
         padding: 5px;
         color: $COLOR_WHITE;
@@ -122,6 +139,9 @@ form {
     }
     &.margin-top-20 {
         margin: 20px 0 0;
+    }
+    p {
+        margin: 0;
     }
 }
 
@@ -170,9 +190,15 @@ form {
     &-shine-v {
         background-image: url('../images/japan/version1/bg-shine-v.svg');
         background-size: cover;
+        @media (min-width: 2559px) {
+            padding-bottom: 150px;
+        }
 
         .container {
             padding-bottom: 80px;
+            @media (max-width: 575px) {
+                padding-bottom: 40px;
+            }
         }
     }
     &-shine-rectangle {
@@ -194,6 +220,9 @@ form {
             color: $COLOR_WHITE;
             padding: 15px;
             font-weight: bold;
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
         }
         & + img {
             margin-top: -20px;
@@ -250,13 +279,16 @@ form {
         width: 180px;
         margin: 15px 0;
         float: left;
+        @media (max-width: 575px) {
+            margin: 10px 0;
+        }
     }
     .navbar-icon {
         height: 30px;
         margin: 15px 10px;
         @media (max-width: 575px) {
-            height: 15px;
-            margin: 15px 5px;
+            height: 20px;
+            margin: 10px 5px;
         }
     }
     .navbar-header {
@@ -285,11 +317,6 @@ form {
     height: 100%;
     padding-top: 0;
     padding-bottom: 0;
-    @media (max-width: 575px) {
-        .intro-body .flex {
-            flex-direction: column-reverse;
-        }
-    }
 
     &:before {
         @include triangle($COLOR_DARK_BLUE, 100px, 'down');
@@ -306,15 +333,20 @@ form {
 
         &.intro-text {
             font-size: 72px;
-            font-weight: 500;
+            font-weight: 600;
             white-space: nowrap;
             margin-top: 80px;
             margin-bottom: 30px;
+            @media (min-width: 576px) and (max-width: 768px) {
+                font-size: 50px;
+            }
             @media (max-width: 575px) {
                 font-size: 36px;
                 white-space: pre-wrap; // wrap text on mobile
                 text-align: center;
-                margin-top: 0;
+                margin-top: -20px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }
@@ -324,19 +356,27 @@ form {
         &.intro-subtext {
             max-width: 500px;
             margin: 30px 0 50px;
+            @media (max-width: 768px) {
+                margin: 30px 0;
+                font-size: 16px;
+            }
         }
     }
     form {
         margin-bottom: 80px;
+        @media (max-width: 575px) {
+            margin-bottom: 30px;
+        }
 
         .input-group {
             justify-content: flex-start;
+            margin-left: 0;
         }
     }
     .intro-bottom-text {
         font-weight: 600;
         margin-bottom: 0;
-        @media (max-width: 575px) {
+        @media (max-width: 786px) {
             font-size: 24px;
         }
     }
@@ -345,7 +385,7 @@ form {
 .spacing {
     padding-top: 100px;
     @media (max-width: 575px) {
-        padding-top: 50px;
+        padding-top: 40px;
     }
 
     .section-title {
@@ -362,17 +402,21 @@ form {
     margin-bottom: 10px;
 
     * {
-        color: $COLOR_WHITE;
         padding: 15px;
         border-radius: 5px;
         margin: 0;
-        @media (max-width: 575px) {
-            text-align: center;
+        text-align: center;
+    }
+    h1 {
+        color: $COLOR_WHITE;
+        @media (max-width: 768px) {
+            font-size: 20px;
         }
     }
     .rounded-bubble {
         @include speech-bubble($COLOR_ORANGE, 10px, 'right');
         font-weight: bold;
+        text-align: center;
         border-radius: 50%;
         padding: 20px;
         @media (max-width: 575px) {
@@ -396,7 +440,7 @@ form {
 
         h1 {
             padding: 15px 40px;
-            @media (max-width: 575px) {
+            @media (max-width: 768px) {
                 font-size: 18px;
             }
         }
@@ -420,9 +464,12 @@ form {
 .cards {
     > [class*='gr-'] {
         margin: 15px 0;
-    }
-    .card, .card--light {
-        height: 100%;   // equal-height card
+        display: flex;      // 1. fix for height: 100% in Safari
+
+        .card, .card--light {
+            flex: 1;        // 2. fix for height: 100% in Safari
+            height: 100%;   // equal-height card
+        }
     }
     &--numbered {       // auto-numbering card
         counter-reset: section;
@@ -468,16 +515,20 @@ form {
                 padding: 5px;
 
                 h1 {
-                    font-size: 18px;
+                    font-size: 20px;
                 }
             }
 
             & + .card-body {
                 margin-top: 60px;
-                margin-bottom: 40px;
+                margin-bottom: 30px;
                 @media (max-width: 575px) {
-                    margin-top: 20px;
+                    margin-top: 0;
                     margin-bottom: 0;
+
+                    .img-md {
+                        margin-top: 30px;
+                    }
                 }
             }
         }
@@ -522,15 +573,27 @@ form {
             @media (max-width: 768px) {
                 min-height: 130px;
             }
-
-            &-sm {
-                min-height: 70px;
+            @media (max-width: 575px) {
+                min-height: 88px;
             }
+
             h3 {
                 text-align: center;
                 color: $COLOR_WHITE;
                 margin-bottom: 0;
                 font-size: 20px;
+                @media (max-width: 575px) {
+                    font-size: 16px;
+                }
+            }
+            &-sm {
+                min-height: 70px;
+
+                h3 {
+                    @media (max-width: 575px) {
+                        font-size: 20px;
+                    }
+                }
             }
         }
         &__ribbon {
@@ -538,6 +601,9 @@ form {
             margin-top: -74px;
             margin-bottom: 40px;
         }
+    }
+    .card-footer {
+        margin-top: 10px;
     }
     &.icon-heart {
         justify-content: center;
@@ -633,7 +699,13 @@ form {
 .box-o, .box {
     @include flex-center;
     padding: 0 10px;
-    text-align: center;
+    text-align: left;
+    @media (max-width: 768px) {
+        max-width: 200px;
+    }
+    @media (max-width: 320px) {
+        max-width: 160px;
+    }
 
     &.box-o {
         border: 1px solid $COLOR_LIGHT_GRAY;
@@ -715,20 +787,24 @@ form {
 }
 
 .responsive-lg {
-    max-width: 128px;
-    max-height: 128px;
+    max-width: 120px;
+    max-height: 120px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-.responsive-md {
-    width: 100%;
-    height: auto;
-}
-
-@media (max-width: 575px) {
+@media (max-width: 768px) {
     .gr-padding-5-m {
         padding-left: 5px !important;
         padding-right: 5px !important;
+    }
+    h2, h1.color-orange {
+        font-size: 20px !important;
+    }
+    .subtitle {
+        font-size: 18px !important;
+    }
+    p {
+        font-size: 16px;
     }
 }
