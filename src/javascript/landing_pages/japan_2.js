@@ -19,6 +19,8 @@ window.onload = function () {
         localStorage.setItem('gclid', gclid);
     }
 
+    commonOnload();
+
     // Collapse navbar on scroll
     function collapseNavbar() {
         const navbarFixedTopEl = document.getElementsByClassName('navbar-fixed-top');

@@ -17,7 +17,7 @@ const displayCurrencies = () => {
 
     const currencies = State.getResponse('payout_currencies');
 
-    if (currencies.length > 1) {
+    if (currencies && currencies.length > 1) {
         $currency.html(Currency.getCurrencyList(currencies).html());
         Defaults.set('currency', $currency.val());
     } else {

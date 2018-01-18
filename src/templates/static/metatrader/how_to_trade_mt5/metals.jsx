@@ -30,7 +30,7 @@ const Metals = () => (
             <h2>{it.L('When to buy and sell?')}</h2>
             <p>{it.L('Can\'t figure it out on when to buy and sell? Here is a simple way of looking at it:')}</p>
             <div className='gr-row'>
-                <div className='gr-8 gr-push-2'>
+                <div className='gr-8 gr-push-2 gr-12-m gr-push-0-m'>
                     <Table
                         className='middle thin-border'
                         data={{

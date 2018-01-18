@@ -3,7 +3,6 @@ const Defaults           = require('./defaults');
 const Notifications      = require('./notifications');
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
-const Client             = require('../../base/client');
 const formatMoney        = require('../../common/currency').formatMoney;
 const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
@@ -112,7 +111,7 @@ const commonTrading = (() => {
     };
 
     const displayMarkets = (id, elements, selected) => {
-        const target   = getElementById(id);
+        const target   = document.getElementById(id);
         const fragment = document.createDocumentFragment();
 
         while (target && target.firstChild) {
@@ -163,7 +162,8 @@ const commonTrading = (() => {
      * display underlyings
      */
     const displayUnderlyings = (id, elements, selected) => {
-        const target = getElementById(id);
+        const target = document.getElementById(id);
+        if (!target) return;
 
         while (target.firstChild) {
             target.removeChild(target.firstChild);
@@ -556,62 +556,6 @@ const commonTrading = (() => {
         location.reload();
     };
 
-    // ============= Functions used in /trading_beta =============
-
-    const updatePurchaseStatus_Beta = (final_price, pnl, contract_status) => {
-        const f_price = String(final_price).replace(/,/g, '') * 1;
-        const f_pnl   = String(pnl).replace(/,/g, '') * 1;
-        $('#contract_purchase_heading').text(localize(contract_status));
-        const payout   = getElementById('contract_purchase_payout');
-        const cost     = getElementById('contract_purchase_cost');
-        const profit   = getElementById('contract_purchase_profit');
-        const currency = Client.get('currency');
-
-        labelValue(cost, localize('Stake'), formatMoney(currency, Math.abs(f_pnl), 1));
-        labelValue(payout, localize('Payout'), formatMoney(currency, f_price, 1));
-
-        const isWin = (f_price > 0);
-        $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
-        labelValue(profit, isWin ? localize('Profit') : localize('Loss'),
-            formatMoney(currency, isWin ? Math.round((f_price - f_pnl) * 100) / 100 : -Math.abs(f_pnl), 1));
-    };
-
-    const displayTooltip_Beta = (market, symbol) => {
-        if (!market || !symbol) return;
-
-        const tip     = getElementById('symbol_tip');
-        const markets = getElementById('contract_markets').value;
-
-        if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
-            tip.show();
-            tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
-        } else {
-            tip.hide();
-        }
-        if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
-            tip.show();
-            tip.setAttribute('target', urlFor('/get-started/otc-indices-stocks'));
-        }
-        if (market.match(/^random_index/) || symbol.match(/^R_/)) {
-            tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-indices'));
-        }
-        if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)) {
-            tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-quotidians'));
-        }
-        if (market.match(/^smart_fx/) || symbol.match(/^WLD/)) {
-            tip.show();
-            tip.setAttribute('target', urlFor('/get-started/smart-indices', '#world-fx-indices'));
-        }
-    };
-
-    const labelValue = (label_elem, label, value, no_currency) => {
-        const currency = Client.get('currency');
-        elementInnerHtml(label_elem, label);
-        const value_elem = getElementById(`${label_elem.id}_value`);
-        elementInnerHtml(value_elem, no_currency ? value : formatMoney(currency, value));
-        value_elem.setAttribute('value', String(value).replace(/,/g, ''));
-    };
-
     const timeIsValid = ($element) => {
         let end_date_value   = getElementById('expiry_date').getAttribute('data-value');
         let start_date_value = getElementById('date_start').value;
@@ -637,7 +581,7 @@ const commonTrading = (() => {
 
         if (Moment.utc(`${end_date_value} ${end_time_value}`).unix() <= start_date_value) {
             $element.addClass('error-field');
-            if (!getElementById('end_time_validation')) {
+            if (!document.getElementById('end_time_validation')) {
                 $('#expiry_type_endtime').append($('<p/>', { class: 'error-msg', id: 'end_time_validation', text: localize('End time must be after start time.') }));
             }
             return false;
@@ -667,9 +611,6 @@ const commonTrading = (() => {
         reloadPage,
         displayContractForms,
         displayMarkets,
-        updatePurchaseStatus_Beta,
-        displayTooltip_Beta,
-        labelValue,
         timeIsValid,
         showPriceOverlay: () => { showHideOverlay('loading_container2', 'block'); },
         hidePriceOverlay: () => { showHideOverlay('loading_container2', 'none'); },
