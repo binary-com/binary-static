@@ -176,11 +176,7 @@ function commonOnload() {
 }
 
 function jpClient() {
-    return (getLanguage() === 'ja' || jpResidence());
-}
-
-function jpResidence () {
-    return (JSON.parse(localStorage.getItem('client.accounts') || '{}')[localStorage.getItem('active_loginid')] || {}).residence === 'jp';
+    return (getLanguage() === 'ja');
 }
 
 function recordAffiliateExposure() {
