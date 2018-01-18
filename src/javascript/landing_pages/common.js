@@ -225,10 +225,10 @@ function showAfffiliatePopup() {
     const clients_country = sessionStorage.getItem('clients_country');
     const xmlhttp = new XMLHttpRequest();
 
-    const scroll_lock = 'scroll-lock';
     const container_id       = 'affiliate_disclaimer_popup';
     const el_affiliate_popup = document.getElementById(container_id);
 
+    if (isLoggedIn()) return;
     if (jpClient() || clients_country === 'jp') {
         xmlhttp.onreadystatechange = () => {
             if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
@@ -257,3 +257,34 @@ function showAfffiliatePopup() {
         el_affiliate_popup.remove();
     }
 }
+
+function isLoggedIn () {
+    /**
+     * Returns the client information
+     *
+     * @param {String|null} key     The property name to return the value from, if missing returns the account object
+     * @param {String|null} loginid The account to return the value from
+     */
+    function get(key, loginid = localStorage.getItem('active_loginid')) {
+        let value;
+        const client_object = getAllAccountsObject();
+        if (key === 'loginid') {
+            value = loginid || localStorage.getItem('active_loginid');
+        } else {
+            const current_client = client_object[loginid] || getAllAccountsObject()[loginid] || {};
+
+            value = key ? current_client[key] : current_client;
+        }
+        if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
+            value = JSON.parse(value || false);
+        }
+        return value;
+    }
+
+    function getAllAccountsObject() {
+        return JSON.parse(localStorage.getItem('client.accounts'));
+    }
+
+    return get('loginid') && get('token');
+}
+
