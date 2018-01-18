@@ -1,5 +1,5 @@
 import React from 'react';
-import { BuySellImage } from '../../get_started_beta/common.jsx';
+import { BuySellImage } from '../../get_started/common.jsx';
 import SeparatorLine from '../../../_common/components/separator_line.jsx';
 
 const CFDs = () => (
