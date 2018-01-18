@@ -41,11 +41,6 @@ const TypesOfAccounts = () => (
         <p>{it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you are an experienced trader or just starting out. Each account has been tailored to provide you with a unique opportunity to trade financial instruments.', it.website_name)}</p>
         <p>{it.L('Best of all, there is no minimum deposit requirement and no commission per trade.')}</p>
         <Box
-            image='cent'
-            title={it.L('Cent')}
-            text={it.L('The Cent account offers the highest leverage, as well as low margin call and stop out level. It is ideal for new traders who want to start trading with a smaller capital.')}
-        />
-        <Box
             image='standard'
             title={it.L('Standard')}
             text={it.L('The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.')}
@@ -69,17 +64,18 @@ const TypesOfAccounts = () => (
                 scroll
                 data={{
                     thead: [
-                        [{ text: '' }, { text: it.L('Cent') }, { text: it.L('Standard') }, { text: it.L('STP') }, { text: it.L('Volatility') }],
+                        [{ text: '' }, { text: it.L('Standard') }, { text: it.L('STP') }, { text: it.L('Volatility') }],
                     ],
                     tbody: [
-                        [{ text: <Row number={1} text={it.L('Account currency')} />},    { text: it.L('USD') },           { text: it.L('USD') },         { text: it.L('USD') },         { text: it.L('USD') }],
-                        [{ text: <Row number={2} text={it.L('Maximum leverage')} />},    { text: it.L('Up to 1:1,000') }, { text: it.L('Up to 1:300') }, { text: it.L('Up to 1:100') }, { text: it.L('Up to 1:500') }],
-                        [{ text: <Row number={3} text={it.L('Order execution')} />},     { text: it.L('Market') },        { text: it.L('Market') },      { text: it.L('Market') },      { text: it.L('Market') }],
-                        [{ text: <Row number={4} text={it.L('Spread')} />},              { text: it.L('Fixed') },         { text: it.L('Variable') },    { text: it.L('Variable') },    { text: it.L('Variable spreads') }],
-                        [{ text: <Row number={5} text={it.L('Commission')} />},          { text: it.L('No') },            { text: it.L('No') },          { text: it.L('No') },          { text: it.L('No') }],
-                        [{ text: <Row number={6} text={it.L('Margin call')} />},         { text: it.L('50%') },           { text: it.L('100%') },        { text: it.L('100%') },        { text: it.L('100%') }],
-                        [{ text: <Row number={7} text={it.L('Stop out level')} />},      { text: it.L('20%') },           { text: it.L('50%') },         { text: it.L('50%') },         { text: it.L('50%') }],
-                        [{ text: <Row number={8} text={it.L('Maximum ticket size')} />}, { text: it.L('20 lots') },       { text: it.L('50 lots') },     { text: it.L('100 lots') },    { text: it.L('50 lots') }],
+                        [{ text: <Row number={1} text={it.L('Account currency')} />},    { text: it.L('USD') },         { text: it.L('USD') },         { text: it.L('USD') }],
+                        [{ text: <Row number={2} text={it.L('Maximum leverage')} />},    { text: it.L('Up to 1:500') }, { text: it.L('Up to 1:100') }, { text: it.L('Up to 1:500') }],
+                        [{ text: <Row number={3} text={it.L('Order execution')} />},     { text: it.L('Market') },      { text: it.L('Market') },      { text: it.L('Market') }],
+                        [{ text: <Row number={4} text={it.L('Spread')} />},              { text: it.L('Variable') },    { text: it.L('Variable') },    { text: it.L('Fixed') }],
+                        [{ text: <Row number={5} text={it.L('Commission')} />},          { text: it.L('No') },          { text: it.L('No') },          { text: it.L('No') }],
+                        [{ text: <Row number={6} text={it.L('Margin call')} />},         { text: it.L('150%') },        { text: it.L('150%') },        { text: it.L('100%') }],
+                        [{ text: <Row number={7} text={it.L('Stop out level')} />},      { text: it.L('75%') },         { text: it.L('75%') },         { text: it.L('50%') }],
+                        [{ text: <Row number={8} text={it.L('Minimum ticket size')} />}, { text: it.L('0.01 lots') },   { text: it.L('0.01 lots') },   { text: it.L('0.01 lots') }],
+                        [{ text: <Row number={9} text={it.L('Step size')} />},           { text: it.L('0.01 lots') },   { text: it.L('0.01 lots') },   { text: it.L('0.01 lots') }],
                     ],
                 }}
             />
@@ -127,8 +123,13 @@ const TypesOfAccounts = () => (
         />
         <FootNote
             number={8}
-            title={it.L('Maximum ticket size')}
-            texts={[it.L('The maximum ticket size refers to the maximum volume or number of lots.')]}
+            title={it.L('Minimum ticket size')}
+            texts={[it.L('The minimum ticket size refers to the minimum volume or number of lots.')]}
+        />
+        <FootNote
+            number={9}
+            title={it.L('Step size')}
+            texts={[it.L('Step size is the minimum allowable increment applied to all order types. It is the volume from which the increase of the position is based. You can only trade in the minimum ticket size or its multiples.')]}
         />
     </div>
 );
