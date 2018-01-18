@@ -28,19 +28,20 @@ const AccountOpening = (() => {
     };
 
     const populateForm = (form_id, getValidations, is_financial, is_ico_only) => {
-        getResidence();
-        BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
+        getResidence(form_id, getValidations);
         generateBirthDate();
         if (Client.canRequestProfessional()) {
             professionalClient.init(is_financial, false, is_ico_only);
         }
     };
 
-    const getResidence = () => {
-        BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
+    const getResidence = (form_id, getValidations) => {
+        BinarySocket.send({ residence_list: 1 }).then((response) => {
+            handleResidenceList(response.residence_list, form_id, getValidations);
+        });
     };
 
-    const handleResidenceList = (residence_list) => {
+    const handleResidenceList = (residence_list, form_id, getValidations) => {
         if (residence_list.length > 0) {
             const $place_of_birth = $('#place_of_birth');
             const $tax_residence  = $('#tax_residence');
@@ -61,7 +62,20 @@ const AccountOpening = (() => {
             });
 
             $('#lbl_residence').html($('<strong/>', { text: residence_text }));
-            $place_of_birth.html($options.html()).val(residence_value);
+
+            if ($place_of_birth.length) {
+                BinarySocket.wait('get_settings').then((response) => {
+                    const place_of_birth = response.get_settings.place_of_birth;
+                    if (place_of_birth) {
+                        const txt_place_of_birth =
+                              (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
+                        $place_of_birth.replaceWith($('<span/>', { text: txt_place_of_birth || place_of_birth, 'data-value': place_of_birth }));
+                    } else {
+                        $place_of_birth.html($options.html()).val(residence_value);
+                    }
+                });
+            }
+
             if ($tax_residence) {
                 $tax_residence.html($options.html()).promise().done(() => {
                     setTimeout(() => {
@@ -71,6 +85,8 @@ const AccountOpening = (() => {
                     }, 500);
                 });
             }
+
+            BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         }
     };
 
