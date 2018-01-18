@@ -6,6 +6,7 @@ const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const toTitleCase      = require('../../../../_common/string_util').toTitleCase;
+const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const MetaTrader = (() => {
     const mt_companies  = MetaTraderConfig.mt_companies;
@@ -16,15 +17,21 @@ const MetaTrader = (() => {
     const mt_company = {};
 
     const onLoad = () => {
-        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-            if (isEligible()) {
-                MetaTraderUI.switchToMT5();
-                getAllAccountsInfo();
-                MetaTraderUI.init(submit);
-            } else {
-                MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
-            }
-        });
+        BinarySocket
+            .wait('landing_company', 'get_account_status')
+            .then(MetaTraderConfig.getAccountStatus)
+            .then(() => {
+                if (isEligible()) {
+                    MetaTraderUI.switchToMT5();
+                    if (Client.get('is_virtual')) {
+                        getAllAccountsInfo();
+                    } else {
+                        BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
+                    }
+                } else {
+                    MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
+                }
+            });
     };
 
     const isEligible = () => {
@@ -63,6 +70,7 @@ const MetaTrader = (() => {
     };
 
     const getAllAccountsInfo = () => {
+        MetaTraderUI.init(submit);
         BinarySocket.wait('mt5_login_list').then((response) => {
             // Ignore old accounts which are not linked to any group or has deprecated group
             const mt5_login_list = (response.mt5_login_list || []).filter(obj => (
@@ -156,7 +164,7 @@ const MetaTrader = (() => {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : accounts_info[acc_type].info.login;
                         if (!accounts_info[acc_type].info) {
-                            accounts_info[acc_type].info = { login };
+                            accounts_info[acc_type].info = { login, currency: getPropertyValue(response, ['mt5_new_account', 'currency']) };
                             MetaTraderUI.setAccountType(acc_type, true);
                             BinarySocket.send({ mt5_login_list: 1 });
                         }

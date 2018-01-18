@@ -52,7 +52,7 @@ const VolatilityIndices = () => {
                 </div>
                 <p>{it.L('Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index.')}</p>
                 <p>{it.L('Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit.')}</p>
-                <p>{it.L('To learn more, read our <a href="[_1]">Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices.', it.url_for('get-started-beta/cfds#margin-policy'))}</p>
+                <p>{it.L('To learn more, read our <a href="[_1]">Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices.', it.url_for('get-started/cfds#margin-policy'))}</p>
             </div>
         </div>
     );

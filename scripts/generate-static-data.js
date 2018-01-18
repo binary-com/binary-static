@@ -195,7 +195,7 @@ const texts = [
     'Password should have lower and uppercase letters with numbers.',
     'Password is not strong enough.',
     'Your session duration limit will end in [_1] seconds.',
-    'Invalid email address',
+    'Invalid email address.',
     'Thank you for signing up! Please check your email to complete the registration process.',
 
     // real account opening
@@ -473,7 +473,7 @@ const texts = [
     'There was a problem accessing the server during purchase.',
 
     // form_validation
-    'Should be a valid number',
+    'Should be a valid number.',
     'Should be more than [_1]',
     'Should be less than [_1]',
     'Should be between [_1] and [_2]',
@@ -500,17 +500,17 @@ const texts = [
     '[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]',
     '[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]',
     'Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.',
+    'Your cashier is locked.',
     'You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.',
     'Sorry, this feature is not available in your jurisdiction.',
+    'You have reached the limit.',
     'Main password',
     'Investor password',
     'Current password',
     'New password',
-    'Demo Cent',
     'Demo Standard',
     'Demo STP',
     'Demo Volatility',
-    'Real Cent',
     'Real Standard',
     'Real STP',
     'Real Volatility',
