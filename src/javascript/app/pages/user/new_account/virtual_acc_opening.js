@@ -7,6 +7,7 @@ const TrafficSource    = require('../../../common/traffic_source');
 const makeOption       = require('../../../../_common/common_functions').makeOption;
 const localize         = require('../../../../_common/localize').localize;
 const LocalStore       = require('../../../../_common/storage').LocalStore;
+const State            = require('../../../../_common/storage').State;
 const urlFor           = require('../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
@@ -106,14 +107,17 @@ const VirtualAccOpening = (() => {
             const residence   = response.echo_req.residence;
             Client.set('residence', residence, new_account.client_id);
             LocalStore.remove('gclid');
-            BinarySocket.send({ landing_company: residence }).then(() => {
-                Client.processNewAccount({
-                    email       : new_account.email,
-                    loginid     : new_account.client_id,
-                    token       : new_account.oauth_token,
-                    is_virtual  : true,
-                    redirect_url: urlFor(`new_account/${jp_client ? 'landing_page' : 'account_type'}`),
-                });
+            State.set('skip_response', 'authorize');
+            BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
+                if (!response_auth.error) {
+                    Client.processNewAccount({
+                        email       : new_account.email,
+                        loginid     : new_account.client_id,
+                        token       : new_account.oauth_token,
+                        is_virtual  : true,
+                        redirect_url: jp_client ? urlFor('new_account/landing_page') : urlFor(Client.getUpgradeInfo().upgrade_link),
+                    });
+                }
             });
             return true;
         }

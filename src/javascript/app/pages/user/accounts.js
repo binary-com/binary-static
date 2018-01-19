@@ -6,6 +6,7 @@ const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
 const getCurrencyList    = require('../../common/currency').getCurrencyList;
 const FormManager        = require('../../common/form_manager');
+const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
 const State              = require('../../../_common/storage').State;
 const toTitleCase        = require('../../../_common/string_util').toTitleCase;
@@ -13,8 +14,7 @@ const urlFor             = require('../../../_common/url').urlFor;
 const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const Accounts = (() => {
-    let landing_company,
-        is_ico_only;
+    let landing_company;
     const form_id = '#new_accounts';
 
     const onLoad = () => {
@@ -22,23 +22,20 @@ const Accounts = (() => {
             // ask client to set residence first since cannot wait landing_company otherwise
             BinaryPjax.load(urlFor('user/settings/detailsws'));
         }
-        BinarySocket.wait('landing_company', 'get_settings', 'get_account_status').then(() => {
+        BinarySocket.wait('landing_company', 'get_settings').then(() => {
             landing_company = State.getResponse('landing_company');
-            is_ico_only     = Client.get('is_ico_only');
 
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
-            const upgrade_info  = Client.getUpgradeInfo(landing_company, undefined, is_ico_only);
+            const upgrade_info  = Client.getUpgradeInfo();
             if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            const currencies = getCurrencies(landing_company);
-            // only allow opening of multi account to costarica clients with remaining currency
-            if (Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
-                populateMultiAccount(currencies);
+            if (upgrade_info.can_open_multi) {
+                populateMultiAccount();
             } else {
                 doneLoading(element_to_show);
             }
@@ -62,7 +59,7 @@ const Accounts = (() => {
 
         $(form_id).find('tbody')
             .append($('<tr/>')
-                .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account, is_ico_only)}` })))
+                .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account)}` })))
                 .append($('<td/>', { text: getAvailableMarkets(account) }))
                 .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', ') }))
                 .append($('<td/>')
@@ -119,8 +116,8 @@ const Accounts = (() => {
         }
     };
 
-    const getAvailableMarkets = (loginid, is_type_ico_only) => {
-        if (Client.get('is_ico_only', loginid) || is_type_ico_only) {
+    const getAvailableMarkets = (loginid) => {
+        if (Client.get('is_ico_only', loginid)) {
             return [localize('None')];
         }
         let legal_allowed_markets = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_markets') || '';
@@ -144,11 +141,12 @@ const Accounts = (() => {
 
     const getMarketName = market => localize(markets[market] || '');
 
-    const populateMultiAccount = (currencies) => {
+    const populateMultiAccount = () => {
+        const currencies = getCurrencies(landing_company);
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
-                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 }, is_ico_only)}` })))
-                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }, is_ico_only) }))
+                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 })}` })))
+                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
 
@@ -166,7 +164,7 @@ const Accounts = (() => {
         // need to make it visible before adding the form manager event on it
         doneLoading('#new_accounts_wrapper');
 
-        const el_select_currency = /select/i.test(document.getElementById('new_account_currency').nodeName);
+        const el_select_currency = /select/i.test(getElementById('new_account_currency').nodeName);
         FormManager.init(form_id, [{ selector: '#new_account_currency', request_field: 'currency', validations: [el_select_currency ? 'req' : ''], hide_asterisk: true }].concat(populateReq()));
 
         FormManager.handleSubmit({
@@ -194,7 +192,6 @@ const Accounts = (() => {
                 loginid     : new_account.client_id,
                 token       : new_account.oauth_token,
                 redirect_url: urlFor('user/set-currency'),
-                is_ico_only : getPropertyValue(response, ['echo_req', 'account_type']) === 'ico',
             });
         }
     };
@@ -209,7 +206,7 @@ const Accounts = (() => {
         const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
         const req          = [
             { request_field: 'new_account_real',       value: 1 },
-            { request_field: 'account_type',           value: is_ico_only ? 'ico' : 'default' },
+            { request_field: 'account_type',           value: 'default' },
             { request_field: 'date_of_birth',          value: dob },
             { request_field: 'salutation',             value: get_settings.salutation },
             { request_field: 'first_name',             value: get_settings.first_name },

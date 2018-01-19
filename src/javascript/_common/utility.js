@@ -111,7 +111,7 @@ const clearable = (element) => {
  * @param {Object} attributes: all the attributes to assign, e.g. { id: '...', class: '...', html: '...', ... }
  * @return the created DOM element
  */
-const createElement = (tag_name, attributes) => {
+const createElement = (tag_name, attributes = {}) => {
     const el = document.createElement(tag_name);
     Object.keys(attributes).forEach((attr) => {
         const value = attributes[attr];
@@ -166,7 +166,7 @@ const applyToAllElements = (selector, funcToRun, func_selector, el_parent) => {
  * @param {String}  selector: selector to find the element that matches to, e.g. '.class', '#id', 'tag', or a combination of them
  */
 const findParent = (el, selector) => {
-    if (el && el.nodeName !== 'BODY') {
+    if (el && el.nodeName !== 'BODY' && typeof el.matches === 'function') {
         return el.matches(selector) ? el : findParent(el.parentNode, selector);
     }
     return null;

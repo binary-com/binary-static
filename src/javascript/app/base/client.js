@@ -4,6 +4,7 @@ const BinarySocket       = require('./socket');
 const jpClient           = require('../common/country_base').jpClient;
 const isCryptocurrency   = require('../common/currency').isCryptocurrency;
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
+const getElementById     = require('../../_common/common_functions').getElementById;
 const LocalStore         = require('../../_common/storage').LocalStore;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
@@ -18,7 +19,6 @@ const Client = (() => {
 
     const init = () => {
         current_loginid = LocalStore.get('active_loginid');
-        backwardCompatibility();
         client_object = getAllAccountsObject();
     };
 
@@ -28,16 +28,10 @@ const Client = (() => {
         get('token')
     );
 
-    const validateLoginid = () => {
-        if (!isLoggedIn()) return;
+    const isValidLoginid = () => {
+        if (!isLoggedIn()) return true;
         const valid_login_ids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG|VRTJ|JP)[0-9]+$', 'i');
-        getAllLoginids().some((loginid) => {
-            if (!valid_login_ids.test(loginid)) {
-                sendLogoutRequest();
-                return true;
-            }
-            return false;
-        });
+        return getAllLoginids().every(loginid => valid_login_ids.test(loginid));
     };
 
     /**
@@ -159,49 +153,6 @@ const Client = (() => {
         }
     };
 
-    /**
-     * Upgrade the structure of client info to the new one
-     * (for clients which already are logged-in with the old version)
-     */
-    const backwardCompatibility = () => {
-        if (!current_loginid) return;
-
-        const accounts_obj    = LocalStore.getObject('client.tokens');
-        const current_account = getPropertyValue(accounts_obj, current_loginid) || {};
-
-        // 1. client.tokens = { loginid1: token1, loginid2, token2 }
-        if (typeof current_account !== 'object') {
-            Object.keys(accounts_obj).forEach((loginid) => {
-                accounts_obj[loginid] = { token: current_account };
-            });
-        }
-
-        // 2. client.tokens = { loginid1: { token: token1, currency: currency1 }, loginid2: { ... } }
-        if (!isEmptyObject(accounts_obj)) {
-            const keys     = ['balance', 'currency', 'email', 'is_virtual', 'residence', 'session_start'];
-            // read current client.* values and set in new object
-            const setValue = (old_key, new_key) => {
-                const value = LocalStore.get(`client.${old_key}`);
-                if (value) {
-                    accounts_obj[current_loginid][new_key || old_key] = value;
-                }
-            };
-            keys.forEach((key) => { setValue(key); });
-            setValue('landing_company_name', 'landing_company_shortcode');
-
-            // remove all client.* and cookies
-            Object.keys(LocalStore.storage).forEach((key) => {
-                if (/^client\./.test(key)) {
-                    LocalStore.remove(key);
-                }
-            });
-            cleanupCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
-
-            // set client.accounts
-            LocalStore.setObject(storage_key, accounts_obj);
-        }
-    };
-
     const processNewAccount = (options) => {
         if (!options.email || !options.loginid || !options.token) {
             return;
@@ -209,37 +160,28 @@ const Client = (() => {
 
         localStorage.setItem('GTM_new_account', '1');
 
-        set('token',       options.token,       options.loginid);
-        set('email',       options.email,       options.loginid);
-        set('is_virtual',  +options.is_virtual, options.loginid);
-        set('loginid',     options.loginid);
-        set('is_ico_only', options.is_ico_only);
+        set('token',      options.token,       options.loginid);
+        set('email',      options.email,       options.loginid);
+        set('is_virtual', +options.is_virtual, options.loginid);
+        set('loginid',    options.loginid);
 
         // need to redirect not using pjax
         window.location.href = options.redirect_url || defaultRedirectUrl();
     };
 
     const activateByClientType = (section_id) => {
-        const topbar = document.getElementById('topbar');
-        if (!topbar) {
-            return;
-        }
-        const topbar_class = topbar.classList;
-        const el_section   = section_id ? document.getElementById(section_id) : document.body;
-        if (!el_section) {
-            return;
-        }
+        const topbar_class = getElementById('topbar').classList;
+        const el_section   = section_id ? getElementById(section_id) : document.body;
+
         const primary_bg_color_dark = 'primary-bg-color-dark';
         const secondary_bg_color    = 'secondary-bg-color';
 
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
-                const client_logged_in = document.getElementById('client-logged-in');
-                const is_jp = jpClient();
-                if (client_logged_in) {
-                    client_logged_in.classList.add('gr-centered');
-                }
+                const client_logged_in = getElementById('client-logged-in');
+                client_logged_in.classList.add('gr-centered');
 
+                const is_jp       = jpClient();
                 const is_ico_only = !is_jp && get('is_ico_only');
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
@@ -254,13 +196,6 @@ const Client = (() => {
                         el.setVisibility(1);
                     }
                 });
-
-                // Show to eu clients only
-                if(/^malta|maltainvest|iom$/.test(get('landing_company_shortcode'))) {
-                    applyToAllElements('.eu-only', (el) => {
-                        el.setVisibility(1);
-                    });
-                }
 
                 if (get('is_virtual')) {
                     applyToAllElements('.client_virtual', (el) => { el.setVisibility(1); }, '', el_section);
@@ -330,49 +265,58 @@ const Client = (() => {
 
     const currentLandingCompany = () => {
         const landing_company_response = State.getResponse('landing_company') || {};
-        const lc_prop                  = Object.keys(landing_company_response)
-            .find(key => get('landing_company_shortcode') === landing_company_response[key].shortcode);
-        return landing_company_response[lc_prop] || {};
+        const this_shortcode           = get('landing_company_shortcode');
+        const landing_company_prop     = Object.keys(landing_company_response).find((key) => (
+            this_shortcode === landing_company_response[key].shortcode
+        ));
+        return landing_company_response[landing_company_prop] || {};
     };
 
     const shouldCompleteTax = () => isAccountOfType('financial') && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
 
-    const hasShortCode = (data, code) => ((data || {}).shortcode === code);
+    const getUpgradeInfo = () => {
+        const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
 
-    const canUpgradeGamingToFinancial = data => (hasShortCode(data.financial_company, 'maltainvest'));
+        let can_upgrade    = !!(upgradeable_landing_companies && upgradeable_landing_companies.length);
+        let can_open_multi = false;
+        let type,
+            upgrade_link;
+        if (can_upgrade) {
+            const current_landing_company = get('landing_company_shortcode');
 
-    const canUpgradeVirtualToFinancial = data => (!data.gaming_company && hasShortCode(data.financial_company, 'maltainvest'));
+            can_open_multi = !!(upgradeable_landing_companies.find(landing_company => (
+                landing_company === current_landing_company
+            )));
 
-    const canUpgradeVirtualToJapan = data => (!data.gaming_company && hasShortCode(data.financial_company, 'japan'));
+            // only show upgrade message to landing companies other than current
+            const canUpgrade = arr_landing_company => (
+                !!(arr_landing_company.find(landing_company => (
+                    landing_company !== current_landing_company &&
+                    upgradeable_landing_companies.indexOf(landing_company) !== -1
+                )))
+            );
 
-    const canUpgradeVirtualToReal = data => (hasShortCode(data.financial_company, 'costarica'));
-
-    const getUpgradeInfo = (landing_company, jp_account_status = State.getResponse('get_settings.jp_account_status.status'), account_type_ico = false) => {
-        let type         = 'real';
-        let can_upgrade  = false;
-        let upgrade_link = 'realws';
-        if (account_type_ico) {
-            can_upgrade = !hasCostaricaAccount();
-        } else if (get('is_virtual')) {
-            if (canUpgradeVirtualToFinancial(landing_company)) {
+            if (canUpgrade(['costarica', 'malta', 'iom'])) {
+                type         = 'real';
+                upgrade_link = 'realws';
+            } else if (canUpgrade(['maltainvest'])) {
                 type         = 'financial';
                 upgrade_link = 'maltainvestws';
-            } else if (canUpgradeVirtualToJapan(landing_company)) {
+            } else if (canUpgrade(['japan'])) {
+                type         = 'real';
                 upgrade_link = 'japanws';
+            } else {
+                can_upgrade = false;
             }
-            can_upgrade = !hasAccountType('real') && (!jp_account_status || !/jp_knowledge_test_(pending|fail)|jp_activation_pending|activated/.test(jp_account_status));
-        } else if (canUpgradeGamingToFinancial(landing_company)) {
-            type         = 'financial';
-            can_upgrade  = !hasAccountType('financial');
-            upgrade_link = 'maltainvestws';
         }
         return {
             type,
             can_upgrade,
-            upgrade_link   : `new_account/${upgrade_link}`,
-            is_current_path: new RegExp(upgrade_link, 'i').test(window.location.pathname),
+            can_open_multi,
+            upgrade_link   : upgrade_link ? `new_account/${upgrade_link}` : undefined,
+            is_current_path: upgrade_link ? new RegExp(upgrade_link, 'i').test(window.location.pathname) : undefined,
         };
     };
 
@@ -399,11 +343,12 @@ const Client = (() => {
         return (landing_company_object || {})[key];
     };
 
-    const canTransferFunds = () =>
+    const canTransferFunds = () => !!(
         (Client.hasAccountType('financial', true) && Client.hasAccountType('gaming', true)) ||
-        (hasCurrencyType('crypto') && hasCurrencyType('fiat'));
+        (hasCurrencyType('crypto') && hasCurrencyType('fiat'))
+    );
 
-    const hasCostaricaAccount = () => getAllLoginids().find(loginid => /^CR/.test(loginid));
+    const hasCostaricaAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
     const canOpenICO = () =>
         /malta|iom/.test(State.getResponse('landing_company.financial_company.shortcode')) ||
@@ -429,13 +374,13 @@ const Client = (() => {
 
     return {
         init,
-        validateLoginid,
+        isValidLoginid,
         set,
         get,
         getAllLoginids,
         getAccountType,
-        getAccountOfType,
         isAccountOfType,
+        getAccountOfType,
         hasAccountType,
         hasCurrencyType,
         responseAuthorize,
@@ -449,7 +394,6 @@ const Client = (() => {
         shouldCompleteTax,
         getMT5AccountType,
         getUpgradeInfo,
-        canUpgradeVirtualToReal,
         getAccountTitle,
         activateByClientType,
         currentLandingCompany,

@@ -1,8 +1,10 @@
 const Portfolio        = require('./account/portfolio/portfolio').Portfolio;
 const ViewPopup        = require('./view_popup/view_popup');
 const BinarySocket     = require('../../base/socket');
+const loadUrl          = require('../../base/binary_pjax').load;
 const formatMoney      = require('../../common/currency').formatMoney;
 const Validation       = require('../../common/form_validation');
+const urlFor           = require('../../../_common/url').urlFor;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
@@ -30,32 +32,43 @@ const ICOPortfolio = (() => {
     };
 
     const createPortfolioRow = (data, is_first) => {
-        const long_code          = data.longcode;
-        const ico_status         = (State.getResponse('ico_status.ico_status') || '').toLowerCase();
-        let status_text = 'Ended';
-        if (/unsuccessful/i.test(long_code)) {
-            status_text = 'Refund Bid';
-        } else if (/successful/i.test(long_code)) {
-            status_text = 'Claim Tokens';
+        const long_code         = data.longcode;
+        const shortcode         = data.shortcode.split('_');
+        const ico_status        = (State.getResponse('ico_status.ico_status') || '').toLowerCase();
+        const final_price       = +State.getResponse('ico_status.final_price');
+        const is_claim_allowed  = State.getResponse('ico_status.is_claim_allowed');
+        const bid               = +shortcode[1];
+        const pending_text      = localize('The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids.');
+        const pending_claim_msg = `data-balloon="${pending_text}" data-balloon-length="large" data-balloon-pos="left"`;
+
+        let status_text = localize('Pending');
+        let button_class = 'button-secondary';
+        let action = '';
+        let is_pending = false;
+        if (ico_status === 'closed' && final_price > bid && is_claim_allowed) {
+            status_text = localize('Refund Bid');
+            action = 'refund';
+            button_class = 'button';
+        } else if (ico_status === 'closed' && final_price <= bid && is_claim_allowed) {
+            status_text = localize('Claim Tokens');
+            action = 'claim';
+        } else if (ico_status === 'closed' && !is_claim_allowed) {
+            is_pending = true;
         } else if (ico_status === 'open') {
-            status_text = 'Cancel Bid';
+            status_text = localize('Cancel Bid');
+            action = 'cancel';
         }
 
-        const new_class    = is_first ? '' : 'new';
-        const status       = status_text;
-        let button_class = /cancel|end/i.test(status) ? 'button-secondary' : 'button';
-        const action       = / successful/i.test(long_code) ? 'claim' : 'cancel';
-        const shortcode    = data.shortcode.split('_');
-
-        const buy_price          = +shortcode[1] * +shortcode[2];
-
-        const $div         = $('<div/>');
+        const new_class = is_first ? '' : 'new';
+        const status    = status_text;
+        const buy_price = +shortcode[1] * +shortcode[2];
+        const $div      = $('<div/>');
         if (+State.getResponse('ico_status.final_price') === 0) {
             button_class = 'button-disabled';
         }
 
-        const $button = $('<a/>', { class: `${button_class} nowrap`, contract_id: data.contract_id, action});
-        $button.append($(`<span>${localize(status)}</span>`));
+        const $button = $('<a/>', { class: `${button_class} nowrap`, contract_id: data.contract_id, tokens: shortcode[2],action});
+        $button.append($(`<span ${is_pending && pending_claim_msg}>${localize(status)}</span>`));
 
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref', text: data.transaction_id }))
@@ -98,11 +111,34 @@ const ICOPortfolio = (() => {
             $('#portfolio-no-contract').show();
             $('#portfolio-table').setVisibility(0);
         } else {
+            // Cancel bid
             $('a[action="cancel"]:not(.button-disabled)').on('click', function (e) {
                 e.preventDefault();
                 const contract_id = $(this).attr('contract_id');
                 cancelBid(contract_id);
             });
+            // Refund Bid
+            $('a[action="refund"]:not(.button-disabled)').on('click', function (e) {
+                e.preventDefault();
+                BinarySocket.send({
+                    sell : $(this).attr('contract_id'),
+                    price: 0,
+                });
+            });
+            // Claim bid
+            $('a[action="claim"]:not(.button-disabled)')
+                .off('click')
+                .on('click', (e) => {
+                    e.preventDefault();
+                    const url = urlFor('user/ico-claim-form');
+                    // set the contract id for ico-claim-form page.
+                    const $col        = $(e.target).parent();
+                    const contract_id = $col.attr('contract_id');
+                    const tokens      = $col.attr('tokens');
+                    State.set('ico_contract_id', contract_id);
+                    State.set('ico_token_count', tokens);
+                    loadUrl(url);
+                });
 
             $('#portfolio-table').setVisibility(1);
         }

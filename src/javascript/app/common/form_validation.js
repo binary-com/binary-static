@@ -146,7 +146,7 @@ const Validation = (() => {
 
         if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
             is_ok   = false;
-            message = localize('Should be a valid number');
+            message = localize('Should be a valid number.');
         } else if (options.type === 'float' && options.decimals &&
             !(new RegExp(`^\\d+(\\.\\d{0,${options.decimals}})?$`).test(value))) {
             is_ok   = false;

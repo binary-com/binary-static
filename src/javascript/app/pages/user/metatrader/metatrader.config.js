@@ -9,8 +9,7 @@ const urlFor       = require('../../../../_common/url').urlFor;
 const MetaTraderConfig = (() => {
     const mt_companies = {
         financial: {
-            cent    : { mt5_account_type: 'cent',     max_leverage: 1000, title: 'Cent' },
-            standard: { mt5_account_type: 'standard', max_leverage: 300,  title: 'Standard' },
+            standard: { mt5_account_type: 'standard', max_leverage: 500,  title: 'Standard' },
             stp     : { mt5_account_type: 'stp',      max_leverage: 100,  title: 'STP' },
         },
         gaming: {
@@ -20,7 +19,8 @@ const MetaTraderConfig = (() => {
 
     const accounts_info = {};
 
-    const needsRealMessage = () => $(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
+    let $messages;
+    const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
     const actions_info = {
         new_account: {
@@ -33,8 +33,8 @@ const MetaTraderConfig = (() => {
                     } else if (Client.get('is_virtual')) {
                         resolve(needsRealMessage());
                     } else if (accounts_info[acc_type].account_type === 'financial') {
-                        BinarySocket.wait('get_account_status').then((response_get_account_status) => {
-                            const $message = $('#msg_real_financial').clone();
+                        getAccountStatus().then((response_get_account_status) => {
+                            const $message = $messages.find('#msg_real_financial').clone();
                             let is_ok = true;
                             if (/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status)) {
                                 $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`);
@@ -77,7 +77,18 @@ const MetaTraderConfig = (() => {
                             resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', [
                                 urlFor('user/security/cashier_passwordws')]));
                         } else {
-                            resolve();
+                            getAccountStatus().then((response_status) => {
+                                if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
+                                    resolve(localize('Your cashier is locked.')); // Locked from BO
+                                } else {
+                                    const limit = State.getResponse('get_limits.remainder');
+                                    if (typeof limit !== 'undefined' && limit < 1) {
+                                        resolve(localize('You have reached the limit.'));
+                                    } else {
+                                        resolve();
+                                    }
+                                }
+                            });
                         }
                     });
                 }
@@ -95,12 +106,9 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
-                    BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                        // There are cases that prompt_client_to_authenticate=0
-                        // but websocket returns authentication required error when trying to withdraw
-                        // so we check for 'authenticated' status as well to display a user friendly message instead
-                        resolve(+response_status.get_account_status.prompt_client_to_authenticate || !/authenticated/.test(response_status.get_account_status.status) ?
-                            $('#msg_authenticate').html() : '');
+                    getAccountStatus().then((response_status) => {
+                        resolve(+response_status.get_account_status.prompt_client_to_authenticate ?
+                            $messages.find('#msg_authenticate').html() : '');
                     });
                 } else {
                     resolve();
@@ -160,7 +168,7 @@ const MetaTraderConfig = (() => {
         },
         withdrawal: {
             txt_amount       : { id: '#txt_amount_withdrawal', request_field: 'amount' },
-            txt_main_pass    : { id: '#txt_main_pass' },
+            txt_main_pass    : { id: '#txt_main_pass_wd' },
             additional_fields:
                 acc_type => ({
                     from_mt5 : accounts_info[acc_type].info.login,
@@ -169,7 +177,7 @@ const MetaTraderConfig = (() => {
         },
     };
 
-    const validations = {
+    const validations = () => ({
         new_account: [
             { selector: fields.new_account.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
@@ -182,13 +190,21 @@ const MetaTraderConfig = (() => {
             { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
         ],
         deposit: [
-            { selector: fields.deposit.txt_amount.id, validations: ['req', ['number', { type: 'float', min: 1, max: 20000, decimals: 2 }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
+            { selector: fields.deposit.txt_amount.id, validations: ['req', ['number', { type: 'float', min: 1, max: Math.min(State.getResponse('get_limits.remainder') || 20000, 20000), decimals: 2 }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
         ],
         withdrawal: [
             { selector: fields.withdrawal.txt_main_pass.id, validations: ['req'] },
             { selector: fields.withdrawal.txt_amount.id,    validations: ['req', ['number', { type: 'float', min: 1, max: 20000, decimals: 2 }]] },
         ],
-    };
+    });
+
+    const getAccountStatus = () => new Promise((resolve) => {
+        if (+State.get(['response', 'get_account_status', 'echo_req', 'mt5_related']) === 1) {
+            resolve(State.get(['response', 'get_account_status']));
+        } else {
+            BinarySocket.send({ get_account_status: 1, mt5_related: 1 }).then(resolve);
+        }
+    });
 
     return {
         mt_companies,
@@ -197,7 +213,9 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
-        mt5Currency: () => 'USD',
+        getAccountStatus,
+        setMessages: ($msg) => { $messages = $msg; },
+        getCurrency: acc_type => accounts_info[acc_type].info.currency,
     };
 })();
 

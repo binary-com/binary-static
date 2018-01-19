@@ -7,6 +7,7 @@ const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover
 const toJapanTimeIfNeeded  = require('../../../base/clock').toJapanTimeIfNeeded;
 const BinarySocket         = require('../../../base/socket');
 const jpClient             = require('../../../common/country_base').jpClient;
+const getElementById       = require('../../../../_common/common_functions').getElementById;
 const localize             = require('../../../../_common/localize').localize;
 const State                = require('../../../../_common/storage').State;
 const urlFor               = require('../../../../_common/url').urlFor;
@@ -85,7 +86,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_contract_id', contract.contract_id);
 
         containerSetText('trade_details_start_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
-        if (document.getElementById('trade_details_end_date')) containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
+        containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
         containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
 
@@ -220,7 +221,7 @@ const ViewPopup = (() => {
 
         const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended   = contract.is_settleable || contract.is_sold;
-        if ((!is_started || is_ended || now >= contract.date_expiry) && document.getElementById('trade_details_live_remaining')) {
+        if ((!is_started || is_ended || now >= contract.date_expiry)) {
             containerSetText('trade_details_live_remaining', '-');
         } else {
             let remained = contract.date_expiry - now;
@@ -230,11 +231,8 @@ const ViewPopup = (() => {
                 days = Math.floor(remained / day_seconds);
                 remained %= day_seconds;
             }
-            if (document.getElementById('trade_details_live_remaining')) {
-                containerSetText('trade_details_live_remaining',
-                    (days > 0 ? `${days} ${localize(days > 1 ? 'days' : 'day')}, ` : '') +
-                    moment((remained) * 1000).utc().format('HH:mm:ss'));
-            }
+            containerSetText('trade_details_live_remaining',
+                (days > 0 ? `${days} ${localize(days > 1 ? 'days' : 'day')}, ` : '') + moment((remained) * 1000).utc().format('HH:mm:ss'));
         }
     };
 
@@ -258,21 +256,18 @@ const ViewPopup = (() => {
     };
 
     const appendAuditLink = (element_id) => {
-        const el = document.getElementById(element_id);
-        if (!el) return;
-
-        const link = createElement('a', { href: `${'java'}${'script:;'}`, class: 'link-audit button-secondary' });
+        const link = createElement('a', { href: `${'javascript:;'}`, class: 'link-audit button-secondary' });
         const span = createElement('span', { text: localize('Audit') });
         link.appendChild(span);
         link.addEventListener('click', () => { initAuditTable(1); });
-        el.appendChild(link);
+        getElementById(element_id).appendChild(link);
     };
 
     // by default shows audit table and hides chart
     const setAuditVisibility = (show = true) => {
         setAuditButtonsVisibility(!show);
-        document.getElementById('sell_details_chart_wrapper').setVisibility(!show);
-        document.getElementById('sell_details_audit').setVisibility(show);
+        getElementById('sell_details_chart_wrapper').setVisibility(!show);
+        getElementById('sell_details_audit').setVisibility(show);
         ViewPopupUI.repositionConfirmation();
     };
 
@@ -309,7 +304,7 @@ const ViewPopup = (() => {
         tr.appendChild(createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' }));
         table.appendChild(tr);
         div.appendChild(table);
-        div.insertAfter(document.getElementById('sell_details_chart_wrapper'));
+        div.insertAfter(getElementById('sell_details_chart_wrapper'));
         populateAuditTable(show);
         showExplanation(div);
     };
@@ -375,7 +370,7 @@ const ViewPopup = (() => {
         fieldset.appendChild(createElement('legend', { text: localize(`Contract ${title}`) }));
         fieldset.appendChild(table);
         div.appendChild(fieldset);
-        let insert_after = document.getElementById('audit_header');
+        let insert_after = getElementById('audit_header');
         const audit_table  = document.getElementsByClassName('audit-table')[0];
         if (audit_table) {
             insert_after = audit_table;

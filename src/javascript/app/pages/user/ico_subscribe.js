@@ -1,4 +1,3 @@
-const moment                = require('moment');
 const ICOPortfolio          = require('./ico_portfolio');
 const BinaryPjax            = require('../../base/binary_pjax');
 const Client                = require('../../base/client');
@@ -8,12 +7,11 @@ const getDecimalPlaces      = require('../../common/currency').getDecimalPlaces;
 const formatMoney           = require('../../common/currency').formatMoney;
 const onlyNumericOnKeypress = require('../../common/event_handler');
 const FormManager           = require('../../common/form_manager');
+const getElementById        = require('../../../_common/common_functions').getElementById;
 const getLanguage           = require('../../../_common/language').get;
 const localize              = require('../../../_common/localize').localize;
 const State                 = require('../../../_common/storage').State;
 const Url                   = require('../../../_common/url');
-const urlFor                = require('../../../_common/url').urlFor;
-const getPropertyValue      = require('../../../_common/utility').getPropertyValue;
 
 const ICOSubscribe = (() => {
     const form_id = '#frm_ico_bid';
@@ -50,8 +48,20 @@ const ICOSubscribe = (() => {
             .attr('src', image);
 
         BinarySocket.wait('ico_status', 'landing_company', 'get_settings', 'get_account_status').then(() => {
-            if (State.getResponse('ico_status.ico_status') === 'closed') {
-                $(form_id).replaceWith($('<p/>', { class: 'notice-msg center-text', text: localize('The ICO is currently unavailable.') }));
+            const ico_status = State.getResponse('ico_status');
+
+            if (ico_status.ico_status === 'closed') {
+                let notice_msg = '';
+                $('.ico-ended-hide').remove();
+                if (ico_status.is_claim_allowed && +ico_status.final_price) {
+                    const curr  = (Client.get('currency') || 'USD').toUpperCase();
+                    const price_str = `${curr !=='USD' ? `${formatMoney(curr, ico_status.final_price)} / ` : ''}${formatMoney('USD', ico_status.final_price_usd)}`;
+                    notice_msg = localize(`Thank you for participating in our ICO. The final price of the tokens has been set at ${price_str} per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance.`);
+                } else {
+                    notice_msg = localize('The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids.');
+                }
+
+                $(form_id).replaceWith($('<p/>', {class: 'notice-msg center-text', html: notice_msg}));
                 ICOPortfolio.onLoad();
                 showContent();
             } else {
@@ -71,7 +81,6 @@ const ICOSubscribe = (() => {
     const init = () => {
         BinarySocket.wait('balance').then((response) => {
             ICOPortfolio.onLoad();
-            $('#view_ico_info').setVisibility(1);
             currency = Client.get('currency') || '';
             if (currency) {
                 $('.currency').text(currency);
@@ -109,7 +118,7 @@ const ICOSubscribe = (() => {
                     { selector: '#price',    validations: ['req', ['number', { type: 'float', decimals: decimal_places, min: Math.pow(10, -decimal_places).toFixed(decimal_places) }]], no_scroll: 1 },
 
                     { request_field: 'buy', value: 1 },
-                    { request_field: 'amount',        parent_node: 'parameters', value: () => document.getElementById('price').value },
+                    { request_field: 'amount',        parent_node: 'parameters', value: () => getElementById('price').value },
                     { request_field: 'contract_type', parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'symbol',        parent_node: 'parameters', value: 'BINARYICO' },
                     { request_field: 'basis',         parent_node: 'parameters', value: 'stake' },
@@ -145,7 +154,7 @@ const ICOSubscribe = (() => {
         let content                = `${formatMoney(currency, total)}`;
         let content_unit_price     = `${formatMoney(currency, +price_val)}`;
         let content_payable_amount = `${formatMoney(currency, total * deposit_factor)}`;
-        if(unit_price && unit_price < Infinity && currency.toUpperCase() !== 'USD') {
+        if (unit_price && unit_price < Infinity && currency.toUpperCase() !== 'USD') {
             usd_total          = +unit_price * total;
             content            = `${content} / ${formatMoney('USD', usd_total)}`;
             // Price per unit
@@ -172,24 +181,17 @@ const ICOSubscribe = (() => {
     };
 
     const showContent = () => {
-        $('#view_ico_info').setVisibility(1);
         let to_show = 'feature_not_allowed';
         if (Client.get('landing_company_shortcode') === 'costarica') {
-            const arr_professional_required_countries = State.getResponse('ico_status.ico_countries_config.professional');
-            if (arr_professional_required_countries && arr_professional_required_countries.indexOf(Client.get('residence')) > -1
-                && !/professional_requested|professional/.test(State.getResponse('get_account_status.status'))) {
-                to_show = 'ico_professional_message';
-            } else {
-                to_show = 'ico_subscribe';
-            }
+            to_show = 'ico_subscribe';
         } else if (Client.hasCostaricaAccount()) {
-            if(Client.canOpenICO()) {
+            if (Client.canOpenICO()) {
                 to_show = 'ico_account_message';
             } else {
                 to_show = 'ico_account_message_real';
             }
-        } else if (Client.canOpenICO() || Client.canUpgradeVirtualToReal(State.getResponse('landing_company'))) {
-            if(Client.isAccountOfType('virtual') && (Client.hasAccountType('gaming')
+        } else if (Client.canOpenICO() || State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
+            if (Client.isAccountOfType('virtual') && (Client.hasAccountType('gaming')
                 || Client.hasAccountType('financial') || Client.hasAccountType('real'))){
                 to_show = 'ico_virtual_message';
             } else {
@@ -197,107 +199,20 @@ const ICOSubscribe = (() => {
                 let message_show = 'message_common';
                 const landing_company = (Client.currentLandingCompany() || {}).shortcode;
                 // Show message to user based on landing_company
-                if(/^malta$/.test(landing_company)) {
+                if (/^malta$/.test(landing_company)) {
                     message_show = 'message_gaming';
-                } else if(/^maltainvest$/.test(landing_company)) {
+                } else if (/^maltainvest$/.test(landing_company)) {
                     message_show = 'message_financial';
                 } else if (/^iom$/.test(landing_company)) {
                     message_show = 'message_iom';
                 }
 
-                // Check if user has account_opening_reason
-                if(!State.getResponse('get_settings.account_opening_reason')
-                    && !Client.isAccountOfType('virtual')) {
-                    askForAccountOpeningReason();
-                }
-
                 // Show message to client.
-                document.getElementById(message_show).setVisibility(1);
-
-                const button_new_account = document.getElementById('ico_new_account');
-                if (button_new_account) {
-                    button_new_account.removeEventListener('click', newAccountOnClick);
-                    button_new_account.addEventListener('click', newAccountOnClick);
-                }
+                getElementById(message_show).setVisibility(1);
             }
         }
-        const el_to_show = document.getElementById(to_show);
-        if (el_to_show) {
-            el_to_show.setVisibility(1);
-        }
+        getElementById(to_show).setVisibility(1);
         return to_show;
-    };
-
-    const newAccountOnClick = () => {
-        const el_account_opening_reason = document.getElementById('account_opening_reason');
-        const el_error = document.getElementById('new_account_error');
-        if (Client.hasAccountType('real')) {
-            BinarySocket.wait('get_settings').then((response) => {
-                const req = populateReq(response.get_settings);
-
-                // Check if client has account_opening_reason set.
-                if($(el_account_opening_reason).is(':visible') && !req.account_opening_reason) {
-                    const value = el_account_opening_reason.value;
-                    if(value) {
-                        req.account_opening_reason = value;
-                    } else {
-                        el_error.setVisibility(1).textContent = localize('Please select a value for account_opening_reason.');
-                        return;
-                    }
-                }
-
-                BinarySocket.send(req).then((response_new_account_real) => {
-                    if (response_new_account_real.error) {
-                        if (el_error) {
-                            el_error.setVisibility(1).textContent = response_new_account_real.error.message;
-                        }
-                    } else {
-                        localStorage.setItem('is_new_account', 1);
-                        Client.processNewAccount({
-                            email       : Client.get('email'),
-                            loginid     : response_new_account_real.new_account_real.client_id,
-                            token       : response_new_account_real.new_account_real.oauth_token,
-                            redirect_url: urlFor('user/set-currency'),
-                            is_ico_only : getPropertyValue(response_new_account_real, ['echo_req', 'account_type']) === 'ico',
-                        });
-                    }
-                });
-            });
-        } else {
-            BinaryPjax.load(urlFor('new_account/realws') + (Client.canUpgradeVirtualToReal(State.getResponse('landing_company')) ? '' : '#ico'));
-        }
-    };
-
-    const populateReq = (get_settings) => {
-        const dob = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
-        const req = {
-            new_account_real      : 1,
-            account_type          : 'ico',
-            date_of_birth         : dob,
-            salutation            : get_settings.salutation,
-            first_name            : get_settings.first_name,
-            last_name             : get_settings.last_name,
-            address_line_1        : get_settings.address_line_1,
-            address_line_2        : get_settings.address_line_2,
-            address_city          : get_settings.address_city,
-            address_state         : get_settings.address_state,
-            address_postcode      : get_settings.address_postcode,
-            phone                 : get_settings.phone,
-            account_opening_reason: get_settings.account_opening_reason,
-            residence             : Client.get('residence'),
-        };
-        if (get_settings.tax_identification_number) {
-            req.tax_identification_number = get_settings.tax_identification_number;
-        }
-        if (get_settings.tax_residence) {
-            req.tax_residence = get_settings.tax_residence;
-        }
-        return req;
-    };
-
-    const askForAccountOpeningReason = () => {
-        const el_to_show = document.getElementById('row_account_opening_reason');
-        el_to_show.setVisibility(1);
     };
 
     const updateMinimumBid = (ico_status) => {
@@ -310,7 +225,7 @@ const ICOSubscribe = (() => {
         unit_price = min_bid_usd/min_bid;
         let text = `${localize('Minimum bid')} = ${formatMoney('USD', min_bid_usd)}`; // Fallback value.
         // Show bid in client currency.
-        if(min_bid_usd && min_bid && res_currency && res_currency !== 'USD'){
+        if (min_bid_usd && min_bid && res_currency && res_currency !== 'USD'){
             text = `${localize('Minimum bid')} = ${formatMoney(res_currency, min_bid)} / ${formatMoney('USD', min_bid_usd)}`;
         }
 

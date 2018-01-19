@@ -9,48 +9,39 @@ const makeOption         = require('../../_common/common_functions').makeOption;
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
-const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 require('select2');
 
 const AccountOpening = (() => {
-    const redirectAccount = (account_type_ico) => { // eslint-disable-line consistent-return
-        const response_landing_company = State.getResponse('landing_company');
-        const response_get_settings    = State.getResponse('get_settings');
-        if (response_landing_company && response_get_settings) {
-            return redirect(account_type_ico, response_landing_company);
-        }
-        BinarySocket.wait('landing_company', 'get_settings').then(() => redirect(account_type_ico));
-    };
-
-    const redirect = (account_type_ico, response_landing_company) => {
-        const upgrade_info = Client.getUpgradeInfo(response_landing_company || State.getResponse('landing_company'), undefined, account_type_ico);
+    const redirectAccount = () => {
+        const upgrade_info = Client.getUpgradeInfo();
 
         if (!upgrade_info.can_upgrade) {
             BinaryPjax.loadPreviousUrl();
-            return true;
+            return -1;
         }
 
         if (!upgrade_info.is_current_path) {
             BinaryPjax.load(upgrade_info.upgrade_link);
-            return true;
+            return 1;
         }
-        return false;
+        return 0;
     };
 
     const populateForm = (form_id, getValidations, is_financial, is_ico_only) => {
-        getResidence();
-        BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
+        getResidence(form_id, getValidations);
         generateBirthDate();
         if (Client.canRequestProfessional()) {
             professionalClient.init(is_financial, false, is_ico_only);
         }
     };
 
-    const getResidence = () => {
-        BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
+    const getResidence = (form_id, getValidations) => {
+        BinarySocket.send({ residence_list: 1 }).then((response) => {
+            handleResidenceList(response.residence_list, form_id, getValidations);
+        });
     };
 
-    const handleResidenceList = (residence_list) => {
+    const handleResidenceList = (residence_list, form_id, getValidations) => {
         if (residence_list.length > 0) {
             const $place_of_birth = $('#place_of_birth');
             const $tax_residence  = $('#tax_residence');
@@ -71,7 +62,20 @@ const AccountOpening = (() => {
             });
 
             $('#lbl_residence').html($('<strong/>', { text: residence_text }));
-            $place_of_birth.html($options.html()).val(residence_value);
+
+            if ($place_of_birth.length) {
+                BinarySocket.wait('get_settings').then((response) => {
+                    const place_of_birth = response.get_settings.place_of_birth;
+                    if (place_of_birth) {
+                        const txt_place_of_birth =
+                              (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
+                        $place_of_birth.replaceWith($('<span/>', { text: txt_place_of_birth || place_of_birth, 'data-value': place_of_birth }));
+                    } else {
+                        $place_of_birth.html($options.html()).val(residence_value);
+                    }
+                });
+            }
+
             if ($tax_residence) {
                 $tax_residence.html($options.html()).promise().done(() => {
                     setTimeout(() => {
@@ -81,6 +85,8 @@ const AccountOpening = (() => {
                     }, 500);
                 });
             }
+
+            BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         }
     };
 
@@ -134,7 +140,6 @@ const AccountOpening = (() => {
                 loginid     : response[message_type].client_id,
                 token       : response[message_type].oauth_token,
                 redirect_url: urlFor('user/set-currency'),
-                is_ico_only : getPropertyValue(response, ['echo_req', 'account_type']) === 'ico',
             });
         }
     };
