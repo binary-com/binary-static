@@ -34,8 +34,8 @@ const Metals = () => (
                     <List id='sidebar-nav' items={[
                         { id: 'what-metals-trading',      href: '#what-metals-trading',      text: it.L('What is metals trading') },
                         { id: 'how-trade-metals',         href: '#how-trade-metals',         text: it.L('How to trade metals') },
-                        { id: 'margin-policy',            href: '#margin-policy',            text: it.L('Margin policy') },
-                        { id: 'contract-specification',   href: '#contract-specification',   text: it.L('Contract specifications') },
+                        { id: 'margin-policy',            href: '#margin-policy',            text: it.L('Metals margin policy') },
+                        { id: 'contract-specification',   href: '#contract-specification',   text: it.L('Metals contract specifications') },
                     ]} />
                 </div>
             </div>
@@ -89,7 +89,7 @@ const Metals = () => (
 
                     <Lot />
                 </Section>
-                <Section id='margin-policy' header={it.L('Margin policy')}>
+                <Section id='margin-policy' header={it.L('Metals margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital.')}</p>
                     <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction.')}</p>
                     <p>{it.L('With leverage, you can purchase 100 units of the same asset at a fraction of the cost.')}</p>
@@ -118,7 +118,7 @@ const Metals = () => (
                         <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
                     </ol>
                 </Section>
-                <Section id='contract-specification' header={it.L('Contract specifications')}>
+                <Section id='contract-specification' header={it.L('Metals contract specifications')}>
                     <Table scroll data={{
                         thead: [[
                             { text: it.L('Symbol'),                   className: 'gr-padding-10' },
@@ -138,7 +138,7 @@ const Metals = () => (
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots.')}</p>
                     <p>{it.L('Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.')}</p>
-                    <p>{it.L('To learn more, read our Margin Policy that further explains our 100% forced liquidation level for our metal pairs.')}</p>
+                    <p>{it.L('To learn more, read our Metals Margin Policy that further explains our 100% forced liquidation level for our metal pairs.')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>
