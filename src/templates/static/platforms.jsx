@@ -136,19 +136,6 @@ const Platform = () => (
                                     />
                                 </div>
                                 <div className='gr-row gr-padding-30'>
-                                    {/*
-                                    <Platforms
-                                        image_class='gr-10 gr-7-p gr-9-m'
-                                        image='binarybot'
-                                        header={it.L('Binary Bot')}
-                                        description={it.L('Auto-trader programming tool')}
-                                        text={it.L('Automate your trading strategies with our simple, "drag-and-drop" bot creation tool.')}
-                                        url='https://bot.binary.com'
-                                        target='_blank'
-                                        button_text={it.L('Try Binary Bot')}
-                                    />
-                                    <div className='gr-2'></div>
-                                    */}
                                     <Platforms
                                         image_class='gr-10 gr-5-p gr-9-m'
                                         image='tradingview'
