@@ -3,6 +3,7 @@ const getStartDateNode = require('./common_independent').getStartDateNode;
 const Contract         = require('./contract');
 const Defaults         = require('./defaults');
 const Durations        = require('./duration');
+const getElementById   = require('../../../_common/common_functions').getElementById;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const createElement    = require('../../../_common/utility').createElement;
@@ -33,7 +34,6 @@ const StartDates = (() => {
         if (start_dates && start_dates.list && start_dates.list.length) {
             const target   = getStartDateNode();
             const fragment = document.createDocumentFragment();
-            const row      = document.getElementById('date_start_row');
             let option,
                 first,
                 selected,
@@ -41,9 +41,7 @@ const StartDates = (() => {
                 $duplicated_option,
                 duplicated_length;
 
-            if (row) {
-                row.style.display = 'flex';
-            }
+            getElementById('date_start_row').style.display = 'flex';
 
             while (target && target.firstChild) {
                 target.removeChild(target.firstChild);
@@ -93,16 +91,18 @@ const StartDates = (() => {
                     fragment.appendChild(option);
                 }
             });
-            target.appendChild(fragment);
-            Defaults.set('date_start', target.value);
+            if (target) {
+                target.appendChild(fragment);
+                Defaults.set('date_start', target.value);
+            }
             State.set('is_start_dates_displayed', true);
             if (first) {
                 Durations.onStartDateChange(first);
             }
         } else {
             State.remove('is_start_dates_displayed');
-            document.getElementById('date_start_row').style.display = 'none';
-            document.getElementById('date_start').value = 'now';
+            getElementById('date_start_row').style.display = 'none';
+            getElementById('date_start').value = 'now';
             Defaults.remove('date_start');
         }
     };

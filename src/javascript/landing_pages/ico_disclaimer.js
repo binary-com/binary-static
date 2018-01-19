@@ -34,9 +34,12 @@ window.onload = function() {
                 country_name = item.name;
             }
         });
-        document.getElementById('country_name').appendChild(document.createTextNode(country_name));
-        document.getElementById('notice_msg').classList.remove('invisible');
-        document.getElementById(val).classList.remove('invisible');
+        var el_country_name = document.getElementById('country_name');
+        if (el_country_name) el_country_name.appendChild(document.createTextNode(country_name));
+        var notice_msg = document.getElementById('notice_msg');
+        if (notice_msg) notice_msg.classList.remove('invisible');
+        var el = document.getElementById(val);
+        if (el) el.classList.remove('invisible');
     }
 
     function showDisclaimer(val) {
@@ -49,10 +52,12 @@ window.onload = function() {
             if (/^(ca|jp|sg|hk|gb|ch|eu)$/.test(val)) {
                 showSecondNotice(val);
             } else {
-                document.getElementById('access_denied_msg').classList.remove('invisible');
+                var access_denied_msg = document.getElementById('access_denied_msg');
+                if (access_denied_msg) access_denied_msg.classList.remove('invisible');
             }
         } else {
-            document.getElementById('disclaimer_msg').classList.remove('invisible');
+            var disclaimer_msg = document.getElementById('disclaimer_msg');
+            if (disclaimer_msg) disclaimer_msg.classList.remove('invisible');
         }
     }
 
@@ -62,12 +67,13 @@ window.onload = function() {
 
     frm_accept_disclaimer.addEventListener('submit', function (e) {
         e.preventDefault();
-        var val = document.getElementById('checkbox').checked; // true or false
+        var val = (document.getElementById('checkbox') || '').checked; // true or false
         var url = 'https://ico_documents.binary.com/im.pdf';
         if (val) {
             window.location.href = url;
         } else {
-            document.getElementById('frm_accept_disclaimer_error').classList.remove('invisible');
+            var form = document.getElementById('frm_accept_disclaimer_error');
+            if (form) form.classList.remove('invisible');
         }
     });
 
@@ -75,7 +81,7 @@ window.onload = function() {
 
     frm_select_residence.addEventListener('submit', function (e) {
         e.preventDefault();
-        var val = document.getElementById('residence_list').value;
+        var val = (document.getElementById('residence_list') || '').value;
         if (!validateResidence(this)) {
             if (!validation_set) {
                 this.addEventListener('change', function (evt) {
@@ -92,19 +98,22 @@ window.onload = function() {
 
     frm_accept_second_notice.addEventListener('submit', function(e) {
         e.preventDefault();
-        var val = document.getElementById('checkbox-2').checked; // true or false
-        var url = 'https://ico_documents.binary.com/im.pdf';
+        var val = (document.getElementById('checkbox-2') || '').checked; // true or false
         if (val) {
-            document.getElementById('notice_msg').classList.add('invisible');
+            var notice_msg = document.getElementById('notice_msg');
+            if (notice_msg) notice_msg.classList.add('invisible');
             showDisclaimer(val);
         } else {
-            document.getElementById('frm_accept_notice_error').classList.remove('invisible');
+            var form = document.getElementById('frm_accept_notice_error');
+            if (form) form.classList.remove('invisible');
         }
-    })
+    });
+
+    commonOnload();
 };
 
 function validateResidence(el) {
-    var val      = document.getElementById('residence_list').value;
+    var val      = (document.getElementById('residence_list') || '').value;
     var el_error = el.getElementsByClassName('error-msg')[0];
     if (val === '0') {
         el_error.classList.remove('invisible');
@@ -157,6 +166,8 @@ function populateResidenceList(residence_list) {
         el_option.value = res.value;
         el_residence_list.appendChild(el_option);
     });
-    document.getElementById('loading').classList.add('invisible');
-    document.getElementById('disclaimer_form').classList.remove('invisible');
+    var loading = document.getElementById('loading');
+    if (loading) loading.classList.add('invisible');
+    var disclaimer_form = document.getElementById('disclaimer_form');
+    if (disclaimer_form) disclaimer_form.classList.remove('invisible');
 }

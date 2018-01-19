@@ -3,6 +3,7 @@ const Table            = require('../../../../../common/attach_dom/table');
 const jpClient         = require('../../../../../common/country_base').jpClient;
 const formatMoney      = require('../../../../../common/currency').formatMoney;
 const elementInnerHtml = require('../../../../../../_common/common_functions').elementInnerHtml;
+const getElementById   = require('../../../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../../../_common/localize').localize;
 const urlForStatic     = require('../../../../../../_common/url').urlForStatic;
 const findParent       = require('../../../../../../_common/utility').findParent;
@@ -35,7 +36,7 @@ const LimitsUI = (() => {
     };
 
     const addTooltip = ($el, text) => {
-        $el.append($('<a/>', { class: 'no-underline', href: `${'java'}${'script:;'}`, 'data-balloon-length': 'xlarge', 'data-balloon': text })
+        $el.append($('<a/>', { class: 'no-underline', href: `${'javascript:;'}`, 'data-balloon-length': 'xlarge', 'data-balloon': text })
             .append($('<img/>', { src: urlForStatic('images/common/question_1.png') })));
     };
 
@@ -46,10 +47,10 @@ const LimitsUI = (() => {
             $('.limit').append(` (${currency})`);
         }
 
-        const open_position       = document.getElementById('open-positions');
-        const account_balance     = document.getElementById('account-balance');
-        const payout              = document.getElementById('payout');
-        const payout_per_contract = document.getElementById('payout-per-symbol-and-contract-type');
+        const open_position       = getElementById('open-positions');
+        const account_balance     = getElementById('account-balance');
+        const payout              = getElementById('payout');
+        const payout_per_contract = getElementById('payout-per-symbol-and-contract-type');
 
         $client_limits = $('#client-limits');
         $gap_parent    = $('#gap').parent();
@@ -71,7 +72,7 @@ const LimitsUI = (() => {
                 }
             });
         } else {
-            const tr = findParent(document.getElementById('payout-per-symbol'), 'tr');
+            const tr = findParent(getElementById('payout-per-symbol'), 'tr');
             if (tr) {
                 tr.setVisibility(0);
             }

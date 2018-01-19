@@ -71,7 +71,7 @@ a.button:hover {
 button.full-width, .button.full-width {
     &, span {
         display: block;
-        width: 100%;
+        width: auto;
     }
     .barspinner {
         display: inline-block;
@@ -119,6 +119,10 @@ fieldset {
     width: 100%;
     text-align: left;
     margin-top: 5px;
+}
+
+.secondary-bg-color .error-msg {
+    color: $COLOR_WHITE;
 }
 
 textarea {
@@ -284,6 +288,7 @@ _:-ms-fullscreen, :root #content-holder {
 
 input[type=checkbox] {
     margin-top: -5px;
+    margin-right: 5px;
 
     &#email_consent {
         margin-top: 5px;
@@ -370,6 +375,11 @@ button .barspinner.white {
     position: relative;
 }
 
+.sidebar-collapsible-container {
+    position: relative;
+    height: 100%;
+}
+
 .sidebar {
     @include menu-left;
 }
@@ -399,67 +409,6 @@ button .barspinner.white {
             @include link-button;
             display: block;
         }
-    }
-}
-
-#ico_banner_container {
-    .ico-banner {
-        cursor: pointer;
-        border: 1px solid $COLOR_LIGHT_GRAY;
-        background: no-repeat 100% / cover url('../images/ico/banner/white_background.png');
-
-        .ico-box {
-            position: relative;
-
-            div:nth-child(1) {
-                padding-left: 0;
-            }
-            .ico-column {
-                min-height: 80px;
-                justify-content: center;
-
-                .learn-btn {
-                    display: flex;
-                    justify-content: center;
-                    padding-top: 10px;
-
-                    a span {
-                        font-size: $FONT_SIZE_N;
-                    }
-                }
-            }
-            .left-bg {
-                background: no-repeat 100% / cover url('../images/ico/banner/image_left_area.png');
-            }
-            p {
-                text-transform: uppercase;
-                font-size: $FONT_SIZE_XL;
-                font-weight: 400;
-                color: $primaryBrandColor;
-            }
-            .close-btn:after {
-                content: '';
-                background: no-repeat 100% / cover url('../images/ico/banner/close_icon.svg');
-                cursor: pointer;
-                padding: 10px;
-                position: absolute;
-                top: 0;
-                right: 0;
-            }
-        }
-        &.top-margin {
-            margin-top: 2.5em;
-        }
-        &.bottom-margin {
-            margin-bottom: 2em;
-        }
-    }
-    &.ico-banner-container {
-        margin: 0 auto;
-        max-width: 960px;
-        padding-right: 10px;
-        padding-left: 10px;
-        box-sizing: border-box;
     }
 }
 
@@ -551,11 +500,15 @@ ul.bullet.gr-row > li {
     }
 }
 
-#content .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li {
-    font-size: $FONT_SIZE_XL;
-}
-
 .foot-note {
     font-size: $FONT_SIZE_XS;
     color: $COLOR_GRAY_SHADE;
+}
+
+.button + .button {
+    margin-left: 10px;
+}
+
+li strong.margin-right {
+    margin-right: 5px;
 }

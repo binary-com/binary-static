@@ -1,5 +1,4 @@
 const Cookies          = require('js-cookie');
-const BinaryPjax       = require('./binary_pjax');
 const Client           = require('./client');
 const Contents         = require('./contents');
 const Header           = require('./header');
@@ -10,6 +9,7 @@ const checkLanguage    = require('../common/country_base').checkLanguage;
 const TrafficSource    = require('../common/traffic_source');
 const RealityCheck     = require('../pages/user/reality_check/reality_check');
 const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
+const getElementById   = require('../../_common/common_functions').getElementById;
 const Crowdin          = require('../../_common/crowdin');
 const Language         = require('../../_common/language');
 const PushNotification = require('../../_common/lib/push_notification');
@@ -80,29 +80,7 @@ const Page = (() => {
             recordAffiliateExposure();
             endpointNotification();
         }
-        Menu.init();
         Contents.onLoad();
-
-        const ico_banner = document.getElementById('ico_banner');
-        const page_allows_banner = () => (!/(ico-subscribe|ico-info)/.test(window.location.pathname));
-
-        if (!sessionStorage.getItem('hide_ico_banner') && ico_banner && page_allows_banner()) {
-            ico_banner.removeEventListener('click', clickIcoBannerButton);
-            ico_banner.addEventListener('click', clickIcoBannerButton);
-            ico_banner.classList.remove('invisible');
-            const ico_banner_btn = document.getElementById('ico_link_button');
-            if (ico_banner_btn) {
-                ico_banner_btn.removeEventListener('click', clickIcoBannerButton);
-                ico_banner_btn.addEventListener('click', clickIcoBannerButton);
-            }
-
-        }
-
-        const close_ico_banner = document.getElementById('close_ico_banner');
-        if (close_ico_banner) {
-            close_ico_banner.removeEventListener('click', removeIcoBanner);
-            close_ico_banner.addEventListener('click', removeIcoBanner);
-        }
 
         if (sessionStorage.getItem('showLoginPage')) {
             sessionStorage.removeItem('showLoginPage');
@@ -111,27 +89,18 @@ const Page = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
                 checkLanguage();
+                Menu.init();
                 RealityCheck.onLoad();
             });
         } else {
             checkLanguage();
+            Menu.init();
         }
         TrafficSource.setData();
     };
 
     const onUnload = () => {
         Menu.onUnload();
-    };
-
-    const clickIcoBannerButton = (e) => {
-        e.stopPropagation();
-        BinaryPjax.load(Url.urlFor('user/ico-subscribe'));
-    };
-
-    const removeIcoBanner = (e) => {
-        e.stopPropagation();
-        document.getElementById('ico_banner').classList.add('invisible');
-        sessionStorage.setItem('hide_ico_banner', true);
     };
 
     const recordAffiliateExposure = () => {
@@ -179,13 +148,11 @@ const Page = (() => {
                 `${localize('This is a staging server - For testing purposes only')} - `)}
                 ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
 
-            const end_note = document.getElementById('end-note');
-
+            const end_note = getElementById('end-note');
             elementInnerHtml(end_note, message);
-            if (end_note) end_note.setVisibility(1);
+            end_note.setVisibility(1);
 
-            const footer = document.getElementById('footer');
-            if (footer) footer.style['padding-bottom'] = end_note.offsetHeight;
+            getElementById('footer').style['padding-bottom'] = end_note.offsetHeight;
         }
     };
 

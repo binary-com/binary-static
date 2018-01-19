@@ -2,19 +2,22 @@ window.onload = function() {
     toggleMobileMenu();
     window.onresize = checkWidth;
 
-    document.querySelectorAll('.page-scroll').forEach(function(el) {
+    document.querySelectorAll('.page-scroll').forEach((el) => {
         el.addEventListener('click', scrollToSection);
     });
 
     tabWithIndicator('teams-tab');
     tabWithButtons('employees-tab');
+
+    commonOnload();
 };
 
 function scrollToSection(e) {
     if (e) e.preventDefault();
     const target = this.getAttribute('href').substr(1);
     const offset = /who-we-are|page-top/.test(target) ? 70 : 75;
-    const to = document.getElementById(target).offsetTop - offset;
+    const el_target = document.getElementById(target);
+    const to = el_target ? el_target.offsetTop - offset : '';
 
     scrollTo(to, 500);
     collapseMenu();
@@ -29,12 +32,12 @@ function tabWithIndicator(id) {
 
     indicator.style.width = `${(100 / numOfTabs)}%`;
 
-    tabs.forEach(function(el, index) {
+    tabs.forEach((el, index) => {
         el.index = index;
         el.addEventListener('click', updateActiveTab);
     });
 
-    contents.forEach(function(el, index) {
+    contents.forEach((el, index) => {
         if (index) {
             el.classList.add('invisible');
         }
@@ -50,7 +53,7 @@ function tabWithIndicator(id) {
     }
 
     function updateTabContent(target) {
-        contents.forEach(function(el) {
+        contents.forEach((el) => {
             el.classList[el.id === target ? 'remove' : 'add']('invisible');
         });
     }
@@ -61,24 +64,26 @@ function tabWithButtons(id) {
     const contents   = container.querySelectorAll('div.twb-content');
     const numOfItems = contents.length;
 
-    contents.forEach(function(el, index) {
-       if (index) {
-           el.classList.add('invisible');
-       }
+    contents.forEach((el, index) => {
+        if (index) {
+            el.classList.add('invisible');
+        }
     });
 
     let index = 0;
-    container.querySelectorAll('.twb-button').forEach(function(el) {
-        el.addEventListener('click', function(e) {
+    container.querySelectorAll('.twb-button').forEach((el) => {
+        el.addEventListener('click', (e) => {
             e.preventDefault();
-            el.id === 'next' ? updateTabContent(++index) : updateTabContent(--index);
+            if (el.id === 'next') updateTabContent(++index);
+            else updateTabContent(--index);
         });
     });
 
     function updateTabContent(target_index) {
-        contents.forEach(function(el, index) {
-            const toShow = target_index % numOfItems < 0 ? (target_index % numOfItems) + numOfItems : target_index % numOfItems;
-            el.classList[toShow === index ? 'remove' : 'add']('invisible');
+        contents.forEach((el, idx) => {
+            const toShow = target_index % numOfItems < 0 ?
+                (target_index % numOfItems) + numOfItems : target_index % numOfItems;
+            el.classList[toShow === idx ? 'remove' : 'add']('invisible');
         });
     }
 }

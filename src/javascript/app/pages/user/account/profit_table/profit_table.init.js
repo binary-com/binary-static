@@ -15,7 +15,7 @@ const ProfitTableInit = (() => {
         pending,
         current_batch;
 
-    const tableExist = () => (document.getElementById('profit-table'));
+    const tableExist = () => document.getElementById('profit-table');
 
     const finishedConsumed = () => (transaction_consumed === transactions_received);
 
