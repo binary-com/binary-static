@@ -14,8 +14,8 @@ const Forex = () => (
                     <List id='sidebar-nav' items={[
                         { id: 'what-forex-trading',     href: '#what-forex-trading',     text: it.L('What is Forex trading') },
                         { id: 'how-to-trade-forex',     href: '#how-to-trade-forex',     text: it.L('How to trade Forex') },
-                        { id: 'margin-policy',          href: '#margin-policy',          text: it.L('Margin policy') },
-                        { id: 'contract-specification', href: '#contract-specification', text: it.L('Contract specifications') },
+                        { id: 'margin-policy',          href: '#margin-policy',          text: it.L('Forex margin policy') },
+                        { id: 'contract-specification', href: '#contract-specification', text: it.L('Forex contract specifications') },
                     ]} />
                 </div>
             </div>
@@ -105,7 +105,7 @@ const Forex = () => (
                     <p>{it.L('To go long, you\'ll want to click on \'Buy\' to purchase EUR 1 for USD 1.17726')}</p>
                     <p>{it.L('To go short, you\'ll click on \'Sell\' to sell EUR 1 and receive USD 1.17725 in return.')}</p>
                 </Section>
-                <Section id='margin-policy' header={it.L('Margin policy')}>
+                <Section id='margin-policy' header={it.L('Forex margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – meaning your existing capital can give you a much higher level of market exposure.')}</p>
                     <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset that\'s trading at USD 50 per unit through a traditional broker, it would typically cost you USD 5,000 for this transaction.')}</p>
                     <p>{it.L('However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform.')}</p>
@@ -129,7 +129,7 @@ const Forex = () => (
                         <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
                     </ol>
                 </Section>
-                <Section id='contract-specification' header={it.L('Contract specifications')}>
+                <Section id='contract-specification' header={it.L('Forex contract specifications')}>
                     <HeaderSecondary header={it.L('Major pairs')} />
                     <Table scroll data={{
                         thead: [[

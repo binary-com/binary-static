@@ -20,8 +20,8 @@ const Cryptocurrencies = () => (
                     <List id='sidebar-nav' items={[
                         { id: 'what-crypto-trading',      href: '#what-crypto-trading',      text: it.L('What is cryptocurrency trading') },
                         { id: 'how-trade-crypto',         href: '#how-trade-crypto',         text: it.L('How to trade cryptocurrencies') },
-                        { id: 'margin-policy',            href: '#margin-policy',            text: it.L('Margin policy') },
-                        { id: 'contract-specification',   href: '#contract-specification',   text: it.L('Contract specifications') },
+                        { id: 'margin-policy',            href: '#margin-policy',            text: it.L('Cryptocurrency margin policy') },
+                        { id: 'contract-specification',   href: '#contract-specification',   text: it.L('Cryptocurrency contract specifications') },
                     ]} />
                 </div>
             </div>
@@ -44,7 +44,7 @@ const Cryptocurrencies = () => (
                     <BuySellCurrency currency_one={it.L('BTC')} currency_two={it.L('USD')} />
                     <p>{it.L('In a nutshell, when you go long on the BTC/USD with Binary.com, you are not purchasing bitcoin directly. Instead, you\'re taking a position that the BTC/USD will rise in value whereby you will make a profit. If you go long on the BTC/USD and its value falls, then you will make a loss.')}</p>
                 </Section>
-                <Section id='margin-policy' header={it.L('Margin policy')}>
+                <Section id='margin-policy' header={it.L('Cryptocurrency margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – meaning your existing capital can give you a much higher level of market exposure.')}</p>
                     <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset that\'s trading at USD 50 per unit through a traditional broker, it would typically cost you USD 5,000 for this transaction.')}</p>
                     <p>{it.L('However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform.')}</p>
@@ -68,7 +68,7 @@ const Cryptocurrencies = () => (
                         <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
                     </ol>
                 </Section>
-                <Section id='contract-specification' header={it.L('Contract specifications')}>
+                <Section id='contract-specification' header={it.L('Cryptocurrency contract specifications')}>
                     <Table scroll data={{
                         thead: [[
                             { text: it.L('Symbol'),         className: 'gr-padding-10' },
