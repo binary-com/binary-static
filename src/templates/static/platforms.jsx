@@ -26,11 +26,11 @@ const Platforms = ({
                 </p>
             }
             { google_play_url &&
-                <div className='gr-row'>
-                    <a className='gr-5 gr-6-m' href={google_play_url} target='_blank' rel='noopener noreferrer'>
-                        <div className='google-play-badge'></div>
+                <p>
+                    <a href={google_play_url} target='_blank' rel='noopener noreferrer'>
+                        <span className='google-play-badge'></span>
                     </a>
-                </div>
+                </p>
             }
     </div>
 </div>
