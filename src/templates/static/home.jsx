@@ -4,7 +4,7 @@ import SeparatorLine from '../_common/components/separator_line.jsx';
 import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
 
 const PaymentLogo = ({ items }) => items.map((item, inx) => (
-    <div key={inx} className='gr-2 gr-4-m gr-padding-30 center-text'>
+    <div key={inx} className='gr-2 gr-4-m center-text'>
         <img className='gr-12 gr-centered' src={it.url_for(`images/pages/home-beta/payment/${item}.svg`)} />
     </div>
 ));
@@ -164,6 +164,66 @@ const HomeBeta = () => (
             </div>
         </div>
 
+        <div className='container gr-padding-30'>
+            <h2 className='center-text'>{it.L('Diverse platforms and account types')}</h2>
+            <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
+                <TabsSubtabs
+                    id='account_tabs'
+                    className='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper'
+                    items={[
+                        { id: 'binary_options', text: it.L('Binary Options') },
+                        { id: 'mt5', text: it.L('MetaTrader 5') },
+                        { id: 'account_tabs_selector', className: 'tab-selector' },
+                    ]}
+                />
+                <div className='tab-content'>
+                    <TabContentContainer>
+                        <TabContent id='binary_options'>
+                            <AccountsTabContent
+                                header={it.L('Trade binary options on a wide range of web and mobile apps. Each comes with unique strengths that complement a variety of trading strategies.')}
+                                mobile_header={it.L('Binary Options')}
+                                image='images/pages/home-beta/binary_options.svg'
+                                image_one='images/pages/home-beta/icons/demo.svg'
+                                list_header_one={it.L('Virtual Account')}
+                                list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
+                                image_two='images/pages/home-beta/icons/real.svg'
+                                list_header_two={it.L('Real Account')}
+                                list_text_two={it.L('Real-money accounts with your choice of fiat currency.')}
+                                image_three='images/pages/home-beta/icons/crypto.svg'
+                                list_header_three={it.L('Crypto Account')}
+                                list_text_three={it.L('Real-money accounts with your choice of cryptocurrency.')}
+                            />
+                        </TabContent>
+                        <TabContent id='mt5'>
+                            <AccountsTabContent
+                                header={it.L('Trade Forex and CFD assets with up to 1,000:1 leverage on the world\'s most popular institutional multi-asset platform.')}
+                                mobile_class='padding-top-20'
+                                mobile_header={it.L('MetaTrader 5')}
+                                image='images/pages/home-beta/MT5.svg'
+                                image_one='images/pages/home-beta/icons/demo.svg'
+                                list_header_one={it.L('MT5 Demo')}
+                                list_text_one={it.L('Practice account with replenishable USD 5,000 virtual credit.')}
+                                image_two='images/pages/home-beta/icons/mt5_financial.svg'
+                                list_header_two={it.L('MT5 Financial')}
+                                list_text_two={it.L('MT5 real-money account for Forex and CFDs.')}
+                                image_three='images/pages/home-beta/icons/mt5_volatility.svg'
+                                list_header_three={it.L('MT5 Volatility')}
+                                list_text_three={it.L('MT5 real-money account for Volatility Indices only.')}
+                            />
+                        </TabContent>
+                    </TabContentContainer>
+                </div>
+                <TabCircles number={2} id='account_tabs_circles' />
+            </TabContainer>
+
+            <div className='center-text gr-padding-20 gr-parent'>
+                <h3 className='center-text gr-padding-20 gr-parent'>{it.L('Choose the platforms and accounts you need, based on your personal trading style')}</h3>
+                <a className='button-secondary' href={it.url_for('platforms')}><span>{it.L('View our platforms')}</span></a>
+            </div>
+
+            <SeparatorLine className='gr-padding-30' show_mobile />
+        </div>
+
         <div className='container'>
             <h2 className='center-text gr-padding-10'>{it.L('Trade in the world\'s financial markets')}</h2>
             <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
@@ -221,70 +281,6 @@ const HomeBeta = () => (
                 <TabCircles number={5} id='market_tabs_circles' />
             </TabContainer>
             <h3 className='center-text gr-padding-30'>{it.L('Choose from 100+ tradable instruments, backed by award-winning technology and innovation since 2000.')}</h3>
-        </div>
-
-        <div className='gr-padding-10 fill-bg-color'>
-            <div className='container gr-padding-20'>
-                <h3 className='center-text no-margin'>{it.L('Commitment to the highest ethical standards and regulatory compliance')}</h3>
-            </div>
-        </div>
-
-        <div className='container gr-padding-30'>
-            <h2 className='center-text'>{it.L('Diverse platforms and account types')}</h2>
-            <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
-                <TabsSubtabs
-                    id='account_tabs'
-                    className='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper'
-                    items={[
-                        { id: 'binary_options', text: it.L('Binary Options') },
-                        { id: 'mt5', text: it.L('MetaTrader 5') },
-                        { id: 'account_tabs_selector', className: 'tab-selector' },
-                    ]}
-                />
-                <div className='tab-content'>
-                    <TabContentContainer>
-                        <TabContent id='binary_options'>
-                            <AccountsTabContent
-                                header={it.L('Trade binary options on a wide range of web and mobile apps. Each comes with unique strengths that complement a variety of trading strategies.')}
-                                mobile_header={it.L('Binary Options')}
-                                image='images/pages/home-beta/binary_options.svg'
-                                image_one='images/pages/home-beta/icons/demo.svg'
-                                list_header_one={it.L('Virtual Account')}
-                                list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
-                                image_two='images/pages/home-beta/icons/real.svg'
-                                list_header_two={it.L('Real Account')}
-                                list_text_two={it.L('Real-money accounts with your choice of fiat currency.')}
-                                image_three='images/pages/home-beta/icons/crypto.svg'
-                                list_header_three={it.L('Crypto Account')}
-                                list_text_three={it.L('Real-money accounts with your choice of cryptocurrency.')}
-                            />
-                        </TabContent>
-                        <TabContent id='mt5'>
-                            <AccountsTabContent
-                                header={it.L('Trade Forex and CFD assets with up to 1,000:1 leverage on the world\'s most popular institutional multi-asset platform.')}
-                                mobile_class='padding-top-20'
-                                mobile_header={it.L('MetaTrader 5')}
-                                image='images/pages/home-beta/MT5.svg'
-                                image_one='images/pages/home-beta/icons/demo.svg'
-                                list_header_one={it.L('MT5 Demo')}
-                                list_text_one={it.L('Practice account with replenishable USD 5,000 virtual credit.')}
-                                image_two='images/pages/home-beta/icons/mt5_financial.svg'
-                                list_header_two={it.L('MT5 Financial')}
-                                list_text_two={it.L('MT5 real-money account for Forex and CFDs.')}
-                                image_three='images/pages/home-beta/icons/mt5_volatility.svg'
-                                list_header_three={it.L('MT5 Volatility')}
-                                list_text_three={it.L('MT5 real-money account for Volatility Indices only.')}
-                            />
-                        </TabContent>
-                    </TabContentContainer>
-                </div>
-                <TabCircles number={2} id='account_tabs_circles' />
-            </TabContainer>
-
-            <div className='center-text gr-padding-20 gr-parent'>
-                <h3 className='center-text gr-padding-20 gr-parent'>{it.L('Choose the platforms and accounts you need, based on your personal trading style')}</h3>
-                <a className='button-secondary' href={it.url_for('platforms')}><span>{it.L('View our platforms')}</span></a>
-            </div>
         </div>
 
         <div className='gr-padding-10 fill-bg-color'>
