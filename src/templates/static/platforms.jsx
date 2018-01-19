@@ -79,7 +79,7 @@ const Platform = () => (
                     <TabContentContainer>
                         <TabContent id='binary'>
                             <div id='binary' className='container'>
-                                <div className='gr-row gr-padding-30'>
+                                <div className='gr-row gr-padding-30 no-padding-m'>
                                     <Platforms
                                         image_class='gr-12 gr-7-p gr-10-m'
                                         image='trading-page'
@@ -99,7 +99,7 @@ const Platform = () => (
                                         google_play_url='https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page'
                                     />
                                 </div>
-                                <div className='gr-row gr-padding-30'>
+                                <div className='gr-row gr-padding-30 no-padding-m'>
                                     <Platforms
                                         image_class='gr-8 gr-5-p gr-7-m'
                                         image='webtrader'
@@ -135,7 +135,7 @@ const Platform = () => (
                                         button_text={it.L('Try Binary Bot')}
                                     />
                                 </div>
-                                <div className='gr-row gr-padding-30'>
+                                <div className='gr-row gr-padding-30 no-padding-m'>
                                     <Platforms
                                         image_class='gr-10 gr-5-p gr-9-m'
                                         image='tradingview'
