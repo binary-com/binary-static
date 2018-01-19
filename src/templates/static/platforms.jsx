@@ -111,6 +111,7 @@ const Platform = () => (
                                         button_text={it.L('Try Webtrader')}
                                     />
                                     <div className='gr-2'></div>
+                                    {/*
                                     <Platforms
                                         image_class='gr-12 gr-7-p gr-10-m'
                                         image='nextgen'
@@ -122,8 +123,20 @@ const Platform = () => (
                                         button_text={it.L('Try Next-Gen')}
                                         google_play_url='https://play.google.com/store/apps/details?id=app.binary.com&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page'
                                     />
+                                    */}
+                                    <Platforms
+                                        image_class='gr-10 gr-7-p gr-9-m'
+                                        image='binarybot'
+                                        header={it.L('Binary Bot')}
+                                        description={it.L('Auto-trader programming tool')}
+                                        text={it.L('Automate your trading strategies with our simple, "drag-and-drop" bot creation tool.')}
+                                        url='https://bot.binary.com'
+                                        target='_blank'
+                                        button_text={it.L('Try Binary Bot')}
+                                    />
                                 </div>
                                 <div className='gr-row gr-padding-30'>
+                                    {/*
                                     <Platforms
                                         image_class='gr-10 gr-7-p gr-9-m'
                                         image='binarybot'
@@ -135,6 +148,7 @@ const Platform = () => (
                                         button_text={it.L('Try Binary Bot')}
                                     />
                                     <div className='gr-2'></div>
+                                    */}
                                     <Platforms
                                         image_class='gr-10 gr-5-p gr-9-m'
                                         image='tradingview'
