@@ -50,26 +50,30 @@ const BinaryJapan = () => (
 
         <section id='page-top' className='intro'>
             <div className='intro-body container'>
-                <div className='gr-row flex'>
+                <div className='gr-row gr-row-align-middle gr-row-align-center gr-row-reverse'>
+                    <div className='gr-5 gr-10-m'>
+                        <img className='responsive' src={it.url_for('images/japan/version1/retro.svg')} />
+                    </div>
                     <div className='gr-7 gr-12-m'>
-                        <h1 className='intro-text'>{it.L('{JAPAN ONLY}Binary Options', it.website_name)}</h1>
+                        <h1 className='intro-text gr-10-m'>{it.L('{JAPAN ONLY}Binary Options', it.website_name)}</h1>
                         <img className='responsive' src={it.url_for('images/japan/version1/pair.svg')} />
                         <h3 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade fx markets using binary options with one of the origical pioneers of binary options worldwide')}</h3>
-                        <form className='signup-form'>
+                        <form id='email_top' className='signup-form' noValidate>
                             <div className='signup-form-input'>
                                 <div className='input-group'>
                                     <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
-                                    <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>
+                                    <div className='invisible center-text error-msg error_validate_email'>{it.L('Invalid email address')}</div>
+                                    <div className='invisible center-text error-msg error_no_email'>{it.L('This field is required.')}</div>
                                     <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                 </div>
                             </div>
                             <div className='signup-form-success invisible'>
                                 <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
                             </div>
+                            <div className='signup-form-error invisible'>
+                                <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
+                            </div>
                         </form>
-                    </div>
-                    <div className='gr-5 gr-12-m'>
-                        <img className='responsive' src={it.url_for('images/japan/version1/retro.svg')} />
                     </div>
                 </div>
                 <h1 className='center-text content-inverse-color intro-bottom-text'>{it.L('{JAPAN ONLY}What are Binary Options?')}</h1>
@@ -83,8 +87,7 @@ const BinaryJapan = () => (
             </div>
             <div className='container'>
                 <div className='gr-row'>
-                    <h2 className='color-blue text-semibold gr-12'>{it.L('{JAPAN ONLY}Binary option offer the chance to predit whether the future price of a FX will be above or below a target rate, or between, or outside a target range:')}</h2>
-
+                    <h2 className='subtitle color-blue text-semibold gr-12'>{it.L('{JAPAN ONLY}Binary option offer the chance to predit whether the future price of a FX will be above or below a target rate, or between, or outside a target range:')}</h2>
                 </div>
                 <div className='gr-row gr-row-align-center cards cards--numbered'>
                     <div className='gr-6 gr-5-p gr-5-t gr-11-m'>
@@ -230,7 +233,7 @@ const BinaryJapan = () => (
                         <div className='bg bg-bubble-box'>
                             <h1>{it.L('{JAPAN ONLY}High speed execution')}</h1>
                         </div>
-                        <img className='responsive-md' src={it.url_for('images/japan/version1/bg-light-blue.svg')} />
+                        <img className='responsive' src={it.url_for('images/japan/version1/bg-light-blue.svg')} />
                     </div>
                     <div className='gr-4 gr-12-m'>
                         <div className=''>
@@ -247,18 +250,18 @@ const BinaryJapan = () => (
             <div className='container'>
                 <div className='gr-row'>
                     <div className='section-title gr-12'>
-                        <h1 className='bg-orange text-medium center-text'>{it.L('{JAPAN ONLY}Why choose binary options over foreign exchange')}</h1>
+                        <h1 className='bg-orange text-semibold center-text'>{it.L('{JAPAN ONLY}Why choose binary options over foreign exchange')}</h1>
                     </div>
-                    <h2 className='center-text color-blue text-medium gr-12'>{it.L('{JAPAN ONLY}A binary option can provide profit opportunities even in a small price range, where FX normally doesn’t. Here is a table comparison of foreign exchange and binary options:')}</h2>
+                    <h2 className='subtitle center-text color-blue text-semibold gr-12'>{it.L('{JAPAN ONLY}A binary option can provide profit opportunities even in a small price range, where FX normally doesn’t. Here is a table comparison of foreign exchange and binary options:')}</h2>
                 </div>
-                <div className='gr-row cards'>
-                    <div className='gr-5 gr-push-1 gr-12-m gr-push-0-m'>
+                <div className='gr-row gr-row-align-center cards'>
+                    <div className='gr-5 gr-6-p gr-12-m'>
                         <div className='card--light'>
                             <div className='card-header__bubble'>
                                 <h3>{it.L('{JAPAN ONLY}Foreign exchange one cancellation order - profit take & stop-loss order')}</h3>
                             </div>
                             <div className='card-body'>
-                                <div className='gr-row flex-space-evenly'>
+                                <div className='gr-row flex-space-between'>
                                     <div className='box-o'>
                                         <img className='icon-sm big' src={it.url_for('images/japan/version1/jpy.svg')} />
                                         <span className='size-3'>{it.L('{JAPAN ONLY}¥110.50 / lot')}</span>
@@ -279,11 +282,11 @@ const BinaryJapan = () => (
                                     </div>
                                     <div>
                                         <div className='box'>
-                                            <p className='size-1 color-dark-gray'>{it.L('{JAPAN ONLY}profit take sell')}</p>
+                                            <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}profit take sell')}</p>
                                             <p className='color-red'>{it.L('{JAPAN ONLY}¥110.65')}</p>
                                         </div>
                                         <div className='box'>
-                                            <p className='size-1 color-dark-gray'>{it.L('{JAPAN ONLY}stop-loss sell')}</p>
+                                            <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}stop-loss sell')}</p>
                                             <p className='color-light-blue'>{it.L('{JAPAN ONLY}¥110.40')}</p>
                                         </div>
                                     </div>
@@ -298,17 +301,19 @@ const BinaryJapan = () => (
                                         <br />
                                         {it.L('{JAPAN ONLY}Maximum loss: not guaranteed')}</p>
                                 </div>
+                            </div>
+                            <div className='card-footer'>
                                 <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000')}</p>
                             </div>
                         </div>
                     </div>
-                    <div className='gr-5 gr-push-1 gr-12-m gr-push-0-m'>
+                    <div className='gr-5 gr-6-p gr-12-m'>
                         <div className='card--light'>
                             <div className='card-header__bubble'>
                                 <h3>{it.L('{JAPAN ONLY}Binary option can make a higher profit, for the same risk but less margin')}</h3>
                             </div>
                             <div className='card-body'>
-                                <div className='gr-row flex-space-evenly'>
+                                <div className='gr-row flex-space-between'>
                                     <div className='box-o'>
                                         <img className='icon-sm big' src={it.url_for('images/japan/version1/jpy.svg')} />
                                         <span className='size-3'>{it.L('{JAPAN ONLY}¥200 /  lot')}</span>
@@ -329,11 +334,11 @@ const BinaryJapan = () => (
                                     </div>
                                     <div>
                                         <div className='box'>
-                                            <p className='size-1 color-dark-gray'>{it.L('{JAPAN ONLY}payout (if spot 110.65 or higher)')}</p>
+                                            <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}payout (if spot 110.65 or higher)')}</p>
                                             <p className='color-red'>{it.L('{JAPAN ONLY}¥1,000')}</p>
                                         </div>
                                         <div className='box'>
-                                            <p className='size-1 color-dark-gray'>{it.L('{JAPAN ONLY}if not')}</p>
+                                            <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}if not')}</p>
                                             <p className='color-light-blue'>{it.L('{JAPAN ONLY}¥0')}</p>
                                         </div>
                                     </div>
@@ -349,6 +354,8 @@ const BinaryJapan = () => (
                                         {it.L('{JAPAN ONLY}Maximum loss: guaranteed')}
                                     </p>
                                 </div>
+                            </div>
+                            <div className='card-footer'>
                                 <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000')}</p>
                             </div>
                         </div>
@@ -362,33 +369,33 @@ const BinaryJapan = () => (
                 <h1 className='bg-bubble margin-bottom'>{it.L('{JAPAN ONLY}Key plus point')}</h1>
             </div>
             <div  className='container'>
-                <div className='gr-row cards'>
-                    <div className='gr-2 gr-4-p gr-6-m'>
+                <div className='gr-row gr-row-align-center cards'>
+                    <div className='gr-2 gr-3-p gr-6-m'>
                         <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}trade with 50 yen to 999 yen')}</p>
                         </div>
                     </div>
-                    <div className='gr-2 gr-4-p gr-6-m'>
+                    <div className='gr-2 gr-3-p gr-6-m'>
                         <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}set daily loss limit')}</p>
                         </div>
                     </div>
-                    <div className='gr-2 gr-4-p gr-6-m'>
+                    <div className='gr-2 gr-3-p gr-6-m'>
                         <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}no transaction fees')}</p>
                         </div>
                     </div>
-                    <div className='gr-2 gr-4-p gr-6-m'>
+                    <div className='gr-2 gr-3-p gr-6-m'>
                         <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}trade 9 currencies')}</p>
                         </div>
                     </div>
-                    <div className='gr-2 gr-4-p gr-6-m'>
+                    <div className='gr-2 gr-3-p gr-6-m'>
                         <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}4 options types')}</p>
                         </div>
                     </div>
-                    <div className='gr-2 gr-4-p gr-6-m'>
+                    <div className='gr-2 gr-3-p gr-6-m'>
                         <div className='card--light key-plus icon-heart'>
                             <p>{it.L('{JAPAN ONLY}trading periods from 2 hours to 1 year')}</p>
                         </div>
@@ -402,26 +409,30 @@ const BinaryJapan = () => (
                 <div className='container center-text'>
                     <div className='gr-row'>
                         <div className='gr-12'>
-                            <form className='signup-form'>
+                            <form id='email_middle' className='signup-form' noValidate>
                                 <h1 className='text-medium'>{it.L('{JAPAN ONLY}Sign up for a free account')}</h1>
                                 <div className='signup-form-input'>
                                     <div className='input-group'>
                                         <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
-                                        <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>
+                                        <div className='invisible center-text error-msg error_validate_email'>{it.L('Invalid email address')}</div>
+                                        <div className='invisible center-text error-msg error_no_email'>{it.L('This field is required.')}</div>
                                         <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                     </div>
                                 </div>
                                 <div className='signup-form-success invisible'>
                                     <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
                                 </div>
+                                <div className='signup-form-error invisible'>
+                                    <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
+                                </div>
                             </form>
                         </div>
                     </div>
-                    <h3 className='content-inverse-color text-semibold'>{it.L('{JAPAN ONLY}Why Binary.com?')}</h3>
+                    <h2 className='content-inverse-color text-semibold'>{it.L('{JAPAN ONLY}Why Binary.com?')}</h2>
                 </div>
             </div>
             <div className='container spacing'>
-                <h1 className='center-text text-medium color-orange margin-bottom-40'>{it.L('{JAPAN ONLY}Easy to use design. Fast execution; multifunction charting system and smartphone optimized display.')}</h1>
+                <h1 className='center-text text-semibold color-orange margin-bottom-40'>{it.L('{JAPAN ONLY}Easy to use design. Fast execution; multifunction charting system and smartphone optimized display.')}</h1>
                 <div className='gr-row'>
                     <div className='gr-8 gr-push-1 gr-9-m gr-push-0-m'>
                         <img className='responsive' src={it.url_for('images/japan/version1/apple-macbook-pro-15@2x.jpg')} />
@@ -439,11 +450,11 @@ const BinaryJapan = () => (
                     <div className='section-title gr-12'>
                         <h1 className='bg-orange text-semibold v-padding center-text'>{it.L('{JAPAN ONLY}YOUR FUNDS ARE HELD SECURELY')}</h1>
                     </div>
-                    <h2 className='color-blue text-semibold gr-12'>{it.L('{JAPAN ONLY}All customer funds are deposited with JSF Trust & Banking, and in the event of our business failure, they will be refunde via an independent attorney acting as beneficiary agent')}</h2>
+                    <h2 className='subtitle color-blue text-semibold gr-12'>{it.L('{JAPAN ONLY}All customer funds are deposited with JSF Trust & Banking, and in the event of our business failure, they will be refunde via an independent attorney acting as beneficiary agent')}</h2>
 
                 </div>
-                <div className='gr-row cards'>
-                    <div className='gr-5 gr-push-1 gr-12-m gr-push-0-m'>
+                <div className='gr-row gr-row-align-center cards'>
+                    <div className='gr-5 gr-6-p gr-12-m'>
                         <div className='card--light'>
                             <div className='card-header__bubble card-header__bubble-sm'>
                                 <h3>{it.L('{JAPAN ONLY}Normal time')}</h3>
@@ -453,7 +464,7 @@ const BinaryJapan = () => (
                             </div>
                         </div>
                     </div>
-                    <div className='gr-5 gr-push-1 gr-12-m gr-push-0-m'>
+                    <div className='gr-5 gr-6-p gr-12-m'>
                         <div className='card--light'>
                             <div className='card-header__bubble card-header__bubble-sm'>
                                 <h3>{it.L('{JAPAN ONLY}When our company collapse')}</h3>
@@ -476,15 +487,15 @@ const BinaryJapan = () => (
                                 <h1>{it.L('{JAPAN ONLY}The learning center')}</h1>
                             </div>
                             <div className='card-body gr-row'>
-                                <div className='gr-2 gr-push-1 gr-4-p gr-push-0-p gr-12-m gr-push-0-m'>
+                                <div className='gr-2 gr-push-1 gr-4-p gr-push-0-p gr-10-m gr-push-1-m'>
                                     <img className='img-md' src={it.url_for('images/japan/version1/customer-support.svg')} />
-                                    <h3 className='size-3'>{it.L('{JAPAN ONLY}We have a support team to answer your questions: support@binary.com')}</h3>
+                                    <h3 className='size-3'>{it.L('{JAPAN ONLY}We have a support team to answer your questions: <a href=\'mailto:support@binary.com\'>support@binary.com</a>')}</h3>
                                 </div>
-                                <div className='gr-2 gr-push-3 gr-4-p gr-push-0-p gr-12-m gr-push-0-m'>
+                                <div className='gr-2 gr-push-3 gr-4-p gr-push-0-p gr-10-m gr-push-1-m'>
                                     <img className='img-md' src={it.url_for('images/japan/version1/accounting-book.svg')} />
                                     <h3 className='size-3'>{it.L('{JAPAN ONLY}We will give you a virtual account that already has ¥ 1,000,000.')}</h3>
                                 </div>
-                                <div className='gr-2 gr-push-5 gr-4-p gr-push-0-p gr-12-m gr-push-0-m'>
+                                <div className='gr-2 gr-push-5 gr-4-p gr-push-0-p gr-10-m gr-push-1-m'>
                                     <img className='img-md' src={it.url_for('images/japan/version1/school.svg')} />
                                     <h3 className='size-3'>{it.L('{JAPAN ONLY}Learn more about binary options for academies using webinars, ebooks, videos.')}</h3>
                                 </div>
@@ -537,14 +548,18 @@ const BinaryJapan = () => (
         <section className='pattern pattern-wave'>
             <div className='container'>
                 <div className='card--light no-padding'>
-                    <div className='gr-row card-body flex'>
-                        <div className='gr-4 gr-12-p gr-12-t gr-12-m center-text'>
-                            <h3>{it.L('{JAPAN ONLY}Award-winning trading excellence')}</h3>
+                    <div className='card-body'>
+                        <div className='gr-row gr-row-align-center gr-row-align-middle'>
+                            <div className='gr-4 gr-12-p gr-12-t gr-12-m center-text'>
+                                <h3>{it.L('{JAPAN ONLY}Award-winning trading excellence')}</h3>
+                            </div>
+                            <div className='gr-8 gr-12-p gr-12-t gr-12-m'>
+                                <img className='responsive responsive-lg' src={it.url_for('images/japan/version1/opwa.svg')} />
+                                <img className='responsive responsive-lg' src={it.url_for('images/japan/version1/mena-fx-pro@2x.jpg')} />
+                                <img className='responsive responsive-lg' src={it.url_for('images/japan/version1/egr-operator@2x.png')} />
+                                <img className='responsive responsive-lg' src={it.url_for('images/japan/version1/t-2-w@2x.png')} />
+                            </div>
                         </div>
-                        <img className='responsive responsive-lg' src={it.url_for('images/japan/version1/opwa.svg')} />
-                        <img className='responsive responsive-lg' src={it.url_for('images/japan/version1/mena-fx-pro@2x.jpg')} />
-                        <img className='responsive responsive-lg' src={it.url_for('images/japan/version1/egr-operator@2x.png')} />
-                        <img className='responsive responsive-lg' src={it.url_for('images/japan/version1/t-2-w@2x.png')} />
                     </div>
                 </div>
             </div>
@@ -554,17 +569,21 @@ const BinaryJapan = () => (
             <div className='container'>
                 <div className='gr-row'>
                     <div className='gr-12'>
-                        <form className='signup-form'>
+                        <form id='email_bottom' className='signup-form' noValidate>
                             <h1 className='text-semibold margin-bottom-30'>{it.L('{JAPAN ONLY}Sign up for a free account')}</h1>
                             <div className='signup-form-input'>
                                 <div className='input-group'>
                                     <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
-                                    <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>
+                                    <div className='invisible center-text error-msg error_validate_email'>{it.L('Invalid email address')}</div>
+                                    <div className='invisible center-text error-msg error_no_email'>{it.L('This field is required.')}</div>
                                     <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                 </div>
                             </div>
                             <div className='signup-form-success invisible'>
                                 <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
+                            </div>
+                            <div className='signup-form-error invisible'>
+                                <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
                             </div>
                         </form>
                     </div>
@@ -582,6 +601,9 @@ const BinaryJapan = () => (
             </div>
         </footer>
 
+        <div id='affiliate_disclaimer_popup'></div>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js'></script>
         <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
         <script src={`${it.url_for('js/landing_pages/japan.js')}?${it.static_hash}`}></script>
         </body>

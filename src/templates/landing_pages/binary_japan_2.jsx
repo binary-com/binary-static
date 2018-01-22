@@ -17,7 +17,7 @@ const Product = ({
             <div className={`${icon_1} icon-sm`}></div>
             <div className={`${icon_2} icon-sm`}></div>
         </div>
-        <h3 className='center-text gr-padding-10'>{header}</h3>
+        <h3 className='center-text uppercase-text gr-padding-10'>{header}</h3>
         <p>{description}</p>
         <div className='gr-row gr-row-align-center'>
             <div className='gr-3 gr-8-m tab-image'>
@@ -92,16 +92,20 @@ const BinaryJapan2 = () => (
                         <div className='gr-row'>
                             <div className='gr-6 gr-12-m'>
                                 <h2 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world')}</h2>
-                                <form className='signup-form'>
+                                <form id='email_top' className='signup-form' noValidate>
                                     <div className='signup-form-input'>
                                         <div className='input-group'>
                                             <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
-                                            <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>
+                                            <div className='invisible center-text error-msg error_validate_email'>{it.L('Invalid email address')}</div>
+                                            <div className='invisible center-text error-msg error_no_email'>{it.L('This field is required.')}</div>
                                             <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                         </div>
                                     </div>
                                     <div className='signup-form-success invisible'>
                                         <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
+                                    </div>
+                                    <div className='signup-form-error invisible'>
+                                        <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
                                     </div>
                                 </form>
                             </div>
@@ -135,7 +139,7 @@ const BinaryJapan2 = () => (
                                     description={it.L('{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range.')}
                                     duration={it.L('{JAPAN ONLY}1 week to 1 year terms')} />
 
-                                <Product icon_1='ic-3' icon_2='ic-4'
+                                <Product icon_1='ic-7' icon_2='ic-8'
                                     image_1='in-out-3' image_2='in-out-4'
                                     header={it.L('{JAPAN ONLY}Range Options: Stay-In / Break-Out')}
                                     description={it.L('{JAPAN ONLY}Predict whether a FX rate will touch either target barrier before expiry.')}
@@ -356,32 +360,34 @@ const BinaryJapan2 = () => (
 
             <section id='open-account' className='bg-white edge--top--reverse'>
                 <div className='container center-text padding-bottom-50 override small-gap-before'>
-                    <div className='section-title'>
-                        <h1 className='color-blue'>{it.L('{JAPAN ONLY}How to open an account')}</h1>
-                    </div>
-                    <div className='gr-row numbered'>
-                        <div className='gr-6 gr-12-m'>
-                            <div className='flex-inline'>
-                                <span className='icon-md rounded ic-new-account'></span>
-                                <p>{it.L('{JAPAN ONLY}Apply for an account & provide ID')}</p>
-                            </div>
+                    <div className='gr-12 gr-centered'>
+                        <div className='section-title'>
+                            <h1 className='color-blue'>{it.L('{JAPAN ONLY}How to open an account')}</h1>
                         </div>
-                        <div className='gr-6 gr-12-m'>
-                            <div className='flex-inline'>
-                                <span className='icon-md rounded ic-knowledge-test'></span>
-                                <p>{it.L('{JAPAN ONLY}Pass our Knowledge Test')}</p>
+                        <div className='gr-row numbered'>
+                            <div className='gr-6 gr-12-m'>
+                                <div className='flex-inline'>
+                                    <span className='icon-md rounded ic-new-account'></span>
+                                    <p className='desc-text'>{it.L('{JAPAN ONLY}Apply for an account & provide ID')}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className='gr-6 gr-12-m'>
-                            <div className='flex-inline'>
-                                <span className='icon-md rounded ic-secure-email'></span>
-                                <p>{it.L('{JAPAN ONLY}Receive account activation code by secure mail and activate account')}</p>
+                            <div className='gr-6 gr-12-m'>
+                                <div className='flex-inline'>
+                                    <span className='icon-md rounded ic-knowledge-test'></span>
+                                    <p className='desc-text'>{it.L('{JAPAN ONLY}Pass our Knowledge Test')}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className='gr-6 gr-12-m'>
-                            <div className='flex-inline'>
-                                <span className='icon-md rounded ic-deposit-money'></span>
-                                <p>{it.L('{JAPAN ONLY}Deposit funds and begin trading')}</p>
+                            <div className='gr-6 gr-12-m'>
+                                <div className='flex-inline'>
+                                    <span className='icon-md rounded ic-secure-email'></span>
+                                    <p className='desc-text'>{it.L('{JAPAN ONLY}Receive account activation code by secure mail and activate account')}</p>
+                                </div>
+                            </div>
+                            <div className='gr-6 gr-12-m'>
+                                <div className='flex-inline'>
+                                    <span className='icon-md rounded ic-deposit-money'></span>
+                                    <p className='desc-text'>{it.L('{JAPAN ONLY}Deposit funds and begin trading')}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -401,21 +407,26 @@ const BinaryJapan2 = () => (
                 </div>
             </section>
 
+
             <div className='bg-orange bg-semicircles'>
                 <div className='container'>
                     <div className='gr-row'>
                         <div className='gr-12'>
-                            <form className='signup-form'>
+                            <form id='email_bottom' className='signup-form' noValidate>
                                 <h1 className=''>{it.L('{JAPAN ONLY}Sign up for a free account')}</h1>
-                                <div className='signup-form-input'>
+                                <div className='signup-form-input center'>
                                     <div className='input-group'>
                                         <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
-                                        <span className='error-msg center-text invisible'>{it.L('{JAPAN ONLY}This field is required')}</span>
+                                        <div className='invisible center-text error-msg error_validate_email'>{it.L('Invalid email address')}</div>
+                                        <div className='invisible center-text error-msg error_no_email'>{it.L('This field is required.')}</div>
                                         <button type='submit' id='btn-submit-email'><span>{it.L('{JAPAN ONLY}Account Opening')}</span></button>
                                     </div>
                                 </div>
                                 <div className='signup-form-success white invisible'>
                                     <p>{it.L('{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process.')}</p>
+                                </div>
+                                <div className='signup-form-error white invisible'>
+                                    <p>{it.L('{JAPAN ONLY}Sorry, account signup is not available in your country.')}</p>
                                 </div>
                             </form>
                         </div>
@@ -436,6 +447,10 @@ const BinaryJapan2 = () => (
                 </div>
             </footer>
 
+            <div id='affiliate_disclaimer_popup'></div>
+
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js'></script>
             <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
             <script src={`${it.url_for('js/landing_pages/japan_2.js')}?${it.static_hash}`}></script>
         </body>

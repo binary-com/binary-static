@@ -67,7 +67,7 @@ const Platform = () => (
             <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
                 <TabsSubtabs
                     id='platforms_tabs'
-                    className='gr-padding-20 gr-parent tab-selector-wrapper invisible'
+                    className='gr-padding-20 gr-parent tab-selector-wrapper'
                     items={[
                         { id: 'binary', text: it.L('Binary Options') },
                         { id: 'mt5',    text: it.L('MetaTrader 5') },
@@ -164,7 +164,7 @@ const Platform = () => (
                                             <p>{it.L('Trade Forex and Contracts for Difference (CFD) assets with highly-competitive leverage and zero commission.')}</p>
                                             <p>
                                                 <a className='button' href={it.url_for('user/metatrader')}>
-                                                    <span>{it.L('Create MetaTrader 5 Account in [_1]', it.website_name)}</span>
+                                                    <span>{it.L('Go to MetaTrader 5 Dashboard')}</span>
                                                 </a>
                                             </p>
                                         </div>
@@ -230,7 +230,7 @@ const Platform = () => (
                                     </div>
                                     <div className='center-text'>
                                         <a className='button' href={it.url_for('user/metatrader')}>
-                                            <span>{it.L('Create MetaTrader 5 Account in [_1]', it.website_name)}</span>
+                                            <span>{it.L('Go to MetaTrader 5 Dashboard')}</span>
                                         </a>
                                     </div>
                                 </div>

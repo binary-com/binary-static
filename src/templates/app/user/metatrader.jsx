@@ -22,7 +22,7 @@ const AccountDesc = ({ title, description, account_type, items }) => {
                 ))}
             </ul>
             <p>
-                <a href={it.url_for('metatrader/types-of-accounts')}>{it.L('MetaTrader 5 Account Comparison')}</a>
+                <a className='hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')}>{it.L('Compare MetaTrader 5 accounts')}</a>
             </p>
         </div>
     );
@@ -65,7 +65,7 @@ const Metatrader = () => (
     <React.Fragment>
         <div className='container'>
             <div className='static_full'>
-                <h1>{it.L('MetaTrader 5 Dashboard')}</h1>
+                <h1>{it.L('MetaTrader 5 dashboard')}</h1>
             </div>
             <p id='page_msg' className='notice-msg center-text invisible'></p>
             <div id='mt_loading'><Loading /></div>
@@ -73,7 +73,7 @@ const Metatrader = () => (
                 <div id='mt_left_panel' className='gr-9 gr-8-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
                     <div id='account_details' className='mt-panel mt-container'>
                         <div className='gr-row'>
-                            <div className='gr-adapt gr-hide-m gr-hide-p'>
+                            <div className='gr-adapt gr-hide-m gr-hide-p gr-hide-t'>
                                 <div id='acc_icon'></div>
                             </div>
                             <div className='gr-grow'>
@@ -122,10 +122,10 @@ const Metatrader = () => (
                                 <span></span>
                             </span>
                             <a href='javascript:;' className='act_cashier has-account center-text invisible'>
-                                <span>{it.L('Manage Funds')}</span>
+                                <span>{it.L('Manage funds')}</span>
                             </a>
                             <a href='javascript:;' className='act_password_change has-account center-text invisible'>
-                                <span>{it.L('Change Password')}</span>
+                                <span>{it.L('Change password')}</span>
                             </a>
                         </div>
                         <div className='fst-container mt-container'>
@@ -140,11 +140,11 @@ const Metatrader = () => (
                     <div className='mt-panel'>
                         <div id='account_desc' className='mt-container border-bottom'></div>
                         <div className='mt-container'>
-                            <p>{it.L('Trade platform quick links:')}</p>
+                            <p>{it.L('Trading platform quick links:')}</p>
                             <ul className='platforms'>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/web.svg')} />
-                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>{it.L('Web platform')}</a>
+                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>{it.L('Trade on web platform')}</a>
                                 </li>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/mac.svg')} />
@@ -156,7 +156,7 @@ const Metatrader = () => (
                                 </li>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/linux.svg')} />
-                                    <a href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux' rel='noopener noreferrer' target='_blank'>{it.L('Instructions for Linux')}</a>
+                                    <a href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux' rel='noopener noreferrer' target='_blank'>{it.L('Read instructions for Linux')}</a>
                                 </li>
                                 <p className='badges'>
                                     <a href='https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>
@@ -185,18 +185,10 @@ const Metatrader = () => (
                     <div className='account-desc'>
                         <AccountDesc title={it.L('Choose an account')}
                             description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out.', it.website_name)} />
-                        <AccountDesc account_type={['vanuatu_cent']} title={it.L('Cent Account')}
-                            description={it.L('Our MetaTrader 5 Cent account is ideal for new traders who want to start trading with a smaller capital.')}
-                            items={[
-                                it.L('Offers the highest leverage – up to 1:1,000'),
-                                it.L('Fixed spreads'),
-                                it.L('Instant execution'),
-                                it.L('No commission'),
-                            ]} />
                         <AccountDesc account_type={['vanuatu_standard']} title={it.L('Standard Account')}
-                            description={it.L('Our MetaTrader 5 Standard account comes with mid-range leverage and variable spreads suitable for a wide range of traders.')}
+                            description={it.L('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')}
                             items={[
-                                it.L('Leverage up to 1:300'),
+                                it.L('Leverage up to 1:500'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
@@ -210,10 +202,10 @@ const Metatrader = () => (
                                 it.L('No commission'),
                             ]} />
                         <AccountDesc account_type={['costarica', 'malta']} title={it.L('Volatility Account')}
-                            description={it.L('The Volatility account allows you to profit by speculating on the rise or fall of an instrument.')}
+                            description={it.L('Our Volatility account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
                             items={[
                                 it.L('Leverage up to 1:500'),
-                                it.L('Variable spreads'),
+                                it.L('Fixed spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
                             ]} />
@@ -223,17 +215,17 @@ const Metatrader = () => (
                         <div id='mv_new_account'>
                             <div id='view_1' className='center-text'>
                                 <div className='step-1'>
-                                    <TypeGroup title={it.L('Step 1 : Choose demo or real account')} types={[
-                                        { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Each demo account comes with [_1] virtual money', '$10,000') },
-                                        { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Real account allows you to trade in USD real currency') },
+                                    <TypeGroup title={it.L('Step 1: Choose demo or real account')} types={[
+                                        { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Practise your trading strategy with [_1] of virtual funds in a risk-free environment.', '$10,000') },
+                                        { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds, access to competitive trading conditions, and zero commission.') },
                                     ]} />
                                 </div>
                                 <div className='step-2 invisible'>
                                     <div className='separator-line gr-padding-10'></div>
-                                    <TypeGroup title={it.L('Step 2 : Choose types of accounts')} types={[
-                                        { type: 'template', desc: 'Cent' },
+                                    <TypeGroup title={it.L('Step 2: Choose account type')} types={[
+                                        { type: 'template', desc: 'standard' },
                                     ]}>
-                                        <a className='hint' href={it.url_for('metatrader/types-of-accounts')}>{it.L('Which one suits me?')}</a>
+                                        <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')}>{it.L('Which account is right for me?')}</a>
                                     </TypeGroup>
                                 </div>
                                 <p id='new_account_msg' className='notice-msg center-text invisible'></p>
@@ -255,6 +247,7 @@ const Metatrader = () => (
                                     <SubmitButton
                                         no_wrapper
                                         type='submit'
+                                        id='btn_submit_new_account'
                                         text={it.L('Create Account')}
                                         attributes={{ action: 'new_account' }}
                                         custom_btn_text={it.L('Back')}
@@ -275,6 +268,7 @@ const Metatrader = () => (
                                 <SubmitButton
                                     no_wrapper
                                     type='submit'
+                                    id='btn_submit_password_change'
                                     text={it.L('Change Password')}
                                     attributes={{ action: 'password_change' }}
                                 />
@@ -284,20 +278,20 @@ const Metatrader = () => (
 
                     <div id='frm_cashier'>
                         <div className='gr-row demo-only invisible'>
-                            <p className='gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30'>{it.L('This demo account comes with [_1] of the virtual fund. Contact our customer service to top up your demo account once virtual fund reaches zero.', '$10,000.00')}</p>
+                            <p className='gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30'>{it.L('This demo account comes with [_1] of virtual funds. Please [_2]contact our customer support team[_3] to replenish virtual funds if your account balance is empty.', '$10,000.00', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
                         </div>
                         <div className='real-only invisible'>
                             <div className='gr-padding-20 gr-parent'>
                                 <div className='fill-bg-color center-text mt-container'>
                                     <div className='gr-10 gr-push-1 gr-12-m gr-push-0-m'>
-                                        <h3 className='secondary-color'>{it.L('Fund overview')}</h3>
-                                        <p className='hint'>{it.L('To deposit your MetaTrader 5 Account, please top up the fund in your Binary Cashier then transfer the fund from Cashier to your MetaTrader 5 account.')}</p>
+                                        <h3 className='secondary-color'>{it.L('How to manage your funds')}</h3>
+                                        <p className='hint'>{it.L('Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account.')}</p>
                                         <div className='gr-row'>
                                             <div className='gr-5'>
                                                 <img src={it.url_for('images/pages/metatrader/dashboard/binary_wallet.svg')} />
                                                 <div className='binary-account gr-padding-10'></div>
                                                 <div className='binary-balance gr-padding-10 gr-parent'></div>
-                                                <a className='secondary-color hint' href={it.url_for('cashier')}>{it.L('Add fund')}</a>
+                                                <a className='secondary-color hint' href={it.url_for('cashier')}>{it.L('Add funds')}</a>
                                             </div>
                                             <div className='gr-2 gr-padding-20'>
                                                 <img src={it.url_for('images/pages/metatrader/dashboard/transfer.svg')} />
@@ -316,7 +310,7 @@ const Metatrader = () => (
                                 <div className='gr-6 gr-12-m flex'>
                                     <div className='mt-panel mt-container'>
                                         <form id='frm_deposit'>
-                                            <CashierDesc title={it.L('Deposit into MT5 account')} arrow_direction='right' desc={it.L('Deposit funds from your Binary account into MetaTrader 5 account.')} />
+                                            <CashierDesc title={it.L('Deposit funds into your MT5 account')} arrow_direction='right' desc={it.L('Transfer funds from your binary options account into your MetaTrader 5 account.')} />
 
                                             <div className='form'>
                                                 <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} />
@@ -324,6 +318,7 @@ const Metatrader = () => (
                                                     is_centered
                                                     is_full_width
                                                     type='submit'
+                                                    id='btn_submit_deposit'
                                                     text={it.L('Deposit')}
                                                     attributes={{ action: 'deposit' }}
                                                 />
@@ -334,15 +329,16 @@ const Metatrader = () => (
                                 <div className='gr-6 gr-12-m flex'>
                                     <div className='mt-panel mt-container'>
                                         <form id='frm_withdrawal'>
-                                            <CashierDesc title={it.L('Withdraw from MT5 account')} arrow_direction='left' desc={it.L('Withdraw funds from MetaTrader 5 account into your Binary account.')} />
+                                            <CashierDesc title={it.L('Withdraw funds from your MT5 account')} arrow_direction='left' desc={it.L('Transfer funds from your MetaTrader 5 account into your binary options account.')} />
 
                                             <div className='form'>
-                                                <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('MetaTrader 5 main password')} />
                                                 <FormRow is_two_rows type='text' id='txt_amount_withdrawal' label={it.L('Amount')} attributes={{ maxLength: 10 }} />
+                                                <FormRow is_two_rows type='password' id='txt_main_pass_wd' label={it.L('MetaTrader 5 main password')} />
                                                 <SubmitButton
                                                     is_centered
                                                     is_full_width
                                                     type='submit'
+                                                    id='btn_submit_withdrawal'
                                                     text={it.L('Withdraw')}
                                                     attributes={{ action: 'withdrawal' }}
                                                 />
@@ -360,9 +356,9 @@ const Metatrader = () => (
                         <div id='msg_upgrade'>{it.L('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', it.url_for('new_account/realws'), it.website_name)}</div>
                         <div id='msg_currency_not_match'>{it.L('Please switch to a [_1] account to manage funds.', '[_1]')}</div>
                         <div id='msg_real_financial'>
-                            {it.L('To create a real financial MT5 account, please complete the following:')}
+                            {it.L('To create a MetaTrader 5 real account, please:')}
                             <ul className='bullet'>
-                                <li className='assessment invisible'>{it.L('Complete your <a href="[_1]">Financial Assessment</a>.', it.url_for('user/settings/assessmentws'))}</li>
+                                <li className='assessment invisible'>{it.L('Complete the <a href="[_1]">Financial Assessment</a>.', it.url_for('user/settings/assessmentws'))}</li>
                                 <li className='authenticate invisible'>{it.L('<a href="[_1]">Authenticate</a> your account by verifying your identity and address.', it.url_for('user/authenticate'))}</li>
                             </ul>
                         </div>
