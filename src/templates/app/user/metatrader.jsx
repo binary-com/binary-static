@@ -88,7 +88,7 @@ const Metatrader = () => (
                                     </div>
                                     <div className='gr-grow gr-no-gutter'>
                                         <a className='button button-secondary act_new_account' href='javascript:;'>
-                                            <span>{it.L('New')}</span>
+                                            <span id='new_account_icon'>{it.L('New Account')}</span>
                                         </a>
                                     </div>
                                 </div>

@@ -39,7 +39,7 @@ const TypesOfAccounts = () => (
     <div id='mt5_types_of_accounts' className='static_full'>
         <h1>{it.L('Types of MetaTrader 5 accounts')}</h1>
         <p>{it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you are an experienced trader or just starting out. Each account has been tailored to provide you with a unique opportunity to trade financial instruments.', it.website_name)}</p>
-        <p>{it.L('Best of all, there is no minimum deposit requirement and no commission per trade.')}</p>
+        <p>{it.L('Best of all, there is no minimum deposit requirement.')}</p>
         <Box
             image='standard'
             title={it.L('Standard')}
@@ -53,12 +53,12 @@ const TypesOfAccounts = () => (
         <Box
             image='volatility'
             title={it.L('Volatility')}
-            text={it.L('The Volatility account allows you to trade CFDs on Volatility Indices –– our proprietary synthetic assets that simulate real-world events and market forces.')}
+            text={it.L('The Volatility account allows you to trade CFDs on Volatility Indices –– our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
         />
 
         <div className='gr-padding-30'></div>
 
-        <h2 className='center-text'>{it.L('Account comparison')}</h2>
+        <h2 className='center-text'>{it.L('Account comparison*')}</h2>
         <div className='gr-padding-10'>
             <Table
                 scroll
@@ -79,6 +79,7 @@ const TypesOfAccounts = () => (
                     ],
                 }}
             />
+            <p className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
         </div>
 
         <div className='gr-padding-30'></div>
@@ -109,7 +110,7 @@ const TypesOfAccounts = () => (
         <FootNote
             number={5}
             title={it.L('Commission')}
-            texts={[it.L('Most brokers typically charge a commission for each trade that you place. [_1] currently charges no commission across all account types.', it.website_name)]}
+            texts={[it.L('Most brokers typically charge a commission for each trade that you place. [_1] currently charges no commission across all account types, except for cryptocurrencies.', it.website_name)]}
         />
         <FootNote
             number={6}

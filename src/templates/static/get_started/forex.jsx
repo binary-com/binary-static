@@ -21,7 +21,7 @@ const Forex = () => (
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='what-forex-trading' header={it.L('What is Forex trading')}>
-                    <p>{it.L('The foreign exchange market (Forex) is the world\'s most liquid and most traded market, where trades worth trillions completed each day.')}</p>
+                    <p>{it.L('The foreign exchange market (Forex) is the world\'s most liquid and most traded market, where trades worth trillions are completed each day.')}</p>
                     <p>{it.L('Forex trading involves buying one currency and selling another currency at the same time. This is why you always see them quoted in pairs. For example: EUR/USD and GBP/USD.')}</p>
 
                     <HeaderSecondary header={it.L('Which currencies can I trade')} />
@@ -43,18 +43,17 @@ const Forex = () => (
                             { text: it.L('Symbol'), className: 'gr-padding-10' },
                             { text: it.L('Bid'),    className: 'gr-padding-10' },
                             { text: it.L('Ask'),    className: 'gr-padding-10' },
-                            { text: it.L('Last'),   className: 'gr-padding-10' },
                         ]],
                         tbody: [
-                            [{ text: 'EUR/USD' }, { text: '1.05652', className: 'loss'   }, { text: '1.05653', className: 'loss'   }, { text: '1.05651' }],
-                            [{ text: 'GBP/USD' }, { text: '1.24509', className: 'loss'   }, { text: '1.24515', className: 'loss'   }, { text: '1.24508' }],
-                            [{ text: 'USD/CHF' }, { text: '1.01010', className: 'loss'   }, { text: '1.01015', className: 'profit' }, { text: '1.01010' }],
-                            [{ text: 'USD/JPY' }, { text: '113.248', className: 'profit' }, { text: '113.251', className: 'profit' }, { text: '113.247' }],
-                            [{ text: 'USD/CAD' }, { text: '1.31441', className: 'profit' }, { text: '1.31444', className: 'profit' }, { text: '1.31439' }],
-                            [{ text: 'AUD/USD' }, { text: '0.76876', className: 'loss'   }, { text: '0.76879', className: 'loss'   }, { text: '0.76875' }],
-                            [{ text: 'AUD/NZD' }, { text: '1.06683', className: 'profit' }, { text: '1.06691', className: 'profit' }, { text: '1.06682', className: 'profit' }],
-                            [{ text: 'AUD/CAD' }, { text: '1.01043', className: 'profit' }, { text: '1.01050', className: 'loss'   }, { text: '1.01042', className: 'loss' }],
-                            [{ text: 'AUD/CHF' }, { text: '0.77652', className: 'loss'   }, { text: '0.77658', className: 'profit' }, { text: '0.77649' }],
+                            [{ text: 'EUR/USD' }, { text: '1.05652', className: 'loss'   }, { text: '1.05653', className: 'loss'   }],
+                            [{ text: 'GBP/USD' }, { text: '1.24509', className: 'loss'   }, { text: '1.24515', className: 'loss'   }],
+                            [{ text: 'USD/CHF' }, { text: '1.01010', className: 'loss'   }, { text: '1.01015', className: 'profit' }],
+                            [{ text: 'USD/JPY' }, { text: '113.248', className: 'profit' }, { text: '113.251', className: 'profit' }],
+                            [{ text: 'USD/CAD' }, { text: '1.31441', className: 'profit' }, { text: '1.31444', className: 'profit' }],
+                            [{ text: 'AUD/USD' }, { text: '0.76876', className: 'loss'   }, { text: '0.76879', className: 'loss'   }],
+                            [{ text: 'AUD/NZD' }, { text: '1.06683', className: 'profit' }, { text: '1.06691', className: 'profit' }],
+                            [{ text: 'AUD/CAD' }, { text: '1.01043', className: 'profit' }, { text: '1.01050', className: 'loss'   }],
+                            [{ text: 'AUD/CHF' }, { text: '0.77652', className: 'loss'   }, { text: '0.77658', className: 'profit' }],
                         ],
                     }} />
 
@@ -87,10 +86,10 @@ const Forex = () => (
                     <p><strong>{it.L('Tips')}</strong></p>
                     <ul className='bullet'>
                         <li>{it.L('The base currency is always equal to one unit.')}</li>
-                        <li>{it.L('The bid price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate.')}</li>
+                        <li>{it.L('The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate.')}</li>
                     </ul>
-                    <p>{it.L('For example, if you see that the EUR/USD has a bid price of 1.05229, you\'ll sell USD 1.05229 (quote currency) for every EUR 1 (base currency) you buy.')}</p>
-                    <p>{it.L('If the ask price is 1.05382, you\'ll buy USD 1.05382 for every EUR 1 you sell.')}</p>
+                    <p>{it.L('For example, if you see that the EUR/USD has an ask price of 1.05382, you\'ll sell USD 1.05382 (quote currency) for every EUR 1 (base currency) you buy.')}</p>
+                    <p>{it.L('If the bid price is 1.05229, you\'ll buy USD 1.05229 for every EUR 1 you sell.')}</p>
 
                     <HeaderSecondary header={it.L('Step 2: Understand when to buy and when to sell')} />
                     <p>{it.L('Think that a certain currency will go up or down? Learn when you should buy (or "go long") and when to sell (or "go short").')}</p>
@@ -113,16 +112,15 @@ const Forex = () => (
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the margin for our currency pairs by using the formula below:')}</p>
 
-                    <MtBox text={it.L('For example, if you buy one lot of the EUR/USD pair with a contract size of 100,000 and leverage of 100:1, the margin that you need to purchase one lot of EUR/USD will be calculated as follows:')} />
+                    <MtBox icon_1='l1-icon' icon_2='l2-icon' text={it.L('For example, if you buy one lot of the EUR/USD pair with a contract size of 100,000 and leverage of 100:1, the margin that you need to purchase one lot of EUR/USD will be calculated as follows:')} />
 
                     <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
-                    <p>{it.L('When your account equity is unable to cover the margin requirement, your account will be placed under margin call. This does not affect your ability to open new positions.')}</p>
+                    <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>
 
                     <HeaderSecondary header={it.L('What\'s a stop out level and how is it applied')} />
-                    <p>{it.L('If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as "forced liquidation").')}</p>
+                    <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as "forced liquidation").')}</p>
                     <p>{it.L('When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:')}</p>
                     <ol>
-                        <li>{it.L('We analyse your pending orders')}</li>
                         <li>{it.L('We delete an order with the largest margin reserved')}</li>
                         <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted')}</li>
                         <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss')}</li>
@@ -209,7 +207,7 @@ const Forex = () => (
                     <HeaderSecondary header={it.L('How to read the contract specifications table')} />
                     <p>{it.L('The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>.')}</p>
                     <p>{it.L('Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.')}</p>
-                    <p>{it.L('To learn more, read our Margin Policy that further explains our 100% forced liquidation level for Forex.')}</p>
+                    <p>{it.L('To learn more, read our [_1]Margin Policy[_2] that further explains our 100% forced liquidation level for Forex.', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>

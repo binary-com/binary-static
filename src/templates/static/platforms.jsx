@@ -153,7 +153,7 @@ const Platform = () => (
                             <div id='mt5'>
                                 <div className='container'>
                                     <h2 className='center-text'>{it.L('Introducing MetaTrader 5 for [_1]', it.website_name)}</h2>
-                                    <p className='center-text'>{it.L('MetaTrader 5 is an institutional multi-asset platform offering outstanding trading possibilities and technical analysis tools. It allows trading Foex, Stocks, Futures, CFDs and it provides everything needed for full-fledged and flexible trading operations.')}</p>
+                                    <p className='center-text'>{it.L('MetaTrader 5 is an institutional multi-asset platform offering outstanding trading possibilities and technical analysis tools. It allows trading Forex, Stocks, Futures, CFDs and it provides everything needed for full-fledged and flexible trading operations.')}</p>
                                     <div className='gr-row gr-padding-30'>
                                         <div className='gr-6 gr-12-m gr-padding-30 gr-parent'>
                                             <img className='responsive' src={it.url_for('images/pages/home/mt5.png')} />
@@ -161,7 +161,7 @@ const Platform = () => (
                                         <div className='gr-5 gr-push-1 gr-12-m gr-push-0-m'>
                                             <h3>{it.L('MetaTrader 5')}</h3>
                                             <p>{it.L('[_1] enters Forex and CFD trading with the universally acclaimed MetaTrader 5 to its continued leadership presence in the binary options market.', it.website_name)}</p>
-                                            <p>{it.L('Trade Forex and Contracts for Difference (CFD) assets with highly-competitive leverage.')}</p>
+                                            <p>{it.L('Trade Forex and Contracts for Difference (CFD) with highly-competitive leverage.')}</p>
                                             <p>
                                                 <a className='button' href={it.url_for('user/metatrader')}>
                                                     <span>{it.L('Go to MetaTrader 5 Dashboard')}</span>
