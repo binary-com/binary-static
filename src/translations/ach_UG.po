@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-18 04:40-0500\n"
+"PO-Revision-Date: 2018-01-21 21:21-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -2040,6 +2040,9 @@ msgstr "crwdns37968:0crwdne37968:0"
 msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
 msgstr "crwdns37970:0crwdne37970:0"
 
+msgid "CFD contract specifications"
+msgstr "crwdns43162:0crwdne43162:0"
+
 msgid "CFD margin policy"
 msgstr "crwdns42055:0crwdne42055:0"
 
@@ -2466,9 +2469,6 @@ msgstr "crwdns38081:0crwdne38081:0"
 msgid "Commissions:"
 msgstr "crwdns38082:0crwdne38082:0"
 
-msgid "Commitment to the highest ethical standards and regulatory compliance"
-msgstr "crwdns42078:0crwdne42078:0"
-
 msgid "Commodities"
 msgstr "crwdns38083:0crwdne38083:0"
 
@@ -2649,9 +2649,6 @@ msgstr "crwdns38133:0crwdne38133:0"
 msgid "Contract period"
 msgstr "crwdns38134:0crwdne38134:0"
 
-msgid "Contract specifications"
-msgstr "crwdns42083:0crwdne42083:0"
-
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "crwdns38135:0crwdne38135:0"
 
@@ -2816,6 +2813,12 @@ msgstr "crwdns42092:0crwdne42092:0"
 
 msgid "Cryptocurrency"
 msgstr "crwdns38178:0crwdne38178:0"
+
+msgid "Cryptocurrency contract specifications"
+msgstr "crwdns43163:0crwdne43163:0"
+
+msgid "Cryptocurrency margin policy"
+msgstr "crwdns43164:0crwdne43164:0"
 
 msgid "Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin."
 msgstr "crwdns42093:0crwdne42093:0"
@@ -4046,6 +4049,12 @@ msgstr "crwdns38492:0crwdne38492:0"
 
 msgid "Forex and contracts for differences are high risk and speculative"
 msgstr "crwdns38493:0crwdne38493:0"
+
+msgid "Forex contract specifications"
+msgstr "crwdns43165:0crwdne43165:0"
+
+msgid "Forex margin policy"
+msgstr "crwdns43166:0crwdne43166:0"
 
 msgid "Forex trading experience"
 msgstr "crwdns38494:0crwdne38494:0"
@@ -6465,9 +6474,6 @@ msgstr "crwdns39144:0crwdne39144:0"
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
 msgstr "crwdns39145:0crwdne39145:0"
 
-msgid "Margin policy"
-msgstr "crwdns42264:0crwdne42264:0"
-
 msgid "Margin rate"
 msgstr "crwdns42265:0crwdne42265:0"
 
@@ -6635,6 +6641,12 @@ msgstr "crwdns42279:0crwdne42279:0"
 
 msgid "Metals are categorised into two types:"
 msgstr "crwdns42280:0crwdne42280:0"
+
+msgid "Metals contract specifications"
+msgstr "crwdns43167:0crwdne43167:0"
+
+msgid "Metals margin policy"
+msgstr "crwdns43168:0crwdne43168:0"
 
 msgid "Metals trading lets you speculate on the price movement of a particular metal asset in order to profit from the price difference when the asset value rises or falls."
 msgstr "crwdns42281:0crwdne42281:0"
@@ -10500,29 +10512,29 @@ msgstr "crwdns42432:0crwdne42432:0"
 msgid "To implement our dividend payments feature, we will clone our tokens and each cloned token will represent dividend rights."
 msgstr "crwdns42582:0crwdne42582:0"
 
-msgid "To learn more, please read our <a href='%1'>contract specifications</a>."
-msgstr "crwdns42433:0%1crwdne42433:0"
+msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
+msgstr "crwdns43169:0%1crwdne43169:0"
 
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
-msgstr "crwdns40200:0%1crwdne40200:0"
+msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
+msgstr "crwdns43170:0%1crwdne43170:0"
 
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "crwdns42434:0%1crwdne42434:0"
+msgid "To learn more, read our <a href=\"%1\">Forex Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
+msgstr "crwdns43171:0%1crwdne43171:0"
 
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
-msgstr "crwdns40201:0%1crwdne40201:0"
+msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
+msgstr "crwdns43172:0%1crwdne43172:0"
 
 msgid "To learn more, read our Margin Policy that further explains our 100% forced liquidation level for Forex."
 msgstr "crwdns42435:0crwdne42435:0"
-
-msgid "To learn more, read our Margin Policy that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "crwdns42436:0crwdne42436:0"
 
 msgid "To learn more, read our Margin Policy that further explains our margin requirements."
 msgstr "crwdns42437:0crwdne42437:0"
 
 msgid "To learn more, read our Margin Policy that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
 msgstr "crwdns42438:0crwdne42438:0"
+
+msgid "To learn more, read our Metals Margin Policy that further explains our 100% forced liquidation level for our metal pairs."
+msgstr "crwdns43173:0crwdne43173:0"
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "crwdns40203:0%1crwdne40203:0"
