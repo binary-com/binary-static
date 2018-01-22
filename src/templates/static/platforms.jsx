@@ -175,7 +175,7 @@ const Platform = () => (
                                         <h2 className='center-text'>{it.L('Enhanced Trading with MetaTrader 5')}</h2>
                                         <div className='gr-row center-text enhanced'>
                                             <EnhancedItems image='trade'      text={it.L('Trade Forex and CFD asset classes with an award winning broker')} />
-                                            <EnhancedItems image='leverage'   text={it.L('Trade the Forex markets with leverage up to 100:1, and Volatility Indices with leverage up to 500:1')} />
+                                            <EnhancedItems image='leverage'   text={it.L('Trade the Forex markets and Volatility Indices with leverage up to 500:1')} />
                                             <EnhancedItems image='demo'       text={it.L('Open a free Demo account. Upgrade to a Real account by depositing funds through your [_1] account cashier', it.website_name)} />
                                             <EnhancedItems image='tools'      text={it.L('Access advanced tools for fundamental and technical analysis, all available in one platform')} />
                                             <EnhancedItems image='algorithms' text={it.L('Subscribe to a wide range of algorithmic trading strategies from the built-in MetaTrader Market')} />
