@@ -27,8 +27,8 @@ const Cfds = () => (
                     <List id='sidebar-nav' items={[
                         { id: 'what-cfds-trading',      href: '#what-cfds-trading',      text: it.L('What is CFD trading') },
                         { id: 'how-trade-cfds',         href: '#how-trade-cfds',         text: it.L('How to trade CFDs')} ,
-                        { id: 'margin-policy',          href: '#margin-policy',          text: it.L('Margin policy') },
-                        { id: 'contract-specification', href: '#contract-specification', text: it.L('Contract specifications') },
+                        { id: 'margin-policy',          href: '#margin-policy',          text: it.L('CFD margin policy') },
+                        { id: 'contract-specification', href: '#contract-specification', text: it.L('CFD contract specifications') },
                     ]} />
                 </div>
             </div>
@@ -59,13 +59,13 @@ const Cfds = () => (
                     <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
                     <p>{it.L('Let\'s say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.')}</p>
                     <p>{it.L('However, if the asset price falls by 10 points, that represents a USD 10 loss for you.')}</p>
-                    <p>{it.L('To learn more, please read our <a href=\'[_1]\'>contract specifications</a>.', '#contract-specification' )}</p>
+                    <p>{it.L('To learn more, please read our <a href=\'[_1]\'>CFD contract specifications</a>.', '#contract-specification' )}</p>
 
                     <HeaderSecondary header={it.L('How to close a position')} />
                     <p>{it.L('When you decide to close an open contract, you only need to take the opposite position in order to close the contract.')}</p>
                     <p>{it.L('For example, if you buy a US 100 contract and it\'s not going as planned, you just need to sell it to cut your losses at the current market price.')}</p>
                 </Section>
-                <Section id='margin-policy' header={it.L('Margin policy')}>
+                <Section id='margin-policy' header={it.L('CFD margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital.')}</p>
                     <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction.')}</p>
                     <p>{it.L('With leverage, you can purchase 100 units of the same asset at a fraction of the cost.')}</p>
@@ -88,7 +88,7 @@ const Cfds = () => (
                         <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
                     </ol>
                 </Section>
-                <Section id='contract-specification' header={it.L('Contract specifications')}>
+                <Section id='contract-specification' header={it.L('CFD contract specifications')}>
                     <HeaderSecondary header={it.L('Cash Indices')} />
                     <Table scroll data={{
                         thead: [[
