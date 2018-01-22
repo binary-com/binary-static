@@ -161,7 +161,7 @@ const Platform = () => (
                                         <div className='gr-5 gr-push-1 gr-12-m gr-push-0-m'>
                                             <h3>{it.L('MetaTrader 5')}</h3>
                                             <p>{it.L('[_1] enters Forex and CFD trading with the universally acclaimed MetaTrader 5 to its continued leadership presence in the binary options market.', it.website_name)}</p>
-                                            <p>{it.L('Trade Forex and Contracts for Difference (CFD) assets with highly-competitive leverage and zero commission.')}</p>
+                                            <p>{it.L('Trade Forex and Contracts for Difference (CFD) assets with highly-competitive leverage.')}</p>
                                             <p>
                                                 <a className='button' href={it.url_for('user/metatrader')}>
                                                     <span>{it.L('Go to MetaTrader 5 Dashboard')}</span>
