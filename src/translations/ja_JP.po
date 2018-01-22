@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-18 04:39-0500\n"
+"PO-Revision-Date: 2018-01-21 21:19-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -1752,7 +1752,7 @@ msgstr "Binary (Europe) Ltd & Binary Investments (Europe)\n"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\">view licence</a>."
 msgstr "Binary (Europe) Ltdもマルタ共和国でオンラインサービスの規制を受け監督されています。 \n"
-"EUの住居者（英国を除く）の口座開設は、この会社の下で開設されます。"
+"欧州連合の住居者（英国を除く）の口座開設は、この会社の下で開設されます。"
 
 msgid "Binary (IOM) Ltd"
 msgstr "Binary (IOM) Ltd"
@@ -2053,6 +2053,9 @@ msgstr "C. サービス提供"
 
 msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
 msgstr "CFD（差金決済取引）：CFDとは金融商品の上昇または下降の推測から利益を得られる金融商品のことをいいます。利益/損失は原資産商品の購入/売却価格の差額として推定されます。"
+
+msgid "CFD contract specifications"
+msgstr ""
 
 msgid "CFD margin policy"
 msgstr "CFDマージンポリシー"
@@ -2484,9 +2487,6 @@ msgstr "アフィリエイト会員が携わった全ての取引、すなわち
 msgid "Commissions:"
 msgstr "コミッション"
 
-msgid "Commitment to the highest ethical standards and regulatory compliance"
-msgstr "高い倫理基準と法令遵守への取り組み"
-
 msgid "Commodities"
 msgstr "コモディティ"
 
@@ -2667,9 +2667,6 @@ msgstr "当社は当社サイトに報告された、トレードの取引対象
 msgid "Contract period"
 msgstr "取引期間"
 
-msgid "Contract specifications"
-msgstr "トレード詳細"
-
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "当社のサーバがリクエストを受理した時点での市場価格で売却取引が成立します。実際の約定価格と注文時の表示価格と異なる場合があります。"
 
@@ -2834,6 +2831,12 @@ msgstr "ビットコインやイーサリアムなどの仮想通貨は、ブロ
 
 msgid "Cryptocurrency"
 msgstr "暗号通貨"
+
+msgid "Cryptocurrency contract specifications"
+msgstr ""
+
+msgid "Cryptocurrency margin policy"
+msgstr ""
 
 msgid "Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin."
 msgstr "ビットコイン、イーサリアム、ライトコインなどの仮想通貨ペア"
@@ -3604,10 +3607,10 @@ msgid "Eurobasket Wolves"
 msgstr "Eurobasket Wolves"
 
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
-msgstr ""
+msgstr "欧州連合の居住者（英国を除く）は、Binary (Europe) Ltdの下で口座を開設されます。"
 
 msgid "European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "欧州連合の居住者（英国を除く）は、Binary Investment (Europe) Ltdの下で口座を開設されます。"
 
 msgid "Even/Odd"
 msgstr "偶数/奇数"
@@ -4064,6 +4067,12 @@ msgstr "外国為替取引と差金決済取引は、原資産金融商品の短
 
 msgid "Forex and contracts for differences are high risk and speculative"
 msgstr "外国為替と差額取引の違いは高リスクと投機性にあります"
+
+msgid "Forex contract specifications"
+msgstr ""
+
+msgid "Forex margin policy"
+msgstr ""
 
 msgid "Forex trading experience"
 msgstr "外国為替取引のご経験"
@@ -6496,9 +6505,6 @@ msgstr "Margin indicates how much investment you can control based on your initi
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
 msgstr "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
 
-msgid "Margin policy"
-msgstr "証拠金取引ポリシー"
-
 msgid "Margin rate"
 msgstr "マージン率"
 
@@ -6665,6 +6671,12 @@ msgid "Metals are also known as \"hard\" commodities as they are natural resourc
 msgstr ""
 
 msgid "Metals are categorised into two types:"
+msgstr ""
+
+msgid "Metals contract specifications"
+msgstr ""
+
+msgid "Metals margin policy"
 msgstr ""
 
 msgid "Metals trading lets you speculate on the price movement of a particular metal asset in order to profit from the price difference when the asset value rises or falls."
@@ -8439,10 +8451,10 @@ msgid "Regulation"
 msgstr "規制"
 
 msgid "Regulator:"
-msgstr "レギュレーター："
+msgstr "監督機関："
 
 msgid "Regulators:"
-msgstr "レギュレーター："
+msgstr "監督機関："
 
 msgid "Regulatory Information"
 msgstr "監督機関の情報"
@@ -10360,7 +10372,7 @@ msgid "These are trades where the trader selects a price target, and predicts th
 msgstr "ターゲット価格を設定し、取引対象の価格が取引終了時までにターゲット価格に触れることを予測するトレードタイプのことです。"
 
 msgid "These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products."
-msgstr ""
+msgstr "Key information Documentsは、Binary Investments (Europe) Ltdがラダー、タッチ/ノータッチ、レンジオプションに関する情報（英文）を作成した書類となります。この情報書類は、取引の特徴、仕組み及びリスク、コスト、潜在的なリスクを被るおそれがある可能性を説明しております。また、他の金融商品と比較できる情報の提供が法律で義務付けられています。"
 
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "受賞歴を誇る当社のバイナリーオプション取引プラットフォームのこれまでの発展をグラフでご紹介します。"
@@ -10626,28 +10638,28 @@ msgstr ""
 msgid "To implement our dividend payments feature, we will clone our tokens and each cloned token will represent dividend rights."
 msgstr ""
 
-msgid "To learn more, please read our <a href='%1'>contract specifications</a>."
+msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr ""
 
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
-msgstr "詳細については、外国為替の100%強制ロスカットレベルが記載されている<a href=\"%1\">マージンポリシー</a>をご確認ください。"
-
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
+msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr ""
 
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
-msgstr "詳細については、ボラティリティインデックスの50%強制ロスカットレベルが記載されている<a href=\"%1\">マージンポリシー</a>をご確認ください。"
+msgid "To learn more, read our <a href=\"%1\">Forex Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
+msgstr ""
+
+msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
+msgstr ""
 
 msgid "To learn more, read our Margin Policy that further explains our 100% forced liquidation level for Forex."
-msgstr ""
-
-msgid "To learn more, read our Margin Policy that further explains our 100% forced liquidation level for our metal pairs."
 msgstr ""
 
 msgid "To learn more, read our Margin Policy that further explains our margin requirements."
 msgstr ""
 
 msgid "To learn more, read our Margin Policy that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
+msgstr ""
+
+msgid "To learn more, read our Metals Margin Policy that further explains our 100% forced liquidation level for our metal pairs."
 msgstr ""
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
@@ -11076,7 +11088,7 @@ msgid "Types of trades"
 msgstr "トレードの種類"
 
 msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Ltd."
-msgstr ""
+msgstr "英国およびマン島の居住者は、Binary (IOM) で口座を開設されます。"
 
 msgid "URL"
 msgstr "URL"
