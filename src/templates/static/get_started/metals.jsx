@@ -130,10 +130,10 @@ const Metals = () => (
                             { text: it.L('Maximum margin/leverage'), className: 'gr-padding-10' },
                         ]],
                         tbody: [
-                            [{ text: 'XAG/USD' }, { text: it.L('Silver vs US dollar')    }, { text: five_thousand }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
-                            [{ text: 'XAU/USD' }, { text: it.L('Gold vs US dollar')      }, { text: hundred       }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
-                            [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US dollar') }, { text: hundred       }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
-                            [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US dollar')  }, { text: hundred       }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
+                            [{ text: 'XAG/USD' }, { text: it.L('Silver vs US Dollar')    }, { text: five_thousand }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
+                            [{ text: 'XAU/USD' }, { text: it.L('Gold vs US Dollar')      }, { text: hundred       }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
+                            [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US Dollar') }, { text: hundred       }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
+                            [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US Dollar')  }, { text: hundred       }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
                         ],
                     }} />
 

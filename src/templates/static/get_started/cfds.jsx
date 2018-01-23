@@ -9,10 +9,7 @@ const tenth          = '0.1';
 const three_tenth    = '0.3';
 const five_tenth     = '0.5';
 const one            = '1';
-const ten            = '10';
 const hundred        = '100';
-const two_hundred    = '200';
-const five_hundred   = '500';
 
 const two_percent                    = '2%';
 const two_tenth_percent              = '0.2%';
@@ -92,26 +89,25 @@ const Cfds = () => (
                     <HeaderSecondary header={it.L('Cash Indices')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                      className: 'gr-padding-10' },
-                            { text: it.L('Description'),                 className: 'gr-padding-10' },
-                            { text: it.L('Volume 1.0 (trade size)'),     className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume (trade size)'), className: 'gr-padding-10' },
-                            { text: it.L('Maximum volume (trade size)'), className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),                 className: 'gr-padding-10' },
-                            { text: it.L('Maximum margin/leverage'),     className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),                  className: 'gr-padding-10' },
+                            { text: it.L('Description'),             className: 'gr-padding-10' },
+                            { text: it.L('Lot size (Volume = 1.0)'), className: 'gr-padding-10' },
+                            { text: it.L('Minimum volume'),          className: 'gr-padding-10' },
+                            { text: it.L('Volume step'),             className: 'gr-padding-10' },
+                            { text: it.L('Maximum margin/leverage'), className: 'gr-padding-10' },
                         ]],
                         tbody: [
-                            [{ text: 'AUS_200' }, { text: 'Australia 200'  }, { text: it.L('AUD 1 per point') }, { text: one }, { text: ten          }, { text: tenth }, { text: two_percent } ],
-                            [{ text: 'DAX_30'  }, { text: 'Germany 30'     }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: tenth }, { text: two_percent } ],
-                            [{ text: 'ESP_35'  }, { text: 'Spain 35'       }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: tenth }, { text: two_percent } ],
-                            [{ text: 'EUR_50'  }, { text: 'Euro 50'        }, { text: it.L('EUR 1 per point') }, { text: one }, { text: ten          }, { text: tenth }, { text: two_percent } ],
-                            [{ text: 'FRA_40'  }, { text: 'France 40'      }, { text: it.L('EUR 1 per point') }, { text: one }, { text: five_hundred }, { text: tenth }, { text: two_percent } ],
-                            [{ text: 'GBR_100' }, { text: 'UK 100'         }, { text: it.L('GBP 1 per point') }, { text: one }, { text: five_hundred }, { text: tenth }, { text: two_percent } ],
-                            [{ text: 'JP_225'  }, { text: 'Japan 225'      }, { text: it.L('JPY 1 per point') }, { text: one }, { text: hundred      }, { text: tenth }, { text: two_percent } ],
-                            [{ text: 'NED_25'  }, { text: 'Netherlands 25' }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: tenth }, { text: two_percent } ],
-                            [{ text: 'US_30'   }, { text: 'US 30'          }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: tenth }, { text: two_percent } ],
-                            [{ text: 'US_100'  }, { text: 'US 100'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: tenth }, { text: two_percent } ],
-                            [{ text: 'US_500'  }, { text: 'US 500'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'AUS_200' }, { text: 'Australia 200 Cash Index'  }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'DAX_30'  }, { text: 'Germany 30 Cash Index'     }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'ESP_35'  }, { text: 'Spain 35 Cash Index'       }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'EUR_50'  }, { text: 'Euro 50 Cash Index'        }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'FRA_40'  }, { text: 'France 40 Cash Index'      }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'GBR_100' }, { text: 'UK 100 Cash Index'         }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'JP_225'  }, { text: 'Japan 225 Cash Index'      }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'NED_25'  }, { text: 'Netherlands 25 Cash Index' }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'US_30'   }, { text: 'US 30 Cash Index'          }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'US_100'  }, { text: 'US 100 Cash Index'         }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'US_500'  }, { text: 'US 500 Cash Index'         }, { text: one }, { text: one }, { text: tenth }, { text: two_percent } ],
                         ],
                     }} />
 
