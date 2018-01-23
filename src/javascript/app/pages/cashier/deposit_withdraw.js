@@ -8,6 +8,7 @@ const FormManager       = require('../../common/form_manager');
 const validEmailToken   = require('../../common/form_validation').validEmailToken;
 const getElementById    = require('../../../_common/common_functions').getElementById;
 const localize          = require('../../../_common/localize').localize;
+const State             = require('../../../_common/storage').State;
 const Url               = require('../../../_common/url');
 const template          = require('../../../_common/utility').template;
 
@@ -223,13 +224,34 @@ const DepositWithdraw = (() => {
     const onLoad = () => {
         getCashierType();
         BinarySocket.send({ cashier_password: 1 }).then((response) => {
-            if ('error' in response) {
-                showError('custom_error', response.error.message);
+            if (!response.error && response.cashier_password === 1) {
+                showMessage('cashier_locked_message');
             } else {
-                init(response.cashier_password);
+                getAccountStatus().then((response_status) => {
+                    if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
+                        showError('custom_error', 'Your cashier is locked.'); // Locked from BO
+                    } else {
+                        const limit = State.getResponse('get_limits.remainder');
+                        if (typeof limit !== 'undefined' && limit < 1) {
+                            showError('custom_error', 'You have reached the limit.');
+                        } else {
+                            BinarySocket.wait('get_settings').then(() => {
+                                init(response.cashier_password);
+                            });
+                        }
+                    }
+                });
             }
         });
     };
+
+    const getAccountStatus = () => new Promise((resolve) => {
+        if (+State.get(['response', 'get_account_status', 'echo_req']) === 1) {
+            resolve(State.get(['response', 'get_account_status']));
+        } else {
+            BinarySocket.send({ get_account_status: 1 }).then(resolve);
+        }
+    });
 
     return {
         onLoad,
