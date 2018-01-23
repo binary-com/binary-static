@@ -337,6 +337,10 @@ const PersonalDetails = (() => {
 
             $('#account_opening_reason_notice').setVisibility(+is_for_new_account);
 
+            if (is_virtual || is_jp) {
+                getDetailsResponse(get_settings_data);
+            }
+
             if (!is_virtual || !residence) {
                 $('#btn_update').setVisibility(1);
                 if (!is_jp) {
