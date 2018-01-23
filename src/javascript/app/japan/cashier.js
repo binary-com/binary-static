@@ -17,11 +17,11 @@ const CashierJP = (() => {
             } else {
                 BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                     if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
-                        $container.find('#cashier_locked_message').text(localize('{JAPAN ONLY}Your cashier is locked.')).setVisibility(1); // Locked from BO
+                        $container.find('#cashier_locked_message').text(localize('Your cashier is locked.')).setVisibility(1); // Locked from BO
                     } else {
                         const limit = State.getResponse('get_limits.remainder');
                         if (typeof limit !== 'undefined' && limit < 1) {
-                            $container.find('#cashier_locked_message').text(localize('{JAPAN ONLY}You have reached the limit.')).setVisibility(1);
+                            $container.find('#cashier_locked_message').text(localize('You have reached the limit.')).setVisibility(1);
                         } else {
                             $container.find('#cashier_unlocked_message').setVisibility(1);
                             BinarySocket.wait('get_settings').then(() => {
