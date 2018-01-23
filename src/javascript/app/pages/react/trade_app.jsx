@@ -1,23 +1,15 @@
 import React from 'react';
 import Amount from './components/amount.jsx';
 import Duration from './components/duration.jsx';
-import Logic from './logic/main';
+import { connect } from './store/connect';
 
 class TradeApp extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = Logic.getState();
-        this.handleChange = this.handleChange.bind(this);
-        this.count = 0;
-        this.set = (obj) => { this.setState(obj); };
-    }
-
-    handleChange(e) {
-        this.setState({ [e.target.name]: e.target.value });
+    handleChange() {
+        console.warn(this.props, 'ToDo');
     }
 
     componentDidMount() {
-        Logic.init(this.set);
+        this.props.onMounted();
     }
 
     render() {
@@ -26,28 +18,16 @@ class TradeApp extends React.Component {
                 <h1>...</h1>
                 <div className='gr-row'>
                     <div className='gr-9'>
-                        <Duration
-                            onChange={this.handleChange}
-                            duration={this.state.duration}
-                            duration_unit={this.state.duration_unit}
-                            expiry_type={this.state.expiry_type}
-                        />
-
-                        <Amount
-                            onChange={this.handleChange}
-                            amount={this.state.amount}
-                            basis={this.state.basis}
-                            currency={this.state.currency}
-                        />
-
-                        <div>{this.state.message || 'Country: ?'}</div>
-                        <p>EUR/USD: {this.state.tick || '?'}</p>
+                        <Duration />
+                        <Amount />
+                        <div>{this.props.message}</div>
+                        <p>EUR/USD: {this.props.tick}</p>
                     </div>
 
                     <div className='gr-3 notice-msg' style={{ fontSize: '10px', lineHeight: '15px' }}>
-                        {Object.keys(this.state).map(k => <div key={k}><strong>{k}:</strong> {`${this.state[k]}`}</div>)}
+                        {this.props.entries.map(([k, v]) => <div key={k}><strong>{k}:</strong> {v}</div>)}
                         <br />
-                        {JSON.stringify(this.state).replace(/(:|,)/g, '$1 ')}
+                        {this.props.json}
                     </div>
                 </div>
             </div>
@@ -55,4 +35,12 @@ class TradeApp extends React.Component {
     }
 }
 
-module.exports = TradeApp;
+export default connect(
+    ({trade}) => ({
+        message  : trade.message || 'Country: ?',
+        tick     : trade.tick || '?',
+        entries  : Object.entries(trade),
+        json     : JSON.stringify(trade).replace(/(:|,)/g, '$1 '),
+        onMounted: trade.init,
+    })
+)(TradeApp);
