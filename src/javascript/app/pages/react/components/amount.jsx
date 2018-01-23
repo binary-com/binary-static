@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextField } from './form/text_field.jsx';
-import Client from '../../../base/client';
 import { connect } from '../store/connect';
+import Client from '../../../base/client';
 
 const Amount = ({
     basis,
@@ -35,7 +35,7 @@ export default connect(
     ({trade}) => ({
         basis           : trade.basis,
         currency        : trade.currency,
-        currencies      : ['USD', 'AUD', 'GBP', 'BTC'],
+        currencies      : trade.currencies,
         amount          : trade.amount,
         onBasisChange   : trade.handleChange,
         onAmountChange  : trade.handleChange,
