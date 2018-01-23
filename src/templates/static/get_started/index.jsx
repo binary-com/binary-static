@@ -86,7 +86,7 @@ const Index = () => (
                     </TabContent>
                     <TabContent id='mt5'>
                         <h2>{it.L('MetaTrader 5')}</h2>
-                        <p>{it.L('Trade Forex and Contracts for Difference (CFD) assets with highly-competitive leverage and zero commission.')}</p>
+                        <p>{it.L('Trade Forex and Contracts for Difference (CFD) with highly-competitive leverage. MetaTrader 5 is an institutional multi-asset platform offering outstanding trading possibilities and technical analysis tools. It allows trading Forex, Stocks, Futures, CFDs and it provides everything needed for full-fledged and flexible trading operations.')}</p>
 
                         <SeparatorLine invisible className='gr-padding-30' />
 
@@ -123,6 +123,38 @@ const Index = () => (
                                     image='mt5/contract-specification'
                                     header={it.L('Forex contract specifications')}
                                     text={it.L('Find out more about the costs and details of every currency pair we offer.')}
+                                />
+                            </div>
+                        </GetStartedSectionWrapper>
+                        <GetStartedSectionWrapper
+                            section_id='cryptocurrencies'
+                            section_header={it.L('Cryptocurrencies')}
+                            section_description={it.L('Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world.')}
+                        >
+                            <div className='gr-row'>
+                                <GetStartedSection
+                                    link='get-started/cryptocurrencies'
+                                    hash='what-crypto-trading'
+                                    image='mt5/what-crypto-trading' header={it.L('What is cryptocurrency trading')}
+                                    text={it.L('Speculate on the price movement of cryptocurrencies such as Bitcoin, Ethereum, and Litecoin without owning them.')}
+                                />
+                                <GetStartedSection
+                                    link='get-started/cryptocurrencies'
+                                    hash='how-trade-crypto'
+                                    image='mt5/how-trade-crypto' header={it.L('How to trade cryptocurrencies')}
+                                    text={it.L('Trade popular cryptocurrencies on our MT5 platform with leverage and variable spreads. No wallets are required to start trading.')}
+                                />
+                                <GetStartedSection
+                                    link='get-started/cryptocurrencies'
+                                    hash='margin-policy'
+                                    image='mt5/margin-policy' header={it.L('Cryptocurrency margin policy')}
+                                    text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our cryptocurrency pairs.')}
+                                />
+                                <GetStartedSection
+                                    link='get-started/cryptocurrencies'
+                                    hash='contract-specification'
+                                    image='mt5/contract-specification' header={it.L('Cryptocurrency contract specifications')}
+                                    text={it.L('Find out more about the costs and details of every cryptocurrency pair we offer.')}
                                 />
                             </div>
                         </GetStartedSectionWrapper>
@@ -193,38 +225,6 @@ const Index = () => (
                                     hash='contract-specification'
                                     image='mt5/contract-specification' header={it.L('Metals contract specifications')}
                                     text={it.L('Find out more about the costs and details of every metal pair we offer.')}
-                                />
-                            </div>
-                        </GetStartedSectionWrapper>
-                        <GetStartedSectionWrapper
-                            section_id='cryptocurrencies'
-                            section_header={it.L('Cryptocurrencies')}
-                            section_description={it.L('Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world.')}
-                        >
-                            <div className='gr-row'>
-                                <GetStartedSection
-                                    link='get-started/cryptocurrencies'
-                                    hash='what-crypto-trading'
-                                    image='mt5/what-crypto-trading' header={it.L('What is cryptocurrency trading')}
-                                    text={it.L('Speculate on the price movement of cryptocurrencies such as Bitcoin, Ethereum, and Litecoin without owning them.')}
-                                />
-                                <GetStartedSection
-                                    link='get-started/cryptocurrencies'
-                                    hash='how-trade-crypto'
-                                    image='mt5/how-trade-crypto' header={it.L('How to trade cryptocurrencies')}
-                                    text={it.L('Trade popular cryptocurrencies on our MT5 platform with leverage and variable spreads. No wallets are required to start trading.')}
-                                />
-                                <GetStartedSection
-                                    link='get-started/cryptocurrencies'
-                                    hash='margin-policy'
-                                    image='mt5/margin-policy' header={it.L('Cryptocurrency margin policy')}
-                                    text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our cryptocurrency pairs.')}
-                                />
-                                <GetStartedSection
-                                    link='get-started/cryptocurrencies'
-                                    hash='contract-specification'
-                                    image='mt5/contract-specification' header={it.L('Cryptocurrency contract specifications')}
-                                    text={it.L('Find out more about the costs and details of every cryptocurrency pair we offer.')}
                                 />
                             </div>
                         </GetStartedSectionWrapper>

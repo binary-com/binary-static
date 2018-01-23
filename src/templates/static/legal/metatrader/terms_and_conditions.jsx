@@ -217,7 +217,6 @@ const TermsAndConditions = () => (
                 <ol>
                     <li>{it.L('A higher figure (higher to you) representing our offer price and a lower figure (lower to you) representing our bid price for each Transaction shall be quoted to you upon your request. The difference between our bid and our offer price will comprise of the market spread (where there is market for the underlying instrument) and our spread (being our charge to you).')}</li>
                     <li>{it.L('The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion.')}</li>
-                    <li>{it.L('No commission is charged on any Transactions.')}</li>
                 </ol>
             </li>
         </ol>
