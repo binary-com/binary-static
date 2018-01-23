@@ -78,9 +78,10 @@ const getMinMaxTime = ($setMinMaxSelector, minTime = window.time ? window.time :
     if (isNaN(+$setMinMaxSelector.val())) {
         $selected_option = $($setMinMaxSelector.find('option')[1]);
     }
+    const date_open = moment.utc(+$selected_option.attr('data-open') * 1000);
     return {
-        minTime: +$selected_option.val() > minTime.unix() ? moment.utc($selected_option.val() * 1000) : minTime,
-        maxTime: moment.utc($selected_option.attr('data-end') * 1000),
+        minTime: date_open.unix() > minTime.unix() ? date_open : minTime,
+        maxTime: moment.utc(+$selected_option.val() * 1000),
     };
 };
 

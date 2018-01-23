@@ -80,13 +80,13 @@ const StartDates = (() => {
                         $($duplicated_option[0]).text(`${$duplicated_option.text()} - ${localize('Session')} ${duplicated_length}`);
                     }
 
-                    option = createElement('option', { value: date_open.unix(), 'data-end': date_close.unix(), text: day + ($duplicated_option.length ? ` - ${localize('Session')} ${duplicated_length + 1}` : '') });
+                    option = createElement('option', { value: date_close.unix(), 'data-open': date_open.unix(), text: day + ($duplicated_option.length ? ` - ${localize('Session')} ${duplicated_length + 1}` : '') });
                     if (option.value >= default_start && !selected) {
                         selected = true;
                         option.setAttribute('selected', 'selected');
                     }
                     if (typeof first === 'undefined' && !has_now) {
-                        first = date_open.utc().unix();
+                        first = date_close.unix();
                     }
                     fragment.appendChild(option);
                 }
