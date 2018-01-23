@@ -346,7 +346,6 @@ const HomeBeta = () => (
                                         'mastercard',
                                         'bank_transfer',
                                         'internet_bank_transfer',
-                                        'western_union',
                                         'internet_banking',
                                         'neteller',
                                         'okpay',
