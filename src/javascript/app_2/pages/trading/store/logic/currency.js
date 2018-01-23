@@ -1,5 +1,5 @@
 import DAO from '../../data/dao';
-import { isCryptocurrency } from '../../../../common/currency';
+import { isCryptocurrency } from '../../../../../app/common/currency';
 import { localize } from '../../../../../_common/localize';
 
 const getCurrencies = () => DAO.getPayoutCurrencies().then(r => {

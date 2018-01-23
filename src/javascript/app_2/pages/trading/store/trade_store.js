@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx';
 import DAO from '../data/dao';
-import Client from '../../../base/client';
+import Client from '../../../../app/base/client';
 // import getCurrencies from './logic/currency';
 
 export default class TradeStore {

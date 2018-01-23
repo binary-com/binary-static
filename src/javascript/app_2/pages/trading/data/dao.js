@@ -1,4 +1,4 @@
-import BinarySocket from '../../../base/socket';
+import BinarySocket from '../../../../app/base/socket';
 
 const DAO = (() => {
     const getPayoutCurrencies = () => BinarySocket.send({ payout_currencies: 1 });

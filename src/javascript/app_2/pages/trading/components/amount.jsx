@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextField } from './form/text_field.jsx';
 import { connect } from '../store/connect';
-import Client from '../../../base/client';
+import Client from '../../../../app/base/client';
 
 const Amount = ({
     basis,
