@@ -5,11 +5,9 @@ import { BuySellCurrency, Section, HeaderSecondary, NavButtons, MtBox } from './
 const hundredth = '0.01';
 const tenth     = '0.1';
 const one       = '1';
-const ten       = '10';
-const thousand  = '1,000';
+const hundred   = '100';
 
-const ten_percent         = '10%';
-const thirty_tree_percent = '33%';
+const twenty_percent      = '20%';
 
 const Cryptocurrencies = () => (
     <div className='static_full get-started-beta'>
@@ -70,21 +68,24 @@ const Cryptocurrencies = () => (
                 <Section id='contract-specification' header={it.L('Cryptocurrency contract specifications')}>
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),         className: 'gr-padding-10' },
-                            { text: it.L('Description'),    className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume'), className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),    className: 'gr-padding-10' },
-                            { text: it.L('Maximum volume'), className: 'gr-padding-10' },
-                            { text: it.L('Margin rate'),    className: 'gr-padding-10' },
-                            { text: it.L('Spread'),         className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),                  className: 'gr-padding-10' },
+                            { text: it.L('Description'),             className: 'gr-padding-10' },
+                            { text: it.L('Lot size (Volume = 1.0)'), className: 'gr-padding-10' },
+                            { text: it.L('Minimum volume'),          className: 'gr-padding-10' },
+                            { text: it.L('Volume step'),             className: 'gr-padding-10' },
+                            { text: it.L('Maximum margin/leverage'), className: 'gr-padding-10' },
+                            { text: it.L('Spread'),                  className: 'gr-padding-10' },
                         ]],
                         tbody: [
-                            [{ text: 'BTC/EUR' }, { text: it.L('Bitcoin vs Euro')       }, { text: hundredth }, { text: hundredth }, { text: ten      }, { text: ten_percent         }, { text: it.L('Variable') }],
-                            [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US dollar')  }, { text: hundredth }, { text: hundredth }, { text: ten      }, { text: ten_percent         }, { text: it.L('Variable') }],
-                            [{ text: 'ETH/EUR' }, { text: it.L('Ethereum vs Euro')      }, { text: tenth     }, { text: hundredth }, { text: thousand }, { text: thirty_tree_percent }, { text: it.L('Variable') }],
-                            [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US dollar') }, { text: tenth     }, { text: hundredth }, { text: thousand }, { text: thirty_tree_percent }, { text: it.L('Variable') }],
-                            [{ text: 'LTC/EUR' }, { text: it.L('Litecoin vs Euro')      }, { text: one       }, { text: hundredth }, { text: thousand }, { text: thirty_tree_percent }, { text: it.L('Variable') }],
-                            [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US dollar') }, { text: one       }, { text: hundredth }, { text: thousand }, { text: thirty_tree_percent }, { text: it.L('Variable') }],
+                            [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US dollar')          }, { text: one }, { text: hundredth }, { text: hundredth }, { text: twenty_percent }, { text: it.L('Variable') }],
+                            [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US dollar')         }, { text: one }, { text: tenth     }, { text: hundredth }, { text: twenty_percent }, { text: it.L('Variable') }],
+                            [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US dollar')         }, { text: one }, { text: tenth     }, { text: hundredth }, { text: twenty_percent }, { text: it.L('Variable') }],
+                            [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US dollar')     }, { text: one }, { text: hundredth }, { text: hundredth }, { text: twenty_percent }, { text: it.L('Variable') }],
+                            [{ text: 'ETC/USD' }, { text: it.L('Ethereum Classic vs US dollar') }, { text: one }, { text: one       }, { text: one       }, { text: twenty_percent }, { text: it.L('Variable') }],
+                            [{ text: 'ZEC/USD' }, { text: it.L('Zcash vs US dollar')            }, { text: one }, { text: one       }, { text: one       }, { text: twenty_percent }, { text: it.L('Variable') }],
+                            [{ text: 'XMR/USD' }, { text: it.L('Monero vs US dollar')           }, { text: one }, { text: one       }, { text: one       }, { text: twenty_percent }, { text: it.L('Variable') }],
+                            [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US dollar')           }, { text: one }, { text: hundred   }, { text: hundred   }, { text: twenty_percent }, { text: it.L('Variable') }],
+                            [{ text: 'DSH/USD' }, { text: it.L('Dash vs US dollar')             }, { text: one }, { text: one       }, { text: one       }, { text: twenty_percent }, { text: it.L('Variable') }],
                         ],
                     }} />
 

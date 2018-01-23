@@ -14,6 +14,7 @@ const hundred        = '100';
 const two_hundred    = '200';
 const five_hundred   = '500';
 
+const two_percent                    = '2%';
 const two_tenth_percent              = '0.2%';
 const twelve_thousandth_percent      = '0.012%';
 const twenty_five_thousandth_percent = '0.025%';
@@ -96,20 +97,21 @@ const Cfds = () => (
                             { text: it.L('Volume 1.0 (trade size)'),     className: 'gr-padding-10' },
                             { text: it.L('Minimum volume (trade size)'), className: 'gr-padding-10' },
                             { text: it.L('Maximum volume (trade size)'), className: 'gr-padding-10' },
-                            { text: it.L('Margin'),                      className: 'gr-padding-10' },
+                            { text: it.L('Volume step'),                 className: 'gr-padding-10' },
+                            { text: it.L('Maximum margin/leverage'),     className: 'gr-padding-10' },
                         ]],
                         tbody: [
-                            [{ text: 'AUS_200' }, { text: 'Australia 200'  }, { text: it.L('AUD 1 per point') }, { text: one }, { text: ten          }, { text: two_tenth_percent } ],
-                            [{ text: 'DAX_30'  }, { text: 'Germany 30'     }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: two_tenth_percent } ],
-                            [{ text: 'ESP_35'  }, { text: 'Spain 35'       }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: two_tenth_percent } ],
-                            [{ text: 'EUR_50'  }, { text: 'Euro 50'        }, { text: it.L('EUR 1 per point') }, { text: one }, { text: ten          }, { text: two_tenth_percent } ],
-                            [{ text: 'FRA_40'  }, { text: 'France 40'      }, { text: it.L('EUR 1 per point') }, { text: one }, { text: five_hundred }, { text: two_tenth_percent } ],
-                            [{ text: 'GBR_100' }, { text: 'UK 100'         }, { text: it.L('GBP 1 per point') }, { text: one }, { text: five_hundred }, { text: two_tenth_percent } ],
-                            [{ text: 'JP_225'  }, { text: 'Japan 225'      }, { text: it.L('JPY 1 per point') }, { text: ten }, { text: hundred      }, { text: two_tenth_percent } ],
-                            [{ text: 'NED_25'  }, { text: 'Netherlands 25' }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: two_tenth_percent } ],
-                            [{ text: 'US_30'   }, { text: 'US 30'          }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: two_tenth_percent } ],
-                            [{ text: 'US_100'  }, { text: 'US 100'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: two_tenth_percent } ],
-                            [{ text: 'US_500'  }, { text: 'US 500'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: two_tenth_percent } ],
+                            [{ text: 'AUS_200' }, { text: 'Australia 200'  }, { text: it.L('AUD 1 per point') }, { text: one }, { text: ten          }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'DAX_30'  }, { text: 'Germany 30'     }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'ESP_35'  }, { text: 'Spain 35'       }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'EUR_50'  }, { text: 'Euro 50'        }, { text: it.L('EUR 1 per point') }, { text: one }, { text: ten          }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'FRA_40'  }, { text: 'France 40'      }, { text: it.L('EUR 1 per point') }, { text: one }, { text: five_hundred }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'GBR_100' }, { text: 'UK 100'         }, { text: it.L('GBP 1 per point') }, { text: one }, { text: five_hundred }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'JP_225'  }, { text: 'Japan 225'      }, { text: it.L('JPY 1 per point') }, { text: one }, { text: hundred      }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'NED_25'  }, { text: 'Netherlands 25' }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'US_30'   }, { text: 'US 30'          }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'US_100'  }, { text: 'US 100'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: tenth }, { text: two_percent } ],
+                            [{ text: 'US_500'  }, { text: 'US 500'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: tenth }, { text: two_percent } ],
                         ],
                     }} />
 
@@ -120,10 +122,10 @@ const Cfds = () => (
                             { text: it.L('Volume 1.0 (trade size)'),     className: 'gr-padding-10' },
                             { text: it.L('Minimum volume (trade size)'), className: 'gr-padding-10' },
                             { text: it.L('Maximum volume (trade size)'), className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume increment'),    className: 'gr-padding-10' },
+                            { text: it.L('Volume step'),                 className: 'gr-padding-10' },
                             { text: it.L('Pip size'),                    className: 'gr-padding-10' },
                             { text: it.L('Minimum spread'),              className: 'gr-padding-10' },
-                            { text: it.L('Margin'),                      className: 'gr-padding-10' },
+                            { text: it.L('Maximum margin/leverage'),     className: 'gr-padding-10' },
                         ]],
                         tbody: [
                             [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: tenth       }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: twenty_five_thousandth_percent }, { text: two_tenth_percent } ],
