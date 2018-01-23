@@ -226,6 +226,8 @@ const DepositWithdraw = (() => {
         BinarySocket.send({ cashier_password: 1 }).then((response) => {
             if (!response.error && response.cashier_password === 1) {
                 showMessage('cashier_locked_message');
+            } else if ('error' in response) {
+                showError('custom_error', response.error.message);
             } else {
                 Client.getAccountStatus().then((response_status) => {
                     if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
