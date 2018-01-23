@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-18 04:39-0500\n"
+"PO-Revision-Date: 2018-01-21 21:19-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -2040,6 +2040,9 @@ msgstr ""
 msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
 msgstr ""
 
+msgid "CFD contract specifications"
+msgstr ""
+
 msgid "CFD margin policy"
 msgstr ""
 
@@ -2466,9 +2469,6 @@ msgstr ""
 msgid "Commissions:"
 msgstr ""
 
-msgid "Commitment to the highest ethical standards and regulatory compliance"
-msgstr ""
-
 msgid "Commodities"
 msgstr ""
 
@@ -2649,9 +2649,6 @@ msgstr ""
 msgid "Contract period"
 msgstr ""
 
-msgid "Contract specifications"
-msgstr ""
-
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr ""
 
@@ -2815,6 +2812,12 @@ msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital c
 msgstr ""
 
 msgid "Cryptocurrency"
+msgstr ""
+
+msgid "Cryptocurrency contract specifications"
+msgstr ""
+
+msgid "Cryptocurrency margin policy"
 msgstr ""
 
 msgid "Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin."
@@ -4045,6 +4048,12 @@ msgid "Forex and contract for differences transactions involve a high degree of 
 msgstr ""
 
 msgid "Forex and contracts for differences are high risk and speculative"
+msgstr ""
+
+msgid "Forex contract specifications"
+msgstr ""
+
+msgid "Forex margin policy"
 msgstr ""
 
 msgid "Forex trading experience"
@@ -6465,9 +6474,6 @@ msgstr ""
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
 msgstr ""
 
-msgid "Margin policy"
-msgstr ""
-
 msgid "Margin rate"
 msgstr ""
 
@@ -6634,6 +6640,12 @@ msgid "Metals are also known as \"hard\" commodities as they are natural resourc
 msgstr ""
 
 msgid "Metals are categorised into two types:"
+msgstr ""
+
+msgid "Metals contract specifications"
+msgstr ""
+
+msgid "Metals margin policy"
 msgstr ""
 
 msgid "Metals trading lets you speculate on the price movement of a particular metal asset in order to profit from the price difference when the asset value rises or falls."
@@ -10500,28 +10512,28 @@ msgstr ""
 msgid "To implement our dividend payments feature, we will clone our tokens and each cloned token will represent dividend rights."
 msgstr ""
 
-msgid "To learn more, please read our <a href='%1'>contract specifications</a>."
+msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr ""
 
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
+msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr ""
 
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
+msgid "To learn more, read our <a href=\"%1\">Forex Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
 msgstr ""
 
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
+msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
 msgstr ""
 
 msgid "To learn more, read our Margin Policy that further explains our 100% forced liquidation level for Forex."
-msgstr ""
-
-msgid "To learn more, read our Margin Policy that further explains our 100% forced liquidation level for our metal pairs."
 msgstr ""
 
 msgid "To learn more, read our Margin Policy that further explains our margin requirements."
 msgstr ""
 
 msgid "To learn more, read our Margin Policy that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
+msgstr ""
+
+msgid "To learn more, read our Metals Margin Policy that further explains our 100% forced liquidation level for our metal pairs."
 msgstr ""
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."

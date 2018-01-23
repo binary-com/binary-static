@@ -24,10 +24,8 @@ const GetStartedSection = ({ link, hash, image, header, text }) => {
 const GetStartedSectionWrapper = ({ section_id, section_header, section_description, children }) => (
     <React.Fragment>
         <div className='gr-padding-30 gr-parent' id={section_id}>
-            <div className='center-text'>
-                <h2>{section_header}</h2>
-                <p>{section_description}</p>
-            </div>
+            <h2>{section_header}</h2>
+            <p>{section_description}</p>
             {children}
         </div>
         <SeparatorLine invisible className='gr-padding-30' />
@@ -46,6 +44,8 @@ const Index = () => (
             <div className='tab-content'>
                 <TabContentContainer>
                     <TabContent id='binary'>
+                        <h2>{it.L('Binary Options')}</h2>
+                        <p>{it.L('Options that offer a fixed payout based on a simple yes/no proposition.')}</p>
                         <div className='gr-row' id='binary-options'>
                             <GetStartedSection
                                 link='get-started/binary-options'
@@ -56,10 +56,10 @@ const Index = () => (
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
-                                hash='range-of-markets'
-                                image='binary-options/range-of-markets'
-                                header={it.L('Range of markets')}
-                                text={it.L('Trade binary options on a wide range of underlying markets with limited risk.')}
+                                hash='how-to-trade-binary'
+                                image='binary-options/how-to-trade-binary'
+                                header={it.L('How to trade binary options')}
+                                text={it.L('Learn how to trade with our award-winning binary options platform in this simple step-by-step guide.')}
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
@@ -70,10 +70,10 @@ const Index = () => (
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
-                                hash='how-to-trade-binary'
-                                image='binary-options/how-to-trade-binary'
-                                header={it.L('How to trade binary options')}
-                                text={it.L('Learn how to trade with our award-winning binary options platform in this simple step-by-step guide.')}
+                                hash='range-of-markets'
+                                image='binary-options/range-of-markets'
+                                header={it.L('Range of markets')}
+                                text={it.L('Trade binary options on a wide range of underlying markets with limited risk.')}
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
@@ -85,6 +85,11 @@ const Index = () => (
                         </div>
                     </TabContent>
                     <TabContent id='mt5'>
+                        <h2>{it.L('MetaTrader 5')}</h2>
+                        <p>{it.L('Trade Forex and Contracts for Difference (CFD) assets with highly-competitive leverage and zero commission.')}</p>
+
+                        <SeparatorLine invisible className='gr-padding-30' />
+
                         <GetStartedSectionWrapper
                             section_id='forex'
                             section_header={it.L('Forex')}
@@ -109,14 +114,14 @@ const Index = () => (
                                     link='get-started/forex'
                                     hash='margin-policy'
                                     image='mt5/margin-policy'
-                                    header={it.L('Margin policy')}
+                                    header={it.L('Forex margin policy')}
                                     text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our currency pairs.')}
                                 />
                                 <GetStartedSection
                                     link='get-started/forex'
                                     hash='contract-specification'
                                     image='mt5/contract-specification'
-                                    header={it.L('Contract specifications')}
+                                    header={it.L('Forex contract specifications')}
                                     text={it.L('Find out more about the costs and details of every currency pair we offer.')}
                                 />
                             </div>
@@ -152,7 +157,7 @@ const Index = () => (
                                     link='get-started/cfds'
                                     hash='contract-specification'
                                     image='mt5/contract-specification'
-                                    header={it.L('Contract specifications')}
+                                    header={it.L('CFD contract specifications')}
                                     text={it.L('Find out more about the costs and details of each CFD asset we offer.')}
                                 />
                             </div>
@@ -180,13 +185,13 @@ const Index = () => (
                                 <GetStartedSection
                                     link='get-started/metals'
                                     hash='margin-policy'
-                                    image='mt5/margin-policy' header={it.L('Margin policy')}
+                                    image='mt5/margin-policy' header={it.L('Metals margin policy')}
                                     text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our metal pairs.')}
                                 />
                                 <GetStartedSection
                                     link='get-started/metals'
                                     hash='contract-specification'
-                                    image='mt5/contract-specification' header={it.L('Contract specifications')}
+                                    image='mt5/contract-specification' header={it.L('Metals contract specifications')}
                                     text={it.L('Find out more about the costs and details of every metal pair we offer.')}
                                 />
                             </div>
@@ -212,13 +217,13 @@ const Index = () => (
                                 <GetStartedSection
                                     link='get-started/cryptocurrencies'
                                     hash='margin-policy'
-                                    image='mt5/margin-policy' header={it.L('Margin policy')}
+                                    image='mt5/margin-policy' header={it.L('Cryptocurrency margin policy')}
                                     text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our cryptocurrency pairs.')}
                                 />
                                 <GetStartedSection
                                     link='get-started/cryptocurrencies'
                                     hash='contract-specification'
-                                    image='mt5/contract-specification' header={it.L('Contract specifications')}
+                                    image='mt5/contract-specification' header={it.L('Cryptocurrency contract specifications')}
                                     text={it.L('Find out more about the costs and details of every cryptocurrency pair we offer.')}
                                 />
                             </div>
