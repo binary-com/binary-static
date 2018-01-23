@@ -62,19 +62,18 @@ const StartDates = (() => {
 
             start_dates.list.forEach((start_date) => {
                 // we need to use close value for determining the trade session, open and date can be one day behind
-                let date_close = moment.unix(start_date.close).utc();
+                const date_close = moment.unix(start_date.close).utc();
                 let date_open  = moment.unix(start_date.open).utc();
 
                 const rounding = 5 * 60 * 1000;
-                const date_now = moment.utc();
+                const date_now = window.time || moment.utc();
 
                 if (date_close.isAfter(date_now)) {
                     if (date_now.isAfter(date_open)) {
                         date_open = date_now;
                     }
-                    date_open  = moment(Math.ceil((date_open.valueOf()) / rounding) * rounding).utc();
-                    date_close = moment(Math.ceil((date_close.valueOf()) / rounding) * rounding).utc();
-                    day        = date_close.format('ddd - DD MMM, YYYY');
+                    date_open = moment(Math.ceil((date_open.valueOf()) / rounding) * rounding).utc();
+                    day       = date_close.format('ddd - DD MMM, YYYY');
                     $duplicated_option = $(fragment).find(`option:contains(${day})`);
                     duplicated_length  = $duplicated_option.length;
                     if (duplicated_length && !new RegExp(localize('Session')).test($duplicated_option.text())) {
@@ -88,7 +87,6 @@ const StartDates = (() => {
                     }
                     if (typeof first === 'undefined' && !has_now) {
                         first = date_open.utc().unix();
-
                     }
                     fragment.appendChild(option);
                 }
