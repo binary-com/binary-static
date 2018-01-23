@@ -61,32 +61,34 @@ const StartDates = (() => {
             $('#time_start_row').setVisibility(default_start !== 'now');
 
             start_dates.list.forEach((start_date) => {
-                let a   = moment.unix(start_date.open).utc();
-                const b = moment.unix(start_date.close).utc();
+                // we need to use close value for determining the trade session, open and date can be one day behind
+                let date_close = moment.unix(start_date.close).utc();
+                let date_open  = moment.unix(start_date.open).utc();
 
                 const rounding = 5 * 60 * 1000;
-                const start    = moment.utc();
+                const date_now = moment.utc();
 
-                if (b.isAfter(start)) {
-                    if (moment(start).isAfter(moment(a))) {
-                        a = start;
+                if (date_close.isAfter(date_now)) {
+                    if (date_now.isAfter(date_open)) {
+                        date_open = date_now;
                     }
-
-                    a   = moment(Math.ceil((+a) / rounding) * rounding).utc();
-                    day = a.format('ddd - DD MMM, YYYY');
+                    date_open  = moment(Math.ceil((date_open.valueOf()) / rounding) * rounding).utc();
+                    date_close = moment(Math.ceil((date_close.valueOf()) / rounding) * rounding).utc();
+                    day        = date_close.format('ddd - DD MMM, YYYY');
                     $duplicated_option = $(fragment).find(`option:contains(${day})`);
                     duplicated_length  = $duplicated_option.length;
                     if (duplicated_length && !new RegExp(localize('Session')).test($duplicated_option.text())) {
                         $($duplicated_option[0]).text(`${$duplicated_option.text()} - ${localize('Session')} ${duplicated_length}`);
                     }
 
-                    option = createElement('option', { value: a.utc().unix(), 'data-end': b.unix(), text: day + ($duplicated_option.length ? ` - ${localize('Session')} ${duplicated_length + 1}` : '') });
+                    option = createElement('option', { value: date_open.unix(), 'data-end': date_close.unix(), text: day + ($duplicated_option.length ? ` - ${localize('Session')} ${duplicated_length + 1}` : '') });
                     if (option.value >= default_start && !selected) {
                         selected = true;
                         option.setAttribute('selected', 'selected');
                     }
                     if (typeof first === 'undefined' && !has_now) {
-                        first = a.utc().unix();
+                        first = date_open.utc().unix();
+
                     }
                     fragment.appendChild(option);
                 }
