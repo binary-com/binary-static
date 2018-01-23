@@ -227,7 +227,7 @@ const DepositWithdraw = (() => {
             if (!response.error && response.cashier_password === 1) {
                 showMessage('cashier_locked_message');
             } else {
-                getAccountStatus().then((response_status) => {
+                Client.getAccountStatus().then((response_status) => {
                     if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
                         showError('custom_error', 'Your cashier is locked.'); // Locked from BO
                     } else {
@@ -244,14 +244,6 @@ const DepositWithdraw = (() => {
             }
         });
     };
-
-    const getAccountStatus = () => new Promise((resolve) => {
-        if (+State.get(['response', 'get_account_status', 'echo_req']) === 1) {
-            resolve(State.get(['response', 'get_account_status']));
-        } else {
-            BinarySocket.send({ get_account_status: 1 }).then(resolve);
-        }
-    });
 
     return {
         onLoad,
