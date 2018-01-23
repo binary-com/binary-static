@@ -99,17 +99,6 @@ const PaymentMethods = () => (
                     it.L('Withdrawal: [_1] working day', 1),
                 ]}
             />
-            <Row
-                id='western_union'
-                logo='western_union'
-                currencies='USD GBP EUR AUD'
-                deposit='50 - 250'
-                withdrawal='50 - 250'
-                time={[
-                    it.L('Deposit: [_1] working day', 1),
-                    it.L('Withdrawal: [_1] working day', 1),
-                ]}
-            />
 
             <Section title={it.L('Credit/Debit Card')} />
             <Row

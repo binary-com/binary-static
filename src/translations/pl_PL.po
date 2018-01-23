@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-18 04:39-0500\n"
+"PO-Revision-Date: 2018-01-21 21:19-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -2045,6 +2045,9 @@ msgstr "C. Świadczenie usług"
 msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
 msgstr "Kontrakt CFD (kontrakt różnicy kursowej): to instrument finansowy umożliwiający odnoszenie zysków dzięki spekulacji na wzrost lub spadek ceny instrumentu. Zysk/stratę szacuje się jako funkcję różnicy w cenie zakupu/sprzedaży instrumentu bazowego."
 
+msgid "CFD contract specifications"
+msgstr ""
+
 msgid "CFD margin policy"
 msgstr ""
 
@@ -2471,9 +2474,6 @@ msgstr "Prowizje będą naliczane przez cały okres korzystania przez klienta z 
 msgid "Commissions:"
 msgstr "Prowizje:"
 
-msgid "Commitment to the highest ethical standards and regulatory compliance"
-msgstr ""
-
 msgid "Commodities"
 msgstr "Towary"
 
@@ -2654,9 +2654,6 @@ msgstr "Wypłaty kontraktów będą określane przez Firmę w odniesieniu do dzi
 msgid "Contract period"
 msgstr "Okres kontraktu"
 
-msgid "Contract specifications"
-msgstr "Szczegóły kontraktu"
-
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Kontrakty będą sprzedawane po obowiązującej cenie rynkowej po dotarciu wniosku na nasze serwery. Cena może różnić się od podanej ceny."
 
@@ -2821,6 +2818,12 @@ msgstr ""
 
 msgid "Cryptocurrency"
 msgstr "Kryptowaluta"
+
+msgid "Cryptocurrency contract specifications"
+msgstr ""
+
+msgid "Cryptocurrency margin policy"
+msgstr ""
 
 msgid "Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin."
 msgstr ""
@@ -4051,6 +4054,12 @@ msgstr "Kontrakty forex oraz kontrakty na różnice kursowe mają charakter spek
 
 msgid "Forex and contracts for differences are high risk and speculative"
 msgstr "Kontrakty forex oraz kontrakty na różnice kursowe mają charakter spekulacyjny i wiążą się z wysokim ryzykiem"
+
+msgid "Forex contract specifications"
+msgstr ""
+
+msgid "Forex margin policy"
+msgstr ""
 
 msgid "Forex trading experience"
 msgstr "Doświadczenie w handlowaniu walutami"
@@ -6470,9 +6479,6 @@ msgstr "depozyt zabezpieczający pokazuje Ci, jaką kwotę inwestycji możesz ko
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
 msgstr "depozyt zabezpieczający pokazuje Ci, jaką kwotę inwestycji możesz kontrolować w oparciu o swój kapitał początkowy. Na przykład, depozyt wynoszący 1% pozwoli Ci kontrolować do 100 000 USD, posiadając 1 000 USD swoich własnych pieniędzy w formie depozytu."
 
-msgid "Margin policy"
-msgstr "Polityka dot. depozytu zabezpieczającego"
-
 msgid "Margin rate"
 msgstr ""
 
@@ -6640,6 +6646,12 @@ msgstr ""
 
 msgid "Metals are categorised into two types:"
 msgstr "Metale są podzielone na dwa rodzaje:"
+
+msgid "Metals contract specifications"
+msgstr ""
+
+msgid "Metals margin policy"
+msgstr ""
 
 msgid "Metals trading lets you speculate on the price movement of a particular metal asset in order to profit from the price difference when the asset value rises or falls."
 msgstr ""
@@ -10505,28 +10517,28 @@ msgstr ""
 msgid "To implement our dividend payments feature, we will clone our tokens and each cloned token will represent dividend rights."
 msgstr "Ab wprowadzić naszą funkcję wypłaty dywidendy, sklonujemy tokeny i każdy taki sklonowany token będzie reprezentował prawo do dywidendy."
 
-msgid "To learn more, please read our <a href='%1'>contract specifications</a>."
+msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr ""
 
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
-msgstr "Aby dowiedzieć się więcej, zapoznaj się z naszą <a href=\"%1\">Polityka dot. depozytu zabezpieczającego</a>, która wyjaśnia dokładniej, na czym polega nasz 100% poziom wymuszonej likwidacji w przypadku rynku Forex."
-
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
+msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr ""
 
-msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
-msgstr "Aby dowiedzieć się więcej, zapoznaj się z naszą <a href=\"%1\">Polityka dot. depozytu zabezpieczającego</a>, która wyjaśnia dokładniej, na czym polega nasz 50% poziom wymuszonej likwidacji w przypadku wskaźników zmienności."
+msgid "To learn more, read our <a href=\"%1\">Forex Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
+msgstr ""
+
+msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
+msgstr ""
 
 msgid "To learn more, read our Margin Policy that further explains our 100% forced liquidation level for Forex."
-msgstr ""
-
-msgid "To learn more, read our Margin Policy that further explains our 100% forced liquidation level for our metal pairs."
 msgstr ""
 
 msgid "To learn more, read our Margin Policy that further explains our margin requirements."
 msgstr ""
 
 msgid "To learn more, read our Margin Policy that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
+msgstr ""
+
+msgid "To learn more, read our Metals Margin Policy that further explains our 100% forced liquidation level for our metal pairs."
 msgstr ""
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."

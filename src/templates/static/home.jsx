@@ -196,7 +196,7 @@ const HomeBeta = () => (
                         </TabContent>
                         <TabContent id='mt5'>
                             <AccountsTabContent
-                                header={it.L('Trade Forex and CFD assets with up to 1,000:1 leverage on the world\'s most popular institutional multi-asset platform.')}
+                                header={it.L('Trade Forex and CFD with up to 500:1 leverage on the world\'s most popular institutional multi-asset platform.')}
                                 mobile_class='padding-top-20'
                                 mobile_header={it.L('MetaTrader 5')}
                                 image='images/pages/home-beta/MT5.svg'
@@ -232,10 +232,10 @@ const HomeBeta = () => (
                     className='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper'
                     items={[
                         { id: 'binary', text: it.L('Binary options') },
-                        { id: 'forex', text: it.L('Forex') },
-                        { id: 'cfds', text: it.L('CFDs') },
-                        { id: 'metals', text: it.L('Metals') },
+                        { id: 'forex',  text: it.L('Forex') },
                         { id: 'crypto', text: it.L('Crypto') },
+                        { id: 'cfds',   text: it.L('CFDs') },
+                        { id: 'metals', text: it.L('Metals') },
                         { id: 'market_tabs_selector', className: 'tab-selector' },
                     ]}
                 />
@@ -255,6 +255,13 @@ const HomeBeta = () => (
                                 image='images/pages/home-beta/trade/forex.svg'
                             />
                         </TabContent>
+                        <TabContent id='crypto'>
+                            <MarketsTabContent
+                                header={it.L('Cryptocurrencies')}
+                                text={it.L('Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin.')}
+                                image='images/pages/home-beta/trade/crypto.svg'
+                            />
+                        </TabContent>
                         <TabContent id='cfds'>
                             <MarketsTabContent
                                 header={it.L('CFDs')}
@@ -267,13 +274,6 @@ const HomeBeta = () => (
                                 header={it.L('Metals')}
                                 text={it.L('Precious metal pairs including gold and platinum.')}
                                 image='images/pages/home-beta/trade/metals.svg'
-                            />
-                        </TabContent>
-                        <TabContent id='crypto'>
-                            <MarketsTabContent
-                                header={it.L('Cryptocurrencies')}
-                                text={it.L('Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin.')}
-                                image='images/pages/home-beta/trade/crypto.svg'
                             />
                         </TabContent>
                     </TabContentContainer>
@@ -346,7 +346,6 @@ const HomeBeta = () => (
                                         'mastercard',
                                         'bank_transfer',
                                         'internet_bank_transfer',
-                                        'western_union',
                                         'internet_banking',
                                         'neteller',
                                         'okpay',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage } from './common.jsx';
+import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage, MtBox } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
@@ -17,7 +17,7 @@ const Lot = () => (
                         <div className='notice-circle'>i</div>
                     </div>
                     <div className='gr-11'>
-                        <p className='no-margin'>{it.L('Please note that one lot is equivalent to 100 units, based on our contract specifications.')}</p>
+                        <p className='no-margin'>{it.L('Please note that one lot is equivalent to 100 units, based on our [_1]ontract specifications[_2].', '<a href="#contract-specification">', '</a>')}</p>
                     </div>
                 </div>
             </div>
@@ -96,22 +96,21 @@ const Metals = () => (
 
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the required margin for our metal pairs by using the formula below:')}</p>
-                    <Box text={`${it.L('Trade Size (Lot units)')} / ${it.L('Leverage')} * ${it.L('Market Price')} = ${it.L('Margin')}`} />
-                    <p>{it.L('For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and a market price of USD 1,250.15, the margin required to purchase that one lot will be calculated as follows:')}</p>
-                    <Box text={`100 / 300 * 1250.15 = ${it.L('USD')} 416.71`} />
+
+                    <MtBox icon_1='l1-icon' icon_2='metal-icon' text={it.L('For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and a market price of USD 1,250.15, the margin required to purchase that one lot will be calculated as follows:')} />
+
                     <p>{it.L('Without margin, purchasing one lot of the XAU/USD pair will cost you:')}</p>
                     <Box text={`100 * 1250.15 = ${it.L('USD')} 125,015`} />
 
                     <Lot />
 
                     <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
-                    <p>{it.L('When your account equity is unable to cover the margin requirement, your account will be placed under margin call. This does not affect your ability to open new positions.')}</p>
+                    <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>
 
                     <HeaderSecondary header={it.L('What\'s a stop out level and how is it applied')} />
-                    <p>{it.L('If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as "forced liquidation").')}</p>
+                    <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as "forced liquidation").')}</p>
                     <p>{it.L('When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:')}</p>
                     <ol>
-                        <li>{it.L('We analyse your pending orders')}</li>
                         <li>{it.L('We delete an order with the largest margin reserved')}</li>
                         <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted')}</li>
                         <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss')}</li>
@@ -138,7 +137,7 @@ const Metals = () => (
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots.')}</p>
                     <p>{it.L('Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.')}</p>
-                    <p>{it.L('To learn more, read our Metals Margin Policy that further explains our 100% forced liquidation level for our metal pairs.')}</p>
+                    <p>{it.L('To learn more, read our Metals [_1]Margin Policy[_2] that further explains our 100% forced liquidation level for our metal pairs.', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>
