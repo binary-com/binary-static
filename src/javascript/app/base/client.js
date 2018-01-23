@@ -87,14 +87,6 @@ const Client = (() => {
         return account_type;
     };
 
-    const getAccountStatus = () => new Promise((resolve) => {
-        if (+State.get(['response', 'get_account_status', 'echo_req']) === 1) {
-            resolve(State.get(['response', 'get_account_status']));
-        } else {
-            BinarySocket.send({ get_account_status: 1 }).then(resolve);
-        }
-    });
-
     const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
         const this_type   = getAccountType(loginid);
         const is_ico_only = get('is_ico_only', loginid);
@@ -389,7 +381,6 @@ const Client = (() => {
         getAccountType,
         isAccountOfType,
         getAccountOfType,
-        getAccountStatus,
         hasAccountType,
         hasCurrencyType,
         responseAuthorize,

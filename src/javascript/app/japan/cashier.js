@@ -15,7 +15,7 @@ const CashierJP = (() => {
             if (!response.error && response.cashier_password === 1) {
                 $container.find('#cashier_locked_message').setVisibility(1);
             } else {
-                Client.getAccountStatus().then((response_status) => {
+                BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                     if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
                         $container.find('#cashier_locked_message').html('Your cashier is locked.').setVisibility(1); // Locked from BO
                     } else {

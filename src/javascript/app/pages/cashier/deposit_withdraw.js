@@ -229,7 +229,7 @@ const DepositWithdraw = (() => {
             } else if ('error' in response) {
                 showError('custom_error', response.error.message);
             } else {
-                Client.getAccountStatus().then((response_status) => {
+                BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                     if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
                         showError('custom_error', 'Your cashier is locked.'); // Locked from BO
                     } else {
