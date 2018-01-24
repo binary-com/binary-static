@@ -2,21 +2,14 @@ import React from 'react';
 import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, Box, NavButtons } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 
-const ten_thousandth = '0.0001';
-const thousandth     = '0.001';
 const hundredth      = '0.01';
 const tenth          = '0.1';
-const three_tenth    = '0.3';
-const five_tenth     = '0.5';
-const one            = '1';
 const ten            = '10';
 const hundred        = '100';
 const two_hundred    = '200';
 const five_hundred   = '500';
 
 const two_tenth_percent              = '0.2%';
-const twelve_thousandth_percent      = '0.012%';
-const twenty_five_thousandth_percent = '0.025%';
 
 const Cfds = () => (
     <div className='static_full get-started-beta'>
@@ -115,24 +108,21 @@ const Cfds = () => (
                     <HeaderSecondary header={it.L('Volatility Indices')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                      className: 'gr-padding-10' },
-                            { text: it.L('Volume 1.0 (trade size)'),     className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume (trade size)'), className: 'gr-padding-10' },
-                            { text: it.L('Maximum volume (trade size)'), className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),                 className: 'gr-padding-10' },
-                            { text: it.L('Pip size'),                    className: 'gr-padding-10' },
-                            { text: it.L('Minimum spread'),              className: 'gr-padding-10' },
-                            { text: it.L('Maximum margin/leverage'),     className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),                  className: 'gr-padding-10' },
+                            { text: it.L('Lot size (Volume = 1.0)'), className: 'gr-padding-10' },
+                            { text: it.L('Maximum volume'),          className: 'gr-padding-10' },
+                            { text: it.L('Volume step'),             className: 'gr-padding-10' },
+                            { text: it.L('Margin'),                  className: 'gr-padding-10' },
                         ]],
                         tbody: [
-                            [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: tenth       }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: twenty_five_thousandth_percent }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 25 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: '0.006%'                       }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 50 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundred }, { text: hundredth }, { text: ten_thousandth }, { text: twelve_thousandth_percent      }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 75 Index'     }, { text: it.L('USD 1 per point') }, { text: hundredth   }, { text: hundred }, { text: hundredth }, { text: ten_thousandth }, { text: '0.018%'                       }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 100 Index'    }, { text: it.L('USD 1 per point') }, { text: hundredth   }, { text: hundred }, { text: hundredth }, { text: hundredth      }, { text: twenty_five_thousandth_percent }, { text: two_tenth_percent } ],
-                            [{ text: 'HF Volatility 10 Index'  }, { text: it.L('USD 1 per point') }, { text: tenth       }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: '0.005%'                       }, { text: two_tenth_percent } ],
-                            [{ text: 'HF Volatility 50 Index'  }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: twelve_thousandth_percent      }, { text: two_tenth_percent } ],
-                            [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: three_tenth }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: twelve_thousandth_percent      }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 25 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 50 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 75 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 100 Index'    }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'HF Volatility 10 Index'  }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'HF Volatility 50 Index'  }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
                         ],
                     }} />
 
