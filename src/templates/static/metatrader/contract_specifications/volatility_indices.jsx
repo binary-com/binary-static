@@ -3,7 +3,6 @@ import { Table } from '../../../_common/components/elements.jsx';
 
 const VolatilityIndices = () => {
     const usd            = { text: it.L('USD 1 per point') };
-    const txt_100        = { text: '100' };
     const txt_01         = { text: '0.01' };
     const percentage     = { text: '0.2%' };
     const high_frequency = it.L('High frequency (2 ticks per second)');
@@ -19,7 +18,6 @@ const VolatilityIndices = () => {
                                 { text: it.L('Symbol') },
                                 { text: it.L('Volume 1.0 (Trade Size)') },
                                 { text: it.L('Minimum Volume (Trade Size)') },
-                                { text: it.L('Maximum Volume (Trade Size)') },
                                 { text: it.L('Minimum Volume Increment') },
                                 { text: it.L('Pip Size') },
                                 { text: it.L('Minimum Spread') },
@@ -27,14 +25,14 @@ const VolatilityIndices = () => {
                             ],
                         ],
                         tbody: [
-                            [{ header: 'Volatility 100 Index'                             }, usd, { text: '0.01' }, txt_100, txt_01, { text: '0.01' },   { text: '0.025%' }, percentage ],
-                            [{ header: 'Volatility 75 Index'                              }, usd, { text: '0.01' }, txt_100, txt_01, { text: '0.0001' }, { text: '0.018%' }, percentage ],
-                            [{ header: 'Volatility 50 Index'                              }, usd, { text: '0.5' },  txt_100, txt_01, { text: '0.0001' }, { text: '0.012%' }, percentage ],
-                            [{ header: 'Volatility 25 Index'                              }, usd, { text: '0.5' },  txt_100, txt_01, { text: '0.001' },  { text: '0.006%' }, percentage ],
-                            [{ header: 'Volatility 10 Index'                              }, usd, { text: '0.1' },  txt_100, txt_01, { text: '0.001' },  { text: '0.025%' }, percentage ],
-                            [{ header: 'HF Volatility 100 Index', balloon: high_frequency }, usd, { text: '0.3' },  txt_100, txt_01, { text: '0.001' },  { text: '0.012%' }, percentage ],
-                            [{ header: 'HF Volatility 50 Index',  balloon: high_frequency }, usd, { text: '0.5' },  txt_100, txt_01, { text: '0.001' },  { text: '0.012%' }, percentage ],
-                            [{ header: 'HF Volatility 10 Index',  balloon: high_frequency }, usd, { text: '0.1' },  txt_100, txt_01, { text: '0.001' },  { text: '0.005%' }, percentage ],
+                            [{ header: 'Volatility 100 Index'                             }, usd, { text: '0.01' }, txt_01, { text: '0.01' },   { text: '0.025%' }, percentage ],
+                            [{ header: 'Volatility 75 Index'                              }, usd, { text: '0.01' }, txt_01, { text: '0.0001' }, { text: '0.018%' }, percentage ],
+                            [{ header: 'Volatility 50 Index'                              }, usd, { text: '0.5' },  txt_01, { text: '0.0001' }, { text: '0.012%' }, percentage ],
+                            [{ header: 'Volatility 25 Index'                              }, usd, { text: '0.5' },  txt_01, { text: '0.001' },  { text: '0.006%' }, percentage ],
+                            [{ header: 'Volatility 10 Index'                              }, usd, { text: '0.1' },  txt_01, { text: '0.001' },  { text: '0.025%' }, percentage ],
+                            [{ header: 'HF Volatility 100 Index', balloon: high_frequency }, usd, { text: '0.3' },  txt_01, { text: '0.001' },  { text: '0.012%' }, percentage ],
+                            [{ header: 'HF Volatility 50 Index',  balloon: high_frequency }, usd, { text: '0.5' },  txt_01, { text: '0.001' },  { text: '0.012%' }, percentage ],
+                            [{ header: 'HF Volatility 10 Index',  balloon: high_frequency }, usd, { text: '0.1' },  txt_01, { text: '0.001' },  { text: '0.005%' }, percentage ],
                         ],
                     }}
                 />
