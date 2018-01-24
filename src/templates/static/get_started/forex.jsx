@@ -4,7 +4,6 @@ import { Box, BuySellCurrency, HeaderSecondary, MtBox, NavButtons, Section } fro
 
 const hundred_thousand = '100,000';
 const hundredth        = '0.01';
-const one_five_hundred = '1:500';
 
 const Forex = () => (
     <div className='static_full get-started-beta'>
@@ -132,10 +131,10 @@ const Forex = () => (
                     <HeaderSecondary header={it.L('Major pairs')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                  className: 'gr-padding-10' },
-                            { text: it.L('Description'),             className: 'gr-padding-10' },
-                            { text: it.L('Lot size (Volume = 1.0)'), className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),             className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),      className: 'gr-padding-10' },
+                            { text: it.L('Description'), className: 'gr-padding-10' },
+                            { text: it.L('Lot size*'),   className: 'gr-padding-10' },
+                            { text: it.L('Volume step'), className: 'gr-padding-10' },
                         ]],
                         tbody: [
                             [{ text: 'AUD/CAD' }, { text: it.L('Australian Dollar vs Canadian Dollar')    }, { text: hundred_thousand }, { text: hundredth }],
@@ -159,14 +158,16 @@ const Forex = () => (
                             [{ text: 'USD/JPY' }, { text: it.L('US Dollar vs Japanese Yen')               }, { text: hundred_thousand }, { text: hundredth }],
                         ],
                     }} />
+                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('Minor pairs')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                  className: 'gr-padding-10' },
-                            { text: it.L('Description'),             className: 'gr-padding-10' },
-                            { text: it.L('Lot size (Volume = 1.0)'), className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),             className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),      className: 'gr-padding-10' },
+                            { text: it.L('Description'), className: 'gr-padding-10' },
+                            { text: it.L('Lot size*'),   className: 'gr-padding-10' },
+                            { text: it.L('Volume step'), className: 'gr-padding-10' },
                         ]],
                         tbody: [
                             [{ text: 'CAD/CHF' }, { text: it.L('Canadian Dollar vs Swiss Franc')            }, { text: hundred_thousand }, { text: hundredth }],
@@ -189,14 +190,16 @@ const Forex = () => (
                             [{ text: 'USD/ZAR' }, { text: it.L('US Dollar vs South African Rand')           }, { text: hundred_thousand }, { text: hundredth }],
                         ],
                     }} />
+                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('Exotic pairs')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                  className: 'gr-padding-10' },
-                            { text: it.L('Description'),             className: 'gr-padding-10' },
-                            { text: it.L('Lot size (Volume = 1.0)'), className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),             className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),      className: 'gr-padding-10' },
+                            { text: it.L('Description'), className: 'gr-padding-10' },
+                            { text: it.L('Lot size*'),   className: 'gr-padding-10' },
+                            { text: it.L('Volume step'), className: 'gr-padding-10' },
                         ]],
                         tbody: [
                         [{ text: 'AUD/SGD' }, { text: it.L('Australian Dollar vs Singapore Dollar')   }, { text: hundred_thousand }, { text: hundredth }],
@@ -213,6 +216,8 @@ const Forex = () => (
                         [{ text: 'USD/TRY' }, { text: it.L('US Dollar vs Turkish Lira')               }, { text: hundred_thousand }, { text: hundredth }],
                         ],
                     }} />
+                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the contract specifications table')} />
                     <p>{it.L('The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>.')}</p>

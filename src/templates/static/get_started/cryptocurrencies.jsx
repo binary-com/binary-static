@@ -3,11 +3,8 @@ import { List, Table } from '../../_common/components/elements.jsx';
 import { BuySellCurrency, Section, HeaderSecondary, NavButtons, MtBox } from './common.jsx';
 
 const hundredth = '0.01';
-const tenth     = '0.1';
 const one       = '1';
 const hundred   = '100';
-
-const twenty_percent      = '20%';
 
 const Cryptocurrencies = () => (
     <div className='static_full get-started-beta'>
@@ -68,10 +65,10 @@ const Cryptocurrencies = () => (
                 <Section id='contract-specification' header={it.L('Cryptocurrency contract specifications')}>
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                  className: 'gr-padding-10' },
-                            { text: it.L('Description'),             className: 'gr-padding-10' },
-                            { text: it.L('Lot size (Volume = 1.0)'), className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),             className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),      className: 'gr-padding-10' },
+                            { text: it.L('Description'), className: 'gr-padding-10' },
+                            { text: it.L('Lot size*'),   className: 'gr-padding-10' },
+                            { text: it.L('Volume step'), className: 'gr-padding-10' },
                         ]],
                         tbody: [
                             [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US Dollar')          }, { text: one }, { text: hundredth }],
@@ -85,6 +82,8 @@ const Cryptocurrencies = () => (
                             [{ text: 'DSH/USD' }, { text: it.L('Dash vs US Dollar')             }, { text: one }, { text: one       }],
                         ],
                     }} />
+                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the contract specifications table')} />
                     <p>{it.L('Each time you open a position on a cryptocurrency pair, you can start with a minimum volume as indicated in the table above.')}</p>

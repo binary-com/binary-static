@@ -6,7 +6,6 @@ import SeparatorLine from '../../_common/components/separator_line.jsx';
 const hundred   = 100;
 const hundredth = 0.01;
 const five_thousand    = 5000;
-const one_five_hundred = '1:500';
 
 const Lot = () => (
     <React.Fragment>
@@ -122,20 +121,20 @@ const Metals = () => (
                 <Section id='contract-specification' header={it.L('Metals contract specifications')}>
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                  className: 'gr-padding-10' },
-                            { text: it.L('Description'),             className: 'gr-padding-10' },
-                            { text: it.L('Lot size (Volume = 1.0)'), className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume'),          className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),             className: 'gr-padding-10' },
-                            { text: it.L('Maximum margin/leverage'), className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),      className: 'gr-padding-10' },
+                            { text: it.L('Description'), className: 'gr-padding-10' },
+                            { text: it.L('Lot size*'),   className: 'gr-padding-10' },
+                            { text: it.L('Volume step'), className: 'gr-padding-10' },
                         ]],
                         tbody: [
-                            [{ text: 'XAG/USD' }, { text: it.L('Silver vs US Dollar')    }, { text: five_thousand }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
-                            [{ text: 'XAU/USD' }, { text: it.L('Gold vs US Dollar')      }, { text: hundred       }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
-                            [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US Dollar') }, { text: hundred       }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
-                            [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US Dollar')  }, { text: hundred       }, { text: hundredth }, { text: hundredth }, { text: one_five_hundred }],
+                            [{ text: 'XAG/USD' }, { text: it.L('Silver vs US Dollar')    }, { text: five_thousand }, { text: hundredth }],
+                            [{ text: 'XAU/USD' }, { text: it.L('Gold vs US Dollar')      }, { text: hundred       }, { text: hundredth }],
+                            [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US Dollar') }, { text: hundred       }, { text: hundredth }],
+                            [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US Dollar')  }, { text: hundred       }, { text: hundredth }],
                         ],
                     }} />
+                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots.')}</p>

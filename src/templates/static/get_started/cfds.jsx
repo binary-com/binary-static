@@ -84,11 +84,11 @@ const Cfds = () => (
                     <HeaderSecondary header={it.L('Cash Indices')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                  className: 'gr-padding-10' },
-                            { text: it.L('Description'),             className: 'gr-padding-10' },
-                            { text: it.L('Lot size (Volume = 1.0)'), className: 'gr-padding-10' },
-                            { text: it.L('Maximum volume'),          className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),             className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                            { text: it.L('Description'),    className: 'gr-padding-10' },
+                            { text: it.L('Lot size*'),      className: 'gr-padding-10' },
+                            { text: it.L('Maximum volume'), className: 'gr-padding-10' },
+                            { text: it.L('Volume step'),    className: 'gr-padding-10' },
                         ]],
                         tbody: [
                             [{ text: 'AUS_200' }, { text: 'Australia 200 Cash Index'  }, { text: it.L('AUD 1 per point') }, { text: ten          }, { text: tenth }],
@@ -104,15 +104,17 @@ const Cfds = () => (
                             [{ text: 'US_500'  }, { text: 'US 500 Cash Index'         }, { text: it.L('USD 1 per point') }, { text: two_hundred  }, { text: tenth }],
                         ],
                     }} />
+                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('Volatility Indices')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                  className: 'gr-padding-10' },
-                            { text: it.L('Lot size (Volume = 1.0)'), className: 'gr-padding-10' },
-                            { text: it.L('Maximum volume'),          className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),             className: 'gr-padding-10' },
-                            { text: it.L('Margin'),                  className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                            { text: it.L('Lot size*'),      className: 'gr-padding-10' },
+                            { text: it.L('Maximum volume'), className: 'gr-padding-10' },
+                            { text: it.L('Volume step'),    className: 'gr-padding-10' },
+                            { text: it.L('Margin'),         className: 'gr-padding-10' },
                         ]],
                         tbody: [
                             [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
@@ -125,6 +127,8 @@ const Cfds = () => (
                             [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
                         ],
                     }} />
+                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
