@@ -86,7 +86,7 @@ const Index = () => (
                     </TabContent>
                     <TabContent id='mt5'>
                         <h2>{it.L('MetaTrader 5')}</h2>
-                        <p>{it.L('Trade Forex and Contracts for Difference (CFD) with highly-competitive leverage. MetaTrader 5 is an institutional multi-asset platform offering outstanding trading possibilities and technical analysis tools. It allows trading Forex, Stocks, Futures, CFDs and it provides everything needed for full-fledged and flexible trading operations.')}</p>
+                        <p>{it.L('Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools.')}</p>
 
                         <SeparatorLine invisible className='gr-padding-30' />
 
@@ -161,7 +161,7 @@ const Index = () => (
                         <GetStartedSectionWrapper
                             section_id='cfds'
                             section_header={it.L('CFDs')}
-                            section_description={it.L('Contracts for Difference (CFDs) are financial derivatives that allow you to speculate on the movement of an underlying asset without owning it.')}
+                            section_description={it.L('Contracts for Difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them.')}
                         >
                             <div className='gr-row'>
                                 <GetStartedSection

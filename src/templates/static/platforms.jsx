@@ -57,10 +57,10 @@ const Platform = () => (
                     image_path='home'
                     image='mt5'
                     header={it.L('MetaTrader 5')}
-                    description={it.L('Enhanced Trading with MetaTrader 5')}
-                    text={it.L('Trade Forex and Contracts for Difference (CFD) with highly-competitive leverage.')}
+                    description={it.L('Advanced multi-asset trading platform')}
+                    text={it.L('Trade Forex and CFDs with a powerful platform recognised as the global standard.')}
                     url={it.url_for('user/metatrader')}
-                    button_text={it.L('Register your MetaTrader 5 account')}
+                    button_text={it.L('Access MT5 dashboard')}
                 />
             </div>
             <div className='gr-row gr-padding-30'>

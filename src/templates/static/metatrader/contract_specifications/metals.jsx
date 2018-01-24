@@ -35,7 +35,7 @@ const Metals = () => (
                         items={[
                             { text: it.L('Standard account: 1:500') },
                             { text: it.L('STP account: 1:100') },
-                            { text: it.L('Volatility account: 1:500') },
+                            { text: it.L('Volatility Indices account: 1:500') },
                         ]}
                     />
                 </div>

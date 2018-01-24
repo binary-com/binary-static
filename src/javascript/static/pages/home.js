@@ -1,15 +1,29 @@
-const localize     = require('../../_common/localize').localize;
-const BinarySocket = require('../../app/base/socket');
-const FormManager  = require('../../app/common/form_manager');
+const localize           = require('../../_common/localize').localize;
+const TabSelector        = require('../../_common/tab_selector');
+const applyToAllElements = require('../../_common/utility').applyToAllElements;
+const BinarySocket       = require('../../app/base/socket');
+const FormManager        = require('../../app/common/form_manager');
 
 const Home = (() => {
     let clients_country;
 
     const onLoad = () => {
+        TabSelector.onLoad();
+
         BinarySocket.wait('website_status').then((response) => {
             clients_country = response.website_status.clients_country;
-            const form_id   = '#frm_verify_email';
 
+            // eu countries code
+            if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(clients_country)) {
+                applyToAllElements('.eu-show', (el) => { el.setVisibility(1); });
+            } else {
+                applyToAllElements('.eu-hide', (el) => { el.setVisibility(1); });
+            }
+
+            // we need to initiate selector after it becoming visible
+            TabSelector.repositionSelector();
+
+            const form_id = '#frm_verify_email';
             FormManager.init(form_id, [
                 { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
                 { request_field: 'type', value: 'account_opening' },
@@ -41,9 +55,14 @@ const Home = (() => {
         }
     };
 
+    const onUnload = () => {
+        TabSelector.onUnload();
+    };
+
 
     return {
         onLoad,
+        onUnload,
     };
 })();
 

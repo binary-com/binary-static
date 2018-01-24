@@ -9,7 +9,7 @@ const texts = [
     'Month',
     'Year',
     'Sorry, an error occurred while processing your request.',
-    'Please <a href="[_1]">log in</a> to view this page.',
+    'Please [_1]log in[_2] or [_3]sign up[_2] to view this page.',
 
     // top bar
     'Open a Real Account',
@@ -510,10 +510,10 @@ const texts = [
     'New password',
     'Demo Standard',
     'Demo STP',
-    'Demo Volatility',
+    'Demo Volatility Indices',
     'Real Standard',
     'Real STP',
-    'Real Volatility',
+    'Real Volatility Indices',
     'Change Password',
 
     // account_transfer
