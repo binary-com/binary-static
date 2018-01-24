@@ -3,9 +3,9 @@ import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage, Mt
 import { List, Table } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-const hundred   = 100;
-const hundredth = 0.01;
-const five_thousand    = 5000;
+const hundred       = 100;
+const hundredth     = 0.01;
+const five_thousand = 5000;
 
 const Lot = () => (
     <React.Fragment>
