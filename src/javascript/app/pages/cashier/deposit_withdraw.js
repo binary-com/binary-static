@@ -235,7 +235,7 @@ const DepositWithdraw = (() => {
                     } else {
                         const limit = State.getResponse('get_limits.remainder');
                         if (typeof limit !== 'undefined' && limit < 1) {
-                            showError('custom_error', localize('You have reached the limit.'));
+                            showError('custom_error', localize('You have reached the withdrawal limit.'));
                         } else {
                             BinarySocket.wait('get_settings').then(() => {
                                 init(response.cashier_password);

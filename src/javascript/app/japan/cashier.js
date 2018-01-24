@@ -21,7 +21,7 @@ const CashierJP = (() => {
                     } else {
                         const limit = State.getResponse('get_limits.remainder');
                         if (typeof limit !== 'undefined' && limit < 1) {
-                            $container.find('#cashier_locked_message').text(localize('You have reached the limit.')).setVisibility(1);
+                            $container.find('#cashier_locked_message').text(localize('You have reached the withdrawal limit.')).setVisibility(1);
                         } else {
                             $container.find('#cashier_unlocked_message').setVisibility(1);
                             BinarySocket.wait('get_settings').then(() => {

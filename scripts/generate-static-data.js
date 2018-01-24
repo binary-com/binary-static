@@ -384,6 +384,7 @@ const texts = [
     'An additional password can be used to restrict access to the cashier.',
     'Update',
     'Sorry, you have entered an incorrect cashier password',
+    'You have reached the withdrawal limit.',
 
     // view popup
     'Start Time',
