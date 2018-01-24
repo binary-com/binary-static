@@ -13,7 +13,7 @@ const Metals = () => (
                             { text: it.L('Description') },
                             { text: it.L('Volume 1.0<br>(Lot Size)') },
                             { text: it.L('Min. Volume<br>(Lot Size)') },
-                            { text: it.L('Main. Volume Increment') },
+                            { text: it.L('Min. Volume Increment') },
                         ],
                     ],
                     tbody: [
