@@ -9,7 +9,7 @@ const elementTextContent = require('../../../_common/common_functions').elementT
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
 const toISOFormat        = require('../../../_common/string_util').toISOFormat;
-const urlFor             = require('../../../_common/url').urlFor;
+// const urlFor             = require('../../../_common/url').urlFor;
 const createElement      = require('../../../_common/utility').createElement;
 const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 const isEmptyObject      = require('../../../_common/utility').isEmptyObject;
@@ -111,7 +111,7 @@ const commonTrading = (() => {
     };
 
     const displayMarkets = (id, elements, selected) => {
-        const target   = getElementById(id);
+        const target   = document.getElementById(id);
         const fragment = document.createDocumentFragment();
 
         while (target && target.firstChild) {
@@ -162,7 +162,8 @@ const commonTrading = (() => {
      * display underlyings
      */
     const displayUnderlyings = (id, elements, selected) => {
-        const target = getElementById(id);
+        const target = document.getElementById(id);
+        if (!target) return;
 
         while (target.firstChild) {
             target.removeChild(target.firstChild);
@@ -480,28 +481,32 @@ const commonTrading = (() => {
         if (!market || !symbol) return;
 
         const tip     = getElementById('symbol_tip');
-        const markets = getElementById('contract_markets').value;
 
-        if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
-            tip.show();
-            tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
-        } else {
-            tip.hide();
-        }
-        if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
-            tip.show();
-            tip.setAttribute('target', urlFor('/get-started/otc-indices-stocks'));
-        }
-        if (market.match(/^random_index/) || symbol.match(/^R_/)) {
-            tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-indices'));
-        }
-        if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)) {
-            tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-quotidians'));
-        }
-        if (market.match(/^smart_fx/) || symbol.match(/^WLD/)) {
-            tip.show();
-            tip.setAttribute('target', urlFor('/get-started/smart-indices', '#world-fx-indices'));
-        }
+        // TODO: remove tip.hide() below and uncomment below lines when fixing the get started links
+        tip.hide();
+
+        // const markets = getElementById('contract_markets').value;
+
+        // if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
+        //     tip.show();
+        //     tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
+        // } else {
+        //     tip.hide();
+        // }
+        // if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
+        //     tip.show();
+        //     tip.setAttribute('target', urlFor('/get-started/otc-indices-stocks'));
+        // }
+        // if (market.match(/^random_index/) || symbol.match(/^R_/)) {
+        //     tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-indices'));
+        // }
+        // if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)) {
+        //     tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-quotidians'));
+        // }
+        // if (market.match(/^smart_fx/) || symbol.match(/^WLD/)) {
+        //     tip.show();
+        //     tip.setAttribute('target', urlFor('/get-started/smart-indices', '#world-fx-indices'));
+        // }
     };
 
     const selectOption = (option, select) => {
@@ -580,7 +585,7 @@ const commonTrading = (() => {
 
         if (Moment.utc(`${end_date_value} ${end_time_value}`).unix() <= start_date_value) {
             $element.addClass('error-field');
-            if (!getElementById('end_time_validation')) {
+            if (!document.getElementById('end_time_validation')) {
                 $('#expiry_type_endtime').append($('<p/>', { class: 'error-msg', id: 'end_time_validation', text: localize('End time must be after start time.') }));
             }
             return false;

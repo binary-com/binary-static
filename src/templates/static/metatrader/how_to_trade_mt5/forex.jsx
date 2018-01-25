@@ -71,7 +71,7 @@ const Forex = () => (
                 ]}
             />
             <p>{it.L('Example:')}</p>
-            <p>{it.L('If you see EUR/USD has a bid price of 1.05229, you will sell USD 1.05229 for every EUR 1 that you buy.')}</p>
+            <p>{it.L('If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell.')}</p>
         </Step>
 
         <Step title={it.L('Understand when to buy and sell')} step={it.L('Step 2')} number={2}>

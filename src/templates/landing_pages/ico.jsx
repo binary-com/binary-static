@@ -183,7 +183,7 @@ const Ico = () => {
                                                         <div className='gr-row gr-padding-10' id='signup'>
                                                             <div className='gr-7 gr-7-p gr-12-m gr-centered'>
                                                                 <input autoComplete='off' name='email' id='email' maxLength='50' placeholder={it.L('Enter your email')} />
-                                                                <div id='error_validate_email' className='invisible error-msg'>{it.L('Invalid email address')}</div>
+                                                                <div id='error_validate_email' className='invisible error-msg'>{it.L('Invalid email address.')}</div>
                                                                 <div id='error_no_email' className='invisible error-msg'>{it.L('This field is required.')}</div>
                                                             </div>
                                                             <div className='gr-5 gr-5-p gr-12-m gr-centered'>

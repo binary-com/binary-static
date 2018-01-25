@@ -93,10 +93,10 @@ const Header = () => (
                                         { text: it.L('Tour'),        href: it.url_for('tour-jp'),                     className: 'invisible ja-show mt-hide' },
                                         { text: it.L('Trade'),       href: it.url_for('multi_barriers_trading'),      className: 'invisible ja-show mt-hide', id: 'main-navigation-jptrading' },
                                         // MetaTrader
-                                        { text: it.L('MetaTrader'),  href: it.url_for('user/metatrader'),                       className: 'invisible mt-show' },
-                                        { text: it.L('Cashier'),     href: it.url_for('cashier'),                               className: 'invisible mt-show' },
-                                        { text: it.L('Get Started'), href: it.url_for('get-started-beta?get_started_tabs=mt5'), className: 'invisible mt-show' },
-                                        { text: it.L('Platforms'),   href: it.url_for('platforms?platforms_tabs=mt5'),          className: 'invisible mt-show' },
+                                        { text: it.L('MetaTrader'),  href: it.url_for('user/metatrader'),                  className: 'invisible mt-show' },
+                                        { text: it.L('Cashier'),     href: it.url_for('cashier'),                          className: 'invisible mt-show' },
+                                        { text: it.L('Get Started'), href: it.url_for('get-started?get_started_tabs=mt5'), className: 'invisible mt-show' },
+                                        { text: it.L('Platforms'),   href: it.url_for('platforms?platforms_tabs=mt5'),     className: 'invisible mt-show' },
                                     ]}
                                 />
                             </div>
@@ -119,11 +119,11 @@ const Header = () => (
                                             <a className='link' href={it.url_for('user/securityws')}>
                                                 <li className='topMenuSecurity'>{it.L('Security & Limits')}</li>
                                             </a>
-                                            <a className='link ja-hide' id='user_accounts' href={it.url_for('user/accounts')}>
-                                                <li className='topMenuAccounts'>{it.L('Accounts List')}</li>
-                                            </a>
                                             <a className='link invisible' id='user_menu_metatrader' href={it.url_for('user/metatrader')}>
                                                 <li className='topMenuMetaTrader'>{it.L('MetaTrader')}</li>
+                                            </a>
+                                            <a className='link ja-hide' id='user_accounts' href={it.url_for('user/accounts')}>
+                                                <li className='topMenuAccounts'>{it.L('Accounts List')}</li>
                                             </a>
                                             <a className='link invisible' id='user_menu_account_transfer' href={it.url_for('cashier/account_transfer')}>
                                                 <li>{it.L('Transfer Between Accounts')}</li>

@@ -102,9 +102,9 @@ const BinaryOptions = () => {
                     <div className='sidebar'>
                         <List id='sidebar-nav' items={[
                             { id: 'what-are-binary-options', href: '#what-are-binary-options', text: it.L('What are binary options')},
-                            { id: 'range-of-markets',        href: '#range-of-markets',        text: it.L('Range of markets')},
-                            { id: 'types-of-trades',         href: '#types-of-trades',         text: it.L('Types of trades')},
                             { id: 'how-to-trade-binary',     href: '#how-to-trade-binary',     text: it.L('How to trade binary options')},
+                            { id: 'types-of-trades',         href: '#types-of-trades',         text: it.L('Types of trades')},
+                            { id: 'range-of-markets',        href: '#range-of-markets',        text: it.L('Range of markets')},
                             { id: 'glossary',                href: '#glossary',                text: it.L('Glossary')},
                         ]} />
                     </div>
@@ -151,69 +151,6 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Flexible')}                                   text={it.L('Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy.')} />
                             <ListStrong header={it.L('Scalable')}                                   text={it.L('Earn the same proportional return on stakes of all values.')} />
                         </ul>
-                    </Section>
-                    <Section id='range-of-markets' header={it.L('Range of markets')}>
-                        <p>{it.L('Binary options allow you to trade on a wide range of underlying markets. One of the advantages of trading binary options is that you are not buying or selling an actual asset, only a contract that determines how that asset performs over a period of time. This limits your risk and makes it easy for anyone to start trading.')}</p>
-
-                        <HeaderSecondary header={it.L('Available markets')} />
-                        <div className='gr-row'>
-                            <SectionSmall image='range-of-markets/forex'   header={it.L('Forex')}       text={it.L('Major pairs, minor pairs, and Smart FX indices.')} />
-                            <SectionSmall image='range-of-markets/indices' header={it.L('OTC Indices')} text={it.L('Major worldwide stock indices sourced from the OTC market.')} />
-                            <SectionSmall image='range-of-markets/stocks'  header={it.L('OTC Stocks')}  text={it.L('Blue-chip stock contracts sourced from the OTC market.')} />
-
-                            <SectionSmall image='range-of-markets/commodities' header={it.L('Commodities')}        text={it.L('All four precious metals, plus energy.')} />
-                            <SectionSmall image='range-of-markets/volatility'  header={it.L('Volatility Indices')} text={it.L('Synthetic indices that mimic market volatility.')} />
-                        </div>
-
-                        <HeaderSecondary header={it.L('Forex')} />
-                        <p>{it.L('Trade popular major and minor currency pairs, plus Smart FX indices – weighted indices that measure the value of a currency against a basket of major currencies.')}</p>
-                        <p>{it.L('There are four types of Smart FX indices that you can trade:')}</p>
-                        <ul className='bullet'>
-                            <li>{it.L('AUD Index – Measures the value of the Australian Dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%')}</li>
-                            <li>{it.L('EUR Index – Measures the value of the Euro against a basket of five global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%')}</li>
-                            <li>{it.L('GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%')}</li>
-                            <li>{it.L('USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%')}</li>
-                        </ul>
-
-                        <HeaderSecondary header={it.L('OTC stocks and indices')} />
-                        <p>{it.L('Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing.')}</p>
-                        <p>{it.L('Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges.')}</p>
-
-                        <HeaderSecondary header={it.L('Commodities')} />
-                        <p>{it.L('We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities.')}</p>
-
-                        <HeaderSecondary header={it.L('Volatility Indices')} />
-                        <p>{it.L('[_1]\'s Volatility Indices are synthetic indices that mimic real-world market volatility and are available for trading 24/7. They are based on a cryptographically secure random number generator audited for fairness by an independent third party.', it.website_name)}</p>
-                        <p>{it.L('You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That\'s not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits.')}</p>
-                        <p>{it.L('Volatility Indices are further categorised into two classes:')}</p>
-                        <ul className='bullet'>
-                            <li>{it.L('Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively.')}</li>
-                            <li>{it.L('Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively.')}</li>
-                        </ul>
-                    </Section>
-                    <Section id='types-of-trades' header={it.L('Types of trades')}>
-                        <p>{it.L('[_1] offers five trade types that will help you execute your market view or strategy:', it.website_name)}</p>
-                        <SectionLarge header={it.L('Up/Down')} image='types-of-trades/up_down' text={it.L('There are two types of Up/Down trades:')}>
-                            <ListStrong header={it.L('Rise/Fall')}    text={it.L('Predict that the market will rise or fall from its current level')} />
-                            <ListStrong header={it.L('Higher/Lower')} text={it.L('Predict that the market will end higher or lower than a price target')} />
-                        </SectionLarge>
-
-                        <SectionLarge header={it.L('Touch/No touch')} image='types-of-trades/touch_notouch' text={it.L('Choose the Touch/No touch trade if you want to predict the market touching or not touching a target any time during the contract period.')} />
-
-                        <SectionLarge header={it.L('In/Out')} image='types-of-trades/in_out' text={it.L('There are two types of In/Out trades:')}>
-                            <ListStrong header={it.L('Ends Between/Ends Outside')}  text={it.L('Predict that the market stops inside or outside two price targets at the end of the time period')} />
-                            <ListStrong header={it.L('Stays Between/Goes Outside')} text={it.L('Predict that the market stays inside or goes outside two price targets any time during the contract period')} />
-                        </SectionLarge>
-                        <SectionLarge header={it.L('Asians')} image='types-of-trades/asians' text={it.L('There are two types of Asians trades:')}>
-                            <ListStrong header={it.L('Up')}   text={it.L('Predict that the market will end higher than the average price')} />
-                            <ListStrong header={it.L('Down')} text={it.L('Predict that the market will end lower than the average price')} />
-                        </SectionLarge>
-                        <SectionLarge header={it.L('Digits')} image='types-of-trades/digits' text={it.L('Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:')}>
-                            <ListStrong header={it.L('Matches/Differs')} text={it.L('Predict that the last digit will match or not match')} />
-                            <ListStrong header={it.L('Even/Odd')}        text={it.L('Predict that the last digit is an even number or odd number after the last tick')} />
-                            <ListStrong header={it.L('Over/Under')}      text={it.L('Predict that the last digit is higher or lower')} />
-                        </SectionLarge>
-                        <p>{it.L('Please note that Asians and Digits are available exclusively with our Volatility Indices.')}</p>
                     </Section>
                     <Section id='how-to-trade-binary' header={it.L('How to trade binary options')}>
                         <p>{it.L('Binary options trading is relatively easy. You can purchase a contract in just three steps:')}</p>
@@ -271,6 +208,69 @@ const BinaryOptions = () => {
                             <img className='responsive' src={it.url_for('images/pages/get-started-beta/binary-options/how-to-trade-binary/step-3.svg')} />
                         </div>
                         <p>{it.L('When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there\'s no risk of \'slippage\' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions.')}</p>
+                    </Section>
+                    <Section id='types-of-trades' header={it.L('Types of trades')}>
+                        <p>{it.L('[_1] offers five trade types that will help you execute your market view or strategy:', it.website_name)}</p>
+                        <SectionLarge header={it.L('Up/Down')} image='types-of-trades/up_down' text={it.L('There are two types of Up/Down trades:')}>
+                            <ListStrong header={it.L('Rise/Fall')}    text={it.L('Predict that the market will rise or fall from its current level')} />
+                            <ListStrong header={it.L('Higher/Lower')} text={it.L('Predict that the market will end higher or lower than a price target')} />
+                        </SectionLarge>
+
+                        <SectionLarge header={it.L('Touch/No touch')} image='types-of-trades/touch_notouch' text={it.L('Choose the Touch/No touch trade if you want to predict the market touching or not touching a target any time during the contract period.')} />
+
+                        <SectionLarge header={it.L('In/Out')} image='types-of-trades/in_out' text={it.L('There are two types of In/Out trades:')}>
+                            <ListStrong header={it.L('Ends Between/Ends Outside')}  text={it.L('Predict that the market stops inside or outside two price targets at the end of the time period')} />
+                            <ListStrong header={it.L('Stays Between/Goes Outside')} text={it.L('Predict that the market stays inside or goes outside two price targets any time during the contract period')} />
+                        </SectionLarge>
+                        <SectionLarge header={it.L('Asians')} image='types-of-trades/asians' text={it.L('There are two types of Asians trades:')}>
+                            <ListStrong header={it.L('Up')}   text={it.L('Predict that the market will end higher than the average price')} />
+                            <ListStrong header={it.L('Down')} text={it.L('Predict that the market will end lower than the average price')} />
+                        </SectionLarge>
+                        <SectionLarge header={it.L('Digits')} image='types-of-trades/digits' text={it.L('Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:')}>
+                            <ListStrong header={it.L('Matches/Differs')} text={it.L('Predict that the last digit will match or not match')} />
+                            <ListStrong header={it.L('Even/Odd')}        text={it.L('Predict that the last digit is an even number or odd number after the last tick')} />
+                            <ListStrong header={it.L('Over/Under')}      text={it.L('Predict that the last digit is higher or lower')} />
+                        </SectionLarge>
+                        <p>{it.L('Please note that Asians and Digits are available exclusively with our Volatility Indices.')}</p>
+                    </Section>
+                    <Section id='range-of-markets' header={it.L('Range of markets')}>
+                        <p>{it.L('Binary options allow you to trade on a wide range of underlying markets. One of the advantages of trading binary options is that you are not buying or selling an actual asset, only a contract that determines how that asset performs over a period of time. This limits your risk and makes it easy for anyone to start trading.')}</p>
+
+                        <HeaderSecondary header={it.L('Available markets')} />
+                        <div className='gr-row'>
+                            <SectionSmall image='range-of-markets/forex'   header={it.L('Forex')}       text={it.L('Major pairs, minor pairs, and Smart FX indices.')} />
+                            <SectionSmall image='range-of-markets/indices' header={it.L('OTC Indices')} text={it.L('Major worldwide stock indices sourced from the OTC market.')} />
+                            <SectionSmall image='range-of-markets/stocks'  header={it.L('OTC Stocks')}  text={it.L('Blue-chip stock contracts sourced from the OTC market.')} />
+
+                            <SectionSmall image='range-of-markets/commodities' header={it.L('Commodities')}        text={it.L('All four precious metals, plus energy.')} />
+                            <SectionSmall image='range-of-markets/volatility'  header={it.L('Volatility Indices')} text={it.L('Synthetic indices that mimic market volatility.')} />
+                        </div>
+
+                        <HeaderSecondary header={it.L('Forex')} />
+                        <p>{it.L('Trade popular major and minor currency pairs, plus Smart FX indices – weighted indices that measure the value of a currency against a basket of major currencies.')}</p>
+                        <p>{it.L('There are four types of Smart FX indices that you can trade:')}</p>
+                        <ul className='bullet'>
+                            <li>{it.L('AUD Index – Measures the value of the Australian Dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%')}</li>
+                            <li>{it.L('EUR Index – Measures the value of the Euro against a basket of five global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%')}</li>
+                            <li>{it.L('GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%')}</li>
+                            <li>{it.L('USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%')}</li>
+                        </ul>
+
+                        <HeaderSecondary header={it.L('OTC stocks and indices')} />
+                        <p>{it.L('Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing.')}</p>
+                        <p>{it.L('Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges.')}</p>
+
+                        <HeaderSecondary header={it.L('Commodities')} />
+                        <p>{it.L('We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities.')}</p>
+
+                        <HeaderSecondary header={it.L('Volatility Indices')} />
+                        <p>{it.L('[_1]\'s Volatility Indices are synthetic indices that mimic real-world market volatility and are available for trading 24/7. They are based on a cryptographically secure random number generator audited for fairness by an independent third party.', it.website_name)}</p>
+                        <p>{it.L('You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That\'s not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits.')}</p>
+                        <p>{it.L('Volatility Indices are further categorised into two classes:')}</p>
+                        <ul className='bullet'>
+                            <li>{it.L('Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively.')}</li>
+                            <li>{it.L('Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively.')}</li>
+                        </ul>
                     </Section>
                     <Section id='glossary' header={it.L('Glossary')}>
                         <Glossary glossary={[
