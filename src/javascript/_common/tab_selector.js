@@ -142,6 +142,7 @@ const TabSelector = (() => {
     return {
         onLoad,
         onUnload,
+        repositionSelector,
     };
 })();
 

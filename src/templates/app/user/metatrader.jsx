@@ -201,8 +201,8 @@ const Metatrader = () => (
                                 it.L('Market execution'),
                                 it.L('No commission'),
                             ]} />
-                        <AccountDesc account_type={['costarica', 'malta']} title={it.L('Volatility Account')}
-                            description={it.L('Our Volatility account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
+                        <AccountDesc account_type={['costarica', 'malta']} title={it.L('Volatility Indices Account')}
+                            description={it.L('Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
                             items={[
                                 it.L('Leverage up to 1:500'),
                                 it.L('Fixed spreads'),

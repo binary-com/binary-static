@@ -18,7 +18,7 @@ const Box = ({ image, text, title }) => (
 );
 
 const FootNote = ({ number, texts, title }) => (
-    <div className='gr-padding-30'>
+    <div className='gr-padding-10'>
         <a name={`note-${number}`}></a>
         <h3 className='secondary-color'>{`${number}. ${title}`}</h3>
         <div className='separator-line border-bottom'></div>
@@ -52,8 +52,8 @@ const TypesOfAccounts = () => (
         />
         <Box
             image='volatility'
-            title={it.L('Volatility')}
-            text={it.L('The Volatility account allows you to trade CFDs on Volatility Indices –– our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
+            title={it.L('Volatility Indices')}
+            text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices –– our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
         />
 
         <div className='gr-padding-30'></div>
@@ -64,7 +64,7 @@ const TypesOfAccounts = () => (
                 scroll
                 data={{
                     thead: [
-                        [{ text: '' }, { text: it.L('Standard') }, { text: it.L('STP') }, { text: it.L('Volatility') }],
+                        [{ text: '' }, { text: it.L('Standard') }, { text: it.L('STP') }, { text: it.L('Volatility Indices') }],
                     ],
                     tbody: [
                         [{ text: <Row number={1} text={it.L('Account currency')} />},    { text: it.L('USD') },         { text: it.L('USD') },         { text: it.L('USD') }],
@@ -79,10 +79,10 @@ const TypesOfAccounts = () => (
                     ],
                 }}
             />
-            <p className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
+            <p className='hint gr-padding-10'>{it.L('*These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
         </div>
 
-        <div className='gr-padding-30'></div>
+        <div className='gr-padding-10'></div>
 
         <FootNote
             number={1}
