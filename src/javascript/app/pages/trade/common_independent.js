@@ -73,23 +73,36 @@ const checkValidTime = (time_start_element = getElementById('time_start'), $date
 };
 
 const getMinMaxTime = ($setMinMaxSelector, minTime = window.time ? window.time : moment.utc()) => {
-    let $selected_option = $setMinMaxSelector.find('option:selected');
-    // if 'now' is selected, take first option's value
-    if (isNaN(+$setMinMaxSelector.val())) {
-        $selected_option = $($setMinMaxSelector.find('option')[1]);
-    }
+    const $selected_option = getSelectedOption($setMinMaxSelector);
     return {
         minTime: +$selected_option.val() > minTime.unix() ? moment.utc($selected_option.val() * 1000) : minTime,
         maxTime: moment.utc($selected_option.attr('data-end') * 1000),
     };
 };
 
+const getSelectedOption = ($selector) => {
+    let $selected_option = $selector.find('option:selected');
+    // if 'now' is selected, take first option's value
+    if (isNaN(+$selector.val())) {
+        $selected_option = $($selector.find('option')[1]);
+    }
+    return $selected_option;
+};
+
+const showAssetOpenHours = ($selector) => {
+    const $selected_option = getSelectedOption($selector);
+    const sessions         = $selected_option.attr('data-sessions');
+    $('#asset_open_hours').text(sessions || '').parent().setVisibility(!!(sessions));
+};
+
 module.exports = {
     displayPriceMovement,
     countDecimalPlaces,
     processTradingTimesAnswer,
-    getStartDateNode: getElement,
     checkValidTime,
+    getSelectedOption,
     getMinMaxTime,
+    showAssetOpenHours,
+    getStartDateNode: getElement,
     getTradingTimes : () => trading_times,
 };

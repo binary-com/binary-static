@@ -579,9 +579,15 @@ const commonTrading = (() => {
         $invalid_time.remove();
 
         end_date_value   = end_date_value ? toISOFormat(Moment(end_date_value)) : toISOFormat(new Moment());
-        // eslint-disable-next-line no-underscore-dangle
-        start_date_value = start_date_value === 'now' ? Math.floor(window.time._i / 1000) : start_date_value;
         end_time_value   = end_time_value || '23:59:59';
+        const time_start = Defaults.get('time_start');
+
+        if (start_date_value === 'now') {
+            start_date_value = (window.time || Moment.utc()).unix();
+        } else if (time_start) {
+            const arr_time = time_start.split(':');
+            start_date_value = Moment.unix(start_date_value).utc().hour(arr_time[0]).minute(arr_time[1]).unix();
+        }
 
         if (Moment.utc(`${end_date_value} ${end_time_value}`).unix() <= start_date_value) {
             $element.addClass('error-field');

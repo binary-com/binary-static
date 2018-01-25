@@ -402,7 +402,7 @@ const ViewPopup = (() => {
         const tr        = createElement('tr', { class: 'gr-row' });
         const td_remark = createElement('td', { class: 'gr-3 remark', text: remark || '' });
         const td_tick   = createElement('td', { class: 'gr-4', text: (tick && !isNaN(tick) ? addComma(tick) : (tick || '')) });
-        const td_date   = createElement('td', { class: 'gr-5 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.utc(+date * 1000).format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
+        const td_date   = createElement('td', { class: 'gr-5 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
 
         tr.appendChild(td_remark);
         tr.appendChild(td_tick);
