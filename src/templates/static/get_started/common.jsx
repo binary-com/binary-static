@@ -90,10 +90,10 @@ export const BuySellCurrency = ({ currency_one, currency_two }) => (
     </div>
 );
 
-export const MtBox = ({ text }) => (
+export const MtBox = ({ text, icon_1, icon_2 }) => (
     <div className='gr-12 gr-centered gr-padding-10'>
-        <div className='mt-img mr1-icon'></div>
+        <div className={`mt-img ${icon_1}`}></div>
         <p className='fill-bg-color gr-padding-20 gr-gutter'>{text}</p>
-        <div className='mt-img mr2-icon'></div>
+        <div className={`mt-img ${icon_2}`}></div>
     </div>
 );

@@ -37,6 +37,14 @@
         background-image: url('../images/pages/metatrader/margin-policy/mr2_ai.svg');
         height: 150px;
     }
+    .crypto-icon {
+        background-image: url('../images/pages/metatrader/margin-policy/crypto.svg');
+        height: 150px;
+    }
+    .metal-icon {
+        background-image: url('../images/pages/metatrader/margin-policy/metal.svg');
+        height: 150px;
+    }
 }
 
 /* Multilevel numbered list */
@@ -87,4 +95,11 @@
 
 #mt_download .browsers img {
     max-height: 100px;
+}
+
+#new_account_icon {
+    background-image: url('../images/pages/metatrader/icons/new_account.svg');
+    background-repeat: no-repeat;
+    background-position: 18px 6px;
+    padding-left: 48px;
 }

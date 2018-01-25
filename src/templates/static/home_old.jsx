@@ -141,7 +141,6 @@ const Home = () => (
                                     'mastercard',
                                     'int_bank_wire',
                                     'local_bank_transfer',
-                                    'western_union',
                                     'neteller',
                                     'okpay',
                                     'fastpay',

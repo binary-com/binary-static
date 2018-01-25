@@ -88,7 +88,7 @@ const Metatrader = () => (
                                     </div>
                                     <div className='gr-grow gr-no-gutter'>
                                         <a className='button button-secondary act_new_account' href='javascript:;'>
-                                            <span>{it.L('New')}</span>
+                                            <span id='new_account_icon'>{it.L('New Account')}</span>
                                         </a>
                                     </div>
                                 </div>
@@ -201,8 +201,8 @@ const Metatrader = () => (
                                 it.L('Market execution'),
                                 it.L('No commission'),
                             ]} />
-                        <AccountDesc account_type={['costarica', 'malta']} title={it.L('Volatility Account')}
-                            description={it.L('Our Volatility account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
+                        <AccountDesc account_type={['costarica', 'malta']} title={it.L('Volatility Indices Account')}
+                            description={it.L('Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
                             items={[
                                 it.L('Leverage up to 1:500'),
                                 it.L('Fixed spreads'),
@@ -217,7 +217,7 @@ const Metatrader = () => (
                                 <div className='step-1'>
                                     <TypeGroup title={it.L('Step 1: Choose demo or real account')} types={[
                                         { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Practise your trading strategy with [_1] of virtual funds in a risk-free environment.', '$10,000') },
-                                        { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds, access to competitive trading conditions, and zero commission.') },
+                                        { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds and access to competitive trading conditions.') },
                                     ]} />
                                 </div>
                                 <div className='step-2 invisible'>

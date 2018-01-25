@@ -1,12 +1,10 @@
 const tabListener = require('binary-style').tabListener;
 const GetStarted  = require('./get_started');
 const Scroll      = require('../../_common/scroll');
-const TabSelector = require('../../_common/tab_selector');
 const handleHash  = require('../../_common/utility').handleHash;
 const BinaryPjax  = require('../../app/base/binary_pjax');
 const Client      = require('../../app/base/client');
 const Header      = require('../../app/base/header');
-const Home        = require('../../static/pages/home');
 
 module.exports = {
     OpenPositions: {
@@ -14,10 +12,6 @@ module.exports = {
     },
     Careers: {
         onLoad: () => { tabListener(); handleHash(); $('.has-tabs').tabs(); },
-    },
-    Home: {
-        onLoad  : () => { TabSelector.onLoad(); Home.onLoad(); },
-        onUnload: () => { TabSelector.onUnload(); },
     },
     VolidxMarkets: {
         onLoad  : () => { Scroll.goToHashSection(); GetStarted.onLoad(); },
