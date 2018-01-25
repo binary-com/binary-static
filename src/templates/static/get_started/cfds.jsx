@@ -2,21 +2,14 @@ import React from 'react';
 import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, Box, NavButtons } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 
-const ten_thousandth = '0.0001';
-const thousandth     = '0.001';
 const hundredth      = '0.01';
 const tenth          = '0.1';
-const three_tenth    = '0.3';
-const five_tenth     = '0.5';
-const one            = '1';
 const ten            = '10';
 const hundred        = '100';
 const two_hundred    = '200';
 const five_hundred   = '500';
 
 const two_tenth_percent              = '0.2%';
-const twelve_thousandth_percent      = '0.012%';
-const twenty_five_thousandth_percent = '0.025%';
 
 const Cfds = () => (
     <div className='static_full get-started-beta'>
@@ -91,51 +84,51 @@ const Cfds = () => (
                     <HeaderSecondary header={it.L('Cash Indices')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                      className: 'gr-padding-10' },
-                            { text: it.L('Description'),                 className: 'gr-padding-10' },
-                            { text: it.L('Volume 1.0 (trade size)'),     className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume (trade size)'), className: 'gr-padding-10' },
-                            { text: it.L('Maximum volume (trade size)'), className: 'gr-padding-10' },
-                            { text: it.L('Margin'),                      className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                            { text: it.L('Description'),    className: 'gr-padding-10' },
+                            { text: it.L('Lot size*'),      className: 'gr-padding-10' },
+                            { text: it.L('Maximum volume'), className: 'gr-padding-10' },
+                            { text: it.L('Volume step'),    className: 'gr-padding-10' },
                         ]],
                         tbody: [
-                            [{ text: 'AUS_200' }, { text: 'Australia 200'  }, { text: it.L('AUD 1 per point') }, { text: one }, { text: ten          }, { text: two_tenth_percent } ],
-                            [{ text: 'DAX_30'  }, { text: 'Germany 30'     }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: two_tenth_percent } ],
-                            [{ text: 'ESP_35'  }, { text: 'Spain 35'       }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: two_tenth_percent } ],
-                            [{ text: 'EUR_50'  }, { text: 'Euro 50'        }, { text: it.L('EUR 1 per point') }, { text: one }, { text: ten          }, { text: two_tenth_percent } ],
-                            [{ text: 'FRA_40'  }, { text: 'France 40'      }, { text: it.L('EUR 1 per point') }, { text: one }, { text: five_hundred }, { text: two_tenth_percent } ],
-                            [{ text: 'GBR_100' }, { text: 'UK 100'         }, { text: it.L('GBP 1 per point') }, { text: one }, { text: five_hundred }, { text: two_tenth_percent } ],
-                            [{ text: 'JP_225'  }, { text: 'Japan 225'      }, { text: it.L('JPY 1 per point') }, { text: ten }, { text: hundred      }, { text: two_tenth_percent } ],
-                            [{ text: 'NED_25'  }, { text: 'Netherlands 25' }, { text: it.L('EUR 1 per point') }, { text: one }, { text: hundred      }, { text: two_tenth_percent } ],
-                            [{ text: 'US_30'   }, { text: 'US 30'          }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: two_tenth_percent } ],
-                            [{ text: 'US_100'  }, { text: 'US 100'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: two_tenth_percent } ],
-                            [{ text: 'US_500'  }, { text: 'US 500'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: two_hundred  }, { text: two_tenth_percent } ],
+                            [{ text: 'AUS_200' }, { text: 'Australia 200 Cash Index'  }, { text: it.L('AUD 1 per point') }, { text: ten          }, { text: tenth }],
+                            [{ text: 'DAX_30'  }, { text: 'Germany 30 Cash Index'     }, { text: it.L('EUR 1 per point') }, { text: hundred      }, { text: tenth }],
+                            [{ text: 'ESP_35'  }, { text: 'Spain 35 Cash Index'       }, { text: it.L('EUR 1 per point') }, { text: hundred      }, { text: tenth }],
+                            [{ text: 'EUR_50'  }, { text: 'Euro 50 Cash Index'        }, { text: it.L('EUR 1 per point') }, { text: ten          }, { text: tenth }],
+                            [{ text: 'FRA_40'  }, { text: 'France 40 Cash Index'      }, { text: it.L('EUR 1 per point') }, { text: five_hundred }, { text: tenth }],
+                            [{ text: 'GBR_100' }, { text: 'UK 100 Cash Index'         }, { text: it.L('GBP 1 per point') }, { text: five_hundred }, { text: tenth }],
+                            [{ text: 'JP_225'  }, { text: 'Japan 225 Cash Index'      }, { text: it.L('JPY 1 per point') }, { text: hundred      }, { text: tenth }],
+                            [{ text: 'NED_25'  }, { text: 'Netherlands 25 Cash Index' }, { text: it.L('EUR 1 per point') }, { text: hundred      }, { text: tenth }],
+                            [{ text: 'US_30'   }, { text: 'US 30 Cash Index'          }, { text: it.L('USD 1 per point') }, { text: two_hundred  }, { text: tenth }],
+                            [{ text: 'US_100'  }, { text: 'US 100 Cash Index'         }, { text: it.L('USD 1 per point') }, { text: two_hundred  }, { text: tenth }],
+                            [{ text: 'US_500'  }, { text: 'US 500 Cash Index'         }, { text: it.L('USD 1 per point') }, { text: two_hundred  }, { text: tenth }],
                         ],
                     }} />
+                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('Volatility Indices')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                      className: 'gr-padding-10' },
-                            { text: it.L('Volume 1.0 (trade size)'),     className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume (trade size)'), className: 'gr-padding-10' },
-                            { text: it.L('Maximum volume (trade size)'), className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume increment'),    className: 'gr-padding-10' },
-                            { text: it.L('Pip size'),                    className: 'gr-padding-10' },
-                            { text: it.L('Minimum spread'),              className: 'gr-padding-10' },
-                            { text: it.L('Margin'),                      className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                            { text: it.L('Lot size*'),      className: 'gr-padding-10' },
+                            { text: it.L('Maximum volume'), className: 'gr-padding-10' },
+                            { text: it.L('Volume step'),    className: 'gr-padding-10' },
+                            { text: it.L('Margin'),         className: 'gr-padding-10' },
                         ]],
                         tbody: [
-                            [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: tenth       }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: twenty_five_thousandth_percent }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 25 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: '0.006%'                       }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 50 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundred }, { text: hundredth }, { text: ten_thousandth }, { text: twelve_thousandth_percent      }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 75 Index'     }, { text: it.L('USD 1 per point') }, { text: hundredth   }, { text: hundred }, { text: hundredth }, { text: ten_thousandth }, { text: '0.018%'                       }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 100 Index'    }, { text: it.L('USD 1 per point') }, { text: hundredth   }, { text: hundred }, { text: hundredth }, { text: hundredth      }, { text: twenty_five_thousandth_percent }, { text: two_tenth_percent } ],
-                            [{ text: 'HF Volatility 10 Index'  }, { text: it.L('USD 1 per point') }, { text: tenth       }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: '0.005%'                       }, { text: two_tenth_percent } ],
-                            [{ text: 'HF Volatility 50 Index'  }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: twelve_thousandth_percent      }, { text: two_tenth_percent } ],
-                            [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: three_tenth }, { text: hundred }, { text: hundredth }, { text: thousandth     }, { text: twelve_thousandth_percent      }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 25 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 50 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 75 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 100 Index'    }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'HF Volatility 10 Index'  }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'HF Volatility 50 Index'  }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
                         ],
                     }} />
+                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
