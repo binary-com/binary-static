@@ -13,7 +13,7 @@ const MetaTraderConfig = (() => {
             stp     : { mt5_account_type: 'stp',      max_leverage: 100,  title: 'STP' },
         },
         gaming: {
-            volatility: { mt5_account_type: '', max_leverage: 500, title: 'Volatility' },
+            volatility: { mt5_account_type: '', max_leverage: 500, title: 'Volatility Indices' },
         },
     };
 
