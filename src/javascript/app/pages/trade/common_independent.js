@@ -90,8 +90,8 @@ const getSelectedOption = ($selector) => {
 };
 
 const showAssetOpenHours = ($selector) => {
-    const $selected_option = getSelectedOption($selector);
-    const sessions         = $selected_option.attr('data-sessions');
+    const $selected_option = $selector ? getSelectedOption($selector) : '';
+    const sessions         = $selected_option ? $selected_option.attr('data-sessions') : '';
     $('#asset_open_hours').text(sessions || '').parent().setVisibility(!!(sessions));
 };
 
