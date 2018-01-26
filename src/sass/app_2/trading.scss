@@ -1,3 +1,11 @@
-#trading_2 {
+#trade_app {
     // new trading css
+    .trade-container {
+        max-width: 1440px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    fieldset {
+        border: 0;
+    }
 }

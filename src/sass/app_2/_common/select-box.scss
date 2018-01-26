@@ -1,0 +1,85 @@
+.mdc-select {
+    position: relative;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    .select-text {
+        position: relative;
+        font-family: inherit;
+        background-color: transparent;
+        width: 100%;
+        padding: 10px 10px 10px 0;
+        font-size: $FONT_SIZE_L;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid $primaryBrandColor;
+        appearance: none;
+
+        &:focus {
+            outline: none;
+        }
+        &:focus ~ .select-label, &:valid ~ .select-label {
+            color: $primaryBrandColor;
+            top: -20px;
+            transition: 0.2s ease all;
+            font-size: $FONT_SIZE_S;
+        }
+        &:focus ~ .select-bar:before, &:focus ~ .select-bar:after {
+            width: 50%;
+        }
+    }
+    &:after {
+        position: absolute;
+        top: 18px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        padding: 0;
+        content: '';
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $primaryBrandColor;
+        pointer-events: none;
+    }
+    .select-label {
+        color: rgba(0, 0, 0, 0.26);
+        font-size: $FONT_SIZE_L;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 0;
+        top: 10px;
+        transition: 0.2s ease all;
+    }
+    .select-bar {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        &:before, &:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 1px;
+            position: absolute;
+            background: $primaryBrandColor;
+            transition: 0.2s ease all;
+        }
+        &:before {
+            left: 50%;
+        }
+        &:after {
+            right: 50%;
+        }
+    }
+    .select-highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}

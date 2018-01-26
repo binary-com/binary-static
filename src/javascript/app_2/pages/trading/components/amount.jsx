@@ -1,5 +1,6 @@
 import React from 'react';
-import { TextField } from './form/text_field.jsx';
+import { MdcTextField } from './form/text_field.jsx';
+import { MdcSelect } from './form/select_box.jsx';
 import { connect } from '../store/connect';
 import Client from '../../../../app/base/client';
 
@@ -12,22 +13,28 @@ const Amount = ({
     onAmountChange,
     onCurrencyChange,
 }) => (
-        <fieldset>
-            <select name='basis' value={basis} onChange={onBasisChange}>
-                <option value='payout'>Payout</option>
-                <option value='stake'>Stake</option>
-            </select>
-
-            {Client.get('currency') ?
-                <span className={`symbols ${currency.toLowerCase()}`}></span> :
-                <select name='currency' value={currency || currencies[0]} onChange={onCurrencyChange}>
-                    {currencies.map((cur, idx) => (
-                        <option key={idx} value={cur}>{cur}</option>
-                    ))}
-                </select>
-            }
-
-            <TextField name='amount' value={amount} onChange={onAmountChange} />
+        <fieldset className='shadow-1'>
+            <div className='gr-row'>
+                <div className='gr-12'>
+                    <MdcSelect name='basis' default_value={basis} on_change={onBasisChange}>
+                        <option value='payout'>Payout</option>
+                        <option value='stake'>Stake</option>
+                    </MdcSelect>
+                </div>
+                <div className='gr-6'>
+                {Client.get('currency') ?
+                    <span className={`symbols ${currency.toLowerCase()}`}></span> :
+                    <MdcSelect name='currency' default_value={currency || currencies[0]} on_change={onCurrencyChange}>
+                        {currencies.map((cur, idx) => (
+                            <option key={idx} value={cur}>{cur}</option>
+                        ))}
+                    </MdcSelect>
+                }
+                </div>
+                <div className='gr-6'>
+                    <MdcTextField type='text' name='amount' value={amount} on_change={onAmountChange} />
+                </div>
+            </div>
         </fieldset>
 );
 

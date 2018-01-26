@@ -1,0 +1,79 @@
+.mdc-textfield {
+    position: relative;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    input {
+        font-size: 18px;
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $primaryBrandColor;
+        border-radius: 0;
+
+        &:focus {
+            outline: none;
+        }
+        &:focus ~ label, &:valid ~ label {
+            top: -20px;
+            font-size: $FONT_SIZE_S;
+            color: $primaryBrandColor;
+        }
+        &:focus ~ .bar:before, &:focus ~ .bar:after {
+            width: 50%;
+        }
+        &:focus ~ .highlight {
+            animation: inputHighlighter 0.3s ease;
+        }
+    }
+    label {
+        color: $primaryBrandColor;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: 0.2s ease all;
+    }
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        &:before, &:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 1px;
+            position: absolute;
+            background: $primaryBrandColor;
+            transition: 0.2s ease all;
+        }
+        &:before {
+            left: 50%;
+        }
+        &:after {
+            right: 50%;
+        }
+    }
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    @keyframes inputHighlighter {
+        from {
+            background: $primaryBrandColor;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+}
