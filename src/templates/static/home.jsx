@@ -171,6 +171,17 @@ const HomeBeta = () => {
                             button_padding_mobile={12}
                             text={it.L('Create Free Account')}
                         />
+
+                        <div className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
+                            <div className='section-divider gr-padding-30'>
+                                <div className='align-self-center border-bottom-light-gray'></div>
+                                <div className='faded'>{it.L('or')}</div>
+                                <div className='align-self-center border-bottom-light-gray'></div>
+                            </div>
+                            <a id='google-signup' href='javascript:;' className='button-white'>
+                                <span className='icon-google'>{it.L('Create account with Google')}</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
