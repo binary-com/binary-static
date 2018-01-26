@@ -1,17 +1,20 @@
 import { observable, action } from 'mobx';
 import DAO from '../data/dao';
 import Client from '../../../../app/base/client';
-// import getCurrencies from './logic/currency';
+import getCurrencies from './logic/currency';
 
 export default class TradeStore {
     @action.bound init() {
         this._getCountry();
         this._getTicks();
-        // if (!Client.get('currency')) {
-        //     getCurrencies().then(currencies => {
-        //         this.currencies = currencies;
-        //     });
-        // }
+        if (!Client.get('currency')) {
+            getCurrencies().then(currencies => {
+                this.currencies_list = currencies;
+                if (!this.currency) {
+                    this.currency = Object.values(currencies).reduce((a, b) => [...a, ...b]).find(c => c);
+                }
+            });
+        }
     }
 
     _getCountry() {
@@ -34,10 +37,10 @@ export default class TradeStore {
         this[name] = value;
     }
 
-    @observable basis      = 'stake';
-    @observable currency   = Client.get('currency');
-    @observable currencies = ['USD', 'AUD', 'GBP', 'BTC'];
-    @observable amount     = 5;
+    @observable basis           = 'stake';
+    @observable currency        = Client.get('currency');
+    @observable currencies_list = {};
+    @observable amount          = 5;
 
     // Duration
     @observable expiry_type   = 'duration';

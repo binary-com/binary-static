@@ -10,10 +10,10 @@ const getCurrencies = () => DAO.getPayoutCurrencies().then(r => {
         (isCryptocurrency(currency) ? crypto : fiat).push(currency);
     });
 
-    return [
-        { [localize('Fiat Currency') ]: fiat },
-        { [localize('Cryptocurrency')]: crypto },
-    ];
+    return {
+        [localize('Fiat Currency')] : fiat,
+        [localize('Cryptocurrency')]: crypto,
+    };
 });
 
 export default getCurrencies;
