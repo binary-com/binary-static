@@ -250,6 +250,14 @@ const BinarySocket = (() => {
                         wrong_app_id = getAppId();
                         config.notify(response.error.message, true, 'INVALID_APP_ID');
                         break;
+                    case 'DisabledClient': {
+                        const $content   = $('#content');
+                        const page_title = $content.find('h1').text();
+                        $content.empty().html($('<div/>', { class: 'container' })
+                            .append($('<h1/>', { class: 'static_full', text: page_title }))
+                            .append($('<p/>', { class: 'notice-msg center-text', text: localize(response.error.message) })));
+                        break;
+                    }
                     // no default
                 }
 
