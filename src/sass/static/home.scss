@@ -1,4 +1,4 @@
-.home-content, .home-beta-content, .home-jp-content {
+.home-content, .home-old-content, .home-jp-content {
     .signup-box {
         border-radius: $BORDER_RADIUS;
 
@@ -22,7 +22,7 @@
     }
 }
 
-.home-content, .home-beta-content {
+.home-content, .home-old-content {
     #banner {
         background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
     }
@@ -84,7 +84,7 @@
     }
 }
 
-#content.home-beta-content {
+#content.home-content {
     .go-left, .go-right {
         &:hover {
             cursor: pointer;
@@ -197,7 +197,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    .home-content, .home-beta-content {
+    .home-content, .home-old-content {
         .small-image {
             width: 30%;
         }
@@ -205,12 +205,9 @@
             width: 32%;
         }
     }
-    #content.home-beta-content {
+    #content.home-content {
         .border-right {
             border-right: none;
-        }
-        .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li {
-            font-size: $FONT_SIZE_S;
         }
         #market_tabs_selector, #account_tabs_selector {
             top: 24px;

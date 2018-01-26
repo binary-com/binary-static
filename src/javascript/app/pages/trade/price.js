@@ -54,7 +54,7 @@ const Price = (() => {
         if (payout && CommonFunctions.isVisible(payout) && payout.value) {
             proposal.amount = parseFloat(payout.value);
         }
-          
+
         if (lots && CommonFunctions.isVisible(lots) && lots.value) {
             proposal.amount = lots.value;
         }
@@ -203,7 +203,7 @@ const Price = (() => {
 
             if (data.longcode && window.innerWidth > 500) {
                 if (description) description.setAttribute('data-balloon', data.longcode);
-                if (longcode) elementTextContent(longcode, data.longcode);
+                if (longcode) CommonFunctions.elementTextContent(longcode, data.longcode);
             } else if (description) description.removeAttribute('data-balloon');
         };
 
@@ -228,7 +228,7 @@ const Price = (() => {
             error.hide();
             if (/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
                 // Look back comment.
-                elementInnerHtml(comment, `${localize('Payout')}: ${formatMoney((currency.value || currency.getAttribute('value')), proposal.multiplier)}/${localize('point difference')}`);
+                CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${formatMoney((currency.value || currency.getAttribute('value')), proposal.multiplier)}/${localize('point difference')}`);
             } else {
                 commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }

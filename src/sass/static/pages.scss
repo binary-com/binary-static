@@ -93,9 +93,6 @@
     #local_bank_transfer {
         background-position: -90px -9px;
     }
-    #western_union {
-        background-position: -174px -9px;
-    }
     #visa {
         background-position: -338px -10px;
     }
@@ -368,16 +365,9 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .platforms-content {
-    #binary-content img.responsive {
+    img.responsive {
         max-height: 150px;
-    }
-    #mt5-content {
-        .enhanced img.responsive, img.step {
-            max-height: 128px;
-        }
-        img.step-arrow {
-            max-height: 24px;
-        }
+        width: auto;
     }
 }
 
@@ -395,7 +385,6 @@ body #not_authenticated_financial ul.checked > li {
 
 #how_to_trade_mt5 {
     .border-box {
-        display: inline-flex;
         border: 1px solid $COLOR_BLUE;
         border-radius: $BORDER_RADIUS;
         padding: 25px 50px;
@@ -469,5 +458,225 @@ body #not_authenticated_financial ul.checked > li {
     }
     .center-text .button .barspinner {
         margin: 0 auto;
+    }
+}
+
+.careers-content {
+    .career {
+        margin-top: 0;
+
+        .top-banner {
+            background: url('../images/pages/careers/careers-1_bg.jpg') no-repeat;
+            background-size: cover;
+            min-height: 300px;
+            position: relative;
+            background-position: center;
+
+            .banner-caption {
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                bottom: -100px;
+
+                .caption-text {
+                    margin: 0 auto;
+                    max-width: 960px;
+                    background-color: $COLOR_WHITE;
+                    text-align: center;
+                    padding: 40px 0px 20px;
+
+                    p {
+                        margin: 1em auto;
+                        max-width: 80%;
+                    }
+                }
+            }
+            @media (max-width: 768px) {
+                background-position: 75% -30px;
+            }
+        }
+        .center-banner {
+            background: url('../images/pages/careers/careers-2_bg.jpg') no-repeat;
+            background-size: cover;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-position: center;
+
+            .caption-text {
+                margin: 0 auto;
+                max-width: 960px;
+                text-align: center;
+
+                h1 {
+                    margin-top: 1em;
+                }
+                p {
+                    color: $COLOR_WHITE;
+                    margin: 1em auto;
+                    max-width: 80%;
+                    font-weight: 300;
+                }
+            }
+        }
+        .margin-top-100 {
+            margin-top: 100px;
+        }
+        .btn-margin-top {
+            margin-top: 1.5em;
+        }
+        .column-margin {
+            margin: 0 0 1em;
+        }
+        .header-line {
+            border-color: $COLOR_ORANGE;
+            border-width: 3px;
+            width: 25%;
+        }
+        .fill-text {
+            padding: 1em 0;
+        }
+        .box-container {
+            &.padding {
+                padding: 5px 15px;
+            }
+            > [class*='gr-padding'] {
+                padding-bottom: 0;
+
+                @media (max-width: 768px) {
+                    padding-bottom: unset;
+                }
+            }
+            .box {
+                &.bordered {
+                    border: 1px solid $COLOR_GRAY;
+                    height: 100%;
+                }
+                .items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        padding-top: 20px;
+                        width: 50px;
+                    }
+                    p {
+                        font-weight: 600;
+                        color: $COLOR_BLUE;
+                    }
+                    > .box-item-end {
+                        padding: 0 30px;
+                    }
+                    @media (max-width: 768px) {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+        h4 {
+            color: $COLOR_BLUE;
+        }
+        .graduate-container {
+            position: relative;
+            margin-top: 1em;
+
+            .graduate-box {
+                background-color: $COLOR_BLUE;
+                padding: 30px;
+                position: absolute;
+                z-index: 1;
+                top: 50px;
+
+                h1 {
+                    @media (max-width: 480px) {
+                        font-size: $FONT_SIZE_XXL;
+                        text-align: center;
+                    }
+                }
+                p {
+                    color: $COLOR_WHITE;
+
+                    @media (max-width: 480px) {
+                        font-size: $FONT_SIZE_S;
+                        text-align: center;
+                    }
+                }
+                a.button span {
+                    background-color: $COLOR_WHITE;
+                    color: $COLOR_BLUE;
+                    border-radius: 0;
+                    font-weight: 600;
+                }
+                @media screen and (max-width: 1024px) and (min-width: 769px) {
+                    left: 16%;
+                    bottom: 24%;
+                    top: unset;
+                }
+                @media (max-width: 768px) {
+                    top: 0;
+                }
+                @media (max-width: 480px) {
+                    background-color: transparent;
+                    padding: 15px;
+                }
+            }
+        }
+        ul.role-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 0;
+
+            li.role {
+                margin: 0;
+                border-radius: 0;
+                padding: 0;
+
+                a.role-btn {
+                    padding: 15px 20px !important;
+
+                    span {
+                        color: $COLOR_BLUE;
+                        font-weight: 600;
+                        font-size: $FONT_SIZE_L;
+                        text-transform: none;
+                        @media (max-width: 320px) {
+                            font-size: $FONT_SIZE_S;
+                        }
+                    }
+                    &:focus {
+                        border: 0;
+                        outline: 0;
+                    }
+                }
+                &.ui-tabs-active a span {
+                    color: $COLOR_WHITE;
+                }
+                &:focus {
+                    border: 0;
+                    outline: 0;
+                }
+            }
+        }
+        .america-careers-link a {
+            text-transform: capitalize;
+        }
+        .footer-email {
+            margin-bottom: -20px;
+
+            p {
+                color: $COLOR_WHITE;
+                padding: 20px 0;
+                text-align: center;
+            }
+        }
+        .steps {
+            @media (max-width: 480px) {
+                flex-direction: column;
+            }
+        }
     }
 }
