@@ -20,7 +20,6 @@ const MdcTextField = ({
     id,
     type='text',
     label,
-    font_size='18px',
     name,
     value,
     on_change,
@@ -30,7 +29,6 @@ const MdcTextField = ({
                    type={type}
                    value={value}
                    onChange={on_change}
-                   style={{ fontSize: font_size }}
             />
             <span className='highlight'></span>
             <span className='bar'></span>
