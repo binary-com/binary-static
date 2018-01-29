@@ -7,7 +7,7 @@ export const Btn = ({
     is_ripple,
     handleClick,
 }) => {
-    const classes = `mdc-button${is_ripple ? ' mdc-button-ripple' : ''} ${className}`;
+    const classes = `button${is_ripple ? ' button-ripple' : ''} ${className}`;
     return (
         <button id={id} className={classes} onClick={handleClick || undefined}>
             <span>{text}</span>
