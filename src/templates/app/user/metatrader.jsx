@@ -193,8 +193,8 @@ const Metatrader = () => (
                                 it.L('Market execution'),
                                 it.L('No commission'),
                             ]} />
-                        <AccountDesc account_type={['vanuatu_stp']} title={it.L('STP Account')}
-                            description={it.L('Our MetaTrader 5 STP account provides you with the tightest spreads and connects you directly to the market.')}
+                        <AccountDesc account_type={['vanuatu_advanced']} title={it.L('Advanced Account')}
+                            description={it.L('Our MetaTrader 5 Advanced account provides you with the tightest spreads and connects you directly to the market.')}
                             items={[
                                 it.L('Leverage up to 1:100'),
                                 it.L('Variable spreads'),

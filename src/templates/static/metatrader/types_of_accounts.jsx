@@ -46,9 +46,9 @@ const TypesOfAccounts = () => (
             text={it.L('The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.')}
         />
         <Box
-            image='stp'
-            title={it.L('STP')}
-            text={it.L('The STP account provides you with the tightest spreads and connects you directly to the market. STP stands for \'Straight Through Processing\' –– meaning your orders are sent directly to our liquidity providers.')}
+            image='advanced'
+            title={it.L('Advanced')}
+            text={it.L('The Advanced account provides you with the tightest spreads, offers more products and higher ticket size.')}
         />
         <Box
             image='volatility'
@@ -64,7 +64,7 @@ const TypesOfAccounts = () => (
                 scroll
                 data={{
                     thead: [
-                        [{ text: '' }, { text: it.L('Standard') }, { text: it.L('STP') }, { text: it.L('Volatility Indices') }],
+                        [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Advanced') }, { text: it.L('Volatility Indices') }],
                     ],
                     tbody: [
                         [{ text: <Row number={1} text={it.L('Account currency')} />},    { text: it.L('USD') },         { text: it.L('USD') },         { text: it.L('USD') }],
