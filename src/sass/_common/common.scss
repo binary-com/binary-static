@@ -543,3 +543,18 @@ li strong.margin-right {
 .icon-google:before {
     content: url('../images/pages/applications/icon-google.svg');
 }
+
+.section-divider {
+    .border-bottom-light-gray {
+        border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+    }
+    .faded {
+        margin: 0;
+        border-radius: 50%;
+        border: 1px solid $COLOR_LIGHT_GRAY;
+        padding: 7px 5px !important;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 0.75rem;
+    }
+}

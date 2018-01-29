@@ -173,7 +173,7 @@ const HomeBeta = () => {
                         />
 
                         <div className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
-                            <div className='section-divider gr-padding-30'>
+                            <div className='section-divider gr-padding-20'>
                                 <div className='align-self-center border-bottom-light-gray'></div>
                                 <div className='faded'>{it.L('or')}</div>
                                 <div className='align-self-center border-bottom-light-gray'></div>
