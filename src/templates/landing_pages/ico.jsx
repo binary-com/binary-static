@@ -567,7 +567,7 @@ const Ico = () => {
                         <div className='gr-4 gr-12-m'>
                             <img className='icon' src={it.url_for('images/ico/icons/ea_icon.svg')} />
                             <h4>{it.L('Exciting growth in Europe and Asia')}</h4>
-                            <p>{it.L('Organic growth is driving demand, especially in the Far East –– the world’s leading market for binary options.')}</p>
+                            <p>{it.L('Organic growth is driving demand, especially in the Far East – the world’s leading market for binary options.')}</p>
                         </div>
                         <div className='gr-4 gr-12-m'>
                             <img className='icon' src={it.url_for('images/ico/icons/jp_icon.svg')} />
