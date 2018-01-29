@@ -72,11 +72,13 @@ const checkValidTime = (time_start_element = getElementById('time_start'), $date
     time_start_element.setAttribute('data-value', time_start_element.value);
 };
 
-const getMinMaxTime = ($setMinMaxSelector, minTime = window.time ? window.time : moment.utc()) => {
+const getMinMaxTime = ($setMinMaxSelector, minTime = window.time || moment.utc()) => {
     const $selected_option = getSelectedOption($setMinMaxSelector);
+    const start_date       = moment.unix($setMinMaxSelector.val()).utc();
+    const end_date         = moment.unix($selected_option.attr('data-end')).utc();
     return {
-        minTime: +$selected_option.val() > minTime.unix() ? moment.utc($selected_option.val() * 1000) : minTime,
-        maxTime: moment.utc($selected_option.attr('data-end') * 1000),
+        minTime: start_date.isAfter(minTime) ? start_date : minTime.clone(),
+        maxTime: end_date.isSame(start_date, 'day') ? end_date : start_date.hour(23).minute(55).second(0),
     };
 };
 

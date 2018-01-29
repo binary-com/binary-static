@@ -38,7 +38,7 @@ const TradingEvents = (() => {
             if ($date_start && $date_start.val()) {
                 const date_start_val    = $date_start.val();
                 const moment_date_start = moment.unix(date_start_val).utc();
-                const moment_now        = window.time || moment.utc();
+                const moment_now        = (window.time || moment.utc()).clone();
                 const is_now            = Durations.isNow(date_start_val);
 
                 if (check_end_time) {
@@ -55,16 +55,17 @@ const TradingEvents = (() => {
                             end_time = end_time.hour(expiry_time_val[0]).minute(expiry_time_val[1]);
                         }
                         const start_time_val  = $time_start.val().split(':');
-                        const compare         = isNaN(+date_start_val) ? moment_now :
+                        const compare         = isNaN(+date_start_val) ? moment_now.clone() :
                             moment_date_start.hour(start_time_val[0]).minute(start_time_val[1]);
                         // if expiry time is one day after start time, minTime can be 0
                         // but maxTime should be 24 hours after start time, so exact value of start time
                         if (end_time.isAfter(compare, 'day')) {
                             minTime = 0;
-                            maxTime = end_time.hour(start_time_val[0]).minute(start_time_val[1]);
+                            maxTime = start_time_val.length > 1 ?
+                                end_time.clone().hour(start_time_val[0]).minute(start_time_val[1]) : end_time.clone();
                         } else {
                             // if expiry time is same as today, min time should be the selected start time plus five minutes
-                            minTime = moment_now;
+                            minTime = moment_date_start.clone();
                             minTime = minTime.hour(start_time_val[0]).minute(start_time_val[1]);
                             if (!(+start_time_val[0] === 23 && +start_time_val[1] === 55)) {
                                 minTime = minTime.add(5, 'minutes');
@@ -72,15 +73,15 @@ const TradingEvents = (() => {
                         }
                     }
                 } else if (is_now || moment_date_start.isSame(moment_now, 'day')) {
-                    minTime = moment_now;
+                    minTime = moment_now.clone();
                 }
             }
             const initObj = { selector };
             if (minTime) {
-                initObj.minTime = minTime;
+                initObj.minTime = minTime.clone();
             }
             if (maxTime) {
-                initObj.maxTime = maxTime;
+                initObj.maxTime = maxTime.clone();
             }
             TimePicker.init(initObj);
         };

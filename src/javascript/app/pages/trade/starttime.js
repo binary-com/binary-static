@@ -94,7 +94,7 @@ const StartDates = (() => {
             if (target) {
                 target.appendChild(fragment);
                 Defaults.set('date_start', target.value);
-                CommonIndependent.showAssetOpenHours($(target));
+                CommonIndependent.showAssetOpenHours(target.value === 'now' ? '' : $(target));
             }
             State.set('is_start_dates_displayed', true);
             if (first) {
