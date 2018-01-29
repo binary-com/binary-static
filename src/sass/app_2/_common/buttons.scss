@@ -1,5 +1,5 @@
 /* Material style */
-.button {
+.btn {
     position: relative;
     overflow: hidden;
     border: none;
@@ -13,7 +13,7 @@
 }
 
 /* Ripple Effect */
-.button-ripple:after {
+.btn-ripple:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -42,6 +42,6 @@
     }
 }
 
-.button-ripple:focus:not(:active):after {
+.btn-ripple:focus:not(:active):after {
     animation: ripple 1s ease-out;
 }
