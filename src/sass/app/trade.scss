@@ -247,17 +247,16 @@
             background: url('../images/pages/trade/ends-outside_1.png') no-repeat top center;
         }
         &.LBFLOATPUT {
-            background: url('../images/pages/trade/low_icon.svg') no-repeat center right;
-            background-size: 45%;
+            background: url('../images/pages/trade/low_icon.svg') no-repeat center top;
+            background-size: 40%;
         }
         &.LBFLOATCALL {
-            background: url('../images/pages/trade/high_icon.svg') no-repeat center right;
-            background-size: 45%;
+            background: url('../images/pages/trade/high_icon.svg') no-repeat center top;
+            background-size: 40%;
         }
         &.LBHIGHLOW {
-            background: url('../images/pages/trade/high_low_icon.svg') no-repeat center right;
-            background-size: 35%;
-            padding: 0.7em 2em 0.7em 0px !important;
+            background: url('../images/pages/trade/high_low_icon.svg') no-repeat center top;
+            background-size: 40%;
         }
     }
     #contract_prices_container {
@@ -310,18 +309,12 @@
         }
         .price_container#price_container_middle {
             .price_wrapper {
+                margin: 25px 0 10px;
                 padding: 0 15px 5px;
-
-                .contract_heading {
-                    float: none;
-                    width: 85px;
-                    padding: 0.7em 0;
-                    text-align: left;
-                    margin: 10px auto 0;
-                }
-                .purchase_button {
-                    max-width: 350px;
-                    margin: auto;
+            }
+            .payout_wrapper {
+                .contract_quantity {
+                    font-weight: 700;
                 }
             }
             .contract_longcode {

@@ -75,16 +75,12 @@ const Purchase = (() => {
 
             const currency = Client.get('currency');
 
-            if (passthrough.basis === 'payout') {
-                payout_value = passthrough.amount;
-                cost_value   = passthrough['ask-price'];
-            } else {
-                cost_value   = passthrough.amount;
-                payout_value = receipt.payout;
-            }
-            const profit_value = formatMoney(currency, payout_value - cost_value);
+            payout_value = +receipt.payout;
+            cost_value   = receipt.buy_price;
 
-            CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
+            const profit_value = payout_value ? formatMoney(currency, payout_value - cost_value) : '-';
+
+            CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${payout_value ? formatMoney(currency, payout_value) : '-'}</p>`);
             CommonFunctions.elementInnerHtml(cost,   `${localize('Total Cost')} <p>${formatMoney(currency, cost_value)}</p>`);
             CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
 

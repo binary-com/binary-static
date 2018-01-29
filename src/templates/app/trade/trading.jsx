@@ -127,7 +127,7 @@ const Trading = () => (
                                             <label htmlFor='lots' id='lots_label'>{it.L('Quantity')}</label>
                                         </div>
                                         <div className='col'>
-                                            <input type='text' defaultValue='1' name='lots' id='lots' className='small_width_input' />
+                                            <input type='text' defaultValue='1' step='any' maxLength='5' name='lots' id='lots' className='small_width_input' />
                                         </div>
                                     </div>
                                     <div className='row' id='payout_row'>
@@ -229,12 +229,18 @@ const Trading = () => (
                         </div>
                         <div className='col price_container row-inner' id='price_container_middle'>
                             <div className='col gr-row'>
-                                <div className='price_wrapper'>
+                                <div className='price_wrapper row'>
                                     <h4 className='contract_heading'></h4>
                                     <span className='amount_wrapper'>
-                                        <div className='stake_wrapper'>
-                                            <span className='stake'></span>
-                                            <span className='contract_amount'></span>
+                                        <div className="amount_wrapper_div">
+                                            <div className='stake_wrapper'>
+                                                <span className='stake'></span>
+                                                <span className='contract_amount'></span>
+                                            </div>
+                                            <div className='payout_wrapper'>
+                                                <span className='quantity'></span>
+                                                <span className='contract_quantity'></span>
+                                            </div>
                                         </div>
                                         <div className='contract_purchase button'>
                                             <span className='purchase_button no-underline' id='purchase_button_middle' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>

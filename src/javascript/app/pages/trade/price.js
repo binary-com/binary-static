@@ -170,17 +170,19 @@ const Price = (() => {
             $(container).fadeIn(200);
         }
 
-        const h4            = container.getElementsByClassName('contract_heading')[0];
-        const amount        = container.getElementsByClassName('contract_amount')[0];
-        const payout_amount = container.getElementsByClassName('contract_payout')[0];
-        const stake         = container.getElementsByClassName('stake')[0];
-        const payout        = container.getElementsByClassName('payout')[0];
-        const purchase      = container.getElementsByClassName('purchase_button')[0];
-        const description   = container.getElementsByClassName('contract_description')[0];
-        const longcode      = container.getElementsByClassName('contract_longcode')[0];
-        const comment       = container.getElementsByClassName('price_comment')[0];
-        const error         = container.getElementsByClassName('contract_error')[0];
-        const currency      = CommonFunctions.getElementById('currency');
+        const h4                = container.getElementsByClassName('contract_heading')[0];
+        const amount            = container.getElementsByClassName('contract_amount')[0];
+        const payout_amount     = container.getElementsByClassName('contract_payout')[0];
+        const contract_quantity = container.getElementsByClassName('contract_quantity')[0];
+        const stake             = container.getElementsByClassName('stake')[0];
+        const payout            = container.getElementsByClassName('payout')[0];
+        const quantity          = container.getElementsByClassName('quantity')[0];
+        const purchase          = container.getElementsByClassName('purchase_button')[0];
+        const description       = container.getElementsByClassName('contract_description')[0];
+        const longcode          = container.getElementsByClassName('contract_longcode')[0];
+        const comment           = container.getElementsByClassName('price_comment')[0];
+        const error             = container.getElementsByClassName('contract_error')[0];
+        const currency          = CommonFunctions.getElementById('currency');
 
         const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
@@ -200,6 +202,9 @@ const Price = (() => {
             }
             CommonFunctions.elementTextContent(payout, `${localize('Payout')}: `);
             CommonFunctions.elementInnerHtml(payout_amount, data.payout ? formatMoney((currency.value || currency.getAttribute('value')), data.payout) : '-');
+            // Lookback quantity
+            CommonFunctions.elementTextContent(quantity, `${localize('Quantity')}: `);
+            CommonFunctions.elementInnerHtml(contract_quantity, params.amount ? params.amount : '-');
 
             if (data.longcode && window.innerWidth > 500) {
                 if (description) description.setAttribute('data-balloon', data.longcode);
@@ -226,10 +231,7 @@ const Price = (() => {
             }
             comment.show();
             error.hide();
-            if (/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
-                // Look back comment.
-                CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${formatMoney((currency.value || currency.getAttribute('value')), proposal.multiplier)}/${localize('point difference')}`);
-            } else {
+            if (!/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
                 commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }
             const old_price  = purchase.getAttribute('data-display_value');

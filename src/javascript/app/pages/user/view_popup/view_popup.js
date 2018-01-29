@@ -87,7 +87,7 @@ const ViewPopup = (() => {
 
         containerSetText('trade_details_start_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
         containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
-        containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
+        containerSetText('trade_details_payout', +contract.payout ? formatMoney(contract.currency, contract.payout) : '-');
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
 
         setViewPopupTimer(updateTimers);
@@ -421,14 +421,18 @@ const ViewPopup = (() => {
     const populateAuditTable = (show_audit_table) => {
         const contract_starts = createAuditTable('Starts');
         parseAuditResponse(contract_starts.table, contract.audit_details.contract_start).then(() => {
-            if (contract.audit_details.contract_start) {
+            if (contract.audit_details.contract_start
+                // Hide audit table for Lookback.
+                && !/^(LBHIGHLOW|LBFLOATPUT|LBFLOATCALL)/.test(contract.shortcode)) {
                 createAuditHeader(contract_starts.table);
                 appendAuditLink('trade_details_entry_spot');
             } else {
                 contract_starts.div.remove();
             }
             // don't show exit tick information if missing or manual sold
-            if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)) {
+            if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)
+                // Hide audit table for Lookback.
+                && !/^(LBHIGHLOW|LBFLOATPUT|LBFLOATCALL)/.test(contract.shortcode)) {
                 const contract_ends = createAuditTable('Ends');
                 parseAuditResponse(contract_ends.table, contract.audit_details.contract_end).then(() => {
                     if (contract.audit_details.contract_end) {
