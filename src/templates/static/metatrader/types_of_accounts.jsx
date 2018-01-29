@@ -51,7 +51,7 @@ const TypesOfAccounts = () => (
             text={it.L('The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices, futures and cryptocurrencies.')}
         />
         <Box
-            image='volatility'
+            image='volatility_indices'
             title={it.L('Volatility Indices')}
             text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
         />
@@ -154,7 +154,7 @@ const TypesOfAccounts = () => (
         <FootNote
             number={13}
             title={it.L('Cryptocurrency trading')}
-            texts={[it.L('Cryptocurrency trading is available 24/7')]}
+            texts={[it.L('Cryptocurrency trading is available 24/7.')]}
         />
     </div>
 );
