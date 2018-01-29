@@ -232,7 +232,7 @@ const Trading = () => (
                                 <div className='price_wrapper row'>
                                     <h4 className='contract_heading'></h4>
                                     <span className='amount_wrapper'>
-                                        <div className="amount_wrapper_div">
+                                        <div className='amount_wrapper_div'>
                                             <div className='stake_wrapper'>
                                                 <span className='stake'></span>
                                                 <span className='contract_amount'></span>
