@@ -52,7 +52,9 @@ const PaymentAgentWithdraw = (() => {
             }
 
             // On pa change
-            $ddl_agents.change(pa_list, initForm);
+            $ddl_agents
+                .off('change')
+                .on('change', pa_list, initForm);
 
             setActiveView(view_ids.form);
 
@@ -87,7 +89,9 @@ const PaymentAgentWithdraw = (() => {
             enable_button       : true,
         });
 
-        $(e.target).change(pa_list, initForm);
+        $(e.target)
+            .off('change')
+            .on('change', pa_list, initForm);
     };
 
     const insertListOption = ($ddl_object, item_text, item_value) => {

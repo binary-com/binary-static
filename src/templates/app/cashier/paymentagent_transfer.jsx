@@ -54,7 +54,7 @@ const PaymentagentTransfer = () => (
 
             <Fieldset legend={it.L('Details')}>
                 <FormRow label={it.L('Transfer to Login ID')} id='client_id' type='text' />
-                <FormRow label={it.L('Amount')} id='amount' type='number' attributes={{ min: 10, max: 2000, step: 'any' }} hint={it.L('Min: 10 Max: 2000')} />
+                <FormRow label={it.L('Amount')} id='amount' type='text' />
             </Fieldset>
 
             <SubmitButton msg_id='form_error' type='submit' text={it.L('Submit')} />
