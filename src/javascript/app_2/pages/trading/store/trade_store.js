@@ -2,6 +2,7 @@ import { observable, action } from 'mobx';
 import DAO from '../data/dao';
 import Client from '../../../../app/base/client';
 import getCurrencies from './logic/currency';
+import getDurationUnits from './logic/duration';
 
 export default class TradeStore {
     @action.bound init() {
@@ -15,6 +16,7 @@ export default class TradeStore {
                 }
             });
         }
+        this.duration_units_list = getDurationUnits();
     }
 
     _getCountry() {
@@ -46,6 +48,7 @@ export default class TradeStore {
     @observable expiry_type   = 'duration';
     @observable duration      = 15;
     @observable duration_unit = 's';
+    @observable duration_units_list = {};
     @observable expiry_date   = null;
     @observable expiry_time   = null;
 
