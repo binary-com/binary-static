@@ -283,7 +283,7 @@ const PersonalDetails = (() => {
             } else {
                 $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
                 const $residence = $('#residence');
-                $options_with_disabled.prepend($('<option/>', { text: localize('Please select a value'), value: '' }));
+                $options_with_disabled.prepend($('<option/>', { text: localize('Please select a country'), value: '' }));
                 $residence.html($options_with_disabled.html());
                 initFormManager();
             }

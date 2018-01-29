@@ -186,6 +186,7 @@ const texts = [
     'Your settings have been updated successfully.',
     'Female',
     'Male',
+    'Please select a country',
 
     // home and virtual account opening page
     'verification token',
