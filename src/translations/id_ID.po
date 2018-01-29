@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-24 20:11-0500\n"
+"PO-Revision-Date: 2018-01-29 03:00-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: id\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: id_ID\n"
+
+msgid "8"
+msgstr ""
 
 msgid "404"
 msgstr "404"
@@ -487,10 +490,10 @@ msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Semua percakapan direkam untuk pelatihan dan pemantauan"
 
 msgid "*Lot size volume = 1.0."
-msgstr ""
+msgstr "*Volume ukuran lot = 1.0."
 
 msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr ""
+msgstr "*Angka angka berikut bersifat indikatif, silahkan verifikasi pada platform trading MT5 kami."
 
 msgid "0-1 year"
 msgstr "0-1 tahun"
@@ -516,6 +519,9 @@ msgstr "1-3 tahun"
 msgid "1. Proof of identity"
 msgstr "1. Bukti identitas"
 
+msgid "10 lots"
+msgstr ""
+
 msgid "10-30 million JPY"
 msgstr "10-30 juta JPY"
 
@@ -534,11 +540,17 @@ msgstr "Harga 2-arah"
 msgid "2. Proof of address"
 msgstr "2. Bukti alamat"
 
+msgid "24/7"
+msgstr ""
+
 msgid "3-5 million JPY"
 msgstr "3-5 juta JPY"
 
 msgid "3-5 years"
 msgstr "3-5 tahun"
+
+msgid "30 lots"
+msgstr ""
 
 msgid "30-50 million JPY"
 msgstr "30-50 juta JPY"
@@ -555,6 +567,9 @@ msgstr "40 transaksi atau lebih pada 12 bulan terakhir"
 msgid "5-10 million JPY"
 msgstr "5-10 juta JPY"
 
+msgid "50 lots"
+msgstr ""
+
 msgid "50%"
 msgstr "50%"
 
@@ -567,6 +582,9 @@ msgstr "6 bulan hingga 1 tahun"
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 transaksi pada 12 bulan terakhir"
 
+msgid "60+"
+msgstr ""
+
 msgid "7-day limit on losses"
 msgstr "Batas 7-hari pada kerugian"
 
@@ -575,6 +593,9 @@ msgstr "Batas 7-hari total pembelian kontrak"
 
 msgid "75%"
 msgstr "75%"
+
+msgid "80+"
+msgstr ""
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Kembali ke Deskripsi Pekerjaan"
@@ -820,7 +841,7 @@ msgid "Access Denied"
 msgstr "Akses Ditolak"
 
 msgid "Access MT5 dashboard"
-msgstr ""
+msgstr "Akses dashboard MT5"
 
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "Akses berbagai fasilitas yang tersedia untuk trading pada MT5, termasuk Expert Advisor (EA), berbagai chart dan jenis order"
@@ -834,11 +855,11 @@ msgstr "Akses berbagai aset likuiditas dari institusi teratas."
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "Akses pasar kapan saja, dimana saja menggunakan aplikasi iOS atau peralatan Android."
 
+msgid "Access to Advanced trading"
+msgstr ""
+
 msgid "Access to Personal Data"
 msgstr "Akses ke Data Pribadi"
-
-msgid "Access to STP trading"
-msgstr "Akses ke trading STP"
 
 msgid "Access to electronic versions of these materials is being made available by Binary Group Ltd. (“Company”) in good faith and for information purposes only. It does not constitute an offer of, or an invitation to purchase, the tokens or any securities.  Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the tokens or any other securities. Further, it does not constitute a recommendation by the Company or any other party to sell or buy tokens or any other securities."
 msgstr "Akses ke dalam versi elektronik dari materi ini disediakan oleh Binary Group Ltd. (\"Perusahaan\") dengan itikad baik dan untuk tujuan informasi saja. Hal ini bukan merupakan penawaran, atau undangan untuk membeli, token atau sekuritas apa pun. Membuat pengumuman pers dan dokumen lainnya yang tersedia dalam format elektronik bukan merupakan, atau tidak dianggap sebagai, atau merupakan bagian dari, suatu penawaran untuk menjual atau permintaan dari suatu penawaran untuk membeli atau menangani token atau sekuritas lainnya. Selanjutnya, hal ini juga bukan merupakan rekomendasi dari Perusahaan atau pihak lain untuk menjual atau membeli token atau sekuritas lainnya."
@@ -898,7 +919,7 @@ msgid "Account balance: "
 msgstr "Saldo akun Anda: "
 
 msgid "Account comparison*"
-msgstr ""
+msgstr "Perbandingan akun*"
 
 msgid "Account currency"
 msgstr "Mata uang akun"
@@ -990,6 +1011,15 @@ msgstr "Eksekutif Administrasi"
 msgid "Administrator"
 msgstr "Administrator"
 
+msgid "Advanced"
+msgstr ""
+
+msgid "Advanced Account"
+msgstr ""
+
+msgid "Advanced account: 1:100"
+msgstr ""
+
 msgid "Advanced binary options trading interface"
 msgstr "Tampilan trading opsi binary tingkat lanjut"
 
@@ -997,7 +1027,7 @@ msgid "Advanced knowledge of software design principles"
 msgstr "Pengetahuan lebih maju mengenai prinsip-prinsip desain perangkat lunak"
 
 msgid "Advanced multi-asset trading platform"
-msgstr ""
+msgstr "Platform trading multi-asset tingkat lanjut"
 
 msgid "Advanced trading app for web and mobile"
 msgstr "Applikasi trading tingkat lanjut untuk web dan mobile"
@@ -1510,22 +1540,22 @@ msgid "Australia"
 msgstr "Australia"
 
 msgid "Australian Dollar vs Canadian Dollar"
-msgstr ""
+msgstr "Dolar Australia vs Dolar Kanada"
 
 msgid "Australian Dollar vs Japanese Yen"
-msgstr ""
+msgstr "Dolar Australia vs Yen Jepang"
 
 msgid "Australian Dollar vs New Zealand Dollar"
-msgstr ""
+msgstr "Dolar Australia vs Dolar Selandia Baru"
 
 msgid "Australian Dollar vs Singapore Dollar"
-msgstr ""
+msgstr "Dolar Australia vs Dolar Singapura"
 
 msgid "Australian Dollar vs Swiss Franc"
-msgstr ""
+msgstr "Dolar Australia vs Franc Swiss"
 
 msgid "Australian Dollar vs US Dollar"
-msgstr ""
+msgstr "Dolar Australia vs Dolar AS"
 
 msgid "Authenticate"
 msgstr "Pembuktian"
@@ -1693,7 +1723,7 @@ msgid "Best execution is the requirement to take all sufficient steps to obtain,
 msgstr "Eksekusi terbaik merupakan syarat untuk mengambil semua langkah dalam mengeksekusi order, mencari hasil terbaik mengenai harga, biaya, kecepatan, kemungkinan eksekusi dan penyelesaian, ukuran, sifat atau pertimbangan lain yang relevan (selanjutnya disebut sebagai \"faktor eksekusi\") untuk mengeksekusi order."
 
 msgid "Best of all, there is no minimum deposit requirement."
-msgstr ""
+msgstr "Yang paling baik, tidak ada persyaratan minimum deposit."
 
 msgid "BetOnMarkets goes live"
 msgstr "BetOnMarkets ditayangkan"
@@ -1915,10 +1945,10 @@ msgid "Bitcoin Cash"
 msgstr "Bitcoin Cash"
 
 msgid "Bitcoin Cash vs US Dollar"
-msgstr ""
+msgstr "Bitcoin vs Dolar AS"
 
 msgid "Bitcoin vs US Dollar"
-msgstr ""
+msgstr "Bitcoin vs Dolar AS"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Teknologi Blockchain - Semua mata uang kripto menggunakan variasi teknologi blockchain (semacam buku besar) untuk mencetak catatan setiap transaksi. "
@@ -2092,10 +2122,10 @@ msgid "Canada"
 msgstr "Kanada"
 
 msgid "Canadian Dollar vs Japanese Yen"
-msgstr ""
+msgstr "Dolar Kanada vs Yen Jepang"
 
 msgid "Canadian Dollar vs Swiss Franc"
-msgstr ""
+msgstr "Dolar Kanada vs Franc Swiss"
 
 msgid "Cancel"
 msgstr "Batal"
@@ -2641,10 +2671,10 @@ msgid "Contracts bought"
 msgstr "Kontrak dibeli"
 
 msgid "Contracts for Difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them."
-msgstr ""
+msgstr "Contract for Difference (CFDs) adalah derivatif keuangan yang memungkinkan Anda untuk bertrading pada pergerakan aset dasar tanpa perlu memiliki aset tersebut."
 
 msgid "Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At Binary.com, we offer popular cash indices, cryptocurrencies, as well as proprietary Volatility Indices that simulate market movement."
-msgstr ""
+msgstr "Contract for difference (CFD) memungkinkan Anda untuk berspekulasi pada sejumlah pasar, termasuk indeks, saham, dan komoditas. Di Binary.com, kami menawarkan indeks kas populer, mata uang crypto, serta Indeks Volatilitas yang mensimulasikan pergerakan pasar."
 
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "Kontrak tidak dapat berakhir pada akhir pekan, maka tanggal berakhir kontrak diundur kepada hari Senin berikutnya jika tanggal kontrak berakhir pada hari Sabtu atau Minggu."
@@ -2796,6 +2826,12 @@ msgstr "Kebijakan margin cryptocurrency"
 msgid "Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin."
 msgstr "Pasangan mata uang kripto seperti Bitcoin, Ethereum, dan Litecoin."
 
+msgid "Cryptocurrency trading"
+msgstr ""
+
+msgid "Cryptocurrency trading is available 24/7."
+msgstr ""
+
 msgid "Currencies"
 msgstr "Mata uang"
 
@@ -2884,7 +2920,7 @@ msgid "Daily turnover limit"
 msgstr "Batasan pembelian kontrak harian"
 
 msgid "Dash vs US Dollar"
-msgstr ""
+msgstr "Dash vs Dolar AS"
 
 msgid "Data Feed"
 msgstr "Layanan Data"
@@ -2946,14 +2982,17 @@ msgstr "Permintaan - Didorong oleh aplikasi komersil dan industri, termasuk prod
 msgid "Demo"
 msgstr "Demo"
 
-msgid "Demo STP"
-msgstr "STP Demo"
+msgid "Demo Accounts"
+msgstr ""
+
+msgid "Demo Advanced"
+msgstr ""
 
 msgid "Demo Standard"
 msgstr "Standar Demo"
 
 msgid "Demo Volatility Indices"
-msgstr ""
+msgstr "Demo Indeks Volatilitas"
 
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "Menunjukkan kemampuan berpikir/bertindak cepat dan berbagai tugas yang diperlukan untuk melaksanakan kampanye yang efektif"
@@ -3517,49 +3556,49 @@ msgid "Ether Classic"
 msgstr "Ether Classic"
 
 msgid "Ethereum Classic vs US Dollar"
-msgstr ""
+msgstr "Ethereum Classic vs Dolar AS"
 
 msgid "Ethereum vs US Dollar"
-msgstr ""
+msgstr "Ethereum vs Dolar AS"
 
 msgid "Ethics Code"
 msgstr "Kode etik"
 
 msgid "Euro vs Australian Dollar"
-msgstr ""
+msgstr "Euro vs Dolar Australia"
 
 msgid "Euro vs Canadian Dollar"
-msgstr ""
+msgstr "Euro vs Dolar Kanada"
 
 msgid "Euro vs Great Britain Pound"
-msgstr ""
+msgstr "Euro vs Pound Inggris"
 
 msgid "Euro vs Japanese Yen"
-msgstr ""
+msgstr "Euro vs Yen Jepang"
 
 msgid "Euro vs New Zealand Dollar"
-msgstr ""
+msgstr "Euro vs Dolar Selandia Baru"
 
 msgid "Euro vs Norwegian Krone"
-msgstr ""
+msgstr "Euro vs Krone Norwegia"
 
 msgid "Euro vs Polish Zloty"
-msgstr ""
+msgstr "Euro vs Zloty Polandia"
 
 msgid "Euro vs Singapore Dollar"
-msgstr ""
+msgstr "Euro vs Dolar Singapura"
 
 msgid "Euro vs Swedish Krona"
-msgstr ""
+msgstr "Euro vs Krona Swedia"
 
 msgid "Euro vs Swiss Franc"
-msgstr ""
+msgstr "Euro vs Franc Swiss"
 
 msgid "Euro vs Turkish Lira"
-msgstr ""
+msgstr "Euro vs Lira Turki"
 
 msgid "Euro vs US Dollar"
-msgstr ""
+msgstr "Euro vs Dolar AS"
 
 msgid "Eurobasket Wolves"
 msgstr "Eurobasket Wolves"
@@ -3868,7 +3907,7 @@ msgid "Financial asset"
 msgstr "Aset keuangan"
 
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
-msgstr ""
+msgstr "Derivatif finansial yang memungkinkan Anda bertrading pada pergerakan aset dasar."
 
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "Cari tahu lebih lanjut mengenai biaya dan rincian dari setiap aset CFD yang kami tawarkan."
@@ -3964,7 +4003,7 @@ msgid "For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and
 msgstr "Sebagai contoh, jika Anda membeli satu lot pasangan XAU/USD pada leverage 300:1 dan harga pasar USD 1.250,15, marjin yang dibutuhkan untuk membeli satu lot tersebut dapat dihitung sebagai berikut:"
 
 msgid "For example, if you see that the EUR/USD has an ask price of 1.05382, you'll sell USD 1.05382 (quote currency) for every EUR 1 (base currency) you buy."
-msgstr ""
+msgstr "Sebagai contoh, jika Anda melihat bahwa EUR/USD memiliki harga ask 1.05382, Anda menjual USD 1.05382 (mata uang kuotasi) untuk setiap 1 EUR (mata uang dasar) yang Anda beli."
 
 msgid "For example, if you wanted to buy one volume of the BTC/EUR cryptocurrency pair at a price of USD 4831.400 and at a margin rate of 10%, the margin that you need to purchase one lof of BTC/EUR will be calculated as follows:"
 msgstr "Sebagai contoh, jika Anda ingin membeli satu volume pasangan mata uang kripto BTC/EUR pada harga USD 4831,400 dan pada tingkat marjin 10%, marjin yang Anda perlukan untuk membeli satu lot BTC/EUR akan dihitung sebagai berikut:"
@@ -3997,7 +4036,7 @@ msgid "For payments-related queries:"
 msgstr "Untuk bantuan pembayaran:"
 
 msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr ""
+msgstr "Untuk posisi hedging sempurna, tidak ada margin yang akan dikenakan. Namun, swap dan biaya lain yang berlaku dapat menyebabkan Ekuitas Akun Anda menjadi negatif. Dalam hal tersebut, perusahaan berhak menutup posisi nilai hedging Anda untuk melindungi Ekuitas Akun Anda dari penurunan lebih lanjut."
 
 msgid "For the avoidance of doubt (and notwithstanding anything to the contrary), the material you may be provided with is not an offer for tokens; it is an invitation to treat.  Tokens will may only be offered by Binary Group Ltd. (the “Company”) pursuant to an auction in the manner more particularly described in the ‘token auction process’ section of the material."
 msgstr "Untuk menghindari keraguan (dan terlepas dari hal yang sebaliknya), materi yang disediakan untuk Anda adalah bukan merupakan penawaran token; materi ini merupakan undangan untuk mengatasi. Token hanya dapat ditawarkan oleh Binary Group Ltd. (“Perusahaan”)  sesuai dengan pelelangan dengan cara yang lebih khusus yang dijelaskan pada bagian 'proses lelang token' pada materi."
@@ -4291,31 +4330,31 @@ msgid "Graphic Designers"
 msgstr "Desainer Grafis"
 
 msgid "Great Britain Pound vs Australian Dollar"
-msgstr ""
+msgstr "Pound Inggris vs Dolar Australia"
 
 msgid "Great Britain Pound vs Canadian Dollar"
-msgstr ""
+msgstr "Pound Inggris vs Dolar Kanada"
 
 msgid "Great Britain Pound vs Japanese Yen"
-msgstr ""
+msgstr "Pound Inggris vs Yen Jepang"
 
 msgid "Great Britain Pound vs New Zealand Dollar"
-msgstr ""
+msgstr "Pound Inggris vs Dolar Selandia Baru"
 
 msgid "Great Britain Pound vs Norwegian Krone"
-msgstr ""
+msgstr "Pound Inggris vs Krone Norwegia"
 
 msgid "Great Britain Pound vs Singapore Dollar"
-msgstr ""
+msgstr "Pound Inggris vs Dolar Singapura"
 
 msgid "Great Britain Pound vs Swedish Krona"
-msgstr ""
+msgstr "Pound Inggris vs Krona Swedia"
 
 msgid "Great Britain Pound vs Swiss Franc"
-msgstr ""
+msgstr "Pound Inggris vs Franc Swiss"
 
 msgid "Great Britain Pound vs US Dollar"
-msgstr ""
+msgstr "Pound Inggris vs Dolar AS"
 
 msgid "Great pay-outs. Earn up to 35%"
 msgstr "Pendapatan yang baik. Komisi hingga 35%"
@@ -4411,7 +4450,7 @@ msgid "Hone your security testing skills."
 msgstr "Asah keterampilan menguji Anda."
 
 msgid "Hong Kong Dollar vs Japanese Yen"
-msgstr ""
+msgstr "Dolar Hong Kong vs Yen Jepang"
 
 msgid "Hour"
 msgstr "Jam"
@@ -4723,7 +4762,7 @@ msgid "If the Margin Level for your Real Account reaches or falls below the Stop
 msgstr "Jika Margin Level untuk Akun Riil Anda mencapai atau jatuh di bawah Stop Out Level, maka hal ini akan diklasifikasikan sebagai Wanprestasi. Dalam keadaan seperti itu, Posisi Berjalan secara otomatis akan ditutup dengan urutan sebagai berikut: (i) server menganalisa Order klien yang tidak di bawah eksekusi pada saat ini; (ii) server menghapus Order dengan Margin terbesar; (iii) jika Margin Level Anda masih di bawah Stop Out Level, order berikutnya akan dihapus (perintah tanpa persyaratan margin tidak dihapus); (iv) jika Margin Level Anda masih di bawah Stop Out Level, server menutup posisi dengan kerugian terbesar; (V) Posisi Berjalan ditutup hingga Margin Level Anda menjadi lebih tinggi daripada Level Stop Out."
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
-msgstr ""
+msgstr "Jika harga ask adalah 1.05229, Anda membeli USD 1.05229 untuk setiap EUR 1 yang Anda jual."
 
 msgid "If the maximum number of tokens (10 million) offered in the token sale are issued, then the number of shares issued after the ICO will total 220,257,430 shares."
 msgstr "Jika jumlah maksimal token (10 juta) berhasil terjual, maka jumlah saham yang dikeluarkan setelah ICO adalah berjumlah 220.257.430 saham."
@@ -4813,7 +4852,7 @@ msgid "If you score well on the SATI, we'll send you a talent test. Do well on t
 msgstr "Jika hasil SATI Anda bagus, kami akan mengirimkan uji bakat. Lakukan uji bakat dengan baik dan kami akan mengundang Anda untuk wawancara dengan anggota tim rekrutmen kami."
 
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
-msgstr ""
+msgstr "Jika Anda melihat EUR/USD memiliki harga bid 1,05229, Anda akan menjual USD 1,05229 untuk setiap 1 EUR yang Anda jual."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Pilih \"Asian Turun\", untuk memperoleh hasil jika <strong>tik terakhir</strong> <strong>lebih rendah</strong> dari <strong>jumlah rata rata</strong> tik."
@@ -5227,7 +5266,7 @@ msgid "Intellectual property"
 msgstr "Hak milik intelektual"
 
 msgid "Interactive webinars"
-msgstr ""
+msgstr "Webinar Interaktif"
 
 msgid "Interested in our MAM tool for MetaTrader 5? Contact us at %1 for more info."
 msgstr "Tertarik dengan fasilitas MAM pada MetaTrader 5? Hubungi kami di %1 untuk info lebih lanjut."
@@ -6205,7 +6244,7 @@ msgid "Litecoin"
 msgstr "Litecoin"
 
 msgid "Litecoin vs US Dollar"
-msgstr ""
+msgstr "Litecoin vs Dolar AS"
 
 msgid "Lock Cashier"
 msgstr "Kunci Kasir"
@@ -6265,7 +6304,7 @@ msgid "Lot Size (Volume = 1.0)"
 msgstr "Ukuran Lot (Volume = 1.0)"
 
 msgid "Lot size*"
-msgstr ""
+msgstr "Ukuran lot*"
 
 msgid "Lot units"
 msgstr "Unit lot"
@@ -6316,7 +6355,7 @@ msgid "MT5 Financial"
 msgstr "MT5 Finansial"
 
 msgid "MT5 Volatility Indices"
-msgstr ""
+msgstr "Indeks Volatilitas MT5"
 
 msgid "MT5 real-money account for Forex and CFDs."
 msgstr "MT5 akun uang-riil untuk Forex dan CFD."
@@ -6335,9 +6374,6 @@ msgstr "Kata sandi utama"
 
 msgid "Main password (trading access)"
 msgstr "Kata sandi utama (akses trading)"
-
-msgid "Main. Volume Increment"
-msgstr "Utama. Kenaikan Volume"
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "Mempertahankan parameter sistem harga yang akurat"
@@ -6519,9 +6555,6 @@ msgstr "Maks"
 msgid "Maximum Leverage"
 msgstr "Leverage Maksimum"
 
-msgid "Maximum Volume (Trade Size)"
-msgstr "Maksimum Volume (Ukuran Trading)"
-
 msgid "Maximum account cash balance"
 msgstr "Maksimum saldo tunai"
 
@@ -6569,6 +6602,9 @@ msgstr "Jumlah maksimum kontrak yang dapat ditransaksikan pada waktu yang sama."
 
 msgid "Maximum number of open positions"
 msgstr "Maksimal jumlah posisi terbuka"
+
+msgid "Maximum ticket size"
+msgstr ""
 
 msgid "Maximum upload size for each file is 3MB"
 msgstr "Ukuran upload maksimal untuk setiap file adalah 3MB"
@@ -6642,6 +6678,9 @@ msgstr "Min-Mak Deposit"
 msgid "Min-Max Withdrawal"
 msgstr "Min-Mak Penarikan"
 
+msgid "Min. Volume Increment"
+msgstr "Kenaikan Volume Min."
+
 msgid "Min. Volume<br>(Lot Size)"
 msgstr "Volume min. <br>(Ukuran Lot)"
 
@@ -6662,6 +6701,9 @@ msgstr "Kenaikan Minimal (Volume)"
 
 msgid "Minimum bid"
 msgstr "Bid minimum"
+
+msgid "Minimum deposit"
+msgstr ""
 
 msgid "Minimum eight characters. Must contain numbers, and mix of upper and lower case letters."
 msgstr "Minimal delapan karakter. Harus berisi angka, dan campuran huruf besar dan kecil."
@@ -6706,7 +6748,7 @@ msgid "Monday"
 msgstr "Senin"
 
 msgid "Monero vs US Dollar"
-msgstr ""
+msgstr "Monero vs Dolar AS"
 
 msgid "Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients."
 msgstr "Dana yang dikumpulkan dari Klien tidak diinvestasikan dalam sekuritas, bursa berjangka, mata uang, turunan atau investasi lainnya, atas nama Klien."
@@ -6750,8 +6792,11 @@ msgstr "Lebih efisien"
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Lebih khususnya, ketika kami bertrading Opsi Binary dengan Anda (untuk setiap \"Kontrak\"), kami memiliki kewajiban untuk menyediakan 'eksekusi terbaik'. Eksekusi terbaik berarti kami harus mengambil langkah yang wajar untuk mendapatkan hasil terbaik ketika menjalankan order Anda. Dokumen ini memberikan ringkasan kebijakan eksekusi terbaik."
 
-msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
+msgid "Most brokers require minimum deposit. %1 doesn't require any minimum deposit."
 msgstr ""
+
+msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
+msgstr "Kebanyakan broker biasanya mengenakan komisi untuk tiap trade yang Anda tempatkan. %1 saat ini tidak mengenakan biaya komisi apapun di semua jenis akun, kecuali mata uang crypto."
 
 msgid "Mother's maiden name"
 msgstr "Nama Ibu"
@@ -6856,7 +6901,7 @@ msgid "Never Used"
 msgstr "Tidak pernah dipakai"
 
 msgid "New Account"
-msgstr ""
+msgstr "Akun Baru"
 
 msgid "New Password"
 msgstr "Kata Sandi Baru"
@@ -6865,19 +6910,19 @@ msgid "New Year's Day"
 msgstr "Tahun Baru"
 
 msgid "New Zealand Dollar vs Canadian Dollar"
-msgstr ""
+msgstr "Dolar Selandia Baru vs Dolar Kanada"
 
 msgid "New Zealand Dollar vs Japanese Yen"
-msgstr ""
+msgstr "Dolar Selandia Baru vs Yen Jepang"
 
 msgid "New Zealand Dollar vs Singapore Dollar"
-msgstr ""
+msgstr "Dolar Selandia Baru vs Dolar Singapura"
 
 msgid "New Zealand Dollar vs Swiss Franc"
-msgstr ""
+msgstr "Dolar Selandia Baru vs Franc Swiss"
 
 msgid "New Zealand Dollar vs US Dollar"
-msgstr ""
+msgstr "Dolar Selandia Baru vs Dolar AS"
 
 msgid "New features"
 msgstr "Fitur baru"
@@ -7058,6 +7103,9 @@ msgstr "Sekarang"
 
 msgid "Number of Tokens:"
 msgstr "Jumlah Token:"
+
+msgid "Number of assets"
+msgstr ""
 
 msgid "Number of employees and contractors"
 msgstr "Jumlah karyawan dan kontraktor"
@@ -7302,8 +7350,8 @@ msgstr "Eksekusi order"
 msgid "Order execution typically comes in two varieties: market execution and instant execution. With market execution, you will place an order at the broker’s price. You agree on the price in advance. There are no requotes with market execution."
 msgstr "Eksekusi order biasanya datang dalam dua jenis: eksekusi pasar dan eksekusi instan. Dengan eksekusi pasar, Anda akan melakukan order dengan harga broker. Anda setuju dengan harga di muka. Tidak ada requote dengan eksekusi pasar."
 
-msgid "Organic growth is driving demand, especially in the Far East –– the world’s leading market for binary options."
-msgstr "Pertumbuhan organik mendorong permintaan, terutama di Timur Jauh –– pasar utama dunia bagi opsi binary."
+msgid "Organic growth is driving demand, especially in the Far East – the world’s leading market for binary options."
+msgstr ""
 
 msgid "Other"
 msgstr "Lainnya"
@@ -7329,8 +7377,8 @@ msgstr "Perusahaan Kami"
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "Program Afiliasi Internasional yang kami miliki telah memberikan pembayaran tepat waktu setiap saat sejak diluncurkan resmi pada bulan Maret, 2004. Di Jepang, komisi affiliasi akan dikreditkan kedalam akun affiliasi Anda dalam tempo tiga puluh hari setelah penutupan periode trading dimana referal Anda telah memenuhi syarat."
 
-msgid "Our MetaTrader 5 STP account provides you with the tightest spreads and connects you directly to the market."
-msgstr "Akun MetaTrader 5 STP menyediakan Anda spread yang paling tipis dan menghubungkan Anda langsung ke dalam pasar."
+msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
+msgstr ""
 
 msgid "Our MetaTrader 5 Standard account is suitable for both new and experienced traders."
 msgstr "Akun MetaTrader 5 standar kami sangat cocok untuk trader baru dan berpengalaman."
@@ -7345,7 +7393,7 @@ msgid "Our Prices are determined by reference to the price of the underlying ins
 msgstr "Harga Kami ditentukan dengan mengacu pada harga instrumen dasar yang dikutip dari bursa eksternal atau fasilitas dealing yang kami pilih sendiri. Sistem infrastruktur IT dan harga aggregator yang kami miliki memfasilitasi penerimaan kutipan harga dari broker utama terpilih yang berperan sebagai penyedia likuiditas untuk kami dan mengirimkan kutipan, dengan mengacu kepada patokan pasar yang relevan, untuk Anda. Anda mengetahui bahwa Harga kami mungkin sedikit berbeda dengan harga bid dan offer yang disediakan pada bursa atau fasilitas dealing eksternal dan kami tidak bertanggung jawab atas kerugian yang timbul dari perbedaan tersebut. Klausul ini tidak berlaku pada Indeks Volatilitas."
 
 msgid "Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces."
-msgstr ""
+msgstr "Akun Indeks Volatilitas kami memberi Anda untuk bertrading CFD pada Indeks Volatilitas -- aset sintetis kami mensimulasikan kekuatan pasar."
 
 msgid "Our back-end code is mainly in Perl, and our open-source contributions may be found on %1CPAN%2. The corresponding source code can be found in our %3Github repositories%2 that start with the prefix \"perl-\". We welcome contributions to these repositories, notably improved documentation and test coverage."
 msgstr "Kode back-end kami pada umumnya dalam Perl, dan kontribusi open-source kami dapat ditemukan di %1CPAN%2. Kode sumber yang sesuai dapat ditemukan pada %3repositori Github%2 yang dimulai dengan awalan \"perl-\". Kami menyambut baik kontribusi pada repositori ini, terutama dokumentasi dan cakupan uji yang lebih baik."
@@ -7672,7 +7720,7 @@ msgid "Please %1deposit%2 to your account."
 msgstr "Silahkan %1deposit%2 kedalam akun Anda."
 
 msgid "Please %1log in%2 or %3sign up%2 to view this page."
-msgstr ""
+msgstr "Silahkan %1log in%2 atau %3sign up%2 untuk melihat halaman ini."
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Silahkan <a href=\"%1\">setujui Syarat dan Ketentuan terbaru</a>."
@@ -7744,7 +7792,7 @@ msgid "Please note that due to their over-the-counter nature, the prices of the 
 msgstr "Harap dicatat bahwa karena sifat over-the-counter, harga dari Indeks dan saham OTC akan sedikit berbeda dari harga indeks dan saham pada bursa pusat."
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1ontract specifications%2."
-msgstr ""
+msgstr "Harap dicatat bahwa satu lot setara dengan 100 unit, berdasarkan %1spesifikasi kontrak%2 kami."
 
 msgid "Please note that one lot is equivalent to 100 units, based on our contract specifications. Your profit or loss will be calculated as follows:"
 msgstr "Harap dicatat bawah satu lot setara dengan 100 unit, berdasarkan spesifikasi kontak kami. Laba atau rugi Anda akan dihitung sebagai berikut:"
@@ -8253,20 +8301,23 @@ msgstr "Akun Riil"
 msgid "Real Account &mdash; Your real money account opened with %1's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
 msgstr "Akun Riil &mdash; Akun Uang Riil Anda pada Platform Trading MT5 %1 dilisensi oleh MetaQuotes Software Corporation."
 
+msgid "Real Advanced"
+msgstr ""
+
 msgid "Real Money Account Opening"
 msgstr "Pendaftaran Akun Uang Riil"
-
-msgid "Real STP"
-msgstr "STP Riil"
 
 msgid "Real Standard"
 msgstr "Standar Riil"
 
 msgid "Real Volatility Indices"
+msgstr "Indeks Volatilitas Riil"
+
+msgid "Real-Money Accounts"
 msgstr ""
 
 msgid "Real-money accounts with your choice of fiat and crypto currency."
-msgstr ""
+msgstr "Akun mata uang-riil dengan pilihan mata uang fiat dan crypto Anda."
 
 msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "Harga tepat waktu, menggunakan nilai standar berdasarkan pasar interbank."
@@ -8306,6 +8357,12 @@ msgstr "Ref."
 
 msgid "Reference ID"
 msgstr "ID referensi"
+
+msgid "Refers to the maximum volume or lots per order."
+msgstr ""
+
+msgid "Refers to the total number of available symbols for your account."
+msgstr ""
 
 msgid "Refund Bid"
 msgstr "Pengembalian Bid"
@@ -8488,7 +8545,7 @@ msgid "Rights on Default:"
 msgstr "Hak pada Kelalaian:"
 
 msgid "Ripple vs US Dollar"
-msgstr ""
+msgstr "Ripple vs Dolar AS"
 
 msgid "Rise/Fall"
 msgstr "Rise/Fall"
@@ -8540,15 +8597,6 @@ msgstr "Membuat laporan pembayaran harian dan laporan dugaan penipuan"
 
 msgid "Russia"
 msgstr "Rusia"
-
-msgid "STP"
-msgstr "STP"
-
-msgid "STP Account"
-msgstr "Akun STP"
-
-msgid "STP account: 1:100"
-msgstr "Akun STP 1:100"
 
 msgid "Sa"
 msgstr "Sab"
@@ -9235,7 +9283,7 @@ msgid "Suspending your Real Account and refusing to execute any Orders to enter 
 msgstr "Menangguhkan Akun Riil Anda dan menolak untuk mengeksekusi setiap Order lebih lanjut dengan Anda. Sementara Akun Riil Anda dibatalkan, Anda dapat menutup posisi kontrak yang sedang berjalan, namun Anda tidak akan dapat menempatkan Order baru."
 
 msgid "Swiss Franc vs Japanese Yen"
-msgstr ""
+msgstr "Franc Swiss vs Yen Jepang"
 
 msgid "Symbol"
 msgstr "Simbol"
@@ -9411,6 +9459,9 @@ msgstr "<strong>Waktu mulai</strong> adalah waktu ketika kontrak diproses oleh s
 
 msgid "The AUD Index is a weighted Index, measuring the Australian Dollar's value against a basket of 5 global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%."
 msgstr "Indeks AUD adalah Indeks yang ditimbang dengan mengukur nilai Dolar Australia melawan 5 mata uang global (USD, EUR, GBP, JPY, CAD), masing-masing ditimbang dengan 20%."
+
+msgid "The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices, futures and cryptocurrencies."
+msgstr ""
 
 msgid "The Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. Your commission will be credited to your affiliate account within fifteen days after the close of a calendar month."
 msgstr "Program Afiliasi telah mencatatkan pembayaran yang selalu tepat waktu, setiap saat, sejak dilancarkan pada bulan Maret, 2001. Komisi Anda akan dikreditkan kedalam akun affiliasi dalam waktu lima belas hari setelah penutupan bulan kalender."
@@ -9667,9 +9718,6 @@ msgstr "Kebijakan ini dilengkapi dengan Lampiran A yang memberikan rincian lebih
 msgid "The Program"
 msgstr "Program"
 
-msgid "The STP account provides you with the tightest spreads and connects you directly to the market. STP stands for 'Straight Through Processing' –– meaning your orders are sent directly to our liquidity providers."
-msgstr "Akun STP memberi Anda spread yang paling ketat dan menghubungkan Anda langsung ke pasar. STP adalah singkatan dari 'Straight Through Processing' - artinya pesanan Anda dikirim langsung ke penyedia likuiditas kami."
-
 msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr "Pusat Penampungan Komunitas Belajar 3 adalah komunitas sekolah untuk anak-anak pengungsi Myanmar yang menunggu diadopsi oleh keluarga dari negara ketiga dunia. Sekolah bertujuan untuk menyediakan anak-anak –yang berada pada usia paling rentan – berupa pendidikan sebagai bekal mereka di masa depan."
 
@@ -9697,7 +9745,7 @@ msgstr "Indeks USD adalah Indeks yang ditimbang dengan mengukur nilai Dolar mela
 msgid "The Volatility 100 Index is twice as volatile as the Volatility 50 Index, and four times as volatile as the Volatility 25 Index."
 msgstr "Indeks Volatilitas 100 memiliki volatilitas ganda dibandingkan dengan Indeks Volatilitas 50, dan empat kali lipat volatilitas berbanding Indeks Volatilitas 25."
 
-msgid "The Volatility Indices account allows you to trade CFDs on Volatility Indices –– our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
+msgid "The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
 msgstr ""
 
 msgid "The ability to acquire knowledge of compliance matters in a multitude of international jurisdictions"
@@ -9740,7 +9788,7 @@ msgid "The application shall be reviewed and assessed by our compliance and mark
 msgstr "Permohonan harus ditinjau dan dinilai oleh departemen compliance dan marketing kami. Perlu dicatat bahwa departemen compliance kami mengikuti dan menerapkan Kebijakan Anti Pencucian Uang dan melakukan uji kelayakan sesuai dengan hukum dan peraturan yang berlaku dan harus meminta serta mengumpulkan semua informasi dan dokumentasi yang diperlukan sesuai dengan Bagian H."
 
 msgid "The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
-msgstr ""
+msgstr "Harga ask dari pasangan mata uang mengindikasikan seberapa banyak mata uang kutipan yang diperlukan untuk membeli satu unit mata uang dasar. Ini lebih dikenal sebagai nilai tukar."
 
 msgid "The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids."
 msgstr "Lelang telah berakhir. Berhubung target minimum tidak tercapai, semua investor akan menerima pengembalian dana berdasarkan tawaran mereka."
@@ -9875,7 +9923,7 @@ msgid "The first tick is the first tick after the contract is processed by our s
 msgstr "Tik awal adalah tik pertama setelah kontrak diproses oleh server kami."
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
-msgstr ""
+msgstr "Pasar Foreign Exchange (Forex) adalah pasar yang paling likuid dan paling sering ditradingkan di seluruh dunia, dimana trading senilai trilyunan tiap harinya."
 
 msgid "The full version of our best execution policy is available on request."
 msgstr "Versi lengkap dari kebijakan eksekusi terbaik tersedia berdasarkan permintaan."
@@ -9956,7 +10004,7 @@ msgid "The minimum, incremental and maximum transaction amount;"
 msgstr "Jumlah minimum, tambahan dan maksimal transaksi;"
 
 msgid "The movement of the underlying asset determines your profit or loss – depending on the position that you have taken."
-msgstr ""
+msgstr "Pergerakan aset dasar menentukan profit atau loss Anda – tergantung pada posisi yang Anda ambil."
 
 msgid "The opposite is true if you decide to sell or 'go short' on the US 100 index. This means that your profit will continue to increase as long as the price of the US 100 index keeps falling. However, if the price rises, the losses you incur will also increase."
 msgstr "Kebalikannya adalah benar jika Anda memutuskan untuk menjual atau 'go short' pada indeks US 100. Ini berarti bahwa keuntungan Anda akan terus meningkat selama harga indeks US 100 terus turun. Namun, jika harganya naik, kerugian yang Anda alamai juga akan meningkat."
@@ -10208,7 +10256,7 @@ msgid "These materials may only be received by authorised persons (a person dete
 msgstr "Materi ini hanya dapat diterima oleh orang yang berhak (seseorang yang ditentukan oleh Perusahaan, atas kebijakannya sendiri, yang berhak menerima materi sebagaimana ditentukan oleh undang-undang dan peraturan yang berlaku, misalnya di yurisdiksi EEA, sesuai dengan pengecualian berdasarkan perintah Uni Eropa 2003/71/EC (sebagaimana telah diubah, termasuk dengan direktif 2010/73/EU), yang mencakup, namun tidak terbatas, pembebasan yang berkaitan dengan investor yang memenuhi syarat (\"Orang Yang Berhak\"). Jika Pihak Berhak tersebut ingin mengajukan bid untuk token maka pihak tersebut dapat melakukannya dengan mendaftar sebagai klien Binary.com dan memiliki akun Binary.com dimana Perusahaan akan dapat memverifikasi lebih lanjut kualifikasi sebagai Pihak Berhak. Pihak Berhak yang ingin melakukan pembelian token akan melakukan bidding. Perusahaan akan menyusun dan menilai biddingnya. Perusahaan dapat meminta agar bid tersebut dikonfirmasikan kembali sebelum dianggap sah untuk tujuan bid Perusahaan pada saat pelelangan. Pada lelang tersebut, Perusahaan akan mengajukan penawaran token, tawaran mana yang akan diterima (seperti yang sudah dijelaskan pada proses lelang pada material) dan pertimbangan untuk pembelian token tersebut akan diselesaikan dengan mengkreditkan pada akun Binary.com milik Pihak Berhak, yang membuktikan kontrak penjualan dan pembelian token masing-masing."
 
 msgid "These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr ""
+msgstr "Angka angka berikut bersifat indikatif, silahkan verifikasi pada platform trading MT5 kami."
 
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr "Berpikir bahwa suatu mata uang tertentu akan naik atau turun? Pelajari kapan Anda harus membeli (atau \"go long\") dan kapan harus menjual (atau \"go short\")."
@@ -10466,13 +10514,13 @@ msgid "To learn more, please read our <a href='%1'>CFD contract specifications</
 msgstr "Untuk mempelajari lebih lanjut, silahkan baca <a href='%1'>spesifikasi kontrak CFD</a> kami."
 
 msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr ""
+msgstr "Lebih lanjut, baca %1Kebijakan Margin%2 kami yang menjelaskan lebih lanjut tentang 100% tingkat likuidasi paksa untuk Forex."
 
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
-msgstr ""
+msgstr "Lebih lanjut, baca %1Kebijakan Margin%2 kami yang menjelaskan lebih lanjut tentang persyaratan margin kami."
 
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr ""
+msgstr "Lebih lanjut, baca %1Kebijiakan Marjin%2 yang menjelaskan lebih lanjut mengenai persyaratan marjin kami. Harap dicatat bahwa kami tidak mengenakan biaya swap untuk pasangan mata uang crypto."
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr "Untuk mempelajari lebih lanjut, baca <a href=\"%1\">Kebijakan Margin CFD</a> kami yang menjelaskan lebih lanjut tentang 50% tingkat likuidasi paksa untuk Indeks Volatilitas."
@@ -10484,7 +10532,7 @@ msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that furt
 msgstr "Untuk mempelajari lebih lanjut, baca <a href=\"%1\">Kebijakan Margin Metal</a> kami yang menjelaskan lebih lanjut tentang 100% tingkat likuidasi paksa untuk pasangan logam."
 
 msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr ""
+msgstr "Lebih lanjut, baca %1Kebijakan Margin%2 Metal kami lebih lanjut tentang 100% tingkat likuidasi paksa untuk pasangan metal."
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "Untuk mendaftar Akun Riil, Anda harus memiliki Akun Riil %1 yang sudah melengkapi proses otentikasi. Akun Riil tidak dapat didaftarkan jika Anda belum mendaftar Akun Riil Opsi Binary."
@@ -10616,13 +10664,13 @@ msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryp
 msgstr "Bertrading pasangan Bitcoin, Ethereum, dan Litecoin tanpa memiliki mereka. Pasangan mata uang kripto kami mengkuotasi mata uang kripto seperti Bitcoin terhadap mata uang fiat, seperti Dolar AS."
 
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
-msgstr ""
+msgstr "Trading Forex dan CFD pada platform multi-aset populer kami."
 
 msgid "Trade Forex and CFDs with a powerful platform recognised as the global standard."
-msgstr ""
+msgstr "Trading Forex dan CFD dengan platform kokoh diakui oleh standar global."
 
 msgid "Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools."
-msgstr ""
+msgstr "Trading Forex dan Contracts for Difference (CFD) dengan leverage yang sangat kompetitif. MetaTrader 5 adalah platform multi-aset yang menawarkan kemungkinan trading luar biasa dan alat analisis teknis."
 
 msgid "Trade Now"
 msgstr "Trading Sekarang"
@@ -10718,7 +10766,7 @@ msgid "Trade with leverage"
 msgstr "Bertrading dengan leverage"
 
 msgid "Trade with real funds and access to competitive trading conditions."
-msgstr ""
+msgstr "Bertrading dengan dana riil dan akses kondisi trading yang kompetitif."
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "Bertrading dengan pelopor industri dan pemegang teknologi harga yang dipatenkan"
@@ -10907,43 +10955,43 @@ msgid "URL website (where applicable);"
 msgstr "URL situs;"
 
 msgid "US Dollar vs Canadian Dollar"
-msgstr ""
+msgstr "Dolar AS vs Dolar Kanada"
 
 msgid "US Dollar vs Chinese Renminbi"
-msgstr ""
+msgstr "Dolar AS vs Renminbi Cina"
 
 msgid "US Dollar vs Hong Kong Dollar"
-msgstr ""
+msgstr "Dolar AS vs Dolar Hong Kong"
 
 msgid "US Dollar vs Japanese Yen"
-msgstr ""
+msgstr "Dolar AS vs Yen Jepang"
 
 msgid "US Dollar vs Mexican Peso"
-msgstr ""
+msgstr "Dolar AS vs Peso Meksiko"
 
 msgid "US Dollar vs Norwegian Krone"
-msgstr ""
+msgstr "Dolar AS vs Krone Norwegia"
 
 msgid "US Dollar vs Polish Zloty"
-msgstr ""
+msgstr "Dolar AS vs Zloty Polandia"
 
 msgid "US Dollar vs Russian Ruble"
-msgstr ""
+msgstr "Dolar AS vs Ruble Rusia"
 
 msgid "US Dollar vs Singapore Dollar"
-msgstr ""
+msgstr "Dolar AS vs Dolar Singapura"
 
 msgid "US Dollar vs South African Rand"
-msgstr ""
+msgstr "Dolar AS vs Rand Afrika Selatan"
 
 msgid "US Dollar vs Swedish Krona"
-msgstr ""
+msgstr "Dolar AS vs Krona Swedia"
 
 msgid "US Dollar vs Swiss Franc"
-msgstr ""
+msgstr "Dolar AS vs Franc Swiss"
 
 msgid "US Dollar vs Turkish Lira"
-msgstr ""
+msgstr "Dolar AS vs Lira Turki"
 
 msgid "US Patents"
 msgstr "Hak Paten AS"
@@ -11110,8 +11158,11 @@ msgstr "Tagihan utilitas (listrik, air, gas, broadband dan telpon rumah)"
 msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
 msgstr "Token utilitas adalah token yang memberi Anda akses ke dalam jaringan atau aplikasi terdesentralisasi."
 
-msgid "Variable"
-msgstr "Variabel"
+msgid "Variable from 0.9 pips"
+msgstr ""
+
+msgid "Variable from 1.2 pips"
+msgstr ""
 
 msgid "Variable spreads"
 msgstr "Variabel spread"
@@ -11231,10 +11282,10 @@ msgid "Volatility Indices"
 msgstr "Indeks Volatilitas"
 
 msgid "Volatility Indices Account"
-msgstr ""
+msgstr "Akun Indeks Volatilitas"
 
 msgid "Volatility Indices account: 1:500"
-msgstr ""
+msgstr "Akun Indeks Volatilitas: 1:500"
 
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "Indeks Volatilitas lebih lanjut dikategorikan menjadi dua kelas:"
@@ -11474,7 +11525,7 @@ msgid "We support hundreds of deposit and withdrawal options, including Bitcoin.
 msgstr "Kami mendukung ratusan pilihan deposit dan pencairan, termasuk Bitcoin."
 
 msgid "We support hundreds of deposit and withdrawal options."
-msgstr ""
+msgstr "Kami mendukung ratusan pilihan deposit dan withdrawal."
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
 msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktifitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
@@ -11819,7 +11870,7 @@ msgid "Whilst we act as principal in respect of your orders, we also assess the 
 msgstr "Sementara kami bertindak sebagai pelaku utama pada order Anda, kami juga menilai tempat eksekusi yang kami gunakan dan di mana kami menempatkan ketergantungan signifikan untuk memberikan hasil terbaik dalam mengeksekusi order Anda. Tempat-tempat tersebut biasanya terdiri dari pihak perusahaan penyedia investasi, broker, dan/atau penyedia likuiditas."
 
 msgid "Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level."
-msgstr ""
+msgstr "Sementara kami berusaha untuk menutup Posisi Berjalan Anda jika dan ketika Level Margin Akun Riil mencapai atau jatuh dibawah Level Stop Out, kami tidak menjamin Posisi Berjalan Anda akan ditutup ketika Level Margin Akun Riil Anda mencapai Level Stop Out."
 
 msgid "Whilst we endeavour to open or close the Transaction to which your orders relate at the requested price, acting in accordance with our duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that your order is not filled at the exact intended quoted price when you placed your order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to you) or a negative slippage (less favourable to you)."
 msgstr "Sementara kami berusaha untuk membuka atau menutup Transaksi berdasarkan harga yang diminta pada order Anda, bertindak memberi eksekusi terbaik, ada kalanya, berhubung kenaikan volatilitas atau volume, order mungkin akan dikenakan slippage. Perbedaan antara harga order dan harga eksekusi dan ketika order terpenuhi, hal ini disebut dengan slippage. Hal ini berarti order Anda tidak terpenuhi dengan harga yang diinginkan ketika Anda membeli order. Slippage biasanya terjadi pada periode dimana volatilitas tinggi dan rendah sangat ekstrim berhubung berita fundamental atau periode pada likuiditas tertentu. Silppage dapat menghasilkan positif (lebih mengikuti trend Anda) atau negatif (melawan trend Anda)."
@@ -12260,7 +12311,7 @@ msgid "You have reached the rate limit of requests per second. Please try later.
 msgstr "Anda telah mencapai batas tingkat permintaan per detik. Silakan coba lagi nanti."
 
 msgid "You have reached the withdrawal limit."
-msgstr ""
+msgstr "Anda telah mencapai batas penarikan."
 
 msgid "You have reached your withdrawal limit."
 msgstr "Anda telah mencapai batas pencairan Anda."
@@ -12659,7 +12710,7 @@ msgid "Your withdrawal limit is %1 %2."
 msgstr "Batas penarikan Anda adalah %1 %2."
 
 msgid "Zcash vs US Dollar"
-msgstr ""
+msgstr "Zcash vs Dolar AS"
 
 msgid "a definite or indefinite period during which you wish to exclude yourself from the website."
 msgstr "periode tertentu atau tidak terbatas di mana Anda ingin mengecualikan diri dari situs web."
@@ -14918,7 +14969,7 @@ msgid "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time 
 msgstr "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 
 msgid "{JAPAN ONLY}Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr ""
+msgstr "{JAPAN ONLY}Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
 
 msgid "{JAPAN ONLY}Your funds are kept safe"
 msgstr "{JAPAN ONLY}Your funds are kept safe"
