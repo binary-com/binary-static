@@ -110,7 +110,7 @@ const MetaTraderUI = (() => {
     };
 
     const updateListItem = (acc_type) => {
-        const $acc_item  = $list.find(`[value="${acc_type}"]`);
+        const $acc_item = $list.find(`[value="${acc_type}"]`);
         $acc_item.find('.mt-type').text(accounts_info[acc_type].title.replace(/(demo|real)\s/i, ''));
         if (accounts_info[acc_type].info) {
             $acc_item.find('.mt-login').text(accounts_info[acc_type].info.login);
