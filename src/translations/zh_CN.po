@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-24 20:11-0500\n"
+"PO-Revision-Date: 2018-01-29 02:59-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: zh_CN\n"
+
+msgid "8"
+msgstr ""
 
 msgid "404"
 msgstr "404"
@@ -487,10 +490,10 @@ msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*为了利于培训和监控，所有通话将被录音"
 
 msgid "*Lot size volume = 1.0."
-msgstr ""
+msgstr "*手大小交易量 = 1.0。"
 
 msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr ""
+msgstr "* 这些数字仅供指示用途, 请透过我们的 MT5 交易平台核实。"
 
 msgid "0-1 year"
 msgstr "0-1 年"
@@ -516,6 +519,9 @@ msgstr "1-3 years"
 msgid "1. Proof of identity"
 msgstr "1. 身份证明"
 
+msgid "10 lots"
+msgstr ""
+
 msgid "10-30 million JPY"
 msgstr "10-30 million JPY"
 
@@ -534,11 +540,17 @@ msgstr "双边报价"
 msgid "2. Proof of address"
 msgstr "2. 地址证明"
 
+msgid "24/7"
+msgstr ""
+
 msgid "3-5 million JPY"
 msgstr "3-5 million JPY"
 
 msgid "3-5 years"
 msgstr "3-5 years"
+
+msgid "30 lots"
+msgstr ""
 
 msgid "30-50 million JPY"
 msgstr "30-50 million JPY"
@@ -555,6 +567,9 @@ msgstr "过去12个月内40次交易或以上"
 msgid "5-10 million JPY"
 msgstr "5-10 million JPY"
 
+msgid "50 lots"
+msgstr ""
+
 msgid "50%"
 msgstr "50%"
 
@@ -567,6 +582,9 @@ msgstr "6 months to 1 year"
 msgid "6-10 transactions in the past 12 months"
 msgstr "过去12个月内6-10次交易"
 
+msgid "60+"
+msgstr ""
+
 msgid "7-day limit on losses"
 msgstr "7天期损失限额"
 
@@ -575,6 +593,9 @@ msgstr "7天期交易限额"
 
 msgid "75%"
 msgstr "75%"
+
+msgid "80+"
+msgstr ""
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< 返回工作说明"
@@ -820,7 +841,7 @@ msgid "Access Denied"
 msgstr "访问被拒绝"
 
 msgid "Access MT5 dashboard"
-msgstr ""
+msgstr "访问 MT5 仪表板"
 
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "访问所有可用的工具和功能包括专家顾问 (EAs)、图表和订单类型，以便在MT5交易"
@@ -834,11 +855,11 @@ msgstr "顶级机构提供多种资产的流动性服务。"
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "随时随地在iOS或Android设备上使用原装应用能够程序访问市场。"
 
+msgid "Access to Advanced trading"
+msgstr ""
+
 msgid "Access to Personal Data"
 msgstr "个人数据访问"
-
-msgid "Access to STP trading"
-msgstr "STP 交易访问"
 
 msgid "Access to electronic versions of these materials is being made available by Binary Group Ltd. (“Company”) in good faith and for information purposes only. It does not constitute an offer of, or an invitation to purchase, the tokens or any securities.  Making press announcements and other documents available in electronic format does not constitute, or shall not be deemed to constitute, or form part of, an offer to sell or the solicitation of an offer to buy or otherwise deal in the tokens or any other securities. Further, it does not constitute a recommendation by the Company or any other party to sell or buy tokens or any other securities."
 msgstr "Binary集团有限公司（“公司”）真诚地将这些材料的电子版本公开，并允许用户使用，但仅限于提供信息用途。这并不构成代币或任何证卷的发售或邀约购入。以电子格式提供新闻公告及其他文件并不构成、或不应视为构成、造成代币或任何其他证卷出售、征求报价买入或其它处置方式的一部分。此外，它并不构成公司或任何另一方出售或购买代币或任何其他证券的建议。"
@@ -899,7 +920,7 @@ msgid "Account balance: "
 msgstr "账户余额： "
 
 msgid "Account comparison*"
-msgstr ""
+msgstr "账户比较*"
 
 msgid "Account currency"
 msgstr "账户币种"
@@ -991,6 +1012,15 @@ msgstr "行政管理执行员"
 msgid "Administrator"
 msgstr "管理员"
 
+msgid "Advanced"
+msgstr ""
+
+msgid "Advanced Account"
+msgstr ""
+
+msgid "Advanced account: 1:100"
+msgstr ""
+
 msgid "Advanced binary options trading interface"
 msgstr "高级二元期权交易界面"
 
@@ -998,7 +1028,7 @@ msgid "Advanced knowledge of software design principles"
 msgstr "深入的软件设计原则知识"
 
 msgid "Advanced multi-asset trading platform"
-msgstr ""
+msgstr "高级多资产交易平台"
 
 msgid "Advanced trading app for web and mobile"
 msgstr "高级网站与移动交易应用"
@@ -1511,22 +1541,22 @@ msgid "Australia"
 msgstr "澳大利亚"
 
 msgid "Australian Dollar vs Canadian Dollar"
-msgstr ""
+msgstr "澳元兑加元"
 
 msgid "Australian Dollar vs Japanese Yen"
-msgstr ""
+msgstr "澳元兑日元"
 
 msgid "Australian Dollar vs New Zealand Dollar"
-msgstr ""
+msgstr "澳元兑新西兰元"
 
 msgid "Australian Dollar vs Singapore Dollar"
-msgstr ""
+msgstr "澳元兑新加坡元"
 
 msgid "Australian Dollar vs Swiss Franc"
-msgstr ""
+msgstr "澳元兑瑞士法郎"
 
 msgid "Australian Dollar vs US Dollar"
-msgstr ""
+msgstr "澳元兑美元"
 
 msgid "Authenticate"
 msgstr "验证"
@@ -1694,7 +1724,7 @@ msgid "Best execution is the requirement to take all sufficient steps to obtain,
 msgstr "最佳执行方案是在执行订单时为了确保您能获得最佳成果所必须采取的足够措施。须要考虑的因素包括价格、成本、速度、执行和结算的可能性、大小、性质或其他与订单执行相关的任何考虑点（以下简称为“执行因素”）。"
 
 msgid "Best of all, there is no minimum deposit requirement."
-msgstr ""
+msgstr "最妙的是, 没有最低存款要求。"
 
 msgid "BetOnMarkets goes live"
 msgstr "BetOnMarkets 正式上线"
@@ -1916,10 +1946,10 @@ msgid "Bitcoin Cash"
 msgstr "比特币现金"
 
 msgid "Bitcoin Cash vs US Dollar"
-msgstr ""
+msgstr "比特币兑美元"
 
 msgid "Bitcoin vs US Dollar"
-msgstr ""
+msgstr "比特币兑美元"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "区块链技术 - 所有加密货币使用各式的区块链技术（一种公开账本）为每笔交易保存记录。 "
@@ -2093,10 +2123,10 @@ msgid "Canada"
 msgstr "加拿大"
 
 msgid "Canadian Dollar vs Japanese Yen"
-msgstr ""
+msgstr "加元兑日元"
 
 msgid "Canadian Dollar vs Swiss Franc"
-msgstr ""
+msgstr "加元兑瑞士法郎"
 
 msgid "Cancel"
 msgstr "取消"
@@ -2643,10 +2673,10 @@ msgid "Contracts bought"
 msgstr "购入合约"
 
 msgid "Contracts for Difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them."
-msgstr ""
+msgstr "差价合约（CFD）是金融衍生产品，让您在不拥有标的资产的情况下交易。"
 
 msgid "Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At Binary.com, we offer popular cash indices, cryptocurrencies, as well as proprietary Volatility Indices that simulate market movement."
-msgstr ""
+msgstr "差价合约（CFDs）让您在包括指数、股票和商品等多个市场投机交易。Binary.com提供受欢迎的现金指数、加密货币以及模拟市场走势的专有波动指数。"
 
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "合约不能在周末到期，因此，如果合约的原定到期日为周六或周日，可能需延后至下周一。"
@@ -2798,6 +2828,12 @@ msgstr "加密货币保证金政策"
 msgid "Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin."
 msgstr "加密货币对包括比特币、以太币和莱特币。"
 
+msgid "Cryptocurrency trading"
+msgstr ""
+
+msgid "Cryptocurrency trading is available 24/7."
+msgstr ""
+
 msgid "Currencies"
 msgstr "货币"
 
@@ -2886,7 +2922,7 @@ msgid "Daily turnover limit"
 msgstr "每日交易限额"
 
 msgid "Dash vs US Dollar"
-msgstr ""
+msgstr "达世币兑美元"
 
 msgid "Data Feed"
 msgstr "数据源"
@@ -2948,14 +2984,17 @@ msgstr "需求 - 受工业和商业应用、包括新技术产品或时尚趋势
 msgid "Demo"
 msgstr "演示"
 
-msgid "Demo STP"
-msgstr "演示 STP"
+msgid "Demo Accounts"
+msgstr ""
+
+msgid "Demo Advanced"
+msgstr ""
 
 msgid "Demo Standard"
 msgstr "演示标准"
 
 msgid "Demo Volatility Indices"
-msgstr ""
+msgstr "演示波动率指数"
 
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "按需迅速展示并同时运行思想/行动能力，执行有效的活动"
@@ -3519,49 +3558,49 @@ msgid "Ether Classic"
 msgstr "古典以太币"
 
 msgid "Ethereum Classic vs US Dollar"
-msgstr ""
+msgstr "以太经典兑美元"
 
 msgid "Ethereum vs US Dollar"
-msgstr ""
+msgstr "以太币兑美元"
 
 msgid "Ethics Code"
 msgstr "道德标准"
 
 msgid "Euro vs Australian Dollar"
-msgstr ""
+msgstr "欧元兑澳元"
 
 msgid "Euro vs Canadian Dollar"
-msgstr ""
+msgstr "欧元兑加元"
 
 msgid "Euro vs Great Britain Pound"
-msgstr ""
+msgstr "欧元兑英镑"
 
 msgid "Euro vs Japanese Yen"
-msgstr ""
+msgstr "欧元兑日元"
 
 msgid "Euro vs New Zealand Dollar"
-msgstr ""
+msgstr "欧元兑新西兰元"
 
 msgid "Euro vs Norwegian Krone"
-msgstr ""
+msgstr "欧元兑挪威克朗"
 
 msgid "Euro vs Polish Zloty"
-msgstr ""
+msgstr "欧元兑波兰兹罗提"
 
 msgid "Euro vs Singapore Dollar"
-msgstr ""
+msgstr "欧元兑新加坡元"
 
 msgid "Euro vs Swedish Krona"
-msgstr ""
+msgstr "欧元兑瑞典克朗"
 
 msgid "Euro vs Swiss Franc"
-msgstr ""
+msgstr "欧元兑瑞士法郎"
 
 msgid "Euro vs Turkish Lira"
-msgstr ""
+msgstr "欧元兑土耳其里拉"
 
 msgid "Euro vs US Dollar"
-msgstr ""
+msgstr "欧元兑美元"
 
 msgid "Eurobasket Wolves"
 msgstr "Eurobasket Wolves"
@@ -3870,7 +3909,7 @@ msgid "Financial asset"
 msgstr "金融资产"
 
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
-msgstr ""
+msgstr "金融衍生产品让您交易标的资产的走势。"
 
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "了解我们提供的每个差价合约资产的成本和详细信息。"
@@ -3966,7 +4005,7 @@ msgid "For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and
 msgstr "例如，如果您以300:1的杠杆率和1,250.15美元的市价购入一手黄金/美元对，购买此一手的所需保证金计算方法如下︰"
 
 msgid "For example, if you see that the EUR/USD has an ask price of 1.05382, you'll sell USD 1.05382 (quote currency) for every EUR 1 (base currency) you buy."
-msgstr ""
+msgstr "例如，如果您看到欧元/美元的买价为1.05382，那么您每购入1欧元（基础货币）就会卖出1.05382美元（报价货币）。"
 
 msgid "For example, if you wanted to buy one volume of the BTC/EUR cryptocurrency pair at a price of USD 4831.400 and at a margin rate of 10%, the margin that you need to purchase one lof of BTC/EUR will be calculated as follows:"
 msgstr "例如，如果您想以4831.400美元的价格与10％保证金率买入一批比特币/欧元加密货币对，那么您购入一手比特币/欧元的所需保证金的计算方法如下："
@@ -3999,7 +4038,7 @@ msgid "For payments-related queries:"
 msgstr "付款相关的查询："
 
 msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr ""
+msgstr "完全对冲头寸将不收取保证金。然而, 掉期和其他适用的费用可能导致您的帐户净值变成负数。在这种情况下, 公司保留关闭您的对冲头寸的权利, 以保护您的账户权益不进一步降低。"
 
 msgid "For the avoidance of doubt (and notwithstanding anything to the contrary), the material you may be provided with is not an offer for tokens; it is an invitation to treat.  Tokens will may only be offered by Binary Group Ltd. (the “Company”) pursuant to an auction in the manner more particularly described in the ‘token auction process’ section of the material."
 msgstr "为了避免引起疑虑 (包括任何相反的情况), 向您提供的材料不是关于代币发售，而是邀约出价。Binary集团有限公司（“公司”）只会透过拍卖方式发售代币，详情已在 \"代币拍卖过程\" 一节中特别说明。"
@@ -4293,31 +4332,31 @@ msgid "Graphic Designers"
 msgstr "平面设计师"
 
 msgid "Great Britain Pound vs Australian Dollar"
-msgstr ""
+msgstr "英镑兑澳元"
 
 msgid "Great Britain Pound vs Canadian Dollar"
-msgstr ""
+msgstr "英镑兑加元"
 
 msgid "Great Britain Pound vs Japanese Yen"
-msgstr ""
+msgstr "英镑兑日元"
 
 msgid "Great Britain Pound vs New Zealand Dollar"
-msgstr ""
+msgstr "英镑兑新西兰元"
 
 msgid "Great Britain Pound vs Norwegian Krone"
-msgstr ""
+msgstr "英镑兑挪威克朗"
 
 msgid "Great Britain Pound vs Singapore Dollar"
-msgstr ""
+msgstr "英镑兑新加坡元"
 
 msgid "Great Britain Pound vs Swedish Krona"
-msgstr ""
+msgstr "英镑兑瑞典克朗"
 
 msgid "Great Britain Pound vs Swiss Franc"
-msgstr ""
+msgstr "英镑兑瑞士法郎"
 
 msgid "Great Britain Pound vs US Dollar"
-msgstr ""
+msgstr "英镑兑美元"
 
 msgid "Great pay-outs. Earn up to 35%"
 msgstr "佣金率极高。盈利可达 35%"
@@ -4413,7 +4452,7 @@ msgid "Hone your security testing skills."
 msgstr "磨练您的安全测试技能。"
 
 msgid "Hong Kong Dollar vs Japanese Yen"
-msgstr ""
+msgstr "港元兑日元"
 
 msgid "Hour"
 msgstr "小时"
@@ -4725,7 +4764,7 @@ msgid "If the Margin Level for your Real Account reaches or falls below the Stop
 msgstr "如果您真实账户的保证金水平达到或低于强制平仓水平，将被归类为默认事件。在这种情况下，未平仓头寸将按照以下顺序自动平仓: (i) 服务器分析当前没在执行的客户订单;（ii） 服务器删除保证金最高的订单;（iii） 如果您的保证金水平仍然低于强制平仓水平，下一个订单将被删除 （没有保证金要求的订单不会被删除）;（iv）如果您的保证金水平仍然低于强制平仓水平，服务器将亏损最大的头寸平仓;（v） 未平仓头寸将强制平仓，直到您的保证金水平高于强制平仓水平。"
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
-msgstr ""
+msgstr "如果卖价是1.05229，那么您每卖出1欧元就会买入1.05229美元。"
 
 msgid "If the maximum number of tokens (10 million) offered in the token sale are issued, then the number of shares issued after the ICO will total 220,257,430 shares."
 msgstr "如果代币销售中发售出最大数量的代币（1000万个），那么在ICO过后发行的股份总数将达到220,257,430股。"
@@ -4815,7 +4854,7 @@ msgid "If you score well on the SATI, we'll send you a talent test. Do well on t
 msgstr "如果您在 SATI 测试中取得高分，我们将向您发送一份人才测试考卷。通过人才测试后，我们将邀请您参与我们招聘团队成员的面试。"
 
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
-msgstr ""
+msgstr "如果您看到欧元/美元的买入价为1.05229，那么您每卖出1欧元就买入1.05229美元。"
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "如果您选择“亚洲下跌”期权，<strong>当</strong><strong>最新价格</strong>低于<strong>平均</strong>价格时，您将获得赔付。"
@@ -5229,7 +5268,7 @@ msgid "Intellectual property"
 msgstr "知识财产"
 
 msgid "Interactive webinars"
-msgstr ""
+msgstr "交互式网络研讨会"
 
 msgid "Interested in our MAM tool for MetaTrader 5? Contact us at %1 for more info."
 msgstr "对 MetaTrader 5 的MAM工具感兴趣吗？通过 %1联系我们获取更多信息。"
@@ -6207,7 +6246,7 @@ msgid "Litecoin"
 msgstr "莱特币"
 
 msgid "Litecoin vs US Dollar"
-msgstr ""
+msgstr "莱特币兑美元"
 
 msgid "Lock Cashier"
 msgstr "锁定收银台"
@@ -6267,7 +6306,7 @@ msgid "Lot Size (Volume = 1.0)"
 msgstr "手大小 (交易量 = 1.0)"
 
 msgid "Lot size*"
-msgstr ""
+msgstr "手大小*"
 
 msgid "Lot units"
 msgstr "手单位"
@@ -6318,7 +6357,7 @@ msgid "MT5 Financial"
 msgstr "MT5 金融"
 
 msgid "MT5 Volatility Indices"
-msgstr ""
+msgstr "MT5波动率指数"
 
 msgid "MT5 real-money account for Forex and CFDs."
 msgstr "外汇和差价合约的MT5 真实资金账户。"
@@ -6337,9 +6376,6 @@ msgstr "主密码"
 
 msgid "Main password (trading access)"
 msgstr "主密码（交易访问）"
-
-msgid "Main. Volume Increment"
-msgstr "主要交易增额"
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "保持准确的系统定价参数"
@@ -6521,9 +6557,6 @@ msgstr "最大"
 msgid "Maximum Leverage"
 msgstr "最大杠杆"
 
-msgid "Maximum Volume (Trade Size)"
-msgstr "最大量额 （交易量）"
-
 msgid "Maximum account cash balance"
 msgstr "最大账户现金余额"
 
@@ -6571,6 +6604,9 @@ msgstr "可以同时打开的最大合约数目。"
 
 msgid "Maximum number of open positions"
 msgstr "最大未平仓头寸数目"
+
+msgid "Maximum ticket size"
+msgstr ""
 
 msgid "Maximum upload size for each file is 3MB"
 msgstr "每个文件的最大上载大小为3MB"
@@ -6644,6 +6680,9 @@ msgstr "存款金额范围"
 msgid "Min-Max Withdrawal"
 msgstr "取款金额范围"
 
+msgid "Min. Volume Increment"
+msgstr "最小交易增额"
+
 msgid "Min. Volume<br>(Lot Size)"
 msgstr "最小交易额<br>(手量)"
 
@@ -6664,6 +6703,9 @@ msgstr "最小交易增额"
 
 msgid "Minimum bid"
 msgstr "最低出价"
+
+msgid "Minimum deposit"
+msgstr ""
 
 msgid "Minimum eight characters. Must contain numbers, and mix of upper and lower case letters."
 msgstr "最少 8 个字符。必须同时包含数字和大小写字母。"
@@ -6708,7 +6750,7 @@ msgid "Monday"
 msgstr "星期一"
 
 msgid "Monero vs US Dollar"
-msgstr ""
+msgstr "门罗币兑美元"
 
 msgid "Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients."
 msgstr "来自客户的资金不用于任何以客户名义进行的证券、期货、外汇、衍生品及其他产品投资。"
@@ -6752,8 +6794,11 @@ msgstr "更高效率"
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "具体来说，当我们和您进行二元期权交易时（双方有了“合同”），我们有责任向您提供\"最佳执行方案”。最佳执行方案的意思是，当我们执行您的订单时，必须采取合理的措施为您获取最大效益。此文件是关于最佳执行方案政策的概述。"
 
-msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
+msgid "Most brokers require minimum deposit. %1 doesn't require any minimum deposit."
 msgstr ""
+
+msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
+msgstr "大多数经纪商通常会对您执行的每笔交易收取佣金。除了加密货币以外，目前％1的所有账户类型都不收取佣金。"
 
 msgid "Mother's maiden name"
 msgstr "母亲婚前的姓氏"
@@ -6858,7 +6903,7 @@ msgid "Never Used"
 msgstr "从未使用过"
 
 msgid "New Account"
-msgstr ""
+msgstr "新账户"
 
 msgid "New Password"
 msgstr "新密码"
@@ -6867,19 +6912,19 @@ msgid "New Year's Day"
 msgstr "元旦"
 
 msgid "New Zealand Dollar vs Canadian Dollar"
-msgstr ""
+msgstr "新西兰元兑加元"
 
 msgid "New Zealand Dollar vs Japanese Yen"
-msgstr ""
+msgstr "新西兰元兑日元"
 
 msgid "New Zealand Dollar vs Singapore Dollar"
-msgstr ""
+msgstr "新西兰元兑新加坡元"
 
 msgid "New Zealand Dollar vs Swiss Franc"
-msgstr ""
+msgstr "新西兰元兑瑞士法郎"
 
 msgid "New Zealand Dollar vs US Dollar"
-msgstr ""
+msgstr "新西兰元兑美元"
 
 msgid "New features"
 msgstr "新功能"
@@ -7060,6 +7105,9 @@ msgstr "现在"
 
 msgid "Number of Tokens:"
 msgstr "代币数目:"
+
+msgid "Number of assets"
+msgstr ""
 
 msgid "Number of employees and contractors"
 msgstr "雇员和承包商数目"
@@ -7304,8 +7352,8 @@ msgstr "订单执行"
 msgid "Order execution typically comes in two varieties: market execution and instant execution. With market execution, you will place an order at the broker’s price. You agree on the price in advance. There are no requotes with market execution."
 msgstr "订单执行通常有两种：市场执行和即时执行。市场执行即按照经纪商的价格下单。价格是您事先同意的。市场执行是没有重新报价的。"
 
-msgid "Organic growth is driving demand, especially in the Far East –– the world’s leading market for binary options."
-msgstr "有机增长已在全世界、特别是二元期权市场先驱的远东地区带动了需求量。"
+msgid "Organic growth is driving demand, especially in the Far East – the world’s leading market for binary options."
+msgstr ""
 
 msgid "Other"
 msgstr "其它"
@@ -7331,8 +7379,8 @@ msgstr "我们公司"
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "自2004年3月正式启动以来，我们的国际联盟项目一直及时足额支付款项。在日本，您的佣金将在您介绍的客户符合资格条件的日历月结束后三十天内汇入您的联盟会员账户。"
 
-msgid "Our MetaTrader 5 STP account provides you with the tightest spreads and connects you directly to the market."
-msgstr "MetaTrader 5 STP 账户为您提供最低点差，并让您和市场直接连接。"
+msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
+msgstr ""
 
 msgid "Our MetaTrader 5 Standard account is suitable for both new and experienced traders."
 msgstr "我们的 MetaTrader 5 标准账户适用于新手和经验丰富的交易者。"
@@ -7347,7 +7395,7 @@ msgid "Our Prices are determined by reference to the price of the underlying ins
 msgstr "我们在参考了由我们自主选定的外部交易所或交易设施所报的基础工具价格之后决定价格。我们拥有信息技术基础设施和价格聚合器系统，便于向充当我们流动性提供商，经过挑选的主要经纪商收集报价，并将经过参考有关基准和市场得来的价格提供给您。您确认我们的价格可能与投标价格和外部交易所或交易设施所提供价格不相同，以及我们不对所述差异所引起的任何损失承担赔偿责任。本条款不适用于波动率指数。"
 
 msgid "Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces."
-msgstr ""
+msgstr "我们的波动率指数账户允许您对波动率指数进行差价交易 - 这是我们专有的综合资产，可模拟市场力量。"
 
 msgid "Our back-end code is mainly in Perl, and our open-source contributions may be found on %1CPAN%2. The corresponding source code can be found in our %3Github repositories%2 that start with the prefix \"perl-\". We welcome contributions to these repositories, notably improved documentation and test coverage."
 msgstr "我们的后端代码主要是在 Perl 中，而我们的开源贡献可能会在 %1CPAN%2出现 。对应的源代码会在以前缀\"perl-\"开头的 %3Github 资料库%2中出现。我们欢迎大家对这些资料库提供贡献，特别是经过改进的文档和测试覆盖率。"
@@ -7674,7 +7722,7 @@ msgid "Please %1deposit%2 to your account."
 msgstr "请%1存%2入您的账户。"
 
 msgid "Please %1log in%2 or %3sign up%2 to view this page."
-msgstr ""
+msgstr "要查看本页，请 %1登录%2 或 %注册%2 。"
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "请<a href=\"%1\">接受更新条款和条件</a>。"
@@ -7746,7 +7794,7 @@ msgid "Please note that due to their over-the-counter nature, the prices of the 
 msgstr "请注意，由于其场外交易性质，OTC 指数和股票的价格与中央交易所的相应指数和股票价格有所不同。"
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1ontract specifications%2."
-msgstr ""
+msgstr "请注意，根据我们的%1合约规格%2，一手交易量相当于100个单位。"
 
 msgid "Please note that one lot is equivalent to 100 units, based on our contract specifications. Your profit or loss will be calculated as follows:"
 msgstr "请注意，根据我们的合约规格，一手交易量相当于100个单位。您的利润或亏损的计算方法如下:"
@@ -8256,20 +8304,23 @@ msgstr "真实账户"
 msgid "Real Account &mdash; Your real money account opened with %1's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
 msgstr "真实账户 &mdash; 由MetaQuotes软件公司授权，通过%1的 MT5 交易平台开立的真实资金账户。"
 
+msgid "Real Advanced"
+msgstr ""
+
 msgid "Real Money Account Opening"
 msgstr "开立真实资金账户"
-
-msgid "Real STP"
-msgstr "真实STP"
 
 msgid "Real Standard"
 msgstr "真实标准"
 
 msgid "Real Volatility Indices"
+msgstr "真实波动率指数"
+
+msgid "Real-Money Accounts"
 msgstr ""
 
 msgid "Real-money accounts with your choice of fiat and crypto currency."
-msgstr ""
+msgstr "拥有您的法定货币与加密货币选项的真实资金账户。"
 
 msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "实时报价，以银行间期权市场为基准。"
@@ -8309,6 +8360,12 @@ msgstr "参考"
 
 msgid "Reference ID"
 msgstr "参考编号"
+
+msgid "Refers to the maximum volume or lots per order."
+msgstr ""
+
+msgid "Refers to the total number of available symbols for your account."
+msgstr ""
 
 msgid "Refund Bid"
 msgstr "退还投标金额"
@@ -8491,7 +8548,7 @@ msgid "Rights on Default:"
 msgstr "默认权利︰"
 
 msgid "Ripple vs US Dollar"
-msgstr ""
+msgstr "瑞波币兑美元"
 
 msgid "Rise/Fall"
 msgstr "上涨/下跌"
@@ -8543,15 +8600,6 @@ msgstr "处理日常付款报告和涉嫌欺诈报告"
 
 msgid "Russia"
 msgstr "俄罗斯"
-
-msgid "STP"
-msgstr "STP"
-
-msgid "STP Account"
-msgstr "STP账户"
-
-msgid "STP account: 1:100"
-msgstr "STP账户: 1:100"
 
 msgid "Sa"
 msgstr "星期六"
@@ -9238,7 +9286,7 @@ msgid "Suspending your Real Account and refusing to execute any Orders to enter 
 msgstr "您的真实账户被暂停，并停止执行任何订单，不可继续进行交易。虽然您的真实账户被暂停，您将能够对持仓头寸进行平仓，但您不能开盘创建未平仓头寸。"
 
 msgid "Swiss Franc vs Japanese Yen"
-msgstr ""
+msgstr "瑞士法郎兑日元"
 
 msgid "Symbol"
 msgstr "符号"
@@ -9413,6 +9461,9 @@ msgstr "合约<strong>开始时间</strong>即我们的服务器处理合约的�
 
 msgid "The AUD Index is a weighted Index, measuring the Australian Dollar's value against a basket of 5 global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%."
 msgstr "澳元指数是一个加权指数，衡量澳元相对5种全球货币（美元、欧元、英镑、日元、加元）的价值，每种货币的权重均为20%。"
+
+msgid "The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices, futures and cryptocurrencies."
+msgstr ""
 
 msgid "The Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. Your commission will be credited to your affiliate account within fifteen days after the close of a calendar month."
 msgstr "自2004年3月正式启动以来，联盟项目一直及时足额支付款项。佣金将在日历月结束后十五天内汇入您的联盟会员账户。"
@@ -9670,9 +9721,6 @@ msgstr "考虑到更多关于不同资产类别的细节，我们为政策提供
 msgid "The Program"
 msgstr "计划"
 
-msgid "The STP account provides you with the tightest spreads and connects you directly to the market. STP stands for 'Straight Through Processing' –– meaning your orders are sent directly to our liquidity providers."
-msgstr "STP账户为您提供最低的点差，并让您直接跟市场连接。 STP代表“直通式处理” - 意味着将您的订单直接发送给我们的流动性提供商。"
-
 msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr "庇护所社区第3学习中心是为正在缅甸等待与家人被遣至第三国的难民儿童成立的社区学校。 该学校旨在为这些处于最脆弱年龄的儿童提供教育，为他们的未来做好准备。"
 
@@ -9700,7 +9748,7 @@ msgstr "美元指数是加权指数，衡量美元相对于5种全球货币（�
 msgid "The Volatility 100 Index is twice as volatile as the Volatility 50 Index, and four times as volatile as the Volatility 25 Index."
 msgstr "波动率100指数的波幅是波动率50指数的两倍，是波动率25指数的四倍。"
 
-msgid "The Volatility Indices account allows you to trade CFDs on Volatility Indices –– our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
+msgid "The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
 msgstr ""
 
 msgid "The ability to acquire knowledge of compliance matters in a multitude of international jurisdictions"
@@ -9743,7 +9791,7 @@ msgid "The application shall be reviewed and assessed by our compliance and mark
 msgstr "申请须由我们的合规及市场部审核及评估。我们注意到, 遵守和执行反洗钱政策并按照法律和条例进行尽职调查的合规部门须按照H章节规定要求和收集所有必要的资料和文件 。"
 
 msgid "The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
-msgstr ""
+msgstr "货币对的卖出价格表示买入一单位基准货币需要多少报价货币。这通常被称为汇率。"
 
 msgid "The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids."
 msgstr "拍卖已经结束。由于未能达到最低目标价，所有活跃投资者将收到投标退款。"
@@ -9878,7 +9926,7 @@ msgid "The first tick is the first tick after the contract is processed by our s
 msgstr "首个跳动点指在我们服务器处理合约后的第一个跳动点。"
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
-msgstr ""
+msgstr "外汇交易市场（Forex）是世界上流动性最强、交易量最大的市场，每天交易额高达数兆美元。"
 
 msgid "The full version of our best execution policy is available on request."
 msgstr "如果需要，我们可随时提供最佳执行策略的完整版本。"
@@ -9959,7 +10007,7 @@ msgid "The minimum, incremental and maximum transaction amount;"
 msgstr "最小、增量和最大交易金额;"
 
 msgid "The movement of the underlying asset determines your profit or loss – depending on the position that you have taken."
-msgstr ""
+msgstr "您的盈利或亏损取决于您开的头寸，也取于标的资产的变动。"
 
 msgid "The opposite is true if you decide to sell or 'go short' on the US 100 index. This means that your profit will continue to increase as long as the price of the US 100 index keeps falling. However, if the price rises, the losses you incur will also increase."
 msgstr "相反的，如果您决定卖出美国100指数或持“空头”头寸，也是如此。这意味着只要美国100指数的价格持续下跌，您的利润就会继续增加。但是，如果价格上涨，您所蒙受的亏损也会增加。"
@@ -10211,7 +10259,7 @@ msgid "These materials may only be received by authorised persons (a person dete
 msgstr "这些材料只能由被授权人 (由公司自行决定, 有权根据适用的法律和法规, 例如欧洲经济区的司法管辖区内根据欧洲联盟 2003/71/EC 指令(含陆续修正版本, 包括 2010/73/EU 指令)的豁免, 其中包括但不限于与合格投资者有关的豁免者 (\"被授权人\") 获取。如被授权人想要竞投代币, 如他是 Binary.com 的注册客户并拥有 Binary.com 账户, 则可以进行。公司可藉此方法核实其作为被授权人的资格。希望获得代币的被授权人可出价。公司将对出价进行处理和评估。在出价被视为有效符合公司发售拍卖条件前, 公司可要求重新确认出价。拍卖时, 公司将发售代币, 并决定接受 (根据材料中解释的拍卖过程) 该发售的出价。公司也考虑发售代币的购入和接受将透过被授权人的 Binary.com 账户余款结算, 为个别代币的销售和购买合约提供证明。"
 
 msgid "These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr ""
+msgstr "这些数字仅供指示用途, 请透过我们的 MT5 交易平台核实。"
 
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr "您认为某种货币会上涨或下跌？学习什么时候应该买入 (或 \"持多头头寸\") 和卖出 (或 \"持空头头寸\")。"
@@ -10469,13 +10517,13 @@ msgid "To learn more, please read our <a href='%1'>CFD contract specifications</
 msgstr "要了解详情, 请阅读我们的<a href='%1'>差价合约规格</a>。"
 
 msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr ""
+msgstr "要了解关于外汇100%强制清算水平的更多信息，请阅读我们的%1保证金政策%2。"
 
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
-msgstr ""
+msgstr "要了解关于保证金要求的更多信息，请阅读我们的%1保证金政策%2。"
 
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr ""
+msgstr "要了解关于保证金要求的更多信息，请阅读我们的%1保证金政策%2。请注意，我们不收取加密货币对的掉期利率费。"
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr "要了解关于波动率指数50%强制清算水平的更多信息，请阅读我们的<a href=\"%1\">差价合约保证金政策</a>。"
@@ -10487,7 +10535,7 @@ msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that furt
 msgstr "要了解关于金属对100%强制清算水平的更多信息，请阅读我们的<a href=\"%1\">金属交易保证金政策</a>。"
 
 msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr ""
+msgstr "要了解关于金属对100%强制清算水平的更多信息，请阅读我们的金属交易%1保证金政策%2。"
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "要开立真实账户，您必须在%1拥有已通过身份验证的二元期权真实账户。如果没有二元期权真实账户，您无法开立真实账户。"
@@ -10619,13 +10667,13 @@ msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryp
 msgstr "不需拥有实物也能交易比特币、以太币和莱特币。我们的加密货币对报出例如比特币的加密货币与例如美元的法定货币的兑换价格。"
 
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
-msgstr ""
+msgstr "在我们受欢迎的多资产平台进行外汇和差价合约交易。"
 
 msgid "Trade Forex and CFDs with a powerful platform recognised as the global standard."
-msgstr ""
+msgstr "透过被公认为符合全球标准的强大平台进行外汇和差价合约交易。"
 
 msgid "Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools."
-msgstr ""
+msgstr "使用具高度竞争力的杠杆率进行外汇和差价合约 (cfd) 交易。MetaTrader 5 是提供出色的交易选项和技术分析工具的多资产平台。"
 
 msgid "Trade Now"
 msgstr "立刻交易"
@@ -10721,7 +10769,7 @@ msgid "Trade with leverage"
 msgstr "利用杠杆进行交易"
 
 msgid "Trade with real funds and access to competitive trading conditions."
-msgstr ""
+msgstr "用真实资金交易, 享受竞争力强的交易条件。"
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "通过拥有受专利保护的报价技术的业内领先企业进行交易"
@@ -10910,43 +10958,43 @@ msgid "URL website (where applicable);"
 msgstr "网址网站 (如适用);"
 
 msgid "US Dollar vs Canadian Dollar"
-msgstr ""
+msgstr "美元兑加元"
 
 msgid "US Dollar vs Chinese Renminbi"
-msgstr ""
+msgstr "美元兑人民币"
 
 msgid "US Dollar vs Hong Kong Dollar"
-msgstr ""
+msgstr "美元兑港元"
 
 msgid "US Dollar vs Japanese Yen"
-msgstr ""
+msgstr "美元兑日元"
 
 msgid "US Dollar vs Mexican Peso"
-msgstr ""
+msgstr "美元兑墨西哥比索"
 
 msgid "US Dollar vs Norwegian Krone"
-msgstr ""
+msgstr "欧元兑挪威克朗"
 
 msgid "US Dollar vs Polish Zloty"
-msgstr ""
+msgstr "美元兑波兰兹罗提"
 
 msgid "US Dollar vs Russian Ruble"
-msgstr ""
+msgstr "美元兑俄罗斯卢布"
 
 msgid "US Dollar vs Singapore Dollar"
-msgstr ""
+msgstr "美元兑新加坡元"
 
 msgid "US Dollar vs South African Rand"
-msgstr ""
+msgstr "美元兑南非南特"
 
 msgid "US Dollar vs Swedish Krona"
-msgstr ""
+msgstr "美元兑瑞典克朗"
 
 msgid "US Dollar vs Swiss Franc"
-msgstr ""
+msgstr "美元兑瑞士法郎"
 
 msgid "US Dollar vs Turkish Lira"
-msgstr ""
+msgstr "美元兑土耳其里拉"
 
 msgid "US Patents"
 msgstr "美国专利"
@@ -11113,8 +11161,11 @@ msgstr "水电费 (电、水、煤气、宽带和电话)"
 msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
 msgstr "公用代币是让您能够访问分散式网络或应用程序的代币。"
 
-msgid "Variable"
-msgstr "变量"
+msgid "Variable from 0.9 pips"
+msgstr ""
+
+msgid "Variable from 1.2 pips"
+msgstr ""
 
 msgid "Variable spreads"
 msgstr "变数点差"
@@ -11234,10 +11285,10 @@ msgid "Volatility Indices"
 msgstr "波动率指数"
 
 msgid "Volatility Indices Account"
-msgstr ""
+msgstr "波动率指数账户"
 
 msgid "Volatility Indices account: 1:500"
-msgstr ""
+msgstr "波动率指数账户: 1:500"
 
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "波动率指数进一步分为两种级别："
@@ -11477,7 +11528,7 @@ msgid "We support hundreds of deposit and withdrawal options, including Bitcoin.
 msgstr "我们支持数以百计的存款和提款选项，包括比特币。"
 
 msgid "We support hundreds of deposit and withdrawal options."
-msgstr ""
+msgstr "我们支持数以百计的存款和提款选项。"
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
 msgstr "我们通过身份核实服务和实时防欺诈措施防止您的账户遭到非法访问。另外，我们还会对您的账户活动进行监控，来发现不正常的欺诈活动迹象。我们还会和征管机构及执法机关合作，应对欺诈问题。"
@@ -11822,7 +11873,7 @@ msgid "Whilst we act as principal in respect of your orders, we also assess the 
 msgstr "作为您的订单委托人，我们也对我们高度依赖的执行场地进行评估，以便为您的订单执行提供最佳效益。这些场地通常由第三方投资公司、经纪人和/或流动性提供商组成。"
 
 msgid "Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level."
-msgstr ""
+msgstr "虽然我们在您真实账户保证金水平达到或低于止损水平时将尽力使您的持仓头寸收盘，我们不保证当您真实账户的保证金水平达到止损水平时将能够使您的持仓头寸收盘。"
 
 msgid "Whilst we endeavour to open or close the Transaction to which your orders relate at the requested price, acting in accordance with our duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that your order is not filled at the exact intended quoted price when you placed your order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to you) or a negative slippage (less favourable to you)."
 msgstr "虽然我们将按照最佳执行职责行事，致力以要求价格对您的订单涉及交易进行开盘或收盘，但有时订单可能会由于波动率或交易量增加而受滑移。交易完成时订单价格和执行价格的区别被称为滑移。这意味着当您下订单时，您的订单没有依照确切的预期报价完成交易。滑移通常发生在股市波动率非常高或低的期间以及重大新闻发布期间或流动性有限的时期。滑移可分为正滑移 （对您较有利） 或负滑移 （对您不利）。"
@@ -12264,7 +12315,7 @@ msgid "You have reached the rate limit of requests per second. Please try later.
 msgstr "您已达每秒钟提呈请求的最高限率。请稍后重试。"
 
 msgid "You have reached the withdrawal limit."
-msgstr ""
+msgstr "您已达最大提款限额。"
 
 msgid "You have reached your withdrawal limit."
 msgstr "您已达最大提款限额。"
@@ -12663,7 +12714,7 @@ msgid "Your withdrawal limit is %1 %2."
 msgstr "您的取款限额是 %1 %2。"
 
 msgid "Zcash vs US Dollar"
-msgstr ""
+msgstr "零币兑美元"
 
 msgid "a definite or indefinite period during which you wish to exclude yourself from the website."
 msgstr "您希望不接触本网站的固定或不固定期限。"
@@ -14922,7 +14973,7 @@ msgid "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time 
 msgstr "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 
 msgid "{JAPAN ONLY}Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr ""
+msgstr "{JAPAN ONLY}Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
 
 msgid "{JAPAN ONLY}Your funds are kept safe"
 msgstr "{JAPAN ONLY}Your funds are kept safe"
