@@ -53,7 +53,7 @@ const TypesOfAccounts = () => (
         <Box
             image='volatility'
             title={it.L('Volatility Indices')}
-            text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices –– our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
+            text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
         />
 
         <div className='gr-padding-30'></div>
