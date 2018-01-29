@@ -16,32 +16,7 @@ class FieldGroup extends React.PureComponent {
     }
 }
 
-const MdcTextField = ({
-    id,
-    type='text',
-    label,
-    name,
-    value,
-    on_change,
-}) => (
-        <div className='mdc-textfield'>
-            <input id={id} name={name}
-                   type={type}
-                   value={value}
-                   onChange={on_change}
-            />
-            <span className='highlight'></span>
-            <span className='bar'></span>
-            {label ?
-            <label>{name}</label>
-            :
-            undefined
-            }
-        </div>
-    );
-
 module.exports = {
     TextField,
     FieldGroup,
-    MdcTextField,
 };
