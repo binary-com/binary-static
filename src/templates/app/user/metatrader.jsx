@@ -194,7 +194,7 @@ const Metatrader = () => (
                                 it.L('No commission'),
                             ]} />
                         <AccountDesc account_type={['vanuatu_advanced']} title={it.L('Advanced Account')}
-                            description={it.L('Our MetaTrader 5 Advanced account provides you with the tightest spreads, offers more products and higher ticket size.')}
+                            description={it.L('Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
                                 it.L('Leverage up to 1:100'),
                                 it.L('Variable spreads'),
