@@ -59,6 +59,15 @@
             box-sizing: border-box;
             font-size: $FONT_SIZE_S;
 
+            .acc-group {
+                line-height: 30px;
+                padding: 0 5px;
+                color: $COLOR_DARK_GRAY;
+
+                &:hover {
+                    cursor: auto;
+                }
+            }
             .acc-name {
                 line-height: 30px;
                 padding: 0 20px;

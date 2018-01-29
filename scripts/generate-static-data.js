@@ -516,6 +516,8 @@ const texts = [
     'Real STP',
     'Real Volatility Indices',
     'Change Password',
+    'Real-Money Accounts',
+    'Demo Accounts',
 
     // account_transfer
     'Min',
