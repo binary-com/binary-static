@@ -22,7 +22,7 @@ const AccountDesc = ({ title, description, account_type, items }) => {
                 ))}
             </ul>
             <p>
-                <a className='hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')}>{it.L('Compare MetaTrader 5 accounts')}</a>
+                <a className='hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Compare MetaTrader 5 accounts')}</a>
             </p>
         </div>
     );
@@ -193,8 +193,8 @@ const Metatrader = () => (
                                 it.L('Market execution'),
                                 it.L('No commission'),
                             ]} />
-                        <AccountDesc account_type={['vanuatu_stp']} title={it.L('STP Account')}
-                            description={it.L('Our MetaTrader 5 STP account provides you with the tightest spreads and connects you directly to the market.')}
+                        <AccountDesc account_type={['vanuatu_advanced']} title={it.L('Advanced Account')}
+                            description={it.L('Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
                                 it.L('Leverage up to 1:100'),
                                 it.L('Variable spreads'),
@@ -225,7 +225,7 @@ const Metatrader = () => (
                                     <TypeGroup title={it.L('Step 2: Choose account type')} types={[
                                         { type: 'template', desc: 'standard' },
                                     ]}>
-                                        <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')}>{it.L('Which account is right for me?')}</a>
+                                        <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
                                     </TypeGroup>
                                 </div>
                                 <p id='new_account_msg' className='notice-msg center-text invisible'></p>
