@@ -210,7 +210,7 @@ const GraduateProgram = () => {
                     <p>{('Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and provide you with a platform to do amazing work.')}</p>
                     <div className='inline-flex'>
                         <img className='icon-lg margin-left-0' src={it.url_for('images/graduate_program/program1_icon.svg')} />
-                        <p>{('We\'ll kick things off with orientation week –– a week spent away from the office that\'s all about learning and having fun. You\'ll participate in team building exercises, learn how to navigate your new workplace, and join a mini hackathon where you\'ll get the chance to make pull requests and contribute to our codebase.')}</p>
+                        <p>{('We\'ll kick things off with orientation week – a week spent away from the office that\'s all about learning and having fun. You\'ll participate in team building exercises, learn how to navigate your new workplace, and join a mini hackathon where you\'ll get the chance to make pull requests and contribute to our codebase.')}</p>
                     </div>
                     <div className='inline-flex'>
                         <img className='icon-lg margin-left-0' src={it.url_for('images/graduate_program/program2_icon.svg')} />
@@ -222,7 +222,7 @@ const GraduateProgram = () => {
                     </div>
                     <div className='inline-flex'>
                         <img className='icon-lg margin-left-0' src={it.url_for('images/graduate_program/program4_icon.svg')} />
-                        <p>{('Attend our Software Craftsmanship Workshops –– interactive lessons on a wide range of software development topics that will give you a better understanding of our codebase.')}</p>
+                        <p>{('Attend our Software Craftsmanship Workshops – interactive lessons on a wide range of software development topics that will give you a better understanding of our codebase.')}</p>
                     </div>
                     <div className='inline-flex'>
                         <img className='icon-lg margin-left-0' src={it.url_for('images/graduate_program/program5_icon.svg')} />

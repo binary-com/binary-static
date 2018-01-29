@@ -17,21 +17,18 @@ const MetaTrader = (() => {
     const mt_company = {};
 
     const onLoad = () => {
-        BinarySocket
-            .wait('landing_company', 'get_account_status')
-            .then(MetaTraderConfig.getAccountStatus)
-            .then(() => {
-                if (isEligible()) {
-                    MetaTraderUI.switchToMT5();
-                    if (Client.get('is_virtual')) {
-                        getAllAccountsInfo();
-                    } else {
-                        BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
-                    }
+        BinarySocket.wait('landing_company', 'get_account_status').then(() => {
+            if (isEligible()) {
+                MetaTraderUI.switchToMT5();
+                if (Client.get('is_virtual')) {
+                    getAllAccountsInfo();
                 } else {
-                    MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
+                    BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
                 }
-            });
+            } else {
+                MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
+            }
+        });
     };
 
     const isEligible = () => {
