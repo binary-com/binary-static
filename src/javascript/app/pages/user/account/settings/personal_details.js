@@ -231,6 +231,9 @@ const PersonalDetails = (() => {
                     is_for_new_account = false;
                     BinaryPjax.loadPreviousUrl();
                 }
+                if (is_virtual && response.echo_req.residence) {
+                    window.location.reload(); // reload page if we are setting residence
+                }
             });
         }
         showFormMessage(is_error ?

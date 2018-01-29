@@ -115,9 +115,6 @@ const FormManager = (() => {
                 }
                 options.fnc_response_handler(response);
             }
-            if (response.echo_req.residence) {
-                window.location.reload(); // reload page if we are setting residence
-            }
         };
 
         $(options.form_selector).off('submit').on('submit', (evt) => {
