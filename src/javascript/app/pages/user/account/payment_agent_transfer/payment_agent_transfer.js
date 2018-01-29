@@ -24,7 +24,7 @@ const PaymentAgentTransfer = (() => {
                         (a) => a.paymentagent_loginid === Client.get('loginid')
                     )[0];
                     init(pa_values);
-                })
+                });
             } else {
                 setFormVisibility(false);
             }

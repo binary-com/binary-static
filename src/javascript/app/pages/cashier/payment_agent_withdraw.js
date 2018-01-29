@@ -1,4 +1,3 @@
-const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
 const getDecimalPlaces = require('../../common/currency').getDecimalPlaces;
@@ -74,7 +73,7 @@ const PaymentAgentWithdraw = (() => {
         $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
         FormManager.init(form_id, [
             { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
-            { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min: min, max: max }]], request_field: 'amount' },
+            { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }]], request_field: 'amount' },
             { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
 
             { request_field: 'currency',              value: currency },
