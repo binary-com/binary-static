@@ -360,7 +360,7 @@ const MetaTraderUI = (() => {
                 const type  = acc_type.split('_').slice(1).join('_');
                 const title = accounts_info[acc_type].short_title;
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
-                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase()}.svg`));
+                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase().replace(/\s/g, '_')}.svg`));
                 $acc.find('p').text(title);
                 $parent.append($acc);
             });
