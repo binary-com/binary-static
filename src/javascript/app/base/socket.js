@@ -240,7 +240,7 @@ const BinarySocket = (() => {
                     case 'WrongResponse':
                     case 'OutputValidationFailed': {
                         const text_value = (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.'));
-                        $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: text_value })));
+                        showNoticeMessage(text_value);
                         break;
                     }
                     case 'RateLimit':
@@ -249,6 +249,9 @@ const BinarySocket = (() => {
                     case 'InvalidAppID':
                         wrong_app_id = getAppId();
                         config.notify(response.error.message, true, 'INVALID_APP_ID');
+                        break;
+                    case 'DisabledClient':
+                        showNoticeMessage(response.error.message);
                         break;
                     // no default
                 }
@@ -277,6 +280,10 @@ const BinarySocket = (() => {
                 }
             }
         };
+    };
+
+    const showNoticeMessage = (text) => {
+        $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text })));
     };
 
     const clear = (msg_type) => {

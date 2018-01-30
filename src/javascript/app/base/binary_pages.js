@@ -78,7 +78,7 @@ const pages_config = {
     endpoint                 : { module: Endpoint },
     epg_forwardws            : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
     forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
-    home                     : { module: StaticPages.Home,           not_authenticated: true },
+    home                     : { module: Home,                       not_authenticated: true },
     iphistoryws              : { module: IPHistory,                  is_authenticated: true },
     japanws                  : { module: JapanAccOpening,            is_authenticated: true, only_virtual: true },
     knowledge_testws         : { module: KnowledgeTest,              is_authenticated: true, only_virtual: true },

@@ -22,7 +22,7 @@ const AccountDesc = ({ title, description, account_type, items }) => {
                 ))}
             </ul>
             <p>
-                <a className='hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')}>{it.L('Compare MetaTrader 5 accounts')}</a>
+                <a className='hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Compare MetaTrader 5 accounts')}</a>
             </p>
         </div>
     );
@@ -88,7 +88,7 @@ const Metatrader = () => (
                                     </div>
                                     <div className='gr-grow gr-no-gutter'>
                                         <a className='button button-secondary act_new_account' href='javascript:;'>
-                                            <span>{it.L('New')}</span>
+                                            <span id='new_account_icon'>{it.L('New Account')}</span>
                                         </a>
                                     </div>
                                 </div>
@@ -193,16 +193,16 @@ const Metatrader = () => (
                                 it.L('Market execution'),
                                 it.L('No commission'),
                             ]} />
-                        <AccountDesc account_type={['vanuatu_stp']} title={it.L('STP Account')}
-                            description={it.L('Our MetaTrader 5 STP account provides you with the tightest spreads and connects you directly to the market.')}
+                        <AccountDesc account_type={['vanuatu_advanced']} title={it.L('Advanced Account')}
+                            description={it.L('Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
                                 it.L('Leverage up to 1:100'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
                             ]} />
-                        <AccountDesc account_type={['costarica', 'malta']} title={it.L('Volatility Account')}
-                            description={it.L('Our Volatility account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
+                        <AccountDesc account_type={['costarica', 'malta']} title={it.L('Volatility Indices Account')}
+                            description={it.L('Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
                             items={[
                                 it.L('Leverage up to 1:500'),
                                 it.L('Fixed spreads'),
@@ -217,7 +217,7 @@ const Metatrader = () => (
                                 <div className='step-1'>
                                     <TypeGroup title={it.L('Step 1: Choose demo or real account')} types={[
                                         { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Practise your trading strategy with [_1] of virtual funds in a risk-free environment.', '$10,000') },
-                                        { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds, access to competitive trading conditions, and zero commission.') },
+                                        { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds and access to competitive trading conditions.') },
                                     ]} />
                                 </div>
                                 <div className='step-2 invisible'>
@@ -225,7 +225,7 @@ const Metatrader = () => (
                                     <TypeGroup title={it.L('Step 2: Choose account type')} types={[
                                         { type: 'template', desc: 'standard' },
                                     ]}>
-                                        <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')}>{it.L('Which account is right for me?')}</a>
+                                        <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
                                     </TypeGroup>
                                 </div>
                                 <p id='new_account_msg' className='notice-msg center-text invisible'></p>

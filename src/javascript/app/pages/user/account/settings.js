@@ -2,11 +2,10 @@ const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
 const jpClient         = require('../../../common/country_base').jpClient;
 const State            = require('../../../../_common/storage').State;
-const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const Settings = (() => {
     const onLoad = () => {
-        BinarySocket.wait('get_account_status').then((response) => {
+        BinarySocket.wait('get_account_status').then(() => {
             const $class_real = $('.real');
             const is_jp       = jpClient();
 
@@ -16,8 +15,7 @@ const Settings = (() => {
                 $class_real.not((is_jp ? '.ja-hide' : '')).setVisibility(1);
             }
 
-            const get_account_status = getPropertyValue(response, 'get_account_status');
-            const status             = getPropertyValue(get_account_status, 'status');
+            const status = State.getResponse('get_account_status.status');
             if (!/social_signup/.test(status)) {
                 $('#change_password').setVisibility(1);
             }
@@ -33,7 +31,7 @@ const Settings = (() => {
                 }
             }
 
-            if (!get_account_status.prompt_client_to_authenticate) {
+            if (!State.getResponse('get_account_status.prompt_client_to_authenticate')) {
                 $('#authenticate').setVisibility(0);
             }
 
