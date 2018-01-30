@@ -543,3 +543,9 @@ li strong.margin-right {
 .icon-google:before {
     content: url('../images/pages/applications/icon-google.svg');
 }
+
+.section-divider {
+    .circle {
+        padding: 7px 5px !important;
+    }
+}
