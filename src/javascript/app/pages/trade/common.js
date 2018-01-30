@@ -1,4 +1,3 @@
-const Moment             = require('moment');
 const Defaults           = require('./defaults');
 const Notifications      = require('./notifications');
 const Symbols            = require('./symbols');
@@ -8,7 +7,6 @@ const elementInnerHtml   = require('../../../_common/common_functions').elementI
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
-const toISOFormat        = require('../../../_common/string_util').toISOFormat;
 // const urlFor             = require('../../../_common/url').urlFor;
 const createElement      = require('../../../_common/utility').createElement;
 const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
@@ -561,9 +559,7 @@ const commonTrading = (() => {
     };
 
     const timeIsValid = ($element) => {
-        let end_date_value   = getElementById('expiry_date').getAttribute('data-value');
-        let start_date_value = getElementById('date_start').value;
-        let end_time_value   = getElementById('expiry_time').value;
+        const end_time_value = getElementById('expiry_time').value;
         const $invalid_time  = $('#invalid-time');
 
         if ($element.attr('id') === 'expiry_time' && end_time_value &&
@@ -577,19 +573,6 @@ const commonTrading = (() => {
 
         $element.removeClass('error-field');
         $invalid_time.remove();
-
-        end_date_value   = end_date_value ? toISOFormat(Moment(end_date_value)) : toISOFormat(new Moment());
-        // eslint-disable-next-line no-underscore-dangle
-        start_date_value = start_date_value === 'now' ? Math.floor(window.time._i / 1000) : start_date_value;
-        end_time_value   = end_time_value || '23:59:59';
-
-        if (Moment.utc(`${end_date_value} ${end_time_value}`).unix() <= start_date_value) {
-            $element.addClass('error-field');
-            if (!document.getElementById('end_time_validation')) {
-                $('#expiry_type_endtime').append($('<p/>', { class: 'error-msg', id: 'end_time_validation', text: localize('End time must be after start time.') }));
-            }
-            return false;
-        }
 
         $element.removeClass('error-field');
         $('#end_time_validation').remove();
