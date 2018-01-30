@@ -1,13 +1,13 @@
 import { observable, action } from 'mobx';
-import DAO from '../data/dao';
 import Client from '../../../../app/base/client';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
+import { getCountry, getTicks } from './logic/test';
 
 export default class TradeStore {
     @action.bound init() {
-        this._getCountry();
-        this._getTicks();
+        getCountry().then(r => { this.message = r; });
+        getTicks((r) => { this.tick = r; });
         if (!Client.get('currency')) {
             getCurrencies().then(currencies => {
                 this.currencies_list = currencies;
@@ -18,18 +18,6 @@ export default class TradeStore {
         }
         this.duration_units_list = getDurationUnits();
     }
-
-    _getCountry() {
-        DAO.getWebsiteStatus().then(r => {
-            this.message = `Your country is: ${r.website_status.clients_country}`;
-        });
-    };
-
-    _getTicks() {
-        DAO.getTicks('frxEURUSD', (r) => {
-            this.tick = `${new Date(r.tick.epoch * 1000).toUTCString()}: ${r.tick.quote}`;
-        });
-    };
 
     @action.bound handleChange(e) {
         const {name, value} = e.target;
