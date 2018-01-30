@@ -247,7 +247,7 @@ const TradingEvents = (() => {
             lots_element.addEventListener('keypress', onlyNumericOnKeypress);
 
             lots_element.addEventListener('input', commonTrading.debounce((e) => {
-                e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                e.target.value = e.target.value.replace(/(\D.+)/g, '').replace(/^0+/,'');
                 Defaults.set('lot', e.target.value);
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
