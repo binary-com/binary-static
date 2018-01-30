@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-29 21:35-0500\n"
+"PO-Revision-Date: 2018-01-30 04:44-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -1501,6 +1501,9 @@ msgstr "取引対象"
 
 msgid "Asset Index"
 msgstr "取引期間データ"
+
+msgid "Asset open hours:"
+msgstr ""
 
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
 msgstr "複数のサブアカウントを複数アカウントマネージャー（MAM）という1つのインターフェースでシームレスに割り当て、管理ができます。"
@@ -3485,9 +3488,6 @@ msgstr "判定時刻"
 
 msgid "End time"
 msgstr "終了時間"
-
-msgid "End time must be after start time."
-msgstr "取引終了時間は明日以降として設定して下さい。"
 
 msgid "Ended"
 msgstr "終了しました"
