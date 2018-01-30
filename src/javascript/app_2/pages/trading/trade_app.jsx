@@ -23,13 +23,57 @@ class TradeApp extends React.Component {
                         <Amount />
                         <div>{this.props.message}</div>
                         <p>EUR/USD: {this.props.tick}</p>
+                        <div className='gr-row'>
+                        <div className='gr-3'>
+                            <Btn
+                                id='test_btn'
+                                className='primary orange'
+                                text='primary'
+                                has_effect
+                            />
+                            <Btn
+                                id ='test_btn'
+                                className='primary green'
+                                text='primary'
+                                has_effect
+                            />
+                            <Btn
+                                id ='test_btn'
+                                className='primary green'
+                                text='primary'
+                                has_effect
+                                is_disabled
+                            />
+                        </div>
                         <div className='gr-3'>
                             <Btn
                                 id ='test_btn'
-                                className = 'shadow-1'
-                                text='Test'
-                                is_ripple
+                                className='secondary orange'
+                                text='secondary'
+                                has_effect
                             />
+                            <Btn
+                                id='test_btn'
+                                className='secondary green'
+                                text='secondary'
+                                has_effect
+                            />
+                            <Btn
+                                id='test_btn'
+                                className='secondary green'
+                                text='secondary'
+                                has_effect
+                                is_disabled
+                            />
+                        </div>
+                        <div className='gr-12 gr-centered'>
+                            <Btn
+                                id='test_btn'
+                                className='flat'
+                                text='is used in a card'
+                                has_effect
+                            />
+                        </div>
                         </div>
                     </div>
 
