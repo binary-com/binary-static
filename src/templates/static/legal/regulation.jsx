@@ -90,6 +90,10 @@ const Regulation = () => (
         <p>{it.L('Binary Group Ltd., with registered office address situated at Kingston Chambers, Road Town, Tortola, British Virgin Islands, is the holding company for the Binary group.')}</p>
     </Box>
 
+    <Box header={it.L('Binary Limited')} >
+        <p>{it.L('Binary Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
+    </Box>
+
     <Box header={it.L('Binary K.K.')} >
         <p>{it.L('Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590).')}</p>
         <p>{it.L('Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations.')}</p>
