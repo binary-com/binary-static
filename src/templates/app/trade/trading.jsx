@@ -8,7 +8,7 @@ const Trading = () => (
         <div id='trading_socket_container' className='tab-menu-wrap'>
             <div id='notifications_wrapper'></div>
             <div id='loading_container' className='overlay_container'></div>
-            <a id='deposit_btn_trade' className='client_real invisible gr-hide-m button' href={it.url_for('cashier/forwardws#deposit')}>
+            <a id='deposit_btn_trade' className='client_real invisible gr-hide-m button' href={it.url_for('cashier/forwardws?action=deposit')}>
                 <span>
                     <img src={it.url_for('images/common/plus.svg')} />
                     {it.L('Deposit')}
