@@ -4,6 +4,10 @@ import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
 
+const event_map = {
+    amount: onAmountChange,
+};
+
 export default class TradeStore {
     @action.bound init() {
         getCountry().then(r => { this.message = r; });
@@ -28,12 +32,8 @@ export default class TradeStore {
         this.Dispatch(name, value);
     }
 
-    call_map = {
-        amount: onAmountChange,
-    };
-
     @action.bound Dispatch(name, value) {
-        const handler = this.call_map[name];
+        const handler = event_map[name];
         if (typeof handler === 'function') {
             const result = handler(value);
             Object.keys(result).forEach((key) => { // update state
