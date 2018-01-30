@@ -33,55 +33,29 @@ const getElementById        = require('../../../_common/common_functions').getEl
 const TradingEvents = (() => {
     const initiate = () => {
         const attachTimePicker = (selector, check_end_time) => {
-            let minTime,
-                maxTime;
+            let min_time,
+                max_time;
             if ($date_start && $date_start.val()) {
                 const date_start_val    = $date_start.val();
                 const moment_date_start = moment.unix(date_start_val).utc();
                 const moment_now        = (window.time || moment.utc()).clone();
-                const is_now            = Durations.isNow(date_start_val);
 
                 if (check_end_time) {
-                    const minMaxTime = CommonIndependent.getMinMaxTime($date_start, moment_now);
+                    const min_max_time = CommonIndependent.getMinMaxTimeEnd($date_start, $time_start, moment_now);
 
-                    minTime = minMaxTime.minTime;
-                    maxTime = minMaxTime.maxTime;
-
-                    // if date_start is not 'now'
-                    if (!is_now) {
-                        const expiry_time_val = $('#expiry_time').val().split(':');
-                        let end_time          = moment.utc($('#expiry_date').attr('data-value'));
-                        if (expiry_time_val) {
-                            end_time = end_time.hour(expiry_time_val[0]).minute(expiry_time_val[1]);
-                        }
-                        const start_time_val  = $time_start.val().split(':');
-                        const compare         = isNaN(+date_start_val) ? moment_now.clone() :
-                            moment_date_start.hour(start_time_val[0]).minute(start_time_val[1]);
-                        // if expiry time is one day after start time, minTime can be 0
-                        // but maxTime should be 24 hours after start time, so exact value of start time
-                        if (end_time.isAfter(compare, 'day')) {
-                            minTime = 0;
-                            maxTime = start_time_val.length > 1 ?
-                                end_time.clone().hour(start_time_val[0]).minute(start_time_val[1]) : end_time.clone();
-                        } else {
-                            // if expiry time is same as today, min time should be the selected start time plus five minutes
-                            minTime = moment_date_start.clone();
-                            minTime = minTime.hour(start_time_val[0]).minute(start_time_val[1]);
-                            if (!(+start_time_val[0] === 23 && +start_time_val[1] === 55)) {
-                                minTime = minTime.add(5, 'minutes');
-                            }
-                        }
-                    }
-                } else if (is_now || moment_date_start.isSame(moment_now, 'day')) {
-                    minTime = moment_now.clone();
+                    min_time = min_max_time.minTime;
+                    max_time = min_max_time.maxTime;
+                } else if (moment_date_start.isSame(moment_now, 'day')) {
+                    // for start time picker only disable past times of today
+                    min_time = moment_now.clone();
                 }
             }
             const initObj = { selector };
-            if (minTime) {
-                initObj.minTime = minTime.clone();
+            if (min_time) {
+                initObj.minTime = min_time.clone();
             }
-            if (maxTime) {
-                initObj.maxTime = maxTime.clone();
+            if (max_time) {
+                initObj.maxTime = max_time.clone();
             }
             TimePicker.init(initObj);
         };

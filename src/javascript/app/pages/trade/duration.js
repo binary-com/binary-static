@@ -475,6 +475,12 @@ const Durations = (() => {
             const time = time_start_val.split(':');
             new_time   = moment(window.time).hour(time[0]).minute(time[1]);
         }
+        const min_max_time_end = commonIndependent.getMinMaxTimeEnd();
+        if ((new_time || expiry_time_val) < min_max_time_end.minTime.format('HH:mm')) {
+            new_time = min_max_time_end.minTime;
+        } else if ((new_time || expiry_time_val) > min_max_time_end.maxTime.format('HH:mm')) {
+            new_time = min_max_time_end.maxTime.add(-10, 'minutes');
+        }
         if (new_time) {
             if (!keep_time_unchanged) {
                 new_time = new_time.add(5, 'minutes');
