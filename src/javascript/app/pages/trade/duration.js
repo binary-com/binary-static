@@ -476,9 +476,11 @@ const Durations = (() => {
             new_time   = moment(window.time).hour(time[0]).minute(time[1]);
         }
         const min_max_time_end = commonIndependent.getMinMaxTimeEnd();
-        if ((new_time || expiry_time_val) < min_max_time_end.minTime.format('HH:mm')) {
+        const min_time = isNaN(min_max_time_end.minTime) ? min_max_time_end.minTime.format('HH:mm') : min_max_time_end.minTime;
+        const max_time = isNaN(min_max_time_end.maxTime) ? min_max_time_end.maxTime.format('HH:mm') : min_max_time_end.maxTime;
+        if ((new_time || expiry_time_val) < min_time) {
             new_time = min_max_time_end.minTime;
-        } else if ((new_time || expiry_time_val) > min_max_time_end.maxTime.format('HH:mm')) {
+        } else if ((new_time || expiry_time_val) > max_time) {
             new_time = min_max_time_end.maxTime.add(-10, 'minutes');
         }
         if (new_time) {

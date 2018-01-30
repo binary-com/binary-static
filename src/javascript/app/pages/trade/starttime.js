@@ -57,8 +57,6 @@ const StartDates = (() => {
             start_dates.list.sort(compareStartDate);
             const default_start = Defaults.get('date_start') || 'now';
 
-            $('#time_start_row').setVisibility(default_start !== 'now');
-
             const rounding = 5 * 60 * 1000;
             const now      = moment.utc();
             start_dates.list.forEach((start_date) => {
@@ -95,6 +93,7 @@ const StartDates = (() => {
                 target.appendChild(fragment);
                 Defaults.set('date_start', target.value);
                 CommonIndependent.showAssetOpenHours(target.value === 'now' ? '' : $(target));
+                $('#time_start_row').setVisibility(target.value !== 'now');
             }
             State.set('is_start_dates_displayed', true);
             if (first) {
