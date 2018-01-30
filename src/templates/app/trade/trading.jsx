@@ -124,7 +124,7 @@ const Trading = () => (
                                     </div>
                                     <div className='row' id='lots_row'>
                                         <div className='col form_label'>
-                                            <label htmlFor='lots' id='lots_label'>{it.L('Quantity')}</label>
+                                            <label htmlFor='lots' id='lots_label'>{it.L('Units')}</label>
                                         </div>
                                         <div className='col'>
                                             <input type='text' defaultValue='1' step='any' maxLength='5' name='lots' id='lots' className='small_width_input' />

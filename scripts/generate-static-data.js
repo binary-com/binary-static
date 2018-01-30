@@ -111,7 +111,7 @@ const texts = [
     'Loss',
     'Profit',
     'Payout',
-    'Quantity',
+    'Units',
     'Stake',
     'Duration',
     'End Time',

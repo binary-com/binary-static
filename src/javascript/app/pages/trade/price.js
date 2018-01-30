@@ -203,7 +203,7 @@ const Price = (() => {
             CommonFunctions.elementTextContent(payout, `${localize('Payout')}: `);
             CommonFunctions.elementInnerHtml(payout_amount, data.payout ? formatMoney((currency.value || currency.getAttribute('value')), data.payout) : '-');
             // Lookback quantity
-            CommonFunctions.elementTextContent(quantity, `${localize('Quantity')}: `);
+            CommonFunctions.elementTextContent(quantity, `${localize('Units')}: `);
             CommonFunctions.elementInnerHtml(contract_quantity, params.amount ? params.amount : '-');
 
             if (data.longcode && window.innerWidth > 500) {
