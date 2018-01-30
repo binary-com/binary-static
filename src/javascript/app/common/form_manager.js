@@ -1,6 +1,6 @@
 const Validation       = require('./form_validation');
 const BinarySocket     = require('../base/socket');
-const urlParam         = require('../../_common/url').param;
+const getHashValue     = require('../../_common/url').getHashValue;
 const isEmptyObject    = require('../../_common/utility').isEmptyObject;
 const showLoadingImage = require('../../_common/utility').showLoadingImage;
 
@@ -18,7 +18,7 @@ const FormManager = (() => {
             if (Array.isArray(fields) && fields.length) {
                 if (needs_token) {
                     // eslint-disable-next-line no-param-reassign
-                    fields = fields.concat({ request_field: 'verification_code', value: urlParam('token') });
+                    fields = fields.concat({ request_field: 'verification_code', value: getHashValue('token') });
                 }
                 forms[form_selector].fields = fields;
 
