@@ -65,10 +65,12 @@ const checkValidTime = (time_start_element = getElementById('time_start'), $date
     const hour               = time_array.length ? +time_array[0] : now_time.hour();
     const minute             = time_array.length ? +time_array[1] : now_time.minute();
     const date_time          = moment.utc(getElement().value * 1000).hour(hour).minute(minute);
-    let min_time             = getMinMaxTimeStart($date_start).minTime;
-    min_time                 = min_time.valueOf() > now_time.valueOf() ? min_time : now_time;
-    const max_time           = getMinMaxTimeStart($date_start).maxTime;
-    time_start_element.value = date_time.isBefore(min_time) || date_time.isAfter(max_time) || !time ? min_time.add(5, 'minutes').utc().format('HH:mm') : time_array.join(':');
+    const min_max_time       = getMinMaxTimeStart($date_start);
+    let min_time             = min_max_time.minTime.clone();
+    if (!(min_max_time.minTime.format('HH:mm') === '23:55')) {
+        min_time = min_time.add(5, 'minutes');
+    }
+    time_start_element.value = date_time.isBefore(min_time) || date_time.isAfter(min_max_time.maxTime) || !time ? min_time.format('HH:mm') : time_array.join(':');
     time_start_element.setAttribute('data-value', time_start_element.value);
 };
 
@@ -78,7 +80,7 @@ const getMinMaxTimeStart = ($min_max_selector = $('#date_start'), moment_now = (
     const end_date         = moment.unix($selected_option.attr('data-end')).utc();
     return {
         minTime: start_date.isAfter(moment_now) ? start_date : moment_now.clone(),
-        maxTime: end_date.isSame(start_date, 'day') ? end_date : start_date.hour(23).minute(55).second(0),
+        maxTime: end_date.isSame(start_date, 'day') ? end_date : start_date.clone().hour(23).minute(55).second(0),
     };
 };
 
