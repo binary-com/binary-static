@@ -2,7 +2,7 @@ import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
-import { getCountry, getTicks } from './logic/test';
+import { getCountry, getTicks, onAmountChange } from './logic/test';
 
 export default class TradeStore {
     @action.bound init() {
@@ -20,11 +20,26 @@ export default class TradeStore {
     }
 
     @action.bound handleChange(e) {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         if (!this.hasOwnProperty(name)) { // eslint-disable-line
             throw new Error(`Invalid Argument: ${name}`);
         }
         this[name] = value;
+        this.Dispatch(name, value);
+    }
+
+    call_map = {
+        amount: onAmountChange,
+    };
+
+    @action.bound Dispatch(name, value) {
+        const handler = this.call_map[name];
+        if (typeof handler === 'function') {
+            const result = handler(value);
+            Object.keys(result).forEach((key) => { // update state
+                this[key] = result[key];
+            });
+        }
     }
 
     @observable basis           = 'stake';
