@@ -30,33 +30,31 @@ export class MobxProvider extends Provider {
 }
 
 const isFunction = (fn) => typeof (fn) === 'function';
-const isShallowEqual = (a, b) => {
-    for (const key in a) { // eslint-disable-line
-        if (isFunction(a[key]) && isFunction(b[key])) {
-            continue; // eslint-disable-line
-        }
-
-        if (a[key] !== b[key]) {
-            return false;
-        }
-    }
-    return true;
-};
+const isShallowEqual = (a, b) => (
+    Object.keys(a).every(key => (
+        (isFunction(a[key]) && isFunction(b[key])) || a[key] === b[key]
+    ))
+);
 
 const unboxProps = (props) => {
     const unboxedProps = {};
     Object.keys(props).forEach(key => {
-        if (isObservableArray(props[key])) {
-            unboxedProps[key] = props[key].peek();
-        } else if (isObservableMap(props[key])) {
-            unboxedProps[key] = props[key].toJS();
-        } else if (isBoxedObservable(props[key])) {
-            unboxedProps[key] = props[key].get();
-        } else if (isObservable(props[key])) {
-            unboxedProps[key] = toJS(props[key]);
+        const value = props[key];
+        let result;
+
+        if (isObservableArray(value)) {
+            result = value.peek();
+        } else if (isObservableMap(value)) {
+            result = value.toJS();
+        } else if (isBoxedObservable(value)) {
+            result = value.get();
+        } else if (isObservable(value)) {
+            result = toJS(value);
         } else {
-            unboxedProps[key] = props[key];
+            result = value;
         }
+
+        unboxedProps[key] = result;
     });
 
     return unboxedProps;

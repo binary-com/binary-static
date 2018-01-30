@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Btn = ({
+export const Button = ({
     id,
     className='',
     text,
@@ -16,4 +16,4 @@ export const Btn = ({
     );
 };
 
-export default Btn;
+export default Button;
