@@ -184,7 +184,7 @@ const Explanation = () => (
             </div>
             <div id='explain_lookbacklow' className='invisible'>
                 <h3>{it.L('Pay-off')}</h3>
-                <p>{it.L('By purchasing the ‘Low’ contract, you’ll receive a pre-specified amount per lot for each point of difference between the [_1]highest value[_2] and the [_1]exit spot[_2].', '<strong>', '</strong>')}</p>
+                <p>{it.L('By purchasing the [_1]‘Close-Low’[_2] contract, you’ll receive a pre-specified amount per unit for each point of difference between the [_1]exit spot[_2] and the [_1]lowest value[_2].', '<strong>', '</strong>')}</p>
                 <h3>{it.L('Highest and lowest values')}</h3>
                 <p>{it.L('The [_1]highest[_2] value is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]lowest[_2] value is the lowest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
@@ -198,7 +198,7 @@ const Explanation = () => (
             </div>
             <div id='explain_lookbackhigh' className='invisible'>
                 <h3>{it.L('Pay-off')}</h3>
-                <p>{it.L('By purchasing the ‘High’ contract, you’ll receive a pre-specified amount per lot for each point of difference between the [_1]exit spot[_2] and the [_1]lowest value[_2].', '<strong>', '</strong>')}</p>
+                <p>{it.L('By purchasing the [_1]‘High-Close’[_2] contract, you’ll receive a pre-specified amount per unit for each point of difference between the [_1]highest value[_2] and the [_1]exit spot[_2].', '<strong>', '</strong>')}</p>
                 <h3>{it.L('Highest and lowest values')}</h3>
                 <p>{it.L('The [_1]highest[_2] value is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]lowest[_2] value is the lowest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
@@ -212,7 +212,7 @@ const Explanation = () => (
             </div>
             <div id='explain_lookbackhighlow' className='invisible'>
                 <h3>{it.L('Pay-off')}</h3>
-                <p>{it.L('By purchasing the ‘High-Low’ contract, you’ll receive a pre-specified amount per lot for each point of difference between the [_1]highest value[_2] and the [_1]lowest value[_2].', '<strong>', '</strong>')}</p>
+                <p>{it.L('By purchasing the [_1]‘High-Low’[_2] contract, you’ll receive a pre-specified amount per unit for each point of difference between the [_1]highest value[_2] and the [_1]lowest value[_2].', '<strong>', '</strong>')}</p>
                 <h3>{it.L('Highest and lowest values')}</h3>
                 <p>{it.L('The [_1]highest[_2] value is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]lowest[_2] value is the lowest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
