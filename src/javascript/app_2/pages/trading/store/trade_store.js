@@ -2,6 +2,7 @@ import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
+import getStartDates from './logic/start_date';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
 
 const event_map = {
@@ -12,6 +13,7 @@ export default class TradeStore {
     @action.bound init() {
         getCountry().then(r => { this.message = r; });
         getTicks((r) => { this.tick = r; });
+        this.start_dates_list = getStartDates();
         if (!Client.get('currency')) {
             getCurrencies().then(currencies => {
                 this.currencies_list = currencies;
@@ -49,18 +51,22 @@ export default class TradeStore {
     @observable amount          = 5;
 
     // Duration
-    @observable expiry_type   = 'duration';
-    @observable duration      = 15;
-    @observable duration_unit = 's';
+    @observable expiry_type         = 'duration';
+    @observable duration            = 15;
+    @observable duration_unit       = 's';
     @observable duration_units_list = {};
-    @observable expiry_date   = null;
-    @observable expiry_time   = null;
+    @observable expiry_date         = null;
+    @observable expiry_time         = null;
 
     // Barrier
     @observable barrier_1 = 0;
     @observable barrier_2 = 0;
 
     // Start Time
+    @observable start_dates_list = [];
+    @observable start_date       = 'now';
+    @observable start_time       = '';
+
     // Last Digit
 
     @observable message = '';
