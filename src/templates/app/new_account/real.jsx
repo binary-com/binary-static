@@ -35,6 +35,7 @@ const Real = () => (
             </Fieldset>
 
             <Fieldset legend={it.L('Address')}>
+                <p className='hint'>{it.L('Please enter your full address to avoid authentication delays.')}</p>
                 <AddressLine1 />
                 <AddressLine2 />
                 <AddressCity />

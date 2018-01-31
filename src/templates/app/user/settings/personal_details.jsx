@@ -85,6 +85,7 @@ const PersonalDetails = () => (
             </Fieldset>
 
             <Fieldset className='invisible RealAcc ja-hide' legend={it.L('Address')}>
+                <p className='hint'>{it.L('Please enter your full address to avoid authentication delays.')}</p>
                 <AddressLine1 no_hint />
                 <AddressLine2 />
                 <AddressCity />

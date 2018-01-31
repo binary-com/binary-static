@@ -113,6 +113,9 @@ fieldset {
     .text-display { /* TODO: replace all occurrences of id with the class */
         line-height: 25px;
     }
+    .hint {
+        padding-left: 1em;
+    }
 }
 
 .error-msg {
