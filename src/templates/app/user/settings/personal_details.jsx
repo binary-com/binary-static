@@ -84,7 +84,7 @@ const PersonalDetails = () => (
                     id='tax_identification_number' attributes={{ maxLength: 20 }} />
             </Fieldset>
 
-            <Fieldset className='invisible RealAcc ja-hide' legend={it.L('Address')}>
+            <Fieldset id='address_form' className='invisible RealAcc ja-hide' legend={it.L('Address')}>
                 <p className='hint'>{it.L('Please enter your full address to avoid authentication delays.')}</p>
                 <AddressLine1 no_hint />
                 <AddressLine2 />
@@ -94,7 +94,7 @@ const PersonalDetails = () => (
                 <Phone />
             </Fieldset>
 
-            <Fieldset className='invisible JpAcc' legend={it.L('Address')}>
+            <Fieldset id='address_form' className='invisible JpAcc' legend={it.L('Address')}>
                 <FormRow type='label' label={it.L('Postal Code / ZIP')} id='lbl_address_postcode' attributes={{className: 'jp_value'}} />
                 <FormRow type='label' label={it.L('State/Province')} id='lbl_address_state' attributes={{className: 'jp_value'}} />
                 <FormRow type='label' label={it.L('Town/City')} id='lbl_address_city' attributes={{className: 'jp_value'}} />

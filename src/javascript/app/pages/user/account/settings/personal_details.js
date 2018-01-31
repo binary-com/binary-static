@@ -123,20 +123,21 @@ const PersonalDetails = (() => {
     };
 
     const geocodingResponse = (status) => {
-        const el_geocode_error = $('#geocode-error');
+        const $geocode_error = $('#geocode-error');
 
         if (/ZERO_RESULTS/.test(status)) {
-            if (el_geocode_error.length) {
-                el_geocode_error.setVisibility(1);
+            if ($geocode_error.length) {
+                $geocode_error.fadeIn(0);
                 return;
             }
-            $('<p/>', {
+            const $last_child = $('#address_form').children(':last');
+            $last_child.parent().append($('<p/>', {
                 id   : 'geocode-error',
                 class: 'notice-msg no-margin',
                 text : localize('We could not verify your address. Please note that a wrong address may cause authentication delays.'),
-            }).insertBefore('#btn_update');
+            }));
         } else if (/OK/.test(status)) {
-            el_geocode_error.fadeOut(1000);
+            $geocode_error.fadeOut(0);
         }
     };
 
