@@ -15,8 +15,7 @@ const Barrier = ({
             {!!barrier_2 &&
                 <React.Fragment>
                     <label htmlFor='barrier_2'>{localize('Low barrier')}</label>
-                    <InputField type='number' name='barrier_2' value={barrier_2} on_change={onChange} />
-                undefined
+                    <InputField name='barrier_2' value={barrier_2} on_change={onChange} />
                 </React.Fragment>
             }
         </fieldset>
