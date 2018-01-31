@@ -1,14 +1,13 @@
-const moment           = require('moment');
-const BinaryPjax       = require('../../../../base/binary_pjax');
-const Client           = require('../../../../base/client');
-const Header           = require('../../../../base/header');
-const BinarySocket     = require('../../../../base/socket');
-const formatMoney      = require('../../../../common/currency').formatMoney;
-const FormManager      = require('../../../../common/form_manager');
-const Autocomplete     = require('../../../../../_common/autocomplete_address');
-const CommonFunctions  = require('../../../../../_common/common_functions');
-const localize         = require('../../../../../_common/localize').localize;
-const State            = require('../../../../../_common/storage').State;
+const moment          = require('moment');
+const BinaryPjax      = require('../../../../base/binary_pjax');
+const Client          = require('../../../../base/client');
+const Header          = require('../../../../base/header');
+const BinarySocket    = require('../../../../base/socket');
+const formatMoney     = require('../../../../common/currency').formatMoney;
+const FormManager     = require('../../../../common/form_manager');
+const CommonFunctions = require('../../../../../_common/common_functions');
+const localize        = require('../../../../../_common/localize').localize;
+const State           = require('../../../../../_common/storage').State;
 require('select2');
 
 const PersonalDetails = (() => {
@@ -32,9 +31,6 @@ const PersonalDetails = (() => {
         is_jp             = residence === 'jp';
         if (is_jp && !is_virtual) {
             setVisibility('#fieldset_email_consent');
-        }
-        if (!is_virtual) {
-            Autocomplete.init();
         }
         showHideTaxMessage();
     };
@@ -121,7 +117,27 @@ const PersonalDetails = (() => {
             fnc_response_handler: setDetailsResponse,
             fnc_additional_check: additionalCheck,
             enable_button       : true,
+            geocoder            : geocodingResponse,
         });
+        FormManager.geocoder(data, geocodingResponse);
+    };
+
+    const geocodingResponse = (status) => {
+        const el_geocode_error = $('#geocode-error');
+
+        if (/ZERO_RESULTS/.test(status)) {
+            if (el_geocode_error.length) {
+                el_geocode_error.setVisibility(1);
+                return;
+            }
+            $('<p/>', {
+                id   : 'geocode-error',
+                class: 'notice-msg no-margin',
+                text : localize('We could not verify your address. Please note that a wrong address may cause authentication delays.'),
+            }).insertBefore('#btn_update');
+        } else if (/OK/.test(status)) {
+            el_geocode_error.fadeOut(1000);
+        }
     };
 
     const displayGetSettingsData = (data, populate = true) => {

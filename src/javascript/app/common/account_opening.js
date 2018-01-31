@@ -5,7 +5,6 @@ const BinaryPjax         = require('../base/binary_pjax');
 const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
-const Autocomplete       = require('../../_common/autocomplete_address');
 const makeOption         = require('../../_common/common_functions').makeOption;
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
@@ -34,7 +33,6 @@ const AccountOpening = (() => {
         if (Client.canRequestProfessional()) {
             professionalClient.init(is_financial, false, is_ico_only);
         }
-        Autocomplete.init();
     };
 
     const getResidence = (form_id, getValidations) => {

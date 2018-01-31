@@ -9,7 +9,6 @@ import {
     AddressPostcode,
     Phone,
 } from '../../../_common/components/forms_common_rows.jsx';
-import { Map } from '../../../_common/components/elements.jsx';
 import Loading from '../../../_common/components/loading.jsx';
 
 const Money = () => (
@@ -87,7 +86,6 @@ const PersonalDetails = () => (
 
             <Fieldset className='invisible RealAcc ja-hide' legend={it.L('Address')}>
                 <AddressLine1 no_hint />
-                <Map />
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
