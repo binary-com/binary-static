@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField } from './form/text_field.jsx';
+import { InputField } from './form/text_field.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -10,12 +10,12 @@ const Barrier = ({
 }) =>  (
         <fieldset>
             <label htmlFor='barrier_1'>{localize(barrier_2 ? 'High barrier' : 'Barrier')}</label>
-            <TextField name='barrier_1' value={barrier_1} onChange={onChange} />
+            <InputField type='number' name='barrier_1' value={barrier_1} o_change={onChange} />
 
             {barrier_2 ?
                 <React.Fragment>
                     <label htmlFor='barrier_2'>{localize('Low barrier')}</label>
-                    <TextField name='barrier_2' value={barrier_2} onChange={onChange} />
+                    <InputField type='number' name='barrier_2' value={barrier_2} on_change={onChange} />
                 </React.Fragment> :
                 undefined
             }

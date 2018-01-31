@@ -29,9 +29,14 @@
 }
 // Indrek Pass also has a fantastic mixin here: http://sassmeister.com/gist/7f22e44ace49b5124eec
 /* Single property */
-body, input, .btn span {
-    @include interpolate(font-size, 320px, 1366px, 14px, 20px);
+body, input {
+    @include interpolate(font-size, 320px, 1440px, 14px, 22px);
 }
+
+.btn span {
+    @include interpolate(font-size, 320px, 1440px, 14px, 18px);
+}
+
 /* Multiple properties with same values */
 h1, h2, h3, h4, h5 {
     @include interpolate((padding-top, padding-bottom), 20rem, 70rem, 0rem, 0.5rem);

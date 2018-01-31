@@ -16,7 +16,29 @@ class FieldGroup extends React.PureComponent {
     }
 }
 
+const InputField = ({
+    type,
+    name,
+    class1,
+    is_disabled,
+    value,
+    on_change,
+}) => {
+    const classes = `txtfield ${class1||''}`;
+    return (
+        <input type={type}
+               name={name}
+               className={classes}
+               disabled={is_disabled}
+               value={value}
+               onChange={on_change}
+        />
+    );
+};
+
+
 module.exports = {
     TextField,
     FieldGroup,
+    InputField,
 };

@@ -69,6 +69,7 @@ module.exports = [
 
     // ==================== Section: "app_2" ====================
     ['trade',                              'app_2/trade/trading',                       'full_width', 'Trusted by traders since 2000'],
+    ['style-guide',                        'app_2/trade/style_guide',                   'full_width', 'Trusted by traders since 2000'],
 
 
     // ==================== Section: "static" ====================

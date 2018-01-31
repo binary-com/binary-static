@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField } from './form/text_field.jsx';
+import { InputField } from './form/text_field.jsx';
 import { connect } from '../store/connect';
 
 const Duration = ({
@@ -17,7 +17,7 @@ const Duration = ({
 
             {expiry_type === 'duration' ?
                 <React.Fragment>
-                    <TextField name='duration' value={duration} onChange={onChange} />
+                    <InputField type='number' name='duration' value={duration} on_change={onChange} />
                     <select name='duration_unit' value={duration_unit} onChange={onChange}>
                         {Object.keys(duration_units_list).map((u) => (
                             <option key={u} value={u}>{duration_units_list[u]}</option>

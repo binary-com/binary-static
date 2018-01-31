@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField } from './form/text_field.jsx';
+import { InputField } from './form/text_field.jsx';
 import { connect } from '../store/connect';
 import Client from '../../../../app/base/client';
 
@@ -34,7 +34,7 @@ const Amount = ({
                 </select>
             }
 
-            <TextField name='amount' value={amount} onChange={onChange} />
+            <InputField type='number' name='amount' value={amount} on_change={onChange} />
         </fieldset>
 );
 
