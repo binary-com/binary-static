@@ -232,7 +232,7 @@ const Price = (() => {
             comment.show();
             error.hide();
             if (/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
-                CommonFunctions.elementInnerHtml(comment, `${localize('Payoff')}: ${formatMoney((currency.value || currency.getAttribute('value')), proposal.multiplier)}/${localize('point difference')}`);
+                CommonFunctions.elementInnerHtml(comment, `${localize('Payoff')}: ${formatMoney((currency.value || currency.getAttribute('value')), proposal.multiplier, false, 3, 1)}/${localize('point difference')}`);
             } else {
                 commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }
