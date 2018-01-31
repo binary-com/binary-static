@@ -248,15 +248,15 @@
         }
         &.LBFLOATPUT {
             background: url('../images/pages/trade/low_icon.svg') no-repeat center top;
-            background-size: 40%;
+            background-size: 50%;
         }
         &.LBFLOATCALL {
             background: url('../images/pages/trade/high_icon.svg') no-repeat center top;
-            background-size: 40%;
+            background-size: 50%;
         }
         &.LBHIGHLOW {
             background: url('../images/pages/trade/high_low_icon.svg') no-repeat center top;
-            background-size: 40%;
+            background-size: 50%;
         }
     }
     #contract_prices_container {

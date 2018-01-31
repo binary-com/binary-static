@@ -153,6 +153,7 @@ const texts = [
     'Cryptocurrency',
     'Fiat Currency',
     'point difference',
+    'Payoff',
     'High-Close',
     'Close-Low',
     'High-Low',
