@@ -24,7 +24,7 @@ const InputField = ({
     value,
     on_change,
 }) => {
-    const classes = `txtfield ${class1||''}`;
+    const classes = `inputfield ${class1||''}`;
     return (
         <input type={type}
                name={name}
