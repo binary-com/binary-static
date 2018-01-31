@@ -12,12 +12,11 @@ const Barrier = ({
             <label htmlFor='barrier_1'>{localize(barrier_2 ? 'High barrier' : 'Barrier')}</label>
             <TextField name='barrier_1' value={barrier_1} onChange={onChange} />
 
-            {barrier_2 ?
+            {!!barrier_2 &&
                 <React.Fragment>
                     <label htmlFor='barrier_2'>{localize('Low barrier')}</label>
                     <TextField name='barrier_2' value={barrier_2} onChange={onChange} />
-                </React.Fragment> :
-                undefined
+                </React.Fragment>
             }
         </fieldset>
 );

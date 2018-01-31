@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextField } from './form/text_field.jsx';
 import { connect } from '../store/connect';
+import { localize } from '../../../../_common/localize';
 
 const Duration = ({
     expiry_type,
@@ -11,8 +12,8 @@ const Duration = ({
 }) =>  (
         <fieldset>
             <select name='expiry_type' value={expiry_type} onChange={onChange}>
-                <option value='duration'>Duration</option>
-                <option value='endtime'>End Time</option>
+                <option value='duration'>{localize('Duration')}</option>
+                <option value='endtime'>{localize('End Time')}</option>
             </select>
 
             {expiry_type === 'duration' ?
