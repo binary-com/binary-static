@@ -2,6 +2,7 @@ import React from 'react';
 import { InputField } from './form/text_field.jsx';
 import { connect } from '../store/connect';
 import Client from '../../../../app/base/client';
+import { localize } from '../../../../_common/localize';
 
 const Currencies = ({ list }) => (
     Object.keys(list).map((type, idx) => (
@@ -23,8 +24,8 @@ const Amount = ({
 }) => (
         <fieldset>
             <select name='basis' value={basis} onChange={onChange}>
-                <option value='payout'>Payout</option>
-                <option value='stake'>Stake</option>
+                <option value='payout'>{localize('Payout')}</option>
+                <option value='stake'>{localize('Stake')}</option>
             </select>
 
             {Client.get('currency') ?

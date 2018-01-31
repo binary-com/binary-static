@@ -2,6 +2,7 @@ import React from 'react';
 import Amount from './components/amount.jsx';
 import Barrier from './components/barrier.jsx';
 import Duration from './components/duration.jsx';
+import StartDate from './components/start_date.jsx';
 import Test from './components/test.jsx';
 import { connect } from './store/connect';
 
@@ -17,6 +18,7 @@ class TradeApp extends React.Component {
                     <Test />
                 </div>
                 <div className='sidebar-container'>
+                    <StartDate />
                     <Duration />
                     <Barrier />
                     <Amount />
