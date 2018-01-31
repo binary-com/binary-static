@@ -42,6 +42,7 @@ export default class TradeStore {
         }
     }
 
+    // Amount
     @observable basis           = 'stake';
     @observable currency        = Client.get('currency');
     @observable currencies_list = {};
@@ -55,8 +56,11 @@ export default class TradeStore {
     @observable expiry_date   = null;
     @observable expiry_time   = null;
 
-    // Start Time
     // Barrier
+    @observable barrier_1 = 0;
+    @observable barrier_2 = 0;
+
+    // Start Time
     // Last Digit
 
     @observable message = '';

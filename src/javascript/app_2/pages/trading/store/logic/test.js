@@ -8,9 +8,9 @@ export const getTicks = (func) => DAO.getTicks('frxEURUSD', (r) => {
 });
 
 export const onAmountChange = (new_value) => {
-    const duration = new_value * 2;
-    console.log('Amount: ', new_value, 'Duration: ', duration);
+    const barrier_2 = new_value * 2;
+    console.log('Amount: ', new_value, 'Low Barrier: ', barrier_2);
     return {
-        duration,
+        barrier_2,
     };
 };
