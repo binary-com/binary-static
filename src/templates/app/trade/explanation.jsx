@@ -4,73 +4,86 @@ const Explanation = () => (
     <div className='gr-parent'>
         {/* ========== Winning ========== */}
         <div id='explanation_winning' className='invisible'>
-            <h3>{it.L('Winning the contract')}</h3>
 
             <div id='winning_asian' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('Asian options settle by comparing the <strong>last tick</strong> with the average spot over the period.')}</p>
                 <p>{it.L('If you select "Asian Rise", you will win the payout if the <strong>last tick</strong> is <strong>higher</strong> than the <strong>average</strong> of the ticks.')}</p>
                 <p>{it.L('If you select "Asian Fall", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks.')}</p>
             </div>
 
             <div id='winning_digits' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Matches", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>')}</p>
                 <p>{it.L('If you select "Differs", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>not the same</strong> as your <strong>prediction</strong>.')}</p>
             </div>
 
             <div id='winning_endsinout' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Ends Between", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>.')}</p>
                 <p>{it.L('If you select "Ends Outside", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>.')}</p>
             </div>
 
             <div id='winning_evenodd' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Even", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>')}</p>
                 <p>{it.L('If you select "Odd", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>odd number (i.e., 1, 3, 5, 7, or 9).</strong>')}</p>
             </div>
 
             <div id='winning_higherlower' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Higher", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>.')}</p>
                 <p>{it.L('If you select "Lower", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>.')}</p>
             </div>
 
             <div id='winning_overunder' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Over", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>')}</p>
                 <p>{it.L('If you select "Under", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>less than your prediction.</strong>')}</p>
             </div>
 
             <div id='winning_risefall' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Rises", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>.')}</p>
                 <p>{it.L('If you select "Falls", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>.')}</p>
             </div>
 
             <div id='winning_runbet-lucky10' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('You win the payout if the market price ends in the digit you have selected.')}</p>
             </div>
 
             <div id='winning_runbet-quick10' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('You win the payout if the market price does not end in the digit you have selected.')}</p>
             </div>
 
             <div id='winning_runbet-updown' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "rises", you win the payout if the market price is higher than the <strong>entry spot</strong>.')}</p>
                 <p>{it.L('If you select "falls", you win the payout if the market price is lower than the <strong>entry spot</strong>.')}</p>
             </div>
 
             <div id='winning_staysinout' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Stays Between", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>.')}</p>
                 <p>{it.L('If you select "Goes Outside", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>.')}</p>
             </div>
 
             <div id='winning_ticks' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Rises", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>.')}</p>
                 <p>{it.L('If you select "Falls", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>.')}</p>
             </div>
 
             <div id='winning_touchnotouch' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Touches", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>.')}</p>
                 <p>{it.L('If you select "Does Not Touch", you win the payout if the market never touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>.')}</p>
             </div>
 
             <div id='winning_updown' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "rises", you win the payout if the market price is higher than the entry spot.')}</p>
                 <p>{it.L('If you select "falls", you win the payout if the market price is lower than the entry spot.')}</p>
             </div>
