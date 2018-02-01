@@ -36,7 +36,7 @@ const Index = () => (
     <div className='static_full get-started-beta'>
         <h1 className='center-text'>{it.L('Get Started')}</h1>
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
-            <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper' items={[
+            <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper eu-hide' items={[
                 { id: 'binary', text: it.L('Binary Options') },
                 { id: 'mt5',    text: it.L('MetaTrader 5') },
                 { id: 'get_started_tabs_selector', className: 'tab-selector' },
@@ -84,7 +84,7 @@ const Index = () => (
                             />
                         </div>
                     </TabContent>
-                    <TabContent id='mt5'>
+                    <TabContent id='mt5' className='eu-hide'>
                         <h2>{it.L('MetaTrader 5')}</h2>
                         <p>{it.L('Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools.')}</p>
 
