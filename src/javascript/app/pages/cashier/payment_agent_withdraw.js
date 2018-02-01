@@ -1,6 +1,8 @@
+const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
 const getDecimalPlaces = require('../../common/currency').getDecimalPlaces;
+const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const FormManager      = require('../../common/form_manager');
 const validEmailToken  = require('../../common/form_validation').validEmailToken;
 const localize         = require('../../../_common/localize').localize;
@@ -49,48 +51,29 @@ const PaymentAgentWithdraw = (() => {
             for (let i = 0; i < pa_list.length; i++) {
                 insertListOption($ddl_agents, pa_list[i].name, pa_list[i].paymentagent_loginid);
             }
-
-            // On pa change
-            $ddl_agents
-                .off('change')
-                .on('change', pa_list, initForm);
-
             setActiveView(view_ids.form);
+            const currency = Client.get('currency');
+            const form_id  = `#${$(view_ids.form).find('form').attr('id')}`;
+            const min      = isCryptocurrency(currency) ? 0.002 : 10;
+            const max      = isCryptocurrency(currency) ? 5 : 2000;
+            $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
+            FormManager.init(form_id, [
+                { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
+                { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min: min, max: max }]], request_field: 'amount' },
+                { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
 
+                { request_field: 'currency',              value: currency },
+                { request_field: 'paymentagent_withdraw', value: 1 },
+                { request_field: 'dry_run',               value: 1 },
+            ], true);
+
+            FormManager.handleSubmit({
+                form_selector       : form_id,
+                fnc_response_handler: withdrawResponse,
+                fnc_additional_check: setAgentName,
+                enable_button       : true,
+            });
         }
-    };
-
-    const initForm = (e) => {
-        const pa_list     = e.data;
-        const selected_pa = pa_list.filter(
-            (a) => a.paymentagent_loginid === $(e.target).find('option:selected').val()
-        )[0];
-        const min = selected_pa.min_withdrawal;
-        const max = selected_pa.max_withdrawal;
-
-        const currency = Client.get('currency');
-        const form_id  = `#${$(view_ids.form).find('form').attr('id')}`;
-        $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
-        FormManager.init(form_id, [
-            { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
-            { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }]], request_field: 'amount' },
-            { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
-
-            { request_field: 'currency',              value: currency },
-            { request_field: 'paymentagent_withdraw', value: 1 },
-            { request_field: 'dry_run',               value: 1 },
-        ], true);
-
-        FormManager.handleSubmit({
-            form_selector       : form_id,
-            fnc_response_handler: withdrawResponse,
-            fnc_additional_check: setAgentName,
-            enable_button       : true,
-        });
-
-        $(e.target)
-            .off('change')
-            .on('change', pa_list, initForm);
     };
 
     const insertListOption = ($ddl_object, item_text, item_value) => {
@@ -176,10 +159,8 @@ const PaymentAgentWithdraw = (() => {
             if (/(withdrawal|cashier)_locked/.test(data.get_account_status.status)) {
                 showPageError('', 'withdrawal-locked-error');
             } else {
-                BinarySocket.send({
-                    paymentagent_list: Client.get('residence'),
-                    currency         : Client.get('currency'),
-                }).then(response => populateAgentsList(response));
+                BinarySocket.send({ paymentagent_list: Client.get('residence') })
+                    .then(response => populateAgentsList(response));
             }
         });
     };
