@@ -234,9 +234,9 @@ const Price = (() => {
             if (/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
                 const multiplier = formatMoney((currency.value || currency.getAttribute('value')), proposal.multiplier, false, 3, 1);
                 const formula = {
-                    LBFLOATPUT: `${localize('High')} - ${localize('Close')}`,
+                    LBFLOATPUT : `${localize('High')} - ${localize('Close')}`,
                     LBFLOATCALL: `${localize('Close')} - ${localize('Low')}`,
-                    LBHIGHLOW: `${localize('High')} - ${localize('Low')}`,
+                    LBHIGHLOW  : `${localize('High')} - ${localize('Low')}`,
                 };
                 CommonFunctions.elementInnerHtml(comment, `${localize('Payoff')}: ${localize('Units')} x ${multiplier} x (${formula[type]})`);
             } else {
