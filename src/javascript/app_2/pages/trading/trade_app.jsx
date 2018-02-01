@@ -2,6 +2,7 @@ import React from 'react';
 import Amount from './components/amount.jsx';
 import Barrier from './components/barrier.jsx';
 import Duration from './components/duration.jsx';
+import LastDigit from './components/last_digit.jsx';
 import StartDate from './components/start_date.jsx';
 import { Button } from './components/form/button.jsx';
 import Test from './components/test.jsx';
@@ -21,6 +22,7 @@ class TradeApp extends React.Component {
                         <StartDate />
                         <Duration />
                         <Barrier />
+                        <LastDigit />
                         <Amount />
                         <div className='gr-row'>
                             <div className='gr-3'>
