@@ -67,7 +67,7 @@ const TypesOfAccounts = () => (
                         [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Advanced') }, { text: it.L('Volatility Indices') }],
                     ],
                     tbody: [
-                        [{ text: <Row number={1}  text={it.L('Account currency')} />},       { text: it.L('USD') },                    { text: it.L('USD') },                    { text: it.L('USD') }],
+                        [{ text: <Row number={1}  text={it.L('Account currency')} />},       { text: it.L('USD') },                    { text: it.L('USD') },                    { text: it.L('USD/EUR') }],
                         [{ text: <Row number={2}  text={it.L('Maximum leverage')} />},       { text: it.L('Up to 1:500') },            { text: it.L('Up to 1:100') },            { text: it.L('Up to 1:500') }],
                         [{ text: <Row number={3}  text={it.L('Order execution')} />},        { text: it.L('Market') },                 { text: it.L('Market') },                 { text: it.L('Market') }],
                         [{ text: <Row number={4}  text={it.L('Spread')} />},                 { text: it.L('Variable from 1.2 pips') }, { text: it.L('Variable from 0.9 pips') }, { text: it.L('Fixed') }],
@@ -79,7 +79,7 @@ const TypesOfAccounts = () => (
                         [{ text: <Row number={10} text={it.L('Maximum ticket size')} />},    { text: it.L('10 lots') },                { text: it.L('50 lots') },                { text: it.L('30 lots') }],
                         [{ text: <Row number={11} text={it.L('Minimum ticket size')} />},    { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') }],
                         [{ text: <Row number={12} text={it.L('Step size')} />},              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') }],
-                        [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} />}, { text: it.L('24/7') },                   { text: it.L('24/7') },                   { text: it.L('24/7') }],
+                        [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} />}, { text: it.L('24/7') },                   { text: it.L('24/7') },                   { text: it.L('N/A') }],
                     ],
                 }}
             />
@@ -154,7 +154,7 @@ const TypesOfAccounts = () => (
         <FootNote
             number={13}
             title={it.L('Cryptocurrency trading')}
-            texts={[it.L('Cryptocurrency trading is available 24/7.')]}
+            texts={[it.L('Indicates the availability of cryptocurrency trading on a particular account.')]}
         />
     </div>
 );

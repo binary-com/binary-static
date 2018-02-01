@@ -57,8 +57,8 @@ const MarketsTabContent = ({ text, header, image }) => (
     </div>
 );
 
-const AccountsListItem = ({ image, list_header, list_text }) => (
-    <div className='gr-row gr-padding-10'>
+const AccountsListItem = ({ image, list_header, list_text, class_name }) => (
+    <div className={`${class_name ? ` ${class_name}` : ''} gr-row gr-padding-10`}>
         <div className='gr-2 gr-no-gutter gr-gutter-left-m'>
             <img className='responsive' src={it.url_for(image)} />
         </div>
@@ -115,6 +115,7 @@ const AccountsTabContent = ({
                                 image={image_two}
                                 list_header={list_header_two}
                                 list_text={list_text_two}
+                                class_name='eu-hide'
                             />
                             { list_header_three &&
                                 <AccountsListItem
