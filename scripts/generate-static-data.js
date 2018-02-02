@@ -9,7 +9,7 @@ const texts = [
     'Month',
     'Year',
     'Sorry, an error occurred while processing your request.',
-    'Please <a href="[_1]">log in</a> to view this page.',
+    'Please [_1]log in[_2] or [_3]sign up[_2] to view this page.',
 
     // top bar
     'Open a Real Account',
@@ -80,7 +80,6 @@ const texts = [
     'Minute',
     'AM',
     'PM',
-    'End time must be after start time.',
     'Time is in the wrong format.',
 
     // highchart localization text
@@ -384,6 +383,7 @@ const texts = [
     'An additional password can be used to restrict access to the cashier.',
     'Update',
     'Sorry, you have entered an incorrect cashier password',
+    'You have reached the withdrawal limit.',
 
     // view popup
     'Start Time',
@@ -509,12 +509,16 @@ const texts = [
     'Current password',
     'New password',
     'Demo Standard',
-    'Demo STP',
-    'Demo Volatility',
+    'Standard',
+    'Demo Advanced',
+    'Advanced',
+    'Demo Volatility Indices',
     'Real Standard',
-    'Real STP',
-    'Real Volatility',
+    'Real Advanced',
+    'Real Volatility Indices',
     'Change Password',
+    'Demo Accounts',
+    'Real-Money Accounts',
 
     // account_transfer
     'Min',

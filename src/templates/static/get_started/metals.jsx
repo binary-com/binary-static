@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage } from './common.jsx';
+import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage, MtBox } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-const hundred   = 100;
-const hundredth = 0.01;
+const hundred       = 100;
+const hundredth     = 0.01;
+const five_thousand = 5000;
 
 const Lot = () => (
     <React.Fragment>
@@ -17,7 +18,7 @@ const Lot = () => (
                         <div className='notice-circle'>i</div>
                     </div>
                     <div className='gr-11'>
-                        <p className='no-margin'>{it.L('Please note that one lot is equivalent to 100 units, based on our contract specifications.')}</p>
+                        <p className='no-margin'>{it.L('Please note that one lot is equivalent to 100 units, based on our [_1]ontract specifications[_2].', '<a href="#contract-specification">', '</a>')}</p>
                     </div>
                 </div>
             </div>
@@ -34,8 +35,8 @@ const Metals = () => (
                     <List id='sidebar-nav' items={[
                         { id: 'what-metals-trading',      href: '#what-metals-trading',      text: it.L('What is metals trading') },
                         { id: 'how-trade-metals',         href: '#how-trade-metals',         text: it.L('How to trade metals') },
-                        { id: 'margin-policy',            href: '#margin-policy',            text: it.L('Margin policy') },
-                        { id: 'contract-specification',   href: '#contract-specification',   text: it.L('Contract specifications') },
+                        { id: 'margin-policy',            href: '#margin-policy',            text: it.L('Metals margin policy') },
+                        { id: 'contract-specification',   href: '#contract-specification',   text: it.L('Metals contract specifications') },
                     ]} />
                 </div>
             </div>
@@ -89,56 +90,56 @@ const Metals = () => (
 
                     <Lot />
                 </Section>
-                <Section id='margin-policy' header={it.L('Margin policy')}>
+                <Section id='margin-policy' header={it.L('Metals margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital.')}</p>
                     <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction.')}</p>
                     <p>{it.L('With leverage, you can purchase 100 units of the same asset at a fraction of the cost.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the required margin for our metal pairs by using the formula below:')}</p>
-                    <Box text={`${it.L('Trade Size (Lot units)')} / ${it.L('Leverage')} * ${it.L('Market Price')} = ${it.L('Margin')}`} />
-                    <p>{it.L('For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and a market price of USD 1,250.15, the margin required to purchase that one lot will be calculated as follows:')}</p>
-                    <Box text={`100 / 300 * 1250.15 = ${it.L('USD')} 416.71`} />
+
+                    <MtBox icon_1='l1-icon' icon_2='metal-icon' text={it.L('For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and a market price of USD 1,250.15, the margin required to purchase that one lot will be calculated as follows:')} />
+
                     <p>{it.L('Without margin, purchasing one lot of the XAU/USD pair will cost you:')}</p>
                     <Box text={`100 * 1250.15 = ${it.L('USD')} 125,015`} />
 
                     <Lot />
 
                     <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
-                    <p>{it.L('When your account equity is unable to cover the margin requirement, your account will be placed under margin call. This does not affect your ability to open new positions.')}</p>
+                    <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>
 
                     <HeaderSecondary header={it.L('What\'s a stop out level and how is it applied')} />
-                    <p>{it.L('If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as "forced liquidation").')}</p>
+                    <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as "forced liquidation").')}</p>
                     <p>{it.L('When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:')}</p>
                     <ol>
-                        <li>{it.L('We analyse your pending orders')}</li>
                         <li>{it.L('We delete an order with the largest margin reserved')}</li>
                         <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted')}</li>
                         <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss')}</li>
                         <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
                     </ol>
                 </Section>
-                <Section id='contract-specification' header={it.L('Contract specifications')}>
+                <Section id='contract-specification' header={it.L('Metals contract specifications')}>
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),                   className: 'gr-padding-10' },
-                            { text: it.L('Description'),              className: 'gr-padding-10' },
-                            { text: it.L('Lot size (Volume = 1.0)'),  className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume'),           className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume increment'), className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),      className: 'gr-padding-10' },
+                            { text: it.L('Description'), className: 'gr-padding-10' },
+                            { text: it.L('Lot size*'),   className: 'gr-padding-10' },
+                            { text: it.L('Volume step'), className: 'gr-padding-10' },
                         ]],
                         tbody: [
-                            [{ text: 'XAU/USD' }, { text: it.L('Gold vs US dollar')      }, { text: hundred }, { text: hundredth }, { text: hundredth }],
-                            [{ text: 'XAG/USD' }, { text: it.L('Silver vs US dollar')    }, { text: 5000    }, { text: hundredth }, { text: hundredth }],
-                            [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US dollar') }, { text: hundred }, { text: hundredth }, { text: hundredth }],
-                            [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US dollar')  }, { text: hundred }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'XAG/USD' }, { text: it.L('Silver vs US Dollar')    }, { text: five_thousand }, { text: hundredth }],
+                            [{ text: 'XAU/USD' }, { text: it.L('Gold vs US Dollar')      }, { text: hundred       }, { text: hundredth }],
+                            [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US Dollar') }, { text: hundred       }, { text: hundredth }],
+                            [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US Dollar')  }, { text: hundred       }, { text: hundredth }],
                         ],
                     }} />
+                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots.')}</p>
                     <p>{it.L('Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.')}</p>
-                    <p>{it.L('To learn more, read our Margin Policy that further explains our 100% forced liquidation level for our metal pairs.')}</p>
+                    <p>{it.L('To learn more, read our Metals [_1]Margin Policy[_2] that further explains our 100% forced liquidation level for our metal pairs.', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>

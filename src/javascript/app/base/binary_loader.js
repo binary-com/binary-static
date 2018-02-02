@@ -10,6 +10,7 @@ const BinarySocketGeneral = require('./socket_general');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
+const urlFor              = require('../../_common/url').urlFor;
 const createElement       = require('../../_common/utility').createElement;
 
 const BinaryLoader = (() => {
@@ -62,7 +63,7 @@ const BinaryLoader = (() => {
     };
 
     const error_messages = {
-        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [`${'javascript:;'}`]),
+        login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_2] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor()}">`]),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
     };
