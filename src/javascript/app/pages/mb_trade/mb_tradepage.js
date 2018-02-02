@@ -10,6 +10,7 @@ const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
 const jpClient            = require('../../common/country_base').jpClient;
 const JapanPortfolio      = require('../../japan/portfolio');
+const getLanguage         = require('../../../_common/language').get;
 const localize            = require('../../../_common/localize').localize;
 const State               = require('../../../_common/storage').State;
 const urlFor              = require('../../../_common/url').urlFor;
@@ -25,7 +26,11 @@ const MBTradePage = (() => {
 
     const init = () => {
         if (/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) {
-            BinaryPjax.load(urlFor('trading'));
+            if (getLanguage() === 'JA') {
+                $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: localize('This page is not available in the selected language.') })));
+            } else {
+                BinaryPjax.load(urlFor('trading'));
+            }
             return;
         }
         if (jpClient()) {
