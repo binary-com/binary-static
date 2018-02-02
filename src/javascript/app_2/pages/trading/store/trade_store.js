@@ -5,19 +5,20 @@ import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
 import { getContractTypes, onContractTypeChange } from './logic/contract_type';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
+import onSymbolChange from './logic/symbol';
 
 const event_map = {
     amount       : onAmountChange,
     contract_type: onContractTypeChange,
+    symbol       : onSymbolChange,
 };
 
 export default class TradeStore {
     @action.bound init() {
         getContractTypes(this.symbol).then(r => {
-            this.contract_type      = Object.keys(r.contract_types)[0];
-            this.contract_type_list = r.contract_types;
-            this.categories         = r.categories;
-            this.last_digit_visible = onContractTypeChange(this.contract_type).last_digit_visible;
+            Object.keys(r).forEach((key) => { // update state
+                this[key] = r[key];
+            });
         });
         getCountry().then(r => { this.message = r; });
         getTicks((r) => { this.tick = r; });
@@ -45,9 +46,10 @@ export default class TradeStore {
     @action.bound Dispatch(name, value) {
         const handler = event_map[name];
         if (typeof handler === 'function') {
-            const result = handler(value);
-            Object.keys(result).forEach((key) => { // update state
-                this[key] = result[key];
+            Promise.resolve(handler(value)).then((result) => {
+                Object.keys(result).forEach((key) => { // update state
+                    this[key] = result[key];
+                });
             });
         }
     }
@@ -67,7 +69,8 @@ export default class TradeStore {
     @observable expiry_time         = null;
 
     // Underlying
-    @observable symbol = 'R_100';
+    @observable symbol_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
+    @observable symbol      = Object.keys(this.symbol_list)[0];
 
     // Contract type
     @observable contract_type      = '';

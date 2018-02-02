@@ -67,11 +67,15 @@ const getHierarchy = (categories) => {
 };
 
 export const getContractTypes = (symbol) => DAO.getContractsFor(symbol).then(r => {
-    const categories = getCategories(r.contracts_for);
+    const categories         = getCategories(r.contracts_for);
+    const contract_type_list = getHierarchy(categories);
+    const contract_type      = Object.keys(contract_type_list)[0];
 
     return {
+        last_digit_visible: onContractTypeChange(contract_type).last_digit_visible,
         categories,
-        contract_types: getHierarchy(categories),
+        contract_type_list,
+        contract_type,
     };
 });
 
