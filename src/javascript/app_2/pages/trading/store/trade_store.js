@@ -81,6 +81,7 @@ export default class TradeStore {
     @observable start_time       = '';
 
     // Last Digit
+    @observable last_digit = 3;
 
     @observable message = '';
     @observable tick = '';
