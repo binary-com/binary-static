@@ -69,8 +69,8 @@ const PaymentMethods = () => (
                 </div>
                 <p>
                     <Button url='/' text={it.L('Open an account now')} />
-                    <Button url='cashier/forwardws#deposit' real className='deposit' text={it.L('Deposit')} />
-                    <Button url='cashier/forwardws#withdraw' real className='withdraw' text={it.L('Withdraw')} />
+                    <Button url='cashier/forwardws?action=deposit'  real className='deposit'  text={it.L('Deposit')} />
+                    <Button url='cashier/forwardws?action=withdraw' real className='withdraw' text={it.L('Withdraw')} />
                 </p>
             </div>
         </div>
@@ -94,17 +94,6 @@ const PaymentMethods = () => (
                 currencies='USD GBP EUR AUD'
                 deposit='25 - 10,000'
                 withdrawal='25 - 10,000'
-                time={[
-                    it.L('Deposit: [_1] working day', 1),
-                    it.L('Withdrawal: [_1] working day', 1),
-                ]}
-            />
-            <Row
-                id='western_union'
-                logo='western_union'
-                currencies='USD GBP EUR AUD'
-                deposit='50 - 250'
-                withdrawal='50 - 250'
                 time={[
                     it.L('Deposit: [_1] working day', 1),
                     it.L('Withdrawal: [_1] working day', 1),

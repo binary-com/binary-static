@@ -183,7 +183,7 @@ const Ico = () => {
                                                         <div className='gr-row gr-padding-10' id='signup'>
                                                             <div className='gr-7 gr-7-p gr-12-m gr-centered'>
                                                                 <input autoComplete='off' name='email' id='email' maxLength='50' placeholder={it.L('Enter your email')} />
-                                                                <div id='error_validate_email' className='invisible error-msg'>{it.L('Invalid email address')}</div>
+                                                                <div id='error_validate_email' className='invisible error-msg'>{it.L('Invalid email address.')}</div>
                                                                 <div id='error_no_email' className='invisible error-msg'>{it.L('This field is required.')}</div>
                                                             </div>
                                                             <div className='gr-5 gr-5-p gr-12-m gr-centered'>
@@ -567,7 +567,7 @@ const Ico = () => {
                         <div className='gr-4 gr-12-m'>
                             <img className='icon' src={it.url_for('images/ico/icons/ea_icon.svg')} />
                             <h4>{it.L('Exciting growth in Europe and Asia')}</h4>
-                            <p>{it.L('Organic growth is driving demand, especially in the Far East –– the world’s leading market for binary options.')}</p>
+                            <p>{it.L('Organic growth is driving demand, especially in the Far East – the world’s leading market for binary options.')}</p>
                         </div>
                         <div className='gr-4 gr-12-m'>
                             <img className='icon' src={it.url_for('images/ico/icons/jp_icon.svg')} />

@@ -8,6 +8,7 @@ const jpClient            = require('../common/country_base').jpClient;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
 const elementInnerHtml    = require('../../_common/common_functions').elementInnerHtml;
 const elementTextContent  = require('../../_common/common_functions').elementTextContent;
+const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
 const State               = require('../../_common/storage').State;
 const toTitleCase         = require('../../_common/string_util').toTitleCase;
@@ -23,15 +24,13 @@ const Header = (() => {
         if (!Login.isLoginPages()) {
             checkClientsCountry();
         }
-        const menu = document.getElementById('menu-top');
-        if (menu && Client.isLoggedIn()) {
-            menu.classList.add('smaller-font');
+        if (Client.isLoggedIn()) {
+            getElementById('menu-top').classList.add('smaller-font');
             displayAccountStatus();
             if (!Client.get('is_virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
                     if (Client.canTransferFunds()) {
-                        const transfer = document.getElementById('user_menu_account_transfer');
-                        if (transfer) transfer.setVisibility(1);
+                        getElementById('user_menu_account_transfer').setVisibility(1);
                     }
                 });
             }
@@ -39,17 +38,13 @@ const Header = (() => {
     };
 
     const bindClick = () => {
-        const logo = document.getElementById('logo');
-        if (logo) {
-            logo.removeEventListener('click', logoOnClick);
-            logo.addEventListener('click', logoOnClick);
-        }
+        const logo = getElementById('logo');
+        logo.removeEventListener('click', logoOnClick);
+        logo.addEventListener('click', logoOnClick);
 
-        const btn_login = document.getElementById('btn_login');
-        if (btn_login) {
-            btn_login.removeEventListener('click', loginOnClick);
-            btn_login.addEventListener('click', loginOnClick);
-        }
+        const btn_login = getElementById('btn_login');
+        btn_login.removeEventListener('click', loginOnClick);
+        btn_login.addEventListener('click', loginOnClick);
 
         applyToAllElements('a.logout', (el) => {
             el.removeEventListener('click', logoutOnClick);
@@ -119,8 +114,8 @@ const Header = (() => {
     const metatraderMenuItemVisibility = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
             if (MetaTrader.isEligible()) {
-                const metatrader = document.getElementById('user_menu_metatrader');
-                if (metatrader) metatrader.setVisibility(1);
+                getElementById('user_menu_metatrader').setVisibility(1);
+                getElementById('topMenuMetaTrader').setVisibility(1);
             }
         });
     };
@@ -140,7 +135,7 @@ const Header = (() => {
         Client.set('accepted_bch', 0);
         Client.set('loginid', loginid);
         // Load page based on account type.
-        if(Client.get('is_ico_only', loginid)) {
+        if (Client.get('is_ico_only', loginid)) {
             window.location.assign(Client.defaultRedirectUrl());
         } else {
             window.location.reload();
@@ -167,7 +162,7 @@ const Header = (() => {
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
             const upgrade_info      = Client.getUpgradeInfo();
             const show_upgrade_msg  = upgrade_info.can_upgrade;
-            const virtual_text      = document.getElementById('virtual-text');
+            const virtual_text      = getElementById('virtual-text');
 
             if (Client.get('is_virtual')) {
                 applyToAllElements(upgrade_msg, (el) => {
@@ -185,9 +180,6 @@ const Header = (() => {
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
                         applyToAllElements(upgrade_msg, (el) => { el.setVisibility(1); });
-                        if (!virtual_text) {
-                            return;
-                        }
                         if (jp_account_status === 'jp_activation_pending' && !document.getElementsByClassName('activation-message')) {
                             virtual_text.appendChild(createElement('div', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
                         } else if (jp_account_status === 'activated' && !document.getElementsByClassName('activated-message')) {
@@ -204,9 +196,7 @@ const Header = (() => {
                     });
                 }
             } else if (show_upgrade_msg) {
-                if (virtual_text.parentNode) {
-                    virtual_text.parentNode.setVisibility(0);
-                }
+                getElementById('virtual-wrapper').setVisibility(0);
                 showUpgrade(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
             } else {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
@@ -224,33 +214,29 @@ const Header = (() => {
     };
 
     const changeAccountsText = (add_new_style, text) => {
-        const user_accounts = document.getElementById('user_accounts');
-        if (user_accounts) {
-            user_accounts.classList[add_new_style ? 'add' : 'remove']('create_new_account');
-            const localized_text = localize(text);
-            applyToAllElements('li', (el) => { elementTextContent(el, localized_text); }, '', user_accounts);
-        }
+        const user_accounts = getElementById('user_accounts');
+        user_accounts.classList[add_new_style ? 'add' : 'remove']('create_new_account');
+        const localized_text = localize(text);
+        applyToAllElements('li', (el) => { elementTextContent(el, localized_text); }, '', user_accounts);
     };
 
     const displayNotification = (message, is_error = false, msg_code = '') => {
-        const msg_notification = document.getElementById('msg_notification');
-        if (!msg_notification) return;
+        const msg_notification = getElementById('msg_notification');
         if (msg_notification.getAttribute('data-code') === 'STORAGE_NOT_SUPPORTED') return;
 
         msg_notification.html(message);
         msg_notification.setAttribute('data-message', message);
         msg_notification.setAttribute('data-code', msg_code);
 
-        if (!msg_notification.offsetParent) {
-            $(msg_notification).slideDown(500, () => { if (is_error) msg_notification.classList.add('error'); });
-        } else {
+        if (msg_notification.offsetParent) {
             msg_notification.toggleClass('error', is_error);
+        } else {
+            $(msg_notification).slideDown(500, () => { if (is_error) msg_notification.classList.add('error'); });
         }
     };
 
     const hideNotification = (msg_code) => {
-        const msg_notification = document.getElementById('msg_notification');
-        if (!msg_notification) return;
+        const msg_notification = getElementById('msg_notification');
         if (msg_notification.getAttribute('data-code') === 'STORAGE_NOT_SUPPORTED' ||
             msg_code && msg_notification.getAttribute('data-code') !== msg_code) {
             return;

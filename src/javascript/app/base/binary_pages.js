@@ -7,7 +7,6 @@ const Redirect             = require('./redirect');
 const CashierJP            = require('../japan/cashier');
 const KnowledgeTest        = require('../japan/knowledge_test/knowledge_test');
 const AccountTransfer      = require('../pages/cashier/account_transfer');
-const BitcoinVoucher       = require('../pages/cashier/bitcoin_voucher');
 const Cashier              = require('../pages/cashier/cashier');
 const DepositWithdraw      = require('../pages/cashier/deposit_withdraw');
 const PaymentAgentList     = require('../pages/cashier/payment_agent_list');
@@ -16,7 +15,6 @@ const Endpoint             = require('../pages/endpoint');
 const MBTradePage          = require('../pages/mb_trade/mb_tradepage');
 const AssetIndexUI         = require('../pages/resources/asset_index/asset_index.ui');
 const TradingTimesUI       = require('../pages/resources/trading_times/trading_times.ui');
-const TradePage_Beta       = require('../pages/trade/beta/tradepage');
 const TradePage            = require('../pages/trade/tradepage');
 const Authenticate         = require('../pages/user/account/authenticate');
 const ChangePassword       = require('../pages/user/account/change_password');
@@ -112,22 +110,21 @@ const pages_config = {
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage,                  needs_currency: true },
-    trading_beta             : { module: TradePage_Beta,             needs_currency: true },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStartedBeta.BinaryOptions },
-    'bitcoin-voucher'        : { module: BitcoinVoucher,             is_authenticated: true, only_real: true },
+    'careers'                : { module: StaticPages.Careers },
     'cfds'                   : { module: GetStartedBeta.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'forex'                  : { module: GetStartedBeta.Forex },
-    'get-started'            : { module: GetStarted },
-    'get-started-beta'       : { module: TabSelector },
+    'get-started'            : { module: TabSelector },
+    'get-started-old'        : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
-    'home-beta'              : { module: TabSelector,                   not_authenticated: true },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
+    'home-old'               : { module: Home,                       not_authenticated: true },
     'how-to-trade-mt5'       : { module: TabSelector },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
     'ico-claim-form'         : { module: ICOClaimForm,               is_authenticated: true, only_real: true, needs_currency: true },

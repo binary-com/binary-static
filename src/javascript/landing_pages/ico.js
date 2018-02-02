@@ -13,8 +13,10 @@ window.onload = function() {
     gtmPushDataLayer({ event: 'page_load' });
 
     function switchView(path) {
-        document.getElementById('faq').classList[path === 'faq' ? 'remove' : 'add']('invisible');
-        document.getElementById('home').classList[path === 'faq' ? 'add' : 'remove']('invisible');
+        var faq = document.getElementById('faq');
+        if (faq) faq.classList[path === 'faq' ? 'remove' : 'add']('invisible');
+        var home = document.getElementById('home');
+        if (home) home.classList[path === 'faq' ? 'add' : 'remove']('invisible');
     }
 
     function hashRouter() {
@@ -24,15 +26,21 @@ window.onload = function() {
             gtmPushDataLayer({ bom_country_abbrev: clients_country || '' });
             gtmPushDataLayer({ event: 'ico_success' });
             clearHash();
-            document.getElementById('subscribe_success').classList.remove('invisible');
-            document.getElementById('binary_ico_subscribe').classList.add('invisible');
+            var subscribe_success = document.getElementById('subscribe_success');
+            if (subscribe_success) subscribe_success.classList.remove('invisible');
+            var binary_ico_subscribe = document.getElementById('binary_ico_subscribe');
+            if (binary_ico_subscribe) binary_ico_subscribe.classList.add('invisible');
             // wait countdown is finished loading before scroll to section
             var checkIfFinished = setInterval(function(){
-                var finished_loading = document.getElementById('status_loading').classList.contains('invisible');
-                if (finished_loading == true) {
+                var status_loading = document.getElementById('status_loading');
+                var finished_loading = status_loading ? status_loading.classList.contains('invisible') : true;
+                if (finished_loading === true) {
                     let navbarHeight = checkWidth();
-                    const to = document.getElementById('ico_subscribe_section').offsetTop - navbarHeight;
-                    scrollTo(to);
+                    var ico_subscribe_section = document.getElementById('ico_subscribe_section');
+                    if (ico_subscribe_section) {
+                        const to = ico_subscribe_section.offsetTop - navbarHeight;
+                        scrollTo(to);
+                    }
                     clearInterval(checkIfFinished);
                 }
             }, 500);
@@ -148,7 +156,7 @@ window.onload = function() {
         }
     });
 
-    setupCrowdin();
+    commonOnload();
 };
 
 function clearHash() {
@@ -189,30 +197,33 @@ function signUpInit() {
 
     var validation_set = false; // To prevent validating before submit
 
-    document.getElementById('frm_verify_email').addEventListener('submit', function (evt) {
-        evt.preventDefault();
+    var frm_verify_email = document.getElementById('frm_verify_email');
+    if (frm_verify_email) {
+        frm_verify_email.addEventListener('submit', function (evt) {
+            evt.preventDefault();
 
-        if (!validateEmail(trimEmail(el_email.value))) {
-            if (!validation_set) {
-                ['input', 'change'].forEach(function (evt) {
-                    el_email.addEventListener(evt, function () {
-                        setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
+            if (!validateEmail(trimEmail(el_email.value))) {
+                if (!validation_set) {
+                    ['input', 'change'].forEach(function (evt) {
+                        el_email.addEventListener(evt, function () {
+                            setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
+                        });
                     });
-                });
-                setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
-                validation_set = true;
+                    setValidationStyle(el_email, !validateEmail(trimEmail(el_email.value)));
+                    validation_set = true;
+                }
+                return false;
             }
-            return false;
-        }
 
-        if (ws.readyState === 1) {
-            sendVerifyEmail();
-        } else {
-            ws = wsConnect();
-            ws.onopen = sendVerifyEmail;
-            ws.onmessage = verifySubmit;
-        }
-    });
+            if (ws.readyState === 1) {
+                sendVerifyEmail();
+            } else {
+                ws = wsConnect();
+                ws.onopen = sendVerifyEmail;
+                ws.onmessage = verifySubmit;
+            }
+        });
+    }
 
     ws.onmessage = verifySubmit;
 
@@ -232,16 +243,22 @@ function setValidationStyle(element, has_error) {
     var invisible_class = 'invisible';
     element.classList[has_error ? 'add' : 'remove'](error_class);
     if (element.value.length < 1) {
-        document.getElementById('error_no_email').classList[has_error ? 'remove' : 'add'](invisible_class);
-        document.getElementById('error_validate_email').classList[has_error ? 'add' : 'remove'](invisible_class);
+        var error_no_email = document.getElementById('error_no_email');
+        if (error_no_email) error_no_email.classList[has_error ? 'remove' : 'add'](invisible_class);
+        var error_validate_email = document.getElementById('error_validate_email');
+        if (error_validate_email) error_validate_email.classList[has_error ? 'add' : 'remove'](invisible_class);
     }
     else if (element.value.length >= 1) {
-        document.getElementById('error_validate_email').classList[has_error ? 'remove' : 'add'](invisible_class);
-        document.getElementById('error_no_email').classList[has_error ? 'add' : 'remove'](invisible_class);
+        var error_validate_email = document.getElementById('error_validate_email');
+        if (error_validate_email) error_validate_email.classList[has_error ? 'remove' : 'add'](invisible_class);
+        var error_no_email = document.getElementById('error_no_email');
+        if (error_no_email) error_no_email.classList[has_error ? 'add' : 'remove'](invisible_class);
     }
     if (!has_error) {
-        document.getElementById('error_validate_email').classList.add(invisible_class);
-        document.getElementById('error_no_email').classList.add(invisible_class);
+        var error_validate_email = document.getElementById('error_validate_email');
+        if (error_validate_email) error_validate_email.classList.add(invisible_class);
+        var error_no_email = document.getElementById('error_no_email');
+        if (error_no_email) error_no_email.classList.add(invisible_class);
     }
 }
 
@@ -323,7 +340,8 @@ function initCountdown(start_epoch) {
             el.classList[el.classList.contains(display_class) ? 'remove' : 'add'](hidden_class);
         });
 
-        document.getElementById('status_loading').classList.add(hidden_class);
+        var loading = document.getElementById('status_loading');
+        if (loading) loading.classList.add(hidden_class);
         el_container.classList.remove(hidden_class);
 
         if (!is_before_start) {
@@ -442,31 +460,6 @@ function setLanguage(el, name) {
 
     el_navbar_nav.classList.remove('invisible');
     el.classList.remove('invisible');
-}
-
-function setupCrowdin() {
-    const isInContextEnvironment = () => {
-        const lang_regex = new RegExp(`^(${allLanguages().join('|')})$`, 'i');
-        const url_params = window.location.href.split('/').slice(3);
-        const language   = (url_params.find(lang => lang_regex.test(lang)) || '');
-
-        return /^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href) &&
-        /ach/i.test(language)
-    };
-
-    if (isInContextEnvironment()) {
-        document.getElementById('language').style.display = 'none';
-        /* eslint-disable no-underscore-dangle */
-        window._jipt = [];
-        window._jipt.push(['project', 'binary-static']);
-        /* eslint-enable no-underscore-dangle */
-        if (document.body) {
-            const crowdinScript = document.createElement('script');
-            crowdinScript.setAttribute('src', `${document.location.protocol}//cdn.crowdin.com/jipt/jipt.js`);
-            crowdinScript.setAttribute('type', 'text/javascript');
-            document.body.appendChild(crowdinScript);
-        }
-    }
 }
 
 function checkUserSession() {

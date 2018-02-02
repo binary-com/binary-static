@@ -7,9 +7,7 @@ const Contract             = require('./contract');
 const Defaults             = require('./defaults');
 const BinarySocket         = require('../../base/socket');
 const formatMoney          = require('../../common/currency').formatMoney;
-const elementInnerHtml     = require('../../../_common/common_functions').elementInnerHtml;
-const elementTextContent   = require('../../../_common/common_functions').elementTextContent;
-const isVisible            = require('../../../_common/common_functions').isVisible;
+const CommonFunctions      = require('../../../_common/common_functions');
 const localize             = require('../../../_common/localize').localize;
 const getPropertyValue     = require('../../../_common/utility').getPropertyValue;
 
@@ -38,25 +36,25 @@ const Price = (() => {
 
         const contract_type = type_of_contract;
         const start_date    = getStartDateNode();
-        const start_time    = document.getElementById('time_start');
-        const underlying    = document.getElementById('underlying');
-        const amount_type   = document.getElementById('amount_type');
-        const currency      = document.getElementById('currency');
-        const payout        = document.getElementById('amount');
-        const expiry_type   = document.getElementById('expiry_type');
-        const duration      = document.getElementById('duration_amount');
-        const duration_unit = document.getElementById('duration_units');
-        const end_date      = document.getElementById('expiry_date');
-        const barrier       = document.getElementById('barrier');
-        const high_barrier  = document.getElementById('barrier_high');
-        const low_barrier   = document.getElementById('barrier_low');
-        const prediction    = document.getElementById('prediction');
+        const start_time    = CommonFunctions.getElementById('time_start');
+        const underlying    = CommonFunctions.getElementById('underlying');
+        const amount_type   = CommonFunctions.getElementById('amount_type');
+        const currency      = CommonFunctions.getElementById('currency');
+        const payout        = CommonFunctions.getElementById('amount');
+        const expiry_type   = CommonFunctions.getElementById('expiry_type');
+        const duration      = CommonFunctions.getElementById('duration_amount');
+        const duration_unit = CommonFunctions.getElementById('duration_units');
+        const end_date      = CommonFunctions.getElementById('expiry_date');
+        const barrier       = CommonFunctions.getElementById('barrier');
+        const high_barrier  = CommonFunctions.getElementById('barrier_high');
+        const low_barrier   = CommonFunctions.getElementById('barrier_low');
+        const prediction    = CommonFunctions.getElementById('prediction');
 
-        if (payout && isVisible(payout) && payout.value) {
+        if (payout && CommonFunctions.isVisible(payout) && payout.value) {
             proposal.amount = parseFloat(payout.value);
         }
 
-        if (amount_type && isVisible(amount_type) && amount_type.value) {
+        if (amount_type && CommonFunctions.isVisible(amount_type) && amount_type.value) {
             proposal.basis = amount_type.value;
         }
 
@@ -72,17 +70,17 @@ const Price = (() => {
             proposal.symbol = underlying.value;
         }
 
-        if (start_date && isVisible(start_date) && start_date.value !== 'now') {
+        if (start_date && CommonFunctions.isVisible(start_date) && start_date.value !== 'now') {
             const time     = start_time.value.split(':');
             const set_time = moment.utc(Number(start_date.value) * 1000).hour(time[0]).minute(time[1]);
 
             proposal.date_start = set_time ? set_time.unix() : undefined;
         }
 
-        if (expiry_type && isVisible(expiry_type) && expiry_type.value === 'duration') {
+        if (expiry_type && CommonFunctions.isVisible(expiry_type) && expiry_type.value === 'duration') {
             proposal.duration      = parseInt(duration.value);
             proposal.duration_unit = duration_unit.value;
-        } else if (expiry_type && isVisible(expiry_type) && expiry_type.value === 'endtime') {
+        } else if (expiry_type && CommonFunctions.isVisible(expiry_type) && expiry_type.value === 'endtime') {
             const end_date2 = end_date.getAttribute('data-value');
             let end_time2   = Defaults.get('expiry_time');
             if (!end_time2) {
@@ -102,19 +100,19 @@ const Price = (() => {
             proposal.duration_unit = 'm';
         }
 
-        if (barrier && isVisible(barrier) && barrier.value) {
+        if (barrier && CommonFunctions.isVisible(barrier) && barrier.value) {
             proposal.barrier = barrier.value;
         }
 
-        if (high_barrier && isVisible(high_barrier) && high_barrier.value) {
+        if (high_barrier && CommonFunctions.isVisible(high_barrier) && high_barrier.value) {
             proposal.barrier = high_barrier.value;
         }
 
-        if (low_barrier && isVisible(low_barrier) && low_barrier.value) {
+        if (low_barrier && CommonFunctions.isVisible(low_barrier) && low_barrier.value) {
             proposal.barrier2 = low_barrier.value;
         }
 
-        if (prediction && isVisible(prediction)) {
+        if (prediction && CommonFunctions.isVisible(prediction)) {
             proposal.barrier = parseInt(prediction.value);
         }
 
@@ -166,26 +164,26 @@ const Price = (() => {
         const description   = container.getElementsByClassName('contract_description')[0];
         const comment       = container.getElementsByClassName('price_comment')[0];
         const error         = container.getElementsByClassName('contract_error')[0];
-        const currency      = document.getElementById('currency');
+        const currency      = CommonFunctions.getElementById('currency');
 
         const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
             h4.setAttribute('class', `contract_heading ${type}`);
-            elementTextContent(h4, display_text);
+            CommonFunctions.elementTextContent(h4, display_text);
         }
 
         const setData = (data = {}) => {
             if (!data.display_value) {
                 amount.classList.remove('price_moved_up', 'price_moved_down');
             }
-            elementTextContent(stake, `${localize('Stake')}: `);
-            elementInnerHtml(amount, data.display_value ? formatMoney((currency.value || currency.getAttribute('value')), data.display_value) : '-');
+            CommonFunctions.elementTextContent(stake, `${localize('Stake')}: `);
+            CommonFunctions.elementInnerHtml(amount, data.display_value ? formatMoney((currency.value || currency.getAttribute('value')), data.display_value) : '-');
 
             if (!data.payout) {
                 amount.classList.remove('price_moved_up', 'price_moved_down');
             }
-            elementTextContent(payout, `${localize('Payout')}: `);
-            elementInnerHtml(payout_amount, data.payout ? formatMoney((currency.value || currency.getAttribute('value')), data.payout) : '-');
+            CommonFunctions.elementTextContent(payout, `${localize('Payout')}: `);
+            CommonFunctions.elementInnerHtml(payout_amount, data.payout ? formatMoney((currency.value || currency.getAttribute('value')), data.payout) : '-');
 
             if (data.longcode && window.innerWidth > 500) {
                 description.setAttribute('data-balloon', data.longcode);
@@ -203,7 +201,7 @@ const Price = (() => {
             comment.hide();
             setData();
             error.show();
-            elementTextContent(error, details.error.message);
+            CommonFunctions.elementTextContent(error, details.error.message);
         } else {
             setData(proposal);
             if ($('#websocket_form').find('.error-field:visible').length > 0) {
@@ -286,7 +284,7 @@ const Price = (() => {
             }
         }
         processForgetProposals().then(() => {
-            Object.keys(types).forEach((type_of_contract) => {
+            Object.keys(types || {}).forEach((type_of_contract) => {
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
                     if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
                         response.echo_req.passthrough.form_id === form_id) {

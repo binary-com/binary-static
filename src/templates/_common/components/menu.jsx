@@ -56,6 +56,12 @@ const menu = [
         ],
     },
     {
+        id       : 'topMenuMetaTrader',
+        url      : '/user/metatrader',
+        text     : 'MetaTrader',
+        className: 'client_logged_in invisible',
+    },
+    {
         id          : 'topMenuShop',
         text        : 'Shop',
         absolute_url: 'https://shop.binary.com',
@@ -67,12 +73,6 @@ const menu = [
         url      : '/paymentagent/transferws',
         text     : 'Payment Agent',
         className: 'invisible',
-    },
-    { // Link to ico-subscribe, ICO Bids.
-        id       : 'topMenuIcoBids',
-        url      : '/user/ico-subscribe',
-        text     : 'ICO Bids',
-        className: 'invisible ico-only-show',
     },
 ];
 

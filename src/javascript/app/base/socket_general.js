@@ -17,7 +17,10 @@ const BinarySocketGeneral = (() => {
         Header.hideNotification();
         if (is_ready) {
             if (!Login.isLoginPages()) {
-                Client.validateLoginid();
+                if (!Client.isValidLoginid()) {
+                    Client.sendLogoutRequest();
+                    return;
+                }
                 BinarySocket.send({ website_status: 1, subscribe: 1 });
             }
             Clock.startClock();
@@ -84,9 +87,9 @@ const BinarySocketGeneral = (() => {
                 break;
             case 'landing_company':
                 Header.upgradeMessageVisibility();
-                // if (!response.error) { // to be uncommented when planning to launch MetaTrader
-                //     Header.metatraderMenuItemVisibility();
-                // }
+                if (!response.error) {
+                    Header.metatraderMenuItemVisibility();
+                }
                 break;
             case 'get_self_exclusion':
                 SessionDurationLimit.exclusionResponseHandler(response);

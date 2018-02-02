@@ -5,8 +5,8 @@ const DepositWithdraw = ({ ja_hide, ja_show, id, show_upgrade }) => {
     let withdraw_url    = '/paymentagent/withdrawws';
     let class_hide_show = 'gr-5 gr-12-m';
     if (ja_hide) {
-        deposit_url     = '/cashier/forwardws#deposit';
-        withdraw_url    = '/cashier/forwardws#withdraw';
+        deposit_url     = '/cashier/forwardws?action=deposit';
+        withdraw_url    = '/cashier/forwardws?action=withdraw';
         class_hide_show += ' ja-hide';
     } else if (ja_show) {
         deposit_url     = '/cashier/deposit-jp';
@@ -72,7 +72,7 @@ const Cashier = () => (
             </h3>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>
-                    <a className='ja-hide' href={it.url_for('cashier/forwardws#deposit')} id='payment_methods'>
+                    <a className='ja-hide' href={it.url_for('cashier/forwardws?action=deposit')} id='payment_methods'>
                         <img className='responsive' id='payment_methods_icon' src={it.url_for('images/pages/cashier/payment-methods.svg')} />
                     </a>
                     <a className='invisible ja-show' href={it.url_for('cashier/deposit-jp')} id='payment_methods'>
@@ -106,30 +106,6 @@ const Cashier = () => (
                     <p className='faded'>{it.L('Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent')}</p>
                 </div>
                 <DepositWithdraw />
-            </div>
-        </div>
-
-        <div className='gr-padding-10 invisible id-clients'></div>
-
-        <div className='gr-padding-10 table-body invisible id-clients'>
-            <h3 className='gr-padding-10'>{it.L('Bitcoin.co.id voucher withdrawal')}</h3>
-            <div className='gr-row'>
-                <div className='gr-2 gr-4-m'>
-                    <a href={it.url_for('cashier/bitcoin-voucher')}>
-                        <img className='responsive' id='payment_agent_icon' src={it.url_for('images/pages/cashier/bitcoin_voucher.svg')} />
-                    </a>
-                </div>
-                <div className='gr-5 gr-12-m'>
-                    <span>{it.L('Withdraw funds in the form of Bitcoin.co.id IDR vouchers.', it.website_name)}</span>
-                    <p className='faded'>{it.L('Note: Bitcoin.co.id IDR vouchers are only available for Indonesian clients.')}</p>
-                </div>
-                <div className='gr-5 gr-12-m'>
-                    <div className='gr-padding-10 client_real invisible gr-parent'>
-                        <a className='button' href={it.url_for('cashier/bitcoin-voucher')}>
-                            <span>{it.L('Create Voucher')}</span>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </React.Fragment>

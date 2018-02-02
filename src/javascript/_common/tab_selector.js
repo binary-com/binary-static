@@ -1,4 +1,5 @@
 const tabListener        = require('binary-style').tabListener;
+const getElementById     = require('./common_functions').getElementById;
 const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
 
@@ -18,6 +19,9 @@ const TabSelector = (() => {
                     const tab_id = tab.getAttribute('id');
                     if (!obj_tabs[tab_selector_id]) {
                         obj_tabs[tab_selector_id] = { id_tabs: [] };
+                    }
+                    if (!obj_tabs[tab_selector_id].circles) {
+                        obj_tabs[tab_selector_id].circles = getElementById(`${tab_selector_id}_circles`).children;
                     }
                     obj_tabs[tab_selector_id].id_tabs.push(tab_id);
                 }
@@ -40,9 +44,11 @@ const TabSelector = (() => {
         const params_hash = Url.paramsHash();
         Object.keys(obj_tabs).forEach((tab_id) => {
             const id_to_show = params_hash[tab_id] || obj_tabs[tab_id].id_tabs[0];
-            const el_to_show = document.getElementById(id_to_show);
-            const selector   = el_to_show.parentNode.getAttribute('id');
-            changeTab({ selector, el_to_show });
+            const el_to_show = getElementById(id_to_show);
+            if (el_to_show.parentNode) {
+                const selector = el_to_show.parentNode.getAttribute('id');
+                changeTab({ selector, el_to_show });
+            }
         });
     };
 
@@ -50,8 +56,16 @@ const TabSelector = (() => {
         if (e.target.nodeName !== 'A' || /a-active/.test(e.target.classList)) {
             return;
         }
-        const selector = e.target.closest('ul').getAttribute('id');
+        const selector      = e.target.closest('ul').getAttribute('id');
+        const current_index = obj_tabs[selector].id_tabs.indexOf(e.target.parentNode.getAttribute('id'));
         slideSelector(selector, e.target);
+        Array.from(obj_tabs[selector].circles).forEach((circle, idx) => {
+            if (idx === current_index) {
+                circle.classList.add('selected');
+            } else {
+                circle.classList.remove('selected');
+            }
+        });
         updateURL(selector, e.target.parentNode.getAttribute('id'));
     };
 
@@ -82,7 +96,7 @@ const TabSelector = (() => {
             } else {
                 index_to_show = current_index === arr_id_tabs.length - 1 ? 0 : current_index + 1;
             }
-            options.el_to_show = document.getElementById(arr_id_tabs[index_to_show]);
+            options.el_to_show = getElementById(arr_id_tabs[index_to_show]);
             updateURL(options.selector, arr_id_tabs[index_to_show]);
         }
 
@@ -100,15 +114,13 @@ const TabSelector = (() => {
     };
 
     const slideSelector = (selector, el_to_show) => {
-        document.getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
+        getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
     };
 
     const selectCircle = (selector, old_index, index_to_show) => {
-        const el_circle = document.getElementById(`${selector}_circles`);
-        if (el_circle) {
-            const all_circles = el_circle.children;
-            all_circles[old_index].classList.remove('selected');
-            all_circles[index_to_show].classList.add('selected');
+        if (obj_tabs[selector].circles.length > 1) {
+            obj_tabs[selector].circles[old_index].classList.remove('selected');
+            obj_tabs[selector].circles[index_to_show].classList.add('selected');
         }
     };
 
@@ -130,6 +142,7 @@ const TabSelector = (() => {
     return {
         onLoad,
         onUnload,
+        repositionSelector,
     };
 })();
 
