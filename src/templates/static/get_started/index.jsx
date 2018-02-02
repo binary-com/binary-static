@@ -84,7 +84,7 @@ const Index = () => (
                             />
                         </div>
                     </TabContent>
-                    <TabContent id='mt5' className='eu-hide'>
+                    <TabContent id='mt5'>
                         <h2>{it.L('MetaTrader 5')}</h2>
                         <p>{it.L('Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools.')}</p>
 

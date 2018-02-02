@@ -115,7 +115,7 @@ const AccountsTabContent = ({
                                 image={image_two}
                                 list_header={list_header_two}
                                 list_text={list_text_two}
-                                class_name='eu-hide'
+                                class_name='eu-hide invisible'
                             />
                             { list_header_three &&
                                 <AccountsListItem
