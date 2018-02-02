@@ -3,15 +3,6 @@ import { isEmptyObject } from '../../../../../_common/utility';
 import { localize } from '../../../../../_common/localize';
 import { get as getLanguage } from '../../../../../_common/language';
 
-const getContractTypes = (symbol) => DAO.getContractsFor(symbol).then(r => {
-    const categories = getCategories(r.contracts_for);
-
-    return {
-        categories,
-        contract_types: getHierarchy(categories),
-    };
-});
-
 const getCategories = (contracts_for) => {
     const categories = {};
 
@@ -75,4 +66,13 @@ const getHierarchy = (categories) => {
     return tree;
 };
 
-export default getContractTypes;
+export const getContractTypes = (symbol) => DAO.getContractsFor(symbol).then(r => {
+    const categories = getCategories(r.contracts_for);
+
+    return {
+        categories,
+        contract_types: getHierarchy(categories),
+    };
+});
+
+export const onContractTypeChange = (new_value) => ({ last_digit_visible: /^(matchdiff|evenodd|overunder)$/.test(new_value) });

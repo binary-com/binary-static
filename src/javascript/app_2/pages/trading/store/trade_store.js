@@ -3,18 +3,21 @@ import Client from '../../../../app/base/client';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
-import getContractTypes from './logic/contract_type';
+import { getContractTypes, onContractTypeChange } from './logic/contract_type';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
 
 const event_map = {
-    amount: onAmountChange,
+    amount       : onAmountChange,
+    contract_type: onContractTypeChange,
 };
 
 export default class TradeStore {
     @action.bound init() {
         getContractTypes(this.symbol).then(r => {
+            this.contract_type      = Object.keys(r.contract_types)[0];
             this.contract_type_list = r.contract_types;
             this.categories         = r.categories;
+            this.last_digit_visible = onContractTypeChange(this.contract_type).last_digit_visible;
         });
         getCountry().then(r => { this.message = r; });
         getTicks((r) => { this.tick = r; });
@@ -64,10 +67,10 @@ export default class TradeStore {
     @observable expiry_time         = null;
 
     // Underlying
-    @observable symbol = 'AS51';
+    @observable symbol = 'R_100';
 
     // Contract type
-    @observable contract_type      = 'risefall';
+    @observable contract_type      = '';
     @observable contract_type_list = {};
     @observable categories         = {};
 
@@ -81,6 +84,7 @@ export default class TradeStore {
     @observable start_time       = '';
 
     // Last Digit
+    @observable last_digit_visible = 0;
     @observable last_digit = 3;
 
     @observable message = '';
