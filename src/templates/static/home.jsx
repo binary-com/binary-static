@@ -379,7 +379,7 @@ const HomeBeta = () => {
                                             { image: 'bitcoin',        className: 'eu-hide invisible' },
                                             { image: 'bitcoin_cash',   className: 'eu-hide invisible' },
                                             { image: 'litecoin',       className: 'eu-hide invisible' },
-                                            { image: 'union_pay' },
+                                            { image: 'union_pay',      className: 'eu-hide invisible'},
                                         ]}
                                     />
                                 </div>
