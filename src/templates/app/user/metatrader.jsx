@@ -125,7 +125,7 @@ const Metatrader = () => (
                                 <span>{it.L('Manage funds')}</span>
                             </a>
                             <a href='javascript:;' className='act_password_change has-account center-text invisible'>
-                                <span>{it.L('Change password')}</span>
+                                <span>{it.L('Change MT5 password')}</span>
                             </a>
                         </div>
                         <div className='fst-container mt-container'>
@@ -140,19 +140,19 @@ const Metatrader = () => (
                     <div className='mt-panel'>
                         <div id='account_desc' className='mt-container border-bottom'></div>
                         <div className='mt-container'>
-                            <p>{it.L('Trading platform quick links:')}</p>
+                            <p>{it.L('MT5 trading platform links:')}</p>
                             <ul className='platforms'>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/web.svg')} />
-                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>{it.L('Trade on web platform')}</a>
+                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>{it.L('Trade on MT5 web platform')}</a>
                                 </li>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/mac.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg' download>{it.L('Download for Mac')}</a>
+                                    <a href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg' download>{it.L('Download MT5 for Mac')}</a>
                                 </li>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/windows.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' download>{it.L('Download for Windows')}</a>
+                                    <a href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' download>{it.L('Download MT5 for Windows')}</a>
                                 </li>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/linux.svg')} />
@@ -262,14 +262,14 @@ const Metatrader = () => (
                     <form id='frm_password_change'>
                         <div className='gr-row'>
                             <div className='gr-8 gr-12-m'>
-                                <FormRow is_two_rows type='password' id='txt_old_password'    label={it.L('Current password')} />
-                                <FormRow is_two_rows type='password' id='txt_new_password'    label={it.L('New password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
-                                <FormRow is_two_rows type='password' id='txt_re_new_password' label={it.L('Verify new password')} />
+                                <FormRow is_two_rows type='password' id='txt_old_password'    label={it.L('Current MT5 password')} />
+                                <FormRow is_two_rows type='password' id='txt_new_password'    label={it.L('New MT5 password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
+                                <FormRow is_two_rows type='password' id='txt_re_new_password' label={it.L('Verify new MT5 password')} />
                                 <SubmitButton
                                     no_wrapper
                                     type='submit'
                                     id='btn_submit_password_change'
-                                    text={it.L('Change Password')}
+                                    text={it.L('Change MT5 password')}
                                     attributes={{ action: 'password_change' }}
                                 />
                             </div>

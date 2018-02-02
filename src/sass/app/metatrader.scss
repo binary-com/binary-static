@@ -97,11 +97,14 @@
 
         .platforms li {
             margin-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
 
             img {
                 width: 16px;
                 height: 16px;
-                margin-right: 5px;
+                margin-right: 10px;
             }
         }
         .badges span {
