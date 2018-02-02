@@ -57,8 +57,8 @@ const MarketsTabContent = ({ text, header, image }) => (
     </div>
 );
 
-const AccountsListItem = ({ image, list_header, list_text }) => (
-    <div className='gr-row gr-padding-10'>
+const AccountsListItem = ({ image, list_header, list_text, list_class }) => (
+    <div className={`${list_class ? `${list_class}` : ''} gr-row gr-padding-10`}>
         <div className='gr-2 gr-no-gutter gr-gutter-left-m'>
             <img className='responsive' src={it.url_for(image)} />
         </div>
@@ -83,6 +83,7 @@ const AccountsTabContent = ({
     list_text_one,
     list_text_two,
     list_text_three,
+    list_class,
 }) => (
     <React.Fragment>
         <div className='gr-hide-m'>
@@ -115,6 +116,7 @@ const AccountsTabContent = ({
                                 image={image_two}
                                 list_header={list_header_two}
                                 list_text={list_text_two}
+                                list_class={list_class}
                             />
                             { list_header_three &&
                                 <AccountsListItem
@@ -213,6 +215,7 @@ const HomeBeta = () => {
                                     list_text_one={it.L('Practice account with replenishable USD 5,000 virtual credit.')}
                                     image_two='images/pages/home-beta/icons/mt5_financial.svg'
                                     list_header_two={it.L('MT5 Financial')}
+                                    list_class='eu-hide invisible'
                                     list_text_two={it.L('MT5 real-money account for Forex and CFDs.')}
                                     image_three='images/pages/home-beta/icons/mt5_volatility.svg'
                                     list_header_three={it.L('MT5 Volatility Indices')}
@@ -378,7 +381,7 @@ const HomeBeta = () => {
                                             { image: 'bitcoin',        className: 'eu-hide invisible' },
                                             { image: 'bitcoin_cash',   className: 'eu-hide invisible' },
                                             { image: 'litecoin',       className: 'eu-hide invisible' },
-                                            { image: 'union_pay' },
+                                            { image: 'union_pay',      className: 'eu-hide invisible'},
                                         ]}
                                     />
                                 </div>
