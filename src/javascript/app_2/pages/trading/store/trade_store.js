@@ -3,6 +3,7 @@ import Client from '../../../../app/base/client';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
+import getContractTypes from './logic/contract_type';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
 
 const event_map = {
@@ -11,6 +12,10 @@ const event_map = {
 
 export default class TradeStore {
     @action.bound init() {
+        getContractTypes(this.symbol).then(r => {
+            this.contract_type_list = r.contract_types;
+            this.categories         = r.categories;
+        });
         getCountry().then(r => { this.message = r; });
         getTicks((r) => { this.tick = r; });
         this.start_dates_list = getStartDates();
@@ -57,6 +62,14 @@ export default class TradeStore {
     @observable duration_units_list = {};
     @observable expiry_date         = null;
     @observable expiry_time         = null;
+
+    // Underlying
+    @observable symbol = 'AS51';
+
+    // Contract type
+    @observable contract_type      = 'risefall';
+    @observable contract_type_list = {};
+    @observable categories         = {};
 
     // Barrier
     @observable barrier_1 = 0;
