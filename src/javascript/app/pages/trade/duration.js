@@ -323,8 +323,8 @@ const Durations = (() => {
                     maxDate : 365,
                 });
             } else {
-                const min_date    = moment.utc(+date_start_val * 1000);
-                const next_day    = moment.utc(+date_start_val * 1000).add(1, 'day');
+                const min_date    = moment.unix(date_start_val).utc();
+                const next_day    = moment.unix(date_start_val).utc().add(1, 'day');
                 const start_dates = Contract.startDates();
 
                 const selected_start_day_index = CommonFunctions.getElementById('date_start').selectedIndex;
@@ -334,7 +334,7 @@ const Durations = (() => {
                     const start_dates_length = start_dates.list.length;
                     start_dates.list.some((date) => {
                         // for the last day we will add +1 day as we don't know if offered or not we let back-end decide
-                        if (moment.utc(+date.open * 1000).format('dd') === next_day.format('dd') || selected_start_day_index === start_dates_length) {
+                        if (moment.unix(date.open).utc().format('dd') === next_day.format('dd') || selected_start_day_index === start_dates_length) {
                             max_date = next_day;
                             return true;
                         }
@@ -408,7 +408,7 @@ const Durations = (() => {
         if (!date_start_val || isNaN(+date_start_val)) {
             date_start_val = window.time;
         } else {
-            date_start_val = moment.utc(+date_start_val * 1000);
+            date_start_val = moment.unix(date_start_val).utc();
         }
         const expiry_date_day = moment.utc(expiry_date.getAttribute('data-value'));
         return date_start_val.isSame(expiry_date_day, 'day');
@@ -474,6 +474,14 @@ const Durations = (() => {
         if (is_same_day && expiry_time_val < time_start_val) {
             const time = time_start_val.split(':');
             new_time   = moment(window.time).hour(time[0]).minute(time[1]);
+        }
+        const min_max_time_end = commonIndependent.getMinMaxTimeEnd();
+        const min_time = isNaN(min_max_time_end.minTime) ? min_max_time_end.minTime.format('HH:mm') : min_max_time_end.minTime;
+        const max_time = isNaN(min_max_time_end.maxTime) ? min_max_time_end.maxTime.format('HH:mm') : min_max_time_end.maxTime;
+        if ((new_time || expiry_time_val) < min_time) {
+            new_time = min_max_time_end.minTime;
+        } else if ((new_time || expiry_time_val) > max_time) {
+            new_time = min_max_time_end.maxTime.add(-10, 'minutes');
         }
         if (new_time) {
             if (!keep_time_unchanged) {

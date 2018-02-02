@@ -115,6 +115,7 @@ const Header = (() => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
             if (MetaTrader.isEligible()) {
                 getElementById('user_menu_metatrader').setVisibility(1);
+                getElementById('topMenuMetaTrader').setVisibility(1);
             }
         });
     };
