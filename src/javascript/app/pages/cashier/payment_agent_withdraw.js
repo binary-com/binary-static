@@ -53,14 +53,13 @@ const PaymentAgentWithdraw = (() => {
             setActiveView(view_ids.form);
 
             const currency = Client.get('currency');
-            const balance  = +Client.get('balance');
             const form_id  = `#${$(view_ids.form).find('form').attr('id')}`;
             const min      = isCryptocurrency(currency) ? 0.002 : 10;
-            const max      = Math.min(isCryptocurrency(currency) ? 5 : 2000, balance);
+            const max      = isCryptocurrency(currency) ? 5 : 2000;
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
                 { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
-                { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }]], request_field: 'amount' },
+                { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$('#amount').val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
                 { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
 
                 { request_field: 'currency',              value: currency },
