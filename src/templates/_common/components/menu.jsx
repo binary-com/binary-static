@@ -56,6 +56,12 @@ const menu = [
         ],
     },
     {
+        id       : 'topMenuMetaTrader',
+        url      : '/user/metatrader',
+        text     : 'MetaTrader',
+        className: 'client_logged_in invisible',
+    },
+    {
         id          : 'topMenuShop',
         text        : 'Shop',
         absolute_url: 'https://shop.binary.com',

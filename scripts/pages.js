@@ -99,7 +99,6 @@ module.exports = [
 
     ['liquidity-solutions',                'static/partners/liquidity_solutions',       'full_width', 'Multi-asset Liquidity Solutions',   'ja'],
     ['multiple-accounts-manager',          'static/partners/multiple_accounts_manager', 'full_width', 'Multiple Accounts Manager',         'ja'],
-    ['omnibus',                            'static/partners/omnibus',                   'full_width', 'Omnibus',                           'ja'],
     ['open-source-projects',               'static/partners/open_source_projects',      'full_width', 'Open-Source Projects',              'ja'],
     ['partners',                           'static/partners/partners',                  'full_width', 'Partners',                          'ja'],
     ['payment-agent',                      'static/partners/payment_agent',             'full_width', 'Payment Agents',                    'ja'],

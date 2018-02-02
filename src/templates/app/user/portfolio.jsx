@@ -17,7 +17,7 @@ const Portfolio = () => (
                 {/* If the account balance is zero we show the following button, otherwise we remove it */}
                 <span id='if-balance-zero' className='invisible'>
                     &nbsp;
-                    <a href={it.url_for('cashier/forwardws#deposit')} className='button nowrap ja-hide'>
+                    <a href={it.url_for('cashier/forwardws?action=deposit')} className='button nowrap ja-hide'>
                         <span>{it.L('Make a Deposit')}</span>
                     </a>
                     <a href={it.url_for('cashier/deposit-jp')} className='button nowrap invisible ja-show'>

@@ -79,7 +79,6 @@ const texts = [
     'Minute',
     'AM',
     'PM',
-    'End time must be after start time.',
     'Time is in the wrong format.',
 
     // highchart localization text
