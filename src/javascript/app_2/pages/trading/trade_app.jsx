@@ -1,12 +1,13 @@
 import React from 'react';
 import Amount from './components/amount.jsx';
 import Barrier from './components/barrier.jsx';
-import Contract from './components/contract.jsx';
+import ContractType from './components/contract_type.jsx';
 import Duration from './components/duration.jsx';
 import LastDigit from './components/last_digit.jsx';
 import StartDate from './components/start_date.jsx';
-import { Button } from './components/form/button.jsx';
+import Symbol from './components/symbol.jsx';
 import Test from './components/test.jsx';
+import { Button } from './components/form/button.jsx';
 import { connect } from './store/connect';
 
 class TradeApp extends React.Component {
@@ -24,12 +25,14 @@ class TradeApp extends React.Component {
                 <h1>...</h1>
                 <div className='gr-row'>
                     <div className='gr-9'>
-                        <Contract />
+                        <Symbol />
+                        <ContractType />
                         {this.isVisible('start_date') && <StartDate />}
                         <Duration />
                         {this.isVisible('barrier') && <Barrier />}
                         {this.isVisible('last_digit') && <LastDigit />}
                         <Amount />
+
                         <div className='gr-row'>
                             <div className='gr-3'>
                                 <Button

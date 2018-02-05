@@ -9,8 +9,8 @@ const LastDigit = ({
         <fieldset>
             <label htmlFor='last_digit'>{localize('Last Digit Prediction')}</label>
             <select name='last_digit' value={last_digit} onChange={onChange}>
-                {Array.from(new Array(10)).map((x, i) => (
-                    <option key={i} value={i}>{i}</option>
+                {[...Array(10).keys()].map((number) => (
+                    <option key={number} value={number}>{number}</option>
                 ))}
             </select>
         </fieldset>

@@ -1,18 +1,24 @@
 import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
-import Contract from './logic/contract';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
+import Contract from './logic/contract_type';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
+import onSymbolChange from './logic/symbol';
 
 const event_map = {
     amount       : onAmountChange,
     contract_type: Contract.onContractChange,
+    symbol       : onSymbolChange,
 };
 
 export default class TradeStore {
     @action.bound init() {
+        Contract.getContractsList(this.symbol).then(r => {
+            this.contract_types_list = r;
+            this.form_components     = Contract.getComponents(this.contract_type);
+        });
         getCountry().then(r => { this.message = r; });
         getTicks((r) => { this.tick = r; });
         this.start_dates_list = getStartDates();
@@ -39,16 +45,22 @@ export default class TradeStore {
     @action.bound Dispatch(name, value) {
         const handler = event_map[name];
         if (typeof handler === 'function') {
-            const result = handler(value);
-            Object.keys(result).forEach((key) => { // update state
-                this[key] = result[key];
+            Promise.resolve(handler(value)).then((result) => {
+                Object.keys(result).forEach((key) => { // update state
+                    this[key] = result[key];
+                });
             });
         }
     }
 
-    @observable contract_type       = 'rise_fall';
-    @observable contract_types_list = Contract.getContractsList();
-    @observable form_components     = Contract.getComponents(this.contract_type);
+    // Underlying
+    @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
+    @observable symbol       = Object.keys(this.symbols_list)[0];
+
+    // Contract Type
+    @observable contract_type       = 'rise_fall'; // TODO: update the contract_type on changing the contract_types_list
+    @observable contract_types_list = {};
+    @observable form_components     = [];
 
     // Amount
     @observable basis           = 'stake';
@@ -74,7 +86,7 @@ export default class TradeStore {
     @observable start_time       = '';
 
     // Last Digit
-    @observable last_digit = 0;
+    @observable last_digit = 3;
 
     // Test
     @observable message = '';
