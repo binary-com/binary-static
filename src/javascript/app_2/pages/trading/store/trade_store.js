@@ -1,12 +1,14 @@
 import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
+import Contract from './logic/contract';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
 
 const event_map = {
-    amount: onAmountChange,
+    amount       : onAmountChange,
+    contract_type: Contract.onContractChange,
 };
 
 export default class TradeStore {
@@ -43,6 +45,10 @@ export default class TradeStore {
             });
         }
     }
+
+    @observable contract_type       = 'rise_fall';
+    @observable contract_types_list = Contract.getContractsList();
+    @observable form_components     = Contract.getComponents(this.contract_type);
 
     // Amount
     @observable basis           = 'stake';
