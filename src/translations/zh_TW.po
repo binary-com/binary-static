@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-02 01:25-0500\n"
+"PO-Revision-Date: 2018-02-04 21:40-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -2163,10 +2163,10 @@ msgstr "合約障礙/履約價格的可接受水平存在特定限制。一般�
 msgid "Change API Endpoint"
 msgstr "更改 API 端點"
 
-msgid "Change Password"
-msgstr "更改密碼"
+msgid "Change MT5 password"
+msgstr "更改MT5密碼"
 
-msgid "Change password"
+msgid "Change Password"
 msgstr "更改密碼"
 
 msgid "Change the Stop Out Level in relation to your account."
@@ -2847,6 +2847,9 @@ msgstr "貨幣對分類如下:"
 msgid "Current"
 msgstr "目前"
 
+msgid "Current MT5 password"
+msgstr "目前MT5密碼"
+
 msgid "Current Time"
 msgstr "目前時間"
 
@@ -3207,17 +3210,17 @@ msgstr "下載CSV"
 msgid "Download MAM"
 msgstr "下載MAM"
 
+msgid "Download MT5 for Mac"
+msgstr "Mac版MT5下載"
+
+msgid "Download MT5 for Windows"
+msgstr "Windows版MT5下載"
+
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "MT5是強大的多功能交易工具，備受百萬多名交易員的愛載，請下載到桌上型電腦或膝上型電腦上使用。"
 
 msgid "Download Now"
 msgstr "立刻下載"
-
-msgid "Download for Mac"
-msgstr "Mac版下載"
-
-msgid "Download for Windows"
-msgstr "Windows下載"
 
 msgid "Download the MAM application after setup is completed. Log in with your master account credentials."
 msgstr "安裝程式完成後，請下載 MAM 應用程式。使用您的主帳戶憑據登入。"
@@ -5173,7 +5176,7 @@ msgid "Indicates required field"
 msgstr "表示必填欄位"
 
 msgid "Indicates the availability of cryptocurrency trading on a particular account."
-msgstr ""
+msgstr "指出特定帳戶交易加密貨幣的可行性。"
 
 msgid "Indicative"
 msgstr "指示性"
@@ -6348,6 +6351,9 @@ msgstr "外匯和差價合約的MT5 真實資金帳戶。"
 msgid "MT5 real-money account for Volatility Indices only."
 msgstr "波動指數專用的MT5真實資金帳戶。"
 
+msgid "MT5 trading platform links:"
+msgstr "MT5 交易平台連結:"
+
 msgid "MacOS"
 msgstr "MacOS"
 
@@ -6823,7 +6829,7 @@ msgid "N. Force Majeure Events"
 msgstr "十四、不可抗力事件"
 
 msgid "N/A"
-msgstr ""
+msgstr "不可用"
 
 msgid "Name"
 msgstr "姓名"
@@ -6881,6 +6887,9 @@ msgstr "從未使用過"
 
 msgid "New Account"
 msgstr "新帳戶"
+
+msgid "New MT5 password"
+msgstr "MT5新密碼"
 
 msgid "New Password"
 msgstr "新密碼"
@@ -7765,7 +7774,7 @@ msgid "Please note that due to their over-the-counter nature, the prices of the 
 msgstr "請注意，由於其場外交易性質，OTC 指數和股票的價格與中央交易所的相應指數和股票價格有所不同。"
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
-msgstr ""
+msgstr "請注意，根據我們的%1合約規格%2，一手交易量相當於100個單位。"
 
 msgid "Please note that one lot is equivalent to 100 units, based on our contract specifications. Your profit or loss will be calculated as follows:"
 msgstr "請注意，根據我們的合約規格，一手交易量相當於100個單位。您的利潤或虧損的計算方法如下:"
@@ -10692,11 +10701,11 @@ msgstr "根據您的首選策略交易多空頭寸。"
 msgid "Trade metals on competitive fixed and variable spreads."
 msgstr "透過有競爭力的固定和可變價差交易金屬"
 
+msgid "Trade on MT5 web platform"
+msgstr "MT5網上平台交易"
+
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "在包括外匯、指數、商品等在內的基本市場交易。"
-
-msgid "Trade on web platform"
-msgstr "網上平台交易"
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "根據您的風險承受能力進行交易。切勿借錢交易。"
@@ -10787,9 +10796,6 @@ msgstr "二元期權交易是投機活動，有很高的風險，可能會導致
 
 msgid "Trading manual"
 msgstr "Trading manual"
-
-msgid "Trading platform quick links:"
-msgstr "交易平台快速連結："
 
 msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
 msgstr "金融市場交易可能使人上癮。請填寫下表以限制您對本網站的參與，或傳送簽名信或傳真到我們的客服團隊。一旦設定好後，您只能收緊限制。限制只能在7天后取消或放寬，而自我禁止期在您確認後就不能取消或更改。若要解除或增加您的限制，請聯繫<a href=\"%1\">客服部</a>。"
@@ -10966,7 +10972,7 @@ msgid "USD Index – Measures the value of the US Dollar against a basket of fiv
 msgstr "美元 - 衡量美元相對於五種國際貨幣（歐元、英鎊、日圓、加元、澳元）的價值，各貨幣的權重均為20%。"
 
 msgid "USD/EUR"
-msgstr ""
+msgstr "美元/歐元"
 
 msgid "UX / UI experience"
 msgstr "UX / UI 經驗"
@@ -11135,6 +11141,9 @@ msgstr "驗證碼錯誤。請使用以下連結發送到您的電子郵件。"
 
 msgid "Verify main password"
 msgstr "主密碼驗證"
+
+msgid "Verify new MT5 password"
+msgstr "MT5新密碼驗證"
 
 msgid "Verify new password"
 msgstr "驗證新密碼"

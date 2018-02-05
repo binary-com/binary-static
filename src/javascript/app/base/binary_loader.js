@@ -55,12 +55,6 @@ const BinaryLoader = (() => {
     const afterContentChange = (e) => {
         Page.onLoad();
         GTM.pushDataLayer();
-        const this_page = e.detail.getAttribute('data-page');
-        if (this_page in pages_config) {
-            loadHandler(pages_config[this_page]);
-        } else if (/\/get-started\//i.test(window.location.pathname)) {
-            loadHandler(pages_config['get-started']);
-        }
 
         BinarySocket.wait('website_status').then((response) => {
             const clients_country = response.website_status.clients_country;
@@ -75,6 +69,14 @@ const BinaryLoader = (() => {
                 applyToAllElements('.eu-hide', (el) => { el.setVisibility(1); });
             }
         });
+
+        const this_page = e.detail.getAttribute('data-page');
+        if (this_page in pages_config) {
+            loadHandler(pages_config[this_page]);
+        } else if (/\/get-started\//i.test(window.location.pathname)) {
+            loadHandler(pages_config['get-started']);
+        }
+
     };
 
     const error_messages = {
