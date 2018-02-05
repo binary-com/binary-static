@@ -3,14 +3,23 @@ import Client from '../../../../app/base/client';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
+import { getContractTypes, onContractTypeChange } from './logic/contract_type';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
+import onSymbolChange from './logic/symbol';
 
 const event_map = {
-    amount: onAmountChange,
+    amount       : onAmountChange,
+    contract_type: onContractTypeChange,
+    symbol       : onSymbolChange,
 };
 
 export default class TradeStore {
     @action.bound init() {
+        getContractTypes(this.symbol).then(r => {
+            Object.keys(r).forEach((key) => { // update state
+                this[key] = r[key];
+            });
+        });
         getCountry().then(r => { this.message = r; });
         getTicks((r) => { this.tick = r; });
         this.start_dates_list = getStartDates();
@@ -37,9 +46,10 @@ export default class TradeStore {
     @action.bound Dispatch(name, value) {
         const handler = event_map[name];
         if (typeof handler === 'function') {
-            const result = handler(value);
-            Object.keys(result).forEach((key) => { // update state
-                this[key] = result[key];
+            Promise.resolve(handler(value)).then((result) => {
+                Object.keys(result).forEach((key) => { // update state
+                    this[key] = result[key];
+                });
             });
         }
     }
@@ -58,6 +68,15 @@ export default class TradeStore {
     @observable expiry_date         = null;
     @observable expiry_time         = null;
 
+    // Underlying
+    @observable symbol_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
+    @observable symbol      = Object.keys(this.symbol_list)[0];
+
+    // Contract type
+    @observable contract_type      = '';
+    @observable contract_type_list = {};
+    @observable categories         = {};
+
     // Barrier
     @observable barrier_1 = 0;
     @observable barrier_2 = 0;
@@ -68,6 +87,8 @@ export default class TradeStore {
     @observable start_time       = '';
 
     // Last Digit
+    @observable last_digit_visible = 0;
+    @observable last_digit = 3;
 
     @observable message = '';
     @observable tick = '';
