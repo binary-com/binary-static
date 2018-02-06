@@ -105,7 +105,7 @@ const GraduateProgram = () => {
                         <h4 className='center-text'><span className='text-bold'>{('Education and experience requirement')}</span></h4>
                         <div className='inline-flex'>
                             <img className='icon-md margin-30' src={it.url_for('images/graduate_program/education_icon.svg')} />
-                            <p>{('A bachelor\'s, master\'s, or PhD in computer science, IT, mathematics, physics, or engineering and is graduating by June.')}</p>
+                            <p>{('A bachelor\'s, master\'s, or PhD in computer science, IT, mathematics, physics, or engineering.')}</p>
                         </div>
                         <div className='inline-flex'>
                             <img className='icon-md margin-30' src={it.url_for('images/graduate_program/coding_icon.svg')} />
