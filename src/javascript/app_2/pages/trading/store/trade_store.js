@@ -1,21 +1,21 @@
 import { observable, action, reaction } from 'mobx';
 import Client from '../../../../app/base/client';
+import ContractType from './logic/contract_type';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
-import Contract from './logic/contract_type';
-import { getCountry, getTicks, onAmountChange } from './logic/test';
 import onSymbolChange from './logic/symbol';
+import { getCountry, getTicks, onAmountChange } from './logic/test';
 
 const event_map = {
     amount       : onAmountChange,
-    contract_type: Contract.onContractChange,
+    contract_type: ContractType.onContractChange,
     symbol       : onSymbolChange,
 };
 
 export default class TradeStore {
     @action.bound init() {
-        Contract.getContractsList(this.symbol).then(r => {
+        ContractType.getContractsList(this.symbol).then(r => {
             this.contract_types_list = r;
         });
         getCountry().then(r => { this.message = r; });
@@ -33,10 +33,10 @@ export default class TradeStore {
 
         // TODO: use a map and iterate it to register reactions, and also dispose them on unload
         reaction(() => this.contract_types_list, (new_list) => {
-            this.contract_type = Contract.getContractType(new_list, this.contract_type);
+            this.contract_type = ContractType.getContractType(new_list, this.contract_type);
         });
         reaction(() => this.contract_type, (c_type) => {
-            this.form_components = Contract.getComponents(c_type);
+            this.form_components = ContractType.getComponents(c_type);
         });
     }
 

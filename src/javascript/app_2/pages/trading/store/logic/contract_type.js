@@ -1,7 +1,7 @@
 import DAO from '../../data/dao';
 import { cloneObject } from '../../../../../_common/utility';
 import { localize } from '../../../../../_common/localize';
-// import { get as getLanguage } from '../../../../../_common/language';
+import { get as getLanguage } from '../../../../../_common/language';
 
 
 const ContractType = (() => {
@@ -33,10 +33,10 @@ const ContractType = (() => {
         [localize('Lookback')]      : ['lb_call', 'lb_put', 'lb_high_low'],
     };
 
-    let types = {};
+    let available_contract_types = {};
 
     const getContractsList = (symbol) => DAO.getContractsFor(symbol).then(r => {
-        types = {};
+        available_contract_types = {};
         const categories = cloneObject(contract_categories); // To preserve the order (will clean the extra items later in this function)
         r.contracts_for.available.forEach((contract) => {
             const type = Object.keys(contract_types).find(key => (
@@ -44,17 +44,24 @@ const ContractType = (() => {
                 (typeof contract_types[key].barrier_count === 'undefined' || +contract_types[key].barrier_count === contract.barriers) // To distinguish betweeen Rise/Fall & Higher/Lower
             ));
 
-            // getLanguage() === 'ID' ? ['match_diff'] : ['match_diff', 'even_odd', 'over_under'],
-            if (!types[type]) {
-                //
-                const arr = categories[Object.keys(categories).find(key => categories[key].indexOf(type) !== -1)];
-                arr[arr.indexOf(type)] = { name: type, title: contract_types[type].title };
+            if (!Exceptions.isExcluded(type)) {
+                if (!available_contract_types[type]) {
+                    // extend contract_categories to include what is needed to create the contract list
+                    const sub_cats = categories[Object.keys(categories)
+                        .find(key => categories[key].indexOf(type) !== -1)];
+                    sub_cats[sub_cats.indexOf(type)] = { name: type, title: contract_types[type].title };
 
-                //
-                types[type] = cloneObject(contract_types[type]);
+                    // populate available contract types
+                    available_contract_types[type]                = cloneObject(contract_types[type]);
+                    available_contract_types[type].contracts_info = {};
+                }
+
+                // contracts_info: {
+                //      CALL_spot_daily: {...} // '[contract_type]_[start_type]_[expiry_type]'
+                //      PUT_spot_daily: {...}
+                // }
+                available_contract_types[type].contracts_info[`${contract.contract_type}_${contract.start_type}_${contract.expiry_type}`] = contract;
             }
-
-            // TODO: add contract_info
         });
 
         // cleanup categories
@@ -83,12 +90,25 @@ const ContractType = (() => {
         };
     };
 
-        // contracts_info: { CALL: {}, PUT: {} }
     return {
         getContractsList,
         getContractType,
         getComponents,
         onContractChange,
+    };
+})();
+
+const Exceptions = (() => {
+    const isIDLanguage = () => getLanguage() === 'ID';
+
+    // if the exception value is true, then it is excluded
+    const exceptions = {
+        even_odd  : isIDLanguage,
+        over_under: isIDLanguage,
+    };
+
+    return {
+        isExcluded: key => exceptions[key] ? exceptions[key]() : false,
     };
 })();
 
