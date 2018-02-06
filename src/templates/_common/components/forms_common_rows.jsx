@@ -180,7 +180,7 @@ export const TaxIdentificationNumberTerms = () => (
         </div>
         <div className='gr-12 gr-padding-10'>
             <p className='no-margin'>
-                <i><span className='errorfield'>* </span>{it.L('Please note that you might be considered resident for tax purposes in more than one jurisdictions. [_1] does not take any responsibility for providing you with advice or information on how to determine your tax residence. If you are in any doubt regarding your tax residence kindly consult your tax advisor and make sure you provide us with the correct information.', it.website_name)}</i>
+                <i><span className='errorfield'>* </span>{it.L('Please note that you might be considered a resident for tax purposes in more than one jurisdictions. [_1] does not take any responsibility for providing you with advice or information on how to determine your tax residence. If you are in any doubt regarding your tax residence kindly consult your tax advisor and make sure you provide us with the correct information.', it.website_name)}</i>
             </p>
         </div>
     </div>
