@@ -18,7 +18,7 @@ const Lot = () => (
                         <div className='notice-circle'>i</div>
                     </div>
                     <div className='gr-11'>
-                        <p className='no-margin'>{it.L('Please note that one lot is equivalent to 100 units, based on our [_1]ontract specifications[_2].', '<a href="#contract-specification">', '</a>')}</p>
+                        <p className='no-margin'>{it.L('Please note that one lot is equivalent to 100 units, based on our [_1]contract specifications[_2].', '<a href="#contract-specification">', '</a>')}</p>
                     </div>
                 </div>
             </div>

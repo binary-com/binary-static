@@ -37,7 +37,7 @@ const SetCurrency = () => (
 
                 <div className='invisible' id='has_currency'>
                     <div>
-                        <a className='button' href={it.url_for('cashier/forwardws#deposit')}><span>{it.L('Make a Deposit')}</span></a>
+                        <a className='button' href={it.url_for('cashier/forwardws?action=deposit')}><span>{it.L('Make a Deposit')}</span></a>
                     </div>
                 </div>
 

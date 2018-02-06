@@ -34,9 +34,9 @@ const GetStartedSectionWrapper = ({ section_id, section_header, section_descript
 
 const Index = () => (
     <div className='static_full get-started-beta'>
-        <h1 className='center-text'>{it.L('Get Started')}</h1>
+        <h1 className='center-text eu-hide'>{it.L('Get Started')}</h1>
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
-            <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper' items={[
+            <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper eu-hide' items={[
                 { id: 'binary', text: it.L('Binary Options') },
                 { id: 'mt5',    text: it.L('MetaTrader 5') },
                 { id: 'get_started_tabs_selector', className: 'tab-selector' },
