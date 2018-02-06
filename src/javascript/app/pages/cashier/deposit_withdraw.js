@@ -9,6 +9,7 @@ const validEmailToken   = require('../../common/form_validation').validEmailToke
 const getElementById    = require('../../../_common/common_functions').getElementById;
 const localize          = require('../../../_common/localize').localize;
 const State             = require('../../../_common/storage').State;
+const toTitleCase       = require('../../../_common/string_util').toTitleCase;
 const Url               = require('../../../_common/url');
 const template          = require('../../../_common/utility').template;
 
@@ -39,7 +40,7 @@ const DepositWithdraw = (() => {
     };
 
     const checkToken = () => {
-        token = Url.param('token') || '';
+        token = Url.getHashValue('token');
         if (!token) {
             BinarySocket.send({
                 verify_email: Client.get('email'),
@@ -59,14 +60,11 @@ const DepositWithdraw = (() => {
     };
 
     const getCashierType = () => {
-        const $heading   = $(container).find('#heading');
-        const hash_value = window.location.hash;
-        if (/withdraw/.test(hash_value)) {
-            cashier_type = 'withdraw';
-            $heading.text(localize('Withdraw'));
-        } else if (/deposit/.test(hash_value)) {
-            cashier_type = 'deposit';
-            $heading.text(localize('Deposit'));
+        const $heading = $(container).find('#heading');
+        const action   = Url.param('action');
+        if (/^(withdraw|deposit)$/.test(action)) {
+            cashier_type = action;
+            $heading.text(localize(toTitleCase(action)));
         }
     };
 

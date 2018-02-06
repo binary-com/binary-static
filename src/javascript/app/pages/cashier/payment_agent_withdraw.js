@@ -5,7 +5,7 @@ const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const FormManager      = require('../../common/form_manager');
 const validEmailToken  = require('../../common/form_validation').validEmailToken;
 const localize         = require('../../../_common/localize').localize;
-const urlParam         = require('../../../_common/url').param;
+const getHashValue     = require('../../../_common/url').getHashValue;
 
 const PaymentAgentWithdraw = (() => {
     const view_ids  = {
@@ -39,7 +39,7 @@ const PaymentAgentWithdraw = (() => {
     };
 
     const checkToken = ($ddl_agents, pa_list) => {
-        const token = urlParam('token') || '';
+        const token = getHashValue('token');
         if (!token) {
             BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
             setActiveView(view_ids.notice);

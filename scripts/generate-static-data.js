@@ -80,7 +80,6 @@ const texts = [
     'Minute',
     'AM',
     'PM',
-    'End time must be after start time.',
     'Time is in the wrong format.',
 
     // highchart localization text
@@ -510,12 +509,16 @@ const texts = [
     'Current password',
     'New password',
     'Demo Standard',
-    'Demo STP',
+    'Standard',
+    'Demo Advanced',
+    'Advanced',
     'Demo Volatility Indices',
     'Real Standard',
-    'Real STP',
+    'Real Advanced',
     'Real Volatility Indices',
     'Change Password',
+    'Demo Accounts',
+    'Real-Money Accounts',
 
     // account_transfer
     'Min',
