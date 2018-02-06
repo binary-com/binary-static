@@ -83,7 +83,7 @@ module.exports = function (grunt) {
             loaders: [
                 {
                     test   : /\.js$/,
-                    exclude: /node_modules/,
+                    exclude: /node_modules\/(?![@material])/,
                     loader : 'babel-loader',
                     query  : {
                         presets: ['es2015'],

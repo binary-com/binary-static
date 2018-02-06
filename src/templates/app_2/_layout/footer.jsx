@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => (
-    <footer>
+    <footer className='mdc-elevation--z2'>
     </footer>
 );
 

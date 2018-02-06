@@ -1,3 +1,244 @@
+#content {
+    margin-bottom: -15px;
+}
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+
+    h1 {
+        font-weight: 300;
+        color: $COLOR_ORANGE;
+        text-align: center;
+    }
+    p {
+        font-weight: 300;
+        line-height: 1.4em;
+    }
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid $COLOR_LIGHT_GRAY;
+        margin: 0.5em 0;
+        padding: 0;
+    }
+}
+
+.sm-down {
+    &.hide {
+        @media (max-width: 841px) {
+            display: none;
+        }
+    }
+}
+
+.sm-up {
+    &.hide {
+        @media (min-width: 840px) {
+            display: none;
+        }
+    }
+}
+
+.invisible {
+    display: none !important;
+    visibility: hidden;
+}
+
 #trading_2 {
-    // new trading css
+    background: $COLOR_LIGHT_GRAY;
+    background: linear-gradient($COLOR_LIGHT_GRAY, $COLOR_WHITE);
+
+    .logo {
+        margin: auto;
+        display: block;
+    }
+    .btn {
+        background: $COLOR_WHITE;
+        padding: 10px 0;
+        margin-bottom: 1rem;
+        text-align: center;
+
+        &.modal {
+            padding: 10px 0;
+        }
+    }
+    .set-height {
+        &.full {
+            height: 100%;
+        }
+        &.max-eighty {
+            max-height: 80%;
+        }
+    }
+    .set-width {
+        &.full {
+            width: 100%;
+        }
+    }
+    select {
+        &.full-width {
+            width: 100%;
+        }
+    }
+    .mdc-select {
+        width: 100% !important;
+
+        &.full-width {
+            max-width: calc(100% - 40px);
+        }
+    }
+    label {
+        &.full-width {
+            width: calc(100% - 24px);
+        }
+    }
+    .contract-market-container {
+        padding: 0 10px;
+
+        .price-container {
+            display: flex;
+            position: relative;
+            box-sizing: border-box;
+
+            p {
+                font-size: 0.7rem;
+            }
+            .box {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .box-end {
+                    margin-top: auto;
+                }
+            }
+            .first-column {
+                display: inline-flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                flex: 1;
+                order: -1;
+
+                p {
+                    line-height: 0;
+
+                    &.return-text {
+                        color: $COLOR_ORANGE;
+                        font-size: 1.2rem;
+                        margin-top: 8px;
+                    }
+                    &.profit-text {
+                        color: $primaryBrandColor;
+                        margin-top: 8px;
+                    }
+                }
+            }
+            .second-column {
+                display: inline-flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                flex: 1;
+                order: 0;
+
+                p {
+                    line-height: 0;
+
+                    &.negative-text {
+                        color: $COLOR_RED;
+                        margin-top: 8px;
+                    }
+                    &.positive-text {
+                        color: $COLOR_LIGHT_BLUE;
+                        margin-top: 8px;
+                    }
+                    &.payout-text {
+                        color: $primaryBrandColor;
+                        margin-top: 8px;
+                    }
+                }
+            }
+            .third-column {
+                display: inline-flex;
+                justify-content: flex-end;
+                order: 1;
+
+                button {
+                    background: $COLOR_GREEN !important;
+                    display: inline-flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    text-transform: capitalize;
+                    font-size: 1.2rem;
+                    min-height: 100%;
+                    min-width: 72px;
+                    max-width: 100%;
+
+                    .btn-icon {
+                        font-size: 2rem;
+                        padding-bottom: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+    .duration-selector {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        align-self: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 8px;
+        margin-top: 8px;
+
+        .duration-input {
+            .text {
+                margin-top: 5px !important;
+                height: unset !important;
+
+                input {
+                    border-radius: 0;
+                    box-sizing: border-box;
+                    font-size: 1rem;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                }
+                input::placeholder {
+                    font-size: 1rem;
+                }
+                i {
+                    font-size: 1em;
+                    align-self: flex-start;
+                    color: $COLOR_GRAY;
+                }
+                .line {
+                    background-color: $primaryBrandColor !important;
+                }
+            }
+        }
+        .duration-type {
+            flex-grow: 1;
+
+            .duration-unit .mdc-select__menu {
+                min-width: 90px;
+            }
+            &.right {
+                padding-left: 20px;
+            }
+            &.left {
+                padding-right: 20px;
+            }
+        }
+    }
 }
