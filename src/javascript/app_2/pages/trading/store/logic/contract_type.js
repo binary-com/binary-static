@@ -68,6 +68,12 @@ const ContractType = (() => {
         return categories;
     });
 
+    const getContractType = (list, contract_type) => {
+        const list_arr = Object.keys(list || {})
+            .reduce((k, l) => ([...k, ...list[l].map(ct => ct.name)]), []);
+        return list_arr.indexOf(contract_type) === -1 || !contract_type ? list_arr[0] : contract_type;
+    };
+
     const getComponents = (c_type) => contract_types[c_type].components;
 
     const onContractChange = (c_type) => {
@@ -80,6 +86,7 @@ const ContractType = (() => {
         // contracts_info: { CALL: {}, PUT: {} }
     return {
         getContractsList,
+        getContractType,
         getComponents,
         onContractChange,
     };

@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action, reaction } from 'mobx';
 import Client from '../../../../app/base/client';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
@@ -17,7 +17,6 @@ export default class TradeStore {
     @action.bound init() {
         Contract.getContractsList(this.symbol).then(r => {
             this.contract_types_list = r;
-            this.form_components     = Contract.getComponents(this.contract_type);
         });
         getCountry().then(r => { this.message = r; });
         getTicks((r) => { this.tick = r; });
@@ -31,6 +30,14 @@ export default class TradeStore {
             });
         }
         this.duration_units_list = getDurationUnits();
+
+        // TODO: use a map and iterate it to register reactions, and also dispose them on unload
+        reaction(() => this.contract_types_list, (new_list) => {
+            this.contract_type = Contract.getContractType(new_list, this.contract_type);
+        });
+        reaction(() => this.contract_type, (c_type) => {
+            this.form_components = Contract.getComponents(c_type);
+        });
     }
 
     @action.bound handleChange(e) {
@@ -39,10 +46,10 @@ export default class TradeStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
         this[name] = value;
-        this.Dispatch(name, value);
+        this.dispatch(name, value);
     }
 
-    @action.bound Dispatch(name, value) {
+    @action.bound dispatch(name, value) {
         const handler = event_map[name];
         if (typeof handler === 'function') {
             Promise.resolve(handler(value)).then((result) => {
@@ -58,7 +65,7 @@ export default class TradeStore {
     @observable symbol       = Object.keys(this.symbols_list)[0];
 
     // Contract Type
-    @observable contract_type       = 'rise_fall'; // TODO: update the contract_type on changing the contract_types_list
+    @observable contract_type       = '';
     @observable contract_types_list = {};
     @observable form_components     = [];
 
