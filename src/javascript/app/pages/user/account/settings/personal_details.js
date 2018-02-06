@@ -40,7 +40,7 @@ const PersonalDetails = (() => {
         const $tax_info_notice = $('#tax_information_notice');
         const $tax_info_terms  = $('#tax_id_terms').parent();
 
-        if (true) {
+        if (Client.shouldCompleteTax()) {
             $tax_info_notice.setVisibility(1);
             if (Client.isAccountOfType('financial')) {
                 $('.rowCustomerSupport').setVisibility(0);
