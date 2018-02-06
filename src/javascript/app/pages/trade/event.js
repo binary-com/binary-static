@@ -335,7 +335,7 @@ const TradingEvents = (() => {
         /*
          * attach an event to change in currency
          */
-        getElementById('currency').addEventListener('change', (e) => {
+        $('.currency').on('change', (e) => {
             const currency = e.target.value;
             Defaults.set('currency', currency);
             const amount = isCryptocurrency(currency) ? 'amount_crypto' : 'amount';

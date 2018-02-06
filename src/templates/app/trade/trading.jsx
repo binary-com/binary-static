@@ -126,8 +126,11 @@ const Trading = () => (
                                         <div className='col form_label'>
                                             <label htmlFor='lots' id='lots_label'>{it.L('Units')}</label>
                                         </div>
-                                        <div className='col'>
-                                            <input type='text' defaultValue='1' step='any' maxLength='5' name='lots' id='lots' className='small_width_input' />
+                                        <div className='row-inner big-col'>
+                                            <div className='col-inner'>
+                                                <select className='currency small_width_input'></select>
+                                                <input type='text' defaultValue='1' step='any' maxLength='5' name='lots' id='lots' className='small_width_input' />
+                                            </div>
                                         </div>
                                     </div>
                                     <div className='row' id='payout_row'>
@@ -139,7 +142,7 @@ const Trading = () => (
                                         </div>
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
-                                                <select id='currency' className='small_width_input'></select>
+                                                <select className='currency small_width_input'></select>
                                                 <input id='amount' type='text' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
                                             </div>
                                         </div>

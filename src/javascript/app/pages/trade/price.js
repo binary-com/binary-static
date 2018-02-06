@@ -39,7 +39,7 @@ const Price = (() => {
         const start_time    = CommonFunctions.getElementById('time_start');
         const underlying    = CommonFunctions.getElementById('underlying');
         const amount_type   = CommonFunctions.getElementById('amount_type');
-        const currency      = CommonFunctions.getElementById('currency');
+        const currency      = CommonFunctions.getVisibleElement('currency');
         const payout        = CommonFunctions.getElementById('amount');
         const expiry_type   = CommonFunctions.getElementById('expiry_type');
         const duration      = CommonFunctions.getElementById('duration_amount');
@@ -182,7 +182,7 @@ const Price = (() => {
         const longcode          = container.getElementsByClassName('contract_longcode')[0];
         const comment           = container.getElementsByClassName('price_comment')[0];
         const error             = container.getElementsByClassName('contract_error')[0];
-        const currency          = CommonFunctions.getElementById('currency');
+        const currency          = CommonFunctions.getVisibleElement('currency');
 
         const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
