@@ -14,6 +14,7 @@ const JapanAccOpening = (() => {
             { selector: '#first_name',         validations: ['req', 'letter_symbol'] },
             { selector: '#last_name',          validations: ['req', 'letter_symbol'] },
             { selector: '#date_of_birth',      validations: ['req'] },
+            { selector: '#place_of_birth',     validations: ['req'] },
             { selector: '#address_line_1',     validations: ['req', 'address'] },
             { selector: '#address_line_2',     validations: ['address'] },
             { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
