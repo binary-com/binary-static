@@ -1,24 +1,22 @@
-import { observable, action } from 'mobx';
+import { observable, action, reaction } from 'mobx';
 import Client from '../../../../app/base/client';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
-import { getContractTypes, onContractTypeChange } from './logic/contract_type';
+import Contract from './logic/contract_type';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
 import onSymbolChange from './logic/symbol';
 
 const event_map = {
     amount       : onAmountChange,
-    contract_type: onContractTypeChange,
+    contract_type: Contract.onContractChange,
     symbol       : onSymbolChange,
 };
 
 export default class TradeStore {
     @action.bound init() {
-        getContractTypes(this.symbol).then(r => {
-            Object.keys(r).forEach((key) => { // update state
-                this[key] = r[key];
-            });
+        Contract.getContractsList(this.symbol).then(r => {
+            this.contract_types_list = r;
         });
         getCountry().then(r => { this.message = r; });
         getTicks((r) => { this.tick = r; });
@@ -32,6 +30,14 @@ export default class TradeStore {
             });
         }
         this.duration_units_list = getDurationUnits();
+
+        // TODO: use a map and iterate it to register reactions, and also dispose them on unload
+        reaction(() => this.contract_types_list, (new_list) => {
+            this.contract_type = Contract.getContractType(new_list, this.contract_type);
+        });
+        reaction(() => this.contract_type, (c_type) => {
+            this.form_components = Contract.getComponents(c_type);
+        });
     }
 
     @action.bound handleChange(e) {
@@ -40,7 +46,7 @@ export default class TradeStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
         this[name] = value;
-        this.Dispatch(name, value);
+        this.dispatch(name, value);
     }
 
     @action.bound handleDropDownChange(e) {
@@ -48,11 +54,11 @@ export default class TradeStore {
         const value = e.target.getAttribute('value');
         if (name && value) {
             this[name] = value;
-            this.Dispatch(name, value);
+            this.dispatch(name, value);
         }
     }
 
-    @action.bound Dispatch(name, value) {
+    @action.bound dispatch(name, value) {
         const handler = event_map[name];
         if (typeof handler === 'function') {
             Promise.resolve(handler(value)).then((result) => {
@@ -62,6 +68,15 @@ export default class TradeStore {
             });
         }
     }
+
+    // Underlying
+    @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
+    @observable symbol       = Object.keys(this.symbols_list)[0];
+
+    // Contract Type
+    @observable contract_type       = '';
+    @observable contract_types_list = {};
+    @observable form_components     = [];
 
     // Amount
     @observable basis           = 'stake';
@@ -77,15 +92,6 @@ export default class TradeStore {
     @observable expiry_date         = null;
     @observable expiry_time         = null;
 
-    // Underlying
-    @observable symbol_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
-    @observable symbol      = Object.keys(this.symbol_list)[0];
-
-    // Contract type
-    @observable contract_type      = '';
-    @observable contract_type_list = {};
-    @observable categories         = {};
-
     // Barrier
     @observable barrier_1 = 0;
     @observable barrier_2 = 0;
@@ -96,9 +102,9 @@ export default class TradeStore {
     @observable start_time       = '';
 
     // Last Digit
-    @observable last_digit_visible = 0;
     @observable last_digit = 3;
 
+    // Test
     @observable message = '';
     @observable tick = '';
 };

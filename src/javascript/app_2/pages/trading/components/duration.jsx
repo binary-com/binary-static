@@ -1,6 +1,7 @@
 import React from 'react';
-import moment from 'moment';
 import { InputField } from './form/text_field.jsx';
+import Dropdown from './form/selectbox.jsx';
+import ClockHeader from './form/clock_header.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -10,16 +11,17 @@ const Duration = ({
     duration_unit,
     duration_units_list,
     onChange,
-}) => {
-    const curr_date = moment().toDate().toGMTString();
-    return (
+    onSelectChange,
+}) => (
         <fieldset>
-            <span className='field-info left'>{localize('Trade Duration')}</span>
-            <span className='field-info right'>{curr_date}</span>
-            <select name='expiry_type' value={expiry_type} onChange={onChange}>
-                <option value='duration'>{localize('Duration')}</option>
-                <option value='endtime'>{localize('End Time')}</option>
-            </select>
+            <ClockHeader header={localize('Trade Duration')} />
+            <Dropdown list={[{name: localize('Duration'), value: 'duration'},
+                             {name: localize('End Time'),  value: 'endtime'}]}
+                      selected={expiry_type}
+                      value={expiry_type}
+                      name='expiry_type'
+                      on_change={onSelectChange}
+            />
 
             {expiry_type === 'duration' ?
                 <React.Fragment>
@@ -36,8 +38,7 @@ const Duration = ({
                 </React.Fragment>
             }
         </fieldset>
-    );
-};
+);
 
 export default connect(
     ({trade}) => ({
@@ -46,5 +47,6 @@ export default connect(
         duration_unit      : trade.duration_unit,
         duration_units_list: trade.duration_units_list,
         onChange           : trade.handleChange,
+        onSelectChange     : trade.handleDropDownChange,
     })
 )(Duration);

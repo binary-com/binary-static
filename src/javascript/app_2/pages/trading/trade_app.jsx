@@ -1,10 +1,10 @@
 import React from 'react';
 import Amount from './components/amount.jsx';
 import Barrier from './components/barrier.jsx';
-import Duration from './components/duration.jsx';
-import StartDate from './components/start_date.jsx';
 import ContractType from './components/contract_type.jsx';
+import Duration from './components/duration.jsx';
 import LastDigit from './components/last_digit.jsx';
+import StartDate from './components/start_date.jsx';
 import Symbol from './components/symbol.jsx';
 import Test from './components/test.jsx';
 import { connect } from './store/connect';
@@ -13,6 +13,11 @@ class TradeApp extends React.Component {
     componentDidMount() {
         this.props.onMounted();
     }
+
+    isVisible(component_name) {
+        return this.props.form_components.indexOf(component_name) >= 0;
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -22,10 +27,10 @@ class TradeApp extends React.Component {
                 <div className='sidebar-container'>
                     <Symbol />
                     <ContractType />
-                    <StartDate />
+                    {this.isVisible('start_date') && <StartDate />}
                     <Duration />
-                    <Barrier />
-                    <LastDigit />
+                    {this.isVisible('barrier') && <Barrier />}
+                    {this.isVisible('last_digit') && <LastDigit />}
                     <Amount />
                 </div>
             </React.Fragment>
@@ -35,6 +40,7 @@ class TradeApp extends React.Component {
 
 export default connect(
     ({trade}) => ({
-        onMounted: trade.init,
+        form_components: trade.form_components,
+        onMounted      : trade.init,
     })
 )(TradeApp);

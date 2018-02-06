@@ -3,13 +3,13 @@ import { connect } from '../store/connect';
 
 const Symbol = ({
     symbol,
-    symbol_list,
+    symbols_list,
     onChange,
 }) =>  (
     <fieldset>
         <select name='symbol' value={symbol} onChange={onChange}>
-            {Object.keys(symbol_list).map(s => (
-                <option key={s} value={s}>{symbol_list[s]}</option>
+            {Object.keys(symbols_list).map(s => (
+                <option key={s} value={s}>{symbols_list[s]}</option>
             ))};
         </select>
     </fieldset>
@@ -17,8 +17,8 @@ const Symbol = ({
 
 export default connect(
     ({trade}) => ({
-        symbol     : trade.symbol,
-        symbol_list: trade.symbol_list,
-        onChange   : trade.handleChange,
+        symbol      : trade.symbol,
+        symbols_list: trade.symbols_list,
+        onChange    : trade.handleChange,
     })
 )(Symbol);

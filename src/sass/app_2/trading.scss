@@ -5,17 +5,24 @@
             margin: 8px 0;
             font-size: 1rem;
         }
-        span.field-info {
-            color: $primaryBrandColor;
-            font-size: 0.7rem;
-            font-weight: 400;
-            margin: 5px 0 12px;
+        .clock-header {
+            height: 1.5rem;
 
-            &.left {
-                float: left;
-            }
-            &.right {
-                float: right;
+            span.field-info {
+                position: absolute;
+                color: $primaryBrandColor;
+                font-size: 0.7rem;
+                font-weight: 400;
+                margin: 5px 0 12px;
+
+                &.left {
+                    top: 5px;
+                    left: 5px;
+                }
+                &.right {
+                    top: 5px;
+                    right: 5px;
+                }
             }
         }
     }
