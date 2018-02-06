@@ -8,9 +8,12 @@ const StartDate = ({
     start_dates_list,
     start_time,
     onChange,
-}) =>  (
+}) => {
+    const curr_date = moment().toDate().toGMTString();
+    return (
         <fieldset>
-            <label>{localize('Start time')}</label>
+            <span className='field-info left'>{localize('Start time')}</span>
+            <span className='field-info right'>{curr_date}</span>
             <select name='start_date' value={start_date} onChange={onChange}>
                 <option value='now'>{localize('Now')}</option>
                 {start_dates_list.map(option => {
@@ -27,7 +30,8 @@ const StartDate = ({
                 </React.Fragment>
             }
         </fieldset>
-);
+    );
+};
 
 export default connect(
     ({trade}) => ({

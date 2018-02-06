@@ -1,3 +1,4 @@
+/* stylelint-disable color-no-hex */
 header {
     background-color: $COLOR_WHITE !important;
     position: relative;
@@ -12,17 +13,17 @@ header {
 
         .navbar-icons {
             cursor: pointer;
-            padding: 10px 15px;
+            padding: 6px 15px;
 
             &.binary-logo {
-                border-left: 1px solid rgba(0, 0, 0, 0.1);
+                border-left: 1px solid #f2f2f2;
             }
             img {
                 width: 1rem;
                 height: auto;
 
                 &.logo-img {
-                    width: 2rem;
+                    width: 2.5rem;
                 }
             }
         }
@@ -31,7 +32,7 @@ header {
             order: -1;
             display: inline-flex;
             flex: 1;
-            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #f2f2f2;
 
             .menu-toggle {
                 align-self: center;
@@ -59,7 +60,7 @@ header {
                             right: 0;
                             left: 7.5rem;
                             position: absolute;
-                            margin-top: 10px;
+                            margin-top: 14px;
                             transition: 0.4s ease-in-out;
                         }
                     }
@@ -89,3 +90,4 @@ header {
         }
     }
 }
+/* stylelint-enable color-no-hex */

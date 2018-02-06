@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { InputField } from './form/text_field.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
@@ -9,8 +10,12 @@ const Duration = ({
     duration_unit,
     duration_units_list,
     onChange,
-}) =>  (
+}) => {
+    const curr_date = moment().toDate().toGMTString();
+    return (
         <fieldset>
+            <span className='field-info left'>{localize('Trade Duration')}</span>
+            <span className='field-info right'>{curr_date}</span>
             <select name='expiry_type' value={expiry_type} onChange={onChange}>
                 <option value='duration'>{localize('Duration')}</option>
                 <option value='endtime'>{localize('End Time')}</option>
@@ -31,7 +36,8 @@ const Duration = ({
                 </React.Fragment>
             }
         </fieldset>
-);
+    );
+};
 
 export default connect(
     ({trade}) => ({

@@ -1,4 +1,22 @@
-#trading_2 {
-    // new trading css
-    max-width: 1440px;
+#trade_app {
+    fieldset {
+        input, select {
+            width: 100%;
+            margin: 8px 0;
+            font-size: 1rem;
+        }
+        span.field-info {
+            color: $primaryBrandColor;
+            font-size: 0.7rem;
+            font-weight: 400;
+            margin: 5px 0 12px;
+
+            &.left {
+                float: left;
+            }
+            &.right {
+                float: right;
+            }
+        }
+    }
 }

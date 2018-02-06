@@ -34,7 +34,7 @@ body, input {
 }
 
 .btn span {
-    @include interpolate(font-size, 320px, 1440px, 14px, 18px);
+    @include interpolate(font-size, 320px, 1440px, 14px, 16px);
 }
 
 /* Multiple properties with same values */

@@ -1,0 +1,54 @@
+/* Ant style */
+/* stylelint-disable color-no-hex */
+/* stylelint-disable number-max-precision */
+.input-field {
+    input {
+        box-sizing: border-box;
+        margin: 0;
+        list-style: none;
+        position: relative;
+        display: inline-block;
+        padding: 4px 11px;
+        width: 100%;
+        height: 32px;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, 0.65);
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #f2f2f2;
+        border-radius: 4px;
+        transition: all 0.3s;
+
+        &:hover {
+            border-color: #e98024;
+        }
+        &:active, &:focus {
+            outline: 0;
+            border: 1px solid rgba(233, 128, 36, 0.4);
+            box-shadow: 0 0 0 2px rgba(233, 128, 36, 0.2);
+        }
+        &:not([type=range]), label, textarea {
+            touch-action: manipulation;
+        }
+        &::placeholder {
+            font-weight: 400;
+        }
+        &.error {
+            color: #f44336;
+            border: 1px solid #f44336;
+        }
+    }
+    label.input-label {
+        font-size: 0.875rem;
+        color: #333333;
+        font-weight: 400;
+    }
+    span.input-helper {
+        font-weight: 300;
+        font-size: 0.75rem;
+        color: #b0b3bf;
+    }
+}
+/* stylelint-enable number-max-precision */
+/* stylelint-enable color-no-hex */

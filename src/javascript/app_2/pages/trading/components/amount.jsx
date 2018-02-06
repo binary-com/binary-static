@@ -1,5 +1,6 @@
 import React from 'react';
-import { InputField } from './form/text_field.jsx';
+import { TestField } from './form/text_field.jsx';
+import Dropdown from './form/selectbox.jsx';
 import { connect } from '../store/connect';
 import Client from '../../../../app/base/client';
 import { localize } from '../../../../_common/localize';
@@ -21,12 +22,16 @@ const Amount = ({
     currencies_list,
     amount,
     onChange,
+    onSelectChange,
 }) => (
         <fieldset>
-            <select name='basis' value={basis} onChange={onChange}>
-                <option value='payout'>{localize('Payout')}</option>
-                <option value='stake'>{localize('Stake')}</option>
-            </select>
+            <Dropdown list={[{name: localize('Payout'), value: 'payout'},
+                             {name: localize('Stake'),  value: 'stake'}]}
+                      selected={basis}
+                      value={basis}
+                      name='basis'
+                      on_change={onSelectChange}
+            />
 
             {Client.get('currency') ?
                 <span className={`symbols ${currency.toLowerCase()}`}></span> :
@@ -35,7 +40,7 @@ const Amount = ({
                 </select>
             }
 
-            <InputField type='number' name='amount' value={amount} on_change={onChange} />
+            <TestField type='number' name='amount' value={amount} onChange={onChange} is_currency />
         </fieldset>
 );
 
@@ -46,5 +51,6 @@ export default connect(
         currencies_list: trade.currencies_list,
         amount         : trade.amount,
         onChange       : trade.handleChange,
+        onSelectChange : trade.handleDropDownChange,
     })
 )(Amount);

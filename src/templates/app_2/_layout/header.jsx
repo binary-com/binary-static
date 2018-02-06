@@ -16,7 +16,7 @@ const Header = ({
               { items.length ?
                 <div className='menu-links'>
                     {items.map((item, idx) => (
-                        <a key={idx} href={item.href || '#'} >
+                        <a key={idx} href={item.href || 'javascript:;'} >
                             <span className={item.icon}>{item.text}</span>
                         </a>
                     ))}

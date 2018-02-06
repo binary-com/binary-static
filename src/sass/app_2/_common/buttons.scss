@@ -6,7 +6,6 @@
     text-align: center;
     touch-action: manipulation;
     cursor: pointer;
-    border: 1px solid transparent;
     white-space: nowrap;
     padding: 0 15px;
     margin: 16px;
@@ -31,7 +30,7 @@
             &:hover {
                 background: #ee9e58;
             }
-            &:focus {
+            &:active {
                 background: #e98024;
             }
             &.effect:focus:not(:active):after {
@@ -44,7 +43,7 @@
             &:hover {
                 background: #66bb6a;
             }
-            &:focus {
+            &:active {
                 background: #4caf50;
             }
             &.effect:focus:not(:active):after {
@@ -69,7 +68,7 @@
                 color: #ee9e58;
                 background: rgba(233, 128, 36, 0.1);
             }
-            &:focus {
+            &:active {
                 border: 1px solid #e98024;
                 color: #e98024;
             }
@@ -86,7 +85,7 @@
                 color: #66bb6a;
                 background: rgba(76, 175, 80, 0.1);
             }
-            &:focus {
+            &:active {
                 border: 1px solid #4caf50;
                 color: #4caf50;
             }
@@ -108,7 +107,7 @@
         &:hover {
             background: #f2f3f8;
         }
-        &:focus {
+        &:active {
             color: #4c5794;
         }
         &.effect:focus:not(:active):after {
