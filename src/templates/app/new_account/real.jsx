@@ -1,7 +1,7 @@
 import React from 'react';
 import PepDeclaration from '../_includes/pep_declaration.jsx';
 import ProfessionalClient from '../_includes/professional_client.jsx';
-import { Fieldset } from '../../_common/components/forms.jsx';
+import { Fieldset, FormRow } from '../../_common/components/forms.jsx';
 import {
     Salutation,
     FirstName,
@@ -30,6 +30,7 @@ const Real = () => (
                 <FirstName />
                 <LastName />
                 <DateOfBirth />
+                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} />
                 <Residence />
                 <AccountOpeningReason />
             </Fieldset>
