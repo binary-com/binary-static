@@ -6,15 +6,22 @@ import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
 import onSymbolChange from './logic/symbol';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
+import { cloneObject } from '../../../../_common/utility';
 
 const event_map = {
-    amount       : onAmountChange,
-    contract_type: ContractType.onContractChange,
-    symbol       : onSymbolChange,
+    amount: onAmountChange,
+    symbol: onSymbolChange,
+};
+
+const reaction_map = {
+    contract_types_list: (new_list, store) => ContractType.getContractType(new_list, store.contract_type),
+    contract_type      : ContractType.onContractChange,
 };
 
 export default class TradeStore {
     @action.bound init() {
+        this._initReactions();
+
         ContractType.getContractsList(this.symbol).then(r => {
             this.contract_types_list = r;
         });
@@ -30,19 +37,37 @@ export default class TradeStore {
             });
         }
         this.duration_units_list = getDurationUnits();
+    }
 
-        // TODO: use a map and iterate it to register reactions, and also dispose them on unload
-        reaction(() => this.contract_types_list, (new_list) => {
-            this.contract_type = ContractType.getContractType(new_list, this.contract_type);
+    _reaction_disposers = [];
+    _initReactions() {
+        Object.keys(reaction_map).forEach((reaction_key) => {
+            const disposer = reaction(() => this[reaction_key], (new_value) => {
+                Promise
+                    .resolve(reaction_map[reaction_key](new_value, this._cloneState()))
+                    .then(this.updateState);
+            });
+            this._reaction_disposers.push(disposer);
         });
-        reaction(() => this.contract_type, (c_type) => {
-            this.form_components = ContractType.getComponents(c_type);
+    }
+
+    disposeReactions() {
+        this._reaction_disposers.forEach((disposer) => { disposer(); });
+    }
+
+    _cloneState() {
+        return cloneObject(this);
+    }
+
+    @action.bound updateState(new_state) {
+        Object.keys(new_state).forEach((key) => {
+            this[key] = new_state[key];
         });
     }
 
     @action.bound handleChange(e) {
         const { name, value } = e.target;
-        if (!this.hasOwnProperty(name)) { // eslint-disable-line
+        if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
         this[name] = value;
@@ -52,11 +77,9 @@ export default class TradeStore {
     @action.bound dispatch(name, value) {
         const handler = event_map[name];
         if (typeof handler === 'function') {
-            Promise.resolve(handler(value)).then((result) => {
-                Object.keys(result).forEach((key) => { // update state
-                    this[key] = result[key];
-                });
-            });
+            Promise
+                .resolve(handler(value))
+                .then(this.updateState);
         }
     }
 
