@@ -20,6 +20,7 @@ import {
     SecretAnswer,
     ClientMessage,
     Tnc,
+    TaxIdentificationNumberTerms,
 } from '../../_common/components/forms_common_rows.jsx';
 
 const Financial = () => (
@@ -40,6 +41,12 @@ const Financial = () => (
             </Fieldset>
 
             <Fieldset legend={it.L('Tax Information')}>
+                <div className='gr-12 mf-only'>
+                    <p>{it.L('As a legal and regulatory requirement BIEL is obliged to collect certain information relating to CRS/FATCA compliance. We therefore kindly ask you to fill in the provided self-certification form before we can enable any further activity on your account, including closing of the account.')}</p>
+                    <p>{it.L('The information provided by you may only be disclosed to the authorities legally charged with collecting this information for the purposes of CRS/FATCA reporting and only to the extend, to which BIEL is legally obliged to collect and disclose it. The information shall not be used, disclosed or processed in any other way at any time.')}</p>
+                    <p>{it.L('Please note that we have the right and obligation not to accept the information provided by you if we know of have a reason to believe that it is incorrect, inaccurate or incomplete. In such case we will be asking you to clarify or correct the details provided in the CRS/FATCA questionnaire.')}</p>
+                </div>
+
                 <FormRow type='select'
                     id='tax_residence'
                     label={it.L('Tax residence')}
@@ -53,6 +60,7 @@ const Financial = () => (
                     tooltip={it.L('Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission.')}
                     attributes={{maxLength: '20'}}
                 />
+
             </Fieldset>
 
             <Fieldset legend={it.L('Address')}>
@@ -77,6 +85,10 @@ const Financial = () => (
                 <div className='gr-12'>
                     <p>{it.L('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.')}</p>
                 </div>
+            </fieldset>
+
+            <fieldset>
+                <TaxIdentificationNumberTerms />
             </fieldset>
 
             <Tnc />

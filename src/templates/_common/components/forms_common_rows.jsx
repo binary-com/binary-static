@@ -169,3 +169,19 @@ export const ClientMessage = () => (
         </div>
     </div>
  );
+
+export const TaxIdentificationNumberTerms = () => (
+    <div id='tax_id_terms'>
+        <div className='gr-12 gr-padding-10'>
+            <input type='checkbox' id='chk_tax_id' />
+            <label htmlFor='chk_tax_id'>
+                {it.L('I hereby declare and confirm that the above given information is true and complete. Moreover, I undertake to inform Binary Investments (Europe) Ltd. about any changes therein without undue delay. Information can be edited by accessing your profile.')}
+            </label>
+        </div>
+        <div className='gr-12 gr-padding-10'>
+            <p className='no-margin'>
+                <i><span className='errorfield'>* </span>{it.L('Please note that you might be considered resident for tax purposes in more than one jurisdictions. [_1] does not take any responsibility for providing you with advice or information on how to determine your tax residence. If you are in any doubt regarding your tax residence kindly consult your tax advisor and make sure you provide us with the correct information.', it.website_name)}</i>
+            </p>
+        </div>
+    </div>
+);

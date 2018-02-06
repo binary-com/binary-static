@@ -64,6 +64,7 @@ const FinancialAccOpening = (() => {
         let validations =
               AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id), [
                   { selector: '#tax_identification_number', validations: ['req', 'tax_id', ['length', { min: 1, max: 20 }]] },
+                  { selector: '#chk_tax_id',                validations: [['req', { hide_asterisk: true }]], exclude_request: 1 },
               ]);
         const place_of_birth = State.getResponse('get_settings.place_of_birth');
         if (place_of_birth) {

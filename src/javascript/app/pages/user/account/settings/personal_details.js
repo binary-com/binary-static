@@ -31,15 +31,27 @@ const PersonalDetails = (() => {
         is_jp             = residence === 'jp';
         if (is_jp && !is_virtual) {
             setVisibility('#fieldset_email_consent');
+            showHideTaxMessage();
         }
-        showHideTaxMessage();
     };
 
     const showHideTaxMessage = () => {
-        if (Client.shouldCompleteTax()) {
-            setVisibility('#tax_information_notice');
+        const $fieldsets       = $(`${form_id} fieldset`);
+        const $tax_info_notice = $('#tax_information_notice');
+        const $tax_info_terms  = $('#tax_id_terms').parent();
+
+        if (true) {
+            $tax_info_notice.setVisibility(1);
+            if (Client.isAccountOfType('financial')) {
+                $('.rowCustomerSupport').setVisibility(0);
+                $fieldsets.setVisibility(0);
+                $tax_info_terms.setVisibility(1);
+                setVisibility('#fieldset_tax_information');
+                setVisibility('#tax_information_note');
+            }
         } else {
-            $('#tax_information_notice').setVisibility(0);
+            $tax_info_notice.setVisibility(0);
+            $tax_info_terms.setVisibility(0);
         }
     };
 
@@ -105,6 +117,7 @@ const PersonalDetails = (() => {
             setVisibility('.JpAcc');
         } else {
             setVisibility(real_acc_elements);
+            showHideTaxMessage();
         }
         setVisibility('#row_country');
         setVisibility('#row_email');
@@ -202,6 +215,7 @@ const PersonalDetails = (() => {
 
                 { selector: '#place_of_birth', validations: Client.isAccountOfType('financial') ? ['req'] : '' },
                 { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
+                { selector: '#chk_tax_id',     validations: Client.isAccountOfType('financial') ? [['req', { hide_asterisk: true }]] : '', exclude_request: 1 },
             ];
             const tax_id_validation = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
             if (Client.isAccountOfType('financial')) {
