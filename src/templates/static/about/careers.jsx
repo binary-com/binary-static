@@ -48,7 +48,7 @@ const ColumnSM = ({ gr, header, paragraph }) => (
 const ColumnLG = ({ center, image, text }) => (
     <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
         <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
-        <div className='fill-bg-color'>
+        <div className='white-bg-color'>
             <p className='column-margin fill-text'>{text}</p>
         </div>
     </div>
@@ -86,13 +86,17 @@ const Careers = () => (
                 <ColumnSM header={it.L('Support')}  paragraph={it.L('Where supportive colleagues are like a second family.')} />
             </div>
 
-            <div className='gr-row gr-padding-30 center-text'>
-                <div className='gr-12 gr-padding-30'>
-                    <h1>{it.L('Our locations')}</h1>
+            <div className="viewport-width fill-bg-color">
+                <div className="container">
+                    <div className='gr-row gr-padding-30 center-text'>
+                        <div className='gr-12 gr-padding-30'>
+                            <h1>{it.L('Our locations')}</h1>
+                        </div>
+                        <ColumnLG image='my@2'      text={it.L('Malaysia')} />
+                        <ColumnLG image='malta@1'   text={it.L('Malta')} />
+                        <ColumnLG image='japan@1'   text={it.L('Japan')} />
+                    </div>
                 </div>
-                <ColumnLG image='my@2'      text={it.L('Malaysia')} />
-                <ColumnLG image='malta@1'   text={it.L('Malta')} />
-                <ColumnLG image='japan@1'   text={it.L('Japan')} />
             </div>
 
             <div className='gr-row gr-padding-30'>
