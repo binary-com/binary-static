@@ -21,18 +21,15 @@
         transition: all 0.3s;
 
         &:hover {
-            border-color: #e98024;
+            border-color: #2a3052;
         }
         &:active, &:focus {
             outline: 0;
-            border: 1px solid rgba(233, 128, 36, 0.4);
-            box-shadow: 0 0 0 2px rgba(233, 128, 36, 0.2);
+            border-radius: 4px;
+            box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
         }
         &:not([type=range]), label, textarea {
             touch-action: manipulation;
-        }
-        &::placeholder {
-            font-weight: 400;
         }
         &.error {
             color: #f44336;

@@ -42,12 +42,7 @@ const Layout = () => {
         <html>
             <Head />
             <body className={it.language}>
-                <Header items={[
-                    { icon: 'trade',     text: it.L('Trade') },
-                    { icon: 'portfolio', text: it.L('Portfolio') },
-                    { icon: 'statement', text: it.L('Statement') },
-                    { icon: 'cashier',   text: it.L('Cashier') },
-                ]} />
+                <Header />
                 <Menu />
                 <GTM />
                 <InnerContent />

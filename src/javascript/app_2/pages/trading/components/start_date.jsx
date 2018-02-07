@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
-import ClockHeader from './form/clock_header.jsx';
+import ClockHeader from './elements/clock_header.jsx';
 
 const StartDate = ({
     start_date,

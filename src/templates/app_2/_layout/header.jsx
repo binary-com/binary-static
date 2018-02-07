@@ -1,35 +1,13 @@
 import React from 'react';
+import { StaticHeader } from '../../../javascript/app_2/pages/trading/components/elements/header.jsx';
 
-const Header = ({
-    id,
-    items=[],
-}) => (
-  <header id={id} className='shadow'>
-      <div className='menu-items'>
-          <div className='menu-left'>
-              <div className='navbar-icons menu-toggle'>
-                  <img src={it.url_for('/images/japan/version1/main_menu.svg')} alt='Menu' />
-              </div>
-              <div className='navbar-icons binary-logo'>
-                  <img className='logo-img' src={it.url_for('/images/pages/binary-symbol-logo.svg')} alt='Binary.com' />
-              </div>
-              { items.length ?
-                <div className='menu-links'>
-                    {items.map((item, idx) => (
-                        <a key={idx} href={item.href || 'javascript:;'} >
-                            <span className={item.icon}>{item.text}</span>
-                        </a>
-                    ))}
-                </div>
-                :
-                undefined
-              }
-          </div>
-          <div className='navbar-icons notifications-toggle'>
-              <img src={it.url_for('/images/japan/version1/main_menu.svg')} alt='Alert' />
-          </div>
-      </div>
-  </header>
+const Header = () => (
+    <StaticHeader items={[
+        { icon: 'trade',     text: it.L('Trade') },
+        { icon: 'portfolio', text: it.L('Portfolio') },
+        { icon: 'statement', text: it.L('Statement') },
+        { icon: 'cashier',   text: it.L('Cashier') },
+    ]} />
 );
 
 export default Header;

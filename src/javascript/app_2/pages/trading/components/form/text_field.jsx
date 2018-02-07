@@ -28,7 +28,6 @@ class TestField extends React.PureComponent {
     update(e) {
         this.setState({value: e.target.value});
         this.props.onChange(e);
-        console.log(e.target.value);
     }
 
     render() {
