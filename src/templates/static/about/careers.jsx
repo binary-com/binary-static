@@ -86,8 +86,8 @@ const Careers = () => (
                 <ColumnSM header={it.L('Support')}  paragraph={it.L('Where supportive colleagues are like a second family.')} />
             </div>
 
-            <div className="viewport-width fill-bg-color">
-                <div className="container">
+            <div className='viewport-width fill-bg-color'>
+                <div className='container'>
                     <div className='gr-row gr-padding-30 center-text'>
                         <div className='gr-12 gr-padding-30'>
                             <h1>{it.L('Our locations')}</h1>
