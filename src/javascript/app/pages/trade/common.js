@@ -518,7 +518,7 @@ const commonTrading = (() => {
     };
 
     const selectOption = (option, select) => {
-        if(!select) return;
+        if (!select) return false;
 
         const options = select.getElementsByTagName('option');
         let contains  = 0;
