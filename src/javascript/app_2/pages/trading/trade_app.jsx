@@ -7,6 +7,7 @@ import LastDigit from './components/last_digit.jsx';
 import StartDate from './components/start_date.jsx';
 import Symbol from './components/symbol.jsx';
 import Test from './components/test.jsx';
+import Purchase from './components/purchase.jsx';
 import { Button } from './components/form/button.jsx';
 import { connect } from './store/connect';
 
@@ -32,6 +33,8 @@ class TradeApp extends React.Component {
                         {this.isVisible('barrier') && <Barrier />}
                         {this.isVisible('last_digit') && <LastDigit />}
                         <Amount />
+
+                        <Purchase />
 
                         <div className='gr-row'>
                             <div className='gr-3'>

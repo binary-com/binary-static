@@ -19,8 +19,9 @@ const reaction_map = {
     contract_types_list: (new_list, store) => ContractType.getContractType(new_list, store.contract_type),
     contract_type      : (new_type, store) => {
         const obj_contract_type = ContractType.onContractChange(new_type);
-        const obj_barrier       = getBarrierValues(ContractType.getContractValues(['barrier', 'high_barrier', 'low_barrier'], store));
-        return $.extend(obj_contract_type, obj_barrier);
+        const obj_barrier       = getBarrierValues(ContractType.getContractInfoValues(['barrier', 'high_barrier', 'low_barrier'], store));
+        const obj_trade_types   = ContractType.getTradeTypes(store);
+        return $.extend(obj_contract_type, obj_barrier, obj_trade_types);
     },
 };
 
@@ -97,6 +98,7 @@ export default class TradeStore {
     // Contract Type
     @observable contract_type        = '';
     @observable contract_types_list  = {};
+    @observable trade_types          = [];
     // TODO: add logic for contract_start_type and contract_expiry_type dynamic values
     @observable contract_start_type  = 'spot';
     @observable contract_expiry_type = 'intraday';
