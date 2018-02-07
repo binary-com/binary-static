@@ -122,14 +122,14 @@ const Trading = () => (
                                             </select>
                                         </div>
                                     </div>
-                                    <div className='row' id='lots_row'>
+                                    <div className='row' id='multiplier_row'>
                                         <div className='col form_label'>
-                                            <label htmlFor='lots' id='lots_label'>{it.L('Units')}</label>
+                                            <label htmlFor='multiplier' id='multiplier_label'>{it.L('Multiplier')}</label>
                                         </div>
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
                                                 <select className='currency small_width_input'></select>
-                                                <input type='text' defaultValue='1' step='any' maxLength='5' name='lots' id='lots' className='small_width_input' />
+                                                <input type='text' defaultValue='1' step='any' maxLength='5' name='multiplier' id='multiplier' className='small_width_input' />
                                             </div>
                                         </div>
                                     </div>
@@ -241,8 +241,8 @@ const Trading = () => (
                                                 <span className='contract_amount'></span>
                                             </div>
                                             <div className='payout_wrapper'>
-                                                <span className='quantity'></span>
-                                                <span className='contract_quantity'></span>
+                                                <span className='multiplier'></span>
+                                                <span className='contract_multiplier'></span>
                                             </div>
                                         </div>
                                         <div className='contract_purchase button'>

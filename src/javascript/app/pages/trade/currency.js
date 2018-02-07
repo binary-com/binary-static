@@ -20,7 +20,7 @@ const displayCurrencies = () => {
     if (currencies && currencies.length > 1) {
         $currency.html(Currency.getCurrencyList(currencies).html());
         Defaults.set('currency', $currency.val());
-    } else if ($currency.parent().find('#lots:visible').length) {
+    } else if ($currency.parent().find('#multiplier:visible').length) {
         $currency.hide();
     } else {
         $currency.replaceWith($('<span/>', { id: $currency.attr('id'), class: $currency.attr('class'), value: currencies[0], html: Currency.formatCurrency(currencies[0]) }));

@@ -242,13 +242,13 @@ const TradingEvents = (() => {
         /*
          * attach event to change in amount, request new price only
          */
-        const lots_element = document.getElementById('lots');
-        if (lots_element) {
-            lots_element.addEventListener('keypress', onlyNumericOnKeypress);
+        const multiplier_element = document.getElementById('multiplier');
+        if (multiplier_element) {
+            multiplier.addEventListener('keypress', onlyNumericOnKeypress);
 
-            lots_element.addEventListener('input', commonTrading.debounce((e) => {
-                e.target.value = e.target.value.replace(/(\D.+)/g, '').replace(/^0+/,'');
-                Defaults.set('lot', e.target.value);
+            multiplier.addEventListener('input', commonTrading.debounce((e) => {
+                e.target.value = e.target.value.replace(/^0+/,'');
+                Defaults.set('multiplier', e.target.value);
                 Price.processPriceRequest();
                 commonTrading.submitForm(document.getElementById('websocket_form'));
             }));

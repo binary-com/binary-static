@@ -7,20 +7,20 @@ const Defaults = require('./defaults');
 
 const Lookback = (() => {
     const displayLookback = () => {
-        const lot_element    = document.getElementById('lots_row');
-        const lot_input      = document.getElementById('lots');
-        const payout_element = document.getElementById('payout_row');
+        const multiplier_element    = document.getElementById('multiplier_row');
+        const multiplier_input      = document.getElementById('multiplier');
+        const payout_element        = document.getElementById('payout_row');
 
         if (Contract.form() === 'lookback') {
-            lot_element.show();
+            multiplier_element.show();
             payout_element.hide(); // Hide payout
-            if (Defaults.get('lot')) {
-                lot_input.value = Defaults.get('lot');
+            if (Defaults.get('multiplier')) {
+                multiplier_input.value = Defaults.get('multiplier');
             } else {
-                Defaults.set('lot', lot_input.value);
+                Defaults.set('multiplier', multiplier_input.value);
             }
         } else {
-            lot_element.hide();
+            multiplier_element.hide();
             payout_element.show(); // Show payout
         }
     };
