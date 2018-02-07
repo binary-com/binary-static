@@ -518,6 +518,8 @@ const commonTrading = (() => {
     };
 
     const selectOption = (option, select) => {
+        if(!select) return;
+
         const options = select.getElementsByTagName('option');
         let contains  = 0;
         for (let i = 0; i < options.length; i++) {

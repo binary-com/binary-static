@@ -204,7 +204,7 @@ const Price = (() => {
             CommonFunctions.elementInnerHtml(payout_amount, data.payout ? formatMoney((currency.value || currency.getAttribute('value')), data.payout) : '-');
             // Lookback multiplier
             CommonFunctions.elementTextContent(multiplier, `${localize('Multiplier')}: `);
-            CommonFunctions.elementInnerHtml(contract_multiplier, params.amount ? params.amount : '-');
+            CommonFunctions.elementInnerHtml(contract_multiplier, params.amount ? `<strong>${params.amount}</strong>` : '-');
 
             if (data.longcode && window.innerWidth > 500) {
                 if (description) description.setAttribute('data-balloon', data.longcode);
