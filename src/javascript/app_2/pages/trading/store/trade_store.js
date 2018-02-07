@@ -1,5 +1,6 @@
 import { observable, action, reaction } from 'mobx';
 import Client from '../../../../app/base/client';
+import getBarrierValues from './logic/barrier';
 import ContractType from './logic/contract_type';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
@@ -13,9 +14,14 @@ const event_map = {
     symbol: onSymbolChange,
 };
 
+// TODO: define the function somewhere else
 const reaction_map = {
     contract_types_list: (new_list, store) => ContractType.getContractType(new_list, store.contract_type),
-    contract_type      : ContractType.onContractChange,
+    contract_type      : (new_type, store) => {
+        const obj_contract_type = ContractType.onContractChange(new_type);
+        const obj_barrier       = getBarrierValues(ContractType.getContractValues(['barrier', 'high_barrier', 'low_barrier'], store));
+        return $.extend(obj_contract_type, obj_barrier);
+    },
 };
 
 export default class TradeStore {
@@ -51,6 +57,7 @@ export default class TradeStore {
         });
     }
 
+    // TODO: call this on unload of trade
     disposeReactions() {
         this._reaction_disposers.forEach((disposer) => { disposer(); });
     }
@@ -88,9 +95,12 @@ export default class TradeStore {
     @observable symbol       = Object.keys(this.symbols_list)[0];
 
     // Contract Type
-    @observable contract_type       = '';
-    @observable contract_types_list = {};
-    @observable form_components     = [];
+    @observable contract_type        = '';
+    @observable contract_types_list  = {};
+    // TODO: add logic for contract_start_type and contract_expiry_type dynamic values
+    @observable contract_start_type  = 'spot';
+    @observable contract_expiry_type = 'intraday';
+    @observable form_components      = [];
 
     // Amount
     @observable basis           = 'stake';

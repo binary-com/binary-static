@@ -10,6 +10,7 @@ const ContractType = (() => {
      *     ['duration', 'amount'] are omitted, as they're available in all contract types
      */
     const contract_types = {
+        // TODO instead of hardcoding barrier element to be visible detect it from barrier_count?
         rise_fall  : { title: localize('Rise/Fall'),                  types: ['CALL', 'PUT'],               components: ['start_date'], barrier_count: 0 },
         high_low   : { title: localize('Higher/Lower'),               types: ['CALL', 'PUT'],               components: ['barrier'],    barrier_count: 1 },
         touch      : { title: localize('Touch/No Touch'),             types: ['ONETOUCH', 'NOTOUCH'],       components: ['barrier'] },
@@ -83,6 +84,25 @@ const ContractType = (() => {
         };
     };
 
+    /**
+     * @param {Array} values: pass an array of values that you need to retrieve, e.g. ['barriers', 'barrier']
+     * @param {Object} store: a clone of store so we can retrieve the needed values to parse available_contract_types
+     * returns {Object} of available values, e.g. { barriers: 1, barrier: "+0.057" }, or { barriers: 0 } if value barrier doesn't exist
+     */
+    const getContractValues = (values, store) => {
+        const contracts_info = available_contract_types[store.contract_type].contracts_info;
+        const contract_key   = Object.keys(contracts_info).find(key => new RegExp(`${store.contract_start_type}_${store.contract_expiry_type}`).test(key));
+
+        // TODO: find a better way to handle if start type and expiry type of previous type don't apply to this
+        const spare_key      = Object.keys(contracts_info)[0];
+
+        const obj_values = values.reduce((acc, value) => (
+            $.extend(acc, {[value]: contracts_info[contract_key || spare_key][value]})
+        ), {});
+
+        return obj_values;
+    };
+
     const getComponents = (c_type) => contract_types[c_type].components;
 
     const onContractChange = (c_type) => {
@@ -96,6 +116,7 @@ const ContractType = (() => {
         getContractsList,
         getContractType,
         onContractChange,
+        getContractValues,
     };
 })();
 
