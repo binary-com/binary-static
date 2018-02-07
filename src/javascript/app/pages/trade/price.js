@@ -232,7 +232,6 @@ const Price = (() => {
             comment.show();
             error.hide();
             if (/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
-                const multiplier = formatMoney((currency.value || currency.getAttribute('value')), proposal.multiplier, false, 3, 1);
                 const formula = {
                     LBFLOATPUT : `${localize('High')} - ${localize('Close')}`,
                     LBFLOATCALL: `${localize('Close')} - ${localize('Low')}`,

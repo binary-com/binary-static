@@ -244,9 +244,9 @@ const TradingEvents = (() => {
          */
         const multiplier_element = document.getElementById('multiplier');
         if (multiplier_element) {
-            multiplier.addEventListener('keypress', onlyNumericOnKeypress);
+            multiplier_element.addEventListener('keypress', onlyNumericOnKeypress);
 
-            multiplier.addEventListener('input', commonTrading.debounce((e) => {
+            multiplier_element.addEventListener('input', commonTrading.debounce((e) => {
                 e.target.value = e.target.value.replace(/^0+/,'');
                 Defaults.set('multiplier', e.target.value);
                 Price.processPriceRequest();
