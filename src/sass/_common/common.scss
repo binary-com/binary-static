@@ -125,6 +125,15 @@ fieldset {
     color: $COLOR_WHITE;
 }
 
+.white-bg-color {
+    background-color: $white;
+}
+
+.viewport-width {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
 textarea {
     height: 8em;
     width: 25em;
