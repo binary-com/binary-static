@@ -3,13 +3,13 @@ import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, Box, NavButt
 import { List, Table } from '../../_common/components/elements.jsx';
 
 const hundredth      = '0.01';
-const tenth          = '0.1';
+const tenth          = '0.10';
+const three_tenth    = '0.30';
+const five_tenth     = '0.50';
 const ten            = '10';
 const hundred        = '100';
 const two_hundred    = '200';
 const five_hundred   = '500';
-
-const two_tenth_percent              = '0.2%';
 
 const Cfds = () => (
     <div className='static_full get-started-beta'>
@@ -86,9 +86,9 @@ const Cfds = () => (
                         thead: [[
                             { text: it.L('Symbol'),         className: 'gr-padding-10' },
                             { text: it.L('Description'),    className: 'gr-padding-10' },
-                            { text: it.L('Lot size*'),      className: 'gr-padding-10' },
-                            { text: it.L('Maximum volume'), className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),    className: 'gr-padding-10' },
+                            { text: it.L('Lot size'),       className: 'gr-padding-10' },
+                            { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                            { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                         ]],
                         tbody: [
                             [{ text: 'AUS_200' }, { text: 'Australia 200 Cash Index'  }, { text: it.L('AUD 1 per point') }, { text: ten          }, { text: tenth }],
@@ -105,30 +105,27 @@ const Cfds = () => (
                         ],
                     }} />
                     <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
-                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('Volatility Indices')} />
                     <Table scroll data={{
                         thead: [[
                             { text: it.L('Symbol'),         className: 'gr-padding-10' },
-                            { text: it.L('Lot size*'),      className: 'gr-padding-10' },
-                            { text: it.L('Maximum volume'), className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),    className: 'gr-padding-10' },
-                            { text: it.L('Margin'),         className: 'gr-padding-10' },
+                            { text: it.L('Lot size'),       className: 'gr-padding-10' },
+                            { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                            { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                         ]],
                         tbody: [
-                            [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 25 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 50 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 75 Index'     }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
-                            [{ text: 'Volatility 100 Index'    }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
-                            [{ text: 'HF Volatility 10 Index'  }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
-                            [{ text: 'HF Volatility 50 Index'  }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
-                            [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: hundred }, { text: hundredth }, { text: two_tenth_percent } ],
+                            [{ text: 'Volatility 10 Index'     }, { text: it.L('USD 1 per point') }, { text: tenth       }, { text: hundredth }],
+                            [{ text: 'Volatility 25 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundredth }],
+                            [{ text: 'Volatility 50 Index'     }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundredth }],
+                            [{ text: 'Volatility 75 Index'     }, { text: it.L('USD 1 per point') }, { text: hundredth   }, { text: hundredth }],
+                            [{ text: 'Volatility 100 Index'    }, { text: it.L('USD 1 per point') }, { text: hundredth   }, { text: hundredth }],
+                            [{ text: 'HF Volatility 10 Index'  }, { text: it.L('USD 1 per point') }, { text: tenth       }, { text: hundredth }],
+                            [{ text: 'HF Volatility 50 Index'  }, { text: it.L('USD 1 per point') }, { text: five_tenth  }, { text: hundredth }],
+                            [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: three_tenth }, { text: hundredth }],
                         ],
                     }} />
                     <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
-                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
@@ -138,7 +135,6 @@ const Cfds = () => (
                         text_two={`(20010 – 20000) x 1 x 1 = ${it.L('USD')} 10`} />
 
                     <p>{it.L('Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above.')}</p>
-                    <p>{it.L('Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.')}</p>
                     <p>{it.L('To learn more, read our [_1]Margin Policy[_2] that further explains our margin requirements.', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
