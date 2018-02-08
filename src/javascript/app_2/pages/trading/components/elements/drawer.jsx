@@ -27,7 +27,7 @@ class ToggleDrawer extends React.Component {
         return (
             <React.Fragment>
                 <div className='navbar-icons menu-toggle' onClick={this.showDrawer}>
-                    <img src={Url.urlForStatic('images/japan/version1/main_menu.svg')} alt='Menu' />
+                    <img src={Url.urlForStatic('images/trading_app/menu.svg')} alt='Menu' />
                 </div>
                 <Drawer ref={this.setRef} alignment={this.props.alignment}>
                     <DrawerHeader alignment={this.props.alignment} close={this.closeDrawer}/>
@@ -108,16 +108,16 @@ class DrawerHeader extends React.Component {
             {this.props.alignment && this.props.alignment === 'right' ?
                 <div className={`drawer-header ${this.props.alignment}`}>
                     <div className='icons btn-close' onClick={this.props.close}>
-                        <img src={Url.urlForStatic('images/pages/new-ui/header/close.svg')} alt='Close' />
+                        <img src={Url.urlForStatic('images/trading_app/close.svg')} alt='Close' />
                     </div>
                 </div>
             :
                 <div className={`drawer-header ${this.props.alignment}`}>
                     <div className='icons btn-close' onClick={this.props.close}>
-                        <img src={Url.urlForStatic('images/pages/new-ui/header/close.svg')} alt='Close' />
+                        <img src={Url.urlForStatic('images/trading_app/close.svg')} alt='Close' />
                     </div>
                     <div className='icons brand-logo'>
-                        <img src={Url.urlForStatic('images/pages/new-ui/header/binary_logo_dark.svg')} alt='Binary.com' />
+                        <img src={Url.urlForStatic('images/trading_app/binary_logo_dark.svg')} alt='Binary.com' />
                     </div>
                 </div>
             }

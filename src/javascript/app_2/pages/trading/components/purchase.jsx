@@ -11,6 +11,7 @@ const Purchase = ({
             key={idx}
             id={`purchase_${type}`}
             className='primary green'
+            has_effect
             text={`${localize('Purchase')} ${trade_types[type]}`}
         />
     ))
