@@ -35,7 +35,7 @@ const Duration = ({
                 </React.Fragment> :
                 <React.Fragment>
                     <input type='date' name='expiry_date' onChange={onChange} />
-                    <TimePicker onChange={onChange} name='expiry_time'/>
+                    <TimePicker onChange={onChange} name='expiry_time' placeholder='12:00 pm'/>
                 </React.Fragment>
             }
         </fieldset>

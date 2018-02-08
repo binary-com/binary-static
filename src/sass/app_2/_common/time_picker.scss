@@ -1,3 +1,78 @@
-.time_picker {
+/* stylelint-disable color-no-hex */
+/* stylelint-disable number-max-precision */
+.time-picker {
+    margin: 8px 0;
 
+    &.padding {
+        padding: 16px;
+    }
+    #time-picker-input.time-picker-input {
+        height: 32px;
+        padding: 0 8px;
+        border-radius: 4px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 16px;
+        margin: 0;
+
+        &::placeholder {
+            color: #b0b3bf;
+        }
+        &:hover {
+            border-color: #4c5794;
+        }
+        &.active {
+            border: 0;
+            border-bottom: 1px solid #f2f2f2;
+            border-radius: 0px;
+            padding: 2px 8px 0px 9px;
+        }
+    }
+    &.active {
+        border-radius: 4px;
+        -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .time-picker-dropdown {
+        font-size: 16px;
+        position: absolute;
+        height: 0;
+        background: #fff;
+        opacity: 0;
+        transition: all 0.25s;
+        border-radius: 0px 0px 4px 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        z-index: 2;
+
+        &.active {
+            opacity: 1;
+            height: 160px;
+        }
+        .time-picker-hours, .time-picker-minutes, .time-picker-meridiem {
+            display: inline-block;
+            height: 160px;
+            overflow: scroll;
+            width: 50px;
+            text-align: center;
+            border-right: 1px solid #f2f2f2;
+
+            ul {
+                padding: 0 0 128px;
+
+                li {
+                    margin: 0;
+                    padding: 5px 0;
+
+                    &:hover {
+                        background: #f2f2f2;
+                        color: #000;
+                    }
+                    &.selected {
+                        background: #4c5794;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
 }
