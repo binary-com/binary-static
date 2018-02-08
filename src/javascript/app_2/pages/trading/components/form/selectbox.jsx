@@ -53,8 +53,7 @@ class Dropdown extends React.Component {
 
     render() {
         return (
-          <div ref={this.setWrapperRef}
-              className={`dropdown-container ${this.state.listVisible ? 'show' : ''}`}>
+          <div ref={this.setWrapperRef} className={`dropdown-container ${this.state.listVisible ? 'show' : ''}`}>
               <div className={`dropdown-display ${this.state.listVisible ? 'clicked': ''}`}
                    onClick={this.handleVisibility} onBlur={this.handleVisibility}>
                   <span name={this.props.name}
@@ -63,7 +62,8 @@ class Dropdown extends React.Component {
               <span className='select-arrow'></span>
               <div className='dropdown-list'>
                   <div className='list-container'>
-                  {this.props.list.map((item, idx) => (
+                  { this.props.list.length ?
+                    this.props.list.map((item, idx) => (
                       <div className={`list-item ${ this.state.value === item.value ? 'selected':''}`}
                            key={idx}
                            name={this.props.name}
@@ -72,7 +72,10 @@ class Dropdown extends React.Component {
                       >
                           <span>{item.name}</span>
                       </div>
-                  ))}
+                  ))
+                  :
+                  <div className='list-item'><span className='item-disabled'>No items</span></div>
+                  }
                   </div>
               </div>
           </div>

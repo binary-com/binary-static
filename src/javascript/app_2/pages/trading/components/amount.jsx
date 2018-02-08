@@ -42,6 +42,7 @@ const Amount = ({
 
             <TestField type='number' name='amount' value={amount} onChange={onChange} is_currency />
         </fieldset>
+
 );
 
 export default connect(
