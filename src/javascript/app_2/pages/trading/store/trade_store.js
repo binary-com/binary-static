@@ -1,6 +1,6 @@
 import { observable, action, reaction } from 'mobx';
 import Client from '../../../../app/base/client';
-import getBarrierValues from './logic/barrier';
+import Reactions from './reactions';
 import ContractType from './logic/contract_type';
 import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
@@ -12,17 +12,6 @@ import { cloneObject } from '../../../../_common/utility';
 const event_map = {
     amount: onAmountChange,
     symbol: onSymbolChange,
-};
-
-// TODO: define the function somewhere else
-const reaction_map = {
-    contract_types_list: (new_list, store) => ContractType.getContractType(new_list, store.contract_type),
-    contract_type      : (new_type, store) => {
-        const obj_contract_type = ContractType.onContractChange(new_type);
-        const obj_barrier       = getBarrierValues(ContractType.getContractInfoValues(['barrier', 'high_barrier', 'low_barrier'], store));
-        const obj_trade_types   = ContractType.getTradeTypes(store);
-        return $.extend(obj_contract_type, obj_barrier, obj_trade_types);
-    },
 };
 
 export default class TradeStore {
@@ -46,22 +35,17 @@ export default class TradeStore {
         this.duration_units_list = getDurationUnits();
     }
 
-    _reaction_disposers = [];
     _initReactions() {
+        const reaction_map = Reactions.getReactions();
         Object.keys(reaction_map).forEach((reaction_key) => {
             const disposer = reaction(() => this[reaction_key], (new_value) => {
                 Promise
                     .resolve(reaction_map[reaction_key](new_value, this._cloneState()))
                     .then(this.updateState);
             });
-            this._reaction_disposers.push(disposer);
+            Reactions.storeDisposer(disposer);
         });
-    }
-
-    // TODO: call this on unload of trade
-    disposeReactions() {
-        this._reaction_disposers.forEach((disposer) => { disposer(); });
-    }
+    };
 
     _cloneState() {
         return cloneObject(this);

@@ -10,7 +10,7 @@ const ContractType = (() => {
      *     ['duration', 'amount'] are omitted, as they're available in all contract types
      */
     const contract_types = {
-        // TODO instead of hardcoding barrier element to be visible detect it from barrier_count?
+        // TODO instead of hardcoding which elements should be visible, detect it from contracts_for when building available_contract_types
         rise_fall  : { title: localize('Rise/Fall'),                  trade_types: ['CALL', 'PUT'],               components: ['start_date'], barrier_count: 0 },
         high_low   : { title: localize('Higher/Lower'),               trade_types: ['CALL', 'PUT'],               components: ['barrier'],    barrier_count: 1 },
         touch      : { title: localize('Touch/No Touch'),             trade_types: ['ONETOUCH', 'NOTOUCH'],       components: ['barrier'] },
