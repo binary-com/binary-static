@@ -1,6 +1,7 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
+import { Asterisk, ProductHint } from '../../_common/components/product_hint.jsx';
 
 const GetStartedSection = ({ link, hash, image, header, text }) => {
     const href = `${it.url_for(link)}#${hash}`;
@@ -34,7 +35,7 @@ const GetStartedSectionWrapper = ({ section_id, section_header, section_descript
 
 const Index = () => (
     <div className='static_full get-started-beta'>
-        <h1 className='center-text'>{it.L('Get Started')}</h1>
+        <h1 className='center-text'>{it.L('Get Started')}<Asterisk /></h1>
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
             <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper' items={[
                 { id: 'binary', text: it.L('Binary Options') },
@@ -232,6 +233,7 @@ const Index = () => (
                 </TabContentContainer>
             </div>
         </TabContainer>
+        <ProductHint />
     </div>
 );
 
