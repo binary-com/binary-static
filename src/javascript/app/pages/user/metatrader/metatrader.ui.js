@@ -2,6 +2,7 @@ const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
 const formatMoney      = require('../../../common/currency').formatMoney;
 const Validation       = require('../../../common/form_validation');
+const localize         = require('../../../../_common/localize').localize;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 const template         = require('../../../../_common/utility').template;
@@ -16,12 +17,11 @@ const MetaTraderUI = (() => {
         $templates,
         $form,
         $main_msg,
+        validations,
         submit;
 
     const accounts_info = MetaTraderConfig.accounts_info;
     const actions_info  = MetaTraderConfig.actions_info;
-    const validations   = MetaTraderConfig.validations;
-    const mt5_currency  = MetaTraderConfig.mt5Currency();
 
     const init = (submit_func) => {
         submit       = submit_func;
@@ -31,9 +31,13 @@ const MetaTraderUI = (() => {
         $list        = $list_cont.find('> div.list');
         $detail      = $container.find('#account_details');
         $action      = $container.find('#fst_action');
-        $templates   = $container.find('#templates');
+        $templates   = $container.find('#templates').remove();
         $main_msg    = $container.find('#main_msg');
         $container.find('[class*="act_"]').click(populateForm);
+
+        MetaTraderConfig.setMessages($templates.find('#messages'));
+
+        validations = MetaTraderConfig.validations();
 
         populateAccountTypes();
         populateAccountList();
@@ -41,9 +45,21 @@ const MetaTraderUI = (() => {
 
     const populateAccountList = () => {
         const $acc_name = $templates.find('> .acc-name');
+        let acc_group_demo_set = false;
+        let acc_group_real_set = false;
         Object.keys(accounts_info)
+            .sort((a, b) => accounts_info[a].account_type > accounts_info[b].account_type ? 1 : -1)
             .forEach((acc_type) => {
                 if ($list.find(`[value="${acc_type}"]`).length === 0) {
+                    if (/^demo/.test(acc_type)) {
+                        if (!acc_group_demo_set) {
+                            $list.append($('<div/>', { class: 'acc-group invisible', id: 'acc_group_demo', text: localize('Demo Accounts') }));
+                            acc_group_demo_set = true;
+                        }
+                    } else if (!acc_group_real_set) {
+                        $list.append($('<div/>', { class: 'acc-group invisible', id: 'acc_group_real', text: localize('Real-Money Accounts') }));
+                        acc_group_real_set = true;
+                    }
                     const $acc_item = $acc_name.clone();
                     $acc_item.attr('value', acc_type);
                     $list.append($acc_item);
@@ -77,7 +93,7 @@ const MetaTraderUI = (() => {
     const setAccountType = (acc_type, should_set_account) => {
         if ($mt5_account.attr('value') !== acc_type) {
             Client.set('mt5_account', acc_type);
-            $mt5_account.attr('value', acc_type).html(accounts_info[acc_type].title).removeClass('empty');
+            $mt5_account.attr('value', acc_type).html(accounts_info[acc_type].title.replace(/(demo|real)\s/i, '')).removeClass('empty');
             $list.find('.acc-name').removeClass('selected');
             $list.find(`[value="${acc_type}"]`).addClass('selected');
             $action.setVisibility(0);
@@ -95,12 +111,18 @@ const MetaTraderUI = (() => {
 
     const updateListItem = (acc_type) => {
         const $acc_item = $list.find(`[value="${acc_type}"]`);
-        $acc_item.find('.mt-type').text(`${accounts_info[acc_type].title}`);
+        $acc_item.find('.mt-type').text(accounts_info[acc_type].title.replace(/(demo|real)\s/i, ''));
         if (accounts_info[acc_type].info) {
             $acc_item.find('.mt-login').text(accounts_info[acc_type].info.login);
             $acc_item.setVisibility(1);
+            if (/demo/.test(accounts_info[acc_type].account_type)) {
+                $list.find('#acc_group_demo').setVisibility(1);
+            } else {
+                $list.find('#acc_group_real').setVisibility(1);
+            }
             if (acc_type === Client.get('mt5_account')) {
-                const mt_balance = formatMoney(mt5_currency, +accounts_info[acc_type].info.balance);
+                const mt_balance = formatMoney(MetaTraderConfig.getCurrency(acc_type),
+                    +accounts_info[acc_type].info.balance);
                 $acc_item.find('.mt-balance').html(mt_balance);
                 $action.find('.mt5-balance').html(mt_balance);
             }
@@ -128,8 +150,9 @@ const MetaTraderUI = (() => {
                 const key     = $(this).attr('data');
                 const info    = accounts_info[acc_type].info[key];
                 const mapping = {
-                    balance : () => (isNaN(info) ? '' : formatMoney(mt5_currency, +info)),
+                    balance : () => (isNaN(info) ? '' : formatMoney(MetaTraderConfig.getCurrency(acc_type), +info)),
                     leverage: () => `1:${info}`,
+                    login   : () => (`${info} (${localize(/demo/.test(accounts_info[acc_type].account_type) ? 'Demo Account' : 'Real-Money Account')})`),
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
@@ -200,7 +223,7 @@ const MetaTraderUI = (() => {
             $form.find('.binary-account').text(`Binary ${Client.get('loginid')}`);
             $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${accounts_info[acc_type].title} ${accounts_info[acc_type].info.login}`);
-            $form.find('.mt5-balance').html(`${formatMoney(mt5_currency, accounts_info[acc_type].info.balance)}`);
+            $form.find('.mt5-balance').html(`${formatMoney(MetaTraderConfig.getCurrency(acc_type), accounts_info[acc_type].info.balance)}`);
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {
                     if (error_msg) {
@@ -210,15 +233,17 @@ const MetaTraderUI = (() => {
                 });
             });
 
-            let msg = '';
-            if (Client.get('is_virtual') && !accounts_info[acc_type].is_demo) {
-                msg = MetaTraderConfig.needsRealMessage();
-            } else if (Client.get('currency') !== MetaTraderConfig.mt5Currency()) {
-                msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.mt5Currency()]);
-            }
-            if (msg) {
-                displayMainMessage(msg, false);
-                $action.find('#frm_cashier').setVisibility(0);
+            if (!accounts_info[acc_type].is_demo) {
+                let msg = '';
+                if (Client.get('is_virtual')) {
+                    msg = MetaTraderConfig.needsRealMessage();
+                } else if (Client.get('currency') !== MetaTraderConfig.getCurrency(acc_type)) {
+                    msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.getCurrency(acc_type)]);
+                }
+                if (msg) {
+                    displayMainMessage(msg, false);
+                    $action.find('#frm_cashier').setVisibility(0);
+                }
             }
             return;
         }
@@ -260,20 +285,25 @@ const MetaTraderUI = (() => {
         newAccountSetTitle();
         displayAccountDescription(action);
         $form = actions_info[action].$form;
+        if (Object.keys(accounts_info).every(a_type => !accounts_info[a_type].info)) {
+            $form.find('#view_1 #btn_cancel').addClass('invisible');
+        }
 
         // Navigation buttons: cancel, next, back
         $form.find('#btn_cancel').click(() => {
             loadAction(null, acc_type);
-            displayAccountDescription(acc_type);
-            $.scrollTo($container, 300, { offset: -10 });
+            displayAccountDescription(accounts_info[acc_type].info ? acc_type : 'new_account');
+            $.scrollTo($('h1'), 300, { offset: -10 });
         });
         const displayStep = (step) => {
             $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
             $form.find(`#view_${step}`).setVisibility(1);
+            $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
+            $form.find('input').val('');
         };
         $form.find('#btn_next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
-                $form.find('#view_2 #btn_submit').attr('acc_type', newAccountGetType());
+                $form.find('#view_2 #btn_submit_new_account').attr('acc_type', newAccountGetType());
                 displayStep(2);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
@@ -315,6 +345,7 @@ const MetaTraderUI = (() => {
             actions_info[action].prerequisites(new_acc_type).then((error_msg) => {
                 displayMessage('#new_account_msg', error_msg || '');
                 $form.find('#view_1 #btn_next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
+                $form.find('#view_1 #btn_cancel').removeClass('invisible');
             });
         }
     };
@@ -338,17 +369,20 @@ const MetaTraderUI = (() => {
         const $parent       = $templates.find('#view_1 .step-2 .type-group');
         if (!$acc_template.length || !$parent.length) return;
 
+        let count = 0;
         Object.keys(accounts_info)
             .filter(acc_type => !accounts_info[acc_type].is_demo)
             .forEach((acc_type) => {
+                count++;
                 const $acc  = $acc_template.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
                 const title = accounts_info[acc_type].short_title;
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
-                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase()}.svg`));
+                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase().replace(/\s/g, '_')}.svg`));
                 $acc.find('p').text(title);
                 $parent.append($acc);
             });
+        $templates.find('.hl-types-of-accounts').setVisibility(count > 1);
     };
 
     // -------------------

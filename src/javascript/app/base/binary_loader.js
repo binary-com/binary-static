@@ -10,6 +10,8 @@ const BinarySocketGeneral = require('./socket_general');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
+const urlFor              = require('../../_common/url').urlFor;
+const applyToAllElements  = require('../../_common/utility').applyToAllElements;
 const createElement       = require('../../_common/utility').createElement;
 
 const BinaryLoader = (() => {
@@ -53,16 +55,31 @@ const BinaryLoader = (() => {
     const afterContentChange = (e) => {
         Page.onLoad();
         GTM.pushDataLayer();
+
+        BinarySocket.wait('website_status').then((response) => {
+            // eu countries code
+            if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(response.website_status.clients_country)) {
+                applyToAllElements('.eu-show', (el) => { el.setVisibility(1); });
+                applyToAllElements('.eu-hide', (el) => { el.setVisibility(0); });
+                if (/get_started_tabs=mt5/.test(window.location.href)) {
+                    BinaryPjax.load(urlFor('get-started'));
+                }
+            } else {
+                applyToAllElements('.eu-hide', (el) => { el.setVisibility(1); });
+            }
+        });
+
         const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {
             loadHandler(pages_config[this_page]);
         } else if (/\/get-started\//i.test(window.location.pathname)) {
             loadHandler(pages_config['get-started']);
         }
+
     };
 
     const error_messages = {
-        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [`${'javascript:;'}`]),
+        login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_2] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor()}">`]),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
     };

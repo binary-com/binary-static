@@ -6,7 +6,7 @@ import Header from './header.jsx';
 import MainMenu from './main_menu.jsx';
 import MobileMenu from './mobile_menu.jsx';
 import Footer from './footer.jsx';
-import SignupTour from '../get_started/signup_tour.jsx';
+import SignupTour from '../get_started_old/signup_tour.jsx';
 
 const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 

@@ -84,7 +84,7 @@
     }
 }
 
-#content.home-beta-content {
+#content.home-content {
     .go-left, .go-right {
         &:hover {
             cursor: pointer;
@@ -205,7 +205,7 @@
             width: 32%;
         }
     }
-    #content.home-beta-content {
+    #content.home-content {
         .border-right {
             border-right: none;
         }

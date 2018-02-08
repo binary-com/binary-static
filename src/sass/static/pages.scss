@@ -93,9 +93,6 @@
     #local_bank_transfer {
         background-position: -90px -9px;
     }
-    #western_union {
-        background-position: -174px -9px;
-    }
     #visa {
         background-position: -338px -10px;
     }
@@ -312,19 +309,6 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
-.omnibus-content {
-    .box {
-        min-height: 156px;
-
-        img {
-            height: 48px;
-        }
-    }
-    .steps img {
-        height: 43px;
-    }
-}
-
 .accounts-content {
     .table-container table {
         border: 1px solid $COLOR_LIGHT_GRAY;
@@ -368,16 +352,9 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .platforms-content {
-    #binary-content img.responsive {
+    img.responsive {
         max-height: 150px;
-    }
-    #mt5-content {
-        .enhanced img.responsive, img.step {
-            max-height: 128px;
-        }
-        img.step-arrow {
-            max-height: 24px;
-        }
+        width: auto;
     }
 }
 
