@@ -1,5 +1,5 @@
 import React from 'react';
-import { TestField } from './form/text_field.jsx';
+import { InputField } from './form/text_field.jsx';
 import Dropdown from './form/selectbox.jsx';
 import { connect } from '../store/connect';
 import Client from '../../../../app/base/client';
@@ -40,7 +40,7 @@ const Amount = ({
                 </select>
             }
 
-            <TestField type='number' name='amount' value={amount} onChange={onChange} is_currency />
+            <InputField type='number' name='amount' value={amount} onChange={onChange} is_currency />
         </fieldset>
 
 );
