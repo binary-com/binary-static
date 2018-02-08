@@ -1,2 +1,2 @@
 const texts_json = {};
-texts_json['KO'] = {};
+texts_json['KO'] = {"April":"4월","[_1]_days_[_2]_hours_[_3]_minutes":"[_1]일 [_2]시간 [_3]분","[_1]_Please_click_the_link_below_to_restart_the_password_recovery_process_":"[_1]비밀번호 복구 절차를 위해 아래의 링크를 클릭하세요.","Accounts_List":"계좌 목록","[_1]_Account":"[_1]계좌"};

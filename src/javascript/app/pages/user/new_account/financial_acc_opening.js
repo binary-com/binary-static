@@ -5,6 +5,7 @@ const BinarySocket   = require('../../../base/socket');
 const AccountOpening = require('../../../common/account_opening');
 const FormManager    = require('../../../common/form_manager');
 const isEmptyObject  = require('../../../../_common/utility').isEmptyObject;
+const State          = require('../../../../_common/storage').State;
 const toISOFormat    = require('../../../../_common/string_util').toISOFormat;
 
 const FinancialAccOpening = (() => {
@@ -24,8 +25,6 @@ const FinancialAccOpening = (() => {
             $('#authentication_notice_message').setVisibility(1);
         }
 
-        AccountOpening.populateForm(form_id, getValidations, true);
-
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
             if (!isEmptyObject(response.get_financial_assessment)) {
                 const keys = Object.keys(response.get_financial_assessment);
@@ -37,6 +36,7 @@ const FinancialAccOpening = (() => {
         });
 
         BinarySocket.wait('get_settings').then((response) => {
+            AccountOpening.populateForm(form_id, getValidations, true);
             const get_settings = response.get_settings;
             let $element,
                 value;
@@ -60,11 +60,17 @@ const FinancialAccOpening = (() => {
         });
     };
 
-    const getValidations = () => (
-        AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id), [
-            { selector: '#tax_identification_number', validations: ['req', 'tax_id', ['length', { min: 1, max: 20 }]] },
-        ])
-    );
+    const getValidations = () => {
+        let validations =
+              AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id), [
+                  { selector: '#tax_identification_number', validations: ['req', 'tax_id', ['length', { min: 1, max: 20 }]] },
+              ]);
+        const place_of_birth = State.getResponse('get_settings.place_of_birth');
+        if (place_of_birth) {
+            validations = validations.concat([{ request_field: 'place_of_birth', value: place_of_birth }]);
+        }
+        return validations;
+    };
 
     const handleResponse = (response) => {
         if ('error' in response && response.error.code === 'show risk disclaimer') {
