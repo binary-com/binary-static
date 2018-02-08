@@ -78,15 +78,18 @@ footer {
             &.fsa-badge, &.tffa-badge {
                 max-height: 42px;
 
-                @media (max-width: 575px) {
+                @media (max-width: 768px) {
                     margin: 20px 0 0;
                     max-height: 50px;
                 }
             }
         }
+        @media (max-width: 768px) {
+            margin: 20px 0 0;
+            justify-content: space-evenly;
+        }
         @media (max-width: 575px) {
             flex-direction: column;
-            margin: 20px 0 0;
         }
     }
 }
