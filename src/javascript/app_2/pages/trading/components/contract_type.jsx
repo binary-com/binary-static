@@ -17,9 +17,11 @@ const Contract = ({
     contract_types_list,
     onChange,
 }) => (
-    <select name='contract_type' value={contract_type} onChange={onChange}>
-        <Contracts list={contract_types_list} />
-    </select>
+    <fieldset>
+        <select name='contract_type' value={contract_type} onChange={onChange}>
+            <Contracts list={contract_types_list} />
+        </select>
+    </fieldset>
 );
 
 export default connect(
