@@ -1,4 +1,4 @@
-.home-content, .home-beta-content, .home-jp-content {
+.home-content, .home-old-content, .home-jp-content {
     .signup-box {
         border-radius: $BORDER_RADIUS;
 
@@ -22,7 +22,7 @@
     }
 }
 
-.home-content, .home-beta-content {
+.home-content, .home-old-content {
     #banner {
         background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
     }
@@ -197,7 +197,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    .home-content, .home-beta-content {
+    .home-content, .home-old-content {
         .small-image {
             width: 30%;
         }
