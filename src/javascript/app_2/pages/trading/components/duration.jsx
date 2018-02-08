@@ -15,17 +15,23 @@ const Duration = ({
 }) => (
         <fieldset>
             <ClockHeader header={localize('Trade Duration')} />
-            <Dropdown list={[{name: localize('Duration'), value: 'duration'},
-                             {name: localize('End Time'),  value: 'endtime'}]}
-                      selected={expiry_type}
-                      value={expiry_type}
-                      name='expiry_type'
-                      on_change={onSelectChange}
+            <Dropdown
+                list={[{name: localize('Duration'), value: 'duration'},
+                       {name: localize('End Time'),  value: 'endtime'}]}
+                selected={expiry_type}
+                value={expiry_type}
+                name='expiry_type'
+                on_change={onSelectChange}
             />
 
             {expiry_type === 'duration' ?
                 <React.Fragment>
-                    <InputField type='number' name='duration' value={duration} on_change={onChange} />
+                    <InputField
+                        type='number'
+                        name='duration'
+                        value={duration}
+                        on_change={onChange}
+                    />
                     <select name='duration_unit' value={duration_unit} onChange={onChange}>
                         {Object.keys(duration_units_list).map((u) => (
                             <option key={u} value={u}>{duration_units_list[u]}</option>

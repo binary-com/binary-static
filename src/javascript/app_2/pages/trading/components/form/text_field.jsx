@@ -38,15 +38,16 @@ class InputField extends React.PureComponent {
                 :
                 undefined
                 }
-                <input type={this.props.type}
-                       name={this.props.name}
-                       step={this.props.is_currency ? '0.01' : undefined}
-                       className={this.props.class1 || undefined}
-                       placeholder={this.props.placeholder || undefined}
-                       disabled={this.props.is_disabled}
-                       value={this.state.value}
-                       onChange={this.update}
-                       required={this.props.required || undefined}
+                <input
+                    type={this.props.type}
+                    name={this.props.name}
+                    step={this.props.is_currency ? '0.01' : undefined}
+                    className={this.props.class1 || undefined}
+                    placeholder={this.props.placeholder || undefined}
+                    disabled={this.props.is_disabled}
+                    value={this.state.value}
+                    onChange={this.update}
+                    required={this.props.required || undefined}
                 />
                 {this.props.helper ?
                     <span className='input-helper'>{this.props.helper}</span>

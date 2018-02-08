@@ -25,12 +25,13 @@ const Amount = ({
     onSelectChange,
 }) => (
         <fieldset>
-            <Dropdown list={[{name: localize('Payout'), value: 'payout'},
-                             {name: localize('Stake'),  value: 'stake'}]}
-                      selected={basis}
-                      value={basis}
-                      name='basis'
-                      on_change={onSelectChange}
+            <Dropdown
+                list={[{name: localize('Payout'), value: 'payout'},
+                       {name: localize('Stake'),  value: 'stake'}]}
+                selected={basis}
+                value={basis}
+                name='basis'
+                on_change={onSelectChange}
             />
 
             {Client.get('currency') ?
@@ -40,7 +41,13 @@ const Amount = ({
                 </select>
             }
 
-            <InputField type='number' name='amount' value={amount} onChange={onChange} is_currency />
+            <InputField
+                type='number'
+                name='amount'
+                value={amount}
+                onChange={onChange}
+                is_currency
+            />
         </fieldset>
 
 );

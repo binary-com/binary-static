@@ -1,7 +1,6 @@
 import React from 'react';
 import { ToggleDrawer, DrawerItem } from './drawer.jsx';
-
-const Url = require('../../../../../_common/url');
+import Url from '../../../../../_common/url';
 
 class TradingHeader extends React.Component {
 

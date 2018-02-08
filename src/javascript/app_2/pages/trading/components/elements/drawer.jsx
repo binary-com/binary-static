@@ -1,6 +1,5 @@
 import React from 'react';
-
-const Url = require('../../../../../_common/url');
+import Url from '../../../../../_common/url';
 
 class ToggleDrawer extends React.Component {
 
@@ -131,7 +130,9 @@ class DrawerItem extends React.Component {
     render() {
         return (
             <div className='drawer-item'>
-                <a href={this.props.href || 'javascript:;' }><span className={this.props.icon || undefined}>{this.props.text}</span></a>
+                <a href={this.props.href || 'javascript:;' }>
+                    <span className={this.props.icon || undefined}>{this.props.text}</span>
+                </a>
             </div>
         );
     }

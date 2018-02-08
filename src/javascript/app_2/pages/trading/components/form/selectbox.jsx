@@ -64,11 +64,12 @@ class Dropdown extends React.Component {
                   <div className='list-container'>
                   { this.props.list.length ?
                     this.props.list.map((item, idx) => (
-                      <div className={`list-item ${ this.state.value === item.value ? 'selected':''}`}
-                           key={idx}
-                           name={this.props.name}
-                           value={item.value}
-                           onClick={this.handleSelect.bind(null, item)}
+                      <div
+                          className={`list-item ${ this.state.value === item.value ? 'selected':''}`}
+                          key={idx}
+                          name={this.props.name}
+                          value={item.value}
+                          onClick={this.handleSelect.bind(null, item)}
                       >
                           <span>{item.name}</span>
                       </div>
