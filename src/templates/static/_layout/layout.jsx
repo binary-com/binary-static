@@ -14,7 +14,7 @@ const Nav = ({items}) => (
     <ul className='nav'>
         {items.map((item, inx) => (
             <li key={inx}>
-                <a href={it.url_for(`get-started-old/${item.section}`)}>{item.text}</a>
+                <a href={it.url_for(`get-started/${item.section}`)}>{item.text}</a>
             </li>
         ))}
     </ul>
