@@ -41,7 +41,6 @@ const BinaryJapan = () => (
                         <div className='navbar-item-align-right'>
                             <img className='navbar-icon' src={it.url_for('images/japan/version1/fsa-logo@2x.png')} />
                             <img className='navbar-icon' src={it.url_for('images/japan/version1/binarykk-logo@2x.png')} />
-                            <img className='navbar-icon' src={it.url_for('images/japan/version1/jsf@2x.png')} />
                         </div>
                     </div>
                 </div>
