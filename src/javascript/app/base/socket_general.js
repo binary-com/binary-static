@@ -87,9 +87,9 @@ const BinarySocketGeneral = (() => {
                 break;
             case 'landing_company':
                 Header.upgradeMessageVisibility();
-                if (!response.error) {
-                    Header.metatraderMenuItemVisibility();
-                }
+                // if (!response.error) {
+                //     Header.metatraderMenuItemVisibility();
+                // }
                 break;
             case 'get_self_exclusion':
                 SessionDurationLimit.exclusionResponseHandler(response);
