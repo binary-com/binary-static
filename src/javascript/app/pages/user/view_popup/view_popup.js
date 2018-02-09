@@ -25,7 +25,7 @@ const ViewPopup = (() => {
         chart_updated,
         sell_text_updated,
         btn_view,
-        units,
+        multiplier,
         $container,
         $loading;
 
@@ -68,8 +68,8 @@ const ViewPopup = (() => {
         }
 
         $.extend(contract, response.proposal_open_contract);
-        // Lookback units value
-        [,,,units] = (contract.shortcode.match(/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)_([\w\d^_]+)_(\d*\.?\d*)_(\d+F?)_(\d+[FT]?)_(S?-?\d+P?)_(S?-?\d+P?)_?(\d*\.?\d*)?$/) || []);
+        // Lookback multiplier value
+        multiplier = contract.multiplier;
 
         if (contract && document.getElementById(wrapper_id)) {
             update();
@@ -92,7 +92,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
         containerSetText('trade_details_payout', +contract.payout ? formatMoney(contract.currency, contract.payout) : '-');
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
-        containerSetText('trade_details_units', units);
+        containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier));
 
         setViewPopupTimer(updateTimers);
         update();
@@ -484,7 +484,7 @@ const ViewPopup = (() => {
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
             ${(contract.barrier_count > 1 ? createRow('Low Barrier', '', 'trade_details_barrier_low', true) : '')}
             ${createRow('Potential Payout', '', 'trade_details_payout')}
-            ${units ? createRow('Units', '', 'trade_details_units') : ''}
+            ${multiplier ? createRow('Multiplier', '', 'trade_details_multiplier') : ''}
             ${createRow('Purchase Price', '', 'trade_details_purchase_price')}
             </tbody>
             <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>

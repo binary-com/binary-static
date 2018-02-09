@@ -398,7 +398,7 @@
             padding: 0;
             justify-content: flex-end;
         }
-        .contract_amount, .contract_payout {
+        .contract_amount, .contract_payout, .contract_multiplier {
             font-weight: bold;
             font-size: $FONT_SIZE_N;
             border-radius: 5px;
