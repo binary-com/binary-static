@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../../../javascript/app_2/pages/trading/components/form/button.jsx';
 import { InputField, TestField } from '../../../javascript/app_2/pages/trading/components/form/text_field.jsx';
+import { DataTable } from '../../../javascript/app_2/pages/trading/components/data_table.jsx';
 
 const StyleGuide = () => (
     <div className='container'>
@@ -90,6 +91,13 @@ const StyleGuide = () => (
                         />
                     </div>
                 </div>
+            </div>
+        </div>
+        <div className='gr-row gr-padding-20'>
+            <div className='gr-12'>
+                <h2 className='center-text'>Data Table</h2>
+
+                <DataTable />
             </div>
         </div>
     </div>
