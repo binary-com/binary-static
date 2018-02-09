@@ -1,13 +1,13 @@
-import { observable, action, reaction } from 'mobx';
+import { observable, action,  reaction } from 'mobx';
 import Client from '../../../../app/base/client';
 import Reactions from './reactions';
 import ContractType from './logic/contract_type';
-import getCurrencies from './logic/currency';
 import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
 import onSymbolChange from './logic/symbol';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
 import { cloneObject } from '../../../../_common/utility';
+import actions, {initActions} from '../actions';
 
 const event_map = {
     amount: onAmountChange,
@@ -16,21 +16,17 @@ const event_map = {
 
 export default class TradeStore {
     @action.bound init() {
+        initActions(this);
         this._initReactions();
 
-        ContractType.getContractsList(this.symbol).then(r => {
+        ContractType.getContractsList(this.symbol).then(action(r => {
             this.contract_types_list = r;
-        });
-        getCountry().then(r => { this.message = r; });
-        getTicks((r) => { this.tick = r; });
+        }));
+        getCountry().then(action(r => { this.message = r; }));
+        getTicks(action((r) => { this.tick = r; }));
         this.start_dates_list = getStartDates();
         if (!Client.get('currency')) {
-            getCurrencies().then(currencies => {
-                this.currencies_list = currencies;
-                if (!this.currency) {
-                    this.currency = Object.values(currencies).reduce((a, b) => [...a, ...b]).find(c => c);
-                }
-            });
+            actions.getCurrencies();
         }
         this.duration_units_list = getDurationUnits();
     }
