@@ -2,36 +2,33 @@ import { observable, action,  reaction } from 'mobx';
 import Client from '../../../../app/base/client';
 import Reactions from './reactions';
 import ContractType from './logic/contract_type';
-import getDurationUnits from './logic/duration';
-import getStartDates from './logic/start_date';
-import onSymbolChange from './logic/symbol';
-import { getCountry, getTicks, onAmountChange } from './logic/test';
 import { cloneObject } from '../../../../_common/utility';
 import actions, {initActions} from '../actions';
-
-const event_map = {
-    amount: onAmountChange,
-    symbol: onSymbolChange,
-};
 
 export default class TradeStore {
     @action.bound init() {
         initActions(this);
         this._initReactions();
 
+        actions.getCountryAsync();
+        actions.getStartDates();
+
+        actions.getTicks(action((r) => { this.tick = r; }));
+
+        if (!Client.get('currency')) {
+            actions.getCurrenciesAsync();
+        }
+        actions.getDurationUnits();
+
         ContractType.getContractsList(this.symbol).then(action(r => {
             this.contract_types_list = r;
         }));
-        getCountry().then(action(r => { this.message = r; }));
-        getTicks(action((r) => { this.tick = r; }));
-        this.start_dates_list = getStartDates();
-        if (!Client.get('currency')) {
-            actions.getCurrencies();
-        }
-        this.duration_units_list = getDurationUnits();
     }
 
     _initReactions() {
+        reaction(() => this.amount, actions.onAmountChange);
+        reaction(() => this.symbol, actions.onSymbolChangeAsync);
+
         const reaction_map = Reactions.getReactions();
         Object.keys(reaction_map).forEach((reaction_key) => {
             const disposer = reaction(() => this[reaction_key], (new_value) => {
@@ -59,16 +56,6 @@ export default class TradeStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
         this[name] = value;
-        this.dispatch(name, value);
-    }
-
-    @action.bound dispatch(name, value) {
-        const handler = event_map[name];
-        if (typeof handler === 'function') {
-            Promise
-                .resolve(handler(value))
-                .then(this.updateState);
-        }
     }
 
     // Underlying

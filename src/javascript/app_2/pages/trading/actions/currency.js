@@ -2,7 +2,7 @@ import DAO from '../data/dao';
 import { isCryptocurrency } from '../../../../app/common/currency';
 import { localize } from '../../../../_common/localize';
 
-export const getCurrencies = function *(store) {
+export const getCurrenciesAsync = function *(store) {
     const r = yield DAO.getPayoutCurrencies();
     const fiat   = [];
     const crypto = [];
