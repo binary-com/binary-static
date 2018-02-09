@@ -199,12 +199,12 @@ const BinaryJapan2 = () => (
                         <p>{it.L('{JAPAN ONLY}The binary option can provide profit opportunities even at a small price range. Here is a table comparison of foreign exchange and binary options')}</p>
                     </div>
                     <div className='gr-row cards'>
-                        <div className='gr-6 gr-12-m'>
+                        <div className='gr-6 gr-10-p gr-12-m gr-centered'>
                             <div className='card'>
                                 <div className='card-header__bubble'>
                                     <h3>{it.L('{JAPAN ONLY}Foreign exchange one cancellation order - profit take & stop-loss order')}</h3>
                                 </div>
-                                <div className='card-body'>
+                                <div className='card-body fixed-height'>
                                     <div className='gr-row gr-row-align-center-m gr-row-align-between'>
                                         <div className='box-o'>
                                             <img className='icon-sm' src={it.url_for('images/japan/version1/jpy.svg')} />
@@ -236,23 +236,23 @@ const BinaryJapan2 = () => (
                                         </div>
                                     </div>
                                     <span className='card-divider'></span>
-                                    <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}1 lot = $ 100,000, margin: ')}</p>
-                                    <p className='size-2'>{it.L('{JAPAN ONLY}Profit / loss per point (0.01) = ¥ 1,000')}</p>
+                                    <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}1 lot = $ 100,000, margin: ')}</p>
+                                    <p className='size-2 big-spacing'>{it.L('{JAPAN ONLY}Profit / loss per point (0.01) = ¥ 1,000')}</p>
                                     <p className='bg-gray size-3'>{it.L('{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000')}</p>
                                     <div className='flex'>
                                         <img className='icon-md' src={it.url_for('images/japan/version1/sad-face.svg')} />
                                         <p className='color-light-blue'>{it.L('{JAPAN ONLY}Margin: ¥ 442,000')}<br/>{it.L('{JAPAN ONLY}Maximum loss: not guaranteed')}</p>
                                     </div>
-                                    <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000')}</p>
+                                    <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000')}</p>
                                 </div>
                             </div>
                         </div>
-                        <div className='gr-6 gr-12-m'>
+                        <div className='gr-6 gr-10-p gr-12-m gr-centered'>
                             <div className='card'>
                                 <div className='card-header__bubble'>
                                     <h3>{it.L('{JAPAN ONLY}Binary option can make a higher profit, for the same risk but less margin')}</h3>
                                 </div>
-                                <div className='card-body'>
+                                <div className='card-body fixed-height'>
                                     <div className='gr-row gr-row-align-center-m gr-row-align-between'>
                                         <div className='box-o'>
                                             <img className='icon-sm' src={it.url_for('images/japan/version1/jpy.svg')} />
@@ -284,14 +284,14 @@ const BinaryJapan2 = () => (
                                         </div>
                                     </div>
                                     <span className='card-divider'></span>
-                                    <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}If spot rate is at above target rate at judgment time, the profil will be:')}</p>
-                                    <p className='size-2'>{it.L('{JAPAN ONLY}Option price assumes 1 hour to judgment time, volatility = 8.5%, spread = 40 yen')}</p>
+                                    <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}If spot rate is at above target rate at judgment time, the profil will be:')}</p>
+                                    <p className='size-2 fixed-width'>{it.L('{JAPAN ONLY}Option price assumes 1 hour to judgment time, volatility = 8.5%, spread = 40 yen')}</p>
                                     <p className='bg-gray size-3'>{it.L('{JAPAN ONLY}50 lots: maximum loss: - ¥ 10,000 | target profit: ¥ 40,000')}</p>
                                     <div className='flex'>
                                         <img className='icon-md' src={it.url_for('images/japan/version1/happy-face.svg')} />
                                         <p className='color-red'>{it.L('{JAPAN ONLY}Margin: ¥ 10,000')}<br />{it.L('{JAPAN ONLY}Maximum loss: guaranteed')}</p>
                                     </div>
-                                    <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000')}</p>
+                                    <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000')}</p>
                                 </div>
                             </div>
                         </div>
