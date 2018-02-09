@@ -9,7 +9,7 @@ class Dropdown extends React.PureComponent {
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.state = {
             is_list_visible: false,
-            selected       : this.props.selected,
+            selected       : this.props.list.find(item => item.value === this.props.value).name || this.props.value,
             value          : this.props.value,
         };
     }

@@ -20,7 +20,6 @@ const Duration = ({
                     { name: localize('Duration'), value: 'duration' },
                     { name: localize('End Time'), value: 'endtime' },
                 ]}
-                selected={expiry_type}
                 value={expiry_type}
                 name='expiry_type'
                 onChange={onChange}

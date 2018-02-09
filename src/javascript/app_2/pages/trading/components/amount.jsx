@@ -29,7 +29,6 @@ const Amount = ({
                     { name: localize('Payout'), value: 'payout' },
                     { name: localize('Stake'),  value: 'stake' },
                 ]}
-                selected={basis}
                 value={basis}
                 name='basis'
                 onChange={onChange}
