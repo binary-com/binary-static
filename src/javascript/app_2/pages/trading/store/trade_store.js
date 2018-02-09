@@ -13,7 +13,7 @@ export default class TradeStore {
         actions.getCountryAsync();
         actions.getStartDates();
 
-        actions.getTicks(action((r) => { this.tick = r; }));
+        actions.getTicks(action('getTicks', (r) => { this.tick = r; }));
 
         if (!Client.get('currency')) {
             actions.getCurrenciesAsync();
@@ -26,8 +26,8 @@ export default class TradeStore {
     }
 
     _initReactions() {
-        reaction(() => this.amount, actions.onAmountChange);
-        reaction(() => this.symbol, actions.onSymbolChangeAsync);
+        reaction(() => this.amount, actions.onAmountChange, {name: 'onAmountChange' });
+        reaction(() => this.symbol, actions.onSymbolChangeAsync, {name: 'onSymbolChangeAsync' });
 
         const reaction_map = Reactions.getReactions();
         Object.keys(reaction_map).forEach((reaction_key) => {
