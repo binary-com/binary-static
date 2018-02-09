@@ -76,10 +76,10 @@ export const DataTable = ({ dataSource = transactions, columns = statement_colum
             </thead>
 
             <tbody className='table-tbody'>
-                {dataSource.map(obj => (
-                    <tr className='table-row'>
+                {dataSource.map((obj, id) => (
+                    <tr className='table-row' key={id}>
                         {columns.map(({ dataIndex }) => (
-                            <td>{obj[dataIndex]}</td>
+                            <td key={dataIndex}>{obj[dataIndex]}</td>
                         ))}
                     </tr>
                 ))}
