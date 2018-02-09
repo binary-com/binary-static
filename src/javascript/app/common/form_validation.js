@@ -4,7 +4,7 @@ const Client                = require('../base/client');
 const Password              = require('../../_common/check_password');
 const localize              = require('../../_common/localize').localize;
 const compareBigUnsignedInt = require('../../_common/string_util').compareBigUnsignedInt;
-const urlParam              = require('../../_common/url').param;
+const getHashValue          = require('../../_common/url').getHashValue;
 const isEmptyObject         = require('../../_common/utility').isEmptyObject;
 
 const Validation = (() => {
@@ -42,7 +42,7 @@ const Validation = (() => {
         const $form = $(`${form_selector}:visible`);
 
         if (needs_token) {
-            const token = urlParam('token') || '';
+            const token = getHashValue('token');
             if (!validEmailToken(token)) {
                 $form.replaceWith($('<div/>', { class: error_class, text: localize('Verification code is wrong. Please use the link sent to your email.') }));
                 return;
