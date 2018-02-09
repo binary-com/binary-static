@@ -9,6 +9,7 @@ import Symbol from './components/symbol.jsx';
 import Test from './components/test.jsx';
 import Purchase from './components/purchase.jsx';
 import { connect } from './store/connect';
+import Pagination from './components/pagination';
 
 class TradeApp extends React.Component {
     componentDidMount() {
@@ -35,6 +36,9 @@ class TradeApp extends React.Component {
                     <Amount />
 
                     <Purchase />
+                </div>
+                <div className='container'>
+                    <Pagination total={30} pageSize={10} />
                 </div>
             </React.Fragment>
         );
