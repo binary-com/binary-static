@@ -6,6 +6,7 @@ const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
 const getCurrencyList    = require('../../common/currency').getCurrencyList;
 const FormManager        = require('../../common/form_manager');
+const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
 const State              = require('../../../_common/storage').State;
 const toTitleCase        = require('../../../_common/string_util').toTitleCase;
@@ -27,18 +28,14 @@ const Accounts = (() => {
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
-            const upgrade_info  = Client.getUpgradeInfo(landing_company);
-            const is_ico_only   = Client.get('is_ico_only');
-
-            if (!is_ico_only && upgrade_info.can_upgrade) {
+            const upgrade_info  = Client.getUpgradeInfo();
+            if (upgrade_info.can_upgrade) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            const currencies = getCurrencies(landing_company);
-            // only allow opening of multi account to costarica clients with remaining currency
-            if (!is_ico_only && Client.get('landing_company_shortcode') === 'costarica' && currencies.length) {
-                populateMultiAccount(currencies);
+            if (upgrade_info.can_open_multi) {
+                populateMultiAccount();
             } else {
                 doneLoading(element_to_show);
             }
@@ -144,7 +141,8 @@ const Accounts = (() => {
 
     const getMarketName = market => localize(markets[market] || '');
 
-    const populateMultiAccount = (currencies) => {
+    const populateMultiAccount = () => {
+        const currencies = getCurrencies(landing_company);
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
                 .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 })}` })))
@@ -166,7 +164,7 @@ const Accounts = (() => {
         // need to make it visible before adding the form manager event on it
         doneLoading('#new_accounts_wrapper');
 
-        const el_select_currency = /select/i.test(document.getElementById('new_account_currency').nodeName);
+        const el_select_currency = /select/i.test(getElementById('new_account_currency').nodeName);
         FormManager.init(form_id, [{ selector: '#new_account_currency', request_field: 'currency', validations: [el_select_currency ? 'req' : ''], hide_asterisk: true }].concat(populateReq()));
 
         FormManager.handleSubmit({

@@ -3,6 +3,7 @@ const Client       = require('../../../base/client');
 const BinarySocket = require('../../../base/socket');
 const FormManager  = require('../../../common/form_manager');
 const localize     = require('../../../../_common/localize').localize;
+const State        = require('../../../../_common/storage').State;
 
 const ChangePassword = (() => {
     const form_id = '#frm_change_password';
@@ -34,8 +35,9 @@ const ChangePassword = (() => {
     };
 
     const onLoad = () => {
-        BinarySocket.wait('get_account_status').then((response) => {
-            if (!/social_signup/.test(response.get_account_status.status)) {
+        BinarySocket.wait('get_account_status').then(() => {
+            const status = State.getResponse('get_account_status.status');
+            if (!/social_signup/.test(status)) {
                 init();
             } else {
                 BinaryPjax.loadPreviousUrl();

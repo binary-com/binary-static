@@ -52,7 +52,7 @@ const ICOPortfolio = (() => {
         } else if (ico_status === 'closed' && final_price <= bid && is_claim_allowed) {
             status_text = localize('Claim Tokens');
             action = 'claim';
-        } else if(ico_status === 'closed' && !is_claim_allowed) {
+        } else if (ico_status === 'closed' && !is_claim_allowed) {
             is_pending = true;
         } else if (ico_status === 'open') {
             status_text = localize('Cancel Bid');

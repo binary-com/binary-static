@@ -1,7 +1,8 @@
-const isVisible     = require('../../../_common/common_functions').isVisible;
-const State         = require('../../../_common/storage').State;
-const Url           = require('../../../_common/url');
-const isEmptyObject = require('../../../_common/utility').isEmptyObject;
+const getElementById = require('../../../_common/common_functions').getElementById;
+const isVisible      = require('../../../_common/common_functions').isVisible;
+const State          = require('../../../_common/storage').State;
+const Url            = require('../../../_common/url');
+const isEmptyObject  = require('../../../_common/utility').isEmptyObject;
 
 /*
  * Handles trading page default values
@@ -33,7 +34,7 @@ const Defaults = (() => {
         if (params[key] !== value) {
             params[key] = value;
             // to increase speed, do not set values when form is still loading
-            if (!isVisible(document.getElementById('trading_init_progress'))) {
+            if (!isVisible(getElementById('trading_init_progress'))) {
                 sessionStorage.setItem(key, value);
                 updateURL();
             }
@@ -63,7 +64,7 @@ const Defaults = (() => {
     };
 
     const updateURL = () => {
-        if (!State.get('is_trading') && !State.get('is_beta_trading')) return;
+        if (!State.get('is_trading')) return;
         const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params)}`;
         window.history.replaceState({ url: updated_url }, null, updated_url);
     };

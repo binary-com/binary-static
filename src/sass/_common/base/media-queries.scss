@@ -29,6 +29,9 @@
     .table-container {
         overflow-x: auto;
     }
+    .no-padding-m {
+        padding: 0 !important;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -55,6 +58,12 @@
         #banner {
             background-position-x: 15%;
         }
+    }
+    #content .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li a {
+        font-size: $FONT_SIZE_S;
+    }
+    #content .light .tab-menu-wrap ul.tm-ul li.tm-li.tab-selector {
+        top: 30px;
     }
 }
 

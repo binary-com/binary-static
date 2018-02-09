@@ -42,7 +42,7 @@ const PaymentagentTransfer = () => (
         </div>
 
         <div id='no_balance_error' className='invisible'>
-            <p className='center-text notice-msg'>{it.L('Please <a href="[_1]">deposit</a> before transferring to client.', `${it.url_for('cashier/forwardws')}#deposit`)}</p>
+            <p className='center-text notice-msg'>{it.L('Please <a href="[_1]">deposit</a> before transferring to client.', it.url_for('cashier/forwardws?action=deposit'))}</p>
         </div>
 
         <div id='not_pa_error' className='invisible'>

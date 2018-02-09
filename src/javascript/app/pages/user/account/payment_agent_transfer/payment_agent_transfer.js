@@ -6,8 +6,7 @@ const localize               = require('../../../../../_common/localize').locali
 const State                  = require('../../../../../_common/storage').State;
 
 const PaymentAgentTransfer = (() => {
-    let balance,
-        is_authenticated_payment_agent,
+    let is_authenticated_payment_agent,
         common_request_fields,
         $form_error;
 
@@ -28,10 +27,9 @@ const PaymentAgentTransfer = (() => {
         const $no_bal_err = $('#no_balance_error');
         const currency    = Client.get('currency');
 
-        balance     = State.getResponse('balance.balance');
         $form_error = $('#form_error');
 
-        if (!currency || +balance === 0) {
+        if (!currency || +Client.get('balance') === 0) {
             $('#pa_transfer_loading').remove();
             $no_bal_err.setVisibility(1);
             return;
@@ -48,7 +46,7 @@ const PaymentAgentTransfer = (() => {
 
         FormManager.init(form_id, [
             { selector: '#client_id', validations: ['req', ['regular', { regex: /^\w+\d+$/, message: 'Please enter a valid Login ID.' }]], request_field: 'transfer_to' },
-            { selector: '#amount',    validations: ['req', ['number', { type: 'float', decimals: 2, min: 10, max: 2000 }]] },
+            { selector: '#amount',    validations: ['req', ['number', { type: 'float', decimals: 2, min: 10, max: 2000 }], ['custom', { func: () => +Client.get('balance') >= +$('#amount').val(), message: localize('Insufficient balance.') }]] },
 
             { request_field: 'dry_run', value: 1 },
         ].concat(common_request_fields));
@@ -56,25 +54,9 @@ const PaymentAgentTransfer = (() => {
         FormManager.handleSubmit({
             form_selector       : form_id,
             fnc_response_handler: responseHandler,
-            fnc_additional_check: additionalCheck,
             enable_button       : 1,
         });
-
-        $('#amount').on('input change', function () {
-            checkBalance($(this).val());
-        });
     };
-
-    const checkBalance = (amount) => {
-        if (+amount > +balance) {
-            $form_error.text(localize('Insufficient balance.')).setVisibility(1);
-            return false;
-        }
-        $form_error.setVisibility(0);
-        return true;
-    };
-
-    const additionalCheck = req => checkBalance(req.amount);
 
     const setFormVisibility = (is_visible) => {
         if (is_visible) {

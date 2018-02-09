@@ -71,7 +71,7 @@ a.button:hover {
 button.full-width, .button.full-width {
     &, span {
         display: block;
-        width: 100%;
+        width: auto;
     }
     .barspinner {
         display: inline-block;
@@ -119,6 +119,14 @@ fieldset {
     width: 100%;
     text-align: left;
     margin-top: 5px;
+}
+
+.secondary-bg-color .error-msg {
+    color: $COLOR_WHITE;
+}
+
+.white-bg-color {
+    background-color: $white;
 }
 
 textarea {
@@ -494,10 +502,6 @@ ul.bullet.gr-row > li {
             }
         }
     }
-}
-
-#content .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li {
-    font-size: $FONT_SIZE_XL;
 }
 
 .foot-note {

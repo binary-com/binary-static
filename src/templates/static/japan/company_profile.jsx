@@ -26,7 +26,7 @@ const CompanyProfile = () => {
         [{ text: it.L('{JAPAN ONLY}Main business') },                              { text: it.L('{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law') }],
     ];
 
-    return(
+    return (
         <React.Fragment>
             <div className='gr-parent gr-padding-30 static_full'>
                 <h1>{it.L('{JAPAN ONLY}Company Profile')}</h1>

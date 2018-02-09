@@ -1,6 +1,7 @@
 const MBDefaults       = require('./mb_defaults');
 const MBNotifications  = require('./mb_notifications');
 const BinarySocket     = require('../../base/socket');
+const getElementById   = require('../../../_common/common_functions').getElementById;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
 /*
@@ -36,8 +37,6 @@ const MBTick = (() => {
 
     const display = () => {
         $('#spot').fadeIn(200);
-        const spot_element = document.getElementById('spot');
-        if (!spot_element) return;
         let message = '';
         if (error_message) {
             message = error_message;
@@ -45,6 +44,7 @@ const MBTick = (() => {
             message = quote;
         }
 
+        const spot_element = getElementById('spot');
         if (parseFloat(message) !== +message) {
             spot_element.className = 'error';
         } else {

@@ -1,5 +1,5 @@
 const portfolio                    = require('../portfolio/portfolio').Portfolio;
-const { api, expect, getApiToken } = require('../../../../base/__tests__/tests_common');
+const { api, expect, getApiToken } = require('../../../../../_common/__tests__/tests_common');
 
 const portfolio_mock_data = {
     symbol        : 'frxAUDJPY',

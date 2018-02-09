@@ -1,5 +1,6 @@
 const MBDefaults       = require('../../mb_trade/mb_defaults');
 const jpClient         = require('../../../common/country_base').jpClient;
+const getElementById   = require('../../../../_common/common_functions').getElementById;
 const getLanguage      = require('../../../../_common/language').get;
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
@@ -30,7 +31,7 @@ const WebtraderChart = (() => {
 
     const setChart = () => {
         const is_mb_trading  = State.get('is_mb_trading');
-        const new_underlying = is_mb_trading ? $('#underlying').attr('value') : document.getElementById('underlying').value;
+        const new_underlying = is_mb_trading ? $('#underlying').attr('value') : getElementById('underlying').value;
         if (($('#tab_graph').hasClass('active') || is_mb_trading) &&
             (!chart || chart.data().instrumentCode !== new_underlying ||
                 (is_mb_trading &&

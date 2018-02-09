@@ -29,7 +29,7 @@ const professionalClient = (() => {
         const financial_company = State.getResponse('landing_company.financial_company.shortcode');
         if ((!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
             (financial_company === 'maltainvest' && !is_financial)) && !is_ico_only) { // then it's not upgrading to financial
-            if(is_in_page) {
+            if (is_in_page) {
                 BinaryPjax.loadPreviousUrl();
             }
             return;
@@ -79,7 +79,7 @@ const professionalClient = (() => {
                                     $error.text(response.error.message).removeClass('invisible');
                                 } else {
                                     BinarySocket.send({get_account_status: 1}).then(() => {
-                                        if(Client.get('is_ico_only')){
+                                        if (Client.get('is_ico_only')){
                                             BinaryPjax.load(Url.urlFor('user/ico-subscribe'));
                                         } else {
                                             BinaryPjax.loadPreviousUrl();

@@ -25,8 +25,8 @@ export const TabContentContainer = ({ id, children }) => (
     </div>
 );
 
-export const TabContent = ({ id, visible, children }) => (
-    <div id={`${id}-content`} className={`toggle-content ${visible ? '' : 'invisible'}`}>
+export const TabContent = ({ id, visible, children, className }) => (
+    <div id={`${id}-content`} className={`toggle-content ${visible ? '' : 'invisible'} ${className || ''}`}>
         {children}
     </div>
 );

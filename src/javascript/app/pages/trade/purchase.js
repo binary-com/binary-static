@@ -5,9 +5,7 @@ const TickDisplay        = require('./tick_trade');
 const updateValues       = require('./update_values');
 const Client             = require('../../base/client');
 const formatMoney        = require('../../common/currency').formatMoney;
-const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
-const elementTextContent = require('../../../_common/common_functions').elementTextContent;
-const isVisible          = require('../../../_common/common_functions').isVisible;
+const CommonFunctions    = require('../../../_common/common_functions');
 const localize           = require('../../../_common/localize').localize;
 const padLeft            = require('../../../_common/string_util').padLeft;
 const urlFor             = require('../../../_common/url').urlFor;
@@ -29,20 +27,20 @@ const Purchase = (() => {
 
         const receipt            = details.buy;
         const passthrough        = details.echo_req.passthrough;
-        const container          = document.getElementById('contract_confirmation_container');
-        const message_container  = document.getElementById('confirmation_message');
-        const heading            = document.getElementById('contract_purchase_heading');
-        const descr              = document.getElementById('contract_purchase_descr');
-        const barrier_element    = document.getElementById('contract_purchase_barrier');
-        const reference          = document.getElementById('contract_purchase_reference');
-        const chart              = document.getElementById('tick_chart');
-        const payout             = document.getElementById('contract_purchase_payout');
-        const cost               = document.getElementById('contract_purchase_cost');
-        const profit             = document.getElementById('contract_purchase_profit');
-        const spots              = document.getElementById('contract_purchase_spots');
-        const confirmation_error = document.getElementById('confirmation_error');
-        const contracts_list     = document.getElementById('contracts_list');
-        const button             = document.getElementById('contract_purchase_button');
+        const container          = CommonFunctions.getElementById('contract_confirmation_container');
+        const message_container  = CommonFunctions.getElementById('confirmation_message');
+        const heading            = CommonFunctions.getElementById('contract_purchase_heading');
+        const descr              = CommonFunctions.getElementById('contract_purchase_descr');
+        const barrier_element    = CommonFunctions.getElementById('contract_purchase_barrier');
+        const reference          = CommonFunctions.getElementById('contract_purchase_reference');
+        const chart              = CommonFunctions.getElementById('tick_chart');
+        const payout             = CommonFunctions.getElementById('contract_purchase_payout');
+        const cost               = CommonFunctions.getElementById('contract_purchase_cost');
+        const profit             = CommonFunctions.getElementById('contract_purchase_profit');
+        const spots              = CommonFunctions.getElementById('contract_purchase_spots');
+        const confirmation_error = CommonFunctions.getElementById('confirmation_error');
+        const contracts_list     = CommonFunctions.getElementById('contracts_list');
+        const button             = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
@@ -63,20 +61,17 @@ const Purchase = (() => {
                 }
                 message = `${error.message}. ${additional_message}`;
             }
-            elementInnerHtml(confirmation_error, message);
+            CommonFunctions.elementInnerHtml(confirmation_error, message);
         } else {
-            const guide_btn = document.getElementById('guideBtn');
-            if (guide_btn) {
-                guide_btn.style.display = 'none';
-            }
+            CommonFunctions.getElementById('guideBtn').style.display = 'none';
             container.style.display = 'table-row';
             message_container.show();
             confirmation_error.hide();
 
-            elementTextContent(heading, localize('Contract Confirmation'));
-            elementTextContent(descr, receipt.longcode);
-            if (barrier_element) barrier_element.textContent = '';
-            elementTextContent(reference, `${localize('Your transaction reference is')} ${receipt.transaction_id}`);
+            CommonFunctions.elementTextContent(heading, localize('Contract Confirmation'));
+            CommonFunctions.elementTextContent(descr, receipt.longcode);
+            CommonFunctions.elementTextContent(barrier_element, '');
+            CommonFunctions.elementTextContent(reference, `${localize('Your transaction reference is')} ${receipt.transaction_id}`);
 
             const currency = Client.get('currency');
 
@@ -89,9 +84,9 @@ const Purchase = (() => {
             }
             const profit_value = formatMoney(currency, payout_value - cost_value);
 
-            elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
-            elementInnerHtml(cost,   `${localize('Total Cost')} <p>${formatMoney(currency, cost_value)}</p>`);
-            elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
+            CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
+            CommonFunctions.elementInnerHtml(cost,   `${localize('Total Cost')} <p>${formatMoney(currency, cost_value)}</p>`);
+            CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
 
             updateValues.updateContractBalance(receipt.balance_after);
 
@@ -102,7 +97,7 @@ const Purchase = (() => {
             }
 
             if (Contract.form() === 'digits') {
-                elementTextContent(spots, '');
+                CommonFunctions.elementTextContent(spots, '');
                 spots.className = '';
                 spots.show();
             } else {
@@ -110,7 +105,7 @@ const Purchase = (() => {
             }
 
             if (Contract.form() !== 'digits' && !show_chart) {
-                elementTextContent(button, localize('View'));
+                CommonFunctions.elementTextContent(button, localize('View'));
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
                 $('.open_contract_details').attr('contract_id', receipt.contract_id).setVisibility(1);
@@ -172,10 +167,10 @@ const Purchase = (() => {
             return;
         }
 
-        const spots   = document.getElementById('contract_purchase_spots');
+        const spots   = CommonFunctions.getElementById('contract_purchase_spots');
         const spots2  = Tick.spots();
         const epoches = Object.keys(spots2).sort((a, b) => a - b);
-        if (spots) spots.textContent = '';
+        CommonFunctions.elementTextContent(spots, '');
 
         let last_digit;
         const replace = (d) => { last_digit = d; return `<strong>${d}</strong>`; };
@@ -185,7 +180,7 @@ const Purchase = (() => {
                 quote: spots2[epoches[s]],
             };
 
-            if (isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
+            if (CommonFunctions.isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
                 const fragment = createElement('div', { class: 'row' });
                 const el1      = createElement('div', { class: 'col', text: `${localize('Tick')} ${(spots.getElementsByClassName('row').length + 1)}` });
                 fragment.appendChild(el1);
@@ -195,12 +190,12 @@ const Purchase = (() => {
                 const hours   = padLeft(date.getUTCHours(), 2, '0');
                 const minutes = padLeft(date.getUTCMinutes(), 2, '0');
                 const seconds = padLeft(date.getUTCSeconds(), 2, '0');
-                elementTextContent(el2, [hours, minutes, seconds].join(':'));
+                CommonFunctions.elementTextContent(el2, [hours, minutes, seconds].join(':'));
                 fragment.appendChild(el2);
 
                 const tick = tick_d.quote.replace(/\d$/, replace);
                 const el3  = createElement('div', { class: 'col' });
-                elementInnerHtml(el3, tick);
+                CommonFunctions.elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
 
                 spots.appendChild(fragment);

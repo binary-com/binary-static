@@ -25,6 +25,9 @@ import {
 const Financial = () => (
     <div className='gr-12 static_full'>
         <h1>{it.L('Financial Account Opening')}</h1>
+
+        <p className='notice-msg invisible' id='authentication_notice_message'>{it.L('Please ensure that your current account has been authenticated before you proceed.')}</p>
+
         <form id='financial-form' className='gr-padding-10'>
             <Fieldset legend={it.L('Details')}>
                 <Salutation className='input-disabled' />

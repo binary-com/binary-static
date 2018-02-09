@@ -2,6 +2,7 @@ const moment           = require('moment');
 const BinarySocket     = require('./socket');
 const jpClient         = require('../common/country_base').jpClient;
 const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
+const getElementById   = require('../../_common/common_functions').getElementById;
 
 const Clock = (() => {
     let clock_started = false;
@@ -60,7 +61,7 @@ const Clock = (() => {
             clearInterval(get_time_interval);
             get_time_interval = setInterval(getTime, 30000);
 
-            el_clock = document.getElementById('gmt-clock');
+            el_clock = getElementById('gmt-clock');
             clock_started = true;
         }
     };

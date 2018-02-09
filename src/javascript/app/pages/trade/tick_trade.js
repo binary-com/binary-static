@@ -3,9 +3,7 @@ const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
-const elementInnerHtml     = require('../../../_common/common_functions').elementInnerHtml;
-const isVisible            = require('../../../_common/common_functions').isVisible;
-const getHighstock         = require('../../../_common/common_functions').requireHighstock;
+const CommonFunctions      = require('../../../_common/common_functions');
 const localize             = require('../../../_common/localize').localize;
 
 const TickDisplay = (() => {
@@ -63,7 +61,7 @@ const TickDisplay = (() => {
         const end_time = parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * 5);
 
         setXIndicators();
-        getHighstock((Highstock) => {
+        CommonFunctions.requireHighstock((Highstock) => {
             Highcharts = Highstock;
             initializeChart({
                 minimize,
@@ -231,9 +229,8 @@ const TickDisplay = (() => {
             });
             contract_barrier = calc_barrier;
         }
-        const purchase_barrier = document.getElementById('contract_purchase_barrier');
-        if (contract_barrier && purchase_barrier) {
-            elementInnerHtml(purchase_barrier, `${localize('Barrier')}: ${contract_barrier}`);
+        if (contract_barrier) {
+            CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Barrier')}: ${contract_barrier}`);
         }
     };
 
@@ -286,9 +283,9 @@ const TickDisplay = (() => {
     };
 
     const dispatch = (data) => {
-        const tick_chart = document.getElementById('tick_chart');
+        const tick_chart = CommonFunctions.getElementById('tick_chart');
 
-        if (!tick_chart || !isVisible(tick_chart) || !data || (!data.tick && !data.history)) {
+        if (!CommonFunctions.isVisible(tick_chart) || !data || (!data.tick && !data.history)) {
             return;
         }
 
@@ -301,12 +298,12 @@ const TickDisplay = (() => {
             spots2,
             chart_display_decimals;
         if (document.getElementById('sell_content_wrapper')) {
-            if (data.tick && document.getElementById('sell_content_wrapper')) {
+            if (data.tick) {
                 Tick.details(data);
                 if (!chart_display_decimals) {
                     chart_display_decimals = data.tick.quote.split('.')[1].length || 2;
                 }
-            } else if (data.history && document.getElementById('sell_content_wrapper')) {
+            } else if (data.history) {
                 if (!chart_display_decimals) {
                     chart_display_decimals = data.history.prices[0].split('.')[1].length || 2;
                 }

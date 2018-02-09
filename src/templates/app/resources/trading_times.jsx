@@ -5,7 +5,7 @@ const TradingTimes = () => (
         <h1>{it.L('Trading Times')}</h1>
         <p>
             <label htmlFor='trading-date'>{it.L('Date')}: </label>
-            <input type='text' id='trading-date' readOnly='readonly' size='12' />
+            <input type='text' id='trading-date' readOnly='readonly' size='20' />
         </p>
         <p>{it.L('All times are in GMT (Greenwich Mean Time).')}</p>
 

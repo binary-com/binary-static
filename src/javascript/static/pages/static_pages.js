@@ -10,6 +10,9 @@ module.exports = {
     OpenPositions: {
         onLoad: () => { Scroll.scrollToHashSection(); },
     },
+    Careers: {
+        onLoad: () => { tabListener(); handleHash(); $('.has-tabs').tabs(); },
+    },
     VolidxMarkets: {
         onLoad  : () => { Scroll.goToHashSection(); GetStarted.onLoad(); },
         onUnload: () => { Scroll.offScroll(); },

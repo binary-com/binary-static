@@ -9,6 +9,7 @@ const checkLanguage    = require('../common/country_base').checkLanguage;
 const TrafficSource    = require('../common/traffic_source');
 const RealityCheck     = require('../pages/user/reality_check/reality_check');
 const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
+const getElementById   = require('../../_common/common_functions').getElementById;
 const Crowdin          = require('../../_common/crowdin');
 const Language         = require('../../_common/language');
 const PushNotification = require('../../_common/lib/push_notification');
@@ -79,7 +80,6 @@ const Page = (() => {
             recordAffiliateExposure();
             endpointNotification();
         }
-        Menu.init();
         Contents.onLoad();
 
         if (sessionStorage.getItem('showLoginPage')) {
@@ -89,10 +89,12 @@ const Page = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
                 checkLanguage();
+                Menu.init();
                 RealityCheck.onLoad();
             });
         } else {
             checkLanguage();
+            Menu.init();
         }
         TrafficSource.setData();
     };
@@ -146,13 +148,11 @@ const Page = (() => {
                 `${localize('This is a staging server - For testing purposes only')} - `)}
                 ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
 
-            const end_note = document.getElementById('end-note');
-
+            const end_note = getElementById('end-note');
             elementInnerHtml(end_note, message);
-            if (end_note) end_note.setVisibility(1);
+            end_note.setVisibility(1);
 
-            const footer = document.getElementById('footer');
-            if (footer) footer.style['padding-bottom'] = end_note.offsetHeight;
+            getElementById('footer').style['padding-bottom'] = end_note.offsetHeight;
         }
     };
 

@@ -68,7 +68,7 @@ const IcoSubscribe = () => (
                                 <button id='btn_submit' type='submit'>{it.L('Place bid')}</button>
                                 <div className='gr-row invisible hint' id='topup_wrapper'>
                                     <div className='gr-8 align-start error-msg'>{it.L('You have insufficient funds in your account.')}</div>
-                                    <div className='gr-4 align-end'><a href={`${it.url_for('cashier/forwardws')}#deposit`}>{it.L('Top up in cashier')}</a></div>
+                                    <div className='gr-4 align-end'><a href={it.url_for('cashier/forwardws?action=deposit')}>{it.L('Top up in cashier')}</a></div>
                                 </div>
                             </div>
                         </div>

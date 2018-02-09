@@ -1,5 +1,6 @@
-const Validation    = require('../form_validation');
-const createElement = require('../../../_common/utility').createElement;
+const Validation     = require('../form_validation');
+const getElementById = require('../../../_common/common_functions').getElementById;
+const createElement  = require('../../../_common/utility').createElement;
 
 const showPopup = (options) => {
     const xhttp = new XMLHttpRequest();
@@ -21,24 +22,21 @@ const showPopup = (options) => {
             options.additionalFunction();
         }
 
-        const el_form = document.getElementById(options.form_id.slice(1));
-        if (el_form) {
-            el_form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                if (options.validations) {
-                    if (Validation.validate(options.form_id)) {
-                        if (lightbox) {
-                            lightbox.remove();
-                        }
-                        if (typeof options.onAccept === 'function') {
-                            options.onAccept();
-                        }
+        getElementById(options.form_id.slice(1)).addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (options.validations) {
+                if (Validation.validate(options.form_id)) {
+                    if (lightbox) {
+                        lightbox.remove();
                     }
-                } else if (lightbox) {
-                    lightbox.remove();
+                    if (typeof options.onAccept === 'function') {
+                        options.onAccept();
+                    }
                 }
-            });
-        }
+            } else if (lightbox) {
+                lightbox.remove();
+            }
+        });
     };
     xhttp.open('GET', options.url, true);
     xhttp.send();

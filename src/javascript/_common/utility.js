@@ -111,7 +111,7 @@ const clearable = (element) => {
  * @param {Object} attributes: all the attributes to assign, e.g. { id: '...', class: '...', html: '...', ... }
  * @return the created DOM element
  */
-const createElement = (tag_name, attributes) => {
+const createElement = (tag_name, attributes = {}) => {
     const el = document.createElement(tag_name);
     Object.keys(attributes).forEach((attr) => {
         const value = attributes[attr];

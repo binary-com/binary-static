@@ -1,12 +1,13 @@
-const Cookies      = require('js-cookie');
-const moment       = require('moment');
-const Client       = require('./client');
-const Login        = require('./login');
-const BinarySocket = require('./socket');
-const isVisible    = require('../../_common/common_functions').isVisible;
-const getLanguage  = require('../../_common/language').get;
-const State        = require('../../_common/storage').State;
-const getAppId     = require('../../config').getAppId;
+const Cookies        = require('js-cookie');
+const moment         = require('moment');
+const Client         = require('./client');
+const Login          = require('./login');
+const BinarySocket   = require('./socket');
+const getElementById = require('../../_common/common_functions').getElementById;
+const isVisible      = require('../../_common/common_functions').isVisible;
+const getLanguage    = require('../../_common/language').get;
+const State          = require('../../_common/storage').State;
+const getAppId       = require('../../config').getAppId;
 
 const GTM = (() => {
     const isGtmApplicable = () => (/^(1|1098)$/.test(getAppId()));
@@ -107,7 +108,7 @@ const GTM = (() => {
             event             : 'buy_contract',
             visitorId         : Client.get('loginid'),
             bom_symbol        : req.symbol,
-            bom_market        : document.getElementById('contract_markets').value,
+            bom_market        : getElementById('contract_markets').value,
             bom_currency      : req.currency,
             bom_contract_type : req.contract_type,
             bom_contract_id   : buy.contract_id,
@@ -118,7 +119,7 @@ const GTM = (() => {
         $.extend(data, {
             bom_amount     : req.amount,
             bom_basis      : req.basis,
-            bom_expiry_type: document.getElementById('expiry_type').value,
+            bom_expiry_type: getElementById('expiry_type').value,
         });
         if (data.bom_expiry_type === 'duration') {
             $.extend(data, {
@@ -126,13 +127,13 @@ const GTM = (() => {
                 bom_duration_unit: req.duration_unit,
             });
         }
-        if (isVisible(document.getElementById('barrier'))) {
+        if (isVisible(getElementById('barrier'))) {
             data.bom_barrier = req.barrier;
-        } else if (isVisible(document.getElementById('barrier_high'))) {
+        } else if (isVisible(getElementById('barrier_high'))) {
             data.bom_barrier_high = req.barrier;
             data.bom_barrier_low  = req.barrier2;
         }
-        if (isVisible(document.getElementById('prediction'))) {
+        if (isVisible(getElementById('prediction'))) {
             data.bom_prediction = req.barrier;
         }
 

@@ -13,14 +13,14 @@ const FinancialAssessment = () => (
         </div>
 
         <div id='msg_main' className='invisible'>
-            <p>{it.L('Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5.')}</p>
+            <p>{it.L('Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5.')}</p>
             <div id='msg_authenticate' className='invisible'>
                 <div><strong>{it.L('Important')}</strong></div>
                 <AuthenticateMessageFinancial />
             </div>
             <div className='center-text'>
                 <a className='button' href={it.url_for('user/metatrader')}>
-                    <span>{it.L('MetaTrader account management')}</span>
+                    <span>{it.L('Go to MetaTrader 5 Dashboard')}</span>
                 </a>
             </div>
         </div>

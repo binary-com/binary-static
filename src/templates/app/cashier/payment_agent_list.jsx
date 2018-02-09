@@ -30,8 +30,6 @@ const PaymentAgentList = () => (
             <li>{it.L('Send your funds to the payment agent. The deposited funds, less the agent\'s commission, will show up in your account.')}</li>
         </ol>
 
-        <p><label htmlFor='target_country'>{it.L('Show payment agents for:')}</label> <select id='target_country' className='invisible'></select></p>
-
         <div className='loading'>
             <Loading />
         </div>

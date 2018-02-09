@@ -27,7 +27,7 @@ const StatementInit = (() => {
         transactions_received,
         transactions_consumed;
 
-    const tableExist = () => (document.getElementById('statement-table'));
+    const tableExist = () => document.getElementById('statement-table');
 
     const finishedConsumed = () => (transactions_consumed === transactions_received);
 

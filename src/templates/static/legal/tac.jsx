@@ -12,7 +12,7 @@ import TermsAndConditionsMT from './metatrader/terms_and_conditions.jsx';
 import { SidebarSubmenu, SidebarContent, SidebarContentContainer } from '../../_common/components/sidebar.jsx';
 
 const Tac = () => (
-    <div className='gr-row'>
+    <div className='gr-row static_full'>
         <div className='gr-3 gr-12-p gr-12-m gr-padding-10'>
             <SidebarSubmenu
                 id='legal-menu'

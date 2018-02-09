@@ -14,6 +14,7 @@ const BinarySocket     = require('../../base/socket');
 const getMinPayout     = require('../../common/currency').getMinPayout;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
+const getElementById   = require('../../../_common/common_functions').getElementById;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
@@ -105,13 +106,11 @@ const Process = (() => {
     const processContract = (contracts) => {
         if (getPropertyValue(contracts, ['error', 'code']) === 'InvalidSymbol') {
             Price.processForgetProposals();
-            const container              = document.getElementById('contract_confirmation_container');
-            const message_container      = document.getElementById('confirmation_message');
-            const confirmation_error     = document.getElementById('confirmation_error');
-            const contracts_list         = document.getElementById('contracts_list');
-            container.style.display      = 'block';
-            contracts_list.style.display = 'none';
-            message_container.hide();
+            getElementById('contract_confirmation_container').style.display      = 'block';
+            getElementById('contracts_list').style.display = 'none';
+            getElementById('confirmation_message').hide();
+
+            const confirmation_error = getElementById('confirmation_error');
             confirmation_error.show();
             elementInnerHtml(confirmation_error, `${contracts.error.message} <a href="javascript:;" onclick="sessionStorage.removeItem('underlying'); window.location.reload();">${localize('Please reload the page')}</a>`);
             return;
@@ -119,11 +118,9 @@ const Process = (() => {
 
         State.set('is_chart_allowed', !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly'));
 
-        const trading_socket_container = document.getElementById('trading_socket_container');
-        if (trading_socket_container) {
-            trading_socket_container.classList.add('show');
-        }
-        const init_logo = document.getElementById('trading_init_progress');
+        getElementById('trading_socket_container').classList.add('show');
+
+        const init_logo = getElementById('trading_init_progress');
         if (init_logo && init_logo.style.display !== 'none') {
             init_logo.style.display = 'none';
             Defaults.update();
@@ -173,7 +170,7 @@ const Process = (() => {
             Durations.display();
         }
 
-        const currency  = Defaults.get('currency') || document.getElementById('currency').value;
+        const currency  = Defaults.get('currency') || getElementById('currency').value;
         const is_crypto = isCryptocurrency(currency);
         const amount    = is_crypto ? 'amount_crypto' : 'amount';
         if (Defaults.get(amount)) {
@@ -181,13 +178,18 @@ const Process = (() => {
         } else if (is_crypto) {
             const default_crypto_value = getMinPayout(currency);
             Defaults.set(amount, default_crypto_value);
-            document.getElementById('amount').value = default_crypto_value;
+            getElementById('amount').value = default_crypto_value;
         } else {
-            Defaults.set(amount, document.getElementById('amount').value);
+            Defaults.set(amount, getElementById('amount').value);
         }
-        if (Defaults.get('amount_type')) commonTrading.selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
-        else Defaults.set('amount_type', document.getElementById('amount_type').value);
-        if (Defaults.get('currency')) commonTrading.selectOption(Defaults.get('currency'), document.getElementById('currency'));
+        if (Defaults.get('amount_type')) {
+            commonTrading.selectOption(Defaults.get('amount_type'), getElementById('amount_type'));
+        } else {
+            Defaults.set('amount_type', getElementById('amount_type').value);
+        }
+        if (Defaults.get('currency')) {
+            commonTrading.selectOption(Defaults.get('currency'), getElementById('currency'));
+        }
 
         const expiry_type        = Defaults.get('expiry_type') || 'duration';
         const make_price_request = onExpiryTypeChange(expiry_type);
@@ -198,16 +200,17 @@ const Process = (() => {
     };
 
     const displayPrediction = () => {
-        const prediction_element = document.getElementById('prediction_row');
+        const prediction_row = getElementById('prediction_row');
         if (Contract.form() === 'digits' && sessionStorage.getItem('formname') !== 'evenodd') {
-            prediction_element.show();
+            prediction_row.show();
+            const prediction = getElementById('prediction');
             if (Defaults.get('prediction')) {
-                commonTrading.selectOption(Defaults.get('prediction'), document.getElementById('prediction'));
+                commonTrading.selectOption(Defaults.get('prediction'), prediction);
             } else {
-                Defaults.set('prediction', document.getElementById('prediction').value);
+                Defaults.set('prediction', prediction.value);
             }
         } else {
-            prediction_element.hide();
+            prediction_row.hide();
             Defaults.remove('prediction');
         }
     };

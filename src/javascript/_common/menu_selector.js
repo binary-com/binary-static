@@ -62,7 +62,6 @@ const MenuSelector = (() => {
 
     return {
         init,
-        showSelectedDiv,
         clean,
     };
 })();

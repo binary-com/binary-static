@@ -6,7 +6,10 @@ const showPopup         = require('../../common/attach_dom/popup');
 const isCryptocurrency  = require('../../common/currency').isCryptocurrency;
 const FormManager       = require('../../common/form_manager');
 const validEmailToken   = require('../../common/form_validation').validEmailToken;
+const getElementById    = require('../../../_common/common_functions').getElementById;
 const localize          = require('../../../_common/localize').localize;
+const State             = require('../../../_common/storage').State;
+const toTitleCase       = require('../../../_common/string_util').toTitleCase;
 const Url               = require('../../../_common/url');
 const template          = require('../../../_common/utility').template;
 
@@ -37,7 +40,7 @@ const DepositWithdraw = (() => {
     };
 
     const checkToken = () => {
-        token = Url.param('token') || '';
+        token = Url.getHashValue('token');
         if (!token) {
             BinarySocket.send({
                 verify_email: Client.get('email'),
@@ -57,14 +60,11 @@ const DepositWithdraw = (() => {
     };
 
     const getCashierType = () => {
-        const $heading   = $(container).find('#heading');
-        const hash_value = window.location.hash;
-        if (/withdraw/.test(hash_value)) {
-            cashier_type = 'withdraw';
-            $heading.text(localize('Withdraw'));
-        } else if (/deposit/.test(hash_value)) {
-            cashier_type = 'deposit';
-            $heading.text(localize('Deposit'));
+        const $heading = $(container).find('#heading');
+        const action   = Url.param('action');
+        if (/^(withdraw|deposit)$/.test(action)) {
+            cashier_type = action;
+            $heading.text(localize(toTitleCase(action)));
         }
     };
 
@@ -89,16 +89,14 @@ const DepositWithdraw = (() => {
                 content_id        : '#confirm_content',
                 validations       : [{ selector: '#chk_confirm', validations: [['req', { hide_asterisk: true }]] }],
                 additionalFunction: () => {
-                    const el_cancel = document.getElementById('cancel');
-                    const el_popup  = document.getElementById('confirm_popup');
-                    if (el_cancel) {
-                        el_cancel.addEventListener('click', () => {
-                            if (el_popup) {
-                                el_popup.remove();
-                            }
-                            BinaryPjax.load(Client.defaultRedirectUrl());
-                        });
-                    }
+                    const el_cancel = getElementById('cancel');
+                    const el_popup  = getElementById('confirm_popup');
+                    el_cancel.addEventListener('click', () => {
+                        if (el_popup) {
+                            el_popup.remove();
+                        }
+                        BinaryPjax.load(Client.defaultRedirectUrl());
+                    });
                 },
                 onAccept: () => {
                     Client.set('cashier_confirmed', 1);
@@ -215,7 +213,7 @@ const DepositWithdraw = (() => {
                 $iframe.css('height', '700px');
             }
             if (/^BCH/.test(Client.get('currency'))) {
-                document.getElementById('message_bitcoin_cash').setVisibility(1);
+                getElementById('message_bitcoin_cash').setVisibility(1);
             }
             $iframe.attr('src', response.cashier).parent().setVisibility(1);
         }
@@ -226,8 +224,23 @@ const DepositWithdraw = (() => {
         BinarySocket.send({ cashier_password: 1 }).then((response) => {
             if ('error' in response) {
                 showError('custom_error', response.error.message);
+            } else if (response.cashier_password === 1) {
+                showMessage('cashier_locked_message');
             } else {
-                init(response.cashier_password);
+                BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+                    if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
+                        showError('custom_error', localize('Your cashier is locked.')); // Locked from BO
+                    } else {
+                        const limit = State.getResponse('get_limits.remainder');
+                        if (typeof limit !== 'undefined' && limit < 1) {
+                            showError('custom_error', localize('You have reached the withdrawal limit.'));
+                        } else {
+                            BinarySocket.wait('get_settings').then(() => {
+                                init(response.cashier_password);
+                            });
+                        }
+                    }
+                });
             }
         });
     };

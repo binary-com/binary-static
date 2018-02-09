@@ -4,6 +4,7 @@ const jpClient           = require('../../../../../common/country_base').jpClien
 const formatMoney        = require('../../../../../common/currency').formatMoney;
 const elementInnerHtml   = require('../../../../../../_common/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../../../../_common/common_functions').elementTextContent;
+const getElementById     = require('../../../../../../_common/common_functions').getElementById;
 const localize           = require('../../../../../../_common/localize').localize;
 const getPropertyValue   = require('../../../../../../_common/utility').getPropertyValue;
 
@@ -16,9 +17,9 @@ const LimitsInit = (() => {
             return;
         }
 
-        const el_withdraw_limit     = document.getElementById('withdrawal-limit');
-        const el_withdrawn          = document.getElementById('already-withdraw');
-        const el_withdraw_limit_agg = document.getElementById('withdrawal-limit-aggregate');
+        const el_withdraw_limit     = getElementById('withdrawal-limit');
+        const el_withdrawn          = getElementById('already-withdraw');
+        const el_withdraw_limit_agg = getElementById('withdrawal-limit-aggregate');
 
         if (/authenticated/.test(getPropertyValue(response_get_account_status, ['get_account_status', 'status']))) {
             elementTextContent(el_withdraw_limit, localize('Your account is fully authenticated and your withdrawal limits have been lifted.'));
@@ -53,8 +54,8 @@ const LimitsInit = (() => {
     };
 
     const limitsError = (error) => {
-        document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
-        document.getElementById('limits-title').setAttribute('style', 'display:none');
+        getElementById('withdrawal-title').setVisibility(0);
+        getElementById('limits-title').setVisibility(0);
         $('#limits_error').append($('<p/>', { class: 'center-text notice-msg', text: error && error.message ? error.message : localize('Sorry, an error occurred while processing your request.') }));
     };
 

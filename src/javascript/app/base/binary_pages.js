@@ -15,7 +15,6 @@ const Endpoint             = require('../pages/endpoint');
 const MBTradePage          = require('../pages/mb_trade/mb_tradepage');
 const AssetIndexUI         = require('../pages/resources/asset_index/asset_index.ui');
 const TradingTimesUI       = require('../pages/resources/trading_times/trading_times.ui');
-const TradePage_Beta       = require('../pages/trade/beta/tradepage');
 const TradePage            = require('../pages/trade/tradepage');
 const Authenticate         = require('../pages/user/account/authenticate');
 const ChangePassword       = require('../pages/user/account/change_password');
@@ -93,7 +92,7 @@ const pages_config = {
     market_timesws           : { module: TradingTimesUI },
     metatrader               : { module: MetaTrader,                 is_authenticated: true, needs_currency: true },
     multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
-    payment_agent_listws     : { module: PaymentAgentList },
+    payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
     platforms                : { module: TabSelector },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
@@ -111,21 +110,21 @@ const pages_config = {
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage,                  needs_currency: true },
-    trading_beta             : { module: TradePage_Beta,             needs_currency: true },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStartedBeta.BinaryOptions },
+    'careers'                : { module: StaticPages.Careers },
     'cfds'                   : { module: GetStartedBeta.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'forex'                  : { module: GetStartedBeta.Forex },
-    'get-started'            : { module: GetStarted },
     'get-started-beta'       : { module: TabSelector },
+    'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
-    'home-beta'              : { module: TabSelector,                   not_authenticated: true },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
+    'home-beta'              : { module: Home,                       not_authenticated: true },
     'how-to-trade-mt5'       : { module: TabSelector },
     'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
     'ico-claim-form'         : { module: ICOClaimForm,               is_authenticated: true, only_real: true, needs_currency: true },

@@ -3,6 +3,7 @@ const moment             = require('moment');
 const Client             = require('./client');
 const GTM                = require('./gtm');
 const BinarySocket       = require('./socket');
+const getElementById     = require('../../_common/common_functions').getElementById;
 const getLanguage        = require('../../_common/language').get;
 const urlLang            = require('../../_common/language').urlLang;
 const isStorageSupported = require('../../_common/storage').isStorageSupported;
@@ -43,7 +44,7 @@ const LoggedInHandler = (() => {
                     redirect_url = redirect_url.replace(new RegExp(`/${language}/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
                 }
             }
-            document.getElementById('loading_link').setAttribute('href', redirect_url);
+            getElementById('loading_link').setAttribute('href', redirect_url);
             window.location.href = redirect_url; // need to redirect not using pjax
         });
     };

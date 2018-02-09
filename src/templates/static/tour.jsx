@@ -51,7 +51,7 @@ const Tour = () => (
                     </a>
                     <p>{it.L('Trade with ease with [_1]\'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions.', it.website_name)}</p>
                     <a className='button' href={it.url_for('cashier/payment_methods')}>
-                        <img className='responsive' src={it.url_for('images/pages/tour/tour-flexible-banking.png')} />
+                        <img className='responsive' src={it.url_for('images/pages/tour/tour-flexible-banking.svg')} />
                     </a>
                 </div>
             </div>

@@ -10,8 +10,9 @@ body {
     .app-store-badge, .google-play-badge {
         background-repeat: no-repeat;
         width: 140px;
-        height: 40px;
+        height: 38px;
         display: inline-block;
+        background-size: contain;
     }
 }
 
@@ -84,9 +85,6 @@ body.VI {
         > li a.tm-a {
             font-size: $FONT_SIZE_XXS;
         }
-    }
-    #trading_socket_container_beta #contract_symbol_container {
-        font-size: $FONT_SIZE_N;
     }
 }
 

@@ -39,10 +39,12 @@
     }
     #footer-last {
         .gambling {
-            text-align: justify;
-            font-size: $FONT_SIZE_XS;
-            font-weight: 400;
-            line-height: 110%;
+            &, a {
+                text-align: justify;
+                font-size: $FONT_SIZE_XS;
+                font-weight: 400;
+                line-height: 110%;
+            }
         }
     }
     #end-note {

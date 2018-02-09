@@ -16,8 +16,8 @@ const Statement = () => (
                         <div className='label_form gr-gutter-left'>
                             <label htmlFor='jump-to'>{it.L('Start from:')}</label>
                         </div>
-                        <div className='gr-8 gr-gutter-left'>
-                            <input type='text' id='jump-to' size='12' readOnly='readonly' />
+                        <div className='gr-gutter-left'>
+                            <input type='text' id='jump-to' size='20' readOnly='readonly' />
                         </div>
                     </div>
                 </div>
