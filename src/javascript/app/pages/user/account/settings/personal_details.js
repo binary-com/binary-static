@@ -134,7 +134,7 @@ const PersonalDetails = (() => {
             $last_child.parent().append($('<p/>', {
                 id   : 'geocode-error',
                 class: 'notice-msg no-margin',
-                text : localize('We could not verify your address. Please note that a wrong address may cause authentication delays.'),
+                text : localize('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.'),
             }));
         } else if (/OK/.test(status)) {
             $geocode_error.fadeOut(0);
