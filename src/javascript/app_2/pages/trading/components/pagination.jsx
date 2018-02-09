@@ -1,27 +1,45 @@
 import React from 'react';
 
 class Pagination extends React.PureComponent {
-	constructor(props) {
-		super(props);
+    constructor(props) {
+        super(props);
 
-		this.state = {
-			current: this.props.current
-		};
-	}
+        this.state = {
+            current: props.defaultCurrent
+        };
+    }
 
-	render() {
-		return (
-			<ul>
-				<li><a>prev</a></li>
-				<li><a>next</a></li>
-			</ul>
-		);
-	}
+    calcNumOfPages = () => {
+        const { total, pageSize } = this.props;
+        return Math.ceil(total / pageSize);
+    }
+
+    handleNext = () => {
+        if (this.state.current < this.calcNumOfPages()) {
+            this.handleChange(this.state.current + 1);
+        }
+    }
+
+    handlePrev = () => {
+        if (this.state.current > 1) {
+            this.handleChange(this.state.current - 1);
+        }
+    }
+
+    render() {
+        return (
+            <ul>
+                <li onClick={this.handlePrev}><a>prev</a></li>
+                <li onClick={this.handleNext}><a>next</a></li>
+            </ul>
+        );
+    }
 }
 
 Pagination.defaultProps = {
-	total: 0,
-	pageSize: 10
+    total: 0,
+    pageSize: 10,
+    defaultCurrent: 1
 };
 
 export default Pagination;
