@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-02 01:25-0500\n"
+"PO-Revision-Date: 2018-02-08 21:11-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -840,9 +840,6 @@ msgstr "接受"
 msgid "Access Denied"
 msgstr "访问被拒绝"
 
-msgid "Access MT5 dashboard"
-msgstr "访问 MT5 仪表板"
-
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "访问所有可用的工具和功能包括专家顾问 (EAs)、图表和订单类型，以便在MT5交易"
 
@@ -1026,9 +1023,6 @@ msgstr "高级二元期权交易界面"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "深入的软件设计原则知识"
-
-msgid "Advanced multi-asset trading platform"
-msgstr "高级多资产交易平台"
 
 msgid "Advantages of CFD trading"
 msgstr "差价合约交易的优势"
@@ -1844,7 +1838,7 @@ msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 1
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 
 msgid "Binary Limited"
-msgstr "Binary 有限公司"
+msgstr "Binary有限公司"
 
 msgid "Binary Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below."
 msgstr "Binary有限公司的注册办事处位于 47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands，为 Binary 集团的控股公司。"
@@ -2164,10 +2158,10 @@ msgstr "合约障碍/行权价格的可接受水平存在特定限制。一般�
 msgid "Change API Endpoint"
 msgstr "更改 API 端点"
 
-msgid "Change Password"
-msgstr "更改密码"
+msgid "Change MT5 password"
+msgstr "更改MT5密码"
 
-msgid "Change password"
+msgid "Change Password"
 msgstr "更改密码"
 
 msgid "Change the Stop Out Level in relation to your account."
@@ -2849,6 +2843,9 @@ msgstr "货币对分类如下："
 msgid "Current"
 msgstr "当前"
 
+msgid "Current MT5 password"
+msgstr "当前MT5密码"
+
 msgid "Current Time"
 msgstr "当前时间"
 
@@ -3015,13 +3012,13 @@ msgid "Deposit as little as USD 5 to start trading"
 msgstr "存款最低仅需 5 美元即可开始交易"
 
 msgid "Deposit as little as USD 5 to start trading."
-msgstr "存款最低仅需 5 美元即可开始交易."
+msgstr "存款最低仅需5美元即可开始交易."
 
 msgid "Deposit funds and begin trading"
 msgstr "存款并开始交易"
 
 msgid "Deposit funds into your MT5 account"
-msgstr "将资金存入您的 MT5 账户"
+msgstr "将资金存入您的MT5账户"
 
 msgid "Deposit or withdraw below"
 msgstr "在下方存款或提款"
@@ -3042,7 +3039,7 @@ msgid "Depositing and withdrawing funds"
 msgstr "存款及取款"
 
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
-msgstr "MetaTrader 5 账户总是通过二元期权账户存款和提款 。"
+msgstr "MetaTrader 5账户总是通过二元期权账户存款和提款 。"
 
 msgid "Derivative"
 msgstr "衍生工具"
@@ -3084,7 +3081,7 @@ msgid "Develop text that promotes the company's product offerings in a variety o
 msgstr "为本公司的产品创作各类促销文本"
 
 msgid "Develop your own trading application with our APIs."
-msgstr "用我们的 API 发展您自己的交易应用。"
+msgstr "用我们的API发展您自己的交易应用。"
 
 msgid "Differences with other data feeds"
 msgstr "与其他数据源的差异"
@@ -3209,17 +3206,17 @@ msgstr "下载CSV"
 msgid "Download MAM"
 msgstr "下载MAM"
 
+msgid "Download MT5 for Mac"
+msgstr "Mac版MT5下载"
+
+msgid "Download MT5 for Windows"
+msgstr "Windows版MT5下载"
+
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "MT5是强大的多功能交易工具，备受百万多名交易员的爱载，请下载到台式电脑或笔记本电脑上使用。"
 
 msgid "Download Now"
 msgstr "立刻下载"
-
-msgid "Download for Mac"
-msgstr "Mac版下载"
-
-msgid "Download for Windows"
-msgstr "Windows下载"
 
 msgid "Download the MAM application after setup is completed. Log in with your master account credentials."
 msgstr "安装程序完成后，请下载 MAM 应用程序。使用您的主账户凭据登录。"
@@ -3312,7 +3309,7 @@ msgid "Each Party shall do anything reasonably required by the other Party to gi
 msgstr "任一缔约方须按照本协议的规定和/或条款对另一方合理要求给予充分合作。"
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
-msgstr "每个二元期权合约都有固定期限- 在 %1，您可选择从10秒至365天之间的任何期限。"
+msgstr "每个二元期权合约都有固定期限 - 在 %1，您可选择从10秒至365天之间的任何期限。"
 
 msgid "Each binary option is a prediction on the future movement of an underlying market."
 msgstr "二元期权交易是对标的市场未来变化的预测。"
@@ -3589,9 +3586,6 @@ msgstr "欧元兑土耳其里拉"
 
 msgid "Euro vs US Dollar"
 msgstr "欧元兑美元"
-
-msgid "Eurobasket Wolves"
-msgstr "Eurobasket Wolves"
 
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
 msgstr "想要进行产品博彩交易的欧盟居民将在 Binary (Europe) Ltd 开设账户。"
@@ -4161,7 +4155,7 @@ msgid "G. Order Handling"
 msgstr "七、订单处理"
 
 msgid "GBP 1 per point"
-msgstr "每点 1 英镑"
+msgstr "每点1英镑"
 
 msgid "GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%"
 msgstr "英镑指数 - 衡量英镑相对于五种全球货币（美元、欧元、澳元、日元、加元）的价值，每种货币的权重均为20%。"
@@ -5175,7 +5169,7 @@ msgid "Indicates required field"
 msgstr "表示必填字段"
 
 msgid "Indicates the availability of cryptocurrency trading on a particular account."
-msgstr ""
+msgstr "指出特定账户交易加密货币的可行性。"
 
 msgid "Indicative"
 msgstr "指示性"
@@ -5310,7 +5304,7 @@ msgid "Invalid email address"
 msgstr "无效的电子邮件地址"
 
 msgid "Invalid email address."
-msgstr "无效的电子邮件地址."
+msgstr "无效的电子邮件地址。"
 
 msgid "Invest in the world's premier platform for binary options trading"
 msgstr "在全球领先的二元期权交易平台投资"
@@ -6072,10 +6066,10 @@ msgid "Learn more about our corporate culture"
 msgstr "查看关于我们企业文化的详情"
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
-msgstr "了解 MetaTrader 5 进行Meta资产交易的基本概念。"
+msgstr "了解MetaTrader 5进行Meta资产交易的基本概念。"
 
 msgid "Learn the basic concepts of trading metal pairs on our MetaTrader 5 platform."
-msgstr "了解 MetaTrader 5 平台进行金属对交易的基本概念。"
+msgstr "了解MetaTrader 5平台进行金属对交易的基本概念。"
 
 msgid "Learn the basics of metals trading and the categories of metals available."
 msgstr "了解金属交易的基本知识以及可用的金属类别。"
@@ -6102,7 +6096,7 @@ msgid "Legal Compliance"
 msgstr "遵守法律"
 
 msgid "Less than $100,000"
-msgstr "少于 $100,000"
+msgstr "少于$100,000"
 
 msgid "Less than $25,000"
 msgstr "少于$25,000"
@@ -6153,16 +6147,16 @@ msgid "Leverage gives you the ability to trade a larger position using your exis
 msgstr "杠杆使您能够以现有资本进行更大头寸交易。"
 
 msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "杠杆率是基于初始存款的可控制资本额。例如，100: 1 杠杆将允许您仅使用 1,000 美元本身存款控制100,000 美元。"
+msgstr "杠杆率是基于初始存款的可控制资本额。例如，100: 1杠杆将允许您仅使用1,000美元本身存款控制100,000美元。"
 
 msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 1:100 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "杠杆率是基于初始存款的可控制资本额。例如，1:100 杠杆将允许您仅使用 1,000 美元本身存款控制100,000 美元。"
+msgstr "杠杆率是基于初始存款的可控制资本额。例如，1:100杠杆将允许您仅使用1,000美元本身存款控制100,000美元。"
 
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "通过杠杆社交媒体工具标识、引入并转换潜在新客户和业务合作伙伴"
 
 msgid "Leverage up to 1:100"
-msgstr "杠杆率高达 1: 100"
+msgstr "杠杆率高达1: 100"
 
 msgid "Leverage up to 1:500"
 msgstr "杠杆率高达 1: 500"
@@ -6349,6 +6343,9 @@ msgstr "外汇和差价合约的MT5 真实资金账户。"
 
 msgid "MT5 real-money account for Volatility Indices only."
 msgstr "波动指数专用的MT5 真实资金账户。"
+
+msgid "MT5 trading platform links:"
+msgstr "MT5 交易平台链接:"
 
 msgid "MacOS"
 msgstr "MacOS"
@@ -6650,6 +6647,9 @@ msgstr "方式"
 msgid "Min"
 msgstr "最小"
 
+msgid "Min / Max withdrawal"
+msgstr ""
+
 msgid "Min Withdrawal"
 msgstr "最小提款额"
 
@@ -6664,9 +6664,6 @@ msgstr "最小交易增额"
 
 msgid "Min. Volume<br>(Lot Size)"
 msgstr "最小交易额<br>(手量)"
-
-msgid "Min: 10 Max: 2000"
-msgstr "最小: 10 最大: 2000"
 
 msgid "Minimum Spread"
 msgstr "最小价差"
@@ -6825,7 +6822,7 @@ msgid "N. Force Majeure Events"
 msgstr "十四、不可抗力事件"
 
 msgid "N/A"
-msgstr ""
+msgstr "不可用"
 
 msgid "Name"
 msgstr "姓名"
@@ -6883,6 +6880,9 @@ msgstr "从未使用过"
 
 msgid "New Account"
 msgstr "新账户"
+
+msgid "New MT5 password"
+msgstr "MT5新密码"
 
 msgid "New Password"
 msgstr "新密码"
@@ -7767,7 +7767,7 @@ msgid "Please note that due to their over-the-counter nature, the prices of the 
 msgstr "请注意，由于其场外交易性质，OTC 指数和股票的价格与中央交易所的相应指数和股票价格有所不同。"
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
-msgstr ""
+msgstr "请注意，根据我们的%1合约规格%2，一手交易量相当于100个单位。"
 
 msgid "Please note that one lot is equivalent to 100 units, based on our contract specifications. Your profit or loss will be calculated as follows:"
 msgstr "请注意，根据我们的合约规格，一手交易量相当于100个单位。您的利润或亏损的计算方法如下:"
@@ -9630,9 +9630,6 @@ msgstr "数据保护法律和法规规定了个人信息使用者应承担的义
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "欧元指数是加权指数，衡量欧元相对5种全球货币（美元、澳元、英镑、日元、加元）的价值，每种货币的权重均为 20%。"
 
-msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
-msgstr "Eurobasket Wolves 本地篮球俱乐部成立于2002年。它通过俱乐部和学校项目教导青年打篮球。它的U8、U10男女球队和U14、U16女子球队曾经参加国家级竞赛。它也是马耳他首家在学校场地成立课余篮球训练项目的篮球俱乐部。"
-
 msgid "The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers."
 msgstr "欧盟委员会于2012年确认二元期权交易是一种金融工具，提高了拥有执照的经纪商的可信性。"
 
@@ -10639,9 +10636,6 @@ msgstr "不需拥有实物也能交易比特币、以太币和莱特币。我们
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "在我们受欢迎的多资产平台进行外汇和差价合约交易。"
 
-msgid "Trade Forex and CFDs with a powerful platform recognised as the global standard."
-msgstr "透过被公认为符合全球标准的强大平台进行外汇和差价合约交易。"
-
 msgid "Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools."
 msgstr "使用具高度竞争力的杠杆率进行外汇和差价合约 (cfd) 交易。MetaTrader 5 是提供出色的交易选项和技术分析工具的多资产平台。"
 
@@ -10696,11 +10690,11 @@ msgstr "根据您的首选策略交易多空头寸。"
 msgid "Trade metals on competitive fixed and variable spreads."
 msgstr "透过有竞争力的固定和可变价差交易金属"
 
+msgid "Trade on MT5 web platform"
+msgstr "MT5网上平台交易"
+
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "在包括外汇、指数、商品等在内的基本市场交易。"
-
-msgid "Trade on web platform"
-msgstr "网上平台交易"
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "根据您的风险承受能力进行交易。切勿借钱交易。"
@@ -10791,9 +10785,6 @@ msgstr "二元期权交易是投机活动，有很大风险，可能会导致您
 
 msgid "Trading manual"
 msgstr "Trading manual"
-
-msgid "Trading platform quick links:"
-msgstr "交易平台快速链接："
 
 msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
 msgstr "金融市场交易可能使人上瘾。请填写下表以限制您对本网站的参与。您也可发送签名信或传真到我们的客服团队。一旦设定好，您只能收紧您的限制。限制只能在 7 天后取消或放宽，自我禁止期在确认后不能取消或更改。若要解除或增加您的限制，请联系 <a href=\"%1\">客服部</a>。"
@@ -10970,7 +10961,7 @@ msgid "USD Index – Measures the value of the US Dollar against a basket of fiv
 msgstr "美元指数 - 衡量美元相对于五种全球货币（欧元、英镑、日元、加元、澳元）的价值，每种货币的权重均为20%。"
 
 msgid "USD/EUR"
-msgstr ""
+msgstr "美元/欧元"
 
 msgid "UX / UI experience"
 msgstr "UX / UI 经验"
@@ -11139,6 +11130,9 @@ msgstr "验证码错误。请使用以下链接发送到您的电子邮件。"
 
 msgid "Verify main password"
 msgstr "主密码验证"
+
+msgid "Verify new MT5 password"
+msgstr "MT5新密码验证"
 
 msgid "Verify new password"
 msgstr "验证新密码"

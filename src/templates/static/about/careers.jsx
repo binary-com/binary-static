@@ -48,7 +48,7 @@ const ColumnSM = ({ gr, header, paragraph }) => (
 const ColumnLG = ({ center, image, text }) => (
     <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
         <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
-        <div className='fill-bg-color'>
+        <div className='white-bg-color'>
             <p className='column-margin fill-text'>{text}</p>
         </div>
     </div>
@@ -78,37 +78,41 @@ const Careers = () => (
                 </div>
             </div>
         </div>
-        <div className='container margin-top-100'>
-            <div className='gr-row gr-padding-30'>
+        <div className='margin-top-100'>
+            <div className='container gr-row gr-padding-30'>
                 <ColumnSM header={it.L('Ideas')}    paragraph={it.L('Where new ideas trump safe, old ones. And you\'re free to work your way, free from hierarchies and red tape.')} />
                 <ColumnSM header={it.L('Freedom')}  paragraph={it.L('Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers.')} />
                 <ColumnSM header={it.L('Teamwork')} paragraph={it.L('Where teamwork and a collaborative culture form the platform for personal and corporate growth.')} />
                 <ColumnSM header={it.L('Support')}  paragraph={it.L('Where supportive colleagues are like a second family.')} />
             </div>
 
-            <div className='gr-row gr-padding-30 center-text'>
-                <div className='gr-12 gr-padding-30'>
-                    <h1>{it.L('Our locations')}</h1>
-                </div>
-                <ColumnLG image='my@2'      text={it.L('Malaysia')} />
-                <ColumnLG image='malta@1'   text={it.L('Malta')} />
-                <ColumnLG image='japan@1'   text={it.L('Japan')} />
-            </div>
-
-            <div className='gr-row gr-padding-30'>
-                <ColumnSM gr='4' header={it.L('Want to telecommute?')} paragraph={it.L('[_1] is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we\'re open to it.', it.website_name) } />
-                <ColumnSM gr='4' header={it.L('Where you can go')}     paragraph={it.L('Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.') } />
-                <ColumnSM gr='4' header={it.L('More benefits')}        paragraph={it.L('We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\'re in Malta, Malaysia, or Japan.')} />
-            </div>
-            <div className='gr-padding-20'>
-                <div className='gr-padding-30 center-text'>
-                    <a className='button' href={it.url_for('open-positions')}>
-                        <span>{it.L('View open positions')}</span>
-                    </a>
+            <div className='fill-bg-color'>
+                <div className='container gr-row gr-padding-30 center-text'>
+                    <div className='gr-12 gr-padding-30'>
+                        <h1>{it.L('Our locations')}</h1>
+                    </div>
+                    <ColumnLG image='my@2'      text={it.L('Malaysia')} />
+                    <ColumnLG image='malta@1'   text={it.L('Malta')} />
+                    <ColumnLG image='japan@1'   text={it.L('Japan')} />
                 </div>
             </div>
 
+            <div className='container'>
+                <div className='gr-row gr-padding-30'>
+                    <ColumnSM gr='4' header={it.L('Want to telecommute?')} paragraph={it.L('[_1] is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we\'re open to it.', it.website_name) } />
+                    <ColumnSM gr='4' header={it.L('Where you can go')}     paragraph={it.L('Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.') } />
+                    <ColumnSM gr='4' header={it.L('More benefits')}        paragraph={it.L('We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\'re in Malta, Malaysia, or Japan.')} />
+                </div>
+                <div className='gr-padding-20'>
+                    <div className='gr-padding-30 center-text'>
+                        <a className='button' href={it.url_for('open-positions')}>
+                            <span>{it.L('View open positions')}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
+        
         <div className='center-banner'>
             <div className='caption-text'>
                 <h1>{it.L('Ideas, opinions and insights from the people behind [_1]', it.website_name)}</h1>

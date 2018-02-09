@@ -5,7 +5,7 @@ const Box = ({ boxes }) => (
         { boxes.map((box, idx) => (
             <div className='list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m' key={idx}>
                 <div className='section fill-bg-color'>
-                    <a href={it.url_for(`get-started-old/${box.id}`)}>
+                    <a href={it.url_for(`get-started/${box.id}`)}>
                         <div id={box.id}></div>
                         <div className='section-header'>{box.header}</div>
                     </a>

@@ -55,17 +55,10 @@ const BinaryLoader = (() => {
     const afterContentChange = (e) => {
         Page.onLoad();
         GTM.pushDataLayer();
-        const this_page = e.detail.getAttribute('data-page');
-        if (this_page in pages_config) {
-            loadHandler(pages_config[this_page]);
-        } else if (/\/get-started\//i.test(window.location.pathname)) {
-            loadHandler(pages_config['get-started']);
-        }
 
         BinarySocket.wait('website_status').then((response) => {
-            const clients_country = response.website_status.clients_country;
             // eu countries code
-            if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(clients_country)) {
+            if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(response.website_status.clients_country)) {
                 applyToAllElements('.eu-show', (el) => { el.setVisibility(1); });
                 applyToAllElements('.eu-hide', (el) => { el.setVisibility(0); });
                 if (/get_started_tabs=mt5/.test(window.location.href)) {
@@ -75,6 +68,14 @@ const BinaryLoader = (() => {
                 applyToAllElements('.eu-hide', (el) => { el.setVisibility(1); });
             }
         });
+
+        const this_page = e.detail.getAttribute('data-page');
+        if (this_page in pages_config) {
+            loadHandler(pages_config[this_page]);
+        } else if (/\/get-started\//i.test(window.location.pathname)) {
+            loadHandler(pages_config['get-started']);
+        }
+
     };
 
     const error_messages = {
