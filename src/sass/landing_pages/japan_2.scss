@@ -102,6 +102,11 @@ form {
         text-align: center;
         margin-top: 50px;
     }
+    h2.email {
+        color: $COLOR_WHITE;
+        text-align: center;
+        margin-top: 50px;
+    }
     .signup-form-input {
         &.center {
             @media (min-width: 576px) {

@@ -413,7 +413,7 @@ const BinaryJapan2 = () => (
                     <div className='gr-row'>
                         <div className='gr-12'>
                             <form id='email_bottom' className='signup-form' noValidate>
-                                <h2 className=''>{it.L('{JAPAN ONLY}Sign up for a free account')}</h2>
+                                <h2 className='email'>{it.L('{JAPAN ONLY}Sign up for a free account')}</h2>
                                 <div className='signup-form-input center'>
                                     <div className='input-group'>
                                         <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
