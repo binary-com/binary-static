@@ -185,7 +185,6 @@ const texts = [
     'Your settings have been updated successfully.',
     'Female',
     'Male',
-    'Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.',
 
     // home and virtual account opening page
     'verification token',
@@ -494,6 +493,7 @@ const texts = [
     'thousand',
     'million',
     'Should start with letter or number, and may contain hyphen and underscore.',
+    'Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.',
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',

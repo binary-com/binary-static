@@ -20,6 +20,7 @@ const RealAccOpening = (() => {
                     form_selector       : form_id,
                     obj_request         : { new_account_real: 1, account_type: 'default' },
                     fnc_response_handler: handleResponse,
+                    geocoder            : true,
                 });
             });
         } else {

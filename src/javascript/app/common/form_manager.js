@@ -130,7 +130,7 @@ const FormManager = (() => {
                     return;
                 }
                 if (options.geocoder) {
-                    geocoder(getFormData(options.form_selector), options.geocoder);
+                    geocoder(getFormData(options.form_selector));
                 }
                 disableButton($btn_submit);
                 form.can_submit = false;
@@ -147,8 +147,13 @@ const FormManager = (() => {
 
     const geocoder = (data, callback) => {
         if (!data) return;
-        const address = `${data.address_line_1} ${data.address_line_2} ${data.address_postcode} ${data.address_city} ${data.address_state}`;
-        Geocoder.validate(address).then(status => callback(status));
+        const address = `${data.address_line_1} ${data.address_line_2}, ${data.address_city}, ${data.address_state} ${data.address_postcode}, ${data.country_code}`;
+        const residence = data.country_code;
+        Geocoder.validate(address, residence).then(status => {
+            if (typeof callback === 'function') {
+                callback(status);
+            }
+        });
     };
 
     return {

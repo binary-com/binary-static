@@ -117,28 +117,9 @@ const PersonalDetails = (() => {
             fnc_response_handler: setDetailsResponse,
             fnc_additional_check: additionalCheck,
             enable_button       : true,
-            geocoder            : geocodingResponse,
+            geocoder            : true,
         });
-        FormManager.geocoder(data, geocodingResponse);
-    };
-
-    const geocodingResponse = (status) => {
-        const $geocode_error = $('#geocode-error');
-
-        if (/ZERO_RESULTS/.test(status)) {
-            if ($geocode_error.length) {
-                $geocode_error.fadeIn(0);
-                return;
-            }
-            const $last_child = $('#address_form').children(':last');
-            $last_child.parent().append($('<p/>', {
-                id   : 'geocode-error',
-                class: 'notice-msg no-margin',
-                text : localize('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.'),
-            }));
-        } else if (/OK/.test(status)) {
-            $geocode_error.fadeOut(0);
-        }
+        FormManager.geocoder(data);
     };
 
     const displayGetSettingsData = (data, populate = true) => {

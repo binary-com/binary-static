@@ -55,7 +55,7 @@ const Financial = () => (
                 />
             </Fieldset>
 
-            <Fieldset legend={it.L('Address')}>
+            <Fieldset id='address_form' legend={it.L('Address')}>
                 <AddressLine1 />
                 <AddressLine2 />
                 <AddressCity />

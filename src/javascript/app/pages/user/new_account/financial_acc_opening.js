@@ -57,6 +57,7 @@ const FinancialAccOpening = (() => {
             form_selector       : form_id,
             obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
             fnc_response_handler: handleResponse,
+            geocoder            : true,
         });
     };
 
