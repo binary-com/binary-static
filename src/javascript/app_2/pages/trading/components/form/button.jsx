@@ -2,7 +2,7 @@ import React from 'react';
 
 const Button = ({
     id,
-    className='',
+    className = '',
     text,
     has_effect,
     is_disabled,

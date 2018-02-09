@@ -15,8 +15,10 @@ const Duration = ({
         <fieldset>
             <ClockHeader header={localize('Trade Duration')} />
             <Dropdown
-                list={[{name: localize('Duration'), value: 'duration'},
-                       {name: localize('End Time'),  value: 'endtime'}]}
+                list={[
+                    { name: localize('Duration'), value: 'duration' },
+                    { name: localize('End Time'), value: 'endtime' },
+                ]}
                 selected={expiry_type}
                 value={expiry_type}
                 name='expiry_type'

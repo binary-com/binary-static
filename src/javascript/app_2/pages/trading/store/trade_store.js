@@ -1,5 +1,4 @@
 import { observable, action, reaction } from 'mobx';
-import Client from '../../../../app/base/client';
 import Reactions from './reactions';
 import ContractType from './logic/contract_type';
 import getCurrencies from './logic/currency';
@@ -7,6 +6,7 @@ import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
 import onSymbolChange from './logic/symbol';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
+import Client from '../../../../app/base/client';
 import { cloneObject } from '../../../../_common/utility';
 
 const event_map = {

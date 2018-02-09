@@ -4,7 +4,7 @@ import { connect } from '../store/connect';
 const Contracts = ({ list }) => (
     Object.keys(list).map((category, idx) => (
         <React.Fragment key={idx}>
-            <optgroup key={idx} label={category}></optgroup>
+            <optgroup key={idx} label={category} />
             {list[category].map(type => (
                 <option key={type.name} value={type.name}>{type.title}</option>
             ))}

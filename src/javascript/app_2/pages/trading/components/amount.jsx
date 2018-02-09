@@ -8,7 +8,7 @@ import { localize } from '../../../../_common/localize';
 const Currencies = ({ list }) => (
     Object.keys(list).map((type, idx) => (
         <React.Fragment key={idx}>
-            <optgroup key={idx} label={type}></optgroup>
+            <optgroup key={idx} label={type} />
             {list[type].map(cur => (
                 <option key={cur} value={cur}>{cur}</option>
             ))}
@@ -25,8 +25,10 @@ const Amount = ({
 }) => (
         <fieldset>
             <Dropdown
-                list={[{name: localize('Payout'), value: 'payout'},
-                       {name: localize('Stake'),  value: 'stake'}]}
+                list={[
+                    { name: localize('Payout'), value: 'payout' },
+                    { name: localize('Stake'),  value: 'stake' },
+                ]}
                 selected={basis}
                 value={basis}
                 name='basis'
@@ -34,7 +36,7 @@ const Amount = ({
             />
 
             {Client.get('currency') ?
-                <span className={`symbols ${currency.toLowerCase()}`}></span> :
+                <span className={`symbols ${currency.toLowerCase()}`} /> :
                 <select name='currency' value={currency} onChange={onChange}>
                     <Currencies list={currencies_list} />
                 </select>

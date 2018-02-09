@@ -1,16 +1,16 @@
 import React from 'react';
 
-class Dropdown extends React.Component {
+class Dropdown extends React.PureComponent {
     constructor(props) {
         super(props);
-        this.handleVisibility = this.handleVisibility.bind(this);
-        this.handleSelect = this.handleSelect.bind(this);
-        this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.handleVisibility   = this.handleVisibility.bind(this);
+        this.handleSelect       = this.handleSelect.bind(this);
+        this.setWrapperRef      = this.setWrapperRef.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.state = {
-            listVisible: false,
-            selected   : this.props.selected,
-            value      : this.props.value,
+            is_list_visible: false,
+            selected       : this.props.selected,
+            value          : this.props.value,
         };
     }
 
@@ -31,55 +31,52 @@ class Dropdown extends React.Component {
     }
 
     setWrapperRef(node) {
-        this.wrapperRef = node;
+        this.wrapper_ref = node;
     }
 
     handleClickOutside(event) {
-        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-            if (this.state.listVisible) {
-                this.setState({ listVisible: false });
-            }
+        if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_list_visible) {
+            this.setState({ is_list_visible: false });
         }
     }
 
     handleVisibility() {
-        if (!this.state.listVisible) {
-            this.setState({ listVisible: true });
-        }
-        else {
-            this.setState({ listVisible: false });
-        }
+        this.setState({ is_list_visible: !this.state.is_list_visible });
     }
 
     render() {
         return (
-          <div ref={this.setWrapperRef} className={`dropdown-container ${this.state.listVisible ? 'show' : ''}`}>
-              <div className={`dropdown-display ${this.state.listVisible ? 'clicked': ''}`}
-                   onClick={this.handleVisibility} onBlur={this.handleVisibility}>
-                  <span name={this.props.name}
-                        value={this.state.value}>{this.state.selected}</span>
-              </div>
-              <span className='select-arrow'></span>
-              <div className='dropdown-list'>
-                  <div className='list-container'>
-                  { this.props.list.length ?
-                    this.props.list.map((item, idx) => (
-                      <div
-                          className={`list-item ${ this.state.value === item.value ? 'selected':''}`}
-                          key={idx}
-                          name={this.props.name}
-                          value={item.value}
-                          onClick={this.handleSelect.bind(null, item)}
-                      >
-                          <span>{item.name}</span>
-                      </div>
-                  ))
-                  :
-                  <div className='list-item'><span className='item-disabled'>No items</span></div>
-                  }
-                  </div>
-              </div>
-          </div>
+            <div ref={this.setWrapperRef} className={`dropdown-container ${this.state.is_list_visible ? 'show' : ''}`}>
+                <div
+                    className={`dropdown-display ${this.state.is_list_visible ? 'clicked': ''}`}
+                    onClick={this.handleVisibility}
+                    onBlur={this.handleVisibility}
+                >
+                    <span name={this.props.name} value={this.state.value}>{this.state.selected}</span>
+                </div>
+                <span className='select-arrow' />
+                <div className='dropdown-list'>
+                    <div className='list-container'>
+                    { this.props.list.length ?
+                        this.props.list.map((item, idx) => (
+                            <div
+                                className={`list-item ${ this.state.value === item.value ? 'selected':''}`}
+                                key={idx}
+                                name={this.props.name}
+                                value={item.value}
+                                onClick={this.handleSelect.bind(null, item)}
+                            >
+                                <span>{item.name}</span>
+                            </div>
+                        ))
+                    :
+                        <div className='list-item'>
+                            <span className='item-disabled'>No items</span>
+                        </div>
+                    }
+                    </div>
+                </div>
+            </div>
         );
     }
 }

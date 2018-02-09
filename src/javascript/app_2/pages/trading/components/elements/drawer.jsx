@@ -1,25 +1,24 @@
 import React from 'react';
 import Url from '../../../../../_common/url';
 
-class ToggleDrawer extends React.Component {
-
+class ToggleDrawer extends React.PureComponent {
     constructor(props) {
         super(props);
-        this.setRef = this.setRef.bind(this);
-        this.showDrawer = this.showDrawer.bind(this);
+        this.setRef      = this.setRef.bind(this);
+        this.showDrawer  = this.showDrawer.bind(this);
         this.closeDrawer = this.closeDrawer.bind(this);
     }
 
     setRef(node) {
-        this.Ref = node;
+        this.ref = node;
     }
 
     showDrawer() {
-        this.Ref.show();
+        this.ref.show();
     }
 
     closeDrawer() {
-        this.Ref.hide();
+        this.ref.hide();
     }
 
     render() {
@@ -37,17 +36,16 @@ class ToggleDrawer extends React.Component {
     }
 }
 
-class Drawer extends React.Component {
-
+class Drawer extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            drawerVisible: false,
+            is_drawer_visible: false,
         };
         this.setRef = this.setRef.bind(this);
-        this.show = this.show.bind(this);
-        this.hide = this.hide.bind(this);
-        this.scrollToggle = this.scrollToggle.bind(this);
+        this.show   = this.show.bind(this);
+        this.hide   = this.hide.bind(this);
+        this.scrollToggle       = this.scrollToggle.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
     }
 
@@ -60,30 +58,25 @@ class Drawer extends React.Component {
     }
 
     setRef(node) {
-        this.Ref = node;
+        this.ref = node;
     }
 
     scrollToggle(state) {
-        this.isOpen = state;
-        if (this.isOpen) {
-            document.body.classList.add('noScroll');
-        }
-        else {
-            document.body.classList.remove('noScroll');
-        }
+        this.is_open = state;
+        document.body.classList.toggle('no-scroll', this.is_open);
     }
 
     show() {
-        this.setState({ drawerVisible: true });
+        this.setState({ is_drawer_visible: true });
     }
 
     hide() {
-        this.setState({ drawerVisible: false });
+        this.setState({ is_drawer_visible: false });
     }
 
     handleClickOutside(event) {
         event.stopPropagation();
-        if (this.Ref && !this.Ref.contains(event.target)) {
+        if (this.ref && !this.ref.contains(event.target)) {
             this.hide();
         }
     }
@@ -91,16 +84,20 @@ class Drawer extends React.Component {
     render() {
         return (
             <aside className='drawer-container'>
-                <div className={`drawer-bg ${this.state.drawerVisible ? 'show' : 'hide'}`}>
-                    <div ref={this.setRef} className={`drawer ${this.state.drawerVisible ? 'visible' : ''} ${this.props.alignment}`}>{this.props.children}</div>
+                <div className={`drawer-bg ${this.state.is_drawer_visible ? 'show' : 'hide'}`}>
+                    <div
+                        ref={this.setRef}
+                        className={`drawer ${this.state.is_drawer_visible ? 'visible' : ''} ${this.props.alignment}`}
+                    >
+                        {this.props.children}
+                    </div>
                 </div>
             </aside>
         );
     }
 }
 
-class DrawerHeader extends React.Component {
-
+class DrawerHeader extends React.PureComponent {
     render() {
         return (
             <React.Fragment>
@@ -125,8 +122,7 @@ class DrawerHeader extends React.Component {
     }
 }
 
-class DrawerItem extends React.Component {
-
+class DrawerItem extends React.PureComponent {
     render() {
         return (
             <div className='drawer-item'>
@@ -140,7 +136,6 @@ class DrawerItem extends React.Component {
 
 module.exports = {
     Drawer,
-    DrawerHeader,
     DrawerItem,
     ToggleDrawer,
 };
