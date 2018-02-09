@@ -161,6 +161,9 @@
         align-items: flex-end;
         justify-content: center;
 
+        &.pull-text {
+            align-items: flex-start;
+        }
         p {
             margin: 0;
             color: $COLOR_BLUE;

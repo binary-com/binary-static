@@ -302,7 +302,7 @@ const BinaryJapan = () => (
                                         {it.L('{JAPAN ONLY}Maximum loss: not guaranteed')}</p>
                                 </div>
                             </div>
-                            <div className='card-footer'>
+                            <div className='card-footer pull-text'>
                                 <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000')}</p>
                             </div>
                         </div>
