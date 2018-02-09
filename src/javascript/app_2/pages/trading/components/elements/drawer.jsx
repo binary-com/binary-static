@@ -49,14 +49,6 @@ class Drawer extends React.PureComponent {
         this.handleClickOutside = this.handleClickOutside.bind(this);
     }
 
-    componentDidMount() {
-        document.addEventListener('mousedown', this.handleClickOutside);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleClickOutside);
-    }
-
     setRef(node) {
         this.ref = node;
     }
@@ -84,7 +76,7 @@ class Drawer extends React.PureComponent {
     render() {
         return (
             <aside className='drawer-container'>
-                <div className={`drawer-bg ${this.state.is_drawer_visible ? 'show' : 'hide'}`}>
+                <div className={`drawer-bg ${this.state.is_drawer_visible ? 'show' : 'hide'}` } onClick={this.handleClickOutside}>
                     <div
                         ref={this.setRef}
                         className={`drawer ${this.state.is_drawer_visible ? 'visible' : ''} ${this.props.alignment}`}

@@ -15,9 +15,11 @@ body.no-scroll {
         width: 100vw;
         height: 100vh;
         z-index: 665;
+        visibility: hidden;
 
         &.show {
             animation: dim 0.25s ease-out forwards;
+            visibility: visible;
         }
         &.hide {
             animation: undim 0.25s ease-out forwards;
