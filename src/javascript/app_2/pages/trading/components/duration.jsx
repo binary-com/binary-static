@@ -29,7 +29,7 @@ const Duration = ({
                         type='number'
                         name='duration'
                         value={duration}
-                        on_change={onChange}
+                        onChange={onChange}
                     />
                     <select name='duration_unit' value={duration_unit} onChange={onChange}>
                         {Object.keys(duration_units_list).map((u) => (

@@ -17,19 +17,6 @@ class FieldGroup extends React.PureComponent {
 }
 
 class InputField extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.update = this.update.bind(this);
-        this.state = {
-            value: this.props.value,
-        };
-    }
-
-    update(e) {
-        this.setState({value: e.target.value});
-        this.props.onChange(e);
-    }
-
     render() {
         return (
             <div className='input-field'>
@@ -45,8 +32,8 @@ class InputField extends React.PureComponent {
                     className={this.props.class1 || undefined}
                     placeholder={this.props.placeholder || undefined}
                     disabled={this.props.is_disabled}
-                    value={this.state.value}
-                    onChange={this.update}
+                    defaultValue={this.props.value}
+                    onChange={this.props.onChange}
                     required={this.props.required || undefined}
                 />
                 {this.props.helper ?
