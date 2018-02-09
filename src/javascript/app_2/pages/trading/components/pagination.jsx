@@ -10,11 +10,13 @@ class Pagination extends React.PureComponent {
     }
 
     handleChange = (newPage) => {
+        if (newPage === this.state.current) return;
+
         const { pageSize } = this.props;
 
-        this.setState(
+        this.setState({
             current: newPage
-        );
+        });
 
         this.props.onChange(newPage, pageSize);
     }
@@ -36,12 +38,43 @@ class Pagination extends React.PureComponent {
         }
     }
 
+    renderItems = () => {
+        const { current } = this.state;
+        const items = [];
+
+        for (let pageNum = 1; pageNum <= this.calcNumOfPages(); pageNum++) {
+            items.push((
+                <li
+                    className={`pagination-item ${pageNum === current ? 'pagination-item-active' : ''}`}
+                    key={pageNum}
+                    onClick={() => {
+                        this.handleChange(pageNum)
+                    }}
+                >
+                    <a>{pageNum}</a>
+                </li>
+            ));
+        }
+        return items;
+    }
+
     render() {
+        const { current } = this.state;
         return (
-            <ul>
-                <li onClick={this.handlePrev}><a>prev</a></li>
-                {this.state.current}
-                <li onClick={this.handleNext}><a>next</a></li>
+            <ul className='pagination'>
+                <li
+                    className={`pagination-prev ${current === 1 ? 'pagination-disabled' : ''}`}
+                    onClick={this.handlePrev}
+                >
+                    <a>&lt;</a>
+                </li>
+                {this.renderItems()}
+                <li
+                    className={`pagination-next ${current === this.calcNumOfPages() ? 'pagination-disabled' : ''}`}
+                    onClick={this.handleNext}
+                >
+                    <a>&gt;</a>
+                </li>
             </ul>
         );
     }
@@ -49,7 +82,8 @@ class Pagination extends React.PureComponent {
 
 Pagination.defaultProps = {
     total: 0,
-    pageSize: 10
+    pageSize: 10,
+    onChange: (page, len) => {console.log(page, len)}
 };
 
 export default Pagination;
