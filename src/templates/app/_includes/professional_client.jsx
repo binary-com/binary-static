@@ -4,9 +4,9 @@ import { Fieldset } from '../../_common/components/forms.jsx';
 const ProfessionalClient = () => (
     <Fieldset legend={it.L('Professional Client')} id='fs_professional' className='invisible'>
         <div className='gr-padding-10 gr-12'>
-            <input id='chk_professional' type='checkbox' />
-            <label htmlFor='chk_professional'>{it.L('I want to be treated as a professional client.')}</label>
-            <a id='professional_info_toggle' className='toggle-arrow' href='javascript:;'>{it.L('What is this?')}</a>
+            <p className='no-margin'>{it.L('By default, all clients are treated as retail, do you prefer to be treated as a professional client if you match the necessary criteria?')}
+                <a id='professional_info_toggle' style={{padding: '0 10px'}}className='toggle-arrow' href='javascript:;'>{it.L('What is this?')}</a>
+            </p>
             <div id='professional_info' style={{display: 'none'}}>
                 <div id='non_uk' className='invisible'>
                     <p>{it.L('In order for us to be able to treat you as Professional Client, as a minimum, you have to satisfy two of the following criteria:')}</p>
@@ -26,14 +26,21 @@ const ProfessionalClient = () => (
                     <li>{it.L('Proof of your employment position.')}</li>
                 </ul>
             </div>
+
+        </div>
+        <div className='gr-padding-10 gr-12'>
+            <input id='chk_professional' type='checkbox' />
+            <label htmlFor='chk_professional'>{it.L('I want to be treated as a professional client.')}</label>
             <div id='popup' className='invisible gr-padding-20 gr-gutter'>
                 <h2>{it.L('Professional Clients')}</h2>
                 <p>{it.L('As a Professional Client, you will be offered a lower degree of client protection, wherein:')}</p>
                 <ul className='bullet'>
                     <li>{it.L('The Company presumes that you possess the experience, knowledge and expertise to make your own investment decisions and properly assess the risks involved in relation to the requested transaction/s;')}</li>
                     <li>{it.L('The Company is neither obliged to conduct an appropriateness test, nor to provide you with any risk warnings.')}</li>
+                    <li>{it.L('You will not be eligible for any compensation under the Investor Compensation Scheme.')}</li>
                 </ul>
-                <p>{it.L('As a Professional Client, you are responsible for keeping the Company informed about any change which could affect your categorization as a Professional Client. At any time, you may choose to be treated as a Retail Client, even if you would ordinarily fall within the definition of a Professional Client.')}</p>
+                <p>{it.L('As a Professional Client, you are responsible for keeping the Company informed about any change which could affect your categorization as a Professional Client.')}</p>
+                <p>{it.L('At any time, you may choose to be treated as a Retail Client, even if you would ordinarily fall within the definition of a Professional Client.')}</p>
                 <div className='center-text'>
                     <a className='button' id='btn_accept' href='javascript:;'><span>{it.L('ACCEPT')}</span></a>
                     <a className='button' id='btn_decline' data-value='decline' href='javascript:;'><span>{it.L('DECLINE')}</span></a>

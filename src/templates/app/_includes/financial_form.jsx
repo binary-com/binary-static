@@ -34,26 +34,24 @@ const Values = () => (
     </React.Fragment>
 );
 
-const FinancialForm = () => (
-    <Fieldset legend={it.L('Financial Information')}>
+const TradingExperienceForm = () => (
+    <Fieldset id='trading_experience_form' legend={it.L('Trading Experience')}>
         <SelectRow con={Experience} id='forex_trading_experience' label={it.L('Forex trading experience')} />
         <SelectRow con={Frequency}  id='forex_trading_frequency'  label={it.L('Forex trading frequency')} />
 
-        <SelectRow con={Experience} id='indices_trading_experience' label={it.L('Indices trading experience')} />
-        <SelectRow con={Frequency}  id='indices_trading_frequency'  label={it.L('Indices trading frequency')} />
+        <SelectRow con={Experience} id='other_derivatives_trading_experience' label={it.L('Binary options trading experience')} />
+        <SelectRow con={Frequency}  id='other_derivatives_trading_frequency'  label={it.L('Binary options trading frequency')} />
 
-        <SelectRow con={Experience} id='commodities_trading_experience' label={it.L('Commodities trading experience')} />
-        <SelectRow con={Frequency}  id='commodities_trading_frequency'  label={it.L('Commodities trading frequency')} />
+        <SelectRow con={Experience} id='cfds_trading_experience' label={it.L('CFDs trading experience')} />
+        <SelectRow con={Frequency}  id='cfds_trading_frequency'  label={it.L('CFDs trading frequency')} />
 
-        <SelectRow con={Experience} id='stocks_trading_experience' label={it.L('Stocks trading experience')} />
-        <SelectRow con={Frequency}  id='stocks_trading_frequency'  label={it.L('Stocks trading frequency')} />
+        <SelectRow con={Experience} id='other_instruments_trading_experience' label={it.L('Trading experience in other financial instruments?')} />
+        <SelectRow con={Frequency}  id='other_instruments_trading_frequency'  label={it.L('Trading frequency in other financial instruments?')} />
+    </Fieldset>
+);
 
-        <SelectRow con={Experience} id='other_derivatives_trading_experience' label={it.L('Binary options or other financial derivatives trading experience')} />
-        <SelectRow con={Frequency}  id='other_derivatives_trading_frequency'  label={it.L('Binary options or other financial derivatives trading frequency')} />
-
-        <SelectRow con={Experience} id='other_instruments_trading_experience' label={it.L('Other financial instruments trading experience')} />
-        <SelectRow con={Frequency}  id='other_instruments_trading_frequency'  label={it.L('Other financial instruments trading frequency')} />
-
+const FinancialInformationForm = () => (
+    <Fieldset id='financial_info_form' legend={it.L('Financial Information')}>
         <FormRow id='income_source' label={it.L('Income Source')} type='select'>
             <option value=''>{it.L('Please select')}</option>
             <option value='Salaried Employee'>{it.L('Salaried Employee')}</option>
@@ -135,6 +133,13 @@ const FinancialForm = () => (
             <Values />
         </FormRow>
     </Fieldset>
+);
+
+const FinancialForm = () => (
+    <React.Fragment>
+        <TradingExperienceForm />
+        <FinancialInformationForm />
+    </React.Fragment>
 );
 
 export default FinancialForm;

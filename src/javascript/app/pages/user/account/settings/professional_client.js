@@ -54,9 +54,13 @@ const professionalClient = (() => {
                 $(popup_selector).find('#btn_accept, #btn_decline').off('click').on('click dblclick', function() {
                     if ($(this).attr('data-value') === 'decline') {
                         $chk_professional.prop('checked', false);
+                        $('#trading_experience_form').setVisibility(1);
                     }
                     $('#professional_popup').remove();
                 });
+                $('#trading_experience_form').setVisibility(0);
+            } else {
+                $('#trading_experience_form').setVisibility(1);
             }
         });
 
@@ -93,7 +97,6 @@ const professionalClient = (() => {
                     }
                 })
                 .setVisibility(1);
-
         }
     };
 
