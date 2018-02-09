@@ -10,10 +10,11 @@ const Duration = ({
     duration,
     duration_unit,
     duration_units_list,
+    server_time,
     onChange,
 }) => (
         <fieldset>
-            <ClockHeader header={localize('Trade Duration')} />
+            <ClockHeader time={server_time} header={localize('Trade Duration')} />
             <Dropdown
                 list={[
                     { name: localize('Duration'), value: 'duration' },
@@ -53,6 +54,7 @@ export default connect(
         duration           : trade.duration,
         duration_unit      : trade.duration_unit,
         duration_units_list: trade.duration_units_list,
+        server_time        : trade.server_time,
         onChange           : trade.handleChange,
     })
 )(Duration);

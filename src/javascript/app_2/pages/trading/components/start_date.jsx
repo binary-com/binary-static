@@ -8,10 +8,11 @@ const StartDate = ({
     start_date,
     start_dates_list,
     start_time,
+    server_time,
     onChange,
 }) => (
     <fieldset>
-        <ClockHeader header={localize('Start time')} />
+        <ClockHeader time={server_time} header={localize('Start time')} />
         <select name='start_date' value={start_date} onChange={onChange}>
             <option value='now'>{localize('Now')}</option>
             {start_dates_list.map(option => {
@@ -35,6 +36,7 @@ export default connect(
         start_date      : trade.start_date,
         start_dates_list: trade.start_dates_list,
         start_time      : trade.start_time,
+        server_time     : trade.server_time,
         onChange        : trade.handleChange,
     })
 )(StartDate);

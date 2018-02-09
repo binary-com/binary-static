@@ -33,6 +33,14 @@ export default class TradeStore {
             });
         }
         this.duration_units_list = getDurationUnits();
+        this._time_interval = setInterval(() => {
+            this.server_time = window.time;
+        }, 1000);
+    }
+
+    @action.bound dispose() {
+        clearInterval(this._time_interval);
+        this._time_interval = undefined;
     }
 
     _initReactions() {
@@ -116,5 +124,8 @@ export default class TradeStore {
 
     // Test
     @observable message = '';
-    @observable tick = '';
+    @observable tick    = '';
+
+    // TODO: retrieve from upper state
+    @observable server_time = undefined;
 };
