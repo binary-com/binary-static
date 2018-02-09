@@ -66,15 +66,6 @@ export default class TradeStore {
         this.dispatch(name, value);
     }
 
-    @action.bound handleDropDownChange(e) {
-        const name = e.target.getAttribute('name');
-        const value = e.target.getAttribute('value');
-        if (name && value) {
-            this[name] = value;
-            this.dispatch(name, value);
-        }
-    }
-
     @action.bound dispatch(name, value) {
         const handler = event_map[name];
         if (typeof handler === 'function') {

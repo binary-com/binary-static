@@ -22,7 +22,6 @@ const Amount = ({
     currencies_list,
     amount,
     onChange,
-    onSelectChange,
 }) => (
         <fieldset>
             <Dropdown
@@ -31,7 +30,7 @@ const Amount = ({
                 selected={basis}
                 value={basis}
                 name='basis'
-                on_change={onSelectChange}
+                onChange={onChange}
             />
 
             {Client.get('currency') ?
@@ -59,6 +58,5 @@ export default connect(
         currencies_list: trade.currencies_list,
         amount         : trade.amount,
         onChange       : trade.handleChange,
-        onSelectChange : trade.handleDropDownChange,
     })
 )(Amount);

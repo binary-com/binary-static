@@ -22,10 +22,10 @@ class Dropdown extends React.Component {
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
-    handleSelect(item, event) {
+    handleSelect(item) {
         if (item.value !== this.state.value) {
             this.setState({ selected: item.name, value: item.value });
-            this.props.on_change(event);
+            this.props.onChange({ target: { name: this.props.name, value: item.value } });
         }
         this.handleVisibility();
     }

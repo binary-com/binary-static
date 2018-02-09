@@ -11,7 +11,6 @@ const Duration = ({
     duration_unit,
     duration_units_list,
     onChange,
-    onSelectChange,
 }) => (
         <fieldset>
             <ClockHeader header={localize('Trade Duration')} />
@@ -21,7 +20,7 @@ const Duration = ({
                 selected={expiry_type}
                 value={expiry_type}
                 name='expiry_type'
-                on_change={onSelectChange}
+                onChange={onChange}
             />
 
             {expiry_type === 'duration' ?
@@ -53,6 +52,5 @@ export default connect(
         duration_unit      : trade.duration_unit,
         duration_units_list: trade.duration_units_list,
         onChange           : trade.handleChange,
-        onSelectChange     : trade.handleDropDownChange,
     })
 )(Duration);
