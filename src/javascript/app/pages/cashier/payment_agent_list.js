@@ -29,7 +29,10 @@ const PaymentAgentList = (() => {
     };
 
     const sendRequest = (country) => {
-        BinarySocket.send({ paymentagent_list: country }).then((response) => {
+        BinarySocket.send({
+            paymentagent_list: country,
+            currency         : Client.get('currency'),
+        }).then((response) => {
             if (response.paymentagent_list) {
                 populateAgentsList(response.paymentagent_list.list);
             }
@@ -61,6 +64,8 @@ const PaymentAgentList = (() => {
             $accordion.append(
                 $agent_template
                     .replace(/%name/g, agent.name)
+                    .replace(/%currency/g, agent.currencies)
+                    .replace(/%minmax/g, `${agent.min_withdrawal} / ${agent.max_withdrawal}`)
                     .replace(/%summary/g, agent.summary)
                     .replace(/%deposit_commission/g, agent.deposit_commission)
                     .replace(/%withdrawal_commission/g, agent.withdrawal_commission)
