@@ -131,22 +131,4 @@ body.no-scroll {
         background-color: transparent;
     }
 }
-
-@keyframes slideIn {
-    0% {
-        right: calc(-100%);
-    }
-    100% {
-        right: 0;
-    }
-}
-
-@keyframes slideOut {
-    0% {
-        right: 0;
-    }
-    100% {
-        right: calc(-100%);
-    }
-}
 /* stylelint-enable color-no-hex */
