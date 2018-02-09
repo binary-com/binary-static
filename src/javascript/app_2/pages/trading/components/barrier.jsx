@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputField } from './form/text_field.jsx';
+import InputField from './form/input_field.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 

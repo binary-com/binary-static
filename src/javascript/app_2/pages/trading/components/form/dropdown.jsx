@@ -82,6 +82,6 @@ class Dropdown extends React.Component {
           </div>
         );
     }
-};
+}
 
 export default Dropdown;

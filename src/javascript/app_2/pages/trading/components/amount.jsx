@@ -1,6 +1,6 @@
 import React from 'react';
-import { InputField } from './form/text_field.jsx';
-import Dropdown from './form/selectbox.jsx';
+import InputField from './form/input_field.jsx';
+import Dropdown from './form/dropdown.jsx';
 import { connect } from '../store/connect';
 import Client from '../../../../app/base/client';
 import { localize } from '../../../../_common/localize';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Button = ({
+const Button = ({
     id,
     className='',
     text,
