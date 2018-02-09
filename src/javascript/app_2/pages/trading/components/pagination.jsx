@@ -5,8 +5,18 @@ class Pagination extends React.PureComponent {
         super(props);
 
         this.state = {
-            current: props.defaultCurrent
+            current: 1
         };
+    }
+
+    handleChange = (newPage) => {
+        const { pageSize } = this.props;
+
+        this.setState(
+            current: newPage
+        );
+
+        this.props.onChange(newPage, pageSize);
     }
 
     calcNumOfPages = () => {
@@ -30,6 +40,7 @@ class Pagination extends React.PureComponent {
         return (
             <ul>
                 <li onClick={this.handlePrev}><a>prev</a></li>
+                {this.state.current}
                 <li onClick={this.handleNext}><a>next</a></li>
             </ul>
         );
@@ -38,8 +49,7 @@ class Pagination extends React.PureComponent {
 
 Pagination.defaultProps = {
     total: 0,
-    pageSize: 10,
-    defaultCurrent: 1
+    pageSize: 10
 };
 
 export default Pagination;
