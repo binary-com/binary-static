@@ -3,7 +3,6 @@ import { ToggleDrawer, DrawerItem } from './drawer.jsx';
 import Url from '../../../../../_common/url';
 
 class TradingHeader extends React.Component {
-
     render() {
         return (
             <React.Fragment>
@@ -18,16 +17,14 @@ class TradingHeader extends React.Component {
                             <div className='navbar-icons binary-logo'>
                                 <img className='logo-img' src={Url.urlForStatic('images/trading_app/symbol.svg')} alt='Binary.com' />
                             </div>
-                            { this.props.items.length ?
-                              <div className='menu-links'>
-                                  {this.props.items.map((item, idx) => (
-                                      <a key={idx} href={item.href || 'javascript:;'} >
-                                          <span className={item.icon}>{item.text}</span>
-                                      </a>
-                                  ))}
-                              </div>
-                              :
-                              undefined
+                            {!!this.props.items.length &&
+                                <div className='menu-links'>
+                                    {this.props.items.map((item, idx) => (
+                                        <a key={idx} href={item.href || 'javascript:;'} >
+                                            <span className={item.icon}>{item.text}</span>
+                                        </a>
+                                    ))}
+                                </div>
                             }
                         </div>
                         <ToggleDrawer alignment='right'>

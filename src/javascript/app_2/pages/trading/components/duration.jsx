@@ -1,6 +1,6 @@
 import React from 'react';
-import { InputField } from './form/text_field.jsx';
-import Dropdown from './form/selectbox.jsx';
+import InputField from './form/input_field.jsx';
+import Dropdown from './form/dropdown.jsx';
 import ClockHeader from './elements/clock_header.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
@@ -10,18 +10,19 @@ const Duration = ({
     duration,
     duration_unit,
     duration_units_list,
+    server_time,
     onChange,
-    onSelectChange,
 }) => (
         <fieldset>
-            <ClockHeader header={localize('Trade Duration')} />
+            <ClockHeader time={server_time} header={localize('Trade Duration')} />
             <Dropdown
-                list={[{name: localize('Duration'), value: 'duration'},
-                       {name: localize('End Time'),  value: 'endtime'}]}
-                selected={expiry_type}
+                list={[
+                    { name: localize('Duration'), value: 'duration' },
+                    { name: localize('End Time'), value: 'endtime' },
+                ]}
                 value={expiry_type}
                 name='expiry_type'
-                on_change={onSelectChange}
+                onChange={onChange}
             />
 
             {expiry_type === 'duration' ?
@@ -30,7 +31,7 @@ const Duration = ({
                         type='number'
                         name='duration'
                         value={duration}
-                        on_change={onChange}
+                        onChange={onChange}
                     />
                     <select name='duration_unit' value={duration_unit} onChange={onChange}>
                         {Object.keys(duration_units_list).map((u) => (
@@ -52,7 +53,7 @@ export default connect(
         duration           : trade.duration,
         duration_unit      : trade.duration_unit,
         duration_units_list: trade.duration_units_list,
+        server_time        : trade.server_time,
         onChange           : trade.handleChange,
-        onSelectChange     : trade.handleDropDownChange,
     })
 )(Duration);

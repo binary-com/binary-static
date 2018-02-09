@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputField } from './form/text_field.jsx';
+import InputField from './form/input_field.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -16,7 +16,7 @@ const Barrier = ({
                 type='number'
                 name='barrier_1'
                 value={barrier_1}
-                o_change={onChange}
+                onChange={onChange}
                 is_currency
             />
 
@@ -26,7 +26,7 @@ const Barrier = ({
                         type='number'
                         name='barrier_2'
                         value={barrier_2}
-                        on_change={onChange}
+                        onChange={onChange}
                         is_currency
                     />
                 </React.Fragment>

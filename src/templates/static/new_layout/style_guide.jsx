@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '../../../javascript/app_2/pages/trading/components/form/button.jsx';
-import { InputField } from '../../../javascript/app_2/pages/trading/components/form/text_field.jsx';
+import Button from '../../../javascript/app_2/pages/trading/components/form/button.jsx';
+import InputField from '../../../javascript/app_2/pages/trading/components/form/input_field.jsx';
 
 const StyleGuide = () => (
     <div className='container'>
