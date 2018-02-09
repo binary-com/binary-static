@@ -212,12 +212,3 @@ export const Table = ({
             content
     );
 };
-
-export const Map = () => (
-    <React.Fragment>
-        <div id='map'></div>
-        <div id='infowindow-content'>
-            <span id='place-address'></span>
-        </div>
-    </React.Fragment>
-);
