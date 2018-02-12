@@ -14,5 +14,5 @@ export const onChangeContractType = (store) => {
         barrier_2: contract_info.low_barrier || '',
     };
 
-    return $.extend(obj_contract_type, obj_barrier, obj_trade_types);
+    return { ...obj_contract_type, ...obj_barrier, ...obj_trade_types };
 };
