@@ -18,10 +18,23 @@
         line-height: 32px;
         text-align: center;
     }
-    &-prev:hover, &-next:hover, &-item:hover, &-item-active {
+    &-prev:hover, &-next:hover, &-item:hover {
         cursor: pointer;
-        color: #2a3052;
-        border-color: #2a3052;
+        background-color: #f2f3f8;
+        border-color: #f2f3f8;
+
+        & a {
+            color: #4c5794;
+        }
+    }
+    &-item-active, &-item-active:hover {
+        cursor: default;
+        border-color: #4c5794;
+        background-color: #4c5794;
+
+        & a {
+            color: #ffffff;
+        }
     }
     &-ellipsis {
         & a {
