@@ -38,10 +38,38 @@ class Pagination extends React.PureComponent {
         }
     }
 
-    renderEllipsis = () => {
+    handleJumpUp = () => {
+        if (this.state.current + 5 <= this.calcNumOfPages()) {
+            this.handleChange(this.state.current + 5);
+        }
+    }
+
+    handleJumpDown = () => {
+        if (this.state.current - 5 >= 1) {
+            this.handleChange(this.state.current - 5);
+        }
+    }
+
+    renderUpEllipsis = () => {
         return (
-            <li className='pagination-item pagination-ellipsis'>
-                ...
+            <li
+                className='pagination-item pagination-ellipsis'
+                key='ellipsis-up'
+                onClick={this.handleJumpUp}
+            >
+                <a>...</a>
+            </li>
+        );
+    }
+
+    renderDownEllipsis = () => {
+        return (
+            <li
+                className='pagination-item pagination-ellipsis'
+                key='ellipsis-down'
+                onClick={this.handleJumpDown}
+            >
+                <a>...</a>
             </li>
         );
     }
@@ -79,37 +107,37 @@ class Pagination extends React.PureComponent {
         else if (current <= 3) {
             return [
                 ...this.renderItemRange(1, 5),
-                this.renderEllipsis(),
+                this.renderUpEllipsis(),
                 this.renderItem(numOfPages)
             ];
         }
         else if (current === 4) {
             return [
                 ...this.renderItemRange(1, 6),
-                this.renderEllipsis(),
+                this.renderUpEllipsis(),
                 this.renderItem(numOfPages)
             ];
         }
         else if (current === numOfPages - 3) {
             return [
                 this.renderItem(1),
-                this.renderEllipsis(),
+                this.renderDownEllipsis(),
                 ...this.renderItemRange(numOfPages - 5, numOfPages)
             ];
         }
         else if (numOfPages - current < 3) {
             return [
                 this.renderItem(1),
-                this.renderEllipsis(),
+                this.renderDownEllipsis(),
                 ...this.renderItemRange(numOfPages - 4, numOfPages)
             ];
         }
         else {
             return [
                 this.renderItem(1),
-                this.renderEllipsis(),
+                this.renderDownEllipsis(),
                 ...this.renderItemRange(current - 2, current + 2),
-                this.renderEllipsis(),
+                this.renderUpEllipsis(),
                 this.renderItem(numOfPages)
             ];
         }
