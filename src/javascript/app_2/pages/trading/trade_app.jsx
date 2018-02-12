@@ -37,9 +37,13 @@ class TradeApp extends React.Component {
 
                     <Purchase />
                 </div>
-                <div className='container'>
-                    <Pagination total={30} pageSize={10} />
-                </div>
+                
+                <Pagination total={34} pageSize={10} />
+                <Pagination total={6} pageSize={1} />
+                <Pagination total={9} pageSize={1} />
+                <Pagination total={10} pageSize={1} />
+                <Pagination total={12} pageSize={1} />
+                <Pagination total={50} pageSize={1} />
             </React.Fragment>
         );
     }
