@@ -45,6 +45,7 @@ const Duration = ({
                 </React.Fragment> :
                 <React.Fragment>
                     <Datepicker
+                        id='expiry_date'
                         name='expiry_date'
                         onChange={onChange}
                         showTodayBtn={true}
