@@ -43,7 +43,8 @@ class Dropdown extends React.PureComponent {
 
     scrollToggle(state) {
         this.is_open = state;
-        document.body.classList.toggle('no-scroll', this.is_open);
+        // Used to disable y-scroll on body - disabled in this component for now
+        // document.body.classList.toggle('no-scroll', this.is_open);
     }
 
     handleClickOutside(event) {

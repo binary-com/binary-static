@@ -3,12 +3,12 @@ import React from 'react';
 class InputField extends React.PureComponent {
     render() {
         return (
-            <div className={`input-field ${this.props.className ? this.props.className : ''} ${this.props.is_currency ? 'icon' : ''}`}>
+            <div className={`input-field ${this.props.className ? this.props.className : ''}`}>
                 {!!this.props.label &&
                     <label htmlFor={this.props.name} className='input-label'>{this.props.label}</label>
                 }
-                {this.props.is_currency ?
-                    <i>{this.props.is_currency}</i>
+                {this.props.prefix ?
+                    <i><span className={`symbols ${this.props.prefix.toLowerCase()}`} /></i>
                 :
                 undefined
                 }

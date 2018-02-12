@@ -32,7 +32,8 @@ const Amount = ({
                     name='amount'
                     value={amount}
                     onChange={onChange}
-                    is_currency='$'
+                    is_currency
+                    prefix={currency || 'AUD'}
                 />
             </div>
 
