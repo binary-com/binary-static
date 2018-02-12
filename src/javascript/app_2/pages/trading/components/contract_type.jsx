@@ -4,7 +4,7 @@ import { connect } from '../store/connect';
 const Contracts = ({ list }) => (
     Object.keys(list).map((category, idx) => (
         <React.Fragment key={idx}>
-            <optgroup key={idx} label={category}></optgroup>
+            <optgroup key={idx} label={category} />
             {list[category].map(type => (
                 <option key={type.name} value={type.name}>{type.title}</option>
             ))}
@@ -17,9 +17,11 @@ const Contract = ({
     contract_types_list,
     onChange,
 }) => (
-    <select name='contract_type' value={contract_type} onChange={onChange}>
-        <Contracts list={contract_types_list} />
-    </select>
+    <fieldset>
+        <select name='contract_type' value={contract_type} onChange={onChange}>
+            <Contracts list={contract_types_list} />
+        </select>
+    </fieldset>
 );
 
 export default connect(

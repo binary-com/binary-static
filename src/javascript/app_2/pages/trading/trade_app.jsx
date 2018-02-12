@@ -15,6 +15,10 @@ class TradeApp extends React.Component {
         this.props.onMounted();
     }
 
+    componentWillUnmount() {
+        this.props.onUnmount();
+    }
+
     isVisible(component_name) {
         return this.props.form_components.indexOf(component_name) >= 0;
     }
@@ -23,11 +27,12 @@ class TradeApp extends React.Component {
         return (
             <React.Fragment>
                 <div className='chart-container notice-msg'>
+                    <Symbol />
+                    <ContractType />
                     <Test />
                 </div>
                 <div className='sidebar-container'>
-                    <Symbol />
-                    <ContractType />
+
                     {this.isVisible('start_date') && <StartDate />}
                     <Duration />
                     {this.isVisible('barrier') && <Barrier />}
@@ -45,5 +50,6 @@ export default connect(
     ({trade}) => ({
         form_components: trade.form_components,
         onMounted      : trade.init,
+        onUnmount      : trade.dispose,
     })
 )(TradeApp);

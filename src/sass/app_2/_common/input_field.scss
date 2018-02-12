@@ -2,6 +2,34 @@
 /* stylelint-disable color-no-hex */
 /* stylelint-disable number-max-precision */
 .input-field {
+    margin: 8px 0;
+    font-weight: 300;
+
+    i {
+        position: relative;
+
+        .symbols:before {
+            position: absolute;
+            display: block;
+            pointer-events: none;
+            left: 2px;
+            width: 25px;
+            top: 8px;
+            text-align: center;
+            font-style: normal;
+            font-size: 1rem;
+            z-index: 1;
+            color: #2a3052;
+
+            &.usd {
+                content: '\0024';
+            }
+        }
+        & + input {
+            padding-left: 25px;
+            padding-right: 0;
+        }
+    }
     input {
         box-sizing: border-box;
         margin: 0;
@@ -13,7 +41,7 @@
         height: 32px;
         font-size: 1rem;
         line-height: 1.5;
-        color: rgba(0, 0, 0, 0.65);
+        color: $COLOR_BLACK;
         background-color: #fff;
         background-image: none;
         border: 1px solid #f2f2f2;
@@ -26,6 +54,7 @@
         &:active, &:focus {
             outline: 0;
             border-radius: 4px;
+            border-color: #2a3052;
             box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
         }
         &:not([type=range]), label, textarea {

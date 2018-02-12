@@ -1,20 +1,9 @@
 import React from 'react';
-import { TestField } from './form/text_field.jsx';
-import Dropdown from './form/selectbox.jsx';
+import InputField from './form/input_field.jsx';
+import Dropdown from './form/dropdown.jsx';
 import { connect } from '../store/connect';
 import Client from '../../../../app/base/client';
 import { localize } from '../../../../_common/localize';
-
-const Currencies = ({ list }) => (
-    Object.keys(list).map((type, idx) => (
-        <React.Fragment key={idx}>
-            <optgroup key={idx} label={type}></optgroup>
-            {list[type].map(cur => (
-                <option key={cur} value={cur}>{cur}</option>
-            ))}
-        </React.Fragment>
-    ))
-);
 
 const Amount = ({
     basis,
@@ -22,25 +11,44 @@ const Amount = ({
     currencies_list,
     amount,
     onChange,
-    onSelectChange,
 }) => (
         <fieldset>
-            <Dropdown list={[{name: localize('Payout'), value: 'payout'},
-                             {name: localize('Stake'),  value: 'stake'}]}
-                      selected={basis}
-                      value={basis}
-                      name='basis'
-                      on_change={onSelectChange}
-            />
+            <div className='fieldset-header'>
+                <span className='field-info left'>{localize('Invest Amount')}</span>
+            </div>
+            <div className='amount-container'>
+                <Dropdown
+                    list={[
+                        { name: localize('Payout'), value: 'payout' },
+                        { name: localize('Stake'),  value: 'stake' },
+                    ]}
+                    value={basis}
+                    name='basis'
+                    onChange={onChange}
+                />
+
+                <InputField
+                    type='number'
+                    name='amount'
+                    value={amount}
+                    onChange={onChange}
+                    is_currency
+                    prefix={currency || 'AUD'}
+                />
+            </div>
 
             {Client.get('currency') ?
-                <span className={`symbols ${currency.toLowerCase()}`}></span> :
-                <select name='currency' value={currency} onChange={onChange}>
-                    <Currencies list={currencies_list} />
-                </select>
+                <span className={`symbols ${currency.toLowerCase()}`} /> :
+                <React.Fragment>
+                <Dropdown
+                    list={currencies_list}
+                    value={currency || 'AUD'}
+                    name='currency'
+                    onChange={onChange}
+                />
+                </React.Fragment>
             }
 
-            <TestField type='number' name='amount' value={amount} onChange={onChange} is_currency />
         </fieldset>
 
 );
@@ -52,6 +60,5 @@ export default connect(
         currencies_list: trade.currencies_list,
         amount         : trade.amount,
         onChange       : trade.handleChange,
-        onSelectChange : trade.handleDropDownChange,
     })
 )(Amount);

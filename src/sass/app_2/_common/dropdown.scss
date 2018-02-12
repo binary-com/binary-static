@@ -6,7 +6,7 @@ div.dropdown-container {
 
     .dropdown-display {
         background: #fff;
-        height: 32px;
+        height: 30px;
         cursor: pointer;
         border: solid 1px #f2f2f2;
         border-radius: 4px;
@@ -41,7 +41,7 @@ div.dropdown-container {
     }
     .dropdown-list {
         left: 0;
-        bottom: -5px;
+        bottom: -8px;
         width: 100%;
         position: absolute;
         transition: all 0.25s;
@@ -52,19 +52,34 @@ div.dropdown-container {
         .list-container {
             position: absolute;
             width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
             z-index: 2;
             cursor: pointer;
             background: #fff;
-            border-radius: 4px;
-            box-shadow: 0 2px 8px #f0f1f2;
+            box-shadow: 0 0px 2px #d3d3d3;
 
+            .list-label {
+                pointer-events: none;
+                padding-left: 8px;
+                line-height: 32px;
+                height: 32px;
+
+                span {
+                    text-transform: capitalize;
+                    color: #dedede;
+                    font-size: 1rem;
+                    font-weight: 300;
+                }
+            }
             .list-item {
                 width: 100%;
                 font-size: 1rem;
 
                 span {
+                    text-transform: capitalize;
+                    display: block;
                     pointer-events: none;
-                    line-height: 32px;
                     vertical-align: middle;
                     padding-left: 8px;
                     font-weight: 300;
@@ -78,13 +93,10 @@ div.dropdown-container {
                 &:hover {
                     background-color: #f2f3f8;
                 }
-                &.selected {
+                &.selected span {
                     background-color: #2a3052;
-
-                    span {
-                        color: $COLOR_WHITE;
-                        font-weight: 400;
-                    }
+                    color: $COLOR_WHITE;
+                    font-weight: 400;
                 }
             }
         }
