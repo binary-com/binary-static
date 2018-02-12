@@ -36,21 +36,20 @@
             color: #ffffff;
         }
     }
+    &-disabled, &-disabled:hover {
+        cursor: not-allowed;
+        border-color: #e9e9ed;
+        background-color: $COLOR_WHITE;
+
+        & a {
+            color: #e9e9ed;
+        }
+    }
     &-ellipsis {
         & a {
             color: #e9e9ed;
         }
         border: none;
-    }
-    &-disabled {
-        & a {
-            color: #e9e9ed;
-        }
-        &:hover {
-            cursor: not-allowed;
-            color: #e9e9ed;
-            border-color: #e9e9ed;
-        }
     }
     & a {
         text-decoration: none;
