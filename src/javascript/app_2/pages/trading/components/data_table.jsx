@@ -89,7 +89,7 @@ class DataTable extends React.Component {
                     <thead className='table-thead'>
                         <tr className='table-row'>
                             {columns.map(col => (
-                                <th key={col.dataindex}>{col.title}</th>
+                                <th key={col.dataIndex}>{col.title}</th>
                             ))}
                         </tr>
                     </thead>
