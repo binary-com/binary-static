@@ -19,11 +19,16 @@ const MetaTrader = (() => {
     const onLoad = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
             if (isEligible()) {
-                MetaTraderUI.switchToMT5();
-                if (Client.get('is_virtual')) {
-                    getAllAccountsInfo();
+                // do not allow clients with malta landing company to open mt5 accounts
+                if (Object.keys(mt_company).find((company) => mt_company[company] === 'malta')) {
+                    MetaTraderUI.displayPageError(localize('Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.'));
                 } else {
-                    BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
+                    MetaTraderUI.switchToMT5();
+                    if (Client.get('is_virtual')) {
+                        getAllAccountsInfo();
+                    } else {
+                        BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
+                    }
                 }
             } else {
                 MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
