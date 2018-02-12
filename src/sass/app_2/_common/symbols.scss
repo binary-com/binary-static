@@ -1,0 +1,40 @@
+/* stylelint-disable color-no-hex */
+.symbols:before {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    text-align: center;
+    font-style: normal;
+    font-size: 1rem;
+    z-index: 1;
+    color: #2a3052;
+
+    &.aud {
+        content: '\0041\0024';
+    }
+    &.gbp {
+        content: '\00A3';
+    }
+    &.jpy {
+        content: '\00A5';
+    }
+    &.usd {
+        content: '\0024';
+    }
+    &.btc {
+        content: '\0042';
+    }
+    &.bch {
+        content: '\e901';
+    }
+    &.eth {
+        content: '\0045';
+    }
+    &.etc {
+        content: '\e900';
+    }
+    &.ltc {
+        content: '\004c';
+    }
+}
+/* stylelint-enable color-no-hex */

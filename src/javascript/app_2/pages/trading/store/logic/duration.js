@@ -9,6 +9,8 @@ const units_map = {
     d: 'days',
 };
 
-const getDurationUnits = () => Object.keys(units_map).reduce((o, c) => ({...o, [c]: localize(units_map[c])}), {});
+const getDurationUnits = () => Object.keys(units_map).reduce((o, c) => (
+    [...o, { text: localize(units_map[c]), value: c }]
+), []);
 
 export default getDurationUnits;

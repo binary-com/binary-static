@@ -19,14 +19,13 @@ const Amount = ({
             <div className='amount-container'>
                 <Dropdown
                     list={[
-                        { name: localize('Payout'), value: 'payout' },
-                        { name: localize('Stake'),  value: 'stake' },
+                        { text: localize('Payout'), value: 'payout' },
+                        { text: localize('Stake'),  value: 'stake' },
                     ]}
                     value={basis}
                     name='basis'
                     onChange={onChange}
                 />
-
                 <InputField
                     type='number'
                     name='amount'

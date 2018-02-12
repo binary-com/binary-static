@@ -28,7 +28,7 @@ export default class TradeStore {
             getCurrencies().then(currencies => {
                 this.currencies_list = currencies;
                 if (!this.currency) {
-                    this.currency = Object.values(currencies).reduce((a, b) => [...a, ...b]).find(c => c);
+                    this.currency = Object.values(currencies).reduce((a, b) => [...a, ...b]).find(c => c).value;
                 }
             });
         }

@@ -10,12 +10,12 @@ const StartDates = (dates) => {
     if (dates) {
         const day = (date) => moment.unix(date).format('ddd - DD MMM, YYYY');
         array = Object.keys(dates).map(d => ({
-            name : day(dates[d].open),
+            text : day(dates[d].open),
             value: dates[d].open,
-            end  : dates[d].close, 
+            end  : dates[d].close,
         }));
     }
-    array = [{value: 'now', name: localize('Now')}, ...array];
+    array = [{value: 'now', text: localize('Now')}, ...array];
     return array;
 };
 
