@@ -3,6 +3,21 @@ import moment from 'moment';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 import ClockHeader from './elements/clock_header.jsx';
+import Dropdown from './form/dropdown.jsx';
+
+const StartDates = (dates) => {
+    let array = [];
+    if (dates) {
+        const day = (date) => moment.unix(date).format('ddd - DD MMM, YYYY');
+        array = Object.keys(dates).map(d => ({
+            name : day(dates[d].open),
+            value: dates[d].open,
+            end  : dates[d].close, 
+        }));
+    }
+    array = [{value: 'now', name: localize('Now')}, ...array];
+    return array;
+};
 
 const StartDate = ({
     start_date,
@@ -13,15 +28,13 @@ const StartDate = ({
 }) => (
     <fieldset>
         <ClockHeader time={server_time} header={localize('Start time')} />
-        <select name='start_date' value={start_date} onChange={onChange}>
-            <option value='now'>{localize('Now')}</option>
-            {start_dates_list.map(option => {
-                const day = moment.unix(option.open).format('ddd - DD MMM, YYYY');
-                return (
-                    <option key={option.open} value={option.open} data-end={option.close}>{day}</option>
-                );
-            })}
-        </select>
+        <Dropdown
+            name='start_date'
+            value={start_date}
+            list={StartDates(start_dates_list)}
+            onChange={onChange}
+            type='date'
+        />
         {start_date !== 'now' &&
             <React.Fragment>
                 <input type='time' name='start_time' value={start_time} onChange={onChange} />

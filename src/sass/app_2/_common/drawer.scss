@@ -15,7 +15,6 @@ body.no-scroll {
         width: 100vw;
         height: 100vh;
         z-index: 665;
-        visibility: hidden;
 
         &.show {
             animation: dim 0.25s ease-out forwards;
@@ -55,7 +54,7 @@ body.no-scroll {
                         }
                         &.brand-logo {
                             display: inline-flex;
-                            padding: 4px 20px;
+                            padding: 8px 20px;
                             border-left: 1px solid #f2f2f2;
 
                             img {
@@ -78,7 +77,7 @@ body.no-scroll {
                     .icons {
                         display: inline-flex;
                         cursor: pointer;
-                        padding: 4px 8px;
+                        padding: 14px 8px;
 
                         &.btn-close {
                             width: 1.5rem;
@@ -129,6 +128,24 @@ body.no-scroll {
     }
     to {
         background-color: transparent;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        right: calc(-100%);
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: calc(-100%);
     }
 }
 /* stylelint-enable color-no-hex */

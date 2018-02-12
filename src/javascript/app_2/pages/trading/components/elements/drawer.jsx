@@ -25,7 +25,11 @@ class ToggleDrawer extends React.PureComponent {
         return (
             <React.Fragment>
                 <div className='navbar-icons menu-toggle' onClick={this.showDrawer}>
-                    <img src={Url.urlForStatic('images/trading_app/menu.svg')} alt='Menu' />
+                    {this.props.icon_link ?
+                        <img src={this.props.icon_link} />
+                    :
+                        <img src={Url.urlForStatic('images/trading_app/menu.svg')} />
+                    }
                 </div>
                 <Drawer ref={this.setRef} alignment={this.props.alignment}>
                     <DrawerHeader alignment={this.props.alignment} close={this.closeDrawer}/>
@@ -60,10 +64,12 @@ class Drawer extends React.PureComponent {
 
     show() {
         this.setState({ is_drawer_visible: true });
+        this.scrollToggle(true);
     }
 
     hide() {
         this.setState({ is_drawer_visible: false });
+        this.scrollToggle(false);
     }
 
     handleClickOutside(event) {

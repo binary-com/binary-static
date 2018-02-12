@@ -5,6 +5,14 @@ import ClockHeader from './elements/clock_header.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
+const DurationList = (list) => {
+    let array = [];
+    if (list) {
+        array = Object.keys(list).map(u => ({ name: localize(list[u]), value: u }));
+    }
+    return array;
+};
+
 const Duration = ({
     expiry_type,
     duration,
@@ -14,7 +22,7 @@ const Duration = ({
     onChange,
 }) => (
         <fieldset>
-            <ClockHeader time={server_time} header={localize('Trade Duration')} />
+            <ClockHeader className='row-1 col-100' time={server_time} header={localize('Trade Duration')} />
             <Dropdown
                 list={[
                     { name: localize('Duration'), value: 'duration' },
@@ -27,17 +35,21 @@ const Duration = ({
 
             {expiry_type === 'duration' ?
                 <React.Fragment>
-                    <InputField
-                        type='number'
-                        name='duration'
-                        value={duration}
-                        onChange={onChange}
-                    />
-                    <select name='duration_unit' value={duration_unit} onChange={onChange}>
-                        {Object.keys(duration_units_list).map((u) => (
-                            <option key={u} value={u}>{duration_units_list[u]}</option>
-                        ))}
-                    </select>
+                    <div className='duration-container'>
+                        <InputField
+                            type='number'
+                            name='duration'
+                            value={duration}
+                            onChange={onChange}
+                        />
+                        <Dropdown
+                            list={DurationList(duration_units_list)}
+                            value={duration_unit}
+                            selected='Seconds'
+                            name='duration_unit'
+                            onChange={onChange}
+                        />
+                    </div>
                 </React.Fragment> :
                 <React.Fragment>
                     <input type='date' name='expiry_date' onChange={onChange} />

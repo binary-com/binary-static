@@ -9,8 +9,9 @@ class Dropdown extends React.PureComponent {
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.state = {
             is_list_visible: false,
-            selected       : this.props.list.find(item => item.value === this.props.value).name || this.props.value,
             value          : this.props.value,
+            selected       : this.props.selected || this.props.value,
+
         };
     }
 
@@ -23,9 +24,15 @@ class Dropdown extends React.PureComponent {
     }
 
     handleSelect(item) {
-        if (item.value !== this.state.value) {
-            this.setState({ selected: item.name, value: item.value });
-            this.props.onChange({ target: { name: this.props.name, value: item.value } });
+        if (item.value) {
+            if (item.value !== this.state.value) {
+                this.setState({ selected: item.name, value: item.value });
+                this.props.onChange({ target: { name: this.props.name, value: item.value } });
+            }
+        }
+        else {
+            this.setState({ selected: item, value: item });
+            this.props.onChange({ target: { name: this.props.name, value: item } });
         }
         this.handleVisibility();
     }
@@ -34,19 +41,28 @@ class Dropdown extends React.PureComponent {
         this.wrapper_ref = node;
     }
 
+    scrollToggle(state) {
+        this.is_open = state;
+        document.body.classList.toggle('no-scroll', this.is_open);
+    }
+
     handleClickOutside(event) {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_list_visible) {
             this.setState({ is_list_visible: false });
+            this.scrollToggle(this.state.is_list_visible);
         }
     }
 
     handleVisibility() {
         this.setState({ is_list_visible: !this.state.is_list_visible });
+        this.scrollToggle(!this.state.is_list_visible);
     }
 
     render() {
         return (
-            <div ref={this.setWrapperRef} className={`dropdown-container ${this.state.is_list_visible ? 'show' : ''}`}>
+            <div
+                ref={this.setWrapperRef}
+                className={`dropdown-container ${this.props.className ? this.props.className : ''} ${this.state.is_list_visible ? 'show' : ''}`}>
                 <div
                     className={`dropdown-display ${this.state.is_list_visible ? 'clicked': ''}`}
                     onClick={this.handleVisibility}
@@ -57,22 +73,25 @@ class Dropdown extends React.PureComponent {
                 <span className='select-arrow' />
                 <div className='dropdown-list'>
                     <div className='list-container'>
-                    { this.props.list.length ?
-                        this.props.list.map((item, idx) => (
-                            <div
-                                className={`list-item ${ this.state.value === item.value ? 'selected':''}`}
-                                key={idx}
-                                name={this.props.name}
-                                value={item.value}
-                                onClick={this.handleSelect.bind(null, item)}
-                            >
-                                <span>{item.name}</span>
-                            </div>
+                    { Array.isArray(this.props.list) ?
+                        <Items
+                            items={this.props.list}
+                            name={this.props.name}
+                            value={this.state.value}
+                            handleSelect={this.handleSelect}
+                            type={this.props.type || undefined}
+                        /> :
+                        Object.keys(this.props.list).map(key => (
+                            <React.Fragment key={key}>
+                                <div className='list-label'><span>{key}</span></div>
+                                <Items
+                                    items={this.props.list[key]}
+                                    name={this.props.name}
+                                    value={this.state.value}
+                                    handleSelect={this.handleSelect}
+                                />
+                            </React.Fragment>
                         ))
-                    :
-                        <div className='list-item'>
-                            <span className='item-disabled'>No items</span>
-                        </div>
                     }
                     </div>
                 </div>
@@ -80,5 +99,40 @@ class Dropdown extends React.PureComponent {
         );
     }
 }
+
+const Items = ({
+    items,
+    name,
+    value,
+    handleSelect,
+    type,
+}) => (
+    items.map((item, idx) => (
+        <React.Fragment key={idx}>
+            {item.name && item.value ?
+                <div
+                    className={`list-item ${ value === item.value ? 'selected' : ''}`}
+                    key={idx}
+                    name={name}
+                    value={item.value}
+                    data-end={type==='date' && item.end ? item.end : undefined}
+                    onClick={handleSelect.bind(null, item)}
+                >
+                    <span>{item.name}</span>
+                </div>
+            :
+                <div
+                    className={`list-item ${ value === item ? 'selected' : ''}`}
+                    key={idx}
+                    name={name}
+                    value={item}
+                    onClick={handleSelect.bind(null, item)}
+                >
+                    <span>{item}</span>
+                </div>
+        }
+        </React.Fragment>
+    ))
+);
 
 export default Dropdown;

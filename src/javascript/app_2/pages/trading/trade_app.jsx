@@ -27,11 +27,12 @@ class TradeApp extends React.Component {
         return (
             <React.Fragment>
                 <div className='chart-container notice-msg'>
+                    <Symbol />
+                    <ContractType />
                     <Test />
                 </div>
                 <div className='sidebar-container'>
-                    <Symbol />
-                    <ContractType />
+
                     {this.isVisible('start_date') && <StartDate />}
                     <Duration />
                     {this.isVisible('barrier') && <Barrier />}
