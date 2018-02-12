@@ -1,4 +1,4 @@
-import { useStrict, action } from 'mobx';
+import { useStrict, action, reaction } from 'mobx';
 import { asyncAction } from 'mobx-utils';
 import { cloneObject } from '../../../../_common/utility';
 
@@ -7,14 +7,17 @@ import * as currency from './currency';
 import * as duration from './duration';
 import * as symbol from './symbol';
 import * as test from './test';
+import * as contract_type from './contract_type';
 
 useStrict(true);
 
-const defaultExports = { };
+const reaction_disposers = [];
 
-function addToExports(list, store) {
-    Object.keys(list).forEach((methodName) => {
-        const method = list[methodName];
+const defaultExports = { ...currency, ...duration, ...symbol, ...contract_type, ...test };
+
+export const initActions = (store) => {
+    Object.keys(defaultExports).forEach((methodName) => {
+        const method = defaultExports[methodName];
 
         if (/.*async$/i.test(methodName)) {
             defaultExports[methodName] = asyncAction(`${methodName}.wrapper`, function* (payload) {
@@ -34,13 +37,23 @@ function addToExports(list, store) {
             });
         }
     });
-}
 
-export const initActions = (store) => {
-    addToExports(currency, store);
-    addToExports(duration, store);
-    addToExports(symbol, store);
-    addToExports(test, store);
+    const reaction_map   = {
+        symbol             : defaultExports.onSymbolChangeAsync,
+        contract_types_list: defaultExports.onChangeContractTypeList,
+        contract_type      : defaultExports.onChangeContractType,
+        amount             : defaultExports.onAmountChange,
+    };
+
+    Object.keys(reaction_map).forEach((reaction_key) => {
+        const disposer = reaction(() => store[reaction_key], reaction_map[reaction_key]);
+        reaction_disposers.push(disposer);
+    });
+};
+
+// TODO: call this on unload of trade
+export const disposeActions = () => {
+    reaction_disposers.forEach((disposer) => { disposer(); });
 };
 
 export default defaultExports;

@@ -1,15 +1,10 @@
-import { observable, action,  reaction } from 'mobx';
+import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
-import Reactions from './reactions';
 import ContractType from './logic/contract_type';
-import { cloneObject } from '../../../../_common/utility';
-import actions, {initActions} from '../actions';
+import actions from '../actions';
 
 export default class TradeStore {
     @action.bound init() {
-        initActions(this);
-        this._initReactions();
-
         actions.getCountryAsync();
         actions.getStartDates();
 
@@ -23,31 +18,6 @@ export default class TradeStore {
         ContractType.getContractsList(this.symbol).then(action(r => {
             this.contract_types_list = r;
         }));
-    }
-
-    _initReactions() {
-        reaction(() => this.amount, actions.onAmountChange, {name: 'onAmountChange' });
-        reaction(() => this.symbol, actions.onSymbolChangeAsync, {name: 'onSymbolChangeAsync' });
-
-        const reaction_map = Reactions.getReactions();
-        Object.keys(reaction_map).forEach((reaction_key) => {
-            const disposer = reaction(() => this[reaction_key], (new_value) => {
-                Promise
-                    .resolve(reaction_map[reaction_key](new_value, this._cloneState()))
-                    .then(this.updateState);
-            });
-            Reactions.storeDisposer(disposer);
-        });
-    };
-
-    _cloneState() {
-        return cloneObject(this);
-    }
-
-    @action.bound updateState(new_state) {
-        Object.keys(new_state).forEach((key) => {
-            this[key] = new_state[key];
-        });
     }
 
     @action.bound handleChange(e) {
