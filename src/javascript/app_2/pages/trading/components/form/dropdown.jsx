@@ -10,9 +10,25 @@ class Dropdown extends React.PureComponent {
         this.state = {
             is_list_visible: false,
             value          : this.props.value,
-            selected       : this.props.selected || this.props.value,
-
         };
+    }
+
+    isOneLevel() {
+        return Array.isArray(this.props.list);
+    }
+
+    getDisplayText(list, value) {
+        const findInArray = (arr_list) => (arr_list.find(item => item.value === value) || {}).text;
+        let text = '';
+        if (this.isOneLevel(list)) {
+            text = findInArray(list);
+        } else {
+            Object.keys(list).some(key => {
+                text = findInArray(list[key]);
+                return text;
+            });
+        }
+        return text;
     }
 
     componentDidMount() {
@@ -24,15 +40,9 @@ class Dropdown extends React.PureComponent {
     }
 
     handleSelect(item) {
-        if (item.value) {
-            if (item.value !== this.state.value) {
-                this.setState({ selected: item.name, value: item.value });
-                this.props.onChange({ target: { name: this.props.name, value: item.value } });
-            }
-        }
-        else {
-            this.setState({ selected: item, value: item });
-            this.props.onChange({ target: { name: this.props.name, value: item } });
+        if (item.value !== this.state.value) {
+            this.setState({ value: item.value });
+            this.props.onChange({ target: { name: this.props.name, value: item.value } });
         }
         this.handleVisibility();
     }
@@ -69,12 +79,14 @@ class Dropdown extends React.PureComponent {
                     onClick={this.handleVisibility}
                     onBlur={this.handleVisibility}
                 >
-                    <span name={this.props.name} value={this.state.value}>{this.state.selected}</span>
+                    <span name={this.props.name} value={this.state.value}>
+                        {this.getDisplayText(this.props.list, this.props.value)}
+                    </span>
                 </div>
                 <span className='select-arrow' />
                 <div className='dropdown-list'>
                     <div className='list-container'>
-                    { Array.isArray(this.props.list) ?
+                    { this.isOneLevel(this.props.list) ?
                         <Items
                             items={this.props.list}
                             name={this.props.name}
@@ -110,7 +122,7 @@ const Items = ({
 }) => (
     items.map((item, idx) => (
         <React.Fragment key={idx}>
-            {item.name && item.value ?
+            {item.text && item.value ?
                 <div
                     className={`list-item ${ value === item.value ? 'selected' : ''}`}
                     key={idx}
@@ -119,7 +131,7 @@ const Items = ({
                     data-end={type==='date' && item.end ? item.end : undefined}
                     onClick={handleSelect.bind(null, item)}
                 >
-                    <span>{item.name}</span>
+                    <span>{item.text}</span>
                 </div>
             :
                 <div

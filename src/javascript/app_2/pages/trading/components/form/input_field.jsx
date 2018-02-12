@@ -5,7 +5,7 @@ class InputField extends React.PureComponent {
         return (
             <div className={`input-field ${this.props.className ? this.props.className : ''}`}>
                 {!!this.props.label &&
-                    <label htmlFor={this.props.name} className='input-label'>{this.props.label}</label>
+                    <label htmlFor={this.props.text} className='input-label'>{this.props.label}</label>
                 }
                 {this.props.prefix ?
                     <i><span className={`symbols ${this.props.prefix.toLowerCase()}`} /></i>

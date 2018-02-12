@@ -7,7 +7,7 @@ const getCurrencies = () => DAO.getPayoutCurrencies().then(r => {
     const crypto = [];
 
     r.payout_currencies.forEach((currency) => {
-        (isCryptocurrency(currency) ? crypto : fiat).push(currency);
+        (isCryptocurrency(currency) ? crypto : fiat).push({ text: currency, value: currency });
     });
 
     return {
