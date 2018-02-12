@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const Button = ({
+const Button = ({
     id,
-    className='',
+    className = '',
     text,
     has_effect,
     is_disabled,

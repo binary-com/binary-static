@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '../../../javascript/app_2/pages/trading/components/form/button.jsx';
-import { InputField, TestField } from '../../../javascript/app_2/pages/trading/components/form/text_field.jsx';
+import Button from '../../../javascript/app_2/pages/trading/components/form/button.jsx';
+import InputField from '../../../javascript/app_2/pages/trading/components/form/input_field.jsx';
 import DataTable from '../../../javascript/app_2/pages/trading/components/data_table.jsx';
 import Pagination from '../../../javascript/app_2/pages/trading/components/pagination.jsx';
 
@@ -74,21 +74,23 @@ const StyleGuide = () => (
                 </div>
                 <div className='gr-row gr-padding-20'>
                     <div className='gr-12'>
-                        <InputField type='text'
-                                    name='text'
-                                    placeholder='Placeholder Text'
-                                    label='Text Field'
-                                    helper='Helper messages go here'
+                        <InputField
+                            type='text'
+                            name='text'
+                            placeholder='Placeholder Text'
+                            label='Text Field'
+                            helper='Helper messages go here'
                         />
                     </div>
                 </div>
                 <div className='gr-row gr-padding-20'>
                     <div className='gr-12'>
-                        <TestField type='number'
-                                    name='number'
-                                    placeholder='Placeholder Number'
-                                    label='Numbers Field'
-                                    helper='Helper messages go here'
+                        <InputField
+                            type='number'
+                            name='number'
+                            placeholder='Placeholder Number'
+                            label='Numbers Field'
+                            helper='Helper messages go here'
                         />
                     </div>
                 </div>

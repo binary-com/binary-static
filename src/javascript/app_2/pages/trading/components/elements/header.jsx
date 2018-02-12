@@ -1,10 +1,8 @@
 import React from 'react';
 import { ToggleDrawer, DrawerItem } from './drawer.jsx';
-
-const Url = require('../../../../../_common/url');
+import Url from '../../../../../_common/url';
 
 class TradingHeader extends React.Component {
-
     render() {
         return (
             <React.Fragment>
@@ -17,21 +15,25 @@ class TradingHeader extends React.Component {
                                 <DrawerItem text='Third Page'/>
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>
-                                <img className='logo-img' src={Url.urlForStatic('images/pages/binary-symbol-logo.svg')} alt='Binary.com' />
+                                <img className='logo-img' src={Url.urlForStatic('images/trading_app/symbol.svg')} alt='Binary.com' />
                             </div>
-                            { this.props.items.length ?
-                              <div className='menu-links'>
-                                  {this.props.items.map((item, idx) => (
-                                      <a key={idx} href={item.href || 'javascript:;'} >
-                                          <span className={item.icon}>{item.text}</span>
-                                      </a>
-                                  ))}
-                              </div>
-                              :
-                              undefined
+                            {!!this.props.items.length &&
+                                <div className='menu-links'>
+                                    {this.props.items.map((item, idx) => (
+                                        <a key={idx} href={item.href || 'javascript:;'} >
+                                            <span className={item.icon}>{item.text}</span>
+                                        </a>
+                                    ))}
+                                </div>
                             }
                         </div>
-                        <ToggleDrawer alignment='right'>
+                        <ToggleDrawer 
+                            alignment='right'
+                            icon_link={Url.urlForStatic('images/trading_app/notify_none.svg')}
+                        >
+                            <DrawerItem text='Alert 1'/>
+                            <DrawerItem text='Alert 2'/>
+                            <DrawerItem text='Alert 3'/>
                         </ToggleDrawer>
                     </div>
                 </header>

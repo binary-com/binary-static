@@ -1,5 +1,4 @@
 import { observable, action, reaction } from 'mobx';
-import Client from '../../../../app/base/client';
 import Reactions from './reactions';
 import ContractType from './logic/contract_type';
 import getCurrencies from './logic/currency';
@@ -7,6 +6,7 @@ import getDurationUnits from './logic/duration';
 import getStartDates from './logic/start_date';
 import onSymbolChange from './logic/symbol';
 import { getCountry, getTicks, onAmountChange } from './logic/test';
+import Client from '../../../../app/base/client';
 import { cloneObject } from '../../../../_common/utility';
 
 const event_map = {
@@ -28,11 +28,19 @@ export default class TradeStore {
             getCurrencies().then(currencies => {
                 this.currencies_list = currencies;
                 if (!this.currency) {
-                    this.currency = Object.values(currencies).reduce((a, b) => [...a, ...b]).find(c => c);
+                    this.currency = Object.values(currencies).reduce((a, b) => [...a, ...b]).find(c => c).value;
                 }
             });
         }
         this.duration_units_list = getDurationUnits();
+        this._time_interval = setInterval(() => {
+            this.server_time = window.time;
+        }, 1000);
+    }
+
+    @action.bound dispose() {
+        clearInterval(this._time_interval);
+        this._time_interval = undefined;
     }
 
     _initReactions() {
@@ -64,15 +72,6 @@ export default class TradeStore {
         }
         this[name] = value;
         this.dispatch(name, value);
-    }
-
-    @action.bound handleDropDownChange(e) {
-        const name = e.target.getAttribute('name');
-        const value = e.target.getAttribute('value');
-        if (name && value) {
-            this[name] = value;
-            this.dispatch(name, value);
-        }
     }
 
     @action.bound dispatch(name, value) {
@@ -125,5 +124,8 @@ export default class TradeStore {
 
     // Test
     @observable message = '';
-    @observable tick = '';
+    @observable tick    = '';
+
+    // TODO: retrieve from upper state
+    @observable server_time = undefined;
 };
