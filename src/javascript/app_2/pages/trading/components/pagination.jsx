@@ -39,15 +39,17 @@ class Pagination extends React.PureComponent {
     }
 
     handleJumpUp = () => {
-        if (this.state.current + 5 <= this.calcNumOfPages()) {
-            this.handleChange(this.state.current + 5);
-        }
+        this.handleChange(Math.min(
+            this.state.current + 5,
+            this.calcNumOfPages()
+        ));
     }
 
     handleJumpDown = () => {
-        if (this.state.current - 5 >= 1) {
-            this.handleChange(this.state.current - 5);
-        }
+        this.handleChange(Math.max(
+            1,
+            this.state.current - 5
+        ));
     }
 
     renderUpEllipsis = () => {
