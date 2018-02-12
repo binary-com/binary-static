@@ -14,7 +14,7 @@ const Barrier = ({
             </span>
             <InputField
                 type='number'
-                text='barrier_1'
+                name='barrier_1'
                 value={barrier_1}
                 onChange={onChange}
                 is_currency
@@ -24,7 +24,7 @@ const Barrier = ({
                 <React.Fragment>
                     <InputField
                         type='number'
-                        text='barrier_2'
+                        name='barrier_2'
                         value={barrier_2}
                         onChange={onChange}
                         is_currency
