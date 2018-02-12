@@ -1,12 +1,10 @@
 import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
 import ContractType from './logic/contract_type';
-import actions, { initActions } from '../actions';
+import actions from '../actions';
 
 export default class TradeStore {
     @action.bound init() {
-        initActions(this);
-
         actions.getCountryAsync();
         actions.getStartDates();
 

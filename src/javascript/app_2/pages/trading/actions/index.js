@@ -52,7 +52,7 @@ export const initActions = (store) => {
 };
 
 // TODO: call this on unload of trade
-export const dispose = () => {
+export const disposeActions = () => {
     reaction_disposers.forEach((disposer) => { disposer(); });
 };
 
