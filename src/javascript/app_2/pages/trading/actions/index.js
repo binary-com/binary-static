@@ -47,11 +47,9 @@ export const initActions = (store) => {
 
     Object.keys(reaction_map).forEach((reaction_key) => {
         const disposer = reaction(() => store[reaction_key], reaction_map[reaction_key]);
-        storeDisposer(disposer);
+        reaction_disposers.push(disposer);
     });
 };
-
-export const storeDisposer = (disposer) => reaction_disposers.push(disposer);
 
 // TODO: call this on unload of trade
 export const dispose = () => {
