@@ -36,20 +36,15 @@ const Amount = ({
                 />
             </div>
 
-            {Client.get('currency') ?
-                <span className={`symbols ${currency.toLowerCase()}`} /> :
-                <React.Fragment>
+            {!Client.get('currency') &&
                 <Dropdown
                     list={currencies_list}
                     value={currency || 'AUD'}
                     name='currency'
                     onChange={onChange}
                 />
-                </React.Fragment>
             }
-
         </fieldset>
-
 );
 
 export default connect(
