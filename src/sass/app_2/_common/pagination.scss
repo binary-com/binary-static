@@ -5,7 +5,7 @@
     flex-direction: row;
 
     & li:not(:last-child) {
-        margin-right: 16px;
+        margin-right: 8px;
     }
     &-prev, &-next, &-item {
         text-decoration: none;
@@ -24,6 +24,9 @@
         border-color: #2a3052;
     }
     &-ellipsis {
+        & a {
+            color: #e9e9ed;
+        }
         border: none;
     }
     &-disabled {
