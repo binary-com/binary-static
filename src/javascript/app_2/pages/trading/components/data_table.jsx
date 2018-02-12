@@ -71,11 +71,13 @@ class DataTable extends React.Component {
 
     renderPagination() {
         return (
-            <Pagination
-                total={this.props.dataSource.length}
-                pageSize={this.props.pageSize}
-                onChange={this.handlePageChange}
-            />
+            <div className='table-pagination'>
+                <Pagination
+                    total={this.props.dataSource.length}
+                    pageSize={this.props.pageSize}
+                    onChange={this.handlePageChange}
+                />
+            </div>
         );
     }
 

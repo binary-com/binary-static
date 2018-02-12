@@ -3,9 +3,14 @@
 .pagination {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 
-    & li:not(:last-child) {
-        margin-right: 8px;
+    & li {
+        margin: 0;
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
     }
     &-prev, &-next, &-item {
         text-decoration: none;
