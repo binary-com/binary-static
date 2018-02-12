@@ -40,7 +40,7 @@ class Pagination extends React.PureComponent {
 
     renderEllipsis = () => {
         return (
-            <li className='pagination-item'>
+            <li className='pagination-item pagination-ellipsis'>
                 ...
             </li>
         );

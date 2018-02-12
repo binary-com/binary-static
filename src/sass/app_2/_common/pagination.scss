@@ -23,6 +23,9 @@
         color: #2a3052;
         border-color: #2a3052;
     }
+    &-ellipsis {
+        border: none;
+    }
     &-disabled {
         & a {
             color: #e9e9ed;
