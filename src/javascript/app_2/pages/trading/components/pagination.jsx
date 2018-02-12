@@ -38,6 +38,14 @@ class Pagination extends React.PureComponent {
         }
     }
 
+    renderEllipsis = () => {
+        return (
+            <li className='pagination-item'>
+                ...
+            </li>
+        );
+    }
+
     renderItem = (pageNum) => {
         return (
             <li
@@ -52,13 +60,59 @@ class Pagination extends React.PureComponent {
         );
     }
 
-    renderItems = () => {
+    renderItemRange = (first, last) => {
         const items = [];
 
-        for (let pageNum = 1; pageNum <= this.calcNumOfPages(); pageNum++) {
+        for (let pageNum = first; pageNum <= last; pageNum++) {
             items.push(this.renderItem(pageNum));
         }
         return items;
+    }
+
+    renderItems = () => {
+        const numOfPages = this.calcNumOfPages();
+        const { current } = this.state;
+
+        if (numOfPages <= 9) {
+            return this.renderItemRange(1, numOfPages);
+        }
+        else if (current <= 3) {
+            return [
+                ...this.renderItemRange(1, 5),
+                this.renderEllipsis(),
+                this.renderItem(numOfPages)
+            ];
+        }
+        else if (current === 4) {
+            return [
+                ...this.renderItemRange(1, 6),
+                this.renderEllipsis(),
+                this.renderItem(numOfPages)
+            ];
+        }
+        else if (current === numOfPages - 3) {
+            return [
+                this.renderItem(1),
+                this.renderEllipsis(),
+                ...this.renderItemRange(numOfPages - 5, numOfPages)
+            ];
+        }
+        else if (numOfPages - current < 3) {
+            return [
+                this.renderItem(1),
+                this.renderEllipsis(),
+                ...this.renderItemRange(numOfPages - 4, numOfPages)
+            ];
+        }
+        else {
+            return [
+                this.renderItem(1),
+                this.renderEllipsis(),
+                ...this.renderItemRange(current - 2, current + 2),
+                this.renderEllipsis(),
+                this.renderItem(numOfPages)
+            ];
+        }
     }
 
     render() {
