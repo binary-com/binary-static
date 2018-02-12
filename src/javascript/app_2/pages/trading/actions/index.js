@@ -1,4 +1,4 @@
-import { useStrict, action } from 'mobx';
+import { useStrict, action, reaction } from 'mobx';
 import { asyncAction } from 'mobx-utils';
 import { cloneObject } from '../../../../_common/utility';
 
@@ -11,14 +11,13 @@ import * as contract_type from './contract_type';
 
 useStrict(true);
 
-const arr_actions        = [currency, duration, symbol, test, contract_type];
 const reaction_disposers = [];
 
-const defaultExports = { ...arr_actions.reduce((acc, act) => acc.concat(act), []) };
+const defaultExports = { ...currency, ...duration, ...symbol, ...contract_type, ...test };
 
-function addToExports(list, store) {
-    Object.keys(list).forEach((methodName) => {
-        const method = list[methodName];
+export const initActions = (store) => {
+    Object.keys(defaultExports).forEach((methodName) => {
+        const method = defaultExports[methodName];
 
         if (/.*async$/i.test(methodName)) {
             defaultExports[methodName] = asyncAction(`${methodName}.wrapper`, function* (payload) {
@@ -38,11 +37,17 @@ function addToExports(list, store) {
             });
         }
     });
-}
 
-export const initActions = (store) => {
-    arr_actions.forEach(act => {
-        addToExports(act, store);
+    const reaction_map   = {
+        symbol             : defaultExports.onSymbolChangeAsync,
+        contract_types_list: defaultExports.onChangeContractTypeList,
+        contract_type      : defaultExports.onChangeContractType,
+        amount             : defaultExports.onAmountChange,
+    };
+
+    Object.keys(reaction_map).forEach((reaction_key) => {
+        const disposer = reaction(() => store[reaction_key], reaction_map[reaction_key]);
+        storeDisposer(disposer);
     });
 };
 
@@ -52,12 +57,5 @@ export const storeDisposer = (disposer) => reaction_disposers.push(disposer);
 export const dispose = () => {
     reaction_disposers.forEach((disposer) => { disposer(); });
 };
-
-export const getReactions = () => ({
-    symbol             : defaultExports.onSymbolChangeAsync,
-    contract_types_list: defaultExports.onChangeContractTypeList,
-    contract_type      : defaultExports.onChangeContractType,
-    amount             : defaultExports.onAmountChange,
-});
 
 export default defaultExports;

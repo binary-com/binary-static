@@ -1,12 +1,11 @@
-import { observable, action, reaction } from 'mobx';
+import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
 import ContractType from './logic/contract_type';
-import actions, { initActions, getReactions, storeDisposer } from '../actions';
+import actions, { initActions } from '../actions';
 
 export default class TradeStore {
     @action.bound init() {
         initActions(this);
-        this._initReactions();
 
         actions.getCountryAsync();
         actions.getStartDates();
@@ -21,20 +20,6 @@ export default class TradeStore {
         ContractType.getContractsList(this.symbol).then(action(r => {
             this.contract_types_list = r;
         }));
-    }
-
-    _initReactions() {
-        const reaction_map = getReactions();
-        Object.keys(reaction_map).forEach((reaction_key) => {
-            const disposer = reaction(() => this[reaction_key], reaction_map[reaction_key]);
-            storeDisposer(disposer);
-        });
-    };
-
-    @action.bound updateState(new_state) {
-        Object.keys(new_state).forEach((key) => {
-            this[key] = new_state[key];
-        });
     }
 
     @action.bound handleChange(e) {
