@@ -38,22 +38,25 @@ class Pagination extends React.PureComponent {
         }
     }
 
+    renderItem = (pageNum) => {
+        return (
+            <li
+                className={`pagination-item ${pageNum === this.state.current ? 'pagination-item-active' : ''}`}
+                key={pageNum}
+                onClick={() => {
+                    this.handleChange(pageNum)
+                }}
+            >
+                <a>{pageNum}</a>
+            </li>
+        );
+    }
+
     renderItems = () => {
-        const { current } = this.state;
         const items = [];
 
         for (let pageNum = 1; pageNum <= this.calcNumOfPages(); pageNum++) {
-            items.push((
-                <li
-                    className={`pagination-item ${pageNum === current ? 'pagination-item-active' : ''}`}
-                    key={pageNum}
-                    onClick={() => {
-                        this.handleChange(pageNum)
-                    }}
-                >
-                    <a>{pageNum}</a>
-                </li>
-            ));
+            items.push(this.renderItem(pageNum));
         }
         return items;
     }
@@ -83,7 +86,7 @@ class Pagination extends React.PureComponent {
 Pagination.defaultProps = {
     total: 0,
     pageSize: 10,
-    onChange: (page, len) => {console.log(page, len)}
+    onChange: (page, pageSize) => {console.log(page, pageSize)}
 };
 
 export default Pagination;
