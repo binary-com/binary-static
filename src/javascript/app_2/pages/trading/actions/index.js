@@ -7,10 +7,14 @@ import * as currency from './currency';
 import * as duration from './duration';
 import * as symbol from './symbol';
 import * as test from './test';
+import * as contract_type from './contract_type';
 
 useStrict(true);
 
-const defaultExports = { };
+const arr_actions        = [currency, duration, symbol, test, contract_type];
+const reaction_disposers = [];
+
+const defaultExports = { ...arr_actions.reduce((acc, act) => acc.concat(act), []) };
 
 function addToExports(list, store) {
     Object.keys(list).forEach((methodName) => {
@@ -37,10 +41,23 @@ function addToExports(list, store) {
 }
 
 export const initActions = (store) => {
-    addToExports(currency, store);
-    addToExports(duration, store);
-    addToExports(symbol, store);
-    addToExports(test, store);
+    arr_actions.forEach(act => {
+        addToExports(act, store);
+    });
 };
+
+export const storeDisposer = (disposer) => reaction_disposers.push(disposer);
+
+// TODO: call this on unload of trade
+export const dispose = () => {
+    reaction_disposers.forEach((disposer) => { disposer(); });
+};
+
+export const getReactions = () => ({
+    symbol             : defaultExports.onSymbolChangeAsync,
+    contract_types_list: defaultExports.onChangeContractTypeList,
+    contract_type      : defaultExports.onChangeContractType,
+    amount             : defaultExports.onAmountChange,
+});
 
 export default defaultExports;

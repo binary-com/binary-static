@@ -1,9 +1,7 @@
-import { observable, action,  reaction } from 'mobx';
+import { observable, action, reaction } from 'mobx';
 import Client from '../../../../app/base/client';
-import Reactions from './reactions';
 import ContractType from './logic/contract_type';
-import { cloneObject } from '../../../../_common/utility';
-import actions, {initActions} from '../actions';
+import actions, { initActions, getReactions, storeDisposer } from '../actions';
 
 export default class TradeStore {
     @action.bound init() {
@@ -26,23 +24,12 @@ export default class TradeStore {
     }
 
     _initReactions() {
-        reaction(() => this.amount, actions.onAmountChange, {name: 'onAmountChange' });
-        reaction(() => this.symbol, actions.onSymbolChangeAsync, {name: 'onSymbolChangeAsync' });
-
-        const reaction_map = Reactions.getReactions();
+        const reaction_map = getReactions();
         Object.keys(reaction_map).forEach((reaction_key) => {
-            const disposer = reaction(() => this[reaction_key], (new_value) => {
-                Promise
-                    .resolve(reaction_map[reaction_key](new_value, this._cloneState()))
-                    .then(this.updateState);
-            });
-            Reactions.storeDisposer(disposer);
+            const disposer = reaction(() => this[reaction_key], reaction_map[reaction_key]);
+            storeDisposer(disposer);
         });
     };
-
-    _cloneState() {
-        return cloneObject(this);
-    }
 
     @action.bound updateState(new_state) {
         Object.keys(new_state).forEach((key) => {
