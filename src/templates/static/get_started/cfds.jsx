@@ -101,7 +101,7 @@ const Cfds = () => (
                             [{ text: 'US_500'  }, { text: 'US 500 Cash Index'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: tenth }],
                         ],
                     }} />
-                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
 
                     <HeaderSecondary header={it.L('Volatility Indices')} />
                     <Table scroll data={{
@@ -122,7 +122,7 @@ const Cfds = () => (
                             [{ text: 'HF Volatility 100 Index' }, { text: it.L('USD 1 per point') }, { text: three_tenth }, { text: hundredth }],
                         ],
                     }} />
-                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>

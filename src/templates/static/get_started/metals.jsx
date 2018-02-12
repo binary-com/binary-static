@@ -134,7 +134,7 @@ const Metals = () => (
                             [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US Dollar')  }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
                         ],
                     }} />
-                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
+                    <p className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots.')}</p>
