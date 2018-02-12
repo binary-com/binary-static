@@ -7,10 +7,8 @@ class InputField extends React.PureComponent {
                 {!!this.props.label &&
                     <label htmlFor={this.props.name} className='input-label'>{this.props.label}</label>
                 }
-                {this.props.prefix ?
+                {!!this.props.prefix &&
                     <i><span className={`symbols ${this.props.prefix.toLowerCase()}`} /></i>
-                :
-                undefined
                 }
                 <input
                     type={this.props.type}
@@ -22,10 +20,8 @@ class InputField extends React.PureComponent {
                     onChange={this.props.onChange}
                     required={this.props.required || undefined}
                 />
-                {this.props.helper ?
+                {!!this.props.helper &&
                     <span className='input-helper'>{this.props.helper}</span>
-                :
-                  undefined
                 }
             </div>
         );
