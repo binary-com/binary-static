@@ -2,6 +2,7 @@
 /* stylelint-disable number-max-precision */
 .time-picker {
     margin: 8px 0;
+    position: relative;
 
     &.padding {
         padding: 16px;
@@ -22,54 +23,97 @@
             border-color: #4c5794;
         }
         &.active {
-            border: 0;
-            border-bottom: 1px solid #f2f2f2;
-            border-radius: 0px;
-            padding: 2px 8px 0px 9px;
+            border-color: #4c5794;
         }
-    }
-    &.active {
-        border-radius: 4px;
-        -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
     .time-picker-dropdown {
         font-size: 16px;
         position: absolute;
+        top: 0;
         height: 0;
-        background: #fff;
         opacity: 0;
-        transition: all 0.25s;
-        border-radius: 0px 0px 4px 4px;
+        border-radius: 4px 0 4px 4px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        z-index: 2;
+        z-index: -1;
+        transition: all 0.3s ease 0.15s;
 
         &.active {
             opacity: 1;
-            height: 160px;
+            height: 213px;
+            z-index: 2;
+
+            .time-picker-panel {
+                height: 30px;
+
+                .time-picker-clear {
+                    display: inline-block;
+                }
+            }
+            .time-picker-hours, .time-picker-minutes, .time-picker-meridiem {
+                .list-container {
+                    height: 180px;
+
+                    .list-item {
+                        &.selected {
+                            background: #4c5794;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .time-picker-panel {
+            height: 0;
+            background: #fff;
+            border-bottom: 1px solid #f2f2f2;
+            border-radius: 4px 0 0;
+            padding: 2px 8px 0 9px;
+            line-height: 30px;
+            transition: height 0.3s ease 0.15s;
+
+            .time-picker-clear {
+                background: url('../../../images/common/close.svg') no-repeat;
+                position: relative;
+                float: right;
+                display: none;
+                top: 8px;
+                width: 12px;
+                height: 12px;
+            }
+            .placeholder {
+                color: #b0b3bf;
+            }
+        }
+        .time-picker-hours, .time-picker-minutes {
+            border-right: 1px solid #f2f2f2;
+        }
+        .time-picker-hours .list-container {
+            border-radius: 0 0 0 4px;
+        }
+        .time-picker-meridiem .list-container {
+            border-radius: 0 0 4px;
         }
         .time-picker-hours, .time-picker-minutes, .time-picker-meridiem {
             display: inline-block;
-            height: 160px;
-            overflow: scroll;
             width: 50px;
             text-align: center;
-            border-right: 1px solid #f2f2f2;
 
-            ul {
-                padding: 0 0 128px;
+            .list-container {
+                height: 0;
+                position: relative;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                background: #fff;
+                transition: all 0.3s ease 0.15s;
 
-                li {
+                .list-item {
                     margin: 0;
-                    padding: 5px 0;
+                    padding: 10px 0;
+                    transition: all 0.3s ease;
 
                     &:hover {
-                        background: #f2f2f2;
+                        background: #f2f3f8;
                         color: #000;
-                    }
-                    &.selected {
-                        background: #4c5794;
-                        color: #fff;
                     }
                 }
             }
