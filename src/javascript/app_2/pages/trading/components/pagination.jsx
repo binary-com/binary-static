@@ -3,13 +3,23 @@ import React from 'react';
 class Pagination extends React.PureComponent {
     constructor(props) {
         super(props);
-
+        this.handleChange = this.handleChange.bind(this);
+        this.calcNumOfPages = this.calcNumOfPages.bind(this);
+        this.handleNext = this.handleNext.bind(this);
+        this.handlePrev = this.handlePrev.bind(this);
+        this.handleJumpUp = this.handleJumpUp.bind(this);
+        this.handleJumpDown = this.handleJumpDown.bind(this);
+        this.renderUpEllipsis = this.renderUpEllipsis.bind(this);
+        this.renderDownEllipsis = this.renderDownEllipsis.bind(this);
+        this.renderItem = this.renderItem.bind(this);
+        this.renderItemRange = this.renderItemRange.bind(this);
+        this.renderItems = this.renderItems.bind(this);
         this.state = {
             current: 1
         };
     }
 
-    handleChange = (newPage) => {
+    handleChange(newPage) {
         if (newPage === this.state.current) return;
 
         const { pageSize } = this.props;
@@ -21,38 +31,38 @@ class Pagination extends React.PureComponent {
         this.props.onChange(newPage, pageSize);
     }
 
-    calcNumOfPages = () => {
+    calcNumOfPages() {
         const { total, pageSize } = this.props;
         return Math.ceil(total / pageSize);
     }
 
-    handleNext = () => {
+    handleNext() {
         if (this.state.current < this.calcNumOfPages()) {
             this.handleChange(this.state.current + 1);
         }
     }
 
-    handlePrev = () => {
+    handlePrev() {
         if (this.state.current > 1) {
             this.handleChange(this.state.current - 1);
         }
     }
 
-    handleJumpUp = () => {
+    handleJumpUp() {
         this.handleChange(Math.min(
             this.state.current + 5,
             this.calcNumOfPages()
         ));
     }
 
-    handleJumpDown = () => {
+    handleJumpDown() {
         this.handleChange(Math.max(
             1,
             this.state.current - 5
         ));
     }
 
-    renderUpEllipsis = () => {
+    renderUpEllipsis() {
         return (
             <li
                 className='pagination-item pagination-ellipsis'
@@ -64,7 +74,7 @@ class Pagination extends React.PureComponent {
         );
     }
 
-    renderDownEllipsis = () => {
+    renderDownEllipsis() {
         return (
             <li
                 className='pagination-item pagination-ellipsis'
@@ -76,7 +86,7 @@ class Pagination extends React.PureComponent {
         );
     }
 
-    renderItem = (pageNum) => {
+    renderItem(pageNum) {
         return (
             <li
                 className={`pagination-item ${pageNum === this.state.current ? 'pagination-item-active' : ''}`}
@@ -90,7 +100,7 @@ class Pagination extends React.PureComponent {
         );
     }
 
-    renderItemRange = (first, last) => {
+    renderItemRange(first, last) {
         const items = [];
 
         for (let pageNum = first; pageNum <= last; pageNum++) {
@@ -99,7 +109,7 @@ class Pagination extends React.PureComponent {
         return items;
     }
 
-    renderItems = () => {
+    renderItems() {
         const numOfPages = this.calcNumOfPages();
         const { current } = this.state;
 

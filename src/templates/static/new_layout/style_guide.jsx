@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../../../javascript/app_2/pages/trading/components/form/button.jsx';
 import { InputField, TestField } from '../../../javascript/app_2/pages/trading/components/form/text_field.jsx';
-import { DataTable } from '../../../javascript/app_2/pages/trading/components/data_table.jsx';
+import DataTable from '../../../javascript/app_2/pages/trading/components/data_table.jsx';
 import Pagination from '../../../javascript/app_2/pages/trading/components/pagination.jsx';
 
 const StyleGuide = () => (
