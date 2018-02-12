@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-08 21:11-0500\n"
+"PO-Revision-Date: 2018-02-12 04:51-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -489,9 +489,6 @@ msgstr "* Livre de Impostos: Em muitos países, os ganhos com negociações são
 
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Todas as chamadas são gravadas para fins de treinamento e monitoramento"
-
-msgid "*Lot size volume = 1.0."
-msgstr "*Volume do tamanho do lote = 1.0."
 
 msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
 msgstr "*Estes números são exclusivamente para efeitos indicativos. Verifique-os na nossa plataforma de negociação MT5."
@@ -4021,6 +4018,9 @@ msgstr "Para mais informações de enquadramento, leia a publicação no nosso b
 msgid "For general support:"
 msgstr "Para apoio geral:"
 
+msgid "For information about Forex leverage refer to our %1Margin Policy%2."
+msgstr ""
+
 msgid "For payments-related queries:"
 msgstr "Para assuntos relacionados com pagamentos:"
 
@@ -6296,8 +6296,8 @@ msgstr "Perda"
 msgid "Lot Size (Volume = 1.0)"
 msgstr "Tamanho do lote (Volume = 1.0)"
 
-msgid "Lot size*"
-msgstr "Tamanho do lote*"
+msgid "Lot size"
+msgstr ""
 
 msgid "Lot units"
 msgstr "Unidades do lote"
@@ -6482,12 +6482,6 @@ msgstr "Chamada de margem"
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr "A alavancagem indica quanto investimento você pode controlar com base no seu capital inicial. Por exemplo, uma alavancagem de 0,2% irá permitir que você controle até 500.000 USD usando apenas 1.000 do seu próprio dinheiro como um depósito."
 
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "A alavancagem indica quanto investimento você pode controlar com base no seu capital inicial. Por exemplo, uma alavancagem de 1% irá permitir que você controle até 100.000 USD usando apenas 1.000 do seu próprio dinheiro como um depósito."
-
-msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
-msgstr "A taxa de margem indica quanto capital você pode controlar com base no seu depósito inicial. Por exemplo, uma taxa de margem de 10% irá permitir que você controle até 100.000 USD usando apenas 10.000 do seu próprio dinheiro como um depósito. Esta taxa requer 10% do valor do ativo como margem."
-
 msgid "Market"
 msgstr "Mercado"
 
@@ -6596,9 +6590,6 @@ msgstr "Tamanho máximo de pedidos"
 msgid "Maximum upload size for each file is 3MB"
 msgstr "Tamanho máximo de carregamento para cada arquivo é 3MB"
 
-msgid "Maximum volume"
-msgstr "Volume máximo"
-
 msgid "May"
 msgstr "Maio"
 
@@ -6706,6 +6697,9 @@ msgstr "Mínimo de validade de seis meses"
 
 msgid "Minimum ticket size"
 msgstr "Tamanho mínimo de pedido"
+
+msgid "Minimum volume"
+msgstr ""
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Trabalhadores de mineração, construção, fabricação e transporte"
@@ -7210,6 +7204,9 @@ msgstr "Negociações online a %1"
 
 msgid "Online currency exchangers"
 msgstr "Serviços de câmbio de moeda online"
+
+msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
+msgstr ""
 
 msgid "Only %1 are allowed."
 msgstr "Apenas %1 são permitidos."
@@ -10492,14 +10489,8 @@ msgstr "Para implementar o nosso recurso para o pagamento de dividendos, iremos 
 msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr "Para saber mais, leia as nossas <a href='%1'>especificações de contratos CFD</a>."
 
-msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr "Para saber mais, leia a nossa %1política de margens%2 que explica melhor o nosso nível de liquidação forçada de 100% para forex."
-
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "Para saber mais, leia a nossa %1política de margens%2 que explica melhor os nossos requisitos de margem."
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr "Para saber mais, leia a nossa %1política de margens%2 que explica melhor os nossos requisitos de margem. Note que não cobramos taxas de swap para os nossos pares de criptomoedas."
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr "Para aprender mais, leia a nossa <a href=\"%1\">Política de margens para CFDs</a> que explica melhor o nosso nível de liquidação forçada de 50% para índices \"Volatility\"."
@@ -10509,9 +10500,6 @@ msgstr "Para aprender mais, leia a nossa <a href=\"%1\">Política de margens par
 
 msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
 msgstr "Para saber mais, leia a nossa <a href=\"%1\">Política de margens para metais</a> que explica melhor o nosso nível de liquidação forçada de 100% para pares de metais."
-
-msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "Para saber mais, leia a nossa %1política de margens%2 que explica melhor o nosso nível de liquidação forçada de 100% para os nossos pares de metais."
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "Para abrir uma conta real, você deve ter uma conta real de opções binárias autenticada na %1. Uma conta real não pode ser aberta na ausência de uma conta real de opções binárias."
@@ -10794,9 +10782,6 @@ msgstr "A negociação de opções binárias é especulativa e envolve um alto g
 
 msgid "Trading manual"
 msgstr "Guia de negociação"
-
-msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
-msgstr "A negociação em mercados financeiros pode criar dependência. Preencha o formulário abaixo para limitar a sua participação no nosso site ou envie uma carta ou fax assinado para a nossa equipe de apoio ao cliente. Uma vez definidos, você só poderá apertar os seus limites. Os limites só serão removidos ou desapertados após 7 dias com exceção da data de auto-exclusão, que não pode ser removida ou alterada uma vez que você a confirmou. Para remover ou aumentar os seus limites, contate o <a href=\"%1\">apoio ao cliente</a>."
 
 msgid "TradingView for %1"
 msgstr "TradingView para a %1"
