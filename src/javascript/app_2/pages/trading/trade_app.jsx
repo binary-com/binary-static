@@ -9,8 +9,6 @@ import Symbol from './components/symbol.jsx';
 import Test from './components/test.jsx';
 import Purchase from './components/purchase.jsx';
 import { connect } from './store/connect';
-import Pagination from './components/pagination';
-import DataTable from './components/data_table';
 
 class TradeApp extends React.Component {
     componentDidMount() {
@@ -38,17 +36,6 @@ class TradeApp extends React.Component {
 
                     <Purchase />
                 </div>
-
-                <div className='container'>
-                    <DataTable />
-                </div>
-
-                <Pagination total={34} pageSize={10} />
-                <Pagination total={6} pageSize={1} />
-                <Pagination total={9} pageSize={1} />
-                <Pagination total={10} pageSize={1} />
-                <Pagination total={12} pageSize={1} />
-                <Pagination total={50} pageSize={1} />
             </React.Fragment>
         );
     }
