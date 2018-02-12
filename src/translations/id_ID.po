@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-08 21:12-0500\n"
+"PO-Revision-Date: 2018-02-12 04:52-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -488,9 +488,6 @@ msgstr "* Bebas Pajak: Keuntungan trading pada umumnya adalah bebas pajak di ban
 
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Semua percakapan direkam untuk pelatihan dan pemantauan"
-
-msgid "*Lot size volume = 1.0."
-msgstr "*Volume ukuran lot = 1.0."
 
 msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
 msgstr "*Angka angka berikut bersifat indikatif, silahkan verifikasi pada platform trading MT5 kami."
@@ -4011,6 +4008,9 @@ msgstr "Untuk informasi latar belakang lebih lanjut silahkan baca postingan blog
 msgid "For general support:"
 msgstr "Untuk bantuan umum:"
 
+msgid "For information about Forex leverage refer to our %1Margin Policy%2."
+msgstr ""
+
 msgid "For payments-related queries:"
 msgstr "Untuk bantuan pembayaran:"
 
@@ -6285,8 +6285,8 @@ msgstr "Rugi"
 msgid "Lot Size (Volume = 1.0)"
 msgstr "Ukuran Lot (Volume = 1.0)"
 
-msgid "Lot size*"
-msgstr "Ukuran lot*"
+msgid "Lot size"
+msgstr ""
 
 msgid "Lot units"
 msgstr "Unit lot"
@@ -6471,12 +6471,6 @@ msgstr "Panggilan marjin"
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr "Margin menunjukkan berapa banyak investasi yang dapat Anda kontrol berdasarkan modal awal Anda. Misalnya, margin 0,2% akan memungkinkan Anda untuk mengontrol hingga USD 500.000 hanya dengan menggunakan USD 1.000 dari uang Anda sendiri sebagai deposit."
 
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "Margin menunjukkan berapa banyak investasi yang dapat Anda kontrol berdasarkan modal awal Anda. Misalnya, margin 1% akan memungkinkan Anda untuk mengontrol hingga USD 100.000 hanya dengan menggunakan USD 1.000 dari uang Anda sendiri sebagai deposit."
-
-msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
-msgstr "Marjin menunjukkan seberapa banyak modal yang dapat Anda kontrol berdasarkan deposit awal. Sebagai contoh, tingkat marjin 10% akan memungkinkan Anda untuk mengkontrol hingga USD 100.000 menggunakan hanya USD 10.000 dari uang Anda sebagai deposit. Angka ini membutuhkan 10% dari nilai aset sebagai marjin."
-
 msgid "Market"
 msgstr "Pasar"
 
@@ -6585,9 +6579,6 @@ msgstr "Ukuran tiket maksimal"
 msgid "Maximum upload size for each file is 3MB"
 msgstr "Ukuran upload maksimal untuk setiap file adalah 3MB"
 
-msgid "Maximum volume"
-msgstr "Volume maksimum"
-
 msgid "May"
 msgstr "Mei"
 
@@ -6646,7 +6637,7 @@ msgid "Min"
 msgstr "Min"
 
 msgid "Min / Max withdrawal"
-msgstr ""
+msgstr "Penarikan min/mak"
 
 msgid "Min Withdrawal"
 msgstr "Minimal Penarikan"
@@ -6695,6 +6686,9 @@ msgstr "Minimal enam bulan validitasnya"
 
 msgid "Minimum ticket size"
 msgstr "Ukuran tiket minimum"
+
+msgid "Minimum volume"
+msgstr ""
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Pekerja Pertambangan, Konstruksi, Manufaktur dan Transportasi"
@@ -7199,6 +7193,9 @@ msgstr "Trading Online bersama %1"
 
 msgid "Online currency exchangers"
 msgstr "Penukar mata uang online"
+
+msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
+msgstr ""
 
 msgid "Only %1 are allowed."
 msgstr "Hanya %1 dibenarkan."
@@ -10480,14 +10477,8 @@ msgstr "Untuk menerapkan fitur pembayaran dividen, kami akan mengkloning token k
 msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr "Untuk mempelajari lebih lanjut, silahkan baca <a href='%1'>spesifikasi kontrak CFD</a> kami."
 
-msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr "Lebih lanjut, baca %1Kebijakan Margin%2 kami yang menjelaskan lebih lanjut tentang 100% tingkat likuidasi paksa untuk Forex."
-
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "Lebih lanjut, baca %1Kebijakan Margin%2 kami yang menjelaskan lebih lanjut tentang persyaratan margin kami."
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr "Lebih lanjut, baca %1Kebijiakan Marjin%2 yang menjelaskan lebih lanjut mengenai persyaratan marjin kami. Harap dicatat bahwa kami tidak mengenakan biaya swap untuk pasangan mata uang crypto."
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr "Untuk mempelajari lebih lanjut, baca <a href=\"%1\">Kebijakan Margin CFD</a> kami yang menjelaskan lebih lanjut tentang 50% tingkat likuidasi paksa untuk Indeks Volatilitas."
@@ -10497,9 +10488,6 @@ msgstr "Untuk mempelajari lebih lanjut, baca <a href=\"%1\">Kebijakan Margin For
 
 msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
 msgstr "Untuk mempelajari lebih lanjut, baca <a href=\"%1\">Kebijakan Margin Metal</a> kami yang menjelaskan lebih lanjut tentang 100% tingkat likuidasi paksa untuk pasangan logam."
-
-msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "Lebih lanjut, baca %1Kebijakan Margin%2 Metal kami lebih lanjut tentang 100% tingkat likuidasi paksa untuk pasangan metal."
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "Untuk mendaftar Akun Riil, Anda harus memiliki Akun Riil %1 yang sudah melengkapi proses otentikasi. Akun Riil tidak dapat didaftarkan jika Anda belum mendaftar Akun Riil Opsi Binary."
@@ -10782,9 +10770,6 @@ msgstr "Trading pada Opsi Binary merupakan spekulasi dan melibatkan tingkat risi
 
 msgid "Trading manual"
 msgstr "Trading manual"
-
-msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
-msgstr "Trading pada pasar finansial dapat menyebabkan ketagihan. Isikan formulir dibawah ini untuk membatasi keikutsertaan Anda pada situs web ini atau kirimkan surat yang ditandatangani atau kirimkan fax kepada tim customer support kami. Setelah ditetapkan, Anda hanya dapat merubah batasan Anda. Batas hanya akan dihapus atau dirubah setelah 7 hari dengan pengecualian dari tanggal pengecualian diri, yang tidak dapat dihapus atau diubah setelah Anda konfirmasi. Untuk menghapus atau meningkatkan batasan Anda, silahkan hubungi <a href=\"%1\">customer support</a>."
 
 msgid "TradingView for %1"
 msgstr "TradingView untuk %1"
