@@ -529,7 +529,8 @@ form {
             margin: 0;
             width: 100%;
             height: 0;
-            display: none;
+            pointer-events: none;
+            opacity: 0;
             -webkit-transition: height 0.3s;
             -moz-transition: height 0.3s;
             -ms-transition: height 0.3s;
@@ -555,7 +556,8 @@ form {
                 }
             }
             &.expand {
-                display: block;
+                opacity: 1;
+                pointer-events: auto;
                 height: 100%;
             }
         }
