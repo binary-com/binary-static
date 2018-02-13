@@ -26,14 +26,6 @@ export const onAmountChange = ({amount}) => {
     };
 };
 
-export const getStartDates = () => ({
-    start_dates_list: [
-        { open: 1517356800, close: 1517443199 },
-        { open: 1517443200, close: 1517529599 },
-        { open: 1517529600, close: 1517615999 },
-    ],
-});
-
 export const initTime = () => ({
     server_time: window.time,
 });

@@ -3,17 +3,18 @@ import { asyncAction } from 'mobx-utils';
 import { cloneObject } from '../../../../_common/utility';
 
 // add files containing actions here.
-import * as currency from './currency';
-import * as duration from './duration';
-import * as symbol from './symbol';
-import * as test from './test';
-import * as contract_type from './contract_type';
+import * as ContractType from './contract_type';
+import * as Currency from './currency';
+import * as Duration from './duration';
+import * as StartDate from './start_date';
+import * as Symbol from './symbol';
+import * as Test from './test';
 
 useStrict(true);
 
 const reaction_disposers = [];
 
-const defaultExports = { ...currency, ...duration, ...symbol, ...contract_type, ...test };
+const defaultExports = { ...ContractType, ...Currency, ...Duration, ...Symbol, ...StartDate, ...Test };
 
 export const initActions = (store) => {
     Object.keys(defaultExports).forEach((methodName) => {
