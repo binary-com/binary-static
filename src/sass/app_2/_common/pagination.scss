@@ -14,14 +14,17 @@
     }
     &-prev, &-next, &-item {
         text-decoration: none;
+        list-style: none;
         background-color: $COLOR_WHITE;
         border-radius: 4px;
         color: #333333;
         border: 1px solid #e9e9ed;
-        width: 32px;
+        min-width: 32px;
         height: 32px;
-        line-height: 32px;
+        line-height: 30px;
         text-align: center;
+        vertical-align: middle;
+        box-sizing: border-box;
     }
     &-prev:hover, &-next:hover, &-item:hover, &-item-active {
         cursor: pointer;
@@ -43,11 +46,31 @@
             color: #e9e9ed;
         }
     }
-    &-ellipsis {
+    &-ellipsis-up, &-ellipsis-down {
+        line-height: 32px;
+
+        &:after {
+            content: '\2022\2022\2022';
+            display: block;
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: #e9e9ed;
+            text-align: center;
+        }
+        &:hover:after {
+            color: #4c5794;
+            font-size: 13px;
+        }
         & a {
             color: #e9e9ed;
         }
         border: none;
+    }
+    &-ellipsis-up:hover:after {
+        content: '>>';
+    }
+    &-ellipsis-down:hover:after {
+        content: '<<';
     }
     & a {
         text-decoration: none;

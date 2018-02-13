@@ -65,11 +65,10 @@ class Pagination extends React.PureComponent {
     renderUpEllipsis() {
         return (
             <li
-                className='pagination-item pagination-ellipsis'
+                className='pagination-item pagination-ellipsis-up'
                 key='ellipsis-up'
                 onClick={this.handleJumpUp}
             >
-                <a>...</a>
             </li>
         );
     }
@@ -77,11 +76,10 @@ class Pagination extends React.PureComponent {
     renderDownEllipsis() {
         return (
             <li
-                className='pagination-item pagination-ellipsis'
+                className='pagination-item pagination-ellipsis-down'
                 key='ellipsis-down'
                 onClick={this.handleJumpDown}
             >
-                <a>...</a>
             </li>
         );
     }
