@@ -71,21 +71,22 @@ class TimePickerDropdown extends PureComponent {
             this.minuteScroll = new IScroll('.time-picker-minutes', iScrollOptions);
             this.meridiemScroll = new IScroll('.time-picker-meridiem', iScrollOptions);
             this.iScrollinitialized = true;
+            window.hourScroll = this.hourScroll;
+            window.minuteScroll = this.minuteScroll;
         }
     }
 
-    scrollToSelected (type, duration, difference = 0) {
+    scrollToSelected (type, duration, offset = -30) {
         // move to selected item
-        const offsetY = difference - 126;
         const wrapper = {
             hour    : this.hourScroll,
             minute  : this.minuteScroll,
             meridiem: this.meridiemScroll,
         };
         if (wrapper[type].scroller.querySelector('.selected')) {
-            wrapper[type].scrollToElement('.selected', duration, null, offsetY, IScroll.utils.ease.elastic);
+            wrapper[type].scrollToElement('.selected', duration, null, offset, IScroll.utils.ease.elastic);
         } else {
-            wrapper[type].scrollToElement('.list-item', duration, null, offsetY);
+            wrapper[type].scrollToElement('.list-item', duration, null, null);
         }
     }
 
@@ -95,9 +96,12 @@ class TimePickerDropdown extends PureComponent {
             isMinuteSelected  : false,
             isMeridiemSelected: false,
         });
-        this.scrollToSelected('hour', 0, 30);
-        this.scrollToSelected('minute', 0, 30);
-        this.scrollToSelected('meridiem', 0, 30);
+        this.hourScroll.refresh();
+        this.minuteScroll.refresh();
+        this.meridiemScroll.refresh();
+        this.scrollToSelected('hour', 0, 0);
+        this.scrollToSelected('minute', 0, 0);
+        this.scrollToSelected('meridiem', 0, 0);
     }
 
     selectOption (type, value) {
