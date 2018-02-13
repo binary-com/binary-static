@@ -32,14 +32,14 @@ const Amount = ({
                     value={amount}
                     onChange={onChange}
                     is_currency
-                    prefix={currency || 'AUD'}
+                    prefix={currency}
                 />
             </div>
 
             {!Client.get('currency') &&
                 <Dropdown
                     list={currencies_list}
-                    value={currency || 'AUD'}
+                    value={currency}
                     name='currency'
                     onChange={onChange}
                 />
