@@ -24,18 +24,21 @@ const Geocoder = (() => {
 
     const handleResponse = (status) => {
         const $geocode_error = $('#geocode-error');
-        if (status === google.maps.GeocoderStatus.ZERO_RESULTS) {
+
+        if (/ZERO_RESULTS|INVALID_REQUEST/.test(status)) {
             if ($geocode_error.length) {
                 $geocode_error.fadeIn(0);
                 return;
             }
-            const $last_child = $('#address_form').children(':last');
+            const $last_child= $('#address_form').children(':last');
             $last_child.parent().append($('<p/>', {
                 id   : 'geocode-error',
                 class: 'notice-msg no-margin',
                 text : localize('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.'),
             }));
-        } else if (status === google.maps.GeocoderStatus.OK) {
+        }
+
+        if ($geocode_error.length) {
             $geocode_error.fadeOut(0);
         }
     };
