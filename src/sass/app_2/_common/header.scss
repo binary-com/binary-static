@@ -14,12 +14,13 @@ header {
         .navbar-icons {
             cursor: pointer;
             padding: 6px 15px;
+            align-self: center;
 
             &.binary-logo {
                 border-left: 1px solid #f2f2f2;
             }
             img {
-                width: 1rem;
+                width: 1.5rem;
                 height: auto;
 
                 &.logo-img {

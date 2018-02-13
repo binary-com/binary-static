@@ -1,0 +1,151 @@
+/* stylelint-disable color-no-hex */
+body.no-scroll {
+    overflow: hidden;
+}
+
+.drawer-container {
+    display: block;
+
+    .drawer-bg {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 665;
+
+        &.show {
+            animation: dim 0.25s ease-out forwards;
+            visibility: visible;
+        }
+        &.hide {
+            animation: undim 0.25s ease-out forwards;
+            pointer-events: none;
+        }
+        .drawer {
+            position: absolute;
+            z-index: 666;
+            top: 0;
+            width: 260px;
+            height: 100%;
+            box-sizing: border-box;
+            transition: transform ease 250ms;
+            background: $COLOR_WHITE;
+
+            &.left {
+                left: -260px;
+
+                .drawer-header {
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid #f2f2f2;
+
+                    .icons {
+                        display: inline-flex;
+                        cursor: pointer;
+                        padding: 4px 8px;
+
+                        &.btn-close {
+                            width: 1.5rem;
+                            height: auto;
+                            align-self: center;
+                        }
+                        &.brand-logo {
+                            display: inline-flex;
+                            padding: 8px 20px;
+                            border-left: 1px solid #f2f2f2;
+
+                            img {
+                                width: 9.5rem;
+                                height: auto;
+                                align-self: center;
+                            }
+                        }
+                    }
+                }
+            }
+            &.right {
+                right: -260px;
+
+                .drawer-header {
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid #f2f2f2;
+
+                    .icons {
+                        display: inline-flex;
+                        cursor: pointer;
+                        padding: 14px 8px;
+
+                        &.btn-close {
+                            width: 1.5rem;
+                            height: auto;
+                            align-self: center;
+                        }
+                    }
+                }
+            }
+            .drawer-item {
+                float: left;
+                width: 100%;
+                margin: 0;
+                padding: 10px 15px;
+                cursor: pointer;
+                font-size: 1rem;
+                color: $primaryBrandColor;
+                box-sizing: border-box;
+
+                &:hover {
+                    background: #f2f2f2;
+                }
+            }
+            &.visible.right {
+                box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+                transform: translate3d(-260px, 0, 0);
+            }
+            &.visible.left {
+                box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+                transform: translate3d(260px, 0, 0);
+            }
+        }
+    }
+}
+
+@keyframes dim {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+@keyframes undim {
+    from {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    to {
+        background-color: transparent;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        right: calc(-100%);
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: calc(-100%);
+    }
+}
+/* stylelint-enable color-no-hex */
