@@ -72,7 +72,10 @@ function allLanguages() {
 }
 
 function getLanguage() {
-    const language = window.location.href.toLowerCase().split('/').slice(3).find((l) => allLanguages().indexOf(l) >= 0);
+    let language;
+    window.location.href.toLowerCase().split('/').slice(3).forEach((l) => { // forEach() has more browser compatibility than 'Array.find()'
+        if (!language && allLanguages().indexOf(l) >= 0) language = l;
+    });
     return language || 'en';
 }
 
