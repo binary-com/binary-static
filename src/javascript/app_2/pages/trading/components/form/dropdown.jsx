@@ -9,7 +9,6 @@ class Dropdown extends React.PureComponent {
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.state = {
             is_list_visible: false,
-            value          : this.props.value,
         };
     }
 
@@ -40,8 +39,7 @@ class Dropdown extends React.PureComponent {
     }
 
     handleSelect(item) {
-        if (item.value !== this.state.value) {
-            this.setState({ value: item.value });
+        if (item.value !== this.props.value) {
             this.props.onChange({ target: { name: this.props.name, value: item.value } });
         }
         this.handleVisibility();
@@ -79,7 +77,7 @@ class Dropdown extends React.PureComponent {
                     onClick={this.handleVisibility}
                     onBlur={this.handleVisibility}
                 >
-                    <span name={this.props.name} value={this.state.value}>
+                    <span name={this.props.name} value={this.props.value}>
                         {this.getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
@@ -90,7 +88,7 @@ class Dropdown extends React.PureComponent {
                         <Items
                             items={this.props.list}
                             name={this.props.name}
-                            value={this.state.value}
+                            value={this.props.value}
                             handleSelect={this.handleSelect}
                             type={this.props.type || undefined}
                         /> :
@@ -100,7 +98,7 @@ class Dropdown extends React.PureComponent {
                                 <Items
                                     items={this.props.list[key]}
                                     name={this.props.name}
-                                    value={this.state.value}
+                                    value={this.props.value}
                                     handleSelect={this.handleSelect}
                                 />
                             </React.Fragment>
@@ -122,28 +120,16 @@ const Items = ({
 }) => (
     items.map((item, idx) => (
         <React.Fragment key={idx}>
-            {item.text && item.value ?
-                <div
-                    className={`list-item ${ value === item.value ? 'selected' : ''}`}
-                    key={idx}
-                    name={name}
-                    value={item.value}
-                    data-end={type==='date' && item.end ? item.end : undefined}
-                    onClick={handleSelect.bind(null, item)}
-                >
-                    <span>{item.text}</span>
-                </div>
-            :
-                <div
-                    className={`list-item ${ value === item ? 'selected' : ''}`}
-                    key={idx}
-                    name={name}
-                    value={item}
-                    onClick={handleSelect.bind(null, item)}
-                >
-                    <span>{item}</span>
-                </div>
-        }
+            <div
+                className={`list-item ${ value === item.value ? 'selected' : ''}`}
+                key={idx}
+                name={name}
+                value={item.value}
+                data-end={type==='date' && item.end ? item.end : undefined}
+                onClick={handleSelect.bind(null, item)}
+            >
+                <span>{item.text}</span>
+            </div>
         </React.Fragment>
     ))
 );
