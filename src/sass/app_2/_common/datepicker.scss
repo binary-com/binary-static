@@ -6,13 +6,16 @@
     top: 0;
     left: 0;
     background: #fff;
-    width: 100%;
     outline: 0;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
     z-index: 999;
     font-size: 1rem;
     box-sizing: border-box;
-    max-width: 280px;
+    width: 280px;
+    @media (max-width: 1024px) {
+        left: unset;
+        right: 0;
+    }
 
     .calendar-input {
         margin: 0 !important;
@@ -68,7 +71,6 @@
             position: absolute;
             color: rgba(0, 0, 0, 0.45);
             padding: 0 5px;
-            font-size: 16px;
             display: inline-block;
             line-height: 40px;
             cursor: pointer;
@@ -131,6 +133,7 @@
             background: transparent;
             -webkit-transition: background 0.3s;
             transition: background 0.3s;
+            font-size: 1rem;
 
             &.calendar-date {
                 width: 24px;
@@ -207,7 +210,6 @@ div.datepicker-container {
         top: 50%;
         margin-top: -7px;
         line-height: 14px;
-        font-size: 12px;
         transition: all 0.3s;
         user-select: none;
         opacity: 0;
@@ -217,10 +219,10 @@ div.datepicker-container {
             opacity: 1;
         }
         &.picker-calendar-icon:before {
-            content: url('../../../images/app_2/icons/calendar.svg');
+            content: url('../images/trading_app/calendar.svg');
         }
         &.close-circle-icon:before {
-            content: url('../../../images/app_2/icons/close-circle.svg');
+            content: url('../images/trading_app/close-circle.svg');
         }
     }
     .datepicker-calendar {

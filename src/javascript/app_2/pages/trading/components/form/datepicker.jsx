@@ -20,12 +20,12 @@ import lastDayOfMonth from 'date-fns/last_day_of_month';
 class Calendar extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.getDays = this.getDays.bind(this);
         this.getMonths = this.getMonths.bind(this);
         this.getYears = this.getYears.bind(this);
         this.getDecades = this.getDecades.bind(this);
-        
+
         this.setToday = this.setToday.bind(this);
 
         this.nextMonth = this.nextMonth.bind(this);
@@ -72,7 +72,7 @@ class Calendar extends React.Component {
         });
         this.props.handleDateChange(format(new Date(), this.props.dateFormat), true);
     }
-    
+
     nextMonth() {
         this.setState({ date: format(addMonths(this.state.date, 1), this.props.dateFormat) });
     }
@@ -191,7 +191,7 @@ class Calendar extends React.Component {
             selectedDate: value, // update datepicker input
         });
 
-        this.props.handleDateChange(format(value, this.props.dateFormat), true);
+        this.props.handleDateChange(value, true);
 
         if (value.length < 10) return;
 
@@ -481,6 +481,10 @@ class DatePicker extends React.Component {
         };
     }
 
+    componentDidMount() {
+        this.props.onChange({ target: { name: this.props.name, value: this.state.selectedDate } });
+    }
+
     componentWillMount() {
         document.addEventListener('click', this.handleClickOutside, true);
     }
@@ -501,13 +505,6 @@ class DatePicker extends React.Component {
         });
     }
 
-    handleDateChange(selectedDate, showCalendar) {
-        this.setState({
-            selectedDate,
-            showCalendar,
-        });
-    }
-
     handleMouseEnter() {
         let value = format(this.state.selectedDate, this.props.dateFormat);
         if (/Invalid Date/.test(value)) {
@@ -522,12 +519,25 @@ class DatePicker extends React.Component {
         this.setState({ showCloseBtn: false });
     }
 
+    handleDateChange(selectedDate, showCalendar) {
+        let value = selectedDate;
+        if (value.length < 8) {
+            value = '';
+        }
+        this.setState({
+            selectedDate: value,
+            showCalendar,
+        });
+        this.props.onChange({ target: { name: this.props.name, value } });
+    }
+
     clearDateInput() {
         this.setState({ selectedDate: '' });
+        this.props.onChange({ target: { name: this.props.name, value: '' } });
     }
 
     render() {
-        let value = format(this.state.selectedDate, this.props.dateFormat);
+        let value = this.state.selectedDate;
         if (/Invalid Date/.test(value)) {
             value = '';
         }
