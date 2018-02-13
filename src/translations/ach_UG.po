@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-08 21:12-0500\n"
+"PO-Revision-Date: 2018-02-12 21:02-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -488,9 +488,6 @@ msgstr "crwdns37556:0crwdne37556:0"
 
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "crwdns37557:0crwdne37557:0"
-
-msgid "*Lot size volume = 1.0."
-msgstr "crwdns43174:0crwdne43174:0"
 
 msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
 msgstr "crwdns43175:0crwdne43175:0"
@@ -4011,6 +4008,9 @@ msgstr "crwdns41920:0%1crwdne41920:0"
 msgid "For general support:"
 msgstr "crwdns38487:0crwdne38487:0"
 
+msgid "For information about Forex leverage refer to our %1Margin Policy%2."
+msgstr "crwdns43468:0%1crwdnd43468:0%2crwdne43468:0"
+
 msgid "For payments-related queries:"
 msgstr "crwdns38488:0crwdne38488:0"
 
@@ -6285,8 +6285,8 @@ msgstr "crwdns39101:0crwdne39101:0"
 msgid "Lot Size (Volume = 1.0)"
 msgstr "crwdns39102:0crwdne39102:0"
 
-msgid "Lot size*"
-msgstr "crwdns43225:0crwdne43225:0"
+msgid "Lot size"
+msgstr "crwdns43469:0crwdne43469:0"
 
 msgid "Lot units"
 msgstr "crwdns42244:0crwdne42244:0"
@@ -6471,12 +6471,6 @@ msgstr "crwdns42263:0crwdne42263:0"
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr "crwdns39144:0crwdne39144:0"
 
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "crwdns39145:0crwdne39145:0"
-
-msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
-msgstr "crwdns42266:0crwdne42266:0"
-
 msgid "Market"
 msgstr "crwdns42267:0crwdne42267:0"
 
@@ -6585,9 +6579,6 @@ msgstr "crwdns43431:0crwdne43431:0"
 msgid "Maximum upload size for each file is 3MB"
 msgstr "crwdns41756:0crwdne41756:0"
 
-msgid "Maximum volume"
-msgstr "crwdns42272:0crwdne42272:0"
-
 msgid "May"
 msgstr "crwdns39178:0crwdne39178:0"
 
@@ -6695,6 +6686,9 @@ msgstr "crwdns41855:0crwdne41855:0"
 
 msgid "Minimum ticket size"
 msgstr "crwdns43138:0crwdne43138:0"
+
+msgid "Minimum volume"
+msgstr "crwdns43470:0crwdne43470:0"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "crwdns39199:0crwdne39199:0"
@@ -7200,6 +7194,9 @@ msgstr "crwdns42306:0%1crwdne42306:0"
 msgid "Online currency exchangers"
 msgstr "crwdns39322:0crwdne39322:0"
 
+msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
+msgstr "crwdns43471:0%1crwdne43471:0"
+
 msgid "Only %1 are allowed."
 msgstr "crwdns39323:0%1crwdne39323:0"
 
@@ -7349,6 +7346,9 @@ msgstr "crwdns39362:0crwdne39362:0"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "crwdns39363:0crwdne39363:0"
+
+msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
+msgstr "crwdns43472:0crwdne43472:0"
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "crwdns43436:0crwdne43436:0"
@@ -10479,14 +10479,8 @@ msgstr "crwdns42582:0crwdne42582:0"
 msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr "crwdns43169:0%1crwdne43169:0"
 
-msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr "crwdns43247:0%1crwdnd43247:0%2crwdne43247:0"
-
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "crwdns43248:0%1crwdnd43248:0%2crwdne43248:0"
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr "crwdns43249:0%1crwdnd43249:0%2crwdne43249:0"
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr "crwdns43170:0%1crwdne43170:0"
@@ -10496,9 +10490,6 @@ msgstr "crwdns43171:0%1crwdne43171:0"
 
 msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
 msgstr "crwdns43172:0%1crwdne43172:0"
-
-msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "crwdns43250:0%1crwdnd43250:0%2crwdne43250:0"
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "crwdns40203:0%1crwdne40203:0"
@@ -10781,9 +10772,6 @@ msgstr "crwdns40265:0%1crwdnd40265:0%1crwdnd40265:0%1crwdne40265:0"
 
 msgid "Trading manual"
 msgstr "crwdns40266:0crwdne40266:0"
-
-msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
-msgstr "crwdns40267:0%1crwdne40267:0"
 
 msgid "TradingView for %1"
 msgstr "crwdns40268:0%1crwdne40268:0"
