@@ -23,23 +23,16 @@
         line-height: 32px;
         text-align: center;
     }
-    &-prev:hover, &-next:hover, &-item:hover {
+    &-prev:hover, &-next:hover, &-item:hover, &-item-active {
         cursor: pointer;
-        background-color: #f2f3f8;
-        border-color: #f2f3f8;
+        border-color: #4c5794;
 
         & a {
             color: #4c5794;
         }
     }
-    &-item-active, &-item-active:hover {
+    &-item-active:hover {
         cursor: default;
-        border-color: #4c5794;
-        background-color: #4c5794;
-
-        & a {
-            color: #ffffff;
-        }
     }
     &-disabled, &-disabled:hover {
         cursor: not-allowed;
