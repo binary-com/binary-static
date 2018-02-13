@@ -1,3 +1,4 @@
+const topNavMenuListener  = require('binary-style').topNavMenuListener;
 const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
 const GTM                 = require('./gtm');
@@ -25,7 +26,8 @@ const Header = (() => {
             checkClientsCountry();
         }
         if (Client.isLoggedIn()) {
-            getElementById('menu-top').classList.add('smaller-font');
+            getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
+            topNavMenuListener();
             displayAccountStatus();
             if (!Client.get('is_virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {

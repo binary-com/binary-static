@@ -9,8 +9,11 @@ export const Li = ({
     text,
     header,
     p,
+    subitems = [],
+    type,
 }) => {
-    const content = p ? <p>{text}</p> : text;
+    const content   = p ? <p>{text}</p> : text;
+    const is_nested = type === 'nested';
 
     return (
         <li id={id} className={className}>
@@ -22,10 +25,18 @@ export const Li = ({
                     href={`${href}${param}`}
                     rel={/^http/.test(href) ? 'noopener noreferrer' : undefined}
                     target={target || undefined}
+                    className={is_nested ? 'nav-dropdown-toggle' : undefined}
                 >
                     {content}
+                    { is_nested && <span className='nav-caret' /> }
                 </a>
                 : content
+            }
+            { subitems.length ?
+                <ul>
+                    {subitems.map((subitem, idx) => <Li key={idx} {...subitem} />)}
+                </ul> :
+                ''
             }
         </li>
     );
@@ -41,7 +52,6 @@ export const List = ({ items, id, className }) => (
           undefined
         }
     </React.Fragment>
-
 );
 
 export const InfoBox = ({ padding, header, sub_header, text }) => {

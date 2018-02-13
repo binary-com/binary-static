@@ -176,12 +176,13 @@ const Client = (() => {
         const primary_bg_color_dark = 'primary-bg-color-dark';
         const secondary_bg_color    = 'secondary-bg-color';
 
+        const is_jp = jpClient();
+
         if (isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 const client_logged_in = getElementById('client-logged-in');
                 client_logged_in.classList.add('gr-centered');
 
-                const is_jp       = jpClient();
                 const is_ico_only = !is_jp && get('is_ico_only');
                 if (is_ico_only) {
                     applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
@@ -192,6 +193,7 @@ const Client = (() => {
 
                 applyToAllElements('.client_logged_in', (el) => {
                     if ((!is_jp || !/ja-hide/.test(el.classList)) &&
+                        (is_jp || !/ja-show/.test(el.classList)) &&
                         (!/ico-only-hide/.test(el.classList) || !is_ico_only)) {
                         el.setVisibility(1);
                     }
@@ -212,7 +214,12 @@ const Client = (() => {
                 }
             });
         } else {
-            applyToAllElements('.client_logged_out', (el) => { el.setVisibility(1); }, '', el_section);
+            applyToAllElements('.client_logged_out', (el) => {
+                if ((!is_jp || !/ja-hide/.test(el.classList)) &&
+                    (is_jp || !/ja-show/.test(el.classList))) {
+                    el.setVisibility(1);
+                }
+            }, '', el_section);
             topbar_class.add(primary_bg_color_dark);
             topbar_class.remove(secondary_bg_color);
         }

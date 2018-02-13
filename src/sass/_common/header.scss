@@ -63,6 +63,34 @@ body #topbar, .landing_page-content {
                 word-wrap: break-word;
             }
         }
+        &.top-nav-menu {
+            display: block;
+
+            .nav-caret {
+                margin-left: 5px;
+            }
+            > li {
+                float: none;
+
+                ul {
+                    z-index: 2;
+
+                    li {
+                        display: block;
+
+                        a {
+                            padding: 10px 30px;
+                            display: block;
+                            height: auto;
+
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     .topMenuBalance {
         visibility: hidden;
@@ -89,17 +117,8 @@ body #topbar, .landing_page-content {
             }
         }
     }
-}
-
-#main-menu {
-    margin-bottom: 40px;
-    color: $COLOR_GRAY;
-
-    .items li a {
-        white-space: nowrap;
-    }
-    .tab-menu-wrap ul li.hover ul {
-        z-index: 1;
+    .container {
+        max-width: 1200px;
     }
 }
 

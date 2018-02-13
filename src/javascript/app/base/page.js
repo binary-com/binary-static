@@ -89,18 +89,13 @@ const Page = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
                 checkLanguage();
-                Menu.init();
                 RealityCheck.onLoad();
             });
         } else {
             checkLanguage();
-            Menu.init();
         }
+        Menu.init();
         TrafficSource.setData();
-    };
-
-    const onUnload = () => {
-        Menu.onUnload();
     };
 
     const recordAffiliateExposure = () => {
@@ -176,7 +171,6 @@ const Page = (() => {
 
     return {
         onLoad,
-        onUnload,
         showNotificationOutdatedBrowser,
     };
 })();
