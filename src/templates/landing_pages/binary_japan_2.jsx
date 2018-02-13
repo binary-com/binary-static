@@ -90,7 +90,7 @@ const BinaryJapan2 = () => (
                 <div className='container'>
                     <div className='intro-body'>
                         <div className='gr-row'>
-                            <div className='gr-6 gr-12-m'>
+                            <div className='gr-6 gr-11-p gr-12-m'>
                                 <h3 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world')}</h3>
                                 <form id='email_top' className='signup-form' noValidate>
                                     <div className='signup-form-input'>

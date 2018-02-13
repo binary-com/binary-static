@@ -39,8 +39,12 @@ const BinaryJapan = () => (
                     </div>
                     <div className='gr-6 gr-12-m'>
                         <div className='navbar-item-align-right'>
-                            <img className='navbar-icon' src={it.url_for('images/japan/version1/fsa-logo@2x.png')} />
-                            <img className='navbar-icon' src={it.url_for('images/japan/version1/binarykk-logo@2x.png')} />
+                            <a href='http://www.ffaj.or.jp/index.html' target='_blank' rel='noopener noreferrer'>
+                                <img className='navbar-icon' src={it.url_for('images/japan/version1/fsa-logo@2x.png')} />
+                            </a>
+                            <a href='http://www.fsa.go.jp/index.html' target='_blank' rel='noopener noreferrer'>
+                                <img className='navbar-icon' src={it.url_for('images/japan/version1/binarykk-logo@2x.png')} />
+                            </a>
                         </div>
                     </div>
                 </div>
