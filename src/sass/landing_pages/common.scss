@@ -324,3 +324,9 @@
         }
     }
 }
+
+@media screen and (max-width: 1199px) {
+    body .buorg {
+        font-size: $FONT_SIZE_S;
+    }
+}
