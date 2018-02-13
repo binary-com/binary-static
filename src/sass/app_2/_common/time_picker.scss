@@ -50,16 +50,9 @@
                 }
             }
             .time-picker-hours, .time-picker-minutes, .time-picker-meridiem {
-                .list-container {
-                    transform: scaleY(1);
-                    height: 180px;
-
-                    .list-item {
-                        &.selected {
-                            background: #4c5794;
-                            color: #fff;
-                        }
-                    }
+                .list-container .list-item.selected {
+                    background: #4c5794;
+                    color: #fff;
                 }
             }
         }
@@ -88,35 +81,28 @@
         .time-picker-hours, .time-picker-minutes {
             border-right: 1px solid #f2f2f2;
         }
-        .time-picker-hours .list-container {
+        .time-picker-hours {
             border-radius: 0 0 0 4px;
         }
-        .time-picker-meridiem .list-container {
+        .time-picker-meridiem {
             border-radius: 0 0 4px;
         }
         .time-picker-hours, .time-picker-minutes, .time-picker-meridiem {
             display: inline-block;
             width: 50px;
+            background: #fff;
+            height: 180px;
+            overflow: hidden;
             text-align: center;
 
-            .list-container {
-                height: 0;
-                position: relative;
-                overflow-x: hidden;
-                overflow-y: scroll;
-                background: #fff;
-                transform: scaleY(0);
-                transition: all 0.3s ease 0.15s;
+            .list-container .list-item {
+                margin: 0;
+                padding: 10px 0;
+                transition: all 0.3s ease;
 
-                .list-item {
-                    margin: 0;
-                    padding: 10px 0;
-                    transition: all 0.3s ease;
-
-                    &:hover {
-                        background: #f2f3f8;
-                        color: #000;
-                    }
+                &:hover {
+                    background: #f2f3f8;
+                    color: #000;
                 }
             }
         }

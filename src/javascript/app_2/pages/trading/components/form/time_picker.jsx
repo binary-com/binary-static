@@ -1,24 +1,5 @@
 import React, {PureComponent} from 'react';
-
-const scrollTo = (element, to, duration) => {
-    const requestAnimationFrame = window.requestAnimationFrame ||
-    function (func) {
-        return setTimeout(func, 10);
-    };
-    // jump to target if duration zero
-    if (duration <= 0) {
-        element.scrollTop = to;
-        return;
-    }
-    const difference = to - element.scrollTop;
-    const perTick = difference / duration * 10;
-
-    requestAnimationFrame(() => {
-        element.scrollTop += perTick;
-        if (element.scrollTop === to) return;
-        scrollTo(element, to, duration - 10);
-    });
-};
+import IScroll from 'iscroll';
 
 class TimePickerDropdown extends PureComponent {
 
@@ -34,6 +15,7 @@ class TimePickerDropdown extends PureComponent {
             isHourSelected    : false,
             isMinuteSelected  : false,
             isMeridiemSelected: false,
+            lastUpdatedType   : null,
         };
         this.selectHour      = this.selectOption.bind(this, 'hour');
         this.selectMinute    = this.selectOption.bind(this, 'minute');
@@ -41,6 +23,16 @@ class TimePickerDropdown extends PureComponent {
         this.saveHourRef     = this.saveRef.bind(this, 'hour');
         this.saveMinuteRef   = this.saveRef.bind(this, 'minute');
         this.saveMeridiemRef = this.saveRef.bind(this, 'meridiem');
+    }
+
+    componentDidMount () {
+        this.initIScroll();
+    }
+
+    componentWillUnmount () {
+        this.hourScroll.destroy();
+        this.minuteScroll.destroy();
+        this.meridiemScroll.destroy();
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -61,23 +53,40 @@ class TimePickerDropdown extends PureComponent {
         if (!prevProps.className && this.props.className === 'active') {
             this.resetValues();
         }
+        if (prevState.lastUpdatedType !== this.state.lastUpdatedType && this.state.lastUpdatedType) {
+            this.scrollToSelected(this.state.lastUpdatedType, 200);
+            this.setState({
+                lastUpdatedType: null,
+            });
+        }
     }
 
-    scrollToSelected(event, type, duration) {
-        // move to selected item
-        if (!event || !event.target) {
-            return;
-        }
-        const saveOffset = {
-            hour    : (o) => this.hourOffset = o,
-            minute  : (o) => this.minuteOffset = o,
-            meridiem: (o) => this.meridiemOffset = o,
+    initIScroll() {
+        const iScrollOptions = {
+    		mouseWheel   : true,
+            useTransition: true,
         };
-        const select = event.target.parentElement;
-        const list = event.target;
-        const to = list.offsetTop;
-        saveOffset[type](to);
-        scrollTo(select, to, duration);
+        if (!this.iScrollinitialized) {
+            this.hourScroll = new IScroll('.time-picker-hours', iScrollOptions);
+            this.minuteScroll = new IScroll('.time-picker-minutes', iScrollOptions);
+            this.meridiemScroll = new IScroll('.time-picker-meridiem', iScrollOptions);
+            this.iScrollinitialized = true;
+        }
+    }
+
+    scrollToSelected (type, duration, difference = 0) {
+        // move to selected item
+        const offsetY = difference - 126;
+        const wrapper = {
+            hour    : this.hourScroll,
+            minute  : this.minuteScroll,
+            meridiem: this.meridiemScroll,
+        };
+        if (wrapper[type].scroller.querySelector('.selected')) {
+            wrapper[type].scrollToElement('.selected', duration, null, offsetY, IScroll.utils.ease.elastic);
+        } else {
+            wrapper[type].scrollToElement('.list-item', duration, null, offsetY);
+        }
     }
 
     resetValues () {
@@ -86,14 +95,15 @@ class TimePickerDropdown extends PureComponent {
             isMinuteSelected  : false,
             isMeridiemSelected: false,
         });
-        scrollTo(this.hourSelect, this.hourOffset, 0);
-        scrollTo(this.minuteSelect, this.minuteOffset, 0);
-        scrollTo(this.meridiemSelect, this.meridiemOffset, 0);
+        this.scrollToSelected('hour', 0, 30);
+        this.scrollToSelected('minute', 0, 30);
+        this.scrollToSelected('meridiem', 0, 30);
     }
 
-    selectOption (type, value, event) {
-        event.persist();
-        this.scrollToSelected(event, type, 120);
+    selectOption (type, value) {
+        this.setState({
+            lastUpdatedType: type,
+        });
         if (type === 'hour') {
             this.setState({
                 hour          : value,
