@@ -36,9 +36,7 @@ const Geocoder = (() => {
                 class: 'notice-msg no-margin',
                 text : localize('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.'),
             }));
-        }
-
-        if ($geocode_error.length) {
+        } else {
             $geocode_error.fadeOut(0);
         }
     };
