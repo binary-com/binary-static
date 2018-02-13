@@ -175,13 +175,21 @@ export const TaxIdentificationNumberTerms = () => (
         <div className='gr-12 gr-padding-10'>
             <input type='checkbox' id='chk_tax_id' />
             <label htmlFor='chk_tax_id'>
-                {it.L('I hereby declare and confirm that the above given information is true and complete. Moreover, I undertake to inform Binary Investments (Europe) Ltd. about any changes therein without undue delay. Information can be edited by accessing your profile.')}
+                {it.L('I hereby declare that all the above information is true and complete. Furthermore, I will inform Binary Investments (Europe) Ltd. about any changes to this information without undue delay.')}
             </label>
         </div>
         <div className='gr-12 gr-padding-10'>
             <p className='no-margin'>
-                <i><span className='errorfield'>* </span>{it.L('Please note that you might be considered a resident for tax purposes in more than one jurisdictions. [_1] does not take any responsibility for providing you with advice or information on how to determine your tax residence. If you are in any doubt regarding your tax residence kindly consult your tax advisor and make sure you provide us with the correct information.', it.website_name)}</i>
+                <i><span className='errorfield'>* </span>{it.L('You may be considered a tax resident in more than one jurisdiction. [_1] does not provide tax advice. If you have any doubts, kindly consult your tax advisor and provide us with correct information about your tax residency.', it.website_name)}</i>
             </p>
         </div>
+    </div>
+);
+
+export const TaxInformationNote = ({ className }) => (
+    <div id='tax_information_note' className={`gr-12 ${className || ''}`}>
+        <p>{it.L('As a legal and regulatory requirement, Binary Investments (Europe) Ltd. is obliged to collect certain information relating to CRS/FATCA compliance. Please fill in the following self-certification form before we can enable any further activity on your account.')}</p>
+        <p>{it.L('The information provided by you may only be disclosed to the authorities legally charged with collecting this information for the purposes of CRS/FATCA reporting and only to the extent to which Binary Investments (Europe) Ltd. is legally obliged to collect and disclose it. The information shall not be used, disclosed, or processed in any other way at any time.')}</p>
+        <p>{it.L('Please note that we have the right and obligation not to accept the information provided by you if we know of a reason to believe that it is incorrect, inaccurate, or incomplete. In such cases, we will be asking you to clarify or correct the details provided in the CRS/FATCA questionnaire.')}</p>
     </div>
 );

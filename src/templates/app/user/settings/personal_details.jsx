@@ -9,6 +9,7 @@ import {
     AddressPostcode,
     Phone,
     TaxIdentificationNumberTerms,
+    TaxInformationNote,
 } from '../../../_common/components/forms_common_rows.jsx';
 import Loading from '../../../_common/components/loading.jsx';
 
@@ -77,11 +78,7 @@ const PersonalDetails = () => (
             </Fieldset>
 
             <Fieldset id='fieldset_tax_information' className='invisible RealAcc ja-hide' legend={it.L('Tax Information')}>
-                <div id='tax_information_note' className='gr-12 invisible'>
-                    <p>{it.L('As a legal and regulatory requirement BIEL is obliged to collect certain information relating to CRS/FATCA compliance. We therefore kindly ask you to fill in the provided self-certification form before we can enable any further activity on your account, including closing of the account.')}</p>
-                    <p>{it.L('The information provided by you may only be disclosed to the authorities legally charged with collecting this information for the purposes of CRS/FATCA reporting and only to the extend, to which BIEL is legally obliged to collect and disclose it. The information shall not be used, disclosed or processed in any other way at any time.')}</p>
-                    <p>{it.L('Please note that we have the right and obligation not to accept the information provided by you if we know of have a reason to believe that it is incorrect, inaccurate or incomplete. In such case we will be asking you to clarify or correct the details provided in the CRS/FATCA questionnaire.')}</p>
-                </div>
+                <TaxInformationNote className='invisible' />
                 <FormRow type='select' label={it.L('Tax residence')}
                     tooltip={it.L('Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional.')}
                     id='tax_residence' className='invisible' attributes={{multiple: 'multiple'}} />

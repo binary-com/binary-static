@@ -21,6 +21,7 @@ import {
     ClientMessage,
     Tnc,
     TaxIdentificationNumberTerms,
+    TaxInformationNote,
 } from '../../_common/components/forms_common_rows.jsx';
 
 const Financial = () => (
@@ -41,12 +42,7 @@ const Financial = () => (
             </Fieldset>
 
             <Fieldset legend={it.L('Tax Information')}>
-                <div className='gr-12'>
-                    <p>{it.L('As a legal and regulatory requirement BIEL is obliged to collect certain information relating to CRS/FATCA compliance. We therefore kindly ask you to fill in the provided self-certification form before we can enable any further activity on your account, including closing of the account.')}</p>
-                    <p>{it.L('The information provided by you may only be disclosed to the authorities legally charged with collecting this information for the purposes of CRS/FATCA reporting and only to the extend, to which BIEL is legally obliged to collect and disclose it. The information shall not be used, disclosed or processed in any other way at any time.')}</p>
-                    <p>{it.L('Please note that we have the right and obligation not to accept the information provided by you if we know of have a reason to believe that it is incorrect, inaccurate or incomplete. In such case we will be asking you to clarify or correct the details provided in the CRS/FATCA questionnaire.')}</p>
-                </div>
-
+                <TaxInformationNote />
                 <FormRow type='select'
                     id='tax_residence'
                     label={it.L('Tax residence')}
