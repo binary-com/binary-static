@@ -24,6 +24,7 @@ module.exports = {
         'import/no-extraneous-dependencies': [0, { extensions: ['.jsx'] }],
         'jsx-quotes'                       : ['error', 'prefer-single'],
         'react/prop-types'                 : 0,
+        'import/prefer-default-export'     : 0,
     },
     extends: [
         'airbnb-base',

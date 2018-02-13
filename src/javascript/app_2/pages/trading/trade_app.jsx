@@ -11,14 +11,6 @@ import Purchase from './components/purchase.jsx';
 import { connect } from './store/connect';
 
 class TradeApp extends React.Component {
-    componentDidMount() {
-        this.props.onMounted();
-    }
-
-    componentWillUnmount() {
-        this.props.onUnmount();
-    }
-
     isVisible(component_name) {
         return this.props.form_components.indexOf(component_name) >= 0;
     }
@@ -49,7 +41,5 @@ class TradeApp extends React.Component {
 export default connect(
     ({trade}) => ({
         form_components: trade.form_components,
-        onMounted      : trade.init,
-        onUnmount      : trade.dispose,
     })
 )(TradeApp);

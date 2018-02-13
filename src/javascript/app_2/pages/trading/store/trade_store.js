@@ -1,68 +1,30 @@
-import { observable, action, reaction } from 'mobx';
-import Reactions from './reactions';
-import ContractType from './logic/contract_type';
-import getCurrencies from './logic/currency';
-import getDurationUnits from './logic/duration';
-import getStartDates from './logic/start_date';
-import onSymbolChange from './logic/symbol';
-import { getCountry, getTicks, onAmountChange } from './logic/test';
+import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
-import { cloneObject } from '../../../../_common/utility';
-
-const event_map = {
-    amount: onAmountChange,
-    symbol: onSymbolChange,
-};
+import ContractType from './logic/contract_type';
+import actions from '../actions';
 
 export default class TradeStore {
-    @action.bound init() {
-        this._initReactions();
+    time_interval = undefined;
 
-        ContractType.getContractsList(this.symbol).then(r => {
-            this.contract_types_list = r;
-        });
-        getCountry().then(r => { this.message = r; });
-        getTicks((r) => { this.tick = r; });
-        this.start_dates_list = getStartDates();
+    @action.bound init() {
+        actions.getCountryAsync();
+        actions.getStartDates();
+
+        actions.getTicks(action('getTicks', (r) => { this.tick = r; }));
+
         if (!Client.get('currency')) {
-            getCurrencies().then(currencies => {
-                this.currencies_list = currencies;
-                if (!this.currency) {
-                    this.currency = Object.values(currencies).reduce((a, b) => [...a, ...b]).find(c => c).value;
-                }
-            });
+            actions.getCurrenciesAsync();
         }
-        this.duration_units_list = getDurationUnits();
-        this._time_interval = setInterval(() => {
-            this.server_time = window.time;
-        }, 1000);
+        actions.getDurationUnits();
+        ContractType.getContractsList(this.symbol).then(action(r => {
+            this.contract_types_list = r;
+        }));
+        this.time_interval = setInterval(actions.initTime, 1000);
     }
 
     @action.bound dispose() {
-        clearInterval(this._time_interval);
-        this._time_interval = undefined;
-    }
-
-    _initReactions() {
-        const reaction_map = Reactions.getReactions();
-        Object.keys(reaction_map).forEach((reaction_key) => {
-            const disposer = reaction(() => this[reaction_key], (new_value) => {
-                Promise
-                    .resolve(reaction_map[reaction_key](new_value, this._cloneState()))
-                    .then(this.updateState);
-            });
-            Reactions.storeDisposer(disposer);
-        });
-    };
-
-    _cloneState() {
-        return cloneObject(this);
-    }
-
-    @action.bound updateState(new_state) {
-        Object.keys(new_state).forEach((key) => {
-            this[key] = new_state[key];
-        });
+        clearInterval(this.time_interval);
+        this.time_interval = undefined;
     }
 
     @action.bound handleChange(e) {
@@ -71,16 +33,6 @@ export default class TradeStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
         this[name] = value;
-        this.dispatch(name, value);
-    }
-
-    @action.bound dispatch(name, value) {
-        const handler = event_map[name];
-        if (typeof handler === 'function') {
-            Promise
-                .resolve(handler(value))
-                .then(this.updateState);
-        }
     }
 
     // Underlying
