@@ -59,7 +59,7 @@ const menu = [
         id       : 'topMenuMetaTrader',
         url      : '/user/metatrader',
         text     : 'MetaTrader',
-        className: 'client_logged_in invisible',
+        className: 'invisible',
     },
     {
         id          : 'topMenuShop',
