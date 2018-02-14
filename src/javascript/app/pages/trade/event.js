@@ -236,7 +236,7 @@ const TradingEvents = (() => {
             multiplier_element.addEventListener('keypress', onlyNumericOnKeypress);
 
             multiplier_element.addEventListener('input', CommonTrading.debounce((e) => {
-                e.target.value = e.target.value.replace(/^0+/,'');
+                e.target.value = e.target.value.replace(/^0*(\d\.?)/, '$1');
                 Defaults.set('multiplier', e.target.value);
                 Price.processPriceRequest();
                 CommonTrading.submitForm(document.getElementById('websocket_form'));
