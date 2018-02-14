@@ -21,15 +21,13 @@ const Barrier = ({
             />
 
             {!!barrier_2 &&
-                <React.Fragment>
-                    <InputField
-                        type='number'
-                        name='barrier_2'
-                        value={barrier_2}
-                        onChange={onChange}
-                        is_currency
-                    />
-                </React.Fragment>
+                <InputField
+                    type='number'
+                    name='barrier_2'
+                    value={barrier_2}
+                    onChange={onChange}
+                    is_currency
+                />
             }
         </fieldset>
 );

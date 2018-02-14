@@ -6,6 +6,7 @@ import TradeApp from './trade_app.jsx';
 import TradingHeader from './components/elements/header.jsx';
 import { localize } from '../../../_common/localize';
 import { State } from '../../../_common/storage';
+import { initActions, disposeActions } from './actions';
 
 const stores = {
     trade: new TradeStore(),
@@ -14,6 +15,8 @@ const stores = {
 const Trading = (() => {
     const onLoad = () => {
         State.set('is_trading_2', true);
+        initActions(stores.trade);
+        stores.trade.init();
 
         const header = document.getElementById('trading_header');
         if (header) {
@@ -39,6 +42,8 @@ const Trading = (() => {
 
     const onUnload = () => {
         State.remove('is_trading_2');
+        stores.trade.dispose();
+        disposeActions();
     };
 
     return {
