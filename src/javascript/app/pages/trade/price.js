@@ -240,7 +240,7 @@ const Price = (() => {
                     LBFLOATCALL: `${localize('Close')} - ${localize('Low')}`,
                     LBHIGHLOW  : `${localize('High')} - ${localize('Low')}`,
                 };
-                CommonFunctions.elementInnerHtml(comment, `${localize('Payoff')}: ${localize('Multiplier')} x (${formula[type]})`);
+                CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${localize('Multiplier')} x (${formula[type]})`);
             } else {
                 commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }
