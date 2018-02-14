@@ -14,7 +14,7 @@ const Duration = ({
     onChange,
 }) => (
         <fieldset>
-            <ClockHeader className='row-1 col-100' time={server_time} header={localize('Trade Duration')} />
+            <ClockHeader time={server_time} header={localize('Trade Duration')} />
             <Dropdown
                 list={[
                     { text: localize('Duration'), value: 'duration' },

@@ -9,6 +9,9 @@
         grid-template-rows: repeat(2, [row] auto);
         grid-gap: 20px;
 
+        .chart-container, .sidebar-container {
+            position: relative;
+        }
         & > * {
             grid-column: col-start / span 12;
         }
@@ -24,7 +27,6 @@
             }
             .sidebar-container {
                 grid-column: col-start 10 / span 3;
-                display: grid;
                 grid-gap: 10px;
                 grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
 
