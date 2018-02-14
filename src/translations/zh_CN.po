@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-07 19:58-0500\n"
+"PO-Revision-Date: 2018-02-13 21:28-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -489,9 +489,6 @@ msgstr "*免税：交易所获之盈利在很多国家免税，但请务必咨�
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*为了利于培训和监控，所有通话将被录音"
 
-msgid "*Lot size volume = 1.0."
-msgstr "*手大小交易量 = 1.0。"
-
 msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
 msgstr "* 这些数字仅供指示用途, 请透过我们的 MT5 交易平台核实。"
 
@@ -840,9 +837,6 @@ msgstr "接受"
 msgid "Access Denied"
 msgstr "访问被拒绝"
 
-msgid "Access MT5 dashboard"
-msgstr "访问 MT5 仪表板"
-
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "访问所有可用的工具和功能包括专家顾问 (EAs)、图表和订单类型，以便在MT5交易"
 
@@ -1026,9 +1020,6 @@ msgstr "高级二元期权交易界面"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "深入的软件设计原则知识"
-
-msgid "Advanced multi-asset trading platform"
-msgstr "高级多资产交易平台"
 
 msgid "Advantages of CFD trading"
 msgstr "差价合约交易的优势"
@@ -1844,7 +1835,7 @@ msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 1
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 
 msgid "Binary Limited"
-msgstr "Binary 有限公司"
+msgstr "Binary有限公司"
 
 msgid "Binary Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below."
 msgstr "Binary有限公司的注册办事处位于 47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands，为 Binary 集团的控股公司。"
@@ -3018,13 +3009,13 @@ msgid "Deposit as little as USD 5 to start trading"
 msgstr "存款最低仅需 5 美元即可开始交易"
 
 msgid "Deposit as little as USD 5 to start trading."
-msgstr "存款最低仅需 5 美元即可开始交易."
+msgstr "存款最低仅需5美元即可开始交易."
 
 msgid "Deposit funds and begin trading"
 msgstr "存款并开始交易"
 
 msgid "Deposit funds into your MT5 account"
-msgstr "将资金存入您的 MT5 账户"
+msgstr "将资金存入您的MT5账户"
 
 msgid "Deposit or withdraw below"
 msgstr "在下方存款或提款"
@@ -3045,7 +3036,7 @@ msgid "Depositing and withdrawing funds"
 msgstr "存款及取款"
 
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
-msgstr "MetaTrader 5 账户总是通过二元期权账户存款和提款 。"
+msgstr "MetaTrader 5账户总是通过二元期权账户存款和提款 。"
 
 msgid "Derivative"
 msgstr "衍生工具"
@@ -3087,7 +3078,7 @@ msgid "Develop text that promotes the company's product offerings in a variety o
 msgstr "为本公司的产品创作各类促销文本"
 
 msgid "Develop your own trading application with our APIs."
-msgstr "用我们的 API 发展您自己的交易应用。"
+msgstr "用我们的API发展您自己的交易应用。"
 
 msgid "Differences with other data feeds"
 msgstr "与其他数据源的差异"
@@ -3315,7 +3306,7 @@ msgid "Each Party shall do anything reasonably required by the other Party to gi
 msgstr "任一缔约方须按照本协议的规定和/或条款对另一方合理要求给予充分合作。"
 
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
-msgstr "每个二元期权合约都有固定期限- 在 %1，您可选择从10秒至365天之间的任何期限。"
+msgstr "每个二元期权合约都有固定期限 - 在 %1，您可选择从10秒至365天之间的任何期限。"
 
 msgid "Each binary option is a prediction on the future movement of an underlying market."
 msgstr "二元期权交易是对标的市场未来变化的预测。"
@@ -3592,9 +3583,6 @@ msgstr "欧元兑土耳其里拉"
 
 msgid "Euro vs US Dollar"
 msgstr "欧元兑美元"
-
-msgid "Eurobasket Wolves"
-msgstr "Eurobasket Wolves"
 
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
 msgstr "想要进行产品博彩交易的欧盟居民将在 Binary (Europe) Ltd 开设账户。"
@@ -4022,6 +4010,9 @@ msgstr "有关进一步的背景信息, 请阅读我们的博客文章, <a href=
 msgid "For general support:"
 msgstr "一般支持："
 
+msgid "For information about Forex leverage refer to our %1Margin Policy%2."
+msgstr "有关外汇杠杆的信息, 请参阅我们的 %1保证金政策%2。"
+
 msgid "For payments-related queries:"
 msgstr "付款相关的查询："
 
@@ -4164,7 +4155,7 @@ msgid "G. Order Handling"
 msgstr "七、订单处理"
 
 msgid "GBP 1 per point"
-msgstr "每点 1 英镑"
+msgstr "每点1英镑"
 
 msgid "GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%"
 msgstr "英镑指数 - 衡量英镑相对于五种全球货币（美元、欧元、澳元、日元、加元）的价值，每种货币的权重均为20%。"
@@ -5313,7 +5304,7 @@ msgid "Invalid email address"
 msgstr "无效的电子邮件地址"
 
 msgid "Invalid email address."
-msgstr "无效的电子邮件地址."
+msgstr "无效的电子邮件地址。"
 
 msgid "Invest in the world's premier platform for binary options trading"
 msgstr "在全球领先的二元期权交易平台投资"
@@ -6075,10 +6066,10 @@ msgid "Learn more about our corporate culture"
 msgstr "查看关于我们企业文化的详情"
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
-msgstr "了解 MetaTrader 5 进行Meta资产交易的基本概念。"
+msgstr "了解MetaTrader 5进行Meta资产交易的基本概念。"
 
 msgid "Learn the basic concepts of trading metal pairs on our MetaTrader 5 platform."
-msgstr "了解 MetaTrader 5 平台进行金属对交易的基本概念。"
+msgstr "了解MetaTrader 5平台进行金属对交易的基本概念。"
 
 msgid "Learn the basics of metals trading and the categories of metals available."
 msgstr "了解金属交易的基本知识以及可用的金属类别。"
@@ -6105,7 +6096,7 @@ msgid "Legal Compliance"
 msgstr "遵守法律"
 
 msgid "Less than $100,000"
-msgstr "少于 $100,000"
+msgstr "少于$100,000"
 
 msgid "Less than $25,000"
 msgstr "少于$25,000"
@@ -6156,16 +6147,16 @@ msgid "Leverage gives you the ability to trade a larger position using your exis
 msgstr "杠杆使您能够以现有资本进行更大头寸交易。"
 
 msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "杠杆率是基于初始存款的可控制资本额。例如，100: 1 杠杆将允许您仅使用 1,000 美元本身存款控制100,000 美元。"
+msgstr "杠杆率是基于初始存款的可控制资本额。例如，100: 1杠杆将允许您仅使用1,000美元本身存款控制100,000美元。"
 
 msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 1:100 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "杠杆率是基于初始存款的可控制资本额。例如，1:100 杠杆将允许您仅使用 1,000 美元本身存款控制100,000 美元。"
+msgstr "杠杆率是基于初始存款的可控制资本额。例如，1:100杠杆将允许您仅使用1,000美元本身存款控制100,000美元。"
 
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "通过杠杆社交媒体工具标识、引入并转换潜在新客户和业务合作伙伴"
 
 msgid "Leverage up to 1:100"
-msgstr "杠杆率高达 1: 100"
+msgstr "杠杆率高达1: 100"
 
 msgid "Leverage up to 1:500"
 msgstr "杠杆率高达 1: 500"
@@ -6296,8 +6287,8 @@ msgstr "亏损"
 msgid "Lot Size (Volume = 1.0)"
 msgstr "手大小 (交易量 = 1.0)"
 
-msgid "Lot size*"
-msgstr "手大小*"
+msgid "Lot size"
+msgstr "手大小"
 
 msgid "Lot units"
 msgstr "手单位"
@@ -6482,12 +6473,6 @@ msgstr "追加保证金通知"
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr "保证金是基于初始资金的可控制投资额。例如，0.2%保证金将允许您仅使用 1,000 美元本身存款控制高达500,000 美元。"
 
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "保证金是基于初始资金的可控制投资额。例如，1%保证金将允许您仅使用 1,000 美元本身存款控制高达100,000 美元。"
-
-msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
-msgstr "保证金率是基于初始存款的可控制资本额。例如，10%保证金率将允许您仅使用 10,000 美元本身存款控制100,000 美元。此率需要资产总值的10%作为保证金。"
-
 msgid "Market"
 msgstr "市场"
 
@@ -6596,9 +6581,6 @@ msgstr "最大票证大小"
 msgid "Maximum upload size for each file is 3MB"
 msgstr "每个文件的最大上载大小为3MB"
 
-msgid "Maximum volume"
-msgstr "最大交易额"
-
 msgid "May"
 msgstr "五月"
 
@@ -6656,6 +6638,9 @@ msgstr "方式"
 msgid "Min"
 msgstr "最小"
 
+msgid "Min / Max withdrawal"
+msgstr "最小/最大取款金额"
+
 msgid "Min Withdrawal"
 msgstr "最小提款额"
 
@@ -6670,9 +6655,6 @@ msgstr "最小交易增额"
 
 msgid "Min. Volume<br>(Lot Size)"
 msgstr "最小交易额<br>(手量)"
-
-msgid "Min: 10 Max: 2000"
-msgstr "最小: 10 最大: 2000"
 
 msgid "Minimum Spread"
 msgstr "最小价差"
@@ -6706,6 +6688,9 @@ msgstr "有效期至少六个月"
 
 msgid "Minimum ticket size"
 msgstr "最小票证大小"
+
+msgid "Minimum volume"
+msgstr "最小交易额"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "矿业、建筑业、制造业和运输工人"
@@ -7211,6 +7196,9 @@ msgstr "%1网上交易"
 msgid "Online currency exchangers"
 msgstr "在线货币兑换"
 
+msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
+msgstr "在线交易可能使人上瘾。请填写下表以限制您对本网站的参与。您也可发送签名信或传真到我们的客服团队。一旦设定好，您只能收紧您的限制。限制只能在 7 天后取消或放宽，自我禁止期在确认后不能取消或更改。若要解除或增加您的限制，请联系 <a href=\"%1\">客服部</a>。"
+
 msgid "Only %1 are allowed."
 msgstr "只允许 %1 。"
 
@@ -7360,6 +7348,9 @@ msgstr "我们公司"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "自2004年3月正式启动以来，我们的国际联盟项目一直及时足额支付款项。在日本，您的佣金将在您介绍的客户符合资格条件的日历月结束后三十天内汇入您的联盟会员账户。"
+
+msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
+msgstr "我们的 MT5平台正在等待监管机构批准，目前无法向欧盟居民提供服务 。"
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "我们的 MetaTrader 5 高级账户为您提供极低的差价, 更高的票证大小, 并提供更多的产品。"
@@ -9639,9 +9630,6 @@ msgstr "数据保护法律和法规规定了个人信息使用者应承担的义
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "欧元指数是加权指数，衡量欧元相对5种全球货币（美元、澳元、英镑、日元、加元）的价值，每种货币的权重均为 20%。"
 
-msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
-msgstr "Eurobasket Wolves 本地篮球俱乐部成立于2002年。它通过俱乐部和学校项目教导青年打篮球。它的U8、U10男女球队和U14、U16女子球队曾经参加国家级竞赛。它也是马耳他首家在学校场地成立课余篮球训练项目的篮球俱乐部。"
-
 msgid "The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers."
 msgstr "欧盟委员会于2012年确认二元期权交易是一种金融工具，提高了拥有执照的经纪商的可信性。"
 
@@ -10375,6 +10363,9 @@ msgstr "此通知向您提供风险信息，该风险与您通过 %1 进行的�
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "本优惠不能和其他任何优惠一起使用。"
 
+msgid "This page is not available in the selected language."
+msgstr ""
+
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "本促销活动仅适用于新客户。现有或以往客户不符合条件。每位客户仅能获得一次。"
 
@@ -10495,14 +10486,8 @@ msgstr "为了实现我们的红利支付功能，我们将克隆代币，每个
 msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr "要了解详情, 请阅读我们的<a href='%1'>差价合约规格</a>。"
 
-msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr "要了解关于外汇100%强制清算水平的更多信息，请阅读我们的%1保证金政策%2。"
-
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "要了解关于保证金要求的更多信息，请阅读我们的%1保证金政策%2。"
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr "要了解关于保证金要求的更多信息，请阅读我们的%1保证金政策%2。请注意，我们不收取加密货币对的掉期利率费。"
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr "要了解关于波动率指数50%强制清算水平的更多信息，请阅读我们的<a href=\"%1\">差价合约保证金政策</a>。"
@@ -10512,9 +10497,6 @@ msgstr "要了解关于外汇100%强制清算水平的更多信息，请阅读�
 
 msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
 msgstr "要了解关于金属对100%强制清算水平的更多信息，请阅读我们的<a href=\"%1\">金属交易保证金政策</a>。"
-
-msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "要了解关于金属对100%强制清算水平的更多信息，请阅读我们的金属交易%1保证金政策%2。"
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "要开立真实账户，您必须在%1拥有已通过身份验证的二元期权真实账户。如果没有二元期权真实账户，您无法开立真实账户。"
@@ -10647,9 +10629,6 @@ msgstr "不需拥有实物也能交易比特币、以太币和莱特币。我们
 
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "在我们受欢迎的多资产平台进行外汇和差价合约交易。"
-
-msgid "Trade Forex and CFDs with a powerful platform recognised as the global standard."
-msgstr "透过被公认为符合全球标准的强大平台进行外汇和差价合约交易。"
 
 msgid "Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools."
 msgstr "使用具高度竞争力的杠杆率进行外汇和差价合约 (cfd) 交易。MetaTrader 5 是提供出色的交易选项和技术分析工具的多资产平台。"
@@ -10800,9 +10779,6 @@ msgstr "二元期权交易是投机活动，有很大风险，可能会导致您
 
 msgid "Trading manual"
 msgstr "Trading manual"
-
-msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
-msgstr "金融市场交易可能使人上瘾。请填写下表以限制您对本网站的参与。您也可发送签名信或传真到我们的客服团队。一旦设定好，您只能收紧您的限制。限制只能在 7 天后取消或放宽，自我禁止期在确认后不能取消或更改。若要解除或增加您的限制，请联系 <a href=\"%1\">客服部</a>。"
 
 msgid "TradingView for %1"
 msgstr "%专用的TradingView"
