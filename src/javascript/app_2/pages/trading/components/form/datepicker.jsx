@@ -2,10 +2,18 @@ import React from 'react';
 import moment from 'moment';
 
 class Calendar extends React.Component {
+    CALENDAR_VIEWS = {
+        DATE  : 'date',
+        MONTH : 'month',
+        YEAR  : 'year',
+        DECADE: 'decade',
+    };
+
     constructor(props) {
         super(props);
 
         this.getDays = this.getDays.bind(this);
+        this.getDates = this.getDates.bind(this);
         this.getMonths = this.getMonths.bind(this);
         this.getYears = this.getYears.bind(this);
         this.getDecades = this.getDecades.bind(this);
@@ -24,9 +32,8 @@ class Calendar extends React.Component {
         this.nextCentury = this.nextCentury.bind(this);
         this.previousCentury = this.previousCentury.bind(this);
 
-        this.selectMonth = this.selectMonth.bind(this);
-        this.selectYear = this.selectYear.bind(this);
-        this.selectDecade = this.selectDecade.bind(this);
+        this.selectView = this.selectView.bind(this);
+        this.getActiveView = this.getActiveView.bind(this);
 
         this.handleDateSelected = this.handleDateSelected.bind(this);
         this.handleMonthSelected = this.handleMonthSelected.bind(this);
@@ -36,13 +43,20 @@ class Calendar extends React.Component {
         this.onChangeInput = this.onChangeInput.bind(this);
 
         this.state = {
-            date        : this.props.startDate,
-            selectedDate: this.props.startDate,
-            isDaysView  : true,
-            isMonthView : false,
-            isYearView  : false,
-            isDecadeView: false,
+            date        : this.props.startDate, // calendar dates reference
+            selectedDate: this.props.startDate, // selected date
         };
+    }
+
+    componentWillMount() {
+        this.setState({ activeView: this.CALENDAR_VIEWS.DATE });
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        const shouldUpdate = (this.state.activeView !== nextState.activeView)
+            || (this.state.date !== nextState.date)
+            || (this.state.selectedDate !== nextState.selectedDate);
+        return shouldUpdate || false;
     }
 
     setToday() {
@@ -50,10 +64,7 @@ class Calendar extends React.Component {
         this.setState({
             date        : now,
             selectedDate: now,
-            isDaysView  : true,
-            isMonthView : false,
-            isYearView  : false,
-            isDecadeView: false,
+            activeView  : this.CALENDAR_VIEWS.DATE,
         });
         this.props.handleDateChange(now, true);
     }
@@ -90,31 +101,8 @@ class Calendar extends React.Component {
         this.setState({ date: moment(this.state.date).subtract(100, 'years').format(this.props.dateFormat) });
     }
 
-    selectMonth() {
-        this.setState({
-            isDaysView  : false,
-            isMonthView : true,
-            isYearView  : false,
-            isDecadeView: false,
-        });
-    }
-
-    selectYear() {
-        this.setState({
-            isDaysView  : false,
-            isMonthView : false,
-            isYearView  : true,
-            isDecadeView: false,
-        });
-    }
-
-    selectDecade() {
-        this.setState({
-            isDaysView  : false,
-            isMonthView : false,
-            isYearView  : false,
-            isDecadeView: true,
-        });
+    selectView(activeView) {
+        this.setState({ activeView });
     }
 
     handleDateSelected(e) {
@@ -129,6 +117,7 @@ class Calendar extends React.Component {
 
         if (!dateBefore || dateToday) {
             this.setState({
+                date        : date.format(this.props.dateFormat),
                 selectedDate: date.format(this.props.dateFormat),
             });
             this.props.handleDateChange(date.format(this.props.dateFormat));
@@ -147,8 +136,7 @@ class Calendar extends React.Component {
         this.setState({
             date,
             selectedDate: date,
-            isDaysView  : true,
-            isMonthView : false,
+            activeView  : this.CALENDAR_VIEWS.DATE,
         });
         this.props.handleDateChange(date, true);
     }
@@ -158,8 +146,7 @@ class Calendar extends React.Component {
         this.setState({
             date,
             selectedDate: date,
-            isMonthView : true,
-            isYearView  : false,
+            activeView  : this.CALENDAR_VIEWS.MONTH,
         });
         this.props.handleDateChange(date, true);
     }
@@ -170,8 +157,7 @@ class Calendar extends React.Component {
         this.setState({
             date,
             selectedDate: date,
-            isYearView  : true,
-            isDecadeView: false,
+            activeView  : this.CALENDAR_VIEWS.YEAR,
 
         });
         this.props.handleDateChange(date, true);
@@ -180,11 +166,11 @@ class Calendar extends React.Component {
     onChangeInput(e) {
         const value = e.target.value;
         this.setState({
-            selectedDate: value, // update datepicker input
+            selectedDate: value, // update calendar input
         });
         this.props.handleDateChange(value, true);
 
-        if (value.length < 10) return; // don't update datepicker calendar
+        if (value.length < 10) return; // don't update calendar dates
 
         this.setState({
             date: moment(value).format(this.props.dateFormat),
@@ -219,17 +205,16 @@ class Calendar extends React.Component {
         }
 
         dates.forEach((date) => {
-            const isDisabled =
-                moment(date).isBefore(moment(startOfMonth)) ||
-                moment(date).isAfter(moment(endOfMonth)) ||
-                moment(date).isBefore((moment(this.props.minDate).subtract(1, 'day')));
+            const isDisabled = moment(date).isBefore(moment(startOfMonth))
+                || moment(date).isAfter(moment(endOfMonth))
+                || moment(date).isBefore((moment(this.props.minDate)));
             const isActive = moment(date).isSame(moment(this.state.date));
             const isToday  = moment(date).isSame(moment(), 'day');
 
             days.push(
                 <span
                     key={date}
-                    className={`calendar-date ${isActive && 'calendar-date-active'} ${isToday && 'calendar-date-today'} ${isDisabled && 'calendar-date-disabled'}`}
+                    className={`calendar-date${isActive ? ' calendar-date-active' : ''}${isToday ? ' calendar-date-today' : ''}${isDisabled ? ' calendar-date-disabled' : ''}`}
                     onClick={this.handleDateSelected}
                     data-date={date}
                 >
@@ -241,18 +226,38 @@ class Calendar extends React.Component {
         return days;
     }
 
+    getDates() {
+        const days = this.getDays().map(day => day);
+        const weekHeaders = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+
+        return (
+            <div className='calendar-date-panel'>
+                {weekHeaders.map((item, idx) => (
+                    <span
+                        key={idx}
+                        className='calendar-date-header'
+                    >
+                    {item}
+                    </span>
+                ))}
+                {days}
+            </div>
+        );
+    }
+
     getMonths() {
+        const isActive     = moment(this.state.selectedDate).month();
         const monthHeaders = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         return (
             <div className='calendar-month-panel'>
                 {monthHeaders.map((item, idx) => (
                     <span
                         key={idx}
-                        className='calendar-month'
+                        className={`calendar-month${idx === isActive ? ' calendar-month-active' : ''}`}
                         onClick={this.handleMonthSelected}
                         data-month={idx}
                     >
-                        {item}
+                    {item}
                     </span>
                 ))}
             </div>
@@ -260,6 +265,7 @@ class Calendar extends React.Component {
     }
 
     getYears() {
+        const isActive    = moment(this.state.selectedDate).year();
         const currentYear = moment(this.state.date).year();
         const years = [];
         for (let year = currentYear - 1; year < currentYear + 11; year++) {
@@ -270,11 +276,11 @@ class Calendar extends React.Component {
                 {years.map((year, idx) => (
                     <span
                         key={idx}
-                        className={`calendar-year ${(idx === 0 || idx === 11 ) && 'calendar-year-disabled'}`}
+                        className={`calendar-year${(idx === 0 || idx === 11 ) ? ' calendar-year-disabled' : ''}${year === isActive ? ' calendar-year-active' : ''}`}
                         onClick={this.handleYearSelected}
                         data-year={year}
                     >
-                        {year}
+                    {year}
                     </span>
                 ))}
             </div>
@@ -282,8 +288,9 @@ class Calendar extends React.Component {
     }
 
     getDecades() {
-        const decades = [];
+        const isActive    = moment(this.state.selectedDate).year();
         const currentYear = moment(this.state.date).year();
+        const decades = [];
         let minYear = currentYear - 10;
         for (let i = 0; i < 12; i++) {
             const maxYear = minYear + 9;
@@ -296,7 +303,7 @@ class Calendar extends React.Component {
                 {decades.map((range, idx) => (
                     <span
                         key={idx}
-                        className={`calendar-decade ${(idx === 0 || idx === 11) && ' calendar-decade-disabled'}`}
+                        className={`calendar-decade${(idx === 0 || idx === 11) ? ' calendar-decade-disabled' : ''}${range.split('-')[0] === isActive ? 'calendar-decade-active' : ''}`}
                         onClick={this.handleDecadeSelected}
                         data-decade={range}
                     >
@@ -307,28 +314,15 @@ class Calendar extends React.Component {
         );
     }
 
-    render() {
-        const Days = () => {
-            const days = this.getDays().map(day => day);
-            const weekHeaders = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+    getActiveView() {
+        return this.state.activeView;
+    }
 
-            return (
-                <div className='calendar-date-panel'>
-                    {weekHeaders.map((item, idx) => (
-                        <span
-                            key={idx}
-                            className='calendar-date-header'
-                        >
-                        {item}
-                        </span>
-                    ))}
-                    {days}
-                </div>
-            );
-        };
-        const Months = () => this.getMonths();
-        const Years = () => this.getYears();
-        const Decades = () => this.getDecades();
+    render() {
+        const isDateView   = (this.getActiveView() === this.CALENDAR_VIEWS.DATE);
+        const isYearView   = (this.getActiveView() === this.CALENDAR_VIEWS.YEAR);
+        const isMonthView  = (this.getActiveView() === this.CALENDAR_VIEWS.MONTH);
+        const isDecadeView = (this.getActiveView() === this.CALENDAR_VIEWS.DECADE);
 
         return (
             <div className='calendar'>
@@ -340,71 +334,70 @@ class Calendar extends React.Component {
                     className='calendar-input'
                 />
                 <div className='calendar-header'>
-                    {
-                        this.state.isDecadeView &&
-                        <span type='button' className='calendar-prev-year-btn' onClick={this.previousCentury}></span>
+                    {   isDecadeView &&
+                        <span type='button' className='calendar-prev-year-btn' onClick={this.previousCentury} />
                     }
                     {
-                        this.state.isYearView &&
-                        <span type='button' className='calendar-prev-year-btn' onClick={this.previousDecade}></span>
+                        isYearView &&
+                        <span type='button' className='calendar-prev-year-btn' onClick={this.previousDecade} />
                     }
                     {
-                        (this.state.isDaysView  || this.state.isMonthView) &&
-                        <span type='button' className='calendar-prev-year-btn' onClick={this.previousYear}></span>
+                        (isDateView  || isMonthView) &&
+                        <span type='button' className='calendar-prev-year-btn' onClick={this.previousYear} />
                     }
                     {
-                        this.state.isDaysView &&
-                        <span type='button' className='calendar-prev-month-btn' onClick={this.previousMonth}></span>
+                        isDateView &&
+                        <span type='button' className='calendar-prev-month-btn' onClick={this.previousMonth} />
                     }
                     <div className='calendar-select'>
                         {
-                            this.state.isDaysView  &&
-                            <span type='button' className='calendar-select-month-btn' onClick={this.selectMonth}>
+                            isDateView  &&
+                            <span type='button' className='calendar-select-month-btn' onClick={() => this.selectView(this.CALENDAR_VIEWS.MONTH)}>
                                 {moment(this.state.date).format('MMM')}
                             </span>
                         }
                         {
-                            (this.state.isDaysView  || this.state.isMonthView) &&
-                            <span type='button' className='calendar-select-year-btn'  onClick={this.selectYear}>
+                            (isDateView  || isMonthView) &&
+                            <span type='button' className='calendar-select-year-btn' onClick={() => this.selectView(this.CALENDAR_VIEWS.YEAR)}>
                                 {moment(this.state.date).format('YYYY')}
                             </span>
                         }
                         {
-                            this.state.isYearView &&
-                            <span type='button' className='calendar-select-decade-btn'  onClick={this.selectDecade}>
+                            isYearView &&
+                            <span type='button' className='calendar-select-decade-btn' onClick={() => this.selectView(this.CALENDAR_VIEWS.DECADE)}>
                                 {moment(this.state.date).format('YYYY')}-{moment(this.state.date).add(9, 'years').format('YYYY')}
                             </span>
                         }
                         {
-                            this.state.isDecadeView &&
+                            isDecadeView &&
                             <span className='calendar-select-century-btn'>
                                 {moment(this.state.date).format('YYYY')}-{moment(this.state.date).add(99, 'years').format('YYYY')}
                             </span>
                         }
                     </div>
                     {
-                        this.state.isDaysView &&
-                        <span type='button' className='calendar-next-month-btn' onClick={this.nextMonth}></span>
+                        isDateView &&
+                        <span type='button' className='calendar-next-month-btn' onClick={this.nextMonth} />
                     }
                     {
-                        (this.state.isDaysView  || this.state.isMonthView) &&
-                        <span type='button' className='calendar-next-year-btn' onClick={this.nextYear}></span>
+                        (isDateView  || isMonthView)  &&
+                        <span type='button' className='calendar-next-year-btn' onClick={this.nextYear} />
                     }
                     {
-                        this.state.isYearView &&
-                        <span type='button' className='calendar-next-year-btn' onClick={this.nextDecade}></span>
+                        isYearView &&
+                        <span type='button' className='calendar-next-year-btn' onClick={this.nextDecade} />
                     }
                     {
-                        this.state.isDecadeView &&
-                        <span type='button' className='calendar-next-year-btn' onClick={this.nextCentury}></span>
+                        isDecadeView &&
+                        <span type='button' className='calendar-next-year-btn' onClick={this.nextCentury} />
                     }
                 </div>
 
                 <div className='calendar-panel'>
-                    { this.state.isDaysView   && <Days /> }
-                    { this.state.isMonthView  && <Months /> }
-                    { this.state.isYearView   && <Years /> }
-                    { this.state.isDecadeView && <Decades /> }
+                    { isDateView   && this.getDates()   }
+                    { isMonthView  && this.getMonths()  }
+                    { isYearView   && this.getYears()   }
+                    { isDecadeView && this.getDecades() }
                 </div>
 
                 <div className='calendar-footer'>
@@ -424,7 +417,7 @@ class Calendar extends React.Component {
 Calendar.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
     startDate : moment(),
-    minDate   : moment().subtract(120, 'y'), // by default, minDate is set to 120 years from today
+    minDate   : moment().subtract(120, 'y').format('YYYY-MM-DD'), // by default, minDate is set to 120 years from today
 };
 
 class DatePicker extends React.Component {
@@ -534,7 +527,7 @@ class DatePicker extends React.Component {
                         handleDateChange={this.handleDateChange}
                         footer={this.props.footer}
                         showTodayBtn={this.props.showTodayBtn}
-                        minDate={this.props.minDate}
+                        minDate={moment(this.props.minDate).format('YYYY-MM-DD')}
                     />
                 </div>
             </div>
