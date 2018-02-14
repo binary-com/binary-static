@@ -1,35 +1,17 @@
 import React from 'react';
-import Title from '../_common/components/title.jsx';
-import Favicons from '../_common/includes/favicons.jsx';
-import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
-import OutdatedBrowserMessage from './_common/outdated_browser_message.jsx';
-
-const Head = () => (
-    <head>
-        <AntiClickjack />
-        <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
-        <meta httpEquiv='Content-Language' content={it.language} />
-        <meta name='description' content={`${it.broker_name} Hackathon Competition`} />
-        <meta name='keywords' content='binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading, hackathon' />
-        <meta name='author' content={it.broker_name} />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-        <meta name='dcterms.rightsHolder' content={it.broker_name} />
-        <meta name='dcterms.rights' content={it.broker_name} />
-        <meta property='og:title' content={it.broker_name} />
-        <meta property='og:type' content='website' />
-        <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
-
-        <Title />
-        <Favicons />
-
-        <link href={it.url_for(`css/hackathon.css?${it.static_hash}`)} rel='stylesheet' />
-    </head>
-);
+import Layout from './_common/layout.jsx';
 
 const Hackathon = () => (
-    <html>
-        <Head />
-        <body>
+    <Layout
+        meta_description={it.L('[_1] Hackathon Competition', it.broker_name)}
+        css_files={[
+            it.url_for('css/hackathon.css'),
+        ]}
+        js_files={[
+            it.url_for('js/landing_pages/common.js'),
+            it.url_for('js/landing_pages/hackathon.js'),
+        ]}
+    >
             <div className='navbar' id='navigation'>
                 <div className='container'>
                     <div className='navbar-header'>
@@ -67,13 +49,7 @@ const Hackathon = () => (
                     </p>
                 </div>
             </footer>
-
-            <OutdatedBrowserMessage />
-
-            <script src={it.url_for(`js/landing_pages/common.js?${it.static_hash}`)} />
-            <script src={it.url_for(`js/landing_pages/hackathon.js?${it.static_hash}`)} />
-        </body>
-    </html>
+    </Layout>
 );
 
 export default Hackathon;

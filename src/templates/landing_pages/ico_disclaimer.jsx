@@ -1,44 +1,20 @@
 import React from 'react';
+import Layout from './_common/layout.jsx';
 import Loading from '../_common/components/loading.jsx';
-import Title from '../_common/components/title.jsx';
-import Favicons from '../_common/includes/favicons.jsx';
-import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 import GTM from '../_common/includes/gtm.jsx';
-import OutdatedBrowserMessage from './_common/outdated_browser_message.jsx';
-
-const Head = () => (
-    <head>
-        <AntiClickjack />
-        <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
-        <meta httpEquiv='Content-Language' content={it.language} />
-        <meta
-            name='description'
-            content={` ${it.L('[_1] ICO, Invest in the world\'s premier platform for binary options trading', it.broker_name)}`}
-        />
-        <meta
-            name='keywords'
-            content={` ${it.L('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading')}`}
-        />
-        <meta name='author' content={it.broker_name} />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-        <meta name='dcterms.rightsHolder' content={it.broker_name} />
-        <meta name='dcterms.rights' content={it.broker_name} />
-        <meta property='og:title' content={it.broker_name} />
-        <meta property='og:type' content='website' />
-        <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
-
-        <Title />
-        <Favicons />
-
-        <link href={it.url_for(`css/ico.css?${it.static_hash}`)} rel='stylesheet' />
-        <link href={`https://style.binary.com/binary.css?${it.static_hash}`} rel='stylesheet' />
-    </head>
-);
 
 const IcoDisclaimer = () => (
-    <html>
-        <Head />
-        <body>
+    <Layout
+        meta_description={it.L('[_1] ICO, Invest in the world\'s premier platform for binary options trading', it.broker_name)}
+        css_files={[
+            it.url_for('css/ico.css'),
+            'https://style.binary.com/binary.css',
+        ]}
+        js_files={[
+            it.url_for('js/landing_pages/common.js'),
+            it.url_for('js/landing_pages/ico_disclaimer.js'),
+        ]}
+    >
             <GTM />
             <div className='navbar-fixed-top primary-bg-color' role='navigation'>
                 <div className=''>
@@ -166,13 +142,7 @@ const IcoDisclaimer = () => (
                     </div>
                 </div>
             </div>
-
-            <OutdatedBrowserMessage />
-
-            <script src={it.url_for(`js/landing_pages/common.js?${it.static_hash}`)} />
-            <script src={it.url_for(`js/landing_pages/ico_disclaimer.js?${it.static_hash}`)} />
-        </body>
-    </html>
+    </Layout>
 );
 
 export default IcoDisclaimer;

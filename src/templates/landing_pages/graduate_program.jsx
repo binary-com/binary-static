@@ -1,8 +1,5 @@
 import React from 'react';
-import Title from '../_common/components/title.jsx';
-import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
-import Favicons from '../_common/includes/favicons.jsx';
-import OutdatedBrowserMessage from './_common/outdated_browser_message.jsx';
+import Layout from './_common/layout.jsx';
 
 const GraduateProgram = () => {
     const steps = [
@@ -15,32 +12,17 @@ const GraduateProgram = () => {
     ];
 
     return (
-        <html>
-            <head>
-                <AntiClickjack />
-
-                <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
-                <meta httpEquiv='Content-Language' content={it.language} />
-                <meta name='description' content={`${it.broker_name} Graduate Programme`} />
-                <meta name='keywords' content='binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading' />
-                <meta name='author' content={it.broker_name} />
-                <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-                <meta name='dcterms.rightsHolder' content={it.broker_name} />
-                <meta name='dcterms.rights' content={it.broker_name} />
-                <meta property='og:title' content={it.broker_name} />
-                <meta property='og:type' content='website' />
-                <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
-
-                <Title />
-
-                <Favicons />
-
-                <link href={`${it.url_for('css/graduate_program.css')}?${it.static_hash}`} rel='stylesheet' />
-                <link href={`https://style.binary.com/binary.css?${it.static_hash}`} rel='stylesheet' />
-
-            </head>
-
-            <body>
+        <Layout
+            meta_description={it.L('[_1] Graduate Programme', it.broker_name)}
+            css_files={[
+                it.url_for('css/graduate_program.css'),
+                'https://style.binary.com/binary.css',
+            ]}
+            js_files={[
+                it.url_for('js/landing_pages/common.js'),
+                it.url_for('js/landing_pages/graduate_program.js'),
+            ]}
+        >
             <div className='navbar-fixed-top' role='navigation' id='navigation'>
                 <div className='container'>
                     <div className='navbar-header'>
@@ -234,13 +216,7 @@ const GraduateProgram = () => {
             <footer className='center-text primary-bg-color content-inverse-color'>
                 <p>{('Browse all career opportunities at')} <a className='link' target='_blank' href={it.url_for('careers')} >{it.website_name}</a></p>
             </footer>
-
-            <OutdatedBrowserMessage />
-
-            <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
-            <script src={`${it.url_for('js/landing_pages/graduate_program.js')}?${it.static_hash}`}></script>
-            </body>
-        </html>
+        </Layout>
     );
 };
 
