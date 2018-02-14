@@ -109,6 +109,9 @@
         z-index: 1;
         color: #2a3052;
     }
+    &.eur:before {
+        content: '\20AC';
+    }
     &.aud:before {
         content: '\0041\0024';
     }
