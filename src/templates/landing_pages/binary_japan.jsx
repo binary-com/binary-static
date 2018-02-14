@@ -2,6 +2,7 @@ import React from 'react';
 import Title from '../_common/components/title.jsx';
 import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 import Favicons from '../_common/includes/favicons.jsx';
+import OutdatedBrowserMessage from './_common/outdated_browser_message.jsx';
 
 const BinaryJapan = () => (
     <html>
@@ -606,12 +607,13 @@ const BinaryJapan = () => (
 
         <div id='affiliate_disclaimer_popup'></div>
 
+        <OutdatedBrowserMessage />
+
         <script src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js'></script>
         <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
         <script src={`${it.url_for('js/landing_pages/japan.js')}?${it.static_hash}`}></script>
         </body>
     </html>
-
 );
 
 export default BinaryJapan;

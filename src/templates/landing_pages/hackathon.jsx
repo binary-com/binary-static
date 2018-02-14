@@ -2,6 +2,7 @@ import React from 'react';
 import Title from '../_common/components/title.jsx';
 import Favicons from '../_common/includes/favicons.jsx';
 import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
+import OutdatedBrowserMessage from './_common/outdated_browser_message.jsx';
 
 const Head = () => (
     <head>
@@ -66,6 +67,8 @@ const Hackathon = () => (
                     </p>
                 </div>
             </footer>
+
+            <OutdatedBrowserMessage />
 
             <script src={it.url_for(`js/landing_pages/common.js?${it.static_hash}`)} />
             <script src={it.url_for(`js/landing_pages/hackathon.js?${it.static_hash}`)} />

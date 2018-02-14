@@ -4,6 +4,7 @@ import Title from '../_common/components/title.jsx';
 import Favicons from '../_common/includes/favicons.jsx';
 import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 import GTM from '../_common/includes/gtm.jsx';
+import OutdatedBrowserMessage from './_common/outdated_browser_message.jsx';
 
 const Head = () => (
     <head>
@@ -165,6 +166,8 @@ const IcoDisclaimer = () => (
                     </div>
                 </div>
             </div>
+
+            <OutdatedBrowserMessage />
 
             <script src={it.url_for(`js/landing_pages/common.js?${it.static_hash}`)} />
             <script src={it.url_for(`js/landing_pages/ico_disclaimer.js?${it.static_hash}`)} />

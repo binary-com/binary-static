@@ -2,7 +2,7 @@ import React from 'react';
 import Title from '../_common/components/title.jsx';
 import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 import Favicons from '../_common/includes/favicons.jsx';
-
+import OutdatedBrowserMessage from './_common/outdated_browser_message.jsx';
 
 const GraduateProgram = () => {
     const steps = [
@@ -235,11 +235,12 @@ const GraduateProgram = () => {
                 <p>{('Browse all career opportunities at')} <a className='link' target='_blank' href={it.url_for('careers')} >{it.website_name}</a></p>
             </footer>
 
+            <OutdatedBrowserMessage />
+
             <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
             <script src={`${it.url_for('js/landing_pages/graduate_program.js')}?${it.static_hash}`}></script>
             </body>
         </html>
-
     );
 };
 

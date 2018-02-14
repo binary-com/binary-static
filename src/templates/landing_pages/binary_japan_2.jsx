@@ -2,6 +2,7 @@ import React from 'react';
 import Title from '../_common/components/title.jsx';
 import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 import Favicons from '../_common/includes/favicons.jsx';
+import OutdatedBrowserMessage from './_common/outdated_browser_message.jsx';
 
 const Product = ({
     header,
@@ -462,6 +463,8 @@ const BinaryJapan2 = () => (
             </footer>
 
             <div id='affiliate_disclaimer_popup'></div>
+
+            <OutdatedBrowserMessage />
 
             <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script>
             <script src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js'></script>

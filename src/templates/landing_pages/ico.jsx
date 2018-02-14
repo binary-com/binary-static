@@ -4,6 +4,7 @@ import Title from '../_common/components/title.jsx';
 import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 import Favicons from '../_common/includes/favicons.jsx';
 import Gtm from '../_common/includes/gtm.jsx';
+import OutdatedBrowserMessage from './_common/outdated_browser_message.jsx';
 
 const Ico = () => {
     const items = [
@@ -990,6 +991,9 @@ const Ico = () => {
             <div id='ico-bottom-banner' className='gr-hide gr-show-m gr-12-m invisible' data-url={it.url_for('user/ico-subscribe')}>
                 <p className='center-text'>{it.L('The [_1] ICO is now live. Participate now!', it.broker_name)}</p>
             </div>
+
+            <OutdatedBrowserMessage />
+
             {/* [if (lt IE 9)]><script src='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js'></script><![endif] */}
             <script src='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js'></script>
             <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
