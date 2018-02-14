@@ -375,15 +375,6 @@ button .barspinner.white {
     position: relative;
 }
 
-.sidebar-collapsible-container {
-    position: relative;
-    height: 100%;
-}
-
-.sidebar {
-    @include menu-left;
-}
-
 .static_full {
     margin-top: 40px;
 

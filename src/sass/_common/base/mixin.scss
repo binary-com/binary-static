@@ -31,8 +31,10 @@
             list-style-image: none;
             margin: 0;
             background: $COLOR_LIGHT_GRAY;
-            line-height: 150%;
+            line-height: 40px;
+            height: 40px;
             border-bottom: 1px solid $COLOR_WHITE;
+            padding: 0 16px;
 
             &:hover {
                 background: $COLOR_GRAY;
@@ -41,7 +43,6 @@
                 font-weight: normal;
                 text-decoration: none;
                 display: block;
-                padding: 5px 5px 5px 10px;
                 color: $COLOR_BLUE;
             }
         }
