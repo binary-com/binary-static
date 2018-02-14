@@ -235,11 +235,11 @@ const TradingEvents = (() => {
         if (multiplier_element) {
             multiplier_element.addEventListener('keypress', onlyNumericOnKeypress);
 
-            multiplier_element.addEventListener('input', commonTrading.debounce((e) => {
+            multiplier_element.addEventListener('input', CommonTrading.debounce((e) => {
                 e.target.value = e.target.value.replace(/^0+/,'');
                 Defaults.set('multiplier', e.target.value);
                 Price.processPriceRequest();
-                commonTrading.submitForm(document.getElementById('websocket_form'));
+                CommonTrading.submitForm(document.getElementById('websocket_form'));
             }));
         }
 

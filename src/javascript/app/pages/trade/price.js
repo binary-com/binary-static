@@ -204,12 +204,15 @@ const Price = (() => {
             CommonFunctions.elementInnerHtml(payout_amount, data.payout ? formatMoney((currency.value || currency.getAttribute('value')), data.payout) : '-');
             // Lookback multiplier
             CommonFunctions.elementTextContent(multiplier, `${localize('Multiplier')}: `);
-            CommonFunctions.elementInnerHtml(contract_multiplier, params.amount ? formatMoney((currency.value || currency.getAttribute('value')), proposal.multiplier) : '-');
+            CommonFunctions.elementInnerHtml(contract_multiplier, data.multiplier ? formatMoney((currency.value || currency.getAttribute('value')), data.multiplier) : '-');
 
             if (data.longcode && window.innerWidth > 500) {
                 if (description) description.setAttribute('data-balloon', data.longcode);
                 if (longcode) CommonFunctions.elementTextContent(longcode, data.longcode);
-            } else if (description) description.removeAttribute('data-balloon');
+            } else {
+                if (description) description.removeAttribute('data-balloon');
+                if (longcode) CommonFunctions.elementTextContent(longcode, '');
+            };
         };
 
         const setPurchaseStatus = (enable) => {
