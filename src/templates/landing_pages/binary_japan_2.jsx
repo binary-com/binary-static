@@ -90,8 +90,8 @@ const BinaryJapan2 = () => (
                 <div className='container'>
                     <div className='intro-body'>
                         <div className='gr-row'>
-                            <div className='gr-6 gr-12-m'>
-                                <h2 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world')}</h2>
+                            <div className='gr-6 gr-11-p gr-12-m'>
+                                <h3 className='intro-subtext'>{it.L('{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world')}</h3>
                                 <form id='email_top' className='signup-form' noValidate>
                                     <div className='signup-form-input'>
                                         <div className='input-group'>
@@ -154,7 +154,7 @@ const BinaryJapan2 = () => (
             <section className='bg-orange bg-lines'>
                 <div className='container padding-top-bottom-500'>
                     <div id='key-plus' className='section-title center-text'>
-                        <h1 className='content-inverse-color'>{it.L('{JAPAN ONLY}Key plus point')}</h1>
+                        <h2 className='content-inverse-color'>{it.L('{JAPAN ONLY}Key plus point')}</h2>
                         <p className='content-inverse-color'>{it.L('{JAPAN ONLY}Here are some random texts.')}</p>
                     </div>
                     <div className='cards cards--numbered cards--less-margin gr-row'>
@@ -195,16 +195,16 @@ const BinaryJapan2 = () => (
             <section id='bo-vs-fx' className='fill-bg-color edge--top'>
                 <div className='container padding-bottom-500'>
                     <div className='section-title center-text'>
-                        <h1 className='color-blue'>{it.L('{JAPAN ONLY}Why choose binary options over foreign exchange')}</h1>
+                        <h2 className='color-blue'>{it.L('{JAPAN ONLY}Why choose binary options over foreign exchange')}</h2>
                         <p>{it.L('{JAPAN ONLY}The binary option can provide profit opportunities even at a small price range. Here is a table comparison of foreign exchange and binary options')}</p>
                     </div>
                     <div className='gr-row cards'>
-                        <div className='gr-6 gr-12-m'>
+                        <div className='gr-6 gr-10-p gr-12-m gr-centered'>
                             <div className='card'>
                                 <div className='card-header__bubble'>
                                     <h3>{it.L('{JAPAN ONLY}Foreign exchange one cancellation order - profit take & stop-loss order')}</h3>
                                 </div>
-                                <div className='card-body'>
+                                <div className='card-body fixed-height'>
                                     <div className='gr-row gr-row-align-center-m gr-row-align-between'>
                                         <div className='box-o'>
                                             <img className='icon-sm' src={it.url_for('images/japan/version1/jpy.svg')} />
@@ -236,23 +236,23 @@ const BinaryJapan2 = () => (
                                         </div>
                                     </div>
                                     <span className='card-divider'></span>
-                                    <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}1 lot = $ 100,000, margin: ')}</p>
-                                    <p className='size-2'>{it.L('{JAPAN ONLY}Profit / loss per point (0.01) = ¥ 1,000')}</p>
+                                    <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}1 lot = $ 100,000, margin: ')}</p>
+                                    <p className='size-2 big-spacing'>{it.L('{JAPAN ONLY}Profit / loss per point (0.01) = ¥ 1,000')}</p>
                                     <p className='bg-gray size-3'>{it.L('{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000')}</p>
                                     <div className='flex'>
                                         <img className='icon-md' src={it.url_for('images/japan/version1/sad-face.svg')} />
                                         <p className='color-light-blue'>{it.L('{JAPAN ONLY}Margin: ¥ 442,000')}<br/>{it.L('{JAPAN ONLY}Maximum loss: not guaranteed')}</p>
                                     </div>
-                                    <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000')}</p>
+                                    <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000')}</p>
                                 </div>
                             </div>
                         </div>
-                        <div className='gr-6 gr-12-m'>
+                        <div className='gr-6 gr-10-p gr-12-m gr-centered'>
                             <div className='card'>
                                 <div className='card-header__bubble'>
                                     <h3>{it.L('{JAPAN ONLY}Binary option can make a higher profit, for the same risk but less margin')}</h3>
                                 </div>
-                                <div className='card-body'>
+                                <div className='card-body fixed-height'>
                                     <div className='gr-row gr-row-align-center-m gr-row-align-between'>
                                         <div className='box-o'>
                                             <img className='icon-sm' src={it.url_for('images/japan/version1/jpy.svg')} />
@@ -284,14 +284,14 @@ const BinaryJapan2 = () => (
                                         </div>
                                     </div>
                                     <span className='card-divider'></span>
-                                    <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}If spot rate is at above target rate at judgment time, the profil will be:')}</p>
-                                    <p className='size-2'>{it.L('{JAPAN ONLY}Option price assumes 1 hour to judgment time, volatility = 8.5%, spread = 40 yen')}</p>
+                                    <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}If spot rate is at above target rate at judgment time, the profil will be:')}</p>
+                                    <p className='size-2 fixed-width'>{it.L('{JAPAN ONLY}Option price assumes 1 hour to judgment time, volatility = 8.5%, spread = 40 yen')}</p>
                                     <p className='bg-gray size-3'>{it.L('{JAPAN ONLY}50 lots: maximum loss: - ¥ 10,000 | target profit: ¥ 40,000')}</p>
                                     <div className='flex'>
                                         <img className='icon-md' src={it.url_for('images/japan/version1/happy-face.svg')} />
                                         <p className='color-red'>{it.L('{JAPAN ONLY}Margin: ¥ 10,000')}<br />{it.L('{JAPAN ONLY}Maximum loss: guaranteed')}</p>
                                     </div>
-                                    <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000')}</p>
+                                    <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000')}</p>
                                 </div>
                             </div>
                         </div>
@@ -303,7 +303,7 @@ const BinaryJapan2 = () => (
                 <div className='bg-platforms'></div>
                 <div className='container center-text padding-bottom-50'>
                     <div className='section-title'>
-                        <h1 className='color-blue'>{it.L('{JAPAN ONLY}Available on desktop and mobile platforms')}</h1>
+                        <h2 className='color-blue'>{it.L('{JAPAN ONLY}Available on desktop and mobile platforms')}</h2>
                         <p>{it.L('{JAPAN ONLY}Here are some random texts.')}</p>
                     </div>
                     <div className='gr-row'>
@@ -317,7 +317,7 @@ const BinaryJapan2 = () => (
             <section className='bg-orange bg-confetti'>
                 <div className='container center-text padding-top-bottom-500'>
                     <div id='academy' className='section-title content-inverse-color'>
-                        <h1 className='content-inverse-color'>{it.L('{JAPAN ONLY}Academy')}</h1>
+                        <h2 className='content-inverse-color'>{it.L('{JAPAN ONLY}Academy')}</h2>
                         <p>{it.L('{JAPAN ONLY}Learn to become a better trader and get all the latest news and trends on financial transactions for free.')}</p>
                     </div>
                     <div className='gr-row content-inverse-color'>
@@ -344,7 +344,7 @@ const BinaryJapan2 = () => (
             <section className='fill-bg-color edge--top--reverse'>
                 <div className='container center-text padding-bottom-500 override'>
                     <div className='section-title'>
-                        <h1 className='color-blue'>{it.L('{JAPAN ONLY}Your funds are kept safe')}</h1>
+                        <h2 className='color-blue'>{it.L('{JAPAN ONLY}Your funds are kept safe')}</h2>
                         <p>{it.L('{JAPAN ONLY}All customer funds are deposited with JSF Trust Bank and will be refunded by an independent attorney as a beneficiary agent in case of business failure')}</p>
                     </div>
                     <div className='gr-row'>
@@ -362,7 +362,7 @@ const BinaryJapan2 = () => (
                 <div className='container center-text padding-bottom-50 override small-gap-before'>
                     <div className='gr-12 gr-centered'>
                         <div className='section-title'>
-                            <h1 className='color-blue'>{it.L('{JAPAN ONLY}How to open an account')}</h1>
+                            <h2 className='color-blue'>{it.L('{JAPAN ONLY}How to open an account')}</h2>
                         </div>
                         <div className='gr-row numbered'>
                             <div className='gr-6 gr-12-m'>
@@ -397,7 +397,7 @@ const BinaryJapan2 = () => (
             <section className='fill-bg-color'>
                 <div className='container center-text padding-bottom-50'>
                     <div className='section-title'>
-                        <h1 className='color-blue'>{it.L('{JAPAN ONLY}Why choose us')}</h1>
+                        <h2 className='color-blue'>{it.L('{JAPAN ONLY}Why choose us')}</h2>
                         <p>{it.L('{JAPAN ONLY}[_1] is a pioneer in the award-winning online option deal.', it.website_name)}</p>
                     </div>
                     <img className='ic-award' src={it.url_for('images/japan/version2/img-award-1.svg')} />
@@ -413,7 +413,7 @@ const BinaryJapan2 = () => (
                     <div className='gr-row'>
                         <div className='gr-12'>
                             <form id='email_bottom' className='signup-form' noValidate>
-                                <h1 className=''>{it.L('{JAPAN ONLY}Sign up for a free account')}</h1>
+                                <h2 className='email'>{it.L('{JAPAN ONLY}Sign up for a free account')}</h2>
                                 <div className='signup-form-input center'>
                                     <div className='input-group'>
                                         <input autoComplete='off' name='email' id='email' maxLength='50' type='email' placeholder={it.L('{JAPAN ONLY}Enter your email')} />
@@ -440,9 +440,23 @@ const BinaryJapan2 = () => (
                         <p>{it.L('{JAPAN ONLY}Disclaimer text here')}</p>
                     </div>
                 </div>
-                <div className='primary-bg-color-dark'>
+                <div className='gr-padding-30 fill-bg-color'>
                     <div className='container'>
-                        <p>{it.L('{JAPAN ONLY}Footer text here')}</p>
+                        <div className='gr-row'>
+                            <div className='gr-8 gr-12-p gr-12-m'>
+                                <p className='black-text'>{it.L('{JAPAN ONLY}Footer text here')}</p>
+                            </div>
+                            <div className='gr-4 gr-12-p gr-12-m'>
+                                <div className='badges'>
+                                    <a href='http://www.ffaj.or.jp/index.html' target='_blank' rel='noopener noreferrer'>
+                                        <img className='tffa-badge' src={it.url_for('images/pages/regulation/binarykk-logo.gif')} />
+                                    </a>
+                                    <a href='http://www.fsa.go.jp/index.html' target='_blank' rel='noopener noreferrer'>
+                                        <img className='fsa-badge' src={it.url_for('images/pages/regulation/fsa-logo.png')} />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </footer>
