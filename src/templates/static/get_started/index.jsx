@@ -37,8 +37,9 @@ const Index = () => (
         <h1 className='center-text eu-hide'>{it.L('Get Started')}</h1>
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
             <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper eu-hide' items={[
-                { id: 'binary', text: it.L('Binary Options') },
-                { id: 'mt5',    text: it.L('MetaTrader 5') },
+                { id: 'binary',   text: it.L('Binary Options') },
+                { id: 'mt5',      text: it.L('MetaTrader 5') },
+                { id: 'lookback', text: it.L('Lookbacks') },
                 { id: 'get_started_tabs_selector', className: 'tab-selector' },
             ]} />
             <div className='tab-content'>
@@ -228,6 +229,50 @@ const Index = () => (
                                 />
                             </div>
                         </GetStartedSectionWrapper>
+                    </TabContent>
+                    <TabContent id='lookback'>
+                        <h2>{it.L('Lookbacks')}</h2>
+                        <h3>{it.L('What are lookbacks')}</h3>
+                        <p>{it.L('A lookback is a type of contract that allows you to replicate the buying or selling of an underlying asset at any historical price over the lifetime of that contract –– also known as the ‘look back’ period. Unlike binary options, lookbacks have a variable payout.')}</p>
+                        <SeparatorLine invisible className='gr-padding-20' />
+                        <h3>{it.L('Advantages of lookbacks')}</h3>
+                        <p>{it.L('A lookback contract allows you to replicate the buying or selling of an underlying asset at any historical price over the lifetime of that contract, where an optimal price to maximise your returns is always available. This optimal price is the maximum or minimum historical price over the ‘look back’ period and helps to reduce the uncertainties you may have when entering a certain market.')}</p>
+                        <SeparatorLine invisible className='gr-padding-20' />
+                        <h3>{it.L('Types of trades')}</h3>
+                        <p>{it.L('We offer three types of trades for lookback contracts:')}</p>
+                        <div className='gr-row'>
+                            <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
+                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-high-image.svg')} />
+                                <ul className='checked'>
+                                    <li>{it.L('High-Close')}</li>
+                                </ul>
+                                <p>{it.L('Win the multiplier times the difference between the high and close over the duration of the contract')}</p>
+                            </div>
+                            <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
+                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-low-image.svg')} />
+                                <ul className='checked'>
+                                    <li>{it.L('Close-Low')}</li>
+                                </ul>
+                                <p>{it.L('Win the multiplier times the difference between the close and low over the duration of the contract.')}</p>
+                            </div>
+                            <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
+                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/high-low-image.svg')} />
+                                <ul className='checked'>
+                                    <li>{it.L('High-Low')}</li>
+                                </ul>
+                                <p>{it.L('Win the multiplier times the difference between the high and low over the duration of the contract.')}</p>
+                            </div>
+                        </div>
+                        <p>{it.L('The multiplier is used to calculate the final payout for each type of lookback contract, whether it be High-Close, Close-Low, or High-Low.')}</p>
+                        <p>{it.L('For example, let’s say you set your multiplier at $2 for the ‘Close-Low’ contract on the Volatility 100. The close and the low are 6,000.00 and 5,200.00 respectively.')}</p>
+                        <p>{it.L('This is how you would calculate your payout:')}</p>
+                        <div className='formula center-text'>
+                            <span>{it.L('(Close – Low) * Multiplier = Payout')}</span>
+                        </div>
+                        <SeparatorLine invisible show_mobile/>
+                        <div className='formula center-text'>
+                            <span>{it.L('(6,000 – 5,200) * 2 = $1600')}</span>
+                        </div>
                     </TabContent>
                 </TabContentContainer>
             </div>
