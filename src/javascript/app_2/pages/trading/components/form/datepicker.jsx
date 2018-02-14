@@ -232,14 +232,7 @@ class Calendar extends React.Component {
 
         return (
             <div className='calendar-date-panel'>
-                {weekHeaders.map((item, idx) => (
-                    <span
-                        key={idx}
-                        className='calendar-date-header'
-                    >
-                    {item}
-                    </span>
-                ))}
+                {weekHeaders.map((item, idx) => (<span key={idx} className='calendar-date-header'>{item}</span>))}
                 {days}
             </div>
         );
@@ -324,6 +317,22 @@ class Calendar extends React.Component {
         const isMonthView  = (this.getActiveView() === this.CALENDAR_VIEWS.MONTH);
         const isDecadeView = (this.getActiveView() === this.CALENDAR_VIEWS.DECADE);
 
+        const prevYearHandler = () => (((isDateView || isMonthView) && this.previousYear())
+            || (isYearView   && this.previousDecade())
+            || (isDecadeView && this.previousCentury()));
+
+        const nextYearHandler = () => (((isDateView || isMonthView) && this.nextYear())
+            || (isYearView   && this.nextDecade())
+            || (isDecadeView && this.nextCentury()));
+
+        const selectYearHandler = () => ((isDateView || isMonthView) && this.selectView(this.CALENDAR_VIEWS.YEAR))
+            || (isYearView && this.selectView(this.CALENDAR_VIEWS.DECADE));
+
+        const selectYearValue = (
+            ((isDateView || isMonthView) && moment(this.state.date).year())
+            || (isYearView   && `${moment(this.state.date).year()}-${moment(this.state.date).add(9, 'years').year()}`)
+            || (isDecadeView && `${moment(this.state.date).year()}-${moment(this.state.date).add(99, 'years').year()}`));
+
         return (
             <div className='calendar'>
                 <input
@@ -334,72 +343,27 @@ class Calendar extends React.Component {
                     className='calendar-input'
                 />
                 <div className='calendar-header'>
-                    {   isDecadeView &&
-                        <span type='button' className='calendar-prev-year-btn' onClick={this.previousCentury} />
-                    }
-                    {
-                        isYearView &&
-                        <span type='button' className='calendar-prev-year-btn' onClick={this.previousDecade} />
-                    }
-                    {
-                        (isDateView  || isMonthView) &&
-                        <span type='button' className='calendar-prev-year-btn' onClick={this.previousYear} />
-                    }
-                    {
-                        isDateView &&
-                        <span type='button' className='calendar-prev-month-btn' onClick={this.previousMonth} />
-                    }
+                    <span type='button' className='calendar-prev-year-btn' onClick={() => prevYearHandler()} />
+                    { isDateView && <span type='button' className='calendar-prev-month-btn' onClick={this.previousMonth} /> }
                     <div className='calendar-select'>
-                        {
-                            isDateView  &&
+                        {   isDateView  &&
                             <span type='button' className='calendar-select-month-btn' onClick={() => this.selectView(this.CALENDAR_VIEWS.MONTH)}>
                                 {moment(this.state.date).format('MMM')}
                             </span>
                         }
-                        {
-                            (isDateView  || isMonthView) &&
-                            <span type='button' className='calendar-select-year-btn' onClick={() => this.selectView(this.CALENDAR_VIEWS.YEAR)}>
-                                {moment(this.state.date).format('YYYY')}
-                            </span>
-                        }
-                        {
-                            isYearView &&
-                            <span type='button' className='calendar-select-decade-btn' onClick={() => this.selectView(this.CALENDAR_VIEWS.DECADE)}>
-                                {moment(this.state.date).format('YYYY')}-{moment(this.state.date).add(9, 'years').format('YYYY')}
-                            </span>
-                        }
-                        {
-                            isDecadeView &&
-                            <span className='calendar-select-century-btn'>
-                                {moment(this.state.date).format('YYYY')}-{moment(this.state.date).add(99, 'years').format('YYYY')}
-                            </span>
-                        }
+                        <span type='button' className='calendar-select-year-btn' onClick={() => selectYearHandler()}>
+                            {selectYearValue}
+                        </span>
                     </div>
-                    {
-                        isDateView &&
-                        <span type='button' className='calendar-next-month-btn' onClick={this.nextMonth} />
-                    }
-                    {
-                        (isDateView  || isMonthView)  &&
-                        <span type='button' className='calendar-next-year-btn' onClick={this.nextYear} />
-                    }
-                    {
-                        isYearView &&
-                        <span type='button' className='calendar-next-year-btn' onClick={this.nextDecade} />
-                    }
-                    {
-                        isDecadeView &&
-                        <span type='button' className='calendar-next-year-btn' onClick={this.nextCentury} />
-                    }
+                    { isDateView && <span type='button' className='calendar-next-month-btn' onClick={this.nextMonth} /> }
+                    <span type='button' className='calendar-next-year-btn' onClick={() => nextYearHandler()} />
                 </div>
-
                 <div className='calendar-panel'>
                     { isDateView   && this.getDates()   }
                     { isMonthView  && this.getMonths()  }
                     { isYearView   && this.getYears()   }
                     { isDecadeView && this.getDecades() }
                 </div>
-
                 <div className='calendar-footer'>
                     { this.props.footer && <span className='calendar-footer-extra'>{this.props.footer}</span> }
                     {
