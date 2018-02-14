@@ -80,7 +80,6 @@ const texts = [
     'Minute',
     'AM',
     'PM',
-    'End time must be after start time.',
     'Time is in the wrong format.',
 
     // highchart localization text
@@ -357,6 +356,7 @@ const texts = [
     'Sorry, your account is not authorised for any further contract purchases.',
     'Lots',
     'Payout per lot = 1,000',
+    'This page is not available in the selected language.',
 
     // digit_info
     'Select market',
@@ -518,12 +518,17 @@ const texts = [
     'Current password',
     'New password',
     'Demo Standard',
-    'Demo STP',
+    'Standard',
+    'Demo Advanced',
+    'Advanced',
     'Demo Volatility Indices',
     'Real Standard',
-    'Real STP',
+    'Real Advanced',
     'Real Volatility Indices',
     'Change Password',
+    'Demo Accounts',
+    'Real-Money Accounts',
+    'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
 
     // account_transfer
     'Min',

@@ -59,6 +59,15 @@
             box-sizing: border-box;
             font-size: $FONT_SIZE_S;
 
+            .acc-group {
+                line-height: 30px;
+                padding: 0 5px;
+                color: $COLOR_DARK_GRAY;
+
+                &:hover {
+                    cursor: auto;
+                }
+            }
             .acc-name {
                 line-height: 30px;
                 padding: 0 20px;
@@ -88,11 +97,14 @@
 
         .platforms li {
             margin-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
 
             img {
                 width: 16px;
                 height: 16px;
-                margin-right: 5px;
+                margin-right: 10px;
             }
         }
         .badges span {
@@ -115,11 +127,11 @@
             &.standard {
                 background-image: url('../images/pages/metatrader/icons/acc_standard.svg');
             }
-            &.stp {
-                background-image: url('../images/pages/metatrader/icons/acc_stp.svg');
+            &.advanced {
+                background-image: url('../images/pages/metatrader/icons/acc_advanced.svg');
             }
             &.volatility {
-                background-image: url('../images/pages/metatrader/icons/acc_volatility.svg');
+                background-image: url('../images/pages/metatrader/icons/acc_volatility_indices.svg');
             }
         }
         .acc-info {

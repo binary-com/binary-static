@@ -93,14 +93,6 @@ const Partners = () => (
                         text={it.L('Get paid for pull requests.')}
                 />
             </div>
-
-            <div className='gr-row gr-clear'>
-                <Column url={it.url_for('omnibus')}
-                        image='omnibus'
-                        header={it.L('Omnibus account')}
-                        text={it.L('Manage your client database more efficiently as an omnibus broker.')}
-                />
-            </div>
         </div>
     </React.Fragment>
 );
