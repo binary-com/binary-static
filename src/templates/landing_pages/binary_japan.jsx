@@ -232,14 +232,14 @@ const BinaryJapan = () => (
             </div>
             <div className='container'>
                 <div className='gr-row gr-row-align-center gr-row-align-bottom'>
-                    <div className='gr-4 gr-10-m center-text'>
+                    <div className='gr-4 gr-6-p gr-10-m center-text'>
                         <div className='bg bg-bubble-box'>
                             <h1>{it.L('{JAPAN ONLY}High speed execution')}</h1>
                         </div>
                         <img className='responsive' src={it.url_for('images/japan/version1/bg-light-blue.svg')} />
                     </div>
-                    <div className='gr-4 gr-12-m'>
-                        <div className=''>
+                    <div className='gr-4 gr-6-p gr-12-m'>
+                        <div>
                             <h2 className='color-orange text-medium'>{it.L('{JAPAN ONLY}You can purchase a trade with one click')}</h2>
                             <p className='color-blue'>{it.L('{JAPAN ONLY}Just switch this button to prevent misoperation')}</p>
                             <img className='' src={it.url_for('images/japan/version1/lock-switch.svg')} />
