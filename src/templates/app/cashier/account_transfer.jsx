@@ -19,16 +19,16 @@ const AccountTransfer = () => (
 
         <div className='invisible' id='client_message'>
             <p className='center-text notice-msg'>
-                <span className='invisible' id='no_account'>{it.L('Fund transfers between accounts are unavailable.')}{' '}</span>
+                <span className='invisible' id='no_account'>{it.L('Fund transfers between accounts are unavailable.')}&nbsp;</span>
                 <span className='invisible' id='not_enough_balance'>
                     {it.L('The minimum required amount for using the account transfer facility is [_1].', '<span id="min_required_amount"></span>')}
-                    {' '}
+                    &nbsp;
                 </span>
                 <span className='invisible' id='no_balance'>
                     {it.L('Please [_1]deposit[_2] to your account.', `<a href='${it.url_for('cashier/forwardws?action=deposit')}'>`, '</a>')}
-                    {' '}
+                    &nbsp;
                 </span>
-                <span className='invisible' id='limit_reached'>{it.L('You have reached your withdrawal limit.')}{' '}</span>
+                <span className='invisible' id='limit_reached'>{it.L('You have reached your withdrawal limit.')}&nbsp;</span>
             </p>
         </div>
 
