@@ -351,6 +351,7 @@ form {
             @media (max-width: 575px) {
                 font-size: 36px;
                 white-space: pre-wrap; // wrap text on mobile
+                max-width: 245px;
                 text-align: center;
                 margin-top: -20px;
                 margin-left: auto;

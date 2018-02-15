@@ -22,9 +22,12 @@ const Login = (() => {
 
     const isLoginPages = () => /logged_inws|redirect/i.test(window.location.pathname);
 
+    const socialLoginUrl = brand => (`${loginUrl()}&social_signup=${brand}`);
+
     return {
         redirectToLogin,
         isLoginPages,
+        socialLoginUrl,
     };
 })();
 

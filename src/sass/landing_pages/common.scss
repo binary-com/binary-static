@@ -134,7 +134,7 @@
         }
         .color-gray {
             /* stylelint-disable color-no-hex */
-            color: #d2d3dd;
+            color: #6e7287;
             /* stylelint-enable color-no-hex */
         }
         .bg-gray {
@@ -322,5 +322,15 @@
                 transform-origin: 100%;
             }
         }
+    }
+}
+
+.buorg {
+    color: $COLOR_BLACK;
+}
+
+@media screen and (max-width: 1199px) {
+    body .buorg {
+        font-size: $FONT_SIZE_S;
     }
 }
