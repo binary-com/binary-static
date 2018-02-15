@@ -64,7 +64,7 @@ const DepositWithdraw = (() => {
         const action   = Url.param('action');
         if (/^(withdraw|deposit)$/.test(action)) {
             cashier_type = action;
-            $heading.text(localize(toTitleCase(action)));
+            $heading.text(`${localize(toTitleCase(action))} ${Client.get('currency')}`);
         }
     };
 

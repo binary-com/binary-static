@@ -113,7 +113,7 @@ const MetaTraderUI = (() => {
         const $acc_item = $list.find(`[value="${acc_type}"]`);
         $acc_item.find('.mt-type').text(accounts_info[acc_type].title.replace(/(demo|real)\s/i, ''));
         if (accounts_info[acc_type].info) {
-            $acc_item.find('.mt-login').text(accounts_info[acc_type].info.login);
+            $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.login})`);
             $acc_item.setVisibility(1);
             if (/demo/.test(accounts_info[acc_type].account_type)) {
                 $list.find('#acc_group_demo').setVisibility(1);
@@ -203,6 +203,10 @@ const MetaTraderUI = (() => {
             $action.find('#frm_action').html($form).setVisibility(1).end()
                 .setVisibility(1);
 
+            if (action === 'password_change') {
+                $container.find('label[for*="_password"]').append(` (${localize('for MT5 Account')} ${accounts_info[acc_type].info.login})`);
+            }
+
             $form.find('button[type="submit"]').each(function() { // cashier has two different actions
                 const this_action = $(this).attr('action');
                 actions_info[this_action].$form = $(this).parents('form');
@@ -224,6 +228,7 @@ const MetaTraderUI = (() => {
             $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${accounts_info[acc_type].title} ${accounts_info[acc_type].info.login}`);
             $form.find('.mt5-balance').html(`${formatMoney(MetaTraderConfig.getCurrency(acc_type), accounts_info[acc_type].info.balance)}`);
+            $form.find('label[for^="txt_amount_"]').append(` ${MetaTraderConfig.getCurrency(acc_type)}`);
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {
                     if (error_msg) {

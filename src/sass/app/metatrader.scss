@@ -86,6 +86,10 @@
                 .mt-icon {
                     float: right;
                 }
+                .mt-login {
+                    padding-left: 3px;
+                    font-size: 90%;
+                }
             }
             .separator {
                 margin: 5px 0;
@@ -164,6 +168,9 @@
             &.selected {
                 color: $COLOR_WHITE;
                 background: $COLOR_BLUE_SHADE;
+            }
+            &:hover {
+                text-decoration: none;
             }
         }
     }

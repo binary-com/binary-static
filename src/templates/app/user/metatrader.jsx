@@ -94,7 +94,7 @@ const Metatrader = () => (
                                 </div>
                                 <div className='acc-info has-account invisible'>
                                     <div className='gr-row gr-padding-10'>
-                                        <div className='gr-3'>{it.L('Login ID:')}</div>
+                                        <div className='gr-3'>{it.L('MT5 Account:')}</div>
                                         <div className='gr-grow' data='login'></div>
                                     </div>
                                     <div className='gr-row'>
@@ -177,8 +177,8 @@ const Metatrader = () => (
                             <img src={it.url_for('images/pages/metatrader/dashboard/account.svg')} />
                         </div>
                         <div className='mt-balance invisible'>&nbsp;</div>
-                        <div className='mt-type'></div>
-                        <div className='mt-login invisible'></div>
+                        <span className='mt-type'></span>
+                        <span className='mt-login'></span>
                     </div>
 
 
