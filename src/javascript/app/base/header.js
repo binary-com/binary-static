@@ -1,4 +1,5 @@
-const topNavMenuListener  = require('binary-style').topNavMenuListener;
+import { hide_menu as hideMenu, show_menu as showMenu } from 'binary-style';
+
 const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
 const GTM                 = require('./gtm');
@@ -27,7 +28,7 @@ const Header = (() => {
         }
         if (Client.isLoggedIn()) {
             getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
-            topNavMenuListener();
+            initMenuDropDown();
             displayAccountStatus();
             if (!Client.get('is_virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
@@ -37,6 +38,23 @@ const Header = (() => {
                 });
             }
         }
+    };
+
+    const initMenuDropDown = () => {
+        const $menu = $('.top-nav-menu li ul');
+        $('.top-nav-menu > li.nav-dropdown-toggle').on('click', function(event) {
+            if ($(event.target).find('span').hasClass('nav-caret')) {
+                event.stopPropagation();
+                const $child_menu = $(this).find(' > ul');
+                if (+$child_menu.css('opacity') === 1) {
+                    hideMenu($menu);
+                } else if (+$child_menu.css('opacity') === 0) {
+                    $menu.animate({'opacity': 0}, 100, () => {
+                        $menu.css('visibility', 'hidden');
+                    }).promise().then(() => { showMenu($child_menu); });
+                }
+            }
+        });
     };
 
     const bindClick = () => {

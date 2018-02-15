@@ -105,10 +105,21 @@ const Header = () => (
                                             type     : 'nested',
                                             text     : it.L('Resources'),
                                             href     : 'javascript:;',
-                                            className: 'ja-hide mt-hide ico-only-hide client_logged_in invisible',
+                                            className: 'ja-hide mt-hide ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('Asset Index'),   href: it.url_for('resources/asset_indexws') },
                                                 { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
+                                            ],
+                                        },
+                                        {
+                                            type     : 'nested',
+                                            text     : it.L('Settings'),
+                                            href     : 'javascript:;',
+                                            className: 'ja-hide mt-hide client_logged_in nav-dropdown-toggle invisible',
+                                            subitems : [
+                                                { text: it.L('Profile'),           href: it.url_for('user/settingsws') },
+                                                { text: it.L('Security & Limits'), href: it.url_for('user/securityws') },
+                                                { text: it.L('Payment Agent'),     href: it.url_for('paymentagent/transferws'), id: 'topMenuPaymentAgent', className: 'invisible' },
                                             ],
                                         },
                                         // Japan
@@ -139,12 +150,6 @@ const Header = () => (
                                         <Account />
                                         <ul>
                                             <div className='login-id-list'></div>
-                                            <a className='link' href={it.url_for('user/settingsws')}>
-                                                <li className='topMenuProfile'>{it.L('Profile')}</li>
-                                            </a>
-                                            <a className='link' href={it.url_for('user/securityws')}>
-                                                <li className='topMenuSecurity'>{it.L('Security & Limits')}</li>
-                                            </a>
                                             <a className='link invisible' id='user_menu_metatrader' href={it.url_for('user/metatrader')}>
                                                 <li className='topMenuMetaTrader'>{it.L('MetaTrader')}</li>
                                             </a>

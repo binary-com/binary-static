@@ -87,14 +87,15 @@ const Page = (() => {
             Login.redirectToLogin();
         }
         if (Client.isLoggedIn()) {
-            BinarySocket.wait('authorize').then(() => {
+            BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 checkLanguage();
                 RealityCheck.onLoad();
+                Menu.init();
             });
         } else {
             checkLanguage();
+            Menu.init();
         }
-        Menu.init();
         TrafficSource.setData();
     };
 

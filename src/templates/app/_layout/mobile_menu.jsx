@@ -47,10 +47,10 @@ const MobileMenu = () => (
                     ]}
                 />
                 {/* MetaTrader */}
-                <Li text={it.L('MetaTrader')}  href={it.url_for('user/metatrader')}                       className='invisible mt-show' />
-                <Li text={it.L('Cashier')}     href={it.url_for('cashier')}                               className='invisible mt-show' />
-                <Li text={it.L('Get Started')} href={it.url_for('get-started-beta?get_started_tabs=mt5')} className='invisible mt-show' />
-                <Li text={it.L('Platforms')}   href={it.url_for('platforms?platforms_tabs=mt5')}          className='invisible mt-show' />
+                <Li text={it.L('MetaTrader')}  href={it.url_for('user/metatrader')}                  className='invisible mt-show' />
+                <Li text={it.L('Cashier')}     href={it.url_for('cashier')}                          className='invisible mt-show' />
+                <Li text={it.L('Get Started')} href={it.url_for('get-started?get_started_tabs=mt5')} className='invisible mt-show' />
+                <Li text={it.L('Platforms')}   href={it.url_for('platforms?platforms_tabs=mt5')}     className='invisible mt-show' />
             </ul>
         </div>
     </div>

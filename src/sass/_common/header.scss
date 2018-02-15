@@ -87,6 +87,9 @@ body #topbar, .landing_page-content {
                                 opacity: 1;
                             }
                         }
+                        &.active a:hover {
+                            color: $COLOR_WHITE;
+                        }
                     }
                 }
             }
