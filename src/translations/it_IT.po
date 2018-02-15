@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-12 21:00-0500\n"
+"PO-Revision-Date: 2018-02-14 22:18-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -108,7 +108,13 @@ msgstr "Termini e condizioni del programma di affiliazione di %1"
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Termini e condizioni dell'interfaccia del programma di affiliazione di %1 (\"API\")"
 
+msgid "%1 Graduate Programme"
+msgstr ""
+
 msgid "%1 Graduate programme"
+msgstr ""
+
+msgid "%1 Hackathon Competition"
 msgstr ""
 
 msgid "%1 ICO"
@@ -475,7 +481,7 @@ msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "Premio come 'Operatore di scommesse finanziarie dell'anno' da parte di eGaming Review"
 
 msgid "(One) Touch trades"
-msgstr "Trade (One) Touch"
+msgstr "Trade (One) Tocca"
 
 msgid "(Sell Price - Buy Price) x Volume x Price Per Point = Profit"
 msgstr "(Prezzo di vendita - Prezzo d'acquisto) x Volume x Prezzo per punto = Profitto"
@@ -613,7 +619,7 @@ msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Tutte le durate</strong> - da 10 secondi a 365 giorni."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays between/goes outside."
-msgstr "<strong>Tutte le condizioni di mercato</strong> - up/down, touch/no-touch, stays between/goes outside."
+msgstr "<strong>Tutte le condizioni di mercato</strong> - Alto/Basso, Tocca/Non Tocca, Resta Dentro/Esce."
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Tutti i mercati</strong> - valute, indici, azioni e materie prime."
@@ -667,7 +673,7 @@ msgid "A Politically Exposed Person (PEP) is an individual who is or has been en
 msgstr ""
 
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
-msgstr "Un trade Stays Between (Staziona fra) è quello in cui si guadagna se, per tutta la durata dell'intervallo temporale scelto dal trader, il prezzo di mercato rimane fra (non tocca) NESSUNO dei limiti di prezzo più alto e più basso. Un trade Goes Outside (Esce fuori) è quello in cui si guadagna se, in un qualsiasi momento del periodo scelto dal trader, il prezzo di mercato tocca UNO dei limiti di prezzo impostati dal trader."
+msgstr "Un trade Resta Dentro è quello in cui si guadagna se, per tutta la durata dell'intervallo temporale scelto dal trader, il prezzo di mercato rimane fra (non tocca) NESSUNO dei limiti di prezzo più alto e più basso. Un trade Esce è quello in cui si guadagna se, in un qualsiasi momento del periodo scelto dal trader, il prezzo di mercato tocca UNO dei limiti di prezzo impostati dal trader."
 
 msgid "A Transaction is opened by either executing a \"Buy\" or \"Sell\" Order based on a specified number of lots (volume) that constitute the underlying instrument of the relevant market."
 msgstr "Una Transazione si apre effettuando un ordine di \"Acquisto\" o \"Vendita\" sulla base di uno specifico numero di lotti (volume) che rappresenta lo strumento sottostante del relativo mercato."
@@ -841,6 +847,9 @@ msgstr "Accettazione"
 
 msgid "Access Denied"
 msgstr "Accesso negato"
+
+msgid "Access MT5 dashboard"
+msgstr ""
 
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "Accedere a tutti gli strumenti e funzionalità disponibili per il trading su MT5, compresi consulenti esperti (EA), grafici e tipologie di ordine"
@@ -1024,6 +1033,9 @@ msgstr "Interfaccia di trading avanzata in opzioni binarie"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Conoscenza avanzata dei principi di progettazione dei software"
+
+msgid "Advanced multi-asset trading platform"
+msgstr ""
 
 msgid "Advantages of CFD trading"
 msgstr "Vantaggi del trading con i CFD"
@@ -1233,7 +1245,7 @@ msgid "An ERC20 token is a type of token based on the ERC20 token standard used 
 msgstr ""
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr "Un trade Ends Between (Finisce tra) è quello in cui si guadagna se il prezzo d'uscita del mercato è superiore al prezzo obiettivo più basso E inferiore al prezzo obiettivo più alto. Un'opzione binaria Ends Outside (Termina fuori) è quella in cui si guadagna se il prezzo d'uscita del mercato è superiore al prezzo obiettivo più alto OPPURE inferiore al prezzo obiettivo più basso."
+msgstr "Un trade Termina Dentro è quello in cui si guadagna se il prezzo d'uscita del mercato è superiore al prezzo obiettivo più basso E inferiore al prezzo obiettivo più alto. Un'opzione binaria Termina fuori è quella in cui si guadagna se il prezzo d'uscita del mercato è superiore al prezzo obiettivo più alto OPPURE inferiore al prezzo obiettivo più basso."
 
 msgid "An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares."
 msgstr "Un'Offerta iniziale di moneta (o in breve \"ICO\") è un metodo di raccolta fondi relativamente simile a una IPO. In una ICO, vengono emessi i token delle criptovalute invece delle azioni."
@@ -1821,7 +1833,7 @@ msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, B
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA e tutti gli altri membri del Gruppo Binary sono a volte collettivamente indicati come \"%1\", \"ci\" o \"noi\"."
 
 msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (<a href='%1' target='_blank' download=1>licence no. IS/70156</a>)."
-msgstr ""
+msgstr "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenziata e regolata come appartenente alla Categoria 3 dei fornitori di Servizi di Investimento dalla Malta Financial Services Authority (<a href='%1' target='_blank' download=1>Licenza n. IS/70156</a>)."
 
 msgid "Binary K.K."
 msgstr "Binary K.K."
@@ -1839,10 +1851,10 @@ msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 1
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Giappone"
 
 msgid "Binary Limited"
-msgstr ""
+msgstr "Binary Limited"
 
 msgid "Binary Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below."
-msgstr ""
+msgstr "Binary Limited, con sede in 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, è la società holding per le società sussidiarie elencate a seguire."
 
 msgid "Binary Options"
 msgstr "Opzioni binarie"
@@ -2244,7 +2256,7 @@ msgid "Choose the Duration of the Trade"
 msgstr "Scegli la durata del trade"
 
 msgid "Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period."
-msgstr "Scegli il trade Touch/No Touch se desideri prevedere se il mercato toccherà o non toccherà un target in un qualsiasi momento durante il periodo del contratto."
+msgstr "Scegli il trade Tocca/Non Tocca se desideri prevedere se il mercato toccherà o non toccherà un target in un qualsiasi momento durante il periodo del contratto."
 
 msgid "Choose the Touch/No touch trade if you want to predict the market touching or not touching a target any time during the contract period."
 msgstr "Scegli il trade Touch/No Touch se desideri prevedere se il mercato toccherà o non toccherà un target in un qualsiasi momento durante il periodo del contratto."
@@ -2766,6 +2778,9 @@ msgstr "Crea un nuovo account"
 msgid "Create New Token"
 msgstr "Crea un nuovo token"
 
+msgid "Create account with Google"
+msgstr ""
+
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Creare contenuti chiari, concisi e coinvolgenti da mostrare sul sito internet, blog, social media e sul materiale commerciale della società"
 
@@ -3097,7 +3112,7 @@ msgid "Digits"
 msgstr "Cifre"
 
 msgid "Digits let you predict the last decimal digit of the spot price. There are three types of Digits trades:"
-msgstr ""
+msgstr "Cifre ti premette di prevedere l'ultima cifra decimale del prezzo spot. Ci sono tre tipologie di trade in Cifre:"
 
 msgid "Director"
 msgstr "Director"
@@ -3196,7 +3211,7 @@ msgid "Down"
 msgstr "Down"
 
 msgid "Down - Predict that the market will end lower than the average price"
-msgstr "Down - prevedi che il mercato chiuderà a un prezzo più basso di quello medio"
+msgstr "Basso - prevedi che il mercato chiuderà a un prezzo più basso di quello medio"
 
 msgid "Download"
 msgstr "Download"
@@ -3340,7 +3355,7 @@ msgid "Each token provides you with two exclusive tokenholder rights."
 msgstr "Ogni token ti fornisce due diritti esclusivi dei possessori di gettoni."
 
 msgid "Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake."
-msgstr ""
+msgstr "Ogni trade ha un predeterminato payout che vedrai dopo aver impostato ogni parametro. Vincerai il payout se la tua previsione è corretta. In caso contrario, perderai solamente la tua puntata iniziale."
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "Guadagna una ricompensa in moneta per qualsiasi problema verificabile che riscontri con un valore massimo di 1.000 USD per le vulnerabilità ad alto rischio della sicurezza."
@@ -3457,16 +3472,16 @@ msgid "Ends Between"
 msgstr "Finisce tra"
 
 msgid "Ends Between/Ends Outside"
-msgstr ""
+msgstr "Temina Dentro/Termina Fuori"
 
 msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr ""
 
 msgid "Ends Between/Ends Outside trades"
-msgstr "Trade Ends Between (Finisce tra)/Ends Outside (Termina fuori)"
+msgstr "Trade Termina Dentro/Termina Fuori"
 
 msgid "Ends Between/Ends Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Ends Between/Ends Outside - prevedi che il mercato chiuderà all'interno o all'esterno di due prezzi scelti alla fine del periodo di tempo"
+msgstr "Termina Dentro/Termina Fuori - Prevedi che il mercato chiuderà all'interno o all'esterno di due prezzi Barriera alla fine del periodo di tempo"
 
 msgid "Ends Outside"
 msgstr "Termina fuori"
@@ -4411,10 +4426,10 @@ msgid "Higher"
 msgstr "Superiore"
 
 msgid "Higher/Lower"
-msgstr "High/Low"
+msgstr "Superiore/Inferiore"
 
 msgid "Higher/Lower - Predict if the market will end higher or lower than a target price"
-msgstr "High/Low - Prevedi se il mercato chiuderà ad un prezzo più alto o più basso rispetto a quello deciso"
+msgstr "Superiore/Inferiore - Prevedi se il mercato chiuderà ad un prezzo più alto o più basso rispetto a quello deciso"
 
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "I contratti Higher/Lower verranno rimborsati al prezzo d'acquisto nel caso in cui si verifichino meno di 2 tick tra l'orario di inizio e quello di fine."
@@ -4423,7 +4438,7 @@ msgid "Higher/Lower trades"
 msgstr "Trade High/Low"
 
 msgid "Higher/Lower – Predict that the market will end higher or lower than a price target"
-msgstr "High/Low - Prevedi che il mercato chiuderà ad un prezzo più alto o più basso rispetto a quello deciso"
+msgstr "Superiore/Inferiore - Prevedi che il mercato chiuderà ad un prezzo più alto o più basso rispetto a quello deciso"
 
 msgid "Highlights"
 msgstr ""
@@ -5005,7 +5020,7 @@ msgid "Improvements"
 msgstr "Miglioramenti"
 
 msgid "In April, %1Betonmarkets.com%2 (formerly known as %3Xodds.com%2) goes live, establishing a round-the-clock financial betting service on a variety of financial indices. Business grows quickly, and we soon become the market leader in fixed-odds financial betting."
-msgstr ""
+msgstr "In Aprile, %1Betonmarkets.com%2 (precedentemente conosciuta come %3Xodds.com%2) diventa attiva, fornendo un servizio di betting finanziario 24 ore su 24 su una varietà di indici finanziari. Il business cresce velocemente e diventiamo presto il leader del mercato nel betting finanziario fixed-odds."
 
 msgid "In October 1999, Regent Markets receives US$ 2 million investment funding from Jim Mellon through his Regent Pacific Group, a Hong Kong based fund management company."
 msgstr "Nell'ottobre del 1999, Regent Markets riceve un finanziamento da $2 milioni di dollari da parte di Jim Mellon attraverso il suo Regent Pacific Group, una società di gestione di fondi con sede a Hong Kong."
@@ -5089,7 +5104,7 @@ msgid "In the 'Further Instructions' field please specify the payment method and
 msgstr "Nel campo \"Ulteriori istruzioni\", si prega di specificare la modalità di pagamento e il numero dell'account su cui l'Agente invierà i fondi."
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
-msgstr ""
+msgstr "Nel Regno Unito, i nostri clienti fanno trading attraverso Binary (IOM) Ltd e Binary Investments (Europe) Ltd. Nell'Isola di Man, fanno trading attraverso Binary (IOM) Ltd. In Giappone, fanno trading attraverso Binary KK. In Unione Europea (fatta eccezione per il Regno Unito), fanno trading attraverso Binary (Europe) Ltd e Binary Investments (Europe) Ltd. Nel resto del mondo, fanno trading attraverso Binary (C.R.) S.A."
 
 msgid "In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
 msgstr ""
@@ -5137,13 +5152,13 @@ msgid "In this newly created role, to be based on our offices in Cyberjaya, Mala
 msgstr "In questo nuovo ruolo, con sede presso i nostri uffici a Cyberjaya, Malesia, sarai responsabile per:"
 
 msgid "In/Out"
-msgstr "In/Out"
+msgstr "Dentro/Fuori"
 
 msgid "In/Out (ends between/outside and stays between/goes outside)"
-msgstr "In/Out (ends between/outside e stays between/goes outside)"
+msgstr "Dentro/Fuori (Termina Dentro/Termina Fuori e Resta Dentro/Esce)"
 
 msgid "In/Out - Predict if the market will stay between or outside two target prices"
-msgstr "In/Out - Prevedi se il mercato rimarrà all'interno o all'esterno dei due prezzi scelti"
+msgstr "Dentro/Fuori - Prevedi se il mercato rimarrà all'interno o all'esterno dei due prezzi scelti"
 
 msgid "In/Out trades"
 msgstr "Trade In/Out"
@@ -5182,7 +5197,7 @@ msgid "Indices"
 msgstr "Indici"
 
 msgid "Indices - All major worldwide stock indices sourced from the over-the-counter market"
-msgstr ""
+msgstr "Indici - Tutti i principali indici azionari mondiali provenienti dal mercato OTC"
 
 msgid "Indices trading experience"
 msgstr "Esperienza di trading con gli indici"
@@ -5974,13 +5989,13 @@ msgid "Kindly provide your complete address.<br>This will be used to authenticat
 msgstr ""
 
 msgid "Know how much you will win or lose before you purchase the contract"
-msgstr ""
+msgstr "Conosci quanto vincerai o perderai prima di acquistare il contratto"
 
 msgid "Know how much you will win or lose before you purchase the contract."
 msgstr ""
 
 msgid "Know what you stand to win or lose"
-msgstr ""
+msgstr "Cosa puoi aspettarti di vincere o perdere"
 
 msgid "Knowing when to buy and sell metals largely depends on how well you know the factors that influence market prices. The most common influencing factors are:"
 msgstr ""
@@ -6184,7 +6199,7 @@ msgid "Licensed in Japan"
 msgstr "Concesso in licenza in Giappone"
 
 msgid "Licensed, trusted, and secure"
-msgstr ""
+msgstr "Autorizzata, affidabile e sicura"
 
 msgid "Life-long career interest in the Accounting field"
 msgstr "Interesse nella carriera a lungo termine nel campo della Contabilità"
@@ -6316,7 +6331,7 @@ msgid "Low minimum collateral"
 msgstr "Garanzia minima bassa"
 
 msgid "Low minimum stakes"
-msgstr ""
+msgstr "Puntate minime"
 
 msgid "Lower"
 msgstr "Inferiore"
@@ -6523,7 +6538,7 @@ msgid "Matches/Differs"
 msgstr "Combacia/Differisce"
 
 msgid "Matches/Differs - Predict that the last digit will match or not match"
-msgstr ""
+msgstr "Uguale/Diversa - Prevedi che l'ultima cifra sarà uguale o diversa"
 
 msgid "Max"
 msgstr "Max"
@@ -6946,7 +6961,7 @@ msgid "No Party shall be deemed liable for a partial or complete failure to meet
 msgstr ""
 
 msgid "No Touch trades"
-msgstr "Trade No Touch"
+msgstr "Trade Non Tocca"
 
 msgid "No commission"
 msgstr "Nessuna commissione"
@@ -7123,7 +7138,7 @@ msgid "OTC Stocks"
 msgstr ""
 
 msgid "OTC stocks - Blue-chip stock contracts sourced from the over-the-counter market"
-msgstr ""
+msgstr "Azioni OTC - Contratti su azioni blue-chip provenienti dal mercato OTC"
 
 msgid "OTC stocks and indices"
 msgstr ""
@@ -7270,7 +7285,7 @@ msgid "Open an account and start trading in minutes"
 msgstr ""
 
 msgid "Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7"
-msgstr ""
+msgstr "Apri un account e inizia a fare trading in pochi minuti. Anche depositi e prelievi sono disponibili 24/7"
 
 msgid "Open an account now"
 msgstr "Apri un account adesso"
@@ -7498,7 +7513,7 @@ msgid "Over/Under"
 msgstr "Sopra/Sotto"
 
 msgid "Over/Under - Predict that the last digit is higher or lower"
-msgstr ""
+msgstr "Sopra/Sotto - Prevedi che l'ultima cifra sarà superiore o inferiore"
 
 msgid "Over/Under contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "I contratti Over/Under verranno rimborsati al prezzo d'acquisto se il contratto non termina entro 5 minuti."
@@ -7642,16 +7657,16 @@ msgid "Personal Details"
 msgstr "Informazioni personali"
 
 msgid "Personal Wealth Awards 2017"
-msgstr ""
+msgstr "Premio Personal Wealth 2017"
 
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgstr "È proibito fare trading su questo sito internet a persone con informazioni privilegiate riguardanti qualsiasi mercato o strumento finanziario."
 
 msgid "Pillar 3 Disclosures"
-msgstr "Disclosure Pillar 3"
+msgstr "Report di divulgazione Pilastro 3"
 
 msgid "Pillar 3 disclosure report"
-msgstr "Report della disclosure Pillar 3"
+msgstr "Report di divulgazione Pilastro 3"
 
 msgid "Pip"
 msgstr "Pip"
@@ -7849,7 +7864,7 @@ msgid "Please set your 30-day turnover limit in our %1self-exclusion facilities%
 msgstr ""
 
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
-msgstr ""
+msgstr "Imposta il tuo <a href=\"%1\">30-day turnover limit</a> per accedere alla cassa."
 
 msgid "Please set your account opening reason before proceeding."
 msgstr "Prima di continuare, imposta un motivo per l'apertura dell'account."
@@ -7987,10 +8002,10 @@ msgid "Predict the market rising or falling from its current level."
 msgstr "Prevedi se il mercato incrementerà o decrementerà rispetto al livello attuale."
 
 msgid "Predict the market staying between or going outside two price targets."
-msgstr ""
+msgstr "Prevedi che il mercato resterà dentro o uscirà fuori rispetto ai due prezzi Barriera."
 
 msgid "Predict the market touching or not touching a price target."
-msgstr ""
+msgstr "Prevedi che il mercato toccherà o non toccherà un prezzo Barriera."
 
 msgid "Preferences"
 msgstr "Preferenze"
@@ -7999,7 +8014,7 @@ msgid "Preferences:"
 msgstr "Preferenze:"
 
 msgid "Premier binary options trading platform"
-msgstr ""
+msgstr "Piattaforma principale di trading in opzioni binarie"
 
 msgid "Prepare project requirements, as needed to clarify expectations and deliverables"
 msgstr "Preparare i requisiti del progetto come necessario per chiarire aspettative e risultati"
@@ -8140,7 +8155,7 @@ msgid "Proofreader"
 msgstr "Proofreader"
 
 msgid "Protect your profits"
-msgstr ""
+msgstr "Proteggi i tuoi profitti"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "La comprovata conoscenza degli standard di revisione, procedure, leggi, regole e regolamenti rappresenta un vantaggio aggiuntivo"
@@ -8377,7 +8392,7 @@ msgid "Regent Markets sets up a programming centre in Cyberjaya, Malaysia"
 msgstr "Regent Markets fonda un centro di programmazione a Cyberjaya, Malesia"
 
 msgid "Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of %1, %2disposes of its stake%3 at a valuation of US$ 50.5 million."
-msgstr ""
+msgstr "Regent Pacific Group Ltd., l'azionista di riferimento di %1 quotato a Hong Kong, %2 vende la sua partecipazione %3 ad una quotazione di US$ 50.5 milioni."
 
 msgid "Regent Pacific transaction"
 msgstr "Transazione di Regent Pacific"
@@ -8488,10 +8503,10 @@ msgid "Return"
 msgstr "Rendimento"
 
 msgid "Returns above 100% on simple <a href='%1'>rise/fall</a> contracts."
-msgstr "Rendimenti superiori al 100% su semplici contratti di <a href='%1'>rialzo/ribasso</a>."
+msgstr "Rendimenti superiori al 100% su semplici contratti di <a href='%1'>Rialzo/Ribasso</a>."
 
 msgid "Returns above 1000% on <a href='%1'>higher/lower</a> and <a href='%2'>touch/no-touch</a> trades."
-msgstr "Rendimenti superiori al 1000% su trade <a href='%1'>high/low</a> e <a href='%2'>touch/no-touch</a>."
+msgstr "Rendimenti superiori al 1000% su trade <a href='%1'>Superiore/Inferiore</a> e <a href='%2'>Tocca/Non Tocca</a>."
 
 msgid "Reverse Side"
 msgstr ""
@@ -8533,7 +8548,7 @@ msgid "Rise/Fall trades"
 msgstr "Trade di rialzo/ribasso"
 
 msgid "Rise/Fall – Predict that the market will rise or fall from its current level"
-msgstr "Rialzo/Ribasso - prevedi che il mercato incrementerà o decrementerà rispetto al suo livello attuale"
+msgstr "Rialzo/Ribasso - Prevedi che il mercato incrementerà o decrementerà rispetto al suo livello attuale"
 
 msgid "Risk Disclaimer"
 msgstr "Disclaimer sui rischi"
@@ -8812,7 +8827,7 @@ msgid "Sharp prices"
 msgstr "Prezzi ottimi"
 
 msgid "Sharp, benchmarked prices"
-msgstr ""
+msgstr "Prezzi chiari, riferiti ai benchmark"
 
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr ""
@@ -8827,7 +8842,7 @@ msgid "Short positions"
 msgstr "Posizioni a breve termine"
 
 msgid "Short to long-term durations"
-msgstr ""
+msgstr "Durate brevi o a lungo termine"
 
 msgid "Short:"
 msgstr ""
@@ -8875,7 +8890,7 @@ msgid "Similar to Forex trading, you must understand when to buy (or \"go long\"
 msgstr ""
 
 msgid "Simple and intuitive"
-msgstr "Semplice e intuitivo"
+msgstr "Semplice e intuitiva"
 
 msgid "Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. %1 ensures fair and transparent pricing by showing you both sides of the trade."
 msgstr "Basta modificare uno qualsiasi dei tuoi parametri e il prezzo del trade cambierà istantaneamente fornendoti in tempo reale il valore della tua puntata. %1 garantisce una determinazione dei prezzi equa e trasparente mostrandoti entrambi i lati del trade."
@@ -8962,7 +8977,7 @@ msgid "Specific message the banner should include."
 msgstr ""
 
 msgid "Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. %1 offers payouts from $1 to $50,000."
-msgstr ""
+msgstr "Scegli il tuo payout, il tuo potenziale ritorno se la tua previsione è corretta. Il nostro sistema procederà a calcolare la tua puntata, il costo totale di acquisto del contratto. %1 offre payout da $1 a $50,000."
 
 msgid "Speculate on the price movement of cryptocurrencies such as Bitcoin, Ethereum, and Litecoin without owning them."
 msgstr ""
@@ -9043,16 +9058,16 @@ msgid "Stays Between"
 msgstr ""
 
 msgid "Stays Between/Goes Outside"
-msgstr ""
+msgstr "Resta Dentro/Esce"
 
 msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr ""
 
 msgid "Stays Between/Goes Outside trades"
-msgstr "Trade Stays Between (Staziona fra) / Goes Outside (Esce fuori)"
+msgstr "Trade Resta Dentro / Esce"
 
 msgid "Stays Between/Goes Outside – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr ""
+msgstr "Resta Dentro/Esce – Prevedi che il mercato resterà dentro o uscirà fuori i due prezzi Barriera in un qualsiasi momento durante il periodo del contratto"
 
 msgid "Step"
 msgstr "Step"
@@ -9682,7 +9697,7 @@ msgid "The Payment Agent facility is currently not available in your country."
 msgstr "La funzione dell'Agente di pagamento al momento non è disponibile nel tuo paese."
 
 msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
-msgstr ""
+msgstr "Il report di divulgazione Pilastro 3 di Binary Investments (Europe) Limited è stato preparato in conformità con la IV Direttiva sui Fabbisogni di Capitale e il Regolamento sui Fabbisogni di Capitale. Leggi il nostro report di divulgazione Pilastro 3 per capire come ottemperiamo alla disciplina di mercato come suo partecipante."
 
 msgid "The Policy is supplemented by Appendix A which provide further details to our considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy."
 msgstr ""
@@ -10123,7 +10138,7 @@ msgid "Then, make your trade"
 msgstr "Quindi, esegui il tuo trade"
 
 msgid "There are four main trade types for you to choose from:"
-msgstr ""
+msgstr "Ci sono quattro principali tipologie di trading tra cui puoi scegliere:"
 
 msgid "There are four types of Smart FX indices that you can trade:"
 msgstr ""
@@ -10135,13 +10150,13 @@ msgid "There are two types of Asians trades:"
 msgstr ""
 
 msgid "There are two types of In/Out trades:"
-msgstr ""
+msgstr "Ci sono due tipologie di trade Dentro/Fuori:"
 
 msgid "There are two types of Up/Down trades:"
-msgstr ""
+msgstr "Ci sono due tipologie di trade Alto/Basso:"
 
 msgid "There are two ways to trade Asians:"
-msgstr ""
+msgstr "Puoi fare trading con le Asiatiche in due modi:"
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr ""
@@ -10204,7 +10219,7 @@ msgid "These are trades where the trader predicts if a market will rise or fall 
 msgstr "Questi sono trade in cui i trader prevedono se, al termine di un dato periodo di tempo, il mercato sarà in rialzo o in ribasso."
 
 msgid "These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also 'Stays Between/Goes Outside trades')."
-msgstr "Questi sono trade nei quali il trader seleziona una barriera inferiore e superiore e prevede che il mercato rimanga all'interno di queste barriere oppure che ne esca fuori (vedi anche \"Trade Stays Between/Goes Outside\")."
+msgstr "Questi sono trade nei quali il trader seleziona una barriera inferiore e superiore e prevede che il mercato rimanga all'interno di queste barriere oppure che ne esca fuori (vedi anche \"Trade Resta Dentro/Esce\")."
 
 msgid "These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade."
 msgstr "Questi sono trade nei quali il trader seleziona un prezzo obiettivo e prevede che il mercato non toccherà mai l'obiettivo prima della scadenza del trade."
@@ -10213,7 +10228,7 @@ msgid "These are trades where the trader selects a price target, and predicts th
 msgstr "Questi sono trade nei quali il trader seleziona un prezzo obiettivo e prevede che il mercato toccherà l'obiettivo prima della scadenza del trade."
 
 msgid "These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products."
-msgstr ""
+msgstr "Questi documenti ti forniscono le informazioni chiave sui nostri prodotti di investimento. Queste informazioni sono richieste dalla legge allo scopo di aiutarti a capire la natura, i rischi, i costi, i potenziali guadagni e perdite di questi prodotti a aiutarti a confrontarli con altri prodotti."
 
 msgid "These key metrics will show you what growth and success looks like for an award-winning binary options trading platform."
 msgstr "Queste misure metriche ti mostreranno come appaiono la crescita e il successo su una piataforma di trading in opzioni binarie pluripremiata."
@@ -10364,6 +10379,9 @@ msgstr "Questa informativa ti fornisce le informazioni sui rischi connessi con i
 
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Questa offerta non può essere utilizzata insieme a qualsiasi altra offerta."
+
+msgid "This page is not available in the selected language."
+msgstr ""
 
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Questa promozione è valida solo per i nuovi Clienti. I clienti già esistenti o antecedenti non ne hanno diritto. È disponibile solo una volta per ogni Cliente."
@@ -10591,10 +10609,10 @@ msgid "Total:"
 msgstr "Totale:"
 
 msgid "Touch/No Touch"
-msgstr "Touch/No touch"
+msgstr "Tocca/Non Tocca"
 
 msgid "Touch/No Touch - Predict if the market will touch or not touch a target price"
-msgstr "Touch/No Touch - prevedi se il mercato raggiungerà o meno un dato prezzo"
+msgstr "Tocca/Non Tocca - prevedi se il mercato raggiungerà o meno un dato prezzo"
 
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "I contratti Touch/No Touch verranno rimborsati al prezzo d'acquisto nel caso in cui si verifichino meno di 2 tick tra l'orario di inizio e quello di fine."
@@ -10629,6 +10647,9 @@ msgstr ""
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr ""
 
+msgid "Trade Forex and CFDs with a powerful platform recognised as the global standard."
+msgstr ""
+
 msgid "Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools."
 msgstr ""
 
@@ -10639,7 +10660,7 @@ msgid "Trade a larger position than your exisiting capital."
 msgstr ""
 
 msgid "Trade according to your preferred strategy"
-msgstr ""
+msgstr "Fai trading seguendo la tua strategia preferita"
 
 msgid "Trade all four precious metals on one platform."
 msgstr ""
@@ -10654,7 +10675,7 @@ msgid "Trade anytime, anywhere with our desktop, web, and mobile platforms."
 msgstr "Fai trading in qualsiasi momento e ovunque ti trovi con le nostre piattaforme per desktop, web e mobile."
 
 msgid "Trade based on \"gut feel\" or rely on technical and fundamental analysis"
-msgstr ""
+msgstr "Puoi fare trading seguendo \"il tuo istinto\" o affidandoti all'analisi tecnica di base"
 
 msgid "Trade binary options on a wide range of underlying markets with limited risk."
 msgstr ""
@@ -10663,10 +10684,10 @@ msgid "Trade binary options on a wide range of web and mobile apps. Each comes w
 msgstr ""
 
 msgid "Trade confidently, knowing that your personal data, transactions, and funds are always secure"
-msgstr ""
+msgstr "Fai trading in sicurezza, sapendo che i tuoi dati personali, le transazioni e i fondi sono sempre al sicuro"
 
 msgid "Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
-msgstr ""
+msgstr "Fai trading in valute, indici, materie prime e altro in mercati in crescita, in caduta, obliqui, calmi e volatili"
 
 msgid "Trade in the world's financial markets"
 msgstr ""
@@ -10708,7 +10729,7 @@ msgid "Trade type"
 msgstr "Tipologia di trade"
 
 msgid "Trade when you want. %1 is available 24/7, even on weekends"
-msgstr ""
+msgstr "Fai trading quando vuoi. %1 è attiva 24/7, anche nei weekend"
 
 msgid "Trade when you want. Our Volatility Indices are available even on weekends"
 msgstr ""
@@ -10726,7 +10747,7 @@ msgid "Trade with real funds and access to competitive trading conditions."
 msgstr ""
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology"
-msgstr ""
+msgstr "Fai trading con un pioniere del settore, detentore di una tecnologia di prezzi brevettata"
 
 msgid "Trade your cloned tokens on a cryptocurrency exchange"
 msgstr ""
@@ -10828,7 +10849,7 @@ msgid "Translator"
 msgstr "Traduttore"
 
 msgid "Transparent risk and potential reward"
-msgstr ""
+msgstr "Trasparenza dei rischi e ritorni potenziali"
 
 msgid "Trivial changes – generally $5-20"
 msgstr ""
@@ -10891,7 +10912,7 @@ msgid "Types of trades"
 msgstr "Tipologie di trade"
 
 msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Ltd."
-msgstr ""
+msgstr "Gli account dei residenti in Regno Unito e Isola di Man che desiderano fare trading in prodotti di gambling saranno aperti in Binary (IOM) Ltd."
 
 msgid "URL"
 msgstr "URL"
@@ -11026,7 +11047,7 @@ msgid "Up"
 msgstr ""
 
 msgid "Up - Predict that the market will end higher than the average price"
-msgstr "Up - prevedi che il mercato chiuderà a un prezzo più alto di quello medio"
+msgstr "Alto - prevedi che il mercato chiuderà a un prezzo più alto di quello medio"
 
 msgid "Up to %1 decimal places are allowed."
 msgstr ""
@@ -11041,7 +11062,7 @@ msgid "Up to 1:500"
 msgstr ""
 
 msgid "Up/Down"
-msgstr "Up/Down"
+msgstr "Alto/Basso"
 
 msgid "Upcoming Events"
 msgstr "Prossimi eventi"
@@ -11149,7 +11170,7 @@ msgid "View Chart"
 msgstr "Visualizza grafico"
 
 msgid "View Japanese website"
-msgstr ""
+msgstr "Accedi al sito Giapponese"
 
 msgid "View Lykke report"
 msgstr "Visualizza il report di Lykke"
@@ -11464,10 +11485,10 @@ msgid "We reserve the right to void or amend the contractual terms of any Transa
 msgstr ""
 
 msgid "We segregate all client funds and hold them in secure and licensed financial institutions, according to the conditions of our trading licenses."
-msgstr ""
+msgstr "Noi separiamo i fondi dei clienti e li conserviamo in istituti finanziari sicuri e autorizzati, secondo quanto stabilito dalle nostre licenze di trading."
 
 msgid "We segregate your funds and keep them in secure and licensed financial institutions."
-msgstr ""
+msgstr "I tuoi fondi sono separati e mantenuti in Istituti Finanziari sicuri e autorizzati."
 
 msgid "We support and prefer to use the above browser platforms"
 msgstr ""
@@ -11713,7 +11734,7 @@ msgid "When you see currency pairs offered by a broker or trading service, there
 msgstr ""
 
 msgid "When you start trading with %1, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when."
-msgstr ""
+msgstr "Quando inizi a fare trading con %1, sarai diretto alla schermata relativa al trade, dove imposterai i tuoi parametri, e sceglierai su cosa vuoi fare trading, come e quando."
 
 msgid "When you trade with %1, you can be assured that your deposits are held in a separate trust account and are not used for any other purpose."
 msgstr "Quando negozi con %1, puoi stare tranquillo poiché i fondi sono tenuti in account di fiducia separati e non vengono utilizzati per nessun altro scopo."
@@ -11749,7 +11770,7 @@ msgid "Where can I view the source code of the tokens?"
 msgstr "Dove posso consultare il codice fonte dei token?"
 
 msgid "Where does %1 hold my funds?"
-msgstr ""
+msgstr "Dove %1 conserva i miei fondi?"
 
 msgid "Where new ideas trump safe, old ones. And you're free to work your way, free from hierarchies and red tape."
 msgstr "Dove le nuove idee trionfano sul sicuro e sul vecchio. E tu sei libero di operare a modo tuo, senza gerarchie e burocrazia."
@@ -11917,13 +11938,13 @@ msgid "With %1 you can trade:"
 msgstr "Con %1 puoi negoziare:"
 
 msgid "With %1, you can count on us to serve you with integrity and reliability."
-msgstr ""
+msgstr "Conta su %1, al tuo servizio con integrità e affidabilità."
 
 msgid "With %1, you can sell your contracts before expiry to keep any profits you may have made or to minimise your losses. You don’t have to wait until the actual expiration time."
 msgstr "Con %1 puoi vendere i tuoi contratti prima della scadenza in modo da bloccare gli eventuali profitti oppure per ridurre le perdite. Non c'è bisogno di aspettare fino alla fine."
 
 msgid "With %1, you’ll know the risk and potential reward before you purchase a contract."
-msgstr ""
+msgstr "In %1, conoscerai i rischi e il ritorno potenziale prima dell'acquisto del contratto."
 
 msgid "With leverage, you can purchase 100 units of the same asset at a fraction of the cost."
 msgstr ""
@@ -12860,6 +12881,9 @@ msgstr ""
 
 msgid "numbers"
 msgstr "numeri"
+
+msgid "or"
+msgstr ""
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "pagina per l'orario esatto della liquidazione di tutti i contratti. Altri siti internet possono adottare una convenzione diversa (ad esempio alcuni siti scelgono le 4 dell'orario di New York oppure le 5 secondo l'orario di Londra). Di conseguenza, i prezzi di apertura, high, low e chiusura mostrati sul nostro sito possono differire rispetto a quelli di altri siti internet a causa della convenzione dell'orario di chiusura del mercato."
