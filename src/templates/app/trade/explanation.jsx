@@ -87,6 +87,18 @@ const Explanation = () => (
                 <p>{it.L('If you select "rises", you win the payout if the market price is higher than the entry spot.')}</p>
                 <p>{it.L('If you select "falls", you win the payout if the market price is lower than the entry spot.')}</p>
             </div>
+            <div id='winning_lookbacklow' className='invisible'>
+                <h3>{it.L('Pay-out')}</h3>
+                <p>{it.L('By purchasing the [_1]‘Close-Low’[_2] contract, you’ll win the multiplier times the difference between the [_1]close[_2] and [_1]low[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
+            </div>
+            <div id='winning_lookbackhigh' className='invisible'>
+                <h3>{it.L('Pay-out')}</h3>
+                <p>{it.L('By purchasing the [_1]‘High-Close’[_2] contract, you’ll win the multiplier times the difference between the [_1]high[_2] and [_1]close[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
+            </div>
+            <div id='winning_lookbackhighlow' className='invisible'>
+                <h3>{it.L('Pay-out')}</h3>
+                <p>{it.L('By purchasing the [_1]‘High-Low’[_2] contract, you’ll win the multiplier times the difference between the [_1]high[_2] and [_1]low[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
+            </div>
         </div>
 
         {/* ========== Image ========== */}
@@ -183,8 +195,6 @@ const Explanation = () => (
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')}</p>
             </div>
             <div id='explain_lookbacklow' className='invisible'>
-                <h3>{it.L('Pay-off')}</h3>
-                <p>{it.L('By purchasing the [_1]‘Close-Low’[_2] contract, you’ll win the multiplier times the difference between the [_1]close[_2] and [_1]low[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
                 <h3>{it.L('High, Low and Close')}</h3>
                 <p>{it.L('The [_1]high[_2] is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]low[_2] is the lowest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
@@ -195,8 +205,6 @@ const Explanation = () => (
                 <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2].', '<strong>','</strong>')}</p>
             </div>
             <div id='explain_lookbackhigh' className='invisible'>
-                <h3>{it.L('Pay-off')}</h3>
-                <p>{it.L('By purchasing the [_1]‘High-Close’[_2] contract, you’ll win the multiplier times the difference between the [_1]high[_2] and [_1]close[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
                 <h3>{it.L('High, Low and Close')}</h3>
                 <p>{it.L('The [_1]high[_2] is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]low[_2] is the lowest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
@@ -207,8 +215,6 @@ const Explanation = () => (
                 <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2].', '<strong>','</strong>')}</p>
             </div>
             <div id='explain_lookbackhighlow' className='invisible'>
-                <h3>{it.L('Pay-off')}</h3>
-                <p>{it.L('By purchasing the [_1]‘High-Low’[_2] contract, you’ll win the multiplier times the difference between the [_1]high[_2] and [_1]low[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
                 <h3>{it.L('High, Low and Close')}</h3>
                 <p>{it.L('The [_1]high[_2] is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]low[_2] is the lowest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
