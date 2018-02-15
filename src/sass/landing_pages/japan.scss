@@ -321,6 +321,9 @@ form {
     height: 100%;
     padding-top: 0;
     padding-bottom: 0;
+    @media (min-width: 480px) and (max-width: 575px) {
+        padding-top: 50px;
+    }
 
     &:before {
         @include triangle($COLOR_DARK_BLUE, 100px, 'down');
@@ -343,6 +346,7 @@ form {
             margin-bottom: 30px;
             @media (min-width: 576px) and (max-width: 768px) {
                 font-size: 50px;
+                margin-top: 60px;
             }
             @media (max-width: 575px) {
                 font-size: 36px;
@@ -352,6 +356,12 @@ form {
                 margin-top: -20px;
                 margin-left: auto;
                 margin-right: auto;
+            }
+            @media (max-width: 575px) and (orientation: landscape) {
+                white-space: nowrap; // don't wrap text on mobile landscape
+                text-align: left;
+                margin-left: 0;
+                margin-right: 0;
             }
         }
     }
