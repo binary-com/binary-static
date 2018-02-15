@@ -64,7 +64,7 @@ button::-moz-focus-inner, input[type='submit']::-moz-focus-inner {
     border: 0;
 }
 
-a.button:hover {
+a.button:hover, a.button-white:hover {
     text-decoration: none;
 }
 
@@ -123,6 +123,10 @@ fieldset {
 
 .secondary-bg-color .error-msg {
     color: $COLOR_WHITE;
+}
+
+.white-bg-color {
+    background-color: $white;
 }
 
 textarea {
@@ -511,4 +515,40 @@ ul.bullet.gr-row > li {
 
 li strong.margin-right {
     margin-right: 5px;
+}
+
+.button-white {
+    cursor: pointer;
+    margin-bottom: 0.5em;
+
+    span {
+        @include link-button;
+        overflow: visible;
+        border: 1px solid $COLOR_GRAY;
+        color: $COLOR_BLACK;
+        background: $COLOR_WHITE;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0;
+
+        &:hover {
+            text-decoration: none;
+            background: $COLOR_GRAY;
+        }
+        &.icon-google:before {
+            margin-right: 10px;
+        }
+    }
+}
+
+.icon-google:before {
+    content: url('../images/pages/applications/icon-google.svg');
+}
+
+.section-divider {
+    .circle {
+        padding: 7px 5px !important;
+    }
 }

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-05 19:50-0500\n"
+"PO-Revision-Date: 2018-02-14 22:18-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -108,8 +108,14 @@ msgstr "Termos e condições do programa de afiliados %1"
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Termos e condições da Application Program Interface (\"API\") %1"
 
+msgid "%1 Graduate Programme"
+msgstr ""
+
 msgid "%1 Graduate programme"
 msgstr "Graduate programme da %1"
+
+msgid "%1 Hackathon Competition"
+msgstr ""
 
 msgid "%1 ICO"
 msgstr "OIM da %1"
@@ -490,9 +496,6 @@ msgstr "* Livre de Impostos: Em muitos países, os ganhos com negociações são
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Todas as chamadas são gravadas para fins de treinamento e monitoramento"
 
-msgid "*Lot size volume = 1.0."
-msgstr "*Volume do tamanho do lote = 1.0."
-
 msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
 msgstr "*Estes números são exclusivamente para efeitos indicativos. Verifique-os na nossa plataforma de negociação MT5."
 
@@ -848,7 +851,7 @@ msgid "Access Denied"
 msgstr "Acesso negado"
 
 msgid "Access MT5 dashboard"
-msgstr "Acessar o painel de negociação da MT5"
+msgstr ""
 
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "Acesse todas as ferramentas e funcionalidades de negociação na MT5, incluindo Expert Advisors (EAs), gráficos e tipos de ordens"
@@ -1034,7 +1037,7 @@ msgid "Advanced knowledge of software design principles"
 msgstr "Conhecimentos avançados dos princípios de design de software"
 
 msgid "Advanced multi-asset trading platform"
-msgstr "Plataforma avançada multi-ativos"
+msgstr ""
 
 msgid "Advantages of CFD trading"
 msgstr "Vantagens da negociação de CFDs"
@@ -2779,6 +2782,9 @@ msgstr "Criar uma conta nova"
 msgid "Create New Token"
 msgstr "Criar um novo token"
 
+msgid "Create account with Google"
+msgstr ""
+
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Criar conteúdos claros, concisos e cativantes para exibição no site, no blog, nos meios de mídia social e nos materiais de marketing da empresa"
 
@@ -3601,9 +3607,6 @@ msgstr "Euro vs. Lira turca"
 msgid "Euro vs US Dollar"
 msgstr "Euro vs. Dólar americano"
 
-msgid "Eurobasket Wolves"
-msgstr "Eurobasket Wolves"
-
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
 msgstr "As contas de residentes da União Europeia que desejam negociar produtos de jogo serão abertas na Binary Investments (Europe) Ltd."
 
@@ -4029,6 +4032,9 @@ msgstr "Para mais informações de enquadramento, leia a publicação no nosso b
 
 msgid "For general support:"
 msgstr "Para apoio geral:"
+
+msgid "For information about Forex leverage refer to our %1Margin Policy%2."
+msgstr "Para mais informações sobre a alavancagem no forex, consulte a nossa %1política de margens%2."
 
 msgid "For payments-related queries:"
 msgstr "Para assuntos relacionados com pagamentos:"
@@ -6305,8 +6311,8 @@ msgstr "Perda"
 msgid "Lot Size (Volume = 1.0)"
 msgstr "Tamanho do lote (Volume = 1.0)"
 
-msgid "Lot size*"
-msgstr "Tamanho do lote*"
+msgid "Lot size"
+msgstr "Tamanho do lote"
 
 msgid "Lot units"
 msgstr "Unidades do lote"
@@ -6491,12 +6497,6 @@ msgstr "Chamada de margem"
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr "A alavancagem indica quanto investimento você pode controlar com base no seu capital inicial. Por exemplo, uma alavancagem de 0,2% irá permitir que você controle até 500.000 USD usando apenas 1.000 do seu próprio dinheiro como um depósito."
 
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "A alavancagem indica quanto investimento você pode controlar com base no seu capital inicial. Por exemplo, uma alavancagem de 1% irá permitir que você controle até 100.000 USD usando apenas 1.000 do seu próprio dinheiro como um depósito."
-
-msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
-msgstr "A taxa de margem indica quanto capital você pode controlar com base no seu depósito inicial. Por exemplo, uma taxa de margem de 10% irá permitir que você controle até 100.000 USD usando apenas 10.000 do seu próprio dinheiro como um depósito. Esta taxa requer 10% do valor do ativo como margem."
-
 msgid "Market"
 msgstr "Mercado"
 
@@ -6605,9 +6605,6 @@ msgstr "Tamanho máximo de pedidos"
 msgid "Maximum upload size for each file is 3MB"
 msgstr "Tamanho máximo de carregamento para cada arquivo é 3MB"
 
-msgid "Maximum volume"
-msgstr "Volume máximo"
-
 msgid "May"
 msgstr "Maio"
 
@@ -6665,6 +6662,9 @@ msgstr "Método"
 msgid "Min"
 msgstr "Mín"
 
+msgid "Min / Max withdrawal"
+msgstr "Retirada Mín/Máx"
+
 msgid "Min Withdrawal"
 msgstr "Retirada mínima"
 
@@ -6679,9 +6679,6 @@ msgstr "Incremento mínimo de volume"
 
 msgid "Min. Volume<br>(Lot Size)"
 msgstr "Volume mín.<br>(Tamanho do lote)"
-
-msgid "Min: 10 Max: 2000"
-msgstr "Mín: 10 Máx: 2000"
 
 msgid "Minimum Spread"
 msgstr "Spread mínimo"
@@ -6715,6 +6712,9 @@ msgstr "Mínimo de validade de seis meses"
 
 msgid "Minimum ticket size"
 msgstr "Tamanho mínimo de pedido"
+
+msgid "Minimum volume"
+msgstr "Volume mínimo"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Trabalhadores de mineração, construção, fabricação e transporte"
@@ -7220,6 +7220,9 @@ msgstr "Negociações online a %1"
 msgid "Online currency exchangers"
 msgstr "Serviços de câmbio de moeda online"
 
+msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
+msgstr "As negociações online podem criar dependência. Preencha o formulário abaixo para limitar a sua participação no nosso site ou envie uma carta ou fax assinado para a nossa equipe de apoio ao cliente. Uma vez definidos, você só poderá apertar os seus limites. Os limites só serão removidos ou desapertados após 7 dias com exceção da data de auto-exclusão, que não pode ser removida ou alterada uma vez que você a confirmou. Para remover ou aumentar os seus limites, contate o <a href=\"%1\">apoio ao cliente</a>."
+
 msgid "Only %1 are allowed."
 msgstr "Apenas %1 são permitidos."
 
@@ -7369,6 +7372,9 @@ msgstr "A nossa empresa"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "O nosso Programa de Afiliados internacional tem efetuado os pagamentos a tempo, sem falta, desde o nosso lançamento oficial em Março de 2004. No Japão, as suas comissões serão creditadas na sua conta de afiliado dentro de trinta dias após o fecho de cada mês civil em que os seus indicados tenham satisfeito as condições de qualificação."
+
+msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
+msgstr "O nosso serviço MT5 está atualmente indisponível para residentes da UE devido a aprovação regulamentar pendente."
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "A nossa conta avançada da MetaTrader 5 proporciona-lhe spreads baixos, tamanhos de pedidos superiores e mais produtos."
@@ -9647,9 +9653,6 @@ msgstr "As leis e regulamentos de proteção de dados atribuem obrigações aos 
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "O EUR é um índice ponderado, que mede o valor do Euro em relação a uma cesta de 5 moedas globais (USD, AUD, GBP, JPY e CAD), cada uma ponderada em 20%."
 
-msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
-msgstr "O Eurobasket Wolves é um clube de basquete fundado em 2002. Ele ensina basquete juvenil através do seu clube e programas escolares. As suas equipes sub-8 e sub-10 masculinas e femininas, mais as equipes sub-14 e sub-16 femininas, competem nacionalmente. É o primeiro clube de basquete em Malta a estabelecer um programa de treino de basquete pós-escolar, onde as sessões de treino são realizadas nas instalações da escola."
-
 msgid "The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers."
 msgstr "A Comissão Europeia reconheceu opções binárias como um instrumento financeiro em 2012, levando a um aumento na credibilidade de corretoras licenciadas."
 
@@ -10384,6 +10387,9 @@ msgstr "Este aviso fornece-lhe informações sobre os riscos associados a contra
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Esta oferta não pode ser utilizada juntamente com nenhuma outra oferta."
 
+msgid "This page is not available in the selected language."
+msgstr "Esta página não está disponível no idioma selecionado."
+
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Esta promoção apenas está disponível para novos Clientes. Os Clientes já existentes, ou antigos Clientes, não são qualificáveis. Apenas está disponível uma vez para cada Cliente."
 
@@ -10504,14 +10510,8 @@ msgstr "Para implementar o nosso recurso para o pagamento de dividendos, iremos 
 msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr "Para saber mais, leia as nossas <a href='%1'>especificações de contratos CFD</a>."
 
-msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr "Para saber mais, leia a nossa %1política de margens%2 que explica melhor o nosso nível de liquidação forçada de 100% para forex."
-
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "Para saber mais, leia a nossa %1política de margens%2 que explica melhor os nossos requisitos de margem."
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr "Para saber mais, leia a nossa %1política de margens%2 que explica melhor os nossos requisitos de margem. Note que não cobramos taxas de swap para os nossos pares de criptomoedas."
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr "Para aprender mais, leia a nossa <a href=\"%1\">Política de margens para CFDs</a> que explica melhor o nosso nível de liquidação forçada de 50% para índices \"Volatility\"."
@@ -10521,9 +10521,6 @@ msgstr "Para aprender mais, leia a nossa <a href=\"%1\">Política de margens par
 
 msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
 msgstr "Para saber mais, leia a nossa <a href=\"%1\">Política de margens para metais</a> que explica melhor o nosso nível de liquidação forçada de 100% para pares de metais."
-
-msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "Para saber mais, leia a nossa %1política de margens%2 que explica melhor o nosso nível de liquidação forçada de 100% para os nossos pares de metais."
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "Para abrir uma conta real, você deve ter uma conta real de opções binárias autenticada na %1. Uma conta real não pode ser aberta na ausência de uma conta real de opções binárias."
@@ -10658,7 +10655,7 @@ msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "Negocie forex e CFDs na nossa popular plataforma multi-ativos."
 
 msgid "Trade Forex and CFDs with a powerful platform recognised as the global standard."
-msgstr "Negocie forex e CFDs com uma poderosa plataforma reconhecida como o padrão mundial."
+msgstr ""
 
 msgid "Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools."
 msgstr "Negocie forex e contratos por diferenças (CFDs) com alavancagem altamente competitiva. A MetaTrader 5 é uma plataforma multi-ativos que proporciona excelentes possibilidades de negociação e ferramentas de análise técnica."
@@ -10809,9 +10806,6 @@ msgstr "A negociação de opções binárias é especulativa e envolve um alto g
 
 msgid "Trading manual"
 msgstr "Guia de negociação"
-
-msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
-msgstr "A negociação em mercados financeiros pode criar dependência. Preencha o formulário abaixo para limitar a sua participação no nosso site ou envie uma carta ou fax assinado para a nossa equipe de apoio ao cliente. Uma vez definidos, você só poderá apertar os seus limites. Os limites só serão removidos ou desapertados após 7 dias com exceção da data de auto-exclusão, que não pode ser removida ou alterada uma vez que você a confirmou. Para remover ou aumentar os seus limites, contate o <a href=\"%1\">apoio ao cliente</a>."
 
 msgid "TradingView for %1"
 msgstr "TradingView para a %1"
@@ -12894,6 +12888,9 @@ msgstr "líquido de lucros realizados creditados à sua conta real e perdas real
 
 msgid "numbers"
 msgstr "números"
+
+msgid "or"
+msgstr ""
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "página para a hora exata de liquidação de todos os contratos. Outras páginas Web podem adotar uma convenção diferente (por exemplo, algumas páginas Web escolhem 4 horas, horário de Nova Iorque, ou 5 horas, horário de Londres). Dessa forma, os preços abertos, altos, baixos e em fechamento apresentados na nossa página Web podem ser diferentes dos preços em outras páginas Web, devido à convenção de hora de fechamento dos mercados."

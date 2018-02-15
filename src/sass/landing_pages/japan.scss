@@ -14,6 +14,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px;
     line-height: 1.5;
+
+    &.color-white {
+        color: $COLOR_WHITE;
+    }
 }
 
 section {
@@ -343,6 +347,7 @@ form {
             @media (max-width: 575px) {
                 font-size: 36px;
                 white-space: pre-wrap; // wrap text on mobile
+                max-width: 245px;
                 text-align: center;
                 margin-top: -20px;
                 margin-left: auto;
@@ -449,7 +454,7 @@ form {
         @include speech-bubble($COLOR_BLUE, 30px, 'down');
         padding: 15px 30px;
         text-align: center;
-        font-size: 48px;
+        font-size: 36px;
         @media (max-width: 575px) {
             font-size: 28px;
         }
@@ -692,7 +697,7 @@ form {
     }
     p {
         margin: 0;
-        font-size: 16px;
+        font-size: 18px;
     }
 }
 

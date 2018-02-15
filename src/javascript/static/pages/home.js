@@ -1,5 +1,6 @@
 const localize     = require('../../_common/localize').localize;
 const TabSelector  = require('../../_common/tab_selector');
+const Login        = require('../../app/base/login');
 const BinarySocket = require('../../app/base/socket');
 const FormManager  = require('../../app/common/form_manager');
 
@@ -9,7 +10,9 @@ const Home = (() => {
     const onLoad = () => {
         TabSelector.onLoad();
 
-        BinarySocket.wait('website_status').then(() => {
+        BinarySocket.wait('website_status').then((response) => {
+            clients_country = response.website_status.clients_country;
+
             // we need to initiate selector after it becoming visible
             TabSelector.repositionSelector();
 
@@ -23,6 +26,14 @@ const Home = (() => {
                 fnc_response_handler: handler,
                 fnc_additional_check: checkCountry,
             });
+            socialLogin();
+        });
+    };
+
+    const socialLogin = () => {
+        $('#google-signup').off('click').on('click', (e) => {
+            e.preventDefault();
+            window.location.href = Login.socialLoginUrl('google');
         });
     };
 
