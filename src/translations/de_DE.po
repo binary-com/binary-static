@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-05 19:50-0500\n"
+"PO-Revision-Date: 2018-02-13 21:27-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -489,9 +489,6 @@ msgstr "* Steuerfrei: In vielen Ländern sind Gewinne aus dem Trading steuerfrei
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Alle Anrufe werden zu Trainings- und Kontrollzwecken aufgezeichnet"
 
-msgid "*Lot size volume = 1.0."
-msgstr "*Lot Volumengröße = 1,0."
-
 msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
 msgstr "* Diese Zahlen sind nur indikativ, überprüfen Sie sie auf unserer MT5 Handelsplattform."
 
@@ -840,9 +837,6 @@ msgstr "Akzeptanz"
 msgid "Access Denied"
 msgstr "Zugriff verweigert"
 
-msgid "Access MT5 dashboard"
-msgstr "Zugang zum MT5 Dashboard"
-
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "Greifen Sie auf alle verfügbaren Tools und Funktionen für den Handel auf MT5, einschließlich Expert Advisors (EAs), Diagrammen, und Auftragsarten, zu"
 
@@ -1025,9 +1019,6 @@ msgstr "Fortgeschrittenes Binäre Optionen Handels-Interface"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Fortgeschrittene Kenntnis der Softwaredesign-Prinzipien"
-
-msgid "Advanced multi-asset trading platform"
-msgstr "Fortgeschrittene Multi-Asset Handelsplattform"
 
 msgid "Advantages of CFD trading"
 msgstr "Vorteile des CFD-Handels"
@@ -1237,7 +1228,7 @@ msgid "An ERC20 token is a type of token based on the ERC20 token standard used 
 msgstr "Ein ERC20-Token ist eine Art von Token, der auf dem ERC20 Token-Standard für Ethereum Smart-Kontrakte basiert. Er gilt als einer der bedeutendsten Token-Standards der jemals für die Ethereum Blockchain geschaffen wurde."
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr "Ein Endet-Zwischen Kontrakt wird ausgezahlt, wenn der Kurs zum Vertragsende grundsätzlich höher als die niedrige Kursschwelle UND grundsätzlich niedriger als die hohe Kursschwelle ist. Eine Endet-Oberhalb Binäre Option wird ausgezahlt, wenn der Kurs zum Ende des Kontrakts ENTWEDER grundsätzlich höher als die hohe Kursschwelle oder grundsätzlich niedriger als die niedrige Kursschwelle ist."
+msgstr "Ein Schließt-Zwischen Kontrakt wird ausgezahlt, wenn der Kurs zum Vertragsende grundsätzlich höher als die niedrige Kursschwelle UND grundsätzlich niedriger als die hohe Kursschwelle ist. Eine Schließt-Oberhalb Binäre Option wird ausgezahlt, wenn der Kurs zum Ende des Kontrakts ENTWEDER grundsätzlich höher als die hohe Kursschwelle oder grundsätzlich niedriger als die niedrige Kursschwelle ist."
 
 msgid "An Initial Coin Offering (or 'ICO' for short) is a fundraising method that's relatively similar to an IPO. In an ICO, cryptocurrency tokens are issued instead of shares."
 msgstr "Ein „Initial Coin Offering” (oder kurz „ICO”) ist eine Geldbeschaffungs-Methode, die einer Börseneinführung weitgehend ähnlich ist. Bei einer ICO werden Kryptowährungs-Token anstelle von Aktien ausgestellt."
@@ -3461,16 +3452,16 @@ msgid "Ends Between"
 msgstr "Schließt Zwischen"
 
 msgid "Ends Between/Ends Outside"
-msgstr "Endet Innerhalb/Endet Außerhalb"
+msgstr "Schließt Innerhalb/Schließt Außerhalb"
 
 msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Endet Innerhalb/Endet Außerhalb Kontrakte werden zum Kaufkurs erstattet, wenn weniger als 2 Ticks zwischen der Start- und der Endzeit liegen."
+msgstr "Schließt Innerhalb/Schließt Außerhalb Kontrakte werden zum Kaufkurs erstattet, wenn weniger als 2 Ticks zwischen der Start- und der Endzeit liegen."
 
 msgid "Ends Between/Ends Outside trades"
 msgstr "Schließt zwischen/Schließt außerhalb Kontrakte"
 
 msgid "Ends Between/Ends Outside – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Endet Innerhalb/Endet Außerhalb - Sagen Sie voraus, dass der Kurs zum Ende eines Zeitraums innerhalb oder außerhalb zweier Kursziele schließt"
+msgstr "Schließt Innerhalb/Schließt Außerhalb - Sagen Sie voraus, dass der Kurs zum Ende eines Zeitraums innerhalb oder außerhalb zweier Kursziele schließt"
 
 msgid "Ends Outside"
 msgstr "Endet Außerhalb"
@@ -3591,9 +3582,6 @@ msgstr "Euro gegen Türkische Lira"
 
 msgid "Euro vs US Dollar"
 msgstr "Euro gegen US Dollar"
-
-msgid "Eurobasket Wolves"
-msgstr "Eurobasket Wolves"
 
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
 msgstr "Einwohner der Europäischen Union, die Handel mit Glücksspielprodukten betreiben möchten, bekommen ihre Konten mit Binary (Europe) Ltd eröffnet."
@@ -4020,6 +4008,9 @@ msgstr "Für weitere Hintergrundinformationen lesen Sie bitte unseren Blogbeitra
 
 msgid "For general support:"
 msgstr "Für allgemeine Unterstützung:"
+
+msgid "For information about Forex leverage refer to our %1Margin Policy%2."
+msgstr "Für Informationen über Forex-Leverage beziehen Sie sich bitte auf unsere %1Margin-Richtlinie%2."
 
 msgid "For payments-related queries:"
 msgstr "Für auf Zahlungen bezogene Fragen:"
@@ -6295,8 +6286,8 @@ msgstr "Verlust"
 msgid "Lot Size (Volume = 1.0)"
 msgstr "Lot Größe (Volumen = 1,0)"
 
-msgid "Lot size*"
-msgstr "Lotgröße*"
+msgid "Lot size"
+msgstr "Lotgröße"
 
 msgid "Lot units"
 msgstr "Lot Einheiten"
@@ -6481,12 +6472,6 @@ msgstr "Margenausgleich"
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr "Margin gibt an, wie viel Investition Sie auf Ihrem ursprünglichen Kapital basierend, kontrollieren können. Zum Beispiel, ein 0,2% Margin wird Ihnen erlauben, bis zu 500 000 USD zu kontrollieren, wobei Sie nur 1 000 Ihres eigenen Geldes als Einzahlung verwenden."
 
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "Margin gibt an, wie viel Investition Sie auf Ihrem ursprünglichen Kapital basierend, kontrollieren können. Zum Beispiel, ein 1% Margin wird Ihnen erlauben, bis zu 100 000 USD zu kontrollieren, wobei Sie nur 1 000 Ihres eigenen Geldes als Einzahlung verwenden."
-
-msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
-msgstr "Die Zinsspanne gibt an, wie viel Kapital Sie auf Ihrer ursprünglichen Einzahlung basierend, kontrollieren können. Zum Beispiel eine 10 % Marge wird Innen erlauben, bis zu 100.000 USD zu kontrollieren, wobei Sie nur 10.000 USD Ihres eigenen Geldes als Einzahlung verwenden. Dieser Zinssatz benötigt 10 % des Anlagenwertes als Marge."
-
 msgid "Market"
 msgstr "Markt"
 
@@ -6595,9 +6580,6 @@ msgstr "Maximale Ticket-Größe"
 msgid "Maximum upload size for each file is 3MB"
 msgstr "Maximale Upload-Größe für jede Datei ist 3MB"
 
-msgid "Maximum volume"
-msgstr "Maximales Volumen"
-
 msgid "May"
 msgstr "Mai"
 
@@ -6655,6 +6637,9 @@ msgstr "Methode"
 msgid "Min"
 msgstr "Min"
 
+msgid "Min / Max withdrawal"
+msgstr "Min/Max Auszahlung"
+
 msgid "Min Withdrawal"
 msgstr "Min Auszahlung"
 
@@ -6669,9 +6654,6 @@ msgstr "Min. Zuwachsvolumen"
 
 msgid "Min. Volume<br>(Lot Size)"
 msgstr "Min. Volumen<br>(Lotgröße)"
-
-msgid "Min: 10 Max: 2000"
-msgstr "Min: 10 Max: 2000"
 
 msgid "Minimum Spread"
 msgstr "Minimaler Spread"
@@ -6705,6 +6687,9 @@ msgstr "Mindestens sechs Monate Gültigkeit"
 
 msgid "Minimum ticket size"
 msgstr "Minimale Ticket-Größe"
+
+msgid "Minimum volume"
+msgstr "Mindestvolumen"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Bergbau-, Bau-, Herstellungs- und Transport-Arbeiter"
@@ -7210,6 +7195,9 @@ msgstr "Online-Handel mit %1"
 msgid "Online currency exchangers"
 msgstr "Online Devisenwechsler"
 
+msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
+msgstr "Onlinehandel kann abhängig machen. Füllen Sie das Formular im Anschluss aus, um Ihre Teilnahme auf der Website zu begrenzen oder schicken Sie einen unterschriebenen Brief oder ein Fax an unser Kundenbetreuungsteam. Einmal eingerichtet, können Ihre Limits nur herabgesetzt werden. Die Limits, mit Ausnahme des Datums für den Selbstausschluss, das nicht aufgehoben oder geändert werden kann, sobald Sie dies bestätigt haben, können nur nach Ablauf von 7 Tagen aufgehoben oder gelockert werden. Um Ihre Limits zu löschen oder zu erhöhen, setzen Sie sich bitte mit der <a href=\"%1\">Kundenunterstützung</a> in Verbindung."
+
 msgid "Only %1 are allowed."
 msgstr "Es sind nur %1 erlaubt."
 
@@ -7359,6 +7347,9 @@ msgstr "Unser Unternehmen"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "Seit seinem offiziellen Start im März 2004 hat unser internationales Partnerprogramm immer pünktlich ausgezahlt. In Japan werden Ihre Provisionen innerhalb von dreißig Tagen nach Ende des Kalendermonats, in dem Ihre empfohlenen Kunden die Anspruchsvoraussetzungen erfüllt haben, auf Ihr Partner-Konto gutgeschrieben."
+
+msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
+msgstr "Unser MT5-Service ist für EU-Bürger aufgrund ausstehender regulatorischer Genehmigung derzeit nicht verfügbar."
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "Unser fortgeschrittenes MetaTrader 5 Konto stellt Ihnen enge Spreads und höhere Ticket-Größen zur Verfügung und bietet mehrere Produkte an."
@@ -9637,9 +9628,6 @@ msgstr "Die Gesetze und Regulierungen zum Datenschutz sehen für Nutzer von pers
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "Der EUR-Index ist ein gewichteter Index, der den Wert des Euro gegenüber einem Korb von 5 Weltwährungen (USD, AUD, GBP, JPY, CAD), wovon jede mit 20 % berücksichtigt ist, ermittelt."
 
-msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
-msgstr "Die Eurobasket Wolves sind ein lokaler Basketball-Club, der in 2002 gegründet wurde. Er unterrichtet Jugendbasketball durch seine Club- und Schulprogramme. Seine U8 und U10 Buben- und Mädchen-Teams, und seine U14 und U16 Mädchen-Teams treten national an. Er ist der erste Club in Malta, der ein Nach-der-Schule Basketballprogramm geschaffen hat, bei dem die Unterrichtseinheiten auf Schulgeländen abgehalten werden."
-
 msgid "The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers."
 msgstr "Die Europäische Kommission hat binäre Optionen im Jahr 2012 als Finanzinstrumente anerkannt, was eine erhöhte Glaubwürdigkeit für lizenzierte Makler bedeutet."
 
@@ -10372,6 +10360,9 @@ msgstr "Dieser Hinweis stellt Ihnen Informationen über die mit Investmentgesch�
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Dieses Angebot kann nicht in Verbindung mit anderen Angeboten verwendet werden."
 
+msgid "This page is not available in the selected language."
+msgstr ""
+
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Diese Werbeaktion steht nur neuen Kunden zur Verfügung. Bereits vorhandene oder ehemalige Kunden sind nicht berechtigt. Sie ist nur einmal pro Kunde gültig."
 
@@ -10492,14 +10483,8 @@ msgstr "Um unser Dividenden-Zahlung- Feature zu implementieren, werden wir unser
 msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr "Um mehr zu erfahren, lesen Sie bitte unsere <a href='%1'>CFD Kontraktspezifikationen</a>."
 
-msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr "Um mehr zu erfahren, lesen Sie unsere %1Margin Richtlinie%2, die unser 100 % erzwungenes Liquidationslevel für Forex näher erläutert."
-
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "Um mehr zu erfahren, lesen Sie unsere %1Margin Richtlinie%2, die unsere Margin-Anforderungen näher erläutert."
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr "Um mehr zu erfahren, lesen Sie unsere %1Margin Richtlinie%2, die unsere Margin-Anforderungen weiter erläutert. Bitte beachten Sie, dass wir keine Swap-Sätze für unsere Kryptowährungspaare verrechnen."
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr "Um mehr zu erfahren, lesen Sie unsere <a href=\"%1\">CFD Margin Richtlinie</a>, die unser 50% erzwungenes Liquidationslevel für Volatilität Indizes näher erläutert."
@@ -10509,9 +10494,6 @@ msgstr "Um mehr zu erfahren, lesen Sie unsere <a href=\"%1\">Forex Margin Richtl
 
 msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
 msgstr "Um mehr zu erfahren, lesen Sie unsere <a href=\"%1\">Metall Margin Richtlinie</a>, die unser 100% erzwungenes Liquidationslevel für unsere Metallpaare näher erläutert."
-
-msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "Um mehr zu erfahren, lesen Sie unsere Metall %1Margin Richtlinie%2, die unser 100% erzwungenes Liquidationslevel für unsere Metallpaare näher erläutert."
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "Um ein Echtgeldkonto zu eröffnen, müssen Sie ein authentifiziertes binäre Optionen Echtgeldkonto mit %1 haben. Ein Echtgeldkonto kann nicht ohne ein binäres Optionen Echtgeldkonto eröffnet werden."
@@ -10613,7 +10595,7 @@ msgid "Touch/No Touch - Predict if the market will touch or not touch a target p
 msgstr "Ziel/Kein Ziel - Sagen Sie voraus, ob der Kurs einen vorher festgelegten Zielkurs erreichen wird oder nicht"
 
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Erreicht/Erreicht nicht Kontrakte werden zum Kaufkurs erstattet, wenn weniger als 2 Ticks zwischen der Start- und der Endzeit liegen."
+msgstr "Ziel/Kein Ziel Kontrakte werden zum Kaufkurs erstattet, wenn weniger als 2 Ticks zwischen der Start- und der Endzeit liegen."
 
 msgid "Touch/No touch"
 msgstr "Ziel/Kein Ziel"
@@ -10644,9 +10626,6 @@ msgstr "Handeln Sie Bitcoin, Ethereum, und Litecoinpaare, ohne diese zu besitzen
 
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "Handeln Sie Forex und CFDs auf unserer populären Multi-Asset Plattform."
-
-msgid "Trade Forex and CFDs with a powerful platform recognised as the global standard."
-msgstr "Handlen Sie Forex und CFDs mit einer leistungsstarken Plattform, die als globaler Standard anerkannt ist."
 
 msgid "Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools."
 msgstr "Handeln Sie Forex und Differenzkontrakte (CFDs) mit äußerst wettbewerbsorientierter Leverage. MetaTrader 5 ist eine Multi-Asset Plattform, die ausgezeichnete Handelsmöglichkeiten und technische Analyse-Tools bietet."
@@ -10797,9 +10776,6 @@ msgstr "Der Handel mit Binären Optionen ist spekulativ und beinhaltet einen hoh
 
 msgid "Trading manual"
 msgstr "Trading manual"
-
-msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
-msgstr "Der Handel auf Finanzmärkten kann abhängig machen. Füllen Sie das Formular im Anschluss aus, um Ihre Teilnahme auf der Website zu begrenzen oder schicken Sie einen unterschriebenen Brief oder ein Fax an unser Kundenbetreuungsteam. Einmal eingerichtet, können Ihre Limits nur herabgesetzt werden. Die Limits, mit Ausnahme des Datums für den Selbstausschluss, das nicht aufgehoben oder geändert werden kann, sobald Sie dies bestätigt haben, können nur nach Ablauf von 7 Tagen aufgehoben oder gelockert werden. Um Ihre Limits zu löschen oder zu erhöhen, setzen Sie sich bitte mit der <a href=\"%1\">Kundenunterstützung</a> in Verbindung."
 
 msgid "TradingView for %1"
 msgstr "TradingView für %1"

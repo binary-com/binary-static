@@ -10,7 +10,9 @@ const Home = (() => {
     const onLoad = () => {
         TabSelector.onLoad();
 
-        BinarySocket.wait('website_status').then(() => {
+        BinarySocket.wait('website_status').then((response) => {
+            clients_country = response.website_status.clients_country;
+
             // we need to initiate selector after it becoming visible
             TabSelector.repositionSelector();
 

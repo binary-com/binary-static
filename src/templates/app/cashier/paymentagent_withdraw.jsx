@@ -47,7 +47,7 @@ const PaymentAgentWithdraw = () => (
                 <form className='form gr-padding-10' id='frmWithdrawal'>
                     <Fieldset>
                         <FormRow label={it.L('Transfer to Payment Agent')} id='ddlAgents' type='select' />
-                        <FormRow label={it.L('Amount')} id='txtAmount' type='text' hint={it.L('Min: 10 Max: 2000')} />
+                        <FormRow label={it.L('Amount')} id='txtAmount' type='text' />
                         <FormRow label={it.L('Further Instructions')} id='txtDescription' type='custom'>
                             <textarea id='txtDescription' row='6' cols='60' maxLength='300'></textarea>
                         </FormRow>
