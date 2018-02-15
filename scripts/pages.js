@@ -81,6 +81,7 @@ module.exports = [
     ['about-us',                           'static/about/index',                        'full_width', 'About Us'],
     ['binary-in-numbers',                  'static/about/binary_in_numbers',            'default',    'Binary in Numbers'],
     ['careers',                            'static/about/careers',                      'full_width', 'Careers',                            'ja'],
+    ['careers-for-americans',              'static/about/careers_for_americans',        'full_width', 'Careers For Americans',              'ja'],
     ['contact',                            'static/about/contact',                      'full_width', 'Contact Us'],
     ['group-history',                      'static/about/group_history',                'full_width', 'Group History'],
     ['open-positions',                     'static/about/job_descriptions',             'full_width', 'Open Positions'],
