@@ -1,4 +1,4 @@
-.home-content, .home-beta-content, .home-jp-content {
+.home-content, .home-old-content, .home-jp-content {
     .signup-box {
         border-radius: $BORDER_RADIUS;
 
@@ -22,9 +22,11 @@
     }
 }
 
-.home-content, .home-beta-content {
+.home-content, .home-old-content {
     #banner {
-        background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
+        background: url('../images/pages/home/banner-background_1.png') no-repeat;
+        background-position: left top;
+        background-size: 100% 70%;
     }
     .xlist1 {
         background: url('../images/pages/home/xicon-1.png') no-repeat;
@@ -194,15 +196,25 @@
             margin-top: auto;
         }
     }
+    .home-content, .home-old-color {
+        #banner {
+            background-position: right top;
+            background-size: 125% 75%;
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
-    .home-content, .home-beta-content {
+    .home-content, .home-old-content {
         .small-image {
             width: 30%;
         }
         .mena {
             width: 32%;
+        }
+        #banner {
+            background-position: right top;
+            background-size: 300% 75%;
         }
     }
     #content.home-content {
