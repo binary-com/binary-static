@@ -93,7 +93,7 @@ const MetaTraderUI = (() => {
     const setAccountType = (acc_type, should_set_account) => {
         if ($mt5_account.attr('value') !== acc_type) {
             Client.set('mt5_account', acc_type);
-            $mt5_account.attr('value', acc_type).html(accounts_info[acc_type].title.replace(/(demo|real)\s/i, '')).removeClass('empty');
+            $mt5_account.attr('value', acc_type).html(`${accounts_info[acc_type].title} (${accounts_info[acc_type].info.login})`).removeClass('empty');
             $list.find('.acc-name').removeClass('selected');
             $list.find(`[value="${acc_type}"]`).addClass('selected');
             $action.setVisibility(0);
@@ -141,7 +141,6 @@ const MetaTraderUI = (() => {
     const setCurrentAccount = (acc_type) => {
         if (Client.get('mt5_account') && Client.get('mt5_account') !== acc_type) return;
 
-        $detail.find('#acc_icon').attr('class', acc_type.split('_')[2] || 'volatility');
         displayAccountDescription(acc_type);
 
         if (accounts_info[acc_type].info) {
@@ -224,9 +223,9 @@ const MetaTraderUI = (() => {
 
         if (!actions_info[action]) { // Manage Fund
             cloneForm();
-            $form.find('.binary-account').text(`Binary ${Client.get('loginid')}`);
+            $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
             $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
-            $form.find('.mt5-account').text(`${accounts_info[acc_type].title} ${accounts_info[acc_type].info.login}`);
+            $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
             $form.find('.mt5-balance').html(`${formatMoney(MetaTraderConfig.getCurrency(acc_type), accounts_info[acc_type].info.balance)}`);
             $form.find('label[for^="txt_amount_"]').append(` ${MetaTraderConfig.getCurrency(acc_type)}`);
             ['deposit', 'withdrawal'].forEach((act) => {
@@ -310,6 +309,7 @@ const MetaTraderUI = (() => {
             if (!$(this).hasClass('button-disabled')) {
                 $form.find('#view_2 #btn_submit_new_account').attr('acc_type', newAccountGetType());
                 displayStep(2);
+                $form.find('#txt_name').val(accounts_info[newAccountGetType()].title);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
