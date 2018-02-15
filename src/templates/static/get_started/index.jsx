@@ -233,7 +233,7 @@ const Index = () => (
                     <TabContent id='lookback'>
                         <h2>{it.L('Lookbacks')}</h2>
                         <h3>{it.L('What are lookbacks')}</h3>
-                        <p>{it.L('A lookback contract has a payoff that depends on the optimum high or low achieved by the market. The option allows the holder to "look back" over time to determine the payout.')}</p>
+                        <p>{it.L('A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to "look back" over time to determine the payout.')}</p>
                         <SeparatorLine invisible className='gr-padding-10' />
                         <h3>{it.L('Types of lookbacks')}</h3>
                         <p>{it.L('We offer three types lookbacks:')}</p>
