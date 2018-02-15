@@ -1,5 +1,4 @@
 import React from 'react';
-import { FillBox } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const Box = ({
@@ -261,18 +260,6 @@ const Careers = () => (
                         </div>
                     </div>
                 </div>
-            </div>
-            <SeparatorLine show_mobile />
-        </div>
-
-        <div className='container'>
-            <div className='gr-padding-30 center-text'>
-                <div className='gr-padding-30'>
-                    <h1>{it.L('Career opportunities for Americans')}</h1>
-                    <p>{it.L('Looking for a new and exciting career in a country that\'s modern, diverse, and tolerant? [_1] is one of the world\'s most progressive companies, with offices in Asia and Europe.', it.website_name)}</p>
-                </div>
-
-                <FillBox className='america-careers-link' center padding='4' href={it.url_for('careers-for-americans')} text={it.L('Learn more')} />
             </div>
         </div>
 
