@@ -38,7 +38,7 @@ const Head = () => (
         }
 
         { it.css_files.map((css_file, inx) => (
-            <link key={inx} rel='stylesheet' href={css_file} />
+            <link key={inx} rel='stylesheet' href={css_file} type="text/css" />
         ))}
         { it.js_files.map((js_file, inx) => (
             <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())}></script>
