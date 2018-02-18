@@ -1,4 +1,4 @@
-const sidebar     = require('../../_common/sidebar');
+const sidebar     = require('../../app/common/sidebar');
 const localize    = require('../../_common/localize').localize;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
 
@@ -8,7 +8,7 @@ const TermsAndConditions = (() => {
             $('#btn_accept'),
             () => { $('.tnc_accept').setVisibility(1); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
-        sidebar.initSidebar();
+        sidebar.onLoad();
 
         $('.currentYear').text(new Date().getFullYear());
     };

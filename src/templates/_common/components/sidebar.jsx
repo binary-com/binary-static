@@ -26,7 +26,7 @@ export const SidebarSubmenu = ({ id, items = [] }) => {
                                     <ul>
                                         { item.submenu.map((submenu, idx_submenu) => (
                                             <li key={idx_submenu} id={submenu.id}>
-                                                <a href={getHref(submenu.id)}>{submenu.text}</a>
+                                                <a className="submenu-item" href={getHref(submenu.id)}>{submenu.text}</a>
                                             </li>
                                         ))}
                                     </ul>
