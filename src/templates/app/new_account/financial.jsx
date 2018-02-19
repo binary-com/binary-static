@@ -56,7 +56,6 @@ const Financial = () => (
                     tooltip={it.L('Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission.')}
                     attributes={{maxLength: '20'}}
                 />
-
             </Fieldset>
 
             <Fieldset legend={it.L('Address')}>
@@ -76,17 +75,15 @@ const Financial = () => (
             <FinancialForm />
             <PepDeclaration />
             <ProfessionalClient />
-
+            <fieldset>
+                <TaxIdentificationNumberTerms />
+            </fieldset>
             <fieldset>
                 <div className='gr-12'>
                     <p>{it.L('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.')}</p>
                 </div>
             </fieldset>
-
-            <fieldset>
-                <TaxIdentificationNumberTerms />
-            </fieldset>
-
+            
             <Tnc />
         </form>
 

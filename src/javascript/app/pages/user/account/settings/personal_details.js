@@ -15,6 +15,7 @@ const PersonalDetails = (() => {
     const real_acc_elements = '.RealAcc';
 
     let is_for_new_account = false;
+    let need_to_accept_tin = false;
 
     let editable_fields,
         is_jp,
@@ -36,22 +37,24 @@ const PersonalDetails = (() => {
     };
 
     const showHideTaxMessage = () => {
-        const $fieldsets       = $(`${form_id} fieldset`);
-        const $tax_info_notice = $('#tax_information_notice');
-        const $tax_info_terms  = $('#tax_id_terms').parent();
+        const $form_fieldsets    = $(`${form_id} fieldset`);
+        const $tax_info_notice   = $('#tax_information_notice');
+        const $tax_info_terms    = $('#tax_id_terms').parent();
+        const $tax_info_fieldset = $('#fieldset_tax_information');
+        const $tax_info_note     = $('#tax_information_note');
 
         if (Client.shouldCompleteTax()) {
-            $tax_info_notice.setVisibility(1);
-            if (Client.isAccountOfType('financial')) {
-                $('.rowCustomerSupport').setVisibility(0);
-                $fieldsets.setVisibility(0);
-                $tax_info_terms.setVisibility(1);
-                setVisibility('#fieldset_tax_information');
-                setVisibility('#tax_information_note');
-            }
+            $form_fieldsets.setVisibility(0);    // hide all fieldsets
+            $tax_info_notice.setVisibility(1);   // show tax notice message
+            $tax_info_fieldset.setVisibility(1); // show tax info fieldset
+            $tax_info_terms.setVisibility(1);    // show tax info terms
+            need_to_accept_tin = true;
         } else {
-            $tax_info_notice.setVisibility(0);
-            $tax_info_terms.setVisibility(0);
+            $tax_info_notice.setVisibility(0);   // hide tax notice messageå
+        }
+
+        if (Client.isAccountOfType('financial')) {
+            $tax_info_note.setVisibility(1);
         }
     };
 
@@ -215,7 +218,7 @@ const PersonalDetails = (() => {
 
                 { selector: '#place_of_birth', validations: Client.isAccountOfType('financial') ? ['req'] : '' },
                 { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
-                { selector: '#chk_tax_id',     validations: Client.isAccountOfType('financial') ? [['req', { hide_asterisk: true }]] : '', exclude_request: 1 },
+                { selector: '#chk_tax_id',     validations: Client.isAccountOfType('financial') ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
             const tax_id_validation = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
             if (Client.isAccountOfType('financial')) {
@@ -235,6 +238,10 @@ const PersonalDetails = (() => {
             BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                 showHideTaxMessage();
                 Header.displayAccountStatus();
+                if (need_to_accept_tin) {
+                    need_to_accept_tin = false;
+                    window.location.reload();
+                }
             });
             // to update the State with latest get_settings data
             BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
