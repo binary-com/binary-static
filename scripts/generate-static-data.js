@@ -482,6 +482,8 @@ const texts = [
     'thousand',
     'million',
     'Should start with letter or number, and may contain hyphen and underscore.',
+    'Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.',
+    'Validate address',
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',
