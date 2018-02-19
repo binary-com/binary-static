@@ -261,25 +261,40 @@ class StatementDataTable extends React.PureComponent {
 
         this.getNextBatch = this.getNextBatch.bind(this);
 
-        const columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'];
-        const header = [
-            localize('Date'),
-            localize('Ref.'),
-            localize('Potential Payout'),
-            localize('Action'),
-            localize('Description'),
-            localize('Credit/Debit'),
-            localize('Balance'),
+        const columns = [
+            {
+                title: localize('Date'),
+                dataIndex: 'date',
+            },
+            {
+                title: localize('Ref.'),
+                dataIndex: 'ref',
+            },
+            {
+                title: localize('Potential Payout'),
+                dataIndex: 'payout',
+            },
+            {
+                title: localize('Action'),
+                dataIndex: 'action',
+            },
+            {
+                title: localize('Description'),
+                dataIndex: 'desc',
+            },
+            {
+                title: localize('Credit/Debit'),
+                dataIndex: 'amount',
+            },
+            {
+                title: localize('Balance'),
+                dataIndex: 'balance',
+            }
         ];
 
         this.state = {
             dataSource: [],
-            columns: columns.map((col_id, i) => {
-                return {
-                    title: header[i],
-                    dataIndex: col_id
-                };
-            })
+            columns: columns
         };
     }
 
