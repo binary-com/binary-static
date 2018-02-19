@@ -42,6 +42,12 @@
         & td:last-child {
             padding-right: 16px;
         }
+        & .profit {
+            color: #2e8836;
+        }
+        & .loss {
+            color: #c03;
+        }
     }
     &-pagination {
         margin-top: 16px;

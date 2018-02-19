@@ -285,6 +285,12 @@ class StatementDataTable extends React.PureComponent {
             {
                 title: localize('Credit/Debit'),
                 dataIndex: 'amount',
+                renderCell: (data, dataIndex) => {
+                    const parseStrNum = (str) => {
+                        return parseFloat(str.replace(',', '.'));
+                    }
+                    return <td className={`${dataIndex} ${(parseStrNum(data) >= 0) ? 'profit' : 'loss'}`} key={dataIndex}>{data}</td>
+                }
             },
             {
                 title: localize('Balance'),
