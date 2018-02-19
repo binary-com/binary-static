@@ -207,13 +207,14 @@ class DataTable extends React.Component {
     }
 
     renderRow(transaction, id) {
+        const defaultRenderCell = (data, dataIndex) => <td className={dataIndex} key={dataIndex}>{data}</td>;
+
         return (
             <tr className='table-row' key={id}>
-                {this.props.columns.map(({ dataIndex }) => (
-                    <td className={dataIndex} key={`${dataIndex}-${id}`}>
-                        {transaction[dataIndex]}
-                    </td>
-                ))}
+                {this.props.columns.map(({ dataIndex, renderCell }) => {
+                    if (!renderCell) renderCell = defaultRenderCell;
+                    return renderCell(transaction[dataIndex], dataIndex);
+                })}
             </tr>
         );
     }
