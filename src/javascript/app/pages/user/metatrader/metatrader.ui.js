@@ -204,7 +204,7 @@ const MetaTraderUI = (() => {
                 .setVisibility(1);
 
             if (action === 'password_change') {
-                $container.find('label[for*="_password"]').append(` (${localize('for MT5 Account')} ${accounts_info[acc_type].info.login})`);
+                $form.find('label[for*="_password"]').append(` (${localize('for MT5 Account')} ${accounts_info[acc_type].info.login})`);
             }
 
             $form.find('button[type="submit"]').each(function() { // cashier has two different actions
