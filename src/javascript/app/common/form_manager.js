@@ -3,7 +3,6 @@ const BinarySocket     = require('../base/socket');
 const getHashValue     = require('../../_common/url').getHashValue;
 const isEmptyObject    = require('../../_common/utility').isEmptyObject;
 const showLoadingImage = require('../../_common/utility').showLoadingImage;
-const Geocoder         = require('../../_common/geocoder');
 
 const FormManager = (() => {
     const forms = {};
@@ -129,9 +128,6 @@ const FormManager = (() => {
                 if (typeof options.fnc_additional_check === 'function' && !options.fnc_additional_check(req)) {
                     return;
                 }
-                if (options.geocoder) {
-                    geocoder(getFormData(options.form_selector));
-                }
                 disableButton($btn_submit);
                 form.can_submit = false;
                 if (isEmptyObject(req)) {
@@ -145,19 +141,7 @@ const FormManager = (() => {
         });
     };
 
-    const geocoder = (data, callback) => {
-        if (!data) return;
-        const address = `${data.address_line_1} ${data.address_line_2}, ${data.address_city}, ${data.address_state} ${data.address_postcode}, ${data.country_code}`;
-        const residence = data.country_code;
-        Geocoder.validate(address, residence).then(status => {
-            if (typeof callback === 'function') {
-                callback(status);
-            }
-        });
-    };
-
     return {
-        geocoder,
         handleSubmit,
         init: initForm,
     };

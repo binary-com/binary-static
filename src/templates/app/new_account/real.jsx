@@ -19,6 +19,7 @@ import {
     SecretAnswer,
     ClientMessage,
     Tnc,
+    GeocodeResponse,
 } from '../../_common/components/forms_common_rows.jsx';
 
 const Real = () => (
@@ -42,6 +43,7 @@ const Real = () => (
                 <AddressState />
                 <AddressPostcode />
                 <Phone />
+                <GeocodeResponse />
             </Fieldset>
 
             <Fieldset legend={it.L('Security')}>

@@ -109,14 +109,15 @@ fieldset {
         padding: 0 0.8em;
         font-weight: bold;
         text-transform: capitalize;
+
+        & + .hint {
+            padding-left: 1em;
+        }
     }
     .text-display { /* TODO: replace all occurrences of id with the class */
         line-height: 25px;
     }
-    .hint {
-        padding-left: 1em;
-    }
-    #geocode-error {
+    #geocode_error {
         margin: 5px 15px;
     }
 }

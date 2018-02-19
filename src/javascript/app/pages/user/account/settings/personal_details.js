@@ -5,6 +5,7 @@ const Header          = require('../../../../base/header');
 const BinarySocket    = require('../../../../base/socket');
 const formatMoney     = require('../../../../common/currency').formatMoney;
 const FormManager     = require('../../../../common/form_manager');
+const Geocoder        = require('../../../../../_common/geocoder');
 const CommonFunctions = require('../../../../../_common/common_functions');
 const localize        = require('../../../../../_common/localize').localize;
 const State           = require('../../../../../_common/storage').State;
@@ -117,9 +118,10 @@ const PersonalDetails = (() => {
             fnc_response_handler: setDetailsResponse,
             fnc_additional_check: additionalCheck,
             enable_button       : true,
-            geocoder            : true,
         });
-        FormManager.geocoder(data);
+        if (!is_virtual && !is_jp) {
+            Geocoder.validate(form_id);
+        }
     };
 
     const displayGetSettingsData = (data, populate = true) => {

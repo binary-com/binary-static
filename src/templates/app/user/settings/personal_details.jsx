@@ -8,6 +8,7 @@ import {
     AddressState,
     AddressPostcode,
     Phone,
+    GeocodeResponse,
 } from '../../../_common/components/forms_common_rows.jsx';
 import Loading from '../../../_common/components/loading.jsx';
 
@@ -92,6 +93,7 @@ const PersonalDetails = () => (
                 <AddressState />
                 <AddressPostcode />
                 <Phone />
+                <GeocodeResponse />
             </Fieldset>
 
             <Fieldset id='address_form' className='invisible JpAcc' legend={it.L('Address')}>
