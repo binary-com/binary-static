@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-18 20:08-0500\n"
+"PO-Revision-Date: 2018-02-19 04:49-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -101,6 +101,9 @@ msgstr ""
 
 msgid "%1 Account"
 msgstr "Cuenta %1"
+
+msgid "%1 Account %2"
+msgstr ""
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Términos y condiciones del programa de afiliados de %1"
@@ -494,9 +497,6 @@ msgstr "* Libre de impuestos: En muchos países, los beneficios procedentes de o
 
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Todas nuestras llamadas se graban para fines de capacitación y supervisión"
-
-msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr ""
 
 msgid "0-1 year"
 msgstr "0-1 año(s)"
@@ -927,7 +927,7 @@ msgstr "Saldo de la cuenta:"
 msgid "Account balance: "
 msgstr "Saldo de la cuenta: "
 
-msgid "Account comparison*"
+msgid "Account comparison"
 msgstr ""
 
 msgid "Account currency"
@@ -3031,9 +3031,6 @@ msgid "Deposit as little as USD 5 to start trading."
 msgstr ""
 
 msgid "Deposit funds and begin trading"
-msgstr ""
-
-msgid "Deposit funds into your MT5 account"
 msgstr ""
 
 msgid "Deposit or withdraw below"
@@ -6274,9 +6271,6 @@ msgstr "Historial de accesos"
 msgid "Login ID"
 msgstr "Identificación de acceso"
 
-msgid "Login ID:"
-msgstr ""
-
 msgid "Login time:"
 msgstr "Tiempo de ingreso:"
 
@@ -6344,6 +6338,9 @@ msgid "MENA FFXPO Award"
 msgstr "Premio FFXPO de MENA"
 
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
+msgstr ""
+
+msgid "MT5 Account:"
 msgstr ""
 
 msgid "MT5 Demo"
@@ -6778,7 +6775,7 @@ msgstr "Más ventajas"
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Más específicamente, cuando hacemos un contrato de opciones binarias con usted (un \"Contrato\"), tenemos el deber de ofrecerle la \"mejor ejecución\". La mejor ejecución significa que debemos tomar las medidas razonables para obtener el mejor resultado posible para usted al ejecutar la orden para usted. Este documento proporciona un resumen de nuestra política de la mejor ejecución."
 
-msgid "Most brokers require minimum deposit. %1 doesn't require any minimum deposit."
+msgid "Most brokers require a minimum deposit. %1 doesn't require any minimum deposit."
 msgstr ""
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
@@ -7763,6 +7760,9 @@ msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr ""
 
 msgid "Please enter date in the format DD MMM, YYYY."
+msgstr ""
+
+msgid "Please enter your full address to avoid authentication delays."
 msgstr ""
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
@@ -10242,9 +10242,6 @@ msgstr ""
 msgid "These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens."
 msgstr "Estos materiales sólo pueden ser recibidos por personas autorizadas (una persona determinada por la Empresa, a su sola discreción, con derecho a recibir los materiales según lo establecido por las leyes y normativas aplicables, por ejemplo en las jurisdicciones del Espacio Económico Europeo (EEE), de conformidad con una exención en virtud de la Directiva 2003/71/CE de la Unión Europea (en su versión modificada, incluyendo la Directiva 2010/73/UE), que incorpora, sin limitación, la exención relativa a inversionistas cualificados (\"Personas autorizadas\"). Si una Persona Autorizada desea presentar una oferta por algún token puede hacerlo si es cliente registrado de Binary.com y tiene una cuenta en Binary.com, por medio de la cual la Empresa podrá corroborar su idoneidad como Persona Autorizada. La Persona Autorizada que desee adquirir tokens realizará una oferta. La Empresa cotejará y evaluará las ofertas. La Empresa puede solicitar que las ofertas sean reconfirmadas antes de que se consideren válidas (de acuerdo con el propósito de la oferta de la Empresa en la subasta). Durante la subasta, la Empresa realizará una propuesta de tokens, la cual será aceptada a través de la presentación de ofertas (de acuerdo con el proceso de subasta explicado en los materiales) y la contraprestación por la compra de dichos tokens ofrecidos y aceptados será liquidada a crédito en la cuenta de la Persona Autorizada en Binary.com, en la que se certificará el contrato de compraventa de los tokens respectivos."
 
-msgid "These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr ""
-
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr ""
 
@@ -10830,11 +10827,17 @@ msgstr ""
 msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
 msgstr ""
 
+msgid "Transfer funds to your MT5 account"
+msgstr ""
+
 msgid "Transfer to"
 msgstr "Transferir a"
 
 msgid "Transfer to Login ID"
 msgstr "Transferir a usuario"
+
+msgid "Transfer to MT5"
+msgstr ""
 
 msgid "Transfer to Payment Agent"
 msgstr "Transferir a agente de pagos"
@@ -11125,6 +11128,9 @@ msgid "Utility bills (electricity, water, gas, broadband and landline)"
 msgstr ""
 
 msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
+msgstr ""
+
+msgid "Validate address"
 msgstr ""
 
 msgid "Variable from 0.9 pips"
@@ -11956,6 +11962,9 @@ msgstr "Con respecto a realizar un seguimiento de sus referidos a %1 través de 
 msgid "Withdraw"
 msgstr "Retirar"
 
+msgid "Withdraw from MT5"
+msgstr ""
+
 msgid "Withdraw funds from your MT5 account"
 msgstr ""
 
@@ -12568,6 +12577,9 @@ msgstr "Su cuenta no debe ser utilizada como un banco, y los depósitos deben ha
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr ""
 
+msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
+msgstr ""
+
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Su solicitud será revisada por nuestros departamentos de cumplimiento y de marketing. Una vez aprobada, vamos a poner su información en vivo en nuestra lista de <a href='%1'>Agentes de Pago</a>."
 
@@ -12779,6 +12791,9 @@ msgid "fairly and accurately describe its services to the Clients;"
 msgstr ""
 
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
+msgstr ""
+
+msgid "for MT5 Account"
 msgstr ""
 
 msgid "for exclusive updates on the ICO."
