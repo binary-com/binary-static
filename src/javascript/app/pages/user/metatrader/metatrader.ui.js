@@ -460,7 +460,7 @@ const MetaTraderUI = (() => {
     };
 
     const switchToMT5 = (is_mt5 = true) => {
-        $('.mt-hide:not(.ja-show)').setVisibility(!is_mt5);
+        $('.mt-hide').setVisibility(!is_mt5);
         $('.mt-show').setVisibility(is_mt5);
     };
 
