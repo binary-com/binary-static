@@ -310,7 +310,7 @@ const MetaTraderUI = (() => {
             if (!$(this).hasClass('button-disabled')) {
                 $form.find('#view_2 #btn_submit_new_account').attr('acc_type', newAccountGetType());
                 displayStep(2);
-                $form.find('#txt_name').val(accounts_info[newAccountGetType()].title);
+                $form.find('#txt_name').val(accounts_info[newAccountGetType()].short_title);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
