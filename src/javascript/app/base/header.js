@@ -1,5 +1,5 @@
-import { hide_menu as hideMenu, show_menu as showMenu } from 'binary-style';
-
+const showMenu            = require('binary-style').show_menu;
+const hideMenu            = require('binary-style').hide_menu;
 const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
 const GTM                 = require('./gtm');
