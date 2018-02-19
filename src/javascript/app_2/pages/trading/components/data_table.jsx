@@ -7,183 +7,155 @@ import { formatMoney } from '../../../../app/common/currency';
 import { localize } from '../../../../_common/localize';
 import { toTitleCase } from '../../../../_common/string_util';
 
-class Pagination extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.calcNumOfPages = this.calcNumOfPages.bind(this);
-        this.handleNext = this.handleNext.bind(this);
-        this.handlePrev = this.handlePrev.bind(this);
-        this.handleJumpUp = this.handleJumpUp.bind(this);
-        this.handleJumpDown = this.handleJumpDown.bind(this);
-        this.renderUpEllipsis = this.renderUpEllipsis.bind(this);
-        this.renderDownEllipsis = this.renderDownEllipsis.bind(this);
-        this.renderItem = this.renderItem.bind(this);
-        this.renderItemRange = this.renderItemRange.bind(this);
-        this.renderItems = this.renderItems.bind(this);
-        this.state = {
-            current: 1
-        };
-    }
+const Pagination = ({ page, total, pageSize, onChange }) => {
+    const JUMP_LEN = 5;
 
-    handleChange(newPage) {
-        if (newPage === this.state.current) return;
+    const handleChange = (newPage) => {
+        if (newPage === page) return;
+        onChange(newPage);
+    };
 
-        this.setState({
-            current: newPage
-        });
-
-        this.props.onChange(newPage);
-    }
-
-    calcNumOfPages() {
-        const { total, pageSize } = this.props;
+    const calcNumOfPages = () => {
         return Math.ceil(total / pageSize);
-    }
+    };
 
-    handleNext() {
-        if (this.state.current < this.calcNumOfPages()) {
-            this.handleChange(this.state.current + 1);
+    const handleNext = () => {
+        if (page < calcNumOfPages()) {
+            handleChange(page + 1);
         }
-    }
+    };
 
-    handlePrev() {
-        if (this.state.current > 1) {
-            this.handleChange(this.state.current - 1);
+    const handlePrev = () => {
+        if (page > 1) {
+            handleChange(page - 1);
         }
-    }
+    };
 
-    handleJumpUp() {
-        this.handleChange(Math.min(
-            this.state.current + 5,
-            this.calcNumOfPages()
+    const handleJumpUp = () => {
+        handleChange(Math.min(
+            page + JUMP_LEN,
+            calcNumOfPages()
         ));
-    }
+    };
 
-    handleJumpDown() {
-        this.handleChange(Math.max(
+    const handleJumpDown = () => {
+        handleChange(Math.max(
             1,
-            this.state.current - 5
+            page - JUMP_LEN
         ));
-    }
+    };
 
-    renderUpEllipsis() {
+    const renderUpEllipsis = () => {
         return (
             <li
                 className='pagination-item pagination-ellipsis-up'
                 key='ellipsis-up'
-                onClick={this.handleJumpUp}
+                onClick={handleJumpUp}
             >
             </li>
         );
-    }
+    };
 
-    renderDownEllipsis() {
+    const renderDownEllipsis = () => {
         return (
             <li
                 className='pagination-item pagination-ellipsis-down'
                 key='ellipsis-down'
-                onClick={this.handleJumpDown}
+                onClick={handleJumpDown}
             >
             </li>
         );
-    }
+    };
 
-    renderItem(pageNum) {
+    const renderItem = (pageNum) => {
         return (
             <li
-                className={`pagination-item ${pageNum === this.state.current ? 'pagination-item-active' : ''}`}
+                className={`pagination-item ${pageNum === page ? 'pagination-item-active' : ''}`}
                 key={pageNum}
                 onClick={() => {
-                    this.handleChange(pageNum)
+                    handleChange(pageNum)
                 }}
             >
                 <a>{pageNum}</a>
             </li>
         );
-    }
+    };
 
-    renderItemRange(first, last) {
+    const renderItemRange = (first, last) => {
         const items = [];
 
         for (let pageNum = first; pageNum <= last; pageNum++) {
-            items.push(this.renderItem(pageNum));
+            items.push(renderItem(pageNum));
         }
         return items;
-    }
+    };
 
-    renderItems() {
-        const numOfPages = this.calcNumOfPages();
-        const { current } = this.state;
+    const renderItems = () => {
+        const numOfPages = calcNumOfPages();
 
         if (numOfPages <= 9) {
-            return this.renderItemRange(1, numOfPages);
+            return renderItemRange(1, numOfPages);
         }
-        else if (current <= 3) {
+        else if (page <= 3) {
             return [
-                ...this.renderItemRange(1, 5),
-                this.renderUpEllipsis(),
-                this.renderItem(numOfPages)
+                ...renderItemRange(1, 5),
+                renderUpEllipsis(),
+                renderItem(numOfPages)
             ];
         }
-        else if (current === 4) {
+        else if (page === 4) {
             return [
-                ...this.renderItemRange(1, 6),
-                this.renderUpEllipsis(),
-                this.renderItem(numOfPages)
+                ...renderItemRange(1, 6),
+                renderUpEllipsis(),
+                renderItem(numOfPages)
             ];
         }
-        else if (current === numOfPages - 3) {
+        else if (page === numOfPages - 3) {
             return [
-                this.renderItem(1),
-                this.renderDownEllipsis(),
-                ...this.renderItemRange(numOfPages - 5, numOfPages)
+                renderItem(1),
+                renderDownEllipsis(),
+                ...renderItemRange(numOfPages - 5, numOfPages)
             ];
         }
-        else if (numOfPages - current < 3) {
+        else if (numOfPages - page < 3) {
             return [
-                this.renderItem(1),
-                this.renderDownEllipsis(),
-                ...this.renderItemRange(numOfPages - 4, numOfPages)
+                renderItem(1),
+                renderDownEllipsis(),
+                ...renderItemRange(numOfPages - 4, numOfPages)
             ];
         }
         else {
             return [
-                this.renderItem(1),
-                this.renderDownEllipsis(),
-                ...this.renderItemRange(current - 2, current + 2),
-                this.renderUpEllipsis(),
-                this.renderItem(numOfPages)
+                renderItem(1),
+                renderDownEllipsis(),
+                ...renderItemRange(page - 2, page + 2),
+                renderUpEllipsis(),
+                renderItem(numOfPages)
             ];
         }
-    }
+    };
 
-    render() {
-        const { current } = this.state;
-        return (
-            <ul className='pagination'>
-                <li
-                    className={`pagination-prev ${current === 1 ? 'pagination-disabled' : ''}`}
-                    onClick={this.handlePrev}
-                >
-                    <a>&lt;</a>
-                </li>
-                {this.renderItems()}
-                <li
-                    className={`pagination-next ${current === this.calcNumOfPages() ? 'pagination-disabled' : ''}`}
-                    onClick={this.handleNext}
-                >
-                    <a>&gt;</a>
-                </li>
-            </ul>
-        );
-    }
+    return (
+        <ul className='pagination'>
+            <li
+                className={`pagination-prev ${page === 1 ? 'pagination-disabled' : ''}`}
+                onClick={handlePrev}
+            >
+                <a>&lt;</a>
+            </li>
+            {renderItems()}
+            <li
+                className={`pagination-next ${page === calcNumOfPages() ? 'pagination-disabled' : ''}`}
+                onClick={handleNext}
+            >
+                <a>&gt;</a>
+            </li>
+        </ul>
+    );
 }
 
 Pagination.defaultProps = {
-    total: 0,
-    pageSize: 10,
-    onChange: (page) => {console.log(page)}
+    page: 1
 };
 
 
@@ -216,6 +188,7 @@ class DataTable extends React.Component {
         const endId = startId + pageSize;
 
         this.setState({
+            page: page,
             displayData: this.props.dataSource.slice(startId, endId)
         });
     }
@@ -224,6 +197,7 @@ class DataTable extends React.Component {
         return (
             <div className='table-pagination'>
                 <Pagination
+                    page={this.state.page}
                     total={this.props.dataSource.length}
                     pageSize={this.props.pageSize}
                     onChange={this.handlePageChange}
