@@ -128,7 +128,26 @@ const Header = () => (
                                         { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'),    className: 'ja-show mt-hide client_logged_in invisible' },
                                         { text: it.L('Statement'),    href: it.url_for('user/statementws'),       className: 'ja-show mt-hide client_logged_in invisible' },
                                         { text: it.L('Cashier'),      href: it.url_for('cashier'),                className: 'ja-show mt-hide client_logged_in invisible' },
-                                        { text: it.L('Resources'),    href: it.url_for('resources'),              className: 'ja-show mt-hide client_logged_in invisible' },
+                                        {
+                                            type     : 'nested',
+                                            text     : it.L('Resources'),
+                                            href     : 'javascript:;',
+                                            className: 'ja-show mt-hide client_logged_in nav-dropdown-toggle invisible',
+                                            subitems : [
+                                                { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
+                                            ],
+                                        },
+                                        {
+                                            type     : 'nested',
+                                            text     : it.L('Settings'),
+                                            href     : 'javascript:;',
+                                            className: 'ja-show mt-hide client_logged_in nav-dropdown-toggle invisible',
+                                            subitems : [
+                                                { text: it.L('Profile'),           href: it.url_for('user/settingsws') },
+                                                { text: it.L('Security & Limits'), href: it.url_for('user/securityws') },
+                                                { text: it.L('Payment Agent'),     href: it.url_for('paymentagent/transferws'), id: 'topMenuPaymentAgent', className: 'invisible' },
+                                            ],
+                                        },
                                         // MetaTrader
                                         { text: it.L('MetaTrader'),  href: it.url_for('user/metatrader'),                  className: 'invisible mt-show' },
                                         { text: it.L('Cashier'),     href: it.url_for('cashier'),                          className: 'invisible mt-show' },
