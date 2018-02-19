@@ -169,7 +169,7 @@ const Header = () => (
                                         <Account />
                                         <ul>
                                             <div className='login-id-list'></div>
-                                            <a className='link invisible' id='user_menu_metatrader' href={it.url_for('user/metatrader')}>
+                                            <a className='link ja-hide invisible' id='user_menu_metatrader' href={it.url_for('user/metatrader')}>
                                                 <li className='topMenuMetaTrader'>{it.L('MetaTrader')}</li>
                                             </a>
                                             <a className='link ja-hide' id='user_accounts' href={it.url_for('user/accounts')}>

@@ -133,9 +133,8 @@ const Header = (() => {
 
     const metatraderMenuItemVisibility = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-            if (MetaTrader.isEligible()) {
+            if (MetaTrader.isEligible() && !jpClient()) {
                 getElementById('user_menu_metatrader').setVisibility(1);
-                getElementById('topMenuMetaTrader').setVisibility(1);
             }
         });
     };
