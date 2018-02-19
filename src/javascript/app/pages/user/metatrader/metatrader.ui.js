@@ -93,7 +93,7 @@ const MetaTraderUI = (() => {
     const setAccountType = (acc_type, should_set_account) => {
         if ($mt5_account.attr('value') !== acc_type) {
             Client.set('mt5_account', acc_type);
-            $mt5_account.attr('value', acc_type).html(`${accounts_info[acc_type].title} (${accounts_info[acc_type].info.login})`).removeClass('empty');
+            $mt5_account.attr('value', acc_type).removeClass('empty');
             $list.find('.acc-name').removeClass('selected');
             $list.find(`[value="${acc_type}"]`).addClass('selected');
             $action.setVisibility(0);
@@ -113,6 +113,7 @@ const MetaTraderUI = (() => {
         const $acc_item = $list.find(`[value="${acc_type}"]`);
         $acc_item.find('.mt-type').text(accounts_info[acc_type].title.replace(/(demo|real)\s/i, ''));
         if (accounts_info[acc_type].info) {
+            $mt5_account.html(`${accounts_info[acc_type].title} (${accounts_info[acc_type].info.login})`);
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.login})`);
             $acc_item.setVisibility(1);
             if (/demo/.test(accounts_info[acc_type].account_type)) {
