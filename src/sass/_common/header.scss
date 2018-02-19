@@ -82,6 +82,7 @@ body #topbar, .landing_page-content {
                             padding: 10px 30px;
                             display: block;
                             height: auto;
+                            max-width: none;
 
                             &:hover {
                                 opacity: 1;
