@@ -235,6 +235,9 @@ const PersonalDetails = (() => {
                     is_for_new_account = false;
                     BinaryPjax.loadPreviousUrl();
                 }
+                if (is_virtual && response.echo_req.residence) {
+                    window.location.reload(); // reload page if we are setting residence
+                }
             });
         }
         showFormMessage(is_error ?
@@ -284,7 +287,7 @@ const PersonalDetails = (() => {
             } else {
                 $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
                 const $residence = $('#residence');
-                $options_with_disabled.prepend($('<option/>', { text: localize('Please select a value'), value: '' }));
+                $options_with_disabled.prepend($('<option/>', { text: localize('Please select a country'), value: '' }));
                 $residence.html($options_with_disabled.html());
                 initFormManager();
             }
