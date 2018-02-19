@@ -185,6 +185,7 @@ const texts = [
     'Your settings have been updated successfully.',
     'Female',
     'Male',
+    'Please select a country',
     'Please confirm that all the information above is true and complete.',
 
     // home and virtual account opening page
@@ -349,6 +350,7 @@ const texts = [
     'Sorry, your account is not authorised for any further contract purchases.',
     'Lots',
     'Payout per lot = 1,000',
+    'This page is not available in the selected language.',
 
     // digit_info
     'Select market',
@@ -521,6 +523,8 @@ const texts = [
     'Demo Accounts',
     'Real-Money Accounts',
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
+    'for MT5 Account',
+    '[_1] Account [_2]',
 
     // account_transfer
     'Min',

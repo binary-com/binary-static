@@ -1,34 +1,18 @@
 import React from 'react';
-import Title from '../_common/components/title.jsx';
-import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
-import Favicons from '../_common/includes/favicons.jsx';
+import Layout from './_common/layout.jsx';
 
 const BinaryJapan = () => (
-    <html>
-        <head>
-            <AntiClickjack />
-
-            <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
-            <meta httpEquiv='Content-Language' content={it.language} />
-            <meta name='description' content={`${it.broker_name} gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities.`} />
-            <meta name='keywords' content='binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading' />
-            <meta name='author' content={it.broker_name} />
-            <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-            <meta name='dcterms.rightsHolder' content={it.broker_name} />
-            <meta name='dcterms.rights' content={it.broker_name} />
-            <meta property='og:title' content={it.broker_name} />
-            <meta property='og:type' content='website' />
-            <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
-
-            <Title />
-
-            <Favicons />
-
-            <link href={`${it.url_for('css/japan.css')}?${it.static_hash}`} rel='stylesheet' />
-            <link href={`https://style.binary.com/binary.css?${it.static_hash}`} rel='stylesheet' />
-        </head>
-
-        <body>
+    <Layout
+        css_files={[
+            it.url_for('css/japan.css'),
+            'https://style.binary.com/binary.css',
+        ]}
+        js_files={[
+            'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js',
+            it.url_for('js/landing_pages/common.js'),
+            it.url_for('js/landing_pages/japan.js'),
+        ]}
+    >
         <div className='navbar-fixed-top' role='navigation' id='navigation'>
             <div className='container'>
                 <div className='navbar-header gr-row'>
@@ -232,14 +216,14 @@ const BinaryJapan = () => (
             </div>
             <div className='container'>
                 <div className='gr-row gr-row-align-center gr-row-align-bottom'>
-                    <div className='gr-4 gr-10-m center-text'>
+                    <div className='gr-4 gr-6-p gr-10-m center-text'>
                         <div className='bg bg-bubble-box'>
                             <h1>{it.L('{JAPAN ONLY}High speed execution')}</h1>
                         </div>
                         <img className='responsive' src={it.url_for('images/japan/version1/bg-light-blue.svg')} />
                     </div>
-                    <div className='gr-4 gr-12-m'>
-                        <div className=''>
+                    <div className='gr-4 gr-6-p gr-12-m'>
+                        <div>
                             <h2 className='color-orange text-medium'>{it.L('{JAPAN ONLY}You can purchase a trade with one click')}</h2>
                             <p className='color-blue'>{it.L('{JAPAN ONLY}Just switch this button to prevent misoperation')}</p>
                             <img className='' src={it.url_for('images/japan/version1/lock-switch.svg')} />
@@ -605,13 +589,7 @@ const BinaryJapan = () => (
         </footer>
 
         <div id='affiliate_disclaimer_popup'></div>
-
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js'></script>
-        <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
-        <script src={`${it.url_for('js/landing_pages/japan.js')}?${it.static_hash}`}></script>
-        </body>
-    </html>
-
+    </Layout>
 );
 
 export default BinaryJapan;

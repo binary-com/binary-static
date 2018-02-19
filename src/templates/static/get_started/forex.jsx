@@ -159,7 +159,6 @@ const Forex = () => (
                             [{ text: 'USD/JPY' }, { text: it.L('US Dollar vs Japanese Yen')               }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                         ],
                     }} />
-                    <p className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
 
                     <HeaderSecondary header={it.L('Minor pairs')} />
                     <Table scroll data={{
@@ -191,7 +190,6 @@ const Forex = () => (
                             [{ text: 'USD/ZAR' }, { text: it.L('US Dollar vs South African Rand')           }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                         ],
                     }} />
-                    <p className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
 
                     <HeaderSecondary header={it.L('Exotic pairs')} />
                     <Table scroll data={{
@@ -217,7 +215,6 @@ const Forex = () => (
                         [{ text: 'USD/TRY' }, { text: it.L('US Dollar vs Turkish Lira')               }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                         ],
                     }} />
-                    <p className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the contract specifications table')} />
                     <p>{it.L('The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>.')}</p>

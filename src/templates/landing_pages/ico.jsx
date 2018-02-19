@@ -1,8 +1,6 @@
 import React from 'react';
+import Layout from './_common/layout.jsx';
 import Loading from '../_common/components/loading.jsx';
-import Title from '../_common/components/title.jsx';
-import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
-import Favicons from '../_common/includes/favicons.jsx';
 import Gtm from '../_common/includes/gtm.jsx';
 
 const Ico = () => {
@@ -53,31 +51,19 @@ const Ico = () => {
     ];
 
     return (
-        <html>
-            <head>
-                <AntiClickjack />
-                <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
-                <meta httpEquiv='Content-Language' content={it.language} />
-                <meta name='description' content={` ${it.L('[_1] ICO, Invest in the world\'s premier platform for binary options trading', it.broker_name)}`} />
-                <meta name='keywords' content={` ${it.L('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading')}`} />
-                <meta name='author' content={it.broker_name} />
-                <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-                <meta name='dcterms.rightsHolder' content={it.broker_name} />
-                <meta name='dcterms.rights' content={it.broker_name} />
-                <meta property='og:title' content={it.broker_name} />
-                <meta property='og:type' content='website' />
-                <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
-
-                <Title />
-
-                <Favicons />
-
-                <link href={`${it.url_for('css/ico.css')}?${it.static_hash}`} rel='stylesheet' />
-                <link href={`https://style.binary.com/binary.css?${it.static_hash}`} rel='stylesheet' />
-                <link href='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/tiny-slider.css' rel='stylesheet' />
-            </head>
-
-            <body>
+        <Layout
+            meta_description={it.L('[_1] ICO, Invest in the world\'s premier platform for binary options trading', it.broker_name)}
+            css_files={[
+                it.url_for('css/ico.css'),
+                'https://style.binary.com/binary.css',
+                'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/tiny-slider.css',
+            ]}
+            js_files={[
+                'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js',
+                it.url_for('js/landing_pages/common.js'),
+                it.url_for('js/landing_pages/ico.js'),
+            ]}
+        >
             <Gtm />
             <div className='navbar-fixed-top' role='navigation' id='navigation'>
                 <div className='navbar-header'>
@@ -990,12 +976,9 @@ const Ico = () => {
             <div id='ico-bottom-banner' className='gr-hide gr-show-m gr-12-m invisible' data-url={it.url_for('user/ico-subscribe')}>
                 <p className='center-text'>{it.L('The [_1] ICO is now live. Participate now!', it.broker_name)}</p>
             </div>
+
             {/* [if (lt IE 9)]><script src='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.helper.ie8.js'></script><![endif] */}
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.2.4/min/tiny-slider.js'></script>
-            <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
-            <script src={`${it.url_for('js/landing_pages/ico.js')}?${it.static_hash}`}></script>
-            </body>
-        </html>
+        </Layout>
     );
 };
 
