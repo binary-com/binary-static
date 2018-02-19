@@ -206,6 +206,26 @@ class DataTable extends React.Component {
         );
     }
 
+    renderRow(transaction, id) {
+        return (
+            <tr className='table-row' key={id}>
+                {this.props.columns.map(({ dataIndex }) => (
+                    <td className={dataIndex} key={`${dataIndex}-${id}`}>
+                        {transaction[dataIndex]}
+                    </td>
+                ))}
+            </tr>
+        );
+    }
+
+    renderBodyRows() {
+        return this.state.displayData.map((transaction, id) => this.renderRow(transaction, id));
+    }
+
+    renderHeaders() {
+        return this.props.columns.map(col => <th key={col.dataIndex}>{col.title}</th>);
+    }
+
     render() {
         const { dataSource, columns, pagination, pageSize } = this.props;
         const { displayData } = this.state;
@@ -215,20 +235,12 @@ class DataTable extends React.Component {
                 <table className='table'>
                     <thead className='table-thead'>
                         <tr className='table-row'>
-                            {columns.map(col => (
-                                <th key={col.dataIndex}>{col.title}</th>
-                            ))}
+                            {this.renderHeaders()}
                         </tr>
                     </thead>
 
                     <tbody className='table-tbody'>
-                        {displayData.map((obj, id) => (
-                            <tr className='table-row' key={id}>
-                                {columns.map(({ dataIndex }) => (
-                                    <td key={dataIndex}>{obj[dataIndex]}</td>
-                                ))}
-                            </tr>
-                        ))}
+                        {this.renderBodyRows()}
                     </tbody>
                 </table>
 
@@ -280,7 +292,7 @@ class StatementDataTable extends React.PureComponent {
         const balance    = parseFloat(statement.balance_after);
         const is_ico_bid = /binaryico/i.test(statement.shortcode);
 
-        let action = toTitleCase(statement.action_type);
+        let action = localize(toTitleCase(statement.action_type));
         if (is_ico_bid) {
             action = /buy/i.test(statement.action_type) ? localize('Bid') : localize('Closed Bid');
         }
@@ -292,7 +304,7 @@ class StatementDataTable extends React.PureComponent {
             payout : isNaN(payout) || is_ico_bid ? '-' : formatMoney(currency, payout, !jp_client),
             amount : isNaN(amount) ? '-' : formatMoney(currency, amount, !jp_client),
             balance: isNaN(balance) ? '-' : formatMoney(currency, balance, !jp_client),
-            desc   : statement.longcode.replace(/\n/g, '<br />'),
+            desc   : localize(statement.longcode.replace(/\n/g, '<br />')),
             id     : statement.contract_id,
             app_id : statement.app_id,
         };
