@@ -10,6 +10,8 @@ import Test from './components/test.jsx';
 import Purchase from './components/purchase.jsx';
 import { connect } from './store/connect';
 
+import DataTable, { transactions, statement_columns } from './components/data_table.jsx';
+
 class TradeApp extends React.Component {
     componentDidMount() {
         this.props.onMounted();
@@ -40,6 +42,16 @@ class TradeApp extends React.Component {
                     <Amount />
 
                     <Purchase />
+                </div>
+
+                <div className='container'>
+                    <div className='gr-row gr-padding-20'>
+                        <div className='gr-12'>
+                            <h2 className='center-text'>Data Table</h2>
+
+                            <DataTable dataSource={transactions} columns={statement_columns} pagination pageSize={3} />
+                        </div>
+                    </div>
                 </div>
             </React.Fragment>
         );

@@ -1,4 +1,11 @@
 import React from 'react';
+import moment from 'moment';
+import BinarySocket from '../../../../app/base/socket';
+import Client from '../../../../app/base/client';
+import { jpClient } from '../../../../app/common/country_base';
+import { formatMoney } from '../../../../app/common/currency';
+import { localize } from '../../../../_common/localize';
+import { toTitleCase } from '../../../../_common/string_util';
 
 class Pagination extends React.PureComponent {
     constructor(props) {
@@ -22,13 +29,11 @@ class Pagination extends React.PureComponent {
     handleChange(newPage) {
         if (newPage === this.state.current) return;
 
-        const { pageSize } = this.props;
-
         this.setState({
             current: newPage
         });
 
-        this.props.onChange(newPage, pageSize);
+        this.props.onChange(newPage);
     }
 
     calcNumOfPages() {
@@ -178,7 +183,7 @@ class Pagination extends React.PureComponent {
 Pagination.defaultProps = {
     total: 0,
     pageSize: 10,
-    onChange: (page, pageSize) => {console.log(page, pageSize)}
+    onChange: (page) => {console.log(page)}
 };
 
 
@@ -196,7 +201,17 @@ class DataTable extends React.Component {
         }
     }
 
-    handlePageChange(page, pageSize) {
+    componentWillReceiveProps(nextProps) {
+        const { dataSource, pageSize } = nextProps;
+
+        this.setState({
+            displayData: dataSource.slice(0, pageSize),
+            page: 1
+        })
+    }
+
+    handlePageChange(page) {
+        const { pageSize } = this.props;
         const startId = (page - 1) * pageSize;
         const endId = startId + pageSize;
 
@@ -253,4 +268,148 @@ DataTable.defaultProps = {
     pagination: true
 };
 
-export default DataTable;
+class StatementDataTable extends React.PureComponent {
+    constructor(props) {
+        super(props);
+
+        this.getNextBatch = this.getNextBatch.bind(this);
+
+        const columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'];
+        const header = [
+            localize('Date'),
+            localize('Ref.'),
+            localize('Potential Payout'),
+            localize('Action'),
+            localize('Description'),
+            localize('Credit/Debit'),
+            localize('Balance'),
+        ];
+
+        this.state = {
+            dataSource: [],
+            columns: columns.map((col_id, i) => {
+                return {
+                    title: header[i],
+                    dataIndex: col_id
+                };
+            })
+        };
+    }
+
+    getStatementData(statement, currency, jp_client) {
+        const date_obj   = new Date(statement.transaction_time * 1000);
+        const moment_obj = moment.utc(date_obj);
+        const date_str   = moment_obj.format('YYYY-MM-DD');
+        const time_str   = `${moment_obj.format('HH:mm:ss')} GMT`;
+        const payout     = parseFloat(statement.payout);
+        const amount     = parseFloat(statement.amount);
+        const balance    = parseFloat(statement.balance_after);
+        const is_ico_bid = /binaryico/i.test(statement.shortcode);
+
+        let action = toTitleCase(statement.action_type);
+        if (is_ico_bid) {
+            action = /buy/i.test(statement.action_type) ? localize('Bid') : localize('Closed Bid');
+        }
+
+        return {
+            action,
+            date   : jp_client ? toJapanTimeIfNeeded(+statement.transaction_time) : `${date_str}\n${time_str}`,
+            ref    : statement.transaction_id,
+            payout : isNaN(payout) || is_ico_bid ? '-' : formatMoney(currency, payout, !jp_client),
+            amount : isNaN(amount) ? '-' : formatMoney(currency, amount, !jp_client),
+            balance: isNaN(balance) ? '-' : formatMoney(currency, balance, !jp_client),
+            desc   : statement.longcode.replace(/\n/g, '<br />'),
+            id     : statement.contract_id,
+            app_id : statement.app_id,
+        };
+    }
+
+    componentDidMount() {
+        // BinarySocket.send({ oauth_apps: 1 }).then((response) => {
+        //     console.log('oauth response', response);
+        // });
+        this.getNextBatch();
+    }
+
+    getNextBatch() {
+        const batch_size = 200;
+        const req = {
+            statement: 1,
+            description: 1,
+            limit: batch_size,
+            offset: this.state.dataSource.length
+        };
+
+        const currency = Client.get('currency');
+        const jp_client = jpClient();
+
+        BinarySocket.send(req).then((response) => {
+            const formattedTransactions = response.statement.transactions
+                .map(transaction => this.getStatementData(transaction, currency, jp_client));
+
+            this.setState({
+                dataSource: [...this.state.dataSource, ...formattedTransactions]
+            })
+        });
+    }
+
+    render() {
+        return (
+            <DataTable
+                {...this.props}
+                dataSource={this.state.dataSource}
+                columns={this.state.columns}
+                onLastPage={this.getNextBatch}
+            />
+        );
+    }
+}
+
+export default StatementDataTable;
+
+
+// REMOVE later:
+// generate dummy data for the DataTable
+export const transactions = Array(150).fill(0).map((_, i) => {
+    return {
+        balance_after: 10150.1300,
+        transaction_id: (10867502908 - i),
+        reference_id: (45143958928 - i),
+        transaction_time: (1441175849 - i * 100),
+        action_type: (i % 2 ? 'Sell' : 'Buy'),
+        amount: -83.2300,
+        longcode: 'Win payout if the last digit of Volatility 25 Index is 7 after 5 ticks.',
+        payout: 90.91
+    };
+});
+
+export const statement_columns = [
+    {
+        title: 'Date',
+        dataIndex: 'transaction_time'
+    },
+    {
+        title: 'Ref.',
+        dataIndex: 'reference_id'
+    },
+    {
+        title: 'Potential payout',
+        dataIndex: 'payout'
+    },
+    {
+        title: 'Action',
+        dataIndex: 'action_type'
+    },
+    {
+        title: 'Description',
+        dataIndex: 'longcode'
+    },
+    {
+        title: 'Credit/Debit',
+        dataIndex: 'amount'
+    },
+    {
+        title: 'Balance (USD)',
+        dataIndex: 'balance_after'
+    }
+];
