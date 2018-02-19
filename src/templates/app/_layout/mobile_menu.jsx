@@ -32,16 +32,9 @@ const MobileMenu = () => (
                         { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
                     ]}
                 />
-                <Li
-                    text={it.L('Settings')}
-                    href='javascript:;'
-                    className='ja-hide mt-hide client_logged_in invisible'
-                    subitems={[
-                        { text: it.L('Profile'),           href: it.url_for('user/settingsws') },
-                        { text: it.L('Security & Limits'), href: it.url_for('user/securityws') },
-                        { text: it.L('Payment Agent'),     href: it.url_for('paymentagent/transferws'), id: 'topMenuPaymentAgent', className: 'invisible' },
-                    ]}
-                />
+                <Li text={it.L('Profile')}            href={it.url_for('user/settingsws')}         className='ja-hide mt-hide client_logged_in invisible' />
+                <Li text={it.L('Security & Limits')}  href={it.url_for('user/securityws')}         className='ja-hide mt-hide client_logged_in invisible' />
+                <Li text={it.L('Payment Agent')}      href={it.url_for('paymentagent/transferws')} className='invisible' id='topMenuPaymentAgent' />
                 {/* Japan */}
                 <Li text={it.L('Trade')}        href={it.url_for('multi_barriers_trading')} className='ja-show mt-hide client_logged_in invisible' />
                 <Li text={it.L('Portfolio')}    href={it.url_for('user/portfoliows')}       className='ja-show mt-hide client_logged_in invisible' />
@@ -56,16 +49,9 @@ const MobileMenu = () => (
                         { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws')},
                     ]}
                 />
-                <Li
-                    text={it.L('Settings')}
-                    href='javascript:;'
-                    className='ja-show mt-hide client_logged_in invisible'
-                    subitems={[
-                        { text: it.L('Profile'),           href: it.url_for('user/settingsws') },
-                        { text: it.L('Security & Limits'), href: it.url_for('user/securityws') },
-                        { text: it.L('Payment Agent'),     href: it.url_for('paymentagent/transferws'), id: 'topMenuPaymentAgent', className: 'invisible' },
-                    ]}
-                />
+                <Li text={it.L('Profile')}            href={it.url_for('user/settingsws')}         className='ja-show mt-hide client_logged_in invisible' />
+                <Li text={it.L('Security & Limits')}  href={it.url_for('user/securityws')}         className='ja-show mt-hide client_logged_in invisible' />
+                <Li text={it.L('Payment Agent')}      href={it.url_for('paymentagent/transferws')} className='invisible' id='topMenuPaymentAgent' />
                 {/* MetaTrader */}
                 <Li text={it.L('MetaTrader')}  href={it.url_for('user/metatrader')}                  className='invisible mt-show' />
                 <Li text={it.L('Cashier')}     href={it.url_for('cashier')}                          className='invisible mt-show' />
