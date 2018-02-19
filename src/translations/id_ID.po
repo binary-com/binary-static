@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-18 20:10-0500\n"
+"PO-Revision-Date: 2018-02-19 04:51-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -101,6 +101,9 @@ msgstr "Akademi %1"
 
 msgid "%1 Account"
 msgstr "Akun %1"
+
+msgid "%1 Account %2"
+msgstr ""
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Syarat dan Ketentuan Program Affiliasi %1"
@@ -361,7 +364,7 @@ msgid "%1 provides you best execution by utilising a smart aggregation method wh
 msgstr "%1 menyediakan eksekusi terbaik dengan memanfaatkan metode agregasi cerdas ketika mengelola pesanan yang masuk. Metode agregasi cerdas bekerja dengan:"
 
 msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via email or phone. Available limits are:"
-msgstr "%1 memiliki fasilitas untuk pengecualian diri baik itu untuk mengecualikan-diri Anda atau <a href='%2'>menentukan batasan aktifitas trading Anda</a> pada website ini. Anda juga dapat <a href='%3'>menghubungi kami</a> untuk menyampaikan batasan yang Anda inginkan melalui email atau telepon. Batasan yang tersedia adalah sebagai berikut:"
+msgstr "%1 memiliki fasilitas untuk pengecualian diri baik itu untuk mengecualikan-diri Anda atau <a href='%2'>menentukan batasan aktivitas trading Anda</a> pada website ini. Anda juga dapat <a href='%3'>menghubungi kami</a> untuk menyampaikan batasan yang Anda inginkan melalui email atau telepon. Batasan yang tersedia adalah sebagai berikut:"
 
 msgid "%1 reaches $2 billion turnover since starting in 1999"
 msgstr "%1 mencapai $2 milyar omset sejak tahun 1999"
@@ -494,9 +497,6 @@ msgstr "* Bebas Pajak: Keuntungan trading pada umumnya adalah bebas pajak di ban
 
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Semua percakapan direkam untuk pelatihan dan pemantauan"
-
-msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr "*Angka angka berikut bersifat indikatif, silahkan verifikasi pada platform trading MT5 kami."
 
 msgid "0-1 year"
 msgstr "0-1 tahun"
@@ -921,8 +921,8 @@ msgstr "Saldo akun:"
 msgid "Account balance: "
 msgstr "Saldo akun Anda: "
 
-msgid "Account comparison*"
-msgstr "Perbandingan akun*"
+msgid "Account comparison"
+msgstr ""
 
 msgid "Account currency"
 msgstr "Mata uang akun"
@@ -2719,7 +2719,7 @@ msgid "Cookies"
 msgstr "Cookies"
 
 msgid "Coordinate business-development activities and generate high-quality partnership leads"
-msgstr "Mengkoordinir aktifitas pengembangan bisnis dan menghasilkan mitra usaha yang berkualitas"
+msgstr "Mengkoordinir aktivitas pengembangan bisnis dan menghasilkan mitra usaha yang berkualitas"
 
 msgid "Copyright"
 msgstr "Hak Cipta"
@@ -3023,9 +3023,6 @@ msgstr "Depositkan serendah USD 5 untuk memulai trading."
 
 msgid "Deposit funds and begin trading"
 msgstr "Mendeposit dana dan mulai bertrading"
-
-msgid "Deposit funds into your MT5 account"
-msgstr "Deposit dana kedalam akun MT5"
 
 msgid "Deposit or withdraw below"
 msgstr "Deposit atau withdraw di bawah ini"
@@ -6264,9 +6261,6 @@ msgstr "Catatan Login"
 msgid "Login ID"
 msgstr "Login ID"
 
-msgid "Login ID:"
-msgstr "Login ID:"
-
 msgid "Login time:"
 msgstr "Waktu login:"
 
@@ -6335,6 +6329,9 @@ msgstr "Penghargaan MENA FFXPO"
 
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "Broker MT4 dan MT5 dapat menghubungi langsung likuiditas pada jembatan One Zero dengan menggunakan konektor built-in."
+
+msgid "MT5 Account:"
+msgstr ""
 
 msgid "MT5 Demo"
 msgstr "MT5 Demo"
@@ -6768,8 +6765,8 @@ msgstr "Manfaat lainnya"
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Lebih khususnya, ketika kami bertrading Opsi Binary dengan Anda (untuk setiap \"Kontrak\"), kami memiliki kewajiban untuk menyediakan 'eksekusi terbaik'. Eksekusi terbaik berarti kami harus mengambil langkah yang wajar untuk mendapatkan hasil terbaik ketika menjalankan order Anda. Dokumen ini memberikan ringkasan kebijakan eksekusi terbaik."
 
-msgid "Most brokers require minimum deposit. %1 doesn't require any minimum deposit."
-msgstr "Kebanyakan broker membutuhkan deposit minimal. %1 tidak memerlukan minimal deposit."
+msgid "Most brokers require a minimum deposit. %1 doesn't require any minimum deposit."
+msgstr ""
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
 msgstr "Kebanyakan broker biasanya mengenakan komisi untuk tiap trade yang Anda tempatkan. %1 saat ini tidak mengenakan biaya komisi apapun di semua jenis akun, kecuali mata uang crypto."
@@ -7755,6 +7752,9 @@ msgstr "Masukkan tanggal dengan format HH BBB, TTTT JJ:mm (waktu lokal)."
 msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Masukkan tanggal dalam format HH BBB, TTTT."
 
+msgid "Please enter your full address to avoid authentication delays."
+msgstr ""
+
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Silahkan isi Login ID dan jumlah yang ingin Anda transfer ke klien Anda dalam formulir di bawah ini:"
 
@@ -7804,7 +7804,7 @@ msgid "Please refer to the following commission plan."
 msgstr "Silakan lihat rencana komisi berikut ini."
 
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
-msgstr "Mohon diingat setiap waktu bahwa trading opsi binary dapat menjadi aktifitas yang menyenangkan, tetapi kami memiliki kewajiban moral untuk mengingatkan Anda mengenai risiko yang mungkin Anda hadapi. Trading opsi dapat menyebabkan ketagihan sama seperti aktifitas lain yang dilakukan melebihi batas. Kami menyarankan Anda untuk melakukan pengecekan jika berisiko untuk menghindari ketagihan dimana penting untuk mengikuti panduan dan prinsip dasar."
+msgstr "Mohon diingat setiap waktu bahwa trading opsi binary dapat menjadi aktivitas yang menyenangkan, tetapi kami memiliki kewajiban moral untuk mengingatkan Anda mengenai risiko yang mungkin Anda hadapi. Trading opsi dapat menyebabkan ketagihan sama seperti aktivitas lain yang dilakukan melebihi batas. Kami menyarankan Anda untuk melakukan pengecekan jika berisiko untuk menghindari ketagihan dimana penting untuk mengikuti panduan dan prinsip dasar."
 
 msgid "Please see our <a href=%1>terms and conditions</a> for details of payout qualifications."
 msgstr "Silahkan lihat <a href=%1>syarat dan ketentuan</a> untuk rincian kualifikasi hasil."
@@ -8638,7 +8638,7 @@ msgid "Security"
 msgstr "Keamanan"
 
 msgid "Security & Limits"
-msgstr "Keamanan & Batasan"
+msgstr "Keamanan & Batas"
 
 msgid "Security Disclaimer"
 msgstr "Keamanan Sangkalan"
@@ -8812,10 +8812,10 @@ msgid "Severability"
 msgstr "Keterpisahan"
 
 msgid "Sharp prices"
-msgstr "Harga tajam"
+msgstr "Harga akurat"
 
 msgid "Sharp, benchmarked prices"
-msgstr "Tajam, harga benchmark"
+msgstr "Akurat, harga benchmark"
 
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr "Pusat Penampungan Komunitas Belajar 3"
@@ -9827,7 +9827,7 @@ msgid "The company reserves the right to cancel/prohibit the use of this promoti
 msgstr "Perusahaan berhak melarang/membatalkan penggunaan promosi ini tanpa pemberitahuan kapan saja."
 
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr "Perusahaan berhak untuk membebankan biaya pada akun yang tidak aktif hingga USD/EUR/AUD/GBP25 atau untuk akun mata uang kripto, setara dengan USD25 yang dihitung sesuai dengan kurs terkini yang dipublikasikan oleh www.xe.com, atau penyedia data lain yang diakui, seperti pada tanggal pendebitan biaya, setiap 6 bulan bagi setiap akun Klien yang tidak memiliki transaksi yang tercatat selama lebih dari 12 bulan. Jika akun Klien didaftarkan pada Binary (Europe) Ltd. dan akun tidak memiliki aktifitas selama tiga puluh bulan, dan tidak dapat dihubungi, Perusahaan dapat melakukan pemindahan saldo. Klien perlu menghubungi helpdesk kami untuk mengaktifkan, menutup atau memblokir dan mengecualikan akun mereka."
+msgstr "Perusahaan berhak untuk membebankan biaya pada akun yang tidak aktif hingga USD/EUR/AUD/GBP25 atau untuk akun mata uang kripto, setara dengan USD25 yang dihitung sesuai dengan kurs terkini yang dipublikasikan oleh www.xe.com, atau penyedia data lain yang diakui, seperti pada tanggal pendebitan biaya, setiap 6 bulan bagi setiap akun Klien yang tidak memiliki transaksi yang tercatat selama lebih dari 12 bulan. Jika akun Klien didaftarkan pada Binary (Europe) Ltd. dan akun tidak memiliki aktivitas selama tiga puluh bulan, dan tidak dapat dihubungi, Perusahaan dapat melakukan pemindahan saldo. Klien perlu menghubungi helpdesk kami untuk mengaktifkan, menutup atau memblokir dan mengecualikan akun mereka."
 
 msgid "The content of this Information Memorandum has not been approved by an authorised person and such approval is, save where this Information Memorandum is directed at or issued to the types of person referred to above, required by Section 21 of the Act. Acquiring Tokens may expose an investor to a significant risk of losing all of the amount invested. Any person who is in any doubt about investing in the Company should consult an authorised person specialising in advising on such investments."
 msgstr "Isi dari Memorandum Informasi ini belum mendapat persetujuan dari pihak berwenang dan persetujuan tersebut adalah aman dimana Memorandum Informasi ini diarahkan atau dikeluarkan untuk jenis orang yang telah disebutkan di atas, yang diwajibkan oleh akta 21 dari undang-undang tersebut. Perolehan Token dapat mengekspos investor pada risiko signifikan kehilangan semua jumlah yang diinvestasikan. Setiap orang yang ragu berinvestasi di Perusahaan harus berkonsultasi dengan orang yang berwenang yang mengkhususkan diri untuk memberi saran mengenai investasi serupa."
@@ -10230,9 +10230,6 @@ msgstr "Materi ini tidak dapat disalin atau disebarkan untuk tujuan komersial at
 
 msgid "These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens."
 msgstr "Materi ini hanya dapat diterima oleh orang yang berhak (seseorang yang ditentukan oleh Perusahaan, atas kebijakannya sendiri, yang berhak menerima materi sebagaimana ditentukan oleh undang-undang dan peraturan yang berlaku, misalnya di yurisdiksi EEA, sesuai dengan pengecualian berdasarkan perintah Uni Eropa 2003/71/EC (sebagaimana telah diubah, termasuk dengan direktif 2010/73/EU), yang mencakup, namun tidak terbatas, pembebasan yang berkaitan dengan investor yang memenuhi syarat (\"Orang Yang Berhak\"). Jika Pihak Berhak tersebut ingin mengajukan bid untuk token maka pihak tersebut dapat melakukannya dengan mendaftar sebagai klien Binary.com dan memiliki akun Binary.com dimana Perusahaan akan dapat memverifikasi lebih lanjut kualifikasi sebagai Pihak Berhak. Pihak Berhak yang ingin melakukan pembelian token akan melakukan bidding. Perusahaan akan menyusun dan menilai biddingnya. Perusahaan dapat meminta agar bid tersebut dikonfirmasikan kembali sebelum dianggap sah untuk tujuan bid Perusahaan pada saat pelelangan. Pada lelang tersebut, Perusahaan akan mengajukan penawaran token, tawaran mana yang akan diterima (seperti yang sudah dijelaskan pada proses lelang pada material) dan pertimbangan untuk pembelian token tersebut akan diselesaikan dengan mengkreditkan pada akun Binary.com milik Pihak Berhak, yang membuktikan kontrak penjualan dan pembelian token masing-masing."
-
-msgid "These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr "Angka angka berikut bersifat indikatif, silahkan verifikasi pada platform trading MT5 kami."
 
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr "Berpikir bahwa suatu mata uang tertentu akan naik atau turun? Pelajari kapan Anda harus membeli (atau \"go long\") dan kapan harus menjual (atau \"go short\")."
@@ -10819,11 +10816,17 @@ msgstr "Transfer dana dari akun MetaTrader 5 kedalam akun opsi binary Anda."
 msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
 msgstr "Transfer dana dari akun opsi binary Anda kedalam akun MetaTrader 5 Anda."
 
+msgid "Transfer funds to your MT5 account"
+msgstr ""
+
 msgid "Transfer to"
 msgstr "Kirim ke"
 
 msgid "Transfer to Login ID"
 msgstr "Transfer ke Login ID"
+
+msgid "Transfer to MT5"
+msgstr ""
 
 msgid "Transfer to Payment Agent"
 msgstr "Penarikan Agen Pembayaran"
@@ -11115,6 +11118,9 @@ msgstr "Tagihan utilitas (listrik, air, gas, broadband dan telpon rumah)"
 
 msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
 msgstr "Token utilitas adalah token yang memberi Anda akses ke dalam jaringan atau aplikasi terdesentralisasi."
+
+msgid "Validate address"
+msgstr ""
 
 msgid "Variable from 0.9 pips"
 msgstr "Variabel dari 0,9 pip"
@@ -11453,7 +11459,7 @@ msgid "We reasonably consider that funds may be required to meet any Margin Requ
 msgstr "Kami akan menganggap dana Anda akan diperlukan untuk memenuhi Persyaratan Margin; dan/atau"
 
 msgid "We rebrand BetOnMarkets.com as <a target='_blank' href='%1'>www.%2</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients."
-msgstr "Kami merebrending BetOnMarkets.com sebagai <a target='_blank' href='%1'>www.%2</a>. Rebranding ini merupakan evolusi alami bagi platform kami berhubung terus berkembang secara kompetitif di dunia trading binary. Brand baru ini mencerminkan bisnis dasar yang ditawarkan dan tagline terbaru kami – Harga Tajam, Trading Pintar – mengkomunikasikan etos dan komitmen kepada Pelanggan kami."
+msgstr "Kami merebrending BetOnMarkets.com sebagai <a target='_blank' href='%1'>www.%2</a>. Rebranding ini merupakan evolusi alami bagi platform kami berhubung terus berkembang secara kompetitif di dunia trading binary. Brand baru ini mencerminkan bisnis dasar yang ditawarkan dan tagline terbaru kami – Harga Akurat, Trading Pintar – mengkomunikasikan etos dan komitmen kepada Pelanggan kami."
 
 msgid "We recognize the importance of protecting your personal and financial information."
 msgstr "Kami memahami betapa pentingnya menjaga informasi pribadi dan transaksi Anda."
@@ -11489,10 +11495,10 @@ msgid "We support hundreds of deposit and withdrawal options."
 msgstr "Kami mendukung ratusan pilihan deposit dan withdrawal."
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
-msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktifitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
+msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktivitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
-msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktifitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
+msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktivitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
 
 msgid "We want to keep improving our platform, so, it's in our interest to pay contributors fairly. If we don't, then you'll stop contributing pull requests, which will make this project self-defeating."
 msgstr "Kami ingin terus meningkatkan platform kami, kami berminat untuk membayar kontributor secara adil. Jika tidak, maka Anda akan berhenti memberikan kontribusi permintaan pull, yang akan membuat proyek ini tidak berjalan."
@@ -11943,6 +11949,9 @@ msgstr "Sehubungan dengan pelacakan referral Anda dalam mengakses %1 melalui lin
 
 msgid "Withdraw"
 msgstr "Pencairan"
+
+msgid "Withdraw from MT5"
+msgstr ""
 
 msgid "Withdraw funds from your MT5 account"
 msgstr "Menarik dana dari akun MT5 Anda"
@@ -12536,10 +12545,10 @@ msgid "Your Real Account shall be funded by transferring funds from your Binary 
 msgstr "Akun Riil Anda akan didanai dengan mentransfer dana dari Akun Riil Opsi Binary Anda, tergantung pada ketersediaan dan kecukupan dana pada Akun Riil Opsi Binary Anda. Transfer dari akun dengan nama lain atau pihak ketiga adalah tidak dibenarkan."
 
 msgid "Your account has no Login/Logout activity."
-msgstr "Akun Anda tidak memiliki aktifitas Login/Logout."
+msgstr "Akun Anda tidak memiliki aktivitas Login/Logout."
 
 msgid "Your account has no trading activity."
-msgstr "Akun Anda tidak memiliki aktifitas trading."
+msgstr "Akun Anda tidak memiliki aktivitas trading."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Akun Anda telah terbukti dan batasan penarikan Anda telah dihapuskan."
@@ -12555,6 +12564,9 @@ msgstr "Akun Anda tidak boleh digunakan sebagai fasilitas perbankan dan deposito
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Akun Anda sebaiknya tidak digunakan sebagai fasilitas perbankan dan deposit hanya dilakukan untuk melakukan pembelian kontrak. Perusahaan adalah bukan institusi bank. Klien tidak akan menerima bunga pada deposit. Jika Anda melakukan deposit berulang ulang dan penarikan tanpa melakukan pembelian kontrak, kami berhak untuk menutup akun Anda tanpa pemberitahuan sebelumnya, membebankan biaya bank yang terlibat sebelum menutup akun Anda."
+
+msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
+msgstr ""
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Permohonan Anda akan ditinjau oleh departemen compliance dan marketing kami. Setelah disetujui, kami akan mengaktifkan Anda di dalam daftar <a href='%1'>agen pembayaran</a>."
@@ -12768,6 +12780,9 @@ msgstr "secara wajar dan akurat menggambarkan layanannya kepada Klien;"
 
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 msgstr "mengikuti dan/atau melaksanakan dan/atau mematuhi semua arahan dan/atau kebijakan yang terkait dengan bisnis dan/atau prosedur Perusahaan sebagaimana telah diubah dan/atau diundangkan dan/atau diganti dari waktu ke waktu;"
+
+msgid "for MT5 Account"
+msgstr ""
 
 msgid "for exclusive updates on the ICO."
 msgstr "untuk update eksklusif mengenai ICO."
