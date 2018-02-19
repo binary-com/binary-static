@@ -230,7 +230,7 @@ const MBTradingEvents = (() => {
             }
         };
         if ($trading_status.length) {
-            setTradingStatus(0);
+            setTradingStatus(!jpClient());
             $trading_status.on('click', (e) => {
                 const status = e.target.getAttribute('id');
                 MBDefaults.set('disable_trading', status === 'disallow');

@@ -71,38 +71,7 @@ const MBTrading = () => (
 
                         <div id='notifications_wrapper' className='gr-row'></div>
 
-                        <div className='ja-hide' id='panel'>
-                            <div className='gr-row selection_wrapper less-margin-top'>
-                                <div className='trade_form gr-7 gr-6-m gr-no-gutter-left'>
-                                    <FormItem id='underlying' className='gr-12' class_current='gr-row' class_list='gr-row' />
-                                </div>
-                                <div className='gr-5 gr-6-m'>
-                                    <div className='gr-row'>
-                                        <div className='trade_form gr-4 align-self-center gr-no-gutter'>
-                                            <div id='payout_amount'>{it.L('Payout')}</div>
-                                        </div>
-                                        <div className='trade_form gr-8 gr-no-gutter'>
-                                            <div className='gr-row'>
-                                                <FormItem id='currency' className='gr-3 gr-no-gutter' class_current='gr-row' class_list='gr-3 gr-no-gutter' />
-                                                <input className='gr-9 center-text' type='text' id='payout' maxLength='15' />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='gr-row selection_wrapper'>
-                                <div className='gr-12 gr-no-gutter'>
-                                    <div className='trade_form'>
-                                        <FormItem id='period' class_list='gr-12' />
-                                    </div>
-                                    <div className='trade_form'>
-                                        <FormItem id='category' class_list='gr-12' />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='invisible ja-show' id='ja-panel'>
+                        <div id='panel'>
                             <div className='gr-row selection_wrapper'>
                                 <div id='trading_status' className='gr-4 gr-no-gutter-left'>
                                     <div className='gr-row'>
@@ -125,9 +94,16 @@ const MBTrading = () => (
 
                             <div className='gr-row selection_wrapper'>
                                 <div className='trade_form gr-4 gr-no-gutter-left'>
-                                    <div id='currency_wrapper'>
+                                    <div className='invisible ja-show' id='currency_wrapper'>
                                         <FormItem id='currency' />
                                         <FormItem id='payout' exclude_list class_list='gr-12' />
+                                    </div>
+                                    <div className='ja-hide gr-12'>
+                                        <div id='payout_amount'>{it.L('Payout')}</div>
+                                        <div className='gr-row'>
+                                            <FormItem id='currency' className='gr-3 gr-no-gutter' class_current='gr-row' class_list='gr-3 gr-no-gutter' />
+                                            <input className='gr-9 center-text' type='text' id='payout' maxLength='15' />
+                                        </div>
                                     </div>
                                 </div>
                                 <div className='gr-8 gr-no-gutter-left'>
