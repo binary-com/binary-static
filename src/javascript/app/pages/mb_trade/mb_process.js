@@ -243,6 +243,7 @@ const MBProcess = (() => {
             date_expiry   : durations[1],
             contract_type : [],
             barriers      : [],
+            product_type  : 'multi_barrier',
 
             trading_period_start: durations[0],
         };
