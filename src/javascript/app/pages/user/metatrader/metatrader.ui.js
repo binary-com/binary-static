@@ -4,6 +4,7 @@ const formatMoney      = require('../../../common/currency').formatMoney;
 const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
+const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 const template         = require('../../../../_common/utility').template;
 
@@ -94,6 +95,7 @@ const MetaTraderUI = (() => {
         if ($mt5_account.attr('value') !== acc_type) {
             Client.set('mt5_account', acc_type);
             $mt5_account.attr('value', acc_type).removeClass('empty');
+            setMTAccountText();
             $list.find('.acc-name').removeClass('selected');
             $list.find(`[value="${acc_type}"]`).addClass('selected');
             $action.setVisibility(0);
@@ -109,11 +111,22 @@ const MetaTraderUI = (() => {
         setCurrentAccount(acc_type);
     };
 
+    const setMTAccountText = () => {
+        const acc_type = $mt5_account.attr('value');
+        if (acc_type) {
+            const login = getPropertyValue(accounts_info[acc_type], ['info', 'login']);
+            const title = `${accounts_info[acc_type].title}${ login ? ` (${login})` : '' }`;
+            if (!new RegExp(title).test($mt5_account.text())) {
+                $mt5_account.html(title);
+            }
+        }
+    };
+
     const updateListItem = (acc_type) => {
         const $acc_item = $list.find(`[value="${acc_type}"]`);
         $acc_item.find('.mt-type').text(accounts_info[acc_type].title.replace(/(demo|real)\s/i, ''));
         if (accounts_info[acc_type].info) {
-            $mt5_account.html(`${accounts_info[acc_type].title} (${accounts_info[acc_type].info.login})`);
+            setMTAccountText();
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.login})`);
             $acc_item.setVisibility(1);
             if (/demo/.test(accounts_info[acc_type].account_type)) {

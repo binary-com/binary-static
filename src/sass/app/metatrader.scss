@@ -19,6 +19,7 @@
     #account_selector {
         position: relative;
         cursor: pointer;
+        margin-bottom: 10px;
 
         #mt5_account, #accounts_list {
             border: 1px solid $COLOR_BLUE_SHADE;

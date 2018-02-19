@@ -70,7 +70,7 @@ const Metatrader = () => (
             <p id='page_msg' className='notice-msg center-text invisible'></p>
             <div id='mt_loading'><Loading /></div>
             <div id='mt_account_management' className='gr-row invisible'>
-                <div id='mt_left_panel' className='gr-9 gr-8-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
+                <div id='mt_left_panel' className='gr-9 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
                     <div id='account_details' className='mt-panel mt-container'>
                         <div className='gr-row'>
                             <div className='gr-grow'>
@@ -83,7 +83,7 @@ const Metatrader = () => (
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='gr-grow gr-no-gutter'>
+                                    <div className='gr-grow'>
                                         <a className='button button-secondary act_new_account' href='javascript:;'>
                                             <span id='new_account_icon'>{it.L('New Account')}</span>
                                         </a>
@@ -133,7 +133,7 @@ const Metatrader = () => (
                         </div>
                     </div>
                 </div>
-                <div id='mt_right_panel' className='gr-3 gr-4-t gr-12-p gr-12-m gr-no-gutter gr-gutter-left gr-no-gutter-p gr-no-gutter-m'>
+                <div id='mt_right_panel' className='gr-3 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-left gr-no-gutter-p gr-no-gutter-m'>
                     <div className='mt-panel'>
                         <div id='account_desc' className='mt-container border-bottom'></div>
                         <div className='mt-container'>
