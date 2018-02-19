@@ -1,12 +1,13 @@
 /* global google */
 const scriptjs           = require('scriptjs');
 const applyToAllElements = require('./utility').applyToAllElements;
+const createElement      = require('./utility').createElement;
 const Client             = require('../app/base/client');
 const localize           = require('../_common/localize').localize;
 
 const Geocoder = (() => {
-    let $btn_validate,
-        $error;
+    let el_btn_validate,
+        el_error;
     let validated = false;
 
     const init = (form_id) => {
@@ -31,24 +32,25 @@ const Geocoder = (() => {
             }
         });
 
-        $error = form.querySelector('#geocode_error');
+        el_error = form.querySelector('#geocode_error');
         applyToAllElements(`${addr_1}, ${addr_2}, ${city}, ${postcode}`, (element) => {
             element.addEventListener('keyup', () => {
-                if (validated && !$btn_validate) {
-                    $btn_validate           = document.createElement('BUTTON');
-                    $btn_validate.id        = 'geocode_validate';
-                    $btn_validate.classList = 'button-secondary';
-                    $btn_validate.appendChild(document.createTextNode(localize('Validate address')));
-                    $btn_validate.addEventListener('click', (e) => {
+                if (validated && !el_btn_validate) {
+                    el_btn_validate = createElement('button', {
+                        id   : 'geocode_validate',
+                        class: 'button-secondary',
+                        text : localize('Validate address'),
+                    });
+                    el_btn_validate.addEventListener('click', (e) => {
                         e.preventDefault();
                         validator(getAddress()).then(() => {
                             validated = true;
                         });
                     });
-                    $error.parentNode.appendChild($btn_validate);
+                    el_error.parentNode.appendChild(el_btn_validate);
                 }
-                if ($btn_validate) $btn_validate.setVisibility(1);
-                $error.setVisibility(0);
+                if (el_btn_validate) el_btn_validate.setVisibility(1);
+                el_error.setVisibility(0);
             });
         }, '', form);
 
@@ -84,11 +86,11 @@ const Geocoder = (() => {
 
     const handleResponse = (status) => {
         if (/ZERO_RESULTS|INVALID_REQUEST/.test(status)) {
-            $error.setVisibility(1);
-            if ($btn_validate) $btn_validate.setVisibility(0);
+            el_error.setVisibility(1);
+            if (el_btn_validate) el_btn_validate.setVisibility(0);
         } else {
-            $error.setVisibility(0);
-            if ($btn_validate) $btn_validate.setVisibility(0);
+            el_error.setVisibility(0);
+            if (el_btn_validate) el_btn_validate.setVisibility(0);
         }
     };
 
