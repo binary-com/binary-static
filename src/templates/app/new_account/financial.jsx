@@ -22,6 +22,7 @@ import {
     Tnc,
     TaxIdentificationNumberTerms,
     TaxInformationNote,
+    GeocodeResponse,
 } from '../../_common/components/forms_common_rows.jsx';
 
 const Financial = () => (
@@ -58,13 +59,15 @@ const Financial = () => (
                 />
             </Fieldset>
 
-            <Fieldset legend={it.L('Address')}>
+            <Fieldset id='address_form' legend={it.L('Address')}>
+                <p className='hint'>{it.L('Please enter your full address to avoid authentication delays.')}</p>
                 <AddressLine1 />
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
                 <AddressPostcode />
                 <Phone />
+                <GeocodeResponse />
             </Fieldset>
 
             <Fieldset legend={it.L('Security')} className='security'>

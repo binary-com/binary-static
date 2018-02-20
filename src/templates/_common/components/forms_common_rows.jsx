@@ -193,3 +193,14 @@ export const TaxInformationNote = ({ className }) => (
         <p>{it.L('Please note that we have the right and obligation not to accept the information provided by you if we know of a reason to believe that it is incorrect, inaccurate, or incomplete. In such cases, we will be asking you to clarify or correct the details provided in the CRS/FATCA questionnaire.')}</p>
     </div>
 );
+
+export const GeocodeResponse = () => (
+    <div className='gr-row'>
+        <div className='gr-12 gr-padding-10 center-text'>
+            <p id='geocode_error' className='notice-msg no-margin invisible'>
+                {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
+            </p>
+        </div>
+    </div>
+);
+
