@@ -43,7 +43,6 @@ const BinaryLoader = (() => {
 
     const beforeContentChange = () => {
         if (active_script) {
-            Page.onUnload();
             BinarySocket.removeOnDisconnect();
             if (typeof active_script.onUnload === 'function') {
                 active_script.onUnload();
@@ -68,6 +67,16 @@ const BinaryLoader = (() => {
                 applyToAllElements('.eu-hide', (el) => { el.setVisibility(1); });
             }
         });
+
+        if (Client.isLoggedIn()) {
+            if (!Client.hasCostaricaAccount()) {
+                applyToAllElements('.only-cr', (el) => { el.setVisibility(0); });
+                // Fix issue with tabs.
+                if (/get_started_tabs=lookback/.test(window.location.href)) {
+                    BinaryPjax.load(urlFor('get-started'));
+                }
+            }
+        }
 
         const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {

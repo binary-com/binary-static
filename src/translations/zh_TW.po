@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-20 00:34-0500\n"
+"PO-Revision-Date: 2018-02-20 04:38-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -483,6 +483,9 @@ msgstr "《Global Banking and Finance Review》頒發的「2012年最佳固定�
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "《 eGaming Review》頒發的「年度最佳金融投注運作商」獎項"
 
+msgid "(6,000 – 5,200) * 2 = $1600"
+msgstr ""
+
 msgid "(One) Touch trades"
 msgstr "一觸即付交易"
 
@@ -728,6 +731,9 @@ msgstr "超過15年以來保持領先地位的創新型二元期權交易平台"
 
 msgid "A list of payment methods you will accept from Clients"
 msgstr "您可接受之客戶付款方式列表"
+
+msgid "A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to \"look back\" over time to determine the payout."
+msgstr ""
 
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "母語為英語，口語、寫作皆非常流利"
@@ -2031,6 +2037,15 @@ msgstr "通過選擇被視為專業客戶, 我們將不會假定您擁有「專�
 msgid "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 msgstr "通過選擇被視為專業客戶, 我們將不會假定您擁有「專業客戶」一詞所定義的市場知識和經驗。我們將採取一切合理步驟, 確保您對此分類的請求符合上述標準, 包括但不限於以下內容的副本:"
 
+msgid "By purchasing the %1‘Close-Low’%2 contract, you’ll win the multiplier times the difference between the %1close%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Close’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1close%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Low’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "通過註冊應用軟體、網站或您所建立的產品或所提供服務（簡稱為「應用程式」），您確認已經閱讀、理解並同意遵守這些條款。"
 
@@ -2415,8 +2430,14 @@ msgstr "客戶的錢"
 msgid "Clients' trade allocations start from 0.01 lots"
 msgstr "客戶最低交易分配額為 0.01 手"
 
+msgid "Close"
+msgstr ""
+
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
 msgstr "以合理可用的平倉層次將所有或任何未平倉頭寸平倉；"
+
+msgid "Close-Low"
+msgstr ""
 
 msgid "Closed"
 msgstr "已收盤"
@@ -3999,6 +4020,9 @@ msgstr "例如，如果您想通過傳統經紀人以每單位 50 美元的價�
 msgid "For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction."
 msgstr "例如，如果您想通過傳統經紀人以每單位 50 美元的價格購入某資產100 單位，此交易您須支付 5,000 美元。"
 
+msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
+msgstr ""
+
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "例如，波動率指數的差價合約報價每點1美元。如果您以目前20,000 美元的賣出價格購入 1.0 股波動率 100 指數，然後以20,010 美元的買入價格出售，您的淨利潤計算方法如下︰"
 
@@ -4389,6 +4413,9 @@ msgstr "Hedging"
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr "以下是歐元/美元貨幣對和買賣價的例子："
 
+msgid "High"
+msgstr ""
+
 msgid "High Barrier"
 msgstr "高障礙"
 
@@ -4409,6 +4436,15 @@ msgstr "高頻率 （每秒 2 次跳動點）"
 
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "高度安全保障 - 每一個加密貨幣交易都透過先進的加密技術提供安全保障，因此偽造是幾乎不可能發生的"
+
+msgid "High, Low and Close"
+msgstr ""
+
+msgid "High-Close"
+msgstr ""
+
+msgid "High-Low"
+msgstr ""
 
 msgid "Higher"
 msgstr "高於"
@@ -4661,9 +4697,6 @@ msgstr "九、 報價"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "即 (20010 - 20000) x 1 x 1 = 10 美元"
-
-msgid "ICO Bids"
-msgstr "ICO出價"
 
 msgid "ICO is live, participate now!"
 msgstr "ICO 已經啟動, 立刻參與!"
@@ -6282,6 +6315,9 @@ msgstr "長期合作夥伴:"
 msgid "Long:"
 msgstr "長倉:"
 
+msgid "Lookbacks"
+msgstr ""
+
 msgid "Loss"
 msgstr "虧損"
 
@@ -6296,6 +6332,9 @@ msgstr "手單位"
 
 msgid "Lots"
 msgstr "手數"
+
+msgid "Low"
+msgstr ""
 
 msgid "Low Barrier"
 msgstr "低障礙"
@@ -6812,6 +6851,9 @@ msgstr "MetaTrader 5 (MT5) 的多個帳戶管理器 (MAM)"
 
 msgid "Multiple trading opportunities"
 msgstr "多重交易機會"
+
+msgid "Multiplier"
+msgstr ""
 
 msgid "Must be a clear, colour photo or scanned image"
 msgstr "必須是清晰, 彩色照片或掃描圖像"
@@ -7569,6 +7611,9 @@ msgstr "專利"
 msgid "Pay no commission on all metal contracts."
 msgstr "所有金屬合約不需付佣金費。"
 
+msgid "Pay-out"
+msgstr ""
+
 msgid "Payment Agent"
 msgstr "付款代理"
 
@@ -7604,6 +7649,9 @@ msgstr "上一月賺得的佣金在每月 15 號前後以公司和聯盟成員�
 
 msgid "Payments"
 msgstr "支付"
+
+msgid "Payoff"
+msgstr ""
 
 msgid "Payout"
 msgstr "賠付"
@@ -8820,9 +8868,6 @@ msgstr "精確基準報價"
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr "庇護所社區第3學習中心"
 
-msgid "Shop"
-msgstr "商店"
-
 msgid "Short"
 msgstr "短倉"
 
@@ -9416,6 +9461,24 @@ msgstr "%1網站受版權保護。網站所包含的各種材料（包括但不�
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "%1網站的靜態內容（CSS，Javascript）可在github以%2二進位靜態%3開源專案中使用。您是否想重新設定%1網站的面板設計，提高瀏覽器的相容性、網站的呈現速度或者Javascript效能？請分支處理專案並送上您所建議的代碼更改的提取要求。"
+
+msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
+msgstr ""
+
+msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
+msgstr ""
+
+msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
+msgstr ""
+
+msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1low%2 is the lowest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1start time%2 begins when the contract is processed by our servers."
+msgstr ""
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "二元期權交易的<strong>頂尖平台</strong>"
@@ -10899,6 +10962,9 @@ msgstr "MetaTrader 5 帳戶的類型"
 msgid "Types of Trades"
 msgstr "交易類型"
 
+msgid "Types of lookbacks"
+msgstr ""
+
 msgid "Types of trades"
 msgstr "交易類型"
 
@@ -11012,6 +11078,9 @@ msgstr "很遺憾，不行。必須使用原存款方式提款。提款時不可
 
 msgid "United Kingdom"
 msgstr "英國"
+
+msgid "Units"
+msgstr ""
 
 msgid "University degree in Marketing, Communications, Journalism, or related discipline"
 msgstr "市場行銷、通信、新聞或其他相關專業學位"
@@ -11442,6 +11511,9 @@ msgstr "我們的商品清單提供所有四種貴重金屬，即黃金、白銀
 msgid "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 msgstr "我們為客戶提供創新的產品系列，包括金融和合成工具，持續時間為10秒至365天。"
 
+msgid "We offer three types lookbacks:"
+msgstr ""
+
 msgid "We only pay for pull requests that are approved by our development team and merged into master. If the development team approves your pull request, we'll pay you in cryptocurrency. You can choose Bitcoin, Litecoin or Ether. "
 msgstr "我們只對經過開發團隊批准並合併到主程式的拉動請求給予報酬。如果開發團隊批准您的拉動請求，我們會付加密貨幣給您。您可以選擇比特幣、萊特幣或以太幣。 "
 
@@ -11585,6 +11657,9 @@ msgstr "場外交易指數和股票是什麼？"
 
 msgid "What are binary options"
 msgstr "甚麼是二元期權"
+
+msgid "What are lookbacks"
+msgstr ""
 
 msgid "What are the benefits of purchasing tokens?"
 msgstr "購買代幣的益處是什麼？"
@@ -11915,6 +11990,15 @@ msgstr "為什麼要用%1 進行貴重金屬交易"
 
 msgid "Will I need to install any software?"
 msgstr "我需要安裝任何軟體嗎？"
+
+msgid "Win the multiplier times the close minus low."
+msgstr ""
+
+msgid "Win the multiplier times the high minus close."
+msgstr ""
+
+msgid "Win the multiplier times the high minus low."
+msgstr ""
 
 msgid "Windows"
 msgstr "Windows"

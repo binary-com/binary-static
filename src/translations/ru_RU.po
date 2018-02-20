@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-20 00:34-0500\n"
+"PO-Revision-Date: 2018-02-20 04:38-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -483,6 +483,9 @@ msgstr "Награда “Лучшая компания по опционам с
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "Награда \"Оператор года по финансовому беттингу\" от eGaming Review"
 
+msgid "(6,000 – 5,200) * 2 = $1600"
+msgstr ""
+
 msgid "(One) Touch trades"
 msgstr "Контракты Касание"
 
@@ -733,6 +736,9 @@ msgstr "Признанный новатор в области торговли �
 
 msgid "A list of payment methods you will accept from Clients"
 msgstr "Список методов оплаты, которые Вы будете принимать от Клиентов"
+
+msgid "A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to \"look back\" over time to determine the payout."
+msgstr ""
 
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "Носитель языка с отличным знанием английского (в письменной и устной форме)"
@@ -2037,6 +2043,15 @@ msgstr "Если Вы зарегистрировались в качестве �
 msgid "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 msgstr "Если Вы зарегистрировались в качестве Профессионального клиента, мы не будем считать, что Вы обладаете знаниями и опытом работы на рынках, как предполагает термин \"Профессиональный клиент\". Мы предпримем все разумные меры, чтобы гарантировать, что запрос на добавление Вас в эту категорию соответствует вышеупомянутым критериям, включая, но не ограничиваясь следующими копиями:"
 
+msgid "By purchasing the %1‘Close-Low’%2 contract, you’ll win the multiplier times the difference between the %1close%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Close’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1close%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Low’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "Регистрируя созданное Вами программное приложение, вебсайт или продукт, а также предлагаемую Вами услугу (\"Приложение\"), Вы подтверждаете, что прочли, поняли и согласились соблюдать данные Правила."
 
@@ -2421,8 +2436,14 @@ msgstr "Деньги клиентов"
 msgid "Clients' trade allocations start from 0.01 lots"
 msgstr "Размещение контрактов начинается с 0.01 лота"
 
+msgid "Close"
+msgstr ""
+
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
 msgstr "закрыть любую или все открытые позиции на доступном уровне закрытия;"
+
+msgid "Close-Low"
+msgstr ""
 
 msgid "Closed"
 msgstr "Закрыто"
@@ -4005,6 +4026,9 @@ msgstr "Например, если Вы хотите приобрести 100 е
 msgid "For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction."
 msgstr "Например, если Вы хотите приобрести через обычного брокера 100 единиц определённого актива, торгующегося у обыкновенного брокера по цене USD 50 за единицу, данный контракт обойдётся Вам в USD 5 000."
 
+msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
+msgstr ""
+
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "Например, контракты на разницу на Индексах волатильности предоставляют USD 1 за один пункт контракта. Если Вы приобретёте контракт в объёме 1.0 на Индексе волатильности 100 по текущей цене USD 20,000 и позже продадите его по цене бид USD 20,010, Ваша чистая прибыль будет рассчитана следующим образом:"
 
@@ -4395,6 +4419,9 @@ msgstr "Hedging"
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr "Рассмотрим пример пары EUR/USD с ценой бид и ценой аск:"
 
+msgid "High"
+msgstr ""
+
 msgid "High Barrier"
 msgstr "Верхний барьер"
 
@@ -4415,6 +4442,15 @@ msgstr "Высокочастотный (2 тика в секунду)"
 
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "Высокая надёжность – каждая транзакция криптовалюты защищена сложнейшей криптографической технологией, что сводит к нулю любую возможность мошенничества"
+
+msgid "High, Low and Close"
+msgstr ""
+
+msgid "High-Close"
+msgstr ""
+
+msgid "High-Low"
+msgstr ""
 
 msgid "Higher"
 msgstr "Выше"
@@ -4667,9 +4703,6 @@ msgstr "I. Котировки"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "Например, (20010 - 20000) x 1 x 1 = USD 10"
-
-msgid "ICO Bids"
-msgstr "Ставки ICO"
 
 msgid "ICO is live, participate now!"
 msgstr "ICO запущено. Примите участие сейчас!"
@@ -6288,6 +6321,9 @@ msgstr "Долгосрочное партнёрство:"
 msgid "Long:"
 msgstr "Длинная позиция:"
 
+msgid "Lookbacks"
+msgstr ""
+
 msgid "Loss"
 msgstr "Потери"
 
@@ -6302,6 +6338,9 @@ msgstr "Количество лотов"
 
 msgid "Lots"
 msgstr "Лоты"
+
+msgid "Low"
+msgstr ""
 
 msgid "Low Barrier"
 msgstr "Нижний Барьер"
@@ -6818,6 +6857,9 @@ msgstr "Менеджер множественных счетов (ММС) для
 
 msgid "Multiple trading opportunities"
 msgstr "Множество торговых возможностей"
+
+msgid "Multiplier"
+msgstr ""
 
 msgid "Must be a clear, colour photo or scanned image"
 msgstr "Чёткая цветная фотография или отсканированное изображение"
@@ -7575,6 +7617,9 @@ msgstr "Патенты"
 msgid "Pay no commission on all metal contracts."
 msgstr "Не платите комиссию за любые контракты на металлах."
 
+msgid "Pay-out"
+msgstr ""
+
 msgid "Payment Agent"
 msgstr "Платежный агент"
 
@@ -7610,6 +7655,9 @@ msgstr "Выплата комиссий за предыдущий календа
 
 msgid "Payments"
 msgstr "Платежи"
+
+msgid "Payoff"
+msgstr ""
 
 msgid "Payout"
 msgstr "Выплата"
@@ -8826,9 +8874,6 @@ msgstr "Точные цены на активы"
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr "Shelter Community Learning Centre 3 при Shelter Home"
 
-msgid "Shop"
-msgstr "Магазин"
-
 msgid "Short"
 msgstr "Короткая позиция"
 
@@ -9422,6 +9467,24 @@ msgstr "Сайт %1 защищён авторским правом. Матери
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "Статический контент сайта %1 с открытым исходным кодом (CSS, Javascript) доступен на github под именем %2binary-static%3. Хотите предложить изменения для сайта %1, улучшить его совместимость с браузером, скорость воспроизведения изображения или качество Javascript? Создайте ответвление проекта и отправьте запрос на включение Вашего кода или Ваших изменений кода."
+
+msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
+msgstr ""
+
+msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
+msgstr ""
+
+msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
+msgstr ""
+
+msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1low%2 is the lowest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1start time%2 begins when the contract is processed by our servers."
+msgstr ""
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "<strong>Первоклассная платформа</strong> для торговли бинарными опционами"
@@ -10905,6 +10968,9 @@ msgstr "Виды счетов MetaTrader 5"
 msgid "Types of Trades"
 msgstr "Типы контрактов"
 
+msgid "Types of lookbacks"
+msgstr ""
+
 msgid "Types of trades"
 msgstr "Виды контрактов"
 
@@ -11018,6 +11084,9 @@ msgstr "К сожалению, средства, внесённые на счё�
 
 msgid "United Kingdom"
 msgstr "Великобритания"
+
+msgid "Units"
+msgstr ""
 
 msgid "University degree in Marketing, Communications, Journalism, or related discipline"
 msgstr "Высшее образование в области маркетинга, коммуникаций, журналистики или в смежной дисциплине"
@@ -11448,6 +11517,9 @@ msgstr "Предлагаем Вашему вниманию четыре драг
 msgid "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 msgstr "Мы предоставляем клиентам инновационные продукты и услуги, включая финансовые и синтетические инструменты с продолжительностью контрактов от 10 секунд до 365 дней."
 
+msgid "We offer three types lookbacks:"
+msgstr ""
+
 msgid "We only pay for pull requests that are approved by our development team and merged into master. If the development team approves your pull request, we'll pay you in cryptocurrency. You can choose Bitcoin, Litecoin or Ether. "
 msgstr "Мы оплачиваем лишь те предложения улучшений, которые будут одобрены нашей командой разработчиков и внесены в систему. Если команда разработчиков одобрит Ваши запросы на внесение улучшений, мы оплатим Вам криптовалютой. Вы можете выбрать Bitcoin, Litecoin или Ether. "
 
@@ -11591,6 +11663,9 @@ msgstr "Что такое внебиржевые индексы и акции?"
 
 msgid "What are binary options"
 msgstr "Что такое бинарные опционы"
+
+msgid "What are lookbacks"
+msgstr ""
 
 msgid "What are the benefits of purchasing tokens?"
 msgstr "Каковы преимущества покупки токенов?"
@@ -11921,6 +11996,15 @@ msgstr "Преимущества торговли драгоценными ме�
 
 msgid "Will I need to install any software?"
 msgstr "Зачем устанавливать какие-либо программы?"
+
+msgid "Win the multiplier times the close minus low."
+msgstr ""
+
+msgid "Win the multiplier times the high minus close."
+msgstr ""
+
+msgid "Win the multiplier times the high minus low."
+msgstr ""
 
 msgid "Windows"
 msgstr "Windows"
