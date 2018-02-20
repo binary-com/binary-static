@@ -49,7 +49,7 @@ class TradeApp extends React.Component {
                         <div className='gr-12'>
                             <h2 className='center-text'>Data Table</h2>
 
-                            <DataTable dataSource={transactions} columns={statement_columns} pagination pageSize={3} />
+                            <DataTable dataSource={transactions} columns={statement_columns} pagination pageSize={6} />
                         </div>
                     </div>
                 </div>

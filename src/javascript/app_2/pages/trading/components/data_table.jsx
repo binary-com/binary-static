@@ -308,7 +308,7 @@ class StatementDataTable extends React.PureComponent {
     getNextBatch() {
         if (this.state.loadedAllTransactions) return;
 
-        const BATCH_SIZE = 20;
+        const BATCH_SIZE = 200;
         const req = {
             statement: 1,
             description: 1,
