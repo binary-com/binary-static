@@ -57,23 +57,21 @@ const PersonalDetails = (() => {
     };
 
     const showHideLabel = (get_settings) => {
-        if (!is_jp) {
-            ['account_opening_reason', 'place_of_birth'].forEach((id) => {
-                if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
-                    if (get_settings[id]) {
-                        // we have to show text here instead of relying on displayGetSettingsData()
-                        // since it prioritizes showing data instead of label
-                        const $label = $(`#lbl_${id}`);
-                        $label.text(get_settings[id]);
-                        $(`#row_${id}`).setVisibility(0);
-                        $(`#row_lbl_${id}`).setVisibility(1);
-                    } else {
-                        $(`#row_lbl_${id}`).setVisibility(0);
-                        $(`#row_${id}`).setVisibility(1);
-                    }
+        ['account_opening_reason', 'place_of_birth'].forEach((id) => {
+            if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
+                if (get_settings[id]) {
+                    // we have to show text here instead of relying on displayGetSettingsData()
+                    // since it prioritizes showing data instead of label
+                    const $label = $(`#lbl_${id}`);
+                    $label.text(get_settings[id]);
+                    $(`#row_${id}`).setVisibility(0);
+                    $(`#row_lbl_${id}`).setVisibility(1);
+                } else {
+                    $(`#row_lbl_${id}`).setVisibility(0);
+                    $(`#row_${id}`).setVisibility(1);
                 }
-            });
-        }
+            }
+        });
     };
 
     const getDetailsResponse = (data, residence_list = State.getResponse('residence_list')) => {
@@ -371,9 +369,7 @@ const PersonalDetails = (() => {
 
                 BinarySocket.send({ residence_list: 1 }).then(response => {
                     getDetailsResponse(get_settings_data, response.residence_list);
-                    if (!is_jp) {
-                        populateResidence(response);
-                    }
+                    populateResidence(response);
                 });
 
                 if (residence) {
