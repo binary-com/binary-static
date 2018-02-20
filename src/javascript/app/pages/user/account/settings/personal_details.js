@@ -48,13 +48,10 @@ const PersonalDetails = (() => {
             $tax_info_notice.setVisibility(1);   // show tax notice message
             $tax_info_fieldset.setVisibility(1); // show tax info fieldset
             $tax_info_terms.setVisibility(1);    // show tax info terms
+            $tax_info_note.setVisibility(1);
             need_to_accept_tin = true;
         } else {
-            $tax_info_notice.setVisibility(0);   // hide tax notice messageå
-        }
-
-        if (Client.isAccountOfType('financial')) {
-            $tax_info_note.setVisibility(1);
+            $tax_info_notice.setVisibility(0);   // hide tax notice message
         }
     };
 
