@@ -220,7 +220,7 @@ DataTable.defaultProps = {
     pagesCloseToEnd: 5
 };
 
-class StatementDataTable extends React.PureComponent {
+export class StatementDataTable extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -344,4 +344,4 @@ class StatementDataTable extends React.PureComponent {
     }
 }
 
-export default StatementDataTable;
+export default DataTable;
