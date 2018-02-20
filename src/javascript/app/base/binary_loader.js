@@ -68,6 +68,16 @@ const BinaryLoader = (() => {
             }
         });
 
+        if (Client.isLoggedIn()) {
+            if (!Client.hasCostaricaAccount()) {
+                applyToAllElements('.only-cr', (el) => { el.setVisibility(0); });
+                // Fix issue with tabs.
+                if (/get_started_tabs=lookback/.test(window.location.href)) {
+                    BinaryPjax.load(urlFor('get-started'));
+                }
+            }
+        }
+
         const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {
             loadHandler(pages_config[this_page]);
