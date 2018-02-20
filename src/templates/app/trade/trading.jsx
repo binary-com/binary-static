@@ -48,7 +48,7 @@ const Trading = () => (
                                             <select id='date_start'></select>
                                             <div id='time_start_row' className='invisible'>
                                                 <input type='text' id='time_start' autoComplete='off' readOnly='readonly' className='medium_width_input' />
-                                                <span className='hint'>GMT</span>
+                                                <span className='gr-gutter-left'>GMT</span>
                                             </div>
                                             <div>
                                                 <div className='hint invisible'>{it.L('Asset open hours:')} <span id='asset_open_hours'></span></div>
@@ -72,7 +72,7 @@ const Trading = () => (
                                                 <input id='expiry_date' type='text' readOnly='readonly' autoComplete='off' />
                                                 <div id='expiry_time_row'>
                                                     <input id='expiry_time' type='text' autoComplete='off' readOnly='readonly' className='medium_width_input' />
-                                                    <span className='hint'>GMT</span>
+                                                    <span className='gr-gutter-left'>GMT</span>
                                                 </div>
                                             </div>
                                         </div>
