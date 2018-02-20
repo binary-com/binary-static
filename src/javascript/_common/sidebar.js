@@ -57,7 +57,7 @@ const Sidebar = (() => {
         init,
         clean,
     };
-  })();
+})();
 
 module.exports = Sidebar;
 
