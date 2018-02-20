@@ -3,7 +3,6 @@ import Gtm from '../../_common/includes/gtm.jsx';
 import Title from '../../_common/components/title.jsx';
 import Head from './head.jsx';
 import Header from './header.jsx';
-import MainMenu from './main_menu.jsx';
 import MobileMenu from './mobile_menu.jsx';
 import Footer from './footer.jsx';
 import SignupTour from '../get_started_old/signup_tour.jsx';
@@ -98,7 +97,6 @@ const Layout = () => {
                     <div id='page-wrapper'>
                         <Header />
                         <div id='content-holder'>
-                            <MainMenu />
                             <MobileMenu />
                             <Gtm />
                             <a href='javascript:;' id='scrollup'></a>

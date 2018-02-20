@@ -43,7 +43,6 @@ const BinaryLoader = (() => {
 
     const beforeContentChange = () => {
         if (active_script) {
-            Page.onUnload();
             BinarySocket.removeOnDisconnect();
             if (typeof active_script.onUnload === 'function') {
                 active_script.onUnload();

@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from './head.jsx';
 import Header from './header.jsx';
-import MainMenu from './main_menu.jsx';
 import MobileMenu from './mobile_menu.jsx';
 import Footer from './footer.jsx';
 import Gtm from '../../_common/includes/gtm.jsx';
@@ -45,7 +44,6 @@ const Layout = () => {
                 <div id='page-wrapper'>
                     <Header />
                     <div id='content-holder'>
-                        <MainMenu />
                         <MobileMenu />
                         <Gtm />
                         <a href='javascript:;' id='scrollup'></a>

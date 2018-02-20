@@ -396,8 +396,6 @@ button .barspinner.white {
 }
 
 .static_full {
-    margin-top: 40px;
-
     .section:first-child {
         padding-bottom: 50px;
     }
@@ -462,6 +460,7 @@ ul.bullet.gr-row > li {
 }
 
 #content {
+    margin-top: 40px;
     margin-bottom: 20px;
 
     .light {
