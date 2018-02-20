@@ -30,9 +30,7 @@ const Lookback = (() => {
             Multiplier: mul,
         };
         const regex = /Multiplier/g;
-        const replacer = (str) => {
-            return value_map[str] || str;
-        };
+        const replacer = (str) => value_map[str] || str;
         const formulaMapping = {
             LBFLOATPUT : 'Multiplier x (High - Close)'.replace(regex, replacer),
             LBFLOATCALL: 'Multiplier x (Close - Low)'.replace(regex, replacer),
@@ -44,7 +42,7 @@ const Lookback = (() => {
 
     const isLookback = (type) => /^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type);
 
-    const getBarrierLabel = (type, barrier_count) => {
+    const getBarrierLabel = (type) => {
         const barrier_map = {
             LBFLOATCALL: ['Low'],
             LBFLOATPUT : ['High'],
@@ -54,10 +52,10 @@ const Lookback = (() => {
     };
 
     return {
-        display        : displayLookback,
-        getFormula     : getFormula,
-        isLookback     : isLookback,
-        getBarrierLabel: getBarrierLabel,
+        display: displayLookback,
+        getFormula,
+        isLookback,
+        getBarrierLabel,
     };
 })();
 
