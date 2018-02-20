@@ -1,0 +1,127 @@
+.sidebar-collapsible-content {
+    margin-top: 72px;
+}
+
+.sidebar-collapsible-container {
+    position: relative;
+    height: 100%;
+    margin-top: 72px;
+
+    .sidebar-collapsible {
+        ul {
+            font-size: $FONT_SIZE_S;
+
+            li {
+                list-style-image: none;
+                margin: 0;
+                line-height: 40px;
+                min-height: 40px;
+                padding: 0 16px;
+                border-right: 1px solid $COLOR_SIDEBAR_BORDER;
+                background: $COLOR_WHITE;
+
+                a {
+                    text-decoration: none;
+                    display: block;
+                    color: $COLOR_SIDEBAR_TEXT;
+                    padding: 0;
+                    font-weight: bold;
+                    font-size: $FONT_SIZE_S;
+
+                    &.selected {
+                        color: $COLOR_SIDEBAR_TEXT_HOVER;
+                        background: $COLOR_SIDEBAR_ACTIVE;
+                        text-decoration: none;
+                    }
+                }
+                &:hover {
+                    background: $COLOR_WHITE;
+
+                    a {
+                        color: $COLOR_SIDEBAR_TEXT_HOVER;
+                    }
+                }
+                &.active {
+                    background: $COLOR_SIDEBAR_ACTIVE;
+                    border: none;
+                    border-right: 2px solid $COLOR_SIDEBAR_ACTIVE_BORDER;
+
+                    a {
+                        background: $COLOR_WHITE;
+                        border: none;
+                        padding: 0;
+
+                        &.selected {
+                            color: $COLOR_SIDEBAR_TEXT_HOVER;
+                            background: $COLOR_SIDEBAR_ACTIVE;
+                            text-decoration: none;
+                            border: none;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+            li.has-submenu {
+                height: auto;
+                border-right: 1px solid $COLOR_SIDEBAR_BORDER;
+
+                &.active {
+                    background: $COLOR_WHITE;
+                    border: none;
+                }
+                a:before {
+                    content: none;
+                }
+                a.selected {
+                    color: $COLOR_SIDEBAR_TEXT_HOVER;
+                    background: $COLOR_WHITE;
+                    text-decoration: none;
+                }
+                ul {
+                    li {
+                        a {
+                            background: $COLOR_WHITE;
+                            border: none;
+                            padding: 0;
+                            font-weight: bold;
+                        }
+                        a.selected {
+                            color: $COLOR_SIDEBAR_TEXT_HOVER;
+                            background: $COLOR_SIDEBAR_ACTIVE;
+                            text-decoration: none;
+                            border: none;
+                            padding: 0;
+
+                            &:hover {
+                                color: $COLOR_SIDEBAR_TEXT_HOVER;
+                                background: $COLOR_SIDEBAR_ACTIVE;
+                                text-decoration: none;
+                                border: none;
+                                padding: 0;
+                            }
+                        }
+                    }
+                    li.active {
+                        background: $COLOR_SIDEBAR_ACTIVE;
+                        border: none;
+                        border-right: 2px solid $COLOR_SIDEBAR_ACTIVE_BORDER;
+
+                        a {
+                            background: $COLOR_WHITE;
+                            border: none;
+                            padding: 0;
+
+                            &.selected {
+                                color: $COLOR_SIDEBAR_TEXT_HOVER;
+                                background: $COLOR_SIDEBAR_ACTIVE;
+                                text-decoration: none;
+                                border: none;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
