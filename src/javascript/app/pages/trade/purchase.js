@@ -80,7 +80,7 @@ const Purchase = (() => {
             const {contract_type} = passthrough;
             if (isLookback(contract_type)) {
                 multiplier = formatMoney(currency, passthrough.amount);
-                formula    = getLookBackFormula(contract_type, multiplier);
+                formula    = getLookBackFormula(contract_type, multiplier, false, 3, 2);
             }
 
             payout_value = +receipt.payout;

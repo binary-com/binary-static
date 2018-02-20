@@ -96,7 +96,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
         containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier));
         if (isLookback(contract.contract_type)) {
-            containerSetText('trade_details_payout', getLookbackFormula(contract.contract_type, formatMoney(contract.currency, multiplier)));
+            containerSetText('trade_details_payout', getLookbackFormula(contract.contract_type, formatMoney(contract.currency, multiplier, false, 3, 2)));
         } else {
             containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         }
