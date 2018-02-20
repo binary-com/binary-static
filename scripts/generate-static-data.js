@@ -15,19 +15,6 @@ const texts = [
     'Open a Real Account',
     'Open a Financial Account',
 
-    // menu items
-    'Trade',
-    'Portfolio',
-    'Profit Table',
-    'Statement',
-    'Cashier',
-    'Resources',
-    'Asset Index',
-    'Trading Times',
-    'Shop',
-    'Payment Agent',
-    'ICO Bids',
-
     // account drop down
     'Virtual Account',
     'Real Account',
