@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-19 04:50-0500\n"
+"PO-Revision-Date: 2018-02-20 00:33-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -1690,10 +1690,10 @@ msgid "Barrier(s)"
 msgstr "バリア価格"
 
 msgid "Base currency"
-msgstr "基本通貨"
+msgstr "基準通貨"
 
 msgid "Based currency"
-msgstr "基本通貨"
+msgstr "基準通貨"
 
 msgid "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
 msgstr "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
@@ -4006,7 +4006,7 @@ msgid "For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and
 msgstr "例えば、レバレッジ300:1で市場価格USD 1,250.15のXAU/USDペアを1ロット購入する場合、1ロット購入するのに必要なマージンは以下のように算出されます。"
 
 msgid "For example, if you see that the EUR/USD has an ask price of 1.05382, you'll sell USD 1.05382 (quote currency) for every EUR 1 (base currency) you buy."
-msgstr "例えば、EUR/USD1ビット1.05382の場合、あなたが購入したEUR1（基本通貨）をUSD 1.05382（建値通貨）で売却することになります。"
+msgstr "例えば、EUR/USD1ビット1.05382の場合、あなたが購入したEUR1（基準通貨）をUSD 1.05382（見積通貨）で売却することになります。"
 
 msgid "For example, if you wanted to buy one volume of the BTC/EUR cryptocurrency pair at a price of USD 4831.400 and at a margin rate of 10%, the margin that you need to purchase one lof of BTC/EUR will be calculated as follows:"
 msgstr "例えば、BTC/EUR仮想通貨ペアの数量1をUSD 4831.400のマージンレート10%で購入したい場合、BTC/EURの1ロットを購入するのに必要なマージンは以下のように算出されます。"
@@ -8916,7 +8916,7 @@ msgid "Silver vs US Dollar"
 msgstr "銀 vs 米ドル"
 
 msgid "Similar to Forex trading, you must understand when to buy (or \"go long\") and when to sell (or \"go short\"). In Forex trading, you'll buy a certain currency pair if you think the value of the base currency will rise. The opposite is also true: you will sell a certain currency pair if you think the value of the base currency will fall."
-msgstr "外国為替取引同様、買い時（ロングポジション）と売り時（ショートポジション）を理解しなくていはいけません。外国為替取引において、基本通貨の価値が今後上昇すると判断した場合に特定の通貨ペアを買い、反対に、基本通貨が下降すると判断した場合に特定の通貨ペアを売却します。"
+msgstr "外国為替取引同様、買い時（ロングポジション）と売り時（ショートポジション）を理解しなくていはいけません。外国為替取引において、基準通貨の価値が今後上昇すると判断した場合に特定の通貨ペアを買い、反対に、基準通貨が下降すると判断した場合に特定の通貨ペアを売却します。"
 
 msgid "Simple and intuitive"
 msgstr "シンプルで分かりやすい"
@@ -12586,10 +12586,10 @@ msgid "You understand that products based on a random number generator (the \"Vo
 msgstr "乱数ジェネレーター（ボラティリティ・インデックス）に基づいた商品は金融市場インデックス（外国為替、株式、コモディティ）に基づく商品が金融商品であるのと同じように、賭博商品であることを十分にご理解ください。"
 
 msgid "You want to buy a certain currency pair if you think the base currency will go up. The reverse holds true:"
-msgstr "基本通貨が上昇すると判断した場合、特定の通貨ペアを購入します。またその逆のこともいえます："
+msgstr "基準通貨が上昇すると判断した場合、特定の通貨ペアを購入します。またその逆のこともいえます："
 
 msgid "You want to sell that currency pair if you think the base currency will go down."
-msgstr "基本通貨が下降すると判断した場合、その通貨ペアを売却します。"
+msgstr "基準通貨が下降すると判断した場合、その通貨ペアを売却します。"
 
 msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
 msgstr "%1口座の資金を利用してトークンの購入が可能です。%2入出金システム%3でご利用いただける通貨（仮想通貨を含む）をご使用いただけます。USD以外の通貨で入札をされた場合、入札金額はオークション終了時の為替レートでUSDに変換されます。"
