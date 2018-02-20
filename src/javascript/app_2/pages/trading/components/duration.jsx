@@ -51,9 +51,6 @@ const Duration = ({
                         showTodayBtn={true}
                         minDate={new Date()}
                     />
-                    {/*
-                        <input type='date' name='expiry_date' onChange={onChange} />
-                    */}
                     <input type='time' name='expiry_time' onChange={onChange} />
                 </React.Fragment>
             }
