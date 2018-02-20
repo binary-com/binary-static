@@ -125,6 +125,17 @@ const Trading = () => (
                                             </select>
                                         </div>
                                     </div>
+                                    <div className='row' id='multiplier_row'>
+                                        <div className='col form_label'>
+                                            <label htmlFor='multiplier' id='multiplier_label'>{it.L('Multiplier')}</label>
+                                        </div>
+                                        <div className='row-inner big-col'>
+                                            <div className='col-inner'>
+                                                <select className='currency small_width_input'></select>
+                                                <input type='text' defaultValue='1' step='any' maxLength='5' name='multiplier' id='multiplier' className='small_width_input' />
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div className='row' id='payout_row'>
                                         <div className='col form_label'>
                                             <select id='amount_type'>
@@ -134,7 +145,7 @@ const Trading = () => (
                                         </div>
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
-                                                <select id='currency' className='small_width_input'></select>
+                                                <select className='currency small_width_input'></select>
                                                 <input id='amount' type='text' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
                                             </div>
                                         </div>
@@ -218,6 +229,31 @@ const Trading = () => (
                                         </div>
                                     </span>
                                 </div>
+                            </div>
+                            <div className='col price_comment'></div>
+                            <div className='col contract_error'></div>
+                        </div>
+                        <div className='col price_container row-inner' id='price_container_middle'>
+                            <div className='col gr-row'>
+                                <div className='price_wrapper row'>
+                                    <h4 className='contract_heading'></h4>
+                                    <span className='amount_wrapper'>
+                                        <div className='amount_wrapper_div'>
+                                            <div className='stake_wrapper'>
+                                                <span className='stake'></span>
+                                                <span className='contract_amount'></span>
+                                            </div>
+                                            <div className='payout_wrapper'>
+                                                <span className='multiplier'></span>
+                                                <span className='contract_multiplier'></span>
+                                            </div>
+                                        </div>
+                                        <div className='contract_purchase button'>
+                                            <span className='purchase_button no-underline' id='purchase_button_middle' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div className='contract_longcode'></div>
                             </div>
                             <div className='col price_comment'></div>
                             <div className='col contract_error'></div>
