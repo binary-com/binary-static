@@ -85,8 +85,8 @@ const ViewPopup = (() => {
 
         containerSetText('trade_details_contract_id', contract.contract_id);
 
-        containerSetText('trade_details_start_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
-        containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
+        containerSetText('trade_details_start_date', `${toJapanTimeIfNeeded(epochToDateTime(contract.date_start))} GMT`);
+        containerSetText('trade_details_end_date', `${toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry))} GMT`);
         containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
 
@@ -144,7 +144,7 @@ const ViewPopup = (() => {
                 window.time = moment(current_spot_time).utc();
                 updateTimers();
             }
-            containerSetText('trade_details_current_date', toJapanTimeIfNeeded(epochToDateTime(current_spot_time)));
+            containerSetText('trade_details_current_date', `${toJapanTimeIfNeeded(epochToDateTime(current_spot_time))} GMT`);
         } else {
             $('#trade_details_current_date').parent().setVisibility(0);
         }
@@ -216,7 +216,7 @@ const ViewPopup = (() => {
     // This is called by clock.js in order to sync time updates on header as well as view popup
     const updateTimers = () => {
         const now = Math.max(Math.floor((window.time || 0) / 1000), contract.current_spot_time || 0);
-        containerSetText('trade_details_live_date', toJapanTimeIfNeeded(epochToDateTime(now)));
+        containerSetText('trade_details_live_date', `${toJapanTimeIfNeeded(epochToDateTime(now))} GMT`);
         showLocalTimeOnHover('#trade_details_live_date');
 
         const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;

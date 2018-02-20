@@ -23,7 +23,7 @@ const Clock = (() => {
         });
     };
 
-    const toJapanTimeIfNeeded = (gmt_time_str, show_time_zone, hide_seconds, gmt_label = true) => {
+    const toJapanTimeIfNeeded = (gmt_time_str, show_time_zone, hide_seconds) => {
         let time;
 
         if (typeof gmt_time_str === 'number') {
@@ -43,8 +43,7 @@ const Clock = (() => {
             time_zone = 'zZ';
         }
 
-        const time_str = time.utcOffset(offset).format(`YYYY-MM-DD HH:mm${hide_seconds ? '' : ':ss'}${show_time_zone ? ` ${time_zone}` : ''}`);
-        return gmt_label ? `${time_str} GMT` : time_str;
+        return time.utcOffset(offset).format(`YYYY-MM-DD HH:mm${hide_seconds ? '' : ':ss'}${show_time_zone ? ` ${time_zone}` : ''}`);
     };
 
     const getTime = () => {
