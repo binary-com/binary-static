@@ -45,9 +45,12 @@
             color: #e9e9ed;
         }
     }
-    &-ellipsis-up, &-ellipsis-down {
+    &-ellipsis {
         line-height: 32px;
 
+        &:hover {
+            cursor: default;
+        }
         &:after {
             content: '\2022\2022\2022';
             display: block;
@@ -56,20 +59,10 @@
             color: #e9e9ed;
             text-align: center;
         }
-        &:hover:after {
-            color: #4c5794;
-            font-size: 13px;
-        }
         & a {
             color: #e9e9ed;
         }
         border: none;
-    }
-    &-ellipsis-up:hover:after {
-        content: '>>';
-    }
-    &-ellipsis-down:hover:after {
-        content: '<<';
     }
     & a {
         text-decoration: none;

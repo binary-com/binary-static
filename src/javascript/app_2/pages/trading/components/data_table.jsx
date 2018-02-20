@@ -8,8 +8,6 @@ import { localize } from '../../../../_common/localize';
 import { toTitleCase } from '../../../../_common/string_util';
 
 const Pagination = ({ page, total, pageSize, onChange }) => {
-    const JUMP_LEN = 5;
-
     const handleChange = (newPage) => {
         if (newPage === page) return;
         onChange(newPage);
@@ -31,37 +29,11 @@ const Pagination = ({ page, total, pageSize, onChange }) => {
         }
     };
 
-    const handleJumpUp = () => {
-        handleChange(Math.min(
-            page + JUMP_LEN,
-            calcNumOfPages()
-        ));
-    };
-
-    const handleJumpDown = () => {
-        handleChange(Math.max(
-            1,
-            page - JUMP_LEN
-        ));
-    };
-
-    const renderUpEllipsis = () => {
+    const renderEllipsis = (id) => {
         return (
             <li
-                className='pagination-item pagination-ellipsis-up'
-                key='ellipsis-up'
-                onClick={handleJumpUp}
-            >
-            </li>
-        );
-    };
-
-    const renderDownEllipsis = () => {
-        return (
-            <li
-                className='pagination-item pagination-ellipsis-down'
-                key='ellipsis-down'
-                onClick={handleJumpDown}
+                className='pagination-item pagination-ellipsis'
+                key={`ellipsis-${id}`}
             >
             </li>
         );
@@ -93,44 +65,28 @@ const Pagination = ({ page, total, pageSize, onChange }) => {
     const renderItems = () => {
         const numOfPages = calcNumOfPages();
 
-        if (numOfPages <= 9) {
+        if (numOfPages <= 6) {
             return renderItemRange(1, numOfPages);
         }
-        else if (page <= 3) {
+        else if (page <= 4) {
             return [
                 ...renderItemRange(1, 5),
-                renderUpEllipsis(),
-                renderItem(numOfPages)
-            ];
-        }
-        else if (page === 4) {
-            return [
-                ...renderItemRange(1, 6),
-                renderUpEllipsis(),
-                renderItem(numOfPages)
-            ];
-        }
-        else if (page === numOfPages - 3) {
-            return [
-                renderItem(1),
-                renderDownEllipsis(),
-                ...renderItemRange(numOfPages - 5, numOfPages)
+                renderEllipsis(2)
             ];
         }
         else if (numOfPages - page < 3) {
             return [
                 renderItem(1),
-                renderDownEllipsis(),
-                ...renderItemRange(numOfPages - 4, numOfPages)
+                renderEllipsis(1),
+                ...renderItemRange(numOfPages - 3, numOfPages)
             ];
         }
         else {
             return [
                 renderItem(1),
-                renderDownEllipsis(),
-                ...renderItemRange(page - 2, page + 2),
-                renderUpEllipsis(),
-                renderItem(numOfPages)
+                renderEllipsis(1),
+                ...renderItemRange(page - 1, page + 1),
+                renderEllipsis(2)
             ];
         }
     };
