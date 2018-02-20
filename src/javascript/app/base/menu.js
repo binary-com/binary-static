@@ -7,13 +7,19 @@ const Menu = (() => {
     const init = () => {
         const menu_top = getElementById('menu-top');
 
-        applyToAllElements('li', (el) => { el.classList.remove('active'); }, '', menu_top);
+        applyToAllElements('li', (el) => { el.classList.remove('active', 'active-parent'); }, '', menu_top);
 
         const menu_top_item_for_page =  Array.from(menu_top.getElementsByTagName('a'))
-            .find(link => link.offsetParent && link !== 'javascript:;' && window.location.pathname.indexOf(link.pathname.replace(/\.html/, '')) >= 0);
+            .find(link => !/invisible/.test(findParent(link, 'li').classList) && link.href !== 'javascript:;' && window.location.pathname.indexOf(link.pathname.replace(/\.html/, '')) >= 0);
 
         if (menu_top_item_for_page) {
             findParent(menu_top_item_for_page, 'li').classList.add('active');
+            // if it's a sub-menu item, also make the parent active
+            // can't use the class active because it will make all children <a> orange
+            const menu_parent = findParent(menu_top_item_for_page, '.nav-dropdown-toggle');
+            if (menu_parent) {
+                menu_parent.classList.add('active-parent');
+            }
         }
     };
 

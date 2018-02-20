@@ -95,6 +95,9 @@ body #topbar, .landing_page-content {
                 }
             }
         }
+        .active-parent > a {
+            color: $COLOR_ORANGE;
+        }
     }
     .topMenuBalance {
         visibility: hidden;
