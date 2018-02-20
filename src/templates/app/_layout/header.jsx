@@ -96,16 +96,16 @@ const Header = () => (
 
                                         // Logged in
                                         // General
-                                        { text: it.L('Trade'),        href: it.url_for('trading'),             className: 'ja-hide mt-hide ico-only-hide client_logged_in invisible' },
-                                        { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),    className: 'ja-hide mt-hide ico-only-hide client_logged_in invisible' },
-                                        { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'), className: 'ja-hide mt-hide ico-only-hide client_logged_in invisible' },
-                                        { text: it.L('Statement'),    href: it.url_for('user/statementws'),    className: 'ja-hide mt-hide client_logged_in invisible' },
-                                        { text: it.L('Cashier'),      href: it.url_for('cashier'),             className: 'ja-hide mt-hide client_logged_in invisible' },
+                                        { text: it.L('Trade'),        href: it.url_for('trading'),             className: 'ja-hide ico-only-hide client_logged_in invisible' },
+                                        { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),    className: 'ja-hide ico-only-hide client_logged_in invisible' },
+                                        { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'), className: 'ja-hide ico-only-hide client_logged_in invisible' },
+                                        { text: it.L('Statement'),    href: it.url_for('user/statementws'),    className: 'ja-hide client_logged_in invisible' },
+                                        { text: it.L('Cashier'),      href: it.url_for('cashier'),             className: 'ja-hide client_logged_in invisible' },
                                         {
                                             type     : 'nested',
                                             text     : it.L('Resources'),
                                             href     : 'javascript:;',
-                                            className: 'ja-hide mt-hide ico-only-hide client_logged_in nav-dropdown-toggle invisible',
+                                            className: 'ja-hide ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('Asset Index'),   href: it.url_for('resources/asset_indexws') },
                                                 { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
@@ -115,7 +115,7 @@ const Header = () => (
                                             type     : 'nested',
                                             text     : it.L('Settings'),
                                             href     : 'javascript:;',
-                                            className: 'ja-hide mt-hide client_logged_in nav-dropdown-toggle invisible',
+                                            className: 'ja-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('Profile'),           href: it.url_for('user/settingsws') },
                                                 { text: it.L('Security & Limits'), href: it.url_for('user/securityws') },
@@ -123,16 +123,16 @@ const Header = () => (
                                             ],
                                         },
                                         // Japan
-                                        { text: it.L('Trade'),        href: it.url_for('multi_barriers_trading'), className: 'ja-show mt-hide client_logged_in invisible' },
-                                        { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),       className: 'ja-show mt-hide client_logged_in invisible' },
-                                        { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'),    className: 'ja-show mt-hide client_logged_in invisible' },
-                                        { text: it.L('Statement'),    href: it.url_for('user/statementws'),       className: 'ja-show mt-hide client_logged_in invisible' },
-                                        { text: it.L('Cashier'),      href: it.url_for('cashier'),                className: 'ja-show mt-hide client_logged_in invisible' },
+                                        { text: it.L('Trade'),        href: it.url_for('multi_barriers_trading'), className: 'ja-show client_logged_in invisible' },
+                                        { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),       className: 'ja-show client_logged_in invisible' },
+                                        { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'),    className: 'ja-show client_logged_in invisible' },
+                                        { text: it.L('Statement'),    href: it.url_for('user/statementws'),       className: 'ja-show client_logged_in invisible' },
+                                        { text: it.L('Cashier'),      href: it.url_for('cashier'),                className: 'ja-show client_logged_in invisible' },
                                         {
                                             type     : 'nested',
                                             text     : it.L('Resources'),
                                             href     : 'javascript:;',
-                                            className: 'ja-show mt-hide client_logged_in nav-dropdown-toggle invisible',
+                                            className: 'ja-show client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
                                             ],
@@ -141,18 +141,13 @@ const Header = () => (
                                             type     : 'nested',
                                             text     : it.L('Settings'),
                                             href     : 'javascript:;',
-                                            className: 'ja-show mt-hide client_logged_in nav-dropdown-toggle invisible',
+                                            className: 'ja-show client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('Profile'),           href: it.url_for('user/settingsws') },
                                                 { text: it.L('Security & Limits'), href: it.url_for('user/securityws') },
                                                 { text: it.L('Payment Agent'),     href: it.url_for('paymentagent/transferws'), id: 'topMenuPaymentAgent', className: 'invisible' },
                                             ],
                                         },
-                                        // MetaTrader
-                                        { text: it.L('MetaTrader'),  href: it.url_for('user/metatrader'),                  className: 'invisible mt-show' },
-                                        { text: it.L('Cashier'),     href: it.url_for('cashier'),                          className: 'invisible mt-show' },
-                                        { text: it.L('Get Started'), href: it.url_for('get-started?get_started_tabs=mt5'), className: 'invisible mt-show' },
-                                        { text: it.L('Platforms'),   href: it.url_for('platforms?platforms_tabs=mt5'),     className: 'invisible mt-show' },
                                     ]}
                                 />
                             </div>
