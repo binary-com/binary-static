@@ -10,7 +10,7 @@ const Menu = (() => {
         applyToAllElements('li', (el) => { el.classList.remove('active'); }, '', menu_top);
 
         const menu_top_item_for_page =  Array.from(menu_top.getElementsByTagName('a'))
-            .find(link => link.offsetParent && window.location.pathname.indexOf(link.pathname.replace(/\.html/, '')) >= 0);
+            .find(link => link.offsetParent && link !== 'javascript:;' && window.location.pathname.indexOf(link.pathname.replace(/\.html/, '')) >= 0);
 
         if (menu_top_item_for_page) {
             findParent(menu_top_item_for_page, 'li').classList.add('active');
