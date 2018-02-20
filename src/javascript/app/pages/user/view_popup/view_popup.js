@@ -149,7 +149,7 @@ const ViewPopup = (() => {
             $('#trade_details_current_date').parent().setVisibility(0);
         }
 
-        containerSetText('trade_details_ref_id', contract.transaction_ids.buy + (contract.transaction_ids.sell ? ` - ${contract.transaction_ids.sell}` : ''));
+        containerSetText('trade_details_ref_id', `${contract.transaction_ids.buy} (Buy) ${contract.transaction_ids.sell ? `<br>${contract.transaction_ids.sell} (Sell)` : ''}`);
         containerSetText('trade_details_indicative_price', indicative_price ? formatMoney(contract.currency, indicative_price) : '-');
 
         let profit_loss,
@@ -468,7 +468,7 @@ const ViewPopup = (() => {
             `<table>
             <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
             ${createRow('Contract ID', '', 'trade_details_contract_id')}
-            ${createRow('Reference ID', '', 'trade_details_ref_id')}
+            ${createRow('Transaction ID', '', 'trade_details_ref_id')}
             ${createRow('Start Time', '', 'trade_details_start_date')}
             ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
                 createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
