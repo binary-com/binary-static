@@ -428,7 +428,7 @@ const texts = [
     'Closed',
     'Contract has not started yet',
     'Price',
-    'Spot Time',
+    'Spot Time (GMT)',
     'Current Time',
     'Exit Spot Time',
     'Exit Spot',

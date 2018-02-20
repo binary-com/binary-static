@@ -409,7 +409,7 @@ const ViewPopup = (() => {
 
         tr.appendChild(createElement('td', { class: 'gr-3' }));
         tr.appendChild(createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot') }));
-        tr.appendChild(createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time') }));
+        tr.appendChild(createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time (GMT)') }));
 
         table.insertBefore(tr, table.childNodes[0]);
     };
@@ -424,7 +424,7 @@ const ViewPopup = (() => {
         const tr        = createElement('tr', { class: 'gr-row' });
         const td_remark = createElement('td', { class: 'gr-3 remark', text: remark || '' });
         const td_tick   = createElement('td', { class: 'gr-4', text: (tick && !isNaN(tick) ? addComma(tick) : (tick || '')) });
-        const td_date   = createElement('td', { class: 'gr-5 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? `${moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss')} GMT` : (date || '')) });
+        const td_date   = createElement('td', { class: 'gr-5 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
 
         tr.appendChild(td_remark);
         tr.appendChild(td_tick);
