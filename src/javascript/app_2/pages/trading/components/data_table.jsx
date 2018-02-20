@@ -169,7 +169,7 @@ class DataTable extends React.Component {
             <tr className='table-row' key={id}>
                 {this.props.columns.map(({ dataIndex, renderCell }) => {
                     if (!renderCell) renderCell = defaultRenderCell;
-                    return renderCell(transaction[dataIndex], dataIndex);
+                    return renderCell(transaction[dataIndex], dataIndex, transaction);
                 })}
             </tr>
         );
@@ -241,7 +241,7 @@ class StatementDataTable extends React.PureComponent {
             {
                 title: localize('Credit/Debit'),
                 dataIndex: 'amount',
-                renderCell: (data, dataIndex) => {
+                renderCell: (data, dataIndex, transaction) => {
                     const parseStrNum = (str) => {
                         return parseFloat(str.replace(',', '.'));
                     }
