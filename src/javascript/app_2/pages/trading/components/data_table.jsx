@@ -10,7 +10,7 @@ import { toTitleCase } from '../../../../_common/string_util';
 const Pagination = ({ page, total, pageSize, onChange }) => {
     const handleChange = (newPage) => {
         if (newPage === page) return;
-        onChange(newPage);
+        onChange(newPage, calcNumOfPages());
     };
 
     const calcNumOfPages = () => {
@@ -123,30 +123,38 @@ class DataTable extends React.Component {
         this.handlePageChange = this.handlePageChange.bind(this);
         this.renderPagination = this.renderPagination.bind(this);
         this.handlePageChange = this.handlePageChange.bind(this);
+        this.updateDisplayData = this.updateDisplayData.bind(this);
 
         this.state = {
-            displayData: pagination ? dataSource.slice(0, pageSize) : dataSource
+            displayData: pagination ? dataSource.slice(0, pageSize) : dataSource,
+            page: 1
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        const { dataSource, pageSize } = nextProps;
-
-        this.setState({
-            displayData: dataSource.slice(0, pageSize),
-            page: 1
-        })
+        this.updateDisplayData(nextProps.dataSource, this.state.page, nextProps.pageSize);
     }
 
-    handlePageChange(page) {
-        const { pageSize } = this.props;
+    updateDisplayData(dataSource, page, pageSize) {
         const startId = (page - 1) * pageSize;
         const endId = startId + pageSize;
 
         this.setState({
             page: page,
-            displayData: this.props.dataSource.slice(startId, endId)
+            displayData: dataSource.slice(startId, endId)
         });
+    }
+
+    handlePageChange(page, numOfPages) {
+        this.updateDisplayData(this.props.dataSource, page, this.props.pageSize);
+
+        if (!numOfPages) return;
+
+        const { pagesCloseToEnd, onCloseToEnd } = this.props;
+        const pagesLeft = numOfPages - page;
+        if (pagesLeft <= pagesCloseToEnd) {
+            onCloseToEnd();
+        }
     }
 
     renderPagination() {
@@ -208,7 +216,8 @@ class DataTable extends React.Component {
 }
 
 DataTable.defaultProps = {
-    pagination: true
+    pagination: true,
+    pagesCloseToEnd: 5
 };
 
 class StatementDataTable extends React.PureComponent {
@@ -256,7 +265,8 @@ class StatementDataTable extends React.PureComponent {
 
         this.state = {
             dataSource: [],
-            columns: columns
+            columns: columns,
+            loadedAllTransactions: false
         };
     }
 
@@ -296,11 +306,13 @@ class StatementDataTable extends React.PureComponent {
     }
 
     getNextBatch() {
-        const batch_size = 200;
+        if (this.state.loadedAllTransactions) return;
+
+        const BATCH_SIZE = 20;
         const req = {
             statement: 1,
             description: 1,
-            limit: batch_size,
+            limit: BATCH_SIZE,
             offset: this.state.dataSource.length
         };
 
@@ -308,11 +320,14 @@ class StatementDataTable extends React.PureComponent {
         const jp_client = jpClient();
 
         BinarySocket.send(req).then((response) => {
+            console.log('next batch', response);
+
             const formattedTransactions = response.statement.transactions
                 .map(transaction => this.getStatementData(transaction, currency, jp_client));
 
             this.setState({
-                dataSource: [...this.state.dataSource, ...formattedTransactions]
+                dataSource: [...this.state.dataSource, ...formattedTransactions],
+                loadedAllTransactions: formattedTransactions.length < BATCH_SIZE
             })
         });
     }
@@ -323,7 +338,7 @@ class StatementDataTable extends React.PureComponent {
                 {...this.props}
                 dataSource={this.state.dataSource}
                 columns={this.state.columns}
-                onLastPage={this.getNextBatch}
+                onCloseToEnd={this.getNextBatch}
             />
         );
     }
