@@ -149,7 +149,7 @@ const ViewPopup = (() => {
             $('#trade_details_current_date').parent().setVisibility(0);
         }
 
-        containerSetText('trade_details_ref_id', `${contract.transaction_ids.buy} (Buy) ${contract.transaction_ids.sell ? `<br>${contract.transaction_ids.sell} (Sell)` : ''}`);
+        containerSetText('trade_details_ref_id', `${contract.transaction_ids.buy} (${localize('Buy')}) ${contract.transaction_ids.sell ? `<br>${contract.transaction_ids.sell} (${localize('Sell')})` : ''}`);
         containerSetText('trade_details_indicative_price', indicative_price ? formatMoney(contract.currency, indicative_price) : '-');
 
         let profit_loss,
