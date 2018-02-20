@@ -323,6 +323,19 @@ const texts = [
     'Processing your request...',
     'Please check the above form for pending errors.',
 
+    // contract types display names
+    'Asian Up',
+    'Asian Down',
+    'Digit Matches',
+    'Digit Differs',
+    'Digit Odd',
+    'Digit Even',
+    'Digit Over',
+    'Digit Under',
+    'Close-Low',
+    'High-Close',
+    'High-Low',
+
     // multi_barriers_trading
     '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
     '[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].',

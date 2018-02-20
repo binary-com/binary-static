@@ -83,8 +83,30 @@ const ViewPopup = (() => {
             $container = makeTemplate();
         }
 
+        const contract_type_display = {
+            ASIANU     : 'Asian Up',
+            ASIAND     : 'Asian Down',
+            CALL       : 'Higher',
+            PUT        : 'Lower',
+            DIGITMATCH : 'Digit Matches',
+            DIGITDIFF  : 'Digit Differs',
+            DIGITODD   : 'Digit Odd',
+            DIGITEVEN  : 'Digit Even',
+            DIGITOVER  : 'Digit Over',
+            DIGITUNDER : 'Digit Under',
+            EXPIRYMISS : 'Ends Outside',
+            EXPIRYRANGE: 'Ends Between',
+            LBFLOATCALL: 'Close-Low',
+            LBFLOATPUT : 'High-Close',
+            LBHIGHLOW  : 'High-Low',
+            RANGE      : 'Stays Between',
+            UPORDOWN   : 'Goes Outside',
+            ONETOUCH   : 'Touches',
+            NOTOUCH    : 'Does Not Touch',
+        };
+
+        containerSetText('trade_details_contract_type', localize(contract_type_display[contract.contract_type]));
         containerSetText('trade_details_contract_id', contract.contract_id);
-        containerSetText('trade_details_contract_type', contract.contract_type);
         containerSetText('trade_details_start_date', `${toJapanTimeIfNeeded(epochToDateTime(contract.date_start))} GMT`);
         containerSetText('trade_details_end_date', `${toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry))} GMT`);
         containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
@@ -467,8 +489,8 @@ const ViewPopup = (() => {
         $sections.find('#sell_details_table').append($(
             `<table>
             <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
-            ${createRow('Contract ID', '', 'trade_details_contract_id')}
             ${createRow('Contract Type', '', 'trade_details_contract_type')}
+            ${createRow('Contract ID', '', 'trade_details_contract_id')}
             ${createRow('Transaction ID', '', 'trade_details_ref_id')}
             ${createRow('Start Time', '', 'trade_details_start_date')}
             ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
