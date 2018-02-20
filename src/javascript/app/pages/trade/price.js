@@ -5,6 +5,8 @@ const getStartDateNode     = require('./common_independent').getStartDateNode;
 const getTradingTimes      = require('./common_independent').getTradingTimes;
 const Contract             = require('./contract');
 const Defaults             = require('./defaults');
+const getLookBackFormula   = require('./lookback').getFormula;
+const isLookback           = require('./lookback').isLookback;
 const BinarySocket         = require('../../base/socket');
 const formatMoney          = require('../../common/currency').formatMoney;
 const CommonFunctions      = require('../../../_common/common_functions');
@@ -234,13 +236,8 @@ const Price = (() => {
             }
             comment.show();
             error.hide();
-            if (/^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type)) {
-                const formula = {
-                    LBFLOATPUT : `${localize('High')} - ${localize('Close')}`,
-                    LBFLOATCALL: `${localize('Close')} - ${localize('Low')}`,
-                    LBHIGHLOW  : `${localize('High')} - ${localize('Low')}`,
-                };
-                CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${localize('Multiplier')} x (${formula[type]})`);
+            if (isLookback(type)) {
+                CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${getLookBackFormula(type)}`);
             } else {
                 commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }

@@ -25,8 +25,39 @@ const Lookback = (() => {
         }
     };
 
+    const getFormula = (type = '', mul) => {
+        const value_map = {
+            Multiplier: mul,
+        };
+        const regex = /Multiplier/g;
+        const replacer = (str) => {
+            return value_map[str] || str;
+        };
+        const formulaMapping = {
+            LBFLOATPUT : 'Multiplier x (High - Close)'.replace(regex, replacer),
+            LBFLOATCALL: 'Multiplier x (Close - Low)'.replace(regex, replacer),
+            LBHIGHLOW  : 'Multiplier x (High - Low)'.replace(regex, replacer),
+        };
+
+        return formulaMapping[type.toUpperCase()];
+    };
+
+    const isLookback = (type) => /^(LBFLOATCALL|LBFLOATPUT|LBHIGHLOW)$/.test(type);
+
+    const getBarrierLabel = (type, barrier_count) => {
+        const barrier_map = {
+            LBFLOATCALL: ['Low'],
+            LBFLOATPUT : ['High'],
+            LBHIGHLOW  : ['High', 'Low'],
+        };
+        return barrier_map[type] || ['Barrier'];
+    };
+
     return {
-        display: displayLookback,
+        display        : displayLookback,
+        getFormula     : getFormula,
+        isLookback     : isLookback,
+        getBarrierLabel: getBarrierLabel,
     };
 })();
 

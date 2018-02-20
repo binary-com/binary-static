@@ -1,4 +1,6 @@
 const Contract           = require('./contract');
+const getLookBackFormula = require('./lookback').getFormula;
+const isLookback         = require('./lookback').isLookback;
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
 const TickDisplay        = require('./tick_trade');
@@ -74,15 +76,27 @@ const Purchase = (() => {
             CommonFunctions.elementTextContent(reference, `${localize('Your transaction reference is')} ${receipt.transaction_id}`);
 
             const currency = Client.get('currency');
+            let formula, multiplier;
+            const {contract_type} = purchase_data.echo_req.passthrough;
+            if (isLookback(contract_type)) {
+                const passthrough = purchase_data.echo_req.passthrough;
+                multiplier = formatMoney(currency, passthrough.amount);
+                formula    = getLookBackFormula(contract_type, multiplier);
+            }
 
             payout_value = +receipt.payout;
             cost_value   = receipt.buy_price;
 
-            const profit_value = payout_value ? formatMoney(currency, payout_value - cost_value) : '-';
+            const profit_value = payout_value ? formatMoney(currency, payout_value - cost_value) : undefined;
 
-            CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${payout_value ? formatMoney(currency, payout_value) : '-'}</p>`);
             CommonFunctions.elementInnerHtml(cost,   `${localize('Total Cost')} <p>${formatMoney(currency, cost_value)}</p>`);
-            CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
+            if (isLookback(contract_type)) {
+                CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formula}</p>`);
+                profit.setVisibility(0);
+            } else {
+                CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
+                CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
+            }
 
             updateValues.updateContractBalance(receipt.balance_after);
 
