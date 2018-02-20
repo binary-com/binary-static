@@ -1,4 +1,4 @@
-const sidebar     = require('../../app/common/sidebar');
+const sidebar     = require('../../_common/sidebar');
 const localize    = require('../../_common/localize').localize;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
 
