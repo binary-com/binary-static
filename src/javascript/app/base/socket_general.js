@@ -76,9 +76,6 @@ const BinarySocketGeneral = (() => {
                                 onAccept   : () => { Client.set('accepted_bch', 1); },
                             });
                         }
-                        if (Client.shouldCompleteTax() && !/detailsws|new_account/.test(window.location.pathname)) {
-                            window.location.assign(urlFor('user/settings/detailsws')); // redirect to details page
-                        }
                     }
                 }
                 break;
