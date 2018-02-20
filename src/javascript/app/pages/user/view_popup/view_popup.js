@@ -1,6 +1,9 @@
 const moment               = require('moment');
 const ViewPopupUI          = require('./view_popup.ui');
 const Highchart            = require('../../trade/charts/highchart');
+const getLookbackFormula   = require('../../trade/lookback').getFormula;
+const getLBBarrierLabel    = require('../../trade/lookback').getBarrierLabel;
+const isLookback           = require('../../trade/lookback').isLookback;
 const TickDisplay          = require('../../trade/tick_trade');
 const setViewPopupTimer    = require('../../../base/clock').setViewPopupTimer;
 const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
@@ -25,6 +28,7 @@ const ViewPopup = (() => {
         chart_updated,
         sell_text_updated,
         btn_view,
+        multiplier,
         $container,
         $loading;
 
@@ -67,6 +71,8 @@ const ViewPopup = (() => {
         }
 
         $.extend(contract, response.proposal_open_contract);
+        // Lookback multiplier value
+        multiplier = contract.multiplier;
 
         if (contract && document.getElementById(wrapper_id)) {
             update();
@@ -87,9 +93,13 @@ const ViewPopup = (() => {
 
         containerSetText('trade_details_start_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
         containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
-        containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
-
+        containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier));
+        if (isLookback(contract.contract_type)) {
+            containerSetText('trade_details_payout', getLookbackFormula(contract.contract_type, formatMoney(contract.currency, multiplier, false, 3, 2)));
+        } else {
+            containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
+        }
         setViewPopupTimer(updateTimers);
         update();
         ViewPopupUI.repositionConfirmation();
@@ -238,9 +248,15 @@ const ViewPopup = (() => {
 
     const contractEnded = () => {
         containerSetText('trade_details_current_title', localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
-        containerSetText('trade_details_spot_label', localize('Exit Spot'));
-        containerSetText('trade_details_spottime_label', localize('Exit Spot Time'));
+
         containerSetText('trade_details_indicative_label', localize('Price'));
+        if (isLookback(contract.contract_type)) {
+            containerSetText('trade_details_spot_label', localize('Close'));
+            containerSetText('trade_details_spottime_label', localize('Close Time'));
+        } else {
+            containerSetText('trade_details_spot_label', localize('Exit Spot'));
+            containerSetText('trade_details_spottime_label', localize('Exit Spot Time'));
+        }
         // show validation error if contract is not settled yet
         if (!(contract.is_settleable && !contract.is_sold)) {
             containerSetText('trade_details_message', '&nbsp;');
@@ -421,14 +437,18 @@ const ViewPopup = (() => {
     const populateAuditTable = (show_audit_table) => {
         const contract_starts = createAuditTable('Starts');
         parseAuditResponse(contract_starts.table, contract.audit_details.contract_start).then(() => {
-            if (contract.audit_details.contract_start) {
+            if (contract.audit_details.contract_start
+                // Hide audit table for Lookback.
+                && !/^(LBHIGHLOW|LBFLOATPUT|LBFLOATCALL)/.test(contract.shortcode)) {
                 createAuditHeader(contract_starts.table);
                 appendAuditLink('trade_details_entry_spot');
             } else {
                 contract_starts.div.remove();
             }
             // don't show exit tick information if missing or manual sold
-            if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)) {
+            if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)
+                // Hide audit table for Lookback.
+                && !/^(LBHIGHLOW|LBFLOATPUT|LBFLOATCALL)/.test(contract.shortcode)) {
                 const contract_ends = createAuditTable('Ends');
                 parseAuditResponse(contract_ends.table, contract.audit_details.contract_end).then(() => {
                     if (contract.audit_details.contract_end) {
@@ -457,8 +477,10 @@ const ViewPopup = (() => {
 
         $container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode }));
         const $sections  = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
-        let barrier_text = 'Barrier';
-        if (contract.barrier_count > 1) {
+        let [barrier_text, low_barrier_text] = ['Barrier', 'Low Barrier'];
+        if (isLookback(contract.contract_type)) {
+            [barrier_text, low_barrier_text] = getLBBarrierLabel(contract.contract_type, contract.barrier_count);
+        } else if (contract.barrier_count > 1) {
             barrier_text = 'High Barrier';
         } else if (/^DIGIT(MATCH|DIFF)$/.test(contract.contract_type)) {
             barrier_text = 'Target';
@@ -472,10 +494,11 @@ const ViewPopup = (() => {
             ${createRow('Start Time', '', 'trade_details_start_date')}
             ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
                 createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
-            ${createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>')}
+            ${!isLookback(contract.contract_type) ? createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
-            ${(contract.barrier_count > 1 ? createRow('Low Barrier', '', 'trade_details_barrier_low', true) : '')}
+            ${(contract.barrier_count > 1 ? createRow(low_barrier_text, '', 'trade_details_barrier_low', true) : '')}
             ${createRow('Potential Payout', '', 'trade_details_payout')}
+            ${multiplier ? createRow('Multiplier', '', 'trade_details_multiplier') : ''}
             ${createRow('Purchase Price', '', 'trade_details_purchase_price')}
             </tbody>
             <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>
