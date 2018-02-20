@@ -41,7 +41,8 @@ const Header = (() => {
     };
 
     const initMenuDropDown = () => {
-        const $menu = $('.top-nav-menu li ul');
+        const $menu          = $('.top-nav-menu li ul');
+        const $menus_to_hide = $('#all-accounts, #select_language');
         $('.top-nav-menu > li.nav-dropdown-toggle').on('click', function(event) {
             if ($(event.target).find('span').hasClass('nav-caret')) {
                 event.stopPropagation();
@@ -49,6 +50,7 @@ const Header = (() => {
                 if (+$child_menu.css('opacity') === 1) {
                     hideMenu($menu);
                 } else if (+$child_menu.css('opacity') === 0) {
+                    hideMenu($menus_to_hide);
                     $menu.animate({'opacity': 0}, 100, () => {
                         $menu.css('visibility', 'hidden');
                     }).promise().then(() => { showMenu($child_menu); });
