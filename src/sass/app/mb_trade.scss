@@ -52,6 +52,7 @@
             }
             #payout_amount {
                 line-height: 49px;
+                white-space: nowrap;
             }
             .trade_form > div .list {
                 background-color: $COLOR_WHITE;

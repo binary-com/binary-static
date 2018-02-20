@@ -131,98 +131,94 @@ const Forex = () => (
                     <HeaderSecondary header={it.L('Major pairs')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),      className: 'gr-padding-10' },
-                            { text: it.L('Description'), className: 'gr-padding-10' },
-                            { text: it.L('Lot size*'),   className: 'gr-padding-10' },
-                            { text: it.L('Volume step'), className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                            { text: it.L('Description'),    className: 'gr-padding-10' },
+                            { text: it.L('Lot size'),       className: 'gr-padding-10 w-80' },
+                            { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                            { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                         ]],
                         tbody: [
-                            [{ text: 'AUD/CAD' }, { text: it.L('Australian Dollar vs Canadian Dollar')    }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'AUD/CHF' }, { text: it.L('Australian Dollar vs Swiss Franc')        }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'AUD/JPY' }, { text: it.L('Australian Dollar vs Japanese Yen')       }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'AUD/NZD' }, { text: it.L('Australian Dollar vs New Zealand Dollar') }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'AUD/USD' }, { text: it.L('Australian Dollar vs US Dollar')          }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'EUR/AUD' }, { text: it.L('Euro vs Australian Dollar')               }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'EUR/CAD' }, { text: it.L('Euro vs Canadian Dollar')                 }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'EUR/CHF' }, { text: it.L('Euro vs Swiss Franc')                     }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'EUR/GBP' }, { text: it.L('Euro vs Great Britain Pound')             }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'EUR/JPY' }, { text: it.L('Euro vs Japanese Yen')                    }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'EUR/NZD' }, { text: it.L('Euro vs New Zealand Dollar')              }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'EUR/USD' }, { text: it.L('Euro vs US Dollar')                       }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'GBP/CHF' }, { text: it.L('Great Britain Pound vs Swiss Franc')      }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'GBP/JPY' }, { text: it.L('Great Britain Pound vs Japanese Yen')     }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'GBP/USD' }, { text: it.L('Great Britain Pound vs US Dollar')        }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'NZD/USD' }, { text: it.L('New Zealand Dollar vs US Dollar')         }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'USD/CAD' }, { text: it.L('US Dollar vs Canadian Dollar')            }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'USD/CHF' }, { text: it.L('US Dollar vs Swiss Franc')                }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'USD/JPY' }, { text: it.L('US Dollar vs Japanese Yen')               }, { text: hundred_thousand }, { text: hundredth }],
+                            [{ text: 'AUD/CAD' }, { text: it.L('Australian Dollar vs Canadian Dollar')    }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'AUD/CHF' }, { text: it.L('Australian Dollar vs Swiss Franc')        }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'AUD/JPY' }, { text: it.L('Australian Dollar vs Japanese Yen')       }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'AUD/NZD' }, { text: it.L('Australian Dollar vs New Zealand Dollar') }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'AUD/USD' }, { text: it.L('Australian Dollar vs US Dollar')          }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'EUR/AUD' }, { text: it.L('Euro vs Australian Dollar')               }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'EUR/CAD' }, { text: it.L('Euro vs Canadian Dollar')                 }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'EUR/CHF' }, { text: it.L('Euro vs Swiss Franc')                     }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'EUR/GBP' }, { text: it.L('Euro vs Great Britain Pound')             }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'EUR/JPY' }, { text: it.L('Euro vs Japanese Yen')                    }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'EUR/NZD' }, { text: it.L('Euro vs New Zealand Dollar')              }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'EUR/USD' }, { text: it.L('Euro vs US Dollar')                       }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'GBP/CHF' }, { text: it.L('Great Britain Pound vs Swiss Franc')      }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'GBP/JPY' }, { text: it.L('Great Britain Pound vs Japanese Yen')     }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'GBP/USD' }, { text: it.L('Great Britain Pound vs US Dollar')        }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'NZD/USD' }, { text: it.L('New Zealand Dollar vs US Dollar')         }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'USD/CAD' }, { text: it.L('US Dollar vs Canadian Dollar')            }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'USD/CHF' }, { text: it.L('US Dollar vs Swiss Franc')                }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'USD/JPY' }, { text: it.L('US Dollar vs Japanese Yen')               }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                         ],
                     }} />
-                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
-                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('Minor pairs')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),      className: 'gr-padding-10' },
-                            { text: it.L('Description'), className: 'gr-padding-10' },
-                            { text: it.L('Lot size*'),   className: 'gr-padding-10' },
-                            { text: it.L('Volume step'), className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                            { text: it.L('Description'),    className: 'gr-padding-10' },
+                            { text: it.L('Lot size'),       className: 'gr-padding-10 w-80' },
+                            { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                            { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                         ]],
                         tbody: [
-                            [{ text: 'CAD/CHF' }, { text: it.L('Canadian Dollar vs Swiss Franc')            }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'CAD/JPY' }, { text: it.L('Canadian Dollar vs Japanese Yen')           }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'EUR/NOK' }, { text: it.L('Euro vs Norwegian Krone')                   }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'EUR/PLN' }, { text: it.L('Euro vs Polish Zloty')                      }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'EUR/SEK' }, { text: it.L('Euro vs Swedish Krona')                     }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'GBP/AUD' }, { text: it.L('Great Britain Pound vs Australian Dollar')  }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'GBP/CAD' }, { text: it.L('Great Britain Pound vs Canadian Dollar')    }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'GBP/NOK' }, { text: it.L('Great Britain Pound vs Norwegian Krone')    }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'GBP/NZD' }, { text: it.L('Great Britain Pound vs New Zealand Dollar') }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'GBP/SEK' }, { text: it.L('Great Britain Pound vs Swedish Krona')      }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'NZD/CAD' }, { text: it.L('New Zealand Dollar vs Canadian Dollar')     }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'NZD/JPY' }, { text: it.L('New Zealand Dollar vs Japanese Yen')        }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'USD/CNH' }, { text: it.L('US Dollar vs Chinese Renminbi')             }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'USD/MXN' }, { text: it.L('US Dollar vs Mexican Peso')                 }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'USD/NOK' }, { text: it.L('US Dollar vs Norwegian Krone')              }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'USD/PLN' }, { text: it.L('US Dollar vs Polish Zloty')                 }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'USD/SEK' }, { text: it.L('US Dollar vs Swedish Krona')                }, { text: hundred_thousand }, { text: hundredth }],
-                            [{ text: 'USD/ZAR' }, { text: it.L('US Dollar vs South African Rand')           }, { text: hundred_thousand }, { text: hundredth }],
+                            [{ text: 'CAD/CHF' }, { text: it.L('Canadian Dollar vs Swiss Franc')            }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'CAD/JPY' }, { text: it.L('Canadian Dollar vs Japanese Yen')           }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'EUR/NOK' }, { text: it.L('Euro vs Norwegian Krone')                   }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'EUR/PLN' }, { text: it.L('Euro vs Polish Zloty')                      }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'EUR/SEK' }, { text: it.L('Euro vs Swedish Krona')                     }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'GBP/AUD' }, { text: it.L('Great Britain Pound vs Australian Dollar')  }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'GBP/CAD' }, { text: it.L('Great Britain Pound vs Canadian Dollar')    }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'GBP/NOK' }, { text: it.L('Great Britain Pound vs Norwegian Krone')    }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'GBP/NZD' }, { text: it.L('Great Britain Pound vs New Zealand Dollar') }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'GBP/SEK' }, { text: it.L('Great Britain Pound vs Swedish Krona')      }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'NZD/CAD' }, { text: it.L('New Zealand Dollar vs Canadian Dollar')     }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'NZD/JPY' }, { text: it.L('New Zealand Dollar vs Japanese Yen')        }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'USD/CNH' }, { text: it.L('US Dollar vs Chinese Renminbi')             }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'USD/MXN' }, { text: it.L('US Dollar vs Mexican Peso')                 }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'USD/NOK' }, { text: it.L('US Dollar vs Norwegian Krone')              }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'USD/PLN' }, { text: it.L('US Dollar vs Polish Zloty')                 }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'USD/SEK' }, { text: it.L('US Dollar vs Swedish Krona')                }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                            [{ text: 'USD/ZAR' }, { text: it.L('US Dollar vs South African Rand')           }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                         ],
                     }} />
-                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
-                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('Exotic pairs')} />
                     <Table scroll data={{
                         thead: [[
-                            { text: it.L('Symbol'),      className: 'gr-padding-10' },
-                            { text: it.L('Description'), className: 'gr-padding-10' },
-                            { text: it.L('Lot size*'),   className: 'gr-padding-10' },
-                            { text: it.L('Volume step'), className: 'gr-padding-10' },
+                            { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                            { text: it.L('Description'),    className: 'gr-padding-10' },
+                            { text: it.L('Lot size'),       className: 'gr-padding-10 w-80' },
+                            { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                            { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                         ]],
                         tbody: [
-                        [{ text: 'AUD/SGD' }, { text: it.L('Australian Dollar vs Singapore Dollar')   }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'CHF/JPY' }, { text: it.L('Swiss Franc vs Japanese Yen')             }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'EUR/SGD' }, { text: it.L('Euro vs Singapore Dollar')                }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'EUR/TRY' }, { text: it.L('Euro vs Turkish Lira')                    }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'GBP/SGD' }, { text: it.L('Great Britain Pound vs Singapore Dollar') }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'HKD/JPY' }, { text: it.L('Hong Kong Dollar vs Japanese Yen')        }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'NZD/CHF' }, { text: it.L('New Zealand Dollar vs Swiss Franc')       }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'NZD/SGD' }, { text: it.L('New Zealand Dollar vs Singapore Dollar')  }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'USD/HKD' }, { text: it.L('US Dollar vs Hong Kong Dollar')           }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'USD/RUB' }, { text: it.L('US Dollar vs Russian Ruble')              }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'USD/SGD' }, { text: it.L('US Dollar vs Singapore Dollar')           }, { text: hundred_thousand }, { text: hundredth }],
-                        [{ text: 'USD/TRY' }, { text: it.L('US Dollar vs Turkish Lira')               }, { text: hundred_thousand }, { text: hundredth }],
+                        [{ text: 'AUD/SGD' }, { text: it.L('Australian Dollar vs Singapore Dollar')   }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'CHF/JPY' }, { text: it.L('Swiss Franc vs Japanese Yen')             }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'EUR/SGD' }, { text: it.L('Euro vs Singapore Dollar')                }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'EUR/TRY' }, { text: it.L('Euro vs Turkish Lira')                    }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'GBP/SGD' }, { text: it.L('Great Britain Pound vs Singapore Dollar') }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'HKD/JPY' }, { text: it.L('Hong Kong Dollar vs Japanese Yen')        }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'NZD/CHF' }, { text: it.L('New Zealand Dollar vs Swiss Franc')       }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'NZD/SGD' }, { text: it.L('New Zealand Dollar vs Singapore Dollar')  }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'USD/HKD' }, { text: it.L('US Dollar vs Hong Kong Dollar')           }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'USD/RUB' }, { text: it.L('US Dollar vs Russian Ruble')              }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'USD/SGD' }, { text: it.L('US Dollar vs Singapore Dollar')           }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                        [{ text: 'USD/TRY' }, { text: it.L('US Dollar vs Turkish Lira')               }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                         ],
                     }} />
-                    <span className='hint'>{it.L('These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</span>
-                    <p className='hint'>{it.L('*Lot size volume = 1.0.')}</p>
 
                     <HeaderSecondary header={it.L('How to read the contract specifications table')} />
                     <p>{it.L('The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>.')}</p>
-                    <p>{it.L('Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.')}</p>
-                    <p>{it.L('To learn more, read our [_1]Margin Policy[_2] that further explains our 100% forced liquidation level for Forex.', '<a href="#margin-policy">', '</a>')}</p>
+                    <p>{it.L('For information about Forex leverage refer to our [_1]Margin Policy[_2].', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>

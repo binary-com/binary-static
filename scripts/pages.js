@@ -33,7 +33,7 @@ module.exports = [
     ['user/accounts',                      'app/user/accounts',                         'default',    'Accounts',                          'ja'],
     ['user/authenticate',                  'app/user/authenticate',                     'default',    'Authenticate',                      'ja'],
     ['user/lost_passwordws',               'app/user/lost_password',                    'default',    'Password Reset'],
-    ['user/metatrader',                    'app/user/metatrader',                       'default',    'MetaTrader account management'],
+    ['user/metatrader',                    'app/user/metatrader',                       'default',    'MetaTrader account management',     'ja'],
     ['user/portfoliows',                   'app/user/portfolio',                        'default',    'Portfolio'],
     ['user/profit_tablews',                'app/user/profit_table',                     'default',    'Profit Table'],
     ['user/reality_check_frequency',       'app/user/reality_check/frequency',          'default',    'Reality Check'],
@@ -126,9 +126,9 @@ module.exports = [
 
     ['get-started-jp',                     'static/japan/get_started',                  'default',     'Get Started',                      'NOT-ja,en'],
 
-    ['metatrader/contract-specifications', 'static/metatrader/contract_specifications', 'default',     'Contract Specifications'],
-    ['metatrader/download',                'static/metatrader/download',                'default',     'Start Trading with MetaTrader 5'],
-    ['metatrader/how-to-trade-mt5',        'static/metatrader/how_to_trade_mt5',        'default',     'How to Trade in MetaTrader 5'],
+    ['metatrader/contract-specifications', 'static/metatrader/contract_specifications', 'default',     'Contract Specifications',          'ja'],
+    ['metatrader/download',                'static/metatrader/download',                'default',     'Start Trading with MetaTrader 5',  'ja'],
+    ['metatrader/how-to-trade-mt5',        'static/metatrader/how_to_trade_mt5',        'default',     'How to Trade in MetaTrader 5',     'ja'],
     ['metatrader/types-of-accounts',       'static/metatrader/types_of_accounts',       'default',     'Types of MetaTrader 5 accounts'],
 
     ['affiliate_disclaimer',               'static/japan/affiliates/popup',             null,          '',                                 'NOT-ja,en'],

@@ -217,11 +217,11 @@ const BinarySocket = (() => {
                     }
                 }
 
-                const type = response.msg_type;
+                const msg_type = response.msg_type;
 
                 // store in State
-                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|website_status/.test(type)) {
-                    State.set(['response', type], $.extend({}, response));
+                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|website_status/.test(msg_type)) {
+                    State.set(['response', msg_type], $.extend({}, response));
                 }
                 // resolve the send promise
                 const this_req_id = response.req_id;
@@ -239,8 +239,10 @@ const BinarySocket = (() => {
                 switch (error_code) {
                     case 'WrongResponse':
                     case 'OutputValidationFailed': {
-                        const text_value = (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.'));
-                        showNoticeMessage(text_value);
+                        if (msg_type !== 'mt5_login_list') {
+                            const text_value = (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.'));
+                            showNoticeMessage(text_value);
+                        }
                         break;
                     }
                     case 'RateLimit':

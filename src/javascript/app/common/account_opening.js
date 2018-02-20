@@ -6,6 +6,7 @@ const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
 const makeOption         = require('../../_common/common_functions').makeOption;
+const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
@@ -32,6 +33,9 @@ const AccountOpening = (() => {
         generateBirthDate();
         if (Client.canRequestProfessional()) {
             professionalClient.init(is_financial, false);
+        }
+        if (Client.get('residence') !== 'jp') {
+            Geocoder.init(form_id);
         }
     };
 

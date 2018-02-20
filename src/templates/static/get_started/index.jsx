@@ -34,11 +34,12 @@ const GetStartedSectionWrapper = ({ section_id, section_header, section_descript
 
 const Index = () => (
     <div className='static_full get-started-beta'>
-        <h1 className='center-text'>{it.L('Get Started')}</h1>
+        <h1 className='center-text eu-hide'>{it.L('Get Started')}</h1>
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
-            <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper' items={[
-                { id: 'binary', text: it.L('Binary Options') },
-                { id: 'mt5',    text: it.L('MetaTrader 5') },
+            <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper eu-hide' items={[
+                { id: 'binary',   text: it.L('Binary Options') },
+                { id: 'lookback', text: it.L('Lookbacks'), className: 'only-cr' },
+                { id: 'mt5',      text: it.L('MetaTrader 5') },
                 { id: 'get_started_tabs_selector', className: 'tab-selector' },
             ]} />
             <div className='tab-content'>
@@ -228,6 +229,42 @@ const Index = () => (
                                 />
                             </div>
                         </GetStartedSectionWrapper>
+                    </TabContent>
+                    <TabContent id='lookback'>
+                        <h2>{it.L('Lookbacks')}</h2>
+                        <h3>{it.L('What are lookbacks')}</h3>
+                        <p>{it.L('A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to "look back" over time to determine the payout.')}</p>
+                        <SeparatorLine invisible className='gr-padding-10' />
+                        <h3>{it.L('Types of lookbacks')}</h3>
+                        <p>{it.L('We offer three types lookbacks:')}</p>
+                        <div className='gr-row'>
+                            <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
+                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-high-image.svg')} />
+                                <ul className='checked'>
+                                    <li>{it.L('High-Close')}</li>
+                                </ul>
+                                <p>{it.L('Win the multiplier times the high minus close.')}</p>
+                            </div>
+                            <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
+                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-low-image.svg')} />
+                                <ul className='checked'>
+                                    <li>{it.L('Close-Low')}</li>
+                                </ul>
+                                <p>{it.L('Win the multiplier times the close minus low.')}</p>
+                            </div>
+                            <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
+                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/high-low-image.svg')} />
+                                <ul className='checked'>
+                                    <li>{it.L('High-Low')}</li>
+                                </ul>
+                                <p>{it.L('Win the multiplier times the high minus low.')}</p>
+                            </div>
+                        </div>
+                        <SeparatorLine invisible/>
+                        <p>{it.L('For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:')}</p>
+                        <div className='formula center-text'>
+                            <span>{it.L('(6,000 – 5,200) * 2 = $1600')}</span>
+                        </div>
                     </TabContent>
                 </TabContentContainer>
             </div>

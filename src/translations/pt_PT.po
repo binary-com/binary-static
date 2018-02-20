@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-01-31 20:55-0500\n"
+"PO-Revision-Date: 2018-02-19 04:50-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Language: pt_PT\n"
 
 msgid "8"
-msgstr ""
+msgstr "8"
 
 msgid "404"
 msgstr "404"
@@ -102,13 +102,22 @@ msgstr "Academia %1"
 msgid "%1 Account"
 msgstr "Conta %1"
 
+msgid "%1 Account %2"
+msgstr ""
+
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Termos e condições do programa de afiliados %1"
 
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Termos e condições da Application Program Interface (\"API\") %1"
 
+msgid "%1 Graduate Programme"
+msgstr ""
+
 msgid "%1 Graduate programme"
+msgstr "Graduate programme da %1"
+
+msgid "%1 Hackathon Competition"
 msgstr ""
 
 msgid "%1 ICO"
@@ -490,12 +499,6 @@ msgstr "* Livre de Impostos: Em muitos países, os ganhos com negociações são
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Todas as chamadas são gravadas para fins de treinamento e monitoramento"
 
-msgid "*Lot size volume = 1.0."
-msgstr ""
-
-msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr ""
-
 msgid "0-1 year"
 msgstr "0-1 ano"
 
@@ -521,16 +524,16 @@ msgid "1. Proof of identity"
 msgstr "1. Comprovante de identidade"
 
 msgid "10 lots"
-msgstr ""
+msgstr "10 lotes"
 
 msgid "10-30 million JPY"
 msgstr "10-30 million JPY"
 
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 msgid "150%"
-msgstr ""
+msgstr "150%"
 
 msgid "2-3 years of applicable experience in a web application testing role"
 msgstr "2 a 3 anos de experiência relevante numa função de teste de aplicativos web"
@@ -542,7 +545,7 @@ msgid "2. Proof of address"
 msgstr "2. Comprovante de endereço"
 
 msgid "24/7"
-msgstr ""
+msgstr "24/7"
 
 msgid "3-5 million JPY"
 msgstr "3-5 million JPY"
@@ -551,7 +554,7 @@ msgid "3-5 years"
 msgstr "3-5 years"
 
 msgid "30 lots"
-msgstr ""
+msgstr "30 lotes"
 
 msgid "30-50 million JPY"
 msgstr "30-50 million JPY"
@@ -569,10 +572,10 @@ msgid "5-10 million JPY"
 msgstr "5-10 million JPY"
 
 msgid "50 lots"
-msgstr ""
+msgstr "50 lotes"
 
 msgid "50%"
-msgstr ""
+msgstr "50%"
 
 msgid "50-100 million JPY"
 msgstr "50-100 million JPY"
@@ -584,7 +587,7 @@ msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 transações nos últimos 12 meses"
 
 msgid "60+"
-msgstr ""
+msgstr ">60"
 
 msgid "7-day limit on losses"
 msgstr "Limite de 7 dias nas perdas"
@@ -593,10 +596,10 @@ msgid "7-day turnover limit"
 msgstr "Limite de 7 dias no volume de negócios"
 
 msgid "75%"
-msgstr ""
+msgstr "75%"
 
 msgid "80+"
-msgstr ""
+msgstr ">80"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Voltar para Descrições de funções"
@@ -848,7 +851,7 @@ msgid "Access Denied"
 msgstr "Acesso negado"
 
 msgid "Access MT5 dashboard"
-msgstr ""
+msgstr "Acessar o painel de negociação da MT5"
 
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "Acesse todas as ferramentas e funcionalidades de negociação na MT5, incluindo Expert Advisors (EAs), gráficos e tipos de ordens"
@@ -863,7 +866,7 @@ msgid "Access the markets anytime, anywhere using native apps for your iOS or An
 msgstr "Acesse os mercados em qualquer momento, de qualquer lugar, usando apicativos nativos para os seus dispositivos iOS e Android."
 
 msgid "Access to Advanced trading"
-msgstr ""
+msgstr "Acesso a negociações avançadas"
 
 msgid "Access to Personal Data"
 msgstr "Acesso a dados pessoais"
@@ -925,7 +928,7 @@ msgstr "Saldo da conta:"
 msgid "Account balance: "
 msgstr "Saldo de conta: "
 
-msgid "Account comparison*"
+msgid "Account comparison"
 msgstr ""
 
 msgid "Account currency"
@@ -1019,13 +1022,13 @@ msgid "Administrator"
 msgstr "Administrador"
 
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 msgid "Advanced Account"
-msgstr ""
+msgstr "Conta avançada"
 
 msgid "Advanced account: 1:100"
-msgstr ""
+msgstr "Conta avançada: 1:100"
 
 msgid "Advanced binary options trading interface"
 msgstr "Interface avançada de negociações binárias"
@@ -1034,10 +1037,7 @@ msgid "Advanced knowledge of software design principles"
 msgstr "Conhecimentos avançados dos princípios de design de software"
 
 msgid "Advanced multi-asset trading platform"
-msgstr ""
-
-msgid "Advanced trading app for web and mobile"
-msgstr "Aplicativo de negociação avançado para web e dispositivos móveis"
+msgstr "Plataforma avançada multi-ativos"
 
 msgid "Advantages of CFD trading"
 msgstr "Vantagens da negociação de CFDs"
@@ -1129,9 +1129,6 @@ msgstr "Todas as informações de cartões de crédito são enviadas diretamente
 msgid "All customer funds are segregated and held with JSF Trust Bank."
 msgstr "Todos os fundos de clientes são segregadas e mantidas no JSF Trust Bank."
 
-msgid "All deposits and withdrawals are made through your omnibus master account"
-msgstr "Todos os depósitos e retiradas são efetuados através da sua conta-mestre omnibus"
-
 msgid "All durations"
 msgstr "Todas as durações"
 
@@ -1190,7 +1187,7 @@ msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Todos os horários estão de acordo com o fuso horário GMT (Greenwich Mean Time)."
 
 msgid "All transactions that occur on the blockchain related to cryptocurrency may not be supervised and regulated by financial institutions and government agencies. The absence of an overarching authority overseeing cryptographic transactions means that there is no recourse to banks, payment service providers, or regulators in the event of erroneous or fraudulent transactions. It is your responsibility to check what rules and protections apply in your relevant jurisdiction before investing and / or trading in virtual currency and / or trading on contracts for differences relating to virtual currency. Please be aware of all the risks associated with cryptocurrency trading and seek advice from an independent financial advisor and / or legal advisor if you have any doubts."
-msgstr ""
+msgstr "Todas as transações que ocorrem na blockchain relacionadas com criptomoedas podem não ser supervisionadas e regulamentadas por instituições financeiras e agências governamentais. Esta ausência de uma autoridade de supervisão que controla as transações criptográficas significa que não há recurso a bancos, fornecedores de serviços de pagamentos ou regulamentadores na eventualidade de haver de transações errôneas ou fraudulentas. É da sua responsabilidade verificar as regras e proteções que se aplicam na sua jurisdição antes de investir e/ou negociar em moedas virtuais e/ou negociar contratos por diferenças relacionados com moedas virtuais. Esteja ciente de todos os riscos associados à negociação de criptomoedas e procure aconselhamento de assessores financeiros independentes e/ou consultores jurídicos no caso de você ter quaisquer dúvidas."
 
 msgid "All versions of Android"
 msgstr "Todas as versões do Android"
@@ -1388,9 +1385,6 @@ msgstr "Há quaisquer requisitos mínimos por licitação?"
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr "Você é já um agente de pagamentos ou tem interesse em se tornar um?"
 
-msgid "Are you a licensed and regulated broker with a large database of active traders? Manage your database more efficiently by consolidating all your client accounts under an omnibus master account. This allows you to keep their individual identities private at the same time."
-msgstr "Você é um corretor licenciado e regulamentado, com um grande banco de dados de negociadores ativos? Gerencie o seu banco de dados com mais eficiência ao consolidar todas as suas contas numa conta-mestre omnibus. Isto permite-lhe manter as identididades individuais dos seus clientes privadas ao mesmo tempo."
-
 msgid "Are you an Investment professional?"
 msgstr "Você é um profissional de investimentos?"
 
@@ -1485,7 +1479,7 @@ msgid "Aside from the three main trade types above, you also get Asians and Digi
 msgstr "Além dos três principais tipos de negociações acima, também há os chamados \"Asiáticos\" e \"Dígitos\", disponíveis exclusivamente com os nossos índices \"Volatility\"."
 
 msgid "Ask"
-msgstr ""
+msgstr "Venda"
 
 msgid "Ask price"
 msgstr "Preço de venda"
@@ -1503,7 +1497,7 @@ msgid "Asset Index"
 msgstr "Índice de Ativos"
 
 msgid "Asset open hours:"
-msgstr ""
+msgstr "Horas de abertura do ativo:"
 
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
 msgstr "Atribua e gerencie várias subcontas diretamente a partir de uma única interface – o gestor de contas múltiplas."
@@ -1554,22 +1548,22 @@ msgid "Australia"
 msgstr "Austrália"
 
 msgid "Australian Dollar vs Canadian Dollar"
-msgstr ""
+msgstr "Dólar australiano vs. Dólar canadense"
 
 msgid "Australian Dollar vs Japanese Yen"
-msgstr ""
+msgstr "Dólar australiano vs. Iene japonês"
 
 msgid "Australian Dollar vs New Zealand Dollar"
-msgstr ""
+msgstr "Dólar australiano vs. Dólar neozelandês"
 
 msgid "Australian Dollar vs Singapore Dollar"
-msgstr ""
+msgstr "Dólar australiano vs. Dólar de Singapura"
 
 msgid "Australian Dollar vs Swiss Franc"
-msgstr ""
+msgstr "Dólar australiano vs. Franco suíço"
 
 msgid "Australian Dollar vs US Dollar"
-msgstr ""
+msgstr "Dólar australiano vs. Dólar americano"
 
 msgid "Authenticate"
 msgstr "Autenticar"
@@ -1638,7 +1632,7 @@ msgid "BIEL is a company established in Malta under registration number C70156 a
 msgstr "BIEL é uma empresa estabelecida em Malta, sob o número de registro C70156 e com sede no edifício Mompalao, Suite 2, Tower Road, Msida MSD1825, Malta."
 
 msgid "BTC"
-msgstr ""
+msgstr "BTC"
 
 msgid "BY CLICKING ON THE \"AGREE\" BUTTON, YOU CERTIFY (BOTH TO BINARY GROUP LTD., ITS EMPLOYEES, OFFICERS AND ITS ADVISORS) THAT:"
 msgstr "AO CLICAR NO BOTÃO \"ACEITAR\", VOCÊ CERTIFICA (TANTO À BINARY GROUP LTD. E AOS SEUS FUNCIONÁRIOS, AGENTES E ASSESSORES) QUE:"
@@ -1737,7 +1731,7 @@ msgid "Best execution is the requirement to take all sufficient steps to obtain,
 msgstr "A melhor execução é a necessidade de tomar todas as medidas suficientes para obter, na execução de ordens, o melhor resultado possível para você, tendo em conta o preço, os custos, a velocidade, a probabilidade de uma execução e a liquidação, o tamanho, a natureza ou qualquer outra consideração relevante (doravante designados \"fatores de execução\") à execução da ordem."
 
 msgid "Best of all, there is no minimum deposit requirement."
-msgstr ""
+msgstr "O melhor de tudo é que não há nenhum requisito de depósito mínimo."
 
 msgid "BetOnMarkets goes live"
 msgstr "A BetOnMarkets lança a plataforma"
@@ -1860,13 +1854,10 @@ msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 1
 msgstr "Binary KK, Edif. Hiroo Miyata 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tóquio 150-0012, Japão"
 
 msgid "Binary Limited"
-msgstr ""
+msgstr "Binary Limited"
 
 msgid "Binary Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below."
-msgstr ""
-
-msgid "Binary Next-Gen"
-msgstr "Binary Next-Gen"
+msgstr "A Binary Ltd, com sede social situada no endereço 47 Esplanade, St. Helier, Jersey, JE1 0BD, Ilhas do Canal, é a empresa-mãe das empresas listadas abaixo."
 
 msgid "Binary Options"
 msgstr "Opções binárias"
@@ -1960,10 +1951,10 @@ msgid "Bitcoin Cash"
 msgstr "Bitcoin Cash"
 
 msgid "Bitcoin Cash vs US Dollar"
-msgstr ""
+msgstr "Bitcoin Cash vs. Dólar americano"
 
 msgid "Bitcoin vs US Dollar"
-msgstr ""
+msgstr "Bitcoin vs. Dólar americano"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr " "
@@ -2071,13 +2062,13 @@ msgid "CFD (Contract for Difference): CFD is an instrument that allows you to pr
 msgstr "Contratos por Diferenças (CFD - Contracts for Difference em inglês): um CFD é um instrumento que lhe permite lucrar ao especular na subida ou descida de um instrumento. O lucro ou a perda é estimada como uma função da diferença nos preços de compra/venda do instrumento subjacente."
 
 msgid "CFD contract specifications"
-msgstr ""
+msgstr "Especificações de contrato do CFD"
 
 msgid "CFD margin policy"
 msgstr "Política de margens CFD"
 
 msgid "CFDs"
-msgstr ""
+msgstr "CFDs"
 
 msgid "CONVERTIBLE DIGITAL TOKENS"
 msgstr "TOKENS DIGITAIS CONVERSÍVEIS"
@@ -2137,10 +2128,10 @@ msgid "Canada"
 msgstr "Canadá"
 
 msgid "Canadian Dollar vs Japanese Yen"
-msgstr ""
+msgstr "Dólar canadense vs. Iene japonês"
 
 msgid "Canadian Dollar vs Swiss Franc"
-msgstr ""
+msgstr "Dólar canadense vs. Franco suíço"
 
 msgid "Cancel"
 msgstr "Cancelar"
@@ -2150,9 +2141,6 @@ msgstr "Cancelar lance"
 
 msgid "Cancel bid?"
 msgstr "Cancelar licitação?"
-
-msgid "Career opportunities for Americans"
-msgstr "Oportunidades de carreira para americanos"
 
 msgid "Careers"
 msgstr "Carreiras"
@@ -2184,11 +2172,11 @@ msgstr "Certos limites são aplicados no que diz respeito aos níveis aceitávei
 msgid "Change API Endpoint"
 msgstr "Alterar ponto de extremidade da API"
 
+msgid "Change MT5 password"
+msgstr "Alterar senha da MT5"
+
 msgid "Change Password"
 msgstr "Alterar Senha"
-
-msgid "Change password"
-msgstr "Alterar senha"
 
 msgid "Change the Stop Out Level in relation to your account."
 msgstr "Alterar o nível de interrupção automática em relação à sua conta."
@@ -2687,10 +2675,10 @@ msgid "Contracts bought"
 msgstr "Contratos adquiridos"
 
 msgid "Contracts for Difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them."
-msgstr ""
+msgstr "Contratos por diferenças (CFDs) são derivativos financeiros que lhe permitem negociar sobre o movimento de ativos subjacentes sem os deter."
 
 msgid "Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At Binary.com, we offer popular cash indices, cryptocurrencies, as well as proprietary Volatility Indices that simulate market movement."
-msgstr ""
+msgstr "Contratos por diferenças (CFDs) permitem-lhe especular sobre o número de mercados, incluindo índices, ações e matérias-primas. Na Binary.com, disponibilizamos índices de moedas populares, criptomoedas, bem como índices \"Volatility\" proprietários que simulam os movimentos de mercados reais."
 
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "Os contratos não podem expirar no fim-de-semana; portanto, a data de validade de um contrato pode ser adiada para a segunda-feira seguinte, caso a mesma recaia num sábado ou domingo."
@@ -2791,6 +2779,9 @@ msgstr "Criar uma conta nova"
 msgid "Create New Token"
 msgstr "Criar um novo token"
 
+msgid "Create account with Google"
+msgstr ""
+
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Criar conteúdos claros, concisos e cativantes para exibição no site, no blog, nos meios de mídia social e nos materiais de marketing da empresa"
 
@@ -2800,14 +2791,8 @@ msgstr "Criar conteúdos claros, concisos e cativantes que promovam eficazmente 
 msgid "Create content to support our international marketing campaigns in a variety of different formats and languages"
 msgstr "Criar conteúdos para auxiliar as nossas campanhas de marketing internacional numa variedade de formatos e idiomas diferentes"
 
-msgid "Create sub-accounts to record transactions you make on behalf of your clients"
-msgstr "Crie subcontas para registrar as transações que você efetua em nome dos seus clientes"
-
 msgid "Create the graphics required to support our global marketing and advertising campaigns. The team's creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, tradeshows, special events, and promotional projects."
 msgstr "Criar gráficos necessários para o auxílio das nossas campanhas de marketing e publicidade globais. As iniciativas de criatividade da equipe abrangem um grande número de canais, incluindo o marketing online, as redes de afiliados, publicidade impressa, feiras de negócios, eventos especiais e projetos promocionais."
-
-msgid "Create your own white-label application with the omnibus facility, plus all the features supported by our extensive API library. We won’t know who your clients are and vice versa"
-msgstr "Crie o seu próprio aplicativo de marca branca com o recurso de \"omnibus\", além de todos os recursos suportados pela nossa extensa biblioteca de API. Não receberemos a identidade dos seus cliente nem vice-versa"
 
 msgid "Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies"
 msgstr "Criar interfaces e ferramentas para acessar informações de mercado, em tempo real e com análises históricas das estratégias de negociação"
@@ -2825,10 +2810,10 @@ msgid "Cryptocurrencies"
 msgstr "Criptomoedas"
 
 msgid "Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading cryptocurrency contracts for differences is highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. Investing in cryptocurrency contracts for differences through leveraged accounts amplifies this underlying volatility risk, making the change in prices even more significant. When you invest in a leveraged contract for differences related to cryptocurrencies, your profit or loss is based on the leveraged ratio you set for your account. If the price movement is in your favour, returns generated are of multiple times higher than the amount set aside from your account balance to open and maintain a transaction. However, if the price movement is against your favour, you will suffer losses that are of multiple times higher than the amount set aside from your account balance to open and maintain a transaction. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and / or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital."
-msgstr ""
+msgstr "Criptomoedas são ativos voláteis que são extremamente vulneráveis a flutuações no mercado. A negociação de contratos por diferenças de criptomoedas é um investimento altamente especulativo porque os preços de criptomoedas podem subir e descer &mdash; potencialmente até zero. O investimento em contratos por diferenças de criptomoedas através de conta alavancadas amplifica esse risco de volatilidade subjacente, tornando a alteração nos preços ainda mais significativa. Quando você investe em contratos por diferenças alavancados relacionados com criptomoedas, o seu lucro ou a sua perda baseia-se no rácio de alavancagem que você definiu para a sua conta. Se o movimento do preço for a seu favor, os retornos gerados são múltiplas vezes superiores ao valor retirado do saldo da sua conta para abrir e manter a transação. No entanto, se o movimento do preço não for a seu favor, você irá sofrer perdas que são múltiplas vezes superiores ao valor retirado do saldo da sua conta para abrir e manter a transação. Você não deve negociar criptomoedas a menos que compreenda totalmente e que esteja ciente de que negociações e/ou investimentos envolvendo criptomoedas são complexos e de natureza muito arriscada e você não só corre o risco de sofrer perdas significativas durante um breve período de tempo, mas também o risco de perder todo o capital investido."
 
 msgid "Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading in cryptocurrencies is a highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and /or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital."
-msgstr ""
+msgstr "Criptomoedas são ativos voláteis que são extremamente vulneráveis a flutuações de mercado. A negociação de criptomoedas é um investimento altamente especulativo porque os preços das criptomoedas podem subir como descer &mdash; potencialmente até zero. Você não deve negociar criptomoedas a menos que compreenda totalmente e que esteja ciente que as negociações e/ou os investimentos envolvendo criptomoedas são complexos e de uma natureza muito arriscada e você não só corre o risco de sofrer perdas significativas durante um breve período de tempo, mas também o risco de perder todo o capital investido."
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "Criptomoedas como Bitcoin e Ethereum são ativos digitais descentralizados que permitem pagamentos instantâneos para qualquer parte do mundo."
@@ -2840,22 +2825,19 @@ msgid "Cryptocurrency"
 msgstr "Criptomoeda"
 
 msgid "Cryptocurrency Risks"
-msgstr ""
+msgstr "Riscos com criptomoedas"
 
 msgid "Cryptocurrency contract specifications"
-msgstr ""
+msgstr "Especificações de contrato de criptomoedas"
 
 msgid "Cryptocurrency margin policy"
-msgstr ""
+msgstr "Política de margens de criptomoedas"
 
 msgid "Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin."
 msgstr "Pares de criptomoedas incluindo Bitcoin, Ethereum e Litecoin."
 
 msgid "Cryptocurrency trading"
-msgstr ""
-
-msgid "Cryptocurrency trading is available 24/7."
-msgstr ""
+msgstr "Negociação de criptomoedas"
 
 msgid "Currencies"
 msgstr "Moedas"
@@ -2877,6 +2859,9 @@ msgstr "Pares de moedas são categorizados da seguinte forma:"
 
 msgid "Current"
 msgstr "Atual"
+
+msgid "Current MT5 password"
+msgstr "Senha atual da MT5"
 
 msgid "Current Time"
 msgstr "Hora atual"
@@ -2901,9 +2886,6 @@ msgstr "Apoio ao cliente"
 
 msgid "Customer support"
 msgstr "Apoio ao cliente"
-
-msgid "Customise individual access for clients who wish to trade for themselves"
-msgstr "Personalize o acesso individual de clientes que desejam negociar por conta própria"
 
 msgid "Cyberjaya Office"
 msgstr "Escritório em Cyberjaya"
@@ -2945,7 +2927,7 @@ msgid "Daily turnover limit"
 msgstr "Limite diário do volume de negócios"
 
 msgid "Dash vs US Dollar"
-msgstr ""
+msgstr "Dash vs. Dólar americano"
 
 msgid "Data Feed"
 msgstr "Feed de dados"
@@ -3008,16 +2990,16 @@ msgid "Demo"
 msgstr "Demo"
 
 msgid "Demo Accounts"
-msgstr ""
+msgstr "Contas demo"
 
 msgid "Demo Advanced"
-msgstr ""
+msgstr "Demo avançada"
 
 msgid "Demo Standard"
 msgstr "Demo padrão"
 
 msgid "Demo Volatility Indices"
-msgstr ""
+msgstr "Demo de índices \"Volatility\""
 
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "Demonstrar a capacidade de pensar / agir rapidamente e realizar várias tarefas simultaneamente para executar campanhas eficazes"
@@ -3051,9 +3033,6 @@ msgstr "Deposite tão pouco quanto $5 para começar a negociar."
 
 msgid "Deposit funds and begin trading"
 msgstr "Depositar fundos e começar a negociar"
-
-msgid "Deposit funds into your MT5 account"
-msgstr "Transfira fundos para a sua conta MT5"
 
 msgid "Deposit or withdraw below"
 msgstr "Depositar ou retirar abaixo"
@@ -3241,17 +3220,17 @@ msgstr "Baixar CSV"
 msgid "Download MAM"
 msgstr "Baixar o GCM"
 
+msgid "Download MT5 for Mac"
+msgstr "Baixar MT5 para Mac"
+
+msgid "Download MT5 for Windows"
+msgstr "Baixar MT5 para Windows"
+
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "Baixe a MT5 para o seu desktop ou laptop para acessar as ferramentas e recursos poderosos desfrutados por milhões de negociadores."
 
 msgid "Download Now"
 msgstr "Baixar já"
-
-msgid "Download for Mac"
-msgstr "Download para Mac"
-
-msgid "Download for Windows"
-msgstr "Download para Windows"
 
 msgid "Download the MAM application after setup is completed. Log in with your master account credentials."
 msgstr "Baixar aplicativo GCM depois da conclusão da instalação. Conecte-se com as suas credenciais de conta-mestre."
@@ -3578,52 +3557,49 @@ msgid "Ether Classic"
 msgstr "Ethereum Classic"
 
 msgid "Ethereum Classic vs US Dollar"
-msgstr ""
+msgstr "Ethereum clássico vs. Dólar americano"
 
 msgid "Ethereum vs US Dollar"
-msgstr ""
+msgstr "Ethereum vs. Dólar americano"
 
 msgid "Ethics Code"
 msgstr "Ethics Code"
 
 msgid "Euro vs Australian Dollar"
-msgstr ""
+msgstr "Euro vs. Dólar australiano"
 
 msgid "Euro vs Canadian Dollar"
-msgstr ""
+msgstr "Euro vs. Dólar canadense"
 
 msgid "Euro vs Great Britain Pound"
-msgstr ""
+msgstr "Euro vs. Libra britânica"
 
 msgid "Euro vs Japanese Yen"
-msgstr ""
+msgstr "Euro vs. Iene japonês"
 
 msgid "Euro vs New Zealand Dollar"
-msgstr ""
+msgstr "Euro vs. Dólar neozelandês"
 
 msgid "Euro vs Norwegian Krone"
-msgstr ""
+msgstr "Euro vs. Coroa norueguesa"
 
 msgid "Euro vs Polish Zloty"
-msgstr ""
+msgstr "Euro vs. Zlóti polonês"
 
 msgid "Euro vs Singapore Dollar"
-msgstr ""
+msgstr "Euro vs. Dólar de Singapura"
 
 msgid "Euro vs Swedish Krona"
-msgstr ""
+msgstr "Euro vs. Coroa sueca"
 
 msgid "Euro vs Swiss Franc"
-msgstr ""
+msgstr "Euro vs. Franco suíço"
 
 msgid "Euro vs Turkish Lira"
-msgstr ""
+msgstr "Euro vs. Lira turca"
 
 msgid "Euro vs US Dollar"
-msgstr ""
-
-msgid "Eurobasket Wolves"
-msgstr "Eurobasket Wolves"
+msgstr "Euro vs. Dólar americano"
 
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
 msgstr "As contas de residentes da União Europeia que desejam negociar produtos de jogo serão abertas na Binary Investments (Europe) Ltd."
@@ -3796,9 +3772,6 @@ msgstr "Preço de vencimento"
 msgid "Explanation"
 msgstr "Explicação"
 
-msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
-msgstr "Experimente funcionalidades de negociação avançadas com o aplicativo Next-Gen para web e para dispositivos móveis."
-
 msgid "Explore our HackerOne bounty programme"
 msgstr "Explore o nosso programa de recompensas HackerOne"
 
@@ -3929,7 +3902,7 @@ msgid "Financial asset"
 msgstr "Ativo financeiro"
 
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
-msgstr ""
+msgstr "Derivativos financeiros que lhe permitem negociar sobre o movimento de ativos subjacentes."
 
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "Descubra mais sobre os custos e os detalhes de cada ativo de CFD que disponibilizamos."
@@ -3974,7 +3947,7 @@ msgid "Firsthand knowledge of other cultures through direct experience"
 msgstr "Conhecimentos em primeira mão de outras culturas através de experiências diretas"
 
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
 msgid "Fixed spreads"
 msgstr "Spreads fixos"
@@ -4025,7 +3998,7 @@ msgid "For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and
 msgstr "Por exemplo, se você comprar um lote de XAU/USD a uma alavancagem de 300:1 e por um preço de mercado de 1.250,15 USD, a margem necessária para adquirir esse lote será calculada da seguinte forma:"
 
 msgid "For example, if you see that the EUR/USD has an ask price of 1.05382, you'll sell USD 1.05382 (quote currency) for every EUR 1 (base currency) you buy."
-msgstr ""
+msgstr "Por exemplo, se você vir que o EUR/USD possuir um preço de venda de 1,05382, você irá vender 1,05382 USD (moeda de cotação) por cada 1 EUR (moeda de base) que comprar. "
 
 msgid "For example, if you wanted to buy one volume of the BTC/EUR cryptocurrency pair at a price of USD 4831.400 and at a margin rate of 10%, the margin that you need to purchase one lof of BTC/EUR will be calculated as follows:"
 msgstr "Por exemplo, caso você quisesse comprar um volume do par de criptomoedas BTC/EUR por um preço de 4831,400 USD e a uma margem de 10%, a margem de que você necessitaria para comprar um lote de BTC/EUR será calculada da seguinte forma:"
@@ -4054,11 +4027,14 @@ msgstr "Para mais informações de enquadramento, leia a publicação no nosso b
 msgid "For general support:"
 msgstr "Para apoio geral:"
 
+msgid "For information about Forex leverage refer to our %1Margin Policy%2."
+msgstr "Para mais informações sobre a alavancagem no forex, consulte a nossa %1política de margens%2."
+
 msgid "For payments-related queries:"
 msgstr "Para assuntos relacionados com pagamentos:"
 
 msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
-msgstr ""
+msgstr "Para posições perfeitamente cobertas contra risco, nenhuma margem será cobrada. No entanto, swaps e outras taxas aplicáveis podem fazer com que o capital da sua conta fique negativo. Em tais casos, a empresa reserva o direito de fechar as suas posições abertas a fim de proteger o capital da sua conta diminuir ainda mais."
 
 msgid "For the avoidance of doubt (and notwithstanding anything to the contrary), the material you may be provided with is not an offer for tokens; it is an invitation to treat.  Tokens will may only be offered by Binary Group Ltd. (the “Company”) pursuant to an auction in the manner more particularly described in the ‘token auction process’ section of the material."
 msgstr "Para evitar dúvidas (e não obstante algo contrário), o material que lhe poderá ser apresentado não representa uma oferta de tokens; representa um convite à negociação. Tokens apenas podem ser disponibilizados pela Binary Group Ltd. (a “Empresa”) em conformidade com um leilão realizado da maneira mais especificamente descrito na seção \"processo de leilão de tokens\" do material."
@@ -4091,10 +4067,10 @@ msgid "Forex and contracts for differences are high risk and speculative"
 msgstr "Câmbios e contratos por diferenças envolvem alto risco e são especulativos"
 
 msgid "Forex contract specifications"
-msgstr ""
+msgstr "Especificações de contratos forex"
 
 msgid "Forex margin policy"
-msgstr ""
+msgstr "Política de margens forex"
 
 msgid "Forex trading experience"
 msgstr "Experiência com negociações forex"
@@ -4352,31 +4328,31 @@ msgid "Graphic Designers"
 msgstr "Designers gráficos"
 
 msgid "Great Britain Pound vs Australian Dollar"
-msgstr ""
+msgstr "Libra britânica vs. Dólar australiano"
 
 msgid "Great Britain Pound vs Canadian Dollar"
-msgstr ""
+msgstr "Libra britânica vs. Dólar canadense"
 
 msgid "Great Britain Pound vs Japanese Yen"
-msgstr ""
+msgstr "Libra britânica vs. Iene japonês"
 
 msgid "Great Britain Pound vs New Zealand Dollar"
-msgstr ""
+msgstr "Libra britânica vs. Dólar neozelandês"
 
 msgid "Great Britain Pound vs Norwegian Krone"
-msgstr ""
+msgstr "Libra britânica vs. Coroa norueguesa"
 
 msgid "Great Britain Pound vs Singapore Dollar"
-msgstr ""
+msgstr "Libra britânica vs. Dólar de Singapura"
 
 msgid "Great Britain Pound vs Swedish Krona"
-msgstr ""
+msgstr "Libra britânica vs. Coroa sueca"
 
 msgid "Great Britain Pound vs Swiss Franc"
-msgstr ""
+msgstr "Libra britânica vs. Franco suíço"
 
 msgid "Great Britain Pound vs US Dollar"
-msgstr ""
+msgstr "Libra britânica vs. Dólar americano"
 
 msgid "Great pay-outs. Earn up to 35%"
 msgstr "Excelentes comissões. Ganhe até 35%"
@@ -4472,7 +4448,7 @@ msgid "Hone your security testing skills."
 msgstr "Aprimore as suas habilidades de teste de segurança."
 
 msgid "Hong Kong Dollar vs Japanese Yen"
-msgstr ""
+msgstr "Dólar de Hong Kong vs. Iene japonês"
 
 msgid "Hour"
 msgstr "Hora"
@@ -4784,7 +4760,7 @@ msgid "If the Margin Level for your Real Account reaches or falls below the Stop
 msgstr "Se o nível de margem da sua conta real atingir ou descer abaixo o nível de interrupção, isto será classificado como um evento de incumprimento. Em tais circunstâncias, posições em aberto serão automaticamente fechadas na seguinte ordem: (i) o servidor analisa as ordens do cliente que não estejam sob execução no momento; (ii) o servidor exclui ordens com a maior margem; (iii) se o seu nível de margem ainda estiver abaixo do nível de interrupção, a próxima ordem é excluída (ordens sem requisitos de margem não são excluídas); (iv) se o seu nível de margem ainda estiver abaixo do nível de interrupção, o servidor fecha uma posição com a maior perda; (v) Posições em aberto são fechadas até que o seu nível de margem se torne superior ao nível de interrupção. "
 
 msgid "If the bid price is 1.05229, you'll buy USD 1.05229 for every EUR 1 you sell."
-msgstr ""
+msgstr "Se o preço de compra for 1,05229, você irá comprar 1,05229 USD por cada 1 EUR que você vender."
 
 msgid "If the maximum number of tokens (10 million) offered in the token sale are issued, then the number of shares issued after the ICO will total 220,257,430 shares."
 msgstr "Se o número máximo de tokens (10 milhões) disponibilizados na venda de tokens forem emitidos, então o número de ações depois da OIM irão totalizar 220.257.430."
@@ -4862,7 +4838,7 @@ msgid "If you keep any positions open overnight, an interest adjustment will be 
 msgstr "Caso você mantenha quaisquer posições em aberto durante a noite, um ajustamento nos juros será feito na sua conta de negociação como indicação do custo necessário para manter a sua posição aberta. Este ajustamento baseia-se nas taxas de juro interbancárias, acrescido por uma taxa de 2%."
 
 msgid "If you lose your cryptocurrencies as a result of exchanges and wallet providers being hacked or becoming insolvent, there is no assurance of a recourse. It is your responsibility to store your cryptocurrencies securely. %1 will not accept liability for any loss or damage that arise, directly or indirectly, from theft of your cryptocurrency or insolvency of exchanges and wallet providers that you use."
-msgstr ""
+msgstr "Se você perder as suas criptomoedas como resultado de ataques de hackers aos serviços de câmbios e carteiras ou destes entrarem em falência, não há garantia de nenhum recurso. É da sua responsabilidade guardar as suas criptomoedas de forma segura. A %1 não aceitará qualquer responsabilidade por quaisquer perdas ou danos que resultam, direta ou indiretamente, de um assalto à sua carteira ou a insolvência de um serviço de câmbio ou de carteira que você usa."
 
 msgid "If you meet our basic requirements, we'll send you a talent test."
 msgstr "Se você preencher os nossos requisitos básicos, lhe enviaremos um teste de competências."
@@ -4877,7 +4853,7 @@ msgid "If you score well on the SATI, we'll send you a talent test. Do well on t
 msgstr "Se você obtiver uma boa pontuação no SATI, lhe enviaremos um teste de talento. Obtenha boa pontuação no teste de talento e iremos convidá-lo para uma entrevista com um membro da nossa equipe de recrutamento."
 
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
-msgstr ""
+msgstr "Você vê que o EUR/USD tem um preço de compra de 1,05229, você irá comprar 1,05229 por cada 1 EUR que você vender."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Se selecionar \"Asiático Em Queda\", você ganha o pagamento se o <strong>último tique-taque</strong> for <strong>inferior</strong> à <strong>média</strong> dos tique-taques."
@@ -5210,6 +5186,9 @@ msgstr "Análise independente"
 msgid "Indicates required field"
 msgstr "Indica campo obrigatórios"
 
+msgid "Indicates the availability of cryptocurrency trading on a particular account."
+msgstr "Indica a disponibilidade da negociação de criptomoedas numa determinada conta."
+
 msgid "Indicative"
 msgstr "Indicativo"
 
@@ -5292,16 +5271,13 @@ msgid "Intellectual property"
 msgstr "Propriedade intelectual"
 
 msgid "Interactive webinars"
-msgstr ""
+msgstr "Webinars interativos"
 
 msgid "Interested in our MAM tool for MetaTrader 5? Contact us at %1 for more info."
 msgstr "Interessado na nossa ferramenta de gestão de contas múltiplas para a MetaTrader 5? Contate-nos em %1 para mais informações."
 
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Interessado nas nossas soluções de liquidez? Contate-nos em %1 para mais informações."
-
-msgid "Interested in our omnibus account facility? %1Contact us now and apply as an omnibus broker%2."
-msgstr "Você está interessado no nosso recurso de conta \"omnibus\"? %1Contate-nos já e candidate-se para se tornar um corretor omnibus%2."
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "Você está interessado, então o que vem a seguir? Se você puder disponibilizar aos nossos clientes um método de pagamento por dinheiro eletrônico ou opção de pagamento local que ainda não é fornecida pela %1 e possui um bom histórico no mercado, então adoraríamos <a href='mailto:%2'>que você entrasse em contato conosco!</a>"
@@ -6261,7 +6237,7 @@ msgid "Links"
 msgstr "Links"
 
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 msgid "Liquidity solutions"
 msgstr "Soluções de liquidez"
@@ -6270,7 +6246,7 @@ msgid "Litecoin"
 msgstr "Litecoin"
 
 msgid "Litecoin vs US Dollar"
-msgstr ""
+msgstr "Litecoin vs. Dólar americano"
 
 msgid "Lock Cashier"
 msgstr "Bloquear Caixa"
@@ -6296,9 +6272,6 @@ msgstr "Histórico de logins"
 msgid "Login ID"
 msgstr "ID de Login"
 
-msgid "Login ID:"
-msgstr "ID de login:"
-
 msgid "Login time:"
 msgstr "Hora do Login:"
 
@@ -6320,17 +6293,14 @@ msgstr "Parceria de longo prazo:"
 msgid "Long:"
 msgstr "Longo"
 
-msgid "Looking for a new and exciting career in a country that's modern, diverse, and tolerant? %1 is one of the world's most progressive companies, with offices in Asia and Europe."
-msgstr "Está à procura de uma nova carreira emocionante num país moderno, diverso e tolerante? A %1 é uma das empresas mais progressivas do mundo, com escritórios na Ásia e na Europa."
-
 msgid "Loss"
 msgstr "Perda"
 
 msgid "Lot Size (Volume = 1.0)"
 msgstr "Tamanho do lote (Volume = 1.0)"
 
-msgid "Lot size*"
-msgstr ""
+msgid "Lot size"
+msgstr "Tamanho do lote"
 
 msgid "Lot units"
 msgstr "Unidades do lote"
@@ -6359,9 +6329,6 @@ msgstr "Apostas mínimas inferiores"
 msgid "Lower"
 msgstr "Inferior"
 
-msgid "Lower fees"
-msgstr "Taxas mais baixas"
-
 msgid "M"
 msgstr "M"
 
@@ -6374,6 +6341,9 @@ msgstr "Prêmio FFXPO do MENA"
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "As corretoras de MT4 e MT5 podem se conectar diretamente à nossa liquidez na ponte One Zero ao usar plug-ins internos."
 
+msgid "MT5 Account:"
+msgstr ""
+
 msgid "MT5 Demo"
 msgstr "Demo MT5"
 
@@ -6381,7 +6351,7 @@ msgid "MT5 Financial"
 msgstr "Finanças MT5"
 
 msgid "MT5 Volatility Indices"
-msgstr ""
+msgstr "Índices Volatility da MT5"
 
 msgid "MT5 real-money account for Forex and CFDs."
 msgstr "Conta de dinheiro real MT5 para forex e CFDs."
@@ -6389,8 +6359,11 @@ msgstr "Conta de dinheiro real MT5 para forex e CFDs."
 msgid "MT5 real-money account for Volatility Indices only."
 msgstr "Conta de dinheiro real MT5 somente para índices \"Volatility\"."
 
+msgid "MT5 trading platform links:"
+msgstr "Links da plataformas de negociação MT5:"
+
 msgid "MacOS"
-msgstr ""
+msgstr "MacOS"
 
 msgid "Made an impression in the first interview? We'll invite you to a second interview with our CEO and/or hiring manager."
 msgstr "Fez uma boa impressão na primeira entrevista? Iremos convidá-lo para uma segunda entrevista com o nosso diretor e/ou gestor de recrutamento."
@@ -6406,9 +6379,6 @@ msgstr "Manter parâmetros precisos de tarifação do sistema"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Manter velocidade e volume adequados de produção"
-
-msgid "Maintain complete anonymity of your clients."
-msgstr "Manter o anonimato total dos seus clientes."
 
 msgid "Major Pairs"
 msgstr "Pares Principais"
@@ -6473,9 +6443,6 @@ msgstr "Gerencie os fundos na sua conta de criptomoedas."
 msgid "Manage your authorised applications."
 msgstr "Gerencie os seus aplicativos autorizados."
 
-msgid "Manage your client database more efficiently as an omnibus broker."
-msgstr "Gerencie o seu banco de dados de clientes com mais eficiência como um corretor \"omnibus\"."
-
 msgid "Managers"
 msgstr "Gestores"
 
@@ -6520,12 +6487,6 @@ msgstr "Chamada de margem"
 
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr "A alavancagem indica quanto investimento você pode controlar com base no seu capital inicial. Por exemplo, uma alavancagem de 0,2% irá permitir que você controle até 500.000 USD usando apenas 1.000 do seu próprio dinheiro como um depósito."
-
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "A alavancagem indica quanto investimento você pode controlar com base no seu capital inicial. Por exemplo, uma alavancagem de 1% irá permitir que você controle até 100.000 USD usando apenas 1.000 do seu próprio dinheiro como um depósito."
-
-msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
-msgstr "A taxa de margem indica quanto capital você pode controlar com base no seu depósito inicial. Por exemplo, uma taxa de margem de 10% irá permitir que você controle até 100.000 USD usando apenas 10.000 do seu próprio dinheiro como um depósito. Esta taxa requer 10% do valor do ativo como margem."
 
 msgid "Market"
 msgstr "Mercado"
@@ -6630,13 +6591,10 @@ msgid "Maximum number of open positions"
 msgstr "Número máximo de posições em aberto"
 
 msgid "Maximum ticket size"
-msgstr ""
+msgstr "Tamanho máximo de pedidos"
 
 msgid "Maximum upload size for each file is 3MB"
 msgstr "Tamanho máximo de carregamento para cada arquivo é 3MB"
-
-msgid "Maximum volume"
-msgstr "Volume máximo"
 
 msgid "May"
 msgstr "Maio"
@@ -6681,10 +6639,10 @@ msgid "Metals are categorised into two types:"
 msgstr "Metais categorizam-se em dois grupos:"
 
 msgid "Metals contract specifications"
-msgstr ""
+msgstr "Especificações de contratos de metais"
 
 msgid "Metals margin policy"
-msgstr ""
+msgstr "Política de margens de metais"
 
 msgid "Metals trading lets you speculate on the price movement of a particular metal asset in order to profit from the price difference when the asset value rises or falls."
 msgstr "A negociação de metais permite-lhe especular sobre o movimento do preço de um determinado ativo de metal para poder lucrar da diferença de preços quando o valor do ativo aumenta ou diminui."
@@ -6694,6 +6652,9 @@ msgstr "Método"
 
 msgid "Min"
 msgstr "Mín"
+
+msgid "Min / Max withdrawal"
+msgstr "Retirada Mín/Máx"
 
 msgid "Min Withdrawal"
 msgstr "Retirada mínima"
@@ -6705,13 +6666,10 @@ msgid "Min-Max Withdrawal"
 msgstr "Retirada Mín-Máx"
 
 msgid "Min. Volume Increment"
-msgstr ""
+msgstr "Incremento mínimo de volume"
 
 msgid "Min. Volume<br>(Lot Size)"
 msgstr "Volume mín.<br>(Tamanho do lote)"
-
-msgid "Min: 10 Max: 2000"
-msgstr "Mín: 10 Máx: 2000"
 
 msgid "Minimum Spread"
 msgstr "Spread mínimo"
@@ -6729,7 +6687,7 @@ msgid "Minimum bid"
 msgstr "Licitação mínima"
 
 msgid "Minimum deposit"
-msgstr ""
+msgstr "Depósito mínimo"
 
 msgid "Minimum eight characters. Must contain numbers, and mix of upper and lower case letters."
 msgstr "Mínimo de oito caracteres. Deve conter números e uma mistura de letras maiúsculas e minúsculas."
@@ -6745,6 +6703,9 @@ msgstr "Mínimo de validade de seis meses"
 
 msgid "Minimum ticket size"
 msgstr "Tamanho mínimo de pedido"
+
+msgid "Minimum volume"
+msgstr "Volume mínimo"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Trabalhadores de mineração, construção, fabricação e transporte"
@@ -6774,7 +6735,7 @@ msgid "Monday"
 msgstr "Segunda-feira"
 
 msgid "Monero vs US Dollar"
-msgstr ""
+msgstr "Monero vs. Dólar americano"
 
 msgid "Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients."
 msgstr "O dinheiro recolhido de Clientes não é investido em títulos, futuros, moedas, derivados ou outros investimentos em nome dos Clientes."
@@ -6812,17 +6773,14 @@ msgstr "Mês"
 msgid "More benefits"
 msgstr "Mais benefícios"
 
-msgid "More efficient"
-msgstr "Mais eficiente"
-
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Mais especificamente, quando celebramos um negócio de opções binárias com você (cada negócio representando um contrato), temos o dever de lhe proporcionar a \"melhor execução\". Melhor execução significa que teremos de tomar medidas razoáveis para obter o melhor resultado possível para você, ao executarmos uma das suas ordens. Este documento fornece um resumo da nossa política de melhor execução."
 
-msgid "Most brokers require minimum deposit. %1 doesn't require any minimum deposit."
+msgid "Most brokers require a minimum deposit. %1 doesn't require any minimum deposit."
 msgstr ""
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
-msgstr ""
+msgstr "A maioria de corretoras cobra normalmente uma comissão para cada negociação que você realiza. A %1 não cobra atualmente nenhuma comissão em qualquer tipo de conta, exceto criptomoedas."
 
 msgid "Mother's maiden name"
 msgstr "Nome de solteira da mãe"
@@ -6871,6 +6829,9 @@ msgstr "Deve ser uma fotografia ou uma imagem digitalizada clara e a cores"
 
 msgid "N. Force Majeure Events"
 msgstr "N. Eventos de força maior"
+
+msgid "N/A"
+msgstr "N/A"
 
 msgid "Name"
 msgstr "Nome"
@@ -6927,7 +6888,10 @@ msgid "Never Used"
 msgstr "Nunca utilizado"
 
 msgid "New Account"
-msgstr ""
+msgstr "Nova conta"
+
+msgid "New MT5 password"
+msgstr "Nova senha da MT5"
 
 msgid "New Password"
 msgstr "Nova Senha"
@@ -6936,19 +6900,19 @@ msgid "New Year's Day"
 msgstr "Dia de Ano Novo"
 
 msgid "New Zealand Dollar vs Canadian Dollar"
-msgstr ""
+msgstr "Dólar neozelandês vs. Dólar canadiano"
 
 msgid "New Zealand Dollar vs Japanese Yen"
-msgstr ""
+msgstr "Dólar neozelandês vs. Iene japonês"
 
 msgid "New Zealand Dollar vs Singapore Dollar"
-msgstr ""
+msgstr "Dólar neozelandês vs. Dólar de Singapura"
 
 msgid "New Zealand Dollar vs Swiss Franc"
-msgstr ""
+msgstr "Dólar neozelandês vs. Franco suíço"
 
 msgid "New Zealand Dollar vs US Dollar"
-msgstr ""
+msgstr "Dólar neozelandês vs. Dólar americano"
 
 msgid "New features"
 msgstr "Novos recursos"
@@ -7131,7 +7095,7 @@ msgid "Number of Tokens:"
 msgstr "Número de tokens:"
 
 msgid "Number of assets"
-msgstr ""
+msgstr "Número de ativos"
 
 msgid "Number of employees and contractors"
 msgstr "Número de funcionários e prestadores de serviços"
@@ -7199,12 +7163,6 @@ msgstr "Compense potenciais perdas na sua carteira de investimentos ao criar cob
 msgid "Old password is wrong."
 msgstr "A senha antiga está errada."
 
-msgid "Omnibus"
-msgstr "Omnibus"
-
-msgid "Omnibus account"
-msgstr "Conta omnibus"
-
 msgid "On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you."
 msgstr "Com base nas informações fornecidas em relação aos seus conhecimentos e a sua experiência, julgamos que os investimentos disponíveis neste site não são apropriados para você."
 
@@ -7252,6 +7210,9 @@ msgstr "Negociações online a %1"
 
 msgid "Online currency exchangers"
 msgstr "Serviços de câmbio de moeda online"
+
+msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
+msgstr "As negociações online podem criar dependência. Preencha o formulário abaixo para limitar a sua participação no nosso site ou envie uma carta ou fax assinado para a nossa equipe de apoio ao cliente. Uma vez definidos, você só poderá apertar os seus limites. Os limites só serão removidos ou desapertados após 7 dias com exceção da data de auto-exclusão, que não pode ser removida ou alterada uma vez que você a confirmou. Para remover ou aumentar os seus limites, contate o <a href=\"%1\">apoio ao cliente</a>."
 
 msgid "Only %1 are allowed."
 msgstr "Apenas %1 são permitidos."
@@ -7377,7 +7338,7 @@ msgid "Order execution typically comes in two varieties: market execution and in
 msgstr "Há duas variedades quando se trata de execução de ordens: execução de mercado e execução instantânea. Com a execução de mercado, você efetua uma ordem ao preço da corretora. Você aceita o preço antecipadamente. Não há novas cotações com execuções de mercado."
 
 msgid "Organic growth is driving demand, especially in the Far East – the world’s leading market for binary options."
-msgstr ""
+msgstr "O crescimento orgânico está impulsionando a procura, especialmente no Extremo Oriente –– o mercado principal de opções binárias."
 
 msgid "Other"
 msgstr "Outro"
@@ -7403,8 +7364,11 @@ msgstr "A nossa empresa"
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "O nosso Programa de Afiliados internacional tem efetuado os pagamentos a tempo, sem falta, desde o nosso lançamento oficial em Março de 2004. No Japão, as suas comissões serão creditadas na sua conta de afiliado dentro de trinta dias após o fecho de cada mês civil em que os seus indicados tenham satisfeito as condições de qualificação."
 
+msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
+msgstr "O nosso serviço MT5 está atualmente indisponível para residentes da UE devido a aprovação regulamentar pendente."
+
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
-msgstr ""
+msgstr "A nossa conta avançada da MetaTrader 5 proporciona-lhe spreads baixos, tamanhos de pedidos superiores e mais produtos."
 
 msgid "Our MetaTrader 5 Standard account is suitable for both new and experienced traders."
 msgstr "A conta padrão da MetaTrader 5 é adequada para negociadores novos como experientes."
@@ -7419,7 +7383,7 @@ msgid "Our Prices are determined by reference to the price of the underlying ins
 msgstr "Os nossos preços são determinados por referência ao preço do instrumento subjacente com cotação recebida de bolsas ou serviços de contratação externos que selecionamos ao nosso critério. A nossa infraestrutura de TI e sistema de agregação de preços facilitam o recebimento de cotações de uma lista das melhores corretoras que atuam como fornecedores de liquidez, para nós, e a entrega das cotações, derivadas com referência a indicadores e mercados relevantes, a você. Você confirma que reconhece que os nossos preços podem diferir dos preços de compra e venda disponibilizados por bolsas e serviços de contratação externos e que não seremos responsáveis por quaisquer perdas que você registrar, decorrentes de tais diferenças. Esta cláusula não se aplica aos índices \"Volatility\"."
 
 msgid "Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces."
-msgstr ""
+msgstr "A nossa conta de índices \"Volatility\" permite-lhe negociar CFDs sobre índices \"Volatility\" – os nossos ativos sintéticos proprietários que simulam forças de mercado."
 
 msgid "Our back-end code is mainly in Perl, and our open-source contributions may be found on %1CPAN%2. The corresponding source code can be found in our %3Github repositories%2 that start with the prefix \"perl-\". We welcome contributions to these repositories, notably improved documentation and test coverage."
 msgstr "O nosso código de back-end é principalmente Perl e as nossas contribuições de fonte aberta podem ser encontradas em %1CPAN%2. O código fonte correspondente pode ser encontrado nos nossos %3repositórios Github%2 que começam com o prefixo \"perl-\". Agradecemos contribuições a esses repositórios, principalmente documentação melhorada e cobertura de testes."
@@ -7746,7 +7710,7 @@ msgid "Please %1deposit%2 to your account."
 msgstr "Por favor, %1deposite%2 na sua conta."
 
 msgid "Please %1log in%2 or %3sign up%2 to view this page."
-msgstr ""
+msgstr "Por favor %1conecte-se%2 ou %3inscreva-se%2 para ver esta página."
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Por favor <a href=\"%1\">aceite os termos e condições atualizados</a>."
@@ -7799,6 +7763,9 @@ msgstr "Insira uma data no formato DD MMM, YYYY HH:mm (hora local)."
 msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Insira uma data no formato DD MMM, YYYY."
 
+msgid "Please enter your full address to avoid authentication delays."
+msgstr ""
+
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Preencha o ID de Início de Sessão e a Quantia que pretende transferir para o seu Cliente no formulário abaixo:"
 
@@ -7817,8 +7784,8 @@ msgstr "Note que as negociações do tipo \"Asiáticos\" e \"Dígitos\" são exc
 msgid "Please note that due to their over-the-counter nature, the prices of the OTC Indices and stocks will differ from the prices of the corresponding indices and stocks on centralised exchanges."
 msgstr "Note que, devido à sua natureza e conexão com os mercados de balcão, os preços dos índices e ações OTC irão diferir dos preços dos índices e ações correspondentes nas bolsas centralizadas."
 
-msgid "Please note that one lot is equivalent to 100 units, based on our %1ontract specifications%2."
-msgstr ""
+msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
+msgstr "Note que um lote equivale a 100 unidades, com base nas nossas %1especificações de contrato%2."
 
 msgid "Please note that one lot is equivalent to 100 units, based on our contract specifications. Your profit or loss will be calculated as follows:"
 msgstr "Note que um lote equivale a 100 unidades, com base nas nossas especificações de contrato. Os seus lucros ou as suas perdas serão calculados da seguinte forma:"
@@ -8114,9 +8081,6 @@ msgstr "Conhecimentos e experiência prévia na indústria financeira"
 msgid "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account's Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "Antes de efetuar uma ordem que resulta na abertura de uma transação ou no aumento de uma posição em aberto existente, você confirma que reconhece que é da sua responsabilidade assegurar que a margem livre da sua conta seja suficiente para cobrir a margem necessária em relação à transação em aberto (o \"requisito de margem\") e de cumprir o requisito de forma contínua."
 
-msgid "Privacy"
-msgstr "Privacidade"
-
 msgid "Privacy & Security"
 msgstr "Privacidade e Segurança"
 
@@ -8328,7 +8292,7 @@ msgid "Real Account &mdash; Your real money account opened with %1's MT5 Trading
 msgstr "Conta real &mdash; a sua conta de dinheiro real, aberta na plataforma de negociação MT5 da %1, sob licença da MetaQuotes Software Corporation."
 
 msgid "Real Advanced"
-msgstr ""
+msgstr "Demo avançada"
 
 msgid "Real Money Account Opening"
 msgstr "Abertura de conta de dinheiro real"
@@ -8337,13 +8301,13 @@ msgid "Real Standard"
 msgstr "Padrão real"
 
 msgid "Real Volatility Indices"
-msgstr ""
+msgstr "Índices Volatility reais"
 
 msgid "Real-Money Accounts"
-msgstr ""
+msgstr "Contas de dinheiro real"
 
 msgid "Real-money accounts with your choice of fiat and crypto currency."
-msgstr ""
+msgstr "Contas de dinheiro real com moedas fiduciárias e criptomoedas da sua escolha."
 
 msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "Preços em tempo real, comparados com mercados interbancários de opções."
@@ -8375,9 +8339,6 @@ msgstr "Receba o seu código de ativação por "
 msgid "Redeem the cloned tokens for dividends from Binary Group Ltd"
 msgstr "Troque os tokens clonados para dividendos da Binary Group Ltd"
 
-msgid "Reduce fees associated with deposits and withdrawals."
-msgstr "Reduzir taxas associadas a depósitos e retiradas."
-
 msgid "Ref."
 msgstr "Ref."
 
@@ -8385,10 +8346,10 @@ msgid "Reference ID"
 msgstr "ID de referência"
 
 msgid "Refers to the maximum volume or lots per order."
-msgstr ""
+msgstr "Refere-se ao valor máximo de lotes por dia."
 
 msgid "Refers to the total number of available symbols for your account."
-msgstr ""
+msgstr "Refere-se ao número totalde símbolos disponíveis na sua conta."
 
 msgid "Refund Bid"
 msgstr "Reembolsar lance"
@@ -8571,7 +8532,7 @@ msgid "Rights on Default:"
 msgstr "Direito de terminar"
 
 msgid "Ripple vs US Dollar"
-msgstr ""
+msgstr "Ripple vs. Dólar americano"
 
 msgid "Rise/Fall"
 msgstr "Sobe/Desce"
@@ -8604,7 +8565,7 @@ msgid "Risk of Stop Order"
 msgstr "Risco de interrupção de ordens"
 
 msgid "Risk of cryptocurrency contracts for differences"
-msgstr ""
+msgstr "O risco de contratos por diferenças de criptomoedas"
 
 msgid "Risk of slippage"
 msgstr "Risco de derrapagem"
@@ -9036,7 +8997,7 @@ msgid "Spot price"
 msgstr "Preço à vista"
 
 msgid "Spread"
-msgstr ""
+msgstr "Spread"
 
 msgid "Stake"
 msgstr "Aposta"
@@ -9312,7 +9273,7 @@ msgid "Suspending your Real Account and refusing to execute any Orders to enter 
 msgstr "Suspender a sua conta real e recusar executar quaisquer ordens para entrar em transações adicionais com você. Enquanto a sua conta real for suspensa, você irá poder efetuar ordens para fechar as suas posições em aberto, mas não poderá efetuar ordens que fossem criar posições em aberto."
 
 msgid "Swiss Franc vs Japanese Yen"
-msgstr ""
+msgstr "Franco suíço vs. Iene japonês"
 
 msgid "Symbol"
 msgstr "Símbolo"
@@ -9489,7 +9450,7 @@ msgid "The AUD Index is a weighted Index, measuring the Australian Dollar's valu
 msgstr "O Índice AUD é um índice ponderado, que mede o valor do Dólar australiano em relação a uma cesta de 5 moedas globais (USD, EUR, GBP, JPY e CAD), cada uma ponderada em 20%."
 
 msgid "The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices, futures and cryptocurrencies."
-msgstr ""
+msgstr "A nossa conta avançada proporciona-lhe spreads baixos, tamanhos de pedidos superiores e fornece-lhe mais produtos. Começando com mais pares de forex, índices CFD, futuros e criptomoedas."
 
 msgid "The Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. Your commission will be credited to your affiliate account within fifteen days after the close of a calendar month."
 msgstr "O Programa de Afiliados tem realizado os pagamentos a tempo, sem falta, desde o nosso lançamento oficial em Março de 2004. As suas comissões serão creditadas na sua conta de afiliado dentro de quinze dias após o fecho de cada mês civil."
@@ -9686,9 +9647,6 @@ msgstr "As leis e regulamentos de proteção de dados atribuem obrigações aos 
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "O EUR é um índice ponderado, que mede o valor do Euro em relação a uma cesta de 5 moedas globais (USD, AUD, GBP, JPY e CAD), cada uma ponderada em 20%."
 
-msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
-msgstr "O Eurobasket Wolves é um clube de basquete fundado em 2002. Ele ensina basquete juvenil através do seu clube e programas escolares. As suas equipes sub-8 e sub-10 masculinas e femininas, mais as equipes sub-14 e sub-16 femininas, competem nacionalmente. É o primeiro clube de basquete em Malta a estabelecer um programa de treino de basquete pós-escolar, onde as sessões de treino são realizadas nas instalações da escola."
-
 msgid "The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers."
 msgstr "A Comissão Europeia reconheceu opções binárias como um instrumento financeiro em 2012, levando a um aumento na credibilidade de corretoras licenciadas."
 
@@ -9774,7 +9732,7 @@ msgid "The Volatility 100 Index is twice as volatile as the Volatility 50 Index,
 msgstr "O Índice Volatility 100 é duas vezes mais volátil que o Índice Volatility 50, e quatro vezes mais volátil que o Índice Volatility 25."
 
 msgid "The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
-msgstr ""
+msgstr "A conta de índices \"Volatility\" permite-lhe negociar CFDs sobre índices \"Volatility\" – os nossos ativos sintéticos proprietários que simulam a volatilidade dos mercados do mundo real e que estão disponíveis para negociações 24/7."
 
 msgid "The ability to acquire knowledge of compliance matters in a multitude of international jurisdictions"
 msgstr "A capacidade de adquirir conhecimentos sobre assuntos relacionados com a conformidade numa multiplicidade de jurisdições internacionais"
@@ -9816,7 +9774,7 @@ msgid "The application shall be reviewed and assessed by our compliance and mark
 msgstr "O requerimento será analisado e avaliado pelos nossos departamentos de conformidade e de marketing. Note-se que o nosso departamento de conformidade, ao seguir e implementar a política contra lavagem de dinheiro e ao realizar a devida diligência de acordo com as leis e as regulamentações, irá solicitar e coletar todas as informações e a documentação conforme a Seção H."
 
 msgid "The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
-msgstr ""
+msgstr "O preço de venda do par de moedas indica quanto da moeda de cotação é necessário para comprar uma unidade da moeda de base. Isto é mais comumente conhecido como a taxa de câmbio."
 
 msgid "The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids."
 msgstr "O leilão terminou. Como a meta mínima não foi alcançada, todos os investidores irão receber um reembolso das suas licitações ativas."
@@ -9952,7 +9910,7 @@ msgid "The first tick is the first tick after the contract is processed by our s
 msgstr "O primeiro tique-taque é o primeiro movimento depois que o contrato é processado pelos nossos servidores."
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
-msgstr ""
+msgstr "O mercado de câmbios (forex) é o mercado mais líquido e negociado do mundo, em que negociações no valor de trilhões são realizadas todos os dias."
 
 msgid "The full version of our best execution policy is available on request."
 msgstr "A versão completa da nossa política de execução está disponível sob solicitação."
@@ -10033,7 +9991,7 @@ msgid "The minimum, incremental and maximum transaction amount;"
 msgstr "A quantia de transação mínima, incremental e máxima;"
 
 msgid "The movement of the underlying asset determines your profit or loss – depending on the position that you have taken."
-msgstr ""
+msgstr "O movimento do ativo subjacente determina o seu lucro ou a sua perda – dependendo da posição que você assumiu."
 
 msgid "The opposite is true if you decide to sell or 'go short' on the US 100 index. This means that your profit will continue to increase as long as the price of the US 100 index keeps falling. However, if the price rises, the losses you incur will also increase."
 msgstr "O oposto é verdade caso você decida assumir uma posição curta no índice US 100. Isto significa que os seus lucros continuarão a crescer enquanto o preço do US 100 continuar a aumentar. No entanto, se o preço subir, as perdas que você incorrer também aumentarão."
@@ -10285,9 +10243,6 @@ msgstr "Estes materiais não podem ser copiados ou redistribuídos para fins com
 msgid "These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens."
 msgstr "Estes materiais podem apenas ser recebidos por pessoas autorizadas (uma pessoa determinada pela empresa, a seu exclusivo critério, com direito a receber os materiais conforme prescrito por leis e regulamentos, por exemplo e jurisdições da EEE, de acordo com uma isenção ao abrigo da diretiva 2003/71/EC da União Europeia (conforme alterada, incluindo pela diretiva 2010/73/EU), que inclui, sem limitação, a isenção relativa a investidores qualificados (\"Pessoas Autorizadas\"). Caso qualquer Pessoas Autorizada deseje fazer uma licitação para tokens, poderá fazer tal se for um cliente registrado na Binary.com e possuir uma conta Binary.com, por qual a empresa poderá verificar a sua qualificação como uma Pessoa Autorizada. A Pessoa Autorizada que deseja adquirir tokens irá fazer uma licitação.  A empresa irá coligir e avaliar as licitações.  A Empresa poderá solicitar que as licitações sejam reconfirmadas antes de serem consideradas válidas para os fins da oferta da Empresa no leilão.  No leilão, a Empresa irá criar uma proposta para os tokens, uma proposta que será aceita (pelo processo do leilão explicado nos materiais) pelas licitações e a consideração da compra de tais tokens disponibilizados e aceitos será liquidada por crédito na conta Binary.com da Pessoa Autorizada, o que evidenciará o contrato de compra e venda dos respectivos tokens."
 
-msgid "These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr ""
-
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr "Pensa que alguma moeda irá subir ou descer? Aprenda quando deve comprar (assumir uma posição longa) e quando deve vender (ou assumir uma posição curta)."
 
@@ -10423,6 +10378,9 @@ msgstr "Este aviso fornece-lhe informações sobre os riscos associados a contra
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Esta oferta não pode ser utilizada juntamente com nenhuma outra oferta."
 
+msgid "This page is not available in the selected language."
+msgstr "Esta página não está disponível no idioma selecionado."
+
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Esta promoção apenas está disponível para novos Clientes. Os Clientes já existentes, ou antigos Clientes, não são qualificáveis. Apenas está disponível uma vez para cada Cliente."
 
@@ -10541,28 +10499,19 @@ msgid "To implement our dividend payments feature, we will clone our tokens and 
 msgstr "Para implementar o nosso recurso para o pagamento de dividendos, iremos clonar os nossos tokens e cada token clonado irá representar direitos de dividendos."
 
 msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
-msgstr ""
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr ""
+msgstr "Para saber mais, leia as nossas <a href='%1'>especificações de contratos CFD</a>."
 
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
-msgstr ""
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr ""
+msgstr "Para saber mais, leia a nossa %1política de margens%2 que explica melhor os nossos requisitos de margem."
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
-msgstr ""
+msgstr "Para aprender mais, leia a nossa <a href=\"%1\">Política de margens para CFDs</a> que explica melhor o nosso nível de liquidação forçada de 50% para índices \"Volatility\"."
 
 msgid "To learn more, read our <a href=\"%1\">Forex Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
-msgstr ""
+msgstr "Para aprender mais, leia a nossa <a href=\"%1\">Política de margens para forex</a> que explica melhor o nosso nível de liquidação forçada de 100% para Forex."
 
 msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
-msgstr ""
-
-msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr ""
+msgstr "Para saber mais, leia a nossa <a href=\"%1\">Política de margens para metais</a> que explica melhor o nosso nível de liquidação forçada de 100% para pares de metais."
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "Para abrir uma conta real, você deve ter uma conta real de opções binárias autenticada na %1. Uma conta real não pode ser aberta na ausência de uma conta real de opções binárias."
@@ -10694,13 +10643,13 @@ msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryp
 msgstr "Negocie pares de Bitcoin, Ethereum e Litecoin sem os deter. Os nossos pares de criptomoedas, como Bitcoin, são cotadas em relação a moedas fiduciárias, tal como o dólar americano."
 
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
-msgstr ""
+msgstr "Negocie forex e CFDs na nossa popular plataforma multi-ativos."
 
 msgid "Trade Forex and CFDs with a powerful platform recognised as the global standard."
-msgstr ""
+msgstr "Negocie forex e CFDs com uma poderosa plataforma reconhecida como o padrão mundial."
 
 msgid "Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools."
-msgstr ""
+msgstr "Negocie forex e contratos por diferenças (CFDs) com alavancagem altamente competitiva. A MetaTrader 5 é uma plataforma multi-ativos que proporciona excelentes possibilidades de negociação e ferramentas de análise técnica."
 
 msgid "Trade Now"
 msgstr "Negocie já"
@@ -10753,14 +10702,11 @@ msgstr "Negocie posições longas e curtas, dependendo da sua estratégia prefer
 msgid "Trade metals on competitive fixed and variable spreads."
 msgstr "Negocie metais com spreads fixo e variáveis."
 
-msgid "Trade on behalf of your clients through one account."
-msgstr "Negocie em nome dos seus clientes através de uma conta."
+msgid "Trade on MT5 web platform"
+msgstr "Negocie na plataforma da Web da MT5"
 
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "Negocie mercados subjacentes que incluem forex, índices, matérias-primas e mais."
-
-msgid "Trade on web platform"
-msgstr "Negocie na plataforma da Web"
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Negocie apenas uma quantia de dinheiro que possa perder. Não jogue com dinheiro emprestado."
@@ -10796,7 +10742,7 @@ msgid "Trade with leverage"
 msgstr "Negocie com alavancagem"
 
 msgid "Trade with real funds and access to competitive trading conditions."
-msgstr ""
+msgstr "Negocie com fundos reais, acesso a condições de negociação competitivas."
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "Negocie com a pioneira da indústria e detentora de uma tecnologia de preços patenteada"
@@ -10852,12 +10798,6 @@ msgstr "A negociação de opções binárias é especulativa e envolve um alto g
 msgid "Trading manual"
 msgstr "Guia de negociação"
 
-msgid "Trading platform quick links:"
-msgstr "Link rápidos da plataforma de negociação:"
-
-msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
-msgstr "A negociação em mercados financeiros pode criar dependência. Preencha o formulário abaixo para limitar a sua participação no nosso site ou envie uma carta ou fax assinado para a nossa equipe de apoio ao cliente. Uma vez definidos, você só poderá apertar os seus limites. Os limites só serão removidos ou desapertados após 7 dias com exceção da data de auto-exclusão, que não pode ser removida ou alterada uma vez que você a confirmou. Para remover ou aumentar os seus limites, contate o <a href=\"%1\">apoio ao cliente</a>."
-
 msgid "TradingView for %1"
 msgstr "TradingView para a %1"
 
@@ -10879,9 +10819,6 @@ msgstr "Formulário de transferências "
 msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
 msgstr "Transfira fundos entre a sua conta de moeda fiduciária e a sua conta de criptomoedas mediante o pagamento de uma taxa:"
 
-msgid "Transfer funds between your omnibus master account and sub-accounts"
-msgstr "Transfira fundos entre a sua conta mestre \"omnibus\" e as suas sub-contas"
-
 msgid "Transfer funds between your real money accounts."
 msgstr "Transfira fundos entre as suas contas de dinheiro real."
 
@@ -10891,11 +10828,17 @@ msgstr "Transfira fundos da sua conta MetaTrader 5 para a sua conta de opções 
 msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
 msgstr "Transfira fundos da sua conta de opções binárias para a sua conta MetaTrader."
 
+msgid "Transfer funds to your MT5 account"
+msgstr ""
+
 msgid "Transfer to"
 msgstr "Transferir para"
 
 msgid "Transfer to Login ID"
 msgstr "Transferir para ID de Início de Sessão"
+
+msgid "Transfer to MT5"
+msgstr ""
 
 msgid "Transfer to Payment Agent"
 msgstr "Transferir para Agente de Pagamentos"
@@ -10926,9 +10869,6 @@ msgstr "Corretora de confiança desde 2000"
 
 msgid "Try Binary Bot"
 msgstr "Experimente o Robô Binary"
-
-msgid "Try Next-Gen"
-msgstr "Experimente o Next-Gen"
 
 msgid "Try TradingView"
 msgstr "Experimente a TradingView"
@@ -10985,55 +10925,58 @@ msgid "URL website (where applicable);"
 msgstr "URL do site (onde aplicável);"
 
 msgid "US Dollar vs Canadian Dollar"
-msgstr ""
+msgstr "Dólar americano vs. Dólar canadense"
 
 msgid "US Dollar vs Chinese Renminbi"
-msgstr ""
+msgstr "Dólar americano vs. Renminbi chinês"
 
 msgid "US Dollar vs Hong Kong Dollar"
-msgstr ""
+msgstr "Dólar americano vs. Dólar de Hong Kong"
 
 msgid "US Dollar vs Japanese Yen"
-msgstr ""
+msgstr "Dólar americano vs. Iene japonês"
 
 msgid "US Dollar vs Mexican Peso"
-msgstr ""
+msgstr "Dólar americano vs. Peso mexicano"
 
 msgid "US Dollar vs Norwegian Krone"
-msgstr ""
+msgstr "Dólar americano vs. Coroa norueguesa"
 
 msgid "US Dollar vs Polish Zloty"
-msgstr ""
+msgstr "Dólar americano vs. Zlóti polonês"
 
 msgid "US Dollar vs Russian Ruble"
-msgstr ""
+msgstr "Dólar americano vs. Rublo ruso"
 
 msgid "US Dollar vs Singapore Dollar"
-msgstr ""
+msgstr "Dólar americano vs. Dólar de Singapura"
 
 msgid "US Dollar vs South African Rand"
-msgstr ""
+msgstr "Dólar americano vs. Rand sul-africano"
 
 msgid "US Dollar vs Swedish Krona"
-msgstr ""
+msgstr "Dólar americano vs. Coroa sueca"
 
 msgid "US Dollar vs Swiss Franc"
-msgstr ""
+msgstr "Dólar americano vs. Franco suíço"
 
 msgid "US Dollar vs Turkish Lira"
-msgstr ""
+msgstr "Dólar americano vs. Lira turca"
 
 msgid "US Patents"
 msgstr "Patentes dos EUA"
 
 msgid "USD"
-msgstr ""
+msgstr "USD"
 
 msgid "USD 1 per point"
 msgstr "1 USD por ponto"
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "Índice USD – mede o valor do dólar americano em relação a uma cesta de 5 moedas globais (EUR, GBP, JPY, CAD, AUD), cada uma ponderada em 20%"
+
+msgid "USD/EUR"
+msgstr "USD/EUR"
 
 msgid "UX / UI experience"
 msgstr "Experiência com UX / UI"
@@ -11188,11 +11131,14 @@ msgstr "Contas de serviços públicos (eletricidade, água, gás, internet de ba
 msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
 msgstr "Tokens de utilidade são tokens que lhe fornecem acesso a redes ou aplicativos descentralizados."
 
-msgid "Variable from 0.9 pips"
+msgid "Validate address"
 msgstr ""
 
+msgid "Variable from 0.9 pips"
+msgstr "Variável a partir de 0,9 pips"
+
 msgid "Variable from 1.2 pips"
-msgstr ""
+msgstr "Variável a partir de 1,2 pips"
 
 msgid "Variable spreads"
 msgstr "Spreads variáveis"
@@ -11202,6 +11148,9 @@ msgstr "O código de verificação está errado. Use o link enviado ao seu e-mai
 
 msgid "Verify main password"
 msgstr "Verificar senha principal"
+
+msgid "Verify new MT5 password"
+msgstr "Verificar a nova senha da MT5"
 
 msgid "Verify new password"
 msgstr "Verifique a nova senha"
@@ -11312,10 +11261,10 @@ msgid "Volatility Indices"
 msgstr "Índices Volatility"
 
 msgid "Volatility Indices Account"
-msgstr ""
+msgstr "Conta de índices \"Volatility\""
 
 msgid "Volatility Indices account: 1:500"
-msgstr ""
+msgstr "Conta de índices \"Volatility\": 1:500"
 
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "Os índices \"Volatility\" são ainda categorizados em duas classes:"
@@ -11327,7 +11276,7 @@ msgid "Volatility indices - %1's proprietary indices that simulate market forces
 msgstr "Índices Volatility - os índices \"Volatility\" da %1 que simulam as forças do mercado"
 
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
 
 msgid "Volume 1.0 (Trade Size)"
 msgstr "Volume 1.0 (Tamanho da negociação)"
@@ -11555,7 +11504,7 @@ msgid "We support hundreds of deposit and withdrawal options, including Bitcoin.
 msgstr "Suportamos centenas de opções de depósito e retirada, incluindo Bitcoin."
 
 msgid "We support hundreds of deposit and withdrawal options."
-msgstr ""
+msgstr "Temos centenas de opções de depósito e retirada disponíveis."
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
 msgstr "Usamos serviços de verificação de identidade e medidas de detecção de fraude em tempo real para ajudar a protegê-lo de acessos não autorizados à sua conta. Também monitoramos a atividade das contas a fim de detectar sinais de atividades não habituais que possam indicar fraude e trabalhamos com agências de cobrança e de aplicação da lei para lidar com fraudes."
@@ -11900,7 +11849,7 @@ msgid "Whilst we act as principal in respect of your orders, we also assess the 
 msgstr "Apesar de agirmos como principal em relação às suas ordens, também avaliamos os locais de execução que usamos e nos quais colocamos dependência significativa para fornecer o melhor resultado possível para a execução das suas ordens. Estes locais consistem geralmente de empresas de investimento, corretoras e/ou fornecedores de liquidez terceiros."
 
 msgid "Whilst we endeavour to close out your Open Positions if and when the Margin Level for your Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your Real Account reaches the Stop Out Level."
-msgstr ""
+msgstr "Apesar de envidarmos esforços para fechar as suas posições em aberto se e quando o nível de margem da sua conta real alcançar ou descer abaixo do nível de interrupção, não garantimos que as suas posições em aberto serão fechadas quando o nível de margem da sua conta real alcançar o nível de interrupção."
 
 msgid "Whilst we endeavour to open or close the Transaction to which your orders relate at the requested price, acting in accordance with our duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that your order is not filled at the exact intended quoted price when you placed your order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to you) or a negative slippage (less favourable to you)."
 msgstr "Apesar de nos esforçarmos para abrir ou fechar uma transação a que as suas ordens se relacionam, ao preço solicitado, atuando de acordo com o nosso dever de melhor execução, há alturas em que, devido a aumentos em volatilidade ou volume, ordens podem estar sujeitas a desvios. A diferença entre o preço de ordem e o preço de execução quando as ordens são realizadas é conhecida como o desvio. Isto significa que a sua ordem não é efetuada ao preciso preço pretendido quando você realiza a sua ordem. O desvio geralmente se verifica em períodos de volatilidade extremamente alta ou baixa e normalmente ocorre durante comunicados de imprensa fundamentais ou períodos de liquidez limitada. Os desvios podem resultar em desvios positivos (mais favoráveis a você) ou desvios negativos (menos favoráveis a você)."
@@ -11981,7 +11930,7 @@ msgid "Will I need to install any software?"
 msgstr "Vou precisar de instalar algum software?"
 
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 msgid "Windows 7 or later"
 msgstr "Windows 7 ou posterior"
@@ -12012,6 +11961,9 @@ msgstr "No que diz respeito ao acompanhamento dos clientes que acedem à %1 atra
 
 msgid "Withdraw"
 msgstr "Retirar"
+
+msgid "Withdraw from MT5"
+msgstr ""
 
 msgid "Withdraw funds from your MT5 account"
 msgstr "Retire fundos da sua conta MT5"
@@ -12341,7 +12293,7 @@ msgid "You have reached the rate limit of requests per second. Please try later.
 msgstr "Você já atingiu o limite de taxa de solicitações por segundo. Tenta novamente mais tarde."
 
 msgid "You have reached the withdrawal limit."
-msgstr ""
+msgstr "Você já alcançou o limite de retiradas."
 
 msgid "You have reached your withdrawal limit."
 msgstr "Você já alcançou o seu limite de retiradas."
@@ -12625,6 +12577,9 @@ msgstr "A sua conta não deve ser usada como um recurso bancário e os depósito
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "A sua conta não deve ser usada como um recurso bancário e depósitos só devem ser feitos com fim de usar os fundos para efetuar negociações. A Empresa não é uma instituição financeira. Os clientes não receberão juros sobre depósitos. Caso você faça depósitos e retiradas repetidas, sem haver negociações correspondentes, nós reservamos o direito de lhe cobrar na sua conta, sem aviso prévio, quaisquer encargos bancários que tenhamos incorridos antes da conta ser encerrada."
 
+msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
+msgstr ""
+
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "A sua candidatura será então analisada pelos nossos departamentos de conformidade e de marketing. Uma vez aprovada, iremos pô-lo em funcionamento na nossa lista de <a href='%1'>agentes de pagamentos</a>."
 
@@ -12740,7 +12695,7 @@ msgid "Your withdrawal limit is %1 %2."
 msgstr "O seu limite de retiradas é %1 %2."
 
 msgid "Zcash vs US Dollar"
-msgstr ""
+msgstr "Zcash vs. Dólar americano"
 
 msgid "a definite or indefinite period during which you wish to exclude yourself from the website."
 msgstr "um período determinado ou indeterminado durante o qual pretende excluir-se da página Web."
@@ -12838,6 +12793,9 @@ msgstr "descrever de forma justa e precisa os seus serviços aos Clientes;"
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 msgstr "seguir e/ou implementar e/ou cumprir todas as direções e/ou políticas e/ou procedimentos relacionados com negócios da Empresa, tal como alterado e/ou repetido e/ou substituído de vez em quando;"
 
+msgid "for MT5 Account"
+msgstr ""
+
 msgid "for exclusive updates on the ICO."
 msgstr "para atualizações exclusivas sobre a OIM."
 
@@ -12860,7 +12818,7 @@ msgid "he takes all reasonable steps to comply with the law or Rules whatsoever 
 msgstr "ela toma todas as medidas razoáveis para cumprir a lei ou a regra aplicável nessa jurisdição em que ele reside;"
 
 msgid "hereby applies for:"
-msgstr ""
+msgstr "por este meio se inscreve para:"
 
 msgid "hour"
 msgstr "hora"
@@ -12869,7 +12827,7 @@ msgid "hours"
 msgstr "horas"
 
 msgid "iOS"
-msgstr ""
+msgstr "iOS"
 
 msgid "if the Subscriber is a financial intermediary, as that term is used in Article 3(2) of the Prospectus Directive, any Tokens subscribed for by it will not be acquired on a non-discretionary basis on behalf of, nor will they be acquired with a view to their offer or resale to, persons in a member state of the European Economic Area which has implemented the Prospectus Directive other than qualified investors, or in circumstances in which the prior consent of the Issuer has not been given to the offer or resale;"
 msgstr "se o subscritor for um intermediário financeiro, como esse termo é usado no Artigo 3(2) da directiva relativa aos prospectos, quaisquer tokens subscritos pela mesma não serão adquiridos numa base não discricionária em nome de, nem serão adquiridos com vista a sua oferta ou revenda a, pessoas num estado-membro do Espaço Económico Europeu que implementou a diretiva relativa aos prospectos, além de investidores qualificados, ou em circunstâncias em que o consentimento prévio do Emissor não foi dado para a oferta ou revenda;"
@@ -12939,6 +12897,9 @@ msgstr "líquido de lucros realizados creditados à sua conta real e perdas real
 
 msgid "numbers"
 msgstr "números"
+
+msgid "or"
+msgstr "ou"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "página para a hora exata de liquidação de todos os contratos. Outras páginas Web podem adotar uma convenção diferente (por exemplo, algumas páginas Web escolhem 4 horas, horário de Nova Iorque, ou 5 horas, horário de Londres). Dessa forma, os preços abertos, altos, baixos e em fechamento apresentados na nossa página Web podem ser diferentes dos preços em outras páginas Web, devido à convenção de hora de fechamento dos mercados."
@@ -14414,7 +14375,7 @@ msgid "{JAPAN ONLY}Social Media"
 msgstr "{JAPAN ONLY}Social Media"
 
 msgid "{JAPAN ONLY}Sorry, account signup is not available in your country."
-msgstr ""
+msgstr "{JAPAN ONLY}Sorry, account signup is not available in your country."
 
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
@@ -14858,7 +14819,7 @@ msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Po
 msgstr "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 
 msgid "{JAPAN ONLY}We have a support team to answer your questions: <a href='mailto:support@binary.com'>support@binary.com</a>"
-msgstr ""
+msgstr "{JAPAN ONLY}We have a support team to answer your questions: <a href='mailto:support@binary.com'>support@binary.com</a>"
 
 msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
 msgstr "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
@@ -14999,7 +14960,7 @@ msgid "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time 
 msgstr "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 
 msgid "{JAPAN ONLY}Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr ""
+msgstr "{JAPAN ONLY}Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
 
 msgid "{JAPAN ONLY}Your funds are kept safe"
 msgstr "{JAPAN ONLY}Your funds are kept safe"

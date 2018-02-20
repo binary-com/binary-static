@@ -10,8 +10,9 @@ body {
     .app-store-badge, .google-play-badge {
         background-repeat: no-repeat;
         width: 140px;
-        height: 40px;
+        height: 38px;
         display: inline-block;
+        background-size: contain;
     }
 }
 
@@ -35,9 +36,6 @@ body.JA {
         .buy-price, .sell-price, .payout, .pl.loss, .act {
             white-space: nowrap;
         }
-    }
-    #main-menu {
-        margin-bottom: 30px;
     }
     #email_consent_label {
         font-size: $FONT_SIZE_XS;

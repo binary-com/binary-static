@@ -1,3 +1,5 @@
+const showMenu            = require('binary-style').show_menu;
+const hideMenu            = require('binary-style').hide_menu;
 const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
 const GTM                 = require('./gtm');
@@ -25,7 +27,8 @@ const Header = (() => {
             checkClientsCountry();
         }
         if (Client.isLoggedIn()) {
-            getElementById('menu-top').classList.add('smaller-font');
+            getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
+            initMenuDropDown();
             displayAccountStatus();
             if (!Client.get('is_virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
@@ -35,6 +38,25 @@ const Header = (() => {
                 });
             }
         }
+    };
+
+    const initMenuDropDown = () => {
+        const $menu          = $('.top-nav-menu li ul');
+        const $menus_to_hide = $('#all-accounts, #select_language');
+        $('.top-nav-menu > li.nav-dropdown-toggle').on('click', function(event) {
+            if ($(event.target).find('span').hasClass('nav-caret')) {
+                event.stopPropagation();
+                const $child_menu = $(this).find(' > ul');
+                if (+$child_menu.css('opacity') === 1) {
+                    hideMenu($menu);
+                } else if (+$child_menu.css('opacity') === 0) {
+                    hideMenu($menus_to_hide);
+                    $menu.animate({'opacity': 0}, 100, () => {
+                        $menu.css('visibility', 'hidden');
+                    }).promise().then(() => { showMenu($child_menu); });
+                }
+            }
+        });
     };
 
     const bindClick = () => {
@@ -110,9 +132,8 @@ const Header = (() => {
 
     const metatraderMenuItemVisibility = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-            if (MetaTrader.isEligible()) {
+            if (MetaTrader.isEligible() && !jpClient()) {
                 getElementById('user_menu_metatrader').setVisibility(1);
-                getElementById('topMenuMetaTrader').setVisibility(1);
             }
         });
     };
