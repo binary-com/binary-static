@@ -193,6 +193,7 @@ const texts = [
     'Your settings have been updated successfully.',
     'Female',
     'Male',
+    'Please select a country',
 
     // home and virtual account opening page
     'verification token',
@@ -502,6 +503,8 @@ const texts = [
     'thousand',
     'million',
     'Should start with letter or number, and may contain hyphen and underscore.',
+    'Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.',
+    'Validate address',
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',
@@ -529,6 +532,8 @@ const texts = [
     'Demo Accounts',
     'Real-Money Accounts',
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
+    'for MT5 Account',
+    '[_1] Account [_2]',
 
     // account_transfer
     'Min',

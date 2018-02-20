@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-13 21:27-0500\n"
+"PO-Revision-Date: 2018-02-19 04:49-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -102,14 +102,23 @@ msgstr "%1 Akademie"
 msgid "%1 Account"
 msgstr "%1 Konto"
 
+msgid "%1 Account %2"
+msgstr ""
+
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "%1 Allgmeine Geschäftsbedingungen des Partnerprogramms"
 
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1 Allgmeine Geschäftsbedingungen des Applikationsprogramms Interface („API”)"
 
+msgid "%1 Graduate Programme"
+msgstr "%1 Graduate Programm"
+
 msgid "%1 Graduate programme"
 msgstr "%1 Graduate Programm"
+
+msgid "%1 Hackathon Competition"
+msgstr "%1 Hackathon Wettbewerb"
 
 msgid "%1 ICO"
 msgstr "%1 ICO"
@@ -489,9 +498,6 @@ msgstr "* Steuerfrei: In vielen Ländern sind Gewinne aus dem Trading steuerfrei
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Alle Anrufe werden zu Trainings- und Kontrollzwecken aufgezeichnet"
 
-msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr "* Diese Zahlen sind nur indikativ, überprüfen Sie sie auf unserer MT5 Handelsplattform."
-
 msgid "0-1 year"
 msgstr "0-1 Jahre"
 
@@ -837,6 +843,9 @@ msgstr "Akzeptanz"
 msgid "Access Denied"
 msgstr "Zugriff verweigert"
 
+msgid "Access MT5 dashboard"
+msgstr "Zugang zum MT5 Dashboard"
+
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "Greifen Sie auf alle verfügbaren Tools und Funktionen für den Handel auf MT5, einschließlich Expert Advisors (EAs), Diagrammen, und Auftragsarten, zu"
 
@@ -912,8 +921,8 @@ msgstr "Kontostand:"
 msgid "Account balance: "
 msgstr "Kontostand: "
 
-msgid "Account comparison*"
-msgstr "Kontovergleich*"
+msgid "Account comparison"
+msgstr ""
 
 msgid "Account currency"
 msgstr "Kontowährung"
@@ -1019,6 +1028,9 @@ msgstr "Fortgeschrittenes Binäre Optionen Handels-Interface"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Fortgeschrittene Kenntnis der Softwaredesign-Prinzipien"
+
+msgid "Advanced multi-asset trading platform"
+msgstr "Fortgeschrittene Multi-Asset Handelsplattform"
 
 msgid "Advantages of CFD trading"
 msgstr "Vorteile des CFD-Handels"
@@ -2121,9 +2133,6 @@ msgstr "Gebot stornieren"
 msgid "Cancel bid?"
 msgstr "Gebot stornieren?"
 
-msgid "Career opportunities for Americans"
-msgstr "Karrieremöglichkeiten für Amerikaner"
-
 msgid "Careers"
 msgstr "Karrieren"
 
@@ -2760,6 +2769,9 @@ msgstr "Neues Konto einrichten"
 msgid "Create New Token"
 msgstr "Neuen Token erstellen"
 
+msgid "Create account with Google"
+msgstr "Konto mit Google erstellen"
+
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Erstellung von eindeutigen, prägnanten und ansprechenden Inhalten zur Anzeige auf der Firmen-Website, in Sozialen Medien und Werbematerialien"
 
@@ -3012,9 +3024,6 @@ msgstr "Zahlen Sie so wenig wie 5 USD ein, um mit dem Handel zu beginnen."
 
 msgid "Deposit funds and begin trading"
 msgstr "Zahlen Sie Geld ein und beginnen Sie zu Handeln"
-
-msgid "Deposit funds into your MT5 account"
-msgstr "Zahlen Sie auf Ihr MT5 Konto ein"
 
 msgid "Deposit or withdraw below"
 msgstr "Unten einzahlen oder abheben"
@@ -6253,9 +6262,6 @@ msgstr "Login-Verlauf"
 msgid "Login ID"
 msgstr "Login ID"
 
-msgid "Login ID:"
-msgstr "Login ID:"
-
 msgid "Login time:"
 msgstr "Login Uhrzeit:"
 
@@ -6276,9 +6282,6 @@ msgstr "Langfristige Partnerschaft:"
 
 msgid "Long:"
 msgstr "Lang:"
-
-msgid "Looking for a new and exciting career in a country that's modern, diverse, and tolerant? %1 is one of the world's most progressive companies, with offices in Asia and Europe."
-msgstr "Sie suchen eine neue und aufregende Karriere in einem Land, das modern, vielfältig und tolerant ist? %1 ist eines der weltweit fortschrittlichsten Unternehmen, mit Niederlassungen in Asien und Europa."
 
 msgid "Loss"
 msgstr "Verlust"
@@ -6327,6 +6330,9 @@ msgstr "MENA FFXPO Auszeichnung"
 
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "MT4 und MT5 Broker können sich direkt mit unserer Liquidität auf der One Zero-Brücke verbinden, indem Sie die integrierten Plugins verwenden."
+
+msgid "MT5 Account:"
+msgstr ""
 
 msgid "MT5 Demo"
 msgstr "MT5 Demo"
@@ -6760,8 +6766,8 @@ msgstr "Mehrere Vorteile"
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Konkret haben wir die Pflicht, Ihnen die „bestmögliche Ausführung” zu bieten, wenn wir einen Binäre Optionen Handel mit Ihnen eingehen (je \"Kontrakt\"). Die bestmögliche Ausführung bedeutet, dass wir die geeigneten Schritte unternehmen müssen, um für Sie das bestmögliche Ergebnis zu erreichen, wenn wir die Order für Sie ausführen. Dieses Dokument bietet eine Zusammenfassung unserer Regeln zur bestmöglichen Ausführung."
 
-msgid "Most brokers require minimum deposit. %1 doesn't require any minimum deposit."
-msgstr "Die meisten Broker verlangen eine Mindesteinlage. %1 erfordert keine Mindesteinlage."
+msgid "Most brokers require a minimum deposit. %1 doesn't require any minimum deposit."
+msgstr ""
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
 msgstr "Die meisten Broker berechnen in der Regel eine Provision für jede Transaktion, die Sie platzieren. %1 erhebt derzeit keine Provision auf Kontoarten, ausgenommen für Kryptowährungen."
@@ -7746,6 +7752,9 @@ msgstr "Bitte geben Sie das Datum im folgenden Format ein TT MM, JJJJ HH:mm (Ort
 
 msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Bitte geben Sie das Datum im folgenden Format ein: TT MM, JJJJ."
+
+msgid "Please enter your full address to avoid authentication delays."
+msgstr ""
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Bitte tragen Sie im nachfolgenden Formular die Login ID und den Betrag ein, den Sie Ihrem Kunden überweisen möchten:"
@@ -10222,9 +10231,6 @@ msgstr "Diese Materialien dürfen nicht zu gewerblichen Zwecken oder zum Schaden
 msgid "These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens."
 msgstr "Diese Materialien dürfen nur durch autorisierte Personen (eine Person, die durch das Unternehmen nach eigenem Ermessen bestimmt und berechtigt ist, die Materialien zu erhalten, gemäß geltenden Gesetzen und Vorschriften, zum Beispiel in EWR-Ländern gemäß einer Befreiung unter der EU Richtlinie 2003/71/EG (als geändert, einschließlich durch Richtlinie 2010/73/EU) empfangen werden, welches ohne Einschränkung die Ausnahmeregelung in Bezug auf qualifizierte Investoren (\"autorisierte Personen\") miteinschließt. Wenn eine autorisierte Person ein Token-Angebot abgeben will, kann sie dies tun, wenn sie ein registrierter Kunde von Binary.com ist und ein Binary.com Konto hat; durch dieses Verfahren kann das Unternehmen ihre Qualifikation als autorisierte Person überprüfen. Die autorisierte Person, die Token erwerben will, wird ein Angebot abgeben.  Das Unternehmen wird die Angebote sammeln und bewerten.  Das Unternehmen kann verlangen, dass Gebote bestätigt werden, bevor sie für die Zwecke des Angebotes des Unternehmens bei der Auktion gültig sind.  Bei der Auktion gibt das Unternehmen ein Angebot für die Token ab, welches dann (nach Auktionsverfahren, wie in den Materialien erklärt) durch die Gebote akzeptiert wird, und die Gegenleistung für den Erwerb von solchen angebotenen und angenommenen Token wird durch einen Kredit im Binary.com Konto der Befugten Person, das den Vertrag für den Verkauf und Kauf der jeweiligen Token nachweist, beglichen."
 
-msgid "These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr "Diese Zahlen sind nur indikativ, überprüfen Sie sie auf unserer MT5 Handelsplattform."
-
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr "Glauben Sie, dass eine bestimmte Währung nach oben oder unten gehen wird? Lernen Sie wann Sie kaufen sollten (oder \"lang gehen\") und wann verkaufen (oder \"kurz gehen\")."
 
@@ -10361,7 +10367,7 @@ msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Dieses Angebot kann nicht in Verbindung mit anderen Angeboten verwendet werden."
 
 msgid "This page is not available in the selected language."
-msgstr ""
+msgstr "Diese Seite ist in der ausgewählten Sprache nicht verfügbar."
 
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Diese Werbeaktion steht nur neuen Kunden zur Verfügung. Bereits vorhandene oder ehemalige Kunden sind nicht berechtigt. Sie ist nur einmal pro Kunde gültig."
@@ -10627,6 +10633,9 @@ msgstr "Handeln Sie Bitcoin, Ethereum, und Litecoinpaare, ohne diese zu besitzen
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "Handeln Sie Forex und CFDs auf unserer populären Multi-Asset Plattform."
 
+msgid "Trade Forex and CFDs with a powerful platform recognised as the global standard."
+msgstr "Handlen Sie Forex und CFDs mit einer leistungsstarken Plattform, die als globaler Standard anerkannt ist."
+
 msgid "Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools."
 msgstr "Handeln Sie Forex und Differenzkontrakte (CFDs) mit äußerst wettbewerbsorientierter Leverage. MetaTrader 5 ist eine Multi-Asset Plattform, die ausgezeichnete Handelsmöglichkeiten und technische Analyse-Tools bietet."
 
@@ -10807,11 +10816,17 @@ msgstr "Überweisen Sie Gelder von Ihrem MetaTrader 5 Konto auf Ihr binäres Opt
 msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
 msgstr "Überweisen Sie Geld von Ihrem binären Optionen Konto auf Ihr MetaTrader 5 Konto."
 
+msgid "Transfer funds to your MT5 account"
+msgstr ""
+
 msgid "Transfer to"
 msgstr "Überweisung an"
 
 msgid "Transfer to Login ID"
 msgstr "Wechsel zur Login ID"
+
+msgid "Transfer to MT5"
+msgstr ""
 
 msgid "Transfer to Payment Agent"
 msgstr "Überweisung an den Zahlungsagent"
@@ -11103,6 +11118,9 @@ msgstr "Betriebskostenabrechnungen (Strom, Wasser, Gas, Breitband und Festnetz)"
 
 msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
 msgstr "Utility-Token sind Token, die Ihnen auf dezentrale Netzwerke oder Anwendungen Zugriff geben."
+
+msgid "Validate address"
+msgstr ""
 
 msgid "Variable from 0.9 pips"
 msgstr "Variable von 0,9 Pips"
@@ -11932,6 +11950,9 @@ msgstr "Hinsichtlich des Tracking Ihrer Empfehlungen, die über die Links auf Ih
 msgid "Withdraw"
 msgstr "Abheben"
 
+msgid "Withdraw from MT5"
+msgstr ""
+
 msgid "Withdraw funds from your MT5 account"
 msgstr "Gelder von Ihrem MT5 Konto beheben"
 
@@ -12548,6 +12569,9 @@ msgstr "Ihr Konto darf nicht als Bankkonto verwendet werden und Einzahlungen dü
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Ihr Konto darf nicht als Bankkonto verwendet werden und Einzahlungen dürfen nur im Hinblick auf die Verwendung für den Kauf von Kontrakten erfolgen. Das Unternehmen ist keine Finanzinstitution. Die Kunden erhalten für Ihre Guthaben keine Zinsen. Sollten Sie wiederholt Einzahlungen und Abhebungen vornehmen, ohne dass entsprechende Kontrakte platziert werden, behalten wir uns das Recht vor, ohne vorherige Ankündigung vor Kündigung des Kontos, dieses mit anfallenden Bankgebühren zu belasten."
 
+msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
+msgstr ""
+
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Ihr Antrag wird dann von unserer Rechtsabteilung und Marketingabteilung überprüft. Sobald deren Genehmigung vorliegt, werden wir Sie in unserer Liste der <a href='%1'>Zahlungsagenten</a> veröffentlichen."
 
@@ -12761,6 +12785,9 @@ msgstr "beschreiben fair und genau die Dienstleistungen an den Kunden;"
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 msgstr "folgen Sie und/oder implementieren Sie bzw. erfüllen Sie alle unternehmensbezogenen Richtungen und/oder Richtlinien oder Verfahren des Unternehmens als geändert bzw. nachgestellt und/oder von Zeit zu Zeit ersetzt;"
 
+msgid "for MT5 Account"
+msgstr ""
+
 msgid "for exclusive updates on the ICO."
 msgstr "für exklusive Updates zur ICO."
 
@@ -12862,6 +12889,9 @@ msgstr "Netto von realisierten Gewinnen, die Ihrem Echtgeldkonto gutgeschrieben 
 
 msgid "numbers"
 msgstr "Zahlen"
+
+msgid "or"
+msgstr "oder"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "die Seite für die genaue Zeit für alle Kontraktabrechnungen. Andere Websites mögen andere Vereinbarungen getroffen haben (z. B. wählen einige Websites 16 Uhr (New York) oder 17 Uhr (London)). Dadurch können sich die Eröffnungs-, Höchst-, Tiefst- und Schlussnotierungen auf unserer Website aufgrund des Börsenschlusses von denen anderer Websites unterscheiden ."
