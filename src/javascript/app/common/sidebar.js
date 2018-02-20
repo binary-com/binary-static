@@ -1,6 +1,6 @@
-const sidebar = (() => {
+const Sidebar = (() => {
       const sidebar = '.sidebar-collapsible';
-
+      //
       const getChildrenHeight = $el => {
           let totalHeight = 0;
           $el.children().each(function() {
@@ -9,84 +9,61 @@ const sidebar = (() => {
           return totalHeight;
       }
 
-      const toggleSubmenu = $el => {
-          const $parent  = $el.parent();
-          const $submenu = $el.siblings('ul');
-          if ($parent.is('.active')) {
-              const totalHeight = getChildrenHeight($submenu);
-              $submenu.animate({ height: `${totalHeight}px` }, 300);
-              if (!$submenu.find('.active').length) {
-                  $submenu.find('li:first-child').addClass('active');
-                  $submenu.find('li:first-child > a').addClass('selected'); // set first child active
-              }
+      const showSelectedContent = () => {
+          const hash = window.location.hash;
+          const currentTarget = $(sidebar).find(hash);
+
+          if ($(currentTarget).hasClass('has-submenu')) {
+              $(currentTarget).addClass('active');
+              const collapsedList = $(currentTarget).find('ul');
+              const totalHeight = getChildrenHeight(collapsedList);
+              $(collapsedList).animate({ height: `${totalHeight}px` }, 300);
+              const firstSubMenuList = $(currentTarget).find('li:first-child')[0];
+              $(firstSubMenuList).addClass('active').find('a').addClass('selected');
+          } else if ($(currentTarget).hasClass('submenu-item')) {
+              $(currentTarget).addClass('active').find('a').addClass('selected').parent('li.has-submenu').addClass('active');
+              const collapsedList = $(currentTarget).parent('ul');
+              const totalHeight = getChildrenHeight(collapsedList);
+              $(collapsedList).animate({ height: `${totalHeight}px` }, 300);
+
           } else {
-              $submenu.animate({ height: '0px' }, 300);
-          }
-          $parent.siblings().find('ul').animate({ height: '0px' }, 300);
-      }
-
-      const getTargetHref = current_target => {
-          const submenu = current_target.nextElementSibling;
-          const target  = submenu ? $(submenu).find($(submenu).find('.selected')[0] ? '.selected' : 'a:first')[0] : current_target;
-          return target.getAttribute('href');
-      }
-
-      const showSelectedContent = current_target => {
-          const $content = $('.sidebar-collapsible-content');
-          if (!$content) return;
-          const target   = getTargetHref(current_target);
-          // history.replaceState(undefined, undefined, target);
-          $content
-            .find('> div')
-            .addClass('invisible')
-            .end()
-            .find(`${target}-content`)
-            .removeClass('invisible');
-          return false;
-      }
-
-      const onLoad = () => {
-          if ($(sidebar).find('.active').length) {
-              $(sidebar).find('.active').removeClass('active');
+              $(currentTarget).addClass('active').find('a').addClass('selected');
           }
 
+              const $content = $('.sidebar-collapsible-content');
+              if (!$content) return;
+              const target   = !$(currentTarget).hasClass('has-submenu') ? hash : `#${($(currentTarget).find('li:first-child')[0]).id}`;
 
-          $('.sidebar-collapsible').on('click', 'a', function(e) {
-              const $this     = $(this);
-              const $parent   = $this.parent('li');
-              const $siblings = $parent.siblings('li');
-              if ($this.hasClass('submenu-item')) {
-                  $this.addClass('selected').parent('li').addClass('active');
-                  $parent.parent('li').addClass('active');
-              } else if ($parent.hasClass('has-submenu')) {
-                  $this.toggleClass('selected').parent('li').toggleClass('active');
-              } else {
-                  $this.addClass('selected').parent('li').addClass('active');
-              }
-              $siblings.removeClass('active').find('> a').removeClass('selected');
+              $content
+                .find('> div')
+                .addClass('invisible')
+                .end()
+                .find(`${target}-content`)
+                .removeClass('invisible');
+      }
 
-              toggleSubmenu($this);
-              return showSelectedContent(e.target);
+      const init = (show_div = true) => {
+          const $sidebar_list_item = $(`${sidebar} li`);
+          $sidebar_list_item.click(() => {
+              $sidebar_list_item.removeClass('selected');
+              $(this).addClass('selected');
           });
-
-
-          // defining first selected
-          const firstList = $(sidebar).find('li:first-child')[0];
-          // if the first list item is nested
-          if ($(firstList).hasClass('has-submenu')) {
-              const firstLink = $(firstList).find('a:first-child')[0];
-              const firstSublink = $(firstList).find('li:first-child > a:first-child')[0];
-              $(firstLink).trigger('click');
-              $(firstSublink).trigger('click');
-          } else {
-              const link = $(firstList).find('a:first-child')[0];
-              $(link).trigger('click');
+          $(window).on('hashchange', showSelectedContent);
+          if (show_div) {
+              showSelectedContent();
           }
       }
-      return {
-          onLoad,
-      }
-  }
-)();
 
-module.exports = sidebar;
+      const clean = () => {
+          $(window).off('hashchange', showSelectedContent);
+      };
+
+
+      return {
+          init,
+          clean,
+      };
+  })();
+
+module.exports = Sidebar;
+

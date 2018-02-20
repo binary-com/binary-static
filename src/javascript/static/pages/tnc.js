@@ -8,13 +8,13 @@ const TermsAndConditions = (() => {
             $('#btn_accept'),
             () => { $('.tnc_accept').setVisibility(1); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
-        sidebar.onLoad();
+        sidebar.init();
 
         $('.currentYear').text(new Date().getFullYear());
     };
 
     const onUnload = () => {
-        $('.sidebar-collapsible a').off('click');
+        sidebar.clean();
     };
 
     return {
