@@ -1,7 +1,28 @@
 /* stylelint-disable color-no-hex */
 footer {
-    padding: 10px 0;
+    position: fixed;
+    bottom: 0px;
+    padding: 5px 10px;
     width: 100%;
-    box-shadow: 0 2px 8px #f0f1f2;
+    border-top: 1px solid #e9e9e9;
+    background-color: #fff;
+    box-sizing: border-box;
+
+    .footer-links {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+            padding: 0 5px;
+            text-decoration: none;
+
+            span {
+                font-size: 0.8rem;
+                text-transform: capitalize;
+                color: $COLOR_DARK_BLUE;
+                vertical-align: middle;
+            }
+        }
+    }
 }
 /* stylelint-enable color-no-hex */
