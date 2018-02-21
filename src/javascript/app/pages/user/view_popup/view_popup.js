@@ -94,7 +94,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_start_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
         containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
-        containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier));
+        containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier, false, 3, 2));
         if (isLookback(contract.contract_type)) {
             containerSetText('trade_details_payout', getLookbackFormula(contract.contract_type, formatMoney(contract.currency, multiplier, false, 3, 2)));
         } else {
