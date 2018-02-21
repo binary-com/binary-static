@@ -1,0 +1,94 @@
+/* stylelint-disable color-no-hex */
+header {
+    background-color: $COLOR_WHITE !important;
+    position: relative;
+    border: 0;
+    width: 100%;
+
+    .menu-items {
+        display: flex;
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+
+        .navbar-icons {
+            cursor: pointer;
+            padding: 6px 15px;
+            align-self: center;
+
+            &.binary-logo {
+                border-left: 1px solid #f2f2f2;
+            }
+            img {
+                width: 1.5rem;
+                height: auto;
+
+                &.logo-img {
+                    width: 2.5rem;
+                }
+            }
+        }
+        .menu-left {
+            justify-content: flex-start;
+            order: -1;
+            display: inline-flex;
+            flex: 1;
+            border-right: 1px solid #f2f2f2;
+
+            .menu-toggle {
+                align-self: center;
+            }
+            .menu-links {
+                align-self: center;
+                padding-bottom: 5px;
+
+                a {
+                    padding: 0 30px;
+                    text-decoration: none;
+
+                    span {
+                        font-size: 0.8rem;
+                        text-transform: capitalize;
+                        color: $COLOR_DARK_BLUE;
+                    }
+                    &:last-child {
+                        &:after {
+                            display: block;
+                            content: '';
+                            height: 3px;
+                            width: 6rem;
+                            background-color: $primaryBrandColor;
+                            right: 0;
+                            left: 7.5rem;
+                            position: absolute;
+                            margin-top: 14px;
+                            transition: 0.4s ease-in-out;
+                        }
+                    }
+                    &:active {
+                        &:first-child ~ a:last-child:after {
+                            margin-left: 0;
+                        }
+                        &:nth-child(2) ~ a:last-child:after {
+                            margin-left: 6.5rem;
+                        }
+                        &:nth-child(3) ~ a:last-child:after {
+                            margin-left: 14rem;
+                        }
+                        &:last-child:after {
+                            margin-left: 21rem;
+                        }
+                    }
+                }
+                @media (max-width: 768px) {
+                    display: none;
+                }
+            }
+        }
+        .notifications-toggle {
+            justify-content: flex-end;
+            align-self: center;
+        }
+    }
+}
+/* stylelint-enable color-no-hex */

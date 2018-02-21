@@ -67,6 +67,10 @@ module.exports = [
     ['redirect',                           'app/logged_in',                             null,         'Redirecting...'],
 
 
+    // ==================== Section: "app_2" ====================
+    ['trade',                              'app_2/trade/trading',                       'full_width', 'Trusted by traders since 2000'],
+
+
     // ==================== Section: "static" ====================
     ['404',                                'static/404',                                'full_width', '404'],
     ['home-beta',                          'static/home',                               'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'ja'],
@@ -134,6 +138,8 @@ module.exports = [
     ['metatrader/types-of-accounts',       'static/metatrader/types_of_accounts',       'default',     'Types of MetaTrader 5 accounts'],
 
     ['affiliate_disclaimer',               'static/japan/affiliates/popup',             null,          '',                                 'NOT-ja,en'],
+
+    ['style-guide',                        'static/new_layout/style_guide',             'full_width',  'Trusted by traders since 2000'],
 
 
     // ==================== Section: "landing_pages" ====================

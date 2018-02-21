@@ -79,14 +79,18 @@ module.exports = function (grunt) {
             chunkFilename: '[name]_[chunkhash].min.js',
             publicPath   : `${isProduction ? '' : '/binary-static'}${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}/js/`,
         },
+        resolve: {
+            extensions: ['.js', '.jsx'],
+        },
         module: {
             loaders: [
                 {
-                    test   : /\.js$/,
+                    test   : /\.jsx?$/,
                     exclude: /node_modules/,
                     loader : 'babel-loader',
                     query  : {
-                        presets: ['es2015'],
+                        plugins: ['transform-decorators-legacy' ],
+                        presets: ['es2015', 'stage-1', 'react'],
                         compact: false,
                     },
                 },

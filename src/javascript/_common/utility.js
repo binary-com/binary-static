@@ -178,6 +178,7 @@ module.exports = {
     downloadCSV,
     template,
     isEmptyObject,
+    cloneObject,
     getPropertyValue,
     handleHash,
     clearable,

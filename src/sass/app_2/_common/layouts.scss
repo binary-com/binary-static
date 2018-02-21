@@ -1,0 +1,81 @@
+/* stylelint-disable unit-whitelist */
+/* stylelint-disable color-no-hex */
+@supports (display: grid) {
+    /* trade-app layout */
+    #trade_app {
+        margin: 30px 15px 0;
+        display: grid;
+        grid-template-columns: repeat(12, [col-start] 1fr);
+        grid-template-rows: repeat(2, [row] auto);
+        grid-gap: 20px;
+
+        & > * {
+            grid-column: col-start / span 12;
+        }
+        @media (min-width: 767px) {
+            .chart-container {
+                grid-column: col-start 1 / span 9;
+
+                fieldset {
+                    display: inline-grid;
+                    width: 25%;
+                    margin: 0 8px 16px;
+                }
+            }
+            .sidebar-container {
+                grid-column: col-start 10 / span 3;
+                display: grid;
+                grid-gap: 10px;
+                grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
+
+                fieldset {
+                    grid-column: 1;
+
+                    div.duration-container, div.amount-container {
+                        display: grid;
+                        grid-column-gap: 15px;
+                        grid-template-columns: 1fr;
+                        grid-auto-columns: auto;
+                    }
+                    @media (min-width: 979px) {
+                        div.duration-container {
+                            grid-template-columns: 1.5fr 1fr;
+                        }
+                        div.amount-container {
+                            grid-template-columns: 1fr 1.5fr;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* flexbox fallback is if the browser does not support display:grid */
+@supports not (display: grid) {
+    #trade_app {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 20px;
+
+        @media screen and (min-width: 767px) {
+            .chart-container {
+                flex: 0 1 calc(75% - 1.5vw);
+            }
+            .sidebar-container {
+                flex: 0 1 calc(25% - 1.5vw);
+
+                fieldset {
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+}
+/* stylelint-enable unit-whitelist */
+
+/* Ant-style shadows */
+.shadow {
+    box-shadow: 0 2px 8px #f0f1f2;
+}
+/* stylelint-enable color-no-hex */
