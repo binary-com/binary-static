@@ -164,16 +164,16 @@ const Regulation = () => {
                 </div>
             </Box>
 
-            <Box header={it.L('Binary (Europe) Ltd')} >
-                <p>{it.L('Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - [_1]\'s Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href="https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495" target="_blank">view licence</a>.', it.website_name)}</p>
-                <p>{it.L('European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd.')}</p>
+            <Box header={it.L('Binary (Europe) Limited')} >
+                <p>{it.L('Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - [_1]\'s Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href="https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495" target="_blank">view licence</a>.', it.website_name)}</p>
+                <p>{it.L('European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Limited.')}</p>
                 <RegulatorText />
                 <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
             </Box>
 
-            <Box header={it.L('Binary (IOM) Ltd')} >
-                <p>{it.L('Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) and for UK clients by the UK Gambling Commission - <a href="https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172" target="_blank">view licence</a>.')}</p>
-                <p>{it.L('UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Ltd.')}</p>
+            <Box header={it.L('Binary (IOM) Limited')} >
+                <p>{it.L('Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) and for UK clients by the UK Gambling Commission - <a href="https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172" target="_blank">view licence</a>.')}</p>
+                <p>{it.L('UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Limited.')}</p>
                 <RegulatorText />
                 <RegulatorImage href='https://www.gov.im/gambling/' image='images/pages/footer/isle-of-man.png' />
             </Box>
