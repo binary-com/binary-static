@@ -66,7 +66,55 @@ const Page = (() => {
     };
 
     const showHiddenElementsBasedOnCompany = (landing_company_name) => {
-        console.log('>>>', landing_company_name);
+        if (!landing_company_name) landing_company_name = 'default'; // logged out
+        const VISIBLE_CLASSNAME = 'visible';
+
+        function parseAttributeString(attrStr) {
+            let names = attrStr.split(',').map(name => name.trim());
+
+            const parsingError = new Error('Invalid data-show attribute value!');
+
+            if (names.some(name => name.length === 0)) {
+                throw parsingError;
+            }
+
+            const isExclude = names.every(name => name[0] === '-');
+            const isInclude = names.every(name => name[0] !== '-');
+
+            if (!isExclude && !isInclude) {
+                throw parsingError;
+            }
+
+            if (isExclude) {
+                names = names.map(name => name.slice(1));
+            }
+
+            return {
+                isExclude,
+                names
+            };
+        }
+
+        console.log('landing_company_name', landing_company_name);
+
+        document.querySelectorAll('[data-show]').forEach(el => {
+            const attrStr = el.dataset.show;
+            const { isExclude, names } = parseAttributeString(attrStr);
+            console.log(names);
+            const nameSet = new Set(names);
+
+            if (isExclude && !nameSet.has(landing_company_name)) {
+                el.classList.add(VISIBLE_CLASSNAME);
+                console.log('show', el);
+            }
+            else if (!isExclude && nameSet.has(landing_company_name)) {
+                el.classList.add(VISIBLE_CLASSNAME);
+                console.log('show', el);
+            }
+            else {
+                console.log('stays hidden', el);
+            }
+        })
     }
 
     const onLoad = () => {
