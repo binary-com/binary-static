@@ -66,7 +66,7 @@ const Page = (() => {
     };
 
     const showHiddenElementsBasedOnCompany = (landing_company_name) => {
-        const VISIBLE_CLASSNAME = 'visible';
+        const visible_classname = 'visible';
 
         function parseAttributeString(attrStr) {
             function generateErrorMessage(reason) {
@@ -105,15 +105,17 @@ const Page = (() => {
         document.querySelectorAll('[data-show]').forEach(el => {
             const attrStr = el.dataset.show;
             const { isExclude, names } = parseAttributeString(attrStr);
-            console.log(names);
+            
+            console.log((isExclude ? 'exclude' : 'include'), names);
+
             const nameSet = new Set(names);
 
             if (isExclude && !nameSet.has(landing_company_name)) {
-                el.classList.add(VISIBLE_CLASSNAME);
+                el.classList.add(visible_classname);
                 console.log('show', el);
             }
             else if (!isExclude && nameSet.has(landing_company_name)) {
-                el.classList.add(VISIBLE_CLASSNAME);
+                el.classList.add(visible_classname);
                 console.log('show', el);
             }
             else {
