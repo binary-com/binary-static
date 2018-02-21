@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-19 04:51-0500\n"
+"PO-Revision-Date: 2018-02-20 21:42-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -483,6 +483,9 @@ msgstr "รางวัล ‘Best Fixed-Odds Firm 2012’ ได้รับจ
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "รางวัล ‘Financial Betting Operator of the Year’ ได้รับจาก eGaming Review"
 
+msgid "(6,000 – 5,200) * 2 = $1600"
+msgstr ""
+
 msgid "(One) Touch trades"
 msgstr "(One) Touch Trades"
 
@@ -733,6 +736,9 @@ msgstr "ผู้นำนวัตกรรมการซื้อขายไ
 
 msgid "A list of payment methods you will accept from Clients"
 msgstr "วิธีการชำระเงินที่ท่านจะได้รับจากลูกค้า"
+
+msgid "A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to \"look back\" over time to determine the payout."
+msgstr ""
 
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "เป็นเจ้าของภาษาผู้ซึ่งมีทักษะและความสามารถในภาษาอังกฤษ ทั้งการพูดและการเขียนได้ดี"
@@ -2036,6 +2042,15 @@ msgstr "ในการเลือกที่จะถูกปฏิบัต
 msgid "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 msgstr "ในการเลือกที่จะถูกปฏิบัติในฐานะลูกค้ามืออาชีพ เราจะไม่สันนิษฐานว่าคุณมีความรู้เกี่ยวกับตลาดและมีประสบการณ์ตามที่ได้นิยามเอาไว้ในความหมายของ 'ลูกค้ามืออาชีพ' เราจะดำเนินการตามขั้นตอนที่จำเป็นที่จะทำให้แน่ใจว่าคำร้องขอของคุณสำหรับการจัดประเภทอันนี้เป็นไปตามหลักเกณฑ์ที่กล่าวเอาไว้ก่อนหน้านี้ รวมถึงแต่ไม่จำกัดเพียงสำเนาของ:"
 
+msgid "By purchasing the %1‘Close-Low’%2 contract, you’ll win the multiplier times the difference between the %1close%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Close’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1close%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Low’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "โดยการลงทะเบียนซอฟท์แวร์แอพพลิเคชัน เว็บไซต์ หรือ ผลิตภัณฑ์ หรือ บริการ (เรียกว่า \"แอพพลิเคชัน\") ท่านยอมรับว่า ท่านได้อ่าน ทำความเข้าใจแล้ว และเห็นด้วยในรายละเอียดที่จะมีพันธะผูกพันกับข้อตกลงเหล่านี้"
 
@@ -2420,8 +2435,14 @@ msgstr "เงินของลูกค้า"
 msgid "Clients' trade allocations start from 0.01 lots"
 msgstr "การจัดสรรการซื้อขายของลูกค้าเริ่มจาก 0.01 ล็อต"
 
+msgid "Close"
+msgstr ""
+
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
 msgstr "การปิดโพซิชั่นทั้งหมด หรือ การปิดโพซิชั่นที่เปิดอยู่ใดๆ ณ ระดับปิดนั้นสามารถดำเนินการได้;"
+
+msgid "Close-Low"
+msgstr ""
 
 msgid "Closed"
 msgstr "ปิด"
@@ -4004,6 +4025,9 @@ msgstr "ตัวอย่างเช่น หากท่านต้อง�
 msgid "For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction."
 msgstr "ตัวอย่างเช่น หากท่านต้องการซื้อ 100 หน่วยของสินทรัพย์หนึ่งที่กำลังซื้อขายที่ 50 เหรียญสหรัฐต่อหน่วยผ่านโบรกเกอร์แบบเดิมๆ ท่านจะมีต้นทุนที่ 5,000 เหรียญสหรัฐในธุรกรรมนี้"
 
+msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
+msgstr ""
+
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "ตัวอย่างเช่น CFD บนดัชนีความผันผวนเสนอที่ 1 เหรียญสหรัฐต่อสัญญาหน่วย ถ้าคุณซื้อจำนวน 1.0 สัญญาสำหรับ\n"
 "ดัชนีความผันผวน 100 ด้วยราคาจะซื้อปัจจุบันที่ 20,000 เหรียญสหรัฐ และหลังจากนั้นขายที่ราคา 20,010 เหรียญสหรัฐ กำไรสุทธิของคุณจะถูกคำนวณดังนี้:"
@@ -4395,6 +4419,9 @@ msgstr "เฮดจิ้ง"
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr "นี่คือตัวอย่างคู่สกุลเงิน EUR/USD และราคาจะซื้อจะขาย"
 
+msgid "High"
+msgstr ""
+
 msgid "High Barrier"
 msgstr "Barrier สูง"
 
@@ -4415,6 +4442,15 @@ msgstr "ความถี่สูง (2 ช่วงเวลาต่อว�
 
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "ความปลอดภัยระดับสูง - ธุรกรรมเงินดิจิทัลแต่ละอันจะได้รับการคุ้มครองให้ปลอดภัยโดยเทคนิคการเข้ารหัสลับขั้นสูงที่ทำให้แทบจะไม่สามารถปลอมแปลงได้"
+
+msgid "High, Low and Close"
+msgstr ""
+
+msgid "High-Close"
+msgstr ""
+
+msgid "High-Low"
+msgstr ""
 
 msgid "Higher"
 msgstr "สูงกว่า"
@@ -4667,9 +4703,6 @@ msgstr "I. ราคา"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "เช่น (20010 - 20000) x 1 x 1 = 10 เหรียญสหรัฐ"
-
-msgid "ICO Bids"
-msgstr "การเสนอราคา ICO"
 
 msgid "ICO is live, participate now!"
 msgstr "ICO เปิดแล้ว เข้าร่วมเดี๋ยวนี้!"
@@ -6288,6 +6321,9 @@ msgstr "พันธมิตรระยะยาว:"
 msgid "Long:"
 msgstr "ยาว:"
 
+msgid "Lookbacks"
+msgstr ""
+
 msgid "Loss"
 msgstr "เสีย"
 
@@ -6302,6 +6338,9 @@ msgstr "หน่วยล็อต"
 
 msgid "Lots"
 msgstr "ล็อต"
+
+msgid "Low"
+msgstr ""
 
 msgid "Low Barrier"
 msgstr "Barrier ต่ำ"
@@ -6818,6 +6857,9 @@ msgstr "Multiple Accounts Manager (MAM) สำหรับ MetaTrader 5 (MT5)"
 
 msgid "Multiple trading opportunities"
 msgstr "โอกาสหลากหลายในการซื้อขาย"
+
+msgid "Multiplier"
+msgstr ""
 
 msgid "Must be a clear, colour photo or scanned image"
 msgstr "จะต้องเป็นรูปสีชัดเจน หรือรูปสแกน"
@@ -7575,6 +7617,9 @@ msgstr "สิทธิบัตรต่างๆ"
 msgid "Pay no commission on all metal contracts."
 msgstr "ไม่ต้องจ่ายค่าคอมมิชชั่นแก่สัญญาโลหะทั้งหมด"
 
+msgid "Pay-out"
+msgstr ""
+
 msgid "Payment Agent"
 msgstr "ตัวแทนรับชำระเงิน"
 
@@ -7610,6 +7655,9 @@ msgstr "การจ่ายค่าตอบแทนที่เกิดข
 
 msgid "Payments"
 msgstr "การชำระเงิน"
+
+msgid "Payoff"
+msgstr ""
 
 msgid "Payout"
 msgstr "การชำระเงิน"
@@ -8828,9 +8876,6 @@ msgstr "ราคาเฉียบที่ได้รับการเปร
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr "Shelter Home’s Shelter Community Learning Centre 3"
 
-msgid "Shop"
-msgstr "ร้าน"
-
 msgid "Short"
 msgstr "Short"
 
@@ -9425,6 +9470,24 @@ msgstr "เว็บไซต์ %1 ได้รับการคุ้มค�
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "เนื้อหาคงที่ (CSS, Javascript) ของเว็บไซต์ของ%1มีอยู่ในลักษณะโครงการ%2binary-static%3โอเพ่นซอสบน github คุณต้องการเปลี่ยนโฉมของเว็บไซต์%1หรือปรับปรุงความเข้ากันของเบราว์เซอร์ ความเร็วในการแสดงผลของเว็บไซต์ หรือการทำงานของ Javascript หรือไม่ กรุณาแยกโครงการและส่งแจ้งการเปลี่ยนแปลงของการเปลี่ยนแปลงของรหัสที่คุณอยากเสนอ"
+
+msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
+msgstr ""
+
+msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
+msgstr ""
+
+msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
+msgstr ""
+
+msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1low%2 is the lowest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1start time%2 begins when the contract is processed by our servers."
+msgstr ""
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "<strong>Premier Platform</strong> เพื่อการซื้อขายไบนารีออปชั่น"
@@ -10914,6 +10977,9 @@ msgstr "ประเภทของบัญชี MetaTrader 5"
 msgid "Types of Trades"
 msgstr "ประเภทของการซื้อขาย"
 
+msgid "Types of lookbacks"
+msgstr ""
+
 msgid "Types of trades"
 msgstr "ประเภทของการซื้อขาย"
 
@@ -11027,6 +11093,9 @@ msgstr "ขออภัย ที่ยังไม่มีการฝาก�
 
 msgid "United Kingdom"
 msgstr "ประเทศสหราชอาณาจักร"
+
+msgid "Units"
+msgstr ""
 
 msgid "University degree in Marketing, Communications, Journalism, or related discipline"
 msgstr "สำเร็จการศึกษาระดับปริญญาตรีในสาขาการตลาด สื่อสารมวลชน วารสารศาสตร์ หรือสาขาอื่นที่เกี่ยวข้อง"
@@ -11457,6 +11526,9 @@ msgstr "เรามีโลหะมีค่าทั้งสี่ คื�
 msgid "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 msgstr "เรานำเสนอขอบเขตผลิตภัณฑ์ที่เป็นนวัตกรรมสำหรับลูกค้า ซึ่งประกอบด้วยเครื่องมือทางการเงินและสังเคราะห์ มีระยะเวลาตั้งแต่ 10 วินาทีถึง 365 วัน"
 
+msgid "We offer three types lookbacks:"
+msgstr ""
+
 msgid "We only pay for pull requests that are approved by our development team and merged into master. If the development team approves your pull request, we'll pay you in cryptocurrency. You can choose Bitcoin, Litecoin or Ether. "
 msgstr "เราจะจ่ายให้แก่การแจ้งการเปลี่ยนแปลงที่ได้รับการอนุมัติจากทีมพัฒนาของเราและได้รวมเข้าไปในตัวหลักเท่านั้น ถ้าทีมพัฒนาอนุมัติการแจ้งความเปลี่ยนแปลงของคุณ เราจะจ่ายคุณเป็นเงินดิจิทัล คุณสามารถเลือกบิทคอยน์ ไลท์คอยน์ หรืออีเธอร์ก็ได้ "
 
@@ -11600,6 +11672,9 @@ msgstr "ดัชนี OTC และหลักทรัพย์ คืออ
 
 msgid "What are binary options"
 msgstr "ไบนารีออปชั่นคืออะไร"
+
+msgid "What are lookbacks"
+msgstr ""
 
 msgid "What are the benefits of purchasing tokens?"
 msgstr "ประโยชน์ของการซื้อโทเค่นคืออะไร?"
@@ -11930,6 +12005,15 @@ msgstr "ทำไมจึงควรซื้อขายโลหะมีค
 
 msgid "Will I need to install any software?"
 msgstr "ต้องติดตั้งซอฟท์แวร์ใดๆ ไหม?"
+
+msgid "Win the multiplier times the close minus low."
+msgstr ""
+
+msgid "Win the multiplier times the high minus close."
+msgstr ""
+
+msgid "Win the multiplier times the high minus low."
+msgstr ""
 
 msgid "Windows"
 msgstr "Windows"

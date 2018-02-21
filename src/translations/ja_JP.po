@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-19 04:50-0500\n"
+"PO-Revision-Date: 2018-02-20 21:41-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -487,6 +487,9 @@ msgstr "”Global Banking” 、及び”Finance Review”から「2012年度最
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "eGaming Reviewから「最優秀取引業者」を受賞"
 
+msgid "(6,000 – 5,200) * 2 = $1600"
+msgstr ""
+
 msgid "(One) Touch trades"
 msgstr "Touchトレード"
 
@@ -733,6 +736,9 @@ msgstr "業界最多の9通貨ペアとラダー、タッチ、レンジによ�
 
 msgid "A list of payment methods you will accept from Clients"
 msgstr "お客さまから受け入れる決済方法リスト"
+
+msgid "A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to \"look back\" over time to determine the payout."
+msgstr ""
 
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "英語の口語及びライティングを使いこなせるネイティブの方"
@@ -1690,10 +1696,10 @@ msgid "Barrier(s)"
 msgstr "バリア価格"
 
 msgid "Base currency"
-msgstr "基本通貨"
+msgstr "基準通貨"
 
 msgid "Based currency"
-msgstr "基本通貨"
+msgstr "基準通貨"
 
 msgid "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
 msgstr "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
@@ -2043,6 +2049,15 @@ msgstr "By opting to be treated as a Professional Client, we shall not presume t
 
 msgid "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 msgstr "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
+
+msgid "By purchasing the %1‘Close-Low’%2 contract, you’ll win the multiplier times the difference between the %1close%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Close’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1close%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Low’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
+msgstr ""
 
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "ソフトウェアアプリケーション、ウェブサイト、お客さまが作成された製品または提供されたサービス（アプリケーション）を登録することで、これら条項に拘束されることに同意されたとみなします。"
@@ -2433,8 +2448,14 @@ msgstr "お客さまマネー"
 msgid "Clients' trade allocations start from 0.01 lots"
 msgstr "Clients' trade allocations start from 0.01 lots"
 
+msgid "Close"
+msgstr ""
+
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
 msgstr "判定レベルでオープンポジションの全てをあるいは一部を閉じることは、合理的に可能です。"
+
+msgid "Close-Low"
+msgstr ""
 
 msgid "Closed"
 msgstr "終了"
@@ -4006,7 +4027,7 @@ msgid "For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and
 msgstr "例えば、レバレッジ300:1で市場価格USD 1,250.15のXAU/USDペアを1ロット購入する場合、1ロット購入するのに必要なマージンは以下のように算出されます。"
 
 msgid "For example, if you see that the EUR/USD has an ask price of 1.05382, you'll sell USD 1.05382 (quote currency) for every EUR 1 (base currency) you buy."
-msgstr "例えば、EUR/USD1ビット1.05382の場合、あなたが購入したEUR1（基本通貨）をUSD 1.05382（建値通貨）で売却することになります。"
+msgstr "例えば、EUR/USD1ビット1.05382の場合、あなたが購入したEUR1（基準通貨）をUSD 1.05382（見積通貨）で売却することになります。"
 
 msgid "For example, if you wanted to buy one volume of the BTC/EUR cryptocurrency pair at a price of USD 4831.400 and at a margin rate of 10%, the margin that you need to purchase one lof of BTC/EUR will be calculated as follows:"
 msgstr "例えば、BTC/EUR仮想通貨ペアの数量1をUSD 4831.400のマージンレート10%で購入したい場合、BTC/EURの1ロットを購入するのに必要なマージンは以下のように算出されます。"
@@ -4016,6 +4037,9 @@ msgstr "例えば、従来のブローカーを通して1単位USD50の特定の
 
 msgid "For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction."
 msgstr "例えば、従来のブローカーを通して1単位USD50の特定の資産取引を100単位購入されたい場合、USD5,000かかります。"
+
+msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
+msgstr ""
 
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "例えば、ボラティリティインデックスでCFD取引は１ポイントUSD 1としてトレードを提供しています。現行価格USD 20,000のボラティリティインデックス100を1.0の数量で購入し、その後USD 20,010の価格で売却した場合、純利益は以下のように算出されます。"
@@ -4407,6 +4431,9 @@ msgstr "ヘッジ"
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr "EUR/USD通貨ペアとそのビット-アスク価格の例はこちらです"
 
+msgid "High"
+msgstr ""
+
 msgid "High Barrier"
 msgstr "上限バリア"
 
@@ -4427,6 +4454,15 @@ msgstr "高頻度（1秒に2 Tick）"
 
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "高レベルセキュリティ - 各仮想通貨取引は高度な暗号技術によって保護されているため、偽装することはほぼ不可能です。"
+
+msgid "High, Low and Close"
+msgstr ""
+
+msgid "High-Close"
+msgstr ""
+
+msgid "High-Low"
+msgstr ""
 
 msgid "Higher"
 msgstr "ラダーHIGH"
@@ -4680,9 +4716,6 @@ msgstr "I. 引用"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "(20010 - 20000) x 1 x 1 = USD 10"
-
-msgid "ICO Bids"
-msgstr "ICO Bids"
 
 msgid "ICO is live, participate now!"
 msgstr "ICO開催中！今すぐ参加しましょう！"
@@ -6313,6 +6346,9 @@ msgstr "長期にわたるサポート体制を提供"
 msgid "Long:"
 msgstr "ロング："
 
+msgid "Lookbacks"
+msgstr ""
+
 msgid "Loss"
 msgstr "損益"
 
@@ -6327,6 +6363,9 @@ msgstr "ロット単位"
 
 msgid "Lots"
 msgstr "ロット数"
+
+msgid "Low"
+msgstr ""
 
 msgid "Low Barrier"
 msgstr "下限バリア"
@@ -6845,6 +6884,9 @@ msgstr "MetaTrader 5 (MT5)の複数アカウントマネージャー（MAM）"
 
 msgid "Multiple trading opportunities"
 msgstr "多様な取引機会"
+
+msgid "Multiplier"
+msgstr ""
 
 msgid "Must be a clear, colour photo or scanned image"
 msgstr "鮮明なカラー写真またはそのコピー"
@@ -7606,6 +7648,9 @@ msgstr "特許"
 msgid "Pay no commission on all metal contracts."
 msgstr "金属商品の取引には手数料はありません。"
 
+msgid "Pay-out"
+msgstr ""
+
 msgid "Payment Agent"
 msgstr "決済サービス"
 
@@ -7641,6 +7686,9 @@ msgstr "前月のアフィリエイト報酬は翌月１５日頃に、当社と
 
 msgid "Payments"
 msgstr "アフィリエイト報酬の支払いについて"
+
+msgid "Payoff"
+msgstr ""
 
 msgid "Payout"
 msgstr "合計ペイアウト"
@@ -8861,9 +8909,6 @@ msgstr "ベンチマークを用いた優れた価格設定"
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr "シェルターコミュニティ学習センター3"
 
-msgid "Shop"
-msgstr "ショップ"
-
 msgid "Short"
 msgstr "ショート"
 
@@ -8916,7 +8961,7 @@ msgid "Silver vs US Dollar"
 msgstr "銀 vs 米ドル"
 
 msgid "Similar to Forex trading, you must understand when to buy (or \"go long\") and when to sell (or \"go short\"). In Forex trading, you'll buy a certain currency pair if you think the value of the base currency will rise. The opposite is also true: you will sell a certain currency pair if you think the value of the base currency will fall."
-msgstr "外国為替取引同様、買い時（ロングポジション）と売り時（ショートポジション）を理解しなくていはいけません。外国為替取引において、基本通貨の価値が今後上昇すると判断した場合に特定の通貨ペアを買い、反対に、基本通貨が下降すると判断した場合に特定の通貨ペアを売却します。"
+msgstr "外国為替取引同様、買い時（ロングポジション）と売り時（ショートポジション）を理解しなくていはいけません。外国為替取引において、基準通貨の価値が今後上昇すると判断した場合に特定の通貨ペアを買い、反対に、基準通貨が下降すると判断した場合に特定の通貨ペアを売却します。"
 
 msgid "Simple and intuitive"
 msgstr "シンプルで分かりやすい"
@@ -9457,6 +9502,24 @@ msgstr "％1ウェブサイトはある特定の著作権によって保護さ�
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "github上のオープンソース・プロジェクトである%2binary-static%3にて、%1 (バイナリードットコム)のウェブサイトの静的コンテンツ (CSS, Javascript)は利用可能です。Binary.com (バイナリードットコム)のウェブサイトのカスタマイズ、ブラウザ互換性の向上、サイトスピードの向上、 Javascriptのパフォーマンスの向上をお望みの場合はプロジェクトをフォークし、コード変更の提案に関するプルリクエストを送信して下さい。"
+
+msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
+msgstr ""
+
+msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
+msgstr ""
+
+msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
+msgstr ""
+
+msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1low%2 is the lowest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1start time%2 begins when the contract is processed by our servers."
+msgstr ""
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "最高水準のFXバイナリーオプション取引環境を提供"
@@ -11026,6 +11089,9 @@ msgstr "MetaTrader 5 口座の種類"
 msgid "Types of Trades"
 msgstr "トレードの種類"
 
+msgid "Types of lookbacks"
+msgstr ""
+
 msgid "Types of trades"
 msgstr "トレードの種類"
 
@@ -11139,6 +11205,9 @@ msgstr "残念ながらできません。- 初めにあるお支払い方法で�
 
 msgid "United Kingdom"
 msgstr "イギリス"
+
+msgid "Units"
+msgstr ""
 
 msgid "University degree in Marketing, Communications, Journalism, or related discipline"
 msgstr "マーケティング、通信、ジャーナリズムまたは関連分野の大学学位"
@@ -11569,6 +11638,9 @@ msgstr ""
 msgid "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 msgstr "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 
+msgid "We offer three types lookbacks:"
+msgstr ""
+
 msgid "We only pay for pull requests that are approved by our development team and merged into master. If the development team approves your pull request, we'll pay you in cryptocurrency. You can choose Bitcoin, Litecoin or Ether. "
 msgstr "開発チームによってプルリクエストが承認され、マスターに結合された場合にのみ提供者へ支払いが発生します。プルリクエストが承認されましたら、仮想通貨にてお支払致します。ビットコイン・ライトコイン・ イーサーの中からお選びいただけます。 "
 
@@ -11712,6 +11784,9 @@ msgstr "店頭インデックスと店頭株とは"
 
 msgid "What are binary options"
 msgstr "バイナリーオプションとは"
+
+msgid "What are lookbacks"
+msgstr ""
 
 msgid "What are the benefits of purchasing tokens?"
 msgstr "トークンを購入する利点は何ですか？"
@@ -12042,6 +12117,15 @@ msgstr "%1で貴金属取引が選ばれている理由"
 
 msgid "Will I need to install any software?"
 msgstr "何か特別なソフトウェアをインストールする必要はありますか？"
+
+msgid "Win the multiplier times the close minus low."
+msgstr ""
+
+msgid "Win the multiplier times the high minus close."
+msgstr ""
+
+msgid "Win the multiplier times the high minus low."
+msgstr ""
 
 msgid "Windows"
 msgstr "Windows"
@@ -12586,10 +12670,10 @@ msgid "You understand that products based on a random number generator (the \"Vo
 msgstr "乱数ジェネレーター（ボラティリティ・インデックス）に基づいた商品は金融市場インデックス（外国為替、株式、コモディティ）に基づく商品が金融商品であるのと同じように、賭博商品であることを十分にご理解ください。"
 
 msgid "You want to buy a certain currency pair if you think the base currency will go up. The reverse holds true:"
-msgstr "基本通貨が上昇すると判断した場合、特定の通貨ペアを購入します。またその逆のこともいえます："
+msgstr "基準通貨が上昇すると判断した場合、特定の通貨ペアを購入します。またその逆のこともいえます："
 
 msgid "You want to sell that currency pair if you think the base currency will go down."
-msgstr "基本通貨が下降すると判断した場合、その通貨ペアを売却します。"
+msgstr "基準通貨が下降すると判断した場合、その通貨ペアを売却します。"
 
 msgid "You will be able to purchase tokens using the funds in your %1 account. You may use any of the available currencies (including cryptocurrencies) in our %2cashier system%3. If you choose to bid in a currency other than USD, the bid amount shall be converted to USD at the prevailing exchange rate at the time the auction ends."
 msgstr "%1口座の資金を利用してトークンの購入が可能です。%2入出金システム%3でご利用いただける通貨（仮想通貨を含む）をご使用いただけます。USD以外の通貨で入札をされた場合、入札金額はオークション終了時の為替レートでUSDに変換されます。"
