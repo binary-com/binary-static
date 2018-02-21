@@ -72,17 +72,17 @@ const Page = (() => {
         function parseAttributeString(attrStr) {
             let names = attrStr.split(',').map(name => name.trim());
 
-            const parsingError = new Error('Invalid data-show attribute value!');
+            const genericErrorMessage = 'Invalid data-show attribute value!';
 
             if (names.some(name => name.length === 0)) {
-                throw parsingError;
+                throw new Error(`${genericErrorMessage} No empty names allowed. Given value: '${attrStr}'.`);
             }
 
             const isExclude = names.every(name => name[0] === '-');
             const isInclude = names.every(name => name[0] !== '-');
 
             if (!isExclude && !isInclude) {
-                throw parsingError;
+                throw new Error(`${genericErrorMessage} No mixing of includes and excludes allowed. Given value: '${attrStr}'`);
             }
 
             if (isExclude) {
