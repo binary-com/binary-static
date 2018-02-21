@@ -66,7 +66,6 @@ const Page = (() => {
     };
 
     const showHiddenElementsBasedOnCompany = (landing_company_name) => {
-        if (!landing_company_name) landing_company_name = 'default'; // logged out
         const VISIBLE_CLASSNAME = 'visible';
 
         function parseAttributeString(attrStr) {
@@ -91,7 +90,7 @@ const Page = (() => {
 
             return {
                 isExclude,
-                names
+                names,
             };
         }
 
@@ -114,8 +113,8 @@ const Page = (() => {
             else {
                 console.log('stays hidden', el);
             }
-        })
-    }
+        });
+    };
 
     const onLoad = () => {
         if (State.get('is_loaded_by_pjax')) {
@@ -149,7 +148,7 @@ const Page = (() => {
         } else {
             checkLanguage();
             Menu.init();
-            showHiddenElementsBasedOnCompany();
+            showHiddenElementsBasedOnCompany('default');
         }
         TrafficSource.setData();
     };
