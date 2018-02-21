@@ -170,28 +170,42 @@ export const ClientMessage = () => (
     </div>
  );
 
-export const TaxIdentificationNumberTerms = () => (
-    <div id='tax_id_terms'>
+export const TaxInformationForm = () => (
+    <React.Fragment>
+        <div id='tax_information_note' className='gr-12'>
+            <p>{it.L('Binary Investments (Europe) Ltd. is required to collect tax information under the Common Reporting Standard (CRS) and the Foreign Account Tax Compliance Act (FATCA).')}</p>
+            <p>{it.L('Please enter your [_1]tax information[_2] below to continue.', '<a href="https://ec.europa.eu/taxation_customs/tin/tinByCountry.html" target="_blank">', '</a>')}</p>
+            <p>{it.L('Rest assured that your information will only be used for CRS/FATCA reporting purposes and will be kept safe.')}</p>
+            <p>{it.L('If we have reason to believe that your tax information is incomplete, we may contact you for clarification.')}</p>
+        </div>
+        <FormRow type='select'
+                 id='tax_residence'
+                 label={it.L('Tax residence')}
+                 tooltip={it.L('Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional.')}
+                 className='invisible'
+                 attributes={{multiple: 'multiple'}} />
+        <FormRow type='text'
+                 label={it.L('Tax identification number')}
+                 tooltip={it.L('Please provide the tax identification number for each jurisdiction where you are a tax resident. If you cannot provide this information, please contact our customer support team for help.')}
+                 id='tax_identification_number'
+                 attributes={{ maxLength: 20 }} />
+    </React.Fragment>
+);
+
+export const TaxInformationDeclaration = () => (
+    <React.Fragment>
         <div className='gr-12 gr-padding-10'>
             <input type='checkbox' id='chk_tax_id' />
             <label htmlFor='chk_tax_id'>
-                {it.L('I hereby declare that all the above information is true and complete. Furthermore, I will inform Binary Investments (Europe) Ltd. about any changes to this information without undue delay.')}
+                {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information.')}
             </label>
         </div>
         <div className='gr-12 gr-padding-10'>
             <p className='no-margin'>
-                <i><span className='errorfield'>* </span>{it.L('You may be considered a tax resident in more than one jurisdiction. [_1] does not provide tax advice. If you have any doubts, kindly consult your tax advisor and provide us with correct information about your tax residency.', it.website_name)}</i>
+                <i><span className='errorfield'>* </span>{it.L('You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate.')}</i>
             </p>
         </div>
-    </div>
-);
-
-export const TaxInformationNote = ({ className }) => (
-    <div id='tax_information_note' className={`gr-12 ${className || ''}`}>
-        <p>{it.L('As a legal and regulatory requirement, Binary Investments (Europe) Ltd. is obliged to collect certain information relating to CRS/FATCA compliance. Please fill in the following self-certification form before we can enable any further activity on your account.')}</p>
-        <p>{it.L('The information provided by you may only be disclosed to the authorities legally charged with collecting this information for the purposes of CRS/FATCA reporting and only to the extent to which Binary Investments (Europe) Ltd. is legally obliged to collect and disclose it. The information shall not be used, disclosed, or processed in any other way at any time.')}</p>
-        <p>{it.L('Please note that we have the right and obligation not to accept the information provided by you if we know of a reason to believe that it is incorrect, inaccurate, or incomplete. In such cases, we will be asking you to clarify or correct the details provided in the CRS/FATCA questionnaire.')}</p>
-    </div>
+    </React.Fragment>
 );
 
 export const GeocodeResponse = () => (

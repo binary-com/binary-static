@@ -20,8 +20,8 @@ import {
     SecretAnswer,
     ClientMessage,
     Tnc,
-    TaxIdentificationNumberTerms,
-    TaxInformationNote,
+    TaxInformationForm,
+    TaxInformationDeclaration,
     GeocodeResponse,
 } from '../../_common/components/forms_common_rows.jsx';
 
@@ -43,20 +43,7 @@ const Financial = () => (
             </Fieldset>
 
             <Fieldset legend={it.L('Tax Information')}>
-                <TaxInformationNote />
-                <FormRow type='select'
-                    id='tax_residence'
-                    label={it.L('Tax residence')}
-                    tooltip={it.L('Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional.')}
-                    className='invisible' attributes={{multiple: 'multiple'}}
-                />
-                <FormRow
-                    type='text'
-                    id='tax_identification_number'
-                    label={it.L('Tax identification number')}
-                    tooltip={it.L('Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission.')}
-                    attributes={{maxLength: '20'}}
-                />
+                <TaxInformationForm />
             </Fieldset>
 
             <Fieldset id='address_form' legend={it.L('Address')}>
@@ -78,8 +65,8 @@ const Financial = () => (
             <FinancialForm />
             <PepDeclaration />
             <ProfessionalClient />
-            <fieldset>
-                <TaxIdentificationNumberTerms />
+            <fieldset id='tax_information_declaration'>
+                <TaxInformationDeclaration />
             </fieldset>
             <fieldset>
                 <div className='gr-12'>

@@ -38,21 +38,22 @@ const PersonalDetails = (() => {
     };
 
     const showHideTaxMessage = () => {
-        const $form_fieldsets    = $(`${form_id} fieldset`);
-        const $tax_info_notice   = $('#tax_information_notice');
-        const $tax_info_terms    = $('#tax_id_terms').parent();
-        const $tax_info_fieldset = $('#fieldset_tax_information');
-        const $tax_info_note     = $('#tax_information_note');
+        const $form_fieldsets       = $(`${form_id} fieldset`);
+        const $tax_info_notice      = $('#tax_information_notice');
+        const $tax_info_declaration = $('#tax_information_declaration');
+        const $tax_info_form        = $('#tax_information_form');
+        const $tax_info_note        = $('#tax_information_note');
 
         if (Client.shouldCompleteTax()) {
-            $form_fieldsets.setVisibility(0);    // hide all fieldsets
-            $tax_info_notice.setVisibility(1);   // show tax notice message
-            $tax_info_fieldset.setVisibility(1); // show tax info fieldset
-            $tax_info_terms.setVisibility(1);    // show tax info terms
-            $tax_info_note.setVisibility(1);
+            $form_fieldsets.setVisibility(0);       // hide all fieldsets
+            $tax_info_notice.setVisibility(1);      // show tax notice message
+            $tax_info_form.setVisibility(1);        // show tax info fieldset
+            $tax_info_declaration.setVisibility(1); // show tax info declaration
+            $tax_info_note.setVisibility(1);        // show tax info note
             need_to_accept_tin = true;
         } else {
-            $tax_info_notice.setVisibility(0);   // hide tax notice message
+            $tax_info_notice.setVisibility(0); // hide tax notice message
+            $tax_info_note.setVisibility(0);   // hide tax info note
         }
     };
 
