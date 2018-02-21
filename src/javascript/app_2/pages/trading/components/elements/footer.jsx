@@ -5,21 +5,32 @@ class ToggleFullScreen extends React.Component {
         super(props);
         this.enterFullScreen = this.enterFullScreen.bind(this);
         this.exitFullScreen  = this.exitFullScreen.bind(this);
+        this.onFullScreen    = this.onFullScreen.bind(this);
     }
 
     componentWillMount() {
+        document.addEventListener('webkitfullscreenchange', this.onFullScreen, false);
+        document.addEventListener('mozfullscreenchange', this.onFullScreen, false);
+        document.addEventListener('fullscreenchange', this.onFullScreen, false);
+        document.addEventListener('MSFullscreenChange', this.onFullScreen, false);
         this.setState({
             isFullScreen: false,
         });
     }
 
+    onFullScreen() {
+        const fullscreenElement =  document.fullscreenElement || document.mozFullScreenElement ||
+            document.webkitFullscreenElement || document.msFullscreenElement;
+        if (fullscreenElement) {
+            this.setState({ isFullScreen: true });
+        } else {
+            this.setState({ isFullScreen: false });
+        }
+    }
+
     enterFullScreen(e) {
         e.stopPropagation();
         const el = document.documentElement;
-        this.setState({
-            isDisabled  : false,
-            isFullScreen: true,
-        });
         if (el.requestFullscreen) {
             el.requestFullscreen();
         } else if (el.webkitRequestFullscreen) {
@@ -29,10 +40,7 @@ class ToggleFullScreen extends React.Component {
         } else if (el.msRequestFullscreen) {
             el.msRequestFullscreen();
         } else {
-            this.setState({
-                isDisabled  : true,
-                isFullScreen: false,
-            });
+            this.setState({ isFullScreen: false }); // fullscreen API is not enabled
         }
     }
 
@@ -47,24 +55,16 @@ class ToggleFullScreen extends React.Component {
         } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
         } else {
-            this.setState({
-                isDisabled: true,
-            });
+            this.setState({ isFullScreen: false }); // fullscreen API is not enabled
         }
-        this.setState({
-            isFullScreen: false,
-        });
     }
 
     render() {
         return (
             <a href='javascript:;'
-                className={this.props.className}
-                onClick={this.state.isFullScreen ? this.exitFullScreen : this.enterFullScreen}
-            >
-                <span>FS</span>
-            </a>
-
+               className={this.props.className}
+               onClick={this.state.isFullScreen ? this.exitFullScreen : this.enterFullScreen}
+            />
         );
     }
 }
@@ -77,10 +77,10 @@ class TradingFooter extends React.Component {
                 <div className='footer-links'>
                     {this.props.items.map((item, idx) => (
                         <a key={idx} href={item.href || 'javascript:;'}>
-                            <span className={item.icon}>{item.text}</span>
+                            <span className={item.icon} title={item.text} />
                         </a>
                     ))}
-                    <ToggleFullScreen className='fs-icon' />
+                    <ToggleFullScreen className='ic-zoom' />
                 </div>
             }
             </React.Fragment>

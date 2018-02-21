@@ -25,4 +25,21 @@ footer {
         }
     }
 }
+
+// Footer icons - to be updated once icons are ready
+.ic-portfolio:before {
+    content: url('../images/trading_app/menu.svg');
+}
+
+.ic-statement:before {
+    content: url('../images/trading_app/menu.svg');
+}
+
+.ic-confirm:before {
+    content: url('../images/trading_app/menu.svg');
+}
+
+.ic-zoom:before {
+    content: url('../images/trading_app/menu.svg');
+}
 /* stylelint-enable color-no-hex */
