@@ -65,6 +65,10 @@ const Page = (() => {
         });
     };
 
+    const showHiddenElementsBasedOnCompany = (landing_company_name) => {
+        console.log('>>>', landing_company_name);
+    }
+
     const onLoad = () => {
         if (State.get('is_loaded_by_pjax')) {
             Url.reset();
@@ -91,10 +95,13 @@ const Page = (() => {
                 checkLanguage();
                 Menu.init();
                 RealityCheck.onLoad();
+                const landing_company_name = State.getResponse('authorize.landing_company_name');
+                showHiddenElementsBasedOnCompany(landing_company_name);
             });
         } else {
             checkLanguage();
             Menu.init();
+            showHiddenElementsBasedOnCompany();
         }
         TrafficSource.setData();
     };
