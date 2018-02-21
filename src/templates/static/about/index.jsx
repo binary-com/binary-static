@@ -70,7 +70,7 @@ const Index = () => (
                         </Box>
                         <Box>
                             <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan')} />
-                            <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai')} />
+                            <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Portuguese, Russian, and Thai')} />
                         </Box>
                     </div>
                 </div>

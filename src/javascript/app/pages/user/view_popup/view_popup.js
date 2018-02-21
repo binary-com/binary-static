@@ -89,10 +89,33 @@ const ViewPopup = (() => {
             $container = makeTemplate();
         }
 
-        containerSetText('trade_details_contract_id', contract.contract_id);
+        const contract_type_display = {
+            ASIANU     : 'Asian Up',
+            ASIAND     : 'Asian Down',
+            CALL       : 'Higher',
+            PUT        : 'Lower',
+            DIGITMATCH : 'Digit Matches',
+            DIGITDIFF  : 'Digit Differs',
+            DIGITODD   : 'Digit Odd',
+            DIGITEVEN  : 'Digit Even',
+            DIGITOVER  : 'Digit Over',
+            DIGITUNDER : 'Digit Under',
+            EXPIRYMISS : 'Ends Outside',
+            EXPIRYRANGE: 'Ends Between',
+            LBFLOATCALL: 'Close-Low',
+            LBFLOATPUT : 'High-Close',
+            LBHIGHLOW  : 'High-Low',
+            RANGE      : 'Stays Between',
+            UPORDOWN   : 'Goes Outside',
+            ONETOUCH   : 'Touches',
+            NOTOUCH    : 'Does Not Touch',
+        };
 
-        containerSetText('trade_details_start_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
-        containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
+        containerSetText('trade_details_contract_type', localize(contract_type_display[contract.contract_type]));
+        containerSetText('trade_details_contract_id', contract.contract_id);
+        containerSetText('trade_details_start_date', epochToDateTime(contract.date_start));
+        containerSetText('trade_details_end_date', epochToDateTime(contract.date_expiry));
+        containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
         containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier));
         if (isLookback(contract.contract_type)) {
@@ -154,12 +177,12 @@ const ViewPopup = (() => {
                 window.time = moment(current_spot_time).utc();
                 updateTimers();
             }
-            containerSetText('trade_details_current_date', toJapanTimeIfNeeded(epochToDateTime(current_spot_time)));
+            containerSetText('trade_details_current_date', epochToDateTime(current_spot_time));
         } else {
             $('#trade_details_current_date').parent().setVisibility(0);
         }
 
-        containerSetText('trade_details_ref_id', contract.transaction_ids.buy + (contract.transaction_ids.sell ? ` - ${contract.transaction_ids.sell}` : ''));
+        containerSetText('trade_details_ref_id', `${contract.transaction_ids.buy} (${localize('Buy')}) ${contract.transaction_ids.sell ? `<br>${contract.transaction_ids.sell} (${localize('Sell')})` : ''}`);
         containerSetText('trade_details_indicative_price', indicative_price ? formatMoney(contract.currency, indicative_price) : '-');
 
         let profit_loss,
@@ -226,7 +249,7 @@ const ViewPopup = (() => {
     // This is called by clock.js in order to sync time updates on header as well as view popup
     const updateTimers = () => {
         const now = Math.max(Math.floor((window.time || 0) / 1000), contract.current_spot_time || 0);
-        containerSetText('trade_details_live_date', toJapanTimeIfNeeded(epochToDateTime(now)));
+        containerSetText('trade_details_live_date', epochToDateTime(now));
         showLocalTimeOnHover('#trade_details_live_date');
 
         const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
@@ -403,7 +426,7 @@ const ViewPopup = (() => {
 
         tr.appendChild(createElement('td', { class: 'gr-3' }));
         tr.appendChild(createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot') }));
-        tr.appendChild(createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time') }));
+        tr.appendChild(createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time (GMT)') }));
 
         table.insertBefore(tr, table.childNodes[0]);
     };
@@ -489,8 +512,9 @@ const ViewPopup = (() => {
         $sections.find('#sell_details_table').append($(
             `<table>
             <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
+            ${createRow('Contract Type', '', 'trade_details_contract_type')}
             ${createRow('Contract ID', '', 'trade_details_contract_id')}
-            ${createRow('Reference ID', '', 'trade_details_ref_id')}
+            ${createRow('Transaction ID', '', 'trade_details_ref_id')}
             ${createRow('Start Time', '', 'trade_details_start_date')}
             ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
                 createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
@@ -528,7 +552,10 @@ const ViewPopup = (() => {
         `<tr${(is_hidden ? ` class="${hidden_class}"` : '')}><td${(label_id ? ` id="${label_id}"` : '')}>${localize(label)}</td><td${(value_id ? ` id="${value_id}"` : '')}>${(value || '')}</td></tr>`
     );
 
-    const epochToDateTime = epoch => moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
+    const epochToDateTime = epoch => {
+        const date_time = moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
+        return jpClient() ? toJapanTimeIfNeeded(date_time) : `${date_time} GMT`;
+    };
 
     // ===== Tools =====
     const containerSetText = (id, string, attributes, is_visible) => {

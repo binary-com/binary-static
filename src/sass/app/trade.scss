@@ -175,6 +175,9 @@
         input[type=number] {
             -moz-appearance: textfield;
         }
+        .gr-gutter-left {
+            padding-left: 5px;
+        }
     }
     .contract_heading {
         text-transform: capitalize;
