@@ -69,9 +69,13 @@ const Page = (() => {
         const VISIBLE_CLASSNAME = 'visible';
 
         function parseAttributeString(attrStr) {
-            let names = attrStr.split(',').map(name => name.trim());
-
             const genericErrorMessage = 'Invalid data-show attribute value!';
+
+            if (!/^[a-z,-\s]+$/.test(attrStr)) {
+                throw new Error(`${genericErrorMessage} Invalid characted used. Given value: '${attrStr}'`);
+            }
+
+            let names = attrStr.split(',').map(name => name.trim());
 
             if (names.some(name => name.length === 0)) {
                 throw new Error(`${genericErrorMessage} No empty names allowed. Given value: '${attrStr}'.`);
