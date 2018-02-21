@@ -39,7 +39,7 @@ const Platforms = ({
 const Platform = () => (
     <div className='static_full'>
         <div className='container'>
-            <h1 data-show='virtual,-default' className='center-text'>{it.L('Trading Platforms')}</h1>
+            <h1 data-show='virtual,default' className='center-text'>{it.L('Trading Platforms')}</h1>
 
             <div data-show='-costarica,-maltainvest' className='gr-row gr-padding-30'>
                 <Platforms
