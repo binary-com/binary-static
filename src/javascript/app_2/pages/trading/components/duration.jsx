@@ -1,6 +1,7 @@
 import React from 'react';
 import InputField from './form/input_field.jsx';
 import Dropdown from './form/dropdown.jsx';
+import Datepicker from './form/datepicker.jsx';
 import ClockHeader from './elements/clock_header.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
@@ -43,7 +44,13 @@ const Duration = ({
                     </div>
                 </React.Fragment> :
                 <React.Fragment>
-                    <input type='date' name='expiry_date' onChange={onChange} />
+                    <Datepicker
+                        id='expiry_date'
+                        name='expiry_date'
+                        onChange={onChange}
+                        showTodayBtn={true}
+                        minDate={new Date()}
+                    />
                     <input type='time' name='expiry_time' onChange={onChange} />
                 </React.Fragment>
             }

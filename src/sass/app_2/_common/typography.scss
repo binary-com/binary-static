@@ -37,6 +37,15 @@ body, input {
     @include interpolate(font-size, 320px, 1440px, 14px, 16px);
 }
 
+.datepicker-container {
+    .datepicker-display, [class^='calendar-'] {
+        @include interpolate(font-size, 320px, 1440px, 14px, 16px);
+    }
+    .calendar-decade {
+        @include interpolate(font-size, 320px, 1440px, 12px, 14px);
+    }
+}
+
 /* Multiple properties with same values */
 h1, h2, h3, h4, h5 {
     @include interpolate((padding-top, padding-bottom), 20rem, 70rem, 0rem, 0.5rem);
