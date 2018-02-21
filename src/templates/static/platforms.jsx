@@ -39,9 +39,9 @@ const Platforms = ({
 const Platform = () => (
     <div className='static_full'>
         <div className='container'>
-            <h1 data-show='virtual,default' className='center-text'>{it.L('Trading Platforms')}</h1>
+            <h1 className='center-text'>{it.L('Trading Platforms')}</h1>
 
-            <div data-show='-costarica,-maltainvest' className='gr-row gr-padding-30'>
+            <div className='gr-row gr-padding-30'>
                 <Platforms
                     image_class='gr-12 gr-7-p gr-10-m'
                     image='trading-page'
@@ -63,7 +63,7 @@ const Platform = () => (
                     button_text={it.L('Access MT5 dashboard')}
                 />
             </div>
-            <div data-show='-default' className='gr-row gr-padding-30'>
+            <div className='gr-row gr-padding-30'>
                 <Platforms
                     image_class='gr-7 gr-5-p gr-7-m'
                     image='tick-trade'
