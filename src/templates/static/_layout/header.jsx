@@ -159,7 +159,7 @@ const Header = () => (
                         <div id='client-logged-out' className='gr-2 gr-8-m gr-8-p gr-8-t gr-no-gutter client_logged_out invisible gr-padding-10'>
                             <a id='btn_login' className='button' href='javascript:;'><span>{it.L('Log in')}</span></a>
                         </div>
-                        <div className='gr-hide gr-show-m gr-2-m r-1-t gr-show-p gr-1-p gr-show-t gr-no-gutter-mobile align-end'>
+                        <div className='gr-hide gr-show-m gr-2-m gr-show-t gr-1-t gr-show-p gr-1-p gr-no-gutter-mobile align-end'>
                             <div id='mobile-menu-icon-container'>
                                 <a href='#mobile-menu' id='mobile-menu-icon'>
                                     <img className='responsive' src={it.url_for('images/pages/binary-mobile-menu.svg')} />
