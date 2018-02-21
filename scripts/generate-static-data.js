@@ -15,19 +15,6 @@ const texts = [
     'Open a Real Account',
     'Open a Financial Account',
 
-    // menu items
-    'Trade',
-    'Portfolio',
-    'Profit Table',
-    'Statement',
-    'Cashier',
-    'Resources',
-    'Asset Index',
-    'Trading Times',
-    'Shop',
-    'Payment Agent',
-    'ICO Bids',
-
     // account drop down
     'Virtual Account',
     'Real Account',
@@ -110,6 +97,7 @@ const texts = [
     'Loss',
     'Profit',
     'Payout',
+    'Units',
     'Stake',
     'Duration',
     'End Time',
@@ -150,6 +138,13 @@ const texts = [
     'Session',
     'Cryptocurrency',
     'Fiat Currency',
+    'High',
+    'Low',
+    'Close',
+    'Payoff',
+    'High-Close',
+    'Close-Low',
+    'High-Low',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',

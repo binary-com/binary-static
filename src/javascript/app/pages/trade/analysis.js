@@ -153,12 +153,29 @@ const TradingAnalysis = (() => {
                 image1: 'overunder-1.svg',
                 image2: 'overunder-2.svg',
             },
+            lookbackhigh: {
+                image1: 'close-high-image.svg',
+            },
+            lookbacklow: {
+                image1: 'close-low-image.svg',
+            },
+            lookbackhighlow: {
+                image1: 'high-low-image.svg',
+            },
         };
 
         if (images[form_name]) {
             const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(getLanguage() === 'JA' ? 'ja/' : '')}`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
-            $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
+            if (images[form_name].image2) {
+                $container
+                    .find('#explanation_image_2')
+                    .attr('src', image_path + images[form_name].image2)
+                    .parent()
+                    .setVisibility(1);
+            } else {
+                $container.find('#explanation_image_2').parent().setVisibility(0);
+            }
             $container.find('#explanation_image').setVisibility(1);
         }
     };

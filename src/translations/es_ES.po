@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-19 04:49-0500\n"
+"PO-Revision-Date: 2018-02-20 04:36-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -483,6 +483,9 @@ msgstr "El premio \"Mejor Empresa de Probabilidades Fijas 2012\" de Global Banki
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "El premio \"Operador de Apuestas Financieras del Año\" de eGaming Review"
 
+msgid "(6,000 – 5,200) * 2 = $1600"
+msgstr ""
+
 msgid "(One) Touch trades"
 msgstr "Contratos Toque"
 
@@ -734,6 +737,9 @@ msgstr "Un líder en la industria de opciones binarias por más de 15 años"
 
 msgid "A list of payment methods you will accept from Clients"
 msgstr "Una lista de los métodos de pago que usted aceptará de los clientes"
+
+msgid "A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to \"look back\" over time to determine the payout."
+msgstr ""
 
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "Un hablante nativo con dominio del inglés muy bueno, tanto de forma oral como escrita"
@@ -2039,6 +2045,15 @@ msgstr ""
 msgid "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 msgstr ""
 
+msgid "By purchasing the %1‘Close-Low’%2 contract, you’ll win the multiplier times the difference between the %1close%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Close’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1close%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Low’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "Al registrar una aplicación de software, sitio web, o producto que usted crea o un servicio que usted ofrece (una \"Aplicación\"), usted reconoce que ha leído y entendido estos términos y los reconoce como vinculantes."
 
@@ -2424,7 +2439,13 @@ msgstr "Dinero de clientes"
 msgid "Clients' trade allocations start from 0.01 lots"
 msgstr ""
 
+msgid "Close"
+msgstr ""
+
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
+msgstr ""
+
+msgid "Close-Low"
 msgstr ""
 
 msgid "Closed"
@@ -4008,6 +4029,9 @@ msgstr ""
 msgid "For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction."
 msgstr ""
 
+msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
+msgstr ""
+
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr ""
 
@@ -4398,6 +4422,9 @@ msgstr "Cobertura"
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr ""
 
+msgid "High"
+msgstr ""
+
 msgid "High Barrier"
 msgstr "Barrera Superior"
 
@@ -4417,6 +4444,15 @@ msgid "High frequency (2 ticks per second)"
 msgstr ""
 
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
+msgstr ""
+
+msgid "High, Low and Close"
+msgstr ""
+
+msgid "High-Close"
+msgstr ""
+
+msgid "High-Low"
 msgstr ""
 
 msgid "Higher"
@@ -4670,9 +4706,6 @@ msgstr ""
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr ""
-
-msgid "ICO Bids"
-msgstr "Ofertas de ICO"
 
 msgid "ICO is live, participate now!"
 msgstr "La ICO ya está disponible, ¡Participe ahora!"
@@ -6292,6 +6325,9 @@ msgstr ""
 msgid "Long:"
 msgstr ""
 
+msgid "Lookbacks"
+msgstr ""
+
 msgid "Loss"
 msgstr "Pérdida"
 
@@ -6305,6 +6341,9 @@ msgid "Lot units"
 msgstr ""
 
 msgid "Lots"
+msgstr ""
+
+msgid "Low"
 msgstr ""
 
 msgid "Low Barrier"
@@ -6822,6 +6861,9 @@ msgstr ""
 
 msgid "Multiple trading opportunities"
 msgstr "Múltiples modalidades de negociación"
+
+msgid "Multiplier"
+msgstr ""
 
 msgid "Must be a clear, colour photo or scanned image"
 msgstr ""
@@ -7579,6 +7621,9 @@ msgstr "Patentes"
 msgid "Pay no commission on all metal contracts."
 msgstr ""
 
+msgid "Pay-out"
+msgstr ""
+
 msgid "Payment Agent"
 msgstr "Agente de Pagos"
 
@@ -7614,6 +7659,9 @@ msgstr "El pago de la comisión ganada el mes anterior se realizará mensualment
 
 msgid "Payments"
 msgstr "Pagos"
+
+msgid "Payoff"
+msgstr ""
 
 msgid "Payout"
 msgstr "Pago"
@@ -8830,9 +8878,6 @@ msgstr "Precios atractivos y cotejados"
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr ""
 
-msgid "Shop"
-msgstr "Tienda"
-
 msgid "Short"
 msgstr "Cortos"
 
@@ -9425,6 +9470,24 @@ msgid "The %1 website is protected by certain copyrights. The materials comprisi
 msgstr ""
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
+msgstr ""
+
+msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
+msgstr ""
+
+msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
+msgstr ""
+
+msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
+msgstr ""
+
+msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1low%2 is the lowest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr ""
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
@@ -10911,6 +10974,9 @@ msgstr ""
 msgid "Types of Trades"
 msgstr "Tipos de contratos"
 
+msgid "Types of lookbacks"
+msgstr ""
+
 msgid "Types of trades"
 msgstr "Tipos de contratos"
 
@@ -11024,6 +11090,9 @@ msgstr "Desafortunadamente, no hay - los fondos depositados inicialmente a trav�
 
 msgid "United Kingdom"
 msgstr "Reino Unido"
+
+msgid "Units"
+msgstr ""
 
 msgid "University degree in Marketing, Communications, Journalism, or related discipline"
 msgstr "Un título universitario en Marketing, Comunicación, Periodismo u otra disciplina relacionada"
@@ -11454,6 +11523,9 @@ msgstr ""
 msgid "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 msgstr "Ofrecemos una gama de productos innovadores para clientes que incluyen instrumentos financieros y sintéticos con una duración de 10 segundos a 365 días."
 
+msgid "We offer three types lookbacks:"
+msgstr ""
+
 msgid "We only pay for pull requests that are approved by our development team and merged into master. If the development team approves your pull request, we'll pay you in cryptocurrency. You can choose Bitcoin, Litecoin or Ether. "
 msgstr ""
 
@@ -11597,6 +11669,9 @@ msgstr "¿Qué son las acciones y los índices OTC?"
 
 msgid "What are binary options"
 msgstr "Qué son las opciones binarias"
+
+msgid "What are lookbacks"
+msgstr ""
 
 msgid "What are the benefits of purchasing tokens?"
 msgstr "¿Cuáles son los beneficios de comprar tokens?"
@@ -11928,6 +12003,15 @@ msgstr ""
 
 msgid "Will I need to install any software?"
 msgstr "¿Necesitaré instalar algún tipo de software?"
+
+msgid "Win the multiplier times the close minus low."
+msgstr ""
+
+msgid "Win the multiplier times the high minus close."
+msgstr ""
+
+msgid "Win the multiplier times the high minus low."
+msgstr ""
 
 msgid "Windows"
 msgstr ""
