@@ -15,19 +15,6 @@ const texts = [
     'Open a Real Account',
     'Open a Financial Account',
 
-    // menu items
-    'Trade',
-    'Portfolio',
-    'Profit Table',
-    'Statement',
-    'Cashier',
-    'Resources',
-    'Asset Index',
-    'Trading Times',
-    'Shop',
-    'Payment Agent',
-    'ICO Bids',
-
     // account drop down
     'Virtual Account',
     'Real Account',
@@ -110,6 +97,7 @@ const texts = [
     'Loss',
     'Profit',
     'Payout',
+    'Units',
     'Stake',
     'Duration',
     'End Time',
@@ -150,6 +138,13 @@ const texts = [
     'Session',
     'Cryptocurrency',
     'Fiat Currency',
+    'High',
+    'Low',
+    'Close',
+    'Payoff',
+    'High-Close',
+    'Close-Low',
+    'High-Low',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -185,6 +180,7 @@ const texts = [
     'Your settings have been updated successfully.',
     'Female',
     'Male',
+    'Please select a country',
 
     // home and virtual account opening page
     'verification token',
@@ -348,6 +344,7 @@ const texts = [
     'Sorry, your account is not authorised for any further contract purchases.',
     'Lots',
     'Payout per lot = 1,000',
+    'This page is not available in the selected language.',
 
     // digit_info
     'Select market',
@@ -493,6 +490,8 @@ const texts = [
     'thousand',
     'million',
     'Should start with letter or number, and may contain hyphen and underscore.',
+    'Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.',
+    'Validate address',
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',
@@ -519,6 +518,9 @@ const texts = [
     'Change Password',
     'Demo Accounts',
     'Real-Money Accounts',
+    'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
+    'for MT5 Account',
+    '[_1] Account [_2]',
 
     // account_transfer
     'Min',

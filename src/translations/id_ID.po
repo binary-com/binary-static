@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-05 19:51-0500\n"
+"PO-Revision-Date: 2018-02-20 21:42-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -102,14 +102,23 @@ msgstr "Akademi %1"
 msgid "%1 Account"
 msgstr "Akun %1"
 
+msgid "%1 Account %2"
+msgstr "%1 Akun %2"
+
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Syarat dan Ketentuan Program Affiliasi %1"
 
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Syarat dan Ketentuan Application Program Interface (\"API\") %1"
 
+msgid "%1 Graduate Programme"
+msgstr "Program Pascasarjana %1"
+
 msgid "%1 Graduate programme"
 msgstr "Program Pascasarjana %1"
+
+msgid "%1 Hackathon Competition"
+msgstr "Kompetisi Hackathon %1"
 
 msgid "%1 ICO"
 msgstr "ICO %1"
@@ -355,7 +364,7 @@ msgid "%1 provides you best execution by utilising a smart aggregation method wh
 msgstr "%1 menyediakan eksekusi terbaik dengan memanfaatkan metode agregasi cerdas ketika mengelola pesanan yang masuk. Metode agregasi cerdas bekerja dengan:"
 
 msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via email or phone. Available limits are:"
-msgstr "%1 memiliki fasilitas untuk pengecualian diri baik itu untuk mengecualikan-diri Anda atau <a href='%2'>menentukan batasan aktifitas trading Anda</a> pada website ini. Anda juga dapat <a href='%3'>menghubungi kami</a> untuk menyampaikan batasan yang Anda inginkan melalui email atau telepon. Batasan yang tersedia adalah sebagai berikut:"
+msgstr "%1 memiliki fasilitas untuk pengecualian diri baik itu untuk mengecualikan-diri Anda atau <a href='%2'>menentukan batasan aktivitas trading Anda</a> pada website ini. Anda juga dapat <a href='%3'>menghubungi kami</a> untuk menyampaikan batasan yang Anda inginkan melalui email atau telepon. Batasan yang tersedia adalah sebagai berikut:"
 
 msgid "%1 reaches $2 billion turnover since starting in 1999"
 msgstr "%1 mencapai $2 milyar omset sejak tahun 1999"
@@ -474,6 +483,9 @@ msgstr "'Perusahaan Fixed-Odds Terbaik 2012' penghargaan dari Global Banking and
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "'Operator Trading Financial Terbaik' penghargaan oleh eGaming Review"
 
+msgid "(6,000 – 5,200) * 2 = $1600"
+msgstr ""
+
 msgid "(One) Touch trades"
 msgstr "Kontrak (Sekali) Sentuh"
 
@@ -488,12 +500,6 @@ msgstr "* Bebas Pajak: Keuntungan trading pada umumnya adalah bebas pajak di ban
 
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Semua percakapan direkam untuk pelatihan dan pemantauan"
-
-msgid "*Lot size volume = 1.0."
-msgstr "*Volume ukuran lot = 1.0."
-
-msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr "*Angka angka berikut bersifat indikatif, silahkan verifikasi pada platform trading MT5 kami."
 
 msgid "0-1 year"
 msgstr "0-1 tahun"
@@ -726,6 +732,9 @@ msgstr "Inovator terkemuka trading Opsi Binary selama lebih dari 15 tahun"
 msgid "A list of payment methods you will accept from Clients"
 msgstr "Daftar jenis metode pembayaran yang akan Anda sediakan"
 
+msgid "A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to \"look back\" over time to determine the payout."
+msgstr ""
+
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "Penutur bahasa lokal dengan bahasa Inggris yang kuat, baik dalam bentuk lisan maupun tulisan"
 
@@ -918,8 +927,8 @@ msgstr "Saldo akun:"
 msgid "Account balance: "
 msgstr "Saldo akun Anda: "
 
-msgid "Account comparison*"
-msgstr "Perbandingan akun*"
+msgid "Account comparison"
+msgstr "Perbandingan akun"
 
 msgid "Account currency"
 msgstr "Mata uang akun"
@@ -2028,6 +2037,15 @@ msgstr "Dengan memilih untuk diperlakukan sebagai Klien Profesional, kami tidak 
 msgid "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 msgstr "Dengan memilih untuk diperlakukan sebagai Klien Profesional, kami tidak akan menganggap bahwa Anda memiliki pengetahuan dan pengalaman pasar seperti yang didefinisikan oleh istilah 'Klien Profesional'. Kami akan mengambil semua langkah yang wajar untuk memastikan bahwa permintaan Kategorisasi ini memenuhi kriteria yang disebutkan di atas, termasuk namun tidak terbatas pada salinan dari:"
 
+msgid "By purchasing the %1‘Close-Low’%2 contract, you’ll win the multiplier times the difference between the %1close%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Close’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1close%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Low’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "Dengan mendaftarkan aplikasi software, situs web atau produk yang Anda buat atau layanan yang Anda sediakan (sebuah \"Applikasi\"), Anda mengakui bahwa Anda telah membaca, memahami dan setuju untuk terikat dengan syarat-syarat ini."
 
@@ -2129,9 +2147,6 @@ msgstr "Membatalkan Bid"
 
 msgid "Cancel bid?"
 msgstr "Membatalkan bid?"
-
-msgid "Career opportunities for Americans"
-msgstr "Peluang karir bagi Amerika"
 
 msgid "Careers"
 msgstr "Karir"
@@ -2415,8 +2430,14 @@ msgstr "Dana Klien"
 msgid "Clients' trade allocations start from 0.01 lots"
 msgstr "Alokasi trading klien dimulai dari 0,01 lot"
 
+msgid "Close"
+msgstr ""
+
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
 msgstr "Tutup semua atau Posisi Berjalan lainnya pada level penutupan yang tersedia;"
+
+msgid "Close-Low"
+msgstr ""
 
 msgid "Closed"
 msgstr "Tutup"
@@ -2719,7 +2740,7 @@ msgid "Cookies"
 msgstr "Cookies"
 
 msgid "Coordinate business-development activities and generate high-quality partnership leads"
-msgstr "Mengkoordinir aktifitas pengembangan bisnis dan menghasilkan mitra usaha yang berkualitas"
+msgstr "Mengkoordinir aktivitas pengembangan bisnis dan menghasilkan mitra usaha yang berkualitas"
 
 msgid "Copyright"
 msgstr "Hak Cipta"
@@ -2768,6 +2789,9 @@ msgstr "Daftar Akun Baru"
 
 msgid "Create New Token"
 msgstr "Membuat Token Baru"
+
+msgid "Create account with Google"
+msgstr "Daftar akun menggunakan Google"
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Membuat konten yang jelas, ringkas dan menarik untuk ditampilkan pada website perusahaan, blog, media sosial dan materi pemasaran"
@@ -3020,9 +3044,6 @@ msgstr "Depositkan serendah USD 5 untuk memulai trading."
 
 msgid "Deposit funds and begin trading"
 msgstr "Mendeposit dana dan mulai bertrading"
-
-msgid "Deposit funds into your MT5 account"
-msgstr "Deposit dana kedalam akun MT5"
 
 msgid "Deposit or withdraw below"
 msgstr "Deposit atau withdraw di bawah ini"
@@ -3591,9 +3612,6 @@ msgstr "Euro vs Lira Turki"
 msgid "Euro vs US Dollar"
 msgstr "Euro vs Dolar AS"
 
-msgid "Eurobasket Wolves"
-msgstr "Eurobasket Wolves"
-
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
 msgstr "Warga Uni Eropa yang ingin melakukan trading produk trading akan mendaftar akun mereka pada Binary (Europe) Ltd."
 
@@ -4002,6 +4020,9 @@ msgstr "Sebagai contoh, jika Anda ingin membeli 100 unit aset tertentu yang ditr
 msgid "For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction."
 msgstr "Sebagai contoh, jika Anda ingin membeli 100 unit aset tertentu yang ditradingkan pada USD 50 per unit melalui broker tradisional, biasanya Anda akan dikenakan USD 5.000 untuk transaksi ini."
 
+msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
+msgstr ""
+
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "Sebagai contoh, CFD pada Indeks Volatilitas menawarkan kontrak 1 USD per poin. Jika Anda membeli kontrak dengan Volume 1.0 untuk Indeks Volatilitas 100 dengan harga ask terkini adalah USD 20,000 dan menjualnya pada harga bid USD 20,010, maka keuntungan bersih Anda adalah dihitung sebagai berikut:"
 
@@ -4019,6 +4040,9 @@ msgstr "Untuk informasi latar belakang lebih lanjut silahkan baca postingan blog
 
 msgid "For general support:"
 msgstr "Untuk bantuan umum:"
+
+msgid "For information about Forex leverage refer to our %1Margin Policy%2."
+msgstr "Untuk informasi mengenai leverage Forex lihat ke %1Kebijakan Margin%2 kami."
 
 msgid "For payments-related queries:"
 msgstr "Untuk bantuan pembayaran:"
@@ -4389,6 +4413,9 @@ msgstr "Hedging"
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr "Berikut adalah contoh pasangan mata uang EUR/USD dan harga bid-ask nya:"
 
+msgid "High"
+msgstr ""
+
 msgid "High Barrier"
 msgstr "Batasan Tinggi"
 
@@ -4409,6 +4436,15 @@ msgstr "Frekuensi tinggi (2 tik per detik)"
 
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "Tingkat keamanan yang tinggi - setiap transaksi mata uang kripto diamankan melalui kriptografi canggih yang membuatnya hampir mustahil untuk dipalsukan"
+
+msgid "High, Low and Close"
+msgstr ""
+
+msgid "High-Close"
+msgstr ""
+
+msgid "High-Low"
+msgstr ""
 
 msgid "Higher"
 msgstr "Higher"
@@ -4661,9 +4697,6 @@ msgstr "I. Kutipan"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "Yaitu: (20010 - 20000) x 1 x 1 = USD 10"
-
-msgid "ICO Bids"
-msgstr "Bid ICO"
 
 msgid "ICO is live, participate now!"
 msgstr "ICO sudah dimulai, ikuti sekarang!"
@@ -6261,9 +6294,6 @@ msgstr "Catatan Login"
 msgid "Login ID"
 msgstr "Login ID"
 
-msgid "Login ID:"
-msgstr "Login ID:"
-
 msgid "Login time:"
 msgstr "Waktu login:"
 
@@ -6285,8 +6315,8 @@ msgstr "Kemitraan jangka panjang:"
 msgid "Long:"
 msgstr "Long:"
 
-msgid "Looking for a new and exciting career in a country that's modern, diverse, and tolerant? %1 is one of the world's most progressive companies, with offices in Asia and Europe."
-msgstr "Mencari karir baru dan menarik di negara yang modern, beragam dan toleran? %1 adalah salah satu perusahaan yang paling progresif di dunia, memiliki kantor di Asia dan Eropa."
+msgid "Lookbacks"
+msgstr ""
 
 msgid "Loss"
 msgstr "Rugi"
@@ -6294,14 +6324,17 @@ msgstr "Rugi"
 msgid "Lot Size (Volume = 1.0)"
 msgstr "Ukuran Lot (Volume = 1.0)"
 
-msgid "Lot size*"
-msgstr "Ukuran lot*"
+msgid "Lot size"
+msgstr "Ukuran lot"
 
 msgid "Lot units"
 msgstr "Unit lot"
 
 msgid "Lots"
 msgstr "Lot"
+
+msgid "Low"
+msgstr ""
 
 msgid "Low Barrier"
 msgstr "Batasan Rendah"
@@ -6335,6 +6368,9 @@ msgstr "Penghargaan MENA FFXPO"
 
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "Broker MT4 dan MT5 dapat menghubungi langsung likuiditas pada jembatan One Zero dengan menggunakan konektor built-in."
+
+msgid "MT5 Account:"
+msgstr "Akun MT5:"
 
 msgid "MT5 Demo"
 msgstr "MT5 Demo"
@@ -6480,12 +6516,6 @@ msgstr "Panggilan marjin"
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr "Margin menunjukkan berapa banyak investasi yang dapat Anda kontrol berdasarkan modal awal Anda. Misalnya, margin 0,2% akan memungkinkan Anda untuk mengontrol hingga USD 500.000 hanya dengan menggunakan USD 1.000 dari uang Anda sendiri sebagai deposit."
 
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "Margin menunjukkan berapa banyak investasi yang dapat Anda kontrol berdasarkan modal awal Anda. Misalnya, margin 1% akan memungkinkan Anda untuk mengontrol hingga USD 100.000 hanya dengan menggunakan USD 1.000 dari uang Anda sendiri sebagai deposit."
-
-msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
-msgstr "Marjin menunjukkan seberapa banyak modal yang dapat Anda kontrol berdasarkan deposit awal. Sebagai contoh, tingkat marjin 10% akan memungkinkan Anda untuk mengkontrol hingga USD 100.000 menggunakan hanya USD 10.000 dari uang Anda sebagai deposit. Angka ini membutuhkan 10% dari nilai aset sebagai marjin."
-
 msgid "Market"
 msgstr "Pasar"
 
@@ -6594,9 +6624,6 @@ msgstr "Ukuran tiket maksimal"
 msgid "Maximum upload size for each file is 3MB"
 msgstr "Ukuran upload maksimal untuk setiap file adalah 3MB"
 
-msgid "Maximum volume"
-msgstr "Volume maksimum"
-
 msgid "May"
 msgstr "Mei"
 
@@ -6654,6 +6681,9 @@ msgstr "Metode"
 msgid "Min"
 msgstr "Min"
 
+msgid "Min / Max withdrawal"
+msgstr "Penarikan min/mak"
+
 msgid "Min Withdrawal"
 msgstr "Minimal Penarikan"
 
@@ -6668,9 +6698,6 @@ msgstr "Kenaikan Volume Min."
 
 msgid "Min. Volume<br>(Lot Size)"
 msgstr "Volume min. <br>(Ukuran Lot)"
-
-msgid "Min: 10 Max: 2000"
-msgstr "Min: 10 Mak: 2000"
 
 msgid "Minimum Spread"
 msgstr "Spread Minimal"
@@ -6704,6 +6731,9 @@ msgstr "Minimal enam bulan validitasnya"
 
 msgid "Minimum ticket size"
 msgstr "Ukuran tiket minimum"
+
+msgid "Minimum volume"
+msgstr "Volume minimal"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Pekerja Pertambangan, Konstruksi, Manufaktur dan Transportasi"
@@ -6774,7 +6804,7 @@ msgstr "Manfaat lainnya"
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Lebih khususnya, ketika kami bertrading Opsi Binary dengan Anda (untuk setiap \"Kontrak\"), kami memiliki kewajiban untuk menyediakan 'eksekusi terbaik'. Eksekusi terbaik berarti kami harus mengambil langkah yang wajar untuk mendapatkan hasil terbaik ketika menjalankan order Anda. Dokumen ini memberikan ringkasan kebijakan eksekusi terbaik."
 
-msgid "Most brokers require minimum deposit. %1 doesn't require any minimum deposit."
+msgid "Most brokers require a minimum deposit. %1 doesn't require any minimum deposit."
 msgstr "Kebanyakan broker membutuhkan deposit minimal. %1 tidak memerlukan minimal deposit."
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
@@ -6821,6 +6851,9 @@ msgstr "Multi Akun Manager (MAM) pada MetaTrader 5 (MT5)"
 
 msgid "Multiple trading opportunities"
 msgstr "Berbagai peluang trading"
+
+msgid "Multiplier"
+msgstr ""
 
 msgid "Must be a clear, colour photo or scanned image"
 msgstr "Foto berwarna atau gambar scan harus jelas"
@@ -7209,6 +7242,9 @@ msgstr "Trading Online bersama %1"
 msgid "Online currency exchangers"
 msgstr "Penukar mata uang online"
 
+msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
+msgstr "Trading online dapat menyebabkan ketagihan. Isikan formulir dibawah ini untuk membatasi keikutsertaan Anda pada situs web ini atau kirimkan surat yang ditandatangani atau kirimkan fax kepada tim customer support kami. Setelah ditetapkan, Anda hanya dapat merubah batasan Anda. Batas hanya akan dihapus atau dirubah setelah 7 hari dengan pengecualian dari tanggal pengecualian diri, yang tidak dapat dihapus atau diubah setelah Anda konfirmasi. Untuk menghapus atau meningkatkan batasan Anda, silahkan hubungi <a href=\"%1\">customer support</a>."
+
 msgid "Only %1 are allowed."
 msgstr "Hanya %1 dibenarkan."
 
@@ -7358,6 +7394,9 @@ msgstr "Perusahaan Kami"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "Program Afiliasi Internasional yang kami miliki telah memberikan pembayaran tepat waktu setiap saat sejak diluncurkan resmi pada bulan Maret, 2004. Di Jepang, komisi affiliasi akan dikreditkan kedalam akun affiliasi Anda dalam tempo tiga puluh hari setelah penutupan periode trading dimana referal Anda telah memenuhi syarat."
+
+msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
+msgstr "Layanan MT5 kami tidak tersedia untuk warga Uni Eropa berhubung persetujuan peraturan yang masih tertunda."
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "Akun MetaTrader Lanjutan 5 kami memberi Anda spread yang ketat, ukuran tiket yang lebih tinggi dan menawarkan lebih banyak produk."
@@ -7572,6 +7611,9 @@ msgstr "Paten"
 msgid "Pay no commission on all metal contracts."
 msgstr "Tanpa komisi pada semua kontrak logam."
 
+msgid "Pay-out"
+msgstr ""
+
 msgid "Payment Agent"
 msgstr "Agen Pembayaran"
 
@@ -7607,6 +7649,9 @@ msgstr "Pembayaran komisi yang dihasilkan pada periode bulan sebelumnya akan dib
 
 msgid "Payments"
 msgstr "Pembayaran"
+
+msgid "Payoff"
+msgstr ""
 
 msgid "Payout"
 msgstr "Hasil"
@@ -7755,6 +7800,9 @@ msgstr "Masukkan tanggal dengan format HH BBB, TTTT JJ:mm (waktu lokal)."
 msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Masukkan tanggal dalam format HH BBB, TTTT."
 
+msgid "Please enter your full address to avoid authentication delays."
+msgstr "Masukkan alamat lengkap Anda untuk menghindari penundaan otentikasi."
+
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Silahkan isi Login ID dan jumlah yang ingin Anda transfer ke klien Anda dalam formulir di bawah ini:"
 
@@ -7804,7 +7852,7 @@ msgid "Please refer to the following commission plan."
 msgstr "Silakan lihat rencana komisi berikut ini."
 
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
-msgstr "Mohon diingat setiap waktu bahwa trading opsi binary dapat menjadi aktifitas yang menyenangkan, tetapi kami memiliki kewajiban moral untuk mengingatkan Anda mengenai risiko yang mungkin Anda hadapi. Trading opsi dapat menyebabkan ketagihan sama seperti aktifitas lain yang dilakukan melebihi batas. Kami menyarankan Anda untuk melakukan pengecekan jika berisiko untuk menghindari ketagihan dimana penting untuk mengikuti panduan dan prinsip dasar."
+msgstr "Mohon diingat setiap waktu bahwa trading opsi binary dapat menjadi aktivitas yang menyenangkan, tetapi kami memiliki kewajiban moral untuk mengingatkan Anda mengenai risiko yang mungkin Anda hadapi. Trading opsi dapat menyebabkan ketagihan sama seperti aktivitas lain yang dilakukan melebihi batas. Kami menyarankan Anda untuk melakukan pengecekan jika berisiko untuk menghindari ketagihan dimana penting untuk mengikuti panduan dan prinsip dasar."
 
 msgid "Please see our <a href=%1>terms and conditions</a> for details of payout qualifications."
 msgstr "Silahkan lihat <a href=%1>syarat dan ketentuan</a> untuk rincian kualifikasi hasil."
@@ -8638,7 +8686,7 @@ msgid "Security"
 msgstr "Keamanan"
 
 msgid "Security & Limits"
-msgstr "Keamanan & Batasan"
+msgstr "Keamanan & Batas"
 
 msgid "Security Disclaimer"
 msgstr "Keamanan Sangkalan"
@@ -8812,16 +8860,13 @@ msgid "Severability"
 msgstr "Keterpisahan"
 
 msgid "Sharp prices"
-msgstr "Harga tajam"
+msgstr "Harga akurat"
 
 msgid "Sharp, benchmarked prices"
-msgstr "Tajam, harga benchmark"
+msgstr "Akurat, harga benchmark"
 
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr "Pusat Penampungan Komunitas Belajar 3"
-
-msgid "Shop"
-msgstr "Toko"
 
 msgid "Short"
 msgstr "Pendek"
@@ -9418,6 +9463,24 @@ msgstr "Website %1 dilindungi oleh beberapa hak cipta tertentu. Materi yang terd
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "Konten statik %1 (CSS, Javascript) tersedia pada proyek open-source %2binary-static%3 github. Apakah Anda ingin merubah website %1 atau memperbaiki kecocokan browser, kecepatan website atau tampilan Javascript?. Silahkan lihat proyek dan kirimkan kritik dan saran perubahan kode Anda."
 
+msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
+msgstr ""
+
+msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
+msgstr ""
+
+msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
+msgstr ""
+
+msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1low%2 is the lowest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1start time%2 begins when the contract is processed by our servers."
+msgstr ""
+
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "<strong>Platform Utama</strong> untuk Trading Opsi Binary"
 
@@ -9637,9 +9700,6 @@ msgstr "Akta perlindungan data pribadi adalah sangat ditekankan dalam memproses 
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "Indeks EUR adalah Indeks yang ditimbang dengan mengukur nilai Euro melawan 5 mata uang global (USD, EUR, GBP, JPY, CAD), masing-masing ditimbang dengan 20%."
 
-msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
-msgstr "Eurobasket Wolves adalah klub basket yang didirikan pada tahun 2002. Mengajarkan bermain bola basket melalui club dan program sekolah. Umur 8 dan 10 tim anak laki-laki dan perempuan, ditambah umur 14 dan 16 tahun tim wanita yang bersaing secara nasional. Club basket pertama di Malta yang mengadakan program pelatihan basket seusai sekolah yang diadakan di halaman sekolah."
-
 msgid "The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers."
 msgstr "Komisi Eropa mengakui opsi binary adalah sebagai instrumen financial di tahun 2012, yang berarti meningkatnya kredibilitas bagi pialang berlisensi."
 
@@ -9830,7 +9890,7 @@ msgid "The company reserves the right to cancel/prohibit the use of this promoti
 msgstr "Perusahaan berhak melarang/membatalkan penggunaan promosi ini tanpa pemberitahuan kapan saja."
 
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr "Perusahaan berhak untuk membebankan biaya pada akun yang tidak aktif hingga USD/EUR/AUD/GBP25 atau untuk akun mata uang kripto, setara dengan USD25 yang dihitung sesuai dengan kurs terkini yang dipublikasikan oleh www.xe.com, atau penyedia data lain yang diakui, seperti pada tanggal pendebitan biaya, setiap 6 bulan bagi setiap akun Klien yang tidak memiliki transaksi yang tercatat selama lebih dari 12 bulan. Jika akun Klien didaftarkan pada Binary (Europe) Ltd. dan akun tidak memiliki aktifitas selama tiga puluh bulan, dan tidak dapat dihubungi, Perusahaan dapat melakukan pemindahan saldo. Klien perlu menghubungi helpdesk kami untuk mengaktifkan, menutup atau memblokir dan mengecualikan akun mereka."
+msgstr "Perusahaan berhak untuk membebankan biaya pada akun yang tidak aktif hingga USD/EUR/AUD/GBP25 atau untuk akun mata uang kripto, setara dengan USD25 yang dihitung sesuai dengan kurs terkini yang dipublikasikan oleh www.xe.com, atau penyedia data lain yang diakui, seperti pada tanggal pendebitan biaya, setiap 6 bulan bagi setiap akun Klien yang tidak memiliki transaksi yang tercatat selama lebih dari 12 bulan. Jika akun Klien didaftarkan pada Binary (Europe) Ltd. dan akun tidak memiliki aktivitas selama tiga puluh bulan, dan tidak dapat dihubungi, Perusahaan dapat melakukan pemindahan saldo. Klien perlu menghubungi helpdesk kami untuk mengaktifkan, menutup atau memblokir dan mengecualikan akun mereka."
 
 msgid "The content of this Information Memorandum has not been approved by an authorised person and such approval is, save where this Information Memorandum is directed at or issued to the types of person referred to above, required by Section 21 of the Act. Acquiring Tokens may expose an investor to a significant risk of losing all of the amount invested. Any person who is in any doubt about investing in the Company should consult an authorised person specialising in advising on such investments."
 msgstr "Isi dari Memorandum Informasi ini belum mendapat persetujuan dari pihak berwenang dan persetujuan tersebut adalah aman dimana Memorandum Informasi ini diarahkan atau dikeluarkan untuk jenis orang yang telah disebutkan di atas, yang diwajibkan oleh akta 21 dari undang-undang tersebut. Perolehan Token dapat mengekspos investor pada risiko signifikan kehilangan semua jumlah yang diinvestasikan. Setiap orang yang ragu berinvestasi di Perusahaan harus berkonsultasi dengan orang yang berwenang yang mengkhususkan diri untuk memberi saran mengenai investasi serupa."
@@ -10234,9 +10294,6 @@ msgstr "Materi ini tidak dapat disalin atau disebarkan untuk tujuan komersial at
 msgid "These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens."
 msgstr "Materi ini hanya dapat diterima oleh orang yang berhak (seseorang yang ditentukan oleh Perusahaan, atas kebijakannya sendiri, yang berhak menerima materi sebagaimana ditentukan oleh undang-undang dan peraturan yang berlaku, misalnya di yurisdiksi EEA, sesuai dengan pengecualian berdasarkan perintah Uni Eropa 2003/71/EC (sebagaimana telah diubah, termasuk dengan direktif 2010/73/EU), yang mencakup, namun tidak terbatas, pembebasan yang berkaitan dengan investor yang memenuhi syarat (\"Orang Yang Berhak\"). Jika Pihak Berhak tersebut ingin mengajukan bid untuk token maka pihak tersebut dapat melakukannya dengan mendaftar sebagai klien Binary.com dan memiliki akun Binary.com dimana Perusahaan akan dapat memverifikasi lebih lanjut kualifikasi sebagai Pihak Berhak. Pihak Berhak yang ingin melakukan pembelian token akan melakukan bidding. Perusahaan akan menyusun dan menilai biddingnya. Perusahaan dapat meminta agar bid tersebut dikonfirmasikan kembali sebelum dianggap sah untuk tujuan bid Perusahaan pada saat pelelangan. Pada lelang tersebut, Perusahaan akan mengajukan penawaran token, tawaran mana yang akan diterima (seperti yang sudah dijelaskan pada proses lelang pada material) dan pertimbangan untuk pembelian token tersebut akan diselesaikan dengan mengkreditkan pada akun Binary.com milik Pihak Berhak, yang membuktikan kontrak penjualan dan pembelian token masing-masing."
 
-msgid "These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr "Angka angka berikut bersifat indikatif, silahkan verifikasi pada platform trading MT5 kami."
-
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr "Berpikir bahwa suatu mata uang tertentu akan naik atau turun? Pelajari kapan Anda harus membeli (atau \"go long\") dan kapan harus menjual (atau \"go short\")."
 
@@ -10372,6 +10429,9 @@ msgstr "Pemberitahuan ini memberi Anda informasi tentang risiko yang berhubungan
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Penawaran ini tidak dapat digunakan bersamaan pada penawaran lainnya."
 
+msgid "This page is not available in the selected language."
+msgstr "Halaman ini tidak tersedia dalam bahasa yang dipilih."
+
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Promosi ini hanya berlaku untuk pembukaan akun baru. Dan hanya dapat diperoleh sekali saja untuk setiap Pelanggan."
 
@@ -10492,14 +10552,8 @@ msgstr "Untuk menerapkan fitur pembayaran dividen, kami akan mengkloning token k
 msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr "Untuk mempelajari lebih lanjut, silahkan baca <a href='%1'>spesifikasi kontrak CFD</a> kami."
 
-msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr "Lebih lanjut, baca %1Kebijakan Margin%2 kami yang menjelaskan lebih lanjut tentang 100% tingkat likuidasi paksa untuk Forex."
-
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "Lebih lanjut, baca %1Kebijakan Margin%2 kami yang menjelaskan lebih lanjut tentang persyaratan margin kami."
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr "Lebih lanjut, baca %1Kebijiakan Marjin%2 yang menjelaskan lebih lanjut mengenai persyaratan marjin kami. Harap dicatat bahwa kami tidak mengenakan biaya swap untuk pasangan mata uang crypto."
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr "Untuk mempelajari lebih lanjut, baca <a href=\"%1\">Kebijakan Margin CFD</a> kami yang menjelaskan lebih lanjut tentang 50% tingkat likuidasi paksa untuk Indeks Volatilitas."
@@ -10509,9 +10563,6 @@ msgstr "Untuk mempelajari lebih lanjut, baca <a href=\"%1\">Kebijakan Margin For
 
 msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
 msgstr "Untuk mempelajari lebih lanjut, baca <a href=\"%1\">Kebijakan Margin Metal</a> kami yang menjelaskan lebih lanjut tentang 100% tingkat likuidasi paksa untuk pasangan logam."
-
-msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "Lebih lanjut, baca %1Kebijakan Margin%2 Metal kami lebih lanjut tentang 100% tingkat likuidasi paksa untuk pasangan metal."
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "Untuk mendaftar Akun Riil, Anda harus memiliki Akun Riil %1 yang sudah melengkapi proses otentikasi. Akun Riil tidak dapat didaftarkan jika Anda belum mendaftar Akun Riil Opsi Binary."
@@ -10798,9 +10849,6 @@ msgstr "Trading pada Opsi Binary merupakan spekulasi dan melibatkan tingkat risi
 msgid "Trading manual"
 msgstr "Trading manual"
 
-msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
-msgstr "Trading pada pasar finansial dapat menyebabkan ketagihan. Isikan formulir dibawah ini untuk membatasi keikutsertaan Anda pada situs web ini atau kirimkan surat yang ditandatangani atau kirimkan fax kepada tim customer support kami. Setelah ditetapkan, Anda hanya dapat merubah batasan Anda. Batas hanya akan dihapus atau dirubah setelah 7 hari dengan pengecualian dari tanggal pengecualian diri, yang tidak dapat dihapus atau diubah setelah Anda konfirmasi. Untuk menghapus atau meningkatkan batasan Anda, silahkan hubungi <a href=\"%1\">customer support</a>."
-
 msgid "TradingView for %1"
 msgstr "TradingView untuk %1"
 
@@ -10831,11 +10879,17 @@ msgstr "Transfer dana dari akun MetaTrader 5 kedalam akun opsi binary Anda."
 msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
 msgstr "Transfer dana dari akun opsi binary Anda kedalam akun MetaTrader 5 Anda."
 
+msgid "Transfer funds to your MT5 account"
+msgstr "Transfer dana ke akun MT5 Anda"
+
 msgid "Transfer to"
 msgstr "Kirim ke"
 
 msgid "Transfer to Login ID"
 msgstr "Transfer ke Login ID"
+
+msgid "Transfer to MT5"
+msgstr "Transfer ke MT5"
 
 msgid "Transfer to Payment Agent"
 msgstr "Penarikan Agen Pembayaran"
@@ -10908,6 +10962,9 @@ msgstr "Jenis akun MetaTrader 5"
 
 msgid "Types of Trades"
 msgstr "Jenis Kontrak"
+
+msgid "Types of lookbacks"
+msgstr ""
 
 msgid "Types of trades"
 msgstr "Jenis kontrak"
@@ -11023,6 +11080,9 @@ msgstr "Sayangnya, tidak - berhubung kami perlu memastikan dana yang di depositk
 msgid "United Kingdom"
 msgstr "Inggris"
 
+msgid "Units"
+msgstr ""
+
 msgid "University degree in Marketing, Communications, Journalism, or related discipline"
 msgstr "Sarjana Pemasaran, Jurnalistik, Komunikasi atau disiplin bisnis terkait lainnya"
 
@@ -11127,6 +11187,9 @@ msgstr "Tagihan utilitas (listrik, air, gas, broadband dan telpon rumah)"
 
 msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
 msgstr "Token utilitas adalah token yang memberi Anda akses ke dalam jaringan atau aplikasi terdesentralisasi."
+
+msgid "Validate address"
+msgstr "Pengesahan alamat"
 
 msgid "Variable from 0.9 pips"
 msgstr "Variabel dari 0,9 pip"
@@ -11449,6 +11512,9 @@ msgstr "Kami menawarkan keempat logam mulia - emas, perak, paladium, dan platina
 msgid "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 msgstr "Kami menawarkan rangkaian produk inovatif untuk pelanggan yang terdiri dari instrumen keuangan dan sintetis dengan jangka waktu mulai dari 10 detik hingga 365 hari."
 
+msgid "We offer three types lookbacks:"
+msgstr ""
+
 msgid "We only pay for pull requests that are approved by our development team and merged into master. If the development team approves your pull request, we'll pay you in cryptocurrency. You can choose Bitcoin, Litecoin or Ether. "
 msgstr "Kami hanya membayar permintaan pull yang disetujui oleh tim pengembang kami dan digabungkan menjadi master. Jika tim pengembang menyetujui permintaan pull Anda, kami akan membayar Anda dalam mata uang kripto. Anda bisa memilih Bitcoin, Litecoin atau Ether. "
 
@@ -11465,7 +11531,7 @@ msgid "We reasonably consider that funds may be required to meet any Margin Requ
 msgstr "Kami akan menganggap dana Anda akan diperlukan untuk memenuhi Persyaratan Margin; dan/atau"
 
 msgid "We rebrand BetOnMarkets.com as <a target='_blank' href='%1'>www.%2</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients."
-msgstr "Kami merebrending BetOnMarkets.com sebagai <a target='_blank' href='%1'>www.%2</a>. Rebranding ini merupakan evolusi alami bagi platform kami berhubung terus berkembang secara kompetitif di dunia trading binary. Brand baru ini mencerminkan bisnis dasar yang ditawarkan dan tagline terbaru kami – Harga Tajam, Trading Pintar – mengkomunikasikan etos dan komitmen kepada Pelanggan kami."
+msgstr "Kami merebrending BetOnMarkets.com sebagai <a target='_blank' href='%1'>www.%2</a>. Rebranding ini merupakan evolusi alami bagi platform kami berhubung terus berkembang secara kompetitif di dunia trading binary. Brand baru ini mencerminkan bisnis dasar yang ditawarkan dan tagline terbaru kami – Harga Akurat, Trading Pintar – mengkomunikasikan etos dan komitmen kepada Pelanggan kami."
 
 msgid "We recognize the importance of protecting your personal and financial information."
 msgstr "Kami memahami betapa pentingnya menjaga informasi pribadi dan transaksi Anda."
@@ -11501,10 +11567,10 @@ msgid "We support hundreds of deposit and withdrawal options."
 msgstr "Kami mendukung ratusan pilihan deposit dan withdrawal."
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
-msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktifitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
+msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktivitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
-msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktifitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
+msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktivitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
 
 msgid "We want to keep improving our platform, so, it's in our interest to pay contributors fairly. If we don't, then you'll stop contributing pull requests, which will make this project self-defeating."
 msgstr "Kami ingin terus meningkatkan platform kami, kami berminat untuk membayar kontributor secara adil. Jika tidak, maka Anda akan berhenti memberikan kontribusi permintaan pull, yang akan membuat proyek ini tidak berjalan."
@@ -11592,6 +11658,9 @@ msgstr "Apa itu indeks dan saham OTC?"
 
 msgid "What are binary options"
 msgstr "Apa itu opsi binary"
+
+msgid "What are lookbacks"
+msgstr ""
 
 msgid "What are the benefits of purchasing tokens?"
 msgstr "Apa keuntungan membeli token?"
@@ -11923,6 +11992,15 @@ msgstr "Mengapa Anda harus bertrading logam mulia dengan %1"
 msgid "Will I need to install any software?"
 msgstr "Apakah saya perlu menginstal software?"
 
+msgid "Win the multiplier times the close minus low."
+msgstr ""
+
+msgid "Win the multiplier times the high minus close."
+msgstr ""
+
+msgid "Win the multiplier times the high minus low."
+msgstr ""
+
 msgid "Windows"
 msgstr "Windows"
 
@@ -11955,6 +12033,9 @@ msgstr "Sehubungan dengan pelacakan referral Anda dalam mengakses %1 melalui lin
 
 msgid "Withdraw"
 msgstr "Pencairan"
+
+msgid "Withdraw from MT5"
+msgstr "Penarikan dari MT5"
 
 msgid "Withdraw funds from your MT5 account"
 msgstr "Menarik dana dari akun MT5 Anda"
@@ -12548,10 +12629,10 @@ msgid "Your Real Account shall be funded by transferring funds from your Binary 
 msgstr "Akun Riil Anda akan didanai dengan mentransfer dana dari Akun Riil Opsi Binary Anda, tergantung pada ketersediaan dan kecukupan dana pada Akun Riil Opsi Binary Anda. Transfer dari akun dengan nama lain atau pihak ketiga adalah tidak dibenarkan."
 
 msgid "Your account has no Login/Logout activity."
-msgstr "Akun Anda tidak memiliki aktifitas Login/Logout."
+msgstr "Akun Anda tidak memiliki aktivitas Login/Logout."
 
 msgid "Your account has no trading activity."
-msgstr "Akun Anda tidak memiliki aktifitas trading."
+msgstr "Akun Anda tidak memiliki aktivitas trading."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Akun Anda telah terbukti dan batasan penarikan Anda telah dihapuskan."
@@ -12567,6 +12648,9 @@ msgstr "Akun Anda tidak boleh digunakan sebagai fasilitas perbankan dan deposito
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Akun Anda sebaiknya tidak digunakan sebagai fasilitas perbankan dan deposit hanya dilakukan untuk melakukan pembelian kontrak. Perusahaan adalah bukan institusi bank. Klien tidak akan menerima bunga pada deposit. Jika Anda melakukan deposit berulang ulang dan penarikan tanpa melakukan pembelian kontrak, kami berhak untuk menutup akun Anda tanpa pemberitahuan sebelumnya, membebankan biaya bank yang terlibat sebelum menutup akun Anda."
+
+msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
+msgstr "Alamat Anda tidak dapat disahkan menggunakan sistem otomatis yang kami gunakan. Silahkan lanjutkan namun pastikan alamat Anda lengkap."
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Permohonan Anda akan ditinjau oleh departemen compliance dan marketing kami. Setelah disetujui, kami akan mengaktifkan Anda di dalam daftar <a href='%1'>agen pembayaran</a>."
@@ -12781,6 +12865,9 @@ msgstr "secara wajar dan akurat menggambarkan layanannya kepada Klien;"
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 msgstr "mengikuti dan/atau melaksanakan dan/atau mematuhi semua arahan dan/atau kebijakan yang terkait dengan bisnis dan/atau prosedur Perusahaan sebagaimana telah diubah dan/atau diundangkan dan/atau diganti dari waktu ke waktu;"
 
+msgid "for MT5 Account"
+msgstr "untuk Akun MT5"
+
 msgid "for exclusive updates on the ICO."
 msgstr "untuk update eksklusif mengenai ICO."
 
@@ -12882,6 +12969,9 @@ msgstr "keuntungan bersih yang dikreditkan kedalam Akun Riil Anda dan kerugian y
 
 msgid "numbers"
 msgstr "nomor"
+
+msgid "or"
+msgstr "atau"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "halaman untuk waktu tepat penyelesaian seluruh kontrak. Website lain mungkin menggunakan konvensi berbeda (sebagai contoh beberapa website menggunakan jam 4 waktu New York atau jam 5 waktu London). Hal ini menyebabkan harga open, high, low dan close pada website kami akan mengalami perbedaan dengan website lainnya berhubung konvensi waktu penutupan pasar."

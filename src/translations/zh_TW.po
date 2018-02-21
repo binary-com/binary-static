@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-05 19:51-0500\n"
+"PO-Revision-Date: 2018-02-20 21:41-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -102,14 +102,23 @@ msgstr "%1學院"
 msgid "%1 Account"
 msgstr "%1帳戶"
 
+msgid "%1 Account %2"
+msgstr "%1帳戶%2"
+
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "%1 聯盟計劃的條款和條件"
 
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1 應用程式編程介面(\"API\")的條款和條件"
 
+msgid "%1 Graduate Programme"
+msgstr "%1 研究生課程"
+
 msgid "%1 Graduate programme"
 msgstr "%1 研究生課程"
+
+msgid "%1 Hackathon Competition"
+msgstr "%1Hackathon競爭"
 
 msgid "%1 ICO"
 msgstr "%1 ICO"
@@ -474,6 +483,9 @@ msgstr "《Global Banking and Finance Review》頒發的「2012年最佳固定�
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "《 eGaming Review》頒發的「年度最佳金融投注運作商」獎項"
 
+msgid "(6,000 – 5,200) * 2 = $1600"
+msgstr ""
+
 msgid "(One) Touch trades"
 msgstr "一觸即付交易"
 
@@ -488,12 +500,6 @@ msgstr "*免稅：交易所獲之盈利在很多國家免稅，但請務必諮�
 
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*為了利於培訓和監控,所有通話將被錄音"
-
-msgid "*Lot size volume = 1.0."
-msgstr "*手大小交易量 = 1.0。"
-
-msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr "* 這些數位僅供指示用途, 請透過我們的 MT5 交易平台核實。"
 
 msgid "0-1 year"
 msgstr "0-1 年"
@@ -726,6 +732,9 @@ msgstr "超過15年以來保持領先地位的創新型二元期權交易平台"
 msgid "A list of payment methods you will accept from Clients"
 msgstr "您可接受之客戶付款方式列表"
 
+msgid "A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to \"look back\" over time to determine the payout."
+msgstr ""
+
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "母語為英語，口語、寫作皆非常流利"
 
@@ -918,8 +927,8 @@ msgstr "帳戶餘額："
 msgid "Account balance: "
 msgstr "帳戶餘額： "
 
-msgid "Account comparison*"
-msgstr "帳戶比較*"
+msgid "Account comparison"
+msgstr "帳戶比較"
 
 msgid "Account currency"
 msgstr "帳戶幣種"
@@ -2028,6 +2037,15 @@ msgstr "通過選擇被視為專業客戶, 我們將不會假定您擁有「專�
 msgid "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 msgstr "通過選擇被視為專業客戶, 我們將不會假定您擁有「專業客戶」一詞所定義的市場知識和經驗。我們將採取一切合理步驟, 確保您對此分類的請求符合上述標準, 包括但不限於以下內容的副本:"
 
+msgid "By purchasing the %1‘Close-Low’%2 contract, you’ll win the multiplier times the difference between the %1close%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Close’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1close%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Low’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "通過註冊應用軟體、網站或您所建立的產品或所提供服務（簡稱為「應用程式」），您確認已經閱讀、理解並同意遵守這些條款。"
 
@@ -2129,9 +2147,6 @@ msgstr "取消出價"
 
 msgid "Cancel bid?"
 msgstr "取消出價?"
-
-msgid "Career opportunities for Americans"
-msgstr "美國居民的工作機會"
 
 msgid "Careers"
 msgstr "工作機會"
@@ -2415,8 +2430,14 @@ msgstr "客戶的錢"
 msgid "Clients' trade allocations start from 0.01 lots"
 msgstr "客戶最低交易分配額為 0.01 手"
 
+msgid "Close"
+msgstr ""
+
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
 msgstr "以合理可用的平倉層次將所有或任何未平倉頭寸平倉；"
+
+msgid "Close-Low"
+msgstr ""
 
 msgid "Closed"
 msgstr "已收盤"
@@ -2769,6 +2790,9 @@ msgstr "開立新帳戶"
 msgid "Create New Token"
 msgstr "新增新代幣"
 
+msgid "Create account with Google"
+msgstr "開立Google帳戶"
+
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "為公司網站、部落格、社交媒體和行銷材料增添清晰、簡潔、引人入勝的內容"
 
@@ -3020,9 +3044,6 @@ msgstr "存款最低僅需5美元即可開始交易."
 
 msgid "Deposit funds and begin trading"
 msgstr "存款並開始交易"
-
-msgid "Deposit funds into your MT5 account"
-msgstr "將資金存入您的 MT5 帳戶"
 
 msgid "Deposit or withdraw below"
 msgstr "在下方存款或提款"
@@ -3591,9 +3612,6 @@ msgstr "歐元兌土耳其里拉"
 msgid "Euro vs US Dollar"
 msgstr "歐元兌美元"
 
-msgid "Eurobasket Wolves"
-msgstr "Eurobasket Wolves"
-
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
 msgstr "想要進行產品博彩交易的歐盟居民將在 Binary (Europe) Ltd 開設帳戶。"
 
@@ -4002,6 +4020,9 @@ msgstr "例如，如果您想通過傳統經紀人以每單位 50 美元的價�
 msgid "For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction."
 msgstr "例如，如果您想通過傳統經紀人以每單位 50 美元的價格購入某資產100 單位，此交易您須支付 5,000 美元。"
 
+msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
+msgstr ""
+
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "例如，波動率指數的差價合約報價每點1美元。如果您以目前20,000 美元的賣出價格購入 1.0 股波動率 100 指數，然後以20,010 美元的買入價格出售，您的淨利潤計算方法如下︰"
 
@@ -4019,6 +4040,9 @@ msgstr "有關進一步的背景資訊, 請閱讀我們的部落格文章, <a hr
 
 msgid "For general support:"
 msgstr "一般支援："
+
+msgid "For information about Forex leverage refer to our %1Margin Policy%2."
+msgstr "有關外匯槓桿的資訊, 請參閱我們的 %1保證金政策%2。"
 
 msgid "For payments-related queries:"
 msgstr "付款相關的查詢："
@@ -4389,6 +4413,9 @@ msgstr "Hedging"
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr "以下是歐元/美元貨幣對和買賣價的例子："
 
+msgid "High"
+msgstr ""
+
 msgid "High Barrier"
 msgstr "高障礙"
 
@@ -4409,6 +4436,15 @@ msgstr "高頻率 （每秒 2 次跳動點）"
 
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "高度安全保障 - 每一個加密貨幣交易都透過先進的加密技術提供安全保障，因此偽造是幾乎不可能發生的"
+
+msgid "High, Low and Close"
+msgstr ""
+
+msgid "High-Close"
+msgstr ""
+
+msgid "High-Low"
+msgstr ""
 
 msgid "Higher"
 msgstr "高於"
@@ -4661,9 +4697,6 @@ msgstr "九、 報價"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "即 (20010 - 20000) x 1 x 1 = 10 美元"
-
-msgid "ICO Bids"
-msgstr "ICO出價"
 
 msgid "ICO is live, participate now!"
 msgstr "ICO 已經啟動, 立刻參與!"
@@ -6261,9 +6294,6 @@ msgstr "登入歷史"
 msgid "Login ID"
 msgstr "登入 ID"
 
-msgid "Login ID:"
-msgstr "登入 ID:"
-
 msgid "Login time:"
 msgstr "登入時間:"
 
@@ -6285,8 +6315,8 @@ msgstr "長期合作夥伴:"
 msgid "Long:"
 msgstr "長倉:"
 
-msgid "Looking for a new and exciting career in a country that's modern, diverse, and tolerant? %1 is one of the world's most progressive companies, with offices in Asia and Europe."
-msgstr "想要在一個現代化、多元化和開放的國家找份新的、吸引人的工作？%1是全球最具前景的公司之一，在亞洲和歐洲都擁有辦公室。"
+msgid "Lookbacks"
+msgstr ""
 
 msgid "Loss"
 msgstr "虧損"
@@ -6294,14 +6324,17 @@ msgstr "虧損"
 msgid "Lot Size (Volume = 1.0)"
 msgstr "手大小 (交易量 = 1.0)"
 
-msgid "Lot size*"
-msgstr "手大小*"
+msgid "Lot size"
+msgstr "手大小"
 
 msgid "Lot units"
 msgstr "手單位"
 
 msgid "Lots"
 msgstr "手數"
+
+msgid "Low"
+msgstr ""
 
 msgid "Low Barrier"
 msgstr "低障礙"
@@ -6335,6 +6368,9 @@ msgstr "中東和北非地區 FFXPO 獎"
 
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "MT4和MT5 經紀商可以使用內置插件直接與One Zero橋樑的流動性連接。"
+
+msgid "MT5 Account:"
+msgstr "MT5帳戶:"
 
 msgid "MT5 Demo"
 msgstr "MT5 演示"
@@ -6480,12 +6516,6 @@ msgstr "追加保證金通知"
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr "保證金是基於初始資金的可控制投資額。例如，0.2%保證金將允許您僅使用 1,000 美元本身存款控制高達500,000 美元。"
 
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "保證金是基於初始資金的可控制投資額。例如，1%保證金將允許您僅使用 1,000 美元本身存款控制高達100,000 美元。"
-
-msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
-msgstr "保證金率是基於初始存款的可控制資本額。例如，10%保證金率將允許您僅使用 10,000 美元本身存款控制100,000 美元。此率需要資產總值的10%作為保證金。"
-
 msgid "Market"
 msgstr "市場"
 
@@ -6594,9 +6624,6 @@ msgstr "最大票證大小"
 msgid "Maximum upload size for each file is 3MB"
 msgstr "每個文檔的最大上載大小為3MB"
 
-msgid "Maximum volume"
-msgstr "最大交易額"
-
 msgid "May"
 msgstr "五月"
 
@@ -6654,6 +6681,9 @@ msgstr "方式"
 msgid "Min"
 msgstr "最小"
 
+msgid "Min / Max withdrawal"
+msgstr "最小/最大取款金額"
+
 msgid "Min Withdrawal"
 msgstr "最小提款金額"
 
@@ -6668,9 +6698,6 @@ msgstr "最小交易增額"
 
 msgid "Min. Volume<br>(Lot Size)"
 msgstr "最小交易額<br>(手量)"
-
-msgid "Min: 10 Max: 2000"
-msgstr "最小: 10 最大: 2000"
 
 msgid "Minimum Spread"
 msgstr "最小價差"
@@ -6704,6 +6731,9 @@ msgstr "有效期至少六個月"
 
 msgid "Minimum ticket size"
 msgstr "最小票證大小"
+
+msgid "Minimum volume"
+msgstr "最小交易額"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "礦業、建築業、製造業和運輸工人"
@@ -6774,7 +6804,7 @@ msgstr "更多福利"
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "說得更具體就是，當我們和您進行二元期權交易時（雙方有了「合同」），我們有責任向您提供「最佳執行方案」。最佳執行方案的意思就是當我們執行您的訂單時，我們必須採取合理的措施來為您獲取最大的效益。此文件是我們最佳執行方案政策的總結。"
 
-msgid "Most brokers require minimum deposit. %1 doesn't require any minimum deposit."
+msgid "Most brokers require a minimum deposit. %1 doesn't require any minimum deposit."
 msgstr "大多數經紀商要求最低存款額。%1 不需要任何最低存款。"
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
@@ -6821,6 +6851,9 @@ msgstr "MetaTrader 5 (MT5) 的多個帳戶管理器 (MAM)"
 
 msgid "Multiple trading opportunities"
 msgstr "多重交易機會"
+
+msgid "Multiplier"
+msgstr ""
 
 msgid "Must be a clear, colour photo or scanned image"
 msgstr "必須是清晰, 彩色照片或掃描圖像"
@@ -7209,6 +7242,9 @@ msgstr "%1網上交易"
 msgid "Online currency exchangers"
 msgstr "線上貨幣兌換"
 
+msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
+msgstr "線上交易可能使人上癮。請填寫下表以限制您對本網站的參與，或傳送簽名信或傳真到我們的客服團隊。一旦設定好後，您只能收緊限制。限制只能在7天后取消或放寬，而自我禁止期在您確認後就不能取消或更改。若要解除或增加您的限制，請聯繫<a href=\"%1\">客服部</a>。"
+
 msgid "Only %1 are allowed."
 msgstr "只允許 %1 。"
 
@@ -7358,6 +7394,9 @@ msgstr "我們公司"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "我們的國際聯盟計劃自2004年3月正式啟動以來一直及時足額支付款項。在日本，您的聯盟佣金將在您介紹的客戶符合資格條件的日曆月結束後三十天內計入您的聯盟會員帳戶。"
+
+msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
+msgstr "我們的 MT5平台正在等待監管機構批准，目前無法向歐盟居民提供服務。"
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "我們的 MetaTrader 5 高級帳戶為您提供極低的差價, 更高的票證大小, 並提供更多的產品。"
@@ -7572,6 +7611,9 @@ msgstr "專利"
 msgid "Pay no commission on all metal contracts."
 msgstr "所有金屬合約不需付佣金費。"
 
+msgid "Pay-out"
+msgstr ""
+
 msgid "Payment Agent"
 msgstr "付款代理"
 
@@ -7607,6 +7649,9 @@ msgstr "上一月賺得的佣金在每月 15 號前後以公司和聯盟成員�
 
 msgid "Payments"
 msgstr "支付"
+
+msgid "Payoff"
+msgstr ""
 
 msgid "Payout"
 msgstr "賠付"
@@ -7754,6 +7799,9 @@ msgstr "請輸入日期，格式為日-月-年 時:分(當地時間)。"
 
 msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "請輸入日期，格式為日-月-年。"
+
+msgid "Please enter your full address to avoid authentication delays."
+msgstr "請輸入您的完整地址以避免身份驗證被延遲。"
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "請在下表中填寫登入ID 以及您希望轉給客戶的金額："
@@ -8820,9 +8868,6 @@ msgstr "精確基準報價"
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr "庇護所社區第3學習中心"
 
-msgid "Shop"
-msgstr "商店"
-
 msgid "Short"
 msgstr "短倉"
 
@@ -9417,6 +9462,24 @@ msgstr "%1網站受版權保護。網站所包含的各種材料（包括但不�
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "%1網站的靜態內容（CSS，Javascript）可在github以%2二進位靜態%3開源專案中使用。您是否想重新設定%1網站的面板設計，提高瀏覽器的相容性、網站的呈現速度或者Javascript效能？請分支處理專案並送上您所建議的代碼更改的提取要求。"
 
+msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
+msgstr ""
+
+msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
+msgstr ""
+
+msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
+msgstr ""
+
+msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1low%2 is the lowest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1start time%2 begins when the contract is processed by our servers."
+msgstr ""
+
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "二元期權交易的<strong>頂尖平台</strong>"
 
@@ -9635,9 +9698,6 @@ msgstr "資料保護法律及法規規定了個人資料使用者應承擔的義
 
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "歐元指數是加權指數，衡量歐元相對5種國際貨幣（美元、澳元、英鎊、日圓、加元）的價值，每種貨幣的權重均為20%。"
-
-msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
-msgstr "Eurobasket Wolves 本地籃球俱樂部成立於2002年。它通過俱樂部和學校項目教導青年打籃球。它的U8、U10男女球隊和U14、U16女子球隊曾經參加國家級競賽。它也是馬爾他首家在學校場地成立籃球訓練項目的籃球俱樂部。"
 
 msgid "The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers."
 msgstr "歐盟委員會於2012年確認二元期權交易是一種金融工具，提高了擁有執照的經紀商的可信性。"
@@ -10233,9 +10293,6 @@ msgstr "未經 Binary Group 公司事先書面許可，不得基於商業目的�
 msgid "These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens."
 msgstr "這些材料只能由被授權人(由公司自行決定, 有權根據適用的法律和法規, 例如歐洲經濟區的司法管轄區內根據歐洲聯盟2003/71/EC 指令(含陸續修正版本, 包括2010/ 73/EU 指令)的豁免, 其中包括但不限於與合格投資者有關的豁免者(\"被授權人\") 獲取。如被授權人想要競投代幣, 如他是Binary.com 的註冊客戶並擁有Binary.com 帳戶, 則可以進行。公司可藉此方法核實其作為被授權人的資格。希望獲得代幣的被授權人可出價。公司將對出價進行處理和評估。在出價被視為有效符合公司發售拍賣條件前, 公司可要求重新確認出價。拍賣時, 公司將發售代幣, 並決定接受(根據材料中解釋的拍賣過程) 該發售的出價。公司也考慮發售代幣的購入和接受將透過被授權人的Binary.com 帳戶餘款結算, 為個別代幣的銷售和購買合約提供證明。"
 
-msgid "These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr "這些數位僅供指示用途, 請透過我們的 MT5 交易平台核實。"
-
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr "您認為某種貨幣會上漲或下跌？學習什麼時候應該買入 (或 「持多頭頭寸」) 和賣出 (或「持空頭頭寸」)。"
 
@@ -10371,6 +10428,9 @@ msgstr "此通知提醒您通過 %1 所提供的服務進行投資的合約風�
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "本優惠不能和其他任何優惠一起使用。"
 
+msgid "This page is not available in the selected language."
+msgstr "所選語言不適用於此頁面。"
+
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "本促銷活動僅適用於新客戶。目前或以往客戶不符合條件。每一客戶僅能獲得一次。"
 
@@ -10491,14 +10551,8 @@ msgstr "為了實現我們的紅利支付功能，我們將克隆代幣，每個
 msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr "要瞭解詳細資料，請閱讀我們的<a href='%1'>差價合約規格</a>。"
 
-msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr "要了解關於外匯100%強制清算層次的更多資訊，請閱讀我們的%1保證金政策%2。"
-
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "要了解關於保證金要求的更多資訊，請閱讀我們的%1保證金政策%2。"
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
-msgstr "要了解關於保證金要求的詳細資料，請閱讀我們的%1保證金政策%2。請注意，我們不收取加密貨幣對的掉期利率費。"
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr "要了解關於波動率指數50%強制清算層次的更多資訊，請閱讀我們的<a href=\"%1\">差價合約保證金政策</a>。"
@@ -10508,9 +10562,6 @@ msgstr "要了解關於外匯100%強制清算層次的更多資訊，請閱讀�
 
 msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
 msgstr "要了解關於金屬對100%強制清算層次的更多資訊，請閱讀我們的<a href=\"%1\">金屬交易保證金政策</a>。"
-
-msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "要了解關於金屬對100%強制清算層次的更多資訊，請閱讀我們的金屬交易%1保證金政策%2。"
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr "要開立真實帳戶，您必須在%1擁有已通過身份驗證的二元期權真實帳戶。如果沒有二元期權真實帳戶，您無法開立真實帳戶。"
@@ -10797,9 +10848,6 @@ msgstr "二元期權交易是投機活動，有很高的風險，可能會導致
 msgid "Trading manual"
 msgstr "Trading manual"
 
-msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
-msgstr "金融市場交易可能使人上癮。請填寫下表以限制您對本網站的參與，或傳送簽名信或傳真到我們的客服團隊。一旦設定好後，您只能收緊限制。限制只能在7天后取消或放寬，而自我禁止期在您確認後就不能取消或更改。若要解除或增加您的限制，請聯繫<a href=\"%1\">客服部</a>。"
-
 msgid "TradingView for %1"
 msgstr "%1專用的TradingView"
 
@@ -10830,11 +10878,17 @@ msgstr "把資金從您的MetaTrader 5帳戶轉移到二元期權帳戶︰"
 msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
 msgstr "把資金從您的二元期權帳戶轉移到MetaTrader 5帳戶︰"
 
+msgid "Transfer funds to your MT5 account"
+msgstr "將資金轉入您的 MT5 帳戶"
+
 msgid "Transfer to"
 msgstr "轉給"
 
 msgid "Transfer to Login ID"
 msgstr "轉給登入 ID"
+
+msgid "Transfer to MT5"
+msgstr "轉至 MT5"
 
 msgid "Transfer to Payment Agent"
 msgstr "轉給支付代理"
@@ -10907,6 +10961,9 @@ msgstr "MetaTrader 5 帳戶的類型"
 
 msgid "Types of Trades"
 msgstr "交易類型"
+
+msgid "Types of lookbacks"
+msgstr ""
 
 msgid "Types of trades"
 msgstr "交易類型"
@@ -11022,6 +11079,9 @@ msgstr "很遺憾，不行。必須使用原存款方式提款。提款時不可
 msgid "United Kingdom"
 msgstr "英國"
 
+msgid "Units"
+msgstr ""
+
 msgid "University degree in Marketing, Communications, Journalism, or related discipline"
 msgstr "市場行銷、通信、新聞或其他相關專業學位"
 
@@ -11126,6 +11186,9 @@ msgstr "水電費 (電、水、煤氣、寬頻和電話)"
 
 msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
 msgstr "公用代幣是讓您能夠存取分散式網絡或應用程式的代幣。"
+
+msgid "Validate address"
+msgstr "地址驗證"
 
 msgid "Variable from 0.9 pips"
 msgstr "變數從0.9 點開始"
@@ -11448,6 +11511,9 @@ msgstr "我們的商品清單提供所有四種貴重金屬，即黃金、白銀
 msgid "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 msgstr "我們為客戶提供創新的產品系列，包括金融和合成工具，持續時間為10秒至365天。"
 
+msgid "We offer three types lookbacks:"
+msgstr ""
+
 msgid "We only pay for pull requests that are approved by our development team and merged into master. If the development team approves your pull request, we'll pay you in cryptocurrency. You can choose Bitcoin, Litecoin or Ether. "
 msgstr "我們只對經過開發團隊批准並合併到主程式的拉動請求給予報酬。如果開發團隊批准您的拉動請求，我們會付加密貨幣給您。您可以選擇比特幣、萊特幣或以太幣。 "
 
@@ -11591,6 +11657,9 @@ msgstr "場外交易指數和股票是什麼？"
 
 msgid "What are binary options"
 msgstr "甚麼是二元期權"
+
+msgid "What are lookbacks"
+msgstr ""
 
 msgid "What are the benefits of purchasing tokens?"
 msgstr "購買代幣的益處是什麼？"
@@ -11922,6 +11991,15 @@ msgstr "為什麼要用%1 進行貴重金屬交易"
 msgid "Will I need to install any software?"
 msgstr "我需要安裝任何軟體嗎？"
 
+msgid "Win the multiplier times the close minus low."
+msgstr ""
+
+msgid "Win the multiplier times the high minus close."
+msgstr ""
+
+msgid "Win the multiplier times the high minus low."
+msgstr ""
+
 msgid "Windows"
 msgstr "Windows"
 
@@ -11954,6 +12032,9 @@ msgstr "對於通過您的網站連結或在註冊過程中引用您的聯盟會
 
 msgid "Withdraw"
 msgstr "取款"
+
+msgid "Withdraw from MT5"
+msgstr "自MT5提款"
 
 msgid "Withdraw funds from your MT5 account"
 msgstr "從您的 MT5 帳戶中提取資金"
@@ -12567,6 +12648,9 @@ msgstr "您的帳戶不應該被用來作為銀行信貸，而存款應該被視
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "您的帳戶不應該被用來作為銀行信貸，而存款應該被視為只用以進行交易的資金。本公司不是金融機構，客戶存款將不會有利息。如果您重覆進行存款和取款，卻沒有進行相稱的交易，在關閉帳戶之前，我們保留在不事先通知的情況下把我們所承擔的任何銀行費用轉到您帳戶的權利。"
 
+msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
+msgstr "我們的自動化系統無法驗證您的地址。您可以繼續操作, 但請確保您提供完整地址。"
+
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "然後我們的審核和行銷部門將審查您的申請。一旦批准，我們將把您列入 <a href='%1'>付款代理</a>列表。"
 
@@ -12780,6 +12864,9 @@ msgstr "公正準確地向客戶描述其服務。"
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 msgstr "跟踪和/或執行和/或遵守經修訂和/或重新制訂和/或隨時更換的公司所有與業務有關的指示和/或政策和/或程序。"
 
+msgid "for MT5 Account"
+msgstr "mT5帳戶專用"
+
 msgid "for exclusive updates on the ICO."
 msgstr "用於 ICO 的獨家更新。"
 
@@ -12881,6 +12968,9 @@ msgstr "借記到您真實帳戶的實現利潤和從您真實帳戶扣除的實
 
 msgid "numbers"
 msgstr "號碼"
+
+msgid "or"
+msgstr "或"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "所有合約準確結算時間的頁面。其他網站可能會有不同的慣例（比如一些網站採用紐約時間4點或倫敦時間5點）。由於不同的收盤時間慣例，在本網站顯示的開盤、高、低或收盤價可能跟其他網站不一致。"

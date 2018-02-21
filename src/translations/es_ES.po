@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-05 19:49-0500\n"
+"PO-Revision-Date: 2018-02-20 21:40-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -102,13 +102,22 @@ msgstr ""
 msgid "%1 Account"
 msgstr "Cuenta %1"
 
+msgid "%1 Account %2"
+msgstr ""
+
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Términos y condiciones del programa de afiliados de %1"
 
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Términos y condiciones de la Interfaz del Programa de la Aplicación (\"API\") %1"
 
+msgid "%1 Graduate Programme"
+msgstr ""
+
 msgid "%1 Graduate programme"
+msgstr ""
+
+msgid "%1 Hackathon Competition"
 msgstr ""
 
 msgid "%1 ICO"
@@ -474,6 +483,9 @@ msgstr "El premio \"Mejor Empresa de Probabilidades Fijas 2012\" de Global Banki
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "El premio \"Operador de Apuestas Financieras del Año\" de eGaming Review"
 
+msgid "(6,000 – 5,200) * 2 = $1600"
+msgstr ""
+
 msgid "(One) Touch trades"
 msgstr "Contratos Toque"
 
@@ -488,12 +500,6 @@ msgstr "* Libre de impuestos: En muchos países, los beneficios procedentes de o
 
 msgid "*All calls are recorded for training and monitoring purposes"
 msgstr "*Todas nuestras llamadas se graban para fines de capacitación y supervisión"
-
-msgid "*Lot size volume = 1.0."
-msgstr ""
-
-msgid "*These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr ""
 
 msgid "0-1 year"
 msgstr "0-1 año(s)"
@@ -732,6 +738,9 @@ msgstr "Un líder en la industria de opciones binarias por más de 15 años"
 msgid "A list of payment methods you will accept from Clients"
 msgstr "Una lista de los métodos de pago que usted aceptará de los clientes"
 
+msgid "A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to \"look back\" over time to determine the payout."
+msgstr ""
+
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "Un hablante nativo con dominio del inglés muy bueno, tanto de forma oral como escrita"
 
@@ -924,7 +933,7 @@ msgstr "Saldo de la cuenta:"
 msgid "Account balance: "
 msgstr "Saldo de la cuenta: "
 
-msgid "Account comparison*"
+msgid "Account comparison"
 msgstr ""
 
 msgid "Account currency"
@@ -2036,6 +2045,15 @@ msgstr ""
 msgid "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 msgstr ""
 
+msgid "By purchasing the %1‘Close-Low’%2 contract, you’ll win the multiplier times the difference between the %1close%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Close’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1close%2 over the duration of the contract."
+msgstr ""
+
+msgid "By purchasing the %1‘High-Low’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
+msgstr ""
+
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "Al registrar una aplicación de software, sitio web, o producto que usted crea o un servicio que usted ofrece (una \"Aplicación\"), usted reconoce que ha leído y entendido estos términos y los reconoce como vinculantes."
 
@@ -2070,13 +2088,13 @@ msgid "CONVERTIBLE DIGITAL TOKENS"
 msgstr ""
 
 msgid "Can %1 tokens be mined?"
-msgstr ""
+msgstr "¿Se pueden minar los tokens de %1?"
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "¿Puedo convertirme en un afiliado incluso si no tengo un sitio web?"
 
 msgid "Can I bid on your tokens in cryptocurrencies such as Bitcoin?"
-msgstr ""
+msgstr "¿Es posible presentar una oferta en criptomonedas como Bitcoin?"
 
 msgid "Can I contribute to back-end code?"
 msgstr ""
@@ -2088,7 +2106,7 @@ msgid "Can I offer my referrals an incentive to sign up through my link rather t
 msgstr "¿Puedo ofrecer a mis referencias un incentivo para que se registren a través de mi enlace en lugar de registrarse de forma directa?"
 
 msgid "Can I sell my ERC20 tokens once they are listed on the %1Lykke.com%2 Exchange?"
-msgstr ""
+msgstr "¿Puedo vender mis tokens ERC20 una vez se coticen en %1Lykke.com%2?"
 
 msgid "Can I submit security vulnerabilities?"
 msgstr ""
@@ -2137,9 +2155,6 @@ msgstr "Cancelar oferta"
 
 msgid "Cancel bid?"
 msgstr "¿Cancelar oferta?"
-
-msgid "Career opportunities for Americans"
-msgstr ""
 
 msgid "Careers"
 msgstr "Carreras"
@@ -2424,7 +2439,13 @@ msgstr "Dinero de clientes"
 msgid "Clients' trade allocations start from 0.01 lots"
 msgstr ""
 
+msgid "Close"
+msgstr ""
+
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
+msgstr ""
+
+msgid "Close-Low"
 msgstr ""
 
 msgid "Closed"
@@ -2778,6 +2799,9 @@ msgstr "Crear una cuenta nueva"
 msgid "Create New Token"
 msgstr "Crear un token nuevo"
 
+msgid "Create account with Google"
+msgstr ""
+
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Crear contenido claro, conciso y atractivo para mostrar en el sitio web, el blog, los medios sociales y los materiales de marketing de la compañía"
 
@@ -3030,9 +3054,6 @@ msgstr ""
 msgid "Deposit funds and begin trading"
 msgstr ""
 
-msgid "Deposit funds into your MT5 account"
-msgstr ""
-
 msgid "Deposit or withdraw below"
 msgstr ""
 
@@ -3154,7 +3175,7 @@ msgid "Dividends paid out"
 msgstr "Dividendos pagados"
 
 msgid "Dividends will generally be distributed once a year."
-msgstr ""
+msgstr "Los dividendos se distribuyen generalmente una vez al año."
 
 msgid "Divorce Settlement"
 msgstr ""
@@ -3600,9 +3621,6 @@ msgstr ""
 msgid "Euro vs US Dollar"
 msgstr ""
 
-msgid "Eurobasket Wolves"
-msgstr ""
-
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Ltd."
 msgstr ""
 
@@ -4011,6 +4029,9 @@ msgstr ""
 msgid "For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction."
 msgstr ""
 
+msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
+msgstr ""
+
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr ""
 
@@ -4027,6 +4048,9 @@ msgid "For further background information please read our blog post, <a href='%1
 msgstr ""
 
 msgid "For general support:"
+msgstr ""
+
+msgid "For information about Forex leverage refer to our %1Margin Policy%2."
 msgstr ""
 
 msgid "For payments-related queries:"
@@ -4398,6 +4422,9 @@ msgstr "Cobertura"
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr ""
 
+msgid "High"
+msgstr ""
+
 msgid "High Barrier"
 msgstr "Barrera Superior"
 
@@ -4417,6 +4444,15 @@ msgid "High frequency (2 ticks per second)"
 msgstr ""
 
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
+msgstr ""
+
+msgid "High, Low and Close"
+msgstr ""
+
+msgid "High-Close"
+msgstr ""
+
+msgid "High-Low"
 msgstr ""
 
 msgid "Higher"
@@ -4468,7 +4504,7 @@ msgid "How can I become an affiliate?"
 msgstr "¿Cómo puedo convertirme en un afiliado?"
 
 msgid "How can I convert my tokens into ordinary shares?"
-msgstr ""
+msgstr "¿Cómo puedo convertir mis tokens en acciones comunes?"
 
 msgid "How can I find out more about %1?"
 msgstr "¿Cómo puedo averiguar más acerca de %1?"
@@ -4670,9 +4706,6 @@ msgstr ""
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr ""
-
-msgid "ICO Bids"
-msgstr "Ofertas de ICO"
 
 msgid "ICO is live, participate now!"
 msgstr "La ICO ya está disponible, ¡Participe ahora!"
@@ -6271,9 +6304,6 @@ msgstr "Historial de accesos"
 msgid "Login ID"
 msgstr "Identificación de acceso"
 
-msgid "Login ID:"
-msgstr ""
-
 msgid "Login time:"
 msgstr "Tiempo de ingreso:"
 
@@ -6295,7 +6325,7 @@ msgstr ""
 msgid "Long:"
 msgstr ""
 
-msgid "Looking for a new and exciting career in a country that's modern, diverse, and tolerant? %1 is one of the world's most progressive companies, with offices in Asia and Europe."
+msgid "Lookbacks"
 msgstr ""
 
 msgid "Loss"
@@ -6304,13 +6334,16 @@ msgstr "Pérdida"
 msgid "Lot Size (Volume = 1.0)"
 msgstr ""
 
-msgid "Lot size*"
+msgid "Lot size"
 msgstr ""
 
 msgid "Lot units"
 msgstr ""
 
 msgid "Lots"
+msgstr ""
+
+msgid "Low"
 msgstr ""
 
 msgid "Low Barrier"
@@ -6344,6 +6377,9 @@ msgid "MENA FFXPO Award"
 msgstr "Premio FFXPO de MENA"
 
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
+msgstr ""
+
+msgid "MT5 Account:"
 msgstr ""
 
 msgid "MT5 Demo"
@@ -6490,12 +6526,6 @@ msgstr ""
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 msgstr ""
 
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr ""
-
-msgid "Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset's value as margin."
-msgstr ""
-
 msgid "Market"
 msgstr ""
 
@@ -6604,9 +6634,6 @@ msgstr ""
 msgid "Maximum upload size for each file is 3MB"
 msgstr ""
 
-msgid "Maximum volume"
-msgstr ""
-
 msgid "May"
 msgstr "May"
 
@@ -6664,6 +6691,9 @@ msgstr "Método"
 msgid "Min"
 msgstr ""
 
+msgid "Min / Max withdrawal"
+msgstr ""
+
 msgid "Min Withdrawal"
 msgstr ""
 
@@ -6678,9 +6708,6 @@ msgstr ""
 
 msgid "Min. Volume<br>(Lot Size)"
 msgstr ""
-
-msgid "Min: 10 Max: 2000"
-msgstr "Min: 10 Max: 2000"
 
 msgid "Minimum Spread"
 msgstr ""
@@ -6713,6 +6740,9 @@ msgid "Minimum of six months validity"
 msgstr ""
 
 msgid "Minimum ticket size"
+msgstr ""
+
+msgid "Minimum volume"
 msgstr ""
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
@@ -6784,7 +6814,7 @@ msgstr "Más ventajas"
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Más específicamente, cuando hacemos un contrato de opciones binarias con usted (un \"Contrato\"), tenemos el deber de ofrecerle la \"mejor ejecución\". La mejor ejecución significa que debemos tomar las medidas razonables para obtener el mejor resultado posible para usted al ejecutar la orden para usted. Este documento proporciona un resumen de nuestra política de la mejor ejecución."
 
-msgid "Most brokers require minimum deposit. %1 doesn't require any minimum deposit."
+msgid "Most brokers require a minimum deposit. %1 doesn't require any minimum deposit."
 msgstr ""
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
@@ -6831,6 +6861,9 @@ msgstr ""
 
 msgid "Multiple trading opportunities"
 msgstr "Múltiples modalidades de negociación"
+
+msgid "Multiplier"
+msgstr ""
 
 msgid "Must be a clear, colour photo or scanned image"
 msgstr ""
@@ -7004,7 +7037,7 @@ msgid "No."
 msgstr "No."
 
 msgid "No. %1 tokens are securities-backed tokens which come with exclusive tokenholder rights. They cannot be mined."
-msgstr ""
+msgstr "No. los tokens de %1 se basan en valores que portan derechos exclusivos para sus titulares. No es posible minarlos."
 
 msgid "No. Once your pull request is merged into master by our development team, and you have been paid, you have effectively handed over the rights to the code. It then becomes part of the master %1 codebase under the open-source license of the relevant repository."
 msgstr ""
@@ -7199,7 +7232,7 @@ msgid "Once you click the 'Submit' button, the funds will be withdrawn from your
 msgstr "Una vez que haga clic en el botón \"Enviar\" los fondos se retirarán de su cuenta y se enviarán a la cuenta de su Cliente."
 
 msgid "Once you’ve claimed your tokens, you are entitled to the following rights:"
-msgstr ""
+msgstr "Una vez reclame sus tokens, tendrá los siguientes derechos:"
 
 msgid "One Zero"
 msgstr ""
@@ -7218,6 +7251,9 @@ msgstr ""
 
 msgid "Online currency exchangers"
 msgstr "Intercambios de divisas en línea"
+
+msgid "Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
+msgstr ""
 
 msgid "Only %1 are allowed."
 msgstr "Se permiten solo %1."
@@ -7367,6 +7403,9 @@ msgid "Our Company"
 msgstr "Nuestra empresa"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
+msgstr ""
+
+msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
 msgstr ""
 
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
@@ -7582,6 +7621,9 @@ msgstr "Patentes"
 msgid "Pay no commission on all metal contracts."
 msgstr ""
 
+msgid "Pay-out"
+msgstr ""
+
 msgid "Payment Agent"
 msgstr "Agente de Pagos"
 
@@ -7617,6 +7659,9 @@ msgstr "El pago de la comisión ganada el mes anterior se realizará mensualment
 
 msgid "Payments"
 msgstr "Pagos"
+
+msgid "Payoff"
+msgstr ""
 
 msgid "Payout"
 msgstr "Pago"
@@ -7763,6 +7808,9 @@ msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr ""
 
 msgid "Please enter date in the format DD MMM, YYYY."
+msgstr ""
+
+msgid "Please enter your full address to avoid authentication delays."
 msgstr ""
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
@@ -8830,9 +8878,6 @@ msgstr "Precios atractivos y cotejados"
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
 msgstr ""
 
-msgid "Shop"
-msgstr "Tienda"
-
 msgid "Short"
 msgstr "Cortos"
 
@@ -9427,6 +9472,24 @@ msgstr ""
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr ""
 
+msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
+msgstr ""
+
+msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
+msgstr ""
+
+msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
+msgstr ""
+
+msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1low%2 is the lowest point ever reached by the market during the contract period."
+msgstr ""
+
+msgid "The %1start time%2 begins when the contract is processed by our servers."
+msgstr ""
+
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "La <strong>plataforma principal</strong> de opciones binarias en línea"
 
@@ -9646,9 +9709,6 @@ msgstr "Las leyes y regulaciones de protección de datos imponen obligaciones a 
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "El índice de EUR es un índice ponderado, que mide el valor del euro frente a una cesta de 5 divisas mundiales (USD, AUD, GBP, JPY, CAD), cada una ponderada por 20%."
 
-msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
-msgstr ""
-
 msgid "The European Commission recognised binary options as financial instruments in 2012, meaning increased credibility for licensed brokers."
 msgstr "La Comisión Europea reconoció las opciones binarias como instrumento financiero en 2012, lo que significa una mayor credibilidad para los corredores autorizados."
 
@@ -9860,7 +9920,7 @@ msgid "The default Stop Out Level applicable to your Account is published on our
 msgstr ""
 
 msgid "The definition of a professional investor varies based on jurisdiction. In essence, a professional investor refers to an investor who’s more experienced and is able to evaluate an investment opportunity with a full understanding of the risks involved."
-msgstr ""
+msgstr "La definición de inversionista profesional varía según la jurisdicción. En esencia, se refiere a un inversionista con más experiencia y que puede evaluar una oportunidad de inversión con un entendimiento pleno de los riesgos involucrados."
 
 msgid "The detailed report shows you your detailed traffic and income statistics. Use the filters and column selectors to break down your reporting as desired."
 msgstr ""
@@ -10029,7 +10089,7 @@ msgid "The price of the currency pair indicates how much of the quote currency i
 msgstr ""
 
 msgid "The price per token is determined by a Dutch auction where investors will enter bids for how many tokens they want to purchase at different prices. Once the bidding period is over, all accepted bids will be arranged from the highest to lowest price until all our tokens have been assigned, as per the process described in the Information Memorandum. The lowest price among all allotted tokens will be the final price that everyone pays."
-msgstr ""
+msgstr "El precio por token se determina en una subasta holandesa, en la que los inversionistas presentarán ofertas por la cantidad de tokens que desean comprar a diferentes precios. Una vez se acaba el período de subasta, se ordenarán todas las ofertas aceptadas en orden descendente hasta haber asignado todos nuestros tokens, conforme al proceso descrito en el Memorando de información. El precio final a pagar corresponderá al menor precio entre todos los tokens asignados."
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "El beneficio es la diferencia entre el pago y el precio de compra (la apuesta) de un contrato ganador."
@@ -10059,10 +10119,10 @@ msgid "The right to convert tokens into Ordinary Shares."
 msgstr "El derecho de convertir sus tokens en acciones comunes."
 
 msgid "The right to convert your tokens into ordinary shares"
-msgstr ""
+msgstr "El derecho de convertir sus tokens en acciones comunes"
 
 msgid "The right to receive dividend payments equivalent to dividends paid on Binary Group Ltd ordinary shares"
-msgstr ""
+msgstr "El derecho a recibir dividendos equivalentes a los dividendos de las acciones comunes de Binary Group Ltd"
 
 msgid "The right to receive payments equivalent to dividends paid on Binary Group Ltd. Ordinary Shares; and"
 msgstr "El derecho a recibir pagos equivalentes a los dividendos de las acciones comunes de Binary Group Ltd.; y"
@@ -10110,7 +10170,7 @@ msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote e
 msgstr ""
 
 msgid "The terms cover market value, jurisdictions, KYC and AML procedures, and necessary regulatory approvals. You may refer to the Information Memorandum (pp. 20-21) for more details."
-msgstr ""
+msgstr "En los términos, se abarcan temas como el valor de mercado, jurisdicciones, procedimientos KYC y AML, así como las aprobaciones regulatorias necesarias. Para más detalles, consulte el Memorando de información (págs. 20-21)."
 
 msgid "The tokens are offered via an auction process. To place a bid, you just need to deposit 5% of the total bid price upfront. After the auction is over and the final price is determined, you will have two weeks to deposit the balance payable depending on the final token price."
 msgstr ""
@@ -10245,9 +10305,6 @@ msgstr ""
 msgid "These materials may only be received by authorised persons (a person determined by the Company, in its sole discretion, entitled to receive the materials as prescribed by applicable laws and regulations, for example in EEA jurisdictions, pursuant to an exemption under the European Union's directive 2003/71/EC (as amended, including by directive 2010/73/EU), which includes, without limitation, the exemption relating to qualified investors (“Authorised Persons”). If an Authorised Person wishes to bid for tokens he may do so if he is registered client of Binary.com and has a Binary.com account, by which method the Company shall be able to verify his qualification as an Authorised Person. The Authorised Person who wishes to acquire tokens will make a bid.  The Company will collate and assess the bids.  The Company may request that bids are reconfirmed before they are considered valid for the purpose of the Company’s offer at the auction.  At the auction the Company will make an offer for the tokens, which offer will be accepted (by the auction process explained in the materials) by the bids, and the consideration for the purchase of such tokens offered and accepted will be settled by credit in the Authorised Person’s Binary.com account, which evidences the contract for sale and purchase of the respective tokens."
 msgstr "Estos materiales sólo pueden ser recibidos por personas autorizadas (una persona determinada por la Empresa, a su sola discreción, con derecho a recibir los materiales según lo establecido por las leyes y normativas aplicables, por ejemplo en las jurisdicciones del Espacio Económico Europeo (EEE), de conformidad con una exención en virtud de la Directiva 2003/71/CE de la Unión Europea (en su versión modificada, incluyendo la Directiva 2010/73/UE), que incorpora, sin limitación, la exención relativa a inversionistas cualificados (\"Personas autorizadas\"). Si una Persona Autorizada desea presentar una oferta por algún token puede hacerlo si es cliente registrado de Binary.com y tiene una cuenta en Binary.com, por medio de la cual la Empresa podrá corroborar su idoneidad como Persona Autorizada. La Persona Autorizada que desee adquirir tokens realizará una oferta. La Empresa cotejará y evaluará las ofertas. La Empresa puede solicitar que las ofertas sean reconfirmadas antes de que se consideren válidas (de acuerdo con el propósito de la oferta de la Empresa en la subasta). Durante la subasta, la Empresa realizará una propuesta de tokens, la cual será aceptada a través de la presentación de ofertas (de acuerdo con el proceso de subasta explicado en los materiales) y la contraprestación por la compra de dichos tokens ofrecidos y aceptados será liquidada a crédito en la cuenta de la Persona Autorizada en Binary.com, en la que se certificará el contrato de compraventa de los tokens respectivos."
 
-msgid "These numbers are for indicative purposes only, please verify them on our MT5 trading platform."
-msgstr ""
-
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr ""
 
@@ -10321,7 +10378,7 @@ msgid "This demo account comes with %1 of virtual funds. Please %2contact our cu
 msgstr ""
 
 msgid "This depends on the number of tokens that will be issued after the ICO."
-msgstr ""
+msgstr "Esto depende del número de tokens que se emitan después de la ICO."
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the %1 Application Program Interface (\"API\"); \"you\", or \"your\")."
 msgstr "Este documento (el \"Acuerdo\") expone los términos y condiciones  (\"Términos\") entre \"la Compañía\", que es Binary Services Ltd (\"nosotros,\" y \"nuestro\"), y usted (la persona que se registró para la Interfaz del Programa de Aplicación (API) de %1; \"usted\", o \"su\")."
@@ -10382,6 +10439,9 @@ msgstr "Este aviso le proporciona información acerca de los riesgos asociados a
 
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Esta oferta no se puede usar en combinación con otras ofertas."
+
+msgid "This page is not available in the selected language."
+msgstr ""
 
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Esta promoción solo está disponible para Clientes nuevos. No se aplica a Clientes actuales o anteriores. Está disponible solo una vez para cada Cliente."
@@ -10483,7 +10543,7 @@ msgid "To find out if the ICO is available in your jurisdiction, and, if so, if 
 msgstr "Para averiguar si la ICO está disponible en su jurisdicción y, si en tal caso, si está calificado para adquirir tokens, por favor seleccione su país en la lista desplegable en la página de nuestro %1Memorando de información%2."
 
 msgid "To find out if your bid is successful, you may refer to the ‘ICO Auction Bids’ section on the %1ICO bidding page%2."
-msgstr ""
+msgstr "Para averiguar si su oferta fue exitosa, puede consultar en la sección \"Ofertas de la subasta en la ICO\", en la %1página de oferta de la ICO%2."
 
 msgid "To find out more about %1, you can read about our %2group history%3, %4regulatory status%3, and %5company culture%3. You can also read the %6company blog%3."
 msgstr "Para obtener más información sobre %1, puede leer acerca de nuestra %2historia del grupo%3, %4situación reglamentaria%3 y %5cultura empresarial%3. También puede leer el %6blog de la empresa%3."
@@ -10498,18 +10558,12 @@ msgid "To go short, you'll click on 'Sell' to sell EUR 1 and receive USD 1.17725
 msgstr ""
 
 msgid "To implement our dividend payments feature, we will clone our tokens and each cloned token will represent dividend rights."
-msgstr ""
+msgstr "Para implementar nuestra función de pago de dividendos, clonaremos nuestros tokens, a fin de que cada token clonado represente derechos de dividendo."
 
 msgid "To learn more, please read our <a href='%1'>CFD contract specifications</a>."
 msgstr ""
 
-msgid "To learn more, read our %1Margin Policy%2 that further explains our 100% forced liquidation level for Forex."
-msgstr ""
-
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
-msgstr ""
-
-msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs."
 msgstr ""
 
 msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
@@ -10519,9 +10573,6 @@ msgid "To learn more, read our <a href=\"%1\">Forex Margin Policy</a> that furth
 msgstr ""
 
 msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
-msgstr ""
-
-msgid "To learn more, read our Metals %1Margin Policy%2 that further explains our 100% forced liquidation level for our metal pairs."
 msgstr ""
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with %1. A Real Account cannot be opened in the absence of a Binary Options Real Account."
@@ -10537,13 +10588,13 @@ msgid "To perform this action, please switch to your %1 Real Account."
 msgstr ""
 
 msgid "To place a bid, just enter the number of tokens you’d like to purchase and the price you’re willing to pay per token into the bid form on the %1ICO bidding page%2."
-msgstr ""
+msgstr "Para presentar una oferta, sólo debe ingresar el número de tokens que le gustaría comprar y el precio que está dispuesto a pagar por token al rellenar el formulario de oferta en la %1página de oferta de la ICO%2."
 
 msgid "To place a bid, you only need to deposit 5% of the total bid value. At the end of the auction, the final price of the token will be decided and you will have two weeks to settle the remaining balance that’s due on each active bid."
 msgstr "Para presentar una oferta, solo debe depositar 5% del valor total de su oferta. Al final de la subasta se decidirá el precio final del token y usted tendrá dos semanas para liquidar el saldo restante adeudado por cada oferta activa."
 
 msgid "To place a bid, you only need to place an initial deposit equivalent to 5% of the total amount. Your bids can be cancelled at any time before the end of the auction at no cost."
-msgstr ""
+msgstr "Para presentar una oferta, sólo debe realizar un depósito equivalente a 5% del monto total. Puede cancelar sin costo sus ofertas en cualquier momento antes del final de la subasta."
 
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Para ser considerado, necesitará un título universitario superior en Física, Ingeniería Financiera o Matemáticas"
@@ -10573,7 +10624,7 @@ msgid "Token sale ends in"
 msgstr "La venta de tokens termina en"
 
 msgid "Tokenholders who wish to convert their tokens into ordinary shares must serve us with a conversion notice – in line with the terms of the tokens."
-msgstr ""
+msgstr "Los titulares de tokens que deseen convertir sus tokens en acciones comunes deben presentar un aviso de conversión, conforme a los términos de los tokens."
 
 msgid "Tokens"
 msgstr "Tokens"
@@ -10809,9 +10860,6 @@ msgstr "Las operaciones con opciones binarias son especulaciones e implican un a
 msgid "Trading manual"
 msgstr "Trading manual"
 
-msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
-msgstr "Comercializar mercados financieros puede volverse adictivo. Complete el formulario a continuación para limitar su participación en el sitio web o enviar una carta firmada o fax a nuestro equipo de atención al cliente. Una vez establecidos, los límites sólo pueden ser ajustados. Los límites se eliminarán o alterarán sólo a partir de un período de 7 días después de establecer los límites con la excepción de la fecha de autoexclusión, que no puede ser suprimida o alterada una vez que se haya confirmado. Para eliminar o aumentar sus límites, por favor póngase en contacto con el servicio de <a href=\"%1\">atención al cliente</a>."
-
 msgid "TradingView for %1"
 msgstr ""
 
@@ -10842,11 +10890,17 @@ msgstr ""
 msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
 msgstr ""
 
+msgid "Transfer funds to your MT5 account"
+msgstr ""
+
 msgid "Transfer to"
 msgstr "Transferir a"
 
 msgid "Transfer to Login ID"
 msgstr "Transferir a usuario"
+
+msgid "Transfer to MT5"
+msgstr ""
 
 msgid "Transfer to Payment Agent"
 msgstr "Transferir a agente de pagos"
@@ -10919,6 +10973,9 @@ msgstr ""
 
 msgid "Types of Trades"
 msgstr "Tipos de contratos"
+
+msgid "Types of lookbacks"
+msgstr ""
 
 msgid "Types of trades"
 msgstr "Tipos de contratos"
@@ -11034,6 +11091,9 @@ msgstr "Desafortunadamente, no hay - los fondos depositados inicialmente a trav�
 msgid "United Kingdom"
 msgstr "Reino Unido"
 
+msgid "Units"
+msgstr ""
+
 msgid "University degree in Marketing, Communications, Journalism, or related discipline"
 msgstr "Un título universitario en Marketing, Comunicación, Periodismo u otra disciplina relacionada"
 
@@ -11137,6 +11197,9 @@ msgid "Utility bills (electricity, water, gas, broadband and landline)"
 msgstr ""
 
 msgid "Utility tokens are tokens that give you access to decentralised networks or applications."
+msgstr ""
+
+msgid "Validate address"
 msgstr ""
 
 msgid "Variable from 0.9 pips"
@@ -11460,6 +11523,9 @@ msgstr ""
 msgid "We offer an innovative product range for customers consisting of financial and synthetic instruments with durations ranging from 10 seconds to 365 days."
 msgstr "Ofrecemos una gama de productos innovadores para clientes que incluyen instrumentos financieros y sintéticos con una duración de 10 segundos a 365 días."
 
+msgid "We offer three types lookbacks:"
+msgstr ""
+
 msgid "We only pay for pull requests that are approved by our development team and merged into master. If the development team approves your pull request, we'll pay you in cryptocurrency. You can choose Bitcoin, Litecoin or Ether. "
 msgstr ""
 
@@ -11603,6 +11669,9 @@ msgstr "¿Qué son las acciones y los índices OTC?"
 
 msgid "What are binary options"
 msgstr "Qué son las opciones binarias"
+
+msgid "What are lookbacks"
+msgstr ""
 
 msgid "What are the benefits of purchasing tokens?"
 msgstr "¿Cuáles son los beneficios de comprar tokens?"
@@ -11935,6 +12004,15 @@ msgstr ""
 msgid "Will I need to install any software?"
 msgstr "¿Necesitaré instalar algún tipo de software?"
 
+msgid "Win the multiplier times the close minus low."
+msgstr ""
+
+msgid "Win the multiplier times the high minus close."
+msgstr ""
+
+msgid "Win the multiplier times the high minus low."
+msgstr ""
+
 msgid "Windows"
 msgstr ""
 
@@ -11967,6 +12045,9 @@ msgstr "Con respecto a realizar un seguimiento de sus referidos a %1 través de 
 
 msgid "Withdraw"
 msgstr "Retirar"
+
+msgid "Withdraw from MT5"
+msgstr ""
 
 msgid "Withdraw funds from your MT5 account"
 msgstr ""
@@ -12580,6 +12661,9 @@ msgstr "Su cuenta no debe ser utilizada como un banco, y los depósitos deben ha
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution. Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr ""
 
+msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
+msgstr ""
+
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Su solicitud será revisada por nuestros departamentos de cumplimiento y de marketing. Una vez aprobada, vamos a poner su información en vivo en nuestra lista de <a href='%1'>Agentes de Pago</a>."
 
@@ -12793,6 +12877,9 @@ msgstr ""
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 msgstr ""
 
+msgid "for MT5 Account"
+msgstr ""
+
 msgid "for exclusive updates on the ICO."
 msgstr "para novedades exclusivas sobre la ICO."
 
@@ -12894,6 +12981,9 @@ msgstr ""
 
 msgid "numbers"
 msgstr "números"
+
+msgid "or"
+msgstr ""
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "página para ver el momento exacto de liquidación de todos los contratos. Otros sitios pueden adoptar diferentes convenciones (por ejemplo, algunos sitios web eligen las 4 en punto, hora de Nueva York o las 5 en punto, hora de Londres). Por esto, los precios de apertura, los máximos, los mínimos y los de cierre en nuestro sitio pueden ser diferentes a los de otros sitios web, debido a la convención de la hora de cierre del mercado."

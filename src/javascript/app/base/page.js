@@ -138,10 +138,10 @@ const Page = (() => {
             Login.redirectToLogin();
         }
         if (Client.isLoggedIn()) {
-            BinarySocket.wait('authorize').then(() => {
+            BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 checkLanguage();
-                Menu.init();
                 RealityCheck.onLoad();
+                Menu.init();
                 const landing_company_name = State.getResponse('authorize.landing_company_name');
                 showHiddenElementsBasedOnCompany(landing_company_name);
             });
@@ -151,10 +151,6 @@ const Page = (() => {
             showHiddenElementsBasedOnCompany('default');
         }
         TrafficSource.setData();
-    };
-
-    const onUnload = () => {
-        Menu.onUnload();
     };
 
     const recordAffiliateExposure = () => {
@@ -230,7 +226,6 @@ const Page = (() => {
 
     return {
         onLoad,
-        onUnload,
         showNotificationOutdatedBrowser,
     };
 })();
