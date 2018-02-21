@@ -69,23 +69,25 @@ const Page = (() => {
         const VISIBLE_CLASSNAME = 'visible';
 
         function parseAttributeString(attrStr) {
-            const genericErrorMessage = 'Invalid data-show attribute value!';
+            function generateErrorMessage(reason) {
+                return `Invalid data-show attribute value! ${reason} Given value: '${attrStr}'.`;
+            }
 
             if (!/^[a-z,-\s]+$/.test(attrStr)) {
-                throw new Error(`${genericErrorMessage} Invalid characted used. Given value: '${attrStr}'`);
+                throw new Error(generateErrorMessage('Invalid characted used.'));
             }
 
             let names = attrStr.split(',').map(name => name.trim());
 
             if (names.some(name => name.length === 0)) {
-                throw new Error(`${genericErrorMessage} No empty names allowed. Given value: '${attrStr}'.`);
+                throw new Error(generateErrorMessage('No empty names allowed.'));
             }
 
             const isExclude = names.every(name => name[0] === '-');
             const isInclude = names.every(name => name[0] !== '-');
 
             if (!isExclude && !isInclude) {
-                throw new Error(`${genericErrorMessage} No mixing of includes and excludes allowed. Given value: '${attrStr}'`);
+                throw new Error(generateErrorMessage('No mixing of includes and excludes allowed.'));
             }
 
             if (isExclude) {
