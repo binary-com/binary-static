@@ -124,16 +124,16 @@ const WhyUs = () => (
                 <Section id='trust' header={it.L('Go with the leader')}>
                     <div className='gr-row'>
                         <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-t2w.png')} />
+                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/TW2.svg')} />
                         </div>
                         <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg')} />
+                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/GBAF.svg')} />
                         </div>
                         <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-egr.png')} />
+                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/EGR.svg')} />
                         </div>
                         <div className='gr-3 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-mena.png')} />
+                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/MenaFxPro.svg')} />
                         </div>
                         <div className='gr-3 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
                             <img className='responsive' src={it.url_for('images/pages/home/awards-opwa.svg')} />
