@@ -45,17 +45,6 @@ const Charity = () => (
 
             <div className='section-content'>
                 <CharityHelper
-                    country={it.L('Malta')}
-                    charities={[
-                        {
-                            image   : 'eurobasket_wolves',
-                            title   : it.L('Eurobasket Wolves'),
-                            text    : it.L('The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds.'),
-                            contacts: [{ text: it.L('Contact'), mailto: true, href: 'eubasket@hotmail.com' }],
-                        },
-                    ]}
-                />
-                <CharityHelper
                     country={it.L('Malaysia')}
                     charities={[
                         {

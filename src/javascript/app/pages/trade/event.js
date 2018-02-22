@@ -228,6 +228,21 @@ const TradingEvents = (() => {
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));
 
+        /*
+         * attach event to change in amount, request new price only
+         */
+        const multiplier_element = document.getElementById('multiplier');
+        if (multiplier_element) {
+            multiplier_element.addEventListener('keypress', onlyNumericOnKeypress);
+
+            multiplier_element.addEventListener('input', CommonTrading.debounce((e) => {
+                e.target.value = e.target.value.replace(/^0*(\d\.?)/, '$1');
+                Defaults.set('multiplier', e.target.value);
+                Price.processPriceRequest();
+                CommonTrading.submitForm(document.getElementById('websocket_form'));
+            }));
+        }
+
         let timepicker_initialized = false;
         const initTimePicker       = () => {
             if (timepicker_initialized) return;
@@ -311,7 +326,7 @@ const TradingEvents = (() => {
         /*
          * attach an event to change in currency
          */
-        getElementById('currency').addEventListener('change', (e) => {
+        $('.currency').on('change', (e) => {
             const currency = e.target.value;
             Defaults.set('currency', currency);
             const amount = isCryptocurrency(currency) ? 'amount_crypto' : 'amount';

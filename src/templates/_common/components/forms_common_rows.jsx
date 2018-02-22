@@ -169,3 +169,13 @@ export const ClientMessage = () => (
         </div>
     </div>
  );
+
+export const GeocodeResponse = () => (
+    <div className='gr-row'>
+        <div className='gr-12 gr-padding-10 center-text'>
+            <p id='geocode_error' className='notice-msg no-margin invisible'>
+                {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
+            </p>
+        </div>
+    </div>
+);

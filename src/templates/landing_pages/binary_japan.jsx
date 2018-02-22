@@ -1,34 +1,18 @@
 import React from 'react';
-import Title from '../_common/components/title.jsx';
-import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
-import Favicons from '../_common/includes/favicons.jsx';
+import Layout from './_common/layout.jsx';
 
 const BinaryJapan = () => (
-    <html>
-        <head>
-            <AntiClickjack />
-
-            <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
-            <meta httpEquiv='Content-Language' content={it.language} />
-            <meta name='description' content={`${it.broker_name} gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities.`} />
-            <meta name='keywords' content='binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading' />
-            <meta name='author' content={it.broker_name} />
-            <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-            <meta name='dcterms.rightsHolder' content={it.broker_name} />
-            <meta name='dcterms.rights' content={it.broker_name} />
-            <meta property='og:title' content={it.broker_name} />
-            <meta property='og:type' content='website' />
-            <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
-
-            <Title />
-
-            <Favicons />
-
-            <link href={`${it.url_for('css/japan.css')}?${it.static_hash}`} rel='stylesheet' />
-            <link href={`https://style.binary.com/binary.css?${it.static_hash}`} rel='stylesheet' />
-        </head>
-
-        <body>
+    <Layout
+        css_files={[
+            it.url_for('css/japan.css'),
+            'https://style.binary.com/binary.css',
+        ]}
+        js_files={[
+            'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js',
+            it.url_for('js/landing_pages/common.js'),
+            it.url_for('js/landing_pages/japan.js'),
+        ]}
+    >
         <div className='navbar-fixed-top' role='navigation' id='navigation'>
             <div className='container'>
                 <div className='navbar-header gr-row'>
@@ -39,9 +23,12 @@ const BinaryJapan = () => (
                     </div>
                     <div className='gr-6 gr-12-m'>
                         <div className='navbar-item-align-right'>
-                            <img className='navbar-icon' src={it.url_for('images/japan/version1/fsa-logo@2x.png')} />
-                            <img className='navbar-icon' src={it.url_for('images/japan/version1/binarykk-logo@2x.png')} />
-                            <img className='navbar-icon' src={it.url_for('images/japan/version1/jsf@2x.png')} />
+                            <a href='http://www.ffaj.or.jp/index.html' target='_blank' rel='noopener noreferrer'>
+                                <img className='navbar-icon' src={it.url_for('images/japan/version1/fsa-logo@2x.png')} />
+                            </a>
+                            <a href='http://www.fsa.go.jp/index.html' target='_blank' rel='noopener noreferrer'>
+                                <img className='navbar-icon' src={it.url_for('images/japan/version1/binarykk-logo@2x.png')} />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -105,7 +92,7 @@ const BinaryJapan = () => (
                                     <span className='icon-sm icon-1'></span>
                                     <span className='icon-sm icon-2'></span>
                                 </div>
-                                <h4 className='color-orange text-medium'>{it.L('{JAPAN ONLY}Ladder Options')}</h4>
+                                <h3 className='color-orange text-medium'>{it.L('{JAPAN ONLY}Ladder Options')}</h3>
                                 <p className='text-desc'>{it.L('{JAPAN ONLY}At the time of the judgement time predice the judgement rate above the barrier price or below the barrier price')}</p>
                             </div>
                             <div className='card-footer'>
@@ -128,7 +115,7 @@ const BinaryJapan = () => (
                                     <span className='icon-sm icon-3'></span>
                                     <span className='icon-sm icon-4'></span>
                                 </div>
-                                <h4 className='color-orange text-medium'>{it.L('{JAPAN ONLY}Touch Options')}</h4>
+                                <h3 className='color-orange text-medium'>{it.L('{JAPAN ONLY}Touch Options')}</h3>
                                 <p className='text-desc'>{it.L('{JAPAN ONLY}We predict whether market price will touch barrier price by the end of trading period')}</p>
                             </div>
                             <div className='card-footer'>
@@ -151,7 +138,7 @@ const BinaryJapan = () => (
                                     <span className='icon-sm icon-5'></span>
                                     <span className='icon-sm icon-6'></span>
                                 </div>
-                                <h4 className='color-orange text-medium'>{it.L('{JAPAN ONLY}Range Options: End-In / End-Out')}</h4>
+                                <h3 className='color-orange text-medium'>{it.L('{JAPAN ONLY}Range Options: End-In / End-Out')}</h3>
                                 <p className='text-desc'>{it.L('{JAPAN ONLY}At the judgement time, predit the judgement rate to be less thatn the upper limit barrier and above the lower limit barrier, or above the upper limit barrier or below the lower limit barrier')}</p>
                             </div>
                             <div className='card-footer'>
@@ -174,7 +161,7 @@ const BinaryJapan = () => (
                                 <span className='icon-sm icon-7'></span>
                                 <span className='icon-sm icon-8'></span>
                             </div>
-                            <h4 className='color-orange text-medium'>{it.L('{JAPAN ONLY}Range Option: Stay-In / Break-Out')}</h4>
+                            <h3 className='color-orange text-medium'>{it.L('{JAPAN ONLY}Range Option: Stay-In / Break-Out')}</h3>
                             <p className='text-desc'>{it.L('{JAPAN ONLY}It predicts whether the market price during the trading period is less than the upper limit barrier and maintains the lower limit barrier excess, or becomes equal to or higher than the upper limit barrier or belowe the lower limit barrier')}</p>
                             </div>
                             <div className='card-footer'>
@@ -196,7 +183,7 @@ const BinaryJapan = () => (
                     <div className='gr-4 gr-12-m'>
                         <div className='card'>
                             <div className='card-body'>
-                                <h4 className='bg-bubble'>{it.L('{JAPAN ONLY}Set exchange rate')}</h4>
+                                <h3 className='bg-bubble'>{it.L('{JAPAN ONLY}Set exchange rate')}</h3>
                                 <img className='equal-height' src={it.url_for('images/japan/version1/coin.svg')} />
                             </div>
                         </div>
@@ -204,7 +191,7 @@ const BinaryJapan = () => (
                     <div className='gr-4 gr-12-m'>
                         <div className='card'>
                             <div className='card-body'>
-                                <h4 className='bg-bubble'>{it.L('{JAPAN ONLY}Set amount (lot number)')}</h4>
+                                <h3 className='bg-bubble'>{it.L('{JAPAN ONLY}Set amount (lot number)')}</h3>
                                 <img className='equal-height' src={it.url_for('images/japan/version1/slider.svg')} />
                             </div>
                         </div>
@@ -212,7 +199,7 @@ const BinaryJapan = () => (
                     <div className='gr-4 gr-12-m'>
                         <div className='card'>
                             <div className='card-body'>
-                                <h4 className='bg-bubble'>{it.L('{JAPAN ONLY}Higher/lower rate')}</h4>
+                                <h3 className='bg-bubble'>{it.L('{JAPAN ONLY}Higher/lower rate')}</h3>
                                 <img className='equal-height' src={it.url_for('images/japan/version1/high-low.svg')} />
                             </div>
                         </div>
@@ -229,14 +216,14 @@ const BinaryJapan = () => (
             </div>
             <div className='container'>
                 <div className='gr-row gr-row-align-center gr-row-align-bottom'>
-                    <div className='gr-4 gr-10-m center-text'>
+                    <div className='gr-4 gr-6-p gr-10-m center-text'>
                         <div className='bg bg-bubble-box'>
                             <h1>{it.L('{JAPAN ONLY}High speed execution')}</h1>
                         </div>
                         <img className='responsive' src={it.url_for('images/japan/version1/bg-light-blue.svg')} />
                     </div>
-                    <div className='gr-4 gr-12-m'>
-                        <div className=''>
+                    <div className='gr-4 gr-6-p gr-12-m'>
+                        <div>
                             <h2 className='color-orange text-medium'>{it.L('{JAPAN ONLY}You can purchase a trade with one click')}</h2>
                             <p className='color-blue'>{it.L('{JAPAN ONLY}Just switch this button to prevent misoperation')}</p>
                             <img className='' src={it.url_for('images/japan/version1/lock-switch.svg')} />
@@ -292,8 +279,8 @@ const BinaryJapan = () => (
                                     </div>
                                 </div>
                                 <span className='card-divider'></span>
-                                <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}1 lot = $ 100,000, margin: ')}</p>
-                                <p className='size-2'>{it.L('{JAPAN ONLY}Profit / loss per point (0.01) = ¥ 1,000')}</p>
+                                <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}1 lot = $ 100,000, margin: ')}</p>
+                                <p className='size-2 big-spacing'>{it.L('{JAPAN ONLY}Profit / loss per point (0.01) = ¥ 1,000')}</p>
                                 <p className='bg-gray size-3'>{it.L('{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000')}</p>
                                 <div className='flex'>
                                     <img className='icon-md' src={it.url_for('images/japan/version1/sad-face.svg')} />
@@ -302,8 +289,8 @@ const BinaryJapan = () => (
                                         {it.L('{JAPAN ONLY}Maximum loss: not guaranteed')}</p>
                                 </div>
                             </div>
-                            <div className='card-footer'>
-                                <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000')}</p>
+                            <div className='card-footer pull-text'>
+                                <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000')}</p>
                             </div>
                         </div>
                     </div>
@@ -344,8 +331,8 @@ const BinaryJapan = () => (
                                     </div>
                                 </div>
                                 <span className='card-divider'></span>
-                                <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}If spot rate is at above target rate at judgment time, the profil will be:')}</p>
-                                <p className='size-2'>{it.L('{JAPAN ONLY}Option price assumes 1 hour to judgment time, volatility = 8.5%, spread = 40 yen')}</p>
+                                <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}If spot rate is at above target rate at judgment time, the profil will be:')}</p>
+                                <p className='size-2 fixed-width'>{it.L('{JAPAN ONLY}Option price assumes 1 hour to judgment time, volatility = 8.5%, spread = 40 yen')}</p>
                                 <p className='bg-gray size-3'>{it.L('{JAPAN ONLY}50 lots: maximum loss: - ¥ 10,000 | target profit: ¥ 40,000')}</p>
                                 <div className='flex'>
                                     <img className='icon-md' src={it.url_for('images/japan/version1/happy-face.svg')} />
@@ -356,7 +343,7 @@ const BinaryJapan = () => (
                                 </div>
                             </div>
                             <div className='card-footer'>
-                                <p className='size-1 color-gray'>{it.L('{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000')}</p>
+                                <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000')}</p>
                             </div>
                         </div>
                     </div>
@@ -448,7 +435,7 @@ const BinaryJapan = () => (
             <div  className='container'>
                 <div className='gr-row'>
                     <div className='section-title gr-12'>
-                        <h1 className='bg-orange text-semibold v-padding center-text'>{it.L('{JAPAN ONLY}YOUR FUNDS ARE HELD SECURELY')}</h1>
+                        <h2 className='bg-orange text-semibold v-padding color-white center-text'>{it.L('{JAPAN ONLY}YOUR FUNDS ARE HELD SECURELY')}</h2>
                     </div>
                     <h2 className='subtitle color-blue text-semibold gr-12'>{it.L('{JAPAN ONLY}All customer funds are deposited with JSF Trust & Banking, and in the event of our business failure, they will be refunde via an independent attorney acting as beneficiary agent')}</h2>
 
@@ -489,15 +476,15 @@ const BinaryJapan = () => (
                             <div className='card-body gr-row'>
                                 <div className='gr-2 gr-push-1 gr-4-p gr-push-0-p gr-10-m gr-push-1-m'>
                                     <img className='img-md' src={it.url_for('images/japan/version1/customer-support.svg')} />
-                                    <h3 className='size-3'>{it.L('{JAPAN ONLY}We have a support team to answer your questions: <a href=\'mailto:support@binary.com\'>support@binary.com</a>')}</h3>
+                                    <p>{it.L('{JAPAN ONLY}We have a support team to answer your questions: <a href=\'mailto:support@binary.com\'>support@binary.com</a>')}</p>
                                 </div>
                                 <div className='gr-2 gr-push-3 gr-4-p gr-push-0-p gr-10-m gr-push-1-m'>
                                     <img className='img-md' src={it.url_for('images/japan/version1/accounting-book.svg')} />
-                                    <h3 className='size-3'>{it.L('{JAPAN ONLY}We will give you a virtual account that already has ¥ 1,000,000.')}</h3>
+                                    <p>{it.L('{JAPAN ONLY}We will give you a virtual account that already has ¥ 1,000,000.')}</p>
                                 </div>
                                 <div className='gr-2 gr-push-5 gr-4-p gr-push-0-p gr-10-m gr-push-1-m'>
                                     <img className='img-md' src={it.url_for('images/japan/version1/school.svg')} />
-                                    <h3 className='size-3'>{it.L('{JAPAN ONLY}Learn more about binary options for academies using webinars, ebooks, videos.')}</h3>
+                                    <p>{it.L('{JAPAN ONLY}Learn more about binary options for academies using webinars, ebooks, videos.')}</p>
                                 </div>
                             </div>
                         </div>
@@ -602,13 +589,7 @@ const BinaryJapan = () => (
         </footer>
 
         <div id='affiliate_disclaimer_popup'></div>
-
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.js'></script>
-        <script src={`${it.url_for('js/landing_pages/common.js')}?${it.static_hash}`}></script>
-        <script src={`${it.url_for('js/landing_pages/japan.js')}?${it.static_hash}`}></script>
-        </body>
-    </html>
-
+    </Layout>
 );
 
 export default BinaryJapan;

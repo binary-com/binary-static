@@ -97,6 +97,10 @@
     .act {
         flex: 0.8 1 35px;
     }
+    #jump-to {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 @media screen and (max-width: 480px) {

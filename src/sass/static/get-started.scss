@@ -150,3 +150,14 @@
         background-image: url('../images/pages/get-started-jp/contract.svg');
     }
 }
+
+.formula span {
+    display: inline-block;
+    padding: 10px 20px;
+    min-width: 60%;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background: $COLOR_LIGHT_GRAY;
+    color: $COLOR_BLUE_SHADE;
+}

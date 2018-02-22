@@ -59,7 +59,7 @@ const Clock = (() => {
         if (!clock_started) {
             getTime();
             clearInterval(get_time_interval);
-            get_time_interval = setInterval(getTime, 30000);
+            get_time_interval = setInterval(getTime, 15000);
 
             el_clock = getElementById('gmt-clock');
             clock_started = true;

@@ -157,6 +157,10 @@ const Contract = (() => {
                             trade_contract_forms.evenodd   = localize('Even/Odd');
                             trade_contract_forms.overunder = localize('Over/Under');
                         }
+                    } else if (contract_category === 'lookback') {
+                        trade_contract_forms.lookbackhigh    = localize('High-Close');
+                        trade_contract_forms.lookbacklow     = localize('Close-Low');
+                        trade_contract_forms.lookbackhighlow = localize('High-Low');
                     }
                 }
             }

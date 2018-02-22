@@ -70,12 +70,9 @@ const Metatrader = () => (
             <p id='page_msg' className='notice-msg center-text invisible'></p>
             <div id='mt_loading'><Loading /></div>
             <div id='mt_account_management' className='gr-row invisible'>
-                <div id='mt_left_panel' className='gr-9 gr-8-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
+                <div id='mt_left_panel' className='gr-9 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
                     <div id='account_details' className='mt-panel mt-container'>
                         <div className='gr-row'>
-                            <div className='gr-adapt gr-hide-m gr-hide-p gr-hide-t'>
-                                <div id='acc_icon'></div>
-                            </div>
                             <div className='gr-grow'>
                                 <div className='gr-row'>
                                     <div className='gr-grow'>
@@ -86,7 +83,7 @@ const Metatrader = () => (
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='gr-grow gr-no-gutter'>
+                                    <div className='gr-grow'>
                                         <a className='button button-secondary act_new_account' href='javascript:;'>
                                             <span id='new_account_icon'>{it.L('New Account')}</span>
                                         </a>
@@ -94,7 +91,7 @@ const Metatrader = () => (
                                 </div>
                                 <div className='acc-info has-account invisible'>
                                     <div className='gr-row gr-padding-10'>
-                                        <div className='gr-3'>{it.L('Login ID:')}</div>
+                                        <div className='gr-3'>{it.L('MT5 Account:')}</div>
                                         <div className='gr-grow' data='login'></div>
                                     </div>
                                     <div className='gr-row'>
@@ -136,7 +133,7 @@ const Metatrader = () => (
                         </div>
                     </div>
                 </div>
-                <div id='mt_right_panel' className='gr-3 gr-4-t gr-12-p gr-12-m gr-no-gutter gr-gutter-left gr-no-gutter-p gr-no-gutter-m'>
+                <div id='mt_right_panel' className='gr-3 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-left gr-no-gutter-p gr-no-gutter-m'>
                     <div className='mt-panel'>
                         <div id='account_desc' className='mt-container border-bottom'></div>
                         <div className='mt-container'>
@@ -177,8 +174,8 @@ const Metatrader = () => (
                             <img src={it.url_for('images/pages/metatrader/dashboard/account.svg')} />
                         </div>
                         <div className='mt-balance invisible'>&nbsp;</div>
-                        <div className='mt-type'></div>
-                        <div className='mt-login invisible'></div>
+                        <span className='mt-type'></span>
+                        <span className='mt-login'></span>
                     </div>
 
 
@@ -310,7 +307,7 @@ const Metatrader = () => (
                                 <div className='gr-6 gr-12-m flex'>
                                     <div className='mt-panel mt-container'>
                                         <form id='frm_deposit'>
-                                            <CashierDesc title={it.L('Deposit funds into your MT5 account')} arrow_direction='right' desc={it.L('Transfer funds from your binary options account into your MetaTrader 5 account.')} />
+                                            <CashierDesc title={it.L('Transfer funds to your MT5 account')} arrow_direction='right' desc={it.L('Transfer funds from your binary options account into your MetaTrader 5 account.')} />
 
                                             <div className='form'>
                                                 <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} />
@@ -319,7 +316,7 @@ const Metatrader = () => (
                                                     is_full_width
                                                     type='submit'
                                                     id='btn_submit_deposit'
-                                                    text={it.L('Deposit')}
+                                                    text={it.L('Transfer to MT5')}
                                                     attributes={{ action: 'deposit' }}
                                                 />
                                             </div>
@@ -339,7 +336,7 @@ const Metatrader = () => (
                                                     is_full_width
                                                     type='submit'
                                                     id='btn_submit_withdrawal'
-                                                    text={it.L('Withdraw')}
+                                                    text={it.L('Withdraw from MT5')}
                                                     attributes={{ action: 'withdrawal' }}
                                                 />
                                             </div>

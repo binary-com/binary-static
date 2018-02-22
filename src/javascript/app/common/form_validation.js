@@ -13,9 +13,9 @@ const Validation = (() => {
     const hidden_class = 'invisible';
 
     const events_map = {
-        input   : 'input change',
-        select  : 'change',
-        checkbox: 'change',
+        input   : 'input.validation change.validation',
+        select  : 'change.validation',
+        checkbox: 'change.validation',
     };
 
     const getFieldType = ($field) => {
@@ -82,6 +82,7 @@ const Validation = (() => {
                     }
 
                     const event = events_map[field.type];
+
                     if (event) {
                         field.$.unbind(event).on(event, () => {
                             checkField(field);

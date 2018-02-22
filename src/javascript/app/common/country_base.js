@@ -4,6 +4,7 @@ const getElementById         = require('../../_common/common_functions').getElem
 const Crowdin                = require('../../_common/crowdin');
 const Language               = require('../../_common/language');
 const LocalStore             = require('../../_common/storage').LocalStore;
+const applyToAllElements     = require('../../_common/utility').applyToAllElements;
 
 const checkClientsCountry = () => {
     if (Crowdin.isInContext()) return;
@@ -47,7 +48,11 @@ const checkLanguage = () => {
     }
     if (jpClient()) {
         $('.ja-hide').setVisibility(0);
-        $('.ja-show').setVisibility(1);
+        applyToAllElements('.ja-show', (el) => {
+            if (!/client_logged_(in|out)/.test(el.classList)) {
+                el.setVisibility(1);
+            }
+        });
         if (!jpResidence()) {
             $('#topMenuCashier').hide();
         }

@@ -58,7 +58,7 @@ const TypesOfAccounts = () => (
 
         <div className='gr-padding-30'></div>
 
-        <h2 className='center-text'>{it.L('Account comparison*')}</h2>
+        <h2 className='center-text'>{it.L('Account comparison')}</h2>
         <div className='gr-padding-10'>
             <Table
                 scroll
@@ -83,7 +83,6 @@ const TypesOfAccounts = () => (
                     ],
                 }}
             />
-            <p className='hint gr-padding-10'>{it.L('*These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
         </div>
 
         <div className='gr-padding-10'></div>
@@ -119,7 +118,7 @@ const TypesOfAccounts = () => (
         <FootNote
             number={6}
             title={it.L('Minimum deposit')}
-            texts={[it.L('Most brokers require minimum deposit. [_1] doesn\'t require any minimum deposit.', it.website_name)]}
+            texts={[it.L('Most brokers require a minimum deposit. [_1] doesn\'t require any minimum deposit.', it.website_name)]}
         />
         <FootNote
             number={7}

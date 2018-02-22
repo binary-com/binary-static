@@ -57,6 +57,40 @@ footer {
     }
     p {
         margin: 0;
+
+        &.black-text {
+            color: $COLOR_BLACK;
+        }
+        @media (max-width: 575px) {
+            text-align: center;
+        }
+    }
+    .badges {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            width: auto;
+            max-width: 100%;
+
+            &.fsa-badge, &.tffa-badge {
+                max-height: 42px;
+
+                @media (max-width: 768px) {
+                    margin: 20px 0 0;
+                    max-height: 50px;
+                }
+            }
+        }
+        @media (max-width: 768px) {
+            margin: 20px 0 0;
+            justify-content: space-evenly;
+        }
+        @media (max-width: 575px) {
+            flex-direction: column;
+        }
     }
 }
 
@@ -64,6 +98,11 @@ form {
     margin-bottom: 40px;
 
     h1 {
+        color: $COLOR_WHITE;
+        text-align: center;
+        margin-top: 50px;
+    }
+    h2.email {
         color: $COLOR_WHITE;
         text-align: center;
         margin-top: 50px;
@@ -490,6 +529,8 @@ form {
             margin: 0;
             width: 100%;
             height: 0;
+            pointer-events: none;
+            opacity: 0;
             -webkit-transition: height 0.3s;
             -moz-transition: height 0.3s;
             -ms-transition: height 0.3s;
@@ -515,6 +556,8 @@ form {
                 }
             }
             &.expand {
+                opacity: 1;
+                pointer-events: auto;
                 height: 100%;
             }
         }

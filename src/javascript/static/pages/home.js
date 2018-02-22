@@ -1,5 +1,6 @@
 const localize     = require('../../_common/localize').localize;
 const TabSelector  = require('../../_common/tab_selector');
+const Login        = require('../../app/base/login');
 const BinarySocket = require('../../app/base/socket');
 const FormManager  = require('../../app/common/form_manager');
 
@@ -25,6 +26,14 @@ const Home = (() => {
                 fnc_response_handler: handler,
                 fnc_additional_check: checkCountry,
             });
+            socialLogin();
+        });
+    };
+
+    const socialLogin = () => {
+        $('#google-signup').off('click').on('click', (e) => {
+            e.preventDefault();
+            window.location.href = Login.socialLoginUrl('google');
         });
     };
 

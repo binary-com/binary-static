@@ -52,18 +52,18 @@ const Platform = () => (
                     button_text={it.L('Trade Now')}
                 />
                 <div className='gr-2'></div>
-    {/* <Platforms*/}
-        {/* image_class='gr-12 gr-7-p gr-10-m'*/}
-        {/* image_path='home'*/}
-        {/* image='mt5'*/}
-        {/* header={it.L('MetaTrader 5')}*/}
-        {/* description={it.L('Advanced multi-asset trading platform')}*/}
-        {/* text={it.L('Trade Forex and CFDs with a powerful platform recognised as the global standard.')}*/}
-        {/* url={it.url_for('user/metatrader')}*/}
-        {/* button_text={it.L('Access MT5 dashboard')}*/}
-    {/* />*/}
-{/* </div>*/}
-{/* <div className='gr-row gr-padding-30'>*/}
+                <Platforms
+                    image_class='gr-12 gr-7-p gr-10-m'
+                    image_path='home'
+                    image='mt5'
+                    header={it.L('MetaTrader 5')}
+                    description={it.L('Advanced multi-asset trading platform')}
+                    text={it.L('Trade Forex and CFDs with a powerful platform recognised as the global standard.')}
+                    url={it.url_for('user/metatrader')}
+                    button_text={it.L('Access MT5 dashboard')}
+                />
+            </div>
+            <div className='gr-row gr-padding-30'>
                 <Platforms
                     image_class='gr-7 gr-5-p gr-7-m'
                     image='tick-trade'
@@ -72,9 +72,7 @@ const Platform = () => (
                     text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
                     google_play_url='https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page'
                 />
-                {/* <div className='gr-2'></div>*/}
-            </div>
-            <div className='gr-row gr-padding-30'>
+                <div className='gr-2'></div>
                 <Platforms
                     image_class='gr-8 gr-5-p gr-7-m'
                     image='webtrader'
@@ -85,9 +83,8 @@ const Platform = () => (
                     target='_blank'
                     button_text={it.L('Try Webtrader')}
                 />
-            {/* </div> */}
-            {/* <div className='gr-row gr-padding-30'> */}
-                <div className='gr-2'></div>
+            </div>
+            <div className='gr-row gr-padding-30'>
                 <Platforms
                     image_class='gr-10 gr-7-p gr-9-m'
                     image='binarybot'
@@ -98,9 +95,7 @@ const Platform = () => (
                     target='_blank'
                     button_text={it.L('Try Binary Bot')}
                 />
-                {/* <div className='gr-2'></div> */}
-            </div>
-            <div className='gr-row gr-padding-30'>
+                <div className='gr-2'></div>
                 <Platforms
                     image_class='gr-10 gr-5-p gr-9-m'
                     image='tradingview'

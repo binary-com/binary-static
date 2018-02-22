@@ -14,6 +14,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px;
     line-height: 1.5;
+
+    &.color-white {
+        color: $COLOR_WHITE;
+    }
 }
 
 section {
@@ -317,6 +321,9 @@ form {
     height: 100%;
     padding-top: 0;
     padding-bottom: 0;
+    @media (min-width: 480px) and (max-width: 575px) {
+        padding-top: 50px;
+    }
 
     &:before {
         @include triangle($COLOR_DARK_BLUE, 100px, 'down');
@@ -339,14 +346,22 @@ form {
             margin-bottom: 30px;
             @media (min-width: 576px) and (max-width: 768px) {
                 font-size: 50px;
+                margin-top: 60px;
             }
             @media (max-width: 575px) {
                 font-size: 36px;
                 white-space: pre-wrap; // wrap text on mobile
+                max-width: 245px;
                 text-align: center;
                 margin-top: -20px;
                 margin-left: auto;
                 margin-right: auto;
+            }
+            @media (max-width: 575px) and (orientation: landscape) {
+                white-space: nowrap; // don't wrap text on mobile landscape
+                text-align: left;
+                margin-left: 0;
+                margin-right: 0;
             }
         }
     }
@@ -449,7 +464,7 @@ form {
         @include speech-bubble($COLOR_BLUE, 30px, 'down');
         padding: 15px 30px;
         text-align: center;
-        font-size: 48px;
+        font-size: 36px;
         @media (max-width: 575px) {
             font-size: 28px;
         }
@@ -692,7 +707,7 @@ form {
     }
     p {
         margin: 0;
-        font-size: 16px;
+        font-size: 18px;
     }
 }
 

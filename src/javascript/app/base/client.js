@@ -169,6 +169,12 @@ const Client = (() => {
         window.location.href = options.redirect_url || defaultRedirectUrl();
     };
 
+    const shouldShowJP = (el, is_jp) => (
+        is_jp ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
+    );
+
+    const shouldShowICO = (el, is_ico_only) => (!/ico-only-hide/.test(el.classList) || !is_ico_only);
+
     const activateByClientType = (section_id) => {
         const topbar_class = getElementById('topbar').classList;
         const el_section   = section_id ? getElementById(section_id) : document.body;
@@ -181,6 +187,7 @@ const Client = (() => {
                 const client_logged_in = getElementById('client-logged-in');
                 client_logged_in.classList.add('gr-centered');
 
+                // we need to call jpClient after authorize response so we know client's residence
                 const is_jp       = jpClient();
                 const is_ico_only = !is_jp && get('is_ico_only');
                 if (is_ico_only) {
@@ -191,8 +198,7 @@ const Client = (() => {
                 }
 
                 applyToAllElements('.client_logged_in', (el) => {
-                    if ((!is_jp || !/ja-hide/.test(el.classList)) &&
-                        (!/ico-only-hide/.test(el.classList) || !is_ico_only)) {
+                    if (shouldShowJP(el, is_jp) && shouldShowICO(el, is_ico_only)) {
                         el.setVisibility(1);
                     }
                 });
@@ -203,16 +209,21 @@ const Client = (() => {
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
                     applyToAllElements('.client_real', (el) => {
-                        if ((!is_jp || !/ja-hide/.test(el.classList)) &&
-                            !/ico-only-hide/.test(el.classList) || !is_ico_only) {
+                        if (shouldShowJP(el, is_jp) && shouldShowICO(el, is_ico_only)) {
                             el.setVisibility(1);
-                        }}, '', el_section);
+                        }
+                    }, '', el_section);
                     topbar_class.add(primary_bg_color_dark);
                     topbar_class.remove(secondary_bg_color);
                 }
             });
         } else {
-            applyToAllElements('.client_logged_out', (el) => { el.setVisibility(1); }, '', el_section);
+            const is_jp = jpClient();
+            applyToAllElements('.client_logged_out', (el) => {
+                if (shouldShowJP(el, is_jp)) {
+                    el.setVisibility(1);
+                }
+            }, '', el_section);
             topbar_class.add(primary_bg_color_dark);
             topbar_class.remove(secondary_bg_color);
         }

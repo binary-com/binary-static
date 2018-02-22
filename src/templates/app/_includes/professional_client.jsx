@@ -5,7 +5,7 @@ const ProfessionalClient = () => (
     <Fieldset legend={it.L('Professional Client')} id='fs_professional' className='invisible'>
         <div className='gr-padding-10 gr-12'>
             <input id='chk_professional' type='checkbox' />
-            <label htmlFor='chk_professional'>{it.L('I want to be treated as a professional client.')}</label>
+            <label htmlFor='chk_professional'>{it.L('I want to be treated as a professional client.')}&nbsp;</label>
             <a id='professional_info_toggle' className='toggle-arrow' href='javascript:;'>{it.L('What is this?')}</a>
             <div id='professional_info' style={{display: 'none'}}>
                 <div id='non_uk' className='invisible'>

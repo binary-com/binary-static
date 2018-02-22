@@ -1,6 +1,6 @@
-const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
+const getDecimalPlaces = require('../../common/currency').getDecimalPlaces;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const FormManager      = require('../../common/form_manager');
 const validEmailToken  = require('../../common/form_validation').validEmailToken;
@@ -51,12 +51,15 @@ const PaymentAgentWithdraw = (() => {
                 insertListOption($ddl_agents, pa_list[i].name, pa_list[i].paymentagent_loginid);
             }
             setActiveView(view_ids.form);
+
             const currency = Client.get('currency');
             const form_id  = `#${$(view_ids.form).find('form').attr('id')}`;
+            const min      = isCryptocurrency(currency) ? 0.002 : 10;
+            const max      = isCryptocurrency(currency) ? 5 : 2000;
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
                 { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
-                { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: 2, min: 10, max: 2000 }]], request_field: 'amount' },
+                { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
                 { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
 
                 { request_field: 'currency',              value: currency },
@@ -149,10 +152,6 @@ const PaymentAgentWithdraw = (() => {
     };
 
     const onLoad = () => {
-        if (isCryptocurrency(Client.get('currency'))) {
-            BinaryPjax.loadPreviousUrl();
-            return;
-        }
         BinarySocket.wait('get_account_status').then((data) => {
             $views = $('#paymentagent_withdrawal').find('.viewItem');
             $views.setVisibility(0);
@@ -160,7 +159,10 @@ const PaymentAgentWithdraw = (() => {
             if (/(withdrawal|cashier)_locked/.test(data.get_account_status.status)) {
                 showPageError('', 'withdrawal-locked-error');
             } else {
-                BinarySocket.send({ paymentagent_list: Client.get('residence') })
+                BinarySocket.send({
+                    paymentagent_list: Client.get('residence'),
+                    currency         : Client.get('currency'),
+                })
                     .then(response => populateAgentsList(response));
             }
         });

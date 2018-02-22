@@ -215,6 +215,7 @@ const MBPrice = (() => {
 
         el_buy.btn.classList[values.is_active ? 'remove' : 'add']('inactive');
         el_buy.btn[values.message ? 'setAttribute' : 'removeAttribute']('data-balloon', values.message);
+        el_buy.btn[values.message ? 'setAttribute' : 'removeAttribute']('data-balloon-length', 'medium');
         el_buy.dyn.setAttribute('class', `dynamics ${values.ask_price_movement || ''}`);
         el_buy.val.textContent = formatPrice(values.ask_price);
 
@@ -287,6 +288,7 @@ const MBPrice = (() => {
                 symbol               : proposal.echo_req.symbol,
                 date_expiry          : proposal.echo_req.date_expiry,
                 trading_period_start : proposal.echo_req.trading_period_start,
+                product_type         : 'multi_barrier',
                 app_markup_percentage: '0',
             },
         };

@@ -9,7 +9,7 @@ const State    = require('../../../_common/storage').State;
  * and display them
  */
 const displayCurrencies = () => {
-    const $currency = $('#currency');
+    const $currency = $('.currency');
 
     if (!$currency.length) {
         return;

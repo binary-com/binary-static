@@ -43,7 +43,7 @@ export const NavButtons = ({ parent, section }) => (
                 <a className='button' id='go_next'><span>{`${it.L('Next')} >`}</span></a>
             </div>
             <div className='center-text'>
-                <a className='button-secondary' href={`${it.url_for('get-started-beta')}?get_started_tabs=${parent}&section=${section}`}><span>{it.L('Back to Menu')}</span></a>
+                <a className='button-secondary' href={`${it.url_for('get-started')}?get_started_tabs=${parent}&section=${section}`}><span>{it.L('Back to Menu')}</span></a>
             </div>
         </div>
 

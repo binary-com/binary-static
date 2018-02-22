@@ -4,6 +4,7 @@ const formatMoney      = require('../../../common/currency').formatMoney;
 const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
+const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 const template         = require('../../../../_common/utility').template;
 
@@ -93,7 +94,8 @@ const MetaTraderUI = (() => {
     const setAccountType = (acc_type, should_set_account) => {
         if ($mt5_account.attr('value') !== acc_type) {
             Client.set('mt5_account', acc_type);
-            $mt5_account.attr('value', acc_type).html(accounts_info[acc_type].title.replace(/(demo|real)\s/i, '')).removeClass('empty');
+            $mt5_account.attr('value', acc_type).removeClass('empty');
+            setMTAccountText();
             $list.find('.acc-name').removeClass('selected');
             $list.find(`[value="${acc_type}"]`).addClass('selected');
             $action.setVisibility(0);
@@ -109,11 +111,23 @@ const MetaTraderUI = (() => {
         setCurrentAccount(acc_type);
     };
 
+    const setMTAccountText = () => {
+        const acc_type = $mt5_account.attr('value');
+        if (acc_type) {
+            const login = getPropertyValue(accounts_info[acc_type], ['info', 'login']);
+            const title = `${accounts_info[acc_type].title}${ login ? ` (${login})` : '' }`;
+            if (!new RegExp(title).test($mt5_account.text())) {
+                $mt5_account.html(title);
+            }
+        }
+    };
+
     const updateListItem = (acc_type) => {
         const $acc_item = $list.find(`[value="${acc_type}"]`);
         $acc_item.find('.mt-type').text(accounts_info[acc_type].title.replace(/(demo|real)\s/i, ''));
         if (accounts_info[acc_type].info) {
-            $acc_item.find('.mt-login').text(accounts_info[acc_type].info.login);
+            setMTAccountText();
+            $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.login})`);
             $acc_item.setVisibility(1);
             if (/demo/.test(accounts_info[acc_type].account_type)) {
                 $list.find('#acc_group_demo').setVisibility(1);
@@ -141,7 +155,6 @@ const MetaTraderUI = (() => {
     const setCurrentAccount = (acc_type) => {
         if (Client.get('mt5_account') && Client.get('mt5_account') !== acc_type) return;
 
-        $detail.find('#acc_icon').attr('class', acc_type.split('_')[2] || 'volatility');
         displayAccountDescription(acc_type);
 
         if (accounts_info[acc_type].info) {
@@ -203,6 +216,10 @@ const MetaTraderUI = (() => {
             $action.find('#frm_action').html($form).setVisibility(1).end()
                 .setVisibility(1);
 
+            if (action === 'password_change') {
+                $form.find('label[for*="_password"]').append(` (${localize('for MT5 Account')} ${accounts_info[acc_type].info.login})`);
+            }
+
             $form.find('button[type="submit"]').each(function() { // cashier has two different actions
                 const this_action = $(this).attr('action');
                 actions_info[this_action].$form = $(this).parents('form');
@@ -220,10 +237,11 @@ const MetaTraderUI = (() => {
 
         if (!actions_info[action]) { // Manage Fund
             cloneForm();
-            $form.find('.binary-account').text(`Binary ${Client.get('loginid')}`);
+            $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
             $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
-            $form.find('.mt5-account').text(`${accounts_info[acc_type].title} ${accounts_info[acc_type].info.login}`);
+            $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
             $form.find('.mt5-balance').html(`${formatMoney(MetaTraderConfig.getCurrency(acc_type), accounts_info[acc_type].info.balance)}`);
+            $form.find('label[for^="txt_amount_"]').append(` ${MetaTraderConfig.getCurrency(acc_type)}`);
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {
                     if (error_msg) {
@@ -305,6 +323,7 @@ const MetaTraderUI = (() => {
             if (!$(this).hasClass('button-disabled')) {
                 $form.find('#view_2 #btn_submit_new_account').attr('acc_type', newAccountGetType());
                 displayStep(2);
+                $form.find('#txt_name').val(accounts_info[newAccountGetType()].short_title);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
@@ -440,11 +459,6 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const switchToMT5 = (is_mt5 = true) => {
-        $('.mt-hide:not(.ja-show)').setVisibility(!is_mt5);
-        $('.mt-show').setVisibility(is_mt5);
-    };
-
     return {
         init,
         setAccountType,
@@ -458,7 +472,6 @@ const MetaTraderUI = (() => {
         displayPageError,
         disableButton,
         enableButton,
-        switchToMT5,
 
         $form: () => $form,
     };
