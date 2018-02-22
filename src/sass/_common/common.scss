@@ -523,7 +523,7 @@ li strong.margin-right {
     margin-right: 5px;
 }
 
-[data-show]:not(.visible) {
+[data-show]:not(.data-show-visible) {
     display: none !important;
 }
 

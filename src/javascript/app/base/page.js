@@ -66,7 +66,7 @@ const Page = (() => {
     };
 
     const showHiddenElementsBasedOnCompany = (landing_company_name) => {
-        const visible_classname = 'visible';
+        const visible_classname = 'data-show-visible';
 
         function parseAttributeString(attrStr) {
             function generateErrorMessage(reason) {
