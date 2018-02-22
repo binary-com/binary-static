@@ -17,7 +17,7 @@ const NetworkMonitor = (() => {
     };
     const pending_timouts = {
         [pending_keys.ws_init]   : 5000,
-        [pending_keys.ws_request]: 7000,
+        [pending_keys.ws_request]: 10000,
     };
 
     let ws_config,
@@ -47,6 +47,7 @@ const NetworkMonitor = (() => {
     const wsReconnect = () => {
         if (isOnline() && BinarySocket.hasReadyState(2, 3)) { // CLOSING or CLOSED
             BinarySocket.init(ws_config);
+            clearPendings();
         }
     };
 
@@ -56,7 +57,7 @@ const NetworkMonitor = (() => {
             Header.displayNotification(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
         } else if (status === pending_keys.ws_request || network_status === 'offline') {
             network_status = 'pulser';
-            wsReconnect(status);
+            wsReconnect();
             Header.hideNotification('CONNECTION_ERROR');
         } else {
             network_status = 'online';
@@ -69,8 +70,8 @@ const NetworkMonitor = (() => {
         init   : () => setPending(pending_keys.ws_init),
         open   : () => clearPendings(pending_keys.ws_init),
         send   : () => setPending(pending_keys.ws_request),
-        message: () => clearPendings(pending_keys.ws_request),
-        close  : () => wsReconnect,
+        message: () => clearPendings(),
+        close  : () => wsReconnect(),
     };
 
     const wsEvent = (event) => {
@@ -80,6 +81,9 @@ const NetworkMonitor = (() => {
     };
 
     const setPending = (key) => {
+        if (pendings[key]) {
+            clearPendings(key);
+        }
         pendings[key] = setTimeout(() => { setStatus(key); }, pending_timouts[key]);
     };
 
