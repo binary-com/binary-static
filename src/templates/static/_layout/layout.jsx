@@ -26,18 +26,11 @@ const WithLayout = ({ children }) => {
     );
 };
 
-const InnerContent = () => {
-    const content = CONTENT_PLACEHOLDER;
-
-    if (it.layout) {
-        return (
-            <WithLayout>
-                {content}
-            </WithLayout>
-        );
-    }
-    return content;
-};
+const InnerContent = () => (
+    it.layout ?
+        <WithLayout> {CONTENT_PLACEHOLDER} </WithLayout>
+        : CONTENT_PLACEHOLDER
+);
 
 const Layout = () => {
     if (it.is_pjax_request) {
