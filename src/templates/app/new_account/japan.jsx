@@ -176,7 +176,7 @@ const Japan = () => (
                     <option value='Web Advertisement'>{it.L('Web Advertisement')}</option>
                     <option value='Homepage'>{it.L('Homepage')}</option>
                     <option value='Introduction by acquaintance'>{it.L('Introduction by acquaintance')}</option>
-                    <option value='Other'>{it.L('Other')}</option>
+                    <option value='Others'>{it.L('Others')}</option>
                 </FormRow>
             </Fieldset>
 
