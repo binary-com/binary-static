@@ -79,8 +79,8 @@ const Purchase = (() => {
             let formula, multiplier;
             const {contract_type} = passthrough;
             if (isLookback(contract_type)) {
-                multiplier = formatMoney(currency, passthrough.amount);
-                formula    = getLookBackFormula(contract_type, multiplier, false, 3, 2);
+                multiplier = formatMoney(currency, passthrough.amount, false, 3, 2);
+                formula    = getLookBackFormula(contract_type, multiplier);
             }
 
             payout_value = +receipt.payout;
@@ -93,6 +93,7 @@ const Purchase = (() => {
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formula}</p>`);
                 profit.setVisibility(0);
             } else {
+                profit.setVisibility(1);
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
                 CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
             }
