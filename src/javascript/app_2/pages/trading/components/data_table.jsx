@@ -140,7 +140,7 @@ class DataTable extends React.Component {
         const endId = startId + pageSize;
 
         this.setState({
-            page: page,
+            page,
             displayData: dataSource.slice(startId, endId)
         });
     }
@@ -278,15 +278,9 @@ export class StatementDataTable extends React.PureComponent {
         const payout     = parseFloat(statement.payout);
         const amount     = parseFloat(statement.amount);
         const balance    = parseFloat(statement.balance_after);
-        const is_ico_bid = /binaryico/i.test(statement.shortcode);
-
-        let action = localize(toTitleCase(statement.action_type));
-        if (is_ico_bid) {
-            action = /buy/i.test(statement.action_type) ? localize('Bid') : localize('Closed Bid');
-        }
 
         return {
-            action,
+            action : localize(toTitleCase(statement.action_type)),
             date   : jp_client ? toJapanTimeIfNeeded(+statement.transaction_time) : `${date_str}\n${time_str}`,
             ref    : statement.transaction_id,
             payout : isNaN(payout) || is_ico_bid ? '-' : formatMoney(currency, payout, !jp_client),
