@@ -2,7 +2,7 @@ import React from 'react';
 import { Li } from '../../_common/components/elements.jsx';
 
 const MobileMenu = () => (
-    <div className='gr-hide gr-show-m gr-show-p' id='mobile-menu-container'>
+    <div className='gr-hide gr-show-m gr-show-t gr-show-p' id='mobile-menu-container'>
         <div className='gr-hide' id='mobile-menu'>
             <ul>
                 {/* Logged out */}
