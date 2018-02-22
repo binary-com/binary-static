@@ -340,6 +340,7 @@ const texts = [
     'M',
     'D',
     'Higher',
+    'Higher or equal',
     'Lower',
     'Touches',
     'Does Not Touch',

@@ -93,7 +93,7 @@ const ViewPopup = (() => {
             ASIANU      : 'Asian Up',
             ASIAND      : 'Asian Down',
             CALL        : 'Higher',
-            CALLE       : 'Higher',
+            CALLE       : 'Higher or equal',
             PUT         : 'Lower',
             DIGITMATCH  : 'Digit Matches',
             DIGITDIFF   : 'Digit Differs',
