@@ -150,6 +150,13 @@ const PersonalDetails = () => (
                     <option value='Other'>{it.L('Other')}</option>
                 </FormRow>
                 <FormRow type='text' label={it.L('Amount of above assets')} id='hedge_asset_amount' attributes={{ maxLength: 20 }} row_class='hedge invisible' input_prefix='¥' />
+                <FormRow type='select' id='motivation_circumstances' label={it.L('Motivation/Circumstances')}>
+                    <option value=''>{it.L('Please select')}</option>
+                    <option value='Web Advertisement'>{it.L('Web Advertisement')}</option>
+                    <option value='Homepage'>{it.L('Homepage')}</option>
+                    <option value='Introduction by acquaintance'>{it.L('Introduction by acquaintance')}</option>
+                    <option value='Other'>{it.L('Other')}</option>
+                </FormRow>
             </Fieldset>
 
             <Fieldset className='invisible' id='fieldset_email_consent' legend={it.L('Preferences')}>
