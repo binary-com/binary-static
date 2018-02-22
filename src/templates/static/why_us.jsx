@@ -123,20 +123,20 @@ const WhyUs = () => (
 
                 <Section id='trust' header={it.L('Go with the leader')}>
                     <div className='gr-row'>
-                        <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/TW2.svg')} />
+                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/tw2.svg')} />
                         </div>
-                        <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/GBAF.svg')} />
+                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/gbaf.svg')} />
                         </div>
-                        <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/EGR.svg')} />
+                        <div className='gr-3 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/opwa.svg')} />
                         </div>
-                        <div className='gr-3 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/MenaFxPro.svg')} />
+                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/egr.svg')} />
                         </div>
-                        <div className='gr-3 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-opwa.svg')} />
+                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home-beta/awards/menafxpro.svg')} />
                         </div>
                     </div>
                     <p>{it.L('[_1] is the award-winning industry pioneer in online options trading. We boast:', it.website_name)}</p>
