@@ -1,6 +1,9 @@
 body #topbar {
     @include BIDIR_VALUE(text-align, right, left);
 
+    .container {
+        max-width: 1200px;
+    }
     #virtual-text {
         font-weight: 700;
     }
