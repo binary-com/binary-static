@@ -5,7 +5,7 @@ import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../
 
 const PaymentLogo = ({ items }) => items.map((item, inx) => (
     <div key={inx} className={`gr-2 gr-4-m center-text${item.className ? ` ${item.className}` : ''}`}>
-        <img className='gr-12 gr-centered' src={it.url_for(`images/pages/home-beta/payment/${item.image}.svg`)} />
+        <img className='gr-12 gr-centered' src={it.url_for(`images/pages/home/payment/${item.image}.svg`)} />
     </div>
 ));
 
@@ -14,7 +14,7 @@ const Arrows = ({ direction, parent }) => (
         <img
             className={`go-${direction} gr-10 gr-12-p gr-no-gutter-p gr-centered`}
             data-parent={parent}
-            src={it.url_for(`images/pages/home-beta/arrow_${direction}.svg`)}
+            src={it.url_for(`images/pages/home/arrow_${direction}.svg`)}
         />
     </div>
 );
@@ -24,7 +24,7 @@ const ArrowsMobile = ({ direction, parent }) => (
         <img
             className={`go-${direction} gr-5 gr-no-gutter gr-centered`}
             data-parent={parent}
-            src={it.url_for(`images/pages/home-beta/arrow_${direction}.svg`)}
+            src={it.url_for(`images/pages/home/arrow_${direction}.svg`)}
         />
     </div>
 );
@@ -156,7 +156,7 @@ const TabCircles = ({ id, number }) => (
 const HomeBeta = () => {
     const binary_header = it.L('Binary options');
     const binary_desc   = it.L('Options that offer a fixed payout based on a simple yes/no proposition.');
-    const binary_img    = 'images/pages/home-beta/trade/binary.svg';
+    const binary_img    = 'images/pages/home/trade/binary.svg';
 
     return (
         <React.Fragment>
@@ -206,11 +206,11 @@ const HomeBeta = () => {
                                 <AccountsTabContent
                                     header={it.L('Trade binary options on a wide range of web and mobile apps. Each comes with unique strengths that complement a variety of trading strategies.')}
                                     mobile_header={it.L('Binary Options')}
-                                    image='images/pages/home-beta/binary_options.svg'
-                                    image_one='images/pages/home-beta/icons/demo.svg'
+                                    image='images/pages/home/binary_options.svg'
+                                    image_one='images/pages/home/icons/demo.svg'
                                     list_header_one={it.L('Virtual Account')}
                                     list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
-                                    image_two='images/pages/home-beta/icons/real.svg'
+                                    image_two='images/pages/home/icons/real.svg'
                                     list_header_two={it.L('Real Account')}
                                     list_text_two={it.L('Real-money accounts with your choice of fiat and crypto currency.')}
                                 />
@@ -220,15 +220,15 @@ const HomeBeta = () => {
                                     header={it.L('Trade Forex and CFDs on our popular multi-asset platform.')}
                                     mobile_class='padding-top-20'
                                     mobile_header={it.L('MetaTrader 5')}
-                                    image='images/pages/home-beta/MT5.svg'
-                                    image_one='images/pages/home-beta/icons/demo.svg'
+                                    image='images/pages/home/MT5.svg'
+                                    image_one='images/pages/home/icons/demo.svg'
                                     list_header_one={it.L('MT5 Demo')}
                                     list_text_one={it.L('Practice account with replenishable USD 5,000 virtual credit.')}
-                                    image_two='images/pages/home-beta/icons/mt5_financial.svg'
+                                    image_two='images/pages/home/icons/mt5_financial.svg'
                                     list_header_two={it.L('MT5 Financial')}
                                     list_class='eu-hide invisible'
                                     list_text_two={it.L('MT5 real-money account for Forex and CFDs.')}
-                                    image_three='images/pages/home-beta/icons/mt5_volatility.svg'
+                                    image_three='images/pages/home/icons/mt5_volatility.svg'
                                     list_header_three={it.L('MT5 Volatility Indices')}
                                     list_text_three={it.L('MT5 real-money account for Volatility Indices only.')}
                                 />
@@ -275,28 +275,28 @@ const HomeBeta = () => {
                                 <MarketsTabContent
                                     header={it.L('Forex')}
                                     text={it.L('Major, minor and exotic currency pairs.')}
-                                    image='images/pages/home-beta/trade/forex.svg'
+                                    image='images/pages/home/trade/forex.svg'
                                 />
                             </TabContent>
                             <TabContent id='crypto'>
                                 <MarketsTabContent
                                     header={it.L('Cryptocurrencies')}
                                     text={it.L('Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin.')}
-                                    image='images/pages/home-beta/trade/crypto.svg'
+                                    image='images/pages/home/trade/crypto.svg'
                                 />
                             </TabContent>
                             <TabContent id='cfds'>
                                 <MarketsTabContent
                                     header={it.L('CFDs')}
                                     text={it.L('Financial derivatives that allow you to trade on the movement of underlying assets.')}
-                                    image='images/pages/home-beta/trade/cfds.svg'
+                                    image='images/pages/home/trade/cfds.svg'
                                 />
                             </TabContent>
                             <TabContent id='metals'>
                                 <MarketsTabContent
                                     header={it.L('Metals')}
                                     text={it.L('Precious metal pairs including gold and platinum.')}
-                                    image='images/pages/home-beta/trade/metals.svg'
+                                    image='images/pages/home/trade/metals.svg'
                                 />
                             </TabContent>
                         </TabContentContainer>
@@ -324,11 +324,11 @@ const HomeBeta = () => {
                         <div className='gr-9 gr-12-m align-self-center'>
                             <div className='gr-row gr-row-align-center'>
                                 <div className='gr-1 gr-hide-m border-right'></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home-beta/awards/tw2.svg')}/></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home-beta/awards/gbaf.svg')}/></div>
-                                <div className='gr-3 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home-beta/awards/opwa.svg')}/></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home-beta/awards/menafxpro.svg')}/></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home-beta/awards/egr.svg')}/></div>
+                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')}/></div>
+                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')}/></div>
+                                <div className='gr-3 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')}/></div>
+                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')}/></div>
+                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')}/></div>
                                 <div className='gr-1 gr-hide-m'></div>
                             </div>
                         </div>
@@ -341,17 +341,17 @@ const HomeBeta = () => {
                 <p className='center-text'>{it.L('Learn to be a better trader and keep up with the latest news and trends in financial trading - all for free.')}</p>
                 <div className='gr-row'>
                     <AcademySection
-                        image='images/pages/home-beta/icons/webinars.svg'
+                        image='images/pages/home/icons/webinars.svg'
                         header={it.L('Interactive webinars')}
                         text={it.L('Free training sessions by professional traders.')}
                     />
                     <AcademySection
-                        image='images/pages/home-beta/icons/daily.svg'
+                        image='images/pages/home/icons/daily.svg'
                         header={it.L('Daily market reports')}
                         text={it.L('Daily insights into markets around the world.')}
                     />
                     <AcademySection
-                        image='images/pages/home-beta/icons/video.svg'
+                        image='images/pages/home/icons/video.svg'
                         header={it.L('Ebooks, videos, and more')}
                         text={it.L('Expert analysis and learning resources.')}
                     />
