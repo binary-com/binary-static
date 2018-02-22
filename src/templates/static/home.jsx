@@ -254,11 +254,12 @@ const HomeBeta = () => {
                         id='market_tabs'
                         className='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper'
                         items={[
-                            { id: 'binary', text: binary_header },
-                            { id: 'forex', text: it.L('Forex') },
-                            { id: 'crypto', text: it.L('Crypto') },
-                            { id: 'cfds', text: it.L('CFDs') },
-                            { id: 'metals', text: it.L('Metals') },
+                            { id: 'binary',   text: binary_header },
+                            { id: 'forex',    text: it.L('Forex') },
+                            { id: 'crypto',   text: it.L('Crypto') },
+                            { id: 'cfds',     text: it.L('CFDs') },
+                            { id: 'metals',   text: it.L('Metals') },
+                            { id: 'lookback', text: it.L('Lookback') },
                             { id: 'market_tabs_selector', className: 'tab-selector' },
                         ]}
                     />
@@ -299,9 +300,16 @@ const HomeBeta = () => {
                                     image='images/pages/home-beta/trade/metals.svg'
                                 />
                             </TabContent>
+                            <TabContent id='lookback'>
+                                <MarketsTabContent
+                                    header={it.L('Lookback')}
+                                    text={it.L('Lookback options are currently only available for Volatility Indices.')}
+                                    image='images/pages/home-beta/trade/lookback.svg'
+                                />
+                            </TabContent>
                         </TabContentContainer>
                     </div>
-                    <TabCircles number={5} id='market_tabs_circles'/>
+                    <TabCircles number={6} id='market_tabs_circles'/>
                 </TabContainer>
                 <div className='eu-show invisible'>
                     <div className='gr-padding-30 gr-push-1'>
