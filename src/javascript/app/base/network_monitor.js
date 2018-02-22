@@ -10,6 +10,11 @@ const getElementById      = require('../../_common/common_functions').getElement
  * 2. offline: it is offline
  */
 const NetworkMonitor = (() => {
+    const status_config = {
+        online  : { class: 'online',  tooltip: localize('Online') },
+        offline : { class: 'offline', tooltip: localize('Offline') },
+        blinking: { class: 'pulser',  tooltip: localize('Connecting') },
+    };
     const pendings = {};
     const pending_keys = {
         ws_init   : 'ws_init',
@@ -56,14 +61,15 @@ const NetworkMonitor = (() => {
             network_status = 'offline';
             Header.displayNotification(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
         } else if (status === pending_keys.ws_request || network_status === 'offline') {
-            network_status = 'pulser';
+            network_status = 'blinking';
             wsReconnect();
             Header.hideNotification('CONNECTION_ERROR');
         } else {
             network_status = 'online';
             Header.hideNotification('CONNECTION_ERROR');
         }
-        el_status.setAttribute('class', network_status);
+        el_status.setAttribute('class',        `no-underline ${status_config[network_status].class}`);
+        el_status.setAttribute('data-balloon', `${localize('Network status')}: ${status_config[network_status].tooltip}`);
     };
 
     const ws_events_map = {

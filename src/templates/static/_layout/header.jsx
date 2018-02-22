@@ -44,7 +44,7 @@ const Topbar = () => (
                             <a href={it.url_for('contact')}>{it.L('Contact Us')}</a>
                         </div>
                         <div className='gr-1 align-self-center'>
-                            <div id='network_status' />
+                            <div id='network_status' data-balloon-pos='down' />
                         </div>
                         <div className='gr-4 gr-5-m'>
                             <div className='languages invisible'>

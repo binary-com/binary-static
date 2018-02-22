@@ -14,6 +14,10 @@ const texts = [
     // top bar
     'Open a Real Account',
     'Open a Financial Account',
+    'Network status',
+    'Online',
+    'Offline',
+    'Connecting',
 
     // account drop down
     'Virtual Account',
