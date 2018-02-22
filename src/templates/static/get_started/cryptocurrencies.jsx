@@ -8,7 +8,7 @@ const one       = '1';
 const hundred   = '100';
 
 const Cryptocurrencies = () => (
-    <div className='static_full get-started-beta'>
+    <div className='static_full get-started'>
         <h1>{it.L('MetaTrader 5')}</h1>
         <div className='gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>
