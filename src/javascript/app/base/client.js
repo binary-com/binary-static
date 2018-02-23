@@ -1,6 +1,7 @@
 const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const BinarySocket       = require('./socket');
+const SocketCache        = require('./socket_cache');
 const jpClient           = require('../common/country_base').jpClient;
 const isCryptocurrency   = require('../common/currency').isCryptocurrency;
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
@@ -242,6 +243,7 @@ const Client = (() => {
         cleanupCookies('reality_check', 'affiliate_token', 'affiliate_tracking');
         clearAllAccounts();
         set('loginid', '');
+        SocketCache.clear();
         RealityCheckData.clear();
         const redirect_to = getPropertyValue(response, ['echo_req', 'passthrough', 'redirect_to']);
         if (redirect_to) {
