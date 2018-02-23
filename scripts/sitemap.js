@@ -80,8 +80,8 @@ const urls = [
     // ==================== Section: "landing_pages" ====================
     ['graduates',                          'monthly', 0.80, 'NOT-en'],
     ['hackathon',                          'monthly', 0.80, 'NOT-en'],
-    // ['binary-japan-landing',               'monthly', 0.80, 'NOT-ja'],
-    // ['binary-japan-landing-2',             'monthly', 0.80, 'NOT-ja'],
+    ['バイナリーオプション',                  'monthly', 0.80, 'NOT-ja'],
+    ['bo_1',                               'monthly', 0.80, 'NOT-ja'],
 ];
 
 const url_prefix = 'https://www.binary.com/';
