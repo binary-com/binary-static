@@ -17,9 +17,8 @@ const isEmptyObject    = require('../../_common/utility').isEmptyObject;
  * 5. Some responses should be cached by a particular value from request (e.g. contracts_for_frxAUDJPY)
  *    so there can be more than one value for a particular call
  * 6. Clears the whole cache regardless their expire time on the following events:
- *    6.1. Client logout
- *    6.2. Switch loginid
- *    6.3. Detect a new release (static hash changed) // TODO
+ *    6.1. Client changes: login / logout / switch loginid
+ *    6.2. Detect a new release (static hash changed) // TODO
  */
 const SocketCache = (() => {
     // keys are msg_type
