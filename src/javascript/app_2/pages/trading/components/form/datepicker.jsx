@@ -170,13 +170,15 @@ class Calendar extends React.Component {
         this.setState({
             selectedDate: value, // update calendar input
         });
-        this.props.handleDateChange(value, true);
+        if (moment(value, 'YYYY-MM-DD', true).isValid() || !value) {
+            this.props.handleDateChange(value, true);
 
-        if (value.length < 10) return; // don't update calendar dates
-
-        this.setState({
-            date: moment(value).format(this.props.dateFormat),
-        });
+            if (!value) return;
+            // update calendar dates only value is present
+            this.setState({
+                date: moment(value).format(this.props.dateFormat),
+            });
+        }
     }
 
     getDays() {
@@ -387,6 +389,15 @@ Calendar.defaultProps = {
     maxDate   : moment().add(120, 'y').format('YYYY-MM-DD'),      // by default, maxDate is set to 120 years from today
 };
 
+
+const getDayDifference = (date) => {
+    const diff = moment(date).diff(moment(), 'days');
+    if (!date || (diff < 0)) {
+        return 1;
+    }
+    return diff + 1;
+}
+
 class DatePicker extends React.Component {
     constructor(props) {
         super(props);
@@ -446,7 +457,9 @@ class DatePicker extends React.Component {
 
     handleDateChange(selectedDate, showCalendar) {
         let value = selectedDate;
-        if (value.length < 8) {
+        if (moment(selectedDate).isValid) {
+            value = selectedDate;
+        } else {
             value = '';
         }
         
@@ -460,27 +473,20 @@ class DatePicker extends React.Component {
 
     clearDateInput() {
         this.setState({ selectedDate: '' });
-        this.setPickerValue('');
+        this.setPickerValue();
     }
 
     getPickerValue() {
-        const getDayDifference = () => (moment(this.state.selectedDate).diff(moment(), 'days')) + 1;
-        const val = this.props.displayFormat === 'd' ? getDayDifference() : moment(this.state.selectedDate).format(this.props.dateFormat);
-        return val;
+        return this.props.displayFormat === 'd' ? getDayDifference(this.state.selectedDate) : this.state.selectedDate;
     }
 
     setPickerValue(value) {
-        const getDayDifference = () => (moment(value).diff(moment(), 'days')) + 1;
-        const val = this.props.displayFormat === 'd' ? getDayDifference() : moment(value).format(this.props.dateFormat);
+        const val = this.props.displayFormat === 'd' ? getDayDifference(value) : value;
         this.props.onChange({ target: { name: this.props.name, value: val } });
     }
 
     render() {
-        let value =  this.getPickerValue();
-        if (/Invalid Date/.test(value)) {
-            value = '';
-        }
-
+        const value =  this.getPickerValue();
         return (
             <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
                 <div
