@@ -5,10 +5,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #f00;
-
-    &--hidden {
-        display: none;
-    }
+    z-index: 1;
+    background-color: #eee;
 }
 /* stylelint-enable color-no-hex */

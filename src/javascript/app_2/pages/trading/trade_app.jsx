@@ -38,6 +38,7 @@ class TradeApp extends React.Component {
 
                 <FullscreenDialog
                     title='Hello'
+                    visible={true}
                     onClose={() => {console.log(arguments);}}
                 >
                     <p>some content</p>
