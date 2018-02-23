@@ -58,7 +58,11 @@ const PersonalDetails = (() => {
     };
 
     const showHideLabel = (get_settings) => {
-        ['account_opening_reason', 'place_of_birth'].forEach((id) => {
+        const fields_to_show = ['place_of_birth'];
+        if (!is_jp) {
+            fields_to_show.push('account_opening_reason'); // show account_opening_reason for non-jp only
+        }
+        fields_to_show.forEach((id) => {
             if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
                 if (get_settings[id]) {
                     // we have to show text here instead of relying on displayGetSettingsData()
