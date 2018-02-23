@@ -7,5 +7,10 @@
     height: 100vh;
     z-index: 1;
     background-color: #eee;
+
+    &__footer {
+        position: absolute;
+        bottom: 0;
+    }
 }
 /* stylelint-enable color-no-hex */
