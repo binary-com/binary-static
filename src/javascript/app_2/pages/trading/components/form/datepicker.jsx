@@ -43,8 +43,8 @@ class Calendar extends React.Component {
         this.onChangeInput = this.onChangeInput.bind(this);
 
         this.state = {
-            date        : this.props.startDate, // calendar dates reference
-            selectedDate: this.props.startDate, // selected date
+            date        : this.props.minDate, // calendar dates reference
+            selectedDate: this.props.minDate, // selected date
         };
     }
 
@@ -380,7 +380,6 @@ class Calendar extends React.Component {
 
 Calendar.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
-    startDate : moment(),
     minDate   : moment().subtract(120, 'y').format('YYYY-MM-DD'), // by default, minDate is set to 120 years from today
 };
 
@@ -393,15 +392,18 @@ class DatePicker extends React.Component {
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);
         this.clearDateInput = this.clearDateInput.bind(this);
+        this.getPickerValue = this.getPickerValue.bind(this);
+        this.setPickerValue = this.setPickerValue.bind(this);
+
         this.state = {
-            selectedDate: moment().format(this.props.dateFormat),
+            selectedDate: moment(this.props.minDate).format(this.props.dateFormat),
             showCalendar: false,
             showCloseBtn: false,
         };
     }
 
     componentDidMount() {
-        this.props.onChange({ target: { name: this.props.name, value: this.state.selectedDate } });
+        this.props.onChange({ target: { name: this.props.name, value: this.getPickerValue() } });
     }
 
     componentWillMount() {
@@ -443,23 +445,38 @@ class DatePicker extends React.Component {
         if (value.length < 8) {
             value = '';
         }
+        
         this.setState({
             selectedDate: value,
             showCalendar,
         });
-        this.props.onChange({ target: { name: this.props.name, value } });
+
+        this.setPickerValue(value);
     }
 
     clearDateInput() {
         this.setState({ selectedDate: '' });
-        this.props.onChange({ target: { name: this.props.name, value: '' } });
+        this.setPickerValue('');
+    }
+
+    getPickerValue() {
+        const getDayDifference = () => (moment(this.state.selectedDate).diff(moment(), 'days')) + 1;
+        const val = this.props.displayFormat === 'd' ? getDayDifference() : moment(this.state.selectedDate).format(this.props.dateFormat);
+        return val;
+    }
+
+    setPickerValue(value) {
+        const getDayDifference = () => (moment(value).diff(moment(), 'days')) + 1;
+        const val = this.props.displayFormat === 'd' ? getDayDifference() : moment(value).format(this.props.dateFormat);
+        this.props.onChange({ target: { name: this.props.name, value: val } });
     }
 
     render() {
-        let value = this.state.selectedDate;
+        let value =  this.getPickerValue();
         if (/Invalid Date/.test(value)) {
             value = '';
         }
+
         return (
             <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
                 <div
@@ -487,7 +504,6 @@ class DatePicker extends React.Component {
                 </div>
                 <div className={`datepicker-calendar ${this.state.showCalendar ? 'show' : ''}`}>
                     <Calendar
-                        startDate={this.state.selectedDate}
                         handleDateChange={this.handleDateChange}
                         footer={this.props.footer}
                         showTodayBtn={this.props.showTodayBtn}

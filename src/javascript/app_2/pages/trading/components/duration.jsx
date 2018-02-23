@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import InputField from './form/input_field.jsx';
 import Dropdown from './form/dropdown.jsx';
 import Datepicker from './form/datepicker.jsx';
@@ -29,12 +30,20 @@ const Duration = ({
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
-                        <InputField
-                            type='number'
-                            name='duration'
-                            value={duration}
-                            onChange={onChange}
-                        />
+                        {duration_unit === 'd' ?
+                            <Datepicker
+                                name='duration'
+                                minDate={moment(server_time).add(1, 'd')}
+                                displayFormat='d'
+                                onChange={onChange}
+                            /> :
+                            <InputField
+                                type='number'
+                                name='duration'
+                                value={duration}
+                                onChange={onChange}
+                            />
+                        }
                         <Dropdown
                             list={duration_units_list}
                             value={duration_unit}
@@ -47,9 +56,9 @@ const Duration = ({
                     <Datepicker
                         id='expiry_date'
                         name='expiry_date'
-                        onChange={onChange}
                         showTodayBtn={true}
-                        minDate={new Date()}
+                        minDate={server_time}
+                        onChange={onChange}
                     />
                     <input type='time' name='expiry_time' onChange={onChange} />
                 </React.Fragment>
