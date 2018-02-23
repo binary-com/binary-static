@@ -7,7 +7,7 @@ class FullscreenDialog extends React.PureComponent {
     }
 
     componentDidUpdate() {
-        const scroll_lock_classname = 'fullscreen-dialog-scroll-lock';
+        const scroll_lock_classname = 'no-scroll';
 
         if (this.props.visible) {
             document.body.classList.add(scroll_lock_classname);
@@ -15,7 +15,6 @@ class FullscreenDialog extends React.PureComponent {
         else {
             document.body.classList.remove(scroll_lock_classname);
         }
-        console.log('updated');
     }
 
     handleClose() {
