@@ -1,4 +1,4 @@
-.home-content, .home-old-content, .home-jp-content {
+.home-content, .home-jp-content {
     .signup-box {
         border-radius: $BORDER_RADIUS;
 
@@ -22,29 +22,11 @@
     }
 }
 
-.home-content, .home-old-content {
+.home-content {
     #banner {
-        background: url('../images/pages/home/banner-background_1.png') no-repeat;
+        background: url('../images/pages/home/home-banner.png') no-repeat;
         background-position: left top;
         background-size: 100% 70%;
-    }
-    .xlist1 {
-        background: url('../images/pages/home/xicon-1.png') no-repeat;
-    }
-    .xlist2 {
-        background: url('../images/pages/home/xicon-2.png') no-repeat;
-    }
-    .xlist3 {
-        background: url('../images/pages/home/xicon-3.png') no-repeat;
-    }
-    .xlist1, .xlist2, .xlist3 {
-        @include BIDIR_PROP(padding-left, padding-right, 40px);
-        min-height: 24px;
-        background-size: 30px;
-        @include BIDIR_PROP(margin-left, margin-right, 50px !important);
-        padding-bottom: 1em;
-        @include BIDIR_VALUE(text-align, left, right);
-        @include BIDIR_VALUE(background-position, left top, right top);
     }
     .small-image {
         width: 10%;
@@ -196,7 +178,7 @@
             margin-top: auto;
         }
     }
-    .home-content, .home-old-color {
+    .home-content {
         #banner {
             background-position: right top;
             background-size: 125% 75%;
@@ -205,7 +187,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    .home-content, .home-old-content {
+    .home-content {
         .small-image {
             width: 30%;
         }
