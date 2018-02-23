@@ -21,6 +21,15 @@ class FullscreenDialog extends React.PureComponent {
         this.props.onClose();
     }
 
+    renderTitle() {
+        if (!this.props.title) return null;
+        return (
+            <h1 className='fullscreen-dialog__title'>
+                {this.props.title}
+            </h1>
+        );
+    }
+
     render() {
         const { title, visible, children } = this.props;
 
@@ -28,9 +37,7 @@ class FullscreenDialog extends React.PureComponent {
 
         return (
             <div className='fullscreen-dialog'>
-                <h1 className='fullscreen-dialog__title'>
-                    {title}
-                </h1>
+                {this.renderTitle()}
                 <div className='fullscreen-dialog__content'>
                     {children}
                 </div>
