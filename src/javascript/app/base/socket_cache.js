@@ -33,6 +33,8 @@ const SocketCache = (() => {
 
     const storage_key = 'ws_cache';
 
+    let data_obj = {};
+
     const set = (response) => {
         const msg_type = response.msg_type;
 
@@ -40,7 +42,6 @@ const SocketCache = (() => {
 
         const key      = makeKey(response.echo_req, msg_type);
         const expires  = moment().add(config[msg_type].expire, 'm').valueOf();
-        const data_obj = LocalStore.getObject(storage_key);
 
         if (!data_obj.static_hash) {
             data_obj.static_hash = getStaticHash();
@@ -53,11 +54,13 @@ const SocketCache = (() => {
     const get = (request, msg_type) => {
         let response;
 
-        let data_obj = LocalStore.getObject(storage_key);
-        if (isEmptyObject(data_obj)) return undefined;
+        if (isEmptyObject(data_obj)) {
+            data_obj = LocalStore.getObject(storage_key);
+            if (isEmptyObject(data_obj)) return undefined;
+        }
+
         if (data_obj.static_hash !== getStaticHash()) { // new release
             clear();
-            data_obj = {};
         }
 
         const key          = makeKey(request, msg_type);
@@ -84,8 +87,7 @@ const SocketCache = (() => {
     };
 
     const remove = (key) => {
-        const data_obj = LocalStore.getObject(storage_key);
-        if (!isEmptyObject(data_obj[key])) {
+        if (key in data_obj) {
             delete data_obj[key];
             LocalStore.setObject(storage_key, data_obj);
         }
@@ -93,6 +95,7 @@ const SocketCache = (() => {
 
     const clear = () => {
         LocalStore.remove(storage_key);
+        data_obj = {};
     };
 
     return {
