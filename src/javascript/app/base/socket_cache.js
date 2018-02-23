@@ -1,4 +1,5 @@
 const moment           = require('moment');
+const getStaticHash    = require('../../_common/check_new_release').getStaticHash;
 const LocalStore       = require('../../_common/storage').LocalStore;
 const getPropertyValue = require('../../_common/utility').getPropertyValue;
 const isEmptyObject    = require('../../_common/utility').isEmptyObject;
@@ -18,7 +19,7 @@ const isEmptyObject    = require('../../_common/utility').isEmptyObject;
  *    so there can be more than one value for a particular call
  * 6. Clears the whole cache regardless their expire time on the following events:
  *    6.1. Client changes: login / logout / switch loginid
- *    6.2. Detect a new release (static hash changed) // TODO
+ *    6.2. Detect a new release (static hash changed)
  */
 const SocketCache = (() => {
     // keys are msg_type
@@ -41,6 +42,10 @@ const SocketCache = (() => {
         const expires  = moment().add(config[msg_type].expire, 'm').valueOf();
         const data_obj = LocalStore.getObject(storage_key);
 
+        if (!data_obj.static_hash) {
+            data_obj.static_hash = getStaticHash();
+        }
+
         data_obj[key] = { value: response, expires };
         LocalStore.setObject(storage_key, data_obj);
     };
@@ -48,8 +53,14 @@ const SocketCache = (() => {
     const get = (request, msg_type) => {
         let response;
 
+        let data_obj = LocalStore.getObject(storage_key);
+        if (isEmptyObject(data_obj)) return undefined;
+        if (data_obj.static_hash !== getStaticHash()) { // new release
+            clear();
+            data_obj = {};
+        }
+
         const key          = makeKey(request, msg_type);
-        const data_obj     = LocalStore.getObject(storage_key);
         const response_obj = getPropertyValue(data_obj, key) || {};
 
         if (moment().isBefore(response_obj.expires)) {
