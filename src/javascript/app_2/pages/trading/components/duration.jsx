@@ -34,6 +34,7 @@ const Duration = ({
                             <Datepicker
                                 name='duration'
                                 minDate={moment(server_time).add(1, 'd')}
+                                maxDate={moment(server_time).add(365, 'd')}
                                 displayFormat='d'
                                 onChange={onChange}
                             /> :

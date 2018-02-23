@@ -109,13 +109,15 @@ class Calendar extends React.Component {
         const currentDate = moment(this.state.date);
         const date        = moment(e.target.dataset.date);
         const minDate     = moment(this.props.minDate).format(this.props.dateFormat);
-
+        const maxDate     = moment(this.props.maxDate).format(this.props.dateFormat);
+        
         const dateBefore = date.isBefore(minDate);
         const dateToday  = date.isSame(minDate);
+        const dateAfter  = date.isAfter(maxDate);
         const prevMonth  = date.month() < currentDate.month();
         const nextMonth  = date.month() > currentDate.month();
 
-        if (!dateBefore || dateToday) {
+        if ((!dateBefore && !dateAfter)|| dateToday) {
             this.setState({
                 date        : date.format(this.props.dateFormat),
                 selectedDate: date.format(this.props.dateFormat),
@@ -207,7 +209,8 @@ class Calendar extends React.Component {
         dates.forEach((date) => {
             const isDisabled = moment(date).isBefore(moment(startOfMonth))
                 || moment(date).isAfter(moment(endOfMonth))
-                || moment(date).isBefore((moment(this.props.minDate)));
+                || moment(date).isBefore(moment(this.props.minDate))
+                || moment(date).isAfter(moment(this.props.maxDate));
             const isActive = moment(date).isSame(moment(this.state.date));
             const isToday  = moment(date).isSame(moment(), 'day');
 
@@ -381,6 +384,7 @@ class Calendar extends React.Component {
 Calendar.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
     minDate   : moment().subtract(120, 'y').format('YYYY-MM-DD'), // by default, minDate is set to 120 years from today
+    maxDate   : moment().add(120, 'y').format('YYYY-MM-DD'),      // by default, maxDate is set to 120 years from today
 };
 
 class DatePicker extends React.Component {
@@ -508,6 +512,7 @@ class DatePicker extends React.Component {
                         footer={this.props.footer}
                         showTodayBtn={this.props.showTodayBtn}
                         minDate={moment(this.props.minDate).format('YYYY-MM-DD')}
+                        maxDate={moment(this.props.maxDate).format('YYYY-MM-DD')}
                     />
                 </div>
             </div>
@@ -516,7 +521,8 @@ class DatePicker extends React.Component {
 }
 
 DatePicker.defaultProps = {
-    dateFormat: 'YYYY-MM-DD',
+    dateFormat   : 'YYYY-MM-DD',
+    displayFormat: 'date',
 };
 
 export default DatePicker;
