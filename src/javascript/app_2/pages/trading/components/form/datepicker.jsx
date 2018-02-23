@@ -43,8 +43,8 @@ class Calendar extends React.Component {
         this.onChangeInput = this.onChangeInput.bind(this);
 
         this.state = {
-            date        : this.props.minDate, // calendar dates reference
-            selectedDate: this.props.minDate, // selected date
+            date        : moment(this.props.minDate).format(this.props.dateFormat), // calendar dates reference
+            selectedDate: moment(this.props.minDate).format(this.props.dateFormat), // selected date
         };
     }
 
@@ -209,7 +209,7 @@ class Calendar extends React.Component {
         dates.forEach((date) => {
             const isDisabled = moment(date).isBefore(moment(startOfMonth))
                 || moment(date).isAfter(moment(endOfMonth))
-                || moment(date).isBefore(moment(this.props.minDate))
+                || moment(date).isBefore(moment(this.props.minDate).subtract(1, 'd'))
                 || moment(date).isAfter(moment(this.props.maxDate));
             const isActive = moment(date).isSame(moment(this.state.date));
             const isToday  = moment(date).isSame(moment(), 'day');
@@ -508,11 +508,8 @@ class DatePicker extends React.Component {
                 </div>
                 <div className={`datepicker-calendar ${this.state.showCalendar ? 'show' : ''}`}>
                     <Calendar
+                        {...this.props}
                         handleDateChange={this.handleDateChange}
-                        footer={this.props.footer}
-                        showTodayBtn={this.props.showTodayBtn}
-                        minDate={moment(this.props.minDate).format('YYYY-MM-DD')}
-                        maxDate={moment(this.props.maxDate).format('YYYY-MM-DD')}
                     />
                 </div>
             </div>
