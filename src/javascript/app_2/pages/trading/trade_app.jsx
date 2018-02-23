@@ -10,6 +10,8 @@ import Test from './components/test.jsx';
 import Purchase from './components/purchase.jsx';
 import { connect } from './store/connect';
 
+import FullscreenDialog from './components/fullscreen_dialog.jsx';
+
 class TradeApp extends React.Component {
     isVisible(component_name) {
         return this.props.form_components.indexOf(component_name) >= 0;
@@ -33,6 +35,13 @@ class TradeApp extends React.Component {
 
                     <Purchase />
                 </div>
+
+                <FullscreenDialog
+                    title='Hello'
+                    onClose={() => {console.log(arguments);}}
+                >
+                    <p>some content</p>
+                </FullscreenDialog>
             </React.Fragment>
         );
     }
