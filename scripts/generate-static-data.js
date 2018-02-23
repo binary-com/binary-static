@@ -319,6 +319,16 @@ const texts = [
     'Processing your request...',
     'Please check the above form for pending errors.',
 
+    // contract types display names
+    'Asian Up',
+    'Asian Down',
+    'Digit Matches',
+    'Digit Differs',
+    'Digit Odd',
+    'Digit Even',
+    'Digit Over',
+    'Digit Under',
+
     // multi_barriers_trading
     '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
     '[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].',
@@ -331,6 +341,7 @@ const texts = [
     'M',
     'D',
     'Higher',
+    'Higher or equal',
     'Lower',
     'Touches',
     'Does Not Touch',
@@ -411,7 +422,7 @@ const texts = [
     'Closed',
     'Contract has not started yet',
     'Price',
-    'Spot Time',
+    'Spot Time (GMT)',
     'Current Time',
     'Exit Spot Time',
     'Exit Spot',
@@ -423,7 +434,8 @@ const texts = [
     'Note',
     'Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.',
     'Contract ID',
-    'Reference ID',
+    'Contract Type',
+    'Transaction ID',
     'Remaining Time',
     'Barrier Change',
     'Audit',
