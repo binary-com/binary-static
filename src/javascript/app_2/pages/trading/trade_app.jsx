@@ -13,6 +13,13 @@ import { connect } from './store/connect';
 import FullscreenDialog from './components/fullscreen_dialog.jsx';
 
 class TradeApp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalIsVisible: false
+        };
+    }
+
     isVisible(component_name) {
         return this.props.form_components.indexOf(component_name) >= 0;
     }
@@ -36,10 +43,18 @@ class TradeApp extends React.Component {
                     <Purchase />
                 </div>
 
+                <button onClick={() => this.setState({
+                    modalIsVisible: true
+                })}>
+                    show modal
+                </button>
+
                 <FullscreenDialog
                     title='Hello'
-                    visible={true}
-                    onClose={() => {console.log(arguments);}}
+                    visible={this.state.modalIsVisible}
+                    onClose={() => this.setState({
+                        modalIsVisible: false
+                    })}
                 >
                     <p>some content</p>
                 </FullscreenDialog>

@@ -1,4 +1,8 @@
 /* stylelint-disable color-no-hex */
+.fullscreen-dialog-scroll-lock {
+    overflow: hidden;
+}
+
 .fullscreen-dialog {
     position: fixed;
     top: 0;
