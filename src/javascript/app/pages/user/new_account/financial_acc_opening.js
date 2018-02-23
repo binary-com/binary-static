@@ -59,6 +59,12 @@ const FinancialAccOpening = (() => {
             obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
             fnc_response_handler: handleResponse,
         });
+
+        $('#tax_information_note_toggle').off('click').on('click', (e) => {
+            e.stopPropagation();
+            $('#tax_information_note_toggle').toggleClass('open');
+            $('#tax_information_note').slideToggle();
+        });
     };
 
     const getValidations = () => {

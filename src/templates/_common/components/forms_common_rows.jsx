@@ -172,11 +172,17 @@ export const ClientMessage = () => (
 
 export const TaxInformationForm = () => (
     <React.Fragment>
-        <div id='tax_information_note' className='gr-12'>
-            <p>{it.L('Binary Investments (Europe) Ltd. is required to collect tax information under the Common Reporting Standard (CRS) and the Foreign Account Tax Compliance Act (FATCA).')}</p>
-            <p>{it.L('Please enter your [_1]tax information[_2] below to continue.', '<a href="https://ec.europa.eu/taxation_customs/tin/tinByCountry.html" target="_blank">', '</a>')}</p>
-            <p>{it.L('Rest assured that your information will only be used for CRS/FATCA reporting purposes and will be kept safe.')}</p>
-            <p>{it.L('If we have reason to believe that your tax information is incomplete, we may contact you for clarification.')}</p>
+        <div id='tax_information_info' className='gr-12 gr-padding-10'>
+            <label>{it.L('Binary Investments (Europe) Ltd. is required to collect your tax information.')}&nbsp;
+                <a id='tax_information_note_toggle' className='toggle-arrow' href='javascript:;'>{it.L('Read more.')}</a>
+            </label>
+
+            <div id='tax_information_note' style={{display: 'none'}}>
+                <p>{it.L('This requirement is mandated by the Common Reporting Standard (CRS) and the Foreign Account Tax Compliance Act (FATCA).')}</p>
+                <p>{it.L('Please enter your [_1]tax information[_2] below to continue.', '<a href="https://ec.europa.eu/taxation_customs/tin/tinByCountry.html" target="_blank">', '</a>')}</p>
+                <p>{it.L('Rest assured that your information will only be used for CRS/FATCA reporting purposes and will be kept safe.')}</p>
+                <p>{it.L('If we have reason to believe that your tax information is incomplete, we may contact you for clarification.')}</p>
+            </div>
         </div>
         <FormRow type='select'
                  id='tax_residence'
