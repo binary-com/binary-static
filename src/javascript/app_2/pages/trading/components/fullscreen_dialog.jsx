@@ -1,4 +1,8 @@
 import React from 'react';
+import Button from './form/button';
+
+const scroll_lock_classname = 'no-scroll';
+const open_dialog_classname = 'fullscreen-dialog--open';
 
 class FullscreenDialog extends React.PureComponent {
     constructor(props) {
@@ -7,10 +11,12 @@ class FullscreenDialog extends React.PureComponent {
     }
 
     componentDidUpdate() {
-        const scroll_lock_classname = 'no-scroll';
-
         if (this.props.visible) {
             document.body.classList.add(scroll_lock_classname);
+            // timeout to force transition animation
+            window.setTimeout(() => {
+                this.dialogEl.classList.add(open_dialog_classname);
+            }, 0);
         }
         else {
             document.body.classList.remove(scroll_lock_classname);
@@ -18,7 +24,13 @@ class FullscreenDialog extends React.PureComponent {
     }
 
     handleClose() {
-        this.props.onClose();
+        function transitionendHandler(e) {
+            e.target.removeEventListener(e.type, transitionendHandler);
+            this.props.onClose();
+        }
+
+        this.dialogEl.addEventListener('transitionend', transitionendHandler.bind(this));
+        this.dialogEl.classList.remove(open_dialog_classname);
     }
 
     renderTitle() {
@@ -36,13 +48,20 @@ class FullscreenDialog extends React.PureComponent {
         if (!visible) return null;
 
         return (
-            <div className='fullscreen-dialog'>
+            <div
+                ref={(dialogEl) => { this.dialogEl = dialogEl; }}
+                className='fullscreen-dialog'
+            >
                 {this.renderTitle()}
                 <div className='fullscreen-dialog__content'>
                     {children}
                 </div>
                 <div className='fullscreen-dialog__footer'>
-                    <button onClick={this.handleClose}>close</button>
+                    <Button
+                        className='flat'
+                        handleClick={this.handleClose}
+                        text='Close'
+                    />
                 </div>
             </div>
         );
