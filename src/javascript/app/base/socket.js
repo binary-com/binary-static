@@ -132,6 +132,9 @@ const BinarySocket = (() => {
             const response = SocketCache.get(data, msg_type);
             if (response) {
                 State.set(['response', msg_type], $.extend({}, response));
+                if (isReady() && is_available) { // make the request to keep the cache updated
+                    binary_socket.send(JSON.stringify(data));
+                }
                 promise_obj.resolve(response);
                 return promise_obj.promise;
             }

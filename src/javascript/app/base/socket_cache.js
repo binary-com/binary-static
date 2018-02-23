@@ -12,7 +12,7 @@ const isEmptyObject    = require('../../_common/utility').isEmptyObject;
  * 2. It doesn't cache responses which returned error
  * 3. The value is requested by BinarySocket,
  *    if this returns a value according to the logic here, socket code take it as response
- *    and won't trigger a `send` request, therefore, no code change needed anywhere else
+ *    but also triggers an async `send` request, to keep the cache updated for next time
  * 4. Uses client's time to set and check for expiry, as the expire durations are not so long to need a more precise one
  *    (And doesn't worth to wait for the response of time call)
  * 5. Some responses should be cached by a particular value from request (e.g. contracts_for_frxAUDJPY)
