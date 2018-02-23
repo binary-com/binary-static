@@ -181,12 +181,12 @@ export const TaxInformationForm = () => (
         <FormRow type='select'
                  id='tax_residence'
                  label={it.L('Tax residence')}
-                 tooltip={it.L('Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional.')}
+                 tooltip={it.L('Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor.')}
                  className='invisible'
                  attributes={{multiple: 'multiple'}} />
         <FormRow type='text'
                  label={it.L('Tax identification number')}
-                 tooltip={it.L('Please provide the tax identification number for each jurisdiction where you are a tax resident. If you cannot provide this information, please contact our customer support team for help.')}
+                 tooltip={it.L('Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help.')}
                  id='tax_identification_number'
                  attributes={{ maxLength: 20 }} />
     </React.Fragment>
