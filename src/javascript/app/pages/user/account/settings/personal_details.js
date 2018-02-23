@@ -184,9 +184,10 @@ const PersonalDetails = (() => {
 
                 { selector: '#email_consent' },
 
-                { selector: '#hedge_asset_amount',     validations: ['req', 'number'], parent_node: 'jp_settings' },
-                { selector: '#hedge_asset',            validations: ['req'],           parent_node: 'jp_settings' },
-                { selector: '#account_opening_reason', validations: ['req'] },
+                { selector: '#hedge_asset_amount',       validations: ['req', 'number'], parent_node: 'jp_settings' },
+                { selector: '#hedge_asset',              validations: ['req'],           parent_node: 'jp_settings' },
+                { selector: '#motivation_circumstances', validations: ['req'],           parent_node: 'jp_settings' },
+                { selector: '#account_opening_reason',   validations: ['req'] },
 
             ];
             $(form_id).find('select').each(function () {
