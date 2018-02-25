@@ -12,9 +12,10 @@ class TradingHeader extends React.Component {
                     <div className='menu-items'>
                         <div className='menu-left'>
                             <ToggleDrawer alignment='left'>
-                                <AccountSwitcher active_account={[
-                                    { id: 'VRTC1234567', account_type: 'Virtual' },
-                                ]}
+                                <AccountSwitcher
+                                    active_account={[
+                                        { id: 'VRTC1234567', account_type: 'Virtual' },
+                                    ]}
                                 />
                                 <div className='drawer-items-container'>
                                     <DrawerItems

@@ -20,6 +20,11 @@ class AccountSwitcher extends React.PureComponent {
         this.setState({
             active_account: account,
         });
+        if (account.id !== this.state.active_account.id) {
+            if (this.props.onChange) {
+                this.props.onChange({ target: { name: 'currency', value: account.account_type } });
+            }
+        }
     }
 
     render() {
