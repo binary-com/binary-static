@@ -7,6 +7,7 @@ import TradingHeader from './components/elements/header.jsx';
 import { localize } from '../../../_common/localize';
 import { State } from '../../../_common/storage';
 import { initActions, disposeActions } from './actions';
+import Url from '../../../_common/url';
 
 const stores = {
     trade: new TradeStore(),
@@ -22,7 +23,7 @@ const Trading = (() => {
         if (header) {
             render(
                 <TradingHeader items={[
-                    { icon: 'trade',     text: localize('Trade') },
+                    { icon: 'trade',     text: localize('Trade'), href: Url.urlFor('trade')  },
                     { icon: 'portfolio', text: localize('Portfolio') },
                     { icon: 'statement', text: localize('Statement') },
                     { icon: 'cashier',   text: localize('Cashier') },
