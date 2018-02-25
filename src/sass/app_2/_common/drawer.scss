@@ -45,6 +45,7 @@ hr {
                 overflow-y: auto;
                 height: calc(100% - 158px);
                 z-index: 1;
+                position: relative;
             }
             &.left {
                 left: -260px;

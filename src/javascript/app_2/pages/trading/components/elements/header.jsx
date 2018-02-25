@@ -1,6 +1,7 @@
 import React from 'react';
 import { ToggleDrawer, DrawerItems, DrawerItem } from './drawer.jsx';
 import AccountSwitcher from './account_switcher.jsx';
+import LanguageSwitcher from './language_switcher.jsx';
 import Url from '../../../../../_common/url';
 
 class TradingHeader extends React.Component {
@@ -48,6 +49,7 @@ class TradingHeader extends React.Component {
                                     <DrawerItem text='Useful Resources'/>
                                     <DrawerItem text='Login History'/>
                                     <hr />
+                                    <LanguageSwitcher />
                                 </div>
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>
