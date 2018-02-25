@@ -1,5 +1,6 @@
 import React from 'react';
-import { ToggleDrawer, DrawerItem } from './drawer.jsx';
+import { ToggleDrawer, DrawerItems, DrawerItem } from './drawer.jsx';
+import AccountSwitcher from './account_switcher.jsx';
 import Url from '../../../../../_common/url';
 
 class TradingHeader extends React.Component {
@@ -10,9 +11,44 @@ class TradingHeader extends React.Component {
                     <div className='menu-items'>
                         <div className='menu-left'>
                             <ToggleDrawer alignment='left'>
-                                <DrawerItem text='First Page'/>
-                                <DrawerItem text='Second Page'/>
-                                <DrawerItem text='Third Page'/>
+                                <AccountSwitcher active_account={[
+                                    { id: 'VRTC1234567', account_type: 'Virtual' },
+                                ]}
+                                />
+                                <div className='drawer-items-container'>
+                                    <DrawerItems
+                                        text='Account Settings'
+                                        items={[
+                                            { text: 'Personal Detail' },
+                                            { text: 'Account Authentication' },
+                                            { text: 'Financial Assessment' },
+                                            { text: 'Professional Trader' },
+                                        ]}
+                                    />
+                                    <DrawerItems
+                                        text='Security Settings'
+                                        items={[
+                                            { text: 'Self Exclusion' },
+                                            { text: 'Trading Limits' },
+                                            { text: 'Authorised Applications' },
+                                            { text: 'API Token' },
+                                        ]}
+                                    />
+                                    <DrawerItems
+                                        text='Trading History'
+                                        items={[
+                                            { text: 'Portfolio' },
+                                            { text: 'Profit Table' },
+                                            { text: 'Statement' },
+                                        ]}
+                                    />
+                                    <DrawerItem text='Cashier'/>
+                                    <hr />
+                                    <DrawerItem text='Manage Password'/>
+                                    <DrawerItem text='Useful Resources'/>
+                                    <DrawerItem text='Login History'/>
+                                    <hr />
+                                </div>
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>
                                 <img className='logo-img' src={Url.urlForStatic('images/trading_app/symbol.svg')} alt='Binary.com' />

@@ -1,0 +1,76 @@
+/* stylelint-disable color-no-hex */
+/* stylelint-disable number-max-precision */
+.acc-switcher-container {
+    .acc-switcher-header {
+        cursor: pointer;
+        border-bottom: 1px solid #f2f2f2;
+        z-index: 3;
+
+        .acc-switcher-active-login {
+            padding: 10px 16px;
+
+            p.acc-switcher-accountid {
+                font-size: 0.75rem;
+                font-weight: 300;
+                line-height: 0.5;
+                padding-left: 3.5rem;
+            }
+            p.acc-switcher-currency {
+                font-size: 0.875rem;
+                line-height: 0.5;
+                color: $COLOR_ORANGE;
+                padding-left: 3.5rem;
+            }
+            &:before {
+                content: '\25EF';
+                font-size: 3rem;
+                padding-top: 5px;
+                position: absolute;
+            }
+        }
+    }
+    .acc-switcher-list {
+        z-index: 2;
+        position: absolute;
+        background-color: $COLOR_WHITE;
+        transform: translate3d(-100%, 0, 0);
+        opacity: 0;
+        transition: all 0.25s;
+        overflow-y: auto;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+        .acc-switcher-account {
+            cursor: pointer;
+            padding: 4px 16px;
+
+            &.hide {
+                display: none;
+            }
+            &:before {
+                content: '\25EF';
+                font-size: 2.5rem;
+                padding-top: 10px;
+                position: absolute;
+            }
+            p.acc-switcher-accountid {
+                font-weight: 300;
+                font-size: 0.75rem;
+                line-height: 0.5;
+                padding-left: 3rem;
+            }
+            p.acc-switcher-currency {
+                font-size: 0.875rem;
+                line-height: 0.5;
+                padding-left: 3rem;
+            }
+            &:hover {
+                background: #f2f2f2;
+            }
+        }
+    }
+}
+/* stylelint-enable number-max-precision */
+/* stylelint-enable color-no-hex */

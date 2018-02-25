@@ -33,6 +33,7 @@ class ToggleDrawer extends React.PureComponent {
                 </div>
                 <Drawer ref={this.setRef} alignment={this.props.alignment}>
                     <DrawerHeader alignment={this.props.alignment} close={this.closeDrawer}/>
+                    <DrawerFooter />
                     {this.props.children}
                 </Drawer>
             </React.Fragment>
@@ -80,12 +81,19 @@ class Drawer extends React.PureComponent {
     }
 
     render() {
+        const visibility = {
+            visibility: `${!this.state.is_drawer_visible ? 'hidden' : 'visible'}`,
+        };
         return (
             <aside className='drawer-container'>
-                <div className={`drawer-bg ${this.state.is_drawer_visible ? 'show' : 'hide'}` } onClick={this.handleClickOutside}>
+                <div
+                    className={`drawer-bg ${this.state.is_drawer_visible ? 'show' : ''}` }
+                    style={visibility}
+                    onClick={this.handleClickOutside}>
                     <div
                         ref={this.setRef}
                         className={`drawer ${this.state.is_drawer_visible ? 'visible' : ''} ${this.props.alignment}`}
+                        style={visibility}
                     >
                         {this.props.children}
                     </div>
@@ -120,6 +128,59 @@ class DrawerHeader extends React.PureComponent {
     }
 }
 
+class DrawerFooter extends React.PureComponent {
+    render() {
+        return (
+            <React.Fragment>
+            {this.props.alignment && this.props.alignment === 'right' ?
+                null
+            :
+                <div className='drawer-footer'>
+                </div>
+            }
+            </React.Fragment>
+        );
+    }
+}
+
+class DrawerItems extends React.PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            is_collapsed: false,
+        };
+    }
+    collapseItems = () => {
+        this.setState({
+            is_collapsed: !this.state.is_collapsed,
+        });
+    }
+    render() {
+        const list_is_collapsed = {
+            visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
+        };
+        return (
+            <React.Fragment>
+            <div className='drawer-item' onClick={this.collapseItems}>
+                <span className='parent-item'>{this.props.text}</span>
+            </div>
+            <div
+                className={`drawer-items ${this.state.is_collapsed ? 'show' : ''}`}
+                style={list_is_collapsed}
+            >
+                {this.props.items.map((item, idx) => (
+                        <div className='drawer-item' key={idx}>
+                            <a href={item.href || 'javascript:;' }>
+                                <span className={item.icon || undefined}>{item.text}</span>
+                            </a>
+                        </div>
+                ))}
+            </div>
+            </React.Fragment>
+        );
+    }
+}
+
 class DrawerItem extends React.PureComponent {
     render() {
         return (
@@ -135,5 +196,6 @@ class DrawerItem extends React.PureComponent {
 module.exports = {
     Drawer,
     DrawerItem,
+    DrawerItems,
     ToggleDrawer,
 };
