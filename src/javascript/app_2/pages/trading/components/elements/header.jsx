@@ -6,6 +6,13 @@ import Url from '../../../../../_common/url';
 
 class TradingHeader extends React.Component {
     render() {
+        const menu_link_is_active = (name) => {
+            const pathname = window.location.pathname;
+            if (pathname.indexOf(name.toLowerCase()) >= 0) {
+                return true;
+            }
+            return false;
+        };
         return (
             <React.Fragment>
                 <header id={this.props.id} className='shadow'>
@@ -59,7 +66,10 @@ class TradingHeader extends React.Component {
                             {!!this.props.items.length &&
                                 <div className='menu-links'>
                                     {this.props.items.map((item, idx) => (
-                                        <a key={idx} href={item.href || 'javascript:;'} >
+                                        <a
+                                            className={`${menu_link_is_active(item.text) ? 'active': ''}`}
+                                            key={idx}
+                                            href={item.href || 'javascript:;'} >
                                             <span className={item.icon}>{item.text}</span>
                                         </a>
                                     ))}

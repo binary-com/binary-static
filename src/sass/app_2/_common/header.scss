@@ -45,39 +45,21 @@ header {
                 a {
                     padding: 0 30px;
                     text-decoration: none;
+                    position: relative;
 
                     span {
                         font-size: 0.8rem;
                         text-transform: capitalize;
                         color: $COLOR_DARK_BLUE;
                     }
-                    &:last-child {
-                        &:after {
-                            display: block;
-                            content: '';
-                            height: 3px;
-                            width: 6rem;
-                            background-color: $primaryBrandColor;
-                            right: 0;
-                            left: 7.5rem;
-                            position: absolute;
-                            margin-top: 14px;
-                            transition: 0.4s ease-in-out;
-                        }
-                    }
-                    &:active {
-                        &:first-child ~ a:last-child:after {
-                            margin-left: 0;
-                        }
-                        &:nth-child(2) ~ a:last-child:after {
-                            margin-left: 6.5rem;
-                        }
-                        &:nth-child(3) ~ a:last-child:after {
-                            margin-left: 14rem;
-                        }
-                        &:last-child:after {
-                            margin-left: 21rem;
-                        }
+                    &.active:after {
+                        display: block;
+                        position: absolute;
+                        content: '';
+                        height: 3px;
+                        width: 100%;
+                        bottom: -16px;
+                        background-color: $primaryBrandColor;
                     }
                 }
                 @media (max-width: 768px) {
