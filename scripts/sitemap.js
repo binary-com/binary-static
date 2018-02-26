@@ -15,61 +15,73 @@ program
 
 const urls = [
     // path (without .html),               changefreq, priority, exclude languages
+    // ==================== Section: "static" ====================
     ['home',                               'monthly', 1.00, 'ja'],
     ['home-jp',                            'monthly', 1.00, 'NOT-ja'],
-
-    ['why-us',                             'monthly', 0.80, 'ja'],
-    ['why-us-jp',                          'monthly', 0.80, 'NOT-ja'],
     ['tour',                               'monthly', 0.80, 'ja'],
     ['tour-jp',                            'monthly', 0.80, 'NOT-ja'],
+    ['why-us',                             'monthly', 0.80, 'ja'],
+    ['why-us-jp',                          'monthly', 0.80, 'NOT-ja'],
     ['platforms',                          'monthly', 0.80, 'ja'],
-    ['responsible-trading',                'monthly', 0.80, 'ja'],
-    ['legal/us_patents',                   'monthly', 0.80, 'ja'],
-    ['regulation',                         'monthly', 0.80, 'id'],
-    ['terms-and-conditions',               'monthly', 0.80, 'ja'],
-    ['terms-and-conditions-jp',            'monthly', 0.80, 'NOT-ja'],
-    ['affiliate/signup',                   'monthly', 0.80, 'ja'],
 
     ['about-us',                           'monthly', 0.80],
+    ['binary-in-numbers',                  'monthly', 0.80],
     ['careers',                            'monthly', 0.80, 'ja'],
     ['careers-for-americans',              'monthly', 0.80, 'ja'],
-    ['charity',                            'monthly', 0.80],
-    ['company-profile',                    'monthly', 0.80, 'NOT-ja'],
     ['contact',                            'monthly', 0.80],
     ['group-history',                      'monthly', 0.80],
     ['open-positions',                     'monthly', 0.80],
-    ['service-announcements',              'monthly', 0.80, 'NOT-ja'],
-    ['ico',                                'monthly', 0.80, 'ja'],
+    ['open-positions/job-details',         'monthly', 0.80],
 
-    ['liquidity-solutions',                'monthly', 0.80],
+    ['affiliate/signup',                   'monthly', 0.80, 'ja'],
+    ['affiliate/signup-jp',                'monthly', 0.80, 'NOT-ja'],
+    ['charity',                            'monthly', 0.8],
+    ['company-profile',                    'monthly', 0.80, 'NOT-ja'],
+    ['legal/us_patents',                   'monthly', 0.80, 'ja'],
+    ['regulation',                         'monthly', 0.80, 'id'],
+    ['responsible-trading',                'monthly', 0.80, 'ja'],
+    ['service-announcements',              'monthly', 0.80, 'NOT-ja'],
+    ['terms-and-conditions',               'monthly', 0.80, 'ja'],
+    ['terms-and-conditions-jp',            'monthly', 0.80, 'NOT-ja'],
+//    ['user/browser-support',               'monthly', 0.80],
+
+    ['liquidity-solutions',                'monthly', 0.80, 'ja'],
+    ['multiple-accounts-manager',          'monthly', 0.80, 'ja'],
     ['open-source-projects',               'monthly', 0.80, 'ja'],
     ['partners',                           'monthly', 0.80, 'ja'],
-    ['payment-agent',                      'monthly', 0.80],
-    ['security-testing',                   'monthly', 0.80],
+    ['payment-agent',                      'monthly', 0.80, 'ja'],
+    ['security-testing',                   'monthly', 0.80, 'ja'],
 
+    ['get-started',                        'monthly', 0.80, 'ja'],
+    ['get-started/binary-options',         'monthly', 0.80, 'ja'],
+    ['get-started/cfds',                   'monthly', 0.80, 'ja'],
+    ['get-started/cryptocurrencies',       'monthly', 0.80, 'ja'],
+    ['get-started/forex',                  'monthly', 0.80, 'ja'],
+    ['get-started/metals',                 'monthly', 0.80, 'ja'],
+
+    ['get-started-jp',                     'monthly', 0.80, 'NOT-ja'],
+
+    ['metatrader/contract-specifications', 'monthly', 0.80],
+    ['metatrader/download',                'monthly', 0.80],
+    ['metatrader/how-to-trade-mt5',        'monthly', 0.80],
+    ['metatrader/types-of-accounts',       'monthly', 0.80],
+
+    // ==================== Section: "app" ====================
     ['cashier',                            'monthly', 0.80],
     ['cashier/payment_agent_listws',       'monthly', 0.80],
     ['cashier/payment_methods',            'monthly', 0.80, 'ja'],
 
-    ['resources/asset_indexws',            'monthly', 0.80, 'ja'],
-    ['resources/market_timesws',           'monthly', 0.80],
-
     ['trading',                            'monthly', 0.80, 'ja'],
     ['multi_barriers_trading',             'monthly', 0.80],
 
-    ['get-started',                        'monthly', 0.80, 'ja'],
-    ['get-started/beginners-faq',          'monthly', 0.80, 'ja'],
-    ['get-started/binary-options-basics',  'monthly', 0.80, 'ja'],
-    ['get-started/glossary',               'monthly', 0.80, 'ja'],
-    ['get-started/how-to-trade-binaries',  'monthly', 0.80, 'ja'],
-    ['get-started/otc-indices-stocks',     'monthly', 0.80, 'ja'],
-    ['get-started/smart-indices',          'monthly', 0.80, 'ja'],
-    ['get-started/types-of-trades',        'monthly', 0.80, 'ja'],
-    ['get-started/volidx-markets',         'monthly', 0.80, 'ja'],
-    ['get-started/what-is-binary-trading', 'monthly', 0.80, 'ja'],
-    ['get-started/why-trade-with-us',      'monthly', 0.80, 'ja'],
+    ['resources/asset_indexws',            'monthly', 0.80, 'ja'],
+    ['resources/market_timesws',           'monthly', 0.80],
 
-    ['get-started-jp',                     'monthly', 0.80, 'NOT-ja'],
+    // ==================== Section: "landing_pages" ====================
+    ['graduates',                          'monthly', 0.80, 'NOT-en'],
+    ['hackathon',                          'monthly', 0.80, 'NOT-en'],
+    ['バイナリーオプション',                  'monthly', 0.80, 'NOT-ja'],
+    ['bo_1',                               'monthly', 0.80, 'NOT-ja'],
 ];
 
 const url_prefix = 'https://www.binary.com/';
