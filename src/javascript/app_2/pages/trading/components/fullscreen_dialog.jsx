@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './form/button';
+import Url from '../../../../_common/url';
 
 const scroll_lock_classname = 'no-scroll';
 const open_dialog_classname = 'fullscreen-dialog--open';
@@ -33,15 +33,6 @@ class FullscreenDialog extends React.PureComponent {
         this.dialogEl.classList.remove(open_dialog_classname);
     }
 
-    renderTitle() {
-        if (!this.props.title) return null;
-        return (
-            <h1 className='fullscreen-dialog__title'>
-                {this.props.title}
-            </h1>
-        );
-    }
-
     render() {
         const { title, visible, children } = this.props;
 
@@ -52,16 +43,19 @@ class FullscreenDialog extends React.PureComponent {
                 ref={(dialogEl) => { this.dialogEl = dialogEl; }}
                 className='fullscreen-dialog'
             >
-                {this.renderTitle()}
+                <div className='fullscreen-dialog__header'>
+                    <h2 className='fullscreen-dialog__title'>
+                        {this.props.title}
+                    </h2>
+                    <div
+                        className='icons btn-close fullscreen-dialog__close-btn'
+                        onClick={this.handleClose}
+                    >
+                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+                    </div>
+                </div>
                 <div className='fullscreen-dialog__content'>
                     {children}
-                </div>
-                <div className='fullscreen-dialog__footer'>
-                    <Button
-                        className='flat'
-                        handleClick={this.handleClose}
-                        text='Close'
-                    />
                 </div>
             </div>
         );

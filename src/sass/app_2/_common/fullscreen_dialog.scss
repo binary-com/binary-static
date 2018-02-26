@@ -1,5 +1,6 @@
 /* stylelint-disable color-no-hex */
 .fullscreen-dialog {
+    box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,16 +11,28 @@
     opacity: 0;
     transform: translateY(100%) scale(0.1);
     transition: all 0.2s;
+    overflow: auto;
 
     &--open {
         transform: translateY(0) scale(1);
         opacity: 1;
     }
-    &__footer {
-        width: 100%;
+    &__header {
+        position: relative;
+        padding: 1rem 1rem 0;
+    }
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #333;
+    }
+    &__close-btn {
         position: absolute;
-        bottom: 0;
-        text-align: center;
+        top: 14px;
+        right: 14px;
+    }
+    &__content {
+        padding: 0 1rem;
     }
 }
 /* stylelint-enable color-no-hex */

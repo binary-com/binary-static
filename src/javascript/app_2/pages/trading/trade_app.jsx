@@ -50,13 +50,13 @@ class TradeApp extends React.Component {
                 </button>
 
                 <FullscreenDialog
-                    title='Hello'
+                    title='Select asset'
                     visible={this.state.modalIsVisible}
                     onClose={() => this.setState({
                         modalIsVisible: false
                     })}
                 >
-                    <p>some content</p>
+                    <p>some content goes here</p>
                 </FullscreenDialog>
             </React.Fragment>
         );
