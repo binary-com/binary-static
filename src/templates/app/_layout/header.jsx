@@ -96,7 +96,20 @@ const Header = () => (
 
                                         // Logged in
                                         // General
-                                        { text: it.L('Trade'),        href: it.url_for('trading'),             className: 'ja-hide ico-only-hide client_logged_in invisible' },
+                                        {
+                                            type     : 'nested',
+                                            text     : it.L('Trade'),
+                                            href     : 'javascript:;',
+                                            className: 'ja-hide ico-only-hide client_logged_in nav-dropdown-toggle invisible',
+                                            subitems : [
+                                                { text: it.L('[_1]', it.website_name),  href: it.url_for('trading'), className: 'no-capitalize' },
+                                                { text: it.L('MetaTrader 5'),           href: it.url_for('user/metatrader') },
+                                                { text: it.L('Binary Tick Trade App'),  href: 'https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page' },
+                                                { text: it.L('Binary Webtrader'),       href: 'https://webtrader.binary.com' },
+                                                { text: it.L('Binary Bot'),             href: 'https://bot.binary.com' },
+                                                { text: it.L('TradingView'),            href: 'https://tradingview.binary.com' },
+                                            ],
+                                        },
                                         { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),    className: 'ico-only-hide client_logged_in invisible' },
                                         { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'), className: 'ico-only-hide client_logged_in invisible' },
                                         { text: it.L('Statement'),    href: it.url_for('user/statementws'),    className: 'client_logged_in invisible' },
