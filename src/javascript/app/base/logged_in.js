@@ -3,6 +3,7 @@ const moment             = require('moment');
 const Client             = require('./client');
 const GTM                = require('./gtm');
 const BinarySocket       = require('./socket');
+const SocketCache        = require('./socket_cache');
 const getElementById     = require('../../_common/common_functions').getElementById;
 const getLanguage        = require('../../_common/language').get;
 const urlLang            = require('../../_common/language').urlLang;
@@ -13,6 +14,7 @@ const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 
 const LoggedInHandler = (() => {
     const onLoad = () => {
+        SocketCache.clear();
         parent.window.is_logging_in = 1; // this flag is used in base.js to prevent auto-reloading this page
         let redirect_url;
         const params = paramsHash(window.location.href);
