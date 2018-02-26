@@ -27,8 +27,8 @@ const SocketCache = (() => {
     // map_to: if presents, stores the response based on the value of the provided key in the echo_req
     const config = {
         payout_currencies: { expire: 10 },
-        active_symbols   : { expire: 10 },
-        contracts_for    : { expire: 10, map_to: 'contracts_for' },
+        active_symbols   : { expire: 10, map_to: ['product_type', 'landing_company'] },
+        contracts_for    : { expire: 10, map_to: ['contracts_for', 'product_type', 'currency'] },
     };
 
     const storage_key = 'ws_cache';
@@ -79,8 +79,9 @@ const SocketCache = (() => {
         let key = msg_type || Object.keys(source_obj).find(type => config[type]);
 
         if (key && !isEmptyObject(source_obj)) {
-            const map_key = (config[key] || {}).map_to || '';
-            key += map_key && source_obj[map_key] ? `_${source_obj[map_key]}` : '';
+            ((config[key] || {}).map_to || []).forEach((map_key) => {
+                key += map_key ? `_${source_obj[map_key] || ''}` : '';
+            });
         }
 
         return key;
