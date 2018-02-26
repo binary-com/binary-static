@@ -21,7 +21,6 @@ import {
     ClientMessage,
     Tnc,
     TaxInformationForm,
-    TaxInformationDeclaration,
     GeocodeResponse,
 } from '../../_common/components/forms_common_rows.jsx';
 
@@ -65,9 +64,7 @@ const Financial = () => (
             <FinancialForm />
             <PepDeclaration />
             <ProfessionalClient />
-            <fieldset id='tax_information_declaration'>
-                <TaxInformationDeclaration />
-            </fieldset>
+
             <fieldset>
                 <div className='gr-12'>
                     <p>{it.L('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.')}</p>

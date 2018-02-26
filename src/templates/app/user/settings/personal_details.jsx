@@ -9,7 +9,6 @@ import {
     AddressPostcode,
     Phone,
     TaxInformationForm,
-    TaxInformationDeclaration,
     GeocodeResponse,
 } from '../../../_common/components/forms_common_rows.jsx';
 import Loading from '../../../_common/components/loading.jsx';
@@ -154,10 +153,6 @@ const PersonalDetails = () => (
                     <option value='Introduction by acquaintance'>{it.L('Introduction by acquaintance')}</option>
                     <option value='Others'>{it.L('Others')}</option>
                 </FormRow>
-            </Fieldset>
-
-            <Fieldset id='tax_information_declaration' className='invisible'>
-                <TaxInformationDeclaration />
             </Fieldset>
 
             <Fieldset className='invisible' id='fieldset_email_consent' legend={it.L('Preferences')}>

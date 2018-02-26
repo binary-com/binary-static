@@ -48,8 +48,6 @@ const PersonalDetails = (() => {
             $form_fieldsets.setVisibility(0);       // hide all fieldsets
             $tax_info_notice.setVisibility(1);      // show tax notice message
             $tax_info_form.setVisibility(1);        // show tax info fieldset
-            $tax_info_declaration.setVisibility(1); // show tax info declaration
-            $tax_information_info.setVisibility(1); // show tax info
             need_to_accept_tin = true;
 
             $('#tax_information_note_toggle').off('click').on('click', (e) => {
@@ -58,8 +56,9 @@ const PersonalDetails = (() => {
                 $('#tax_information_note').slideToggle();
             });
         } else {
-            $tax_info_notice.setVisibility(0); // hide tax notice message
-            $tax_information_info.setVisibility(0);   // hide tax info
+            $tax_info_notice.setVisibility(0);      // hide tax notice message
+            $tax_information_info.setVisibility(0); // hide tax info
+            $tax_info_declaration.setVisibility(0); // hide tax info declaration
         }
     };
 

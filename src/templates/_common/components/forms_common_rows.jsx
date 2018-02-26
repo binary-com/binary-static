@@ -195,21 +195,18 @@ export const TaxInformationForm = () => (
                  tooltip={it.L('Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help.')}
                  id='tax_identification_number'
                  attributes={{ maxLength: 20 }} />
-    </React.Fragment>
-);
-
-export const TaxInformationDeclaration = () => (
-    <React.Fragment>
-        <div className='gr-12 gr-padding-10'>
-            <input type='checkbox' id='chk_tax_id' />
-            <label htmlFor='chk_tax_id'>
-                {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information.')}
-            </label>
-        </div>
-        <div className='gr-12 gr-padding-10'>
-            <p className='no-margin'>
-                <i><span className='errorfield'>* </span>{it.L('You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate.')}</i>
-            </p>
+        <div id='tax_information_declaration'>
+            <div className='gr-12 gr-padding-10'>
+                <input type='checkbox' id='chk_tax_id' />
+                <label htmlFor='chk_tax_id'>
+                    {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information.')}
+                </label>
+            </div>
+            <div className='gr-12 gr-padding-10'>
+                <p className='no-margin'>
+                    <i><span className='errorfield'>* </span>{it.L('You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate.')}</i>
+                </p>
+            </div>
         </div>
     </React.Fragment>
 );
@@ -223,4 +220,3 @@ export const GeocodeResponse = () => (
         </div>
     </div>
 );
-
