@@ -557,6 +557,11 @@ const texts = [
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
 
+    // TODO: remove ico messages when all ico contracts are removed
+    // binaryico message
+    'Bid',
+    'Closed Bid',
+
     // accounts
     'Create',
     'Commodities',
