@@ -159,6 +159,7 @@ const Client = (() => {
             return;
         }
 
+        SocketCache.clear();
         localStorage.setItem('GTM_new_account', '1');
 
         set('token',      options.token,       options.loginid);
