@@ -5,15 +5,18 @@ const getPropertyValue = require('../../_common/utility').getPropertyValue;
 
 let currencies_config = {};
 
-const formatMoney = (currency_value, amount, exclude_currency) => {
+const formatMoney = (currency_value, amount, exclude_currency, decimals = 0, minimumFractionDigits = 0) => {
     let money = amount;
     if (money) money = String(money).replace(/,/g, '');
     const sign           = money && Number(money) < 0 ? '-' : '';
-    const decimal_places = getDecimalPlaces(currency_value);
+    const decimal_places = decimals || getDecimalPlaces(currency_value);
 
     money = isNaN(money) ? 0 : Math.abs(money);
     if (typeof Intl !== 'undefined') {
-        const options = { minimumFractionDigits: decimal_places, maximumFractionDigits: decimal_places };
+        const options = {
+            minimumFractionDigits: minimumFractionDigits || decimal_places,
+            maximumFractionDigits: decimal_places,
+        };
         money = new Intl.NumberFormat(getLanguage().toLowerCase().replace('_', '-'), options).format(money);
     } else {
         money = addComma(money, decimal_places);

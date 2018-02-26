@@ -1,4 +1,6 @@
 const Contract           = require('./contract');
+const getLookBackFormula = require('./lookback').getFormula;
+const isLookback         = require('./lookback').isLookback;
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
 const TickDisplay        = require('./tick_trade');
@@ -74,19 +76,27 @@ const Purchase = (() => {
             CommonFunctions.elementTextContent(reference, `${localize('Your transaction reference is')} ${receipt.transaction_id}`);
 
             const currency = Client.get('currency');
-
-            if (passthrough.basis === 'payout') {
-                payout_value = passthrough.amount;
-                cost_value   = passthrough['ask-price'];
-            } else {
-                cost_value   = passthrough.amount;
-                payout_value = receipt.payout;
+            let formula, multiplier;
+            const {contract_type} = passthrough;
+            if (isLookback(contract_type)) {
+                multiplier = formatMoney(currency, passthrough.amount, false, 3, 2);
+                formula    = getLookBackFormula(contract_type, multiplier);
             }
-            const profit_value = formatMoney(currency, payout_value - cost_value);
 
-            CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
+            payout_value = +receipt.payout;
+            cost_value   = receipt.buy_price;
+
+            const profit_value = payout_value ? formatMoney(currency, payout_value - cost_value) : undefined;
+
             CommonFunctions.elementInnerHtml(cost,   `${localize('Total Cost')} <p>${formatMoney(currency, cost_value)}</p>`);
-            CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
+            if (isLookback(contract_type)) {
+                CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formula}</p>`);
+                profit.setVisibility(0);
+            } else {
+                profit.setVisibility(1);
+                CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
+                CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
+            }
 
             updateValues.updateContractBalance(receipt.balance_after);
 

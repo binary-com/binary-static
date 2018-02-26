@@ -1,77 +1,5 @@
 /* GET-STARTED PAGES RULES */
-.get-started, .get-started-jp {
-    .section {
-        min-height: 224px;
-        height: calc(100% - 20px);
-        margin: 0 10px 20px;
-
-        a {
-            display: block;
-            color: $COLOR_WHITE;
-            background: $COLOR_BLACK;
-            text-decoration: none;
-
-            &:hover .section-header {
-                background: $COLOR_DARK_GREEN;
-            }
-        }
-        .section-header {
-            padding: 10px;
-            font-weight: normal;
-        }
-        .section-info {
-            font-size: $FONT_SIZE_N;
-        }
-    }
-}
-
 .get-started {
-    /* stylelint-disable selector-list-comma-newline-after, selector-list-comma-space-after */
-    #what-is-binary-trading, #binary-options-basics, #how-to-trade-binaries, #types-of-trades,
-    #why-trade-with-us, #beginners-faq, #glossary, #volidx-markets {
-        height: 80px;
-        background-repeat: no-repeat;
-        background-image: url('../images/pages/get-started/intro_2.png');
-    }
-    /* stylelint-enable selector-list-comma-newline-after, selector-list-comma-space-after */
-    #what-is-binary-trading {
-        background-position: 0 0;
-    }
-    #binary-options-basics {
-        background-position: 100% 0;
-    }
-    #how-to-trade-binaries {
-        background-position: 100% 24%;
-    }
-    #types-of-trades {
-        background-position: 0 47%;
-    }
-    #why-trade-with-us {
-        background-position: 0 24%;
-    }
-    #beginners-faq {
-        background-position: 0 71%;
-    }
-    #glossary {
-        background-position: 100% 71%;
-    }
-    #volidx-markets {
-        background-position: 100% 93%;
-    }
-    #smart-indices, #partners {
-        height: 80px;
-        background-repeat: no-repeat;
-    }
-    #smart-indices {
-        background: url('../images/pages/get-started/smart-indices.svg') 50% 50%/20% rgb(39, 40, 37);
-        background-size: 20%;
-    }
-    #partners {
-        background: url('../images/pages/partners/partner.svg') 50% 50%/50% rgb(39, 40, 37);
-    }
-}
-
-.get-started-beta {
     a:hover {
         text-decoration: none;
     }
@@ -109,6 +37,29 @@
 }
 
 .get-started-jp {
+    .section {
+        min-height: 224px;
+        height: calc(100% - 20px);
+        margin: 0 10px 20px;
+
+        a {
+            display: block;
+            color: $COLOR_WHITE;
+            background: $COLOR_BLACK;
+            text-decoration: none;
+
+            &:hover .section-header {
+                background: $COLOR_DARK_GREEN;
+            }
+        }
+        .section-header {
+            padding: 10px;
+            font-weight: normal;
+        }
+        .section-info {
+            font-size: $FONT_SIZE_N;
+        }
+    }
     .link-size-box {
         display: table-cell;
         vertical-align: middle;
@@ -149,4 +100,15 @@
     #pre-contract-documents-img {
         background-image: url('../images/pages/get-started-jp/contract.svg');
     }
+}
+
+.formula span {
+    display: inline-block;
+    padding: 10px 20px;
+    min-width: 60%;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background: $COLOR_LIGHT_GRAY;
+    color: $COLOR_BLUE_SHADE;
 }

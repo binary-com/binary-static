@@ -96,6 +96,14 @@ const requireHighstock = callback => (
  */
 const getElementById = (id_selector, parent = document) => parent.getElementById(id_selector) || createElement('div');
 
+/*
+ * @param  {String}  id_selector   the selector for the element
+ * @param  {Element} parent        optional selector to use for parent, defaults to document
+ * @return {Element}               return element if it is visible
+ */
+const getVisibleElement = (id_selector, parent = document) =>
+    Array.from(parent.getElementsByClassName(id_selector)).find((el) => isVisible(el));
+
 module.exports = {
     detectHedging,
     jqueryuiTabsToDropdown,
@@ -106,6 +114,7 @@ module.exports = {
     selectorExists,
     requireHighstock,
     getElementById,
+    getVisibleElement,
     elementTextContent: (element, text) => getSetElementValue(element, text, 'textContent'),
     elementInnerHtml  : (element, text) => getSetElementValue(element, text, 'innerHTML'),
 };

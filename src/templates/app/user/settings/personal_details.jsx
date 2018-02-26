@@ -8,6 +8,7 @@ import {
     AddressState,
     AddressPostcode,
     Phone,
+    GeocodeResponse,
 } from '../../../_common/components/forms_common_rows.jsx';
 import Loading from '../../../_common/components/loading.jsx';
 
@@ -84,16 +85,18 @@ const PersonalDetails = () => (
                     id='tax_identification_number' attributes={{ maxLength: 20 }} />
             </Fieldset>
 
-            <Fieldset className='invisible RealAcc ja-hide' legend={it.L('Address')}>
+            <Fieldset id='address_form' className='invisible RealAcc ja-hide' legend={it.L('Address')}>
+                <p className='hint'>{it.L('Please enter your full address to avoid authentication delays.')}</p>
                 <AddressLine1 no_hint />
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
                 <AddressPostcode />
                 <Phone />
+                <GeocodeResponse />
             </Fieldset>
 
-            <Fieldset className='invisible JpAcc' legend={it.L('Address')}>
+            <Fieldset id='address_form' className='invisible JpAcc' legend={it.L('Address')}>
                 <FormRow type='label' label={it.L('Postal Code / ZIP')} id='lbl_address_postcode' attributes={{className: 'jp_value'}} />
                 <FormRow type='label' label={it.L('State/Province')} id='lbl_address_state' attributes={{className: 'jp_value'}} />
                 <FormRow type='label' label={it.L('Town/City')} id='lbl_address_city' attributes={{className: 'jp_value'}} />
@@ -147,6 +150,13 @@ const PersonalDetails = () => (
                     <option value='Other'>{it.L('Other')}</option>
                 </FormRow>
                 <FormRow type='text' label={it.L('Amount of above assets')} id='hedge_asset_amount' attributes={{ maxLength: 20 }} row_class='hedge invisible' input_prefix='¥' />
+                <FormRow type='select' id='motivation_circumstances' label={it.L('Motivation/Circumstances')}>
+                    <option value=''>{it.L('Please select')}</option>
+                    <option value='Web Advertisement'>{it.L('Web Advertisement')}</option>
+                    <option value='Homepage'>{it.L('Homepage')}</option>
+                    <option value='Introduction by acquaintance'>{it.L('Introduction by acquaintance')}</option>
+                    <option value='Others'>{it.L('Others')}</option>
+                </FormRow>
             </Fieldset>
 
             <Fieldset className='invisible' id='fieldset_email_consent' legend={it.L('Preferences')}>

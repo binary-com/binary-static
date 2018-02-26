@@ -54,7 +54,7 @@ export const NavButtons = ({ parent, section }) => (
 export const ImageBox = ({ header, text, image }) => (
     <div className='gr-5 gr-12-m gr-padding-10'>
         <div className='gr-padding-20 fill-bg-color center-text gr-gutter'>
-            <div><img src={it.url_for(`images/pages/get-started-beta/mt5/common/${image}.svg`)} /></div>
+            <div><img src={it.url_for(`images/pages/get-started/mt5/common/${image}.svg`)} /></div>
             <p><strong>{header}</strong></p>
             <p className='gr-gutter'>{text}</p>
         </div>

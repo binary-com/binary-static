@@ -5,6 +5,7 @@ const Header          = require('../../../../base/header');
 const BinarySocket    = require('../../../../base/socket');
 const formatMoney     = require('../../../../common/currency').formatMoney;
 const FormManager     = require('../../../../common/form_manager');
+const Geocoder        = require('../../../../../_common/geocoder');
 const CommonFunctions = require('../../../../../_common/common_functions');
 const localize        = require('../../../../../_common/localize').localize;
 const State           = require('../../../../../_common/storage').State;
@@ -118,6 +119,9 @@ const PersonalDetails = (() => {
             fnc_additional_check: additionalCheck,
             enable_button       : true,
         });
+        if (!is_virtual && !is_jp) {
+            Geocoder.validate(form_id);
+        }
     };
 
     const displayGetSettingsData = (data, populate = true) => {
@@ -180,9 +184,10 @@ const PersonalDetails = (() => {
 
                 { selector: '#email_consent' },
 
-                { selector: '#hedge_asset_amount',     validations: ['req', 'number'], parent_node: 'jp_settings' },
-                { selector: '#hedge_asset',            validations: ['req'],           parent_node: 'jp_settings' },
-                { selector: '#account_opening_reason', validations: ['req'] },
+                { selector: '#hedge_asset_amount',       validations: ['req', 'number'], parent_node: 'jp_settings' },
+                { selector: '#hedge_asset',              validations: ['req'],           parent_node: 'jp_settings' },
+                { selector: '#motivation_circumstances', validations: ['req'],           parent_node: 'jp_settings' },
+                { selector: '#account_opening_reason',   validations: ['req'] },
 
             ];
             $(form_id).find('select').each(function () {
