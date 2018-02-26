@@ -65,13 +65,13 @@ export const AccountOpeningReason  = ({ row_id, row_class }) => (
     </FormRow>
 );
 
-export const AddressLine1 = ({ hint, no_hint }) => (
+export const AddressLine1 = ({ hint }) => (
     <FormRow
         type='text'
         id='address_line_1'
         label={it.L('First line of home address')}
         attributes={{maxLength: '70'}}
-        hint={hint || (no_hint ? '' : it.L('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.'))}
+        hint={hint}
     />
 );
 
