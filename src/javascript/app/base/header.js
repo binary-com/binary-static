@@ -314,10 +314,10 @@ const Header = (() => {
 
             // real account checks in order
             const check_statuses_real = [
+                'excluded_until',
                 'tnc',
                 'financial_limit',
                 'risk',
-                'excluded_until',
                 'tax',
                 'currency',
                 'document_review',

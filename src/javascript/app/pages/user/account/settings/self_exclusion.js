@@ -213,6 +213,9 @@ const SelfExclusion = (() => {
         }
         showFormMessage('Your changes have been updated.', true);
         Client.set('session_start', moment().unix()); // used to handle session duration limit
+        if (response.echo_req.exclude_until) {
+            Client.set('excluded_until', moment(response.echo_req.exclude_until).unix());
+        }
         BinarySocket.send({ get_account_status: 1 }).then(() => {
             Header.displayAccountStatus();
             if (set_30day_turnover) {
