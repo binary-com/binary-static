@@ -20,7 +20,7 @@ const SectionTicked = ({ header, text }) => (
 const SectionSmall = ({ header, text, image }) => (
     <div className='gr-4 gr-padding-30 gr-parent'>
         <div className='gr-padding-20 gr-parent'>
-            <img src={image ? it.url_for(`images/pages/get-started-beta/binary-options/${image}.svg`) : 'https://placehold.it/70x70'} />
+            <img src={image ? it.url_for(`images/pages/get-started/binary-options/${image}.svg`) : 'https://placehold.it/70x70'} />
         </div>
         <strong>{header}</strong>
         <p className='no-margin gr-padding-10'>{text}</p>
@@ -31,7 +31,7 @@ const SectionLarge = ({ header, text, image, children }) => (
     <React.Fragment>
         <div className='gr-row'>
             <div className='gr-gutter gr-centered-m gr-centered-p gr-parent gr-padding-30'>
-                <img src={it.url_for(`images/pages/get-started-beta/binary-options/${image}.svg`)} />
+                <img src={it.url_for(`images/pages/get-started/binary-options/${image}.svg`)} />
             </div>
             <div className='gr-9 gr-12-m gr-12-p'>
                 <h3 className='secondary-color'>{header}</h3>
@@ -55,7 +55,7 @@ const Step = ({ header, text }) => {
             <div className='circle'>{ circle_no }</div>
             <div className='gr-padding-20 gr-gutter center-text'>
                 <div className='gr-8 gr-centered'>
-                    <img className='responsive' src={it.url_for(`images/pages/get-started-beta/binary-options/how-to-trade-binary/easy-step-${circle_no}.svg`)} />
+                    <img className='responsive' src={it.url_for(`images/pages/get-started/binary-options/how-to-trade-binary/easy-step-${circle_no}.svg`)} />
                 </div>
                 <div className='gr-padding-20 gr-child'><strong>{header}</strong></div>
                 <p className='no-margin gr-padding-10'>{text}</p>
@@ -95,7 +95,7 @@ const BinaryOptions = () => {
     circle_no = 0;
 
     return (
-        <div className='static_full get-started-beta'>
+        <div className='static_full get-started'>
             <h1>{it.L('Binary Options')}</h1>
             <div className='gr-row'>
                 <div className='gr-3 gr-hide-m sidebar-container'>
@@ -166,7 +166,7 @@ const BinaryOptions = () => {
                         <h3 className='secondary-color'>{it.L('Step 1: Define your position')}</h3>
                         <p>{it.L('The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:')}</p>
                         <div className='gr-padding-30'>
-                            <img className='responsive' src={it.url_for('images/pages/get-started-beta/binary-options/how-to-trade-binary/define-position.svg')} />
+                            <img className='responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/define-position.svg')} />
                         </div>
 
                         <CircleHeader className='gr-padding-10' header={it.L('Underlying market')} text={it.L('Choose from five available markets:')}>
@@ -199,13 +199,13 @@ const BinaryOptions = () => {
 
                         <HeaderSecondary header={it.L('Step 2: Get your price')} />
                         <div className='gr-padding-20 gr-10'>
-                            <img className='gr-padding-20 responsive' src={it.url_for('images/pages/get-started-beta/binary-options/how-to-trade-binary/step-2.svg')} />
+                            <img className='gr-padding-20 responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/step-2.svg')} />
                         </div>
                         <p>{it.L('The price of the contract is automatically calculated by our patented pricing technology based on the parameters you\'ve defined in Step 1. Our prices are benchmarked against the interbank options market, so you always get the most competitive prices. This means that you\'ll always receive fair and transparent pricing, whatever your position.')}</p>
 
                         <HeaderSecondary header={it.L('Step 3: Make your trade')} />
                         <div className='gr-padding-20 gr-10'>
-                            <img className='responsive' src={it.url_for('images/pages/get-started-beta/binary-options/how-to-trade-binary/step-3.svg')} />
+                            <img className='responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/step-3.svg')} />
                         </div>
                         <p>{it.L('When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there\'s no risk of \'slippage\' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions.')}</p>
                     </Section>
