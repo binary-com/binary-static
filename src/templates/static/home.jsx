@@ -152,7 +152,7 @@ const TabCircles = ({ id, number }) => (
     </div>
 );
 
-const HomeBeta = () => {
+const Home = () => {
     const binary_header = it.L('Binary options');
     const binary_desc   = it.L('Options that offer a fixed payout based on a simple yes/no proposition.');
     const binary_img    = 'images/pages/home/trade/binary.svg';
@@ -395,4 +395,4 @@ const HomeBeta = () => {
     );
 };
 
-export default HomeBeta;
+export default Home;
