@@ -40,10 +40,10 @@ export const initActions = (store) => {
     });
 
     const reaction_map   = {
-        symbol             : defaultExports.onSymbolChangeAsync,
+        symbol             : defaultExports.onChangeSymbolAsync,
         contract_types_list: defaultExports.onChangeContractTypeList,
         contract_type      : defaultExports.onChangeContractType,
-        amount             : defaultExports.onAmountChange,
+        amount             : defaultExports.onChangeAmount,
     };
 
     Object.keys(reaction_map).forEach((reaction_key) => {
@@ -52,7 +52,6 @@ export const initActions = (store) => {
     });
 };
 
-// TODO: call this on unload of trade
 export const disposeActions = () => {
     reaction_disposers.forEach((disposer) => { disposer(); });
 };
