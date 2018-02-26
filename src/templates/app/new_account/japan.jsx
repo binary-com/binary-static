@@ -66,6 +66,8 @@ const Japan = () => (
 
                 <DateOfBirth />
 
+                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} />
+
                 <FormRow type='select' id='occupation' label={it.L('Occupation')}>
                     <option value=''>{it.L('Please select')}</option>
                     <option value='Office worker'>{it.L('Office worker')}</option>
