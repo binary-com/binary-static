@@ -6,7 +6,7 @@ const hundred_thousand = '100,000';
 const hundredth        = '0.01';
 
 const Forex = () => (
-    <div className='static_full get-started-beta'>
+    <div className='static_full get-started'>
         <h1>{it.L('MetaTrader 5')}</h1>
         <div className='gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>
@@ -100,7 +100,7 @@ const Forex = () => (
                     <HeaderSecondary header={it.L('Step 3: How to purchase your first currency pair')} />
                     <p>{it.L('After you\'ve decided which position you want to take, your next step is to purchase that currency pair on MetaTrader 5')}.</p>
                     <p>{it.L('Here\'s an example of the EUR/USD currency pair and its bid-ask price:')}</p>
-                    <img className='gr-6 gr-12-m gr-no-gutter' src={it.url_for('images/pages/get-started-beta/mt5/forex/price.png')} />
+                    <img className='gr-6 gr-12-m gr-no-gutter' src={it.url_for('images/pages/get-started/mt5/forex/price.png')} />
                     <p>{it.L('To go long, you\'ll want to click on \'Buy\' to purchase EUR 1 for USD 1.17726')}</p>
                     <p>{it.L('To go short, you\'ll click on \'Sell\' to sell EUR 1 and receive USD 1.17725 in return.')}</p>
                 </Section>
