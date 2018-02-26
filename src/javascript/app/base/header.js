@@ -303,7 +303,7 @@ const Header = (() => {
                 currency             : () => !Client.get('currency'),
                 document_needs_action: () => /document_needs_action/.test(status),
                 document_review      : () => /document_under_review/.test(status),
-                excluded_until        : () => Client.get('excluded_until'),
+                excluded_until       : () => Client.get('excluded_until'),
                 financial_limit      : () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence            : () => !Client.get('residence'),
                 risk                 : () => riskAssessment(),
