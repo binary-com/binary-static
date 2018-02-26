@@ -62,7 +62,7 @@ const LoggedInHandler = (() => {
                 if (param === 'loginid') {
                     // set the first non-ico account as default loginid
                     if (!is_loginid_set && !account.is_virtual &&
-                        !account.is_ico_only && !account.is_disabled && !account.excluded_until) {
+                        !account.is_ico_only && !account.is_disabled) {
                         Client.set(param, account[param]);
                         is_loginid_set = true;
                     }

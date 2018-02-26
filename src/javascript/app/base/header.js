@@ -93,7 +93,7 @@ const Header = (() => {
         BinarySocket.wait('authorize').then(() => {
             const loginid_select = document.createElement('div');
             Client.getAllLoginids().forEach((loginid) => {
-                if (!Client.get('is_disabled', loginid) && !Client.get('excluded_until', loginid)) {
+                if (!Client.get('is_disabled', loginid)) {
                     const account_title  = Client.getAccountTitle(loginid);
                     const is_real        = /real/i.test(account_title);
                     const currency       = Client.get('currency', loginid);
@@ -289,6 +289,7 @@ const Header = (() => {
                 currency             : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                                                    'user/set-currency'),
                 document_needs_action: () => buildMessage('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.', 'user/authenticate'),
                 document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
+                excluded_until       : () => buildMessage('Your account is restricted. For more details [_1]contact us[_2].'),
                 financial_limit      : () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                                             'user/security/self_exclusionws'),
                 residence            : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                                                   'user/settings/detailsws'),
                 risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',                                   'user/settings/assessmentws'),
@@ -302,6 +303,7 @@ const Header = (() => {
                 currency             : () => !Client.get('currency'),
                 document_needs_action: () => /document_needs_action/.test(status),
                 document_review      : () => /document_under_review/.test(status),
+                excluded_until        : () => Client.get('excluded_until'),
                 financial_limit      : () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence            : () => !Client.get('residence'),
                 risk                 : () => riskAssessment(),
@@ -315,6 +317,7 @@ const Header = (() => {
                 'tnc',
                 'financial_limit',
                 'risk',
+                'excluded_until',
                 'tax',
                 'currency',
                 'document_review',
