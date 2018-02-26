@@ -5,6 +5,7 @@ const Client              = require('./client');
 const GTM                 = require('./gtm');
 const Login               = require('./login');
 const BinarySocket        = require('./socket');
+const SocketCache         = require('./socket_cache');
 const checkClientsCountry = require('../common/country_base').checkClientsCountry;
 const jpClient            = require('../common/country_base').jpClient;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
@@ -155,6 +156,7 @@ const Header = (() => {
         Client.set('cashier_confirmed', 0);
         Client.set('accepted_bch', 0);
         Client.set('loginid', loginid);
+        SocketCache.clear();
         // Load page based on account type.
         if (Client.get('is_ico_only', loginid)) {
             window.location.assign(Client.defaultRedirectUrl());

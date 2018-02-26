@@ -34,7 +34,7 @@ const TimePicker = (() => {
     };
 
     const config = (options) => {
-        let time_now = window.time.clone();
+        let time_now = moment.utc(window.time).clone();
 
         const obj_config = {
             hourText  : localize('Hour'),
