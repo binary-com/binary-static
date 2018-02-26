@@ -215,7 +215,7 @@ const Price = (() => {
             } else {
                 if (description) description.removeAttribute('data-balloon');
                 if (longcode) CommonFunctions.elementTextContent(longcode, '');
-            };
+            }
         };
 
         const setPurchaseStatus = (enable) => {
