@@ -56,7 +56,11 @@ class TradeApp extends React.Component {
                         modalIsVisible: false
                     })}
                 >
-                    <p>some content goes here</p>
+                    <Duration />
+                    <Duration />
+                    <Duration />
+                    <Duration />
+                    <Duration />
                 </FullscreenDialog>
             </React.Fragment>
         );

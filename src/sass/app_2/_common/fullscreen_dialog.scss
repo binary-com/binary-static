@@ -9,22 +9,33 @@
     z-index: 1;
     background-color: #fff;
     opacity: 0;
-    transform: translateY(100%) scale(0.1);
+    /*
+        do transform transition on pseudo element instead of the actual dialog el
+        transforms create a new local coordinate system,
+        which results in position: fixed children being fixed to the
+        transformed parent instead of the viewport
+    */
     transition: all 0.2s;
     overflow: auto;
+    padding-top: 53px;
 
     &--open {
-        transform: translateY(0) scale(1);
         opacity: 1;
     }
     &__header {
-        position: relative;
-        padding: 1rem 1rem 0;
+        box-sizing: border-box;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        padding: 1rem;
+        background-color: #fff;
+        z-index: 1;
     }
     &__title {
         font-size: 1.3rem;
         font-weight: 600;
         color: #333;
+        margin: 0;
     }
     &__close-btn {
         position: absolute;
