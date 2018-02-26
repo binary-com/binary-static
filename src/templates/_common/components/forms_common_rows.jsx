@@ -203,8 +203,9 @@ export const TaxInformationForm = () => (
                 </label>
             </div>
             <div className='gr-12 gr-padding-10'>
-                <p className='no-margin'>
-                    <i><span className='errorfield'>* </span>{it.L('You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate.')}</i>
+                <p className='no-margin hint'>
+                    <span className='required_field_asterisk no-margin'>* </span>
+                    {it.L('You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate.')}
                 </p>
             </div>
         </div>
