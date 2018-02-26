@@ -23,6 +23,7 @@ const JapanAccOpening = (() => {
             { selector: '#secret_answer',      validations: ['req', ['min', { min: 1, max: 50 }]] },
             { selector: '#daily_loss_limit',   validations: ['req', 'number'] },
             { selector: '#hedge_asset_amount', validations: ['req', 'number'] },
+            { selector: '#motivation_circumstances', validations: ['req'] },
 
             { request_field: 'residence',         value: Client.get('residence') },
             { request_field: 'new_account_japan', value: 1 },

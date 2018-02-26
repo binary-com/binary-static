@@ -9,7 +9,7 @@ const GetStartedSection = ({ link, hash, image, header, text }) => {
             <div className='gr-row'>
                 <div className='gr-4'>
                     <a href={href}>
-                        <img className='responsive' src={it.url_for(`images/pages/get-started-beta/${image}.svg`)} />
+                        <img className='responsive' src={it.url_for(`images/pages/get-started/${image}.svg`)} />
                     </a>
                 </div>
                 <div className='gr-8'>
@@ -33,7 +33,7 @@ const GetStartedSectionWrapper = ({ section_id, section_header, section_descript
 );
 
 const Index = () => (
-    <div className='static_full get-started-beta'>
+    <div className='static_full get-started'>
         <h1 className='center-text eu-hide'>{it.L('Get Started')}</h1>
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
             <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper eu-hide' items={[
