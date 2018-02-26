@@ -138,7 +138,7 @@ const Client = (() => {
 
     const updateAccountList = (account_list) => {
         account_list.forEach((account) => {
-            set('excluded_until', account.excluded_until, account.loginid);
+            set('excluded_until', account.excluded_until || '', account.loginid);
             Object.keys(account).forEach((param) => {
                 const param_to_set = param === 'country' ? 'residence' : param;
                 const value_to_set = typeof account[param] === 'undefined' ? '' : account[param];
