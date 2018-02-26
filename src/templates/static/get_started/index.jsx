@@ -236,7 +236,7 @@ const Index = () => (
                         <p>{it.L('A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to "look back" over time to determine the payout.')}</p>
                         <SeparatorLine invisible className='gr-padding-10' />
                         <h3>{it.L('Types of lookbacks')}</h3>
-                        <p>{it.L('We offer three types lookbacks:')}</p>
+                        <p>{it.L('We offer three types of lookbacks:')}</p>
                         <div className='gr-row'>
                             <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
                                 <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-high-image.svg')} />
