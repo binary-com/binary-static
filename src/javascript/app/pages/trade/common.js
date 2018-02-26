@@ -214,6 +214,8 @@ const commonTrading = (() => {
             barrier = 'euro_atm';
         } else if (/overunder|evenodd|matchdiff/.test(form_name)) {
             name = 'digits';
+        } else if (/lookback/.test(form_name)) {
+            name = 'lookback';
         }
         return {
             form_name       : name,
@@ -249,6 +251,9 @@ const commonTrading = (() => {
         UPORDOWN    : 'bottom',
         ONETOUCH    : 'top',
         NOTOUCH     : 'bottom',
+        LBFLOATCALL : 'middle',
+        LBFLOATPUT  : 'middle',
+        LBHIGHLOW   : 'middle',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');
@@ -278,6 +283,9 @@ const commonTrading = (() => {
             'asian',
             ['digits',
                 ['matchdiff', 'evenodd', 'overunder'],
+            ],
+            ['lookback',
+                ['lookbackhigh', 'lookbacklow', 'lookbackhighlow'],
             ],
         ];
 
@@ -508,6 +516,8 @@ const commonTrading = (() => {
     };
 
     const selectOption = (option, select) => {
+        if (!select) return false;
+
         const options = select.getElementsByTagName('option');
         let contains  = 0;
         for (let i = 0; i < options.length; i++) {

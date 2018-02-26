@@ -11,6 +11,7 @@ const getElementById      = require('../../_common/common_functions').getElement
 const localize            = require('../../_common/localize').localize;
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const urlFor              = require('../../_common/url').urlFor;
+const applyToAllElements  = require('../../_common/utility').applyToAllElements;
 const createElement       = require('../../_common/utility').createElement;
 
 const BinaryLoader = (() => {
@@ -42,7 +43,6 @@ const BinaryLoader = (() => {
 
     const beforeContentChange = () => {
         if (active_script) {
-            Page.onUnload();
             BinarySocket.removeOnDisconnect();
             if (typeof active_script.onUnload === 'function') {
                 active_script.onUnload();
@@ -54,6 +54,14 @@ const BinaryLoader = (() => {
     const afterContentChange = (e) => {
         Page.onLoad();
         GTM.pushDataLayer();
+
+        if (Client.isLoggedIn() && !Client.hasCostaricaAccount()) {
+            applyToAllElements('.only-cr', (el) => { el.setVisibility(0); });
+            // Fix issue with tabs.
+            if (/get_started_tabs=lookback/.test(window.location.href)) {
+                BinaryPjax.load(urlFor('get-started'));
+            }
+        }
 
         const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {

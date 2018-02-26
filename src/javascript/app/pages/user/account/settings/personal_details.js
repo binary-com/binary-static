@@ -5,6 +5,7 @@ const Header          = require('../../../../base/header');
 const BinarySocket    = require('../../../../base/socket');
 const formatMoney     = require('../../../../common/currency').formatMoney;
 const FormManager     = require('../../../../common/form_manager');
+const Geocoder        = require('../../../../../_common/geocoder');
 const CommonFunctions = require('../../../../../_common/common_functions');
 const localize        = require('../../../../../_common/localize').localize;
 const State           = require('../../../../../_common/storage').State;
@@ -118,6 +119,9 @@ const PersonalDetails = (() => {
             fnc_additional_check: additionalCheck,
             enable_button       : true,
         });
+        if (!is_virtual && !is_jp) {
+            Geocoder.validate(form_id);
+        }
     };
 
     const displayGetSettingsData = (data, populate = true) => {
@@ -180,9 +184,10 @@ const PersonalDetails = (() => {
 
                 { selector: '#email_consent' },
 
-                { selector: '#hedge_asset_amount',     validations: ['req', 'number'], parent_node: 'jp_settings' },
-                { selector: '#hedge_asset',            validations: ['req'],           parent_node: 'jp_settings' },
-                { selector: '#account_opening_reason', validations: ['req'] },
+                { selector: '#hedge_asset_amount',       validations: ['req', 'number'], parent_node: 'jp_settings' },
+                { selector: '#hedge_asset',              validations: ['req'],           parent_node: 'jp_settings' },
+                { selector: '#motivation_circumstances', validations: ['req'],           parent_node: 'jp_settings' },
+                { selector: '#account_opening_reason',   validations: ['req'] },
 
             ];
             $(form_id).find('select').each(function () {
@@ -230,6 +235,9 @@ const PersonalDetails = (() => {
                 if (is_for_new_account) {
                     is_for_new_account = false;
                     BinaryPjax.loadPreviousUrl();
+                }
+                if (is_virtual && response.echo_req.residence) {
+                    window.location.reload(); // reload page if we are setting residence
                 }
             });
         }
@@ -280,7 +288,7 @@ const PersonalDetails = (() => {
             } else {
                 $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
                 const $residence = $('#residence');
-                $options_with_disabled.prepend($('<option/>', { text: localize('Please select a value'), value: '' }));
+                $options_with_disabled.prepend($('<option/>', { text: localize('Please select a country'), value: '' }));
                 $residence.html($options_with_disabled.html());
                 initFormManager();
             }

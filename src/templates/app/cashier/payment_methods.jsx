@@ -23,7 +23,7 @@ const Row = ({
         <div className={`gr-row gr-padding-10 ${is_header ? 'table-header' : 'table-body' }`}>
             <div className='gr-2 gr-6-m'>
                 { logo ?
-                    <img src={it.url_for(`images/pages/home-beta/payment/${  logo  }.svg`)} />
+                    <img src={it.url_for(`images/pages/home/payment/${  logo  }.svg`)} />
                     : method
                 }
             </div>

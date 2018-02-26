@@ -43,7 +43,7 @@ export const NavButtons = ({ parent, section }) => (
                 <a className='button' id='go_next'><span>{`${it.L('Next')} >`}</span></a>
             </div>
             <div className='center-text'>
-                <a className='button-secondary' href={`${it.url_for('get-started-beta')}?get_started_tabs=${parent}&section=${section}`}><span>{it.L('Back to Menu')}</span></a>
+                <a className='button-secondary' href={`${it.url_for('get-started')}?get_started_tabs=${parent}&section=${section}`}><span>{it.L('Back to Menu')}</span></a>
             </div>
         </div>
 
@@ -54,7 +54,7 @@ export const NavButtons = ({ parent, section }) => (
 export const ImageBox = ({ header, text, image }) => (
     <div className='gr-5 gr-12-m gr-padding-10'>
         <div className='gr-padding-20 fill-bg-color center-text gr-gutter'>
-            <div><img src={it.url_for(`images/pages/get-started-beta/mt5/common/${image}.svg`)} /></div>
+            <div><img src={it.url_for(`images/pages/get-started/mt5/common/${image}.svg`)} /></div>
             <p><strong>{header}</strong></p>
             <p className='gr-gutter'>{text}</p>
         </div>
