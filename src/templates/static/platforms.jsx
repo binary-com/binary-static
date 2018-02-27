@@ -54,7 +54,6 @@ const Platform = () => (
                 <div className='gr-2'></div>
                 <Platforms
                     image_class='gr-12 gr-7-p gr-10-m'
-                    image_path='home'
                     image='mt5'
                     header={it.L('MetaTrader 5')}
                     description={it.L('Advanced multi-asset trading platform')}
