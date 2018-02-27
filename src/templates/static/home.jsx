@@ -5,7 +5,7 @@ import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../
 import { Asterisk, ProductHint } from  '../_common/components/product_hint.jsx';
 
 const PaymentLogo = ({ items }) => items.map((item, inx) => (
-    <div key={inx} className='gr-2 gr-4-m center-text'>
+    <div key={inx} className='gr-2 gr-4-m center-text' data-show={item.dataShow}>
         <img className='gr-12 gr-centered' src={it.url_for(`images/pages/home/payment/${item.image}.svg`)} />
     </div>
 ));
@@ -376,11 +376,11 @@ const Home = () => {
                                             { image: 'skrill' },
                                             { image: 'ecopayz' },
                                             { image: 'qiwi' },
-                                            { image: 'ethereum_black' },
-                                            { image: 'bitcoin' },
-                                            { image: 'bitcoin_cash' },
-                                            { image: 'litecoin' },
-                                            { image: 'union_pay' },
+                                            { image: 'ethereum_black', dataShow: '-malta, -maltainvest' },
+                                            { image: 'bitcoin', dataShow: '-malta, -maltainvest' },
+                                            { image: 'bitcoin_cash', dataShow: '-malta, -maltainvest' },
+                                            { image: 'litecoin', dataShow: '-malta, -maltainvest' },
+                                            { image: 'union_pay', dataShow: '-malta, -maltainvest' },
                                         ]}
                                     />
                                 </div>
