@@ -191,6 +191,7 @@ const Price = (() => {
         const error               = container.getElementsByClassName('contract_error')[0];
         const currency            = CommonFunctions.getVisibleElement('currency');
 
+        if (!h4) return;
         const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
             h4.setAttribute('class', `contract_heading ${type}`);
@@ -219,7 +220,7 @@ const Price = (() => {
             } else {
                 if (description) description.removeAttribute('data-balloon');
                 if (longcode) CommonFunctions.elementTextContent(longcode, '');
-            };
+            }
         };
 
         const setPurchaseStatus = (enable) => {

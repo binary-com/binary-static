@@ -22,7 +22,7 @@ const Head = () => (
         <Title />
 
         <link rel='manifest' href={`${it.root_url}manifest.json`} />
-        <script type='text/javascript' src='//cdn.pushwoosh.com/webpush/v3/pushwoosh-web-notifications.js' async></script>
+        <script type='text/javascript' src={`${it.root_url}pushwoosh-web-notifications.js`} async></script>
 
         <Favicons />
 
