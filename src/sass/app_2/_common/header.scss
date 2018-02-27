@@ -27,13 +27,15 @@ header {
                     width: 2.5rem;
                 }
             }
+            &.notify-toggle {
+                order: 2;
+            }
         }
         .menu-left {
             justify-content: flex-start;
             order: -1;
             display: inline-flex;
             flex: 1;
-            border-right: 1px solid #f2f2f2;
 
             .menu-toggle {
                 align-self: center;
@@ -82,6 +84,68 @@ header {
                 }
                 @media (max-width: 768px) {
                     display: none;
+                }
+            }
+        }
+        .menu-right {
+            justify-content: flex-end;
+            order: 1;
+            display: inline-flex;
+            flex: 1;
+            border-right: 1px solid #f2f2f2;
+
+            .acc-balance-container {
+                display: inline-flex;
+                align-items: center;
+
+                .acc-balance {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    p.acc-balance-accountid {
+                        line-height: 0.5;
+                        color: #e98024;
+                        font-size: 0.75rem;
+                        margin: 0.5em;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                    p.acc-balance-amount {
+                        line-height: 0.5;
+                        color: #e98024;
+                        font-size: 1.25rem;
+                        margin: 0.5em;
+                        font-weight: 600;
+                        text-align: center;
+
+                        i {
+                            position: relative;
+
+                            span.symbols {
+                                position: absolute;
+                                right: 15px;
+
+                                &.aud {
+                                    right: 30px;
+                                }
+                                &.bch {
+                                    right: 20px;
+                                }
+                                &:before {
+                                    color: #e98024;
+                                    font-size: 1.25rem;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-around;
+                                }
+                            }
+                        }
+                    }
+                }
+                button.btn {
+                    margin: 0 16px 0 4px;
                 }
             }
         }
