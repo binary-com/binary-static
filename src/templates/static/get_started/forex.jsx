@@ -1,13 +1,14 @@
 import React from 'react';
 import { List, Table } from '../../_common/components/elements.jsx';
 import { Box, BuySellCurrency, HeaderSecondary, MtBox, NavButtons, Section } from './common.jsx';
+import { Asterisk, ProductHint } from '../../_common/components/product_hint.jsx';
 
 const hundred_thousand = '100,000';
 const hundredth        = '0.01';
 
 const Forex = () => (
     <div className='static_full get-started'>
-        <h1>{it.L('MetaTrader 5')}</h1>
+        <h1>{it.L('MetaTrader 5')}<Asterisk /></h1>
         <div className='gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>
                 <div className='sidebar'>
@@ -235,6 +236,7 @@ const Forex = () => (
                 <NavButtons parent='mt5' section='forex' />
             </div>
         </div>
+        <ProductHint />
     </div>
 );
 
