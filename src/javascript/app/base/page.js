@@ -65,35 +65,28 @@ const Page = (() => {
         });
     };
 
-    const showHiddenElementsBasedOnCompany = (landing_company_name) => {
+    const showHiddenElementsBasedOnCompany = (landing_company_name, has_mt_company) => {
         const visible_classname = 'data-show-visible';
 
         function parseAttributeString(attrStr) {
             function generateErrorMessage(reason) {
                 return `Invalid data-show attribute value! ${reason} Given value: '${attrStr}'.`;
             }
-
             if (!/^[a-z,-\s]+$/.test(attrStr)) {
                 throw new Error(generateErrorMessage('Invalid characted used.'));
             }
-
             let names = attrStr.split(',').map(name => name.trim());
-
             if (names.some(name => name.length === 0)) {
                 throw new Error(generateErrorMessage('No empty names allowed.'));
             }
-
             const isExclude = names.every(name => name[0] === '-');
             const isInclude = names.every(name => name[0] !== '-');
-
             if (!isExclude && !isInclude) {
                 throw new Error(generateErrorMessage('No mixing of includes and excludes allowed.'));
             }
-
             if (isExclude) {
                 names = names.map(name => name.slice(1));
             }
-
             return {
                 isExclude,
                 names,
@@ -105,16 +98,13 @@ const Page = (() => {
         document.querySelectorAll('[data-show]').forEach(el => {
             const attrStr = el.dataset.show;
             const { isExclude, names } = parseAttributeString(attrStr);
-            
-            console.log((isExclude ? 'exclude' : 'include'), names);
-
+            const isInclude = !isExclude;
             const nameSet = new Set(names);
 
-            if (isExclude && !nameSet.has(landing_company_name)) {
-                el.classList.add(visible_classname);
-                console.log('show', el);
-            }
-            else if (!isExclude && nameSet.has(landing_company_name)) {
+            if ((isExclude && !nameSet.has(landing_company_name) && (has_mt_company !== nameSet.has('metatrader')))
+                || (isInclude && nameSet.has(landing_company_name))
+                || (isInclude && has_mt_company && nameSet.has('metatrader')))
+            {
                 el.classList.add(visible_classname);
                 console.log('show', el);
             }
@@ -151,12 +141,17 @@ const Page = (() => {
                 RealityCheck.onLoad();
                 Menu.init();
                 const landing_company_name = State.getResponse('authorize.landing_company_name');
-                showHiddenElementsBasedOnCompany(landing_company_name);
+                const has_mt_company = !!(
+                    State.getResponse('landing_company.mt_financial_company.shortcode')
+                    || State.getResponse('landing_company.mt_gaming_company.shortcode')
+                );
+                console.log('has_mt_company', has_mt_company);
+                showHiddenElementsBasedOnCompany(landing_company_name, has_mt_company);
             });
         } else {
             checkLanguage();
             Menu.init();
-            showHiddenElementsBasedOnCompany('default');
+            showHiddenElementsBasedOnCompany('default', true);
         }
         TrafficSource.setData();
     };
