@@ -5,7 +5,8 @@ class ToggleFullScreen extends React.Component {
         super(props);
         this.enterFullScreen = this.enterFullScreen.bind(this);
         this.exitFullScreen  = this.exitFullScreen.bind(this);
-        this.onFullScreen    = this.onFullScreen.bind(this);
+
+        this.state = { isFullScreen: false };
     }
 
     componentWillMount() {
@@ -13,12 +14,9 @@ class ToggleFullScreen extends React.Component {
         document.addEventListener('mozfullscreenchange', this.onFullScreen, false);
         document.addEventListener('fullscreenchange', this.onFullScreen, false);
         document.addEventListener('MSFullscreenChange', this.onFullScreen, false);
-        this.setState({
-            isFullScreen: false,
-        });
     }
 
-    onFullScreen() {
+    onFullScreen = () => {
         const fullscreenElement =  document.fullscreenElement || document.mozFullScreenElement ||
             document.webkitFullscreenElement || document.msFullscreenElement;
         if (fullscreenElement) {
@@ -26,7 +24,7 @@ class ToggleFullScreen extends React.Component {
         } else {
             this.setState({ isFullScreen: false });
         }
-    }
+    };
 
     enterFullScreen(e) {
         e.stopPropagation();
