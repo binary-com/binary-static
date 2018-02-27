@@ -21,7 +21,7 @@ const MobileMenu = () => (
                 <Li
                     text={it.L('Trade')}
                     href={it.url_for('trading')}
-                    className='ja-hide ico-only-hide client_logged_in invisible'
+                    className='ja-hide client_logged_in invisible'
                     subitems={[
                         { text: it.L('[_1]', it.website_name), href: it.url_for('trading'), className: 'no-capitalize' },
                         { text: it.L('Webtrader'),             href: 'https://webtrader.binary.com', target: '_blank' },
@@ -29,14 +29,14 @@ const MobileMenu = () => (
                         { text: it.L('MetaTrader 5'),          href: it.url_for('user/metatrader') },
                     ]}
                 />
-                <Li text={it.L('Portfolio')}    href={it.url_for('user/portfoliows')}    className='ico-only-hide client_logged_in invisible' />
-                <Li text={it.L('Profit Table')} href={it.url_for('user/profit_tablews')} className='ico-only-hide client_logged_in invisible' />
+                <Li text={it.L('Portfolio')}    href={it.url_for('user/portfoliows')}    className='client_logged_in invisible' />
+                <Li text={it.L('Profit Table')} href={it.url_for('user/profit_tablews')} className='client_logged_in invisible' />
                 <Li text={it.L('Statement')}    href={it.url_for('user/statementws')}    className='client_logged_in invisible' />
                 <Li text={it.L('Cashier')}      href={it.url_for('cashier')}             className='client_logged_in invisible' id='topMenuCashier' />
                 <Li
                     text={it.L('Resources')}
                     href={it.url_for('resources')}
-                    className='ico-only-hide client_logged_in invisible'
+                    className='client_logged_in invisible'
                     subitems={[
                         { text: it.L('Asset Index'),   href: it.url_for('resources/asset_indexws'), className: 'ja-hide' },
                         { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
