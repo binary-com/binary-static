@@ -20,7 +20,7 @@ const NetworkMonitor = (() => {
         ws_init   : 'ws_init',
         ws_request: 'ws_request',
     };
-    const pending_timouts = {
+    const pending_timeouts = {
         [pending_keys.ws_init]   : 5000,
         [pending_keys.ws_request]: 10000,
     };
@@ -90,7 +90,7 @@ const NetworkMonitor = (() => {
         if (pendings[key]) {
             clearPendings(key);
         }
-        pendings[key] = setTimeout(() => { setStatus(key); }, pending_timouts[key]);
+        pendings[key] = setTimeout(() => { setStatus(key); }, pending_timeouts[key]);
     };
 
     const clearPendings = (key) => {
