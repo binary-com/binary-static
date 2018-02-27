@@ -263,7 +263,7 @@ const PersonalDetails = (() => {
 
             if (residence) {
                 const $tax_residence = $('#tax_residence');
-                $tax_residence.html($options.html()).promise().done(() => {
+                $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(get_settings_data.tax_residence ? get_settings_data.tax_residence.split(',') : '').trigger('change');
