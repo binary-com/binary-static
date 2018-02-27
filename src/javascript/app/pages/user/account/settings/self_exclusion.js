@@ -66,6 +66,14 @@ const SelfExclusion = (() => {
                 self_exclusion_data = response.get_self_exclusion;
                 $.each(self_exclusion_data, (key, value) => {
                     fields[key] = value.toString();
+                    if (key === 'timeout_until') {
+                        const timeout = moment.unix(value);
+                        const date = timeout.format('DD MMM, YYYY');
+                        const time = timeout.format('HH:mm');
+                        $form.find(timeout_date_id).val(date);
+                        $form.find(timeout_time_id).val(time);
+                        return;
+                    }
                     $form.find(`#${key}`).val(value);
                 });
                 bindValidation();
