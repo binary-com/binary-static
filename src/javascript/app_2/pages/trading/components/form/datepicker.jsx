@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import { localize } from '../../../../../_common/localize';
 
 class Calendar extends React.Component {
     constructor(props) {
@@ -236,7 +237,7 @@ class Calendar extends React.Component {
 
         return (
             <div className='calendar-date-panel'>
-                {weekHeaders.map((item, idx) => (<span key={idx} className='calendar-date-header'>{item}</span>))}
+                {weekHeaders.map((item, idx) => (<span key={idx} className='calendar-date-header'>{localize(item)}</span>))}
                 {days}
             </div>
         );
@@ -254,7 +255,7 @@ class Calendar extends React.Component {
                         onClick={this.handleMonthSelected}
                         data-month={idx}
                     >
-                    {item}
+                    {localize(item)}
                     </span>
                 ))}
             </div>
