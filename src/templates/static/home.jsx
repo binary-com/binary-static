@@ -254,12 +254,12 @@ const HomeBeta = () => {
                         id='market_tabs'
                         className='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper'
                         items={[
-                            { id: 'binary',   text: binary_header },
-                            { id: 'forex',    text: it.L('Forex') },
-                            { id: 'crypto',   text: it.L('Crypto') },
-                            { id: 'cfds',     text: it.L('CFDs') },
-                            { id: 'metals',   text: it.L('Metals') },
-                            { id: 'lookback', text: it.L('Lookback') },
+                            { id: 'binary',    text: binary_header },
+                            { id: 'forex',     text: it.L('Forex') },
+                            { id: 'crypto',    text: it.L('Crypto') },
+                            { id: 'cfds',      text: it.L('CFDs') },
+                            { id: 'metals',    text: it.L('Metals') },
+                            { id: 'lookbacks', text: it.L('Lookbacks') },
                             { id: 'market_tabs_selector', className: 'tab-selector' },
                         ]}
                     />
@@ -300,11 +300,11 @@ const HomeBeta = () => {
                                     image='images/pages/home-beta/trade/metals.svg'
                                 />
                             </TabContent>
-                            <TabContent id='lookback'>
+                            <TabContent id='lookbacks'>
                                 <MarketsTabContent
-                                    header={it.L('Lookback')}
-                                    text={it.L('Lookback options are currently only available for <a target="_blank" href=[_1]>Volatility Indices</a>.', `${it.url_for('get-started/binary-options')}#range-of-markets`)}
-                                    image='images/pages/home-beta/trade/lookback.svg'
+                                    header={it.L('Lookbacks')}
+                                    text={it.L('Lookbacks options are currently only available for <a target="_blank" href=[_1]>Volatility Indices</a>.', `${it.url_for('get-started/binary-options')}#range-of-markets`)}
+                                    image='images/pages/home-beta/trade/lookbacks.svg'
                                 />
                             </TabContent>
                         </TabContentContainer>
