@@ -1,4 +1,5 @@
 import React from 'react';
+import { Asterisk, ProductHint } from  '../../_common/components/product_hint.jsx';
 
 const Button = ({ url, real, className, text }) => (
     <a href={it.url_for(url)} className={`toggle button ${real ? 'client_real' : 'client_logged_out'} invisible`}>
@@ -61,7 +62,7 @@ const Section = ({ title, withdrawal }) => (
 
 const PaymentMethods = () => (
     <div id='cashier-content'>
-        <h1>{it.L('Available payment methods')}</h1>
+        <h1>{it.L('Available payment methods')}<Asterisk /></h1>
         <div className='gr-12'>
             <div id='payment_method_suggestions gr-padding-10' className='center-text'>
                 <div className='gr-padding-10 invisible upgrademessage'>
@@ -307,8 +308,9 @@ const PaymentMethods = () => (
         </div>
 
         <div className='gr-padding-10'>
-            <p className='hint'>*{it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
+            <p className='hint'>* {it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
         </div>
+        <ProductHint />
     </div>
 );
 
