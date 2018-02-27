@@ -9,7 +9,7 @@ const five_tenth  = '0.50';
 const one         = '1';
 
 const Cfds = () => (
-    <div className='static_full get-started-beta'>
+    <div className='static_full get-started'>
         <h1>{it.L('MetaTrader 5')}</h1>
         <div className='gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>

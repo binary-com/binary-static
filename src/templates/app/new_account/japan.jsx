@@ -66,6 +66,8 @@ const Japan = () => (
 
                 <DateOfBirth />
 
+                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} />
+
                 <FormRow type='select' id='occupation' label={it.L('Occupation')}>
                     <option value=''>{it.L('Please select')}</option>
                     <option value='Office worker'>{it.L('Office worker')}</option>
@@ -170,6 +172,14 @@ const Japan = () => (
                     label={it.L('Amount of above assets')}
                     attributes={{maxLength: '20'}}
                 />
+
+                <FormRow type='select' id='motivation_circumstances' label={it.L('Motivation/Circumstances')}>
+                    <option value=''>{it.L('Please select')}</option>
+                    <option value='Web Advertisement'>{it.L('Web Advertisement')}</option>
+                    <option value='Homepage'>{it.L('Homepage')}</option>
+                    <option value='Introduction by acquaintance'>{it.L('Introduction by acquaintance')}</option>
+                    <option value='Others'>{it.L('Others')}</option>
+                </FormRow>
             </Fieldset>
 
             <Fieldset legend={it.L('{JAPAN ONLY}Foreign PEP Declaration')}>
