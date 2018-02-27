@@ -8,6 +8,7 @@ import {
     AddressState,
     AddressPostcode,
     Phone,
+    TaxInformationForm,
     GeocodeResponse,
 } from '../../../_common/components/forms_common_rows.jsx';
 import Loading from '../../../_common/components/loading.jsx';
@@ -76,13 +77,8 @@ const PersonalDetails = () => (
                 </FormRow>
             </Fieldset>
 
-            <Fieldset className='invisible RealAcc ja-hide' legend={it.L('Tax Information')}>
-                <FormRow type='select' label={it.L('Tax residence')}
-                    tooltip={it.L('Please state the country (or countries) where you are liable to personal income tax. Note that you may be considered resident for tax purposes in more than one jurisdiction. In such case please choose all countries of your tax residence. If you are in any doubt regarding your tax residence you are advised to consult a tax or legal professional.')}
-                    id='tax_residence' className='invisible' attributes={{multiple: 'multiple'}} />
-                <FormRow type='text' label={it.L('Tax identification number')}
-                    tooltip={it.L('Please provide your individual identification code used by the tax authorities for the purposes of taxpayer identification. This number should be provided irrespective of any tax exemptions or reliefs that you may be enjoying for whatever reason. If you are tax resident of more than one jurisdiction please provide TIN for each one of them. If you are unable to provide your TIN (eg. because your country does not issue TIN to its residents), kindly contact our customer support explaining the reason for non-submission.')}
-                    id='tax_identification_number' attributes={{ maxLength: 20 }} />
+            <Fieldset id='tax_information_form' className='invisible RealAcc ja-hide' legend={it.L('Tax Information')}>
+                <TaxInformationForm />
             </Fieldset>
 
             <Fieldset id='address_form' className='invisible RealAcc ja-hide' legend={it.L('Address')}>
@@ -150,6 +146,13 @@ const PersonalDetails = () => (
                     <option value='Other'>{it.L('Other')}</option>
                 </FormRow>
                 <FormRow type='text' label={it.L('Amount of above assets')} id='hedge_asset_amount' attributes={{ maxLength: 20 }} row_class='hedge invisible' input_prefix='¥' />
+                <FormRow type='select' id='motivation_circumstances' label={it.L('Motivation/Circumstances')}>
+                    <option value=''>{it.L('Please select')}</option>
+                    <option value='Web Advertisement'>{it.L('Web Advertisement')}</option>
+                    <option value='Homepage'>{it.L('Homepage')}</option>
+                    <option value='Introduction by acquaintance'>{it.L('Introduction by acquaintance')}</option>
+                    <option value='Others'>{it.L('Others')}</option>
+                </FormRow>
             </Fieldset>
 
             <Fieldset className='invisible' id='fieldset_email_consent' legend={it.L('Preferences')}>
