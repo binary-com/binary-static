@@ -51,6 +51,13 @@ const LoggedInHandler = (() => {
         });
     };
 
+    // store consistent names with other API calls
+    // API requests V4 - send consistent names
+    const map_names = {
+        country             : 'residence',
+        landing_company_name: 'landing_company_shortcode',
+    };
+
     const storeClientAccounts = (account_list) => {
         // Parse url for loginids, tokens, and currencies returned by OAuth
         const params = paramsHash(window.location.href);
@@ -69,7 +76,7 @@ const LoggedInHandler = (() => {
                         is_loginid_set = true;
                     }
                 } else {
-                    const param_to_set = param === 'country' ? 'residence' : param;
+                    const param_to_set = map_names[param] || param;
                     const value_to_set = typeof account[param] === 'undefined' ? '' : account[param];
                     Client.set(param_to_set, value_to_set, account.loginid);
                 }
