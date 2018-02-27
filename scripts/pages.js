@@ -59,6 +59,7 @@ module.exports = [
     ['user/tnc_approvalws',                'app/user/tnc_approval',                     'default',    'Terms and Conditions Approval'],
     ['user/video-facility',                'app/user/video_facility',                   'default',    'Video Room Facility'],
     ['user/warning',                       'app/user/warning',                          'default',    'Warning'],
+    ['user/confirm',                       'app/user/confirm_dialog',                   'default',    'Confirm'],
 
     ['endpoint',                           'app/endpoint',                              'default',    'Endpoint'],
 

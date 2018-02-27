@@ -3,6 +3,7 @@ const BinaryPjax          = require('../../../../base/binary_pjax');
 const Client              = require('../../../../base/client');
 const Header              = require('../../../../base/header');
 const BinarySocket        = require('../../../../base/socket');
+const confirmDialog       = require('../../../../common/attach_dom/confirm_dialog');
 const jpClient            = require('../../../../common/country_base').jpClient;
 const Currency            = require('../../../../common/currency');
 const FormManager         = require('../../../../common/form_manager');
@@ -188,13 +189,12 @@ const SelfExclusion = (() => {
         if (!is_changed) {
             showFormMessage('You did not change anything.', false);
         }
-
-        let is_confirmed = true;
         if ('timeout_until' in data || 'exclude_until' in data) {
-            is_confirmed = window.confirm(localize('When you click "OK" you will be excluded from trading on the site until the selected date.'));
+            confirmDialog({
+                id     : 'timeout_until_dialog',
+                content: 'When you click "OK" you will be excluded from trading on the site until the selected date.',
+            });
         }
-
-        return is_changed && is_confirmed;
     };
 
     const setExclusionResponse = (response) => {
