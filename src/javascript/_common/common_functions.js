@@ -97,12 +97,12 @@ const requireHighstock = callback => (
 const getElementById = (id_selector, parent = document) => parent.getElementById(id_selector) || createElement('div');
 
 /*
- * @param  {String}  id_selector   the selector for the element
+ * @param  {String}  class_name    the selector class for the element
  * @param  {Element} parent        optional selector to use for parent, defaults to document
  * @return {Element}               return element if it is visible
  */
-const getVisibleElement = (id_selector, parent = document) =>
-    Array.from(parent.getElementsByClassName(id_selector)).find((el) => isVisible(el));
+const getVisibleElement = (class_name, parent = document) =>
+    Array.from(parent.getElementsByClassName(class_name)).find((el) => isVisible(el));
 
 module.exports = {
     detectHedging,
