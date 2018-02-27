@@ -18,6 +18,7 @@ module.exports = {
 
             // binary-style
             { expand: true, cwd: 'node_modules/binary-style/src/images/favicons', src: ['**'], dest: global.dist + '/images/favicons/', },
+            { expand: true, cwd: 'node_modules/binary-style/src/images/favicons', src: ['favicon.ico'], dest: global.dist },
             { expand: true, cwd: 'node_modules/binary-style/src/images/logo',     src: ['**'], dest: global.dist + '/images/logo/', },
         ]
     }
