@@ -67,6 +67,7 @@ const Page = (() => {
 
     const showHiddenElementsBasedOnCompany = (landing_company_name, has_mt_company) => {
         const visible_classname = 'data-show-visible';
+        const mt_company_code = 'mtcompany';
 
         function parseAttributeString(attrStr) {
             function generateErrorMessage(reason) {
@@ -101,9 +102,9 @@ const Page = (() => {
             const isInclude = !isExclude;
             const nameSet = new Set(names);
 
-            if ((isExclude && !nameSet.has(landing_company_name) && (has_mt_company !== nameSet.has('metatrader')))
+            if ((isExclude && !nameSet.has(landing_company_name) && (has_mt_company !== nameSet.has(mt_company_code)))
                 || (isInclude && nameSet.has(landing_company_name))
-                || (isInclude && has_mt_company && nameSet.has('metatrader')))
+                || (isInclude && has_mt_company && nameSet.has(mt_company_code)))
             {
                 el.classList.add(visible_classname);
                 console.log('show', el);
