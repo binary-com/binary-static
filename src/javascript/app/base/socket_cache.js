@@ -38,11 +38,11 @@ const SocketCache = (() => {
     const set = (response) => {
         const msg_type = response.msg_type;
 
-        if (!config[msg_type] || !response[msg_type]) return;
+        if (!config[msg_type]) return;
 
         // prevent unwanted page behaviour
         // if a cached version already exists but it gives an error after being called for updating the cache
-        if (response.error && get(response.echo_req)) {
+        if ((response.error || !response[msg_type]) && get(response.echo_req)) {
             clear();
             window.location.reload();
             return;
