@@ -24,16 +24,13 @@ class LanguageSwitcher extends React.PureComponent {
 
     render() {
         const language_list_collapsed = {
+            // visibility needed in style props as workaround for briefly flashing hidden elements in css
             visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
-            position  : 'absolute',
-            width     : '100%',
         };
 
         const language_is_active = (lang) => {
-            if (lang.id === this.state.active_language.id) {
-                return true;
-            }
-            return false;
+            const is_active = lang.id === this.state.active_language.id;
+            return is_active;
         };
 
         return (

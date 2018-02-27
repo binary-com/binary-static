@@ -3,6 +3,7 @@
 .lang-switcher-list {
     z-index: 2;
     position: absolute;
+    width: 100%;
     top: 0;
     background-color: $COLOR_WHITE;
     transform: translate3d(-100%, 0, 0);
