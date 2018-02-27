@@ -1,3 +1,4 @@
+const SocketCache      = require('./socket_cache');
 const getLanguage      = require('../../_common/language').get;
 const localize         = require('../../_common/localize').localize;
 const State            = require('../../_common/storage').State;
@@ -125,6 +126,21 @@ const BinarySocket = (() => {
         if (!data || isEmptyObject(data)) return promise_obj.promise;
 
         const msg_type = options.msg_type || no_duplicate_requests.find(c => c in data);
+
+        // Fetch from cache
+        if (!options.forced) {
+            const response = SocketCache.get(data, msg_type);
+            if (response) {
+                State.set(['response', msg_type], $.extend({}, response));
+                if (isReady() && is_available) { // make the request to keep the cache updated
+                    binary_socket.send(JSON.stringify(data));
+                }
+                promise_obj.resolve(response);
+                return promise_obj.promise;
+            }
+        }
+
+        // Fetch from state
         if (!options.forced && msg_type) {
             const last_response = State.get(['response', msg_type]);
             if (last_response) {
@@ -208,6 +224,7 @@ const BinarySocket = (() => {
             clearTimeout(timeouts.connection_error);
             const response = msg.data ? JSON.parse(msg.data) : undefined;
             if (response) {
+                SocketCache.set(response);
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
                 if (passthrough) {
                     const this_req_number = passthrough.req_number;
@@ -217,11 +234,11 @@ const BinarySocket = (() => {
                     }
                 }
 
-                const type = response.msg_type;
+                const msg_type = response.msg_type;
 
                 // store in State
-                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|ico_status|website_status/.test(type)) {
-                    State.set(['response', type], $.extend({}, response));
+                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|ico_status|website_status/.test(msg_type)) {
+                    State.set(['response', msg_type], $.extend({}, response));
                 }
                 // resolve the send promise
                 const this_req_id = response.req_id;
@@ -239,8 +256,10 @@ const BinarySocket = (() => {
                 switch (error_code) {
                     case 'WrongResponse':
                     case 'OutputValidationFailed': {
-                        const text_value = (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.'));
-                        showNoticeMessage(text_value);
+                        if (msg_type !== 'mt5_login_list') {
+                            const text_value = (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.'));
+                            showNoticeMessage(text_value);
+                        }
                         break;
                     }
                     case 'RateLimit':

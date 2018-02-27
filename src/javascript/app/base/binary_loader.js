@@ -43,7 +43,6 @@ const BinaryLoader = (() => {
 
     const beforeContentChange = () => {
         if (active_script) {
-            Page.onUnload();
             BinarySocket.removeOnDisconnect();
             if (typeof active_script.onUnload === 'function') {
                 active_script.onUnload();
@@ -57,9 +56,8 @@ const BinaryLoader = (() => {
         GTM.pushDataLayer();
 
         BinarySocket.wait('website_status').then((response) => {
-            const clients_country = response.website_status.clients_country;
             // eu countries code
-            if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(clients_country)) {
+            if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(response.website_status.clients_country)) {
                 applyToAllElements('.eu-show', (el) => { el.setVisibility(1); });
                 applyToAllElements('.eu-hide', (el) => { el.setVisibility(0); });
                 if (/get_started_tabs=mt5/.test(window.location.href)) {
@@ -69,6 +67,16 @@ const BinaryLoader = (() => {
                 applyToAllElements('.eu-hide', (el) => { el.setVisibility(1); });
             }
         });
+
+        if (Client.isLoggedIn()) {
+            if (!Client.hasCostaricaAccount()) {
+                applyToAllElements('.only-cr', (el) => { el.setVisibility(0); });
+                // Fix issue with tabs.
+                if (/get_started_tabs=lookback/.test(window.location.href)) {
+                    BinaryPjax.load(urlFor('get-started'));
+                }
+            }
+        }
 
         const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {
