@@ -19,7 +19,6 @@ div.contracts-popup-container {
         border: solid 1px #f2f2f2;
         border-radius: 4px;
         padding: 10px 8px;
-        box-shadow: 0 2px 8px #f0f1f2;
 
         span {
             font-size: 1rem;
@@ -35,16 +34,15 @@ div.contracts-popup-container {
         }
         &:hover {
             border-color: #2a3052;
-            box-shadow: 0 2px 8px #f0f1f2;
         }
     }
     &:active, &:focus, &.show {
         outline: 0;
         border-radius: 4px;
-        box-shadow: 0 2px 8px #f0f1f2;
     }
     &.show > div.contracts-popup-list {
-        transform: scale(1, 1);
+        top: 100%;
+        max-height: 100%;
         opacity: 1;
     }
     &.show > .clicked {
@@ -56,12 +54,12 @@ div.contracts-popup-container {
     }
     .contracts-popup-list {
         left: 0;
-        bottom: -8px;
+        top: 50%;
         width: 100%;
         position: absolute;
-        transition: all 0.25s;
+        transition: all 0.3s ease 0.15s;
         opacity: 0;
-        transform: scale(1, 0);
+        height: 0;
         z-index: 999;
 
         .list-container {
@@ -72,7 +70,7 @@ div.contracts-popup-container {
             z-index: 2;
             cursor: pointer;
             background: #fff;
-            box-shadow: 0 0px 2px #d3d3d3;
+            border: solid 1px #f2f2f2;
 
             .list-item {
                 width: 100%;
@@ -125,7 +123,7 @@ div.contracts-popup-container {
         top: 40%;
         right: 15px;
         line-height: 1;
-        transition: transform 0.2s ease;
+        transition: transform 0.3s ease;
         transform: rotate(0deg);
         transform-origin: 50% 50%;
         color: #f2f2f2;
