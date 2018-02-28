@@ -39,7 +39,7 @@ const Index = () => (
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
             <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper' items={[
                 { id: 'binary',   text: it.L('Binary Options') },
-                { id: 'lookback', text: it.L('Lookbacks'), dataShow: 'costarica' },
+                { id: 'lookback', text: it.L('Lookbacks'), dataShow: 'default, costarica' },
                 { id: 'mt5',      text: it.L('MetaTrader 5'), dataShow: 'mtcompany' },
                 { id: 'get_started_tabs_selector', className: 'tab-selector' },
             ]} />
