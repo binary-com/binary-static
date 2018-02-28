@@ -92,13 +92,15 @@ const TradingEvents = (() => {
         form_nav_element.addEventListener('click', (e) => {
             const clicked_form = e.target;
             if (clicked_form && clicked_form.getAttribute('menuitem')) {
+                const menuitem_id    = clicked_form.getAttribute('menuitem');
                 const is_form_active = clicked_form.classList.contains('active') || clicked_form.parentElement.classList.contains('active');
-                Defaults.set('formname', clicked_form.getAttribute('menuitem'));
+                const is_menu_active = getElementById(menuitem_id).classList.contains('a-active');
+                Defaults.set('formname', menuitem_id);
 
                 // if form is already active then no need to send same request again
                 CommonTrading.toggleActiveCatMenuElement(form_nav_element, e.target.getAttribute('menuitem'));
 
-                if (!is_form_active) {
+                if (!is_form_active || !is_menu_active) {
                     contractFormEventChange();
                 }
             }
