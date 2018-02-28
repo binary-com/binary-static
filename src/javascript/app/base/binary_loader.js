@@ -56,7 +56,6 @@ const BinaryLoader = (() => {
         GTM.pushDataLayer();
 
         if (Client.isLoggedIn() && !Client.hasCostaricaAccount()) {
-            applyToAllElements('.only-cr', (el) => { el.setVisibility(0); });
             // Fix issue with tabs.
             if (/get_started_tabs=lookback/.test(window.location.href)) {
                 BinaryPjax.load(urlFor('get-started'));
