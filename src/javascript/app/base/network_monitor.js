@@ -53,6 +53,8 @@ const NetworkMonitor = (() => {
         if (isOnline() && BinarySocket.hasReadyState(2, 3)) { // CLOSING or CLOSED
             BinarySocket.init(ws_config);
             clearPendings();
+        } else {
+            BinarySocket.send({ ping: 1 }); // trigger a request to get stable status sooner
         }
     };
 
