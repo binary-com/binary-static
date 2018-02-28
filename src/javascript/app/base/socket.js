@@ -180,7 +180,7 @@ const BinarySocket = (() => {
             if (msg_type && !sent_requests.has(msg_type)) {
                 sent_requests.add(msg_type);
             }
-        } else {
+        } else if (+data.time !== 1) { // Do not buffer all time requests
             buffered_sends.push({ request: data, options: $.extend(options, { promise: promise_obj }) });
         }
 
