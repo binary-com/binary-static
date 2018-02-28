@@ -11,7 +11,6 @@ const getElementById      = require('../../_common/common_functions').getElement
 const localize            = require('../../_common/localize').localize;
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const urlFor              = require('../../_common/url').urlFor;
-const applyToAllElements  = require('../../_common/utility').applyToAllElements;
 const createElement       = require('../../_common/utility').createElement;
 
 const BinaryLoader = (() => {
