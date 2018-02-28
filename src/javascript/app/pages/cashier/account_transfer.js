@@ -126,8 +126,10 @@ const AccountTransfer = (() => {
 
         response.accounts.forEach((account) => {
             if (account.loginid === client_loginid) {
+                elementTextContent(getElementById('from_currency'), account.currency);
                 elementTextContent(getElementById('from_balance'), account.balance);
             } else if (account.loginid === response_submit_success.client_to_loginid) {
+                elementTextContent(getElementById('to_currency'), account.currency);
                 elementTextContent(getElementById('to_balance'), account.balance);
             }
         });
