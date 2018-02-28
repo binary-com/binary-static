@@ -3,7 +3,7 @@ const BinaryPjax          = require('../../../../base/binary_pjax');
 const Client              = require('../../../../base/client');
 const Header              = require('../../../../base/header');
 const BinarySocket        = require('../../../../base/socket');
-const confirmDialog       = require('../../../../common/attach_dom/confirm_dialog');
+const dialog              = require('../../../../common/attach_dom/dialog');
 const jpClient            = require('../../../../common/country_base').jpClient;
 const Currency            = require('../../../../common/currency');
 const FormManager         = require('../../../../common/form_manager');
@@ -193,9 +193,9 @@ const SelfExclusion = (() => {
             }
 
             if ('timeout_until' in data || 'exclude_until' in data) {
-                confirmDialog({
+                dialog.confirm({
                     id     : 'timeout_until_dialog',
-                    content: 'When you click "OK" you will be excluded from trading on the site until the selected date.',
+                    message: 'When you click "OK" you will be excluded from trading on the site until the selected date.',
                 }).then((response) => resolve(response));
             } else {
                 resolve(true);

@@ -1,7 +1,7 @@
 const BinaryPjax           = require('../../../../base/binary_pjax');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
-const confirmDialog        = require('../../../../common/attach_dom/confirm_dialog');
+const dialog               = require('../../../../common/attach_dom/dialog');
 const FlexTableUI          = require('../../../../common/attach_dom/flextable');
 const jpClient             = require('../../../../common/country_base').jpClient;
 const FormManager          = require('../../../../common/form_manager');
@@ -105,9 +105,9 @@ const APIToken = (() => {
         $button.click((e) => {
             e.preventDefault();
             e.stopPropagation();
-            confirmDialog({
+            dialog.confirm({
                 id       : 'delete_token_dialog',
-                content  : `${message}: "${token.display_name}"?`,
+                message  : `${message}: "${token.display_name}"?`,
                 onConfirm: () => {
                     deleteToken(token.token);
                 },

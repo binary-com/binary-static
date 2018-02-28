@@ -59,14 +59,13 @@ module.exports = [
     ['user/tnc_approvalws',                'app/user/tnc_approval',                     'default',    'Terms and Conditions Approval'],
     ['user/video-facility',                'app/user/video_facility',                   'default',    'Video Room Facility'],
     ['user/warning',                       'app/user/warning',                          'default',    'Warning'],
-    ['user/confirm',                       'app/user/confirm_dialog',                   'default',    'Confirm'],
 
+    ['dialog',                             'app/dialog',                                'default',    'Dialog'],
     ['endpoint',                           'app/endpoint',                              'default',    'Endpoint'],
 
     ['explanation',                        'app/trade/explanation',                     null],
     ['logged_inws',                        'app/logged_in',                             null],
     ['redirect',                           'app/logged_in',                             null,         'Redirecting...'],
-
 
     // ==================== Section: "static" ====================
     ['404',                                'static/404',                                'full_width', '404'],
