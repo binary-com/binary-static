@@ -24,28 +24,24 @@ const AccountTransfer = (() => {
 
     let el_transfer_from,
         el_transfer_to,
-        client_loginid,
-        client_currency,
         client_balance,
+        client_currency,
+        client_loginid,
         withdrawal_limit;
 
     const populateAccounts = (accounts) => {
-        client_loginid   = Client.get('loginid');
-        el_transfer_from = getElementById('lbl_transfer_from');
-        el_transfer_to   = getElementById('transfer_to');
+        client_loginid         = Client.get('loginid');
+        el_transfer_from       = getElementById('lbl_transfer_from');
+        el_transfer_to         = getElementById('transfer_to');
 
-        let currency_text = client_currency ? `(${client_currency})` : '';
-
-        elementTextContent(el_transfer_from, `${client_loginid} ${currency_text}`);
+        elementTextContent(el_transfer_from, `${client_loginid} ${client_currency ? `(${client_currency})` : ''}`);
 
         const fragment_transfer_to = document.createElement('div');
 
-        accounts.forEach((account, idx) => {
-            if (accounts[idx].loginid !== client_loginid) {
-                const option   = document.createElement('option');
-                const currency = accounts[idx].currency;
-                currency_text  = currency ? `(${currency})` : '';
-                option.appendChild(document.createTextNode(`${accounts[idx].loginid} ${currency_text}`));
+        accounts.forEach((account) => {
+            if (Client.canTransferFunds(account)) {
+                const option = document.createElement('option');
+                option.appendChild(document.createTextNode(`${account.loginid}${account.currency ? ` (${account.currency})` : ''}`));
                 fragment_transfer_to.appendChild(option);
             }
         });
