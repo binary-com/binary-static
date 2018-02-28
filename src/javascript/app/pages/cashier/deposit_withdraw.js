@@ -225,8 +225,9 @@ const DepositWithdraw = (() => {
         const req_get_account_status = BinarySocket.send({ get_account_status: 1 });
 
         Promise.all([req_cashier_password, req_get_account_status]).then(() => {
-            const response_cashier_password   = State.getResponse('cashier_password');
-            const response_get_account_status = State.getResponse('get_account_status');
+            // cannot use State.getResponse because we want to check error which is outside of response[msg_type]
+            const response_cashier_password   = State.get(['response', 'cashier_password']);
+            const response_get_account_status = State.get(['response', 'get_account_status']);
             if ('error' in response_cashier_password) {
                 showError('custom_error', response_cashier_password.error.message);
             } else if (response_cashier_password.cashier_password === 1) {
