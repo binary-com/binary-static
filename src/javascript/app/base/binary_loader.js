@@ -55,13 +55,6 @@ const BinaryLoader = (() => {
         Page.onLoad();
         GTM.pushDataLayer();
 
-        if (Client.isLoggedIn() && !Client.hasCostaricaAccount()) {
-            // Redirect as lookback tab is not available for non costarica clients
-            if (/get_started_tabs=lookback/.test(window.location.href)) {
-                BinaryPjax.load(urlFor('get-started'));
-            }
-        }
-
         const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {
             loadHandler(pages_config[this_page]);

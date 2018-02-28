@@ -112,6 +112,13 @@ const Page = (() => {
             }
             else {
                 console.log('stays hidden', el);
+                const openTabUrl = new RegExp(`\\?.+_tabs=${el.id}`, 'i');
+                // check if we hide a tab that's open
+                // then redirect to the url without query
+                if (el.classList.contains('tm-li') && openTabUrl.test(window.location.href)) {
+                    const { origin, pathname } = window.location;
+                    window.location.href = origin + pathname;
+                }
             }
         });
 
