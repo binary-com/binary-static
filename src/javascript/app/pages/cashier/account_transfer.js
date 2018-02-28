@@ -24,15 +24,18 @@ const AccountTransfer = (() => {
 
     let el_transfer_from,
         el_transfer_to,
+        el_reset_transfer,
+        el_transfer_fee,
+        el_success_form,
         client_balance,
         client_currency,
         client_loginid,
         withdrawal_limit;
 
     const populateAccounts = (accounts) => {
-        client_loginid         = Client.get('loginid');
-        el_transfer_from       = getElementById('lbl_transfer_from');
-        el_transfer_to         = getElementById('transfer_to');
+        client_loginid   = Client.get('loginid');
+        el_transfer_from = getElementById('lbl_transfer_from');
+        el_transfer_to   = getElementById('transfer_to');
 
         elementTextContent(el_transfer_from, `${client_loginid} ${client_currency ? `(${client_currency})` : ''}`);
 
@@ -105,6 +108,7 @@ const AccountTransfer = (() => {
         FormManager.handleSubmit({
             form_selector       : form_id_hash,
             fnc_response_handler: responseHandler,
+            enable_button       : true,
         });
     };
 
@@ -134,15 +138,28 @@ const AccountTransfer = (() => {
             }
         });
 
-        getElementById('transfer_fee').setVisibility(0);
-        getElementById('success_form').setVisibility(1);
+        el_transfer_fee.setVisibility(0);
+        el_success_form.setVisibility(1);
+    };
+
+    const onClickReset = () => {
+        el_success_form.setVisibility(0);
+        getElementById('amount').value = '';
+        onLoad();
     };
 
     const onLoad = () => {
+        el_reset_transfer = getElementById('reset_transfer');
+
         if (!Client.canTransferFunds()) {
             BinaryPjax.loadPreviousUrl();
             return;
         }
+
+        el_reset_transfer.addEventListener('click', onClickReset);
+        el_transfer_fee = getElementById('transfer_fee');
+        el_success_form = getElementById('success_form');
+
         BinarySocket.wait('balance').then((response) => {
             client_balance   = getPropertyValue(response, ['balance', 'balance']);
             client_currency  = Client.get('currency');
@@ -182,8 +199,13 @@ const AccountTransfer = (() => {
         });
     };
 
+    const onUnload = () => {
+        if (el_reset_transfer) el_reset_transfer.removeEventListener('click', onClickReset);
+    };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 

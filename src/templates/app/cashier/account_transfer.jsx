@@ -39,6 +39,9 @@ const AccountTransfer = () => (
             <p>{it.L('Your fund transfer is successful. Your new balances are:')}</p>
             <Row id='from' />
             <Row id='to' />
+            <p>
+                <a href='javascript:;' id='reset_transfer'>{it.L('Make another transfer')}</a>
+            </p>
         </div>
 
         <form className='invisible' id='frm_account_transfer'>
