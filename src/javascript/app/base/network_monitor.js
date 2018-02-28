@@ -1,8 +1,8 @@
+const Header              = require('./header');
 const BinarySocket        = require('./socket');
 const BinarySocketGeneral = require('./socket_general');
-const Header              = require('./header');
-const localize            = require('../../_common/localize').localize;
 const getElementById      = require('../../_common/common_functions').getElementById;
+const localize            = require('../../_common/localize').localize;
 
 /*
  * Monitors the network status and initialises the WebSocket connection
