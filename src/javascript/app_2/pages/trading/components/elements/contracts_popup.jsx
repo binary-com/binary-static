@@ -12,24 +12,6 @@ class ContractsPopUp extends React.PureComponent {
         };
     }
 
-    isOneLevel() {
-        return Array.isArray(this.props.list);
-    }
-
-    getDisplayText(list, value) {
-        const findInArray = (arr_list) => (arr_list.find(item => item.value === value) || {}).text;
-        let text = '';
-        if (this.isOneLevel(list)) {
-            text = findInArray(list);
-        } else {
-            Object.keys(list).some(key => {
-                text = findInArray(list[key]);
-                return text;
-            });
-        }
-        return text;
-    }
-
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
     }
@@ -69,6 +51,17 @@ class ContractsPopUp extends React.PureComponent {
 
     render() {
         const prefix_class = 'contracts-popup-container';
+        const getDisplayText = (list, value) => {
+            const findInArray = (arr_list) => (arr_list.find(item => item.value === value) || {}).text;
+            let text = '';
+            if (!Array.isArray(list)) {
+                Object.keys(list).some(key => {
+                    text = findInArray(list[key]);
+                    return text;
+                });
+            }
+            return text;
+        };
         return (
             <div
                 ref={this.setWrapperRef}
@@ -80,24 +73,16 @@ class ContractsPopUp extends React.PureComponent {
                 >
                     <i className={`contract-icon ic-${this.props.value}`}/>
                     <span name={this.props.name} value={this.props.value}>
-                        {this.getDisplayText(this.props.list, this.props.value)}
+                        {getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
                 <span className='select-arrow' />
                 <div className='contracts-popup-list'>
                     <div className='list-container'>
-                    { this.isOneLevel(this.props.list) ?
-                        <Items
-                            items={this.props.list}
-                            name={this.props.name}
-                            value={this.props.value}
-                            handleSelect={this.handleSelect}
-                            type={this.props.type || undefined}
-                        /> :
-                        Object.keys(this.props.list).map(key => (
+                    {Object.keys(this.props.list).map(key => (
                             <React.Fragment key={key}>
-                                <Items
-                                    items={this.props.list[key]}
+                                <Contracts
+                                    contracts={this.props.list[key]}
                                     name={this.props.name}
                                     value={this.props.value}
                                     handleSelect={this.handleSelect}
@@ -112,30 +97,26 @@ class ContractsPopUp extends React.PureComponent {
     }
 }
 
-const Items = ({
-    items,
+const Contracts = ({
+    contracts,
     name,
     value,
     handleSelect,
-    type,
 }) => (
-    items.map((item, idx) => (
-        <React.Fragment key={idx}>
+        contracts.map((contract, idx) => (
             <div
-                className={`list-item ${ value === item.value ? 'selected' : ''}`}
                 key={idx}
+                className={`list-item ${ value === contract.value ? 'selected' : ''}`}
                 name={name}
-                value={item.value}
-                data-end={type==='date' && item.end ? item.end : undefined}
-                onClick={handleSelect.bind(null, item)}
+                value={contract.value}
+                onClick={handleSelect.bind(null, contract)}
             >
                 <span>
-                    <i className={`contract-icon ic-${item.value}${ value === item.value ? '' : '--invert'}`}/>
-                    {item.text}
+                    <i className={`contract-icon ic-${contract.value}${ value === contract.value ? '' : '--invert'}`}/>
+                    {contract.text}
                 </span>
             </div>
-        </React.Fragment>
-    ))
+        ))
 );
 
 export default ContractsPopUp;

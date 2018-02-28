@@ -96,6 +96,13 @@ div.contracts-popup-container {
                     display: inline-block;
                     vertical-align: middle;
                 }
+                &.disabled {
+                    pointer-events: none;
+
+                    span {
+                        color: #dedede;
+                    }
+                }
                 &:hover {
                     background-color: #f2f3f8;
                 }
