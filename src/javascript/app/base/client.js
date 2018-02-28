@@ -358,7 +358,7 @@ const Client = (() => {
     };
 
 
-    // API requests V3 - send a list of accounts the client can transfer to
+    // API_V3: send a list of accounts the client can transfer to
     const canTransferFunds = (account) => {
         if (account) {
             // this specific account can be used to transfer funds to

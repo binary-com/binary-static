@@ -52,7 +52,7 @@ const LoggedInHandler = (() => {
     };
 
     // store consistent names with other API calls
-    // API requests V4 - send consistent names
+    // API_V4: send consistent names
     const map_names = {
         country             : 'residence',
         landing_company_name: 'landing_company_shortcode',
