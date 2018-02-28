@@ -146,13 +146,12 @@ const Page = (() => {
                 checkLanguage();
                 RealityCheck.onLoad();
                 Menu.init();
-                const landing_company_name = State.getResponse('authorize.landing_company_name');
                 const has_mt_company = !!(
                     State.getResponse('landing_company.mt_financial_company.shortcode')
                     || State.getResponse('landing_company.mt_gaming_company.shortcode')
                 );
                 console.log('has_mt_company', has_mt_company);
-                showHiddenElementsBasedOnCompany(landing_company_name, has_mt_company);
+                showHiddenElementsBasedOnCompany(Client.currentLandingCompany().shortcode, has_mt_company);
             });
         } else {
             checkLanguage();
