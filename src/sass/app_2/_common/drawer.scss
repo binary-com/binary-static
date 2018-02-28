@@ -22,11 +22,11 @@ hr {
         top: 0;
         bottom: 0;
         left: 0;
-        width: 100vw;
         height: 100vh;
         z-index: 665;
         transition: all 0.25s;
         animation: undim 0.25s ease-out forwards;
+        overflow: hidden;
 
         &.show {
             animation: dim 0.25s ease-out forwards;
@@ -35,9 +35,13 @@ hr {
             position: absolute;
             z-index: 666;
             top: 0;
+            left: 0;
+            right: initial;
+            will-change: transform;
+            overflow: hidden;
+            box-sizing: border-box;
             width: 260px;
             height: 100%;
-            box-sizing: border-box;
             transition: all 0.25s;
             background: $COLOR_WHITE;
 
@@ -48,7 +52,10 @@ hr {
                 position: relative;
             }
             &.left {
-                left: -260px;
+                right: auto;
+                left: 0;
+                transform: translateX(-100%);
+                animation: fadeOut 0.25s ease-out forwards;
 
                 .drawer-header {
                     display: flex;
@@ -91,7 +98,10 @@ hr {
                 }
             }
             &.right {
-                right: -260px;
+                right: 0;
+                left: auto;
+                transform: translateX(100%);
+                animation: fadeOut 0.25s ease-out forwards;
 
                 .drawer-header {
                     display: flex;
@@ -185,14 +195,30 @@ hr {
             &.visible {
                 box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
 
-                &.right {
-                    transform: translate3d(-100%, 0, 0);
-                }
-                &.left {
-                    transform: translate3d(100%, 0, 0);
+                &.right, &.left {
+                    transform: none;
+                    animation: fadeIn 0.25s ease-out forwards;
                 }
             }
         }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 
