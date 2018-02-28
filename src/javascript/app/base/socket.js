@@ -169,7 +169,7 @@ const BinarySocket = (() => {
             subscribe: !!data.subscribe,
         };
 
-        if (isReady() && is_available) {
+        if (isReady() && is_available && config.isOnline()) {
             is_disconnect_called = false;
             if (!getPropertyValue(data, 'passthrough') && !getPropertyValue(data, 'verify_email')) {
                 data.passthrough = {};

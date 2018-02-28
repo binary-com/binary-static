@@ -30,7 +30,7 @@ const NetworkMonitor = (() => {
         network_status;
 
     const init = () => {
-        ws_config = $.extend({ wsEvent }, BinarySocketGeneral.initOptions());
+        ws_config = $.extend({ wsEvent, isOnline }, BinarySocketGeneral.initOptions());
         el_status = getElementById('network_status');
 
         if ('onLine' in navigator) {
