@@ -122,9 +122,23 @@ const Page = (() => {
             }
         });
 
-        // resize tab selector
-        if (document.querySelector('.tab-selector')) {
-            window.dispatchEvent(new Event('resize'));
+        const tabMenu = document.querySelector('.tab-menu');
+        if (tabMenu) {
+            // hide tabs if there is only one tab visible
+            const ul = tabMenu.querySelector('ul');
+            if (ul) {
+                const visibleTabs = Array.from(ul.children).filter(el => (
+                    !el.classList.contains('tab-selector')
+                    && (!el.dataset.show
+                        || el.dataset.show && el.classList.contains('data-show-visible'))
+                ));
+                if (visibleTabs.length <= 1) tabMenu.setVisibility(0);
+            }
+
+            // resize tab selector
+            if (tabMenu.querySelector('.tab-selector')) {
+                window.dispatchEvent(new Event('resize'));
+            }
         }
     };
 
