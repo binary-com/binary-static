@@ -148,7 +148,7 @@ const Page = (() => {
                 RealityCheck.onLoad();
                 Menu.init();
                 showHiddenElementsBasedOnCompany(
-                    Client.currentLandingCompany().shortcode,
+                    State.getResponse('authorize.landing_company_name'),
                     Client.hasMtCompany()
                 );
             });
