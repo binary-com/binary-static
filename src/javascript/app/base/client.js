@@ -369,7 +369,7 @@ const Client = (() => {
     };
 
     const canTransferFundsTo = (to_loginid) => {
-        if (to_loginid === current_loginid) {
+        if (to_loginid === current_loginid || get('is_virtual', to_loginid) || get('is_virtual')) {
             return false;
         }
         const from_currency = get('currency');
@@ -386,7 +386,9 @@ const Client = (() => {
             };
             const from_landing_company = get('landing_company_shortcode');
             const to_landing_company   = get('landing_company_shortcode', to_loginid);
-            return same_cur_allowed[from_landing_company] === to_landing_company;
+            // if same_cur_allowed[from_landing_company] is undefined and to_landing_company is also undefined, it will return true
+            // so we should compare '' === undefined instead
+            return (same_cur_allowed[from_landing_company] || '') === to_landing_company;
         }
         // or for other clients if current account is cryptocurrency it should only transfer to fiat currencies and vice versa
         const is_from_crypto = isCryptocurrency(from_currency);
