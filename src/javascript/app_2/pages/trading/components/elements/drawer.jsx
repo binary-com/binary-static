@@ -24,7 +24,7 @@ class ToggleDrawer extends React.PureComponent {
     render() {
         return (
             <React.Fragment>
-                <div className='navbar-icons menu-toggle' onClick={this.showDrawer}>
+                <div className={`navbar-icons ${this.props.icon_class||'menu-toggle'}`} onClick={this.showDrawer}>
                     {this.props.icon_link ?
                         <img src={this.props.icon_link} />
                     :

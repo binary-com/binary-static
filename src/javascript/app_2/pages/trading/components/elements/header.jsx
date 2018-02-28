@@ -2,7 +2,9 @@ import React from 'react';
 import { ToggleDrawer, DrawerItems, DrawerItem } from './drawer.jsx';
 import AccountSwitcher from './account_switcher.jsx';
 import LanguageSwitcher from './language_switcher.jsx';
+import Button from '../form/button.jsx';
 import Url from '../../../../../_common/url';
+import { localize } from '../../../../../_common/localize';
 
 class TradingHeader extends React.Component {
     render() {
@@ -76,7 +78,14 @@ class TradingHeader extends React.Component {
                                 </div>
                             }
                         </div>
-                        <ToggleDrawer 
+                        <div className='menu-right'>
+                            <AccountBalance
+                                active_loginid={this.props.active_loginid}
+                                client_accounts={this.props.client_accounts}
+                            />
+                        </div>
+                        <ToggleDrawer
+                            icon_class='notify-toggle'
                             alignment='right'
                             icon_link={Url.urlForStatic('images/trading_app/notify_none.svg')}
                         >
@@ -90,5 +99,36 @@ class TradingHeader extends React.Component {
         );
     }
 }
+
+const AccountBalance = ({
+    active_loginid,
+    client_accounts,
+    onClick,
+}) => {
+    const balance = client_accounts[Object.keys(client_accounts)[0]].balance;
+    const is_upgrade = client_accounts[Object.keys(client_accounts)[0]].is_virtual;
+    const currency = client_accounts[Object.keys(client_accounts)[0]].currency;
+    const button_text = is_upgrade === 1 ? 'Upgrade' : 'Deposit';
+    return (
+        <div className='acc-balance-container'>
+            <div className='acc-balance'>
+                <p className='acc-balance-accountid'>{active_loginid || null}</p>
+                <p className='acc-balance-amount'><i><span className={`symbols ${currency.toLowerCase()}`} /></i>{balance || null}</p>
+            </div>
+            <Button
+                id='acc-balance-btn'
+                className='primary orange'
+                has_effect
+                text={`${localize(button_text)}`}
+                onClick={onClick}
+            />
+        </div>
+    );
+};
+
+TradingHeader.defaultProps = {
+    active_loginid : 'VRTC1234567',
+    client_accounts: {'VRTC1234567': {'currency': 'AUD','is_disabled': 0,'is_virtual': 1,'balance': '10000.00'}},
+};
 
 export default TradingHeader;
