@@ -1,6 +1,7 @@
 const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const BinarySocket       = require('./socket');
+const SocketCache        = require('./socket_cache');
 const jpClient           = require('../common/country_base').jpClient;
 const isCryptocurrency   = require('../common/currency').isCryptocurrency;
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
@@ -158,6 +159,7 @@ const Client = (() => {
             return;
         }
 
+        SocketCache.clear();
         localStorage.setItem('GTM_new_account', '1');
 
         set('token',      options.token,       options.loginid);
@@ -168,6 +170,12 @@ const Client = (() => {
         // need to redirect not using pjax
         window.location.href = options.redirect_url || defaultRedirectUrl();
     };
+
+    const shouldShowJP = (el, is_jp) => (
+        is_jp ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
+    );
+
+    const shouldShowICO = (el, is_ico_only) => (!/ico-only-hide/.test(el.classList) || !is_ico_only);
 
     const activateByClientType = (section_id) => {
         const topbar_class = getElementById('topbar').classList;
@@ -181,6 +189,7 @@ const Client = (() => {
                 const client_logged_in = getElementById('client-logged-in');
                 client_logged_in.classList.add('gr-centered');
 
+                // we need to call jpClient after authorize response so we know client's residence
                 const is_jp       = jpClient();
                 const is_ico_only = !is_jp && get('is_ico_only');
                 if (is_ico_only) {
@@ -191,8 +200,7 @@ const Client = (() => {
                 }
 
                 applyToAllElements('.client_logged_in', (el) => {
-                    if ((!is_jp || !/ja-hide/.test(el.classList)) &&
-                        (!/ico-only-hide/.test(el.classList) || !is_ico_only)) {
+                    if (shouldShowJP(el, is_jp) && shouldShowICO(el, is_ico_only)) {
                         el.setVisibility(1);
                     }
                 });
@@ -203,16 +211,21 @@ const Client = (() => {
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
                     applyToAllElements('.client_real', (el) => {
-                        if ((!is_jp || !/ja-hide/.test(el.classList)) &&
-                            !/ico-only-hide/.test(el.classList) || !is_ico_only) {
+                        if (shouldShowJP(el, is_jp) && shouldShowICO(el, is_ico_only)) {
                             el.setVisibility(1);
-                        }}, '', el_section);
+                        }
+                    }, '', el_section);
                     topbar_class.add(primary_bg_color_dark);
                     topbar_class.remove(secondary_bg_color);
                 }
             });
         } else {
-            applyToAllElements('.client_logged_out', (el) => { el.setVisibility(1); }, '', el_section);
+            const is_jp = jpClient();
+            applyToAllElements('.client_logged_out', (el) => {
+                if (shouldShowJP(el, is_jp)) {
+                    el.setVisibility(1);
+                }
+            }, '', el_section);
             topbar_class.add(primary_bg_color_dark);
             topbar_class.remove(secondary_bg_color);
         }
@@ -231,6 +244,7 @@ const Client = (() => {
         cleanupCookies('reality_check', 'affiliate_token', 'affiliate_tracking');
         clearAllAccounts();
         set('loginid', '');
+        SocketCache.clear();
         RealityCheckData.clear();
         const redirect_to = getPropertyValue(response, ['echo_req', 'passthrough', 'redirect_to']);
         if (redirect_to) {

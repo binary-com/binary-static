@@ -35,7 +35,7 @@ module.exports = [
     ['user/ico-claim-form',                'app/user/ico_claim_form',                   'default',    'Electronic Subscription Form for Tokens', 'ja'],
     ['user/ico-subscribe',                 'app/user/ico_subscribe',                    'default',    'Subscribe to ICO',                  'ja'],
     ['user/lost_passwordws',               'app/user/lost_password',                    'default',    'Password Reset'],
-    ['user/metatrader',                    'app/user/metatrader',                       'default',    'MetaTrader account management'],
+    ['user/metatrader',                    'app/user/metatrader',                       'default',    'MetaTrader account management',     'ja'],
     ['user/portfoliows',                   'app/user/portfolio',                        'default',    'Portfolio'],
     ['user/profit_tablews',                'app/user/profit_table',                     'default',    'Profit Table'],
     ['user/reality_check_frequency',       'app/user/reality_check/frequency',          'default',    'Reality Check'],
@@ -70,7 +70,6 @@ module.exports = [
     // ==================== Section: "static" ====================
     ['404',                                'static/404',                                'full_width', '404'],
     ['home',                               'static/home',                               'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'ja'],
-    ['home-old',                           'static/home_old',                           'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'ja'],
     ['home-jp',                            'static/japan/home',                         'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
     ['tour',                               'static/tour',                               'full_width', 'Tour',                              'ja'],
     ['tour-jp',                            'static/japan/tour',                         'full_width', 'Tour',                              'NOT-ja,en'],
@@ -107,18 +106,6 @@ module.exports = [
     ['pull-requests',                      'static/partners/pull_requests',             'full_width', 'Get Paid for Pull Requests',        'ja'],
     ['security-testing',                   'static/partners/security_testing',          'full_width', 'Security Testing',                  'ja'],
 
-    ['get-started-old',                        'static/get_started_old/index',                  'get_started', 'Get Started',                      'ja'],
-    ['get-started-old/beginners-faq',          'static/get_started_old/beginners_faq',          'get_started', 'FAQ',                              'ja'],
-    ['get-started-old/binary-options-basics',  'static/get_started_old/binary_options_basics',  'get_started', 'Binary Options Basics',            'ja'],
-    ['get-started-old/glossary',               'static/get_started_old/glossary',               'get_started', 'Glossary',                         'ja'],
-    ['get-started-old/how-to-trade-binaries',  'static/get_started_old/how_to_trade_binaries',  'get_started', 'How to Trade Binary Options?',     'ja'],
-    ['get-started-old/otc-indices-stocks',     'static/get_started_old/otc_indices_stocks',     'get_started', 'What Are OTC Indices and Stocks?', 'ja'],
-    ['get-started-old/smart-indices',          'static/get_started_old/smart_indices',          'get_started', 'Smart Indices',                    'ja'],
-    ['get-started-old/types-of-trades',        'static/get_started_old/types_of_trades',        'get_started', 'Types of Trades',                  'ja'],
-    ['get-started-old/volidx-markets',         'static/get_started_old/volidx_markets',         'get_started', 'Volatility Index Markets',         'ja'],
-    ['get-started-old/what-is-binary-trading', 'static/get_started_old/what_is_binary_trading', 'get_started', 'Why Choose Binary Trading?',       'ja'],
-    ['get-started-old/why-trade-with-us',      'static/get_started_old/why_trade_with_us',      'get_started', 'Why Trade with Binary.com',        'ja'],
-
     ['get-started',                        'static/get_started/index',                  'default',     'Get Started',                      'ja'],
     ['get-started/binary-options',         'static/get_started/binary_options',         'default',     'Binary Options',                   'ja'],
     ['get-started/cfds',                   'static/get_started/cfds',                   'default',     'CFDs',                             'ja'],
@@ -128,9 +115,9 @@ module.exports = [
 
     ['get-started-jp',                     'static/japan/get_started',                  'default',     'Get Started',                      'NOT-ja,en'],
 
-    ['metatrader/contract-specifications', 'static/metatrader/contract_specifications', 'default',     'Contract Specifications'],
-    ['metatrader/download',                'static/metatrader/download',                'default',     'Start Trading with MetaTrader 5'],
-    ['metatrader/how-to-trade-mt5',        'static/metatrader/how_to_trade_mt5',        'default',     'How to Trade in MetaTrader 5'],
+    ['metatrader/contract-specifications', 'static/metatrader/contract_specifications', 'default',     'Contract Specifications',          'ja'],
+    ['metatrader/download',                'static/metatrader/download',                'default',     'Start Trading with MetaTrader 5',  'ja'],
+    ['metatrader/how-to-trade-mt5',        'static/metatrader/how_to_trade_mt5',        'default',     'How to Trade in MetaTrader 5',     'ja'],
     ['metatrader/types-of-accounts',       'static/metatrader/types_of_accounts',       'default',     'Types of MetaTrader 5 accounts'],
 
     ['affiliate_disclaimer',               'static/japan/affiliates/popup',             null,          '',                                 'NOT-ja,en'],
@@ -142,6 +129,6 @@ module.exports = [
     ['ico-disclaimer',                     'landing_pages/ico_disclaimer',              null,        'Initial Coin Offering Disclaimer',   'ja'],
     ['hackathon',                          'landing_pages/hackathon',                   null,        'Hackathon Competition',              'NOT-en'],
     ['landing/signup-frame',               'landing_pages/signup_frame',                null,        'Sign up'],
-    ['binary-japan-landing',               'landing_pages/binary_japan',                null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
-    ['binary-japan-landing-2',             'landing_pages/binary_japan_2',              null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
+    ['バイナリーオプション',                  'landing_pages/binary_japan',                null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
+    ['bo_1',                               'landing_pages/binary_japan_2',              null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
 ];
