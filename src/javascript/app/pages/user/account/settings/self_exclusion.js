@@ -182,20 +182,26 @@ const SelfExclusion = (() => {
         });
     };
 
-    const additionalCheck = (data) => {
-        const is_changed = Object.keys(data).some(key => ( // using != in next line since response types is inconsistent
-            key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] != data[key]) // eslint-disable-line eqeqeq
-        ));
-        if (!is_changed) {
-            showFormMessage('You did not change anything.', false);
-        }
-        if ('timeout_until' in data || 'exclude_until' in data) {
-            confirmDialog({
-                id     : 'timeout_until_dialog',
-                content: 'When you click "OK" you will be excluded from trading on the site until the selected date.',
-            });
-        }
-    };
+    const additionalCheck = data => (
+        new Promise((resolve) => {
+            const is_changed = Object.keys(data).some(key => ( // using != in next line since response types is inconsistent
+                key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] != data[key]) // eslint-disable-line eqeqeq
+            ));
+            if (!is_changed) {
+                showFormMessage('You did not change anything.', false);
+                resolve(false);
+            }
+
+            if ('timeout_until' in data || 'exclude_until' in data) {
+                confirmDialog({
+                    id     : 'timeout_until_dialog',
+                    content: 'When you click "OK" you will be excluded from trading on the site until the selected date.',
+                }).then((response) => resolve(response));
+            } else {
+                resolve(true);
+            }
+        })
+    );
 
     const setExclusionResponse = (response) => {
         if (response.error) {
