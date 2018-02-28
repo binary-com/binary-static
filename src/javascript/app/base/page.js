@@ -95,6 +95,7 @@ const Page = (() => {
         }
 
         console.log('landing_company_name', landing_company_name);
+        console.log('has_mt_company', has_mt_company);
 
         document.querySelectorAll('[data-show]').forEach(el => {
             const attrStr = el.dataset.show;
@@ -146,12 +147,10 @@ const Page = (() => {
                 checkLanguage();
                 RealityCheck.onLoad();
                 Menu.init();
-                const has_mt_company = !!(
-                    State.getResponse('landing_company.mt_financial_company.shortcode')
-                    || State.getResponse('landing_company.mt_gaming_company.shortcode')
+                showHiddenElementsBasedOnCompany(
+                    Client.currentLandingCompany().shortcode,
+                    Client.hasMtCompany()
                 );
-                console.log('has_mt_company', has_mt_company);
-                showHiddenElementsBasedOnCompany(Client.currentLandingCompany().shortcode, has_mt_company);
             });
         } else {
             checkLanguage();
