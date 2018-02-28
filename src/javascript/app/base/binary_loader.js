@@ -56,7 +56,7 @@ const BinaryLoader = (() => {
         GTM.pushDataLayer();
 
         if (Client.isLoggedIn() && !Client.hasCostaricaAccount()) {
-            // Fix issue with tabs.
+            // Redirect as lookback tab is not available for non costarica clients
             if (/get_started_tabs=lookback/.test(window.location.href)) {
                 BinaryPjax.load(urlFor('get-started'));
             }
