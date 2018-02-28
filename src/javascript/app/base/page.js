@@ -113,6 +113,11 @@ const Page = (() => {
                 console.log('stays hidden', el);
             }
         });
+
+        // resize tab selector
+        if (document.querySelector('.tab-selector')) {
+            window.dispatchEvent(new Event('resize'));
+        }
     };
 
     const onLoad = () => {
