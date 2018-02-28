@@ -59,10 +59,10 @@ const NetworkMonitor = (() => {
     };
 
     const setStatus = (status) => {
-        if (!isOnline() || status === pending_keys.ws_init) {
+        if (!isOnline()) {
             network_status = 'offline';
             Header.displayNotification(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
-        } else if (status === pending_keys.ws_request || network_status === 'offline') {
+        } else if (pending_keys[status] || network_status === 'offline') {
             network_status = 'blinking';
             wsReconnect();
             Header.hideNotification('CONNECTION_ERROR');
