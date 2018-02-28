@@ -32,7 +32,7 @@ const Header = (() => {
             initMenuDropDown();
             displayAccountStatus();
             if (!Client.get('is_virtual')) {
-                BinarySocket.wait('authorize', 'balance').then(() => {
+                BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
                     if (Client.canTransferFunds()) {
                         getElementById('user_menu_account_transfer').setVisibility(1);
                     }
