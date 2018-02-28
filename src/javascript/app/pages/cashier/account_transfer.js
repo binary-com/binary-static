@@ -141,6 +141,7 @@ const AccountTransfer = (() => {
     const onLoad = () => {
         if (!Client.canTransferFunds()) {
             BinaryPjax.loadPreviousUrl();
+            return;
         }
         BinarySocket.wait('balance').then((response) => {
             client_balance   = getPropertyValue(response, ['balance', 'balance']);

@@ -70,7 +70,8 @@ const ProfitTableInit = (() => {
                         .append($('<td/>', { colspan: 8 })
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             } else {
-                $('#util_row').setVisibility(1);
+                // TODO: uncomment this when issue of profit_table date_to field is fixed (now it sends one more day than supposed to)
+                // $('#util_row').setVisibility(1);
             }
         }
     };
