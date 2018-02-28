@@ -2,7 +2,7 @@ const MenuSelector = require('../../_common/menu_selector');
 
 module.exports = {
     BinaryOptions: {
-        onLoad  : () => { MenuSelector.init(['what-are-binary-options', 'range-of-markets', 'types-of-trades', 'how-to-trade-binary', 'glossary']); },
+        onLoad  : () => { MenuSelector.init(['what-are-binary-options', 'how-to-trade-binary', 'types-of-trades', 'range-of-markets', 'glossary']); },
         onUnload: () => { MenuSelector.clean(); },
     },
     CFDs: {

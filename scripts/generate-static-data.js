@@ -181,6 +181,7 @@ const texts = [
     'Female',
     'Male',
     'Please select a country',
+    'Please confirm that all the information above is true and complete.',
 
     // home and virtual account opening page
     'verification token',

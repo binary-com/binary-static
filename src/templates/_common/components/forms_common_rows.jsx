@@ -170,6 +170,48 @@ export const ClientMessage = () => (
     </div>
  );
 
+export const TaxInformationForm = () => (
+    <React.Fragment>
+        <div id='tax_information_info' className='gr-12 gr-padding-10'>
+            <label>{it.L('Binary Investments (Europe) Ltd. is required to collect your tax information.')}&nbsp;
+                <a id='tax_information_note_toggle' className='toggle-arrow' href='javascript:;'>{it.L('Read more.')}</a>
+            </label>
+
+            <div id='tax_information_note' style={{display: 'none'}}>
+                <p>{it.L('This requirement is mandated by the Common Reporting Standard (CRS) and the Foreign Account Tax Compliance Act (FATCA).')}</p>
+                <p>{it.L('Please enter your [_1]tax information[_2] below to continue.', '<a href="https://ec.europa.eu/taxation_customs/tin/tinByCountry.html" target="_blank">', '</a>')}</p>
+                <p>{it.L('Rest assured that your information will only be used for CRS/FATCA reporting purposes and will be kept safe.')}</p>
+                <p>{it.L('If we have reason to believe that your tax information is incomplete, we may contact you for clarification.')}</p>
+            </div>
+        </div>
+        <FormRow type='select'
+                 id='tax_residence'
+                 label={it.L('Tax residence')}
+                 tooltip={it.L('Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor.')}
+                 className='invisible'
+                 attributes={{multiple: 'multiple'}} />
+        <FormRow type='text'
+                 label={it.L('Tax identification number')}
+                 tooltip={it.L('Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help.')}
+                 id='tax_identification_number'
+                 attributes={{ maxLength: 20 }} />
+        <div id='tax_information_declaration'>
+            <div className='gr-12 gr-padding-10'>
+                <input type='checkbox' id='chk_tax_id' />
+                <label htmlFor='chk_tax_id'>
+                    {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information.')}
+                </label>
+            </div>
+            <div className='gr-12 gr-padding-10'>
+                <p className='no-margin hint'>
+                    <span className='required_field_asterisk no-margin'>* </span>
+                    {it.L('You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate.')}
+                </p>
+            </div>
+        </div>
+    </React.Fragment>
+);
+
 export const GeocodeResponse = () => (
     <div className='gr-row'>
         <div className='gr-12 gr-padding-10 center-text'>
