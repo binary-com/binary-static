@@ -9,6 +9,7 @@ const Geocoder        = require('../../../../../_common/geocoder');
 const CommonFunctions = require('../../../../../_common/common_functions');
 const localize        = require('../../../../../_common/localize').localize;
 const State           = require('../../../../../_common/storage').State;
+const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 require('select2');
 
 const PersonalDetails = (() => {
@@ -268,7 +269,7 @@ const PersonalDetails = (() => {
             });
         }
         showFormMessage(is_error ?
-            'Sorry, an error occurred while processing your account.' :
+            (getPropertyValue(response, ['error', 'message']) || 'Sorry, an error occurred while processing your account.') :
             'Your settings have been updated successfully.', !is_error);
     };
 
