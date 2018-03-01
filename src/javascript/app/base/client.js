@@ -369,7 +369,7 @@ const Client = (() => {
     };
 
     const canTransferFundsTo = (to_loginid) => {
-        if (to_loginid === current_loginid || get('is_virtual', to_loginid) || get('is_virtual')) {
+        if (to_loginid === current_loginid || get('is_virtual', to_loginid) || get('is_virtual') || get('is_disabled', to_loginid)) {
             return false;
         }
         const from_currency = get('currency');
