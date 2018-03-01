@@ -60,9 +60,9 @@ module.exports = [
     ['user/video-facility',                'app/user/video_facility',                   'default',    'Video Room Facility'],
     ['user/warning',                       'app/user/warning',                          'default',    'Warning'],
 
-    ['dialog',                             'app/dialog',                                'default',    'Dialog'],
     ['endpoint',                           'app/endpoint',                              'default',    'Endpoint'],
 
+    ['dialog',                             'app/dialog',                                null],
     ['explanation',                        'app/trade/explanation',                     null],
     ['logged_inws',                        'app/logged_in',                             null],
     ['redirect',                           'app/logged_in',                             null,         'Redirecting...'],
