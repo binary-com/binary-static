@@ -44,23 +44,27 @@ const ContentVisibility = (() => {
         };
     };
 
-    const controlVisibility = (landing_company_name, has_mt_company) => {
+    const controlVisibility = (current_landing_company_shortcode, client_has_mt_company) => {
         const visible_classname = 'data-show-visible';
-        const mt_company_code   = 'mtcompany';
+        const mt_company_rule   = 'mtcompany';
 
         document.querySelectorAll('[data-show]').forEach(el => {
             const attr_str              = el.dataset.show;
             const { is_exclude, names } = parseAttributeString(attr_str);
             const is_include            = !is_exclude;
-            const name_set              = new Set(names);
+            const rule_set              = new Set(names);
 
-            const has_landing_company_rule = name_set.has(landing_company_name);
-            const has_mt_company_rule      = name_set.has(mt_company_code);
+            const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
+            const rule_set_has_mt      = rule_set.has(mt_company_rule);
 
-            // TODO: try simplifying the logic
-            if ((is_exclude && !has_landing_company_rule && (has_mt_company !== has_mt_company_rule))
-                || (is_include && has_landing_company_rule)
-                || (is_include && has_mt_company && has_mt_company_rule)) {
+            let show_element = false;
+
+            if (is_include && rule_set_has_current) show_element = true;
+            if (is_include && client_has_mt_company && rule_set_has_mt) show_element = true;
+            if (is_exclude && !rule_set_has_current) show_element = true;
+            if (is_exclude && client_has_mt_company && rule_set_has_mt) show_element = false;
+
+            if (show_element) {
                 el.classList.add(visible_classname);
             } else {
                 const open_tab_url = new RegExp(`\\?.+_tabs=${el.id}`, 'i');
