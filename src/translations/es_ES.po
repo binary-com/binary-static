@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-28 03:53-0500\n"
+"PO-Revision-Date: 2018-03-01 05:36-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -449,9 +449,6 @@ msgstr "(máximo)"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Libre de impuestos: En muchos países, los beneficios procedentes de operaciones binarias son libres de impuestos pero en todo caso tiene que consultar a un asesor fiscal."
-
-msgid "*All calls are recorded for training and monitoring purposes"
-msgstr "*Todas nuestras llamadas se graban para fines de capacitación y supervisión"
 
 msgid "0-1 year"
 msgstr "0-1 año(s)"
@@ -1055,6 +1052,9 @@ msgstr "Todas las actividades relacionadas con los afiliados deben llevarse a ca
 
 msgid "All barriers in this trading window are expired"
 msgstr "Todos los límites en esta ventana de comercio han caducado"
+
+msgid "All calls are recorded for training and monitoring purposes"
+msgstr ""
 
 msgid "All client orders are processed on a first in first out basis without any manual intervention. When executing your order, %1 will seek to fill your order transaction as promptly as possible, at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework which commensurate with the size, nature, complexity, and risk profile of our activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted and orders that will be worked in the market with fill level passed on to the client."
 msgstr "Todos los pedidos de los clientes se procesan según el método PEPS, sin intervención manual. Al realizar su pedido, %1 intentará completar la transacción de su pedido lo antes posible, al precio indicado (o a un mejor precio, si está disponible). Los límites de exposición se establecen sobre la base de los acuerdos de gobernanza interna y del marco de gestión de riesgo, que son proporcionales al tamaño, naturaleza, complejidad y perfil de riesgo de nuestras actividades. Estos límites de exposición se utilizan como puntos de referencia para distinguir entre las órdenes que son autoaceptadas y las órdenes que se trabajarán en el mercado con el nivel de llenado transferido al cliente."
@@ -3304,8 +3304,8 @@ msgstr "Dirección de correo electrónico"
 msgid "Email us your Identity Documents"
 msgstr ""
 
-msgid "Email: "
-msgstr "Correo electrónico: "
+msgid "Email:"
+msgstr ""
 
 msgid "Employed"
 msgstr ""
@@ -3878,7 +3878,7 @@ msgid "For forex: The forex market is an OTC (over the counter) market, where ba
 msgstr "Para forex: el mercado de forex es un mercado Over The Counter (OTC, por sus siglas en inglés: sobre el mostrador), donde los bancos y otras instituciones financieras importantes intercambian divisas entre sí sin la presencia de una cámara de compensación central. En consecuencia, no hay una fuente de precios 'oficial' para las cotizaciones de forex. Los diferentes flujos de datos contendrán cotizaciones de diferentes subconjuntos de bancos internacionales. Por consiguiente, los precios pueden variar entre proveedores, dependiendo del(los) banco(s) del(los) que obtienen los precios."
 
 msgid "For further background information please read our blog post, <a href='%1' target='_blank' rel='noopener noreferrer'>Why we are doing an ICO (and not an IPO)</a>."
-msgstr ""
+msgstr "For further background information please read our blog post, <a href='%1' target='_blank' rel='noopener noreferrer'>Why we are doing an ICO (and not an IPO)</a>."
 
 msgid "For general support:"
 msgstr ""
@@ -4626,6 +4626,9 @@ msgstr "Si está aceptando este Acuerdo en nombre de su empleador u otra entidad
 
 msgid "If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session."
 msgstr "Si experimenta dificultades al acceder a su cuenta, por favor compruebe que los cookies estén activados en su navegador. Este sitio web utiliza cookies para almacenar su identificación de acceso y contraseña (en un formato encriptado) en su ordenador durante su sesión de inicio."
+
+msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
+msgstr ""
 
 msgid "If you are, we'd love to hear from you."
 msgstr "Si es así, nos encantaría que nos contactase."
@@ -6205,6 +6208,9 @@ msgstr ""
 
 msgid "Make a Deposit"
 msgstr "Haga un depósito"
+
+msgid "Make another transfer"
+msgstr ""
 
 msgid "Make your code changes in your fork"
 msgstr ""
@@ -9108,7 +9114,7 @@ msgid "Thank you for completing the Financial Assessment. You can now deposit fu
 msgstr ""
 
 msgid "Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance."
-msgstr ""
+msgstr "Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance."
 
 msgid "Thank you for signing up! Please check your email to complete the registration process."
 msgstr ""
@@ -9178,9 +9184,6 @@ msgstr "El <strong>período contractual</strong> es aquel entre el <strong>sigui
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "La <strong>hora de finalización</strong> es la cantidad de minutos/horas después del <strong>inicio</strong> (en caso de tener menos de un día de duración) o al final del día de contratación (en caso de tener un día o más de duración)."
-
-msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "La <strong>hora de finalización</strong> es la cantidad de segundos/minutos/horas después del <strong>inicio del contrato</strong> (en caso de tener menos de un día de duración) o al final del día de contratación (en caso de tener un día o más de duración)."
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "El <strong>precio de salida</strong> corresponde al último valor en efecto al momento de la <strong>finalización del contrato</strong> o justo antes de esta."
@@ -10036,7 +10039,7 @@ msgid "This document (the \"Agreement\") sets out the terms and conditions betwe
 msgstr ""
 
 msgid "This equity research report by Lykke Accelerator gives you an overview of our company structure, financial performance, forecasts of future revenue, and more."
-msgstr ""
+msgstr "This equity research report by Lykke Accelerator gives you an overview of our company structure, financial performance, forecasts of future revenue, and more."
 
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Esta característica no es relevante para cuentas de dinero virtual."
@@ -10111,7 +10114,7 @@ msgid "This value analysis by an experienced investor, Nishant Sah studies the r
 msgstr "Este análisis llevado a cabo por Nishant Sah, un inversionista experimentado, estudia los riesgos, beneficios y valoraciones de nuestra oferta de tokens con base en nuestro pasado y en nuestras proyecciones de crecimiento."
 
 msgid "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction"
-msgstr ""
+msgstr "This website and the proposed ICO does not constitute an offer of, or an invitation to purchase, the aforementioned tokens in any jurisdiction in which such offer or sale would be unlawful. In particular, unless otherwise determined by the Company, and permitted by applicable law and regulation, it is not intended that any offering of the tokens should be made, or any documentation be sent, directly or indirectly, in or into, Australia, the British Virgin Islands, Canada,  Japan, Jersey, New Zealand, Singapore, South Africa, Switzerland, or the United States (“Restricted Territory”) and nor should it be accessed by any person who is a national citizen or resident of a Restricted Territory, including corporations, partnerships, or other entities created or organised in any such jurisdiction"
 
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "Este sitio web incluye enlaces a otros sitios y puede contener publicidad relacionada con otros sitios web. Estos sitios y sus respectivos anuncios pueden añadir cookies a su navegador, lo que están fuera de nuestro control. No somos responsables de las políticas de privacidad o del contenido de estos sitios. Le sugerimos leer las políticas de privacidad de cada sitio web, dado que pueden diferir de la nuestra."
@@ -10879,7 +10882,7 @@ msgid "View Japanese website"
 msgstr ""
 
 msgid "View Lykke report"
-msgstr ""
+msgstr "View Lykke report"
 
 msgid "View Nishant's report"
 msgstr "Ver el informe de Nishant"
@@ -11023,7 +11026,7 @@ msgid "We also offer specialized pay-out structures to affiliates who offer a tr
 msgstr "También ofrecemos estructuras de pago específicas para los afiliados que ofrecen consultoría de comercio en conexión y en relación con nuestros productos Para los afiliados que ofrecen un servicio de asesoramiento de inversiones basado en la plataforma de %1 ofrecemos estructuras de pago especializadas. <a href=\"mailto:%1\">Comuníquese con nuestra gerente de afiliados, Karen Yap para obtener más detalles</a>."
 
 msgid "We are adopting the ‘Mini Me’ ERC20 token for our ICO. This type of token possesses unique features that are suited to securities tokens. One of its unique features is the ability to clone itself, thus creating a mini version of itself."
-msgstr ""
+msgstr "We are adopting the ‘Mini Me’ ERC20 token for our ICO. This type of token possesses unique features that are suited to securities tokens. One of its unique features is the ability to clone itself, thus creating a mini version of itself."
 
 msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
 msgstr ""
@@ -11356,7 +11359,7 @@ msgid "What will be the token symbol?"
 msgstr "¿Cuál será el código bursátil de los tokens?"
 
 msgid "What will be the total shares issued after the ICO?"
-msgstr ""
+msgstr "What will be the total shares issued after the ICO?"
 
 msgid "What you can trade with CFDs"
 msgstr ""
@@ -11744,7 +11747,7 @@ msgid "Yes, we support multiple crypto (Bitcoin, Bitcoin Cash, Ethereum, and Lit
 msgstr ""
 
 msgid "Yes, you can freely trade your tokens after they are listed on the %1Lykke.com%2 exchange or any other cryptocurrency exchange that chooses to list our tokens in the future."
-msgstr ""
+msgstr "Yes, you can freely trade your tokens after they are listed on the %1Lykke.com%2 exchange or any other cryptocurrency exchange that chooses to list our tokens in the future."
 
 msgid "Yes. Bidding starts at USD 1.35 per token with a minimum number of 25 tokens per bid. The final token price will be determined after the bidding period is over."
 msgstr ""
