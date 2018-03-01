@@ -25,11 +25,13 @@ hr {
         height: 100vh;
         z-index: 665;
         transition: all 0.25s;
-        animation: undim 0.25s ease-out forwards;
+        opacity: 0;
         overflow: hidden;
+        background-color: rgba(42, 48, 82, 0.96);
+        will-change: opacity;
 
         &.show {
-            animation: dim 0.25s ease-out forwards;
+            opacity: 1;
         }
         .drawer {
             position: absolute;
@@ -55,7 +57,6 @@ hr {
                 right: auto;
                 left: 0;
                 transform: translateX(-100%);
-                animation: fadeOut 0.25s ease-out forwards;
 
                 .drawer-header {
                     display: flex;
@@ -101,7 +102,6 @@ hr {
                 right: 0;
                 left: auto;
                 transform: translateX(100%);
-                animation: fadeOut 0.25s ease-out forwards;
 
                 .drawer-header {
                     display: flex;
@@ -197,46 +197,9 @@ hr {
 
                 &.right, &.left {
                     transform: none;
-                    animation: fadeIn 0.25s ease-out forwards;
                 }
             }
         }
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes dim {
-    from {
-        background-color: transparent;
-    }
-    to {
-        background-color: rgba(42, 48, 82, 0.96);
-    }
-}
-
-@keyframes undim {
-    from {
-        background-color: rgba(42, 48, 82, 0.96);
-    }
-    to {
-        background-color: transparent;
     }
 }
 /* stylelint-enable number-max-precision */
