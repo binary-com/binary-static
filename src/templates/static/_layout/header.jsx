@@ -96,7 +96,18 @@ const Header = () => (
 
                                         // Logged in
                                         // General
-                                        { text: it.L('Trade'),        href: it.url_for('trading'),             className: 'ja-hide ico-only-hide client_logged_in invisible' },
+                                        {
+                                            type     : 'nested',
+                                            text     : it.L('Trade'),
+                                            href     : 'javascript:;',
+                                            className: 'ja-hide ico-only-hide client_logged_in nav-dropdown-toggle invisible',
+                                            subitems : [
+                                                { text: it.L('[_1]', it.website_name), href: it.url_for('trading'), className: 'no-capitalize' },
+                                                { text: it.L('Webtrader'),             href: 'https://webtrader.binary.com', target: '_blank' },
+                                                { text: it.L('Binary Bot'),            href: 'https://bot.binary.com',  target: '_blank' },
+                                                { text: it.L('MetaTrader 5'),          href: it.url_for('user/metatrader') },
+                                            ],
+                                        },
                                         { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),    className: 'ico-only-hide client_logged_in invisible' },
                                         { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'), className: 'ico-only-hide client_logged_in invisible' },
                                         { text: it.L('Statement'),    href: it.url_for('user/statementws'),    className: 'client_logged_in invisible' },
