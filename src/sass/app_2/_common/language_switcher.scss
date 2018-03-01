@@ -6,12 +6,12 @@
     width: 100%;
     top: 0;
     background-color: $COLOR_WHITE;
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-100%);
     opacity: 0;
     transition: all 0.25s;
 
     &.show {
-        transform: translate3d(0, 0, 0);
+        transform: none;
         opacity: 1;
     }
     .lang-switcher-list-header {
@@ -28,7 +28,7 @@
                 font-size: 2rem;
                 position: absolute;
                 left: 10px;
-                top: 12px;
+                top: 13px;
             }
         }
     }
@@ -44,11 +44,11 @@
             font-weight: 300;
 
             &:before {
-                content: '\25FD';
-                font-size: 2rem;
+                content: '\25A2';
+                font-size: 1rem;
                 position: absolute;
-                left: 1.5rem;
-                top: 16px;
+                left: 2rem;
+                top: 15px;
             }
         }
         &.active, &.active:hover, &:focus, &:active {

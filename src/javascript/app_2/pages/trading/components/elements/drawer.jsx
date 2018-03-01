@@ -33,8 +33,8 @@ class ToggleDrawer extends React.PureComponent {
                 </div>
                 <Drawer ref={this.setRef} alignment={this.props.alignment}>
                     <DrawerHeader alignment={this.props.alignment} close={this.closeDrawer}/>
-                    <DrawerFooter />
                     {this.props.children}
+                    <DrawerFooter />
                 </Drawer>
             </React.Fragment>
         );

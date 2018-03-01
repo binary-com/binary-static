@@ -88,8 +88,6 @@ hr {
                     }
                 }
                 .drawer-footer {
-                    position: sticky;
-                    margin-top: -32px;
                     height: 30px;
                     border: 1px solid #f2f2f2;
                     top: 100%;
@@ -158,11 +156,11 @@ hr {
                     padding-left: 1.5rem;
 
                     &:before {
-                        content: '\25FD';
-                        font-size: 2rem;
+                        content: '\25A2';
+                        font-size: 1rem;
                         position: absolute;
-                        top: 9px;
-                        left: 5px;
+                        top: 14px;
+                        left: 1rem;
                     }
                     &:after {
                         content: '\002303';
@@ -181,11 +179,11 @@ hr {
                         padding-left: 1.5rem;
                     }
                     &:before {
-                        content: '\25FD';
-                        font-size: 2rem;
+                        content: '\25A2';
+                        font-size: 1rem;
                         position: absolute;
-                        top: 9px;
-                        left: 5px;
+                        top: 14px;
+                        left: 1rem;
                     }
                 }
                 &:hover {

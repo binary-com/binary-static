@@ -30,9 +30,6 @@ class AccountSwitcher extends React.PureComponent {
     render() {
         const account_list_collapsed = {
             visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
-            position  : 'absolute',
-            height    : 'calc(100% - 158px)',
-            width     : '100%',
         };
 
         const account_is_hidden = (account) => {
