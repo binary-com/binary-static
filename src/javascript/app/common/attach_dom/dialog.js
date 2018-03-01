@@ -1,6 +1,5 @@
 const showPopup          = require('./popup');
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
-const getElementById     = require('../../../_common/common_functions').getElementById;
 const urlFor             = require('../../../_common/url').urlFor;
 
 const Dialog = (() => {
@@ -11,14 +10,14 @@ const Dialog = (() => {
                 popup_id          : options.id,
                 form_id           : '#frm_confirm',
                 content_id        : '#dialog_content',
-                additionalFunction: () => {
-                    const el_dialog     = getElementById(options.id);
-                    const el_btn_ok     = getElementById('btn_ok');
-                    const el_btn_cancel = getElementById('btn_cancel');
+                additionalFunction: (container) => {
+                    const el_dialog     = container;
+                    const el_btn_ok     = container.querySelector('#btn_ok');
+                    const el_btn_cancel = container.querySelector('#btn_cancel');
 
                     if (!el_dialog) return;
 
-                    elementTextContent(getElementById('dialog_message'), options.message);
+                    elementTextContent(container.querySelector('#dialog_message'), options.message);
 
                     if (is_alert) {
                         el_btn_cancel.classList.add('invisible');

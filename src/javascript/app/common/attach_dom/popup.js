@@ -32,7 +32,7 @@ const callback = (options) => {
     }
 
     if (typeof options.additionalFunction === 'function') {
-        options.additionalFunction();
+        options.additionalFunction(lightbox);
     }
 
     getElementById(options.form_id.slice(1)).addEventListener('submit', (e) => {
