@@ -1,17 +1,13 @@
-const moment               = require('moment');
 const StatementUI          = require('./statement.ui');
 const ViewPopup            = require('../../view_popup/view_popup');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
+const DateTo               = require('../../../../common/attach_dom/date_to');
 const addTooltip           = require('../../../../common/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common/get_app_details').buildOauthApps;
-const jpClient             = require('../../../../common/country_base').jpClient;
 const jpResidence          = require('../../../../common/country_base').jpResidence;
-const DatePicker           = require('../../../../components/date_picker');
-const dateValueChanged     = require('../../../../../_common/common_functions').dateValueChanged;
 const getLanguage          = require('../../../../../_common/language').get;
 const localize             = require('../../../../../_common/localize').localize;
-const toISOFormat          = require('../../../../../_common/string_util').toISOFormat;
 
 const StatementInit = (() => {
     // Batch refer to number of data get from ws service per request
@@ -36,11 +32,9 @@ const StatementInit = (() => {
 
         if (opts) $.extend(true, req, opts);
 
-        const jump_to_val = $('#jump-to').attr('data-value');
-        if (jump_to_val && jump_to_val !== '') {
-            req.date_to   = moment.utc(jump_to_val).unix() + ((jpClient() ? 15 : 24) * (60 * 60));
-            req.date_from = 0;
-        }
+        const obj_date_to_from = DateTo.getDateToFrom();
+        if (obj_date_to_from) $.extend(true, req, obj_date_to_from);
+
         BinarySocket.send(req).then((response) => {
             statementHandler(response);
         });
@@ -149,28 +143,12 @@ const StatementInit = (() => {
         loadStatementChunkWhenScroll();
     };
 
-    const attachDatePicker = () => {
-        const jump_to = '#jump-to';
-        $(jump_to).attr('data-value', toISOFormat(moment()))
-            .change(function () {
-                if (!dateValueChanged(this, 'date')) {
-                    return false;
-                }
-                $('.table-container').remove();
-                StatementUI.clearTableContent();
-                initPage();
-                return true;
-            });
-        DatePicker.init({
-            selector: jump_to,
-            maxDate : 0,
-        });
-        if ($(jump_to).attr('data-picker') !== 'native') $(jump_to).val(localize('Today'));
-    };
-
     const onLoad = () => {
         initPage();
-        attachDatePicker();
+        DateTo.attachDateToPicker(() => {
+            StatementUI.clearTableContent();
+            initPage();
+        });
         ViewPopup.viewButtonOnClick('#statement-container');
     };
 

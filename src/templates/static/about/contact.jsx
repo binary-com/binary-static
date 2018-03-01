@@ -40,13 +40,14 @@ const Contact = () => (
                                 {it.L('[_1] (Toll Free)', '0800 011 9847')}
                             </span>
                         </div>
+                        <p className='ja-hide'>{it.L('If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help.')}</p>
                         <div className='gr-padding-10 hint calls_recording'>
-                            {it.L('*All calls are recorded for training and monitoring purposes')}
+                            * {it.L('All calls are recorded for training and monitoring purposes')}
                         </div>
                     </div>
                     <div className='gr-6 gr-12-t gr-12-p gr-12-m ja-hide'>
                         <div className='gr-padding-10 gr-parent'>
-                            {it.L('Email: ')}
+                            {it.L('Email:')}
                         </div>
                         <div className='gr-padding-10 gr-parent'>
                             <span className='gr-row'>

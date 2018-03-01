@@ -221,25 +221,24 @@ const DepositWithdraw = (() => {
 
     const onLoad = () => {
         getCashierType();
-        BinarySocket.send({ cashier_password: 1 }).then((response) => {
-            if ('error' in response) {
-                showError('custom_error', response.error.message);
-            } else if (response.cashier_password === 1) {
-                showMessage('cashier_locked_message');
+        const req_cashier_password   = BinarySocket.send({ cashier_password: 1 });
+        const req_get_account_status = BinarySocket.send({ get_account_status: 1 });
+
+        Promise.all([req_cashier_password, req_get_account_status]).then(() => {
+            // cannot use State.getResponse because we want to check error which is outside of response[msg_type]
+            const response_cashier_password   = State.get(['response', 'cashier_password']);
+            const response_get_account_status = State.get(['response', 'get_account_status']);
+            if ('error' in response_cashier_password) {
+                showError('custom_error', response_cashier_password.error.message);
+            } else if (response_cashier_password.cashier_password === 1) {
+                showMessage('cashier_locked_message'); // Locked by client
+            } else if (!response_get_account_status.error && /cashier_locked/.test(response_get_account_status.get_account_status.status)) {
+                showError('custom_error', localize('Your cashier is locked.')); // Locked from BO
+            } else if (cashier_type === 'withdraw' && +State.getResponse('get_limits.remainder') === 0) {
+                showError('custom_error', localize('You have reached the withdrawal limit.'));
             } else {
-                BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                    if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
-                        showError('custom_error', localize('Your cashier is locked.')); // Locked from BO
-                    } else {
-                        const limit = State.getResponse('get_limits.remainder');
-                        if (typeof limit !== 'undefined' && limit < 1) {
-                            showError('custom_error', localize('You have reached the withdrawal limit.'));
-                        } else {
-                            BinarySocket.wait('get_settings').then(() => {
-                                init(response.cashier_password);
-                            });
-                        }
-                    }
+                BinarySocket.wait('get_settings').then(() => {
+                    init(response_cashier_password.cashier_password);
                 });
             }
         });

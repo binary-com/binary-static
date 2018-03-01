@@ -76,7 +76,7 @@ const Area = ({items}) => {
 };
 
 const Regulation = () => {
-    const has_KID = /de|en|es|fr|pl/.test(`${it.language.toLowerCase()}`);
+    const has_KID = /de|en|es|fr|pl|pt/.test(`${it.language.toLowerCase()}`);
     const lang = has_KID ? `${it.language.toLowerCase()}` : 'en';
 
     return (
