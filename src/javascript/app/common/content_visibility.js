@@ -1,5 +1,8 @@
-const updateTabDisplay = require('../_common/tab_selector').updateTabDisplay;
-const MetaTrader = require('../../app/pages/user/metatrader/metatrader');
+const Client           = require('../base/client');
+const BinarySocket     = require('../base/socket');
+const State            = require('../../_common/storage').State;
+const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
+const MetaTrader       = require('../../app/pages/user/metatrader/metatrader');
 
 const ContentVisibility = (() => {
     const init = () => {
@@ -41,7 +44,7 @@ const ContentVisibility = (() => {
         };
     };
 
-    const controlVisility = (landing_company_name, has_mt_company) => {
+    const controlVisibility = (landing_company_name, has_mt_company) => {
         const visible_classname = 'data-show-visible';
         const mt_company_code = 'mtcompany';
 
