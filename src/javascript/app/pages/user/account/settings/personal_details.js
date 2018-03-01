@@ -369,18 +369,17 @@ const PersonalDetails = (() => {
 
             $('#account_opening_reason_notice').setVisibility(+is_for_new_account);
 
-            if (is_virtual || is_jp) {
+            if (is_virtual) {
                 getDetailsResponse(get_settings_data);
             }
 
             if (!is_virtual || !residence) {
                 $('#btn_update').setVisibility(1);
-                if (!is_jp) {
-                    BinarySocket.send({ residence_list: 1 }).then(response => {
-                        getDetailsResponse(get_settings_data, response.residence_list);
-                        populateResidence(response);
-                    });
-                }
+
+                BinarySocket.send({ residence_list: 1 }).then(response => {
+                    getDetailsResponse(get_settings_data, response.residence_list);
+                    populateResidence(response);
+                });
 
                 if (residence) {
                     BinarySocket.send({ states_list: residence }).then(response => populateStates(response));
