@@ -29,9 +29,9 @@ const Dialog = (() => {
                                 options.onAbort();
                             }
                             resolve(false);
-
                         });
                     }
+
                     el_btn_ok.addEventListener('click', () => {
                         el_dialog.remove();
                         if (typeof options.onConfirm === 'function') {
