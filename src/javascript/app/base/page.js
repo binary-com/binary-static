@@ -5,6 +5,7 @@ const Header           = require('./header');
 const Login            = require('./login');
 const Menu             = require('./menu');
 const BinarySocket     = require('./socket');
+const ContentVisibility = require('../common/content_visibility');
 const checkLanguage    = require('../common/country_base').checkLanguage;
 const TrafficSource    = require('../common/traffic_source');
 const RealityCheck     = require('../pages/user/reality_check/reality_check');
@@ -65,83 +66,6 @@ const Page = (() => {
         });
     };
 
-    const showHiddenElementsBasedOnCompany = (landing_company_name, has_mt_company) => {
-        const visible_classname = 'data-show-visible';
-        const mt_company_code = 'mtcompany';
-
-        function parseAttributeString(attrStr) {
-            function generateErrorMessage(reason) {
-                return `Invalid data-show attribute value! ${reason} Given value: '${attrStr}'.`;
-            }
-            if (!/^[a-z,-\s]+$/.test(attrStr)) {
-                throw new Error(generateErrorMessage('Invalid characted used.'));
-            }
-            let names = attrStr.split(',').map(name => name.trim());
-            if (names.some(name => name.length === 0)) {
-                throw new Error(generateErrorMessage('No empty names allowed.'));
-            }
-            const isExclude = names.every(name => name[0] === '-');
-            const isInclude = names.every(name => name[0] !== '-');
-            if (!isExclude && !isInclude) {
-                throw new Error(generateErrorMessage('No mixing of includes and excludes allowed.'));
-            }
-            if (isExclude) {
-                names = names.map(name => name.slice(1));
-            }
-            return {
-                isExclude,
-                names,
-            };
-        }
-
-        console.log('landing_company_name', landing_company_name);
-        console.log('has_mt_company', has_mt_company);
-
-        document.querySelectorAll('[data-show]').forEach(el => {
-            const attrStr = el.dataset.show;
-            const { isExclude, names } = parseAttributeString(attrStr);
-            const isInclude = !isExclude;
-            const nameSet = new Set(names);
-
-            if ((isExclude && !nameSet.has(landing_company_name) && (has_mt_company !== nameSet.has(mt_company_code)))
-                || (isInclude && nameSet.has(landing_company_name))
-                || (isInclude && has_mt_company && nameSet.has(mt_company_code)))
-            {
-                el.classList.add(visible_classname);
-                console.log('show', el);
-            }
-            else {
-                console.log('stays hidden', el);
-                const openTabUrl = new RegExp(`\\?.+_tabs=${el.id}`, 'i');
-                // check if we hide a tab that's open
-                // then redirect to the url without query
-                if (el.classList.contains('tm-li') && openTabUrl.test(window.location.href)) {
-                    const { origin, pathname } = window.location;
-                    window.location.href = origin + pathname;
-                }
-            }
-        });
-
-        const tabMenu = document.querySelector('.tab-menu');
-        if (tabMenu) {
-            // hide tabs if there is only one tab visible
-            const ul = tabMenu.querySelector('ul');
-            if (ul) {
-                const visibleTabs = Array.from(ul.children).filter(el => (
-                    !el.classList.contains('tab-selector')
-                    && (!el.dataset.show
-                        || el.dataset.show && el.classList.contains('data-show-visible'))
-                ));
-                if (visibleTabs.length <= 1) tabMenu.setVisibility(0);
-            }
-
-            // resize tab selector
-            if (tabMenu.querySelector('.tab-selector')) {
-                window.dispatchEvent(new Event('resize'));
-            }
-        }
-    };
-
     const onLoad = () => {
         if (State.get('is_loaded_by_pjax')) {
             Url.reset();
@@ -168,16 +92,12 @@ const Page = (() => {
                 checkLanguage();
                 RealityCheck.onLoad();
                 Menu.init();
-                showHiddenElementsBasedOnCompany(
-                    State.getResponse('authorize.landing_company_name'),
-                    Client.hasMtCompany()
-                );
             });
         } else {
             checkLanguage();
             Menu.init();
-            showHiddenElementsBasedOnCompany('default', true);
         }
+        ContentVisibility.init();
         TrafficSource.setData();
     };
 

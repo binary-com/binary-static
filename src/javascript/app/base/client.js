@@ -286,11 +286,6 @@ const Client = (() => {
         return landing_company_response[landing_company_prop] || {};
     };
 
-    const hasMtCompany = () => !!(
-        State.getResponse('landing_company.mt_financial_company.shortcode')
-        || State.getResponse('landing_company.mt_gaming_company.shortcode')
-    );
-
     const shouldCompleteTax = () => isAccountOfType('financial') && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
     const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
@@ -419,7 +414,6 @@ const Client = (() => {
         getLandingCompanyValue,
         canTransferFunds,
         hasCostaricaAccount,
-        hasMtCompany,
         canOpenICO,
         canRequestProfessional,
         defaultRedirectUrl,
