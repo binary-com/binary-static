@@ -14,10 +14,10 @@ const Statement = () => (
                 <div className='gr-12 gr-12-m'>
                     <div className='gr-row gr-gutter-right gr-row-align-right'>
                         <div className='label_form gr-gutter-right'>
-                            <label htmlFor='jump-to'>{it.L('End at:')}</label>
+                            <label htmlFor='date_to'>{it.L('End at:')}</label>
                         </div>
                         <div className='gr-gutter-right'>
-                            <input type='text' id='jump-to' size='20' readOnly='readonly' />
+                            <input type='text' id='date_to' size='20' readOnly='readonly' />
                         </div>
                     </div>
                 </div>
