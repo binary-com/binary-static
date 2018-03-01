@@ -5,7 +5,6 @@ const Header           = require('./header');
 const Login            = require('./login');
 const Menu             = require('./menu');
 const BinarySocket     = require('./socket');
-const ContentVisibility = require('../common/content_visibility');
 const checkLanguage    = require('../common/country_base').checkLanguage;
 const TrafficSource    = require('../common/traffic_source');
 const RealityCheck     = require('../pages/user/reality_check/reality_check');
@@ -97,7 +96,6 @@ const Page = (() => {
             checkLanguage();
             Menu.init();
         }
-        ContentVisibility.init();
         TrafficSource.setData();
     };
 

@@ -7,6 +7,7 @@ const Login               = require('./login');
 const Page                = require('./page');
 const BinarySocket        = require('./socket');
 const BinarySocketGeneral = require('./socket_general');
+const ContentVisibility   = require('../common/content_visibility');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
@@ -60,6 +61,8 @@ const BinaryLoader = (() => {
         } else if (/\/get-started\//i.test(window.location.pathname)) {
             loadHandler(pages_config['get-started']);
         }
+
+        ContentVisibility.init();
     };
 
     const error_messages = {

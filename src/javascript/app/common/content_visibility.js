@@ -18,22 +18,22 @@ const ContentVisibility = (() => {
         }
     };
 
-    const generateParsingErrorMessage = (reason) => {
-        return `Invalid data-show attribute value! ${reason} Given value: '${attr_str}'.`;
-    };
+    const generateParsingErrorMessage = (reason, attr_str) => (
+        `Invalid data-show attribute value! ${reason} Given value: '${attr_str}'.`
+    );
 
     const parseAttributeString = (attr_str) => {
         if (!/^[a-z,-\s]+$/.test(attr_str)) {
-            throw new Error(generateParsingErrorMessage('Invalid characted used.'));
+            throw new Error(generateParsingErrorMessage('Invalid characted used.', attr_str));
         }
         let names = attr_str.split(',').map(name => name.trim());
         if (names.some(name => name.length === 0)) {
-            throw new Error(generateParsingErrorMessage('No empty names allowed.'));
+            throw new Error(generateParsingErrorMessage('No empty names allowed.', attr_str));
         }
         const is_exclude = names.every(name => name[0] === '-');
         const is_include = names.every(name => name[0] !== '-');
         if (!is_exclude && !is_include) {
-            throw new Error(generateParsingErrorMessage('No mixing of includes and excludes allowed.'));
+            throw new Error(generateParsingErrorMessage('No mixing of includes and excludes allowed.', attr_str));
         }
         if (is_exclude) {
             names = names.map(name => name.slice(1));
@@ -46,22 +46,24 @@ const ContentVisibility = (() => {
 
     const controlVisibility = (landing_company_name, has_mt_company) => {
         const visible_classname = 'data-show-visible';
-        const mt_company_code = 'mtcompany';
+        const mt_company_code   = 'mtcompany';
 
         document.querySelectorAll('[data-show]').forEach(el => {
-            const attr_str = el.dataset.show;
+            const attr_str              = el.dataset.show;
             const { is_exclude, names } = parseAttributeString(attr_str);
-            const is_include = !is_exclude;
-            const name_set = new Set(names);
+            const is_include            = !is_exclude;
+            const name_set              = new Set(names);
 
-            if ((is_exclude && !name_set.has(landing_company_name) && (has_mt_company !== name_set.has(mt_company_code)))
-                || (is_include && name_set.has(landing_company_name))
-                || (is_include && has_mt_company && name_set.has(mt_company_code)))
-            {
+            const has_landing_company_rule = name_set.has(landing_company_name);
+            const has_mt_company_rule      = name_set.has(mt_company_code);
+
+            // TODO: try simplifying the logic
+            if ((is_exclude && !has_landing_company_rule && (has_mt_company !== has_mt_company_rule))
+                || (is_include && has_landing_company_rule)
+                || (is_include && has_mt_company && has_mt_company_rule)) {
                 el.classList.add(visible_classname);
                 console.log('show', el);
-            }
-            else {
+            } else {
                 console.log('stays hidden', el);
                 const open_tab_url = new RegExp(`\\?.+_tabs=${el.id}`, 'i');
                 // check if we hide a tab that's open
