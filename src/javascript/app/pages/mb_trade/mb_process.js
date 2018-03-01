@@ -337,9 +337,7 @@ const MBProcess = (() => {
 
     const processForgetProposals = () => {
         MBPrice.showPriceOverlay();
-        const forget_proposal = BinarySocket.send({
-            forget_all: 'proposal_array',
-        });
+        const forget_proposal = BinarySocket.send({ forget_all: 'proposal_array' });
         forget_proposal.then(() => {
             MBPrice.cleanup();
         });

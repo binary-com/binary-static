@@ -228,9 +228,7 @@ const Process = (() => {
      * this need to be invoked before makin
      */
     const processForgetTicks = () => {
-        BinarySocket.send({
-            forget_all: 'ticks',
-        });
+        BinarySocket.send({ forget_all: 'ticks' });
     };
 
     const onExpiryTypeChange = (value) => {
