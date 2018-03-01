@@ -59,9 +59,8 @@ const ContentVisibility = (() => {
 
             let show_element = false;
 
-            if (is_include && rule_set_has_current) show_element = true;
+            if (is_exclude !== rule_set_has_current) show_element = true;
             if (is_include && client_has_mt_company && rule_set_has_mt) show_element = true;
-            if (is_exclude && !rule_set_has_current) show_element = true;
             if (is_exclude && client_has_mt_company && rule_set_has_mt) show_element = false;
 
             if (show_element) {
