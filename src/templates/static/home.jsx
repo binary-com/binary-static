@@ -303,7 +303,7 @@ const HomeBeta = () => {
                             <TabContent id='lookbacks'>
                                 <MarketsTabContent
                                     header={it.L('Lookbacks')}
-                                    text={it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a target="_blank" href=${it.url_for('get-started/binary-options')}#range-of-markets>`, '</a>')}
+                                    text={it.L('Options that let you “look back” on the optimum high or low achieved by the market to determine the payout.')}
                                     image='images/pages/home/trade/lookbacks.svg'
                                 />
                             </TabContent>
