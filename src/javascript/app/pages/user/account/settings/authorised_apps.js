@@ -3,7 +3,7 @@ const BinaryPjax           = require('../../../../base/binary_pjax');
 const Client               = require('../../../../base/client');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
-const dialog               = require('../../../../common/attach_dom/dialog');
+const Dialog               = require('../../../../common/attach_dom/dialog');
 const FlexTableUI          = require('../../../../common/attach_dom/flextable');
 const jpClient             = require('../../../../common/country_base').jpClient;
 const elementTextContent   = require('../../../../../_common/common_functions').elementTextContent;
@@ -77,7 +77,7 @@ const AuthorisedApps = (() => {
     const createRevokeButton = (container, app) => {
         const $button = $('<button/>', { class: 'button', text: localize(messages.revoke_access) });
         $button.on('click', () => {
-            dialog.confirm({
+            Dialog.confirm({
                 id       : 'apps_revoke_dialog',
                 message  : `${localize(messages.revoke_confirm)}: '${app.name}'?`,
                 onConfirm: () => {

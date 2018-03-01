@@ -3,8 +3,8 @@ const elementTextContent = require('../../../_common/common_functions').elementT
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const urlFor             = require('../../../_common/url').urlFor;
 
-const dialog = (() => {
-    const BaseDialog = (options, is_alert = false) => (
+const Dialog = (() => {
+    const baseDialog = (options, is_alert = false) => (
         new Promise((resolve) => {
             showPopup({
                 url               : urlFor('dialog'),
@@ -45,9 +45,9 @@ const dialog = (() => {
     );
 
     return {
-        alert  : (options) => new BaseDialog(options, true),
-        confirm: (options) => new BaseDialog(options),
+        alert  : (options) => baseDialog(options, true),
+        confirm: (options) => baseDialog(options),
     };
 })();
 
-module.exports = dialog;
+module.exports = Dialog;
