@@ -64,25 +64,23 @@ const PersonalDetails = (() => {
     };
 
     const showHideLabel = (get_settings) => {
-        const fields_to_show = ['place_of_birth'];
         if (!is_jp) {
-            fields_to_show.push('account_opening_reason'); // show account_opening_reason for non-jp only
-        }
-        fields_to_show.forEach((id) => {
-            if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
-                if (get_settings[id]) {
-                    // we have to show text here instead of relying on displayGetSettingsData()
-                    // since it prioritizes showing data instead of label
-                    const $label = $(`#lbl_${id}`);
-                    $label.text(get_settings[id]);
-                    $(`#row_${id}`).setVisibility(0);
-                    $(`#row_lbl_${id}`).setVisibility(1);
-                } else {
-                    $(`#row_lbl_${id}`).setVisibility(0);
-                    $(`#row_${id}`).setVisibility(1);
+            ['place_of_birth', 'account_opening_reason'].forEach((id) => {
+                if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
+                    if (get_settings[id]) {
+                        // we have to show text here instead of relying on displayGetSettingsData()
+                        // since it prioritizes showing data instead of label
+                        const $label = $(`#lbl_${id}`);
+                        $label.text(get_settings[id]);
+                        $(`#row_${id}`).setVisibility(0);
+                        $(`#row_lbl_${id}`).setVisibility(1);
+                    } else {
+                        $(`#row_lbl_${id}`).setVisibility(0);
+                        $(`#row_${id}`).setVisibility(1);
+                    }
                 }
-            }
-        });
+            });
+        }
     };
 
     const getDetailsResponse = (data, residence_list = State.getResponse('residence_list')) => {
