@@ -1,14 +1,14 @@
-const moment          = require('moment');
-const BinaryPjax      = require('../../../../base/binary_pjax');
-const Client          = require('../../../../base/client');
-const Header          = require('../../../../base/header');
-const BinarySocket    = require('../../../../base/socket');
-const formatMoney     = require('../../../../common/currency').formatMoney;
-const FormManager     = require('../../../../common/form_manager');
-const Geocoder        = require('../../../../../_common/geocoder');
-const CommonFunctions = require('../../../../../_common/common_functions');
-const localize        = require('../../../../../_common/localize').localize;
-const State           = require('../../../../../_common/storage').State;
+const moment           = require('moment');
+const BinaryPjax       = require('../../../../base/binary_pjax');
+const Client           = require('../../../../base/client');
+const Header           = require('../../../../base/header');
+const BinarySocket     = require('../../../../base/socket');
+const formatMoney      = require('../../../../common/currency').formatMoney;
+const FormManager      = require('../../../../common/form_manager');
+const Geocoder         = require('../../../../../_common/geocoder');
+const CommonFunctions  = require('../../../../../_common/common_functions');
+const localize         = require('../../../../../_common/localize').localize;
+const State            = require('../../../../../_common/storage').State;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 require('select2');
 
