@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-28 03:54-0500\n"
+"PO-Revision-Date: 2018-03-01 05:37-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -449,9 +449,6 @@ msgstr "（最大）"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "*免税：交易所获之盈利在很多国家免税，但请务必咨询专业税务顾问。"
-
-msgid "*All calls are recorded for training and monitoring purposes"
-msgstr "*为了利于培训和监控，所有通话将被录音"
 
 msgid "0-1 year"
 msgstr "0-1 年"
@@ -1050,6 +1047,9 @@ msgstr "所有联盟活动必须以专业和适当的方式进行。您须与推
 
 msgid "All barriers in this trading window are expired"
 msgstr "此交易窗口的所有障碍已过期"
+
+msgid "All calls are recorded for training and monitoring purposes"
+msgstr ""
 
 msgid "All client orders are processed on a first in first out basis without any manual intervention. When executing your order, %1 will seek to fill your order transaction as promptly as possible, at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework which commensurate with the size, nature, complexity, and risk profile of our activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted and orders that will be worked in the market with fill level passed on to the client."
 msgstr "所有客户订单将以先进先出，没有任何人工干预的方式处理。执行您的订单时，%1将尽快以指示价格 （或可用的更佳价格）填补您的订单交易记录。基于内部治理安排和风险管理框架建立的接触限值将与我们活动的大小、性质、复杂性和风险架构相配合。这些接触限值是区分自动接受订单和可用于将填补水平传递给客户端市场的订单的基准。"
@@ -3299,8 +3299,8 @@ msgstr "电子邮件地址"
 msgid "Email us your Identity Documents"
 msgstr "将身份证件以电子邮件方式发送给我们"
 
-msgid "Email: "
-msgstr "电子邮件: "
+msgid "Email:"
+msgstr ""
 
 msgid "Employed"
 msgstr "就业"
@@ -4621,6 +4621,9 @@ msgstr "如果您代表雇主或其他实体签订本协议，您确认并保证
 
 msgid "If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session."
 msgstr "如果存在账户登录问题，请确认您是否已启用浏览器 cookie。在登录期间，本网站使用 cookie 在您的计算机上（以加密格式）存储您的登录 ID 和密码。"
+
+msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
+msgstr ""
 
 msgid "If you are, we'd love to hear from you."
 msgstr "如果您已准备好，欢迎联系我们。"
@@ -6199,6 +6202,9 @@ msgstr "主要、次要和奇异货币对。"
 
 msgid "Make a Deposit"
 msgstr "存入资金"
+
+msgid "Make another transfer"
+msgstr ""
 
 msgid "Make your code changes in your fork"
 msgstr "在分叉中更改代码"
@@ -9173,9 +9179,6 @@ msgstr "<strong>合约期限</strong>是在合约<strong>开始时间</strong>�
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "合约<strong>结束时间</strong>是指合约<strong>开始时间</strong>（如果期限小于一天）以后所选定的分钟/小时数，或是交易日结束之时（如果期限是一天或更长）。"
-
-msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "<strong>结束时间</strong>是在<strong>开始时间</strong>（如果期限小于一天）之后选定的秒数/分钟数/小时数，或是交易日结束（如果期限为一天或更长）。"
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>退市现价</strong>是合约<strong>结束时或之前的</strong>最后跳动价点。"

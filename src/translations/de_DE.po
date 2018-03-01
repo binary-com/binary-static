@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-28 03:53-0500\n"
+"PO-Revision-Date: 2018-03-01 05:36-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -449,9 +449,6 @@ msgstr "(max)"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Steuerfrei: In vielen Ländern sind Gewinne aus dem Trading steuerfrei, aber Sie sollten sich dennoch immer bei einem fachlich versierten Steuerberater beraten lassen."
-
-msgid "*All calls are recorded for training and monitoring purposes"
-msgstr "*Alle Anrufe werden zu Trainings- und Kontrollzwecken aufgezeichnet"
 
 msgid "0-1 year"
 msgstr "0-1 Jahre"
@@ -1049,6 +1046,9 @@ msgstr "Alle Aktivitäten müssen von den Geschäftspartnern müssen in einer pr
 
 msgid "All barriers in this trading window are expired"
 msgstr "Alle Schwellen in diesem Handelsfenster sind abgelaufen"
+
+msgid "All calls are recorded for training and monitoring purposes"
+msgstr ""
 
 msgid "All client orders are processed on a first in first out basis without any manual intervention. When executing your order, %1 will seek to fill your order transaction as promptly as possible, at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework which commensurate with the size, nature, complexity, and risk profile of our activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted and orders that will be worked in the market with fill level passed on to the client."
 msgstr "Alle Kundenorder werden, ohne jegliches manuelles Eingreifen, wie eingetroffen bearbeitet. Wenn Ihre Order ausgeführt wird, versucht %1 Ihre Ordertransaktion so schnell wie möglich, zum angewiesenen Kurs (oder zu einem besseren Kurs, wenn möglich) zu erfüllen. Expositionsgrenzen werden auf internen Führungsregelungen und Risikomanagement-Framework, das der Größe, Natur, Komplexität und dem Risikoprofil unserer Aktivitäten entspricht, gegründet. Diese Expositionsgrenzen werden als Maßstäbe dazu verwendet, um Order, die automatisch akzeptiert werden, und um Order die im Markt mit einem Füllstand zum Kunden weitergeleitet, erarbeitet werden, zu unterscheiden."
@@ -3298,8 +3298,8 @@ msgstr "E-Mail Adresse"
 msgid "Email us your Identity Documents"
 msgstr "Senden Sie uns Ihre Ausweispapiere per E-Mail"
 
-msgid "Email: "
-msgstr "E-Mail:"
+msgid "Email:"
+msgstr ""
 
 msgid "Employed"
 msgstr "Beschäftigt"
@@ -4620,6 +4620,9 @@ msgstr "Wenn Sie in diesen Vertrag im Auftrag Ihres Arbeitgebers oder einer ande
 
 msgid "If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session."
 msgstr "Sollten beim Einloggen in Ihr Konto Schwierigkeiten auftreten, überprüfen Sie bitte, ob in Ihrem Browser Cookies aktiviert sind. Diese Website verwendet Cookies, um Ihre Log-in ID und Passwort (im verschlüsselten Format) während der Log-in Session auf Ihrem PC zu speichern."
+
+msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
+msgstr ""
 
 msgid "If you are, we'd love to hear from you."
 msgstr "Wenn Sie es sind, würden wir gerne von Ihnen hören."
@@ -6198,6 +6201,9 @@ msgstr "Wichtige, kleine und exotische Währungspaare."
 
 msgid "Make a Deposit"
 msgstr "Eine Einzahlung vornehmen"
+
+msgid "Make another transfer"
+msgstr ""
 
 msgid "Make your code changes in your fork"
 msgstr "Nehmen Sie die Codeänderungen in Ihrem Fork vor"
@@ -9170,9 +9176,6 @@ msgid "The <strong>contract period</strong> is the period between the <strong>ne
 msgstr "Der <strong>Vertragszeitraum</strong> ist die Zeitspanne zwischen dem <strong>nächsten Tick</strong> nach der <strong>Startzeit</strong> und der <strong>Endzeit</strong>."
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "Die <strong>Endzeit</strong> ist die ausgewählte Anzahl an Minuten/Stunden nach der <strong>Startzeit</strong> (sofern sie weniger als einen Tag beträgt) oder das Ende des Börsentages (sofern sie einen Tag oder mehr beträgt)."
-
-msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "Die <strong>Endzeit</strong> ist die ausgewählte Anzahl an Minuten/Stunden nach der <strong>Startzeit</strong> (sofern sie weniger als einen Tag beträgt) oder das Ende des Börsentages (sofern sie einen Tag oder mehr beträgt)."
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."

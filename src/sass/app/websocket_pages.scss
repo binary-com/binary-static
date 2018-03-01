@@ -97,7 +97,10 @@
     .act {
         flex: 0.8 1 35px;
     }
-    #jump-to {
+}
+
+#profit-table-container, #statement-container {
+    #date_to {
         width: 100%;
         box-sizing: border-box;
     }
