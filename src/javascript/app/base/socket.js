@@ -255,10 +255,10 @@ const BinarySocket = (() => {
                 const error_code = getPropertyValue(response, ['error', 'code']);
                 switch (error_code) {
                     case 'WrongResponse':
+                    case 'InternalServerError':
                     case 'OutputValidationFailed': {
                         if (msg_type !== 'mt5_login_list') {
-                            const text_value = (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.'));
-                            showNoticeMessage(text_value);
+                            showNoticeMessage(response.error.message);
                         }
                         break;
                     }

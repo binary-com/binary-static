@@ -66,6 +66,9 @@
         font-size: $FONT_SIZE_XS;
         font-style: italic;
     }
+    #market_tabs_container .tab-content {
+        min-height: 130px;
+    }
 }
 
 #content.home-content {
@@ -183,6 +186,19 @@
             background-position: right top;
             background-size: 125% 75%;
         }
+        #market_tabs_selector {
+            top: 24px;
+        }
+        .order-2-m {
+            order: 2;
+            padding-top: 30px;
+        }
+        .center-text-m {
+            text-align: center;
+        }
+        .gr-centered-m {
+            margin: 0 auto;
+        }
     }
 }
 
@@ -203,15 +219,11 @@
         .border-right {
             border-right: none;
         }
-        #market_tabs_selector, #account_tabs_selector {
+        #account_tabs_selector {
             top: 24px;
         }
         #frm_verify_email input {
             width: calc(100% - 10px);
-        }
-        .order-2-m {
-            order: 2;
-            padding-top: 30px;
         }
         .padding-top-20 {
             padding-top: 20px;
