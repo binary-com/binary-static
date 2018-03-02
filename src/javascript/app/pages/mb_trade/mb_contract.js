@@ -1,6 +1,7 @@
 const moment        = require('moment');
 const MBDefaults    = require('./mb_defaults');
 const Client        = require('../../base/client');
+const SocketCache   = require('../../base/socket_cache');
 const jpClient      = require('../../common/country_base').jpClient;
 const getLanguage   = require('../../../_common/language').get;
 const localize      = require('../../../_common/localize').localize;
@@ -169,6 +170,8 @@ const MBContract = (() => {
 
             const time_left = parseInt($duration.attr('value').split('_')[1]) - window.time.unix();
             if (time_left <= 0) {
+                // clear the expired contracts_for response
+                SocketCache.clear();
                 location.reload();
             } else if (time_left < 120) {
                 $count_down_timer.addClass('alert');
