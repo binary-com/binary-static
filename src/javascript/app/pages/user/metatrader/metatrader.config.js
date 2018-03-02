@@ -1,7 +1,7 @@
 const Client       = require('../../../base/client');
 const GTM          = require('../../../base/gtm');
 const BinarySocket = require('../../../base/socket');
-const formatMoney  = require('../../../common/currency').formatMoney;
+const Currency     = require('../../../common/currency');
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
 const urlFor       = require('../../../../_common/url').urlFor;
@@ -63,7 +63,7 @@ const MetaTraderConfig = (() => {
         deposit: {
             title      : localize('Deposit'),
             success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
-                formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
+                Currency.formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_binary,
                 response.echo_req.to_mt5,
                 response.binary_transaction_id,
@@ -80,10 +80,15 @@ const MetaTraderConfig = (() => {
                             BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                                 if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
                                     resolve(localize('Your cashier is locked.')); // Locked from BO
-                                } else if (+State.getResponse('get_limits.remainder') === 0) {
-                                    resolve(localize('You have reached the limit.'));
                                 } else {
-                                    resolve();
+                                    const limit             = State.getResponse('get_limits.remainder');
+                                    const is_crypto         = Currency.isCryptocurrency(Client.get('currency'));
+                                    const has_reached_limit = is_crypto ? +limit === 0 : +limit < 1;
+                                    if (typeof limit !== 'undefined' && has_reached_limit) {
+                                        resolve(localize('You have reached the limit.'));
+                                    } else {
+                                        resolve();
+                                    }
                                 }
                             });
                         }
@@ -94,7 +99,7 @@ const MetaTraderConfig = (() => {
         withdrawal: {
             title      : localize('Withdraw'),
             success_msg: response => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
-                formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
+                Currency.formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_mt5,
                 response.echo_req.to_binary,
                 response.binary_transaction_id,
