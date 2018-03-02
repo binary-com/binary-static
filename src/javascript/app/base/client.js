@@ -1,6 +1,7 @@
 const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const BinarySocket       = require('./socket');
+const SocketCache        = require('./socket_cache');
 const jpClient           = require('../common/country_base').jpClient;
 const isCryptocurrency   = require('../common/currency').isCryptocurrency;
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
@@ -158,6 +159,7 @@ const Client = (() => {
             return;
         }
 
+        SocketCache.clear();
         localStorage.setItem('GTM_new_account', '1');
 
         set('token',      options.token,       options.loginid);
@@ -242,6 +244,7 @@ const Client = (() => {
         cleanupCookies('reality_check', 'affiliate_token', 'affiliate_tracking');
         clearAllAccounts();
         set('loginid', '');
+        SocketCache.clear();
         RealityCheckData.clear();
         const redirect_to = getPropertyValue(response, ['echo_req', 'passthrough', 'redirect_to']);
         if (redirect_to) {
@@ -354,10 +357,44 @@ const Client = (() => {
         return (landing_company_object || {})[key];
     };
 
-    const canTransferFunds = () => !!(
-        (Client.hasAccountType('financial', true) && Client.hasAccountType('gaming', true)) ||
-        (hasCurrencyType('crypto') && hasCurrencyType('fiat'))
-    );
+
+    // API_V3: send a list of accounts the client can transfer to
+    const canTransferFunds = (account) => {
+        if (account) {
+            // this specific account can be used to transfer funds to
+            return canTransferFundsTo(account.loginid);
+        }
+        // at least one account can be used to transfer funds to
+        return Object.keys(client_object).some(loginid => canTransferFundsTo(loginid));
+    };
+
+    const canTransferFundsTo = (to_loginid) => {
+        if (to_loginid === current_loginid || get('is_virtual', to_loginid) || get('is_virtual') || get('is_disabled', to_loginid)) {
+            return false;
+        }
+        const from_currency = get('currency');
+        const to_currency   = get('currency', to_loginid);
+        if (!from_currency || !to_currency) {
+            return false;
+        }
+        // only transfer to other accounts that have the same currency as current account if one is maltainvest and one is malta
+        if (from_currency === to_currency) {
+            // these landing companies are allowed to transfer funds to each other if they have the same currency
+            const same_cur_allowed = {
+                maltainvest: 'malta',
+                malta      : 'maltainvest',
+            };
+            const from_landing_company = get('landing_company_shortcode');
+            const to_landing_company   = get('landing_company_shortcode', to_loginid);
+            // if same_cur_allowed[from_landing_company] is undefined and to_landing_company is also undefined, it will return true
+            // so we should compare '' === undefined instead
+            return (same_cur_allowed[from_landing_company] || '') === to_landing_company;
+        }
+        // or for other clients if current account is cryptocurrency it should only transfer to fiat currencies and vice versa
+        const is_from_crypto = isCryptocurrency(from_currency);
+        const is_to_crypto   = isCryptocurrency(to_currency);
+        return (is_from_crypto ? !is_to_crypto : is_to_crypto);
+    };
 
     const hasCostaricaAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 

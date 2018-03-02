@@ -2,13 +2,12 @@ import React from 'react';
 import { FormRow, SubmitButton, Fieldset } from '../../_common/components/forms.jsx';
 
 const Row = ({ id }) => (
-    <div className='gr-padding-10 gr-row table-body'>
-        <div className='gr-1'></div>
-        <div>
-            <span id={`${id}_loginid`}></span>
+    <div className='gr-padding-10 gr-row'>
+        <div className='gr-2 align-end'>
+            <span id={`${id}_loginid`} />
         </div>
-        <div className='gr-5'>
-            <span id={`${id}_balance`}></span>
+        <div className='gr-10'>
+            <span id={`${id}_currency`} />&nbsp;<span id={`${id}_balance`} />
         </div>
     </div>
 );
@@ -40,6 +39,9 @@ const AccountTransfer = () => (
             <p>{it.L('Your fund transfer is successful. Your new balances are:')}</p>
             <Row id='from' />
             <Row id='to' />
+            <p>
+                <a href='javascript:;' id='reset_transfer'>{it.L('Make another transfer')}</a>
+            </p>
         </div>
 
         <form className='invisible' id='frm_account_transfer'>
