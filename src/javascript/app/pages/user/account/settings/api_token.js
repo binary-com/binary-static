@@ -100,7 +100,7 @@ const APIToken = (() => {
     };
 
     const createDeleteButton = ($row, token) => {
-        const message = localize('Are you sure that you want to permanently delete token');
+        const message = localize('Are you sure that you want to permanently delete the token');
         const $button = $('<button/>', { class: 'button btn_delete', text: localize('Delete') });
         $button.click((e) => {
             e.preventDefault();

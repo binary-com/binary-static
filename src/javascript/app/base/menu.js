@@ -10,7 +10,7 @@ const Menu = (() => {
         applyToAllElements('li', (el) => { el.classList.remove('active', 'active-parent'); }, '', menu_top);
 
         const menu_top_item_for_page =  Array.from(menu_top.getElementsByTagName('a'))
-            .find(link => !/invisible/.test(findParent(link, 'li').classList) && link.href !== 'javascript:;' && window.location.pathname.indexOf(link.pathname.replace(/\.html/, '')) >= 0);
+            .find(link => !/invisible/.test(findParent(link, 'li').classList) && link.href !== 'javascript:;' && window.location.pathname.indexOf(link.pathname.replace(/\.html/, '')) >= 0 && link.target !== '_blank');
 
         if (menu_top_item_for_page) {
             findParent(menu_top_item_for_page, 'li').classList.add('active');

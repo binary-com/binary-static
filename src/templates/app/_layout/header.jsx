@@ -102,9 +102,9 @@ const Header = () => (
                                             href     : 'javascript:;',
                                             className: 'ja-hide ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
-                                                { text: it.L('[_1]', it.website_name), href: it.url_for('trading'), className: 'no-capitalize' },
+                                                { text: it.L('[_1]', it.website_name), href: it.url_for('trading'),          className: 'no-capitalize' },
                                                 { text: it.L('Webtrader'),             href: 'https://webtrader.binary.com', target: '_blank' },
-                                                { text: it.L('Binary Bot'),            href: 'https://bot.binary.com',  target: '_blank' },
+                                                { text: it.L('Binary Bot'),            href: 'https://bot.binary.com',       target: '_blank' },
                                                 { text: it.L('MetaTrader 5'),          href: it.url_for('user/metatrader') },
                                             ],
                                         },

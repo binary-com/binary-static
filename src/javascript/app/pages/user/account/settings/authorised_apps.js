@@ -16,7 +16,7 @@ const AuthorisedApps = (() => {
 
     const messages = {
         no_apps       : 'You have not granted access to any applications.',
-        revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
+        revoke_confirm: 'Are you sure that you want to permanently revoke access to the application',
         revoke_access : 'Revoke access',
     };
 
