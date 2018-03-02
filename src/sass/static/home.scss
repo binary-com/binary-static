@@ -66,6 +66,9 @@
         font-size: $FONT_SIZE_XS;
         font-style: italic;
     }
+    #market_tabs_container .tab-content {
+        min-height: 130px;
+    }
 }
 
 #content.home-content {

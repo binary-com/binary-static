@@ -247,7 +247,7 @@ const HomeBeta = () => {
                 <SeparatorLine className='gr-padding-30' show_mobile/>
             </div>
 
-            <div className='container'>
+            <div id='market_tabs_container' className='container'>
                 <h2 className='center-text gr-padding-10'>{it.L('Trade in the world\'s financial markets')}</h2>
                 <TabContainer className='gr-padding-30 gr-parent full-width eu-hide invisible' theme='light'>
                     <TabsSubtabs
