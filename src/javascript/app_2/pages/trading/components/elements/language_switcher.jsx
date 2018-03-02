@@ -67,20 +67,19 @@ class LanguageSwitcher extends React.PureComponent {
 
 LanguageSwitcher.defaultProps = {
     languages: [
-      { id: 'EN',  name: 'English' },
-      { id: 'DE',  name: 'Deustch' },
-      { id: 'ESP', name: 'Espanol' },
-      { id: 'FR',  name: 'French' },
-      { id: 'INA', name: 'Indonesian' },
-      { id: 'ITA', name: 'Italian' },
-      { id: 'JA',  name: 'Japanese' },
-      { id: 'PL',  name: 'Polish' },
-      { id: 'PT',  name: 'Portugese' },
-      { id: 'RU',  name: 'Russian' },
-      { id: 'TH',  name: 'Thai' },
-      { id: 'VIE', name: 'Vietnamese' },
-      { id: 'CN1', name: 'Chinese Simplified' },
-      { id: 'CN2', name: 'Chinese Traditional' },
+      { id: 'EN',    name: 'English' },
+      { id: 'DE',    name: 'Deutsch' },
+      { id: 'FR',    name: 'Français' },
+      { id: 'ID',    name: 'Indonesia' },
+      { id: 'IT',    name: 'Italiano' },
+      { id: 'JA',    name: '日本語' },
+      { id: 'PL',    name: 'Polish' },
+      { id: 'PT',    name: 'Português' },
+      { id: 'RU',    name: 'Русский' },
+      { id: 'TH',    name: 'Thai' },
+      { id: 'VI',    name: 'Tiếng Việt' },
+      { id: 'ZH_CN', name: '简体中文' },
+      { id: 'ZH_TW', name: '繁體中文' },
     ],
 };
 
