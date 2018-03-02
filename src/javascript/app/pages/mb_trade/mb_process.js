@@ -186,7 +186,7 @@ const MBProcess = (() => {
     /*
      * Function to display contract form for current underlying
      */
-    const processContract = (contracts, send_proposal) => {
+    const processContract = (contracts, should_send_proposal) => {
         if (getPropertyValue(contracts, 'error')) {
             MBNotifications.show({ text: contracts.error.message, uid: contracts.error.code });
             return;
@@ -196,8 +196,8 @@ const MBProcess = (() => {
 
         checkMarketStatus(contracts.contracts_for.close);
 
-        MBContract.populateOptions((send_proposal ? 'rebuild' : null));
-        if (send_proposal) {
+        MBContract.populateOptions(should_send_proposal ? 'rebuild' : null);
+        if (should_send_proposal) {
             processPriceRequest();
         } else {
             processExpiredBarriers();
