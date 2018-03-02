@@ -196,7 +196,7 @@ const MBProcess = (() => {
 
         checkMarketStatus(contracts.contracts_for.close);
 
-        MBContract.populateOptions(should_send_proposal ? 'rebuild' : null);
+        MBContract.populateOptions(should_send_proposal);
         if (should_send_proposal) {
             processPriceRequest();
         } else {

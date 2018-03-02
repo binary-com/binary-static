@@ -75,7 +75,7 @@ const MBContract = (() => {
         };
     };
 
-    const populatePeriods = (rebuild) => {
+    const populatePeriods = (should_rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         let trading_period,
             start_end;
@@ -96,7 +96,7 @@ const MBContract = (() => {
         }
         trading_period_array.sort(sortByExpiryTime);
         const $list = $period.find('.list');
-        if (rebuild) {
+        if (should_rebuild) {
             $list.empty();
         }
         const makeItem = (period) => {
@@ -229,13 +229,13 @@ const MBContract = (() => {
         { value: 'staysinout',   type1: 'RANGE',        type2: 'UPORDOWN' },
     ];
 
-    const populateOptions = (rebuild) => {
+    const populateOptions = (should_rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         const available_contracts = contracts_for_response.contracts_for.available;
 
         const $category = $('#category');
         const $list     = $category.find('.list');
-        if (rebuild) {
+        if (should_rebuild) {
             $list.empty();
         }
         if ($list.children().length === 0) {
@@ -257,7 +257,7 @@ const MBContract = (() => {
             });
             MBDefaults.set('category', $category.attr('value'));
         }
-        populatePeriods(rebuild);
+        populatePeriods(should_rebuild);
     };
 
     const getCurrentContracts = () => {
