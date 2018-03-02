@@ -223,7 +223,7 @@ const HomeBeta = () => {
                                     image='images/pages/home/MT5.svg'
                                     image_one='images/pages/home/icons/demo.svg'
                                     list_header_one={it.L('MT5 Demo')}
-                                    list_text_one={it.L('Practice account with replenishable USD 5,000 virtual credit.')}
+                                    list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
                                     image_two='images/pages/home/icons/mt5_financial.svg'
                                     list_header_two={it.L('MT5 Financial')}
                                     list_class='eu-hide invisible'
