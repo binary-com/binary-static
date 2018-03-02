@@ -3,6 +3,7 @@ const MBContract       = require('../../mb_trade/mb_contract');
 const MBDefaults       = require('../../mb_trade/mb_defaults');
 const Defaults         = require('../../trade/defaults');
 const GetTicks         = require('../../trade/get_ticks');
+const Lookback         = require('../../trade/lookback');
 const ViewPopupUI      = require('../../user/view_popup/view_popup.ui');
 const BinarySocket     = require('../../../base/socket');
 const jpClient         = require('../../../common/country_base').jpClient;
@@ -363,17 +364,26 @@ const Highchart = (() => {
 
     const drawBarrier = () => {
         if (chart.yAxis[0].plotLinesAndBands.length === 0) {
-            const barrier      = contract.barrier;
-            const high_barrier = contract.high_barrier;
-            const low_barrier  = contract.low_barrier;
+            const {contract_type, barrier, high_barrier, low_barrier} = contract;
             if (barrier) {
-                addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
                 prev_barriers[0] = barrier; // Batman like the kids who "Cache".
+                if (Lookback.isLookback(contract_type)) {
+                    const label = Lookback.getBarrierLabel(contract_type);
+                    addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize(`${label} ([_1])`, [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
+                } else {
+                    addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
+                }
             } else if (high_barrier && low_barrier) {
-                addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
-                addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot' }, 'y');
                 prev_barriers[1] = high_barrier;
                 prev_barriers[0] = low_barrier;
+                if (Lookback.isLookback(contract_type)) {
+                    const [high_label, low_label] = Lookback.getBarrierLabel(contract_type);
+                    addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize(`${high_label} ([_1])`, [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
+                    addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize(`${low_label} ([_1])`, [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
+                } else {
+                    addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
+                    addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
+                }
             }
         }
     };
