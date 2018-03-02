@@ -81,10 +81,8 @@ const MetaTraderConfig = (() => {
                                 if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
                                     resolve(localize('Your cashier is locked.')); // Locked from BO
                                 } else {
-                                    const limit             = State.getResponse('get_limits.remainder');
-                                    const is_crypto         = Currency.isCryptocurrency(Client.get('currency'));
-                                    const has_reached_limit = is_crypto ? +limit === 0 : +limit < 1;
-                                    if (typeof limit !== 'undefined' && has_reached_limit) {
+                                    const limit = State.getResponse('get_limits.remainder');
+                                    if (typeof limit !== 'undefined' && +limit < Currency.getMinWithdrawal(Client.get('currency'))) {
                                         resolve(localize('You have reached the limit.'));
                                     } else {
                                         resolve();
