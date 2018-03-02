@@ -51,7 +51,6 @@ const ContentVisibility = (() => {
         document.querySelectorAll('[data-show]').forEach(el => {
             const attr_str              = el.dataset.show;
             const { is_exclude, names } = parseAttributeString(attr_str);
-            const is_include            = !is_exclude;
             const rule_set              = new Set(names);
 
             const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
@@ -59,9 +58,8 @@ const ContentVisibility = (() => {
 
             let show_element = false;
 
-            if (is_exclude !== rule_set_has_current) show_element = true;
-            if (is_include && client_has_mt_company && rule_set_has_mt) show_element = true;
-            if (is_exclude && client_has_mt_company && rule_set_has_mt) show_element = false;
+            if (client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
+            else if (is_exclude !== rule_set_has_current) show_element = true;
 
             if (show_element) {
                 el.classList.add(visible_classname);
