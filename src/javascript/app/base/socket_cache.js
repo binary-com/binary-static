@@ -95,11 +95,17 @@ const SocketCache = (() => {
         return key;
     };
 
-    const remove = (key) => {
-        if (key in data_obj) {
+    const remove = (key, should_match_all) => {
+        if (should_match_all) {
+            Object.keys(data_obj).forEach((data_key) => {
+                if (data_key.indexOf(key) !== -1) {
+                    delete data_obj[data_key];
+                }
+            });
+        } else if (key in data_obj) {
             delete data_obj[key];
-            LocalStore.setObject(storage_key, data_obj);
         }
+        LocalStore.setObject(storage_key, data_obj);
     };
 
     const clear = () => {
@@ -110,6 +116,7 @@ const SocketCache = (() => {
     return {
         set,
         get,
+        remove,
         clear,
     };
 })();

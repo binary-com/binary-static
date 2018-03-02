@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-28 03:54-0500\n"
+"PO-Revision-Date: 2018-03-01 19:34-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -449,9 +449,6 @@ msgstr "(Máx)"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Livre de Impostos: Em muitos países, os ganhos com negociações são isentos de impostos, mas consulte sempre um consultor fiscal qualificado."
-
-msgid "*All calls are recorded for training and monitoring purposes"
-msgstr "*Todas as chamadas são gravadas para fins de treinamento e monitoramento"
 
 msgid "0-1 year"
 msgstr "0-1 ano"
@@ -1055,6 +1052,9 @@ msgstr "Todas as atividades de afiliados devem ser executadas de forma profissio
 
 msgid "All barriers in this trading window are expired"
 msgstr "Todas as barreiras nesta janela de negociação já expiraram"
+
+msgid "All calls are recorded for training and monitoring purposes"
+msgstr ""
 
 msgid "All client orders are processed on a first in first out basis without any manual intervention. When executing your order, %1 will seek to fill your order transaction as promptly as possible, at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework which commensurate with the size, nature, complexity, and risk profile of our activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted and orders that will be worked in the market with fill level passed on to the client."
 msgstr "Todas as ordens de clientes são processadas numa base primeiro a entrar, primeiro a sair, sem intervenções manuais. Aquando da execução da sua ordem, a %1 procurará satisfazer a sua transação tão prontamente quanto possível, pelo preço instruído (ou por um preço melhor, se disponível). Limites de exposição são estabelecidos com base em acordos de governança interna e enquadramentos de gestão de risco proporcionais ao tamanho, à natureza, à complexidade e aos perfis de risco das nossas atividades. Estes limites de exposição são usados como referências para distinguir ordens que são automaticamente aceitas e ordens que serão trabalhados no mercado com o nível de enchimento passado para o cliente."
@@ -3304,8 +3304,8 @@ msgstr "Endereço de e-mail"
 msgid "Email us your Identity Documents"
 msgstr "Envie-nos os seus documentos de identificação por e-mail"
 
-msgid "Email: "
-msgstr "E-mail: "
+msgid "Email:"
+msgstr ""
 
 msgid "Employed"
 msgstr "Empregado"
@@ -4626,6 +4626,9 @@ msgstr "Se você está firmando este acordo em nome do seu empregador ou outra e
 
 msgid "If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session."
 msgstr "Se estiver tendo dificuldades para conectar-se à sua conta, verifique se os cookies estão ativados no seu browser. Este website utiliza cookies para guardar o seu login e senha (em formato encriptado) no seu PC durante a sua sessão de login."
+
+msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
+msgstr ""
 
 msgid "If you are, we'd love to hear from you."
 msgstr "Se você está, adoraríamos conhecê-lo."
@@ -6205,6 +6208,9 @@ msgstr "Pares de moedas principais, secundários e exóticos."
 
 msgid "Make a Deposit"
 msgstr "Faça um Depósito"
+
+msgid "Make another transfer"
+msgstr ""
 
 msgid "Make your code changes in your fork"
 msgstr "Fazer alterações na sua bifurcação"
@@ -9178,9 +9184,6 @@ msgstr "O <strong>período do contrato</strong> é o período entre o <strong>mo
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "A <strong>hora do término</strong> do contrato é o número selecionado de minutos/horas após a <strong>hora de início</strong> (se inferior a um dia de duração), ou no final do dia de negociação (se tiver uma duração de um dia, ou superior)."
-
-msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "A  <strong>hora de término do contrato</strong> é o número selecionado de segundos/minutos/horas após a <strong>hora de início</strong> (se inferior a um dia de duração), ou no final do dia de negociação (se tiver uma duração de um dia, ou superior)."
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "O <strong>preço de saída</strong> é o tique-taque mais recente na ou antes da <strong>hora final</strong>."
