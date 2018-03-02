@@ -5,10 +5,14 @@
         cursor: pointer;
         border-bottom: 1px solid #f2f2f2;
         z-index: 3;
+        position: relative;
 
         .acc-switcher-active-login {
             padding: 10px 16px;
 
+            &.collapsed:after {
+                transform: none;
+            }
             p.acc-switcher-accountid {
                 font-size: 0.75rem;
                 font-weight: 300;
@@ -27,23 +31,28 @@
                 padding-top: 5px;
                 position: absolute;
             }
+            &:after {
+                content: '\0025BE';
+                font-size: 1.5rem;
+                position: absolute;
+                font-weight: 300;
+                top: 35%;
+                right: 16px;
+                transition: transform 0.25s;
+                transform: rotate(180deg);
+            }
         }
     }
     .acc-switcher-list {
         z-index: 2;
         position: absolute;
         height: calc(100% - 158px);
+        display: none;
         width: 100%;
         background-color: $COLOR_WHITE;
-        transform: translateX(-100%);
-        opacity: 0;
         transition: all 0.25s;
         overflow-y: auto;
 
-        &.show {
-            transform: none;
-            opacity: 1;
-        }
         .acc-switcher-account {
             cursor: pointer;
             padding: 4px 16px;

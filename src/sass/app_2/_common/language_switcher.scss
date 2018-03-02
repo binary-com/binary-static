@@ -6,14 +6,7 @@
     width: 100%;
     top: 0;
     background-color: $COLOR_WHITE;
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: all 0.25s;
 
-    &.show {
-        transform: none;
-        opacity: 1;
-    }
     .lang-switcher-list-header {
         cursor: pointer;
         padding: 16px;

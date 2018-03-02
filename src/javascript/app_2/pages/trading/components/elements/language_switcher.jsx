@@ -25,7 +25,7 @@ class LanguageSwitcher extends React.PureComponent {
     render() {
         const language_list_collapsed = {
             // visibility needed in style props as workaround for briefly flashing hidden elements in css
-            visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
+            display: `${this.state.is_collapsed ? 'inline-block' : 'none'}`,
         };
 
         const language_is_active = (lang) => {
@@ -41,7 +41,7 @@ class LanguageSwitcher extends React.PureComponent {
                     </span>
                 </div>
                 <div
-                    className={`lang-switcher-list ${this.state.is_collapsed ? 'show' : ''}`}
+                    className='lang-switcher-list'
                     style={language_list_collapsed}
                 >
                     <div className='lang-switcher-list-header' onClick={this.toggleLanguageList}>
