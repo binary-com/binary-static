@@ -171,7 +171,7 @@ const MBContract = (() => {
             const time_left = parseInt($duration.attr('value').split('_')[1]) - window.time.unix();
             if (time_left <= 0) {
                 // clear the expired contracts_for response
-                SocketCache.clear();
+                SocketCache.remove('contracts_for', 1);
                 location.reload();
             } else if (time_left < 120) {
                 $count_down_timer.addClass('alert');
