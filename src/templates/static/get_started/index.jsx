@@ -263,9 +263,9 @@ const Index = () => (
                         <SeparatorLine invisible/>
                         <p>{it.L('For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:')}</p>
                         <div className='formula center-text'>
-                            <span>{it.L('(6,000 – 5,200) * 2 = $1600')}</span>
+                            <span>{it.L('2 * (6,000 – 5,200) = $1600')}</span>
                         </div>
-                        <p>{it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a target="_blank" href=${it.url_for('get-started/binary-options')}#range-of-markets>`, '</a>')}</p>
+                        <p>{it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a href=${it.url_for('get-started/binary-options')}#range-of-markets>`, '</a>')}</p>
                     </TabContent>
                 </TabContentContainer>
             </div>
