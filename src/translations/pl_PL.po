@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-26 20:32-0500\n"
+"PO-Revision-Date: 2018-03-01 19:34-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -449,9 +449,6 @@ msgstr "(maks.)"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Zwolnione z podatku: Zyski osiągane z handlu w wielu krajach nie są opodatkowane, jednak zawsze należy skonsultować się z profesjonalnym doradcą podatkowym."
-
-msgid "*All calls are recorded for training and monitoring purposes"
-msgstr "*Wszystkie rozmowy są nagrywane w celach szkoleniowych i kontrolnych"
 
 msgid "0-1 year"
 msgstr "0-1 rok"
@@ -1054,6 +1051,9 @@ msgstr "Profesjonalne wykonywanie czynności związanych z programem partnerskim
 
 msgid "All barriers in this trading window are expired"
 msgstr "Wszystkie limity widoczne w tym oknie handlowania wygasły"
+
+msgid "All calls are recorded for training and monitoring purposes"
+msgstr ""
 
 msgid "All client orders are processed on a first in first out basis without any manual intervention. When executing your order, %1 will seek to fill your order transaction as promptly as possible, at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework which commensurate with the size, nature, complexity, and risk profile of our activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted and orders that will be worked in the market with fill level passed on to the client."
 msgstr "Wszystkie zlecenia klientów są realizowane zgodnie z zasadą „pierwsze weszło, pierwsze wyszło” bez żadnych ingerencji. Realizując Twoje zlecenie, %1 będzie dążyć do tego, by zrealizować transakcje objęte zleceniem tak szybko, jak to możliwe, po cenie przez Ciebie określonej (lub po lepszej cenie, jeśli będzie dostępna). Limity ekspozycji są określane zgodnie z ustaleniami w zakresie zarządzania wewnętrznego oraz systemem zarządzania ryzykiem, które odpowiadają wielkości, naturze i złożoności naszej działalności, a także rodzajowi ryzyka z nią związanego. Limity te stosuje się jako punkty odniesienia w celu rozróżnienia zleceń, które mogą być akceptowane automatycznie od tych, które należy zweryfikować względem rynku."
@@ -3303,8 +3303,8 @@ msgstr "Adres e-mail"
 msgid "Email us your Identity Documents"
 msgstr "Wyślij nam drogą e-mailową dokumenty potwierdzające Twoją tożsamość"
 
-msgid "Email: "
-msgstr "E-mail: "
+msgid "Email:"
+msgstr ""
 
 msgid "Employed"
 msgstr "Osoba zatrudniona"
@@ -4625,6 +4625,9 @@ msgstr "Jeśli zawierasz niniejszą Umowę w imieniu swojego pracodawcy lub inne
 
 msgid "If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session."
 msgstr "Jeśli występują problemy z zalogowaniem się na konto, należy upewnić się, że pliki cookie są włączone w przeglądarce. Ta strona internetowa wykorzystuje pliki cookie do przechowywania loginów i haseł (w formie zaszyfrowanej) na komputerze w trakcie sesji logowania."
+
+msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
+msgstr ""
 
 msgid "If you are, we'd love to hear from you."
 msgstr "Jeśli tak, czekamy na kontakt z Twojej strony."
@@ -6204,6 +6207,9 @@ msgstr "Główne, drugorzędne i egzotyczne pary walutowe."
 msgid "Make a Deposit"
 msgstr "Wpłać środki"
 
+msgid "Make another transfer"
+msgstr ""
+
 msgid "Make your code changes in your fork"
 msgstr "Wprowadź swoje zmiany kodu w swojej kopii (fork)"
 
@@ -7525,7 +7531,7 @@ msgid "Please complete the tax information before proceeding."
 msgstr "Aby przejść dalej, proszę podać dane podatkowe."
 
 msgid "Please confirm that all the information above is true and complete."
-msgstr ""
+msgstr "Proszę potwierdzić, że wszystkie powyższe informacje są kompletne i prawdziwe."
 
 msgid "Please confirm that you are not a politically exposed person."
 msgstr "Potwierdź, że nie jesteś osobą zajmującą eksponowane stanowisko polityczne."
@@ -7552,7 +7558,7 @@ msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Wpisz datę w formacie DD MMM, YYYY."
 
 msgid "Please enter your %1tax information%2 below to continue."
-msgstr ""
+msgstr "Aby kontynuować, wprowadź poniżej swoje %1informacje podatkowe%2."
 
 msgid "Please enter your full address to avoid authentication delays."
 msgstr "Aby uniknąć opóźnień w przeprowadzeniu weryfikacji, proszę wprowadzić kompletne dane adresowe."
@@ -7591,7 +7597,7 @@ msgid "Please note that you may update your personal information at any time by 
 msgstr "Możesz zaktualizować swoje dane osobowe w dowolnym momencie, logując się do sekcji „Ustawienia” na swoim koncie. W Twojej gestii leży upewnienie się, że Firma %1 jest szybko i stale informowana o każdej zmianie Twoich danych osobowych."
 
 msgid "Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help."
-msgstr ""
+msgstr "Podaj swój numer identyfikacji podatkowej nadany w każdym kraju, w którym jesteś rezydentem podatkowym. Jeśli nie możesz podać tych informacji, skontaktuj się z naszym działem obsługi klienta, aby uzyskać pomoc."
 
 msgid "Please provide us with the following information:"
 msgstr "Prosimy o podanie następujących informacji:"
@@ -7627,7 +7633,7 @@ msgid "Please select a value"
 msgstr "Proszę wybrać wartość"
 
 msgid "Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr ""
+msgstr "Proszę wybrać wszystkie kraje, w których jesteś rezydentem podatkowym. Jeśli masz jakiekolwiek wątpliwości, skontaktuj się ze swoim doradcą podatkowym."
 
 msgid "Please select at least one scope"
 msgstr "Proszę wybrać przynajmniej jeden zakres"
@@ -8035,7 +8041,7 @@ msgid "Read instructions for Linux"
 msgstr "Przeczytaj instrukcje dla systemu Linux"
 
 msgid "Read more."
-msgstr ""
+msgstr "Dowiedz się więcej."
 
 msgid "Read our FAQ"
 msgstr "Zapoznaj się z sekcją Często zadawane pytania (FAQ)"
@@ -8260,7 +8266,7 @@ msgid "Responsible for the risk management and derivatives pricing of the compan
 msgstr "Odpowiedzialność za zarządzanie ryzykiem i wycenę instrumentów pochodnych firmy, w tym wprowadzanie i utrzymanie cen."
 
 msgid "Rest assured that your information will only be used for CRS/FATCA reporting purposes and will be kept safe."
-msgstr ""
+msgstr "Zapewniamy, że Twoje informacje będą wykorzystywane wyłącznie w celu raportowania CRS/FATCA i że będą bezpiecznie przechowywane."
 
 msgid "Restrictions"
 msgstr "Ograniczenia"
@@ -9176,9 +9182,6 @@ msgstr "<strong>Okres kontraktu</strong> to okres między <strong>następnym prz
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Godziną zakończenia</strong> jest wybrana liczba minut/godzin od <strong>godziny rozpoczęcia</strong> (jeśli trwa krócej niż 1 dzień) lub koniec dnia handlowego (jeśli trwa dłużej niż jeden dzień)."
-
-msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "<strong>Godziną zakończenia</strong> jest wybrana liczba sekund/minut/godzin od <strong>godziny rozpoczęcia</strong> (jeśli trwa krócej niż 1 dzień) lub koniec dnia handlowego (jeśli trwa dłużej niż jeden dzień)."
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>Cena wyjściowa</strong> to ostatnia najmniejsza zmiana ceny w <strong>momencie zakończenia</strong> lub przed nim."
@@ -11992,7 +11995,7 @@ msgid "You make the following representations and warranties to us at the time y
 msgstr "W momencie zawarcia niniejszej Umowy składasz następujące oświadczenia i zapewnienia i zgadzasz się, by te oświadczenia i zapewnienia były uznawane za powtórzone za każdym razem, gdy otwierasz lub zamykasz Transakcję:"
 
 msgid "You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate."
-msgstr ""
+msgstr "Możesz być uznawany/-a za rezydenta podatkowego w więcej niż w jednej jurysdykcji. Zasięgnij porady swojego doradcy podatkowego i sprawdź, czy Twoje informacje podatkowe są prawidłowe."
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "Możliwe jest zapisywanie Treści w pamięci podręcznej do 24 godzin od wysłania żądania dla Treści za pośrednictwem API %1."

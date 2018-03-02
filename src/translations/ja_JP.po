@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-26 20:32-0500\n"
+"PO-Revision-Date: 2018-03-01 19:34-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -453,9 +453,6 @@ msgstr "（上限）"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* 非課税対象：多くの国では、当社でのお取引から得た利益は非課税対象となりますが、居住国の税理士とご相談下さい。"
-
-msgid "*All calls are recorded for training and monitoring purposes"
-msgstr "*全ての呼び出しはトレーニングと監視目的のため記録されます"
 
 msgid "0-1 year"
 msgstr "0~1年"
@@ -1055,6 +1052,9 @@ msgstr "アフィリエイト活動は、専門的且つ適切な方法で実施
 
 msgid "All barriers in this trading window are expired"
 msgstr "すべてのバリア価格は権利行使済みです"
+
+msgid "All calls are recorded for training and monitoring purposes"
+msgstr ""
 
 msgid "All client orders are processed on a first in first out basis without any manual intervention. When executing your order, %1 will seek to fill your order transaction as promptly as possible, at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework which commensurate with the size, nature, complexity, and risk profile of our activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted and orders that will be worked in the market with fill level passed on to the client."
 msgstr "All client orders are processed on a first in first out basis without any manual intervention. When executing your order, %1 will seek to fill your order transaction as promptly as possible, at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework which commensurate with the size, nature, complexity, and risk profile of our activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted and orders that will be worked in the market with fill level passed on to the client."
@@ -3315,8 +3315,8 @@ msgstr "メールアドレス"
 msgid "Email us your Identity Documents"
 msgstr "マイナンバー確認書類＆本人確認書類の送付"
 
-msgid "Email: "
-msgstr "Email: "
+msgid "Email:"
+msgstr ""
 
 msgid "Employed"
 msgstr "雇用者"
@@ -4309,7 +4309,7 @@ msgid "Hint: it would take approximately %1%2 to crack this password."
 msgstr "ヒント：このパスワードをクラックするには約%1%2分を要します。"
 
 msgid "Homepage"
-msgstr ""
+msgstr "ホームページ"
 
 msgid "Hone your security testing skills."
 msgstr "セキュリティテストスキルを磨きましょう"
@@ -4638,6 +4638,9 @@ msgstr "顧客またはその他事業体を代表して本契約を締結され
 
 msgid "If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session."
 msgstr "ご口座へのログインが上手くいかない場合は、ブラウザの設定からCookieを有効に設定して下さい。当社サイトでは、ログイン時にお客さまのログインIDと暗号化されたパスワードをお客さまのコンピュータに保存する目的でCookieを利用しています。"
+
+msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
+msgstr ""
 
 msgid "If you are, we'd love to hear from you."
 msgstr "皆様からのご応募をお待ちしております。"
@@ -5134,7 +5137,7 @@ msgid "Introduction"
 msgstr "はじめに"
 
 msgid "Introduction by acquaintance"
-msgstr ""
+msgstr "知人の紹介"
 
 msgid "Invalid amount, maximum is"
 msgstr "無効な値です。最大はXXXです。"
@@ -6229,6 +6232,9 @@ msgstr "主要、マイナー、エキゾチック通貨ペア"
 msgid "Make a Deposit"
 msgstr "入金"
 
+msgid "Make another transfer"
+msgstr ""
+
 msgid "Make your code changes in your fork"
 msgstr "あなたのコードをあなたのフォークで変換"
 
@@ -6607,7 +6613,7 @@ msgid "Motivated, accurate, organized and a self-starter"
 msgstr "やる気、正確性、組織力があり、自発的に取り組める"
 
 msgid "Motivation/Circumstances"
-msgstr ""
+msgstr "口座開設のきっかけ"
 
 msgid "Mr"
 msgstr "Mr"
@@ -7496,7 +7502,7 @@ msgid "Place bid"
 msgstr "入札する"
 
 msgid "Place of birth"
-msgstr "出生地"
+msgstr "居住地"
 
 msgid "Plan to start trading CFDs? Learn when to buy and sell, how to calculate your profits and losses, and how to close a position."
 msgstr "CFD取引をお考えですか？買い時売り時、損益の算出方法、ポジションの閉じ方など学びましょう。"
@@ -9210,9 +9216,6 @@ msgstr "<strong>取引期間</strong>は、<strong>取引開始時間直後</str
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。購入・売却は<strong>判定時刻2分前</strong>まで可能です。判定時刻2分前から新規購入＆売却注文は行なえません。"
-
-msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。購入・売却は<strong>判定時刻2分前</strong>まで可能です。判定時刻2分前から新規購入＆売却注文は行えません。"
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
@@ -11362,7 +11365,7 @@ msgid "We've reached an agreement to list the tokens on the <a href=\"%1\" targe
 msgstr "当社では<a href=\"%1\" target=\"_blank\" rel=\"noreferrer noopener\">Lykke Exchange</a>でのトークン掲載に同意しています。"
 
 msgid "Web Advertisement"
-msgstr ""
+msgstr "ウェブ広告"
 
 msgid "Web design / development experience"
 msgstr "ウェブデザインまたはウェブ開発の経験"
@@ -12354,7 +12357,7 @@ msgid "Your account is fully authenticated. You can view your <a href=\"%1\">tra
 msgstr "お客様のご口座はアップグレード済みです。トレードの上限条件を<a href=\"%1\">こちらから</a>ご確認頂けます。"
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
-msgstr "お客さまの口座は、現在ご利用制限が掛っております。<a href=\"%1\">カスタマーサポート</a>までご連絡下さい。"
+msgstr "お客さまの口座は、現在ご利用制限が掛っております。%1カスタマーサポート%2までご連絡下さい。"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "（期限の利益を喪失した場合等における本取引の反対売買）\n"
@@ -13280,7 +13283,7 @@ msgid "{JAPAN ONLY}A binary call options buyer will benefit from a correct predi
 msgstr "判定時刻に、原資産価格がバリア価格よりも下落していると予測し、バイナリーコールオプションの購入しました。"
 
 msgid "{JAPAN ONLY}A binary option can provide profit opportunities even in a small price range, where FX normally doesn’t. Here is a table comparison of foreign exchange and binary options:"
-msgstr "バイナリーオプションは、FXとは異なり狭い値動きであっても、利益を狙うことができるという特徴があります。<br>FXとバイナリオプションとの比較表をご覧下さい。"
+msgstr "バイナリーオプションは、FXとは異なり狭い値動きであっても、利益を狙うことができるという特徴があります。<br>FXとバイナリーオプションとの比較表をご覧下さい。"
 
 msgid "{JAPAN ONLY}A binary option price cannot exceed the payout amount."
 msgstr "バイナリーオプションの価格はペイアウト額を上回ることはありません。"
@@ -13549,7 +13552,7 @@ msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Numbe
 msgstr "本人確認書類およびマイナンバー「個人番号カード」書類を当社から送信したメールに添付して返信してください。"
 
 msgid "{JAPAN ONLY}Enable account with secure e-mail"
-msgstr "簡易書留にて口座認証コードを郵送"
+msgstr "口座開設審査後<br>簡易書留にて口座認証コードを郵送"
 
 msgid "{JAPAN ONLY}Enter your email"
 msgstr "メールアドレスを入力"
@@ -13678,7 +13681,7 @@ msgid "{JAPAN ONLY}High speed execution"
 msgstr "高速実行"
 
 msgid "{JAPAN ONLY}Higher/lower rate"
-msgstr "購入金額をクリック"
+msgstr "購入価格をクリック"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "〒150-0012　東京都渋谷区広尾1-9-16　広尾宮田ビル3F"
@@ -13810,7 +13813,7 @@ msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior
 msgstr "判定時刻2分前までならいつでも売却取引によりロスカットや利益確定をすることができます"
 
 msgid "{JAPAN ONLY}Interactive webinar"
-msgstr "ウェーブセミナーやユーチューブ"
+msgstr "ウェブセミナーやYouTube"
 
 msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "バイナリーオプション<br>の概要"
@@ -13893,7 +13896,7 @@ msgid "{JAPAN ONLY}Ladder Options"
 msgstr "ラダーオプション"
 
 msgid "{JAPAN ONLY}Learn more about binary options for academies using webinars, ebooks, videos."
-msgstr "Youtubeやウェーブセミナーを活用してアカデミックにバイナリーオプションについて学ぶ"
+msgstr "Youtubeやウェブセミナーを活用してアカデミックにバイナリーオプションについて学ぶ"
 
 msgid "{JAPAN ONLY}Learn to become a better trader and get all the latest news and trends on financial transactions for free."
 msgstr "バイナリーオプション取引について学ぶのに役に立つツールを用意しましたので、ご活用ください。"
@@ -13923,10 +13926,10 @@ msgid "{JAPAN ONLY}Matters to attend:"
 msgstr "注意事項"
 
 msgid "{JAPAN ONLY}Maximum loss: guaranteed"
-msgstr "最大損失：保証"
+msgstr "最大損失：限定"
 
 msgid "{JAPAN ONLY}Maximum loss: not guaranteed"
-msgstr "最大損失：保証されていない"
+msgstr "最大損失：限定されていない"
 
 msgid "{JAPAN ONLY}Member Associations: Financial Futures Association Japan"
 msgstr "加入協会:一般社団法人金融先物取引業協会"
@@ -14100,7 +14103,7 @@ msgid "{JAPAN ONLY}Range Options: Stay-In / Break-Out"
 msgstr "レンジオプション：Stay-In/Break-Out"
 
 msgid "{JAPAN ONLY}Receive account activation code by secure mail and activate account"
-msgstr "簡易書留にて口座認証コードを郵送"
+msgstr "口座開設審査後<br>書留にて口座認証コードを郵送"
 
 msgid "{JAPAN ONLY}Register"
 msgstr "アフィリエイトプログラム参加への申込み"
@@ -14223,40 +14226,40 @@ msgid "{JAPAN ONLY}TIP_2"
 msgstr "表示する内容はございません(2)"
 
 msgid "{JAPAN ONLY}TIP_20"
-msgstr ""
+msgstr "表示する内容はございません(20)"
 
 msgid "{JAPAN ONLY}TIP_21"
-msgstr ""
+msgstr "表示する内容はございません(21)"
 
 msgid "{JAPAN ONLY}TIP_22"
-msgstr ""
+msgstr "表示する内容はございません(22)"
 
 msgid "{JAPAN ONLY}TIP_23"
-msgstr ""
+msgstr "表示する内容はございません(23)"
 
 msgid "{JAPAN ONLY}TIP_24"
-msgstr ""
+msgstr "表示する内容はございません(24)"
 
 msgid "{JAPAN ONLY}TIP_25"
-msgstr ""
+msgstr "表示する内容はございません(25)"
 
 msgid "{JAPAN ONLY}TIP_26"
-msgstr ""
+msgstr "表示する内容はございません(26)"
 
 msgid "{JAPAN ONLY}TIP_27"
-msgstr ""
+msgstr "表示する内容はございません(27)"
 
 msgid "{JAPAN ONLY}TIP_28"
-msgstr ""
+msgstr "表示する内容はございません(28)"
 
 msgid "{JAPAN ONLY}TIP_29"
-msgstr ""
+msgstr "表示する内容はございません(29)"
 
 msgid "{JAPAN ONLY}TIP_3"
-msgstr ""
+msgstr "表示する内容はございません(3)"
 
 msgid "{JAPAN ONLY}TIP_30"
-msgstr ""
+msgstr "表示する内容はございません(30)"
 
 msgid "{JAPAN ONLY}TIP_31"
 msgstr "表示する内容はございません(31)"
@@ -14403,85 +14406,85 @@ msgid "{JAPAN ONLY}TIP_74"
 msgstr "表示する内容はございません(74)"
 
 msgid "{JAPAN ONLY}TIP_75"
-msgstr ""
+msgstr "表示する内容はございません(75)"
 
 msgid "{JAPAN ONLY}TIP_76"
-msgstr ""
+msgstr "表示する内容はございません(76)"
 
 msgid "{JAPAN ONLY}TIP_77"
-msgstr ""
+msgstr "表示する内容はございません(77)"
 
 msgid "{JAPAN ONLY}TIP_78"
-msgstr ""
+msgstr "表示する内容はございません(78)"
 
 msgid "{JAPAN ONLY}TIP_79"
-msgstr ""
+msgstr "表示する内容はございません(79)"
 
 msgid "{JAPAN ONLY}TIP_8"
-msgstr ""
+msgstr "表示する内容はございません(8)"
 
 msgid "{JAPAN ONLY}TIP_80"
-msgstr ""
+msgstr "表示する内容はございません(80)"
 
 msgid "{JAPAN ONLY}TIP_81"
-msgstr ""
+msgstr "表示する内容はございません(81)"
 
 msgid "{JAPAN ONLY}TIP_82"
-msgstr ""
+msgstr "表示する内容はございません(82)"
 
 msgid "{JAPAN ONLY}TIP_83"
-msgstr ""
+msgstr "表示する内容はございません(83)"
 
 msgid "{JAPAN ONLY}TIP_84"
-msgstr ""
+msgstr "表示する内容はございません(84)"
 
 msgid "{JAPAN ONLY}TIP_85"
-msgstr ""
+msgstr "表示する内容はございません(85)"
 
 msgid "{JAPAN ONLY}TIP_86"
-msgstr ""
+msgstr "表示する内容はございません(86)"
 
 msgid "{JAPAN ONLY}TIP_87"
-msgstr ""
+msgstr "表示する内容はございません(87)"
 
 msgid "{JAPAN ONLY}TIP_88"
-msgstr ""
+msgstr "表示する内容はございません(88)"
 
 msgid "{JAPAN ONLY}TIP_89"
-msgstr ""
+msgstr "表示する内容はございません(89)"
 
 msgid "{JAPAN ONLY}TIP_9"
-msgstr ""
+msgstr "表示する内容はございません(9)"
 
 msgid "{JAPAN ONLY}TIP_90"
-msgstr ""
+msgstr "表示する内容はございません(90)"
 
 msgid "{JAPAN ONLY}TIP_91"
-msgstr ""
+msgstr "表示する内容はございません(91)"
 
 msgid "{JAPAN ONLY}TIP_92"
-msgstr ""
+msgstr "表示する内容はございません(92)"
 
 msgid "{JAPAN ONLY}TIP_93"
-msgstr ""
+msgstr "表示する内容はございません(93)"
 
 msgid "{JAPAN ONLY}TIP_94"
-msgstr ""
+msgstr "表示する内容はございません(94)"
 
 msgid "{JAPAN ONLY}TIP_95"
-msgstr ""
+msgstr "表示する内容はございません(95)"
 
 msgid "{JAPAN ONLY}TIP_96"
-msgstr ""
+msgstr "表示する内容はございません(96)"
 
 msgid "{JAPAN ONLY}TIP_97"
-msgstr ""
+msgstr "表示する内容はございません(97)"
 
 msgid "{JAPAN ONLY}TIP_98"
-msgstr ""
+msgstr "表示する内容はございません(98)"
 
 msgid "{JAPAN ONLY}TIP_99"
-msgstr ""
+msgstr "表示する内容はございません(99)"
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "知識確認テストを受ける"
@@ -14514,7 +14517,7 @@ msgid "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is boun
 msgstr "日証金信託銀行は、お客様の信託財産の返還を保証するものではありません。また、受益者代理人の運営及び管理責任を一切負いません。"
 
 msgid "{JAPAN ONLY}The binary option can provide profit opportunities even at a small price range. Here is a table comparison of foreign exchange and binary options"
-msgstr "バイナリーオプションは、FXとは異なり狭い値動きであっても、利益を狙うことができるという特徴があります。FXとバイナリオプションとの比較表をご覧下さい。"
+msgstr "バイナリーオプションは、FXとは異なり狭い値動きであっても、利益を狙うことができるという特徴があります。FXとバイナリーオプションとの比較表をご覧下さい。"
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "プレーンオプションの買い手は、自分に不利なときには権利放棄するので、買い手の最大損失額はオプション料となります。利益額は原資産価格とバリア価格の差からオプション料を引いた額となり、原資産価格が無限大ならば、利益も無限大となります。"

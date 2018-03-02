@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-02-26 20:33-0500\n"
+"PO-Revision-Date: 2018-03-01 19:35-0500\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -449,9 +449,6 @@ msgstr "(tối đa)"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Miễn Thuế: Lợi nhuận từ giao dịch là miễn thuế trên nhiều quốc gia nhưng bạn nên tham khảo người tư vấn thuế chuyên nghiệp."
-
-msgid "*All calls are recorded for training and monitoring purposes"
-msgstr "*Tất cả các cuộc gọi sẽ được ghi âm với mục đích kiểm tra và đào tạo"
 
 msgid "0-1 year"
 msgstr "0-1 năm"
@@ -1054,6 +1051,9 @@ msgstr "Tất cả những hoạt động liên kết phải được tiến hà
 
 msgid "All barriers in this trading window are expired"
 msgstr "Tất cả các rào cản trong cửa sổ giao dịch này đã hết hạn"
+
+msgid "All calls are recorded for training and monitoring purposes"
+msgstr ""
 
 msgid "All client orders are processed on a first in first out basis without any manual intervention. When executing your order, %1 will seek to fill your order transaction as promptly as possible, at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework which commensurate with the size, nature, complexity, and risk profile of our activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted and orders that will be worked in the market with fill level passed on to the client."
 msgstr "Tất cả khách hàng đơn đặt hàng được xử lý trên một đầu tiên trong lần đầu tiên trong các cơ sở mà không có bất kỳ sự can thiệp thủ công. Khi thực hiện đặt hàng của bạn, %1 sẽ tìm cách để điền vào các giao dịch đơn đặt hàng của bạn càng nhanh chóng càng tốt, với mức giá hướng dẫn (hoặc ở một mức giá tốt hơn, nếu có). Giới hạn tiếp xúc được thành lập dựa trên sự sắp xếp nội bộ quản trị và các khuôn khổ quản lý rủi ro mà phù hợp với kích thước, thiên nhiên, phức tạp và nguy cơ hồ sơ của các hoạt động của chúng tôi. Các giới hạn tiếp xúc được sử dụng như là tiêu chuẩn để phân biệt với đơn đặt hàng được chấp nhận tự động và đơn đặt hàng sẽ được làm việc trên thị trường với mức độ điền thông qua ngày cho khách hàng."
@@ -3302,8 +3302,8 @@ msgstr "Địa chỉ hòm thư"
 msgid "Email us your Identity Documents"
 msgstr "Gửi email cho chúng tôi các tài liệu nhân dạng của bạn"
 
-msgid "Email: "
-msgstr "Email: "
+msgid "Email:"
+msgstr ""
 
 msgid "Employed"
 msgstr "Tuyển dụng"
@@ -4625,6 +4625,9 @@ msgstr "Nếu bạn đang thay mặt chủ lao động để xem xét thỏa thu
 
 msgid "If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session."
 msgstr "Nếu bạn đang gặp khó khăn khi đăng nhập, hãy kiểm tra để chắc chắn rằng cookie vẫn đang hoạt động trong trình duyệt của bạn. Trang web này sử dụng cookie để lưu giữ tên đăng nhập và mật khẩu của bạn (dưới dạng mã hóa) ở máy tính của bạn khi trong suốt quá trình bạn đăng nhập."
+
+msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
+msgstr ""
 
 msgid "If you are, we'd love to hear from you."
 msgstr "Nếu bạn quan tâm, chúng tôi rất vui được nhận phản hồi từ bạn."
@@ -6204,6 +6207,9 @@ msgstr "Các cặp tiền tệ lớn, nhỏ và kỳ lạ."
 
 msgid "Make a Deposit"
 msgstr "Gửi tiền"
+
+msgid "Make another transfer"
+msgstr ""
 
 msgid "Make your code changes in your fork"
 msgstr "Làm cho thay đổi mã của bạn ở ngã ba của bạn"
@@ -9178,9 +9184,6 @@ msgstr "<strong>Thời hạn hợp đồng</strong> là khoảng thời gia
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Thời gian kết thúc</strong> được lựa chọn là số phút/giờ sau <strong>thời gian bắt đầu</strong> (Nếu ít hơn một ngày trong khoảng thời gian), hoặc vào cuối ngày giao dịch (nếu một ngày hoặc nhiều hơn trong khoảng thời gian)."
-
-msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "<strong>Thời gian kết thúc</strong> được chọn là số giây,phút, giờ sau <strong>thời gian bắt đầu</strong> (nếu ít hơn một ngày trong khoảng thời gian), hoặc vào cuối ngày giao dịch (nếu một ngày hoặc nhiều hơn trong khoảng thời gian)."
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>Điểm thoát</strong> là các đánh dấu vào thời điểm hoặc trước khi <strong>thời gian kết thúc</strong>."

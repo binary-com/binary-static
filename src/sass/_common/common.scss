@@ -558,3 +558,7 @@ li strong.margin-right {
         padding: 7px 5px !important;
     }
 }
+
+label + input {
+    margin-left: 5px;
+}
