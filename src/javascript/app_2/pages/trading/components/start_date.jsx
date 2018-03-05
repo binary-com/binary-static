@@ -10,6 +10,7 @@ const StartDate = ({
     start_time,
     server_time,
     onChange,
+    is_nativepicker,
 }) => (
     <fieldset>
         <ClockHeader time={server_time} header={localize('Start time')} />
@@ -19,6 +20,7 @@ const StartDate = ({
             list={start_dates_list}
             onChange={onChange}
             type='date'
+            is_nativepicker={is_nativepicker}
         />
         {start_date !== 'now' &&
             <React.Fragment>

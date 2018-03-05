@@ -12,6 +12,7 @@ const Duration = ({
     duration_units_list,
     server_time,
     onChange,
+    is_nativepicker,
 }) => (
         <fieldset>
             <ClockHeader className='row-1 col-100' time={server_time} header={localize('Trade Duration')} />
@@ -23,6 +24,7 @@ const Duration = ({
                 value={expiry_type}
                 name='expiry_type'
                 onChange={onChange}
+                is_nativepicker={is_nativepicker}
             />
 
             {expiry_type === 'duration' ?
@@ -39,6 +41,7 @@ const Duration = ({
                             value={duration_unit}
                             name='duration_unit'
                             onChange={onChange}
+                            is_nativepicker={is_nativepicker}
                         />
                     </div>
                 </React.Fragment> :

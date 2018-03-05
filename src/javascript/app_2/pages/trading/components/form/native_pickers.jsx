@@ -12,13 +12,13 @@ const Select = ({
               <option key={idx} value={item.value}>{item.text}</option>
           ))
         :
-        Object.keys(list).map((group, idx) => (
-            <React.Fragment key={idx}>
-                <optgroup key={idx} label={group}></optgroup>
-                {list[group].map(v => (
-                    <option key={v} value={v}>{v}</option>
+        Object.keys(list).map(key => (
+            <React.Fragment key={key}>
+                <optgroup label={key}></optgroup>
+                {list[key].map((item, idx) => (
+                    <option key={idx} value={item.value}>{item.text}</option>
                 ))}
-           </React.Fragment>
+            </React.Fragment>
         ))}
     </select>
 );
