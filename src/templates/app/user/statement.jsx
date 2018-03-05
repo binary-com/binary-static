@@ -8,7 +8,7 @@ const Statement = () => (
                 <h1>{it.L('Statement')}</h1>
                 <div className='loading'><Loading /></div>
                 <br />
-                <p className='notice-msg center-text invisible' id='error-msg'></p>
+                <p className='notice-msg center-text invisible' id='error-msg' />
             </div>
             <div className='gr-row gr-padding-10 invisible' id='util_row'>
                 <div className='gr-12 gr-12-m'>

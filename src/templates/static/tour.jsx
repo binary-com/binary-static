@@ -59,7 +59,7 @@ const Tour = () => (
                 <div className='section-content center-text gr-padding-30'>
                     <h1>{it.L('Learn from us')}</h1>
                     <p>{it.L('Stay informed. [_1] offers daily market reports and market research, as well as frequent trading webinars.', it.website_name)}</p>
-                    <span id='edu-research-tool'></span>
+                    <span id='edu-research-tool' />
                     <a className='button' href={it.url_for('resources')}>
                         <img className='responsive' src={it.url_for('images/pages/tour/tour-tools-education.svg')} />
                     </a>

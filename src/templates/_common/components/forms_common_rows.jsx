@@ -46,7 +46,7 @@ export const DateOfBirth = ({ className }) => (
 
 export const Residence = () => (
     <FormRow type='custom' id='residence' label={it.L('Country of residence')}>
-        <label id='lbl_residence'></label>
+        <label id='lbl_residence' />
     </FormRow>
 );
 
@@ -164,7 +164,7 @@ export const ClientMessage = () => (
     <div className='errorbox rbox invisible' id='client_message'>
         <div className='rbox-wrap'>
             <div className='gr-12 rbox-content' id='client_message_content'>
-                <p className='center-text notice-msg'></p>
+                <p className='center-text notice-msg' />
             </div>
         </div>
     </div>
@@ -184,17 +184,21 @@ export const TaxInformationForm = () => (
                 <p>{it.L('If we have reason to believe that your tax information is incomplete, we may contact you for clarification.')}</p>
             </div>
         </div>
-        <FormRow type='select'
-                 id='tax_residence'
-                 label={it.L('Tax residence')}
-                 tooltip={it.L('Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor.')}
-                 className='invisible'
-                 attributes={{multiple: 'multiple'}} />
-        <FormRow type='text'
-                 label={it.L('Tax identification number')}
-                 tooltip={it.L('Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help.')}
-                 id='tax_identification_number'
-                 attributes={{ maxLength: 20 }} />
+        <FormRow
+            type='select'
+            id='tax_residence'
+            label={it.L('Tax residence')}
+            tooltip={it.L('Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor.')}
+            className='invisible'
+            attributes={{multiple: 'multiple'}}
+        />
+        <FormRow
+            type='text'
+            label={it.L('Tax identification number')}
+            tooltip={it.L('Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help.')}
+            id='tax_identification_number'
+            attributes={{ maxLength: 20 }}
+        />
         <div id='tax_information_declaration'>
             <div className='gr-12 gr-padding-10'>
                 <input type='checkbox' id='chk_tax_id' />
