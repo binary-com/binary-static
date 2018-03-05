@@ -43,10 +43,7 @@ const MetaTrader = (() => {
                 addAccount(company);
             }
         });
-
-        const is_ico_only = /ico_only/.test(State.getResponse('get_account_status.status'));
-
-        return (!is_ico_only && has_mt_company);
+        return has_mt_company;
     };
 
     const addAccount = (company) => {
