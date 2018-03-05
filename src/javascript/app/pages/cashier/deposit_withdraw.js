@@ -3,7 +3,7 @@ const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
 const BinarySocket      = require('../../base/socket');
 const showPopup         = require('../../common/attach_dom/popup');
-const isCryptocurrency  = require('../../common/currency').isCryptocurrency;
+const Currency          = require('../../common/currency');
 const FormManager       = require('../../common/form_manager');
 const validEmailToken   = require('../../common/form_validation').validEmailToken;
 const getElementById    = require('../../../_common/common_functions').getElementById;
@@ -209,7 +209,7 @@ const DepositWithdraw = (() => {
             }
         } else {
             const $iframe = $(container).find('iframe');
-            if (isCryptocurrency(Client.get('currency'))) {
+            if (Currency.isCryptocurrency(Client.get('currency'))) {
                 $iframe.css('height', '700px');
             }
             if (/^BCH/.test(Client.get('currency'))) {
@@ -234,12 +234,15 @@ const DepositWithdraw = (() => {
                 showMessage('cashier_locked_message'); // Locked by client
             } else if (!response_get_account_status.error && /cashier_locked/.test(response_get_account_status.get_account_status.status)) {
                 showError('custom_error', localize('Your cashier is locked.')); // Locked from BO
-            } else if (cashier_type === 'withdraw' && +State.getResponse('get_limits.remainder') === 0) {
-                showError('custom_error', localize('You have reached the withdrawal limit.'));
             } else {
-                BinarySocket.wait('get_settings').then(() => {
-                    init(response_cashier_password.cashier_password);
-                });
+                const limit = State.getResponse('get_limits.remainder');
+                if (cashier_type === 'withdraw' && typeof limit !== 'undefined' && +limit < Currency.getMinWithdrawal(Client.get('currency'))) {
+                    showError('custom_error', localize('You have reached the withdrawal limit.'));
+                } else {
+                    BinarySocket.wait('get_settings').then(() => {
+                        init(response_cashier_password.cashier_password);
+                    });
+                }
             }
         });
     };
