@@ -34,7 +34,7 @@ const SectionLarge = ({ header, text, image, children }) => (
                 <img src={it.url_for(`images/pages/get-started/binary-options/${image}.svg`)} />
             </div>
             <div className='gr-9 gr-12-m gr-12-p'>
-                <h3 className='secondary-color'>{header}</h3>
+                <h3 data-anchor={header} className='secondary-color'>{header}</h3>
                 <p>{text}</p>
                 <ul className='bullet'>
                     {children}
@@ -163,7 +163,7 @@ const BinaryOptions = () => {
                             <Step header={it.L('Make your trade')}      text={it.L('Buy the contract or re-define your position.')} />
                         </div>
 
-                        <h3 className='secondary-color'>{it.L('Step 1: Define your position')}</h3>
+                        <HeaderSecondary header={it.L('Step 1: Define your position')} />
                         <p>{it.L('The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:')}</p>
                         <div className='gr-padding-30'>
                             <img className='responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/define-position.svg')} />
