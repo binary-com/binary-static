@@ -15,7 +15,7 @@
         & > * {
             grid-column: col-start / span 12;
         }
-        @media (min-width: 767px) {
+        @media (min-width: 769px) {
             .chart-container {
                 grid-column: col-start 1 / span 9;
 
@@ -60,7 +60,7 @@
         flex-flow: row wrap;
         padding: 20px;
 
-        @media screen and (min-width: 767px) {
+        @media screen and (min-width: 769px) {
             .chart-container {
                 flex: 0 1 calc(75% - 1.5vw);
             }
@@ -76,8 +76,14 @@
 }
 /* stylelint-enable unit-whitelist */
 
-/* Ant-style shadows */
 .shadow {
     box-shadow: 0 2px 8px #f0f1f2;
+}
+
+// Helpers
+.desktop-only {
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 /* stylelint-enable color-no-hex */

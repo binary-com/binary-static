@@ -23,7 +23,7 @@ class TradeApp extends React.Component {
                     <ContractType />
                     <Test />
                 </div>
-                <div className='sidebar-container'>
+                <div className='sidebar-container desktop-only'>
 
                     {this.isVisible('start_date') && <StartDate />}
                     <Duration />

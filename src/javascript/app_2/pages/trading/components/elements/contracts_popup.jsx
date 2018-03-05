@@ -51,6 +51,7 @@ class ContractsPopUp extends React.PureComponent {
 
     render() {
         const prefix_class = 'contracts-popup-container';
+        const suffix_class = 'desktop-only';
         const getDisplayText = (list, value) => {
             const findInArray = (arr_list) => (arr_list.find(item => item.value === value) || {}).text;
             let text = '';
@@ -65,7 +66,7 @@ class ContractsPopUp extends React.PureComponent {
         return (
             <div
                 ref={this.setWrapperRef}
-                className={`${prefix_class} ${this.props.className ? this.props.className : ''} ${this.state.is_list_visible ? 'show' : ''}`}>
+                className={`${prefix_class} ${this.state.is_list_visible ? 'show ' : ''}${suffix_class}`}>
                 <div
                     className={`contracts-popup-display ${this.state.is_list_visible ? 'clicked': ''}`}
                     onClick={this.handleVisibility}
