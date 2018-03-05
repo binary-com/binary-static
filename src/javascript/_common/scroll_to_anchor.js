@@ -1,7 +1,10 @@
 const ScrollToAnchor = (() => {
-    const scroll = () => {
+    const init = () => {
+        scrollToElement();
+    };
+
+    const scrollToElement = () => {
         const query = getQueryObject(window.location.search);
-        // scroll to the element with id === query.anchor
         const val = query.anchor;
         const el = document.querySelector(`[data-anchor="${val}"]`);
         console.log('query val ->', val);
@@ -21,7 +24,7 @@ const ScrollToAnchor = (() => {
         }, {});
 
     return {
-        scroll,
+        init,
         getQueryObject,
     };
 })();

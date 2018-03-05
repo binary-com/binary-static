@@ -17,7 +17,7 @@ const Localize         = require('../../_common/localize');
 const localize         = require('../../_common/localize').localize;
 const State            = require('../../_common/storage').State;
 const scrollToTop      = require('../../_common/scroll').scrollToTop;
-const scrollToAnchor   = require('../../_common/scroll_to_anchor').scroll;
+const ScrollToAnchor   = require('../../_common/scroll_to_anchor');
 const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
 const AffiliatePopup   = require('../../static/japan/affiliate_popup');
@@ -63,7 +63,7 @@ const Page = (() => {
                 }
             });
             scrollToTop();
-            scrollToAnchor();
+            ScrollToAnchor.init();
         });
     };
 
