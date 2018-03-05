@@ -237,7 +237,7 @@ const BinarySocket = (() => {
                 const msg_type = response.msg_type;
 
                 // store in State
-                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|ico_status|website_status/.test(msg_type)) {
+                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|website_status/.test(msg_type)) {
                     State.set(['response', msg_type], $.extend({}, response));
                 }
                 // resolve the send promise

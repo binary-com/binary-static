@@ -39,7 +39,7 @@ const GroupHistory = () => (
             <div className='timeline'>
                 <UL items={[
                     { className: 'year center-text',                                                                      text: '2017' },
-                    { className: 'event right featured', header: it.L('Initial Coin Offering (ICO)'),                     text: it.L('[_1] announces plans for an [_2]IPO on the blockchain[_3].', it.website_name, `<a target="_blank" href=${it.url_for('ico')}>`, '</a>') },
+                    { className: 'event right featured', header: it.L('Initial Coin Offering (ICO)'),                     text: it.L('[_1] announces plans for an IPO on the blockchain.', it.website_name) },
                     { className: 'event',                header: it.L('Personal Wealth Awards 2017'),                     text: it.L('[_1] is awarded Best Binary Options Broker by the UK-based Online Personal Wealth Awards 2017, as voted by investors worldwide.', it.website_name) },
                     { className: 'event right featured', header: it.L('[_1] launches Bitcoin accounts', it.website_name), text: it.L('[_1] launches Bitcoin (BTC) accounts for non-EU customers.', it.website_name) },
 
