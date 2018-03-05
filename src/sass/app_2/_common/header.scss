@@ -1,4 +1,5 @@
 /* stylelint-disable color-no-hex */
+/* stylelint-disable number-max-precision */
 header {
     background-color: $COLOR_WHITE !important;
     position: relative;
@@ -29,6 +30,9 @@ header {
             }
             &.notify-toggle {
                 order: 2;
+            }
+            @media (max-width: 768px) {
+                padding: 6px 10px;
             }
         }
         .menu-left {
@@ -111,9 +115,15 @@ header {
 
                                 &.aud {
                                     right: 30px;
+                                    @media (max-width: 768px) {
+                                        right: 20px;
+                                    }
                                 }
                                 &.bch {
                                     right: 20px;
+                                    @media (max-width: 768px) {
+                                        right: 15px;
+                                    }
                                 }
                                 &:before {
                                     color: #e98024;
@@ -121,13 +131,33 @@ header {
                                     display: flex;
                                     align-items: center;
                                     justify-content: space-around;
+
+                                    @media (max-width: 768px) {
+                                        font-size: 0.875rem;
+                                    }
+                                }
+                                @media (max-width: 768px) {
+                                    right: 10px;
                                 }
                             }
+                        }
+                        @media (max-width: 768px) {
+                            font-size: 1rem;
                         }
                     }
                 }
                 button.btn {
                     margin: 0 16px 0 4px;
+                    @media (max-width: 768px) {
+                        margin: 0 8px 0 4px;
+
+                        span {
+                            display: none;
+                        }
+                        // &:after {
+                        //     content: 'D';
+                        // }
+                    }
                 }
             }
         }
@@ -137,4 +167,5 @@ header {
         }
     }
 }
+/* stylelint-enable number-max-precision */
 /* stylelint-enable color-no-hex */
