@@ -32,8 +32,6 @@ module.exports = [
 
     ['user/accounts',                      'app/user/accounts',                         'default',    'Accounts',                          'ja'],
     ['user/authenticate',                  'app/user/authenticate',                     'default',    'Authenticate',                      'ja'],
-    ['user/ico-claim-form',                'app/user/ico_claim_form',                   'default',    'Electronic Subscription Form for Tokens', 'ja'],
-    ['user/ico-subscribe',                 'app/user/ico_subscribe',                    'default',    'Subscribe to ICO',                  'ja'],
     ['user/lost_passwordws',               'app/user/lost_password',                    'default',    'Password Reset'],
     ['user/metatrader',                    'app/user/metatrader',                       'default',    'MetaTrader account management',     'ja'],
     ['user/portfoliows',                   'app/user/portfolio',                        'default',    'Portfolio'],
@@ -125,8 +123,6 @@ module.exports = [
 
     // ==================== Section: "landing_pages" ====================
     ['graduates',                          'landing_pages/graduate_program',            null,        'Binary.com Graduate Program',        'NOT-en'],
-    ['ico',                                'landing_pages/ico',                         null,        'Initial Coin Offering',              'ja'],
-    ['ico-disclaimer',                     'landing_pages/ico_disclaimer',              null,        'Initial Coin Offering Disclaimer',   'ja'],
     ['hackathon',                          'landing_pages/hackathon',                   null,        'Hackathon Competition',              'NOT-en'],
     ['landing/signup-frame',               'landing_pages/signup_frame',                null,        'Sign up'],
     ['バイナリーオプション',                  'landing_pages/binary_japan',                null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
