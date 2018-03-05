@@ -1,5 +1,5 @@
 const ScrollToAnchor = (() => {
-    const init = () => {
+    const scroll = () => {
         const query = getQueryObject(window.location.search);
         // scroll to the element with id === query.anchor
         const id = query.anchor;
@@ -16,7 +16,7 @@ const ScrollToAnchor = (() => {
         }, {});
 
     return {
-        init,
+        scroll,
         getQueryObject,
     };
 })();
