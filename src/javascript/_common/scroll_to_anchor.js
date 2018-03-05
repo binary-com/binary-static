@@ -16,7 +16,7 @@ const ScrollToAnchor = (() => {
         .split('&')
         .map(pair => pair.split('='))
         .reduce((obj, [ key, val ]) => {
-            obj[key] = val.replace(/%20/g, ' ');
+            obj[key] = window.decodeURI(val);
             return obj;
         }, {});
 
