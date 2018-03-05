@@ -33,7 +33,7 @@ const ProfessionalClient = () => (
                     <li>{it.L('We presume that you possess the experience, knowledge, and expertise to make your own investment decisions and properly assess the risks involved')}</li>
                     <li>{it.L('We’re not obliged to conduct an appropriateness test, nor provide you with any risk warnings')}</li>
                 </ul>
-                <p>{it.L('As a Professional Client, you must keep us informed about any changes that may affect your status. of a Professional Client.')}</p>
+                <p>{it.L('As a Professional Client, you must keep us informed about any changes that may affect your status.')}</p>
                 <p>{it.L('You can choose to be treated as a Retail Client at any time, even if you would qualify as a Professional Client.')}</p>
                 <div className='center-text'>
                     <a className='button' id='btn_accept' href='javascript:;'><span>{it.L('ACCEPT')}</span></a>
