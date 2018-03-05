@@ -237,7 +237,7 @@ const BinarySocket = (() => {
                 const msg_type = response.msg_type;
 
                 // store in State
-                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|ico_status|website_status/.test(msg_type)) {
+                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|website_status/.test(msg_type)) {
                     State.set(['response', msg_type], $.extend({}, response));
                 }
                 // resolve the send promise
@@ -255,10 +255,10 @@ const BinarySocket = (() => {
                 const error_code = getPropertyValue(response, ['error', 'code']);
                 switch (error_code) {
                     case 'WrongResponse':
+                    case 'InternalServerError':
                     case 'OutputValidationFailed': {
                         if (msg_type !== 'mt5_login_list') {
-                            const text_value = (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.'));
-                            showNoticeMessage(text_value);
+                            showNoticeMessage(response.error.message);
                         }
                         break;
                     }
