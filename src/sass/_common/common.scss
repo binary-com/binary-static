@@ -563,6 +563,10 @@ li strong.margin-right {
     }
 }
 
+.no-capitalize > a {
+    text-transform: none !important;
+}
+
 label + input {
     margin-left: 5px;
 }

@@ -11,7 +11,7 @@ const PaymentLogo = ({ items }) => items.map((item, inx) => (
 ));
 
 const Arrows = ({ direction, parent }) => (
-    <div className='align-self-center gr-1 gr-hide-m'>
+    <div className='align-self-center gr-1 gr-hide-p'>
         <img
             className={`go-${direction} gr-10 gr-12-p gr-no-gutter-p gr-centered`}
             data-parent={parent}
@@ -21,7 +21,7 @@ const Arrows = ({ direction, parent }) => (
 );
 
 const ArrowsMobile = ({ direction, parent }) => (
-    <div className='align-self-center gr-2 gr-hide gr-show-m gr-no-gutter'>
+    <div className='align-self-center gr-2 gr-hide gr-show-m gr-show-p gr-no-gutter'>
         <img
             className={`go-${direction} gr-5 gr-no-gutter gr-centered`}
             data-parent={parent}
@@ -31,10 +31,10 @@ const ArrowsMobile = ({ direction, parent }) => (
 );
 
 const MarketsContent = ({ text, header, image }) => (
-    <div className='gr-10 gr-12-m'>
+    <div className='gr-10 gr-12-m gr-centered'>
         <div className='gr-row'>
-            <div className='gr-6 gr-12-m center-text-m order-2-m'>
-                <div className='gr-10-m gr-centered gr-gutter'>
+            <div className='gr-6 gr-12-m gr-12-p center-text-m order-2-m'>
+                <div className='gr-10-m gr-10-p gr-centered gr-gutter'>
                     <div className='gr-row'>
                         <ArrowsMobile parent='market_tabs' direction='left' />
                         <strong className='align-self-center gr-centered-m'>{header}</strong>
@@ -43,7 +43,7 @@ const MarketsContent = ({ text, header, image }) => (
                 </div>
                 <p>{text}</p>
             </div>
-            <div className='gr-6 gr-12-m center-text'>
+            <div className='gr-6 gr-12-m gr-12-p center-text'>
                 <img className='responsive' src={it.url_for(image)} />
             </div>
         </div>
@@ -143,7 +143,7 @@ const AcademySection = ({ image, header, text }) => (
 );
 
 const TabCircles = ({ id, number }) => (
-    <div className='gr-hide gr-show-m center-text'>
+    <div className='gr-hide gr-show-m gr-show-p center-text'>
         <div className='tab-circles' id={id || undefined}>
             { Array.from(new Array(number)).map((x, inx) => (
                 <div key={inx} className='tab-circle'></div>
@@ -222,7 +222,7 @@ const Home = () => {
                                     image='images/pages/home/MT5.svg'
                                     image_one='images/pages/home/icons/demo.svg'
                                     list_header_one={it.L('MT5 Demo')}
-                                    list_text_one={it.L('Practice account with replenishable USD 5,000 virtual credit.')}
+                                    list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
                                     image_two='images/pages/home/icons/mt5_financial.svg'
                                     list_header_two={it.L('MT5 Financial')}
                                     list_text_two={it.L('MT5 real-money account for Forex and CFDs.')}
@@ -245,18 +245,19 @@ const Home = () => {
                 <SeparatorLine className='gr-padding-30' show_mobile/>
             </div>
 
-            <div className='container'>
+            <div id='market_tabs_container' className='container'>
                 <h2 className='center-text gr-padding-10'>{it.L('Trade in the world\'s financial markets')}<Asterisk /></h2>
                 <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
                     <TabsSubtabs
                         id='market_tabs'
-                        className='gr-padding-20 gr-parent gr-hide-m tab-selector-wrapper'
+                        className='gr-padding-20 gr-parent gr-hide-m gr-hide-p tab-selector-wrapper'
                         items={[
-                            { id: 'binary', text: binary_header },
-                            { id: 'forex', text: it.L('Forex') },
-                            { id: 'crypto', text: it.L('Crypto') },
-                            { id: 'cfds', text: it.L('CFDs') },
-                            { id: 'metals', text: it.L('Metals') },
+                            { id: 'binary',    text: binary_header },
+                            { id: 'forex',     text: it.L('Forex') },
+                            { id: 'crypto',    text: it.L('Crypto') },
+                            { id: 'cfds',      text: it.L('CFDs') },
+                            { id: 'metals',    text: it.L('Metals') },
+                            { id: 'lookbacks', text: it.L('Lookbacks') },
                             { id: 'market_tabs_selector', className: 'tab-selector' },
                         ]}
                     />
@@ -297,9 +298,16 @@ const Home = () => {
                                     image='images/pages/home/trade/metals.svg'
                                 />
                             </TabContent>
+                            <TabContent id='lookbacks'>
+                                <MarketsTabContent
+                                    header={it.L('Lookbacks')}
+                                    text={it.L('Options that let you “look back” on the optimum high or low achieved by the market to determine the payout.')}
+                                    image='images/pages/home/trade/lookbacks.svg'
+                                />
+                            </TabContent>
                         </TabContentContainer>
                     </div>
-                    <TabCircles number={5} id='market_tabs_circles'/>
+                    <TabCircles number={6} id='market_tabs_circles'/>
                 </TabContainer>
                 <h3 className='center-text gr-padding-30'>{it.L('Choose from 100+ tradable instruments, backed by award-winning technology and innovation since 2000.')}</h3>
             </div>

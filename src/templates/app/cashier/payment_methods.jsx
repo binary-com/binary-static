@@ -36,7 +36,6 @@ const Row = ({
             </div>
             <div className='gr-3 gr-hide-m'>
                 { times.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
-                { is_header ? '*' : '' }
             </div>
         </div>
     );
@@ -306,7 +305,7 @@ const PaymentMethods = () => (
                 />
             </div>
         </div>
-
+    
         <div className='gr-padding-10'>
             <p className='hint'>* {it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
         </div>
