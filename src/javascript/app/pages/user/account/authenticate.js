@@ -3,6 +3,7 @@ const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
 const BinarySocket        = require('../../../base/socket');
 const localize            = require('../../../../_common/localize').localize;
+const CookieStorage       = require('../../../../_common/storage').CookieStorage;
 const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
 const Url                 = require('../../../../_common/url');
 const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
@@ -40,6 +41,8 @@ const Authenticate = (() => {
             active     : false,
         });
         // Setup Date picker
+        const document_uploaded = new CookieStorage('document_uploaded');
+        document_uploaded.read();
         const file_checks = {};
         $('.date-picker').datepicker({
             dateFormat : 'yy-mm-dd',
@@ -65,12 +68,6 @@ const Authenticate = (() => {
             const file_name = event.target.files[0].name || '';
             const display_name = file_name.length > 10 ? `${file_name.slice(0, 5)}..${file_name.slice(-5)}` : file_name;
 
-            // Keep track of front and back sides of files.
-            const doc_type = ($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase();
-            const file_type = ($e.attr('id').match(/\D+/g) || [])[0];
-            file_checks[doc_type] = file_checks[doc_type] || {};
-            file_checks[doc_type][file_type] = true;
-
             $e.parent()
                 .find('label')
                 .off('click')
@@ -90,10 +87,7 @@ const Authenticate = (() => {
             let default_text = toTitleCase($e.attr('id').split('_')[0]);
             default_text = default_text === 'Back' ? localize('Reverse Side')
                 : localize('Front Side');
-            // Keep track of front and back sides of files.
-            const doc_type = ($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase();
-            const file_type = ($e.attr('id').match(/\D+/g) || [])[0];
-            file_checks[doc_type][file_type] = false;
+            fileTracker($e, false);
             // Remove previously selected file and set the label
             $e.val('').parent().find('label').text(default_text)
                 .append($('<span/>', { class: 'add' }));
@@ -158,6 +152,7 @@ const Authenticate = (() => {
                 if (e.files && e.files.length) {
                     const $e = $(e);
                     const type = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
+                    const file_type = ($e.attr('id').match(/\D+/g) || [])[0];
                     const $inputs = $e.closest('.fields').find('input[type="text"]');
                     const file_obj = {
                         file: e.files[0],
@@ -167,6 +162,7 @@ const Authenticate = (() => {
                         file_obj.id_number = $($inputs[0]).val();
                         file_obj.exp_date = $($inputs[1]).val();
                     }
+                    fileTracker($e, true);
                     files.push(file_obj);
                 }
             });
@@ -180,7 +176,7 @@ const Authenticate = (() => {
             readFiles(files).then((objects) => {
                 objects.forEach(obj => promises.push(uploader.upload(obj)));
                 Promise.all(promises)
-                    .then(() => showSuccess())
+                    .then(onResponse)
                     .catch(showError);
             }).catch(showError);
         };
@@ -200,6 +196,9 @@ const Authenticate = (() => {
                             documentFormat: format,
                             documentId    : f.id_number || undefined,
                             expirationDate: f.exp_date || undefined,
+                            passthrough   : {
+                                filename: f.file.name,
+                            },
                         };
 
                         const error = { message: validate(obj) };
@@ -220,6 +219,18 @@ const Authenticate = (() => {
 
             return Promise.all(promises);
         };
+
+        const fileTracker = ($e, selected) => {
+            const doc_type = ($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase();
+            const file_type = ($e.attr('id').match(/\D+/g) || [])[0];
+            // Keep track of front and back sides of files.
+            if (selected) {
+                file_checks[doc_type] = file_checks[doc_type] || {};
+                file_checks[doc_type][file_type] = true;
+            } else {
+                file_checks[doc_type][file_type] = false;
+            }
+        }
 
         // Validate user input
         const validate = (file) => {
@@ -245,13 +256,17 @@ const Authenticate = (() => {
             if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
                 return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
             }
-            if (file_checks.proofid && (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
-                return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
+            // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
+            if(!document_uploaded.value.uploaded) {
+                if (file_checks.proofid && (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
+                    return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
+                }
+                if (file_checks.driverslicense &&
+                    (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) { // eslint-disable-line no-bitwise
+                        return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
+                    }
             }
-            if (file_checks.driverslicense &&
-                (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) { // eslint-disable-line no-bitwise
-                return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
-            }
+
             return null;
         };
 
@@ -264,11 +279,29 @@ const Authenticate = (() => {
         };
 
         const showSuccess = () => {
+            document_uploaded.write({uploaded:true});
             const msg = localize('We are reviewing your documents. For more details [_1]contact us[_2].',
                 [`<a href="${Url.urlFor('contact')}">`, '</a>']);
             displayNotification(msg, false, 'document_under_review');
             $('#not_authenticated, #not_authenticated_financial').setVisibility(0); // Just hide it
             $('#success-message').setVisibility(1);
+        };
+
+        const onResponse = (res) => {
+            const dup_files = [];
+            let successAny = false;
+            res.forEach((file) => {
+                if(!file.warning) {
+                    successAny = true;
+                } else {
+                    dup_files.push(file.passthrough.filename);
+                }
+            });
+            if (successAny) {
+                showSuccess();
+            } else {
+                showError({message:localize('Following file(s) were already uploaded: [_1]', [JSON.stringify(dup_files)])});
+            }
         };
     };
 
