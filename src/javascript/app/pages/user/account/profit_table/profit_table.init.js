@@ -2,6 +2,7 @@ const ProfitTableUI        = require('./profit_table.ui');
 const ViewPopup            = require('../../view_popup/view_popup');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
+const DateTo               = require('../../../../common/attach_dom/date_to');
 const addTooltip           = require('../../../../common/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common/get_app_details').buildOauthApps;
 const localize             = require('../../../../../_common/localize').localize;
@@ -68,6 +69,9 @@ const ProfitTableInit = (() => {
                     .append($('<tr/>', { class: 'flex-tr' })
                         .append($('<td/>', { colspan: 8 })
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
+            } else {
+                // TODO: uncomment this when issue of profit_table date_to field is fixed (now it sends one more day than supposed to)
+                // $('#util_row').setVisibility(1);
             }
         }
     };
@@ -101,6 +105,9 @@ const ProfitTableInit = (() => {
 
         if (opts) $.extend(true, req, opts);
 
+        const obj_date_to_from = DateTo.getDateToFrom();
+        if (obj_date_to_from) $.extend(true, req, obj_date_to_from);
+
         BinarySocket.send(req).then((response) => {
             profitTableHandler(response);
             showLocalTimeOnHover('td.buy-date,td.sell-date');
@@ -117,6 +124,11 @@ const ProfitTableInit = (() => {
         pending               = false;
         current_batch         = [];
 
+        DateTo.attachDateToPicker(() => {
+            ProfitTableUI.cleanTableContent();
+            transactions_received = 0;
+            getNextBatchTransactions();
+        });
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response)));
         });

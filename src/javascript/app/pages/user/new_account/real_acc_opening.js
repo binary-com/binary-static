@@ -17,7 +17,7 @@ const RealAccOpening = (() => {
 
                 FormManager.handleSubmit({
                     form_selector       : form_id,
-                    obj_request         : { new_account_real: 1, account_type: 'default' },
+                    obj_request         : { new_account_real: 1 },
                     fnc_response_handler: handleResponse,
                 });
             });
