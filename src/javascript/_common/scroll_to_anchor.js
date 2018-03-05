@@ -1,9 +1,9 @@
 const ScrollToAnchor = (() => {
     const init = () => {
         const query = getQueryObject(window.location.search);
-
         // scroll to the element with id === query.anchor
-        console.log(query);
+        const id = query.anchor;
+        window.scrollIntoView(document.getElementById(id));
     };
 
     const getQueryObject = (query_string) => query_string
