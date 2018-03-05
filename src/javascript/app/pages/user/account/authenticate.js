@@ -152,7 +152,6 @@ const Authenticate = (() => {
                 if (e.files && e.files.length) {
                     const $e = $(e);
                     const type = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
-                    const file_type = ($e.attr('id').match(/\D+/g) || [])[0];
                     const $inputs = $e.closest('.fields').find('input[type="text"]');
                     const file_obj = {
                         file: e.files[0],
@@ -230,7 +229,7 @@ const Authenticate = (() => {
             } else {
                 file_checks[doc_type][file_type] = false;
             }
-        }
+        };
 
         // Validate user input
         const validate = (file) => {
@@ -257,14 +256,14 @@ const Authenticate = (() => {
                 return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
             }
             // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
-            if(!document_uploaded.value.uploaded) {
+            if (!document_uploaded.value.uploaded) {
                 if (file_checks.proofid && (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
                     return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
                 }
                 if (file_checks.driverslicense &&
                     (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) { // eslint-disable-line no-bitwise
-                        return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
-                    }
+                    return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
+                }
             }
 
             return null;
@@ -279,7 +278,7 @@ const Authenticate = (() => {
         };
 
         const showSuccess = () => {
-            document_uploaded.write({uploaded:true});
+            document_uploaded.write({uploaded: true});
             const msg = localize('We are reviewing your documents. For more details [_1]contact us[_2].',
                 [`<a href="${Url.urlFor('contact')}">`, '</a>']);
             displayNotification(msg, false, 'document_under_review');
@@ -291,7 +290,7 @@ const Authenticate = (() => {
             const dup_files = [];
             let successAny = false;
             res.forEach((file) => {
-                if(!file.warning) {
+                if (!file.warning) {
                     successAny = true;
                 } else {
                     dup_files.push(file.passthrough.filename);
@@ -300,7 +299,7 @@ const Authenticate = (() => {
             if (successAny) {
                 showSuccess();
             } else {
-                showError({message:localize('Following file(s) were already uploaded: [_1]', [JSON.stringify(dup_files)])});
+                showError({message: localize('Following file(s) were already uploaded: [_1]', [JSON.stringify(dup_files)])});
             }
         };
     };
