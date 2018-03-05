@@ -256,7 +256,7 @@ const BinaryOptions = () => {
                             <li>{it.L('USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%')}</li>
                         </ul>
 
-                        <HeaderSecondary anchor-id='otc_stocks' header={it.L('OTC stocks and indices')} />
+                        <HeaderSecondary anchorId='otc_stocks' header={it.L('OTC stocks and indices')} />
                         <p>{it.L('Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing.')}</p>
                         <p>{it.L('Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges.')}</p>
 
