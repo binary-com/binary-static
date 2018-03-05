@@ -223,7 +223,10 @@ const SelfExclusion = (() => {
         Client.set('session_start', moment().unix()); // used to handle session duration limit
         const {exclude_until, timeout_until} = response.echo_req;
         if (exclude_until || timeout_until) {
-            Client.set('excluded_until', moment(exclude_until || +timeout_until).unix());
+            Client.set('excluded_until',
+                exclude_until ? moment(exclude_until).unix()
+                : timeout_until
+            );
         }
         BinarySocket.send({ get_account_status: 1 }).then(() => {
             Header.displayAccountStatus();
