@@ -4,7 +4,9 @@ const ScrollToAnchor = (() => {
         // scroll to the element with id === query.anchor
         const val = query.anchor;
         const el = document.querySelector(`[data-anchor="${val}"]`);
-        window.scrollIntoView(el);
+        if (el) {
+            el.scrollIntoView();
+        }
     };
 
     const getQueryObject = (query_string) => query_string
