@@ -233,7 +233,7 @@ const texts = [
     'Scopes',
     'Never Used',
     'Delete',
-    'Are you sure that you want to permanently delete token',
+    'Are you sure that you want to permanently delete the token',
     'Please select at least one scope',
 
     // Guide
@@ -455,7 +455,7 @@ const texts = [
     'Permissions',
     'Never',
     'Revoke access',
-    'Are you sure that you want to permanently revoke access to application',
+    'Are you sure that you want to permanently revoke access to the application',
     'Transaction performed by [_1] (App ID: [_2])',
     'Admin',
     'Read',
