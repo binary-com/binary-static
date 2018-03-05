@@ -60,10 +60,10 @@ module.exports = [
 
     ['endpoint',                           'app/endpoint',                              'default',    'Endpoint'],
 
+    ['dialog',                             'app/dialog',                                null],
     ['explanation',                        'app/trade/explanation',                     null],
     ['logged_inws',                        'app/logged_in',                             null],
     ['redirect',                           'app/logged_in',                             null,         'Redirecting...'],
-
 
     // ==================== Section: "static" ====================
     ['404',                                'static/404',                                'full_width', '404'],
