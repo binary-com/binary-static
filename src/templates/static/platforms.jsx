@@ -110,9 +110,9 @@ const Platform = () => (
                 <Platforms
                     image_class='gr-10 gr-7-p gr-9-m'
                     image='trading-multibarrier'
-                    header={it.L('Binary.com TableTrader')}
+                    header={it.L('Japanese Ladders')}
                     description={it.L('Multi-barrier trading')}
-                    text={it.L('Use a wide range of barrier options to define your market position.')}
+                    text={it.L('Trade FX binary options on our multi-barrier platform, designed to fully comply with Japanese regulations.')}
                     url={it.url_for('multi_barriers_trading')}
                     button_text={it.L('Trade now')}
                 />
