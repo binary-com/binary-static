@@ -38,6 +38,9 @@ body #topbar {
         &.offline {
             background: $COLOR_RED;
         }
+        &.blinker {
+            background: $COLOR_YELLOW;
+        }
     }
 }
 
