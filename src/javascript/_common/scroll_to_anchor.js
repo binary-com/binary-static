@@ -1,3 +1,5 @@
+const isVisible = require('./common_functions').isVisible;
+
 const ScrollToAnchor = (() => {
     const init = () => {
         scrollToElement();
@@ -25,25 +27,19 @@ const ScrollToAnchor = (() => {
         const query = getQueryObject(window.location.search);
         const id = query.anchor;
         if (!id) return;
-        const el = document.querySelector(`[data-anchor="${id}"]`);
-        if (!el) return;
+        const candidates = document.querySelectorAll(`[data-anchor="${id}"]`);
+        const el = Array.from(candidates).find(isVisible);
+        if (!el) {
+            return;
+        }
         window.el1 = el;
         console.log('scroll to anchor', el.offsetTop, document.readyState);
         $.scrollTo(el, 500);
     };
 
-    const getQueryObject = (query_string) => query_string
-        .slice(1)
-        .split('&')
-        .map(pair => pair.split('='))
-        .reduce((obj, [ key, val ]) => {
-            obj[key] = window.decodeURI(val);
-            return obj;
-        }, {});
 
     return {
         init,
-        getQueryObject,
     };
 })();
 
