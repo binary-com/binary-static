@@ -32,8 +32,8 @@ describe('QueryString', () => {
             expect(QueryString.removeParamFromQueryString('?a=123&b=test', 'anchor')).to.eq('?a=123&b=test');
         });
         it('removes specified key value pair', () => {
-            expect(QueryString.removeParamFromQueryString('?anchor=NZT', 'anchor').to.eq(''));
-            expect(QueryString.removeParamFromQueryString('?a=Hello%20World&b=10', 'a').to.eq('?b=10'));
+            expect(QueryString.removeParamFromQueryString('?anchor=NZT', 'anchor')).to.eq('');
+            expect(QueryString.removeParamFromQueryString('?a=Hello%20World&b=10', 'a')).to.eq('?b=10');
         });
     });
 });
