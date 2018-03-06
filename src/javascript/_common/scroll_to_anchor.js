@@ -27,9 +27,7 @@ const ScrollToAnchor = (() => {
         const el = document.querySelector(`[data-anchor="${id}"]`);
         console.log('query id ->', id);
         console.log('el ->', el);
-        if (el) {
-            el.scrollIntoView();
-        }
+        $.scrollTo(el);
     };
 
     const getQueryObject = (query_string) => query_string
