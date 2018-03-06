@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage, MtBox } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
+import { Asterisk, ProductHint } from '../../_common/components/product_hint.jsx';
 
 const hundred       = 100;
 const hundredth     = 0.01;
@@ -28,7 +29,7 @@ const Lot = () => (
 
 const Metals = () => (
     <div className='static_full get-started'>
-        <h1>{it.L('MetaTrader 5')}</h1>
+        <h1>{it.L('MetaTrader 5')}<Asterisk/></h1>
         <div className='gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>
                 <div className='sidebar'>
@@ -153,6 +154,7 @@ const Metals = () => (
                 <NavButtons parent='mt5' section='metals' />
             </div>
         </div>
+        <ProductHint />
     </div>
 );
 

@@ -126,6 +126,7 @@ const texts = [
     'Long',
     'Short',
     'Chart',
+    'Portfolio',
     'Explanation',
     'Last Digit Stats',
     'Waiting for entry tick.',
@@ -233,7 +234,7 @@ const texts = [
     'Scopes',
     'Never Used',
     'Delete',
-    'Are you sure that you want to permanently delete token',
+    'Are you sure that you want to permanently delete the token',
     'Please select at least one scope',
 
     // Guide
@@ -455,7 +456,7 @@ const texts = [
     'Permissions',
     'Never',
     'Revoke access',
-    'Are you sure that you want to permanently revoke access to application',
+    'Are you sure that you want to permanently revoke access to the application',
     'Transaction performed by [_1] (App ID: [_2])',
     'Admin',
     'Read',
@@ -558,23 +559,10 @@ const texts = [
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
 
+    // TODO: remove ico messages when all ico contracts are removed
     // binaryico message
     'Bid',
     'Closed Bid',
-    'Cancel Bid',
-    'Refund Bid',
-    'Claim Tokens',
-    'Ended',
-    'Pending',
-    'The ICO is currently unavailable.',
-    'Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance.',
-    'Minimum bid',
-    'The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids.',
-
-    // binaryico histogram chart
-    'Final Price',
-    'Total Bids',
-    'Price Band',
 
     // accounts
     'Create',
@@ -587,7 +575,6 @@ const texts = [
     'Create Account',
     'Accounts List',
     '[_1] Account',
-    'None',
     'Investment',
     'Gaming',
     'Virtual',

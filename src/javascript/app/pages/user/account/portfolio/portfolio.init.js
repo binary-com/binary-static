@@ -95,6 +95,7 @@ const PortfolioInit = (() => {
              **/
             $('#portfolio-no-contract').hide();
             $.each(data.portfolio.contracts, (ci, c) => {
+                // TODO: remove ico exception when all ico contracts are removed
                 if (!getPropertyValue(values, c.contract_id) && c.contract_type !== 'BINARYICO') {
                     values[c.contract_id]           = {};
                     values[c.contract_id].buy_price = c.buy_price;
