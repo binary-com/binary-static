@@ -37,21 +37,6 @@ const MenuSelector = (() => {
         if (go_back && go_next) {
             initBackNextButtons();
         }
-        window.dispatchEvent(new Event('menu_selector_selected_shown'));
-    };
-
-    const selectedIsShown = () => {
-        return new Promise(resolve => {
-            if ($sections_with_hash.is(':visible')) {
-                resolve();
-            } else {
-                function handler() {
-                    resolve();
-                    window.removeEventListener('menu_selector_selected_shown', handler);
-                }
-                window.addEventListener('menu_selector_selected_shown', handler);
-            }
-        });
     };
 
     const initBackNextButtons = () => {
@@ -78,7 +63,6 @@ const MenuSelector = (() => {
     return {
         init,
         clean,
-        selectedIsShown,
     };
 })();
 
