@@ -1,6 +1,7 @@
 import React from 'react';
 import { List, Table } from '../../_common/components/elements.jsx';
 import { BuySellCurrency, Section, HeaderSecondary, NavButtons, MtBox } from './common.jsx';
+import { Asterisk, ProductHint } from '../../_common/components/product_hint.jsx';
 
 const hundredth = '0.01';
 const tenth     = '0.10';
@@ -9,7 +10,7 @@ const hundred   = '100';
 
 const Cryptocurrencies = () => (
     <div className='static_full get-started'>
-        <h1>{it.L('MetaTrader 5')}</h1>
+        <h1>{it.L('MetaTrader 5')}<Asterisk/></h1>
         <div className='gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>
                 <div className='sidebar'>
@@ -92,6 +93,7 @@ const Cryptocurrencies = () => (
                 <NavButtons parent='mt5' section='cryptocurrencies' />
             </div>
         </div>
+        <ProductHint/>
     </div>
 );
 
