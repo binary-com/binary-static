@@ -1,6 +1,7 @@
 const BinaryPjax           = require('../../../../base/binary_pjax');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
+const Dialog               = require('../../../../common/attach_dom/dialog');
 const FlexTableUI          = require('../../../../common/attach_dom/flextable');
 const jpClient             = require('../../../../common/country_base').jpClient;
 const FormManager          = require('../../../../common/form_manager');
@@ -99,15 +100,18 @@ const APIToken = (() => {
     };
 
     const createDeleteButton = ($row, token) => {
-        const message = localize('Are you sure that you want to permanently delete token');
+        const message = localize('Are you sure that you want to permanently delete the token');
         const $button = $('<button/>', { class: 'button btn_delete', text: localize('Delete') });
         $button.click((e) => {
             e.preventDefault();
             e.stopPropagation();
-            if (!window.confirm(`${message}: "${token.display_name}"?`)) {
-                return;
-            }
-            deleteToken(token.token);
+            Dialog.confirm({
+                id       : 'delete_token_dialog',
+                message  : `${message}: "${token.display_name}"?`,
+                onConfirm: () => {
+                    deleteToken(token.token);
+                },
+            });
         });
         $row.children('.action').html($button);
     };
