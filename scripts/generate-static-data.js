@@ -602,6 +602,7 @@ const texts = [
     'Reverse Side',
     'Front and reverse side photos of [_1] are required.',
     '[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.',
+    'Following file(s) were already uploaded: [_1]',
 ];
 
 /* eslint-disable no-console */
