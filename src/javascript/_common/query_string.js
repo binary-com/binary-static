@@ -20,6 +20,9 @@ const QueryString = (() => {
         return new_query_str !== '' ? `?${new_query_str}` : '';
     };
 
+    // TODO: add appendParamToQueryString function
+    // TODO: add tests for appendParamToQueryString
+
     const setQueryStringWithoutReload = (new_query_str) => {
         const { pathname, hash } = window.location;
         window.history.replaceState('', '', `${pathname}${new_query_str}${hash}`);
