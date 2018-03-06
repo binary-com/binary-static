@@ -3,7 +3,7 @@ import { List } from '../_common/components/elements.jsx';
 
 const Section = ({ className = '', id, header, children }) => (
     <div className={`section ${className}`}>
-        <a id={id}></a>
+        <a id={id} />
         <div className='section-content'>
             <h1>{header}</h1>
             {children}
@@ -16,14 +16,17 @@ const WhyUs = () => (
         <div className='why-us static_full gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>
                 <div className='sidebar'>
-                    <List id='sidebar-nav' items={[
-                        { id: 'sidebar-link-section-1', href: '#sharp-prices',         text: it.L('Sharp prices'), className: 'selected'},
-                        { id: 'sidebar-link-section-2', href: '#flexible-trades',      text: it.L('Flexible trades')},
-                        { id: 'sidebar-link-section-3', href: '#controlled-risk',      text: it.L('Controlled risk')},
-                        { id: 'sidebar-link-section-4', href: '#power-and-simplicity', text: it.L('Power & simplicity')},
-                        { id: 'sidebar-link-section-5', href: '#security',             text: it.L('Security'),     className: 'id-hide'},
-                        { id: 'sidebar-link-section-6', href: '#trust',                text: it.L('Trust')},
-                    ]} />
+                    <List
+                        id='sidebar-nav'
+                        items={[
+                            { id: 'sidebar-link-section-1', href: '#sharp-prices',         text: it.L('Sharp prices'), className: 'selected'},
+                            { id: 'sidebar-link-section-2', href: '#flexible-trades',      text: it.L('Flexible trades')},
+                            { id: 'sidebar-link-section-3', href: '#controlled-risk',      text: it.L('Controlled risk')},
+                            { id: 'sidebar-link-section-4', href: '#power-and-simplicity', text: it.L('Power & simplicity')},
+                            { id: 'sidebar-link-section-5', href: '#security',             text: it.L('Security'),     className: 'id-hide'},
+                            { id: 'sidebar-link-section-6', href: '#trust',                text: it.L('Trust')},
+                        ]}
+                    />
                     <div className='center-text gr-padding-10 client_logged_out invisible'>
                         <a className='button' href={it.url_for('/')}>
                             <span>{it.L('Open a free account')}</span>

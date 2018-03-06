@@ -21,7 +21,7 @@ const Step = ({
             <div className='gr-3 center-text'>
                 <h3 className='secondary-color'>{step}</h3>
                 <img src={it.url_for(`images/pages/metatrader/how-to/step${number}.svg`)} />
-                { !is_last && <div className='vertical-dashed'></div> }
+                { !is_last && <div className='vertical-dashed' /> }
             </div>
             <div className='gr-9'>
                 {children}

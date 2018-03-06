@@ -38,7 +38,7 @@ const PaymentAgentList = () => (
             <div id='accordion' className='invisible'>
                 <h3>%name</h3>
                 <div>
-                    <p></p>
+                    <p />
                     <Table
                         trs={[
                             { text: it.L('Name')                     , placeholder: '%name' },
