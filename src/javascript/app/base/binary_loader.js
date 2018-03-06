@@ -9,6 +9,7 @@ const BinarySocket        = require('./socket');
 const BinarySocketGeneral = require('./socket_general');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
+const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const urlFor              = require('../../_common/url').urlFor;
 const applyToAllElements  = require('../../_common/utility').applyToAllElements;
@@ -85,6 +86,7 @@ const BinaryLoader = (() => {
             loadHandler(pages_config['get-started']);
         }
 
+        ScrollToAnchor.init();
     };
 
     const error_messages = {
