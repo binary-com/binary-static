@@ -30,8 +30,8 @@ const Product = ({
     return (
         <li id={`product_${id_no}`} className={`product product_${className}`}>
             <div className='gr-row gr-row-align-center mb-trading-wrapper' id='mb_trading'>
-                <div className={`${icon_1} contract-type`}></div>
-                <div className={`${icon_2} negative-color contract-type`}></div>
+                <div className={`${icon_1} contract-type`} />
+                <div className={`${icon_2} negative-color contract-type`} />
             </div>
             <h3 className='center-text gr-padding-10'>{header}</h3>
             <p>{description}</p>
@@ -39,7 +39,7 @@ const Product = ({
                 <div className='gr-4 gr-12-m'>
                     <img className='responsive' src={it.url_for(`images/pages/trade-explanation/ja/${image_1}.svg`)} />
                 </div>
-                <div className='gr-12-m gr-padding-10'></div>
+                <div className='gr-12-m gr-padding-10' />
                 <div className='gr-4 gr-12-m'>
                     <img className='responsive' src={it.url_for(`images/pages/trade-explanation/ja/${image_2}.svg`)} />
                 </div>
@@ -55,7 +55,7 @@ const Home = () => {
     return (
         <React.Fragment>
             <div className='relative'>
-                <div id='banner'></div>
+                <div id='banner' />
                 <div className='container gr-padding-30'>
                     <div className='gr-padding-30'>
                         <h1 className='center-text gr-padding-20'>{it.L('First-Class FX Binary Options Trading Platform')}</h1>
@@ -70,15 +70,21 @@ const Home = () => {
                         <div className='gr-6 gr-12-p gr-12-m'>
                             <div className='gr-7 gr-8-m gr-centered gr-padding-30 gr-child'>
                                 <div className='gr-row'>
-                                    <a href='http://www.fsa.go.jp/index.html' target='_blank'
-                                       className='gr-4 gr-no-gutter' rel='noopener noreferrer'>
-                                        <img className='responsive'
-                                             src={it.url_for('images/pages/regulation/fsa-logo.png')} />
+                                    <a
+                                        href='http://www.fsa.go.jp/index.html'
+                                        target='_blank'
+                                        className='gr-4 gr-no-gutter'
+                                        rel='noopener noreferrer'
+                                    >
+                                        <img className='responsive' src={it.url_for('images/pages/regulation/fsa-logo.png')} />
                                     </a>
-                                    <a href='http://www.ffaj.or.jp/index.html' target='_blank'
-                                       className='gr-8 gr-no-gutter' rel='noopener noreferrer'>
-                                        <img className='responsive'
-                                             src={it.url_for('images/pages/regulation/binarykk-logo.gif')} />
+                                    <a
+                                        href='http://www.ffaj.or.jp/index.html'
+                                        target='_blank'
+                                        className='gr-8 gr-no-gutter'
+                                        rel='noopener noreferrer'
+                                    >
+                                        <img className='responsive' src={it.url_for('images/pages/regulation/binarykk-logo.gif')} />
                                     </a>
                                 </div>
                                 <div className='gr-padding-20 gr-child'>
@@ -110,12 +116,16 @@ const Home = () => {
             <div className='container gr-padding-10'>
                 <h2 className='center-text gr-padding-10'>{it.L('A leading innovator of Binary Options trading for over 15 Years')}</h2>
                 <div className='gr-row'>
-                    <FillBox className='box' padding='5' center align_left
-                             text={it.L('Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!')} />
+                    <FillBox
+                        className='box'
+                        padding='5'
+                        center
+                        align_left
+                        text={it.L('Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!')}
+                    />
 
                     <div className='gr-5 gr-centered gr-6-p gr-8-m gr-padding-30'>
-                        <img className='gr-11 gr-12-p gr-12-m gr-centered'
-                             src={it.url_for('images/pages/home-jp/currencies.svg')} />
+                        <img className='gr-11 gr-12-p gr-12-m gr-centered' src={it.url_for('images/pages/home-jp/currencies.svg')} />
                     </div>
                 </div>
 
@@ -130,8 +140,7 @@ const Home = () => {
             <div className='container gr-padding-10 center-text'>
                 <div className='gr-row gr-row-align-center'>
                     <div className='align-self-center gr-gutter-right'>
-                        <img className='go-left disabled'
-                             src={it.url_for('images/pages/home-jp/icons/left_disabled.svg')} />
+                        <img className='go-left disabled' src={it.url_for('images/pages/home-jp/icons/left_disabled.svg')} />
                     </div>
                     <div className='no-scroll'>
                         <ul id='product_wrapper'>

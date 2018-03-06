@@ -5,10 +5,9 @@ const GetCurrency = (() => {
     const getCurrenciesOfOtherAccounts = () => {
         const all_loginids     = Client.getAllLoginids();
         const other_currencies = [];
-        const is_ico_only      = Client.get('is_ico_only');
         all_loginids.forEach((loginid) => {
             // if it's not current client or virtual client, consider the currency
-            if (Client.get('loginid') !== loginid && Client.getAccountType(loginid) !== 'virtual' && (!is_ico_only || Client.get('is_ico_only', loginid))) {
+            if (Client.get('loginid') !== loginid && Client.getAccountType(loginid) !== 'virtual') {
                 const currency = Client.get('currency', loginid);
                 if (currency) {
                     other_currencies.push(currency);
@@ -49,12 +48,6 @@ const GetCurrency = (() => {
                   currency_values.other_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0);
         const can_open_crypto  = available_crypto.length;
 
-        let currencies = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
-        // allow ico only accounts to choose crypto even though legal allowed currencies doesn't include them
-        if (Client.get('is_ico_only') && can_open_crypto) {
-            currencies = currencies.concat(available_crypto);
-        }
-
         let currencies_to_show = [];
         // only allow client to open more sub accounts if the last currency is not to be reserved for master account
         if ((client_currency && (can_open_crypto || !currency_values.has_fiat)) ||
@@ -63,7 +56,7 @@ const GetCurrency = (() => {
             // else show all
             currencies_to_show =
                 currency_values.has_fiat || (!is_crypto && client_currency) ?
-                    currency_values.cryptocurrencies : currencies;
+                    currency_values.cryptocurrencies : Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
             // remove client's currency and sub account currencies from list of currencies to show
             currencies_to_show = currencies_to_show.filter(c =>
                 currency_values.other_currencies.concat(client_currency).indexOf(c) < 0);

@@ -15,7 +15,7 @@ const Statement = (() => {
         const payout     = parseFloat(statement.payout);
         const amount     = parseFloat(statement.amount);
         const balance    = parseFloat(statement.balance_after);
-        const is_ico_bid = /binaryico/i.test(statement.shortcode);
+        const is_ico_bid = /binaryico/i.test(statement.shortcode); // TODO: remove ico exception when all ico contracts are removed
 
         let action = toTitleCase(statement.action_type);
         if (is_ico_bid) {

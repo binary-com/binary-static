@@ -523,6 +523,10 @@ li strong.margin-right {
     margin-right: 5px;
 }
 
+[data-show]:not(.data-show-visible) {
+    display: none !important;
+}
+
 .button-white {
     cursor: pointer;
     margin-bottom: 0.5em;
@@ -557,6 +561,10 @@ li strong.margin-right {
     .circle {
         padding: 7px 5px !important;
     }
+}
+
+.no-capitalize > a {
+    text-transform: none !important;
 }
 
 label + input {

@@ -7,11 +7,11 @@ const LanguageUl = ({ type, color }) => {
     return (
         <ul id={id}>
             <li>
-                <span className={`world ${world_color}`}></span>
+                <span className={`world ${world_color}`} />
                 <div className='language-wrapper'>
-                    <span className='language'></span>
+                    <span className='language' />
                 </div>
-                <span className='nav-caret'></span>
+                <span className='nav-caret' />
             </li>
         </ul>
     );
@@ -19,11 +19,11 @@ const LanguageUl = ({ type, color }) => {
 const Account = () => (
     <a href='javascript:;'>
         <div className='main-account'>
-            <div className='account-type nowrap'></div>
-            <div className='account-id'></div>
+            <div className='account-type nowrap' />
+            <div className='account-id' />
             <div className='topMenuBalance'>0</div>
         </div>
-        <div className='nav-caret'></div>
+        <div className='nav-caret' />
     </a>
 );
 
@@ -35,11 +35,11 @@ const Topbar = () => (
                     <span className='gr-hide-m invisible' id='virtual-wrapper'>
                         <span id='virtual-text'>{it.L('You\'re using a Virtual Account.')}</span>
                     </span>
-                    <a className='pulser invisible'></a>
+                    <a className='pulser invisible' />
                 </div>
                 <div className='gr-6 gr-7-t gr-12-p gr-12-m' id='topbar-info'>
                     <div className='gr-row'>
-                        <div className='gr-5 gr-6-m no-underline nowrap' id='gmt-clock' data-balloon-pos='down'></div>
+                        <div className='gr-5 gr-6-m no-underline nowrap' id='gmt-clock' data-balloon-pos='down' />
                         <div className='gr-2 gr-hide-m' id='contact-us'>
                             <a href={it.url_for('contact')}>{it.L('Contact Us')}</a>
                         </div>
@@ -68,10 +68,10 @@ const Header = () => (
                             <a id='logo' href='javascript:;' className='gr-11'>
                                 <div className='gr-row logo-parent'>
                                     <div className='gr-3 gr-12-m gr-12-p gr-no-gutter logo'>
-                                        <div></div>
+                                        <div />
                                     </div>
                                     <div className='gr-9 gr-hide-m gr-hide-p binary-logo-text'>
-                                        <div></div>
+                                        <div />
                                     </div>
                                 </div>
                             </a>
@@ -96,7 +96,18 @@ const Header = () => (
 
                                         // Logged in
                                         // General
-                                        { text: it.L('Trade'),        href: it.url_for('trading'),             className: 'ja-hide ico-only-hide client_logged_in invisible' },
+                                        {
+                                            type     : 'nested',
+                                            text     : it.L('Trade'),
+                                            href     : 'javascript:;',
+                                            className: 'ja-hide ico-only-hide client_logged_in nav-dropdown-toggle invisible',
+                                            subitems : [
+                                                { text: it.L('SmartTrader'),  href: it.url_for('trading'),          className: 'no-capitalize' },
+                                                { text: it.L('WebTrader'),    href: 'https://webtrader.binary.com', target: '_blank' },
+                                                { text: it.L('Binary Bot'),   href: 'https://bot.binary.com',       target: '_blank' },
+                                                { text: it.L('MetaTrader 5'), href: it.url_for('user/metatrader') },
+                                            ],
+                                        },
                                         { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),    className: 'ico-only-hide client_logged_in invisible' },
                                         { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'), className: 'ico-only-hide client_logged_in invisible' },
                                         { text: it.L('Statement'),    href: it.url_for('user/statementws'),    className: 'client_logged_in invisible' },
@@ -137,7 +148,7 @@ const Header = () => (
                                     <li className='account'>
                                         <Account />
                                         <ul>
-                                            <div className='login-id-list'></div>
+                                            <div className='login-id-list' />
                                             <a className='link ja-hide invisible' id='user_menu_metatrader' href={it.url_for('user/metatrader')}>
                                                 <li className='topMenuMetaTrader'>{it.L('MetaTrader')}</li>
                                             </a>
@@ -147,7 +158,7 @@ const Header = () => (
                                             <a className='link invisible' id='user_menu_account_transfer' href={it.url_for('cashier/account_transfer')}>
                                                 <li>{it.L('Transfer Between Accounts')}</li>
                                             </a>
-                                            <div className='separator-line-thin-gray'></div>
+                                            <div className='separator-line-thin-gray' />
                                             <a href='javascript:;' id='btn_logout' className='logout'>
                                                 <li>{it.L('Sign out')}</li>
                                             </a>
