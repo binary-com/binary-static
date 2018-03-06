@@ -1,12 +1,15 @@
 const QueryString = (() => {
-    const queryStringToObject = (query_string) => query_string
-        .slice(1)
-        .split('&')
-        .map(pair => pair.split('='))
-        .reduce((obj, [ key, val ]) => {
-            obj[key] = window.decodeURI(val);
-            return obj;
-        }, {});
+    const queryStringToObject = (query_string) => {
+        if (query_string === '') return {};
+        return query_string
+            .slice(1)
+            .split('&')
+            .map(pair => pair.split('='))
+            .reduce((obj, [ key, val ]) => {
+                obj[key] = window.decodeURI(val);
+                return obj;
+            }, {});
+    };
 
     const removeParamFromQueryString = (query_string, removal_key) => {
         const query_obj = queryStringToObject(query_string);
