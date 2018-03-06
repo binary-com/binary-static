@@ -90,11 +90,10 @@ const Client = (() => {
 
     const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
         const this_type   = getAccountType(loginid);
-        const is_ico_only = get('is_ico_only', loginid);
         return ((
             (type === 'virtual' && this_type === 'virtual') ||
             (type === 'real'    && this_type !== 'virtual') ||
-            type === this_type) && !is_ico_only &&              // Account shouldn't be ICO_ONLY.
+            type === this_type) &&
             (only_enabled ? !get('is_disabled', loginid) : true));
     };
 
@@ -134,6 +133,20 @@ const Client = (() => {
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
+        updateAccountList(authorize.account_list);
+    };
+
+    const updateAccountList = (account_list) => {
+        account_list.forEach((account) => {
+            set('excluded_until', account.excluded_until || '', account.loginid);
+            Object.keys(account).forEach((param) => {
+                const param_to_set = param === 'country' ? 'residence' : param;
+                const value_to_set = typeof account[param] === 'undefined' ? '' : account[param];
+                if (param_to_set !== 'loginid') {
+                    set(param_to_set, value_to_set, account.loginid);
+                }
+            });
+        });
     };
 
     const shouldAcceptTnc = () => {
@@ -175,8 +188,6 @@ const Client = (() => {
         is_jp ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
     );
 
-    const shouldShowICO = (el, is_ico_only) => (!/ico-only-hide/.test(el.classList) || !is_ico_only);
-
     const activateByClientType = (section_id) => {
         const topbar_class = getElementById('topbar').classList;
         const el_section   = section_id ? getElementById(section_id) : document.body;
@@ -190,17 +201,10 @@ const Client = (() => {
                 client_logged_in.classList.add('gr-centered');
 
                 // we need to call jpClient after authorize response so we know client's residence
-                const is_jp       = jpClient();
-                const is_ico_only = !is_jp && get('is_ico_only');
-                if (is_ico_only) {
-                    applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
-                }
-                if (!is_jp && (is_ico_only || Client.get('landing_company_shortcode') === 'costarica')) {
-                    applyToAllElements('.ico-only-show', (el) => { el.setVisibility(1); });
-                }
+                const is_jp = jpClient();
 
                 applyToAllElements('.client_logged_in', (el) => {
-                    if (shouldShowJP(el, is_jp) && shouldShowICO(el, is_ico_only)) {
+                    if (shouldShowJP(el, is_jp)) {
                         el.setVisibility(1);
                     }
                 });
@@ -211,7 +215,7 @@ const Client = (() => {
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
                     applyToAllElements('.client_real', (el) => {
-                        if (shouldShowJP(el, is_jp) && shouldShowICO(el, is_ico_only)) {
+                        if (shouldShowJP(el, is_jp)) {
                             el.setVisibility(1);
                         }
                     }, '', el_section);
@@ -334,10 +338,7 @@ const Client = (() => {
         };
     };
 
-    const getLandingCompanyValue = (loginid, landing_company, key, is_ico_only) => {
-        if (is_ico_only) {
-            return 'Binary (C.R.) S.A.';
-        }
+    const getLandingCompanyValue = (loginid, landing_company, key) => {
         let landing_company_object;
         if (loginid.financial || isAccountOfType('financial', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
@@ -398,10 +399,6 @@ const Client = (() => {
 
     const hasCostaricaAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
-    const canOpenICO = () =>
-        /malta|iom/.test(State.getResponse('landing_company.financial_company.shortcode')) ||
-        /malta|iom/.test(State.getResponse('landing_company.gaming_company.shortcode'));
-
     const canRequestProfessional = () => {
         const residence = get('residence');
         /* Austria, Italy, Belgium, Latvia, Bulgaria,	Lithuania, Croatia, Luxembourg, Cyprus, Malta, Czech Republic,	Netherlands, Denmark, Poland, Estonia, Portugal, Finland, Romania, France, Slovakia, Germany, Slovenia, Greece, Spain, Hungary, Sweden, Ireland, United Kingdom, Australia, New Zealand, Singapore, Canada, Switzerland */
@@ -410,15 +407,7 @@ const Client = (() => {
 
     };
 
-    const defaultRedirectUrl = () => {
-        let redirect_url = 'trading';
-        if (jpClient()) {
-            redirect_url = 'multi_barriers_trading';
-        } else if (get('is_ico_only')) {
-            redirect_url = 'user/ico-subscribe';
-        }
-        return urlFor(redirect_url);
-    };
+    const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');
 
     return {
         init,
@@ -448,7 +437,6 @@ const Client = (() => {
         getLandingCompanyValue,
         canTransferFunds,
         hasCostaricaAccount,
-        canOpenICO,
         canRequestProfessional,
         defaultRedirectUrl,
     };

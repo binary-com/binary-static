@@ -28,11 +28,11 @@ const AccountOpening = (() => {
         return 0;
     };
 
-    const populateForm = (form_id, getValidations, is_financial, is_ico_only) => {
+    const populateForm = (form_id, getValidations, is_financial) => {
         getResidence(form_id, getValidations);
         generateBirthDate();
         if (Client.canRequestProfessional()) {
-            professionalClient.init(is_financial, false, is_ico_only);
+            professionalClient.init(is_financial, false);
         }
         if (Client.get('residence') !== 'jp') {
             Geocoder.init(form_id);

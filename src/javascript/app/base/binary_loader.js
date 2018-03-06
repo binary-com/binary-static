@@ -7,11 +7,11 @@ const Login               = require('./login');
 const NetworkMonitor      = require('./network_monitor');
 const Page                = require('./page');
 const BinarySocket        = require('./socket');
+const ContentVisibility   = require('../common/content_visibility');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const urlFor              = require('../../_common/url').urlFor;
-const applyToAllElements  = require('../../_common/utility').applyToAllElements;
 const createElement       = require('../../_common/utility').createElement;
 
 const BinaryLoader = (() => {
@@ -55,29 +55,6 @@ const BinaryLoader = (() => {
         Page.onLoad();
         GTM.pushDataLayer();
 
-        BinarySocket.wait('website_status').then((response) => {
-            // eu countries code
-            if (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(response.website_status.clients_country)) {
-                applyToAllElements('.eu-show', (el) => { el.setVisibility(1); });
-                applyToAllElements('.eu-hide', (el) => { el.setVisibility(0); });
-                if (/get_started_tabs=mt5/.test(window.location.href)) {
-                    BinaryPjax.load(urlFor('get-started'));
-                }
-            } else {
-                applyToAllElements('.eu-hide', (el) => { el.setVisibility(1); });
-            }
-        });
-
-        if (Client.isLoggedIn()) {
-            if (!Client.hasCostaricaAccount()) {
-                applyToAllElements('.only-cr', (el) => { el.setVisibility(0); });
-                // Fix issue with tabs.
-                if (/get_started_tabs=lookback/.test(window.location.href)) {
-                    BinaryPjax.load(urlFor('get-started'));
-                }
-            }
-        }
-
         const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {
             loadHandler(pages_config[this_page]);
@@ -85,6 +62,7 @@ const BinaryLoader = (() => {
             loadHandler(pages_config['get-started']);
         }
 
+        ContentVisibility.init();
     };
 
     const error_messages = {
