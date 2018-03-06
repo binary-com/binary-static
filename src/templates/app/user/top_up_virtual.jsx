@@ -8,11 +8,11 @@ const TopUpVirtual = () => (
             <div className='loading'><Loading /></div>
             <div id='topup_virtual' className='center-text'>
                 <div id='viewError' className='viewItem invisible'>
-                    <p className='notice-msg'></p>
+                    <p className='notice-msg' />
                 </div>
 
                 <div id='viewSuccess' className='viewItem invisible'>
-                    <p className='success-msg'></p>
+                    <p className='success-msg' />
                     <a className='button' href={it.url_for('user/portfoliows')}>
                         <span>{it.L('View Updated Portfolio')}</span>
                     </a>

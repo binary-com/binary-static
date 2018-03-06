@@ -1,6 +1,7 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
+import { Asterisk, ProductHint } from '../../_common/components/product_hint.jsx';
 
 const GetStartedSection = ({ link, hash, image, header, text }) => {
     const href = `${it.url_for(link)}#${hash}`;
@@ -34,14 +35,18 @@ const GetStartedSectionWrapper = ({ section_id, section_header, section_descript
 
 const Index = () => (
     <div className='static_full get-started'>
-        <h1 className='center-text eu-hide'>{it.L('Get Started')}</h1>
+        <h1 className='center-text'>{it.L('Get Started')}<Asterisk /></h1>
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
-            <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper eu-hide' items={[
-                { id: 'binary',   text: it.L('Binary Options') },
-                { id: 'lookback', text: it.L('Lookbacks'), className: 'only-cr' },
-                { id: 'mt5',      text: it.L('MetaTrader 5') },
-                { id: 'get_started_tabs_selector', className: 'tab-selector' },
-            ]} />
+            <TabsSubtabs
+                id='get_started_tabs'
+                className='gr-padding-20 gr-parent tab-selector-wrapper'
+                items={[
+                    { id: 'binary',   text: it.L('Binary Options') },
+                    { id: 'lookback', text: it.L('Lookbacks'), dataShow: 'default, costarica' },
+                    { id: 'mt5',      text: it.L('MetaTrader 5'), dataShow: 'mtcompany' },
+                    { id: 'get_started_tabs_selector', className: 'tab-selector' },
+                ]}
+            />
             <div className='tab-content'>
                 <TabContentContainer>
                     <TabContent id='binary'>
@@ -136,25 +141,29 @@ const Index = () => (
                                 <GetStartedSection
                                     link='get-started/cryptocurrencies'
                                     hash='what-crypto-trading'
-                                    image='mt5/what-crypto-trading' header={it.L('What is cryptocurrency trading')}
+                                    image='mt5/what-crypto-trading'
+                                    header={it.L('What is cryptocurrency trading')}
                                     text={it.L('Speculate on the price movement of cryptocurrencies such as Bitcoin, Ethereum, and Litecoin without owning them.')}
                                 />
                                 <GetStartedSection
                                     link='get-started/cryptocurrencies'
                                     hash='how-trade-crypto'
-                                    image='mt5/how-trade-crypto' header={it.L('How to trade cryptocurrencies')}
+                                    image='mt5/how-trade-crypto'
+                                    header={it.L('How to trade cryptocurrencies')}
                                     text={it.L('Trade popular cryptocurrencies on our MT5 platform with leverage and variable spreads. No wallets are required to start trading.')}
                                 />
                                 <GetStartedSection
                                     link='get-started/cryptocurrencies'
                                     hash='margin-policy'
-                                    image='mt5/margin-policy' header={it.L('Cryptocurrency margin policy')}
+                                    image='mt5/margin-policy'
+                                    header={it.L('Cryptocurrency margin policy')}
                                     text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our cryptocurrency pairs.')}
                                 />
                                 <GetStartedSection
                                     link='get-started/cryptocurrencies'
                                     hash='contract-specification'
-                                    image='mt5/contract-specification' header={it.L('Cryptocurrency contract specifications')}
+                                    image='mt5/contract-specification'
+                                    header={it.L('Cryptocurrency contract specifications')}
                                     text={it.L('Find out more about the costs and details of every cryptocurrency pair we offer.')}
                                 />
                             </div>
@@ -218,13 +227,15 @@ const Index = () => (
                                 <GetStartedSection
                                     link='get-started/metals'
                                     hash='margin-policy'
-                                    image='mt5/margin-policy' header={it.L('Metals margin policy')}
+                                    image='mt5/margin-policy'
+                                    header={it.L('Metals margin policy')}
                                     text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our metal pairs.')}
                                 />
                                 <GetStartedSection
                                     link='get-started/metals'
                                     hash='contract-specification'
-                                    image='mt5/contract-specification' header={it.L('Metals contract specifications')}
+                                    image='mt5/contract-specification'
+                                    header={it.L('Metals contract specifications')}
                                     text={it.L('Find out more about the costs and details of every metal pair we offer.')}
                                 />
                             </div>
@@ -270,6 +281,7 @@ const Index = () => (
                 </TabContentContainer>
             </div>
         </TabContainer>
+        <ProductHint />
     </div>
 );
 

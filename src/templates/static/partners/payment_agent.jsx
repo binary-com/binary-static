@@ -3,7 +3,7 @@ import { List } from '../../_common/components/elements.jsx';
 
 const Section = ({ id, header, children }) => (
     <div className='section'>
-        <a id={id}></a>
+        <a id={id} />
         <h1>{header}</h1>
         {children}
     </div>
@@ -14,13 +14,16 @@ const PaymentAgent = () => (
         <div className='payment-agent static_full gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>
                 <div className='sidebar'>
-                    <List id='sidebar-nav' items={[
-                        { href: '#payment-agents',              text: it.L('Payment Agents'), className: 'selected' },
-                        { href: '#why-choose-payment-agents',   text: it.L('Why do Clients choose to use Payment Agents?') },
-                        { href: '#who-can-apply-payment-agent', text: it.L('Who can apply to be a Payment Agent?') },
-                        { href: '#benefits-of-payment-agent',   text: it.L('Benefits of being a Payment Agent') },
-                        { href: '#next-steps',                  text: it.L('How does it work?') },
-                    ]} />
+                    <List
+                        id='sidebar-nav'
+                        items={[
+                            { href: '#payment-agents',              text: it.L('Payment Agents'), className: 'selected' },
+                            { href: '#why-choose-payment-agents',   text: it.L('Why do Clients choose to use Payment Agents?') },
+                            { href: '#who-can-apply-payment-agent', text: it.L('Who can apply to be a Payment Agent?') },
+                            { href: '#benefits-of-payment-agent',   text: it.L('Benefits of being a Payment Agent') },
+                            { href: '#next-steps',                  text: it.L('How does it work?') },
+                        ]}
+                    />
                     <div className='sidebar-button'><a href={`mailto:${it.affiliate_email}`}>{it.L('Contact Us')}</a></div>
                 </div>
             </div>

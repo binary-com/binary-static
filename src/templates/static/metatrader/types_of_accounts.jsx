@@ -19,9 +19,9 @@ const Box = ({ image, text, title }) => (
 
 const FootNote = ({ number, texts, title }) => (
     <div className='gr-padding-10'>
-        <a name={`note-${number}`}></a>
+        <a name={`note-${number}`} />
         <h3 className='secondary-color'>{`${number}. ${title}`}</h3>
-        <div className='separator-line border-bottom'></div>
+        <div className='separator-line border-bottom' />
         { texts.map((text, idx) => (
             <p key={idx}>{text}</p>
         ))}
@@ -56,7 +56,7 @@ const TypesOfAccounts = () => (
             text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
         />
 
-        <div className='gr-padding-30'></div>
+        <div className='gr-padding-30' />
 
         <h2 className='center-text'>{it.L('Account comparison')}</h2>
         <div className='gr-padding-10'>
@@ -85,7 +85,7 @@ const TypesOfAccounts = () => (
             />
         </div>
 
-        <div className='gr-padding-10'></div>
+        <div className='gr-padding-10' />
 
         <FootNote
             number={1}

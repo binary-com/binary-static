@@ -3,6 +3,7 @@ const BinaryPjax          = require('../../../../base/binary_pjax');
 const Client              = require('../../../../base/client');
 const Header              = require('../../../../base/header');
 const BinarySocket        = require('../../../../base/socket');
+const Dialog              = require('../../../../common/attach_dom/dialog');
 const jpClient            = require('../../../../common/country_base').jpClient;
 const Currency            = require('../../../../common/currency');
 const FormManager         = require('../../../../common/form_manager');
@@ -66,6 +67,14 @@ const SelfExclusion = (() => {
                 self_exclusion_data = response.get_self_exclusion;
                 $.each(self_exclusion_data, (key, value) => {
                     fields[key] = value.toString();
+                    if (key === 'timeout_until') {
+                        const timeout = moment.unix(value);
+                        const date = timeout.format('DD MMM, YYYY');
+                        const time = timeout.format('HH:mm');
+                        $form.find(timeout_date_id).val(date);
+                        $form.find(timeout_time_id).val(time);
+                        return;
+                    }
                     $form.find(`#${key}`).val(value);
                 });
                 bindValidation();
@@ -181,21 +190,26 @@ const SelfExclusion = (() => {
         });
     };
 
-    const additionalCheck = (data) => {
-        const is_changed = Object.keys(data).some(key => ( // using != in next line since response types is inconsistent
-            key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] != data[key]) // eslint-disable-line eqeqeq
-        ));
-        if (!is_changed) {
-            showFormMessage('You did not change anything.', false);
-        }
+    const additionalCheck = data => (
+        new Promise((resolve) => {
+            const is_changed = Object.keys(data).some(key => ( // using != in next line since response types is inconsistent
+                key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] != data[key]) // eslint-disable-line eqeqeq
+            ));
+            if (!is_changed) {
+                showFormMessage('You did not change anything.', false);
+                resolve(false);
+            }
 
-        let is_confirmed = true;
-        if ('timeout_until' in data || 'exclude_until' in data) {
-            is_confirmed = window.confirm(localize('When you click "OK" you will be excluded from trading on the site until the selected date.'));
-        }
-
-        return is_changed && is_confirmed;
-    };
+            if ('timeout_until' in data || 'exclude_until' in data) {
+                Dialog.confirm({
+                    id     : 'timeout_until_dialog',
+                    message: 'When you click "OK" you will be excluded from trading on the site until the selected date.',
+                }).then((response) => resolve(response));
+            } else {
+                resolve(true);
+            }
+        })
+    );
 
     const setExclusionResponse = (response) => {
         if (response.error) {
@@ -213,6 +227,13 @@ const SelfExclusion = (() => {
         }
         showFormMessage('Your changes have been updated.', true);
         Client.set('session_start', moment().unix()); // used to handle session duration limit
+        const {exclude_until, timeout_until} = response.echo_req;
+        if (exclude_until || timeout_until) {
+            Client.set('excluded_until',
+                exclude_until ? moment(exclude_until).unix()
+                : timeout_until
+            );
+        }
         BinarySocket.send({ get_account_status: 1 }).then(() => {
             Header.displayAccountStatus();
             if (set_30day_turnover) {
