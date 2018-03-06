@@ -4,6 +4,7 @@ const GTM                  = require('./gtm');
 const Header               = require('./header');
 const Login                = require('./login');
 const BinarySocket         = require('./socket');
+const Dialog               = require('../common/attach_dom/dialog');
 const showPopup            = require('../common/attach_dom/popup');
 const setCurrencies        = require('../common/currency').setCurrencies;
 const SessionDurationLimit = require('../common/session_duration_limit');
@@ -48,7 +49,7 @@ const BinarySocketGeneral = (() => {
                     const is_active_tab = sessionStorage.getItem('active_tab') === '1';
                     if (getPropertyValue(response, ['error', 'code']) === 'SelfExclusion' && is_active_tab) {
                         sessionStorage.removeItem('active_tab');
-                        window.alert(response.error.message);
+                        Dialog.alert({ id: 'authorize_error_alert', message: response.error.message });
                     }
                     Client.sendLogoutRequest(is_active_tab);
                 } else if (!Login.isLoginPages() && !/authorize/.test(State.get('skip_response'))) {
