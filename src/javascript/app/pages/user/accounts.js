@@ -69,12 +69,15 @@ const Accounts = (() => {
 
     const populateExistingAccounts = () => {
         const all_login_ids = Client.getAllLoginids();
+        // Populate active loginids first.
         all_login_ids
             .filter(loginid => !Client.get('is_disabled', loginid) && !Client.get('excluded_until', loginid))
             .sort((a, b) => a > b)
             .forEach((loginid) => {
                 appendExistingAccounts(loginid);
             });
+
+        // Populate disabled or self excluded loginids.
         all_login_ids
             .filter(loginid => Client.get('is_disabled', loginid) || Client.get('excluded_until', loginid))
             .sort((a, b) => a > b)
