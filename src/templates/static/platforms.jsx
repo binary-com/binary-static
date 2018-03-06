@@ -45,7 +45,7 @@ const Platform = () => (
                 <Platforms
                     image_class='gr-12 gr-7-p gr-10-m'
                     image='trading-page'
-                    header={it.website_name}
+                    header='SmartTrader'
                     description={it.L('Premier binary options trading platform')}
                     text={it.L('Trade in the world’s financial markets with a simple and user-friendly online platform.')}
                     url={it.url_for('trading')}
@@ -75,12 +75,12 @@ const Platform = () => (
                 <Platforms
                     image_class='gr-8 gr-5-p gr-7-m'
                     image='webtrader'
-                    header={it.L('Binary Webtrader')}
+                    header={it.L('Binary WebTrader')}
                     description={it.L('Advanced binary options trading interface')}
                     text={it.L('Monitor the movements of your favourite assets and markets at the same time.')}
                     url='https://webtrader.binary.com'
                     target='_blank'
-                    button_text={it.L('Try Webtrader')}
+                    button_text={it.L('Try WebTrader')}
                 />
             </div>
             <div className='gr-row gr-padding-30'>
