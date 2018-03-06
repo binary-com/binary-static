@@ -13,7 +13,7 @@ const NetworkMonitor = (() => {
     const status_config = {
         online  : { class: 'online',  tooltip: localize('Online') },
         offline : { class: 'offline', tooltip: localize('Offline') },
-        blinking: { class: 'pulser',  tooltip: localize('Connecting') },
+        blinking: { class: 'pulser',  tooltip: localize('Connecting to server') },
     };
     const pendings = {};
     const pending_keys = {

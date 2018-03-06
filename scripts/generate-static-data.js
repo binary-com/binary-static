@@ -17,7 +17,7 @@ const texts = [
     'Network status',
     'Online',
     'Offline',
-    'Connecting',
+    'Connecting to server',
 
     // account drop down
     'Virtual Account',
