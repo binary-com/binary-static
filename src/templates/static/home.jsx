@@ -2,7 +2,6 @@ import React from 'react';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
 import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
-import { Asterisk, ProductHint } from  '../_common/components/product_hint.jsx';
 
 const PaymentLogo = ({ items }) => items.map((item, inx) => (
     <div key={inx} className='gr-2 gr-4-m center-text' data-show={item.dataShow}>
@@ -188,7 +187,7 @@ const Home = () => {
             </div>
 
             <div className='container gr-padding-30'>
-                <h2 className='center-text'>{it.L('Diverse platforms and account types')}<Asterisk /></h2>
+                <h2 className='center-text'>{it.L('Diverse platforms and account types')}</h2>
                 <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
                     <TabsSubtabs
                         id='account_tabs'
@@ -247,7 +246,7 @@ const Home = () => {
             </div>
 
             <div id='market_tabs_container' className='container'>
-                <h2 className='center-text gr-padding-10'>{it.L('Trade in the world\'s financial markets')}<Asterisk /></h2>
+                <h2 className='center-text gr-padding-10'>{it.L('Trade in the world\'s financial markets')}</h2>
                 <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
                     <TabsSubtabs
                         id='market_tabs'
@@ -369,7 +368,7 @@ const Home = () => {
 
                 <div id='payment_methods'>
                     <div className='gr-12 gr-padding-20'>
-                        <h2 className='center-text'>{it.L('Payment methods')}<Asterisk /></h2>
+                        <h2 className='center-text'>{it.L('Payment methods')}</h2>
                         <p className='center-text'>{it.L('We support hundreds of deposit and withdrawal options, including Bitcoin.')}</p>
 
                         <div className='gr-12 gr-padding-30'>
@@ -401,8 +400,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
-                <ProductHint />
             </div>
         </React.Fragment>
     );
