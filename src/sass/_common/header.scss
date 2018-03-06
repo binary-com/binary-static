@@ -48,6 +48,9 @@ body #topbar, .landing_page-content {
         max-width: 32px;
     }
     #menu-top {
+        &, * {
+            transition: unset;
+        }
         a:hover {
             opacity: 0.75;
         }
