@@ -38,7 +38,15 @@ const SocketCache = (() => {
     const set = (response) => {
         const msg_type = response.msg_type;
 
-        if (!config[msg_type] || response.error || !response[msg_type]) return;
+        if (!config[msg_type]) return;
+
+        // prevent unwanted page behaviour
+        // if a cached version already exists but it gives an error after being called for updating the cache
+        if ((response.error || !response[msg_type]) && get(response.echo_req)) {
+            clear();
+            window.location.reload();
+            return;
+        }
 
         const key      = makeKey(response.echo_req, msg_type);
         const expires  = moment().add(config[msg_type].expire, 'm').valueOf();
@@ -87,11 +95,17 @@ const SocketCache = (() => {
         return key;
     };
 
-    const remove = (key) => {
-        if (key in data_obj) {
+    const remove = (key, should_match_all) => {
+        if (should_match_all) {
+            Object.keys(data_obj).forEach((data_key) => {
+                if (data_key.indexOf(key) !== -1) {
+                    delete data_obj[data_key];
+                }
+            });
+        } else if (key in data_obj) {
             delete data_obj[key];
-            LocalStore.setObject(storage_key, data_obj);
         }
+        LocalStore.setObject(storage_key, data_obj);
     };
 
     const clear = () => {
@@ -102,6 +116,7 @@ const SocketCache = (() => {
     return {
         set,
         get,
+        remove,
         clear,
     };
 })();

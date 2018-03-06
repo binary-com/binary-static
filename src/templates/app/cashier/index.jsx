@@ -27,7 +27,7 @@ const DepositWithdraw = ({ ja_hide, ja_show, id, show_upgrade }) => {
             </div>
             { show_upgrade &&
                 <div className='gr-padding-10 invisible upgrademessage'>
-                    <a className='button'></a>
+                    <a className='button' />
                 </div>
             }
         </div>
@@ -63,7 +63,7 @@ const Cashier = () => (
             </div>
         </div>
 
-        <div className='gr-padding-10 client_virtual invisible'></div>
+        <div className='gr-padding-10 client_virtual invisible' />
 
         <div className='gr-padding-10 table-body'>
             <h3 className='gr-padding-10'>
@@ -91,9 +91,9 @@ const Cashier = () => (
             </div>
         </div>
 
-        <div className='gr-padding-10'></div>
+        <div className='gr-padding-10' />
 
-        <div className='gr-padding-10 table-body ja-hide payment-agent invisible ico-only-hide' id='payment-agent-section'>
+        <div className='gr-padding-10 table-body ja-hide payment-agent invisible' id='payment-agent-section'>
             <h3 className='gr-padding-10'>{it.L('Payment Agent')}</h3>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>

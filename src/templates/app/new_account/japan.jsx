@@ -66,8 +66,6 @@ const Japan = () => (
 
                 <DateOfBirth />
 
-                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} />
-
                 <FormRow type='select' id='occupation' label={it.L('Occupation')}>
                     <option value=''>{it.L('Please select')}</option>
                     <option value='Office worker'>{it.L('Office worker')}</option>
@@ -245,7 +243,7 @@ const Japan = () => (
 
             <div className='center-text'>
                 <button className='button' type='submit'>{it.L('Open Account')}</button>
-                <p id='submit-message'></p>
+                <p id='submit-message' />
             </div>
         </form>
 

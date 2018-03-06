@@ -25,12 +25,12 @@ const Deposit = () => {
                     <Tbody trs={trs} />
                 </table>
                 <p>{it.L('{JAPAN ONLY}Please make sure you add your [_1] account ID to the Remitter\'s account name, or it will delay crediting the funds to your account:',it.website_name)}</p>
-                <p>{it.L('{JAPAN ONLY}Remitter\'s Name:')} <span id='name_id'></span></p>
+                <p>{it.L('{JAPAN ONLY}Remitter\'s Name:')} <span id='name_id' /></p>
                 <p>{it.L('{JAPAN ONLY}Please note we can only accept payments from your designated bank account and no other account in your name.')}</p>
                 <p>{it.L('{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support.')}</p>
                 <p>{it.L('{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000.')}</p>
                 <p>{it.L('{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account.')}</p>
-                </div>
+            </div>
         </div>
     );
 };
