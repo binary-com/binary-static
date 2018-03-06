@@ -63,7 +63,6 @@ const Page = (() => {
                 }
             });
             scrollToTop();
-            ScrollToAnchor.init();
         });
     };
 
@@ -99,6 +98,7 @@ const Page = (() => {
             Menu.init();
         }
         TrafficSource.setData();
+        ScrollToAnchor.init();
     };
 
     const recordAffiliateExposure = () => {
