@@ -67,7 +67,7 @@ const Metatrader = () => (
             <div className='static_full'>
                 <h1>{it.L('MetaTrader 5 dashboard')}</h1>
             </div>
-            <p id='page_msg' className='notice-msg center-text invisible'></p>
+            <p id='page_msg' className='notice-msg center-text invisible' />
             <div id='mt_loading'><Loading /></div>
             <div id='mt_account_management' className='gr-row invisible'>
                 <div id='mt_left_panel' className='gr-9 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
@@ -77,9 +77,9 @@ const Metatrader = () => (
                                 <div className='gr-row'>
                                     <div className='gr-grow'>
                                         <div id='account_selector'>
-                                            <h4 id='mt5_account'></h4>
+                                            <h4 id='mt5_account' />
                                             <div id='accounts_list'>
-                                                <div className='list'></div>
+                                                <div className='list' />
                                             </div>
                                         </div>
                                     </div>
@@ -92,22 +92,22 @@ const Metatrader = () => (
                                 <div className='acc-info has-account invisible'>
                                     <div className='gr-row gr-padding-10'>
                                         <div className='gr-3'>{it.L('MT5 Account:')}</div>
-                                        <div className='gr-grow' data='login'></div>
+                                        <div className='gr-grow' data='login' />
                                     </div>
                                     <div className='gr-row'>
                                         <div className='gr-3'>{it.L('Name:')}</div>
-                                        <div className='gr-grow' data='name'></div>
+                                        <div className='gr-grow' data='name' />
                                     </div>
                                     <div className='gr-row gr-padding-10 gr-hide mobile-balance'>
                                         <div className='gr-3'>{it.L('Balance:')}</div>
-                                        <div className='gr-gutter' data='balance'></div>
+                                        <div className='gr-gutter' data='balance' />
                                     </div>
                                 </div>
                             </div>
                             <div className='gr-adapt align-end gr-hide-m gr-hide-p'>
                                 <div className='acc-info has-account invisible'>
                                     <div>{it.L('Balance')}</div>
-                                    <div className='balance gr-padding-10' data='balance'></div>
+                                    <div className='balance gr-padding-10' data='balance' />
                                 </div>
                             </div>
                         </div>
@@ -116,7 +116,7 @@ const Metatrader = () => (
                     <div className='mt-panel'>
                         <div className='acc-actions'>
                             <span className='new-account gr-gutter invisible'>
-                                <span></span>
+                                <span />
                             </span>
                             <a href='javascript:;' className='act_cashier has-account center-text invisible'>
                                 <span>{it.L('Manage funds')}</span>
@@ -127,15 +127,15 @@ const Metatrader = () => (
                         </div>
                         <div className='fst-container mt-container'>
                             <div id='fst_action' className='invisible'>
-                                <p id='main_msg' className='notice-msg center-text invisible'></p>
-                                <div id='frm_action' className='invisible'></div>
+                                <p id='main_msg' className='notice-msg center-text invisible' />
+                                <div id='frm_action' className='invisible' />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id='mt_right_panel' className='gr-3 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-left gr-no-gutter-p gr-no-gutter-m'>
                     <div className='mt-panel'>
-                        <div id='account_desc' className='mt-container border-bottom'></div>
+                        <div id='account_desc' className='mt-container border-bottom' />
                         <div className='mt-container'>
                             <p>{it.L('MT5 trading platform links:')}</p>
                             <ul className='platforms'>
@@ -157,10 +157,10 @@ const Metatrader = () => (
                                 </li>
                                 <p className='badges'>
                                     <a href='https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>
-                                        <span className='app-store-badge'></span>
+                                        <span className='app-store-badge' />
                                     </a>
                                     <a href='https://download.mql5.com/cdn/mobile/mt5/android?server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>
-                                        <span className='google-play-badge'></span>
+                                        <span className='google-play-badge' />
                                     </a>
                                 </p>
                             </ul>
@@ -174,58 +174,75 @@ const Metatrader = () => (
                             <img src={it.url_for('images/pages/metatrader/dashboard/account.svg')} />
                         </div>
                         <div className='mt-balance invisible'>&nbsp;</div>
-                        <span className='mt-type'></span>
-                        <span className='mt-login'></span>
+                        <span className='mt-type' />
+                        <span className='mt-login' />
                     </div>
 
 
                     <div className='account-desc'>
-                        <AccountDesc title={it.L('Choose an account')}
-                            description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out.', it.website_name)} />
-                        <AccountDesc account_type={['vanuatu_standard']} title={it.L('Standard Account')}
+                        <AccountDesc
+                            title={it.L('Choose an account')}
+                            description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out.', it.website_name)}
+                        />
+                        <AccountDesc
+                            account_type={['vanuatu_standard']}
+                            title={it.L('Standard Account')}
                             description={it.L('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')}
                             items={[
                                 it.L('Leverage up to 1:500'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
-                            ]} />
-                        <AccountDesc account_type={['vanuatu_advanced']} title={it.L('Advanced Account')}
+                            ]}
+                        />
+                        <AccountDesc
+                            account_type={['vanuatu_advanced']}
+                            title={it.L('Advanced Account')}
                             description={it.L('Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
                                 it.L('Leverage up to 1:100'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
-                            ]} />
-                        <AccountDesc account_type={['costarica', 'malta']} title={it.L('Volatility Indices Account')}
+                            ]}
+                        />
+                        <AccountDesc
+                            account_type={['costarica', 'malta']}
+                            title={it.L('Volatility Indices Account')}
                             description={it.L('Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
                             items={[
                                 it.L('Leverage up to 1:500'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
-                            ]} />
+                            ]}
+                        />
                     </div>
 
                     <form id='frm_new_account'>
                         <div id='mv_new_account'>
                             <div id='view_1' className='center-text'>
                                 <div className='step-1'>
-                                    <TypeGroup title={it.L('Step 1: Choose demo or real account')} types={[
-                                        { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Practise your trading strategy with [_1] of virtual funds in a risk-free environment.', '$10,000') },
-                                        { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds and access to competitive trading conditions.') },
-                                    ]} />
+                                    <TypeGroup
+                                        title={it.L('Step 1: Choose demo or real account')}
+                                        types={[
+                                            { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Practise your trading strategy with [_1] of virtual funds in a risk-free environment.', '$10,000') },
+                                            { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds and access to competitive trading conditions.') },
+                                        ]}
+                                    />
                                 </div>
                                 <div className='step-2 invisible'>
-                                    <div className='separator-line gr-padding-10'></div>
-                                    <TypeGroup title={it.L('Step 2: Choose account type')} types={[
-                                        { type: 'template', desc: 'standard' },
-                                    ]}>
+                                    <div className='separator-line gr-padding-10' />
+                                    <TypeGroup
+                                        title={it.L('Step 2: Choose account type')}
+                                        types={[
+                                            { type: 'template', desc: 'standard' },
+                                        ]}
+                                    >
                                         <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
                                     </TypeGroup>
                                 </div>
-                                <p id='new_account_msg' className='notice-msg center-text invisible'></p>
+                                <p id='new_account_msg' className='notice-msg center-text invisible' />
                                 <div className='center-text'>
                                     <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
                                         <span>{it.L('Cancel')}</span>
@@ -286,8 +303,8 @@ const Metatrader = () => (
                                         <div className='gr-row'>
                                             <div className='gr-5'>
                                                 <img src={it.url_for('images/pages/metatrader/dashboard/binary_wallet.svg')} />
-                                                <div className='binary-account gr-padding-10'></div>
-                                                <div className='binary-balance gr-padding-10 gr-parent'></div>
+                                                <div className='binary-account gr-padding-10' />
+                                                <div className='binary-balance gr-padding-10 gr-parent' />
                                                 <a className='secondary-color hint' href={it.url_for('cashier')}>{it.L('Add funds')}</a>
                                             </div>
                                             <div className='gr-2 gr-padding-20'>
@@ -295,8 +312,8 @@ const Metatrader = () => (
                                             </div>
                                             <div className='gr-5'>
                                                 <img src={it.url_for('images/pages/metatrader/dashboard/mt5_wallet.svg')} />
-                                                <div className='mt5-account gr-padding-10'></div>
-                                                <div className='mt5-balance gr-padding-10 gr-parent'></div>
+                                                <div className='mt5-account gr-padding-10' />
+                                                <div className='mt5-balance gr-padding-10 gr-parent' />
                                                 <div className='hint'>{it.L('Deposit or withdraw below')}</div>
                                             </div>
                                         </div>
