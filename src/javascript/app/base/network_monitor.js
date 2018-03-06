@@ -79,7 +79,7 @@ const NetworkMonitor = (() => {
         open   : () => clearPendings(pending_keys.ws_init),
         send   : () => setPending(pending_keys.ws_request),
         message: () => clearPendings(),
-        close  : () => wsReconnect(),
+        close  : () => setPending(pending_keys.ws_init),
     };
 
     const wsEvent = (event) => {
@@ -89,16 +89,18 @@ const NetworkMonitor = (() => {
     };
 
     const setPending = (key) => {
-        if (pendings[key]) {
-            clearPendings(key);
+        if (!pendings[key]) {
+            pendings[key] = setTimeout(() => { setStatus(key); }, pending_timeouts[key]);
         }
-        pendings[key] = setTimeout(() => { setStatus(key); }, pending_timeouts[key]);
     };
 
     const clearPendings = (key) => {
         const clear = (k) => {
             clearTimeout(pendings[k]);
             pendings[k] = undefined;
+            if (k === pending_keys.ws_request) {
+                setStatus('online');
+            }
         };
 
         if (key) {
@@ -106,7 +108,6 @@ const NetworkMonitor = (() => {
         } else {
             Object.keys(pendings).forEach(clear);
         }
-        setStatus('online');
     };
 
     return {
