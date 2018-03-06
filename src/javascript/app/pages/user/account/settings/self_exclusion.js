@@ -18,7 +18,8 @@ const SelfExclusion = (() => {
         fields,
         self_exclusion_data,
         set_30day_turnover,
-        currency;
+        currency,
+        is_gamstop_client;
 
     const form_id          = '#frm_self_exclusion';
     const timeout_date_id  = '#timeout_until_date';
@@ -37,6 +38,8 @@ const SelfExclusion = (() => {
         currency = Client.get('currency');
 
         $('.prepend_currency').parent().prepend(Currency.formatCurrency(currency));
+
+        is_gamstop_client = /gb/.test(Client.get('residence')); // gamstop is only applicable for UK residence
 
         initDatePicker();
         getData(true);
@@ -62,6 +65,7 @@ const SelfExclusion = (() => {
                 $('#frm_self_exclusion').find('fieldset > div.form-row:not(.max_30day_turnover)').setVisibility(!has_to_set_30day_turnover);
                 $('#description_max_30day_turnover').setVisibility(has_to_set_30day_turnover);
                 $('#description').setVisibility(!has_to_set_30day_turnover);
+                $('#gamstop_info_top').setVisibility(is_gamstop_client);
                 $('#loading').setVisibility(0);
                 $form.setVisibility(1);
                 self_exclusion_data = response.get_self_exclusion;
@@ -187,6 +191,7 @@ const SelfExclusion = (() => {
 
         $(`${timeout_date_id}, ${exclude_until_id}`).change(function () {
             dateValueChanged(this, 'date');
+            $('#gamstop_info_bottom').setVisibility(is_gamstop_client && this.getAttribute('data-value'));
         });
     };
 
