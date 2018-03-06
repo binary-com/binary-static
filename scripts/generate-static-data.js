@@ -126,6 +126,7 @@ const texts = [
     'Long',
     'Short',
     'Chart',
+    'Portfolio',
     'Explanation',
     'Last Digit Stats',
     'Waiting for entry tick.',
