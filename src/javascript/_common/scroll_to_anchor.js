@@ -1,12 +1,13 @@
 const ScrollToAnchor = (() => {
     const init = () => {
         scrollToElement();
+        addAnchorsToElements();
     };
 
     const makeAnchorLink = (id) => {
         const anchor_link = document.createElement('a');
-        const { origin, pathname } = window.location;
-        anchor_link.href = `${origin}${pathname}?anchor=${encodeURI(id)}`;
+        const { origin, pathname, hash } = window.location;
+        anchor_link.href = `${origin}${pathname}?anchor=${encodeURI(id)}${hash}`;
         anchor_link.innerText = '#';
         return anchor_link;
     };
@@ -16,6 +17,7 @@ const ScrollToAnchor = (() => {
         els.forEach(el => {
             const id = el.dataset.anchor;
             const anchor_link = makeAnchorLink(id);
+            el.appendChild(anchor_link);
         });
     };
 
