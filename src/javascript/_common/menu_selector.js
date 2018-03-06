@@ -37,6 +37,7 @@ const MenuSelector = (() => {
         if (go_back && go_next) {
             initBackNextButtons();
         }
+        window.dispatchEvent(new Event('menu_selector_selected_shown'));
     };
 
     const initBackNextButtons = () => {
