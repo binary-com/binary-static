@@ -24,10 +24,12 @@ const ScrollToAnchor = (() => {
     const scrollToElement = () => {
         const query = getQueryObject(window.location.search);
         const id = query.anchor;
+        if (!id) return;
         const el = document.querySelector(`[data-anchor="${id}"]`);
+        if (!el) return;
         window.el1 = el;
         console.log('scroll to anchor', el.offsetTop, document.readyState);
-        // $.scrollTo(el, 500);
+        $.scrollTo(el, 500);
     };
 
     const getQueryObject = (query_string) => query_string
