@@ -7,7 +7,7 @@ const LastDigit = () => (
             <div className='smallfont gr-row'>
                 <div className='gr-6 gr-12-m'>
                     <label htmlFor='digit_underlying'>{it.L('Select market:')}</label>
-                    <select className='smallfont' id='digit_underlying'></select>
+                    <select className='smallfont' id='digit_underlying' />
                 </div>
                 <div className='gr-6 gr-12-m'>
                     <label htmlFor='tick_count'>{it.L('Number of ticks:')}</label>
@@ -25,8 +25,8 @@ const LastDigit = () => (
                 </div>
             </div>
         </div>
-        <div id='last_digit_histo' className='gr-8 gr-12-m gr-centered'></div>
-        <div id='last_digit_title' className='gr-hide'><span id='digit_domain'></span> - {it.L('Last digit stats for the latest [_1] ticks on [_2]', '<span id="digit_info_count">100</span>', '<span id="digit_info_underlying"></span>')}</div>
+        <div id='last_digit_histo' className='gr-8 gr-12-m gr-centered' />
+        <div id='last_digit_title' className='gr-hide'><span id='digit_domain' /> - {it.L('Last digit stats for the latest [_1] ticks on [_2]', '<span id="digit_info_count">100</span>', '<span id="digit_info_underlying" />')}</div>
     </div>
 );
 

@@ -16,7 +16,7 @@ const ListMultiLine = ({ items = [] }) => (
                 {item.ul ? <UnorderedList item={item} /> : item.texts.map((p, idx_p) => (<p key={idx_p}>{p.text}</p>))}
             </li>
         ))}
-</ol>
+    </ol>
 );
 
 export default ListMultiLine;

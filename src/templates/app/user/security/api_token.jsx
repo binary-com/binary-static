@@ -38,7 +38,7 @@ const ApiToken = () => (
             </div>
 
             <div id='token_message' className='gr-12 gr-padding-10 center-text invisible'>
-                <p></p>
+                <p />
             </div>
 
             <div id='tokens_list' className='gr-12 gr-parent gr-padding-10'><Loading /></div>

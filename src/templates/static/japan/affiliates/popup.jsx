@@ -14,7 +14,7 @@ const Popup = () => (
             </a>
         </div>
 
-        <div className='separator-line-thin-gray separator-line'></div>
+        <div className='separator-line-thin-gray separator-line' />
 
         <p>
             <strong>{it.L('{JAPAN ONLY}Binary Co., Ltd.')}</strong><br />

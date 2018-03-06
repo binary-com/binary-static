@@ -103,7 +103,7 @@ const FooterJA = () => (
                 </div>
             </div>
         </div>
-        <div id='end-note' className='invisible content-inverse-color center-text'></div>
+        <div id='end-note' className='invisible content-inverse-color center-text' />
     </div>
 );
 
@@ -237,7 +237,7 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        <div id='end-note' className='invisible content-inverse-color center-text'></div>
+        <div id='end-note' className='invisible content-inverse-color center-text' />
     </div>
 );
 

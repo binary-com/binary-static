@@ -65,7 +65,7 @@ const PaymentMethods = () => (
         <div className='gr-12'>
             <div id='payment_method_suggestions gr-padding-10' className='center-text'>
                 <div className='gr-padding-10 invisible upgrademessage'>
-                    <a className='button'></a>
+                    <a className='button' />
                 </div>
                 <p>
                     <Button url='/' text={it.L('Open an account now')} />
