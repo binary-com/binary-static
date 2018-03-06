@@ -35,10 +35,10 @@ const MBTradePage = (() => {
         }
         if (jpClient()) {
             disableTrading();
-            $('#panel').remove();
+            $('#panel').find('.ja-hide').remove();
         } else {
             MBDefaults.set('disable_trading', 0);
-            $('#ja-panel').remove();
+            $('#panel').find('.ja-show').remove();
         }
 
         if (events_initialized === 0) {
