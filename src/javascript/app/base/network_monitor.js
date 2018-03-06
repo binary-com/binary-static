@@ -27,11 +27,13 @@ const NetworkMonitor = (() => {
 
     let ws_config,
         el_status,
+        el_tooltip,
         network_status;
 
     const init = () => {
-        ws_config = $.extend({ wsEvent, isOnline }, BinarySocketGeneral.initOptions());
-        el_status = getElementById('network_status');
+        ws_config  = $.extend({ wsEvent, isOnline }, BinarySocketGeneral.initOptions());
+        el_status  = getElementById('network_status');
+        el_tooltip = el_status.parentNode;
 
         if ('onLine' in navigator) {
             window.addEventListener('online',  setStatus);
@@ -70,8 +72,8 @@ const NetworkMonitor = (() => {
 
         updateHeaderNotification();
 
-        el_status.setAttribute('class',        `no-underline ${status_config[network_status].class}`);
-        el_status.setAttribute('data-balloon', `${localize('Network status')}: ${status_config[network_status].tooltip}`);
+        el_status.setAttribute('class', status_config[network_status].class);
+        el_tooltip.setAttribute('data-balloon', `${localize('Network status')}: ${status_config[network_status].tooltip}`);
     };
 
     const updateHeaderNotification = () => {
