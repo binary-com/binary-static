@@ -2,7 +2,6 @@ import React from 'react';
 import { Section, HeaderSecondary, NavButtons, ListStrong } from './common.jsx';
 import { List } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
-import { Asterisk, ProductHint } from '../../_common/components/product_hint.jsx';
 
 let circle,
     circle_no;
@@ -97,7 +96,7 @@ const BinaryOptions = () => {
 
     return (
         <div className='static_full get-started'>
-            <h1>{it.L('Binary Options')}<Asterisk /></h1>
+            <h1>{it.L('Binary Options')}</h1>
             <div className='gr-row'>
                 <div className='gr-3 gr-hide-m sidebar-container'>
                     <div className='sidebar'>
@@ -325,7 +324,6 @@ const BinaryOptions = () => {
                     <NavButtons parent='binary' section='binary-options' />
                 </div>
             </div>
-            <ProductHint />
         </div>
     );
 };
