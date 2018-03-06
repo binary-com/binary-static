@@ -3,11 +3,27 @@ const ScrollToAnchor = (() => {
         scrollToElement();
     };
 
+    const makeAnchorLink = (id) => {
+        const anchor_link = document.createElement('a');
+        const { origin, pathname } = window.location;
+        anchor_link.href = `${origin}${pathname}?anchor=${encodeURI(id)}`;
+        anchor_link.innerText = '#';
+        return anchor_link;
+    };
+
+    const addAnchorsToElements = () => {
+        const els = document.querySelectorAll('[data-anchor]');
+        els.forEach(el => {
+            const id = el.dataset.anchor;
+            const anchor_link = makeAnchorLink(id);
+        });
+    };
+
     const scrollToElement = () => {
         const query = getQueryObject(window.location.search);
-        const val = query.anchor;
-        const el = document.querySelector(`[data-anchor="${val}"]`);
-        console.log('query val ->', val);
+        const id = query.anchor;
+        const el = document.querySelector(`[data-anchor="${id}"]`);
+        console.log('query id ->', id);
         console.log('el ->', el);
         if (el) {
             el.scrollIntoView();
