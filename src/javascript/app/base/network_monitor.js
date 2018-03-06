@@ -54,7 +54,6 @@ const NetworkMonitor = (() => {
     const wsReconnect = () => {
         if (isOnline() && BinarySocket.hasReadyState(2, 3)) { // CLOSING or CLOSED
             BinarySocket.init(ws_config);
-            clearPendings();
         } else {
             BinarySocket.send({ ping: 1 }); // trigger a request to get stable status sooner
         }
@@ -103,7 +102,10 @@ const NetworkMonitor = (() => {
 
     const setPending = (key) => {
         if (!pendings[key]) {
-            pendings[key] = setTimeout(() => { setStatus(key); }, pending_timeouts[key]);
+            pendings[key] = setTimeout(() => {
+                pendings[key] = undefined;
+                setStatus(key);
+            }, pending_timeouts[key]);
         }
     };
 
