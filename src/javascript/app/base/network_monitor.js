@@ -72,8 +72,10 @@ const NetworkMonitor = (() => {
 
         updateHeaderNotification();
 
-        el_status.setAttribute('class', status_config[network_status].class);
-        el_tooltip.setAttribute('data-balloon', `${localize('Network status')}: ${status_config[network_status].tooltip}`);
+        if (el_status && el_tooltip) {
+            el_status.setAttribute('class', status_config[network_status].class);
+            el_tooltip.setAttribute('data-balloon', `${localize('Network status')}: ${status_config[network_status].tooltip}`);
+        }
     };
 
     const updateHeaderNotification = () => {
