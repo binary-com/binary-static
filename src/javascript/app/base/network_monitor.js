@@ -61,17 +61,26 @@ const NetworkMonitor = (() => {
     const setStatus = (status) => {
         if (!isOnline()) {
             network_status = 'offline';
-            Header.displayNotification(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
         } else if (pending_keys[status] || network_status === 'offline') {
             network_status = 'blinking';
             wsReconnect();
-            Header.hideNotification('CONNECTION_ERROR');
         } else {
             network_status = 'online';
-            Header.hideNotification('CONNECTION_ERROR');
         }
+
+        updateHeaderNotification();
+
         el_status.setAttribute('class',        `no-underline ${status_config[network_status].class}`);
         el_status.setAttribute('data-balloon', `${localize('Network status')}: ${status_config[network_status].tooltip}`);
+    };
+
+    const updateHeaderNotification = () => {
+        const connection_error_code = 'CONNECTION_ERROR';
+        if (isOnline()) {
+            Header.hideNotification(connection_error_code);
+        } else {
+            Header.displayNotification(localize('Connection error: Please check your internet connection.'), true, connection_error_code);
+        }
     };
 
     const ws_events_map = {
