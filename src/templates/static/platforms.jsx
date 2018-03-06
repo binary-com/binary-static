@@ -106,6 +106,17 @@ const Platform = () => (
                     button_text={it.L('Try TradingView')}
                 />
             </div>
+            <div className='gr-row gr-padding-30' data-show='default, costarica'>
+                <Platforms
+                    image_class='gr-10 gr-7-p gr-9-m'
+                    image='trading-multibarrier'
+                    header={it.L('Binary.com TableTrader')}
+                    description={it.L('Multi-barrier trading')}
+                    text={it.L('Use a wide range of barrier options to define your market position.')}
+                    url={it.url_for('multi_barriers_trading')}
+                    button_text={it.L('Trade now')}
+                />
+            </div>
         </div>
     </div>
 );
