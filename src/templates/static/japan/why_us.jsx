@@ -3,7 +3,7 @@ import { List } from '../../_common/components/elements.jsx';
 
 const Section = ({ id, header, children }) => (
     <div className='section'>
-        <a id={id}></a>
+        <a id={id} />
         <div className='section-content'>
             <h1>{header}</h1>
             {children}

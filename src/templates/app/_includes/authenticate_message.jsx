@@ -135,7 +135,7 @@ const AuthenticateMessage = () => (
         />
 
         <div className='center-text'>
-            <div id='msg_form' className='error-msg invisible'></div>
+            <div id='msg_form' className='error-msg invisible' />
             <div className='gr-padding-10'>
                 <a className='button-disabled' id='btn_submit' type='submit'>
                     <span>{it.L('Submit for review')}</span>

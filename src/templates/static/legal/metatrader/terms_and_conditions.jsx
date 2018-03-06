@@ -367,7 +367,7 @@ const TermsAndConditions = () => (
             </li>
             <li>{it.L('Account Equity &mdash; Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss.')}</li>
             <li>{it.L('Account Free Margin &mdash; Your Account Equity minus your Total Margin.')}</li>
-           <li>{it.L('Binary Options Real Account &mdash; Your real money account opened with [_1] which you use to trade binary options with [_1].', it.website_name)}</li>
+            <li>{it.L('Binary Options Real Account &mdash; Your real money account opened with [_1] which you use to trade binary options with [_1].', it.website_name)}</li>
             <li>{it.L('Event &mdash; Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others.')}</li>
             <li>{it.L('Limit/Limit Price &mdash; The price specified in your Limit Order.')}</li>
             <li>{it.L('Limit Order &mdash; An instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price.')}</li>

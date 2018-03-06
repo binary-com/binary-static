@@ -12,8 +12,8 @@ const Product = ({
 }) => (
     <div className='twb-content'>
         <div className='gr-row gr-row-align-center'>
-            <div className={`${icon_1} icon-sm`}></div>
-            <div className={`${icon_2} icon-sm`}></div>
+            <div className={`${icon_1} icon-sm`} />
+            <div className={`${icon_2} icon-sm`} />
         </div>
         <h3 className='center-text uppercase-text gr-padding-10'>{header}</h3>
         <p>{description}</p>
@@ -21,7 +21,7 @@ const Product = ({
             <div className='gr-3 gr-8-m tab-image'>
                 <img className='responsive' src={it.url_for(`images/japan/version2/chart/${image_1}.svg`)} />
             </div>
-            <div className='gr-12-m gr-padding-10'></div>
+            <div className='gr-12-m gr-padding-10' />
             <div className='gr-3 gr-8-m tab-image'>
                 <img className='responsive' src={it.url_for(`images/japan/version2/chart/${image_2}.svg`)} />
             </div>
@@ -46,13 +46,13 @@ const BinaryJapan2 = () => (
         <div className='navbar-fixed-top' role='navigation' id='navigation'>
             <div className='container'>
                 <div className='navbar-header'>
-                    <span id='toggle-menu' href='button' className='navbar-toggle'></span>
-                    <a className='navbar-brand logo' href={it.url_for('home')}></a>
+                    <span id='toggle-menu' href='button' className='navbar-toggle' />
+                    <a className='navbar-brand logo' href={it.url_for('home')} />
                 </div>
                 <div className='navbar-collapse'>
                     <ul className='nav navbar-nav'>
                         <li className='invisible'>
-                            <a href='#page-top'></a>
+                            <a href='#page-top' />
                         </li>
                         <li>
                             <a href='#key-plus' className='page-scroll'>{it.L('{JAPAN ONLY}Key plus points')}</a>
@@ -97,8 +97,8 @@ const BinaryJapan2 = () => (
                     </div>
                 </div>
             </div>
-            <div className='intro-bg'></div>
-            <div className='primary-bg-color-dark'></div>
+            <div className='intro-bg' />
+            <div className='primary-bg-color-dark' />
         </section>
 
         <section className='bg-white edge--top edge--bottom--reverse'>
@@ -106,32 +106,48 @@ const BinaryJapan2 = () => (
                 <div className='tab-with-buttons'>
                     <div className='twb-content-wrapper'>
                         <div className='twb-content-container'>
-                            <Product icon_1='ic-1' icon_2='ic-2'
-                                image_1='higher-lower-1' image_2='higher-lower-2'
+                            <Product
+                                icon_1='ic-1'
+                                icon_2='ic-2'
+                                image_1='higher-lower-1'
+                                image_2='higher-lower-2'
                                 header={it.L('{JAPAN ONLY}Ladder Options')}
                                 description={it.L('{JAPAN ONLY}Predict whether a FX rate will finish higher or lower than a target barrier.')}
-                                duration={it.L('{JAPAN ONLY}2 hours to 1 year terms')} />
+                                duration={it.L('{JAPAN ONLY}2 hours to 1 year terms')}
+                            />
 
-                            <Product icon_1='ic-3' icon_2='ic-4'
-                                image_1='touch-notouch-1' image_2='touch-notouch-2'
+                            <Product
+                                icon_1='ic-3'
+                                icon_2='ic-4'
+                                image_1='touch-notouch-1'
+                                image_2='touch-notouch-2'
                                 header={it.L('{JAPAN ONLY}Touch Options')}
                                 description={it.L('{JAPAN ONLY}Predict whether a FX rate will touch a target barrier or not.')}
-                                duration={it.L('{JAPAN ONLY}1 week to 1 year terms')} />
+                                duration={it.L('{JAPAN ONLY}1 week to 1 year terms')}
+                            />
 
-                            <Product icon_1='ic-5' icon_2='ic-6'
-                                image_1='in-out-1' image_2='in-out-2'
+                            <Product
+                                icon_1='ic-5'
+                                icon_2='ic-6'
+                                image_1='in-out-1'
+                                image_2='in-out-2'
                                 header={it.L('{JAPAN ONLY}Range Options: End-In / End-Out')}
                                 description={it.L('{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range.')}
-                                duration={it.L('{JAPAN ONLY}1 week to 1 year terms')} />
+                                duration={it.L('{JAPAN ONLY}1 week to 1 year terms')}
+                            />
 
-                            <Product icon_1='ic-7' icon_2='ic-8'
-                                image_1='in-out-3' image_2='in-out-4'
+                            <Product
+                                icon_1='ic-7'
+                                icon_2='ic-8'
+                                image_1='in-out-3'
+                                image_2='in-out-4'
                                 header={it.L('{JAPAN ONLY}Range Options: Stay-In / Break-Out')}
                                 description={it.L('{JAPAN ONLY}Predict whether a FX rate will touch either target barrier before expiry.')}
-                                duration={it.L('{JAPAN ONLY}1 week to 1 year terms')} />
+                                duration={it.L('{JAPAN ONLY}1 week to 1 year terms')}
+                            />
                         </div>
                     </div>
-                    <div className='twb-buttons'></div>
+                    <div className='twb-buttons' />
                 </div>
             </div>
         </section>
@@ -220,7 +236,7 @@ const BinaryJapan2 = () => (
                                         </div>
                                     </div>
                                 </div>
-                                <span className='card-divider'></span>
+                                <span className='card-divider' />
                                 <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}1 lot = $ 100,000, margin: ')}</p>
                                 <p className='size-2 big-spacing'>{it.L('{JAPAN ONLY}Profit / loss per point (0.01) = ¥ 1,000')}</p>
                                 <p className='bg-gray size-3'>{it.L('{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000')}</p>
@@ -268,7 +284,7 @@ const BinaryJapan2 = () => (
                                         </div>
                                     </div>
                                 </div>
-                                <span className='card-divider'></span>
+                                <span className='card-divider' />
                                 <p className='size-desc color-gray'>{it.L('{JAPAN ONLY}If spot rate is at above target rate at judgment time, the profil will be:')}</p>
                                 <p className='size-2 fixed-width'>{it.L('{JAPAN ONLY}Option price assumes 1 hour to judgment time, volatility = 8.5%, spread = 40 yen')}</p>
                                 <p className='bg-gray size-3'>{it.L('{JAPAN ONLY}50 lots: maximum loss: - ¥ 10,000 | target profit: ¥ 40,000')}</p>
@@ -285,7 +301,7 @@ const BinaryJapan2 = () => (
         </section>
 
         <section className='bg-white edge--top edge--bottom'>
-            <div className='bg-platforms'></div>
+            <div className='bg-platforms' />
             <div className='container center-text padding-bottom-50'>
                 <div className='section-title'>
                     <h2 className='color-blue'>{it.L('{JAPAN ONLY}Available on desktop and mobile platforms')}</h2>
@@ -352,25 +368,25 @@ const BinaryJapan2 = () => (
                     <div className='gr-row numbered'>
                         <div className='gr-6 gr-12-m'>
                             <div className='flex-inline'>
-                                <span className='icon-md rounded ic-new-account'></span>
+                                <span className='icon-md rounded ic-new-account' />
                                 <p className='desc-text'>{it.L('{JAPAN ONLY}Apply for an account & provide ID')}</p>
                             </div>
                         </div>
                         <div className='gr-6 gr-12-m'>
                             <div className='flex-inline'>
-                                <span className='icon-md rounded ic-knowledge-test'></span>
+                                <span className='icon-md rounded ic-knowledge-test' />
                                 <p className='desc-text'>{it.L('{JAPAN ONLY}Pass our Knowledge Test')}</p>
                             </div>
                         </div>
                         <div className='gr-6 gr-12-m'>
                             <div className='flex-inline'>
-                                <span className='icon-md rounded ic-secure-email'></span>
+                                <span className='icon-md rounded ic-secure-email' />
                                 <p className='desc-text'>{it.L('{JAPAN ONLY}Receive account activation code by secure mail and activate account')}</p>
                             </div>
                         </div>
                         <div className='gr-6 gr-12-m'>
                             <div className='flex-inline'>
-                                <span className='icon-md rounded ic-deposit-money'></span>
+                                <span className='icon-md rounded ic-deposit-money' />
                                 <p className='desc-text'>{it.L('{JAPAN ONLY}Deposit funds and begin trading')}</p>
                             </div>
                         </div>
@@ -446,7 +462,7 @@ const BinaryJapan2 = () => (
             </div>
         </footer>
 
-        <div id='affiliate_disclaimer_popup'></div>
+        <div id='affiliate_disclaimer_popup' />
     </Layout>
 );
 
