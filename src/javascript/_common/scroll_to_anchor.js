@@ -1,6 +1,5 @@
 const ScrollToAnchor = (() => {
     const init = () => {
-        console.log('my scroll');
         scrollToElement();
         addAnchorsToElements();
     };
@@ -26,9 +25,11 @@ const ScrollToAnchor = (() => {
         const query = getQueryObject(window.location.search);
         const id = query.anchor;
         const el = document.querySelector(`[data-anchor="${id}"]`);
-        console.log('query id ->', id);
-        console.log('el ->', el);
-        $.scrollTo(el, 500);
+        window.el1 = el;
+        window.setTimeout(() => {
+            console.log('scroll to anchor');
+            $.scrollTo(el, 500);
+        }, 1000);
     };
 
     const getQueryObject = (query_string) => query_string
