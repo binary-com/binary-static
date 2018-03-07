@@ -73,8 +73,9 @@ const Url = (() => {
     };
 
     const setQueryStringWithoutReload = (new_query_str) => {
-        const { pathname, hash } = window.location;
-        window.history.replaceState('', '', `${pathname}?${new_query_str}${hash}`);
+        const url = new URL(window.location);
+        url.search = new_query_str;
+        window.history.replaceState('', '', url.href);
     };
 
     const getSection = (url = window.location.href) => (url.match(new RegExp(`/${urlLang()}/(.*)/`, 'i')) || [])[1];
