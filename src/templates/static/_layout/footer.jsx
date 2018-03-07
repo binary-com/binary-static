@@ -196,20 +196,20 @@ const FooterNormal = () => (
                         )}
                     </p>
                     <div className='gr-3 gr-12-m gr-5-p center-text' id='social-networks'>
-                        <div className='gr-row gr-padding-10 gr-parent id-hide'>
-                            <div className='gr-5'>
+                        <div className='gr-row gr-row-align-center-m gr-padding-10 gr-parent id-hide'>
+                            <div className='gr-5 gr-4-m'>
                                 <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
                                     <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                 </a>
                             </div>
-                            <div className='gr-7'>
+                            <div className='gr-7 gr-5-m'>
                                 <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
                                     <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
                                 </a>
                             </div>
                         </div>
-                        <div className='gr-row'>
-                            <div className='gr-12'>
+                        <div data-show='iom, malta' className='gr-row gr-row-align-center-m'>
+                            <div className='gr-9 gr-7-m'>
                                 <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
                                     <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
                                 </a>

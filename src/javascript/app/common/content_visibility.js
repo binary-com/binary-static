@@ -14,7 +14,13 @@ const ContentVisibility = (() => {
                 );
             });
         } else {
-            controlVisibility('default', true);
+            BinarySocket.wait('website_status').then(() => {
+                const is_gamstop_client = /gb/.test(State.getResponse('website_status.clients_country')); // gamstop is only applicable for UK residence
+                controlVisibility(
+                    State.getResponse(is_gamstop_client ? 'iom' : 'default'),
+                    true
+                );
+            });
         }
     };
 
