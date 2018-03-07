@@ -2,9 +2,9 @@ import React from 'react';
 
 const Tooltip = ({
     message,
-    alignment='top',
+    alignment,
 }) => (
-    <span className={`tooltip ${alignment}`} data-tooltip={message}>
+    <span className='tooltip' data-tooltip={message} data-tooltip-pos={alignment}>
         <i className='question-mark'/>
     </span>
 );
