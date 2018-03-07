@@ -6,7 +6,6 @@ const Url                = require('../../_common/url');
 const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const createElement      = require('../../_common/utility').createElement;
 const findParent         = require('../../_common/utility').findParent;
-const QueryString        = require('../../_common/query_string');
 require('custom-event-polyfill');
 
 const BinaryPjax = (() => {
@@ -164,9 +163,7 @@ const BinaryPjax = (() => {
         $(params.container).append($(content.content).clone());
 
         params.container.dispatchEvent(new CustomEvent('binarypjax:after', { detail: content.content }));
-        if (QueryString.queryStringToObject(window.location.search).anchor === undefined) {
-            $.scrollTo('body', 500);
-        }
+        $.scrollTo('body', 500);
     };
 
     const cachePut = (url, content) => {
