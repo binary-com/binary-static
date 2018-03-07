@@ -4,9 +4,9 @@ const Client              = require('./client');
 const GTM                 = require('./gtm');
 const Header              = require('./header');
 const Login               = require('./login');
+const NetworkMonitor      = require('./network_monitor');
 const Page                = require('./page');
 const BinarySocket        = require('./socket');
-const BinarySocketGeneral = require('./socket_general');
 const ContentVisibility   = require('../common/content_visibility');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
@@ -33,7 +33,7 @@ const BinaryLoader = (() => {
         Page.showNotificationOutdatedBrowser();
 
         Client.init();
-        BinarySocket.init(BinarySocketGeneral.initOptions());
+        NetworkMonitor.init();
 
         container = getElementById('content-holder');
         container.addEventListener('binarypjax:before', beforeContentChange);

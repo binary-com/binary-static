@@ -44,7 +44,7 @@ const TermsAndConditions = () => (
                             <li>{it.L('You have read this Legal Terms and Conditions page in full and understood that you will be buying and selling financial contracts subject to these terms and conditions;')}</li>
                             <li>{it.L('You have read our privacy statement and hereby give us consent to process your personal information as outlined there;')}</li>
                             <li>{it.L('You are over 18 years of age;')}</li>
-                            <li>{it.L('You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;')}</li>
+                            <li>{it.L('You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;')}</li>
                             <li>{it.L('You have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site.')}</li>
                         </ol>
                     </li>
