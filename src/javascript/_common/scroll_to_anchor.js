@@ -3,7 +3,7 @@ const QueryString = require('./query_string');
 
 const ScrollToAnchor = (() => {
     const init = () => {
-        scrollToElement();
+        scrollToAnchorInQuery();
         addAnchorsToElements();
     };
 
@@ -21,10 +21,19 @@ const ScrollToAnchor = (() => {
             const id = el.dataset.anchor;
             const anchor_link = makeAnchorLink(id);
             el.appendChild(anchor_link);
+            anchor_link.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log(id);
+                $.scrollTo(el, 500);
+                QueryString.setQueryStringWithoutReload(
+                    // TODO: use appendParamToQueryString to preserve current q.s.
+                    `?anchor=${encodeURI(id)}`
+                );
+            });
         });
     };
 
-    const scrollToElement = () => {
+    const scrollToAnchorInQuery = () => {
         const query = QueryString.queryStringToObject(window.location.search);
         const id = query.anchor;
         if (!id) return;
