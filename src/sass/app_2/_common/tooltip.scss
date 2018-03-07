@@ -51,6 +51,7 @@ span.tooltip {
             pointer-events: none;
             border-top-color: rgba(21, 33, 45, 0.88);
             border-width: 6px;
+            margin-bottom: -1px;
         }
         &[data-tooltip-pos=right] {
             &:before, &:after {
@@ -87,6 +88,7 @@ span.tooltip {
             &:after {
                 border-top-color: transparent;
                 border-left-color: rgba(21, 33, 45, 0.88);
+                margin-right: -1px;
             }
         }
         &[data-tooltip-pos=bottom] {
