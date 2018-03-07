@@ -15,9 +15,10 @@ const QueryString = (() => {
     const queryObjectToString = (query_object) => {
         const keys = Object.keys(query_object);
         if (keys.length === 0) return '';
-        return '?' + keys
+        const query_str = keys
             .map(key => `${key}=${query_object[key]}`)
             .join('&');
+        return `?${query_str}`;
     };
 
     const removeParamFromQueryString = (query_string, removal_key) => {
