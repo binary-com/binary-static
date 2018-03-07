@@ -54,21 +54,77 @@ header {
                     position: relative;
 
                     span {
-                        font-size: 0.8rem;
+                        font-size: 1rem;
+                        font-weight: 300;
                         text-transform: capitalize;
                         color: $COLOR_DARK_BLUE;
+
+                        &.trade:before {
+                            content: url('../images/trading_app/header/trade/ic-trade-normal-light.svg');
+                            margin-right: 8px;
+                            vertical-align: sub;
+                        }
+                        &.portfolio:before {
+                            content: url('../images/trading_app/header/portfolio/ic-portfolio-normal-light.svg');
+                            margin-right: 8px;
+                            vertical-align: sub;
+                        }
+                        &.statement:before {
+                            content: url('../images/trading_app/header/statement/ic-statement-normal-light.svg');
+                            margin-right: 8px;
+                            vertical-align: sub;
+                        }
+                        &.cashier:before {
+                            content: url('../images/trading_app/header/cashier/ic-cashier-normal-light.svg');
+                            margin-right: 8px;
+                            vertical-align: sub;
+                        }
                     }
-                    &.active:after {
-                        display: block;
-                        position: absolute;
-                        content: '';
-                        height: 3px;
-                        width: 100%;
-                        bottom: -16px;
-                        background-color: $primaryBrandColor;
+                    &:hover {
+                        & > span {
+                            font-weight: 400;
+                        }
+                        & > span.trade:before {
+                            content: url('../images/trading_app/header/trade/ic-trade-active-light.svg');
+                        }
+                        & > span.portfolio:before {
+                            content: url('../images/trading_app/header/portfolio/ic-portfolio-active-light.svg');
+                        }
+                        & > span.statement:before {
+                            content: url('../images/trading_app/header/statement/ic-statement-active-light.svg');
+                        }
+                        & > span.cashier:before {
+                            content: url('../images/trading_app/header/cashier/ic-cashier-active-light.svg');
+                        }
+                    }
+                    &.active {
+                        & > span {
+                            font-weight: 400;
+                        }
+                        & > span.trade:before {
+                            content: url('../images/trading_app/header/trade/ic-trade-active-light.svg');
+                        }
+                        & > span.portfolio:before {
+                            content: url('../images/trading_app/header/portfolio/ic-portfolio-active-light.svg');
+                        }
+                        & > span.statement:before {
+                            content: url('../images/trading_app/header/statement/ic-statement-active-light.svg');
+                        }
+                        & > span.cashier:before {
+                            content: url('../images/trading_app/header/cashier/ic-cashier-active-light.svg');
+                        }
+                        &:after {
+                            display: block;
+                            position: absolute;
+                            content: '';
+                            height: 3px;
+                            width: 100%;
+                            bottom: -16px;
+                            background-color: $primaryBrandColor;
+                        }
                     }
                 }
-                @media (max-width: 768px) {
+                @media (max-width: 980px) {
                     display: none;
                 }
             }
@@ -77,7 +133,6 @@ header {
             justify-content: flex-end;
             order: 1;
             display: inline-flex;
-            flex: 1;
             border-right: 1px solid #f2f2f2;
 
             .acc-balance-container {

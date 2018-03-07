@@ -161,21 +161,21 @@ class DrawerItems extends React.PureComponent {
         };
         return (
             <React.Fragment>
-            <div className='drawer-item' onClick={this.collapseItems}>
-                <span className='parent-item'>{this.props.text}</span>
-            </div>
-            <div
-                className={`drawer-items ${this.state.is_collapsed ? 'show' : ''}`}
-                style={list_is_collapsed}
-            >
-                {this.props.items.map((item, idx) => (
-                        <div className='drawer-item' key={idx}>
-                            <a href={item.href || 'javascript:;' }>
-                                <span className={item.icon || undefined}>{item.text}</span>
-                            </a>
-                        </div>
-                ))}
-            </div>
+                <div className='drawer-item' onClick={this.collapseItems}>
+                    <span className={`parent-item ${this.state.is_collapsed ? 'show' : ''}`}>{this.props.text}</span>
+                </div>
+                <div
+                    className={`drawer-items ${this.state.is_collapsed ? 'show' : ''}`}
+                    style={list_is_collapsed}
+                >
+                    {this.props.items.map((item, idx) => (
+                            <div className='drawer-item' key={idx}>
+                                <a href={item.href || 'javascript:;' }>
+                                    <span className={item.icon || undefined}>{item.text}</span>
+                                </a>
+                            </div>
+                    ))}
+                </div>
             </React.Fragment>
         );
     }
