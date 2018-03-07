@@ -8,6 +8,7 @@ import { localize } from '../../../../_common/localize';
 
 const Duration = ({
     expiry_type,
+    expiry_time,
     duration,
     duration_unit,
     duration_units_list,
@@ -45,7 +46,7 @@ const Duration = ({
                 </React.Fragment> :
                 <React.Fragment>
                     <input type='date' name='expiry_date' onChange={onChange} />
-                    <TimePicker onChange={onChange} name='expiry_time' placeholder='12:00 pm'/>
+                    <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
                 </React.Fragment>
             }
         </fieldset>
@@ -54,6 +55,7 @@ const Duration = ({
 export default connect(
     ({trade}) => ({
         expiry_type        : trade.expiry_type,
+        expiry_time        : trade.expiry_time,
         duration           : trade.duration,
         duration_unit      : trade.duration_unit,
         duration_units_list: trade.duration_units_list,
