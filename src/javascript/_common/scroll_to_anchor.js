@@ -1,5 +1,6 @@
 const isVisible = require('./common_functions').isVisible;
 const QueryString = require('./query_string');
+const Url = require('./url');
 
 const ScrollToAnchor = (() => {
     const init = () => {
@@ -34,14 +35,12 @@ const ScrollToAnchor = (() => {
     };
 
     const scrollToAnchorInQuery = () => {
-        const query = QueryString.queryStringToObject(window.location.search);
-        const id = query.anchor;
+        const params = Url.paramsHash();
+        const id = params.anchor;
         if (!id) return;
         const candidates = document.querySelectorAll(`[data-anchor="${id}"]`);
         const el = Array.from(candidates).find(isVisible);
         if (!el) return;
-        window.el1 = el; // for testing, remove later
-        console.log('scroll to anchor', el.offsetTop, document.readyState);
         $.scrollTo(el, 500);
     };
 
