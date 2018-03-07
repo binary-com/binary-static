@@ -25,9 +25,10 @@ const ScrollToAnchor = (() => {
                 e.preventDefault();
                 console.log(id);
                 $.scrollTo(el, 500);
+                const params = Url.paramsHash();
+                params.anchor = window.encodeURI(id);
                 Url.setQueryStringWithoutReload(
-                    // TODO: modify current q.s.
-                    `?anchor=${encodeURI(id)}`
+                    Url.paramsHashToString(params)
                 );
             });
         });
