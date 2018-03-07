@@ -106,7 +106,7 @@ const Platform = () => (
                     button_text={it.L('Try TradingView')}
                 />
             </div>
-            <div className='gr-row gr-padding-30' data-show='default, costarica'>
+            <div className='gr-row gr-padding-30' data-show='default, virtual, costarica'>
                 <Platforms
                     image_class='gr-10 gr-7-p gr-9-m'
                     image='trading-multibarrier'
