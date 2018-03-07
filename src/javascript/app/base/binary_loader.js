@@ -9,6 +9,7 @@ const BinarySocket        = require('./socket');
 const BinarySocketGeneral = require('./socket_general');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
+const QueryString         = require('../../_common/query_string');
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const urlFor              = require('../../_common/url').urlFor;
@@ -43,6 +44,10 @@ const BinaryLoader = (() => {
     };
 
     const beforeContentChange = () => {
+        console.log('before content change');
+        QueryString.setQueryStringWithoutReload(
+            QueryString.removeParamFromQueryString(window.location.search, 'anchor')
+        );
         if (active_script) {
             BinarySocket.removeOnDisconnect();
             if (typeof active_script.onUnload === 'function') {
@@ -53,6 +58,7 @@ const BinaryLoader = (() => {
     };
 
     const afterContentChange = (e) => {
+        console.log('after content change');
         Page.onLoad();
         GTM.pushDataLayer();
 
