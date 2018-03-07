@@ -23,6 +23,24 @@ describe('QueryString', () => {
         })
     });
 
+    describe('.queryObjectToString', () => {
+        it('returns empty string for empty object', () => {
+            expect(QueryString.queryObjectToString({})).to.eq('');
+        })
+        it('works for single parameter', () => {
+            expect(QueryString.queryObjectToString({
+                anchor: 'test'
+            })).to.eq('?anchor=test');
+        });
+        it('works for multiple parameters', () => {
+            expect(QueryString.queryObjectToString({
+                a: 1,
+                b: 'test',
+                c: 123
+            })).to.eq('?a=1&b=test&c=123');
+        });
+    });
+
     describe('.removeParamFromQueryString', () => {
         it('works for empty query', () => {
             expect(QueryString.removeParamFromQueryString('', 'anchor')).to.eq('');
