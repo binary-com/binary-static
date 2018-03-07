@@ -114,7 +114,7 @@ const Tac = () => (
                 <li>{it.L('you have read this Legal Terms and Conditions page in full and understood that you will be buying and selling financial contracts subject to these terms and conditions;')}</li>
                 <li>{it.L('you have read our privacy statement and hereby give us consent to process your personal information as outlined there;')}</li>
                 <li>{it.L('you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;')}</li>
-                <li>{it.L('you are not resident in a restricted country such as Bosnia and Herzegovina, Costa Rica, Democratic People\'s Republic of Korea (DPRK), Ethiopia, Hong Kong, Iran, Iraq, Israel, Jersey, Malaysia, Malta, Syria, Uganda, USA, Vanuatu or Yemen;')}</li>
+                <li>{it.L('you are not resident in a restricted country such as Bosnia and Herzegovina, Costa Rica, Democratic People\'s Republic of Korea (DPRK), Ethiopia, Hong Kong, Iran, Iraq, Israel, Jersey, Malaysia, Malta, Syria, USA, Vanuatu or Yemen;')}</li>
                 <li>{it.L('you have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site.')}</li>
             </ul>
         </p>

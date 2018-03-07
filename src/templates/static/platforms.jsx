@@ -106,6 +106,17 @@ const Platform = () => (
                     button_text={it.L('Try TradingView')}
                 />
             </div>
+            <div className='gr-row gr-padding-30' data-show='default, virtual, costarica'>
+                <Platforms
+                    image_class='gr-10 gr-7-p gr-9-m'
+                    image='trading-multibarrier'
+                    header={it.L('Japanese Ladders')}
+                    description={it.L('Multi-barrier trading')}
+                    text={it.L('Trade FX binary options on our multi-barrier platform, designed to fully comply with Japanese regulations.')}
+                    url={it.url_for('multi_barriers_trading')}
+                    button_text={it.L('Trade now')}
+                />
+            </div>
         </div>
     </div>
 );
