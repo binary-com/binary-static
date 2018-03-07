@@ -1,4 +1,5 @@
 import React from 'react';
+import { TogglePortfolioDrawer } from './portfolio_drawer.jsx';
 
 class ToggleFullScreen extends React.Component {
     constructor(props) {
@@ -73,6 +74,7 @@ class TradingFooter extends React.Component {
             <React.Fragment>
             {this.props.items.length &&
                 <div className='footer-links'>
+                    <TogglePortfolioDrawer className='ic-portfolio' />
                     {this.props.items.map((item, idx) => (
                         <a key={idx} href={item.href || 'javascript:;'}>
                             <span className={item.icon} title={item.text} />

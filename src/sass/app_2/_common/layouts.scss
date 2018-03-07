@@ -3,6 +3,21 @@
 @supports (display: grid) {
     /* trade-app layout */
     #trade_app {
+        display: grid;
+        grid-template-columns: 100%;
+        @media (min-width: 1025px) {
+            grid-template-columns: 85% 15%;
+
+            &.grid-1-col {
+                grid-template-columns: 100%;
+
+                .aside {
+                    display: none; // hide portfolio-drawer on desktop
+                }
+            }
+        }
+    }
+    .main {
         margin: 30px 15px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);

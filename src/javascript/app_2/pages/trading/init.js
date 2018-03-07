@@ -44,8 +44,8 @@ const Trading = (() => {
         if (footer) {
             render(
                 <TradingFooter items={[
-                    { icon: 'ic-portfolio', text: localize('Portfolio') },
                     { icon: 'ic-statement', text: localize('Statement') },
+                    { icon: 'ic-statement', text: localize('Notification') },
                     { icon: 'ic-confirm',   text: localize('Confirmation') },
                 ]} />
             , footer);

@@ -9,6 +9,7 @@ import Symbol from './components/symbol.jsx';
 import Test from './components/test.jsx';
 import Purchase from './components/purchase.jsx';
 import { connect } from './store/connect';
+import { PortfolioDrawer } from './components/elements/portfolio_drawer.jsx';
 
 class TradeApp extends React.Component {
     isVisible(component_name) {
@@ -18,20 +19,25 @@ class TradeApp extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className='chart-container notice-msg'>
-                    <Symbol />
-                    <ContractType />
-                    <Test />
+                <div className='main'>
+                    <div className='chart-container notice-msg'>
+                        <Symbol />
+                        <ContractType />
+                        <Test />
+                    </div>
+                    <div className='sidebar-container'>
+
+                        {this.isVisible('start_date') && <StartDate />}
+                        <Duration />
+                        {this.isVisible('barrier') && <Barrier />}
+                        {this.isVisible('last_digit') && <LastDigit />}
+                        <Amount />
+
+                        <Purchase />
+                    </div>
                 </div>
-                <div className='sidebar-container'>
-
-                    {this.isVisible('start_date') && <StartDate />}
-                    <Duration />
-                    {this.isVisible('barrier') && <Barrier />}
-                    {this.isVisible('last_digit') && <LastDigit />}
-                    <Amount />
-
-                    <Purchase />
+                <div className='aside'>
+                    <PortfolioDrawer portfolios={this.props.portfolios} />
                 </div>
             </React.Fragment>
         );
@@ -41,5 +47,6 @@ class TradeApp extends React.Component {
 export default connect(
     ({trade}) => ({
         form_components: trade.form_components,
+        portfolios     : trade.portfolios,
     })
 )(TradeApp);

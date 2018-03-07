@@ -25,6 +25,9 @@ footer {
             }
         }
     }
+    @media (max-width: 1025px) {
+        display: none;
+    }
 }
 
 // Footer icons - to be updated once icons are ready
