@@ -1,4 +1,5 @@
 const QueryString = (() => {
+    // TODO: js doc all methods
     const queryStringToObject = (query_string) => {
         if (query_string === '') return {};
         return query_string
