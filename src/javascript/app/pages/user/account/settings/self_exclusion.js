@@ -67,6 +67,14 @@ const SelfExclusion = (() => {
                 self_exclusion_data = response.get_self_exclusion;
                 $.each(self_exclusion_data, (key, value) => {
                     fields[key] = value.toString();
+                    if (key === 'timeout_until') {
+                        const timeout = moment.unix(value);
+                        const date = timeout.format('DD MMM, YYYY');
+                        const time = timeout.format('HH:mm');
+                        $form.find(timeout_date_id).val(date);
+                        $form.find(timeout_time_id).val(time);
+                        return;
+                    }
                     $form.find(`#${key}`).val(value);
                 });
                 bindValidation();
@@ -219,6 +227,13 @@ const SelfExclusion = (() => {
         }
         showFormMessage('Your changes have been updated.', true);
         Client.set('session_start', moment().unix()); // used to handle session duration limit
+        const {exclude_until, timeout_until} = response.echo_req;
+        if (exclude_until || timeout_until) {
+            Client.set('excluded_until',
+                exclude_until ? moment(exclude_until).unix()
+                : timeout_until
+            );
+        }
         BinarySocket.send({ get_account_status: 1 }).then(() => {
             Header.displayAccountStatus();
             if (set_30day_turnover) {

@@ -15,23 +15,35 @@ import Affiliates from './affiliates.jsx';
 const TAC = () => (
     <div className='invisible ja-show'>
         <TabContainer className='static_full tab-with-subsection' >
-            <TabsSubtabs className='static_full' id='legal-menu' items={[
-                { id: 'legal',      text: it.L('Terms and Conditions')  }  ,
-                { id: 'contract',   text: it.L('Pre-contract Document') }  ,
-                { id     : 'account',    text   : it.L('Account Opening'),                     subtabs: [
-                        { id: 'account-privacy',    text: it.L('Privacy Policy') }  ,
-                        { id: 'account-antisocial', text: it.L('No Connections with Antisocial Forces') }  ,
-                        { id: 'account-risk',       text: it.L('Risk for Binary Option Trading') }  ,
-                        { id: 'account-warning',    text: it.L('General Risk Warning') }  ,
-                ] },
-                { id     : 'ethics',     text   : it.L('Policies and Exclusion of Liability'), subtabs: [
-                        { id: 'ethics-code',         text: it.L('Ethics Code') }  ,
-                        { id: 'ethics-antisocial',   text: it.L('Eliminating Antisocial Forces') }  ,
-                        { id: 'ethics-solicitation', text: it.L('Investment Solicitation Policy') }  ,
-                        { id: 'ethics-liability',    text: it.L('Exclusion of Liability') }  ,
-                ] },
-                { id: 'affiliates', text: it.L('Affiliates Program') },
-            ]} />
+            <TabsSubtabs
+                className='static_full'
+                id='legal-menu'
+                items={[
+                    { id: 'legal',      text: it.L('Terms and Conditions')  }  ,
+                    { id: 'contract',   text: it.L('Pre-contract Document') }  ,
+                    {
+                        id     : 'account',
+                        text   : it.L('Account Opening'),
+                        subtabs: [
+                            { id: 'account-privacy',    text: it.L('Privacy Policy') }  ,
+                            { id: 'account-antisocial', text: it.L('No Connections with Antisocial Forces') }  ,
+                            { id: 'account-risk',       text: it.L('Risk for Binary Option Trading') }  ,
+                            { id: 'account-warning',    text: it.L('General Risk Warning') }  ,
+                        ],
+                    },
+                    {
+                        id     : 'ethics',
+                        text   : it.L('Policies and Exclusion of Liability'),
+                        subtabs: [
+                            { id: 'ethics-code',         text: it.L('Ethics Code') }  ,
+                            { id: 'ethics-antisocial',   text: it.L('Eliminating Antisocial Forces') }  ,
+                            { id: 'ethics-solicitation', text: it.L('Investment Solicitation Policy') }  ,
+                            { id: 'ethics-liability',    text: it.L('Exclusion of Liability') }  ,
+                        ],
+                    },
+                    { id: 'affiliates', text: it.L('Affiliates Program') },
+                ]}
+            />
             <div className='tab-content'>
                 <TabContentContainer>
                     <TabContent  id='legal' >

@@ -29,7 +29,7 @@ const Authenticate = () => (
                 <p>{it.L('We are reviewing your documents and will get back to you within one working day.')}</p>
             </div>
 
-            <p className='center-text notice-msg invisible' id='error_message'></p>
+            <p className='center-text notice-msg invisible' id='error_message' />
         </div>
     </React.Fragment>
 );

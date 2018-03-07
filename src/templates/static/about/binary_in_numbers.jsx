@@ -2,7 +2,7 @@ import React from 'react';
 
 const Numbers = ({ className, header, text, image }) => (
     <div className={className}>
-        <span className='icon'></span>
+        <span className='icon' />
         <div className='inner center-text'>
             <h2>{header}</h2>
             <p>{text}</p>
