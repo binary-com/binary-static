@@ -11,6 +11,14 @@ const QueryString = (() => {
             }, {});
     };
 
+    const queryObjectToString = (query_object) => {
+        const keys = Object.keys(query_object);
+        if (keys.length === 0) return '';
+        return '?' + keys
+            .map(key => `${key}=${query_object[key]}`)
+            .join('&');
+    };
+
     const removeParamFromQueryString = (query_string, removal_key) => {
         const query_obj = queryStringToObject(query_string);
         const new_query_str = Object.keys(query_obj)
@@ -20,8 +28,12 @@ const QueryString = (() => {
         return new_query_str !== '' ? `?${new_query_str}` : '';
     };
 
-    // TODO: add appendParamToQueryString function
-    // TODO: add tests for appendParamToQueryString
+    // TODO: add setParamsInQueryString function
+    // TODO: add tests for setParamsInQueryString
+    // const setParamsInQueryString = (query_string, params_obj) => {
+    //     const query_obj = queryStringToObject(query_string);
+
+    // };
 
     const setQueryStringWithoutReload = (new_query_str) => {
         const { pathname, hash } = window.location;
@@ -30,6 +42,7 @@ const QueryString = (() => {
 
     return {
         queryStringToObject,
+        queryObjectToString,
         removeParamFromQueryString,
         setQueryStringWithoutReload,
     };
