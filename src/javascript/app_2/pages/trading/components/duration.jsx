@@ -2,6 +2,7 @@ import React from 'react';
 import InputField from './form/input_field.jsx';
 import Dropdown from './form/dropdown.jsx';
 import ClockHeader from './elements/clock_header.jsx';
+import TimePicker from './form/time_picker.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -44,7 +45,7 @@ const Duration = ({
                 </React.Fragment> :
                 <React.Fragment>
                     <input type='date' name='expiry_date' onChange={onChange} />
-                    <input type='time' name='expiry_time' onChange={onChange} />
+                    <TimePicker onChange={onChange} name='expiry_time' placeholder='12:00 pm'/>
                 </React.Fragment>
             }
         </fieldset>

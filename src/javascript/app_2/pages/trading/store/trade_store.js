@@ -55,7 +55,7 @@ export default class TradeStore {
     @observable amount          = 5;
 
     // Duration
-    @observable expiry_type         = 'duration';
+    @observable expiry_type         = 'endtime';
     @observable duration            = 15;
     @observable duration_unit       = 's';
     @observable duration_units_list = {};
