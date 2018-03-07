@@ -17,7 +17,6 @@ const BinarySocket = (() => {
 
     let config               = {};
     let buffered_sends       = [];
-    let req_number           = 0;
     let req_id               = 0;
     let wrong_app_id         = 0;
     let is_available         = true;
@@ -82,9 +81,11 @@ const BinarySocket = (() => {
         });
     };
 
-    const isReady = () => binary_socket && binary_socket.readyState === 1;
+    const isReady = () => hasReadyState(1);
 
-    const isClose = () => !binary_socket || binary_socket.readyState === 2 || binary_socket.readyState === 3;
+    const isClose = () => !binary_socket || hasReadyState(2, 3);
+
+    const hasReadyState = (...states) => binary_socket && states.some(s => binary_socket.readyState === s);
 
     const sendBufferedRequests = () => {
         while (buffered_sends.length > 0 && is_available) {
@@ -168,25 +169,19 @@ const BinarySocket = (() => {
             subscribe: !!data.subscribe,
         };
 
-        if (isReady() && is_available) {
+        if (isReady() && is_available && config.isOnline()) {
             is_disconnect_called = false;
             if (!getPropertyValue(data, 'passthrough') && !getPropertyValue(data, 'verify_email')) {
                 data.passthrough = {};
             }
-            if (+data.time === 1) {
-                data.passthrough.req_number = ++req_number;
-                timeouts[req_number]        = setTimeout(binary_socket.onclose, 10 * 1000);
-            }
 
             binary_socket.send(JSON.stringify(data));
+            config.wsEvent('send');
             if (msg_type && !sent_requests.has(msg_type)) {
                 sent_requests.add(msg_type);
             }
-        } else {
+        } else if (+data.time !== 1) { // Do not buffer all time requests
             buffered_sends.push({ request: data, options: $.extend(options, { promise: promise_obj }) });
-            if (isClose() && !timeouts.reconnect) {
-                timeouts.reconnect = setTimeout(() => { init(1); }, 5 * 1000);
-            }
         }
 
         return promise_obj.promise;
@@ -196,11 +191,12 @@ const BinarySocket = (() => {
         if (wrong_app_id === getAppId()) {
             return;
         }
-        if (typeof options === 'object') {
+        if (typeof options === 'object' && config !== options) {
             config         = options;
             buffered_sends = [];
         }
         clearTimeouts();
+        config.wsEvent('init');
 
         if (isClose()) {
             binary_socket = new WebSocket(socket_url);
@@ -208,7 +204,7 @@ const BinarySocket = (() => {
         }
 
         binary_socket.onopen = () => {
-            clearTimeout(timeouts.connection_error);
+            config.wsEvent('open');
             if (config.isLoggedIn()) {
                 send({ authorize: config.getClientValue('token') }, { forced: true });
             } else {
@@ -221,19 +217,10 @@ const BinarySocket = (() => {
         };
 
         binary_socket.onmessage = (msg) => {
-            clearTimeout(timeouts.connection_error);
+            config.wsEvent('message');
             const response = msg.data ? JSON.parse(msg.data) : undefined;
             if (response) {
                 SocketCache.set(response);
-                const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
-                if (passthrough) {
-                    const this_req_number = passthrough.req_number;
-                    if (this_req_number) {
-                        clearInterval(timeouts[this_req_number]);
-                        delete timeouts[this_req_number];
-                    }
-                }
-
                 const msg_type = response.msg_type;
 
                 // store in State
@@ -284,19 +271,11 @@ const BinarySocket = (() => {
         binary_socket.onclose = () => {
             sent_requests.clear();
             clearTimeouts();
+            config.wsEvent('close');
 
-            if (wrong_app_id !== getAppId()) {
-                if (isClose()) {
-                    timeouts.connection_error = setTimeout(() => {
-                        config.notify(localize('Connection error: Please check your internet connection.'), true, 'CONNECTION_ERROR');
-                    }, 5000);
-                }
-                if (typeof config.onDisconnect === 'function' && !is_disconnect_called) {
-                    config.onDisconnect();
-                    is_disconnect_called = true;
-                } else if (!timeouts.reconnect) {
-                    timeouts.reconnect = setTimeout(() => { init(1); }, 5 * 1000);
-                }
+            if (wrong_app_id !== getAppId() && typeof config.onDisconnect === 'function' && !is_disconnect_called) {
+                config.onDisconnect();
+                is_disconnect_called = true;
             }
         };
     };
@@ -327,6 +306,7 @@ const BinarySocket = (() => {
         clear,
         clearTimeouts,
         availability,
+        hasReadyState,
         sendBuffered      : sendBufferedRequests,
         get               : () => binary_socket,
         setOnDisconnect   : (onDisconnect) => { config.onDisconnect = onDisconnect; },
