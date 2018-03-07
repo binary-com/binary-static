@@ -61,7 +61,7 @@ class ToggleFullScreen extends React.Component {
     render() {
         return (
             <a href='javascript:;'
-               className={this.props.className}
+               className='ic-fullscreen'
                onClick={this.state.isFullScreen ? this.exitFullScreen : this.enterFullScreen}
             />
         );
@@ -74,13 +74,13 @@ class TradingFooter extends React.Component {
             <React.Fragment>
             {this.props.items.length &&
                 <div className='footer-links'>
-                    <TogglePortfolioDrawer className='ic-portfolio' />
+                    <TogglePortfolioDrawer />
                     {this.props.items.map((item, idx) => (
                         <a key={idx} href={item.href || 'javascript:;'}>
                             <span className={item.icon} title={item.text} />
                         </a>
                     ))}
-                    <ToggleFullScreen className='ic-zoom' />
+                    <ToggleFullScreen />
                 </div>
             }
             </React.Fragment>

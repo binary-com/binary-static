@@ -10,9 +10,9 @@ const toggleLayout = (close = false) => {
     appLayout.classList[is1col ? 'remove': 'add']('grid-1-col');
 };
 
-const TogglePortfolioDrawer = ({...props}) =>  (
+const TogglePortfolioDrawer = () => (
     <a href='javascript:;'
-       className={props.className}
+       className='ic-portfolio'
        onClick={toggleLayout}
     />
 );
@@ -60,17 +60,30 @@ class PortfolioDrawer extends React.Component {
     render() {
         const { width } = this.state;
         const isMobile  = width <= 1024;
+        const header = (
+            isMobile ?
+                <div
+                    className='portfolio-drawer-header'
+                    onClick={this.handleVisibility}
+                >
+                    <span className='ic-portfolio' />
+                    <p>Portfolio</p>
+                    <span className={`ic-close ${this.state.open ? 'open': '' }`} />
+                </div>
+                :
+                <div className='portfolio-drawer-header'>
+                    <span className='ic-portfolio' />
+                    <p>Portfolio Quick Menu</p>
+                    <a href='javascript:;'
+                       className='ic-close'
+                       onClick={toggleLayout}
+                    />
+                </div>
+        );
 
         return (
             <div className='portfolio-drawer'>
-                <div className='portfolio-drawer-header'>
-                    <span className='ic-portfolio' />
-                    <p>Portfolio <span className='hide-m'>Quick Menu</span></p>
-                    <a href='javascript:;'
-                       className={`ic-close ${this.state.open ? 'open': '' }`}
-                       onClick={isMobile ? this.handleVisibility : toggleLayout}
-                    />
-                </div>
+                { header }
                 <div className={`portfolio-list ${this.state.open ? 'show': '' }`}>
                     {
                         this.props.portfolios.map((portfolio, idx) => (

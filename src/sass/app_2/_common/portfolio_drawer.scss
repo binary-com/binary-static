@@ -10,23 +10,22 @@
     padding: 15px;
 
     &-header {
-        font-size: 0.8rem;
-        font-weight: bold;
         display: flex;
         align-items: center;
 
         p {
             margin: 0;
-            @media (max-width: 1024px) {
-                .hide-m {
-                    display: none;
-                }
-            }
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #2a3052;
         }
         .ic-portfolio {
             margin-right: 5px;
         }
         .ic-close {
+            &:before {
+                content: url('../images/trading_app/ic_close_blue_light.svg');
+            }
             margin-left: auto;
         }
     }
@@ -38,13 +37,13 @@
         border: 1px solid #f2f2f2;
         border-radius: 4px;
         transition: all 0.3s;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         cursor: pointer;
         display: grid;
         grid-template-columns: 30px 1fr;
         justify-content: center;
         align-items: center;
-        padding: 15px 5px;
+        padding: 15px 10px;
         margin: 15px 0;
 
         &:hover {
@@ -92,11 +91,7 @@
 }
 
 .ic-portfolio:before {
-    content: url('../images/trading_app/menu.svg');
-}
-
-.ic-close:before {
-    content: url('../images/trading_app/close.svg');
+    content: url('../images/trading_app/ic-portfolio-normal-light.svg');
 }
 
 // Mobile
@@ -115,7 +110,6 @@
                 opacity: 1;
             }
             .portfolio {
-                padding: 15px 10px;
                 box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
 
                 &:hover {
@@ -140,6 +134,9 @@
                     }
                 }
             }
+        }
+        .portfolio-drawer-header p {
+            text-transform: uppercase;
         }
         .ic-close {
             transform: rotate(180deg);
