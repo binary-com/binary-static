@@ -12,7 +12,7 @@ const localize            = require('../../_common/localize').localize;
 const QueryString         = require('../../_common/query_string');
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
-const urlFor              = require('../../_common/url').urlFor;
+const Url                 = require('../../_common/url');
 const applyToAllElements  = require('../../_common/utility').applyToAllElements;
 const createElement       = require('../../_common/utility').createElement;
 
@@ -45,9 +45,10 @@ const BinaryLoader = (() => {
 
     const beforeContentChange = () => {
         console.log('before content change');
-        QueryString.setQueryStringWithoutReload(
-            QueryString.removeParamFromQueryString(window.location.search, 'anchor')
-        );
+        const params = Url.paramsHash();
+        delete params.anchor;
+        const new_query_string = Url.paramsHashToString(params);
+        QueryString.setQueryStringWithoutReload(new_query_string);
         if (active_script) {
             BinarySocket.removeOnDisconnect();
             if (typeof active_script.onUnload === 'function') {
@@ -68,7 +69,7 @@ const BinaryLoader = (() => {
                 applyToAllElements('.eu-show', (el) => { el.setVisibility(1); });
                 applyToAllElements('.eu-hide', (el) => { el.setVisibility(0); });
                 if (/get_started_tabs=mt5/.test(window.location.href)) {
-                    BinaryPjax.load(urlFor('get-started'));
+                    BinaryPjax.load(Url.urlFor('get-started'));
                 }
             } else {
                 applyToAllElements('.eu-hide', (el) => { el.setVisibility(1); });
@@ -80,7 +81,7 @@ const BinaryLoader = (() => {
                 applyToAllElements('.only-cr', (el) => { el.setVisibility(0); });
                 // Fix issue with tabs.
                 if (/get_started_tabs=lookback/.test(window.location.href)) {
-                    BinaryPjax.load(urlFor('get-started'));
+                    BinaryPjax.load(Url.urlFor('get-started'));
                 }
             }
         }
@@ -96,7 +97,7 @@ const BinaryLoader = (() => {
     };
 
     const error_messages = {
-        login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_2] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor()}">`]),
+        login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_2] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${Url.urlFor()}">`]),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
     };
