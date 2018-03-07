@@ -35,7 +35,7 @@ const ScrollToAnchor = (() => {
 
     const scrollToAnchorInQuery = () => {
         const params = Url.paramsHash();
-        const id = params.anchor;
+        const id = window.decodeURI(params.anchor);
         if (!id) return;
         const candidates = document.querySelectorAll(`[data-anchor="${id}"]`);
         const el = Array.from(candidates).find(isVisible);
