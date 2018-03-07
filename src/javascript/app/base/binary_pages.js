@@ -34,8 +34,6 @@ const professionalClient   = require('../pages/user/account/settings/professiona
 const Statement            = require('../pages/user/account/statement/statement.init');
 const TopUpVirtual         = require('../pages/user/account/top_up_virtual');
 const Accounts             = require('../pages/user/accounts');
-const ICOSubscribe         = require('../pages/user/ico_subscribe');
-const ICOClaimForm         = require('../pages/user/ico_claim_form');
 const LostPassword         = require('../pages/user/lost_password');
 const MetaTrader           = require('../pages/user/metatrader/metatrader');
 const FinancialAccOpening  = require('../pages/user/new_account/financial_acc_opening');
@@ -54,7 +52,6 @@ const HomeJP             = require('../../static/japan/home');
 const Charity            = require('../../static/pages/charity');
 const Contact            = require('../../static/pages/contact');
 const GetStarted         = require('../../static/pages/get_started');
-const GetStartedBeta     = require('../../static/pages/get_started_beta');
 const Home               = require('../../static/pages/home');
 const JobDetails         = require('../../static/pages/job_details');
 const Regulation         = require('../../static/pages/regulation');
@@ -113,23 +110,19 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
-    'binary-options'         : { module: GetStartedBeta.BinaryOptions },
+    'binary-options'         : { module: GetStarted.BinaryOptions },
     'careers'                : { module: StaticPages.Careers },
-    'cfds'                   : { module: GetStartedBeta.CFDs },
+    'cfds'                   : { module: GetStarted.CFDs },
     'contract-specifications': { module: TabSelector },
-    'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
+    'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
-    'forex'                  : { module: GetStartedBeta.Forex },
-    'get-started-beta'       : { module: TabSelector },
-    'get-started'            : { module: GetStarted },
+    'forex'                  : { module: GetStarted.Forex },
+    'get-started'            : { module: TabSelector },
     'get-started-jp'         : { module: GetStartedJP },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
-    'home-beta'              : { module: Home,                       not_authenticated: true },
     'how-to-trade-mt5'       : { module: TabSelector },
-    'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
-    'ico-claim-form'         : { module: ICOClaimForm,               is_authenticated: true, only_real: true, needs_currency: true },
     'job-details'            : { module: JobDetails },
-    'metals'                 : { module: GetStartedBeta.Metals },
+    'metals'                 : { module: GetStarted.Metals },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
@@ -138,7 +131,6 @@ const pages_config = {
     'terms-and-conditions-jp': { module: TermsAndConditions },
     'types-of-accounts'      : { module: StaticPages.TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
-    'volidx-markets'         : { module: StaticPages.VolidxMarkets },
     'why-us'                 : { module: WhyUs },
     'why-us-jp'              : { module: WhyUs },
     'withdraw-jp'            : { module: CashierJP.Withdraw,         is_authenticated: true, only_real: true },

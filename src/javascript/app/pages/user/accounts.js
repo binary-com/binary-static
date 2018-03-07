@@ -48,7 +48,7 @@ const Accounts = (() => {
         $('#accounts_wrapper').setVisibility(1);
     };
 
-    const getCompanyName = (account, account_is_ico_only) => Client.getLandingCompanyValue(account, landing_company, 'name', account_is_ico_only);
+    const getCompanyName = account => Client.getLandingCompanyValue(account, landing_company, 'name');
 
     const populateNewAccounts = (upgrade_info) => {
         const new_account = upgrade_info;
@@ -69,12 +69,15 @@ const Accounts = (() => {
 
     const populateExistingAccounts = () => {
         const all_login_ids = Client.getAllLoginids();
+        // Populate active loginids first.
         all_login_ids
             .filter(loginid => !Client.get('is_disabled', loginid) && !Client.get('excluded_until', loginid))
             .sort((a, b) => a > b)
             .forEach((loginid) => {
                 appendExistingAccounts(loginid);
             });
+
+        // Populate disabled or self excluded loginids.
         all_login_ids
             .filter(loginid => Client.get('is_disabled', loginid) || Client.get('excluded_until', loginid))
             .sort((a, b) => a > b)
@@ -88,7 +91,7 @@ const Accounts = (() => {
         const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
 
         if (!Client.isAccountOfType('virtual', loginid)) {
-            const company_name = getCompanyName(loginid , Client.get('is_ico_only', loginid));
+            const company_name = getCompanyName(loginid);
             account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
         }
 
@@ -117,9 +120,6 @@ const Accounts = (() => {
     };
 
     const getAvailableMarkets = (loginid) => {
-        if (Client.get('is_ico_only', loginid)) {
-            return [localize('None')];
-        }
         let legal_allowed_markets = Client.getLandingCompanyValue(loginid, landing_company, 'legal_allowed_markets') || '';
         if (Array.isArray(legal_allowed_markets) && legal_allowed_markets.length) {
             legal_allowed_markets =
@@ -206,7 +206,6 @@ const Accounts = (() => {
         const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
         const req          = [
             { request_field: 'new_account_real',       value: 1 },
-            { request_field: 'account_type',           value: 'default' },
             { request_field: 'date_of_birth',          value: dob },
             { request_field: 'salutation',             value: get_settings.salutation },
             { request_field: 'first_name',             value: get_settings.first_name },

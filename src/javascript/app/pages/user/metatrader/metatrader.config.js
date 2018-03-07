@@ -1,7 +1,7 @@
 const Client       = require('../../../base/client');
 const GTM          = require('../../../base/gtm');
 const BinarySocket = require('../../../base/socket');
-const formatMoney  = require('../../../common/currency').formatMoney;
+const Currency     = require('../../../common/currency');
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
 const urlFor       = require('../../../../_common/url').urlFor;
@@ -63,7 +63,7 @@ const MetaTraderConfig = (() => {
         deposit: {
             title      : localize('Deposit'),
             success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
-                formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
+                Currency.formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_binary,
                 response.echo_req.to_mt5,
                 response.binary_transaction_id,
@@ -82,7 +82,7 @@ const MetaTraderConfig = (() => {
                                     resolve(localize('Your cashier is locked.')); // Locked from BO
                                 } else {
                                     const limit = State.getResponse('get_limits.remainder');
-                                    if (typeof limit !== 'undefined' && limit < 1) {
+                                    if (typeof limit !== 'undefined' && +limit < Currency.getMinWithdrawal(Client.get('currency'))) {
                                         resolve(localize('You have reached the limit.'));
                                     } else {
                                         resolve();
@@ -97,7 +97,7 @@ const MetaTraderConfig = (() => {
         withdrawal: {
             title      : localize('Withdraw'),
             success_msg: response => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
-                formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
+                Currency.formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_mt5,
                 response.echo_req.to_binary,
                 response.binary_transaction_id,
@@ -190,11 +190,11 @@ const MetaTraderConfig = (() => {
             { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
         ],
         deposit: [
-            { selector: fields.deposit.txt_amount.id, validations: ['req', ['number', { type: 'float', min: 1, max: Math.min(State.getResponse('get_limits.remainder') || 20000, 20000), decimals: 2 }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
+            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: 1, max: Math.min(State.getResponse('get_limits.remainder') || 20000, 20000), decimals: 2 }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
         ],
         withdrawal: [
-            { selector: fields.withdrawal.txt_main_pass.id, validations: ['req'] },
-            { selector: fields.withdrawal.txt_amount.id,    validations: ['req', ['number', { type: 'float', min: 1, max: 20000, decimals: 2 }]] },
+            { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
+            { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: 1, max: 20000, decimals: 2 }]] },
         ],
     });
 

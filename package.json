@@ -7,7 +7,7 @@
     "start": "sudo -p 'enter password for sudo:' grunt custom",
     "livereload": "sudo -p 'enter password for sudo:' grunt livereload",
     "serve": "sudo -p 'enter password for sudo:' grunt serve",
-    "eslint": "eslint --fix src/ build/"
+    "eslint": "eslint --fix \"src/**/*.jsx\" src/ build/"
   },
   "repository": {
     "type": "git",
@@ -90,8 +90,8 @@
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",
-    "binary-style": "0.2.1",
     "binary-document-uploader": "2.0.0",
+    "binary-style": "0.2.2",
     "custom-event-polyfill": "0.3.0",
     "event-source-polyfill": "0.0.9",
     "highstock-release": "5.0.14",
@@ -101,6 +101,7 @@
     "kinetic": "5.2.0",
     "moment": "2.19.4",
     "promise-polyfill": "6.1.0",
+    "scriptjs": "2.5.8",
     "select2": "4.0.5",
     "url-polyfill": "1.0.9",
     "web-push-notifications": "3.0.8",

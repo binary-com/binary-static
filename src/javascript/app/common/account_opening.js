@@ -6,6 +6,7 @@ const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
 const makeOption         = require('../../_common/common_functions').makeOption;
+const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
@@ -27,11 +28,14 @@ const AccountOpening = (() => {
         return 0;
     };
 
-    const populateForm = (form_id, getValidations, is_financial, is_ico_only) => {
+    const populateForm = (form_id, getValidations, is_financial) => {
         getResidence(form_id, getValidations);
         generateBirthDate();
         if (Client.canRequestProfessional()) {
-            professionalClient.init(is_financial, false, is_ico_only);
+            professionalClient.init(is_financial, false);
+        }
+        if (Client.get('residence') !== 'jp') {
+            Geocoder.init(form_id);
         }
     };
 
@@ -177,7 +181,7 @@ const AccountOpening = (() => {
             id;
         $(form_id).find('select, input[type=checkbox]').each(function () {
             id = $(this).attr('id');
-            if (!/^(tnc|address_state|chk_professional)$/.test(id)) {
+            if (!/^(tnc|address_state|chk_professional|chk_tax_id)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
                 if (id === 'not_pep') {
                     validation.exclude_request = 1;

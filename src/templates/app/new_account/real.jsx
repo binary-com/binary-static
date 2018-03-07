@@ -1,7 +1,7 @@
 import React from 'react';
 import PepDeclaration from '../_includes/pep_declaration.jsx';
 import ProfessionalClient from '../_includes/professional_client.jsx';
-import { Fieldset } from '../../_common/components/forms.jsx';
+import { Fieldset, FormRow } from '../../_common/components/forms.jsx';
 import {
     Salutation,
     FirstName,
@@ -19,6 +19,7 @@ import {
     SecretAnswer,
     ClientMessage,
     Tnc,
+    GeocodeResponse,
 } from '../../_common/components/forms_common_rows.jsx';
 
 const Real = () => (
@@ -30,17 +31,20 @@ const Real = () => (
                 <FirstName />
                 <LastName />
                 <DateOfBirth />
+                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} />
                 <Residence />
                 <AccountOpeningReason />
             </Fieldset>
 
-            <Fieldset legend={it.L('Address')}>
+            <Fieldset id='address_form' legend={it.L('Address')}>
+                <p className='hint'>{it.L('Please enter your full address to avoid authentication delays.')}</p>
                 <AddressLine1 />
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
                 <AddressPostcode />
                 <Phone />
+                <GeocodeResponse />
             </Fieldset>
 
             <Fieldset legend={it.L('Security')}>

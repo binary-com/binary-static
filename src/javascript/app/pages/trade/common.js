@@ -7,7 +7,7 @@ const elementInnerHtml   = require('../../../_common/common_functions').elementI
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
-// const urlFor             = require('../../../_common/url').urlFor;
+const urlFor             = require('../../../_common/url').urlFor;
 const createElement      = require('../../../_common/utility').createElement;
 const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 const isEmptyObject      = require('../../../_common/utility').isEmptyObject;
@@ -214,6 +214,8 @@ const commonTrading = (() => {
             barrier = 'euro_atm';
         } else if (/overunder|evenodd|matchdiff/.test(form_name)) {
             name = 'digits';
+        } else if (/lookback/.test(form_name)) {
+            name = 'lookback';
         }
         return {
             form_name       : name,
@@ -249,6 +251,9 @@ const commonTrading = (() => {
         UPORDOWN    : 'bottom',
         ONETOUCH    : 'top',
         NOTOUCH     : 'bottom',
+        LBFLOATCALL : 'middle',
+        LBFLOATPUT  : 'middle',
+        LBHIGHLOW   : 'middle',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');
@@ -278,6 +283,9 @@ const commonTrading = (() => {
             'asian',
             ['digits',
                 ['matchdiff', 'evenodd', 'overunder'],
+            ],
+            ['lookback',
+                ['lookbackhigh', 'lookbacklow', 'lookbackhighlow'],
             ],
         ];
 
@@ -475,39 +483,17 @@ const commonTrading = (() => {
         return 0;
     };
 
-    const displayTooltip = (market, symbol) => {
-        if (!market || !symbol) return;
-
-        const tip     = getElementById('symbol_tip');
-
-        // TODO: remove tip.hide() below and uncomment below lines when fixing the get started links
-        tip.hide();
-
-        // const markets = getElementById('contract_markets').value;
-
-        // if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
-        //     tip.show();
-        //     tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
-        // } else {
-        //     tip.hide();
-        // }
-        // if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
-        //     tip.show();
-        //     tip.setAttribute('target', urlFor('/get-started/otc-indices-stocks'));
-        // }
-        // if (market.match(/^random_index/) || symbol.match(/^R_/)) {
-        //     tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-indices'));
-        // }
-        // if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)) {
-        //     tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-quotidians'));
-        // }
-        // if (market.match(/^smart_fx/) || symbol.match(/^WLD/)) {
-        //     tip.show();
-        //     tip.setAttribute('target', urlFor('/get-started/smart-indices', '#world-fx-indices'));
-        // }
+    const displayTooltip = () => {
+        const tip = getElementById('symbol_tip');
+        if (tip) {
+            // TODO: set different targets according to the selected market/underlying (once the data-anchor is ready)
+            tip.setAttribute('target', urlFor('/get-started/binary-options', '#range-of-markets'));
+        }
     };
 
     const selectOption = (option, select) => {
+        if (!select) return false;
+
         const options = select.getElementsByTagName('option');
         let contains  = 0;
         for (let i = 0; i < options.length; i++) {

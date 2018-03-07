@@ -14,19 +14,10 @@ const texts = [
     // top bar
     'Open a Real Account',
     'Open a Financial Account',
-
-    // menu items
-    'Trade',
-    'Portfolio',
-    'Profit Table',
-    'Statement',
-    'Cashier',
-    'Resources',
-    'Asset Index',
-    'Trading Times',
-    'Shop',
-    'Payment Agent',
-    'ICO Bids',
+    'Network status',
+    'Online',
+    'Offline',
+    'Connecting to server',
 
     // account drop down
     'Virtual Account',
@@ -110,6 +101,7 @@ const texts = [
     'Loss',
     'Profit',
     'Payout',
+    'Units',
     'Stake',
     'Duration',
     'End Time',
@@ -138,6 +130,7 @@ const texts = [
     'Long',
     'Short',
     'Chart',
+    'Portfolio',
     'Explanation',
     'Last Digit Stats',
     'Waiting for entry tick.',
@@ -150,6 +143,13 @@ const texts = [
     'Session',
     'Cryptocurrency',
     'Fiat Currency',
+    'High',
+    'Low',
+    'Close',
+    'Payoff',
+    'High-Close',
+    'Close-Low',
+    'High-Low',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -185,6 +185,8 @@ const texts = [
     'Your settings have been updated successfully.',
     'Female',
     'Male',
+    'Please select a country',
+    'Please confirm that all the information above is true and complete.',
 
     // home and virtual account opening page
     'verification token',
@@ -236,7 +238,7 @@ const texts = [
     'Scopes',
     'Never Used',
     'Delete',
-    'Are you sure that you want to permanently delete token',
+    'Are you sure that you want to permanently delete the token',
     'Please select at least one scope',
 
     // Guide
@@ -322,6 +324,16 @@ const texts = [
     'Processing your request...',
     'Please check the above form for pending errors.',
 
+    // contract types display names
+    'Asian Up',
+    'Asian Down',
+    'Digit Matches',
+    'Digit Differs',
+    'Digit Odd',
+    'Digit Even',
+    'Digit Over',
+    'Digit Under',
+
     // multi_barriers_trading
     '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
     '[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].',
@@ -334,6 +346,7 @@ const texts = [
     'M',
     'D',
     'Higher',
+    'Higher or equal',
     'Lower',
     'Touches',
     'Does Not Touch',
@@ -348,6 +361,7 @@ const texts = [
     'Sorry, your account is not authorised for any further contract purchases.',
     'Lots',
     'Payout per lot = 1,000',
+    'This page is not available in the selected language.',
 
     // digit_info
     'Select market',
@@ -413,7 +427,7 @@ const texts = [
     'Closed',
     'Contract has not started yet',
     'Price',
-    'Spot Time',
+    'Spot Time (GMT)',
     'Current Time',
     'Exit Spot Time',
     'Exit Spot',
@@ -425,7 +439,8 @@ const texts = [
     'Note',
     'Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.',
     'Contract ID',
-    'Reference ID',
+    'Contract Type',
+    'Transaction ID',
     'Remaining Time',
     'Barrier Change',
     'Audit',
@@ -445,7 +460,7 @@ const texts = [
     'Permissions',
     'Never',
     'Revoke access',
-    'Are you sure that you want to permanently revoke access to application',
+    'Are you sure that you want to permanently revoke access to the application',
     'Transaction performed by [_1] (App ID: [_2])',
     'Admin',
     'Read',
@@ -493,6 +508,8 @@ const texts = [
     'thousand',
     'million',
     'Should start with letter or number, and may contain hyphen and underscore.',
+    'Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.',
+    'Validate address',
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',
@@ -519,6 +536,9 @@ const texts = [
     'Change Password',
     'Demo Accounts',
     'Real-Money Accounts',
+    'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
+    'for MT5 Account',
+    '[_1] Account [_2]',
 
     // account_transfer
     'Min',
@@ -543,23 +563,10 @@ const texts = [
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
 
+    // TODO: remove ico messages when all ico contracts are removed
     // binaryico message
     'Bid',
     'Closed Bid',
-    'Cancel Bid',
-    'Refund Bid',
-    'Claim Tokens',
-    'Ended',
-    'Pending',
-    'The ICO is currently unavailable.',
-    'Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance.',
-    'Minimum bid',
-    'The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids.',
-
-    // binaryico histogram chart
-    'Final Price',
-    'Total Bids',
-    'Price Band',
 
     // accounts
     'Create',
@@ -572,7 +579,6 @@ const texts = [
     'Create Account',
     'Accounts List',
     '[_1] Account',
-    'None',
     'Investment',
     'Gaming',
     'Virtual',

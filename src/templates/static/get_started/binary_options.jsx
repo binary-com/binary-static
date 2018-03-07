@@ -20,7 +20,7 @@ const SectionTicked = ({ header, text }) => (
 const SectionSmall = ({ header, text, image }) => (
     <div className='gr-4 gr-padding-30 gr-parent'>
         <div className='gr-padding-20 gr-parent'>
-            <img src={image ? it.url_for(`images/pages/get-started-beta/binary-options/${image}.svg`) : 'https://placehold.it/70x70'} />
+            <img src={image ? it.url_for(`images/pages/get-started/binary-options/${image}.svg`) : 'https://placehold.it/70x70'} />
         </div>
         <strong>{header}</strong>
         <p className='no-margin gr-padding-10'>{text}</p>
@@ -31,7 +31,7 @@ const SectionLarge = ({ header, text, image, children }) => (
     <React.Fragment>
         <div className='gr-row'>
             <div className='gr-gutter gr-centered-m gr-centered-p gr-parent gr-padding-30'>
-                <img src={it.url_for(`images/pages/get-started-beta/binary-options/${image}.svg`)} />
+                <img src={it.url_for(`images/pages/get-started/binary-options/${image}.svg`)} />
             </div>
             <div className='gr-9 gr-12-m gr-12-p'>
                 <h3 className='secondary-color'>{header}</h3>
@@ -51,11 +51,11 @@ const Step = ({ header, text }) => {
 
     return (
         <div className='step'>
-            <div className='border-bottom'></div>
+            <div className='border-bottom' />
             <div className='circle'>{ circle_no }</div>
             <div className='gr-padding-20 gr-gutter center-text'>
                 <div className='gr-8 gr-centered'>
-                    <img className='responsive' src={it.url_for(`images/pages/get-started-beta/binary-options/how-to-trade-binary/easy-step-${circle_no}.svg`)} />
+                    <img className='responsive' src={it.url_for(`images/pages/get-started/binary-options/how-to-trade-binary/easy-step-${circle_no}.svg`)} />
                 </div>
                 <div className='gr-padding-20 gr-child'><strong>{header}</strong></div>
                 <p className='no-margin gr-padding-10'>{text}</p>
@@ -95,18 +95,21 @@ const BinaryOptions = () => {
     circle_no = 0;
 
     return (
-        <div className='static_full get-started-beta'>
+        <div className='static_full get-started'>
             <h1>{it.L('Binary Options')}</h1>
             <div className='gr-row'>
                 <div className='gr-3 gr-hide-m sidebar-container'>
                     <div className='sidebar'>
-                        <List id='sidebar-nav' items={[
-                            { id: 'what-are-binary-options', href: '#what-are-binary-options', text: it.L('What are binary options')},
-                            { id: 'how-to-trade-binary',     href: '#how-to-trade-binary',     text: it.L('How to trade binary options')},
-                            { id: 'types-of-trades',         href: '#types-of-trades',         text: it.L('Types of trades')},
-                            { id: 'range-of-markets',        href: '#range-of-markets',        text: it.L('Range of markets')},
-                            { id: 'glossary',                href: '#glossary',                text: it.L('Glossary')},
-                        ]} />
+                        <List
+                            id='sidebar-nav'
+                            items={[
+                                { id: 'what-are-binary-options', href: '#what-are-binary-options', text: it.L('What are binary options')},
+                                { id: 'how-to-trade-binary',     href: '#how-to-trade-binary',     text: it.L('How to trade binary options')},
+                                { id: 'types-of-trades',         href: '#types-of-trades',         text: it.L('Types of trades')},
+                                { id: 'range-of-markets',        href: '#range-of-markets',        text: it.L('Range of markets')},
+                                { id: 'glossary',                href: '#glossary',                text: it.L('Glossary')},
+                            ]}
+                        />
                     </div>
                 </div>
                 <div className='gr-9 gr-12-m'>
@@ -166,7 +169,7 @@ const BinaryOptions = () => {
                         <h3 className='secondary-color'>{it.L('Step 1: Define your position')}</h3>
                         <p>{it.L('The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:')}</p>
                         <div className='gr-padding-30'>
-                            <img className='responsive' src={it.url_for('images/pages/get-started-beta/binary-options/how-to-trade-binary/define-position.svg')} />
+                            <img className='responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/define-position.svg')} />
                         </div>
 
                         <CircleHeader className='gr-padding-10' header={it.L('Underlying market')} text={it.L('Choose from five available markets:')}>
@@ -188,24 +191,30 @@ const BinaryOptions = () => {
                             <p>{it.L('Aside from the three main trade types above, you also get Asians and Digits trade types exclusively with our Volatility Indices.')}</p>
                         </CircleHeader>
 
-                        <CircleHeader header={it.L('Duration')}
-                                      text={it.L('Set the length of your trade from 10 seconds to 365 days, whether you have a short-term or long-term view of the markets.')} />
+                        <CircleHeader
+                            header={it.L('Duration')}
+                            text={it.L('Set the length of your trade from 10 seconds to 365 days, whether you have a short-term or long-term view of the markets.')}
+                        />
 
-                        <CircleHeader header={it.L('Barrier')}
-                                      text={it.L('Set barrier(s) to define your position and trigger the payout you\'ll receive.')} />
+                        <CircleHeader
+                            header={it.L('Barrier')}
+                            text={it.L('Set barrier(s) to define your position and trigger the payout you\'ll receive.')}
+                        />
 
-                        <CircleHeader header={it.L('Payout')}
-                                      text={it.L('Choose the payout you wish to receive from correctly predicting this contract.')} />
+                        <CircleHeader
+                            header={it.L('Payout')}
+                            text={it.L('Choose the payout you wish to receive from correctly predicting this contract.')}
+                        />
 
                         <HeaderSecondary header={it.L('Step 2: Get your price')} />
                         <div className='gr-padding-20 gr-10'>
-                            <img className='gr-padding-20 responsive' src={it.url_for('images/pages/get-started-beta/binary-options/how-to-trade-binary/step-2.svg')} />
+                            <img className='gr-padding-20 responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/step-2.svg')} />
                         </div>
                         <p>{it.L('The price of the contract is automatically calculated by our patented pricing technology based on the parameters you\'ve defined in Step 1. Our prices are benchmarked against the interbank options market, so you always get the most competitive prices. This means that you\'ll always receive fair and transparent pricing, whatever your position.')}</p>
 
                         <HeaderSecondary header={it.L('Step 3: Make your trade')} />
                         <div className='gr-padding-20 gr-10'>
-                            <img className='responsive' src={it.url_for('images/pages/get-started-beta/binary-options/how-to-trade-binary/step-3.svg')} />
+                            <img className='responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/step-3.svg')} />
                         </div>
                         <p>{it.L('When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there\'s no risk of \'slippage\' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions.')}</p>
                     </Section>
@@ -273,43 +282,44 @@ const BinaryOptions = () => {
                         </ul>
                     </Section>
                     <Section id='glossary' header={it.L('Glossary')}>
-                        <Glossary glossary={[
-                            { word: it.L('Barrier(s)'),      definition: it.L('The barrier of a binary option trade is the price target you set for the underlying. You can choose trades that stay below or go above a price target, or stay between two targets.')},
-                            { word: it.L('Binary option'),   definition: it.L('A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct.')},
-                            { word: it.L('Commodities'),     definition: it.L('Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On [_1], they are priced in US dollars.', it.website_name)},
-                            { word: it.L('Contract period'), definition: it.L('The contract period is the timeframe of a trade. It is also called the duration.')},
-                            { word: it.L('Derivative'),      definition: it.L('A derivative is a financial instrument whose value is determined by reference to an underlying market. Derivatives are commonly traded in the inter-bank market, and binaries are one of the simplest forms of derivatives.')},
-                            { word: it.L('Duration'),        definition: it.L('The duration is the length of a purchased trade (see \'contract period\').')},
+                        <Glossary
+                            glossary={[
+                                { word: it.L('Barrier(s)'),      definition: it.L('The barrier of a binary option trade is the price target you set for the underlying. You can choose trades that stay below or go above a price target, or stay between two targets.')},
+                                { word: it.L('Binary option'),   definition: it.L('A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct.')},
+                                { word: it.L('Commodities'),     definition: it.L('Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On [_1], they are priced in US dollars.', it.website_name)},
+                                { word: it.L('Contract period'), definition: it.L('The contract period is the timeframe of a trade. It is also called the duration.')},
+                                { word: it.L('Derivative'),      definition: it.L('A derivative is a financial instrument whose value is determined by reference to an underlying market. Derivatives are commonly traded in the inter-bank market, and binaries are one of the simplest forms of derivatives.')},
+                                { word: it.L('Duration'),        definition: it.L('The duration is the length of a purchased trade (see \'contract period\').')},
 
-                            { word: it.L('Ends Between/Ends Outside trades'), definition: it.L('An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target.')},
+                                { word: it.L('Ends Between/Ends Outside trades'), definition: it.L('An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target.')},
 
-                            { word: it.L('Entry spot price'),    definition: it.L('The entry spot price is the starting price of the trade purchased by a trader.')},
-                            { word: it.L('Expiry price'),        definition: it.L('The expiry price is the price of the underlying when the contract expires.')},
-                            { word: it.L('Forex'),               definition: it.L('In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar.')},
-                            { word: it.L('GMT'),                 definition: it.L('GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the [_1] site use GMT all year round.', it.website_name)},
-                            { word: it.L('Higher/Lower trades'), definition: it.L('These are trades where the trader predicts if a market will finish higher or lower than a specified price target.')},
-                            { word: it.L('Indices'),             definition: it.L('Stock market indices measure the value of a selection of companies in the stock market.')},
-                            { word: it.L('In/Out trades'),       definition: it.L('These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also \'Stays Between/Goes Outside trades\').')},
-                            { word: it.L('Market exit price'),   definition: it.L('The market exit price is the price in effect at the end of the contract period.')},
-                            { word: it.L('No Touch trades'),     definition: it.L('These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade.')},
-                            { word: it.L('(One) Touch trades'),  definition: it.L('These are trades where the trader selects a price target, and predicts that the market will touch the target before the expiry of the trade.')},
-                            { word: it.L('Payout'),              definition: it.L('The payout is the amount paid to an options trader if their prediction is correct.')},
-                            { word: it.L('Pip'),                 definition: it.L('Pip stands for \'percentage in point\' which is generally the fourth decimal place (i.e. 0.0001).')},
-                            { word: it.L('Profit'),              definition: it.L('The profit is the difference between the purchase price (the stake) and the payout on a winning trade.')},
-                            { word: it.L('Volatility Indices'),  definition: it.L('The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends.')},
-                            { word: it.L('Resale price'),        definition: it.L('The resale price indicates a contract\'s current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See \'Sell option\' for more details on selling contracts before expiry.')},
-                            { word: it.L('Return'),              definition: it.L('The return is the money realized when the contract expires (see \'Payout\').')},
-                            { word: it.L('Rise/Fall trades'),    definition: it.L('These are trades where the trader predicts if a market will rise or fall at the end of a selected time period.')},
-                            { word: it.L('Sell option'),         definition: it.L('It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a blue \'Sell\' button next to your trade in the portfolio.')},
-                            { word: it.L('Spot price'),          definition: it.L('This is the current price at which an underlying can be bought or sold at a particular time.')},
-                            { word: it.L('Stake'),               definition: it.L('The stake is the amount that a trader must pay to enter into a trade.')},
+                                { word: it.L('Entry spot price'),    definition: it.L('The entry spot price is the starting price of the trade purchased by a trader.')},
+                                { word: it.L('Expiry price'),        definition: it.L('The expiry price is the price of the underlying when the contract expires.')},
+                                { word: it.L('Forex'),               definition: it.L('In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar.')},
+                                { word: it.L('GMT'),                 definition: it.L('GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the [_1] site use GMT all year round.', it.website_name)},
+                                { word: it.L('Higher/Lower trades'), definition: it.L('These are trades where the trader predicts if a market will finish higher or lower than a specified price target.')},
+                                { word: it.L('Indices'),             definition: it.L('Stock market indices measure the value of a selection of companies in the stock market.')},
+                                { word: it.L('In/Out trades'),       definition: it.L('These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also \'Stays Between/Goes Outside trades\').')},
+                                { word: it.L('Market exit price'),   definition: it.L('The market exit price is the price in effect at the end of the contract period.')},
+                                { word: it.L('No Touch trades'),     definition: it.L('These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade.')},
+                                { word: it.L('(One) Touch trades'),  definition: it.L('These are trades where the trader selects a price target, and predicts that the market will touch the target before the expiry of the trade.')},
+                                { word: it.L('Payout'),              definition: it.L('The payout is the amount paid to an options trader if their prediction is correct.')},
+                                { word: it.L('Pip'),                 definition: it.L('Pip stands for \'percentage in point\' which is generally the fourth decimal place (i.e. 0.0001).')},
+                                { word: it.L('Profit'),              definition: it.L('The profit is the difference between the purchase price (the stake) and the payout on a winning trade.')},
+                                { word: it.L('Volatility Indices'),  definition: it.L('The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends.')},
+                                { word: it.L('Resale price'),        definition: it.L('The resale price indicates a contract\'s current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See \'Sell option\' for more details on selling contracts before expiry.')},
+                                { word: it.L('Return'),              definition: it.L('The return is the money realized when the contract expires (see \'Payout\').')},
+                                { word: it.L('Rise/Fall trades'),    definition: it.L('These are trades where the trader predicts if a market will rise or fall at the end of a selected time period.')},
+                                { word: it.L('Sell option'),         definition: it.L('It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a blue \'Sell\' button next to your trade in the portfolio.')},
+                                { word: it.L('Spot price'),          definition: it.L('This is the current price at which an underlying can be bought or sold at a particular time.')},
+                                { word: it.L('Stake'),               definition: it.L('The stake is the amount that a trader must pay to enter into a trade.')},
 
-                            { word: it.L('Stays Between/Goes Outside trades'), definition: it.L('A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader.')},
+                                { word: it.L('Stays Between/Goes Outside trades'), definition: it.L('A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader.')},
 
-                            { word: it.L('Tick'),       definition: it.L('A tick is the minimum upward or downward movement in the price of a market.')},
-                            { word: it.L('Underlying'), definition: it.L('Each binary option is a prediction on the future movement of an underlying market.')},
-
-                        ]} />
+                                { word: it.L('Tick'),       definition: it.L('A tick is the minimum upward or downward movement in the price of a market.')},
+                                { word: it.L('Underlying'), definition: it.L('Each binary option is a prediction on the future movement of an underlying market.')},
+                            ]}
+                        />
                     </Section>
                     <NavButtons parent='binary' section='binary-options' />
                 </div>

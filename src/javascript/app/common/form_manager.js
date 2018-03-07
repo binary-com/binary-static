@@ -107,6 +107,18 @@ const FormManager = (() => {
             $btn_submit,
             can_submit;
 
+        const submit = (req) => {
+            disableButton($btn_submit);
+            form.can_submit = false;
+            if (isEmptyObject(req)) {
+                onSuccess();
+            } else {
+                BinarySocket.send(req).then((response) => {
+                    onSuccess(response);
+                });
+            }
+        };
+
         const onSuccess = (response = {}) => {
             if (typeof options.fnc_response_handler === 'function') {
                 if (options.enable_button || 'error' in response) {
@@ -125,17 +137,12 @@ const FormManager = (() => {
             if (!can_submit) return;
             if (Validation.validate(options.form_selector)) {
                 const req = $.extend({}, options.obj_request, getFormData(options.form_selector));
-                if (typeof options.fnc_additional_check === 'function' && !options.fnc_additional_check(req)) {
-                    return;
-                }
-                disableButton($btn_submit);
-                form.can_submit = false;
-                if (isEmptyObject(req)) {
-                    onSuccess();
-                } else {
-                    BinarySocket.send(req).then((response) => {
-                        onSuccess(response);
+                if (typeof options.fnc_additional_check === 'function') {
+                    Promise.resolve(options.fnc_additional_check(req)).then((result) => {
+                        if (result) submit(req);
                     });
+                } else {
+                    submit(req);
                 }
             }
         });
