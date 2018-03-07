@@ -28,6 +28,20 @@ body #topbar {
     .nav-caret {
         margin-right: 0;
     }
+    #network_status {
+        width: 10px;
+        height: 10px;
+        margin: auto;
+        border-radius: 50%;
+        background: $COLOR_GREEN;
+
+        &.offline {
+            background: $COLOR_RED;
+        }
+        &.blinker {
+            background: $COLOR_YELLOW;
+        }
+    }
 }
 
 body #topbar, .landing_page-content {
@@ -48,6 +62,9 @@ body #topbar, .landing_page-content {
         max-width: 32px;
     }
     #menu-top {
+        &, * {
+            transition: unset;
+        }
         a:hover {
             opacity: 0.75;
         }
