@@ -14,7 +14,7 @@ const Biel = () => (
         <p>{it.L('In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the "Rules"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail.')}</p>
 
         <h2>{it.L('Restrictions')}</h2>
-        <p>{it.L('Citizens of Belgium, Bosnia and Herzegovina, Democratic People\'s Republic of Korea (DPRK), Ethiopia, Iran, Iraq, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd.')}</p>
+        <p>{it.L('Citizens of Belgium, Bosnia and Herzegovina, Democratic People\'s Republic of Korea (DPRK), Ethiopia, Iran, Iraq, Syria, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd.')}</p>
 
         <h2>{it.L('Client classification')}</h2>
         <p>{it.L('Under the Rules, clients may be categorised into one of the following three categories:')}</p>
