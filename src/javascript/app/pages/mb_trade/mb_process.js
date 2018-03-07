@@ -40,6 +40,10 @@ const MBProcess = (() => {
                 req.landing_company = 'japan';
             }
             BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
+                if (!response.active_symbols || !response.active_symbols.length) {
+                    $('#main_loading').replaceWith($('<p/>', { class: 'notice-msg center-text container', text: localize('Sorry, this feature is not available in your jurisdiction.') }));
+                    return;
+                }
                 processActiveSymbols(response);
             });
         });
