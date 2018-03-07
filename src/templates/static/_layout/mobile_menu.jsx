@@ -23,10 +23,10 @@ const MobileMenu = () => (
                     href={it.url_for('trading')}
                     className='ja-hide ico-only-hide client_logged_in invisible'
                     subitems={[
-                        { text: it.L('[_1]', it.website_name), href: it.url_for('trading'), className: 'no-capitalize' },
-                        { text: it.L('Webtrader'),             href: 'https://webtrader.binary.com', target: '_blank' },
-                        { text: it.L('Binary Bot'),            href: 'https://bot.binary.com',       target: '_blank' },
-                        { text: it.L('MetaTrader 5'),          href: it.url_for('user/metatrader') },
+                        { text: it.L('SmartTrader'),  href: it.url_for('trading'), className: 'no-capitalize' },
+                        { text: it.L('WebTrader'),    href: 'https://webtrader.binary.com', target: '_blank' },
+                        { text: it.L('Binary Bot'),   href: 'https://bot.binary.com',       target: '_blank' },
+                        { text: it.L('MetaTrader 5'), href: it.url_for('user/metatrader') },
                     ]}
                 />
                 <Li text={it.L('Portfolio')}    href={it.url_for('user/portfoliows')}    className='ico-only-hide client_logged_in invisible' />

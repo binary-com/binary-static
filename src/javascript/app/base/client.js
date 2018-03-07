@@ -133,6 +133,20 @@ const Client = (() => {
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
+        updateAccountList(authorize.account_list);
+    };
+
+    const updateAccountList = (account_list) => {
+        account_list.forEach((account) => {
+            set('excluded_until', account.excluded_until || '', account.loginid);
+            Object.keys(account).forEach((param) => {
+                const param_to_set = param === 'country' ? 'residence' : param;
+                const value_to_set = typeof account[param] === 'undefined' ? '' : account[param];
+                if (param_to_set !== 'loginid') {
+                    set(param_to_set, value_to_set, account.loginid);
+                }
+            });
+        });
     };
 
     const shouldAcceptTnc = () => {

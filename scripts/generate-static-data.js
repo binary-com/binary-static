@@ -14,6 +14,10 @@ const texts = [
     // top bar
     'Open a Real Account',
     'Open a Financial Account',
+    'Network status',
+    'Online',
+    'Offline',
+    'Connecting to server',
 
     // account drop down
     'Virtual Account',
@@ -126,6 +130,7 @@ const texts = [
     'Long',
     'Short',
     'Chart',
+    'Portfolio',
     'Explanation',
     'Last Digit Stats',
     'Waiting for entry tick.',

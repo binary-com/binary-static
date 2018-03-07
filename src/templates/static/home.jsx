@@ -2,7 +2,6 @@ import React from 'react';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
 import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
-import { Asterisk, ProductHint } from  '../_common/components/product_hint.jsx';
 
 const PaymentLogo = ({ items }) => items.map((item, inx) => (
     <div key={inx} className='gr-2 gr-4-m center-text' data-show={item.dataShow}>
@@ -146,7 +145,7 @@ const TabCircles = ({ id, number }) => (
     <div className='gr-hide gr-show-m gr-show-p center-text'>
         <div className='tab-circles' id={id || undefined}>
             { Array.from(new Array(number)).map((x, inx) => (
-                <div key={inx} className='tab-circle'></div>
+                <div key={inx} className='tab-circle' />
             ))}
         </div>
     </div>
@@ -175,9 +174,9 @@ const Home = () => {
 
                         <div className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
                             <div className='section-divider gr-padding-20'>
-                                <div className='align-self-center border-bottom-light-gray'></div>
+                                <div className='align-self-center border-bottom-light-gray' />
                                 <div className='circle'>{it.L('or')}</div>
-                                <div className='align-self-center border-bottom-light-gray'></div>
+                                <div className='align-self-center border-bottom-light-gray' />
                             </div>
                             <a id='google-signup' href='javascript:;' className='button-white'>
                                 <span className='icon-google'>{it.L('Create account with Google')}</span>
@@ -188,7 +187,7 @@ const Home = () => {
             </div>
 
             <div className='container gr-padding-30'>
-                <h2 className='center-text'>{it.L('Diverse platforms and account types')}<Asterisk /></h2>
+                <h2 className='center-text'>{it.L('Diverse platforms and account types')}</h2>
                 <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
                     <TabsSubtabs
                         id='account_tabs'
@@ -238,15 +237,16 @@ const Home = () => {
 
                 <div className='center-text gr-padding-20 gr-parent'>
                     <h3 className='center-text gr-padding-20 gr-parent'>{it.L('Choose the platforms and accounts you need, based on your personal trading style')}</h3>
-                    <a className='button-secondary'
-                       href={it.url_for('platforms')}><span>{it.L('View our platforms')}</span></a>
+                    <a className='button-secondary' href={it.url_for('platforms')}>
+                        <span>{it.L('View our platforms')}</span>
+                    </a>
                 </div>
 
                 <SeparatorLine className='gr-padding-30' show_mobile/>
             </div>
 
             <div id='market_tabs_container' className='container'>
-                <h2 className='center-text gr-padding-10'>{it.L('Trade in the world\'s financial markets')}<Asterisk /></h2>
+                <h2 className='center-text gr-padding-10'>{it.L('Trade in the world\'s financial markets')}</h2>
                 <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
                     <TabsSubtabs
                         id='market_tabs'
@@ -320,13 +320,13 @@ const Home = () => {
                         </div>
                         <div className='gr-9 gr-12-m align-self-center'>
                             <div className='gr-row gr-row-align-center'>
-                                <div className='gr-1 gr-hide-m border-right'></div>
+                                <div className='gr-1 gr-hide-m border-right' />
                                 <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')}/></div>
                                 <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')}/></div>
                                 <div className='gr-3 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')}/></div>
                                 <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')}/></div>
                                 <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')}/></div>
-                                <div className='gr-1 gr-hide-m'></div>
+                                <div className='gr-1 gr-hide-m' />
                             </div>
                         </div>
                     </div>
@@ -354,8 +354,12 @@ const Home = () => {
                     />
                 </div>
                 <div className='center-text gr-padding-30'>
-                    <a className='button-secondary' href='https://academy.binary.com' target='_blank'
-                       rel='noopener noreferrer'>
+                    <a
+                        className='button-secondary'
+                        href='https://academy.binary.com'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
                         <span>{it.L('Learn more')}</span>
                     </a>
                 </div>
@@ -364,7 +368,7 @@ const Home = () => {
 
                 <div id='payment_methods'>
                     <div className='gr-12 gr-padding-20'>
-                        <h2 className='center-text'>{it.L('Payment methods')}<Asterisk /></h2>
+                        <h2 className='center-text'>{it.L('Payment methods')}</h2>
                         <p className='center-text'>{it.L('We support hundreds of deposit and withdrawal options, including Bitcoin.')}</p>
 
                         <div className='gr-12 gr-padding-30'>
@@ -396,8 +400,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
-                <ProductHint />
             </div>
         </React.Fragment>
     );

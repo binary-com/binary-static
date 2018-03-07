@@ -28,12 +28,14 @@ export const Li = ({
                     {content}
                     { type === 'nested' && <span className='nav-caret' /> }
                 </a>
-                : content
+                :
+                content
             }
             { subitems.length ?
                 <ul>
                     {subitems.map((subitem, idx) => <Li key={idx} {...subitem} />)}
-                </ul> :
+                </ul>
+                :
                 ''
             }
         </li>
@@ -43,11 +45,11 @@ export const Li = ({
 export const List = ({ items, id, className }) => (
     <React.Fragment>
         { items.length ?
-          <ul id={id} className={className}>
-              {items.map((item, idx) => <Li key={idx} {...item} />)}
-          </ul>
-        :
-          undefined
+            <ul id={id} className={className}>
+                {items.map((item, idx) => <Li key={idx} {...item} />)}
+            </ul>
+            :
+            undefined
         }
     </React.Fragment>
 );

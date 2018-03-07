@@ -70,7 +70,7 @@ const LoggedInHandler = (() => {
             Object.keys(account).forEach((param) => {
                 if (param === 'loginid') {
                     if (!is_loginid_set && !account.is_virtual &&
-                        !account.is_disabled && !account.excluded_until) {
+                        !account.is_disabled) {
                         Client.set(param, account[param]);
                         is_loginid_set = true;
                     }
