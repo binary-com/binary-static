@@ -9,7 +9,6 @@ const BinarySocket        = require('./socket');
 const BinarySocketGeneral = require('./socket_general');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
-const QueryString         = require('../../_common/query_string');
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const Url                 = require('../../_common/url');
@@ -48,7 +47,7 @@ const BinaryLoader = (() => {
         const params = Url.paramsHash();
         delete params.anchor;
         const new_query_string = Url.paramsHashToString(params);
-        QueryString.setQueryStringWithoutReload(new_query_string);
+        Url.setQueryStringWithoutReload(new_query_string);
         if (active_script) {
             BinarySocket.removeOnDisconnect();
             if (typeof active_script.onUnload === 'function') {

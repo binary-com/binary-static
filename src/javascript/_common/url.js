@@ -72,6 +72,11 @@ const Url = (() => {
         return static_host + path.replace(/(^\/)/g, '');
     };
 
+    const setQueryStringWithoutReload = (new_query_str) => {
+        const { pathname, hash } = window.location;
+        window.history.replaceState('', '', `${pathname}${new_query_str}${hash}`);
+    };
+
     const getSection = (url = window.location.href) => (url.match(new RegExp(`/${urlLang()}/(.*)/`, 'i')) || [])[1];
 
     const getHashValue = (name) => {
@@ -90,6 +95,7 @@ const Url = (() => {
         urlForStatic,
         getSection,
         getHashValue,
+        setQueryStringWithoutReload,
 
         param     : name => paramsHash()[name],
         websiteUrl: () => 'https://www.binary.com/',

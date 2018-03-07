@@ -1,5 +1,4 @@
 const isVisible = require('./common_functions').isVisible;
-const QueryString = require('./query_string');
 const Url = require('./url');
 
 const ScrollToAnchor = (() => {
@@ -26,8 +25,8 @@ const ScrollToAnchor = (() => {
                 e.preventDefault();
                 console.log(id);
                 $.scrollTo(el, 500);
-                QueryString.setQueryStringWithoutReload(
-                    // TODO: use appendParamToQueryString to preserve current q.s.
+                Url.setQueryStringWithoutReload(
+                    // TODO: modify current q.s.
                     `?anchor=${encodeURI(id)}`
                 );
             });
