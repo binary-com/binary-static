@@ -1,21 +1,22 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import IScroll from 'iscroll';
 
-class TimePickerDropdown extends PureComponent {
+// TODO: to handle disabled time period
 
+class TimePickerDropdown extends PureComponent {
     constructor (props) {
         super(props);
         this.hours    = ['12', ...[...Array(11).keys()].map((a)=>`0${a+1}`.slice(-2))];
         this.minutes  = [...Array(60).keys()].map((a)=>`0${a}`.slice(-2));
         this.meridiem = ['am', 'pm'];
         this.state = {
-            hour              : props.value.split(':')[0],
-            minute            : (props.value.split(':')[1] || '').split(' ')[0],
-            meridiem          : (props.value.split(':')[1] || '').split(' ')[1] || '',
-            isHourSelected    : false,
-            isMinuteSelected  : false,
-            isMeridiemSelected: false,
-            lastUpdatedType   : null,
+            hour                : props.value.split(':')[0],
+            minute              : (props.value.split(':')[1] || '').split(' ')[0],
+            meridiem            : (props.value.split(':')[1] || '').split(' ')[1] || '',
+            is_hour_selected    : false,
+            is_minute_selected  : false,
+            is_meridiem_selected: false,
+            last_updated_type   : null,
         };
         this.selectHour      = this.selectOption.bind(this, 'hour');
         this.selectMinute    = this.selectOption.bind(this, 'minute');
@@ -36,13 +37,13 @@ class TimePickerDropdown extends PureComponent {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        const {isHourSelected, isMinuteSelected, isMeridiemSelected} = this.state;
-        if (isHourSelected && isMinuteSelected && isMeridiemSelected) {
+        const { is_hour_selected, is_minute_selected, is_meridiem_selected } = this.state;
+        if (is_hour_selected && is_minute_selected && is_meridiem_selected) {
             this.resetValues();
             this.props.toggle();
         }
 
-        const {hour, minute, meridiem} = this.state;
+        const { hour, minute, meridiem } = this.state;
         if (hour && minute && meridiem && (
             hour !== prevState.hour || minute !== prevState.minute || meridiem !== prevState.meridiem
         )) {
@@ -53,27 +54,20 @@ class TimePickerDropdown extends PureComponent {
         if (!prevProps.className && this.props.className === 'active') {
             this.resetValues();
         }
-        if (prevState.lastUpdatedType !== this.state.lastUpdatedType && this.state.lastUpdatedType) {
-            this.scrollToSelected(this.state.lastUpdatedType, 200);
-            this.setState({
-                lastUpdatedType: null,
-            });
+        if (prevState.last_updated_type !== this.state.last_updated_type && this.state.last_updated_type) {
+            this.scrollToSelected(this.state.last_updated_type, 200);
+            this.setState({ last_updated_type: null });
         }
     }
 
     initIScroll() {
         const iScrollOptions = {
-    		mouseWheel   : true,
+            mouseWheel   : true,
             useTransition: true,
         };
-        if (!this.iScrollinitialized) {
-            this.hourScroll = new IScroll('.time-picker-hours', iScrollOptions);
-            this.minuteScroll = new IScroll('.time-picker-minutes', iScrollOptions);
-            this.meridiemScroll = new IScroll('.time-picker-meridiem', iScrollOptions);
-            this.iScrollinitialized = true;
-            window.hourScroll = this.hourScroll;
-            window.minuteScroll = this.minuteScroll;
-        }
+        this.hourScroll     = new IScroll('.time-picker-hours', iScrollOptions);
+        this.minuteScroll   = new IScroll('.time-picker-minutes', iScrollOptions);
+        this.meridiemScroll = new IScroll('.time-picker-meridiem', iScrollOptions);
     }
 
     scrollToSelected (type, duration, offset = -30) {
@@ -92,9 +86,9 @@ class TimePickerDropdown extends PureComponent {
 
     resetValues () {
         this.setState({
-            isHourSelected    : false,
-            isMinuteSelected  : false,
-            isMeridiemSelected: false,
+            is_hour_selected    : false,
+            is_minute_selected  : false,
+            is_meridiem_selected: false,
         });
         this.hourScroll.refresh();
         this.minuteScroll.refresh();
@@ -106,22 +100,22 @@ class TimePickerDropdown extends PureComponent {
 
     selectOption (type, value) {
         this.setState({
-            lastUpdatedType: type,
+            last_updated_type: type,
         });
         if (type === 'hour') {
             this.setState({
-                hour          : value,
-                isHourSelected: true,
+                hour            : value,
+                is_hour_selected: true,
             });
         } else if (type === 'minute') {
             this.setState({
-                minute          : value,
-                isMinuteSelected: true,
+                minute            : value,
+                is_minute_selected: true,
             });
         } else {
             this.setState({
-                meridiem          : value,
-                isMeridiemSelected: true,
+                meridiem            : value,
+                is_meridiem_selected: true,
             });
         }
     }
@@ -135,7 +129,7 @@ class TimePickerDropdown extends PureComponent {
             meridiem: undefined,
         });
         this.props.onChange('');
-    }
+    };
 
     saveRef (type, node) {
         if (!node) return;
@@ -149,7 +143,7 @@ class TimePickerDropdown extends PureComponent {
     }
 
     render () {
-        const {preClass, value, toggle} = this.props;
+        const { preClass, value, toggle } = this.props;
         return (
             <div className={`${preClass}-dropdown ${this.props.className}`}>
                 <div
@@ -227,16 +221,18 @@ class TimePicker extends PureComponent {
     }
 
     componentDidUpdate(props) {
-        props.onChange({target: this.targetElement});
+        props.onChange({ target: this.targetElement });
     }
 
     toggleDropDown = () => {
-        this.setState({open: !this.state.open});
-    }
+        this.setState({ open: !this.state.open });
+    };
 
     handleChange = (value) => {
-        this.setState({value});
-    }
+        if (value !== this.props.value) {
+            this.props.onChange({ target: { name: this.props.name, value } });
+        }
+    };
 
     saveRef = (node) => {
         if (!node) return;
@@ -245,7 +241,7 @@ class TimePicker extends PureComponent {
             return;
         }
         this.wrapperRef = node;
-    }
+    };
 
     handleClickOutside = () => {
         if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
@@ -253,22 +249,22 @@ class TimePicker extends PureComponent {
                 this.setState({ open: false });
             }
         }
-    }
+    };
 
     render () {
-        const prefixClass='time-picker';
+        const prefix_class='time-picker';
         return (
             <div
                 ref={this.saveRef}
-                className={`${prefixClass}${this.props.padding ? ' padding' : ''}${this.state.open ? ' active' : ''}`}
+                className={`${prefix_class}${this.props.padding ? ' padding' : ''}${this.state.open ? ' active' : ''}`}
             >
                 <input
                     ref={this.saveRef}
                     type='text'
                     readOnly
-                    id={`${prefixClass}-input`}
-                    className={`${prefixClass}-input ${this.state.open ? 'active' : ''}`}
-                    value={this.state.value}
+                    id={`${prefix_class}-input`}
+                    className={`${prefix_class}-input ${this.state.open ? 'active' : ''}`}
+                    value={this.props.value}
                     onClick={this.toggleDropDown}
                     {...this.props}
                 />
@@ -276,8 +272,8 @@ class TimePicker extends PureComponent {
                     className={this.state.open ? 'active' : ''}
                     toggle={this.toggleDropDown}
                     onChange={this.handleChange}
-                    preClass={prefixClass}
-                    value={this.state.value}
+                    preClass={prefix_class}
+                    value={this.props.value}
                 />
             </div>
         );
