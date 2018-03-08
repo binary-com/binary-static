@@ -1,6 +1,8 @@
 const isVisible = require('./common_functions').isVisible;
 const Url = require('./url');
 
+let id_duplicate_count = {};
+
 const ScrollToAnchor = (() => {
     const init = () => {
         addAnchorsToElements();
@@ -9,7 +11,14 @@ const ScrollToAnchor = (() => {
 
     const encode = (str) => {
         const prep = str.toLowerCase().replace(/\s/g, '-');
-        return encodeURI(prep);
+        let appendix = '';
+        if (typeof id_duplicate_count[prep] === 'number') {
+            id_duplicate_count[prep]++;
+            appendix = `-${id_duplicate_count[prep] + 1}`;
+        } else {
+            id_duplicate_count[prep] = 0;
+        }
+        return encodeURI(`${prep}${appendix}`);
     };
 
     const makeAnchorLink = (id) => {
@@ -52,6 +61,7 @@ const ScrollToAnchor = (() => {
     };
 
     const cleanup = () => {
+        id_duplicate_count = {};
         const params = Url.paramsHash();
         delete params.anchor;
         const new_query_string = Url.paramsHashToString(params);
