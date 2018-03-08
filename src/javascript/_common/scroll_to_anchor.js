@@ -1,9 +1,9 @@
 const isVisible = require('./common_functions').isVisible;
-const Url = require('./url');
-
-let id_duplicate_count = {};
+const Url       = require('./url');
 
 const ScrollToAnchor = (() => {
+    let id_duplicate_count = {};
+
     const init = () => {
         addAnchorsToElements();
         scrollToAnchorInQuery();
