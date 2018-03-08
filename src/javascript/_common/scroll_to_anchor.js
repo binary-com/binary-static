@@ -23,7 +23,6 @@ const ScrollToAnchor = (() => {
             el.appendChild(anchor_link);
             anchor_link.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log(id);
                 $.scrollTo(el, 500);
                 const params = Url.paramsHash();
                 params.anchor = window.encodeURI(id);

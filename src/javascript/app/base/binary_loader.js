@@ -43,7 +43,6 @@ const BinaryLoader = (() => {
     };
 
     const beforeContentChange = () => {
-        console.log('before content change');
         const params = Url.paramsHash();
         delete params.anchor;
         const new_query_string = Url.paramsHashToString(params);
@@ -58,7 +57,6 @@ const BinaryLoader = (() => {
     };
 
     const afterContentChange = (e) => {
-        console.log('after content change');
         Page.onLoad();
         GTM.pushDataLayer();
 
