@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import InputField from './form/input_field.jsx';
 import Dropdown from './form/dropdown.jsx';
-import Datepicker from './form/datepicker.jsx';
+import Datepicker from './form/date_picker.jsx';
 import TimePicker from './form/time_picker.jsx';
 import ClockHeader from './elements/clock_header.jsx';
 import { connect } from '../store/connect';
@@ -57,10 +57,9 @@ const Duration = ({
                 </React.Fragment> :
                 <React.Fragment>
                     <Datepicker
-                        id='expiry_date'
                         name='expiry_date'
                         showTodayBtn={true}
-                        minDate={server_time}
+                        minDate={moment(server_time)}
                         onChange={onChange}
                     />
                     <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />

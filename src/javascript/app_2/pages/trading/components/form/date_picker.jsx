@@ -14,7 +14,7 @@ class Calendar extends React.Component {
 
         this.setToday      = this.setToday.bind(this);
         this.setActiveView = this.setActiveView.bind(this);
-        
+
         this.nextMonth     = this.nextMonth.bind(this);
         this.previousMonth = this.previousMonth.bind(this);
 
@@ -51,7 +51,7 @@ class Calendar extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        const shouldUpdate = (this.state.activeView !== nextState.activeView) 
+        const shouldUpdate = (this.state.activeView !== nextState.activeView)
             || (this.state.date !== nextState.date) || (this.state.selectedDate !== nextState.selectedDate);
         return shouldUpdate || false;
     }
@@ -107,7 +107,7 @@ class Calendar extends React.Component {
         const date        = moment(e.target.dataset.date);
         const minDate     = moment(this.props.minDate).format(this.props.dateFormat);
         const maxDate     = moment(this.props.maxDate).format(this.props.dateFormat);
-        
+
         const dateBefore = date.isBefore(minDate);
         const dateToday  = date.isSame(minDate);
         const dateAfter  = date.isAfter(maxDate);
@@ -325,13 +325,13 @@ class Calendar extends React.Component {
 
         const prevYearBtn = (
             <span type='button' className='calendar-prev-year-btn'
-                  onClick={() => (((dateView || monthView) && this.previousYear()) 
+                  onClick={() => (((dateView || monthView) && this.previousYear())
                     || (yearView && this.previousDecade()) || (decadeView && this.previousCentury()) )} />
         );
 
         const nextYearBtn = (
             <span type='button' className='calendar-next-year-btn'
-                  onClick={() => (((dateView || monthView) && this.nextYear()) 
+                  onClick={() => (((dateView || monthView) && this.nextYear())
                     || (yearView && this.nextDecade()) || (decadeView && this.nextCentury()) )} />
         );
 
@@ -350,7 +350,7 @@ class Calendar extends React.Component {
             </span>
         );
 
-        const calendarPanel = ((dateView && this.getDates()) || (monthView && this.getMonths()) 
+        const calendarPanel = ((dateView && this.getDates()) || (monthView && this.getMonths())
             || (yearView && this.getYears()) || (decadeView && this.getDecades())
         );
 
@@ -408,7 +408,7 @@ const getDayDifference = (date) => {
 class DatePicker extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.handleVisibility = this.handleVisibility.bind(this);
         this.handleDateChange = this.handleDateChange.bind(this);
@@ -417,7 +417,7 @@ class DatePicker extends React.Component {
         this.clearDateInput = this.clearDateInput.bind(this);
         this.getPickerValue = this.getPickerValue.bind(this);
         this.setPickerValue = this.setPickerValue.bind(this);
-        
+
         this.state = {
             selectedDate: moment(this.props.minDate).format(this.props.dateFormat),
             showCalendar: false,
@@ -464,7 +464,7 @@ class DatePicker extends React.Component {
         if (!moment(value).isValid) {
             value = '';
         }
-        
+
         this.setState({
             selectedDate: value,
             showCalendar,
@@ -502,7 +502,7 @@ class DatePicker extends React.Component {
                         className='datepicker-display'
                         value={value}
                         readOnly
-                        placeholder='Select date'
+                        placeholder={localize('Select date')}
                         onClick={this.handleVisibility}
                     />
                     <span
