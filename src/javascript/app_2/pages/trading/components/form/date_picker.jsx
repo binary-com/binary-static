@@ -37,8 +37,7 @@ class Calendar extends React.Component {
 
         const { startDate, minDate } = {...props};
 
-        const currentDate = startDate ? moment(startDate).format(this.props.dateFormat) :
-                moment(minDate).format(this.props.dateFormat);
+        const currentDate = moment(startDate || minDate).format(this.props.dateFormat);
 
         this.state = {
             date        : currentDate, // calendar dates reference
@@ -66,36 +65,40 @@ class Calendar extends React.Component {
         this.props.handleDateChange(now, true);
     }
 
+    updateDate(value, unit, is_add) {
+        this.setState({ date: moment(this.state.date)[is_add ? 'add' : 'subtract'](value, unit).format(this.props.dateFormat) });
+    }
+
     nextMonth() {
-        this.setState({ date: moment(this.state.date).add(1, 'months').format(this.props.dateFormat) });
+        this.updateDate(1, 'months', true);
     }
 
     previousMonth() {
-        this.setState({ date: moment(this.state.date).subtract(1, 'months').format(this.props.dateFormat) });
+        this.updateDate(1, 'months', false);
     }
 
     nextYear() {
-        this.setState({ date: moment(this.state.date).add(1, 'years').format(this.props.dateFormat) });
+        this.updateDate(1, 'years', true);
     }
 
     previousYear() {
-        this.setState({ date: moment(this.state.date).subtract(1, 'years').format(this.props.dateFormat) });
+        this.updateDate(1, 'years', false);
     }
 
     nextDecade() {
-        this.setState({ date: moment(this.state.date).add(10, 'years').format(this.props.dateFormat) });
+        this.updateDate(10, 'years', true);
     }
 
     previousDecade() {
-        this.setState({ date: moment(this.state.date).subtract(10, 'years').format(this.props.dateFormat) });
+        this.updateDate(10, 'years', true);
     }
 
     nextCentury() {
-        this.setState({ date: moment(this.state.date).add(100, 'years').format(this.props.dateFormat) });
+        this.updateDate(100, 'years', true);
     }
 
     previousCentury() {
-        this.setState({ date: moment(this.state.date).subtract(100, 'years').format(this.props.dateFormat) });
+        this.updateDate(100, 'years', true);
     }
 
     setActiveView(activeView) {
@@ -130,36 +133,31 @@ class Calendar extends React.Component {
         }
     }
 
-    handleMonthSelected(e) {
-        const date = moment(this.state.date).month(e.target.dataset.month).format(this.props.dateFormat);
+    updateSelected(e, type) {
+        const active_view = {
+            month : 'date',
+            year  : 'month',
+            decade: 'year',
+        };
+        const date = moment(this.state.date)[type](e.target.dataset[type].split('-')[0]).format(this.props.dateFormat);
         this.setState({
             date,
             selectedDate: date,
-            activeView  : 'date',
+            activeView  : active_view[type],
         });
         this.props.handleDateChange(date, true);
+    }
+
+    handleMonthSelected(e) {
+        this.updateSelected(e, 'month');
     }
 
     handleYearSelected(e) {
-        const date = moment(this.state.date).year(e.target.dataset.year).format(this.props.dateFormat);
-        this.setState({
-            date,
-            selectedDate: date,
-            activeView  : 'month',
-        });
-        this.props.handleDateChange(date, true);
+        this.updateSelected(e, 'year');
     }
 
     handleDecadeSelected(e) {
-        const year = e.target.dataset.decade.split('-')[0];
-        const date = moment(this.state.date).year(year).format(this.props.dateFormat);
-        this.setState({
-            date,
-            selectedDate: date,
-            activeView  : 'year',
-
-        });
-        this.props.handleDateChange(date, true);
+        this.updateSelected(e, 'decade');
     }
 
     onChangeInput(e) {
@@ -181,9 +179,10 @@ class Calendar extends React.Component {
     }
 
     resetCalendar() {
+        const date = moment(this.props.minDate).format(this.props.dateFormat);
         this.setState({
-            date        : moment(this.props.minDate).format(this.props.dateFormat),
-            selectedDate: moment(this.props.minDate).format(this.props.dateFormat),
+            date,
+            selectedDate: date,
         });
     }
 
