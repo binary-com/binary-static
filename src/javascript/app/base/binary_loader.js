@@ -13,7 +13,6 @@ const localize            = require('../../_common/localize').localize;
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const Url                 = require('../../_common/url');
-const applyToAllElements  = require('../../_common/utility').applyToAllElements;
 const createElement       = require('../../_common/utility').createElement;
 
 const BinaryLoader = (() => {
