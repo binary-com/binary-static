@@ -73,6 +73,7 @@
                 top: 8px;
                 width: 12px;
                 height: 12px;
+                cursor: pointer;
             }
             .placeholder {
                 color: #b0b3bf;
@@ -99,6 +100,7 @@
                 margin: 0;
                 padding: 10px 0;
                 transition: all 0.3s ease;
+                cursor: pointer;
 
                 &:hover {
                     background: #f2f3f8;
