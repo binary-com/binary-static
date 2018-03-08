@@ -41,11 +41,9 @@ const ScrollToAnchor = (() => {
             anchor_link.addEventListener('click', (e) => {
                 e.preventDefault();
                 $.scrollTo(el, 500);
-                const params = Url.paramsHash();
-                params.anchor = id;
-                Url.setQueryStringWithoutReload(
-                    Url.paramsHashToString(params)
-                );
+                Url.updateParamsWithoutReload({
+                    anchor: id,
+                });
             });
         });
     };
@@ -62,10 +60,9 @@ const ScrollToAnchor = (() => {
 
     const cleanup = () => {
         id_duplicate_count = {};
-        const params = Url.paramsHash();
-        delete params.anchor;
-        const new_query_string = Url.paramsHashToString(params);
-        Url.setQueryStringWithoutReload(new_query_string);
+        Url.updateParamsWithoutReload({
+            anchor: null,
+        });
     };
 
     return {

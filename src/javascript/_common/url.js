@@ -72,10 +72,17 @@ const Url = (() => {
         return static_host + path.replace(/(^\/)/g, '');
     };
 
-    const setQueryStringWithoutReload = (new_query_str) => {
+    // TODO: add jsdoc
+    const updateParamsWithoutReload = (new_params) => {
+        const params = $.extend(paramsHash(), new_params);
+        Object.keys(new_params).forEach(key => {
+            if (new_params[key] === null) {
+                delete params[key];
+            }
+        });
         const url = new URL(window.location);
-        url.search = new_query_str;
-        window.history.replaceState('', '', url.href);
+        url.search = paramsHashToString(params);
+        window.history.replaceState({ url: url.href }, '', url.href);
     };
 
     const getSection = (url = window.location.href) => (url.match(new RegExp(`/${urlLang()}/(.*)/`, 'i')) || [])[1];
@@ -96,7 +103,7 @@ const Url = (() => {
         urlForStatic,
         getSection,
         getHashValue,
-        setQueryStringWithoutReload,
+        updateParamsWithoutReload,
 
         param     : name => paramsHash()[name],
         websiteUrl: () => 'https://www.binary.com/',
