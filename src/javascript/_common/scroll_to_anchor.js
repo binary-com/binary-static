@@ -3,14 +3,19 @@ const Url = require('./url');
 
 const ScrollToAnchor = (() => {
     const init = () => {
-        scrollToAnchorInQuery();
         addAnchorsToElements();
+        scrollToAnchorInQuery();
+    };
+
+    const encode = (str) => {
+        const prep = str.toLowerCase().replace(/\s/g, '-');
+        return encodeURI(prep);
     };
 
     const makeAnchorLink = (id) => {
         const anchor_link = document.createElement('a');
         const url = new URL(window.location);
-        url.search = `anchor=${encodeURI(id)}`;
+        url.search = `anchor=${id}`;
         anchor_link.href = url.href;
         anchor_link.classList.add('data-anchor-link');
         return anchor_link;
@@ -19,14 +24,16 @@ const ScrollToAnchor = (() => {
     const addAnchorsToElements = () => {
         const els = document.querySelectorAll('[data-anchor]');
         els.forEach(el => {
-            const id = el.dataset.anchor;
+            const title = el.dataset.anchor;
+            const id = encode(title);
+            el.dataset.anchor = id;
             const anchor_link = makeAnchorLink(id);
             el.appendChild(anchor_link);
             anchor_link.addEventListener('click', (e) => {
                 e.preventDefault();
                 $.scrollTo(el, 500);
                 const params = Url.paramsHash();
-                params.anchor = window.encodeURI(id);
+                params.anchor = id;
                 Url.setQueryStringWithoutReload(
                     Url.paramsHashToString(params)
                 );
@@ -36,7 +43,7 @@ const ScrollToAnchor = (() => {
 
     const scrollToAnchorInQuery = () => {
         const params = Url.paramsHash();
-        const id = window.decodeURI(params.anchor);
+        const id = params.anchor;
         if (!id) return;
         const candidates = document.querySelectorAll(`[data-anchor="${id}"]`);
         const el = Array.from(candidates).find(isVisible);
