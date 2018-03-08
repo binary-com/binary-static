@@ -1,8 +1,10 @@
 import React from 'react';
+import moment from 'moment';
 import InputField from './form/input_field.jsx';
 import Dropdown from './form/dropdown.jsx';
-import ClockHeader from './elements/clock_header.jsx';
+import Datepicker from './form/datepicker.jsx';
 import TimePicker from './form/time_picker.jsx';
+import ClockHeader from './elements/clock_header.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -30,12 +32,21 @@ const Duration = ({
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
-                        <InputField
-                            type='number'
-                            name='duration'
-                            value={duration}
-                            onChange={onChange}
-                        />
+                        {duration_unit === 'd' ?
+                            <Datepicker
+                                name='duration'
+                                minDate={moment(server_time).add(1, 'd')}
+                                maxDate={moment(server_time).add(365, 'd')}
+                                displayFormat='d'
+                                onChange={onChange}
+                            /> :
+                            <InputField
+                                type='number'
+                                name='duration'
+                                value={duration}
+                                onChange={onChange}
+                            />
+                        }
                         <Dropdown
                             list={duration_units_list}
                             value={duration_unit}
@@ -45,7 +56,13 @@ const Duration = ({
                     </div>
                 </React.Fragment> :
                 <React.Fragment>
-                    <input type='date' name='expiry_date' onChange={onChange} />
+                    <Datepicker
+                        id='expiry_date'
+                        name='expiry_date'
+                        showTodayBtn={true}
+                        minDate={server_time}
+                        onChange={onChange}
+                    />
                     <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
                 </React.Fragment>
             }
