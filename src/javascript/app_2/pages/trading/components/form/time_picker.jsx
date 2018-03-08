@@ -1,7 +1,11 @@
 import React, { PureComponent } from 'react';
 import IScroll from 'iscroll';
 
-// TODO: to handle disabled time period
+/* TODO:
+      1. to change to 24 hours format
+      2. to handle disabled time period
+      3. to handle null as initial value
+*/
 
 class TimePickerDropdown extends PureComponent {
     constructor (props) {
