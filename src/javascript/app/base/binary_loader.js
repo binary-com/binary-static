@@ -44,10 +44,6 @@ const BinaryLoader = (() => {
     };
 
     const beforeContentChange = () => {
-        const params = Url.paramsHash();
-        delete params.anchor;
-        const new_query_string = Url.paramsHashToString(params);
-        Url.setQueryStringWithoutReload(new_query_string);
         if (active_script) {
             BinarySocket.removeOnDisconnect();
             if (typeof active_script.onUnload === 'function') {
@@ -55,6 +51,7 @@ const BinaryLoader = (() => {
             }
             active_script = null;
         }
+        ScrollToAnchor.cleanup();
     };
 
     const afterContentChange = (e) => {

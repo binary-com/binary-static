@@ -44,8 +44,16 @@ const ScrollToAnchor = (() => {
         $.scrollTo(el, 500);
     };
 
+    const cleanup = () => {
+        const params = Url.paramsHash();
+        delete params.anchor;
+        const new_query_string = Url.paramsHashToString(params);
+        Url.setQueryStringWithoutReload(new_query_string);
+    };
+
     return {
         init,
+        cleanup,
     };
 })();
 
