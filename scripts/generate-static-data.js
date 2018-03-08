@@ -14,6 +14,10 @@ const texts = [
     // top bar
     'Open a Real Account',
     'Open a Financial Account',
+    'Network status',
+    'Online',
+    'Offline',
+    'Connecting to server',
 
     // account drop down
     'Virtual Account',
@@ -126,6 +130,7 @@ const texts = [
     'Long',
     'Short',
     'Chart',
+    'Portfolio',
     'Explanation',
     'Last Digit Stats',
     'Waiting for entry tick.',
@@ -233,7 +238,7 @@ const texts = [
     'Scopes',
     'Never Used',
     'Delete',
-    'Are you sure that you want to permanently delete token',
+    'Are you sure that you want to permanently delete the token',
     'Please select at least one scope',
 
     // Guide
@@ -455,7 +460,7 @@ const texts = [
     'Permissions',
     'Never',
     'Revoke access',
-    'Are you sure that you want to permanently revoke access to application',
+    'Are you sure that you want to permanently revoke access to the application',
     'Transaction performed by [_1] (App ID: [_2])',
     'Admin',
     'Read',

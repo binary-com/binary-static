@@ -108,8 +108,13 @@ const PersonalDetails = () => (
                 <FormRow type='select' label={it.L('Financial asset')} id='financial_asset' className='jp_value'>
                     <Money />
                 </FormRow>
-                <FormRow type='label' id='daily_loss_limit' label={it.L('Daily limit on losses')} attributes={{ className: 'jp_value format_money' }}
-                    hint={it.L('Maximum aggregate loss per day. Update this value in our [_1]self exclusion facility[_2].', `<a href="${it.url_for('user/security/self_exclusionws#max_losses')}">`, '</a>')} />
+                <FormRow
+                    type='label'
+                    id='daily_loss_limit'
+                    label={it.L('Daily limit on losses')}
+                    attributes={{ className: 'jp_value format_money' }}
+                    hint={it.L('Maximum aggregate loss per day. Update this value in our [_1]self exclusion facility[_2].', `<a href="${it.url_for('user/security/self_exclusionws#max_losses')}">`, '</a>')}
+                />
             </Fieldset>
 
             <Fieldset className='invisible JpAcc' legend={it.L('Trading Experience')}>

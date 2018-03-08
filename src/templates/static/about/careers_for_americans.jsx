@@ -50,11 +50,19 @@ const CareersForAmericans = () => (
                 <div className='container gr-padding-20'>
                     <h2>{('Career Spotlight')}</h2>
                     <div className='gr-row'>
-                        <LgColumnLink image='data_scientist' title='Data Scientist' section='developer'
-                            text={('Generate and execute data-driven ideas and solutions to improve products and services.')} />
+                        <LgColumnLink
+                            image='data_scientist'
+                            title='Data Scientist'
+                            section='developer'
+                            text={('Generate and execute data-driven ideas and solutions to improve products and services.')}
+                        />
 
-                        <LgColumnLink image='quants_analysis' title='Quantitative Analyst' section='analyst'
-                            text={('Develop derivatives pricing and risk management algorithms.')} />
+                        <LgColumnLink
+                            image='quants_analysis'
+                            title='Quantitative Analyst'
+                            section='analyst'
+                            text={('Develop derivatives pricing and risk management algorithms.')}
+                        />
                     </div>
                 </div>
             </div>
@@ -63,7 +71,7 @@ const CareersForAmericans = () => (
                 <div className='gr-padding-10'>
                     <h2 className='center-text'>{('Join us in one of the following locations:')}</h2>
 
-                    <div className='gr-padding-10'></div>
+                    <div className='gr-padding-10' />
 
                     <div className='gr-row'>
                         <InfoBox padding='4' header={('Msida, Malta')} text={('An old scenic fishing village turned bustling university town, thanks to service and infrastructure developments spurred by the University of Malta.')} />

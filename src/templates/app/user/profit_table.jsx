@@ -8,7 +8,7 @@ const ProfitTable = () => (
                 <h1>{it.L('Profit Table')}</h1>
                 <div className='loading'><Loading /></div>
                 <br />
-                <p className='notice-msg center-text invisible' id='error-msg'></p>
+                <p className='notice-msg center-text invisible' id='error-msg' />
             </div>
             <div className='gr-padding-10 invisible' id='util_row'>
                 <div className='gr-row gr-gutter-right gr-row-align-right'>

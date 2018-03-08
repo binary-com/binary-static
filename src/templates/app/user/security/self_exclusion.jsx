@@ -13,7 +13,7 @@ const SelfExclusion = () => (
             <p>{it.L('In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days.')}</p>
         </div>
 
-        <p id='msg_error' className='center-text notice-msg invisible'></p>
+        <p id='msg_error' className='center-text notice-msg invisible' />
 
         <div id='loading'>
             <Loading />
@@ -39,8 +39,13 @@ const SelfExclusion = () => (
 
                 <FormRow type='text' id='session_duration_limit' label={it.L('Session duration limit, in minutes')} attributes={{ maxLength: 5 }} hint={it.L('You will be automatically logged out after such time.')} />
 
-                <FormRow type='custom' id='timeout_until_date' label={it.L('Time out until')} row_class='ja-hide'
-                    hint={it.L('Please enter date in the format DD MMM, YYYY HH:mm (local time).')}>
+                <FormRow
+                    type='custom'
+                    id='timeout_until_date'
+                    label={it.L('Time out until')}
+                    row_class='ja-hide'
+                    hint={it.L('Please enter date in the format DD MMM, YYYY HH:mm (local time).')}
+                >
                     <div className='gr-row'>
                         <div className='gr-5 gr-6-t gr-12-p gr-12-m'>
                             <input type='text' className='clearable' id='timeout_until_date' maxLength='15' autoComplete='off' readOnly />

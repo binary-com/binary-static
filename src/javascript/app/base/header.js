@@ -1,5 +1,3 @@
-const showMenu            = require('binary-style').show_menu;
-const hideMenu            = require('binary-style').hide_menu;
 const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
 const GTM                 = require('./gtm');
@@ -29,7 +27,6 @@ const Header = (() => {
         }
         if (Client.isLoggedIn()) {
             getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
-            initMenuDropDown();
             displayAccountStatus();
             if (!Client.get('is_virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
@@ -39,25 +36,6 @@ const Header = (() => {
                 });
             }
         }
-    };
-
-    const initMenuDropDown = () => {
-        const $menu          = $('.top-nav-menu li ul');
-        const $menus_to_hide = $('#all-accounts, #select_language');
-        $('.top-nav-menu > li.nav-dropdown-toggle').on('click', function(event) {
-            if ($(event.target).find('span').hasClass('nav-caret')) {
-                event.stopPropagation();
-                const $child_menu = $(this).find(' > ul');
-                if (+$child_menu.css('opacity') === 1) {
-                    hideMenu($menu);
-                } else if (+$child_menu.css('opacity') === 0) {
-                    hideMenu($menus_to_hide);
-                    $menu.animate({'opacity': 0}, 100, () => {
-                        $menu.css('visibility', 'hidden');
-                    }).promise().then(() => { showMenu($child_menu); });
-                }
-            }
-        });
     };
 
     const bindClick = () => {
@@ -94,7 +72,7 @@ const Header = (() => {
         BinarySocket.wait('authorize').then(() => {
             const loginid_select = document.createElement('div');
             Client.getAllLoginids().forEach((loginid) => {
-                if (!Client.get('is_disabled', loginid) && !Client.get('excluded_until', loginid)) {
+                if (!Client.get('is_disabled', loginid)) {
                     const account_title  = Client.getAccountTitle(loginid);
                     const is_real        = /real/i.test(account_title);
                     const currency       = Client.get('currency', loginid);
@@ -283,6 +261,7 @@ const Header = (() => {
                 currency             : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                                                    'user/set-currency'),
                 document_needs_action: () => buildMessage('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.', 'user/authenticate'),
                 document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
+                excluded_until       : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                                                 'contact'),
                 financial_limit      : () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                                             'user/security/self_exclusionws'),
                 residence            : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                                                   'user/settings/detailsws'),
                 risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',                                   'user/settings/assessmentws'),
@@ -296,6 +275,7 @@ const Header = (() => {
                 currency             : () => !Client.get('currency'),
                 document_needs_action: () => /document_needs_action/.test(status),
                 document_review      : () => /document_under_review/.test(status),
+                excluded_until       : () => Client.get('excluded_until'),
                 financial_limit      : () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence            : () => !Client.get('residence'),
                 risk                 : () => riskAssessment(),
@@ -306,6 +286,7 @@ const Header = (() => {
 
             // real account checks in order
             const check_statuses_real = [
+                'excluded_until',
                 'tnc',
                 'financial_limit',
                 'risk',
