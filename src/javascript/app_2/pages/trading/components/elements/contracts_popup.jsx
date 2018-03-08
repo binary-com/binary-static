@@ -31,22 +31,14 @@ class ContractsPopUp extends React.PureComponent {
         this.wrapper_ref = node;
     }
 
-    scrollToggle(state) {
-        this.is_open = state;
-        // Used to disable y-scroll on body - disabled in this component for now
-        // document.body.classList.toggle('no-scroll', this.is_open);
-    }
-
     handleClickOutside(event) {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_list_visible) {
             this.setState({ is_list_visible: false });
-            this.scrollToggle(this.state.is_list_visible);
         }
     }
 
     handleVisibility() {
         this.setState({ is_list_visible: !this.state.is_list_visible });
-        this.scrollToggle(!this.state.is_list_visible);
     }
 
     render() {
