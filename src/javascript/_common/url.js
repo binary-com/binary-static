@@ -77,16 +77,16 @@ const Url = (() => {
      * @param {boolean} preserve_old - Should existing query parameters be preserved.
      */
     const updateParamsWithoutReload = (new_params, preserve_old) => {
-        const params = preserve_old
+        const updated_params = preserve_old
             ? $.extend(paramsHash(), new_params)
             : new_params;
         Object.keys(new_params).forEach(key => {
             if (new_params[key] === null) {
-                delete params[key];
+                delete updated_params[key];
             }
         });
         const url = new URL(window.location);
-        url.search = paramsHashToString(params);
+        url.search = paramsHashToString(updated_params);
         window.history.replaceState({ url: url.href }, '', url.href);
     };
 
