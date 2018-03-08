@@ -16,7 +16,7 @@ const Authenticate = (() => {
                 $('#error_message').setVisibility(1).text(response.error.message);
             } else {
                 const status = response.get_account_status.status;
-                needs_action = /document_needs_action/.test(response.get_account_status.status)
+                needs_action = /document_needs_action/.test(response.get_account_status.status);
                 if (!/authenticated/.test(status)) {
                     init();
                     const $not_authenticated = $('#not_authenticated').setVisibility(1);
@@ -199,7 +199,7 @@ const Authenticate = (() => {
                             expirationDate: f.exp_date || undefined,
                             passthrough   : {
                                 filename: f.file.name,
-                                name: f.name,
+                                name    : f.name,
                             },
                         };
 
@@ -302,7 +302,7 @@ const Authenticate = (() => {
             if (successAny) {
                 showSuccess();
             } else {
-                showError({message: localize('Following file(s) were already uploaded: [_1]', [`[ ${dup_files.join(", ")} ]`])});
+                showError({message: localize('Following file(s) were already uploaded: [_1]', [`[ ${dup_files.join(', ')} ]`])});
             }
         };
     };
