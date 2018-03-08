@@ -9,8 +9,9 @@ const ScrollToAnchor = (() => {
 
     const makeAnchorLink = (id) => {
         const anchor_link = document.createElement('a');
-        const { origin, pathname, hash } = window.location;
-        anchor_link.href = `${origin}${pathname}?anchor=${encodeURI(id)}${hash}`;
+        const url = new URL(window.location);
+        url.search = `anchor=${encodeURI(id)}`;
+        anchor_link.href = url.href;
         anchor_link.innerText = '#';
         return anchor_link;
     };
