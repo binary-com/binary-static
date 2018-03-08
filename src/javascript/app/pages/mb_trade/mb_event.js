@@ -108,7 +108,7 @@ const MBTradingEvents = (() => {
                 const allowed_decimals = Currency.getDecimalPlaces(MBDefaults.get('currency'));
 
                 // verify number of decimal places doesn't exceed the allowed decimal places according to the currency
-                is_valid = payout_amount.replace(/^-?\d*\.?|0+$/, '').length <= allowed_decimals;
+                is_valid = payout_amount.toString().replace(/^-?\d*\.?|0+$/, '').length <= allowed_decimals;
                 if (!is_valid) {
                     error_msg = localize('Up to [_1] decimal places are allowed.', [allowed_decimals]);
                 }
@@ -223,15 +223,19 @@ const MBTradingEvents = (() => {
                 const currency = $(this).attr('value');
                 MBContract.setCurrentItem($currency, currency);
                 MBDefaults.set('currency', currency);
-                if (!jpClient()) {
+                if (jpClient()) {
+                    MBProcess.processPriceRequest();
+                } else {
                     const is_crypto = Currency.isCryptocurrency(currency);
-                    const amount    = `payout${is_crypto ? '_crypto' : ''}`;
-                    if (!MBDefaults.get(amount)) {
-                        MBDefaults.set(`payout${is_crypto ? '_crypto' : ''}`, Currency.getMinPayout(currency));
+                    let amount      = MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`);
+                    if (!amount) {
+                        amount = Currency.getMinPayout(currency);
+                        MBDefaults.set(`payout${is_crypto ? '_crypto' : ''}`, amount);
                     }
-                    $payout.val(MBDefaults.get(amount)).attr('value', MBDefaults.get(amount));
+                    $payout
+                        .val(amount).attr('value', amount)
+                        .trigger('input'); // payout will call processPriceRequest
                 }
-                MBProcess.processPriceRequest();
             });
         }
 
