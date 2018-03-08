@@ -3,18 +3,20 @@ const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
 const BinarySocket        = require('../../../base/socket');
 const localize            = require('../../../../_common/localize').localize;
-const CookieStorage       = require('../../../../_common/storage').CookieStorage;
 const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
 const Url                 = require('../../../../_common/url');
 const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
 
 const Authenticate = (() => {
+    let needs_action = false;
+
     const onLoad = () => {
         BinarySocket.send({ get_account_status: 1 }).then((response) => {
             if (response.error) {
                 $('#error_message').setVisibility(1).text(response.error.message);
             } else {
                 const status = response.get_account_status.status;
+                needs_action = /document_needs_action/.test(response.get_account_status.status)
                 if (!/authenticated/.test(status)) {
                     init();
                     const $not_authenticated = $('#not_authenticated').setVisibility(1);
@@ -40,10 +42,8 @@ const Authenticate = (() => {
             collapsible: true,
             active     : false,
         });
-        // Setup Date picker
-        const document_uploaded = new CookieStorage('document_uploaded');
-        document_uploaded.read();
         const file_checks = {};
+        // Setup Date picker
         $('.date-picker').datepicker({
             dateFormat : 'yy-mm-dd',
             changeMonth: true,
@@ -152,10 +152,12 @@ const Authenticate = (() => {
                 if (e.files && e.files.length) {
                     const $e = $(e);
                     const type = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
+                    const name = $e.attr('data-name');
                     const $inputs = $e.closest('.fields').find('input[type="text"]');
                     const file_obj = {
                         file: e.files[0],
                         type,
+                        name,
                     };
                     if ($inputs.length) {
                         file_obj.id_number = $($inputs[0]).val();
@@ -197,6 +199,7 @@ const Authenticate = (() => {
                             expirationDate: f.exp_date || undefined,
                             passthrough   : {
                                 filename: f.file.name,
+                                name: f.name,
                             },
                         };
 
@@ -256,7 +259,7 @@ const Authenticate = (() => {
                 return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
             }
             // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
-            if (!document_uploaded.value.uploaded) {
+            if (!needs_action) {
                 if (file_checks.proofid && (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
                     return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
                 }
@@ -278,7 +281,6 @@ const Authenticate = (() => {
         };
 
         const showSuccess = () => {
-            document_uploaded.write({uploaded: true});
             const msg = localize('We are reviewing your documents. For more details [_1]contact us[_2].',
                 [`<a href="${Url.urlFor('contact')}">`, '</a>']);
             displayNotification(msg, false, 'document_under_review');
@@ -290,16 +292,17 @@ const Authenticate = (() => {
             const dup_files = [];
             let successAny = false;
             res.forEach((file) => {
+                const passthrough = file.passthrough;
                 if (!file.warning) {
                     successAny = true;
                 } else {
-                    dup_files.push(file.passthrough.filename);
+                    dup_files.push(`${passthrough.filename}(${passthrough.name})`);
                 }
             });
             if (successAny) {
                 showSuccess();
             } else {
-                showError({message: localize('Following file(s) were already uploaded: [_1]', [JSON.stringify(dup_files)])});
+                showError({message: localize('Following file(s) were already uploaded: [_1]', [`[ ${dup_files.join(", ")} ]`])});
             }
         };
     };
