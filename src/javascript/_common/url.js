@@ -72,7 +72,10 @@ const Url = (() => {
         return static_host + path.replace(/(^\/)/g, '');
     };
 
-    // TODO: add jsdoc
+    /**
+     * @param {Object} new_params - Object with param-value pairs. To delete param, set value to null.
+     * @param {boolean} preserve_old - Should existing query parameters be preserved.
+     */
     const updateParamsWithoutReload = (new_params, preserve_old) => {
         const params = preserve_old
             ? $.extend(paramsHash(), new_params)
