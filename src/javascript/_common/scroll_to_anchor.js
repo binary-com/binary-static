@@ -43,7 +43,7 @@ const ScrollToAnchor = (() => {
                 $.scrollTo(el, 500);
                 Url.updateParamsWithoutReload({
                     anchor: id,
-                });
+                }, true);
             });
         });
     };
@@ -62,7 +62,7 @@ const ScrollToAnchor = (() => {
         id_duplicate_count = {};
         Url.updateParamsWithoutReload({
             anchor: null,
-        });
+        }, true);
     };
 
     return {

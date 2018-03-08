@@ -72,7 +72,7 @@ const TabSelector = (() => {
     const updateURL = (selector, tab_id) => {
         Url.updateParamsWithoutReload({
             [selector]: tab_id,
-        });
+        }, true);
     };
 
     const goLeft = (e) => {

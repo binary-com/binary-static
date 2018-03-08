@@ -73,8 +73,10 @@ const Url = (() => {
     };
 
     // TODO: add jsdoc
-    const updateParamsWithoutReload = (new_params) => {
-        const params = $.extend(paramsHash(), new_params);
+    const updateParamsWithoutReload = (new_params, preserve_old) => {
+        const params = preserve_old
+            ? $.extend(paramsHash(), new_params)
+            : new_params;
         Object.keys(new_params).forEach(key => {
             if (new_params[key] === null) {
                 delete params[key];
