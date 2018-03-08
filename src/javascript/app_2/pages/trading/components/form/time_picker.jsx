@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import IScroll from 'iscroll';
+import { localize } from '../../../../../_common/localize';
 
 /* TODO:
       1. to change to 24 hours format
@@ -154,7 +155,7 @@ class TimePickerDropdown extends PureComponent {
                     className={`${preClass}-panel`}
                     onClick={toggle}
                 >
-                    <span className={value ? '' : 'placeholder'}>{value || 'Select time'}</span>
+                    <span className={value ? '' : 'placeholder'}>{value || localize('Select time')}</span>
                     <span
                         className={`${preClass}-clear`}
                         onClick={this.clear}
