@@ -87,7 +87,7 @@ class TradingHeader extends React.Component {
                         <ToggleDrawer
                             icon_class='notify-toggle'
                             alignment='right'
-                            icon_link={Url.urlForStatic('images/trading_app/notify_none.svg')}
+                            icon_link={Url.urlForStatic('images/trading_app/header/notification/ic-notification-light.svg')}
                         >
                             <DrawerItem text='Alert 1'/>
                             <DrawerItem text='Alert 2'/>

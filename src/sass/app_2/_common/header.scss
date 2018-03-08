@@ -14,7 +14,7 @@ header {
 
         .navbar-icons {
             cursor: pointer;
-            padding: 6px 15px;
+            padding: 6px 10px;
             align-self: center;
 
             &.binary-logo {
@@ -30,9 +30,12 @@ header {
             }
             &.notify-toggle {
                 order: 2;
-            }
-            @media (max-width: 768px) {
-                padding: 6px 10px;
+                padding: 6px;
+
+                img {
+                    width: 32px;
+                    height: auto;
+                }
             }
         }
         .menu-left {
@@ -43,21 +46,29 @@ header {
 
             .menu-toggle {
                 align-self: center;
+
+                img {
+                    width: 24px;
+                    height: auto;
+                }
             }
             .menu-links {
                 align-self: center;
-                padding-bottom: 5px;
 
                 a {
-                    padding: 0 30px;
+                    padding: 0 12px;
                     text-decoration: none;
                     position: relative;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: space-evenly;
 
                     span {
                         font-size: 1rem;
                         font-weight: 300;
                         text-transform: capitalize;
                         color: $COLOR_DARK_BLUE;
+                        padding: 16px;
 
                         &.trade:before {
                             content: url('../images/trading_app/header/trade/ic-trade-normal-light.svg');
@@ -119,7 +130,7 @@ header {
                             content: '';
                             height: 3px;
                             width: 100%;
-                            bottom: -16px;
+                            bottom: 0;
                             background-color: $primaryBrandColor;
                         }
                     }

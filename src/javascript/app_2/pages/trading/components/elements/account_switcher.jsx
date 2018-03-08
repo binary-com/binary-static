@@ -29,7 +29,7 @@ class AccountSwitcher extends React.PureComponent {
 
     render() {
         const account_list_collapsed = {
-            display: `${this.state.is_collapsed ? 'inline-block' : 'none'}`,
+            visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
         };
 
         const account_is_hidden = (account) => {
@@ -48,7 +48,7 @@ class AccountSwitcher extends React.PureComponent {
                     </div>
                 </div>
                 <div
-                    className={'acc-switcher-list'}
+                    className={`acc-switcher-list ${this.state.is_collapsed ? 'collapsed' : ''}`}
                     style={account_list_collapsed}
                 >
                     {this.props.accounts.map((account, idx) => (
