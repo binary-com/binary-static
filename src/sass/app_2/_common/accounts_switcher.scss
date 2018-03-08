@@ -1,6 +1,8 @@
 /* stylelint-disable color-no-hex */
 /* stylelint-disable number-max-precision */
 .acc-switcher-container {
+    position: static;
+
     .acc-switcher-header {
         cursor: pointer;
         border-bottom: 1px solid #f2f2f2;

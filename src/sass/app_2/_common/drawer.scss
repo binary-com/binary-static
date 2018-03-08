@@ -50,7 +50,8 @@ hr {
             .drawer-items-container {
                 overflow-y: auto;
                 overflow-x: hidden;
-                height: calc(100% - 158px);
+                height: 100%;
+                max-height: calc(100% - 158px);
                 z-index: 1;
                 position: relative;
             }
@@ -90,11 +91,13 @@ hr {
                 }
                 .drawer-footer {
                     height: 30px;
-                    border: 1px solid #f2f2f2;
-                    top: 100%;
+                    border-top: 1px solid #f2f2f2;
                     left: 0;
+                    bottom: 0;
                     background-color: $COLOR_WHITE;
                     z-index: 3;
+                    position: fixed;
+                    width: 100%;
                 }
             }
             &.right {
