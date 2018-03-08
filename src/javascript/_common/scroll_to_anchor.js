@@ -12,7 +12,7 @@ const ScrollToAnchor = (() => {
         const url = new URL(window.location);
         url.search = `anchor=${encodeURI(id)}`;
         anchor_link.href = url.href;
-        anchor_link.innerText = '#';
+        anchor_link.classList.add('data-anchor-link');
         return anchor_link;
     };
 
