@@ -11,9 +11,9 @@ const localize            = require('../../_common/localize').localize;
  */
 const NetworkMonitor = (() => {
     const status_config = {
-        online  : { class: 'online',  tooltip: localize('Online') },
-        offline : { class: 'offline', tooltip: localize('Offline') },
-        blinking: { class: 'blinker', tooltip: localize('Connecting to server') },
+        online  : { class: 'online',  tooltip: 'Online' },
+        offline : { class: 'offline', tooltip: 'Offline' },
+        blinking: { class: 'blinker', tooltip: 'Connecting to server' },
     };
     const pendings = {};
     const pending_keys = {
@@ -73,7 +73,7 @@ const NetworkMonitor = (() => {
 
         if (el_status && el_tooltip) {
             el_status.setAttribute('class', status_config[network_status].class);
-            el_tooltip.setAttribute('data-balloon', `${localize('Network status')}: ${status_config[network_status].tooltip}`);
+            el_tooltip.setAttribute('data-balloon', `${localize('Network status')}: ${localize(status_config[network_status].tooltip)}`);
         }
     };
 
