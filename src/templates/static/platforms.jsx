@@ -118,7 +118,7 @@ const Platform = () => (
                     url={it.url_for('multi_barriers_trading')}
                     button_text={it.L('Trade now')}
                 />
-                <div className='gr-2' />
+                <div className='gr-2' data-show='default, virtual, costarica' />
                 <Platforms
                     image_class='gr-10 gr-5-p gr-9-m'
                     image='chart'
