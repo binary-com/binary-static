@@ -70,13 +70,13 @@ div.contracts-popup-container {
             min-width: 500px;
             display: grid;
             z-index: 2;
-            cursor: pointer;
             background: #fff;
             border: solid 1px #f2f2f2;
 
             .list-item {
                 width: 100%;
                 font-size: 1rem;
+                cursor: pointer;
 
                 i.contract-icon {
                     padding-right: 8px;

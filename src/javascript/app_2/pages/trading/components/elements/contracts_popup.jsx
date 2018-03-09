@@ -64,7 +64,7 @@ class ContractsPopUp extends React.PureComponent {
                     onClick={this.handleVisibility}
                     onBlur={this.handleVisibility}
                 >
-                    <i className={`contract-icon ic-${this.props.value}`}/>
+                    <i className={`contract-icon ic-${this.props.value}`} />
                     <span name={this.props.name} value={this.props.value}>
                         {getDisplayText(this.props.list, this.props.value)}
                     </span>
@@ -96,20 +96,20 @@ const Contracts = ({
     value,
     handleSelect,
 }) => (
-        contracts.map((contract, idx) => (
-            <div
-                key={idx}
-                className={`list-item ${ value === contract.value ? 'selected' : ''}`}
-                name={name}
-                value={contract.value}
-                onClick={handleSelect.bind(null, contract)}
-            >
-                <span>
-                    <i className={`contract-icon ic-${contract.value}${ value === contract.value ? '' : '--invert'}`}/>
-                    {contract.text}
-                </span>
-            </div>
-        ))
+    contracts.map((contract, idx) => (
+        <div
+            key={idx}
+            className={`list-item ${value === contract.value ? 'selected' : ''}`}
+            name={name}
+            value={contract.value}
+            onClick={handleSelect.bind(null, contract)}
+        >
+            <span>
+                <i className={`contract-icon ic-${contract.value}${value === contract.value ? '' : '--invert'}`} />
+                {contract.text}
+            </span>
+        </div>
+    ))
 );
 
 export default ContractsPopUp;
