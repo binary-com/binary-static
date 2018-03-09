@@ -1,13 +1,14 @@
 import React from 'react';
 import moment from 'moment';
+import { localize } from '../../../../../_common/localize';
 
 class PortfolioDrawer extends React.Component {
     constructor(props) {
         super(props);
         this.handleVisibility = this.handleVisibility.bind(this);
         this.state = {
-            open : true,
-            width: window.innerWidth,
+            is_open: true,
+            width  : window.innerWidth,
         };
     }
 
@@ -20,7 +21,7 @@ class PortfolioDrawer extends React.Component {
     }
 
     handleVisibility() {
-        this.setState({ open: !this.state.open });
+        this.setState({ is_open: !this.state.is_open });
     }
 
     handleWindowSizeChange = () => {
@@ -44,21 +45,21 @@ class PortfolioDrawer extends React.Component {
 
     render() {
         const { width } = this.state;
-        const isMobile  = width <= 1024;
+        const is_mobile = width <= 1024;
         const header = (
-            isMobile ?
+            is_mobile ?
                 <div
                     className='portfolio-drawer-header'
                     onClick={this.handleVisibility}
                 >
                     <span className='ic-portfolio' />
-                    <p>Portfolio</p>
-                    <span className={`ic-close ${this.state.open ? 'open': '' }`} />
+                    <p>{localize('Portfolio')}</p>
+                    <span className={`ic-close ${this.state.is_open ? 'open': '' }`} />
                 </div>
                 :
                 <div className='portfolio-drawer-header'>
                     <span className='ic-portfolio' />
-                    <p>Portfolio Quick Menu</p>
+                    <p>{localize('Portfolio Quick Menu')}</p>
                     <a href='javascript:;'
                        className='ic-close'
                        onClick={this.props.onClick}
@@ -69,7 +70,7 @@ class PortfolioDrawer extends React.Component {
         return (
             <div className='portfolio-drawer'>
                 { header }
-                <div className={`portfolio-list ${this.state.open ? 'show': '' }`}>
+                <div className={`portfolio-list ${this.state.is_open ? 'show': '' }`}>
                     {
                         this.props.portfolios.map((portfolio, idx) => (
                             <div key={idx} className='portfolio'>
@@ -79,7 +80,7 @@ class PortfolioDrawer extends React.Component {
                                     <span className={`indicative-${this.getIndicative(portfolio.buy_price).value > 0 ? 'positive' : 'negative'}`}>
                                         {this.getIndicative(portfolio.buy_price).display}
                                     </span>
-                                    <span className='remaining-time'>{moment(this.getRemainingTime(portfolio.expiry_time)).format(isMobile ? 'HH:mm' : 'HH:mm:ss')}</span>
+                                    <span className='remaining-time'>{moment(this.getRemainingTime(portfolio.expiry_time)).format(is_mobile ? 'HH:mm' : 'HH:mm:ss')}</span>
                                 </div>
                             </div>
                         ))

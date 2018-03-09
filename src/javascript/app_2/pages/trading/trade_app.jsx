@@ -46,7 +46,7 @@ class TradeApp extends React.Component {
 }
 
 export default connect(
-    ({trade, ui}) => ({
+    ({ trade, ui }) => ({
         form_components      : trade.form_components,
         portfolios           : trade.portfolios,
         togglePortfolioDrawer: ui.togglePortfolioDrawer,
