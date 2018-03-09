@@ -1,13 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 
-const TogglePortfolioDrawer = ({...props}) => (
-    <a href='javascript:;'
-       className={`${props.isPortfolioDrawerOn ? 'ic-portfolio-active' : 'ic-portfolio' }`}
-       onClick={props.togglePortfolioDrawer}
-    />
-);
-
 class PortfolioDrawer extends React.Component {
     constructor(props) {
         super(props);
@@ -97,7 +90,4 @@ class PortfolioDrawer extends React.Component {
     }
 }
 
-module.exports = {
-    PortfolioDrawer,
-    TogglePortfolioDrawer,
-};
+module.exports = PortfolioDrawer;

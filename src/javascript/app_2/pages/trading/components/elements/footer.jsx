@@ -1,6 +1,12 @@
 import React from 'react';
-import { TogglePortfolioDrawer } from './portfolio_drawer.jsx';
 import { connect } from '../../store/connect';
+
+const TogglePortfolioDrawer = ({...props}) => (
+    <a href='javascript:;'
+       className={`${props.isPortfolioDrawerOn ? 'ic-portfolio-active' : 'ic-portfolio' }`}
+       onClick={props.togglePortfolioDrawer}
+    />
+);
 
 class ToggleFullScreen extends React.Component {
     constructor(props) {
@@ -95,5 +101,3 @@ export default connect(
         togglePortfolioDrawer: ui.togglePortfolioDrawer,
     })
 )(TradingFooter);
-
-// export default TradingFooter;
