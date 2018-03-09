@@ -9,9 +9,11 @@ const Barrier = ({
     onChange,
 }) =>  (
         <fieldset>
-            <span className='field-info left' htmlFor='barrier_1'>
-                {localize(barrier_2 ? 'High barrier' : 'Barrier')}
-            </span>
+            <div className='fieldset-header'>
+                <span className='field-info left' htmlFor='barrier_1'>
+                    {localize(barrier_2 ? 'High barrier' : 'Barrier')}
+                </span>
+            </div>
             <InputField
                 type='number'
                 name='barrier_1'

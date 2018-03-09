@@ -216,10 +216,10 @@ div.datepicker-container {
             opacity: 1;
         }
         &.picker-calendar-icon:before {
-            content: url('../images/trading_app/calendar.svg');
+            content: url('../images/trading_app/common/calendar.svg');
         }
         &.close-circle-icon:before {
-            content: url('../images/trading_app/close-circle.svg');
+            content: url('../images/trading_app/common/close_circle.svg');
         }
     }
     .datepicker-calendar {

@@ -63,7 +63,7 @@ class TradingHeader extends React.Component {
                                 </div>
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>
-                                <img className='logo-img' src={Url.urlForStatic('images/trading_app/symbol.svg')} alt='Binary.com' />
+                                <img className='logo-img' src={Url.urlForStatic('images/trading_app/header/symbol.svg')} alt='Binary.com' />
                             </div>
                             {!!this.props.items.length &&
                                 <div className='menu-links'>

@@ -3,16 +3,20 @@
 @supports (display: grid) {
     /* trade-app layout */
     #trade_app {
+        position: relative;
         margin: 30px 15px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: repeat(2, [row] auto);
         grid-gap: 20px;
 
+        .chart-container, .sidebar-container {
+            position: relative;
+        }
         & > * {
             grid-column: col-start / span 12;
         }
-        @media (min-width: 767px) {
+        @media (min-width: 769px) {
             .chart-container {
                 grid-column: col-start 1 / span 9;
 
@@ -24,9 +28,9 @@
             }
             .sidebar-container {
                 grid-column: col-start 10 / span 3;
-                display: grid;
                 grid-gap: 10px;
                 grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
+                transition: all 0.25s;
 
                 fieldset {
                     grid-column: 1;
@@ -48,6 +52,30 @@
                 }
             }
         }
+        @media (min-width: 1025px) {
+            .offset-container {
+                position: absolute;
+                top: -30px;
+                height: 100vh;
+                width: 100%;
+                left: calc(100% + 20px);
+                transition: all 0.25s;
+                grid-column: col-start 11 / span 2;
+            }
+            &.show {
+                margin-right: 0;
+
+                .chart-container {
+                    grid-column: col-start 1 / span 7;
+                }
+                .sidebar-container {
+                    transform: translate(-70%);
+                }
+                .offset-container {
+                    transform: translate(calc(-100% - 20px));
+                }
+            }
+        }
     }
 }
 
@@ -58,7 +86,7 @@
         flex-flow: row wrap;
         padding: 20px;
 
-        @media screen and (min-width: 767px) {
+        @media screen and (min-width: 769px) {
             .chart-container {
                 flex: 0 1 calc(75% - 1.5vw);
             }
@@ -74,8 +102,14 @@
 }
 /* stylelint-enable unit-whitelist */
 
-/* Ant-style shadows */
 .shadow {
     box-shadow: 0 2px 8px #f0f1f2;
+}
+
+// Helpers
+.desktop-only {
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 /* stylelint-enable color-no-hex */

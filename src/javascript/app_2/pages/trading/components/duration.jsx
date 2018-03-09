@@ -8,6 +8,11 @@ import ClockHeader from './elements/clock_header.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
+const expiry_list = [
+    { text: localize('Duration'), value: 'duration' },
+    { text: localize('End Time'), value: 'endtime' },
+];
+
 const Duration = ({
     expiry_type,
     expiry_time,
@@ -18,12 +23,9 @@ const Duration = ({
     onChange,
 }) => (
         <fieldset>
-            <ClockHeader className='row-1 col-100' time={server_time} header={localize('Trade Duration')} />
+            <ClockHeader time={server_time} header={localize('Trade Duration')} />
             <Dropdown
-                list={[
-                    { text: localize('Duration'), value: 'duration' },
-                    { text: localize('End Time'), value: 'endtime' },
-                ]}
+                list={expiry_list}
                 value={expiry_type}
                 name='expiry_type'
                 onChange={onChange}
