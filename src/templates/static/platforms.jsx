@@ -122,12 +122,12 @@ const Platform = () => (
                 <Platforms
                     image_class='gr-10 gr-5-p gr-9-m'
                     image='chart'
-                    header={it.L('Charts')}
-                    description={it.L('Currently in Beta')}
-                    text={it.L('Chart library')}
+                    header={it.L('SmartCharts')}
+                    description={it.L('Interactive charting tool')}
+                    text={it.L('Analyse the financial markets using beautiful visualisations and unique trading tools, powered by a fast and intuitive interface.')}
                     url='https://charts.binary.com'
                     target='_blank'
-                    button_text={it.L('Try now')}
+                    button_text={it.L('Try SmartCharts')}
                 />
             </div>
         </div>
