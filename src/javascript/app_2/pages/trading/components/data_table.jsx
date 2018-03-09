@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import BinarySocket from '../../../../app/base/socket';
 import Client from '../../../../app/base/client';
+import { toJapanTimeIfNeeded } from '../../../../app/base/clock';
 import { jpClient } from '../../../../app/common/country_base';
 import { formatMoney } from '../../../../app/common/currency';
 import { localize } from '../../../../_common/localize';
@@ -13,9 +14,7 @@ const Pagination = ({ page, total, pageSize, onChange }) => {
         onChange(newPage, calcNumOfPages());
     };
 
-    const calcNumOfPages = () => {
-        return Math.ceil(total / pageSize);
-    };
+    const calcNumOfPages = () => Math.ceil(total / pageSize);
 
     const handleNext = () => {
         if (page < calcNumOfPages()) {
@@ -29,29 +28,17 @@ const Pagination = ({ page, total, pageSize, onChange }) => {
         }
     };
 
-    const renderEllipsis = (id) => {
-        return (
-            <li
-                className='pagination-item pagination-ellipsis'
-                key={`ellipsis-${id}`}
-            >
-            </li>
-        );
-    };
+    const renderEllipsis = (id) => <li className='pagination-item pagination-ellipsis' key={`ellipsis-${id}`} />;
 
-    const renderItem = (pageNum) => {
-        return (
-            <li
-                className={`pagination-item ${pageNum === page ? 'pagination-item-active' : ''}`}
-                key={pageNum}
-                onClick={() => {
-                    handleChange(pageNum)
-                }}
-            >
-                <a>{pageNum}</a>
-            </li>
-        );
-    };
+    const renderItem = (pageNum) => (
+        <li
+            className={`pagination-item ${pageNum === page ? 'pagination-item-active' : ''}`}
+            key={pageNum}
+            onClick={() => { handleChange(pageNum); }}
+        >
+            <a>{pageNum}</a>
+        </li>
+    );
 
     const renderItemRange = (first, last) => {
         const items = [];
@@ -71,24 +58,23 @@ const Pagination = ({ page, total, pageSize, onChange }) => {
         else if (page <= 4) {
             return [
                 ...renderItemRange(1, 5),
-                renderEllipsis(2)
+                renderEllipsis(2),
             ];
         }
         else if (numOfPages - page < 3) {
             return [
                 renderItem(1),
                 renderEllipsis(1),
-                ...renderItemRange(numOfPages - 3, numOfPages)
+                ...renderItemRange(numOfPages - 3, numOfPages),
             ];
         }
-        else {
-            return [
-                renderItem(1),
-                renderEllipsis(1),
-                ...renderItemRange(page - 1, page + 1),
-                renderEllipsis(2)
-            ];
-        }
+        // else
+        return [
+            renderItem(1),
+            renderEllipsis(1),
+            ...renderItemRange(page - 1, page + 1),
+            renderEllipsis(2),
+        ];
     };
 
     return (
@@ -108,10 +94,10 @@ const Pagination = ({ page, total, pageSize, onChange }) => {
             </li>
         </ul>
     );
-}
+};
 
 Pagination.defaultProps = {
-    page: 1
+    page: 1,
 };
 
 
@@ -120,15 +106,15 @@ class DataTable extends React.Component {
         super(props);
         const { dataSource, pagination, pageSize } = props;
 
-        this.handlePageChange = this.handlePageChange.bind(this);
-        this.renderPagination = this.renderPagination.bind(this);
-        this.handlePageChange = this.handlePageChange.bind(this);
+        this.handlePageChange  = this.handlePageChange.bind(this);
+        this.renderPagination  = this.renderPagination.bind(this);
+        this.handlePageChange  = this.handlePageChange.bind(this);
         this.updateDisplayData = this.updateDisplayData.bind(this);
 
         this.state = {
             displayData: pagination ? dataSource.slice(0, pageSize) : dataSource,
-            page: 1
-        }
+            page       : 1,
+        };
     }
 
     componentWillReceiveProps(nextProps) {
@@ -141,7 +127,7 @@ class DataTable extends React.Component {
 
         this.setState({
             page,
-            displayData: dataSource.slice(startId, endId)
+            displayData: dataSource.slice(startId, endId),
         });
     }
 
@@ -175,10 +161,9 @@ class DataTable extends React.Component {
 
         return (
             <tr className='table-row' key={id}>
-                {this.props.columns.map(({ dataIndex, renderCell }) => {
-                    if (!renderCell) renderCell = defaultRenderCell;
-                    return renderCell(transaction[dataIndex], dataIndex, transaction);
-                })}
+                {this.props.columns.map(({ dataIndex, renderCell }) => (
+                    (renderCell || defaultRenderCell)(transaction[dataIndex], dataIndex, transaction)
+                ))}
             </tr>
         );
     }
@@ -192,8 +177,7 @@ class DataTable extends React.Component {
     }
 
     render() {
-        const { dataSource, columns, pagination, pageSize } = this.props;
-        const { displayData } = this.state;
+        const { pagination } = this.props;
 
         return (
             <div className='table-container'>
@@ -216,8 +200,30 @@ class DataTable extends React.Component {
 }
 
 DataTable.defaultProps = {
-    pagination: true,
-    pagesCloseToEnd: 5
+    pagination     : true,
+    pagesCloseToEnd: 5,
+};
+
+const getStatementData = (statement, currency, jp_client) => {
+    const date_obj   = new Date(statement.transaction_time * 1000);
+    const moment_obj = moment.utc(date_obj);
+    const date_str   = moment_obj.format('YYYY-MM-DD');
+    const time_str   = `${moment_obj.format('HH:mm:ss')} GMT`;
+    const payout     = parseFloat(statement.payout);
+    const amount     = parseFloat(statement.amount);
+    const balance    = parseFloat(statement.balance_after);
+
+    return {
+        action : localize(toTitleCase(statement.action_type)),
+        date   : jp_client ? toJapanTimeIfNeeded(+statement.transaction_time) : `${date_str}\n${time_str}`,
+        ref    : statement.transaction_id,
+        payout : isNaN(payout)  ? '-' : formatMoney(currency, payout,  !jp_client),
+        amount : isNaN(amount)  ? '-' : formatMoney(currency, amount,  !jp_client),
+        balance: isNaN(balance) ? '-' : formatMoney(currency, balance, !jp_client),
+        desc   : localize(statement.longcode.replace(/\n/g, '<br />')),
+        id     : statement.contract_id,
+        app_id : statement.app_id,
+    };
 };
 
 export class StatementDataTable extends React.PureComponent {
@@ -228,67 +234,43 @@ export class StatementDataTable extends React.PureComponent {
 
         const columns = [
             {
-                title: localize('Date'),
+                title    : localize('Date'),
                 dataIndex: 'date',
             },
             {
-                title: localize('Ref.'),
+                title    : localize('Ref.'),
                 dataIndex: 'ref',
             },
             {
-                title: localize('Potential Payout'),
+                title    : localize('Potential Payout'),
                 dataIndex: 'payout',
             },
             {
-                title: localize('Action'),
+                title    : localize('Action'),
                 dataIndex: 'action',
             },
             {
-                title: localize('Description'),
+                title    : localize('Description'),
                 dataIndex: 'desc',
             },
             {
-                title: localize('Credit/Debit'),
-                dataIndex: 'amount',
-                renderCell: (data, dataIndex, transaction) => {
-                    const parseStrNum = (str) => {
-                        return parseFloat(str.replace(',', '.'));
-                    }
-                    return <td className={`${dataIndex} ${(parseStrNum(data) >= 0) ? 'profit' : 'loss'}`} key={dataIndex}>{data}</td>
-                }
+                title     : localize('Credit/Debit'),
+                dataIndex : 'amount',
+                renderCell: (data, dataIndex) => {
+                    const parseStrNum = (str) => parseFloat(str.replace(',', '.'));
+                    return <td className={`${dataIndex} ${(parseStrNum(data) >= 0) ? 'profit' : 'loss'}`} key={dataIndex}>{data}</td>;
+                },
             },
             {
-                title: localize('Balance'),
+                title    : localize('Balance'),
                 dataIndex: 'balance',
-            }
+            },
         ];
 
         this.state = {
-            dataSource: [],
-            columns: columns,
-            loadedAllTransactions: false
-        };
-    }
-
-    getStatementData(statement, currency, jp_client) {
-        const date_obj   = new Date(statement.transaction_time * 1000);
-        const moment_obj = moment.utc(date_obj);
-        const date_str   = moment_obj.format('YYYY-MM-DD');
-        const time_str   = `${moment_obj.format('HH:mm:ss')} GMT`;
-        const payout     = parseFloat(statement.payout);
-        const amount     = parseFloat(statement.amount);
-        const balance    = parseFloat(statement.balance_after);
-
-        return {
-            action : localize(toTitleCase(statement.action_type)),
-            date   : jp_client ? toJapanTimeIfNeeded(+statement.transaction_time) : `${date_str}\n${time_str}`,
-            ref    : statement.transaction_id,
-            payout : isNaN(payout) || is_ico_bid ? '-' : formatMoney(currency, payout, !jp_client),
-            amount : isNaN(amount) ? '-' : formatMoney(currency, amount, !jp_client),
-            balance: isNaN(balance) ? '-' : formatMoney(currency, balance, !jp_client),
-            desc   : localize(statement.longcode.replace(/\n/g, '<br />')),
-            id     : statement.contract_id,
-            app_id : statement.app_id,
+            columns,
+            dataSource           : [],
+            loadedAllTransactions: false,
         };
     }
 
@@ -304,25 +286,25 @@ export class StatementDataTable extends React.PureComponent {
 
         const BATCH_SIZE = 200;
         const req = {
-            statement: 1,
+            statement  : 1,
             description: 1,
-            limit: BATCH_SIZE,
-            offset: this.state.dataSource.length
+            limit      : BATCH_SIZE,
+            offset     : this.state.dataSource.length,
         };
 
-        const currency = Client.get('currency');
+        const currency  = Client.get('currency');
         const jp_client = jpClient();
 
         BinarySocket.send(req).then((response) => {
             console.log('next batch', response);
 
             const formattedTransactions = response.statement.transactions
-                .map(transaction => this.getStatementData(transaction, currency, jp_client));
+                .map(transaction => getStatementData(transaction, currency, jp_client));
 
             this.setState({
-                dataSource: [...this.state.dataSource, ...formattedTransactions],
-                loadedAllTransactions: formattedTransactions.length < BATCH_SIZE
-            })
+                dataSource           : [...this.state.dataSource, ...formattedTransactions],
+                loadedAllTransactions: formattedTransactions.length < BATCH_SIZE,
+            });
         });
     }
 
