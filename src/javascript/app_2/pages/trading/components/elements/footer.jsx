@@ -1,11 +1,17 @@
 import React from 'react';
+import Popover from './popover.jsx';
 import { connect } from '../../store/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (
-    <a href='javascript:;'
-       className={`${props.isPortfolioDrawerOn ? 'ic-portfolio-active' : 'ic-portfolio' }`}
-       onClick={props.togglePortfolioDrawer}
-    />
+    <Popover
+        title='Open positions'
+        subtitle='Toggle Portfolio Quick Menu to view current running portfolio'
+    >
+        <a href='javascript:;'
+           className={`${props.isPortfolioDrawerOn ? 'ic-portfolio-active' : 'ic-portfolio' }`}
+           onClick={props.togglePortfolioDrawer}
+        />
+    </Popover>
 );
 
 class ToggleFullScreen extends React.Component {
