@@ -1,5 +1,6 @@
 import React from 'react';
 import { TogglePortfolioDrawer } from './portfolio_drawer.jsx';
+import { connect } from '../../store/connect';
 
 class ToggleFullScreen extends React.Component {
     constructor(props) {
@@ -74,7 +75,7 @@ class TradingFooter extends React.Component {
             <React.Fragment>
             {this.props.items.length &&
                 <div className='footer-links'>
-                    <TogglePortfolioDrawer />
+                    <TogglePortfolioDrawer {...this.props} />
                     {this.props.items.map((item, idx) => (
                         <a key={idx} href={item.href || 'javascript:;'}>
                             <span className={item.icon} title={item.text} />
@@ -88,4 +89,11 @@ class TradingFooter extends React.Component {
     }
 }
 
-export default TradingFooter;
+export default connect(
+    ({ui}) => ({
+        isPortfolioDrawerOn  : ui.isPortfolioDrawerOn,
+        togglePortfolioDrawer: ui.togglePortfolioDrawer,
+    })
+)(TradingFooter);
+
+// export default TradingFooter;

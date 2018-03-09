@@ -1,19 +1,10 @@
 import React from 'react';
 import moment from 'moment';
 
-const toggleLayout = (close = false) => {
-    const appLayout = document.getElementById('trade_app');
-    const is1col    = appLayout.classList.contains('show-offset');
-    if (close) {
-        appLayout.classList.add('show-offset');
-    }
-    appLayout.classList[is1col ? 'remove': 'add']('show-offset');
-};
-
-const TogglePortfolioDrawer = () => (
+const TogglePortfolioDrawer = ({...props}) => (
     <a href='javascript:;'
-       className='ic-portfolio'
-       onClick={toggleLayout}
+       className={`${props.isPortfolioDrawerOn ? 'ic-portfolio-active' : 'ic-portfolio' }`}
+       onClick={props.togglePortfolioDrawer}
     />
 );
 
@@ -52,6 +43,7 @@ class PortfolioDrawer extends React.Component {
         };
     };
 
+    // TODO: calculate remaining time and render
     getRemainingTime = (epoch) => {
         const time_left = parseInt(moment.unix(epoch) - window.time.unix());
         return time_left;
@@ -76,7 +68,7 @@ class PortfolioDrawer extends React.Component {
                     <p>Portfolio Quick Menu</p>
                     <a href='javascript:;'
                        className='ic-close'
-                       onClick={toggleLayout}
+                       onClick={this.props.onClick}
                     />
                 </div>
         );

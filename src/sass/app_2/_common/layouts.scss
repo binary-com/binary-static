@@ -60,7 +60,7 @@
                 transition: all 0.25s;
                 grid-column: col-start 11 / span 2;
             }
-            &.show-offset {
+            &.show {
                 margin-right: 0;
 
                 .chart-container {
