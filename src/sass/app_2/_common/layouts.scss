@@ -3,21 +3,7 @@
 @supports (display: grid) {
     /* trade-app layout */
     #trade_app {
-        display: grid;
-        grid-template-columns: 100%;
-        @media (min-width: 1025px) {
-            grid-template-columns: 85% 15%;
-
-            &.grid-1-col {
-                grid-template-columns: 100%;
-
-                .aside {
-                    display: none; // hide portfolio-drawer on desktop
-                }
-            }
-        }
-    }
-    .main {
+        position: relative;
         margin: 30px 15px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
@@ -42,6 +28,7 @@
                 display: grid;
                 grid-gap: 10px;
                 grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
+                transition: all 0.25s;
 
                 fieldset {
                     grid-column: 1;
@@ -60,6 +47,30 @@
                             grid-template-columns: 1fr 1.5fr;
                         }
                     }
+                }
+            }
+        }
+        @media (min-width: 1025px) {
+            .offset-container {
+                position: absolute;
+                top: -30px;
+                height: 100vh;
+                width: 100%;
+                left: calc(100% + 20px);
+                transition: all 0.25s;
+                grid-column: col-start 11 / span 2;
+            }
+            &.show-offset {
+                margin-right: 0;
+
+                .chart-container {
+                    grid-column: col-start 1 / span 7;
+                }
+                .sidebar-container {
+                    transform: translate(-70%);
+                }
+                .offset-container {
+                    transform: translate(calc(-100% - 20px));
                 }
             }
         }

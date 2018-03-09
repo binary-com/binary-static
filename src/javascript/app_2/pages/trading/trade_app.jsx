@@ -19,24 +19,23 @@ class TradeApp extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className='main'>
-                    <div className='chart-container notice-msg'>
-                        <Symbol />
-                        <ContractType />
-                        <Test />
-                    </div>
-                    <div className='sidebar-container'>
-
-                        {this.isVisible('start_date') && <StartDate />}
-                        <Duration />
-                        {this.isVisible('barrier') && <Barrier />}
-                        {this.isVisible('last_digit') && <LastDigit />}
-                        <Amount />
-
-                        <Purchase />
-                    </div>
+                <div className='chart-container notice-msg'>
+                    <Symbol />
+                    <ContractType />
+                    <Test />
                 </div>
-                <div className='aside'>
+                <div className='sidebar-container'>
+
+                    {this.isVisible('start_date') && <StartDate />}
+                    <Duration />
+                    {this.isVisible('barrier') && <Barrier />}
+                    {this.isVisible('last_digit') && <LastDigit />}
+                    <Amount />
+
+                    <Purchase />
+                </div>
+
+                <div className='offset-container'>
                     <PortfolioDrawer portfolios={this.props.portfolios} />
                 </div>
             </React.Fragment>

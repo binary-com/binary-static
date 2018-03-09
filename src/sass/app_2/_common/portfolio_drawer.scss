@@ -3,7 +3,7 @@
 // Desktop
 .portfolio-drawer {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
-    height: 100%;
+    height: 100vh;
     box-sizing: border-box;
     transition: transform ease 250ms;
     background: $COLOR_WHITE;
@@ -98,6 +98,7 @@
 @media (max-width: 1024px) {
     .portfolio-drawer {
         box-shadow: none;
+        padding: 0;
 
         div.portfolio-list {
             opacity: 0;

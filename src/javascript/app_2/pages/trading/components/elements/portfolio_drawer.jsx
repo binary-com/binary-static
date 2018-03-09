@@ -3,11 +3,11 @@ import moment from 'moment';
 
 const toggleLayout = (close = false) => {
     const appLayout = document.getElementById('trade_app');
-    const is1col    = appLayout.classList.contains('grid-1-col');
+    const is1col    = appLayout.classList.contains('show-offset');
     if (close) {
-        appLayout.classList.add('grid-1-col');
+        appLayout.classList.add('show-offset');
     }
-    appLayout.classList[is1col ? 'remove': 'add']('grid-1-col');
+    appLayout.classList[is1col ? 'remove': 'add']('show-offset');
 };
 
 const TogglePortfolioDrawer = () => (
