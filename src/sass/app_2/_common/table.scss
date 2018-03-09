@@ -1,0 +1,55 @@
+/* Ant style */
+/* stylelint-disable color-no-hex */
+.table {
+    color: #333333;
+    font-size: 16px;
+    border-collapse: collapse;
+
+    &-row {
+        background-color: $COLOR_WHITE;
+        border-bottom: 1px solid #d2d3da;
+    }
+    &-thead {
+        min-height: 40px;
+
+        & th {
+            padding: 12px;
+            font-weight: 600;
+            text-align: left;
+            border: none;
+            background-color: #f4f4f6;
+        }
+        & th:first-child {
+            padding-left: 16px;
+            border-top-left-radius: 4px;
+        }
+        & th:last-child {
+            padding-right: 16px;
+            border-top-right-radius: 4px;
+        }
+    }
+    &-tbody {
+        & .table-row:hover {
+            background-color: #fdf4ec;
+        }
+        & td {
+            padding: 12px;
+            border: none;
+        }
+        & td:first-child {
+            padding-left: 16px;
+        }
+        & td:last-child {
+            padding-right: 16px;
+        }
+        & .profit {
+            color: #2e8836;
+        }
+        & .loss {
+            color: #c03;
+        }
+    }
+    &-pagination {
+        margin-top: 16px;
+    }
+}
