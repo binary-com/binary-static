@@ -208,7 +208,7 @@ const FooterNormal = () => (
                                 </a>
                             </div>
                         </div>
-                        <div data-show='iom, malta' className='gr-row gr-row-align-center-m'>
+                        <div className='id-hide gr-row gr-row-align-center-m'>
                             <div className='gr-9 gr-7-m'>
                                 <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
                                     <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
