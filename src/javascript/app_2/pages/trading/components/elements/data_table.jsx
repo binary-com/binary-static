@@ -1,12 +1,12 @@
 import React from 'react';
 import moment from 'moment';
-import BinarySocket from '../../../../app/base/socket';
-import Client from '../../../../app/base/client';
-import { toJapanTimeIfNeeded } from '../../../../app/base/clock';
-import { jpClient } from '../../../../app/common/country_base';
-import { formatMoney } from '../../../../app/common/currency';
-import { localize } from '../../../../_common/localize';
-import { toTitleCase } from '../../../../_common/string_util';
+import Client from '../../../../../app/base/client';
+import BinarySocket from '../../../../../app/base/socket';
+import { toJapanTimeIfNeeded } from '../../../../../app/base/clock';
+import { jpClient } from '../../../../../app/common/country_base';
+import { formatMoney } from '../../../../../app/common/currency';
+import { localize } from '../../../../../_common/localize';
+import { toTitleCase } from '../../../../../_common/string_util';
 
 const Pagination = ({ page, total, pageSize, onChange }) => {
     const handleChange = (newPage) => {
@@ -204,6 +204,8 @@ DataTable.defaultProps = {
     pagesCloseToEnd: 5,
 };
 
+
+// TODO: to move the statement code to its own component
 const getStatementData = (statement, currency, jp_client) => {
     const date_obj   = new Date(statement.transaction_time * 1000);
     const moment_obj = moment.utc(date_obj);
