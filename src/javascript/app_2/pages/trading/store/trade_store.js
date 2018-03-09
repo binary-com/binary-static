@@ -81,8 +81,8 @@ export default class TradeStore {
     // TODO: retrieve from upper state
     @observable server_time = undefined;
 
+    // TODO: to remove dummy portfolio value
     @observable portfolios = [
-        // dummy portfolio value
         {
             transaction_id: 32355620467,
             contract_id   : 478981052055,
