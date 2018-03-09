@@ -73,10 +73,15 @@ class ToggleFullScreen extends React.Component {
 
     render() {
         return (
-            <a href='javascript:;'
-               className='ic-fullscreen'
-               onClick={this.state.isFullScreen ? this.exitFullScreen : this.enterFullScreen}
-            />
+            <Popover
+                subtitle='Toggle full screen'
+                placement='topRight'
+            >
+                <a href='javascript:;'
+                   className='ic-fullscreen'
+                   onClick={this.state.isFullScreen ? this.exitFullScreen : this.enterFullScreen}
+                />
+            </Popover>
         );
     }
 }

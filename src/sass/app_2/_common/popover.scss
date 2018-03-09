@@ -1,15 +1,26 @@
 /* stylelint-disable color-no-hex */
+a {
+    position: relative;
+
+    .popover {
+        position: absolute;
+    }
+}
 
 .popover {
     position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     bottom: 40px;
     background: $COLOR_WHITE;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
     max-width: 250px;
+    min-width: 120px;
     font-size: 1rem;
     font-weight: 500;
     border-radius: 4px;
-    min-width: 177px;
     transform: scale(0, 0);
     opacity: 0;
     transform-origin: center bottom;
@@ -30,19 +41,19 @@
         color: rgba(0, 0, 0, 0.85);
     }
     // arrow
-    &-arrow {
-        background: #fff;
-        width: 15px;
-        height: 15px;
-        transform: rotate(45deg);
+    &:after {
         position: absolute;
-        display: block;
-        border-color: transparent;
-        border-style: solid;
+        content: '';
+        top: 100%;
         left: 50%;
-        bottom: -3px;
-        box-shadow: 3px 3px 7px 0 rgba(0, 0, 0, 0.05);
-        // transform: translateX(-50%) rotate(45deg);
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: $COLOR_WHITE transparent transparent transparent;
+
+        &.topRight {
+            left: 90%;
+        }
     }
 }
 
