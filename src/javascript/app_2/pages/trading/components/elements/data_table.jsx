@@ -101,6 +101,11 @@ Pagination.defaultProps = {
 };
 
 
+/* TODO:
+      1. to implement sorting by column (ASC/DESC)
+      2. to implement filtering per column
+      3. to make pagination more customisable
+*/
 class DataTable extends React.Component {
     constructor(props) {
         super(props);
