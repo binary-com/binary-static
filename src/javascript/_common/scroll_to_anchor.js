@@ -1,6 +1,31 @@
 const isVisible = require('./common_functions').isVisible;
 const Url       = require('./url');
 
+/*
+    adds anchor links to elements with data-anchor attribute
+    created anchors work similarly to native anchors, but rely on URL params instead
+
+    HOW TO USE:
+        <h1 data-anchor='some string'>Some title</h1>
+
+        --> an anchor link is inserted into the element
+        string passed to data-anchor doesn't have to be unique
+
+    IMPLEMENTATION:
+        string passed to data-anchor is converted into UNIQUE ID,
+        attr value is replaced with this ID
+        URL param value is this ID
+        e.g.
+
+        <h1 data-anchor='Hello world'>Hello</h1>
+        <h1 data-anchor='Hello world'>Hello</h1>
+
+        will become
+
+        <h1 data-anchor='hello-world'>Hello</h1>    // ?anchor=hello-world
+        <h1 data-anchor='hello-world-2'>Hello</h1>  // ?anchor=hello-world-2
+*/
+
 const ScrollToAnchor = (() => {
     let id_duplicate_count = {};
 
