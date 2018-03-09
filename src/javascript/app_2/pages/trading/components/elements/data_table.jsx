@@ -8,16 +8,16 @@ import { formatMoney } from '../../../../../app/common/currency';
 import { localize } from '../../../../../_common/localize';
 import { toTitleCase } from '../../../../../_common/string_util';
 
-const Pagination = ({ page, total, pageSize, onChange }) => {
-    const handleChange = (newPage) => {
-        if (newPage === page) return;
-        onChange(newPage, calcNumOfPages());
+const Pagination = ({ page, total, page_size, onChange }) => {
+    const handleChange = (new_page) => {
+        if (new_page === page) return;
+        onChange(new_page, calcPagesCount());
     };
 
-    const calcNumOfPages = () => Math.ceil(total / pageSize);
+    const calcPagesCount = () => Math.ceil(total / page_size);
 
     const handleNext = () => {
-        if (page < calcNumOfPages()) {
+        if (page < calcPagesCount()) {
             handleChange(page + 1);
         }
     };
@@ -30,30 +30,30 @@ const Pagination = ({ page, total, pageSize, onChange }) => {
 
     const renderEllipsis = (id) => <li className='pagination-item pagination-ellipsis' key={`ellipsis-${id}`} />;
 
-    const renderItem = (pageNum) => (
+    const renderItem = (page_num) => (
         <li
-            className={`pagination-item ${pageNum === page ? 'pagination-item-active' : ''}`}
-            key={pageNum}
-            onClick={() => { handleChange(pageNum); }}
+            className={`pagination-item ${page_num === page ? 'pagination-item-active' : ''}`}
+            key={page_num}
+            onClick={() => { handleChange(page_num); }}
         >
-            <a>{pageNum}</a>
+            <a>{page_num}</a>
         </li>
     );
 
     const renderItemRange = (first, last) => {
         const items = [];
 
-        for (let pageNum = first; pageNum <= last; pageNum++) {
-            items.push(renderItem(pageNum));
+        for (let page_num = first; page_num <= last; page_num++) {
+            items.push(renderItem(page_num));
         }
         return items;
     };
 
     const renderItems = () => {
-        const numOfPages = calcNumOfPages();
+        const pages_count = calcPagesCount();
 
-        if (numOfPages <= 6) {
-            return renderItemRange(1, numOfPages);
+        if (pages_count <= 6) {
+            return renderItemRange(1, pages_count);
         }
         else if (page <= 4) {
             return [
@@ -61,11 +61,11 @@ const Pagination = ({ page, total, pageSize, onChange }) => {
                 renderEllipsis(2),
             ];
         }
-        else if (numOfPages - page < 3) {
+        else if (pages_count - page < 3) {
             return [
                 renderItem(1),
                 renderEllipsis(1),
-                ...renderItemRange(numOfPages - 3, numOfPages),
+                ...renderItemRange(pages_count - 3, pages_count),
             ];
         }
         // else
@@ -87,7 +87,7 @@ const Pagination = ({ page, total, pageSize, onChange }) => {
             </li>
             {renderItems()}
             <li
-                className={`pagination-next ${page === calcNumOfPages() ? 'pagination-disabled' : ''}`}
+                className={`pagination-next ${page === calcPagesCount() ? 'pagination-disabled' : ''}`}
                 onClick={handleNext}
             >
                 <a>&gt;</a>
@@ -104,7 +104,7 @@ Pagination.defaultProps = {
 class DataTable extends React.Component {
     constructor(props) {
         super(props);
-        const { dataSource, pagination, pageSize } = props;
+        const { data_source, pagination, page_size } = props;
 
         this.handlePageChange  = this.handlePageChange.bind(this);
         this.renderPagination  = this.renderPagination.bind(this);
@@ -112,33 +112,33 @@ class DataTable extends React.Component {
         this.updateDisplayData = this.updateDisplayData.bind(this);
 
         this.state = {
-            displayData: pagination ? dataSource.slice(0, pageSize) : dataSource,
-            page       : 1,
+            display_data: pagination ? data_source.slice(0, page_size) : data_source,
+            page        : 1,
         };
     }
 
     componentWillReceiveProps(nextProps) {
-        this.updateDisplayData(nextProps.dataSource, this.state.page, nextProps.pageSize);
+        this.updateDisplayData(nextProps.data_source, this.state.page, nextProps.page_size);
     }
 
-    updateDisplayData(dataSource, page, pageSize) {
-        const startId = (page - 1) * pageSize;
-        const endId = startId + pageSize;
+    updateDisplayData(data_source, page, page_size) {
+        const start_id = (page - 1) * page_size;
+        const end_id   = start_id + page_size;
 
         this.setState({
             page,
-            displayData: dataSource.slice(startId, endId),
+            display_data: data_source.slice(start_id, end_id),
         });
     }
 
-    handlePageChange(page, numOfPages) {
-        this.updateDisplayData(this.props.dataSource, page, this.props.pageSize);
+    handlePageChange(page, pages_count) {
+        this.updateDisplayData(this.props.data_source, page, this.props.page_size);
 
-        if (!numOfPages) return;
+        if (!pages_count) return;
 
-        const { pagesCloseToEnd, onCloseToEnd } = this.props;
-        const pagesLeft = numOfPages - page;
-        if (pagesLeft <= pagesCloseToEnd) {
+        const { pages_close_to_end, onCloseToEnd } = this.props;
+        const pagesLeft = pages_count - page;
+        if (pagesLeft <= pages_close_to_end) {
             onCloseToEnd();
         }
     }
@@ -148,8 +148,8 @@ class DataTable extends React.Component {
             <div className='table-pagination'>
                 <Pagination
                     page={this.state.page}
-                    total={this.props.dataSource.length}
-                    pageSize={this.props.pageSize}
+                    total={this.props.data_source.length}
+                    page_size={this.props.page_size}
                     onChange={this.handlePageChange}
                 />
             </div>
@@ -157,23 +157,23 @@ class DataTable extends React.Component {
     }
 
     renderRow(transaction, id) {
-        const defaultRenderCell = (data, dataIndex) => <td className={dataIndex} key={dataIndex}>{data}</td>;
+        const defaultRenderCell = (data, data_index) => <td className={data_index} key={data_index}>{data}</td>;
 
         return (
             <tr className='table-row' key={id}>
-                {this.props.columns.map(({ dataIndex, renderCell }) => (
-                    (renderCell || defaultRenderCell)(transaction[dataIndex], dataIndex, transaction)
+                {this.props.columns.map(({ data_index, renderCell }) => (
+                    (renderCell || defaultRenderCell)(transaction[data_index], data_index, transaction)
                 ))}
             </tr>
         );
     }
 
     renderBodyRows() {
-        return this.state.displayData.map((transaction, id) => this.renderRow(transaction, id));
+        return this.state.display_data.map((transaction, id) => this.renderRow(transaction, id));
     }
 
     renderHeaders() {
-        return this.props.columns.map(col => <th key={col.dataIndex}>{col.title}</th>);
+        return this.props.columns.map(col => <th key={col.data_index}>{col.title}</th>);
     }
 
     render() {
@@ -200,13 +200,13 @@ class DataTable extends React.Component {
 }
 
 DataTable.defaultProps = {
-    pagination     : true,
-    pagesCloseToEnd: 5,
+    pagination        : true,
+    pages_close_to_end: 5,
 };
 
 
 // TODO: to move the statement code to its own component
-const getStatementData = (statement, currency, jp_client) => {
+const getStatementData = (statement, currency, is_jp_client) => {
     const date_obj   = new Date(statement.transaction_time * 1000);
     const moment_obj = moment.utc(date_obj);
     const date_str   = moment_obj.format('YYYY-MM-DD');
@@ -217,11 +217,11 @@ const getStatementData = (statement, currency, jp_client) => {
 
     return {
         action : localize(toTitleCase(statement.action_type)),
-        date   : jp_client ? toJapanTimeIfNeeded(+statement.transaction_time) : `${date_str}\n${time_str}`,
+        date   : is_jp_client ? toJapanTimeIfNeeded(+statement.transaction_time) : `${date_str}\n${time_str}`,
         ref    : statement.transaction_id,
-        payout : isNaN(payout)  ? '-' : formatMoney(currency, payout,  !jp_client),
-        amount : isNaN(amount)  ? '-' : formatMoney(currency, amount,  !jp_client),
-        balance: isNaN(balance) ? '-' : formatMoney(currency, balance, !jp_client),
+        payout : isNaN(payout)  ? '-' : formatMoney(currency, payout,  !is_jp_client),
+        amount : isNaN(amount)  ? '-' : formatMoney(currency, amount,  !is_jp_client),
+        balance: isNaN(balance) ? '-' : formatMoney(currency, balance, !is_jp_client),
         desc   : localize(statement.longcode.replace(/\n/g, '<br />')),
         id     : statement.contract_id,
         app_id : statement.app_id,
@@ -236,43 +236,43 @@ export class StatementDataTable extends React.PureComponent {
 
         const columns = [
             {
-                title    : localize('Date'),
-                dataIndex: 'date',
+                title     : localize('Date'),
+                data_index: 'date',
             },
             {
-                title    : localize('Ref.'),
-                dataIndex: 'ref',
+                title     : localize('Ref.'),
+                data_index: 'ref',
             },
             {
-                title    : localize('Potential Payout'),
-                dataIndex: 'payout',
+                title     : localize('Potential Payout'),
+                data_index: 'payout',
             },
             {
-                title    : localize('Action'),
-                dataIndex: 'action',
+                title     : localize('Action'),
+                data_index: 'action',
             },
             {
-                title    : localize('Description'),
-                dataIndex: 'desc',
+                title     : localize('Description'),
+                data_index: 'desc',
             },
             {
                 title     : localize('Credit/Debit'),
-                dataIndex : 'amount',
-                renderCell: (data, dataIndex) => {
+                data_index: 'amount',
+                renderCell: (data, data_index) => {
                     const parseStrNum = (str) => parseFloat(str.replace(',', '.'));
-                    return <td className={`${dataIndex} ${(parseStrNum(data) >= 0) ? 'profit' : 'loss'}`} key={dataIndex}>{data}</td>;
+                    return <td className={`${data_index} ${(parseStrNum(data) >= 0) ? 'profit' : 'loss'}`} key={data_index}>{data}</td>;
                 },
             },
             {
-                title    : localize('Balance'),
-                dataIndex: 'balance',
+                title     : localize('Balance'),
+                data_index: 'balance',
             },
         ];
 
         this.state = {
             columns,
-            dataSource           : [],
-            loadedAllTransactions: false,
+            data_source  : [],
+            is_loaded_all: false,
         };
     }
 
@@ -284,28 +284,28 @@ export class StatementDataTable extends React.PureComponent {
     }
 
     getNextBatch() {
-        if (this.state.loadedAllTransactions) return;
+        if (this.state.is_loaded_all) return;
 
         const BATCH_SIZE = 200;
         const req = {
             statement  : 1,
             description: 1,
             limit      : BATCH_SIZE,
-            offset     : this.state.dataSource.length,
+            offset     : this.state.data_source.length,
         };
 
-        const currency  = Client.get('currency');
-        const jp_client = jpClient();
+        const currency     = Client.get('currency');
+        const is_jp_client = jpClient();
 
         BinarySocket.send(req).then((response) => {
             console.log('next batch', response);
 
-            const formattedTransactions = response.statement.transactions
-                .map(transaction => getStatementData(transaction, currency, jp_client));
+            const formatted_transactions = response.statement.transactions
+                .map(transaction => getStatementData(transaction, currency, is_jp_client));
 
             this.setState({
-                dataSource           : [...this.state.dataSource, ...formattedTransactions],
-                loadedAllTransactions: formattedTransactions.length < BATCH_SIZE,
+                data_source  : [...this.state.data_source, ...formatted_transactions],
+                is_loaded_all: formatted_transactions.length < BATCH_SIZE,
             });
         });
     }
@@ -314,7 +314,7 @@ export class StatementDataTable extends React.PureComponent {
         return (
             <DataTable
                 {...this.props}
-                dataSource={this.state.dataSource}
+                data_source={this.state.data_source}
                 columns={this.state.columns}
                 onCloseToEnd={this.getNextBatch}
             />
