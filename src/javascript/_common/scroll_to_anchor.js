@@ -55,7 +55,9 @@ const ScrollToAnchor = (() => {
         const candidates = document.querySelectorAll(`[data-anchor="${id}"]`);
         const el = Array.from(candidates).find(isVisible);
         if (!el) return;
-        $.scrollTo(el, 500);
+        window.setTimeout(() => {
+            $.scrollTo(el, 500);
+        }, 200);
     };
 
     const cleanup = () => {
