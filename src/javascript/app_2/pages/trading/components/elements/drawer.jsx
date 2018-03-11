@@ -149,12 +149,33 @@ class DrawerItems extends React.PureComponent {
         this.state = {
             is_collapsed: false,
         };
+        this.collapseItems = this.collapseItems.bind(this);
     }
-    collapseItems = () => {
+
+    collapseItems() {
         this.setState({
             is_collapsed: !this.state.is_collapsed,
         });
+        this.refreshWindowSize();
     }
+
+    refreshWindowSize() {
+        if (this.props.has_iscroll) {
+            // workaround for iScroll when drawer items expand (iScroll refreshes on window resize)
+            if (typeof(Event) === 'function') {
+                // modern browsers
+                window.dispatchEvent(new Event('resize'));
+            }
+            else {
+                // for IE and other old browsers
+                // causes deprecation warning on modern browsers
+                const evt = window.document.createEvent('UIEvents');
+                evt.initUIEvent('resize', true, false, window, 0);
+                window.dispatchEvent(evt);
+            }
+        }
+    }
+
     render() {
         const list_is_collapsed = {
             visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
@@ -168,13 +189,15 @@ class DrawerItems extends React.PureComponent {
                     className={`drawer-items ${this.state.is_collapsed ? 'show' : ''}`}
                     style={list_is_collapsed}
                 >
-                    {this.props.items.map((item, idx) => (
-                            <div className='drawer-item' key={idx}>
-                                <a href={item.href || 'javascript:;' }>
-                                    <span className={item.icon || undefined}>{item.text}</span>
-                                </a>
-                            </div>
-                    ))}
+                    <div className='items-group'>
+                        {this.props.items.map((item, idx) => (
+                                <div className='drawer-item' key={idx}>
+                                    <a href={item.href || 'javascript:;' }>
+                                        <span className={item.icon || undefined}>{item.text}</span>
+                                    </a>
+                                </div>
+                        ))}
+                    </div>
                 </div>
             </React.Fragment>
         );

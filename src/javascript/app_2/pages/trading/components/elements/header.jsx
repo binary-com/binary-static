@@ -1,4 +1,6 @@
 import React from 'react';
+import iScroll from 'iscroll';
+import ReactIScroll from 'react-iscroll';
 import { ToggleDrawer, DrawerItems, DrawerItem } from './drawer.jsx';
 import AccountSwitcher from './account_switcher.jsx';
 import LanguageSwitcher from './language_switcher.jsx';
@@ -7,6 +9,7 @@ import Url from '../../../../../_common/url';
 import { localize } from '../../../../../_common/localize';
 
 class TradingHeader extends React.Component {
+
     render() {
         const menu_link_is_active = (name) => {
             const pathname = window.location.pathname;
@@ -25,41 +28,52 @@ class TradingHeader extends React.Component {
                                     active_account={[
                                         { id: 'VRTC1234567', account_type: 'Virtual' },
                                     ]}
+                                    has_iscroll
                                 />
                                 <div className='drawer-items-container'>
-                                    <DrawerItems
-                                        text='Account Settings'
-                                        items={[
-                                            { text: 'Personal Detail' },
-                                            { text: 'Account Authentication' },
-                                            { text: 'Financial Assessment' },
-                                            { text: 'Professional Trader' },
-                                        ]}
-                                    />
-                                    <DrawerItems
-                                        text='Security Settings'
-                                        items={[
-                                            { text: 'Self Exclusion' },
-                                            { text: 'Trading Limits' },
-                                            { text: 'Authorised Applications' },
-                                            { text: 'API Token' },
-                                        ]}
-                                    />
-                                    <DrawerItems
-                                        text='Trading History'
-                                        items={[
-                                            { text: 'Portfolio' },
-                                            { text: 'Profit Table' },
-                                            { text: 'Statement' },
-                                        ]}
-                                    />
-                                    <DrawerItem text='Cashier'/>
-                                    <hr />
-                                    <DrawerItem text='Manage Password'/>
-                                    <DrawerItem text='Useful Resources'/>
-                                    <DrawerItem text='Login History'/>
-                                    <hr />
-                                    <LanguageSwitcher />
+                                    <ReactIScroll
+                                        iScroll={iScroll}
+                                        options={{ mouseWheel: true, scrollbars: true, fadeScrollbars: true }}
+                                    >
+                                        <div className='list-items-container'>
+                                            <DrawerItems
+                                                text='Account Settings'
+                                                items={[
+                                                    { text: 'Personal Detail' },
+                                                    { text: 'Account Authentication' },
+                                                    { text: 'Financial Assessment' },
+                                                    { text: 'Professional Trader' },
+                                                ]}
+                                                has_iscroll
+                                            />
+                                            <DrawerItems
+                                                text='Security Settings'
+                                                items={[
+                                                    { text: 'Self Exclusion' },
+                                                    { text: 'Trading Limits' },
+                                                    { text: 'Authorised Applications' },
+                                                    { text: 'API Token' },
+                                                ]}
+                                                has_iscroll
+                                            />
+                                            <DrawerItems
+                                                text='Trading History'
+                                                items={[
+                                                    { text: 'Portfolio' },
+                                                    { text: 'Profit Table' },
+                                                    { text: 'Statement' },
+                                                ]}
+                                                has_iscroll
+                                            />
+                                            <DrawerItem text='Cashier'/>
+                                            <hr />
+                                            <DrawerItem text='Manage Password'/>
+                                            <DrawerItem text='Useful Resources'/>
+                                            <DrawerItem text='Login History'/>
+                                            <hr />
+                                            <LanguageSwitcher />
+                                        </div>
+                                    </ReactIScroll>
                                 </div>
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>
@@ -107,13 +121,14 @@ const AccountBalance = ({
 }) => {
     const balance = client_accounts[Object.keys(client_accounts)[0]].balance;
     const is_upgrade = client_accounts[Object.keys(client_accounts)[0]].is_virtual;
-    const currency = client_accounts[Object.keys(client_accounts)[0]].currency;
+    let currency = client_accounts[Object.keys(client_accounts)[0]].currency;
+    currency = currency ? currency.toLowerCase() : null;
     const button_text = is_upgrade === 1 ? 'Upgrade' : 'Deposit';
     return (
         <div className='acc-balance-container'>
             <div className='acc-balance'>
                 <p className='acc-balance-accountid'>{active_loginid || null}</p>
-                <p className='acc-balance-amount'><i><span className={`symbols ${currency.toLowerCase()}`} /></i>{balance || null}</p>
+                <p className='acc-balance-amount'><i><span className={`symbols ${currency}`} /></i>{balance || null}</p>
             </div>
             <Button
                 id='acc-balance-btn'
@@ -127,8 +142,8 @@ const AccountBalance = ({
 };
 
 TradingHeader.defaultProps = {
-    active_loginid : 'VRTC1234567',
-    client_accounts: {'VRTC1234567': {'currency': 'AUD','is_disabled': 0,'is_virtual': 1,'balance': '10000.00'}},
+    active_loginid : localStorage.getItem('active_loginid') || 'VRTC1234567',
+    client_accounts: JSON.parse(localStorage.getItem('client.accounts')) || {'VRTC1234567': {'currency': 'AUD','is_disabled': 0,'is_virtual': 1,'balance': '10000.00'}},
 };
 
 export default TradingHeader;

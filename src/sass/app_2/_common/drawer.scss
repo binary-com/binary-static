@@ -48,10 +48,9 @@ hr {
             background: $COLOR_WHITE;
 
             .drawer-items-container {
-                overflow-y: auto;
-                overflow-x: hidden;
+                overflow: hidden;
                 height: 100%;
-                max-height: calc(100% - 158px);
+                max-height: calc(100% - 156px);
                 z-index: 1;
                 position: relative;
             }
