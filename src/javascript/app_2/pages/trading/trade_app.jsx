@@ -14,19 +14,23 @@ import PortfolioDrawer from './components/elements/portfolio_drawer.jsx';
 
 class TradeApp extends React.Component {
     isVisible(component_name) {
+        if (['duration', 'amount'].includes(component_name)) return true;
         return this.props.form_components.indexOf(component_name) >= 0;
     }
 
-    renderParameters() {
-        return (
-            <React.Fragment>
-                {this.isVisible('start_date') && <StartDate />}
-                <Duration />
-                {this.isVisible('barrier') && <Barrier />}
-                {this.isVisible('last_digit') && <LastDigit />}
-                <Amount />
-            </React.Fragment>
-        );
+    renderParamPickers() {
+        // TODO: there must be a better way
+        const code_to_component = {
+            start_date: <StartDate key='start_date' />,
+            duration: <Duration key='duration' />,
+            barrier: <Barrier key='barrier' />,
+            last_digit: <LastDigit key='last_digit' />,
+            amount: <Amount key='amount' />,
+        };
+
+        return Object.keys(code_to_component)
+            .filter(this.isVisible.bind(this))
+            .map(code => code_to_component[code]);
     }
 
     render() {
@@ -39,13 +43,13 @@ class TradeApp extends React.Component {
                 </div>
 
                 <div className='sidebar-container desktop-only'>
-                    {this.renderParameters()}
+                    {this.renderParamPickers()}
                     <Purchase />
                 </div>
 
                 <div className='mobile-only'>
                     <MobileWidget>
-                        {this.renderParameters()}
+                        {this.renderParamPickers()}
                     </MobileWidget>
                 </div>
 
