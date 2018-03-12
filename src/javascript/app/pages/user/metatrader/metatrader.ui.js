@@ -241,7 +241,8 @@ const MetaTraderUI = (() => {
             $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
             $form.find('.mt5-balance').html(`${formatMoney(MetaTraderConfig.getCurrency(acc_type), accounts_info[acc_type].info.balance)}`);
-            $form.find('label[for^="txt_amount_"]').append(` ${MetaTraderConfig.getCurrency(acc_type)}`);
+            $form.find('label[for="txt_amount_deposit"]').append(` ${Client.get('currency')}`);
+            $form.find('label[for="txt_amount_withdrawal"]').append(` ${MetaTraderConfig.getCurrency(acc_type)}`);
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {
                     if (error_msg) {
@@ -251,17 +252,9 @@ const MetaTraderUI = (() => {
                 });
             });
 
-            if (!accounts_info[acc_type].is_demo) {
-                let msg = '';
-                if (Client.get('is_virtual')) {
-                    msg = MetaTraderConfig.needsRealMessage();
-                } else if (Client.get('currency') !== MetaTraderConfig.getCurrency(acc_type)) {
-                    msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.getCurrency(acc_type)]);
-                }
-                if (msg) {
-                    displayMainMessage(msg, false);
-                    $action.find('#frm_cashier').setVisibility(0);
-                }
+            if (!accounts_info[acc_type].is_demo && Client.get('is_virtual')) {
+                displayMainMessage(MetaTraderConfig.needsRealMessage(), false);
+                $action.find('#frm_cashier').setVisibility(0);
             }
             return;
         }
