@@ -1,239 +1,248 @@
 /* stylelint-disable color-no-hex */
 /* stylelint-disable number-max-precision */
-header {
-    background-color: $COLOR_WHITE !important;
-    position: relative;
-    border: 0;
+#trading_header {
+    position: fixed;
+    z-index: 999;
     width: 100%;
-    z-index: 1;
+    max-height: 50px;
+    top: 0;
 
-    .menu-items {
-        display: flex;
+    header {
+        background-color: $COLOR_WHITE !important;
         position: relative;
-        box-sizing: border-box;
+        border: 0;
         width: 100%;
+        z-index: 1;
 
-        .navbar-icons {
-            cursor: pointer;
-            padding: 6px 10px;
-            align-self: center;
+        .menu-items {
+            display: flex;
+            position: relative;
+            box-sizing: border-box;
+            width: 100%;
 
-            &.binary-logo {
-                border-left: 1px solid #f2f2f2;
-                padding: 6px 12px;
-            }
-            img {
-                width: 1.5rem;
-                height: auto;
-
-                &.logo-img {
-                    width: 2.5rem;
-                }
-            }
-            &.notify-toggle {
-                order: 2;
-                padding: 6px;
-
-                img {
-                    width: 32px;
-                    height: auto;
-                }
-            }
-        }
-        .menu-left {
-            justify-content: flex-start;
-            order: -1;
-            display: inline-flex;
-            flex: 1;
-
-            .menu-toggle {
+            .navbar-icons {
+                cursor: pointer;
+                padding: 6px 10px;
                 align-self: center;
 
+                &.binary-logo {
+                    border-left: 1px solid #f2f2f2;
+                    padding: 6px 12px;
+                }
                 img {
-                    width: 24px;
+                    width: 1.5rem;
                     height: auto;
+
+                    &.logo-img {
+                        width: 2.5rem;
+                    }
+                }
+                &.notify-toggle {
+                    order: 2;
+                    padding: 6px;
+
+                    img {
+                        width: 32px;
+                        height: auto;
+                    }
                 }
             }
-            .menu-links {
-                align-self: center;
-
-                a {
-                    padding: 0 12px;
-                    text-decoration: none;
-                    position: relative;
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: space-evenly;
-
-                    span {
-                        font-size: 1rem;
-                        font-weight: 300;
-                        text-transform: capitalize;
-                        color: $COLOR_DARK_BLUE;
-                        padding: 16px;
-
-                        &.trade:before {
-                            content: url('../images/trading_app/header/trade/ic-trade-normal-light.svg');
-                            margin-right: 8px;
-                            vertical-align: sub;
-                        }
-                        &.portfolio:before {
-                            content: url('../images/trading_app/header/portfolio/ic-portfolio-normal-light.svg');
-                            margin-right: 8px;
-                            vertical-align: sub;
-                        }
-                        &.statement:before {
-                            content: url('../images/trading_app/header/statement/ic-statement-normal-light.svg');
-                            margin-right: 8px;
-                            vertical-align: sub;
-                        }
-                        &.cashier:before {
-                            content: url('../images/trading_app/header/cashier/ic-cashier-normal-light.svg');
-                            margin-right: 8px;
-                            vertical-align: sub;
-                        }
-                    }
-                    &:hover {
-                        & > span {
-                            font-weight: 400;
-                        }
-                        & > span.trade:before {
-                            content: url('../images/trading_app/header/trade/ic-trade-active-light.svg');
-                        }
-                        & > span.portfolio:before {
-                            content: url('../images/trading_app/header/portfolio/ic-portfolio-active-light.svg');
-                        }
-                        & > span.statement:before {
-                            content: url('../images/trading_app/header/statement/ic-statement-active-light.svg');
-                        }
-                        & > span.cashier:before {
-                            content: url('../images/trading_app/header/cashier/ic-cashier-active-light.svg');
-                        }
-                    }
-                    &.active {
-                        & > span {
-                            font-weight: 400;
-                        }
-                        & > span.trade:before {
-                            content: url('../images/trading_app/header/trade/ic-trade-active-light.svg');
-                        }
-                        & > span.portfolio:before {
-                            content: url('../images/trading_app/header/portfolio/ic-portfolio-active-light.svg');
-                        }
-                        & > span.statement:before {
-                            content: url('../images/trading_app/header/statement/ic-statement-active-light.svg');
-                        }
-                        & > span.cashier:before {
-                            content: url('../images/trading_app/header/cashier/ic-cashier-active-light.svg');
-                        }
-                        &:after {
-                            display: block;
-                            position: absolute;
-                            content: '';
-                            height: 3px;
-                            width: 100%;
-                            bottom: 0;
-                            background-color: $primaryBrandColor;
-                        }
-                    }
-                }
-                @media (max-width: 980px) {
-                    display: none;
-                }
-            }
-        }
-        .menu-right {
-            justify-content: flex-end;
-            order: 1;
-            display: inline-flex;
-            border-right: 1px solid #f2f2f2;
-
-            .acc-balance-container {
+            .menu-left {
+                justify-content: flex-start;
+                order: -1;
                 display: inline-flex;
-                align-items: center;
+                flex: 1;
 
-                .acc-balance {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
+                .menu-toggle {
+                    align-self: center;
 
-                    p.acc-balance-accountid {
-                        line-height: 0.5;
-                        color: #e98024;
-                        font-size: 0.75rem;
-                        margin: 0.5em;
-                        font-weight: 600;
-                        text-align: center;
-                    }
-                    p.acc-balance-amount {
-                        line-height: 0.5;
-                        color: #e98024;
-                        font-size: 1.25rem;
-                        margin: 0.5em;
-                        font-weight: 600;
-                        text-align: center;
-
-                        i {
-                            position: relative;
-
-                            span.symbols {
-                                position: absolute;
-                                right: 15px;
-
-                                &.aud {
-                                    right: 30px;
-                                    @media (max-width: 768px) {
-                                        right: 20px;
-                                    }
-                                }
-                                &.bch {
-                                    right: 20px;
-                                    @media (max-width: 768px) {
-                                        right: 15px;
-                                    }
-                                }
-                                &:before {
-                                    color: #e98024;
-                                    font-size: 1.25rem;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: space-around;
-
-                                    @media (max-width: 768px) {
-                                        font-size: 0.875rem;
-                                    }
-                                }
-                                @media (max-width: 768px) {
-                                    right: 10px;
-                                }
-                            }
-                        }
-                        @media (max-width: 768px) {
-                            font-size: 1rem;
-                        }
+                    img {
+                        width: 24px;
+                        height: auto;
                     }
                 }
-                button.btn {
-                    margin: 0 16px 0 4px;
-                    @media (max-width: 768px) {
-                        margin: 0 8px 0 4px;
+                .menu-links {
+                    align-self: center;
+
+                    a {
+                        padding: 0 12px;
+                        text-decoration: none;
+                        position: relative;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: space-evenly;
 
                         span {
-                            display: none;
+                            font-size: 1rem;
+                            font-weight: 300;
+                            text-transform: capitalize;
+                            color: $COLOR_DARK_BLUE;
+                            padding: 16px;
+
+                            &.trade:before {
+                                content: url('../images/trading_app/header/trade/ic-trade-normal-light.svg');
+                                margin-right: 8px;
+                                vertical-align: sub;
+                            }
+                            &.portfolio:before {
+                                content: url('../images/trading_app/header/portfolio/ic-portfolio-normal-light.svg');
+                                margin-right: 8px;
+                                vertical-align: sub;
+                            }
+                            &.statement:before {
+                                content: url('../images/trading_app/header/statement/ic-statement-normal-light.svg');
+                                margin-right: 8px;
+                                vertical-align: sub;
+                            }
+                            &.cashier:before {
+                                content: url('../images/trading_app/header/cashier/ic-cashier-normal-light.svg');
+                                margin-right: 8px;
+                                vertical-align: sub;
+                            }
                         }
-                        // &:after {
-                        //     content: 'D';
-                        // }
+                        &:hover {
+                            & > span {
+                                font-weight: 400;
+                            }
+                            & > span.trade:before {
+                                content: url('../images/trading_app/header/trade/ic-trade-active-light.svg');
+                            }
+                            & > span.portfolio:before {
+                                content: url('../images/trading_app/header/portfolio/ic-portfolio-active-light.svg');
+                            }
+                            & > span.statement:before {
+                                content: url('../images/trading_app/header/statement/ic-statement-active-light.svg');
+                            }
+                            & > span.cashier:before {
+                                content: url('../images/trading_app/header/cashier/ic-cashier-active-light.svg');
+                            }
+                        }
+                        &.active {
+                            & > span {
+                                font-weight: 400;
+                            }
+                            & > span.trade:before {
+                                content: url('../images/trading_app/header/trade/ic-trade-active-light.svg');
+                            }
+                            & > span.portfolio:before {
+                                content: url('../images/trading_app/header/portfolio/ic-portfolio-active-light.svg');
+                            }
+                            & > span.statement:before {
+                                content: url('../images/trading_app/header/statement/ic-statement-active-light.svg');
+                            }
+                            & > span.cashier:before {
+                                content: url('../images/trading_app/header/cashier/ic-cashier-active-light.svg');
+                            }
+                            &:after {
+                                display: block;
+                                position: absolute;
+                                content: '';
+                                height: 3px;
+                                width: 100%;
+                                bottom: 0;
+                                background-color: $primaryBrandColor;
+                            }
+                        }
+                    }
+                    @media (max-width: 980px) {
+                        display: none;
                     }
                 }
             }
-        }
-        .notifications-toggle {
-            justify-content: flex-end;
-            align-self: center;
+            .menu-right {
+                justify-content: flex-end;
+                order: 1;
+                display: inline-flex;
+                border-right: 1px solid #f2f2f2;
+
+                .acc-balance-container {
+                    display: inline-flex;
+                    align-items: center;
+
+                    .acc-balance {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        p.acc-balance-accountid {
+                            line-height: 0.5;
+                            color: #e98024;
+                            font-size: 0.75rem;
+                            margin: 0.5em;
+                            font-weight: 600;
+                            text-align: center;
+                        }
+                        p.acc-balance-amount {
+                            line-height: 0.5;
+                            color: #e98024;
+                            font-size: 1.25rem;
+                            margin: 0.5em;
+                            font-weight: 600;
+                            text-align: center;
+
+                            i {
+                                position: relative;
+
+                                span.symbols {
+                                    position: absolute;
+                                    right: 15px;
+
+                                    &.aud {
+                                        right: 30px;
+                                        @media (max-width: 768px) {
+                                            right: 20px;
+                                        }
+                                    }
+                                    &.bch {
+                                        right: 20px;
+                                        @media (max-width: 768px) {
+                                            right: 15px;
+                                        }
+                                    }
+                                    &:before {
+                                        color: #e98024;
+                                        font-size: 1.25rem;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-around;
+
+                                        @media (max-width: 768px) {
+                                            font-size: 0.875rem;
+                                        }
+                                    }
+                                    @media (max-width: 768px) {
+                                        right: 10px;
+                                    }
+                                }
+                            }
+                            @media (max-width: 768px) {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                    button.btn {
+                        margin: 0 16px 0 4px;
+                        @media (max-width: 768px) {
+                            margin: 0 8px 0 4px;
+
+                            span {
+                                display: none;
+                            }
+                            // &:after {
+                            //     content: 'D';
+                            // }
+                        }
+                    }
+                }
+            }
+            .notifications-toggle {
+                justify-content: flex-end;
+                align-self: center;
+            }
         }
     }
+
 }
 /* stylelint-enable number-max-precision */
 /* stylelint-enable color-no-hex */

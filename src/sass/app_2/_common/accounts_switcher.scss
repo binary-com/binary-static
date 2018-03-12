@@ -13,7 +13,7 @@
             padding: 10px 16px;
 
             &.collapsed:after {
-                transform: none;
+                transform: rotate(180deg);
             }
             p.acc-switcher-accountid {
                 font-size: 0.75rem;
@@ -41,7 +41,7 @@
                 top: 35%;
                 right: 16px;
                 transition: transform 0.25s;
-                transform: rotate(180deg);
+                transform: none;
             }
         }
     }
