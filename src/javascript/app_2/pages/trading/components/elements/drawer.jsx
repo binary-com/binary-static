@@ -1,6 +1,5 @@
 import React from 'react';
-import iScroll from 'iscroll';
-import ReactIScroll from 'react-iscroll';
+import classNames from 'classnames';
 import LanguageSwitcher from './language_switcher.jsx';
 import Url from '../../../../../_common/url';
 import { localize } from '../../../../../_common/localize';
@@ -26,9 +25,13 @@ class ToggleDrawer extends React.PureComponent {
     }
 
     render() {
+        const toggleClass = classNames('navbar-icons', this.props.icon_class, {
+            'menu-toggle': !this.props.icon_class,
+        });
+
         return (
             <React.Fragment>
-                <div className={`navbar-icons ${this.props.icon_class||'menu-toggle'}`} onClick={this.showDrawer}>
+                <div className={toggleClass} onClick={this.showDrawer}>
                     {this.props.icon_link ?
                         <img src={this.props.icon_link} />
                     :
@@ -88,15 +91,21 @@ class Drawer extends React.PureComponent {
         const visibility = {
             visibility: `${!this.state.is_drawer_visible ? 'hidden' : 'visible'}`,
         };
+        const drawer_bg_class = classNames('drawer-bg', {
+            'show': this.state.is_drawer_visible,
+        });
+        const drawer_class = classNames('drawer', {
+            'visible': this.state.is_drawer_visible,
+        }, this.props.alignment);
         return (
             <aside className='drawer-container'>
                 <div
-                    className={`drawer-bg ${this.state.is_drawer_visible ? 'show' : ''}` }
+                    className={drawer_bg_class}
                     style={visibility}
                     onClick={this.handleClickOutside}>
                     <div
                         ref={this.setRef}
-                        className={`drawer ${this.state.is_drawer_visible ? 'visible' : ''} ${this.props.alignment}`}
+                        className={drawer_class}
                         style={visibility}
                     >
                         {this.props.children}
@@ -120,37 +129,25 @@ class DrawerItems extends React.PureComponent {
         this.setState({
             is_collapsed: !this.state.is_collapsed,
         });
-        this.refreshWindowSize();
-    }
-
-    refreshWindowSize() {
-        if (this.props.has_iscroll) {
-            // workaround for iScroll when drawer items expand (iScroll refreshes on window resize)
-            if (typeof(Event) === 'function') {
-                // modern browsers
-                window.dispatchEvent(new Event('resize'));
-            }
-            else {
-                // for IE and other old browsers
-                // causes deprecation warning on modern browsers
-                const evt = window.document.createEvent('UIEvents');
-                evt.initUIEvent('resize', true, false, window, 0);
-                window.dispatchEvent(evt);
-            }
-        }
     }
 
     render() {
         const list_is_collapsed = {
             visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
         };
+        const parent_item_class = classNames('parent-item', {
+            'show': this.state.is_collapsed,
+        });
+        const drawer_items_class = classNames('drawer-items', {
+            'show': this.state.is_collapsed,
+        });
         return (
             <React.Fragment>
                 <div className='drawer-item' onClick={this.collapseItems}>
-                    <span className={`parent-item ${this.state.is_collapsed ? 'show' : ''}`}>{this.props.text}</span>
+                    <span className={parent_item_class}>{this.props.text}</span>
                 </div>
                 <div
-                    className={`drawer-items ${this.state.is_collapsed ? 'show' : ''}`}
+                    className={drawer_items_class}
                     style={list_is_collapsed}
                 >
                     <div className='items-group'>
@@ -219,10 +216,6 @@ const DrawerFooter = ({
 );
 
 const MenuDrawer = () => (
-<ReactIScroll
-    iScroll={iScroll}
-    options={{ mouseWheel: true, scrollbars: true, fadeScrollbars: true }}
->
     <div className='list-items-container'>
         <DrawerItems
             text={localize('Account Settings')}
@@ -232,7 +225,6 @@ const MenuDrawer = () => (
                 { text: localize('Financial Assessment') },
                 { text: localize('Professional Trader') },
             ]}
-            has_iscroll={iScroll}
         />
         <DrawerItems
             text={localize('Security Settings')}
@@ -242,7 +234,6 @@ const MenuDrawer = () => (
                 { text: localize('Authorised Applications') },
                 { text: localize('API Token') },
             ]}
-            has_iscroll={iScroll}
         />
         <DrawerItems
             text={localize('Trading History')}
@@ -251,7 +242,6 @@ const MenuDrawer = () => (
                 { text: localize('Profit Table') },
                 { text: localize('Statement') },
             ]}
-            has_iscroll={iScroll}
         />
         <DrawerItem text={localize('Cashier')} />
         <hr />
@@ -261,7 +251,6 @@ const MenuDrawer = () => (
         <hr />
         <LanguageSwitcher />
     </div>
-</ReactIScroll>
 );
 
 module.exports = {

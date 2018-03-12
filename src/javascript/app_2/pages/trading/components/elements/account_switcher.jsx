@@ -1,6 +1,4 @@
 import React from 'react';
-import iScroll from 'iscroll';
-import ReactIScroll from 'react-iscroll';
 import { localize } from '../../../../../_common/localize';
 
 class AccountSwitcher extends React.PureComponent {
@@ -16,24 +14,6 @@ class AccountSwitcher extends React.PureComponent {
         this.setState({
             is_collapsed: !this.state.is_collapsed,
         });
-        this.refreshWindowSize();
-    }
-
-    refreshWindowSize() {
-        if (this.props.has_iscroll) {
-            // workaround for iScroll when drawer items expand (iScroll refreshes on window resize)
-            if (typeof(Event) === 'function') {
-                // modern browsers
-                window.dispatchEvent(new Event('resize'));
-            }
-            else {
-                // for IE and other old browsers
-                // causes deprecation warning on modern browsers
-                const evt = window.document.createEvent('UIEvents');
-                evt.initUIEvent('resize', true, false, window, 0);
-                window.dispatchEvent(evt);
-            }
-        }
     }
 
     switchAccount = (account) => {
@@ -71,10 +51,6 @@ class AccountSwitcher extends React.PureComponent {
                     className={`acc-switcher-list ${this.state.is_collapsed ? 'collapsed' : ''}`}
                     style={account_list_collapsed}
                 >
-                <ReactIScroll
-                    iScroll={iScroll}
-                    options={{ mouseWheel: true, scrollbars: true, fadeScrollbars: true }}
-                >
                     <div className='acc-switcher-items'>
                         {this.props.accounts.map((account, idx) => (
                             <React.Fragment key={idx}>
@@ -88,7 +64,6 @@ class AccountSwitcher extends React.PureComponent {
                             </React.Fragment>
                         ))}
                     </div>
-                </ReactIScroll>
                 </div>
             </div>
         );
