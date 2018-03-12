@@ -25,8 +25,8 @@ export const TabContentContainer = ({ id, children }) => (
     </div>
 );
 
-export const TabContent = ({ id, visible, children }) => (
-    <div id={`${id}-content`} className={`toggle-content ${visible ? '' : 'invisible'}`}>
+export const TabContent = ({ id, visible, children, className }) => (
+    <div id={`${id}-content`} className={`toggle-content ${visible ? '' : 'invisible'} ${className || ''}`}>
         {children}
     </div>
 );
@@ -39,7 +39,7 @@ export const TabsSubtabs = ({ className = '', id, items = [] }) => {
             <div className='tab-menu-wrap'>
                 <ul id={id} className='tm-ul'>
                     {items.map((item, idx) => (
-                        <li key={idx} id={item.id} className={`tm-li ${item.className || ''}`}>
+                        <li key={idx} id={item.id} className={`tm-li ${item.className || ''}`} data-show={item.dataShow}>
                             { item.subtabs &&
                                 <React.Fragment>
                                     <span className='menu-wrap-a'>

@@ -3,6 +3,7 @@ const BinaryPjax           = require('../../../../base/binary_pjax');
 const Client               = require('../../../../base/client');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
+const Dialog               = require('../../../../common/attach_dom/dialog');
 const FlexTableUI          = require('../../../../common/attach_dom/flextable');
 const jpClient             = require('../../../../common/country_base').jpClient;
 const elementTextContent   = require('../../../../../_common/common_functions').elementTextContent;
@@ -15,7 +16,7 @@ const AuthorisedApps = (() => {
 
     const messages = {
         no_apps       : 'You have not granted access to any applications.',
-        revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
+        revoke_confirm: 'Are you sure that you want to permanently revoke access to the application',
         revoke_access : 'Revoke access',
     };
 
@@ -76,16 +77,19 @@ const AuthorisedApps = (() => {
     const createRevokeButton = (container, app) => {
         const $button = $('<button/>', { class: 'button', text: localize(messages.revoke_access) });
         $button.on('click', () => {
-            if (window.confirm(`${localize(messages.revoke_confirm)}: '${app.name}'?`)) {
-                BinarySocket.send({ revoke_oauth_app: app.id }).then((response) => {
-                    if (response.error) {
-                        displayError(response.error.message);
-                    } else {
-                        updateApps();
-                    }
-                });
-                container.css({ opacity: 0.5 });
-            }
+            Dialog.confirm({
+                id       : 'apps_revoke_dialog',
+                message  : `${localize(messages.revoke_confirm)}: '${app.name}'?`,
+                onConfirm: () => {
+                    BinarySocket.send({ revoke_oauth_app: app.id }).then((response) => {
+                        if (response.error) {
+                            displayError(response.error.message);
+                        } else {
+                            updateApps();
+                        }
+                    });
+                },
+            });
         });
         return $button;
     };

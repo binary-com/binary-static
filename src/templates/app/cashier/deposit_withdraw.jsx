@@ -4,7 +4,7 @@ const gambling_link = '<a href=\'%\' target=\'_blank\' rel=\'noopener noreferrer
 
 const DepositWithdraw = () => (
     <div id='deposit_withdraw'>
-        <h1 id='heading'></h1>
+        <h1 id='heading' />
 
         <div id='messages' className='invisible'>
             <p id='cashier_locked_message'>{it.L('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', it.url_for('user/security/cashier_passwordws'))}</p>
@@ -13,7 +13,7 @@ const DepositWithdraw = () => (
                 {it.L('There was a problem validating your personal details. Please update your [_1] <a href="[_2]">here</a>.', '[_1]', it.url_for('user/settings/detailsws'))}
                 <br /> {it.L('If you need assistance feel free to contact our <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}
             </p>
-            <p id='not_authenticated_message'></p>
+            <p id='not_authenticated_message' />
         </div>
 
         <div id='errors' className='invisible'>
@@ -35,7 +35,7 @@ const DepositWithdraw = () => (
                     <div className='gr-padding-10'>{it.L('Please note that you are currently using your [_1]Bitcoin Cash[_2] account. You can only fund your account in [_1]Bitcoin Cash[_2], and not Bitcoin.', '<a href="https://www.bitcoincash.org" target="_blank" rel="noopener noreferrer">', '</a>')}</div>
                 </div>
             </div>
-            <iframe src='' frameBorder='0' width='100%' scrolling='auto'></iframe>
+            <iframe src='' frameBorder='0' width='100%' scrolling='auto' />
         </div>
 
         <form id='frm_ukgc' className='gr-row gr-parent invisible'>

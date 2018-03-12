@@ -99,6 +99,13 @@
     }
 }
 
+#profit-table-container, #statement-container {
+    #date_to {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .api_token, #applications-container {
         table td, table th {
