@@ -22,7 +22,7 @@ const Row = ({
         <div className={`gr-row gr-padding-10 ${is_header ? 'table-header' : 'table-body' }`}>
             <div className='gr-2 gr-6-m'>
                 { logo ?
-                    <img src={it.url_for(`images/pages/home-beta/payment/${  logo  }.svg`)} />
+                    <img src={it.url_for(`images/pages/home/payment/${  logo  }.svg`)} />
                     : method
                 }
             </div>
@@ -35,7 +35,6 @@ const Row = ({
             </div>
             <div className='gr-3 gr-hide-m'>
                 { times.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
-                { is_header ? '*' : '' }
             </div>
         </div>
     );
@@ -65,12 +64,12 @@ const PaymentMethods = () => (
         <div className='gr-12'>
             <div id='payment_method_suggestions gr-padding-10' className='center-text'>
                 <div className='gr-padding-10 invisible upgrademessage'>
-                    <a className='button'></a>
+                    <a className='button' />
                 </div>
                 <p>
                     <Button url='/' text={it.L('Open an account now')} />
-                    <Button url='cashier/forwardws#deposit' real className='deposit' text={it.L('Deposit')} />
-                    <Button url='cashier/forwardws#withdraw' real className='withdraw' text={it.L('Withdraw')} />
+                    <Button url='cashier/forwardws?action=deposit'  real className='deposit'  text={it.L('Deposit')} />
+                    <Button url='cashier/forwardws?action=withdraw' real className='withdraw' text={it.L('Withdraw')} />
                 </p>
             </div>
         </div>
@@ -94,17 +93,6 @@ const PaymentMethods = () => (
                 currencies='USD GBP EUR AUD'
                 deposit='25 - 10,000'
                 withdrawal='25 - 10,000'
-                time={[
-                    it.L('Deposit: [_1] working day', 1),
-                    it.L('Withdrawal: [_1] working day', 1),
-                ]}
-            />
-            <Row
-                id='western_union'
-                logo='western_union'
-                currencies='USD GBP EUR AUD'
-                deposit='50 - 250'
-                withdrawal='50 - 250'
                 time={[
                     it.L('Deposit: [_1] working day', 1),
                     it.L('Withdrawal: [_1] working day', 1),
@@ -258,65 +246,67 @@ const PaymentMethods = () => (
                 ]}
             />
 
-            <Section title={it.L('Cryptocurrencies')} withdrawal={it.L('Min Withdrawal')} />
-            <Row
-                id='btc'
-                logo='bitcoin'
-                currencies='BTC'
-                deposit='0.002'
-                withdrawal='0.004'
-                time={[
-                    it.L('Deposit: 3 blockchain confirmations'),
-                    it.L('Withdrawal: [_1] working day', 1),
-                ]}
-            />
-            <Row
-                id='bch'
-                logo='bitcoin_cash'
-                currencies='BCH'
-                deposit='0.01'
-                withdrawal='0.003'
-                time={[
-                    it.L('Deposit: 3 blockchain confirmations'),
-                    it.L('Withdrawal: [_1] working day', 1),
-                ]}
-            />
-            <Row
-                id='eth'
-                logo='ethereum_black'
-                currencies='ETH'
-                deposit='0.01'
-                withdrawal='0.01'
-                time={[
-                    it.L('Deposit: 3 blockchain confirmations'),
-                    it.L('Withdrawal: [_1] working day', 1),
-                ]}
-            />
-            {/* <Row
-                id='etc'
-                currencies='ETC'
-                deposit='0.002'
-                withdrawal='0.002'
-                time={[
-                    it.L('Deposit: 3 blockchain confirmations'),
-                    it.L('Withdrawal: [_1] working day', 1),
-                ]}
-            /> */}
-            <Row
-                id='ltc'
-                logo='litecoin'
-                currencies='LTC'
-                deposit='0.1'
-                withdrawal='0.02'
-                time={[
-                    it.L('Deposit: 3 blockchain confirmations'),
-                    it.L('Withdrawal: [_1] working day', 1),
-                ]}
-            />
+            <div data-show='-malta, -maltainvest'>
+                <Section title={it.L('Cryptocurrencies')} withdrawal={it.L('Min Withdrawal')} />
+                <Row
+                    id='btc'
+                    logo='bitcoin'
+                    currencies='BTC'
+                    deposit='0.002'
+                    withdrawal='0.004'
+                    time={[
+                        it.L('Deposit: 3 blockchain confirmations'),
+                        it.L('Withdrawal: [_1] working day', 1),
+                    ]}
+                />
+                <Row
+                    id='bch'
+                    logo='bitcoin_cash'
+                    currencies='BCH'
+                    deposit='0.01'
+                    withdrawal='0.003'
+                    time={[
+                        it.L('Deposit: 3 blockchain confirmations'),
+                        it.L('Withdrawal: [_1] working day', 1),
+                    ]}
+                />
+                <Row
+                    id='eth'
+                    logo='ethereum_black'
+                    currencies='ETH'
+                    deposit='0.01'
+                    withdrawal='0.01'
+                    time={[
+                        it.L('Deposit: 3 blockchain confirmations'),
+                        it.L('Withdrawal: [_1] working day', 1),
+                    ]}
+                />
+                {/* <Row
+                    id='etc'
+                    currencies='ETC'
+                    deposit='0.002'
+                    withdrawal='0.002'
+                    time={[
+                        it.L('Deposit: 3 blockchain confirmations'),
+                        it.L('Withdrawal: [_1] working day', 1),
+                    ]}
+                /> */}
+                <Row
+                    id='ltc'
+                    logo='litecoin'
+                    currencies='LTC'
+                    deposit='0.1'
+                    withdrawal='0.02'
+                    time={[
+                        it.L('Deposit: 3 blockchain confirmations'),
+                        it.L('Withdrawal: [_1] working day', 1),
+                    ]}
+                />
+            </div>
         </div>
-
+    
         <div className='gr-padding-10'>
-            <p className='hint'>*{it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
+            <p className='hint'>* {it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
         </div>
     </div>
 );

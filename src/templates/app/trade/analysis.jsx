@@ -21,9 +21,9 @@ const Analysis = ({ no_graph }) => (
 
             { !no_graph &&
             <TabContent id='tab_graph'>
-                <p className='error-msg' id='chart-error'></p>
+                <p className='error-msg' id='chart-error' />
                 <div id='trade_live_chart'>
-                    <div id='webtrader_chart'></div>
+                    <div id='webtrader_chart' />
                 </div>
             </TabContent>
             }

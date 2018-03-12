@@ -1,6 +1,7 @@
 const PaymentAgentTransferUI = require('./payment_agent_transfer.ui');
 const Client                 = require('../../../../base/client');
 const BinarySocket           = require('../../../../base/socket');
+const getDecimalPlaces       = require('../../../../common/currency').getDecimalPlaces;
 const FormManager            = require('../../../../common/form_manager');
 const localize               = require('../../../../../_common/localize').localize;
 const State                  = require('../../../../../_common/storage').State;
@@ -15,14 +16,22 @@ const PaymentAgentTransfer = (() => {
         BinarySocket.wait('get_settings', 'balance').then(() => {
             is_authenticated_payment_agent = State.getResponse('get_settings.is_authenticated_payment_agent');
             if (is_authenticated_payment_agent) {
-                init();
+                BinarySocket.send({
+                    paymentagent_list: Client.get('residence'),
+                    currency         : Client.get('currency'),
+                }).then((response) => {
+                    const pa_values = response.paymentagent_list.list.filter(
+                        (a) => a.paymentagent_loginid === Client.get('loginid')
+                    )[0];
+                    init(pa_values);
+                });
             } else {
                 setFormVisibility(false);
             }
         });
     };
 
-    const init = () => {
+    const init = (pa) => {
         const form_id     = '#frm_paymentagent_transfer';
         const $no_bal_err = $('#no_balance_error');
         const currency    = Client.get('currency');
@@ -46,7 +55,7 @@ const PaymentAgentTransfer = (() => {
 
         FormManager.init(form_id, [
             { selector: '#client_id', validations: ['req', ['regular', { regex: /^\w+\d+$/, message: 'Please enter a valid Login ID.' }]], request_field: 'transfer_to' },
-            { selector: '#amount',    validations: ['req', ['number', { type: 'float', decimals: 2, min: 10, max: 2000 }], ['custom', { func: () => +Client.get('balance') >= +$('#amount').val(), message: localize('Insufficient balance.') }]] },
+            { selector: '#amount',    validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min: pa ? pa.min_withdrawal : 10, max: pa ? pa.max_withdrawal : 2000 }], ['custom', { func: () => +Client.get('balance') >= +$('#amount').val(), message: localize('Insufficient balance.') }]] },
 
             { request_field: 'dry_run', value: 1 },
         ].concat(common_request_fields));

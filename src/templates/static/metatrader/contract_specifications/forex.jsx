@@ -57,7 +57,7 @@ const Forex = () => {
                 <h2>{it.L('How to read the table above')}</h2>
                 <p>{it.L('The Forex is typically traded in <i>lots</i>. One standard <i>lots</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>.')}</p>
                 <p>{it.L('Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.')}</p>
-                <p>{it.L('To learn more, read our <a href="[_1]">Margin Policy</a> that further explains our 100% forced liquidation level for Forex.', it.url_for('get-started/forex#margin-policy'))}</p>
+                <p>{it.L('To learn more, read our <a href="[_1]">Forex Margin Policy</a> that further explains our 100% forced liquidation level for Forex.', it.url_for('get-started/forex#margin-policy'))}</p>
 
                 <h2>{it.L('Important notes on our swap rates (overnight funding)')}</h2>
                 <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open. This adjustment is based on interbank lending rates, on top of a 2% fee.')}</p>

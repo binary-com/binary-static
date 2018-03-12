@@ -21,24 +21,24 @@ const Main = () => (
             <p>{it.L('{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream')}</p>
         </div>
 
-    <Register lang='ja' />
+        <Register lang='ja' />
 
-    <div className='gr-padding-20'>
-        <h2>{it.L('{JAPAN ONLY}Why become an Affiliate?')}</h2>
-        <ul className='checked'>
-            <li>{it.L('{JAPAN ONLY}Long-term partnership with an establish international financial trading service')}</li>
-            <li>{it.L('{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral')}</li>
-            <li>{it.L('{JAPAN ONLY}Professional service')}</li>
-            <li>{it.L('{JAPAN ONLY}High quality promotional materials with online reporting tools')}</li>
-            <li>{it.L('{JAPAN ONLY}A dedicated affiliate team to provide you with the best service possible')}</li>
-            <li>{it.L('{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan')}</li>
-            <li>{it.L('{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream')}</li>
-        </ul>
-    </div>
+        <div className='gr-padding-20'>
+            <h2>{it.L('{JAPAN ONLY}Why become an Affiliate?')}</h2>
+            <ul className='checked'>
+                <li>{it.L('{JAPAN ONLY}Long-term partnership with an establish international financial trading service')}</li>
+                <li>{it.L('{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral')}</li>
+                <li>{it.L('{JAPAN ONLY}Professional service')}</li>
+                <li>{it.L('{JAPAN ONLY}High quality promotional materials with online reporting tools')}</li>
+                <li>{it.L('{JAPAN ONLY}A dedicated affiliate team to provide you with the best service possible')}</li>
+                <li>{it.L('{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan')}</li>
+                <li>{it.L('{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream')}</li>
+            </ul>
+        </div>
 
-    <div className='gr-padding-20'>
-        <h2>{it.L('{JAPAN ONLY}Generous Commission Structure')}</h2>
-        <p>{it.L('{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=[_1]>opens and trades a real money account.</a>', `${it.url_for('terms-and-conditions-jp')}#affiliates&section-8`)}</p>
+        <div className='gr-padding-20'>
+            <h2>{it.L('{JAPAN ONLY}Generous Commission Structure')}</h2>
+            <p>{it.L('{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then <a href=[_1]>opens and trades a real money account.</a>', `${it.url_for('terms-and-conditions-jp')}#affiliates&section-8`)}</p>
         </div>
 
         <div className='gr-padding-20'>
@@ -47,8 +47,8 @@ const Main = () => (
         </div>
 
         <div className='gr-padding-20'>
-        <h2>{it.L('{JAPAN ONLY}On-time Payments Every Time')}</h2>
-        <p>{it.L('Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions.')} </p>
+            <h2>{it.L('{JAPAN ONLY}On-time Payments Every Time')}</h2>
+            <p>{it.L('Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions.')} </p>
         </div>
 
         <div className='gr-padding-20'>
@@ -58,7 +58,7 @@ const Main = () => (
             <p>{it.L('{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with [_1] and begins trading. ', it.broker_name)}<span>{it.L('Please see our <a href=[_1]>terms and conditions</a> for details of payout qualifications.', it.url_for('terms-and-conditions-jp') )}</span></p>
             <p>{it.L('{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away.')}</p>
             <p>{it.L('{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today.')}</p>
-    </div>
+        </div>
 
         <Register lang='ja' />
     </React.Fragment>

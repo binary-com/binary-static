@@ -1,23 +1,25 @@
-const moment           = require('moment');
-const TradingAnalysis  = require('./analysis');
-const commonTrading    = require('./common');
-const Contract         = require('./contract');
-const Defaults         = require('./defaults');
-const Durations        = require('./duration');
-const GetTicks         = require('./get_ticks');
-const Notifications    = require('./notifications');
-const Price            = require('./price');
-const StartDates       = require('./starttime').StartDates;
-const Symbols          = require('./symbols');
-const Tick             = require('./tick');
-const BinarySocket     = require('../../base/socket');
-const getMinPayout     = require('../../common/currency').getMinPayout;
-const isCryptocurrency = require('../../common/currency').isCryptocurrency;
-const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
-const getElementById   = require('../../../_common/common_functions').getElementById;
-const localize         = require('../../../_common/localize').localize;
-const State            = require('../../../_common/storage').State;
-const getPropertyValue = require('../../../_common/utility').getPropertyValue;
+const moment            = require('moment');
+const TradingAnalysis   = require('./analysis');
+const commonTrading     = require('./common');
+const Contract          = require('./contract');
+const Defaults          = require('./defaults');
+const Durations         = require('./duration');
+const GetTicks          = require('./get_ticks');
+const Lookback          = require('./lookback');
+const Notifications     = require('./notifications');
+const Price             = require('./price');
+const StartDates        = require('./starttime').StartDates;
+const Symbols           = require('./symbols');
+const Tick              = require('./tick');
+const BinarySocket      = require('../../base/socket');
+const getMinPayout      = require('../../common/currency').getMinPayout;
+const isCryptocurrency  = require('../../common/currency').isCryptocurrency;
+const elementInnerHtml  = require('../../../_common/common_functions').elementInnerHtml;
+const getElementById    = require('../../../_common/common_functions').getElementById;
+const getVisibleElement = require('../../../_common/common_functions').getVisibleElement;
+const localize          = require('../../../_common/localize').localize;
+const State             = require('../../../_common/storage').State;
+const getPropertyValue  = require('../../../_common/utility').getPropertyValue;
 
 const Process = (() => {
     /*
@@ -90,7 +92,7 @@ const Process = (() => {
 
         getContracts(underlying);
 
-        commonTrading.displayTooltip(Defaults.get('market'), underlying);
+        commonTrading.displayTooltip();
     };
 
     const getContracts = (underlying) => {
@@ -161,6 +163,7 @@ const Process = (() => {
         StartDates.display();
 
         displayPrediction();
+        Lookback.display();
 
         let r1;
         if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
@@ -170,7 +173,7 @@ const Process = (() => {
             Durations.display();
         }
 
-        const currency  = Defaults.get('currency') || getElementById('currency').value;
+        const currency  = Defaults.get('currency') || getVisibleElement('currency').value;
         const is_crypto = isCryptocurrency(currency);
         const amount    = is_crypto ? 'amount_crypto' : 'amount';
         if (Defaults.get(amount)) {
@@ -188,7 +191,7 @@ const Process = (() => {
             Defaults.set('amount_type', getElementById('amount_type').value);
         }
         if (Defaults.get('currency')) {
-            commonTrading.selectOption(Defaults.get('currency'), getElementById('currency'));
+            commonTrading.selectOption(Defaults.get('currency'), getVisibleElement('currency'));
         }
 
         const expiry_type        = Defaults.get('expiry_type') || 'duration';

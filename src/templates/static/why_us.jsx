@@ -3,7 +3,7 @@ import { List } from '../_common/components/elements.jsx';
 
 const Section = ({ className = '', id, header, children }) => (
     <div className={`section ${className}`}>
-        <a id={id}></a>
+        <a id={id} />
         <div className='section-content'>
             <h1>{header}</h1>
             {children}
@@ -16,14 +16,17 @@ const WhyUs = () => (
         <div className='why-us static_full gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>
                 <div className='sidebar'>
-                    <List id='sidebar-nav' items={[
-                        { id: 'sidebar-link-section-1', href: '#sharp-prices',         text: it.L('Sharp prices'), className: 'selected'},
-                        { id: 'sidebar-link-section-2', href: '#flexible-trades',      text: it.L('Flexible trades')},
-                        { id: 'sidebar-link-section-3', href: '#controlled-risk',      text: it.L('Controlled risk')},
-                        { id: 'sidebar-link-section-4', href: '#power-and-simplicity', text: it.L('Power & simplicity')},
-                        { id: 'sidebar-link-section-5', href: '#security',             text: it.L('Security'),     className: 'id-hide'},
-                        { id: 'sidebar-link-section-6', href: '#trust',                text: it.L('Trust')},
-                    ]} />
+                    <List
+                        id='sidebar-nav'
+                        items={[
+                            { id: 'sidebar-link-section-1', href: '#sharp-prices',         text: it.L('Sharp prices'), className: 'selected'},
+                            { id: 'sidebar-link-section-2', href: '#flexible-trades',      text: it.L('Flexible trades')},
+                            { id: 'sidebar-link-section-3', href: '#controlled-risk',      text: it.L('Controlled risk')},
+                            { id: 'sidebar-link-section-4', href: '#power-and-simplicity', text: it.L('Power & simplicity')},
+                            { id: 'sidebar-link-section-5', href: '#security',             text: it.L('Security'),     className: 'id-hide'},
+                            { id: 'sidebar-link-section-6', href: '#trust',                text: it.L('Trust')},
+                        ]}
+                    />
                     <div className='center-text gr-padding-10 client_logged_out invisible'>
                         <a className='button' href={it.url_for('/')}>
                             <span>{it.L('Open a free account')}</span>
@@ -70,7 +73,7 @@ const WhyUs = () => (
                                 <li>{it.L('You can sell your contract before expiry to keep any profit you may have made or to minimise your loss.')}</li>
                             </ul>
                         </div>
-                        <div className='gr-5 gr-8-m gr-centered-m'>
+                        <div className='gr-5 gr-8-m gr-centered-m gr-padding-20'>
                             <img className='responsive' src={it.url_for('images/pages/why-us/why-us-do-not-lose.svg')} />
                         </div>
                     </div>
@@ -78,7 +81,7 @@ const WhyUs = () => (
 
                 <Section id='power-and-simplicity' header={it.L('One simple platform')}>
                     <p>{it.L('[_1] offers the world\'s financial markets in a simple, user-friendly platform.', it.website_name)}</p>
-                    <div className='gr-row'>
+                    <div className='gr-row gr-padding-10'>
                         <div className='gr-8 gr-12-m gr-parent gr-padding-10'>
                             <img className='responsive' src={it.url_for('images/pages/why-us/simple-platform.svg')} />
                         </div>
@@ -104,15 +107,15 @@ const WhyUs = () => (
                             </ul>
                         </div>
                         <div className='gr-4 gr-12-m gr-parent'>
-                            <div className='gr-row'>
-                                <div className='gr-11 gr-8-m gr-padding-10 gr-centered'>
+                            <div className='gr-row gr-padding-20'>
+                                <div className='gr-11 gr-8-m gr-centered'>
                                     <img className='responsive' src={it.url_for('images/pages/why-us/mga-logo2.svg')} />
                                 </div>
                                 <div className='gr-parent gr-8-m gr-centered'>
-                                    <div className='gr-6 gr-padding-10'>
+                                    <div className='gr-6 gr-centered-m gr-padding-10'>
                                         <img className='responsive' src={it.url_for('images/pages/why-us/why-us-proven-record_1.svg')} />
                                     </div>
-                                    <div className='gr-6 gr-padding-10'>
+                                    <div className='gr-6 gr-centered-m gr-padding-10'>
                                         <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                     </div>
                                 </div>
@@ -123,20 +126,20 @@ const WhyUs = () => (
 
                 <Section id='trust' header={it.L('Go with the leader')}>
                     <div className='gr-row'>
-                        <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-t2w.png')} />
+                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')} />
                         </div>
-                        <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg')} />
+                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')} />
                         </div>
-                        <div className='gr-2 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-egr.png')} />
+                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')} />
                         </div>
-                        <div className='gr-3 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-mena.png')} />
+                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')} />
                         </div>
-                        <div className='gr-3 gr-6-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards-opwa.svg')} />
+                        <div className='gr-3 gr-5-m gr-centered-m gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')} />
                         </div>
                     </div>
                     <p>{it.L('[_1] is the award-winning industry pioneer in online options trading. We boast:', it.website_name)}</p>

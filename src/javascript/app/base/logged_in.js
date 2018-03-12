@@ -3,6 +3,7 @@ const moment             = require('moment');
 const Client             = require('./client');
 const GTM                = require('./gtm');
 const BinarySocket       = require('./socket');
+const SocketCache        = require('./socket_cache');
 const getElementById     = require('../../_common/common_functions').getElementById;
 const getLanguage        = require('../../_common/language').get;
 const urlLang            = require('../../_common/language').urlLang;
@@ -13,6 +14,7 @@ const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 
 const LoggedInHandler = (() => {
     const onLoad = () => {
+        SocketCache.clear();
         parent.window.is_logging_in = 1; // this flag is used in base.js to prevent auto-reloading this page
         let redirect_url;
         const params = paramsHash(window.location.href);
@@ -49,6 +51,13 @@ const LoggedInHandler = (() => {
         });
     };
 
+    // store consistent names with other API calls
+    // API_V4: send consistent names
+    const map_names = {
+        country             : 'residence',
+        landing_company_name: 'landing_company_shortcode',
+    };
+
     const storeClientAccounts = (account_list) => {
         // Parse url for loginids, tokens, and currencies returned by OAuth
         const params = paramsHash(window.location.href);
@@ -60,14 +69,13 @@ const LoggedInHandler = (() => {
         account_list.forEach((account) => {
             Object.keys(account).forEach((param) => {
                 if (param === 'loginid') {
-                    // set the first non-ico account as default loginid
                     if (!is_loginid_set && !account.is_virtual &&
-                        !account.is_ico_only && !account.is_disabled && !account.excluded_until) {
+                        !account.is_disabled) {
                         Client.set(param, account[param]);
                         is_loginid_set = true;
                     }
                 } else {
-                    const param_to_set = param === 'country' ? 'residence' : param;
+                    const param_to_set = map_names[param] || param;
                     const value_to_set = typeof account[param] === 'undefined' ? '' : account[param];
                     Client.set(param_to_set, value_to_set, account.loginid);
                 }
