@@ -45,7 +45,7 @@ class FullscreenDialog extends React.PureComponent {
             >
                 <div className='fullscreen-dialog__header'>
                     <h2 className='fullscreen-dialog__title'>
-                        {this.props.title}
+                        {title}
                     </h2>
                     <div
                         className='icons btn-close fullscreen-dialog__close-btn'
