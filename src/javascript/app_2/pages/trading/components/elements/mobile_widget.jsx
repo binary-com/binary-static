@@ -1,4 +1,5 @@
 import React from 'react';
+import FullscreenDialog from '../fullscreen_dialog.jsx';
 
 class MobileWidget extends React.PureComponent {
     constructor(props) {
@@ -6,17 +7,47 @@ class MobileWidget extends React.PureComponent {
         this.state = {
             open: false,
         };
+        this.handleDialogClose = this.handleDialogClose.bind(this);
+        this.handleWidgetClick = this.handleWidgetClick.bind(this);
+    }
+
+    handleWidgetClick() {
+        this.setState({
+            open: true,
+        });
+    }
+
+    handleDialogClose() {
+        this.setState({
+            open: false,
+        });
     }
 
     render() {
-        const props_to_pass = {
-            [this.state.open ? 'is_nativepicker' : 'is_minimized']: true,
-        };
+        const minimized_children = React.Children.map(this.props.children, child => 
+            React.cloneElement(child, {
+                is_minimized: true,
+            }));
 
-        const children_with_props = React.Children.map(this.props.children, child => 
-            React.cloneElement(child, props_to_pass));
+        const full_children = React.Children.map(this.props.children, child => 
+            React.cloneElement(child, {
+                is_nativepicker: true,
+            }));
 
-        return null;
+        return (
+            <React.Fragment>
+                <div className='btn' onClick={this.handleWidgetClick}>
+                    mobile widget here
+                </div>
+                <FullscreenDialog
+                    title='Set parameters'
+                    visible={this.state.open}
+                    onClose={this.handleDialogClose}
+                >
+                    {full_children}
+                </FullscreenDialog>
+            </React.Fragment>
+        );
     }
 }
 
