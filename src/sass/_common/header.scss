@@ -1,6 +1,9 @@
 body #topbar {
     @include BIDIR_VALUE(text-align, right, left);
 
+    .container {
+        max-width: 1200px;
+    }
     #virtual-text {
         font-weight: 700;
     }
@@ -22,6 +25,23 @@ body #topbar {
     #select_language {
         top: -3px;
     }
+    .nav-caret {
+        margin-right: 0;
+    }
+    #network_status {
+        width: 10px;
+        height: 10px;
+        margin: auto;
+        border-radius: 50%;
+        background: $COLOR_GREEN;
+
+        &.offline {
+            background: $COLOR_RED;
+        }
+        &.blinker {
+            background: $COLOR_YELLOW;
+        }
+    }
 }
 
 body #topbar, .landing_page-content {
@@ -42,6 +62,9 @@ body #topbar, .landing_page-content {
         max-width: 32px;
     }
     #menu-top {
+        &, * {
+            transition: unset;
+        }
         a:hover {
             opacity: 0.75;
         }
@@ -62,6 +85,41 @@ body #topbar, .landing_page-content {
                 padding: 0 10px;
                 word-wrap: break-word;
             }
+        }
+        &.top-nav-menu {
+            display: block;
+
+            .nav-caret {
+                margin-left: 5px;
+            }
+            > li {
+                float: none;
+
+                ul {
+                    z-index: 2;
+
+                    li {
+                        display: block;
+
+                        a {
+                            padding: 10px 30px;
+                            display: block;
+                            height: auto;
+                            max-width: none;
+
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                        &.active a:hover {
+                            color: $COLOR_WHITE;
+                        }
+                    }
+                }
+            }
+        }
+        .active-parent > a {
+            color: $COLOR_ORANGE;
         }
     }
     .topMenuBalance {
@@ -89,17 +147,8 @@ body #topbar, .landing_page-content {
             }
         }
     }
-}
-
-#main-menu {
-    margin-bottom: 40px;
-    color: $COLOR_GRAY;
-
-    .items li a {
-        white-space: nowrap;
-    }
-    .tab-menu-wrap ul li.hover ul {
-        z-index: 1;
+    .container {
+        max-width: 1200px;
     }
 }
 

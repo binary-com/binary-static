@@ -29,7 +29,7 @@ const Virtual = () => (
 
             <div className='center-text'>
                 <button className='button' type='submit'>{it.L('Create New Account')}</button>
-                <p className='errorfield invisible' id='error-account-opening'></p>
+                <p className='errorfield invisible' id='error-account-opening' />
             </div>
         </form>
     </div>

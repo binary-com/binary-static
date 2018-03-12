@@ -14,14 +14,14 @@ const Biel = () => (
         <p>{it.L('In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the "Rules"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail.')}</p>
 
         <h2>{it.L('Restrictions')}</h2>
-        <p>{it.L('Citizens of Belgium, Bosnia and Herzegovina, Democratic People\'s Republic of Korea (DPRK), Ethiopia, Iran, Iraq, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd.')}</p>
+        <p>{it.L('Citizens of Belgium, Bosnia and Herzegovina, Democratic People\'s Republic of Korea (DPRK), Ethiopia, Iran, Iraq, Syria, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd.')}</p>
 
         <h2>{it.L('Client classification')}</h2>
         <p>{it.L('Under the Rules, clients may be categorised into one of the following three categories:')}</p>
         <ul className='bullet'>
-          <li>{it.L('Retail Clients')}</li>
-          <li>{it.L('Professional Clients')}</li>
-          <li>{it.L('Eligible Counterparty')}</li>
+            <li>{it.L('Retail Clients')}</li>
+            <li>{it.L('Professional Clients')}</li>
+            <li>{it.L('Eligible Counterparty')}</li>
         </ul>
         <p>{it.L('The level of protection offered and due to each client depends on the category to which each client is assigned. Retail Clients benefit from the highest degree of protection.')}</p>
         <p>{it.L('Unless otherwise advised, we shall treat you as a Retail Client. You may also request, in writing, us to change the category in which you have been classified and this may have an effect on the level of protection afforded to you. We reserve the right to accept or refuse any such request for change in classification.')}</p>
@@ -44,11 +44,7 @@ const Biel = () => (
         <p>{it.L('The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients\' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients\' money but as consideration for our undertaking to pay.')}</p>
 
         <h2>{it.L('Investor Compensation Scheme')}</h2>
-        <p>{
-              it.L('BIEL forms part of [_1]the Investor Compensation Scheme[_2] (the "Scheme") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company\'s net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9.',
-            '<a href="http://www.compensationschemes.org.mt" target="_blank" rel="noopener noreferrer">',
-            '</a>')
-        }</p>
+        <p>{it.L('BIEL forms part of [_1]the Investor Compensation Scheme[_2] (the "Scheme") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company\'s net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9.', '<a href="http://www.compensationschemes.org.mt" target="_blank" rel="noopener noreferrer">', '</a>')}</p>
         <p>{it.L('Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor.')}</p>
 
         <h2>{it.L('Governing law and jurisdiction')}</h2>

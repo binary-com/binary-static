@@ -1,7 +1,8 @@
 const moment                = require('moment');
 const TradingAnalysis       = require('./analysis');
 const Barriers              = require('./barriers');
-const commonTrading         = require('./common');
+const CommonTrading         = require('./common');
+const CommonIndependent     = require('./common_independent');
 const Defaults              = require('./defaults');
 const Durations             = require('./duration');
 const GetTicks              = require('./get_ticks');
@@ -9,8 +10,6 @@ const Notifications         = require('./notifications');
 const Price                 = require('./price');
 const Process               = require('./process');
 const Purchase              = require('./purchase');
-const getMinMaxTime         = require('./common_independent').getMinMaxTime;
-const getStartDateNode      = require('./common_independent').getStartDateNode;
 const Tick                  = require('./tick');
 const BinaryPjax            = require('../../base/binary_pjax');
 const GTM                   = require('../../base/gtm');
@@ -33,41 +32,31 @@ const getElementById        = require('../../../_common/common_functions').getEl
  */
 const TradingEvents = (() => {
     const initiate = () => {
-        const attachTimePicker = (selector, checkEndTime) => {
-            let minTime = window.time || moment.utc();
-            let maxTime;
+        const attachTimePicker = (selector, check_end_time) => {
+            let min_time,
+                max_time;
             if ($date_start && $date_start.val()) {
-                const date_start_val = $date_start.val();
-                const minMaxTime     = getMinMaxTime($date_start, minTime);
+                const date_start_val    = $date_start.val();
+                const moment_date_start = moment.unix(date_start_val).utc();
+                const moment_now        = (window.time || moment.utc()).clone();
 
-                minTime = minMaxTime.minTime;
-                maxTime = minMaxTime.maxTime;
+                if (check_end_time) {
+                    const min_max_time = CommonIndependent.getMinMaxTimeEnd($date_start, $time_start, moment_now);
 
-                // if date_start is not 'now'
-                if (checkEndTime && !Durations.isNow(date_start_val)) {
-                    const $expiry_date   = $('#expiry_date');
-                    const endTime        = moment($expiry_date.attr('data-value'));
-                    const start_time_val = $time_start.val().split(':');
-                    const compare        = isNaN(+date_start_val) ? window.time : moment(+date_start_val * 1000);
-                    // if expiry time is one day after start time, minTime can be 0
-                    // but maxTime should be 24 hours after start time, so exact value of start time
-                    if (endTime.isAfter(compare.format('YYYY-MM-DD HH:mm'), 'day')) {
-                        minTime = 0;
-                        maxTime = endTime.utc().hour(start_time_val[0]).minute(start_time_val[1]);
-                    } else {
-                        // if expiry time is same as today, min time should be the selected start time plus five minutes
-                        minTime = minTime.hour(start_time_val[0]).minute(start_time_val[1]);
-                        if (!(+start_time_val[0] === 23 && +start_time_val[1] === 55)) {
-                            minTime = minTime.add(5, 'minutes');
-                        }
-                    }
+                    min_time = min_max_time.minTime;
+                    max_time = min_max_time.maxTime;
+                } else if (moment_date_start.isSame(moment_now, 'day')) {
+                    // for start time picker only disable past times of today
+                    min_time = moment_now.clone();
                 }
             }
-            const initObj = {
-                selector,
-                minTime,
-                maxTime: maxTime || null,
-            };
+            const initObj = { selector };
+            if (min_time) {
+                initObj.minTime = min_time.clone();
+            }
+            if (max_time) {
+                initObj.maxTime = max_time.clone();
+            }
             TimePicker.init(initObj);
         };
 
@@ -76,7 +65,7 @@ const TradingEvents = (() => {
          * and request for new Contract details to populate the form and request price accordingly
          */
         const onMarketChange = (market) => {
-            commonTrading.showPriceOverlay();
+            CommonTrading.showPriceOverlay();
             Defaults.set('market', market);
 
             // as different markets have different forms so remove from sessionStorage
@@ -103,13 +92,15 @@ const TradingEvents = (() => {
         form_nav_element.addEventListener('click', (e) => {
             const clicked_form = e.target;
             if (clicked_form && clicked_form.getAttribute('menuitem')) {
+                const menuitem_id    = clicked_form.getAttribute('menuitem');
                 const is_form_active = clicked_form.classList.contains('active') || clicked_form.parentElement.classList.contains('active');
-                Defaults.set('formname', clicked_form.getAttribute('menuitem'));
+                const is_menu_active = getElementById(menuitem_id).classList.contains('a-active');
+                Defaults.set('formname', menuitem_id);
 
                 // if form is already active then no need to send same request again
-                commonTrading.toggleActiveCatMenuElement(form_nav_element, e.target.getAttribute('menuitem'));
+                CommonTrading.toggleActiveCatMenuElement(form_nav_element, e.target.getAttribute('menuitem'));
 
-                if (!is_form_active) {
+                if (!is_form_active || !is_menu_active) {
                     contractFormEventChange();
                 }
             }
@@ -120,8 +111,8 @@ const TradingEvents = (() => {
          */
         getElementById('underlying').addEventListener('change', (e) => {
             if (e.target) {
-                commonTrading.showFormOverlay();
-                commonTrading.showPriceOverlay();
+                CommonTrading.showFormOverlay();
+                CommonTrading.showPriceOverlay();
                 if (e.target.selectedIndex < 0) {
                     e.target.selectedIndex = 0;
                 }
@@ -131,13 +122,13 @@ const TradingEvents = (() => {
 
                 Tick.clean();
 
-                commonTrading.updateWarmChart();
+                CommonTrading.updateWarmChart();
 
                 getContracts(underlying);
 
                 // get ticks for current underlying
                 GetTicks.request(underlying);
-                commonTrading.displayTooltip(Defaults.get('market'), underlying);
+                CommonTrading.displayTooltip();
             }
         });
 
@@ -158,7 +149,7 @@ const TradingEvents = (() => {
             Defaults.set('duration_amount', e.target.value);
             Durations.selectAmount(e.target.value);
             Price.processPriceRequest();
-            commonTrading.submitForm(getElementById('websocket_form'));
+            CommonTrading.submitForm(getElementById('websocket_form'));
         };
         const duration_amount_element = getElementById('duration_amount');
         let input_event_triggered     = false;          // For triggering one of the two events.
@@ -166,12 +157,12 @@ const TradingEvents = (() => {
             duration_amount_element.addEventListener('keypress', onlyNumericOnKeypress);
             // jquery needed for datepicker
             $('#duration_amount')
-                .on('input', commonTrading.debounce((e) => {
+                .on('input', CommonTrading.debounce((e) => {
                     triggerOnDurationChange(e);
                     Durations.validateMinDurationAmount();
                     input_event_triggered = true;
                 }))
-                .on('change', commonTrading.debounce((e) => {
+                .on('change', CommonTrading.debounce((e) => {
                     // using Defaults, to update the value by datepicker if it was emptied by keyboard (delete)
                     Durations.validateMinDurationAmount();
                     if (input_event_triggered === false || !Defaults.get('duration_amount')) {
@@ -228,7 +219,7 @@ const TradingEvents = (() => {
          */
         const amount_element = getElementById('amount');
         amount_element.addEventListener('keypress', onlyNumericOnKeypress);
-        amount_element.addEventListener('input', commonTrading.debounce((e) => {
+        amount_element.addEventListener('input', CommonTrading.debounce((e) => {
             e.target.value = e.target.value.replace(/[^0-9.]/g, '');
             const currency = Defaults.get('currency');
             if (isStandardFloat(e.target.value)) {
@@ -236,8 +227,23 @@ const TradingEvents = (() => {
             }
             Defaults.set(`amount${isCryptocurrency(currency) ? '_crypto' : ''}`, e.target.value);
             Price.processPriceRequest();
-            commonTrading.submitForm(getElementById('websocket_form'));
+            CommonTrading.submitForm(getElementById('websocket_form'));
         }));
+
+        /*
+         * attach event to change in amount, request new price only
+         */
+        const multiplier_element = document.getElementById('multiplier');
+        if (multiplier_element) {
+            multiplier_element.addEventListener('keypress', onlyNumericOnKeypress);
+
+            multiplier_element.addEventListener('input', CommonTrading.debounce((e) => {
+                e.target.value = e.target.value.replace(/^0*(\d\.?)/, '$1');
+                Defaults.set('multiplier', e.target.value);
+                Price.processPriceRequest();
+                CommonTrading.submitForm(document.getElementById('websocket_form'));
+            }));
+        }
 
         let timepicker_initialized = false;
         const initTimePicker       = () => {
@@ -268,10 +274,12 @@ const TradingEvents = (() => {
          * whether start time is forward starting or not and request
          * new price
          */
-        const date_start_element = getStartDateNode();
+        const date_start_element = CommonIndependent.getStartDateNode();
         if (date_start_element) {
             date_start_element.addEventListener('change', (e) => {
                 Defaults.set('date_start', e.target.value);
+                // don't show asset open hours if value is now because there is no time picker
+                CommonIndependent.showAssetOpenHours(e.target.value === 'now' ? '' : $(e.target));
                 initTimePicker();
                 const r = Durations.onStartDateChange(e.target.value);
                 if (r >= 0) {
@@ -320,7 +328,7 @@ const TradingEvents = (() => {
         /*
          * attach an event to change in currency
          */
-        getElementById('currency').addEventListener('change', (e) => {
+        $('.currency').on('change', (e) => {
             const currency = e.target.value;
             Defaults.set('currency', currency);
             const amount = isCryptocurrency(currency) ? 'amount_crypto' : 'amount';
@@ -366,7 +374,7 @@ const TradingEvents = (() => {
         $('#close_confirmation_container').on('click dblclick', (e) => {
             if (e.target && isVisible(getElementById('confirmation_message_container'))) {
                 e.preventDefault();
-                commonTrading.hideOverlayContainer();
+                CommonTrading.hideOverlayContainer();
                 Price.processPriceRequest();
             }
         });
@@ -376,21 +384,21 @@ const TradingEvents = (() => {
          */
         $('#barrier')
             .on('keypress', (ev) => { onlyNumericOnKeypress(ev, [43, 45, 46]); })
-            .on('input', commonTrading.debounce((e) => {
+            .on('input', CommonTrading.debounce((e) => {
                 Barriers.validateBarrier();
                 Defaults.set('barrier', e.target.value);
                 Price.processPriceRequest();
-                commonTrading.submitForm(getElementById('websocket_form'));
+                CommonTrading.submitForm(getElementById('websocket_form'));
             }, 1000));
 
         /*
          * attach an event to change in low barrier
          */
         const low_barrier_element = getElementById('barrier_low');
-        low_barrier_element.addEventListener('input', commonTrading.debounce((e) => {
+        low_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
             Defaults.set('barrier_low', e.target.value);
             Price.processPriceRequest();
-            commonTrading.submitForm(getElementById('websocket_form'));
+            CommonTrading.submitForm(getElementById('websocket_form'));
         }));
         low_barrier_element.addEventListener('keypress', (ev) => {
             onlyNumericOnKeypress(ev, [43, 45, 46]);
@@ -400,10 +408,10 @@ const TradingEvents = (() => {
          * attach an event to change in high barrier
          */
         const high_barrier_element = getElementById('barrier_high');
-        high_barrier_element.addEventListener('input', commonTrading.debounce((e) => {
+        high_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
             Defaults.set('barrier_high', e.target.value);
             Price.processPriceRequest();
-            commonTrading.submitForm(getElementById('websocket_form'));
+            CommonTrading.submitForm(getElementById('websocket_form'));
         }));
         high_barrier_element.addEventListener('keypress', (ev) => {
             onlyNumericOnKeypress(ev, [43, 45, 46]);
@@ -412,10 +420,10 @@ const TradingEvents = (() => {
         /*
          * attach an event to change in digit prediction input
          */
-        getElementById('prediction').addEventListener('change', commonTrading.debounce((e) => {
+        getElementById('prediction').addEventListener('change', CommonTrading.debounce((e) => {
             Defaults.set('prediction', e.target.value);
             Price.processPriceRequest();
-            commonTrading.submitForm(getElementById('websocket_form'));
+            CommonTrading.submitForm(getElementById('websocket_form'));
         }));
 
         // Verify number of decimal places doesn't exceed the allowed decimal places according to the currency
@@ -425,11 +433,11 @@ const TradingEvents = (() => {
             ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > getDecimalPlaces(Defaults.get('currency'))
         );
 
-        getElementById('trading_init_progress').addEventListener('click', commonTrading.debounce(() => {
-            commonTrading.reloadPage();
+        getElementById('trading_init_progress').addEventListener('click', CommonTrading.debounce(() => {
+            CommonTrading.reloadPage();
         }));
 
-        getElementById('symbol_tip').addEventListener('click', commonTrading.debounce((e) => {
+        getElementById('symbol_tip').addEventListener('click', CommonTrading.debounce((e) => {
             BinaryPjax.load(e.target.getAttribute('target'));
         }));
     };

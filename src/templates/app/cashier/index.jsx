@@ -5,8 +5,8 @@ const DepositWithdraw = ({ ja_hide, ja_show, id, show_upgrade }) => {
     let withdraw_url    = '/paymentagent/withdrawws';
     let class_hide_show = 'gr-5 gr-12-m';
     if (ja_hide) {
-        deposit_url     = '/cashier/forwardws#deposit';
-        withdraw_url    = '/cashier/forwardws#withdraw';
+        deposit_url     = '/cashier/forwardws?action=deposit';
+        withdraw_url    = '/cashier/forwardws?action=withdraw';
         class_hide_show += ' ja-hide';
     } else if (ja_show) {
         deposit_url     = '/cashier/deposit-jp';
@@ -27,7 +27,7 @@ const DepositWithdraw = ({ ja_hide, ja_show, id, show_upgrade }) => {
             </div>
             { show_upgrade &&
                 <div className='gr-padding-10 invisible upgrademessage'>
-                    <a className='button'></a>
+                    <a className='button' />
                 </div>
             }
         </div>
@@ -63,7 +63,7 @@ const Cashier = () => (
             </div>
         </div>
 
-        <div className='gr-padding-10 client_virtual invisible'></div>
+        <div className='gr-padding-10 client_virtual invisible' />
 
         <div className='gr-padding-10 table-body'>
             <h3 className='gr-padding-10'>
@@ -72,7 +72,7 @@ const Cashier = () => (
             </h3>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>
-                    <a className='ja-hide' href={it.url_for('cashier/forwardws#deposit')} id='payment_methods'>
+                    <a className='ja-hide' href={it.url_for('cashier/forwardws?action=deposit')} id='payment_methods'>
                         <img className='responsive' id='payment_methods_icon' src={it.url_for('images/pages/cashier/payment-methods.svg')} />
                     </a>
                     <a className='invisible ja-show' href={it.url_for('cashier/deposit-jp')} id='payment_methods'>
@@ -91,9 +91,9 @@ const Cashier = () => (
             </div>
         </div>
 
-        <div className='gr-padding-10'></div>
+        <div className='gr-padding-10' />
 
-        <div className='gr-padding-10 table-body ja-hide payment-agent invisible ico-only-hide' id='payment-agent-section'>
+        <div className='gr-padding-10 table-body ja-hide payment-agent invisible' id='payment-agent-section'>
             <h3 className='gr-padding-10'>{it.L('Payment Agent')}</h3>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>
