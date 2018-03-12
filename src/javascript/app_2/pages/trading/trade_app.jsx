@@ -4,6 +4,7 @@ import Barrier from './components/barrier.jsx';
 import ContractType from './components/contract_type.jsx';
 import Duration from './components/duration.jsx';
 import LastDigit from './components/last_digit.jsx';
+import MobileWidget from './components/elements/mobile_widget.jsx';
 import StartDate from './components/start_date.jsx';
 import Symbol from './components/symbol.jsx';
 import Test from './components/test.jsx';
@@ -16,6 +17,18 @@ class TradeApp extends React.Component {
         return this.props.form_components.indexOf(component_name) >= 0;
     }
 
+    renderParameters() {
+        return (
+            <React.Fragment>
+                {this.isVisible('start_date') && <StartDate />}
+                <Duration />
+                {this.isVisible('barrier') && <Barrier />}
+                {this.isVisible('last_digit') && <LastDigit />}
+                <Amount />
+            </React.Fragment>
+        );
+    }
+
     render() {
         return (
             <div id='trade_container' className={this.props.is_portfolio_drawer_on ? 'show' : undefined}>
@@ -24,15 +37,16 @@ class TradeApp extends React.Component {
                     <ContractType />
                     <Test />
                 </div>
+
                 <div className='sidebar-container desktop-only'>
-
-                    {this.isVisible('start_date') && <StartDate />}
-                    <Duration />
-                    {this.isVisible('barrier') && <Barrier />}
-                    {this.isVisible('last_digit') && <LastDigit />}
-                    <Amount />
-
+                    {this.renderParameters()}
                     <Purchase />
+                </div>
+
+                <div className='mobile-only'>
+                    <MobileWidget>
+                        {this.renderParameters()}
+                    </MobileWidget>
                 </div>
 
                 <div className='offset-container'>
