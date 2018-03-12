@@ -27,7 +27,7 @@ const Url       = require('./url');
 */
 
 const ScrollToAnchor = (() => {
-    let id_duplicate_count = {};
+    let id_occurrence_count = {};
 
     const init = () => {
         addAnchorsToElements();
@@ -35,15 +35,14 @@ const ScrollToAnchor = (() => {
     };
 
     const encode = (str) => {
-        const prep = str.toLowerCase().replace(/\s/g, '-');
+        const encoded = str.toLowerCase().replace(/\s/g, '-');
         let appendix = '';
-        if (typeof id_duplicate_count[prep] === 'number') {
-            id_duplicate_count[prep]++;
-            appendix = `-${id_duplicate_count[prep] + 1}`;
+        if (id_occurrence_count[encoded]) {
+            appendix = `-${++id_occurrence_count[encoded]}`;
         } else {
-            id_duplicate_count[prep] = 0;
+            id_occurrence_count[encoded] = 1;
         }
-        return encodeURI(`${prep}${appendix}`);
+        return encodeURI(`${encoded}${appendix}`);
     };
 
     const makeAnchorLink = (id) => {
@@ -90,7 +89,7 @@ const ScrollToAnchor = (() => {
     };
 
     const cleanup = () => {
-        id_duplicate_count = {};
+        id_occurrence_count = {};
         Url.updateParamsWithoutReload({
             anchor: null,
         }, true);
