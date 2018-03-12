@@ -5,6 +5,11 @@ import { connect } from '../store/connect';
 import Client from '../../../../app/base/client';
 import { localize } from '../../../../_common/localize';
 
+const basis_list = [
+    { text: localize('Payout'), value: 'payout' },
+    { text: localize('Stake'),  value: 'stake' },
+];
+
 const Amount = ({
     basis,
     currency,
@@ -18,10 +23,7 @@ const Amount = ({
             </div>
             <div className='amount-container'>
                 <Dropdown
-                    list={[
-                        { text: localize('Payout'), value: 'payout' },
-                        { text: localize('Stake'),  value: 'stake' },
-                    ]}
+                    list={basis_list}
                     value={basis}
                     name='basis'
                     onChange={onChange}

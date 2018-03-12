@@ -1,0 +1,112 @@
+/* stylelint-disable color-no-hex */
+/* stylelint-disable number-max-precision */
+.time-picker {
+    margin: 8px 0;
+    position: relative;
+
+    &.padding {
+        padding: 16px;
+    }
+    #time-picker-input.time-picker-input {
+        height: 32px;
+        padding: 0 8px;
+        border-radius: 4px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 16px;
+        margin: 0;
+
+        &::placeholder {
+            color: #b0b3bf;
+        }
+        &:hover {
+            border-color: #4c5794;
+        }
+        &.active {
+            border-color: #4c5794;
+        }
+    }
+    .time-picker-dropdown {
+        font-size: 16px;
+        position: absolute;
+        top: 0;
+        height: 0;
+        opacity: 0;
+        border-radius: 4px 0 4px 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        z-index: -1;
+        transition: all 0.3s ease 0.15s;
+
+        &.active {
+            opacity: 1;
+            height: 213px;
+            z-index: 2;
+
+            .time-picker-panel {
+                height: 30px;
+
+                .time-picker-clear {
+                    display: inline-block;
+                }
+            }
+            .time-picker-hours, .time-picker-minutes, .time-picker-meridiem {
+                .list-container .list-item.selected {
+                    background: #4c5794;
+                    color: #fff;
+                }
+            }
+        }
+        .time-picker-panel {
+            height: 0;
+            background: #fff;
+            border-bottom: 1px solid #f2f2f2;
+            border-radius: 4px 0 0;
+            padding: 2px 8px 0 9px;
+            line-height: 30px;
+            transition: height 0.3s ease 0.15s;
+
+            .time-picker-clear {
+                background: url('../images/trading_app/common/close_circle.svg') no-repeat;
+                position: relative;
+                float: right;
+                display: none;
+                top: 8px;
+                width: 12px;
+                height: 12px;
+                cursor: pointer;
+            }
+            .placeholder {
+                color: #b0b3bf;
+            }
+        }
+        .time-picker-hours, .time-picker-minutes {
+            border-right: 1px solid #f2f2f2;
+        }
+        .time-picker-hours {
+            border-radius: 0 0 0 4px;
+        }
+        .time-picker-meridiem {
+            border-radius: 0 0 4px;
+        }
+        .time-picker-hours, .time-picker-minutes, .time-picker-meridiem {
+            display: inline-block;
+            width: 50px;
+            background: #fff;
+            height: 180px;
+            overflow: hidden;
+            text-align: center;
+
+            .list-container .list-item {
+                margin: 0;
+                padding: 10px 0;
+                transition: all 0.3s ease;
+                cursor: pointer;
+
+                &:hover {
+                    background: #f2f3f8;
+                    color: #000;
+                }
+            }
+        }
+    }
+}

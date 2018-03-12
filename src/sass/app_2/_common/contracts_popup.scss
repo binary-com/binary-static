@@ -1,0 +1,148 @@
+/* stylelint-disable color-no-hex */
+/* stylelint-disable number-max-precision */
+div.contracts-popup-container {
+    position: absolute;
+    margin: 8px 0;
+    top: 0;
+    left: 30%;
+
+    .contracts-popup-display {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        min-width: 200px;
+        max-width: 200px;
+        width: 100%;
+        background: #fff;
+        height: 30px;
+        cursor: pointer;
+        border: solid 1px #f2f2f2;
+        border-radius: 4px;
+        padding: 10px 8px;
+
+        span {
+            font-size: 1rem;
+            text-transform: capitalize;
+            line-height: 32px;
+            vertical-align: middle;
+            padding-left: 8px;
+            font-weight: 300;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 60%;
+            overflow: hidden;
+        }
+        &:hover {
+            border-color: #2a3052;
+        }
+    }
+    &:active, &:focus, &.show {
+        outline: 0;
+        border-radius: 4px;
+    }
+    &.show > div.contracts-popup-list {
+        top: 100%;
+        max-height: 100%;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    &.show > .clicked {
+        border-color: #2a3052;
+    }
+    &.show > .select-arrow {
+        top: 40%;
+        transform: rotate(180deg);
+    }
+    .contracts-popup-list {
+        left: 0;
+        top: 50%;
+        width: 100%;
+        pointer-events: none;
+        position: absolute;
+        transition: all 0.3s ease 0.15s;
+        opacity: 0;
+        height: 0;
+        z-index: 999;
+
+        .list-container {
+            position: absolute;
+            width: 200%;
+            min-width: 500px;
+            display: grid;
+            z-index: 2;
+            background: #fff;
+            border: solid 1px #f2f2f2;
+
+            .list-item {
+                width: 100%;
+                font-size: 1rem;
+                cursor: pointer;
+
+                i.contract-icon {
+                    padding-right: 8px;
+                }
+                span {
+                    text-transform: capitalize;
+                    display: block;
+                    pointer-events: none;
+                    vertical-align: middle;
+                    font-weight: 300;
+                    font-size: 0.875rem;
+                    padding: 8px;
+                }
+                * {
+                    height: 32px;
+                    line-height: 32px !important;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                &.disabled {
+                    pointer-events: none;
+
+                    span {
+                        color: #dedede;
+                    }
+                }
+                &:hover {
+                    background-color: #f2f3f8;
+                }
+                &.selected span {
+                    background-color: #2a3052;
+                    color: $COLOR_WHITE;
+                    font-weight: 400;
+                }
+                &:nth-child(odd) {
+                    grid-column: 1;
+                }
+                &:nth-child(even) {
+                    grid-column: 2;
+                }
+            }
+        }
+    }
+    .select-arrow {
+        display: inline-block;
+        font-style: normal;
+        vertical-align: baseline;
+        text-align: center;
+        text-transform: none;
+        text-rendering: optimizeLegibility;
+        position: absolute;
+        pointer-events: none;
+        top: 40%;
+        right: 15px;
+        line-height: 1;
+        transition: transform 0.3s ease;
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+        color: #f2f2f2;
+        font-size: 0.8rem;
+
+        &:before {
+            content: '\0025BE';
+            color: #000;
+        }
+    }
+}
+/* stylelint-enable number-max-precision */
+/* stylelint-enable color-no-hex */

@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { MobxProvider } from './store/connect';
 import TradeStore from './store/trade_store';
+import UIStore from './store/ui_store';
 import TradeApp from './trade_app.jsx';
 import TradingHeader from './components/elements/header.jsx';
 import TradingFooter from './components/elements/footer.jsx';
@@ -11,6 +12,7 @@ import { initActions, disposeActions } from './actions';
 
 const stores = {
     trade: new TradeStore(),
+    ui   : new UIStore(),
 };
 
 const Trading = (() => {
@@ -43,11 +45,15 @@ const Trading = (() => {
         const footer = document.getElementById('trading_footer');
         if (footer) {
             render(
-                <TradingFooter items={[
-                    { icon: 'ic-portfolio', text: localize('Portfolio') },
-                    { icon: 'ic-statement', text: localize('Statement') },
-                    { icon: 'ic-confirm',   text: localize('Confirmation') },
-                ]} />
+                <MobxProvider store={stores}>
+                    <TradingFooter
+                        items={[
+                            { icon: 'ic-statement',   text: localize('Statement') },
+                            { icon: 'ic-chat-bubble', text: localize('Notification') },
+                            { icon: 'ic-lock-open',   text: localize('Lock') },
+                        ]}
+                    />
+                </MobxProvider>
             , footer);
         }
     };

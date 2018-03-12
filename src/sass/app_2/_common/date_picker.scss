@@ -134,15 +134,12 @@
             -webkit-transition: background 0.3s;
             transition: background 0.3s;
             font-size: 1rem;
+            line-height: 24px;
 
             &.calendar-date {
                 width: 24px;
-                height: 24px;
-                line-height: 24px;
             }
             &.calendar-month, &.calendar-year {
-                height: 24px;
-                line-height: 24px;
                 padding: 0 8px;
             }
             &.calendar-decade {
@@ -161,15 +158,15 @@
                 align-self: center;
                 color: rgba(0, 0, 0, 0.65);
             }
-            &-today {
+            &.today {
                 background: #fff;
                 border: 1px solid #2a3052;
             }
-            &-active {
+            &.active {
                 background: #4c5794;
                 color: #fff;
             }
-            &-disabled {
+            &.disabled {
                 background: #fff !important;
                 color: #e9e9ed !important;
             }
@@ -179,6 +176,7 @@
 
 div.datepicker-container {
     position: relative;
+    margin: 8px 0;
 
     .datepicker-display-wrapper {
         &:hover {
@@ -196,10 +194,9 @@ div.datepicker-container {
         font-size: 1rem;
         line-height: 32px;
         vertical-align: middle;
-        padding-left: 8px;
+        padding: 4px 11px;
         box-sizing: border-box;
         font-weight: 300;
-        color: #b0b3bf;
         transition: border 0.25s;
     }
     .picker-calendar-icon, .close-circle-icon {
@@ -219,25 +216,22 @@ div.datepicker-container {
             opacity: 1;
         }
         &.picker-calendar-icon:before {
-            content: url('../images/trading_app/calendar.svg');
+            content: url('../images/trading_app/common/calendar.svg');
         }
         &.close-circle-icon:before {
-            content: url('../images/trading_app/close-circle.svg');
+            content: url('../images/trading_app/common/close_circle.svg');
         }
     }
     .datepicker-calendar {
         .calendar {
             opacity: 0;
-            transform: scale3d(1, 0, 0);
+            transform: scale(1, 0);
             transform-origin: top;
-            z-index: 999;
+            transition: all 0.25s;
         }
-        &.show {
-            .calendar {
-                opacity: 1;
-                transform: scale3d(1, 1, 1);
-            }
-
+        &.show > div.calendar {
+            opacity: 1;
+            transform: scale(1, 1);
         }
     }
 }

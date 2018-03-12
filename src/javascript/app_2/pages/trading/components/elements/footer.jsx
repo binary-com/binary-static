@@ -1,70 +1,71 @@
 import React from 'react';
+import Popover from './popover.jsx';
+import { connect } from '../../store/connect';
+
+const TogglePortfolioDrawer = ({...props}) => (
+    <Popover
+        title='Open positions'
+        subtitle='Toggle Portfolio Quick Menu to view current running portfolio'
+    >
+        <a href='javascript:;'
+           className={`${props.is_portfolio_drawer_on ? 'ic-portfolio-active' : 'ic-portfolio' }`}
+           onClick={props.togglePortfolioDrawer}
+        />
+    </Popover>
+);
+
+const fullscreen_map = {
+    event    : ['fullscreenchange',  'webkitfullscreenchange',  'mozfullscreenchange',  'MSFullscreenChange'],
+    element  : ['fullscreenElement', 'webkitFullscreenElement', 'mozFullScreenElement', 'msFullscreenElement'],
+    fnc_enter: ['requestFullscreen', 'webkitRequestFullscreen', 'mozRequestFullScreen', 'msRequestFullscreen'],
+    fnc_exit : ['exitFullscreen',    'webkitExitFullscreen',    'mozCancelFullScreen',  'msExitFullscreen'],
+};
 
 class ToggleFullScreen extends React.Component {
     constructor(props) {
         super(props);
-        this.enterFullScreen = this.enterFullScreen.bind(this);
-        this.exitFullScreen  = this.exitFullScreen.bind(this);
-        this.onFullScreen    = this.onFullScreen.bind(this);
+        this.toggleFullScreen = this.toggleFullScreen.bind(this);
+        this.state = {
+            is_full_screen: false,
+        };
     }
 
     componentWillMount() {
-        document.addEventListener('webkitfullscreenchange', this.onFullScreen, false);
-        document.addEventListener('mozfullscreenchange', this.onFullScreen, false);
-        document.addEventListener('fullscreenchange', this.onFullScreen, false);
-        document.addEventListener('MSFullscreenChange', this.onFullScreen, false);
-        this.setState({
-            isFullScreen: false,
+        fullscreen_map.event .forEach((event) => {
+            document.addEventListener(event, this.onFullScreen, false);
         });
     }
 
-    onFullScreen() {
-        const fullscreenElement =  document.fullscreenElement || document.mozFullScreenElement ||
-            document.webkitFullscreenElement || document.msFullscreenElement;
-        if (fullscreenElement) {
-            this.setState({ isFullScreen: true });
-        } else {
-            this.setState({ isFullScreen: false });
-        }
-    }
+    onFullScreen = () => {
+        const is_full_screen = fullscreen_map.element.some(el => document[el]);
+        this.setState({ is_full_screen });
+    };
 
-    enterFullScreen(e) {
+    toggleFullScreen(e) {
         e.stopPropagation();
-        const el = document.documentElement;
-        if (el.requestFullscreen) {
-            el.requestFullscreen();
-        } else if (el.webkitRequestFullscreen) {
-            el.webkitRequestFullscreen();
-        } else if (el.mozRequestFullScreen) {
-            el.mozRequestFullScreen();
-        } else if (el.msRequestFullscreen) {
-            el.msRequestFullscreen();
-        } else {
-            this.setState({ isFullScreen: false }); // fullscreen API is not enabled
-        }
-    }
 
-    exitFullScreen(e) {
-        e.stopPropagation();
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
+        const to_exit   = this.state.is_full_screen;
+        const el        = to_exit ? document : document.documentElement;
+        const fncToCall = fullscreen_map[to_exit ? 'fnc_exit' : 'fnc_enter'].find(fnc => el[fnc]);
+
+        if (fncToCall) {
+            el[fncToCall]();
         } else {
-            this.setState({ isFullScreen: false }); // fullscreen API is not enabled
+            this.setState({ is_full_screen: false }); // fullscreen API is not enabled
         }
     }
 
     render() {
         return (
-            <a href='javascript:;'
-               className={this.props.className}
-               onClick={this.state.isFullScreen ? this.exitFullScreen : this.enterFullScreen}
-            />
+            <Popover
+                subtitle='Toggle full screen'
+                placement='topRight'
+            >
+                <a href='javascript:;'
+                   className='ic-fullscreen'
+                   onClick={this.toggleFullScreen}
+                />
+            </Popover>
         );
     }
 }
@@ -75,12 +76,13 @@ class TradingFooter extends React.Component {
             <React.Fragment>
             {this.props.items.length &&
                 <div className='footer-links'>
+                    <TogglePortfolioDrawer {...this.props} />
                     {this.props.items.map((item, idx) => (
                         <a key={idx} href={item.href || 'javascript:;'}>
                             <span className={item.icon} title={item.text} />
                         </a>
                     ))}
-                    <ToggleFullScreen className='ic-zoom' />
+                    <ToggleFullScreen />
                 </div>
             }
             </React.Fragment>
@@ -88,4 +90,9 @@ class TradingFooter extends React.Component {
     }
 }
 
-export default TradingFooter;
+export default connect(
+    ({ ui }) => ({
+        is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
+        togglePortfolioDrawer : ui.togglePortfolioDrawer,
+    })
+)(TradingFooter);

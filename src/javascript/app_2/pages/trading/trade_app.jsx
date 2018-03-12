@@ -9,6 +9,7 @@ import Symbol from './components/symbol.jsx';
 import Test from './components/test.jsx';
 import Purchase from './components/purchase.jsx';
 import { connect } from './store/connect';
+import PortfolioDrawer from './components/elements/portfolio_drawer.jsx';
 
 class TradeApp extends React.Component {
     isVisible(component_name) {
@@ -23,7 +24,7 @@ class TradeApp extends React.Component {
                     <ContractType />
                     <Test />
                 </div>
-                <div className='sidebar-container'>
+                <div className='sidebar-container desktop-only'>
 
                     {this.isVisible('start_date') && <StartDate />}
                     <Duration />
@@ -33,13 +34,21 @@ class TradeApp extends React.Component {
 
                     <Purchase />
                 </div>
+
+                <div className='offset-container'>
+                    <PortfolioDrawer
+                        onClick={this.props.togglePortfolioDrawer}
+                        portfolios={this.props.portfolios} />
+                </div>
             </React.Fragment>
         );
     }
 }
 
 export default connect(
-    ({trade}) => ({
-        form_components: trade.form_components,
+    ({ trade, ui }) => ({
+        form_components      : trade.form_components,
+        portfolios           : trade.portfolios,
+        togglePortfolioDrawer: ui.togglePortfolioDrawer,
     })
 )(TradeApp);
