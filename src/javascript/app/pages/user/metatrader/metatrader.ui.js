@@ -236,13 +236,19 @@ const MetaTraderUI = (() => {
         }
 
         if (!actions_info[action]) { // Manage Fund
+            const client_currency = Client.get('currency');
+            const mt_currency     = MetaTraderConfig.getCurrency(acc_type);
+
             cloneForm();
             $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
-            $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
+            $form.find('.binary-balance').html(`${formatMoney(client_currency, Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
-            $form.find('.mt5-balance').html(`${formatMoney(MetaTraderConfig.getCurrency(acc_type), accounts_info[acc_type].info.balance)}`);
-            $form.find('label[for="txt_amount_deposit"]').append(` ${Client.get('currency')}`);
-            $form.find('label[for="txt_amount_withdrawal"]').append(` ${MetaTraderConfig.getCurrency(acc_type)}`);
+            $form.find('.mt5-balance').html(`${formatMoney(mt_currency, accounts_info[acc_type].info.balance)}`);
+            $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
+            $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
+
+            $form.find('#txt_amount_deposit, #txt_amount_withdrawal').siblings('.hint').setVisibility(client_currency !== mt_currency);
+
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {
                     if (error_msg) {
