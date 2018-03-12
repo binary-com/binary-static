@@ -52,7 +52,7 @@ const ScrollToAnchor = (() => {
 
         return createElement('a', {
             class: 'data-anchor-link',
-            href: url.href,
+            href : url.href,
         });
     };
 
@@ -76,7 +76,7 @@ const ScrollToAnchor = (() => {
 
     const scrollToEl = (el) => {
         $.scrollTo(el, 500, { offset: -10 });
-    }
+    };
 
     const scrollToAnchorInQuery = () => {
         const params = Url.paramsHash();
