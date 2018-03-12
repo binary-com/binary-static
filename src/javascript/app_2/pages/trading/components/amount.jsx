@@ -17,36 +17,36 @@ const Amount = ({
     amount,
     onChange,
 }) => (
-        <fieldset>
-            <div className='fieldset-header'>
-                <span className='field-info left'>{localize('Invest Amount')}</span>
-            </div>
-            <div className='amount-container'>
-                <Dropdown
-                    list={basis_list}
-                    value={basis}
-                    name='basis'
-                    onChange={onChange}
-                />
-                <InputField
-                    type='number'
-                    name='amount'
-                    value={amount}
-                    onChange={onChange}
-                    is_currency
-                    prefix={currency}
-                />
-            </div>
+    <fieldset>
+        <div className='fieldset-header'>
+            <span className='field-info left'>{localize('Invest Amount')}</span>
+        </div>
+        <div className='amount-container'>
+            <Dropdown
+                list={basis_list}
+                value={basis}
+                name='basis'
+                onChange={onChange}
+            />
+            <InputField
+                type='number'
+                name='amount'
+                value={amount}
+                onChange={onChange}
+                is_currency
+                prefix={currency}
+            />
+        </div>
 
-            {!Client.get('currency') &&
-                <Dropdown
-                    list={currencies_list}
-                    value={currency}
-                    name='currency'
-                    onChange={onChange}
-                />
-            }
-        </fieldset>
+        {!Client.get('currency') &&
+            <Dropdown
+                list={currencies_list}
+                value={currency}
+                name='currency'
+                onChange={onChange}
+            />
+        }
+    </fieldset>
 );
 
 export default connect(

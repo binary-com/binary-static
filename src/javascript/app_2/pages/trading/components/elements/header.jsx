@@ -37,7 +37,7 @@ class TradingHeader extends React.Component {
                         </ToggleDrawer>
                     </div>
                 </header>
-          </React.Fragment>
+            </React.Fragment>
         );
     }
 }

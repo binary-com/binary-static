@@ -99,22 +99,22 @@ class DrawerHeader extends React.PureComponent {
     render() {
         return (
             <React.Fragment>
-            {this.props.alignment && this.props.alignment === 'right' ?
-                <div className={`drawer-header ${this.props.alignment}`}>
-                    <div className='icons btn-close' onClick={this.props.close}>
-                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+                {this.props.alignment && this.props.alignment === 'right' ?
+                    <div className={`drawer-header ${this.props.alignment}`}>
+                        <div className='icons btn-close' onClick={this.props.close}>
+                            <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+                        </div>
                     </div>
-                </div>
-            :
-                <div className={`drawer-header ${this.props.alignment}`}>
-                    <div className='icons btn-close' onClick={this.props.close}>
-                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+                :
+                    <div className={`drawer-header ${this.props.alignment}`}>
+                        <div className='icons btn-close' onClick={this.props.close}>
+                            <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+                        </div>
+                        <div className='icons brand-logo'>
+                            <img src={Url.urlForStatic('images/trading_app/header/binary_logo_dark.svg')} alt='Binary.com' />
+                        </div>
                     </div>
-                    <div className='icons brand-logo'>
-                        <img src={Url.urlForStatic('images/trading_app/header/binary_logo_dark.svg')} alt='Binary.com' />
-                    </div>
-                </div>
-            }
+                }
             </React.Fragment>
         );
     }

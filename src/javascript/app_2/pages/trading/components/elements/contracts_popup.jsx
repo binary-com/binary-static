@@ -58,7 +58,8 @@ class ContractsPopUp extends React.PureComponent {
         return (
             <div
                 ref={this.setWrapperRef}
-                className={`${prefix_class} ${this.state.is_list_visible ? 'show ' : ''}${suffix_class}`}>
+                className={`${prefix_class} ${this.state.is_list_visible ? 'show ' : ''}${suffix_class}`}
+            >
                 <div
                     className={`contracts-popup-display ${this.state.is_list_visible ? 'clicked': ''}`}
                     onClick={this.handleVisibility}
@@ -72,7 +73,7 @@ class ContractsPopUp extends React.PureComponent {
                 <span className='select-arrow' />
                 <div className='contracts-popup-list'>
                     <div className='list-container'>
-                    {Object.keys(this.props.list).map(key => (
+                        {Object.keys(this.props.list).map(key => (
                             <React.Fragment key={key}>
                                 <Contracts
                                     contracts={this.props.list[key]}
@@ -81,8 +82,7 @@ class ContractsPopUp extends React.PureComponent {
                                     handleSelect={this.handleSelect}
                                 />
                             </React.Fragment>
-                        ))
-                    }
+                        ))}
                     </div>
                 </div>
             </div>
