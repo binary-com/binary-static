@@ -50,7 +50,7 @@ const ContractType = (() => {
                     // extend contract_categories to include what is needed to create the contract list
                     const sub_cats = categories[Object.keys(categories)
                         .find(key => categories[key].indexOf(type) !== -1)];
-                    sub_cats[sub_cats.indexOf(type)] = { name: type, title: contract_types[type].title };
+                    sub_cats[sub_cats.indexOf(type)] = { value: type, text: localize(contract_types[type].title) };
 
                     // populate available contract types
                     available_contract_types[type]                = cloneObject(contract_types[type]);
@@ -78,7 +78,7 @@ const ContractType = (() => {
 
     const getContractType = (list, contract_type) => {
         const list_arr = Object.keys(list || {})
-            .reduce((k, l) => ([...k, ...list[l].map(ct => ct.name)]), []);
+            .reduce((k, l) => ([...k, ...list[l].map(ct => ct.value)]), []);
         return {
             contract_type: list_arr.indexOf(contract_type) === -1 || !contract_type ? list_arr[0] : contract_type,
         };

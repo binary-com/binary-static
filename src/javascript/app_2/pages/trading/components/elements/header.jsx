@@ -15,7 +15,7 @@ class TradingHeader extends React.Component {
                                 <DrawerItem text='Third Page'/>
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>
-                                <img className='logo-img' src={Url.urlForStatic('images/trading_app/symbol.svg')} alt='Binary.com' />
+                                <img className='logo-img' src={Url.urlForStatic('images/trading_app/header/symbol.svg')} alt='Binary.com' />
                             </div>
                             {!!this.props.items.length &&
                                 <div className='menu-links'>
@@ -27,9 +27,9 @@ class TradingHeader extends React.Component {
                                 </div>
                             }
                         </div>
-                        <ToggleDrawer 
+                        <ToggleDrawer
                             alignment='right'
-                            icon_link={Url.urlForStatic('images/trading_app/notify_none.svg')}
+                            icon_link={Url.urlForStatic('images/trading_app/header/notify_none.svg')}
                         >
                             <DrawerItem text='Alert 1'/>
                             <DrawerItem text='Alert 2'/>

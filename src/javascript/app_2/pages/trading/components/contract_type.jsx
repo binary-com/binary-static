@@ -1,27 +1,18 @@
 import React from 'react';
 import { connect } from '../store/connect';
-
-const Contracts = ({ list }) => (
-    Object.keys(list).map((category, idx) => (
-        <React.Fragment key={idx}>
-            <optgroup key={idx} label={category} />
-            {list[category].map(type => (
-                <option key={type.name} value={type.name}>{type.title}</option>
-            ))}
-        </React.Fragment>
-    ))
-);
+import ContractsPopUp from './elements/contracts_popup.jsx';
 
 const Contract = ({
     contract_type,
     contract_types_list,
     onChange,
 }) => (
-    <fieldset>
-        <select name='contract_type' value={contract_type} onChange={onChange}>
-            <Contracts list={contract_types_list} />
-        </select>
-    </fieldset>
+    <ContractsPopUp
+        name='contract_type'
+        list={contract_types_list}
+        value={contract_type}
+        onChange={onChange}
+    />
 );
 
 export default connect(
