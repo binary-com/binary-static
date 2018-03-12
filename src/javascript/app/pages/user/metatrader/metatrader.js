@@ -172,7 +172,7 @@ const MetaTrader = (() => {
                         MetaTraderUI.loadAction(null, acc_type);
                         getAccountDetails(login, acc_type);
                         if (typeof actions_info[action].success_msg === 'function') {
-                            MetaTraderUI.displayMainMessage(actions_info[action].success_msg(response));
+                            MetaTraderUI.displayMainMessage(actions_info[action].success_msg(response, acc_type));
                         }
                         if (typeof actions_info[action].onSuccess === 'function') {
                             actions_info[action].onSuccess(response, acc_type);

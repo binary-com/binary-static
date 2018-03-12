@@ -96,8 +96,8 @@ const MetaTraderConfig = (() => {
         },
         withdrawal: {
             title      : localize('Withdraw'),
-            success_msg: response => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
-                Currency.formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
+            success_msg: (response, acc_type) => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
+                Currency.formatMoney(getCurrency(acc_type), response.echo_req.amount),
                 response.echo_req.from_mt5,
                 response.echo_req.to_binary,
                 response.binary_transaction_id,
@@ -198,6 +198,8 @@ const MetaTraderConfig = (() => {
         ],
     });
 
+    const getCurrency = acc_type => accounts_info[acc_type].info.currency;
+
     return {
         mt_companies,
         accounts_info,
@@ -205,8 +207,8 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
+        getCurrency,
         setMessages: ($msg) => { $messages = $msg; },
-        getCurrency: acc_type => accounts_info[acc_type].info.currency,
     };
 })();
 
