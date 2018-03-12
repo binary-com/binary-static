@@ -65,13 +65,17 @@ const ScrollToAnchor = (() => {
             el.appendChild(anchor_link);
             anchor_link.addEventListener('click', (e) => {
                 e.preventDefault();
-                $.scrollTo(el, 500);
+                scrollToEl(el);
                 Url.updateParamsWithoutReload({
                     anchor: id,
                 }, true);
             });
         });
     };
+
+    const scrollToEl = (el) => {
+        $.scrollTo(el, 500, { offset: -10 });
+    }
 
     const scrollToAnchorInQuery = () => {
         const params = Url.paramsHash();
@@ -81,7 +85,7 @@ const ScrollToAnchor = (() => {
         const el = Array.from(candidates).find(isVisible);
         if (!el) return;
         window.setTimeout(() => {
-            $.scrollTo(el, 500);
+            scrollToEl(el);
         }, 200);
     };
 
