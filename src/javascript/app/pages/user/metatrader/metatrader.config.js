@@ -177,26 +177,30 @@ const MetaTraderConfig = (() => {
         },
     };
 
-    const validations = () => ({
-        new_account: [
-            { selector: fields.new_account.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: fields.new_account.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
-            { selector: fields.new_account.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account.txt_main_pass.id }]] },
-            { selector: fields.new_account.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
-        ],
-        password_change: [
-            { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },
-            { selector: fields.password_change.txt_new_password.id,    validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
-            { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
-        ],
-        deposit: [
-            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: Currency.getMinWithdrawal(Client.get('currency')), max: Math.min(State.getResponse('get_limits.remainder') || 20000, 20000), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
-        ],
-        withdrawal: [
-            { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
-            { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: 1, max: 20000, decimals: 2 }]] },
-        ],
-    });
+    const validations = () => {
+        const client_currency = Client.get('currency');
+        const max_withdrawal  = Currency.getMaxWithdrawal(client_currency);
+        return {
+            new_account: [
+                { selector: fields.new_account.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+                { selector: fields.new_account.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
+                { selector: fields.new_account.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account.txt_main_pass.id }]] },
+                { selector: fields.new_account.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
+            ],
+            password_change: [
+                { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },
+                { selector: fields.password_change.txt_new_password.id,    validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
+                { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
+            ],
+            deposit: [
+                { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: Currency.getMinWithdrawal(client_currency), max: Math.min(State.getResponse('get_limits.remainder') || max_withdrawal, max_withdrawal), decimals: Currency.getDecimalPlaces(client_currency) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
+            ],
+            withdrawal: [
+                { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
+                { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: 1, max: 20000, decimals: 2 }]] },
+            ],
+        };
+    };
 
     const getCurrency = acc_type => accounts_info[acc_type].info.currency;
 
