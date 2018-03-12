@@ -1,9 +1,6 @@
 import React from 'react';
-import iScroll from 'iscroll';
-import ReactIScroll from 'react-iscroll';
-import { ToggleDrawer, DrawerItems, DrawerItem } from './drawer.jsx';
+import { ToggleDrawer, MenuDrawer, DrawerItem } from './drawer.jsx';
 import AccountSwitcher from './account_switcher.jsx';
-import LanguageSwitcher from './language_switcher.jsx';
 import Button from '../form/button.jsx';
 import Url from '../../../../../_common/url';
 import { localize } from '../../../../../_common/localize';
@@ -31,49 +28,7 @@ class TradingHeader extends React.Component {
                                     has_iscroll
                                 />
                                 <div className='drawer-items-container'>
-                                    <ReactIScroll
-                                        iScroll={iScroll}
-                                        options={{ mouseWheel: true, scrollbars: true, fadeScrollbars: true }}
-                                    >
-                                        <div className='list-items-container'>
-                                            <DrawerItems
-                                                text='Account Settings'
-                                                items={[
-                                                    { text: 'Personal Detail' },
-                                                    { text: 'Account Authentication' },
-                                                    { text: 'Financial Assessment' },
-                                                    { text: 'Professional Trader' },
-                                                ]}
-                                                has_iscroll
-                                            />
-                                            <DrawerItems
-                                                text='Security Settings'
-                                                items={[
-                                                    { text: 'Self Exclusion' },
-                                                    { text: 'Trading Limits' },
-                                                    { text: 'Authorised Applications' },
-                                                    { text: 'API Token' },
-                                                ]}
-                                                has_iscroll
-                                            />
-                                            <DrawerItems
-                                                text='Trading History'
-                                                items={[
-                                                    { text: 'Portfolio' },
-                                                    { text: 'Profit Table' },
-                                                    { text: 'Statement' },
-                                                ]}
-                                                has_iscroll
-                                            />
-                                            <DrawerItem text='Cashier'/>
-                                            <hr />
-                                            <DrawerItem text='Manage Password'/>
-                                            <DrawerItem text='Useful Resources'/>
-                                            <DrawerItem text='Login History'/>
-                                            <hr />
-                                            <LanguageSwitcher />
-                                        </div>
-                                    </ReactIScroll>
+                                    <MenuDrawer />
                                 </div>
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>

@@ -1,5 +1,9 @@
 import React from 'react';
+import iScroll from 'iscroll';
+import ReactIScroll from 'react-iscroll';
+import LanguageSwitcher from './language_switcher.jsx';
 import Url from '../../../../../_common/url';
+import { localize } from '../../../../../_common/localize';
 
 class ToggleDrawer extends React.PureComponent {
     constructor(props) {
@@ -32,9 +36,9 @@ class ToggleDrawer extends React.PureComponent {
                     }
                 </div>
                 <Drawer ref={this.setRef} alignment={this.props.alignment}>
-                    <DrawerHeader alignment={this.props.alignment} close={this.closeDrawer}/>
+                    <DrawerHeader alignment={this.props.alignment} closeBtn={this.closeDrawer}/>
                     {this.props.children}
-                    <DrawerFooter />
+                    <DrawerFooter alignment={this.props.alignment} />
                 </Drawer>
             </React.Fragment>
         );
@@ -99,46 +103,6 @@ class Drawer extends React.PureComponent {
                     </div>
                 </div>
             </aside>
-        );
-    }
-}
-
-class DrawerHeader extends React.PureComponent {
-    render() {
-        return (
-            <React.Fragment>
-            {this.props.alignment && this.props.alignment === 'right' ?
-                <div className={`drawer-header ${this.props.alignment}`}>
-                    <div className='icons btn-close' onClick={this.props.close}>
-                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
-                    </div>
-                </div>
-            :
-                <div className={`drawer-header ${this.props.alignment}`}>
-                    <div className='icons btn-close' onClick={this.props.close}>
-                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
-                    </div>
-                    <div className='icons brand-logo'>
-                        <img src={Url.urlForStatic('images/trading_app/header/binary_logo_dark.svg')} alt='Binary.com' />
-                    </div>
-                </div>
-            }
-            </React.Fragment>
-        );
-    }
-}
-
-class DrawerFooter extends React.PureComponent {
-    render() {
-        return (
-            <React.Fragment>
-            {this.props.alignment && this.props.alignment === 'right' ?
-                null
-            :
-                <div className='drawer-footer'>
-                </div>
-            }
-            </React.Fragment>
         );
     }
 }
@@ -216,9 +180,94 @@ class DrawerItem extends React.PureComponent {
     }
 }
 
+
+const DrawerHeader = ({
+    alignment,
+    closeBtn,
+}) => (
+    <React.Fragment>
+    {alignment && alignment === 'right' ?
+        <div className={`drawer-header ${alignment}`}>
+            <div className='icons btn-close' onClick={closeBtn}>
+                <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+            </div>
+        </div>
+    :
+        <div className={`drawer-header ${alignment}`}>
+            <div className='icons btn-close' onClick={closeBtn}>
+                <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+            </div>
+            <div className='icons brand-logo'>
+                <img src={Url.urlForStatic('images/trading_app/header/binary_logo_dark.svg')} alt='Binary.com' />
+            </div>
+        </div>
+    }
+    </React.Fragment>
+);
+
+const DrawerFooter = ({
+    alignment,
+}) => (
+    <React.Fragment>
+    {alignment && alignment === 'right' ?
+        null
+    :
+        <div className='drawer-footer'>
+        </div>
+    }
+    </React.Fragment>
+);
+
+const MenuDrawer = () => (
+<ReactIScroll
+    iScroll={iScroll}
+    options={{ mouseWheel: true, scrollbars: true, fadeScrollbars: true }}
+>
+    <div className='list-items-container'>
+        <DrawerItems
+            text={localize('Account Settings')}
+            items={[
+                { text: localize('Personal Detail') },
+                { text: localize('Account Authentication') },
+                { text: localize('Financial Assessment') },
+                { text: localize('Professional Trader') },
+            ]}
+            has_iscroll={iScroll}
+        />
+        <DrawerItems
+            text={localize('Security Settings')}
+            items={[
+                { text: localize('Self Exclusion') },
+                { text: localize('Trading Limits') },
+                { text: localize('Authorised Applications') },
+                { text: localize('API Token') },
+            ]}
+            has_iscroll={iScroll}
+        />
+        <DrawerItems
+            text={localize('Trading History')}
+            items={[
+                { text: localize('Portfolio') },
+                { text: localize('Profit Table') },
+                { text: localize('Statement') },
+            ]}
+            has_iscroll={iScroll}
+        />
+        <DrawerItem text={localize('Cashier')} />
+        <hr />
+        <DrawerItem text={localize('Manage Password')} />
+        <DrawerItem text={localize('Useful Resources')}/>
+        <DrawerItem text={localize('Login History')}/>
+        <hr />
+        <LanguageSwitcher />
+    </div>
+</ReactIScroll>
+);
+
 module.exports = {
     Drawer,
     DrawerItem,
     DrawerItems,
+    MenuDrawer,
     ToggleDrawer,
 };
