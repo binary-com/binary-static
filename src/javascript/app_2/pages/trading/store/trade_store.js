@@ -55,12 +55,12 @@ export default class TradeStore {
     @observable amount          = 5;
 
     // Duration
-    @observable expiry_type         = 'duration';
+    @observable expiry_type         = 'endtime';
     @observable duration            = 15;
     @observable duration_unit       = 's';
     @observable duration_units_list = {};
     @observable expiry_date         = null;
-    @observable expiry_time         = null;
+    @observable expiry_time         = '09:40 pm';
 
     // Barrier
     @observable barrier_1 = 0;
@@ -69,7 +69,7 @@ export default class TradeStore {
     // Start Time
     @observable start_dates_list = [];
     @observable start_date       = 'now';
-    @observable start_time       = '';
+    @observable start_time       = '12:30 am';
 
     // Last Digit
     @observable last_digit = 3;
@@ -80,4 +80,32 @@ export default class TradeStore {
 
     // TODO: retrieve from upper state
     @observable server_time = undefined;
+
+    // TODO: to remove dummy portfolio value
+    @observable portfolios = [
+        {
+            transaction_id: 32355620467,
+            contract_id   : 478981052055,
+            payout        : 10,
+            expiry_time   : 1522886399,
+            longcode      : 'Win payout if AUD/JPY is strictly higher than entry spot at close on 2018-04-04.',
+            shortcode     : 'CALL_FRXAUDJPY_10_1520263325_1522886399_S0P_0',
+            currency      : 'USD',
+            buy_price     : 1.06,
+            app_id        : 1,
+            symbol        : 'AUD/JPY',
+        },
+        {
+            transaction_id: 47272620508,
+            contract_id   : 432523746528,
+            payout        : 10,
+            expiry_time   : 15234686345,
+            longcode      : 'Win payout if AUD/JPY is strictly higher than entry spot at close on 2018-05-04.',
+            shortcode     : 'CALL_FRXAUDJPY_10_1520263325_1522886399_S0P_0',
+            currency      : 'USD',
+            buy_price     : -55.25,
+            app_id        : 1,
+            symbol        : 'Australian Index',
+        },
+    ];
 };

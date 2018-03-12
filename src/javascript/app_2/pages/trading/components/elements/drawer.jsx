@@ -28,7 +28,7 @@ class ToggleDrawer extends React.PureComponent {
                     {this.props.icon_link ?
                         <img src={this.props.icon_link} />
                     :
-                        <img src={Url.urlForStatic('images/trading_app/menu.svg')} />
+                        <img src={Url.urlForStatic('images/trading_app/header/menu.svg')} />
                     }
                 </div>
                 <Drawer ref={this.setRef} alignment={this.props.alignment}>
@@ -102,16 +102,16 @@ class DrawerHeader extends React.PureComponent {
             {this.props.alignment && this.props.alignment === 'right' ?
                 <div className={`drawer-header ${this.props.alignment}`}>
                     <div className='icons btn-close' onClick={this.props.close}>
-                        <img src={Url.urlForStatic('images/trading_app/close.svg')} alt='Close' />
+                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
                     </div>
                 </div>
             :
                 <div className={`drawer-header ${this.props.alignment}`}>
                     <div className='icons btn-close' onClick={this.props.close}>
-                        <img src={Url.urlForStatic('images/trading_app/close.svg')} alt='Close' />
+                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
                     </div>
                     <div className='icons brand-logo'>
-                        <img src={Url.urlForStatic('images/trading_app/binary_logo_dark.svg')} alt='Binary.com' />
+                        <img src={Url.urlForStatic('images/trading_app/header/binary_logo_dark.svg')} alt='Binary.com' />
                     </div>
                 </div>
             }
