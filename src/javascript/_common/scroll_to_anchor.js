@@ -1,5 +1,6 @@
-const isVisible = require('./common_functions').isVisible;
-const Url       = require('./url');
+const isVisible     = require('./common_functions').isVisible;
+const Url           = require('./url');
+const createElement = require('./utility').createElement;
 
 /*
     adds anchor links to elements with data-anchor attribute
@@ -46,12 +47,13 @@ const ScrollToAnchor = (() => {
     };
 
     const makeAnchorLink = (id) => {
-        const anchor_link = document.createElement('a');
         const url = new URL(window.location);
         url.search = `anchor=${id}`;
-        anchor_link.href = url.href;
-        anchor_link.classList.add('data-anchor-link');
-        return anchor_link;
+
+        return createElement('a', {
+            class: 'data-anchor-link',
+            href: url.href,
+        });
     };
 
     const addAnchorsToElements = () => {
