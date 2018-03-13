@@ -69,12 +69,19 @@ class Drawer extends React.PureComponent {
         this.ref = node;
     }
 
+    scrollToggle(state) {
+        this.is_open = state;
+        document.body.classList.toggle('no-scroll', this.is_open);
+    }
+
     show() {
         this.setState({ is_drawer_visible: true });
+        this.scrollToggle(true);
     }
 
     hide() {
         this.setState({ is_drawer_visible: false });
+        this.scrollToggle(false);
     }
 
     handleClickOutside(event) {
