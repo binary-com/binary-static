@@ -27,7 +27,7 @@ module.exports = function (grunt) {
     global.path = grunt.option('path');
 
     global.compileCommand = function(params) {
-        return 'cd ' + process.cwd() + '/scripts && carton exec perl compile.pl ' + params + (global.branch ? ' -b ' + global.branch_prefix + global.branch : '') + (global.path ? ' -p ' + global.path : '') + ' && cd ..';
+        return `cd ${process.cwd()} && ./scripts/render.js ${params || ''} ${global.branch ? '-b ' + global.branch_prefix + global.branch : ''} ${global.path ? '-p ' + global.path : ''}`;
     };
 
     require('time-grunt')(grunt);

@@ -1,8 +1,24 @@
 module.exports = {
     all: {
+        options: {
+            inline: ['none'],
+        },
         files: [
-            { src: ['src/css/external/**/*.css', global.dist + '/css/binary.css'], dest: global.dist + '/css/binary.min.css' },
-            //{dest: global.dist + '/css/binary_rtl.min.css', src: ['src/css/external/**/*.css', global.dist + '/css/binary_rtl.css']}
-        ]
-    }
+            {
+                src: [
+                    global.dist + '/css/common.css',
+                    process.cwd() + '/node_modules/binary-style/binary.css',
+                    process.cwd() + '/node_modules/binary-style/binary.more.css',
+                ],
+                dest: global.dist + '/css/common.min.css',
+            },
+            {
+                expand: true,
+                cwd   : global.dist + '/css',
+                src   : ['app.css', 'static.css'],
+                dest  : global.dist + '/css',
+                ext   : '.min.css',
+            },
+        ],
+    },
 };

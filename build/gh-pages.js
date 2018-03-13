@@ -5,7 +5,7 @@ module.exports = function (grunt) {
                 add    : (grunt.option('cleanup') ? false : true),
                 base   : 'dist',
                 branch : 'gh-pages',
-                message: global.release_target ? 'Release to ' + global.release_target : 'Auto-generated commit',
+                message: global.release_target ? 'Release to ' + global.release_target : `Deploy to ${global.branch || 'gh-pages'}`,
             },
             src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '!' + (global.branch_prefix || 'br_') + '*/**']
         },
@@ -14,7 +14,7 @@ module.exports = function (grunt) {
                 add    : true,
                 base   : 'dist',
                 branch : 'master',
-                repo   : 'git@github.com:binary-com/binary-static-ci.git',
+                repo   : 'git@github.com:binary-com/robot-framework.git',
                 message: 'Trigger tests',
             },
             src: grunt.option('staging') ? 'version' : '',
