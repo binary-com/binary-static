@@ -254,7 +254,7 @@ class Calendar extends React.Component {
                         onClick={this.handleMonthSelected}
                         data-month={idx}
                     >
-                    {localize(item)}
+                        {localize(item)}
                     </span>
                 ))}
             </div>
@@ -277,7 +277,7 @@ class Calendar extends React.Component {
                         onClick={this.handleYearSelected}
                         data-year={year}
                     >
-                    {year}
+                        {year}
                     </span>
                 ))}
             </div>
@@ -325,15 +325,21 @@ class Calendar extends React.Component {
         const BtnNextMonth = (is_date_view && <span type='button' className='calendar-prev-month-btn' onClick={this.previousMonth} />);
 
         const BtnPrevYear = (
-            <span type='button' className='calendar-prev-year-btn'
-                  onClick={() => (((is_date_view || is_month_view) && this.previousYear())
-                    || (is_year_view && this.previousDecade()) || (is_decade_view && this.previousCentury()) )} />
+            <span
+                type='button'
+                className='calendar-prev-year-btn'
+                onClick={() => (((is_date_view || is_month_view) && this.previousYear())
+                    || (is_year_view && this.previousDecade()) || (is_decade_view && this.previousCentury()) )}
+            />
         );
 
         const BtnNextYear = (
-            <span type='button' className='calendar-next-year-btn'
-                  onClick={() => (((is_date_view || is_month_view) && this.nextYear())
-                    || (is_year_view && this.nextDecade()) || (is_decade_view && this.nextCentury()) )} />
+            <span
+                type='button'
+                className='calendar-next-year-btn'
+                onClick={() => (((is_date_view || is_month_view) && this.nextYear())
+                    || (is_year_view && this.nextDecade()) || (is_decade_view && this.nextCentury()) )}
+            />
         );
 
         const SelectMonth = (is_date_view &&
@@ -343,8 +349,11 @@ class Calendar extends React.Component {
         );
 
         const SelectYear = (
-            <span type='button' className='calendar-select-year-btn'
-                  onClick={() => ((is_date_view || is_month_view) ? this.setActiveView('year') : this.setActiveView('decade'))}>
+            <span
+                type='button'
+                className='calendar-select-year-btn'
+                onClick={() => ((is_date_view || is_month_view) ? this.setActiveView('year') : this.setActiveView('decade'))}
+            >
                 { moment(this.state.date).year() }
                 { is_year_view   && `-${moment(this.state.date).add(9, 'years').year()}`  }
                 { is_decade_view && `-${moment(this.state.date).add(99, 'years').year()}` }
@@ -514,9 +523,10 @@ class DatePicker extends React.Component {
                     />
                 </div>
                 <div className={`datepicker-calendar ${this.state.is_calendar_visible ? 'show' : ''}`}>
-                    <Calendar ref={node => { this.calendar = node; }}
-                        {...this.props}
+                    <Calendar
+                        ref={node => { this.calendar = node; }}
                         handleDateChange={this.handleDateChange}
+                        {...this.props}
                     />
                 </div>
             </div>

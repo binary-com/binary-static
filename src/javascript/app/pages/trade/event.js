@@ -92,13 +92,15 @@ const TradingEvents = (() => {
         form_nav_element.addEventListener('click', (e) => {
             const clicked_form = e.target;
             if (clicked_form && clicked_form.getAttribute('menuitem')) {
+                const menuitem_id    = clicked_form.getAttribute('menuitem');
                 const is_form_active = clicked_form.classList.contains('active') || clicked_form.parentElement.classList.contains('active');
-                Defaults.set('formname', clicked_form.getAttribute('menuitem'));
+                const is_menu_active = getElementById(menuitem_id).classList.contains('a-active');
+                Defaults.set('formname', menuitem_id);
 
                 // if form is already active then no need to send same request again
                 CommonTrading.toggleActiveCatMenuElement(form_nav_element, e.target.getAttribute('menuitem'));
 
-                if (!is_form_active) {
+                if (!is_form_active || !is_menu_active) {
                     contractFormEventChange();
                 }
             }
@@ -126,7 +128,7 @@ const TradingEvents = (() => {
 
                 // get ticks for current underlying
                 GetTicks.request(underlying);
-                CommonTrading.displayTooltip(Defaults.get('market'), underlying);
+                CommonTrading.displayTooltip();
             }
         });
 
@@ -228,6 +230,21 @@ const TradingEvents = (() => {
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));
 
+        /*
+         * attach event to change in amount, request new price only
+         */
+        const multiplier_element = document.getElementById('multiplier');
+        if (multiplier_element) {
+            multiplier_element.addEventListener('keypress', onlyNumericOnKeypress);
+
+            multiplier_element.addEventListener('input', CommonTrading.debounce((e) => {
+                e.target.value = e.target.value.replace(/^0*(\d\.?)/, '$1');
+                Defaults.set('multiplier', e.target.value);
+                Price.processPriceRequest();
+                CommonTrading.submitForm(document.getElementById('websocket_form'));
+            }));
+        }
+
         let timepicker_initialized = false;
         const initTimePicker       = () => {
             if (timepicker_initialized) return;
@@ -311,7 +328,7 @@ const TradingEvents = (() => {
         /*
          * attach an event to change in currency
          */
-        getElementById('currency').addEventListener('change', (e) => {
+        $('.currency').on('change', (e) => {
             const currency = e.target.value;
             Defaults.set('currency', currency);
             const amount = isCryptocurrency(currency) ? 'amount_crypto' : 'amount';

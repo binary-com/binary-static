@@ -1,5 +1,4 @@
 import React from 'react';
-import { FillBox } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const Box = ({
@@ -10,14 +9,14 @@ const Box = ({
     download,
     target,
     padding,
- }) => (
+}) => (
     <div className={`${gr ? `${gr} gr-12-m` : 'gr-6 gr-12-m'} box-container ${icon ? `${padding ? `gr-padding-${padding}` : ''}` : 'padding'}`}>
         <div className='box bordered'>
             <div className='items'>
-            { icon &&
-                <div><img className='' src={it.url_for(icon)} /></div>
-            }
-            { href ?
+                { icon &&
+                    <div><img className='' src={it.url_for(icon)} /></div>
+                }
+                { href ?
                     <div className='box-item-end'>
                         <a
                             href={href}
@@ -25,12 +24,12 @@ const Box = ({
                             download={!!download}
                             rel={/^http/.test(href) ? 'noopener noreferrer' : undefined}
                         >
-                                <p className='center-text'>{text}</p>
+                            <p className='center-text'>{text}</p>
                         </a>
                     </div>
-                :
-                <p className='center-text'>{text}</p>
-            }
+                    :
+                    <p className='center-text'>{text}</p>
+                }
             </div>
         </div>
     </div>
@@ -58,7 +57,7 @@ const Step = ({ circle_no, text }) => {
     const circle = circle_no ? <div className='circle'>{circle_no}</div> : '';
     return (
         <div className='step'>
-            <div className='border-bottom'></div>
+            <div className='border-bottom' />
             {circle}
             <div className='gr-padding-20 gr-gutter'>
                 <p className='no-margin gr-padding-10'>{text}</p>
@@ -112,7 +111,7 @@ const Careers = () => (
                 </div>
             </div>
         </div>
-        
+
         <div className='center-banner'>
             <div className='caption-text'>
                 <h1>{it.L('Ideas, opinions and insights from the people behind [_1]', it.website_name)}</h1>
@@ -192,7 +191,7 @@ const Careers = () => (
                     </div>
                     <div className='gr-8 gr-no-gutter gr-gutter-t gr-12-p gr-12-m graduate-box'>
                         <h1>{it.L('[_1] Graduate programme', it.website_name)}</h1>
-                            <p>{it.L('Build a successful career at the intersection of finance and technology. Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and empower your career.')}</p>
+                        <p>{it.L('Build a successful career at the intersection of finance and technology. Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and empower your career.')}</p>
                         <div className='gr-padding-10'>
                             <a className='button no-ajax' href={it.url_for('graduates')}>
                                 <span>{it.L('Learn more')}</span>
@@ -216,25 +215,31 @@ const Careers = () => (
                 <div id='technical'>
                     <div className='gr-padding-30'>
                         <div className='steps gr-padding-10'>
-                            <Step text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
-                                  circle_no='1'
+                            <Step
+                                text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
+                                circle_no='1'
                             />
-                            <Step text={it.L('If you\'re shortlisted, we\'ll invite you to a hackathon or send you a talent test.')}
-                                  circle_no='2'
+                            <Step
+                                text={it.L('If you\'re shortlisted, we\'ll invite you to a hackathon or send you a talent test.')}
+                                circle_no='2'
                             />
-                            <Step text={it.L('If you score well in the hackathon or talent test, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we\'ll invite you for an interview with a member of our recruitment team.')}
-                                  circle_no='3'
+                            <Step
+                                text={it.L('If you score well in the hackathon or talent test, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we\'ll invite you for an interview with a member of our recruitment team.')}
+                                circle_no='3'
                             />
                         </div>
                         <div className='steps gr-padding-10'>
-                            <Step text={it.L('Made an impression in the first interview? We\'ll invite you to a second interview with our CEO and/or hiring manager.')}
-                                  circle_no='4'
+                            <Step
+                                text={it.L('Made an impression in the first interview? We\'ll invite you to a second interview with our CEO and/or hiring manager.')}
+                                circle_no='4'
                             />
-                            <Step text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
-                                  circle_no='5'
+                            <Step
+                                text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
+                                circle_no='5'
                             />
-                            <Step text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and we don\'t make you negotiate in order to eliminate salary inequities and stress.')}
-                                  circle_no='6'
+                            <Step
+                                text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and we don\'t make you negotiate in order to eliminate salary inequities and stress.')}
+                                circle_no='6'
                             />
                         </div>
                     </div>
@@ -242,41 +247,35 @@ const Careers = () => (
                 <div id='non-technical'>
                     <div className='gr-padding-30'>
                         <div className='steps gr-padding-10'>
-                            <Step text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
-                                  circle_no='1'
+                            <Step
+                                text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
+                                circle_no='1'
                             />
-                            <Step text={it.L('If you\'re shortlisted, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire.')}
-                                  circle_no='2'
+                            <Step
+                                text={it.L('If you\'re shortlisted, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire.')}
+                                circle_no='2'
                             />
-                            <Step text={it.L('If you score well on the SATI, we\'ll send you a talent test. Do well on the talent test and and we\'ll invite you for an interview with a member of our recruitment team.')}
-                                  circle_no='3'
+                            <Step
+                                text={it.L('If you score well on the SATI, we\'ll send you a talent test. Do well on the talent test and and we\'ll invite you for an interview with a member of our recruitment team.')}
+                                circle_no='3'
                             />
                         </div>
                         <div className='steps gr-padding-10'>
-                            <Step text={it.L('Made an impression in the first interview? We\'ll invite you to a second interview with our CEO and/or hiring manager.')}
-                                  circle_no='4'
+                            <Step
+                                text={it.L('Made an impression in the first interview? We\'ll invite you to a second interview with our CEO and/or hiring manager.')}
+                                circle_no='4'
                             />
-                            <Step text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
-                                  circle_no='5'
+                            <Step
+                                text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
+                                circle_no='5'
                             />
-                            <Step text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and we don\'t make you negotiate in order to eliminate salary inequities and stress.')}
-                                  circle_no='6'
+                            <Step
+                                text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and we don\'t make you negotiate in order to eliminate salary inequities and stress.')}
+                                circle_no='6'
                             />
                         </div>
                     </div>
                 </div>
-            </div>
-            <SeparatorLine show_mobile />
-        </div>
-
-        <div className='container'>
-            <div className='gr-padding-30 center-text'>
-                <div className='gr-padding-30'>
-                    <h1>{it.L('Career opportunities for Americans')}</h1>
-                    <p>{it.L('Looking for a new and exciting career in a country that\'s modern, diverse, and tolerant? [_1] is one of the world\'s most progressive companies, with offices in Asia and Europe.', it.website_name)}</p>
-                </div>
-
-                <FillBox className='america-careers-link' center padding='4' href={it.url_for('careers-for-americans')} text={it.L('Learn more')} />
             </div>
         </div>
 

@@ -12,19 +12,19 @@ const LastDigit = ({
     last_digit,
     onChange,
 }) =>  (
-        <fieldset>
-            <div className='fieldset-header'>
-                <span className='field-info left' htmlFor='last_digit'>
-                    {localize('Last Digit Prediction')}
-                </span>
-            </div>
-            <Dropdown
-                list={last_digit_numbers}
-                value={last_digit}
-                name='last_digit'
-                onChange={onChange}
-            />
-        </fieldset>
+    <fieldset>
+        <div className='fieldset-header'>
+            <span className='field-info left' htmlFor='last_digit'>
+                {localize('Last Digit Prediction')}
+            </span>
+        </div>
+        <Dropdown
+            list={last_digit_numbers}
+            value={last_digit}
+            name='last_digit'
+            onChange={onChange}
+        />
+    </fieldset>
 );
 
 export default connect(

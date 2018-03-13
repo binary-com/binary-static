@@ -44,7 +44,7 @@ const TermsAndConditions = () => (
                             <li>{it.L('You have read this Legal Terms and Conditions page in full and understood that you will be buying and selling financial contracts subject to these terms and conditions;')}</li>
                             <li>{it.L('You have read our privacy statement and hereby give us consent to process your personal information as outlined there;')}</li>
                             <li>{it.L('You are over 18 years of age;')}</li>
-                            <li>{it.L('You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;')}</li>
+                            <li>{it.L('You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;')}</li>
                             <li>{it.L('You have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site.')}</li>
                         </ol>
                     </li>
@@ -367,7 +367,7 @@ const TermsAndConditions = () => (
             </li>
             <li>{it.L('Account Equity &mdash; Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss.')}</li>
             <li>{it.L('Account Free Margin &mdash; Your Account Equity minus your Total Margin.')}</li>
-           <li>{it.L('Binary Options Real Account &mdash; Your real money account opened with [_1] which you use to trade binary options with [_1].', it.website_name)}</li>
+            <li>{it.L('Binary Options Real Account &mdash; Your real money account opened with [_1] which you use to trade binary options with [_1].', it.website_name)}</li>
             <li>{it.L('Event &mdash; Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others.')}</li>
             <li>{it.L('Limit/Limit Price &mdash; The price specified in your Limit Order.')}</li>
             <li>{it.L('Limit Order &mdash; An instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price.')}</li>

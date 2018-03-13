@@ -7,9 +7,10 @@ const TogglePortfolioDrawer = ({...props}) => (
         title='Open positions'
         subtitle='Toggle Portfolio Quick Menu to view current running portfolio'
     >
-        <a href='javascript:;'
-           className={`${props.is_portfolio_drawer_on ? 'ic-portfolio-active' : 'ic-portfolio' }`}
-           onClick={props.togglePortfolioDrawer}
+        <a
+            href='javascript:;'
+            className={`${props.is_portfolio_drawer_on ? 'ic-portfolio-active' : 'ic-portfolio' }`}
+            onClick={props.togglePortfolioDrawer}
         />
     </Popover>
 );
@@ -61,9 +62,10 @@ class ToggleFullScreen extends React.Component {
                 subtitle='Toggle full screen'
                 placement='topRight'
             >
-                <a href='javascript:;'
-                   className='ic-fullscreen'
-                   onClick={this.toggleFullScreen}
+                <a
+                    href='javascript:;'
+                    className='ic-fullscreen'
+                    onClick={this.toggleFullScreen}
                 />
             </Popover>
         );
@@ -74,17 +76,17 @@ class TradingFooter extends React.Component {
     render() {
         return (
             <React.Fragment>
-            {this.props.items.length &&
-                <div className='footer-links'>
-                    <TogglePortfolioDrawer {...this.props} />
-                    {this.props.items.map((item, idx) => (
-                        <a key={idx} href={item.href || 'javascript:;'}>
-                            <span className={item.icon} title={item.text} />
-                        </a>
-                    ))}
-                    <ToggleFullScreen />
-                </div>
-            }
+                {this.props.items.length &&
+                    <div className='footer-links'>
+                        <TogglePortfolioDrawer {...this.props} />
+                        {this.props.items.map((item, idx) => (
+                            <a key={idx} href={item.href || 'javascript:;'}>
+                                <span className={item.icon} title={item.text} />
+                            </a>
+                        ))}
+                        <ToggleFullScreen />
+                    </div>
+                }
             </React.Fragment>
         );
     }

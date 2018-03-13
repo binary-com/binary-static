@@ -7,10 +7,10 @@ const Column = ({
     text,
     url,
 }) => (
-    <div className={`gr-3 gr-8-m gr-parent${ja_hide ? ' ja-hide' : ''}`}>
+    <div className={`gr-3 gr-6-m gr-parent${ja_hide ? ' ja-hide' : ''}`}>
         <div className='gr-8 gr-padding-10'>
             <a href={it.url_for(`resources/${url}`)}>
-            <img className='responsive' src={it.url_for(`images/pages/resources/${image}-icon.svg`)} />
+                <img className='responsive' src={it.url_for(`images/pages/resources/${image}-icon.svg`)} />
             </a>
         </div>
         <div className='gr-12'>

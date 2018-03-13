@@ -19,9 +19,9 @@ const Box = ({ image, text, title }) => (
 
 const FootNote = ({ number, texts, title }) => (
     <div className='gr-padding-10'>
-        <a name={`note-${number}`}></a>
+        <a name={`note-${number}`} />
         <h3 className='secondary-color'>{`${number}. ${title}`}</h3>
-        <div className='separator-line border-bottom'></div>
+        <div className='separator-line border-bottom' />
         { texts.map((text, idx) => (
             <p key={idx}>{text}</p>
         ))}
@@ -56,9 +56,9 @@ const TypesOfAccounts = () => (
             text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
         />
 
-        <div className='gr-padding-30'></div>
+        <div className='gr-padding-30' />
 
-        <h2 className='center-text'>{it.L('Account comparison*')}</h2>
+        <h2 className='center-text'>{it.L('Account comparison')}</h2>
         <div className='gr-padding-10'>
             <Table
                 scroll
@@ -83,10 +83,9 @@ const TypesOfAccounts = () => (
                     ],
                 }}
             />
-            <p className='hint gr-padding-10'>{it.L('*These numbers are for indicative purposes only, please verify them on our MT5 trading platform.')}</p>
         </div>
 
-        <div className='gr-padding-10'></div>
+        <div className='gr-padding-10' />
 
         <FootNote
             number={1}
@@ -119,7 +118,7 @@ const TypesOfAccounts = () => (
         <FootNote
             number={6}
             title={it.L('Minimum deposit')}
-            texts={[it.L('Most brokers require minimum deposit. [_1] doesn\'t require any minimum deposit.', it.website_name)]}
+            texts={[it.L('Most brokers require a minimum deposit. [_1] doesn\'t require any minimum deposit.', it.website_name)]}
         />
         <FootNote
             number={7}

@@ -7,6 +7,7 @@ const FormManager        = require('../../common/form_manager');
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
+const State              = require('../../../_common/storage').State;
 const createElement      = require('../../../_common/utility').createElement;
 const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
@@ -24,9 +25,12 @@ const AccountTransfer = (() => {
 
     let el_transfer_from,
         el_transfer_to,
-        client_loginid,
-        client_currency,
+        el_reset_transfer,
+        el_transfer_fee,
+        el_success_form,
         client_balance,
+        client_currency,
+        client_loginid,
         withdrawal_limit;
 
     const populateAccounts = (accounts) => {
@@ -34,18 +38,14 @@ const AccountTransfer = (() => {
         el_transfer_from = getElementById('lbl_transfer_from');
         el_transfer_to   = getElementById('transfer_to');
 
-        let currency_text = client_currency ? `(${client_currency})` : '';
-
-        elementTextContent(el_transfer_from, `${client_loginid} ${currency_text}`);
+        elementTextContent(el_transfer_from, `${client_loginid} ${client_currency ? `(${client_currency})` : ''}`);
 
         const fragment_transfer_to = document.createElement('div');
 
-        accounts.forEach((account, idx) => {
-            if (accounts[idx].loginid !== client_loginid) {
-                const option   = document.createElement('option');
-                const currency = accounts[idx].currency;
-                currency_text  = currency ? `(${currency})` : '';
-                option.appendChild(document.createTextNode(`${accounts[idx].loginid} ${currency_text}`));
+        accounts.forEach((account) => {
+            if (Client.canTransferFunds(account)) {
+                const option = document.createElement('option');
+                option.appendChild(document.createTextNode(`${account.loginid}${account.currency ? ` (${account.currency})` : ''}`));
                 fragment_transfer_to.appendChild(option);
             }
         });
@@ -109,6 +109,7 @@ const AccountTransfer = (() => {
         FormManager.handleSubmit({
             form_selector       : form_id_hash,
             fnc_response_handler: responseHandler,
+            enable_button       : true,
         });
     };
 
@@ -130,25 +131,40 @@ const AccountTransfer = (() => {
 
         response.accounts.forEach((account) => {
             if (account.loginid === client_loginid) {
+                elementTextContent(getElementById('from_currency'), account.currency);
                 elementTextContent(getElementById('from_balance'), account.balance);
             } else if (account.loginid === response_submit_success.client_to_loginid) {
+                elementTextContent(getElementById('to_currency'), account.currency);
                 elementTextContent(getElementById('to_balance'), account.balance);
             }
         });
 
-        getElementById('transfer_fee').setVisibility(0);
-        getElementById('success_form').setVisibility(1);
+        el_transfer_fee.setVisibility(0);
+        el_success_form.setVisibility(1);
+    };
+
+    const onClickReset = () => {
+        el_success_form.setVisibility(0);
+        getElementById('amount').value = '';
+        onLoad();
     };
 
     const onLoad = () => {
         if (!Client.canTransferFunds()) {
             BinaryPjax.loadPreviousUrl();
+            return;
         }
+
+        el_transfer_fee   = getElementById('transfer_fee');
+        el_success_form   = getElementById('success_form');
+        el_reset_transfer = getElementById('reset_transfer');
+        el_reset_transfer.addEventListener('click', onClickReset);
+
         BinarySocket.wait('balance').then((response) => {
-            client_balance   = getPropertyValue(response, ['balance', 'balance']);
+            client_balance   = +getPropertyValue(response, ['balance', 'balance']);
             client_currency  = Client.get('currency');
             const min_amount = getMinWithdrawal(client_currency);
-            if (!client_balance || +client_balance < min_amount) {
+            if (!client_balance || client_balance < min_amount) {
                 getElementById(messages.parent).setVisibility(1);
                 if (client_currency) {
                     elementTextContent(getElementById('min_required_amount'), `${client_currency} ${min_amount}`);
@@ -156,7 +172,13 @@ const AccountTransfer = (() => {
                 }
                 getElementById(messages.deposit).setVisibility(1);
             } else {
-                BinarySocket.send({ transfer_between_accounts: 1 }).then((response_transfer) => {
+                const req_transfer_between_accounts = BinarySocket.send({ transfer_between_accounts: 1 });
+                const req_get_limits                = BinarySocket.send({ get_limits: 1 });
+
+                Promise.all([req_transfer_between_accounts, req_get_limits]).then(() => {
+                    const response_transfer = State.get(['response', 'transfer_between_accounts']);
+                    const response_limits   = State.get(['response', 'get_limits']);
+
                     if (hasError(response_transfer)) {
                         return;
                     }
@@ -165,26 +187,29 @@ const AccountTransfer = (() => {
                         showError();
                         return;
                     }
-                    BinarySocket.send({ get_limits: 1 }).then((response_limits) => {
-                        if (hasError(response_limits)) {
-                            return;
-                        }
-                        if (+response_limits.get_limits.remainder < min_amount) {
-                            getElementById(messages.limit).setVisibility(1);
-                            getElementById(messages.parent).setVisibility(1);
-                            return;
-                        }
-                        withdrawal_limit = response_limits.get_limits.remainder;
-                        getElementById('range_hint').textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${localize(+client_balance <= +withdrawal_limit ? 'Current balance' : 'Withdrawal limit')}`;
-                        populateAccounts(accounts);
-                    });
+                    if (hasError(response_limits)) {
+                        return;
+                    }
+                    withdrawal_limit = +response_limits.get_limits.remainder;
+                    if (withdrawal_limit < min_amount) {
+                        getElementById(messages.limit).setVisibility(1);
+                        getElementById(messages.parent).setVisibility(1);
+                        return;
+                    }
+                    getElementById('range_hint').textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${localize(client_balance <= withdrawal_limit ? 'Current balance' : 'Withdrawal limit')}`;
+                    populateAccounts(accounts);
                 });
             }
         });
     };
 
+    const onUnload = () => {
+        if (el_reset_transfer) el_reset_transfer.removeEventListener('click', onClickReset);
+    };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 
