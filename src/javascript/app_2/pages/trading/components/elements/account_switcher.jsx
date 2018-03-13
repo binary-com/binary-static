@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { localize } from '../../../../../_common/localize';
 
 class AccountSwitcher extends React.PureComponent {
@@ -38,24 +39,33 @@ class AccountSwitcher extends React.PureComponent {
             }
             return false;
         };
+        const switcher_active_login_class = classNames('acc-switcher-active-login', {
+            'collapsed': this.state.is_collapsed,
+        });
+        const switcher_list_class = classNames('acc-switcher-list', {
+            'collapsed': this.state.is_collapsed,
+        });
+        const switcher_account_class = (account) => classNames('acc-switcher-account', {
+            'hide': account_is_hidden(account),
+        });
 
         return (
             <div className='acc-switcher-container'>
                 <div className='acc-switcher-header' onClick={this.toggleAccountsList}>
-                    <div className={`acc-switcher-active-login ${this.state.is_collapsed ? 'collapsed' : ''}`}>
+                    <div className={switcher_active_login_class}>
                         <p className='acc-switcher-accountid'>{this.state.active_account.id}</p>
                         <p className='acc-switcher-currency'>{`${this.state.active_account.account_type} ${localize('Account')}`}</p>
                     </div>
                 </div>
                 <div
-                    className={`acc-switcher-list ${this.state.is_collapsed ? 'collapsed' : ''}`}
+                    className={switcher_list_class}
                     style={account_list_collapsed}
                 >
                     <div className='acc-switcher-items'>
                         {this.props.accounts.map((account, idx) => (
                             <React.Fragment key={idx}>
                                 <div
-                                    className={`acc-switcher-account ${account_is_hidden(account) ? 'hide' : ''}`}
+                                    className={switcher_account_class(account)}
                                     onClick={this.switchAccount.bind(null, account)}
                                 >
                                     <p className='acc-switcher-accountid'>{account.id}</p>
