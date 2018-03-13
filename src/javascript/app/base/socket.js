@@ -142,7 +142,7 @@ const BinarySocket = (() => {
         }
 
         // Fetch from state
-        if (!options.forced && msg_type) {
+        if (!options.forced && msg_type && no_duplicate_requests.indexOf(msg_type) !== -1) {
             const last_response = State.get(['response', msg_type]);
             if (last_response) {
                 promise_obj.resolve(last_response);
