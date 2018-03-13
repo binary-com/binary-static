@@ -8,13 +8,7 @@ import { localize } from '../../../../../_common/localize';
 class TradingHeader extends React.Component {
 
     render() {
-        const menu_link_is_active = (name) => {
-            const pathname = window.location.pathname;
-            if (pathname.indexOf(name.toLowerCase()) >= 0) {
-                return true;
-            }
-            return false;
-        };
+        const menu_link_is_active = (name) => (window.location.pathname.indexOf(name.toLowerCase() >= 0));
         return (
             <React.Fragment>
                 <header id={this.props.id} className='shadow'>
