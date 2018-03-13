@@ -92,7 +92,7 @@ const Process = (() => {
 
         getContracts(underlying);
 
-        commonTrading.displayTooltip(Defaults.get('market'), underlying);
+        commonTrading.displayTooltip();
     };
 
     const getContracts = (underlying) => {

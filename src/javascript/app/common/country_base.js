@@ -4,15 +4,17 @@ const getElementById         = require('../../_common/common_functions').getElem
 const Crowdin                = require('../../_common/crowdin');
 const Language               = require('../../_common/language');
 const LocalStore             = require('../../_common/storage').LocalStore;
+const State                  = require('../../_common/storage').State;
 const applyToAllElements     = require('../../_common/utility').applyToAllElements;
 
 const checkClientsCountry = () => {
     if (Crowdin.isInContext()) return;
-    BinarySocket.wait('website_status').then((response) => {
-        if (response.error) return;
-        const website_status  = response.website_status;
+    BinarySocket.wait('website_status', 'authorize').then(() => {
+        const website_status = State.getResponse('website_status');
+        if (!website_status) return;
         const clients_country = website_status.clients_country;
-        if (clients_country === 'jp') {
+        // only limitLanguage for japanese if ip address is from japan and client is logged out or logged in with jp residence
+        if (clients_country === 'jp' && (!LocalStore.get('active_loginid') || jpResidence())) {
             limitLanguage('JA');
         } else if (clients_country === 'id') {
             limitLanguage('ID');
@@ -28,8 +30,8 @@ const limitLanguage = (lang) => {
     }
     if (getElementById('select_language')) {
         $('.languages').remove();
-        $('#gmt-clock').addClass('gr-6 gr-12-m').removeClass('gr-5 gr-6-m');
-        $('#contact-us').addClass('gr-6').removeClass('gr-2');
+        $('#gmt-clock').addClass('gr-6 gr-11-m').removeClass('gr-5 gr-6-m');
+        $('#contact-us').addClass('gr-5').removeClass('gr-2');
     }
 };
 

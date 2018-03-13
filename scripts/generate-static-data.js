@@ -14,6 +14,10 @@ const texts = [
     // top bar
     'Open a Real Account',
     'Open a Financial Account',
+    'Network status',
+    'Online',
+    'Offline',
+    'Connecting to server',
 
     // account drop down
     'Virtual Account',
@@ -126,6 +130,7 @@ const texts = [
     'Long',
     'Short',
     'Chart',
+    'Portfolio',
     'Explanation',
     'Last Digit Stats',
     'Waiting for entry tick.',
@@ -184,8 +189,6 @@ const texts = [
     'Please confirm that all the information above is true and complete.',
 
     // home and virtual account opening page
-    'verification token',
-    'email address',
     'Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.',
     'The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.',
     'Password should have lower and uppercase letters with numbers.',
@@ -233,7 +236,7 @@ const texts = [
     'Scopes',
     'Never Used',
     'Delete',
-    'Are you sure that you want to permanently delete token',
+    'Are you sure that you want to permanently delete the token',
     'Please select at least one scope',
 
     // Guide
@@ -268,9 +271,6 @@ const texts = [
     'Exclude time cannot be less than 6 months.',
     'Exclude time cannot be for more than 5 years.',
     'When you click "OK" you will be excluded from trading on the site until the selected date.',
-
-    // change_password
-    'Old password is wrong.',
 
     // portfolio
     'Ref.',
@@ -359,8 +359,6 @@ const texts = [
     'This page is not available in the selected language.',
 
     // digit_info
-    'Select market',
-    'Number of ticks',
     'Percentage',
     'Digit',
 
@@ -422,6 +420,7 @@ const texts = [
     'Closed',
     'Contract has not started yet',
     'Price',
+    'Spot Time',
     'Spot Time (GMT)',
     'Current Time',
     'Exit Spot Time',
@@ -449,13 +448,12 @@ const texts = [
     // financial assessment
     'Please select a value',
 
-
     // authorised_apps
     'You have not granted access to any applications.',
     'Permissions',
     'Never',
     'Revoke access',
-    'Are you sure that you want to permanently revoke access to application',
+    'Are you sure that you want to permanently revoke access to the application',
     'Transaction performed by [_1] (App ID: [_2])',
     'Admin',
     'Read',
@@ -558,23 +556,10 @@ const texts = [
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
 
+    // TODO: remove ico messages when all ico contracts are removed
     // binaryico message
     'Bid',
     'Closed Bid',
-    'Cancel Bid',
-    'Refund Bid',
-    'Claim Tokens',
-    'Ended',
-    'Pending',
-    'The ICO is currently unavailable.',
-    'Thank you for participating in our ICO. The final price of the tokens has been set at USD X.XX per token. Investors must deposit the balance owed on each successful bid based on the final price by 8 January 2018. You can proceed to claim the tokens with no remaining balance.',
-    'Minimum bid',
-    'The auction has ended. As the minimum target was not reached, all investors will receive a refund on their active bids.',
-
-    // binaryico histogram chart
-    'Final Price',
-    'Total Bids',
-    'Price Band',
 
     // accounts
     'Create',
@@ -587,7 +572,6 @@ const texts = [
     'Create Account',
     'Accounts List',
     '[_1] Account',
-    'None',
     'Investment',
     'Gaming',
     'Virtual',
