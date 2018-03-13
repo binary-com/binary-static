@@ -54,6 +54,8 @@ class FullscreenDialog extends React.PureComponent {
                         <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
                     </div>
                 </div>
+                <div className='fullscreen-dialog__header-shadow-cover'></div>
+                <div className='fullscreen-dialog__header-shadow shadow'></div>
                 <div className='fullscreen-dialog__content'>
                     {children}
                 </div>

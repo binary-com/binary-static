@@ -1,5 +1,6 @@
 /* stylelint-disable color-no-hex */
 $animation-duration: 0.3s;
+$header-height: 3.2rem;
 
 .fullscreen-dialog {
     box-sizing: border-box;
@@ -10,7 +11,6 @@ $animation-duration: 0.3s;
     height: 100vh;
     z-index: 1;
     overflow: auto;
-    padding-top: 53px;
 
     &:after {
         content: '';
@@ -46,7 +46,24 @@ $animation-duration: 0.3s;
         position: fixed;
         top: 0;
         padding: 1rem;
-        z-index: 2;
+        height: $header-height;
+        z-index: 4;
+
+        &-shadow-cover {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: $header-height + 1rem;
+            z-index: 3;
+            background-color: #fff;
+        }
+        &-shadow {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: $header-height;
+            z-index: 2;
+        }
     }
     &__title {
         font-size: 1.3rem;
@@ -60,9 +77,10 @@ $animation-duration: 0.3s;
         right: 14px;
     }
     &__content {
-        padding: 0 1rem;
         position: relative;
         z-index: 1;
+        padding: 1rem;
+        margin-top: $header-height;
     }
 }
 /* stylelint-enable color-no-hex */
