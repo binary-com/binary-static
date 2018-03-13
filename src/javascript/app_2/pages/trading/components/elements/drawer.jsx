@@ -42,7 +42,11 @@ class ToggleDrawer extends React.PureComponent {
                 <Drawer ref={this.setRef} alignment={this.props.alignment}>
                     <DrawerHeader alignment={this.props.alignment} closeBtn={this.closeDrawer}/>
                     {this.props.children}
-                    <DrawerFooter alignment={this.props.alignment} />
+                    {this.props.has_footer ?
+                        <div className='drawer-footer' />
+                    :
+                        null
+                    }
                 </Drawer>
             </React.Fragment>
         );
@@ -198,17 +202,6 @@ const DrawerHeader = ({
         </React.Fragment>
     );
 };
-const DrawerFooter = ({
-    alignment,
-}) => (
-    <React.Fragment>
-        {alignment && alignment === 'right' ?
-        null
-        :
-        <div className='drawer-footer' />
-    }
-    </React.Fragment>
-);
 
 const MenuDrawer = () => (
     <PerfectScrollbar>

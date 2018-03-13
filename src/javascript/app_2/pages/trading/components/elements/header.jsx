@@ -20,12 +20,11 @@ class TradingHeader extends React.Component {
                 <header id={this.props.id} className='shadow'>
                     <div className='menu-items'>
                         <div className='menu-left'>
-                            <ToggleDrawer alignment='left'>
+                            <ToggleDrawer alignment='left' has_footer>
                                 <AccountSwitcher
                                     active_account={[
                                         { id: 'VRTC1234567', account_type: 'Virtual' },
                                     ]}
-                                    has_iscroll
                                 />
                                 <div className='drawer-items-container'>
                                     <MenuDrawer />
