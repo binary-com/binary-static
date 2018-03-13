@@ -1,0 +1,572 @@
+/* DO NOT include any rules for specific pages in this file. */
+/* theme elements */
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    background: repeat-x bottom;
+    overflow-x: hidden;
+
+    .ui-widget {
+        font-size: $FONT_SIZE_N;
+    }
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+sup, .sup, .sup:visited {
+    font-size: $FONT_SIZE_XS !important;
+    color: $COLOR_ORANGE;
+    vertical-align: super;
+    font-weight: normal;
+    margin-left: 2px;
+}
+
+table {
+    &.middle td {
+        vertical-align: middle;
+    }
+    &.thin-border td {
+        border-bottom: 1px solid $COLOR_GRAY;
+    }
+    td.no-border {
+        border: 0;
+    }
+}
+
+select, input, button, textarea {
+    background: $COLOR_WHITE;
+    border: 1px solid $COLOR_GRAY;
+    padding: 2px 3px;
+}
+
+select {
+    max-width: 100%;
+}
+
+button {
+    vertical-align: top;
+}
+
+button:focus, input[type='submit']:focus {
+    background: $COLOR_GREEN;
+    outline: none;
+}
+
+button::-moz-focus-inner, input[type='submit']::-moz-focus-inner {
+    border: 0;
+}
+
+a.button:hover, a.button-white:hover {
+    text-decoration: none;
+}
+
+button.full-width, .button.full-width {
+    &, span {
+        display: block;
+        width: auto;
+    }
+    .barspinner {
+        display: inline-block;
+    }
+}
+
+input, button, textarea, select, optgroup, option, xmp {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+input, textarea {
+    vertical-align: middle;
+    border-radius: $BORDER_RADIUS;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+fieldset {
+    position: relative;
+    border: 1px solid $COLOR_GRAY;
+    padding: 5px;
+    margin-bottom: 10px;
+
+    legend {
+        color: $COLOR_DARK_GRAY;
+        padding: 0 0.8em;
+        font-weight: bold;
+        text-transform: capitalize;
+
+        & + .hint {
+            padding-left: 1em;
+        }
+    }
+    .text-display { /* TODO: replace all occurrences of id with the class */
+        line-height: 25px;
+    }
+    #geocode_error {
+        margin: 5px 15px;
+    }
+}
+
+.error-msg {
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.secondary-bg-color .error-msg {
+    color: $COLOR_WHITE;
+}
+
+.white-bg-color {
+    background-color: $white;
+}
+
+textarea {
+    height: 8em;
+    width: 25em;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* form styles */
+label {
+    line-height: 25px;
+}
+
+/* used for form label in grid structure */
+.form_label {
+    @include BIDIR_VALUE(text-align, right, left);
+    line-height: 25px;
+}
+
+.form-row {
+    padding: 10px 0;
+
+    div:first-child label {
+        display: block;
+        text-align: right;
+    }
+}
+
+.form-row.two-rows {
+    div:first-child label {
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    input {
+        width: calc(100% - 6px);
+    }
+}
+
+.input {
+    width: 45%;
+}
+
+*, .no-margin, .errorfield {
+    margin: 0;
+}
+
+.errorfield {
+    margin-top: 8px;
+    color: $COLOR_RED;
+}
+
+.comment, .errorfield {
+    font-size: $FONT_SIZE_N;
+    font-style: italic;
+}
+
+/* global styles */
+.required_field_asterisk {
+    position: absolute;
+    margin: -3px 3px;
+    font-size: $FONT_SIZE_S;
+    color: $COLOR_RED;
+
+    &.no-margin {
+        position: relative;
+        margin: 0;
+    }
+}
+
+.inpage_popup_container {
+    position: fixed;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    border: solid 1px $COLOR_ORANGE;
+    background: $COLOR_LIGHT_GRAY;
+    z-index: 1000;
+    max-width: 90%;
+
+    .drag-handle {
+        cursor: pointer;
+    }
+    .inpage_popup_content {
+        margin: 30px 10px 10px;
+        padding: 0;
+    }
+    .inpage_popup_content_box {
+        padding: 0;
+        margin: 0;
+        background: $COLOR_WHITE;
+        border: solid 2px $COLOR_GRAY;
+        text-align: center;
+    }
+}
+
+/* Coche icon, AKA tick */
+#page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#content-holder {
+    flex: 1 1 auto;
+}
+
+.popup_page_overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+_:-ms-fullscreen, :root #content-holder {
+    height: 100%;
+}
+
+.color-white {
+    color: $COLOR_WHITE;
+}
+
+.color-dark-white {
+    color: $COLOR_DARK_WHITE;
+}
+
+.half-sized-picture {
+    width: 50px;
+    height: 50px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.border-light-gray {
+    border: 1px solid $COLOR_LIGHT_GRAY;
+}
+
+.border-gray {
+    border: 1px solid $COLOR_GRAY;
+}
+
+.border-dark-gray {
+    border: 1px solid $COLOR_GRAY_SHADE;
+}
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+input[type=checkbox] {
+    margin-top: -5px;
+    margin-right: 5px;
+
+    &#email_consent {
+        margin-top: 5px;
+    }
+}
+
+.no-scroll, .no-scroll body {
+    overflow: hidden;
+}
+
+.logged_out_title_container {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+button .barspinner.white {
+    height: 13px;
+    margin: 3px auto;
+}
+
+#msg_notification {
+    &, &:after {
+        font-size: $FONT_SIZE_S;
+        padding: 3px 0;
+        min-height: 20px;
+        line-height: 20px;
+        display: none;
+    }
+    &.error:after {
+        display: block;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        content: attr(data-message);
+        background: $COLOR_YELLOW;
+        color: $COLOR_RED;
+        border-bottom: 1px solid $COLOR_RED;
+    }
+}
+
+#scrollup {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background: url('../images/common/scrollup_icon.svg') no-repeat;
+    z-index: 999;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.invisible {
+    display: none !important;
+    visibility: hidden;
+}
+
+.center-align {
+    align-items: center;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.align-start {
+    @include BIDIR_VALUE (text-align, left, right);
+}
+
+.align-end {
+    @include BIDIR_VALUE (text-align, right, left);
+}
+
+.clear {
+    clear: both;
+}
+
+.sidebar-container {
+    position: relative;
+}
+
+.sidebar-collapsible-container {
+    position: relative;
+    height: 100%;
+}
+
+.sidebar {
+    @include menu-left;
+}
+
+.static_full {
+    .section:first-child {
+        padding-bottom: 50px;
+    }
+    .section:not(:first-child) {
+        padding: 20px 0 50px;
+    }
+    .section:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    .section {
+        display: block;
+        overflow: hidden;
+    }
+    .sidebar-button {
+        background: $COLOR_LIGHT_GRAY;
+        padding: 20px;
+
+        a {
+            @include link-button;
+            display: block;
+        }
+    }
+}
+
+.days_to_crack {
+    width: fit-content;
+    padding: 5px;
+    margin-top: 5px;
+
+    &.red {
+        color: $COLOR_RED;
+    }
+    &.green {
+        color: $COLOR_GREEN;
+    }
+}
+
+ul.bullet.gr-row > li {
+    display: list-item;
+}
+
+.pull-requests-content {
+    margin-bottom: 0 !important;
+}
+
+.toggle-arrow {
+    &:after {
+        content: '';
+        display: inline-block;
+        margin-left: 7px;
+        border-left: 4px dashed;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+    }
+    &.open:after {
+        border-top: 4px dashed;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        border-bottom: 0;
+    }
+}
+
+#content {
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    .light {
+        .tab-menu-wrap {
+            text-align: center;
+
+            ul.tm-ul {
+                display: inline-flex;
+
+                li.tm-li {
+                    background: none;
+                    margin: 0;
+                    padding: 0;
+                    font-size: $FONT_SIZE_XL;
+                    margin-bottom: -1px;
+                    border-bottom: 1px solid $COLOR_GRAY;
+
+                    &, a {
+                        color: $COLOR_BLUE;
+                    }
+                    > a, > span {
+                        display: block;
+                        padding: 0 20px;
+                    }
+                    &.tab-selector {
+                        height: 3px;
+                        background-color: $COLOR_BLUE;
+                        z-index: 1;
+                        position: absolute;
+                        margin-left: 0;
+                        top: 37px;
+                        border-radius: $BORDER_RADIUS;
+                        transition: margin-left 0.4s ease-in-out, width 0.2s 0.1s ease-in-out;
+                    }
+                }
+            }
+        }
+        &.full-width {
+            ul.tm-ul {
+                display: flex;
+
+                li.tm-li {
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
+
+.foot-note {
+    font-size: $FONT_SIZE_XS;
+    color: $COLOR_GRAY_SHADE;
+}
+
+.button + .button {
+    margin-left: 10px;
+}
+
+li strong.margin-right {
+    margin-right: 5px;
+}
+
+[data-show]:not(.data-show-visible) {
+    display: none !important;
+}
+
+.button-white {
+    cursor: pointer;
+    margin-bottom: 0.5em;
+
+    span {
+        @include link-button;
+        overflow: visible;
+        border: 1px solid $COLOR_GRAY;
+        color: $COLOR_BLACK;
+        background: $COLOR_WHITE;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0;
+
+        &:hover {
+            text-decoration: none;
+            background: $COLOR_GRAY;
+        }
+        &.icon-google:before {
+            margin-right: 10px;
+        }
+    }
+}
+
+.icon-google:before {
+    content: url('../images/pages/applications/icon-google.svg');
+}
+
+.section-divider {
+    .circle {
+        padding: 7px 5px !important;
+    }
+}
+
+.no-capitalize > a {
+    text-transform: none !important;
+}
+
+label + input {
+    margin-left: 5px;
+}

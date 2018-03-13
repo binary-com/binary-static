@@ -1,0 +1,114 @@
+/* GET-STARTED PAGES RULES */
+.get-started {
+    a:hover {
+        text-decoration: none;
+    }
+    .circle-wrapper {
+        display: flex;
+
+        .orange-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $COLOR_ORANGE;
+            margin-left: -30px;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: $COLOR_WHITE;
+
+            @media screen and (max-width: 480px) {
+                margin-left: 0;
+            }
+        }
+    }
+    .notice-circle {
+        width: 16px;
+        height: 16px;
+        border: 2px solid $COLOR_RED;
+        border-radius: 50%;
+        color: $COLOR_RED;
+        line-height: 16px;
+        font-size: 14px;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+.get-started-jp {
+    .section {
+        min-height: 224px;
+        height: calc(100% - 20px);
+        margin: 0 10px 20px;
+
+        a {
+            display: block;
+            color: $COLOR_WHITE;
+            background: $COLOR_BLACK;
+            text-decoration: none;
+
+            &:hover .section-header {
+                background: $COLOR_DARK_GREEN;
+            }
+        }
+        .section-header {
+            padding: 10px;
+            font-weight: normal;
+        }
+        .section-info {
+            font-size: $FONT_SIZE_N;
+        }
+    }
+    .link-size-box {
+        display: table-cell;
+        vertical-align: middle;
+        height: 36px;
+        min-width: 198px;
+        padding: 10px;
+    }
+    .section-header {
+        min-height: 75px;
+    }
+    .section-jp {
+        min-height: 0;
+        background-color: $COLOR_BLACK;
+    }
+    /* stylelint-disable selector-list-comma-newline-after, selector-list-comma-space-after */
+    #how-to-open-an-account-img, #options-basic-knowledge-img, #summary-of-specifications-img,
+    #identification-documents-img, #trading-guide-img, #pre-contract-documents-img {
+        height: 80px;
+        background: no-repeat center;
+        background-size: cover;
+    }
+    /* stylelint-enable selector-list-comma-newline-after, selector-list-comma-space-after */
+    #how-to-open-an-account-img {
+        background-image: url('../images/pages/get-started-jp/open_acc.svg');
+    }
+    #options-basic-knowledge-img {
+        background-image: url('../images/pages/get-started-jp/knowledge.svg');
+    }
+    #summary-of-specifications-img {
+        background-image: url('../images/pages/get-started-jp/summary.svg');
+    }
+    #identification-documents-img {
+        background-image: url('../images/pages/get-started-jp/id.svg');
+    }
+    #trading-guide-img {
+        background-image: url('../images/pages/get-started-jp/guide.svg');
+    }
+    #pre-contract-documents-img {
+        background-image: url('../images/pages/get-started-jp/contract.svg');
+    }
+}
+
+.formula span {
+    display: inline-block;
+    padding: 10px 20px;
+    min-width: 60%;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background: $COLOR_LIGHT_GRAY;
+    color: $COLOR_BLUE_SHADE;
+}
