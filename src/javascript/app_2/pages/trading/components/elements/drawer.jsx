@@ -1,9 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import LanguageSwitcher from './language_switcher.jsx';
 import Url from '../../../../../_common/url';
-import { localize } from '../../../../../_common/localize';
 
 class ToggleDrawer extends React.PureComponent {
     constructor(props) {
@@ -217,52 +214,9 @@ const DrawerHeader = ({
     );
 };
 
-const MenuDrawer = () => (
-    <div className='drawer-items-container'>
-        <PerfectScrollbar>
-            <div className='list-items-container'>
-                <DrawerItems
-                    text={localize('Account Settings')}
-                    items={[
-                        { text: localize('Personal Detail') },
-                        { text: localize('Account Authentication') },
-                        { text: localize('Financial Assessment') },
-                        { text: localize('Professional Trader') },
-                    ]}
-                />
-                <DrawerItems
-                    text={localize('Security Settings')}
-                    items={[
-                        { text: localize('Self Exclusion') },
-                        { text: localize('Trading Limits') },
-                        { text: localize('Authorised Applications') },
-                        { text: localize('API Token') },
-                    ]}
-                />
-                <DrawerItems
-                    text={localize('Trading History')}
-                    items={[
-                        { text: localize('Portfolio') },
-                        { text: localize('Profit Table') },
-                        { text: localize('Statement') },
-                    ]}
-                />
-                <DrawerItem text={localize('Cashier')} />
-                <hr />
-                <DrawerItem text={localize('Manage Password')} />
-                <DrawerItem text={localize('Useful Resources')}/>
-                <DrawerItem text={localize('Login History')}/>
-                <hr />
-                <LanguageSwitcher />
-            </div>
-        </PerfectScrollbar>
-    </div>
-);
-
 module.exports = {
     Drawer,
     DrawerItem,
     DrawerItems,
-    MenuDrawer,
     ToggleDrawer,
 };

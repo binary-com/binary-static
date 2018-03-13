@@ -1,9 +1,53 @@
 import React from 'react';
-import { ToggleDrawer, MenuDrawer, DrawerItem } from './drawer.jsx';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { ToggleDrawer, DrawerItems, DrawerItem } from './drawer.jsx';
+import LanguageSwitcher from './language_switcher.jsx';
 import AccountSwitcher from './account_switcher.jsx';
 import Button from '../form/button.jsx';
-import Url from '../../../../../_common/url';
 import { localize } from '../../../../../_common/localize';
+import Url from '../../../../../_common/url';
+
+const MenuDrawer = () => (
+    <div className='drawer-items-container'>
+        <PerfectScrollbar>
+            <div className='list-items-container'>
+                <DrawerItems
+                    text={localize('Account Settings')}
+                    items={[
+                        { text: localize('Personal Detail') },
+                        { text: localize('Account Authentication') },
+                        { text: localize('Financial Assessment') },
+                        { text: localize('Professional Trader') },
+                    ]}
+                />
+                <DrawerItems
+                    text={localize('Security Settings')}
+                    items={[
+                        { text: localize('Self Exclusion') },
+                        { text: localize('Trading Limits') },
+                        { text: localize('Authorised Applications') },
+                        { text: localize('API Token') },
+                    ]}
+                />
+                <DrawerItems
+                    text={localize('Trading History')}
+                    items={[
+                        { text: localize('Portfolio') },
+                        { text: localize('Profit Table') },
+                        { text: localize('Statement') },
+                    ]}
+                />
+                <DrawerItem text={localize('Cashier')} />
+                <hr />
+                <DrawerItem text={localize('Manage Password')} />
+                <DrawerItem text={localize('Useful Resources')}/>
+                <DrawerItem text={localize('Login History')}/>
+                <hr />
+                <LanguageSwitcher />
+            </div>
+        </PerfectScrollbar>
+    </div>
+);
 
 class TradingHeader extends React.Component {
 
