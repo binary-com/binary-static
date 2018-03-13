@@ -9,38 +9,52 @@ Check below for the rules that are not caught by ESLint but should be followed.
 
 ### Naming Conventions
 
-Variables should be lowercase words separated by `_`.
+<a id="naming-conventions-variables"></a>
+**[Variables:](#naming-conventions-variables)** Variables should be lowercase words separated by `_`.
+    
 ```js
 const field_name = '...';
 ```
 
-Functions should be camelCase. This is to easily distinguish between variables and functions.
+<a id="naming-conventions-functions"></a>
+**[Functions:](#naming-conventions-functions)** Functions should be camelCase. This is to easily distinguish between variables and functions.
+    
 ```js
 const myFunction = () => { ... };
 ```
 
-Module names and classes should be PascalCase.
+<a id="naming-conventions-modules"></a>
+**[Modules:](#naming-conventions-modules)** Module names and classes should be PascalCase.
+    
 ```js
 const MyModule = (() => { ... })();
 ```
 
-jQuery variables should have a `$` in the beginning to mark them.
+<a id="naming-conventions-jquery-variables"></a>
+**[jQuery variables:](#naming-conventions-jquery-variables)** jQuery variables should have a `$` in the beginning to mark them.
+    
 ```js
 const $test = $('#test');
 ```
 
-JavaScript elements start with `el_` for a similar effect.
+<a id="naming-conventions-javascript-elements"></a>
+**[JavaScript elements:](#naming-conventions-javascript-elements)** JavaScript elements start with `el_` for a similar effect.
+    
 ```js
 const el_test = document.getElementById('test');
 ``` 
 
-Those variables which store a boolean value, should start with `is_`, `has_`, ...
+<a id="naming-conventions-boolean"></a>
+**[Boolean:](#naming-conventions-boolean)** Those variables which store a boolean value, should start with `is_`, `has_`, ...
+
 ```js
 const is_updated = true;
 const has_crypto = false;
 ```
 
-Consider prefixes for form elements to make it more obvious what type of field they are, such as:
+<a id="naming-conventions-form-elements"></a>
+**[Form elements:](#naming-conventions-form-elements)** Consider prefixes for form elements to make it more obvious what type of field they are, such as:
+
 ```js
 const fields = {
     txt_name  : { id: '#txt_name' },
@@ -53,21 +67,36 @@ const fields = {
 
 ### Commenting
 
-- Feel free to add comments to explain code that is confusing, but also logic that is hardcoded in front-end and should move to API.
+<a id="commenting-explanations"></a>
+**[Explanations:](#commenting-explanations)** Feel free to add comments to explain any code that is confusing.
 
-- Use `TODO: ...` comments everywhere that needs consideration or attention in the future.
+<a id="commenting-todo"></a>
+**[To do:](#commenting-todo)** Use `TODO: ...` comments anywhere that needs consideration or attention in the future.
 
-- For changes that can be done in API V3, use the comment `// API_V3: [description of what needs to be moved to API]`
+<a id="commenting-api-requests"></a>
+**[API requests:](#commenting-api-requests)** Comments should be added to highlight logic that is hardcoded in the front-end and should move to API:
 
-- For changes that should be done in API V4, use the comment `// API_V4: [description of what needs to be moved to API]`
+- For changes that can be done in API V3, use the comment 
+    
+    ```js
+    // API_V3: [description of what needs to be moved to API]
+    ```
+
+- For changes that should be done in API V4, use the comment 
+
+    ```js
+    // API_V4: [description of what needs to be moved to API]
+    ```
 
 ---
 
 ### Import Rules
 
-Use `require` instead of `import` to stay consistent with the current codebase. We could change it to `import` when switching to React.
+<a id="import-rules-require"></a>
+**[Require:](#import-rules-require)** Use `require` instead of `import` to stay consistent with the current codebase. We could change it to `import` when switching to React.
 
-Assignments are generally aligned by `=` for readability purposes.
+<a id="import-rules-align-by-equal"></a>
+**[Align by equal:](#import-rules-align-by-equal)** Assignments are generally aligned by `=` for readability purposes.
 
 ```js
 const moment             = require('moment');                       // moment is an npm package
@@ -78,13 +107,16 @@ require('../../_common/lib/polyfills/array.includes');              // polyfill 
 require('../../_common/lib/polyfills/string.includes');             // polyfill from lib folder
 ```
 
-The order is important; it should be sorted alphabetically according to path: 
+<a id="import-rules-alphabetical-ordering"></a>
+**[Alphabetical ordering:](#import-rules-alphabetical-ordering)** The order is important; it should be sorted alphabetically according to path: 
+    
 - `moment` comes first as it's not a relative path.
 - `s` is before `u` so `./storage` comes before `./utility`.
 - Both `applyToAllElements` and `createElement` are from the same file, but `a` is before `c`
 - Unassigned `require` goes to the end 
 
-When there are many functions being imported from the same file, consider combining it into one import line.
+<a id="import-rules-combining-require"></a>
+**[Combining require:](#import-rules-combining-require)** When there are many functions being imported from the same file, consider combining it into one import line.
 
 ```js
 const Utility = require('./utility');
