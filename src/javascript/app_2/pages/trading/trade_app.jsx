@@ -14,8 +14,8 @@ import PortfolioDrawer from './components/elements/portfolio_drawer.jsx';
 
 class TradeApp extends React.Component {
     isVisible(component_name) {
-        if (['duration', 'amount'].includes(component_name)) return true;
-        return this.props.form_components.indexOf(component_name) >= 0;
+        const { form_components } = this.props;
+        return ['duration', 'amount', ...form_components].includes(component_name);
     }
 
     renderParamPickers() {
