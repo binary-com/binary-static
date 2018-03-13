@@ -74,10 +74,10 @@ const Url = (() => {
 
     /**
      * @param {Object} new_params - Object with param-value pairs. To delete param, set value to null.
-     * @param {boolean} preserve_old - Should existing query parameters be preserved.
+     * @param {boolean} should_preserve_old - Should existing query parameters be preserved.
      */
-    const updateParamsWithoutReload = (new_params, preserve_old) => {
-        const updated_params = preserve_old
+    const updateParamsWithoutReload = (new_params, should_preserve_old) => {
+        const updated_params = should_preserve_old
             ? $.extend(paramsHash(), new_params)
             : new_params;
         Object.keys(new_params).forEach(key => {
