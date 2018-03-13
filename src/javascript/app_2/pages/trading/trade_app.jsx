@@ -50,6 +50,9 @@ class TradeApp extends React.Component {
                 <div className='mobile-only'>
                     <MobileWidget>
                         {this.renderParamPickers()}
+                        <input type='date' />
+                        <input type='time' />
+                        {this.renderParamPickers()}
                     </MobileWidget>
                 </div>
 
