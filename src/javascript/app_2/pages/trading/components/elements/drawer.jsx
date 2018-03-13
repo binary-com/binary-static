@@ -39,14 +39,12 @@ class ToggleDrawer extends React.PureComponent {
                         <img src={Url.urlForStatic('images/trading_app/header/menu.svg')} />
                     }
                 </div>
-                <Drawer ref={this.setRef} alignment={this.props.alignment}>
-                    <DrawerHeader alignment={this.props.alignment} closeBtn={this.closeDrawer}/>
+                <Drawer
+                    ref={this.setRef}
+                    alignment={this.props.alignment}
+                    closeBtn={this.closeDrawer}
+                >
                     {this.props.children}
-                    {this.props.has_footer ?
-                        <div className='drawer-footer' />
-                    :
-                        null
-                    }
                 </Drawer>
             </React.Fragment>
         );
@@ -113,7 +111,16 @@ class Drawer extends React.PureComponent {
                         className={drawer_class}
                         style={visibility}
                     >
+                        <DrawerHeader
+                            alignment={this.props.alignment}
+                            closeBtn={this.props.closeBtn}
+                        />
                         {this.props.children}
+                        {this.props.has_footer ?
+                            <div className='drawer-footer' />
+                        :
+                            null
+                        }
                     </div>
                 </div>
             </aside>
@@ -211,43 +218,45 @@ const DrawerHeader = ({
 };
 
 const MenuDrawer = () => (
-    <PerfectScrollbar>
-        <div className='list-items-container'>
-            <DrawerItems
-                text={localize('Account Settings')}
-                items={[
-                    { text: localize('Personal Detail') },
-                    { text: localize('Account Authentication') },
-                    { text: localize('Financial Assessment') },
-                    { text: localize('Professional Trader') },
-                ]}
-            />
-            <DrawerItems
-                text={localize('Security Settings')}
-                items={[
-                    { text: localize('Self Exclusion') },
-                    { text: localize('Trading Limits') },
-                    { text: localize('Authorised Applications') },
-                    { text: localize('API Token') },
-                ]}
-            />
-            <DrawerItems
-                text={localize('Trading History')}
-                items={[
-                    { text: localize('Portfolio') },
-                    { text: localize('Profit Table') },
-                    { text: localize('Statement') },
-                ]}
-            />
-            <DrawerItem text={localize('Cashier')} />
-            <hr />
-            <DrawerItem text={localize('Manage Password')} />
-            <DrawerItem text={localize('Useful Resources')}/>
-            <DrawerItem text={localize('Login History')}/>
-            <hr />
-            <LanguageSwitcher />
-        </div>
-    </PerfectScrollbar>
+    <div className='drawer-items-container'>
+        <PerfectScrollbar>
+            <div className='list-items-container'>
+                <DrawerItems
+                    text={localize('Account Settings')}
+                    items={[
+                        { text: localize('Personal Detail') },
+                        { text: localize('Account Authentication') },
+                        { text: localize('Financial Assessment') },
+                        { text: localize('Professional Trader') },
+                    ]}
+                />
+                <DrawerItems
+                    text={localize('Security Settings')}
+                    items={[
+                        { text: localize('Self Exclusion') },
+                        { text: localize('Trading Limits') },
+                        { text: localize('Authorised Applications') },
+                        { text: localize('API Token') },
+                    ]}
+                />
+                <DrawerItems
+                    text={localize('Trading History')}
+                    items={[
+                        { text: localize('Portfolio') },
+                        { text: localize('Profit Table') },
+                        { text: localize('Statement') },
+                    ]}
+                />
+                <DrawerItem text={localize('Cashier')} />
+                <hr />
+                <DrawerItem text={localize('Manage Password')} />
+                <DrawerItem text={localize('Useful Resources')}/>
+                <DrawerItem text={localize('Login History')}/>
+                <hr />
+                <LanguageSwitcher />
+            </div>
+        </PerfectScrollbar>
+    </div>
 );
 
 module.exports = {

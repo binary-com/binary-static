@@ -26,9 +26,7 @@ class TradingHeader extends React.Component {
                                         { id: 'VRTC1234567', account_type: 'Virtual' },
                                     ]}
                                 />
-                                <div className='drawer-items-container'>
-                                    <MenuDrawer />
-                                </div>
+                                <MenuDrawer />
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>
                                 <img className='logo-img' src={Url.urlForStatic('images/trading_app/header/symbol.svg')} alt='Binary.com' />
