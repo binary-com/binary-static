@@ -166,7 +166,7 @@ const BinaryOptions = () => {
                             <Step header={it.L('Make your trade')}      text={it.L('Buy the contract or re-define your position.')} />
                         </div>
 
-                        <HeaderSecondary header={it.L('Step 1: Define your position')} />
+                        <h3 className='secondary-color'>{it.L('Step 1: Define your position')}</h3>
                         <p>{it.L('The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:')}</p>
                         <div className='gr-padding-30'>
                             <img className='responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/define-position.svg')} />
