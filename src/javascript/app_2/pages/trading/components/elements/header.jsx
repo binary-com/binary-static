@@ -83,7 +83,10 @@ const AccountBalance = ({
         <div className='acc-balance-container'>
             <div className='acc-balance'>
                 <p className='acc-balance-accountid'>{active_loginid || null}</p>
-                <p className='acc-balance-amount'><i><span className={`symbols ${currency}`} /></i>{balance || null}</p>
+                <p className='acc-balance-amount'>
+                    <i><span className={`symbols ${currency}`} /></i>
+                    {balance || null}
+                </p>
             </div>
             <Button
                 id='acc-balance-btn'
@@ -96,6 +99,7 @@ const AccountBalance = ({
     );
 };
 
+// TO-DO: Remove defaultProps
 TradingHeader.defaultProps = {
     active_loginid : localStorage.getItem('active_loginid') || 'VRTC1234567',
     client_accounts: JSON.parse(localStorage.getItem('client.accounts')) || {'VRTC1234567': {'currency': 'AUD','is_disabled': 0,'is_virtual': 1,'balance': '10000.00'}},

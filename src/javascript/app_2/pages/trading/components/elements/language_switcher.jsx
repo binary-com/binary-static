@@ -65,6 +65,7 @@ class LanguageSwitcher extends React.PureComponent {
     }
 }
 
+// TO-DO: Remove defaultProps
 LanguageSwitcher.defaultProps = {
     languages: [
       { id: 'EN',    name: 'English' },

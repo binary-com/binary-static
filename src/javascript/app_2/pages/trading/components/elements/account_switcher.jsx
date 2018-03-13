@@ -80,6 +80,8 @@ class AccountSwitcher extends React.PureComponent {
     }
 }
 
+
+// TO-DO: Remove defaultProps and parse accounts from websockets/localstorage
 AccountSwitcher.defaultProps = {
     accounts: [
       { id: 'VRTC1234567', account_type: 'Virtual' },
