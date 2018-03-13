@@ -40,7 +40,8 @@ class TradingHeader extends React.Component {
                                         <a
                                             className={`${menu_link_is_active(item.text) ? 'active': ''}`}
                                             key={idx}
-                                            href={item.href || 'javascript:;'} >
+                                            href={item.href || 'javascript:;'}
+                                        >
                                             <span className={item.icon}>{item.text}</span>
                                         </a>
                                     ))}
@@ -64,7 +65,7 @@ class TradingHeader extends React.Component {
                         </ToggleDrawer>
                     </div>
                 </header>
-          </React.Fragment>
+            </React.Fragment>
         );
     }
 }

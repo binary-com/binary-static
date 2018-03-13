@@ -1,5 +1,4 @@
 const tabListener = require('binary-style').tabListener;
-const GetStarted  = require('./get_started');
 const Scroll      = require('../../_common/scroll');
 const handleHash  = require('../../_common/utility').handleHash;
 const BinaryPjax  = require('../../app/base/binary_pjax');
@@ -12,10 +11,6 @@ module.exports = {
     },
     Careers: {
         onLoad: () => { tabListener(); handleHash(); $('.has-tabs').tabs(); },
-    },
-    VolidxMarkets: {
-        onLoad  : () => { Scroll.goToHashSection(); GetStarted.onLoad(); },
-        onUnload: () => { Scroll.offScroll(); },
     },
     OpenSourceProjects: {
         onLoad  : () => { Scroll.sidebarScroll($('.open-source-projects')); },

@@ -4,6 +4,7 @@ const getElementById         = require('../../_common/common_functions').getElem
 const Crowdin                = require('../../_common/crowdin');
 const Language               = require('../../_common/language');
 const LocalStore             = require('../../_common/storage').LocalStore;
+const applyToAllElements     = require('../../_common/utility').applyToAllElements;
 
 const checkClientsCountry = () => {
     if (Crowdin.isInContext()) return;
@@ -27,8 +28,8 @@ const limitLanguage = (lang) => {
     }
     if (getElementById('select_language')) {
         $('.languages').remove();
-        $('#gmt-clock').addClass('gr-6 gr-12-m').removeClass('gr-5 gr-6-m');
-        $('#contact-us').addClass('gr-6').removeClass('gr-2');
+        $('#gmt-clock').addClass('gr-6 gr-11-m').removeClass('gr-5 gr-6-m');
+        $('#contact-us').addClass('gr-5').removeClass('gr-2');
     }
 };
 
@@ -47,7 +48,11 @@ const checkLanguage = () => {
     }
     if (jpClient()) {
         $('.ja-hide').setVisibility(0);
-        $('.ja-show').setVisibility(1);
+        applyToAllElements('.ja-show', (el) => {
+            if (!/client_logged_(in|out)/.test(el.classList)) {
+                el.setVisibility(1);
+            }
+        });
         if (!jpResidence()) {
             $('#topMenuCashier').hide();
         }

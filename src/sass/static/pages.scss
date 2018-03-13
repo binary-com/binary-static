@@ -93,9 +93,6 @@
     #local_bank_transfer {
         background-position: -90px -9px;
     }
-    #western_union {
-        background-position: -174px -9px;
-    }
     #visa {
         background-position: -338px -10px;
     }
@@ -242,62 +239,6 @@ body #not_authenticated_financial ul.checked > li {
     list-style: none;
 }
 
-.ico-subscribe-content {
-    .border-radius {
-        border-radius: $BORDER_RADIUS;
-    }
-    .margin-top {
-        margin-top: 4px;
-    }
-    .no-padding {
-        padding: 0;
-    }
-    #frm_ico_bid {
-        input {
-            padding: 2px 3px;
-        }
-        button, input {
-            width: 100%;
-        }
-        .inactive {
-            color: $COLOR_GRAY;
-            background: $COLOR_LIGHT_GRAY;
-
-            &:hover {
-                cursor: auto;
-            }
-        }
-        .error-msg {
-            padding-top: 5px;
-        }
-        #minimum_bid {
-            padding-top: 5px;
-            font-size: $FONT_SIZE_S;
-        }
-        .deposit {
-            font-size: $FONT_SIZE_XXS;
-        }
-    }
-    .timer {
-        .text {
-            font-size: $FONT_SIZE_XS;
-            font-weight: bold;
-        }
-    }
-    #portfolio th.details {
-        width: auto;
-    }
-    #cancel_bid_confirmation {
-        left: 0;
-        top: 0;
-    }
-    .faded {
-        ol {
-            margin: 0 15px;
-        }
-    }
-}
-
 .liquidity-solutions-content {
     .box {
         border: 1px solid $COLOR_GRAY_SHADE;
@@ -309,19 +250,6 @@ body #not_authenticated_financial ul.checked > li {
     }
     .white-bg {
         background-color: $COLOR_WHITE;
-    }
-}
-
-.omnibus-content {
-    .box {
-        min-height: 156px;
-
-        img {
-            height: 48px;
-        }
-    }
-    .steps img {
-        height: 43px;
     }
 }
 
@@ -368,16 +296,9 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .platforms-content {
-    #binary-content img.responsive {
+    img.responsive {
         max-height: 150px;
-    }
-    #mt5-content {
-        .enhanced img.responsive, img.step {
-            max-height: 128px;
-        }
-        img.step-arrow {
-            max-height: 24px;
-        }
+        width: auto;
     }
 }
 

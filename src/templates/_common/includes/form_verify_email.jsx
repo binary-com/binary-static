@@ -23,7 +23,7 @@ const FormVerifyEmail = ({
                             {text}
                         </button>
                     </div>
-                    <span className='gr-12 gr-padding-10 error-msg hint color-white center-text invisible' id='signup_error'></span>
+                    <span className='gr-12 gr-padding-10 error-msg hint color-white center-text invisible' id='signup_error' />
                 </div>
                 {children}
             </div>

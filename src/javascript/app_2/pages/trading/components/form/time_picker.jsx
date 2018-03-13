@@ -159,7 +159,7 @@ class TimePickerDropdown extends PureComponent {
                     <span
                         className={`${preClass}-clear`}
                         onClick={this.clear}
-                    ></span>
+                    />
                 </div>
                 <div
                     ref={this.saveHourRef}
@@ -171,7 +171,9 @@ class TimePickerDropdown extends PureComponent {
                                 className={`list-item${this.state.hour === h ? ' selected' : ''}`}
                                 key={key}
                                 onClick={this.selectHour.bind(null, h)}
-                            >{h}</div>
+                            >
+                                {h}
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -185,7 +187,9 @@ class TimePickerDropdown extends PureComponent {
                                 className={`list-item${this.state.minute === mm ? ' selected' : ''}`}
                                 key={key}
                                 onClick={this.selectMinute.bind(null, mm)}
-                            >{mm}</div>
+                            >
+                                {mm}
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -199,7 +203,9 @@ class TimePickerDropdown extends PureComponent {
                                 className={`list-item${this.state.meridiem === a ? ' selected' : ''}`}
                                 key={key}
                                 onClick={this.selectMeridiem.bind(null, a)}
-                            >{a}</div>
+                            >
+                                {a}
+                            </div>
                         ))}
                     </div>
                 </div>

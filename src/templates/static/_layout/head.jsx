@@ -22,7 +22,7 @@ const Head = () => (
         <Title />
 
         <link rel='manifest' href={`${it.root_url}manifest.json`} />
-        <script type='text/javascript' src='//cdn.pushwoosh.com/webpush/v3/pushwoosh-web-notifications.js' async></script>
+        <script type='text/javascript' src={`${it.root_url}pushwoosh-web-notifications.js`} async />
 
         <Favicons />
 
@@ -41,7 +41,7 @@ const Head = () => (
             <link key={inx} rel='stylesheet' href={css_file} />
         ))}
         { it.js_files.map((js_file, inx) => (
-            <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())}></script>
+            <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())} />
         ))}
     </head>
 );

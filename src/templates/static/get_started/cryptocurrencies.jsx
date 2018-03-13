@@ -1,28 +1,27 @@
 import React from 'react';
 import { List, Table } from '../../_common/components/elements.jsx';
-import { BuySellCurrency, Section, HeaderSecondary, Box, NavButtons } from './common.jsx';
+import { BuySellCurrency, Section, HeaderSecondary, NavButtons, MtBox } from './common.jsx';
 
 const hundredth = '0.01';
-const tenth     = '0.1';
+const tenth     = '0.10';
 const one       = '1';
-const ten       = '10';
-const thousand  = '1,000';
-
-const ten_percent         = '10%';
-const thirty_tree_percent = '33%';
+const hundred   = '100';
 
 const Cryptocurrencies = () => (
-    <div className='static_full get-started-beta'>
+    <div className='static_full get-started'>
         <h1>{it.L('MetaTrader 5')}</h1>
         <div className='gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>
                 <div className='sidebar'>
-                    <List id='sidebar-nav' items={[
-                        { id: 'what-crypto-trading',      href: '#what-crypto-trading',      text: it.L('What is cryptocurrency trading') },
-                        { id: 'how-trade-crypto',         href: '#how-trade-crypto',         text: it.L('How to trade cryptocurrencies') },
-                        { id: 'margin-policy',            href: '#margin-policy',            text: it.L('Margin policy') },
-                        { id: 'contract-specification',   href: '#contract-specification',   text: it.L('Contract specifications') },
-                    ]} />
+                    <List
+                        id='sidebar-nav'
+                        items={[
+                            { id: 'what-crypto-trading',      href: '#what-crypto-trading',      text: it.L('What is cryptocurrency trading') },
+                            { id: 'how-trade-crypto',         href: '#how-trade-crypto',         text: it.L('How to trade cryptocurrencies') },
+                            { id: 'margin-policy',            href: '#margin-policy',            text: it.L('Cryptocurrency margin policy') },
+                            { id: 'contract-specification',   href: '#contract-specification',   text: it.L('Cryptocurrency contract specifications') },
+                        ]}
+                    />
                 </div>
             </div>
             <div className='gr-9 gr-12-m'>
@@ -44,20 +43,19 @@ const Cryptocurrencies = () => (
                     <BuySellCurrency currency_one={it.L('BTC')} currency_two={it.L('USD')} />
                     <p>{it.L('In a nutshell, when you go long on the BTC/USD with Binary.com, you are not purchasing bitcoin directly. Instead, you\'re taking a position that the BTC/USD will rise in value whereby you will make a profit. If you go long on the BTC/USD and its value falls, then you will make a loss.')}</p>
                 </Section>
-                <Section id='margin-policy' header={it.L('Margin policy')}>
+                <Section id='margin-policy' header={it.L('Cryptocurrency margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – meaning your existing capital can give you a much higher level of market exposure.')}</p>
                     <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset that\'s trading at USD 50 per unit through a traditional broker, it would typically cost you USD 5,000 for this transaction.')}</p>
                     <p>{it.L('However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the margin for our cryptocurrency pairs by using the formula below:')}</p>
-                    <Box text={`${it.L('Price')} x ${it.L('volume (units)')} x ${it.L('margin rate (%)')} = ${it.L('Margin')}`} />
-                    <p>{it.L('For example, if you wanted to buy one volume of the BTC/EUR cryptocurrency pair at a price of USD 4831.400 and at a margin rate of 10%, the margin that you need to purchase one lof of BTC/EUR will be calculated as follows:')}</p>
-                    <Box text={`4831.400 x 1 x 10% = ${it.L('USD')} 483.14`} />
-    
+
+                    <MtBox icon_1='mr1-icon' icon_2='crypto-icon' text={it.L('For example, if you wanted to buy one volume of the BTC/EUR cryptocurrency pair at a price of USD 4831.400 and at a margin rate of 10%, the margin that you need to purchase one lof of BTC/EUR will be calculated as follows:')} />
+
                     <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
                     <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>
-    
+
                     <HeaderSecondary header={it.L('What\'s a stop out level and how is it applied')} />
                     <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as "forced liquidation").')}</p>
                     <p>{it.L('When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:')}</p>
@@ -68,31 +66,34 @@ const Cryptocurrencies = () => (
                         <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
                     </ol>
                 </Section>
-                <Section id='contract-specification' header={it.L('Contract specifications')}>
-                    <Table scroll data={{
-                        thead: [[
-                            { text: it.L('Symbol'),         className: 'gr-padding-10' },
-                            { text: it.L('Description'),    className: 'gr-padding-10' },
-                            { text: it.L('Minimum volume'), className: 'gr-padding-10' },
-                            { text: it.L('Volume step'),    className: 'gr-padding-10' },
-                            { text: it.L('Maximum volume'), className: 'gr-padding-10' },
-                            { text: it.L('Margin rate'),    className: 'gr-padding-10' },
-                            { text: it.L('Spread'),         className: 'gr-padding-10' },
-                        ]],
-                        tbody: [
-                            [{ text: 'BTC/EUR' }, { text: it.L('Bitcoin vs Euro')       }, { text: hundredth }, { text: hundredth }, { text: ten      }, { text: ten_percent         }, { text: it.L('Variable') }],
-                            [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US dollar')  }, { text: hundredth }, { text: hundredth }, { text: ten      }, { text: ten_percent         }, { text: it.L('Variable') }],
-                            [{ text: 'ETH/EUR' }, { text: it.L('Ethereum vs Euro')      }, { text: tenth     }, { text: hundredth }, { text: thousand }, { text: thirty_tree_percent }, { text: it.L('Variable') }],
-                            [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US dollar') }, { text: tenth     }, { text: hundredth }, { text: thousand }, { text: thirty_tree_percent }, { text: it.L('Variable') }],
-                            [{ text: 'LTC/EUR' }, { text: it.L('Litecoin vs Euro')      }, { text: one       }, { text: hundredth }, { text: thousand }, { text: thirty_tree_percent }, { text: it.L('Variable') }],
-                            [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US dollar') }, { text: one       }, { text: hundredth }, { text: thousand }, { text: thirty_tree_percent }, { text: it.L('Variable') }],
-                        ],
-                    }} />
+                <Section id='contract-specification' header={it.L('Cryptocurrency contract specifications')}>
+                    <Table
+                        scroll
+                        data={{
+                            thead: [[
+                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Description'),    className: 'gr-padding-10' },
+                                { text: it.L('Lot size'),       className: 'gr-padding-10 w-80' },
+                                { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                                { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
+                            ]],
+                            tbody: [
+                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US Dollar')          }, { text: one }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US Dollar')         }, { text: one }, { text: tenth     }, { text: hundredth }],
+                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US Dollar')         }, { text: one }, { text: tenth     }, { text: hundredth }],
+                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US Dollar')     }, { text: one }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'ETC/USD' }, { text: it.L('Ethereum Classic vs US Dollar') }, { text: one }, { text: one       }, { text: one       }],
+                                [{ text: 'ZEC/USD' }, { text: it.L('Zcash vs US Dollar')            }, { text: one }, { text: one       }, { text: one       }],
+                                [{ text: 'XMR/USD' }, { text: it.L('Monero vs US Dollar')           }, { text: one }, { text: one       }, { text: one       }],
+                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US Dollar')           }, { text: one }, { text: hundred   }, { text: hundred   }],
+                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US Dollar')             }, { text: one }, { text: one       }, { text: one       }],
+                            ],
+                        }}
+                    />
 
                     <HeaderSecondary header={it.L('How to read the contract specifications table')} />
                     <p>{it.L('Each time you open a position on a cryptocurrency pair, you can start with a minimum volume as indicated in the table above.')}</p>
-                    <p>{it.L('Margin rate indicates how much capital you can control based on your initial deposit. For example, a 10%  margin rate  will allow you to control up to USD 100,000 using only USD 10,000 of your own money as deposit. This rate requires 10% of the asset\'s value as margin.')}</p>
-                    <p>{it.L('To learn more, read our Margin Policy that further explains our margin requirements. Please note that we do not charge swap rates for our cryptocurrency pairs.')}</p>
+                    <p>{it.L('To learn more, read our [_1]Margin Policy[_2] that further explains our margin requirements.', '<a href="#margin-policy">', '</a>')}</p>
                 </Section>
                 <NavButtons parent='mt5' section='cryptocurrencies' />
             </div>

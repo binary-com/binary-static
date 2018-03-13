@@ -2,7 +2,7 @@
 /* stylelint-disable color-no-hex */
 @supports (display: grid) {
     /* trade-app layout */
-    #trade_app {
+    #trade_container {
         position: relative;
         margin: 80px 15px 0;
         display: grid;
@@ -81,7 +81,7 @@
 
 /* flexbox fallback is if the browser does not support display:grid */
 @supports not (display: grid) {
-    #trade_app {
+    #trade_container {
         display: flex;
         flex-flow: row wrap;
         padding: 20px;

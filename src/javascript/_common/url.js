@@ -74,6 +74,12 @@ const Url = (() => {
 
     const getSection = (url = window.location.href) => (url.match(new RegExp(`/${urlLang()}/(.*)/`, 'i')) || [])[1];
 
+    const getHashValue = (name) => {
+        const hash  = (location_url || window.location).hash;
+        const value = hash.split('=');
+        return new RegExp(name).test(hash) && value.length > 1 ? value[1] : '';
+    };
+
     return {
         init,
         reset,
@@ -83,6 +89,7 @@ const Url = (() => {
         urlFor,
         urlForStatic,
         getSection,
+        getHashValue,
 
         param     : name => paramsHash()[name],
         websiteUrl: () => 'https://www.binary.com/',

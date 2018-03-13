@@ -58,7 +58,6 @@ class Drawer extends React.PureComponent {
         this.setRef = this.setRef.bind(this);
         this.show   = this.show.bind(this);
         this.hide   = this.hide.bind(this);
-        this.scrollToggle       = this.scrollToggle.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
     }
 
@@ -66,19 +65,12 @@ class Drawer extends React.PureComponent {
         this.ref = node;
     }
 
-    scrollToggle(state) {
-        this.is_open = state;
-        document.body.classList.toggle('no-scroll', this.is_open);
-    }
-
     show() {
         this.setState({ is_drawer_visible: true });
-        this.scrollToggle(true);
     }
 
     hide() {
         this.setState({ is_drawer_visible: false });
-        this.scrollToggle(false);
     }
 
     handleClickOutside(event) {
@@ -103,7 +95,8 @@ class Drawer extends React.PureComponent {
                 <div
                     className={drawer_bg_class}
                     style={visibility}
-                    onClick={this.handleClickOutside}>
+                    onClick={this.handleClickOutside}
+                >
                     <div
                         ref={this.setRef}
                         className={drawer_class}
@@ -153,11 +146,11 @@ class DrawerItems extends React.PureComponent {
                 >
                     <div className='items-group'>
                         {this.props.items.map((item, idx) => (
-                                <div className='drawer-item' key={idx}>
-                                    <a href={item.href || 'javascript:;' }>
-                                        <span className={item.icon || undefined}>{item.text}</span>
-                                    </a>
-                                </div>
+                            <div className='drawer-item' key={idx}>
+                                <a href={item.href || 'javascript:;' }>
+                                    <span className={item.icon || undefined}>{item.text}</span>
+                                </a>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -182,36 +175,37 @@ class DrawerItem extends React.PureComponent {
 const DrawerHeader = ({
     alignment,
     closeBtn,
-}) => (
-    <React.Fragment>
-    {alignment && alignment === 'right' ?
-        <div className={`drawer-header ${alignment}`}>
-            <div className='icons btn-close' onClick={closeBtn}>
-                <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
-            </div>
-        </div>
-    :
-        <div className={`drawer-header ${alignment}`}>
-            <div className='icons btn-close' onClick={closeBtn}>
-                <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
-            </div>
-            <div className='icons brand-logo'>
-                <img src={Url.urlForStatic('images/trading_app/header/binary_logo_dark.svg')} alt='Binary.com' />
-            </div>
-        </div>
-    }
-    </React.Fragment>
-);
-
+}) => {
+    const drawer_header_class = classNames('drawer-header', alignment);
+    return (
+        <React.Fragment>
+            {alignment && alignment === 'right' ?
+                <div className={drawer_header_class}>
+                    <div className='icons btn-close' onClick={closeBtn}>
+                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+                    </div>
+                </div>
+            :
+                <div className={drawer_header_class}>
+                    <div className='icons btn-close' onClick={closeBtn}>
+                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+                    </div>
+                    <div className='icons brand-logo'>
+                        <img src={Url.urlForStatic('images/trading_app/header/binary_logo_dark.svg')} alt='Binary.com' />
+                    </div>
+                </div>
+        }
+        </React.Fragment>
+    );
+};
 const DrawerFooter = ({
     alignment,
 }) => (
     <React.Fragment>
-    {alignment && alignment === 'right' ?
+        {alignment && alignment === 'right' ?
         null
-    :
-        <div className='drawer-footer'>
-        </div>
+        :
+        <div className='drawer-footer' />
     }
     </React.Fragment>
 );

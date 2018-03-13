@@ -175,6 +175,9 @@
         input[type=number] {
             -moz-appearance: textfield;
         }
+        .gr-gutter-left {
+            padding-left: 5px;
+        }
     }
     .contract_heading {
         text-transform: capitalize;
@@ -246,6 +249,18 @@
         &.EXPIRYMISS {
             background: url('../images/pages/trade/ends-outside_1.png') no-repeat top center;
         }
+        &.LBFLOATPUT {
+            background: url('../images/pages/trade/low_icon.svg') no-repeat center top;
+            background-size: 50%;
+        }
+        &.LBFLOATCALL {
+            background: url('../images/pages/trade/high_icon.svg') no-repeat center top;
+            background-size: 50%;
+        }
+        &.LBHIGHLOW {
+            background: url('../images/pages/trade/high_low_icon.svg') no-repeat center top;
+            background-size: 50%;
+        }
     }
     #contract_prices_container {
         position: relative;
@@ -294,6 +309,22 @@
         }
         .price_container#price_container_top {
             margin-bottom: 1rem;
+        }
+        .price_container#price_container_middle {
+            .price_wrapper {
+                margin: 25px 0 10px;
+                padding: 0 15px 5px;
+            }
+            .payout_wrapper {
+                .contract_quantity {
+                    font-weight: 700;
+                }
+            }
+            .contract_longcode {
+                text-align: center;
+                margin: 10px 15px;
+                line-height: 1.4em;
+            }
         }
         .price_comment, .contract_error, #contract_purchase_balance {
             background-color: $COLOR_GRAY;
@@ -371,7 +402,7 @@
             padding: 0;
             justify-content: flex-end;
         }
-        .contract_amount, .contract_payout {
+        .contract_amount, .contract_payout, .contract_multiplier {
             font-weight: bold;
             font-size: $FONT_SIZE_N;
             border-radius: 5px;
@@ -469,6 +500,7 @@
     }
     .small_width_input {
         width: 70px;
+        margin-right: 5px;
     }
     #currency {
         margin-bottom: 5px;

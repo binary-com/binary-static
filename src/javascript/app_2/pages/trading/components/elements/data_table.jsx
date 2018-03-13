@@ -303,8 +303,6 @@ export class StatementDataTable extends React.PureComponent {
         const is_jp_client = jpClient();
 
         BinarySocket.send(req).then((response) => {
-            console.log('next batch', response);
-
             const formatted_transactions = response.statement.transactions
                 .map(transaction => getStatementData(transaction, currency, is_jp_client));
 

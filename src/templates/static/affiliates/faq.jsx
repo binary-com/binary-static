@@ -18,46 +18,46 @@ const FAQ = () => (
 
         <div className='gr-padding-20 gr-parent'>
             <h2>{it.L('The Program')}</h2>
-        <div className='gr-padding-20 gr-parent'>
-            <h3>{it.L('What is the [_1] affiliate program?', it.broker_name)}</h3>
-            <p>{it.L('The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site.')}</p>
-            <p>{it.L('If you\'re a broker we\'d like to work with you. You will be introducing your clients to a unique and innovative product - the [_1] trading platform.', it.broker_name)}</p>
-            <p>{it.L('Your clients will love the [_1] trading platform because we offer a complete trading experience tailored to the needs of an exceptionally wide range of traders.', it.broker_name)}</p>
-            <p>{it.L('Novice traders can use our intuitive visual platform to learn about trading, practice trading and gain trading experience.')}</p>
-            <p>{it.L('Seasoned traders can use the [_1] platform for the full advantage of the wide range of trading and analysis tools we have on offer.', it.broker_name)}</p>
-        </div>
+            <div className='gr-padding-20 gr-parent'>
+                <h3>{it.L('What is the [_1] affiliate program?', it.broker_name)}</h3>
+                <p>{it.L('The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site.')}</p>
+                <p>{it.L('If you\'re a broker we\'d like to work with you. You will be introducing your clients to a unique and innovative product - the [_1] trading platform.', it.broker_name)}</p>
+                <p>{it.L('Your clients will love the [_1] trading platform because we offer a complete trading experience tailored to the needs of an exceptionally wide range of traders.', it.broker_name)}</p>
+                <p>{it.L('Novice traders can use our intuitive visual platform to learn about trading, practice trading and gain trading experience.')}</p>
+                <p>{it.L('Seasoned traders can use the [_1] platform for the full advantage of the wide range of trading and analysis tools we have on offer.', it.broker_name)}</p>
+            </div>
 
-        <div className='gr-padding-20 gr-parent'>
-            <h3>{it.L('Why should I become a binary options trading affiliate?')}</h3>
-        <p>{it.L('Since their inception, \'binary options\' has become a popular trading product. The numerous binary options trading platforms subsequently being created, support this growing trend. By becoming an affiliate now you can profit from the fast growth of interest in this new industry.')}</p>
-        </div>
+            <div className='gr-padding-20 gr-parent'>
+                <h3>{it.L('Why should I become a binary options trading affiliate?')}</h3>
+                <p>{it.L('Since their inception, \'binary options\' has become a popular trading product. The numerous binary options trading platforms subsequently being created, support this growing trend. By becoming an affiliate now you can profit from the fast growth of interest in this new industry.')}</p>
+            </div>
 
-        <div className='gr-padding-20 gr-parent'>
-            <h3>{it.L('Why should I become an affiliate with [_1]?', it.broker_name)}</h3>
-            <ul className='checked'>
-                <li>{it.L('it is the leading binary option trading platform.')}</li>
-                <li>{it.L('it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian.')}</li>
-                <li>{it.L('the platform is 100% web based making it instantly available for clients.')}</li>
-                <li>{it.L('the platform is user friendly and accessible to all levels of traders.')}</li>
-                <li>{it.L('the [_1] affiliate program is competitive and adaptive to your unique requirements.', it.broker_name)}</li>
-            </ul>
-            <p>{it.L('If you want to profit from this high demand product then your best option is to partner with the market leader. [_1] has been in the business for over 15 years, and has been successful ever since.', it.broker_name)}</p>
-        </div>
+            <div className='gr-padding-20 gr-parent'>
+                <h3>{it.L('Why should I become an affiliate with [_1]?', it.broker_name)}</h3>
+                <ul className='checked'>
+                    <li>{it.L('it is the leading binary option trading platform.')}</li>
+                    <li>{it.L('it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian.')}</li>
+                    <li>{it.L('the platform is 100% web based making it instantly available for clients.')}</li>
+                    <li>{it.L('the platform is user friendly and accessible to all levels of traders.')}</li>
+                    <li>{it.L('the [_1] affiliate program is competitive and adaptive to your unique requirements.', it.broker_name)}</li>
+                </ul>
+                <p>{it.L('If you want to profit from this high demand product then your best option is to partner with the market leader. [_1] has been in the business for over 15 years, and has been successful ever since.', it.broker_name)}</p>
+            </div>
 
-        <div className='gr-padding-20 gr-parent'>
-            <h3>{it.L('Is there a cost for joining?')}</h3>
-        <p>{it.L('No. There\'s no cost to sign up to the affiliate program.')}</p>
-        </div>
+            <div className='gr-padding-20 gr-parent'>
+                <h3>{it.L('Is there a cost for joining?')}</h3>
+                <p>{it.L('No. There\'s no cost to sign up to the affiliate program.')}</p>
+            </div>
 
-        <h3>{it.L('Can I become an affiliate even if I don\'t have a website?')}</h3>
-        <p>{it.L('Yes. Please email us at <a href="mailto:[_1]">[_1]</a> for further assistance.', it.affiliate_email)}</p>
+            <h3>{it.L('Can I become an affiliate even if I don\'t have a website?')}</h3>
+            <p>{it.L('Yes. Please email us at <a href="mailto:[_1]">[_1]</a> for further assistance.', it.affiliate_email)}</p>
         </div>
 
         <div className='gr-padding-20 gr-parent'>
             <h2>{it.L('Account Management and Tracking')}</h2>
             <div className='gr-padding-20 gr-parent'>
-            <h3>{it.L('How can I become an affiliate?')}</h3>
-            <p>{it.L('Go to the <a href="https://login.binary.com/signup.php">sign up page</a> to register as an affiliate today.', it.broker_name)}</p>
+                <h3>{it.L('How can I become an affiliate?')}</h3>
+                <p>{it.L('Go to the <a href="https://login.binary.com/signup.php">sign up page</a> to register as an affiliate today.', it.broker_name)}</p>
             </div>
 
             <div className='gr-padding-20 gr-parent'>
@@ -66,8 +66,8 @@ const FAQ = () => (
             </div>
 
             <div className='gr-padding-20 gr-parent'>
-            <h3>{it.L('What commission plan do you offer?')}</h3>
-            <p>{it.L('Please refer to the following commission plan.')}</p>
+                <h3>{it.L('What commission plan do you offer?')}</h3>
+                <p>{it.L('Please refer to the following commission plan.')}</p>
                 <CommissionTable />
             </div>
 
@@ -77,8 +77,8 @@ const FAQ = () => (
             </div>
 
             <div className='gr-padding-20 gr-parent'>
-            <h3>{it.L('How and when will I receive my affiliate earnings?')}</h3>
-            <p>{it.L('By the 15th of every month, you will receive the commission earned during the previous calendar month.')}</p>
+                <h3>{it.L('How and when will I receive my affiliate earnings?')}</h3>
+                <p>{it.L('By the 15th of every month, you will receive the commission earned during the previous calendar month.')}</p>
             </div>
 
             <div className='gr-padding-20 gr-parent'>
@@ -87,10 +87,10 @@ const FAQ = () => (
             </div>
 
             <div className='gr-padding-20 gr-parent'>
-            <h3>{it.L('What other reports can I generate?')}</h3>
-            <p><strong>{it.L('Detailed report:')}</strong> {it.L('The detailed report shows you your detailed traffic and income statistics. Use the filters and column selectors to break down your reporting as desired.')}</p>
-            <p><strong>{it.L('Player report:')}</strong> {it.L('The player report shows a breakdown of statistics per player. Use the filters to refine the report.')}</p>
-            <p><strong>{it.L('Daily Earnings:')}</strong> {it.L('The commission report shows you your daily commission earnings, per site / product.')}</p>
+                <h3>{it.L('What other reports can I generate?')}</h3>
+                <p><strong>{it.L('Detailed report:')}</strong> {it.L('The detailed report shows you your detailed traffic and income statistics. Use the filters and column selectors to break down your reporting as desired.')}</p>
+                <p><strong>{it.L('Player report:')}</strong> {it.L('The player report shows a breakdown of statistics per player. Use the filters to refine the report.')}</p>
+                <p><strong>{it.L('Daily Earnings:')}</strong> {it.L('The commission report shows you your daily commission earnings, per site / product.')}</p>
             </div>
 
             <h3>{it.L('Can I offer my referrals an incentive to sign up through my link rather than sign up directly?')}</h3>
@@ -100,8 +100,8 @@ const FAQ = () => (
         <div className='gr-padding-20 gr-parent'>
             <h2>{it.L('Marketing and Promotion')}</h2>
             <div className='gr-padding-20 gr-parent'>
-            <h3>{it.L('What marketing tools do you offer?')}</h3>
-            <p>{it.L('We have a tested and proven selection of banners, links, reviews, newsletters, videos, and text ads for your use. Additionally, we have flash banners which you can grab through your affiliate account. If you would like customized tools, or an item currently not offered on the site, please contact your account manager at: <a href="mailto:[_1]">[_1]</a>.', it.affiliate_email)}</p>
+                <h3>{it.L('What marketing tools do you offer?')}</h3>
+                <p>{it.L('We have a tested and proven selection of banners, links, reviews, newsletters, videos, and text ads for your use. Additionally, we have flash banners which you can grab through your affiliate account. If you would like customized tools, or an item currently not offered on the site, please contact your account manager at: <a href="mailto:[_1]">[_1]</a>.', it.affiliate_email)}</p>
             </div>
 
             <div className='gr-padding-20 gr-parent'>

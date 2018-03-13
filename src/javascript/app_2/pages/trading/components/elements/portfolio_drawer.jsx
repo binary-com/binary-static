@@ -60,9 +60,10 @@ class PortfolioDrawer extends React.Component {
                 <div className='portfolio-drawer-header'>
                     <span className='ic-portfolio' />
                     <p>{localize('Portfolio Quick Menu')}</p>
-                    <a href='javascript:;'
-                       className='ic-close'
-                       onClick={this.props.onClick}
+                    <a
+                        href='javascript:;'
+                        className='ic-close'
+                        onClick={this.props.onClick}
                     />
                 </div>
         );

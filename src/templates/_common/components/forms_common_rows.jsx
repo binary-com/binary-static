@@ -46,7 +46,7 @@ export const DateOfBirth = ({ className }) => (
 
 export const Residence = () => (
     <FormRow type='custom' id='residence' label={it.L('Country of residence')}>
-        <label id='lbl_residence'></label>
+        <label id='lbl_residence' />
     </FormRow>
 );
 
@@ -65,13 +65,13 @@ export const AccountOpeningReason  = ({ row_id, row_class }) => (
     </FormRow>
 );
 
-export const AddressLine1 = ({ hint, no_hint }) => (
+export const AddressLine1 = ({ hint }) => (
     <FormRow
         type='text'
         id='address_line_1'
         label={it.L('First line of home address')}
         attributes={{maxLength: '70'}}
-        hint={hint || (no_hint ? '' : it.L('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.'))}
+        hint={hint}
     />
 );
 
@@ -164,8 +164,64 @@ export const ClientMessage = () => (
     <div className='errorbox rbox invisible' id='client_message'>
         <div className='rbox-wrap'>
             <div className='gr-12 rbox-content' id='client_message_content'>
-                <p className='center-text notice-msg'></p>
+                <p className='center-text notice-msg' />
             </div>
         </div>
     </div>
  );
+
+export const TaxInformationForm = () => (
+    <React.Fragment>
+        <div id='tax_information_info' className='gr-12 gr-padding-10'>
+            <label>{it.L('Binary Investments (Europe) Ltd. is required to collect your tax information.')}&nbsp;
+                <a id='tax_information_note_toggle' className='toggle-arrow' href='javascript:;'>{it.L('Read more.')}</a>
+            </label>
+
+            <div id='tax_information_note' style={{display: 'none'}}>
+                <p>{it.L('This requirement is mandated by the Common Reporting Standard (CRS) and the Foreign Account Tax Compliance Act (FATCA).')}</p>
+                <p>{it.L('Please enter your [_1]tax information[_2] below to continue.', '<a href="https://ec.europa.eu/taxation_customs/tin/tinByCountry.html" target="_blank">', '</a>')}</p>
+                <p>{it.L('Rest assured that your information will only be used for CRS/FATCA reporting purposes and will be kept safe.')}</p>
+                <p>{it.L('If we have reason to believe that your tax information is incomplete, we may contact you for clarification.')}</p>
+            </div>
+        </div>
+        <FormRow
+            type='select'
+            id='tax_residence'
+            label={it.L('Tax residence')}
+            tooltip={it.L('Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor.')}
+            className='invisible'
+            attributes={{multiple: 'multiple'}}
+        />
+        <FormRow
+            type='text'
+            label={it.L('Tax identification number')}
+            tooltip={it.L('Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help.')}
+            id='tax_identification_number'
+            attributes={{ maxLength: 20 }}
+        />
+        <div id='tax_information_declaration'>
+            <div className='gr-12 gr-padding-10'>
+                <input type='checkbox' id='chk_tax_id' />
+                <label htmlFor='chk_tax_id'>
+                    {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information.')}
+                </label>
+            </div>
+            <div className='gr-12 gr-padding-10'>
+                <p className='no-margin hint'>
+                    <span className='required_field_asterisk no-margin'>* </span>
+                    {it.L('You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate.')}
+                </p>
+            </div>
+        </div>
+    </React.Fragment>
+);
+
+export const GeocodeResponse = () => (
+    <div className='gr-row'>
+        <div className='gr-12 gr-padding-10 center-text'>
+            <p id='geocode_error' className='notice-msg no-margin invisible'>
+                {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
+            </p>
+        </div>
+    </div>
+);
