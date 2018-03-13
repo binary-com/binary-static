@@ -33,12 +33,7 @@ class AccountSwitcher extends React.PureComponent {
             visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
         };
 
-        const account_is_hidden = (account) => {
-            if (account.id === this.state.active_account.id) {
-                return true;
-            }
-            return false;
-        };
+        const account_is_hidden = (account) => (account.id === this.state.active_account.id);
         const switcher_active_login_class = classNames('acc-switcher-active-login', {
             'collapsed': this.state.is_collapsed,
         });
