@@ -161,46 +161,48 @@ class TimePickerDropdown extends PureComponent {
                         onClick={this.clear}
                     ></span>
                 </div>
-                <div
-                    ref={this.saveHourRef}
-                    className={`${preClass}-hours`}
-                >
-                    <div className='list-container'>
-                        {this.hours.map((h, key) => (
-                            <div
-                                className={`list-item${this.state.hour === h ? ' selected' : ''}`}
-                                key={key}
-                                onClick={this.selectHour.bind(null, h)}
-                            >{h}</div>
-                        ))}
+                <div className={`${preClass}-selector`}>
+                    <div
+                        ref={this.saveHourRef}
+                        className={`${preClass}-hours`}
+                    >
+                        <div className='list-container'>
+                            {this.hours.map((h, key) => (
+                                <div
+                                    className={`list-item${this.state.hour === h ? ' selected' : ''}`}
+                                    key={key}
+                                    onClick={this.selectHour.bind(null, h)}
+                                >{h}</div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-                <div
-                    ref={this.saveMinuteRef}
-                    className={`${preClass}-minutes`}
-                >
-                    <div className='list-container'>
-                        {this.minutes.map((mm, key) => (
-                            <div
-                                className={`list-item${this.state.minute === mm ? ' selected' : ''}`}
-                                key={key}
-                                onClick={this.selectMinute.bind(null, mm)}
-                            >{mm}</div>
-                        ))}
+                    <div
+                        ref={this.saveMinuteRef}
+                        className={`${preClass}-minutes`}
+                    >
+                        <div className='list-container'>
+                            {this.minutes.map((mm, key) => (
+                                <div
+                                    className={`list-item${this.state.minute === mm ? ' selected' : ''}`}
+                                    key={key}
+                                    onClick={this.selectMinute.bind(null, mm)}
+                                >{mm}</div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-                <div
-                    ref={this.saveMeridiemRef}
-                    className={`${preClass}-meridiem`}
-                >
-                    <div className='list-container'>
-                        {this.meridiem.map((a, key) => (
-                            <div
-                                className={`list-item${this.state.meridiem === a ? ' selected' : ''}`}
-                                key={key}
-                                onClick={this.selectMeridiem.bind(null, a)}
-                            >{a}</div>
-                        ))}
+                    <div
+                        ref={this.saveMeridiemRef}
+                        className={`${preClass}-meridiem`}
+                    >
+                        <div className='list-container'>
+                            {this.meridiem.map((a, key) => (
+                                <div
+                                    className={`list-item${this.state.meridiem === a ? ' selected' : ''}`}
+                                    key={key}
+                                    onClick={this.selectMeridiem.bind(null, a)}
+                                >{a}</div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
