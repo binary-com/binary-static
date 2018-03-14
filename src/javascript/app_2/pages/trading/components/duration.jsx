@@ -13,6 +13,10 @@ const expiry_list = [
     { text: localize('End Time'), value: 'endtime' },
 ];
 
+let min_date_duration,
+    max_date_duration,
+    min_date_expiry;
+
 const Duration = ({
     expiry_type,
     expiry_time,
@@ -21,54 +25,62 @@ const Duration = ({
     duration_units_list,
     server_time,
     onChange,
-}) => (
-    <fieldset>
-        <ClockHeader time={server_time} header={localize('Trade Duration')} />
-        <Dropdown
-            list={expiry_list}
-            value={expiry_type}
-            name='expiry_type'
-            onChange={onChange}
-        />
+}) => {
+    const moment_now = moment(server_time);
+    if (!min_date_expiry || moment_now.date() !== min_date_expiry.date()) {
+        min_date_duration = moment_now.clone().add(1, 'd');
+        max_date_duration = moment_now.clone().add(365, 'd');
+        min_date_expiry   = moment_now.clone();
+    }
+    return (
+        <fieldset>
+            <ClockHeader time={server_time} header={localize('Trade Duration')} />
+            <Dropdown
+                list={expiry_list}
+                value={expiry_type}
+                name='expiry_type'
+                onChange={onChange}
+            />
 
-        {expiry_type === 'duration' ?
-            <React.Fragment>
-                <div className='duration-container'>
-                    {duration_unit === 'd' ?
-                        <Datepicker
-                            name='duration'
-                            minDate={moment(server_time).add(1, 'd')}
-                            maxDate={moment(server_time).add(365, 'd')}
-                            displayFormat='d'
-                            onChange={onChange}
-                        /> :
-                        <InputField
-                            type='number'
-                            name='duration'
-                            value={duration}
+            {expiry_type === 'duration' ?
+                <React.Fragment>
+                    <div className='duration-container'>
+                        {duration_unit === 'd' ?
+                            <Datepicker
+                                name='duration'
+                                minDate={min_date_duration}
+                                maxDate={max_date_duration}
+                                displayFormat='d'
+                                onChange={onChange}
+                            /> :
+                            <InputField
+                                type='number'
+                                name='duration'
+                                value={duration}
+                                onChange={onChange}
+                            />
+                        }
+                        <Dropdown
+                            list={duration_units_list}
+                            value={duration_unit}
+                            name='duration_unit'
                             onChange={onChange}
                         />
-                    }
-                    <Dropdown
-                        list={duration_units_list}
-                        value={duration_unit}
-                        name='duration_unit'
+                    </div>
+                </React.Fragment> :
+                <React.Fragment>
+                    <Datepicker
+                        name='expiry_date'
+                        showTodayBtn
+                        minDate={min_date_expiry}
                         onChange={onChange}
                     />
-                </div>
-            </React.Fragment> :
-            <React.Fragment>
-                <Datepicker
-                    name='expiry_date'
-                    showTodayBtn={true}
-                    minDate={moment(server_time)}
-                    onChange={onChange}
-                />
-                <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
-            </React.Fragment>
-        }
-    </fieldset>
-);
+                    <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
+                </React.Fragment>
+            }
+        </fieldset>
+    );
+};
 
 export default connect(
     ({trade}) => ({
