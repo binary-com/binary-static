@@ -265,25 +265,25 @@ class TimePicker extends PureComponent {
         }
     };
 
-    convertTo24h (value) {
+    convertTo24h = (value) => {
         if (!value) return '';
         const [hour, other] = value.split(':');
         const [minute, meridiem] = other.split(' ');
         if (meridiem.toLowerCase() === 'pm') {
-            return `${+hour+12}:${minute}`;
+            return `${hour%12 ? +hour+12 : '12'}:${minute}`;
         }
-        return `${hour}:${minute}`;
+        return `${hour%12 ? hour : '00'}:${minute}`;
     }
 
-    converTo12h (value) {
+    converTo12h = (value) => {
         if (!value) return '';
         const [hour, minute] = value.split(':');
-        const meridiem = +hour > 12 ? 'pm' : 'am';
-        if (meridiem === 'pm') {
-            return value = `${+hour-12}:${minute} ${meridiem}`;
+        const meridiem = +hour >= 12 ? 'pm' : 'am';
+        if (meridiem === 'pm' && hour > 12) {
+            return `${('0'+(+hour-12)).slice(-2)}:${minute} ${meridiem}`;
         }
 
-        return value = `${+hour === 0 ? 12 : hour}:${minute} ${meridiem}`;
+        return `${+hour === 0 ? 12 : hour}:${minute} ${meridiem}`;
     }
 
     render() {
@@ -291,24 +291,25 @@ class TimePicker extends PureComponent {
         const {
             is_nativepicker,
             value,
-            onChange,
+            name,
+            placeholder,
             ...props
         } = this.props;
-        let formatted_value = this.convertTo24h(value);
+        const formatted_value = this.convertTo24h(value);
         return (
             <div
                 ref={this.saveRef}
                 className={`${prefix_class}${this.props.padding ? ' padding' : ''}${this.state.is_open ? ' active' : ''}`}
             >
                 {
-                    is_nativepicker
+                    !is_nativepicker
                     ? <input
                         type='time'
                         id={`${prefix_class}-input`}
                         className={`${prefix_class}-input`}
                         value={formatted_value}
                         onChange={this.handleChange}
-                        {...props}
+                        name={name}
                     />
                     : (
                         <React.Fragment>
@@ -320,7 +321,8 @@ class TimePicker extends PureComponent {
                                 className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
                                 value={value}
                                 onClick={this.toggleDropDown}
-                                {...props}
+                                name={name}
+                                placeholder={placeholder}
                             />
                             <TimePickerDropdown
                                 className={this.state.is_open ? 'active' : ''}
