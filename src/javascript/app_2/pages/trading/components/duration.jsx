@@ -13,6 +13,10 @@ const expiry_list = [
     { text: localize('End Time'), value: 'endtime' },
 ];
 
+let min_date_duration,
+    max_date_duration,
+    min_date_expiry;
+
 const Duration = ({
     expiry_type,
     expiry_time,
@@ -24,6 +28,12 @@ const Duration = ({
     is_nativepicker,
     is_minimized,
 }) => {
+    const moment_now = moment(server_time);
+    if (!min_date_expiry || moment_now.date() !== min_date_expiry.date()) {
+        min_date_duration = moment_now.clone().add(1, 'd');
+        max_date_duration = moment_now.clone().add(365, 'd');
+        min_date_expiry   = moment_now.clone();
+    }
     if (is_minimized) {
         return (
             <div>Duration: {duration}</div>
@@ -46,8 +56,8 @@ const Duration = ({
                         {duration_unit === 'd' ?
                             <Datepicker
                                 name='duration'
-                                minDate={moment(server_time).add(1, 'd')}
-                                maxDate={moment(server_time).add(365, 'd')}
+                                minDate={min_date_duration}
+                                maxDate={max_date_duration}
                                 displayFormat='d'
                                 onChange={onChange}
                                 is_nativepicker={is_nativepicker}
@@ -66,11 +76,13 @@ const Duration = ({
                             onChange={onChange}
                             is_nativepicker={is_nativepicker}
                         />
-                    }
-                    <Dropdown
-                        list={duration_units_list}
-                        value={duration_unit}
-                        name='duration_unit'
+                    </div>
+                </React.Fragment> :
+                <React.Fragment>
+                    <Datepicker
+                        name='expiry_date'
+                        showTodayBtn
+                        minDate={min_date_expiry}
                         onChange={onChange}
                         is_nativepicker={is_nativepicker}
                     />
