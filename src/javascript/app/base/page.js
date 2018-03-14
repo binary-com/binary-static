@@ -87,20 +87,16 @@ const Page = (() => {
             Login.redirectToLogin();
         }
         if (Client.isLoggedIn()) {
-            BinarySocket.wait('authorize').then(() => {
+            BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 checkLanguage();
-                Menu.init();
                 RealityCheck.onLoad();
+                Menu.init();
             });
         } else {
             checkLanguage();
             Menu.init();
         }
         TrafficSource.setData();
-    };
-
-    const onUnload = () => {
-        Menu.onUnload();
     };
 
     const recordAffiliateExposure = () => {
@@ -176,7 +172,6 @@ const Page = (() => {
 
     return {
         onLoad,
-        onUnload,
         showNotificationOutdatedBrowser,
     };
 })();

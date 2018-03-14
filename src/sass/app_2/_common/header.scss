@@ -4,6 +4,7 @@ header {
     position: relative;
     border: 0;
     width: 100%;
+    z-index: 1;
 
     .menu-items {
         display: flex;

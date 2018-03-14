@@ -3,7 +3,7 @@ import Loading from '../../_common/components/loading.jsx';
 import { Fieldset, FormRow, SubmitButton } from '../../_common/components/forms.jsx';
 
 const StrongLabel = ({ id }) => (
-    <strong><label id={id}></label></strong>
+    <strong><label id={id} /></strong>
 );
 
 const PaymentagentTransfer = () => (
@@ -33,7 +33,7 @@ const PaymentagentTransfer = () => (
         </form>
 
         <div id='pa_transfer_done' className='invisible'>
-            <p id='confirm_msg' className='invisible'></p>
+            <p id='confirm_msg' className='invisible' />
             <p>
                 <a className='button' href={it.url_for('user/statementws')}>
                     <span className='button'>{it.L('View your statement')}</span>
@@ -42,7 +42,7 @@ const PaymentagentTransfer = () => (
         </div>
 
         <div id='no_balance_error' className='invisible'>
-            <p className='center-text notice-msg'>{it.L('Please <a href="[_1]">deposit</a> before transferring to client.', `${it.url_for('cashier/forwardws')}#deposit`)}</p>
+            <p className='center-text notice-msg'>{it.L('Please <a href="[_1]">deposit</a> before transferring to client.', it.url_for('cashier/forwardws?action=deposit'))}</p>
         </div>
 
         <div id='not_pa_error' className='invisible'>
@@ -54,7 +54,7 @@ const PaymentagentTransfer = () => (
 
             <Fieldset legend={it.L('Details')}>
                 <FormRow label={it.L('Transfer to Login ID')} id='client_id' type='text' />
-                <FormRow label={it.L('Amount')} id='amount' type='number' attributes={{ min: 10, max: 2000, step: 'any' }} hint={it.L('Min: 10 Max: 2000')} />
+                <FormRow label={it.L('Amount')} id='amount' type='text' />
             </Fieldset>
 
             <SubmitButton msg_id='form_error' type='submit' text={it.L('Submit')} />

@@ -103,7 +103,7 @@ const FooterJA = () => (
                 </div>
             </div>
         </div>
-        <div id='end-note' className='invisible content-inverse-color center-text'></div>
+        <div id='end-note' className='invisible content-inverse-color center-text' />
     </div>
 );
 
@@ -165,6 +165,7 @@ const FooterNormal = () => (
                                 items={[
                                     { text: it.L('Platforms'),      href: it.url_for('platforms') },
                                     { text: it.L('Asset Index'),    href: it.url_for('resources/asset_indexws') },
+                                    { text: it.L('Trading Times'),  href: it.url_for('resources/market_timesws') },
                                     { text: it.L('Network Status'), href: 'https://binarycom.statuspage.io', target: '_blank' },
                                 ]}
                             />
@@ -189,10 +190,9 @@ const FooterNormal = () => (
                 <div className='gr-row'>
                     <p id='regulatory-text' className='gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color no-margin'>
                         {it.L(
-                            'This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - [_1]view license[_2]. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for betting products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - [_3]view license[_2], and for Irish clients by (3) the Revenue Commissioners in Ireland, current Remote Bookmaker\'s Licence issued on 1 July 2017 (licence no. 1010285). This website\'s services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.',
-                            '<a href=\'https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\' target=\'_blank\' rel=\'noopener noreferrer\'>',
+                            'This website is offered in the EU, for financial products, by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). Volatility Indices products are offered in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission. In the rest of the EU, Volatility Indices products are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission, and for Irish clients by (3) the Revenue Commissioners in Ireland, Remote Bookmaker\'s Licence issued on 1 July 2017 (licence no. 1010285). View further [_1]Regulatory Information[_2]. Some products are not available in all countries. This website\'s services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.',
+                            `<a href=${it.url_for('regulation')} >`,
                             '</a>',
-                            '<a href=\'https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\' target=\'_blank\' rel=\'noopener noreferrer\'>'
                         )}
                     </p>
                     <div className='gr-3 gr-12-m gr-5-p center-text' id='social-networks'>
@@ -237,7 +237,7 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        <div id='end-note' className='invisible content-inverse-color center-text'></div>
+        <div id='end-note' className='invisible content-inverse-color center-text' />
     </div>
 );
 

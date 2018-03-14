@@ -159,7 +159,7 @@ class TimePickerDropdown extends PureComponent {
                     <span
                         className={`${preClass}-clear`}
                         onClick={this.clear}
-                    ></span>
+                    />
                 </div>
                 <div className={`${preClass}-selector`}>
                     <div
@@ -271,7 +271,7 @@ class TimePicker extends PureComponent {
                 className={`${prefix_class}${this.props.padding ? ' padding' : ''}${this.state.is_open ? ' active' : ''}`}
             >
                 {
-                    is_nativepicker 
+                    is_nativepicker
                     ? <input type='time' id={`${prefix_class}-input`} value={value} {...props} />
                     : (
                         <React.Fragment>
@@ -293,8 +293,8 @@ class TimePicker extends PureComponent {
                                 value={value}
                             />
                         </React.Fragment>
-                    )   
-                } 
+                    )
+                }
             </div>
         );
     }

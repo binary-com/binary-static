@@ -38,10 +38,12 @@ const PaymentAgentList = () => (
             <div id='accordion' className='invisible'>
                 <h3>%name</h3>
                 <div>
-                    <p></p>
+                    <p />
                     <Table
                         trs={[
                             { text: it.L('Name')                     , placeholder: '%name' },
+                            { text: it.L('Currency')                 , placeholder: '%currency' },
+                            { text: it.L('Min / Max withdrawal')     , placeholder: '%minmax' },
                             { text: it.L('Summary')                  , placeholder: '%summary' },
                             { text: it.L('Commission on deposits')   , placeholder: '%deposit_commission%' },
                             { text: it.L('Commission on withdrawals'), placeholder: '%withdrawal_commission%' },

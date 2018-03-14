@@ -1,12 +1,12 @@
-const moment           = require('moment');
-const getStartDateNode = require('./common_independent').getStartDateNode;
-const Contract         = require('./contract');
-const Defaults         = require('./defaults');
-const Durations        = require('./duration');
-const getElementById   = require('../../../_common/common_functions').getElementById;
-const localize         = require('../../../_common/localize').localize;
-const State            = require('../../../_common/storage').State;
-const createElement    = require('../../../_common/utility').createElement;
+const moment            = require('moment');
+const CommonIndependent = require('./common_independent');
+const Contract          = require('./contract');
+const Defaults          = require('./defaults');
+const Durations         = require('./duration');
+const getElementById    = require('../../../_common/common_functions').getElementById;
+const localize          = require('../../../_common/localize').localize;
+const State             = require('../../../_common/storage').State;
+const createElement     = require('../../../_common/utility').createElement;
 
 /*
  * Handles start time display
@@ -32,14 +32,13 @@ const StartDates = (() => {
         const start_dates = Contract.startDates();
 
         if (start_dates && start_dates.list && start_dates.list.length) {
-            const target   = getStartDateNode();
+            const target   = CommonIndependent.getStartDateNode();
             const fragment = document.createDocumentFragment();
             let option,
                 first,
                 selected,
                 day,
-                $duplicated_option,
-                duplicated_length;
+                $duplicated_option;
 
             getElementById('date_start_row').style.display = 'flex';
 
@@ -58,42 +57,43 @@ const StartDates = (() => {
             start_dates.list.sort(compareStartDate);
             const default_start = Defaults.get('date_start') || 'now';
 
-            $('#time_start_row').setVisibility(default_start !== 'now');
-
+            const rounding = 5 * 60 * 1000;
+            const now      = moment.utc();
             start_dates.list.forEach((start_date) => {
-                let a   = moment.unix(start_date.open).utc();
-                const b = moment.unix(start_date.close).utc();
+                let date_open    = moment.unix(start_date.open).utc();
+                const date_close = moment.unix(start_date.close).utc();
 
-                const rounding = 5 * 60 * 1000;
-                const start    = moment.utc();
-
-                if (b.isAfter(start)) {
-                    if (moment(start).isAfter(moment(a))) {
-                        a = start;
+                if (date_close.isAfter(now)) {
+                    if (now.isAfter(date_open)) {
+                        date_open = now;
                     }
 
-                    a   = moment(Math.ceil((+a) / rounding) * rounding).utc();
-                    day = a.format('ddd - DD MMM, YYYY');
+                    date_open          = moment.utc(Math.ceil((+date_open) / rounding) * rounding);
+                    day                = date_open.format('ddd - DD MMM, YYYY');
                     $duplicated_option = $(fragment).find(`option:contains(${day})`);
-                    duplicated_length  = $duplicated_option.length;
-                    if (duplicated_length && !new RegExp(localize('Session')).test($duplicated_option.text())) {
-                        $($duplicated_option[0]).text(`${$duplicated_option.text()} - ${localize('Session')} ${duplicated_length}`);
+                    if ($duplicated_option.length) {
+                        $duplicated_option.attr('data-sessions', `${$duplicated_option.attr('data-sessions')}, ${date_open.format('HH:mm')}-${date_close.format('HH:mm')}`);
+                        if (+date_close.unix() > +$duplicated_option.attr('data-end')) {
+                            $duplicated_option.attr('data-end', date_close.unix());
+                        }
+                    } else {
+                        option = createElement('option', { value: date_open.unix(), 'data-end': date_close.unix(), 'data-sessions': `${date_open.format('HH:mm')}-${date_close.format('HH:mm')}`, text: day });
+                        if (option.value >= default_start && !selected) {
+                            selected = true;
+                            option.setAttribute('selected', 'selected');
+                        }
+                        if (typeof first === 'undefined' && !has_now) {
+                            first = date_open.unix();
+                        }
+                        fragment.appendChild(option);
                     }
-
-                    option = createElement('option', { value: a.utc().unix(), 'data-end': b.unix(), text: day + ($duplicated_option.length ? ` - ${localize('Session')} ${duplicated_length + 1}` : '') });
-                    if (option.value >= default_start && !selected) {
-                        selected = true;
-                        option.setAttribute('selected', 'selected');
-                    }
-                    if (typeof first === 'undefined' && !has_now) {
-                        first = a.utc().unix();
-                    }
-                    fragment.appendChild(option);
                 }
             });
             if (target) {
                 target.appendChild(fragment);
                 Defaults.set('date_start', target.value);
+                CommonIndependent.showAssetOpenHours(target.value === 'now' ? '' : $(target));
+                $('#time_start_row').setVisibility(target.value !== 'now');
             }
             State.set('is_start_dates_displayed', true);
             if (first) {
@@ -109,8 +109,8 @@ const StartDates = (() => {
 
     return {
         display: displayStartDates,
-        disable: () => { getStartDateNode().setAttribute('disabled', 'disabled'); },
-        enable : () => { getStartDateNode().removeAttribute('disabled'); },
+        disable: () => { CommonIndependent.getStartDateNode().setAttribute('disabled', 'disabled'); },
+        enable : () => { CommonIndependent.getStartDateNode().removeAttribute('disabled'); },
     };
 })();
 

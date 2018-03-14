@@ -1,6 +1,7 @@
 const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const BinarySocket       = require('./socket');
+const SocketCache        = require('./socket_cache');
 const jpClient           = require('../common/country_base').jpClient;
 const isCryptocurrency   = require('../common/currency').isCryptocurrency;
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
@@ -89,11 +90,10 @@ const Client = (() => {
 
     const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
         const this_type   = getAccountType(loginid);
-        const is_ico_only = get('is_ico_only', loginid);
         return ((
             (type === 'virtual' && this_type === 'virtual') ||
             (type === 'real'    && this_type !== 'virtual') ||
-            type === this_type) && !is_ico_only &&              // Account shouldn't be ICO_ONLY.
+            type === this_type) &&
             (only_enabled ? !get('is_disabled', loginid) : true));
     };
 
@@ -133,6 +133,20 @@ const Client = (() => {
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
+        updateAccountList(authorize.account_list);
+    };
+
+    const updateAccountList = (account_list) => {
+        account_list.forEach((account) => {
+            set('excluded_until', account.excluded_until || '', account.loginid);
+            Object.keys(account).forEach((param) => {
+                const param_to_set = param === 'country' ? 'residence' : param;
+                const value_to_set = typeof account[param] === 'undefined' ? '' : account[param];
+                if (param_to_set !== 'loginid') {
+                    set(param_to_set, value_to_set, account.loginid);
+                }
+            });
+        });
     };
 
     const shouldAcceptTnc = () => {
@@ -158,6 +172,7 @@ const Client = (() => {
             return;
         }
 
+        SocketCache.clear();
         localStorage.setItem('GTM_new_account', '1');
 
         set('token',      options.token,       options.loginid);
@@ -168,6 +183,10 @@ const Client = (() => {
         // need to redirect not using pjax
         window.location.href = options.redirect_url || defaultRedirectUrl();
     };
+
+    const shouldShowJP = (el, is_jp) => (
+        is_jp ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
+    );
 
     const activateByClientType = (section_id) => {
         const topbar_class = getElementById('topbar').classList;
@@ -181,18 +200,11 @@ const Client = (() => {
                 const client_logged_in = getElementById('client-logged-in');
                 client_logged_in.classList.add('gr-centered');
 
-                const is_jp       = jpClient();
-                const is_ico_only = !is_jp && get('is_ico_only');
-                if (is_ico_only) {
-                    applyToAllElements('.ico-only-hide', (el) => { el.setVisibility(0); });
-                }
-                if (!is_jp && (is_ico_only || Client.get('landing_company_shortcode') === 'costarica')) {
-                    applyToAllElements('.ico-only-show', (el) => { el.setVisibility(1); });
-                }
+                // we need to call jpClient after authorize response so we know client's residence
+                const is_jp = jpClient();
 
                 applyToAllElements('.client_logged_in', (el) => {
-                    if ((!is_jp || !/ja-hide/.test(el.classList)) &&
-                        (!/ico-only-hide/.test(el.classList) || !is_ico_only)) {
+                    if (shouldShowJP(el, is_jp)) {
                         el.setVisibility(1);
                     }
                 });
@@ -203,16 +215,21 @@ const Client = (() => {
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
                     applyToAllElements('.client_real', (el) => {
-                        if ((!is_jp || !/ja-hide/.test(el.classList)) &&
-                            !/ico-only-hide/.test(el.classList) || !is_ico_only) {
+                        if (shouldShowJP(el, is_jp)) {
                             el.setVisibility(1);
-                        }}, '', el_section);
+                        }
+                    }, '', el_section);
                     topbar_class.add(primary_bg_color_dark);
                     topbar_class.remove(secondary_bg_color);
                 }
             });
         } else {
-            applyToAllElements('.client_logged_out', (el) => { el.setVisibility(1); }, '', el_section);
+            const is_jp = jpClient();
+            applyToAllElements('.client_logged_out', (el) => {
+                if (shouldShowJP(el, is_jp)) {
+                    el.setVisibility(1);
+                }
+            }, '', el_section);
             topbar_class.add(primary_bg_color_dark);
             topbar_class.remove(secondary_bg_color);
         }
@@ -231,6 +248,7 @@ const Client = (() => {
         cleanupCookies('reality_check', 'affiliate_token', 'affiliate_tracking');
         clearAllAccounts();
         set('loginid', '');
+        SocketCache.clear();
         RealityCheckData.clear();
         const redirect_to = getPropertyValue(response, ['echo_req', 'passthrough', 'redirect_to']);
         if (redirect_to) {
@@ -320,10 +338,7 @@ const Client = (() => {
         };
     };
 
-    const getLandingCompanyValue = (loginid, landing_company, key, is_ico_only) => {
-        if (is_ico_only) {
-            return 'Binary (C.R.) S.A.';
-        }
+    const getLandingCompanyValue = (loginid, landing_company, key) => {
         let landing_company_object;
         if (loginid.financial || isAccountOfType('financial', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'financial_company');
@@ -343,16 +358,46 @@ const Client = (() => {
         return (landing_company_object || {})[key];
     };
 
-    const canTransferFunds = () => !!(
-        (Client.hasAccountType('financial', true) && Client.hasAccountType('gaming', true)) ||
-        (hasCurrencyType('crypto') && hasCurrencyType('fiat'))
-    );
+
+    // API_V3: send a list of accounts the client can transfer to
+    const canTransferFunds = (account) => {
+        if (account) {
+            // this specific account can be used to transfer funds to
+            return canTransferFundsTo(account.loginid);
+        }
+        // at least one account can be used to transfer funds to
+        return Object.keys(client_object).some(loginid => canTransferFundsTo(loginid));
+    };
+
+    const canTransferFundsTo = (to_loginid) => {
+        if (to_loginid === current_loginid || get('is_virtual', to_loginid) || get('is_virtual') || get('is_disabled', to_loginid)) {
+            return false;
+        }
+        const from_currency = get('currency');
+        const to_currency   = get('currency', to_loginid);
+        if (!from_currency || !to_currency) {
+            return false;
+        }
+        // only transfer to other accounts that have the same currency as current account if one is maltainvest and one is malta
+        if (from_currency === to_currency) {
+            // these landing companies are allowed to transfer funds to each other if they have the same currency
+            const same_cur_allowed = {
+                maltainvest: 'malta',
+                malta      : 'maltainvest',
+            };
+            const from_landing_company = get('landing_company_shortcode');
+            const to_landing_company   = get('landing_company_shortcode', to_loginid);
+            // if same_cur_allowed[from_landing_company] is undefined and to_landing_company is also undefined, it will return true
+            // so we should compare '' === undefined instead
+            return (same_cur_allowed[from_landing_company] || '') === to_landing_company;
+        }
+        // or for other clients if current account is cryptocurrency it should only transfer to fiat currencies and vice versa
+        const is_from_crypto = isCryptocurrency(from_currency);
+        const is_to_crypto   = isCryptocurrency(to_currency);
+        return (is_from_crypto ? !is_to_crypto : is_to_crypto);
+    };
 
     const hasCostaricaAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
-
-    const canOpenICO = () =>
-        /malta|iom/.test(State.getResponse('landing_company.financial_company.shortcode')) ||
-        /malta|iom/.test(State.getResponse('landing_company.gaming_company.shortcode'));
 
     const canRequestProfessional = () => {
         const residence = get('residence');
@@ -362,15 +407,7 @@ const Client = (() => {
 
     };
 
-    const defaultRedirectUrl = () => {
-        let redirect_url = 'trading';
-        if (jpClient()) {
-            redirect_url = 'multi_barriers_trading';
-        } else if (get('is_ico_only')) {
-            redirect_url = 'user/ico-subscribe';
-        }
-        return urlFor(redirect_url);
-    };
+    const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');
 
     return {
         init,
@@ -400,7 +437,6 @@ const Client = (() => {
         getLandingCompanyValue,
         canTransferFunds,
         hasCostaricaAccount,
-        canOpenICO,
         canRequestProfessional,
         defaultRedirectUrl,
     };

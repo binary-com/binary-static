@@ -1,7 +1,7 @@
 const Client       = require('../../../base/client');
 const GTM          = require('../../../base/gtm');
 const BinarySocket = require('../../../base/socket');
-const formatMoney  = require('../../../common/currency').formatMoney;
+const Currency     = require('../../../common/currency');
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
 const urlFor       = require('../../../../_common/url').urlFor;
@@ -9,11 +9,11 @@ const urlFor       = require('../../../../_common/url').urlFor;
 const MetaTraderConfig = (() => {
     const mt_companies = {
         financial: {
-            standard: { mt5_account_type: 'standard', max_leverage: 500,  title: 'Standard' },
-            stp     : { mt5_account_type: 'stp',      max_leverage: 100,  title: 'STP' },
+            standard: { mt5_account_type: 'standard', max_leverage: 500, title: 'Standard' },
+            advanced: { mt5_account_type: 'advanced', max_leverage: 100, title: 'Advanced' },
         },
         gaming: {
-            volatility: { mt5_account_type: '', max_leverage: 500, title: 'Volatility' },
+            volatility: { mt5_account_type: '', max_leverage: 500, title: 'Volatility Indices' },
         },
     };
 
@@ -33,7 +33,7 @@ const MetaTraderConfig = (() => {
                     } else if (Client.get('is_virtual')) {
                         resolve(needsRealMessage());
                     } else if (accounts_info[acc_type].account_type === 'financial') {
-                        getAccountStatus().then((response_get_account_status) => {
+                        BinarySocket.wait('get_account_status').then((response_get_account_status) => {
                             const $message = $messages.find('#msg_real_financial').clone();
                             let is_ok = true;
                             if (/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status)) {
@@ -63,7 +63,7 @@ const MetaTraderConfig = (() => {
         deposit: {
             title      : localize('Deposit'),
             success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
-                formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
+                Currency.formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_binary,
                 response.echo_req.to_mt5,
                 response.binary_transaction_id,
@@ -77,12 +77,12 @@ const MetaTraderConfig = (() => {
                             resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', [
                                 urlFor('user/security/cashier_passwordws')]));
                         } else {
-                            getAccountStatus().then((response_status) => {
+                            BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                                 if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
                                     resolve(localize('Your cashier is locked.')); // Locked from BO
                                 } else {
                                     const limit = State.getResponse('get_limits.remainder');
-                                    if (typeof limit !== 'undefined' && limit < 1) {
+                                    if (typeof limit !== 'undefined' && +limit < Currency.getMinWithdrawal(Client.get('currency'))) {
                                         resolve(localize('You have reached the limit.'));
                                     } else {
                                         resolve();
@@ -97,7 +97,7 @@ const MetaTraderConfig = (() => {
         withdrawal: {
             title      : localize('Withdraw'),
             success_msg: response => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
-                formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
+                Currency.formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_mt5,
                 response.echo_req.to_binary,
                 response.binary_transaction_id,
@@ -106,8 +106,8 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
-                    getAccountStatus().then((response_status) => {
-                        resolve(+response_status.get_account_status.prompt_client_to_authenticate ?
+                    BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+                        resolve(!/authenticated/.test(response_status.get_account_status.status) ?
                             $messages.find('#msg_authenticate').html() : '');
                     });
                 } else {
@@ -190,20 +190,12 @@ const MetaTraderConfig = (() => {
             { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
         ],
         deposit: [
-            { selector: fields.deposit.txt_amount.id, validations: ['req', ['number', { type: 'float', min: 1, max: Math.min(State.getResponse('get_limits.remainder') || 20000, 20000), decimals: 2 }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
+            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: 1, max: Math.min(State.getResponse('get_limits.remainder') || 20000, 20000), decimals: 2 }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
         ],
         withdrawal: [
-            { selector: fields.withdrawal.txt_main_pass.id, validations: ['req'] },
-            { selector: fields.withdrawal.txt_amount.id,    validations: ['req', ['number', { type: 'float', min: 1, max: 20000, decimals: 2 }]] },
+            { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
+            { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: 1, max: 20000, decimals: 2 }]] },
         ],
-    });
-
-    const getAccountStatus = () => new Promise((resolve) => {
-        if (+State.get(['response', 'get_account_status', 'echo_req', 'mt5_related']) === 1) {
-            resolve(State.get(['response', 'get_account_status']));
-        } else {
-            BinarySocket.send({ get_account_status: 1, mt5_related: 1 }).then(resolve);
-        }
     });
 
     return {
@@ -213,7 +205,6 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
-        getAccountStatus,
         setMessages: ($msg) => { $messages = $msg; },
         getCurrency: acc_type => accounts_info[acc_type].info.currency,
     };

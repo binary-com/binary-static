@@ -15,7 +15,7 @@ const ProfitTable = (() => {
         return {
             buyDate  : `${buy_moment.format('YYYY-MM-DD')}\n${buy_moment.format('HH:mm:ss')} GMT`,
             ref      : transaction.transaction_id,
-            payout   : formatMoney(currency, parseFloat(transaction.payout), !is_jp_client),
+            payout   : +transaction.payout ? formatMoney(currency, parseFloat(transaction.payout), !is_jp_client) : '-',
             buyPrice : formatMoney(currency, buy_price, !is_jp_client),
             sellDate : `${sell_moment.format('YYYY-MM-DD')}\n${sell_moment.format('HH:mm:ss')} GMT`,
             sellPrice: formatMoney(currency, sell_price, !is_jp_client),

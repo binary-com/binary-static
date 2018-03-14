@@ -1,4 +1,4 @@
-.home-content, .home-old-content, .home-jp-content {
+.home-content, .home-jp-content {
     .signup-box {
         border-radius: $BORDER_RADIUS;
 
@@ -22,27 +22,11 @@
     }
 }
 
-.home-content, .home-old-content {
+.home-content {
     #banner {
-        background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
-    }
-    .xlist1 {
-        background: url('../images/pages/home/xicon-1.png') no-repeat;
-    }
-    .xlist2 {
-        background: url('../images/pages/home/xicon-2.png') no-repeat;
-    }
-    .xlist3 {
-        background: url('../images/pages/home/xicon-3.png') no-repeat;
-    }
-    .xlist1, .xlist2, .xlist3 {
-        @include BIDIR_PROP(padding-left, padding-right, 40px);
-        min-height: 24px;
-        background-size: 30px;
-        @include BIDIR_PROP(margin-left, margin-right, 50px !important);
-        padding-bottom: 1em;
-        @include BIDIR_VALUE(text-align, left, right);
-        @include BIDIR_VALUE(background-position, left top, right top);
+        background: url('../images/pages/home/home-banner.png') no-repeat;
+        background-position: left top;
+        background-size: 100% 70%;
     }
     .small-image {
         width: 10%;
@@ -82,9 +66,12 @@
         font-size: $FONT_SIZE_XS;
         font-style: italic;
     }
+    #market_tabs_container .tab-content {
+        min-height: 130px;
+    }
 }
 
-#content.home-beta-content {
+#content.home-content {
     .go-left, .go-right {
         &:hover {
             cursor: pointer;
@@ -194,30 +181,49 @@
             margin-top: auto;
         }
     }
+    .home-content {
+        #banner {
+            background-position: right top;
+            background-size: 125% 75%;
+        }
+        #market_tabs_selector {
+            top: 24px;
+        }
+        .order-2-m {
+            order: 2;
+            padding-top: 30px;
+        }
+        .center-text-m {
+            text-align: center;
+        }
+        .gr-centered-m {
+            margin: 0 auto;
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
-    .home-content, .home-old-content {
+    .home-content {
         .small-image {
             width: 30%;
         }
         .mena {
             width: 32%;
         }
+        #banner {
+            background-position: right top;
+            background-size: 300% 75%;
+        }
     }
-    #content.home-beta-content {
+    #content.home-content {
         .border-right {
             border-right: none;
         }
-        #market_tabs_selector, #account_tabs_selector {
+        #account_tabs_selector {
             top: 24px;
         }
         #frm_verify_email input {
             width: calc(100% - 10px);
-        }
-        .order-2-m {
-            order: 2;
-            padding-top: 30px;
         }
         .padding-top-20 {
             padding-top: 20px;

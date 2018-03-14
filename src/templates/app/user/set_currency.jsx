@@ -5,12 +5,12 @@ import SeparatorLine from '../../_common/components/separator_line.jsx';
 const Currencies = ({ text, id }) => (
     <React.Fragment>
         <div className='section-divider gr-padding-20 gr-row invisible' id={`${id}_currencies`}>
-            <div className='align-self-center border-bottom-light-gray'></div>
+            <div className='align-self-center border-bottom-light-gray' />
             <div className='faded'>{text}</div>
-            <div className='align-self-center border-bottom-light-gray'></div>
+            <div className='align-self-center border-bottom-light-gray' />
         </div>
         <div className='gr-5 gr-12-m gr-centered'>
-            <div className='gr-row gr-row-align-center gr-padding-20 gr-parent currency_list' id={`${id}_currency_list`}></div>
+            <div className='gr-row gr-row-align-center gr-padding-20 gr-parent currency_list' id={`${id}_currency_list`} />
         </div>
     </React.Fragment>
 );
@@ -28,7 +28,7 @@ const SetCurrency = () => (
                 </div>
                 <div className='invisible' id='show_new_account'>
                     <img src={it.url_for('images/pages/set_currency/account-created.svg')} />
-                    <div className='gr-padding-10'></div>
+                    <div className='gr-padding-10' />
                     <h1>{it.L('Congratulations!')}</h1>
                     <p>{it.L('You have successfully created your account!')}</p>
                 </div>
@@ -37,7 +37,7 @@ const SetCurrency = () => (
 
                 <div className='invisible' id='has_currency'>
                     <div>
-                        <a className='button' href={it.url_for('cashier/forwardws#deposit')}><span>{it.L('Make a Deposit')}</span></a>
+                        <a className='button' href={it.url_for('cashier/forwardws?action=deposit')}><span>{it.L('Make a Deposit')}</span></a>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@ const SetCurrency = () => (
                     <Currencies id='fiat' text={it.L('Fiat Currency')} />
                     <Currencies id='crypto' text={it.L('Cryptocurrency')} />
 
-                    <p className='invisible error-msg'></p>
+                    <p className='invisible error-msg' />
                     <button type='submit'>{it.L('Confirm')}</button>
                 </form>
             </div>

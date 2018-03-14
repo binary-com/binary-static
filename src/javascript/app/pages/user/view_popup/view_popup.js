@@ -1,6 +1,9 @@
 const moment               = require('moment');
 const ViewPopupUI          = require('./view_popup.ui');
 const Highchart            = require('../../trade/charts/highchart');
+const getLookbackFormula   = require('../../trade/lookback').getFormula;
+const getLBBarrierLabel    = require('../../trade/lookback').getBarrierLabel;
+const isLookback           = require('../../trade/lookback').isLookback;
 const TickDisplay          = require('../../trade/tick_trade');
 const setViewPopupTimer    = require('../../../base/clock').setViewPopupTimer;
 const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
@@ -25,6 +28,7 @@ const ViewPopup = (() => {
         chart_updated,
         sell_text_updated,
         btn_view,
+        multiplier,
         $container,
         $loading;
 
@@ -67,6 +71,8 @@ const ViewPopup = (() => {
         }
 
         $.extend(contract, response.proposal_open_contract);
+        // Lookback multiplier value
+        multiplier = contract.multiplier;
 
         if (contract && document.getElementById(wrapper_id)) {
             update();
@@ -83,13 +89,42 @@ const ViewPopup = (() => {
             $container = makeTemplate();
         }
 
-        containerSetText('trade_details_contract_id', contract.contract_id);
+        const contract_type_display = {
+            ASIANU      : 'Asian Up',
+            ASIAND      : 'Asian Down',
+            CALL        : 'Higher',
+            CALLE       : 'Higher or equal',
+            PUT         : 'Lower',
+            DIGITMATCH  : 'Digit Matches',
+            DIGITDIFF   : 'Digit Differs',
+            DIGITODD    : 'Digit Odd',
+            DIGITEVEN   : 'Digit Even',
+            DIGITOVER   : 'Digit Over',
+            DIGITUNDER  : 'Digit Under',
+            EXPIRYMISS  : 'Ends Outside',
+            EXPIRYRANGE : 'Ends Between',
+            EXPIRYRANGEE: 'Ends Between',
+            LBFLOATCALL : 'Close-Low',
+            LBFLOATPUT  : 'High-Close',
+            LBHIGHLOW   : 'High-Low',
+            RANGE       : 'Stays Between',
+            UPORDOWN    : 'Goes Outside',
+            ONETOUCH    : 'Touches',
+            NOTOUCH     : 'Does Not Touch',
+        };
 
-        containerSetText('trade_details_start_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
-        containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
+        containerSetText('trade_details_contract_type', localize(contract_type_display[contract.contract_type]));
+        containerSetText('trade_details_contract_id', contract.contract_id);
+        containerSetText('trade_details_start_date', epochToDateTime(contract.date_start));
+        containerSetText('trade_details_end_date', epochToDateTime(contract.date_expiry));
         containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
-
+        containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier, false, 3, 2));
+        if (isLookback(contract.contract_type)) {
+            containerSetText('trade_details_payout', getLookbackFormula(contract.contract_type, formatMoney(contract.currency, multiplier, false, 3, 2)));
+        } else {
+            containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
+        }
         setViewPopupTimer(updateTimers);
         update();
         ViewPopupUI.repositionConfirmation();
@@ -144,12 +179,12 @@ const ViewPopup = (() => {
                 window.time = moment(current_spot_time).utc();
                 updateTimers();
             }
-            containerSetText('trade_details_current_date', toJapanTimeIfNeeded(epochToDateTime(current_spot_time)));
+            containerSetText('trade_details_current_date', epochToDateTime(current_spot_time));
         } else {
             $('#trade_details_current_date').parent().setVisibility(0);
         }
 
-        containerSetText('trade_details_ref_id', contract.transaction_ids.buy + (contract.transaction_ids.sell ? ` - ${contract.transaction_ids.sell}` : ''));
+        containerSetText('trade_details_ref_id', `${contract.transaction_ids.buy} (${localize('Buy')}) ${contract.transaction_ids.sell ? `<br>${contract.transaction_ids.sell} (${localize('Sell')})` : ''}`);
         containerSetText('trade_details_indicative_price', indicative_price ? formatMoney(contract.currency, indicative_price) : '-');
 
         let profit_loss,
@@ -216,7 +251,7 @@ const ViewPopup = (() => {
     // This is called by clock.js in order to sync time updates on header as well as view popup
     const updateTimers = () => {
         const now = Math.max(Math.floor((window.time || 0) / 1000), contract.current_spot_time || 0);
-        containerSetText('trade_details_live_date', toJapanTimeIfNeeded(epochToDateTime(now)));
+        containerSetText('trade_details_live_date', epochToDateTime(now));
         showLocalTimeOnHover('#trade_details_live_date');
 
         const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
@@ -238,9 +273,15 @@ const ViewPopup = (() => {
 
     const contractEnded = () => {
         containerSetText('trade_details_current_title', localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
-        containerSetText('trade_details_spot_label', localize('Exit Spot'));
-        containerSetText('trade_details_spottime_label', localize('Exit Spot Time'));
+
         containerSetText('trade_details_indicative_label', localize('Price'));
+        if (isLookback(contract.contract_type)) {
+            containerSetText('trade_details_spot_label', localize('Close'));
+            containerSetText('trade_details_spottime_label', localize('Close Time'));
+        } else {
+            containerSetText('trade_details_spot_label', localize('Exit Spot'));
+            containerSetText('trade_details_spottime_label', localize('Exit Spot Time'));
+        }
         // show validation error if contract is not settled yet
         if (!(contract.is_settleable && !contract.is_sold)) {
             containerSetText('trade_details_message', '&nbsp;');
@@ -387,7 +428,7 @@ const ViewPopup = (() => {
 
         tr.appendChild(createElement('td', { class: 'gr-3' }));
         tr.appendChild(createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot') }));
-        tr.appendChild(createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time') }));
+        tr.appendChild(createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time (GMT)') }));
 
         table.insertBefore(tr, table.childNodes[0]);
     };
@@ -402,7 +443,7 @@ const ViewPopup = (() => {
         const tr        = createElement('tr', { class: 'gr-row' });
         const td_remark = createElement('td', { class: 'gr-3 remark', text: remark || '' });
         const td_tick   = createElement('td', { class: 'gr-4', text: (tick && !isNaN(tick) ? addComma(tick) : (tick || '')) });
-        const td_date   = createElement('td', { class: 'gr-5 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.utc(+date * 1000).format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
+        const td_date   = createElement('td', { class: 'gr-5 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
 
         tr.appendChild(td_remark);
         tr.appendChild(td_tick);
@@ -421,14 +462,18 @@ const ViewPopup = (() => {
     const populateAuditTable = (show_audit_table) => {
         const contract_starts = createAuditTable('Starts');
         parseAuditResponse(contract_starts.table, contract.audit_details.contract_start).then(() => {
-            if (contract.audit_details.contract_start) {
+            if (contract.audit_details.contract_start
+                // Hide audit table for Lookback.
+                && !/^(LBHIGHLOW|LBFLOATPUT|LBFLOATCALL)/.test(contract.shortcode)) {
                 createAuditHeader(contract_starts.table);
                 appendAuditLink('trade_details_entry_spot');
             } else {
                 contract_starts.div.remove();
             }
             // don't show exit tick information if missing or manual sold
-            if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)) {
+            if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)
+                // Hide audit table for Lookback.
+                && !/^(LBHIGHLOW|LBFLOATPUT|LBFLOATCALL)/.test(contract.shortcode)) {
                 const contract_ends = createAuditTable('Ends');
                 parseAuditResponse(contract_ends.table, contract.audit_details.contract_end).then(() => {
                     if (contract.audit_details.contract_end) {
@@ -457,8 +502,10 @@ const ViewPopup = (() => {
 
         $container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode }));
         const $sections  = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
-        let barrier_text = 'Barrier';
-        if (contract.barrier_count > 1) {
+        let [barrier_text, low_barrier_text] = ['Barrier', 'Low Barrier'];
+        if (isLookback(contract.contract_type)) {
+            [barrier_text, low_barrier_text] = getLBBarrierLabel(contract.contract_type, contract.barrier_count);
+        } else if (contract.barrier_count > 1) {
             barrier_text = 'High Barrier';
         } else if (/^DIGIT(MATCH|DIFF)$/.test(contract.contract_type)) {
             barrier_text = 'Target';
@@ -467,15 +514,17 @@ const ViewPopup = (() => {
         $sections.find('#sell_details_table').append($(
             `<table>
             <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
+            ${createRow('Contract Type', '', 'trade_details_contract_type')}
             ${createRow('Contract ID', '', 'trade_details_contract_id')}
-            ${createRow('Reference ID', '', 'trade_details_ref_id')}
+            ${createRow('Transaction ID', '', 'trade_details_ref_id')}
             ${createRow('Start Time', '', 'trade_details_start_date')}
             ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
                 createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
-            ${createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>')}
+            ${!isLookback(contract.contract_type) ? createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
-            ${(contract.barrier_count > 1 ? createRow('Low Barrier', '', 'trade_details_barrier_low', true) : '')}
+            ${(contract.barrier_count > 1 ? createRow(low_barrier_text, '', 'trade_details_barrier_low', true) : '')}
             ${createRow('Potential Payout', '', 'trade_details_payout')}
+            ${multiplier ? createRow('Multiplier', '', 'trade_details_multiplier') : ''}
             ${createRow('Purchase Price', '', 'trade_details_purchase_price')}
             </tbody>
             <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>
@@ -505,7 +554,10 @@ const ViewPopup = (() => {
         `<tr${(is_hidden ? ` class="${hidden_class}"` : '')}><td${(label_id ? ` id="${label_id}"` : '')}>${localize(label)}</td><td${(value_id ? ` id="${value_id}"` : '')}>${(value || '')}</td></tr>`
     );
 
-    const epochToDateTime = epoch => moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
+    const epochToDateTime = epoch => {
+        const date_time = moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
+        return jpClient() ? toJapanTimeIfNeeded(date_time) : `${date_time} GMT`;
+    };
 
     // ===== Tools =====
     const containerSetText = (id, string, attributes, is_visible) => {

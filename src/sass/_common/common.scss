@@ -64,7 +64,7 @@ button::-moz-focus-inner, input[type='submit']::-moz-focus-inner {
     border: 0;
 }
 
-a.button:hover {
+a.button:hover, a.button-white:hover {
     text-decoration: none;
 }
 
@@ -109,9 +109,16 @@ fieldset {
         padding: 0 0.8em;
         font-weight: bold;
         text-transform: capitalize;
+
+        & + .hint {
+            padding-left: 1em;
+        }
     }
     .text-display { /* TODO: replace all occurrences of id with the class */
         line-height: 25px;
+    }
+    #geocode_error {
+        margin: 5px 15px;
     }
 }
 
@@ -123,6 +130,10 @@ fieldset {
 
 .secondary-bg-color .error-msg {
     color: $COLOR_WHITE;
+}
+
+.white-bg-color {
+    background-color: $white;
 }
 
 textarea {
@@ -385,8 +396,6 @@ button .barspinner.white {
 }
 
 .static_full {
-    margin-top: 40px;
-
     .section:first-child {
         padding-bottom: 50px;
     }
@@ -451,6 +460,7 @@ ul.bullet.gr-row > li {
 }
 
 #content {
+    margin-top: 40px;
     margin-bottom: 20px;
 
     .light {
@@ -511,4 +521,52 @@ ul.bullet.gr-row > li {
 
 li strong.margin-right {
     margin-right: 5px;
+}
+
+[data-show]:not(.data-show-visible) {
+    display: none !important;
+}
+
+.button-white {
+    cursor: pointer;
+    margin-bottom: 0.5em;
+
+    span {
+        @include link-button;
+        overflow: visible;
+        border: 1px solid $COLOR_GRAY;
+        color: $COLOR_BLACK;
+        background: $COLOR_WHITE;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0;
+
+        &:hover {
+            text-decoration: none;
+            background: $COLOR_GRAY;
+        }
+        &.icon-google:before {
+            margin-right: 10px;
+        }
+    }
+}
+
+.icon-google:before {
+    content: url('../images/pages/applications/icon-google.svg');
+}
+
+.section-divider {
+    .circle {
+        padding: 7px 5px !important;
+    }
+}
+
+.no-capitalize > a {
+    text-transform: none !important;
+}
+
+label + input {
+    margin-left: 5px;
 }

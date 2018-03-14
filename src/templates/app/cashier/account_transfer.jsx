@@ -2,13 +2,12 @@ import React from 'react';
 import { FormRow, SubmitButton, Fieldset } from '../../_common/components/forms.jsx';
 
 const Row = ({ id }) => (
-    <div className='gr-padding-10 gr-row table-body'>
-        <div className='gr-1'></div>
-        <div>
-            <span id={`${id}_loginid`}></span>
+    <div className='gr-padding-10 gr-row'>
+        <div className='gr-2 align-end'>
+            <span id={`${id}_loginid`} />
         </div>
-        <div className='gr-5'>
-            <span id={`${id}_balance`}></span>
+        <div className='gr-10'>
+            <span id={`${id}_currency`} />&nbsp;<span id={`${id}_balance`} />
         </div>
     </div>
 );
@@ -19,25 +18,30 @@ const AccountTransfer = () => (
 
         <div className='invisible' id='client_message'>
             <p className='center-text notice-msg'>
-                <span className='invisible' id='no_account'>{it.L('Fund transfers between accounts are unavailable.')}</span>
+                <span className='invisible' id='no_account'>{it.L('Fund transfers between accounts are unavailable.')}&nbsp;</span>
                 <span className='invisible' id='not_enough_balance'>
                     {it.L('The minimum required amount for using the account transfer facility is [_1].', '<span id="min_required_amount"></span>')}
+                    &nbsp;
                 </span>
                 <span className='invisible' id='no_balance'>
-                    {it.L('Please [_1]deposit[_2] to your account.', `<a href="${it.url_for('cashier/forwardws#deposit')}">`, '</a>')}
+                    {it.L('Please [_1]deposit[_2] to your account.', `<a href='${it.url_for('cashier/forwardws?action=deposit')}'>`, '</a>')}
+                    &nbsp;
                 </span>
-                <span className='invisible' id='limit_reached'>{it.L('You have reached your withdrawal limit.')}</span>
+                <span className='invisible' id='limit_reached'>{it.L('You have reached your withdrawal limit.')}&nbsp;</span>
             </p>
         </div>
 
         <div className='invisible' id='error_message'>
-            <p className='center-text notice-msg'></p>
+            <p className='center-text notice-msg' />
         </div>
 
         <div className='invisible' id='success_form'>
             <p>{it.L('Your fund transfer is successful. Your new balances are:')}</p>
             <Row id='from' />
             <Row id='to' />
+            <p>
+                <a href='javascript:;' id='reset_transfer'>{it.L('Make another transfer')}</a>
+            </p>
         </div>
 
         <form className='invisible' id='frm_account_transfer'>
@@ -47,9 +51,9 @@ const AccountTransfer = () => (
                 <FormRow label={it.L('Transfer from')} type='label'  id='lbl_transfer_from' />
                 <FormRow label={it.L('Transfer to')}   type='select' id='transfer_to' />
                 <FormRow label={it.L('Amount')}        type='custom' id='transfer_amount'>
-                    <label id='currency'></label>
+                    <label id='currency' />
                     <input id='amount' name='amount' type='text' maxLength='20' autoComplete='off' />
-                    <div className='hint' id='range_hint'></div>
+                    <div className='hint' id='range_hint' />
                 </FormRow>
             </Fieldset>
 
