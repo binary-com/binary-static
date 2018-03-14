@@ -17,7 +17,14 @@ const Amount = ({
     amount,
     onChange,
     is_nativepicker,
-}) => (
+    is_minimized,
+}) => {
+    if (is_minimized) {
+        return (
+            <div>Amount: {amount}</div>
+        );
+    }
+    return (
         <fieldset>
             <div className='fieldset-header'>
                 <span className='field-info left'>{localize('Invest Amount')}</span>
@@ -50,7 +57,8 @@ const Amount = ({
                 />
             }
         </fieldset>
-);
+    );
+}
 
 export default connect(
     ({trade}) => ({

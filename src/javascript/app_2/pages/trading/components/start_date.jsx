@@ -12,24 +12,32 @@ const StartDate = ({
     server_time,
     onChange,
     is_nativepicker,
-}) => (
-    <fieldset>
-        <ClockHeader time={server_time} header={localize('Start time')} />
-        <Dropdown
-            name='start_date'
-            value={start_date}
-            list={start_dates_list}
-            onChange={onChange}
-            type='date'
-            is_nativepicker={is_nativepicker}
-        />
-        {start_date !== 'now' &&
-            <React.Fragment>
-                <TimePicker onChange={onChange} name='start_time' value={start_time} placeholder='12:00 pm'/>
-            </React.Fragment>
-        }
-    </fieldset>
-);
+    is_minimized,
+}) => {
+    if (is_minimized) {
+        return (
+            <div>Start date: {start_date}</div>
+        );
+    }
+    return (
+        <fieldset>
+            <ClockHeader time={server_time} header={localize('Start time')} />
+            <Dropdown
+                name='start_date'
+                value={start_date}
+                list={start_dates_list}
+                onChange={onChange}
+                type='date'
+                is_nativepicker={is_nativepicker}
+            />
+            {start_date !== 'now' &&
+                <React.Fragment>
+                    <TimePicker onChange={onChange} name='start_time' value={start_time} placeholder='12:00 pm'/>
+                </React.Fragment>
+            }
+        </fieldset>
+    );
+}
 
 export default connect(
     ({trade}) => ({

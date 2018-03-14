@@ -22,7 +22,14 @@ const Duration = ({
     server_time,
     onChange,
     is_nativepicker,
-}) => (
+    is_minimized,
+}) => {
+    if (is_minimized) {
+        return (
+            <div>Duration: {duration}</div>
+        );
+    }
+    return (
         <fieldset>
             <ClockHeader time={server_time} header={localize('Trade Duration')} />
             <Dropdown
@@ -79,7 +86,8 @@ const Duration = ({
                 </React.Fragment>
             }
         </fieldset>
-);
+    );
+}
 
 export default connect(
     ({trade}) => ({

@@ -50,7 +50,6 @@ class TradeApp extends React.Component {
                 <div className='mobile-only'>
                     <MobileWidget>
                         {this.renderParamPickers()}
-                        {this.renderParamPickers()}
                     </MobileWidget>
                 </div>
 
