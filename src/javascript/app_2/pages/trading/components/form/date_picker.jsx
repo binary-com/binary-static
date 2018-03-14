@@ -503,7 +503,6 @@ class DatePicker extends React.Component {
                     <input
                         id={this.props.id}
                         name={this.props.name}
-                        className='datepicker-display'
                         type='date'
                         value={value}
                         onChange={(e) => {
