@@ -14,29 +14,26 @@ class LanguageSwitcher extends React.PureComponent {
         this.setState({
             is_collapsed: !this.state.is_collapsed,
         });
-    }
+    };
 
     switchLanguage = (lang) => {
         this.setState({
             active_language: lang,
         });
-    }
+    };
 
     render() {
         const language_list_collapsed = {
             // visibility needed in style props as workaround for briefly flashing hidden elements in css
-            display: `${this.state.is_collapsed ? 'inline-block' : 'none'}`,
+            display: this.state.is_collapsed ? 'inline-block' : 'none',
         };
 
-        const language_is_active = (lang) => {
-            const is_active = lang.id === this.state.active_language.id;
-            return is_active;
-        };
+        const isLanguageActive = (lang) => lang.id === this.state.active_language.id;
 
         return (
             <React.Fragment>
                 <div className='drawer-item' onClick={this.toggleLanguageList}>
-                    <span className={`parent-item ${this.state.active_language.id||''}`}>
+                    <span className={`parent-item ${this.state.active_language.id || ''}`}>
                         {localize('Language')} : {this.state.active_language.name}
                     </span>
                 </div>
@@ -52,7 +49,7 @@ class LanguageSwitcher extends React.PureComponent {
                     {this.props.languages.map((language, idx) => (
                         <React.Fragment key={idx}>
                             <div
-                                className={`lang-switcher-language ${language_is_active(language) ? 'active' : ''}`}
+                                className={`lang-switcher-language ${isLanguageActive(language) ? 'active' : ''}`}
                                 onClick={this.switchLanguage.bind(null, language)}
                             >
                                 <p className='lang-switcher-name'>{language.name}</p>
@@ -65,22 +62,22 @@ class LanguageSwitcher extends React.PureComponent {
     }
 }
 
-// TO-DO: Remove defaultProps
+// TODO: Remove defaultProps
 LanguageSwitcher.defaultProps = {
     languages: [
-      { id: 'EN',    name: 'English' },
-      { id: 'DE',    name: 'Deutsch' },
-      { id: 'FR',    name: 'Français' },
-      { id: 'ID',    name: 'Indonesia' },
-      { id: 'IT',    name: 'Italiano' },
-      { id: 'JA',    name: '日本語' },
-      { id: 'PL',    name: 'Polish' },
-      { id: 'PT',    name: 'Português' },
-      { id: 'RU',    name: 'Русский' },
-      { id: 'TH',    name: 'Thai' },
-      { id: 'VI',    name: 'Tiếng Việt' },
-      { id: 'ZH_CN', name: '简体中文' },
-      { id: 'ZH_TW', name: '繁體中文' },
+        { id: 'EN',    name: 'English' },
+        { id: 'DE',    name: 'Deutsch' },
+        { id: 'FR',    name: 'Français' },
+        { id: 'ID',    name: 'Indonesia' },
+        { id: 'IT',    name: 'Italiano' },
+        { id: 'JA',    name: '日本語' },
+        { id: 'PL',    name: 'Polish' },
+        { id: 'PT',    name: 'Português' },
+        { id: 'RU',    name: 'Русский' },
+        { id: 'TH',    name: 'Thai' },
+        { id: 'VI',    name: 'Tiếng Việt' },
+        { id: 'ZH_CN', name: '简体中文' },
+        { id: 'ZH_TW', name: '繁體中文' },
     ],
 };
 

@@ -79,60 +79,41 @@
                             color: $COLOR_DARK_BLUE;
                             padding: 16px;
 
-                            &.trade:before {
-                                content: url('../images/trading_app/header/trade/ic-trade-normal-light.svg');
+                            &:before {
                                 margin-right: 8px;
                                 vertical-align: sub;
+                            }
+                            &.trade:before {
+                                content: url('../images/trading_app/header/icons/ic_trade_normal_light.svg');
                             }
                             &.portfolio:before {
-                                content: url('../images/trading_app/header/portfolio/ic-portfolio-normal-light.svg');
-                                margin-right: 8px;
-                                vertical-align: sub;
+                                content: url('../images/trading_app/header/icons/ic_portfolio_normal_light.svg');
                             }
                             &.statement:before {
-                                content: url('../images/trading_app/header/statement/ic-statement-normal-light.svg');
-                                margin-right: 8px;
-                                vertical-align: sub;
+                                content: url('../images/trading_app/header/icons/ic_statement_normal_light.svg');
                             }
                             &.cashier:before {
-                                content: url('../images/trading_app/header/cashier/ic-cashier-normal-light.svg');
-                                margin-right: 8px;
-                                vertical-align: sub;
+                                content: url('../images/trading_app/header/icons/ic_cashier_normal_light.svg');
                             }
                         }
-                        &:hover {
+                        &:hover, &.active {
                             & > span {
                                 font-weight: 400;
                             }
                             & > span.trade:before {
-                                content: url('../images/trading_app/header/trade/ic-trade-active-light.svg');
+                                content: url('../images/trading_app/header/icons/ic_trade_active_light.svg');
                             }
                             & > span.portfolio:before {
-                                content: url('../images/trading_app/header/portfolio/ic-portfolio-active-light.svg');
+                                content: url('../images/trading_app/header/icons/ic_portfolio_active_light.svg');
                             }
                             & > span.statement:before {
-                                content: url('../images/trading_app/header/statement/ic-statement-active-light.svg');
+                                content: url('../images/trading_app/header/icons/ic_statement_active_light.svg');
                             }
                             & > span.cashier:before {
-                                content: url('../images/trading_app/header/cashier/ic-cashier-active-light.svg');
+                                content: url('../images/trading_app/header/icons/ic_cashier_active_light.svg');
                             }
                         }
                         &.active {
-                            & > span {
-                                font-weight: 400;
-                            }
-                            & > span.trade:before {
-                                content: url('../images/trading_app/header/trade/ic-trade-active-light.svg');
-                            }
-                            & > span.portfolio:before {
-                                content: url('../images/trading_app/header/portfolio/ic-portfolio-active-light.svg');
-                            }
-                            & > span.statement:before {
-                                content: url('../images/trading_app/header/statement/ic-statement-active-light.svg');
-                            }
-                            & > span.cashier:before {
-                                content: url('../images/trading_app/header/cashier/ic-cashier-active-light.svg');
-                            }
                             &:after {
                                 display: block;
                                 position: absolute;

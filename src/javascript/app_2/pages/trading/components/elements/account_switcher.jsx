@@ -16,7 +16,7 @@ class AccountSwitcher extends React.PureComponent {
         this.setState({
             is_collapsed: !this.state.is_collapsed,
         });
-    }
+    };
 
     switchAccount = (account) => {
         this.setState({
@@ -27,7 +27,7 @@ class AccountSwitcher extends React.PureComponent {
                 this.props.onChange({ target: { name: 'currency', value: account.account_type } });
             }
         }
-    }
+    };
 
     render() {
         const account_list_collapsed = {
@@ -35,14 +35,15 @@ class AccountSwitcher extends React.PureComponent {
         };
 
         const isAccountHidden = (account) => (account.id === this.state.active_account.id);
+        const getSwitcherAccountClass = (account) => classNames('acc-switcher-account', {
+            'hide': isAccountHidden(account),
+        });
+
         const switcher_active_login_class = classNames('acc-switcher-active-login', {
             'collapsed': this.state.is_collapsed,
         });
         const switcher_list_class = classNames('acc-switcher-list', {
             'collapsed': this.state.is_collapsed,
-        });
-        const switcher_account_class = (account) => classNames('acc-switcher-account', {
-            'hide': isAccountHidden(account),
         });
 
         return (
@@ -62,7 +63,7 @@ class AccountSwitcher extends React.PureComponent {
                             {this.props.accounts.map((account, idx) => (
                                 <React.Fragment key={idx}>
                                     <div
-                                        className={switcher_account_class(account)}
+                                        className={getSwitcherAccountClass(account)}
                                         onClick={this.switchAccount.bind(null, account)}
                                     >
                                         <p className='acc-switcher-accountid'>{account.id}</p>
@@ -79,7 +80,7 @@ class AccountSwitcher extends React.PureComponent {
 }
 
 
-// TO-DO: Remove defaultProps and parse accounts from websockets/localstorage
+// TODO: Remove defaultProps and parse accounts from websockets/localstorage
 AccountSwitcher.defaultProps = {
     accounts: [
       { id: 'VRTC1234567', account_type: 'Virtual' },

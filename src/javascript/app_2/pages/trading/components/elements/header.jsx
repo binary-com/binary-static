@@ -52,13 +52,8 @@ const MenuDrawer = () => (
 class TradingHeader extends React.Component {
 
     render() {
-        const menu_link_is_active = (name) => {
-            const pathname = window.location.pathname;
-            if (pathname.indexOf(name.toLowerCase()) >= 0) {
-                return true;
-            }
-            return false;
-        };
+        const isMenuLinkActive = (name) => (window.location.pathname.indexOf(name.toLowerCase()) >= 0);
+
         return (
             <React.Fragment>
                 <header id={this.props.id} className='shadow'>
@@ -66,7 +61,7 @@ class TradingHeader extends React.Component {
                         <div className='menu-left'>
                             <ToggleDrawer alignment='left' has_footer>
                                 <AccountSwitcher
-                                    active_account={[
+                                    active_account={[ // TODO: remove dummy values
                                         { id: 'VRTC1234567', account_type: 'Virtual' },
                                     ]}
                                 />
@@ -79,7 +74,7 @@ class TradingHeader extends React.Component {
                                 <div className='menu-links'>
                                     {this.props.items.map((item, idx) => (
                                         <a
-                                            className={`${menu_link_is_active(item.text) ? 'active': ''}`}
+                                            className={`${isMenuLinkActive(item.text) ? 'active': ''}`}
                                             key={idx}
                                             href={item.href || 'javascript:;'}
                                         >
@@ -98,7 +93,7 @@ class TradingHeader extends React.Component {
                         <ToggleDrawer
                             icon_class='notify-toggle'
                             alignment='right'
-                            icon_link={Url.urlForStatic('images/trading_app/header/notification/ic-notification-light.svg')}
+                            icon_link={Url.urlForStatic('images/trading_app/header/icons/ic_notification_light.svg')}
                         >
                             <DrawerItem text='Alert 1'/>
                             <DrawerItem text='Alert 2'/>
@@ -116,12 +111,13 @@ const AccountBalance = ({
     client_accounts,
     onClick,
 }) => {
-    // TO-DO: Use Client.get()
-    const balance = client_accounts[Object.keys(client_accounts)[0]].balance;
-    const is_upgrade = client_accounts[Object.keys(client_accounts)[0]].is_virtual;
-    let currency = client_accounts[Object.keys(client_accounts)[0]].currency;
+    // TODO: Use Client.get()
+    const account     = client_accounts[Object.keys(client_accounts)[0]];
+    const button_text = account.is_virtual ? 'Upgrade' : 'Deposit';
+    const balance     = account.balance;
+    let currency      = account.currency;
     currency = currency ? currency.toLowerCase() : null;
-    const button_text = is_upgrade === 1 ? 'Upgrade' : 'Deposit';
+
     return (
         <div className='acc-balance-container'>
             <div className='acc-balance'>
@@ -142,7 +138,7 @@ const AccountBalance = ({
     );
 };
 
-// TO-DO: Remove defaultProps dummy values and use Client.get()
+// TODO: Remove defaultProps dummy values and use Client.get()
 TradingHeader.defaultProps = {
     active_loginid : 'VRTC1234567',
     client_accounts: {'VRTC1234567': {'currency': 'AUD','is_disabled': 0,'is_virtual': 1,'balance': '10000.00'}},
