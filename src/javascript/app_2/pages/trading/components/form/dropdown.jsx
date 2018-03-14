@@ -68,6 +68,16 @@ class Dropdown extends React.PureComponent {
     }
 
     render() {
+        if (this.props.is_nativepicker) {
+            return (
+                <NativeSelect
+                    name={this.props.name}
+                    value={this.props.value}
+                    list={this.props.list}
+                    onChange={this.props.onChange}
+                />
+            );
+        }
         return (
             <div
                 ref={this.setWrapperRef}
@@ -133,6 +143,30 @@ const Items = ({
             </div>
         </React.Fragment>
     ))
+);
+
+const NativeSelect = ({
+    name,
+    value,
+    list,
+    onChange,
+}) => (
+    <select name={name} value={value} onChange={onChange}>
+        {Array.isArray(list) ?
+          list.map((item, idx) => (
+              <option key={idx} value={item.value}>{item.text}</option>
+          ))
+        :
+        Object.keys(list).map(key => (
+            <React.Fragment key={key}>
+                <optgroup label={key}>
+                    {list[key].map((item, idx) => (
+                        <option key={idx} value={item.value}>{item.text}</option>
+                    ))}
+                </optgroup>
+            </React.Fragment>
+        ))}
+    </select>
 );
 
 export default Dropdown;

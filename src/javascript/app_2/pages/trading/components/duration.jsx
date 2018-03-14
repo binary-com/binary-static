@@ -21,15 +21,23 @@ const Duration = ({
     duration_units_list,
     server_time,
     onChange,
-}) => (
-    <fieldset>
-        <ClockHeader time={server_time} header={localize('Trade Duration')} />
-        <Dropdown
-            list={expiry_list}
-            value={expiry_type}
-            name='expiry_type'
-            onChange={onChange}
-        />
+    is_nativepicker,
+    is_minimized,
+}) => {
+    if (is_minimized) {
+        return (
+            <div>Duration: {duration}</div>
+        );
+    }
+    return (
+        <fieldset>
+            <ClockHeader time={server_time} header={localize('Trade Duration')} />
+            <Dropdown
+                list={expiry_list}
+                value={expiry_type}
+                name='expiry_type'
+                onChange={onChange}
+            />
 
         {expiry_type === 'duration' ?
             <React.Fragment>
@@ -55,20 +63,12 @@ const Duration = ({
                         name='duration_unit'
                         onChange={onChange}
                     />
-                </div>
-            </React.Fragment> :
-            <React.Fragment>
-                <Datepicker
-                    name='expiry_date'
-                    showTodayBtn={true}
-                    minDate={moment(server_time)}
-                    onChange={onChange}
-                />
-                <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
-            </React.Fragment>
-        }
-    </fieldset>
-);
+                    <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
+                </React.Fragment>
+            }
+        </fieldset>
+    );
+}
 
 export default connect(
     ({trade}) => ({

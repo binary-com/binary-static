@@ -112,4 +112,10 @@
         display: none;
     }
 }
+
+.mobile-only {
+    @media (min-width: 769px) {
+        display: none;
+    }
+}
 /* stylelint-enable color-no-hex */
