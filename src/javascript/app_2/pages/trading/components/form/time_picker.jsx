@@ -280,7 +280,7 @@ class TimePicker extends PureComponent {
         const [hour, minute] = value.split(':');
         const meridiem = +hour >= 12 ? 'pm' : 'am';
         if (meridiem === 'pm' && hour > 12) {
-            return `${('0'+(+hour-12)).slice(-2)}:${minute} ${meridiem}`;
+            return `${(`0${+hour-12}`).slice(-2)}:${minute} ${meridiem}`;
         }
 
         return `${+hour === 0 ? 12 : hour}:${minute} ${meridiem}`;
@@ -293,7 +293,6 @@ class TimePicker extends PureComponent {
             value,
             name,
             placeholder,
-            ...props
         } = this.props;
         const formatted_value = this.convertTo24h(value);
         return (
@@ -302,7 +301,7 @@ class TimePicker extends PureComponent {
                 className={`${prefix_class}${this.props.padding ? ' padding' : ''}${this.state.is_open ? ' active' : ''}`}
             >
                 {
-                    !is_nativepicker
+                    is_nativepicker
                     ? <input
                         type='time'
                         id={`${prefix_class}-input`}
