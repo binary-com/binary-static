@@ -82,12 +82,6 @@ const LoggedInHandler = (() => {
             });
         });
 
-        // if didn't find any login ID that matched the above condition, set the first one at the end of the loop
-        if (!is_loginid_set) {
-            Client.set('loginid', params.acct1 || account_list[0].loginid);
-            is_loginid_set = true;
-        }
-
         let i = 1;
         while (params[`acct${i}`]) {
             const loginid = params[`acct${i}`];
@@ -96,6 +90,13 @@ const LoggedInHandler = (() => {
                 Client.set('token', token, loginid);
             }
             i++;
+        }
+
+        // if didn't find any login ID that matched the above condition
+        // or the selected one doesn't have a token, set the first one
+        if (!is_loginid_set || !Client.get('token')) {
+            Client.set('loginid', params.acct1 || account_list[0].loginid);
+            is_loginid_set = true;
         }
 
         if (Client.isLoggedIn()) {
