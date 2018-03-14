@@ -40,6 +40,7 @@ class ToggleDrawer extends React.PureComponent {
                     ref={this.setRef}
                     alignment={this.props.alignment}
                     closeBtn={this.closeDrawer}
+                    has_footer={this.props.has_footer}
                 >
                     {this.props.children}
                 </Drawer>
