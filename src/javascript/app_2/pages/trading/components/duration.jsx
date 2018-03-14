@@ -66,13 +66,11 @@ const Duration = ({
                             onChange={onChange}
                             is_nativepicker={is_nativepicker}
                         />
-                    </div>
-                </React.Fragment> :
-                <React.Fragment>
-                    <Datepicker
-                        name='expiry_date'
-                        showTodayBtn={true}
-                        minDate={moment(server_time)}
+                    }
+                    <Dropdown
+                        list={duration_units_list}
+                        value={duration_unit}
+                        name='duration_unit'
                         onChange={onChange}
                         is_nativepicker={is_nativepicker}
                     />
