@@ -1,4 +1,5 @@
 import React from 'react';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 import classNames from 'classnames';
 import { localize } from '../../../../../_common/localize';
 
@@ -56,19 +57,21 @@ class AccountSwitcher extends React.PureComponent {
                     className={switcher_list_class}
                     style={account_list_collapsed}
                 >
-                    <div className='acc-switcher-items'>
-                        {this.props.accounts.map((account, idx) => (
-                            <React.Fragment key={idx}>
-                                <div
-                                    className={switcher_account_class(account)}
-                                    onClick={this.switchAccount.bind(null, account)}
-                                >
-                                    <p className='acc-switcher-accountid'>{account.id}</p>
-                                    <p className='acc-switcher-currency'>{`${account.account_type} ${localize('Account')}`}</p>
-                                </div>
-                            </React.Fragment>
-                        ))}
-                    </div>
+                    <PerfectScrollbar>
+                        <div className='acc-switcher-items'>
+                            {this.props.accounts.map((account, idx) => (
+                                <React.Fragment key={idx}>
+                                    <div
+                                        className={switcher_account_class(account)}
+                                        onClick={this.switchAccount.bind(null, account)}
+                                    >
+                                        <p className='acc-switcher-accountid'>{account.id}</p>
+                                        <p className='acc-switcher-currency'>{`${account.account_type} ${localize('Account')}`}</p>
+                                    </div>
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    </PerfectScrollbar>
                 </div>
             </div>
         );

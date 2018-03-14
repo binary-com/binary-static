@@ -61,6 +61,7 @@
             opacity: 1;
             transform: scale(1, 1);
             height: 100%;
+            max-height: calc(100% - 156px);
         }
         .acc-switcher-account {
             cursor: pointer;
