@@ -411,7 +411,7 @@ const getDayDifference = (date) => {
     return (!date || diff < 0) ? 1 : diff + 1;
 };
 
-class DatePicker extends React.Component {
+class DatePicker extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -496,7 +496,7 @@ class DatePicker extends React.Component {
     }
 
     render() {
-        const value =  this.getPickerValue();
+        const value = this.getPickerValue();
         return (
             <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
                 <div
