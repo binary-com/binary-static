@@ -141,10 +141,10 @@ const AccountBalance = ({
     );
 };
 
-// TO-DO: Remove defaultProps
+// TO-DO: Remove defaultProps dummy values
 TradingHeader.defaultProps = {
-    active_loginid : localStorage.getItem('active_loginid') || 'VRTC1234567',
-    client_accounts: JSON.parse(localStorage.getItem('client.accounts')) || {'VRTC1234567': {'currency': 'AUD','is_disabled': 0,'is_virtual': 1,'balance': '10000.00'}},
+    active_loginid : 'VRTC1234567',
+    client_accounts: {'VRTC1234567': {'currency': 'AUD','is_disabled': 0,'is_virtual': 1,'balance': '10000.00'}},
 };
 
 export default TradingHeader;
