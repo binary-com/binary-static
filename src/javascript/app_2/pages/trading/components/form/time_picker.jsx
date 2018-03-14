@@ -258,28 +258,41 @@ class TimePicker extends PureComponent {
 
     render() {
         const prefix_class='time-picker';
+        const {
+            is_nativepicker,
+            value,
+            ...props,
+        } = this.props;
         return (
             <div
                 ref={this.saveRef}
                 className={`${prefix_class}${this.props.padding ? ' padding' : ''}${this.state.is_open ? ' active' : ''}`}
             >
-                <input
-                    ref={this.saveRef}
-                    type='text'
-                    readOnly
-                    id={`${prefix_class}-input`}
-                    className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
-                    value={this.props.value}
-                    onClick={this.toggleDropDown}
-                    {...this.props}
-                />
-                <TimePickerDropdown
-                    className={this.state.is_open ? 'active' : ''}
-                    toggle={this.toggleDropDown}
-                    onChange={this.handleChange}
-                    preClass={prefix_class}
-                    value={this.props.value}
-                />
+                {
+                    is_nativepicker 
+                    ? <input type='time' id={`${prefix_class}-input`} value={value} {...props} />
+                    : (
+                        <React.Fragment>
+                            <input
+                                ref={this.saveRef}
+                                type='text'
+                                readOnly
+                                id={`${prefix_class}-input`}
+                                className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
+                                value={value}
+                                onClick={this.toggleDropDown}
+                                {...props}
+                            />
+                            <TimePickerDropdown
+                                className={this.state.is_open ? 'active' : ''}
+                                toggle={this.toggleDropDown}
+                                onChange={this.handleChange}
+                                preClass={prefix_class}
+                                value={value}
+                            />
+                        </React.Fragment>
+                    )   
+                } 
             </div>
         );
     }
