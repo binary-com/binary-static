@@ -141,7 +141,7 @@ const AccountBalance = ({
     );
 };
 
-// TO-DO: Remove defaultProps dummy values
+// TO-DO: Remove defaultProps dummy values and use Client.get()
 TradingHeader.defaultProps = {
     active_loginid : 'VRTC1234567',
     client_accounts: {'VRTC1234567': {'currency': 'AUD','is_disabled': 0,'is_virtual': 1,'balance': '10000.00'}},
