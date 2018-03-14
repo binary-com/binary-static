@@ -36,15 +36,6 @@
         border-radius: 4px;
         transition: all 0.3s;
 
-        &:hover {
-            border-color: #2a3052;
-        }
-        &:active, &:focus {
-            outline: 0;
-            border-radius: 4px;
-            border-color: #2a3052;
-            box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
-        }
         &:not([type=range]), label, textarea {
             touch-action: manipulation;
         }
