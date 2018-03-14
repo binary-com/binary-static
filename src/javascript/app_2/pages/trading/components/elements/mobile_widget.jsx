@@ -36,9 +36,10 @@ class MobileWidget extends React.PureComponent {
 
         return (
             <React.Fragment>
-                <div className='btn' onClick={this.handleWidgetClick}>
+                <div className='mobile-widget' onClick={this.handleWidgetClick}>
                     {minimized_children}
                 </div>
+                
                 <FullscreenDialog
                     title='Set parameters'
                     visible={this.state.open}
