@@ -17,6 +17,7 @@ const Amount = ({
     amount,
     onChange,
     is_minimized,
+    is_nativepicker,
 }) => {
     if (is_minimized) {
         return (
@@ -34,6 +35,7 @@ const Amount = ({
                     value={basis}
                     name='basis'
                     onChange={onChange}
+                    is_nativepicker={is_nativepicker}
                 />
                 <InputField
                     type='number'
@@ -51,6 +53,7 @@ const Amount = ({
                     value={currency}
                     name='currency'
                     onChange={onChange}
+                    is_nativepicker={is_nativepicker}
                 />
             }
         </fieldset>
