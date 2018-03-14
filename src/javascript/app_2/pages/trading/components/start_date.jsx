@@ -32,7 +32,13 @@ const StartDate = ({
             />
             {start_date !== 'now' &&
                 <React.Fragment>
-                    <TimePicker onChange={onChange} name='start_time' value={start_time} placeholder='12:00 pm'/>
+                    <TimePicker
+                        onChange={onChange}
+                        name='start_time'
+                        value={start_time}
+                        placeholder='12:00 pm'
+                        is_nativepicker={is_nativepicker}
+                    />
                 </React.Fragment>
             }
         </fieldset>
