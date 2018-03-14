@@ -37,7 +37,7 @@ const StartDate = ({
             }
         </fieldset>
     );
-}
+};
 
 export default connect(
     ({trade}) => ({

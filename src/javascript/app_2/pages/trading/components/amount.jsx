@@ -16,7 +16,6 @@ const Amount = ({
     currencies_list,
     amount,
     onChange,
-    is_nativepicker,
     is_minimized,
 }) => {
     if (is_minimized) {
@@ -56,7 +55,7 @@ const Amount = ({
             }
         </fieldset>
     );
-}
+};
 
 export default connect(
     ({trade}) => ({

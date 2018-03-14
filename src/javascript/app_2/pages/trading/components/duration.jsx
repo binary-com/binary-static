@@ -37,6 +37,7 @@ const Duration = ({
                 value={expiry_type}
                 name='expiry_type'
                 onChange={onChange}
+                is_nativepicker={is_nativepicker}
             />
 
             {expiry_type === 'duration' ?
@@ -49,6 +50,7 @@ const Duration = ({
                                 maxDate={moment(server_time).add(365, 'd')}
                                 displayFormat='d'
                                 onChange={onChange}
+                                is_nativepicker={is_nativepicker}
                             /> :
                             <InputField
                                 type='number'
@@ -62,6 +64,7 @@ const Duration = ({
                             value={duration_unit}
                             name='duration_unit'
                             onChange={onChange}
+                            is_nativepicker={is_nativepicker}
                         />
                     </div>
                 </React.Fragment> :
@@ -71,13 +74,20 @@ const Duration = ({
                         showTodayBtn={true}
                         minDate={moment(server_time)}
                         onChange={onChange}
+                        is_nativepicker={is_nativepicker}
                     />
-                    <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
+                    <TimePicker
+                        onChange={onChange}
+                        name='expiry_time'
+                        value={expiry_time}
+                        placeholder='12:00 pm'
+                        is_nativepicker={is_nativepicker}
+                    />
                 </React.Fragment>
             }
         </fieldset>
     );
-}
+};
 
 export default connect(
     ({trade}) => ({

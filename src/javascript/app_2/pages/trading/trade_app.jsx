@@ -22,10 +22,10 @@ class TradeApp extends React.Component {
         // TODO: there must be a better way
         const code_to_component = {
             start_date: <StartDate key='start_date' />,
-            duration: <Duration key='duration' />,
-            barrier: <Barrier key='barrier' />,
+            duration  : <Duration key='duration' />,
+            barrier   : <Barrier key='barrier' />,
             last_digit: <LastDigit key='last_digit' />,
-            amount: <Amount key='amount' />,
+            amount    : <Amount key='amount' />,
         };
 
         return Object.keys(code_to_component)
