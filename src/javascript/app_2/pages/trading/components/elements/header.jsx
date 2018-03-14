@@ -116,6 +116,7 @@ const AccountBalance = ({
     client_accounts,
     onClick,
 }) => {
+    // TO-DO: Use Client.get()
     const balance = client_accounts[Object.keys(client_accounts)[0]].balance;
     const is_upgrade = client_accounts[Object.keys(client_accounts)[0]].is_virtual;
     let currency = client_accounts[Object.keys(client_accounts)[0]].currency;
