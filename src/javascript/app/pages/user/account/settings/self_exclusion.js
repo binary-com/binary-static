@@ -19,7 +19,8 @@ const SelfExclusion = (() => {
         self_exclusion_data,
         set_30day_turnover,
         currency,
-        is_gamstop_client;
+        is_gamstop_client,
+        has_exclude_until;
 
     const form_id          = '#frm_self_exclusion';
     const timeout_date_id  = '#timeout_until_date';
@@ -47,6 +48,9 @@ const SelfExclusion = (() => {
 
     const getData = (scroll) => {
         BinarySocket.send({ get_self_exclusion: 1 }).then((response) => {
+            if (response.get_self_exclusion.exclude_until) {
+                has_exclude_until = response.get_self_exclusion.exclude_until;
+            }
             if (response.error) {
                 if (response.error.code === 'ClientSelfExclusion') {
                     Client.sendLogoutRequest();
@@ -58,7 +62,7 @@ const SelfExclusion = (() => {
                 return;
             }
             BinarySocket.send({ get_account_status: 1 }).then((data) => {
-                const has_to_set_30day_turnover = /ukrts_max_turnover_limit_not_set/.test(data.get_account_status.status);
+                const has_to_set_30day_turnover = !has_exclude_until && /ukrts_max_turnover_limit_not_set/.test(data.get_account_status.status);
                 if (typeof set_30day_turnover === 'undefined') {
                     set_30day_turnover = has_to_set_30day_turnover;
                 }
@@ -81,6 +85,7 @@ const SelfExclusion = (() => {
                     }
                     $form.find(`#${key}`).val(value);
                 });
+                $form.find('#btn_submit').setVisibility(!has_exclude_until);
                 bindValidation();
                 if (scroll) scrollToHashSection();
             });
