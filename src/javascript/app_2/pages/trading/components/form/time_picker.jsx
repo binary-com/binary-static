@@ -261,7 +261,7 @@ class TimePicker extends PureComponent {
         const {
             is_nativepicker,
             value,
-            ...props,
+            ...props
         } = this.props;
         return (
             <div
