@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
-import ContractType from './logic/contract_type';
+import ContractType from '../actions/helpers/contract_type';
 import actions from '../actions';
 
 export default class TradeStore {
@@ -15,8 +15,8 @@ export default class TradeStore {
             actions.getCurrenciesAsync();
         }
         actions.getDurationUnits();
-        ContractType.getContractsList(this.symbol).then(action(r => {
-            this.contract_types_list = r;
+        ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
+            this.contract_types_list = ContractType.getContractCategories();
         }));
         this.time_interval = setInterval(actions.initTime, 1000);
     }

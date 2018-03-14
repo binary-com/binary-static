@@ -11,7 +11,6 @@ const ContractType = (() => {
      *     ['duration', 'amount'] are omitted, as they're available in all contract types
      */
     const contract_types = {
-        // TODO instead of hardcoding which elements should be visible, detect it from contracts_for when building available_contract_types
         rise_fall  : { title: localize('Rise/Fall'),                  trade_types: ['CALL', 'PUT'],               components: ['start_date'], barrier_count: 0 },
         high_low   : { title: localize('Higher/Lower'),               trade_types: ['CALL', 'PUT'],               components: ['barrier'],    barrier_count: 1 },
         touch      : { title: localize('Touch/No Touch'),             trade_types: ['ONETOUCH', 'NOTOUCH'],       components: ['barrier'] },
@@ -36,10 +35,11 @@ const ContractType = (() => {
     };
 
     let available_contract_types = {};
+    let available_categories     = {};
 
-    const getContractsList = (symbol) => DAO.getContractsFor(symbol).then(r => {
+    const buildContractTypesConfig = (symbol) => DAO.getContractsFor(symbol).then(r => {
         available_contract_types = {};
-        const categories = cloneObject(contract_categories); // To preserve the order (will clean the extra items later in this function)
+        available_categories = cloneObject(contract_categories); // To preserve the order (will clean the extra items later in this function)
         r.contracts_for.available.forEach((contract) => {
             const type = Object.keys(contract_types).find(key => (
                 contract_types[key].trade_types.indexOf(contract.contract_type) !== -1 &&
@@ -49,8 +49,8 @@ const ContractType = (() => {
             if (!Exceptions.isExcluded(type)) {
                 if (!available_contract_types[type]) {
                     // extend contract_categories to include what is needed to create the contract list
-                    const sub_cats = categories[Object.keys(categories)
-                        .find(key => categories[key].indexOf(type) !== -1)];
+                    const sub_cats = available_categories[Object.keys(available_categories)
+                        .find(key => available_categories[key].indexOf(type) !== -1)];
                     sub_cats[sub_cats.indexOf(type)] = { value: type, text: localize(contract_types[type].title) };
 
                     // populate available contract types
@@ -120,14 +120,12 @@ const ContractType = (() => {
         });
 
         // cleanup categories
-        Object.keys(categories).forEach((key) => {
-            categories[key] = categories[key].filter(item => typeof item === 'object');
-            if (categories[key].length === 0) {
-                delete categories[key];
+        Object.keys(available_categories).forEach((key) => {
+            available_categories[key] = available_categories[key].filter(item => typeof item === 'object');
+            if (available_categories[key].length === 0) {
+                delete available_categories[key];
             }
         });
-
-        return categories;
     });
 
     const getContractType = (list, contract_type) => {
@@ -146,13 +144,6 @@ const ContractType = (() => {
     const getContractValue = (value, store) => ({ [value]: available_contract_types[store.contract_type][value] });
 
     const getComponents = (c_type) => contract_types[c_type].components;
-
-    const onContractChange = (c_type) => {
-        const form_components = getComponents(c_type);
-        return {
-            form_components,
-        };
-    };
 
     const getStartDates = (store) => {
         const config           = getContractValue('config', store).config;
@@ -178,12 +169,14 @@ const ContractType = (() => {
     };
 
     return {
-        getContractsList,
+        buildContractTypesConfig,
         getContractType,
-        onContractChange,
+        getComponents,
         getStartDates,
         getTradeTypes,
         getBarriers,
+
+        getContractCategories: () => available_categories,
     };
 })();
 

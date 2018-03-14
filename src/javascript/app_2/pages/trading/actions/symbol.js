@@ -1,7 +1,8 @@
-import ContractType from '../store/logic/contract_type';
+import ContractType from '../actions/helpers/contract_type';
 
 export const onChangeSymbolAsync = function *({symbol}) {
-    const r = yield ContractType.getContractsList(symbol);
+    yield ContractType.buildContractTypesConfig(symbol);
+    const r = ContractType.getContractCategories();
     return {
         contract_types_list: r,
     };
