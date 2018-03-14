@@ -90,7 +90,7 @@ class Calendar extends React.Component {
     }
 
     previousDecade() {
-        this.updateDate(10, 'years', true);
+        this.updateDate(10, 'years', false);
     }
 
     nextCentury() {
@@ -98,7 +98,7 @@ class Calendar extends React.Component {
     }
 
     previousCentury() {
-        this.updateDate(100, 'years', true);
+        this.updateDate(100, 'years', false);
     }
 
     setActiveView(active_view) {
