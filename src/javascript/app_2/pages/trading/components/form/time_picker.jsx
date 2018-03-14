@@ -257,7 +257,7 @@ class TimePicker extends PureComponent {
         this.wrapper_ref = node;
     };
 
-    handleClickOutside = () => {
+    handleClickOutside = (event) => {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target)) {
             if (this.state.is_open) {
                 this.setState({ is_open: false });
