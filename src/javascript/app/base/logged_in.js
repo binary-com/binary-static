@@ -65,14 +65,11 @@ const LoggedInHandler = (() => {
         // Clear all accounts before entering the loop
         Client.clearAllAccounts();
 
-        let is_loginid_set = false;
         account_list.forEach((account) => {
             Object.keys(account).forEach((param) => {
                 if (param === 'loginid') {
-                    if (!is_loginid_set && !account.is_virtual &&
-                        !account.is_disabled) {
+                    if (!Client.get('loginid') && !account.is_virtual && !account.is_disabled) {
                         Client.set(param, account[param]);
-                        is_loginid_set = true;
                     }
                 } else {
                     const param_to_set = map_names[param] || param;
@@ -94,9 +91,8 @@ const LoggedInHandler = (() => {
 
         // if didn't find any login ID that matched the above condition
         // or the selected one doesn't have a token, set the first one
-        if (!is_loginid_set || !Client.get('token')) {
+        if (!Client.get('loginid') || !Client.get('token')) {
             Client.set('loginid', params.acct1 || account_list[0].loginid);
-            is_loginid_set = true;
         }
 
         if (Client.isLoggedIn()) {
