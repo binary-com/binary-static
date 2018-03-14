@@ -52,7 +52,7 @@ export const FormRow = ({
         if (type === 'label') {
             return (
                 <span className='text-display'>
-                    {is_bold ? <strong id={id} {...attributes}></strong> : <span id={id} {...attributes}></span>}
+                    {is_bold ? <strong id={id} {...attributes} /> : <span id={id} {...attributes} />}
                 </span>
             );
         }
@@ -109,26 +109,27 @@ export const SubmitButton = ({
     custom_btn_href,
     custom_btn_id,
 }) => {
-    const content = <React.Fragment>
-        { !no_error &&
-            <p id={msg_id || 'msg_form'} className={`${is_centered ? 'center-text' : ''} error-msg no-margin invisible`}></p>
-        }
-        <div className='gr-padding-10'>
-            { custom_btn_text &&
-                <a className={`button ${custom_btn_class||''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
-                    <span className='button'>{custom_btn_text}</span>
-                </a>
+    const content =
+        <React.Fragment>
+            { !no_error &&
+                <p id={msg_id || 'msg_form'} className={`${is_centered ? 'center-text' : ''} error-msg no-margin invisible`} />
             }
-            <button
-                id={id || 'btn_submit'}
-                type={type === 'submit' ? 'submit' : undefined}
-                {...attributes}
-                className={`button${is_full_width ? ' full-width' : ''}`}
-            >
-                {text}
-            </button>
-        </div>
-    </React.Fragment>;
+            <div className='gr-padding-10'>
+                { custom_btn_text &&
+                    <a className={`button ${custom_btn_class||''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
+                        <span className='button'>{custom_btn_text}</span>
+                    </a>
+                }
+                <button
+                    id={id || 'btn_submit'}
+                    type={type === 'submit' ? 'submit' : undefined}
+                    {...attributes}
+                    className={`button${is_full_width ? ' full-width' : ''}`}
+                >
+                    {text}
+                </button>
+            </div>
+        </React.Fragment>;
 
     if (!no_wrapper) {
         return (

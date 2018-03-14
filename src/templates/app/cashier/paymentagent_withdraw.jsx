@@ -7,7 +7,7 @@ const PaymentAgentWithdraw = () => (
 
         <div id='paymentagent_withdrawal'>
             <div id='viewError' className='viewItem invisible'>
-                <p id='custom-error' className='notice-msg center-text invisible'></p>
+                <p id='custom-error' className='notice-msg center-text invisible' />
                 <p id='withdrawal-locked-error' className='notice-msg center-text invisible'>
                     {it.L('Withdrawal for your account is not allowed at this moment.')}
                 </p>
@@ -18,7 +18,7 @@ const PaymentAgentWithdraw = () => (
             </div>
 
             <div id='viewSuccess' className='viewItem invisible'>
-                <p id='successMessage'></p>
+                <p id='successMessage' />
                 <p>
                     <a className='button' href={it.url_for('user/statementws')}>
                         <span className='button'>{it.L('View your statement')}</span>
@@ -29,7 +29,7 @@ const PaymentAgentWithdraw = () => (
             <form id='viewConfirm' className='viewItem invisible'>
                 <p>{it.L('Please confirm the transaction details in order to complete the transfer:')} </p>
 
-                <p>{it.L('Transfer to')}: <span id='lblAgentName'></span><br />{it.L('Amount')}: <span id='lblCurrency'></span> <span id='lblAmount'></span></p>
+                <p>{it.L('Transfer to')}: <span id='lblAgentName' /><br />{it.L('Amount')}: <span id='lblCurrency' /> <span id='lblAmount' /></p>
 
                 <SubmitButton
                     custom_btn_id='btnBack'
@@ -47,9 +47,9 @@ const PaymentAgentWithdraw = () => (
                 <form className='form gr-padding-10' id='frmWithdrawal'>
                     <Fieldset>
                         <FormRow label={it.L('Transfer to Payment Agent')} id='ddlAgents' type='select' />
-                        <FormRow label={it.L('Amount')} id='txtAmount' type='text' hint={it.L('Min: 10 Max: 2000')} />
+                        <FormRow label={it.L('Amount')} id='txtAmount' type='text' />
                         <FormRow label={it.L('Further Instructions')} id='txtDescription' type='custom'>
-                            <textarea id='txtDescription' row='6' cols='60' maxLength='300'></textarea>
+                            <textarea id='txtDescription' row='6' cols='60' maxLength='300' />
                         </FormRow>
                         <SubmitButton msg_id='formMessage' type='submit' text={it.L('Submit')} />
                     </Fieldset>

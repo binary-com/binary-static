@@ -18,9 +18,9 @@ export const getTicks = function(store, callback) {
     return { };
 };
 
-export const onAmountChange = ({amount}) => {
+export const onChangeAmount = ({amount}) => {
     const barrier_2 = amount * 2;
-    console.log('Amount: ', amount, 'Low Barrier: ', barrier_2);
+    // console.log('Amount: ', amount, 'Low Barrier: ', barrier_2);
     return {
         barrier_2,
     };

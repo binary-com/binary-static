@@ -8,28 +8,30 @@ const Barrier = ({
     barrier_2,
     onChange,
 }) =>  (
-        <fieldset>
+    <fieldset>
+        <div className='fieldset-header'>
             <span className='field-info left' htmlFor='barrier_1'>
                 {localize(barrier_2 ? 'High barrier' : 'Barrier')}
             </span>
+        </div>
+        <InputField
+            type='number'
+            name='barrier_1'
+            value={barrier_1}
+            onChange={onChange}
+            is_currency
+        />
+
+        {!!barrier_2 &&
             <InputField
                 type='number'
-                name='barrier_1'
-                value={barrier_1}
+                name='barrier_2'
+                value={barrier_2}
                 onChange={onChange}
                 is_currency
             />
-
-            {!!barrier_2 &&
-                <InputField
-                    type='number'
-                    name='barrier_2'
-                    value={barrier_2}
-                    onChange={onChange}
-                    is_currency
-                />
-            }
-        </fieldset>
+        }
+    </fieldset>
 );
 
 export default connect(

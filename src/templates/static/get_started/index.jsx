@@ -9,7 +9,7 @@ const GetStartedSection = ({ link, hash, image, header, text }) => {
             <div className='gr-row'>
                 <div className='gr-4'>
                     <a href={href}>
-                        <img className='responsive' src={it.url_for(`images/pages/get-started-beta/${image}.svg`)} />
+                        <img className='responsive' src={it.url_for(`images/pages/get-started/${image}.svg`)} />
                     </a>
                 </div>
                 <div className='gr-8'>
@@ -24,10 +24,8 @@ const GetStartedSection = ({ link, hash, image, header, text }) => {
 const GetStartedSectionWrapper = ({ section_id, section_header, section_description, children }) => (
     <React.Fragment>
         <div className='gr-padding-30 gr-parent' id={section_id}>
-            <div className='center-text'>
-                <h2>{section_header}</h2>
-                <p>{section_description}</p>
-            </div>
+            <h2>{section_header}</h2>
+            <p>{section_description}</p>
             {children}
         </div>
         <SeparatorLine invisible className='gr-padding-30' />
@@ -35,17 +33,24 @@ const GetStartedSectionWrapper = ({ section_id, section_header, section_descript
 );
 
 const Index = () => (
-    <div className='static_full get-started-beta'>
+    <div className='static_full get-started'>
         <h1 className='center-text'>{it.L('Get Started')}</h1>
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
-            <TabsSubtabs id='get_started_tabs' className='gr-padding-20 gr-parent tab-selector-wrapper' items={[
-                { id: 'binary', text: it.L('Binary Options') },
-                { id: 'mt5',    text: it.L('MetaTrader 5') },
-                { id: 'get_started_tabs_selector', className: 'tab-selector' },
-            ]} />
+            <TabsSubtabs
+                id='get_started_tabs'
+                className='gr-padding-20 gr-parent tab-selector-wrapper'
+                items={[
+                    { id: 'binary',   text: it.L('Binary Options') },
+                    { id: 'lookback', text: it.L('Lookbacks'), dataShow: 'default, costarica' },
+                    { id: 'mt5',      text: it.L('MetaTrader 5'), dataShow: 'mtcompany' },
+                    { id: 'get_started_tabs_selector', className: 'tab-selector' },
+                ]}
+            />
             <div className='tab-content'>
                 <TabContentContainer>
                     <TabContent id='binary'>
+                        <h2>{it.L('Binary Options')}</h2>
+                        <p>{it.L('Options that offer a fixed payout based on a simple yes/no proposition.')}</p>
                         <div className='gr-row' id='binary-options'>
                             <GetStartedSection
                                 link='get-started/binary-options'
@@ -56,10 +61,10 @@ const Index = () => (
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
-                                hash='range-of-markets'
-                                image='binary-options/range-of-markets'
-                                header={it.L('Range of markets')}
-                                text={it.L('Trade binary options on a wide range of underlying markets with limited risk.')}
+                                hash='how-to-trade-binary'
+                                image='binary-options/how-to-trade-binary'
+                                header={it.L('How to trade binary options')}
+                                text={it.L('Learn how to trade with our award-winning binary options platform in this simple step-by-step guide.')}
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
@@ -70,10 +75,10 @@ const Index = () => (
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
-                                hash='how-to-trade-binary'
-                                image='binary-options/how-to-trade-binary'
-                                header={it.L('How to trade binary options')}
-                                text={it.L('Learn how to trade with our award-winning binary options platform in this simple step-by-step guide.')}
+                                hash='range-of-markets'
+                                image='binary-options/range-of-markets'
+                                header={it.L('Range of markets')}
+                                text={it.L('Trade binary options on a wide range of underlying markets with limited risk.')}
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
@@ -85,6 +90,11 @@ const Index = () => (
                         </div>
                     </TabContent>
                     <TabContent id='mt5'>
+                        <h2>{it.L('MetaTrader 5')}</h2>
+                        <p>{it.L('Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools.')}</p>
+
+                        <SeparatorLine invisible className='gr-padding-30' />
+
                         <GetStartedSectionWrapper
                             section_id='forex'
                             section_header={it.L('Forex')}
@@ -109,22 +119,58 @@ const Index = () => (
                                     link='get-started/forex'
                                     hash='margin-policy'
                                     image='mt5/margin-policy'
-                                    header={it.L('Margin policy')}
+                                    header={it.L('Forex margin policy')}
                                     text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our currency pairs.')}
                                 />
                                 <GetStartedSection
                                     link='get-started/forex'
                                     hash='contract-specification'
                                     image='mt5/contract-specification'
-                                    header={it.L('Contract specifications')}
+                                    header={it.L('Forex contract specifications')}
                                     text={it.L('Find out more about the costs and details of every currency pair we offer.')}
+                                />
+                            </div>
+                        </GetStartedSectionWrapper>
+                        <GetStartedSectionWrapper
+                            section_id='cryptocurrencies'
+                            section_header={it.L('Cryptocurrencies')}
+                            section_description={it.L('Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world.')}
+                        >
+                            <div className='gr-row'>
+                                <GetStartedSection
+                                    link='get-started/cryptocurrencies'
+                                    hash='what-crypto-trading'
+                                    image='mt5/what-crypto-trading'
+                                    header={it.L('What is cryptocurrency trading')}
+                                    text={it.L('Speculate on the price movement of cryptocurrencies such as Bitcoin, Ethereum, and Litecoin without owning them.')}
+                                />
+                                <GetStartedSection
+                                    link='get-started/cryptocurrencies'
+                                    hash='how-trade-crypto'
+                                    image='mt5/how-trade-crypto'
+                                    header={it.L('How to trade cryptocurrencies')}
+                                    text={it.L('Trade popular cryptocurrencies on our MT5 platform with leverage and variable spreads. No wallets are required to start trading.')}
+                                />
+                                <GetStartedSection
+                                    link='get-started/cryptocurrencies'
+                                    hash='margin-policy'
+                                    image='mt5/margin-policy'
+                                    header={it.L('Cryptocurrency margin policy')}
+                                    text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our cryptocurrency pairs.')}
+                                />
+                                <GetStartedSection
+                                    link='get-started/cryptocurrencies'
+                                    hash='contract-specification'
+                                    image='mt5/contract-specification'
+                                    header={it.L('Cryptocurrency contract specifications')}
+                                    text={it.L('Find out more about the costs and details of every cryptocurrency pair we offer.')}
                                 />
                             </div>
                         </GetStartedSectionWrapper>
                         <GetStartedSectionWrapper
                             section_id='cfds'
                             section_header={it.L('CFDs')}
-                            section_description={it.L('Contracts for Difference (CFDs) are financial derivatives that allow you to speculate on the movement of an underlying asset without owning it.')}
+                            section_description={it.L('Contracts for Difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them.')}
                         >
                             <div className='gr-row'>
                                 <GetStartedSection
@@ -152,7 +198,7 @@ const Index = () => (
                                     link='get-started/cfds'
                                     hash='contract-specification'
                                     image='mt5/contract-specification'
-                                    header={it.L('Contract specifications')}
+                                    header={it.L('CFD contract specifications')}
                                     text={it.L('Find out more about the costs and details of each CFD asset we offer.')}
                                 />
                             </div>
@@ -180,49 +226,56 @@ const Index = () => (
                                 <GetStartedSection
                                     link='get-started/metals'
                                     hash='margin-policy'
-                                    image='mt5/margin-policy' header={it.L('Margin policy')}
+                                    image='mt5/margin-policy'
+                                    header={it.L('Metals margin policy')}
                                     text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our metal pairs.')}
                                 />
                                 <GetStartedSection
                                     link='get-started/metals'
                                     hash='contract-specification'
-                                    image='mt5/contract-specification' header={it.L('Contract specifications')}
+                                    image='mt5/contract-specification'
+                                    header={it.L('Metals contract specifications')}
                                     text={it.L('Find out more about the costs and details of every metal pair we offer.')}
                                 />
                             </div>
                         </GetStartedSectionWrapper>
-                        <GetStartedSectionWrapper
-                            section_id='cryptocurrencies'
-                            section_header={it.L('Cryptocurrencies')}
-                            section_description={it.L('Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world.')}
-                        >
-                            <div className='gr-row'>
-                                <GetStartedSection
-                                    link='get-started/cryptocurrencies'
-                                    hash='what-crypto-trading'
-                                    image='mt5/what-crypto-trading' header={it.L('What is cryptocurrency trading')}
-                                    text={it.L('Speculate on the price movement of cryptocurrencies such as Bitcoin, Ethereum, and Litecoin without owning them.')}
-                                />
-                                <GetStartedSection
-                                    link='get-started/cryptocurrencies'
-                                    hash='how-trade-crypto'
-                                    image='mt5/how-trade-crypto' header={it.L('How to trade cryptocurrencies')}
-                                    text={it.L('Trade popular cryptocurrencies on our MT5 platform with leverage and variable spreads. No wallets are required to start trading.')}
-                                />
-                                <GetStartedSection
-                                    link='get-started/cryptocurrencies'
-                                    hash='margin-policy'
-                                    image='mt5/margin-policy' header={it.L('Margin policy')}
-                                    text={it.L('Not sure how margin works? Read our margin policy and learn how to calculate the margin for our cryptocurrency pairs.')}
-                                />
-                                <GetStartedSection
-                                    link='get-started/cryptocurrencies'
-                                    hash='contract-specification'
-                                    image='mt5/contract-specification' header={it.L('Contract specifications')}
-                                    text={it.L('Find out more about the costs and details of every cryptocurrency pair we offer.')}
-                                />
+                    </TabContent>
+                    <TabContent id='lookback'>
+                        <h2>{it.L('Lookbacks')}</h2>
+                        <h3>{it.L('What are lookbacks')}</h3>
+                        <p>{it.L('A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to "look back" over time to determine the payout.')}</p>
+                        <SeparatorLine invisible className='gr-padding-10' />
+                        <h3>{it.L('Types of lookbacks')}</h3>
+                        <p>{it.L('We offer three types of lookbacks:')}</p>
+                        <div className='gr-row'>
+                            <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
+                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-high-image.svg')} />
+                                <ul className='checked'>
+                                    <li>{it.L('High-Close')}</li>
+                                </ul>
+                                <p>{it.L('Win the multiplier times the high minus close.')}</p>
                             </div>
-                        </GetStartedSectionWrapper>
+                            <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
+                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-low-image.svg')} />
+                                <ul className='checked'>
+                                    <li>{it.L('Close-Low')}</li>
+                                </ul>
+                                <p>{it.L('Win the multiplier times the close minus low.')}</p>
+                            </div>
+                            <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
+                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/high-low-image.svg')} />
+                                <ul className='checked'>
+                                    <li>{it.L('High-Low')}</li>
+                                </ul>
+                                <p>{it.L('Win the multiplier times the high minus low.')}</p>
+                            </div>
+                        </div>
+                        <SeparatorLine invisible/>
+                        <p>{it.L('For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:')}</p>
+                        <div className='formula center-text'>
+                            <span>{it.L('2 * (6,000 – 5,200) = $1600')}</span>
+                        </div>
+                        <p>{it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a href=${it.url_for('get-started/binary-options')}#range-of-markets>`, '</a>')}</p>
                     </TabContent>
                 </TabContentContainer>
             </div>

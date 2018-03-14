@@ -1,6 +1,7 @@
 const moment        = require('moment');
 const MBDefaults    = require('./mb_defaults');
 const Client        = require('../../base/client');
+const SocketCache   = require('../../base/socket_cache');
 const jpClient      = require('../../common/country_base').jpClient;
 const getLanguage   = require('../../../_common/language').get;
 const localize      = require('../../../_common/localize').localize;
@@ -74,7 +75,7 @@ const MBContract = (() => {
         };
     };
 
-    const populatePeriods = (rebuild) => {
+    const populatePeriods = (should_rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         let trading_period,
             start_end;
@@ -95,7 +96,7 @@ const MBContract = (() => {
         }
         trading_period_array.sort(sortByExpiryTime);
         const $list = $period.find('.list');
-        if (rebuild) {
+        if (should_rebuild) {
             $list.empty();
         }
         const makeItem = (period) => {
@@ -169,6 +170,8 @@ const MBContract = (() => {
 
             const time_left = parseInt($duration.attr('value').split('_')[1]) - window.time.unix();
             if (time_left <= 0) {
+                // clear the expired contracts_for response
+                SocketCache.remove('contracts_for', 1);
                 location.reload();
             } else if (time_left < 120) {
                 $count_down_timer.addClass('alert');
@@ -226,13 +229,13 @@ const MBContract = (() => {
         { value: 'staysinout',   type1: 'RANGE',        type2: 'UPORDOWN' },
     ];
 
-    const populateOptions = (rebuild) => {
+    const populateOptions = (should_rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         const available_contracts = contracts_for_response.contracts_for.available;
 
         const $category = $('#category');
         const $list     = $category.find('.list');
-        if (rebuild) {
+        if (should_rebuild) {
             $list.empty();
         }
         if ($list.children().length === 0) {
@@ -254,7 +257,7 @@ const MBContract = (() => {
             });
             MBDefaults.set('category', $category.attr('value'));
         }
-        populatePeriods(rebuild);
+        populatePeriods(should_rebuild);
     };
 
     const getCurrentContracts = () => {

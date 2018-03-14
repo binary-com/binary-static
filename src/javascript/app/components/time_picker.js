@@ -33,10 +33,8 @@ const TimePicker = (() => {
         }).timepicker(time_pickers[selector].config_data);
     };
 
-    const timeNow = () => moment.utc(window.time);
-
     const config = (options) => {
-        let time_now = timeNow();
+        let time_now = moment.utc(window.time).clone();
 
         const obj_config = {
             hourText  : localize('Hour'),
@@ -46,7 +44,8 @@ const TimePicker = (() => {
 
         if (options.minTime) {
             options.minTime = options.minTime === 'now' ? time_now : moment.utc(options.minTime);
-            if (options.minTime.isBefore(time_now)) {
+            if (options.minTime.isBefore(time_now) &&
+                (!options.maxTime || time_now.unix() !== options.maxTime.unix())) {
                 options.minTime = time_now;
             }
             obj_config.minTime = { hour: parseInt(options.minTime.hour()), minute: parseInt(options.minTime.minute()) };
@@ -75,7 +74,7 @@ const TimePicker = (() => {
 
             let new_time;
             if (!time.match(/^(:?[0-3]\d):(:?[0-5]\d):(:?[0-5]\d)$/)) {
-                time_now      = timeNow();
+                time_now      = window.time.clone();
                 const invalid = time.match(/([a-z0-9]*):([a-z0-9]*):?([a-z0-9]*)?/);
                 let hour      = time_now.format('hh');
                 let minute    = time_now.format('mm');

@@ -39,7 +39,7 @@ export const NavButtons = ({ parent, section }) => (
         <div className='gr-padding-20'>
             <div className='gr-row gr-row-align-center'>
                 <a className='button-secondary' id='go_back'><span>{`< ${it.L('Back')}`}</span></a>
-                <div className='gr-gutter'></div>
+                <div className='gr-gutter' />
                 <a className='button' id='go_next'><span>{`${it.L('Next')} >`}</span></a>
             </div>
             <div className='center-text'>
@@ -54,7 +54,7 @@ export const NavButtons = ({ parent, section }) => (
 export const ImageBox = ({ header, text, image }) => (
     <div className='gr-5 gr-12-m gr-padding-10'>
         <div className='gr-padding-20 fill-bg-color center-text gr-gutter'>
-            <div><img src={it.url_for(`images/pages/get-started-beta/mt5/common/${image}.svg`)} /></div>
+            <div><img src={it.url_for(`images/pages/get-started/mt5/common/${image}.svg`)} /></div>
             <p><strong>{header}</strong></p>
             <p className='gr-gutter'>{text}</p>
         </div>
@@ -64,7 +64,7 @@ export const ImageBox = ({ header, text, image }) => (
 export const BuySellImage = () => (
     <div className='gr-row'>
         <ImageBox image='buy'  header={it.L('Buy')}  text={it.L('In this case, you predict that the price will rise. This is also known as \'going long\'.')} />
-        <div className='gr-2 gr-hide-m'></div>
+        <div className='gr-2 gr-hide-m' />
         <ImageBox image='sell' header={it.L('Sell')} text={it.L('In this case, you predict that the price will fall. This is also known as \'going short\'.')} />
     </div>
 );
@@ -90,10 +90,10 @@ export const BuySellCurrency = ({ currency_one, currency_two }) => (
     </div>
 );
 
-export const MtBox = ({ text }) => (
+export const MtBox = ({ text, icon_1, icon_2 }) => (
     <div className='gr-12 gr-centered gr-padding-10'>
-        <div className='mt-img mr1-icon'></div>
+        <div className={`mt-img ${icon_1}`} />
         <p className='fill-bg-color gr-padding-20 gr-gutter'>{text}</p>
-        <div className='mt-img mr2-icon'></div>
+        <div className={`mt-img ${icon_2}`} />
     </div>
 );

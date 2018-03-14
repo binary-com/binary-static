@@ -61,6 +61,9 @@ table {
             border-bottom: 3px solid $COLOR_LIGHT_GRAY;
         }
     }
+    .w-80 {
+        width: 80px;
+    }
     @media (max-width: $md) {
         td {
             padding-left: 5px !important;

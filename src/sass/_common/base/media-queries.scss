@@ -4,10 +4,13 @@
     }
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 1080px) {
     #header ul#menu-top.smaller-font a {
         font-size: $FONT_SIZE_XS;
     }
+}
+
+@media screen and (max-width: 959px) {
     .home-jp-content {
         #banner {
             background-position-x: 0;
@@ -28,6 +31,9 @@
     }
     .table-container {
         overflow-x: auto;
+    }
+    .no-padding-m {
+        padding: 0 !important;
     }
 }
 

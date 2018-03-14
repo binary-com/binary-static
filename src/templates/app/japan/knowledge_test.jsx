@@ -18,7 +18,7 @@ const Sections = ({ type }) => {
 const KnowledgeTest = () => (
     <div id='knowledge-test-container'>
         <h1 id='knowledge-test-header'>{it.L('{JAPAN ONLY}Knowledge Test')}</h1>
-        <p id='knowledge-test-msg'></p>
+        <p id='knowledge-test-msg' />
         <div className='invisible' id='knowledge-test-instructions'>
             <ul className='bullet'>
                 <li>{it.L('{JAPAN ONLY}Knowledge test list item 1')}</li>
@@ -35,7 +35,7 @@ const KnowledgeTest = () => (
         <div id='knowledge-test-questions' className='invisible'>
             <Sections type='question' />
             <div className='gr-centered gr-padding-10 center-text'>
-                <p id='form-msg' className='error-msg invisible'></p>
+                <p id='form-msg' className='error-msg invisible' />
                 <button id='knowledge-test-submit' className='button'>{it.L('Submit')}</button>
             </div>
         </div>

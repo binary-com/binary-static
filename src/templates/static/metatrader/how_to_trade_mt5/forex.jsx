@@ -21,7 +21,7 @@ const Step = ({
             <div className='gr-3 center-text'>
                 <h3 className='secondary-color'>{step}</h3>
                 <img src={it.url_for(`images/pages/metatrader/how-to/step${number}.svg`)} />
-                { !is_last && <div className='vertical-dashed'></div> }
+                { !is_last && <div className='vertical-dashed' /> }
             </div>
             <div className='gr-9'>
                 {children}
@@ -71,7 +71,7 @@ const Forex = () => (
                 ]}
             />
             <p>{it.L('Example:')}</p>
-            <p>{it.L('If you see EUR/USD has a bid price of 1.05229, you will sell USD 1.05229 for every EUR 1 that you buy.')}</p>
+            <p>{it.L('If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell.')}</p>
         </Step>
 
         <Step title={it.L('Understand when to buy and sell')} step={it.L('Step 2')} number={2}>

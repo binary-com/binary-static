@@ -65,31 +65,89 @@ const checkValidTime = (time_start_element = getElementById('time_start'), $date
     const hour               = time_array.length ? +time_array[0] : now_time.hour();
     const minute             = time_array.length ? +time_array[1] : now_time.minute();
     const date_time          = moment.utc(getElement().value * 1000).hour(hour).minute(minute);
-    let min_time             = getMinMaxTime($date_start).minTime;
-    min_time                 = min_time.valueOf() > now_time.valueOf() ? min_time : now_time;
-    const max_time           = getMinMaxTime($date_start).maxTime;
-    time_start_element.value = date_time.isBefore(min_time) || date_time.isAfter(max_time) || !time ? min_time.add(5, 'minutes').utc().format('HH:mm') : time_array.join(':');
+    const min_max_time       = getMinMaxTimeStart($date_start);
+    let min_time             = min_max_time.minTime.clone();
+    if (!(min_max_time.minTime.format('HH:mm') === '23:55')) {
+        min_time = min_time.add(5, 'minutes');
+    }
+    time_start_element.value = date_time.isBefore(min_time) || date_time.isAfter(min_max_time.maxTime) || !time ? min_time.format('HH:mm') : time_array.join(':');
     time_start_element.setAttribute('data-value', time_start_element.value);
 };
 
-const getMinMaxTime = ($setMinMaxSelector, minTime = window.time ? window.time : moment.utc()) => {
-    let $selected_option = $setMinMaxSelector.find('option:selected');
-    // if 'now' is selected, take first option's value
-    if (isNaN(+$setMinMaxSelector.val())) {
-        $selected_option = $($setMinMaxSelector.find('option')[1]);
+const getMinMaxTimeStart = ($min_max_selector = $('#date_start'), moment_now = (window.time || moment.utc()).clone()) => {
+    const $selected_option = getSelectedOption($min_max_selector);
+    const start_date       = moment.unix($min_max_selector.val()).utc();
+    const end_date         = moment.unix($selected_option.attr('data-end')).utc();
+    return {
+        minTime: start_date.isAfter(moment_now) ? start_date : moment_now.clone(),
+        maxTime: end_date.isSame(start_date, 'day') ? end_date : start_date.clone().hour(23).minute(55).second(0),
+    };
+};
+
+const getMinMaxTimeEnd = ($date_start = $('#date_start'), $time_start = $('#time_start'), moment_now = (window.time || moment.utc()).clone(), $expiry_time = $('#expiry_time'), $expiry_date = $('#expiry_date')) => {
+    let min_time,
+        max_time;
+    const date_start_val = $date_start.val();
+    if (date_start_val === 'now') {
+        const min_max_time = getMinMaxTimeStart();
+        min_time = min_max_time.minTime;
+        max_time = min_max_time.maxTime;
+    } else {
+        const expiry_time_val = $expiry_time.val().split(':');
+        let end_time          = moment.utc($expiry_date.attr('data-value'));
+        if (expiry_time_val.length > 1) {
+            end_time = end_time.hour(expiry_time_val[0]).minute(expiry_time_val[1]);
+        }
+        const moment_date_start = moment.unix(date_start_val).utc();
+        const start_time_val    = $time_start.val().split(':');
+        const compare           = isNaN(+date_start_val) ? moment_now.clone() :
+            moment_date_start.hour(start_time_val[0]).minute(start_time_val[1]);
+        // if expiry time is one day after start time, minTime can be 0
+        // but maxTime should be 24 hours after start time, so exact value of start time
+        if (end_time.isAfter(compare, 'day')) {
+            min_time = 0;
+            max_time = start_time_val.length > 1 ?
+                end_time.clone().hour(start_time_val[0]).minute(start_time_val[1]) : end_time.clone();
+        } else {
+            // if expiry time is same as today, min time should be the selected start time plus five minutes
+            min_time = moment_date_start.clone();
+            min_time = min_time.hour(start_time_val[0]).minute(start_time_val[1]);
+            if (!(+start_time_val[0] === 23 && +start_time_val[1] === 55)) {
+                min_time = min_time.add(5, 'minutes');
+            }
+            max_time = getMinMaxTimeStart().maxTime;
+        }
     }
     return {
-        minTime: +$selected_option.val() > minTime.unix() ? moment.utc($selected_option.val() * 1000) : minTime,
-        maxTime: moment.utc($selected_option.attr('data-end') * 1000),
+        minTime: min_time,
+        maxTime: max_time,
     };
+};
+
+const getSelectedOption = ($selector) => {
+    let $selected_option = $selector.find('option:selected');
+    // if 'now' is selected, take first option's value
+    if (isNaN(+$selector.val())) {
+        $selected_option = $($selector.find('option')[1]);
+    }
+    return $selected_option;
+};
+
+const showAssetOpenHours = ($selector) => {
+    const $selected_option = $selector ? getSelectedOption($selector) : '';
+    const sessions         = $selected_option ? $selected_option.attr('data-sessions') : '';
+    $('#asset_open_hours').text(sessions || '').parent().setVisibility(!!(sessions));
 };
 
 module.exports = {
     displayPriceMovement,
     countDecimalPlaces,
     processTradingTimesAnswer,
-    getStartDateNode: getElement,
     checkValidTime,
-    getMinMaxTime,
+    getSelectedOption,
+    getMinMaxTimeStart,
+    getMinMaxTimeEnd,
+    showAssetOpenHours,
+    getStartDateNode: getElement,
     getTradingTimes : () => trading_times,
 };
