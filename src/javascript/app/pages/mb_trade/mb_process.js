@@ -169,13 +169,13 @@ const MBProcess = (() => {
             currency     : MBContract.getCurrency(),
             product_type : 'multi_barrier',
         };
-        if (!underlying) {
-            req.passthrough = { action: 'no-proposal' };
-        }
         BinarySocket.send(req).then((response) => {
             MBNotifications.hide('CONNECTION_ERROR');
             MBContract.setContractsResponse(response);
-            processContract(response);
+            // contracts_for is triggered every 15 seconds to check for expired barriers
+            // but we don't want to send proposal in that case
+            // so getContracts will be called without underlying param to distinguish these two cases
+            processContract(response, underlying);
         });
         if (contract_timeout) clearContractTimeout();
         contract_timeout = setTimeout(getContracts, 15000);
@@ -186,7 +186,7 @@ const MBProcess = (() => {
     /*
      * Function to display contract form for current underlying
      */
-    const processContract = (contracts) => {
+    const processContract = (contracts, should_send_proposal) => {
         if (getPropertyValue(contracts, 'error')) {
             MBNotifications.show({ text: contracts.error.message, uid: contracts.error.code });
             return;
@@ -196,13 +196,12 @@ const MBProcess = (() => {
 
         checkMarketStatus(contracts.contracts_for.close);
 
-        const no_rebuild = getPropertyValue(contracts, ['passthrough', 'action']) === 'no-proposal';
-        MBContract.populateOptions((no_rebuild ? null : 'rebuild'));
-        if (no_rebuild) {
+        MBContract.populateOptions(should_send_proposal);
+        if (should_send_proposal) {
+            processPriceRequest();
+        } else {
             processExpiredBarriers();
-            return;
         }
-        processPriceRequest();
     };
 
     const checkMarketStatus = (close) => {
@@ -243,6 +242,7 @@ const MBProcess = (() => {
             date_expiry   : durations[1],
             contract_type : [],
             barriers      : [],
+            product_type  : 'multi_barrier',
 
             trading_period_start: durations[0],
         };

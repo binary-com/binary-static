@@ -9,32 +9,24 @@ const showLoadingImage    = require('../../../../_common/utility').showLoadingIm
 
 const Authenticate = (() => {
     const onLoad = () => {
-        BinarySocket.send({ get_account_status: 1, mt5_related: 1 }).then((response) => {
+        BinarySocket.send({ get_account_status: 1 }).then((response) => {
             if (response.error) {
                 $('#error_message').setVisibility(1).text(response.error.message);
             } else {
-                const get_account_status  = response.get_account_status;
-                const should_authenticate = +get_account_status.prompt_client_to_authenticate;
-                const status = get_account_status.status;
-                if (should_authenticate) {
-                    if (!/authenticated/.test(status)) {
-                        init();
-                        $('#not_authenticated').setVisibility(1);
-                        let link = 'https://marketing.binary.com/authentication/2017_Authentication_Process.pdf';
-                        if (Client.isAccountOfType('financial')) {
-                            $('#not_authenticated_financial').setVisibility(1);
-                            link = 'https://marketing.binary.com/authentication/2017_MF_Authentication_Process.pdf';
-                        }
-                        $('#not_authenticated').find('.learn_more a').attr('href', link);
-                        $('#not_authenticated').find('.learn_more').setVisibility(1);
-
-                    } else if (!/age_verification/.test(status)) {
-                        $('#needs_age_verification').setVisibility(1);
+                const status = response.get_account_status.status;
+                if (!/authenticated/.test(status)) {
+                    init();
+                    const $not_authenticated = $('#not_authenticated').setVisibility(1);
+                    let link = 'https://marketing.binary.com/authentication/2017_Authentication_Process.pdf';
+                    if (Client.isAccountOfType('financial')) {
+                        $('#not_authenticated_financial').setVisibility(1);
+                        link = 'https://marketing.binary.com/authentication/2017_MF_Authentication_Process.pdf';
                     }
-                } else if (/authenticated/.test(status)) {
-                    $('#fully_authenticated').setVisibility(1);
+                    $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
+                } else if (!/age_verification/.test(status)) {
+                    $('#needs_age_verification').setVisibility(1);
                 } else {
-                    window.location.href = Client.defaultRedirectUrl();
+                    $('#fully_authenticated').setVisibility(1);
                 }
             }
         });

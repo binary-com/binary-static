@@ -5,11 +5,15 @@ const MBTradingEvents     = require('./mb_event');
 const MBPrice             = require('./mb_price');
 const MBProcess           = require('./mb_process');
 const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupChart;
+const BinaryPjax          = require('../../base/binary_pjax');
+const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
 const jpClient            = require('../../common/country_base').jpClient;
 const JapanPortfolio      = require('../../japan/portfolio');
+const getLanguage         = require('../../../_common/language').get;
 const localize            = require('../../../_common/localize').localize;
 const State               = require('../../../_common/storage').State;
+const urlFor              = require('../../../_common/url').urlFor;
 
 const MBTradePage = (() => {
     let events_initialized = 0;
@@ -21,12 +25,20 @@ const MBTradePage = (() => {
     };
 
     const init = () => {
+        if (/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) {
+            if (getLanguage() === 'JA') {
+                $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: localize('This page is not available in the selected language.') })));
+            } else {
+                BinaryPjax.load(urlFor('trading'));
+            }
+            return;
+        }
         if (jpClient()) {
             disableTrading();
-            $('#panel').remove();
+            $('#panel').find('.ja-hide').remove();
         } else {
             MBDefaults.set('disable_trading', 0);
-            $('#ja-panel').remove();
+            $('#panel').find('.ja-show').remove();
         }
 
         if (events_initialized === 0) {

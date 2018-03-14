@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from './head.jsx';
 import Header from './header.jsx';
-import MainMenu from './main_menu.jsx';
 import MobileMenu from './mobile_menu.jsx';
 import Footer from './footer.jsx';
 import Gtm from '../../_common/includes/gtm.jsx';
@@ -41,14 +40,13 @@ const Layout = () => {
         <html>
             <Head />
             <body className={it.language}>
-                <div id='msg_notification' className='notice-msg center-text'></div>
+                <div id='msg_notification' className='notice-msg center-text' />
                 <div id='page-wrapper'>
                     <Header />
                     <div id='content-holder'>
-                        <MainMenu />
                         <MobileMenu />
                         <Gtm />
-                        <a href='javascript:;' id='scrollup'></a>
+                        <a href='javascript:;' id='scrollup' />
                         <InnerContent />
                     </div>
                     <Footer />

@@ -5,19 +5,19 @@ const Portfolio = () => (
     <div id='portfolio'>
         <h1 className='portfolio-header-margin'>{it.L('Portfolio')}</h1>
 
-        <p className='notice-msg center-text invisible' id='error-msg'></p>
+        <p className='notice-msg center-text invisible' id='error-msg' />
 
-        <div id='portfolio-loading'></div>
+        <div id='portfolio-loading' />
 
         <div id='portfolio-content' className='invisible'>
             <div className='gr-parent gr-padding-10'>
                 {it.L('Account balance: ')}
-                <span className='loading' id='portfolio-balance'></span>
+                <span className='loading' id='portfolio-balance' />
 
                 {/* If the account balance is zero we show the following button, otherwise we remove it */}
                 <span id='if-balance-zero' className='invisible'>
                     &nbsp;
-                    <a href={it.url_for('cashier/forwardws#deposit')} className='button nowrap ja-hide'>
+                    <a href={it.url_for('cashier/forwardws?action=deposit')} className='button nowrap ja-hide'>
                         <span>{it.L('Make a Deposit')}</span>
                     </a>
                     <a href={it.url_for('cashier/deposit-jp')} className='button nowrap invisible ja-show'>

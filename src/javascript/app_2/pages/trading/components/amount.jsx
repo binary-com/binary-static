@@ -35,7 +35,6 @@ const Amount = ({
                     value={basis}
                     name='basis'
                     onChange={onChange}
-                    is_nativepicker={is_nativepicker}
                 />
                 <InputField
                     type='number'
@@ -53,7 +52,6 @@ const Amount = ({
                     value={currency}
                     name='currency'
                     onChange={onChange}
-                    is_nativepicker={is_nativepicker}
                 />
             }
         </fieldset>

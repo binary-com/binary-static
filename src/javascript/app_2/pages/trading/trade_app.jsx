@@ -56,7 +56,8 @@ class TradeApp extends React.Component {
                 <div className='offset-container'>
                     <PortfolioDrawer
                         onClick={this.props.togglePortfolioDrawer}
-                        portfolios={this.props.portfolios} />
+                        portfolios={this.props.portfolios}
+                    />
                 </div>
             </div>
         );

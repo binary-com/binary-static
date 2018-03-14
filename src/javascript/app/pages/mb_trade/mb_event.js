@@ -67,7 +67,7 @@ const MBTradingEvents = (() => {
                 const category = $(this).attr('value');
                 MBContract.setCurrentItem($category, category);
                 MBDefaults.set('category', category);
-                MBContract.populatePeriods('rebuild');
+                MBContract.populatePeriods(1);
                 MBProcess.processPriceRequest();
                 TradingAnalysis.request();
             });
@@ -230,7 +230,7 @@ const MBTradingEvents = (() => {
             }
         };
         if ($trading_status.length) {
-            setTradingStatus(0);
+            setTradingStatus(!jpClient());
             $trading_status.on('click', (e) => {
                 const status = e.target.getAttribute('id');
                 MBDefaults.set('disable_trading', status === 'disallow');

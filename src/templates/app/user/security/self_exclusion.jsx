@@ -6,14 +6,14 @@ const SelfExclusion = () => (
     <React.Fragment>
         <div className='invisible' id='description'>
             <h1>{it.L('Self-Exclusion Facilities')}</h1>
-            <p>{it.L('Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href="[_1]">customer support</a>.', it.url_for('contact'))}</p>
+            <p>{it.L('Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href="[_1]">customer support</a>.', it.url_for('contact'))}</p>
         </div>
         <div className='invisible' id='description_max_30day_turnover'>
             <h1>{it.L('Turnover Limit')}</h1>
             <p>{it.L('In order to access the cashier, we kindly request that you set a 30-day turnover limit for your account. Turnover is the total aggregate amount that is used to open trades. Therefore, this limit should be set to the total volume that you wish to trade with over 30 days.')}</p>
         </div>
 
-        <p id='msg_error' className='center-text notice-msg invisible'></p>
+        <p id='msg_error' className='center-text notice-msg invisible' />
 
         <div id='loading'>
             <Loading />
@@ -39,8 +39,13 @@ const SelfExclusion = () => (
 
                 <FormRow type='text' id='session_duration_limit' label={it.L('Session duration limit, in minutes')} attributes={{ maxLength: 5 }} hint={it.L('You will be automatically logged out after such time.')} />
 
-                <FormRow type='custom' id='timeout_until_date' label={it.L('Time out until')} row_class='ja-hide'
-                    hint={it.L('Please enter date in the format DD MMM, YYYY HH:mm (local time).')}>
+                <FormRow
+                    type='custom'
+                    id='timeout_until_date'
+                    label={it.L('Time out until')}
+                    row_class='ja-hide'
+                    hint={it.L('Please enter date in the format DD MMM, YYYY HH:mm (local time).')}
+                >
                     <div className='gr-row'>
                         <div className='gr-5 gr-6-t gr-12-p gr-12-m'>
                             <input type='text' className='clearable' id='timeout_until_date' maxLength='15' autoComplete='off' readOnly />

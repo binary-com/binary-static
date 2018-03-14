@@ -1,13 +1,16 @@
-const Client             = require('../client');
-const { expect, setURL } = require('../../../_common/__tests__/tests_common');
-const State              = require('../../../_common/storage').State;
-const Url                = require('../../../_common/url');
-global.$                 = require('jquery');
+const Client                  = require('../client');
+const setCurrencies           = require('../../common/currency').setCurrencies;
+const { api, expect, setURL } = require('../../../_common/__tests__/tests_common');
+const State                   = require('../../../_common/storage').State;
+const Url                     = require('../../../_common/url');
+global.$                      = require('jquery');
 
 describe('Client', () => {
     const loginid_invalid   = 'ZZ123456789';
     const loginid_virtual   = 'VRTC123456789';
     const loginid_real      = 'CR123456789';
+    const loginid_real_2    = 'CR123456788';
+    const loginid_real_iom  = 'MX123';
     const loginid_gaming    = 'MLT123';
     const loginid_financial = 'MF123';
 
@@ -193,18 +196,80 @@ describe('Client', () => {
     });
 
     describe('.canTransferFunds()', () => {
-        it('works as expected', () => {
-            expect(Client.canTransferFunds()).to.eq(false);
+        before((done) => {
+            api.getWebsiteStatus().then((response) => {
+                setCurrencies(response.website_status);
+                done();
+            });
+        });
+        it('fails if client has maltainvest and malta accounts with one missing currency', () => {
+            Client.clearAllAccounts();
             [loginid_gaming, loginid_financial].forEach((id) => {
                 Client.set('loginid', id, id);
-                Client.set('token', 'test', id);
             });
+            Client.set('landing_company_shortcode', 'maltainvest', loginid_financial);
+            Client.set('landing_company_shortcode', 'malta', loginid_gaming);
+
+            Client.set('currency', 'USD', loginid_gaming);
+
+            expect(Client.canTransferFunds()).to.eq(false);
+        });
+        it('fails if client has maltainvest and malta accounts with differing currencies', () => {
+            Client.set('currency', 'USD', loginid_gaming);
+            Client.set('currency', 'EUR', loginid_financial);
+
+            expect(Client.canTransferFunds()).to.eq(false);
+        });
+        it('passes if client has maltainvest and malta accounts with the same currency', () => {
+            Client.set('currency', 'USD', loginid_gaming);
+            Client.set('currency', 'USD', loginid_financial);
+
             expect(Client.canTransferFunds()).to.eq(true);
+        });
+        it('fails if maltainvest and non-malta client even if same currency', () => {
+            Client.clearAllAccounts();
+            [loginid_real_iom, loginid_financial].forEach((id) => {
+                Client.set('loginid', id, id);
+            });
+            Client.set('landing_company_shortcode', 'iom', loginid_real_iom);
+            Client.set('landing_company_shortcode', 'maltainvest', loginid_financial);
+
+            Client.set('currency', 'USD', loginid_real_iom);
+            Client.set('currency', 'USD', loginid_financial);
+
+            expect(Client.canTransferFunds()).to.eq(false);
+        });
+        it('fails if non-maltainvest client only has fiat accounts', () => {
+            Client.clearAllAccounts();
+            [loginid_real, loginid_real_2].forEach((id) => {
+                Client.set('loginid', id, id);
+            });
+            Client.set('currency', 'USD', loginid_real);
+            Client.set('currency', 'EUR', loginid_real_2);
+
+            expect(Client.canTransferFunds()).to.eq(false);
+        });
+        it('fails if non-maltainvest client only has crypto accounts', () => {
+            Client.set('currency', 'BTC', loginid_real);
+            Client.set('currency', 'ETH', loginid_real_2);
+
+            expect(Client.canTransferFunds()).to.eq(false);
+        });
+        it('passes if non-maltainvest client has fiat and crypto accounts', () => {
+            Client.set('currency', 'USD', loginid_real);
+            Client.set('currency', 'BTC', loginid_real_2);
+
+            expect(Client.canTransferFunds()).to.eq(true);
+        });
+        after(() => {
+            Client.clearAllAccounts();
         });
     });
 
     describe('.hasCostaricaAccount()', () => {
         it('works as expected', () => {
+            Client.set('loginid', loginid_financial, loginid_financial);
+            Client.set('token', 'test', loginid_financial);
             expect(Client.hasCostaricaAccount()).to.eq(false);
             Client.set('loginid', loginid_real, loginid_real);
             Client.set('token', 'test', loginid_real);

@@ -4,7 +4,7 @@ const Client                = require('../base/client');
 const Password              = require('../../_common/check_password');
 const localize              = require('../../_common/localize').localize;
 const compareBigUnsignedInt = require('../../_common/string_util').compareBigUnsignedInt;
-const urlParam              = require('../../_common/url').param;
+const getHashValue          = require('../../_common/url').getHashValue;
 const isEmptyObject         = require('../../_common/utility').isEmptyObject;
 
 const Validation = (() => {
@@ -13,9 +13,9 @@ const Validation = (() => {
     const hidden_class = 'invisible';
 
     const events_map = {
-        input   : 'input change',
-        select  : 'change',
-        checkbox: 'change',
+        input   : 'input.validation change.validation',
+        select  : 'change.validation',
+        checkbox: 'change.validation',
     };
 
     const getFieldType = ($field) => {
@@ -42,7 +42,7 @@ const Validation = (() => {
         const $form = $(`${form_selector}:visible`);
 
         if (needs_token) {
-            const token = urlParam('token') || '';
+            const token = getHashValue('token');
             if (!validEmailToken(token)) {
                 $form.replaceWith($('<div/>', { class: error_class, text: localize('Verification code is wrong. Please use the link sent to your email.') }));
                 return;
@@ -53,9 +53,6 @@ const Validation = (() => {
             forms[form_selector] = { $form };
             if (Array.isArray(fields) && fields.length) {
                 forms[form_selector].fields = fields;
-                const $btn_submit           = $form.find('button[type="submit"]');
-
-                let has_required = false;
                 fields.forEach((field) => {
                     field.$ = $form.find(field.selector);
                     if (!field.$.length || !field.validations) return;
@@ -72,7 +69,6 @@ const Validation = (() => {
                             if (!$label.length) $label = $parent.find('label');
                             if ($label.length && $label.find('span.required_field_asterisk').length === 0) {
                                 $($label[0]).append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
-                                has_required = true;
                             }
                         }
                         if ($parent.find(`p.${error_class}`).length === 0) {
@@ -82,6 +78,7 @@ const Validation = (() => {
                     }
 
                     const event = events_map[field.type];
+
                     if (event) {
                         field.$.unbind(event).on(event, () => {
                             checkField(field);
@@ -93,10 +90,6 @@ const Validation = (() => {
                         });
                     }
                 });
-                if (has_required && $form.find('.required_field_asterisk.no-margin').length === 0) {
-                    $btn_submit.parent().append($('<p/>', { class: 'hint' })
-                        .append($('<span/>', { class: 'required_field_asterisk no-margin', text: '*' })).append($('<span/>', { text: ` ${localize('Indicates required field')}` })));
-                }
             }
         }
     };

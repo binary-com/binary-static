@@ -5,6 +5,8 @@ const getStartDateNode     = require('./common_independent').getStartDateNode;
 const getTradingTimes      = require('./common_independent').getTradingTimes;
 const Contract             = require('./contract');
 const Defaults             = require('./defaults');
+const getLookBackFormula   = require('./lookback').getFormula;
+const isLookback           = require('./lookback').isLookback;
 const BinarySocket         = require('../../base/socket');
 const formatMoney          = require('../../common/currency').formatMoney;
 const CommonFunctions      = require('../../../_common/common_functions');
@@ -39,7 +41,7 @@ const Price = (() => {
         const start_time    = CommonFunctions.getElementById('time_start');
         const underlying    = CommonFunctions.getElementById('underlying');
         const amount_type   = CommonFunctions.getElementById('amount_type');
-        const currency      = CommonFunctions.getElementById('currency');
+        const currency      = CommonFunctions.getVisibleElement('currency');
         const payout        = CommonFunctions.getElementById('amount');
         const expiry_type   = CommonFunctions.getElementById('expiry_type');
         const duration      = CommonFunctions.getElementById('duration_amount');
@@ -49,13 +51,23 @@ const Price = (() => {
         const high_barrier  = CommonFunctions.getElementById('barrier_high');
         const low_barrier   = CommonFunctions.getElementById('barrier_low');
         const prediction    = CommonFunctions.getElementById('prediction');
+        const multiplier    = CommonFunctions.getElementById('multiplier');
 
         if (payout && CommonFunctions.isVisible(payout) && payout.value) {
             proposal.amount = parseFloat(payout.value);
         }
 
-        if (amount_type && CommonFunctions.isVisible(amount_type) && amount_type.value) {
+        if (multiplier && CommonFunctions.isVisible(multiplier) && multiplier.value) {
+            proposal.amount = multiplier.value;
+        }
+
+        if (amount_type && CommonFunctions.isVisible(amount_type) && amount_type.value
+            && !isLookback(type_of_contract)) {
             proposal.basis = amount_type.value;
+        }
+
+        if (isLookback(type_of_contract)) {
+            proposal.basis = 'multiplier';
         }
 
         if (contract_type) {
@@ -149,23 +161,37 @@ const Price = (() => {
             return;
         }
 
-        const container = document.getElementById(`price_container_${position}`);
+        // hide all containers except current one
+        if (position === 'middle') {
+            if ($('#price_container_top').is(':visible') || $('#price_container_bottom').is(':visible')) {
+                $('#price_container_top').fadeOut(0);
+                $('#price_container_bottom').fadeOut(0);
+            }
+        } else if ($('#price_container_middle').is(':visible')) {
+            $('#price_container_middle').fadeOut(0);
+        }
+
+        const container = CommonFunctions.getElementById(`price_container_${position}`);
         if (!container) return;
         if (!$(container).is(':visible')) {
             $(container).fadeIn(200);
         }
 
-        const h4            = container.getElementsByClassName('contract_heading')[0];
-        const amount        = container.getElementsByClassName('contract_amount')[0];
-        const payout_amount = container.getElementsByClassName('contract_payout')[0];
-        const stake         = container.getElementsByClassName('stake')[0];
-        const payout        = container.getElementsByClassName('payout')[0];
-        const purchase      = container.getElementsByClassName('purchase_button')[0];
-        const description   = container.getElementsByClassName('contract_description')[0];
-        const comment       = container.getElementsByClassName('price_comment')[0];
-        const error         = container.getElementsByClassName('contract_error')[0];
-        const currency      = CommonFunctions.getElementById('currency');
+        const h4                  = container.getElementsByClassName('contract_heading')[0];
+        const amount              = container.getElementsByClassName('contract_amount')[0];
+        const payout_amount       = container.getElementsByClassName('contract_payout')[0];
+        const contract_multiplier = container.getElementsByClassName('contract_multiplier')[0];
+        const stake               = container.getElementsByClassName('stake')[0];
+        const payout              = container.getElementsByClassName('payout')[0];
+        const multiplier          = container.getElementsByClassName('multiplier')[0];
+        const purchase            = container.getElementsByClassName('purchase_button')[0];
+        const description         = container.getElementsByClassName('contract_description')[0];
+        const longcode            = container.getElementsByClassName('contract_longcode')[0];
+        const comment             = container.getElementsByClassName('price_comment')[0];
+        const error               = container.getElementsByClassName('contract_error')[0];
+        const currency            = CommonFunctions.getVisibleElement('currency');
 
+        if (!h4) return;
         const display_text = type && contract_type ? contract_type[type] : '';
         if (display_text) {
             h4.setAttribute('class', `contract_heading ${type}`);
@@ -184,11 +210,16 @@ const Price = (() => {
             }
             CommonFunctions.elementTextContent(payout, `${localize('Payout')}: `);
             CommonFunctions.elementInnerHtml(payout_amount, data.payout ? formatMoney((currency.value || currency.getAttribute('value')), data.payout) : '-');
+            // Lookback multiplier
+            CommonFunctions.elementTextContent(multiplier, `${localize('Multiplier')}: `);
+            CommonFunctions.elementInnerHtml(contract_multiplier, data.multiplier ? formatMoney((currency.value || currency.getAttribute('value')), data.multiplier, false, 3, 2) : '-');
 
             if (data.longcode && window.innerWidth > 500) {
-                description.setAttribute('data-balloon', data.longcode);
+                if (description) description.setAttribute('data-balloon', data.longcode);
+                if (longcode) CommonFunctions.elementTextContent(longcode, data.longcode);
             } else {
-                description.removeAttribute('data-balloon');
+                if (description) description.removeAttribute('data-balloon');
+                if (longcode) CommonFunctions.elementTextContent(longcode, '');
             }
         };
 
@@ -211,11 +242,15 @@ const Price = (() => {
             }
             comment.show();
             error.hide();
-            commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
+            if (isLookback(type)) {
+                CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${getLookBackFormula(type)}`);
+            } else {
+                commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
+            }
             const old_price  = purchase.getAttribute('data-display_value');
             const old_payout = purchase.getAttribute('data-payout');
-            displayPriceMovement(amount, old_price, proposal.display_value);
-            displayPriceMovement(payout_amount, old_payout, proposal.payout);
+            if (amount) displayPriceMovement(amount, old_price, proposal.display_value);
+            if (payout_amount) displayPriceMovement(payout_amount, old_payout, proposal.payout);
             purchase.setAttribute('data-purchase-id', id);
             purchase.setAttribute('data-ask-price', proposal.ask_price);
             purchase.setAttribute('data-display_value', proposal.display_value);
@@ -283,6 +318,29 @@ const Price = (() => {
                     break;
             }
         }
+
+        if (Contract.form() === 'lookback') {
+            switch (sessionStorage.getItem('formname')) {
+                case 'lookbackhigh':
+                    types = {
+                        LBFLOATPUT: 1,
+                    };
+                    break;
+                case 'lookbacklow':
+                    types = {
+                        LBFLOATCALL: 1,
+                    };
+                    break;
+                case 'lookbackhighlow':
+                    types = {
+                        LBHIGHLOW: 1,
+                    };
+                    break;
+                default:
+                    break;
+            }
+        }
+
         processForgetProposals().then(() => {
             Object.keys(types || {}).forEach((type_of_contract) => {
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {

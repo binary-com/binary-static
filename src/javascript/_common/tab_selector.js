@@ -124,6 +124,25 @@ const TabSelector = (() => {
         }
     };
 
+    const updateTabDisplay = () => {
+        applyToAllElements('.tab-menu', (el_tab_menu) => {
+            // hide tabs if there is only one tab visible
+            const ul = el_tab_menu.querySelector('ul');
+            if (ul) {
+                const visible_tabs = Array.from(ul.children).filter(el => (
+                    !el.classList.contains('tab-selector')
+                    && (!el.dataset.show
+                        || el.dataset.show && el.classList.contains('data-show-visible'))
+                ));
+                if (visible_tabs.length <= 1) el_tab_menu.setVisibility(0);
+            }
+            // resize tab selector
+            if (el_tab_menu.querySelector('.tab-selector')) {
+                repositionSelector();
+            }
+        });
+    };
+
     const onUnload = () => {
         window.removeEventListener('resize', repositionSelector);
 
@@ -142,6 +161,8 @@ const TabSelector = (() => {
     return {
         onLoad,
         onUnload,
+        repositionSelector,
+        updateTabDisplay,
     };
 })();
 

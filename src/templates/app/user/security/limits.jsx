@@ -34,53 +34,56 @@ const Limits = () => {
                 <div className='invisible' id='limits-title'>
                     <h2 id='trading-limits'>{it.L('Trading Limits')}</h2>
                     <div className='gr-padding-10'>
-                        <Table id='client-limits' data={{
-                            thead: [[{ text: it.L('Item'), className: 'align-start' }, { text: it.L('Limit'), className: 'limit align-start' }]],
-                            tbody: [
-                                [
-                                    { text: open_position },
-                                    { id: 'open-positions' },
+                        <Table
+                            id='client-limits'
+                            data={{
+                                thead: [[{ text: it.L('Item'), className: 'align-start' }, { text: it.L('Limit'), className: 'limit align-start' }]],
+                                tbody: [
+                                    [
+                                        { text: open_position },
+                                        { id: 'open-positions' },
+                                    ],
+                                    [
+                                        { text: account_balance },
+                                        { id: 'account-balance' },
+                                    ],
+                                    [
+                                        { text: payout },
+                                        { id: 'payout' },
+                                    ],
+                                    [
+                                        { text: payout_per_symbol_and_contract_type },
+                                        { id: 'payout-per-symbol-and-contract-type' },
+                                    ],
+                                    [
+                                        { text: it.L('Maximum aggregate payouts on open positions per symbol') },
+                                        { id: 'payout-per-symbol' },
+                                    ],
+                                    [
+                                        { className: 'gr-padding-10', id: 'gap' },
+                                        { text: '' },
+                                    ],
+                                    [
+                                        { header: limit, className: 'align-start' },
+                                        { header: it.L('Limit'), className: 'limit align-start' },
+                                    ],
                                 ],
-                                [
-                                    { text: account_balance },
-                                    { id: 'account-balance' },
-                                ],
-                                [
-                                    { text: payout },
-                                    { id: 'payout' },
-                                ],
-                                [
-                                    { text: payout_per_symbol_and_contract_type },
-                                    { id: 'payout-per-symbol-and-contract-type' },
-                                ],
-                                [
-                                    { text: it.L('Maximum aggregate payouts on open positions per symbol') },
-                                    { id: 'payout-per-symbol' },
-                                ],
-                                [
-                                    { className: 'gr-padding-10', id: 'gap' },
-                                    { text: '' },
-                                ],
-                                [
-                                    { header: limit, className: 'align-start' },
-                                    { header: it.L('Limit'), className: 'limit align-start' },
-                                ],
-                            ],
-                        }} />
+                            }}
+                        />
                         <p className='hint'>
                             {it.L('Stated limits are subject to change without prior notice.')}
                         </p>
                     </div>
                 </div>
-                <div id='limits_error'></div>
+                <div id='limits_error' />
             </div>
             <div className='invisible ja-hide' id='withdrawal-limits'>
                 <h2 id='withdrawal-title'>{it.L('Withdrawal Limits')}</h2>
                 <div>
-                    <p id='withdrawal-limit'></p>
-                    <p id='already-withdraw'></p>
-                    <p id='withdrawal-limit-aggregate'></p>
-                    <p id='already-withdraw-aggregate'></p>
+                    <p id='withdrawal-limit' />
+                    <p id='already-withdraw' />
+                    <p id='withdrawal-limit-aggregate' />
+                    <p id='already-withdraw-aggregate' />
                 </div>
             </div>
         </React.Fragment>
