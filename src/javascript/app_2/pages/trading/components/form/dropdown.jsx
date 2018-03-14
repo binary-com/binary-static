@@ -1,5 +1,4 @@
 import React from 'react';
-import { Select } from './native_pickers.jsx';
 
 class Dropdown extends React.PureComponent {
     constructor(props) {
@@ -69,55 +68,55 @@ class Dropdown extends React.PureComponent {
     }
 
     render() {
-        if (!this.props.is_nativepicker) {
+        if (this.props.is_nativepicker) {
             return (
-                <div
-                    ref={this.setWrapperRef}
-                    className={`dropdown-container ${this.props.className ? this.props.className : ''} ${this.state.is_list_visible ? 'show' : ''}`}>
-                    <div
-                        className={`dropdown-display ${this.state.is_list_visible ? 'clicked': ''}`}
-                        onClick={this.handleVisibility}
-                        onBlur={this.handleVisibility}
-                    >
-                        <span name={this.props.name} value={this.props.value}>
-                            {this.getDisplayText(this.props.list, this.props.value)}
-                        </span>
-                    </div>
-                    <span className='select-arrow' />
-                    <div className='dropdown-list'>
-                        <div className='list-container'>
-                        { this.isOneLevel(this.props.list) ?
-                            <Items
-                                items={this.props.list}
-                                name={this.props.name}
-                                value={this.props.value}
-                                handleSelect={this.handleSelect}
-                                type={this.props.type || undefined}
-                            /> :
-                            Object.keys(this.props.list).map(key => (
-                                <React.Fragment key={key}>
-                                    <div className='list-label'><span>{key}</span></div>
-                                    <Items
-                                        items={this.props.list[key]}
-                                        name={this.props.name}
-                                        value={this.props.value}
-                                        handleSelect={this.handleSelect}
-                                    />
-                                </React.Fragment>
-                            ))
-                        }
-                        </div>
-                    </div>
-                </div>
+                <NativeSelect
+                    name={this.props.name}
+                    value={this.props.value}
+                    list={this.props.list}
+                    onChange={this.props.onChange}
+                />
             );
         }
         return (
-            <Select
-                name={this.props.name}
-                value={this.props.value}
-                list={this.props.list}
-                onChange={this.props.onChange}
-            />
+            <div
+                ref={this.setWrapperRef}
+                className={`dropdown-container ${this.props.className ? this.props.className : ''} ${this.state.is_list_visible ? 'show' : ''}`}>
+                <div
+                    className={`dropdown-display ${this.state.is_list_visible ? 'clicked': ''}`}
+                    onClick={this.handleVisibility}
+                    onBlur={this.handleVisibility}
+                >
+                    <span name={this.props.name} value={this.props.value}>
+                        {this.getDisplayText(this.props.list, this.props.value)}
+                    </span>
+                </div>
+                <span className='select-arrow' />
+                <div className='dropdown-list'>
+                    <div className='list-container'>
+                    { this.isOneLevel(this.props.list) ?
+                        <Items
+                            items={this.props.list}
+                            name={this.props.name}
+                            value={this.props.value}
+                            handleSelect={this.handleSelect}
+                            type={this.props.type || undefined}
+                        /> :
+                        Object.keys(this.props.list).map(key => (
+                            <React.Fragment key={key}>
+                                <div className='list-label'><span>{key}</span></div>
+                                <Items
+                                    items={this.props.list[key]}
+                                    name={this.props.name}
+                                    value={this.props.value}
+                                    handleSelect={this.handleSelect}
+                                />
+                            </React.Fragment>
+                        ))
+                    }
+                    </div>
+                </div>
+            </div>
         );
     }
 }
@@ -143,6 +142,30 @@ const Items = ({
             </div>
         </React.Fragment>
     ))
+);
+
+const NativeSelect = ({
+    name,
+    value,
+    list,
+    onChange,
+}) => (
+    <select name={name} value={value} onChange={onChange}>
+        {Array.isArray(list) ?
+          list.map((item, idx) => (
+              <option key={idx} value={item.value}>{item.text}</option>
+          ))
+        :
+        Object.keys(list).map(key => (
+            <React.Fragment key={key}>
+                <optgroup label={key}>
+                    {list[key].map((item, idx) => (
+                        <option key={idx} value={item.value}>{item.text}</option>
+                    ))}
+                </optgroup>
+            </React.Fragment>
+        ))}
+    </select>
 );
 
 export default Dropdown;

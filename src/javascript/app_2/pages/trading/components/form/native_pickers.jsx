@@ -1,29 +1,5 @@
 import React from 'react';
 
-const Select = ({
-    name,
-    value,
-    list,
-    onChange,
-}) => (
-    <select name={name} value={value} onChange={onChange}>
-        {Array.isArray(list) ?
-          list.map((item, idx) => (
-              <option key={idx} value={item.value}>{item.text}</option>
-          ))
-        :
-        Object.keys(list).map(key => (
-            <React.Fragment key={key}>
-                <optgroup label={key}>
-                    {list[key].map((item, idx) => (
-                        <option key={idx} value={item.value}>{item.text}</option>
-                    ))}
-                </optgroup>
-            </React.Fragment>
-        ))}
-    </select>
-);
-
 const DatePicker = ({
     name,
     onChange,
