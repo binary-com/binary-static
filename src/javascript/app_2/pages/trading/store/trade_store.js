@@ -8,7 +8,6 @@ export default class TradeStore {
 
     @action.bound init() {
         actions.getCountryAsync();
-        actions.getStartDates();
 
         actions.getTicks(action('getTicks', (r) => { this.tick = r; }));
 

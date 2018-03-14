@@ -6,7 +6,6 @@ import { cloneObject } from '../../../../_common/utility';
 import * as ContractType from './contract_type';
 import * as Currency from './currency';
 import * as Duration from './duration';
-import * as StartDate from './start_date';
 import * as Symbol from './symbol';
 import * as Test from './test';
 
@@ -14,7 +13,7 @@ useStrict(true);
 
 const reaction_disposers = [];
 
-const defaultExports = { ...ContractType, ...Currency, ...Duration, ...Symbol, ...StartDate, ...Test };
+const defaultExports = { ...ContractType, ...Currency, ...Duration, ...Symbol, ...Test };
 
 export const initActions = (store) => {
     Object.keys(defaultExports).forEach((methodName) => {

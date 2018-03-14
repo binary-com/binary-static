@@ -1,3 +1,4 @@
+import moment from 'moment';
 import DAO from '../../data/dao';
 import { cloneObject } from '../../../../../_common/utility';
 import { localize } from '../../../../../_common/localize';
@@ -53,15 +54,68 @@ const ContractType = (() => {
                     sub_cats[sub_cats.indexOf(type)] = { value: type, text: localize(contract_types[type].title) };
 
                     // populate available contract types
-                    available_contract_types[type]                = cloneObject(contract_types[type]);
-                    available_contract_types[type].contracts_info = {};
+                    available_contract_types[type]        = cloneObject(contract_types[type]);
+                    available_contract_types[type].config = {};
                 }
 
-                // contracts_info: {
-                //      CALL_spot_daily: {...} // '[contract_type]_[start_type]_[expiry_type]'
-                //      PUT_spot_daily: {...}
+                // add to this config if a value you are looking for does not exist yet
+                // accordingly create a function to retrieve the value
+                // config: {
+                //      forward_starting_dates: [
+                //          { text: '...', open: 1517356800, close: 1517443199 },
+                //          { text: '...', open: 1517443200, close: 1517529599 },
+                //          { text: '...', open: 1517529600, close: 1517615999 },
+                //      ],
+                //      trade_types: {
+                //          'CALL': 'Higher',
+                //          'PUT': 'Lower'
+                //      },
+                //      barriers: {
+                //          low_barrier : 1093,
+                //          high_barrier: 1111,
+                //      }
                 // }
-                available_contract_types[type].contracts_info[`${contract.contract_type}_${contract.start_type}_${contract.expiry_type}`] = contract;
+
+                if (contract.forward_starting_options) {
+                    const forward_starting_options = [];
+
+                    contract.forward_starting_options.forEach(option => {
+                        forward_starting_options.push({
+                            text : moment.unix(option.open).format('ddd - DD MMM, YYYY'),
+                            value: option.open,
+                            end  : option.close,
+                        });
+                    });
+
+                    available_contract_types[type].config.forward_starting_dates = forward_starting_options;
+                }
+
+                if (contract.contract_display && contract.contract_type) {
+                    const trade_types = available_contract_types[type].config.trade_types || {};
+
+                    trade_types[contract.contract_type] = contract.contract_display;
+
+                    available_contract_types[type].config.trade_types = trade_types;
+                }
+
+                if (contract.barrier || contract.low_barrier || contract.high_barrier) {
+                    if (!available_contract_types[type].config.barriers) {
+                        available_contract_types[type].config.barriers = {};
+                    }
+                    const obj_barrier = {};
+                    if (contract.barrier) {
+                        obj_barrier.barrier = contract.barrier;
+                    } else {
+                        if (contract.low_barrier) {
+                            obj_barrier.low_barrier = contract.low_barrier;
+                        }
+                        if (contract.high_barrier) {
+                            obj_barrier.high_barrier = contract.high_barrier;
+                        }
+                    }
+                    Object.assign(available_contract_types[type].config.barriers, obj_barrier);
+                }
+
             }
         });
 
@@ -91,27 +145,6 @@ const ContractType = (() => {
      */
     const getContractValue = (value, store) => ({ [value]: available_contract_types[store.contract_type][value] });
 
-    /**
-     * @param {Array} values: pass an array of values that you need to retrieve, e.g. ['barriers', 'barrier']
-     * @param {Object} store: a clone of store so we can retrieve the needed values to parse available_contract_types
-     * @param {String} trade_type: optional variable to specify which trade type to match exactly
-     * returns {Object} of available values, e.g. { barriers: 1, barrier: "+0.057" }, or { barriers: 0 } if value barrier doesn't exist
-     */
-    const getContractInfoValues = (values, store, trade_type) => {
-        const contracts_info = available_contract_types[store.contract_type].contracts_info;
-        const regex          = new RegExp(`${trade_type ? `${trade_type}_` : ''}${store.contract_start_type}_${store.contract_expiry_type}`);
-        const contract_key   = Object.keys(contracts_info).find(key => regex.test(key));
-
-        // TODO: find a better way to handle if start type and expiry type of previous type don't apply to this
-        const spare_key      = Object.keys(contracts_info).find(key => new RegExp(trade_type).test(key));
-
-        const obj_values = values.reduce((acc, value) => (
-            $.extend(acc, {[value]: contracts_info[contract_key || spare_key][value]})
-        ), {});
-
-        return obj_values;
-    };
-
     const getComponents = (c_type) => contract_types[c_type].components;
 
     const onContractChange = (c_type) => {
@@ -121,11 +154,26 @@ const ContractType = (() => {
         };
     };
 
-    const getTradeTypes = (store) => {
-        const obj_trade_types = getContractValue('trade_types', store).trade_types.reduce((acc, trade_type) => (
-                $.extend(acc, { [trade_type]: getContractInfoValues(['contract_display'], store, trade_type).contract_display })), {});
+    const getStartDates = (store) => {
+        const config           = getContractValue('config', store).config;
+        const start_dates_list = [{ text: localize('Now'), value: 'now' }];
+
+        if (config.forward_starting_dates) {
+            start_dates_list.push(...config.forward_starting_dates);
+        }
+
+        return { start_dates_list };
+    };
+
+    const getTradeTypes = (store) => ({
+        trade_types: getContractValue('config', store).config.trade_types,
+    });
+
+    const getBarriers = (store) => {
+        const barriers = getContractValue('config', store).config.barriers || {};
         return {
-            trade_types: obj_trade_types,
+            barrier_1: barriers.barrier || barriers.high_barrier || '',
+            barrier_2: barriers.low_barrier || '',
         };
     };
 
@@ -133,8 +181,9 @@ const ContractType = (() => {
         getContractsList,
         getContractType,
         onContractChange,
-        getContractInfoValues,
+        getStartDates,
         getTradeTypes,
+        getBarriers,
     };
 })();
 
