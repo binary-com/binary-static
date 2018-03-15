@@ -37,19 +37,19 @@
                             vertical-align: middle;
                         }
                         &.start-time:before {
-                            content: url('/images/trading_app/sidebar/light/ic_watch_later_light.svg');
+                            content: url('../images/trading_app/sidebar/light/ic_watch_later_light.svg');
                         }
                         &.trade-duration:before {
-                            content: url('/images/trading_app/sidebar/light/ic_timelapse_light.svg');
+                            content: url('../images/trading_app/sidebar/light/ic_timelapse_light.svg');
                         }
                         &.invest-amount:before {
-                            content: url('/images/trading_app/sidebar/light/ic_monetization_light.svg');
+                            content: url('../images/trading_app/sidebar/light/ic_monetization_light.svg');
                         }
                         &.barriers:before {
-                            content: url('/images/trading_app/sidebar/light/ic_barrier_light.svg');
+                            content: url('../images/trading_app/sidebar/light/ic_barrier_light.svg');
                         }
                         &.digits:before {
-                            content: url('/images/trading_app/sidebar/light/ic_digit_light.svg');
+                            content: url('../images/trading_app/sidebar/light/ic_digit_light.svg');
                         }
                     }
                 }
