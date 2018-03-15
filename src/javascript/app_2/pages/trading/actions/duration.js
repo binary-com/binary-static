@@ -18,7 +18,14 @@ export const getDurationUnits = (/* store */) => {
     };
 };
 
-export const onChangeExpiry = ({ expiry_type, duration_unit, expiry_date, expiry_time, contract_type }) => {
+export const onChangeExpiry = ({
+    expiry_type,
+    duration_unit,
+    expiry_date,
+    expiry_time,
+    contract_type,
+    server_time,
+}) => {
     let contract_expiry_type = 'intraday';
     if (expiry_type === 'duration') {
         if (duration_unit === 'd') {
@@ -26,11 +33,11 @@ export const onChangeExpiry = ({ expiry_type, duration_unit, expiry_date, expiry
         }
     } else {
         const time    = ((expiry_time.split(' ') || [])[0] || '').split(':');
-        const expires = moment().utc(expiry_date);
+        const expires = moment(expiry_date).utc();
         if (time.length > 1) {
             expires.hour(time[0]).minute(time[1]);
         }
-        if (expires.diff(moment().utc(), 'days') >= 1) {
+        if (expires.diff(moment(server_time).utc(), 'days') >= 1) {
             contract_expiry_type = 'daily';
         }
     }

@@ -61,6 +61,7 @@ const ContractType = (() => {
                 // add to this config if a value you are looking for does not exist yet
                 // accordingly create a function to retrieve the value
                 // config: {
+                //      has_spot: 1,
                 //      forward_starting_dates: [
                 //          { text: '...', open: 1517356800, close: 1517443199 },
                 //          { text: '...', open: 1517443200, close: 1517529599 },
@@ -77,6 +78,10 @@ const ContractType = (() => {
                 //          }
                 //      }
                 // }
+
+                if (contract.start_type === 'spot') {
+                    available_contract_types[type].config.has_spot = 1;
+                }
 
                 if (contract.forward_starting_options) {
                     const forward_starting_options = [];
@@ -148,17 +153,28 @@ const ContractType = (() => {
      */
     const getContractValue = (value, contract_type) => ({ [value]: available_contract_types[contract_type][value] });
 
-    const getComponents = (c_type) => contract_types[c_type].components;
+    const getComponents = (c_type) => ({ form_components: contract_types[c_type].components });
+
+    const getStartType = (start_date) => {
+        const contract_start_type = start_date === 'now' ? 'spot' : 'forward';
+
+        return { contract_start_type };
+    };
 
     const getStartDates = (contract_type) => {
         const config           = getContractValue('config', contract_type).config;
-        const start_dates_list = [{ text: localize('Now'), value: 'now' }];
+        const start_dates_list = [];
 
+        if (config.has_spot) {
+            start_dates_list.push({ text: localize('Now'), value: 'now' });
+        }
         if (config.forward_starting_dates) {
             start_dates_list.push(...config.forward_starting_dates);
         }
 
-        return { start_dates_list };
+        const start_date = start_dates_list[0].value;
+
+        return { start_date, start_dates_list };
     };
 
     const getTradeTypes = (contract_type) => ({
@@ -179,6 +195,7 @@ const ContractType = (() => {
         buildContractTypesConfig,
         getContractType,
         getComponents,
+        getStartType,
         getStartDates,
         getTradeTypes,
         getBarriers,

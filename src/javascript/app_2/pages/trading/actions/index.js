@@ -6,6 +6,7 @@ import { cloneObject } from '../../../../_common/utility';
 import * as ContractType from './contract_type';
 import * as Currency from './currency';
 import * as Duration from './duration';
+import * as StartDate from './start_date';
 import * as Symbol from './symbol';
 import * as Test from './test';
 
@@ -13,7 +14,7 @@ useStrict(true);
 
 const reaction_disposers = [];
 
-const defaultExports = { ...ContractType, ...Currency, ...Duration, ...Symbol, ...Test };
+const defaultExports = { ...ContractType, ...Currency, ...Duration, ...Symbol, ...Test, ...StartDate };
 
 export const initActions = (store) => {
     Object.keys(defaultExports).forEach((methodName) => {
@@ -38,8 +39,20 @@ export const initActions = (store) => {
         }
     });
 
-    const reaction_map   = {
-        symbol             : defaultExports.onChangeSymbolAsync,
+    const combine = asyncAction('symbol.wrapper', function* () {
+        const snapshot = cloneObject(store);
+
+        Object.assign(snapshot, yield asyncAction('symbol', Symbol.onChangeSymbolAsync)(snapshot));
+        Object.assign(snapshot, ContractType.onChangeContractTypeList(snapshot));
+        Object.assign(snapshot, ContractType.onChangeContractType(snapshot));
+
+        Object.keys(snapshot).forEach((key) => {
+            store[key] = snapshot[key];
+        });
+    });
+
+    const reaction_map = {
+        symbol             : combine,
         contract_types_list: defaultExports.onChangeContractTypeList,
         contract_type      : defaultExports.onChangeContractType,
         amount             : defaultExports.onChangeAmount,
@@ -47,6 +60,7 @@ export const initActions = (store) => {
         expiry_date        : defaultExports.onChangeExpiry,
         expiry_time        : defaultExports.onChangeExpiry,
         duration_unit      : defaultExports.onChangeExpiry,
+        start_date         : defaultExports.onChangeStartDate,
     };
 
     Object.keys(reaction_map).forEach((reaction_key) => {

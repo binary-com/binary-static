@@ -42,9 +42,8 @@ export default class TradeStore {
     @observable contract_type        = '';
     @observable contract_types_list  = {};
     @observable trade_types          = [];
-    // TODO: add logic for contract_start_type dynamic value
-    @observable contract_start_type  = 'spot';
-    @observable contract_expiry_type = 'intraday';
+    @observable contract_start_type  = '';
+    @observable contract_expiry_type = '';
     @observable form_components      = [];
 
     // Amount
