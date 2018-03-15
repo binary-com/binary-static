@@ -436,10 +436,6 @@ const TradingEvents = (() => {
         getElementById('trading_init_progress').addEventListener('click', CommonTrading.debounce(() => {
             CommonTrading.reloadPage();
         }));
-
-        getElementById('symbol_tip').addEventListener('click', CommonTrading.debounce((e) => {
-            BinaryPjax.load(e.target.getAttribute('target'));
-        }));
     };
 
     return {

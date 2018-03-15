@@ -495,7 +495,7 @@ const commonTrading = (() => {
                 commodities: 'commodities',
                 volidx     : 'volatility-indices',
             };
-            tip.setAttribute('target', urlFor('/get-started/binary-options', `anchor=${map_to_section_id[market]}#range-of-markets`));
+            tip.setAttribute('href', urlFor('/get-started/binary-options', `anchor=${map_to_section_id[market]}#range-of-markets`));
         }
     };
 
