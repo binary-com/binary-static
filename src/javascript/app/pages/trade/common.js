@@ -3,6 +3,7 @@ const Notifications      = require('./notifications');
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
 const formatMoney        = require('../../common/currency').formatMoney;
+const ActiveSymbols      = require('../../common/active_symbols');
 const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const getElementById     = require('../../../_common/common_functions').getElementById;
@@ -486,8 +487,7 @@ const commonTrading = (() => {
     const displayTooltip = () => {
         const tip = getElementById('symbol_tip');
         if (tip) {
-            // TODO: set different targets according to the selected market/underlying (once the data-anchor is ready)
-            const market = Defaults.get('market');
+            const market = ActiveSymbols.getSymbols()[Defaults.get('underlying')].market;
             const map_to_section_id = {
                 forex      : 'forex',
                 indices    : 'otc-stocks-and-indices',
