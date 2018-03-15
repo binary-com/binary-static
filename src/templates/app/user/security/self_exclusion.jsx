@@ -49,7 +49,7 @@ const SelfExclusion = () => (
                 <FormRow
                     type='custom'
                     id='timeout_until_date'
-                    label={it.L('Time out until')}
+                    label={it.L('Timed out until')}
                     row_class='ja-hide'
                     hint={it.L('Please enter date in the format DD MMM, YYYY HH:mm (local time).')}
                 >
@@ -63,7 +63,7 @@ const SelfExclusion = () => (
                     </div>
                 </FormRow>
 
-                <FormRow type='text' id='exclude_until' label={it.L('Exclude me from the website until')} attributes={{ maxLength: 15, autoComplete: 'off', readOnly: 'readonly' }} className='clearable' hint={it.L('Please enter date in the format DD MMM, YYYY.')} />
+                <FormRow type='text' id='exclude_until' label={it.L('Excluded from the website until')} attributes={{ maxLength: 15, autoComplete: 'off', readOnly: 'readonly' }} className='clearable' hint={it.L('Please enter date in the format DD MMM, YYYY.')} />
 
                 <div id='gamstop_info_bottom' className='gr-row invisible'>
                     <div className='gr-8 gr-push-4 gr-12-m gr-push-0-m'>
