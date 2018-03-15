@@ -1,7 +1,7 @@
 import React from 'react';
 import Dropdown from './form/dropdown.jsx';
 import TimePicker from './form/time_picker.jsx';
-import { ClockHeader } from './elements/clock_header.jsx';
+import { ClockHeader } from './elements/field_headers.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 

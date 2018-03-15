@@ -1,6 +1,6 @@
 import React from 'react';
 import Dropdown from './form/dropdown.jsx';
-import { FieldHeader } from './elements/clock_header.jsx';
+import { FieldHeader } from './elements/field_headers.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 

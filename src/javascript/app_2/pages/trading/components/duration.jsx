@@ -4,7 +4,7 @@ import InputField from './form/input_field.jsx';
 import Dropdown from './form/dropdown.jsx';
 import Datepicker from './form/date_picker.jsx';
 import TimePicker from './form/time_picker.jsx';
-import { ClockHeader } from './elements/clock_header.jsx';
+import { ClockHeader } from './elements/field_headers.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
