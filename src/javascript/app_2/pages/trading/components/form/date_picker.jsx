@@ -164,7 +164,7 @@ class Calendar extends React.Component {
     onChangeInput(e) {
         let value = e.target.value;
 
-        if (this.props.displayFormat === 'd' && value) {
+        if (this.props.mode === 'duration' && value) {
             value = moment().add(value || 1, 'days');
         }
 
@@ -369,13 +369,13 @@ class Calendar extends React.Component {
             || (is_year_view && this.getYears()) || (is_decade_view && this.getDecades())
         );
 
-        const value = this.props.displayFormat === 'd' ? getDayDifference(this.state.selected_date) : this.state.selected_date;
+        const value = this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date;
 
         return (
             <div className='calendar'>
                 <input
                     type='text'
-                    placeholder={this.props.displayFormat === 'd' ? localize('Select a duration') : localize('Select date')}
+                    placeholder={this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date')}
                     value={value}
                     onChange={this.onChangeInput}
                     className='calendar-input'
@@ -490,7 +490,7 @@ class DatePicker extends React.PureComponent {
         this.calendar.resetCalendar();
     };
 
-    getPickerValue = () => (this.props.displayFormat === 'd' ? getDayDifference(this.state.selected_date) : this.state.selected_date);
+    getPickerValue = () => (this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date);
 
     render() {
         const value = this.getPickerValue();
@@ -507,7 +507,7 @@ class DatePicker extends React.PureComponent {
                         className='datepicker-display'
                         value={value}
                         readOnly
-                        placeholder={this.props.displayFormat === 'd' ? localize('Select a duration') : localize('Select date')}
+                        placeholder={this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date')}
                         onClick={this.handleVisibility}
                     />
                     <span
