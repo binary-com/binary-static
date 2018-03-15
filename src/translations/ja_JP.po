@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-12 20:59-0400\n"
+"PO-Revision-Date: 2018-03-14 22:16-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -4402,7 +4402,7 @@ msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</str
 msgstr "「アップ」を選択された場合、<strong>終値</strong>が<strong>エントリー価格</strong>より正確に高くなるとペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。"
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "「STAY-IN」を選択された場合、<strong>取引期間が終了するまで常に</strong>市場価格がバリアを設定した<strong>上下両方</strong>のバリア価格のレンジ内に留まること、すなわち<strong>バリア価格にタッチしたら</strong>ペイアウトを受け取れます。"
+msgstr "「STAY-IN」を選択された場合、<strong>取引期間中の市場価格が</strong>上限バリア未満かつ下限バリア超過を維持する場合、ペイアウトを受け取れます。"
 
 msgid "If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "「TOUCH」を選択された場合、<strong>取引期間が終了するまで</strong>に市場価格が<strong>バリア</strong>設定した価格にタッチすればペイアウトを受け取れます。"
