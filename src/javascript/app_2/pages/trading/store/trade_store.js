@@ -35,14 +35,14 @@ export default class TradeStore {
     }
 
     // Underlying
-    @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
+    @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
     @observable symbol       = Object.keys(this.symbols_list)[0];
 
     // Contract Type
     @observable contract_type        = '';
     @observable contract_types_list  = {};
     @observable trade_types          = [];
-    // TODO: add logic for contract_start_type and contract_expiry_type dynamic values
+    // TODO: add logic for contract_start_type dynamic value
     @observable contract_start_type  = 'spot';
     @observable contract_expiry_type = 'intraday';
     @observable form_components      = [];

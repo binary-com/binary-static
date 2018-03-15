@@ -43,6 +43,10 @@ export const initActions = (store) => {
         contract_types_list: defaultExports.onChangeContractTypeList,
         contract_type      : defaultExports.onChangeContractType,
         amount             : defaultExports.onChangeAmount,
+        expiry_type        : defaultExports.onChangeExpiry,
+        expiry_date        : defaultExports.onChangeExpiry,
+        expiry_time        : defaultExports.onChangeExpiry,
+        duration_unit      : defaultExports.onChangeExpiry,
     };
 
     Object.keys(reaction_map).forEach((reaction_key) => {

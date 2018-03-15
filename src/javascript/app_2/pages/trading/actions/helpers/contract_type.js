@@ -71,8 +71,10 @@ const ContractType = (() => {
                 //          'PUT': 'Lower'
                 //      },
                 //      barriers: {
-                //          low_barrier : 1093,
-                //          high_barrier: 1111,
+                //          daily: {
+                //              low_barrier : 1093,
+                //              high_barrier: 1111,
+                //          }
                 //      }
                 // }
 
@@ -98,9 +100,12 @@ const ContractType = (() => {
                     available_contract_types[type].config.trade_types = trade_types;
                 }
 
-                if (contract.barrier || contract.low_barrier || contract.high_barrier) {
+                if (contract.barriers) {
                     if (!available_contract_types[type].config.barriers) {
                         available_contract_types[type].config.barriers = {};
+                    }
+                    if (!available_contract_types[type].config.barriers[contract.expiry_type]) {
+                        available_contract_types[type].config.barriers[contract.expiry_type] = {};
                     }
                     const obj_barrier = {};
                     if (contract.barrier) {
@@ -113,7 +118,7 @@ const ContractType = (() => {
                             obj_barrier.high_barrier = contract.high_barrier;
                         }
                     }
-                    Object.assign(available_contract_types[type].config.barriers, obj_barrier);
+                    available_contract_types[type].config.barriers[contract.expiry_type] = obj_barrier;
                 }
 
             }
@@ -138,15 +143,15 @@ const ContractType = (() => {
 
     /**
      * @param {String} value: pass a value that you need to retrieve, e.g. 'trade_types'
-     * @param {Object} store: a clone of store so we can retrieve the needed values to parse available_contract_types
+     * @param {Object} contract_type: value of contract_type, e.g. 'rise_fall'
      * returns {Object} of available values, e.g. { trade_types: ['CALL', 'PUT'] }
      */
-    const getContractValue = (value, store) => ({ [value]: available_contract_types[store.contract_type][value] });
+    const getContractValue = (value, contract_type) => ({ [value]: available_contract_types[contract_type][value] });
 
     const getComponents = (c_type) => contract_types[c_type].components;
 
-    const getStartDates = (store) => {
-        const config           = getContractValue('config', store).config;
+    const getStartDates = (contract_type) => {
+        const config           = getContractValue('config', contract_type).config;
         const start_dates_list = [{ text: localize('Now'), value: 'now' }];
 
         if (config.forward_starting_dates) {
@@ -156,15 +161,17 @@ const ContractType = (() => {
         return { start_dates_list };
     };
 
-    const getTradeTypes = (store) => ({
-        trade_types: getContractValue('config', store).config.trade_types,
+    const getTradeTypes = (contract_type) => ({
+        trade_types: getContractValue('config', contract_type).config.trade_types,
     });
 
-    const getBarriers = (store) => {
-        const barriers = getContractValue('config', store).config.barriers || {};
+    const getBarriers = (contract_type, expiry_type) => {
+        const barriers  = (getContractValue('config', contract_type).config.barriers || {})[expiry_type] || {};
+        const barrier_1 = barriers.barrier || barriers.high_barrier || '';
+        const barrier_2 = barriers.low_barrier || '';
         return {
-            barrier_1: barriers.barrier || barriers.high_barrier || '',
-            barrier_2: barriers.low_barrier || '',
+            barrier_1: barrier_1.toString(),
+            barrier_2: barrier_2.toString(),
         };
     };
 
