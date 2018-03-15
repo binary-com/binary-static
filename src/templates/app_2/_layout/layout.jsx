@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from './head.jsx';
 import Header from './header.jsx';
-import Menu from './menu.jsx';
 import GTM from '../../_common/includes/gtm.jsx';
 import Title from '../../_common/components/title.jsx';
 import Footer from './footer.jsx';
@@ -43,7 +42,6 @@ const Layout = () => {
             <Head />
             <body className={it.language}>
                 <Header />
-                <Menu />
                 <GTM />
                 <InnerContent />
                 <Footer />
