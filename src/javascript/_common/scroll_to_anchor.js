@@ -66,24 +66,32 @@ const ScrollToAnchor = (() => {
         $.scrollTo(el, 500, { offset: -10 });
     };
 
-    const scrollToAnchorInQuery = () => {
+    const getAnchorTargetElement = () => {
         const params = Url.paramsHash();
         const id = params.anchor;
-        if (!id) return;
+        if (!id) return null;
         const candidates = document.querySelectorAll(`[data-anchor="${id}"]`);
         const el = Array.from(candidates).find(isVisible);
+        return el;
+    }
+
+    const scrollToAnchorInQuery = () => {
+        const el = getAnchorTargetElement();
         if (!el) return;
         window.setTimeout(() => {
             scrollToEl(el);
-        }, 200);
+        }, 100);
     };
 
     const cleanup = () => {
         id_occurrence_count = {};
-        Url.updateParamsWithoutReload({
-            anchor: null,
-        }, true);
-        console.log('anchor removed');
+        const el = getAnchorTargetElement();
+        // remove anchor param, when leaving the page with target element
+        if (el) {
+            Url.updateParamsWithoutReload({
+                anchor: null,
+            }, true);
+        }
     };
 
     return {
