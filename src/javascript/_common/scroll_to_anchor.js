@@ -83,6 +83,7 @@ const ScrollToAnchor = (() => {
         Url.updateParamsWithoutReload({
             anchor: null,
         }, true);
+        console.log('anchor removed');
     };
 
     return {

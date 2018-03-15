@@ -487,7 +487,15 @@ const commonTrading = (() => {
         const tip = getElementById('symbol_tip');
         if (tip) {
             // TODO: set different targets according to the selected market/underlying (once the data-anchor is ready)
-            tip.setAttribute('target', urlFor('/get-started/binary-options', '#range-of-markets'));
+            const market = Defaults.get('market');
+            const map_to_section_id = {
+                forex      : 'forex',
+                indices    : 'otc-stocks-and-indices',
+                stocks     : 'otc-stocks-and-indices',
+                commodities: 'commodities',
+                volidx     : 'volatility-indices',
+            };
+            tip.setAttribute('target', urlFor('/get-started/binary-options', `anchor=${map_to_section_id[market]}#range-of-markets`));
         }
     };
 
