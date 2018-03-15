@@ -86,14 +86,16 @@
         td {
             vertical-align: middle;
         }
-        .currency {
-            min-width: 150px;
-        }
-        .deposit, .withdrawal {
-            min-width: 100px;
-        }
-        .processing {
-            min-width: 200px;
+        th, td {
+            &:nth-child(2) { // for currency column
+                min-width: 150px;
+            }
+            &:nth-child(3), &:nth-child(4) { // for deposit and withdrawal columns
+                min-width: 100px;
+            }
+            &:nth-child(5) { // for processing time column
+                min-width: 200px;
+            }
         }
     }
 }
