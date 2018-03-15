@@ -11,7 +11,6 @@ const Price                 = require('./price');
 const Process               = require('./process');
 const Purchase              = require('./purchase');
 const Tick                  = require('./tick');
-const BinaryPjax            = require('../../base/binary_pjax');
 const GTM                   = require('../../base/gtm');
 const BinarySocket          = require('../../base/socket');
 const getDecimalPlaces      = require('../../common/currency').getDecimalPlaces;
