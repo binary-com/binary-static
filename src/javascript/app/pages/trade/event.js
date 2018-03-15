@@ -73,6 +73,7 @@ const TradingEvents = (() => {
             Defaults.remove('formname');
             Defaults.remove('underlying');
             Process.processMarket();
+            CommonTrading.displayTooltip();
         };
 
         getElementById('contract_markets').addEventListener('change', (e) => {
@@ -128,7 +129,6 @@ const TradingEvents = (() => {
 
                 // get ticks for current underlying
                 GetTicks.request(underlying);
-                CommonTrading.displayTooltip();
             }
         });
 
