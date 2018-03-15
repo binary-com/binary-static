@@ -213,7 +213,7 @@ async function compile(page) {
 
             japan_docs_url        : 'https://japan-docs.binary.com',
             affiliate_signup_url  : `https://login.binary.com/signup.php?lang=${affiliate_language_code}`,
-            affiliate_password_url: `https://login.binary.com/password-retrieve.php?lang=${affiliate_language_code}`,
+            affiliate_password_url: `https://login.binary.com/password-reset.php?lang=${affiliate_language_code}`,
             affiliate_email       : 'affiliates@binary.com',
         };
 
