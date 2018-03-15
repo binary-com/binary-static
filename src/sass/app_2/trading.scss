@@ -25,6 +25,19 @@
                 box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
             }
         }
+        .select-wrapper {
+            position: relative;
+
+            &:after {
+                content: '\25bc';
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 8px;
+                font-size: 12px;
+                transform: translateY(-50%);
+            }
+        }
         select {
             margin: 8px 0;
             display: block;
