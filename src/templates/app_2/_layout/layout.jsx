@@ -42,11 +42,13 @@ const Layout = () => {
         <html>
             <Head />
             <body className={it.language}>
-                <Header />
-                <Menu />
-                <GTM />
-                <InnerContent />
-                <Footer />
+                <div className='no-horizontal-scroll'>
+                    <Header />
+                    <Menu />
+                    <GTM />
+                    <InnerContent />
+                    <Footer />
+                </div>
             </body>
         </html>
     );

@@ -107,6 +107,14 @@
 }
 
 // Helpers
+.no-scroll {
+    overflow: hidden;
+}
+
+.no-horizontal-scroll {
+    overflow-x: hidden;
+}
+
 .desktop-only {
     @media (max-width: 768px) {
         display: none;
