@@ -50,7 +50,7 @@ const SelfExclusion = (() => {
     const getData = (scroll) => {
         BinarySocket.send({ get_self_exclusion: 1 }).then((response) => {
             if (response.get_self_exclusion.exclude_until) {
-                has_exclude_until = response.get_self_exclusion.exclude_until;
+                has_exclude_until = true;
             }
             if (response.error) {
                 if (response.error.code === 'ClientSelfExclusion') {
@@ -78,19 +78,32 @@ const SelfExclusion = (() => {
                     fields[key] = value.toString();
                     if (key === 'timeout_until') {
                         const timeout = moment.unix(value);
-                        const date = timeout.format('DD MMM, YYYY');
-                        const time = timeout.format('HH:mm');
-                        $form.find(timeout_date_id).val(date);
-                        $form.find(timeout_time_id).val(time);
+                        const date_value = timeout.format('YYYY-MM-DD');
+                        const time_value = timeout.format('HH:mm');
+                        setDateTimePicker(timeout_date_id, date_value);
+                        setDateTimePicker(timeout_time_id, time_value, true);
+                        $form.find('label[for="timeout_until_date"]').text('Timed out until');
                         return;
                     }
-                    $form.find(`#${key}`).val(value);
+                    if (key === 'exclude_until') {
+                        setDateTimePicker(exclude_until_id, value);
+                        $form.find('label[for="exclude_until"]').text('Excluded from the website until');
+                        return;
+                    }
+                    $form.find(`#${key}`).attr('disabled', has_exclude_until).val(value);
                 });
                 $form.find('#btn_submit').setVisibility(!has_exclude_until);
                 bindValidation();
                 if (scroll) scrollToHashSection();
             });
         });
+    };
+
+    const setDateTimePicker = (id, data_value, is_timepicker = false) => {
+        $form.find(id)
+            .attr('disabled', has_exclude_until)
+            .attr('data-value', data_value)
+            .val(is_timepicker ? data_value : moment(data_value).format('DD MMM, YYYY')); // display format
     };
 
     const bindValidation = () => {

@@ -271,6 +271,8 @@ const texts = [
     'Exclude time cannot be less than 6 months.',
     'Exclude time cannot be for more than 5 years.',
     'When you click "OK" you will be excluded from trading on the site until the selected date.',
+    'Timed out until',
+    'Excluded from the website until',
 
     // portfolio
     'Ref.',

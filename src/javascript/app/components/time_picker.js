@@ -126,7 +126,7 @@ const TimePicker = (() => {
         if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') || ($(window).width() < 770 && !checkInput('time', 'not-a-time'))) {
             $selector.attr({ type: 'text', 'data-picker': 'jquery', readonly: 'readonly' });
             $selector.removeAttr('min max');
-            if ($selector.attr('data-value') && $selector.hasClass('clearable')) {
+            if ($selector.attr('data-value') && $selector.hasClass('clearable') && !$selector.attr('disabled')) {
                 clearable($selector);
             }
             create(selector);
