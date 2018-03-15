@@ -4,7 +4,7 @@ import InputField from './form/input_field.jsx';
 import Dropdown from './form/dropdown.jsx';
 import Datepicker from './form/date_picker.jsx';
 import TimePicker from './form/time_picker.jsx';
-import ClockHeader from './elements/clock_header.jsx';
+import { ClockHeader } from './elements/clock_header.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -34,7 +34,12 @@ const Duration = ({
     }
     return (
         <fieldset>
-            <ClockHeader time={server_time} header={localize('Trade Duration')} />
+            <ClockHeader
+                time={server_time}
+                header={localize('Trade Duration')}
+                icon='trade-duration'
+                tooltip={localize('Text for Duration goes here.')}
+            />
             <Dropdown
                 list={expiry_list}
                 value={expiry_type}

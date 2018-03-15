@@ -1,8 +1,16 @@
 span.tooltip {
-    i.question-mark:before {
-        content: url('/images/common/ic-tooltip-light.svg ');
-        margin: 0 5px;
-        vertical-align: sub;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: $primaryBrandColor;
+    font-size: inherit;
+
+    i.question-mark:after {
+        content: url('/images/common/ic_tooltip_light.svg ');
+        margin-left: 5px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
     }
     &[data-tooltip] {
         position: relative;

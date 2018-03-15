@@ -23,12 +23,42 @@
                 margin: 5px 0 12px;
 
                 &.left {
-                    top: 5px;
                     left: 5px;
+
+                    &.icon {
+                        top: -3px;
+
+                        &:before {
+                            content: '';
+                            margin-right: 5px;
+                            display: inline-flex;
+                            justify-content: center;
+                            align-items: center;
+                            vertical-align: middle;
+                        }
+                        &.start-time:before {
+                            content: url('/images/trading_app/sidebar/light/ic_watch_later_light.svg');
+                        }
+                        &.trade-duration:before {
+                            content: url('/images/trading_app/sidebar/light/ic_timelapse_light.svg');
+                        }
+                        &.invest-amount:before {
+                            content: url('/images/trading_app/sidebar/light/ic_monetization_light.svg');
+                        }
+                        &.barriers:before {
+                            content: url('/images/trading_app/sidebar/light/ic_barrier_light.svg');
+                        }
+                        &.digits:before {
+                            content: url('/images/trading_app/sidebar/light/ic_digit_light.svg');
+                        }
+                    }
                 }
                 &.right {
-                    top: 5px;
+                    top: -3px;
                     right: 5px;
+                    /* stylelint-disable number-max-precision */
+                    font-size: 0.5625rem;
+                    /* stylelint-enable number-max-precision */
                 }
             }
         }

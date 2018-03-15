@@ -1,5 +1,6 @@
 import React from 'react';
 import InputField from './form/input_field.jsx';
+import { FieldHeader } from './elements/clock_header.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -9,11 +10,11 @@ const Barrier = ({
     onChange,
 }) =>  (
     <fieldset>
-        <div className='fieldset-header'>
-            <span className='field-info left' htmlFor='barrier_1'>
-                {localize(barrier_2 ? 'High barrier' : 'Barrier')}
-            </span>
-        </div>
+        <FieldHeader
+            header={localize(barrier_2 ? 'High barrier' : 'Barrier')}
+            icon='barriers'
+            tooltip={localize('Text for Barriers goes here.')}
+        />
         <InputField
             type='number'
             name='barrier_1'

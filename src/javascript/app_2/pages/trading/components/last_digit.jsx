@@ -1,7 +1,8 @@
 import React from 'react';
+import Dropdown from './form/dropdown.jsx';
+import { FieldHeader } from './elements/clock_header.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
-import Dropdown from './form/dropdown.jsx';
 
 const last_digit_numbers = [...Array(10).keys()].map(number => ({
     text : number,
@@ -13,11 +14,11 @@ const LastDigit = ({
     onChange,
 }) =>  (
     <fieldset>
-        <div className='fieldset-header'>
-            <span className='field-info left' htmlFor='last_digit'>
-                {localize('Last Digit Prediction')}
-            </span>
-        </div>
+        <FieldHeader
+            header={localize('Last Digit Prediction')}
+            icon='digits'
+            tooltip={localize('Text for Last Digits goes here.')}
+        />
         <Dropdown
             list={last_digit_numbers}
             value={last_digit}
