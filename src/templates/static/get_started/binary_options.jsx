@@ -84,7 +84,7 @@ const CircleHeader = ({ className, header, text, children }) => {
 const Glossary = ({ glossary }) => (
     glossary.map((item, idx) => (
         <React.Fragment key={idx}>
-            <HeaderSecondary header={item.word} />
+            <HeaderSecondary header={item.word} has_data_anchor />
             <p>{item.definition}</p>
         </React.Fragment>
     ))
@@ -269,10 +269,10 @@ const BinaryOptions = () => {
                         <p>{it.L('Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing.')}</p>
                         <p>{it.L('Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges.')}</p>
 
-                        <HeaderSecondary header={it.L('Commodities')} />
+                        <HeaderSecondary header={it.L('Commodities')} has_data_anchor />
                         <p>{it.L('We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities.')}</p>
 
-                        <HeaderSecondary header={it.L('Volatility Indices')} />
+                        <HeaderSecondary header={it.L('Volatility Indices')} has_data_anchor />
                         <p>{it.L('[_1]\'s Volatility Indices are synthetic indices that mimic real-world market volatility and are available for trading 24/7. They are based on a cryptographically secure random number generator audited for fairness by an independent third party.', it.website_name)}</p>
                         <p>{it.L('You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That\'s not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits.')}</p>
                         <p>{it.L('Volatility Indices are further categorised into two classes:')}</p>
