@@ -40,7 +40,8 @@ const SelfExclusion = (() => {
 
         $('.prepend_currency').parent().prepend(Currency.formatCurrency(currency));
 
-        is_gamstop_client = /gb/.test(Client.get('residence')); // gamstop is only applicable for UK residence
+        // gamstop is only applicable for UK residence & for MX, MLT clients
+        is_gamstop_client = /gb/.test(Client.get('residence')) && /iom|malta/.test(Client.get('landing_company_shortcode'));
 
         initDatePicker();
         getData(true);
