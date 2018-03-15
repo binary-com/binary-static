@@ -196,7 +196,8 @@ describe('Client', () => {
     });
 
     describe('.canTransferFunds()', () => {
-        before((done) => {
+        before(function (done) {
+            this.timeout(5000);
             api.getWebsiteStatus().then((response) => {
                 setCurrencies(response.website_status);
                 done();

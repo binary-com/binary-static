@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-06 20:12-0500\n"
+"PO-Revision-Date: 2018-03-12 20:59-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -363,9 +363,6 @@ msgstr "%1お客さまがご提示いただいた身分証明または住所証�
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
 msgstr "%1の慈善活動では、地域社会においてプラスの影響を少しでも与えられるよう、世界中の小規模慈善団体や非営利団体に焦点を当てています。\n"
 "慈善団体の規模が大きいほど抱える間接費の負担を削減できるよう、当社の寄付は直接的に用いられます。"
-
-msgid "%1’s number of active clients has risen nearly 5-fold in the last 5 years."
-msgstr "%1利用者数は、過去5年間でほぼ5倍に増加しています。"
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "”Investors Chronicle”において「最優秀カスタマーサポート」を受賞"
@@ -1101,6 +1098,9 @@ msgstr "積極的であり、販売志向型の性格、そして迅速な適応
 msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "スコープに記載されているドメインとサブドメインの分析とテスト"
 
+msgid "Analyse the financial markets using beautiful visualisations and unique trading tools, powered by a fast and intuitive interface."
+msgstr "高速かつ直感的なインターフェースを搭載した、見やすい独自のチャートを使用して金融市場を分析しましょう。"
+
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "広範囲の指標、価格帯、オーバーレイで市場を分析"
 
@@ -1792,13 +1792,13 @@ msgid "By opting to be treated as a Professional Client, we shall not presume th
 msgstr "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will contact you with the relevant form to complete and will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 
 msgid "By purchasing the %1‘Close-Low’%2 contract, you’ll win the multiplier times the difference between the %1close%2 and %1low%2 over the duration of the contract."
-msgstr ""
+msgstr "%1終値-安値%2トレードを購入して、取引期間の%1終値%2と%1安値%2の差額×2のペイアウトを受取りましょう。"
 
 msgid "By purchasing the %1‘High-Close’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1close%2 over the duration of the contract."
-msgstr ""
+msgstr "%1高値-終値%2トレードを購入して、取引期間の%1高値%2と%1終値%2の差額×2のペイアウトを受取りましょう。"
 
 msgid "By purchasing the %1‘High-Low’%2 contract, you’ll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
-msgstr ""
+msgstr "%1高値-安値%2トレードを購入して、取引期間の%1高値%2と%1安値%2の差額×2のペイアウトを受取りましょう。"
 
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "ソフトウェアアプリケーション、ウェブサイト、お客さまが作成された製品または提供されたサービス（アプリケーション）を登録することで、これら条項に拘束されることに同意されたとみなします。"
@@ -2017,8 +2017,8 @@ msgstr "バリア価格を設定"
 msgid "Christmas Day"
 msgstr "クリスマス"
 
-msgid "Citizens of Belgium, Bosnia and Herzegovina, Democratic People's Republic of Korea (DPRK), Ethiopia, Iran, Iraq, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr "ベルギー、ボスニアヘルツェゴビナ、朝鮮民主主義人民共和国（北朝鮮）、エチオピア、イラン、イラク、シリア、ウガンダ、バヌアツ、イエメンの方はBinary Investments (Europe) Ltd.で口座を開設いただくことはできません。"
+msgid "Citizens of Belgium, Bosnia and Herzegovina, Democratic People's Republic of Korea (DPRK), Ethiopia, Iran, Iraq, Syria, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+msgstr "ベルギー、ボスニアヘルツェゴビナ、朝鮮民主主義人民共和国（北朝鮮）、エチオピア、イラン、イラク、シリア、バヌアツ、イエメンの方はBinary Investments (Europe) Ltd.で口座を開設いただくことはできません。"
 
 msgid "Classification of assets requiring hedge"
 msgstr "ヘッジを必要とする資産の種類"
@@ -2071,8 +2071,8 @@ msgstr "クライアント区分"
 msgid "Client withdrawals"
 msgstr "顧客出金額"
 
-msgid "Client withdrawals have grown nearly 8-fold over the last 5 years, to nearly USD 120 million."
-msgstr "顧客出金額は過去5年間で約8倍に成長し、1億2,000万USDに達しました。"
+msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
+msgstr "顧客総出金額はほぼ5億USDに達しました。今年の出金額は1億4,000万USD以上に達する見込みです。"
 
 msgid "Client's Liability"
 msgstr "お客さまの責任"
@@ -2301,7 +2301,7 @@ msgid "Congratulations! Your %1 Account has been created."
 msgstr "おめでとうございます！%1口座の作成が完了しました。"
 
 msgid "Connecting to server"
-msgstr ""
+msgstr "サーバーに接続中"
 
 msgid "Connection error: Please check your internet connection."
 msgstr "接続エラー：インターネット接続状況をご確認ください。"
@@ -3624,7 +3624,7 @@ msgid "For example, if you wanted to purchase 100 units of a particular asset tr
 msgstr "例えば、従来のブローカーを通して1単位USD50の特定の資産取引を100単位購入されたい場合、USD5,000かかります。"
 
 msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
-msgstr ""
+msgstr "例えば、取引間中の安値が5,200・終値が6,000とします。終値-安値に＄2を掛けた額がペイアウトなるので、ペイアウトは"
 
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "例えば、ボラティリティインデックスでCFD取引は１ポイントUSD 1としてトレードを提供しています。現行価格USD 20,000のボラティリティインデックス100を1.0の数量で購入し、その後USD 20,010の価格で売却した場合、純利益は以下のように算出されます。"
@@ -4014,7 +4014,7 @@ msgid "Higher"
 msgstr "ラダーHIGH"
 
 msgid "Higher or equal"
-msgstr "バリア価格以上"
+msgstr "ラダーHIGH"
 
 msgid "Higher/Lower"
 msgstr "ラダーLOW/ラダーHIGH"
@@ -4551,9 +4551,6 @@ msgstr "注文代行に関して、%1は最良の結果をもたらせるよう�
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr "外国為替市場では、任意の通貨が特定の通貨に対する価格の変化の予測に基づくトレードを実施できます。例えば、EUR/USD市場が上昇すると予測した場合は、米ドルに対してユーロの価値が上がると予測したことになります。"
 
-msgid "In last two years alone, over 276 million contracts were bought and sold on our platform."
-msgstr "過去2年の間だけでも2億7,600万もの取引が当プラットフォームで行われました。"
-
 msgid "In order to access Telegram Bot, please <a href=\"%1\">generate an API Token</a> and enter it in the input box below."
 msgstr "Telegram Botにアクセスいただくには<a href=\"%1\">APIトークンを作成</a>し、下のボックスに入力していただく必要があります。"
 
@@ -4716,6 +4713,9 @@ msgstr "口座残高が不足しています"
 
 msgid "Intellectual Property Rights"
 msgstr "Intellectual Property Rights"
+
+msgid "Interactive charting tool"
+msgstr "インタラクティブなチャート作成ツール"
 
 msgid "Interactive webinars"
 msgstr "インテラクティブ ウェビナー"
@@ -5359,6 +5359,9 @@ msgstr "店頭バイナリーオプション取引は、期限のある取引で
 
 msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "こちらからダウンロードして、お読みください。"
+
+msgid "Japanese Ladders"
+msgstr "JAPANESE ラダー"
 
 msgid "Job Details"
 msgstr "職務内容"
@@ -6206,6 +6209,9 @@ msgstr "Multi-asset execution"
 msgid "Multi-asset liquidity solutions"
 msgstr "Multi-asset liquidity solutions"
 
+msgid "Multi-barrier trading"
+msgstr "マルチバリア取引"
+
 msgid "Multi-lingual and multi-currency support"
 msgstr "多言語、及び複数の通貨によるサポート"
 
@@ -6267,7 +6273,7 @@ msgid "Network Status"
 msgstr "ネットワークの状態"
 
 msgid "Network status"
-msgstr ""
+msgstr "ネットワーク稼働状況"
 
 msgid "Never"
 msgstr "決してありません"
@@ -6459,9 +6465,6 @@ msgstr "資産の数"
 msgid "Number of employees and contractors"
 msgstr "従業員数と請負業者数"
 
-msgid "Number of ticks"
-msgstr "Tickの総数"
-
 msgid "Number of ticks:"
 msgstr "Tickの総数："
 
@@ -6508,13 +6511,10 @@ msgid "Office worker"
 msgstr "会社員"
 
 msgid "Offline"
-msgstr ""
+msgstr "オフライン"
 
 msgid "Offset potential losses to your investment portfolio by hedging with CFDs."
-msgstr ""
-
-msgid "Old password is wrong."
-msgstr "旧パスワードの値が不正です。"
+msgstr "CFDのヘッジによって投資ポートフォリオの潜在損失を相殺します。"
 
 msgid "On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you."
 msgstr "知識や経験に関して提供いただいた情報に基づき、当ウェブサイトでの投資はお客さまには適していないと思います。"
@@ -6547,13 +6547,13 @@ msgid "One Zero"
 msgstr "One Zero"
 
 msgid "One of the first things most Forex traders learn is how to read a currency pair. There are two parts to a currency pair"
-msgstr ""
+msgstr "外国為替取引においてまずはじめに頭に入れておくことは、通貨ペアの読み方です。通貨ペアは2つから成ります。"
 
 msgid "One simple platform"
 msgstr "簡単な取引システム"
 
 msgid "Online"
-msgstr ""
+msgstr "オンライン"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "FXバイナリーオプションオンライン取引"
@@ -6688,7 +6688,7 @@ msgid "Order execution"
 msgstr "注文実行"
 
 msgid "Order execution typically comes in two varieties: market execution and instant execution. With market execution, you will place an order at the broker’s price. You agree on the price in advance. There are no requotes with market execution."
-msgstr ""
+msgstr "注文の実行には通常、市場実行とインスタント実行という2つの種類があります。 市場実行は、ブローカーの価格で注文します。事前に価格に同意いただくことにりますので、市場実行の再請求はできません。"
 
 msgid "Other"
 msgstr "その他"
@@ -6734,6 +6734,9 @@ msgstr "Our Prices are determined by reference to the price of the underlying in
 
 msgid "Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces."
 msgstr "当社のボラティリティインデックス口座ではボラティリティ・インデックスでのCFD取引が可能 - 市場力を模した独自の合成資産です。"
+
+msgid "Our active client base is expected to reach over 100,000 total clients this year."
+msgstr "今年でアクティブユーザーは合計で100,000人以上に達する見込みです。"
 
 msgid "Our back-end code is mainly in Perl, and our open-source contributions may be found on %1CPAN%2. The corresponding source code can be found in our %3Github repositories%2 that start with the prefix \"perl-\". We welcome contributions to these repositories, notably improved documentation and test coverage."
 msgstr "Our back-end code is mainly in Perl, and our open-source contributions may be found on %1CPAN%2. The corresponding source code can be found in our %3Github repositories%2 that start with the prefix \"perl-\". We welcome contributions to these repositories, notably improved documentation and test coverage."
@@ -6796,7 +6799,7 @@ msgid "Our site does not charge any transfer fees."
 msgstr "当サイトはご入金、及びご出金時に手数料を請求することはありません。"
 
 msgid "Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges."
-msgstr ""
+msgstr "当社の株式及びインデックスは店頭（OTC）市場のデータを基にしています - 集中為替取引所外データ。OTCの性質上、当社の株式およびインデックスの価格は、集中取引所の複製データと異なる場合があります。"
 
 msgid "Our swap rate may also be adjusted to take holidays into account."
 msgstr "当社のスワップレートは休日も考慮して調整されることがあります。"
@@ -7129,7 +7132,7 @@ msgid "Please note that you may update your personal information at any time by 
 msgstr "お客さまの個人情報はいつでも各種設定ページから変更して頂くことが可能です。お客さまの個人情報を適切、かつ継続的に%1に更新して頂くことはお客さまの義務になります。"
 
 msgid "Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help."
-msgstr ""
+msgstr "居住国の納税番号をご入力ください。この情報を提供できない場合は、カスタマーサポートまでご連絡ください。"
 
 msgid "Please provide us with the following information:"
 msgstr "次の情報をご提供ください："
@@ -7162,7 +7165,7 @@ msgid "Please select a value"
 msgstr "値を選択してください。"
 
 msgid "Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr ""
+msgstr "税金を納めている国を全て選択してください。疑問がある場合は、ご自身の税務顧問にご相談ください。"
 
 msgid "Please select at least one scope"
 msgstr "範囲を1つ以上選択してください"
@@ -7267,7 +7270,7 @@ msgid "Precious metals"
 msgstr "貴金属"
 
 msgid "Precious metals are harder to come by and are more valuable than industrial metals. Because precious metals are softer and less reactive, they are widely used in jewellery, medical devices, and electronics."
-msgstr ""
+msgstr "Precious metals are harder to come by and are more valuable than industrial metals. Because precious metals are softer and less reactive, they are widely used in jewellery, medical devices, and electronics."
 
 msgid "Predict market movement using up/down, touch/no touch, and in/out trade types."
 msgstr "UP/DOWN, TOUCH/NO TOUCH,IN/OUTのトレードタイプで市場の動向を予測しましょう。"
@@ -7750,7 +7753,7 @@ msgid "Responsible for the risk management and derivatives pricing of the compan
 msgstr "実装とメンテナンスを含む当社のリスク管理とデリバティブ価格うぃ担当していただきます。"
 
 msgid "Rest assured that your information will only be used for CRS/FATCA reporting purposes and will be kept safe."
-msgstr ""
+msgstr "お客さまの情報はCRS（共通報告基準）/FATCA（外国口座税務コンプライアンス法）目的でのみ使用されますのでご安心ください。"
 
 msgid "Restrictions"
 msgstr "制限"
@@ -7931,9 +7934,6 @@ msgstr "左の欄にある<strong>Cookie</strong>を選択してください。"
 
 msgid "Select currency"
 msgstr "通貨を選択してください"
-
-msgid "Select market"
-msgstr "取引市場を選択"
 
 msgid "Select market:"
 msgstr "取引市場を選択："
@@ -8148,6 +8148,9 @@ msgstr "ブルームバーグとロイターのような財務情報を活用で
 msgid "Smallish changes – generally $20-50"
 msgstr "Smallish changes – generally $20-50"
 
+msgid "SmartCharts"
+msgstr "SmartCharts"
+
 msgid "SmartTrader"
 msgstr "SmartTrader"
 
@@ -8210,6 +8213,9 @@ msgstr "スピード - オーダーが実行される速さ"
 
 msgid "Spot"
 msgstr "スポットレート"
+
+msgid "Spot Time"
+msgstr "スポットタイム"
 
 msgid "Spot Time (GMT)"
 msgstr "現在時刻（GMT）"
@@ -8599,19 +8605,19 @@ msgid "The %1 website's static content (CSS, Javascript) is available as the %2b
 msgstr "github上のオープンソース・プロジェクトである%2binary-static%3にて、%1 (バイナリードットコム)のウェブサイトの静的コンテンツ (CSS, Javascript)は利用可能です。Binary.com (バイナリードットコム)のウェブサイトのカスタマイズ、ブラウザ互換性の向上、サイトスピードの向上、 Javascriptのパフォーマンスの向上をお望みの場合はプロジェクトをフォークし、コード変更の提案に関するプルリクエストを送信して下さい。"
 
 msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
-msgstr ""
+msgstr "%1終値%2は%1終了時間%2またはその前になります。特定の%1終了時間%2を選択した場合、%1終了時間%2はその選択された時間になります。"
 
 msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
 msgstr "%1取引期間%2は、取引開始時間%1直後のティック%2から%1取引終了時間%2までとなります。"
 
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
-msgstr ""
+msgstr "%1終了時間%2は%1開始時間%2後の時間/分数です。"
 
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
-msgstr ""
+msgstr "%1高値%2は取引期間中に達した最高位をいいいます。"
 
 msgid "The %1low%2 is the lowest point ever reached by the market during the contract period."
-msgstr ""
+msgstr "%1低値%2は取引期間中に達した最低位をいいます。"
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "%1取引開始時間%2とは回号の取引開始時刻のことです。各回号の詳細につきまして契約締結前交付書面をご確認ください。"
@@ -8830,7 +8836,7 @@ msgid "The Foreign Exchange Market (Forex) is the world's largest and most liqui
 msgstr "外国為替市場（FX）は世界最大の市場であるとともに、最も流動性のある市場です。世界中の人々がそこで通貨を販売、売却、交換しています。"
 
 msgid "The Forex is an over-the-counter market where trading takes place between two parties, and not with a centralised exchange or marketplace."
-msgstr ""
+msgstr "外国為替取引は、二人の当事者間で行われる店頭市場であり、中央取引所や市場で行われるものではありません。"
 
 msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
 msgstr "外国為替では通常<i>ロット数</i>にて取引を行います。1スタンダード<i>ロット</i>100,000単位相当です。通貨シンボルを用いてポジションをオープンする際、最小数量である<i>0.01ロット</i>からお取引を開始いただけます。"
@@ -9506,7 +9512,7 @@ msgid "This website does not collect personally identifying information about yo
 msgstr "当社サイトではお客さまが具体的かつ能動的に提供される場合を除き、個人を特定できるような情報を収集することはありません。ウェブサイトから最適化された情報を提供する目的でCookie（クッキー）が用いることができます。Cookie（クッキー）とは、ウェブサイトが閲覧者のブラウザーに送信できるデータ要素のことで、閲覧者のシステムに蓄積される場合があります。お客さまは、ご利用のブラウザーをCookie（クッキー）を受け取る際に通知させることで、Cookie（クッキー）の受信を許可するかどうか決定できるように設定することができます。もし、Cookie（クッキー）の受信を望まれない場合は、お客さまのログインIDとパスワードをシステムにアクセスする毎にご入力して頂く必要があります。ご利用中のブラウザーやコンピューターのセキュリティに関する懸念がおありの場合は、このような設定を施されることをお勧めいたします。"
 
 msgid "This website is offered in the EU, for financial products, by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). Volatility Indices products are offered in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission. In the rest of the EU, Volatility Indices products are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission, and for Irish clients by (3) the Revenue Commissioners in Ireland, Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). View further %1Regulatory Information%2. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr ""
+msgstr "■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合は支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。1)1取引の取引上限は100ロット。2)1日の取引上限額は50万円。前記2)に達した時点でその日は取引ができなくなります。■取引手数料は無料。当該日から遡り12ヶ月間、新規又は売却取引がなかった場合は口座維持手数料（2,500円税込）が発生、引き続き取引等がない場合、6ヶ月毎に同額が発生します。3,000円未満を出金の際は250円（税込）の出金手数料がかかります。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引開始前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "PerlやPHP などのスクリプト言語の経験とBashスクリプトの深い知識"
@@ -9676,6 +9682,9 @@ msgstr "平日24時間取引が可能。"
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "ビットコイン、イーサリアム、ライトコインペアを実際に所有することなく取引します。仮想通貨ペアは、USドルや日本円などのフィアット（法定通貨）に対するビットコインなどの仮想通貨を見積もります。"
 
+msgid "Trade FX binary options on our multi-barrier platform, designed to fully comply with Japanese regulations."
+msgstr "日本の規制に完全に準拠するように設計された、マルチバリアプラットフォームでバイナリーオプション取引をしましょう。"
+
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "人気のマルチ資産プラットフォームで外国為替やCFD取引をしましょう。"
 
@@ -9729,6 +9738,9 @@ msgstr "お好みの戦略に合せて、ロング・ショートポジション
 
 msgid "Trade metals on competitive fixed and variable spreads."
 msgstr "Trade metals on competitive fixed and variable spreads."
+
+msgid "Trade now"
+msgstr "今すぐお取引"
 
 msgid "Trade on MT5 web platform"
 msgstr "MT５ウェブプラットフォームでお取引"
@@ -9886,6 +9898,9 @@ msgstr "Trusted by traders since 2000"
 
 msgid "Try Binary Bot"
 msgstr "Binary Botを試す"
+
+msgid "Try SmartCharts"
+msgstr "SmartChartsを試す"
 
 msgid "Try TradingView"
 msgstr "TradingViewを試す"
@@ -10496,12 +10511,6 @@ msgstr "米国で「金融市場投機用コンピューター取引システム
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "この受賞は大変光栄なものです。当社は、倫理的で顧客を重視したトレード機会を提供することに注力します。そしてこの受賞は、BetOnMarketsがトレード初心者、及び上級者に対し、顧客の声を重視したサービスを提供するブランドであることを示します。当社は英語、インドネシア語、ロシア語、中国語、及びスペイン語でのカスタマーサービスを提供します。"
 
-msgid "We've generated over USD 3 billion in turnover since inception, thanks to a rapid growth in business from 2010 onwards."
-msgstr "2010年以降のビジネスの急速な成長により、創業以来30億ドル以上の売上高を達成しました。"
-
-msgid "We've grown in size over the years -- both in terms of manpower and offices. We currently have over 130 employees across four offices in three countries: Malaysia, Malta and Japan."
-msgstr "私たちは創業以来、優秀な人材とすばらしいオフィス環境に恵まれ成長し続けてします。現在、マレーシア、マルタ、日本の3カ国4拠点に130人以上の従業員がいます。"
-
 msgid "Web Advertisement"
 msgstr "ウェブ広告"
 
@@ -10532,8 +10541,17 @@ msgstr "Binary.comへようこそ"
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "優れた組織・管理能力および/または会計スキル"
 
+msgid "We’re expected to generate over USD 1 billion in turnover this year, bringing our total turnover since inception to over USD 5.7 billion."
+msgstr "今年の取引金額は10億USD以上になると推測しており、これが達成されると創業以来の総取引金額は57億USDに及びます。"
+
 msgid "We’re not obliged to conduct an appropriateness test, nor provide you with any risk warnings"
 msgstr "当社には適正テストの実施やリスク警告の義務はありません。"
+
+msgid "We’re projected to register over 197 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 789 million."
+msgstr "今年の取引件数は1億9,700万以上になると推測しており、これが達成されると創業以来の総取引件数は7億8，900万件に及びます。"
+
+msgid "We’ve grown in size over the years –– both in terms of manpower and offices. We currently have over 150 employees across four offices in Malaysia, Malta, and Japan. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr "人材・拠点ともに年々成長をしています。 現在では、マレーシア・マルタ・日本の4店舗で150人を超えるメンバーがBinary.comを支えています。"
 
 msgid "What about instant execution? In this case, your order is placed at the price that’s available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr "インスタント注文はいかがですか？ 注文はその時点で利用可能な価格で行われます。注文実行が完了する前に価格が大幅に変動した場合は、リクオートが可能です。"
@@ -10788,13 +10806,13 @@ msgid "Why you should trade precious metals with %1"
 msgstr "%1で貴金属取引が選ばれている理由"
 
 msgid "Win the multiplier times the close minus low."
-msgstr ""
+msgstr "終値-安値×2のペイアウトを受取りましょう。"
 
 msgid "Win the multiplier times the high minus close."
-msgstr ""
+msgstr "高値-終値×2のペイアウトを受取りましょう。"
 
 msgid "Win the multiplier times the high minus low."
-msgstr ""
+msgstr "高値-安値×2のペイアウトを受取りましょう。"
 
 msgid "Windows"
 msgstr "Windows"
@@ -11003,7 +11021,7 @@ msgstr "コンテンツの格納が許可されていません（データフィ
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "いかなる状況下において当社からの補償または償還を受ける権利はありません。"
 
-msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; Israel; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 
 msgid "You are now using your %1Bitcoin Cash%2 account. Please fund your account in %1Bitcoin Cash%2, and not Bitcoin."
@@ -11598,9 +11616,6 @@ msgstr "詳細"
 msgid "e.g. frontend.binaryws.com"
 msgstr "e.g. frontend.binaryws.com"
 
-msgid "email address"
-msgstr "メールアドレス"
-
 msgid "engage in misleading or illusory or deceptive advertising;"
 msgstr "engage in misleading or illusory or deceptive advertising;"
 
@@ -11793,9 +11808,6 @@ msgstr "知的財産権に限定されず、プライバシーの権利、人格
 msgid "use the Company’s name and/or Trademark in its advertising activities without a written authorisation to be given by the Company;"
 msgstr "use the Company’s name and/or Trademark in its advertising activities without a written authorisation to be given by the Company;"
 
-msgid "verification token"
-msgstr "ワンタイムパスワード"
-
 msgid "week"
 msgstr "週間"
 
@@ -11814,8 +11826,8 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-msgid "you are not resident in a restricted country such as Bosnia and Herzegovina, Costa Rica, Democratic People's Republic of Korea (DPRK), Ethiopia, Hong Kong, Iran, Iraq, Israel, Jersey, Malaysia, Malta, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr "私は制限の設けられている次の国の移住者ではありません。：ボスニアヘルツェゴビナ、コスタリカ、朝鮮民主主義人民共和国（北朝鮮）、エチオピア、ホンコン、イラン、イラク、イスラエル、ジャージー、マレーシア、マルタ、シリア、ウガンダ、アメリカ、バヌアツ、イエメン"
+msgid "you are not resident in a restricted country such as Bosnia and Herzegovina, Costa Rica, Democratic People's Republic of Korea (DPRK), Ethiopia, Hong Kong, Iran, Iraq, Israel, Jersey, Malaysia, Malta, Syria, USA, Vanuatu or Yemen;"
+msgstr "私は制限の設けられている次の国の移住者ではありません。：ボスニアヘルツェゴビナ、コスタリカ、朝鮮民主主義人民共和国（北朝鮮）、エチオピア、ホンコン、イラン、イラク、イスラエル、ジャージー、マレーシア、マルタ、シリア、アメリカ、バヌアツ、イエメン"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "１８歳以上であり、エストニア国民の場合は２１歳以上です。"

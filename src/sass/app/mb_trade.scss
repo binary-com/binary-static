@@ -29,7 +29,100 @@
         font-size: $FONT_SIZE_S;
 
         #panel {
-            #currency_wrapper, .ja-show #payout {
+            margin-left: 10px;
+
+            .selection_wrapper.less-margin-top .trade_form > div {
+                margin-top: -10px;
+            }
+            #payout {
+                height: auto;
+                border-left: none;
+
+                &:focus {
+                    outline: none;
+                }
+                &.error {
+                    color: $COLOR_RED;
+                }
+            }
+            #currency {
+                line-height: 25px;
+            }
+            #payout_amount {
+                line-height: 32px;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+            .trade_form {
+                &:not(.no-margin) {
+                    margin-top: 10px;
+                }
+                > div {
+                    .list {
+                        background-color: $COLOR_WHITE;
+                        border: 1px solid $COLOR_LIGHT_GRAY;
+                        border-top: none;
+
+                        &.invisible {
+                            border: none;
+                        }
+                        > div {
+                            background-color: $COLOR_WHITE;
+
+                            &:hover {
+                                background-color: $COLOR_GRAY !important;
+                            }
+                        }
+                        &:hover {
+                            background-color: $COLOR_WHITE;
+                        }
+                    }
+                    #currency .current {
+                        height: 25px;
+                        border: 1px solid $COLOR_LIGHT_GRAY;
+                        border-right: none;
+                    }
+                    &#category {
+                        .current, .list > div {
+                            height: 59px;
+                        }
+                    }
+                }
+                .contract-type {
+                    padding-left: 0;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    line-height: 18px;
+                    height: 36px;
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
+            }
+            #underlying .list {
+                width: auto;
+            }
+            #period {
+                .duration {
+                    font-size: $FONT_SIZE_S;
+                }
+                .end {
+                    font-weight: normal;
+                }
+                .current {
+                    height: 45px;
+
+                    div.head {
+                        font-weight: bold;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .category-wrapper {
+                width: 50%;
+            }
+        }
+        #ja-panel {
+            #currency_wrapper, #payout {
                 height: 103px;
             }
             #currency_wrapper .hint {
@@ -38,24 +131,13 @@
                 width: 100%;
                 background-color: transparent;
             }
-            .ja-show #payout .current {
+            #payout .current {
                 font-size: $FONT_SIZE_XXL;
                 font-weight: bold;
                 height: 62px;
                 display: block;
                 line-height: 32px;
                 padding-top: 35px !important;
-            }
-            #payout_amount {
-                line-height: 53px;
-                white-space: nowrap;
-            }
-            .ja-hide #payout {
-                height: 49px;
-
-                &:focus {
-                    outline: 0;
-                }
             }
             #payout_list {
                 height: 103px;
@@ -91,7 +173,7 @@
                     }
                 }
             }
-            .ja-show #currency {
+            #currency {
                 position: absolute;
                 width: 100%;
                 height: initial;
@@ -101,16 +183,13 @@
                     line-height: 15px;
                     padding-top: 35px;
                 }
-                .list > div {
+                #currency .list > div {
                     height: 15px;
 
                     &:hover {
                         height: 15px;
                     }
                 }
-            }
-            .ja-hide #currency .list > div {
-                line-height: 39px;
             }
             .gr-row .gr-no-gutter-left {
                 padding-right: 0;
@@ -121,10 +200,8 @@
             }
         }
         .trade_form {
-            margin-top: 5px;
-
-            &.no-margin {
-                margin-top: 0;
+            &:not(.no-margin) {
+                margin-top: 5px;
             }
             > div {
                 text-align: center;
@@ -210,6 +287,30 @@
                 }
                 .current > div, .list > div {
                     align-items: center;
+                }
+            }
+        }
+        .ja-hide + .price-table {
+            margin-top: 10px;
+            margin-left: 0;
+
+            .prices-wrapper {
+                .heading {
+                    font-weight: bold;
+
+                    .hint {
+                        font-weight: normal;
+                    }
+                }
+                .heading, .price-row {
+                    border: 1px solid $COLOR_LIGHT_GRAY;
+                    border-bottom: none;
+                }
+                .price-row:last-child {
+                    border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+                }
+                .price-row:nth-child(odd) {
+                    background-color: $COLOR_WHITE;
                 }
             }
         }
@@ -388,6 +489,7 @@
         }
         .remaining-time {
             color: $COLOR_BLACK;
+            line-height: 20px;
 
             &.alert {
                 color: $COLOR_RED;
@@ -404,6 +506,13 @@
         @media screen and (max-width: 768px) {
             .gr-12-p {
                 padding-bottom: 10px;
+            }
+            #panel {
+                margin-left: 0;
+
+            }
+            .ja-hide + .price-table {
+                margin-left: -10px;
             }
         }
         @media screen and (max-width: 480px) {
@@ -424,7 +533,7 @@
             .price-table .prices-wrapper .heading > div {
                 padding: 5px 0;
             }
-            .ja-show #payout .hint {
+            #payout .hint {
                 line-height: 15px;
             }
         }
