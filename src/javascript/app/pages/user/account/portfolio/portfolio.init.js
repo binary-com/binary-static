@@ -221,8 +221,7 @@ const PortfolioInit = (() => {
     };
 
     const onUnload = () => {
-        BinarySocket.send({ forget_all: 'proposal_open_contract' });
-        BinarySocket.send({ forget_all: 'transaction' });
+        BinarySocket.send({ forget_all: ['proposal_open_contract', 'transaction'] });
         $('#portfolio-body').empty();
         $('#portfolio-content').setVisibility(0);
         is_initialized = false;
