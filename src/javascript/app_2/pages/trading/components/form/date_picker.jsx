@@ -90,7 +90,7 @@ class Calendar extends React.Component {
     }
 
     previousDecade() {
-        this.updateDate(10, 'years', true);
+        this.updateDate(10, 'years', false);
     }
 
     nextCentury() {
@@ -98,7 +98,7 @@ class Calendar extends React.Component {
     }
 
     previousCentury() {
-        this.updateDate(100, 'years', true);
+        this.updateDate(100, 'years', false);
     }
 
     setActiveView(active_view) {
@@ -532,8 +532,8 @@ class DatePicker extends React.PureComponent {
 }
 
 DatePicker.defaultProps = {
-    dateFormat   : 'YYYY-MM-DD',
-    displayFormat: 'date',
+    dateFormat: 'YYYY-MM-DD',
+    mode      : 'date',
 };
 
 export default DatePicker;
