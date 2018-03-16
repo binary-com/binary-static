@@ -20,7 +20,7 @@ const findParent          = require('../../_common/utility').findParent;
 
 const Header = (() => {
     const onLoad = () => {
-        showOrHideLoginForm();
+        populateAccountsList();
         bindClick();
         if (!Login.isLoginPages()) {
             checkClientsCountry();
@@ -67,12 +67,12 @@ const Header = (() => {
         Client.sendLogoutRequest();
     };
 
-    const showOrHideLoginForm = () => {
+    const populateAccountsList = () => {
         if (!Client.isLoggedIn()) return;
         BinarySocket.wait('authorize').then(() => {
             const loginid_select = document.createElement('div');
             Client.getAllLoginids().forEach((loginid) => {
-                if (!Client.get('is_disabled', loginid)) {
+                if (!Client.get('is_disabled', loginid) && Client.get('token', loginid)) {
                     const account_title  = Client.getAccountTitle(loginid);
                     const is_real        = /real/i.test(account_title);
                     const currency       = Client.get('currency', loginid);
@@ -328,8 +328,7 @@ const Header = (() => {
 
     return {
         onLoad,
-
-        showOrHideLoginForm,
+        populateAccountsList,
         upgradeMessageVisibility,
         metatraderMenuItemVisibility,
         displayNotification,
