@@ -1,5 +1,5 @@
 import React from 'react';
-import Url from '../../../../_common/url';
+import Url from '../../../../../_common/url';
 
 const scroll_lock_classname = 'no-scroll';
 const open_dialog_classname = 'fullscreen-dialog--open';
