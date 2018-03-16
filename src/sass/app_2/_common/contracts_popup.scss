@@ -73,6 +73,13 @@ div.contracts-popup-container {
                 color: #dedede;
             }
         }
+        &.selected {
+            background-color: #2a3052;
+
+            .contract-title {
+                color: $COLOR_WHITE;
+            }
+        }
         .contract-icon {
             padding-right: 8px;
         }
@@ -103,14 +110,6 @@ div.contracts-popup-container {
             border: solid 1px #f2f2f2;
 
             .list-item {
-                &.selected {
-                    background-color: #2a3052;
-
-                    .contract-title {
-                        color: $COLOR_WHITE;
-                        font-weight: 400;
-                    }
-                }
                 &:nth-child(odd) {
                     grid-column: 1;
                 }
@@ -120,8 +119,11 @@ div.contracts-popup-container {
             }
         }
     }
-    //.contracts-modal-list {
-    //}
+    .contracts-modal-list {
+        .list-item {
+            padding: 16px;
+        }
+    }
     .select-arrow {
         display: inline-block;
         font-style: normal;

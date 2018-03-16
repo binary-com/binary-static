@@ -79,8 +79,7 @@ $header-height: 3.2rem;
     &__content {
         position: relative;
         z-index: 1;
-        padding: 1rem;
-        margin-top: $header-height;
+        margin-top: $header-height + 1rem;
     }
 }
 /* stylelint-enable color-no-hex */
