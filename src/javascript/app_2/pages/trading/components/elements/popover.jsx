@@ -11,7 +11,7 @@ class Popover extends React.Component {
 
     render() {
         const popver = (
-            <div className={`popover ${this.state.is_open ? 'open' : ''}`}>
+            <div className={`popover ${this.state.is_open ? 'open' : ''} ${this.props.alignment ? this.props.alignment : ''}`}>
                 { this.props.title && <div className='popover-title'>{localize(this.props.title)}</div> }
                 <div className='popover-subtitle'>{localize(this.props.subtitle)}</div>
             </div>
