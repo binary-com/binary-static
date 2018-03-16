@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../../../javascript/app_2/pages/trading/components/form/button.jsx';
+import Tooltip from '../../../javascript/app_2/pages/trading/components/elements/tooltip.jsx';
 import InputField from '../../../javascript/app_2/pages/trading/components/form/input_field.jsx';
 
 const StyleGuide = () => (
@@ -90,6 +91,39 @@ const StyleGuide = () => (
                             label='Numbers Field'
                             helper='Helper messages go here'
                         />
+                    </div>
+                </div>
+                <div className='gr-row gr-padding-20'>
+                    <div className='gr-12'>
+                        <h2 className='center-text'>Tooltips</h2>
+                        <div className='gr-row'>
+                            <div className='gr-6'>
+                                <p className='center-text'>
+                                    <Tooltip alignment='top' message='Helper text here.' />
+                                    <span style={{ fontSize: '12px' }}>Top</span>
+                                </p>
+                            </div>
+                            <div className='gr-6'>
+                                <p className='center-text'>
+                                    <Tooltip alignment='left' message='Helper text here.' />
+                                    <span style={{ fontSize: '12px' }}>Left</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div className='gr-row'>
+                            <div className='gr-6'>
+                                <p className='center-text'>
+                                    <Tooltip alignment='right' message='Helper text here.' />
+                                    <span style={{ fontSize: '12px' }}>Right</span>
+                                </p>
+                            </div>
+                            <div className='gr-6'>
+                                <p className='center-text'>
+                                    <Tooltip alignment='bottom' message='Helper text here.' />
+                                    <span style={{ fontSize: '12px' }}>Bottom</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

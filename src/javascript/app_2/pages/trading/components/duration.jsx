@@ -1,10 +1,10 @@
 import React from 'react';
 import moment from 'moment';
 import InputField from './form/input_field.jsx';
-import Dropdown from './form/dropdown.jsx';
 import Datepicker from './form/date_picker.jsx';
+import Dropdown from './form/dropdown.jsx';
+import Fieldset from './elements/fieldset.jsx';
 import TimePicker from './form/time_picker.jsx';
-import ClockHeader from './elements/clock_header.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -33,8 +33,12 @@ const Duration = ({
         min_date_expiry   = moment_now.clone();
     }
     return (
-        <fieldset>
-            <ClockHeader time={server_time} header={localize('Trade Duration')} />
+        <Fieldset
+            time={server_time}
+            header={localize('Trade Duration')}
+            icon='trade-duration'
+            tooltip={localize('Text for Duration goes here.')}
+        >
             <Dropdown
                 list={expiry_list}
                 value={expiry_type}
@@ -78,7 +82,7 @@ const Duration = ({
                     <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
                 </React.Fragment>
             }
-        </fieldset>
+        </Fieldset>
     );
 };
 
