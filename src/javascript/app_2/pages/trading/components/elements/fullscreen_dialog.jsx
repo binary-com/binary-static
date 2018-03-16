@@ -25,8 +25,10 @@ class FullscreenDialog extends React.PureComponent {
 
     handleClose() {
         function transitionendHandler(e) {
-            e.target.removeEventListener(e.type, transitionendHandler);
-            this.props.onClose();
+            if (e.propertyName === 'transform') {
+                e.target.removeEventListener(e.type, transitionendHandler);
+                this.props.onClose();
+            }
         }
 
         this.dialogEl.addEventListener('transitionend', transitionendHandler.bind(this));
