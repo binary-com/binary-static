@@ -52,6 +52,7 @@ const Duration = ({
                                 maxDate={max_date_duration}
                                 mode='duration'
                                 onChange={onChange}
+                                footer={localize('The minimum duration is 1 day')}
                             /> :
                             <InputField
                                 type='number'
