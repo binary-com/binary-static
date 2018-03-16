@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-14 22:18-0400\n"
+"PO-Revision-Date: 2018-03-16 04:27-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -2720,11 +2720,11 @@ msgstr "ฝากเงิน หรือถอนเงินด้านล�
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "ฝากเงิน หรือ ถอนเงินเข้าบัญชีของท่านผ่านบริการของธนาคาร บัตรเครดิต หรือ กระเป๋าสตางค์อิเล็กทรอนิกส์"
 
+msgid "Deposit: %1 blockchain confirmations"
+msgstr ""
+
 msgid "Deposit: %1 working day"
 msgstr "ฝากเงิน: %1 วันทำการ"
-
-msgid "Deposit: 3 blockchain confirmations"
-msgstr "ฝากเงิน: การยืนยันจากบล็อกเชน 3 ครั้ง"
 
 msgid "Deposit: Instant"
 msgstr "ฝากเงิน: ทันที"
@@ -3572,6 +3572,9 @@ msgstr "ปฏิบัติตามกฎและข้อตกลงเห
 msgid "Follow up on rejected deposits"
 msgstr "ติดตามการฝากเงินที่ถูกปฏิเสธ"
 
+msgid "Following file(s) were already uploaded: %1"
+msgstr ""
+
 msgid "For Browser"
 msgstr "สำหรับเบราเซอร์"
 
@@ -3861,11 +3864,11 @@ msgstr "ไปที่รายการเลื่อนลง \"<strong>เ�
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "ไปที่แผงหน้าปัด MetaTrader 5"
 
-msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
-msgstr "ไปที่ <a href=\"https://login.binary.com/password-retrieve.php\">หน้ากู้คืนรหัสผ่าน</a> และป้อนชื่อผู้ใช้งาน และอีเมล์ในแบบฟอร์มเพื่อส่งรหัสผ่านให้ท่าน"
+msgid "Go to the %1password retrieval page%2, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
+msgstr ""
 
-msgid "Go to the <a href=\"https://login.binary.com/signup.php\">sign up page</a> to register as an affiliate today."
-msgstr "ไปที่ <a href=\"https://login.binary.com/signup.php\">หน้าลงทะเบียน</a> เพื่อร่วมเป็นพันธมิตรกับเราวันนี้"
+msgid "Go to the %1sign up page%2 to register as an affiliate today."
+msgstr ""
 
 msgid "Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>."
 msgstr "ไปที่เมนู<strong>ดำเนินการเพิ่มเติม</strong> แล้วเลือก<strong>การตั้งค่า</strong>"
@@ -6032,6 +6035,9 @@ msgstr "ค่าต่ำสุด"
 
 msgid "Min / Max withdrawal"
 msgstr "วงเงินถอนต่ำสุด-สูงสุด"
+
+msgid "Min Deposit"
+msgstr ""
 
 msgid "Min Withdrawal"
 msgstr "การถอนขั้นต่ำ"
@@ -10757,9 +10763,6 @@ msgstr "การถอนเงินจากบัญชีเงินจร
 
 msgid "Withdrawal: %1 working day"
 msgstr "การถอนเงิน: %1 วันทำการ"
-
-msgid "Withdrawal: Not Applicable"
-msgstr "การถอนเงิน: ไม่เกี่ยวข้อง"
 
 msgid "Withdrawal: Not applicable"
 msgstr "การถอนเงิน: ไม่เกี่ยวข้อง"

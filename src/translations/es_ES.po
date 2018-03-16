@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-14 22:16-0400\n"
+"PO-Revision-Date: 2018-03-16 04:26-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -2722,11 +2722,11 @@ msgstr "Depositar o retirar abajo"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Depositar a o retirar dinero de su cuenta a través de transferencia bancaria, tarjeta de crédito o dinero electrónico."
 
+msgid "Deposit: %1 blockchain confirmations"
+msgstr ""
+
 msgid "Deposit: %1 working day"
 msgstr "Depósito: %1 día(s) laborable(s)"
-
-msgid "Deposit: 3 blockchain confirmations"
-msgstr "Depósito: 3 confirmaciones de la blockchain"
 
 msgid "Deposit: Instant"
 msgstr "Depósito: instantáneo"
@@ -3574,6 +3574,9 @@ msgstr "Siga la Ley y Estos Términos"
 msgid "Follow up on rejected deposits"
 msgstr "Hacer el seguimiento de los depósitos rechazados"
 
+msgid "Following file(s) were already uploaded: %1"
+msgstr ""
+
 msgid "For Browser"
 msgstr ""
 
@@ -3862,11 +3865,11 @@ msgstr ""
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr ""
 
-msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
-msgstr "Diríjase a la <a href=\"https://login.binary.com/password-retrieve.php\">página de recuperación de contraseña</a> e introduzca su nombre de usuario y dirección de correo electrónico en los campos del formulario proporcionado para que le envíen su contraseña por correo electrónico."
+msgid "Go to the %1password retrieval page%2, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
+msgstr ""
 
-msgid "Go to the <a href=\"https://login.binary.com/signup.php\">sign up page</a> to register as an affiliate today."
-msgstr "Diríjase a la <a href=\"https://login.binary.com/signup.php\">página de registro</a> para registrarse hoy como afiliado."
+msgid "Go to the %1sign up page%2 to register as an affiliate today."
+msgstr ""
 
 msgid "Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>."
 msgstr ""
@@ -6033,6 +6036,9 @@ msgid "Min"
 msgstr ""
 
 msgid "Min / Max withdrawal"
+msgstr ""
+
+msgid "Min Deposit"
 msgstr ""
 
 msgid "Min Withdrawal"
@@ -10754,9 +10760,6 @@ msgid "Withdrawal of funds from your Real Account must be made in the same curre
 msgstr ""
 
 msgid "Withdrawal: %1 working day"
-msgstr ""
-
-msgid "Withdrawal: Not Applicable"
 msgstr ""
 
 msgid "Withdrawal: Not applicable"
