@@ -82,5 +82,10 @@ $shadow-cover-height: 3.6rem;
         z-index: 1;
         margin-top: $shadow-cover-height;
     }
+    fieldset {
+        border: none;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
 }
 /* stylelint-enable color-no-hex */
