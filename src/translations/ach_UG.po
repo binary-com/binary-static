@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-14 22:18-0400\n"
+"PO-Revision-Date: 2018-03-16 04:28-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -2715,11 +2715,11 @@ msgstr "crwdns42109:0crwdne42109:0"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "crwdns38226:0crwdne38226:0"
 
+msgid "Deposit: %1 blockchain confirmations"
+msgstr "crwdns43626:0%1crwdne43626:0"
+
 msgid "Deposit: %1 working day"
 msgstr "crwdns38227:0%1crwdne38227:0"
-
-msgid "Deposit: 3 blockchain confirmations"
-msgstr "crwdns38228:0crwdne38228:0"
 
 msgid "Deposit: Instant"
 msgstr "crwdns38229:0crwdne38229:0"
@@ -3567,6 +3567,9 @@ msgstr "crwdns38476:0crwdne38476:0"
 msgid "Follow up on rejected deposits"
 msgstr "crwdns38477:0crwdne38477:0"
 
+msgid "Following file(s) were already uploaded: %1"
+msgstr "crwdns43627:0%1crwdne43627:0"
+
 msgid "For Browser"
 msgstr "crwdns38478:0crwdne38478:0"
 
@@ -3855,11 +3858,11 @@ msgstr "crwdns38555:0crwdne38555:0"
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "crwdns43133:0crwdne43133:0"
 
-msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
-msgstr "crwdns38556:0crwdne38556:0"
+msgid "Go to the %1password retrieval page%2, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
+msgstr "crwdns43628:0%1pcrwdnd43628:0%2crwdne43628:0"
 
-msgid "Go to the <a href=\"https://login.binary.com/signup.php\">sign up page</a> to register as an affiliate today."
-msgstr "crwdns38557:0crwdne38557:0"
+msgid "Go to the %1sign up page%2 to register as an affiliate today."
+msgstr "crwdns43629:0%1scrwdnd43629:0%2crwdne43629:0"
 
 msgid "Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>."
 msgstr "crwdns38558:0crwdne38558:0"
@@ -6026,6 +6029,9 @@ msgstr "crwdns39186:0crwdne39186:0"
 
 msgid "Min / Max withdrawal"
 msgstr "crwdns43467:0crwdne43467:0"
+
+msgid "Min Deposit"
+msgstr "crwdns43630:0crwdne43630:0"
 
 msgid "Min Withdrawal"
 msgstr "crwdns39187:0crwdne39187:0"
@@ -10745,9 +10751,6 @@ msgstr "crwdns40569:0crwdne40569:0"
 
 msgid "Withdrawal: %1 working day"
 msgstr "crwdns41931:0%1crwdne41931:0"
-
-msgid "Withdrawal: Not Applicable"
-msgstr "crwdns41932:0crwdne41932:0"
 
 msgid "Withdrawal: Not applicable"
 msgstr "crwdns41933:0crwdne41933:0"
