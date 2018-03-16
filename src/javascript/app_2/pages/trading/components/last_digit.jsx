@@ -1,6 +1,6 @@
 import React from 'react';
 import Dropdown from './form/dropdown.jsx';
-import { FieldHeader } from './elements/field_headers.jsx';
+import Fieldset from './elements/fieldset.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -13,19 +13,18 @@ const LastDigit = ({
     last_digit,
     onChange,
 }) =>  (
-    <fieldset>
-        <FieldHeader
-            header={localize('Last Digit Prediction')}
-            icon='digits'
-            tooltip={localize('Text for Last Digits goes here.')}
-        />
+    <Fieldset
+        header={localize('Last Digit Prediction')}
+        icon='digits'
+        tooltip={localize('Text for Last Digits goes here.')}
+    >
         <Dropdown
             list={last_digit_numbers}
             value={last_digit}
             name='last_digit'
             onChange={onChange}
         />
-    </fieldset>
+    </Fieldset>
 );
 
 export default connect(

@@ -1,7 +1,7 @@
 import React from 'react';
 import Dropdown from './form/dropdown.jsx';
+import Fieldset from './elements/fieldset.jsx';
 import TimePicker from './form/time_picker.jsx';
-import { ClockHeader } from './elements/field_headers.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -12,13 +12,12 @@ const StartDate = ({
     server_time,
     onChange,
 }) => (
-    <fieldset>
-        <ClockHeader
-            time={server_time}
-            header={localize('Start time')}
-            icon='start-time'
-            tooltip={localize('Text for Start Time goes here.')}
-        />
+    <Fieldset
+        time={server_time}
+        header={localize('Start time')}
+        icon='start-time'
+        tooltip={localize('Text for Start Time goes here.')}
+    >
         <Dropdown
             name='start_date'
             value={start_date}
@@ -31,7 +30,7 @@ const StartDate = ({
                 <TimePicker onChange={onChange} name='start_time' value={start_time} placeholder='12:00 pm'/>
             </React.Fragment>
         }
-    </fieldset>
+    </Fieldset>
 );
 
 export default connect(

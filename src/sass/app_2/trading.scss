@@ -7,9 +7,7 @@
 
         .notice-msg {
             background: unset;
-            /* stylelint-disable color-no-hex */
-            border: 1px solid #f2f2f2;
-            /* stylelint-enable color-no-hex */
+            border: 1px solid #f2f2f2; /* stylelint-disable-line color-no-hex */
         }
         fieldset {
             input, select {
@@ -62,9 +60,7 @@
                     &.right {
                         top: -3px;
                         right: 5px;
-                        /* stylelint-disable number-max-precision */
-                        font-size: 0.5625rem;
-                        /* stylelint-enable number-max-precision */
+                        font-size: 0.5625rem; /* stylelint-disable-line number-max-precision */
                     }
                 }
             }
