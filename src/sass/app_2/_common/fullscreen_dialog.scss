@@ -1,6 +1,7 @@
 /* stylelint-disable color-no-hex */
 $animation-duration: 0.3s;
 $header-height: 3.2rem;
+$shadow-cover-height: 3.6rem;
 
 .fullscreen-dialog {
     box-sizing: border-box;
@@ -53,7 +54,7 @@ $header-height: 3.2rem;
             position: absolute;
             top: 0;
             width: 100%;
-            height: $header-height + 1rem;
+            height: $shadow-cover-height;
             z-index: 3;
             background-color: #fff;
         }
@@ -79,7 +80,7 @@ $header-height: 3.2rem;
     &__content {
         position: relative;
         z-index: 1;
-        margin-top: $header-height + 1rem;
+        margin-top: $shadow-cover-height;
     }
 }
 /* stylelint-enable color-no-hex */
