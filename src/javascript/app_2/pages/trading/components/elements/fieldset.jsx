@@ -15,11 +15,7 @@ class Fieldset extends React.PureComponent {
                 <div className='fieldset-header'>
                     <span className={field_left_class}>{this.props.header}</span>
                     <span className='field-info right'>
-                        {this.props.time ?
-                        header_time
-                            :
-                        null
-                        }
+                        {header_time}
                         <Tooltip
                             alignment='left'
                             is_icon
