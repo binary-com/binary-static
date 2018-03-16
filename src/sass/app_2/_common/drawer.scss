@@ -1,6 +1,16 @@
 /* stylelint-disable color-no-hex */
+/* stylelint-disable number-max-precision */
 body.no-scroll {
     overflow: hidden;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #f2f2f2;
+    margin: 1em 0;
+    padding: 0;
 }
 
 .drawer-container {
@@ -12,40 +22,53 @@ body.no-scroll {
         top: 0;
         bottom: 0;
         left: 0;
-        width: 100vw;
         height: 100vh;
         z-index: 665;
+        transition: all 0.25s;
+        opacity: 0;
+        overflow: hidden;
+        background-color: rgba(42, 48, 82, 0.96);
+        will-change: opacity;
 
         &.show {
-            animation: dim 0.25s ease-out forwards;
-            visibility: visible;
-        }
-        &.hide {
-            animation: undim 0.25s ease-out forwards;
-            pointer-events: none;
+            opacity: 1;
         }
         .drawer {
             position: absolute;
             z-index: 666;
             top: 0;
+            left: 0;
+            right: initial;
+            will-change: transform;
+            overflow: hidden;
+            box-sizing: border-box;
             width: 260px;
             height: 100%;
-            box-sizing: border-box;
-            transition: transform ease 250ms;
+            transition: all 0.25s;
             background: $COLOR_WHITE;
 
+            .drawer-items-container {
+                overflow: hidden;
+                height: 100%;
+                max-height: calc(100% - 156px);
+                z-index: 1;
+                position: relative;
+            }
             &.left {
-                left: -260px;
+                right: auto;
+                left: 0;
+                transform: translateX(-100%);
 
                 .drawer-header {
                     display: flex;
                     align-items: center;
                     border-bottom: 1px solid #f2f2f2;
+                    z-index: 3;
 
                     .icons {
                         display: inline-flex;
                         cursor: pointer;
-                        padding: 4px 8px;
+                        padding: 6px 10px;
 
                         &.btn-close {
                             width: 1.5rem;
@@ -65,9 +88,21 @@ body.no-scroll {
                         }
                     }
                 }
+                .drawer-footer {
+                    height: 30px;
+                    border-top: 1px solid #f2f2f2;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $COLOR_WHITE;
+                    z-index: 3;
+                    position: fixed;
+                    width: 100%;
+                }
             }
             &.right {
-                right: -260px;
+                right: 0;
+                left: auto;
+                transform: translateX(100%);
 
                 .drawer-header {
                     display: flex;
@@ -87,65 +122,100 @@ body.no-scroll {
                     }
                 }
             }
+            .drawer-items {
+                max-height: 0;
+                transition: all 0.25s;
+                transform: scale(1, 0);
+                opacity: 0;
+                transform-origin: top;
+
+                &.show {
+                    max-height: 100%;
+                    opacity: 1;
+                    z-index: 1;
+                    transform: scale(1, 1);
+                }
+                .drawer-item a {
+                    font-weight: 300;
+
+                    &:before {
+                        content: none;
+                    }
+                    span {
+                        padding-left: 2rem;
+                    }
+                }
+            }
             .drawer-item {
-                float: left;
+                position: relative;
                 width: 100%;
-                margin: 0;
-                padding: 10px 15px;
+                padding: 14px 16px;
                 cursor: pointer;
-                font-size: 1rem;
+                font-size: 0.875rem;
                 color: $primaryBrandColor;
                 box-sizing: border-box;
+                z-index: 1;
 
+                span.parent-item {
+                    font-weight: 300;
+                    cursor: pointer;
+                    padding-left: 1.5rem;
+
+                    &:before {
+                        content: '\25A2';
+                        font-size: 1rem;
+                        position: absolute;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        left: 1rem;
+                    }
+                    &:after {
+                        content: '\002303';
+                        font-size: 1.5rem;
+                        position: absolute;
+                        font-weight: 300;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        right: 1rem;
+                        transition: transform 0.25s;
+                        transform: rotate(-180deg);
+                        transform-origin: 50% 25%;
+                    }
+                    &.show:after {
+                        transform: none;
+                    }
+                }
+                a {
+                    text-decoration: none;
+                    font-weight: 300;
+
+                    span {
+                        padding-left: 1.5rem;
+                    }
+                    &:before {
+                        content: '\25A2';
+                        font-size: 1rem;
+                        position: absolute;
+                    }
+                }
                 &:hover {
                     background: #f2f2f2;
                 }
             }
-            &.visible.right {
+            &.visible {
                 box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
-                transform: translate3d(-260px, 0, 0);
+
+                &.right, &.left {
+                    transform: none;
+                }
             }
-            &.visible.left {
-                box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
-                transform: translate3d(260px, 0, 0);
+            @media (max-width: 768px) {
+                width: 100%;
             }
         }
     }
 }
-
-@keyframes dim {
-    from {
-        background-color: transparent;
-    }
-    to {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-}
-
-@keyframes undim {
-    from {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-    to {
-        background-color: transparent;
-    }
-}
-
-@keyframes slideIn {
-    0% {
-        right: calc(-100%);
-    }
-    100% {
-        right: 0;
-    }
-}
-
-@keyframes slideOut {
-    0% {
-        right: 0;
-    }
-    100% {
-        right: calc(-100%);
-    }
-}
+/* stylelint-enable number-max-precision */
 /* stylelint-enable color-no-hex */

@@ -4,7 +4,7 @@
     /* trade-app layout */
     #trade_container {
         position: relative;
-        margin: 30px 15px 0;
+        margin: 80px 15px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: repeat(2, [row] auto);
