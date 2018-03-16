@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-14 22:17-0400\n"
+"PO-Revision-Date: 2018-03-16 04:27-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -2720,11 +2720,11 @@ msgstr "Gửi tiền hoặc rút dưới đây"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Gửi hay rút tiền qua tài khoản của bạn bằng điện chuyển khoản ngân hàng, thẻ tín dụng hay ví thẻ điện tử."
 
+msgid "Deposit: %1 blockchain confirmations"
+msgstr ""
+
 msgid "Deposit: %1 working day"
 msgstr "Gửi tiền: %1 ngày làm việc"
-
-msgid "Deposit: 3 blockchain confirmations"
-msgstr "Đặt cọc: 3 blockchain xác nhận"
 
 msgid "Deposit: Instant"
 msgstr "Gửi tiền: tức thì"
@@ -3572,6 +3572,9 @@ msgstr "Hãy thực hiện theo Luật và những Điều khoản Sau đây"
 msgid "Follow up on rejected deposits"
 msgstr "Theo dõi các khoản tiền gửi bị từ chối"
 
+msgid "Following file(s) were already uploaded: %1"
+msgstr ""
+
 msgid "For Browser"
 msgstr "Cho trình duyệt"
 
@@ -3860,11 +3863,11 @@ msgstr "Đi đến \"<strong>Chrome Menu (tuỳ biến và kiểm soát Google C
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "Đi đến bảng điều khiển MetaTrader 5"
 
-msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
-msgstr "Đi tới <a href=\"https://login.binary.com/password-retrieve.php\">trang khôi phục mật khẩu</a>, và nhập tên tài khoản và địa chỉ email vào mẫu được cung cấp để chúng tôi có thể gửi mail khôi phục mật khẩu cho bạn."
+msgid "Go to the %1password retrieval page%2, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
+msgstr ""
 
-msgid "Go to the <a href=\"https://login.binary.com/signup.php\">sign up page</a> to register as an affiliate today."
-msgstr "Tới <a href=\"https://login.binary.com/signup.php\">trang đăng kí</a> để đăng kí trở thành một chi nhánh."
+msgid "Go to the %1sign up page%2 to register as an affiliate today."
+msgstr ""
 
 msgid "Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>."
 msgstr "Đi tới <strong>tác vụ khác</strong> trình đơn và chọn <strong>cài đặt</strong>."
@@ -6033,6 +6036,9 @@ msgstr "Tối thiểu"
 
 msgid "Min / Max withdrawal"
 msgstr "Khoản rút tiền Tối đa/Tối thiểu"
+
+msgid "Min Deposit"
+msgstr ""
 
 msgid "Min Withdrawal"
 msgstr "Khoản rút tiền tối thiểu"
@@ -10752,9 +10758,6 @@ msgstr "Rút tiền từ tài khoản thực của bạn phải được thực 
 
 msgid "Withdrawal: %1 working day"
 msgstr "Rút tiền:%1 ngày làm việc"
-
-msgid "Withdrawal: Not Applicable"
-msgstr "Rút tiền: Không áp dụng"
 
 msgid "Withdrawal: Not applicable"
 msgstr "Rút tiền: Không áp dụng"
