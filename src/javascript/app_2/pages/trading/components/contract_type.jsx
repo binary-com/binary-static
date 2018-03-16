@@ -6,12 +6,14 @@ const Contract = ({
     contract_type,
     contract_types_list,
     onChange,
+    ...other
 }) => (
     <ContractsPopUp
         name='contract_type'
         list={contract_types_list}
         value={contract_type}
         onChange={onChange}
+        {...other}
     />
 );
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import FullscreenDialog from '../fullscreen_dialog.jsx';
+import FullscreenDialog from './fullscreen_dialog.jsx';
 
 class MobileWidget extends React.PureComponent {
     constructor(props) {

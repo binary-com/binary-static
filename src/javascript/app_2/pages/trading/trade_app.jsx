@@ -38,7 +38,8 @@ class TradeApp extends React.Component {
             <div id='trade_container' className={this.props.is_portfolio_drawer_on ? 'show' : undefined}>
                 <div className='chart-container notice-msg'>
                     <Symbol />
-                    <ContractType />
+                    <ContractType className='desktop-only' />
+                    <ContractType className='mobile-only' is_mobile_widget />
                     <Test />
                 </div>
 
