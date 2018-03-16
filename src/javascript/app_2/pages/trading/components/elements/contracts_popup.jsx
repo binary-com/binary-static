@@ -1,4 +1,5 @@
 import React from 'react';
+import FullscreenDialog from './fullscreen_dialog.jsx';
 
 class ContractsPopUp extends React.PureComponent {
     constructor(props) {
@@ -41,6 +42,45 @@ class ContractsPopUp extends React.PureComponent {
         this.setState({ is_list_visible: !this.state.is_list_visible });
     }
 
+    renderList() {
+        return (
+            Object.keys(this.props.list).map(key => (
+                <React.Fragment key={key}>
+                    <Contracts
+                        contracts={this.props.list[key]}
+                        name={this.props.name}
+                        value={this.props.value}
+                        handleSelect={this.handleSelect}
+                    />
+                </React.Fragment>
+            ))
+        );
+    }
+
+    renderPopupList() {
+        return (
+            <div className='contracts-popup-list'>
+                <div className='list-container'>
+                    {this.renderList()}
+                </div>
+            </div>
+        );
+    }
+
+    renderModal() {
+        return (
+            <FullscreenDialog
+                title='Select Trading Type'
+                visible={this.state.is_list_visible}
+                onClose={this.handleVisibility}
+            >
+                <div className='contracts-modal-list'>
+                    {this.renderList()}
+                </div>
+            </FullscreenDialog>
+        );
+    }
+
     render() {
         const container_classes = ['contracts-popup-container'];
         if (this.props.className)       container_classes.push(this.props.className);
@@ -72,21 +112,12 @@ class ContractsPopUp extends React.PureComponent {
                         {getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
-                <span className='select-arrow' />
-                <div className='contracts-popup-list'>
-                    <div className='list-container'>
-                        {Object.keys(this.props.list).map(key => (
-                            <React.Fragment key={key}>
-                                <Contracts
-                                    contracts={this.props.list[key]}
-                                    name={this.props.name}
-                                    value={this.props.value}
-                                    handleSelect={this.handleSelect}
-                                />
-                            </React.Fragment>
-                        ))}
-                    </div>
-                </div>
+                { !this.props.is_mobile_widget && <span className='select-arrow' /> }
+                {
+                    this.props.is_mobile_widget
+                    ? this.renderModal()
+                    : this.renderPopupList()
+                }
             </div>
         );
     }
@@ -106,10 +137,10 @@ const Contracts = ({
             value={contract.value}
             onClick={handleSelect.bind(null, contract)}
         >
-            <span>
                 <i className={`contract-icon ic-${contract.value}${value === contract.value ? '' : '--invert'}`} />
-                {contract.text}
-            </span>
+                <span className='contract-title'>
+                    {contract.text}
+                </span>
         </div>
     ))
 );

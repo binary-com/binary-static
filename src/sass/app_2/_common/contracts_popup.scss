@@ -53,6 +53,30 @@ div.contracts-popup-container {
         top: 40%;
         transform: rotate(180deg);
     }
+    .list-item {
+        width: 100%;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f2f3f8;
+        }
+        &.disabled {
+            pointer-events: none;
+
+            span {
+                color: #dedede;
+            }
+        }
+        .contract-icon {
+            padding-right: 8px;
+        }
+        .contract-title {
+            text-transform: capitalize;
+            font-weight: 300;
+            font-size: 0.875rem;
+        }
+    }
     .contracts-popup-list {
         left: 0;
         top: 50%;
@@ -74,39 +98,7 @@ div.contracts-popup-container {
             border: solid 1px #f2f2f2;
 
             .list-item {
-                width: 100%;
-                font-size: 1rem;
-                cursor: pointer;
-
-                i.contract-icon {
-                    padding-right: 8px;
-                }
-                span {
-                    text-transform: capitalize;
-                    display: block;
-                    pointer-events: none;
-                    vertical-align: middle;
-                    font-weight: 300;
-                    font-size: 0.875rem;
-                    padding: 8px;
-                }
-                * {
-                    height: 32px;
-                    line-height: 32px !important;
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-                &.disabled {
-                    pointer-events: none;
-
-                    span {
-                        color: #dedede;
-                    }
-                }
-                &:hover {
-                    background-color: #f2f3f8;
-                }
-                &.selected span {
+                &.selected {
                     background-color: #2a3052;
                     color: $COLOR_WHITE;
                     font-weight: 400;
@@ -120,6 +112,8 @@ div.contracts-popup-container {
             }
         }
     }
+    //.contracts-modal-list {
+    //}
     .select-arrow {
         display: inline-block;
         font-style: normal;
