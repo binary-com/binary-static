@@ -140,11 +140,11 @@ const ContractType = (() => {
     });
 
     const getContractValues = (contract_type, contract_expiry_type) => {
-        const form_components = ContractType.getComponents(contract_type);
-        const obj_trade_types = ContractType.getTradeTypes(contract_type);
-        const obj_start_dates = ContractType.getStartDates(contract_type);
-        const obj_start_type  = ContractType.getStartType(obj_start_dates.start_date);
-        const obj_barrier     = ContractType.getBarriers(contract_type, contract_expiry_type);
+        const form_components = getComponents(contract_type);
+        const obj_trade_types = getTradeTypes(contract_type);
+        const obj_start_dates = getStartDates(contract_type);
+        const obj_start_type  = getStartType(obj_start_dates.start_date);
+        const obj_barrier     = getBarriers(contract_type, contract_expiry_type);
 
         return {
             ...form_components,
@@ -212,10 +212,7 @@ const ContractType = (() => {
         buildContractTypesConfig,
         getContractValues,
         getContractType,
-        getComponents,
         getStartType,
-        getStartDates,
-        getTradeTypes,
         getBarriers,
 
         getContractCategories: () => available_categories,

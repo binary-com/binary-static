@@ -26,12 +26,8 @@ export const onChangeExpiry = ({
     contract_type,
     server_time,
 }) => {
-    let contract_expiry_type = 'intraday';
-    if (expiry_type === 'duration') {
-        if (duration_unit === 'd') {
-            contract_expiry_type = 'daily';
-        }
-    } else {
+    let contract_expiry_type = expiry_type === 'duration' && duration_unit === 'd' ? 'daily' : 'intraday';
+    if (expiry_type === 'endtime') {
         const time    = ((expiry_time.split(' ') || [])[0] || '').split(':');
         const expires = moment(expiry_date).utc();
         if (time.length > 1) {
