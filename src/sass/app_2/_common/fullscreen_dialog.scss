@@ -12,6 +12,7 @@ $shadow-cover-height: 3.6rem;
     height: 100vh;
     z-index: 1;
     overflow: auto;
+    visibility: hidden;
 
     &:after {
         content: '';
@@ -28,6 +29,8 @@ $shadow-cover-height: 3.6rem;
         transform-origin: top;
     }
     &--open {
+        visibility: visible;
+
         &:after {
             opacity: 1;
             transform: translateY(0) scale(1);
