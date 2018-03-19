@@ -1,4 +1,6 @@
 /* stylelint-disable color-no-hex */
+$animation-duration: 0.2s;
+
 $header-height: 3.2rem;
 $shadow-cover-height: 3.6rem;
 
@@ -18,6 +20,7 @@ $content-index: 1;
     overflow: auto;
     opacity: 0;
     pointer-events: none;
+    transition: opacity $animation-duration;
     // transform here would break fixed header
 
     &--open {
@@ -25,20 +28,21 @@ $content-index: 1;
         pointer-events: auto;
 
         & .fullscreen-dialog__content {
-            opacity: 1;
             transform: scale(1);
+        }
+        & .fullscreen-dialog__header {
+            transform: translateY(0);
         }
     }
     &__content {
-        height: 100%;
         box-sizing: border-box;
         position: relative;
         padding-top: $shadow-cover-height;
         z-index: $content-index;
+        min-height: 100%;
         background: #fff;
-        opacity: 0;
         transform: scale(0);
-        transition: all 1s ease-out;
+        transition: all $animation-duration ease-out;
     }
     &__header {
         box-sizing: border-box;
@@ -49,6 +53,9 @@ $content-index: 1;
         height: $header-height;
         z-index: $header-index;
         background: #fff;
+        transform: translateY(-100%);
+        transition: all $animation-duration ease-out;
+        transition-delay: $animation-duration;
     }
     &__header-shadow-cover {
         position: absolute;
