@@ -32,7 +32,7 @@ const AccountTransfer = () => (
         </div>
 
         <div className='invisible' id='error_message'>
-            <p className='center-text notice-msg'></p>
+            <p className='center-text notice-msg' />
         </div>
 
         <div className='invisible' id='success_form'>
@@ -51,9 +51,9 @@ const AccountTransfer = () => (
                 <FormRow label={it.L('Transfer from')} type='label'  id='lbl_transfer_from' />
                 <FormRow label={it.L('Transfer to')}   type='select' id='transfer_to' />
                 <FormRow label={it.L('Amount')}        type='custom' id='transfer_amount'>
-                    <label id='currency'></label>
+                    <label id='currency' />
                     <input id='amount' name='amount' type='text' maxLength='20' autoComplete='off' />
-                    <div className='hint' id='range_hint'></div>
+                    <div className='hint' id='range_hint' />
                 </FormRow>
             </Fieldset>
 

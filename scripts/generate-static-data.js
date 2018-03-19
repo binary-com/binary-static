@@ -14,6 +14,10 @@ const texts = [
     // top bar
     'Open a Real Account',
     'Open a Financial Account',
+    'Network status',
+    'Online',
+    'Offline',
+    'Connecting to server',
 
     // account drop down
     'Virtual Account',
@@ -126,6 +130,7 @@ const texts = [
     'Long',
     'Short',
     'Chart',
+    'Portfolio',
     'Explanation',
     'Last Digit Stats',
     'Waiting for entry tick.',
@@ -184,8 +189,6 @@ const texts = [
     'Please confirm that all the information above is true and complete.',
 
     // home and virtual account opening page
-    'verification token',
-    'email address',
     'Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.',
     'The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.',
     'Password should have lower and uppercase letters with numbers.',
@@ -233,7 +236,7 @@ const texts = [
     'Scopes',
     'Never Used',
     'Delete',
-    'Are you sure that you want to permanently delete token',
+    'Are you sure that you want to permanently delete the token',
     'Please select at least one scope',
 
     // Guide
@@ -268,9 +271,6 @@ const texts = [
     'Exclude time cannot be less than 6 months.',
     'Exclude time cannot be for more than 5 years.',
     'When you click "OK" you will be excluded from trading on the site until the selected date.',
-
-    // change_password
-    'Old password is wrong.',
 
     // portfolio
     'Ref.',
@@ -359,8 +359,6 @@ const texts = [
     'This page is not available in the selected language.',
 
     // digit_info
-    'Select market',
-    'Number of ticks',
     'Percentage',
     'Digit',
 
@@ -422,6 +420,7 @@ const texts = [
     'Closed',
     'Contract has not started yet',
     'Price',
+    'Spot Time',
     'Spot Time (GMT)',
     'Current Time',
     'Exit Spot Time',
@@ -449,13 +448,12 @@ const texts = [
     // financial assessment
     'Please select a value',
 
-
     // authorised_apps
     'You have not granted access to any applications.',
     'Permissions',
     'Never',
     'Revoke access',
-    'Are you sure that you want to permanently revoke access to application',
+    'Are you sure that you want to permanently revoke access to the application',
     'Transaction performed by [_1] (App ID: [_2])',
     'Admin',
     'Read',
@@ -602,6 +600,7 @@ const texts = [
     'Reverse Side',
     'Front and reverse side photos of [_1] are required.',
     '[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.',
+    'Following file(s) were already uploaded: [_1]',
 ];
 
 /* eslint-disable no-console */

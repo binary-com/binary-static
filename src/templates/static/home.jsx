@@ -4,7 +4,7 @@ import SeparatorLine from '../_common/components/separator_line.jsx';
 import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
 
 const PaymentLogo = ({ items }) => items.map((item, inx) => (
-    <div key={inx} className={`gr-2 gr-4-m center-text${item.className ? ` ${item.className}` : ''}`}>
+    <div key={inx} className='gr-2 gr-4-m center-text' data-show={item.dataShow}>
         <img className='gr-12 gr-centered' src={it.url_for(`images/pages/home/payment/${item.image}.svg`)} />
     </div>
 ));
@@ -57,8 +57,8 @@ const MarketsTabContent = ({ text, header, image }) => (
     </div>
 );
 
-const AccountsListItem = ({ image, list_header, list_text, list_class }) => (
-    <div className={`${list_class ? `${list_class}` : ''} gr-row gr-padding-10`}>
+const AccountsListItem = ({ image, list_header, list_text }) => (
+    <div className='gr-row gr-padding-10'>
         <div className='gr-2 gr-no-gutter gr-gutter-left-m'>
             <img className='responsive' src={it.url_for(image)} />
         </div>
@@ -83,7 +83,6 @@ const AccountsTabContent = ({
     list_text_one,
     list_text_two,
     list_text_three,
-    list_class,
 }) => (
     <React.Fragment>
         <div className='gr-hide-m'>
@@ -107,24 +106,23 @@ const AccountsTabContent = ({
                         <div className='gr-12'><p>{header}</p></div>
                     </div>
                     <div className='gr-6 gr-12-m'>
+                        <AccountsListItem
+                            image={image_one}
+                            list_header={list_header_one}
+                            list_text={list_text_one}
+                        />
+                        <AccountsListItem
+                            image={image_two}
+                            list_header={list_header_two}
+                            list_text={list_text_two}
+                        />
+                        { list_header_three &&
                             <AccountsListItem
-                                image={image_one}
-                                list_header={list_header_one}
-                                list_text={list_text_one}
+                                image={image_three}
+                                list_header={list_header_three}
+                                list_text={list_text_three}
                             />
-                            <AccountsListItem
-                                image={image_two}
-                                list_header={list_header_two}
-                                list_text={list_text_two}
-                                list_class={list_class}
-                            />
-                            { list_header_three &&
-                                <AccountsListItem
-                                    image={image_three}
-                                    list_header={list_header_three}
-                                    list_text={list_text_three}
-                                />
-                            }
+                        }
                     </div>
                 </div>
             </div>
@@ -147,13 +145,13 @@ const TabCircles = ({ id, number }) => (
     <div className='gr-hide gr-show-m gr-show-p center-text'>
         <div className='tab-circles' id={id || undefined}>
             { Array.from(new Array(number)).map((x, inx) => (
-                <div key={inx} className='tab-circle'></div>
+                <div key={inx} className='tab-circle' />
             ))}
         </div>
     </div>
 );
 
-const HomeBeta = () => {
+const Home = () => {
     const binary_header = it.L('Binary options');
     const binary_desc   = it.L('Options that offer a fixed payout based on a simple yes/no proposition.');
     const binary_img    = 'images/pages/home/trade/binary.svg';
@@ -176,9 +174,9 @@ const HomeBeta = () => {
 
                         <div className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
                             <div className='section-divider gr-padding-20'>
-                                <div className='align-self-center border-bottom-light-gray'></div>
+                                <div className='align-self-center border-bottom-light-gray' />
                                 <div className='circle'>{it.L('or')}</div>
-                                <div className='align-self-center border-bottom-light-gray'></div>
+                                <div className='align-self-center border-bottom-light-gray' />
                             </div>
                             <a id='google-signup' href='javascript:;' className='button-white'>
                                 <span className='icon-google'>{it.L('Create account with Google')}</span>
@@ -223,10 +221,9 @@ const HomeBeta = () => {
                                     image='images/pages/home/MT5.svg'
                                     image_one='images/pages/home/icons/demo.svg'
                                     list_header_one={it.L('MT5 Demo')}
-                                    list_text_one={it.L('Practice account with replenishable USD 5,000 virtual credit.')}
+                                    list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
                                     image_two='images/pages/home/icons/mt5_financial.svg'
                                     list_header_two={it.L('MT5 Financial')}
-                                    list_class='eu-hide invisible'
                                     list_text_two={it.L('MT5 real-money account for Forex and CFDs.')}
                                     image_three='images/pages/home/icons/mt5_volatility.svg'
                                     list_header_three={it.L('MT5 Volatility Indices')}
@@ -240,8 +237,9 @@ const HomeBeta = () => {
 
                 <div className='center-text gr-padding-20 gr-parent'>
                     <h3 className='center-text gr-padding-20 gr-parent'>{it.L('Choose the platforms and accounts you need, based on your personal trading style')}</h3>
-                    <a className='button-secondary'
-                       href={it.url_for('platforms')}><span>{it.L('View our platforms')}</span></a>
+                    <a className='button-secondary' href={it.url_for('platforms')}>
+                        <span>{it.L('View our platforms')}</span>
+                    </a>
                 </div>
 
                 <SeparatorLine className='gr-padding-30' show_mobile/>
@@ -249,7 +247,7 @@ const HomeBeta = () => {
 
             <div id='market_tabs_container' className='container'>
                 <h2 className='center-text gr-padding-10'>{it.L('Trade in the world\'s financial markets')}</h2>
-                <TabContainer className='gr-padding-30 gr-parent full-width eu-hide invisible' theme='light'>
+                <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
                     <TabsSubtabs
                         id='market_tabs'
                         className='gr-padding-20 gr-parent gr-hide-m gr-hide-p tab-selector-wrapper'
@@ -311,15 +309,6 @@ const HomeBeta = () => {
                     </div>
                     <TabCircles number={6} id='market_tabs_circles'/>
                 </TabContainer>
-                <div className='eu-show invisible'>
-                    <div className='gr-padding-30 gr-push-1'>
-                        <MarketsContent
-                            header={binary_header}
-                            text={binary_desc}
-                            image={binary_img}
-                        />
-                    </div>
-                </div>
                 <h3 className='center-text gr-padding-30'>{it.L('Choose from 100+ tradable instruments, backed by award-winning technology and innovation since 2000.')}</h3>
             </div>
 
@@ -331,13 +320,13 @@ const HomeBeta = () => {
                         </div>
                         <div className='gr-9 gr-12-m align-self-center'>
                             <div className='gr-row gr-row-align-center'>
-                                <div className='gr-1 gr-hide-m border-right'></div>
+                                <div className='gr-1 gr-hide-m border-right' />
                                 <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')}/></div>
                                 <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')}/></div>
                                 <div className='gr-3 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')}/></div>
                                 <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')}/></div>
                                 <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')}/></div>
-                                <div className='gr-1 gr-hide-m'></div>
+                                <div className='gr-1 gr-hide-m' />
                             </div>
                         </div>
                     </div>
@@ -365,8 +354,12 @@ const HomeBeta = () => {
                     />
                 </div>
                 <div className='center-text gr-padding-30'>
-                    <a className='button-secondary' href='https://academy.binary.com' target='_blank'
-                       rel='noopener noreferrer'>
+                    <a
+                        className='button-secondary'
+                        href='https://academy.binary.com'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
                         <span>{it.L('Learn more')}</span>
                     </a>
                 </div>
@@ -376,8 +369,7 @@ const HomeBeta = () => {
                 <div id='payment_methods'>
                     <div className='gr-12 gr-padding-20'>
                         <h2 className='center-text'>{it.L('Payment methods')}</h2>
-                        <p className='center-text eu-show invisible'>{it.L('We support hundreds of deposit and withdrawal options.')}</p>
-                        <p className='center-text eu-hide invisible'>{it.L('We support hundreds of deposit and withdrawal options, including Bitcoin.')}</p>
+                        <p className='center-text'>{it.L('We support hundreds of deposit and withdrawal options, including Bitcoin.')}</p>
 
                         <div className='gr-12 gr-padding-30'>
                             <a href={it.url_for('cashier/payment_methods')}>
@@ -396,11 +388,11 @@ const HomeBeta = () => {
                                             { image: 'skrill' },
                                             { image: 'ecopayz' },
                                             { image: 'qiwi' },
-                                            { image: 'ethereum_black', className: 'eu-hide invisible' },
-                                            { image: 'bitcoin',        className: 'eu-hide invisible' },
-                                            { image: 'bitcoin_cash',   className: 'eu-hide invisible' },
-                                            { image: 'litecoin',       className: 'eu-hide invisible' },
-                                            { image: 'union_pay',      className: 'eu-hide invisible'},
+                                            { image: 'ethereum_black', dataShow: '-malta, -maltainvest' },
+                                            { image: 'bitcoin', dataShow: '-malta, -maltainvest' },
+                                            { image: 'bitcoin_cash', dataShow: '-malta, -maltainvest' },
+                                            { image: 'litecoin', dataShow: '-malta, -maltainvest' },
+                                            { image: 'union_pay', dataShow: '-malta, -maltainvest' },
                                         ]}
                                     />
                                 </div>
@@ -413,4 +405,4 @@ const HomeBeta = () => {
     );
 };
 
-export default HomeBeta;
+export default Home;

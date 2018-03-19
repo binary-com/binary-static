@@ -59,11 +59,11 @@ const FileSelector = ({
                                                     </div>
                                                     <div className='gr-row form-row center-text-m'>
                                                         <div className='gr-12'>
-                                                            <input id={`front_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
+                                                            <input id={`front_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} data-name={document.name} />
                                                             <label htmlFor={`front_file${j}`} className='button'>{it.L('Front Side')} <span className='add' /></label>
                                                         </div>
                                                         <div className='gr-12'>
-                                                            <input id={`back_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
+                                                            <input id={`back_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} data-name={document.name}/>
                                                             <label htmlFor={`back_file${j}`} className='button'>{it.L('Reverse Side')} <span className='add' /></label>
                                                         </div>
                                                     </div>
@@ -72,7 +72,7 @@ const FileSelector = ({
                                             { type === 'poa' && (
                                                 <div className='gr-row form-row gr-centered'>
                                                     <div className='gr-12'>
-                                                        <input id={`add_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} />
+                                                        <input id={`add_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} data-name={document.name}/>
                                                         <label htmlFor={`add_file${j}`} className='button'>{it.L('Add')} <span className='add' /></label>
                                                     </div>
                                                 </div>
@@ -135,7 +135,7 @@ const AuthenticateMessage = () => (
         />
 
         <div className='center-text'>
-            <div id='msg_form' className='error-msg invisible'></div>
+            <div id='msg_form' className='error-msg invisible center-text' />
             <div className='gr-padding-10'>
                 <a className='button-disabled' id='btn_submit' type='submit'>
                     <span>{it.L('Submit for review')}</span>

@@ -16,7 +16,7 @@ const Section = ({
     sectionNum,
 }) => (
     <div id={id} className={`section ${className}`}>
-        <a id={link_id}></a>
+        <a id={link_id} />
         <div className='section-content'>
             <div id={`section-${sectionNum}`}>{children}</div>
         </div>
@@ -62,7 +62,7 @@ const TermsAndConditions = () => (
                 <div className='gr-9 gr-12-m gr-centered center-text'>
                     <p>{it.L('By clicking OK, you confirm that you have read and accepted Terms & Conditions.')}</p>
                     <button className='button' id='btn_accept'>{it.L('OK')}</button>
-                    <p className='gr-12 error-msg center-text invisible' id='err_message'></p>
+                    <p className='gr-12 error-msg center-text invisible' id='err_message' />
                 </div>
             </Section>
         </div>

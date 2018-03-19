@@ -243,7 +243,7 @@ const Japan = () => (
 
             <div className='center-text'>
                 <button className='button' type='submit'>{it.L('Open Account')}</button>
-                <p id='submit-message'></p>
+                <p id='submit-message' />
             </div>
         </form>
 
