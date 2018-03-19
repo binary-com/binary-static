@@ -1,7 +1,11 @@
 /* stylelint-disable color-no-hex */
-$animation-duration: 0.3s;
 $header-height: 3.2rem;
 $shadow-cover-height: 3.6rem;
+
+$header-index: 4;
+$shadow-cover-index: 3;
+$shadow-index: 2;
+$content-index: 1;
 
 .fullscreen-dialog {
     box-sizing: border-box;
@@ -10,39 +14,31 @@ $shadow-cover-height: 3.6rem;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 999;
     overflow: auto;
-    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    // transform here would break fixed header
 
-    &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        opacity: 0;
-        transition: all $animation-duration;
-        transform: translateY(100%) scale(0);
-        transform-origin: top;
-    }
     &--open {
-        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
 
-        &:after {
+        & .fullscreen-dialog__content {
             opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        & .fullscreen-dialog__header, & .fullscreen-dialog__content {
-            opacity: 1;
+            transform: scale(1);
         }
     }
-    &__header, &__content {
+    &__content {
+        height: 100%;
+        box-sizing: border-box;
+        position: relative;
+        padding-top: $shadow-cover-height;
+        z-index: $content-index;
+        background: #fff;
         opacity: 0;
-        transition: opacity $animation-duration;
-        background-color: #fff;
+        transform: scale(0);
+        transition: all 1s ease-out;
     }
     &__header {
         box-sizing: border-box;
@@ -51,23 +47,23 @@ $shadow-cover-height: 3.6rem;
         top: 0;
         padding: 1rem;
         height: $header-height;
-        z-index: 4;
-
-        &-shadow-cover {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: $shadow-cover-height;
-            z-index: 3;
-            background-color: #fff;
-        }
-        &-shadow {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: $header-height;
-            z-index: 2;
-        }
+        z-index: $header-index;
+        background: #fff;
+    }
+    &__header-shadow-cover {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: $shadow-cover-height;
+        z-index: $shadow-cover-index;
+        background-color: #fff;
+    }
+    &__header-shadow {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: $header-height;
+        z-index: $shadow-index;
     }
     &__title {
         font-size: 1.3rem;
@@ -79,11 +75,6 @@ $shadow-cover-height: 3.6rem;
         position: absolute;
         top: 14px;
         right: 14px;
-    }
-    &__content {
-        position: relative;
-        z-index: 1;
-        margin-top: $shadow-cover-height;
     }
     fieldset {
         border: none;
