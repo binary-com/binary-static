@@ -1,6 +1,6 @@
 import ContractType from '../actions/helpers/contract_type';
 
-export const onChangeSymbolAsync = function *({ symbol, contract_type, contract_expiry_type }) {
+export const onChangeSymbolAsync = function *({ symbol, contract_type, contract_expiry_type, duration_unit }) {
     yield ContractType.buildContractTypesConfig(symbol);
 
     const contract_types_list = ContractType.getContractCategories();
@@ -12,7 +12,8 @@ export const onChangeSymbolAsync = function *({ symbol, contract_type, contract_
     return {
         contract_types_list,
         ...(
-            new_contract_type === contract_type && ContractType.getContractValues(contract_type, contract_expiry_type)
+            new_contract_type === contract_type &&
+            ContractType.getContractValues(contract_type, contract_expiry_type, duration_unit)
         ),
     };
 };

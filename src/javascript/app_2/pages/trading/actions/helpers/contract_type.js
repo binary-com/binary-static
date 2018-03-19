@@ -1,8 +1,9 @@
 import moment from 'moment';
 import DAO from '../../data/dao';
-import { cloneObject } from '../../../../../_common/utility';
+import { cloneObject, getPropertyValue } from '../../../../../_common/utility';
 import { localize } from '../../../../../_common/localize';
 import { get as getLanguage } from '../../../../../_common/language';
+import { buildDurationConfig } from './duration';
 
 
 const ContractType = (() => {
@@ -58,29 +59,76 @@ const ContractType = (() => {
                     available_contract_types[type].config = {};
                 }
 
-                // add to this config if a value you are looking for does not exist yet
-                // accordingly create a function to retrieve the value
-                // config: {
-                //      has_spot: 1,
-                //      forward_starting_dates: [
-                //          { text: 'Mon - 19 Mar, 2018', open: 1517356800, close: 1517443199 },
-                //          { text: 'Tue - 20 Mar, 2018', open: 1517443200, close: 1517529599 },
-                //          { text: 'Wed - 21 Mar, 2018', open: 1517529600, close: 1517615999 },
-                //      ],
-                //      trade_types: {
-                //          'CALL': 'Higher',
-                //          'PUT': 'Lower',
-                //      },
-                //      barriers: {
-                //          daily: {
-                //              low_barrier : 1093,
-                //              high_barrier: 1111,
-                //          }
-                //      }
-                // }
+                /*
+                add to this config if a value you are looking for does not exist yet
+                accordingly create a function to retrieve the value
+                config: {
+                    has_spot: 1,
+                    durations: {
+                        min_max: {
+                            spot: {
+                                tick: {
+                                    min: 5, // value in ticks, as cannot convert to seconds
+                                    max: 10,
+                                },
+                                intraday: {
+                                    min: 18000, // all values converted to seconds
+                                    max: 86400,
+                                },
+                                daily: {
+                                    min: 86400,
+                                    max: 432000,
+                                },
+                            },
+                            forward: {
+                                intraday: {
+                                    min: 18000,
+                                    max: 86400,
+                                },
+                            },
+                        },
+                        units_display: {
+                            spot: [
+                                { text: 'ticks', value: 't' },
+                                { text: 'seconds', value: 's' },
+                                { text: 'minutes', value: 'm' },
+                                { text: 'hours', value: 'h' },
+                                { text: 'days', value: 'd' },
+                            ],
+                            forward: [
+                                { text: 'days', value: 'd' },
+                            ],
+                        },
+                    },
+                    forward_starting_dates: [
+                        { text: 'Mon - 19 Mar, 2018', open: 1517356800, close: 1517443199 },
+                        { text: 'Tue - 20 Mar, 2018', open: 1517443200, close: 1517529599 },
+                        { text: 'Wed - 21 Mar, 2018', open: 1517529600, close: 1517615999 },
+                    ],
+                    trade_types: {
+                        'CALL': 'Higher',
+                        'PUT': 'Lower',
+                    },
+                    barriers: {
+                        intraday: {
+                            high_barrier: '+2.12',
+                            low_barrier : '-1.12',
+                        },
+                        daily: {
+                            high_barrier: 1111,
+                            low_barrier : 1093,
+                        }
+                    }
+                }
+                */
 
                 if (contract.start_type === 'spot') {
                     available_contract_types[type].config.has_spot = 1;
+                }
+
+                if (contract.min_contract_duration && contract.max_contract_duration) {
+                    available_contract_types[type].config.durations =
+                        buildDurationConfig(available_contract_types[type].config.durations, contract);
                 }
 
                 if (contract.forward_starting_options) {
@@ -139,12 +187,15 @@ const ContractType = (() => {
         });
     });
 
-    const getContractValues = (contract_type, contract_expiry_type) => {
-        const form_components = getComponents(contract_type);
-        const obj_trade_types = getTradeTypes(contract_type);
-        const obj_start_dates = getStartDates(contract_type);
-        const obj_start_type  = getStartType(obj_start_dates.start_date);
-        const obj_barrier     = getBarriers(contract_type, contract_expiry_type);
+    const getContractValues = (contract_type, contract_expiry_type, duration_unit) => {
+        const form_components   = getComponents(contract_type);
+        const obj_trade_types   = getTradeTypes(contract_type);
+        const obj_start_dates   = getStartDates(contract_type);
+        const obj_start_type    = getStartType(obj_start_dates.start_date);
+        const obj_barrier       = getBarriers(contract_type, contract_expiry_type);
+        const obj_duration_unit = getDurationUnit(duration_unit, contract_type, obj_start_type.contract_start_type);
+
+        const obj_duration_units_list = getDurationUnitsList(contract_type, obj_start_type.contract_start_type);
 
         return {
             ...form_components,
@@ -152,6 +203,8 @@ const ContractType = (() => {
             ...obj_start_dates,
             ...obj_start_type,
             ...obj_barrier,
+            ...obj_duration_units_list,
+            ...obj_duration_unit,
         };
     };
 
@@ -163,14 +216,33 @@ const ContractType = (() => {
         };
     };
 
-    /**
-     * @param {String} value: pass a value that you need to retrieve, e.g. 'trade_types'
-     * @param {Object} contract_type: value of contract_type, e.g. 'rise_fall'
-     * returns {Object} of available values, e.g. { trade_types: ['CALL', 'PUT'] }
-     */
-    const getContractValue = (value, contract_type) => ({ [value]: available_contract_types[contract_type][value] });
-
     const getComponents = (c_type) => ({ form_components: contract_types[c_type].components });
+
+    const getDurationUnitsList = (contract_type, contract_start_type) => {
+        const duration_units_list = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'units_display', contract_start_type]) || [];
+
+        return { duration_units_list };
+    };
+
+    const getDurationUnit = (duration_unit, contract_type, contract_start_type) => {
+        const duration_units = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'units_display', contract_start_type]) || [];
+        const arr_units = [];
+        duration_units.forEach(obj => {
+            arr_units.push(obj.value);
+        });
+
+        return {
+            duration_unit: (!duration_unit || arr_units.indexOf(duration_unit) === -1) ?
+                arr_units[0] : duration_unit,
+        };
+    };
+
+    // TODO: use this getter function to dynamically compare min/max versus duration amount
+    const getDurationMinMax = (contract_type, contract_start_type, contract_expiry_type) => {
+        const duration_min_max = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'min_max', contract_start_type, contract_expiry_type]) || {};
+
+        return { duration_min_max };
+    };
 
     const getStartType = (start_date) => {
         const contract_start_type = start_date === 'now' ? 'spot' : 'forward';
@@ -179,7 +251,7 @@ const ContractType = (() => {
     };
 
     const getStartDates = (contract_type) => {
-        const config           = getContractValue('config', contract_type).config;
+        const config           = getPropertyValue(available_contract_types, [contract_type, 'config']);
         const start_dates_list = [];
 
         if (config.has_spot) {
@@ -195,11 +267,11 @@ const ContractType = (() => {
     };
 
     const getTradeTypes = (contract_type) => ({
-        trade_types: getContractValue('config', contract_type).config.trade_types,
+        trade_types: getPropertyValue(available_contract_types, [contract_type, 'config', 'trade_types']),
     });
 
     const getBarriers = (contract_type, expiry_type) => {
-        const barriers  = (getContractValue('config', contract_type).config.barriers || {})[expiry_type] || {};
+        const barriers  = getPropertyValue(available_contract_types, [contract_type, 'config', 'barriers', expiry_type]) || {};
         const barrier_1 = barriers.barrier || barriers.high_barrier || '';
         const barrier_2 = barriers.low_barrier || '';
         return {
@@ -212,6 +284,9 @@ const ContractType = (() => {
         buildContractTypesConfig,
         getContractValues,
         getContractType,
+        getDurationUnitsList,
+        getDurationUnit,
+        getDurationMinMax,
         getStartType,
         getBarriers,
 
