@@ -37,7 +37,7 @@ const ContractType = (() => {
     let available_contract_types = {};
     let available_categories     = {};
 
-    const buildContractTypesConfig = (symbol) => DAO.getContractsFor(symbol).then(r => {
+    const buildContractTypesConfig = (store) => DAO.getContractsFor(store.symbol).then(r => {
         available_contract_types = {};
         available_categories = cloneObject(contract_categories); // To preserve the order (will clean the extra items later in this function)
         r.contracts_for.available.forEach((contract) => {
@@ -136,7 +136,31 @@ const ContractType = (() => {
                 delete available_categories[key];
             }
         });
+
+        if (store.contract_type && store.contract_expiry_type) {
+            const contract_type = getContractType(available_categories, store.contract_type).contract_type;
+            return getContractValues(contract_type, store.contract_expiry_type);
+        }
+        return {};
     });
+
+    const getContractValues = (contract_type, contract_expiry_type) => {
+        const form_components = ContractType.getComponents(contract_type);
+        const obj_trade_types = ContractType.getTradeTypes(contract_type);
+        const obj_start_dates = ContractType.getStartDates(contract_type);
+        const obj_start_type  = ContractType.getStartType(obj_start_dates.start_date);
+        const obj_barrier     = ContractType.getBarriers(contract_type, contract_expiry_type);
+
+        return {
+            ...form_components,
+            ...obj_trade_types,
+            ...obj_start_dates,
+            ...obj_start_type,
+            ...obj_barrier,
+            contract_type,
+            contract_types_list: available_categories,
+        };
+    };
 
     const getContractType = (list, contract_type) => {
         const list_arr = Object.keys(list || {})
@@ -193,6 +217,7 @@ const ContractType = (() => {
 
     return {
         buildContractTypesConfig,
+        getContractValues,
         getContractType,
         getComponents,
         getStartType,

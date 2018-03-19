@@ -39,20 +39,21 @@ export const initActions = (store) => {
         }
     });
 
-    const combine = asyncAction('symbol.wrapper', function* () {
-        const snapshot = cloneObject(store);
-
-        Object.assign(snapshot, yield asyncAction('symbol', Symbol.onChangeSymbolAsync)(snapshot));
-        Object.assign(snapshot, ContractType.onChangeContractTypeList(snapshot));
-        Object.assign(snapshot, ContractType.onChangeContractType(snapshot));
-
-        Object.keys(snapshot).forEach((key) => {
-            store[key] = snapshot[key];
-        });
-    });
+    // const combine = asyncAction('symbol.wrapper', function* () {
+    //     const snapshot = cloneObject(store);
+    //     const new_state = {};
+    //     Object.assign(new_state, yield asyncAction('symbol', Symbol.onChangeSymbolAsync)(snapshot));
+    //     Object.assign(new_state, ContractType.onChangeContractTypeList(Object.assign(snapshot, new_state)));
+    //     Object.assign(new_state, ContractType.onChangeContractType(Object.assign(snapshot, new_state)));
+    //
+    //     Object.keys(new_state).forEach((key) => {
+    //         store[key] = new_state[key];
+    //     });
+    // });
 
     const reaction_map = {
-        symbol             : combine,
+        // symbol             : combine,
+        symbol             : defaultExports.onChangeSymbolAsync,
         contract_types_list: defaultExports.onChangeContractTypeList,
         contract_type      : defaultExports.onChangeContractType,
         amount             : defaultExports.onChangeAmount,
