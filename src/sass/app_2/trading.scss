@@ -1,78 +1,112 @@
 /* stylelint-disable color-no-hex */
-#trade_app {
-    .notice-msg {
-        background: unset;
-        border: 1px solid #f2f2f2;
-    }
-    fieldset {
-        input, select {
-            width: 100%;
-            font-size: 1rem;
-            font-weight: 300;
-            height: 32px;
-            align-self: center;
-            appearance: none;
-            box-sizing: border-box;
-            padding: 2px 5px;
-        }
-        input {
-            &:hover {
-                border-color: #2a3052;
-            }
-            &:active, &:focus {
-                outline: 0;
-                border-color: #2a3052;
-                box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
-            }
-        }
-        .select-wrapper {
-            position: relative;
+#content.trade-content {
+    margin-top: 0;
+    margin-bottom: 31px;
 
-            &:after {
-                content: '\25bc';
-                display: block;
-                position: absolute;
-                top: 50%;
-                right: 8px;
-                font-size: 12px;
-                transform: translateY(-50%);
-            }
+    #trade_app {
+        overflow: hidden;
+
+        .notice-msg {
+            background: unset;
+            border: 1px solid #f2f2f2;
         }
-        select {
-            margin: 8px 0;
-            display: block;
-
-            &:hover {
-                border-color: #2a3052;
+        fieldset {
+            input, select {
+                width: 100%;
+                height: 32px;
+                font-size: 1rem;
+                font-weight: 300;
+                align-self: center;
+                appearance: none;
+                box-sizing: border-box;
+                padding: 2px 5px;
             }
-            &:active, &:focus {
-                outline: 0;
-                border-color: #2a3052;
-                box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
-            }
-        }
-        .clock-header, .fieldset-header {
-            height: 1.5rem;
-            position: relative;
-
-            span.field-info {
-                position: absolute;
-                color: $primaryBrandColor;
-                font-size: 0.7rem;
-                font-weight: 400;
-                margin: 5px 0 12px;
-
-                &.left {
-                    top: 5px;
-                    left: 5px;
+            input {
+                &:hover {
+                    border-color: #2a3052;
                 }
-                &.right {
-                    top: 5px;
-                    right: 5px;
+                &:active, &:focus {
+                    outline: 0;
+                    border-color: #2a3052;
+                    box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+                }
+            }
+            .select-wrapper {
+                position: relative;
+
+                &:after {
+                    content: '\25bc';
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: 8px;
+                    font-size: 12px;
+                    transform: translateY(-50%);
+                }
+            }
+            select {
+                margin: 8px 0;
+                display: block;
+
+                &:hover {
+                    border-color: #2a3052;
+                }
+                &:active, &:focus {
+                    outline: 0;
+                    border-color: #2a3052;
+                    box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+                }
+            }
+            .clock-header, .fieldset-header {
+                height: 1.5rem;
+                position: relative;
+
+                span.field-info {
+                    position: absolute;
+                    color: $primaryBrandColor;
+                    font-size: 0.7rem;
+                    font-weight: 400;
+                    margin: 5px 0 12px;
+
+                    &.left {
+                        left: 5px;
+
+                        &.icon {
+                            top: -3px;
+
+                            &:before {
+                                content: '';
+                                margin-right: 5px;
+                                display: inline-flex;
+                                justify-content: center;
+                                align-items: center;
+                                vertical-align: middle;
+                            }
+                            &.start-time:before {
+                                content: url('../images/trading_app/sidebar/light/ic_watch_later_light.svg');
+                            }
+                            &.trade-duration:before {
+                                content: url('../images/trading_app/sidebar/light/ic_timelapse_light.svg');
+                            }
+                            &.invest-amount:before {
+                                content: url('../images/trading_app/sidebar/light/ic_monetization_light.svg');
+                            }
+                            &.barriers:before {
+                                content: url('../images/trading_app/sidebar/light/ic_barrier_light.svg');
+                            }
+                            &.digits:before {
+                                content: url('../images/trading_app/sidebar/light/ic_digit_light.svg');
+                            }
+                        }
+                    }
+                    &.right {
+                        top: -3px;
+                        right: 5px;
+                        font-size: 0.5625rem; /* stylelint-disable-line number-max-precision */
+                    }
                 }
             }
         }
     }
 }
-
 /* stylelint-enable color-no-hex */

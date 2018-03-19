@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from './head.jsx';
 import Header from './header.jsx';
-import Menu from './menu.jsx';
 import GTM from '../../_common/includes/gtm.jsx';
 import Title from '../../_common/components/title.jsx';
 import Footer from './footer.jsx';
@@ -42,13 +41,10 @@ const Layout = () => {
         <html>
             <Head />
             <body className={it.language}>
-                <div className='no-horizontal-scroll'>
-                    <Header />
-                    <Menu />
-                    <GTM />
-                    <InnerContent />
-                    <Footer />
-                </div>
+                <Header />
+                <GTM />
+                <InnerContent />
+                <Footer />
             </body>
         </html>
     );

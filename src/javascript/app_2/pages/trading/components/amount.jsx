@@ -1,8 +1,9 @@
 import React from 'react';
-import InputField from './form/input_field.jsx';
 import Dropdown from './form/dropdown.jsx';
-import { connect } from '../store/connect';
+import Fieldset from './elements/fieldset.jsx';
+import InputField from './form/input_field.jsx';
 import Client from '../../../../app/base/client';
+import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
 
 const basis_list = [
@@ -25,10 +26,11 @@ const Amount = ({
         );
     }
     return (
-        <fieldset>
-            <div className='fieldset-header'>
-                <span className='field-info left'>{localize('Invest Amount')}</span>
-            </div>
+        <Fieldset
+            header={localize('Invest Amount')}
+            icon='invest-amount'
+            tooltip={localize('Text for Invest Amount goes here.')}
+        >
             <div className='amount-container'>
                 <Dropdown
                     list={basis_list}
@@ -56,7 +58,7 @@ const Amount = ({
                     is_nativepicker={is_nativepicker}
                 />
             }
-        </fieldset>
+        </Fieldset>
     );
 };
 

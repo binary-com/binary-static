@@ -1,6 +1,6 @@
 import React from 'react';
-import ClockHeader from './elements/clock_header.jsx';
 import Dropdown from './form/dropdown.jsx';
+import Fieldset from './elements/fieldset.jsx';
 import TimePicker from './form/time_picker.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
@@ -20,8 +20,12 @@ const StartDate = ({
         );
     }
     return (
-        <fieldset>
-            <ClockHeader time={server_time} header={localize('Start time')} />
+        <Fieldset
+            time={server_time}
+            header={localize('Start time')}
+            icon='start-time'
+            tooltip={localize('Text for Start Time goes here.')}
+        >
             <Dropdown
                 name='start_date'
                 value={start_date}
@@ -41,7 +45,7 @@ const StartDate = ({
                     />
                 </React.Fragment>
             }
-        </fieldset>
+        </Fieldset>
     );
 };
 
