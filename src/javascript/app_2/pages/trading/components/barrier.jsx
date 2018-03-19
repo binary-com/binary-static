@@ -7,7 +7,14 @@ const Barrier = ({
     barrier_1,
     barrier_2,
     onChange,
-}) =>  (
+    is_minimized,
+}) =>  {
+    if (is_minimized) {
+        return (
+            <div>Barrier: {barrier_1} {!!barrier_2 && barrier_2}</div>
+        );
+    }
+    return (
     <fieldset>
         <div className='fieldset-header'>
             <span className='field-info left' htmlFor='barrier_1'>
@@ -32,7 +39,8 @@ const Barrier = ({
             />
         }
     </fieldset>
-);
+    );
+};
 
 export default connect(
     ({trade}) => ({
