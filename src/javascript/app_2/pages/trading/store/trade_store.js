@@ -2,7 +2,6 @@ import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
 import ContractType from '../actions/helpers/contract_type';
 import actions from '../actions';
-import { cloneObject } from '../../../../_common/utility';
 
 export default class TradeStore {
     time_interval = undefined;
@@ -16,7 +15,7 @@ export default class TradeStore {
             actions.getCurrenciesAsync();
         }
         actions.getDurationUnits();
-        ContractType.buildContractTypesConfig(cloneObject(this)).then(action(() => {
+        ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
             this.contract_types_list = ContractType.getContractCategories();
         }));
         this.time_interval = setInterval(actions.initTime, 1000);

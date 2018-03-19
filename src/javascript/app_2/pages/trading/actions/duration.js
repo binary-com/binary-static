@@ -42,13 +42,8 @@ export const onChangeExpiry = ({
         }
     }
 
-    const new_values = { contract_expiry_type };
-
-    if (contract_type) {
-        // barrier value changes for intraday/daily
-        const obj_barriers = ContractType.getBarriers(contract_type, contract_expiry_type);
-        Object.assign(new_values, obj_barriers);
-    }
-
-    return new_values;
+    return {
+        contract_expiry_type,
+        ...(contract_type && ContractType.getBarriers(contract_type, contract_expiry_type)), // barrier value changes for intraday/daily
+    };
 };

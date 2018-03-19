@@ -37,7 +37,7 @@ const ContractType = (() => {
     let available_contract_types = {};
     let available_categories     = {};
 
-    const buildContractTypesConfig = (store) => DAO.getContractsFor(store.symbol).then(r => {
+    const buildContractTypesConfig = (symbol) => DAO.getContractsFor(symbol).then(r => {
         available_contract_types = {};
         available_categories = cloneObject(contract_categories); // To preserve the order (will clean the extra items later in this function)
         r.contracts_for.available.forEach((contract) => {
@@ -63,13 +63,13 @@ const ContractType = (() => {
                 // config: {
                 //      has_spot: 1,
                 //      forward_starting_dates: [
-                //          { text: '...', open: 1517356800, close: 1517443199 },
-                //          { text: '...', open: 1517443200, close: 1517529599 },
-                //          { text: '...', open: 1517529600, close: 1517615999 },
+                //          { text: 'Mon - 19 Mar, 2018', open: 1517356800, close: 1517443199 },
+                //          { text: 'Tue - 20 Mar, 2018', open: 1517443200, close: 1517529599 },
+                //          { text: 'Wed - 21 Mar, 2018', open: 1517529600, close: 1517615999 },
                 //      ],
                 //      trade_types: {
                 //          'CALL': 'Higher',
-                //          'PUT': 'Lower'
+                //          'PUT': 'Lower',
                 //      },
                 //      barriers: {
                 //          daily: {
@@ -86,6 +86,7 @@ const ContractType = (() => {
                 if (contract.forward_starting_options) {
                     const forward_starting_options = [];
 
+                    // TODO: handle multiple sessions (right now will create duplicated items in the list)
                     contract.forward_starting_options.forEach(option => {
                         forward_starting_options.push({
                             text : moment.unix(option.open).format('ddd - DD MMM, YYYY'),
@@ -136,12 +137,6 @@ const ContractType = (() => {
                 delete available_categories[key];
             }
         });
-
-        if (store.contract_type && store.contract_expiry_type) {
-            const contract_type = getContractType(available_categories, store.contract_type).contract_type;
-            return getContractValues(contract_type, store.contract_expiry_type);
-        }
-        return {};
     });
 
     const getContractValues = (contract_type, contract_expiry_type) => {
@@ -157,8 +152,6 @@ const ContractType = (() => {
             ...obj_start_dates,
             ...obj_start_type,
             ...obj_barrier,
-            contract_type,
-            contract_types_list: available_categories,
         };
     };
 

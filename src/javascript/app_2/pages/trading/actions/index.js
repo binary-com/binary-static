@@ -14,7 +14,7 @@ useStrict(true);
 
 const reaction_disposers = [];
 
-const defaultExports = { ...ContractType, ...Currency, ...Duration, ...Symbol, ...Test, ...StartDate };
+const defaultExports = { ...ContractType, ...Currency, ...Duration, ...Symbol, ...StartDate, ...Test };
 
 export const initActions = (store) => {
     Object.keys(defaultExports).forEach((methodName) => {
@@ -39,20 +39,7 @@ export const initActions = (store) => {
         }
     });
 
-    // const combine = asyncAction('symbol.wrapper', function* () {
-    //     const snapshot = cloneObject(store);
-    //     const new_state = {};
-    //     Object.assign(new_state, yield asyncAction('symbol', Symbol.onChangeSymbolAsync)(snapshot));
-    //     Object.assign(new_state, ContractType.onChangeContractTypeList(Object.assign(snapshot, new_state)));
-    //     Object.assign(new_state, ContractType.onChangeContractType(Object.assign(snapshot, new_state)));
-    //
-    //     Object.keys(new_state).forEach((key) => {
-    //         store[key] = new_state[key];
-    //     });
-    // });
-
     const reaction_map = {
-        // symbol             : combine,
         symbol             : defaultExports.onChangeSymbolAsync,
         contract_types_list: defaultExports.onChangeContractTypeList,
         contract_type      : defaultExports.onChangeContractType,
