@@ -16,7 +16,7 @@ class InputField extends React.PureComponent {
                     step={this.props.is_currency ? '0.01' : undefined}
                     placeholder={this.props.placeholder || undefined}
                     disabled={this.props.is_disabled}
-                    defaultValue={this.props.value}
+                    value={this.props.value}
                     onChange={this.props.onChange}
                     required={this.props.required || undefined}
                 />

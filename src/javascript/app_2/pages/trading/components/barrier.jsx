@@ -15,20 +15,18 @@ const Barrier = ({
         tooltip={localize('Text for Barriers goes here.')}
     >
         <InputField
-            type='number'
+            type='text'
             name='barrier_1'
             value={barrier_1}
             onChange={onChange}
-            is_currency
         />
 
         {!!barrier_2 &&
             <InputField
-                type='number'
+                type='text'
                 name='barrier_2'
                 value={barrier_2}
                 onChange={onChange}
-                is_currency
             />
         }
     </Fieldset>
