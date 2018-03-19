@@ -236,12 +236,8 @@ class TimePicker extends PureComponent {
     };
 
     handleChange = (arg) => {
-        let value = arg;
         // To handle nativepicker;
-        if (typeof value === 'object') {
-            const e = arg;
-            value = this.converTo12h(e.target.value);
-        }
+        const value = typeof arg === 'object' ? this.convertTo12h(arg.target.value) : arg;
 
         if (value !== this.props.value) {
             this.props.onChange({ target: { name: this.props.name, value } });
@@ -273,9 +269,9 @@ class TimePicker extends PureComponent {
             return `${hour%12 ? +hour+12 : '12'}:${minute}`;
         }
         return `${hour%12 ? hour : '00'}:${minute}`;
-    }
+    };
 
-    converTo12h = (value) => {
+    convertTo12h = (value) => {
         if (!value) return '';
         const [hour, minute] = value.split(':');
         const meridiem = +hour >= 12 ? 'pm' : 'am';
@@ -284,7 +280,7 @@ class TimePicker extends PureComponent {
         }
 
         return `${+hour === 0 ? 12 : hour}:${minute} ${meridiem}`;
-    }
+    };
 
     render() {
         const prefix_class='time-picker';
