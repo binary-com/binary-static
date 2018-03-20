@@ -254,6 +254,7 @@ const texts = [
     // top_up_virtual
     'Sorry, this feature is available to virtual accounts only.',
     '[_1] [_2] has been credited into your virtual account: [_3].',
+    'You can only request additional funds if your virtual account balance falls below USD 1,000.00.',
 
     // self_exclusion
     'years',

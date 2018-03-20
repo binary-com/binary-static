@@ -17,7 +17,7 @@ const TopUpVirtual = (() => {
 
         BinarySocket.send({ topup_virtual: '1' }).then((response) => {
             if (response.error) {
-                showMessage(localize(response.error.message), false);
+                showMessage(localize('You can only request additional funds if your virtual account balance falls below USD 1,000.00.'), false);
             } else {
                 showMessage(
                     localize('[_1] [_2] has been credited into your virtual account: [_3].', [
