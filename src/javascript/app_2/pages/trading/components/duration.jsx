@@ -74,6 +74,7 @@ const Duration = ({
                                 name='duration'
                                 value={duration}
                                 onChange={onChange}
+                                is_nativepicker={is_nativepicker}
                             />
                         }
                         <Dropdown

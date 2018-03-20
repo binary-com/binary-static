@@ -50,6 +50,7 @@ const Amount = ({
                     onChange={onChange}
                     is_currency
                     prefix={currency}
+                    is_nativepicker={is_nativepicker}
                 />
             </div>
 
