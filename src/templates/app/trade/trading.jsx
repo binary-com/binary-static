@@ -24,6 +24,7 @@ const Trading = () => (
                 <div id='contract_markets_container'>
                     <div id='underlying_2' />
                     <select id='contract_markets' />
+                    <div id='contracts_2' />
                 </div>
                 <div>
                     <select id='underlying' />

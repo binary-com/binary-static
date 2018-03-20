@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Underlying extends React.Component {
+class ContractTypes extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
@@ -18,9 +18,9 @@ class Underlying extends React.Component {
     }
 }
 
-export const init = (underlying, market) => {
+export const init = (contracts, market) => {
     ReactDOM.render(
-        <Underlying market={market} underlying={underlying} />,
-        document.getElementById('contracts_2')
+        <ContractTypes market={market} contracts={contracts} />,
+        document.getElementById('underlying_2')
     );
 };
