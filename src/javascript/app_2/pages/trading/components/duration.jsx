@@ -36,7 +36,10 @@ const Duration = ({
     }
     if (is_minimized) {
         return (
-            <div>Duration: {duration} {duration_unit}</div>
+            <div className='fieldset-minimized'>
+                <span className='field-info icon trade-duration' />
+                duration here
+            </div>
         );
     }
     return (

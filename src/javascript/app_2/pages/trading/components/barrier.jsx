@@ -12,7 +12,10 @@ const Barrier = ({
 }) =>  {
     if (is_minimized) {
         return (
-            <div>Barrier: {barrier_1} {!!barrier_2 && barrier_2}</div>
+            <div className='fieldset-minimized'>
+                <span className='field-info icon start-time' />
+                barrier here
+            </div>
         );
     }
     return (
