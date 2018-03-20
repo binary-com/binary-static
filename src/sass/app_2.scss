@@ -1,4 +1,5 @@
-@import '_common/base/constants';
+@import 'app_2/_common/base/constants';
+@import 'app_2/_common/base/common';
 
 @import 'app_2/_common/layouts';
 @import 'app_2/_common/symbols';
@@ -20,5 +21,6 @@
 @import 'app_2/_common/portfolio_drawer';
 @import 'app_2/_common/popover';
 @import 'app_2/_common/tooltip';
+@import 'app_2/_common/loading';
 
 @import 'app_2/trading';

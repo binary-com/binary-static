@@ -176,6 +176,10 @@ const createContextBuilder = async () => {
 
     return {
         buildFor: (model) => {
+            // TODO: remove exception and do according to the section instead
+            if (/^trade$/.test(model.current_path)) {
+                extra.css_files = extra.css_files.filter(f => /app_2/.test(f));
+            }
             const translator = createTranslator(model.language);
             return Object.assign({}, extra, model, {
                 L: (text, ...args) => {

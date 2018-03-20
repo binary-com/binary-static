@@ -9,6 +9,7 @@
     white-space: nowrap;
     padding: 0 15px;
     margin: 16px;
+    border: 0;
     border-radius: 4px;
     text-transform: uppercase;
     height: 40px;
@@ -16,7 +17,7 @@
     outline: 0;
     position: relative;
     color: rgba(0, 0, 0, 0.65);
-    background: $positiveColor;
+    background: $COLOR_GREEN;
 
     &:not([disabled]):hover {
         text-decoration: none;
@@ -129,7 +130,7 @@
         bottom: -1px;
         right: -1px;
         border-radius: inherit;
-        border: 0 solid $primaryBrandColor;
+        border: 0 solid $COLOR_BLUE;
         opacity: 0.4;
         animation: buttonEffect 0.4s;
         animation-fill-mode: forwards;

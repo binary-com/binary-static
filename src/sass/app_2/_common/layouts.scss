@@ -10,7 +10,11 @@
         grid-template-rows: repeat(2, [row] auto);
         grid-gap: 20px;
 
-        .chart-container, .sidebar-container {
+        .chart-container {
+            padding: 10px;
+            position: relative;
+        }
+        .sidebar-container {
             position: relative;
         }
         & > * {
