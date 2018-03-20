@@ -4,8 +4,7 @@ import { connect } from '../../store/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (
     <Popover
-        title='Open positions'
-        subtitle='Toggle Portfolio Quick Menu to view current running portfolio'
+        subtitle='Toggle Portfolio'
     >
         <a
             href='javascript:;'
@@ -59,7 +58,7 @@ class ToggleFullScreen extends React.Component {
     render() {
         return (
             <Popover
-                subtitle='Toggle fullscreen'
+                subtitle='Toggle Fullscreen'
                 alignment='top-right'
             >
                 <a
