@@ -21,6 +21,7 @@ $content-index: 1;
     opacity: 0;
     pointer-events: none;
     transition: opacity $animation-duration;
+    background: #fff;
     // transform here would break fixed header
 
     &--open {
@@ -39,7 +40,6 @@ $content-index: 1;
         position: relative;
         padding-top: $shadow-cover-height;
         z-index: $content-index;
-        min-height: 100%;
         background: #fff;
         transform: scale(0);
         transition: all $animation-duration ease-out;
