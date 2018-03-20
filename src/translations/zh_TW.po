@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-14 22:17-0400\n"
+"PO-Revision-Date: 2018-03-19 23:26-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -2715,11 +2715,11 @@ msgstr "在下方存款或提款"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "通過銀行電匯、信用卡或電子現金錢包存款進入您的帳戶或提款。"
 
+msgid "Deposit: %1 blockchain confirmations"
+msgstr "存款： %1區塊鏈確認"
+
 msgid "Deposit: %1 working day"
 msgstr "存款：%1工作日內"
-
-msgid "Deposit: 3 blockchain confirmations"
-msgstr "存款： 3 程序塊鏈確認"
 
 msgid "Deposit: Instant"
 msgstr "存款：即時"
@@ -3567,6 +3567,9 @@ msgstr "遵守法律和以下條款"
 msgid "Follow up on rejected deposits"
 msgstr "被拒絕存款的跟進"
 
+msgid "Following file(s) were already uploaded: %1"
+msgstr "以下文檔已上載: %1"
+
 msgid "For Browser"
 msgstr "用於瀏覽器"
 
@@ -3855,11 +3858,11 @@ msgstr "前往\"<strong>Chrome 功能表 (自訂與控制Google Chrome)</strong>
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "前往MetaTrader 5 儀表板"
 
-msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
-msgstr "前往 <a href=\"https://login.binary.com/password-retrieve.php\">密碼找回頁面</a>，在提供的表格中輸入您的使用者名稱和電郵地址，我們將通過電郵把密碼傳送給您。"
+msgid "Go to the %1password retrieval page%2, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
+msgstr "前往%1密碼找回頁面%2，在提供的表格中輸入您的使用者名稱和電郵地址，我們將通過電郵把密碼傳送給您。"
 
-msgid "Go to the <a href=\"https://login.binary.com/signup.php\">sign up page</a> to register as an affiliate today."
-msgstr "前往<a href=\"https://login.binary.com/signup.php\">註冊頁面</a>成為聯盟會員。"
+msgid "Go to the %1sign up page%2 to register as an affiliate today."
+msgstr "前往%1註冊頁面%2成為聯盟會員。"
 
 msgid "Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>."
 msgstr "前往<strong>進一步操作</strong>選項卡並選擇<strong>設定</strong>。"
@@ -6026,6 +6029,9 @@ msgstr "最小"
 
 msgid "Min / Max withdrawal"
 msgstr "最小/最大取款金額"
+
+msgid "Min Deposit"
+msgstr "最小存款金額"
 
 msgid "Min Withdrawal"
 msgstr "最小提款金額"
@@ -10745,9 +10751,6 @@ msgstr "自您的真實帳戶提出基金幣種必須與二元期權真實帳戶
 
 msgid "Withdrawal: %1 working day"
 msgstr "取款：%1 個工作日"
-
-msgid "Withdrawal: Not Applicable"
-msgstr "取款：不適用"
 
 msgid "Withdrawal: Not applicable"
 msgstr "取款：不適用"
