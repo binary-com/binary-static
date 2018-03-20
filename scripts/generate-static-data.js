@@ -506,7 +506,7 @@ const texts = [
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',
-    'The main password of account number [_1] has been changed.',
+    'The [_1] password of account number [_2] has been changed.',
     '[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]',
     '[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]',
     'Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.',

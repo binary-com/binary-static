@@ -219,6 +219,14 @@
                     color: $COLOR_GRAY_SHADE;
                 }
             }
+            #frm_manage_password {
+                .password-account {
+                    display: block;
+                }
+                #token_error {
+                    margin-bottom: 10px;
+                }
+            }
             .type-group {
                 .mt5_type_box {
                     width: 88px;

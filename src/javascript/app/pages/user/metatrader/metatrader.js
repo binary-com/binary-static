@@ -96,10 +96,7 @@ const MetaTrader = (() => {
 
     const getDefaultAccount = () => {
         let default_account = '';
-        if (hasAccount(location.hash.substring(1))) {
-            default_account = location.hash.substring(1);
-            MetaTraderUI.removeUrlHash();
-        } else if (hasAccount(Client.get('mt5_account'))) {
+        if (hasAccount(Client.get('mt5_account'))) {
             default_account = Client.get('mt5_account');
         } else {
             default_account = Object.keys(accounts_info)
@@ -133,11 +130,13 @@ const MetaTrader = (() => {
             }
         });
 
-        // set main command
-        req[`mt5_${action}`] = 1;
+        if (action !== 'verify_password_reset') {
+            // set main command
+            req[`mt5_${action}`] = 1;
+        }
 
         // add additional fields
-        $.extend(req, fields[action].additional_fields(acc_type));
+        $.extend(req, fields[action].additional_fields(acc_type, MetaTraderUI.getToken()));
 
         return req;
     };
@@ -153,7 +152,7 @@ const MetaTrader = (() => {
             // further validations before submit (password_check)
             MetaTraderUI.postValidate(acc_type, action).then((is_ok) => {
                 if (!is_ok) {
-                    MetaTraderUI.enableButton(action);
+                    MetaTraderUI.enableButton(action, is_ok);
                     return;
                 }
 
@@ -178,7 +177,7 @@ const MetaTrader = (() => {
                             actions_info[action].onSuccess(response, acc_type);
                         }
                     }
-                    MetaTraderUI.enableButton(action);
+                    MetaTraderUI.enableButton(action, !('error' in response));
                 });
             });
         }

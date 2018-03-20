@@ -5,6 +5,7 @@ const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
+const getHashValue     = require('../../../../_common/url').getHashValue;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 const template         = require('../../../../_common/utility').template;
@@ -20,12 +21,14 @@ const MetaTraderUI = (() => {
         $form,
         $main_msg,
         validations,
-        submit;
+        submit,
+        token;
 
     const accounts_info = MetaTraderConfig.accounts_info;
     const actions_info  = MetaTraderConfig.actions_info;
 
     const init = (submit_func) => {
+        token        = getHashValue('token');
         submit       = submit_func;
         $container   = $('#mt_account_management');
         $mt5_account = $container.find('#mt5_account');
@@ -188,7 +191,8 @@ const MetaTraderUI = (() => {
     const defaultAction = acc_type => {
         let type = 'new_account';
         if (accounts_info[acc_type].info) {
-            type = accounts_info[acc_type].is_demo ? 'password_change' : 'cashier';
+            type = (accounts_info[acc_type].is_demo || Client.get('is_virtual') || getHashValue('token')) ? 'manage_password' : 'cashier';
+            removeUrlHash(); // only load manage_password section on first page load if token in url, after that remove it from url
         }
         return type;
     };
@@ -217,8 +221,15 @@ const MetaTraderUI = (() => {
             $action.find('#frm_action').html($form).setVisibility(1).end()
                 .setVisibility(1);
 
-            if (action === 'password_change') {
-                $form.find('label[for*="_password"]').append(` (${localize('for MT5 Account')} ${accounts_info[acc_type].info.login})`);
+            if (action === 'manage_password') {
+                $form.find('.password-account').append(` ${localize('for MT5 account')} ${accounts_info[acc_type].info.login}`);
+                if (!token) {
+                    $form.find('#frm_verify_password_reset').setVisibility(1);
+                } else if (!Validation.validEmailToken(token)) {
+                    $form.find('#frm_verify_password_reset').find('#token_error').setVisibility(1).end().setVisibility(1);
+                } else {
+                    $form.find('#frm_password_reset').setVisibility(1);
+                }
             }
 
             $form.find('button[type="submit"]').each(function() { // cashier has two different actions
@@ -231,12 +242,12 @@ const MetaTraderUI = (() => {
             handleNewAccountUI(action, acc_type, $target);
         };
 
-        if (action === 'new_account') {
+        if (/^manage_password|new_account$/.test(action)) {
             cloneForm();
             return;
         }
 
-        if (!actions_info[action]) { // Manage Fund
+        if (action === 'cashier') { // Manage Fund
             cloneForm();
             $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
             $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
@@ -456,10 +467,14 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const enableButton = (action) => {
+    const enableButton = (action, is_response_successful) => {
         const $btn = actions_info[action].$form.find('button');
         if ($btn.length && $btn.find('.barspinner').length) {
             $btn.removeAttr('disabled').html($btn.find('span').text());
+        }
+        // after submit is done, reset token value
+        if (action === 'verify_password_reset' || (is_response_successful && action === 'password_reset')) {
+            token = '';
         }
     };
 
@@ -469,7 +484,6 @@ const MetaTraderUI = (() => {
         loadAction,
         updateAccount,
         postValidate,
-        removeUrlHash,
         hideFormMessage,
         displayFormMessage,
         displayMainMessage,
@@ -477,7 +491,8 @@ const MetaTraderUI = (() => {
         disableButton,
         enableButton,
 
-        $form: () => $form,
+        $form   : () => $form,
+        getToken: () => token,
     };
 })();
 

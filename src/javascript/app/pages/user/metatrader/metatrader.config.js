@@ -57,8 +57,16 @@ const MetaTraderConfig = (() => {
         },
         password_change: {
             title        : localize('Change Password'),
-            success_msg  : response => localize('The main password of account number [_1] has been changed.', [response.echo_req.login]),
+            success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]),
             prerequisites: () => new Promise(resolve => resolve('')),
+        },
+        password_reset: {
+            title      : localize('Reset Password'),
+            success_msg: response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]),
+        },
+        verify_password_reset: {
+            title      : localize('Verify Reset Password'),
+            success_msg: () => localize('Please check your email for further instructions.'),
         },
         deposit: {
             title      : localize('Deposit'),
@@ -150,12 +158,30 @@ const MetaTraderConfig = (() => {
                     } : {})),
         },
         password_change: {
+            ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type' },
             txt_old_password   : { id: '#txt_old_password', request_field: 'old_password' },
             txt_new_password   : { id: '#txt_new_password', request_field: 'new_password' },
             txt_re_new_password: { id: '#txt_re_new_password' },
             additional_fields  :
                 acc_type => ({
                     login: accounts_info[acc_type].info.login,
+                }),
+        },
+        password_reset: {
+            ddl_password_type  : { id: '#ddl_reset_password_type', request_field: 'password_type' },
+            txt_new_password   : { id: '#txt_reset_new_password', request_field: 'new_password' },
+            txt_re_new_password: { id: '#txt_reset_re_new_password' },
+            additional_fields  :
+                (acc_type, token) => ({
+                    login            : accounts_info[acc_type].info.login,
+                    verification_code: token,
+                }),
+        },
+        verify_password_reset: {
+            additional_fields:
+                () => ({
+                    verify_email: Client.get('email'),
+                    type        : 'mt5_password_reset',
                 }),
         },
         deposit: {
@@ -185,9 +211,15 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
         ],
         password_change: [
+            { selector: fields.password_change.ddl_password_type.id,   validations: ['req'] },
             { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },
             { selector: fields.password_change.txt_new_password.id,    validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
             { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
+        ],
+        password_reset: [
+            { selector: fields.password_reset.ddl_password_type.id,   validations: ['req'] },
+            { selector: fields.password_reset.txt_new_password.id,    validations: ['req', ['password', 'mt']], re_check_field: fields.password_reset.txt_re_new_password.id },
+            { selector: fields.password_reset.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_reset.txt_new_password.id }]] },
         ],
         deposit: [
             { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: 1, max: Math.min(State.getResponse('get_limits.remainder') || 20000, 20000), decimals: 2 }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
