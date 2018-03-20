@@ -10,7 +10,7 @@ const Register = ({ lang = 'en' }) => {
             </div>
 
             <div className='center-text gr-padding-10'>
-                <a className='button' href={`https://login.binary.com/signup.php${language_is_ja ? '?lang=13' : ''}`}>
+                <a className='button' href={it.affiliate_signup_url}>
                     <span>{language_is_ja ? it.L('{JAPAN ONLY}Sign me up') : it.L('Sign me up')}</span>
                 </a>
             </div>
