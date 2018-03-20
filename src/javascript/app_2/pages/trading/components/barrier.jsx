@@ -19,29 +19,29 @@ const Barrier = ({
         );
     }
     return (
-    <Fieldset
-        header={localize(barrier_2 ? 'High barrier' : 'Barrier')}
-        icon='barriers'
-        tooltip={localize('Text for Barriers goes here.')}
-    >
-        <InputField
-            type='number'
-            name='barrier_1'
-            value={barrier_1}
-            onChange={onChange}
-            is_currency
-        />
-
-        {!!barrier_2 &&
+        <Fieldset
+            header={localize(barrier_2 ? 'High barrier' : 'Barrier')}
+            icon='barriers'
+            tooltip={localize('Text for Barriers goes here.')}
+        >
             <InputField
                 type='number'
-                name='barrier_2'
-                value={barrier_2}
+                name='barrier_1'
+                value={barrier_1}
                 onChange={onChange}
                 is_currency
             />
-        }
-    </Fieldset>
+
+            {!!barrier_2 &&
+                <InputField
+                    type='number'
+                    name='barrier_2'
+                    value={barrier_2}
+                    onChange={onChange}
+                    is_currency
+                />
+            }
+        </Fieldset>
     );
 };
 

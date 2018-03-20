@@ -137,10 +137,10 @@ const Contracts = ({
             value={contract.value}
             onClick={handleSelect.bind(null, contract)}
         >
-                <i className={`contract-icon ic-${contract.value}${value === contract.value ? '' : '--invert'}`} />
-                <span className='contract-title'>
-                    {contract.text}
-                </span>
+            <i className={`contract-icon ic-${contract.value}${value === contract.value ? '' : '--invert'}`} />
+            <span className='contract-title'>
+                {contract.text}
+            </span>
         </div>
     ))
 );

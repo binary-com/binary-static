@@ -1,7 +1,7 @@
 import React from 'react';
 
 class InputField extends React.PureComponent {
-    handleFocus(e) {
+    handleFocus = (e) => {
         // mobile soft keyboard covers input in chrome
         const el = e.target;
         window.setTimeout(() => {

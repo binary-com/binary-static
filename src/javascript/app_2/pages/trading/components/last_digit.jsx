@@ -24,19 +24,19 @@ const LastDigit = ({
         );
     }
     return (
-    <Fieldset
-        header={localize('Last Digit Prediction')}
-        icon='digits'
-        tooltip={localize('Text for Last Digits goes here.')}
-    >
-        <Dropdown
-            list={last_digit_numbers}
-            value={last_digit}
-            name='last_digit'
-            onChange={onChange}
-            is_nativepicker={is_nativepicker}
-        />
-    </Fieldset>
+        <Fieldset
+            header={localize('Last Digit Prediction')}
+            icon='digits'
+            tooltip={localize('Text for Last Digits goes here.')}
+        >
+            <Dropdown
+                list={last_digit_numbers}
+                value={last_digit}
+                name='last_digit'
+                onChange={onChange}
+                is_nativepicker={is_nativepicker}
+            />
+        </Fieldset>
     );
 };
 
