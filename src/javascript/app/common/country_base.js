@@ -16,7 +16,7 @@ const checkClientsCountry = () => {
         // only limitLanguage for japanese if ip address is from japan and client is logged out or logged in with jp residence
         if (clients_country === 'jp' && (!LocalStore.get('active_loginid') || jpResidence())) {
             limitLanguage('JA');
-        } else if (clients_country === 'id') {
+        } else if (clients_country === 'id' && !/^(iom|malta|maltainvest)$/.test(getClientInfo().landing_company_shortcode)) {
             limitLanguage('ID');
         } else {
             createLanguageDropDown(website_status);
@@ -37,7 +37,9 @@ const limitLanguage = (lang) => {
 
 const jpClient = () => (Language.get() === 'JA' || jpResidence());
 
-const jpResidence = () => (LocalStore.getObject('client.accounts')[LocalStore.get('active_loginid')] || {}).residence === 'jp';
+const getClientInfo = () => (LocalStore.getObject('client.accounts')[LocalStore.get('active_loginid')] || {});
+
+const jpResidence = () => getClientInfo().residence === 'jp';
 
 const checkLanguage = () => {
     if (Language.get() === 'ID') {
