@@ -11,7 +11,6 @@ const Price                 = require('./price');
 const Process               = require('./process');
 const Purchase              = require('./purchase');
 const Tick                  = require('./tick');
-const BinaryPjax            = require('../../base/binary_pjax');
 const GTM                   = require('../../base/gtm');
 const BinarySocket          = require('../../base/socket');
 const getDecimalPlaces      = require('../../common/currency').getDecimalPlaces;
@@ -73,6 +72,7 @@ const TradingEvents = (() => {
             Defaults.remove('formname');
             Defaults.remove('underlying');
             Process.processMarket();
+            CommonTrading.displayTooltip();
         };
 
         getElementById('contract_markets').addEventListener('change', (e) => {
@@ -128,7 +128,6 @@ const TradingEvents = (() => {
 
                 // get ticks for current underlying
                 GetTicks.request(underlying);
-                CommonTrading.displayTooltip();
             }
         });
 
@@ -435,10 +434,6 @@ const TradingEvents = (() => {
 
         getElementById('trading_init_progress').addEventListener('click', CommonTrading.debounce(() => {
             CommonTrading.reloadPage();
-        }));
-
-        getElementById('symbol_tip').addEventListener('click', CommonTrading.debounce((e) => {
-            BinaryPjax.load(e.target.getAttribute('target'));
         }));
     };
 
