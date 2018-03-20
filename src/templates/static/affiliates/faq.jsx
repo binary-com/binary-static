@@ -57,12 +57,12 @@ const FAQ = () => (
             <h2>{it.L('Account Management and Tracking')}</h2>
             <div className='gr-padding-20 gr-parent'>
                 <h3>{it.L('How can I become an affiliate?')}</h3>
-                <p>{it.L('Go to the <a href="https://login.binary.com/signup.php">sign up page</a> to register as an affiliate today.', it.broker_name)}</p>
+                <p>{it.L('Go to the [_1]sign up page[_2] to register as an affiliate today.', `<a href="${it.affiliate_signup_url}">`, '</a>')}</p>
             </div>
 
             <div className='gr-padding-20 gr-parent'>
                 <h3>{it.L('I forgot my password, what should I do?')}</h3>
-                <p>{it.L('Go to the <a href="https://login.binary.com/password-retrieve.php">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you.')}</p>
+                <p>{it.L('Go to the [_1]password retrieval page[_2], and enter your username and e-mail address in the form fields provided to have your password e-mailed to you.', `<a href="${it.affiliate_password_url}">`, '</a>')}</p>
             </div>
 
             <div className='gr-padding-20 gr-parent'>
