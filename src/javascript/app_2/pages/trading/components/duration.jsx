@@ -36,7 +36,7 @@ const Duration = ({
     }
     if (is_minimized) {
         return (
-            <div>Duration: {duration}</div>
+            <div>Duration: {duration} {duration_unit}</div>
         );
     }
     return (
@@ -57,7 +57,7 @@ const Duration = ({
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
-                        {duration_unit === 'd' ?
+                        {duration_unit === 'd' && !is_nativepicker ?
                             <Datepicker
                                 name='duration'
                                 minDate={min_date_duration}
