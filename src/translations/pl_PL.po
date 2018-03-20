@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-14 22:17-0400\n"
+"PO-Revision-Date: 2018-03-19 23:26-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -1098,7 +1098,7 @@ msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "Analizuj i testuj domeny i poddomeny wymienione w zakresie zadań."
 
 msgid "Analyse the financial markets using beautiful visualisations and unique trading tools, powered by a fast and intuitive interface."
-msgstr ""
+msgstr "Analizuj rynki finansowe korzystając z wizualizacji i unikatowych narzędzi do handlowania obsługiwanych przez nasz szybki i intuicyjny interfejs."
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "Analizuj rynki, korzystając z szerokiej gamy wskaźników, poziomów cenowych oraz nakładek."
@@ -2721,11 +2721,11 @@ msgstr "Wpłaty lub wypłaty poniżej"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Wpłaty i wypłaty na Twoje konto za pośrednictwem przelewu bankowego, karty kredytowej lub e-gotówki."
 
+msgid "Deposit: %1 blockchain confirmations"
+msgstr "Wpłata: potwierdzenia blockchain w liczbie %1"
+
 msgid "Deposit: %1 working day"
 msgstr "Wpłata: %1 dzień roboczy"
-
-msgid "Deposit: 3 blockchain confirmations"
-msgstr "Wpłata: 3 potwierdzenia blockchain"
 
 msgid "Deposit: Instant"
 msgstr "Wpłata: błyskawiczna"
@@ -3573,6 +3573,9 @@ msgstr "Przestrzeganie prawa i niniejszego regulaminu"
 msgid "Follow up on rejected deposits"
 msgstr "Sprawdzanie niezrealizowanych wpłat środków"
 
+msgid "Following file(s) were already uploaded: %1"
+msgstr "Następujące pliki zostały już przesłane: %1"
+
 msgid "For Browser"
 msgstr "Dla przeglądarki"
 
@@ -3861,11 +3864,11 @@ msgstr "Przejdź do rozwijanego \"<strong>Menu Chrome (Dostosowywanie i kontrolo
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "Przejdź do pulpitu MetaTrader 5"
 
-msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
-msgstr "Przejdź do <a href=\"https://login.binary.com/password-retrieve.php\">strony odzyskiwania hasła</a> i wpisz swoją nazwę użytkownika i adres e-mail w formularzu, aby otrzymać hasło drogą e-mailową."
+msgid "Go to the %1password retrieval page%2, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
+msgstr "Przejdź do %1strony odzyskiwania hasła%2 i wpisz swoją nazwę użytkownika i adres e-mail w formularzu, aby otrzymać hasło drogą e-mailową."
 
-msgid "Go to the <a href=\"https://login.binary.com/signup.php\">sign up page</a> to register as an affiliate today."
-msgstr "Przejdź do <a href=\"https://login.binary.com/signup.php\">strony rejestracji</a>, aby zarejestrować się jako partner już dziś."
+msgid "Go to the %1sign up page%2 to register as an affiliate today."
+msgstr "Przejdź do strony %1rejestracji%2, aby zarejestrować się jako partner już dziś."
 
 msgid "Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>."
 msgstr "Przejdź do menu <strong>Więcej czynności</strong>, po czym wybierz opcję <strong>Ustawienia</strong>."
@@ -4702,7 +4705,7 @@ msgid "Intellectual Property Rights"
 msgstr "Prawa własności intelektualnej"
 
 msgid "Interactive charting tool"
-msgstr ""
+msgstr "Interaktywne narzędzia do tworzenia wykresów"
 
 msgid "Interactive webinars"
 msgstr "Interaktywne webinaria"
@@ -5338,7 +5341,7 @@ msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
 msgid "Japanese Ladders"
-msgstr ""
+msgstr "Drabiny japońskie"
 
 msgid "Job Details"
 msgstr "Opis stanowiska"
@@ -6033,6 +6036,9 @@ msgstr "Min."
 msgid "Min / Max withdrawal"
 msgstr "Min./maks. wypłata"
 
+msgid "Min Deposit"
+msgstr "Min. wpłata"
+
 msgid "Min Withdrawal"
 msgstr "Minimalna wypłata"
 
@@ -6184,7 +6190,7 @@ msgid "Multi-asset liquidity solutions"
 msgstr "Zarządzanie płynnością przy wykorzystaniu wielu aktywów"
 
 msgid "Multi-barrier trading"
-msgstr ""
+msgstr "Handlowanie z wieloma limitami"
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "Wsparcie w wielu językach i dla różnych walut"
@@ -8116,7 +8122,7 @@ msgid "Smallish changes – generally $20-50"
 msgstr "Małe zmiany – zazwyczaj 20-50 $"
 
 msgid "SmartCharts"
-msgstr ""
+msgstr "Wykresy Smart"
 
 msgid "SmartTrader"
 msgstr "SmartTrader"
@@ -8182,7 +8188,7 @@ msgid "Spot"
 msgstr "Cena aktualna"
 
 msgid "Spot Time"
-msgstr ""
+msgstr "Czas spot"
 
 msgid "Spot Time (GMT)"
 msgstr "Czas Spot (GMT)"
@@ -9565,7 +9571,7 @@ msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryp
 msgstr "Handluj parami Bitcoin, Ethereum i Litecoin, nie posiadając ich. Nasze kwotowania par kryptowalut uwzględniają m.in. kryptowalutę Bitcoin oraz walutę fiducjarną, taką jak dolar amerykański."
 
 msgid "Trade FX binary options on our multi-barrier platform, designed to fully comply with Japanese regulations."
-msgstr ""
+msgstr "Handluj opcjami FX na naszej platformie z opcją ustawienia wielu limitów, stworzonej w celu sprostania wymogom japońskich regulacji."
 
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "Handluj kontraktami na różnice kursowe oraz na rynku Forex na naszej popularnej platformie z wieloma aktywami."
@@ -9781,7 +9787,7 @@ msgid "Try Binary Bot"
 msgstr "Wypróbuj Binary Bot"
 
 msgid "Try SmartCharts"
-msgstr ""
+msgstr "Wypróbuj wykresy Smart"
 
 msgid "Try TradingView"
 msgstr "Wypróbuj widok handlowy (TradingView)"
@@ -10432,7 +10438,7 @@ msgid "We’re projected to register over 197 million transactions this year, br
 msgstr "W tym roku spodziewamy się zarejestrować ponad 197 mln transakcji, co da łączną liczbę kupionych i sprzedanych kontraktów na naszej platformie od momentu założenia firmy wynoszącą 789 mln."
 
 msgid "We’ve grown in size over the years –– both in terms of manpower and offices. We currently have over 150 employees across four offices in Malaysia, Malta, and Japan. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr ""
+msgstr "W ciągu ostatnich lat nasza firma rozwinęła się, biorąc pod uwagę zarówno liczbę pracowników, jak i liczbę biur. Obecnie zatrudniamy ponad 150 osób w naszych czterech biurach w Malezji, Japonii i na Malcie. W tym roku spodziewamy się dalszego wzrostu liczny pracowników, który pozwoli nam obsłużyć rosnący popyt na nasze produkty i usługi."
 
 msgid "What about instant execution? In this case, your order is placed at the price that’s available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr "Jak to wygląda w przypadku realizacji natychmiastowej? W tym przypadku Twoje zlecenie jest składane po cenie dostępnej w danej chwili. Możliwe są ponowne przeliczenia ceny, jeśli cena zmieni się znacznie przed zakończeniem realizacji zlecenia."
@@ -10751,9 +10757,6 @@ msgstr "Wypłaty środków z Twojego Prawdziwego konta muszą być dokonywane w 
 
 msgid "Withdrawal: %1 working day"
 msgstr "Wypłata: %1 dzień roboczy"
-
-msgid "Withdrawal: Not Applicable"
-msgstr "Wypłata: nie dotyczy"
 
 msgid "Withdrawal: Not applicable"
 msgstr "Wypłata: nie dotyczy"
