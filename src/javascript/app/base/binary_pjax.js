@@ -163,7 +163,11 @@ const BinaryPjax = (() => {
         $(params.container).append($(content.content).clone());
 
         params.container.dispatchEvent(new CustomEvent('binarypjax:after', { detail: content.content }));
-        $.scrollTo('body', 500);
+
+        const query_params = Url.paramsHash();
+        if (!query_params.anchor) {
+            $.scrollTo('body', 500);
+        }
     };
 
     const cachePut = (url, content) => {
