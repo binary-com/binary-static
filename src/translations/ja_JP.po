@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-14 22:16-0400\n"
+"PO-Revision-Date: 2018-03-19 23:26-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -2732,11 +2732,11 @@ msgstr "入手金はしたの欄から"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "銀行振込によりお客さまのJPY口座に入出金を行います"
 
+msgid "Deposit: %1 blockchain confirmations"
+msgstr "ご入金：%1ブロックチェーン認証"
+
 msgid "Deposit: %1 working day"
 msgstr "ご入金: %1営業日"
-
-msgid "Deposit: 3 blockchain confirmations"
-msgstr "ご入金：3段認証"
 
 msgid "Deposit: Instant"
 msgstr "ご入金：即時"
@@ -3584,6 +3584,9 @@ msgstr "法律および規約に従う"
 msgid "Follow up on rejected deposits"
 msgstr "拒否された入金のフォローアップ"
 
+msgid "Following file(s) were already uploaded: %1"
+msgstr "以下のファイルはアップロード済みです：%1"
+
 msgid "For Browser"
 msgstr "ブラウザ用"
 
@@ -3872,11 +3875,11 @@ msgstr "\"<strong>Chromeメニュー（Google Chromeのカスタマイズ及び�
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "MetaTrader 5 ダッシュボードへいく"
 
-msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
-msgstr "<a href=\"https://login.binary.com/password-retrieve.php\">パスワード再発行ページ</a>へおすすみいただき、入力欄にパスワードを送信させていただくメールアドレスとユーザーネームをご入力ください。"
+msgid "Go to the %1password retrieval page%2, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
+msgstr "%1パスワード再発行ページ%2へおすすみいただき、入力欄にパスワードを受信するメールアドレスとユーザーネームをご入力ください。"
 
-msgid "Go to the <a href=\"https://login.binary.com/signup.php\">sign up page</a> to register as an affiliate today."
-msgstr "<a href=\"https://login.binary.com/signup.php\">会員登録ページ</a>から、アフィリエイトプログラムのご登録がすぐにできます。"
+msgid "Go to the %1sign up page%2 to register as an affiliate today."
+msgstr "%1会員登録ページ%2からすぐにアフィリエイトプログラムをご登録いただけます。"
 
 msgid "Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>."
 msgstr "<strong>その他の設定</strong>メニューの<strong>設定</strong>を選択してください。"
@@ -6056,6 +6059,9 @@ msgstr "最小"
 
 msgid "Min / Max withdrawal"
 msgstr "最小/最高 出金額"
+
+msgid "Min Deposit"
+msgstr "最小入金額"
 
 msgid "Min Withdrawal"
 msgstr "最小出金額"
@@ -10873,9 +10879,6 @@ msgstr "リアル口座から資金を出金するには、バイナリーオプ
 
 msgid "Withdrawal: %1 working day"
 msgstr "出金:%1営業日"
-
-msgid "Withdrawal: Not Applicable"
-msgstr "出金：該当なし"
 
 msgid "Withdrawal: Not applicable"
 msgstr "出金：該当なし"
