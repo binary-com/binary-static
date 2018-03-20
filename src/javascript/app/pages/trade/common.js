@@ -2,6 +2,7 @@ const Defaults           = require('./defaults');
 const Notifications      = require('./notifications');
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
+const underlyingElement  = require('./underlying.jsx');
 const formatMoney        = require('../../common/currency').formatMoney;
 const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
@@ -111,7 +112,7 @@ const commonTrading = (() => {
     const displayMarkets = (id, elements, selected) => {
         const target   = document.getElementById(id);
         const fragment = document.createDocumentFragment();
-
+        underlyingElement.init();
         while (target && target.firstChild) {
             target.removeChild(target.firstChild);
         }

@@ -22,6 +22,7 @@ const Trading = () => (
             <div className='client_virtual client_logged_out invisible' id='guideBtn' />
             <div className='row' id='contract_symbol_container'>
                 <div id='contract_markets_container'>
+                    <div id='underlying_2' />
                     <select id='contract_markets' />
                 </div>
                 <div>
