@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-14 22:18-0400\n"
+"PO-Revision-Date: 2018-03-19 23:27-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -2715,11 +2715,11 @@ msgstr "Deposit atau withdraw di bawah ini"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Deposit atau penarikan melalui bank-wire, kartu kredit atau wallet e-cash."
 
+msgid "Deposit: %1 blockchain confirmations"
+msgstr ""
+
 msgid "Deposit: %1 working day"
 msgstr "Deposit: %1 hari kerja"
-
-msgid "Deposit: 3 blockchain confirmations"
-msgstr "Deposit: konfirmasi 3 blokchain"
 
 msgid "Deposit: Instant"
 msgstr "Deposit: Langsung"
@@ -3567,6 +3567,9 @@ msgstr "Ikuti Hukum dan Syarat ini"
 msgid "Follow up on rejected deposits"
 msgstr "Menindaklanjuti deposito tertolak"
 
+msgid "Following file(s) were already uploaded: %1"
+msgstr ""
+
 msgid "For Browser"
 msgstr "Untuk Browser"
 
@@ -3855,11 +3858,11 @@ msgstr "Kunjungi pilihan menu \"<strong>Chrome Menu (Customize and control Googl
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "Kunjungi Dashboard MetaTrader 5"
 
-msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
-msgstr "Kunjungi <a href=\"https://login.binary.com/password-reset.php?lang=4\">halaman pengambilan kata sandi</a> dan masukkan nama pengguna beserta alamat email kedalam formulir yang tersedia dan kata sandi akan dikirimkan kedalam alamat email Anda."
+msgid "Go to the %1password retrieval page%2, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
+msgstr ""
 
-msgid "Go to the <a href=\"https://login.binary.com/signup.php\">sign up page</a> to register as an affiliate today."
-msgstr "Kunjungi <a href=\"https://login.binary.com/signup.php\">halaman daftar</a> untuk mendaftar sebagai afiliasi hari ini."
+msgid "Go to the %1sign up page%2 to register as an affiliate today."
+msgstr ""
 
 msgid "Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>."
 msgstr "Kunjungi menu <strong>More actions</strong> dan pilih <strong>Settings</strong>."
@@ -6026,6 +6029,9 @@ msgstr "Min"
 
 msgid "Min / Max withdrawal"
 msgstr "Penarikan min/mak"
+
+msgid "Min Deposit"
+msgstr ""
 
 msgid "Min Withdrawal"
 msgstr "Minimal Penarikan"
@@ -10746,9 +10752,6 @@ msgstr "Penarikan dana dari Akun Riil Anda harus menggunakan mata uang yang sama
 
 msgid "Withdrawal: %1 working day"
 msgstr "Penarikan: %1 hari kerja"
-
-msgid "Withdrawal: Not Applicable"
-msgstr "Penarikan: Tidak Tersedia"
 
 msgid "Withdrawal: Not applicable"
 msgstr "Penarikan: Tidak tersedia"
