@@ -1,5 +1,6 @@
 const moment       = require('moment');
 const localize     = require('../../../_common/localize').localize;
+const urlFor       = require('../../../_common/url').urlFor;
 const urlForStatic = require('../../../_common/url').urlForStatic;
 
 const KnowledgeTestUI = (() => {
@@ -93,7 +94,13 @@ const KnowledgeTestUI = (() => {
 
         const $date_row = $('<tr/>').append($('<td/>', { text: localize('Date') })).append($('<td/>', { text: submit_date }));
 
+        const $authenticate_button = $('<a />', {class: 'button', href: urlFor('/user/authenticate')}).append($('<span/>', {text: localize('Authenticate')}));
+
         $result_table.append($score_row).append($date_row);
+
+        if (score >= 14) { // passsing score.
+            $result_table.append($authenticate_button);
+        }
 
         return $result_table;
     };

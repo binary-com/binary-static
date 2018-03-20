@@ -25,8 +25,17 @@ const Authenticate = () => (
 
             <div id='success-message' className='center-text invisible'>
                 <SeparatorLine className='gr-padding-10' invisible />
-                <h2>{it.L('Thank you for submitting the required documents')}</h2>
-                <p>{it.L('We are reviewing your documents and will get back to you within one working day.')}</p>
+                <div className='ja-hide'>
+                    <h2>{it.L('Thank you for submitting the required documents')}</h2>
+                    <p>{it.L('We are reviewing your documents and will get back to you within one working day.')}</p>
+                </div>
+                <div className='invisible ja-show'>
+                    <h2>{it.L('Thank you for uploading your Identity Documents.')}</h2>
+                    <p>{it.L('Our Account Opening team will now review these and contact you by email. We are currently receiving many requests to open accounts but please be assured we will contact you again within 3 business days. Please check your spam folder if you haven\'t received anything from us by then.')}</p>
+                    <a className="button" href={it.url_for('trading')}>
+                        <span>{it.L('Practice trading')}</span>
+                    </a>
+                </div>
             </div>
 
             <p className='center-text notice-msg invisible' id='error_message' />

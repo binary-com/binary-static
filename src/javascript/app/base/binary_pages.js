@@ -66,7 +66,7 @@ const pages_config = {
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
     asset_indexws            : { module: AssetIndexUI },
-    authenticate             : { module: Authenticate,               is_authenticated: true, only_real: true },
+    authenticate             : { module: Authenticate,               is_authenticated: true},
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
     cashier                  : { module: Cashier },
     cashier_passwordws       : { module: CashierPassword,            is_authenticated: true, only_real: true },

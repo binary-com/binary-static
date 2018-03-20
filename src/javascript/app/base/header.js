@@ -152,10 +152,11 @@ const Header = (() => {
                 });
             };
 
-            const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
-            const upgrade_info      = Client.getUpgradeInfo();
-            const show_upgrade_msg  = upgrade_info.can_upgrade;
-            const virtual_text      = getElementById('virtual-text');
+            const jp_account_status  = State.getResponse('get_settings.jp_account_status.status');
+            const get_account_status = State.getResponse('get_account_status') || {};
+            const upgrade_info       = Client.getUpgradeInfo();
+            const show_upgrade_msg   = upgrade_info.can_upgrade;
+            const virtual_text       = document.getElementById('virtual-text');
 
             if (Client.get('is_virtual')) {
                 applyToAllElements(upgrade_msg, (el) => {
@@ -171,6 +172,8 @@ const Header = (() => {
                     const has_disabled_jp = jpClient() && Client.getAccountOfType('real').is_disabled;
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
+                    } else if (get_account_status.prompt_client_to_authenticate) {
+                        displayAccountStatus();
                     } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
                         applyToAllElements(upgrade_msg, (el) => { el.setVisibility(1); });
                         if (jp_account_status === 'jp_activation_pending' && !document.getElementsByClassName('activation-message')) {
@@ -314,7 +317,7 @@ const Header = (() => {
                 if (!notified) hideNotification();
             };
 
-            if (Client.get('is_virtual')) {
+            if (Client.get('is_virtual') && !jpClient()) {
                 checkStatus(check_statuses_virtual);
             } else {
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {

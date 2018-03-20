@@ -5,7 +5,7 @@ const State            = require('../../../../_common/storage').State;
 
 const Settings = (() => {
     const onLoad = () => {
-        BinarySocket.wait('get_account_status').then(() => {
+        BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             const $class_real = $('.real');
             const is_jp       = jpClient();
 
@@ -15,7 +15,11 @@ const Settings = (() => {
                 $class_real.not((is_jp ? '.ja-hide' : '')).setVisibility(1);
             }
 
-            const status = State.getResponse('get_account_status.status');
+            // Show ja-show options
+            $(is_jp ? '.ja-show' : '').setVisibility(1);
+
+            const get_account_status = State.getResponse('get_account_status');
+            const status             = State.getResponse('get_account_status.status');
             if (!/social_signup/.test(status)) {
                 $('#change_password').setVisibility(1);
             }
@@ -31,7 +35,7 @@ const Settings = (() => {
                 }
             }
 
-            if (!State.getResponse('get_account_status.prompt_client_to_authenticate')) {
+            if (!get_account_status.prompt_client_to_authenticate) {
                 $('#authenticate').setVisibility(0);
             }
 
