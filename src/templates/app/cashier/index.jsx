@@ -9,8 +9,8 @@ const DepositWithdraw = ({ ja_hide, ja_show, id, show_upgrade }) => {
         withdraw_url    = '/cashier/forwardws?action=withdraw';
         class_hide_show += ' ja-hide';
     } else if (ja_show) {
-        deposit_url     = '/cashier/deposit-jp';
-        withdraw_url    = '/cashier/withdraw-jp';
+        deposit_url     = '/cashier/epg_forwardws?action=deposit';
+        withdraw_url    = '/cashier/epg_forwardws?action=withdraw';
         class_hide_show += ' invisible ja-show';
     }
     return (
@@ -75,7 +75,7 @@ const Cashier = () => (
                     <a className='ja-hide' href={it.url_for('cashier/forwardws?action=deposit')} id='payment_methods'>
                         <img className='responsive' id='payment_methods_icon' src={it.url_for('images/pages/cashier/payment-methods.svg')} />
                     </a>
-                    <a className='invisible ja-show' href={it.url_for('cashier/deposit-jp')} id='payment_methods'>
+                    <a className='invisible ja-show' href={it.url_for('cashier/epg_forwardws?action=deposit')} id='payment_methods'>
                         <img className='responsive' id='payment_methods_icon' src={it.url_for('images/pages/cashier/japan_cashier.svg')} />
                     </a>
                 </div>

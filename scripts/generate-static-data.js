@@ -379,7 +379,6 @@ const texts = [
     'logout',
 
     // reality_check
-    'Please enter a number between [_1].',
     '[_1] days [_2] hours [_3] minutes',
     'Your trading statistics since [_1].',
 

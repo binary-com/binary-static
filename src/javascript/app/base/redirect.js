@@ -3,14 +3,15 @@ const Url                = require('../../_common/url');
 
 const Redirect = (() => {
     const onLoad = () => {
+        const params = Url.paramsHash();
+
         const actions_map = {
             signup                : { path: 'new_account/virtualws' },
             reset_password        : { path: 'user/reset_passwordws' },
-            payment_withdraw      : { path: 'cashier/forwardws', query: 'action=withdraw' },
+            payment_withdraw      : { path: `cashier/${/ja/i.test(params.lang) ? 'epg_' : ''}forwardws`, query: 'action=withdraw' },
             payment_agent_withdraw: { path: 'paymentagent/withdrawws' },
         };
 
-        const params = Url.paramsHash();
         const config = actions_map[params.action];
         // need to redirect not using pjax
         window.location.href = config && params.code ?
