@@ -2,11 +2,23 @@ import React from 'react';
 
 class InputField extends React.PureComponent {
     handleFocus = (e) => {
-        // mobile soft keyboard covers input in chrome
+        // mobile soft keyboard covers input in chrome and uc browser
         const el = e.target;
+
+        const handleResize = () => {
+            if (el) {
+                window.setTimeout(() => {
+                    el.scrollIntoView();
+                }, 100);
+            }
+            window.removeEventListener('resize', handleResize, false);
+        };
+        window.addEventListener('resize', handleResize, false);
+
+        // remove listener if resize was not fired (iOS)
         window.setTimeout(() => {
-            if (el) el.scrollIntoView();
-        }, 300);
+            window.removeEventListener('resize', handleResize, false);
+        }, 1000);
     }
 
     render() {
