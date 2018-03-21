@@ -1,6 +1,7 @@
 .mobile-widget {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
     border-radius: 4px;
+    padding: 0.5rem;
 
     &:hover {
         cursor: pointer;
@@ -9,7 +10,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 0.5rem;
+        padding: 0.3rem;
 
         .symbols:before {
             position: static;
