@@ -8,10 +8,10 @@ export const Section = ({ id, header, children }) => (
     </div>
 );
 
-export const HeaderSecondary = ({header}) => (
+export const HeaderSecondary = ({header, has_data_anchor}) => (
     <React.Fragment>
         <SeparatorLine invisible show_mobile className='gr-padding-10' />
-        <h3 className='secondary-color'>{header}</h3>
+        <h3 data-anchor={has_data_anchor && header} className='secondary-color'>{header}</h3>
     </React.Fragment>
 );
 

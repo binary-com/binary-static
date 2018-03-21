@@ -167,7 +167,7 @@ const Validation = (() => {
 
     const validators_map = {
         req          : { func: validRequired,     message: '' },
-        email        : { func: validEmail,        message: 'Invalid email address' },
+        email        : { func: validEmail,        message: 'Invalid email address.' },
         password     : { func: validPassword,     message: 'Password should have lower and uppercase letters with numbers.' },
         general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
         address      : { func: validAddress,      message: 'Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /' },
