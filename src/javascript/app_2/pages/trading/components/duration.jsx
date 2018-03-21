@@ -19,6 +19,7 @@ let min_date_duration,
 
 const Duration = ({
     expiry_type,
+    expiry_date,
     expiry_time,
     duration,
     duration_unit,
@@ -38,7 +39,10 @@ const Duration = ({
         return (
             <div className='fieldset-minimized'>
                 <span className='field-info icon trade-duration' />
-                duration here
+                {expiry_type === 'duration'
+                    ? `${duration} ${duration_unit}`
+                    : `${expiry_date} ${expiry_time}`
+                }
             </div>
         );
     }
@@ -110,6 +114,7 @@ const Duration = ({
 export default connect(
     ({trade}) => ({
         expiry_type        : trade.expiry_type,
+        expiry_date        : trade.expiry_date,
         expiry_time        : trade.expiry_time,
         duration           : trade.duration,
         duration_unit      : trade.duration_unit,
