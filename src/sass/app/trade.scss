@@ -692,7 +692,7 @@
     margin-top: 15px;
     font-size: $FONT_SIZE_N;
 
-    #bet_bottom_content {
+    #trade_bottom_content {
         padding-top: 1em;
     }
     #webtrader_chart {
@@ -721,12 +721,6 @@
         img {
             margin-right: 5px;
         }
-    }
-}
-
-@media all and (max-width: 768px) {
-    #trading_bottom_content ul#betsBottomPage {
-        flex-direction: column;
     }
 }
 /*

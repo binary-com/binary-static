@@ -42,7 +42,7 @@ const TradingAnalysis = (() => {
      * navigation
      */
     const bindAnalysisTabEvent = () => {
-        $('#betsBottomPage').find('li a').on('click', (e) => {
+        $('#trade_analysis').find('li a').on('click', (e) => {
             e.preventDefault();
             const li = e.target.parentElement;
             sessionStorage.setItem('currentAnalysisTab', li.id);
@@ -58,7 +58,7 @@ const TradingAnalysis = (() => {
      */
     const loadAnalysisTab = (tab) => {
         const current_tab = tab || getActiveTab();
-        $('#betsBottomPage').find('li').removeClass('active');
+        $('#trade_analysis').find('li').removeClass('active');
         $(`#${current_tab}`).addClass('active');
         toggleActiveAnalysisTabs();
         JapanPortfolio.init();
@@ -96,7 +96,7 @@ const TradingAnalysis = (() => {
      */
     const toggleActiveAnalysisTabs = () => {
         const current_tab        = getActiveTab();
-        const analysis_container = getElementById('bet_bottom_content');
+        const analysis_container = getElementById('analysis_content');
 
         const child_elements      = analysis_container.children;
         const current_tab_element = getElementById(`${current_tab}-content`);
