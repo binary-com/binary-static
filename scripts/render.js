@@ -176,12 +176,12 @@ const createContextBuilder = async () => {
 
     return {
         buildFor: (model) => {
-            // TODO: remove exception and do according to the section instead
-            if (/^trade$/.test(model.current_path)) {
-                extra.css_files = extra.css_files.filter(f => /app_2/.test(f));
-            }
+            // TODO: filter according to the section once migrated to the new URLs
+            const css_files = {
+                css_files: extra.css_files.filter(f => /^trade$/.test(model.current_path) ? /app_2/.test(f) : !/app_2/.test(f)),
+            };
             const translator = createTranslator(model.language);
-            return Object.assign({}, extra, model, {
+            return Object.assign({}, extra, css_files, model, {
                 L: (text, ...args) => {
                     const translated = translator(text, ...args);
                     return RenderHTML(translated);
