@@ -162,41 +162,6 @@
                             font-weight: 600;
                             text-align: center;
 
-                            i {
-                                position: relative;
-
-                                span.symbols {
-                                    position: absolute;
-                                    right: 15px;
-
-                                    &.aud {
-                                        right: 30px;
-                                        @media (max-width: 768px) {
-                                            right: 20px;
-                                        }
-                                    }
-                                    &.bch {
-                                        right: 20px;
-                                        @media (max-width: 768px) {
-                                            right: 15px;
-                                        }
-                                    }
-                                    &:before {
-                                        color: #e98024;
-                                        font-size: 1.25rem;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: space-around;
-
-                                        @media (max-width: 768px) {
-                                            font-size: 0.875rem;
-                                        }
-                                    }
-                                    @media (max-width: 768px) {
-                                        right: 10px;
-                                    }
-                                }
-                            }
                             @media (max-width: 768px) {
                                 font-size: 1rem;
                             }

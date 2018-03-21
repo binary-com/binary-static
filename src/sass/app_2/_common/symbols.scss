@@ -1,19 +1,28 @@
+@at-root {
+    @font-face {
+        font-family: 'BinarySymbols';
+        font-style: normal;
+        font-weight: normal;
+        src: url('../../src/download/fonts/binary_symbols.woff') format('woff');
+    }
+}
+
 .symbols {
     &:before {
-        position: absolute;
-        display: block;
-        pointer-events: none;
-        text-align: center;
+        font-family: 'BinarySymbols';
         font-style: normal;
-        font-size: 1rem;
-        z-index: 1;
-        color: $COLOR_BLUE;
+        margin-right: 2px;
+        pointer-events: none;
     }
-    &.eur:before {
-        content: '\20AC';
+    &, &:before {
+        transition: none;
+        animation: none;
     }
     &.aud:before {
         content: '\0041\0024';
+    }
+    &.eur:before {
+        content: '\20AC';
     }
     &.gbp:before {
         content: '\00A3';

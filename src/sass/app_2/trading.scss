@@ -15,6 +15,14 @@
                 font-size: 1rem;
                 height: 32px;
             }
+            .symbols {
+                font-size: 1rem;
+                position: absolute;
+                display: block;
+                text-align: center;
+                z-index: 1;
+                color: $COLOR_BLUE;
+            }
             .clock-header, .fieldset-header {
                 height: 1.5rem;
                 position: relative;
