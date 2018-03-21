@@ -3,7 +3,7 @@
     border-radius: 4px;
     padding: 5px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr auto;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
         'a c'
@@ -19,6 +19,15 @@
         align-items: center;
         padding: 5px;
 
+        &.duration {
+            grid-area: b;
+        }
+        &.barrier1 {
+            grid-area: c;
+        }
+        &.barrier2 {
+            grid-area: d;
+        }
         .field-info.icon {
             margin-right: 4px;
         }
@@ -27,6 +36,7 @@
             position: static;
             display: inline;
             font-size: 1em;
+            font-weight: bold;
         }
     }
 }

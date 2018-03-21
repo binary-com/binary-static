@@ -37,7 +37,7 @@ const Duration = ({
     }
     if (is_minimized) {
         return (
-            <div className='fieldset-minimized'>
+            <div className='fieldset-minimized duration'>
                 <span className='field-info icon trade-duration' />
                 {expiry_type === 'duration'
                     ? `${duration} ${duration_unit}`

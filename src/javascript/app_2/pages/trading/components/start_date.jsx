@@ -16,7 +16,7 @@ const StartDate = ({
 }) => {
     if (is_minimized) {
         return (
-            <div className='fieldset-minimized'>
+            <div className='fieldset-minimized start-date'>
                 <span className='field-info icon start-time' />
                 {start_date === 'now'
                     ? 'Now'
