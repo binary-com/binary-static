@@ -692,34 +692,6 @@
     margin-top: 15px;
     font-size: $FONT_SIZE_N;
 
-    .tab-menu {
-        background: transparent !important;
-        border: 0 !important;
-        height: auto !important;
-    }
-    ul#betsBottomPage {
-        @include ul_segmented_navigation;
-        font-size: $FONT_SIZE_S;
-        border-bottom: none;
-        margin: 0;
-
-        li {
-            @include li_segmented_element;
-            background: transparent;
-            border-radius: 0;
-            padding: 6px 0;
-
-            a {
-                line-height: 1;
-                top: 0;
-                font-size: $FONT_SIZE_N;
-            }
-            &.active a {
-                color: inherit;
-                background-image: none;
-            }
-        }
-    }
     #bet_bottom_content {
         padding-top: 1em;
     }

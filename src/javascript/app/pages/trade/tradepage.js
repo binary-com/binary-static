@@ -13,8 +13,8 @@ const Header            = require('../../base/header');
 const BinarySocket      = require('../../base/socket');
 const jpClient          = require('../../common/country_base').jpClient;
 const Guide             = require('../../common/guide');
-const localize          = require('../../../_common/localize').localize;
 const State             = require('../../../_common/storage').State;
+const TabSelector       = require('../../../_common/tab_selector');
 
 const TradePage = (() => {
     let events_initialized = 0;
@@ -22,6 +22,7 @@ const TradePage = (() => {
 
     const onLoad = () => {
         BinarySocket.wait('authorize').then(() => {
+            TabSelector.onLoad();
             init();
         });
     };
@@ -58,10 +59,8 @@ const TradePage = (() => {
             script: 'trading',
         });
         TradingAnalysis.bindAnalysisTabEvent();
-        $('#tab_portfolio').find('a').text(localize('Portfolio'));
-        $('#tab_graph').find('a').text(localize('Chart'));
-        $('#tab_explanation').find('a').text(localize('Explanation'));
-        $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
+        // we need to initiate selector after it becoming visible
+        TabSelector.repositionSelector();
 
         ViewPopup.viewButtonOnClick('#contract_confirmation_container');
     };
@@ -80,6 +79,7 @@ const TradePage = (() => {
         cleanupChart();
         commonTrading.clean();
         BinarySocket.clear('active_symbols');
+        TabSelector.onUnload();
     };
 
     const onDisconnect = () => {
