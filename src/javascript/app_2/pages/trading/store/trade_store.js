@@ -14,7 +14,6 @@ export default class TradeStore {
         if (!Client.get('currency')) {
             actions.getCurrenciesAsync();
         }
-        actions.getDurationUnits();
         ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
             this.contract_types_list = ContractType.getContractCategories();
         }));
@@ -53,9 +52,9 @@ export default class TradeStore {
     @observable amount          = 5;
 
     // Duration
-    @observable expiry_type         = 'endtime';
+    @observable expiry_type         = 'duration';
     @observable duration            = 15;
-    @observable duration_unit       = 's';
+    @observable duration_unit       = '';
     @observable duration_units_list = {};
     @observable expiry_date         = null;
     @observable expiry_time         = '09:40 pm';
