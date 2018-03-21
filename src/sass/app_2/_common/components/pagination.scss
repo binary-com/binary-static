@@ -1,5 +1,4 @@
 /* Ant style */
-/* stylelint-disable color-no-hex */
 .pagination {
     display: flex;
     flex-direction: row;
@@ -17,8 +16,8 @@
         list-style: none;
         background-color: $COLOR_WHITE;
         border-radius: 4px;
-        color: #333333;
-        border: 1px solid #e9e9ed;
+        color: #333333; /* stylelint-disable-line color-no-hex */
+        border: 1px solid #e9e9ed; /* stylelint-disable-line color-no-hex */
         min-width: 32px;
         height: 32px;
         text-align: center;
@@ -27,10 +26,10 @@
     }
     &-prev:hover, &-next:hover, &-item:hover, &-item-active {
         cursor: pointer;
-        border-color: #4c5794;
+        border-color: #4c5794; /* stylelint-disable-line color-no-hex */
 
         & a {
-            color: #4c5794;
+            color: #4c5794; /* stylelint-disable-line color-no-hex */
         }
     }
     &-item-active:hover {
@@ -38,11 +37,11 @@
     }
     &-disabled, &-disabled:hover {
         cursor: not-allowed;
-        border-color: #e9e9ed;
+        border-color: #e9e9ed; /* stylelint-disable-line color-no-hex */
         background-color: $COLOR_WHITE;
 
         & a {
-            color: #e9e9ed;
+            color: #e9e9ed; /* stylelint-disable-line color-no-hex */
         }
     }
     &-ellipsis {
@@ -56,11 +55,11 @@
             display: block;
             font-size: 20px;
             letter-spacing: 1px;
-            color: #e9e9ed;
+            color: #e9e9ed; /* stylelint-disable-line color-no-hex */
             text-align: center;
         }
         & a {
-            color: #e9e9ed;
+            color: #e9e9ed; /* stylelint-disable-line color-no-hex */
         }
         border: none;
     }

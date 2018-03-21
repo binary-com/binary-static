@@ -1,5 +1,3 @@
-/* stylelint-disable color-no-hex */
-/* stylelint-disable number-max-precision */
 #trading_header {
     position: fixed;
     z-index: 999;
@@ -26,7 +24,7 @@
                 align-self: center;
 
                 &.binary-logo {
-                    border-left: 1px solid #f2f2f2;
+                    border-left: 1px solid $COLOR_LIGHT_GRAY;
                     padding: 6px 12px;
                 }
                 img {
@@ -134,7 +132,7 @@
                 justify-content: flex-end;
                 order: 1;
                 display: inline-flex;
-                border-right: 1px solid #f2f2f2;
+                border-right: 1px solid $COLOR_LIGHT_GRAY;
 
                 .acc-balance-container {
                     display: inline-flex;
@@ -148,7 +146,7 @@
 
                         p.acc-balance-accountid {
                             line-height: 0.5;
-                            color: #e98024;
+                            color: $COLOR_ORANGE;
                             font-size: 0.75rem;
                             margin: 0.5em;
                             font-weight: 600;
@@ -156,7 +154,7 @@
                         }
                         p.acc-balance-amount {
                             line-height: 0.5;
-                            color: #e98024;
+                            color: $COLOR_ORANGE;
                             font-size: 1.25rem;
                             margin: 0.5em;
                             font-weight: 600;
@@ -190,5 +188,3 @@
     }
 
 }
-/* stylelint-enable number-max-precision */
-/* stylelint-enable color-no-hex */

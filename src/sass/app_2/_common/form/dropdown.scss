@@ -1,14 +1,12 @@
-/* stylelint-disable color-no-hex */
-/* stylelint-disable number-max-precision */
 div.dropdown-container {
     position: relative;
     margin: 8px 0;
 
     .dropdown-display {
-        background: #fff;
+        background: $COLOR_WHITE;
         height: 30px;
         cursor: pointer;
-        border: solid 1px #f2f2f2;
+        border: solid 1px $COLOR_LIGHT_GRAY;
         border-radius: 4px;
 
         span {
@@ -20,7 +18,7 @@ div.dropdown-container {
             font-weight: 300;
         }
         &:hover {
-            border-color: #2a3052;
+            border-color: $COLOR_BLUE;
         }
     }
     &:active, &:focus, &.show {
@@ -33,7 +31,7 @@ div.dropdown-container {
         opacity: 1;
     }
     &.show > .clicked {
-        border-color: #2a3052;
+        border-color: $COLOR_BLUE;
     }
     &.show > .select-arrow {
         top: 12px;
@@ -56,8 +54,8 @@ div.dropdown-container {
             overflow-y: auto;
             z-index: 2;
             cursor: pointer;
-            background: #fff;
-            box-shadow: 0 0px 2px #d3d3d3;
+            background: $COLOR_WHITE;
+            box-shadow: 0 0px 2px #d3d3d3; /* stylelint-disable-line color-no-hex */
 
             .list-label {
                 pointer-events: none;
@@ -67,7 +65,7 @@ div.dropdown-container {
 
                 span {
                     text-transform: capitalize;
-                    color: #dedede;
+                    color: #dedede; /* stylelint-disable-line color-no-hex */
                     font-size: 1rem;
                     font-weight: 300;
                 }
@@ -91,10 +89,10 @@ div.dropdown-container {
                     vertical-align: middle;
                 }
                 &:hover {
-                    background-color: #f2f3f8;
+                    background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
                 }
                 &.selected span {
-                    background-color: #2a3052;
+                    background-color: $COLOR_BLUE;
                     color: $COLOR_WHITE;
                     font-weight: 400;
                 }
@@ -116,7 +114,7 @@ div.dropdown-container {
         transition: transform 0.2s ease;
         transform: rotate(180deg);
         transform-origin: 50% 50%;
-        color: #f2f2f2;
+        color: $COLOR_LIGHT_GRAY;
         font-size: 1.1rem;
 
         &:before {
@@ -124,5 +122,3 @@ div.dropdown-container {
         }
     }
 }
-/* stylelint-enable number-max-precision */
-/* stylelint-enable color-no-hex */

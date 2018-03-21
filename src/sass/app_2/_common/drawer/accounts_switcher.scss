@@ -1,11 +1,9 @@
-/* stylelint-disable color-no-hex */
-/* stylelint-disable number-max-precision */
 .acc-switcher-container {
     position: static;
 
     .acc-switcher-header {
         cursor: pointer;
-        border-bottom: 1px solid #f2f2f2;
+        border-bottom: 1px solid $COLOR_LIGHT_GRAY;
         z-index: 3;
         position: relative;
 
@@ -22,7 +20,7 @@
                 padding-left: 3.5rem;
             }
             p.acc-switcher-currency {
-                font-size: 0.875rem;
+                font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
                 line-height: 0.5;
                 color: $COLOR_ORANGE;
                 padding-left: 3.5rem;
@@ -83,15 +81,13 @@
                 padding-left: 3rem;
             }
             p.acc-switcher-currency {
-                font-size: 0.875rem;
+                font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
                 line-height: 0.5;
                 padding-left: 3rem;
             }
             &:hover {
-                background: #f2f2f2;
+                background: $COLOR_LIGHT_GRAY;
             }
         }
     }
 }
-/* stylelint-enable number-max-precision */
-/* stylelint-enable color-no-hex */

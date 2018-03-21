@@ -7,7 +7,7 @@
 
         .notice-msg {
             background: unset;
-            border: 1px solid #f2f2f2; /* stylelint-disable-line color-no-hex */
+            border: 1px solid $COLOR_LIGHT_GRAY;
         }
         fieldset {
             input, select {

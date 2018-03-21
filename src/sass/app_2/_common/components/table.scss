@@ -1,13 +1,12 @@
 /* Ant style */
-/* stylelint-disable color-no-hex */
 .table {
-    color: #333333;
+    color: #333333; /* stylelint-disable-line color-no-hex */
     font-size: 16px;
     border-collapse: collapse;
 
     &-row {
         background-color: $COLOR_WHITE;
-        border-bottom: 1px solid #d2d3da;
+        border-bottom: 1px solid #d2d3da; /* stylelint-disable-line color-no-hex */
     }
     &-thead {
         min-height: 40px;
@@ -17,7 +16,7 @@
             font-weight: 600;
             text-align: left;
             border: none;
-            background-color: #f4f4f6;
+            background-color: #f4f4f6; /* stylelint-disable-line color-no-hex */
         }
         & th:first-child {
             padding-left: 16px;
@@ -30,7 +29,7 @@
     }
     &-tbody {
         & .table-row:hover {
-            background-color: #fdf4ec;
+            background-color: #fdf4ec; /* stylelint-disable-line color-no-hex */
         }
         & td {
             padding: 12px;
@@ -43,10 +42,10 @@
             padding-right: 16px;
         }
         & .profit {
-            color: #2e8836;
+            color: #2e8836; /* stylelint-disable-line color-no-hex */
         }
         & .loss {
-            color: #c03;
+            color: #c03; /* stylelint-disable-line color-no-hex */
         }
     }
     &-pagination {

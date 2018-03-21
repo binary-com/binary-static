@@ -1,5 +1,3 @@
-/* stylelint-disable color-no-hex */
-/* stylelint-disable number-max-precision */
 div.contracts-popup-container {
     position: absolute;
     margin: 8px 0;
@@ -13,10 +11,10 @@ div.contracts-popup-container {
         min-width: 200px;
         max-width: 200px;
         width: 100%;
-        background: #fff;
+        background: $COLOR_WHITE;
         height: 30px;
         cursor: pointer;
-        border: solid 1px #f2f2f2;
+        border: solid 1px $COLOR_LIGHT_GRAY;
         border-radius: 4px;
         padding: 10px 8px;
 
@@ -33,7 +31,7 @@ div.contracts-popup-container {
             overflow: hidden;
         }
         &:hover {
-            border-color: #2a3052;
+            border-color: $COLOR_BLUE;
         }
     }
     &:active, &:focus, &.show {
@@ -47,7 +45,7 @@ div.contracts-popup-container {
         pointer-events: auto;
     }
     &.show > .clicked {
-        border-color: #2a3052;
+        border-color: $COLOR_BLUE;
     }
     &.show > .select-arrow {
         top: 40%;
@@ -70,8 +68,8 @@ div.contracts-popup-container {
             min-width: 500px;
             display: grid;
             z-index: 2;
-            background: #fff;
-            border: solid 1px #f2f2f2;
+            background: $COLOR_WHITE;
+            border: solid 1px $COLOR_LIGHT_GRAY;
 
             .list-item {
                 width: 100%;
@@ -87,7 +85,7 @@ div.contracts-popup-container {
                     pointer-events: none;
                     vertical-align: middle;
                     font-weight: 300;
-                    font-size: 0.875rem;
+                    font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
                     padding: 8px;
                 }
                 * {
@@ -100,14 +98,14 @@ div.contracts-popup-container {
                     pointer-events: none;
 
                     span {
-                        color: #dedede;
+                        color: #dedede; /* stylelint-disable-line color-no-hex */
                     }
                 }
                 &:hover {
-                    background-color: #f2f3f8;
+                    background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
                 }
                 &.selected span {
-                    background-color: #2a3052;
+                    background-color: $COLOR_BLUE;
                     color: $COLOR_WHITE;
                     font-weight: 400;
                 }
@@ -135,17 +133,15 @@ div.contracts-popup-container {
         transition: transform 0.3s ease;
         transform: rotate(0deg);
         transform-origin: 50% 50%;
-        color: #f2f2f2;
+        color: $COLOR_LIGHT_GRAY;
         font-size: 0.8rem;
 
         &:before {
             content: '\0025BE';
-            color: #000;
+            color: $COLOR_BLACK;
         }
     }
 }
-/* stylelint-enable number-max-precision */
-/* stylelint-enable color-no-hex */
 
 .contract-icon {
     &.ic-rise_fall {

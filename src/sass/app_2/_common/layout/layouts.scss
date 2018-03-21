@@ -1,5 +1,3 @@
-/* stylelint-disable unit-whitelist */
-/* stylelint-disable color-no-hex */
 @supports (display: grid) {
     /* trade-app layout */
     #trade_container {
@@ -104,10 +102,9 @@
         }
     }
 }
-/* stylelint-enable unit-whitelist */
 
 .shadow {
-    box-shadow: 0 2px 8px #f0f1f2;
+    box-shadow: 0 2px 8px #f0f1f2; /* stylelint-disable-line color-no-hex */
 }
 
 // Helpers
@@ -116,4 +113,3 @@
         display: none;
     }
 }
-/* stylelint-enable color-no-hex */
