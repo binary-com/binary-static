@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-08 01:43-0500\n"
+"PO-Revision-Date: 2018-03-20 21:24-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -54,8 +54,8 @@ msgstr "$50,001 - $100,000"
 msgid "$500,001 - $1,000,000"
 msgstr "$500,001 - $1,000,000"
 
-msgid "%1 %2 has been credited to your Virtual money account %3"
-msgstr " %1 %2已記入您的虛擬資金帳戶 %3"
+msgid "%1 %2 has been credited into your virtual account: %3."
+msgstr ""
 
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "%4閉市時如果%3未觸及障礙價格，可獲取%1 %2的賠付額。"
@@ -1091,6 +1091,9 @@ msgstr "有主見，具銷售驅動型人格，能夠很快適應並達到強大
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "對範圍列出的網域和子網域進行分析及測試。"
+
+msgid "Analyse the financial markets using beautiful visualisations and unique trading tools, powered by a fast and intuitive interface."
+msgstr "用美麗的可視化和獨特交易工具，配上快速和直觀的介面對金融市場進行分析。"
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "採用範圍廣泛的指標、價格帶和多重覆蓋圖等分析市場走勢。"
@@ -2712,11 +2715,11 @@ msgstr "在下方存款或提款"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "通過銀行電匯、信用卡或電子現金錢包存款進入您的帳戶或提款。"
 
+msgid "Deposit: %1 blockchain confirmations"
+msgstr "存款： %1區塊鏈確認"
+
 msgid "Deposit: %1 working day"
 msgstr "存款：%1工作日內"
-
-msgid "Deposit: 3 blockchain confirmations"
-msgstr "存款： 3 程序塊鏈確認"
 
 msgid "Deposit: Instant"
 msgstr "存款：即時"
@@ -3564,6 +3567,9 @@ msgstr "遵守法律和以下條款"
 msgid "Follow up on rejected deposits"
 msgstr "被拒絕存款的跟進"
 
+msgid "Following file(s) were already uploaded: %1"
+msgstr "以下文檔已上載: %1"
+
 msgid "For Browser"
 msgstr "用於瀏覽器"
 
@@ -3801,9 +3807,6 @@ msgstr "開始交易"
 msgid "Get USD 10,000.00"
 msgstr "獲取10,000.00美元"
 
-msgid "Get more virtual money"
-msgstr "獲取更多虛擬資金"
-
 msgid "Get paid for pull requests"
 msgstr "因拉動請求獲得報酬"
 
@@ -3821,9 +3824,6 @@ msgstr "開始交易"
 
 msgid "Getting started"
 msgstr "開始交易"
-
-msgid "Give Me More Money!"
-msgstr "我要賺更多！"
 
 msgid "Given our role as a margin trading service provider as described in this Agreement, we seek to avoid undue market influence to the extent consistent with your trading needs and our risk management policies and procedures. By continuing to use the margin trading services described in this Agreement, you acknowledge that you are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and you consent us to act notwithstanding such potential conflict of interests."
 msgstr "我們是融資融券交易服務提供商，如本協議所述，我們盡量不讓市場影響您的交易需求，同時維護我們的風險管理政策和程序。通過繼續使用本協議所述的融資融券交易服務，您承認並已了解，所披露利益的潛在衝突可能會出現以及不能完全排除，即使存在這種潛在利益衝突，您也同意我們的行動。"
@@ -3852,11 +3852,11 @@ msgstr "前往\"<strong>Chrome 功能表 (自訂與控制Google Chrome)</strong>
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "前往MetaTrader 5 儀表板"
 
-msgid "Go to the <a href=\"https://login.binary.com/password-retrieve.php\">password retrieval page</a>, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
-msgstr "前往 <a href=\"https://login.binary.com/password-retrieve.php\">密碼找回頁面</a>，在提供的表格中輸入您的使用者名稱和電郵地址，我們將通過電郵把密碼傳送給您。"
+msgid "Go to the %1password retrieval page%2, and enter your username and e-mail address in the form fields provided to have your password e-mailed to you."
+msgstr "前往%1密碼找回頁面%2，在提供的表格中輸入您的使用者名稱和電郵地址，我們將通過電郵把密碼傳送給您。"
 
-msgid "Go to the <a href=\"https://login.binary.com/signup.php\">sign up page</a> to register as an affiliate today."
-msgstr "前往<a href=\"https://login.binary.com/signup.php\">註冊頁面</a>成為聯盟會員。"
+msgid "Go to the %1sign up page%2 to register as an affiliate today."
+msgstr "前往%1註冊頁面%2成為聯盟會員。"
 
 msgid "Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>."
 msgstr "前往<strong>進一步操作</strong>選項卡並選擇<strong>設定</strong>。"
@@ -4691,6 +4691,9 @@ msgstr "餘額不足。"
 
 msgid "Intellectual Property Rights"
 msgstr "智慧財產權"
+
+msgid "Interactive charting tool"
+msgstr "互動式圖表工具"
 
 msgid "Interactive webinars"
 msgstr "互動式網路研討會"
@@ -6021,6 +6024,9 @@ msgstr "最小"
 msgid "Min / Max withdrawal"
 msgstr "最小/最大取款金額"
 
+msgid "Min Deposit"
+msgstr "最小存款金額"
+
 msgid "Min Withdrawal"
 msgstr "最小提款金額"
 
@@ -6426,9 +6432,6 @@ msgstr "資產數目"
 msgid "Number of employees and contractors"
 msgstr "雇員和承包商數目"
 
-msgid "Number of ticks"
-msgstr "跳動點數目"
-
 msgid "Number of ticks:"
 msgstr "跳動點數目:"
 
@@ -6479,9 +6482,6 @@ msgstr "離線"
 
 msgid "Offset potential losses to your investment portfolio by hedging with CFDs."
 msgstr "與差價合約對沖，以抵消投資組合的潛在損失。"
-
-msgid "Old password is wrong."
-msgstr "舊密碼不正確。"
 
 msgid "On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you."
 msgstr "根據您所提供的知識和經驗相關資訊，我們認為此網站的投資活動對您來說並不合適。"
@@ -7896,9 +7896,6 @@ msgstr "從左欄選擇<strong>Cookies設定</strong>。"
 msgid "Select currency"
 msgstr "選擇貨幣"
 
-msgid "Select market"
-msgstr "選擇市場"
-
 msgid "Select market:"
 msgstr "選擇市場:"
 
@@ -8111,6 +8108,9 @@ msgstr "金融資料（如彭博社和路透社）的使用技能"
 
 msgid "Smallish changes – generally $20-50"
 msgstr "小量變化 —一般為 20-50 美元"
+
+msgid "SmartCharts"
+msgstr "SmartCharts"
 
 msgid "SmartTrader"
 msgstr "SmartTrader"
@@ -9510,6 +9510,12 @@ msgstr "今天"
 msgid "Token"
 msgstr "代幣"
 
+msgid "Top Up Virtual Account"
+msgstr ""
+
+msgid "Top up virtual account"
+msgstr ""
+
 msgid "Top-tier liquidity"
 msgstr "頂級流動性"
 
@@ -9773,6 +9779,9 @@ msgstr "自2000年以來備受交易員信賴"
 
 msgid "Try Binary Bot"
 msgstr "試試Binary Bot"
+
+msgid "Try SmartCharts"
+msgstr "體驗SmartCharts"
 
 msgid "Try TradingView"
 msgstr "體驗TradingView"
@@ -10743,9 +10752,6 @@ msgstr "自您的真實帳戶提出基金幣種必須與二元期權真實帳戶
 msgid "Withdrawal: %1 working day"
 msgstr "取款：%1 個工作日"
 
-msgid "Withdrawal: Not Applicable"
-msgstr "取款：不適用"
-
 msgid "Withdrawal: Not applicable"
 msgstr "取款：不適用"
 
@@ -10929,11 +10935,11 @@ msgstr "您可以使用以下公式算出所需的金屬對保證金:"
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
 msgstr "如果虛擬資金餘額低於100,000日圓，您可請求獲取更多虛擬資金。"
 
-msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
-msgstr "如果虛擬資金餘額低於1,000.00美元，您可請求獲取更多虛擬資金。"
-
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "您可在合約到期前賣出交易合約，以鎖定利潤或將虧損減至最低。"
+
+msgid "You can top up your virtual account with an additional USD 10,000.00 if your balance falls below USD 1,000.00."
+msgstr ""
 
 msgid "You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That's not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits."
 msgstr "您可以對所有三種主要交易類型進行波動率指數交易：上漲/下跌、觸及/未觸及和範圍內/範圍外。還有 - 波動率指數也讓您獨家獲得另外兩種交易類型：亞洲貨幣和數字交易。"
@@ -11466,9 +11472,6 @@ msgstr "詳細資料"
 msgid "e.g. frontend.binaryws.com"
 msgstr "例如 frontend.binaryws.com"
 
-msgid "email address"
-msgstr "電子郵件地址"
-
 msgid "engage in misleading or illusory or deceptive advertising;"
 msgstr "從事誤導性或虛幻或虛假的廣告。"
 
@@ -11660,9 +11663,6 @@ msgstr "使用%1 API的目的違反了任何法律或法規、任何個人權利
 
 msgid "use the Company’s name and/or Trademark in its advertising activities without a written authorisation to be given by the Company;"
 msgstr "未經公司書面授權, 在其廣告活動中使用公司的名稱和/或商標。"
-
-msgid "verification token"
-msgstr "驗證代幣"
 
 msgid "week"
 msgstr "週"

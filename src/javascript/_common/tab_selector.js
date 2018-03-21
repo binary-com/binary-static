@@ -70,10 +70,9 @@ const TabSelector = (() => {
     };
 
     const updateURL = (selector, tab_id) => {
-        const params_hash = Url.paramsHash();
-        params_hash[selector] = tab_id;
-        const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params_hash)}`;
-        window.history.replaceState({ url: updated_url }, null, updated_url);
+        Url.updateParamsWithoutReload({
+            [selector]: tab_id,
+        }, true);
     };
 
     const goLeft = (e) => {

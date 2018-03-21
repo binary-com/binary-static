@@ -26,7 +26,7 @@ const Trading = () => (
                 </div>
                 <div>
                     <select id='underlying' />
-                    <span className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</span>
+                    <a className='unicode-info-icon' id='symbol_tip' href='#'>&#9432;</a>
                     <span id='spot' />
                     <span id='trading_worm_chart' />
                 </div>

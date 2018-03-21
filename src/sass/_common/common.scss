@@ -527,6 +527,31 @@ li strong.margin-right {
     display: none !important;
 }
 
+[data-anchor] {
+    & .data-anchor-link {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url('../images/common/ic-anchor.svg');
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        margin-left: 6px;
+        visibility: hidden;
+        // for perceptual alignment
+        position: relative;
+        top: 1px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    &:hover {
+        & .data-anchor-link {
+            visibility: visible;
+        }
+    }
+}
+
 .button-white {
     cursor: pointer;
     margin-bottom: 0.5em;
