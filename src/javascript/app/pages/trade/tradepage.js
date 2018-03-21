@@ -14,7 +14,6 @@ const BinarySocket      = require('../../base/socket');
 const jpClient          = require('../../common/country_base').jpClient;
 const Guide             = require('../../common/guide');
 const State             = require('../../../_common/storage').State;
-const TabSelector       = require('../../../_common/tab_selector');
 
 const TradePage = (() => {
     let events_initialized = 0;
@@ -22,7 +21,6 @@ const TradePage = (() => {
 
     const onLoad = () => {
         BinarySocket.wait('authorize').then(() => {
-            TabSelector.onLoad();
             init();
         });
     };
@@ -59,8 +57,6 @@ const TradePage = (() => {
             script: 'trading',
         });
         TradingAnalysis.bindAnalysisTabEvent();
-        // we need to initiate selector after it becoming visible
-        TabSelector.repositionSelector();
 
         ViewPopup.viewButtonOnClick('#contract_confirmation_container');
     };
@@ -79,7 +75,6 @@ const TradePage = (() => {
         cleanupChart();
         commonTrading.clean();
         BinarySocket.clear('active_symbols');
-        TabSelector.onUnload();
     };
 
     const onDisconnect = () => {

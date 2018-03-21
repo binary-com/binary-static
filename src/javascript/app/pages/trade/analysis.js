@@ -8,6 +8,7 @@ const getElementById = require('../../../_common/common_functions').getElementBy
 const getLanguage    = require('../../../_common/language').get;
 const State          = require('../../../_common/storage').State;
 const Url            = require('../../../_common/url');
+const tabListener    = require('binary-style').tabListener;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -22,8 +23,10 @@ const Url            = require('../../../_common/url');
  */
 
 const TradingAnalysis = (() => {
+    tabListener();
     const hidden_class = 'invisible';
     let form_name;
+    const tab_selector_id = 'trade_analysis';
 
     const requestTradeAnalysis = () => {
         form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
@@ -89,6 +92,14 @@ const TradingAnalysis = (() => {
                 showExplanation();
             }
         }
+        if (current_tab) {
+            const el_to_show = getElementById(current_tab);
+            slideSelector(tab_selector_id, el_to_show);
+        }
+    };
+
+    const slideSelector = (selector, el_to_show) => {
+        getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
     };
 
     /*

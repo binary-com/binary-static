@@ -43,12 +43,8 @@ const TabSelector = (() => {
     const repositionSelector = () => {
         const params_hash = Url.paramsHash();
         Object.keys(obj_tabs).forEach((tab_id) => {
-            console.log(obj_tabs[tab_id].id_tabs);
-            const selectedTab = getElementById(obj_tabs[tab_id].id_tabs[0]);
-            console.log(selectedTab);
-            const id_to_show = params_hash[tab_id] || obj_tabs[tab_id].id_tabs[1];
+            const id_to_show = params_hash[tab_id] || obj_tabs[tab_id].id_tabs[0];
             const el_to_show = getElementById(id_to_show);
-            console.log(id_to_show);
             if (el_to_show.parentNode) {
                 const selector = el_to_show.parentNode.getAttribute('id');
                 changeTab({ selector, el_to_show });
