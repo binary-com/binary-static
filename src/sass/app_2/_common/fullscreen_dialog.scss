@@ -39,6 +39,7 @@ $content-index: 1;
         box-sizing: border-box;
         position: relative;
         padding-top: $shadow-cover-height;
+        padding-bottom: 70px; // ios bottom bar fix
         z-index: $content-index;
         background: #fff;
         transform: scale(0);
