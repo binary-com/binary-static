@@ -1,26 +1,37 @@
+// Base
 @import 'app_2/_common/base/constants';
+@import 'app_2/_common/base/typography';
 @import 'app_2/_common/base/common';
 
-@import 'app_2/_common/layouts';
+// General
 @import 'app_2/_common/symbols';
-@import 'app_2/_common/header';
-@import 'app_2/_common/drawer';
-@import 'app_2/_common/footer';
 @import 'app_2/_common/scrollbar';
-@import 'app_2/_common/typography';
-@import 'app_2/_common/buttons';
-@import 'app_2/_common/input_field';
-@import 'app_2/_common/dropdown';
-@import 'app_2/_common/accounts_switcher';
-@import 'app_2/_common/language_switcher';
-@import 'app_2/_common/contracts_popup';
-@import 'app_2/_common/date_picker';
-@import 'app_2/_common/time_picker';
-@import 'app_2/_common/table';
-@import 'app_2/_common/pagination';
-@import 'app_2/_common/portfolio_drawer';
-@import 'app_2/_common/popover';
 @import 'app_2/_common/tooltip';
 @import 'app_2/_common/loading';
 
+// Layout
+@import 'app_2/_common/layout/layouts';
+@import 'app_2/_common/layout/header';
+@import 'app_2/_common/layout/footer';
+
+// Drawer
+@import 'app_2/_common/drawer/drawer';
+@import 'app_2/_common/drawer/accounts_switcher';
+@import 'app_2/_common/drawer/language_switcher';
+@import 'app_2/_common/drawer/portfolio_drawer';
+
+// Form
+@import 'app_2/_common/form/input_field';
+@import 'app_2/_common/form/dropdown';
+@import 'app_2/_common/form/buttons';
+@import 'app_2/_common/form/date_picker';
+@import 'app_2/_common/form/time_picker';
+
+// Components
+@import 'app_2/_common/components/contracts_popup';
+@import 'app_2/_common/components/table';
+@import 'app_2/_common/components/pagination';
+@import 'app_2/_common/components/popover';
+
+// Pages
 @import 'app_2/trading';
