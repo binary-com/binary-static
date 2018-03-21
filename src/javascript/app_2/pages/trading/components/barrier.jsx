@@ -1,4 +1,5 @@
 import React from 'react';
+import Fieldset from './elements/fieldset.jsx';
 import InputField from './form/input_field.jsx';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
@@ -8,30 +9,27 @@ const Barrier = ({
     barrier_2,
     onChange,
 }) =>  (
-    <fieldset>
-        <div className='fieldset-header'>
-            <span className='field-info left' htmlFor='barrier_1'>
-                {localize(barrier_2 ? 'High barrier' : 'Barrier')}
-            </span>
-        </div>
+    <Fieldset
+        header={localize(barrier_2 ? 'High barrier' : 'Barrier')}
+        icon='barriers'
+        tooltip={localize('Text for Barriers goes here.')}
+    >
         <InputField
-            type='number'
+            type='text'
             name='barrier_1'
             value={barrier_1}
             onChange={onChange}
-            is_currency
         />
 
         {!!barrier_2 &&
             <InputField
-                type='number'
+                type='text'
                 name='barrier_2'
                 value={barrier_2}
                 onChange={onChange}
-                is_currency
             />
         }
-    </fieldset>
+    </Fieldset>
 );
 
 export default connect(

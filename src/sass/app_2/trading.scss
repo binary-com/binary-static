@@ -1,34 +1,67 @@
-#trade_app {
-    .notice-msg {
-        background: unset;
-        /* stylelint-disable color-no-hex */
-        border: 1px solid #f2f2f2;
-        /* stylelint-enable color-no-hex */
-    }
-    fieldset {
-        input, select {
-            width: 100%;
-            font-size: 1rem;
-            height: 32px;
+#content.trade-content {
+    margin-top: 0;
+    margin-bottom: 31px;
+
+    #trade_app {
+        overflow: hidden;
+
+        .notice-msg {
+            background: unset;
+            border: 1px solid #f2f2f2; /* stylelint-disable-line color-no-hex */
         }
-        .clock-header, .fieldset-header {
-            height: 1.5rem;
-            position: relative;
+        fieldset {
+            input, select {
+                width: 100%;
+                font-size: 1rem;
+                height: 32px;
+            }
+            .clock-header, .fieldset-header {
+                height: 1.5rem;
+                position: relative;
 
-            span.field-info {
-                position: absolute;
-                color: $primaryBrandColor;
-                font-size: 0.7rem;
-                font-weight: 400;
-                margin: 5px 0 12px;
+                span.field-info {
+                    position: absolute;
+                    color: $primaryBrandColor;
+                    font-size: 0.7rem;
+                    font-weight: 400;
+                    margin: 5px 0 12px;
 
-                &.left {
-                    top: 5px;
-                    left: 5px;
-                }
-                &.right {
-                    top: 5px;
-                    right: 5px;
+                    &.left {
+                        left: 5px;
+
+                        &.icon {
+                            top: -3px;
+
+                            &:before {
+                                content: '';
+                                margin-right: 5px;
+                                display: inline-flex;
+                                justify-content: center;
+                                align-items: center;
+                                vertical-align: middle;
+                            }
+                            &.start-time:before {
+                                content: url('../images/trading_app/sidebar/light/ic_watch_later_light.svg');
+                            }
+                            &.trade-duration:before {
+                                content: url('../images/trading_app/sidebar/light/ic_timelapse_light.svg');
+                            }
+                            &.invest-amount:before {
+                                content: url('../images/trading_app/sidebar/light/ic_monetization_light.svg');
+                            }
+                            &.barriers:before {
+                                content: url('../images/trading_app/sidebar/light/ic_barrier_light.svg');
+                            }
+                            &.digits:before {
+                                content: url('../images/trading_app/sidebar/light/ic_digit_light.svg');
+                            }
+                        }
+                    }
+                    &.right {
+                        top: -3px;
+                        right: 5px;
+                        font-size: 0.5625rem; /* stylelint-disable-line number-max-precision */
+                    }
                 }
             }
         }

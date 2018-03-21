@@ -161,52 +161,52 @@ class TimePickerDropdown extends PureComponent {
                         onClick={this.clear}
                     />
                 </div>
-                <div
-                    ref={this.saveHourRef}
-                    className={`${preClass}-hours`}
-                >
-                    <div className='list-container'>
-                        {this.hours.map((h, key) => (
-                            <div
-                                className={`list-item${this.state.hour === h ? ' selected' : ''}`}
-                                key={key}
-                                onClick={this.selectHour.bind(null, h)}
-                            >
-                                {h}
-                            </div>
-                        ))}
+                <div className={`${preClass}-selector`}>
+                    <div
+                        ref={this.saveHourRef}
+                        className={`${preClass}-hours`}
+                    >
+                        <div className='list-container'>
+                            {this.hours.map((h, key) => (
+                                <div
+                                    className={`list-item${this.state.hour === h ? ' selected' : ''}`}
+                                    key={key}
+                                    onClick={this.selectHour.bind(null, h)}
+                                >
+                                    {h}
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-                <div
-                    ref={this.saveMinuteRef}
-                    className={`${preClass}-minutes`}
-                >
-                    <div className='list-container'>
-                        {this.minutes.map((mm, key) => (
-                            <div
-                                className={`list-item${this.state.minute === mm ? ' selected' : ''}`}
-                                key={key}
-                                onClick={this.selectMinute.bind(null, mm)}
-                            >
-                                {mm}
-                            </div>
-                        ))}
+                    <div
+                        ref={this.saveMinuteRef}
+                        className={`${preClass}-minutes`}
+                    >
+                        <div className='list-container'>
+                            {this.minutes.map((mm, key) => (
+                                <div
+                                    className={`list-item${this.state.minute === mm ? ' selected' : ''}`}
+                                    key={key}
+                                    onClick={this.selectMinute.bind(null, mm)}
+                                >{mm}
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-                <div
-                    ref={this.saveMeridiemRef}
-                    className={`${preClass}-meridiem`}
-                >
-                    <div className='list-container'>
-                        {this.meridiem.map((a, key) => (
-                            <div
-                                className={`list-item${this.state.meridiem === a ? ' selected' : ''}`}
-                                key={key}
-                                onClick={this.selectMeridiem.bind(null, a)}
-                            >
-                                {a}
-                            </div>
-                        ))}
+                    <div
+                        ref={this.saveMeridiemRef}
+                        className={`${preClass}-meridiem`}
+                    >
+                        <div className='list-container'>
+                            {this.meridiem.map((a, key) => (
+                                <div
+                                    className={`list-item${this.state.meridiem === a ? ' selected' : ''}`}
+                                    key={key}
+                                    onClick={this.selectMeridiem.bind(null, a)}
+                                >{a}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -231,15 +231,14 @@ class TimePicker extends PureComponent {
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
-    componentDidUpdate(props) {
-        props.onChange({ target: this.target_element });
-    }
-
     toggleDropDown = () => {
         this.setState({ is_open: !this.state.is_open });
     };
 
-    handleChange = (value) => {
+    handleChange = (arg) => {
+        // To handle nativepicker;
+        const value = typeof arg === 'object' ? this.convertTo12h(arg.target.value) : arg;
+
         if (value !== this.props.value) {
             this.props.onChange({ target: { name: this.props.name, value } });
         }
@@ -254,7 +253,7 @@ class TimePicker extends PureComponent {
         this.wrapper_ref = node;
     };
 
-    handleClickOutside = () => {
+    handleClickOutside = (event) => {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target)) {
             if (this.state.is_open) {
                 this.setState({ is_open: false });
@@ -262,30 +261,74 @@ class TimePicker extends PureComponent {
         }
     };
 
+    convertTo24h = (value) => {
+        if (!value) return '';
+        const [hour, other] = value.split(':');
+        const [minute, meridiem] = other.split(' ');
+        if (meridiem.toLowerCase() === 'pm') {
+            return `${hour%12 ? +hour+12 : '12'}:${minute}`;
+        }
+        return `${hour%12 ? hour : '00'}:${minute}`;
+    };
+
+    convertTo12h = (value) => {
+        if (!value) return '';
+        const [hour, minute] = value.split(':');
+        const meridiem = +hour >= 12 ? 'pm' : 'am';
+        if (meridiem === 'pm' && hour > 12) {
+            return `${(`0${+hour-12}`).slice(-2)}:${minute} ${meridiem}`;
+        }
+
+        return `${+hour === 0 ? 12 : hour}:${minute} ${meridiem}`;
+    };
+
     render() {
         const prefix_class='time-picker';
+        const {
+            is_nativepicker,
+            value,
+            name,
+            placeholder,
+        } = this.props;
+        const formatted_value = this.convertTo24h(value);
         return (
             <div
                 ref={this.saveRef}
                 className={`${prefix_class}${this.props.padding ? ' padding' : ''}${this.state.is_open ? ' active' : ''}`}
             >
-                <input
-                    ref={this.saveRef}
-                    type='text'
-                    readOnly
-                    id={`${prefix_class}-input`}
-                    className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
-                    value={this.props.value}
-                    onClick={this.toggleDropDown}
-                    {...this.props}
-                />
-                <TimePickerDropdown
-                    className={this.state.is_open ? 'active' : ''}
-                    toggle={this.toggleDropDown}
-                    onChange={this.handleChange}
-                    preClass={prefix_class}
-                    value={this.props.value}
-                />
+                {
+                    is_nativepicker
+                    ? <input
+                        type='time'
+                        id={`${prefix_class}-input`}
+                        className={`${prefix_class}-input`}
+                        value={formatted_value}
+                        onChange={this.handleChange}
+                        name={name}
+                    />
+                    : (
+                        <React.Fragment>
+                            <input
+                                ref={this.saveRef}
+                                type='text'
+                                readOnly
+                                id={`${prefix_class}-input`}
+                                className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
+                                value={value}
+                                onClick={this.toggleDropDown}
+                                name={name}
+                                placeholder={placeholder}
+                            />
+                            <TimePickerDropdown
+                                className={this.state.is_open ? 'active' : ''}
+                                toggle={this.toggleDropDown}
+                                onChange={this.handleChange}
+                                preClass={prefix_class}
+                                value={value}
+                            />
+                        </React.Fragment>
+                    )
+                }
             </div>
         );
     }

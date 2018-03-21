@@ -39,11 +39,16 @@ export const initActions = (store) => {
         }
     });
 
-    const reaction_map   = {
+    const reaction_map = {
         symbol             : defaultExports.onChangeSymbolAsync,
         contract_types_list: defaultExports.onChangeContractTypeList,
         contract_type      : defaultExports.onChangeContractType,
         amount             : defaultExports.onChangeAmount,
+        expiry_type        : defaultExports.onChangeExpiry,
+        expiry_date        : defaultExports.onChangeExpiry,
+        expiry_time        : defaultExports.onChangeExpiry,
+        duration_unit      : defaultExports.onChangeExpiry,
+        start_date         : defaultExports.onChangeStartDate,
     };
 
     Object.keys(reaction_map).forEach((reaction_key) => {

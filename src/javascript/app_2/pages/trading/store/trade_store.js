@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx';
 import Client from '../../../../app/base/client';
-import ContractType from './logic/contract_type';
+import ContractType from '../actions/helpers/contract_type';
 import actions from '../actions';
 
 export default class TradeStore {
@@ -8,16 +8,14 @@ export default class TradeStore {
 
     @action.bound init() {
         actions.getCountryAsync();
-        actions.getStartDates();
 
         actions.getTicks(action('getTicks', (r) => { this.tick = r; }));
 
         if (!Client.get('currency')) {
             actions.getCurrenciesAsync();
         }
-        actions.getDurationUnits();
-        ContractType.getContractsList(this.symbol).then(action(r => {
-            this.contract_types_list = r;
+        ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
+            this.contract_types_list = ContractType.getContractCategories();
         }));
         this.time_interval = setInterval(actions.initTime, 1000);
     }
@@ -36,16 +34,15 @@ export default class TradeStore {
     }
 
     // Underlying
-    @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
+    @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
     @observable symbol       = Object.keys(this.symbols_list)[0];
 
     // Contract Type
     @observable contract_type        = '';
     @observable contract_types_list  = {};
     @observable trade_types          = [];
-    // TODO: add logic for contract_start_type and contract_expiry_type dynamic values
-    @observable contract_start_type  = 'spot';
-    @observable contract_expiry_type = 'intraday';
+    @observable contract_start_type  = '';
+    @observable contract_expiry_type = '';
     @observable form_components      = [];
 
     // Amount
@@ -55,9 +52,9 @@ export default class TradeStore {
     @observable amount          = 5;
 
     // Duration
-    @observable expiry_type         = 'endtime';
+    @observable expiry_type         = 'duration';
     @observable duration            = 15;
-    @observable duration_unit       = 's';
+    @observable duration_unit       = '';
     @observable duration_units_list = {};
     @observable expiry_date         = null;
     @observable expiry_time         = '09:40 pm';
