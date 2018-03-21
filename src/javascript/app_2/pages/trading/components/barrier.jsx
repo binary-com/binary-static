@@ -11,11 +11,25 @@ const Barrier = ({
     is_minimized,
 }) =>  {
     if (is_minimized) {
+        if (!barrier_2) {
+            return (
+                <div className='fieldset-minimized'>
+                    <span className='field-info icon barriers' />
+                    {barrier_1}
+                </div>
+            );
+        }
         return (
-            <div className='fieldset-minimized'>
-                <span className='field-info icon start-time' />
-                barrier here
-            </div>
+            <React.Fragment>
+                <div className='fieldset-minimized'>
+                    <span className='field-info icon barriers' />
+                    {barrier_1}
+                </div>
+                <div className='fieldset-minimized'>
+                    <span className='field-info icon barriers' />
+                    {barrier_2}
+                </div>
+            </React.Fragment>
         );
     }
     return (
