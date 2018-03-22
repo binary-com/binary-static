@@ -55,9 +55,6 @@ const MBTradePage = (() => {
             MBProcess.getSymbols();
         });
 
-        $('#tab_portfolio').find('a').text(localize('Portfolio'));
-        $('#tab_graph').find('a').text(localize('Chart'));
-        $('#tab_explanation').find('a').text(localize('Explanation'));
         State.set('is_chart_allowed', true);
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
         $('.container').css('max-width', '1200px');

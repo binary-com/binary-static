@@ -22,7 +22,7 @@ const Analysis = ({ no_graph }) => (
                     <TabContent id='tab_portfolio' />
 
                     { !no_graph &&
-                    <TabContent id='tab_graph' className='selectedTab'>
+                    <TabContent id='tab_graph'>
                         <p className='error-msg' id='chart-error' />
                         <div id='trade_live_chart'>
                             <div id='webtrader_chart' />
@@ -30,7 +30,7 @@ const Analysis = ({ no_graph }) => (
                     </TabContent>
                     }
 
-                    <TabContent id='tab_explanation'>
+                    <TabContent id='tab_explanation' className='selectedTab'>
                         <Explanation />
                     </TabContent>
 

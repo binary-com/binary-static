@@ -1,14 +1,13 @@
-const showChart      = require('./charts/webtrader_chart').showChart;
-const Defaults       = require('./defaults');
-const getActiveTab   = require('./get_active_tab').getActiveTab;
-const GetTicks       = require('./get_ticks');
-const MBDefaults     = require('../mb_trade/mb_defaults');
-const JapanPortfolio = require('../../japan/portfolio');
-const getElementById = require('../../../_common/common_functions').getElementById;
-const getLanguage    = require('../../../_common/language').get;
-const State          = require('../../../_common/storage').State;
-const Url            = require('../../../_common/url');
-const tabListener    = require('binary-style').tabListener;
+const showChart          = require('./charts/webtrader_chart').showChart;
+const Defaults           = require('./defaults');
+const getActiveTab       = require('./get_active_tab').getActiveTab;
+const GetTicks           = require('./get_ticks');
+const MBDefaults         = require('../mb_trade/mb_defaults');
+const JapanPortfolio     = require('../../japan/portfolio');
+const getElementById     = require('../../../_common/common_functions').getElementById;
+const getLanguage        = require('../../../_common/language').get;
+const State              = require('../../../_common/storage').State;
+const Url                = require('../../../_common/url');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -23,7 +22,7 @@ const tabListener    = require('binary-style').tabListener;
  */
 
 const TradingAnalysis = (() => {
-    tabListener();
+    // tabListener();
     const hidden_class = 'invisible';
     let form_name;
     const tab_selector_id = 'trade_analysis';
@@ -99,14 +98,17 @@ const TradingAnalysis = (() => {
     };
 
     const slideSelector = (selector, el_to_show) => {
-        getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
+        const isActive = el_to_show.classList.contains('active');
+        if (isActive) {
+            getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
+        }
     };
 
     /*
      * function to toggle the active element for analysis menu
      */
-    const toggleActiveAnalysisTabs = () => {
-        const current_tab        = getActiveTab();
+    const toggleActiveAnalysisTabs = (tab) => {
+        const current_tab        = tab || getActiveTab();
         const analysis_container = getElementById('analysis_content');
 
         const child_elements      = analysis_container.children;
