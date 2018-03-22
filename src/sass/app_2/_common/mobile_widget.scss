@@ -5,9 +5,7 @@
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-        'a c'
-        'b d';
+    grid-template-areas: 'a b' 'c d';
     font-size: 0.8rem;
 
     &:hover {
@@ -20,16 +18,16 @@
         padding: 5px;
 
         &.duration {
-            grid-area: b;
+            grid-area: c;
         }
         &.barrier1 {
-            grid-area: c;
+            grid-area: b;
         }
         &.barrier2 {
             grid-area: d;
         }
-        .field-info.icon {
-            margin-right: 4px;
+        .icon {
+            margin-right: 10px;
         }
         .symbols:before {
             margin-left: -2px;
