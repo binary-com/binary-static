@@ -41,7 +41,7 @@ const Duration = ({
                 <span className='icon trade-duration' />
                 {expiry_type === 'duration'
                     ? `${duration} ${duration_unit}`
-                    : `${expiry_date}\n${expiry_time}`
+                    : `${moment(expiry_date).format('ddd - DD MMM, YYYY')}\n${expiry_time}`
                 }
             </div>
         );
