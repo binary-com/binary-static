@@ -9,15 +9,17 @@
         flex-direction: column;
         padding: 5px 10px;
         text-align: left;
+        cursor: pointer;
 
         .market {
             font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 5px;
+            font-weight: 400;
+            margin: 5px 0;
         }
         .underlying {
             font-size: 14px;
-            font-weight: 400;
+            font-weight: 600;
+            margin: 5px 0;
         }
     }
     .markets_dropdown {
@@ -31,7 +33,7 @@
         top: 0;
         transition: visibility 0s 0s, opacity 0.15s 0.1s, transform 0.25s;
         flex: 1 0 auto;
-        z-index: 2;
+        z-index: 10000;
 
         &.hidden {
             opacity: 0;
@@ -121,11 +123,18 @@
                             flex: 1 0 auto;
 
                             .symbol_name {
-                                padding: 10px 5px 5px 0;
+                                padding: 5px;
+                                margin: 10px 0 5px;
                                 line-height: 18px;
                                 cursor: pointer;
                                 width: 120px;
-                                font-size: 14px;
+                                font-size: 13px;
+                                transition: all 0.2s 0.1s;
+
+                                &.active {
+                                    background: $COLOR_BLUE;
+                                    color: $COLOR_WHITE;
+                                }
                             }
                         }
                     }

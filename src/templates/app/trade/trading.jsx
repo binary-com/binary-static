@@ -22,11 +22,10 @@ const Trading = () => (
             <div className='client_virtual client_logged_out invisible' id='guideBtn' />
             <div className='row' id='contract_symbol_container'>
                 <div id='contract_markets_container'>
-                    <div id='underlying_2' />
-                    <select id='contract_markets' />
+                    <div id='underlying_component' />
+                    <input type='hidden' id='underlying'/>
                 </div>
                 <div>
-                    <select id='underlying' />
                     <span className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</span>
                     <span id='spot' />
                     <span id='trading_worm_chart' />

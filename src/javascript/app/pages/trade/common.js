@@ -157,22 +157,6 @@ const commonTrading = (() => {
         }
     };
 
-    /*
-     * display underlyings
-     */
-    const displayUnderlyings = (id, elements, selected) => {
-        const target = document.getElementById(id);
-        if (!target) return;
-
-        while (target.firstChild) {
-            target.removeChild(target.firstChild);
-        }
-
-        if (!isEmptyObject(elements)) {
-            target.appendChild(generateUnderlyingOptions(elements, selected));
-        }
-    };
-
     const generateUnderlyingOptions = (elements, selected) => {
         const fragment   = document.createDocumentFragment();
         const keys       = Object.keys(elements).sort((a, b) => (
@@ -567,7 +551,6 @@ const commonTrading = (() => {
     };
 
     return {
-        displayUnderlyings,
         getFormNameBarrierCategory,
         contractTypeDisplayMapping,
         hideOverlayContainer,

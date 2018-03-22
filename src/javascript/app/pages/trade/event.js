@@ -61,25 +61,6 @@ const TradingEvents = (() => {
         };
 
         /*
-         * attach event to market list, so when client change market we need to update undelryings
-         * and request for new Contract details to populate the form and request price accordingly
-         */
-        const onMarketChange = (market) => {
-            CommonTrading.showPriceOverlay();
-            Defaults.set('market', market);
-
-            // as different markets have different forms so remove from sessionStorage
-            // it will default to proper one
-            Defaults.remove('formname');
-            Defaults.remove('underlying');
-            Process.processMarket();
-        };
-
-        getElementById('contract_markets').addEventListener('change', (e) => {
-            onMarketChange(e.target.value);
-        });
-
-        /*
          * attach event to form list, so when client click on different form we need to update form
          * and request for new Contract details to populate the form and request price accordingly
          */
@@ -113,9 +94,6 @@ const TradingEvents = (() => {
             if (e.target) {
                 CommonTrading.showFormOverlay();
                 CommonTrading.showPriceOverlay();
-                if (e.target.selectedIndex < 0) {
-                    e.target.selectedIndex = 0;
-                }
                 const underlying = e.target.value;
                 Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                 Defaults.set('underlying', underlying);
