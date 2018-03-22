@@ -1,26 +1,6 @@
 import React from 'react';
 
 class InputField extends React.PureComponent {
-    handleFocus = (e) => {
-        // mobile soft keyboard covers input in chrome and uc browser
-        const el = e.target;
-
-        const handleResize = () => {
-            if (el) {
-                window.setTimeout(() => {
-                    el.scrollIntoView();
-                }, 100);
-            }
-            window.removeEventListener('resize', handleResize, false);
-        };
-        window.addEventListener('resize', handleResize, false);
-
-        // remove listener if resize was not fired (iOS)
-        window.setTimeout(() => {
-            window.removeEventListener('resize', handleResize, false);
-        }, 1000);
-    }
-
     render() {
         return (
             <div className={`input-field ${this.props.className ? this.props.className : ''}`}>
@@ -39,7 +19,6 @@ class InputField extends React.PureComponent {
                     defaultValue={this.props.value}
                     onChange={this.props.onChange}
                     required={this.props.required || undefined}
-                    onFocus={this.props.is_nativepicker && this.handleFocus}
                 />
                 {!!this.props.helper &&
                     <span className='input-helper'>{this.props.helper}</span>

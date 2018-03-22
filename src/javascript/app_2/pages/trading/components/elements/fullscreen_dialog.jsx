@@ -13,11 +13,32 @@ class FullscreenDialog extends React.PureComponent {
         }
     }
 
+    scrollToElIfNeeded = (parent, el) => {
+        const newElTop = (window.innerHeight - el.clientHeight) / 2;
+        const d = el.getBoundingClientRect().top - newElTop;
+        parent.scrollTop += d;
+    }
+
+    handleClick = (e) => {
+        if (e.target.tagName === 'INPUT' && e.target.type === 'number') {
+            const scrollToTarget = this.scrollToElIfNeeded.bind(null, e.currentTarget, e.target);
+            window.addEventListener('resize', scrollToTarget, false);
+
+            // remove listener, resize is not fired on iOS
+            window.setTimeout(() => {
+                window.removeEventListener('resize', scrollToTarget, false);
+            }, 2000);
+        }
+    }
+
     render() {
         const { title, visible, children } = this.props;
 
         return (
-            <div className={`fullscreen-dialog ${visible ? 'fullscreen-dialog--open' : ''}`}>
+            <div
+                className={`fullscreen-dialog ${visible ? 'fullscreen-dialog--open' : ''}`}
+                onClick={this.handleClick.bind(this)}
+            >
                 <div className='fullscreen-dialog__header'>
                     <h2 className='fullscreen-dialog__title'>
                         {title}
