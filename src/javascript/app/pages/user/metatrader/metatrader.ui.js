@@ -222,7 +222,7 @@ const MetaTraderUI = (() => {
                 .setVisibility(1);
 
             if (action === 'manage_password') {
-                $form.find('.password-account').append(` ${localize('for MT5 account')} ${accounts_info[acc_type].info.login}`);
+                $form.find('.password-account').text(`${accounts_info[acc_type].title}${accounts_info[acc_type].info.login ? ` (${accounts_info[acc_type].info.login})` : ''}`);
                 if (!token) {
                     $form.find('#frm_verify_password_reset').setVisibility(1);
                 } else if (!Validation.validEmailToken(token)) {

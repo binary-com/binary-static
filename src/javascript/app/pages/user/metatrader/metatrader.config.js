@@ -159,8 +159,8 @@ const MetaTraderConfig = (() => {
         },
         password_change: {
             ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type' },
-            txt_old_password   : { id: '#txt_old_password', request_field: 'old_password' },
-            txt_new_password   : { id: '#txt_new_password', request_field: 'new_password' },
+            txt_old_password   : { id: '#txt_old_password',  request_field: 'old_password' },
+            txt_new_password   : { id: '#txt_new_password',  request_field: 'new_password' },
             txt_re_new_password: { id: '#txt_re_new_password' },
             additional_fields  :
                 acc_type => ({
@@ -169,7 +169,7 @@ const MetaTraderConfig = (() => {
         },
         password_reset: {
             ddl_password_type  : { id: '#ddl_reset_password_type', request_field: 'password_type' },
-            txt_new_password   : { id: '#txt_reset_new_password', request_field: 'new_password' },
+            txt_new_password   : { id: '#txt_reset_new_password',  request_field: 'new_password' },
             txt_re_new_password: { id: '#txt_reset_re_new_password' },
             additional_fields  :
                 (acc_type, token) => ({
@@ -230,6 +230,8 @@ const MetaTraderConfig = (() => {
         ],
     });
 
+    const hasAccount = acc_type => (accounts_info[acc_type] || {}).info;
+
     return {
         mt_companies,
         accounts_info,
@@ -237,8 +239,14 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
-        setMessages: ($msg) => { $messages = $msg; },
-        getCurrency: acc_type => accounts_info[acc_type].info.currency,
+        hasAccount,
+        setMessages   : ($msg) => { $messages = $msg; },
+        getCurrency   : acc_type => accounts_info[acc_type].info.currency,
+        getAllAccounts: () => (
+            Object.keys(accounts_info)
+                .filter(acc_type => hasAccount(acc_type))
+                .sort(acc_type => (accounts_info[acc_type].is_demo ? 1 : -1)) // real first
+        ),
     };
 })();
 

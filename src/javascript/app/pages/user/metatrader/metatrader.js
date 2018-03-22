@@ -89,24 +89,20 @@ const MetaTrader = (() => {
 
             // Update types with no account
             Object.keys(accounts_info)
-                .filter(acc_type => !hasAccount(acc_type))
+                .filter(acc_type => !MetaTraderConfig.hasAccount(acc_type))
                 .forEach((acc_type) => { MetaTraderUI.updateAccount(acc_type); });
         });
     };
 
     const getDefaultAccount = () => {
         let default_account = '';
-        if (hasAccount(Client.get('mt5_account'))) {
+        if (MetaTraderConfig.hasAccount(Client.get('mt5_account'))) {
             default_account = Client.get('mt5_account');
         } else {
-            default_account = Object.keys(accounts_info)
-                .filter(acc_type => hasAccount(acc_type))
-                .sort(acc_type => (accounts_info[acc_type].is_demo ? 1 : -1))[0] || ''; // real first
+            default_account = MetaTraderConfig.getAllAccounts()[0] || '';
         }
         return default_account;
     };
-
-    const hasAccount = acc_type => (accounts_info[acc_type] || {}).info;
 
     const getAccountDetails = (login, acc_type) => {
         BinarySocket.send({

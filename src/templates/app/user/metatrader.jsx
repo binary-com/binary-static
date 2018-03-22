@@ -280,7 +280,8 @@ const Metatrader = () => (
                                 <div className='mt-panel mt-container'>
                                     <form id='frm_password_change'>
                                         <div className='center-text hint gr-padding-20 gr-parent'>
-                                            <h3 className='secondary-color'>{it.L('Change password')}<span className='password-account' /></h3>
+                                            <h3 className='secondary-color'>{it.L('Change password')}</h3>
+                                            <div className='gr-padding-10 gr-child'><h4 className='notice-msg password-account' /></div>
                                         </div>
 
                                         <FormRow is_two_rows type='select' id='ddl_password_type' label={it.L('Password type')}>
@@ -302,11 +303,11 @@ const Metatrader = () => (
                             </div>
                             <div className='gr-6 gr-12-m flex'>
                                 <div className='mt-panel mt-container'>
+                                    <div className='center-text hint gr-padding-20 gr-parent'>
+                                        <h3 className='secondary-color'>{it.L('Reset password')}</h3>
+                                        <div className='gr-padding-10 gr-child'><h4 className='notice-msg password-account' /></div>
+                                    </div>
                                     <form className='invisible' id='frm_verify_password_reset'>
-                                        <div className='center-text hint gr-padding-20 gr-parent'>
-                                            <h3 className='secondary-color'>{it.L('Reset password')}<span className='password-account' /></h3>
-                                        </div>
-
                                         <div className='gr-padding-10'>
                                             <p className='center-text notice-msg no-margin invisible' id='token_error'>{it.L('Verification code is wrong. Please use the link sent to your email.')}</p>
                                             <p className='no-margin'>{it.L('To reset your trading or investor password, please click the button below:')}</p>
@@ -320,10 +321,6 @@ const Metatrader = () => (
                                         </div>
                                     </form>
                                     <form className='invisible' id='frm_password_reset'>
-                                        <div className='center-text hint gr-padding-20 gr-parent'>
-                                            <h3 className='secondary-color'>{it.L('Reset password')}<span className='password-account' /></h3>
-                                        </div>
-
                                         <FormRow is_two_rows type='select' id='ddl_reset_password_type' label={it.L('Password type')}>
                                             <option value='main'>{it.L('Main')}</option>
                                             <option value='investor'>{it.L('Investor')}</option>

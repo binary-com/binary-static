@@ -220,11 +220,11 @@
                 }
             }
             #frm_manage_password {
-                .password-account {
-                    display: block;
-                }
                 #token_error {
                     margin-bottom: 10px;
+                }
+                select:focus {
+                    outline: none;
                 }
             }
             .type-group {
