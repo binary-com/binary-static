@@ -5,6 +5,7 @@ import InputField from './form/input_field.jsx';
 import Client from '../../../../app/base/client';
 import { connect } from '../store/connect';
 import { localize } from '../../../../_common/localize';
+import { addComma } from '../../../../app/common/currency';
 
 const basis_list = [
     { text: localize('Payout'), value: 'payout' },
@@ -25,7 +26,7 @@ const Amount = ({
             <div className='fieldset-minimized amount'>
                 <span className='icon invest-amount' />
                 <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i>
-                {amount}
+                {addComma(amount, 2)}
             </div>
         );
     }
