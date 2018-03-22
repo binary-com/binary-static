@@ -95,7 +95,10 @@ module.exports = function (grunt) {
                     loader : 'babel-loader',
                     query  : {
                         presets: ['react','env'],
-                        plugins: ['transform-object-rest-spread'],
+                        plugins: [
+                            'transform-object-rest-spread',
+                            'transform-class-properties'
+                        ],
                         compact: false,
                     },
                 },
