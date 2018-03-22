@@ -18,8 +18,8 @@ const LastDigit = ({
     if (is_minimized) {
         return (
             <div className='fieldset-minimized'>
-                <span className='field-info icon digits' />
-                last digit here
+                <span className='icon digits' />
+                {last_digit}
             </div>
         );
     }

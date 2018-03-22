@@ -14,7 +14,7 @@ const Barrier = ({
         if (!barrier_2) {
             return (
                 <div className='fieldset-minimized barrier1'>
-                    <span className='field-info icon barriers' />
+                    <span className='icon barriers' />
                     {barrier_1}
                 </div>
             );
@@ -22,11 +22,11 @@ const Barrier = ({
         return (
             <React.Fragment>
                 <div className='fieldset-minimized barrier1'>
-                    <span className='field-info icon barriers' />
+                    <span className='icon barriers' />
                     {barrier_1}
                 </div>
                 <div className='fieldset-minimized barrier2'>
-                    <span className='field-info icon barriers' />
+                    <span className='icon barriers' />
                     {barrier_2}
                 </div>
             </React.Fragment>

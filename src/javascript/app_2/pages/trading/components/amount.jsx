@@ -23,7 +23,7 @@ const Amount = ({
     if (is_minimized) {
         return (
             <div className='fieldset-minimized amount'>
-                <span className='field-info icon invest-amount' />
+                <span className='icon invest-amount' />
                 <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i>
                 {amount}
             </div>
