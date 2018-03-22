@@ -20,7 +20,7 @@ const StartDate = ({
                 <span className='field-info icon start-time' />
                 {start_date === 'now'
                     ? 'Now'
-                    : `${start_dates_list.find(o => o.value === +start_date).text} ${start_time}`
+                    : `${start_dates_list.find(o => o.value === +start_date).text}\n${start_time}`
                 }
             </div>
         );

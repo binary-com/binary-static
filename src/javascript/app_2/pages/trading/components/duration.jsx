@@ -41,7 +41,7 @@ const Duration = ({
                 <span className='field-info icon trade-duration' />
                 {expiry_type === 'duration'
                     ? `${duration} ${duration_unit}`
-                    : `${expiry_date} ${expiry_time}`
+                    : `${expiry_date}\n${expiry_time}`
                 }
             </div>
         );

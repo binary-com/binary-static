@@ -16,8 +16,9 @@
         flex-direction: row;
         align-items: center;
         padding: 5px;
+        white-space: pre-line;
 
-        &.duration {
+        &.amount {
             grid-area: c;
         }
         &.barrier1 {
