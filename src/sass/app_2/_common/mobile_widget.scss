@@ -6,7 +6,7 @@
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 'a b' 'c d';
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 
     &:hover {
         cursor: pointer;
@@ -27,14 +27,15 @@
             grid-area: d;
         }
         .icon {
-            margin-right: 10px;
+            display: block;
+            margin-right: 5px;
         }
         .symbols:before {
             margin-left: -2px;
+            margin-right: 1px;
             position: static;
             display: inline;
             font-size: 1em;
-            font-weight: bold;
         }
     }
 }
