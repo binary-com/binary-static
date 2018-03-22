@@ -10,10 +10,10 @@
             background: unset;
             border: 1px solid #f2f2f2;
         }
-        &.icon {
+        .icon {
             &:before {
                 content: '';
-                display: block;
+                display: inline-block;
                 height: 16px;
                 width: 16px;
             }
@@ -90,12 +90,15 @@
                     color: $primaryBrandColor;
                     font-size: 0.7rem;
                     font-weight: 400;
-                    display: inline-flex;
-                    align-items: center;
 
-                    &.icon:before {
+                    &.icon {
+                        display: inline-flex;
+                        align-items: center;
                         top: -3px;
-                        margin-right: 5px;
+
+                        &:before {
+                            margin-right: 5px;
+                        }
                     }
                     &.left {
                         left: 5px;
