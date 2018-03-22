@@ -14,9 +14,13 @@ class FullscreenDialog extends React.PureComponent {
     }
 
     scrollToElIfNeeded = (parent, el) => {
-        const newElTop = (window.innerHeight - el.clientHeight) / 2;
-        const d = el.getBoundingClientRect().top - newElTop;
-        parent.scrollTop += d;
+        const viewportOffset = el.getBoundingClientRect();
+        const hidden = viewportOffset.top + el.clientHeight + 20 > window.innerHeight;
+        if (hidden) {
+            const newElTop = (window.innerHeight - el.clientHeight) / 2;
+            const d = viewportOffset.top - newElTop;
+            parent.scrollTop += d;
+        }
     }
 
     handleClick = (e) => {
