@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-19 23:27-0400\n"
+"PO-Revision-Date: 2018-03-20 21:25-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -54,8 +54,8 @@ msgstr "50,001 - 100,000 เหรียญสหรัฐ"
 msgid "$500,001 - $1,000,000"
 msgstr "500,001 - 1,000,000 เหรียญสหรัฐ"
 
-msgid "%1 %2 has been credited to your Virtual money account %3"
-msgstr "%1 %2 ถูกเพิ่มแล้วที่บัญชีเสมือนของท่าน %3"
+msgid "%1 %2 has been credited into your virtual account: %3."
+msgstr ""
 
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "%1 %2 ชำระเงิน เมื่อ %3 ไม่แตะ Barrier กระทั่งสิ้นสุดที่ %4"
@@ -3813,9 +3813,6 @@ msgstr "เริ่มเลย"
 msgid "Get USD 10,000.00"
 msgstr "ได้รับ 10,000.00 เหรียญสหรัฐ"
 
-msgid "Get more virtual money"
-msgstr "ได้รับเงินเสมือนจริงมากกว่า"
-
 msgid "Get paid for pull requests"
 msgstr "ได้รับเงินเมื่อแจ้งความเปลี่ยนแปลง (pull request)"
 
@@ -3833,9 +3830,6 @@ msgstr "เริ่มต้น"
 
 msgid "Getting started"
 msgstr "เริ่มต้น"
-
-msgid "Give Me More Money!"
-msgstr "เพิ่มเงินอีกหน่อย!"
 
 msgid "Given our role as a margin trading service provider as described in this Agreement, we seek to avoid undue market influence to the extent consistent with your trading needs and our risk management policies and procedures. By continuing to use the margin trading services described in this Agreement, you acknowledge that you are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and you consent us to act notwithstanding such potential conflict of interests."
 msgstr "บทบาทของเราในฐานะผู้ให้บริการการซื้อขายจากส่วนต่างตามที่ได้อธิบายไว้แล้วในสัญญานี้ เราพยายามหลีกเลี่ยงอิทธิพลของตลาดที่มากเกินควรในขอบเขตที่สอดคล้องกับความต้องการในการซื้อขายของคุณและนโยบายและวิธีดำเนินการในการบริหารความเสี่ยงของเรา ในการใช้บริการการซื้อขายจากส่วนต่างที่ได้อธิบายไว้ในสัญญานี้ คุณยอมรับว่าคุณรับทราบถึงผลประโยชน์ทับซ้อนที่เป็นไปได้ที่เปิดเผยไว้ที่อาจเกิดขึ้นและไม่สามารถกำจัดออกได้อย่างสมบูรณ์ และคุณยินยอมให้เราดำเนินการถึงแม้ว่าจะมีผลประโยชน์ทับซ้อนที่เป็นไปได้ดังกล่าว"
@@ -9528,6 +9522,12 @@ msgstr "วันนี้"
 msgid "Token"
 msgstr "โทเค่น"
 
+msgid "Top Up Virtual Account"
+msgstr ""
+
+msgid "Top up virtual account"
+msgstr ""
+
 msgid "Top-tier liquidity"
 msgstr "สภาพคล่องในระดับสูง"
 
@@ -10947,11 +10947,11 @@ msgstr "คุณสามารถพิจารณามาร์จินท
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
 msgstr "ท่านสามารถแจ้งความประสงค์เงินเสมือนจำนวนมากกว่านี้ หากยอดคงเหลือเสมือนของท่านลงไปต่ำกว่า 100,000 เยน"
 
-msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
-msgstr "ท่านสามารถแจ้งความประสงค์เงินเสมือนจำนวนมากกว่านี้ หากยอดคงเหลือเสมือนของท่านลงไปต่ำกว่า 1,000 เหรียญสหรัฐ"
-
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "ท่านสามารถขายสัญญาซื้อขายของท่านก่อนวันหมดอายุเพื่อรักษากำไรของท่านที่พึงได้ หรือ เพื่อย่อภาวะขาดทุนของท่าน"
+
+msgid "You can top up your virtual account with an additional USD 10,000.00 if your balance falls below USD 1,000.00."
+msgstr ""
 
 msgid "You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That's not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits."
 msgstr "คุณสามารถซื้อขายดัชนีผันผวนในประเภทการซื้อขายหลักๆสามประเภท: ขึ้น/ลง แตะ/ไม่แตะ และนอก/ใน ไม่เพียงเท่านั้น ดัชนีผันผวนยังให้คุณเข้าถึงประเภทการซื้อขายเพิ่มเติมอีกสองประเภท: เอเชียน และดิจิท"
