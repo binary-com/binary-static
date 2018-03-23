@@ -51,7 +51,7 @@ const Signup = () => (
 
         <div className='fill-bg-color'>
             <div className='container center-text gr-padding-30'>
-                <h2>{it.L('Why you should join the Binary.com Affiliate Programme')}</h2>
+                <h2 className='gr-padding-30'>{it.L('Why you should join the Binary.com Affiliate Programme')}</h2>
 
                 {/* TODO: add box grid */}
                 <BoxRow top_row>
@@ -66,9 +66,11 @@ const Signup = () => (
                     <Box title={it.L('Multiple opportunities')}   image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the Payment Agent Programme.')} />
                 </BoxRow>
 
-                <a className='button gr-padding-30' href={signup_url}>
-                    <span>{it.L('Apply Now')}</span>
-                </a>
+                <div className='gr-padding-30'>
+                    <a className='button' href={signup_url}>
+                        <span>{it.L('Apply Now')}</span>
+                    </a>
+                </div>
             </div>
         </div>
 
