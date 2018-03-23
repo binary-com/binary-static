@@ -101,7 +101,6 @@ module.exports = [
     ['open-source-projects',               'static/partners/open_source_projects',      'full_width', 'Open-Source Projects',              'ja'],
     ['partners',                           'static/partners/partners',                  'full_width', 'Partners',                          'ja'],
     ['payment-agent',                      'static/partners/payment_agent',             'full_width', 'Payment Agents',                    'ja'],
-    ['pull-requests',                      'static/partners/pull_requests',             'full_width', 'Get Paid for Pull Requests',        'ja'],
     ['security-testing',                   'static/partners/security_testing',          'full_width', 'Security Testing',                  'ja'],
 
     ['get-started',                        'static/get_started/index',                  'default',     'Get Started',                      'ja'],
