@@ -69,9 +69,10 @@ const Duration = ({
                                 name='duration'
                                 minDate={min_date_duration}
                                 maxDate={max_date_duration}
-                                displayFormat='d'
+                                mode='duration'
                                 onChange={onChange}
                                 is_nativepicker={is_nativepicker}
+                                footer={localize('The minimum duration is 1 day')}
                             /> :
                             <InputField
                                 type='number'

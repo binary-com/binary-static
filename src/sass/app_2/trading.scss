@@ -1,5 +1,4 @@
-/* stylelint-disable color-no-hex */
-#content.trade-content {
+#content {
     margin-top: 0;
     margin-bottom: 31px;
 
@@ -8,7 +7,7 @@
 
         .notice-msg {
             background: unset;
-            border: 1px solid #f2f2f2;
+            border: 1px solid $COLOR_LIGHT_GRAY;
         }
         .icon {
             &:before {
@@ -47,11 +46,11 @@
             }
             input {
                 &:hover {
-                    border-color: #2a3052;
+                    border-color: $COLOR_BLUE;
                 }
                 &:active, &:focus {
                     outline: 0;
-                    border-color: #2a3052;
+                    border-color: $COLOR_BLUE;
                     box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
                 }
             }
@@ -73,13 +72,21 @@
                 display: block;
 
                 &:hover {
-                    border-color: #2a3052;
+                    border-color: $COLOR_BLUE;
                 }
                 &:active, &:focus {
                     outline: 0;
-                    border-color: #2a3052;
+                    border-color: $COLOR_BLUE;
                     box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
                 }
+            }
+            .symbols {
+                font-size: 1rem;
+                position: absolute;
+                display: block;
+                text-align: center;
+                z-index: 1;
+                color: $COLOR_BLUE;
             }
             .clock-header, .fieldset-header {
                 height: 1.5rem;
@@ -87,10 +94,10 @@
 
                 span.field-info {
                     position: absolute;
-                    margin: 5px 0 12px;
-                    color: $primaryBrandColor;
+                    color: $COLOR_BLUE;
                     font-size: 0.7rem;
                     font-weight: 400;
+                    margin: 5px 0 12px;
 
                     &.icon {
                         display: inline-flex;
@@ -114,4 +121,3 @@
         }
     }
 }
-/* stylelint-enable color-no-hex */

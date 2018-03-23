@@ -10,7 +10,7 @@ module.exports = [
     ['cashier/payment_agent_listws',       'app/cashier/payment_agent_list',            'default',    'Payment Agent Deposit'],
     ['cashier/payment_methods',            'app/cashier/payment_methods',               'default',    'Payment Methods',                   'ja'],
     ['cashier/submit-withdraw-jp',         'app/japan/cashier/submit',                  'default',    'Acknowledgement',                   'NOT-ja,en'],
-    ['cashier/top_up_virtualws',           'app/user/top_up_virtual',                   'default',    'Give Me More Money!'],
+    ['cashier/top_up_virtualws',           'app/user/top_up_virtual',                   'default',    'Top Up Virtual Account'],
     ['cashier/withdraw-jp',                'app/japan/cashier/withdraw',                'default',    'Withdraw',                          'NOT-ja,en'],
 
     ['paymentagent/transferws',            'app/cashier/paymentagent_transfer',         'default',    'Payment Agent Transfer'],

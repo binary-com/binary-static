@@ -176,8 +176,12 @@ const createContextBuilder = async () => {
 
     return {
         buildFor: (model) => {
+            // TODO: filter according to the section once migrated to the new URLs
+            const css_files = {
+                css_files: extra.css_files.filter(f => /^trade$/.test(model.current_path) ? /app_2/.test(f) : !/app_2/.test(f)),
+            };
             const translator = createTranslator(model.language);
-            return Object.assign({}, extra, model, {
+            return Object.assign({}, extra, css_files, model, {
                 L: (text, ...args) => {
                     const translated = translator(text, ...args);
                     return RenderHTML(translated);
@@ -199,6 +203,7 @@ async function compile(page) {
     const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER'; // used in layout.jsx
 
     const tasks = languages.map(async lang => {
+        const affiliate_language_code = common.getAffiliateSignupLanguage(lang);
         const model = {
             website_name   : 'Binary.com',
             title          : page.title,
@@ -208,9 +213,12 @@ async function compile(page) {
             only_ja        : page.only_ja,
             current_path   : page.save_as,
             current_route  : page.current_route,
-            affiliate_email: 'affiliates@binary.com',
-            japan_docs_url : 'https://japan-docs.binary.com',
             is_pjax_request: false,
+
+            japan_docs_url        : 'https://japan-docs.binary.com',
+            affiliate_signup_url  : `https://login.binary.com/signup.php?lang=${affiliate_language_code}`,
+            affiliate_password_url: `https://login.binary.com/password-reset.php?lang=${affiliate_language_code}`,
+            affiliate_email       : 'affiliates@binary.com',
         };
 
         const context     = context_builder.buildFor(model);

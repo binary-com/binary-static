@@ -1,0 +1,17 @@
+@at-root {
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic');
+}
+
+/* stylelint-disable color-no-hex */
+$COLOR_ORANGE    : #e98024;
+$COLOR_GREEN     : #2e8836;
+$COLOR_BLUE      : #2a3052;
+$COLOR_DARK_BLUE : #15212d;
+$COLOR_BLACK     : #000;
+$COLOR_WHITE     : #fff;
+$COLOR_LIGHT_GRAY: #f2f2f2;
+$COLOR_DARK_WHITE: #ccc;
+/* stylelint-enable color-no-hex */
+
+$FONT_STACK: roboto, sans-serif;
+$BORDER_RADIUS: 3px;

@@ -1,10 +1,8 @@
-/* stylelint-disable color-no-hex */
-/* stylelint-disable number-max-precision */
 hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #f2f2f2;
+    border-top: 1px solid $COLOR_LIGHT_GRAY;
     margin: 1em 0;
     padding: 0;
 }
@@ -58,7 +56,7 @@ hr {
                 .drawer-header {
                     display: flex;
                     align-items: center;
-                    border-bottom: 1px solid #f2f2f2;
+                    border-bottom: 1px solid $COLOR_LIGHT_GRAY;
                     z-index: 3;
 
                     .icons {
@@ -74,7 +72,7 @@ hr {
                         &.brand-logo {
                             display: inline-flex;
                             padding: 8px 20px;
-                            border-left: 1px solid #f2f2f2;
+                            border-left: 1px solid $COLOR_LIGHT_GRAY;
 
                             img {
                                 width: 9.5rem;
@@ -86,7 +84,7 @@ hr {
                 }
                 .drawer-footer {
                     height: 30px;
-                    border-top: 1px solid #f2f2f2;
+                    border-top: 1px solid $COLOR_LIGHT_GRAY;
                     left: 0;
                     bottom: 0;
                     background-color: $COLOR_WHITE;
@@ -103,7 +101,7 @@ hr {
                 .drawer-header {
                     display: flex;
                     align-items: center;
-                    border-bottom: 1px solid #f2f2f2;
+                    border-bottom: 1px solid $COLOR_LIGHT_GRAY;
 
                     .icons {
                         display: inline-flex;
@@ -147,8 +145,8 @@ hr {
                 width: 100%;
                 padding: 14px 16px;
                 cursor: pointer;
-                font-size: 0.875rem;
-                color: $primaryBrandColor;
+                font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                color: $COLOR_BLUE;
                 box-sizing: border-box;
                 z-index: 1;
 
@@ -197,7 +195,7 @@ hr {
                     }
                 }
                 &:hover {
-                    background: #f2f2f2;
+                    background: $COLOR_LIGHT_GRAY;
                 }
             }
             &.visible {
@@ -213,5 +211,3 @@ hr {
         }
     }
 }
-/* stylelint-enable number-max-precision */
-/* stylelint-enable color-no-hex */

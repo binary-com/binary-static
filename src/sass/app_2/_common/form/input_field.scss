@@ -1,6 +1,4 @@
 /* Ant style */
-/* stylelint-disable color-no-hex */
-/* stylelint-disable number-max-precision */
 .input-field {
     margin: 8px 0;
     font-weight: 300;
@@ -16,8 +14,7 @@
             justify-content: space-evenly;
         }
         & + input {
-            padding-left: 25px !important;
-            padding-right: 0;
+            padding-left: 28px !important;
         }
     }
     input {
@@ -32,30 +29,37 @@
         font-size: 1rem;
         line-height: normal;
         color: $COLOR_BLACK;
-        background-color: #fff;
+        background-color: $COLOR_WHITE;
         background-image: none;
-        border: 1px solid #f2f2f2;
+        border: 1px solid $COLOR_LIGHT_GRAY;
         border-radius: 4px;
         transition: all 0.3s;
 
+        &:hover {
+            border-color: $COLOR_BLUE;
+        }
+        &:active, &:focus {
+            outline: 0;
+            border-radius: 4px;
+            border-color: $COLOR_BLUE;
+            box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+        }
         &:not([type=range]), label, textarea {
             touch-action: manipulation;
         }
         &.error {
-            color: #f44336;
-            border: 1px solid #f44336;
+            color: #f44336; /* stylelint-disable-line color-no-hex */
+            border: 1px solid #f44336; /* stylelint-disable-line color-no-hex */
         }
     }
     label.input-label {
-        font-size: 0.875rem;
-        color: #333333;
+        font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+        color: #333333; /* stylelint-disable-line color-no-hex */
         font-weight: 400;
     }
     span.input-helper {
         font-weight: 300;
         font-size: 0.75rem;
-        color: #b0b3bf;
+        color: #b0b3bf; /* stylelint-disable-line color-no-hex */
     }
 }
-/* stylelint-enable number-max-precision */
-/* stylelint-enable color-no-hex */

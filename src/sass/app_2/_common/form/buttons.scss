@@ -1,5 +1,4 @@
 /* Ant style */
-/* stylelint-disable color-no-hex */
 .btn {
     line-height: 1.5;
     display: inline-block;
@@ -9,6 +8,7 @@
     white-space: nowrap;
     padding: 0 15px;
     margin: 16px;
+    border: 0;
     border-radius: 4px;
     text-transform: uppercase;
     height: 40px;
@@ -16,7 +16,7 @@
     outline: 0;
     position: relative;
     color: rgba(0, 0, 0, 0.65);
-    background: $positiveColor;
+    background: $COLOR_GREEN;
 
     &:not([disabled]):hover {
         text-decoration: none;
@@ -25,34 +25,34 @@
         color: $COLOR_WHITE;
 
         &.orange {
-            background: #e98024;
+            background: $COLOR_ORANGE;
 
             &:hover {
-                background: #ee9e58;
+                background: #ee9e58; /* stylelint-disable-line color-no-hex */
             }
             &:active {
-                background: #e98024;
+                background: $COLOR_ORANGE;
             }
             &.effect:focus:not(:active):after {
-                border: 0 solid #e98024;
+                border: 0 solid $COLOR_ORANGE;
             }
         }
         &.green {
-            background: #4caf50;
+            background: #4caf50; /* stylelint-disable-line color-no-hex */
 
             &:hover {
-                background: #66bb6a;
+                background: #66bb6a; /* stylelint-disable-line color-no-hex */
             }
             &:active {
-                background: #4caf50;
+                background: #4caf50; /* stylelint-disable-line color-no-hex */
             }
             &.effect:focus:not(:active):after {
-                border: 0 solid #4caf50;
+                border: 0 solid #4caf50; /* stylelint-disable-line color-no-hex */
             }
         }
         &:disabled, &[disabled] {
-            background: #f4f4f6 !important;
-            color: #e9e9ed !important;
+            background: #f4f4f6 !important; /* stylelint-disable-line color-no-hex */
+            color: #e9e9ed !important; /* stylelint-disable-line color-no-hex */
             cursor: not-allowed;
         }
     }
@@ -60,63 +60,63 @@
         background: transparent;
 
         &.orange {
-            border: 1px solid #e98024;
-            color: #e98024;
+            border: 1px solid $COLOR_ORANGE;
+            color: $COLOR_ORANGE;
 
             &:hover {
-                border: 1px solid #ee9e58;
-                color: #ee9e58;
+                border: 1px solid #ee9e58; /* stylelint-disable-line color-no-hex */
+                color: #ee9e58; /* stylelint-disable-line color-no-hex */
                 background: rgba(233, 128, 36, 0.1);
             }
             &:active {
-                border: 1px solid #e98024;
-                color: #e98024;
+                border: 1px solid $COLOR_ORANGE;
+                color: $COLOR_ORANGE;
             }
             &.effect:focus:not(:active):after {
-                border: 0 solid #e98024;
+                border: 0 solid $COLOR_ORANGE;
             }
         }
         &.green {
-            border: 1px solid #4caf50;
-            color: #4caf50;
+            border: 1px solid #4caf50; /* stylelint-disable-line color-no-hex */
+            color: #4caf50; /* stylelint-disable-line color-no-hex */
 
             &:hover {
-                border: 1px solid #66bb6a;
-                color: #66bb6a;
+                border: 1px solid #66bb6a; /* stylelint-disable-line color-no-hex */
+                color: #66bb6a; /* stylelint-disable-line color-no-hex */
                 background: rgba(76, 175, 80, 0.1);
             }
             &:active {
-                border: 1px solid #4caf50;
-                color: #4caf50;
+                border: 1px solid #4caf50; /* stylelint-disable-line color-no-hex */
+                color: #4caf50; /* stylelint-disable-line color-no-hex */
             }
             &.effect:focus:not(:active):after {
-                border: 0 solid #4caf50;
+                border: 0 solid #4caf50; /* stylelint-disable-line color-no-hex */
             }
         }
         &:disabled, &[disabled] {
-            background: #f4f4f6 !important;
+            background: #f4f4f6 !important; /* stylelint-disable-line color-no-hex */
             border: 0 !important;
-            color: #e9e9ed !important;
+            color: #e9e9ed !important; /* stylelint-disable-line color-no-hex */
             cursor: not-allowed !important;
         }
     }
     &.flat {
         background: $COLOR_WHITE;
-        color: #4c5794;
+        color: #4c5794; /* stylelint-disable-line color-no-hex */
 
         &:hover {
-            background: #f2f3f8;
+            background: #f2f3f8; /* stylelint-disable-line color-no-hex */
         }
         &:active {
-            color: #4c5794;
+            color: #4c5794; /* stylelint-disable-line color-no-hex */
         }
         &.effect:focus:not(:active):after {
-            border: 0 solid #4c5794;
+            border: 0 solid #4c5794; /* stylelint-disable-line color-no-hex */
         }
         &:disabled, &[disabled] {
             background: transparent !important;
-            border: 1px solid #e9e9ed !important;
-            color: #e9e9ed !important;
+            border: 1px solid #e9e9ed !important; /* stylelint-disable-line color-no-hex */
+            color: #e9e9ed !important; /* stylelint-disable-line color-no-hex */
             cursor: not-allowed !important;
         }
     }
@@ -129,7 +129,7 @@
         bottom: -1px;
         right: -1px;
         border-radius: inherit;
-        border: 0 solid $primaryBrandColor;
+        border: 0 solid $COLOR_BLUE;
         opacity: 0.4;
         animation: buttonEffect 0.4s;
         animation-fill-mode: forwards;
@@ -147,4 +147,3 @@
         border-width: 6px;
     }
 }
-/* stylelint-enable color-no-hex */

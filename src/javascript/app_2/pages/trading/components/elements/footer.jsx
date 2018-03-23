@@ -4,8 +4,7 @@ import { connect } from '../../store/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (
     <Popover
-        title='Open positions'
-        subtitle='Toggle Portfolio Quick Menu to view current running portfolio'
+        subtitle='Toggle Portfolio'
     >
         <a
             href='javascript:;'
@@ -59,8 +58,8 @@ class ToggleFullScreen extends React.Component {
     render() {
         return (
             <Popover
-                subtitle='Toggle full screen'
-                placement='topRight'
+                subtitle='Toggle Fullscreen'
+                alignment='top-right'
             >
                 <a
                     href='javascript:;'
@@ -80,9 +79,14 @@ class TradingFooter extends React.Component {
                     <div className='footer-links'>
                         <TogglePortfolioDrawer {...this.props} />
                         {this.props.items.map((item, idx) => (
-                            <a key={idx} href={item.href || 'javascript:;'}>
-                                <span className={item.icon} title={item.text} />
-                            </a>
+                            <Popover
+                                key={idx}
+                                subtitle={item.text}
+                            >
+                                <a key={idx} href={item.href || 'javascript:;'} className={item.icon}>
+                                    <span title={item.text} />
+                                </a>
+                            </Popover>
                         ))}
                         <ToggleFullScreen />
                     </div>

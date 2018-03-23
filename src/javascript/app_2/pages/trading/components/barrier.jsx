@@ -43,7 +43,6 @@ const Barrier = ({
                 name='barrier_1'
                 value={barrier_1}
                 onChange={onChange}
-                is_currency
             />
 
             {!!barrier_2 &&

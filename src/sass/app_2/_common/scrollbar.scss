@@ -1,4 +1,3 @@
-/* stylelint-disable color-no-hex */
 /*
  * Container style
  */
@@ -46,7 +45,7 @@
 }
 
 .ps__rail-x:hover, .ps__rail-y:hover, .ps__rail-x:focus, .ps__rail-y:focus {
-    background-color: #eee;
+    background-color: #eee; /* stylelint-disable-line color-no-hex */
     opacity: 0.9;
 }
 
@@ -54,7 +53,7 @@
  * Scrollbar thumb styles
  */
 .ps__thumb-x {
-    background-color: #aaa;
+    background-color: #aaa; /* stylelint-disable-line color-no-hex */
     border-radius: 6px;
     transition: background-color 0.2s linear, height 0.2s ease-in-out;
     -webkit-transition: background-color 0.2s linear, height 0.2s ease-in-out;
@@ -66,7 +65,7 @@
 }
 
 .ps__thumb-y {
-    background-color: #aaa;
+    background-color: #aaa; /* stylelint-disable-line color-no-hex */
     border-radius: 6px;
     transition: background-color 0.2s linear, width 0.2s ease-in-out;
     -webkit-transition: background-color 0.2s linear, width 0.2s ease-in-out;
@@ -78,12 +77,12 @@
 }
 
 .ps__rail-x:hover > .ps__thumb-x, .ps__rail-x:focus > .ps__thumb-x {
-    background-color: #999;
+    background-color: #999; /* stylelint-disable-line color-no-hex */
     height: 11px;
 }
 
 .ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y {
-    background-color: #999;
+    background-color: #999; /* stylelint-disable-line color-no-hex */
     width: 11px;
 }
 
@@ -104,4 +103,3 @@
     position: relative;
     height: 100%;
 }
-/* stylelint-enable color-no-hex */
