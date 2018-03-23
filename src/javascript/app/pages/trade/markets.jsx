@@ -4,6 +4,7 @@ import Symbols from './symbols';
 // Should be remove in the future
 import Defaults from './defaults';
 import {getElementById} from '../../../_common/common_functions';
+import {localize} from '../../../_common/localize';
 
 function scrollToPosition (element, to, duration) {
     const requestAnimationFrame = window.requestAnimationFrame ||
@@ -98,7 +99,7 @@ class Underlying extends React.Component {
 
     openDropdown = () => {
         this.setState({open: true});
-        this.scrollToElement(this.state.underlying.symbol, 0);
+        this.scrollToElement(this.state.underlying.symbol, 0, 254);
     };
 
     closeDropdown = () => {
@@ -117,18 +118,18 @@ class Underlying extends React.Component {
         }
     }
 
-    scrollToElement = (id, duration = 120) => {
+    scrollToElement = (id, duration = 120, offset) => {
         //handleScroll is triggered automatically which sets the active market.
         const list = ReactDOM.findDOMNode(this.refs.list);
         const toOffset = document.getElementById(id).offsetTop;
-        scrollToPosition(list, toOffset - list.offsetTop, duration);
+        scrollToPosition(list, toOffset - list.offsetTop - offset, duration);
     }
 
     handleScroll = (e) => {
         const position = e.target.scrollTop;
         const arr = []
         Object.entries(this.market_nodes).forEach(([key, node]) => {
-            if (node && node.offsetTop - this.refs.list.offsetTop - 150 <= position) {
+            if (node && node.offsetTop - this.refs.list.offsetTop - 220 <= position) {
                 arr.push(key);
             }
         });
@@ -213,6 +214,11 @@ class Underlying extends React.Component {
         setTimeout(this.closeDropdown, 500);
     }
 
+    onTabChange = (e) => {
+        const market = e.target.dataset.market;
+        this.scrollToElement(`${market}_market`, 120, 0)
+    }
+
     render () {
         const {active_market, markets, underlying, query} = this.state;
         return (
@@ -228,27 +234,48 @@ class Underlying extends React.Component {
                     className={`markets_dropdown ${this.state.open ? '' : 'hidden'}`}
                     ref={this.saveRef}
                 >
+                    <div className='asset-placeholder mobile'>
+                        <span>{localize('Select Asset')}</span>
+                        <span className='close' onClick={this.closeDropdown}></span>
+                    </div>
                     <div className='search'>
                         <input
                             type='text'
                             maxLength={20}
                             onInput={this.searchSymbols}
-                            placeholder='"AUD/JPY" or "Apple"'
+                            placeholder={localize('"AUD/JPY" or "Apple"')}
                             value={query}
                         />
+                        <span className='icon'></span>
                     </div>
                     <div className='markets_view'>
                         <div className='markets_column'>
-                            {markets.map(([key, market], idx) =>
-                                <div
-                                    className={`market ${active_market === key ? 'active' : ''}`}
-                                    key={key}
-                                    onClick={this.scrollToElement.bind(null,`${key}_market`, 120)}
-                                >
-                                    <span className='icon'></span>
-                                    <span>{market.name}</span>
-                                </div>
-                            )}
+                            <div className='desktop'>
+                                {markets.map(([key, market], idx) =>
+                                    <div
+                                        className={`market ${active_market === key ? 'active' : ''}`}
+                                        key={key}
+                                        onClick={this.scrollToElement.bind(null,`${key}_market`, 120, 0)}
+                                    >
+                                        <span className={`icon ${key} ${active_market === key ? 'active' : ''}`}></span>
+                                        <span>{market.name}</span>
+                                    </div>
+                                )}
+                            </div>
+                            <div className='mobile'>
+                                <ul>
+                                    {markets.map(([key, obj]) => (
+                                        <li
+                                            onClick={this.scrollToElement.bind(null,`${key}_market`, 120, 0)}
+                                            key={key}
+                                            data-market={key}
+                                            className={active_market === key ? 'active' : ''}
+                                        >
+                                            <span className={`icon ${key}`}></span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                         <div
                             className='list'

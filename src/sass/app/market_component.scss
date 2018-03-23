@@ -32,14 +32,33 @@
         position: absolute;
         top: 0;
         transition: visibility 0s 0s, opacity 0.15s 0.1s, transform 0.25s;
-        flex: 1 0 auto;
+        width: 550px;
         z-index: 10000;
+        @media (min-width: 320px) and (max-width: 767px) {
+            width: 250px;
+        }
 
         &.hidden {
             opacity: 0;
             visibility: hidden;
             transform: translate(-50%, 0) scale(0, 1);
             transition: visibility 0s 0.5s, opacity 0.15s, transform 0.35s;
+        }
+        .asset-placeholder.mobile {
+            margin: 10px 15px 0;
+            text-align: left;
+            font-weight: 400;
+            display: none;
+            @media (min-width: 320px) and (max-width: 767px) {
+                display: block;
+            }
+
+            .close {
+                width: 16px;
+                height: 16px;
+                float: right;
+                background: url('../images/pages/trade/assets/ic-close-active.svg') 100% 100%;
+            }
         }
         .search {
             padding: 15px;
@@ -56,29 +75,134 @@
                     border: 1px solid $COLOR_BLUE_SHADE;
                 }
             }
+            .icon {
+                width: 16px;
+                height: 16px;
+                float: right;
+                position: relative;
+                top: -22px;
+                right: 7px;
+                background: url('../images/pages/trade/assets/ic-search-normal.svg') 100% 100%;
+            }
         }
         .markets_view {
             display: flex;
-            flex: 1 0 auto;
+            width: 100%;
             flex-direction: row;
             text-align: left;
+            @media (min-width: 320px) and (max-width: 767px) {
+                flex-direction: column;
+            }
 
             .markets_column {
                 display: flex;
                 flex-direction: column;
-                flex: 1 0 110px;
+                flex: 1 0 auto;
                 border-right: 1px solid $COLOR_GRAY;
+                @media (min-width: 320px) and (max-width: 767px) {
+                    border-right: 0;
+                }
 
-                .market {
+                .desktop .market {
                     font-size: 12px;
                     padding: 8px 10px;
                     color: $COLOR_BLUE;
                     transition: background 0.2s 0.1s;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
                     cursor: pointer;
 
                     &.active {
                         background: $COLOR_BLUE;
                         color: $COLOR_WHITE;
+                    }
+                    span:nth-of-type(2) {
+                        margin-left: 10px;
+                    }
+                }
+                .mobile {
+                    display: none;
+
+                    ul {
+                        display: flex !important;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding: 5px 15px 0;
+                        border-bottom: 1px solid $COLOR_GRAY;
+
+                        li {
+                            margin: 0 !important;
+                            font-size: 12px;
+                            transition: background 0.2s 0.1s;
+                            cursor: pointer;
+                            padding: 0 5px 5px;
+
+                            &.active {
+                                border-bottom: 2px solid $COLOR_BLUE;
+                            }
+                            .icon {
+                                width: 24px;
+                                height: 24px;
+                            }
+                        }
+                    }
+                }
+                .icon {
+                    display: block;
+                    width: 16px;
+                    height: 16px;
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+
+                    &.forex {
+                        background: url('../images/pages/trade/assets/ic-forex-normal.svg') no-repeat 100% 100%;
+                        background-size: contain;
+
+                        &.active {
+                            background: url('../images/pages/trade/assets/ic-forex-active.svg') no-repeat;
+                        }
+                    }
+                    &.indices {
+                        background: url('../images/pages/trade/assets/ic-indices-normal.svg') no-repeat 100% 100%;
+                        background-size: contain;
+
+                        &.active {
+                            background: url('../images/pages/trade/assets/ic-indices-active.svg') no-repeat;
+                        }
+                    }
+                    &.stocks {
+                        background: url('../images/pages/trade/assets/ic-stocks-normal.svg') no-repeat 100% 100%;
+                        background-size: contain;
+
+                        &.active {
+                            background: url('../images/pages/trade/assets/ic-stocks-active.svg') no-repeat;
+                        }
+                    }
+                    &.commodities {
+                        background: url('../images/pages/trade/assets/ic-commodities-normal.svg') no-repeat 100% 100%;
+                        background-size: contain;
+
+                        &.active {
+                            background: url('../images/pages/trade/assets/ic-commodities-active.svg') no-repeat;
+                        }
+                    }
+                    &.volidx {
+                        background: url('../images/pages/trade/assets/ic-volidx-normal.svg') no-repeat 100% 100%;
+                        background-size: contain;
+
+                        &.active {
+                            background: url('../images/pages/trade/assets/ic-volidx-active.svg') no-repeat;
+                        }
+                    }
+                }
+                // For mobile devices
+                @media (min-width: 320px) and (max-width: 767px) {
+                    .desktop {
+                        display: none;
+                    }
+                    .mobile {
+                        display: block;
                     }
                 }
             }
@@ -86,7 +210,7 @@
                 display: flex;
                 flex-direction: column;
                 height: 300px;
-                width: 420px;
+                width: 100%;
                 overflow-x: scroll;
                 padding: 0 10px;
 
@@ -98,7 +222,7 @@
 
                     .market_name {
                         font-size: 16px;
-                        padding: 0 0 20px;
+                        padding: 10px 0;
                         font-weight: 600;
                         flex: 1 0 auto;
                         color: $COLOR_BLUE;
@@ -119,7 +243,6 @@
                             display: flex;
                             flex-wrap: wrap;
                             flex-direction: row;
-                            max-width: 400px;
                             flex: 1 0 auto;
 
                             .symbol_name {
@@ -130,10 +253,17 @@
                                 width: 120px;
                                 font-size: 13px;
                                 transition: all 0.2s 0.1s;
+                                @media (min-width: 320px) and (max-width: 767px) {
+                                    width: 200px;
+                                }
 
                                 &.active {
                                     background: $COLOR_BLUE;
                                     color: $COLOR_WHITE;
+                                    @media (min-width: 320px) and (max-width: 767px) {
+                                        background: $COLOR_GRAY;
+                                        color: $COLOR_BLACK;
+                                    }
                                 }
                             }
                         }

@@ -140,10 +140,15 @@
     #contract_symbol_container {
         display: inline-flex;
         padding: 0;
+        position: relative;
 
         #contract_markets_container {
             text-align: right;
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
+        }
+        #underlying_details span {
+            display: block;
+            margin: 5px 0;
         }
     }
     #contract_container {
@@ -541,6 +546,10 @@
         @include BIDIR_PROP(padding-right, padding-left, 8px);
         padding-bottom: 5px;
         cursor: pointer;
+        font-size: 13px;
+        position: relative;
+        bottom: 50px;
+        float: right;
     }
 }
 
