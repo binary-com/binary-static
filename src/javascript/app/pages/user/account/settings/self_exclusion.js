@@ -20,10 +20,11 @@ const SelfExclusion = (() => {
         set_30day_turnover,
         currency;
 
-    const form_id          = '#frm_self_exclusion';
-    const timeout_date_id  = '#timeout_until_date';
-    const timeout_time_id  = '#timeout_until_time';
-    const exclude_until_id = '#exclude_until';
+    const form_id               = '#frm_self_exclusion';
+    const timeout_date_id       = '#timeout_until_date';
+    const timeout_time_id       = '#timeout_until_time';
+    const exclude_until_id      = '#exclude_until';
+    const max_30day_turnover_id = '#max_30day_turnover';
     const error_class      = 'errorfield';
 
     const onLoad = () => {
@@ -55,7 +56,7 @@ const SelfExclusion = (() => {
                 return;
             }
             BinarySocket.send({ get_account_status: 1 }).then((data) => {
-                const has_to_set_30day_turnover = /ukrts_max_turnover_limit_not_set/.test(data.get_account_status.status);
+                const has_to_set_30day_turnover = true;// /ukrts_max_turnover_limit_not_set/.test(data.get_account_status.status);
                 if (typeof set_30day_turnover === 'undefined') {
                     set_30day_turnover = has_to_set_30day_turnover;
                 }
@@ -77,6 +78,15 @@ const SelfExclusion = (() => {
                     }
                     $form.find(`#${key}`).val(value);
                 });
+
+                $('#chk_no_limit').on('change', function() {
+                    if ($(this).is(':checked')) {
+                        $(max_30day_turnover_id).val(999999).attr('disabled', true);
+                    } else {
+                        $(max_30day_turnover_id).val('').attr('disabled', false);
+                    }
+                });
+
                 bindValidation();
                 if (scroll) scrollToHashSection();
             });
@@ -90,7 +100,7 @@ const SelfExclusion = (() => {
         $form.find('input[type="text"]').each(function () {
             const id = $(this).attr('id');
 
-            if (/timeout_until|exclude_until/.test(id)) return;
+            if (/timeout_until|exclude_until|max_30day_turnover/.test(id)) return;
 
             const checks  = [];
             const options = { min: 0 };
@@ -148,6 +158,10 @@ const SelfExclusion = (() => {
                     ['custom', { func: value => !value.length || getMoment(exclude_until_id).isAfter(moment().add(6, 'months')), message: 'Exclude time cannot be less than 6 months.' }],
                     ['custom', { func: value => !value.length || getMoment(exclude_until_id).isBefore(moment().add(5, 'years')), message: 'Exclude time cannot be for more than 5 years.' }],
                 ],
+            },
+            {
+                selector   : max_30day_turnover_id,
+                validations: [['req', { func: value => !value.length || $('#chk_no_limit').is(':checked'), message: 'This field is required.' }]],
             });
 
         FormManager.init(form_id, validations);
