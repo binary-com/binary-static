@@ -357,33 +357,6 @@ const commonTrading = (() => {
         d: 5,
     };
 
-    const submarket_order = {
-        forex          : 0,
-        major_pairs    : 1,
-        minor_pairs    : 2,
-        smart_fx       : 3,
-        indices        : 4,
-        asia_oceania   : 5,
-        europe_africa  : 6,
-        americas       : 7,
-        otc_index      : 8,
-        stocks         : 9,
-        au_otc_stock   : 10,
-        ge_otc_stock   : 11,
-        india_otc_stock: 12,
-        uk_otc_stock   : 13,
-        us_otc_stock   : 14,
-        commodities    : 15,
-        metals         : 16,
-        energy         : 17,
-        volidx         : 18,
-        random_index   : 19,
-        random_daily   : 20,
-        random_nightly : 21,
-    };
-
-    const submarketOrder = market => submarket_order[market];
-
     const displayTooltip = () => {
         const tip = getElementById('symbol_tip');
         if (tip) {
