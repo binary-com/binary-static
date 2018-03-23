@@ -2,15 +2,19 @@ import React from 'react';
 import FAQ from './faq.jsx';
 import Main from './main.jsx';
 
+// TODO: compress svgs
+
 const BoxRow = ({ children, className = '' }) => (
-    <div className={`gr-row box-row ${className}`}>
+    <div className={`box-row gr-row ${className}`}>
         {children}
     </div>
 );
 
 const Box = ({ image, title, text }) => (
-    <div className='gr-4 gr-12-m center-text'>
-        <img className='gr-7 gr-centered' src={it.url_for(`images/pages/about/${image}.svg`)} />
+    <div className='box gr-4 gr-12-m center-text gr-padding-30'>
+        <img className='gr-4 gr-centered' src={it.url_for(`images/pages/affiliates/${image}.svg`)} />
+        <p><strong>{title}</strong></p>
+        <p>{text}</p>
     </div>
 );
 
@@ -50,6 +54,16 @@ const Signup = () => (
                 <h2>{it.L('Why you should join the Binary.com Affiliate Programme')}</h2>
 
                 {/* TODO: add box grid */}
+                <BoxRow className='border-bottom'>
+                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
+                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
+                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
+                </BoxRow>
+                <BoxRow>
+                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
+                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
+                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
+                </BoxRow>
 
                 <a className='button' href={signup_url}>
                     <span>{it.L('Apply Now')}</span>

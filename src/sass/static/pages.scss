@@ -1,5 +1,14 @@
 // styling for static pages that are too short or simple to need their own styling page
 
+.box-row {
+    .box:not(:last-child) {
+        border-right: 1px solid $COLOR_GRAY;
+        @media screen and (max-width: 480px) {
+            border: none;
+        }
+    }
+}
+
 .box-inlay-borders {
     .border-right-top {
         min-height: 200px;
