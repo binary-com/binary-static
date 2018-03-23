@@ -108,52 +108,8 @@ const commonTrading = (() => {
         }
     };
 
-    const displayMarkets = (id, elements, selected) => {
-        const target   = document.getElementById(id);
-        const fragment = document.createDocumentFragment();
-        marketsElement.init();
-        while (target && target.firstChild) {
-            target.removeChild(target.firstChild);
-        }
-
-        const keys1 = Object.keys(elements).sort(submarketSort);
-        for (let i = 0; i < keys1.length; i++) {
-            const key     = keys1[i];
-            let option    = createElement('option', { value: key, text: elements[key].name });
-            if (selected && selected === key) {
-                option.setAttribute('selected', 'selected');
-            }
-            fragment.appendChild(option);
-
-            if (elements[key].submarkets && !isEmptyObject(elements[key].submarkets)) {
-                const keys2 = Object.keys(elements[key].submarkets).sort(submarketSort);
-                for (let j = 0; j < keys2.length; j++) {
-                    const key2 = keys2[j];
-                    option     = createElement('option', { value: key2 });
-                    if (selected && selected === key2) {
-                        option.setAttribute('selected', 'selected');
-                    }
-                    elementTextContent(option, `\xA0\xA0\xA0\xA0${elements[key].submarkets[key2].name}`);
-                    fragment.appendChild(option);
-                }
-            }
-        }
-        if (target) {
-            target.appendChild(fragment);
-
-            if (target.selectedIndex < 0) {
-                target.selectedIndex = 0;
-            }
-            const current = target.options[target.selectedIndex];
-            if (selected !== current.value) {
-                Defaults.set('market', current.value);
-            }
-
-            if (current.disabled) { // there is no open market
-                Notifications.show({ text: localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
-                getElementById('trading_init_progress').style.display = 'none';
-            }
-        }
+    const displayMarkets = (elements) => {
+        marketsElement.init(elements);
     };
 
     /*

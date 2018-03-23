@@ -67,8 +67,8 @@ class Underlying extends React.Component {
     constructor (props) {
         super(props);
         const market_symbol = Defaults.get('market');
-        const underlying_symbol = Defaults.get('underlying');
         this.markets = Symbols.markets();
+        const underlying_symbol = Defaults.get('underlying') || Object.keys(Symbols.underlyings()[market_symbol])[0];
         const markets_arr = Object.entries(this.markets);
         this.underlyings = Symbols.getAllSymbols() || {};
         this.markets_all = markets_arr.slice();
@@ -153,6 +153,7 @@ class Underlying extends React.Component {
 
     searchSymbols = ({target: {value: query}}) => {
         this.setState({query});
+        scrollToPosition(this.references.list, 0, 0);
         const markets_all = this.markets_all;
         if (!query) {
             this.setState({markets: markets_all});
@@ -305,9 +306,9 @@ class Underlying extends React.Component {
     }
 }
 
-export const init = () => {
+export const init = (elements) => {
     ReactDOM.render(
-        <Underlying market={Symbols.markets()} />,
+        <Underlying market={elements} />,
         document.getElementById('underlying_component')
     );
 };

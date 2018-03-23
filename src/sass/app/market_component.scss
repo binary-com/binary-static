@@ -41,8 +41,11 @@
         &.hidden {
             opacity: 0;
             visibility: hidden;
-            transform: translate(0, -50%) scale(1, 0);
+            transform: translate(-50%, 0) scale(0, 1);
             transition: visibility 0s 0.5s, opacity 0.15s, transform 0.35s;
+            @media (min-width: 320px) and (max-width: 767px) {
+                transform: translate(0, -50%) scale(1, 0);
+            }
         }
         .asset-placeholder.mobile {
             margin: 10px 15px 0;
@@ -57,7 +60,7 @@
                 width: 16px;
                 height: 16px;
                 float: right;
-                background: url('../images/pages/trade/assets/ic-close-active.svg') 100% 100%;
+                background: url('../images/pages/trade/assets/ic-close-normal.svg') 100% 100%;
             }
         }
         .search {
@@ -98,6 +101,7 @@
                 display: flex;
                 flex-direction: column;
                 flex: 1 0 auto;
+                min-width: 130px;
                 border-right: 1px solid $COLOR_GRAY;
                 @media (min-width: 320px) and (max-width: 767px) {
                     border-right: 0;
@@ -221,9 +225,9 @@
                     margin-bottom: 30px;
 
                     .market_name {
-                        font-size: 16px;
+                        font-size: 18px;
                         padding: 10px 0;
-                        font-weight: 600;
+                        font-weight: 400;
                         flex: 1 0 auto;
                         color: $COLOR_BLUE;
                         @media (min-width: 320px) and (max-width: 767px) {
@@ -240,6 +244,7 @@
                             font-size: 12px;
                             padding: 10px 0 0;
                             flex: 1 0 auto;
+                            font-weight: 300;
                             color: $COLOR_ORANGE;
                             @media (min-width: 320px) and (max-width: 767px) {
                                 font-size: 14px;
@@ -257,7 +262,8 @@
                                 line-height: 18px;
                                 cursor: pointer;
                                 width: 120px;
-                                font-size: 13px;
+                                font-size: 14px;
+                                font-weight: 300;
                                 transition: all 0.2s 0.1s;
                                 @media (min-width: 320px) and (max-width: 767px) {
                                     width: 200px;
@@ -265,11 +271,12 @@
                                 }
 
                                 &.active {
-                                    background: $COLOR_BLUE;
-                                    color: $COLOR_WHITE;
+                                    font-weight: 600;
+                                    color: $COLOR_BLUE;
                                     @media (min-width: 320px) and (max-width: 767px) {
                                         background: $COLOR_GRAY;
                                         color: $COLOR_BLACK;
+                                        font-weight: 300;
                                     }
                                 }
                             }
