@@ -4,15 +4,15 @@ import Main from './main.jsx';
 
 // TODO: compress svgs
 
-const BoxRow = ({ children, className = '' }) => (
-    <div className={`box-row gr-row ${className}`}>
+const BoxRow = ({ children, top_row, bottom_row }) => (
+    <div className={`box-row gr-row ${top_row ? 'box-row-top' : ''} ${bottom_row ? 'box-row-bottom' : ''}`}>
         {children}
     </div>
 );
 
 const Box = ({ image, title, text }) => (
     <div className='box gr-4 gr-12-m center-text gr-padding-30'>
-        <img className='gr-4 gr-centered' src={it.url_for(`images/pages/affiliates/${image}.svg`)} />
+        <img className='gr-centered box-image' src={it.url_for(`images/pages/affiliates/${image}.svg`)} />
         <p><strong>{title}</strong></p>
         <p>{text}</p>
     </div>
@@ -54,18 +54,19 @@ const Signup = () => (
                 <h2>{it.L('Why you should join the Binary.com Affiliate Programme')}</h2>
 
                 {/* TODO: add box grid */}
-                <BoxRow className='border-bottom'>
-                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
-                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
-                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
+                <BoxRow top_row>
+                    <Box title={it.L('Generous commission')}      image='commission-icon'       text={it.L('Choose a commission plan that suits your business strategy.')} />
+                    <Box title={it.L('On-time payments')}         image='payment-icon'          text={it.L('Get paid by the 15th of every month. We’ve never missed a payment since we started our programme in March 2004.')} />
+                    <Box title={it.L('Dedicated support')}        image='contact-icon'          text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
                 </BoxRow>
-                <BoxRow>
-                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
-                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
-                    <Box title={it.L('Generous commission')} image='commission-icon' text={it.L('Choose a commission plan that suits your business strategy.')} />
+                <BoxRow bottom_row>
+                    <Box title={it.L('Advanced marketing tools')} image='marketing-icon'        text={it.L('Promote our products easily, and keep track of all your earnings with our nifty marketing tools.')} />
+                    <Box title={it.L('High conversions')}         image='conversion-icon'       text={it.L('We’ve paid millions in commission to date through our industry-leading affiliate programme.')} />
+                {/* TODO: add link to last box */}
+                    <Box title={it.L('Multiple opportunities')}   image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the Payment Agent Programme.')} />
                 </BoxRow>
 
-                <a className='button' href={signup_url}>
+                <a className='button gr-padding-30' href={signup_url}>
                     <span>{it.L('Apply Now')}</span>
                 </a>
             </div>
