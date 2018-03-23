@@ -29,22 +29,22 @@ const Index = () => (
                     <h1 className='center-text gr-padding-20'>{it.L('Key facts')}</h1>
                     <div className='gr-row border-bottom no-padding'>
                         <Box>
-                            <BoxInner className='border-right-top' href='/group-history' image='founded' text={it.L('<a href=\'[_1]\'>Founded</a> October 1999', it.url_for('group-history'))} />
-                            <BoxInner className='border-right-top' image='debt-free' text={it.L('Debt-free')} />
+                            <BoxInner className='border-right-top' href='/group-history' image_src={it.url_for('images/pages/about/founded.svg')} text={it.L('<a href=\'[_1]\'>Founded</a> October 1999', it.url_for('group-history'))} />
+                            <BoxInner className='border-right-top' image_src={it.url_for('images/pages/about/debt-free.svg')} text={it.L('Debt-free')} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-top' href='/careers' image='staff' text={it.L('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '130', it.url_for('careers'))} />
-                            <BoxInner image='1mil' text={it.L('Over 1 million registered accounts worldwide')} />
+                            <BoxInner className='border-right-top' href='/careers' image_src={it.url_for('images/pages/about/staff.svg')} text={it.L('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '130', it.url_for('careers'))} />
+                            <BoxInner image_src={it.url_for('images/pages/about/1mil.svg')} text={it.L('Over 1 million registered accounts worldwide')} />
                         </Box>
                     </div>
                     <div className='gr-row gr-parent'>
                         <Box>
-                            <BoxInner className='border-right-bottom gr-padding-30' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href=\'https://binarycom.statuspage.io/\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>')} />
-                            <BoxInner className='border-right-bottom gr-padding-30' href='/contact' image='locations' text={it.L('<a href=\'[_1]\'>Offices</a> in Malta, Malaysia and Japan', it.url_for('contact'))} />
+                            <BoxInner className='border-right-bottom gr-padding-30' image_src={it.url_for('images/pages/about/transacts.svg')} text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href=\'https://binarycom.statuspage.io/\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>')} />
+                            <BoxInner className='border-right-bottom gr-padding-30' href='/contact' image_src={it.url_for('images/pages/about/locations.svg')} text={it.L('<a href=\'[_1]\'>Offices</a> in Malta, Malaysia and Japan', it.url_for('contact'))} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan')} />
-                            <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Portuguese, Russian, and Thai')} />
+                            <BoxInner className='border-right-bottom gr-padding-30' image_src={it.url_for('images/pages/about/license.svg')} text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan')} />
+                            <BoxInner className='gr-padding-30' image_src={it.url_for('images/pages/about/languages.svg')} text={it.L('Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Portuguese, Russian, and Thai')} />
                         </Box>
                     </div>
                 </div>
