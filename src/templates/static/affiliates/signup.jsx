@@ -33,8 +33,25 @@ const Signup = () => (
         </div>
 
         <div className='fill-bg-color'>
-            <div className='container gr-padding-30'>
+            <div className='container center-text gr-padding-30'>
                 <h2>{it.L('Why you should join the Binary.com Affiliate Programme')}</h2>
+            </div>
+        </div>
+
+        <div className='container center-text gr-padding-30'>
+            <h2 className='center-text'>{it.L('Types of affiliate commission plans')}</h2>
+            <p>{it.L('You can choose from two types of affiliate commission plans:')}</p>
+        </div>
+
+        <div className='fill-bg-color'>
+            <div className='container center-text gr-padding-30'>
+                <p>{it.L('Sign up for the Binary.com Affiliate Programme today:')}</p>
+                <p>
+                    {/* TODO: add href */}
+                    <a className='button' href='#'>
+                        <span>{it.L('Yes, I Want To Sign Up As An Affiliate')}</span>
+                    </a>
+                </p>
             </div>
         </div>
     </div>
