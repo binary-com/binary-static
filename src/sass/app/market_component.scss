@@ -41,7 +41,7 @@
         &.hidden {
             opacity: 0;
             visibility: hidden;
-            transform: translate(-50%, 0) scale(0, 1);
+            transform: translate(0, -50%) scale(1, 0);
             transition: visibility 0s 0.5s, opacity 0.15s, transform 0.35s;
         }
         .asset-placeholder.mobile {
@@ -61,7 +61,7 @@
             }
         }
         .search {
-            padding: 15px;
+            padding: 15px 15px 0;
 
             input {
                 outline: none;
@@ -226,6 +226,9 @@
                         font-weight: 600;
                         flex: 1 0 auto;
                         color: $COLOR_BLUE;
+                        @media (min-width: 320px) and (max-width: 767px) {
+                            font-size: 20px;
+                        }
                     }
                     .submarket {
                         display: flex;
@@ -238,6 +241,9 @@
                             padding: 10px 0 0;
                             flex: 1 0 auto;
                             color: $COLOR_ORANGE;
+                            @media (min-width: 320px) and (max-width: 767px) {
+                                font-size: 14px;
+                            }
                         }
                         .symbols {
                             display: flex;
@@ -255,6 +261,7 @@
                                 transition: all 0.2s 0.1s;
                                 @media (min-width: 320px) and (max-width: 767px) {
                                     width: 200px;
+                                    font-size: 16px;
                                 }
 
                                 &.active {

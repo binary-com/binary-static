@@ -8,9 +8,9 @@ import {localize} from '../../../_common/localize';
 
 function scrollToPosition (element, to, duration) {
     const requestAnimationFrame = window.requestAnimationFrame ||
-        function requestAnimationFrameTimeout () {
-            return setTimeout(arguments[0], 10);
-        }
+        function (...args) {
+            return setTimeout(args[0], 10);
+        };
     if (duration <= 0) {
         element.scrollTop = to;
         return;
@@ -18,7 +18,7 @@ function scrollToPosition (element, to, duration) {
     const difference = to - element.scrollTop;
     const perTick = difference / duration * 10;
     requestAnimationFrame(() => {
-        element.scrollTop = element.scrollTop + perTick;
+        element.scrollTop += perTick;
         if (element.scrollTop === to) return;
         scrollToPosition(element, to, duration - 10);
     }, 20);
@@ -28,7 +28,7 @@ const List = ({
     arr,
     saveRef,
     underlying,
-    onUnderlyingClick
+    onUnderlyingClick,
 }) => (
     arr.map(([market_code, obj], idx) => (
         <div
@@ -72,19 +72,20 @@ class Underlying extends React.Component {
         const markets_arr = Object.entries(this.markets);
         this.underlyings = Symbols.getAllSymbols() || {};
         this.markets_all = markets_arr.slice();
+        this.references = {};
         this.state = {
-            open: false,
+            open  : false,
             market: {
                 symbol: market_symbol,
-                name: this.markets[market_symbol].name,
+                name  : this.markets[market_symbol].name,
             },
             underlying: {
                 symbol: underlying_symbol,
-                name: this.underlyings[underlying_symbol],
+                name  : this.underlyings[underlying_symbol],
             },
-            markets: markets_arr,
+            markets      : markets_arr,
             active_market: market_symbol,
-            query: '',
+            query        : '',
         };
         getElementById('underlying').value = underlying_symbol;
     }
@@ -97,6 +98,7 @@ class Underlying extends React.Component {
         document.body.removeEventListener('click', this.closeDropdown);
     }
 
+    /* eslint-disable no-undef */
     openDropdown = () => {
         this.setState({open: true});
         this.scrollToElement(this.state.underlying.symbol, 0, 254);
@@ -104,32 +106,34 @@ class Underlying extends React.Component {
 
     closeDropdown = () => {
         this.setState({
-            open: false,
-            query: '',
-            markets: this.markets_all
+            open   : false,
+            query  : '',
+            markets: this.markets_all,
         });
     };
 
-    saveRef = (node) => this.wrapper_ref = node;
+    saveRef = (node_name, node) => this.references[node_name] = node;
 
     handleClickOutside = (e) => {
-        if(this.wrapper_ref && !this.wrapper_ref.contains(e.target)) {
+        if (this.references.wrapper_ref
+            && !this.references.wrapper_ref.contains(e.target)) {
             this.closeDropdown();
         }
     }
 
     scrollToElement = (id, duration = 120, offset) => {
-        //handleScroll is triggered automatically which sets the active market.
-        const list = ReactDOM.findDOMNode(this.refs.list);
+        // handleScroll is triggered automatically which sets the active market.
+        const {list} = this.references;
         const toOffset = document.getElementById(id).offsetTop;
         scrollToPosition(list, toOffset - list.offsetTop - offset, duration);
     }
 
     handleScroll = (e) => {
+        const {market_nodes, list} = this.references;
         const position = e.target.scrollTop;
-        const arr = []
-        Object.entries(this.market_nodes).forEach(([key, node]) => {
-            if (node && node.offsetTop - this.refs.list.offsetTop - 220 <= position) {
+        const arr = [];
+        Object.entries(market_nodes).forEach(([key, node]) => {
+            if (node && node.offsetTop - list.offsetTop - 220 <= position) {
                 arr.push(key);
             }
         });
@@ -143,8 +147,8 @@ class Underlying extends React.Component {
     }
 
     saveMarketRef = (market, node) => {
-        if(!this.market_nodes) this.market_nodes = {}
-        this.market_nodes[market] = node;
+        if (!this.references.market_nodes) this.references.market_nodes = {};
+        this.references.market_nodes[market] = node;
     }
 
     searchSymbols = ({target: {value: query}}) => {
@@ -197,12 +201,12 @@ class Underlying extends React.Component {
         this.setState({
             market: {
                 symbol: market_symbol,
-                name: this.markets[market_symbol].name,
+                name  : this.markets[market_symbol].name,
             },
             underlying: {
                 symbol: underlying_symbol,
-                name: this.underlyings[underlying_symbol],
-            }
+                name  : this.underlyings[underlying_symbol],
+            },
         });
 
         // Trigger change event.
@@ -216,62 +220,67 @@ class Underlying extends React.Component {
 
     onTabChange = (e) => {
         const market = e.target.dataset.market;
-        this.scrollToElement(`${market}_market`, 120, 0)
+        this.scrollToElement(`${market}_market`, 120, 0);
     }
+    /* eslint-enable no-undef */
 
     render () {
-        const {active_market, markets, underlying, query} = this.state;
+        const {active_market, markets,
+            underlying, query, market} = this.state;
+        const { openDropdown, closeDropdown, searchSymbols,
+            scrollToElement, handleScroll, saveMarketRef,
+            onUnderlyingClick, saveRef } = this;
         return (
             <div className='markets'>
                 <div
                     className='market_current'
-                    onClick={this.openDropdown}
+                    onClick={openDropdown}
                 >
-                    <span className='market'>{this.state.market.name}</span>
-                    <span className='underlying'>{this.state.underlying.name}</span>
+                    <span className='market'>{market.name}</span>
+                    <span className='underlying'>{underlying.name}</span>
                 </div>
                 <div
                     className={`markets_dropdown ${this.state.open ? '' : 'hidden'}`}
-                    ref={this.saveRef}
+                    ref={saveRef.bind(null, 'wrapper_ref')}
                 >
                     <div className='asset-placeholder mobile'>
                         <span>{localize('Select Asset')}</span>
-                        <span className='close' onClick={this.closeDropdown}></span>
+                        <span className='close' onClick={closeDropdown} />
                     </div>
                     <div className='search'>
                         <input
                             type='text'
                             maxLength={20}
-                            onInput={this.searchSymbols}
+                            onInput={searchSymbols}
                             placeholder={localize('"AUD/JPY" or "Apple"')}
                             value={query}
                         />
-                        <span className='icon'></span>
+                        <span className='icon' />
                     </div>
                     <div className='markets_view'>
                         <div className='markets_column'>
                             <div className='desktop'>
-                                {markets.map(([key, market], idx) =>
+                                {markets.map(([key, obj]) =>
                                     <div
                                         className={`market ${active_market === key ? 'active' : ''}`}
                                         key={key}
-                                        onClick={this.scrollToElement.bind(null,`${key}_market`, 120, 0)}
+                                        onClick={scrollToElement.bind(null,`${key}_market`, 120, 0)}
                                     >
-                                        <span className={`icon ${key} ${active_market === key ? 'active' : ''}`}></span>
-                                        <span>{market.name}</span>
+                                        <span className={`icon ${key} ${active_market === key ? 'active' : ''}`} />
+                                        <span>{obj.name}</span>
                                     </div>
                                 )}
                             </div>
                             <div className='mobile'>
                                 <ul>
-                                    {markets.map(([key, obj]) => (
+                                    {markets.map(([key]) => (
                                         <li
-                                            onClick={this.scrollToElement.bind(null,`${key}_market`, 120, 0)}
+                                            onClick={scrollToElement.bind(null,`${key}_market`, 120, 0)}
                                             key={key}
                                             data-market={key}
                                             className={active_market === key ? 'active' : ''}
                                         >
-                                            <span className={`icon ${key}`}></span>
+                                            <span className={`icon ${key}`} />
                                         </li>
                                     ))}
                                 </ul>
@@ -279,14 +288,14 @@ class Underlying extends React.Component {
                         </div>
                         <div
                             className='list'
-                            ref='list'
-                            onScroll={this.handleScroll}
+                            ref={saveRef.bind(null, 'list')}
+                            onScroll={handleScroll}
                         >
                             <List
                                 arr={markets}
-                                saveRef={this.saveMarketRef}
+                                saveRef={saveMarketRef}
                                 underlying={underlying.symbol}
-                                onUnderlyingClick={this.onUnderlyingClick}
+                                onUnderlyingClick={onUnderlyingClick}
                             />
                         </div>
                     </div>
@@ -302,3 +311,5 @@ export const init = () => {
         document.getElementById('underlying_component')
     );
 };
+
+export default init;

@@ -10,7 +10,6 @@ const getElementById     = require('../../../_common/common_functions').getEleme
 const localize           = require('../../../_common/localize').localize;
 const urlFor             = require('../../../_common/url').urlFor;
 const createElement      = require('../../../_common/utility').createElement;
-const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 const isEmptyObject      = require('../../../_common/utility').isEmptyObject;
 
 /*
@@ -155,32 +154,6 @@ const commonTrading = (() => {
                 getElementById('trading_init_progress').style.display = 'none';
             }
         }
-    };
-
-    const generateUnderlyingOptions = (elements, selected) => {
-        const fragment   = document.createDocumentFragment();
-        const keys       = Object.keys(elements).sort((a, b) => (
-            elements[a].display.localeCompare(elements[b].display, {}, { numeric: true }))
-        );
-        const submarkets = {};
-        for (let i = 0; i < keys.length; i++) {
-            if (!getPropertyValue(submarkets, elements[keys[i]].submarket)) {
-                submarkets[elements[keys[i]].submarket] = [];
-            }
-            submarkets[elements[keys[i]].submarket].push(keys[i]);
-        }
-        const keys2 = Object.keys(submarkets).sort(submarketSort);
-        for (let j = 0; j < keys2.length; j++) {
-            for (let k = 0; k < submarkets[keys2[j]].length; k++) {
-                const key    = submarkets[keys2[j]][k];
-                const option = createElement('option', { value: key, text: localize(elements[key].display) });
-                if (selected && selected === key) {
-                    option.setAttribute('selected', 'selected');
-                }
-                fragment.appendChild(option);
-            }
-        }
-        return fragment;
     };
 
     /*
