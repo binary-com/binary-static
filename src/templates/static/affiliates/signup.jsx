@@ -15,6 +15,9 @@ const Step = ({ header, text, circle_no }) => {
     );
 };
 
+// TODO: add lang to href ?
+const signup_url = 'https://login.binary.com/signup.php';
+
 const Signup = () => (
     <div className='static_full'>
         <div className='container'>
@@ -41,18 +44,24 @@ const Signup = () => (
         <div className='container center-text gr-padding-30'>
             <h2 className='center-text'>{it.L('Types of affiliate commission plans')}</h2>
             <p>{it.L('You can choose from two types of affiliate commission plans:')}</p>
+            <a className='button' href={signup_url}>
+                <span>{it.L('Apply Now')}</span>
+            </a>
         </div>
 
         <div className='fill-bg-color'>
             <div className='container center-text gr-padding-30'>
                 <p>{it.L('Sign up for the Binary.com Affiliate Programme today:')}</p>
                 <p>
-                    {/* TODO: add href */}
-                    <a className='button' href='#'>
+                    <a className='button' href={signup_url}>
                         <span>{it.L('Yes, I Want To Sign Up As An Affiliate')}</span>
                     </a>
                 </p>
             </div>
+        </div>
+
+        <div className='container'>
+            <h2 className='center-text'>{it.L('FAQ')}</h2>
         </div>
     </div>
 );
