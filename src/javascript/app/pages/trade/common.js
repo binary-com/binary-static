@@ -1,16 +1,13 @@
 const Defaults           = require('./defaults');
-const Notifications      = require('./notifications');
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
 const marketsElement     = require('./markets.jsx');
 const formatMoney        = require('../../common/currency').formatMoney;
 const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
-const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
 const urlFor             = require('../../../_common/url').urlFor;
 const createElement      = require('../../../_common/utility').createElement;
-const isEmptyObject      = require('../../../_common/utility').isEmptyObject;
 
 /*
  * This contains common functions we need for processing the response
@@ -386,16 +383,6 @@ const commonTrading = (() => {
     };
 
     const submarketOrder = market => submarket_order[market];
-
-    const submarketSort = (a, b) => {
-        if (submarketOrder(a) > submarketOrder(b)) {
-            return 1;
-        } else if (submarketOrder(a) < submarketOrder(b)) {
-            return -1;
-        }
-
-        return 0;
-    };
 
     const displayTooltip = () => {
         const tip = getElementById('symbol_tip');

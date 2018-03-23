@@ -217,6 +217,9 @@ class Underlying extends React.Component {
         ele.dispatchEvent(event);
 
         setTimeout(this.closeDropdown, 500);
+        /* Todo add notification for closed markets */
+        // Notifications.show({ text: localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
+
     }
 
     onTabChange = (e) => {
