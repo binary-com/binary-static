@@ -12,7 +12,7 @@ const BoxRow = ({ children, top_row, bottom_row }) => (
 
 const Box = ({ image, title, text }) => (
     <div className='box gr-4 gr-12-m center-text gr-padding-30'>
-        <img className='gr-centered box-image' src={it.url_for(`images/pages/affiliates/${image}.svg`)} />
+        <img className='gr-centered fixed-height-img' src={it.url_for(`images/pages/affiliates/${image}.svg`)} alt={image} />
         <p><strong>{title}</strong></p>
         <p>{text}</p>
     </div>
@@ -33,19 +33,21 @@ const Step = ({ header, text, circle_no }) => (
 const signup_url = 'https://login.binary.com/signup.php';
 
 const Signup = () => (
-    <div className='static_full'>
+    <div className='static_full affiliates'>
         <div className='container'>
             <h1>{it.L('Binary.com Affiliate Programme')}</h1>
             <p>
                 {it.L('Earn up to 35% commission with an award-winning binary options trading platform.')}
             </p>
 
-            <h2 className='center-text gr-padding-30'>{it.L('How it works')}</h2>
-            <div className='steps'>
-                {/* TODO: add link in first step */}
-                <Step circle_no='1' header={it.L('Sign up')}            text={it.L('Getting started is free and easy –– just fill out the application form and wait for our approval.')} />
-                <Step circle_no='2' header={it.L('Promote Binary.com')} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise Binary.com to your audience.')} />
-                <Step circle_no='3' header={it.L('Earn')}               text={it.L('Choose from two types of  commission plans when your referred clients trade binary options on our platform.')} />
+            <div className='gr-padding-20'>
+                <h2 className='center-text gr-padding-30'>{it.L('How it works')}</h2>
+                <div className='steps'>
+                    {/* TODO: add link in first step */}
+                    <Step circle_no='1' header={it.L('Sign up')}            text={it.L('Getting started is free and easy –– just fill out the application form and wait for our approval.')} />
+                    <Step circle_no='2' header={it.L('Promote Binary.com')} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise Binary.com to your audience.')} />
+                    <Step circle_no='3' header={it.L('Earn')}               text={it.L('Choose from two types of  commission plans when your referred clients trade binary options on our platform.')} />
+                </div>
             </div>
         </div>
 
@@ -74,11 +76,15 @@ const Signup = () => (
             </div>
         </div>
 
-        <div className='container center-text gr-padding-30'>
-            <h2 className='center-text'>{it.L('Types of affiliate commission plans')}</h2>
-            <p>{it.L('You can choose from two types of affiliate commission plans:')}</p>
-
+        <div className='container gr-padding-30'>
+            <div className='center-text'>
+                <h2>{it.L('Types of affiliate commission plans')}</h2>
+                <p>{it.L('You can choose from two types of affiliate commission plans:')}</p>
+            </div>
+    
             {/* TODO: add tabs */}
+
+            <p>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
         </div>
 
         <div className='fill-bg-color'>
@@ -92,8 +98,27 @@ const Signup = () => (
             </div>
         </div>
 
-        <div className='container'>
+        <div className='container gr-padding-30'>
             <h2 className='center-text'>{it.L('FAQ')}</h2>
+
+            <div className='gr-row'>
+                <div className='gr-3 gr-6-m center-text faq-box'>
+                    <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/general-faq-icon.svg')} alt='general-faq-icon' />
+                    <p><strong>{it.L('General')}</strong></p>
+                </div>
+                <div className='gr-3 gr-6-m center-text faq-box'>
+                    <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/account-icon.svg')} alt='account-icon' />
+                    <p><strong>{it.L('Account management and tracking')}</strong></p>
+                </div>
+                <div className='gr-3 gr-6-m center-text faq-box'>
+                    <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/marketing-icon.svg')} alt='marketing-icon' />
+                    <p><strong>{it.L('Marketing and promotions')}</strong></p>
+                </div>
+                <div className='gr-3 gr-6-m center-text faq-box'>
+                    <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/support-faq-icon.svg')} alt='support-faq-icon' />
+                    <p><strong>{it.L('Support')}</strong></p>
+                </div>
+            </div>
         </div>
     </div>
 );
