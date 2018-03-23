@@ -42,8 +42,8 @@ const TradingExperienceForm = () => (
         <SelectRow con={Experience} id='other_derivatives_trading_experience' label={it.L('Binary options trading experience')} />
         <SelectRow con={Frequency}  id='other_derivatives_trading_frequency'  label={it.L('Binary options trading frequency')} />
 
-        <SelectRow con={Experience} id='cfds_trading_experience' label={it.L('CFDs trading experience')} />
-        <SelectRow con={Frequency}  id='cfds_trading_frequency'  label={it.L('CFDs trading frequency')} />
+        <SelectRow con={Experience} id='cfd_trading_experience' label={it.L('CFD trading experience')} />
+        <SelectRow con={Frequency}  id='cfd_trading_frequency'  label={it.L('CFD trading frequency')} />
 
         <SelectRow con={Experience} id='other_instruments_trading_experience' label={it.L('Trading experience in other financial instruments?')} />
         <SelectRow con={Frequency}  id='other_instruments_trading_frequency'  label={it.L('Trading frequency in other financial instruments?')} />
