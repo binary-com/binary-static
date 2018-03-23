@@ -14,21 +14,21 @@ class FullscreenDialog extends React.PureComponent {
     }
 
     scrollToElIfNeeded = (parent, el) => {
-        const viewportOffset = el.getBoundingClientRect();
-        const hidden = viewportOffset.top + el.clientHeight + 20 > window.innerHeight;
+        const viewport_offset = el.getBoundingClientRect();
+        const hidden = viewport_offset.top + el.clientHeight + 20 > window.innerHeight;
         if (hidden) {
-            const newElTop = (window.innerHeight - el.clientHeight) / 2;
-            const d = viewportOffset.top - newElTop;
-            parent.scrollTop += d;
+            const new_el_top = (window.innerHeight - el.clientHeight) / 2;
+            parent.scrollTop += viewport_offset.top - new_el_top;
         }
     }
 
+    // sometimes input is covered by virtual keyboard on mobile chrome, uc browser
     handleClick = (e) => {
         if (e.target.tagName === 'INPUT' && e.target.type === 'number') {
             const scrollToTarget = this.scrollToElIfNeeded.bind(null, e.currentTarget, e.target);
             window.addEventListener('resize', scrollToTarget, false);
 
-            // remove listener, resize is not fired on iOS
+            // remove listener, resize is not fired on iOS safari
             window.setTimeout(() => {
                 window.removeEventListener('resize', scrollToTarget, false);
             }, 2000);
