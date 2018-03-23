@@ -2,18 +2,28 @@ import React from 'react';
 import FAQ from './faq.jsx';
 import Main from './main.jsx';
 
-const Step = ({ header, text, circle_no }) => {
-    return (
-        <div className='step'>
-            <div className='border-bottom' />
-            <div className='circle'>{ circle_no }</div>
-            <div className='gr-padding-20 gr-gutter center-text'>
-                <div className='gr-padding-20 gr-child'><strong>{header}</strong></div>
-                <p className='no-margin gr-padding-10'>{text}</p>
-            </div>
+const BoxRow = ({ children, className = '' }) => (
+    <div className={`gr-row box-row ${className}`}>
+        {children}
+    </div>
+);
+
+const Box = ({ image, title, text }) => (
+    <div className='gr-4 gr-12-m center-text'>
+        <img className='gr-7 gr-centered' src={it.url_for(`images/pages/about/${image}.svg`)} />
+    </div>
+);
+
+const Step = ({ header, text, circle_no }) => (
+    <div className='step'>
+        <div className='border-bottom' />
+        <div className='circle'>{ circle_no }</div>
+        <div className='gr-padding-20 gr-gutter center-text'>
+            <div className='gr-padding-20 gr-child'><strong>{header}</strong></div>
+            <p className='no-margin gr-padding-10'>{text}</p>
         </div>
-    );
-};
+    </div>
+);
 
 // TODO: add lang to href ?
 const signup_url = 'https://login.binary.com/signup.php';
