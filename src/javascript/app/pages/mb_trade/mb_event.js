@@ -81,7 +81,7 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('period', period);
                 MBProcess.processPriceRequest();
                 $('.remaining-time').removeClass('alert');
-                MBContract.displayRemainingTime('recalculate');
+                MBContract.displayRemainingTime('recalculate', jpClient());
             });
         }
 
