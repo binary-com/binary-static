@@ -80,10 +80,29 @@ const FAQ = () => (
 
 
                 <Section id='marketing-and-promotions' header={it.L('Marketing and promotions')}>
+                    <h3>{it.L('What advertising materials and marketing tools do you offer?')}</h3>
+                    <p>{it.L('We have a tested and proven selection of advertising materials including banners, reviews, videos, and text ads for you to use. If you would like certain items to be customised to your preferences, please contact your account manager at <a href=\'[_1]\'>affiliates@binary.com</a>. You can also use the Myaffiliates system to track and optimise your campaigns.', 'mailto:affiliates@binary.com')}</p>
+
+                    <h3>{it.L('Where are the advertising materials located?')}</h3>
+                    <p>{it.L('Log in to your Binary.com affiliate account and go to: Marketing → All Media.')}</p>
+
+                    <h3>{it.L('Can you customise a banner for my site?')}</h3>
+                    <p>{it.L('Yes. Please contact your affiliate manager with the following information:')}</p>
+                    <ul className='bullet'>
+                        <li>{it.L('Pixel size')}</li>
+                        <li>{it.L('File format')}</li>
+                        <li>{it.L('Desired language')}</li>
+                        <li>{it.L('The URL of the site on which the banner is going to appear')}</li>
+                        <li>{it.L('Banner placement')}</li>
+                        <li>{it.L('Specific colours the banner should include')}</li>
+                        <li>{it.L('Specific message the banner should include')}</li>
+                    </ul>
                 </Section>
 
 
                 <Section id='support' header={it.L('Support')}>
+                    <h3>{it.L('Where can I send my questions, comments, and suggestions?')}</h3>
+                    <p>{it.L('Feel free to get in touch with us at <a href=\'[_1]\'>affiliates@binary.com</a>. We’d love to hear from you.', 'mailto:affiliates@binary.com')}</p>
                 </Section>
             </div>
         </div>
