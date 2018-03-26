@@ -121,8 +121,8 @@
                     cursor: pointer;
 
                     &.active {
-                        background: $COLOR_BLUE;
-                        color: $COLOR_WHITE;
+                        font-weight: 600;
+                        border-right: 2px solid $COLOR_BLUE;
                     }
                     span:nth-of-type(2) {
                         margin-left: 10px;
@@ -168,6 +168,7 @@
 
                         &.active {
                             background: url('../images/pages/trade/assets/ic-forex-active.svg') no-repeat;
+                            background-size: contain;
                         }
                     }
                     &.indices {
@@ -176,6 +177,7 @@
 
                         &.active {
                             background: url('../images/pages/trade/assets/ic-indices-active.svg') no-repeat;
+                            background-size: contain;
                         }
                     }
                     &.stocks {
@@ -184,6 +186,7 @@
 
                         &.active {
                             background: url('../images/pages/trade/assets/ic-stocks-active.svg') no-repeat;
+                            background-size: contain;
                         }
                     }
                     &.commodities {
@@ -192,6 +195,7 @@
 
                         &.active {
                             background: url('../images/pages/trade/assets/ic-commodities-active.svg') no-repeat;
+                            background-size: contain;
                         }
                     }
                     &.volidx {
@@ -200,6 +204,7 @@
 
                         &.active {
                             background: url('../images/pages/trade/assets/ic-volidx-active.svg') no-repeat;
+                            background-size: contain;
                         }
                     }
                 }

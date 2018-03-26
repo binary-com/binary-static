@@ -227,6 +227,15 @@ class Markets extends React.Component {
         const market = e.target.dataset.market;
         this.scrollToElement(`${market}_market`, 120, 0);
     }
+
+    getCurrentUnderlying = () => {
+        const { underlying: {name: underlying} } = this.state;
+        const max_char = window.innerWidth <= 767 ? 15 : 25;
+        if (underlying.length > max_char) {
+            return `${underlying.substr(0, max_char)}...`;
+        }
+        return underlying
+    }
     /* eslint-enable no-undef */
 
     render () {
@@ -242,7 +251,7 @@ class Markets extends React.Component {
                     onClick={openDropdown}
                 >
                     <span className='market'>{market.name}</span>
-                    <span className='underlying'>{underlying.name}</span>
+                    <span className='underlying'>{this.getCurrentUnderlying()}</span>
                 </div>
                 <div
                     className={`markets_dropdown ${this.state.open ? '' : 'hidden'}`}
@@ -285,7 +294,7 @@ class Markets extends React.Component {
                                             data-market={key}
                                             className={active_market === key ? 'active' : ''}
                                         >
-                                            <span className={`icon ${key}`} />
+                                            <span className={`icon ${key} ${active_market === key ? 'active' : ''}`} />
                                         </li>
                                     ))}
                                 </ul>
