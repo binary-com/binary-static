@@ -1,5 +1,15 @@
 // styling for static pages that are too short or simple to need their own styling page
 
+.affiliates_faq {
+    h3 {
+        color: $COLOR_ORANGE;
+
+        &:not(:first-of-type) {
+            margin-top: 3rem;
+        }
+    }
+}
+
 .affiliates {
     h2 {
         margin-top: 30px;
