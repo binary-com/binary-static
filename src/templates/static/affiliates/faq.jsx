@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, HeaderSecondary, NavButtons, ListStrong } from '../get_started/common.jsx';
+import { Section } from '../get_started/common.jsx';
 import { List } from '../../_common/components/elements.jsx';
 import { signup_url } from './signup.jsx';
 
