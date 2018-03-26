@@ -179,8 +179,8 @@ const MBContract = (() => {
         }
     };
 
-    const displayRemainingTime = (recalculate, is_jp_client) => {
-        if (typeof $durations === 'undefined' || recalculate) {
+    const displayRemainingTime = (should_recalculate, is_jp_client) => {
+        if (typeof $durations === 'undefined' || should_recalculate) {
             // period_value = MBDefaults.get('period');
             $period    = $('#period');
             $durations = $period.find('.list > div, .current > div');
