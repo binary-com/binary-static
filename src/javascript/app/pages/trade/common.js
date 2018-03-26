@@ -112,6 +112,7 @@ const commonTrading = (() => {
     const displayMarkets = (id, elements, selected) => {
         const target   = document.getElementById(id);
         const fragment = document.createDocumentFragment();
+
         while (target && target.firstChild) {
             target.removeChild(target.firstChild);
         }
