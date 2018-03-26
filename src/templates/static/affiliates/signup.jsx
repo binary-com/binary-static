@@ -2,8 +2,6 @@ import React from 'react';
 import FAQ from './faq.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
-// TODO: compress svgs
-
 const BoxRow = ({ children, top_row, bottom_row }) => (
     <div className={`box-row gr-row ${top_row ? 'box-row-top' : ''} ${bottom_row ? 'box-row-bottom' : ''}`}>
         {children}
