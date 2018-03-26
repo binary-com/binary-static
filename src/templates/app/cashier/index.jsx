@@ -45,13 +45,13 @@ const Cashier = () => (
         </div>
 
         <div className='gr-padding-10 table-body client_virtual invisible gr-parent'>
-            <h3 className='gr-padding-10'>{it.L('Get more virtual money')}</h3>
+            <h3 className='gr-padding-10'>{it.L('Top up virtual account')}</h3>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>
                     <img className='responsive' id='virtual_money_icon' src={it.url_for('images/pages/cashier/virtual_topup.svg')} />
                 </div>
                 <div className='gr-5 gr-12-m'>
-                    <span className='ja-hide'>{it.L('You can request more virtual money if your virtual balance falls below USD 1,000.00.')}</span>
+                    <span className='ja-hide'>{it.L('You can top up your virtual account with an additional USD 10,000.00 if your balance falls below USD 1,000.00.')}</span>
                     <span className='invisible ja-show'>{it.L('You can request more virtual money if your virtual balance falls below JPY 100,000.')}</span>
                 </div>
                 <div className='gr-5 gr-12-m invisible'>

@@ -65,8 +65,7 @@ const Defaults = (() => {
 
     const updateURL = () => {
         if (!State.get('is_trading')) return;
-        const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params)}`;
-        window.history.replaceState({ url: updated_url }, null, updated_url);
+        Url.updateParamsWithoutReload(params, false);
     };
 
     return {

@@ -541,6 +541,8 @@
         @include BIDIR_PROP(padding-right, padding-left, 8px);
         padding-bottom: 5px;
         cursor: pointer;
+        text-decoration: none;
+        font-weight: normal;
     }
 }
 
