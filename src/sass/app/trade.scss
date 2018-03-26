@@ -138,17 +138,30 @@
         padding-top: 0.5em;
     }
     #contract_symbol_container {
-        display: inline-flex;
         padding: 0;
         position: relative;
+        display: inline-flex;
+        @media (max-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
 
         #contract_markets_container {
+            flex: 0 0 auto;
             text-align: right;
+            @include BIDIR_PROP(margin-right, margin-left, 1rem);
+        }
+        #contract_component {
+            flex: 0 0 auto;
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
         }
         #underlying_details span {
             display: block;
             margin: 5px 0;
+            @media (max-width: 768px) {
+                display: inline-block;
+            }
         }
     }
     #contract_container {
@@ -597,7 +610,6 @@
                 }
             }
             #contract_markets_container {
-                margin-right: 0;
                 text-align: inherit;
             }
         }

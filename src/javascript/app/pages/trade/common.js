@@ -1,6 +1,7 @@
 const Defaults           = require('./defaults');
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
+const contractsElement   = require('./contracts.jsx');
 const marketsElement     = require('./markets.jsx');
 const formatMoney        = require('../../common/currency').formatMoney;
 const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
@@ -17,15 +18,28 @@ const commonTrading = (() => {
     /*
      * display contract form as element of ul
      */
+    let contracts_element = null;
     const displayContractForms = (id, elements, selected) => {
         if (!id || !elements || !selected) return;
+
+        const contracts_map = getContractCategoryTree(elements);
+
+        if (!contracts_element) {
+            contracts_element = contractsElement.init(elements, contracts_map);
+        } else { // Update the component.
+            contracts_element.updater.enqueueSetState(contracts_element, {
+                contracts: elements,
+                contracts_map,
+            });
+        }
+
         const target   = getElementById(id);
         const fragment = document.createDocumentFragment();
 
         elementInnerHtml(target, '');
 
         if (elements) {
-            const tree = getContractCategoryTree(elements);
+            const tree = contracts_map;
             for (let i = 0; i < tree.length; i++) {
                 const el1 = tree[i];
                 const li  = createElement('li', { class: 'tm-li' });

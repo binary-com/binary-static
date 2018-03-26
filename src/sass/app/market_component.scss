@@ -11,6 +11,9 @@
         text-align: left;
         cursor: pointer;
 
+        &:hover {
+            border: 1px solid $COLOR_BLUE;
+        }
         .market {
             font-size: 12px;
             font-weight: 400;
@@ -35,7 +38,7 @@
         width: 550px;
         z-index: 10000;
         @media (min-width: 320px) and (max-width: 767px) {
-            width: 250px;
+            width: calc(100vw - 20px);
         }
 
         &.hidden {
@@ -263,7 +266,7 @@
                                 cursor: pointer;
                                 width: 120px;
                                 font-size: 14px;
-                                font-weight: 300;
+                                font-weight: 400;
                                 transition: all 0.2s 0.1s;
                                 @media (min-width: 320px) and (max-width: 767px) {
                                     width: 200px;
@@ -274,9 +277,8 @@
                                     font-weight: 600;
                                     color: $COLOR_BLUE;
                                     @media (min-width: 320px) and (max-width: 767px) {
-                                        background: $COLOR_GRAY;
-                                        color: $COLOR_BLACK;
-                                        font-weight: 300;
+                                        background: $COLOR_BLUE;
+                                        color: $COLOR_WHITE;
                                     }
                                 }
                             }

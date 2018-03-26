@@ -63,7 +63,7 @@ const List = ({
     ))
 );
 
-class Underlying extends React.Component {
+class Markets extends React.Component {
     constructor (props) {
         super(props);
         const market_symbol = Defaults.get('market');
@@ -211,6 +211,7 @@ class Underlying extends React.Component {
         });
 
         // Trigger change event.
+        // TODO: move this block to componentDidUpdate
         const ele = getElementById('underlying');
         ele.value = underlying_symbol;
         const event = new Event('change');
@@ -311,7 +312,7 @@ class Underlying extends React.Component {
 
 export const init = (elements) => {
     ReactDOM.render(
-        <Underlying market={elements} />,
+        <Markets market={elements} />,
         document.getElementById('underlying_component')
     );
 };
