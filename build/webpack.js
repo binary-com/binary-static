@@ -86,16 +86,7 @@ module.exports = function (grunt) {
                     exclude: /node_modules/,
                     loader : 'babel-loader',
                     query  : {
-                        presets: ['env'],
-                        compact: false,
-                    },
-                }, {
-                    test   : /\.jsx$/,
-                    exclude: /node_modules/,
-                    loader : 'babel-loader',
-                    query  : {
-                        presets: ['react','env'],
-                        plugins: ['transform-object-rest-spread'],
+                        presets: ['es2015'],
                         compact: false,
                     },
                 },
