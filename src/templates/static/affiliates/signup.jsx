@@ -191,22 +191,22 @@ const Signup = () => (
             <h2 className='center-text'>{it.L('FAQ')}</h2>
 
             <div className='gr-row'>
-                <div className='gr-3 gr-6-m center-text faq-box'>
+                <a href={`${it.url_for('affiliate/faq')}#general`} className='gr-3 gr-6-m center-text faq-box'>
                     <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/general-faq-icon.svg')} alt='general-faq-icon' />
                     <p><strong>{it.L('General')}</strong></p>
-                </div>
-                <div className='gr-3 gr-6-m center-text faq-box'>
+                </a>
+                <a href={`${it.url_for('affiliate/faq')}#account-management-and-tracking`} className='gr-3 gr-6-m center-text faq-box'>
                     <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/account-icon.svg')} alt='account-icon' />
                     <p><strong>{it.L('Account management and tracking')}</strong></p>
-                </div>
-                <div className='gr-3 gr-6-m center-text faq-box'>
+                </a>
+                <a href={`${it.url_for('affiliate/faq')}#marketing-and-promotions`} className='gr-3 gr-6-m center-text faq-box'>
                     <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/marketing-icon.svg')} alt='marketing-icon' />
                     <p><strong>{it.L('Marketing and promotions')}</strong></p>
-                </div>
-                <div className='gr-3 gr-6-m center-text faq-box'>
+                </a>
+                <a href={`${it.url_for('affiliate/faq')}#support`} className='gr-3 gr-6-m center-text faq-box'>
                     <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/support-faq-icon.svg')} alt='support-faq-icon' />
                     <p><strong>{it.L('Support')}</strong></p>
-                </div>
+                </a>
             </div>
         </div>
     </div>
