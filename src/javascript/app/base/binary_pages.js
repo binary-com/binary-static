@@ -49,6 +49,7 @@ const VideoFacility        = require('../pages/user/video_facility');
 // ==================== static ====================
 const GetStartedJP       = require('../../static/japan/get_started');
 const HomeJP             = require('../../static/japan/home');
+const AffiliatesFAQ      = require('../../static/pages/affiliates_faq');
 const Charity            = require('../../static/pages/charity');
 const Contact            = require('../../static/pages/contact');
 const GetStarted         = require('../../static/pages/get_started');
@@ -116,6 +117,7 @@ const pages_config = {
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
+    'faq'                    : { module: AffiliatesFAQ },
     'forex'                  : { module: GetStarted.Forex },
     'get-started'            : { module: TabSelector },
     'get-started-jp'         : { module: GetStartedJP },

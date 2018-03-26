@@ -1,6 +1,5 @@
 import React from 'react';
 import FAQ from './faq.jsx';
-import Main from './main.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
 // TODO: compress svgs
