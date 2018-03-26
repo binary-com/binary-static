@@ -123,8 +123,8 @@ const Header = () => (
                                             subitems : [
                                                 { text: it.L('Asset Index'),   href: it.url_for('resources/asset_indexws'), className: 'ja-hide' },
                                                 { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
-                                                { text: it.L('TradingView'),   href: 'https://tradingview.binary.com', target: '_blank' },
-                                                { text: it.L('SmartCharts'),   href: 'https://charts.binary.com/', target: '_blank' },
+                                                { text: it.L('TradingView'),   href: 'https://tradingview.binary.com', target: '_blank', className: 'ja-hide' },
+                                                { text: it.L('SmartCharts'),   href: 'https://charts.binary.com/', target: '_blank', className: 'ja-hide' },
                                             ],
                                         },
                                         {
