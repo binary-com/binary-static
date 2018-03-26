@@ -60,31 +60,14 @@ const TradingEvents = (() => {
             TimePicker.init(initObj);
         };
 
-        /*
-         * attach event to form list, so when client click on different form we need to update form
-         * and request for new Contract details to populate the form and request price accordingly
-         */
-        const contractFormEventChange = () => {
+        const contract_input = getElementById('contract');
+        contract_input.addEventListener('change', () => {
+            /*
+             * attach event to form list, so when client click on different form we need to update form
+             * and request for new Contract details to populate the form and request price accordingly
+             */
             Process.processContractForm();
             TradingAnalysis.request();
-        };
-
-        const form_nav_element = getElementById('contract_form_name_nav');
-        form_nav_element.addEventListener('click', (e) => {
-            const clicked_form = e.target;
-            if (clicked_form && clicked_form.getAttribute('menuitem')) {
-                const menuitem_id    = clicked_form.getAttribute('menuitem');
-                const is_form_active = clicked_form.classList.contains('active') || clicked_form.parentElement.classList.contains('active');
-                const is_menu_active = getElementById(menuitem_id).classList.contains('a-active');
-                Defaults.set('formname', menuitem_id);
-
-                // if form is already active then no need to send same request again
-                CommonTrading.toggleActiveCatMenuElement(form_nav_element, e.target.getAttribute('menuitem'));
-
-                if (!is_form_active || !is_menu_active) {
-                    contractFormEventChange();
-                }
-            }
         });
 
         /*

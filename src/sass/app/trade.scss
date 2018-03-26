@@ -152,7 +152,7 @@
             text-align: right;
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
         }
-        #contract_component {
+        #contract_type_container {
             flex: 0 0 auto;
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
         }

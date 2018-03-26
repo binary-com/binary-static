@@ -6,9 +6,12 @@
         border-radius: 4px;
         display: flex;
         flex-direction: column;
-        padding: 5px 10px;
+        padding: 5px 30px 5px 10px;
         text-align: left;
         cursor: pointer;
+        @media (max-width: 767px) {
+            padding: 5px 20px 5px 10px;
+        }
 
         &:hover {
             border: 1px solid $COLOR_BLUE;
@@ -39,8 +42,9 @@
         padding: 10px;
         width: 400px;
         @media (min-width: 320px) and (max-width: 767px) {
-            transform: translate(-25%, 0) scale(1, 1);
             width: auto;
+            max-height: 400px;
+            overflow: scroll;
         }
 
         &.hidden {
@@ -49,7 +53,7 @@
             transform: translate(-50%, 0) scale(0, 1);
             transition: visibility 0s 0.5s, opacity 0.15s, transform 0.35s;
             @media (min-width: 320px) and (max-width: 767px) {
-                transform: translate(-25%, -50%) scale(1, 0);
+                transform: translate(0, -50%) scale(1, 0);
             }
         }
         .contract {
@@ -73,14 +77,18 @@
                 font-size: 14px;
 
                 .sub {
-                    padding: 0 0 10px;
+                    padding: 5px 0 15px;
+                    cursor: pointer;
 
                     &.active {
                         font-weight: 600;
                         color: $COLOR_BLUE;
                         @media (min-width: 320px) and (max-width: 767px) {
                             background: $COLOR_BLUE;
-                            color: $COLOR_BLACK;
+                            color: $COLOR_WHITE;
+                            padding: 5px;
+                            margin: 0 0 10px;
+                            font-weight: normal;
                         }
                     }
                 }

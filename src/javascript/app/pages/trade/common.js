@@ -8,7 +8,6 @@ const elementInnerHtml   = require('../../../_common/common_functions').elementI
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
 const urlFor             = require('../../../_common/url').urlFor;
-const createElement      = require('../../../_common/utility').createElement;
 
 /*
  * This contains common functions we need for processing the response
@@ -22,100 +21,16 @@ const commonTrading = (() => {
     const displayContractForms = (id, elements, selected) => {
         if (!id || !elements || !selected) return;
 
-        const contracts_map = getContractCategoryTree(elements);
+        const contracts_tree = getContractCategoryTree(elements);
 
         if (!contracts_element) {
-            contracts_element = contractsElement.init(elements, contracts_map);
+            contracts_element = contractsElement.init(elements, contracts_tree);
         } else { // Update the component.
             contracts_element.updater.enqueueSetState(contracts_element, {
                 contracts: elements,
-                contracts_map,
+                contracts_tree,
+                formname : Defaults.get('formname'),
             });
-        }
-
-        const target   = getElementById(id);
-        const fragment = document.createDocumentFragment();
-
-        elementInnerHtml(target, '');
-
-        if (elements) {
-            const tree = contracts_map;
-            for (let i = 0; i < tree.length; i++) {
-                const el1 = tree[i];
-                const li  = createElement('li', { class: 'tm-li' });
-
-                if (i === 0) {
-                    li.classList.add('first');
-                } else if (i === tree.length - 1) {
-                    li.classList.add('last');
-                }
-
-                if (typeof el1 === 'object') {
-                    const fragment2 = document.createDocumentFragment();
-                    let flag        = 0;
-                    let first       = '';
-                    for (let j = 0; j < el1[1].length; j++) {
-                        const el2      = el1[1][j];
-                        const li2      = createElement('li', { class: 'tm-li-2' });
-                        const a2       = createElement('a', { class: 'tm-a-2', menuitem: el2.toLowerCase(), id: el2.toLowerCase() });
-                        const content2 = document.createTextNode(elements[el2]);
-
-                        if (j === 0) {
-                            first = el2.toLowerCase();
-                            li2.classList.add('first');
-                        } else if (j === el1[1].length - 1) {
-                            li2.classList.add('last');
-                        }
-
-                        if (selected && selected === el2.toLowerCase()) {
-                            li2.classList.add('active');
-                            a2.classList.add('a-active');
-                            flag = 1;
-                        }
-
-                        a2.appendChild(content2);
-                        li2.appendChild(a2);
-                        fragment2.appendChild(li2);
-                    }
-                    if (fragment2.hasChildNodes()) {
-                        const ul = createElement('ul', { class: 'tm-ul-2', id: `${el1[0]}-submenu` });
-                        const a  = createElement('a', { class: 'tm-a', menuitem: first, text: elements[el1[0]] });
-
-                        ul.appendChild(fragment2);
-
-                        if (flag) {
-                            li.classList.add('active');
-                        }
-
-                        li.appendChild(a);
-                        li.appendChild(ul);
-                    }
-                } else {
-                    const content3 = document.createTextNode(elements[el1]);
-                    const a3       = createElement('a', { class: 'tm-a', menuitem: el1, id: el1.toLowerCase() });
-
-                    if (selected && selected === el1.toLowerCase()) {
-                        a3.classList.add('a-active');
-                        li.classList.add('active');
-                    }
-                    a3.appendChild(content3);
-                    li.appendChild(a3);
-                }
-                fragment.appendChild(li);
-            }
-            if (target) {
-                target.appendChild(fragment);
-                const list = target.getElementsByClassName('tm-li');
-                for (let k = 0; k < list.length; k++) {
-                    const li4 = list[k];
-                    li4.addEventListener('mouseover', function () {
-                        this.classList.add('hover');
-                    });
-                    li4.addEventListener('mouseout', function () {
-                        this.classList.remove('hover');
-                    });
-                }
-            }
         }
     };
 

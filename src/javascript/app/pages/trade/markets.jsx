@@ -72,6 +72,7 @@ class Markets extends React.Component {
         const markets_arr = Object.entries(this.markets);
         this.underlyings = Symbols.getAllSymbols() || {};
         this.markets_all = markets_arr.slice();
+        this.$underlying = getElementById('underlying');
         this.references = {};
         this.state = {
             open  : false,
@@ -87,7 +88,7 @@ class Markets extends React.Component {
             active_market: market_symbol,
             query        : '',
         };
-        getElementById('underlying').value = underlying_symbol;
+        this.$underlying.value = underlying_symbol;
     }
 
     componentDidMount () {
@@ -124,7 +125,7 @@ class Markets extends React.Component {
     scrollToElement = (id, duration = 120, offset) => {
         // handleScroll is triggered automatically which sets the active market.
         const {list} = this.references;
-        const toOffset = document.getElementById(id).offsetTop;
+        const toOffset = getElementById(id).offsetTop;
         scrollToPosition(list, toOffset - list.offsetTop - offset, duration);
     }
 
@@ -212,10 +213,9 @@ class Markets extends React.Component {
 
         // Trigger change event.
         // TODO: move this block to componentDidUpdate
-        const ele = getElementById('underlying');
-        ele.value = underlying_symbol;
+        this.$underlying.value = underlying_symbol;
         const event = new Event('change');
-        ele.dispatchEvent(event);
+        this.$underlying.dispatchEvent(event);
 
         setTimeout(this.closeDropdown, 500);
         /* Todo add notification for closed markets */
@@ -313,7 +313,7 @@ class Markets extends React.Component {
 export const init = (elements) => {
     ReactDOM.render(
         <Markets market={elements} />,
-        document.getElementById('underlying_component')
+        getElementById('underlying_component')
     );
 };
 
