@@ -448,6 +448,10 @@
         #contract_purchase_profit_list, #contract_purchase_spots .row {
             padding: 3px 0;
             flex-direction: row !important;
+
+            &.winning-tick-row {
+                font-weight: bold;
+            }
         }
         #contract_purchase_profit_list {
             margin: 10px 0;

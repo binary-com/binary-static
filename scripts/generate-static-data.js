@@ -412,6 +412,7 @@ const texts = [
     'High Barrier',
     'High Barrier ([_1])',
     'Barrier ([_1])',
+    'Average',
     'This contract won',
     'This contract lost',
     'Spot',
@@ -457,6 +458,11 @@ const texts = [
     'Start Time and Entry Spot',
     'Exit Time and Exit Spot',
     'You can close this window without interrupting your trade.',
+    'Selected Tick',
+    'Highest Tick',
+    'Highest Tick Time',
+    'Lowest Tick',
+    'Lowest Tick Time',
 
     // financial assessment
     'Please select a value',

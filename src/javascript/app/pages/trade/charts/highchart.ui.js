@@ -2,42 +2,26 @@ const addComma = require('../../../common/currency').addComma;
 const localize = require('../../../../_common/localize').localize;
 
 const HighchartUI = (() => {
-    let common_time_style,
-        common_spot_style,
-        txt,
+    const common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
+    const common_spot_style = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
+
+    let txt_legend,
         chart_options;
 
-    const initLabels = () => {
-        common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
-        common_spot_style = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
-    };
-
-    const getLabels = (option) => {
-        if (!common_time_style || !common_spot_style) {
-            initLabels();
-        }
-        switch (option) {
-            case 'start_time':
-                return `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start time')} `;
-            case 'entry_spot':
-                return `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry spot')} `;
-            case 'exit_spot':
-                return `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `;
-            case 'end_time':
-                return `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `;
-            case 'delay':
-                return `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`;
-            default:
-                return null;
-        }
+    const labels = {
+        start_time: `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start time')} `,
+        entry_spot: `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry spot')} `,
+        exit_spot : `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `,
+        end_time  : `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `,
+        delay     : `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`,
     };
 
     const setLabels = (chart_delayed) => {
         // display a guide for clients to know how we are marking entry and exit spots
-        txt = (chart_delayed ? getLabels('delay') : '') +
-            getLabels('start_time') +
-            (history ? getLabels('entry_spot') + getLabels('exit_spot') : '') +
-            getLabels('end_time');
+        txt_legend = (chart_delayed ? labels.delay : '') +
+            labels.start_time +
+            (history ? labels.entry_spot + labels.exit_spot : '') +
+            labels.end_time;
     };
 
     const setChartOptions = (params) => {
@@ -61,7 +45,7 @@ const HighchartUI = (() => {
                 valueDecimals: display_decimals,
             },
             subtitle: {
-                text   : txt,
+                text   : txt_legend,
                 useHTML: true,
             },
             xAxis: {

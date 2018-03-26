@@ -21,7 +21,8 @@ const Barriers = (() => {
         const barriers  = Contract.barriers()[Defaults.get('underlying')];
         const form_name = Contract.form();
 
-        if (barriers && form_name && Defaults.get('formname') !== 'risefall') {
+        // TODO: remove check for highlowticks when API stops sending it
+        if (barriers && form_name && !/^(risefall|highlowticks)$/.test(Defaults.get('formname'))) {
             const barrier = barriers[form_name];
             if (barrier) {
                 const current_tick   = Tick.quote();

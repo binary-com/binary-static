@@ -390,6 +390,12 @@ const TradingEvents = (() => {
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));
 
+        getElementById('selected_tick').addEventListener('change', CommonTrading.debounce((e) => {
+            Defaults.set('selected_tick', e.target.value);
+            Price.processPriceRequest();
+            CommonTrading.submitForm(getElementById('websocket_form'));
+        }));
+
         // Verify number of decimal places doesn't exceed the allowed decimal places according to the currency
         const isStandardFloat = value => (
             !isNaN(value) &&

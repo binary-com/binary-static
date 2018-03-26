@@ -77,6 +77,16 @@ const Trading = () => (
                                             </div>
                                         </div>
                                     </div>
+                                    <div className='row' id='highlowticks_expiry_row'>
+                                        <div className='col form_label'>
+                                            <label>{it.L('Duration')}</label>
+                                        </div>
+                                        <div className='big-col'>
+                                            <label className='gr-gutter'>5</label>
+                                            <label className='gr-gutter-left'>{it.L('Ticks')}</label>
+                                            <div className='hint'>{it.L('This contract type only offers 5 ticks')}</div>
+                                        </div>
+                                    </div>
                                     <div className='row barrier_class' id='barrier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='H' id='barrier_label'>
@@ -121,6 +131,18 @@ const Trading = () => (
                                             <select id='prediction' className='small_width_input'>
                                                 { Array.from(new Array(10)).map((x, idx) => (
                                                     <option key={idx} value={idx}>{idx}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className='row' id='selected_tick_row'>
+                                        <div className='col form_label'>
+                                            <label htmlFor='selected_tick' id='selected_tick_label'>{it.L('Tick Prediction')}</label>
+                                        </div>
+                                        <div className='big-col'>
+                                            <select id='selected_tick' className='small_width_input'>
+                                                { Array.from(new Array(5)).map((x, idx) => (
+                                                    <option key={idx+1} value={idx+1}>{idx+1}</option>
                                                 ))}
                                             </select>
                                         </div>

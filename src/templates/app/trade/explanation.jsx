@@ -105,6 +105,12 @@ const Explanation = () => (
                 <h3>{it.L('Pay-out')}</h3>
                 <p>{it.L('By purchasing the [_1]‘High-Low’[_2] contract, you’ll win the multiplier times the difference between the [_1]high[_2] and [_1]low[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
             </div>
+
+            <div id='winning_highlowticks' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
+                <p>{it.L('If you select [_1]"High Tick"[_2], you win the payout if the selected tick is the [_1]highest[_2] among the next five ticks.', '<strong>', '</strong>')}</p>
+                <p>{it.L('If you select [_1]"Low Tick"[_2], you win the payout if the selected tick is the [_1]lowest[_2] among the next five ticks.', '<strong>', '</strong>')}</p>
+            </div>
         </div>
 
         {/* ========== Image ========== */}
@@ -230,6 +236,14 @@ const Explanation = () => (
                 <p>{it.L('The [_1]contract period[_2] is the period between the [_1]first tick[_2] (after start time) and the [_1]end time[_2].', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]start time[_2] begins when the contract is processed by our servers.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2].', '<strong>','</strong>')}</p>
+            </div>
+
+            <div id='explain_highlowticks' className='invisible'>
+                <h3>{it.L('Entry tick')}</h3>
+                <p>{it.L('The [_1]start time[_2] is when the contract is processed by our servers. The [_1]entry tick[_2] is the next tick after the start time.', '<strong>','</strong>')}</p>
+                <h3>{it.L('Exit tick')}</h3>
+                <p>{it.L('The [_1]exit tick[_2] is the [_1]fifth tick[_2] from the [_1]entry tick[_2].', '<strong>','</strong>')}</p>
+                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('High Tick/Low Tick contracts have a strict duration of five ticks.')}</p>
             </div>
         </div>
     </div>

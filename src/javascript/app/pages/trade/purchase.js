@@ -25,7 +25,8 @@ const Purchase = (() => {
 
     let payout_value,
         cost_value,
-        status;
+        status,
+        winning_tick;
 
     const display = (details) => {
         purchase_data = details;
@@ -49,7 +50,8 @@ const Purchase = (() => {
         const button             = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
-        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && /^(risefall|higherlower|asian|touchnotouch)$/.test(sessionStorage.formname);
+        const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
+        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && has_chart;
 
         contracts_list.style.display = 'none';
 
@@ -73,6 +75,7 @@ const Purchase = (() => {
             container.style.display = 'table-row';
             message_container.show();
             confirmation_error.hide();
+            winning_tick = '';
 
             CommonFunctions.elementTextContent(heading, localize('Contract Confirmation'));
             CommonFunctions.elementTextContent(descr, receipt.longcode);
@@ -110,15 +113,15 @@ const Purchase = (() => {
                 chart.hide();
             }
 
-            if (Contract.form() === 'digits') {
+            if (has_chart) {
+                spots.hide();
+            } else {
                 CommonFunctions.elementTextContent(spots, '');
                 spots.className = '';
                 spots.show();
-            } else {
-                spots.hide();
             }
 
-            if (Contract.form() !== 'digits' && !show_chart) {
+            if (has_chart && !show_chart) {
                 CommonFunctions.elementTextContent(button, localize('View'));
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
@@ -164,7 +167,6 @@ const Purchase = (() => {
                 id_render           : 'trade_tick_chart',
             });
             TickDisplay.resetSpots();
-            TickDisplay.setStatus(); // reset status first
 
             const request = {
                 proposal_open_contract: 1,
@@ -172,17 +174,22 @@ const Purchase = (() => {
                 subscribe             : 1,
             };
             BinarySocket.send(request, { callback: (response) => {
-                if (response.proposal_open_contract) {
-                    TickDisplay.setStatus(response.proposal_open_contract);
+                const contract = response.proposal_open_contract;
+                if (contract) {
+                    TickDisplay.setStatus(contract);
+                    if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
+                        TickDisplay.updateChart({ is_sold: true }, contract);
+                    }
                     // force to sell the expired contract, in order to get the final status
-                    if (+response.proposal_open_contract.is_settleable === 1 &&
-                        !response.proposal_open_contract.is_sold) {
+                    if (+contract.is_settleable === 1 && !contract.is_sold) {
                         BinarySocket.send({ sell_expired: 1 });
                     }
                 }
             } });
         }
     };
+
+    const makeBold = d => `<strong>${d}</strong>`;
 
     const updateSpotList = () => {
         const $spots = $('#contract_purchase_spots');
@@ -219,7 +226,16 @@ const Purchase = (() => {
                 }
             } });
         }
-        const replace = d => `<strong>${d}</strong>`;
+
+        const is_tick_high = /^tickhigh$/i.test(purchase_data.echo_req.passthrough.contract_type);
+        const is_tick_low  = /^ticklow$/i.test(purchase_data.echo_req.passthrough.contract_type);
+
+        let selected_tick = '';
+        if (is_tick_high || is_tick_low) {
+            const arr_shortcode = purchase_data.buy.shortcode.split('_');
+            selected_tick = arr_shortcode[arr_shortcode.length - 1];
+        }
+
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
@@ -227,8 +243,22 @@ const Purchase = (() => {
             };
 
             if (CommonFunctions.isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
-                const fragment = createElement('div', { class: 'row' });
-                const el1      = createElement('div', { class: 'col', text: `${localize('Tick')} ${(spots.getElementsByClassName('row').length + 1)}` });
+                const current_tick_count = spots.getElementsByClassName('row').length + 1;
+
+                let is_winning_tick = false;
+                const $winning_row  = $spots.find('.winning-tick-row');
+                if (!winning_tick ||
+                    (winning_tick === tick_d.quote && !$winning_row.length) ||
+                    (is_tick_high && +tick_d.quote > winning_tick) ||
+                    (is_tick_low && +tick_d.quote < winning_tick)) {
+                    is_winning_tick = true;
+                    winning_tick = tick_d.quote;
+                    $winning_row.removeClass('winning-tick-row');
+                }
+
+                const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row': ''}` });
+
+                const el1 = createElement('div', { class: 'col', text: `${localize('Tick')} ${current_tick_count}` });
                 fragment.appendChild(el1);
 
                 const el2     = createElement('div', { class: 'col' });
@@ -239,7 +269,7 @@ const Purchase = (() => {
                 CommonFunctions.elementTextContent(el2, [hours, minutes, seconds].join(':'));
                 fragment.appendChild(el2);
 
-                const tick = tick_d.quote.replace(/\d$/, replace);
+                const tick = (is_tick_high || is_tick_low) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
@@ -248,6 +278,12 @@ const Purchase = (() => {
                 spots.scrollTop = spots.scrollHeight;
 
                 duration--;
+
+                if (is_winning_tick && current_tick_count > +selected_tick) {
+                    BinarySocket.send({ sell_expired: 1 });
+                    duration = 0; // no need to keep drawing ticks
+                }
+
                 if (!duration) {
                     purchase_data.echo_req.passthrough.duration = 0;
                 }
