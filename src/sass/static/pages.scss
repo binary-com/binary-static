@@ -1,6 +1,12 @@
 // styling for static pages that are too short or simple to need their own styling page
 
 .affiliates {
+    h2 {
+        margin-top: 30px;
+    }
+    .margin-bottom-50 {
+        margin-bottom: 50px;
+    }
     .fixed-height-img {
         height: 50px;
     }

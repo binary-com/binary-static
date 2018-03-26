@@ -41,7 +41,7 @@ const Signup = () => (
             </p>
 
             <div className='gr-padding-20'>
-                <h2 className='center-text gr-padding-30'>{it.L('How it works')}</h2>
+                <h2 className='center-text margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
                     {/* TODO: add link in first step */}
                     <Step circle_no='1' header={it.L('Sign up')}            text={it.L('Getting started is free and easy –– just fill out the application form and wait for our approval.')} />
@@ -52,8 +52,8 @@ const Signup = () => (
         </div>
 
         <div className='fill-bg-color'>
-            <div className='container center-text gr-padding-30'>
-                <h2 className='gr-padding-30'>{it.L('Why you should join the Binary.com Affiliate Programme')}</h2>
+            <div className='container center-text gr-padding-20'>
+                <h2 className='margin-bottom-50'>{it.L('Why you should join the Binary.com Affiliate Programme')}</h2>
 
                 {/* TODO: add box grid */}
                 <BoxRow top_row>
@@ -76,7 +76,7 @@ const Signup = () => (
             </div>
         </div>
 
-        <div className='container gr-padding-30'>
+        <div className='container gr-padding-20'>
             <div className='center-text'>
                 <h2>{it.L('Types of affiliate commission plans')}</h2>
                 <p>{it.L('You can choose from two types of affiliate commission plans:')}</p>
@@ -98,7 +98,7 @@ const Signup = () => (
             </div>
         </div>
 
-        <div className='container gr-padding-30'>
+        <div className='container gr-padding-20'>
             <h2 className='center-text'>{it.L('FAQ')}</h2>
 
             <div className='gr-row'>
