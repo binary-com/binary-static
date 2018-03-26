@@ -46,7 +46,7 @@ const getSocketURL = () => {
         // }
 
         // let server = 'blue';
-        // if (!/staging\.binary\.com/i.test(window.location.hostname)) {
+        // if (/www\.binary\.com/i.test(window.location.hostname)) {
         //     const loginid = window.localStorage.getItem('active_loginid');
         //     let client_type = category_map[2];
         //     if (loginid) {
@@ -58,6 +58,8 @@ const getSocketURL = () => {
         //         server = 'green';
         //     }
         // }
+
+        // TODO: in order to use connection_setup config, uncomment the above section and remove next lines
 
         const is_production = /www\.binary\.com/i.test(window.location.hostname);
         const loginid       = window.localStorage.getItem('active_loginid');
