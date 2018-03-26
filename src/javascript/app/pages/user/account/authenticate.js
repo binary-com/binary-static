@@ -229,7 +229,7 @@ const Authenticate = (() => {
             if (selected) {
                 file_checks[doc_type] = file_checks[doc_type] || {};
                 file_checks[doc_type][file_type] = true;
-            } else {
+            } else if (file_checks[doc_type]) {
                 file_checks[doc_type][file_type] = false;
             }
         };
