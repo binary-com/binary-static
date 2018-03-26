@@ -133,6 +133,42 @@ const Signup = () => (
                         </TabContent>
                         <TabContent id='turnover'>
                             <p>{it.L('Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate.')}</p>
+                            <div className='gr-padding-20 center-text'>
+                                <table>
+                                  <thead>
+                                      <tr>
+                                          <th>{it.L('Probability of returns')}</th>
+                                          <th>{it.L('Commission (as % of stake)')}</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td>{it.L('0 – 19.999%')}</td>
+                                          <td>{it.L('1.25%')}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>{it.L('20 – 39.999%')}</td>
+                                          <td>{it.L('1%')}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>{it.L('40 – 59.999%')}</td>
+                                          <td>{it.L('0.75%')}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>{it.L('60 – 79.999%')}</td>
+                                          <td>{it.L('0.5%')}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>{it.L('80 – 94.999%')}</td>
+                                          <td>{it.L('0.25%')}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>{it.L('95%+')}</td>
+                                          <td>{it.L('0%')}</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                            </div>
                             <p>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
                         </TabContent>
                     </TabContentContainer>
