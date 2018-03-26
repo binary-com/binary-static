@@ -1,6 +1,7 @@
 import React from 'react';
 import FAQ from './faq.jsx';
 import Main from './main.jsx';
+import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
 // TODO: compress svgs
 
@@ -82,7 +83,27 @@ const Signup = () => (
                 <p>{it.L('You can choose from two types of affiliate commission plans:')}</p>
             </div>
     
-            {/* TODO: add tabs */}
+            <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
+                <TabsSubtabs
+                    id='get_started_tabs'
+                    className='gr-padding-20 gr-parent tab-selector-wrapper'
+                    items={[
+                        { id: 'revenue_share',   text: it.L('Revenue share') },
+                        { id: 'turnover',        text: it.L('Turnover') },
+                        { id: 'get_started_tabs_selector', className: 'tab-selector' },
+                    ]}
+                />
+                <div className='tab-content'>
+                    <TabContentContainer>
+                        <TabContent id='revenue_share'>
+                            revenue
+                        </TabContent>
+                        <TabContent id='turnover'>
+                            turnover
+                        </TabContent>
+                    </TabContentContainer>
+                </div>
+            </TabContainer>
 
             <p>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
         </div>
