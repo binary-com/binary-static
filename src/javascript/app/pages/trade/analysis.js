@@ -107,8 +107,8 @@ const TradingAnalysis = (() => {
     /*
      * function to toggle the active element for analysis menu
      */
-    const toggleActiveAnalysisTabs = (tab) => {
-        const current_tab        = tab || getActiveTab();
+    const toggleActiveAnalysisTabs = () => {
+        const current_tab        = getActiveTab();
         const analysis_container = getElementById('analysis_content');
 
         const child_elements      = analysis_container.children;
