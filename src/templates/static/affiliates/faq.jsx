@@ -1,6 +1,7 @@
 import React from 'react';
 import { Section, HeaderSecondary, NavButtons, ListStrong } from '../get_started/common.jsx';
 import { List } from '../../_common/components/elements.jsx';
+import { signup_url } from './signup.jsx';
 
 const FAQ = () => (
     <div className='static_full affiliates_faq'>
@@ -44,14 +45,44 @@ const FAQ = () => (
                         <li>{it.L('Aged 18 years old and above')}</li>
                     </ul>
 
-
                     <h3>{it.L('Who can be a client on the Binary.com platform?')}</h3>
                     <p>{it.L('Anyone aged 18 years old and above who is not the resident of a “restricted country” (as listed in our <a href=\'[_1]\'>Terms & Conditions</a>) can become a Binary.com client.', it.url_for('terms-and-conditions'))}</p>
                 </Section>
+
+
                 <Section id='account-management-and-tracking' header={it.L('Account management and tracking')}>
+                    <h3>{it.L('How can I become an affiliate?')}</h3>
+                    <p>{it.L('It’s easy. Just go to the signup page and complete the <a href=\'[_1]\'>affiliate registration form</a>. We’ll review your application and get back to you if your application is successful.', signup_url)}</p>
+
+                    <h3>{it.L('I forgot my password, what should I do?')}</h3>
+                    <p>{it.L('Don’t worry, you can simply <a href=\'[_1]\'>reset your password</a>.', 'https://login.binary.com/password-reset.php')}</p>
+
+                    <h3>{it.L('How can I change my payment method?')}</h3>
+                    <p>{it.L('Log in to your Binary.com affiliate account and go to: Finances → Payment instructions.')}</p>
+
+                    <h3>{it.L('How and when will I receive my affiliate earnings?')}</h3>
+                    <p>{it.L('Your commission for the previous calendar month will be deposited into your account by the 15th of every month.')}</p>
+
+                    <h3>{it.L('How do I know how much I have earned?')}</h3>
+                    <p>{it.L('Log in to your Binary.com affiliate account and go to: Reports → Detailed activity report')}</p>
+
+                    <h3>{it.L('What kind of reports can I generate?')}</h3>
+                    <p>{it.L('You can generate all kinds of insightful reports, including the following:')}</p>
+                    <ul className='bullet'>
+                        <li>{it.L('Hits & Impression report: Displays your hit rate and click through rates')}</li>
+                        <li>{it.L('Countries report: Displays a list of countries where your clicks are coming from')}</li>
+                        <li>{it.L('My Players report: Displays a list of your clients according to their IDs and the date they signed up')}</li>
+                    </ul>
+
+                    <h3>{it.L('Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?')}</h3>
+                    <p>{it.L('We prohibit the use of unauthorised incentives, gifts, and payments to encourage customer signups. If we have reason to believe that you have engaged in such activity, we reserve the right to withhold any payments due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval.')}</p>
                 </Section>
+
+
                 <Section id='marketing-and-promotions' header={it.L('Marketing and promotions')}>
                 </Section>
+
+
                 <Section id='support' header={it.L('Support')}>
                 </Section>
             </div>

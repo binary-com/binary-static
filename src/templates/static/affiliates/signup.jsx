@@ -28,7 +28,7 @@ const Step = ({ header, text, circle_no }) => (
 );
 
 // TODO: add lang to href ?
-const signup_url = 'https://login.binary.com/signup.php';
+export const signup_url = 'https://login.binary.com/signup.php';
 
 const Signup = () => (
     <div className='static_full affiliates'>
