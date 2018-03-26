@@ -41,8 +41,7 @@ const Signup = () => (
             <div className='gr-padding-20'>
                 <h2 className='center-text margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
-                    {/* TODO: add link in first step */}
-                    <Step circle_no='1' header={it.L('Sign up')}            text={it.L('Getting started is free and easy –– just fill out the application form and wait for our approval.')} />
+                    <Step circle_no='1' header={it.L('Sign up')}            text={it.L('Getting started is free and easy –– just <a href=\'[_1]\'>fill out the application form</a> and wait for our approval.', signup_url)} />
                     <Step circle_no='2' header={it.L('Promote Binary.com')} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise Binary.com to your audience.')} />
                     <Step circle_no='3' header={it.L('Earn')}               text={it.L('Choose from two types of  commission plans when your referred clients trade binary options on our platform.')} />
                 </div>
@@ -61,8 +60,7 @@ const Signup = () => (
                 <BoxRow bottom_row>
                     <Box title={it.L('Advanced marketing tools')} image='marketing-icon'        text={it.L('Promote our products easily, and keep track of all your earnings with our nifty marketing tools.')} />
                     <Box title={it.L('High conversions')}         image='conversion-icon'       text={it.L('We’ve paid millions in commission to date through our industry-leading affiliate programme.')} />
-                {/* TODO: add link to last box */}
-                    <Box title={it.L('Multiple opportunities')}   image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the Payment Agent Programme.')} />
+                    <Box title={it.L('Multiple opportunities')}   image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the <a href=\'[_1]\'>Payment Agent Programme</a>.', it.url_for('payment-agent'))} />
                 </BoxRow>
 
                 <div className='gr-padding-30'>
