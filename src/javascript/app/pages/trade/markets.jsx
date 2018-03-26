@@ -168,7 +168,7 @@ class Markets extends React.Component {
                 let found_for_submarket = false; // Same as found for market
                 const filter_symbols = {};
                 Object.entries(submarket.symbols).map(([key_3, symbol]) => {
-                    const queries = query.split(' ');
+                    const queries = query.split(',');
                     if (
                         queries.reduce((a, b) =>
                             symbol.display.toLowerCase().includes(b.toLowerCase()) || a
@@ -250,7 +250,10 @@ class Markets extends React.Component {
                     className='market_current'
                     onClick={openDropdown}
                 >
-                    <span className='market'>{market.name}</span>
+                    <span className='market'>
+                        {market.name}
+                        <span className='arrow_down'></span>
+                    </span>
                     <span className='underlying'>{this.getCurrentUnderlying()}</span>
                 </div>
                 <div

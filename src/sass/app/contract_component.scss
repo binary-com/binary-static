@@ -43,8 +43,9 @@
         width: 400px;
         @media (min-width: 320px) and (max-width: 767px) {
             width: auto;
-            max-height: 400px;
-            overflow: scroll;
+            max-height: 300px;
+            overflow-y: scroll;
+            overflow-x: hidden;
         }
 
         &.hidden {

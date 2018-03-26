@@ -94,6 +94,10 @@ class Contracts extends React.Component {
         this.setState({formname});
     }
 
+    dismiss() {
+        console.warn('removing');
+    }
+
     render () {
         const { contracts, contracts_tree, open,
             formname } = this.state;
@@ -104,7 +108,10 @@ class Contracts extends React.Component {
                     className='contract_current'
                     onClick={this.openDropDown}
                 >
-                    <span className='type'>{this.getCurrentType()}</span>
+                    <span className='type'>
+                        {this.getCurrentType()}
+                        <span className='arrow_down'></span>
+                    </span>
                     <span className='contract'>{this.getCurrentContract()}</span>
                 </div>
                 <div

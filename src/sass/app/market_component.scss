@@ -225,9 +225,6 @@
                 width: 100%;
                 overflow-x: scroll;
                 padding: 0 10px;
-                @media (max-width: 767px) {
-                    height: 400px;
-                }
 
                 .market {
                     display: flex;
@@ -287,6 +284,7 @@
                                     @media (min-width: 320px) and (max-width: 767px) {
                                         background: $COLOR_BLUE;
                                         color: $COLOR_WHITE;
+                                        font-weight: normal;
                                     }
                                 }
                             }

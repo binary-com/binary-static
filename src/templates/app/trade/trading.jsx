@@ -23,7 +23,6 @@ const Trading = () => (
             <div className='row' id='contract_symbol_container'>
                 <div id='contract_markets_container'>
                     <div id='underlying_component' />
-                    <span className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</span>
                     <input type='hidden' id='underlying'/>
                 </div>
                 <div id='contract_type_container'>
@@ -34,6 +33,7 @@ const Trading = () => (
                     <span id='trading_worm_chart' />
                     <span id='spot' />
                 </div>
+                <div className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</div>
             </div>
             <div className='row clear' id='contract_form_content_wrapper'>
                 <div className='col row-inner'>

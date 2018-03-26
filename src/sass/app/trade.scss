@@ -78,7 +78,7 @@
         white-space: nowrap;
         padding: 3px;
         border-radius: 5px;
-        @include BIDIR_PROP(margin-right, margin-left, 8px);
+        margin-left: 8px !important;
 
         &.error {
             font-style: italic;
@@ -147,6 +147,16 @@
             justify-content: flex-start;
         }
 
+        .arrow_down {
+            width: 8px;
+            height: 8px;
+            background: url('../images/pages/trade/ic_arrow_dropdown_light.svg') no-repeat;
+            background-size: contain;
+            position: relative;
+            margin-left: 10px;
+            top: 3px;
+            float: right;
+        }
         #contract_markets_container {
             flex: 0 0 auto;
             text-align: right;
@@ -556,13 +566,9 @@
         margin-bottom: 5px;
     }
     #symbol_tip {
-        @include BIDIR_PROP(padding-right, padding-left, 8px);
-        padding-bottom: 5px;
         cursor: pointer;
-        font-size: 13px;
+        padding: 5px 10px;
         position: relative;
-        bottom: 50px;
-        float: right;
     }
 }
 
