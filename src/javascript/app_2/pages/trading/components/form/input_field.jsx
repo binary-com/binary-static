@@ -8,6 +8,7 @@ class InputField extends React.PureComponent {
                     <label htmlFor={this.props.name} className='input-label'>{this.props.label}</label>
                 }
                 {!!this.props.prefix &&
+                    // TODO: fix alignment
                     <i><span className={`symbols ${this.props.prefix.toLowerCase()}`} /></i>
                 }
                 <input

@@ -55,7 +55,7 @@ export default class TradeStore {
     @observable expiry_type         = 'duration';
     @observable duration            = 15;
     @observable duration_unit       = '';
-    @observable duration_units_list = {};
+    @observable duration_units_list = [];
     @observable expiry_date         = null;
     @observable expiry_time         = '09:40 pm';
 
