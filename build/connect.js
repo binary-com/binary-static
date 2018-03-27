@@ -32,6 +32,16 @@ module.exports = function (grunt) {
                     const directory = options.directory || options.base[options.base.length - 1];
                     middlewares.push(serveIndex(directory));
 
+                    middlewares.push((req, res) => {
+                        const path_404 = `${options.base[0]}/404.html`;
+                        if (grunt.file.exists(path_404)) {
+                            require('fs').createReadStream(path_404).pipe(res);
+                            return;
+                        }
+                        res.statusCode(404); // 404.html not found
+                        res.end();
+                    });
+
                     return middlewares;
                 }
             }
