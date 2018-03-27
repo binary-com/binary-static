@@ -80,7 +80,7 @@ const FAQ = () => (
 
                 <Section id='marketing-and-promotions' header={it.L('Marketing and promotions')}>
                     <h3>{it.L('What advertising materials and marketing tools do you offer?')}</h3>
-                    <p>{it.L('We have a tested and proven selection of advertising materials including banners, reviews, videos, and text ads for you to use. If you would like certain items to be customised to your preferences, please contact your account manager at <a href=\'[_1]\'>[_2]</a>. You can also use the Myaffiliates system to track and optimise your campaigns.', `mailto:${it.affiliate_email}`, it.affiliate_email)}</p>
+                    <p>{it.L('We have a tested and proven selection of advertising materials including banners, reviews, videos, and text ads for you to use. If you would like certain items to be customised to your preferences, please contact your account manager at [_1]. You can also use the Myaffiliates system to track and optimise your campaigns.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
 
                     <h3>{it.L('Where are the advertising materials located?')}</h3>
                     <p>{it.L('Log in to your [_1] affiliate account and go to: Marketing → All Media.', it.website_name)}</p>
@@ -101,7 +101,7 @@ const FAQ = () => (
 
                 <Section id='support' header={it.L('Support')}>
                     <h3>{it.L('Where can I send my questions, comments, and suggestions?')}</h3>
-                    <p>{it.L('Feel free to get in touch with us at <a href=\'[_1]\'>[_2]</a>. We’d love to hear from you.', `mailto:${it.affiliate_email}`, it.affiliate_email)}</p>
+                    <p>{it.L('Feel free to get in touch with us at [_1]. We’d love to hear from you.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
                 </Section>
             </div>
         </div>
