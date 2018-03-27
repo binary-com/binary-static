@@ -10,6 +10,7 @@ const BinarySocket        = require('./socket');
 const ContentVisibility   = require('../common/content_visibility');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
+const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const urlFor              = require('../../_common/url').urlFor;
 const createElement       = require('../../_common/utility').createElement;
@@ -49,6 +50,7 @@ const BinaryLoader = (() => {
             }
             active_script = null;
         }
+        ScrollToAnchor.cleanup();
     };
 
     const afterContentChange = (e) => {
@@ -63,6 +65,7 @@ const BinaryLoader = (() => {
         }
 
         ContentVisibility.init();
+        ScrollToAnchor.init();
     };
 
     const error_messages = {

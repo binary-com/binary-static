@@ -199,6 +199,7 @@ async function compile(page) {
     const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER'; // used in layout.jsx
 
     const tasks = languages.map(async lang => {
+        const affiliate_language_code = common.getAffiliateSignupLanguage(lang);
         const model = {
             website_name   : 'Binary.com',
             title          : page.title,
@@ -208,9 +209,12 @@ async function compile(page) {
             only_ja        : page.only_ja,
             current_path   : page.save_as,
             current_route  : page.current_route,
-            affiliate_email: 'affiliates@binary.com',
-            japan_docs_url : 'https://japan-docs.binary.com',
             is_pjax_request: false,
+
+            japan_docs_url        : 'https://japan-docs.binary.com',
+            affiliate_signup_url  : `https://login.binary.com/signup.php?lang=${affiliate_language_code}`,
+            affiliate_password_url: `https://login.binary.com/password-reset.php?lang=${affiliate_language_code}`,
+            affiliate_email       : 'affiliates@binary.com',
         };
 
         const context     = context_builder.buildFor(model);

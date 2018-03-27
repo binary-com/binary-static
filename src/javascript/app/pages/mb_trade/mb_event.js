@@ -24,6 +24,7 @@ const MBTradingEvents = (() => {
     const initiate = () => {
         const $form        = $('.trade_form');
         const hidden_class = 'invisible';
+        const is_jp_client = jpClient();
 
         $(document).on('click', (e) => {
             if ($(e.target).parents('#payout_list').length) return;
@@ -81,27 +82,54 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('period', period);
                 MBProcess.processPriceRequest();
                 $('.remaining-time').removeClass('alert');
-                MBContract.displayRemainingTime('recalculate');
+                MBContract.displayRemainingTime(true, is_jp_client);
             });
         }
 
-        const validatePayout = (payout_amount) => {
+        const validatePayout = (payout_amount, $error_wrapper) => {
             const contract            = MBContract.getCurrentContracts();
-            const jp_client           = jpClient();
-            const min_amount          = jp_client ? 1 : 0;
+            const min_amount          = is_jp_client ? 1 : 0;
             const max_contract_amount = Array.isArray(contract) && contract.length && contract[0].expiry_type !== 'intraday' ? 20000 : 5000;
-            const max_client_amount   = jp_client ? 100 : max_contract_amount;
+            const max_client_amount   = is_jp_client ? 100 : max_contract_amount;
 
+            let is_valid  = true;
+            let error_msg = '';
 
-            return (payout_amount && !isNaN(payout_amount) &&
-                payout_amount >= min_amount && payout_amount <= max_client_amount);
+            if (!payout_amount || isNaN(payout_amount)) {
+                is_valid  = false;
+                error_msg = localize('Should be a valid number.');
+            } else if (+payout_amount < min_amount || +payout_amount > max_client_amount) {
+                is_valid  = false;
+                error_msg = localize('Should be between [_1] and [_2]', [min_amount, max_client_amount]);
+            }
+
+            // if value has decimal places
+            if (is_valid && +payout_amount % 1 !== 0) {
+                const allowed_decimals = Currency.getDecimalPlaces(MBDefaults.get('currency'));
+
+                // verify number of decimal places doesn't exceed the allowed decimal places according to the currency
+                is_valid = payout_amount.toString().replace(/^-?\d*\.?|0+$/, '').length <= allowed_decimals;
+                if (!is_valid) {
+                    error_msg = localize('Up to [_1] decimal places are allowed.', [allowed_decimals]);
+                }
+            }
+
+            if (!is_valid && $error_wrapper && error_msg) {
+                const $err_payout = $('#err_payout');
+                if ($err_payout.length) {
+                    $err_payout.text(error_msg);
+                } else {
+                    $error_wrapper.append($('<p/>', { class: 'error-msg gr-row', id: 'err_payout', text: error_msg }));
+                }
+            }
+
+            return is_valid;
         };
 
 
         const $payout = $form.find('#payout');
         if ($payout.length) {
             const $payout_list = $form.find('#payout_list');
-            const jp_client    = jpClient();
 
             const appendActualPayout = (payout) => {
                 $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', html: Currency.formatMoney('JPY', payout * 1000) })));
@@ -119,12 +147,12 @@ const MBTradingEvents = (() => {
                 $payout.value = payout_def;
                 MBDefaults.set(amount, payout_def);
                 $payout.attr('value', payout_def);
-                if (jp_client) {
+                if (is_jp_client) {
                     $payout.find('.current').html(payout_def);
                     appendActualPayout(payout_def);
                 }
             }
-            if (jp_client) {
+            if (is_jp_client) {
                 $payout.find('.current').on('click', function () {
                     old_value      = +this.childNodes[0].nodeValue;
                     const $list    = $(`#${$(this).parent().attr('id')}_list`);
@@ -138,30 +166,22 @@ const MBTradingEvents = (() => {
                     $period.toggleClass(hidden_class);
                 });
             } else {
-                // Verify number of decimal places doesn't exceed the allowed decimal places according to the currency
-                const isStandardFloat = value => (
-                    !isNaN(value) &&
-                    value % 1 !== 0 &&
-                    value.replace(/^-?\d*\.?|0+$/, '').length > Currency.getDecimalPlaces(MBDefaults.get('currency'))
-                );
-
+                const $panel = $('#panel');
                 $payout
                     .on('click', function() { $(this).select(); })
                     .on('keypress', onlyNumericOnKeypress)
                     .on('input', debounce((e) => {
-                        old_value      = e.target.getAttribute('value');
-                        let new_payout = e.target.value;
+                        const payout   = e.target.value;
                         const currency = MBDefaults.get('currency');
-                        if (isStandardFloat(new_payout)) {
-                            new_payout     = parseFloat(new_payout).toFixed(Currency.getDecimalPlaces(currency));
-                            e.target.value = new_payout;
-                        }
-                        if (!validatePayout(new_payout)) {
-                            e.target.value = old_value;
-                        } else if (+new_payout !== +old_value) {
-                            e.target.setAttribute('value', new_payout);
-                            MBDefaults.set(`payout${Currency.isCryptocurrency(currency) ? '_crypto' : ''}`, new_payout);
+                        if (validatePayout(payout, $panel)) {
+                            $panel.find('#err_payout').remove();
+                            $payout.removeClass('error');
+                            e.target.setAttribute('value', payout);
+                            MBDefaults.set(`payout${Currency.isCryptocurrency(currency) ? '_crypto' : ''}`, payout);
                             MBProcess.processPriceRequest();
+                        } else {
+                            $payout.addClass('error');
+                            MBPrice.showPriceOverlay();
                         }
                     }));
             }
@@ -172,7 +192,7 @@ const MBTradingEvents = (() => {
                     let new_payout;
                     if (/\+|-/.test(value)) {
                         new_payout = payout + parseInt(value);
-                        if (new_payout < 1 && jp_client) {
+                        if (new_payout < 1 && is_jp_client) {
                             new_payout = 1;
                         }
                     } else if (/ok|cancel/.test(value)) {
@@ -186,7 +206,7 @@ const MBTradingEvents = (() => {
                         $('.price-table').setVisibility(1);
                         MBDefaults.set('payout', new_payout);
                         $payout.attr('value', new_payout).find('.current').html(new_payout);
-                        if (jp_client) {
+                        if (is_jp_client) {
                             appendActualPayout(new_payout);
                         }
                         MBProcess.processPriceRequest();
@@ -202,15 +222,19 @@ const MBTradingEvents = (() => {
                 const currency = $(this).attr('value');
                 MBContract.setCurrentItem($currency, currency);
                 MBDefaults.set('currency', currency);
-                if (!jpClient()) {
+                if (is_jp_client) {
+                    MBProcess.processPriceRequest();
+                } else {
                     const is_crypto = Currency.isCryptocurrency(currency);
-                    const amount    = `payout${is_crypto ? '_crypto' : ''}`;
-                    if (!MBDefaults.get(amount)) {
-                        MBDefaults.set(`payout${is_crypto ? '_crypto' : ''}`, Currency.getMinPayout(currency));
+                    let amount      = MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`);
+                    if (!amount) {
+                        amount = Currency.getMinPayout(currency);
+                        MBDefaults.set(`payout${is_crypto ? '_crypto' : ''}`, amount);
                     }
-                    $payout.val(MBDefaults.get(amount)).attr('value', MBDefaults.get(amount));
+                    $payout
+                        .val(amount).attr('value', amount)
+                        .trigger('input'); // payout will call processPriceRequest
                 }
-                MBProcess.processPriceRequest();
             });
         }
 
@@ -230,7 +254,7 @@ const MBTradingEvents = (() => {
             }
         };
         if ($trading_status.length) {
-            setTradingStatus(!jpClient());
+            setTradingStatus(0);
             $trading_status.on('click', (e) => {
                 const status = e.target.getAttribute('id');
                 MBDefaults.set('disable_trading', status === 'disallow');
