@@ -30,7 +30,7 @@ const Step = ({ header, text, circle_no }) => (
 const Signup = () => (
     <div className='static_full affiliates'>
         <div className='container'>
-            <h1>{it.L('Binary.com Affiliate Programme')}</h1>
+            <h1>{it.L('[_1] Affiliate Programme', it.website_name)}</h1>
             <p>
                 {it.L('Earn up to 35% commission with an award-winning binary options trading platform.')}
             </p>
@@ -39,7 +39,7 @@ const Signup = () => (
                 <h2 className='center-text margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
                     <Step circle_no='1' header={it.L('Sign up')}            text={it.L('Getting started is free and easy – just <a href=\'[_1]\'>fill out the application form</a> and wait for our approval.', it.affiliate_signup_url)} />
-                    <Step circle_no='2' header={it.L('Promote Binary.com')} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise Binary.com to your audience.')} />
+                    <Step circle_no='2' header={it.L('Promote [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise [_1] to your audience.', it.website_name)} />
                     <Step circle_no='3' header={it.L('Earn')}               text={it.L('Choose from two types of  commission plans when your referred clients trade binary options on our platform.')} />
                 </div>
             </div>
@@ -47,7 +47,7 @@ const Signup = () => (
 
         <div className='fill-bg-color'>
             <div className='container center-text gr-padding-20'>
-                <h2 className='margin-bottom-50'>{it.L('Why you should join the Binary.com Affiliate Programme')}</h2>
+                <h2 className='margin-bottom-50'>{it.L('Why you should join the [_1] Affiliate Programme', it.website_name)}</h2>
 
                 <BoxRow top_row>
                     <Box title={it.L('Generous commission')}      image='commission-icon'       text={it.L('Choose a commission plan that suits your business strategy.')} />
@@ -175,7 +175,7 @@ const Signup = () => (
 
         <div className='fill-bg-color'>
             <div className='container center-text gr-padding-30'>
-                <p>{it.L('Sign up for the Binary.com Affiliate Programme today:')}</p>
+                <p>{it.L('Sign up for the [_1] Affiliate Programme today:', it.website_name)}</p>
                 <p>
                     <a className='button' href={it.affiliate_signup_url}>
                         <span>{it.L('Yes, I Want To Sign Up As An Affiliate')}</span>
