@@ -30,7 +30,7 @@ const FAQ = () => (
                     <p>{it.L('[_1] is a licensed and regulated binary options trading platform that’s been operating since 2000. It has:', it.website_name)}</p>
                     <ul className='bullet'>
                         <li>{it.L('An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian, and Indonesian')}</li>
-                        <li>{it.L('An intuitive, web-based platform that’s instantly available to traders of all levels –– anytime, anywhere')}</li>
+                        <li>{it.L('An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere')}</li>
                         <li>{it.L('A competitive and flexible affiliate programme that can be adapted to your needs')}</li>
                     </ul>
 
