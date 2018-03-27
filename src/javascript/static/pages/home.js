@@ -26,14 +26,16 @@ const Home = (() => {
                 fnc_response_handler: handler,
                 fnc_additional_check: checkCountry,
             });
-            socialLogin();
+            socialLogin(['google', 'facebook', 'twitter']);
         });
     };
 
-    const socialLogin = () => {
-        $('#google-signup').off('click').on('click', (e) => {
-            e.preventDefault();
-            window.location.href = Login.socialLoginUrl('google');
+    const socialLogin = (providers) => {
+        providers.forEach((provider) => {
+            $(`#btn-${provider}`).off('click').on('click', (e) => {
+                e.preventDefault();
+                window.location.href = Login.socialLoginUrl(provider);
+            });
         });
     };
 

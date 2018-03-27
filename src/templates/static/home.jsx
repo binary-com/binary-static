@@ -151,6 +151,12 @@ const TabCircles = ({ id, number }) => (
     </div>
 );
 
+const ButtonSocial = ({id, icon, text}) => (
+    <button id={id || undefined} className='button-white'>
+        <span className={icon}>{it.L(text)}</span>
+    </button>
+);
+
 const Home = () => {
     const binary_header = it.L('Binary options');
     const binary_desc   = it.L('Options that offer a fixed payout based on a simple yes/no proposition.');
@@ -178,9 +184,21 @@ const Home = () => {
                                 <div className='circle'>{it.L('or')}</div>
                                 <div className='align-self-center border-bottom-light-gray' />
                             </div>
-                            <a id='google-signup' href='javascript:;' className='button-white'>
-                                <span className='icon-google'>{it.L('Create account with Google')}</span>
-                            </a>
+
+                            <div className='gr-row'>
+                                <div className='gr-12 center-text'>
+                                    <span>{it.L('Create free account with')}</span>
+                                </div>
+                                <div className='gr-4 gr-12-m'>
+                                    <ButtonSocial id='btn-google'   icon='ic-google'   text='Google' />
+                                </div>
+                                <div className='gr-4 gr-12-m'>
+                                    <ButtonSocial id='btn-facebook' icon='ic-facebook' text='Facebook' />
+                                </div>
+                                <div className='gr-4 gr-12-m'>
+                                    <ButtonSocial id='btn-twitter'  icon='ic-twitter'  text='Twitter' />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

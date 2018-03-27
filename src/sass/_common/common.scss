@@ -550,32 +550,43 @@ li strong.margin-right {
 
 .button-white {
     cursor: pointer;
-    margin-bottom: 0.5em;
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background: $COLOR_WHITE;
+    color: $COLOR_BLACK;
+    border: 1px solid $COLOR_GRAY;
 
+    &:hover, &:focus {
+        background: $COLOR_GRAY;
+    }
     span {
-        @include link-button;
-        overflow: visible;
-        border: 1px solid $COLOR_GRAY;
-        color: $COLOR_BLACK;
-        background: $COLOR_WHITE;
-        font-weight: 400;
         display: flex;
         align-items: center;
         justify-content: center;
         letter-spacing: 0;
+        position: relative;
+        padding-left: 24px;
 
-        &:hover {
-            text-decoration: none;
-            background: $COLOR_GRAY;
-        }
-        &.icon-google:before {
-            margin-right: 10px;
+        &[class^='ic-']:before {
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            left: 0;
         }
     }
 }
 
-.icon-google:before {
-    content: url('../images/pages/applications/icon-google.svg');
+.ic-google:before {
+    content: url('../images/pages/applications/ic-google.svg');
+}
+
+.ic-facebook:before {
+    content: url('../images/pages/applications/ic-facebook.svg');
+}
+
+.ic-twitter:before {
+    content: url('../images/pages/applications/ic-twitter.svg');
 }
 
 .section-divider {
