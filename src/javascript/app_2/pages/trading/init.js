@@ -7,7 +7,6 @@ import TradeApp from './trade_app.jsx';
 import TradingHeader from './components/elements/header.jsx';
 import TradingFooter from './components/elements/footer.jsx';
 import { localize } from '../../../_common/localize';
-import { State } from '../../../_common/storage';
 import { initActions, disposeActions } from './actions';
 
 const stores = {
@@ -17,7 +16,6 @@ const stores = {
 
 const Trading = (() => {
     const onLoad = () => {
-        State.set('is_trading_2', true);
         initActions(stores.trade);
         stores.trade.init();
 
@@ -35,7 +33,7 @@ const Trading = (() => {
             , header);
         }
 
-        const app = document.getElementById('trade_app');
+        const app = document.getElementById('binary_app');
         if (app) {
             render(
                 <MobxProvider store={stores}>
@@ -61,7 +59,6 @@ const Trading = (() => {
     };
 
     const onUnload = () => {
-        State.remove('is_trading_2');
         stores.trade.dispose();
         disposeActions();
     };

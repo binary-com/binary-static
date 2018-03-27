@@ -46,9 +46,6 @@ const TelegramBot          = require('../pages/user/telegram_bot');
 const TNCApproval          = require('../pages/user/tnc_approval');
 const VideoFacility        = require('../pages/user/video_facility');
 
-// ==================== app_2 ====================
-const Trading = require('../../app_2/pages/trading/init');
-
 // ==================== static ====================
 const GetStartedJP       = require('../../static/japan/get_started');
 const HomeJP             = require('../../static/japan/home');
@@ -138,9 +135,6 @@ const pages_config = {
     'why-us-jp'              : { module: WhyUs },
     'withdraw-jp'            : { module: CashierJP.Withdraw,         is_authenticated: true, only_real: true },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
-    // ==================== app_2 ====================
-    trade                    : { module: Trading,                  needs_currency: true },
-
 };
 /* eslint-enable max-len */
 

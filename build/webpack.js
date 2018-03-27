@@ -71,7 +71,8 @@ module.exports = function (grunt) {
             chunks: false,
         },
         entry: {
-            [isProduction ? 'binary.min' :'binary']: './src/javascript',
+            [isProduction ? 'binary.min'     :'binary']    : './src/javascript',
+            [isProduction ? 'binary_app.min' :'binary_app']: './src/javascript/app_2',
         },
         output: {
             path         : path.resolve(__dirname, `../${global.dist}/js/`),
