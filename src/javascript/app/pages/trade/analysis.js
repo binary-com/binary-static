@@ -77,6 +77,7 @@ const TradingAnalysis = (() => {
                 const el_digit_underlying = $('#digit_underlying');
                 const underlying = $('#underlying option:selected').val();
                 const tick       = $('#tick_count').val() || 100;
+
                 if (underlying !== el_digit_underlying.val() && el_digit_underlying.val() !== null ) {
                     el_digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
                 }
@@ -95,6 +96,10 @@ const TradingAnalysis = (() => {
             const el_to_show = getElementById(current_tab);
             slideSelector(tab_selector_id, el_to_show);
         }
+        // workaround for underline during window resize
+        window.addEventListener('resize', () => {
+            slideSelector(tab_selector_id, getElementById(current_tab));
+        });
     };
 
     const slideSelector = (selector, el_to_show) => {

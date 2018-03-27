@@ -1,3 +1,4 @@
+const Dropdown          = require('binary-style').selectDropdown;
 const moment            = require('moment');
 const TradingAnalysis   = require('./analysis');
 const commonTrading     = require('./common');
@@ -163,6 +164,7 @@ const Process = (() => {
         StartDates.display();
 
         displayPrediction();
+        Dropdown('#prediction');
         Lookback.display();
 
         let r1;

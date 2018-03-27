@@ -31,7 +31,7 @@ export const TabContent = ({ id, visible, children, className }) => (
     </div>
 );
 
-export const TabsSubtabs = ({ className = '', id, items = [] }) => {
+export const TabsSubtabs = ({ className = '', id, items = [], no_href }) => {
     const is_tab_selector = /tab-selector-wrapper/.test(className);
     const getHref = (item_id) => is_tab_selector ? `?${id}=${item_id}` : `#${item_id}`;
     return (
@@ -45,7 +45,7 @@ export const TabsSubtabs = ({ className = '', id, items = [] }) => {
                                 <React.Fragment>
                                     <span className='menu-wrap-a'>
                                         <span className='menu-wrap-b'>
-                                            <a href={getHref(item.id)} className='tm-a'>{item.text}</a>
+                                            <a href={no_href ? 'javascript:;' : getHref(item.id)} className='tm-a'>{item.text}</a>
                                         </span>
                                     </span>
                                     <ul className='tm-ul-2'>

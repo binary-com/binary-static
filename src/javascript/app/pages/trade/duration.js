@@ -1,3 +1,4 @@
+const Dropdown           = require('binary-style').selectDropdown;
 const moment             = require('moment');
 const Barriers           = require('./barriers');
 const commonTrading      = require('./common');
@@ -130,7 +131,7 @@ const Durations = (() => {
                 selected_duration = {};
             }
         }
-
+        Dropdown('#duration_units');
         return durationPopulate();
     };
 
@@ -239,6 +240,7 @@ const Durations = (() => {
         CommonFunctions.getElementById('duration_amount').value = unit_value;
         Defaults.set('duration_amount', unit_value);
         displayExpiryType();
+        Dropdown('#expiry_type');
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
@@ -372,6 +374,7 @@ const Durations = (() => {
         if ($('#expiry_type').find(`option[value=${Defaults.get('expiry_type')}]`).length === 0 && target.value) {
             Defaults.set('expiry_type', target.value);
         }
+
         const current_selected = Defaults.get('expiry_type') || target.value || 'duration';
 
         CommonFunctions.getElementById(`expiry_type_${current_selected}`).style.display = 'flex';
@@ -400,7 +403,7 @@ const Durations = (() => {
     };
 
     const isNow = date_start => (date_start ? date_start === 'now' : (!State.get('is_start_dates_displayed') || CommonFunctions.getElementById('date_start').value === 'now'));
-    
+
     const isSameDay = () => {
         const expiry_date  = CommonFunctions.getElementById('expiry_date');
         let date_start_val = CommonFunctions.getElementById('date_start').value;

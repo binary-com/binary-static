@@ -152,7 +152,7 @@
         position: relative;
 
         #contract_form_container .col {
-            @include BIDIR_PROP(margin-right, margin-left, 1rem);
+            @include BIDIR_PROP(margin-right, margin-left, 0.5rem);
         }
         .overlay_container {
             width: 100%;
@@ -493,7 +493,7 @@
         }
     }
     #duration_amount {
-        @include BIDIR_PROP(margin-right, margin-left, 5px);
+        @include BIDIR_PROP(margin-right, margin-left, 0.5rem);
     }
     #duration_units {
         @include BIDIR_PROP(margin-right, margin-left, 10px);
@@ -532,6 +532,7 @@
     }
     #amount {
         margin-top: -1px;
+        margin-left: 0.5rem;
     }
     #underlying {
         @include BIDIR_PROP(margin-right, margin-left, 10px);
@@ -703,7 +704,6 @@
         overflow-y: hidden;
     }
     #last_digit_histo_form {
-        overflow: hidden;
         margin-bottom: 20px;
     }
 }
