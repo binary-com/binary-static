@@ -160,14 +160,6 @@ const SelfExclusion = (() => {
                     ['custom', { func: value => !value.length || getMoment(exclude_until_id).isAfter(moment().add(6, 'months')), message: 'Exclude time cannot be less than 6 months.' }],
                     ['custom', { func: value => !value.length || getMoment(exclude_until_id).isBefore(moment().add(5, 'years')), message: 'Exclude time cannot be for more than 5 years.' }],
                 ],
-            },
-            {
-                selector        : max_30day_turnover_id,
-                exclude_if_empty: 1,
-                value           : () => $(max_30day_turnover_id).val(),
-                validations     : [
-                    ['custom', { func: () => ($(max_30day_turnover_id).val() ? $(max_30day_turnover_id).val().length : false ), message: 'This field is required.' }],
-                ],
             });
 
         FormManager.init(form_id, validations);
