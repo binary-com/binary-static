@@ -706,6 +706,9 @@
     #last_digit_histo_form {
         margin-bottom: 20px;
     }
+    #digit_underlying ~ ul.select-options {
+        font-size: 85%;
+    }
 }
 
 #deposit_btn_trade, #upgrade_btn_trade {

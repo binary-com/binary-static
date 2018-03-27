@@ -80,6 +80,19 @@ const TradingAnalysis = (() => {
 
                 if (underlying !== el_digit_underlying.val() && el_digit_underlying.val() !== null ) {
                     el_digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
+                    const digit_underlying_dropdown = el_digit_underlying.next('div.select-dropdown');
+
+                    // check if custom dropdown exists and sync with underlying dropdown
+                    if (digit_underlying_dropdown) {
+                        const digit_underlying_list = digit_underlying_dropdown.next('ul.select-options').children('li');
+                        const underlying_text = $('#underlying option:selected').text();
+                        digit_underlying_dropdown.text(underlying_text);
+
+                        digit_underlying_list.not(this).each((idx, el) => {
+                            $(el).removeClass('selected');
+                        });
+                        digit_underlying_list.filter(`[value='${underlying}']`).addClass('selected');
+                    }
                 }
                 else {
                     GetTicks.request('', {
