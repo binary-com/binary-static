@@ -54,7 +54,7 @@ const FAQ = () => (
                     <p>{it.L('It’s easy. Just go to the signup page and complete the <a href=\'[_1]\'>affiliate registration form</a>. We’ll review your application and get back to you if your application is successful.', it.affiliate_signup_url)}</p>
 
                     <h3>{it.L('I forgot my password, what should I do?')}</h3>
-                    <p>{it.L('Don’t worry, you can simply <a href=\'[_1]\'>reset your password</a>.', 'https://login.binary.com/password-reset.php')}</p>
+                    <p>{it.L('Don’t worry, you can simply <a href=\'[_1]\'>reset your password</a>.', it.affiliate_password_url)}</p>
 
                     <h3>{it.L('How can I change my payment method?')}</h3>
                     <p>{it.L('Log in to your [_1] affiliate account and go to: Finances → Payment instructions.', it.website_name)}</p>
