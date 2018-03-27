@@ -90,9 +90,9 @@ const SelfExclusion = (() => {
     };
 
     const setMax30DayTurnoverLimit = (is_checked) => {
-        $('.max_30day_turnover').find('.symbols')[is_checked ? 'addClass' : 'removeClass']('invisible');
-        $(max_30day_turnover_id)[is_checked ? 'addClass' : 'removeClass']('invisible');
-        $(max_30day_turnover_id).val(is_checked ? 999999 : '');
+        $(max_30day_turnover_id)
+            .attr('disabled', is_checked)
+            .val(is_checked ? 9999999 : '');
     };
 
     const bindValidation = () => {
@@ -159,6 +159,14 @@ const SelfExclusion = (() => {
                 validations     : [
                     ['custom', { func: value => !value.length || getMoment(exclude_until_id).isAfter(moment().add(6, 'months')), message: 'Exclude time cannot be less than 6 months.' }],
                     ['custom', { func: value => !value.length || getMoment(exclude_until_id).isBefore(moment().add(5, 'years')), message: 'Exclude time cannot be for more than 5 years.' }],
+                ],
+            },
+            {
+                selector        : max_30day_turnover_id,
+                exclude_if_empty: 1,
+                value           : () => $(max_30day_turnover_id).val(),
+                validations     : [
+                    ['custom', { func: () => ($(max_30day_turnover_id).val() ? $(max_30day_turnover_id).val().length : false ), message: 'This field is required.' }],
                 ],
             });
 
