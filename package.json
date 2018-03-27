@@ -4,7 +4,6 @@
   "description": "Binary.com static content",
   "scripts": {
     "test": "grunt test",
-    "start": "sudo -p 'enter password for sudo:' grunt custom",
     "livereload": "sudo -p 'enter password for sudo:' grunt livereload",
     "serve": "sudo -p 'enter password for sudo:' grunt serve",
     "eslint": "eslint --fix \"src/**/*.jsx\" src/ build/"
