@@ -68,6 +68,7 @@
         }
         .search {
             padding: 15px 15px 0;
+            background: $COLOR_WHITE;
 
             input {
                 outline: none;
@@ -104,7 +105,8 @@
                 display: flex;
                 flex-direction: column;
                 flex: 1 0 auto;
-                min-width: 130px;
+                min-width: 140px;
+                background: $COLOR_WHITE;
                 border-right: 1px solid $COLOR_GRAY;
                 @media (min-width: 320px) and (max-width: 767px) {
                     border-right: 0;
@@ -232,6 +234,14 @@
                     flex: 0 0 auto;
                     margin-bottom: 30px;
 
+                    &:first-of-type {
+                        padding-top: 40px;
+                    }
+                    &:last-of-type {
+                        @media (min-width: 768px) {
+                            padding-bottom: 40px;
+                        }
+                    }
                     .market_name {
                         font-size: 18px;
                         padding: 10px 0;
@@ -244,9 +254,16 @@
 
                         &.sticky {
                             position: absolute;
-                            top: 122px;
+                            width: 350px;
+                            top: 59px;
                             background: $COLOR_WHITE;
-                            width: calc(100% - 20px);
+                            @media (max-width: 767px) {
+                                top: 122px;
+                                width: calc(100% - 20px);
+                            }
+                        }
+                        &.put_under {
+                            z-index: -1;
                         }
                     }
                     .submarket {

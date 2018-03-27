@@ -27,7 +27,6 @@ function scrollToPosition (element, to, duration) {
 const List = ({
     arr,
     saveRef,
-    market,
     underlying,
     onUnderlyingClick,
 }) => (
@@ -38,7 +37,7 @@ const List = ({
             id={`${market_code}_market`}
             ref={saveRef.bind(null,market_code)}
         >
-            <div className={`market_name ${market === market_code ? 'sticky' : ''}`}>
+            <div className={`market_name`}>
                 {obj.name}
             </div>
             {Object.values(obj.submarkets).map((submarket, idx_2) => (
@@ -102,8 +101,10 @@ class Markets extends React.Component {
 
     /* eslint-disable no-undef */
     openDropdown = () => {
+        this.references.market_nodes[this.state.active_market]
+            .childNodes[0].classList.add('sticky');
         this.setState({open: true});
-        this.scrollToElement(this.state.underlying.symbol, 0, 254);
+        this.scrollToElement(this.state.underlying.symbol, 0, 64);
     };
 
     closeDropdown = () => {
@@ -134,17 +135,47 @@ class Markets extends React.Component {
         const {market_nodes, list} = this.references;
         const position = e.target.scrollTop;
         const arr = [];
+        let curr_market = null;
         Object.entries(market_nodes).forEach(([key, node]) => {
-            if (node && node.offsetTop - list.offsetTop - 40 <= position) {
+            if (node && node.offsetTop - list.offsetTop - 41 <= position) {
                 arr.push(key);
             }
         });
         if (this.state.active_market !== arr[arr.length-1]) {
+            this.previous_market = this.state.active_market;
             if (position <=10) {
-                this.setState({active_market: arr[0]});
+                curr_market = arr[0];
             } else {
-                this.setState({active_market: arr[arr.length-1]});
+                curr_market = arr[arr.length - 1];
             }
+            this.setState({active_market: curr_market});
+        }
+
+        this.stickyHeader(market_nodes[curr_market || this.state.active_market].childNodes[0],
+            ((market_nodes[this.previous_market] || {}).childNodes || [])[0], position + list.offsetTop);
+    }
+
+    stickyHeader = (curr, prev, pos) => {
+        const sticky = 'sticky';
+        const under = 'put_under';
+        const DEFAULT_TOP = window.innerWidth < 768 ? 122 : 59;
+        const diff = curr.offsetTop - pos;
+        const diffSub = 40 - diff;
+        if (!prev) {
+            curr.classList.add(sticky);
+            return;
+        }
+
+        if (diff > 0) {
+            prev.classList.add(under);
+            prev.style.top = `${DEFAULT_TOP - diffSub}px`;
+        } else {
+            prev.removeAttribute('style');
+            prev.classList.remove(sticky);
+            prev.classList.remove(under);
+            curr.classList.add(sticky);
+            curr.classList.remove(under);
+            curr.removeAttribute('style');
         }
     }
 
@@ -313,7 +344,6 @@ class Markets extends React.Component {
                                 arr={markets}
                                 saveRef={saveMarketRef}
                                 underlying={underlying.symbol}
-                                market={active_market}
                                 onUnderlyingClick={onUnderlyingClick}
                             />
                         </div>
