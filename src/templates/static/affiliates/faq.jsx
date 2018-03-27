@@ -1,7 +1,6 @@
 import React from 'react';
 import { Section } from '../get_started/common.jsx';
 import { List } from '../../_common/components/elements.jsx';
-import { signup_url } from './signup.jsx';
 
 const FAQ = () => (
     <div className='static_full affiliates_faq'>
@@ -52,7 +51,7 @@ const FAQ = () => (
 
                 <Section id='account-management-and-tracking' header={it.L('Account management and tracking')}>
                     <h3>{it.L('How can I become an affiliate?')}</h3>
-                    <p>{it.L('It’s easy. Just go to the signup page and complete the <a href=\'[_1]\'>affiliate registration form</a>. We’ll review your application and get back to you if your application is successful.', signup_url)}</p>
+                    <p>{it.L('It’s easy. Just go to the signup page and complete the <a href=\'[_1]\'>affiliate registration form</a>. We’ll review your application and get back to you if your application is successful.', it.affiliate_signup_url)}</p>
 
                     <h3>{it.L('I forgot my password, what should I do?')}</h3>
                     <p>{it.L('Don’t worry, you can simply <a href=\'[_1]\'>reset your password</a>.', 'https://login.binary.com/password-reset.php')}</p>

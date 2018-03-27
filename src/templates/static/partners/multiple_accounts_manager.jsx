@@ -1,7 +1,6 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-// TODO: use common box component
 const BoxInner = ({ className = '', image, text }) => (
     <div className={`gr-4 gr-12-m center-text ${className}`}>
         <img className='gr-4 gr-2-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)}/>

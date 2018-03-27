@@ -26,9 +26,6 @@ const Step = ({ header, text, circle_no }) => (
     </div>
 );
 
-// TODO: add lang to href ?
-export const signup_url = 'https://login.binary.com/signup.php';
-
 const Signup = () => (
     <div className='static_full affiliates'>
         <div className='container'>
@@ -40,7 +37,7 @@ const Signup = () => (
             <div className='gr-padding-20'>
                 <h2 className='center-text margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
-                    <Step circle_no='1' header={it.L('Sign up')}            text={it.L('Getting started is free and easy –– just <a href=\'[_1]\'>fill out the application form</a> and wait for our approval.', signup_url)} />
+                    <Step circle_no='1' header={it.L('Sign up')}            text={it.L('Getting started is free and easy –– just <a href=\'[_1]\'>fill out the application form</a> and wait for our approval.', it.affiliate_signup_url)} />
                     <Step circle_no='2' header={it.L('Promote Binary.com')} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise Binary.com to your audience.')} />
                     <Step circle_no='3' header={it.L('Earn')}               text={it.L('Choose from two types of  commission plans when your referred clients trade binary options on our platform.')} />
                 </div>
@@ -63,7 +60,7 @@ const Signup = () => (
                 </BoxRow>
 
                 <div className='gr-padding-30'>
-                    <a className='button' href={signup_url}>
+                    <a className='button' href={it.affiliate_signup_url}>
                         <span>{it.L('Apply Now')}</span>
                     </a>
                 </div>
@@ -175,7 +172,7 @@ const Signup = () => (
             <div className='container center-text gr-padding-30'>
                 <p>{it.L('Sign up for the Binary.com Affiliate Programme today:')}</p>
                 <p>
-                    <a className='button' href={signup_url}>
+                    <a className='button' href={it.affiliate_signup_url}>
                         <span>{it.L('Yes, I Want To Sign Up As An Affiliate')}</span>
                     </a>
                 </p>
