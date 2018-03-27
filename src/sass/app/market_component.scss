@@ -241,6 +241,13 @@
                         @media (min-width: 320px) and (max-width: 767px) {
                             font-size: 20px;
                         }
+
+                        &.sticky {
+                            position: absolute;
+                            top: 122px;
+                            background: $COLOR_WHITE;
+                            width: calc(100% - 20px);
+                        }
                     }
                     .submarket {
                         display: flex;

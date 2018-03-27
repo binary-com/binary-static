@@ -27,6 +27,7 @@ function scrollToPosition (element, to, duration) {
 const List = ({
     arr,
     saveRef,
+    market,
     underlying,
     onUnderlyingClick,
 }) => (
@@ -37,7 +38,7 @@ const List = ({
             id={`${market_code}_market`}
             ref={saveRef.bind(null,market_code)}
         >
-            <div className='market_name'>
+            <div className={`market_name ${market === market_code ? 'sticky' : ''}`}>
                 {obj.name}
             </div>
             {Object.values(obj.submarkets).map((submarket, idx_2) => (
@@ -134,7 +135,7 @@ class Markets extends React.Component {
         const position = e.target.scrollTop;
         const arr = [];
         Object.entries(market_nodes).forEach(([key, node]) => {
-            if (node && node.offsetTop - list.offsetTop - 220 <= position) {
+            if (node && node.offsetTop - list.offsetTop - 40 <= position) {
                 arr.push(key);
             }
         });
@@ -312,6 +313,7 @@ class Markets extends React.Component {
                                 arr={markets}
                                 saveRef={saveMarketRef}
                                 underlying={underlying.symbol}
+                                market={active_market}
                                 onUnderlyingClick={onUnderlyingClick}
                             />
                         </div>
