@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-03-20 21:24-0400\n"
+"PO-Revision-Date: 2018-03-25 20:31-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgid "$500,001 - $1,000,000"
 msgstr "500 001 $ - 1 000 000 $"
 
 msgid "%1 %2 has been credited into your virtual account: %3."
-msgstr ""
+msgstr "%2 %1 zostało odjęte z Twojego konta wirtualnego: %3."
 
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "Wypłata w wysokości %2 %1, jeśli %3 nie osiągnie limitu aż do zamknięcia %4."
@@ -950,12 +950,6 @@ msgstr "Rolnicy, robotnicy leśni i rybacy"
 msgid "Alert"
 msgstr "Alert"
 
-msgid "All %1 %2front-end platforms and libraries%3 are eligible."
-msgstr "Wszystkie %2platformy front-end i biblioteki%3 %1 spełniają niezbędne wymogi."
-
-msgid "All %1 front-end projects are deployed using the Github pages facility. Please familiarize yourself with that facility, and read the deployment instructions in each relevant repository."
-msgstr "Wszystkie projekty front-end %1 są wdrażane przy użyciu narzędzi Github. Prosimy o zapoznanie się z tymi narzędziami i przeczytanie instrukcji dot. wdrażania w każdym repozytorium."
-
 msgid "All %1 registered or unregistered proprietary rights including but not limited to patents, trademarks, trade secrets, domain names, URL, pricing information and/or other proprietary rights materials, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, processes, procedures whatsoever shall solely remain with the Company."
 msgstr "Wszelkie zarejestrowane lub niezarejestrowane prawa własności należące do %1, w tym m. in. patenty, znaki towarowe, tajemnice handlowe, nazwy domen, adresy URL, informacje dot. cen i/lub inne dowolnego rodzaju materiały, pomysły, koncepcje, formaty, sugestie, opracowania, umowy, programy, techniki, metodologie, know-how, wyposażenie, procesy i procedury objęte prawami własności pozostają własnością Firmy."
 
@@ -1409,9 +1403,6 @@ msgstr "Dostępne rynki"
 msgid "Available payment methods"
 msgstr "Dostępne metody płatności"
 
-msgid "Average-sized changes – generally $50-250"
-msgstr "Zmiany średniej wielkości – zazwyczaj 50-250 $"
-
 msgid "Avoid the need to have an e-wallet"
 msgstr "Nie trzeba mieć e-portfela"
 
@@ -1540,12 +1531,6 @@ msgstr "BetOnMarkets.com zmienia nazwę na %1"
 
 msgid "BetOnMarkets.com reaches $1 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.com osiąga obrót w wysokości miliarda dolarów od rozpoczęcia działalności w 1999 r."
-
-msgid "Better charting facilities"
-msgstr "Ulepszone funkcje wykresów"
-
-msgid "Better test coverage"
-msgstr "Lepsze pokrycie testu"
 
 msgid "Betting system and method"
 msgstr "System i metody zawierania zakładów"
@@ -1736,9 +1721,6 @@ msgstr "Przeglądarka"
 msgid "Browser platforms"
 msgstr "Przeglądarki"
 
-msgid "Bug fixes"
-msgstr "Usunięcie usterek"
-
 msgid "Build a successful career at the intersection of finance and technology. Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and empower your career."
 msgstr "Zbuduj swoją karierę, łącząc sektor finansowy z technologicznym. Nasz program dla absolwentów został stworzony, aby w pełni wykorzystać Twój potencjał, dać Ci pełny wgląd w naszą działalności i umożliwić Ci rozpoczęcie kariery."
 
@@ -1826,23 +1808,8 @@ msgstr "Kontrakty CFD"
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Czy mogę zostać partnerem nawet jeśli nie mam strony internetowej?"
 
-msgid "Can I contribute to back-end code?"
-msgstr "Mogę wnieść swój wkład w kod back-end?"
-
-msgid "Can I discuss the codebases with the %1 development team?"
-msgstr "Czy mogę omówić bazy kodów z zespołem programistów %1?"
-
 msgid "Can I offer my referrals an incentive to sign up through my link rather than sign up directly?"
 msgstr "Czy mogę oferować osobom, którym polecam portal, wynagrodzenie finansowe, jeśli zarejestrują się przez link ode mnie, a nie bezpośrednio?"
-
-msgid "Can I submit security vulnerabilities?"
-msgstr "Czy mogę przesłać informacje o lukach w zabezpieczeniach?"
-
-msgid "Can I work for %1 full-time?"
-msgstr "Czy mogę pracować dla %1 na pełen etat?"
-
-msgid "Can I write a new front-end from scratch?"
-msgstr "Mogę napisać nowy kod front-end od początku?"
 
 msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts."
 msgstr "Może być stosowany do zakupu i sprzedaży kontraktów, odnawiania wygasłych zakupów oraz doładowywania kont z wirtualnymi pieniędzmi."
@@ -2838,9 +2805,6 @@ msgstr "Zdywersyfikuj swoje portfolio, dodając najpopularniejsze towary świato
 msgid "Divorce Settlement"
 msgstr "Orzeczenie rozwodowe"
 
-msgid "Do I retain ownership of the code?"
-msgstr "Czy zachowam prawa własności kodu?"
-
 msgid "Do not send Bitcoin to a Bitcoin Cash account (or Bitcoin Cash to a Bitcoin account). Doing so may lead to the loss of your funds."
 msgstr "Nie przesyłaj waluty bitcoin na konto z gotówką bitcoin (lub gotówki bitcoin na konto bitcoin), gdyż może to spowodować utratę Twoich środków."
 
@@ -3450,9 +3414,6 @@ msgstr "Znajomość zagadnień związanych z wirtualizacją (openvz / Xen / vmwa
 msgid "Family name"
 msgstr "Nazwisko"
 
-msgid "Faster rendering"
-msgstr "Szybsze renderowanie"
-
 msgid "Favourite artist"
 msgstr "Ulubiony artysta"
 
@@ -3681,9 +3642,6 @@ msgstr "Handel na rynku forex jest kupowaniem jednej waluty i sprzedawaniem drug
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "Handlowanie forex jest kupowaniem lub sprzedawaniem „par walutowych”. Gdy kupujesz parę walutową, taką jak EUR/USD, oznacza to, że kupujesz EURO, sprzedając w tym samym czasie USD."
 
-msgid "Fork the relevant Github repository"
-msgstr "Forkuj odpowiednie repozytorium Github"
-
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "Firma %1 powstała w 1999 r. i jest jedną z najstarszych i najbardziej szanowanych marek w branży internetowego handlu opcjami binarnymi."
 
@@ -3804,20 +3762,11 @@ msgstr "Bogata struktura prowizji"
 msgid "Get JPY 1,000,000"
 msgstr "Uzyskaj 1 000 000 JPY"
 
-msgid "Get Paid for Pull Requests"
-msgstr "Zarabiaj, wysyłając żądania typu „pull”"
-
 msgid "Get Started"
 msgstr "Start"
 
 msgid "Get USD 10,000.00"
 msgstr "Uzyskaj 10 000 USD"
-
-msgid "Get paid for pull requests"
-msgstr "Zarabiaj, wysyłając żądania typu „pull”"
-
-msgid "Get paid for pull requests."
-msgstr "Zarabiaj, wysyłając żądania typu „pull."
 
 msgid "Get started"
 msgstr "Rozpocznij"
@@ -4044,12 +3993,6 @@ msgstr "Jak zmienić metodę płatności?"
 msgid "How do I know how much I have earned?"
 msgstr "Skąd wiem, jakie są moje zarobki?"
 
-msgid "How do I submit a pull request?"
-msgstr "W jaki sposób wysłać żądanie typu „pull”?"
-
-msgid "How do I test my changes?"
-msgstr "W jaki sposób sprawdzić wprowadzone zmiany?"
-
 msgid "How do we calculate interest fees for long positions?"
 msgstr "W jaki sposób obliczamy wysokość opłat dla pozycji długich?"
 
@@ -4109,9 +4052,6 @@ msgstr "Jak handlować metalami"
 
 msgid "How to use a payment agent?"
 msgstr "Jak korzystać z usług pośredników płatności?"
-
-msgid "How will I get paid?"
-msgstr "W jaki sposób otrzymam zapłatę?"
 
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
 msgstr "Jednak, jeśli cena aktywa spadnie o 10 punktów, będzie to oznaczać, że poniesiesz stratę w wysokości 10 USD."
@@ -4229,9 +4169,6 @@ msgstr "Jeśli jakikolwiek zapis niniejszej Umowy zostanie uznany za nieważny l
 
 msgid "If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately."
 msgstr "Jeśli zdarzenie mające charakter siły wyższej trwa dłużej niż 30 dni roboczych, Strona nie objęta działaniem siły wyższej może rozwiązać niniejszą Umowę ze skutkiem natychmiastowym."
-
-msgid "If rewards are not agreed in advance, how do I know I'll be paid fairly?"
-msgstr "Jeśli wynagrodzenie nie jest ustalane z góry, jaką mam pewność, że otrzymam sprawiedliwą zapłatę?"
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "Jeżeli Firma (według jej własnego uznania) nie jest usatysfakcjonowania z wywiązywania się przez Klienta z tych postanowień lub jeśli Klient nie stosuje się do uzasadnionej prośby Firmy o przekazania informacji, Firma może zamknąć konto Klienta i wstrzymać wszelkie środki na nim zgromadzone."
@@ -4481,18 +4418,6 @@ msgstr "Ważne informacje dotyczące naszych stawek swapowych (finansowanie prze
 
 msgid "Improve %1's front-end content"
 msgstr "Ulepsz zawartość front-end %1"
-
-msgid "Improved browser compatibility"
-msgstr "Lepsza zgodność z przeglądarkami"
-
-msgid "Improved documentation"
-msgstr "Ulepszona dokumentacja"
-
-msgid "Improved responsiveness"
-msgstr "Lepszy czas reakcji"
-
-msgid "Improved usability"
-msgstr "Zwiększona użyteczność"
 
 msgid "Improvements"
 msgstr "Ulepszenia"
@@ -5430,9 +5355,6 @@ msgstr "Języki"
 msgid "Languages Classes for Refugees (LCFR)"
 msgstr "Zajęcia językowe dla uchodźców (LCFR)"
 
-msgid "Large changes – generally $750-2,500"
-msgstr "Duże zmiany – zazwyczaj 750-2500 $"
-
 msgid "Last Digit Prediction"
 msgstr "Przewidywanie ostatniej cyfry"
 
@@ -5793,9 +5715,6 @@ msgstr "Wpłać środki"
 msgid "Make another transfer"
 msgstr "Wykonaj kolejny przelew"
 
-msgid "Make your code changes in your fork"
-msgstr "Wprowadź swoje zmiany kodu w swojej kopii (fork)"
-
 msgid "Make your trade"
 msgstr "Dokonaj transakcji"
 
@@ -5975,9 +5894,6 @@ msgstr "Maksymalny rozmiar każdego pliku to 3 MB"
 
 msgid "May"
 msgstr "Maj"
-
-msgid "Medium-sized changes – generally $250-750"
-msgstr "Zmiany średniej wielkości – zazwyczaj 250-750 $"
 
 msgid "Memorable date"
 msgstr "Pamiętna data"
@@ -6282,14 +6198,8 @@ msgstr "Dolar nowozelandzki vs frank szwajcarski"
 msgid "New Zealand Dollar vs US Dollar"
 msgstr "Dolar nowozelandzki vs dolar amerykański"
 
-msgid "New features"
-msgstr "Nowe funkcje"
-
 msgid "New password"
 msgstr "Nowe hasło"
-
-msgid "New technical indicators"
-msgstr "Nowe wskaźniki techniczne"
 
 msgid "New to CFD trading? We explain a few basics that all CFD traders need to know before they start trading."
 msgstr "Handlowanie kontraktami CFD to dla Ciebie nowość? Wyjaśniamy kilka podstawowych kwestii, które każdy gracz kontraktami CFD powinien znać przed rozpoczęciem handlowania."
@@ -6353,9 +6263,6 @@ msgstr "Nikt nie może nadużywać tego portalu w celu prania brudnych pieniędz
 
 msgid "No risk, $10K virtual money account"
 msgstr "Bez ryzyka, konto z 10 tys. wirtualnych dolarów"
-
-msgid "No. Once your pull request is merged into master by our development team, and you have been paid, you have effectively handed over the rights to the code. It then becomes part of the master %1 codebase under the open-source license of the relevant repository."
-msgstr "Nie. Gdy Twoje żądanie typu „pull” zostanie wprowadzone do kodu głównego przez nasz zespół deweloperów, a Ty otrzymasz zapłatę, przekażesz prawa do kodu. Stanie się on częścią kodu głównego %1 na licencji open-source odpowiednich repozytoriów."
 
 msgid "No. There's no cost to sign up to the affiliate program."
 msgstr "Nie. Dołączenie do programu partnerskiego nic nie kosztuje."
@@ -6473,9 +6380,6 @@ msgstr "Październik"
 
 msgid "October"
 msgstr "Październik"
-
-msgid "Of course! Please send an email to <a href=\"mailto:%1\">%1</a> to request an invite to our Slack channel."
-msgstr "Oczywiście! Wyślij nam wiadomość e-mail na adres <a href=\"mailto:%1\">%1</a>, aby poprosić o zaproszenie do naszego kanału Slack."
 
 msgid "Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
 msgstr "Szybka, intuicyjna platforma handlowa, oferująca największy zakres walut, rodzajów opcji i okresów trwania transakcji handlowych."
@@ -6708,9 +6612,6 @@ msgstr "Nasze konto wskaźników zmienności umożliwia handlowanie kontraktami 
 msgid "Our active client base is expected to reach over 100,000 total clients this year."
 msgstr "Przewidujemy, że nasza baza aktywnych klientów będzie liczyć 100 000 klientów w tym roku."
 
-msgid "Our back-end code is mainly in Perl, and our open-source contributions may be found on %1CPAN%2. The corresponding source code can be found in our %3Github repositories%2 that start with the prefix \"perl-\". We welcome contributions to these repositories, notably improved documentation and test coverage."
-msgstr "Nasz kod back-end jest stworzony głównie w języku Perl, a informacje na temat naszego wkładu „open-source” w tworzenie kodu można znaleźć na stronie %1CPAN%2. Odpowiedni kod źródłowy jest dostępny w naszych %3repozytoriach Github%2 i jest poprzedzony prefiksem „perl-”. Cieszy nas każdy wkład w te repozytoria. Jesteśmy również wdzięczni za ulepszanie dokumentacji oraz wykonywanie testów."
-
 msgid "Our commitment to integrity and reliability means that we always strive to give you access to the best pricing and liquidity possible."
 msgstr "Przywiązujemy dużą wagę do rzetelności i uczciwości, dlatego zawsze staramy się zapewnić Ci dostęp do najkorzystniejszych cen oraz zagwarantować możliwie najlepszą płynność."
 
@@ -6734,9 +6635,6 @@ msgstr "Nasze źródła danych mogą czasami nieznacznie różnić się od innyc
 
 msgid "Our determination of the relative importance of the execution factors may differ from yours during certain circumstances, acting in your interest in accordance with our obligation of best execution."
 msgstr "Określenie przez nas względnego znaczenia czynników realizacji może się różnić w określonych okolicznościach od Twoich ustaleń, przy czym działamy w Twoim interesie zgodnie z naszym obowiązkiem najkorzystniejszej realizacji."
-
-msgid "Our development team will determine how much you get paid. You can expect the following range of payments:"
-msgstr "Nasz zespół programistów określi Twoje wynagrodzenie. Możesz spodziewać się następujących zakresów płatności:"
 
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "Nasz szybki wzrost zostaje poprawiony przez nabycie bazy klientów BetsForTraders, jednego z naszych głównych konkurentów."
@@ -7443,9 +7341,6 @@ msgstr "Publikować swoje imię i logo (z łączem do Twojej Aplikacji lub bez n
 msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Portuguese, Russian, and Thai"
 msgstr "Dostępność w języku angielskim, indonezyjskim, japońskim, chińskim, polskim, niemieckim, francuskim, portugalskim, rosyjskim i tajskim"
 
-msgid "Pull Requests"
-msgstr "Żądania typu „pull”"
-
 msgid "Purchase"
 msgstr "Kup"
 
@@ -7953,9 +7848,6 @@ msgstr "Godzina sprzedaży"
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses."
 msgstr "Sprzedaj swoje kontrakty długoterminowe przed datą wygaśnięcia, aby zachować potencjalne zyski lub ograniczyć straty."
 
-msgid "Send an email to %1 to ask our development team to review your pull request"
-msgstr "Wyślij wiadomość e-mail do %1, aby poprosić nasz zespół programistów o sprawdzenie Twojego żądania typu „pull”"
-
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Prześlij nam CV i list motywacyjny, w którym przedstawiasz swoje plany dot. rozwoju kariery."
 
@@ -8111,9 +8003,6 @@ msgstr "Zdolność stosowania języków programowania obiektowego (C++, Perl i J
 
 msgid "Skill in the use of financial information sources such as Bloomberg and Reuters"
 msgstr "Umiejętność wykorzystywania internetowych źródeł finansowych, takich jak Bloomberg i Reuters"
-
-msgid "Smallish changes – generally $20-50"
-msgstr "Małe zmiany – zazwyczaj 20-50 $"
 
 msgid "SmartCharts"
 msgstr "Wykresy Smart"
@@ -8379,9 +8268,6 @@ msgstr "Z zastrzeżeniem postanowień sekcji J oraz N nieniejszej Umowy, przyjmu
 msgid "Submit"
 msgstr "Prześlij"
 
-msgid "Submit a pull request to master in the original GitHub repository "
-msgstr "Wyślij żądanie typu „pull”, aby ulepszyć oryginalne repozytorium GitHub "
-
 msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
 msgstr "Wyślij raport na HackerOne dotyczący wszelkich potencjalnych problemów zabezpieczeń, które znajdziesz, razem z sugestiami, jak je rozwiązać."
 
@@ -8426,9 +8312,6 @@ msgstr "Wsparcie"
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "Pomoc w prowadzeniu globalnych rekrutacji pracowników dla spółek grupy oraz zarządzaniu talentami"
-
-msgid "Sure. We welcome projects such as new mobile apps, chatbot apps, browser extensions, and new charting tools."
-msgstr "Oczywiście. Jesteśmy otwarci na projekty, takie jak aplikacje mobilne, aplikacje chatbot, rozszerzenia przeglądarek oraz nowe narzędzia do tworzenia wykresów."
 
 msgid "Suspend the trading of the affected instrument;"
 msgstr "Wstrzymaj handlowanie instrumentem, którego dotyczy ta kwestia;"
@@ -8558,9 +8441,6 @@ msgstr "Zespół ds. analizy ilościowej odpowiada za wycenę opcji binarnych of
 
 msgid "The %1 Terms and Conditions;"
 msgstr "Regulamin %1;"
-
-msgid "The %1 team"
-msgstr "Zespół %1"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Portal %1 jest chroniony prawami autorskimi."
@@ -9459,9 +9339,6 @@ msgstr "Aby utworzyć konto MetaTrader 5 z prawdziwymi pieniędzmi:"
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "Aby włączyć obsługę plików cookie, postępuj zgodnie z poniższymi instrukcjami dla wersji przeglądarki, której używasz."
 
-msgid "To encourage transparency and improve the performance and functionality of our website, %1 has open-sourced the entire front-end of our codebase, and we are now actively encouraging the community to contribute to its development. "
-msgstr "Aby zapewnić przejrzystość i ulepszyć działanie i funkcjonalność naszej witryny internetowej, firma %1 opiera całość kodu front-end na zasadzie „open source” i zachęcamy teraz społeczność programistów do przyłączenia się do jego rozwoju. "
-
 msgid "To exchange one currency for another in order to make profit."
 msgstr "Aby wymienić jedną walutę na drugą i zyskać."
 
@@ -9517,10 +9394,10 @@ msgid "Token"
 msgstr "Token"
 
 msgid "Top Up Virtual Account"
-msgstr ""
+msgstr "Doładuj Konto wirtualne"
 
 msgid "Top up virtual account"
-msgstr ""
+msgstr "Doładuj konto wirtualne"
 
 msgid "Top-tier liquidity"
 msgstr "Płynność zapewniana przez najlepszych dostawców"
@@ -9770,9 +9647,6 @@ msgstr "Tłumacz"
 
 msgid "Transparent risk and potential reward"
 msgstr "Brak ukrytego ryzyka i znana wysokość potencjalnego zysku"
-
-msgid "Trivial changes – generally $5-20"
-msgstr "Drobne zmiany – zazwyczaj 5-20 $"
 
 msgid "True"
 msgstr "Prawda"
@@ -10065,9 +9939,6 @@ msgstr "Wersja 4. Ostatnio zmieniana: 2016-12-30."
 msgid "Version 43. Last modified 2016-11-09."
 msgstr "Wersja 43. Ostatnio zmieniana: 09.11.2016."
 
-msgid "Very large changes/entire new projects – $2,500-10,000"
-msgstr "Bardzo duże zmiany/cały nowy projekt – 2500 - 10 000 $"
-
 msgid "Video Room Facility"
 msgstr "Opcja rozmowy wideo"
 
@@ -10212,9 +10083,6 @@ msgstr "Oferujemy również specjalną strukturę wypłat dla partnerów oferuj�
 msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
 msgstr "Chętnie podejmujemy współpracę z małymi, lokalnymi organizacjami charytatywnymi, którym możemy pomóc bezpośrednio. Jeśli chcesz porozmawiać na temat wsparcia Twojej organizacji charytatywnej, skontaktuj się z nami pod adresem %1."
 
-msgid "We are always on the lookout for talent – please apply via our <a target='_blank' href='%1'>careers</a> page."
-msgstr "Stale szukamy nowych talentów – aplikuj za pośrednictwem sekcji <a target='_blank' href='%1'>kariera</a>."
-
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "Na mocy ustawy Malta Investment Services Act (Cap. 370, zbiór ustaw Malty) („Ustawa”) za nadzór nad naszą firmą odpowiada Urząd ds. Usług Finansowych na Malcie: Malta Financial Services Authority („MFSA”), który zezwolił nam na prowadzenie działalności inwestycyjnej. Jesteśmy uprawnieni przez MFSA do realizowania transakcji na własny rachunek (np. występowanie w roli kontrahenta transakcji) i realizowania zleceń w imieniu innych osób, co w obu przypadkach odnosi się do finansowych produktów pochodnych (przede wszystkim opcji binarnych) opartych na walutach obcych, wskaźnikach, akcjach i innych produktach finansowych lub aktywach („Produkty finansowe”). Nie posiadamy zezwolenia na oferowanie lub zapewnianie doradztwa inwestycyjnego lub jakichkolwiek innych usług inwestycyjnych za wyjątkiem usług opisanych powyżej i nie oferujemy takich usług. Jeśli wydaje Ci się, że potrzebujesz porady inwestycyjnej lub usług inwestycyjnych innych niż te opisane powyżej, powinieneś/powinnaś skontaktować się z niezależnym doradcą inwestycyjnym lub firmą doradztwa inwestycyjnego."
 
@@ -10314,9 +10182,6 @@ msgstr "Na naszej liście towarów mamy wszystkie cztery metale szlachetne – z
 msgid "We offer three types of lookbacks:"
 msgstr "Oferujemy trzy rodzaje opcji wstecznych:"
 
-msgid "We only pay for pull requests that are approved by our development team and merged into master. If the development team approves your pull request, we'll pay you in cryptocurrency. You can choose Bitcoin, Litecoin or Ether. "
-msgstr "Płacimy tylko za żądania typu „pull”, które są zatwierdzone przez nasz zespół programistów i wprowadzone do kodu głównego. Jeśli nasz zespół programistów zatwierdzi Twoje żądanie „pull”, otrzymasz zapłatę w formie kryptowaluty. Możesz wybrać między: Bitcoin, Litecoin i Ether. "
-
 msgid "We presume that you possess the experience, knowledge, and expertise to make your own investment decisions and properly assess the risks involved"
 msgstr "Zakładamy, że posiadasz doświadczenie, wiedzę i umiejętności, umożliwiające podejmowanie własnych decyzji inwestycyjnych i odpowiednie ocenienie ryzyka związanego z transakcjami"
 
@@ -10365,9 +10230,6 @@ msgstr "Korzystamy z usług weryfikacji tożsamości i środków wykrywania nadu
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
 msgstr "Stosujemy weryfikację tożsamości i środki natychmiastowego wykrywania wyłudzeń, które pomagają nam zapewniać ochronę przed nieautoryzowanym dostępem do Twojego konta. Monitorujemy również aktywności na koncie, wykrywając oznaki nietypowych działań mogących sugerować nadużycia finansowe. Współpracujemy też z firmami windykacyjnymi i organami odpowiedzialnymi za egzekwowanie prawa w celu rozwiązywania kwestii nadużyć finansowych."
 
-msgid "We want to keep improving our platform, so, it's in our interest to pay contributors fairly. If we don't, then you'll stop contributing pull requests, which will make this project self-defeating."
-msgstr "Zależy nam na ulepszaniu naszej platformy, dlatego w naszym interesie leży sprawiedliwe wynagradzanie osób uczestniczących w tym projekcie. W przeciwnym razie przestaną oni wysyłać żądania typu „pull”, a projekt poniesie porażkę."
-
 msgid "We will act on any instructions given, or appearing to be given by you and received by us in relation to the margin trading services provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us."
 msgstr "Będziemy postępować zgodnie z wszelkimi instrukcjami przekazanymi nam przez Ciebie lub, które wydają się być przekazane, które otrzymaliśmy i które dotyczą usług handlowania na kredyt oferowanych za pośrednictwem platformy handlowej MT5. Jednak do naszych zobowiązań nie należy postępowanie zgodnie z instrukcjami, które uznaje się za przekazane nam przez Ciebie, ani podanie Ci przyczyny odmowy postępowanie zgodnie z Twoimi instrukcjami. Otrzymane przez nas Twoje instrukcje uznaje się za ostatecznie i nieodwołalne. Twoim obowiązkiem jest dbać o autentyczność i dokładność przekazywanych nam instrukcji."
 
@@ -10388,9 +10250,6 @@ msgstr "Zapewnimy Ci wszystkie narzędzia, których potrzebujesz, by zmienić ru
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "Dołożymy zasadnych starań, aby zapewnić, że wszelkie dane elektroniczne dostępne na platformie handlowej MT5 oraz wszelkie transakcje elektroniczne zlecone nam przez Ciebie, zaakceptowane i wykonane przez nas nie są narażone na opóźnienia sieciowe."
-
-msgid "We'll pay for any pull request that is accepted and merged into the master codebase."
-msgstr "Płacimy wyłącznie za żądania typu „pull”, które są zaakceptowane i wprowadzone do kodu głównego."
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "Otrzymujemy patenty na „System handlu komputerowego i metodę spekulacji na rynku finansowym” oraz „System handlu komputerowego oferującego spersonalizowane spekulacje rynkowe”. Patenty są dowodem na nasze umiejętności wprowadzania innowacji i bycia pionierem w branży."
@@ -10449,9 +10308,6 @@ msgstr "Czym są opcje binarne"
 msgid "What are lookbacks"
 msgstr "Czym są opcje wsteczne"
 
-msgid "What can I expect to get paid?"
-msgstr "Jakiego wynagrodzenia mogę oczekiwać?"
-
 msgid "What commission plan do you offer?"
 msgstr "Jakie plany prowizyjne są w ofercie?"
 
@@ -10475,9 +10331,6 @@ msgstr "Jaka jest definicja „klienta”?"
 
 msgid "What is this?"
 msgstr "Co to jest?"
-
-msgid "What kind of changes can I submit?"
-msgstr "Jakiego rodzaju zmiany mogę wprowadzić?"
 
 msgid "What marketing tools do you offer?"
 msgstr "Jakie narzędzia marketingowe oferujecie?"
@@ -10641,9 +10494,6 @@ msgstr "Które konto jest odpowiednie dla mnie?"
 msgid "Which currencies can I trade"
 msgstr "Jakimi walutami mogę handlować"
 
-msgid "Which projects are available?"
-msgstr "Które projekty są dostępne?"
-
 msgid "Whilst we act as principal in respect of your orders, we also assess the execution venues that we use and upon which we place significant reliance to provide the best possible result for the execution of your orders. These venues typically consist of third party investment firms, brokers, and/or liquidity providers."
 msgstr "Działając w roli zlecającego w odniesieniu do Twoich zleceń, oceniamy również wykorzystywane przez nas środki realizacji, do których mamy duże zaufanie, w celu zapewnienia najlepszych możliwych rezultatów realizacji Twojego zlecenia. Jako środki realizacji zazwyczaj rozumie się firmy inwestycyjne, brokerów lub dostawców płynności."
 
@@ -10803,9 +10653,6 @@ msgstr "Rok"
 msgid "Yes, I understand"
 msgstr "Tak, rozumiem"
 
-msgid "Yes, but we'd prefer you to submit security vulnerabilities via our %1bug bounty%2 program."
-msgstr "Tak, ale wolelibyśmy, by luki w zabezpieczeniach były zgłaszane w ramach naszego programu %1zgłaszania usterek%2"
-
 msgid "Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:"
 msgstr "Tak. Skontaktuj się ze opiekunem Twojego konta, jeśli chcesz spersonalizować baner i podaj następujące informacje:"
 
@@ -10945,7 +10792,7 @@ msgid "You can sell your contract before expiry to keep any profit you may have 
 msgstr "Możesz sprzedać swój kontrakt przed datą jego wygaśnięcia, aby zachować potencjalne zyski lub ograniczyć straty."
 
 msgid "You can top up your virtual account with an additional USD 10,000.00 if your balance falls below USD 1,000.00."
-msgstr ""
+msgstr "Możesz doładować swoje konto wirtualne dodatkową kwotą 10 000 USD, jeśli Twoje środki Twojego salda spadną poniżej 1000 USD."
 
 msgid "You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That's not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits."
 msgstr "Możesz handlować Wskaźnikami zmienności w przypadku wszystkich trzech głównych rodzajów zakładów: Góra/Dół, Osiągnie/ Nie osiągnie, W/Poza. Ale to nie wszystko – Wskaźniki zmienności zapewniają Ci również dostęp do dwóch dodatkowych rodzajów zakładów: Azjatyckie i Cyfry."
