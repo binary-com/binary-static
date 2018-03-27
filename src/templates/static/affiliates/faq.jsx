@@ -21,13 +21,13 @@ const FAQ = () => (
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='general' header={it.L('General')}>
-                    <h3>{it.L('What is the Binary.com Affiliate Programme all about?')}</h3>
-                    <p>{it.L('The Binary.com Affiliate Programme allows you to benefit from referring new clients to our site.')}</p>
-                    <p>{it.L('If you\'re a broker we\'d like to work with you. You will be introducing your clients to a unique and innovative product: the Binary.com trading platform. Your clients will love the Binary.com trading platform because we offer a complete binary options trading experience tailored to the needs of an exceptionally wide range of traders.')}</p>
-                    <p>{it.L('Novice traders can use our intuitive platform to learn about trading, practise trading, and gain trading experiences. Seasoned traders can use the Binary.com platform and take full advantage of the wide range of trading and analysis tools we have to offer.')}</p>
+                    <h3>{it.L('What is the [_1] Affiliate Programme all about?', it.website_name)}</h3>
+                    <p>{it.L('The [_1] Affiliate Programme allows you to benefit from referring new clients to our site.', it.website_name)}</p>
+                    <p>{it.L('If you\'re a broker we\'d like to work with you. You will be introducing your clients to a unique and innovative product: the [_1] trading platform. Your clients will love the [_1] trading platform because we offer a complete binary options trading experience tailored to the needs of an exceptionally wide range of traders.', it.website_name)}</p>
+                    <p>{it.L('Novice traders can use our intuitive platform to learn about trading, practise trading, and gain trading experiences. Seasoned traders can use the [_1] platform and take full advantage of the wide range of trading and analysis tools we have to offer.', it.website_name)}</p>
 
-                    <h3>{it.L('Why should I become a Binary.com affiliate?')}</h3>
-                    <p>{it.L('Binary.com is a licensed and regulated binary options trading platform that’s been operating since 2000. It has:')}</p>
+                    <h3>{it.L('Why should I become a [_1] affiliate?', it.website_name)}</h3>
+                    <p>{it.L('[_1] is a licensed and regulated binary options trading platform that’s been operating since 2000. It has:', it.website_name)}</p>
                     <ul className='bullet'>
                         <li>{it.L('An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian, and Indonesian')}</li>
                         <li>{it.L('An intuitive, web-based platform that’s instantly available to traders of all levels –– anytime, anywhere')}</li>
@@ -38,14 +38,14 @@ const FAQ = () => (
                     <p>{it.L('Not at all. Joining our affiliate programme is completely free and always will be.')}</p>
 
                     <h3>{it.L('What is the definition of a referred client?')}</h3>
-                    <p>{it.L('A client is someone who has been referred through your unique affiliate link and who has deposited money into their Binary.com account. They must fulfil the following criteria:')}</p>
+                    <p>{it.L('A client is someone who has been referred through your unique affiliate link and who has deposited money into their [_1] account. They must fulfil the following criteria:', it.website_name)}</p>
                     <ul className='bullet'>
-                        <li>{it.L('Have not previously been a Binary.com customer')}</li>
+                        <li>{it.L('Have not previously been a [_1] customer', it.website_name)}</li>
                         <li>{it.L('Aged 18 years old and above')}</li>
                     </ul>
 
-                    <h3>{it.L('Who can be a client on the Binary.com platform?')}</h3>
-                    <p>{it.L('Anyone aged 18 years old and above who is not the resident of a “restricted country” (as listed in our <a href=\'[_1]\'>Terms & Conditions</a>) can become a Binary.com client.', it.url_for('terms-and-conditions'))}</p>
+                    <h3>{it.L('Who can be a client on the [_1] platform?', it.website_name)}</h3>
+                    <p>{it.L('Anyone aged 18 years old and above who is not the resident of a “restricted country” (as listed in our <a href=\'[_1]\'>Terms & Conditions</a>) can become a [_2] client.', it.url_for('terms-and-conditions'), it.website_name)}</p>
                 </Section>
 
 
@@ -57,13 +57,13 @@ const FAQ = () => (
                     <p>{it.L('Don’t worry, you can simply <a href=\'[_1]\'>reset your password</a>.', 'https://login.binary.com/password-reset.php')}</p>
 
                     <h3>{it.L('How can I change my payment method?')}</h3>
-                    <p>{it.L('Log in to your Binary.com affiliate account and go to: Finances → Payment instructions.')}</p>
+                    <p>{it.L('Log in to your [_1] affiliate account and go to: Finances → Payment instructions.', it.website_name)}</p>
 
                     <h3>{it.L('How and when will I receive my affiliate earnings?')}</h3>
                     <p>{it.L('Your commission for the previous calendar month will be deposited into your account by the 15th of every month.')}</p>
 
                     <h3>{it.L('How do I know how much I have earned?')}</h3>
-                    <p>{it.L('Log in to your Binary.com affiliate account and go to: Reports → Detailed activity report')}</p>
+                    <p>{it.L('Log in to your [_1] affiliate account and go to: Reports → Detailed activity report', it.website_name)}</p>
 
                     <h3>{it.L('What kind of reports can I generate?')}</h3>
                     <p>{it.L('You can generate all kinds of insightful reports, including the following:')}</p>
@@ -83,7 +83,7 @@ const FAQ = () => (
                     <p>{it.L('We have a tested and proven selection of advertising materials including banners, reviews, videos, and text ads for you to use. If you would like certain items to be customised to your preferences, please contact your account manager at <a href=\'[_1]\'>affiliates@binary.com</a>. You can also use the Myaffiliates system to track and optimise your campaigns.', 'mailto:affiliates@binary.com')}</p>
 
                     <h3>{it.L('Where are the advertising materials located?')}</h3>
-                    <p>{it.L('Log in to your Binary.com affiliate account and go to: Marketing → All Media.')}</p>
+                    <p>{it.L('Log in to your [_1] affiliate account and go to: Marketing → All Media.', it.website_name)}</p>
 
                     <h3>{it.L('Can you customise a banner for my site?')}</h3>
                     <p>{it.L('Yes. Please contact your affiliate manager with the following information:')}</p>
