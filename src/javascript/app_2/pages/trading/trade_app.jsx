@@ -39,6 +39,7 @@ class TradeApp extends React.Component {
                     <PortfolioDrawer
                         onClick={this.props.togglePortfolioDrawer}
                         portfolios={this.props.portfolios}
+                        server_time={this.props.server_time}
                     />
                 </div>
             </div>
@@ -50,6 +51,7 @@ export default connect(
     ({ trade, ui }) => ({
         form_components       : trade.form_components,
         portfolios            : trade.portfolios,
+        server_time           : trade.server_time,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
     })
