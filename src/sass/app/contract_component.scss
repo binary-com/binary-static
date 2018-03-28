@@ -6,15 +6,17 @@
         border-radius: 4px;
         display: flex;
         flex-direction: column;
-        padding: 5px 30px 5px 10px;
+        padding: 5px 10px;
+        min-width: 100px;
         text-align: left;
         cursor: pointer;
-        @media (max-width: 767px) {
-            padding: 5px 20px 5px 10px;
-        }
 
         &:hover {
             border: 1px solid $COLOR_BLUE;
+
+            &.disabled {
+                border: 1px solid $COLOR_GRAY;
+            }
         }
         .type {
             font-size: 12px;

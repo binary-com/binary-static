@@ -105,12 +105,12 @@ class Contracts extends React.Component {
         return (
             <div className='contracts'>
                 <div
-                    className='contract_current'
+                    className={`contract_current ${contracts_tree.length <= 1 ? 'disabled' : ''}`}
                     onClick={this.openDropDown}
                 >
                     <span className='type'>
                         {this.getCurrentType()}
-                        <span className='arrow_down'></span>
+                        <span className={`arrow_down ${contracts_tree.length <= 1 ? 'invisible' : ''}`}></span>
                     </span>
                     <span className='contract'>{this.getCurrentContract()}</span>
                 </div>
