@@ -6,7 +6,7 @@ const shouldForceReload = last_reload => !last_reload || +last_reload + (10 * 60
 
 let static_hash;
 const getStaticHash = () => {
-    static_hash = static_hash || ($('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src') || '').split('?')[1];
+    static_hash = static_hash || ($('script[src*="vendor.min.js"]').attr('src') || '').split('?')[1];
     return static_hash;
 };
 
