@@ -106,7 +106,7 @@ class Markets extends React.Component {
             query  : '',
             markets: this.markets_all,
         });
-        this.scrollToElement(this.state.underlying.symbol, 0, 80);
+        this.scrollToElement(this.state.underlying.symbol, 0, 70);
     };
 
     getCurrentUnderlying = () => {
@@ -151,7 +151,7 @@ class Markets extends React.Component {
 
     openDropdown = () => {
         this.setState({open: true});
-        this.scrollToElement(this.state.underlying.symbol, 0, 80);
+        this.scrollToElement(this.state.underlying.symbol, 0, 70);
     };
 
     onUnderlyingClick = (underlying_symbol, market_symbol) => {
