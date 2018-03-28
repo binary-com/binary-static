@@ -1,7 +1,7 @@
 import React from 'react';
-import Title from '../../_common/components/title.jsx';
-import Favicons from '../../_common/includes/favicons.jsx';
-import AntiClickjack from '../../_common/includes/anti_clickjack.jsx';
+import Title from '../_common/components/title.jsx';
+import Favicons from '../_common/includes/favicons.jsx';
+import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 
 const Head = () => (
     <head>
