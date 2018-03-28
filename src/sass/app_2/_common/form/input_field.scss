@@ -7,14 +7,22 @@
         position: relative;
 
         .symbols:before {
-            height: 32px;
+            height: 30px;
             width: 30px;
+            margin: 1px;
+            border-radius: 4px 0 0 4px;
+            background: $COLOR_LIGHT_GRAY;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
+            box-sizing: border-box;
+        }
+        .symbols.aud:before {
+            // alignment fix for AUD symbol
+            padding-right: 4px;
         }
         & + input {
-            padding-left: 28px !important;
+            padding-left: 35px !important;
         }
     }
     input {
