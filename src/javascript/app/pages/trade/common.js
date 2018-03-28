@@ -4,6 +4,7 @@ const Tick               = require('./tick');
 const contractsElement   = require('./contracts.jsx');
 const marketsElement     = require('./markets.jsx');
 const formatMoney        = require('../../common/currency').formatMoney;
+const ActiveSymbols      = require('../../common/active_symbols');
 const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
@@ -289,8 +290,15 @@ const commonTrading = (() => {
     const displayTooltip = () => {
         const tip = getElementById('symbol_tip');
         if (tip) {
-            // TODO: set different targets according to the selected market/underlying (once the data-anchor is ready)
-            tip.setAttribute('target', urlFor('/get-started/binary-options', '#range-of-markets'));
+            const market = ActiveSymbols.getSymbols()[Defaults.get('underlying')].market;
+            const map_to_section_id = {
+                forex      : 'forex',
+                indices    : 'otc-stocks-and-indices',
+                stocks     : 'otc-stocks-and-indices',
+                commodities: 'commodities',
+                volidx     : 'volatility-indices',
+            };
+            tip.setAttribute('href', urlFor('/get-started/binary-options', `anchor=${map_to_section_id[market]}#range-of-markets`));
         }
     };
 

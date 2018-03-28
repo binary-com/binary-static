@@ -10,7 +10,7 @@ module.exports = [
     ['cashier/payment_agent_listws',       'app/cashier/payment_agent_list',            'default',    'Payment Agent Deposit'],
     ['cashier/payment_methods',            'app/cashier/payment_methods',               'default',    'Payment Methods',                   'ja'],
     ['cashier/submit-withdraw-jp',         'app/japan/cashier/submit',                  'default',    'Acknowledgement',                   'NOT-ja,en'],
-    ['cashier/top_up_virtualws',           'app/user/top_up_virtual',                   'default',    'Give Me More Money!'],
+    ['cashier/top_up_virtualws',           'app/user/top_up_virtual',                   'default',    'Top Up Virtual Account'],
     ['cashier/withdraw-jp',                'app/japan/cashier/withdraw',                'default',    'Withdraw',                          'NOT-ja,en'],
 
     ['paymentagent/transferws',            'app/cashier/paymentagent_transfer',         'default',    'Payment Agent Transfer'],
@@ -84,8 +84,9 @@ module.exports = [
     ['open-positions',                     'static/about/job_descriptions',             'full_width', 'Open Positions'],
     ['open-positions/job-details',         'static/about/job_details',                  'full_width', 'Job Details'],
 
-    ['affiliate/signup',                   'static/affiliates/signup',                  'default',    'Affiliate',                         'ja'],
-    ['affiliate/signup-jp',                'static/japan/affiliates/signup',            'default',    'Affiliate',                         'NOT-ja,en'],
+    ['affiliate/signup',                   'static/affiliates/signup',                  'full_width', 'Affiliate',                         'ja'],
+    ['affiliate/signup-jp',                'static/japan/affiliates/signup',            'full_width', 'Affiliate',                         'NOT-ja,en'],
+    ['affiliate/faq',                      'static/affiliates/faq',                     'default',    'Affiliate FAQ',                     'ja'],
     ['charity',                            'static/charity',                            'default',    'Charity'],
     ['company-profile',                    'static/japan/company_profile',              'default',    'Company Profile',                   'NOT-ja,en'],
     ['legal/us_patents',                   'static/legal/us_patents',                   'default',    'US Patents',                        'ja'],
@@ -101,7 +102,6 @@ module.exports = [
     ['open-source-projects',               'static/partners/open_source_projects',      'full_width', 'Open-Source Projects',              'ja'],
     ['partners',                           'static/partners/partners',                  'full_width', 'Partners',                          'ja'],
     ['payment-agent',                      'static/partners/payment_agent',             'full_width', 'Payment Agents',                    'ja'],
-    ['pull-requests',                      'static/partners/pull_requests',             'full_width', 'Get Paid for Pull Requests',        'ja'],
     ['security-testing',                   'static/partners/security_testing',          'full_width', 'Security Testing',                  'ja'],
 
     ['get-started',                        'static/get_started/index',                  'default',     'Get Started',                      'ja'],

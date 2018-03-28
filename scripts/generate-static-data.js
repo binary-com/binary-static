@@ -255,7 +255,7 @@ const texts = [
 
     // top_up_virtual
     'Sorry, this feature is available to virtual accounts only.',
-    '[_1] [_2] has been credited to your Virtual money account [_3]',
+    '[_1] [_2] has been credited into your virtual account: [_3].',
 
     // self_exclusion
     'years',
