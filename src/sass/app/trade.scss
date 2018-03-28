@@ -293,7 +293,6 @@
     #contract_prices_container {
         position: relative;
         @include BIDIR_PROP(margin-left, margin-right, 1em);
-        margin-top: 28px;
 
         .price_container {
             border: 1px solid $COLOR_GRAY;
