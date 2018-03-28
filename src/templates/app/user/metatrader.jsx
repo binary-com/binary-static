@@ -142,19 +142,19 @@ const Metatrader = () => (
                             <ul className='platforms'>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/web.svg')} />
-                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>{it.L('Trade on MT5 web platform')}</a>
+                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>{it.L('Trade on web platform')}</a>
                                 </li>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/mac.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg' download>{it.L('Download MT5 for Mac')}</a>
-                                </li>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/windows.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' download>{it.L('Download MT5 for Windows')}</a>
+                                    <a href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg' download>{it.L('Download for Mac')}</a>
                                 </li>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/linux.svg')} />
-                                    <a href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux' rel='noopener noreferrer' target='_blank'>{it.L('Read instructions for Linux')}</a>
+                                    <a href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux' rel='noopener noreferrer' target='_blank'>{it.L('Instructions for Linux')}</a>
+                                </li>
+                                <li>
+                                    <img src={it.url_for('images/pages/metatrader/dashboard/windows.svg')} />
+                                    <a href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' download>{it.L('Download for Windows')}</a>
                                 </li>
                                 <p className='badges'>
                                     <a href='https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>
