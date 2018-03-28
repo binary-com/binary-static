@@ -101,10 +101,8 @@ class Markets extends React.Component {
 
     /* eslint-disable no-undef */
     openDropdown = () => {
-        this.references.market_nodes[this.state.active_market]
-            .childNodes[0].classList.add('sticky');
         this.setState({open: true});
-        this.scrollToElement(this.state.underlying.symbol, 0, 64);
+        this.scrollToElement(this.state.underlying.symbol, 0, 80);
     };
 
     closeDropdown = () => {
@@ -113,6 +111,7 @@ class Markets extends React.Component {
             query  : '',
             markets: this.markets_all,
         });
+        this.scrollToElement(this.state.underlying.symbol, 0, 80);
     };
 
     saveRef = (node_name, node) => this.references[node_name] = node;
@@ -268,6 +267,24 @@ class Markets extends React.Component {
         }
         return underlying
     }
+
+    scrollToMarket = (key) => {
+        if (this.isScrollingFront(key)) {
+            this.scrollToElement(`${key}_market`, 120, 0);
+        } else {
+            this.scrollToElement(`${key}_market`, 120, 40);
+        }
+    }
+
+    isScrollingFront = (key) => {
+        const keys = Object.keys(this.references.market_nodes);
+        const curr = this.state.active_market;
+        if (keys.indexOf(key) > keys.indexOf(curr)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     /* eslint-enable no-undef */
 
     render () {
@@ -275,7 +292,7 @@ class Markets extends React.Component {
             underlying, query, market} = this.state;
         const { openDropdown, closeDropdown, searchSymbols,
             scrollToElement, handleScroll, saveMarketRef,
-            onUnderlyingClick, saveRef } = this;
+            onUnderlyingClick, saveRef, scrollToMarket } = this;
         return (
             <div className='markets'>
                 <div
@@ -313,7 +330,7 @@ class Markets extends React.Component {
                                     <div
                                         className={`market ${active_market === key ? 'active' : ''}`}
                                         key={key}
-                                        onClick={scrollToElement.bind(null,`${key}_market`, 120, 0)}
+                                        onClick={scrollToMarket.bind(null, key)}
                                     >
                                         <span className={`icon ${key} ${active_market === key ? 'active' : ''}`} />
                                         <span>{obj.name}</span>
@@ -324,7 +341,7 @@ class Markets extends React.Component {
                                 <ul>
                                     {markets.map(([key]) => (
                                         <li
-                                            onClick={scrollToElement.bind(null,`${key}_market`, 120, 0)}
+                                            onClick={scrollToMarket.bind(null, key)}
                                             key={key}
                                             data-market={key}
                                             className={active_market === key ? 'active' : ''}
