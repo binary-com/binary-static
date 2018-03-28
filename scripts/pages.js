@@ -84,8 +84,9 @@ module.exports = [
     ['open-positions',                     'static/about/job_descriptions',             'full_width', 'Open Positions'],
     ['open-positions/job-details',         'static/about/job_details',                  'full_width', 'Job Details'],
 
-    ['affiliate/signup',                   'static/affiliates/signup',                  'default',    'Affiliate',                         'ja'],
-    ['affiliate/signup-jp',                'static/japan/affiliates/signup',            'default',    'Affiliate',                         'NOT-ja,en'],
+    ['affiliate/signup',                   'static/affiliates/signup',                  'full_width', 'Affiliate',                         'ja'],
+    ['affiliate/signup-jp',                'static/japan/affiliates/signup',            'full_width', 'Affiliate',                         'NOT-ja,en'],
+    ['affiliate/faq',                      'static/affiliates/faq',                     'default',    'Affiliate FAQ',                     'ja'],
     ['charity',                            'static/charity',                            'default',    'Charity'],
     ['company-profile',                    'static/japan/company_profile',              'default',    'Company Profile',                   'NOT-ja,en'],
     ['legal/us_patents',                   'static/legal/us_patents',                   'default',    'US Patents',                        'ja'],

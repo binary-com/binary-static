@@ -1,4 +1,13 @@
 // styling for static pages that are too short or simple to need their own styling page
+.steps {
+    @media (max-width: 480px) {
+        flex-direction: column;
+
+        .step:not(:first-child) {
+            margin-top: 2rem;
+        }
+    }
+}
 
 .box-inlay-borders {
     .border-right-top {
@@ -550,11 +559,6 @@ body #not_authenticated_financial ul.checked > li {
                 color: $COLOR_WHITE;
                 padding: 20px 0;
                 text-align: center;
-            }
-        }
-        .steps {
-            @media (max-width: 480px) {
-                flex-direction: column;
             }
         }
     }
