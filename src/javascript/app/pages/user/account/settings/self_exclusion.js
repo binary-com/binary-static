@@ -26,7 +26,7 @@ const SelfExclusion = (() => {
     const exclude_until_id      = '#exclude_until';
     const max_30day_turnover_id = '#max_30day_turnover';
     const error_class           = 'errorfield';
-    const TURNOVER_LIMIT        = 99999999999999999999; // 20 digits
+    const TURNOVER_LIMIT        = Number.MAX_SAFE_INTEGER;
 
     const onLoad = () => {
         $form = $(form_id);
