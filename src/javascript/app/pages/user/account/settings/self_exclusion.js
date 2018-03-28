@@ -25,7 +25,8 @@ const SelfExclusion = (() => {
     const timeout_time_id       = '#timeout_until_time';
     const exclude_until_id      = '#exclude_until';
     const max_30day_turnover_id = '#max_30day_turnover';
-    const error_class      = 'errorfield';
+    const error_class           = 'errorfield';
+    const TURNOVER_LIMIT        = 99999999999999999999; // 20 digits
 
     const onLoad = () => {
         $form = $(form_id);
@@ -76,6 +77,12 @@ const SelfExclusion = (() => {
                         $form.find(timeout_time_id).val(time);
                         return;
                     }
+
+                    if (key === 'max_30day_turnover') {
+                        $('#chk_no_limit').prop('checked', true);
+                        setMax30DayTurnoverLimit(true);
+                    }
+
                     $form.find(`#${key}`).val(value);
                 });
 
@@ -90,9 +97,15 @@ const SelfExclusion = (() => {
     };
 
     const setMax30DayTurnoverLimit = (is_checked) => {
+        const current_max = self_exclusion_data.max_30day_turnover || TURNOVER_LIMIT;
+        let max = TURNOVER_LIMIT;
+        if (current_max < max) {
+            max = current_max;
+        }
         $(max_30day_turnover_id)
             .attr('disabled', is_checked)
-            .val(is_checked ? 9999999 : '');
+            .css('color', is_checked ? 'transparent' : 'inherit')
+            .val(is_checked ? max : '');
     };
 
     const bindValidation = () => {

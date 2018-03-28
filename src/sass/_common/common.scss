@@ -597,4 +597,7 @@ label + input {
         margin-left: 10px;
         align-items: baseline;
     }
+    input {
+        transition: none;
+    }
 }
