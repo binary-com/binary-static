@@ -1,3 +1,4 @@
+import moment from 'moment';
 import DAO from '../data/dao';
 
 export const getCountryAsync = function* () {
@@ -27,5 +28,5 @@ export const onChangeAmount = ({amount}) => {
 };
 
 export const initTime = () => ({
-    server_time: window.time,
+    server_time: window.time || moment.utc(),
 });
