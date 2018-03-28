@@ -41,8 +41,8 @@ const KnowledgeTestUI = (() => {
         const $question_row  = $('<tr></tr>', { id: question_no, class: 'question' });
         const $question_data = $('<td></td>').text(localize(question.question_localized));
         const $question_link = $('<a></a>', {
-            name : question.id,
-            class: 'no-underline',
+            name          : question.id,
+            class         : 'no-underline',
             'data-balloon': question.tooltip,
         });
         const $question_icon = $('<img>', { src: urlForStatic('/images/common/question_1.png'), class: '' });
