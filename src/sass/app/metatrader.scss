@@ -16,6 +16,15 @@
     .flex {
         display: flex;
     }
+    .get-started-link {
+        display: block;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        border-radius: $BORDER_RADIUS;
+        color: $COLOR_BLUE;
+        background: $COLOR_LIGHT_GRAY;
+        font-weight: bold;
+    }
     #account_selector {
         position: relative;
         cursor: pointer;

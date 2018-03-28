@@ -134,6 +134,7 @@ const Metatrader = () => (
                     </div>
                 </div>
                 <div id='mt_right_panel' className='gr-3 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-left gr-no-gutter-p gr-no-gutter-m'>
+                    <a href={`${it.url_for('get-started')}?=get_started_tabs=mt5`} className='get-started-link'>{it.L('Get started with MT5')}</a>
                     <div className='mt-panel'>
                         <div id='account_desc' className='mt-container border-bottom' />
                         <div className='mt-container'>
