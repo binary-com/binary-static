@@ -41,6 +41,8 @@ const BinarySocketGeneral = (() => {
                         window.location.reload();
                     } else if (has_message) {
                         Header.displayNotification(response.website_status.message, true);
+                    } else {
+                        Header.hideNotification();
                     }
                     BinarySocket.availability(is_available);
                     setCurrencies(response.website_status);
