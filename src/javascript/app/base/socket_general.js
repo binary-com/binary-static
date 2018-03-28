@@ -31,13 +31,15 @@ const BinarySocketGeneral = (() => {
     const onMessage = (response) => {
         Header.hideNotification('CONNECTION_ERROR');
         let is_available = false;
+        let has_message = false;
         switch (response.msg_type) {
             case 'website_status':
                 if (response.website_status) {
                     is_available = /^up$/i.test(response.website_status.site_status);
-                    if (is_available && !BinarySocket.availability()) {
+                    has_message = typeof response.website_status.message === 'string';
+                    if (is_available && !(has_message || BinarySocket.availability())) {
                         window.location.reload();
-                    } else if (!is_available) {
+                    } else if (has_message) {
                         Header.displayNotification(response.website_status.message, true);
                     }
                     BinarySocket.availability(is_available);
