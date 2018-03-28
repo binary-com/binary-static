@@ -79,8 +79,9 @@ const SelfExclusion = (() => {
                     }
 
                     if (key === 'max_30day_turnover') {
-                        $('#chk_no_limit').prop('checked', true);
-                        setMax30DayTurnoverLimit(true);
+                        const should_be_checked = (value === TURNOVER_LIMIT);
+                        $('#chk_no_limit').prop('checked', should_be_checked);
+                        setMax30DayTurnoverLimit(should_be_checked);
                     }
 
                     $form.find(`#${key}`).val(value);
