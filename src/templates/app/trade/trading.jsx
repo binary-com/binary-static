@@ -131,7 +131,7 @@ const Trading = () => (
                                         </div>
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
-                                                <select className='currency small_width_input' />
+                                                <select id='multiplier_currency' className='currency small_width_input' />
                                                 <input type='text' defaultValue='1' step='any' maxLength='10' name='multiplier' id='multiplier' className='small_width_input' />
                                             </div>
                                         </div>
@@ -145,7 +145,7 @@ const Trading = () => (
                                         </div>
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
-                                                <select className='currency small_width_input' />
+                                                <select id='currency' className='currency small_width_input' />
                                                 <input id='amount' type='text' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
                                             </div>
                                         </div>

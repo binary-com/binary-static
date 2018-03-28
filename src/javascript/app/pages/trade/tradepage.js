@@ -47,6 +47,8 @@ const TradePage = (() => {
             Client.activateByClientType('trading_socket_container');
             BinarySocket.send({ payout_currencies: 1 }).then(() => {
                 displayCurrencies();
+                Dropdown('#currency');
+                Dropdown('#multiplier_currency');
                 Process.processActiveSymbols();
             });
         });

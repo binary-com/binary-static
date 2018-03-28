@@ -133,6 +133,10 @@
     }
     #expiry_type_endtime {
         flex-wrap: wrap;
+
+        #expiry_time_row select#expiry_time {
+            margin-top: 5px;
+        }
     }
     #contract_form_content_wrapper {
         padding-top: 0.5em;
@@ -518,6 +522,7 @@
     }
     #time_start_row {
         white-space: nowrap;
+        margin-top: 5px;
 
         .time_start {
             margin-left: 5px;

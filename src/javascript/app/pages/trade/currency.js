@@ -1,4 +1,3 @@
-const Dropdown = require('binary-style').selectDropdown;
 const Defaults = require('./defaults');
 const Currency = require('../../common/currency');
 const State    = require('../../../_common/storage').State;
@@ -25,8 +24,6 @@ const displayCurrencies = () => {
         $currency.replaceWith($('<span/>', { id: $currency.attr('id'), class: $currency.attr('class'), value: currencies[0], html: Currency.formatCurrency(currencies[0]) }));
         Defaults.set('currency', currencies[0]);
     }
-    Dropdown('select.currency');
-
 };
 
 module.exports = displayCurrencies;

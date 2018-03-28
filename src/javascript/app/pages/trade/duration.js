@@ -318,6 +318,13 @@ const Durations = (() => {
                         .val(toReadableFormat($expiry_date.attr('data-value')));
                     $expiry_date = $('#expiry_date');
                     expiryDateOnChange($expiry_date);
+                    // restore back from custom dropdown to input
+                    if ($expiry_date.is('input') && $expiry_date.parent('div.select').length) {
+                        $expiry_date.parent().replaceWith(() => {
+                            const curr_element = $expiry_date;
+                            return curr_element;
+                        });
+                    }
                 }
                 DatePicker.init({
                     selector: '#expiry_date',
@@ -423,9 +430,18 @@ const Durations = (() => {
         const end_date_readable = toReadableFormat(end_date);
         const end_date_iso      = toISOFormat(end_date);
         const $expiry_date      = $('#expiry_date');
+        Dropdown('#expiry_date');
         if ($expiry_date.is('input')) {
             $expiry_date.val(end_date_readable)
                 .attr('data-value', end_date_iso);
+
+            // restore back from custom dropdown to input
+            if ($expiry_date.is('input') && $expiry_date.parent('div.select').length) {
+                $expiry_date.parent().replaceWith(() => {
+                    const curr_element = $expiry_date;
+                    return curr_element;
+                });
+            }
         }
         Defaults.set('expiry_date', end_date_iso);
         if (isNow() && !isSameDay()) {
