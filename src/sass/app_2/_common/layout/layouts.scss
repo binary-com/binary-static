@@ -113,10 +113,6 @@
     max-height: 100%;
 }
 
-.no-horizontal-scroll {
-    overflow-x: hidden;
-}
-
 .desktop-only {
     @media (max-width: 768px) {
         display: none;
