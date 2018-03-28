@@ -206,7 +206,6 @@ class Markets extends React.Component {
             curr.classList.add(sticky);
             return;
         }
-        console.log(diff);
         if (diff > 0) {
             prev.classList.add(under);
             prev.style.top = `${DEFAULT_TOP - diffSub}px`;
