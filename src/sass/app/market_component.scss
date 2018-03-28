@@ -35,7 +35,7 @@
         position: absolute;
         top: 0;
         transition: visibility 0s 0s, opacity 0.15s 0.1s, transform 0.25s;
-        width: 550px;
+        width: 570px;
         z-index: 10000;
         @media (min-width: 320px) and (max-width: 767px) {
             width: calc(100vw - 20px);
@@ -289,11 +289,11 @@
                             flex: 1 0 auto;
 
                             .symbol_name {
-                                padding: 5px;
+                                padding: 5px 5px 5px 0;
                                 margin: 10px 0 5px;
                                 line-height: 18px;
                                 cursor: pointer;
-                                width: 120px;
+                                width: 125px;
                                 font-size: 14px;
                                 font-weight: 400;
                                 transition: all 0.2s 0.1s;
