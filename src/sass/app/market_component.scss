@@ -11,6 +11,9 @@
         text-align: left;
         cursor: pointer;
         min-width: 150px;
+        @media (max-width: 767px) {
+            min-width: 120px;
+        }
 
         &:hover {
             border: 1px solid $COLOR_BLUE;
