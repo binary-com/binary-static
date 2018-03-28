@@ -24,6 +24,17 @@
         color: $COLOR_BLUE;
         background: $COLOR_LIGHT_GRAY;
         font-weight: bold;
+
+        &:before {
+            content: '';
+            background-image: url('../images/pages/metatrader/dashboard/get_started.svg');
+            background-size: 16px 16px;
+            height: 16px;
+            width: 16px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
     }
     #account_selector {
         position: relative;
