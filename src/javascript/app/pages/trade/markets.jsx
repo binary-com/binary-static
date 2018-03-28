@@ -100,11 +100,6 @@ class Markets extends React.Component {
     }
 
     /* eslint-disable no-undef */
-    openDropdown = () => {
-        this.setState({open: true});
-        this.scrollToElement(this.state.underlying.symbol, 0, 80);
-    };
-
     closeDropdown = () => {
         this.setState({
             open   : false,
@@ -114,20 +109,20 @@ class Markets extends React.Component {
         this.scrollToElement(this.state.underlying.symbol, 0, 80);
     };
 
-    saveRef = (node_name, node) => this.references[node_name] = node;
+    getCurrentUnderlying = () => {
+        const { underlying: {name: underlying} } = this.state;
+        const max_char = window.innerWidth <= 767 ? 15 : 25;
+        if (underlying.length > max_char) {
+            return `${underlying.substr(0, max_char)}...`;
+        }
+        return underlying
+    }
 
     handleClickOutside = (e) => {
         if (this.references.wrapper_ref
             && !this.references.wrapper_ref.contains(e.target)) {
             this.closeDropdown();
         }
-    }
-
-    scrollToElement = (id, duration = 120, offset) => {
-        // handleScroll is triggered automatically which sets the active market.
-        const {list} = this.references;
-        const toOffset = getElementById(id).offsetTop;
-        scrollToPosition(list, toOffset - list.offsetTop - offset, duration);
     }
 
     handleScroll = (e) => {
@@ -154,17 +149,64 @@ class Markets extends React.Component {
             ((market_nodes[this.previous_market] || {}).childNodes || [])[0], position + list.offsetTop);
     }
 
+    openDropdown = () => {
+        this.setState({open: true});
+        this.scrollToElement(this.state.underlying.symbol, 0, 80);
+    };
+
+    onUnderlyingClick = (underlying_symbol, market_symbol) => {
+        Defaults.set('underlying', underlying_symbol);
+        Defaults.set('market', market_symbol);
+        this.setState({
+            market: {
+                symbol: market_symbol,
+                name  : this.markets[market_symbol].name,
+            },
+            underlying: {
+                symbol: underlying_symbol,
+                name  : this.underlyings[underlying_symbol],
+            },
+        });
+
+        // Trigger change event.
+        // TODO: move this block to componentDidUpdate
+        this.$underlying.value = underlying_symbol;
+        const event = new Event('change');
+        this.$underlying.dispatchEvent(event);
+
+        setTimeout(this.closeDropdown, 500);
+        /* Todo add notification for closed markets */
+        // Notifications.show({ text: localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
+
+    }
+
+    onTabChange = (e) => {
+        const market = e.target.dataset.market;
+        this.scrollToElement(`${market}_market`, 120, 0);
+    }
+
+    saveRef = (node_name, node) => this.references[node_name] = node;
+
+    scrollToElement = (id, duration = 120, offset) => {
+        // handleScroll is triggered automatically which sets the active market.
+        const {list} = this.references;
+        const toOffset = getElementById(id).offsetTop;
+        scrollToPosition(list, toOffset - list.offsetTop - offset, duration);
+    }
+
     stickyHeader = (curr, prev, pos) => {
         const sticky = 'sticky';
         const under = 'put_under';
-        const DEFAULT_TOP = window.innerWidth < 768 ? 122 : 59;
+        const MOBILE_TOP = 122;
+        const DESKTOP_TOP = 59;
+        const DEFAULT_TOP = window.innerWidth < 768 ? MOBILE_TOP : DESKTOP_TOP;
         const diff = curr.offsetTop - pos;
         const diffSub = 40 - diff;
         if (!prev) {
             curr.classList.add(sticky);
             return;
         }
-
+        console.log(diff);
         if (diff > 0) {
             prev.classList.add(under);
             prev.style.top = `${DEFAULT_TOP - diffSub}px`;
@@ -228,63 +270,23 @@ class Markets extends React.Component {
         this.setState({markets: filter_markets, active_market: filter_markets[0][0]});
     }
 
-    onUnderlyingClick = (underlying_symbol, market_symbol) => {
-        Defaults.set('underlying', underlying_symbol);
-        Defaults.set('market', market_symbol);
-        this.setState({
-            market: {
-                symbol: market_symbol,
-                name  : this.markets[market_symbol].name,
-            },
-            underlying: {
-                symbol: underlying_symbol,
-                name  : this.underlyings[underlying_symbol],
-            },
-        });
-
-        // Trigger change event.
-        // TODO: move this block to componentDidUpdate
-        this.$underlying.value = underlying_symbol;
-        const event = new Event('change');
-        this.$underlying.dispatchEvent(event);
-
-        setTimeout(this.closeDropdown, 500);
-        /* Todo add notification for closed markets */
-        // Notifications.show({ text: localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
-
-    }
-
-    onTabChange = (e) => {
-        const market = e.target.dataset.market;
-        this.scrollToElement(`${market}_market`, 120, 0);
-    }
-
-    getCurrentUnderlying = () => {
-        const { underlying: {name: underlying} } = this.state;
-        const max_char = window.innerWidth <= 767 ? 15 : 25;
-        if (underlying.length > max_char) {
-            return `${underlying.substr(0, max_char)}...`;
-        }
-        return underlying
-    }
-
     scrollToMarket = (key) => {
-        if (this.isScrollingFront(key)) {
+        const isScrollingFront = (key) => {
+            const keys = Object.keys(this.references.market_nodes);
+            const curr = this.state.active_market;
+            if (keys.indexOf(key) > keys.indexOf(curr)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        if (isScrollingFront(key)) {
             this.scrollToElement(`${key}_market`, 120, 0);
         } else {
             this.scrollToElement(`${key}_market`, 120, 40);
         }
     }
 
-    isScrollingFront = (key) => {
-        const keys = Object.keys(this.references.market_nodes);
-        const curr = this.state.active_market;
-        if (keys.indexOf(key) > keys.indexOf(curr)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
     /* eslint-enable no-undef */
 
     render () {
