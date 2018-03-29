@@ -304,6 +304,16 @@ const Durations = (() => {
         });
     };
 
+    const removeCustomDropDown = (element) => {
+        // restore back from custom dropdown to input
+        if (element.is('input') && element.parent('div.select').length) {
+            element.parent().replaceWith(() => {
+                const curr_element = element;
+                return curr_element;
+            });
+        }
+    };
+
     const changeExpiryTimeType = () => {
         let requested = -1;
         if (CommonFunctions.getElementById('expiry_type').value === 'endtime') {
@@ -318,13 +328,7 @@ const Durations = (() => {
                         .val(toReadableFormat($expiry_date.attr('data-value')));
                     $expiry_date = $('#expiry_date');
                     expiryDateOnChange($expiry_date);
-                    // restore back from custom dropdown to input
-                    if ($expiry_date.is('input') && $expiry_date.parent('div.select').length) {
-                        $expiry_date.parent().replaceWith(() => {
-                            const curr_element = $expiry_date;
-                            return curr_element;
-                        });
-                    }
+                    removeCustomDropDown($expiry_date);
                 }
                 DatePicker.init({
                     selector: '#expiry_date',
@@ -435,13 +439,7 @@ const Durations = (() => {
             $expiry_date.val(end_date_readable)
                 .attr('data-value', end_date_iso);
 
-            // restore back from custom dropdown to input
-            if ($expiry_date.is('input') && $expiry_date.parent('div.select').length) {
-                $expiry_date.parent().replaceWith(() => {
-                    const curr_element = $expiry_date;
-                    return curr_element;
-                });
-            }
+            removeCustomDropDown($expiry_date);
         }
         Defaults.set('expiry_date', end_date_iso);
         if (isNow() && !isSameDay()) {
