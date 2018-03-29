@@ -37,7 +37,7 @@ const Process = (() => {
             // store the market
             Defaults.set('market', market);
 
-            commonTrading.displayMarkets('contract_markets', Symbols.markets(), market);
+            commonTrading.displayMarkets(Symbols.markets());
             processMarket();
         });
     };
@@ -60,7 +60,6 @@ const Process = (() => {
         if ((!symbol || !Symbols.underlyings()[market][symbol])) {
             symbol = undefined;
         }
-        commonTrading.displayUnderlyings('underlying', Symbols.underlyings()[market], symbol);
 
         processMarketUnderlying();
     };
@@ -70,14 +69,8 @@ const Process = (() => {
      */
     const processMarketUnderlying = () => {
         const underlying_element = document.getElementById('underlying');
-        if (!underlying_element) {
-            return;
-        }
-
-        if (underlying_element.selectedIndex < 0) {
-            underlying_element.selectedIndex = 0;
-        }
         const underlying = underlying_element.value;
+
         Defaults.set('underlying', underlying);
 
         commonTrading.showFormOverlay();

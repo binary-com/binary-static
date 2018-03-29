@@ -22,21 +22,21 @@ const Trading = () => (
             <div className='client_virtual client_logged_out invisible' id='guideBtn' />
             <div className='row' id='contract_symbol_container'>
                 <div id='contract_markets_container'>
-                    <select id='contract_markets' />
+                    <div id='underlying_component' />
+                    <input type='hidden' id='underlying'/>
                 </div>
-                <div>
-                    <select id='underlying' />
-                    <a className='unicode-info-icon' id='symbol_tip' href='#'>&#9432;</a>
-                    <span id='spot' />
+                <div id='contract_type_container'>
+                    <div id='contract_component' />
+                    <input type='hidden' id='contract'/>
+                </div>
+                <div id='underlying_details'>
                     <span id='trading_worm_chart' />
+                    <span id='spot' />
                 </div>
-                <ul id='market_menu' />
+                <div className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</div>
             </div>
             <div className='row clear' id='contract_form_content_wrapper'>
                 <div className='col row-inner'>
-                    <div id='contract_market_form_container'>
-                        <ul className='nav tm-ul follow-default' id='contract_form_name_nav' />
-                    </div>
                     <div id='contract_container' className='col row'>
                         <div id='loading_container3' className='overlay_container' />
                         <div id='contract_form_container' className='col'>

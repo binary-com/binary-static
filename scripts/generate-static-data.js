@@ -150,6 +150,8 @@ const texts = [
     'High-Close',
     'Close-Low',
     'High-Low',
+    '"AUD/JPY" or "Apple"',
+    'Select Asset',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',

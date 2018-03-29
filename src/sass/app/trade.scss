@@ -78,7 +78,7 @@
         white-space: nowrap;
         padding: 3px;
         border-radius: 5px;
-        @include BIDIR_PROP(margin-right, margin-left, 8px);
+        margin-left: 8px !important;
 
         &.error {
             font-style: italic;
@@ -142,12 +142,40 @@
         padding-top: 0.5em;
     }
     #contract_symbol_container {
-        display: inline-flex;
         padding: 0;
+        position: relative;
+        display: inline-flex;
+        @media (max-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
 
+        .arrow_down {
+            width: 8px;
+            height: 8px;
+            background: url('../images/pages/trade/ic_arrow_dropdown_light.svg') no-repeat;
+            background-size: contain;
+            position: relative;
+            margin-left: 10px;
+            top: 3px;
+            float: right;
+        }
         #contract_markets_container {
+            flex: 0 0 auto;
             text-align: right;
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
+        }
+        #contract_type_container {
+            flex: 0 0 auto;
+            @include BIDIR_PROP(margin-right, margin-left, 1rem);
+        }
+        #underlying_details span {
+            display: block;
+            margin: 5px 0;
+            @media (max-width: 768px) {
+                display: inline-block;
+            }
         }
     }
     #contract_container {
@@ -269,7 +297,6 @@
     #contract_prices_container {
         position: relative;
         @include BIDIR_PROP(margin-left, margin-right, 1em);
-        margin-top: 28px;
 
         .price_container {
             border: 1px solid $COLOR_GRAY;
@@ -544,9 +571,9 @@
         margin-bottom: 5px;
     }
     #symbol_tip {
-        @include BIDIR_PROP(padding-right, padding-left, 8px);
-        padding-bottom: 5px;
         cursor: pointer;
+        padding: 5px 10px;
+        position: relative;
         text-decoration: none;
         font-weight: normal;
     }
@@ -596,7 +623,6 @@
                 }
             }
             #contract_markets_container {
-                margin-right: 0;
                 text-align: inherit;
             }
         }
