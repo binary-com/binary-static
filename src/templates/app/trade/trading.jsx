@@ -47,7 +47,7 @@ const Trading = () => (
                                         <div className='big-col'>
                                             <select id='date_start' />
                                             <div id='time_start_row' className='invisible'>
-                                                <input type='text' id='time_start' autoComplete='off' readOnly='readonly' className='medium_width_input' />
+                                                <input type='text' data-lpignore='true' id='time_start' autoComplete='off' readOnly='readonly' className='medium_width_input' />
                                                 <span className='gr-gutter-left'>GMT</span>
                                             </div>
                                             <div>
@@ -69,9 +69,9 @@ const Trading = () => (
                                                 <span id='duration_maximum' className='invisible' />
                                             </div>
                                             <div id='expiry_type_endtime'>
-                                                <input id='expiry_date' type='text' readOnly='readonly' autoComplete='off' />
+                                                <input id='expiry_date' type='text' data-lpignore='true' readOnly='readonly' autoComplete='off' />
                                                 <div id='expiry_time_row'>
-                                                    <input id='expiry_time' type='text' autoComplete='off' readOnly='readonly' className='medium_width_input' />
+                                                    <input id='expiry_time' type='text' data-lpignore='true' autoComplete='off' readOnly='readonly' className='medium_width_input' />
                                                     <span className='gr-gutter-left'>GMT</span>
                                                 </div>
                                             </div>
@@ -85,7 +85,7 @@ const Trading = () => (
                                             </label>
                                         </div>
                                         <div className='big-col'>
-                                            <input id='barrier' type='text' name='H' autoComplete='off' />
+                                            <input id='barrier' type='text' data-lpignore='true' name='H' autoComplete='off' />
                                             <span id='indicative_barrier_tooltip' data-balloon={it.L('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')} data-balloon-length='xlarge' />
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@ const Trading = () => (
                                             </label>
                                         </div>
                                         <div className='big-col'>
-                                            <input id='barrier_high' type='text' name='H' autoComplete='off' />
+                                            <input id='barrier_high' type='text' data-lpignore='true' name='H' autoComplete='off' />
                                             <span id='indicative_high_barrier_tooltip' data-balloon={it.L('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')} data-balloon-length='xlarge' />
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@ const Trading = () => (
                                             </label>
                                         </div>
                                         <div className='big-col'>
-                                            <input id='barrier_low' type='text' name='L' autoComplete='off' />
+                                            <input id='barrier_low' type='text' data-lpignore='true' name='L' autoComplete='off' />
                                             <span id='indicative_low_barrier_tooltip' data-balloon={it.L('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')} data-balloon-length='xlarge' />
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@ const Trading = () => (
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
                                                 <select id='multiplier_currency' className='currency small_width_input' />
-                                                <input type='text' defaultValue='1' step='any' maxLength='10' name='multiplier' id='multiplier' className='small_width_input' />
+                                                <input type='text' data-lpignore='true' defaultValue='1' step='any' maxLength='10' name='multiplier' id='multiplier' className='small_width_input' />
                                             </div>
                                         </div>
                                     </div>
@@ -146,7 +146,7 @@ const Trading = () => (
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
                                                 <select id='currency' className='currency small_width_input' />
-                                                <input id='amount' type='text' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
+                                                <input id='amount' type='text' data-lpignore='true' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
                                             </div>
                                         </div>
                                     </div>

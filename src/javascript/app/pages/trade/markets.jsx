@@ -37,7 +37,7 @@ const List = ({
             id={`${market_code}_market`}
             ref={saveRef.bind(null,market_code)}
         >
-            <div className={`market_name`}>
+            <div className='market_name'>
                 {obj.name}
             </div>
             {Object.values(obj.submarkets).map((submarket, idx_2) => (
@@ -115,7 +115,7 @@ class Markets extends React.Component {
         if (underlying.length > max_char) {
             return `${underlying.substr(0, max_char)}...`;
         }
-        return underlying
+        return underlying;
     }
 
     handleClickOutside = (e) => {
@@ -171,6 +171,7 @@ class Markets extends React.Component {
         // Trigger change event.
         // TODO: move this block to componentDidUpdate
         this.$underlying.value = underlying_symbol;
+        this.$underlying.setAttribute('data-text',this.underlyings[underlying_symbol]);
         const event = new Event('change');
         this.$underlying.dispatchEvent(event);
 
@@ -269,31 +270,33 @@ class Markets extends React.Component {
         this.setState({markets: filter_markets, active_market: filter_markets[0][0]});
     }
 
+    /* eslint-disable no-shadow */
     scrollToMarket = (key) => {
         const isScrollingFront = (key) => {
             const keys = Object.keys(this.references.market_nodes);
             const curr = this.state.active_market;
             if (keys.indexOf(key) > keys.indexOf(curr)) {
                 return true;
-            } else {
-                return false;
             }
-        }
+            return false;
+
+        };
         if (isScrollingFront(key)) {
             this.scrollToElement(`${key}_market`, 120, 0);
         } else {
             this.scrollToElement(`${key}_market`, 120, 40);
         }
     }
-
+    /* eslint-enable no-shadow */
     /* eslint-enable no-undef */
-
     render () {
         const {active_market, markets,
             underlying, query, market} = this.state;
+        /* eslint-disable no-unused-vars */
         const { openDropdown, closeDropdown, searchSymbols,
             scrollToElement, handleScroll, saveMarketRef,
             onUnderlyingClick, saveRef, scrollToMarket } = this;
+        /* eslint-enable no-unused-vars */
         return (
             <div className='markets'>
                 <div
@@ -302,7 +305,7 @@ class Markets extends React.Component {
                 >
                     <span className='market'>
                         {market.name}
-                        <span className='arrow_down'></span>
+                        <span className='arrow_down' />
                     </span>
                     <span className='underlying'>{this.getCurrentUnderlying()}</span>
                 </div>

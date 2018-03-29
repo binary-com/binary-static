@@ -75,7 +75,7 @@ const TradingAnalysis = (() => {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
                 const el_digit_underlying = $('#digit_underlying');
-                const underlying = $('#underlying option:selected').val();
+                const underlying = $('#underlying').val();
                 const tick       = $('#tick_count').val() || 100;
 
                 if (underlying !== el_digit_underlying.val() && el_digit_underlying.val() !== null ) {
@@ -85,7 +85,7 @@ const TradingAnalysis = (() => {
                     // check if custom dropdown exists and sync with underlying dropdown
                     if (digit_underlying_dropdown) {
                         const digit_underlying_list = digit_underlying_dropdown.next('ul.select-options').children('li');
-                        const underlying_text = $('#underlying option:selected').text();
+                        const underlying_text = $('#underlying').attr('data-text');
                         digit_underlying_dropdown.text(underlying_text);
 
                         digit_underlying_list.not(this).each((idx, el) => {

@@ -26,7 +26,7 @@ class Contracts extends React.Component {
     componentWillUnmount () {
         document.body.removeEventListener('click', this.closeDropdown);
     }
-
+    /* eslint-disable no-undef */
     handleClickOutside = (e) => {
         if (this.references.wrapper
             && !this.references.wrapper.contains(e.target)) {
@@ -53,7 +53,7 @@ class Contracts extends React.Component {
         }
     }
 
-    saveRef = (name, node) => { this.references[name] = node };
+    saveRef = (name, node) => { this.references[name] = node; };
 
     getCurrentType = () => {
         const {formname, contracts} = this.state;
@@ -93,10 +93,12 @@ class Contracts extends React.Component {
 
         this.setState({formname});
     }
-
+    /* eslint-enable no-undef */
+    /* eslint-disable class-methods-use-this */
     dismiss() {
         console.warn('removing');
     }
+    /* eslint-enable class-methods-use-this */
 
     render () {
         const { contracts, contracts_tree, open,
@@ -110,7 +112,7 @@ class Contracts extends React.Component {
                 >
                     <span className='type'>
                         {this.getCurrentType()}
-                        <span className={`arrow_down ${contracts_tree.length <= 1 ? 'invisible' : ''}`}></span>
+                        <span className={`arrow_down ${contracts_tree.length <= 1 ? 'invisible' : ''}`} />
                     </span>
                     <span className='contract'>{this.getCurrentContract()}</span>
                 </div>
@@ -135,22 +137,22 @@ class Contracts extends React.Component {
                                         )}
                                     </div>
                                 </div>
-                            )
-                        } else {
-                            return (
-                                <div className='contract' key={idx}>
-                                    <div className='contract_type'>{contracts[contract]}</div>
-                                    <div className='contract_subtypes'>
-                                        <div
-                                            className={`sub ${contract === formname ? 'active' : ''}`}
-                                            onClick={this.onContractClick.bind(null, contract)}
-                                        >
-                                            {contracts[contract]}
-                                        </div>
+                            );
+                        }
+                        return (
+                            <div className='contract' key={idx}>
+                                <div className='contract_type'>{contracts[contract]}</div>
+                                <div className='contract_subtypes'>
+                                    <div
+                                        className={`sub ${contract === formname ? 'active' : ''}`}
+                                        onClick={this.onContractClick.bind(null, contract)}
+                                    >
+                                        {contracts[contract]}
                                     </div>
                                 </div>
-                            )
-                        }
+                            </div>
+                        );
+
                     }
                     )}
                 </div>
@@ -158,11 +160,11 @@ class Contracts extends React.Component {
         );
     }
 }
-/*eslint-disable react/no-render-return-value*/
+/* eslint-disable react/no-render-return-value*/
 export const init = (contracts, contracts_tree) => ReactDOM.render(
     <Contracts contracts={contracts} contracts_tree={contracts_tree}/>,
     getElementById('contract_component')
 );
-/*eslint-enable react/no-render-return-value */
+/* eslint-enable react/no-render-return-value */
 
 export default init;
