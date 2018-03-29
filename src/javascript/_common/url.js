@@ -72,6 +72,24 @@ const Url = (() => {
         return static_host + path.replace(/(^\/)/g, '');
     };
 
+    /**
+     * @param {Object} new_params - Object with param-value pairs. To delete param, set value to null.
+     * @param {boolean} should_preserve_old - Should existing query parameters be preserved.
+     */
+    const updateParamsWithoutReload = (new_params, should_preserve_old) => {
+        const updated_params = should_preserve_old
+            ? $.extend(paramsHash(), new_params)
+            : new_params;
+        Object.keys(new_params).forEach(key => {
+            if (new_params[key] === null) {
+                delete updated_params[key];
+            }
+        });
+        const url = new URL(window.location);
+        url.search = paramsHashToString(updated_params);
+        window.history.replaceState({ url: url.href }, '', url.href);
+    };
+
     const getSection = (url = window.location.href) => (url.match(new RegExp(`/${urlLang()}/(.*)/`, 'i')) || [])[1];
 
     const getHashValue = (name) => {
@@ -90,6 +108,7 @@ const Url = (() => {
         urlForStatic,
         getSection,
         getHashValue,
+        updateParamsWithoutReload,
 
         param     : name => paramsHash()[name],
         websiteUrl: () => 'https://www.binary.com/',
