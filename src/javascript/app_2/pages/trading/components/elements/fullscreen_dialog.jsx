@@ -55,7 +55,7 @@ class FullscreenDialog extends React.PureComponent {
                     </div>
                 </div>
                 <div className='fullscreen-dialog__header-shadow-cover' />
-                <div className='fullscreen-dialog__header-shadow shadow' />
+                <div className='fullscreen-dialog__header-shadow' />
                 <div className='fullscreen-dialog__content'>
                     {children}
                 </div>
