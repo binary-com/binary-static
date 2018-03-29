@@ -79,7 +79,7 @@ const SelfExclusion = (() => {
                     }
 
                     if (key === 'max_30day_turnover') {
-                        const should_be_checked = (value === TURNOVER_LIMIT);
+                        const should_be_checked = (parseInt(value) === TURNOVER_LIMIT);
                         $('#chk_no_limit').prop('checked', should_be_checked);
                         setMax30DayTurnoverLimit(should_be_checked);
                     }
@@ -98,15 +98,10 @@ const SelfExclusion = (() => {
     };
 
     const setMax30DayTurnoverLimit = (is_checked) => {
-        const current_max = self_exclusion_data.max_30day_turnover || TURNOVER_LIMIT;
-        let max = TURNOVER_LIMIT;
-        if (current_max < max) {
-            max = current_max;
-        }
         $(max_30day_turnover_id)
             .attr('disabled', is_checked)
             .css('color', is_checked ? 'transparent' : 'inherit')
-            .val(is_checked ? max : '');
+            .val(is_checked ? TURNOVER_LIMIT : '');
     };
 
     const bindValidation = () => {
