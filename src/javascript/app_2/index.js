@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import 'promise-polyfill';
 import jquery from 'jquery';
 
-import Trading             from './pages/trading/init';
+import initApp             from './app';
 import { checkNewRelease } from '../_common/check_new_release';
 import Client              from '../app/base/client';
 import NetworkMonitor      from '../app/base/network_monitor';
@@ -16,7 +16,7 @@ window.check_new_release = checkNewRelease; // used by GTM to update page after 
 const init = () => {
     Client.init();
     NetworkMonitor.init();
-    Trading.onLoad();
+    initApp();
 };
 
 document.addEventListener('DOMContentLoaded', init);

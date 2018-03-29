@@ -1,5 +1,6 @@
 import React from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
+import { Link } from 'react-router-dom';
 import { ToggleDrawer, DrawerItems, DrawerItem } from './drawer.jsx';
 import LanguageSwitcher from './language_switcher.jsx';
 import AccountSwitcher from './account_switcher.jsx';
@@ -34,7 +35,7 @@ const MenuDrawer = () => (
                     items={[
                         { text: localize('Portfolio') },
                         { text: localize('Profit Table') },
-                        { text: localize('Statement') },
+                        { text: localize('Statement'), link_to: '/statement' },
                     ]}
                 />
                 <DrawerItem text={localize('Cashier')} />
@@ -50,7 +51,6 @@ const MenuDrawer = () => (
 );
 
 class TradingHeader extends React.Component {
-
     render() {
         const isMenuLinkActive = (name) => (window.location.pathname.indexOf(name.toLowerCase()) >= 0);
 
@@ -73,13 +73,13 @@ class TradingHeader extends React.Component {
                             {!!this.props.items.length &&
                                 <div className='menu-links'>
                                     {this.props.items.map((item, idx) => (
-                                        <a
+                                        <Link
                                             className={`${isMenuLinkActive(item.text) ? 'active': ''}`}
                                             key={idx}
-                                            href={item.href || 'javascript:;'}
+                                            to={item.link_to}
                                         >
                                             <span className={item.icon}>{item.text}</span>
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             }
