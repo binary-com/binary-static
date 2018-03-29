@@ -134,7 +134,7 @@
     #expiry_type_endtime {
         flex-wrap: wrap;
 
-        #expiry_time_row select#expiry_time {
+        div.select ~ #expiry_time_row {
             margin-top: 5px;
         }
     }
