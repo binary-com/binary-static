@@ -51,7 +51,7 @@ const BinaryApp = () => (
                 <footer id='trading_footer'>
                     <TradingFooter
                         items={[
-                            { icon: 'ic-statement',   text: localize('Statement') },
+                            { icon: 'ic-statement',   text: localize('Statement'), link_to: '/statement' },
                             { icon: 'ic-chat-bubble', text: localize('Notification') },
                             { icon: 'ic-lock-open',   text: localize('Lock') },
                         ]}

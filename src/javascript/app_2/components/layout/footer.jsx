@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Popover from '../elements/popover.jsx';
 import { connect } from '../../store/connect';
 
@@ -83,9 +84,9 @@ class TradingFooter extends React.Component {
                                 key={idx}
                                 subtitle={item.text}
                             >
-                                <a key={idx} href={item.href || 'javascript:;'} className={item.icon}>
+                                <Link key={idx} to={item.link_to || ''} className={item.icon}>
                                     <span title={item.text} />
-                                </a>
+                                </Link>
                             </Popover>
                         ))}
                         <ToggleFullScreen />

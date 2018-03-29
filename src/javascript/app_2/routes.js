@@ -1,14 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import TradeApp from './pages/trading/trade_app.jsx';
+import TradeApp  from './pages/trading/trade_app.jsx';
+import Statement from './pages/statement/statement.jsx';
 
-
-const Statement = () => (
-    <div>
-        <h1>Statement</h1>
-    </div>
-);
 
 const routes = [
     { path: '/',          component: TradeApp, exact: true },
