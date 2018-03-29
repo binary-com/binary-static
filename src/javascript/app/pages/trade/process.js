@@ -37,7 +37,7 @@ const Process = (() => {
             // store the market
             Defaults.set('market', market);
 
-            commonTrading.displayMarkets(Symbols.markets());
+            commonTrading.displayMarkets();
             processMarket();
         });
     };

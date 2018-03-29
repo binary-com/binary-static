@@ -35,8 +35,8 @@ const commonTrading = (() => {
         }
     };
 
-    const displayMarkets = (elements) => {
-        marketsElement.init(elements);
+    const displayMarkets = () => {
+        marketsElement.init();
     };
 
     /*

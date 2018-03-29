@@ -63,12 +63,50 @@ const List = ({
     ))
 );
 
+const submarket_order = {
+    forex          : 0,
+    major_pairs    : 1,
+    minor_pairs    : 2,
+    smart_fx       : 3,
+    indices        : 4,
+    asia_oceania   : 5,
+    europe_africa  : 6,
+    americas       : 7,
+    otc_index      : 8,
+    stocks         : 9,
+    au_otc_stock   : 10,
+    ge_otc_stock   : 11,
+    india_otc_stock: 12,
+    uk_otc_stock   : 13,
+    us_otc_stock   : 14,
+    commodities    : 15,
+    metals         : 16,
+    energy         : 17,
+    volidx         : 18,
+    random_index   : 19,
+    random_daily   : 20,
+    random_nightly : 21,
+};
+
+const submarketSort = (a, b) => {
+    if (submarket_order[a] > submarket_order[b]) {
+        return 1;
+    } else if (submarket_order[a] < submarket_order[b]) {
+        return -1;
+    }
+    return 0;
+};
+
 class Markets extends React.Component {
     constructor (props) {
         super(props);
         const market_symbol = Defaults.get('market');
         this.markets = Symbols.markets();
-        const underlying_symbol = Defaults.get('underlying') || Object.keys(Symbols.underlyings()[market_symbol])[0];
+        let underlying_symbol = Defaults.get('underlying');
+        if (!underlying_symbol) {
+            const submarket = Object.keys(this.markets[market_symbol].submarkets).sort(submarketSort)[0];
+            underlying_symbol = Object.keys(this.markets[market_symbol].submarkets[submarket].symbols).sort()[0];
+        }
         const markets_arr = Object.entries(this.markets);
         this.underlyings = Symbols.getAllSymbols() || {};
         this.markets_all = markets_arr.slice();
@@ -157,6 +195,7 @@ class Markets extends React.Component {
     onUnderlyingClick = (underlying_symbol, market_symbol) => {
         Defaults.set('underlying', underlying_symbol);
         Defaults.set('market', market_symbol);
+
         this.setState({
             market: {
                 symbol: market_symbol,
@@ -375,9 +414,9 @@ class Markets extends React.Component {
     }
 }
 
-export const init = (elements) => {
+export const init = () => {
     ReactDOM.render(
-        <Markets market={elements} />,
+        <Markets />,
         getElementById('underlying_component')
     );
 };

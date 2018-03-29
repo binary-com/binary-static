@@ -88,6 +88,8 @@ const TradingEvents = (() => {
 
                 // get ticks for current underlying
                 GetTicks.request(underlying);
+
+                CommonTrading.displayTooltip();
             }
         });
 

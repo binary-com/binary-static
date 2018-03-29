@@ -16,6 +16,7 @@
 
             &.disabled {
                 border: 1px solid $COLOR_GRAY;
+                cursor: not-allowed;
             }
         }
         .type {
