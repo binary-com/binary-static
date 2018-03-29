@@ -19,7 +19,7 @@ const LastDigit = ({
         return (
             <div className='fieldset-minimized'>
                 <span className='icon digits' />
-                {last_digit}
+                {`Last Digit: ${last_digit}`}
             </div>
         );
     }
