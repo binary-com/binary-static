@@ -19,8 +19,8 @@ const StartDate = ({
             <div className='fieldset-minimized start-date'>
                 <span className='icon start-time' />
                 {start_date === 'now'
-                    ? 'Now'
-                    : `${start_dates_list.find(o => o.value === +start_date).text}\n${start_time}`
+                    ? localize('Now')
+                    : `${(start_dates_list.find(o => o.value === +start_date) || {}).text}\n${start_time}`
                 }
             </div>
         );
