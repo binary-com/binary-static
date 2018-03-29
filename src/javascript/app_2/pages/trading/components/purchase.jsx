@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from './form/button.jsx';
-import { connect } from '../store/connect';
+import Button from '../../../components/form/button.jsx';
+import { connect } from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
 
 const Purchase = ({

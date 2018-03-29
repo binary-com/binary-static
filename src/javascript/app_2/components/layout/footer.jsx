@@ -1,5 +1,5 @@
 import React from 'react';
-import Popover from './popover.jsx';
+import Popover from '../elements/popover.jsx';
 import { connect } from '../../store/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (

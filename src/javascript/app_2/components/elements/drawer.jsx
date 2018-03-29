@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import Url from '../../../../../_common/url';
+import Url from '../../../_common/url';
 
 class ToggleDrawer extends React.PureComponent {
     constructor(props) {

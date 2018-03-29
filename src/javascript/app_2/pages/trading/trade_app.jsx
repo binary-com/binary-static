@@ -8,8 +8,8 @@ import StartDate from './components/start_date.jsx';
 import Symbol from './components/symbol.jsx';
 import Test from './components/test.jsx';
 import Purchase from './components/purchase.jsx';
-import { connect } from './store/connect';
-import PortfolioDrawer from './components/elements/portfolio_drawer.jsx';
+import { connect } from '../../store/connect';
+import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
 
 class TradeApp extends React.Component {
     isVisible(component_name) {

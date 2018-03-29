@@ -1,12 +1,12 @@
 import React from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { Link } from 'react-router-dom';
-import { ToggleDrawer, DrawerItems, DrawerItem } from './drawer.jsx';
-import LanguageSwitcher from './language_switcher.jsx';
-import AccountSwitcher from './account_switcher.jsx';
+import { ToggleDrawer, DrawerItems, DrawerItem } from '../elements/drawer.jsx';
+import LanguageSwitcher from '../elements/language_switcher.jsx';
+import AccountSwitcher from '../elements/account_switcher.jsx';
 import Button from '../form/button.jsx';
-import { localize } from '../../../../../_common/localize';
-import Url from '../../../../../_common/url';
+import { localize } from '../../../_common/localize';
+import Url from '../../../_common/url';
 
 const MenuDrawer = () => (
     <div className='drawer-items-container'>

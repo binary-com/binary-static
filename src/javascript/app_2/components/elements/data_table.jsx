@@ -1,12 +1,12 @@
 import React from 'react';
 import moment from 'moment';
-import Client from '../../../../../app/base/client';
-import BinarySocket from '../../../../../app/base/socket';
-import { toJapanTimeIfNeeded } from '../../../../../app/base/clock';
-import { jpClient } from '../../../../../app/common/country_base';
-import { formatMoney } from '../../../../../app/common/currency';
-import { localize } from '../../../../../_common/localize';
-import { toTitleCase } from '../../../../../_common/string_util';
+import Client from '../../../app/base/client';
+import BinarySocket from '../../../app/base/socket';
+import { toJapanTimeIfNeeded } from '../../../app/base/clock';
+import { jpClient } from '../../../app/common/country_base';
+import { formatMoney } from '../../../app/common/currency';
+import { localize } from '../../../_common/localize';
+import { toTitleCase } from '../../../_common/string_util';
 
 const Pagination = ({ page, total, page_size, onChange }) => {
     const handleChange = (new_page) => {

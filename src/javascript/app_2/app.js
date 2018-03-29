@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
-import { MobxProvider } from './pages/trading/store/connect';
-import TradeStore from './pages/trading/store/trade_store';
-import UIStore from './pages/trading/store/ui_store';
-import TradingHeader from './pages/trading/components/elements/header.jsx';
-import TradingFooter from './pages/trading/components/elements/footer.jsx';
+import { MobxProvider } from './store/connect';
+import TradeStore from './store/trade_store';
+import UIStore from './store/ui_store';
+import TradingHeader from './components/layout/header.jsx';
+import TradingFooter from './components/layout/footer.jsx';
 import { initActions } from './pages/trading/actions';
 import BinaryRoutes from './routes';
 import { localize } from '../_common/localize';
