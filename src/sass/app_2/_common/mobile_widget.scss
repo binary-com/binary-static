@@ -38,5 +38,9 @@
             display: inline;
             font-size: 1em;
         }
+        &__basis {
+            font-weight: bold;
+            color: $COLOR_BLUE;
+        }
     }
 }

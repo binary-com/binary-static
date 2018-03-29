@@ -25,6 +25,8 @@ const Amount = ({
         return (
             <div className='fieldset-minimized amount'>
                 <span className='icon invest-amount' />
+                <span className='fieldset-minimized__basis'>{(basis_list.find(o => o.value === basis) || {}).text}</span>
+                &nbsp;
                 <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i>
                 {addComma(amount, 2)}
             </div>
