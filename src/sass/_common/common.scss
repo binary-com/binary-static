@@ -599,5 +599,13 @@ label + input {
     }
     input {
         transition: none;
+
+        &.hide {
+            color: transparent;
+
+            &::selection {
+                color: transparent;
+            }
+        }
     }
 }

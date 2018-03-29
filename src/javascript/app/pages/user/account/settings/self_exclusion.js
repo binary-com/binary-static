@@ -98,9 +98,9 @@ const SelfExclusion = (() => {
     };
 
     const setMax30DayTurnoverLimit = (is_checked) => {
+        $(max_30day_turnover_id)[is_checked ? 'addClass' : 'removeClass']('hide');
         $(max_30day_turnover_id)
             .attr('disabled', is_checked)
-            .css('color', is_checked ? 'transparent' : 'inherit')
             .val(is_checked ? TURNOVER_LIMIT : '');
     };
 
