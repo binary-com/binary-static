@@ -33,6 +33,9 @@
                 background-image: url('../images/trading_app/sidebar/light/ic_digit_light.svg');
             }
         }
+        .desktop-only fieldset .duration-container > * {
+            margin-top: 0;
+        }
         fieldset {
             input, select {
                 width: 100%;
