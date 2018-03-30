@@ -730,6 +730,11 @@
     margin-top: 15px;
     font-size: $FONT_SIZE_N;
 
+    #trade_analysis {
+        a.tm-a.a-active, .tm-li.active a {
+            pointer-events: none;
+        }
+    }
     #trade_bottom_content {
         padding-top: 1em;
     }
