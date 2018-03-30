@@ -37,7 +37,7 @@ const BinarySocketGeneral = (() => {
                 if (response.website_status) {
                     is_available = /^up$/i.test(response.website_status.site_status);
                     has_message = typeof response.website_status.message === 'string';
-                    if (is_available && !(has_message || BinarySocket.availability())) {
+                    if (is_available && !BinarySocket.availability()) {
                         window.location.reload();
                     } else if (has_message) {
                         Header.displayNotification(response.website_status.message, true);
