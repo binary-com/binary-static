@@ -52,8 +52,6 @@ const MenuDrawer = () => (
 
 class TradingHeader extends React.Component {
     render() {
-        const isMenuLinkActive = (name) => (window.location.pathname.indexOf(name.toLowerCase()) >= 0);
-
         return (
             <React.Fragment>
                 <header id={this.props.id} className='shadow'>
@@ -73,11 +71,7 @@ class TradingHeader extends React.Component {
                             {!!this.props.items.length &&
                                 <div className='menu-links'>
                                     {this.props.items.map((item, idx) => (
-                                        <BinaryLink
-                                            className={`${isMenuLinkActive(item.text) ? 'active': ''}`}
-                                            key={idx}
-                                            to={item.link_to}
-                                        >
+                                        <BinaryLink key={idx} to={item.link_to}>
                                             <span className={item.icon}>{item.text}</span>
                                         </BinaryLink>
                                     ))}
