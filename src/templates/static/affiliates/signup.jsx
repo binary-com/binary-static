@@ -2,13 +2,13 @@ import React from 'react';
 import { Table } from '../../_common/components/elements.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
-const BoxRow = ({ children, top_row, bottom_row }) => (
-    <div className={`box-row gr-row ${top_row ? 'box-row-top' : ''} ${bottom_row ? 'box-row-bottom' : ''}`}>
+export const BoxRow = ({ children, top_row, bottom_row, no_border }) => (
+    <div className={`box-row gr-row${top_row ? ' box-row-top' : ''}${bottom_row ? ' box-row-bottom' : ''}${no_border ? ' no-border' : ''}`}>
         {children}
     </div>
 );
 
-const Box = ({ image, title, text }) => (
+export const Box = ({ image, title, text }) => (
     <div className='box gr-4 gr-12-m center-text gr-padding-30'>
         <img className='gr-centered fixed-height-img' src={it.url_for(`images/pages/affiliates/${image}.svg`)} alt={image} />
         <p><strong>{title}</strong></p>

@@ -46,6 +46,9 @@
         .box:not(:last-child) {
             border-right: 1px solid $COLOR_GRAY;
         }
+        &.no-border, &.no-border .box {
+            border: none;
+        }
         @media screen and (max-width: 480px) {
             &, .box {
                 border: none;

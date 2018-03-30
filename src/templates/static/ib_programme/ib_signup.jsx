@@ -1,20 +1,7 @@
 import React from 'react';
 import { Table } from '../../_common/components/elements.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
-
-const BoxRow = ({ children, top_row, bottom_row }) => (
-    <div className={`box-row gr-row ${top_row ? 'box-row-top' : ''} ${bottom_row ? 'box-row-bottom' : ''}`}>
-        {children}
-    </div>
-);
-
-const Box = ({ image, title, text }) => (
-    <div className='box gr-4 gr-12-m center-text gr-padding-30'>
-        <img className='gr-centered fixed-height-img' src={it.url_for(`images/pages/affiliates/${image}.svg`)} alt={image} />
-        <p><strong>{title}</strong></p>
-        <p>{text}</p>
-    </div>
-);
+import { BoxRow, Box } from '../affiliates/signup.jsx';
 
 const Step = ({ header, text, circle_no }) => (
     <div className='step'>
@@ -35,36 +22,27 @@ const Signup = () => (
                 {it.L('Earn commission on the trading activity of clients that you refer to our MetaTrader 5 platform.')}
             </p>
 
-            <div className='gr-padding-20'>
-                <h2 className='center-text margin-bottom-50'>{it.L('How it works')}</h2>
+            <div className='gr-padding-20 center-text'>
+                <h2 className='margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
-                    <Step circle_no='1' header={it.L('Sign up')}            text={it.L('Getting started is free and easy. Just [_1]fill out the application form[_2]* and wait for our approval.', `<a href='${it.affiliate_signup_url}'>`, '</a>')} />
+                    <Step circle_no='1' header={it.L('Sign up')}                       text={it.L('Getting started is free and easy. Just [_1]fill out the application form[_2]* and wait for our approval.', `<a href='${it.affiliate_signup_url}'>`, '</a>')} />
                     <Step circle_no='2' header={it.L('Promote [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise our MT5 service to your audience.')} />
-                    <Step circle_no='3' header={it.L('Earn')}               text={it.L('Earn a commission when your referred clients trade Forex and CFDs on our MT5 platform.')} />
+                    <Step circle_no='3' header={it.L('Earn')}                          text={it.L('Earn a commission when your referred clients trade Forex and CFDs on our MT5 platform.')} />
                 </div>
+                <p>{it.L('*Already registered as an affiliate? Send us an email at [_1] instead.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
             </div>
         </div>
 
         <div className='fill-bg-color'>
             <div className='container center-text gr-padding-20'>
-                <h2 className='margin-bottom-50'>{it.L('Why you should join the [_1] Affiliate Programme', it.website_name)}</h2>
+                <h2 className='margin-bottom-50'>{it.L('Why you should join the [_1] IB Programme', it.website_name)}</h2>
 
-                <BoxRow top_row>
-                    <Box title={it.L('Generous commission')}      image='commission-icon'       text={it.L('Choose a commission plan that suits your business strategy.')} />
-                    <Box title={it.L('On-time payments')}         image='payment-icon'          text={it.L('Get paid by the 15th of every month. We’ve never missed a payment since we started our programme in March 2004.')} />
-                    <Box title={it.L('Dedicated support')}        image='contact-icon'          text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
-                </BoxRow>
-                <BoxRow bottom_row>
-                    <Box title={it.L('Advanced marketing tools')} image='marketing-icon'        text={it.L('Promote our products easily, and keep track of all your earnings with our nifty marketing tools.')} />
-                    <Box title={it.L('High conversions')}         image='conversion-icon'       text={it.L('We’ve paid millions in commission to date through our industry-leading affiliate programme.')} />
-                    <Box title={it.L('Multiple opportunities')}   image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the <a href=\'[_1]\'>Payment Agent Programme</a>.', it.url_for('payment-agent'))} />
+                <BoxRow no_border>
+                    <Box title={it.L('Daily payouts')}            image='payment-icon'   text={it.L('Get your IB commission credited daily into your MT5 account.')} />
+                    <Box title={it.L('Advanced marketing tools')} image='marketing-icon' text={it.L('Track every click, impression, download, and signup to increase your conversions.')} />
+                    <Box title={it.L('Dedicated support')}        image='contact-icon'   text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
                 </BoxRow>
 
-                <div className='gr-padding-30'>
-                    <a className='button' href={it.affiliate_signup_url}>
-                        <span>{it.L('Apply Now')}</span>
-                    </a>
-                </div>
             </div>
         </div>
 
