@@ -55,7 +55,7 @@ const Signup = () => (
                             [
                                 { text: '' },
                                 { text: it.L('Accounts/Assets') },
-                                { text: it.L('Commission Rates') },
+                                { text: it.L('Commission rates') },
                             ],
                         ],
                         tbody: [
@@ -105,16 +105,12 @@ const Signup = () => (
                     }}
                 />
             </div>
-        </div>
-
-        <div className='fill-bg-color'>
-            <div className='container center-text gr-padding-30'>
-                <p>{it.L('Sign up for the [_1] Affiliate Programme today:', it.website_name)}</p>
-                <p>
-                    <a className='button' href={it.affiliate_signup_url}>
-                        <span>{it.L('Yes, I Want To Sign Up As An Affiliate')}</span>
-                    </a>
-                </p>
+            <p>{it.L('*Represents the amount in base currency per round trade. Example: A buy of 1 lot of EUR/USD would pay EUR 6 on standard accounts.')}</p>
+            <p>{it.L('**Volatility Indices commission rates in account currency per round trade. Example: A buy of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account.')}</p>
+            <div className='gr-padding-20 center-text'>
+                <a className='button' href={it.affiliate_signup_url}>
+                    <span>{it.L('Apply Now')}</span>
+                </a>
             </div>
         </div>
 
