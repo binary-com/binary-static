@@ -602,3 +602,21 @@ li strong.margin-right {
 label + input {
     margin-left: 5px;
 }
+
+.max_30day_turnover {
+    .inline-flex {
+        margin-left: 10px;
+        align-items: baseline;
+    }
+    input {
+        transition: none;
+
+        &.hide {
+            color: transparent;
+
+            &::selection {
+                color: transparent;
+            }
+        }
+    }
+}

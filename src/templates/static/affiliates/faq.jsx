@@ -1,12 +1,13 @@
 import React from 'react';
 import { Section } from '../get_started/common.jsx';
 import { List } from '../../_common/components/elements.jsx';
+import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const FAQ = () => (
     <div className='static_full affiliates_faq'>
         <h1>{it.L('Affiliate FAQ')}</h1>
         <div className='gr-row'>
-            <div className='gr-3 gr-hide-m sidebar-container'>
+            <div className='gr-3 gr-12-m sidebar-container'>
                 <div className='sidebar'>
                     <List
                         id='sidebar-nav'
@@ -103,6 +104,13 @@ const FAQ = () => (
                     <h3>{it.L('Where can I send my questions, comments, and suggestions?')}</h3>
                     <p>{it.L('Feel free to get in touch with us at [_1]. We’d love to hear from you.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
                 </Section>
+
+                <SeparatorLine className='gr-padding-30' />
+                <div className='gr-padding-30 gr-parent center-text'>
+                    <a className='button-secondary' href={it.url_for('affiliate/signup')}>
+                        <span>{it.L('Back to Affiliate Programme')}</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
