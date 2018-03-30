@@ -1,5 +1,5 @@
 import moment from 'moment';
-import DAO from '../data/dao';
+import DAO from '../../../data/dao';
 
 export const getCountryAsync = function* () {
     const r = yield DAO.getWebsiteStatus();

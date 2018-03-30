@@ -1,4 +1,4 @@
-import BinarySocket from '../../../../app/base/socket';
+import BinarySocket from '../../app/base/socket';
 
 const DAO = (() => {
     const getActiveSymbols = () => BinarySocket.send({ active_symbols: 'brief' });

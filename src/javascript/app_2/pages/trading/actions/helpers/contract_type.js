@@ -1,5 +1,5 @@
 import moment from 'moment';
-import DAO from '../../data/dao';
+import DAO from '../../../../data/dao';
 import { cloneObject, getPropertyValue } from '../../../../../_common/utility';
 import { localize } from '../../../../../_common/localize';
 import { get as getLanguage } from '../../../../../_common/language';
