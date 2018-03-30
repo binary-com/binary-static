@@ -40,13 +40,23 @@ const Partners = () => (
                     text={it.L('Earn commissions by introducing new customers to [_1].', it.website_name)}
                 />
 
+                {/* TODO: add custom IB programme icon */}
+                <Column
+                    url={it.url_for('ib-programme/ib-signup')}
+                    image='affiliate-program'
+                    header={it.L('IB Programme')}
+                    text={it.L('Earn a commission on each client’s MT5 trading activity – paid out daily.')}
+                />
+
                 <Column
                     url={it.url_for('payment-agent')}
                     image='payment-agents'
                     header={it.L('Payment Agent')}
                     text={it.L('Apply to become a Payment Agent')}
                 />
+            </div>
 
+            <div className='gr-row gr-clear'>
                 <Column
                     url='https://developers.binary.com'
                     target='_blank'
@@ -54,9 +64,7 @@ const Partners = () => (
                     header={it.L('API')}
                     text={it.L('Develop your own trading application with our APIs.')}
                 />
-            </div>
 
-            <div className='gr-row gr-clear'>
                 <Column
                     url={it.url_for('open-source-projects')}
                     image='open-source-venture'
@@ -71,16 +79,16 @@ const Partners = () => (
                     header={it.L('Contributors')}
                     text={it.L('Apply to become a contributor')}
                 />
+            </div>
 
+            <div className='gr-row gr-clear'>
                 <Column
                     url={it.url_for('security-testing')}
                     image='tester'
                     header={it.L('Security Testing')}
                     text={it.L('Earn money for any verifiable errors that you find.')}
                 />
-            </div>
 
-            <div className='gr-row gr-clear'>
                 <Column
                     url={it.url_for('liquidity-solutions')}
                     image='liquidity-solutions'
@@ -93,14 +101,6 @@ const Partners = () => (
                     image='mam'
                     header={it.L('Multiple Accounts Manager (MAM)')}
                     text={it.L('Trade and manage multiple MT5 client accounts from a single interface.')}
-                />
-
-                {/* TODO: add custom IB programme icon */}
-                <Column
-                    url={it.url_for('ib-programme/ib-signup')}
-                    image='affiliate-program'
-                    header={it.L('IB Programme')}
-                    text={it.L('Earn a commission on each client’s MT5 trading activity – paid out daily.')}
                 />
 
             </div>
