@@ -1,0 +1,93 @@
+.acc-switcher-container {
+    position: static;
+
+    .acc-switcher-header {
+        cursor: pointer;
+        border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+        z-index: 3;
+        position: relative;
+
+        .acc-switcher-active-login {
+            padding: 10px 16px;
+
+            &.collapsed:after {
+                transform: rotate(180deg);
+            }
+            p.acc-switcher-accountid {
+                font-size: 0.75rem;
+                font-weight: 300;
+                line-height: 0.5;
+                padding-left: 3.5rem;
+            }
+            p.acc-switcher-currency {
+                font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                line-height: 0.5;
+                color: $COLOR_ORANGE;
+                padding-left: 3.5rem;
+            }
+            &:before {
+                content: '\25EF';
+                font-size: 3rem;
+                padding-top: 5px;
+                position: absolute;
+            }
+            &:after {
+                content: '\0025BE';
+                font-size: 1.5rem;
+                position: absolute;
+                font-weight: 300;
+                top: 35%;
+                right: 16px;
+                transition: transform 0.25s;
+                transform: none;
+            }
+        }
+    }
+    .acc-switcher-list {
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        background-color: $COLOR_WHITE;
+        transition: all 0.25s;
+        opacity: 0;
+        transform: scale(1, 0);
+        transform-origin: top;
+        overflow: hidden;
+        height: 0;
+
+        &.collapsed {
+            opacity: 1;
+            transform: scale(1, 1);
+            height: 100%;
+            max-height: calc(100% - 156px);
+        }
+        .acc-switcher-account {
+            cursor: pointer;
+            padding: 4px 16px;
+
+            &.hide {
+                display: none;
+            }
+            &:before {
+                content: '\25EF';
+                font-size: 2.5rem;
+                padding-top: 10px;
+                position: absolute;
+            }
+            p.acc-switcher-accountid {
+                font-weight: 300;
+                font-size: 0.75rem;
+                line-height: 0.5;
+                padding-left: 3rem;
+            }
+            p.acc-switcher-currency {
+                font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                line-height: 0.5;
+                padding-left: 3rem;
+            }
+            &:hover {
+                background: $COLOR_LIGHT_GRAY;
+            }
+        }
+    }
+}

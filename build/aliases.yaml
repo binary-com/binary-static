@@ -1,6 +1,7 @@
 css:
   - 'sass'
   - 'postcss'
+  - 'embedFonts'
   - 'cssmin'
 
 js:
@@ -41,12 +42,6 @@ livereload:
   - 'copy'
   - 'connect:livereload'
   - 'concurrent:serve'
-
-custom:
-  - 'clean'
-  - 'default'
-  - 'shell:compile_dev'
-  - 'connect'
 
 release:
   - 'shell:check_origin'

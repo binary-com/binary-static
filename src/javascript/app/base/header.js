@@ -112,7 +112,11 @@ const Header = (() => {
     const metatraderMenuItemVisibility = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
             if (MetaTrader.isEligible() && !jpClient()) {
-                getElementById('user_menu_metatrader').setVisibility(1);
+                // TODO: a workaround for new-app, can be reverted once dependencies are dropped
+                const el_mt_menu_item = getElementById('user_menu_metatrader');
+                if (el_mt_menu_item && typeof el_mt_menu_item.setVisibility === 'function') {
+                    el_mt_menu_item.setVisibility(1);
+                }
             }
         });
     };

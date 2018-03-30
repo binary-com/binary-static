@@ -1,0 +1,123 @@
+.time-picker {
+    margin: 8px 0;
+    position: relative;
+
+    &.padding {
+        padding: 16px;
+    }
+    #time-picker-input.time-picker-input {
+        height: 32px;
+        padding: 0 8px;
+        border-radius: 4px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0;
+        cursor: pointer;
+
+        &::placeholder {
+            color: #b0b3bf; /* stylelint-disable-line color-no-hex */
+        }
+        &:hover {
+            border-color: #4c5794; /* stylelint-disable-line color-no-hex */
+        }
+        &.active {
+            border-color: #4c5794; /* stylelint-disable-line color-no-hex */
+        }
+    }
+    .time-picker-dropdown {
+        font-size: 16px;
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        opacity: 0;
+        border-radius: 4px 0 4px 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        z-index: -1;
+        transition: all 0.3s ease 0.15s;
+
+        &.active {
+            opacity: 1;
+            height: 213px;
+            z-index: 2;
+
+            .time-picker-panel {
+                height: 30px;
+
+                .time-picker-clear {
+                    display: inline-block;
+                }
+            }
+        }
+        .time-picker-panel {
+            height: 0;
+            background: $COLOR_WHITE;
+            border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+            border-radius: 4px 0 0;
+            padding: 2px 8px 0 9px;
+            line-height: 30px;
+            font-weight: 300;
+            transition: height 0.3s ease 0.15s;
+
+            .time-picker-clear {
+                background: url('../images/trading_app/common/close_circle.svg') no-repeat;
+                position: relative;
+                float: right;
+                display: none;
+                top: 8px;
+                width: 12px;
+                height: 12px;
+                cursor: pointer;
+            }
+            .placeholder {
+                color: #b0b3bf; /* stylelint-disable-line color-no-hex */
+            }
+        }
+        .time-picker-selector {
+            display: flex;
+            flex-direction: row;
+
+            .time-picker-hours, .time-picker-minutes {
+                border-right: 1px solid $COLOR_LIGHT_GRAY;
+            }
+            .time-picker-hours {
+                border-radius: 0 0 0 4px;
+            }
+            .time-picker-meridiem {
+                border-radius: 0 0 4px;
+            }
+            .time-picker-hours, .time-picker-minutes, .time-picker-meridiem {
+                display: inline-block;
+                width: 50px;
+                background: $COLOR_WHITE;
+                height: 180px;
+                overflow: hidden;
+                text-align: center;
+
+                .list-container .list-item {
+                    margin: 0;
+                    padding: 10px 0;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #f2f3f8; /* stylelint-disable-line color-no-hex */
+                        color: $COLOR_BLACK;
+
+                        &.selected {
+                            background: #4c5794; /* stylelint-disable-line color-no-hex */
+                            color: $COLOR_WHITE;
+                        }
+                    }
+                    &.selected {
+                        background: #4c5794; /* stylelint-disable-line color-no-hex */
+                        color: $COLOR_WHITE;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,190 @@
+#trading_header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    max-height: 50px;
+    top: 0;
+
+    header {
+        background-color: $COLOR_WHITE !important;
+        position: relative;
+        border: 0;
+        width: 100%;
+        z-index: 1;
+
+        .menu-items {
+            display: flex;
+            position: relative;
+            box-sizing: border-box;
+            width: 100%;
+
+            .navbar-icons {
+                cursor: pointer;
+                padding: 6px 10px;
+                align-self: center;
+
+                &.binary-logo {
+                    border-left: 1px solid $COLOR_LIGHT_GRAY;
+                    padding: 6px 12px;
+                }
+                img {
+                    width: 1.5rem;
+                    height: auto;
+
+                    &.logo-img {
+                        width: 2.5rem;
+                    }
+                }
+                &.notify-toggle {
+                    order: 2;
+                    padding: 6px;
+
+                    img {
+                        width: 32px;
+                        height: auto;
+                    }
+                }
+            }
+            .menu-left {
+                justify-content: flex-start;
+                order: -1;
+                display: inline-flex;
+                flex: 1;
+
+                .menu-toggle {
+                    align-self: center;
+
+                    img {
+                        width: 24px;
+                        height: auto;
+                    }
+                }
+                .menu-links {
+                    align-self: center;
+
+                    a {
+                        padding: 0 12px;
+                        text-decoration: none;
+                        position: relative;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+
+                        span {
+                            font-size: 1rem;
+                            font-weight: 300;
+                            text-transform: capitalize;
+                            color: $COLOR_DARK_BLUE;
+                            padding: 16px;
+
+                            &:before {
+                                margin-right: 8px;
+                                vertical-align: sub;
+                            }
+                            &.trade:before {
+                                content: url('../images/trading_app/header/icons/ic_trade_normal_light.svg');
+                            }
+                            &.portfolio:before {
+                                content: url('../images/trading_app/header/icons/ic_portfolio_normal_light.svg');
+                            }
+                            &.statement:before {
+                                content: url('../images/trading_app/header/icons/ic_statement_normal_light.svg');
+                            }
+                            &.cashier:before {
+                                content: url('../images/trading_app/header/icons/ic_cashier_normal_light.svg');
+                            }
+                        }
+                        &:hover, &.active {
+                            & > span {
+                                font-weight: 400;
+                            }
+                            & > span.trade:before {
+                                content: url('../images/trading_app/header/icons/ic_trade_active_light.svg');
+                            }
+                            & > span.portfolio:before {
+                                content: url('../images/trading_app/header/icons/ic_portfolio_active_light.svg');
+                            }
+                            & > span.statement:before {
+                                content: url('../images/trading_app/header/icons/ic_statement_active_light.svg');
+                            }
+                            & > span.cashier:before {
+                                content: url('../images/trading_app/header/icons/ic_cashier_active_light.svg');
+                            }
+                        }
+                        &.active {
+                            &:after {
+                                display: block;
+                                position: absolute;
+                                content: '';
+                                height: 3px;
+                                width: 100%;
+                                bottom: 0;
+                                background-color: $COLOR_BLUE;
+                            }
+                        }
+                    }
+                    @media (max-width: 980px) {
+                        display: none;
+                    }
+                }
+            }
+            .menu-right {
+                justify-content: flex-end;
+                order: 1;
+                display: inline-flex;
+                border-right: 1px solid $COLOR_LIGHT_GRAY;
+
+                .acc-balance-container {
+                    display: inline-flex;
+                    align-items: center;
+
+                    .acc-balance {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        p.acc-balance-accountid {
+                            line-height: 0.5;
+                            color: $COLOR_ORANGE;
+                            font-size: 0.75rem;
+                            margin: 0.5em;
+                            font-weight: 600;
+                            text-align: center;
+                        }
+                        p.acc-balance-amount {
+                            line-height: 0.5;
+                            color: $COLOR_ORANGE;
+                            font-size: 1.25rem;
+                            margin: 0.5em;
+                            font-weight: 600;
+                            text-align: center;
+
+                            @media (max-width: 768px) {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                    button.btn {
+                        margin: 0 16px 0 4px;
+                        @media (max-width: 768px) {
+                            margin: 0 8px 0 4px;
+
+                            span {
+                                display: none;
+                            }
+                            // &:after {
+                            //     content: 'D';
+                            // }
+                        }
+                    }
+                }
+            }
+            .notifications-toggle {
+                justify-content: flex-end;
+                align-self: center;
+            }
+        }
+    }
+
+}

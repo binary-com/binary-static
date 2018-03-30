@@ -1,0 +1,59 @@
+footer {
+    position: fixed;
+    bottom: 0px;
+    padding: 5px 10px;
+    width: 100%;
+    border-top: 1px solid #e9e9e9; /* stylelint-disable-line color-no-hex */
+    background-color: $COLOR_WHITE;
+    box-sizing: border-box;
+    z-index: 1;
+
+    .footer-links {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+            padding: 0 5px;
+            text-decoration: none;
+
+            span {
+                font-size: 0.8rem;
+                text-transform: capitalize;
+                color: $COLOR_DARK_BLUE;
+                vertical-align: middle;
+                display: inline-block;
+            }
+            &:hover {
+                background: #e9e9e9; /* stylelint-disable-line color-no-hex */
+            }
+        }
+    }
+    @media (max-width: 1025px) {
+        display: none;
+    }
+}
+
+// TODO: Use font-icons
+.ic-portfolio:before {
+    content: url('../images/trading_app/footer/ic_portfolio_normal_light.svg');
+}
+
+.ic-portfolio-active:before {
+    content: url('../images/trading_app/footer/ic_portfolio_active_light.svg');
+}
+
+.ic-statement:before {
+    content: url('../images/trading_app/footer/ic_statement_normal_light.svg');
+}
+
+.ic-chat-bubble:before {
+    content: url('../images/trading_app/footer/ic_chat_bubble_outline_light.svg');
+}
+
+.ic-lock-open:before {
+    content: url('../images/trading_app/footer/ic_lock_open_light.svg');
+}
+
+.ic-fullscreen:before {
+    content: url('../images/trading_app/footer/ic_fullscreen_light.svg');
+}

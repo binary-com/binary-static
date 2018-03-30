@@ -21,6 +21,8 @@ const getAppId = () => {
     } else if (user_app_id.length) {
         window.localStorage.setItem('config.default_app_id', user_app_id); // it's being used in endpoint chrome extension - please do not remove
         app_id = user_app_id;
+    } else if (/localhost/i.test(window.location.hostname)) {
+        app_id = 1159;
     } else {
         window.localStorage.removeItem('config.default_app_id');
         app_id = 1;

@@ -1,0 +1,234 @@
+.calendar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $COLOR_WHITE;
+    outline: 0;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+    z-index: 999;
+    font-size: 1rem;
+    box-sizing: border-box;
+    width: 280px;
+    @media (max-width: 1024px) {
+        left: unset;
+        right: 0;
+    }
+
+    .calendar-input {
+        margin: 0 !important;
+        border: none;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 1rem;
+        font-weight: 300;
+        height: 34px;
+        padding: 6px 10px;
+        color: rgba(0, 0, 0, 0.65);
+    }
+    .calendar-footer {
+        font-size: 1rem;
+        font-weight: 300;
+        border-top: 1px solid #e8e8e8; /* stylelint-disable-line color-no-hex */
+        display: grid;
+        align-items: center;
+        line-height: 38px;
+        padding: 0 12px;
+        color: rgba(0, 0, 0, 0.65);
+
+        .calendar-footer-extra + .calendar-footer-btn {
+            border-top: 1px solid #e8e8e8; /* stylelint-disable-line color-no-hex */
+            margin: 0 -12px;
+        }
+        .calendar-footer-btn {
+            cursor: pointer;
+            color: #4c5794; /* stylelint-disable-line color-no-hex */
+            text-align: center;
+        }
+    }
+    .calendar-header {
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        line-height: 40px;
+        border-top: 1px solid #e8e8e8; /* stylelint-disable-line color-no-hex */
+        border-bottom: 1px solid #e8e8e8; /* stylelint-disable-line color-no-hex */
+
+        .calendar-select-month-btn, .calendar-select-year-btn, .calendar-select-decade-btn, .calendar-select-century-btn {
+            padding: 0 4px;
+            cursor: pointer;
+
+            &:hover {
+                color: #4c5794; /* stylelint-disable-line color-no-hex */
+            }
+            &.calendar-select-century-btn {
+                cursor: default;
+            }
+        }
+        .calendar-prev-year-btn, .calendar-next-year-btn, .calendar-prev-month-btn, .calendar-next-month-btn {
+            position: absolute;
+            color: rgba(0, 0, 0, 0.45);
+            padding: 0 5px;
+            display: inline-block;
+            line-height: 40px;
+            cursor: pointer;
+
+            &:hover {
+                color: #4c5794; /* stylelint-disable-line color-no-hex */
+            }
+            &.calendar-prev-year-btn {
+                left: 7%;
+
+                &:after {
+                    content: '\AB';
+                }
+            }
+            &.calendar-next-year-btn {
+                right: 7%;
+
+                &:after {
+                    content: '\BB';
+                }
+            }
+            &.calendar-prev-month-btn {
+                left: 14%;
+
+                &:after {
+                    content: '\2039';
+                }
+            }
+            &.calendar-next-month-btn {
+                right: 14%;
+
+                &:after {
+                    content: '\203A';
+                }
+            }
+        }
+    }
+    .calendar-date-panel, .calendar-month-panel, .calendar-year-panel, .calendar-decade-panel, .calendar-century-panel {
+        display: grid;
+        grid-gap: 2px;
+        padding: 8px 12px;
+        height: 226px;
+
+        &.calendar-date-panel {
+            grid-template-columns: repeat(7, 1fr);
+        }
+        &.calendar-month-panel, &.calendar-year-panel, &.calendar-decade-panel, &.calendar-century-panel {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .calendar-date, .calendar-month, .calendar-year, .calendar-decade {
+            justify-content: center;
+            align-self: center;
+            cursor: pointer;
+            margin: 0 auto;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            padding: 0;
+            color: rgba(0, 0, 0, 0.65);
+            text-align: center;
+            background: transparent;
+            -webkit-transition: background 0.3s;
+            transition: background 0.3s;
+            font-size: 1rem;
+            line-height: 24px;
+
+            &.calendar-date {
+                width: 24px;
+            }
+            &.calendar-month, &.calendar-year {
+                padding: 0 8px;
+            }
+            &.calendar-decade {
+                padding: 6px 4px;
+                font-size: 14px;
+            }
+            &:hover {
+                cursor: pointer;
+                background: #e9e9ed; /* stylelint-disable-line color-no-hex */
+            }
+            &-header {
+                line-height: 18px;
+                width: 33px;
+                padding: 6px 0;
+                text-align: center;
+                align-self: center;
+                color: rgba(0, 0, 0, 0.65);
+            }
+            &.today {
+                background: $COLOR_WHITE;
+                border: 1px solid $COLOR_BLUE;
+            }
+            &.active {
+                background: #4c5794; /* stylelint-disable-line color-no-hex */
+                color: $COLOR_WHITE;
+            }
+            &.disabled {
+                background: $COLOR_WHITE !important;
+                color: #e9e9ed !important; /* stylelint-disable-line color-no-hex */
+            }
+        }
+    }
+}
+
+div.datepicker-container {
+    position: relative;
+    margin: 8px 0;
+
+    .datepicker-display-wrapper {
+        &:hover {
+            .datepicker-display {
+                border-color: $COLOR_BLUE;
+            }
+        }
+    }
+    .datepicker-display {
+        background: $COLOR_WHITE;
+        height: 32px;
+        cursor: pointer;
+        border: solid 1px #e9e9ed; /* stylelint-disable-line color-no-hex */
+        border-radius: 4px;
+        font-size: 1rem;
+        line-height: 32px;
+        vertical-align: middle;
+        padding: 4px 11px;
+        box-sizing: border-box;
+        font-weight: 300;
+        transition: border 0.25s;
+    }
+    .picker-calendar-icon, .close-circle-icon {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        right: 12px;
+        top: 50%;
+        margin-top: -7px;
+        line-height: 14px;
+        transition: all 0.3s;
+        user-select: none;
+        opacity: 0;
+        cursor: pointer;
+
+        &.show {
+            opacity: 1;
+        }
+        &.picker-calendar-icon:before {
+            content: url('../images/trading_app/common/calendar.svg');
+        }
+        &.close-circle-icon:before {
+            content: url('../images/trading_app/common/close_circle.svg');
+        }
+    }
+    .datepicker-calendar {
+        .calendar {
+            opacity: 0;
+            transform: scale(1, 0);
+            transform-origin: top;
+            transition: all 0.25s;
+        }
+        &.show > div.calendar {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+    }
+}

@@ -67,7 +67,7 @@ module.exports = [
 
 
     // ==================== Section: "app_2" ====================
-    ['app_2/trade',                        'app_2/trade/trading',                       'full_width', 'Trusted by traders since 2000'],
+    ['app',                                'app_2/app',                                 null,         'Trusted by traders since 2000'],
 
 
     // ==================== Section: "static" ====================
@@ -124,6 +124,8 @@ module.exports = [
     ['metatrader/types-of-accounts',       'static/metatrader/types_of_accounts',       'default',     'Types of MetaTrader 5 accounts'],
 
     ['affiliate_disclaimer',               'static/japan/affiliates/popup',             null,          '',                                 'NOT-ja,en'],
+
+    ['style-guide',                        'static/new_layout/style_guide',             'full_width',  'Trusted by traders since 2000'],
 
 
     // ==================== Section: "landing_pages" ====================

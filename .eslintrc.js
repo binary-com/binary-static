@@ -22,6 +22,7 @@ module.exports = {
         'one-var'                           : ['error', { initialized: 'never', uninitialized: 'always' }],
         // react rules
         'import/no-extraneous-dependencies' : [0, { extensions: ['.jsx'] }],
+        'import/prefer-default-export'      : 0,
         'jsx-quotes'                        : ['error', 'prefer-single'],
         'react/jsx-closing-bracket-location': ['error', { selfClosing: 'line-aligned', nonEmpty: 'line-aligned' }],
         'react/jsx-closing-tag-location'    : 'error',
