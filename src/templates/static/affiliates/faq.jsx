@@ -1,6 +1,7 @@
 import React from 'react';
 import { Section } from '../get_started/common.jsx';
 import { List } from '../../_common/components/elements.jsx';
+import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const FAQ = () => (
     <div className='static_full affiliates_faq'>
@@ -104,8 +105,8 @@ const FAQ = () => (
                     <p>{it.L('Feel free to get in touch with us at [_1]. We’d love to hear from you.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
                 </Section>
 
-                <div className='border-bottom divider' />
-                <div className='gr-padding-30 center-text'>
+                <SeparatorLine className='gr-padding-30' />
+                <div className='gr-padding-30 gr-parent center-text'>
                     <a className='button-secondary' href={it.url_for('affiliate/signup')}>
                         <span>{it.L('Back to Affiliate Programme')}</span>
                     </a>
