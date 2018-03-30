@@ -103,6 +103,13 @@ const FAQ = () => (
                     <h3>{it.L('Where can I send my questions, comments, and suggestions?')}</h3>
                     <p>{it.L('Feel free to get in touch with us at [_1]. We’d love to hear from you.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
                 </Section>
+
+                <div className='border-bottom divider' />
+                <div className='gr-padding-30 center-text'>
+                    <a className='button-secondary' href={it.url_for('affiliate/signup')}>
+                        <span>{it.L('Back to Affiliate Programme')}</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
