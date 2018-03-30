@@ -1,9 +1,9 @@
 import React from 'react';
-import Dropdown from './form/dropdown.jsx';
-import Fieldset from './elements/fieldset.jsx';
-import InputField from './form/input_field.jsx';
+import Dropdown from '../../../components/form/dropdown.jsx';
+import Fieldset from '../../../components/form/fieldset.jsx';
+import InputField from '../../../components/form/input_field.jsx';
 import Client from '../../../../app/base/client';
-import { connect } from '../store/connect';
+import { connect } from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
 
 const basis_list = [

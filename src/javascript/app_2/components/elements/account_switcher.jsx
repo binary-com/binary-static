@@ -1,7 +1,7 @@
 import React from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import classNames from 'classnames';
-import { localize } from '../../../../../_common/localize';
+import { localize } from '../../../_common/localize';
 
 class AccountSwitcher extends React.PureComponent {
     constructor(props) {

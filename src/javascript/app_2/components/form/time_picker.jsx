@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import IScroll from 'iscroll';
-import { localize } from '../../../../../_common/localize';
+import { localize } from '../../../_common/localize';
 
 /* TODO:
       1. to change to 24 hours format

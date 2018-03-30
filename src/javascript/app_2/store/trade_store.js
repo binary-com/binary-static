@@ -1,12 +1,14 @@
+import moment from 'moment';
 import { observable, action } from 'mobx';
-import Client from '../../../../app/base/client';
-import ContractType from '../actions/helpers/contract_type';
-import actions from '../actions';
+import Client from '../../app/base/client';
+import ContractType from '../pages/trading/actions/helpers/contract_type';
+import actions from '../pages/trading/actions/index';
 
 export default class TradeStore {
     time_interval = undefined;
 
     @action.bound init() {
+        this.time_interval = setInterval(actions.initTime, 1000);
         actions.getCountryAsync();
 
         actions.getTicks(action('getTicks', (r) => { this.tick = r; }));
@@ -17,7 +19,6 @@ export default class TradeStore {
         ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
             this.contract_types_list = ContractType.getContractCategories();
         }));
-        this.time_interval = setInterval(actions.initTime, 1000);
     }
 
     @action.bound dispose() {
@@ -76,7 +77,7 @@ export default class TradeStore {
     @observable tick    = '';
 
     // TODO: retrieve from upper state
-    @observable server_time = undefined;
+    @observable server_time = moment.utc();
 
     // TODO: to remove dummy portfolio value
     @observable portfolios = [

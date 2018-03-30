@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { localize } from '../../../../../_common/localize';
+import { localize } from '../../../_common/localize';
 
 class PortfolioDrawer extends React.Component {
     constructor(props) {
@@ -39,7 +39,7 @@ class PortfolioDrawer extends React.Component {
 
     // TODO: calculate remaining time and render
     getRemainingTime = (epoch) => {
-        const time_left = parseInt(moment.unix(epoch) - window.time.unix());
+        const time_left = parseInt(moment.unix(epoch) - this.props.server_time.unix());
         return time_left;
     };
 

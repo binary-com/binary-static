@@ -1,5 +1,5 @@
 import React from 'react';
-import { localize } from '../../../../../_common/localize';
+import { localize } from '../../../_common/localize';
 
 class Popover extends React.Component {
     constructor(props) {

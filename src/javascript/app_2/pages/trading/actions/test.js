@@ -1,4 +1,5 @@
-import DAO from '../data/dao';
+import moment from 'moment';
+import DAO from '../../../data/dao';
 
 export const getCountryAsync = function* () {
     const r = yield DAO.getWebsiteStatus();
@@ -27,5 +28,5 @@ export const onChangeAmount = ({amount}) => {
 };
 
 export const initTime = () => ({
-    server_time: window.time,
+    server_time: window.time || moment.utc(),
 });
