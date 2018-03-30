@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 import Client from '../app/base/client';
 import { redirectToLogin } from '../app/base/login';
@@ -11,7 +11,6 @@ import Statement from './pages/statement/statement.jsx';
 
 const routes = [
     { path: '/',          component: TradeApp, exact: true },
-    { path: '/trade',     component: TradeApp },
     { path: '/statement', component: Statement, is_authenticated: true },
 ];
 
@@ -32,13 +31,20 @@ export const BinaryRoutes = () => routes.map((route, idx) => (
     <RouteWithSubRoutes key={idx} {...route} />
 ));
 
-export const BinaryLink = ({ to = '/', children, ...props }) => {
-    const path = /^\//.test(to) ? to : `/${to}`;
-    if (routes.find(route => route.path === path)) {
+export const BinaryLink = ({ to, children, ...props }) => {
+    const path = /^\//.test(to) ? to : `/${to || ''}`; // Default to '/'
+    const route = routes.find(r => r.path === path);
+    if (to && route) {
         return (
-            <Link to={path} {...props}>
+            <NavLink to={path} activeClassName='active' exact={route.exact} {...props}>
                 {children}
-            </Link>
+            </NavLink>
+        );
+    } else if (!to) {
+        return (
+            <a href='javascript:;' {...props}>
+                {children}
+            </a>
         );
     }
     // else

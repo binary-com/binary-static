@@ -38,7 +38,7 @@ const BinaryApp = () => (
                 <div id='trading_header'>
                     <TradingHeader
                         items={[
-                            { icon: 'trade',     text: localize('Trade'),     link_to: 'trade' },
+                            { icon: 'trade',     text: localize('Trade'),     link_to: '/' },
                             { icon: 'portfolio', text: localize('Portfolio') },
                             { icon: 'statement', text: localize('Statement'), link_to: 'statement' },
                             { icon: 'cashier',   text: localize('Cashier') },
