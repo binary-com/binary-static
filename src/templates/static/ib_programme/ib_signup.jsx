@@ -104,8 +104,8 @@ const Signup = () => (
                     }}
                 />
             </div>
-            <p>{it.L('*Represents the amount in base currency per round trade. Example: A buy of 1 lot of EUR/USD would pay EUR 6 on standard accounts.')}</p>
-            <p>{it.L('**Volatility Indices commission rates in account currency per round trade. Example: A buy of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account.')}</p>
+            <p className='mobile-text-small'>{it.L('*Represents the amount in base currency per round trade. Example: A buy of 1 lot of EUR/USD would pay EUR 6 on standard accounts.')}</p>
+            <p className='mobile-text-small'>{it.L('**Volatility Indices commission rates in account currency per round trade. Example: A buy of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account.')}</p>
             <div className='gr-padding-20 center-text'>
                 <a className='button' href={it.affiliate_signup_url}>
                     <span>{it.L('Apply Now')}</span>

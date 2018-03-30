@@ -68,6 +68,11 @@
             }
         }
     }
+    @media screen and (max-width: 480px) {
+        table, .mobile-text-small {
+            font-size: 0.9rem;
+        }
+    }
 }
 
 .steps {
