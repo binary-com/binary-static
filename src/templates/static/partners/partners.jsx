@@ -95,6 +95,13 @@ const Partners = () => (
                     text={it.L('Trade and manage multiple MT5 client accounts from a single interface.')}
                 />
 
+                <Column
+                    url={it.url_for('ib-programme/ib-signup')}
+                    image='mam'
+                    header={it.L('IB Programme')}
+                    text={it.L('text text')}
+                />
+
             </div>
         </div>
     </React.Fragment>
