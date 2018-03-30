@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table } from '../../_common/components/elements.jsx';
-import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 import { BoxRow, Box } from '../affiliates/signup.jsx';
 
 const Step = ({ header, text, circle_no }) => (
