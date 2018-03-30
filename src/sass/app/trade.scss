@@ -564,8 +564,10 @@
     .medium_width_input {
         width: 100px;
     }
-    #amount {
-        margin-top: -1px;
+    .select ~ #amount {
+        margin-left: 0.5rem;
+    }
+    span.currency {
         margin-left: 0.5rem;
     }
     #underlying {
