@@ -27,7 +27,7 @@ const FAQ = () => (
                     <h3>{it.L('How much do I get paid if I refer clients onto your MT5 platform?')}</h3>
                     <p>{it.L('You will earn a fixed payout based on the volume of individual trades purchased by each referred client. Please refer to our IB commission structure for Forex, metals, and Volatility Indices.')}</p>
 
-                    <h3>{it.L('Is there a fee to join the Binary.com IB Programme?')}</h3>
+                    <h3>{it.L('Is there a fee to join the [_1] IB Programme?', it.website_name)}</h3>
                     <p>{it.L('It’s completely free to join our IB programme. We’ve never charged a fee and we never will.')}</p>
                 </Section>
 
