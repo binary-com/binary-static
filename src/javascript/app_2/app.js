@@ -38,9 +38,9 @@ const BinaryApp = () => (
                 <div id='trading_header'>
                     <TradingHeader
                         items={[
-                            { icon: 'trade',     text: localize('Trade'),     link_to: '/trade' },
+                            { icon: 'trade',     text: localize('Trade'),     link_to: 'trade' },
                             { icon: 'portfolio', text: localize('Portfolio') },
-                            { icon: 'statement', text: localize('Statement'), link_to: '/statement' },
+                            { icon: 'statement', text: localize('Statement'), link_to: 'statement' },
                             { icon: 'cashier',   text: localize('Cashier') },
                         ]}
                     />
@@ -51,7 +51,7 @@ const BinaryApp = () => (
                 <footer id='trading_footer'>
                     <TradingFooter
                         items={[
-                            { icon: 'ic-statement',   text: localize('Statement'), link_to: '/statement' },
+                            { icon: 'ic-statement',   text: localize('Statement'), link_to: 'statement' },
                             { icon: 'ic-chat-bubble', text: localize('Notification') },
                             { icon: 'ic-lock-open',   text: localize('Lock') },
                         ]}

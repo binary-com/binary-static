@@ -35,7 +35,7 @@ const MenuDrawer = () => (
                     items={[
                         { text: localize('Portfolio') },
                         { text: localize('Profit Table') },
-                        { text: localize('Statement'), link_to: '/statement' },
+                        { text: localize('Statement'), link_to: 'statement' },
                     ]}
                 />
                 <DrawerItem text={localize('Cashier')} />
