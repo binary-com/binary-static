@@ -95,11 +95,12 @@ const Partners = () => (
                     text={it.L('Trade and manage multiple MT5 client accounts from a single interface.')}
                 />
 
+                {/* TODO: add custom IB programme icon */}
                 <Column
                     url={it.url_for('ib-programme/ib-signup')}
-                    image='mam'
+                    image='affiliate-program'
                     header={it.L('IB Programme')}
-                    text={it.L('text text')}
+                    text={it.L('Earn a commission on each client’s MT5 trading activity – paid out daily.')}
                 />
 
             </div>
