@@ -173,7 +173,8 @@ const FooterNormal = () => (
                             <FooterColumn
                                 header={it.L('Partner With Us')}
                                 items={[
-                                    { text: it.L('Affiliate Program'),       href: it.url_for('affiliate/signup') },
+                                    { text: it.L('Affiliate Programme'),     href: it.url_for('affiliate/signup') },
+                                    { text: it.L('IB Programme'),            href: it.url_for('ib-programme/ib-signup') },
                                     { text: it.L('API'),                     href: 'https://developers.binary.com',    target: '_blank' },
                                     { text: it.L('Binary Shop'),             href: 'https://shop.binary.com',          target: '_blank' },
                                     { text: it.L('Charitable Activities'),   href: it.url_for('charity') },

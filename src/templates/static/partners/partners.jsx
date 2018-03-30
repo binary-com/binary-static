@@ -36,7 +36,7 @@ const Partners = () => (
                 <Column
                     url={it.url_for('affiliate/signup')}
                     image='affiliate-program'
-                    header={it.L('Affiliate Program')}
+                    header={it.L('Affiliate Programme')}
                     text={it.L('Earn commissions by introducing new customers to [_1].', it.website_name)}
                 />
 
