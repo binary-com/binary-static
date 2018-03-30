@@ -6,7 +6,7 @@ const FAQ = () => (
     <div className='static_full affiliates faq-page'>
         <h1>{it.L('Affiliate FAQ')}</h1>
         <div className='gr-row'>
-            <div className='gr-3 gr-hide-m sidebar-container'>
+            <div className='gr-3 gr-12-m sidebar-container'>
                 <div className='sidebar'>
                     <List
                         id='sidebar-nav'

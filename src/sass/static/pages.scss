@@ -11,6 +11,15 @@
             margin-top: 3rem;
         }
     }
+    @media screen and (max-width: 480px) {
+        .sidebar-container {
+            margin-bottom: 2rem;
+
+            .sidebar a {
+                line-height: 2.5rem;
+            }
+        }
+    }
 }
 
 .signup-page {
