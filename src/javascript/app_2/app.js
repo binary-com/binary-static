@@ -7,7 +7,7 @@ import UIStore from './store/ui_store';
 import TradingHeader from './components/layout/header.jsx';
 import TradingFooter from './components/layout/footer.jsx';
 import { initActions } from './pages/trading/actions';
-import BinaryRoutes from './routes';
+import { BinaryRoutes } from './routes';
 import { localize } from '../_common/localize';
 
 const stores = {
@@ -39,9 +39,9 @@ const BinaryApp = () => (
                     <TradingHeader
                         items={[
                             { icon: 'trade',     text: localize('Trade'),     link_to: '/trade' },
-                            { icon: 'portfolio', text: localize('Portfolio'), link_to: '/portfolio' },
+                            { icon: 'portfolio', text: localize('Portfolio') },
                             { icon: 'statement', text: localize('Statement'), link_to: '/statement' },
-                            { icon: 'cashier',   text: localize('Cashier'),   link_to: '/cashier' },
+                            { icon: 'cashier',   text: localize('Cashier') },
                         ]}
                     />
                 </div>

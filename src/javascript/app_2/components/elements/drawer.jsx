@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 import Url from '../../../_common/url';
+import { BinaryLink } from '../../routes';
 
 class ToggleDrawer extends React.PureComponent {
     constructor(props) {
@@ -164,9 +164,9 @@ class DrawerItems extends React.PureComponent {
                     <div className='items-group'>
                         {this.props.items.map((item, idx) => (
                             <div className='drawer-item' key={idx}>
-                                <Link to={item.link_to || '' }>
+                                <BinaryLink to={item.link_to}>
                                     <span className={item.icon || undefined}>{item.text}</span>
-                                </Link>
+                                </BinaryLink>
                             </div>
                         ))}
                     </div>

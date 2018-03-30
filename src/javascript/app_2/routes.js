@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 import Client from '../app/base/client';
 import { redirectToLogin } from '../app/base/login';
@@ -28,8 +28,19 @@ const RouteWithSubRoutes = route => (
         />
 );
 
-const BinaryRoutes = () => routes.map((route, idx) => (
+export const BinaryRoutes = () => routes.map((route, idx) => (
     <RouteWithSubRoutes key={idx} {...route} />
 ));
 
-export default BinaryRoutes;
+export const BinaryLink = ({ to = '/', children, ...props }) => {
+    const path = /^\//.test(to) ? to : `/${to}`;
+    if (routes.find(route => route.path === path)) {
+        return (
+            <Link to={path} {...props}>
+                {children}
+            </Link>
+        );
+    }
+    // else
+    throw new Error(`Route not found: ${to}`);
+};

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Popover from '../elements/popover.jsx';
 import { connect } from '../../store/connect';
+import { BinaryLink } from '../../routes';
 
 const TogglePortfolioDrawer = ({...props}) => (
     <Popover
@@ -84,9 +84,9 @@ class TradingFooter extends React.Component {
                                 key={idx}
                                 subtitle={item.text}
                             >
-                                <Link key={idx} to={item.link_to || ''} className={item.icon}>
+                                <BinaryLink key={idx} to={item.link_to} className={item.icon}>
                                     <span title={item.text} />
-                                </Link>
+                                </BinaryLink>
                             </Popover>
                         ))}
                         <ToggleFullScreen />
