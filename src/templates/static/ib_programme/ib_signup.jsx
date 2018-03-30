@@ -122,7 +122,7 @@ const Signup = () => (
                         <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/general-faq-icon.svg')} alt='general-faq-icon' />
                         <p><strong>{it.L('General')}</strong></p>
                     </a>
-                    <a href={`${it.url_for('ib-programme/ib-faq')}#account-management-and-tracking`} className='gr-4 gr-6-m center-text faq-box'>
+                    <a href={`${it.url_for('ib-programme/ib-faq')}#account-management`} className='gr-4 gr-6-m center-text faq-box'>
                         <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/account-icon.svg')} alt='account-icon' />
                         <p><strong>{it.L('Account management')}</strong></p>
                     </a>
