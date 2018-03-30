@@ -3,7 +3,7 @@ import { Section } from '../get_started/common.jsx';
 import { List } from '../../_common/components/elements.jsx';
 
 const FAQ = () => (
-    <div className='static_full affiliates_faq'>
+    <div className='static_full ib-programme faq-page'>
         <h1>{it.L('Affiliate FAQ')}</h1>
         <div className='gr-row'>
             <div className='gr-3 gr-hide-m sidebar-container'>

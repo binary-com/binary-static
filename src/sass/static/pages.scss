@@ -1,4 +1,59 @@
 // styling for static pages that are too short or simple to need their own styling page
+.faq-page {
+    h3 {
+        color: $COLOR_ORANGE;
+
+        &:not(:first-of-type) {
+            margin-top: 3rem;
+        }
+    }
+}
+
+.signup-page {
+    h2 {
+        margin-top: 30px;
+    }
+    #commission_tabs {
+        margin-bottom: 0 !important;
+    }
+    .margin-bottom-50 {
+        margin-bottom: 50px;
+    }
+    .fixed-height-img {
+        height: 50px;
+    }
+    .faq-box {
+        padding: 1rem;
+    }
+    .box-row {
+        border-bottom: 1px solid $COLOR_GRAY;
+
+        .box {
+            padding: 2rem;
+        }
+        &-top {
+            .box {
+                padding-top: 1rem;
+            }
+        }
+        &-bottom {
+            border: none;
+
+            .box {
+                padding-bottom: 0;
+            }
+        }
+        .box:not(:last-child) {
+            border-right: 1px solid $COLOR_GRAY;
+        }
+        @media screen and (max-width: 480px) {
+            &, .box {
+                border: none;
+            }
+        }
+    }
+}
+
 .steps {
     @media (max-width: 480px) {
         flex-direction: column;

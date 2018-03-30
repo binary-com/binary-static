@@ -28,7 +28,7 @@ const Step = ({ header, text, circle_no }) => (
 );
 
 const Signup = () => (
-    <div className='static_full affiliates'>
+    <div className='static_full affiliates signup-page'>
         <div className='container'>
             <h1>{it.L('[_1] Affiliate Programme', it.website_name)}</h1>
             <p>
