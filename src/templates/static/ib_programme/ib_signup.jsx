@@ -114,26 +114,24 @@ const Signup = () => (
             </div>
         </div>
 
-        <div className='container gr-padding-20'>
-            <h2 className='center-text'>{it.L('FAQ')}</h2>
+        <div className='fill-bg-color'>
+            <div className='container gr-padding-20'>
+                <h2 className='center-text'>{it.L('FAQ')}</h2>
 
-            <div className='gr-row'>
-                <a href={`${it.url_for('affiliate/faq')}#general`} className='gr-3 gr-6-m center-text faq-box'>
-                    <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/general-faq-icon.svg')} alt='general-faq-icon' />
-                    <p><strong>{it.L('General')}</strong></p>
-                </a>
-                <a href={`${it.url_for('affiliate/faq')}#account-management-and-tracking`} className='gr-3 gr-6-m center-text faq-box'>
-                    <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/account-icon.svg')} alt='account-icon' />
-                    <p><strong>{it.L('Account management and tracking')}</strong></p>
-                </a>
-                <a href={`${it.url_for('affiliate/faq')}#marketing-and-promotions`} className='gr-3 gr-6-m center-text faq-box'>
-                    <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/marketing-icon.svg')} alt='marketing-icon' />
-                    <p><strong>{it.L('Marketing and promotions')}</strong></p>
-                </a>
-                <a href={`${it.url_for('affiliate/faq')}#support`} className='gr-3 gr-6-m center-text faq-box'>
-                    <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/support-faq-icon.svg')} alt='support-faq-icon' />
-                    <p><strong>{it.L('Support')}</strong></p>
-                </a>
+                <div className='gr-row'>
+                    <a href={`${it.url_for('ib-programme/ib-faq')}#general`} className='gr-4 gr-6-m center-text faq-box'>
+                        <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/general-faq-icon.svg')} alt='general-faq-icon' />
+                        <p><strong>{it.L('General')}</strong></p>
+                    </a>
+                    <a href={`${it.url_for('ib-programme/ib-faq')}#account-management-and-tracking`} className='gr-4 gr-6-m center-text faq-box'>
+                        <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/account-icon.svg')} alt='account-icon' />
+                        <p><strong>{it.L('Account management')}</strong></p>
+                    </a>
+                    <a href={`${it.url_for('ib-programme/ib-faq')}#marketing-and-promotions`} className='gr-4 gr-6-m center-text faq-box'>
+                        <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/marketing-icon.svg')} alt='marketing-icon' />
+                        <p><strong>{it.L('Marketing and promotions')}</strong></p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
