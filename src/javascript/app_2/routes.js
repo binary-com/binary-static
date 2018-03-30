@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import Client from '../app/base/client';
 import { redirectToLogin } from '../app/base/login';
+import { localize } from '../_common/localize';
 
 import TradeApp  from './pages/trading/trade_app.jsx';
 import Statement from './pages/statement/statement.jsx';
@@ -16,7 +17,7 @@ const routes = [
 
 const RouteWithSubRoutes = route => (
     (route.is_authenticated && !Client.isLoggedIn()) ?
-        <a href='javascript:;' onClick={redirectToLogin}>Please login to view this page.</a>
+        <a href='javascript:;' onClick={redirectToLogin}>{localize('Please login to view this page.')}</a>
         :
         <Route
             exact={route.exact}
