@@ -16,7 +16,7 @@ const routes = [
 ];
 
 const RouteWithSubRoutes = route => (
-    (route.is_authenticated && !Client.isLoggedIn()) ?
+    (route.is_authenticated && !Client.isLoggedIn()) ? // TODO: update the message style
         <a href='javascript:;' onClick={redirectToLogin}>{localize('Please login to view this page.')}</a>
         :
         <Route
