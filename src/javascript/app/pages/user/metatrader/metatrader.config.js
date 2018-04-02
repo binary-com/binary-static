@@ -53,9 +53,9 @@ const MetaTraderConfig = (() => {
                     }
                 })
             ),
-            pre_submit: () => (
+            pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
-                    if (State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
+                    if (!accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
                             id     : 'confirm_new_account',
                             message: ['Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?'],
