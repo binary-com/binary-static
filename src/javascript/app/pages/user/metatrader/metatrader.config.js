@@ -60,15 +60,13 @@ const MetaTraderConfig = (() => {
                             id     : 'confirm_new_account',
                             message: ['Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?'],
                         }).then((is_ok) => {
-                            if (is_ok) {
-                                resolve();
-                            } else {
+                            if (!is_ok) {
                                 BinaryPjax.load(Client.defaultRedirectUrl());
-                                resolve(false);
                             }
+                            resolve(is_ok);
                         });
                     } else {
-                        resolve();
+                        resolve(true);
                     }
                 })
             ),
