@@ -12,6 +12,7 @@ const getElementById      = require('../../_common/common_functions').getElement
 const localize            = require('../../_common/localize').localize;
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
+const ThirdPartyLinks     = require('../../_common/third_party_links');
 const urlFor              = require('../../_common/url').urlFor;
 const createElement       = require('../../_common/utility').createElement;
 
@@ -40,22 +41,7 @@ const BinaryLoader = (() => {
         container.addEventListener('binarypjax:before', beforeContentChange);
         container.addEventListener('binarypjax:after',  afterContentChange);
         BinaryPjax.init(container, '#content');
-
-        function isThirdPartyLink(href) {
-            const destination = new URL(href);
-            return !/^.*\.binary\.com$/.test(destination.host)
-                && window.location.host !== destination.host;
-        }
-
-        document.body.addEventListener('click', (e) => {
-            if (!e.target) return;
-            const link_el = e.target.closest('a');
-            if (link_el && isThirdPartyLink(link_el)) {
-                // TODO: replace with custom popup
-                const should_proceed = window.confirm(localize('You will be redirected to a third-party website which is not owned by Binary.com. Click OK to proceed.'));
-                if (!should_proceed) e.preventDefault();
-            }
-        });
+        ThirdPartyLinks.init();
     };
 
     const beforeContentChange = () => {
