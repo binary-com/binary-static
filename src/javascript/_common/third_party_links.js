@@ -19,7 +19,7 @@ const ThirdPartyLinks = (() => {
         if (!e.target) return;
         const link_el = e.target.closest('a');
         if (!link_el) return;
-        // check that we are not inside third_party_redirect_dialog
+
         const dialog = document.querySelector('#third_party_redirect_dialog');
         if (dialog && dialog.contains(link_el)) return;
 
@@ -29,8 +29,7 @@ const ThirdPartyLinks = (() => {
                 id: 'third_party_redirect_dialog',
                 message: 'You will be redirected to a third-party website which is not owned by Binary.com. Click OK to proceed.',
             }).then((should_proceed) => {
-                console.log(should_proceed);
-                // manually open the link
+                if (should_proceed) window.open(link_el.href, '_blank');
             });
         }
     }
