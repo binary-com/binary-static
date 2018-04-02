@@ -41,16 +41,19 @@ const BinaryLoader = (() => {
         container.addEventListener('binarypjax:after',  afterContentChange);
         BinaryPjax.init(container, '#content');
 
+        function isThirdPartyLink(href) {
+            const destination = new URL(href);
+            return !/^.*\.binary\.com$/.test(destination.host)
+                && window.location.host !== destination.host;
+        }
+
         document.body.addEventListener('click', (e) => {
             if (!e.target) return;
             const link_el = e.target.closest('a');
-            if (link_el) {
-                const destination = new URL(link_el.href);
-                // TODO: check for subdomains
-                if (destination.host !== window.location.host) {
-                    const should_proceed = window.confirm(localize('You will be redirected to a third-party website which is not owned by Binary.com. Click OK to proceed.'));
-                    if (!should_proceed) e.preventDefault();
-                }
+            if (link_el && isThirdPartyLink(link_el)) {
+                // TODO: replace with custom popup
+                const should_proceed = window.confirm(localize('You will be redirected to a third-party website which is not owned by Binary.com. Click OK to proceed.'));
+                if (!should_proceed) e.preventDefault();
             }
         });
     };
