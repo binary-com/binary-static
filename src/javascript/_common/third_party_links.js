@@ -1,4 +1,3 @@
-const localize         = require('./localize').localize;
 const State            = require('./storage').State;
 const Client           = require('../app/base/client');
 const BinarySocket     = require('../app/base/socket');
@@ -23,26 +22,27 @@ const ThirdPartyLinks = (() => {
         const dialog = document.querySelector('#third_party_redirect_dialog');
         if (dialog && dialog.contains(link_el)) return;
 
-        if (isThirdPartyLink(link_el)) {
+        if (isThirdPartyLink(link_el.href)) {
             e.preventDefault();
             Dialog.confirm({
-                id: 'third_party_redirect_dialog',
+                id     : 'third_party_redirect_dialog',
                 message: 'You will be redirected to a third-party website which is not owned by Binary.com. Click OK to proceed.',
             }).then((should_proceed) => {
                 if (should_proceed) window.open(link_el.href, '_blank');
             });
         }
-    }
+    };
 
     const isThirdPartyLink = (href) => {
         const destination = new URL(href);
         return !!destination.host
-            && !/^.*\.binary\.com$/.test(destination.host) // binary subdomain
+            && !/^.*\.binary\.com$/.test(destination.host) // destination host is not binary subdomain
             && window.location.host !== destination.host;
     };
 
     return {
         init,
+        isThirdPartyLink,
     };
 })();
 
