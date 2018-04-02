@@ -203,7 +203,7 @@ const Accounts = (() => {
 
     const populateReq = () => {
         const get_settings = State.getResponse('get_settings');
-        const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
+        const dob          = moment.utc(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
         const req          = [
             { request_field: 'new_account_real',       value: 1 },
             { request_field: 'date_of_birth',          value: dob },
