@@ -28,7 +28,7 @@ const Step = ({ header, text, circle_no }) => (
 );
 
 const Signup = () => (
-    <div className='static_full affiliates signup-page'>
+    <div className='static_full affiliates-signup-page'>
         <div className='container'>
             <h1>{it.L('[_1] Affiliate Programme', it.website_name)}</h1>
             <p>
@@ -40,7 +40,6 @@ const Signup = () => (
                 <div className='steps'>
                     <Step circle_no='1' header={it.L('Sign up')}                       text={it.L('Getting started is free and easy – just <a href=\'[_1]\'>fill out the application form</a> and wait for our approval.', it.affiliate_signup_url)} />
                     <Step circle_no='2' header={it.L('Promote [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise [_1] to your audience.', it.website_name)} />
-                    <Step circle_no='3' header={it.L('Earn')}                          text={it.L('Choose from two types of  commission plans when your referred clients trade binary options on our platform.')} />
                     <Step circle_no='3' header={it.L('Earn')}                          text={it.L('Choose from two types of commission plans when your referred clients trade binary options on our platform.')} />
                 </div>
             </div>

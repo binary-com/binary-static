@@ -40,10 +40,9 @@ const Partners = () => (
                     text={it.L('Earn commissions by introducing new customers to [_1].', it.website_name)}
                 />
 
-                {/* TODO: add custom IB programme icon */}
                 <Column
                     url={it.url_for('ib-programme/ib-signup')}
-                    image='affiliate-program'
+                    image='ib'
                     header={it.L('IB Programme')}
                     text={it.L('Earn a commission on each client’s MT5 trading activity – paid out daily.')}
                 />

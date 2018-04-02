@@ -4,7 +4,7 @@ import { List } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const FAQ = () => (
-    <div className='static_full ib-programme faq-page'>
+    <div className='static_full ib-faq-page'>
         <h1>{it.L('IB programme FAQ')}</h1>
         <div className='gr-row'>
             <div className='gr-3 gr-12-m sidebar-container'>

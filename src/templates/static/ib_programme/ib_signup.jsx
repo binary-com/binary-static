@@ -14,7 +14,7 @@ const Step = ({ header, text, circle_no }) => (
 );
 
 const Signup = () => (
-    <div className='static_full ib-programme signup-page'>
+    <div className='static_full ib-signup-page'>
         <div className='container'>
             <h1>{it.L('[_1] Introducing Broker (IB) Programme', it.website_name)}</h1>
             <p>
