@@ -1,6 +1,8 @@
+const BinaryPjax   = require('../../../base/binary_pjax');
 const Client       = require('../../../base/client');
 const GTM          = require('../../../base/gtm');
 const BinarySocket = require('../../../base/socket');
+const Dialog       = require('../../../common/attach_dom/dialog');
 const Currency     = require('../../../common/currency');
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
@@ -45,6 +47,25 @@ const MetaTraderConfig = (() => {
                                 is_ok = false;
                             }
                             resolve(is_ok ? '' : $message.html());
+                        });
+                    } else {
+                        resolve();
+                    }
+                })
+            ),
+            pre_submit: () => (
+                new Promise((resolve) => {
+                    if (State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
+                        Dialog.confirm({
+                            id     : 'confirm_new_account',
+                            message: ['Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?'],
+                        }).then((is_ok) => {
+                            if (is_ok) {
+                                resolve();
+                            } else {
+                                BinaryPjax.load(Client.defaultRedirectUrl());
+                                resolve(false);
+                            }
                         });
                     } else {
                         resolve();
