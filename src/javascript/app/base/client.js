@@ -2,10 +2,10 @@ const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const BinarySocket       = require('./socket');
 const SocketCache        = require('./socket_cache');
-const jpClient           = require('../common/country_base').jpClient;
 const isCryptocurrency   = require('../common/currency').isCryptocurrency;
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 const getElementById     = require('../../_common/common_functions').getElementById;
+const urlLang            = require('../../_common/language').urlLang;
 const LocalStore         = require('../../_common/storage').LocalStore;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
@@ -20,7 +20,7 @@ const Client = (() => {
 
     const init = () => {
         current_loginid = LocalStore.get('active_loginid');
-        client_object = getAllAccountsObject();
+        client_object   = getAllAccountsObject();
     };
 
     const isLoggedIn = () => (
@@ -66,7 +66,7 @@ const Client = (() => {
         if (key === 'loginid') {
             value = loginid || LocalStore.get('active_loginid');
         } else {
-            const current_client = client_object[loginid] || getAllAccountsObject()[loginid] || {};
+            const current_client = client_object[loginid] || getAllAccountsObject()[loginid] || client_object;
 
             value = key ? current_client[key] : current_client;
         }
@@ -184,8 +184,8 @@ const Client = (() => {
         window.location.href = options.redirect_url || defaultRedirectUrl();
     };
 
-    const shouldShowJP = (el, is_jp) => (
-        is_jp ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
+    const shouldShowJP = (el) => (
+        get('is_jp') ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
     );
 
     const activateByClientType = (section_id) => {
@@ -200,11 +200,8 @@ const Client = (() => {
                 const client_logged_in = getElementById('client-logged-in');
                 client_logged_in.classList.add('gr-centered');
 
-                // we need to call jpClient after authorize response so we know client's residence
-                const is_jp = jpClient();
-
                 applyToAllElements('.client_logged_in', (el) => {
-                    if (shouldShowJP(el, is_jp)) {
+                    if (shouldShowJP(el)) {
                         el.setVisibility(1);
                     }
                 });
@@ -215,7 +212,7 @@ const Client = (() => {
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
                     applyToAllElements('.client_real', (el) => {
-                        if (shouldShowJP(el, is_jp)) {
+                        if (shouldShowJP(el)) {
                             el.setVisibility(1);
                         }
                     }, '', el_section);
@@ -224,9 +221,8 @@ const Client = (() => {
                 }
             });
         } else {
-            const is_jp = jpClient();
             applyToAllElements('.client_logged_out', (el) => {
-                if (shouldShowJP(el, is_jp)) {
+                if (shouldShowJP(el)) {
                     el.setVisibility(1);
                 }
             }, '', el_section);
@@ -407,7 +403,11 @@ const Client = (() => {
 
     };
 
-    const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');
+    const defaultRedirectUrl = () => urlFor(get('is_jp') ? 'multi_barriers_trading' : 'trading');
+
+    const setJPFlag = () => {
+        set('is_jp', urlLang() === 'ja' || get('residence') === 'jp');
+    };
 
     return {
         init,
@@ -439,6 +439,7 @@ const Client = (() => {
         hasCostaricaAccount,
         canRequestProfessional,
         defaultRedirectUrl,
+        setJPFlag,
     };
 })();
 
