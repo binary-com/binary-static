@@ -42,9 +42,10 @@ const BinaryLoader = (() => {
         BinaryPjax.init(container, '#content');
 
         document.body.addEventListener('click', (e) => {
-            // TODO: target can be A tag child
-            if (e.target && e.target.tagName === 'A') {
-                const destination = new URL(e.target.href);
+            if (!e.target) return;
+            const link_el = e.target.closest('a');
+            if (link_el) {
+                const destination = new URL(link_el.href);
                 // TODO: check for subdomains
                 if (destination.host !== window.location.host) {
                     const should_proceed = window.confirm(localize('You will be redirected to a third-party website which is not owned by Binary.com. Click OK to proceed.'));
