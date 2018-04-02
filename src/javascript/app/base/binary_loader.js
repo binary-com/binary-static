@@ -40,6 +40,18 @@ const BinaryLoader = (() => {
         container.addEventListener('binarypjax:before', beforeContentChange);
         container.addEventListener('binarypjax:after',  afterContentChange);
         BinaryPjax.init(container, '#content');
+
+        document.body.addEventListener('click', (e) => {
+            // TODO: target can be A tag child
+            if (e.target && e.target.tagName === 'A') {
+                const destination = new URL(e.target.href);
+                // TODO: check for subdomains
+                if (destination.host !== window.location.host) {
+                    const should_proceed = window.confirm(localize('You will be redirected to a third-party website which is not owned by Binary.com. Click OK to proceed.'));
+                    if (!should_proceed) e.preventDefault();
+                }
+            }
+        });
     };
 
     const beforeContentChange = () => {
