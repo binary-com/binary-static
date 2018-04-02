@@ -20,11 +20,13 @@ const SelfExclusion = (() => {
         set_30day_turnover,
         currency;
 
-    const form_id          = '#frm_self_exclusion';
-    const timeout_date_id  = '#timeout_until_date';
-    const timeout_time_id  = '#timeout_until_time';
-    const exclude_until_id = '#exclude_until';
-    const error_class      = 'errorfield';
+    const form_id               = '#frm_self_exclusion';
+    const timeout_date_id       = '#timeout_until_date';
+    const timeout_time_id       = '#timeout_until_time';
+    const exclude_until_id      = '#exclude_until';
+    const max_30day_turnover_id = '#max_30day_turnover';
+    const error_class           = 'errorfield';
+    const TURNOVER_LIMIT        = 999999999999999; // 15 digits
 
     const onLoad = () => {
         $form = $(form_id);
@@ -75,12 +77,31 @@ const SelfExclusion = (() => {
                         $form.find(timeout_time_id).val(time);
                         return;
                     }
+
+                    if (key === 'max_30day_turnover') {
+                        const should_be_checked = (parseInt(value) === TURNOVER_LIMIT);
+                        $('#chk_no_limit').prop('checked', should_be_checked);
+                        setMax30DayTurnoverLimit(should_be_checked);
+                    }
+
                     $form.find(`#${key}`).val(value);
                 });
+
+                $('#chk_no_limit').on('change', function() {
+                    setMax30DayTurnoverLimit($(this).is(':checked'));
+                });
+
                 bindValidation();
                 if (scroll) scrollToHashSection();
             });
         });
+    };
+
+    const setMax30DayTurnoverLimit = (is_checked) => {
+        $(max_30day_turnover_id)[is_checked ? 'addClass' : 'removeClass']('hide');
+        $(max_30day_turnover_id)
+            .attr('disabled', is_checked)
+            .val(is_checked ? TURNOVER_LIMIT : '');
     };
 
     const bindValidation = () => {
