@@ -26,6 +26,7 @@ const ThirdPartyLinks = (() => {
             e.preventDefault();
             Dialog.confirm({
                 id     : 'third_party_redirect_dialog',
+                // TODO: pass array of sentences once negar/show_malta_popup_mt card is merged
                 message: 'You will be redirected to a third-party website which is not owned by Binary.com. Click OK to proceed.',
             }).then((should_proceed) => {
                 if (should_proceed) window.open(link_el.href, '_blank');
