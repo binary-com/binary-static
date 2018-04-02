@@ -1,4 +1,5 @@
 const State            = require('./storage').State;
+const getPropertyValue = require('./utility').getPropertyValue;
 const Client           = require('../app/base/client');
 const BinarySocket     = require('../app/base/socket');
 const Dialog           = require('../app/common/attach_dom/dialog');
@@ -6,8 +7,8 @@ const Dialog           = require('../app/common/attach_dom/dialog');
 const ThirdPartyLinks = (() => {
     const init = () => {
         if (Client.isLoggedIn()) {
-            BinarySocket.wait('landing_company').then(() => {
-                if (State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest') {
+            BinarySocket.wait('landing_company').then((response) => {
+                if (getPropertyValue(response, ['landing_company', 'financial_company', 'shortcode'])) {
                     document.body.addEventListener('click', clickHandler);
                 }
             });
