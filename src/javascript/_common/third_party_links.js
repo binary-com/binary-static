@@ -37,7 +37,7 @@ const ThirdPartyLinks = (() => {
     const isThirdPartyLink = (href) => {
         const destination = new URL(href);
         return !!destination.host
-            && !/^.*\.binary\.com$/.test(destination.host)
+            && !/^.*\.binary\.com$/.test(destination.host) // binary subdomain
             && window.location.host !== destination.host;
     };
 
