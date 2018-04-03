@@ -7,8 +7,8 @@ const Column = ({
     header,
     text,
 }) => (
-    <div className='gr-4 gr-12-m gr-no-gutter'>
-        <div className='gr-6 gr-padding-10'>
+    <div className='gr-4 gr-12-m gr-no-gutter center-text-m'>
+        <div className='gr-6 gr-padding-10 gr-centered-m'>
             { url &&
                 <a href={`${url}`} rel={/^http/.test(url) ? 'noopener noreferrer' : undefined} target={target || undefined}>
                     <img className='responsive' src={it.url_for(`images/pages/partners/${image}.svg`)} />
