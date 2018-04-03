@@ -1,21 +1,11 @@
 import React from 'react';
 import { BoxRow, Box } from '../../_common/components/box_row.jsx';
 import { Table } from '../../_common/components/elements.jsx';
+import Step from '../../_common/components/step.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
 const AffiliateBox = ({ image, ...props }) => (
     <Box img_src={it.url_for(`images/pages/affiliates/${image}.svg`)} {...props}></Box>
-);
-
-const Step = ({ header, text, circle_no }) => (
-    <div className='step'>
-        <div className='border-bottom' />
-        <div className='circle'>{ circle_no }</div>
-        <div className='gr-padding-20 gr-gutter center-text'>
-            <div className='gr-padding-20 gr-child'><strong>{header}</strong></div>
-            <p className='no-margin gr-padding-10'>{text}</p>
-        </div>
-    </div>
 );
 
 const Signup = () => (
