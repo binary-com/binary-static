@@ -6,6 +6,12 @@
     &__box {
         padding: 2rem;
     }
+    &__box:not(:last-child) {
+        border-right: 1px solid $COLOR_GRAY;
+    }
+    &__img {
+        height: 50px;
+    }
     &--top {
         &__box {
             padding-top: 1rem;
@@ -17,9 +23,6 @@
         &__box {
             padding-bottom: 0;
         }
-    }
-    &__box:not(:last-child) {
-        border-right: 1px solid $COLOR_GRAY;
     }
     &--no-border, &--no-border &__box {
         border: none;

@@ -10,7 +10,7 @@ export const BoxRow = ({ children, top_row, bottom_row, no_border }) => {
     if (top_row)    class_list.push('box-row--top');
     if (bottom_row) class_list.push('box-row--bottom');
     if (no_border)  class_list.push('box-row--no-border');
-    render (
+    return (
         <div className={class_list.join(' ')}>
             {React.Children.map(children, child => 
                 React.cloneElement(child, { class_name: box_class_name }))}
@@ -20,7 +20,7 @@ export const BoxRow = ({ children, top_row, bottom_row, no_border }) => {
 
 export const Box = ({ img_src, title, text, class_name }) => (
     <div className={`box-row__box gr-12-m center-text gr-padding-30 ${class_name}`}>
-        {!!img_src && <img className='gr-centered box-row__img' src={image_src} alt={title} />}
+        {!!img_src && <img className='gr-centered box-row__img' src={img_src} alt={title} />}
         {!!title   && <p><strong>{title}</strong></p>}
         {!!text    && <p>{text}</p>}
     </div>
