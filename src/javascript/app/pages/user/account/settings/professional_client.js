@@ -37,8 +37,9 @@ const professionalClient = (() => {
         const $chk_professional = $container.find('#chk_professional');
         const $info             = $container.find('#professional_info');
         const $popup_contents   = $container.find('#popup');
+        const $error            = $('#form_message');
+        const $frm_trading_exp  = $('#trading_experience_form');
         const popup_selector    = '#professional_popup';
-        const $error             = $('#form_message');
 
         $container.find('#professional_info_toggle').off('click').on('click', function() {
             $(this).toggleClass('open');
@@ -50,16 +51,17 @@ const professionalClient = (() => {
             if ($chk_professional.is(':checked') && !$(popup_selector).length) {
                 $('body').append($('<div/>', { id: 'professional_popup', class: 'lightbox' }).append($popup_contents.clone().setVisibility(1)));
 
-                $(popup_selector).find('#btn_accept, #btn_decline').off('click').on('click dblclick', function() {
+                const $popup = $(popup_selector);
+                $popup.find('#btn_accept, #btn_decline').off('click').on('click dblclick', function() {
                     if ($(this).attr('data-value') === 'decline') {
                         $chk_professional.prop('checked', false);
-                        $('#trading_experience_form').setVisibility(1);
+                        $frm_trading_exp.setVisibility(1);
                     }
-                    $('#professional_popup').remove();
+                    $popup.remove();
                 });
-                $('#trading_experience_form').setVisibility(0);
+                $frm_trading_exp.setVisibility(0);
             } else {
-                $('#trading_experience_form').setVisibility(1);
+                $frm_trading_exp.setVisibility(1);
             }
         });
 
