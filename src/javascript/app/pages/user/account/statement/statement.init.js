@@ -81,7 +81,7 @@ const StatementInit = (() => {
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             } else {
                 $('#util_row').setVisibility(1);
-                if (getLanguage() === 'JA' && Client.get('residence') !== 'jp') {
+                if (getLanguage() === 'JA' && Client.get('residence') === 'jp') {
                     $('#download_csv')
                         .setVisibility(1)
                         .find('a')
