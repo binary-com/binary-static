@@ -1,5 +1,36 @@
 // styling for static pages that are too short or simple to need their own styling page
 
+.box-row {
+    border-bottom: 1px solid $COLOR_GRAY;
+
+    &__box {
+        padding: 2rem;
+    }
+    &--top {
+        &__box {
+            padding-top: 1rem;
+        }
+    }
+    &--bottom {
+        border: none;
+
+        &__box {
+            padding-bottom: 0;
+        }
+    }
+    &__box:not(:last-child) {
+        border-right: 1px solid $COLOR_GRAY;
+    }
+    &--no-border, &--no-border &__box {
+        border: none;
+    }
+    @media screen and (max-width: 480px) {
+        &, &__box {
+            border: none;
+        }
+    }
+}
+
 .steps {
     @media (max-width: 480px) {
         flex-direction: column;
