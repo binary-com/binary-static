@@ -1,27 +1,15 @@
 import React from 'react';
 import { BoxRow, Box } from '../../_common/components/box_row.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
+import Step from '../../_common/components/step.jsx';
 
 const MAMBox = ({ image, ...props }) => (
-    <Box img_src={it.url_for(`images/pages/mam/${image}.svg`)} {...props}></Box>
+    <Box img_src={it.url_for(`images/pages/mam/${image}.svg`)} {...props} />
 );
 
-const Step = ({ image, circle_no, header, text }) => {
-    const circle = circle_no ? <div className='circle'>{circle_no}</div> : '';
-    return (
-        <div className='step'>
-            <div className='border-bottom' />
-            {circle}
-            <div className='gr-padding-20 gr-gutter'>
-                <div className='center-text'>
-                    <img className='gr-4 gr-8-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)} />
-                </div>
-                <div className='gr-padding-20 gr-child'><strong>{header}</strong></div>
-                <p className='no-margin gr-padding-10'>{text}</p>
-            </div>
-        </div>
-    );
-};
+const MAMStep = ({ image, ...props }) => (
+    <Step img_src={it.url_for(`images/pages/mam/${image}.svg`)} {...props} />
+);
 
 const MultipleAccountsManager = () => (
     <React.Fragment>
@@ -92,22 +80,22 @@ const MultipleAccountsManager = () => (
         <div className='container'>
             <h2 className='center-text'>{it.L('How it works')}</h2>
 
-            <SeparatorLine invisible className='gr-parent gr-padding-30' />
+            <SeparatorLine invisible show_mobile className='gr-parent gr-padding-30' />
 
             <div className='steps'>
-                <Step
+                <MAMStep
                     image='talktous'
                     header={it.L('Talk to us')}
                     text={it.L('Learn how to set up and authenticate your master account, link sub accounts, and more.')}
                     circle_no='1'
                 />
-                <Step
+                <MAMStep
                     image='download'
                     header={it.L('Download MAM')}
                     text={it.L('Download the MAM application after setup is completed. Log in with your master account credentials.')}
                     circle_no='2'
                 />
-                <Step
+                <MAMStep
                     image='monitor'
                     header={it.L('Manage sub accounts')}
                     text={it.L('Monitor and manage your client list, set allocations and exclusions for individual sub accounts, and more.')}

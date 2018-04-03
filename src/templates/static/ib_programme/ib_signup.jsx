@@ -4,7 +4,7 @@ import { Table } from '../../_common/components/elements.jsx';
 import Step from '../../_common/components/step.jsx';
 
 const IBBox = ({ image, ...props }) => (
-    <Box img_src={it.url_for(`images/pages/affiliates/${image}.svg`)} {...props}></Box>
+    <Box img_src={it.url_for(`images/pages/affiliates/${image}.svg`)} {...props} />
 );
 
 const Signup = () => (

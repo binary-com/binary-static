@@ -5,7 +5,7 @@ import Step from '../../_common/components/step.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
 const AffiliateBox = ({ image, ...props }) => (
-    <Box img_src={it.url_for(`images/pages/affiliates/${image}.svg`)} {...props}></Box>
+    <Box img_src={it.url_for(`images/pages/affiliates/${image}.svg`)} {...props} />
 );
 
 const Signup = () => (
