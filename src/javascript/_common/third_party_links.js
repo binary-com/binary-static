@@ -28,7 +28,11 @@ const ThirdPartyLinks = (() => {
                 id     : 'third_party_redirect_dialog',
                 message: ['You will be redirected to a third-party website which is not owned by Binary.com.', 'Click OK to proceed.'],
             }).then((should_proceed) => {
-                if (should_proceed) window.open(el_link.href, '_blank');
+                if (should_proceed) {
+                    const link = window.open();
+                    link.opener = null;
+                    link.location = el_link.href;
+                }
             });
         }
     };
