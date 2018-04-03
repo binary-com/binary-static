@@ -1,6 +1,6 @@
 import React from 'react';
+import { BoxRow, Box } from '../../_common/components/box_row.jsx';
 import { Table } from '../../_common/components/elements.jsx';
-import { BoxRow, Box } from '../affiliates/signup.jsx';
 
 const Step = ({ header, text, circle_no }) => (
     <div className='step'>
@@ -11,6 +11,10 @@ const Step = ({ header, text, circle_no }) => (
             <p className='no-margin gr-padding-10'>{text}</p>
         </div>
     </div>
+);
+
+const IBBox = ({ image, ...props }) => (
+    <Box img_src={it.url_for(`images/pages/affiliates/${image}.svg`)} {...props}></Box>
 );
 
 const Signup = () => (
@@ -37,9 +41,9 @@ const Signup = () => (
                 <h2 className='margin-bottom-50'>{it.L('Why you should join the [_1] IB Programme', it.website_name)}</h2>
 
                 <BoxRow no_border>
-                    <Box title={it.L('Daily payouts')}            image='payment-icon'   text={it.L('Get your IB commission credited daily into your MT5 account.')} />
-                    <Box title={it.L('Advanced marketing tools')} image='marketing-icon' text={it.L('Track every click, impression, download, and signup to increase your conversions.')} />
-                    <Box title={it.L('Dedicated support')}        image='contact-icon'   text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
+                    <IBBox title={it.L('Daily payouts')}            image='payment-icon'   text={it.L('Get your IB commission credited daily into your MT5 account.')} />
+                    <IBBox title={it.L('Advanced marketing tools')} image='marketing-icon' text={it.L('Track every click, impression, download, and signup to increase your conversions.')} />
+                    <IBBox title={it.L('Dedicated support')}        image='contact-icon'   text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
                 </BoxRow>
 
             </div>
