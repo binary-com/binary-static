@@ -2,21 +2,6 @@ import React from 'react';
 import { BoxRow, Box } from '../../_common/components/box_row.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-// const BoxInner = ({ className = '', image, text }) => (
-//     <div className={`gr-4 gr-12-m center-text ${className}`}>
-//         <img className='gr-4 gr-2-m gr-centered' src={}/>
-//         <p>{text}</p>
-//     </div>
-// );
-
-// const Box = ({ className = '', children }) => (
-//     <div className={`gr-12 ${className}`}>
-//         <div className='gr-row'>
-//             {children}
-//         </div>
-//     </div>
-// );
-
 const MAMBox = ({ image, ...props }) => (
     <Box img_src={it.url_for(`images/pages/mam/${image}.svg`)} {...props}></Box>
 );

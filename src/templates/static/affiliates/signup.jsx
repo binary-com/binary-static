@@ -3,20 +3,6 @@ import { BoxRow, Box } from '../../_common/components/box_row.jsx';
 import { Table } from '../../_common/components/elements.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
-// export const BoxRow = ({ children, top_row, bottom_row, no_border }) => (
-//     <div className={`box-row gr-row${top_row ? ' box-row-top' : ''}${bottom_row ? ' box-row-bottom' : ''}${no_border ? ' no-border' : ''}`}>
-//         {children}
-//     </div>
-// );
-
-// export const Box = ({ image, title, text }) => (
-//     <div className='box gr-4 gr-12-m center-text gr-padding-30'>
-//         <img className='gr-centered fixed-height-img' src={} alt={image} />
-//         <p><strong>{title}</strong></p>
-//         <p>{text}</p>
-//     </div>
-// );
-
 const AffiliateBox = ({ image, ...props }) => (
     <Box img_src={it.url_for(`images/pages/affiliates/${image}.svg`)} {...props}></Box>
 );
