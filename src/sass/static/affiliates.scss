@@ -1,0 +1,63 @@
+.affiliates_faq {
+    h3 {
+        color: $COLOR_ORANGE;
+
+        &:not(:first-of-type) {
+            margin-top: 3rem;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .sidebar-container {
+            margin-bottom: 2rem;
+
+            .sidebar a {
+                line-height: 2.5rem;
+            }
+        }
+    }
+}
+
+.affiliates {
+    h2 {
+        margin-top: 30px;
+    }
+    #commission_tabs {
+        margin-bottom: 0 !important;
+    }
+    .margin-bottom-50 {
+        margin-bottom: 50px;
+    }
+    .fixed-height-img {
+        height: 50px;
+    }
+    .faq-box {
+        padding: 1rem;
+    }
+    .box-row {
+        border-bottom: 1px solid $COLOR_GRAY;
+
+        .box {
+            padding: 2rem;
+        }
+        &-top {
+            .box {
+                padding-top: 1rem;
+            }
+        }
+        &-bottom {
+            border: none;
+
+            .box {
+                padding-bottom: 0;
+            }
+        }
+        .box:not(:last-child) {
+            border-right: 1px solid $COLOR_GRAY;
+        }
+        @media screen and (max-width: 480px) {
+            &, .box {
+                border: none;
+            }
+        }
+    }
+}
