@@ -1,19 +1,24 @@
 import React from 'react';
+import { BoxRow, Box } from '../../_common/components/box_row.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-const BoxInner = ({ className = '', image, text }) => (
-    <div className={`gr-4 gr-12-m center-text ${className}`}>
-        <img className='gr-4 gr-2-m gr-centered' src={it.url_for(`images/pages/mam/${image}.svg`)}/>
-        <p>{text}</p>
-    </div>
-);
+// const BoxInner = ({ className = '', image, text }) => (
+//     <div className={`gr-4 gr-12-m center-text ${className}`}>
+//         <img className='gr-4 gr-2-m gr-centered' src={}/>
+//         <p>{text}</p>
+//     </div>
+// );
 
-const Box = ({ className = '', children }) => (
-    <div className={`gr-12 ${className}`}>
-        <div className='gr-row'>
-            {children}
-        </div>
-    </div>
+// const Box = ({ className = '', children }) => (
+//     <div className={`gr-12 ${className}`}>
+//         <div className='gr-row'>
+//             {children}
+//         </div>
+//     </div>
+// );
+
+const MAMBox = ({ image, ...props }) => (
+    <Box img_src={it.url_for(`images/pages/mam/${image}.svg`)} {...props}></Box>
 );
 
 const Step = ({ image, circle_no, header, text }) => {
@@ -50,58 +55,50 @@ const MultipleAccountsManager = () => (
 
                     <SeparatorLine invisible className='gr-parent gr-padding-20' />
 
-                    <Box className='border-bottom'>
-                        <BoxInner
-                            className='border-right-top'
+                    <BoxRow top_row>
+                        <MAMBox
                             image='deposit'
                             text={it.L('Client\'s deposits or withdrawals are immediately reflected in the corresponding master account balance in real time')}
                         />
-                        <BoxInner
-                            className='border-right-top'
+                        <MAMBox
                             image='methods'
                             text={it.L('Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes')}
                         />
-                        <BoxInner
+                        <MAMBox
                             image='tools'
                             text={it.L('Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types')}
                         />
-                    </Box>
+                    </BoxRow>
 
-                    <Box className='border-bottom'>
-                        <BoxInner
-                            className='border-right-top gr-padding-20 gr-child'
+                    <BoxRow>
+                        <MAMBox
                             image='info'
                             text={it.L('View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price, SL, TP, swap, and profit')}
                         />
-                        <BoxInner
-                            className='border-right-top gr-padding-20 gr-child'
+                        <MAMBox
                             image='exclude'
                             text={it.L('Use multiple exclusion rules to temporarily exclude client accounts from allocations without affecting their current positions')}
                         />
-                        <BoxInner
-                            className='gr-padding-30 gr-child'
+                        <MAMBox
                             image='manage'
                             text={it.L('View all the information you need to manage your client list – including login ID, group, leverage, balance, equity, and margin')}
                         />
-                    </Box>
+                    </BoxRow>
 
-                    <Box>
-                        <BoxInner
-                            className='border-right-top gr-padding-30 gr-child'
+                    <BoxRow bottom_row>
+                        <MAMBox
                             image='money'
                             text={it.L('Instant, daily, and monthly commissions available to money managers')}
                         />
-                        <BoxInner
-                            className='border-right-top gr-padding-20 gr-child'
+                        <MAMBox
                             image='trade'
                             text={it.L('Clients\' trade allocations start from 0.01 lots')}
                         />
-                        <BoxInner
-                            className='gr-padding-20 gr-child'
+                        <MAMBox
                             image='close'
                             text={it.L('Clients can close out trades')}
                         />
-                    </Box>
+                    </BoxRow>
 
                 </div>
             </div>
