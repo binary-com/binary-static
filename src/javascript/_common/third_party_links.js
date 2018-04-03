@@ -1,4 +1,3 @@
-const State            = require('./storage').State;
 const getPropertyValue = require('./utility').getPropertyValue;
 const Client           = require('../app/base/client');
 const BinarySocket     = require('../app/base/socket');
