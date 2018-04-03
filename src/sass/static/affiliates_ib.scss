@@ -2,6 +2,12 @@
     margin-bottom: 0 !important;
 }
 
+.ib-signup-page {
+    &__commission-table td:not(:last-child) {
+        font-weight: bold;
+    }
+}
+
 .affiliates-faq-page, .ib-faq-page {
     h3 {
         color: $COLOR_ORANGE;
