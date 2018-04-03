@@ -45,7 +45,7 @@ const FinancialAssessment = (() => {
             });
         }
 
-        const is_professional = /^(professional|professional_requested)$/.test((State.getResponse('get_account_status') || {}).status);
+        const is_professional = /^(professional|professional_requested)$/.test(State.getResponse('get_account_status.status'));
         $('#trading_experience_form').setVisibility(!is_professional);
 
         Object.keys(financial_assessment).forEach((key) => {
