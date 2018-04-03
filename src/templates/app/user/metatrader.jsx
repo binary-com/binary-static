@@ -281,7 +281,6 @@ const Metatrader = () => (
                                     <form id='frm_password_change'>
                                         <div className='center-text hint gr-padding-20 gr-parent'>
                                             <h3 className='secondary-color'>{it.L('Change password')}</h3>
-                                            <div className='gr-padding-10 gr-child'><h4 className='notice-msg password-account' /></div>
                                         </div>
 
                                         <FormRow is_two_rows type='select' id='ddl_password_type' label={it.L('Password type')}>
@@ -305,7 +304,6 @@ const Metatrader = () => (
                                 <div className='mt-panel mt-container'>
                                     <div className='center-text hint gr-padding-20 gr-parent'>
                                         <h3 className='secondary-color'>{it.L('Reset password')}</h3>
-                                        <div className='gr-padding-10 gr-child'><h4 className='notice-msg password-account' /></div>
                                     </div>
                                     <form className='invisible' id='frm_verify_password_reset'>
                                         <div className='gr-padding-10'>

@@ -530,8 +530,11 @@ const texts = [
     'Demo Accounts',
     'Real-Money Accounts',
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
-    'for MT5 Account',
     '[_1] Account [_2]',
+    'for account [_1]',
+    'Verify Reset Password',
+    'Reset Password',
+    'Please check your email for further instructions.',
 
     // account_transfer
     'Min',

@@ -164,10 +164,14 @@ const MetaTrader = (() => {
                             MetaTraderUI.setAccountType(acc_type, true);
                             BinarySocket.send({ mt5_login_list: 1 });
                         }
-                        MetaTraderUI.loadAction(null, acc_type);
                         getAccountDetails(login, acc_type);
                         if (typeof actions_info[action].success_msg === 'function') {
-                            MetaTraderUI.displayMainMessage(actions_info[action].success_msg(response));
+                            const success_msg = actions_info[action].success_msg(response);
+                            if (actions_info[action].success_msg_selector) {
+                                MetaTraderUI.displayMessage(actions_info[action].success_msg_selector, success_msg, 1);
+                            } else {
+                                MetaTraderUI.displayMainMessage(success_msg);
+                            }
                         }
                         if (typeof actions_info[action].onSuccess === 'function') {
                             actions_info[action].onSuccess(response, acc_type);

@@ -65,8 +65,9 @@ const MetaTraderConfig = (() => {
             success_msg: response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]),
         },
         verify_password_reset: {
-            title      : localize('Verify Reset Password'),
-            success_msg: () => localize('Please check your email for further instructions.'),
+            title               : localize('Verify Reset Password'),
+            success_msg         : () => localize('Please check your email for further instructions.'),
+            success_msg_selector: '#frm_verify_password_reset',
         },
         deposit: {
             title      : localize('Deposit'),

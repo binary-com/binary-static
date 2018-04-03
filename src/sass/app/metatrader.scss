@@ -226,6 +226,9 @@
                 select:focus {
                     outline: none;
                 }
+                button[type='submit'] {
+                    line-height: 22px;
+                }
             }
             .type-group {
                 .mt5_type_box {
