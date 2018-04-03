@@ -16,19 +16,19 @@ const ThirdPartyLinks = (() => {
 
     const clickHandler = (e) => {
         if (!e.target) return;
-        const link_el = e.target.closest('a');
-        if (!link_el) return;
+        const el_link = e.target.closest('a');
+        if (!el_link) return;
 
         const dialog = document.querySelector('#third_party_redirect_dialog');
-        if (dialog && dialog.contains(link_el)) return;
+        if (dialog && dialog.contains(el_link)) return;
 
-        if (isThirdPartyLink(link_el.href)) {
+        if (isThirdPartyLink(el_link.href)) {
             e.preventDefault();
             Dialog.confirm({
                 id     : 'third_party_redirect_dialog',
                 message: ['You will be redirected to a third-party website which is not owned by Binary.com.', 'Click OK to proceed.'],
             }).then((should_proceed) => {
-                if (should_proceed) window.open(link_el.href, '_blank');
+                if (should_proceed) window.open(el_link.href, '_blank');
             });
         }
     };
