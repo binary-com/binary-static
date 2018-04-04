@@ -156,6 +156,9 @@ const MetaTrader = (() => {
                 BinarySocket.send(req).then((response) => {
                     if (response.error) {
                         MetaTraderUI.displayFormMessage(response.error.message, action);
+                        if (typeof actions_info[action].onError === 'function') {
+                            actions_info[action].onError(response, MetaTraderUI.$form());
+                        }
                     } else {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : accounts_info[acc_type].info.login;
@@ -174,7 +177,7 @@ const MetaTrader = (() => {
                             }
                         }
                         if (typeof actions_info[action].onSuccess === 'function') {
-                            actions_info[action].onSuccess(response, acc_type);
+                            actions_info[action].onSuccess(response, MetaTraderUI.$form());
                         }
                     }
                     MetaTraderUI.enableButton(action, !('error' in response));
