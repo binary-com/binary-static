@@ -187,6 +187,11 @@
             @media (max-width: 768px) {
                 margin-left: auto;
             }
+            @media (max-width: 480px) {
+                display: inline-flex;
+                align-items: center;
+                flex-direction: row-reverse;
+            }
         }
     }
     #contract_container {
@@ -559,6 +564,7 @@
     }
     #date_start {
         margin-bottom: 5px;
+        width: 175px;
     }
     #time_start_row {
         white-space: nowrap;
@@ -566,6 +572,7 @@
 
         .time_start {
             margin-left: 5px;
+            width: 110px;
         }
     }
     #payout_row {
@@ -618,9 +625,32 @@
                 margin-top: 0.5rem;
                 margin-left: 0;
             }
+            input {
+                margin-right: 5px;
+            }
         }
         .contract_purchase {
             width: 70% !important;
+        }
+        #date_start {
+            width: 100%;
+        }
+        #expiry_date {
+            width: 100%;
+        }
+        #expiry_time {
+            margin-bottom: 0.5rem;
+        }
+        #symbol_tip {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        .small_width_input, .medium_width_input {
+            width: 100%;
+        }
+        #time_start.medium_width_input {
+            width: 70%;
         }
     }
 }
