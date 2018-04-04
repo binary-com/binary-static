@@ -89,6 +89,8 @@ module.exports = [
     ['affiliate/faq',                      'static/affiliates/faq',                     'default',    'Affiliate FAQ',                     'ja'],
     ['charity',                            'static/charity',                            'default',    'Charity'],
     ['company-profile',                    'static/japan/company_profile',              'default',    'Company Profile',                   'NOT-ja,en'],
+    ['ib-programme/ib-signup',             'static/ib_programme/ib_signup',             'full_width', 'IB programme',                         'ja'],
+    ['ib-programme/ib-faq',                'static/ib_programme/ib_faq',                'default',    'IB programme FAQ',                     'ja'],
     ['legal/us_patents',                   'static/legal/us_patents',                   'default',    'US Patents',                        'ja'],
     ['regulation',                         'static/legal/regulation',                   'default',    'Regulation',                        'id'],
     ['responsible-trading',                'static/responsible_trading',                'full_width', 'Responsible Trading',               'ja'],
