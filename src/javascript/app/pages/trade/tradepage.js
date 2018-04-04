@@ -11,7 +11,6 @@ const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
 const Header            = require('../../base/header');
 const BinarySocket      = require('../../base/socket');
-const jpClient          = require('../../common/country_base').jpClient;
 const Guide             = require('../../common/guide');
 const localize          = require('../../../_common/localize').localize;
 const State             = require('../../../_common/storage').State;
@@ -27,7 +26,7 @@ const TradePage = (() => {
     };
 
     const init = () => {
-        if (jpClient()) {
+        if (Client.get('is_jp')) {
             BinaryPjax.load('multi_barriers_trading');
             return;
         }
