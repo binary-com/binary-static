@@ -136,6 +136,20 @@
 
         div.select ~ #expiry_time_row {
             margin-top: 5px;
+
+            @media (max-width: 768px) {
+                margin-top: 0px;
+                margin-left: 0.5rem;
+            }
+            @media (max-width: 480px) {
+                margin-left: 0;
+                margin-top: 5px;
+                width: 100%;
+
+                input {
+                    width: 70%;
+                }
+            }
         }
     }
     #contract_form_content_wrapper {
@@ -585,7 +599,7 @@
         @include BIDIR_PROP(margin-right, margin-left, 5px);
     }
     .medium_width_input {
-        width: 100px;
+        width: 105px;
     }
     span.currency {
         margin-left: 0.5rem;
@@ -618,6 +632,7 @@
             }
             #duration_amount {
                 margin-bottom: 5px;
+                margin-right: 0;
             }
         }
         #payout_row {
@@ -639,6 +654,7 @@
             width: 100%;
         }
         #expiry_time {
+            margin-top: 5px;
             margin-bottom: 0.5rem;
         }
         #symbol_tip {
@@ -749,9 +765,6 @@
         }
         #contract_prices_container {
             margin-left: 0;
-        }
-        #expiry_time {
-            width: 175px;
         }
     }
 }
