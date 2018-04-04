@@ -6,8 +6,9 @@ const Dialog           = require('../app/common/attach_dom/dialog');
 const ThirdPartyLinks = (() => {
     const init = () => {
         if (Client.isLoggedIn()) {
-            BinarySocket.wait('landing_company').then((response) => {
-                if (getPropertyValue(response, ['landing_company', 'financial_company', 'shortcode']) === 'maltainvest') {
+            BinarySocket.wait('authorize').then((response) => {
+                const landing_company_shortcode = getPropertyValue(response, ['authorize', 'landing_company_name']);
+                if (landing_company_shortcode === 'maltainvest') {
                     document.body.addEventListener('click', clickHandler);
                 }
             });
