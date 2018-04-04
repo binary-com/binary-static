@@ -2,8 +2,6 @@ const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const Header           = require('../../base/header');
 const BinarySocket     = require('../../base/socket');
-const jpClient         = require('../../common/country_base').jpClient;
-const jpResidence      = require('../../common/country_base').jpResidence;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getElementById   = require('../../../_common/common_functions').getElementById;
 const urlFor           = require('../../../_common/url').urlFor;
@@ -39,7 +37,7 @@ const Cashier = (() => {
     };
 
     const onLoad = () => {
-        if (jpClient() && !jpResidence()) {
+        if (Client.get('is_jp') && Client.get('residence') !== 'jp') {
             BinaryPjax.loadPreviousUrl();
         }
         if (Client.isLoggedIn()) {

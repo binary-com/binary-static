@@ -39,7 +39,16 @@ const BinaryLoader = (() => {
         container = getElementById('content-holder');
         container.addEventListener('binarypjax:before', beforeContentChange);
         container.addEventListener('binarypjax:after',  afterContentChange);
-        BinaryPjax.init(container, '#content');
+
+        if (Client.isLoggedIn()) {
+            // we need to set top-nav-menu class so binary-style can add event listener
+            // if we wait for authorize before doing this binary-style will not initiate the drop-down menu
+            getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
+        }
+        BinarySocket.wait('authorize').then(() => {
+            Client.setJPFlag();
+            BinaryPjax.init(container, '#content');
+        });
     };
 
     const beforeContentChange = () => {
