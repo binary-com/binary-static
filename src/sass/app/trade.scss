@@ -568,15 +568,17 @@
             margin-left: 5px;
         }
     }
+    #payout_row {
+        .select ~ #amount {
+            margin-left: 0.5rem;
+        }
+    }
     .barrier_class input {
         width: 175px;
         @include BIDIR_PROP(margin-right, margin-left, 5px);
     }
     .medium_width_input {
         width: 100px;
-    }
-    .select ~ #amount {
-        margin-left: 0.5rem;
     }
     span.currency {
         margin-left: 0.5rem;
@@ -609,6 +611,12 @@
             }
             #duration_amount {
                 margin-bottom: 5px;
+            }
+        }
+        #payout_row {
+            .select ~ #amount {
+                margin-top: 0.5rem;
+                margin-left: 0;
             }
         }
         .contract_purchase {
