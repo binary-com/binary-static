@@ -18,7 +18,7 @@ const Analysis = ({ no_graph }) => (
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
             <div className='gr-row'>
                 <ArrowsMobile parent='trade_analysis' direction='left' />
-                <strong id='tab_mobile_header' className='align-self-center gr-centered'/>
+                <strong id='tab_mobile_header' className='align-self-center gr-hide gr-show-m' />
                 <ArrowsMobile parent='trade_analysis' direction='right' />
             </div>
             <TabsSubtabs

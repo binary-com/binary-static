@@ -554,5 +554,10 @@
                 }
             }
         }
+        @media all and (max-width: 480px) {
+            .tab-menu-wrap {
+                display: none;
+            }
+        }
     }
 }

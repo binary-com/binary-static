@@ -796,6 +796,9 @@
     margin-top: 15px;
     font-size: $FONT_SIZE_N;
 
+    #tab_mobile_header {
+        margin: 0 auto;
+    }
     #trade_analysis {
         a.tm-a.a-active, .tm-li.active a {
             display: block;
