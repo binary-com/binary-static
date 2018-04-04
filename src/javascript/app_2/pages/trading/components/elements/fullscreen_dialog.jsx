@@ -5,11 +5,11 @@ class FullscreenDialog extends React.PureComponent {
     componentDidUpdate() {
         if (this.props.visible) {
             document.body.classList.add('no-scroll');
-            document.getElementById('content-holder').classList.add('no-scroll');
+            document.getElementById('binary_app').classList.add('no-scroll');
         }
         else {
             document.body.classList.remove('no-scroll');
-            document.getElementById('content-holder').classList.remove('no-scroll');
+            document.getElementById('binary_app').classList.remove('no-scroll');
         }
     }
 
