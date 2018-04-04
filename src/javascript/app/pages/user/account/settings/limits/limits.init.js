@@ -1,6 +1,5 @@
 const LimitsUI           = require('./limits.ui');
 const Client             = require('../../../../../base/client');
-const jpClient           = require('../../../../../common/country_base').jpClient;
 const formatMoney        = require('../../../../../common/currency').formatMoney;
 const elementInnerHtml   = require('../../../../../../_common/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../../../../_common/common_functions').elementTextContent;
@@ -13,7 +12,7 @@ const LimitsInit = (() => {
         const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);
 
-        if (jpClient()) {
+        if (Client.get('is_jp')) {
             return;
         }
 

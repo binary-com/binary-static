@@ -4,7 +4,6 @@ const Client              = require('../../../../base/client');
 const Header              = require('../../../../base/header');
 const BinarySocket        = require('../../../../base/socket');
 const Dialog              = require('../../../../common/attach_dom/dialog');
-const jpClient            = require('../../../../common/country_base').jpClient;
 const Currency            = require('../../../../common/currency');
 const FormManager         = require('../../../../common/form_manager');
 const DatePicker          = require('../../../../components/date_picker');
@@ -261,7 +260,7 @@ const SelfExclusion = (() => {
                 BinaryPjax.loadPreviousUrl();
             } else {
                 getData();
-                if (jpClient()) {
+                if (Client.get('is_jp')) {
                     // need to update daily_loss_limit value inside jp_settings object
                     BinarySocket.send({ get_settings: 1 }, { forced: true });
                 }
