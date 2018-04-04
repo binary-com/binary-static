@@ -1,6 +1,5 @@
 const Client           = require('../../../../../base/client');
 const Table            = require('../../../../../common/attach_dom/table');
-const jpClient         = require('../../../../../common/country_base').jpClient;
 const formatMoney      = require('../../../../../common/currency').formatMoney;
 const elementInnerHtml = require('../../../../../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../../../../../_common/common_functions').getElementById;
@@ -98,7 +97,7 @@ const LimitsUI = (() => {
             $('#withdrawal-title').prepend(`${login_id} - `);
         }
         $('#limits-title').setVisibility(1);
-        if (!jpClient()) {
+        if (!Client.get('is_jp')) {
             $('#withdrawal-limits').setVisibility(1);
         }
     };

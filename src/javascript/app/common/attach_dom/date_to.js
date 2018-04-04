@@ -1,6 +1,6 @@
 const moment           = require('moment');
-const jpClient         = require('../country_base').jpClient;
 const DatePicker       = require('../../components/date_picker');
+const Client           = require('../../base/client');
 const dateValueChanged = require('../../../_common/common_functions').dateValueChanged;
 const localize         = require('../../../_common/localize').localize;
 const toISOFormat      = require('../../../_common/string_util').toISOFormat;
@@ -10,7 +10,7 @@ const getDateToFrom = () => {
     let date_to,
         date_from;
     if (date_to_val) {
-        date_to   = moment.utc(date_to_val).unix() + ((jpClient() ? 15 : 24) * (60 * 60));
+        date_to   = moment.utc(date_to_val).unix() + ((Client.get('is_jp') ? 15 : 24) * (60 * 60));
         date_from = 0;
     }
     return {

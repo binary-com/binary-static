@@ -1,6 +1,6 @@
-const jpClient         = require('./country_base').jpClient;
 const getLanguage      = require('../../_common/language').get;
 const localize         = require('../../_common/localize').localize;
+const LocalStore       = require('../../_common/storage').LocalStore;
 const getPropertyValue = require('../../_common/utility').getPropertyValue;
 
 let currencies_config = {};
@@ -41,7 +41,9 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const getFiatDecimalPlaces = () => jpClient() ? 0 : 2;
+const isJPClient = () => (LocalStore.getObject('client.accounts')[LocalStore.get('active_loginid')] || {}).is_jp;
+
+const getFiatDecimalPlaces = () => isJPClient() ? 0 : 2;
 
 const calcDecimalPlaces = (currency) => isCryptocurrency(currency) ? 8 : getFiatDecimalPlaces();
 
@@ -68,7 +70,7 @@ const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyVa
 
 const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
 
-const getFiatPayout = () => jpClient() ? 1 : 10;
+const getFiatPayout = () => isJPClient() ? 1 : 10;
 
 const getMinPayout = currency => (
     isCryptocurrency(currency) ? getPropertyValue(currencies_config, [currency, 'stake_default']) : getFiatPayout()

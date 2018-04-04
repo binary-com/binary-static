@@ -19,7 +19,7 @@ const PersonalDetails = (() => {
     let need_to_accept_tin = false;
 
     let editable_fields,
-        is_jp,
+        is_jp_client,
         is_virtual,
         residence,
         get_settings_data,
@@ -30,8 +30,8 @@ const PersonalDetails = (() => {
         get_settings_data = {};
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
-        is_jp             = residence === 'jp';
-        if (is_jp && !is_virtual) {
+        is_jp_client      = residence === 'jp'; // we need to check with residence so we know which fields will be present in get_settings response
+        if (is_jp_client && !is_virtual) {
             setVisibility('#fieldset_email_consent');
             showHideTaxMessage();
         }
@@ -63,7 +63,7 @@ const PersonalDetails = (() => {
     };
 
     const showHideLabel = (get_settings) => {
-        if (!is_jp) {
+        if (!is_jp_client) {
             ['place_of_birth', 'account_opening_reason'].forEach((id) => {
                 if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
                     if (get_settings[id]) {
@@ -90,7 +90,7 @@ const PersonalDetails = (() => {
         const hide_name            = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
         if (!hide_name) {
             setVisibility('#row_name');
-            get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
+            get_settings.name = is_jp_client ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
         if (get_settings.place_of_birth) {
@@ -105,7 +105,7 @@ const PersonalDetails = (() => {
 
         if (is_virtual) {
             $(real_acc_elements).remove();
-        } else if (is_jp) {
+        } else if (is_jp_client) {
             const jp_settings = get_settings.jp_settings;
             switch (jp_settings.gender) {
                 case 'f':
@@ -138,7 +138,7 @@ const PersonalDetails = (() => {
             fnc_additional_check: additionalCheck,
             enable_button       : true,
         });
-        if (!is_virtual && !is_jp) {
+        if (!is_virtual && !is_jp_client) {
             Geocoder.validate(form_id);
         }
     };
@@ -151,7 +151,7 @@ const PersonalDetails = (() => {
             el_key     = document.getElementById(key);
             el_lbl_key = document.getElementById(`lbl_${key}`);
             // prioritise labels for japan account
-            el_key = is_jp ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
+            el_key = is_jp_client ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
             if (el_key) {
                 data_key             = /format_money/.test(el_key.className) && data[key] !== null ? formatMoney(currency, data[key]) : (data[key] || '');
                 editable_fields[key] = data_key;
@@ -192,7 +192,7 @@ const PersonalDetails = (() => {
 
     const getValidations = (data) => {
         let validations;
-        if (is_jp) {
+        if (is_jp_client) {
             validations = [
                 { request_field: 'address_line_1',   value: data.address_line_1 },
                 { request_field: 'address_line_2',   value: data.address_line_2 },
@@ -322,7 +322,7 @@ const PersonalDetails = (() => {
     const populateStates = (response) => {
         const states = response.states_list;
 
-        if (is_jp) {
+        if (is_jp_client) {
             const state_text = (states.filter(state => state.value === get_settings_data.address_state)[0] || {}).text;
             $('#lbl_address_state').text(state_text || get_settings_data.address_state);
         } else {
@@ -344,7 +344,7 @@ const PersonalDetails = (() => {
         }
 
         initFormManager();
-        if (is_jp && !is_virtual) {
+        if (is_jp_client && !is_virtual) {
             // detect hedging needs to be called after FormManager.init
             // or all previously bound event listeners on form elements will be removed
             CommonFunctions.detectHedging($('#trading_purpose'), $('.hedge'));

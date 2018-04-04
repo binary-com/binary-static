@@ -1,7 +1,6 @@
 const Cookies          = require('js-cookie');
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
-const jpClient         = require('../../../common/country_base').jpClient;
 const FormManager      = require('../../../common/form_manager');
 const TrafficSource    = require('../../../common/traffic_source');
 const makeOption       = require('../../../../_common/common_functions').makeOption;
@@ -13,11 +12,11 @@ const getPropertyValue = require('../../../../_common/utility').getPropertyValue
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
-    let jp_client;
+    let is_jp_client;
 
     const onLoad = () => {
-        jp_client = jpClient();
-        if (jp_client) {
+        is_jp_client = Client.get('is_jp');
+        if (is_jp_client) {
             handleJPForm();
         } else {
             BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
@@ -115,7 +114,7 @@ const VirtualAccOpening = (() => {
                         loginid     : new_account.client_id,
                         token       : new_account.oauth_token,
                         is_virtual  : true,
-                        redirect_url: jp_client ? urlFor('new_account/landing_page') : urlFor(Client.getUpgradeInfo().upgrade_link),
+                        redirect_url: is_jp_client ? urlFor('new_account/landing_page') : urlFor(Client.getUpgradeInfo().upgrade_link),
                     });
                 }
             });
