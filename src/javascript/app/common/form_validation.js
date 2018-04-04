@@ -1,3 +1,4 @@
+const Dropdown              = require('binary-style').selectDropdown;
 const addComma              = require('./currency').addComma;
 const getDecimalPlaces      = require('./currency').getDecimalPlaces;
 const Client                = require('../base/client');
@@ -92,6 +93,14 @@ const Validation = (() => {
                 });
             }
         }
+
+        // need to init Dropdown after we have responses from ws
+        const el_all_select = document.querySelectorAll('select');
+        el_all_select.forEach((el) => {
+            if (el.id !== 'tax_residence') {
+                Dropdown(`#${el.id}`);
+            }
+        });
     };
 
     // ------------------------------
