@@ -1,6 +1,6 @@
 const MBContract     = require('./mb_contract');
 const MBDefaults     = require('./mb_defaults');
-const jpClient       = require('../../common/country_base').jpClient;
+const Client         = require('../../base/client');
 const formatCurrency = require('../../common/currency').formatCurrency;
 const localize       = require('../../../_common/localize').localize;
 const State          = require('../../../_common/storage').State;
@@ -16,12 +16,11 @@ const MBDisplayCurrencies = () => {
     const $list      = $currency.find('.list');
     const $current   = $currency.find('.current');
     const currencies = State.getResponse('payout_currencies');
-    const jp_client  = jpClient();
     let def_value;
 
     if (!$currency.length) return;
     $list.empty();
-    if (!jp_client) {
+    if (!Client.get('is_jp')) {
         const def_curr = MBDefaults.get('currency');
         def_value      = def_curr && currencies.indexOf(def_curr) >= 0 ? def_curr : currencies[0];
         if (currencies.length > 1) {

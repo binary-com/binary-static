@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-02 00:26-0400\n"
+"PO-Revision-Date: 2018-04-04 02:27-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -110,6 +110,9 @@ msgstr "%1 研究生課程"
 
 msgid "%1 Hackathon Competition"
 msgstr "%1Hackathon競爭"
+
+msgid "%1 Introducing Broker (IB) Programme"
+msgstr "%1 推出經紀 (IB) 計劃"
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 請點擊下方連結，重新開啟密碼恢復過程。"
@@ -393,6 +396,15 @@ msgstr "（售出價 - 購入價） x 交易量 x 每點的價格 = 利潤"
 msgid "(max)"
 msgstr "（最大）"
 
+msgid "**Volatility Indices commission rates in account currency per round trade. Example: A buy of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
+msgstr "** 波動指數佣金按每次完成交易的帳戶貨幣計算。例如: 透過美元計價的帳戶購入1手波動性100指數將支付0.75 美元。"
+
+msgid "*Already registered as an affiliate? Send us an email at %1 instead."
+msgstr "* 已註冊為聯盟會員？請在 %1 發電子郵件給我們。"
+
+msgid "*Represents the amount in base currency per round trade. Example: A buy of 1 lot of EUR/USD would pay EUR 6 on standard accounts."
+msgstr "*代表每次完成交易的基礎貨幣金額。例如: 透過標準帳戶購入1手歐元/美元將支付6歐元。"
+
 msgid "0-1 year"
 msgstr "0-1 年"
 
@@ -402,14 +414,20 @@ msgstr "過去12個月內0-5次交易"
 msgid "0.01 lots"
 msgstr "0.01手"
 
+msgid "0.1 per lot"
+msgstr "0.1/手"
+
+msgid "0.25 per lot"
+msgstr "0.25/手"
+
+msgid "0.75 per lot"
+msgstr "0.75/手"
+
 msgid "1 million transactions/day"
 msgstr "1百萬筆交易/天"
 
 msgid "1-2 years"
 msgstr "1-2 年"
-
-msgid "1-3 million JPY"
-msgstr "1-3 million JPY"
 
 msgid "1-3 years"
 msgstr "1-3 years"
@@ -420,9 +438,6 @@ msgstr "1. 身份證明"
 msgid "10 lots"
 msgstr "10手"
 
-msgid "10-30 million JPY"
-msgstr "10-30 million JPY"
-
 msgid "100%"
 msgstr "100%"
 
@@ -431,6 +446,9 @@ msgstr "150%"
 
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6,000 – 5,200) = $1600"
+
+msgid "2 per lot"
+msgstr "2/手"
 
 msgid "2-3 years of applicable experience in a web application testing role"
 msgstr "具有2 - 3年的實際網絡應用測試經驗"
@@ -441,20 +459,17 @@ msgstr "雙向報價"
 msgid "2. Proof of address"
 msgstr "2. 地址證明"
 
+msgid "2.25 per lot"
+msgstr "2.25/手"
+
 msgid "24/7"
 msgstr "全天候"
-
-msgid "3-5 million JPY"
-msgstr "3-5 million JPY"
 
 msgid "3-5 years"
 msgstr "3-5 years"
 
 msgid "30 lots"
 msgstr "30手"
-
-msgid "30-50 million JPY"
-msgstr "30-50 million JPY"
 
 msgid "30-day limit on losses"
 msgstr "30天期損失限額"
@@ -465,20 +480,17 @@ msgstr "30天期交易限額"
 msgid "40 transactions or more in the past 12 months"
 msgstr "過去12個月內40次交易或以上"
 
-msgid "5-10 million JPY"
-msgstr "5-10 million JPY"
-
 msgid "50 lots"
 msgstr "50手"
 
 msgid "50%"
 msgstr "50%"
 
-msgid "50-100 million JPY"
-msgstr "50-100 million JPY"
-
 msgid "6 months to 1 year"
 msgstr "6 months to 1 year"
+
+msgid "6 per lot"
+msgstr "6/手"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "過去12個月內6-10次交易"
@@ -605,9 +617,6 @@ msgstr "對企業法律合規性非常了解，並具濃厚興趣"
 
 msgid "A higher figure (higher to you) representing our offer price and a lower figure (lower to you) representing our bid price for each Transaction shall be quoted to you upon your request. The difference between our bid and our offer price will comprise of the market spread (where there is market for the underlying instrument) and our spread (being our charge to you)."
 msgstr "每筆交易的報價將根據您的要求為您提供，包括代表我們報價的較高數字（對您來說比較高），以及代表我們出價的較低價格（對您來說較低）。我們的出價和報價之間的差額將包括市場價差（當有標的工具市場時）和我們的價差（我們向您收的費用）。"
-
-msgid "A leading innovator of Binary Options trading for over 15 Years"
-msgstr "超過15年以來保持領先地位的創新型二元期權交易平台"
 
 msgid "A list of payment methods you will accept from Clients"
 msgstr "您可接受之客戶付款方式列表"
@@ -792,6 +801,9 @@ msgstr "帳戶比較"
 msgid "Account currency"
 msgstr "帳戶幣種"
 
+msgid "Account management"
+msgstr "帳戶管理"
+
 msgid "Account management and tracking"
 msgstr "帳戶管理及追蹤"
 
@@ -821,6 +833,9 @@ msgstr "帳戶的借方餘額 （即對 %1的信貸風險）"
 
 msgid "Accounts with debit balances are required to settle the full amount immediately by making a payment to us."
 msgstr "有借方餘額的帳戶需立即付款給我們結算全額。"
+
+msgid "Accounts/Assets"
+msgstr "帳戶/資產"
 
 msgid "Accumulation of Income/Savings"
 msgstr "收入/儲蓄積累"
@@ -921,7 +936,7 @@ msgstr "聯盟經理"
 msgid "Affiliate Program"
 msgstr "聯盟計劃"
 
-msgid "Affiliates Program"
+msgid "Affiliate Programme"
 msgstr "聯盟計劃"
 
 msgid "After you have decided which position you want to take whether long or short you are well on your way to buying your first currency pair."
@@ -983,9 +998,6 @@ msgstr "所有信用卡資料都按照銀行政策，使用最新 SSL 加密技�
 
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies;"
 msgstr "所有信用卡資料都按照銀行政策，使用最新 SSL 加密技術直接送出至 Visa/Mastercard 網路。"
-
-msgid "All customer funds are segregated and held with JSF Trust Bank."
-msgstr "我們將所有客戶資金集合並由JSF信託銀行託管。"
 
 msgid "All durations"
 msgstr "所有合約期限"
@@ -1209,8 +1221,14 @@ msgstr "四月"
 msgid "April"
 msgstr "四月"
 
+msgid "Are there any minimum client or volume conditions that I need to meet before I can withdraw my commissions?"
+msgstr "提取佣金前, 是否有最小客戶或交易額的條件？"
+
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr "您是否是一名付款代理，或有意當付款代理?"
+
+msgid "Are you a money manager who wants to easily manage multiple client accounts? Our %1Multiple Accounts Manager (MAM)%2 application gives you the ability to view, track, and trade on behalf of all MT5 client accounts under your control."
+msgstr "您是不是一名想輕鬆管理多個客戶帳戶的理財經理？我們的 %1多帳戶管理器(MAM) (%2) 應用程式使您能夠代表您擁有的所有 MT5 客戶帳戶檢視、追蹤和交易。"
 
 msgid "Are you ready?"
 msgstr "準備好了嗎？"
@@ -1440,6 +1458,9 @@ msgstr "返回"
 msgid "Back to Affiliate Programme"
 msgstr "返回聯盟計劃"
 
+msgid "Back to IB Programme"
+msgstr "返回 IB計劃"
+
 msgid "Back to Menu"
 msgstr "返回功能表"
 
@@ -1619,9 +1640,6 @@ msgstr "Binary K.K., Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Toky
 
 msgid "Binary KK granted Japan license"
 msgstr "Binary KK 被授予日本執照"
-
-msgid "Binary KK is a licensed Type 1 Financial Instruments Business, regulated by the KLFB, and a member of the FFAJ."
-msgstr "Binary K.K. 擁有第1類金融工具商務執照並由 KLFB監管，同時也是FFAJ 會員。"
 
 msgid "Binary Limited"
 msgstr "Binary 有限公司"
@@ -2154,6 +2172,9 @@ msgstr "取款佣金"
 msgid "Commission rates"
 msgstr "佣金費率"
 
+msgid "Commission structure"
+msgstr "佣金結構"
+
 msgid "Commission-free"
 msgstr "無佣金"
 
@@ -2586,6 +2607,9 @@ msgstr "每日損失限額"
 msgid "Daily market reports"
 msgstr "市場日報表"
 
+msgid "Daily payouts"
+msgstr "每日賠付"
+
 msgid "Daily turnover limit"
 msgstr "每日交易限額"
 
@@ -2687,9 +2711,6 @@ msgstr "存款獎金"
 
 msgid "Deposit as little as USD 5 to start trading."
 msgstr "存款最低僅需5美元即可開始交易."
-
-msgid "Deposit funds and begin trading"
-msgstr "存款並開始交易"
 
 msgid "Deposit or withdraw below"
 msgstr "在下方存款或提款"
@@ -2819,6 +2840,12 @@ msgstr "不得操作您承受能力範圍之外的交易。"
 
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "疲憊或受酒精影響時不要交易。"
+
+msgid "Do you offer any advertising materials to your IBs?"
+msgstr "您是否向 IB提供任何廣告材料？"
+
+msgid "Do you offer any tools to manage my clients’ trades?"
+msgstr "您是否提供任何工具，以便我管理客戶交易？"
 
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "想獲取更多有關市場及如何進行交易的資訊嗎？請檢視以下資源。"
@@ -2973,8 +3000,17 @@ msgstr "每次開指標符號頭寸時, 您都可以由上表所示的最小交�
 msgid "Earn"
 msgstr "賺取"
 
+msgid "Earn a commission on each client’s MT5 trading activity – paid out daily."
+msgstr ""
+
+msgid "Earn a commission when your referred clients trade Forex and CFDs on our MT5 platform."
+msgstr ""
+
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "如果發現任何可驗證問題，您可獲得金錢獎勵，高風險安全漏洞的獎金最高可達1,000美元。"
+
+msgid "Earn commission on the trading activity of clients that you refer to our MetaTrader 5 platform."
+msgstr ""
 
 msgid "Earn commissions by introducing new customers to %1."
 msgstr "通過介紹新客戶給 %1，以賺取佣金。"
@@ -3027,17 +3063,11 @@ msgstr "任何一方都可以通過提前一周發出書面通知的方式終止
 msgid "Eligible Counterparty"
 msgstr "合格交易對手"
 
-msgid "Eliminating Antisocial Forces"
-msgstr "Eliminating Antisocial Forces"
-
 msgid "Email"
 msgstr "電子郵件"
 
 msgid "Email address"
 msgstr "電子郵件地址"
-
-msgid "Email us your Identity Documents"
-msgstr "將身份證件以電子郵件方式發送給我們"
 
 msgid "Email:"
 msgstr "電子郵件："
@@ -3153,9 +3183,6 @@ msgstr "以太經典兌美元"
 msgid "Ethereum vs US Dollar"
 msgstr "以太幣兌美元"
 
-msgid "Ethics Code"
-msgstr "道德標準"
-
 msgid "Euro vs Australian Dollar"
 msgstr "歐元兌澳元"
 
@@ -3258,9 +3285,6 @@ msgstr "禁止時間不能超過5年。"
 msgid "Exclude time cannot be less than 6 months."
 msgstr "禁止時間不能少於6個月。"
 
-msgid "Exclusion of Liability"
-msgstr "Exclusion of Liability"
-
 msgid "Exclusive binary trading technology."
 msgstr "專屬二元期權交易技術。"
 
@@ -3342,9 +3366,6 @@ msgstr "專家分析與學習資源。"
 msgid "Expertise in cloud solutions"
 msgstr "有云計算解決方案專門知識"
 
-msgid "Expiry"
-msgstr "有效期限"
-
 msgid "Expiry date"
 msgstr "到期日"
 
@@ -3386,9 +3407,6 @@ msgstr "常見問題集"
 
 msgid "FIX API"
 msgstr "FIX API"
-
-msgid "FX Bloggers, Mentors & Gurus"
-msgstr "外匯部落客、顧問和導師"
 
 msgid "Facility that allows you to set limits on your account."
 msgstr "可讓您對帳戶設定限制的設施。"
@@ -3507,9 +3525,6 @@ msgstr "名"
 msgid "First, define your position..."
 msgstr "首先，設定您的頭寸參數..."
 
-msgid "First-Class FX Binary Options Trading Platform"
-msgstr "一流外匯二元期權交易平台"
-
 msgid "First-class client service."
 msgstr "一流的客戶服務。"
 
@@ -3620,6 +3635,9 @@ msgstr "外幣存款"
 
 msgid "Forex"
 msgstr "外匯"
+
+msgid "Forex & Metals*"
+msgstr ""
 
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr "外匯和差價交易合約涉及高風險，是一種投機活動，因為您可推測基礎金融工具價格的短期變動。除非您能接受比您存入資金更大的虧損，不然您不適合參與外匯交易和 （或） 簽訂差價交易合約。重要的是您需了解，如果要從持倉頭寸獲取任何回報，您必須參與相應的交易將持倉頭寸平倉，有時候在一些市場條件下您可能很難或無法做到此點。"
@@ -3744,9 +3762,6 @@ msgstr "一般條款"
 msgid "General Provisions"
 msgstr "一般條款"
 
-msgid "General Risk Warning"
-msgstr "General Risk Warning"
-
 msgid "General Risks"
 msgstr "一般風險"
 
@@ -3761,9 +3776,6 @@ msgstr "生成的驗證碼︰"
 
 msgid "Generous commission"
 msgstr "高額佣金"
-
-msgid "Get JPY 1,000,000"
-msgstr "獲取1,000,000日圓"
 
 msgid "Get Started"
 msgstr "開始交易"
@@ -3780,6 +3792,9 @@ msgstr "開始交易"
 msgid "Get started with MT5"
 msgstr "開始使用MT5"
 
+msgid "Get your IB commission credited daily into your MT5 account."
+msgstr ""
+
 msgid "Get your price"
 msgstr "獲取報價"
 
@@ -3791,6 +3806,9 @@ msgstr "開始交易"
 
 msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
 msgstr "用法簡易，隨時可以免費開始使用，只需<a href='%1'>填寫申請表</a>, 然後等待我們批准。"
+
+msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
+msgstr ""
 
 msgid "Given our role as a margin trading service provider as described in this Agreement, we seek to avoid undue market influence to the extent consistent with your trading needs and our risk management policies and procedures. By continuing to use the margin trading services described in this Agreement, you acknowledge that you are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and you consent us to act notwithstanding such potential conflict of interests."
 msgstr "我們是融資融券交易服務提供商，如本協議所述，我們盡量不讓市場影響您的交易需求，同時維護我們的風險管理政策和程序。通過繼續使用本協議所述的融資融券交易服務，您承認並已了解，所披露利益的潛在衝突可能會出現以及不能完全排除，即使存在這種潛在利益衝突，您也同意我們的行動。"
@@ -3890,6 +3908,15 @@ msgstr "八、監測和審查"
 
 msgid "H. Regulatory Provisions"
 msgstr "八、管理規定"
+
+msgid "HF Vol 10"
+msgstr ""
+
+msgid "HF Vol 100"
+msgstr ""
+
+msgid "HF Vol 50"
+msgstr ""
 
 msgid "Hackathon Competition"
 msgstr "Hackathon競爭"
@@ -3993,8 +4020,14 @@ msgstr "我如何才能成為聯盟會員？"
 msgid "How can I change my payment method?"
 msgstr "如何更改付款方式？"
 
+msgid "How can I withdraw my commissions?"
+msgstr ""
+
 msgid "How do I know how much I have earned?"
 msgstr "我怎麼知道我賺了多少？"
+
+msgid "How do I register to become a %1 IB?"
+msgstr ""
 
 msgid "How do we calculate interest fees for long positions?"
 msgstr "多頭頭寸的利息費用如何計算?"
@@ -4008,11 +4041,11 @@ msgstr "如何操作？"
 msgid "How it works"
 msgstr "如何操作"
 
+msgid "How much do I get paid if I refer clients onto your MT5 platform?"
+msgstr ""
+
 msgid "How to Trade in MetaTrader 5"
 msgstr "如何在MetaTrader 5交易"
-
-msgid "How to begin"
-msgstr "如何開始"
 
 msgid "How to calculate margin"
 msgstr "如何計算保證金"
@@ -4109,6 +4142,21 @@ msgstr "九、 報價"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr "即 (20010 - 20000) x 1 x 1 = 10 美元"
+
+msgid "IB Programme"
+msgstr ""
+
+msgid "IB commissions are credited directly into your MT5 account. You can transfer funds from your MT5 account to your %1 Real Account, then withdraw the funds using your preferred withdrawal method."
+msgstr ""
+
+msgid "IB earnings from your MT5 referrals are credited daily into your MT5 account."
+msgstr ""
+
+msgid "IB programme"
+msgstr ""
+
+msgid "IB programme FAQ"
+msgstr ""
 
 msgid "ID card"
 msgstr "身分證"
@@ -4491,6 +4539,9 @@ msgstr "在這種情況下，公司可自行（不論通知與否）以其認為
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "請在「詳細說明」欄位指定支付方式及代理將轉帳的帳號。"
 
+msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%2). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%3), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete [_4]. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgstr ""
+
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
 msgstr "在英國，我們的客戶通過 Binary (IOM) Ltd. 和 Binary Investments (Europe) Ltd. 進行交易。在曼島，他們通過 Binary (IOM) Ltd. 進行交易。在日本通過Binary KK進行交易。在歐盟（除了英國），他們通過 Binary (Europe) Ltd 和 Binary Investments (Europe) Ltd. 進行交易。在全世界其他地區，他們通過 Binary (C.R.) S.A. 進行交易。"
 
@@ -4605,9 +4656,6 @@ msgstr "繼承"
 msgid "Initial Coin Offering (ICO)"
 msgstr "首次代幣發售 (ICO)"
 
-msgid "Input personal information"
-msgstr "輸入個人資訊"
-
 msgid "Instant access"
 msgstr "即時存取"
 
@@ -4698,9 +4746,6 @@ msgstr "投資收入"
 msgid "Investment Products to EEA Residents are provided by Binary Investments (Europe) Ltd (\"BIEL\") which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
 msgstr "想要進行產品投資的 EEA 居民由 Binary 投資(歐洲) 有限公司 (\"BIEL\") 提供服務，其受馬爾他金融投資服務機構根據馬爾他投資服務法授予執照及監管，使用者可通過自己的帳戶進行產品投資。"
 
-msgid "Investment Solicitation Policy"
-msgstr "Investment Solicitation Policy"
-
 msgid "Investment trust"
 msgstr "Investment trust"
 
@@ -4724,6 +4769,9 @@ msgstr "愛爾蘭"
 
 msgid "Is there a cost for joining?"
 msgstr "加入需要任何費用嗎？"
+
+msgid "Is there a fee to join the %1 IB Programme?"
+msgstr ""
 
 msgid "Isle of Man"
 msgstr "曼島"
@@ -4793,6 +4841,9 @@ msgstr "擴大規模的時機到了。我們在有「吉隆坡矽谷」美譽的
 
 msgid "Item"
 msgstr "項目"
+
+msgid "It’s completely free to join our IB programme. We’ve never charged a fee and we never will."
+msgstr ""
 
 msgid "It’s easy. Just go to the signup page and complete the <a href='%1'>affiliate registration form</a>. We’ll review your application and get back to you if your application is successful."
 msgstr ""
@@ -5268,12 +5319,6 @@ msgstr "日本階梯"
 msgid "Job Details"
 msgstr "工作詳細資料"
 
-msgid "Join now"
-msgstr "立刻加入"
-
-msgid "Join our affiliate program to earn income by leveraging your hard-earned network of contact"
-msgstr "加入我們的聯盟計劃，利用您辛勤建設的聯繫網絡賺取收入"
-
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "加入我們卓越、才華洋溢的專業人才團隊。 與我們共同合作加強並促進一個15年來在二元期權交易行業中最受認可的高科技平台。"
 
@@ -5424,9 +5469,6 @@ msgstr "少於$100,000"
 msgid "Less than $25,000"
 msgstr "少於$25,000"
 
-msgid "Less than 1 million JPY"
-msgstr "Less than 1 million JPY"
-
 msgid "Less than 6 months"
 msgstr "Less than 6 months"
 
@@ -5495,9 +5537,6 @@ msgstr "與銀行和支付提供商聯繫"
 
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
 msgstr "由馬爾他、英國、曼島、愛爾蘭和日本相關機構授予執照和監管"
-
-msgid "Licensed in Japan"
-msgstr "在日本擁有牌照"
 
 msgid "Licensed, trusted, and secure"
 msgstr "有牌照、備受信賴、及安全"
@@ -6225,12 +6264,6 @@ msgstr "否"
 msgid "No Advice"
 msgstr "無通知"
 
-msgid "No Connections With Antisocial Forces"
-msgstr "No Connections With Antisocial Forces"
-
-msgid "No Connections with Antisocial Forces"
-msgstr "No Connections with Antisocial Forces"
-
 msgid "No Party shall be deemed liable for a partial or complete failure to meet its obligations, under this Agreement, in case of force majeure events including but not limited to civil war, unrest, insurrection, international intervention, any governmental actions, exchange controls, nationalizations, devaluations, forfeitures, natural disasters, act of God and other inevitable and/or unforeseeable and/or unanticipated and/or unpredicted events, not depending on the will of the Parties."
 msgstr "根據本協議，如果發生雙方無法控制的不可抗力事件，包括但不限於內戰、動亂、暴亂、國際干預、任何政府行動，外匯管制、國有化、貨幣貶值、沒收、自然災害、天災和其他不可避免和/或不能預見和/或意外突發事件，造成任何一方無法履行義務的話，不可視為負有部分或完整的違約責任。"
 
@@ -6269,6 +6302,9 @@ msgstr "任何人都不得以洗錢為目的濫用本網站。公司採用最佳
 
 msgid "No risk, $10K virtual money account"
 msgstr "無任何風險，獲得一萬美元虛擬資金帳戶"
+
+msgid "No, there are no minimum requirements to withdraw your IB commissions."
+msgstr ""
 
 msgid "Non-ATM"
 msgstr "非自動取款機"
@@ -6384,9 +6420,6 @@ msgstr "十月"
 msgid "October"
 msgstr "十月"
 
-msgid "Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
-msgstr "通過快捷直覺化和專屬的交易平台提供範圍最廣泛的貨幣種類、期權類型和交易期限。"
-
 msgid "Office worker"
 msgstr "辦公室員工"
 
@@ -6497,9 +6530,6 @@ msgstr "空缺"
 
 msgid "Open Source"
 msgstr "開源"
-
-msgid "Open a Demo Account"
-msgstr "開設模擬帳戶"
 
 msgid "Open a Financial Account"
 msgstr "開設金融帳戶"
@@ -6696,9 +6726,6 @@ msgstr "世界各地擁有超過%1名<a href='%2'>職員</a>和約聘員工"
 msgid "Over 1 million registered accounts worldwide"
 msgstr "全球各地擁有超過1百萬個註冊帳號"
 
-msgid "Over 100 million JPY"
-msgstr "Over 100 million JPY"
-
 msgid "Over 3 years"
 msgstr "3年以上"
 
@@ -6746,9 +6773,6 @@ msgstr "成為我們的合作夥伴"
 
 msgid "Partners"
 msgstr "合作夥伴"
-
-msgid "Pass our Knowledge Test"
-msgstr "通過我們的知識測試"
 
 msgid "Passionate about people, culture, management, and software development? Explore what we do, what matters to us, and how we bring our ideas to life."
 msgstr "對人類、文化、管理和軟體開發充滿熱忱？請了解我們的工作、我們注重的東西以及我們如何把想法引入生活。"
@@ -7074,9 +7098,6 @@ msgstr "請等待確認。我們的客服團隊將於四小時內將帳戶狀態
 msgid "Poland"
 msgstr "波蘭"
 
-msgid "Policies and Exclusion of Liability"
-msgstr "Policies and Exclusion of Liability"
-
 msgid "Portfolio"
 msgstr "投資組合"
 
@@ -7121,9 +7142,6 @@ msgstr "擁有10,000美元可補充虛擬資金的練習帳戶。"
 
 msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
 msgstr "在無風險的環境中使用%1 虛擬基金實踐您的交易策略。"
-
-msgid "Pre-contract Document"
-msgstr "Pre-contract Document"
 
 msgid "Precious metal pairs including gold and platinum."
 msgstr "包括黃金和鉑金的貴重金屬。"
@@ -7473,11 +7491,11 @@ msgstr "收取新消息和特別優惠"
 msgid "Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates."
 msgstr "接收交易與反向交易的報價，因此您將始終獲得公正透明的價格。"
 
-msgid "Receive your activation code by secure"
-msgstr "安全接收您的啟用代碼"
-
 msgid "Ref."
 msgstr "參考"
+
+msgid "Refer new clients to our MetaTrader 5 platform and earn a commission on their Forex and CFD trading activity."
+msgstr ""
 
 msgid "Refers to the maximum volume or lots per order."
 msgstr "指每個訂單的最大交易量或手量。"
@@ -7680,12 +7698,6 @@ msgstr "風險免責聲明"
 msgid "Risk Disclosure Statement"
 msgstr "風險披露聲明"
 
-msgid "Risk For Binary Option Trading"
-msgstr "Risk For Binary Option Trading"
-
-msgid "Risk for Binary Option Trading"
-msgstr "Risk for Binary Option Trading"
-
 msgid "Risk of Stop Order"
 msgstr "止損單的風險"
 
@@ -7778,9 +7790,6 @@ msgstr "安全隱私"
 
 msgid "Security testing opportunities"
 msgstr "安全測試機會"
-
-msgid "Segregated Funds"
-msgstr "集合資金"
 
 msgid "Select <strong>Accept cookies</strong>."
 msgstr "選擇<strong>接受cookies</strong>。"
@@ -8099,9 +8108,6 @@ msgstr "開始時間和進入點"
 
 msgid "Start Trading with MetaTrader 5"
 msgstr "開始使用MetaTrader 5交易"
-
-msgid "Start now"
-msgstr "立刻開始"
 
 msgid "Start time"
 msgstr "開始時間"
@@ -8423,6 +8429,9 @@ msgstr "謝謝您的註冊！請檢視郵件以完成註冊程序。"
 
 msgid "Thank you for submitting the required documents"
 msgstr "感謝您提交所需的文檔"
+
+msgid "Thank you for your interest in partnering with us. We’ve made it easy for you to apply online. Just fill out the %1online application form%2 with all necessary details. If you are already registered as a %3 affiliate, you can email us at %4 instead. We will contact you directly if your application is successful."
+msgstr ""
 
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "%1 API的使用受到限制，以防止%1 API被濫用和/或改變用途。將來這些使用限制可能不另行通知而更改。如果你持續超出使用限制，或以其他方式濫用該服務，我們可能會阻止您存取%1 API。"
@@ -9252,9 +9261,6 @@ msgstr "本網站含有其他網站連結，且可能含有第三方網站的橫
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "除非您有意識地專門提供，本網站並不收集個人身份資訊。一種被稱之為「cookies」的技術可以提供來自特定網站的訂制資訊。 cookie 是一種資料元，網站可發送 cookie 到您瀏覽器，然後存儲在您的系統中。您可以將您的瀏覽器設定為收到 cookie 時通知您，以便您決定是否接受。如果您不接受該 cookie，那麼請在所有需要輸入系統的表單中再次輸入您的登入 ID 和密碼。如果您對您的個人電腦或個人瀏覽器的安全性存在擔憂，我們建議您選擇這麼做。"
 
-msgid "This website is offered in the EU, for financial products, by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). Volatility Indices products are offered in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission. In the rest of the EU, Volatility Indices products are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission, and for Irish clients by (3) the Revenue Commissioners in Ireland, Remote Bookmaker's Licence issued on 1 July 2017 (licence no. 1010285). View further %1Regulatory Information%2. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "本網站金融產品在歐盟由Binary Investments (Europe) Ltd. 經營，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構授予執照及監管為3級投資服務提供商（執照號碼為IS/70156)），而波動指數產品由Binary (IOM) Ltd. 在英國和曼島經營，地址為：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；(1) 由不列顛群島曼島博彩監管委員會授予執照和監管，目前線上博彩執照於2012 年8 月31 日頒發；而英國客戶(2) 由英國博彩委員會授予執照和監管。在歐盟其他地區，波動指數產品由Binary (Europe) Ltd., 經營，地址為：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，(1) 由位於馬爾他的馬爾他博彩管理局授予執照和監管，執照號碼為MGA/CL2/118/2000（2015年5 月26 日），而英國客戶(2) 由英國博彩委員會授予執照和監管- %3檢視執照%2，以及愛爾蘭客戶由(3) 愛爾蘭稅務專員辦事處授予執照和監管，執照號碼為1010285 (2017年7 月1 日頒發）。檢視詳細的%1監管資訊%2。一些產品不是所有國家都適用。本網站的服務不向一些國家如美國、哥斯大黎加及香港或對年齡不到18歲的使用者提供。"
-
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "對 bash 腳本編程非常熟悉，並有豐富的腳本語言（如Perl 和 PHP）經驗"
 
@@ -9417,6 +9423,9 @@ msgstr "旅遊"
 msgid "Town/City"
 msgstr "城鎮/城市"
 
+msgid "Track every click, impression, download, and signup to increase your conversions."
+msgstr ""
+
 msgid "Trade"
 msgstr "交易"
 
@@ -9500,9 +9509,6 @@ msgstr "在我們的MT5平台使用槓桿和可變點差交易流行的加密貨
 
 msgid "Trade popular major and minor currency pairs, plus Smart FX indices – weighted indices that measure the value of a currency against a basket of major currencies."
 msgstr "交易流行的主要和次要貨幣對，加上智能外匯指數 - 衡量與一籃子主要貨幣相兌的指定貨幣價值的加權指數。"
-
-msgid "Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!"
-msgstr "在擁有廣泛選項和交易期限的平台上交易全球主要貨幣。提供比任何其他日本經紀商更多的選項！"
 
 msgid "Trade type"
 msgstr "交易類型"
@@ -9659,9 +9665,6 @@ msgstr "請試試%1波動率指數%2。"
 
 msgid "Try our other markets."
 msgstr "請嘗試我們其他的市場。"
-
-msgid "Try our trading page"
-msgstr "體驗我們的交易頁面"
 
 msgid "Tu"
 msgstr "星期二"
@@ -9882,6 +9885,9 @@ msgstr "網絡平台可在Windows、MacOS、或 Linux 操作系統上使用，�
 msgid "Use your unique affiliate link and the marketing tools we provide to advertise %1 to your audience."
 msgstr ""
 
+msgid "Use your unique affiliate link and the marketing tools we provide to advertise our MT5 service to your audience."
+msgstr ""
+
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "使用、執行，並顯示您的應用程式及其內容作為行銷、展示用途，並將您的應用程式提供給我們客戶使用。和    "
 
@@ -9999,6 +10005,21 @@ msgstr "虛擬帳戶"
 msgid "Virtual money credit to account"
 msgstr "虛擬資金存入帳戶"
 
+msgid "Vol 10"
+msgstr ""
+
+msgid "Vol 100"
+msgstr ""
+
+msgid "Vol 25"
+msgstr ""
+
+msgid "Vol 50"
+msgstr ""
+
+msgid "Vol 75"
+msgstr ""
+
 msgid "Volatility Indices"
 msgstr "波動率指數"
 
@@ -10010,6 +10031,9 @@ msgstr "波動率指數帳戶: 1:500"
 
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "波動率指數進一步分為兩種級別 ："
+
+msgid "Volatility Indices**"
+msgstr ""
 
 msgid "Volume"
 msgstr "交易量"
@@ -10308,6 +10332,9 @@ msgstr "什麼是金屬交易"
 msgid "What is the %1 Affiliate Programme all about?"
 msgstr ""
 
+msgid "What is the %1 IB Programme all about?"
+msgstr ""
+
 msgid "What is the definition of a referred client?"
 msgstr ""
 
@@ -10328,6 +10355,9 @@ msgstr "甚麼是追加保證金要求，如何使用它"
 
 msgid "What's a stop out level and how is it applied"
 msgstr "甚麼是止損層次，如何使用它"
+
+msgid "When are my commissions paid?"
+msgstr ""
 
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
 msgstr "聯盟會員的推薦客戶在Binary集團任何成員公司開帳戶時，我們承擔此聯盟會員的推薦客戶名稱和聯繫資訊資料庫以及任何其他資料的擁有權。"
@@ -10509,6 +10539,9 @@ msgstr ""
 msgid "Why you should join the %1 Affiliate Programme"
 msgstr ""
 
+msgid "Why you should join the %1 IB Programme"
+msgstr ""
+
 msgid "Why you should trade binary options with %1"
 msgstr "為什麼要用%1 進行二元期權交易"
 
@@ -10628,6 +10661,9 @@ msgstr ""
 
 msgid "Yes, I understand"
 msgstr "是的, 我明白"
+
+msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
+msgstr ""
 
 msgid "Yes. Please contact your affiliate manager with the following information:"
 msgstr ""
@@ -10763,9 +10799,6 @@ msgstr "您可以使用以下公式算出所需的金屬對保證金:"
 
 msgid "You can generate all kinds of insightful reports, including the following:"
 msgstr ""
-
-msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
-msgstr "如果虛擬資金餘額低於100,000日圓，您可請求獲取更多虛擬資金。"
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "您可在合約到期前賣出交易合約，以鎖定利潤或將虧損減至最低。"
@@ -10920,9 +10953,6 @@ msgstr "You must not be a USA resident, citizen, or have any tax reporting to th
 msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to %1 by writing in to %2 or by raising a discussion  thread on %3 which is part of our Developer Site. You will work with %1 to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from %1 in each instance."
 msgstr "如果發現應用程式有任何安全缺陷或受入侵，您必須及時以書面方式發送到%2向%1報告，或通過我們開發者網站上的%3提交討論執行緒。 您將與%1合作，立即糾正任何安全缺陷，並須立即切除任何侵犯或入侵者。 如果發現任何關於應用程式、Api 或內容的安全缺陷或入侵，每個事件未經%1事先書面和明示許可，您不可發表公開聲明 （例如新聞、部落格、社交媒介、電子公告板等） 。"
 
-msgid "You need to finish all 20 questions."
-msgstr "必須答覆全部20個問題。"
-
 msgid "You or your employees' or agents' acts or omissions, including yours or their breach or alleged breach of these Terms;"
 msgstr "您或您的雇員或代理人的行為或疏忽，包括您或他們對這些條款的違反或涉嫌違反;"
 
@@ -11016,6 +11046,9 @@ msgstr "收市後仍未平倉的頭寸須付掉期利率。"
 msgid "You will charge a commission to process the transactions."
 msgstr "您將可收取交易處理的佣金費。"
 
+msgid "You will earn a fixed payout based on the volume of individual trades purchased by each referred client. Please refer to our IB commission structure for Forex, metals, and Volatility Indices."
+msgstr ""
+
 msgid "You will have the potential to earn another level of income from our affiliate program."
 msgstr "您將從我們的聯盟計劃受惠，開闢另一潛在收入源流。"
 
@@ -11054,9 +11087,6 @@ msgstr "您正在使用虛擬帳戶。"
 
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "您的 %1 天取款限額目前為 %2 %3（或其他貨幣的等值）。"
-
-msgid "Your Application is Being Processed."
-msgstr "您的申請已經處理完成。"
 
 msgid "Your Binary Options Real Account with %1 has to be authenticated within five days from your Real Account opening date to keep your Real Account active."
 msgstr "您的%1二元期權真實帳戶如要保持有效，須在開戶後五天內通過驗證。"
@@ -11339,6 +11369,12 @@ msgstr "根據以最佳執行因素建立的設定和算法將傳入的訂單通
 
 msgid "letters"
 msgstr "字母"
+
+msgid "license reference no: 39172"
+msgstr ""
+
+msgid "license reference no: 39495"
+msgstr ""
 
 msgid "logout"
 msgstr "登出"
@@ -11877,20 +11913,38 @@ msgstr "{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000"
 msgid "{JAPAN ONLY}1 week to 1 year terms"
 msgstr "{JAPAN ONLY}1 week to 1 year terms"
 
+msgid "{JAPAN ONLY}1-3 million JPY"
+msgstr ""
+
+msgid "{JAPAN ONLY}10-30 million JPY"
+msgstr ""
+
 msgid "{JAPAN ONLY}2 hours to 1 year terms"
 msgstr "{JAPAN ONLY}2 hours to 1 year terms"
 
 msgid "{JAPAN ONLY}251"
 msgstr "{JAPAN ONLY}251"
 
+msgid "{JAPAN ONLY}3-5 million JPY"
+msgstr ""
+
+msgid "{JAPAN ONLY}30-50 million JPY"
+msgstr ""
+
 msgid "{JAPAN ONLY}4 options types"
 msgstr "{JAPAN ONLY}4 options types"
+
+msgid "{JAPAN ONLY}5-10 million JPY"
+msgstr ""
 
 msgid "{JAPAN ONLY}50 lots: maximum loss: - ¥ 10,000 | target profit: ¥ 40,000"
 msgstr "{JAPAN ONLY}50 lots: maximum loss: - ¥ 10,000 | target profit: ¥ 40,000"
 
 msgid "{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000"
 msgstr "{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000"
+
+msgid "{JAPAN ONLY}50-100 million JPY"
+msgstr ""
 
 msgid "{JAPAN ONLY}50ロット"
 msgstr "{JAPAN ONLY}50ロット"
@@ -11955,6 +12009,9 @@ msgstr "{JAPAN ONLY}A bought or sold binary option may be closed-out before exer
 msgid "{JAPAN ONLY}A dedicated affiliate team to provide you with the best service possible"
 msgstr "{JAPAN ONLY}A dedicated affiliate team to provide you with the best service possible"
 
+msgid "{JAPAN ONLY}A leading innovator of Binary Options trading for over 15 Years"
+msgstr ""
+
 msgid "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used to calculate the theoretical prices of binary options."
 msgstr "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used to calculate the theoretical prices of binary options."
 
@@ -11982,6 +12039,9 @@ msgstr "{JAPAN ONLY}Acknowledgment"
 msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
 msgstr "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
 
+msgid "{JAPAN ONLY}Affiliates Program"
+msgstr ""
+
 msgid "{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away."
 msgstr "{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away."
 
@@ -11990,6 +12050,9 @@ msgstr "{JAPAN ONLY}All customer funds are deposited with JSF Trust & Banking, a
 
 msgid "{JAPAN ONLY}All customer funds are deposited with JSF Trust Bank and will be refunded by an independent attorney as a beneficiary agent in case of business failure"
 msgstr "{JAPAN ONLY}All customer funds are deposited with JSF Trust Bank and will be refunded by an independent attorney as a beneficiary agent in case of business failure"
+
+msgid "{JAPAN ONLY}All customer funds are segregated and held with JSF Trust Bank."
+msgstr ""
 
 msgid "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
 msgstr "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
@@ -12068,6 +12131,9 @@ msgstr "{JAPAN ONLY}Binary K. K."
 
 msgid "{JAPAN ONLY}Binary K.K. Customer Account"
 msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
+
+msgid "{JAPAN ONLY}Binary KK is a licensed Type 1 Financial Instruments Business, regulated by the KLFB, and a member of the FFAJ."
+msgstr ""
 
 msgid "{JAPAN ONLY}Binary Options"
 msgstr "{JAPAN ONLY}Binary Options"
@@ -12189,8 +12255,14 @@ msgstr "{JAPAN ONLY}Earning a second income in their spare time?"
 msgid "{JAPAN ONLY}Easy to use design. Fast execution; multifunction charting system and smartphone optimized display."
 msgstr "{JAPAN ONLY}Easy to use design. Fast execution; multifunction charting system and smartphone optimized display."
 
+msgid "{JAPAN ONLY}Eliminating Antisocial Forces"
+msgstr ""
+
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
+
+msgid "{JAPAN ONLY}Email us your Identity Documents"
+msgstr ""
 
 msgid "{JAPAN ONLY}Enable account with secure e-mail"
 msgstr "{JAPAN ONLY}Enable account with secure e-mail"
@@ -12219,6 +12291,9 @@ msgstr "{JAPAN ONLY}Equivalent to Prime Minister, Minister of State, or Vice-Min
 msgid "{JAPAN ONLY}Establishment"
 msgstr "{JAPAN ONLY}Establishment"
 
+msgid "{JAPAN ONLY}Ethics Code"
+msgstr ""
+
 msgid "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
 msgstr "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
 
@@ -12228,8 +12303,17 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
+msgid "{JAPAN ONLY}Exclusion of Liability"
+msgstr ""
+
 msgid "{JAPAN ONLY}Executing trades"
 msgstr "{JAPAN ONLY}Executing trades"
+
+msgid "{JAPAN ONLY}Expiry"
+msgstr ""
+
+msgid "{JAPAN ONLY}FX Bloggers, Mentors & Gurus"
+msgstr ""
 
 msgid "{JAPAN ONLY}Family members of categories 1) to 3)"
 msgstr "{JAPAN ONLY}Family members of categories 1) to 3)"
@@ -12245,6 +12329,9 @@ msgstr "{JAPAN ONLY}Financial Instruments Business No. xxxx"
 
 msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 msgstr "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
+
+msgid "{JAPAN ONLY}First-Class FX Binary Options Trading Platform"
+msgstr ""
 
 msgid "{JAPAN ONLY}Footer regulatory text"
 msgstr "{JAPAN ONLY}Footer regulatory text"
@@ -12306,8 +12393,14 @@ msgstr "{JAPAN ONLY}Foreign exchange one cancellation order - profit take & stop
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 
+msgid "{JAPAN ONLY}General Risk Warning"
+msgstr ""
+
 msgid "{JAPAN ONLY}Generous Commission Structure"
 msgstr "{JAPAN ONLY}Generous Commission Structure"
+
+msgid "{JAPAN ONLY}Get JPY 1,000,000"
+msgstr ""
 
 msgid "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
 msgstr "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
@@ -12332,6 +12425,9 @@ msgstr "{JAPAN ONLY}Historical volatility is a prediction of the future rate of 
 
 msgid "{JAPAN ONLY}How to Open an Account"
 msgstr "{JAPAN ONLY}How to Open an Account"
+
+msgid "{JAPAN ONLY}How to begin"
+msgstr ""
 
 msgid "{JAPAN ONLY}How to open account"
 msgstr "{JAPAN ONLY}How to open account"
@@ -12450,6 +12546,9 @@ msgstr "{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguar
 msgid "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
 msgstr "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
 
+msgid "{JAPAN ONLY}Input personal information"
+msgstr ""
+
 msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 msgstr "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 
@@ -12458,6 +12557,9 @@ msgstr "{JAPAN ONLY}Interactive webinar"
 
 msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "{JAPAN ONLY}Introduction to Binary Options"
+
+msgid "{JAPAN ONLY}Investment Solicitation Policy"
+msgstr ""
 
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 msgstr "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
@@ -12501,6 +12603,12 @@ msgstr "{JAPAN ONLY}JSA_Title_2"
 msgid "{JAPAN ONLY}Japan Service Announcements"
 msgstr "{JAPAN ONLY}Japan Service Announcements"
 
+msgid "{JAPAN ONLY}Join now"
+msgstr ""
+
+msgid "{JAPAN ONLY}Join our affiliate program to earn income by leveraging your hard-earned network of contact"
+msgstr ""
+
 msgid "{JAPAN ONLY}Just switch this button to prevent misoperation"
 msgstr "{JAPAN ONLY}Just switch this button to prevent misoperation"
 
@@ -12543,8 +12651,14 @@ msgstr "{JAPAN ONLY}Learn to become a better trader and get all the latest news 
 msgid "{JAPAN ONLY}Learning to trade online?"
 msgstr "{JAPAN ONLY}Learning to trade online?"
 
+msgid "{JAPAN ONLY}Less than 1 million JPY"
+msgstr ""
+
 msgid "{JAPAN ONLY}Licensed by the Kanto Local Financial Bureau (Finance Division) No. 2949"
 msgstr "{JAPAN ONLY}Licensed by the Kanto Local Financial Bureau (Finance Division) No. 2949"
+
+msgid "{JAPAN ONLY}Licensed in Japan"
+msgstr ""
 
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
@@ -12573,6 +12687,12 @@ msgstr "{JAPAN ONLY}Maximum loss: not guaranteed"
 msgid "{JAPAN ONLY}Member Associations: Financial Futures Association Japan"
 msgstr "{JAPAN ONLY}Member Associations: Financial Futures Association Japan"
 
+msgid "{JAPAN ONLY}No Connections With Antisocial Forces"
+msgstr ""
+
+msgid "{JAPAN ONLY}No Connections with Antisocial Forces"
+msgstr ""
+
 msgid "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
 msgstr "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
 
@@ -12591,8 +12711,14 @@ msgstr "{JAPAN ONLY}Now you can trade fx markets using binary options with one o
 msgid "{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world"
 msgstr "{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world"
 
+msgid "{JAPAN ONLY}Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
+msgstr ""
+
 msgid "{JAPAN ONLY}On-time Payments Every Time"
 msgstr "{JAPAN ONLY}On-time Payments Every Time"
+
+msgid "{JAPAN ONLY}Open a Demo Account"
+msgstr ""
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
@@ -12638,6 +12764,9 @@ msgstr "{JAPAN ONLY}Our internal management control officer and beneficiary repr
 
 msgid "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
 msgstr "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
+
+msgid "{JAPAN ONLY}Over 100 million JPY"
+msgstr ""
 
 msgid "{JAPAN ONLY}Pass our Knowledge Test"
 msgstr "{JAPAN ONLY}Pass our Knowledge Test"
@@ -12696,11 +12825,17 @@ msgstr "{JAPAN ONLY}Please note we can only accept payments from your designated
 msgid "{JAPAN ONLY}Please note:"
 msgstr "{JAPAN ONLY}Please note:"
 
+msgid "{JAPAN ONLY}Policies and Exclusion of Liability"
+msgstr ""
+
 msgid "{JAPAN ONLY}Practice account"
 msgstr "{JAPAN ONLY}Practice account"
 
 msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgstr "{JAPAN ONLY}Pre-Contract Documents"
+
+msgid "{JAPAN ONLY}Pre-contract Document"
+msgstr ""
 
 msgid "{JAPAN ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
 msgstr "{JAPAN ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
@@ -12713,6 +12848,9 @@ msgstr "{JAPAN ONLY}Predict whether a FX rate will touch either target barrier b
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
+
+msgid "{JAPAN ONLY}Privacy Policy"
+msgstr ""
 
 msgid "{JAPAN ONLY}Proceed to Virtual Account"
 msgstr "{JAPAN ONLY}Proceed to Virtual Account"
@@ -12744,6 +12882,9 @@ msgstr "{JAPAN ONLY}Range Options: Stay-In / Break-Out"
 msgid "{JAPAN ONLY}Receive account activation code by secure mail and activate account"
 msgstr "{JAPAN ONLY}Receive account activation code by secure mail and activate account"
 
+msgid "{JAPAN ONLY}Receive your activation code by secure"
+msgstr ""
+
 msgid "{JAPAN ONLY}Register"
 msgstr "{JAPAN ONLY}Register"
 
@@ -12755,6 +12896,12 @@ msgstr "{JAPAN ONLY}Regulation & Tax"
 
 msgid "{JAPAN ONLY}Remitter's Name:"
 msgstr "{JAPAN ONLY}Remitter's Name:"
+
+msgid "{JAPAN ONLY}Risk For Binary Option Trading"
+msgstr ""
+
+msgid "{JAPAN ONLY}Risk for Binary Option Trading"
+msgstr ""
 
 msgid "{JAPAN ONLY}Savings"
 msgstr "{JAPAN ONLY}Savings"
@@ -12776,6 +12923,9 @@ msgstr "{JAPAN ONLY}Section 5: Calculation"
 
 msgid "{JAPAN ONLY}Segregate all customers' money to a trust account"
 msgstr "{JAPAN ONLY}Segregate all customers' money to a trust account"
+
+msgid "{JAPAN ONLY}Segregated Funds"
+msgstr ""
 
 msgid "{JAPAN ONLY}Select a trading period"
 msgstr "{JAPAN ONLY}Select a trading period"
@@ -12818,6 +12968,9 @@ msgstr "{JAPAN ONLY}Sorry, account signup is not available in your country."
 
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
+
+msgid "{JAPAN ONLY}Start now"
+msgstr ""
 
 msgid "{JAPAN ONLY}Start trading after depositing money"
 msgstr "{JAPAN ONLY}Start trading after depositing money"
@@ -13134,6 +13287,9 @@ msgstr "{JAPAN ONLY}Take our Knowledge Test to confirm your understanding of opt
 msgid "{JAPAN ONLY}Take the knowledge confirmation test"
 msgstr "{JAPAN ONLY}Take the knowledge confirmation test"
 
+msgid "{JAPAN ONLY}Terms and Conditions"
+msgstr ""
+
 msgid "{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process."
 msgstr "{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process."
 
@@ -13227,6 +13383,9 @@ msgstr "{JAPAN ONLY}Touch Options"
 msgid "{JAPAN ONLY}Track your trade in real time:"
 msgstr "{JAPAN ONLY}Track your trade in real time:"
 
+msgid "{JAPAN ONLY}Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!"
+msgstr ""
+
 msgid "{JAPAN ONLY}Trade with 3 simple steps"
 msgstr "{JAPAN ONLY}Trade with 3 simple steps"
 
@@ -13238,6 +13397,9 @@ msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Trading manual"
 msgstr "{JAPAN ONLY}Trading manual"
+
+msgid "{JAPAN ONLY}Try our trading page"
+msgstr ""
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
@@ -13365,6 +13527,9 @@ msgstr "{JAPAN ONLY}You can purchase a trade with one click"
 msgid "{JAPAN ONLY}You can request a funds transfer to your designated bank account at any time."
 msgstr "{JAPAN ONLY}You can request a funds transfer to your designated bank account at any time."
 
+msgid "{JAPAN ONLY}You can request more virtual money if your virtual balance falls below JPY 100,000."
+msgstr ""
+
 msgid "{JAPAN ONLY}You can see the real-time value of your portfolio and access the trade view and analysis screen from which you can then choose to close the position:"
 msgstr "{JAPAN ONLY}You can see the real-time value of your portfolio and access the trade view and analysis screen from which you can then choose to close the position:"
 
@@ -13376,6 +13541,9 @@ msgstr "{JAPAN ONLY}You can then review the performance of the trade and then se
 
 msgid "{JAPAN ONLY}You must have sufficient balance in your trading account at the time of transfer."
 msgstr "{JAPAN ONLY}You must have sufficient balance in your trading account at the time of transfer."
+
+msgid "{JAPAN ONLY}You need to finish all 20 questions."
+msgstr ""
 
 msgid "{JAPAN ONLY}You set your own personal daily loss limit"
 msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
@@ -13391,6 +13559,9 @@ msgstr "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+
+msgid "{JAPAN ONLY}Your Application is Being Processed."
+msgstr ""
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
