@@ -15,7 +15,7 @@ const VirtualAccOpening = (() => {
     let is_jp_client;
 
     const onLoad = () => {
-        is_jp_client = Client.get('is_jp');
+        is_jp_client = Client.isJPClient();
         if (is_jp_client) {
             handleJPForm();
         } else {

@@ -8,7 +8,7 @@ const AffiliatePopup = (() => {
     const show = () => {
         if (Client.isLoggedIn() || $(`#${container_id}`).length) return;
         BinarySocket.wait('website_status').then((response) => {
-            if (Client.get('is_jp') || response.website_status.clients_country === 'jp') {
+            if (Client.isJPClient() || response.website_status.clients_country === 'jp') {
                 $.ajax({
                     url     : urlFor('affiliate_disclaimer'),
                     dataType: 'html',

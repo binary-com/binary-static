@@ -7,7 +7,7 @@ const template     = require('../../_common/utility').template;
 
 const CashierJP = (() => {
     const onLoad = (action) => {
-        if (Client.get('is_jp') && Client.get('residence') !== 'jp') BinaryPjax.loadPreviousUrl();
+        if (Client.isJPClient() && Client.get('residence') !== 'jp') BinaryPjax.loadPreviousUrl();
         const $container = $('#japan_cashier_container');
         BinarySocket.send({ cashier_password: 1 }).then((response) => {
             if (!response.error && response.cashier_password === 1) {

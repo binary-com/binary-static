@@ -109,7 +109,7 @@ const Header = (() => {
 
     const metatraderMenuItemVisibility = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-            if (MetaTrader.isEligible() && !Client.get('is_jp')) {
+            if (MetaTrader.isEligible() && !Client.isJPClient()) {
                 getElementById('user_menu_metatrader').setVisibility(1);
             }
         });
@@ -166,8 +166,8 @@ const Header = (() => {
                 });
 
                 if (jp_account_status) {
-                    const has_disabled_jp = Client.get('is_jp') && Client.getAccountOfType('real').is_disabled;
-                    if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
+                    const has_disabled_jp = Client.isJPClient() && Client.getAccountOfType('real').is_disabled;
+                    if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not returns the correct timeshow upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
                         applyToAllElements(upgrade_msg, (el) => { el.setVisibility(1); });
@@ -249,7 +249,7 @@ const Header = (() => {
 
             const riskAssessment = () => (
                 (get_account_status.risk_classification === 'high' || Client.isAccountOfType('financial')) &&
-                /financial_assessment_not_complete/.test(status) && !Client.get('is_jp')
+                /financial_assessment_not_complete/.test(status) && !Client.isJPClient()
             );
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);

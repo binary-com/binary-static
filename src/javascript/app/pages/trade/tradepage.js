@@ -26,7 +26,7 @@ const TradePage = (() => {
     };
 
     const init = () => {
-        if (Client.get('is_jp')) {
+        if (Client.isJPClient()) {
             BinaryPjax.load('multi_barriers_trading');
             return;
         }
