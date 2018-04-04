@@ -7,7 +7,7 @@ const ThirdPartyLinks = (() => {
     const init = () => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('landing_company').then((response) => {
-                if (getPropertyValue(response, ['landing_company', 'financial_company', 'shortcode'])) {
+                if (getPropertyValue(response, ['landing_company', 'financial_company', 'shortcode']) === 'maltainvest') {
                     document.body.addEventListener('click', clickHandler);
                 }
             });
