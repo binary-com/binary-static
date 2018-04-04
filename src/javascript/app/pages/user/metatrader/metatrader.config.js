@@ -61,16 +61,7 @@ const MetaTraderConfig = (() => {
             prerequisites: () => new Promise(resolve => resolve('')),
         },
         password_reset: {
-            title      : localize('Reset Password'),
-            success_msg: response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]),
-            onError    : (response, $form) => {
-                if (response.error.code === 'InvalidToken') {
-                    $form.find('#frm_password_reset').setVisibility(0).end().find('#frm_verify_password_reset').find('#token_error').setVisibility(1).end().setVisibility(1);
-                }
-            },
-            onSuccess: (response, $form) => {
-                $form.find('#frm_password_reset').setVisibility(0).end().find('#frm_verify_password_reset').setVisibility(1);
-            },
+            title: localize('Reset Password'),
         },
         verify_password_reset: {
             title               : localize('Verify Reset Password'),

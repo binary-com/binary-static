@@ -467,14 +467,29 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const enableButton = (action, is_response_successful) => {
+    const enableButton = (action, response = {}) => {
         const $btn = actions_info[action].$form.find('button');
         if ($btn.length && $btn.find('.barspinner').length) {
             $btn.removeAttr('disabled').html($btn.find('span').text());
         }
-        // after submit is done, reset token value
-        if (action === 'verify_password_reset' || (is_response_successful && action === 'password_reset')) {
+        if (/password_reset/.test(action)) {
+            // after submit is done, reset token value
+            resetManagePasswordTab(action, response);
+        }
+    };
+
+    const resetManagePasswordTab = (action, response) => {
+        const has_invalid_token = getPropertyValue(response, ['error', 'code']) === 'InvalidToken';
+        if (!response.error || has_invalid_token) {
             token = '';
+            if (action === 'password_reset') { // go back to verify reset password form
+                loadAction('manage_password');
+                if (!response.error) {
+                    displayMainMessage(localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]));
+                } else if (has_invalid_token) {
+                    $form.find('#frm_verify_password_reset #token_error').setVisibility(1);
+                }
+            }
         }
     };
 

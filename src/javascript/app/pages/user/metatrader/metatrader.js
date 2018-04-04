@@ -148,7 +148,7 @@ const MetaTrader = (() => {
             // further validations before submit (password_check)
             MetaTraderUI.postValidate(acc_type, action).then((is_ok) => {
                 if (!is_ok) {
-                    MetaTraderUI.enableButton(action, is_ok);
+                    MetaTraderUI.enableButton(action);
                     return;
                 }
 
@@ -180,7 +180,7 @@ const MetaTrader = (() => {
                             actions_info[action].onSuccess(response, MetaTraderUI.$form());
                         }
                     }
-                    MetaTraderUI.enableButton(action, !('error' in response));
+                    MetaTraderUI.enableButton(action, response);
                 });
             });
         }
