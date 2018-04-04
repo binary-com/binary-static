@@ -28,7 +28,7 @@ const PortfolioInit = (() => {
         currency           = '';
         oauth_apps         = {};
         $portfolio_loading = $('#portfolio-loading');
-        is_jp_client       = Client.get('is_jp');
+        is_jp_client       = Client.isJPClient();
         $portfolio_loading.show();
         showLoadingImage($portfolio_loading[0]);
         is_first_response = true;

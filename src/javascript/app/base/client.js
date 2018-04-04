@@ -17,6 +17,7 @@ const Client = (() => {
     const storage_key = 'client.accounts';
     let client_object = {};
     let current_loginid;
+    let is_jp_client = false;
 
     const init = () => {
         current_loginid = LocalStore.get('active_loginid');
@@ -185,7 +186,7 @@ const Client = (() => {
     };
 
     const shouldShowJP = (el) => (
-        get('is_jp') ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
+        is_jp_client ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
     );
 
     const activateByClientType = (section_id) => {
@@ -403,10 +404,10 @@ const Client = (() => {
 
     };
 
-    const defaultRedirectUrl = () => urlFor(get('is_jp') ? 'multi_barriers_trading' : 'trading');
+    const defaultRedirectUrl = () => urlFor(is_jp_client ? 'multi_barriers_trading' : 'trading');
 
     const setJPFlag = () => {
-        set('is_jp', urlLang() === 'ja' || get('residence') === 'jp');
+        is_jp_client = urlLang() === 'ja' || get('residence') === 'jp';
     };
 
     return {
@@ -440,6 +441,7 @@ const Client = (() => {
         canRequestProfessional,
         defaultRedirectUrl,
         setJPFlag,
+        isJPClient: () => is_jp_client,
     };
 })();
 
