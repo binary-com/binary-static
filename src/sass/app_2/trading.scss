@@ -99,26 +99,22 @@
                 font-weight: 400;
                 margin: 5px 0 12px;
 
+                &.icon {
+                    display: inline-flex;
+                    align-items: center;
+                    top: -3px;
+
+                    &:before {
+                        margin-right: 5px;
+                    }
+                }
                 &.left {
                     left: 5px;
-
-                    &.icon {
-                        display: inline-flex;
-                        align-items: center;
-                        top: -3px;
-
-                        &:before {
-                            margin-right: 5px;
-                        }
-                    }
-                    &.left {
-                        left: 5px;
-                    }
-                    &.right {
-                        top: -3px;
-                        right: 5px;
-                        font-size: 0.5625rem; /* stylelint-disable-line number-max-precision */
-                    }
+                }
+                &.right {
+                    top: -3px;
+                    right: 5px;
+                    font-size: 0.5625rem; /* stylelint-disable-line number-max-precision */
                 }
             }
         }
