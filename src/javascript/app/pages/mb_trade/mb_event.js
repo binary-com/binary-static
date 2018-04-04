@@ -23,7 +23,7 @@ const MBTradingEvents = (() => {
     const initiate = () => {
         const $form        = $('.trade_form');
         const hidden_class = 'invisible';
-        const is_jp_client = Client.get('is_jp');
+        const is_jp_client = Client.isJPClient();
 
         $(document).on('click', (e) => {
             if ($(e.target).parents('#payout_list').length) return;

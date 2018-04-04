@@ -31,7 +31,7 @@ const ProfitTableUI = (() => {
 
         currency = Client.get('currency');
 
-        header[7] += (Client.get('is_jp') || !currency) ? '' : ` (${currency})`;
+        header[7] += (Client.isJPClient() || !currency) ? '' : ` (${currency})`;
 
         const footer = [localize('Total Profit/Loss'), '', '', '', '', '', '', '', ''];
 
@@ -61,7 +61,7 @@ const ProfitTableUI = (() => {
 
         const sub_total_type = (total_profit >= 0) ? 'profit' : 'loss';
 
-        $('#pl-day-total').find(' > .pl').html(formatMoney(currency, Number(total_profit), !Client.get('is_jp')))
+        $('#pl-day-total').find(' > .pl').html(formatMoney(currency, Number(total_profit), !Client.isJPClient()))
             .removeClass('profit loss')
             .addClass(sub_total_type);
     };
@@ -69,7 +69,7 @@ const ProfitTableUI = (() => {
     const createProfitTableRow = (transaction) => {
         const profit_table_data = ProfitTable.getProfitTabletData(transaction);
         const pl_type           = Number(transaction.sell_price - transaction.buy_price) >= 0 ? 'profit' : 'loss';
-        const is_jp_client      = Client.get('is_jp');
+        const is_jp_client      = Client.isJPClient();
 
         const data = [
             is_jp_client ? toJapanTimeIfNeeded(parseInt(transaction.purchase_time)) : profit_table_data.buyDate,

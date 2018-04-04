@@ -12,7 +12,7 @@ const LimitsInit = (() => {
         const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);
 
-        if (Client.get('is_jp')) {
+        if (Client.isJPClient()) {
             return;
         }
 

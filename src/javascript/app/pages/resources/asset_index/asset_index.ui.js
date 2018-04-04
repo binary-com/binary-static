@@ -1,6 +1,6 @@
 const AssetIndex       = require('./asset_index');
 const BinaryPjax       = require('../../../base/binary_pjax');
-const Client           = require('../../../base/client');
+const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
 const Table            = require('../../../common/attach_dom/table');
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
@@ -14,7 +14,7 @@ const AssetIndexUI = (() => {
         market_columns;
 
     const onLoad = () => {
-        if (Client.get('is_jp')) {
+        if (isJPClient()) {
             BinaryPjax.loadPreviousUrl();
             return;
         }
