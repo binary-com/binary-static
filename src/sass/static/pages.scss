@@ -503,6 +503,7 @@ body #not_authenticated_financial ul.checked > li {
                 @media (max-width: 768px) {
                     text-align: center;
                     background-color: transparent;
+                    // Center div to parent
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
