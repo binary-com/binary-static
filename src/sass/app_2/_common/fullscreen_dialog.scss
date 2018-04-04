@@ -47,6 +47,10 @@ $content-index: 1;
     }
     &__header {
         box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
         position: fixed;
         top: 0;
@@ -80,10 +84,8 @@ $content-index: 1;
         color: #333;
         margin: 0;
     }
-    &__close-btn {
-        position: absolute;
-        top: 14px;
-        right: 14px;
+    &__close-btn img {
+        display: block;
     }
     fieldset {
         border: none;
