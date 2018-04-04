@@ -3,9 +3,24 @@ import Explanation from './explanation.jsx';
 import LastDigit from './last_digit.jsx';
 import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../_common/components/tabs.jsx';
 
+const ArrowsMobile = ({ direction, parent }) => (
+    <div className='align-self-center gr-2 gr-hide gr-show-m gr-show-p gr-no-gutter'>
+        <img
+            className={`go-${direction} gr-5 gr-no-gutter gr-centered`}
+            data-parent={parent}
+            src={it.url_for(`images/pages/home/arrow_${direction}.svg`)}
+        />
+    </div>
+);
+
 const Analysis = ({ no_graph }) => (
     <div id='trading_bottom_content'>
         <TabContainer className='gr-padding-30 gr-parent full-width' theme='light'>
+            <div className='gr-row'>
+                <ArrowsMobile parent='trade_analysis' direction='left' />
+                <strong id='tab_mobile_header' className='align-self-center gr-centered'/>
+                <ArrowsMobile parent='trade_analysis' direction='right' />
+            </div>
             <TabsSubtabs
                 id='trade_analysis'
                 className='gr-padding-20 gr-parent tab-selector-wrapper'

@@ -52,6 +52,12 @@ const TradingAnalysis = (() => {
                 loadAnalysisTab(li.id);
             }
         });
+        $('.go-left').on('click', (e) => {
+            goLeft(e);
+        });
+        $('.go-right').on('click', (e) => {
+            goRight(e);
+        });
     };
 
     /*
@@ -108,6 +114,8 @@ const TradingAnalysis = (() => {
         if (current_tab) {
             const el_to_show = getElementById(current_tab);
             slideSelector(tab_selector_id, el_to_show);
+            const mobile_tab_header = document.getElementById('tab_mobile_header');
+            if (mobile_tab_header) mobile_tab_header.innerHTML = el_to_show.firstChild.innerHTML;
         }
         // workaround for underline during window resize
         window.addEventListener('resize', () => {
@@ -119,6 +127,38 @@ const TradingAnalysis = (() => {
         const isActive = el_to_show.classList.contains('active');
         if (isActive) {
             getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
+        }
+    };
+
+    const goLeft = (e) => {
+        changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
+    };
+
+    const goRight = (e) => {
+        changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'right' });
+    };
+
+    const changeTab = (options) => {
+        const selector_array = Array.from(getElementById(options.selector).querySelectorAll('li.tm-li:not(.invisible):not(.tab-selector)'));
+        const active_index = selector_array.findIndex((x) => x.id === getActiveTab());
+        let index_to_show = active_index;
+        if (options.direction) {
+            const array_length = selector_array.length;
+            if (options.direction === 'left') {
+                index_to_show = active_index - 1;
+                index_to_show = index_to_show === 0 ? index_to_show: array_length - 1;
+            } else {
+                index_to_show = active_index + 1;
+                index_to_show = index_to_show === array_length ? 0 : index_to_show;
+            }
+        }
+        options.el_to_show = selector_array[index_to_show].id;
+        if (!options.el_to_show || !options.selector) {
+            return;
+        }
+        sessionStorage.setItem('currentAnalysisTab', options.el_to_show);
+        if (!getElementById(options.el_to_show).classList.contains('active')) {
+            loadAnalysisTab(options.el_to_show);
         }
     };
 
