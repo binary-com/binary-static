@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from '../store/connect';
+import { connect } from '../../../store/connect';
 
 const Test = ({
     entries,

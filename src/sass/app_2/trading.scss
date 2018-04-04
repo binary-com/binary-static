@@ -1,107 +1,106 @@
-#content {
-    margin-top: 0;
-    margin-bottom: 31px;
+#binary_app {
+    overflow: hidden;
 
-    #trade_app {
-        overflow: hidden;
-
-        .notice-msg {
-            background: unset;
-            border: 1px solid $COLOR_LIGHT_GRAY;
+    .notice-msg {
+        background: unset;
+        border: 1px solid $COLOR_LIGHT_GRAY;
+    }
+    .icon {
+        &:before {
+            content: '';
+            display: block;
+            background-size: 16px 16px;
+            height: 16px;
+            width: 16px;
         }
-        .icon {
-            &:before {
-                content: '';
+        &.start-time:before {
+            background-image: url('../images/trading_app/sidebar/light/ic_watch_later_light.svg');
+        }
+        &.trade-duration:before {
+            background-image: url('../images/trading_app/sidebar/light/ic_timelapse_light.svg');
+        }
+        &.invest-amount:before {
+            background-image: url('../images/trading_app/sidebar/light/ic_monetization_light.svg');
+        }
+        &.barriers:before {
+            background-image: url('../images/trading_app/sidebar/light/ic_barrier_light.svg');
+        }
+        &.digits:before {
+            background-image: url('../images/trading_app/sidebar/light/ic_digit_light.svg');
+        }
+    }
+    .desktop-only fieldset .duration-container > * {
+        margin-top: 0;
+    }
+    fieldset {
+        input, select {
+            width: 100%;
+            height: 32px;
+            font-size: 1rem;
+            font-weight: 300;
+            align-self: center;
+            appearance: none;
+            box-sizing: border-box;
+            padding: 2px 5px;
+            background: $COLOR_WHITE;
+        }
+        input {
+            &:hover {
+                border-color: $COLOR_BLUE;
+            }
+            &:active, &:focus {
+                outline: 0;
+                border-color: $COLOR_BLUE;
+                box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+            }
+        }
+        .select-wrapper {
+            position: relative;
+
+            &:after {
+                content: '\25bc';
                 display: block;
-                background-size: 16px 16px;
-                height: 16px;
-                width: 16px;
-            }
-            &.start-time:before {
-                background-image: url('../images/trading_app/sidebar/light/ic_watch_later_light.svg');
-            }
-            &.trade-duration:before {
-                background-image: url('../images/trading_app/sidebar/light/ic_timelapse_light.svg');
-            }
-            &.invest-amount:before {
-                background-image: url('../images/trading_app/sidebar/light/ic_monetization_light.svg');
-            }
-            &.barriers:before {
-                background-image: url('../images/trading_app/sidebar/light/ic_barrier_light.svg');
-            }
-            &.digits:before {
-                background-image: url('../images/trading_app/sidebar/light/ic_digit_light.svg');
-            }
-        }
-        .desktop-only fieldset .duration-container > * {
-            margin-top: 0;
-        }
-        fieldset {
-            input, select {
-                width: 100%;
-                height: 32px;
-                font-size: 1rem;
-                font-weight: 300;
-                align-self: center;
-                appearance: none;
-                box-sizing: border-box;
-                padding: 2px 5px;
-                background: $COLOR_WHITE;
-            }
-            input {
-                &:hover {
-                    border-color: $COLOR_BLUE;
-                }
-                &:active, &:focus {
-                    outline: 0;
-                    border-color: $COLOR_BLUE;
-                    box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
-                }
-            }
-            .select-wrapper {
-                position: relative;
-
-                &:after {
-                    content: '\25bc';
-                    display: block;
-                    position: absolute;
-                    top: 50%;
-                    right: 8px;
-                    font-size: 12px;
-                    transform: translateY(-50%);
-                }
-            }
-            select {
-                margin: 8px 0;
-                display: block;
-
-                &:hover {
-                    border-color: $COLOR_BLUE;
-                }
-                &:active, &:focus {
-                    outline: 0;
-                    border-color: $COLOR_BLUE;
-                    box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
-                }
-            }
-            .symbols {
-                font-size: 1rem;
                 position: absolute;
-                display: block;
-                text-align: center;
-                z-index: 1;
-                color: $COLOR_BLUE;
+                top: 50%;
+                right: 8px;
+                font-size: 12px;
+                transform: translateY(-50%);
             }
-            .clock-header, .fieldset-header {
-                height: 1.5rem;
-                position: relative;
+        }
+        select {
+            margin: 8px 0;
+            display: block;
 
-                span.field-info {
-                    position: absolute;
-                    color: $COLOR_BLUE;
-                    font-size: 0.7rem;
-                    font-weight: 400;
-                    margin: 5px 0 12px;
+            &:hover {
+                border-color: $COLOR_BLUE;
+            }
+            &:active, &:focus {
+                outline: 0;
+                border-color: $COLOR_BLUE;
+                box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+            }
+        }
+        .symbols {
+            font-size: 1rem;
+            position: absolute;
+            display: block;
+            text-align: center;
+            z-index: 1;
+            color: $COLOR_BLUE;
+        }
+        .clock-header, .fieldset-header {
+            height: 1.5rem;
+            position: relative;
+
+            span.field-info {
+                position: absolute;
+                color: $COLOR_BLUE;
+                font-size: 0.7rem;
+                font-weight: 400;
+                margin: 5px 0 12px;
+
+                &.left {
+                    left: 5px;
 
                     &.icon {
                         display: inline-flex;

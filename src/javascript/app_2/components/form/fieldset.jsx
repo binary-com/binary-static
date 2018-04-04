@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import moment from 'moment';
-import Tooltip from './tooltip.jsx';
+import Tooltip from '../elements/tooltip.jsx';
 
 class Fieldset extends React.PureComponent {
     render() {

@@ -1,11 +1,12 @@
 import React from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import { ToggleDrawer, DrawerItems, DrawerItem } from './drawer.jsx';
-import LanguageSwitcher from './language_switcher.jsx';
-import AccountSwitcher from './account_switcher.jsx';
+import { ToggleDrawer, DrawerItems, DrawerItem } from '../elements/drawer.jsx';
+import LanguageSwitcher from '../elements/language_switcher.jsx';
+import AccountSwitcher from '../elements/account_switcher.jsx';
 import Button from '../form/button.jsx';
-import { localize } from '../../../../../_common/localize';
-import Url from '../../../../../_common/url';
+import { localize } from '../../../_common/localize';
+import Url from '../../../_common/url';
+import { BinaryLink } from '../../routes';
 
 const MenuDrawer = () => (
     <div className='drawer-items-container'>
@@ -34,7 +35,7 @@ const MenuDrawer = () => (
                     items={[
                         { text: localize('Portfolio') },
                         { text: localize('Profit Table') },
-                        { text: localize('Statement') },
+                        { text: localize('Statement'), link_to: 'statement' },
                     ]}
                 />
                 <DrawerItem text={localize('Cashier')} />
@@ -50,10 +51,7 @@ const MenuDrawer = () => (
 );
 
 class TradingHeader extends React.Component {
-
     render() {
-        const isMenuLinkActive = (name) => (window.location.pathname.indexOf(name.toLowerCase()) >= 0);
-
         return (
             <React.Fragment>
                 <header id={this.props.id} className='shadow'>
@@ -73,13 +71,9 @@ class TradingHeader extends React.Component {
                             {!!this.props.items.length &&
                                 <div className='menu-links'>
                                     {this.props.items.map((item, idx) => (
-                                        <a
-                                            className={`${isMenuLinkActive(item.text) ? 'active': ''}`}
-                                            key={idx}
-                                            href={item.href || 'javascript:;'}
-                                        >
+                                        <BinaryLink key={idx} to={item.link_to}>
                                             <span className={item.icon}>{item.text}</span>
-                                        </a>
+                                        </BinaryLink>
                                     ))}
                                 </div>
                             }

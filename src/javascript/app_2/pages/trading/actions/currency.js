@@ -1,4 +1,4 @@
-import DAO from '../data/dao';
+import DAO from '../../../data/dao';
 import { isCryptocurrency } from '../../../../app/common/currency';
 import { localize } from '../../../../_common/localize';
 

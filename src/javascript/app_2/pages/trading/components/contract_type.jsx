@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from '../store/connect';
+import { connect } from '../../../store/connect';
 import ContractsPopUp from './elements/contracts_popup.jsx';
 
 const Contract = ({

@@ -1,8 +1,8 @@
 import React from 'react';
-import Dropdown from './form/dropdown.jsx';
-import Fieldset from './elements/fieldset.jsx';
-import TimePicker from './form/time_picker.jsx';
-import { connect } from '../store/connect';
+import Dropdown from '../../../components/form/dropdown.jsx';
+import Fieldset from '../../../components/form/fieldset.jsx';
+import TimePicker from '../../../components/form/time_picker.jsx';
+import { connect } from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
 
 const StartDate = ({

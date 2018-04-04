@@ -1,5 +1,11 @@
-import BinarySocket from '../../../../app/base/socket';
+import BinarySocket from '../../app/base/socket';
 
+/* TODO:
+      1. to manage subscriptions and subscription ids
+      2. to handle forget and then resubscribe when needed
+      3. to handle another request with the same values while the previous one still valid (either stream or not)
+      4. to ...
+*/
 const DAO = (() => {
     const getActiveSymbols = () => BinarySocket.send({ active_symbols: 'brief' });
 

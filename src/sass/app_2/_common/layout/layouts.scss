@@ -1,8 +1,11 @@
 @supports (display: grid) {
+    #app_contents {
+        margin: 70px 0 40px;
+    }
     /* trade-app layout */
     #trade_container {
         position: relative;
-        margin: 80px 15px 0;
+        margin: 0 15px;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: repeat(2, [row] auto);

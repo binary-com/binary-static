@@ -1,7 +1,7 @@
 import React from 'react';
-import Dropdown from './form/dropdown.jsx';
-import Fieldset from './elements/fieldset.jsx';
-import { connect } from '../store/connect';
+import Dropdown from '../../../components/form/dropdown.jsx';
+import Fieldset from '../../../components/form/fieldset.jsx';
+import { connect } from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
 
 const last_digit_numbers = [...Array(10).keys()].map(number => ({

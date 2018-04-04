@@ -69,7 +69,7 @@ const getConfig = () => (
         languages       : program.branch === 'translations' ? ['ACH'] : common.languages,
         root_path       : common.root_path,
         root_url        : `/${program.dev ? 'binary-static/' : ''}${program.branch ? `${program.branch}/` : ''}`,
-        sections        : ['app', 'app_2', 'static'],
+        sections        : ['app', 'static'],
     }
 );
 
@@ -156,32 +156,26 @@ const createContextBuilder = async () => {
         await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
     }
 
-    const extra = {
+    const extra = is_app => ({
         js_files: [
             `${config.root_url}js/texts/{PLACEHOLDER_FOR_LANG}.js?${static_hash}`,
             `${config.root_url}js/manifest.js?${static_hash}`,
             `${config.root_url}js/vendor.min.js?${vendor_hash}`,
-            program.dev ?
-                `${config.root_url}js/binary.js?${static_hash}` :
-                `${config.root_url}js/binary.min.js?${static_hash}`,
+            `${config.root_url}js/binary${is_app ? '_app' : ''}${program.dev ? '' : '.min'}.js?${static_hash}`,
         ],
-        css_files: [
+        css_files: is_app ? [`${config.root_url}css/app_2.min.css?${static_hash}`] : [
             `${config.root_url}css/common.min.css?${static_hash}`,
             ...config.sections.map(section => `${config.root_url}css/${section}.min.css?${static_hash}`),
         ],
         languages  : config.languages,
         broker_name: 'Binary.com',
         static_hash,
-    };
+    });
 
     return {
         buildFor: (model) => {
-            // TODO: filter according to the section once migrated to the new URLs
-            const css_files = {
-                css_files: extra.css_files.filter(f => /^trade$/.test(model.current_path) ? /app_2/.test(f) : !/app_2/.test(f)),
-            };
             const translator = createTranslator(model.language);
-            return Object.assign({}, extra, css_files, model, {
+            return Object.assign({}, extra(/^app$/.test(model.current_path)), model, {
                 L: (text, ...args) => {
                     const translated = translator(text, ...args);
                     return RenderHTML(translated);
