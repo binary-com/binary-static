@@ -165,16 +165,27 @@
             flex: 0 0 auto;
             text-align: right;
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
+            @media (max-width: 768px) {
+                flex: 1;
+            }
         }
         #contract_type_container {
             flex: 0 0 auto;
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
-        }
-        #underlying_details span {
-            display: block;
-            margin: 5px 0;
             @media (max-width: 768px) {
-                display: inline-block;
+                flex: 1;
+            }
+        }
+        #underlying_details {
+            span {
+                display: block;
+                margin: 5px 0;
+                @media (max-width: 768px) {
+                    display: inline-block;
+                }
+            }
+            @media (max-width: 768px) {
+                margin-left: auto;
             }
         }
     }
@@ -635,6 +646,7 @@
                 height: auto;
             }
             #price_container_top {
+                margin-top: 1rem;
                 margin-right: 0 !important;
             }
             .price_wrapper {
@@ -732,7 +744,13 @@
 
     #trade_analysis {
         a.tm-a.a-active, .tm-li.active a {
+            display: block;
             pointer-events: none;
+        }
+        li.tm-li.tab-selector {
+            @media screen and (max-width: 480px) {
+                top: 26px;
+            }
         }
     }
     #trade_bottom_content {

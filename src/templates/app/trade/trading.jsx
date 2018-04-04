@@ -261,9 +261,9 @@ const Trading = () => (
                     </div>
                 </div>
             </div>
+            <div id='all_prices' />
+            <Analysis />
         </div>
-        <div id='all_prices' />
-        <Analysis />
         <div id='trading_init_progress'>
             <Loading />
         </div>
