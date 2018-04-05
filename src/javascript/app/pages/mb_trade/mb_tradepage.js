@@ -35,7 +35,7 @@ const MBTradePage = (() => {
             }
             return;
         }
-        if (Client.get('is_jp')) {
+        if (Client.isJPClient()) {
             disableTrading();
             $('#panel').remove();
         } else {
