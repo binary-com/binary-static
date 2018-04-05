@@ -56,4 +56,25 @@
         z-index: 10;
         width: 100%;
     }
+    #status-message {
+        // replace w/ display flex if message
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        animation: moveInBottom 0.2s ease-in;
+
+        padding: 10px 20px;
+        background: $COLOR_ORANGE;
+        position: fixed;
+        bottom: 7px;
+        right: 7px;
+        left: 7px;
+        border-radius: 5px;
+        z-index: 15;
+
+        &-text {
+            color: $COLOR_WHITE;
+            font-size: $FONT_SIZE_S;
+        }
+    }
 }

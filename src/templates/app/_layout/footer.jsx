@@ -104,6 +104,7 @@ const FooterJA = () => (
             </div>
         </div>
         <div id='end-note' className='invisible content-inverse-color center-text' />
+        <div id='status-message' className='status-outage-message'>Status message here</div>
     </div>
 );
 
@@ -238,7 +239,12 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        <div id='end-note' className='invisible content-inverse-color center-text' />
+        {/* <div id='end-note' className='invisible content-inverse-color center-text' /> */}
+        <div id='status-message'>
+            <div className='status-icon'>V</div>
+            <div id='status-message-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis pariatur quibusdam corrupti minima. Explicabo, quis recusandae. Unde impedit</div>
+            <div className='status-close-icon'>X</div>
+        </div>
     </div>
 );
 

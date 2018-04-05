@@ -235,6 +235,7 @@ const FooterNormal = () => (
             </div>
         </div>
         <div id='end-note' className='invisible content-inverse-color center-text' />
+        <div id='status-message'>Status message 123</div>
     </div>
 );
 
