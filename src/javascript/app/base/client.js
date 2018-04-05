@@ -408,6 +408,7 @@ const Client = (() => {
 
     const setJPFlag = () => {
         is_jp_client = urlLang() === 'ja' || get('residence') === 'jp';
+        LocalStore.set('is_jp_client', is_jp_client); // accessible by files that cannot call Client
     };
 
     return {
