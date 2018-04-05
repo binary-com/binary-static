@@ -1,3 +1,4 @@
+const Dropdown        = require('binary-style').selectDropdown;
 const moment          = require('moment');
 const BinaryPjax      = require('../../../../base/binary_pjax');
 const Client          = require('../../../../base/client');
@@ -379,6 +380,7 @@ const PersonalDetails = (() => {
                 BinarySocket.send({ residence_list: 1 }).then(response => {
                     getDetailsResponse(get_settings_data, response.residence_list);
                     populateResidence(response);
+                    Dropdown('#place_of_birth');
                 });
 
                 if (residence) {

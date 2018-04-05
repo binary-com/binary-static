@@ -4,7 +4,7 @@ import LastDigit from './last_digit.jsx';
 import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../_common/components/tabs.jsx';
 
 const ArrowsMobile = ({ direction, parent }) => (
-    <div className='align-self-center gr-2 gr-hide gr-show-m gr-show-p gr-no-gutter'>
+    <div className='align-self-center gr-2 gr-hide gr-show-m gr-no-gutter'>
         <img
             className={`go-${direction} gr-5 gr-no-gutter gr-centered`}
             data-parent={parent}
