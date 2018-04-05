@@ -1,3 +1,4 @@
+const Dropdown         = require('binary-style').selectDropdown;
 const Cookies          = require('js-cookie');
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
@@ -45,6 +46,7 @@ const VirtualAccOpening = (() => {
                 }));
             });
             $residence.html($options_with_disabled.html());
+            Dropdown('#residence');
 
             if (!residence_value) {
                 BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
