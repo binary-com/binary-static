@@ -56,15 +56,13 @@
         z-index: 10;
         width: 100%;
     }
-    #status-message {
-        // replace w/ display flex if message
+    #status-notification {
         display: none;
-        align-items: center;
-        justify-content: space-between;
         animation: moveInBottom 0.3s ease-in;
 
-        padding: 10px 20px;
-        background: $COLOR_ORANGE;
+        align-items: center;
+        padding: 10px 7px;
+        background: $COLOR_LIGHT_BLUE;
         position: fixed;
         bottom: 7px;
         right: 7px;
@@ -75,6 +73,13 @@
         &-text {
             color: $COLOR_WHITE;
             font-size: $FONT_SIZE_S;
+            margin-right: auto;
+        }
+        &-type {
+            padding-right: 7px;
+        }
+        &-close {
+            padding-left: 7px;
         }
         &-close:hover {
             cursor: pointer;

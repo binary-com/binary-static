@@ -36,6 +36,9 @@ const BinarySocketGeneral = (() => {
             case 'website_status':
                 console.log('onMessage: ', response);
                 Footer.displayNotification('We are experiencing an unusually high load on our system. Some features and services may be unstable or temporarily unavailable. We hope to resolve this issue as soon as we can.');
+                setTimeout(() => {
+                    Footer.displayNotification('Display after two seconds!');
+                }, 2000);
                 if (response.website_status) {
                     is_available = /^up$/i.test(response.website_status.site_status);
                     if (is_available && !BinarySocket.availability()) {
