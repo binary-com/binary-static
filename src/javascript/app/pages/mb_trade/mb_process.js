@@ -61,7 +61,7 @@ const MBProcess = (() => {
         // populate the Symbols object
         MBSymbols.details(data);
 
-        const is_show_all  = Client.isLoggedIn() && !Client.get('is_jp');
+        const is_show_all  = Client.isLoggedIn() && !Client.isJPClient();
         const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
         let symbol         = MBDefaults.get('underlying');
 
@@ -236,7 +236,7 @@ const MBProcess = (() => {
             proposal_array: 1,
             subscribe     : 1,
             basis         : 'payout',
-            amount        : Client.get('is_jp') ? (parseInt(payout) || 1) * 1000 : payout,
+            amount        : Client.isJPClient() ? (parseInt(payout) || 1) * 1000 : payout,
             currency      : MBContract.getCurrency(),
             symbol        : MBDefaults.get('underlying'),
             passthrough   : { req_id: MBPrice.getReqId() },

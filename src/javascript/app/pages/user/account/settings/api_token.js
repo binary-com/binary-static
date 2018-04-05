@@ -1,5 +1,5 @@
 const BinaryPjax           = require('../../../../base/binary_pjax');
-const Client               = require('../../../../base/client');
+const isJPClient           = require('../../../../base/client').isJPClient;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
 const Dialog               = require('../../../../common/attach_dom/dialog');
@@ -17,7 +17,7 @@ const APIToken = (() => {
         $form;
 
     const onLoad = () => {
-        if (Client.get('is_jp')) {
+        if (isJPClient()) {
             BinaryPjax.loadPreviousUrl();
             return;
         }

@@ -6,7 +6,7 @@ const Settings = (() => {
     const onLoad = () => {
         BinarySocket.wait('get_account_status').then(() => {
             const $class_real  = $('.real');
-            const is_jp_client = Client.get('is_jp');
+            const is_jp_client = Client.isJPClient();
 
             if (Client.get('is_virtual')) {
                 $class_real.setVisibility(0);

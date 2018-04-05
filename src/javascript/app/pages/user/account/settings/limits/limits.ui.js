@@ -97,7 +97,7 @@ const LimitsUI = (() => {
             $('#withdrawal-title').prepend(`${login_id} - `);
         }
         $('#limits-title').setVisibility(1);
-        if (!Client.get('is_jp')) {
+        if (!Client.isJPClient()) {
             $('#withdrawal-limits').setVisibility(1);
         }
     };

@@ -44,7 +44,7 @@ const checkLanguage = () => {
             $academy_link.attr('href', academy_href + regex);
         }
     }
-    if (Client.get('is_jp')) {
+    if (Client.isJPClient()) {
         $('.ja-hide').setVisibility(0);
         applyToAllElements('.ja-show', (el) => {
             if (!/client_logged_(in|out)/.test(el.classList)) {
