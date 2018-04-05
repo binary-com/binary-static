@@ -21,6 +21,14 @@
     }
 }
 
+.select2-selection:hover {
+    border: 1px solid $primaryBrandColor;
+}
+
+.select2-results__option--highlighted[aria-selected] {
+    background-color: $primaryBrandColor !important;
+}
+
 #applications-container, .api_token {
     table td, th {
         text-align: center !important;
@@ -39,6 +47,23 @@
 
 .epg_forwardws-content iframe {
     height: 800px;
+}
+
+.detailsws-content {
+    #address_form {
+        select.select-hidden {
+            min-width: 205px;
+        }
+        @media all and (max-width: 480px) {
+            div.select {
+                width: 85%;
+
+                select.select-hidden {
+                    min-width: unset;
+                }
+            }
+        }
+    }
 }
 
 #limits-container thead {
