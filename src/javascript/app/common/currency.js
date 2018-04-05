@@ -41,7 +41,7 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const isJPClient = () => (LocalStore.getObject('client.accounts')[LocalStore.get('active_loginid')] || {}).is_jp;
+const isJPClient = () => JSON.parse(LocalStore.get('is_jp_client'));
 
 const getFiatDecimalPlaces = () => isJPClient() ? 0 : 2;
 
