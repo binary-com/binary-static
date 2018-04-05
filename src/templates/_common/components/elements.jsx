@@ -156,11 +156,11 @@ export const Tbody = ({ trs, tbody_id }) => (
             <tr key={inx_tr}>
                 {tr.map((td, inx_td) => (
                     td.header ?
-                        <th key={inx_td} className={td.className} {...td.balloon ? { 'data-balloon': td.balloon } : {}}>
+                        <th key={inx_td} className={td.className} {...td.balloon ? { 'data-balloon': td.balloon } : {}} {...(td.attributes || {})}>
                             {td.header}
                         </th>
                         :
-                        <td key={inx_td} className={td.className} id={td.id}>
+                        <td key={inx_td} className={td.className} id={td.id} {...(td.attributes || {})}>
                             {td.text}
                         </td>
                 ))}
