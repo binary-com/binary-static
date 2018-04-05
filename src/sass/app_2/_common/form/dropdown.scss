@@ -19,12 +19,20 @@ div.dropdown-container {
         }
         &:hover {
             border-color: $COLOR_BLUE;
+
+            & + .select-arrow {
+                color: $COLOR_BLUE;
+            }
         }
     }
     &:active, &:focus, &.show {
         outline: 0;
         border-radius: 4px;
         box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+
+        .select-arrow {
+            color: $COLOR_BLUE;
+        }
     }
     &.show > div.dropdown-list {
         transform: scale(1, 1);
@@ -34,7 +42,6 @@ div.dropdown-container {
         border-color: $COLOR_BLUE;
     }
     &.show > .select-arrow {
-        top: 12px;
         transform: rotate(0deg);
     }
     .dropdown-list {
@@ -108,7 +115,7 @@ div.dropdown-container {
         text-rendering: optimizeLegibility;
         position: absolute;
         pointer-events: none;
-        top: 5px;
+        top: 12px;
         right: 11px;
         line-height: 1;
         transition: transform 0.2s ease;
@@ -119,6 +126,8 @@ div.dropdown-container {
 
         &:before {
             content: '\002303';
+            display: block;
+            height: 0.53em; // center content glyph
         }
     }
 }
