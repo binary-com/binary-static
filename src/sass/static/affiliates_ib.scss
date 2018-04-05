@@ -1,4 +1,14 @@
-.affiliates_faq {
+.ib-signup-content {
+    margin-bottom: 0 !important;
+}
+
+.ib-signup-page {
+    &__commission-table td:not(:last-child) {
+        font-weight: bold;
+    }
+}
+
+.affiliates-faq-page, .ib-faq-page {
     h3 {
         color: $COLOR_ORANGE;
 
@@ -17,7 +27,7 @@
     }
 }
 
-.affiliates {
+.affiliates-signup-page, .ib-signup-page {
     h2 {
         margin-top: 30px;
     }
@@ -33,31 +43,9 @@
     .faq-box {
         padding: 1rem;
     }
-    .box-row {
-        border-bottom: 1px solid $COLOR_GRAY;
-
-        .box {
-            padding: 2rem;
-        }
-        &-top {
-            .box {
-                padding-top: 1rem;
-            }
-        }
-        &-bottom {
-            border: none;
-
-            .box {
-                padding-bottom: 0;
-            }
-        }
-        .box:not(:last-child) {
-            border-right: 1px solid $COLOR_GRAY;
-        }
-        @media screen and (max-width: 480px) {
-            &, .box {
-                border: none;
-            }
+    @media screen and (max-width: 480px) {
+        table, .mobile-text-small {
+            font-size: 0.9rem;
         }
     }
 }
