@@ -241,9 +241,11 @@ const FooterNormal = () => (
         </div>
         {/* <div id='end-note' className='invisible content-inverse-color center-text' /> */}
         <div id='status-message'>
-            <div className='status-icon'>V</div>
-            <div id='status-message-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis pariatur quibusdam corrupti minima. Explicabo, quis recusandae. Unde impedit</div>
-            <div className='status-close-icon'>X</div>
+            <img src={it.url_for('images/server_status/ic-info.svg')}  alt='information icon'/>
+            <div id='status-message-text'/>
+            <div id='status-message-close'>
+                <img src={it.url_for('images/server_status/ic-close.svg')}  alt='information icon'/>
+            </div>
         </div>
     </div>
 );

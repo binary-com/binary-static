@@ -61,7 +61,7 @@
         display: none;
         align-items: center;
         justify-content: space-between;
-        animation: moveInBottom 0.2s ease-in;
+        animation: moveInBottom 0.3s ease-in;
 
         padding: 10px 20px;
         background: $COLOR_ORANGE;
@@ -70,11 +70,14 @@
         right: 7px;
         left: 7px;
         border-radius: 5px;
-        z-index: 15;
+        z-index: 1000;
 
         &-text {
             color: $COLOR_WHITE;
             font-size: $FONT_SIZE_S;
+        }
+        &-close:hover {
+            cursor: pointer;
         }
     }
 }
