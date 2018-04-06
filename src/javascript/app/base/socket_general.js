@@ -37,10 +37,10 @@ const BinarySocketGeneral = (() => {
                 console.log('onMessage: ', response);
                 Footer.displayNotification('We are experiencing an unusually high load on our system. Some features and services may be unstable or temporarily unavailable. We hope to resolve this issue as soon as we can.');
                 setTimeout(() => {
-                    Footer.displayNotification('Display after two seconds!');
+                    Footer.displayNotification('Sorry, but we are having a technical issue with our MT5 platform. Trading is unavailable for the time being.');
                 }, 2000);
                 setTimeout(() => {
-                    Footer.displayNotification('sucessfull something!');
+                    Footer.displayNotification('Sorry, but we are experiencing a technical issue with our Cashier. Your funds are safe but deposits and withdrawals are unavailable for the time being.');
                 }, 4000);
                 if (response.website_status) {
                     is_available = /^up$/i.test(response.website_status.site_status);

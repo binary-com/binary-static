@@ -21,11 +21,12 @@ const SocialIcons = ({ networks, is_centered }) => (
 const StatusNotification = () => (
     <div id='status-notification'>
         <div id='status-notification-type-icon'>
-            <img src={it.url_for('images/server_status/ic-info.svg')} className='notification-icon' id='info' alt='information icon'/>
-            <img src={it.url_for('images/server_status/ic-warning.svg')} className='notification-icon' id='warning' alt='warning icon'/>
-            <img src={it.url_for('images/server_status/ic-success.svg')} className='notification-icon' id='success' alt='success icon'/>
+            <img src={it.url_for('images/server_status/ic-info.svg')} id='info' alt='Information icon'/>
+            <img src={it.url_for('images/server_status/ic-warning.svg')} id='warning' alt='Warning icon'/>
+            <img src={it.url_for('images/server_status/ic-danger.svg')} id='danger' alt='Danger icon'/>
+            <img src={it.url_for('images/server_status/ic-success.svg')} id='success' alt='Success icon'/>
         </div>
-        <div id='status-notification-text'/>
+        <p id='status-notification-text'/>
         <div id='status-notification-close'>
             <img src={it.url_for('images/server_status/ic-close.svg')}  alt='information icon'/>
         </div>
@@ -118,7 +119,7 @@ const FooterJA = () => (
             </div>
         </div>
         <div id='end-note' className='invisible content-inverse-color center-text' />
-        <div id='status-message' className='status-outage-message'>Status message here</div>
+        <StatusNotification />
     </div>
 );
 

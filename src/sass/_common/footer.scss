@@ -71,24 +71,25 @@
         &-text {
             color: $COLOR_WHITE;
             font-size: $FONT_SIZE_S;
-            margin-right: auto;
+            margin: 0 auto 0 0;
         }
         &-type-icon {
             padding-right: 7px;
 
-            .notification-icon {
+            img {
                 display: none;
             }
         }
         &-close {
             padding-left: 7px;
-        }
-        &-close:hover {
-            cursor: pointer;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
     #status-notification.info {
-        background-color: $COLOR_LIGHT_BLUE;
+        background-color: $COLOR_BLUE;
 
         #status-notification-type-icon > #info {
             display: inline-block;
@@ -103,6 +104,13 @@
     }
     #status-notification.warning {
         background-color: $COLOR_ORANGE;
+
+        #status-notification-type-icon > #warning {
+            display: inline-block;
+        }
+    }
+    #status-notification.danger {
+        background-color: $COLOR_RED;
 
         #status-notification-type-icon > #warning {
             display: inline-block;
