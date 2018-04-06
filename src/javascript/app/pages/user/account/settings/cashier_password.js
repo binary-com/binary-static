@@ -26,7 +26,10 @@ const CashierPassword = (() => {
 
     const init = (response) => {
         const locked = response.cashier_password;
-        if (locked) {
+        if (response.error) {
+            $('#form_message').addClass('notice-message').text(response.error.code === 'RateLimit' ? localize('You have reached the rate limit of requests per second. Please try later.') : response.error.message);
+            return;
+        } else if (locked) {
             updatePage({
                 legend: 'Unlock Cashier',
                 info  : 'Your cashier is locked as per your request - to unlock it, please enter the password.',
