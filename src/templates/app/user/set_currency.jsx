@@ -30,7 +30,11 @@ const SetCurrency = () => (
                     <img src={it.url_for('images/pages/set_currency/account-created.svg')} />
                     <div className='gr-padding-10' />
                     <h1>{it.L('Congratulations!')}</h1>
-                    <p>{it.L('You have successfully created your account!')}</p>
+                    <p>
+                        {it.L('You have successfully created your [_1]account!', `<span data-show="iom">${it.L('gaming')}&nbsp;</span>`)}
+                        <br/>
+                        {it.L('Please authenticate your account before you make a deposit.')}
+                    </p>
                 </div>
 
                 <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
@@ -56,7 +60,19 @@ const SetCurrency = () => (
                 </form>
             </div>
 
-            <SeparatorLine show_mobile className='gr-padding-30' sub_class='gr-padding-10' invisible />
+            <div data-show='iom' className='center-text'>
+                <SeparatorLine show_mobile className='gr-child gr-padding-10' />
+
+                <p><strong>{it.L('Open a Financial Account')}</strong></p>
+                <p>{it.L('Your gaming account (MX) limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead.')}</p>
+                <a className='button-secondary' href={it.url_for('new_account/maltainvestws')}><span>{it.L('Create Financial Account')}</span></a>
+
+                <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
+
+                <p className='hint'>{it.L('Note: Funds cannot be transferred between financial and gaming accounts. Both accounts need to be authenticated separately.')}</p>
+            </div>
+
+            <SeparatorLine show_mobile className='gr-padding-10' sub_class='gr-padding-10' invisible />
         </div>
     </React.Fragment>
 );
