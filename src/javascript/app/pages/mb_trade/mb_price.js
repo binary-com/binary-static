@@ -7,7 +7,6 @@ const ViewPopup       = require('../user/view_popup/view_popup');
 const Client          = require('../../base/client');
 const GTM             = require('../../base/gtm');
 const BinarySocket    = require('../../base/socket');
-const jpClient        = require('../../common/country_base').jpClient;
 const formatMoney     = require('../../common/currency').formatMoney;
 const localize        = require('../../../_common/localize').localize;
 const isEmptyObject   = require('../../../_common/utility').isEmptyObject;
@@ -23,7 +22,7 @@ const isEmptyObject   = require('../../../_common/utility').isEmptyObject;
 
 const MBPrice = (() => {
     const price_selector = '.prices-wrapper .price-rows';
-    const is_japan       = jpClient();
+    const is_jp_client   = Client.isJPClient();
 
     let prices         = {};
     let contract_types = {};
@@ -111,7 +110,7 @@ const MBPrice = (() => {
         }
 
         const el_price_row = document.querySelector('#templates .price-row');
-        if (is_japan) {
+        if (is_jp_client) {
             el_price_row.querySelectorAll('.base-value').forEach((el) => {
                 el.classList.remove('invisible');
             });
@@ -143,7 +142,7 @@ const MBPrice = (() => {
                     val : el_sell.getElementsByClassName('value')[0],
                 };
 
-                if (is_japan) {
+                if (is_jp_client) {
                     el_rows[barrier][contract_type].buy.base_value  = el_buy.getElementsByClassName('base-value')[0];
                     el_rows[barrier][contract_type].sell.base_value = el_sell.getElementsByClassName('base-value')[0];
                 }
@@ -222,7 +221,7 @@ const MBPrice = (() => {
         el_sell.sell.classList[values.sell_price ? 'remove' : 'add']('inactive');
         el_sell.val.textContent = formatPrice(values.sell_price);
 
-        if (is_japan) {
+        if (is_jp_client) {
             el_buy.base_value.textContent  = formatPrice(values.ask_price / values.payout);
             el_sell.base_value.textContent = formatPrice(values.sell_price / values.payout);
         }

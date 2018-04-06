@@ -3,7 +3,6 @@ const ViewPopup           = require('../../view_popup/view_popup');
 const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const BinarySocket        = require('../../../../base/socket');
-const jpClient            = require('../../../../common/country_base').jpClient;
 const formatMoney         = require('../../../../common/currency').formatMoney;
 const GetAppDetails       = require('../../../../common/get_app_details');
 const localize            = require('../../../../../_common/localize').localize;
@@ -18,7 +17,7 @@ const PortfolioInit = (() => {
         is_initialized,
         is_first_response,
         $portfolio_loading,
-        jp_client;
+        is_jp_client;
 
     const init = () => {
         updateBalance();
@@ -29,7 +28,7 @@ const PortfolioInit = (() => {
         currency           = '';
         oauth_apps         = {};
         $portfolio_loading = $('#portfolio-loading');
-        jp_client          = jpClient();
+        is_jp_client       = Client.isJPClient();
         $portfolio_loading.show();
         showLoadingImage($portfolio_loading[0]);
         is_first_response = true;
@@ -62,7 +61,7 @@ const PortfolioInit = (() => {
             .append($('<td/>', { class: 'button' }).append($('<button/>', { class: 'button open_contract_details nowrap', contract_id: data.contract_id, text: localize('View') }))))
             .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: data.longcode })));
 
-        if (jp_client) {
+        if (is_jp_client) {
             const $td = $('<td/>', { class: 'expires nowrap' }).append($('<strong/>', { text: toJapanTimeIfNeeded(data.expiry_time) }));
             $td.insertAfter($div.find('.payout'));
         }

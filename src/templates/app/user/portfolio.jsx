@@ -39,7 +39,7 @@ const Portfolio = () => (
                         [
                             { className: 'ref',                              text: it.L('Ref.') },
                             { className: 'payout nowrap',                    text: it.L('Potential Payout') },
-                            { className: 'expires nowrap invisible ja-show', text: it.L('Expiry') },
+                            { className: 'expires nowrap invisible ja-show', text: it.L('{JAPAN ONLY}Expiry') },
                             { className: 'details',                          text: it.L('Contract Details') },
                             { className: 'purchase',                         text: it.L('Purchase') },
                             { className: 'indicative nowrap',                text: it.L('Indicative') },
