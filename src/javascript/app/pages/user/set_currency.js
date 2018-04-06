@@ -12,7 +12,7 @@ const SetCurrency = (() => {
     let is_new_account;
 
     const onLoad = () => {
-        is_new_account = localStorage.getItem('is_new_account');
+        is_new_account = true;// localStorage.getItem('is_new_account');
         localStorage.removeItem('is_new_account');
         const el = is_new_account ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);

@@ -60,7 +60,7 @@ const SetCurrency = () => (
                 </form>
             </div>
 
-            <div data-show='iom' className='center-text'>
+            <div  className='center-text'>
                 <SeparatorLine show_mobile className='gr-child gr-padding-10' />
 
                 <p><strong>{it.L('Open a Financial Account')}</strong></p>
@@ -69,11 +69,11 @@ const SetCurrency = () => (
 
                 <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
 
-                <p className='hint'>
+                <ul className='hint'>
                     {it.L('Note:')}
-                    <li>{it.L('Funds cannot be transferred between financial and gaming accounts.')}</li>
-                    <li>{it.L('Both accounts need to be authenticated separately.')}</li>
-                </p>
+                    <li>1. {it.L('Funds cannot be transferred between financial and gaming accounts.')}</li>
+                    <li>2. {it.L('Both accounts need to be authenticated separately.')}</li>
+                </ul>
             </div>
 
             <SeparatorLine show_mobile className='gr-padding-10' sub_class='gr-padding-10' invisible />
