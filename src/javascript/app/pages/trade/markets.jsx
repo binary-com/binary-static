@@ -220,8 +220,12 @@ class Markets extends React.Component {
     }
 
     saveMarketRef = (market, node) => {
+        if (!node) return;
         if (!this.references.market_nodes) this.references.market_nodes = {};
         this.references.market_nodes[market] = node;
+        // Save offsets of elements for sticky headers.
+        node.dataset.offsetTop = node.offsetTop;
+        node.dataset.offsetHeight = node.offsetHeight;
     }
 
     searchSymbols = ({target: {value: query}}) => {
