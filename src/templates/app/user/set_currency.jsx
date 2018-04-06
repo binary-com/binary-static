@@ -69,7 +69,11 @@ const SetCurrency = () => (
 
                 <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
 
-                <p className='hint'>{it.L('Note: Funds cannot be transferred between financial and gaming accounts. Both accounts need to be authenticated separately.')}</p>
+                <p className='hint'>
+                    {it.L('Note:')}
+                    <li>{it.L('Funds cannot be transferred between financial and gaming accounts.')}</li>
+                    <li>{it.L('Both accounts need to be authenticated separately.')}</li>
+                </p>
             </div>
 
             <SeparatorLine show_mobile className='gr-padding-10' sub_class='gr-padding-10' invisible />
