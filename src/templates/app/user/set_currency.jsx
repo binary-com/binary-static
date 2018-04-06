@@ -33,13 +33,13 @@ const SetCurrency = () => (
                     <p>
                         {it.L('You have successfully created your [_1]account!', `<span data-show="iom">${it.L('gaming')}&nbsp;</span>`)}
                         <br/>
-                        {it.L('Please authenticate your account before you make a deposit.')}
+                        <span className='invisible has_currency'>{it.L('Please authenticate your account before you make a deposit.')}</span>
                     </p>
                 </div>
 
                 <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
 
-                <div className='invisible' id='has_currency'>
+                <div className='invisible has_currency'>
                     <div>
                         <a className='button' href={it.url_for('cashier/forwardws?action=deposit')}><span>{it.L('Make a Deposit')}</span></a>
                     </div>
@@ -60,7 +60,7 @@ const SetCurrency = () => (
                 </form>
             </div>
 
-            <div  className='center-text'>
+            <div data-show='iom' className='center-text invisible has_currency'>
                 <SeparatorLine show_mobile className='gr-child gr-padding-10' />
 
                 <p><strong>{it.L('Open a Financial Account')}</strong></p>

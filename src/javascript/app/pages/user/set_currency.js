@@ -12,7 +12,7 @@ const SetCurrency = (() => {
     let is_new_account;
 
     const onLoad = () => {
-        is_new_account = true;// localStorage.getItem('is_new_account');
+        is_new_account = localStorage.getItem('is_new_account');
         localStorage.removeItem('is_new_account');
         const el = is_new_account ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
@@ -20,7 +20,7 @@ const SetCurrency = (() => {
         if (Client.get('currency')) {
             if (is_new_account) {
                 $('#set_currency_loading').remove();
-                $('#has_currency, #set_currency').setVisibility(1);
+                $('.has_currency, #set_currency').setVisibility(1);
             } else {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -93,7 +93,7 @@ const SetCurrency = (() => {
                             } else {
                                 Header.populateAccountsList(); // update account title
                                 $('.select_currency').setVisibility(0);
-                                $('#has_currency').setVisibility(1);
+                                $('.has_currency').setVisibility(1);
                             }
                         }
                     });
