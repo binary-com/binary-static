@@ -57,12 +57,10 @@
         width: 100%;
     }
     #status-notification {
+        animation: moveInBottom 0.2s ease-in;
         display: none;
-        animation: moveInBottom 0.3s ease-in;
-
         align-items: center;
         padding: 10px 7px;
-        background: $COLOR_LIGHT_BLUE;
         position: fixed;
         bottom: 7px;
         right: 7px;
@@ -75,14 +73,39 @@
             font-size: $FONT_SIZE_S;
             margin-right: auto;
         }
-        &-type {
+        &-type-icon {
             padding-right: 7px;
+
+            .notification-icon {
+                display: none;
+            }
         }
         &-close {
             padding-left: 7px;
         }
         &-close:hover {
             cursor: pointer;
+        }
+    }
+    #status-notification.info {
+        background-color: $COLOR_LIGHT_BLUE;
+
+        #status-notification-type-icon > #info {
+            display: inline-block;
+        }
+    }
+    #status-notification.success {
+        background-color: $COLOR_GREEN;
+
+        #status-notification-type-icon > #success {
+            display: inline-block;
+        }
+    }
+    #status-notification.warning {
+        background-color: $COLOR_ORANGE;
+
+        #status-notification-type-icon > #warning {
+            display: inline-block;
         }
     }
 }

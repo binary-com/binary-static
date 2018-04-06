@@ -39,6 +39,9 @@ const BinarySocketGeneral = (() => {
                 setTimeout(() => {
                     Footer.displayNotification('Display after two seconds!');
                 }, 2000);
+                setTimeout(() => {
+                    Footer.displayNotification('sucessfull something!');
+                }, 4000);
                 if (response.website_status) {
                     is_available = /^up$/i.test(response.website_status.site_status);
                     if (is_available && !BinarySocket.availability()) {
