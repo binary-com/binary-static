@@ -1,34 +1,15 @@
 import React from 'react';
+import { BoxRow, Box } from '../../_common/components/box_row.jsx';
 import { Table } from '../../_common/components/elements.jsx';
+import Step from '../../_common/components/step.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
-const BoxRow = ({ children, top_row, bottom_row }) => (
-    <div className={`box-row gr-row ${top_row ? 'box-row-top' : ''} ${bottom_row ? 'box-row-bottom' : ''}`}>
-        {children}
-    </div>
-);
-
-const Box = ({ image, title, text }) => (
-    <div className='box gr-4 gr-12-m center-text gr-padding-30'>
-        <img className='gr-centered fixed-height-img' src={it.url_for(`images/pages/affiliates/${image}.svg`)} alt={image} />
-        <p><strong>{title}</strong></p>
-        <p>{text}</p>
-    </div>
-);
-
-const Step = ({ header, text, circle_no }) => (
-    <div className='step'>
-        <div className='border-bottom' />
-        <div className='circle'>{ circle_no }</div>
-        <div className='gr-padding-20 gr-gutter center-text'>
-            <div className='gr-padding-20 gr-child'><strong>{header}</strong></div>
-            <p className='no-margin gr-padding-10'>{text}</p>
-        </div>
-    </div>
+const AffiliateBox = ({ image, ...props }) => (
+    <Box img_src={it.url_for(`images/pages/affiliates/${image}.svg`)} {...props} />
 );
 
 const Signup = () => (
-    <div className='static_full affiliates'>
+    <div className='static_full affiliates-signup-page'>
         <div className='container'>
             <h1>{it.L('[_1] Affiliate Programme', it.website_name)}</h1>
             <p>
@@ -50,14 +31,14 @@ const Signup = () => (
                 <h2 className='margin-bottom-50'>{it.L('Why you should join the [_1] Affiliate Programme', it.website_name)}</h2>
 
                 <BoxRow top_row>
-                    <Box title={it.L('Generous commission')}      image='commission-icon'       text={it.L('Choose a commission plan that suits your business strategy.')} />
-                    <Box title={it.L('On-time payments')}         image='payment-icon'          text={it.L('Get paid by the 15th of every month. We’ve never missed a payment since we started our programme in March 2004.')} />
-                    <Box title={it.L('Dedicated support')}        image='contact-icon'          text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
+                    <AffiliateBox title={it.L('Generous commission')}      image='commission-icon'       text={it.L('Choose a commission plan that suits your business strategy.')} />
+                    <AffiliateBox title={it.L('On-time payments')}         image='payment-icon'          text={it.L('Get paid by the 15th of every month. We’ve never missed a payment since we started our programme in March 2004.')} />
+                    <AffiliateBox title={it.L('Dedicated support')}        image='contact-icon'          text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
                 </BoxRow>
                 <BoxRow bottom_row>
-                    <Box title={it.L('Advanced marketing tools')} image='marketing-icon'        text={it.L('Promote our products easily, and keep track of all your earnings with our nifty marketing tools.')} />
-                    <Box title={it.L('High conversions')}         image='conversion-icon'       text={it.L('We’ve paid millions in commission to date through our industry-leading affiliate programme.')} />
-                    <Box title={it.L('Multiple opportunities')}   image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the <a href=\'[_1]\'>Payment Agent Programme</a>.', it.url_for('payment-agent'))} />
+                    <AffiliateBox title={it.L('Advanced marketing tools')} image='marketing-icon'        text={it.L('Promote our products easily, and keep track of all your earnings with our nifty marketing tools.')} />
+                    <AffiliateBox title={it.L('High conversions')}         image='conversion-icon'       text={it.L('We’ve paid millions in commission to date through our industry-leading affiliate programme.')} />
+                    <AffiliateBox title={it.L('Multiple opportunities')}   image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the <a href=\'[_1]\'>Payment Agent Programme</a>.', it.url_for('payment-agent'))} />
                 </BoxRow>
 
                 <div className='gr-padding-30'>
@@ -87,7 +68,7 @@ const Signup = () => (
                 <div className='tab-content'>
                     <TabContentContainer>
                         <TabContent id='revenue_share'>
-                            <p>{it.L('Profit from increasingly higher payouts with tiered and laddered commision rates that reward you based on the net revenue generated by your referred clients.')}</p>
+                            <p className='mobile-text-small'>{it.L('Profit from increasingly higher payouts with tiered and laddered commision rates that reward you based on the net revenue generated by your referred clients.')}</p>
                             <div className='gr-padding-20 center-text'>
                                 <Table
                                     data={{
@@ -123,10 +104,10 @@ const Signup = () => (
                                     }}
                                 />
                             </div>
-                            <p>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
+                            <p className='mobile-text-small'>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
                         </TabContent>
                         <TabContent id='turnover'>
-                            <p>{it.L('Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate.')}</p>
+                            <p className='mobile-text-small'>{it.L('Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate.')}</p>
                             <div className='gr-padding-20 center-text'>
                                 <Table
                                     data={{
@@ -165,7 +146,7 @@ const Signup = () => (
                                     }}
                                 />
                             </div>
-                            <p>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
+                            <p className='mobile-text-small'>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
                         </TabContent>
                     </TabContentContainer>
                 </div>
