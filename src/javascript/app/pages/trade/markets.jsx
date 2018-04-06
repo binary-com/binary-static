@@ -106,7 +106,6 @@ class Markets extends React.Component {
             query  : '',
             markets: this.markets_all,
         });
-        this.scrollToElement(this.state.underlying.symbol, 0, 70);
     };
 
     getCurrentUnderlying = () => {
@@ -127,16 +126,15 @@ class Markets extends React.Component {
 
     handleScroll = (e) => {
         const {market_nodes, list} = this.references;
-        const position = e.target.scrollTop;
+        const position = e.target.scrollTop + list.offsetTop;
         const arr = [];
         let curr_market = null;
         Object.entries(market_nodes).forEach(([key, node]) => {
-            if (node && node.offsetTop - list.offsetTop - 41 <= position) {
+            if (node && node.offsetTop - 40 <= position) {
                 arr.push(key);
             }
         });
         if (this.state.active_market !== arr[arr.length-1]) {
-            this.previous_market = this.state.active_market;
             if (position <=10) {
                 curr_market = arr[0];
             } else {
@@ -145,13 +143,15 @@ class Markets extends React.Component {
             this.setState({active_market: curr_market});
         }
 
-        this.stickyHeader(market_nodes[curr_market || this.state.active_market].childNodes[0],
-            ((market_nodes[this.previous_market] || {}).childNodes || [])[0], position + list.offsetTop);
+        this.stickyHeader(position);
     }
 
     openDropdown = () => {
         this.setState({open: true});
-        this.scrollToElement(this.state.underlying.symbol, 0, 70);
+        Object.values(this.references.market_nodes).forEach((node) => {
+            node.children[0].classList.remove('sticky');
+        });
+        this.scrollToElement(this.state.underlying.symbol, 1, 110);
     };
 
     onUnderlyingClick = (underlying_symbol, market_symbol) => {
@@ -190,32 +190,52 @@ class Markets extends React.Component {
     scrollToElement = (id, duration = 120, offset) => {
         // handleScroll is triggered automatically which sets the active market.
         const {list} = this.references;
-        const toOffset = getElementById(id).offsetTop;
-        scrollToPosition(list, toOffset - list.offsetTop - offset, duration);
+        const toOffset = getElementById(id).offsetTop - list.offsetTop - offset;
+        scrollToPosition(list, toOffset, duration);
+        if (list.scrollTop === toOffset) {
+            this.stickyHeader(toOffset);
+        }
     }
 
-    stickyHeader = (curr, prev, pos) => {
-        const sticky = 'sticky';
-        const under = 'put_under';
-        const MOBILE_TOP = 122;
-        const DESKTOP_TOP = 59;
-        const DEFAULT_TOP = window.innerWidth < 768 ? MOBILE_TOP : DESKTOP_TOP;
-        const diff = curr.offsetTop - pos;
-        const diffSub = 40 - diff;
-        if (!prev) {
-            curr.classList.add(sticky);
-            return;
-        }
-        if (diff > 0) {
-            prev.classList.add(under);
-            prev.style.top = `${DEFAULT_TOP - diffSub}px`;
-        } else {
-            prev.removeAttribute('style');
-            prev.classList.remove(sticky);
-            prev.classList.remove(under);
-            curr.classList.add(sticky);
-            curr.classList.remove(under);
+    stickyHeader = (position) => {
+        let curr, prev, next;
+        const {market_nodes} = this.references;
+        const market_keys = Object.keys(market_nodes);
+        const TITLE_HEIGHT = 40;
+        Object.values(market_nodes).forEach((node, idx) => {
+            if (node.dataset.offsetTop <= position && node.dataset.offsetHeight + node.dataset.offsetTop > position) {
+                curr = node;
+                prev = idx > 0 ? market_nodes[market_keys[idx-1]] : null;
+                next = idx < market_keys.length ? market_nodes[market_keys[idx+1]] : null;
+            }
+        });
+
+        const class_sticky = 'sticky';
+        const class_under = 'put_under';
+        const DEFAULT_TOP = this.references.list.offsetTop;
+
+        if (curr) {
+            curr.children[0].removeAttribute('style');
             curr.removeAttribute('style');
+            curr.children[0].classList.remove(class_under);
+            const diff =  position - (+curr.dataset.offsetHeight + +curr.dataset.offsetTop);
+            if (diff > 0 && diff < TITLE_HEIGHT) {
+                curr.children[0].style.top = `${DEFAULT_TOP - diff}px`;
+                curr.children[0].classList.add(class_under);
+            }
+            curr.children[0].classList.add(class_sticky);
+            curr.style.paddingTop = `${TITLE_HEIGHT}px`;
+        }
+        if (prev) {
+            prev.removeAttribute('style');
+            prev.children[0].removeAttribute('style');
+            prev.children[0].classList.remove(class_under);
+            prev.children[0].classList.remove(class_sticky);
+        }
+        if (next) {
+            next.children[0].classList.remove(class_sticky);
+            next.children[0].classList.remove(class_under);
+            next.removeAttribute('style');
         }
     }
 
@@ -274,20 +294,10 @@ class Markets extends React.Component {
     }
 
     scrollToMarket = (key) => {
-        const isScrollingFront = (key) => {
-            const keys = Object.keys(this.references.market_nodes);
-            const curr = this.state.active_market;
-            if (keys.indexOf(key) > keys.indexOf(curr)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        if (isScrollingFront(key)) {
-            this.scrollToElement(`${key}_market`, 120, 0);
-        } else {
-            this.scrollToElement(`${key}_market`, 120, 40);
-        }
+        const {list} = this.references;
+        const node = this.references.market_nodes[key];
+        const offset = node.dataset.offsetTop - list.offsetTop;
+        scrollToPosition(list, offset, 120);
     }
 
     /* eslint-enable no-undef */
@@ -335,7 +345,7 @@ class Markets extends React.Component {
                                     <div
                                         className={`market ${active_market === key ? 'active' : ''}`}
                                         key={key}
-                                        onClick={scrollToMarket.bind(null, key)}
+                                        onClick={scrollToMarket.bind(null,`${key}`)}
                                     >
                                         <span className={`icon ${key} ${active_market === key ? 'active' : ''}`} />
                                         <span>{obj.name}</span>
