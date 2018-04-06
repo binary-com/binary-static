@@ -123,41 +123,42 @@ class Contracts extends React.Component {
                         <span>{localize('Select Trade Type')}</span>
                         <span className='close' onClick={this.closeDropDown} />
                     </div>
-                    { contracts_tree.map((contract, idx) => {
-                        if (typeof contract === 'object') {
-                            return (
-                                <div className='contract' key={idx}>
-                                    <div className='contract_type'>{contracts[contract[0]]}</div>
-                                    <div className='contract_subtypes'>
-                                        {contract[1].map((subtype, i) =>
-                                            <div
-                                                className={`sub ${subtype === formname ? 'active' : ''}`}
-                                                key={i}
-                                                onClick={this.onContractClick.bind(null, subtype)}
-                                            >
-                                                {contracts[subtype]}
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            )
-                        } else {
-                            return (
-                                <div className='contract' key={idx}>
-                                    <div className='contract_type'>{contracts[contract]}</div>
-                                    <div className='contract_subtypes'>
-                                        <div
-                                            className={`sub ${contract === formname ? 'active' : ''}`}
-                                            onClick={this.onContractClick.bind(null, contract)}
-                                        >
-                                            {contracts[contract]}
+                    <div className='list'>
+                        { contracts_tree.map((contract, idx) => {
+                                if (typeof contract === 'object') {
+                                    return (
+                                    <div className='contract' key={idx}>
+                                        <div className='contract_type'>{contracts[contract[0]]}</div>
+                                        <div className='contract_subtypes'>
+                                            {contract[1].map((subtype, i) =>
+                                                <div
+                                                    className={`sub ${subtype === formname ? 'active' : ''}`}
+                                                    key={i}
+                                                    onClick={this.onContractClick.bind(null, subtype)}
+                                                >
+                                                    {contracts[subtype]}
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
-                                </div>
-                            )
-                        }
-                    }
-                    )}
+                                )
+                            } else {
+                                return (
+                                    <div className='contract' key={idx}>
+                                        <div className='contract_type'>{contracts[contract]}</div>
+                                        <div className='contract_subtypes'>
+                                            <div
+                                                className={`sub ${contract === formname ? 'active' : ''}`}
+                                                onClick={this.onContractClick.bind(null, contract)}
+                                            >
+                                                {contracts[contract]}
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        })}
+                    </div>
                 </div>
             </div>
         );

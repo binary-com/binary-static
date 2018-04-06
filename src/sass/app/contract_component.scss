@@ -45,9 +45,6 @@
         width: 400px;
         @media (min-width: 320px) and (max-width: 767px) {
             width: calc(100vw - 80px);
-            max-height: 400px;
-            overflow-y: scroll;
-            overflow-x: hidden;
         }
 
         &.hidden {
@@ -64,9 +61,13 @@
                 display: block !important;
                 visibility: visible;
                 opacity: 1;
-                width: 100%;
+                width: calc(100% - 20px);
                 text-align: left;
-                padding: 0 0 15px;
+                padding: 0 10px 10px;
+                position: absolute;
+                left: 0;
+                border-bottom: 1px solid $COLOR_GRAY;
+                background: $COLOR_WHITE;
             }
 
             span {
@@ -79,6 +80,18 @@
                 background: url('../images/pages/trade/assets/ic-close-normal.svg') 100% 100%;
             }
         }
+        .list {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            @media (min-width: 320px) and (max-width: 767px) {
+                padding-top: 41px;
+                max-height: 350px;
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+        }
         .contract {
             display: flex;
             flex-direction: column;
@@ -86,6 +99,9 @@
             flex: 1 0 auto;
             width: 185px;
             text-align: left;
+            @media (max-width: 767px) {
+                width: 100%;
+            }
 
             &:last-of-type {
                 padding: 0;
