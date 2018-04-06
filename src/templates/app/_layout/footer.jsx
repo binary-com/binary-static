@@ -20,15 +20,12 @@ const SocialIcons = ({ networks, is_centered }) => (
 
 const StatusNotification = () => (
     <div id='status-notification'>
-        <div id='status-notification-type-icon'>
-            <img src={it.url_for('images/server_status/ic-info.svg')} id='info' alt='Information icon'/>
-            <img src={it.url_for('images/server_status/ic-warning.svg')} id='warning' alt='Warning icon'/>
-            <img src={it.url_for('images/server_status/ic-danger.svg')} id='danger' alt='Danger icon'/>
-            <img src={it.url_for('images/server_status/ic-success.svg')} id='success' alt='Success icon'/>
+        <div id='status-notification-type'>
+            <img src={it.url_for('images/server_status/ic-warning.svg')}  alt='information icon'/>
         </div>
         <p id='status-notification-text'/>
         <div id='status-notification-close'>
-            <img src={it.url_for('images/server_status/ic-close.svg')}  alt='information icon'/>
+            <img src={it.url_for('images/server_status/ic-close.svg')}  alt='Warning icon'/>
         </div>
     </div>
 );

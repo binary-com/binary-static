@@ -34,7 +34,6 @@ const BinarySocketGeneral = (() => {
         let is_available = false;
         switch (response.msg_type) {
             case 'website_status':
-                console.log('onMessage: ', response);
                 Footer.displayNotification('We are experiencing an unusually high load on our system. Some features and services may be unstable or temporarily unavailable. We hope to resolve this issue as soon as we can.');
                 setTimeout(() => {
                     Footer.displayNotification('Sorry, but we are having a technical issue with our MT5 platform. Trading is unavailable for the time being.');

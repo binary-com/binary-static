@@ -97,3 +97,42 @@
         }
     }
 }
+// Handles styling and icon display for <StatusNotification /> in footer 
+@mixin notificationType($type) {
+    @if $type == info {
+        #status-notification.info {
+            background-color: $COLOR_BLUE;
+
+            #status-notification-type-icon {
+                background-image: url('../../../images/server_status/ic-info.svg');
+            }
+        }
+    }
+    @if $type == warning {
+        #status-notification.warning {
+            background-color: $COLOR_ORANGE;
+
+            #status-notification-type-icon {
+                background-image: url('../../../images/server_status/ic-warning.svg');
+            }
+        }
+    }
+    @if $type == danger {
+        #status-notification.danger {
+            background-color: $COLOR_RED;
+
+            #status-notification-type-icon {
+                background-image: url('../../../images/server_status/ic-danger.svg');
+            }
+        }
+    }
+    @if $type == success {
+        #status-notification.success {
+            background-color: $COLOR_GREEN;
+
+            #status-notification-type-icon {
+                background-image: url('../../../images/server_status/ic-success.svg');
+            }
+        }
+    }
+}
