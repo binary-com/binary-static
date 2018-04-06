@@ -1,5 +1,4 @@
 const getElementById         = require('../../_common/common_functions').getElementById;
-// const localize            = require('../../_common/localize').localize;
 
 const Footer = (() => {
     const displayNotification = (message) => {

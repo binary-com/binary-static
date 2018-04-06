@@ -34,19 +34,11 @@ const BinarySocketGeneral = (() => {
         let is_available = false;
         switch (response.msg_type) {
             case 'website_status':
-                Footer.displayNotification('We are experiencing an unusually high load on our system. Some features and services may be unstable or temporarily unavailable. We hope to resolve this issue as soon as we can.');
-                setTimeout(() => {
-                    Footer.displayNotification('Sorry, but we are having a technical issue with our MT5 platform. Trading is unavailable for the time being.');
-                }, 2000);
-                setTimeout(() => {
-                    Footer.displayNotification('Sorry, but we are experiencing a technical issue with our Cashier. Your funds are safe but deposits and withdrawals are unavailable for the time being.');
-                }, 4000);
                 if (response.website_status) {
                     is_available = /^up$/i.test(response.website_status.site_status);
                     if (is_available && !BinarySocket.availability()) {
                         window.location.reload();
                     } else if (is_available && response.website_status.message) {
-                        // display footer message
                         Footer.displayNotification(response.website_status.message);
                     } else if (!is_available) {
                         Header.displayNotification(response.website_status.message, true);
