@@ -58,12 +58,12 @@
     }
     #status-notification {
         animation: moveInBottom 0.2s ease-in;
+        background-color: $COLOR_ORANGE;
         display: none;
         align-items: center;
         padding: 10px 7px;
         position: fixed;
         bottom: 8px;
-        background-color: $COLOR_ORANGE;
         right: 8px;
         left: 8px;
         border-radius: 5px;
