@@ -59,6 +59,26 @@
                 transform: translate(0, -50%) scale(1, 0);
             }
         }
+        .mobile_close {
+            @media (max-width: 767px) {
+                display: block !important;
+                visibility: visible;
+                opacity: 1;
+                width: 100%;
+                text-align: left;
+                padding: 0 0 15px;
+            }
+
+            span {
+                display: inline-block;
+            }
+            .close {
+                width: 16px;
+                height: 16px;
+                float: right;
+                background: url('../images/pages/trade/assets/ic-close-normal.svg') 100% 100%;
+            }
+        }
         .contract {
             display: flex;
             flex-direction: column;

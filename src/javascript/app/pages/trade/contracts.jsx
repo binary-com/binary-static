@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Defaults from './defaults';
 import {getElementById} from '../../../_common/common_functions';
+import {localize} from '../../../_common/localize';
 
 class Contracts extends React.Component {
     constructor (props) {
@@ -24,7 +25,7 @@ class Contracts extends React.Component {
     }
 
     componentWillUnmount () {
-        document.body.removeEventListener('click', this.closeDropdown);
+        document.body.removeEventListener('click', this.handleClickOutside);
     }
 
     handleClickOutside = (e) => {
@@ -118,6 +119,10 @@ class Contracts extends React.Component {
                     className={`contracts_dropdown ${open ? '' : 'hidden'}`}
                     ref={this.saveRef.bind(null, 'wrapper')}
                 >
+                    <div className='mobile_close invisible'>
+                        <span>{localize('Select Trade Type')}</span>
+                        <span className='close' onClick={this.closeDropDown} />
+                    </div>
                     { contracts_tree.map((contract, idx) => {
                         if (typeof contract === 'object') {
                             return (
