@@ -44,8 +44,8 @@
         padding: 10px;
         width: 400px;
         @media (min-width: 320px) and (max-width: 767px) {
-            width: auto;
-            max-height: 300px;
+            width: calc(100vw - 80px);
+            max-height: 400px;
             overflow-y: scroll;
             overflow-x: hidden;
         }
@@ -75,9 +75,15 @@
                 font-weight: 300;
                 padding: 0 0 10px;
                 color: $COLOR_ORANGE;
+                @media (max-width: 767px) {
+                    font-size: 14px;
+                }
             }
             .contract_subtypes {
                 font-size: 14px;
+                @media (max-width: 767px) {
+                    font-size: 16px;
+                }
 
                 .sub {
                     padding: 5px 0 15px;
