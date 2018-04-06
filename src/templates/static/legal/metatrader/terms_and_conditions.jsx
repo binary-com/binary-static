@@ -43,7 +43,7 @@ const TermsAndConditions = () => (
                             <li>{it.L('You have read our privacy statement and hereby give us consent to process your personal information as outlined there;')}</li>
                             <li>{it.L('You are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;')}</li>
                             <li>{it.L('You are not resident in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;')}</li>
-                            <li>{it.L('You have sufficient experience and knowledge in matters of contract for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site.')}</li>
+                            <li>{it.L('You have sufficient experience and knowledge in matters of contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site.')}</li>
                         </ol>
                     </li>
                     <li>{it.L('We reserve the right to refuse your request to open an MT5 Real Account for any reason, and any MT5 Real Account may be closed at our discretion at any time.')}</li>
