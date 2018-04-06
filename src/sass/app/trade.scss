@@ -642,6 +642,7 @@
     }
     #trading_socket_container #contract_prices_container .price_container .price_wrapper {
         width: 100%;
+        box-sizing: border-box;
 
         &.small {
             width: auto;
@@ -666,6 +667,28 @@
         }
         #expiry_time {
             width: 175px;
+        }
+    }
+    // fix trading chart on small screens
+    .chart-dialog {
+        min-width: 300px !important;
+
+        .chartOptions {
+            margin: 0 !important;
+            position: relative;
+            top: 20px;
+            z-index: 1;
+
+            .table.justified-center + .instrument_name {
+                position: relative;
+                top: 15px;
+            }
+        }
+        svg.highcharts-root {
+            width: 100vw !important;
+            margin: 0 -10px !important;
+            position: relative;
+            left: -10px;
         }
     }
 }
