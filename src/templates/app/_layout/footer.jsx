@@ -18,6 +18,20 @@ const SocialIcons = ({ networks, is_centered }) => (
     </div>
 );
 
+const StatusNotification = () => (
+    <div id='status-notification'>
+        <div id='status-notification-type-icon'>
+            <img src={it.url_for('images/server_status/ic-info.svg')} className='notification-icon' id='info' alt='information icon'/>
+            <img src={it.url_for('images/server_status/ic-warning.svg')} className='notification-icon' id='warning' alt='warning icon'/>
+            <img src={it.url_for('images/server_status/ic-success.svg')} className='notification-icon' id='success' alt='success icon'/>
+        </div>
+        <div id='status-notification-text'/>
+        <div id='status-notification-close'>
+            <img src={it.url_for('images/server_status/ic-close.svg')}  alt='information icon'/>
+        </div>
+    </div>
+);
+
 const FooterJA = () => (
     <div id='footer' className='no-print'>
         <div id='footer-menu' className='primary-bg-color gr-padding-10'>
@@ -239,18 +253,8 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        {/* <div id='end-note' className='invisible content-inverse-color center-text' /> */}
-        <div id='status-notification'>
-            <div id='status-notification-type-icon'>
-                <img src={it.url_for('images/server_status/ic-info.svg')} className='notification-icon' id='info' alt='information icon'/>
-                <img src={it.url_for('images/server_status/ic-warning.svg')} className='notification-icon' id='warning' alt='warning icon'/>
-                <img src={it.url_for('images/server_status/ic-success.svg')} className='notification-icon' id='success' alt='success icon'/>
-            </div>
-            <div id='status-notification-text'/>
-            <div id='status-notification-close'>
-                <img src={it.url_for('images/server_status/ic-close.svg')}  alt='information icon'/>
-            </div>
-        </div>
+        <div id='end-note' className='invisible content-inverse-color center-text' />
+        <StatusNotification />
     </div>
 );
 const Footer = () => (
