@@ -29,7 +29,7 @@ const AuthorisedApps = (() => {
     const elements = {};
 
     const onLoad = () => {
-        if (Client.get('is_jp')) {
+        if (Client.isJPClient()) {
             BinaryPjax.loadPreviousUrl();
             return;
         }

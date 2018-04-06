@@ -3,7 +3,7 @@ const ViewPopupUI    = require('./view_popup.ui');
 const Highchart      = require('../../trade/charts/highchart');
 const Lookback       = require('../../trade/lookback');
 const TickDisplay    = require('../../trade/tick_trade');
-const Client         = require('../../../base/client');
+const isJPClient     = require('../../../base/client').isJPClient;
 const Clock          = require('../../../base/clock');
 const BinarySocket   = require('../../../base/socket');
 const getElementById = require('../../../../_common/common_functions').getElementById;
@@ -115,7 +115,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
         containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier, false, 3, 2));
         if (Lookback.isLookback(contract.contract_type)) {
-            containerSetText('trade_details_payout', Lookback.getLookbackFormula(contract.contract_type, formatMoney(contract.currency, multiplier, false, 3, 2)));
+            containerSetText('trade_details_payout', Lookback.getFormula(contract.contract_type, formatMoney(contract.currency, multiplier, false, 3, 2)));
         } else {
             containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         }
@@ -284,7 +284,7 @@ const ViewPopup = (() => {
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
         // don't show for japanese clients or contracts that are manually sold before starting
-        if (contract.audit_details && !Client.get('is_jp') &&
+        if (contract.audit_details && !isJPClient() &&
             (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
             initAuditTable(0);
         }
@@ -499,7 +499,7 @@ const ViewPopup = (() => {
         let [barrier_text, low_barrier_text] = ['Barrier', 'Low Barrier'];
         if (Lookback.isLookback(contract.contract_type)) {
             [barrier_text, low_barrier_text] =
-                Lookback.getLBBarrierLabel(contract.contract_type, contract.barrier_count);
+                Lookback.getBarrierLabel(contract.contract_type, contract.barrier_count);
         } else if (contract.barrier_count > 1) {
             barrier_text = 'High Barrier';
         } else if (/^DIGIT(MATCH|DIFF)$/.test(contract.contract_type)) {
@@ -551,7 +551,7 @@ const ViewPopup = (() => {
 
     const epochToDateTime = epoch => {
         const date_time = moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
-        return Client.get('is_jp') ? Clock.toJapanTimeIfNeeded(date_time) : `${date_time} GMT`;
+        return isJPClient() ? Clock.toJapanTimeIfNeeded(date_time) : `${date_time} GMT`;
     };
 
     // ===== Tools =====

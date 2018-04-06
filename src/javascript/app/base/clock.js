@@ -1,5 +1,5 @@
 const moment           = require('moment');
-const Client           = require('./client');
+const isJPClient       = require('./client').isJPClient;
 const BinarySocket     = require('./socket');
 const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../_common/common_functions').getElementById;
@@ -13,7 +13,7 @@ const Clock = (() => {
         view_popup_timer_func;
 
     const showLocalTimeOnHover = (selector) => {
-        if (Client.get('is_jp')) return;
+        if (isJPClient()) return;
         document.querySelectorAll(selector || '.date').forEach((el) => {
             const gmt_time_str = el.textContent.replace('\n', ' ');
             const local_time   = moment.utc(gmt_time_str, 'YYYY-MM-DD HH:mm:ss').local();
@@ -38,7 +38,7 @@ const Clock = (() => {
 
         let offset    = '+00:00';
         let time_zone = 'Z';
-        if (Client.get('is_jp')) {
+        if (isJPClient()) {
             offset    = '+09:00';
             time_zone = 'zZ';
         }
@@ -81,7 +81,7 @@ const Clock = (() => {
         const updateTime = () => {
             window.time = moment((server_time_at_response + moment().valueOf()) - client_time_at_response).utc();
             const time_str = `${window.time.format('YYYY-MM-DD HH:mm:ss')} GMT`;
-            if (Client.get('is_jp')) {
+            if (isJPClient()) {
                 elementInnerHtml(el_clock, toJapanTimeIfNeeded(time_str, 1, 1));
             } else {
                 elementInnerHtml(el_clock, time_str);

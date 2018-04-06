@@ -37,7 +37,7 @@ const Cashier = (() => {
     };
 
     const onLoad = () => {
-        if (Client.get('is_jp') && Client.get('residence') !== 'jp') {
+        if (Client.isJPClient() && Client.get('residence') !== 'jp') {
             BinaryPjax.loadPreviousUrl();
         }
         if (Client.isLoggedIn()) {

@@ -22,7 +22,7 @@ const isEmptyObject   = require('../../../_common/utility').isEmptyObject;
 
 const MBPrice = (() => {
     const price_selector = '.prices-wrapper .price-rows';
-    const is_jp_client   = Client.get('is_jp');
+    const is_jp_client   = Client.isJPClient();
 
     let prices         = {};
     let contract_types = {};

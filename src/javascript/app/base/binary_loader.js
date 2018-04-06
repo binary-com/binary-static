@@ -12,6 +12,7 @@ const getElementById      = require('../../_common/common_functions').getElement
 const localize            = require('../../_common/localize').localize;
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
+const ThirdPartyLinks     = require('../../_common/third_party_links');
 const urlFor              = require('../../_common/url').urlFor;
 const createElement       = require('../../_common/utility').createElement;
 
@@ -40,15 +41,21 @@ const BinaryLoader = (() => {
         container.addEventListener('binarypjax:before', beforeContentChange);
         container.addEventListener('binarypjax:after',  afterContentChange);
 
-        if (Client.isLoggedIn()) {
-            // we need to set top-nav-menu class so binary-style can add event listener
-            // if we wait for authorize before doing this binary-style will not initiate the drop-down menu
-            getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
-        }
-        BinarySocket.wait('authorize').then(() => {
-            Client.setJPFlag();
+        if (Login.isLoginPages()) {
             BinaryPjax.init(container, '#content');
-        });
+        } else {
+            if (Client.isLoggedIn()) {
+                // we need to set top-nav-menu class so binary-style can add event listener
+                // if we wait for authorize before doing this binary-style will not initiate the drop-down menu
+                getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
+            }
+            BinarySocket.wait('authorize').then(() => {
+                Client.setJPFlag();
+                BinaryPjax.init(container, '#content');
+            });
+        }
+
+        ThirdPartyLinks.init();
     };
 
     const beforeContentChange = () => {

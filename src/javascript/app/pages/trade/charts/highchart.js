@@ -5,7 +5,7 @@ const Defaults         = require('../../trade/defaults');
 const GetTicks         = require('../../trade/get_ticks');
 const Lookback         = require('../../trade/lookback');
 const ViewPopupUI      = require('../../user/view_popup/view_popup.ui');
-const Client           = require('../../../base/client');
+const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
 const addComma         = require('../../../common/currency').addComma;
 const getHighstock     = require('../../../../_common/common_functions').requireHighstock;
@@ -126,7 +126,7 @@ const Highchart = (() => {
             return null;
         }
 
-        const is_jp_client = Client.get('is_jp');
+        const is_jp_client = isJPClient();
         HighchartUI.setLabels(is_chart_delayed);
         HighchartUI.setChartOptions({
             is_jp_client,
