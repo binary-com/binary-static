@@ -149,9 +149,13 @@ class Markets extends React.Component {
     openDropdown = () => {
         this.setState({open: true});
         Object.values(this.references.market_nodes).forEach((node) => {
+            node.classList.remove('put_under');
+            node.removeAttribute('style');
             node.children[0].classList.remove('sticky');
+            node.children[0].removeAttribute('style');
         });
-        this.scrollToElement(this.state.underlying.symbol, 1, 110);
+        this.references.list.scrollTop = 0;
+        this.scrollToElement(this.state.underlying.symbol, 0, 70);
     };
 
     onUnderlyingClick = (underlying_symbol, market_symbol) => {
@@ -187,14 +191,11 @@ class Markets extends React.Component {
 
     saveRef = (node_name, node) => this.references[node_name] = node;
 
-    scrollToElement = (id, duration = 120, offset) => {
+    scrollToElement = (id, duration = 120, offset = 0) => {
         // handleScroll is triggered automatically which sets the active market.
         const {list} = this.references;
         const toOffset = getElementById(id).offsetTop - list.offsetTop - offset;
         scrollToPosition(list, toOffset, duration);
-        if (list.scrollTop === toOffset) {
-            this.stickyHeader(toOffset);
-        }
     }
 
     stickyHeader = (position) => {
@@ -203,7 +204,8 @@ class Markets extends React.Component {
         const market_keys = Object.keys(market_nodes);
         const TITLE_HEIGHT = 40;
         Object.values(market_nodes).forEach((node, idx) => {
-            if (node.dataset.offsetTop <= position && node.dataset.offsetHeight + node.dataset.offsetTop > position) {
+            if (node.dataset.offsetTop <= position 
+                && +node.dataset.offsetHeight + +node.dataset.offsetTop > position) {
                 curr = node;
                 prev = idx > 0 ? market_nodes[market_keys[idx-1]] : null;
                 next = idx < market_keys.length ? market_nodes[market_keys[idx+1]] : null;
@@ -218,9 +220,9 @@ class Markets extends React.Component {
             curr.children[0].removeAttribute('style');
             curr.removeAttribute('style');
             curr.children[0].classList.remove(class_under);
-            const diff =  position - (+curr.dataset.offsetHeight + +curr.dataset.offsetTop);
+            const diff = (+curr.dataset.offsetHeight + +curr.dataset.offsetTop) - position ;
             if (diff > 0 && diff < TITLE_HEIGHT) {
-                curr.children[0].style.top = `${DEFAULT_TOP - diff}px`;
+                curr.children[0].style.top = `${DEFAULT_TOP - (TITLE_HEIGHT - diff)}px`;
                 curr.children[0].classList.add(class_under);
             }
             curr.children[0].classList.add(class_sticky);
