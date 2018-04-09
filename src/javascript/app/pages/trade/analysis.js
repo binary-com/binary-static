@@ -1,13 +1,13 @@
-const showChart          = require('./charts/webtrader_chart').showChart;
-const Defaults           = require('./defaults');
-const getActiveTab       = require('./get_active_tab').getActiveTab;
-const GetTicks           = require('./get_ticks');
-const MBDefaults         = require('../mb_trade/mb_defaults');
-const JapanPortfolio     = require('../../japan/portfolio');
-const getElementById     = require('../../../_common/common_functions').getElementById;
-const getLanguage        = require('../../../_common/language').get;
-const State              = require('../../../_common/storage').State;
-const Url                = require('../../../_common/url');
+const showChart      = require('./charts/webtrader_chart').showChart;
+const Defaults       = require('./defaults');
+const getActiveTab   = require('./get_active_tab').getActiveTab;
+const GetTicks       = require('./get_ticks');
+const MBDefaults     = require('../mb_trade/mb_defaults');
+const JapanPortfolio = require('../../japan/portfolio');
+const getElementById = require('../../../_common/common_functions').getElementById;
+const getLanguage    = require('../../../_common/language').get;
+const State          = require('../../../_common/storage').State;
+const Url            = require('../../../_common/url');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
