@@ -591,3 +591,23 @@ li strong.margin-right {
 label + input {
     margin-left: 5px;
 }
+
+.question {
+    .no-underline {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .show_mobile {
+        &[data-balloon]:before, &[data-balloon]:after {
+            display: block !important;
+            transform: translate(-15%, 0) !important;
+        }
+        &[data-balloon-length=medium]:before {
+            width: 120px;
+        }
+    }
+}
