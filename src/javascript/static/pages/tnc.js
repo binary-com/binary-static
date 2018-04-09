@@ -83,10 +83,6 @@ const TermsAndConditions = (() => {
         const $sidebar = $('.sidebar-collapsible');
         const $content = $('.sidebar-collapsible-content');
 
-        $sidebar.on('click', () => {
-            if (!checkWidth()) $.scrollTo($content, 250, { offset: -10 });
-        });
-
         const is_submenu = /-binary|-mt/.test(hash);
         if (is_submenu) {
             let parent_hash = hash;
