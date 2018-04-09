@@ -45,10 +45,7 @@
         padding: 10px;
         width: 400px;
         @media (min-width: 320px) and (max-width: 767px) {
-            width: auto;
-            max-height: 300px;
-            overflow-y: scroll;
-            overflow-x: hidden;
+            width: calc(100vw - 80px);
         }
 
         &.hidden {
@@ -60,6 +57,42 @@
                 transform: translate(0, -50%) scale(1, 0);
             }
         }
+        .mobile_close {
+            @media (max-width: 767px) {
+                display: block !important;
+                visibility: visible;
+                opacity: 1;
+                width: calc(100% - 20px);
+                text-align: left;
+                padding: 0 10px 10px;
+                position: absolute;
+                left: 0;
+                border-bottom: 1px solid $COLOR_GRAY;
+                background: $COLOR_WHITE;
+            }
+
+            span {
+                display: inline-block;
+            }
+            .close {
+                width: 16px;
+                height: 16px;
+                float: right;
+                background: url('../images/pages/trade/assets/ic-close-normal.svg') 100% 100%;
+            }
+        }
+        .list {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            @media (min-width: 320px) and (max-width: 767px) {
+                padding-top: 41px;
+                max-height: 350px;
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+        }
         .contract {
             display: flex;
             flex-direction: column;
@@ -67,6 +100,9 @@
             flex: 1 0 auto;
             width: 185px;
             text-align: left;
+            @media (max-width: 767px) {
+                width: 100%;
+            }
 
             &:last-of-type {
                 padding: 0;
@@ -76,9 +112,15 @@
                 font-weight: 300;
                 padding: 0 0 10px;
                 color: $COLOR_ORANGE;
+                @media (max-width: 767px) {
+                    font-size: 14px;
+                }
             }
             .contract_subtypes {
                 font-size: 14px;
+                @media (max-width: 767px) {
+                    font-size: 16px;
+                }
 
                 .sub {
                     padding: 5px 0 15px;

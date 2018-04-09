@@ -150,6 +150,8 @@
                             transition: background 0.2s 0.1s;
                             cursor: pointer;
                             padding: 0 5px 5px;
+                            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                            -webkit-tap-highlight-color: transparent;
 
                             &.active {
                                 border-bottom: 2px solid $COLOR_BLUE;
@@ -169,8 +171,9 @@
                     background-size: 100%;
 
                     &.forex {
-                        background: url('../images/pages/trade/assets/ic-forex-normal.svg') no-repeat 100% 100%;
+                        background: url('../images/pages/trade/assets/ic-forex-normal.svg') no-repeat;
                         background-size: contain;
+                        transition: none;
 
                         &.active {
                             background: url('../images/pages/trade/assets/ic-forex-active.svg') no-repeat;
@@ -178,8 +181,9 @@
                         }
                     }
                     &.indices {
-                        background: url('../images/pages/trade/assets/ic-indices-normal.svg') no-repeat 100% 100%;
+                        background: url('../images/pages/trade/assets/ic-indices-normal.svg') no-repeat;
                         background-size: contain;
+                        transition: none;
 
                         &.active {
                             background: url('../images/pages/trade/assets/ic-indices-active.svg') no-repeat;
@@ -187,8 +191,9 @@
                         }
                     }
                     &.stocks {
-                        background: url('../images/pages/trade/assets/ic-stocks-normal.svg') no-repeat 100% 100%;
+                        background: url('../images/pages/trade/assets/ic-stocks-normal.svg') no-repeat;
                         background-size: contain;
+                        transition: none;
 
                         &.active {
                             background: url('../images/pages/trade/assets/ic-stocks-active.svg') no-repeat;
@@ -196,8 +201,9 @@
                         }
                     }
                     &.commodities {
-                        background: url('../images/pages/trade/assets/ic-commodities-normal.svg') no-repeat 100% 100%;
+                        background: url('../images/pages/trade/assets/ic-commodities-normal.svg') no-repeat;
                         background-size: contain;
+                        transition: none;
 
                         &.active {
                             background: url('../images/pages/trade/assets/ic-commodities-active.svg') no-repeat;
@@ -205,8 +211,9 @@
                         }
                     }
                     &.volidx {
-                        background: url('../images/pages/trade/assets/ic-volidx-normal.svg') no-repeat 100% 100%;
+                        background: url('../images/pages/trade/assets/ic-volidx-normal.svg') no-repeat;
                         background-size: contain;
+                        transition: none;
 
                         &.active {
                             background: url('../images/pages/trade/assets/ic-volidx-active.svg') no-repeat;
@@ -236,14 +243,11 @@
                     display: flex;
                     flex-direction: column;
                     flex: 0 0 auto;
-                    margin-bottom: 40px;
+                    padding-bottom: 40px;
 
-                    &:first-of-type {
-                        padding-top: 40px;
-                    }
                     &:last-of-type {
                         @media (min-width: 768px) {
-                            padding-bottom: 40px;
+                            padding-bottom: 80px;
                         }
                     }
                     .market_name {
@@ -252,13 +256,14 @@
                         font-weight: 400;
                         flex: 1 0 auto;
                         color: $COLOR_BLUE;
+                        transition: none;
                         @media (min-width: 320px) and (max-width: 767px) {
                             font-size: 20px;
                         }
 
                         &.sticky {
                             position: absolute;
-                            width: 350px;
+                            width: 409px;
                             top: 59px;
                             background: $COLOR_WHITE;
                             @media (max-width: 767px) {
