@@ -1,3 +1,4 @@
+const Dropdown          = require('binary-style').selectDropdown;
 const TradingAnalysis   = require('./analysis');
 const commonTrading     = require('./common');
 const cleanupChart      = require('./charts/webtrader_chart').cleanupChart;
@@ -11,9 +12,7 @@ const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
 const Header            = require('../../base/header');
 const BinarySocket      = require('../../base/socket');
-const jpClient          = require('../../common/country_base').jpClient;
 const Guide             = require('../../common/guide');
-const localize          = require('../../../_common/localize').localize;
 const State             = require('../../../_common/storage').State;
 
 const TradePage = (() => {
@@ -27,7 +26,7 @@ const TradePage = (() => {
     };
 
     const init = () => {
-        if (jpClient()) {
+        if (Client.isJPClient()) {
             BinaryPjax.load('multi_barriers_trading');
             return;
         }
@@ -38,6 +37,8 @@ const TradePage = (() => {
             TradingEvents.init();
         }
 
+        Dropdown('#amount_type');
+
         BinarySocket.wait('authorize').then(() => {
             if (Client.get('is_virtual')) {
                 Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
@@ -45,6 +46,8 @@ const TradePage = (() => {
             Client.activateByClientType('trading_socket_container');
             BinarySocket.send({ payout_currencies: 1 }).then(() => {
                 displayCurrencies();
+                Dropdown('#currency');
+                Dropdown('#multiplier_currency');
                 Process.processActiveSymbols();
             });
         });
@@ -58,10 +61,6 @@ const TradePage = (() => {
             script: 'trading',
         });
         TradingAnalysis.bindAnalysisTabEvent();
-        $('#tab_portfolio').find('a').text(localize('Portfolio'));
-        $('#tab_graph').find('a').text(localize('Chart'));
-        $('#tab_explanation').find('a').text(localize('Explanation'));
-        $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
 
         ViewPopup.viewButtonOnClick('#contract_confirmation_container');
     };

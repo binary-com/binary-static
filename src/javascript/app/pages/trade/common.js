@@ -1,14 +1,14 @@
-const Defaults           = require('./defaults');
-const Symbols            = require('./symbols');
-const Tick               = require('./tick');
-const contractsElement   = require('./contracts.jsx');
-const marketsElement     = require('./markets.jsx');
-const formatMoney        = require('../../common/currency').formatMoney;
-const ActiveSymbols      = require('../../common/active_symbols');
-const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
-const getElementById     = require('../../../_common/common_functions').getElementById;
-const localize           = require('../../../_common/localize').localize;
-const urlFor             = require('../../../_common/url').urlFor;
+const Defaults         = require('./defaults');
+const Symbols          = require('./symbols');
+const Tick             = require('./tick');
+const contractsElement = require('./contracts.jsx');
+const marketsElement   = require('./markets.jsx');
+const formatMoney      = require('../../common/currency').formatMoney;
+const ActiveSymbols    = require('../../common/active_symbols');
+const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
+const getElementById   = require('../../../_common/common_functions').getElementById;
+const localize         = require('../../../_common/localize').localize;
+const urlFor           = require('../../../_common/url').urlFor;
 
 /*
  * This contains common functions we need for processing the response
@@ -35,8 +35,8 @@ const commonTrading = (() => {
         }
     };
 
-    const displayMarkets = (elements) => {
-        marketsElement.init(elements);
+    const displayMarkets = () => {
+        marketsElement.init();
     };
 
     /*

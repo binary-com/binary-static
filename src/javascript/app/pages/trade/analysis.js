@@ -1,13 +1,13 @@
-const showChart      = require('./charts/webtrader_chart').showChart;
-const Defaults       = require('./defaults');
-const getActiveTab   = require('./get_active_tab').getActiveTab;
-const GetTicks       = require('./get_ticks');
-const MBDefaults     = require('../mb_trade/mb_defaults');
-const JapanPortfolio = require('../../japan/portfolio');
-const getElementById = require('../../../_common/common_functions').getElementById;
-const getLanguage    = require('../../../_common/language').get;
-const State          = require('../../../_common/storage').State;
-const Url            = require('../../../_common/url');
+const showChart          = require('./charts/webtrader_chart').showChart;
+const Defaults           = require('./defaults');
+const getActiveTab       = require('./get_active_tab').getActiveTab;
+const GetTicks           = require('./get_ticks');
+const MBDefaults         = require('../mb_trade/mb_defaults');
+const JapanPortfolio     = require('../../japan/portfolio');
+const getElementById     = require('../../../_common/common_functions').getElementById;
+const getLanguage        = require('../../../_common/language').get;
+const State              = require('../../../_common/storage').State;
+const Url                = require('../../../_common/url');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -22,8 +22,10 @@ const Url            = require('../../../_common/url');
  */
 
 const TradingAnalysis = (() => {
+    // tabListener();
     const hidden_class = 'invisible';
     let form_name;
+    const tab_selector_id = 'trade_analysis';
 
     const requestTradeAnalysis = () => {
         form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
@@ -42,13 +44,19 @@ const TradingAnalysis = (() => {
      * navigation
      */
     const bindAnalysisTabEvent = () => {
-        $('#betsBottomPage').find('li a').on('click', (e) => {
+        $('#trade_analysis').find('li a').on('click', (e) => {
             e.preventDefault();
             const li = e.target.parentElement;
             sessionStorage.setItem('currentAnalysisTab', li.id);
             if (!li.classList.contains('active')) {
                 loadAnalysisTab(li.id);
             }
+        });
+        $('.go-left').on('click', (e) => {
+            goLeft(e);
+        });
+        $('.go-right').on('click', (e) => {
+            goRight(e);
         });
     };
 
@@ -58,7 +66,7 @@ const TradingAnalysis = (() => {
      */
     const loadAnalysisTab = (tab) => {
         const current_tab = tab || getActiveTab();
-        $('#betsBottomPage').find('li').removeClass('active');
+        $('#trade_analysis').find('li').removeClass('active');
         $(`#${current_tab}`).addClass('active');
         toggleActiveAnalysisTabs();
         JapanPortfolio.init();
@@ -73,10 +81,24 @@ const TradingAnalysis = (() => {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
                 const el_digit_underlying = $('#digit_underlying');
-                const underlying = $('#underlying option:selected').val();
+                const underlying = $('#underlying').val();
                 const tick       = $('#tick_count').val() || 100;
+
                 if (underlying !== el_digit_underlying.val() && el_digit_underlying.val() !== null ) {
                     el_digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
+                    const digit_underlying_dropdown = el_digit_underlying.next('div.select-dropdown');
+
+                    // check if custom dropdown exists and sync with underlying dropdown
+                    if (digit_underlying_dropdown) {
+                        const digit_underlying_list = digit_underlying_dropdown.next('ul.select-options').children('li');
+                        const underlying_text = $('#underlying').attr('data-text');
+                        digit_underlying_dropdown.text(underlying_text);
+
+                        digit_underlying_list.not(this).each((idx, el) => {
+                            $(el).removeClass('selected');
+                        });
+                        digit_underlying_list.filter(`[value='${underlying}']`).addClass('selected');
+                    }
                 }
                 else {
                     GetTicks.request('', {
@@ -89,6 +111,55 @@ const TradingAnalysis = (() => {
                 showExplanation();
             }
         }
+        if (current_tab) {
+            const el_to_show = getElementById(current_tab);
+            slideSelector(tab_selector_id, el_to_show);
+            const mobile_tab_header = document.getElementById('tab_mobile_header');
+            if (mobile_tab_header) mobile_tab_header.innerHTML = el_to_show.firstChild.innerHTML;
+        }
+        // workaround for underline during window resize
+        window.addEventListener('resize', () => {
+            slideSelector(tab_selector_id, getElementById(current_tab));
+        });
+    };
+
+    const slideSelector = (selector, el_to_show) => {
+        const isActive = el_to_show.classList.contains('active');
+        if (isActive) {
+            getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
+        }
+    };
+
+    const goLeft = (e) => {
+        changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
+    };
+
+    const goRight = (e) => {
+        changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'right' });
+    };
+
+    const changeTab = (options) => {
+        const selector_array = Array.from(getElementById(options.selector).querySelectorAll('li.tm-li:not(.invisible):not(.tab-selector)'));
+        const active_index = selector_array.findIndex((x) => x.id === getActiveTab());
+        let index_to_show = active_index;
+        if (options.direction) {
+            const array_length = selector_array.length;
+            if (options.direction === 'left') {
+                index_to_show = active_index - 1;
+                index_to_show = index_to_show === 0 ? index_to_show: array_length - 1;
+            } else {
+                index_to_show = active_index + 1;
+                index_to_show = index_to_show === array_length ? 0 : index_to_show;
+            }
+        }
+        options.el_to_show = selector_array[index_to_show].id;
+        if (!options.el_to_show || !options.selector) {
+            return;
+        }
+        sessionStorage.setItem('currentAnalysisTab', options.el_to_show);
+        if (!getElementById(options.el_to_show).classList.contains('active')) {
+            loadAnalysisTab(options.el_to_show);
+        }
     };
 
     /*
@@ -96,7 +167,7 @@ const TradingAnalysis = (() => {
      */
     const toggleActiveAnalysisTabs = () => {
         const current_tab        = getActiveTab();
-        const analysis_container = getElementById('bet_bottom_content');
+        const analysis_container = getElementById('analysis_content');
 
         const child_elements      = analysis_container.children;
         const current_tab_element = getElementById(`${current_tab}-content`);

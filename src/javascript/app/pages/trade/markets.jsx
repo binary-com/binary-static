@@ -37,7 +37,7 @@ const List = ({
             id={`${market_code}_market`}
             ref={saveRef.bind(null,market_code)}
         >
-            <div className={`market_name`}>
+            <div className='market_name'>
                 {obj.name}
             </div>
             {Object.values(obj.submarkets).map((submarket, idx_2) => (
@@ -63,12 +63,50 @@ const List = ({
     ))
 );
 
+const submarket_order = {
+    forex          : 0,
+    major_pairs    : 1,
+    minor_pairs    : 2,
+    smart_fx       : 3,
+    indices        : 4,
+    asia_oceania   : 5,
+    europe_africa  : 6,
+    americas       : 7,
+    otc_index      : 8,
+    stocks         : 9,
+    au_otc_stock   : 10,
+    ge_otc_stock   : 11,
+    india_otc_stock: 12,
+    uk_otc_stock   : 13,
+    us_otc_stock   : 14,
+    commodities    : 15,
+    metals         : 16,
+    energy         : 17,
+    volidx         : 18,
+    random_index   : 19,
+    random_daily   : 20,
+    random_nightly : 21,
+};
+
+const submarketSort = (a, b) => {
+    if (submarket_order[a] > submarket_order[b]) {
+        return 1;
+    } else if (submarket_order[a] < submarket_order[b]) {
+        return -1;
+    }
+    return 0;
+};
+
 class Markets extends React.Component {
     constructor (props) {
         super(props);
         const market_symbol = Defaults.get('market');
         this.markets = Symbols.markets();
-        const underlying_symbol = Defaults.get('underlying') || Object.keys(Symbols.underlyings()[market_symbol])[0];
+        let underlying_symbol = Defaults.get('underlying');
+        if (!underlying_symbol) {
+            const submarket = Object.keys(this.markets[market_symbol].submarkets).sort(submarketSort)[0];
+            underlying_symbol = Object.keys(this.markets[market_symbol].submarkets[submarket].symbols).sort()[0];
+        }
         const markets_arr = Object.entries(this.markets);
         this.underlyings = Symbols.getAllSymbols() || {};
         this.markets_all = markets_arr.slice();
@@ -114,7 +152,7 @@ class Markets extends React.Component {
         if (underlying.length > max_char) {
             return `${underlying.substr(0, max_char)}...`;
         }
-        return underlying
+        return underlying;
     }
 
     handleClickOutside = (e) => {
@@ -161,6 +199,7 @@ class Markets extends React.Component {
     onUnderlyingClick = (underlying_symbol, market_symbol) => {
         Defaults.set('underlying', underlying_symbol);
         Defaults.set('market', market_symbol);
+
         this.setState({
             market: {
                 symbol: market_symbol,
@@ -175,6 +214,7 @@ class Markets extends React.Component {
         // Trigger change event.
         // TODO: move this block to componentDidUpdate
         this.$underlying.value = underlying_symbol;
+        this.$underlying.setAttribute('data-text',this.underlyings[underlying_symbol]);
         const event = new Event('change');
         this.$underlying.dispatchEvent(event);
 
@@ -295,21 +335,23 @@ class Markets extends React.Component {
         this.setState({markets: filter_markets, active_market: filter_markets[0][0]});
     }
 
+    /* eslint-disable no-shadow */
     scrollToMarket = (key) => {
         const {list} = this.references;
         const node = this.references.market_nodes[key];
         const offset = node.dataset.offsetTop - list.offsetTop;
         scrollToPosition(list, offset, 120);
     }
-
+    /* eslint-enable no-shadow */
     /* eslint-enable no-undef */
-
     render () {
         const {active_market, markets,
             underlying, query, market} = this.state;
+        /* eslint-disable no-unused-vars */
         const { openDropdown, closeDropdown, searchSymbols,
             scrollToElement, handleScroll, saveMarketRef,
             onUnderlyingClick, saveRef, scrollToMarket } = this;
+        /* eslint-enable no-unused-vars */
         return (
             <div className='markets'>
                 <div
@@ -318,7 +360,7 @@ class Markets extends React.Component {
                 >
                     <span className='market'>
                         {market.name}
-                        <span className='arrow_down'></span>
+                        <span className='arrow_down' />
                     </span>
                     <span className='underlying'>{this.getCurrentUnderlying()}</span>
                 </div>
@@ -388,9 +430,9 @@ class Markets extends React.Component {
     }
 }
 
-export const init = (elements) => {
+export const init = () => {
     ReactDOM.render(
-        <Markets market={elements} />,
+        <Markets />,
         getElementById('underlying_component')
     );
 };

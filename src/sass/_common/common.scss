@@ -459,6 +459,18 @@ ul.bullet.gr-row > li {
     margin-top: 40px;
     margin-bottom: 20px;
 
+    div.select {
+        ul.select-options {
+            position: absolute;
+            margin: 4px 0 0;
+            font-size: 1rem;
+
+            li.select-items {
+                margin: 0;
+                display: block;
+            }
+        }
+    }
     .light {
         .tab-menu-wrap {
             text-align: center;
@@ -590,4 +602,22 @@ li strong.margin-right {
 
 label + input {
     margin-left: 5px;
+}
+
+.max_30day_turnover {
+    .inline-flex {
+        margin-left: 10px;
+        align-items: baseline;
+    }
+    input {
+        transition: none;
+
+        &.hide {
+            color: transparent;
+
+            &::selection {
+                color: transparent;
+            }
+        }
+    }
 }

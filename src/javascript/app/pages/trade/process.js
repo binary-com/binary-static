@@ -1,3 +1,4 @@
+const Dropdown          = require('binary-style').selectDropdown;
 const moment            = require('moment');
 const TradingAnalysis   = require('./analysis');
 const commonTrading     = require('./common');
@@ -36,7 +37,7 @@ const Process = (() => {
             // store the market
             Defaults.set('market', market);
 
-            commonTrading.displayMarkets(Symbols.markets());
+            commonTrading.displayMarkets();
             processMarket();
         });
     };
@@ -156,6 +157,7 @@ const Process = (() => {
         StartDates.display();
 
         displayPrediction();
+        Dropdown('#prediction');
         Lookback.display();
 
         let r1;

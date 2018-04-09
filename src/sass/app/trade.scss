@@ -133,6 +133,24 @@
     }
     #expiry_type_endtime {
         flex-wrap: wrap;
+
+        div.select ~ #expiry_time_row {
+            margin-top: 5px;
+
+            @media (max-width: 768px) {
+                margin-top: 0px;
+                margin-left: 0.5rem;
+            }
+            @media (max-width: 480px) {
+                margin-left: 0;
+                margin-top: 5px;
+                width: 100%;
+
+                input {
+                    width: 70%;
+                }
+            }
+        }
     }
     #contract_form_content_wrapper {
         padding-top: 0.5em;
@@ -161,16 +179,32 @@
             flex: 0 0 auto;
             text-align: right;
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
+            @media (max-width: 768px) {
+                flex: 1;
+            }
         }
         #contract_type_container {
             flex: 0 0 auto;
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
-        }
-        #underlying_details span {
-            display: block;
-            margin: 5px 0;
             @media (max-width: 768px) {
-                display: inline-block;
+                flex: 1;
+            }
+        }
+        #underlying_details {
+            span {
+                display: block;
+                margin: 5px 0;
+                @media (max-width: 768px) {
+                    display: inline-block;
+                }
+            }
+            @media (max-width: 768px) {
+                margin-left: auto;
+            }
+            @media (max-width: 480px) {
+                display: inline-flex;
+                align-items: center;
+                flex-direction: row-reverse;
             }
         }
     }
@@ -178,9 +212,10 @@
         align-items: center;
         padding-top: 25px;
         position: relative;
+        border-radius: 4px;
 
         #contract_form_container .col {
-            @include BIDIR_PROP(margin-right, margin-left, 1rem);
+            @include BIDIR_PROP(margin-right, margin-left, 0.5rem);
         }
         .overlay_container {
             width: 100%;
@@ -300,6 +335,7 @@
             padding: 0;
             flex: 1 0 auto;
             display: none;
+            border-radius: 4px;
 
             > .col.row {
                 flex: 1 0 auto;
@@ -520,7 +556,7 @@
         }
     }
     #duration_amount {
-        @include BIDIR_PROP(margin-right, margin-left, 5px);
+        @include BIDIR_PROP(margin-right, margin-left, 0.5rem);
     }
     #duration_units {
         @include BIDIR_PROP(margin-right, margin-left, 10px);
@@ -542,12 +578,20 @@
     }
     #date_start {
         margin-bottom: 5px;
+        width: 175px;
     }
     #time_start_row {
         white-space: nowrap;
+        margin-top: 5px;
 
         .time_start {
             margin-left: 5px;
+            width: 110px;
+        }
+    }
+    #payout_row {
+        .select ~ #amount {
+            margin-left: 0.5rem;
         }
     }
     .barrier_class input {
@@ -555,10 +599,10 @@
         @include BIDIR_PROP(margin-right, margin-left, 5px);
     }
     .medium_width_input {
-        width: 100px;
+        width: 105px;
     }
-    #amount {
-        margin-top: -1px;
+    span.currency {
+        margin-left: 0.5rem;
     }
     #underlying {
         @include BIDIR_PROP(margin-right, margin-left, 10px);
@@ -588,10 +632,44 @@
             }
             #duration_amount {
                 margin-bottom: 5px;
+                margin-right: 0;
+            }
+        }
+        #payout_row {
+            .select ~ #amount {
+                margin-top: 0.5rem;
+                margin-left: 0;
+            }
+            input {
+                margin-right: 5px;
             }
         }
         .contract_purchase {
             width: 70% !important;
+        }
+        #date_start {
+            width: 100%;
+        }
+        #expiry_date {
+            width: 100%;
+        }
+        #expiry_time {
+            margin-top: 5px;
+            margin-bottom: 0.5rem;
+        }
+        #symbol_tip {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        .small_width_input, .medium_width_input {
+            width: 100%;
+        }
+        #time_start.medium_width_input {
+            width: 70%;
+        }
+        .tab-menu-wrap {
+            display: none;
         }
     }
 }
@@ -625,6 +703,7 @@
                 height: auto;
             }
             #price_container_top {
+                margin-top: 1rem;
                 margin-right: 0 !important;
             }
             .price_wrapper {
@@ -690,9 +769,6 @@
         #contract_prices_container {
             margin-left: 0;
         }
-        #expiry_time {
-            width: 175px;
-        }
     }
 }
 
@@ -720,35 +796,21 @@
     margin-top: 15px;
     font-size: $FONT_SIZE_N;
 
-    .tab-menu {
-        background: transparent !important;
-        border: 0 !important;
-        height: auto !important;
+    #tab_mobile_header {
+        margin: 0 auto;
     }
-    ul#betsBottomPage {
-        @include ul_segmented_navigation;
-        font-size: $FONT_SIZE_S;
-        border-bottom: none;
-        margin: 0;
-
-        li {
-            @include li_segmented_element;
-            background: transparent;
-            border-radius: 0;
-            padding: 6px 0;
-
-            a {
-                line-height: 1;
-                top: 0;
-                font-size: $FONT_SIZE_N;
-            }
-            &.active a {
-                color: inherit;
-                background-image: none;
+    #trade_analysis {
+        a.tm-a.a-active, .tm-li.active a {
+            display: block;
+            pointer-events: none;
+        }
+        li.tm-li.tab-selector {
+            @media screen and (max-width: 480px) {
+                top: 26px;
             }
         }
     }
-    #bet_bottom_content {
+    #trade_bottom_content {
         padding-top: 1em;
     }
     #webtrader_chart {
@@ -757,8 +819,10 @@
         overflow-y: hidden;
     }
     #last_digit_histo_form {
-        overflow: hidden;
         margin-bottom: 20px;
+    }
+    #digit_underlying ~ ul.select-options {
+        font-size: 85%;
     }
 }
 
@@ -777,12 +841,6 @@
         img {
             margin-right: 5px;
         }
-    }
-}
-
-@media all and (max-width: 768px) {
-    #trading_bottom_content ul#betsBottomPage {
-        flex-direction: column;
     }
 }
 /*

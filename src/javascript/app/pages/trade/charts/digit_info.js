@@ -1,3 +1,4 @@
+const Dropdown     = require('binary-style').selectDropdown;
 const Symbols      = require('../symbols');
 const BinarySocket = require('../../../base/socket');
 const getHighstock = require('../../../../_common/common_functions').requireHighstock;
@@ -108,6 +109,8 @@ const DigitInfo = (() => {
         $('#digit_underlying').html($(elem)).val(underlying);
         $('#digit_domain').text(domain.charAt(0).toUpperCase() + domain.slice(1));
         $('#digit_info_underlying').text($('#digit_underlying option:selected').text());
+        Dropdown('#digit_underlying');
+        Dropdown('#tick_count');
     };
 
     const onLatest = () => {

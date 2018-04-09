@@ -36,7 +36,6 @@
             }
             #payout {
                 height: auto;
-                border-left: none;
 
                 &:focus {
                     outline: none;
@@ -552,6 +551,11 @@
                 &:first-child {
                     order: 2;
                 }
+            }
+        }
+        @media all and (max-width: 480px) {
+            .tab-menu-wrap {
+                display: none;
             }
         }
     }
