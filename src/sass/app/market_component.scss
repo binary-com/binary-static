@@ -150,6 +150,8 @@
                             transition: background 0.2s 0.1s;
                             cursor: pointer;
                             padding: 0 5px 5px;
+                            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                            -webkit-tap-highlight-color: transparent;
 
                             &.active {
                                 border-bottom: 2px solid $COLOR_BLUE;

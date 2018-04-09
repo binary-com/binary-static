@@ -40,7 +40,8 @@ const List = ({
             <div className='market_name'>
                 {obj.name}
             </div>
-            {Object.values(obj.submarkets).map((submarket, idx_2) => (
+            {Object.entries(obj.submarkets).sort((a, b) => submarketSort(a[0], b[0]))
+                .map(([key, submarket], idx_2) => (
                 <div className='submarket' key={idx_2}>
                     <div className='submarket_name'>
                         {submarket.name}
@@ -107,7 +108,7 @@ class Markets extends React.Component {
             const submarket = Object.keys(this.markets[market_symbol].submarkets).sort(submarketSort)[0];
             underlying_symbol = Object.keys(this.markets[market_symbol].submarkets[submarket].symbols).sort()[0];
         }
-        const markets_arr = Object.entries(this.markets);
+        const markets_arr = Object.entries(this.markets).sort((a, b) => submarketSort(a[0], b[0]));
         this.underlyings = Symbols.getAllSymbols() || {};
         this.markets_all = markets_arr.slice();
         this.$underlying = getElementById('underlying');
