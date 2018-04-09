@@ -592,6 +592,24 @@ label + input {
     margin-left: 5px;
 }
 
+.max_30day_turnover {
+    .inline-flex {
+        margin-left: 10px;
+        align-items: baseline;
+    }
+    input {
+        transition: none;
+
+        &.hide {
+            color: transparent;
+
+            &::selection {
+                color: transparent;
+            }
+        }
+    }
+}
+
 .question {
     .no-underline {
         display: inline-block;
@@ -611,3 +629,4 @@ label + input {
         }
     }
 }
+
