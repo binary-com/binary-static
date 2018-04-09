@@ -65,7 +65,7 @@ const CashierPassword = (() => {
         if (response.error) {
             if (response.error.code === 'RateLimit') {
                 $form.setVisibility(0);
-                $form_message.addClass('notice-msg').text(localize('You have reached the rate limit of requests per second. Please try later.'));
+                $form_message.addClass('notice-msg center-text').text(localize('You have reached the rate limit of requests per second. Please try later.'));
             } else {
                 let message = response.error.message;
                 if (response.error.code === 'InputValidationFailed') {

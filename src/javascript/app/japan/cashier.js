@@ -10,7 +10,9 @@ const CashierJP = (() => {
         if (Client.isJPClient() && Client.get('residence') !== 'jp') BinaryPjax.loadPreviousUrl();
         const $container = $('#japan_cashier_container');
         BinarySocket.send({ cashier_password: 1 }).then((response) => {
-            if (!response.error && response.cashier_password === 1) {
+            if (response.error) {
+                $('#cashier_error_message').text(response.error.code === 'RateLimit' ? localize('You have reached the rate limit of requests per second. Please try later.') : response.error.message);
+            } else if (response.cashier_password === 1) {
                 $container.find('#cashier_locked_message').setVisibility(1);
             } else {
                 BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
