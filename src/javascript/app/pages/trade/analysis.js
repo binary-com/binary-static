@@ -7,6 +7,7 @@ const JapanPortfolio = require('../../japan/portfolio');
 const getElementById = require('../../../_common/common_functions').getElementById;
 const getLanguage    = require('../../../_common/language').get;
 const State          = require('../../../_common/storage').State;
+const TabSelector    = require('../../../_common/tab_selector');
 const Url            = require('../../../_common/url');
 
 /*
@@ -52,12 +53,8 @@ const TradingAnalysis = (() => {
                 loadAnalysisTab(li.id);
             }
         });
-        $('.go-left').on('click', (e) => {
-            goLeft(e);
-        });
-        $('.go-right').on('click', (e) => {
-            goRight(e);
-        });
+
+        TabSelector.onChangeTab(changeTab);
     };
 
     /*
@@ -66,6 +63,7 @@ const TradingAnalysis = (() => {
      */
     const loadAnalysisTab = (tab) => {
         const current_tab = tab || getActiveTab();
+
         $('#trade_analysis').find('li').removeClass('active');
         $(`#${current_tab}`).addClass('active');
         toggleActiveAnalysisTabs();
@@ -112,30 +110,19 @@ const TradingAnalysis = (() => {
             }
         }
         if (current_tab) {
-            const el_to_show = getElementById(current_tab);
-            slideSelector(tab_selector_id, el_to_show);
+            const el_to_show           = getElementById(current_tab);
             const el_mobile_tab_header = getElementById('tab_mobile_header');
-            if (el_mobile_tab_header) el_mobile_tab_header.innerHTML = el_to_show.firstChild.innerHTML;
+
+            TabSelector.slideSelector(tab_selector_id, el_to_show);
+            if (el_mobile_tab_header) {
+                el_mobile_tab_header.innerHTML = el_to_show.firstChild.innerHTML;
+            }
         }
+
         // workaround for underline during window resize
         window.addEventListener('resize', () => {
-            slideSelector(tab_selector_id, getElementById(current_tab));
+            TabSelector.slideSelector(tab_selector_id, getElementById(current_tab));
         });
-    };
-
-    const slideSelector = (selector, el_to_show) => {
-        const isActive = el_to_show.classList.contains('active');
-        if (isActive) {
-            getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
-        }
-    };
-
-    const goLeft = (e) => {
-        changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
-    };
-
-    const goRight = (e) => {
-        changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'right' });
     };
 
     const changeTab = (options) => {
