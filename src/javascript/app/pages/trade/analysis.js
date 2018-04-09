@@ -80,24 +80,24 @@ const TradingAnalysis = (() => {
             if (current_tab === 'tab_graph') {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
-                const el_digit_underlying = $('#digit_underlying');
-                const underlying = $('#underlying').val();
-                const tick       = $('#tick_count').val() || 100;
+                const $digit_underlying = $('#digit_underlying');
+                const $underlying       = $('#underlying');
+                const underlying        = $underlying.val();
+                const underlying_text   = $underlying.attr('data-text');
+                const tick              = $('#tick_count').val() || 100;
 
-                if (underlying !== el_digit_underlying.val() && el_digit_underlying.val() !== null ) {
-                    el_digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
-                    const digit_underlying_dropdown = el_digit_underlying.next('div.select-dropdown');
+                if (underlying !== $digit_underlying.val() && $digit_underlying.val() !== null ) {
+                    $digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
+                    const $digit_underlying_dropdown = $digit_underlying.next('div.select-dropdown');
 
                     // check if custom dropdown exists and sync with underlying dropdown
-                    if (digit_underlying_dropdown) {
-                        const digit_underlying_list = digit_underlying_dropdown.next('ul.select-options').children('li');
-                        const underlying_text = $('#underlying').attr('data-text');
-                        digit_underlying_dropdown.text(underlying_text);
-
-                        digit_underlying_list.not(this).each((idx, el) => {
-                            $(el).removeClass('selected');
+                    if ($digit_underlying_dropdown) {
+                        const $digit_underlying_list = $digit_underlying_dropdown.next('ul.select-options').children('li');
+                        $digit_underlying_dropdown.text(underlying_text);
+                        $digit_underlying_list.not(this).each((idx, el) => {
+                            el.classList.remove('selected');
                         });
-                        digit_underlying_list.filter(`[value='${underlying}']`).addClass('selected');
+                        $digit_underlying_list.filter(`[value='${underlying}']`).addClass('selected');
                     }
                 }
                 else {
@@ -114,8 +114,8 @@ const TradingAnalysis = (() => {
         if (current_tab) {
             const el_to_show = getElementById(current_tab);
             slideSelector(tab_selector_id, el_to_show);
-            const mobile_tab_header = document.getElementById('tab_mobile_header');
-            if (mobile_tab_header) mobile_tab_header.innerHTML = el_to_show.firstChild.innerHTML;
+            const el_mobile_tab_header = getElementById('tab_mobile_header');
+            if (el_mobile_tab_header) el_mobile_tab_header.innerHTML = el_to_show.firstChild.innerHTML;
         }
         // workaround for underline during window resize
         window.addEventListener('resize', () => {
