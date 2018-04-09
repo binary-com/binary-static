@@ -24,9 +24,10 @@ const Url            = require('../../../_common/url');
 
 const TradingAnalysis = (() => {
     // tabListener();
-    const hidden_class = 'invisible';
-    let form_name;
+    const hidden_class    = 'invisible';
     const tab_selector_id = 'trade_analysis';
+
+    let form_name, current_tab;
 
     const requestTradeAnalysis = () => {
         form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
@@ -62,7 +63,7 @@ const TradingAnalysis = (() => {
      * tab according to current paramerted
      */
     const loadAnalysisTab = (tab) => {
-        const current_tab = tab || getActiveTab();
+        current_tab = tab || getActiveTab();
 
         $('#trade_analysis').find('li').removeClass('active');
         $(`#${current_tab}`).addClass('active');
@@ -120,9 +121,11 @@ const TradingAnalysis = (() => {
         }
 
         // workaround for underline during window resize
-        window.addEventListener('resize', () => {
-            TabSelector.slideSelector(tab_selector_id, getElementById(current_tab));
-        });
+        window.addEventListener('resize', tabSlider);
+    };
+
+    const tabSlider = () => {
+        TabSelector.slideSelector(tab_selector_id, getElementById(current_tab));
     };
 
     const changeTab = (options) => {
@@ -153,9 +156,9 @@ const TradingAnalysis = (() => {
      * function to toggle the active element for analysis menu
      */
     const toggleActiveAnalysisTabs = () => {
-        const current_tab        = getActiveTab();
-        const analysis_container = getElementById('analysis_content');
+        current_tab        = getActiveTab();
 
+        const analysis_container  = getElementById('analysis_content');
         const child_elements      = analysis_container.children;
         const current_tab_element = getElementById(`${current_tab}-content`);
         const classes             = current_tab_element.classList;
@@ -238,8 +241,13 @@ const TradingAnalysis = (() => {
         }
     };
 
+    const onUnload = () => {
+        window.removeEventListener('resize', tabSlider);
+    };
+
     return {
         bindAnalysisTabEvent,
+        onUnload,
         request: requestTradeAnalysis,
     };
 })();

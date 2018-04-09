@@ -79,6 +79,7 @@ const TradePage = (() => {
         cleanupChart();
         commonTrading.clean();
         BinarySocket.clear('active_symbols');
+        TradingAnalysis.onUnload();
     };
 
     const onDisconnect = () => {
