@@ -11,7 +11,7 @@ const CashierJP = (() => {
         const $container = $('#japan_cashier_container');
         BinarySocket.send({ cashier_password: 1 }).then((response) => {
             if (response.error) {
-                $('#cashier_error_message').text(response.error.code === 'RateLimit' ? localize('You have reached the rate limit of requests per second. Please try later.') : response.error.message);
+                $('#cashier_error_message').text(response.error.code === 'RateLimit' ? localize('You have reached the rate limit of requests per second. Please try later.') : response.error.message).setVisibility(1);
             } else if (response.cashier_password === 1) {
                 $container.find('#cashier_locked_message').setVisibility(1);
             } else {
