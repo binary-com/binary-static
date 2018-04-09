@@ -532,6 +532,8 @@ const texts = [
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
     'for MT5 Account',
     '[_1] Account [_2]',
+    'Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.',
+    'Do you wish to continue?',
 
     // account_transfer
     'Min',
@@ -601,6 +603,10 @@ const texts = [
     'Front and reverse side photos of [_1] are required.',
     '[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.',
     'Following file(s) were already uploaded: [_1]',
+
+    // third party link confirmation dialog/popup
+    'You will be redirected to a third-party website which is not owned by Binary.com.',
+    'Click OK to proceed.',
 ];
 
 /* eslint-disable no-console */
