@@ -42,24 +42,24 @@ const List = ({
             </div>
             {Object.entries(obj.submarkets).sort((a, b) => submarketSort(a[0], b[0]))
                 .map(([key, submarket], idx_2) => (
-                <div className='submarket' key={idx_2}>
-                    <div className='submarket_name'>
-                        {submarket.name}
-                    </div>
-                    <div className='symbols'>
-                        {Object.entries(submarket.symbols).map(([u_code, symbol]) => (
-                            <div
-                                className={`symbol_name ${u_code===underlying ? 'active' : ''}`}
-                                key={u_code}
-                                id={u_code}
-                                onClick={onUnderlyingClick.bind(null, u_code, market_code)}
-                            >
-                                {symbol.display}
-                            </div>
+                    <div className='submarket' key={idx_2}>
+                        <div className='submarket_name'>
+                            {submarket.name}
+                        </div>
+                        <div className='symbols'>
+                            {Object.entries(submarket.symbols).map(([u_code, symbol]) => (
+                                <div
+                                    className={`symbol_name ${u_code===underlying ? 'active' : ''}`}
+                                    key={u_code}
+                                    id={u_code}
+                                    onClick={onUnderlyingClick.bind(null, u_code, market_code)}
+                                >
+                                    {symbol.display}
+                                </div>
                         ))}
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
         </div>
     ))
 );
@@ -245,7 +245,7 @@ class Markets extends React.Component {
         const market_keys = Object.keys(market_nodes);
         const TITLE_HEIGHT = 40;
         Object.values(market_nodes).forEach((node, idx) => {
-            if (node.dataset.offsetTop <= position 
+            if (node.dataset.offsetTop <= position
                 && +node.dataset.offsetHeight + +node.dataset.offsetTop > position) {
                 curr = node;
                 prev = idx > 0 ? market_nodes[market_keys[idx-1]] : null;
