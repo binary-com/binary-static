@@ -12,6 +12,7 @@ const getElementById      = require('../../_common/common_functions').getElement
 const localize            = require('../../_common/localize').localize;
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
+const ThirdPartyLinks     = require('../../_common/third_party_links');
 const urlFor              = require('../../_common/url').urlFor;
 const createElement       = require('../../_common/utility').createElement;
 
@@ -53,6 +54,8 @@ const BinaryLoader = (() => {
                 BinaryPjax.init(container, '#content');
             });
         }
+
+        ThirdPartyLinks.init();
     };
 
     const beforeContentChange = () => {
