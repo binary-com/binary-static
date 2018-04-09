@@ -56,7 +56,7 @@
         z-index: 10;
         width: 100%;
     }
-    #status-notification {
+    #status_notification {
         animation: moveInBottom 0.2s ease-in;
         background-color: $COLOR_ORANGE;
         display: none;
@@ -69,15 +69,15 @@
         border-radius: 5px;
         z-index: 1000;
 
-        &-text {
+        &_text {
             color: $COLOR_WHITE;
             font-size: $FONT_SIZE_S;
             margin: 0 auto 0 0;
         }
-        &-type {
+        &_type {
             padding-right: 7px;
         }
-        &-close {
+        &_close {
             padding-left: 7px;
 
             &:hover {

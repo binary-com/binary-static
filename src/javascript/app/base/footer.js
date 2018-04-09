@@ -1,15 +1,13 @@
-const getElementById         = require('../../_common/common_functions').getElementById;
-
 const Footer = (() => {
     const displayNotification = (message) => {
-        const status_notification = getElementById('status-notification');
-        const status_message_text = getElementById('status-notification-text');
-        const close_icon = getElementById('status-notification-close');
+        const status_notification = $('#status_notification');
+        const status_message_text = $('#status_notification_text');
+        const close_icon = $('#status_notification_close');
 
         $(status_notification).css('display', 'flex');
         status_message_text.html(message);
 
-        $(close_icon).click(() => {
+        $(close_icon).off('click').on('click', () => {
             $(status_notification).slideUp(200);
         });
     };
