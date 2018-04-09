@@ -15,7 +15,8 @@ const template          = require('../../../_common/utility').template;
 
 const DepositWithdraw = (() => {
     let cashier_type,
-        token;
+        token,
+        $loading;
 
     const container = '#deposit_withdraw';
 
@@ -125,6 +126,7 @@ const DepositWithdraw = (() => {
         }
         $element.siblings().setVisibility(0).end()
             .setVisibility(1);
+        $loading.remove();
         $(container).find(`#${parent}`).setVisibility(1);
     };
 
@@ -158,6 +160,7 @@ const DepositWithdraw = (() => {
 
     const initUKGC = () => {
         const ukgc_form_id = '#frm_ukgc';
+        $loading.remove();
         $(ukgc_form_id).setVisibility(1);
         FormManager.init(ukgc_form_id, [
             { request_field: 'ukgc_funds_protection', value: 1 },
@@ -216,10 +219,14 @@ const DepositWithdraw = (() => {
                 getElementById('message_bitcoin_cash').setVisibility(1);
             }
             $iframe.attr('src', response.cashier).parent().setVisibility(1);
+            setTimeout(() => { // wait for iframe contents to load before removing loading bar
+                $loading.remove();
+            }, 1000);
         }
     };
 
     const onLoad = () => {
+        $loading = $('#loading_cashier');
         getCashierType();
         const req_cashier_password   = BinarySocket.send({ cashier_password: 1 });
         const req_get_account_status = BinarySocket.send({ get_account_status: 1 });
