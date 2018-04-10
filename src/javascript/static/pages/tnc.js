@@ -81,7 +81,9 @@ const TermsAndConditions = (() => {
     const handleSidebar = () => {
         const hash     = window.location.hash || '#legal-binary';
         const $sidebar = $('.sidebar-collapsible');
-        $sidebar.find(`${hash} a:first`).trigger('click');
+
+        const $target_link = $sidebar.find(`${hash} a:first`);
+        if ($target_link.length) $target_link[0].click();
     };
 
     const checkWidth = () => {
