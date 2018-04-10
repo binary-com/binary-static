@@ -91,7 +91,6 @@ const TermsAndConditions = (() => {
             } else if (/-mt/.test(hash)) {
                 parent_hash = hash.split('-mt')[0];
             }
-            $sidebar.find(`${parent_hash} a:first`).trigger('click'); // click mainmenu
             $sidebar.find(`${hash} a:first`).trigger('click');  // click submenu
         } else {
             $sidebar.find(`${hash} a:first`).trigger('click');
@@ -127,7 +126,7 @@ const TermsAndConditions = (() => {
     };
 
     const onUnload = () => {
-        $('.sidebar-collapsible a').off('click');
+        $('.sidebar-collapsible').off('click');
     };
 
     return {
