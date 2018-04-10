@@ -38,6 +38,7 @@ const BinarySocketGeneral = (() => {
                     is_available = /^up$/i.test(response.website_status.site_status);
                     if (is_available && !BinarySocket.availability()) {
                         window.location.reload();
+                        return;
                     }
                     if (response.website_status.message) {
                         Footer.displayNotification(response.website_status.message);
