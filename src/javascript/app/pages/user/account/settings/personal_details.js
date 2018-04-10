@@ -1,14 +1,15 @@
-const moment          = require('moment');
-const BinaryPjax      = require('../../../../base/binary_pjax');
-const Client          = require('../../../../base/client');
-const Header          = require('../../../../base/header');
-const BinarySocket    = require('../../../../base/socket');
-const formatMoney     = require('../../../../common/currency').formatMoney;
-const FormManager     = require('../../../../common/form_manager');
-const Geocoder        = require('../../../../../_common/geocoder');
-const CommonFunctions = require('../../../../../_common/common_functions');
-const localize        = require('../../../../../_common/localize').localize;
-const State           = require('../../../../../_common/storage').State;
+const moment           = require('moment');
+const BinaryPjax       = require('../../../../base/binary_pjax');
+const Client           = require('../../../../base/client');
+const Header           = require('../../../../base/header');
+const BinarySocket     = require('../../../../base/socket');
+const formatMoney      = require('../../../../common/currency').formatMoney;
+const FormManager      = require('../../../../common/form_manager');
+const Geocoder         = require('../../../../../_common/geocoder');
+const CommonFunctions  = require('../../../../../_common/common_functions');
+const localize         = require('../../../../../_common/localize').localize;
+const State            = require('../../../../../_common/storage').State;
+const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 require('select2');
 
 const PersonalDetails = (() => {
@@ -266,7 +267,7 @@ const PersonalDetails = (() => {
             });
         }
         showFormMessage(is_error ?
-            'Sorry, an error occurred while processing your account.' :
+            (getPropertyValue(response, ['error', 'message']) || 'Sorry, an error occurred while processing your account.') :
             'Your settings have been updated successfully.', !is_error);
     };
 
@@ -295,7 +296,7 @@ const PersonalDetails = (() => {
 
             if (residence) {
                 const $tax_residence = $('#tax_residence');
-                $tax_residence.html($options.html()).promise().done(() => {
+                $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(get_settings_data.tax_residence ? get_settings_data.tax_residence.split(',') : '').trigger('change');
