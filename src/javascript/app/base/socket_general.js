@@ -37,8 +37,10 @@ const BinarySocketGeneral = (() => {
                     is_available = /^up$/i.test(response.website_status.site_status);
                     if (is_available && !BinarySocket.availability()) {
                         window.location.reload();
-                    } else if (!is_available) {
+                    } else if (response.website_status.message) {
                         Header.displayNotification(response.website_status.message, true);
+                    } else {
+                        Header.hideNotification();
                     }
                     BinarySocket.availability(is_available);
                     setCurrencies(response.website_status);
