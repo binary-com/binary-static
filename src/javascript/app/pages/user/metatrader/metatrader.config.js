@@ -13,9 +13,11 @@ const MetaTraderConfig = (() => {
         financial: {
             standard: { mt5_account_type: 'standard', max_leverage: 500, title: 'Standard' },
             advanced: { mt5_account_type: 'advanced', max_leverage: 100, title: 'Advanced' },
+            mamm    : { mt5_account_type: 'mamm_financial', title: 'MAM Advanced', is_real_only: 1 }, // TODO: add max_leverage
         },
         gaming: {
             volatility: { mt5_account_type: '', max_leverage: 500, title: 'Volatility Indices' },
+            mamm      : { mt5_account_type: 'mamm_gaming', title: 'MAM Volatility Indices', is_real_only: 1 }, // TODO: add max_leverage
         },
     };
 

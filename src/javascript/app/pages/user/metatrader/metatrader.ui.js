@@ -49,14 +49,21 @@ const MetaTraderUI = (() => {
         const $acc_name = $templates.find('> .acc-name');
         let acc_group_demo_set = false;
         let acc_group_real_set = false;
+        let acc_group_mam_set  = false;
         Object.keys(accounts_info)
             .sort((a, b) => accounts_info[a].account_type > accounts_info[b].account_type ? 1 : -1)
+            .sort((a, b) => (/mamm/.test(a) && !/mamm/.test(b) ? 1 : -1)) // Show MAM last
             .forEach((acc_type) => {
                 if ($list.find(`[value="${acc_type}"]`).length === 0) {
                     if (/^demo/.test(acc_type)) {
                         if (!acc_group_demo_set) {
                             $list.append($('<div/>', { class: 'acc-group invisible', id: 'acc_group_demo', text: localize('Demo Accounts') }));
                             acc_group_demo_set = true;
+                        }
+                    } else if (/mamm/.test(acc_type)) {
+                        if (!acc_group_mam_set) {
+                            $list.append($('<div/>', { class: 'acc-group invisible', id: 'acc_group_mam', text: localize('MAM Accounts') }));
+                            acc_group_mam_set = true;
                         }
                     } else if (!acc_group_real_set) {
                         $list.append($('<div/>', { class: 'acc-group invisible', id: 'acc_group_real', text: localize('Real-Money Accounts') }));
@@ -125,13 +132,15 @@ const MetaTraderUI = (() => {
 
     const updateListItem = (acc_type) => {
         const $acc_item = $list.find(`[value="${acc_type}"]`);
-        $acc_item.find('.mt-type').text(accounts_info[acc_type].title.replace(/(demo|real)\s/i, ''));
+        $acc_item.find('.mt-type').text(accounts_info[acc_type].title.replace(/(demo|real(\smam)*)\s/i, ''));
         if (accounts_info[acc_type].info) {
             setMTAccountText();
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.login})`);
             $acc_item.setVisibility(1);
             if (/demo/.test(accounts_info[acc_type].account_type)) {
                 $list.find('#acc_group_demo').setVisibility(1);
+            } else if (/mamm/.test(acc_type)) {
+                $list.find('#acc_group_mam').setVisibility(1);
             } else {
                 $list.find('#acc_group_real').setVisibility(1);
             }
@@ -394,7 +403,8 @@ const MetaTraderUI = (() => {
 
         let count = 0;
         Object.keys(accounts_info)
-            .filter(acc_type => !accounts_info[acc_type].is_demo)
+            .filter(acc_type => !accounts_info[acc_type].is_demo &&
+                !accounts_info[acc_type].should_exclude_account_opening)
             .forEach((acc_type) => {
                 count++;
                 const $acc  = $acc_template.clone();
