@@ -3,7 +3,7 @@ import React from 'react';
 const Tac = () => (
     <div>
         <h2>{it.L('Terms and Conditions')}</h2>
-        <p><i>{it.L('Version 44. Last modified 2018-03-23.')}</i></p>
+        <p><i>{it.L('Version 44. Last modified 2018-04-10.')}</i></p>
         <p>{it.L('It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
         <h2>A. {it.L('Interpretation')}</h2>
