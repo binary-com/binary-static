@@ -3,6 +3,8 @@ const localize     = require('../../../_common/localize').localize;
 const urlForStatic = require('../../../_common/url').urlForStatic;
 
 const KnowledgeTestUI = (() => {
+    const center_text_class = 'center-text';
+
     const createTrueFalseBox = (question, show_answer) => {
         const qid      = question.id;
         const true_id  = `${qid}true`;
@@ -14,7 +16,9 @@ const KnowledgeTestUI = (() => {
             id   : true_id,
             value: '1',
         });
-        const $true_td     = $('<td></td>').append($true_button);
+
+        const $true_el = $true_button.add(`<label for=${true_id}>&#8203</label>`);
+        const $true_td = $('<td />', { class: center_text_class }).append($true_el);
 
         const $false_button = $('<input />', {
             type : 'radio',
@@ -22,7 +26,8 @@ const KnowledgeTestUI = (() => {
             id   : false_id,
             value: '0',
         });
-        const $false_td     = $('<td></td>').append($false_button);
+        const $false_el = $false_button.add(`<label for=${false_id}>&#8203</label>`);
+        const $false_td = $('<td />', { class: center_text_class }).append($false_el);
 
         if (show_answer) {
             if (question.correct_answer) {
@@ -41,11 +46,13 @@ const KnowledgeTestUI = (() => {
         const $question_row  = $('<tr></tr>', { id: question_no, class: 'question' });
         const $question_data = $('<td></td>').text(localize(question.question_localized));
         const $question_link = $('<a></a>', {
-            name : question.id,
-            class: 'no-underline',
-            // 'data-balloon': question.tooltip,
+            name                 : question.id,
+            class                : 'no-underline show_mobile',
+            'data-balloon'       : question.tooltip,
+            'data-balloon-length': 'medium',
+            'data-balloon-pos'   : 'up',
         });
-        const $question_icon = $('<img>', { src: urlForStatic('/images/common/question_1.png'), class: 'invisible' });
+        const $question_icon = $('<img>', { src: urlForStatic('/images/common/question_1.png') });
         $question_data.append($question_link.append($question_icon));
 
         const true_false = createTrueFalseBox(question, show_answer);

@@ -1,3 +1,4 @@
+const RefreshDropdown    = require('binary-style').selectDropdown;
 const Cookies            = require('js-cookie');
 const generateBirthDate  = require('./attach_dom/birth_date_picker');
 const FormManager        = require('./form_manager');
@@ -55,7 +56,7 @@ const AccountOpening = (() => {
 
             const $options = $('<div/>');
             residence_list.forEach((res) => {
-                $options.append(makeOption({ text: res.text, value: res.value }));
+                $options.append(makeOption({ text: res.text, value: res.value, is_disabled: res.disabled }));
 
                 if (residence_value === res.value) {
                     residence_text = res.text;
@@ -124,6 +125,7 @@ const AccountOpening = (() => {
                 }
             }
             $address_state.parent().parent().setVisibility(1);
+            RefreshDropdown('#address_state');
 
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());

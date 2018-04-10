@@ -25,10 +25,10 @@ const Analysis = ({ no_graph }) => (
                 id='trade_analysis'
                 className='gr-padding-20 gr-parent tab-selector-wrapper'
                 items={[
-                    { id: 'tab_portfolio',    no_href: true, className: 'invisible' , text: it.L('Portfolio') },
-                    { id: 'tab_graph',        no_href: true, disabled: no_graph, text: it.L('Chart') },
-                    { id: 'tab_explanation',  no_href: true, text: it.L('Explanation') },
-                    { id: 'tab_last_digit',   no_href: true, className: 'invisible', text: it.L('Last Digit Stats') },
+                    { id: 'tab_portfolio',    className: 'invisible' , text: it.L('Portfolio') },
+                    { id: 'tab_graph',        disabled: no_graph, text: it.L('Chart') },
+                    { id: 'tab_explanation',  text: it.L('Explanation') },
+                    { id: 'tab_last_digit',   className: 'invisible', text: it.L('Last Digit Stats') },
                     { id: 'trade_analysis_selector', className: 'tab-selector' },
                 ]}
             />

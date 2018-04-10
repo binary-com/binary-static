@@ -1,13 +1,14 @@
-const showChart          = require('./charts/webtrader_chart').showChart;
-const Defaults           = require('./defaults');
-const getActiveTab       = require('./get_active_tab').getActiveTab;
-const GetTicks           = require('./get_ticks');
-const MBDefaults         = require('../mb_trade/mb_defaults');
-const JapanPortfolio     = require('../../japan/portfolio');
-const getElementById     = require('../../../_common/common_functions').getElementById;
-const getLanguage        = require('../../../_common/language').get;
-const State              = require('../../../_common/storage').State;
-const Url                = require('../../../_common/url');
+const showChart      = require('./charts/webtrader_chart').showChart;
+const Defaults       = require('./defaults');
+const getActiveTab   = require('./get_active_tab').getActiveTab;
+const GetTicks       = require('./get_ticks');
+const MBDefaults     = require('../mb_trade/mb_defaults');
+const JapanPortfolio = require('../../japan/portfolio');
+const getElementById = require('../../../_common/common_functions').getElementById;
+const getLanguage    = require('../../../_common/language').get;
+const State          = require('../../../_common/storage').State;
+const TabSelector    = require('../../../_common/tab_selector');
+const Url            = require('../../../_common/url');
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -23,9 +24,10 @@ const Url                = require('../../../_common/url');
 
 const TradingAnalysis = (() => {
     // tabListener();
-    const hidden_class = 'invisible';
-    let form_name;
+    const hidden_class    = 'invisible';
     const tab_selector_id = 'trade_analysis';
+
+    let form_name, current_tab;
 
     const requestTradeAnalysis = () => {
         form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
@@ -52,12 +54,8 @@ const TradingAnalysis = (() => {
                 loadAnalysisTab(li.id);
             }
         });
-        $('.go-left').on('click', (e) => {
-            goLeft(e);
-        });
-        $('.go-right').on('click', (e) => {
-            goRight(e);
-        });
+
+        TabSelector.onChangeTab(changeTab);
     };
 
     /*
@@ -65,7 +63,8 @@ const TradingAnalysis = (() => {
      * tab according to current paramerted
      */
     const loadAnalysisTab = (tab) => {
-        const current_tab = tab || getActiveTab();
+        current_tab = tab || getActiveTab();
+
         $('#trade_analysis').find('li').removeClass('active');
         $(`#${current_tab}`).addClass('active');
         toggleActiveAnalysisTabs();
@@ -80,24 +79,24 @@ const TradingAnalysis = (() => {
             if (current_tab === 'tab_graph') {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
-                const el_digit_underlying = $('#digit_underlying');
-                const underlying = $('#underlying').val();
-                const tick       = $('#tick_count').val() || 100;
+                const $digit_underlying = $('#digit_underlying');
+                const $underlying       = $('#underlying');
+                const underlying        = $underlying.val();
+                const underlying_text   = $underlying.attr('data-text');
+                const tick              = $('#tick_count').val() || 100;
 
-                if (underlying !== el_digit_underlying.val() && el_digit_underlying.val() !== null ) {
-                    el_digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
-                    const digit_underlying_dropdown = el_digit_underlying.next('div.select-dropdown');
+                if (underlying !== $digit_underlying.val() && $digit_underlying.val() !== null ) {
+                    $digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
+                    const $digit_underlying_dropdown = $digit_underlying.next('div.select-dropdown');
 
                     // check if custom dropdown exists and sync with underlying dropdown
-                    if (digit_underlying_dropdown) {
-                        const digit_underlying_list = digit_underlying_dropdown.next('ul.select-options').children('li');
-                        const underlying_text = $('#underlying').attr('data-text');
-                        digit_underlying_dropdown.text(underlying_text);
-
-                        digit_underlying_list.not(this).each((idx, el) => {
-                            $(el).removeClass('selected');
+                    if ($digit_underlying_dropdown) {
+                        const $digit_underlying_list = $digit_underlying_dropdown.next('ul.select-options').children('li');
+                        $digit_underlying_dropdown.text(underlying_text);
+                        $digit_underlying_list.not(this).each((idx, el) => {
+                            el.classList.remove('selected');
                         });
-                        digit_underlying_list.filter(`[value='${underlying}']`).addClass('selected');
+                        $digit_underlying_list.filter(`[value='${underlying}']`).addClass('selected');
                     }
                 }
                 else {
@@ -112,30 +111,21 @@ const TradingAnalysis = (() => {
             }
         }
         if (current_tab) {
-            const el_to_show = getElementById(current_tab);
-            slideSelector(tab_selector_id, el_to_show);
-            const mobile_tab_header = document.getElementById('tab_mobile_header');
-            if (mobile_tab_header) mobile_tab_header.innerHTML = el_to_show.firstChild.innerHTML;
+            const el_to_show           = getElementById(current_tab);
+            const el_mobile_tab_header = getElementById('tab_mobile_header');
+
+            TabSelector.slideSelector(tab_selector_id, el_to_show);
+            if (el_mobile_tab_header) {
+                el_mobile_tab_header.innerHTML = el_to_show.firstChild.innerHTML;
+            }
         }
+
         // workaround for underline during window resize
-        window.addEventListener('resize', () => {
-            slideSelector(tab_selector_id, getElementById(current_tab));
-        });
+        window.addEventListener('resize', tabSlider);
     };
 
-    const slideSelector = (selector, el_to_show) => {
-        const isActive = el_to_show.classList.contains('active');
-        if (isActive) {
-            getElementById(`${selector}_selector`).setAttribute('style', `width: ${el_to_show.offsetWidth}px; margin-left: ${el_to_show.offsetLeft}px;`);
-        }
-    };
-
-    const goLeft = (e) => {
-        changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
-    };
-
-    const goRight = (e) => {
-        changeTab({ selector: e.target.getAttribute('data-parent'), direction: 'right' });
+    const tabSlider = () => {
+        TabSelector.slideSelector(tab_selector_id, getElementById(current_tab));
     };
 
     const changeTab = (options) => {
@@ -166,9 +156,9 @@ const TradingAnalysis = (() => {
      * function to toggle the active element for analysis menu
      */
     const toggleActiveAnalysisTabs = () => {
-        const current_tab        = getActiveTab();
-        const analysis_container = getElementById('analysis_content');
+        current_tab        = getActiveTab();
 
+        const analysis_container  = getElementById('analysis_content');
         const child_elements      = analysis_container.children;
         const current_tab_element = getElementById(`${current_tab}-content`);
         const classes             = current_tab_element.classList;
@@ -251,8 +241,13 @@ const TradingAnalysis = (() => {
         }
     };
 
+    const onUnload = () => {
+        window.removeEventListener('resize', tabSlider);
+    };
+
     return {
         bindAnalysisTabEvent,
+        onUnload,
         request: requestTradeAnalysis,
     };
 })();

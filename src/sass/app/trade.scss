@@ -93,8 +93,15 @@
         box-sizing: border-box;
         height: 28px;
     }
+    div.select-dropdown {
+        line-height: 1.4em;
+    }
     label {
         line-height: 28px;
+
+        &[for=digit_underlying], &[for=tick_count] {
+            margin-right: 0.5rem;
+        }
     }
     #contract_market_form_container {
         height: 28px;
@@ -590,8 +597,15 @@
         }
     }
     #payout_row {
-        .select ~ #amount {
+        div.select ~ #amount {
             margin-left: 0.5rem;
+            margin-top: -2px;
+        }
+    }
+    #multiplier_row {
+        div.select ~ #multiplier {
+            margin-left: 0.5rem;
+            margin-top: -2px;
         }
     }
     .barrier_class input {
@@ -817,6 +831,10 @@
         width: 100%;
         height: 630px;
         overflow-y: hidden;
+
+        .chartOptions > .table {
+            padding-top: 14px;
+        }
     }
     #last_digit_histo_form {
         margin-bottom: 20px;

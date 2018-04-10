@@ -10,8 +10,8 @@ class Contracts extends React.Component {
         const {contracts, contracts_tree} = props;
         const formname = Defaults.get('formname');
         this.references = {};
-        this.$contract = getElementById('contract');
-        this.$contract.value = formname;
+        this.el_contract = getElementById('contract');
+        this.el_contract.value = formname;
         this.state = {
             contracts,
             contracts_tree,
@@ -30,7 +30,7 @@ class Contracts extends React.Component {
     /* eslint-disable no-undef */
     handleClickOutside = (e) => {
         if (this.references.wrapper
-            && !this.references.wrapper.contains(e.target)) {
+            && !this.references.wrapper.contains(e.target) && this.state.open) {
             this.closeDropDown();
         }
     }
@@ -43,14 +43,14 @@ class Contracts extends React.Component {
     closeDropDown = () => this.setState({open: false});
 
     positionDropDown = () => {
-        const $dropdown = this.references.wrapper;
-        const pos = $dropdown.getBoundingClientRect();
+        const el_dropdown = this.references.wrapper;
+        const pos = el_dropdown.getBoundingClientRect();
 
         if ((pos.x + pos.width + 20) > window.innerWidth) {
             // 20 is padding right for the element
-            $dropdown.style.left = `${window.innerWidth - (pos.x + pos.width + 20)}px`;
+            el_dropdown.style.left = `${window.innerWidth - (pos.x + pos.width + 20)}px`;
         } else if ((pos.x + pos.width + 20) !== window.innerWidth) {
-            $dropdown.style.left = 0;
+            el_dropdown.style.left = 0;
         }
     }
 
@@ -88,13 +88,14 @@ class Contracts extends React.Component {
         if (formname === this.state.formname) { return; }
         Defaults.set('formname', formname);
         // Notify for changes on contract.
-        this.$contract.value = formname;
+        this.el_contract.value = formname;
         const event = new Event('change');
-        this.$contract.dispatchEvent(event);
+        this.el_contract.dispatchEvent(event);
 
         this.setState({formname});
     }
     /* eslint-enable no-undef */
+<<<<<<< HEAD
     render () {
         const { 
             contracts, 
@@ -138,11 +139,15 @@ class Contracts extends React.Component {
                                                 >
                                                     {contracts[subtype]}
                                                 </div>
-                                            )}
+                                                )}
                                         </div>
                                     </div>
                                 );
+<<<<<<< HEAD
                             } 
+=======
+                            }
+>>>>>>> 9b336c8e6b6f3e4939c1b26861b824738fb5f3ef
                             return (
                                 <div className='contract' key={idx}>
                                     <div className='contract_type'>{contracts[contract]}</div>
@@ -156,7 +161,10 @@ class Contracts extends React.Component {
                                     </div>
                                 </div>
                             );
+<<<<<<< HEAD
                             
+=======
+>>>>>>> 9b336c8e6b6f3e4939c1b26861b824738fb5f3ef
                         })}
                     </div>
                 </div>

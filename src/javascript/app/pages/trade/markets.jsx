@@ -16,9 +16,9 @@ function scrollToPosition (element, to, duration) {
         return;
     }
     const difference = to - element.scrollTop;
-    const perTick = difference / duration * 10;
+    const per_tick = difference / duration * 10;
     requestAnimationFrame(() => {
-        element.scrollTop += perTick;
+        element.scrollTop += per_tick;
         if (element.scrollTop === to) return;
         scrollToPosition(element, to, duration - 10);
     }, 20);
@@ -59,7 +59,7 @@ const List = ({
                         ))}
                         </div>
                     </div>
-            ))}
+                ))}
         </div>
     ))
 );
@@ -111,7 +111,7 @@ class Markets extends React.Component {
         const markets_arr = Object.entries(this.markets).sort((a, b) => submarketSort(a[0], b[0]));
         this.underlyings = Symbols.getAllSymbols() || {};
         this.markets_all = markets_arr.slice();
-        this.$underlying = getElementById('underlying');
+        this.el_underlying = getElementById('underlying');
         this.references = {};
         this.state = {
             open  : false,
@@ -127,7 +127,7 @@ class Markets extends React.Component {
             active_market: market_symbol,
             query        : '',
         };
-        this.$underlying.value = underlying_symbol;
+        this.el_underlying.value = underlying_symbol;
     }
 
     componentDidMount () {
@@ -215,10 +215,10 @@ class Markets extends React.Component {
 
         // Trigger change event.
         // TODO: move this block to componentDidUpdate
-        this.$underlying.value = underlying_symbol;
-        this.$underlying.setAttribute('data-text',this.underlyings[underlying_symbol]);
+        this.el_underlying.value = underlying_symbol;
+        this.el_underlying.setAttribute('data-text',this.underlyings[underlying_symbol]);
         const event = new Event('change');
-        this.$underlying.dispatchEvent(event);
+        this.el_underlying.dispatchEvent(event);
 
         setTimeout(this.closeDropdown, 500);
         /* Todo add notification for closed markets */
@@ -236,8 +236,8 @@ class Markets extends React.Component {
     scrollToElement = (id, duration = 120, offset = 0) => {
         // handleScroll is triggered automatically which sets the active market.
         const {list} = this.references;
-        const toOffset = getElementById(id).offsetTop - list.offsetTop - offset;
-        scrollToPosition(list, toOffset, duration);
+        const to_offset = getElementById(id).offsetTop - list.offsetTop - offset;
+        scrollToPosition(list, to_offset, duration);
     }
 
     stickyHeader = (position) => {
@@ -246,7 +246,7 @@ class Markets extends React.Component {
         const market_keys = Object.keys(market_nodes);
         const TITLE_HEIGHT = 40;
         Object.values(market_nodes).forEach((node, idx) => {
-            if (node.dataset.offsetTop <= position 
+            if (node.dataset.offsetTop <= position
                 && +node.dataset.offsetHeight + +node.dataset.offsetTop > position) {
                 curr = node;
                 prev = idx > 0 ? market_nodes[market_keys[idx-1]] : null;
@@ -262,7 +262,7 @@ class Markets extends React.Component {
             curr.children[0].removeAttribute('style');
             curr.removeAttribute('style');
             curr.children[0].classList.remove(class_under);
-            const diff = (+curr.dataset.offsetHeight + +curr.dataset.offsetTop) - position ;
+            const diff = (+curr.dataset.offsetHeight + +curr.dataset.offsetTop) - position;
             if (diff > 0 && diff < TITLE_HEIGHT) {
                 curr.children[0].style.top = `${DEFAULT_TOP - (TITLE_HEIGHT - diff)}px`;
                 curr.children[0].classList.add(class_under);
@@ -273,12 +273,10 @@ class Markets extends React.Component {
         if (prev) {
             prev.removeAttribute('style');
             prev.children[0].removeAttribute('style');
-            prev.children[0].classList.remove(class_under);
-            prev.children[0].classList.remove(class_sticky);
+            prev.children[0].classList.remove(class_under, class_sticky);
         }
         if (next) {
-            next.children[0].classList.remove(class_sticky);
-            next.children[0].classList.remove(class_under);
+            next.children[0].classList.remove(class_sticky, class_under);
             next.removeAttribute('style');
         }
     }
