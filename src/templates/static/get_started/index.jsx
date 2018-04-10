@@ -33,13 +33,13 @@ const GetStartedSectionWrapper = ({ section_id, section_header, section_descript
 );
 
 const CTA = () => (
-    <React.Fragment>
+    <div data-show='default'>
         <SeparatorLine show_mobile className='gr-padding-20 gr-child' />
         <div className='center-text'>
             <p>{it.L('Don\'t have an account?')}</p>
             <a className='button' href={it.url_for('home')}><span>{it.L('Create Free Account')}</span></a>
         </div>
-    </React.Fragment>
+    </div>
 );
 
 const Index = () => (
