@@ -597,8 +597,14 @@
         }
     }
     #payout_row {
-        .select ~ #amount {
+        div.select ~ #amount {
             margin-left: 0.5rem;
+        }
+    }
+    #multiplier_row {
+        div.select ~ #multiplier {
+            margin-left: 0.5rem;
+            margin-top: -2px;
         }
     }
     .barrier_class input {
