@@ -509,13 +509,12 @@ body #not_authenticated_financial ul.checked > li {
                 background-color: $COLOR_BLUE;
                 padding: 30px;
                 position: absolute;
-                z-index: 1;
                 top: 50px;
+                width: 100%;
 
                 h1 {
                     @media (max-width: 480px) {
                         font-size: $FONT_SIZE_XXL;
-                        text-align: center;
                     }
                 }
                 p {
@@ -523,7 +522,6 @@ body #not_authenticated_financial ul.checked > li {
 
                     @media (max-width: 480px) {
                         font-size: $FONT_SIZE_S;
-                        text-align: center;
                     }
                 }
                 a.button span {
@@ -538,10 +536,14 @@ body #not_authenticated_financial ul.checked > li {
                     top: unset;
                 }
                 @media (max-width: 768px) {
-                    top: 0;
+                    text-align: center;
+                    background-color: transparent;
+                    // Center div to parent
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
                 }
                 @media (max-width: 480px) {
-                    background-color: transparent;
                     padding: 15px;
                 }
             }

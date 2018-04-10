@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from '../../_common/components/loading.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 import AuthenticateMessageFinancial from '../_includes/authenticate_message_financial.jsx';
 import AuthenticateMessage from '../_includes/authenticate_message.jsx';
@@ -7,6 +8,10 @@ const Authenticate = () => (
     <React.Fragment>
         <h1>{it.L('Authentication')}</h1>
         <div id='authentication-message'>
+            <div id='loading_authenticate'>
+                <Loading/>
+            </div>
+
             <p id='fully_authenticated' className='invisible'>
                 {it.L('Your account is fully authenticated. You can view your <a href="[_1]">trading limits here</a>.', it.url_for('user/security/limitsws'))}
             </p>
