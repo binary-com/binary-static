@@ -98,6 +98,10 @@
     }
     label {
         line-height: 28px;
+
+        &[for=digit_underlying], &[for=tick_count] {
+            margin-right: 0.5rem;
+        }
     }
     #contract_market_form_container {
         height: 28px;
