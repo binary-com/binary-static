@@ -36,14 +36,11 @@ const BinarySocketGeneral = (() => {
             case 'website_status':
                 if (response.website_status) {
                     is_available = /^up$/i.test(response.website_status.site_status);
-                    if (is_available) {
-                        if (!BinarySocket.availability()) {
-                            window.location.reload();
-                        } else if (response.website_status.message) {
-                            Footer.displayNotification(response.website_status.message);
-                        }
-                    } else {
-                        Header.displayNotification(response.website_status.message, true);
+                    if (is_available && !BinarySocket.availability()) {
+                        window.location.reload();
+                    }
+                    if (response.website_status.message) {
+                        Footer.displayNotification(response.website_status.message);
                     }
                     BinarySocket.availability(is_available);
                     setCurrencies(response.website_status);
