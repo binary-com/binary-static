@@ -22,7 +22,7 @@ const Regulation = (() => {
 
             $accordion.on('accordionactivate', () => {
                 // if EU passport rights tab is active, call relocateLinks to initialize map coordinates
-                if ($accordion.accordion('option', 'active') === 0) {
+                if (!$accordion.accordion('option', 'active')) {
                     relocateLinks();
                 }
             });
