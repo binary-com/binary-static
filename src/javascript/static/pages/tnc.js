@@ -79,22 +79,9 @@ const TermsAndConditions = (() => {
     };
 
     const handleSidebar = () => {
-        const hash     = window.location.hash || '#legal';
+        const hash     = window.location.hash || '#legal-binary';
         const $sidebar = $('.sidebar-collapsible');
-        const $content = $('.sidebar-collapsible-content');
-
-        const is_submenu = /-binary|-mt/.test(hash);
-        if (is_submenu) {
-            let parent_hash = hash;
-            if (/-binary/.test(hash)) {
-                parent_hash = hash.split('-binary')[0];
-            } else if (/-mt/.test(hash)) {
-                parent_hash = hash.split('-mt')[0];
-            }
-            $sidebar.find(`${hash} a:first`).trigger('click');  // click submenu
-        } else {
-            $sidebar.find(`${hash} a:first`).trigger('click');
-        }
+        $sidebar.find(`${hash} a:first`).trigger('click');
     };
 
     const checkWidth = () => {
