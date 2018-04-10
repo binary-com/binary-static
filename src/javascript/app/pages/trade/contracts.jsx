@@ -95,7 +95,6 @@ class Contracts extends React.Component {
         this.setState({formname});
     }
     /* eslint-enable no-undef */
-<<<<<<< HEAD
     render () {
         const { 
             contracts, 
@@ -143,11 +142,7 @@ class Contracts extends React.Component {
                                         </div>
                                     </div>
                                 );
-<<<<<<< HEAD
-                            } 
-=======
                             }
->>>>>>> 9b336c8e6b6f3e4939c1b26861b824738fb5f3ef
                             return (
                                 <div className='contract' key={idx}>
                                     <div className='contract_type'>{contracts[contract]}</div>
@@ -161,10 +156,6 @@ class Contracts extends React.Component {
                                     </div>
                                 </div>
                             );
-<<<<<<< HEAD
-                            
-=======
->>>>>>> 9b336c8e6b6f3e4939c1b26861b824738fb5f3ef
                         })}
                     </div>
                 </div>
