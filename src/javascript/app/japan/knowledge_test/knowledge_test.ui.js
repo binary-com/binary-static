@@ -3,11 +3,12 @@ const localize     = require('../../../_common/localize').localize;
 const urlForStatic = require('../../../_common/url').urlForStatic;
 
 const KnowledgeTestUI = (() => {
+    const center_text_class = 'center-text';
+
     const createTrueFalseBox = (question, show_answer) => {
-        const qid               = question.id;
-        const true_id           = `${qid}true`;
-        const false_id          = `${qid}false`;
-        const center_text_class = 'center-text';
+        const qid      = question.id;
+        const true_id  = `${qid}true`;
+        const false_id = `${qid}false`;
 
         const $true_button = $('<input />', {
             type : 'radio',
@@ -17,7 +18,7 @@ const KnowledgeTestUI = (() => {
         });
 
         const $true_el = $true_button.add(`<label for=${true_id}>&#8203</label>`);
-        const $true_td = $(`<td class=${center_text_class}></td>`).append($true_el);
+        const $true_td = $('<td />', { class: center_text_class }).append($true_el);
 
         const $false_button = $('<input />', {
             type : 'radio',
@@ -26,7 +27,7 @@ const KnowledgeTestUI = (() => {
             value: '0',
         });
         const $false_el = $false_button.add(`<label for=${false_id}>&#8203</label>`);
-        const $false_td = $(`<td class=${center_text_class}></td>`).append($false_el);
+        const $false_td = $('<td />', { class: center_text_class }).append($false_el);
 
         if (show_answer) {
             if (question.correct_answer) {
