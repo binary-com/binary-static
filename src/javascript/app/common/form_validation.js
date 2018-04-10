@@ -95,11 +95,9 @@ const Validation = (() => {
         }
 
         // need to init Dropdown after we have responses from ws
-        const el_all_select = document.querySelectorAll('select');
+        const el_all_select = document.querySelectorAll('select:not([multiple])');
         el_all_select.forEach((el) => {
-            if (el.id !== 'tax_residence') {
-                Dropdown(`#${el.id}`);
-            }
+            Dropdown(`#${el.id}`);
         });
     };
 

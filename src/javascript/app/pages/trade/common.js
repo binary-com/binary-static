@@ -28,8 +28,8 @@ const commonTrading = (() => {
             contracts_element = contractsElement.init(elements, contracts_tree);
         } else { // Update the component.
             contracts_element.updater.enqueueSetState(contracts_element, {
-                contracts: elements,
                 contracts_tree,
+                contracts: elements,
                 formname : Defaults.get('formname'),
             });
         }
