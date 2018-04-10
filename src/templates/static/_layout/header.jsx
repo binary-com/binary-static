@@ -105,11 +105,11 @@ const Header = () => (
                                             href     : 'javascript:;',
                                             className: 'ja-hide ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
-                                                { text: it.L('SmartTrader'),  href: it.url_for('trading'), className: 'no-capitalize' },
+                                                { text: it.L('SmartTrader'),  href: it.url_for('trading'),          className: 'no-capitalize' },
                                                 { text: it.L('WebTrader'),    href: 'https://webtrader.binary.com', target: '_blank' },
                                                 { text: it.L('Binary Bot'),   href: 'https://bot.binary.com',       target: '_blank' },
                                                 { text: it.L('MetaTrader 5'), href: it.url_for('user/metatrader') },
-                                                { text: it.L('Ladders'),      href: it.url_for('multi_barriers_trading') },
+                                                { text: it.L('Ladders'),      href: it.url_for('multi_barriers_trading'), dataShow: 'costarica, virtual' },
                                             ],
                                         },
                                         { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),    className: 'ico-only-hide client_logged_in invisible' },
