@@ -95,15 +95,13 @@ class Contracts extends React.Component {
         this.setState({formname});
     }
     /* eslint-enable no-undef */
-    /* eslint-disable class-methods-use-this */
-    dismiss() {
-        console.warn('removing');
-    }
-    /* eslint-enable class-methods-use-this */
-
     render () {
-        const { contracts, contracts_tree, open,
-            formname } = this.state;
+        const { 
+            contracts, 
+            contracts_tree, 
+            open,
+            formname, 
+        } = this.state;
 
         return (
             <div className='contracts'>
@@ -127,8 +125,8 @@ class Contracts extends React.Component {
                     </div>
                     <div className='list'>
                         { contracts_tree.map((contract, idx) => {
-                                if (typeof contract === 'object') {
-                                    return (
+                            if (typeof contract === 'object') {
+                                return (
                                     <div className='contract' key={idx}>
                                         <div className='contract_type'>{contracts[contract[0]]}</div>
                                         <div className='contract_subtypes'>
@@ -143,22 +141,22 @@ class Contracts extends React.Component {
                                             )}
                                         </div>
                                     </div>
-                                )
-                            } else {
-                                return (
-                                    <div className='contract' key={idx}>
-                                        <div className='contract_type'>{contracts[contract]}</div>
-                                        <div className='contract_subtypes'>
-                                            <div
-                                                className={`sub ${contract === formname ? 'active' : ''}`}
-                                                onClick={this.onContractClick.bind(null, contract)}
-                                            >
-                                                {contracts[contract]}
-                                            </div>
+                                );
+                            } 
+                            return (
+                                <div className='contract' key={idx}>
+                                    <div className='contract_type'>{contracts[contract]}</div>
+                                    <div className='contract_subtypes'>
+                                        <div
+                                            className={`sub ${contract === formname ? 'active' : ''}`}
+                                            onClick={this.onContractClick.bind(null, contract)}
+                                        >
+                                            {contracts[contract]}
                                         </div>
                                     </div>
-                                )
-                            }
+                                </div>
+                            );
+                            
                         })}
                     </div>
                 </div>

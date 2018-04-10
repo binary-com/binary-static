@@ -42,23 +42,23 @@ const List = ({
             </div>
             {Object.entries(obj.submarkets).sort((a, b) => submarketSort(a[0], b[0]))
                 .map(([key, submarket], idx_2) => (
-                <div className='submarket' key={idx_2}>
-                    <div className='submarket_name'>
-                        {submarket.name}
-                    </div>
-                    <div className='symbols'>
-                        {Object.entries(submarket.symbols).map(([u_code, symbol]) => (
-                            <div
-                                className={`symbol_name ${u_code===underlying ? 'active' : ''}`}
-                                key={u_code}
-                                id={u_code}
-                                onClick={onUnderlyingClick.bind(null, u_code, market_code)}
-                            >
-                                {symbol.display}
-                            </div>
+                    <div className='submarket' key={idx_2}>
+                        <div className='submarket_name'>
+                            {submarket.name}
+                        </div>
+                        <div className='symbols'>
+                            {Object.entries(submarket.symbols).map(([u_code, symbol]) => (
+                                <div
+                                    className={`symbol_name ${u_code===underlying ? 'active' : ''}`}
+                                    key={u_code}
+                                    id={u_code}
+                                    onClick={onUnderlyingClick.bind(null, u_code, market_code)}
+                                >
+                                    {symbol.display}
+                                </div>
                         ))}
+                        </div>
                     </div>
-                </div>
             ))}
         </div>
     ))
@@ -158,7 +158,8 @@ class Markets extends React.Component {
 
     handleClickOutside = (e) => {
         if (this.references.wrapper_ref
-            && !this.references.wrapper_ref.contains(e.target)) {
+            && !this.references.wrapper_ref.contains(e.target)
+            && this.state.open) {
             this.closeDropdown();
         }
     }
@@ -346,13 +347,23 @@ class Markets extends React.Component {
     /* eslint-enable no-shadow */
     /* eslint-enable no-undef */
     render () {
-        const {active_market, markets,
-            underlying, query, market} = this.state;
-        /* eslint-disable no-unused-vars */
-        const { openDropdown, closeDropdown, searchSymbols,
-            scrollToElement, handleScroll, saveMarketRef,
-            onUnderlyingClick, saveRef, scrollToMarket } = this;
-        /* eslint-enable no-unused-vars */
+        const {
+            active_market, 
+            markets,
+            underlying, 
+            query, 
+            market,
+        } = this.state;
+        const { 
+            openDropdown, 
+            closeDropdown, 
+            searchSymbols,
+            handleScroll, 
+            saveMarketRef,
+            onUnderlyingClick, 
+            saveRef, 
+            scrollToMarket, 
+        } = this;
         return (
             <div className='markets'>
                 <div
