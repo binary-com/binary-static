@@ -599,6 +599,7 @@
     #payout_row {
         div.select ~ #amount {
             margin-left: 0.5rem;
+            margin-top: -2px;
         }
     }
     #multiplier_row {
@@ -830,6 +831,10 @@
         width: 100%;
         height: 630px;
         overflow-y: hidden;
+
+        .chartOptions > .table {
+            padding-top: 14px;
+        }
     }
     #last_digit_histo_form {
         margin-bottom: 20px;
