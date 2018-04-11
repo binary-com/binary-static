@@ -18,6 +18,7 @@ const MultipleAccountsManager = () => (
                 <h1>{it.L('Multiple Accounts Manager (MAM) for MetaTrader 5 (MT5)')}</h1>
                 <p>{it.L('Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM).')}</p>
                 <p>{it.L('The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control.')}</p>
+                <p>{it.L('Best of all, your commissions are credited into your account instantly.')}</p>
             </div>
         </div>
 
@@ -35,7 +36,7 @@ const MultipleAccountsManager = () => (
                         />
                         <MAMBox
                             image='methods'
-                            text={it.L('Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes')}
+                            text={it.L('Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes, starting from 0.01 lots')}
                         />
                         <MAMBox
                             image='tools'
@@ -43,7 +44,7 @@ const MultipleAccountsManager = () => (
                         />
                     </BoxRow>
 
-                    <BoxRow>
+                    <BoxRow bottom_row>
                         <MAMBox
                             image='info'
                             text={it.L('View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price, SL, TP, swap, and profit')}
@@ -57,22 +58,6 @@ const MultipleAccountsManager = () => (
                             text={it.L('View all the information you need to manage your client list – including login ID, group, leverage, balance, equity, and margin')}
                         />
                     </BoxRow>
-
-                    <BoxRow bottom_row>
-                        <MAMBox
-                            image='money'
-                            text={it.L('Instant, daily, and monthly commissions available to money managers')}
-                        />
-                        <MAMBox
-                            image='trade'
-                            text={it.L('Clients\' trade allocations start from 0.01 lots')}
-                        />
-                        <MAMBox
-                            image='close'
-                            text={it.L('Clients can close out trades')}
-                        />
-                    </BoxRow>
-
                 </div>
             </div>
         </div>
