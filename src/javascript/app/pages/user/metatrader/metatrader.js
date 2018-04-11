@@ -54,15 +54,14 @@ const MetaTrader = (() => {
                 const title            = localize(`${toTitleCase(type)} ${company_info.title}`);
                 const is_demo          = type === 'demo';
 
-                if (!is_demo || !company_info.is_real_only) { // only add demo accounts for acc_type without is_real_only flag
+                if (!(is_demo && company_info.is_real_only)) {
                     accounts_info[`${type}_${mt_company[company]}${mt5_account_type ? `_${mt5_account_type}` : ''}`] = {
                         title,
                         is_demo,
                         mt5_account_type,
-                        account_type                  : is_demo ? 'demo' : company,
-                        max_leverage                  : company_info.max_leverage,
-                        short_title                   : company_info.title,
-                        should_exclude_account_opening: /mamm/.test(acc_type), // don't allow MAM account opening for now
+                        account_type: is_demo ? 'demo' : company,
+                        max_leverage: company_info.max_leverage,
+                        short_title : company_info.title,
                     };
                 }
             });

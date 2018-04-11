@@ -302,7 +302,7 @@ const MetaTraderUI = (() => {
         const is_new_account = action === 'new_account';
         const $acc_actions = $container.find('.acc-actions');
         $acc_actions.find('.new-account').setVisibility(is_new_account);
-        $acc_actions.find('.has-account').setVisibility(!is_new_account);
+        $acc_actions.find('.has-account, .has-mam').setVisibility(!is_new_account);
         $detail.setVisibility(!is_new_account);
 
         if (!is_new_account) {
@@ -332,6 +332,7 @@ const MetaTraderUI = (() => {
             $form.find(`#view_${step}`).setVisibility(1);
             $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
             $form.find('input').val('');
+            $form.find(`.${/demo/.test(newAccountGetType()) ? 'real' : 'demo'}-only`).setVisibility(0);
         };
         $form.find('#btn_next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
@@ -407,8 +408,7 @@ const MetaTraderUI = (() => {
 
         let count = 0;
         Object.keys(accounts_info)
-            .filter(acc_type => !accounts_info[acc_type].is_demo &&
-                !accounts_info[acc_type].should_exclude_account_opening)
+            .filter(acc_type => !accounts_info[acc_type].is_demo && !/mamm/.test(acc_type)) // exclude MAM from account opening for now
             .forEach((acc_type) => {
                 count++;
                 const $acc  = $acc_template.clone();

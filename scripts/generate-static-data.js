@@ -526,6 +526,8 @@ const texts = [
     'Real Standard',
     'Real Advanced',
     'Real Volatility Indices',
+    'MAM Advanced',
+    'MAM Volatility Indices',
     'Change Password',
     'Demo Accounts',
     'Real-Money Accounts',

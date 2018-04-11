@@ -85,9 +85,6 @@ const MetaTraderConfig = (() => {
             title        : localize('Revoke MAM'),
             success_msg  : () => localize('Manager successfully revoked'),
             prerequisites: () => new Promise(resolve => resolve('')),
-            onSuccess    : () => {
-                // TODO: hide the revoke tab
-            },
         },
         deposit: {
             title      : localize('Deposit'),
@@ -163,6 +160,7 @@ const MetaTraderConfig = (() => {
     const fields = {
         new_account: {
             txt_name         : { id: '#txt_name',          request_field: 'name' },
+            txt_manager_id   : { id: '#txt_manager_id',    request_field: 'manager_id' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_re_main_pass' },
             txt_investor_pass: { id: '#txt_investor_pass', request_field: 'investPassword' },
@@ -190,6 +188,7 @@ const MetaTraderConfig = (() => {
         revoke_mam: {
             additional_fields:
                 acc_type => ({
+                    mt5_mamm  : 1,
                     manager_id: accounts_info[acc_type].manager_id,
                 }),
         },
@@ -215,6 +214,7 @@ const MetaTraderConfig = (() => {
     const validations = () => ({
         new_account: [
             { selector: fields.new_account.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: fields.new_account.txt_manager_id.id,    validations: [['length', { min: 0, max: 15 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account.txt_main_pass.id }]] },
             { selector: fields.new_account.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
@@ -223,9 +223,6 @@ const MetaTraderConfig = (() => {
             { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },
             { selector: fields.password_change.txt_new_password.id,    validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
             { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
-        ],
-        revoke_mam: [
-            { request_field: 'mt5_mamm', value: 1 },
         ],
         deposit: [
             { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: 1, max: Math.min(State.getResponse('get_limits.remainder') || 20000, 20000), decimals: 2 }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
