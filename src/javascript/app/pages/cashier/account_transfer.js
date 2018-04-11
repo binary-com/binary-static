@@ -119,6 +119,8 @@ const AccountTransfer = (() => {
             const el_error = getElementById('form_error');
             elementTextContent(el_error, response.error.message);
             el_error.setVisibility(1);
+            // Auto hide error after 5 seconds.
+            setTimeout(() => el_error.setVisibility(0), 5000);
         } else {
             BinarySocket.send({ transfer_between_accounts: 1 }).then(data => populateReceipt(response, data));
         }

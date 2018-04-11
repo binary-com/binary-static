@@ -5,7 +5,6 @@ const Login               = require('./login');
 const BinarySocket        = require('./socket');
 const SocketCache         = require('./socket_cache');
 const checkClientsCountry = require('../common/country_base').checkClientsCountry;
-const jpClient            = require('../common/country_base').jpClient;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
 const elementInnerHtml    = require('../../_common/common_functions').elementInnerHtml;
 const elementTextContent  = require('../../_common/common_functions').elementTextContent;
@@ -26,7 +25,6 @@ const Header = (() => {
             checkClientsCountry();
         }
         if (Client.isLoggedIn()) {
-            getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
             displayAccountStatus();
             if (!Client.get('is_virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
@@ -111,7 +109,7 @@ const Header = (() => {
 
     const metatraderMenuItemVisibility = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-            if (MetaTrader.isEligible() && !jpClient()) {
+            if (MetaTrader.isEligible() && !Client.isJPClient()) {
                 getElementById('user_menu_metatrader').setVisibility(1);
             }
         });
@@ -168,13 +166,13 @@ const Header = (() => {
                 });
 
                 if (jp_account_status) {
-                    const has_disabled_jp = jpClient() && Client.getAccountOfType('real').is_disabled;
-                    if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
+                    const has_disabled_jp = Client.isJPClient() && Client.getAccountOfType('real').is_disabled;
+                    if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not returns the correct timeshow upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
                         applyToAllElements(upgrade_msg, (el) => { el.setVisibility(1); });
                         if (jp_account_status === 'jp_activation_pending' && !document.getElementsByClassName('activation-message')) {
-                            virtual_text.appendChild(createElement('div', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
+                            virtual_text.appendChild(createElement('div', { class: 'activation-message', text: ` ${localize('{JAPAN ONLY}Your Application is Being Processed.')}` }));
                         } else if (jp_account_status === 'activated' && !document.getElementsByClassName('activated-message')) {
                             virtual_text.appendChild(createElement('div', { class: 'activated-message', text: ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}` }));
                         }
@@ -251,7 +249,7 @@ const Header = (() => {
 
             const riskAssessment = () => (
                 (get_account_status.risk_classification === 'high' || Client.isAccountOfType('financial')) &&
-                /financial_assessment_not_complete/.test(status) && !jpClient()
+                /financial_assessment_not_complete/.test(status) && !Client.isJPClient()
             );
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);

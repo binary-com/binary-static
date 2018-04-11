@@ -1,10 +1,15 @@
 import React from 'react';
+import Loading from '../../_common/components/loading.jsx';
 
 const gambling_link = '<a href=\'%\' target=\'_blank\' rel=\'noopener noreferrer\'>%</a>'.replace(/%/g, 'http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx');
 
 const DepositWithdraw = () => (
     <div id='deposit_withdraw'>
         <h1 id='heading' />
+
+        <div id='loading_cashier'>
+            <Loading/>
+        </div>
 
         <div id='messages' className='invisible'>
             <p id='cashier_locked_message'>{it.L('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', it.url_for('user/security/cashier_passwordws'))}</p>
