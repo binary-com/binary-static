@@ -88,7 +88,7 @@ const PaymentAgents = () => (
                     <li>{it.L('any information which he provides or has provided to the Company in relation to his financial position, domicile or other matters whatsoever is accurate and not misleading.')}</li>
                     <li>{it.L('he takes all measures required to obtain and maintain in full force and effect, all authority and/or powers and/or consents and/or licences and/or authorities to enter into and perform this Agreement;')}</li>
                     <li>{it.L('he takes all reasonable steps to comply with the law or Rules whatsoever applicable to the jurisdiction in which he resides;')}</li>
-                    <li>{it.L('upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;')}</li>
+                    <li>{it.L('upon our request, he provides the Company with any and all information reasonably required to fully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;')}</li>
                 </ul>
             </li>
         </ol>
