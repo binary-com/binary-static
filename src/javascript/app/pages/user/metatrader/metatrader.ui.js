@@ -302,7 +302,8 @@ const MetaTraderUI = (() => {
         const is_new_account = action === 'new_account';
         const $acc_actions = $container.find('.acc-actions');
         $acc_actions.find('.new-account').setVisibility(is_new_account);
-        $acc_actions.find('.has-account, .has-mam').setVisibility(!is_new_account);
+        $acc_actions.find('.has-account').setVisibility(!is_new_account);
+        $acc_actions.find('.has-mam').setVisibility(is_new_account ? 0 : ('manager_id' in accounts_info[Client.get('mt5_account')]));
         $detail.setVisibility(!is_new_account);
 
         if (!is_new_account) {
@@ -477,10 +478,6 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const showHideMAM = () => {
-        $container.find('.has-mam').setVisibility(accounts_info[Client.get('mt5_account')].manager_id);
-    };
-
     return {
         init,
         setAccountType,
@@ -494,7 +491,6 @@ const MetaTraderUI = (() => {
         displayPageError,
         disableButton,
         enableButton,
-        showHideMAM,
 
         $form: () => $form,
     };

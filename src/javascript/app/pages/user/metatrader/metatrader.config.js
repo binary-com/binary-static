@@ -188,8 +188,9 @@ const MetaTraderConfig = (() => {
         revoke_mam: {
             additional_fields:
                 acc_type => ({
-                    mt5_mamm  : 1,
-                    manager_id: accounts_info[acc_type].manager_id,
+                    mt5_mamm: 1,
+                    login   : accounts_info[acc_type].info.login,
+                    action  : 'revoke',
                 }),
         },
         deposit: {

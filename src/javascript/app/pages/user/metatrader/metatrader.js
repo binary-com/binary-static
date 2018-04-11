@@ -85,6 +85,7 @@ const MetaTrader = (() => {
                 const acc_type = Client.getMT5AccountType(obj.group);
                 accounts_info[acc_type].info = { login: obj.login };
                 getAccountDetails(obj.login, acc_type);
+                setMAM(obj.login);
             });
 
             Client.set('mt5_account', getDefaultAccount());
@@ -94,14 +95,12 @@ const MetaTrader = (() => {
                 .filter(acc_type => !hasAccount(acc_type))
                 .forEach((acc_type) => { MetaTraderUI.updateAccount(acc_type); });
         });
-        setMAM();
     };
 
-    const setMAM = () => {
-        BinarySocket.send({ mt5_mamm: 1 }).then((response) => {
+    const setMAM = (login) => {
+        BinarySocket.send({ mt5_mamm: 1, login }).then((response) => {
             if (getPropertyValue(response, ['mt5_mamm', 'manager_id'])) {
                 accounts_info[Client.get('mt5_account')].manager_id = response.mt5_mamm.manager_id;
-                MetaTraderUI.showHideMAM();
             }
         });
     };
@@ -191,7 +190,7 @@ const MetaTrader = (() => {
                         if (typeof actions_info[action].onSuccess === 'function') {
                             actions_info[action].onSuccess(response, acc_type);
                         }
-                        setMAM();
+                        setMAM(login);
                     }
                     MetaTraderUI.enableButton(action);
                 });
