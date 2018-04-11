@@ -39,7 +39,7 @@
         position: absolute;
         top: 0;
         transition: visibility 0s 0s, opacity 0.15s ease-in, transform 0.25s ease-out;
-        width: 570px;
+        width: 700px;
         z-index: 10000;
         @media (min-width: 320px) and (max-width: 767px) {
             width: calc(100vw - 20px);
@@ -127,7 +127,11 @@
                     align-items: center;
                     cursor: pointer;
 
+                    &:hover {
+                        text-decoration: underline;
+                    }
                     &.active {
+                        text-decoration: none;
                         font-weight: 600;
                         border-right: 2px solid $COLOR_BLUE;
                     }
@@ -264,7 +268,7 @@
 
                         &.sticky {
                             position: absolute;
-                            width: 399px;
+                            width: 549px;
                             top: 59px;
                             background: $COLOR_WHITE;
                             @media (max-width: 767px) {
@@ -299,11 +303,11 @@
                             flex: 1 0 auto;
 
                             .symbol_name {
-                                padding: 5px 5px 5px 0;
-                                margin: 10px 0 5px;
+                                padding: 5px;
+                                margin: 10px 0 5px 5px;
                                 line-height: 18px;
                                 cursor: pointer;
-                                width: 125px;
+                                width: 162px;
                                 font-size: 14px;
                                 font-weight: 400;
                                 transition: all 0.2s;
@@ -312,9 +316,12 @@
                                     font-size: 16px;
                                 }
 
+                                &:hover {
+                                    background: $COLOR_GRAY;
+                                }
                                 &.active {
-                                    font-weight: 600;
-                                    color: $COLOR_BLUE;
+                                    background: $COLOR_BLUE;
+                                    color: $COLOR_WHITE;
                                     @media (min-width: 320px) and (max-width: 767px) {
                                         background: $COLOR_BLUE;
                                         color: $COLOR_WHITE;
