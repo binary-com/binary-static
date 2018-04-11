@@ -31,6 +31,9 @@ module.exports = function (grunt) {
                 warnings: false,
             },
         }),
+        new webpack.DefinePlugin({
+            '__REACT_DEVTOOLS_GLOBAL_HOOK__': '({ isDisabled: true })'
+        }),
         // new UnusedFilesWebpackPlugin({
         //     patterns: [
         //         'src/javascript/**/*.*',
