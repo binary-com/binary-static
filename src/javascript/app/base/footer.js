@@ -1,4 +1,9 @@
 const Footer = (() => {
+    const clearNotification = () => {
+        const $status_notification = $('#status_notification');
+        $status_notification.slideUp(200);
+    };
+    
     const displayNotification = (message) => {
         const $status_notification = $('#status_notification');
         const $status_message_text = $('#status_notification_text');
@@ -13,6 +18,7 @@ const Footer = (() => {
     };
 
     return {
+        clearNotification,
         displayNotification,
     };
 })();
