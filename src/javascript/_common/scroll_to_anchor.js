@@ -8,11 +8,7 @@ const createElement = require('./utility').createElement;
     but rely on URL params instead
 
     HOW TO USE:
-        <h1 data-anchor='some string'>Some title</h1>   // passed string doesn't have to be unique
-
-        or
-
-        <HeaderSecondary header={it.L('Forex')} has_data_anchor />
+        <h1 data-anchor>Some title</h1>
 */
 
 const ScrollToAnchor = (() => {
@@ -24,7 +20,7 @@ const ScrollToAnchor = (() => {
     };
 
     const encode = (str) => {
-        const encoded = str.toLowerCase().replace(/\s/g, '-');
+        const encoded = str.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
         let appendix = '';
         if (id_occurrence_count[encoded]) {
             appendix = `-${++id_occurrence_count[encoded]}`;
@@ -47,7 +43,7 @@ const ScrollToAnchor = (() => {
     const addAnchorsToElements = () => {
         const els = document.querySelectorAll('[data-anchor]');
         els.forEach(el => {
-            const title = el.dataset.anchor;
+            const title = el.innerText;
             const id = encode(title);
             el.dataset.anchor = id;
             const anchor_link = makeAnchorLink(id);
