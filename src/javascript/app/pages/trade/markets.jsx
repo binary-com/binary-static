@@ -170,7 +170,8 @@ class Markets extends React.Component {
         const arr = [];
         let curr_market = null;
         Object.entries(market_nodes).forEach(([key, node]) => {
-            if (node && node.offsetTop - 40 <= position) {
+
+            if (node && node.offsetParent && node.offsetTop - 40 <= position) {
                 arr.push(key);
             }
         });
