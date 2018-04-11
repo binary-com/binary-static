@@ -529,11 +529,14 @@ const texts = [
     'Change Password',
     'Demo Accounts',
     'Real-Money Accounts',
+    'MAM Accounts',
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
     'for MT5 Account',
     '[_1] Account [_2]',
     'Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.',
     'Do you wish to continue?',
+    'Revoke MAM',
+    'Manager successfully revoked',
 
     // account_transfer
     'Min',

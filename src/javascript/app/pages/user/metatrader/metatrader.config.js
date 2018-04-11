@@ -81,6 +81,14 @@ const MetaTraderConfig = (() => {
             success_msg  : response => localize('The main password of account number [_1] has been changed.', [response.echo_req.login]),
             prerequisites: () => new Promise(resolve => resolve('')),
         },
+        revoke_mam: {
+            title        : localize('Revoke MAM'),
+            success_msg  : () => localize('Manager successfully revoked'),
+            prerequisites: () => new Promise(resolve => resolve('')),
+            onSuccess    : () => {
+                // TODO: hide the revoke tab
+            },
+        },
         deposit: {
             title      : localize('Deposit'),
             success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
@@ -179,6 +187,12 @@ const MetaTraderConfig = (() => {
                     login: accounts_info[acc_type].info.login,
                 }),
         },
+        revoke_mam: {
+            additional_fields:
+                acc_type => ({
+                    manager_id: accounts_info[acc_type].manager_id,
+                }),
+        },
         deposit: {
             txt_amount       : { id: '#txt_amount_deposit', request_field: 'amount' },
             additional_fields:
@@ -209,6 +223,9 @@ const MetaTraderConfig = (() => {
             { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },
             { selector: fields.password_change.txt_new_password.id,    validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
             { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
+        ],
+        revoke_mam: [
+            { request_field: 'mt5_mamm', value: 1 },
         ],
         deposit: [
             { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: 1, max: Math.min(State.getResponse('get_limits.remainder') || 20000, 20000), decimals: 2 }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },

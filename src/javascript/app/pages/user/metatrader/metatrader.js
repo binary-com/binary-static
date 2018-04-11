@@ -95,6 +95,16 @@ const MetaTrader = (() => {
                 .filter(acc_type => !hasAccount(acc_type))
                 .forEach((acc_type) => { MetaTraderUI.updateAccount(acc_type); });
         });
+        setMAM();
+    };
+
+    const setMAM = () => {
+        BinarySocket.send({ mt5_mamm: 1 }).then((response) => {
+            if (getPropertyValue(response, ['mt5_mamm', 'manager_id'])) {
+                accounts_info[Client.get('mt5_account')].manager_id = response.mt5_mamm.manager_id;
+                MetaTraderUI.showHideMAM();
+            }
+        });
     };
 
     const getDefaultAccount = () => {
@@ -137,7 +147,9 @@ const MetaTrader = (() => {
         });
 
         // set main command
-        req[`mt5_${action}`] = 1;
+        if (action !== 'revoke_mam') {
+            req[`mt5_${action}`] = 1;
+        }
 
         // add additional fields
         $.extend(req, fields[action].additional_fields(acc_type));
@@ -180,6 +192,7 @@ const MetaTrader = (() => {
                         if (typeof actions_info[action].onSuccess === 'function') {
                             actions_info[action].onSuccess(response, acc_type);
                         }
+                        setMAM();
                     }
                     MetaTraderUI.enableButton(action);
                 });

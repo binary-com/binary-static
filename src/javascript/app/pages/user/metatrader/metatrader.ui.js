@@ -230,6 +230,10 @@ const MetaTraderUI = (() => {
                 $form.find('label[for*="_password"]').append(` (${localize('for MT5 Account')} ${accounts_info[acc_type].info.login})`);
             }
 
+            if (action === 'revoke_mam') {
+                $form.find('#mam_id').text(accounts_info[acc_type].manager_id);
+            }
+
             $form.find('button[type="submit"]').each(function() { // cashier has two different actions
                 const this_action = $(this).attr('action');
                 actions_info[this_action].$form = $(this).parents('form');
@@ -473,6 +477,10 @@ const MetaTraderUI = (() => {
         }
     };
 
+    const showHideMAM = () => {
+        $container.find('.has-mam').setVisibility(accounts_info[Client.get('mt5_account')].manager_id);
+    };
+
     return {
         init,
         setAccountType,
@@ -486,6 +494,7 @@ const MetaTraderUI = (() => {
         displayPageError,
         disableButton,
         enableButton,
+        showHideMAM,
 
         $form: () => $form,
     };

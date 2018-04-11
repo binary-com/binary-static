@@ -124,6 +124,9 @@ const Metatrader = () => (
                             <a href='javascript:;' className='act_password_change has-account center-text invisible'>
                                 <span>{it.L('Change MT5 password')}</span>
                             </a>
+                            <a href='javascript:;' className='act_revoke_mam has-mam center-text invisible'>
+                                <span>{it.L('Manage MAM account')}</span>
+                            </a>
                         </div>
                         <div className='fst-container mt-container'>
                             <div id='fst_action' className='invisible'>
@@ -289,6 +292,19 @@ const Metatrader = () => (
                                 />
                             </div>
                         </div>
+                    </form>
+
+                    <form className='center-text' id='frm_revoke_mam'>
+                        <h2>{it.L('Revoke manager')}</h2>
+                        <p>{it.L('You may revoke the current manager\'s access and assign a new manager to your MAM account.')}</p>
+                        <p>{it.L('Assigned manager\'s account ID:')}&nbsp;<span id='mam_id' /></p>
+                        <SubmitButton
+                            no_wrapper
+                            type='submit'
+                            id='btn_revoke_mam'
+                            text={it.L('Revoke Manager')}
+                            attributes={{ action: 'revoke_mam' }}
+                        />
                     </form>
 
                     <div id='frm_cashier'>
