@@ -112,9 +112,9 @@ const Platform = () => (
                     image_class='gr-10 gr-7-p gr-9-m'
                     image='trading-multibarrier'
                     data_show='default, virtual, costarica'
-                    header={it.L('Japanese Ladders')}
+                    header={it.L('Ladders')}
                     description={it.L('Multi-barrier trading')}
-                    text={it.L('Trade FX binary options on our multi-barrier platform, designed to fully comply with Japanese regulations.')}
+                    text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}
                     url={it.url_for('multi_barriers_trading')}
                     button_text={it.L('Trade now')}
                 />
