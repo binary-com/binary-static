@@ -46,8 +46,10 @@ const TradePage = (() => {
             Client.activateByClientType('trading_socket_container');
             BinarySocket.send({ payout_currencies: 1 }).then(() => {
                 displayCurrencies();
-                Dropdown('#currency');
-                Dropdown('#multiplier_currency');
+                Dropdown('#currency', true);
+                if (document.getElementById('multiplier_currency').tagName === 'SELECT') {
+                    Dropdown('#multiplier_currency', true);
+                }
                 Process.processActiveSymbols();
             });
         });
