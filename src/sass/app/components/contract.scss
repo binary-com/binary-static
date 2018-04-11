@@ -52,7 +52,7 @@
             opacity: 0;
             visibility: hidden;
             transform: translate(-50%, 0) scale(0, 1);
-            transition: visibility 0s 0.5s, opacity 0.15s, transform 0.35s;
+            transition: visibility 0s 0.5s, opacity 0.25s, transform 0.35s;
             @media (min-width: 320px) and (max-width: 767px) {
                 transform: translate(0, -50%) scale(1, 0);
             }

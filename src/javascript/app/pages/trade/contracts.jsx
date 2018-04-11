@@ -37,10 +37,15 @@ class Contracts extends React.Component {
 
     openDropDown = () => {
         if (this.state.contracts_tree.length <= 1) return;
-        this.setState({open: true});
         this.positionDropDown();
+        this.setState({open: true});
     };
-    closeDropDown = () => this.setState({open: false});
+    closeDropDown = () => {
+        this.setState({open: false});
+        const el_dropdown = this.references.wrapper;
+        // reposition dropdown after the animation is finished.
+        setTimeout(() => el_dropdown.removeAttribute('style'), 500);
+    }
 
     positionDropDown = () => {
         const el_dropdown = this.references.wrapper;
@@ -50,7 +55,7 @@ class Contracts extends React.Component {
             // 20 is padding right for the element
             el_dropdown.style.left = `${window.innerWidth - (pos.x + pos.width + 20)}px`;
         } else if ((pos.x + pos.width + 20) !== window.innerWidth) {
-            el_dropdown.style.left = 0;
+            el_dropdown.removeAttribute('style');
         }
     }
 
