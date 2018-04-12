@@ -1,4 +1,3 @@
-const Dropdown         = require('binary-style').selectDropdown;
 const Cookies          = require('js-cookie');
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
@@ -10,6 +9,7 @@ const LocalStore       = require('../../../../_common/storage').LocalStore;
 const State            = require('../../../../_common/storage').State;
 const urlFor           = require('../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
+require('select2');
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
@@ -45,7 +45,7 @@ const VirtualAccOpening = (() => {
                 }));
             });
             $residence.html($options_with_disabled.html());
-            Dropdown('#residence');
+            $('#residence').select2();
 
             if (!residence_value) {
                 BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
