@@ -2,7 +2,6 @@ const moment        = require('moment');
 const MBDefaults    = require('./mb_defaults');
 const Client        = require('../../base/client');
 const SocketCache   = require('../../base/socket_cache');
-const jpClient      = require('../../common/country_base').jpClient;
 const getLanguage   = require('../../../_common/language').get;
 const localize      = require('../../../_common/localize').localize;
 const padLeft       = require('../../../_common/string_util').padLeft;
@@ -61,10 +60,10 @@ const MBContract = (() => {
 
         const toDate = (date) => {
             let text_value = moment.utc(date * 1000)
-                .utcOffset(jpClient() ? '+09:00' : '+00:00')
+                .utcOffset(Client.isJPClient() ? '+09:00' : '+00:00')
                 .locale(getLanguage().toLowerCase())
                 .format('MMM Do, HH:mm');
-            if (jpClient()) {
+            if (Client.isJPClient()) {
                 text_value = text_value.replace(/08:59/, '09:00«');
             }
             return text_value;
@@ -100,7 +99,7 @@ const MBContract = (() => {
         if (should_rebuild) {
             $list.empty();
         }
-        const is_jp_client = jpClient();
+        const is_jp_client = Client.isJPClient();
 
         const duration_class    = 'gr-3 gr-no-gutter';
         const end_time_class    = is_jp_client ? 'gr-6 gr-5-m' : 'gr-6';
@@ -179,8 +178,8 @@ const MBContract = (() => {
         }
     };
 
-    const displayRemainingTime = (recalculate, is_jp_client) => {
-        if (typeof $durations === 'undefined' || recalculate) {
+    const displayRemainingTime = (should_recalculate, is_jp_client) => {
+        if (typeof $durations === 'undefined' || should_recalculate) {
             // period_value = MBDefaults.get('period');
             $period    = $('#period');
             $durations = $period.find('.list > div, .current > div');
@@ -275,7 +274,7 @@ const MBContract = (() => {
                 if (available_contracts.find(contract => contract.contract_category === category.value)) {
                     const is_current = (!default_value && idx === 0) || category.value === default_value;
                     let el_contract_type;
-                    if (jpClient()) {
+                    if (Client.isJPClient()) {
                         el_contract_type =
                             `<span class="contract-type gr-6 ${category.type1}"><span>${localize(getTemplate(category.type1).name)}</span></span>
                              <span class="contract-type gr-6 ${category.type2} negative-color"><span>${localize(getTemplate(category.type2).name)}</span></span>`;

@@ -438,10 +438,6 @@ ul.bullet.gr-row > li {
     display: list-item;
 }
 
-.pull-requests-content {
-    margin-bottom: 0 !important;
-}
-
 .toggle-arrow {
     &:after {
         content: '';
@@ -595,3 +591,42 @@ li strong.margin-right {
 label + input {
     margin-left: 5px;
 }
+
+.max_30day_turnover {
+    .inline-flex {
+        margin-left: 10px;
+        align-items: baseline;
+    }
+    input {
+        transition: none;
+
+        &.hide {
+            color: transparent;
+
+            &::selection {
+                color: transparent;
+            }
+        }
+    }
+}
+
+.question {
+    .no-underline {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .show_mobile {
+        &[data-balloon]:before, &[data-balloon]:after {
+            display: block !important;
+            transform: translate(-15%, 0) !important;
+        }
+        &[data-balloon-length=medium]:before {
+            width: 120px;
+        }
+    }
+}
+

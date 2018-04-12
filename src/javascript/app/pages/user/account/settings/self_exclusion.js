@@ -4,7 +4,6 @@ const Client              = require('../../../../base/client');
 const Header              = require('../../../../base/header');
 const BinarySocket        = require('../../../../base/socket');
 const Dialog              = require('../../../../common/attach_dom/dialog');
-const jpClient            = require('../../../../common/country_base').jpClient;
 const Currency            = require('../../../../common/currency');
 const FormManager         = require('../../../../common/form_manager');
 const DatePicker          = require('../../../../components/date_picker');
@@ -22,11 +21,13 @@ const SelfExclusion = (() => {
         is_gamstop_client,
         has_exclude_until;
 
-    const form_id          = '#frm_self_exclusion';
-    const timeout_date_id  = '#timeout_until_date';
-    const timeout_time_id  = '#timeout_until_time';
-    const exclude_until_id = '#exclude_until';
-    const error_class      = 'errorfield';
+    const form_id               = '#frm_self_exclusion';
+    const timeout_date_id       = '#timeout_until_date';
+    const timeout_time_id       = '#timeout_until_time';
+    const exclude_until_id      = '#exclude_until';
+    const max_30day_turnover_id = '#max_30day_turnover';
+    const error_class           = 'errorfield';
+    const TURNOVER_LIMIT        = 999999999999999; // 15 digits
 
     const onLoad = () => {
         $form = $(form_id);
@@ -90,9 +91,19 @@ const SelfExclusion = (() => {
                         $form.find('label[for="exclude_until"]').text('Excluded from the website until');
                         return;
                     }
+                    if (key === 'max_30day_turnover') {
+                        const should_be_checked = (parseInt(value) === TURNOVER_LIMIT);
+                        $('#chk_no_limit').prop('checked', should_be_checked);
+                        setMax30DayTurnoverLimit(should_be_checked);
+                    }
                     $form.find(`#${key}`).attr('disabled', has_exclude_until).val(value);
                 });
                 $form.find('#btn_submit').setVisibility(!has_exclude_until);
+
+                $('#chk_no_limit').on('change', function() {
+                    setMax30DayTurnoverLimit($(this).is(':checked'));
+                });
+
                 bindValidation();
                 if (scroll) scrollToHashSection();
             });
@@ -104,6 +115,13 @@ const SelfExclusion = (() => {
             .attr('disabled', has_exclude_until)
             .attr('data-value', data_value)
             .val(is_timepicker ? data_value : moment(data_value).format('DD MMM, YYYY')); // display format
+    };
+
+    const setMax30DayTurnoverLimit = (is_checked) => {
+        $(max_30day_turnover_id)[is_checked ? 'addClass' : 'removeClass']('hide');
+        $(max_30day_turnover_id)
+            .attr('disabled', is_checked)
+            .val(is_checked ? TURNOVER_LIMIT : '');
     };
 
     const bindValidation = () => {
@@ -264,7 +282,7 @@ const SelfExclusion = (() => {
                 BinaryPjax.loadPreviousUrl();
             } else {
                 getData();
-                if (jpClient()) {
+                if (Client.isJPClient()) {
                     // need to update daily_loss_limit value inside jp_settings object
                     BinarySocket.send({ get_settings: 1 }, { forced: true });
                 }

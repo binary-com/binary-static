@@ -3,6 +3,7 @@ const Client           = require('../../../base/client');
 const formatMoney      = require('../../../common/currency').formatMoney;
 const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
+const State            = require('../../../../_common/storage').State;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
@@ -323,7 +324,10 @@ const MetaTraderUI = (() => {
             if (!$(this).hasClass('button-disabled')) {
                 $form.find('#view_2 #btn_submit_new_account').attr('acc_type', newAccountGetType());
                 displayStep(2);
-                $form.find('#txt_name').val(accounts_info[newAccountGetType()].short_title);
+                const get_settings = State.getResponse('get_settings');
+                if (get_settings.first_name && get_settings.last_name) {
+                    $form.find('#txt_name').val(`${get_settings.first_name} ${get_settings.last_name}`);
+                }
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
