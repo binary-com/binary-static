@@ -69,6 +69,12 @@
     #source_of_wealth {
         min-width: 300px;
     }
+    @media screen and (max-width: 480px) {
+        label {
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+    }
 }
 
 #knowledge-test-container {

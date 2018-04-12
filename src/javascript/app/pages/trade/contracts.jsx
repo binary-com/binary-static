@@ -44,7 +44,7 @@ class Contracts extends React.Component {
         this.setState({open: false});
         const el_dropdown = this.references.wrapper;
         // reposition dropdown after the animation is finished.
-        setTimeout(() => el_dropdown.removeAttribute('style'), 500);
+        setTimeout(() => el_dropdown.removeAttribute('style'), 50);
     }
 
     positionDropDown = () => {
@@ -101,11 +101,11 @@ class Contracts extends React.Component {
     }
     /* eslint-enable no-undef */
     render () {
-        const { 
-            contracts, 
-            contracts_tree, 
+        const {
+            contracts,
+            contracts_tree,
             open,
-            formname, 
+            formname,
         } = this.state;
 
         return (
