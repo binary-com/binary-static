@@ -658,8 +658,26 @@
                 margin-top: 0.5rem;
                 margin-left: 0;
             }
-            input {
-                margin-right: 5px;
+            .row-inner.big-col {
+                input {
+                    margin-right: 5px;
+                }
+                span.currency {
+                    margin-left: 0;
+                }
+                span.currency ~ input {
+                    width: calc(100% - 1rem);
+                    margin-right: 0;
+                }
+                div.select {
+                    width: 10%;
+                    min-width: 70px;
+                }
+                div.select ~ input {
+                    width: calc(100% - 70px - 0.5rem);
+                    margin-left: 0.5rem;
+                    margin-right: 0;
+                }
             }
         }
         .contract_purchase {
