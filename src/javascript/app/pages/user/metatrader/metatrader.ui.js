@@ -52,7 +52,7 @@ const MetaTraderUI = (() => {
         let acc_group_mam_set  = false;
         Object.keys(accounts_info)
             .sort((a, b) => accounts_info[a].account_type > accounts_info[b].account_type ? 1 : -1)
-            .sort((a, b) => (/mamm/.test(a) && !/mamm/.test(b) ? 1 : -1)) // Show MAM last
+            .sort((a, b) => (/mam/.test(a) && !/mam/.test(b) ? 1 : -1)) // Show MAM last
             .forEach((acc_type) => {
                 if ($list.find(`[value="${acc_type}"]`).length === 0) {
                     if (/^demo/.test(acc_type)) {
@@ -60,7 +60,7 @@ const MetaTraderUI = (() => {
                             $list.append($('<div/>', { class: 'acc-group invisible', id: 'acc_group_demo', text: localize('Demo Accounts') }));
                             acc_group_demo_set = true;
                         }
-                    } else if (/mamm/.test(acc_type)) {
+                    } else if (/mam/.test(acc_type)) {
                         if (!acc_group_mam_set) {
                             $list.append($('<div/>', { class: 'acc-group invisible', id: 'acc_group_mam', text: localize('MAM Accounts') }));
                             acc_group_mam_set = true;
@@ -139,7 +139,7 @@ const MetaTraderUI = (() => {
             $acc_item.setVisibility(1);
             if (/demo/.test(accounts_info[acc_type].account_type)) {
                 $list.find('#acc_group_demo').setVisibility(1);
-            } else if (/mamm/.test(acc_type)) {
+            } else if (/mam/.test(acc_type)) {
                 $list.find('#acc_group_mam').setVisibility(1);
             } else {
                 $list.find('#acc_group_real').setVisibility(1);
@@ -203,7 +203,7 @@ const MetaTraderUI = (() => {
     };
 
     const loadAction = (action, acc_type) => {
-        $container.find(`[class*=act_${action || defaultAction(acc_type)}]`).click();
+        $container.find(`[class~=act_${action || defaultAction(acc_type)}]`).click();
     };
 
     const populateForm = (e) => {
@@ -299,23 +299,28 @@ const MetaTraderUI = (() => {
     // ----- New Account -----
     // -----------------------
     const handleNewAccountUI = (action, acc_type, $target) => {
-        const is_new_account = action === 'new_account';
+        const is_new_account = /new_account/.test(action);
         const $acc_actions = $container.find('.acc-actions');
         $acc_actions.find('.new-account').setVisibility(is_new_account);
         $acc_actions.find('.has-account').setVisibility(!is_new_account);
         $acc_actions.find('.has-mam').setVisibility(is_new_account ? 0 : ('manager_id' in accounts_info[Client.get('mt5_account')]));
         $detail.setVisibility(!is_new_account);
 
-        if (!is_new_account) {
-            // set active tab
+        $container.find('[class*="act_"]').removeClass('selected');
+        // set active tab
+        if (is_new_account) {
+            $container.find(`[class~=act_${action}]`).addClass('selected');
+        } else {
             $detail.setVisibility(1);
-            $container.find('[class*="act_"]').removeClass('selected');
             $target.addClass('selected');
             return;
         }
 
+        if (action === 'new_account_mam') { // there is no demo/real to choose from so set existed accounts right away
+            updateAccountTypesUI('real');
+        }
+
         // is_new_account
-        newAccountSetTitle();
         displayAccountDescription(action);
         $form = actions_info[action].$form;
         if (Object.keys(accounts_info).every(a_type => !accounts_info[a_type].info)) {
@@ -337,7 +342,7 @@ const MetaTraderUI = (() => {
         };
         $form.find('#btn_next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
-                $form.find('#view_2 #btn_submit_new_account').attr('acc_type', newAccountGetType());
+                $form.find('#view_2 button[type="submit"]').attr('acc_type', newAccountGetType());
                 displayStep(2);
                 const get_settings = State.getResponse('get_settings');
                 if (get_settings.first_name && get_settings.last_name) {
@@ -352,11 +357,7 @@ const MetaTraderUI = (() => {
         $form.find('.mt5_type_box').click(selectAccountTypeUI);
     };
 
-    const newAccountSetTitle = (acc_type) => {
-        $container.find('.acc-actions .new-account span').text(template($templates.find('#title_new_account').text(), [acc_type ? accounts_info[acc_type].title : '']));
-    };
-
-    const newAccountGetType = () => `${$form.find('.step-1 .selected').attr('data-acc-type')}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
+    const newAccountGetType = () => `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
 
     const selectAccountTypeUI = (e) => {
         const action = 'new_account';
@@ -370,7 +371,6 @@ const MetaTraderUI = (() => {
         $item.addClass('selected');
         const selected_acc_type = $item.attr('data-acc-type');
         if (/(demo|real)/.test(selected_acc_type)) {
-            newAccountSetTitle();
             displayAccountDescription(action);
             updateAccountTypesUI(selected_acc_type);
             $form.find('#view_1 #btn_next').addClass('button-disabled');
@@ -378,7 +378,6 @@ const MetaTraderUI = (() => {
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
         } else {
             const new_acc_type = newAccountGetType();
-            newAccountSetTitle(new_acc_type);
             displayAccountDescription(new_acc_type);
             actions_info[action].prerequisites(new_acc_type).then((error_msg) => {
                 displayMessage('#new_account_msg', error_msg || '');
@@ -403,22 +402,23 @@ const MetaTraderUI = (() => {
     };
 
     const populateAccountTypes = () => {
-        const $acc_template = $templates.find('#rbtn_template').parent().remove();
-        const $parent       = $templates.find('#view_1 .step-2 .type-group');
-        if (!$acc_template.length || !$parent.length) return;
+        const $acc_template     = $($templates.find('#rbtn_template').parent().remove()[0]);
+        const $acc_template_mt  = $templates.find('#frm_new_account #view_1 .step-2 .type-group');
+        const $acc_template_mam = $templates.find('#frm_new_account_mam #view_1 .step-2 .type-group');
+        if (!$acc_template.length || !$acc_template_mt.length || !$acc_template_mam.length) return;
 
         let count = 0;
         Object.keys(accounts_info)
-            .filter(acc_type => !accounts_info[acc_type].is_demo && !/mamm/.test(acc_type)) // exclude MAM from account opening for now
+            .filter(acc_type => !accounts_info[acc_type].is_demo)
             .forEach((acc_type) => {
                 count++;
                 const $acc  = $acc_template.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
                 const title = accounts_info[acc_type].short_title;
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
-                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase().replace(/\s/g, '_')}.svg`));
+                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase().replace(/\s/g, '_').replace('mam_', '')}.svg`));
                 $acc.find('p').text(title);
-                $parent.append($acc);
+                (/mam/.test(acc_type) ? $acc_template_mam : $acc_template_mt).append($acc);
             });
         $templates.find('.hl-types-of-accounts').setVisibility(count > 1);
     };
@@ -478,6 +478,10 @@ const MetaTraderUI = (() => {
         }
     };
 
+    const showHideMAM = (acc_type) => {
+        $container.find('.has-mam').setVisibility('manager_id' in accounts_info[acc_type]);
+    };
+
     return {
         init,
         setAccountType,
@@ -491,6 +495,7 @@ const MetaTraderUI = (() => {
         displayPageError,
         disableButton,
         enableButton,
+        showHideMAM,
 
         $form: () => $form,
     };

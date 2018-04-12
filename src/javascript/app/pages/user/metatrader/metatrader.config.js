@@ -11,13 +11,13 @@ const urlFor       = require('../../../../_common/url').urlFor;
 const MetaTraderConfig = (() => {
     const mt_companies = {
         financial: {
-            standard: { mt5_account_type: 'standard', max_leverage: 500, title: 'Standard' },
-            advanced: { mt5_account_type: 'advanced', max_leverage: 100, title: 'Advanced' },
-            mamm    : { mt5_account_type: 'mamm_financial', title: 'MAM Advanced', is_real_only: 1 }, // TODO: add max_leverage
+            standard: { mt5_account_type: 'standard',       max_leverage: 500, title: 'Standard' },
+            advanced: { mt5_account_type: 'advanced',       max_leverage: 100, title: 'Advanced' },
+            mamm    : { mt5_account_type: 'mamm_financial', max_leverage: 100, title: 'MAM Advanced', is_real_only: 1 },
         },
         gaming: {
-            volatility: { mt5_account_type: '', max_leverage: 500, title: 'Volatility Indices' },
-            mamm      : { mt5_account_type: 'mamm_gaming', title: 'MAM Volatility Indices', is_real_only: 1 }, // TODO: add max_leverage
+            volatility: { mt5_account_type: '',            max_leverage: 500, title: 'Volatility Indices' },
+            mamm      : { mt5_account_type: 'mamm_gaming', max_leverage: 100, title: 'MAM Volatility Indices', is_real_only: 1 },
         },
     };
 
@@ -69,6 +69,22 @@ const MetaTraderConfig = (() => {
                         });
                     } else {
                         resolve(true);
+                    }
+                })
+            ),
+            onSuccess: (response) => {
+                GTM.mt5NewAccount(response);
+            },
+        },
+        new_account_mam: {
+            title        : localize('Sign up'),
+            login        : response => response.mt5_new_account.login,
+            prerequisites: () => (
+                new Promise((resolve) => {
+                    if (Client.get('is_virtual')) {
+                        resolve(needsRealMessage());
+                    } else {
+                        resolve();
                     }
                 })
             ),
@@ -160,7 +176,6 @@ const MetaTraderConfig = (() => {
     const fields = {
         new_account: {
             txt_name         : { id: '#txt_name',          request_field: 'name' },
-            txt_manager_id   : { id: '#txt_manager_id',    request_field: 'manager_id' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_re_main_pass' },
             txt_investor_pass: { id: '#txt_investor_pass', request_field: 'investPassword' },
@@ -174,6 +189,23 @@ const MetaTraderConfig = (() => {
                     },
                     accounts_info[acc_type].mt5_account_type ? {
                         mt5_account_type: accounts_info[acc_type].mt5_account_type,
+                    } : {})),
+        },
+        new_account_mam: {
+            txt_name         : { id: '#txt_mam_name',          request_field: 'name' },
+            txt_manager_id   : { id: '#txt_manager_id',        request_field: 'manager_id' },
+            txt_main_pass    : { id: '#txt_mam_main_pass',     request_field: 'mainPassword' },
+            txt_re_main_pass : { id: '#txt_mam_re_main_pass' },
+            txt_investor_pass: { id: '#txt_mam_investor_pass', request_field: 'investPassword' },
+            additional_fields:
+                acc_type => ($.extend(
+                    {
+                        account_type: accounts_info[acc_type].account_type,
+                        email       : Client.get('email'),
+                        leverage    : accounts_info[acc_type].max_leverage,
+                    },
+                    accounts_info[acc_type].mt5_account_type ? {
+                        mt5_account_type: /mamm_financial/.test(accounts_info[acc_type].mt5_account_type) ? 'advanced' : 'standard',
                     } : {})),
         },
         password_change: {
@@ -215,10 +247,16 @@ const MetaTraderConfig = (() => {
     const validations = () => ({
         new_account: [
             { selector: fields.new_account.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: fields.new_account.txt_manager_id.id,    validations: [['length', { min: 0, max: 15 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account.txt_main_pass.id }]] },
             { selector: fields.new_account.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
+        ],
+        new_account_mam: [
+            { selector: fields.new_account_mam.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: fields.new_account_mam.txt_manager_id.id,    validations: ['req', ['length', { min: 0, max: 15 }]] },
+            { selector: fields.new_account_mam.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
+            { selector: fields.new_account_mam.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account_mam.txt_main_pass.id }]] },
+            { selector: fields.new_account_mam.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account_mam.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
         ],
         password_change: [
             { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },

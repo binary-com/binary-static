@@ -11,7 +11,6 @@
         border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
         margin-bottom: 20px;
-        flex: 1;
     }
     .flex {
         display: flex;
@@ -213,6 +212,7 @@
                 .mt-panel {
                     margin-bottom: 0;
                     padding: 15px;
+                    flex: 1;
                 }
                 .binary-balance, .mt5-balance {
                     font-weight: bold;
@@ -221,6 +221,15 @@
             }
             #frm_revoke_mam #msg_form {
                 text-align: center;
+            }
+            #frm_new_account_mam {
+                .margin-left-right-20 {
+                    margin-left: -20px;
+                    margin-right: -20px;
+                }
+                .fill-bg-color.margin-left-right-20 {
+                    margin-bottom: -20px;
+                }
             }
             .type-group {
                 .mt5_type_box {

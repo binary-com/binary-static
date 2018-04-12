@@ -55,6 +55,20 @@ const TypesOfAccounts = () => (
             title={it.L('Volatility Indices')}
             text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
         />
+        <Box
+            image='advanced'
+            title={it.L('MAM Advanced*')}
+            text={it.L('The MAM Advanced account can be assigned to a money manager with the same specifications as the regular Advanced account.')}
+        />
+        <Box
+            image='volatility_indices'
+            title={it.L('Volatility Indices*')}
+            text={it.L('The MAM Volatility Indices account can be assigned to a money manager with the same specifications as the regular Volatility Indices account.')}
+        />
+
+        <div className='gr-padding-10 gr-child'>
+            <a href={it.url_for('multiple-accounts-manager')} target='_blank'>*&nbsp;{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
+        </div>
 
         <div className='gr-padding-30' />
 
