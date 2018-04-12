@@ -252,9 +252,7 @@
                     padding-bottom: 40px;
 
                     &:last-of-type {
-                        @media (min-width: 768px) {
-                            padding-bottom: 80px;
-                        }
+                        padding-bottom: 80px;
                     }
                     .market_name {
                         font-size: 18px;
@@ -269,7 +267,7 @@
 
                         &.sticky {
                             position: absolute;
-                            width: calc(100% - 20px);
+                            width: 531px;
                             top: 59px;
                             background: $COLOR_WHITE;
                             @media (max-width: 767px) {
