@@ -380,7 +380,11 @@ const PersonalDetails = (() => {
                 BinarySocket.send({ residence_list: 1 }).then(response => {
                     getDetailsResponse(get_settings_data, response.residence_list);
                     populateResidence(response);
-                    $('#place_of_birth').select2();
+                    $('#place_of_birth').select2({
+                        matcher(params, data) {
+                            return CommonFunctions.select2Matcher(params, data);
+                        },
+                    });
                 });
 
                 if (residence) {

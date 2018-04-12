@@ -62,7 +62,7 @@
     @include BIDIR_VALUE(text-align, left, right);
 }
 
-#frm_assessment {
+#frm_assessment, #financial_form {
     div.select {
         min-width: 150px;
     }
