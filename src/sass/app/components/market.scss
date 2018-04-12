@@ -113,6 +113,7 @@
                 min-width: 140px;
                 background: $COLOR_WHITE;
                 border-right: 1px solid $COLOR_GRAY;
+                border-bottom-left-radius: 4px;
                 @media (min-width: 320px) and (max-width: 767px) {
                     border-right: 0;
                 }
@@ -240,7 +241,7 @@
                 display: flex;
                 flex-direction: column;
                 height: 300px;
-                width: 100%;
+                width: calc(100% - 20px);
                 overflow-y: scroll;
                 padding: 0 10px;
 
@@ -268,7 +269,7 @@
 
                         &.sticky {
                             position: absolute;
-                            width: 549px;
+                            width: calc(100% - 20px);
                             top: 59px;
                             background: $COLOR_WHITE;
                             @media (max-width: 767px) {
