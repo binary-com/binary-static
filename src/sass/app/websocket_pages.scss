@@ -21,14 +21,6 @@
     }
 }
 
-.select2-selection:hover {
-    border: 1px solid $primaryBrandColor;
-}
-
-.select2-results__option--highlighted[aria-selected] {
-    background-color: $primaryBrandColor !important;
-}
-
 #applications-container, .api_token {
     table td, th {
         text-align: center !important;
@@ -68,6 +60,15 @@
 
 #limits-container thead {
     @include BIDIR_VALUE(text-align, left, right);
+}
+
+#frm_assessment {
+    div.select {
+        min-width: 150px;
+    }
+    #source_of_wealth {
+        min-width: 300px;
+    }
 }
 
 #knowledge-test-container {

@@ -95,7 +95,7 @@ const Validation = (() => {
         }
 
         // need to init Dropdown after we have responses from ws
-        const el_all_select = document.querySelectorAll('select:not([multiple])');
+        const el_all_select = document.querySelectorAll('select:not([multiple]):not([single])');
         el_all_select.forEach((el) => {
             Dropdown(`#${el.id}`);
         });
