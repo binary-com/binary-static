@@ -16,7 +16,7 @@ const checkClientsCountry = () => {
         // only limitLanguage for japanese if ip address is from japan and client is logged out or logged in with jp residence
         if (clients_country === 'jp' && (!Client.isLoggedIn() || Client.get('residence') === 'jp')) {
             limitLanguage('JA');
-        } else if (clients_country === 'id' && !/^(iom|malta|maltainvest)$/.test(getClientInfo().landing_company_shortcode)) {
+        } else if (clients_country === 'id') {
             limitLanguage('ID');
         } else {
             createLanguageDropDown(website_status);
