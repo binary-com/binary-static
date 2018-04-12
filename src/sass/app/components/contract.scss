@@ -99,6 +99,7 @@
             padding: 0 0 10px;
             flex: 1 0 auto;
             width: 185px;
+            margin-right: 5px;
             text-align: left;
             @media (max-width: 767px) {
                 width: 100%;
@@ -123,12 +124,16 @@
                 }
 
                 .sub {
-                    padding: 5px 0 15px;
+                    padding: 5px 0 5px 5px;
+                    margin-bottom: 10px;
                     cursor: pointer;
 
+                    &:hover {
+                        background: $COLOR_GRAY;
+                    }
                     &.active {
-                        font-weight: 600;
-                        color: $COLOR_BLUE;
+                        background: $COLOR_BLUE;
+                        color: $COLOR_WHITE;
                         @media (min-width: 320px) and (max-width: 767px) {
                             background: $COLOR_BLUE;
                             color: $COLOR_WHITE;

@@ -103,13 +103,13 @@ class Markets extends React.Component {
         super(props);
         const market_symbol = Defaults.get('market');
         this.markets = Symbols.markets();
+        this.underlyings = Symbols.getAllSymbols() || {};
         let underlying_symbol = Defaults.get('underlying');
-        if (!underlying_symbol) {
+        if (!underlying_symbol || ! this.underlyings[underlying_symbol]) {
             const submarket = Object.keys(this.markets[market_symbol].submarkets).sort(submarketSort)[0];
             underlying_symbol = Object.keys(this.markets[market_symbol].submarkets[submarket].symbols).sort()[0];
         }
         const markets_arr = Object.entries(this.markets).sort((a, b) => submarketSort(a[0], b[0]));
-        this.underlyings = Symbols.getAllSymbols() || {};
         this.markets_all = markets_arr.slice();
         this.el_underlying = getElementById('underlying');
         this.references = {};
@@ -352,8 +352,10 @@ class Markets extends React.Component {
             underlying, 
             query, 
             market,
+            open,
         } = this.state;
         const { 
+            getCurrentUnderlying,
             openDropdown, 
             closeDropdown, 
             searchSymbols,
@@ -373,10 +375,10 @@ class Markets extends React.Component {
                         {market.name}
                         <span className='arrow_down' />
                     </span>
-                    <span className='underlying'>{this.getCurrentUnderlying()}</span>
+                    <span className='underlying'>{getCurrentUnderlying()}</span>
                 </div>
                 <div
-                    className={`markets_dropdown ${this.state.open ? '' : 'hidden'}`}
+                    className={`markets_dropdown ${open ? '' : 'hidden'}`}
                     ref={saveRef.bind(null, 'wrapper_ref')}
                 >
                     <div className='asset-placeholder mobile'>
