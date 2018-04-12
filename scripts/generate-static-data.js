@@ -13,7 +13,7 @@ const texts = [
 
     // top bar
     'Click here to open a Real Account',
-    'Open a Financial Account',
+    'Click here to open a Financial Account',
     'Network status',
     'Online',
     'Offline',
