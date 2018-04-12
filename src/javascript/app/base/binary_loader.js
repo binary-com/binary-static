@@ -35,13 +35,13 @@ const BinaryLoader = (() => {
         Page.showNotificationOutdatedBrowser();
 
         Client.init();
-        NetworkMonitor.init();
 
         container = getElementById('content-holder');
         container.addEventListener('binarypjax:before', beforeContentChange);
         container.addEventListener('binarypjax:after',  afterContentChange);
 
         if (Login.isLoginPages()) {
+            NetworkMonitor.init();
             BinaryPjax.init(container, '#content');
         } else {
             if (Client.isLoggedIn()) {
@@ -49,9 +49,11 @@ const BinaryLoader = (() => {
                 // if we wait for authorize before doing this binary-style will not initiate the drop-down menu
                 getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
             }
-            BinarySocket.wait('authorize').then(() => {
-                Client.setJPFlag();
-                BinaryPjax.init(container, '#content');
+            NetworkMonitor.init().then(() => {
+                BinarySocket.wait('authorize').then(() => {
+                    Client.setJPFlag();
+                    BinaryPjax.init(container, '#content');
+                });
             });
         }
 
