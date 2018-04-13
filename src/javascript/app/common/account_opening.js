@@ -7,6 +7,7 @@ const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
 const makeOption         = require('../../_common/common_functions').makeOption;
+const selectMatcher      = require('../../_common/common_functions').select2Matcher;
 const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
@@ -78,6 +79,11 @@ const AccountOpening = (() => {
                     } else {
                         $place_of_birth.html($options.html()).val(residence_value);
                     }
+                    $place_of_birth.select2({
+                        matcher(params, data) {
+                            return selectMatcher(params, data);
+                        },
+                    });
                 });
             }
 
