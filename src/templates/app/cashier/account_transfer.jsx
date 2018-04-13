@@ -59,6 +59,10 @@ const AccountTransfer = () => (
 
             <SubmitButton msg_id='form_error' type='submit' text={it.L('Transfer')} />
         </form>
+        
+        <div className='hint invisible' id='transfer_info'>
+            <p>{it.L('Note: Transfer between accounts is not available on weekends.')}</p>
+        </div>
 
         <div className='hint invisible' id='transfer_fee'>
             <p>{it.L('Note: You may only transfer funds between a fiat account and a cryptocurrency account.')}</p>
