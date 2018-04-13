@@ -1,4 +1,39 @@
 // styling for static pages that are too short or simple to need their own styling page
+
+.box-row {
+    border-bottom: 1px solid $COLOR_GRAY;
+
+    &__box {
+        padding: 2rem;
+    }
+    &__box:not(:last-child) {
+        border-right: 1px solid $COLOR_GRAY;
+    }
+    &__img {
+        height: 50px;
+    }
+    &--top {
+        &__box {
+            padding-top: 1rem;
+        }
+    }
+    &--bottom {
+        border: none;
+
+        &__box {
+            padding-bottom: 0;
+        }
+    }
+    &--no-border, &--no-border &__box {
+        border: none;
+    }
+    @media screen and (max-width: 480px) {
+        &, &__box {
+            border: none;
+        }
+    }
+}
+
 .steps {
     @media (max-width: 480px) {
         flex-direction: column;
@@ -474,13 +509,12 @@ body #not_authenticated_financial ul.checked > li {
                 background-color: $COLOR_BLUE;
                 padding: 30px;
                 position: absolute;
-                z-index: 1;
                 top: 50px;
+                width: 100%;
 
                 h1 {
                     @media (max-width: 480px) {
                         font-size: $FONT_SIZE_XXL;
-                        text-align: center;
                     }
                 }
                 p {
@@ -488,7 +522,6 @@ body #not_authenticated_financial ul.checked > li {
 
                     @media (max-width: 480px) {
                         font-size: $FONT_SIZE_S;
-                        text-align: center;
                     }
                 }
                 a.button span {
@@ -503,10 +536,14 @@ body #not_authenticated_financial ul.checked > li {
                     top: unset;
                 }
                 @media (max-width: 768px) {
-                    top: 0;
+                    text-align: center;
+                    background-color: transparent;
+                    // Center div to parent
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
                 }
                 @media (max-width: 480px) {
-                    background-color: transparent;
                     padding: 15px;
                 }
             }

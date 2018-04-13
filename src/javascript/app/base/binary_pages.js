@@ -122,6 +122,8 @@ const pages_config = {
     'get-started-jp'         : { module: GetStartedJP },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'how-to-trade-mt5'       : { module: TabSelector },
+    'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
+    'ib-signup'              : { module: TabSelector },
     'job-details'            : { module: JobDetails },
     'metals'                 : { module: GetStarted.Metals },
     'open-positions'         : { module: StaticPages.OpenPositions },

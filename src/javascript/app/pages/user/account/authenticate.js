@@ -12,6 +12,7 @@ const Authenticate = (() => {
 
     const onLoad = () => {
         BinarySocket.send({ get_account_status: 1 }).then((response) => {
+            $('#loading_authenticate').remove();
             if (response.error) {
                 $('#error_message').setVisibility(1).text(response.error.message);
             } else {

@@ -5,7 +5,6 @@ const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHo
 const BinarySocket         = require('../../../../base/socket');
 const Dialog               = require('../../../../common/attach_dom/dialog');
 const FlexTableUI          = require('../../../../common/attach_dom/flextable');
-const jpClient             = require('../../../../common/country_base').jpClient;
 const elementTextContent   = require('../../../../../_common/common_functions').elementTextContent;
 const localize             = require('../../../../../_common/localize').localize;
 const State                = require('../../../../../_common/storage').State;
@@ -30,7 +29,7 @@ const AuthorisedApps = (() => {
     const elements = {};
 
     const onLoad = () => {
-        if (jpClient()) {
+        if (Client.isJPClient()) {
             BinaryPjax.loadPreviousUrl();
             return;
         }

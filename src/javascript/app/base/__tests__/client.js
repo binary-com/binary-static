@@ -284,6 +284,7 @@ describe('Client', () => {
         });
         it('redirects to multi_barriers_trading for jp clients', () => {
             setURL(`${Url.websiteUrl()}ja/home-jp.html`);
+            Client.setJPFlag();
             expect(Client.defaultRedirectUrl()).to.eq(Url.urlFor('multi_barriers_trading'));
         });
     });

@@ -2,7 +2,6 @@ const ProfitTable         = require('./profit_table');
 const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const Table               = require('../../../../common/attach_dom/table');
-const jpClient            = require('../../../../common/country_base').jpClient;
 const formatMoney         = require('../../../../common/currency').formatMoney;
 const showTooltip         = require('../../../../common/get_app_details').showTooltip;
 const localize            = require('../../../../../_common/localize').localize;
@@ -29,11 +28,10 @@ const ProfitTableUI = (() => {
             localize('Details'),
         ];
 
-        const jp_client = jpClient();
 
         currency = Client.get('currency');
 
-        header[7] += currency && !jp_client ? ` (${currency})` : '';
+        header[7] += (Client.isJPClient() || !currency) ? '' : ` (${currency})`;
 
         const footer = [localize('Total Profit/Loss'), '', '', '', '', '', '', '', ''];
 
@@ -61,10 +59,9 @@ const ProfitTableUI = (() => {
             return previous + pl;
         }, 0);
 
-        const jp_client      = jpClient();
         const sub_total_type = (total_profit >= 0) ? 'profit' : 'loss';
 
-        $('#pl-day-total').find(' > .pl').html(formatMoney(currency, Number(total_profit), !jp_client))
+        $('#pl-day-total').find(' > .pl').html(formatMoney(currency, Number(total_profit), !Client.isJPClient()))
             .removeClass('profit loss')
             .addClass(sub_total_type);
     };
@@ -72,17 +69,15 @@ const ProfitTableUI = (() => {
     const createProfitTableRow = (transaction) => {
         const profit_table_data = ProfitTable.getProfitTabletData(transaction);
         const pl_type           = Number(transaction.sell_price - transaction.buy_price) >= 0 ? 'profit' : 'loss';
-
-        const jp_client = jpClient();
-
+        const is_jp_client      = Client.isJPClient();
 
         const data = [
-            jp_client ? toJapanTimeIfNeeded(parseInt(transaction.purchase_time)) : profit_table_data.buyDate,
+            is_jp_client ? toJapanTimeIfNeeded(parseInt(transaction.purchase_time)) : profit_table_data.buyDate,
             `<span ${showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id])}>${profit_table_data.ref}</span>`,
             /binaryico/i.test(profit_table_data.shortcode) ? '-' : profit_table_data.payout, // TODO: remove ico exception when all ico contracts are removed
             '',
             profit_table_data.buyPrice,
-            jp_client ? toJapanTimeIfNeeded(parseInt(transaction.sell_time)) : profit_table_data.sellDate,
+            is_jp_client ? toJapanTimeIfNeeded(parseInt(transaction.sell_time)) : profit_table_data.sellDate,
             profit_table_data.sellPrice,
             profit_table_data.pl,
             '',

@@ -18,7 +18,7 @@ const MBDefaults = (() => {
     };
 
     const loadParams = () => {
-        if (isEmptyObject(params)) params = JSON.parse(localStorage.getItem('mb_trading')) || {};
+        if (isEmptyObject(params)) params = JSON.parse(localStorage.getItem('mb_trading') || false) || {};
     };
 
     const saveParams = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 
 const AccountRisk = () => (
     <div className='gr-12 gr-padding-30 gr-no-gutter'>
-        <h2>{it.L('Risk For Binary Option Trading')}</h2>
+        <h2>{it.L('{JAPAN ONLY}Risk For Binary Option Trading')}</h2>
         <p>
             {it.L('Japan website Risk For Binary Option Trading Paragraph 1.1')}
             <br />

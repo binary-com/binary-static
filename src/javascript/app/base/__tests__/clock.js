@@ -1,5 +1,6 @@
 const expect      = require('chai').expect;
 const setJPClient = require('../../../_common/__tests__/tests_common').setJPClient;
+const setJPFlag   = require('../client').setJPFlag;
 const Clock       = require('../clock');
 
 describe('Clock', () => {
@@ -19,6 +20,8 @@ describe('Clock', () => {
         });
 
         describe('Non-Japanese client', () => {
+            before(setJPFlag);
+
             it('returns the correct time', () => {
                 expect(toJapanTimeIfNeeded(gmt_time_str)).to.be.a('string')
                     .and.to.be.eq(gmt_time_str);

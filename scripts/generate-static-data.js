@@ -12,8 +12,8 @@ const texts = [
     'Please [_1]log in[_2] or [_3]sign up[_2] to view this page.',
 
     // top bar
-    'Open a Real Account',
-    'Open a Financial Account',
+    'Click here to open a Real Account',
+    'Click here to open a Financial Account',
     'Network status',
     'Online',
     'Offline',
@@ -312,9 +312,9 @@ const texts = [
     '{JAPAN ONLY}Dear customer, you\'ve already completed the knowledge test, please proceed to next step.',
     '{JAPAN ONLY}Please complete the following questions.',
     '{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.',
-    'You need to finish all 20 questions.',
+    '{JAPAN ONLY}You need to finish all 20 questions.',
     'Weekday',
-    'Your Application is Being Processed.',
+    '{JAPAN ONLY}Your Application is Being Processed.',
     '{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.',
     'Processing your request...',
     'Please check the above form for pending errors.',
@@ -532,6 +532,8 @@ const texts = [
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
     'for MT5 Account',
     '[_1] Account [_2]',
+    'Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.',
+    'Do you wish to continue?',
 
     // account_transfer
     'Min',
@@ -601,6 +603,10 @@ const texts = [
     'Front and reverse side photos of [_1] are required.',
     '[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.',
     'Following file(s) were already uploaded: [_1]',
+
+    // third party link confirmation dialog/popup
+    'You will be redirected to a third-party website which is not owned by Binary.com.',
+    'Click OK to proceed.',
 ];
 
 /* eslint-disable no-console */

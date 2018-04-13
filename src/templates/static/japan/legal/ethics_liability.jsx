@@ -2,7 +2,7 @@ import React from 'react';
 
 const EthicsLiability = () => (
     <div className='gr-12 gr-padding-30 gr-no-gutter'>
-        <h2>{it.L('Exclusion of Liability')}</h2>
+        <h2>{it.L('{JAPAN ONLY}Exclusion of Liability')}</h2>
         <ol>
             <li>
                 {it.L('Japan website Exclusion of Liability List item 1')}

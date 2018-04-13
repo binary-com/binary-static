@@ -8,10 +8,9 @@ const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupCh
 const BinaryPjax          = require('../../base/binary_pjax');
 const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
-const jpClient            = require('../../common/country_base').jpClient;
 const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
 const JapanPortfolio      = require('../../japan/portfolio');
-const getElementById       = require('../../../_common/common_functions').getElementById;
+const getElementById      = require('../../../_common/common_functions').getElementById;
 const getLanguage         = require('../../../_common/language').get;
 const localize            = require('../../../_common/localize').localize;
 const State               = require('../../../_common/storage').State;
@@ -36,7 +35,7 @@ const MBTradePage = (() => {
             }
             return;
         }
-        if (jpClient()) {
+        if (Client.isJPClient()) {
             disableTrading();
             $('#panel').remove();
         } else {

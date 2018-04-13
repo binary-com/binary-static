@@ -3,7 +3,7 @@ import ListMultiLine from '../../../_common/components/list_multiline.jsx';
 
 const EthicsCode = () => (
     <div className='gr-12 gr-padding-30 gr-no-gutter'>
-        <h2>{it.L('Ethics Code')}</h2>
+        <h2>{it.L('{JAPAN ONLY}Ethics Code')}</h2>
         <p>{it.L('Japan website Ethics Code Paragraph 1')}</p>
         <p>{it.L('Japan website Ethics Code Paragraph 2')}</p>
         <p>{it.L('Japan website Ethics Code Paragraph 3')}</p>

@@ -12,8 +12,8 @@ const TradingRules = () => (
                 <li>{it.L('Contracts will not usually be offered during the first 10 minutes of market trade.')}</li>
                 <li>{it.L('During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions.')}</li>
                 <li>{it.L('Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level.')}</li>
-                <li>{it.L('Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday.')}</li>
-                <li>{it.L('Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed.')}</li>
+                <li>{it.L('Contracts may not expire on a weekend; therefore, the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday.')}</li>
+                <li>{it.L('Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company data feed.')}</li>
                 <li>{it.L('The company does not guarantee the ability to sell a contract prior to its expiration time.')}</li>
             </ul>
 
@@ -25,7 +25,7 @@ const TradingRules = () => (
             <p>{it.L('The charting data made available to Clients by the Company is indicative only and may at times differ from the real market values. The Company\'s decision as to the calculation of a financial contract price will be final and binding. The Company allows the option to sell contracts before expiry time of some contracts but will not be obliged to do so and can suspend this option depending on the current market conditions. Contracts may be amended when the underlying asset value is adjusted by corporate actions during the contract period.')}</p>
             <p>{it.L('Should a disruption occur in the data feeds which cannot be readily rectified by the Company, the Company reserves the right to refund the contract purchase.')}</p>
             <h2>{it.L('Trading Limits')}</h2>
-            <p>{it.L('The Company may impose volume trading limits on Client accounts in its sole discretion. Current trading volume limits upon account opening are USD/GBP/EUR/AUD 30,000/day maximum trading volume. The maximum account size (i.e. cash balance) is USD/GBP/EUR/AUD 300,000 and the maximum outstanding contract payout at a given time per account is USD/GBP/EUR/AUD 25,000. These limits are increased once a Client is fully authenticated; where the new maximum trading volume will be USD/GBP/EUR/AUD 500,000, having a maximum account size of USD/GBP/EUR/AUD 300,000 and a maximum outstanding contract payout at a given time per account of USD/GBP/EUR/AUD 500,000. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit.')}</p>
+            <p>{it.L('The Company may impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit.')}</p>
         </p>
     </div>
 );
