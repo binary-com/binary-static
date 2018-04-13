@@ -45,7 +45,7 @@ const Purchase = (() => {
         const button             = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
-        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
+        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian' || sessionStorage.formname === 'touchnotouch');
 
         contracts_list.style.display = 'none';
 
