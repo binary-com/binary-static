@@ -221,7 +221,7 @@ class Markets extends React.Component {
         const event = new Event('change');
         this.el_underlying.dispatchEvent(event);
 
-        setTimeout(this.closeDropdown, 500);
+        this.closeDropdown();
         /* Todo add notification for closed markets */
         // Notifications.show({ text: localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
 
@@ -347,23 +347,23 @@ class Markets extends React.Component {
     /* eslint-enable no-undef */
     render () {
         const {
-            active_market, 
+            active_market,
             markets,
-            underlying, 
-            query, 
+            underlying,
+            query,
             market,
             open,
         } = this.state;
-        const { 
+        const {
             getCurrentUnderlying,
-            openDropdown, 
-            closeDropdown, 
+            openDropdown,
+            closeDropdown,
             searchSymbols,
-            handleScroll, 
+            handleScroll,
             saveMarketRef,
-            onUnderlyingClick, 
-            saveRef, 
-            scrollToMarket, 
+            onUnderlyingClick,
+            saveRef,
+            scrollToMarket,
         } = this;
         return (
             <div className='markets'>

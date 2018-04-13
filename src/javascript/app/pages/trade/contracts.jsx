@@ -44,17 +44,17 @@ class Contracts extends React.Component {
         this.setState({open: false});
         const el_dropdown = this.references.wrapper;
         // reposition dropdown after the animation is finished.
-        setTimeout(() => el_dropdown.removeAttribute('style'), 50);
+        setTimeout(() => el_dropdown.removeAttribute('style'), 500);
     }
 
     positionDropDown = () => {
         const el_dropdown = this.references.wrapper;
         const pos = el_dropdown.getBoundingClientRect();
 
-        if ((pos.x + pos.width + 20) > window.innerWidth) {
-            // 20 is padding right for the element
-            el_dropdown.style.left = `${window.innerWidth - (pos.x + pos.width + 20)}px`;
-        } else if ((pos.x + pos.width + 20) !== window.innerWidth) {
+        if ((pos.x + pos.width + 10) > window.innerWidth) {
+            // 10 is padding right for the element
+            el_dropdown.style.left = `${window.innerWidth - (pos.x + pos.width + 10)}px`;
+        } else if ((pos.x + pos.width + 10) !== window.innerWidth) {
             el_dropdown.removeAttribute('style');
         }
     }
@@ -89,7 +89,7 @@ class Contracts extends React.Component {
     }
 
     onContractClick = (formname) => {
-        setTimeout(this.closeDropDown, 500);
+        this.closeDropDown();
         if (formname === this.state.formname) { return; }
         Defaults.set('formname', formname);
         // Notify for changes on contract.

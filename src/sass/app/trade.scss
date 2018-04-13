@@ -182,6 +182,13 @@
             top: 3px;
             float: right;
         }
+        .contract_current span.type .arrow_down {
+            @media (max-width: 480px) {
+                position: absolute;
+                top: 0.9rem;
+                right: 0.6rem;
+            }
+        }
         #contract_markets_container {
             flex: 0 0 auto;
             text-align: right;
@@ -195,6 +202,9 @@
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
             @media (max-width: 768px) {
                 flex: 1;
+            }
+            @media (max-width: 480px) {
+                margin-right: 0;
             }
         }
         #underlying_details {
@@ -653,6 +663,15 @@
                 margin-right: 0;
             }
         }
+        #multiplier_row {
+            span.currency {
+                margin-left: 0;
+            }
+            span.currency ~ input#multiplier {
+                margin-right: 0;
+                width: calc(100% - 1rem);
+            }
+        }
         #payout_row {
             .select ~ #amount {
                 margin-top: 0.5rem;
@@ -680,6 +699,20 @@
                 }
             }
         }
+        #barrier_row {
+            label#barrier_label {
+                white-space: nowrap;
+            }
+            .big-col > input#barrier {
+                margin-bottom: 0.5rem;
+            }
+        }
+        #high_barrier_row, #low_barrier_row {
+            .big-col > input {
+                width: 100%;
+                margin-bottom: 6px;
+            }
+        }
         .contract_purchase {
             width: 70% !important;
         }
@@ -690,7 +723,7 @@
             width: 100%;
         }
         #expiry_time {
-            margin-top: 5px;
+            width: calc(100% - 2.5rem);
             margin-bottom: 0.5rem;
         }
         #symbol_tip {
@@ -734,12 +767,14 @@
                 text-align: inherit;
             }
         }
+        #contract_container {
+            margin-bottom: 1rem;
+        }
         #contract_prices_container {
             #contract_purchase_spots {
                 height: auto;
             }
             #price_container_top {
-                margin-top: 1rem;
                 margin-right: 0 !important;
             }
             .price_wrapper {
@@ -860,6 +895,9 @@
     }
     #last_digit_histo_form {
         margin-bottom: 20px;
+    }
+    div.select > select#digit_underlying {
+        min-width: 170px;
     }
     #digit_underlying ~ ul.select-options {
         font-size: 85%;
