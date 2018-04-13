@@ -34,20 +34,21 @@ const MBTradingEvents = (() => {
         $form.find('.current').on('click', function (e) {
             e.stopPropagation();
             const $list = $(this).siblings('.list');
-            if ($list.hasClass(hidden_class)) {
-                makeListsInvisible();
-            }
-            $list.toggleClass(hidden_class);
+            toggleList($list);
         });
 
         $form.find('.header-current').on('click', (e) => {
             e.stopPropagation();
             const $list = $('#period').find('.list');
+            toggleList($list);
+        });
+
+        const toggleList = ($list) => {
             if ($list.hasClass(hidden_class)) {
                 makeListsInvisible();
             }
-            $list.toggleClass(hidden_class);        
-        });
+            $list.toggleClass(hidden_class);
+        };
         /*
          * attach event to underlying change, event need to request new contract details and price
          */

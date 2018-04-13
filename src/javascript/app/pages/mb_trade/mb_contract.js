@@ -130,13 +130,6 @@ const MBContract = (() => {
                 const $current   = makeItem(period);
                 $list.append($current);
                 if (is_current) {
-                    // if (!is_jp_client) {
-                    //     const $head_end_time    = $('<div/>', { class: `head ${end_time_class}`, text: localize('End Time') });
-                    //     const $head_remain_time = $('<div/>', { class: `head ${remain_time_class}`, text: localize('Remaining Time') });
-
-                    //     $current.prepend($('<div/>').append($head_end_time).append($head_remain_time).html());
-                    // }
-
                     setCurrentItem($period, period);
                 }
             });
