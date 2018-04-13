@@ -30,27 +30,24 @@ const NetworkMonitor = (() => {
         el_tooltip,
         network_status;
 
-    const init = () => (
-        new Promise((resolve) => {
-            ws_config  = $.extend({ wsEvent, isOnline }, BinarySocketGeneral.initOptions());
-            el_status  = getElementById('network_status');
-            el_tooltip = el_status.parentNode;
+    const init = () => {
+        ws_config  = $.extend({ wsEvent, isOnline }, BinarySocketGeneral.initOptions());
+        el_status  = getElementById('network_status');
+        el_tooltip = el_status.parentNode;
 
-            if ('onLine' in navigator) {
-                window.addEventListener('online',  setStatus);
-                window.addEventListener('offline', setStatus);
-            } else { // if not supported, default to online and fallback to WS checks
-                navigator.onLine = true;
-            }
+        if ('onLine' in navigator) {
+            window.addEventListener('online', setStatus);
+            window.addEventListener('offline', setStatus);
+        } else { // if not supported, default to online and fallback to WS checks
+            navigator.onLine = true;
+        }
 
-            if (isOnline()) {
-                BinarySocket.init(ws_config);
-                resolve(); // need to know when socket init is done
-            }
+        if (isOnline()) {
+            BinarySocket.init(ws_config);
+        }
 
-            setStatus(isOnline() ? 'online' : 'offline');
-        })
-    );
+        setStatus(isOnline() ? 'online' : 'offline');
+    };
 
     const isOnline = () => navigator.onLine;
 
