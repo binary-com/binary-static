@@ -11,13 +11,13 @@ const urlFor       = require('../../../../_common/url').urlFor;
 const MetaTraderConfig = (() => {
     const mt_companies = {
         financial: {
-            standard: { mt5_account_type: 'standard',       max_leverage: 500, title: 'Standard' },
-            advanced: { mt5_account_type: 'advanced',       max_leverage: 100, title: 'Advanced' },
-            mamm    : { mt5_account_type: 'mamm_financial', max_leverage: 100, title: 'MAM Advanced', is_real_only: 1 },
+            standard: { mt5_account_type: 'standard',      max_leverage: 500, title: 'Standard' },
+            advanced: { mt5_account_type: 'advanced',      max_leverage: 100, title: 'Advanced' },
+            mamm    : { mt5_account_type: 'mamm_advanced', max_leverage: 100, title: 'MAM Advanced', is_real_only: 1 },
         },
         gaming: {
-            volatility: { mt5_account_type: '',            max_leverage: 500, title: 'Volatility Indices' },
-            mamm      : { mt5_account_type: 'mamm_gaming', max_leverage: 100, title: 'MAM Volatility Indices', is_real_only: 1 },
+            volatility: { mt5_account_type: '', max_leverage: 500, title: 'Volatility Indices' },
+            mamm      : { mt5_account_type: 'mamm', max_leverage: 100, title: 'MAM Volatility Indices', is_real_only: 1 },
         },
     };
 
@@ -198,15 +198,14 @@ const MetaTraderConfig = (() => {
             txt_re_main_pass : { id: '#txt_mam_re_main_pass' },
             txt_investor_pass: { id: '#txt_mam_investor_pass', request_field: 'investPassword' },
             additional_fields:
-                acc_type => ($.extend(
+                acc_type => (
                     {
-                        account_type: accounts_info[acc_type].account_type,
-                        email       : Client.get('email'),
-                        leverage    : accounts_info[acc_type].max_leverage,
-                    },
-                    accounts_info[acc_type].mt5_account_type ? {
-                        mt5_account_type: /mamm_financial/.test(accounts_info[acc_type].mt5_account_type) ? 'advanced' : 'standard',
-                    } : {})),
+                        account_type    : accounts_info[acc_type].account_type,
+                        email           : Client.get('email'),
+                        leverage        : accounts_info[acc_type].max_leverage,
+                        mt5_account_type: accounts_info[acc_type].mt5_account_type.replace(/mamm(\_)*/, '') || 'standard', // for gaming just send standard to distinguish
+                    }
+                ),
         },
         password_change: {
             txt_old_password   : { id: '#txt_old_password', request_field: 'old_password' },

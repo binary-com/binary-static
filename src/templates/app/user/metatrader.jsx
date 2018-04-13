@@ -226,7 +226,7 @@ const Metatrader = () => (
                             ]}
                         />
                         <AccountDesc
-                            account_type={['vanuatu_mamm_financial']}
+                            account_type={['vanuatu_mamm_advanced']}
                             title={it.L('MAM Advanced account')}
                             description={it.L('Our MAM Advanced account can be assigned to a money manager with access to the same specifications as the regular Advanced account, including:')}
                             items={[
@@ -237,7 +237,7 @@ const Metatrader = () => (
                             ]}
                         />
                         <AccountDesc
-                            account_type={['costarica_mamm_gaming']}
+                            account_type={['costarica_mamm']}
                             title={it.L('MAM Volatility Indices Account')}
                             description={it.L('Our MAM Volatility Indices account can be assigned to a money manager with access to the same specifications as the regular Volatility Indices account, including:')}
                             items={[

@@ -284,6 +284,8 @@ const MetaTraderUI = (() => {
             if (error_msg) { // does not meet one of prerequisites
                 displayMainMessage(error_msg);
                 $action.find('#frm_action').empty().end().setVisibility(1);
+                $container.find('[class*="act_"]').removeClass('selected');
+                $container.find(`[class~=act_${action}]`).addClass('selected');
                 return;
             }
 
