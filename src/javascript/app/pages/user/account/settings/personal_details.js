@@ -10,7 +10,6 @@ const CommonFunctions  = require('../../../../../_common/common_functions');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
-require('select2');
 
 const PersonalDetails = (() => {
     const form_id           = '#frmPersonalDetails';
@@ -389,6 +388,11 @@ const PersonalDetails = (() => {
 
                 if (residence) {
                     BinarySocket.send({ states_list: residence }).then(response => populateStates(response));
+                    $('#address_state').select2({
+                        matcher(params, data) {
+                            return CommonFunctions.select2Matcher(params, data);
+                        },
+                    });
                 }
             } else {
                 $('#btn_update').setVisibility(0);

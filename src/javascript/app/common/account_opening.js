@@ -11,7 +11,6 @@ const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
-require('select2');
 
 const AccountOpening = (() => {
     const redirectAccount = () => {

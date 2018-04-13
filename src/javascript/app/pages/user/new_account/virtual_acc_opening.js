@@ -10,7 +10,6 @@ const LocalStore       = require('../../../../_common/storage').LocalStore;
 const State            = require('../../../../_common/storage').State;
 const urlFor           = require('../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
-require('select2');
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
