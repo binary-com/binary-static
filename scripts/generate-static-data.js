@@ -12,8 +12,8 @@ const texts = [
     'Please [_1]log in[_2] or [_3]sign up[_2] to view this page.',
 
     // top bar
-    'Open a Real Account',
-    'Open a Financial Account',
+    'Click here to open a Real Account',
+    'Click here to open a Financial Account',
     'Network status',
     'Online',
     'Offline',
