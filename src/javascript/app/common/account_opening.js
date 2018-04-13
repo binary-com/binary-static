@@ -1,3 +1,4 @@
+const SelectMatcher      = require('binary-style').select2Matcher;
 const Cookies            = require('js-cookie');
 const generateBirthDate  = require('./attach_dom/birth_date_picker');
 const FormManager        = require('./form_manager');
@@ -6,7 +7,6 @@ const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
 const makeOption         = require('../../_common/common_functions').makeOption;
-const selectMatcher      = require('../../_common/common_functions').select2Matcher;
 const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
@@ -79,7 +79,7 @@ const AccountOpening = (() => {
                     }
                     $place_of_birth.select2({
                         matcher(params, data) {
-                            return selectMatcher(params, data);
+                            return SelectMatcher(params, data);
                         },
                     });
                 });
@@ -131,7 +131,7 @@ const AccountOpening = (() => {
             $address_state.parent().parent().setVisibility(1);
             $address_state.select2({
                 matcher(params, data) {
-                    return selectMatcher(params, data);
+                    return SelectMatcher(params, data);
                 },
             });
 

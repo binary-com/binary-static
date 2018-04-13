@@ -1,3 +1,4 @@
+const SelectMatcher    = require('binary-style').select2Matcher;
 const moment           = require('moment');
 const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
@@ -381,7 +382,7 @@ const PersonalDetails = (() => {
                     populateResidence(response);
                     $('#place_of_birth').select2({
                         matcher(params, data) {
-                            return CommonFunctions.select2Matcher(params, data);
+                            return SelectMatcher(params, data);
                         },
                     });
                 });
@@ -390,7 +391,7 @@ const PersonalDetails = (() => {
                     BinarySocket.send({ states_list: residence }).then(response => populateStates(response));
                     $('#address_state').select2({
                         matcher(params, data) {
-                            return CommonFunctions.select2Matcher(params, data);
+                            return SelectMatcher(params, data);
                         },
                     });
                 }

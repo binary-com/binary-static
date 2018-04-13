@@ -1,10 +1,10 @@
+const SelectMatcher    = require('binary-style').select2Matcher;
 const Cookies          = require('js-cookie');
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
 const FormManager      = require('../../../common/form_manager');
 const TrafficSource    = require('../../../common/traffic_source');
 const makeOption       = require('../../../../_common/common_functions').makeOption;
-const selectMatcher    = require('../../../../_common/common_functions').select2Matcher;
 const localize         = require('../../../../_common/localize').localize;
 const LocalStore       = require('../../../../_common/storage').LocalStore;
 const State            = require('../../../../_common/storage').State;
@@ -47,7 +47,7 @@ const VirtualAccOpening = (() => {
             $residence.html($options_with_disabled.html());
             $('#residence').select2({
                 matcher(params, data) {
-                    return selectMatcher(params, data);
+                    return SelectMatcher(params, data);
                 },
             });
 

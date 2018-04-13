@@ -1,14 +1,5 @@
 const createElement = require('./utility').createElement;
 
-const select2Matcher = (params, data) => {
-    const query = params.term || '';
-    const text = data.text || '';
-    if (text.toUpperCase().indexOf(query.toUpperCase()) === 0) {
-        return data;
-    }
-    return false;
-};
-
 // show hedging value if trading purpose is set to hedging else hide it
 const detectHedging = ($purpose, $hedging) => {
     $purpose.change(() => {
@@ -121,7 +112,6 @@ module.exports = {
     checkInput,
     dateValueChanged,
     selectorExists,
-    select2Matcher,
     requireHighstock,
     getElementById,
     getVisibleElement,
