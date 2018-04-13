@@ -93,8 +93,6 @@ const SetCurrency = (() => {
                             } else {
                                 Header.populateAccountsList(); // update account title
                                 $('.select_currency').setVisibility(0);
-                                $('#hide_new_account').setVisibility(0);
-                                $('#show_new_account').setVisibility(1);
                                 $('#has_currency').setVisibility(1);
                             }
                         }
