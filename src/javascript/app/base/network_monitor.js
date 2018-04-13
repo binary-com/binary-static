@@ -36,7 +36,7 @@ const NetworkMonitor = (() => {
         el_tooltip = el_status.parentNode;
 
         if ('onLine' in navigator) {
-            window.addEventListener('online',  setStatus);
+            window.addEventListener('online', setStatus);
             window.addEventListener('offline', setStatus);
         } else { // if not supported, default to online and fallback to WS checks
             navigator.onLine = true;
