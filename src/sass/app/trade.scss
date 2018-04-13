@@ -723,8 +723,9 @@
             width: 100%;
         }
         #expiry_time {
-            width: calc(100% - 2.5rem);
+            width: calc(100% - 40px);
             margin-bottom: 0.5rem;
+            white-space: nowrap;
         }
         #symbol_tip {
             font-size: 1.2rem;
@@ -891,6 +892,7 @@
 
         .row {
             padding: unset;
+            justify-content: unset;
         }
     }
     #last_digit_histo_form {
