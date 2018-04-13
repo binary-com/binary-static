@@ -18,7 +18,7 @@ const DepositWithdraw = () => (
                 {it.L('There was a problem validating your personal details. Please update your [_1] <a href="[_2]">here</a>.', '[_1]', it.url_for('user/settings/detailsws'))}
                 <br /> {it.L('If you need assistance feel free to contact our <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}
             </p>
-            <p id='not_authenticated_message' />
+            <p id='not_authenticated_message'>{it.L('Please [_1]authenticate[_2] your account.',  `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
         </div>
 
         <div id='errors' className='invisible'>

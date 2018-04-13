@@ -190,7 +190,7 @@ const DepositWithdraw = (() => {
                     initUKGC();
                     break;
                 case 'ASK_AUTHENTICATE':
-                    showMessage('not_authenticated_message', error.message);
+                    showMessage('not_authenticated_message');
                     break;
                 case 'ASK_FINANCIAL_RISK_APPROVAL':
                     showError('financial_risk_error');

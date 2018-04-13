@@ -108,17 +108,17 @@ const Platform = () => (
                 />
             </div>
             <div className='gr-row gr-padding-30'>
-                <Platforms
-                    image_class='gr-10 gr-7-p gr-9-m'
-                    image='trading-multibarrier'
-                    data_show='default, virtual, costarica'
-                    header={it.L('Ladders')}
-                    description={it.L('Multi-barrier trading')}
-                    text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}
-                    url={it.url_for('multi_barriers_trading')}
-                    button_text={it.L('Trade now')}
-                />
-                <div className='gr-2' data-show='default, virtual, costarica' />
+                {/* <Platforms*/}
+                {/* image_class='gr-10 gr-7-p gr-9-m'*/}
+                {/* image='trading-multibarrier'*/}
+                {/* data_show='default, virtual, costarica'*/}
+                {/* header={it.L('Ladders')}*/}
+                {/* description={it.L('Multi-barrier trading')}*/}
+                {/* text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}*/}
+                {/* url={it.url_for('multi_barriers_trading')}*/}
+                {/* button_text={it.L('Trade now')}*/}
+                {/* />*/}
+                {/* <div className='gr-2' data-show='default, virtual, costarica' />*/}
                 <Platforms
                     image_class='gr-10 gr-5-p gr-9-m'
                     image='chart'
