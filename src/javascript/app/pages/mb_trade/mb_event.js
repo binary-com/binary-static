@@ -7,7 +7,6 @@ const MBTick                = require('./mb_tick');
 const TradingAnalysis       = require('../trade/analysis');
 const debounce              = require('../trade/common').debounce;
 const Client                = require('../../base/client');
-const jpClient              = require('../../common/country_base').jpClient;
 const Currency              = require('../../common/currency');
 const onlyNumericOnKeypress = require('../../common/event_handler');
 const localize              = require('../../../_common/localize').localize;
@@ -24,7 +23,7 @@ const MBTradingEvents = (() => {
     const initiate = () => {
         const $form        = $('.trade_form');
         const hidden_class = 'invisible';
-        const is_jp_client = jpClient();
+        const is_jp_client = Client.isJPClient();
 
         $(document).on('click', (e) => {
             if ($(e.target).parents('#payout_list').length) return;

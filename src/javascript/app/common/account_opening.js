@@ -55,7 +55,7 @@ const AccountOpening = (() => {
 
             const $options = $('<div/>');
             residence_list.forEach((res) => {
-                $options.append(makeOption({ text: res.text, value: res.value }));
+                $options.append(makeOption({ text: res.text, value: res.value, is_disabled: res.disabled }));
 
                 if (residence_value === res.value) {
                     residence_text = res.text;
