@@ -29,7 +29,7 @@ const LimitsInit = (() => {
             const currency                 = Client.get('currency') || Client.currentLandingCompany().legal_default_currency;
             const days_limit               = formatMoney(currency, limits.num_of_days_limit, 1);
             // no need for formatMoney since it is already string like "1,000"
-            const withdrawn                = limits.withdrawal_since_inception_monetary;
+            const withdrawn                = limits.withdrawal_for_x_days_monetary;
             const remainder                = formatMoney(currency, limits.remainder, 1);
 
             if ((/^(iom)$/i).test(Client.get('landing_company_shortcode'))) { // MX
