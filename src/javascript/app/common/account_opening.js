@@ -1,4 +1,3 @@
-const RefreshDropdown    = require('binary-style').selectDropdown;
 const Cookies            = require('js-cookie');
 const generateBirthDate  = require('./attach_dom/birth_date_picker');
 const FormManager        = require('./form_manager');
@@ -131,7 +130,11 @@ const AccountOpening = (() => {
                 }
             }
             $address_state.parent().parent().setVisibility(1);
-            RefreshDropdown('#address_state');
+            $address_state.select2({
+                matcher(params, data) {
+                    return selectMatcher(params, data);
+                },
+            });
 
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());
