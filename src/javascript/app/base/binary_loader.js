@@ -43,10 +43,17 @@ const BinaryLoader = (() => {
 
         if (Login.isLoginPages()) {
             BinaryPjax.init(container, '#content');
-        } else if (!Client.isLoggedIn()) {
-            Client.setJPFlag();
-            BinaryPjax.init(container, '#content');
-        } // else wait for socket to be initialized and wait for authorize response. handled in the onOpen function
+        } else {
+            if (Client.isLoggedIn()) {
+                // we need to set top-nav-menu class so binary-style can add event listener
+                // if we wait for authorize before doing this binary-style will not initiate the drop-down menu
+                getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
+            }
+            BinarySocket.wait('authorize').then(() => {
+                Client.setJPFlag();
+                BinaryPjax.init(container, '#content');
+            });
+        }
 
         ThirdPartyLinks.init();
     };
