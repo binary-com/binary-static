@@ -1,3 +1,4 @@
+const BinaryPjax           = require('./binary_pjax');
 const Client               = require('./client');
 const Clock                = require('./clock');
 const GTM                  = require('./gtm');
@@ -9,6 +10,7 @@ const showPopup            = require('../common/attach_dom/popup');
 const setCurrencies        = require('../common/currency').setCurrencies;
 const SessionDurationLimit = require('../common/session_duration_limit');
 const updateBalance        = require('../pages/user/update_balance');
+const getElementById       = require('../../_common/common_functions').getElementById;
 const State                = require('../../_common/storage').State;
 const urlFor               = require('../../_common/url').urlFor;
 const getPropertyValue     = require('../../_common/utility').getPropertyValue;
@@ -23,6 +25,15 @@ const BinarySocketGeneral = (() => {
                     return;
                 }
                 BinarySocket.send({ website_status: 1, subscribe: 1 });
+                if (Client.isLoggedIn()) {
+                    // we need to set top-nav-menu class so binary-style can add event listener
+                    // if we wait for authorize before doing this binary-style will not initiate the drop-down menu
+                    getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
+                    BinarySocket.wait('authorize').then(() => {
+                        Client.setJPFlag();
+                        BinaryPjax.init(getElementById('content-holder'), '#content');
+                    });
+                }
             }
             Clock.startClock();
         }
