@@ -97,9 +97,35 @@
                     width: 100%;
                     margin-bottom: 5px;
                 }
+                &:hover {
+                    .header-current {
+                        .gr-row {
+                            cursor: pointer;
+                            background-color: $COLOR_GRAY;
+                        }
+                    }
+                    #period {
+                        .current {
+                            background-color: $COLOR_GRAY;
+                        }
+                    }
+                }
             }
             #underlying .list {
                 width: auto;
+            }
+            .header-current {
+                overflow: hidden;
+                width: 100%;
+
+                .gr-row {
+                    margin-left: 0px;
+                    margin-right: 0px;
+                }
+                &-text {
+                    padding-top: 10px;
+                    font-weight: 700;
+                }
             }
             #period {
                 .duration {
@@ -109,7 +135,7 @@
                     font-weight: normal;
                 }
                 .current {
-                    height: 45px;
+                    height: auto;
 
                     div.head {
                         font-weight: bold;
