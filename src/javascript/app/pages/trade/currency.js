@@ -22,13 +22,6 @@ const displayCurrencies = () => {
         Defaults.set('currency', $currency.val());
     } else {
         $currency.replaceWith($('<span/>', { id: $currency.attr('id'), class: $currency.attr('class'), value: currencies[0], html: Currency.formatCurrency(currencies[0]) }));
-        // restore back from custom dropdown to span
-        if ($currency.is('span') && $currency.parent('div.select').length) {
-            $currency.parent().replaceWith(() => {
-                const curr_element = $currency;
-                return curr_element;
-            });
-        }
         Defaults.set('currency', currencies[0]);
     }
 };

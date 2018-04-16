@@ -51,6 +51,17 @@ const TradePage = (() => {
                     Dropdown('#multiplier_currency', true);
                 }
                 Process.processActiveSymbols();
+
+                const $currency = $('.currency');
+
+                // if currency symbol is span, restore back from custom dropdown
+                if ($currency.is('span') && $currency.parent('div.select').length) {
+                    $currency.parent().replaceWith(() => {
+                        const curr_element = $currency;
+                        return curr_element;
+                    });
+                    if ($currency.next().attr('id') === $currency.attr('id')) $currency.next().eq(0).remove();
+                }
             });
         });
 
