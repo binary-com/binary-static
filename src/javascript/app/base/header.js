@@ -150,6 +150,15 @@ const Header = (() => {
                 });
             };
 
+            const showUpgradeBtn = (url, msg) => {
+                applyToAllElements(upgrade_msg, (el) => {
+                    el.setVisibility(1);
+                    applyToAllElements('a.button', (ele) => {
+                        ele.html(createElement('span', { text: localize(msg) })).setVisibility(1).setAttribute('href', Url.urlFor(url));
+                    }, '', el);
+                });
+            };
+
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
             const upgrade_info      = Client.getUpgradeInfo();
             const show_upgrade_msg  = upgrade_info.can_upgrade;
@@ -178,7 +187,8 @@ const Header = (() => {
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    showUpgrade(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
+                    showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
+                    showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
                 } else {
                     applyToAllElements(upgrade_msg, (el) => {
                         applyToAllElements('a', (ele) => {
@@ -188,7 +198,8 @@ const Header = (() => {
                 }
             } else if (show_upgrade_msg) {
                 getElementById('virtual-wrapper').setVisibility(0);
-                showUpgrade(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
+                showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
+                showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
             } else {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
             }

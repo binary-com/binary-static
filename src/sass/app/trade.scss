@@ -166,12 +166,15 @@
         padding: 0;
         position: relative;
         display: inline-flex;
-        @media (max-width: 768px) {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-        }
 
+        span.market, span.type {
+            @media (max-width: 768px) {
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+                max-width: 90%;
+                white-space: nowrap;
+            }
+        }
         .arrow_down {
             width: 8px;
             height: 8px;
@@ -181,9 +184,8 @@
             margin-left: 10px;
             top: 3px;
             float: right;
-        }
-        .contract_current span.type .arrow_down {
-            @media (max-width: 480px) {
+
+            @media (max-width: 768px) {
                 position: absolute;
                 top: 0.9rem;
                 right: 0.6rem;
@@ -227,6 +229,11 @@
                 align-items: center;
                 flex-direction: row-reverse;
             }
+        }
+        @media (max-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
         }
     }
     #contract_container {
@@ -669,7 +676,7 @@
             }
             span.currency ~ input#multiplier {
                 margin-right: 0;
-                width: calc(100% - 1rem);
+                width: calc(100% - 30px);
             }
         }
         #payout_row {
@@ -685,7 +692,7 @@
                     margin-left: 0;
                 }
                 span.currency ~ input {
-                    width: calc(100% - 1rem);
+                    width: calc(100% - 30px);
                     margin-right: 0;
                 }
                 div.select {
