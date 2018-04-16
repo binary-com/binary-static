@@ -11,40 +11,42 @@
     &-thead {
         min-height: 40px;
 
-        & th {
+        th {
             padding: 12px;
             font-weight: 600;
             text-align: left;
             border: none;
             background-color: #f4f4f6; /* stylelint-disable-line color-no-hex */
-        }
-        & th:first-child {
-            padding-left: 16px;
-            border-top-left-radius: 4px;
-        }
-        & th:last-child {
-            padding-right: 16px;
-            border-top-right-radius: 4px;
+
+            &:first-child {
+                padding-left: 16px;
+                border-top-left-radius: 4px;
+            }
+            &:last-child {
+                padding-right: 16px;
+                border-top-right-radius: 4px;
+            }
         }
     }
     &-tbody {
-        & .table-row:hover {
+        .table-row:hover {
             background-color: #fdf4ec; /* stylelint-disable-line color-no-hex */
         }
-        & td {
+        td {
             padding: 12px;
             border: none;
+
+            &:first-child {
+                padding-left: 16px;
+            }
+            &:last-child {
+                padding-right: 16px;
+            }
         }
-        & td:first-child {
-            padding-left: 16px;
-        }
-        & td:last-child {
-            padding-right: 16px;
-        }
-        & .profit {
+        .profit {
             color: #2e8836; /* stylelint-disable-line color-no-hex */
         }
-        & .loss {
+        .loss {
             color: #c03; /* stylelint-disable-line color-no-hex */
         }
     }
