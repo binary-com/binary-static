@@ -101,7 +101,8 @@ const MBProcess = (() => {
         $underlyings.find('.current').html($('<div/>', { class: 'gr-row' })
             .append($('<img/>', { class: 'gr-3 gr-no-gutter-m' }))
             .append($('<span/>', { class: 'name gr-6 gr-5-m align-self-center' }))
-            .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' })));
+            .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' }))
+            .append($('<span/>', { class: 'nav-caret ja-hide' })));
 
         let selected_symbol = selected;
         if (Object.keys(all_symbols).indexOf(selected) === -1) selected_symbol = '';

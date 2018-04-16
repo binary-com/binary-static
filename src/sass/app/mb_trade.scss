@@ -36,6 +36,8 @@
             }
             #payout {
                 height: auto;
+                border-color: $COLOR_GRAY;
+                border-top-color: $COLOR_LIGHT_GRAY;
                 border-left: none;
 
                 &:focus {
@@ -60,7 +62,7 @@
                 > div {
                     .list {
                         background-color: $COLOR_WHITE;
-                        border: 1px solid $COLOR_LIGHT_GRAY;
+                        border: 1px solid $COLOR_GRAY;
                         border-top: none;
 
                         &.invisible {
@@ -68,6 +70,7 @@
                         }
                         > div {
                             background-color: $COLOR_WHITE;
+                            border-color: $COLOR_GRAY;
 
                             &:hover {
                                 background-color: $COLOR_GRAY !important;
@@ -77,9 +80,23 @@
                             background-color: $COLOR_WHITE;
                         }
                     }
+                    .current {
+                        background-color: $COLOR_WHITE;
+                        border: 1px solid $COLOR_GRAY;
+
+                        &:hover, &.primary-border-color {
+                            border-color: $COLOR_BLUE;
+                        }
+                        .nav-caret {
+                            position: relative;
+                            left: 98%;
+                            bottom: 17px;
+                        }
+                    }
                     #currency .current {
                         height: 25px;
-                        border: 1px solid $COLOR_LIGHT_GRAY;
+                        border: 1px solid $COLOR_GRAY;
+                        border-top-color: $COLOR_LIGHT_GRAY;
                         border-right: none;
                     }
                     &#category {
@@ -148,10 +165,11 @@
                         font-weight: bold;
                         margin-bottom: 5px;
                     }
+                    .nav-caret {
+                        bottom: 20px;
+                        left: 97.5%;
+                    }
                 }
-            }
-            .category-wrapper {
-                width: 50%;
             }
         }
         #ja-panel {
@@ -336,14 +354,29 @@
                     }
                 }
                 .heading, .price-row {
-                    border: 1px solid $COLOR_LIGHT_GRAY;
+                    border: 1px solid $COLOR_GRAY;
                     border-bottom: none;
                 }
+                .contract-type {
+                    padding-left: 0;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    line-height: 18px;
+                    height: 36px;
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
                 .price-row:last-child {
-                    border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+                    border-bottom: 1px solid $COLOR_GRAY;
                 }
                 .price-row:nth-child(odd) {
                     background-color: $COLOR_WHITE;
+                }
+                .sell-price {
+                    display: none;
+                }
+                .buy-price {
+                    margin-top: 5px;
                 }
             }
         }

@@ -83,13 +83,13 @@ const MBTrading = () => (
                                         <div className='header-current'>
                                             <div className='gr-row'>
                                                 <div className='header-current-text gr-6'>{it.L('End Time')}</div>
-                                                <div className='header-current-text gr-6'>{it.L('Remaining Time')}</div>
+                                                <div className='header-current-text gr-6'>{it.L('Trading Window')}</div>
                                             </div>
                                         </div>
                                         <FormItem id='period' class_list='gr-12' />
                                     </div>
                                     <div className='gr-row'>
-                                        <div className='gr-3 gr-6-m gr-no-gutter'>
+                                        <div className='gr-3 gr-6-m gr-no-gutter gr-12-m gr-order-2-m'>
                                             <div className='trade_form'>
                                                 <div id='payout_amount'>{it.L('Payout')}</div>
                                             </div>
@@ -100,8 +100,8 @@ const MBTrading = () => (
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='trade_form gr-9 gr-6-m gr-no-gutter-right'>
-                                            <FormItem id='category' class_list='gr-12' />
+                                        <div className='trade_form gr-9 gr-6-m gr-no-gutter-right gr-12-m gr-no-gutter-left-m'>
+                                            <FormItem id='period' class_list='gr-12' />
                                         </div>
                                     </div>
                                 </div>
@@ -163,11 +163,15 @@ const MBTrading = () => (
                             <div className='prices-wrapper gr-12'>
                                 <div className='gr-row heading'>
                                     <div className='gr-4 barrier align-self-center'>{it.L('Barrier')}</div>
-                                    <div className='gr-4 buy-price gr-no-gutter-left'>
+                                    <div className='gr-8 ja-hide' id='category'>
+                                        <div className='current gr-12 gr-no-gutter-left' />
+                                        <div className='list' />
+                                    </div>
+                                    <div className='gr-4 buy-price gr-no-gutter-left invisible ja-show'>
                                         {it.L('Buy Price')}
                                         <div className='hint sell-price'>{it.L('Sell Price')}</div>
                                     </div>
-                                    <div className='gr-4 buy-price gr-no-gutter-left'>
+                                    <div className='gr-4 buy-price gr-no-gutter-left invisible ja-show'>
                                         {it.L('Buy Price')}
                                         <div className='hint sell-price'>{it.L('Sell Price')}</div>
                                     </div>

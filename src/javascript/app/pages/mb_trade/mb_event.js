@@ -46,6 +46,7 @@ const MBTradingEvents = (() => {
             if ($list.hasClass(hidden_class)) {
                 makeListsInvisible();
             }
+            $(this).toggleClass('primary-border-color');
             $list.toggleClass(hidden_class);
         };
         /*
@@ -274,6 +275,7 @@ const MBTradingEvents = (() => {
             $form.find('.list, #payout_list').setVisibility(0).end()
                 .find('#period, #category')
                 .setVisibility(1);
+            $form.find('.current').removeClass('primary-border-color');
         };
     };
 
