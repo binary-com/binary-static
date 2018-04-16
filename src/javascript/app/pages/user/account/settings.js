@@ -1,18 +1,17 @@
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
-const jpClient         = require('../../../common/country_base').jpClient;
 const State            = require('../../../../_common/storage').State;
 
 const Settings = (() => {
     const onLoad = () => {
         BinarySocket.wait('get_account_status').then(() => {
-            const $class_real = $('.real');
-            const is_jp       = jpClient();
+            const $class_real  = $('.real');
+            const is_jp_client = Client.isJPClient();
 
             if (Client.get('is_virtual')) {
                 $class_real.setVisibility(0);
             } else {
-                $class_real.not((is_jp ? '.ja-hide' : '')).setVisibility(1);
+                $class_real.not((is_jp_client ? '.ja-hide' : '')).setVisibility(1);
             }
 
             const status = State.getResponse('get_account_status.status');
@@ -22,7 +21,7 @@ const Settings = (() => {
 
             const financial_company = State.getResponse('landing_company.financial_company.shortcode');
             // Professional Client menu should only be shown to MF and CR accounts.
-            if (!is_jp && !/professional_requested|professional/.test(status) &&
+            if (!is_jp_client && !/professional_requested|professional/.test(status) &&
                 (Client.isAccountOfType('financial') ||
                     (/costarica/.test(financial_company) && Client.isAccountOfType('real')))) {
 

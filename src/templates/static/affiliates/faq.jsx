@@ -1,135 +1,119 @@
 import React from 'react';
-import CommissionTable from './commission_table.jsx';
+import { Section } from '../get_started/common.jsx';
+import { List } from '../../_common/components/elements.jsx';
+import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const FAQ = () => (
-    <React.Fragment>
-        <div className='gr-padding-20 gr-parent'>
-            <h3>{it.L('What is the definition of a \'client\'?')}</h3>
-            <p>{it.L('A client is someone who has been referred through one of your marketing tools and who has deposited money into their [_1] account. They must fulfill the following criteria:', it.broker_name)}</p>
-            <ul className='checked'>
-                <li>{it.L('Have not previously been a [_1] customer.', it.broker_name)}</li>
-                <li>{it.L('Have made the minimum deposit.')}</li>
-                <li>{it.L('Are over 18.')}</li>
-            </ul>
-        </div>
-
-        <h3>{it.L('Who can be a client on the [_1] platform?', it.broker_name)}</h3>
-        <p>{it.L('Anyone over the age of 18 [who has read and agreed to the [_1] terms and conditions], and who is not resident in one of the \'closed countries\' can trade on the [_1] platform.', it.broker_name)}</p>
-
-        <div className='gr-padding-20 gr-parent'>
-            <h2>{it.L('The Program')}</h2>
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('What is the [_1] affiliate program?', it.broker_name)}</h3>
-                <p>{it.L('The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site.')}</p>
-                <p>{it.L('If you\'re a broker we\'d like to work with you. You will be introducing your clients to a unique and innovative product - the [_1] trading platform.', it.broker_name)}</p>
-                <p>{it.L('Your clients will love the [_1] trading platform because we offer a complete trading experience tailored to the needs of an exceptionally wide range of traders.', it.broker_name)}</p>
-                <p>{it.L('Novice traders can use our intuitive visual platform to learn about trading, practice trading and gain trading experience.')}</p>
-                <p>{it.L('Seasoned traders can use the [_1] platform for the full advantage of the wide range of trading and analysis tools we have on offer.', it.broker_name)}</p>
+    <div className='static_full affiliates-faq-page'>
+        <h1>{it.L('Affiliate FAQ')}</h1>
+        <div className='gr-row'>
+            <div className='gr-3 gr-12-m sidebar-container'>
+                <div className='sidebar'>
+                    <List
+                        id='sidebar-nav'
+                        items={[
+                            { id: 'general',                         href: '#general',                         text: it.L('General')},
+                            { id: 'account-management-and-tracking', href: '#account-management-and-tracking', text: it.L('Account management and tracking')},
+                            { id: 'marketing-and-promotions',        href: '#marketing-and-promotions',        text: it.L('Marketing and promotions')},
+                            { id: 'support',                         href: '#support',                         text: it.L('Support')},
+                        ]}
+                    />
+                </div>
             </div>
+            <div className='gr-9 gr-12-m'>
+                <Section id='general' header={it.L('General')}>
+                    <h3>{it.L('What is the [_1] Affiliate Programme all about?', it.website_name)}</h3>
+                    <p>{it.L('The [_1] Affiliate Programme allows you to benefit from referring new clients to our site.', it.website_name)}</p>
+                    <p>{it.L('If you\'re a broker we\'d like to work with you. You will be introducing your clients to a unique and innovative product: the [_1] trading platform. Your clients will love the [_1] trading platform because we offer a complete binary options trading experience tailored to the needs of an exceptionally wide range of traders.', it.website_name)}</p>
+                    <p>{it.L('Novice traders can use our intuitive platform to learn about trading, practise trading, and gain trading experiences. Seasoned traders can use the [_1] platform and take full advantage of the wide range of trading and analysis tools we have to offer.', it.website_name)}</p>
 
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('Why should I become a binary options trading affiliate?')}</h3>
-                <p>{it.L('Since their inception, \'binary options\' has become a popular trading product. The numerous binary options trading platforms subsequently being created, support this growing trend. By becoming an affiliate now you can profit from the fast growth of interest in this new industry.')}</p>
-            </div>
+                    <h3>{it.L('Why should I become a [_1] affiliate?', it.website_name)}</h3>
+                    <p>{it.L('[_1] is a licensed and regulated binary options trading platform that’s been operating since 2000. It has:', it.website_name)}</p>
+                    <ul className='bullet'>
+                        <li>{it.L('An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian, and Indonesian')}</li>
+                        <li>{it.L('An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere')}</li>
+                        <li>{it.L('A competitive and flexible affiliate programme that can be adapted to your needs')}</li>
+                    </ul>
 
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('Why should I become an affiliate with [_1]?', it.broker_name)}</h3>
-                <ul className='checked'>
-                    <li>{it.L('it is the leading binary option trading platform.')}</li>
-                    <li>{it.L('it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian.')}</li>
-                    <li>{it.L('the platform is 100% web based making it instantly available for clients.')}</li>
-                    <li>{it.L('the platform is user friendly and accessible to all levels of traders.')}</li>
-                    <li>{it.L('the [_1] affiliate program is competitive and adaptive to your unique requirements.', it.broker_name)}</li>
-                </ul>
-                <p>{it.L('If you want to profit from this high demand product then your best option is to partner with the market leader. [_1] has been in the business for over 15 years, and has been successful ever since.', it.broker_name)}</p>
-            </div>
+                    <h3>{it.L('Is there a cost for joining?')}</h3>
+                    <p>{it.L('Not at all. Joining our affiliate programme is completely free and always will be.')}</p>
 
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('Is there a cost for joining?')}</h3>
-                <p>{it.L('No. There\'s no cost to sign up to the affiliate program.')}</p>
-            </div>
+                    <h3>{it.L('What is the definition of a referred client?')}</h3>
+                    <p>{it.L('A client is someone who has been referred through your unique affiliate link and who has deposited money into their [_1] account. They must fulfil the following criteria:', it.website_name)}</p>
+                    <ul className='bullet'>
+                        <li>{it.L('Have not previously been a [_1] customer', it.website_name)}</li>
+                        <li>{it.L('Aged 18 years old and above')}</li>
+                    </ul>
 
-            <h3>{it.L('Can I become an affiliate even if I don\'t have a website?')}</h3>
-            <p>{it.L('Yes. Please email us at <a href="mailto:[_1]">[_1]</a> for further assistance.', it.affiliate_email)}</p>
-        </div>
+                    <h3>{it.L('Who can be a client on the [_1] platform?', it.website_name)}</h3>
+                    <p>{it.L('Anyone aged 18 years old and above who is not the resident of a “restricted country” (as listed in our <a href=\'[_1]\'>Terms & Conditions</a>) can become a [_2] client.', it.url_for('terms-and-conditions'), it.website_name)}</p>
+                </Section>
 
-        <div className='gr-padding-20 gr-parent'>
-            <h2>{it.L('Account Management and Tracking')}</h2>
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('How can I become an affiliate?')}</h3>
-                <p>{it.L('Go to the [_1]sign up page[_2] to register as an affiliate today.', `<a href="${it.affiliate_signup_url}">`, '</a>')}</p>
-            </div>
 
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('I forgot my password, what should I do?')}</h3>
-                <p>{it.L('Go to the [_1]password retrieval page[_2], and enter your username and e-mail address in the form fields provided to have your password e-mailed to you.', `<a href="${it.affiliate_password_url}">`, '</a>')}</p>
-            </div>
+                <Section id='account-management-and-tracking' header={it.L('Account management and tracking')}>
+                    <h3>{it.L('How can I become an affiliate?')}</h3>
+                    <p>{it.L('It’s easy. Just go to the signup page and complete the <a href=\'[_1]\'>affiliate registration form</a>. We’ll review your application and get back to you if your application is successful.', it.affiliate_signup_url)}</p>
 
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('What commission plan do you offer?')}</h3>
-                <p>{it.L('Please refer to the following commission plan.')}</p>
-                <CommissionTable />
-            </div>
+                    <h3>{it.L('I forgot my password, what should I do?')}</h3>
+                    <p>{it.L('Don’t worry, you can simply <a href=\'[_1]\'>reset your password</a>.', it.affiliate_password_url)}</p>
 
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('How do I change my payment method?')}</h3>
-                <p>{it.L('Log-in to your [_1] affiliate account and click on: Finances &rarr; Payment instructions.', it.broker_name)}</p>
-            </div>
+                    <h3>{it.L('How can I change my payment method?')}</h3>
+                    <p>{it.L('Log in to your [_1] affiliate account and go to: Finances → Payment instructions.', it.website_name)}</p>
 
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('How and when will I receive my affiliate earnings?')}</h3>
-                <p>{it.L('By the 15th of every month, you will receive the commission earned during the previous calendar month.')}</p>
-            </div>
+                    <h3>{it.L('How and when will I receive my affiliate earnings?')}</h3>
+                    <p>{it.L('Your commission for the previous calendar month will be deposited into your account by the 15th of every month.')}</p>
 
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('How do I know how much I have earned?')}</h3>
-                <p>{it.L('Log-in to your [_1] affiliate account and click on: Reports &rarr; Traffic Report.', it.broker_name)}</p>
-            </div>
+                    <h3>{it.L('How do I know how much I have earned?')}</h3>
+                    <p>{it.L('Log in to your [_1] affiliate account and go to: Reports → Detailed activity report', it.website_name)}</p>
 
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('What other reports can I generate?')}</h3>
-                <p><strong>{it.L('Detailed report:')}</strong> {it.L('The detailed report shows you your detailed traffic and income statistics. Use the filters and column selectors to break down your reporting as desired.')}</p>
-                <p><strong>{it.L('Player report:')}</strong> {it.L('The player report shows a breakdown of statistics per player. Use the filters to refine the report.')}</p>
-                <p><strong>{it.L('Daily Earnings:')}</strong> {it.L('The commission report shows you your daily commission earnings, per site / product.')}</p>
-            </div>
+                    <h3>{it.L('What kind of reports can I generate?')}</h3>
+                    <p>{it.L('You can generate all kinds of insightful reports, including the following:')}</p>
+                    <ul className='bullet'>
+                        <li>{it.L('Hits & Impression report: Displays your hit rate and click through rates')}</li>
+                        <li>{it.L('Countries report: Displays a list of countries where your clicks are coming from')}</li>
+                        <li>{it.L('My Players report: Displays a list of your clients according to their IDs and the date they signed up')}</li>
+                    </ul>
 
-            <h3>{it.L('Can I offer my referrals an incentive to sign up through my link rather than sign up directly?')}</h3>
-            <p>{it.L('We prohibit the use of unauthorised incentives, gifts and payments to encourage customer sign-ups. In the event that we believe that you have engaged in such activity, we reserve the right to withhold any amounts due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval.')}</p>
-        </div>
+                    <h3>{it.L('Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?')}</h3>
+                    <p>{it.L('We prohibit the use of unauthorised incentives, gifts, and payments to encourage customer signups. If we have reason to believe that you have engaged in such activity, we reserve the right to withhold any payments due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval.')}</p>
+                </Section>
 
-        <div className='gr-padding-20 gr-parent'>
-            <h2>{it.L('Marketing and Promotion')}</h2>
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('What marketing tools do you offer?')}</h3>
-                <p>{it.L('We have a tested and proven selection of banners, links, reviews, newsletters, videos, and text ads for your use. Additionally, we have flash banners which you can grab through your affiliate account. If you would like customized tools, or an item currently not offered on the site, please contact your account manager at: <a href="mailto:[_1]">[_1]</a>.', it.affiliate_email)}</p>
-            </div>
 
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('Where are they located?')}</h3>
-                <p>{it.L('Log-in to your [_1] affiliate account and click on: Marketing &rarr; All Media.', it.broker_name)}</p>
-            </div>
+                <Section id='marketing-and-promotions' header={it.L('Marketing and promotions')}>
+                    <h3>{it.L('What advertising materials and marketing tools do you offer?')}</h3>
+                    <p>{it.L('We have a tested and proven selection of advertising materials including banners, reviews, videos, and text ads for you to use. If you would like certain items to be customised to your preferences, please contact your account manager at [_1]. You can also use the Myaffiliates system to track and optimise your campaigns.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
 
-            <h3>{it.L('Can you customize a banner for my site?')}</h3>
-            <p>{it.L('Yes. Please contact your account manager if you would like a customized banner and provide him/her with the following information:')}</p>
-            <ul className='checked'>
-                <li>{it.L('Pixel size.')}</li>
-                <li>{it.L('File format.')}</li>
-                <li>{it.L('Desired language.')}</li>
-                <li>{it.L('The URL of the site on which the banner is going to appear.')}</li>
-                <li>{it.L('Banner placement.')}</li>
-                <li>{it.L('Specific colors the banner should include.')}</li>
-                <li>{it.L('Specific message the banner should include.')}</li>
-            </ul>
-        </div>
+                    <h3>{it.L('Where are the advertising materials located?')}</h3>
+                    <p>{it.L('Log in to your [_1] affiliate account and go to: Marketing → All Media.', it.website_name)}</p>
 
-        <div className='gr-padding-20 gr-parent'>
-            <h2>{it.L('Contact')}</h2>
-            <div className='gr-padding-20 gr-parent'>
-                <h3>{it.L('Where can I send my questions, comments and suggestions?')}</h3>
-                <p>{it.L('Please contact us with whatever is on your mind at <a href=\'mailto:[_1]\'>[_1]</a>. We\'d be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us.', it.affiliate_email)}</p>
+                    <h3>{it.L('Can you customise a banner for my site?')}</h3>
+                    <p>{it.L('Yes. Please contact your affiliate manager with the following information:')}</p>
+                    <ul className='bullet'>
+                        <li>{it.L('Pixel size')}</li>
+                        <li>{it.L('File format')}</li>
+                        <li>{it.L('Desired language')}</li>
+                        <li>{it.L('The URL of the site on which the banner is going to appear')}</li>
+                        <li>{it.L('Banner placement')}</li>
+                        <li>{it.L('Specific colours the banner should include')}</li>
+                        <li>{it.L('Specific message the banner should include')}</li>
+                    </ul>
+                </Section>
+
+
+                <Section id='support' header={it.L('Support')}>
+                    <h3>{it.L('Where can I send my questions, comments, and suggestions?')}</h3>
+                    <p>{it.L('Feel free to get in touch with us at [_1]. We’d love to hear from you.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
+                </Section>
+
+                <SeparatorLine className='gr-padding-30' />
+                <div className='gr-padding-30 gr-parent center-text'>
+                    <a className='button-secondary' href={it.url_for('affiliate/signup')}>
+                        <span>{it.L('Back to Affiliate Programme')}</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </React.Fragment>
+    </div>
 );
 
 export default FAQ;
