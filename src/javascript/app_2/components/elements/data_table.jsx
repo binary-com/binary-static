@@ -1,5 +1,14 @@
 import React from 'react';
 
+function offsetPageTop(el) {
+    let offset = -el.clientTop;
+    while (el) {
+        offset += el.offsetTop + el.clientTop;
+        el = el.offsetParent;
+    }
+    return offset;
+}
+
 /* TODO:
       1. to implement sorting by column (ASC/DESC)
       2. to implement filtering per column
@@ -9,6 +18,19 @@ class DataTable extends React.Component {
     constructor(props) {
         super(props);
         this.state = { chunks: 1 };
+    }
+
+    appendFixedHeader(el_table_container) {
+        const el_table = el_table_container.querySelector('.table');
+        const el_table_clone = el_table.cloneNode(true);
+        // console.log(window.el = el_table_clone);
+        const el_thead_clone = el_table_clone.querySelector('.table-thead');
+        const el_tbody_clone = el_table_clone.querySelector('.table-tbody');
+
+        el_table_clone.style.position = 'fixed';
+        el_table_clone.style.top = offsetPageTop(el_table) + 'px';
+        el_tbody_clone.style.visibility = 'hidden';
+        el_table_container.appendChild(el_table_clone);
     }
 
     renderRow(transaction, id) {
@@ -35,7 +57,7 @@ class DataTable extends React.Component {
 
     render() {
         return (
-            <div className='table-container'>
+            <div className='table-container' ref={this.appendFixedHeader}>
                 <table className='table'>
                     <thead className='table-thead'>
                         <tr className='table-row'>
@@ -53,7 +75,7 @@ class DataTable extends React.Component {
 }
 
 DataTable.defaultProps = {
-    chunk_size: 5,
+    chunk_size: 10,
 };
 
 export default DataTable;
