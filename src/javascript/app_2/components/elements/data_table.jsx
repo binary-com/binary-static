@@ -27,9 +27,15 @@ class DataTable extends React.Component {
         const el_thead_clone = el_table_clone.querySelector('.table-thead');
         const el_tbody_clone = el_table_clone.querySelector('.table-tbody');
 
+        el_table_clone.id = 'table_clone';
         el_table_clone.style.position = 'fixed';
         el_table_clone.style.top = offsetPageTop(el_table) + 'px';
+        el_table_clone.style.pointerEvents = 'none';
+
+        el_thead_clone.style.pointerEvents = 'auto';
+
         el_tbody_clone.style.visibility = 'hidden';
+
         el_table_container.appendChild(el_table_clone);
     }
 
@@ -75,7 +81,7 @@ class DataTable extends React.Component {
 }
 
 DataTable.defaultProps = {
-    chunk_size: 10,
+    chunk_size: 100,
 };
 
 export default DataTable;
