@@ -118,6 +118,10 @@ class Statement extends React.PureComponent {
     }
 
     render() {
+        if (this.state.data_source.length === 0) {
+            return 'Loading...';
+        }
+
         return (
             <DataTable
                 {...this.props}
