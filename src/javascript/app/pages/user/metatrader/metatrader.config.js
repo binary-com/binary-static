@@ -16,8 +16,8 @@ const MetaTraderConfig = (() => {
             mamm    : { mt5_account_type: 'mamm_advanced', max_leverage: 100, title: 'MAM Advanced', is_real_only: 1 },
         },
         gaming: {
-            volatility: { mt5_account_type: '', max_leverage: 500, title: 'Volatility Indices' },
-            mamm      : { mt5_account_type: 'mamm', max_leverage: 100, title: 'MAM Volatility Indices', is_real_only: 1 },
+            volatility: { mt5_account_type: '',     max_leverage: 500, title: 'Volatility Indices' },
+            mamm      : { mt5_account_type: 'mamm', max_leverage: 500, title: 'MAM Volatility Indices', is_real_only: 1 },
         },
     };
 
