@@ -53,16 +53,16 @@ class Statement extends React.PureComponent {
                 data_index: 'ref',
             },
             {
-                title     : localize('Potential Payout'),
-                data_index: 'payout',
+                title     : localize('Description'),
+                data_index: 'desc',
             },
             {
                 title     : localize('Action'),
                 data_index: 'action',
             },
             {
-                title     : localize('Description'),
-                data_index: 'desc',
+                title     : localize('Potential Payout'),
+                data_index: 'payout',
             },
             {
                 title     : localize('Credit/Debit'),
