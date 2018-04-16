@@ -29,7 +29,6 @@ const BinarySocketGeneral = (() => {
                     BinarySocket.wait('authorize').then(() => {
                         Client.setJPFlag();
                         BinaryPjax.init(getElementById('content-holder'), '#content');
-
                     });
                 }
             }
