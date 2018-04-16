@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-11 03:00-0400\n"
+"PO-Revision-Date: 2018-04-16 03:36-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1962,9 +1962,6 @@ msgstr "Pilih dari satu juta lebih kemungkinan variasi trading kapan saja, dan s
 msgid "Choose from three main trade types:"
 msgstr "Pilih dari tiga jenis trading utama:"
 
-msgid "Choose from two types of commission plans when your referred clients trade binary options on our platform."
-msgstr "Pilih antara dua jenis rencana komisi ketika Anda memperkenalkan pelanggan Anda bertrading opsi binary pada platform kami."
-
 msgid "Choose the Touch/No touch trade if you want to predict the market touching or not touching a target any time during the contract period."
 msgstr "Pilih kontrak Touch/No touch jika Anda ingin menganalisa pasar akan menyentuh atau tidak target harga kapan saja selama periode kontrak."
 
@@ -2012,6 +2009,12 @@ msgstr "Klik OK untuk melanjutkan."
 
 msgid "Click anywhere outside the menu to save and close."
 msgstr "Klik dimana saja diluar menu untuk menyimpan dan menutup."
+
+msgid "Click here to open a Financial Account"
+msgstr "Klik disini untuk mendaftar Akun Finansial"
+
+msgid "Click here to open a Real Account"
+msgstr "Klik disini untuk mendaftar Akun Riil"
 
 msgid "Click here to retry"
 msgstr "Klik disini untuk mencoba lagi"
@@ -3576,6 +3579,9 @@ msgstr "Untuk Desktop"
 msgid "For Mobile"
 msgstr "Untuk Mobile"
 
+msgid "For affiliate, partnership, and other marketing-related queries:"
+msgstr "Untuk afiliasi, kemitraan, dan pertanyaan terkait pemasaran lainnya:"
+
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "Untuk metode e-cash atau mata uang lokal yang tidak disediakan oleh %1."
 
@@ -4348,13 +4354,13 @@ msgid "If you select \"Differs\", you will win the payout if the <strong>last di
 msgstr "Pilih \"Differs\", untuk memperoleh hasil jika <strong>digit</strong> pada tik terakhir adalah <strong>berbeda</strong> dengan <strong>analisa</strong> Anda."
 
 msgid "If you select \"Does Not Touch\", you win the payout if the market never touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "Pilih \"Tidak Menyentuh\" maka Anda akan memperoleh hasil apabila pasar tidak pernah menyentuh <strong>batasan</strong> yang telah anda tentukan kapan saja selama periode <strong>kontrak berlangsung</strong>."
+msgstr "Pilih \"Does Not Touch\" maka Anda akan memperoleh hasil apabila pasar tidak pernah menyentuh <strong>batasan</strong> yang telah anda tentukan kapan saja selama periode <strong>kontrak berlangsung</strong>."
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
-msgstr "Pilih \"Berakhir Antara\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> pasti lebih tinggi dari <strong>Batasan rendah</strong> DAN lebih rendah dari <strong>Batasan tinggi</strong>."
+msgstr "Pilih \"Ends Between\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> pasti lebih tinggi dari <strong>Batasan rendah</strong> DAN lebih rendah dari <strong>Batasan tinggi</strong>."
 
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
-msgstr "Pilih \"Berakhir Diluar\", maka anda akan mendapat hasil jika SALAH SATU <strong>spot akhir</strong> SALAH SATU lebih tinggi dari <strong>Batasan tinggi</strong> ATAU lebih rendah dari batasan <strong>Batasan rendah</strong>."
+msgstr "Pilih \"Ends Outside\", maka anda akan mendapat hasil jika SALAH SATU <strong>spot akhir</strong> SALAH SATU lebih tinggi dari <strong>Batasan tinggi</strong> ATAU lebih rendah dari batasan <strong>Batasan rendah</strong>."
 
 msgid "If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>"
 msgstr "Pilih \"Even\", Anda akan memperoleh hasil jika <strong>digit terakhir</strong> pada tik terakhir adalah <strong>angka genap (contoh: 2, 4, 6, 8, atau 0).</strong>"
@@ -4363,13 +4369,13 @@ msgid "If you select \"Falls\", you win the payout if the <strong>exit spot</str
 msgstr "Pilih \"Turun\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih rendah dari <strong>spot masuk</strong>."
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "Pilih \"Berakhir Diluar\", Anda mendapat hasil jika pasar menyentuh salah satu <strong>Batasan tinggi</strong> atau <strong>Batasan rendah</strong> kapan saja selama <strong>periode kontrak</strong>."
+msgstr "Pilih \"Goes Outside\", Anda mendapat hasil jika pasar menyentuh salah satu <strong>Batasan tinggi</strong> atau <strong>Batasan rendah</strong> kapan saja selama <strong>periode kontrak</strong>."
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
-msgstr "Pilih \"Lebih Tinggi\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>batasan</strong>."
+msgstr "Pilih \"Higher\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>batasan</strong>."
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
-msgstr "Pilih \"Lebih Rendah\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih rendah dari <strong>batasan</strong>."
+msgstr "Pilih \"Lower\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih rendah dari <strong>batasan</strong>."
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Pilih \"Matches\", Anda akan memperoleh hasil jika <strong>digit terakhir</strong> pada tik akhir adalah <strong>sama</strong> dengan <strong>analisa</strong> Anda."
@@ -4384,10 +4390,10 @@ msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</str
 msgstr "Pilih \"Naik\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>spot masuk</strong>."
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "Pilih \"Tetap Antara\", Anda akan mendapat hasil jika pasar tetap berada antara (tidak menyentuh) salah satu <strong>Batasan tinggi</strong> atau <strong>Batasan rendah</strong> kapan saja selama <strong>periode kontrak</strong>."
+msgstr "Pilih \"Stays Between\", Anda akan mendapat hasil jika pasar tetap berada antara (tidak menyentuh) salah satu <strong>Batasan tinggi</strong> atau <strong>Batasan rendah</strong> kapan saja selama <strong>periode kontrak</strong>."
 
 msgid "If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "Pilih \"Menyentuh\", Anda mendapat hasil jika pasar menyentuh <strong>batasan</strong> harga tertentu kapan saja selama <strong>periode kontrak </strong>."
+msgstr "Pilih \"Touches\", Anda mendapat hasil jika pasar menyentuh <strong>batasan</strong> harga tertentu kapan saja selama <strong>periode kontrak </strong>."
 
 msgid "If you select \"Under\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>less than your prediction.</strong>"
 msgstr "Pilih \"Under\", Anda akan memperoleh hasil jika <strong>digit terakhir</strong> pada tik terakhir adalah <strong>kurang dari analisa Anda.</strong>"
@@ -4554,7 +4560,7 @@ msgstr "Dalam hal demikian, Perusahaan dapat atas kebijakannya sendiri (dengan a
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "Dalam kolom 'Instruksi Tambahan' silahkan cantumkan metode pembayaran dan keterangan lain seperti nama bank dan nomor rekening dimana agen akan mengirimkan dana tersebut, jika perlu cantumkan juga nama, alamat email dan nomor telepon Anda."
 
-msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%2). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%3), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete [_4]. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%2), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "Di Uni Eropa, produk keuangan yang tersedia adalah ditawarkan oleh Binary Investments (Europe) Ltd., yang beralamat di Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, berlisensi dan diatur sebagai penyedia Layanan Investasi Kategori 3 oleh Otoritas Jasa Keuangan Malta (lisensi no. IS/70156). Di Isle of Man dan UK, Indeks Volatilitas ditawarkan oleh Binary (IOM) Ltd., yang beralamat di First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; berlisensi dan diatur. Di luar Uni Eropa, Indeks Volatilitas ditawarkan oleh Binary (Europe) Ltd., yang beralamat di Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; berlisensi dan diatur. Beberapa produk mungkin tidak tersedia di beberapa negara. Layanan situs web ini tidak tersedia untuk individu di bawah usia 18 tahun."
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
@@ -5403,9 +5409,6 @@ msgstr "Kantor Kuala Lumpur"
 msgid "L. Event of Default"
 msgstr "L. Kelalaian"
 
-msgid "Ladders"
-msgstr ""
-
 msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
 msgstr "Kelas Bahasa Untuk Pengungsi (LCFR) merupakan program pendidikan bagi pengungsi yang diselenggarakan oleh  'Love & Respect Transformation Centre' – sebuah perusahaan sosial berkomitmen untuk pendidikan berkualitas jangka panjang. Program ini mengajarkan bahasa Inggris, Melayu, dan Perancis untuk kelompok usia mulai dari anak-anak hingga orang dewasa yang menyediakan mereka kemampuan bahasa yang akan membantu mereka dalam mencari pekerjaan sementara mereka menunggu untuk dipulangkan."
 
@@ -6153,9 +6156,6 @@ msgstr "Eksekusi berbagai aset"
 msgid "Multi-asset liquidity solutions"
 msgstr "Solusi likuiditas berbagai aset"
 
-msgid "Multi-barrier trading"
-msgstr "Trading multi-barrier"
-
 msgid "Multiple Accounts Manager"
 msgstr "Multi Akun Manager"
 
@@ -6360,6 +6360,9 @@ msgstr "Nota: Untuk pertanyaan mengenai akun non aktif atau pembatalan akun, sil
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
 msgstr "Catatan: Transfer Agen Pembayaran hanya tersedia untuk akun terdaftar di Binary (CR) SA. Transaksi diterima hanya dalam dolar AS."
 
+msgid "Note: Transfer between accounts is not available on weekends."
+msgstr "Catatan: Transfer antar akun tidak tersedia pada akhir pekan."
+
 msgid "Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent"
 msgstr "Nota: Penarikan via agen pembayaran hanya tersedia jika Anda mendeposit via agen pembayaran"
 
@@ -6548,12 +6551,6 @@ msgstr "Lowongan Pekerjaan"
 
 msgid "Open Source"
 msgstr "Open Source"
-
-msgid "Open a Financial Account"
-msgstr "Daftar Akun Finansial"
-
-msgid "Open a Real Account"
-msgstr "Daftar Akun Riil"
 
 msgid "Open a free account"
 msgstr "Daftar akun gratis"
@@ -6939,6 +6936,9 @@ msgstr "Platinum vs Dolar AS"
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "Silahkan %1setujui Syarat dan Ketentuan terbaru%2 untuk meningkatkan batasan penarikan dan trading Anda."
 
+msgid "Please %1authenticate%2 your account."
+msgstr "Mohon %1otentikasi%2 akun Anda."
+
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "Silahkan %1lengkapi profil akun Anda%2 untuk meningkatkan batasan penarikan dan trading."
 
@@ -6946,7 +6946,7 @@ msgid "Please %1deposit%2 to your account."
 msgstr "Silahkan %1deposit%2 kedalam akun Anda."
 
 msgid "Please %1log in%2 or %3sign up%2 to view this page."
-msgstr "Silahkan %1log in%2 atau %3sign up%2 untuk melihat halaman ini."
+msgstr "Silahkan %1log in%2 atau %3daftar%2 untuk melihat halaman ini."
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Silahkan <a href=\"%1\">setujui Syarat dan Ketentuan terbaru</a>."
@@ -7269,9 +7269,6 @@ msgstr "Berpengetahuan dan berpengalaman pada industri jasa keuangan"
 msgid "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account's Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "Sebelum membuka Order dengan membeli Transaksi atau menambah Posisi Berjalan, Anda mengetahui bahwa merupakan kewajiban Anda untuk memastikan Margin Akun Anda mencukupi untuk menutup Margin yang diperlukan dalam pembukaan Transaksi (\"Kebutuhan Margin\"), dan untuk terus memenuhi Kebutuhan Margin."
 
-msgid "Privacy & Security"
-msgstr "Keamanan & Privasi"
-
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
@@ -7326,8 +7323,8 @@ msgstr "Untung/Rugi"
 msgid "Profit Table"
 msgstr "Laba Rugi"
 
-msgid "Profit from increasingly higher payouts with tiered and laddered commision rates that reward you based on the net revenue generated by your referred clients."
-msgstr "Keuntungan dari hasil lebih tinggi berdasarkan tingkat dan jenjang komisi dimana memberi Anda imbalan berdasarkan pendapatan bersih yang dihasilkan oleh pelanggan Anda."
+msgid "Profit from increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
+msgstr ""
 
 msgid "Profit or Loss"
 msgstr "Laba atau Rugi"
@@ -7505,6 +7502,9 @@ msgstr "Menerima berita dan penawaran khusus"
 
 msgid "Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates."
 msgstr "Terima kuotasi untuk trading dan countertrade, sehingga Anda akan selalu mendapatkan rate yang transparan dan tidak bias."
+
+msgid "Receive your affiliate commission once your referred clients start trading on our platform."
+msgstr ""
 
 msgid "Ref."
 msgstr "Ref."
@@ -9451,9 +9451,6 @@ msgstr "Bertrading 24/7, bahkan di akhir pekan."
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "Bertrading pasangan Bitcoin, Ethereum, dan Litecoin tanpa memiliki mereka. Pasangan mata uang kripto kami mengkuotasi mata uang kripto seperti Bitcoin terhadap mata uang fiat, seperti Dolar AS."
 
-msgid "Trade FX binary options on our multi-barrier platform, Ladders."
-msgstr ""
-
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "Trading Forex dan CFD pada platform multi-aset populer kami."
 
@@ -9507,9 +9504,6 @@ msgstr "Bertrading posisi long dan short, tergantung pada strategi pilihan Anda.
 
 msgid "Trade metals on competitive fixed and variable spreads."
 msgstr "Bertrading logam dengan spread tetap dan variabel yang kompetitif."
-
-msgid "Trade now"
-msgstr "Trading sekarang"
 
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "Bertrading pada pasar dasar yang meliputi Forex, indeks, komoditas, dan banyak lagi."
@@ -11531,7 +11525,7 @@ msgstr "hari ini"
 msgid "today, Fridays"
 msgstr "hari ini, Jumat"
 
-msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
+msgid "upon our request, he provides the Company with any and all information reasonably required to fully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr "atas permintaan dari kami, yang bersangkutan akan memberikan segala informasi yang diperlukan kepada Perusahaan untuk memenuhi semua tuntutan atau permintaan atau Pesanan atau persyaratan apapun dari pemerintah atau otoritas lainnya;"
 
 msgid "use its best endeavours and diligence to transfer funds deposited to %1 Agent Account to %1 Client Account;"
