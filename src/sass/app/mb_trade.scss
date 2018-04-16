@@ -119,11 +119,18 @@
                 width: 100%;
 
                 .gr-row {
-                    margin: 0 5px;
+                    margin: 0;
                 }
                 &-text {
                     padding-top: 10px;
                     font-weight: 700;
+
+                    &:first-child {
+                        padding-right: 5px;
+                    }
+                    &:last-child {
+                        padding-left: 5px;
+                    }
                 }
             }
             #period {
