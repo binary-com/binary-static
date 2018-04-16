@@ -228,17 +228,17 @@ const Metatrader = () => (
                         <AccountDesc
                             account_type={['vanuatu_mamm_advanced']}
                             title={it.L('MAM Advanced account')}
-                            description={it.L('Our MAM Advanced account can be assigned to a money manager with access to the same specifications as the regular Advanced account, including:')}
+                            description={it.L('Our MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account.')}
                             items={[
                                 it.L('Leverage up to 1:100'),
-                                it.L('Variable spreads'),
+                                it.L('Over 70 available assets'),
                                 it.L('Market execution'),
                             ]}
                         />
                         <AccountDesc
                             account_type={['costarica_mamm']}
                             title={it.L('MAM Volatility Indices Account')}
-                            description={it.L('Our MAM Volatility Indices account can be assigned to a money manager with access to the same specifications as the regular Volatility Indices account, including:')}
+                            description={it.L('Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
                             items={[
                                 it.L('Leverage up to 1:500'),
                                 it.L('Fixed spreads'),

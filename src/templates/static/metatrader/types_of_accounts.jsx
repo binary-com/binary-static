@@ -58,12 +58,12 @@ const TypesOfAccounts = () => (
         <Box
             image='advanced'
             title={it.L('MAM Advanced*')}
-            text={it.L('The MAM Advanced account can be assigned to a money manager with the same specifications as the regular Advanced account.')}
+            text={it.L('The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same.')}
         />
         <Box
             image='volatility_indices'
             title={it.L('Volatility Indices*')}
-            text={it.L('The MAM Volatility Indices account can be assigned to a money manager with the same specifications as the regular Volatility Indices account.')}
+            text={it.L('The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
         />
 
         <div className='gr-padding-10 gr-child'>
