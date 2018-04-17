@@ -41,7 +41,7 @@ const BinaryApp = () => (
                             { icon: 'trade',     text: localize('Trade'),     link_to: '/' },
                             { icon: 'portfolio', text: localize('Portfolio') },
                             { icon: 'statement', text: localize('Statement'), link_to: 'statement' },
-                            { icon: 'cashier',   text: localize('Cashier') },
+                            { icon: 'cashier',   text: localize('Cashier'),   link_to: 'cashier' },
                         ]}
                     />
                 </div>

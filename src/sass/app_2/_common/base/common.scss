@@ -7,6 +7,21 @@ body {
     overflow-x: hidden;
 }
 
+p {
+    font-size: 1rem;
+}
+
+.link {
+    color: #2196f3; /* stylelint-disable-line color-no-hex */
+    text-decoration: none;
+    border-bottom: transparent;
+    transition: all 0.25s;
+
+    &:hover {
+        border-bottom: 1px solid #2196f3; /* stylelint-disable-line color-no-hex */
+    }
+}
+
 /* Form */
 select, input, textarea {
     font-family: inherit;

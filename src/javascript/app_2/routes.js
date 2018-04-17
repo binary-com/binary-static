@@ -6,11 +6,13 @@ import { redirectToLogin } from '../app/base/login';
 import { localize } from '../_common/localize';
 
 import TradeApp  from './pages/trading/trade_app.jsx';
+import Cashier from './pages/cashier/index.jsx';
 import Statement from './pages/statement/statement.jsx';
 
 
 const routes = [
     { path: '/',          component: TradeApp, exact: true },
+    { path: '/cashier',   component: Cashier,   is_authenticated: true },
     { path: '/statement', component: Statement, is_authenticated: true },
 ];
 

@@ -1,0 +1,43 @@
+.card {
+    box-sizing: border-box;
+    border: 1px solid $COLOR_LIGHT_GRAY;
+    border-radius: 4px;
+    text-align: center;
+    padding: 24px 16px;
+    transition: all 0.25s;
+
+    &:hover {
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+    }
+    &-title {
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 164px;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 48px;
+    }
+    &-subtitle {
+        font-weight: normal;
+        font-size: 0.875rem;  /* stylelint-disable-line number-max-precision */
+        line-height: 1.5;
+        max-width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 72px;
+        color: #2a3052; /* stylelint-disable-line color-no-hex */
+    }
+    &-btn-group {
+        .btn {
+            color: #2196f3; /* stylelint-disable-line color-no-hex */
+            border: 1px solid transparent;
+            margin: 8px;
+            transition: all 0.25s;
+
+            &:hover {
+                border: 1px solid #2196f3; /* stylelint-disable-line color-no-hex */
+            }
+        }
+    }
+}

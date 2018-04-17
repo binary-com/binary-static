@@ -1,6 +1,13 @@
 @supports (display: grid) {
     #app_contents {
         margin: 70px 0 40px;
+        padding-top: 75px;
+
+        .default {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
     /* trade-app layout */
     #trade_container {
@@ -80,6 +87,12 @@
                 }
             }
         }
+    }
+    .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, [col-start] 1fr);
+        grid-template-rows: repeat(2, [row] auto);
+        grid-gap: 20px;
     }
 }
 
