@@ -1,9 +1,9 @@
-const BinarySocket       = require('../../../base/socket');
-const Client             = require('../../../base/client');
-const localize           = require('../../../../_common/localize').localize;
-const State              = require('../../../../_common/storage').State;
-const createElement      = require('../../../../_common/utility').createElement;
-const Url                = require('../../../../_common/url');
+const BinarySocket  = require('../../../base/socket');
+const Client        = require('../../../base/client');
+const localize      = require('../../../../_common/localize').localize;
+const State         = require('../../../../_common/storage').State;
+const createElement = require('../../../../_common/utility').createElement;
+const Url           = require('../../../../_common/url');
 
 const WelcomePage = (() => {
     const onLoad = () => {
