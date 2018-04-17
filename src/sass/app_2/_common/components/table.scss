@@ -30,16 +30,13 @@
             text-align: left;
             border: none;
             background-color: #f4f4f6; /* stylelint-disable-line color-no-hex */
-
-            &:first-child {
-                padding-left: 16px;
-                border-top-left-radius: 4px;
-            }
-            &:last-child {
-                padding-right: 16px;
-                border-top-right-radius: 4px;
-            }
         }
+    }
+    th:first-child, td:first-child {
+        padding-left: 32px;
+    }
+    th:last-child, td:last-child {
+        padding-right: 32px;
     }
     &-body {
         .table-row:hover {
@@ -48,13 +45,6 @@
         td {
             padding: 12px;
             border: none;
-
-            &:first-child {
-                padding-left: 16px;
-            }
-            &:last-child {
-                padding-right: 16px;
-            }
         }
         .profit {
             color: #4caf50; /* stylelint-disable-line color-no-hex */
