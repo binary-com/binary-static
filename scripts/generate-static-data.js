@@ -197,6 +197,9 @@ const texts = [
     'Invalid email address.',
     'Thank you for signing up! Please check your email to complete the registration process.',
 
+    // welcome screen after virtual account opening
+    'Upgrade now',
+
     // real account opening
     'Please select',
     'Minimum of [_1] characters required.',
