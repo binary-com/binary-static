@@ -88,9 +88,9 @@
                             border-color: $COLOR_BLUE;
                         }
                         .nav-caret {
-                            position: relative;
+                            position: absolute;
                             left: 98%;
-                            bottom: 17px;
+                            bottom: 25px;
                         }
                     }
                     #currency .current {
@@ -118,12 +118,6 @@
                     .header-current {
                         .gr-row {
                             cursor: pointer;
-                            background-color: $COLOR_GRAY;
-                        }
-                    }
-                    #period {
-                        .current {
-                            background-color: $COLOR_GRAY;
                         }
                     }
                 }
@@ -133,13 +127,19 @@
             }
             .header-current {
                 overflow: hidden;
-                width: 100%;
+                width: auto;
+                border: 1px solid $COLOR_GRAY;
+                border-bottom: none;
+                background-color: $COLOR_WHITE;
 
+                &.primary-border-color {
+                    border-color: $COLOR_BLUE;
+                }
                 .gr-row {
                     margin: 0;
                 }
                 &-text {
-                    padding-top: 10px;
+                    padding: 10px 5px;
                     font-weight: 700;
 
                     &:first-child {
@@ -148,6 +148,19 @@
                     &:last-child {
                         padding-left: 5px;
                     }
+                }
+                > div {
+                    background-color: $COLOR_WHITE;
+                }
+                &:hover {
+                    &, + #period .current {
+                        border-color: $COLOR_BLUE;
+                    }
+                }
+                .nav-caret {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 95%;
                 }
             }
             #period {
@@ -159,15 +172,12 @@
                 }
                 .current {
                     height: auto;
+                    border-top: none;
                     padding-bottom: 7px !important;
 
                     div.head {
                         font-weight: bold;
                         margin-bottom: 5px;
-                    }
-                    .nav-caret {
-                        bottom: 20px;
-                        left: 97.5%;
                     }
                 }
             }
@@ -608,15 +618,23 @@
         #tab_portfolio-content {
             overflow-x: auto;
         }
-        #tab_explanation-content #winning_higherlower {
-            display: flex;
-            flex-direction: column;
+        #tab_explanation-content {
+            .hide-mb {
+                display: none;
+            }
+            .show-mb {
+                display: block;
+            }
+            #winning_higherlower {
+                display: flex;
+                flex-direction: column;
 
-            p {
-                margin-top: 0;
+                p {
+                    margin-top: 0;
 
-                &:first-child {
-                    order: 2;
+                    &:first-child {
+                        order: 2;
+                    }
                 }
             }
         }

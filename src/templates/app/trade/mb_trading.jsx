@@ -79,15 +79,6 @@ const MBTrading = () => (
                             </div>
                             <div className='gr-row selection_wrapper'>
                                 <div className='gr-12 gr-no-gutter'>
-                                    <div className='trade_form'>
-                                        <div className='header-current'>
-                                            <div className='gr-row'>
-                                                <div className='header-current-text gr-6'>{it.L('End Time')}</div>
-                                                <div className='header-current-text gr-6'>{it.L('Trading Window')}</div>
-                                            </div>
-                                        </div>
-                                        <FormItem id='period' class_list='gr-12' />
-                                    </div>
                                     <div className='gr-row'>
                                         <div className='gr-3 gr-6-m gr-no-gutter gr-12-m gr-order-2-m'>
                                             <div className='trade_form'>
@@ -101,6 +92,13 @@ const MBTrading = () => (
                                             </div>
                                         </div>
                                         <div className='trade_form gr-9 gr-6-m gr-no-gutter-right gr-12-m gr-no-gutter-left-m'>
+                                            <div className='header-current'>
+                                                <div className='gr-row'>
+                                                    <span className='nav-caret' />
+                                                    <div className='header-current-text gr-6'>{it.L('Trading Window')}</div>
+                                                    <div className='header-current-text gr-6'>{it.L('Remaining Time')}</div>
+                                                </div>
+                                            </div>
                                             <FormItem id='period' class_list='gr-12' />
                                         </div>
                                     </div>

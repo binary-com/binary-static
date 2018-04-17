@@ -282,7 +282,7 @@ const MBContract = (() => {
                         html : el_contract_type,
                         class: 'gr-row',
                     });
-                    $list[is_jp_client ? 'append' : 'html']($current);
+                    $list.append($current);
                     if (is_current) {
                         setCurrentItem($category, category.value);
                     }

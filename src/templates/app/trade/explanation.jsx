@@ -32,8 +32,10 @@ const Explanation = () => (
 
             <div id='winning_higherlower' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
-                <p>{it.L('If you select "Higher", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>.')}</p>
-                <p>{it.L('If you select "Lower", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>.')}</p>
+                <p className='hide-mb'>{it.L('If you select "Higher", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>.')}</p>
+                <p className='hide-mb'>{it.L('If you select "Lower", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>.')}</p>
+                <p className='show-mb'>{it.L('If you select "Higher", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>.')}</p>
+                <p className='show-mb'>{it.L('If you select "Lower", you win the payout if the <strong>exit spot</strong> is lower than or equal to the <strong>barrier</strong>.')}</p>
             </div>
 
             <div id='winning_overunder' className='invisible'>
@@ -148,7 +150,8 @@ const Explanation = () => (
             <div id='explain_higherlower' className='invisible'>
                 <h3>{it.L('Exit spot')}</h3>
                 <p>{it.L('The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>.')}</p>
-                <p>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).')}</p>
+                <p className='hide-mb'>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).')}</p>
+                <p className='show-mb'>{it.L('The <strong>remaining time</strong> is the time remaining until the contract expires.')}</p>
                 <p>{it.L('The <strong>start time</strong> is when the contract is processed by our servers.')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')}</p>
             </div>

@@ -754,6 +754,10 @@
     }
 }
 
+.show-mb {
+    display: none;
+}
+
 @media all and (max-width: 768px) {
     #trading_bottom_content ul#betsBottomPage {
         flex-direction: column;
