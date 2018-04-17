@@ -114,7 +114,7 @@ const Signup = () => (
                                         thead: [
                                             [
                                                 { text: it.L('Probability of returns') },
-                                                { text: it.L('Commission (as % of stake)') },
+                                                { text: it.L('Commission') },
                                             ],
                                         ],
                                         tbody: [
