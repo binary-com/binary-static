@@ -42,6 +42,8 @@ class Statement extends React.PureComponent {
     constructor(props) {
         super(props);
 
+        this.handleScroll = this.handleScroll.bind(this);
+        this.loadNextChunk = this.loadNextChunk.bind(this);
         this.getNextBatch = this.getNextBatch.bind(this);
 
         const columns = [
@@ -82,22 +84,14 @@ class Statement extends React.PureComponent {
         this.state = {
             columns,
             data_source  : [],
-            is_loaded_all: false,
+            has_loaded_all: false,
             chunks       : 1
         };
     }
 
-    handleScroll() {
-        const {scrollTop, scrollHeight, clientHeight} = document.scrollingElement;
-        const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
-        if (left_to_scroll === 0) {
-            console.log('reached end');
-        }
-    }
-
     componentDidMount() {
         this.getNextBatch();
-        this._debouncedHandleScroll = debounce(this.handleScroll);
+        this._debouncedHandleScroll = debounce(this.handleScroll, 200);
         window.addEventListener('scroll', this._debouncedHandleScroll, false);
     }
 
@@ -105,10 +99,28 @@ class Statement extends React.PureComponent {
         window.removeEventListener('scroll', this._debouncedHandleScroll, false);
     }
 
-    getNextBatch() {
-        if (this.state.is_loaded_all) return;
+    handleScroll() {
+        const {scrollTop, scrollHeight, clientHeight} = document.scrollingElement;
+        const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
+        if (left_to_scroll === 0) {
+            this.loadNextChunk();
+        }
+    }
 
-        const BATCH_SIZE = 200;
+    loadNextChunk() {
+        const { chunk_size } = this.props;
+        const { chunks, data_source } = this.state;
+        this.setState({ chunks: chunks + 1 });
+        if (data_source.length <= (chunks + 1) * chunk_size) {
+            // last chunk has been loaded
+            this.getNextBatch();
+        }
+    }
+
+    getNextBatch() {
+        if (this.state.has_loaded_all) return;
+
+        const BATCH_SIZE = 20;
         const req = {
             statement  : 1,
             description: 1,
@@ -120,12 +132,13 @@ class Statement extends React.PureComponent {
         const is_jp_client = jpClient();
 
         BinarySocket.send(req).then((response) => {
+            console.log(response);
             const formatted_transactions = response.statement.transactions
                 .map(transaction => getStatementData(transaction, currency, is_jp_client));
 
             this.setState({
                 data_source  : [...this.state.data_source, ...formatted_transactions],
-                is_loaded_all: formatted_transactions.length < BATCH_SIZE,
+                has_loaded_all: formatted_transactions.length < BATCH_SIZE,
             });
         });
     }
