@@ -10,10 +10,10 @@ function offsetPageTop(el) {
 }
 
 /* TODO:
-      1. to implement sorting by column (ASC/DESC)
-      2. to implement filtering per column
-      3. to make pagination more customisable
+      1. implement sorting by column (ASC/DESC)
+      2. implement filtering per column
 */
+
 class DataTable extends React.Component {
     constructor(props) {
         super(props);
@@ -23,10 +23,8 @@ class DataTable extends React.Component {
     fixHeaderInPlace(el_table_container) {
         if (!el_table_container) return;
         const el_table = el_table_container.querySelector('.table');
-        const el_clone = el_table.cloneNode(true);
-        el_clone.classList.add('table-clone');
-        el_clone.style.top = offsetPageTop(el_table) + 'px';
-        el_table_container.appendChild(el_clone);
+        const el_table_clone = el_table_container.querySelector('.table-clone');
+        el_table_clone.style.top = offsetPageTop(el_table) + 'px';
     }
 
     renderRow(transaction, id) {
@@ -66,6 +64,23 @@ class DataTable extends React.Component {
 
                     <tbody className='table-body'>
                         {this.renderBodyRows()}
+                    </tbody>
+                </table>
+
+                {/*
+                    cloned table with one row for fixed header
+                    inspired by
+                    https://stackoverflow.com/questions/4709390
+                */}
+                <table className='table table-clone'>
+                    <thead className='table-head'>
+                        <tr className='table-row'>
+                            {this.renderHeaders()}
+                        </tr>
+                    </thead>
+
+                    <tbody className='table-body'>
+                        {this.renderRow(this.props.data_source[0], 0)}
                     </tbody>
                 </table>
             </div>
