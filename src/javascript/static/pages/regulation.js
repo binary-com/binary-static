@@ -19,6 +19,13 @@ const Regulation = (() => {
             if ($element && $element.length) {
                 $.scrollTo($element, 500);
             }
+
+            $accordion.on('accordionactivate', () => {
+                // if EU passport rights tab is active, call relocateLinks to initialize map coordinates
+                if (!$accordion.accordion('option', 'active')) {
+                    relocateLinks();
+                }
+            });
         });
 
         const coords    = [];
@@ -32,6 +39,7 @@ const Regulation = (() => {
                 let c = '';
                 const new_width = $selector[0].getBoundingClientRect().width.toFixed(2);
                 coords[index].split(',').map((v) => { c += (c ? ',' : '') + ((v * new_width) / 900).toFixed(2); });
+
                 $(this).attr('coords', c);
             });
         };

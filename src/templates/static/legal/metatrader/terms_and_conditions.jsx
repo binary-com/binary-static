@@ -3,7 +3,7 @@ import React from 'react';
 const TermsAndConditions = () => (
     <div id='mt-tnc'>
         <h2>{it.L('Terms and Conditions')}</h2>
-        <p><i>{it.L('Version 5. Last modified 2018-03-23.')}</i></p>
+        <p><i>{it.L('Version 5. Last modified 2018-04-10.')}</i></p>
 
         <h2>{it.L('A. Introduction and Scope of Agreement')}</h2>
         <ol>
