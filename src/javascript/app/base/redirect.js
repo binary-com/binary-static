@@ -8,6 +8,7 @@ const Redirect = (() => {
             reset_password        : { path: 'user/reset_passwordws' },
             payment_withdraw      : { path: 'cashier/forwardws', query: 'action=withdraw' },
             payment_agent_withdraw: { path: 'paymentagent/withdrawws' },
+            mt5_password_reset    : { path: 'user/metatrader' },
         };
 
         const params = Url.paramsHash();
