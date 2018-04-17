@@ -1,9 +1,10 @@
-const BinarySocket  = require('../../../base/socket');
-const Client        = require('../../../base/client');
-const localize      = require('../../../../_common/localize').localize;
-const State         = require('../../../../_common/storage').State;
-const createElement = require('../../../../_common/utility').createElement;
-const Url           = require('../../../../_common/url');
+const BinarySocket   = require('../../../base/socket');
+const Client         = require('../../../base/client');
+const localize       = require('../../../../_common/localize').localize;
+const State          = require('../../../../_common/storage').State;
+const createElement  = require('../../../../_common/utility').createElement;
+const getElementById = require('../../../../_common/common_functions').getElementById;
+const Url            = require('../../../../_common/url');
 
 const WelcomePage = (() => {
     const onLoad = () => {
@@ -15,7 +16,7 @@ const WelcomePage = (() => {
 
             const landing_company   = State.getResponse('landing_company');
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
-            const upgrade_btn       = document.getElementById('upgrade_btn');
+            const upgrade_btn       = getElementById('upgrade_btn');
             const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
             const show_welcome_msg  = upgrade_info.can_upgrade;
 
@@ -23,7 +24,7 @@ const WelcomePage = (() => {
 
             if (allowed_currencies && allowed_currencies.length > 0) {
                 for (let i=0; i < allowed_currencies.length; i++) {
-                    const el = document.getElementById(allowed_currencies[i]);
+                    const el = getElementById(allowed_currencies[i]);
                     if (el) {
                         el.classList.remove('invisible');
                     }
@@ -37,7 +38,7 @@ const WelcomePage = (() => {
                 }
             };
 
-            const welcome_msg = document.getElementById('welcome_container');
+            const welcome_msg = getElementById('welcome_container');
             if (welcome_msg) {
                 welcome_msg.setVisibility(1);
             }
