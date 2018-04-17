@@ -29,7 +29,7 @@ const WelcomePage = () => (
                                 <img id='ETH' className='invisible' src={it.url_for('images/pages/set_currency/eth_icon.svg')} />
                                 <img id='ETC' className='invisible' src={it.url_for('images/pages/set_currency/etc_icon.svg')} />
                             </p>
-                            <p className='font-s'>{it.L('Upgrade to a real account and start trading using a wide range of crypto and fiat currencies.')}</p>
+                            <p className='font-s'>{it.L('Upgrade to a real money account and start trading using a wide range of currencies.')}</p>
                         </div>
                         <div className='box-item-end'>
                             <p><a id='upgrade_btn' href='javascript:;' className='button button-disabled' /></p>
