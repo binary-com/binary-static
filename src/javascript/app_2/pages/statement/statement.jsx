@@ -5,6 +5,7 @@ import BinarySocket from '../../../app/base/socket';
 import { toJapanTimeIfNeeded } from '../../../app/base/clock';
 import { jpClient } from '../../../app/common/country_base';
 import { formatMoney } from '../../../app/common/currency';
+import { debounce } from '../../../app/pages/trade/common';
 import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
 import DataTable from '../../components/elements/data_table.jsx';
@@ -82,14 +83,26 @@ class Statement extends React.PureComponent {
             columns,
             data_source  : [],
             is_loaded_all: false,
+            chunks       : 1
         };
     }
 
+    handleScroll() {
+        const {scrollTop, scrollHeight, clientHeight} = document.scrollingElement;
+        const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
+        if (left_to_scroll === 0) {
+            console.log('reached end');
+        }
+    }
+
     componentDidMount() {
-        // BinarySocket.send({ oauth_apps: 1 }).then((response) => {
-        //     console.log('oauth response', response);
-        // });
         this.getNextBatch();
+        this._debouncedHandleScroll = debounce(this.handleScroll);
+        window.addEventListener('scroll', this._debouncedHandleScroll, false);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this._debouncedHandleScroll, false);
     }
 
     getNextBatch() {
@@ -124,13 +137,16 @@ class Statement extends React.PureComponent {
 
         return (
             <DataTable
-                {...this.props}
-                data_source={this.state.data_source}
+                data_source={this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size)}
                 columns={this.state.columns}
-                onCloseToEnd={this.getNextBatch}
+                has_fixed_header={true}
             />
         );
     }
 }
+
+Statement.defaultProps = {
+    chunk_size: 10,
+};
 
 export default Statement;

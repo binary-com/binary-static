@@ -22,7 +22,6 @@
     }
     &-head {
         min-height: 40px;
-        visibility: hidden; // hide original header, show only fixed one
         background-color: #fafafb; /* stylelint-disable-line color-no-hex */
 
         th {
