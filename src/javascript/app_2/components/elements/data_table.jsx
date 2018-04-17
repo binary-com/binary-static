@@ -58,7 +58,7 @@ class DataTable extends React.Component {
     }
 
     renderHeaders() {
-        return this.props.columns.map(col => <th key={col.data_index}>{col.title}</th>);
+        return this.props.columns.map(col => <th className={col.data_index} key={col.data_index}>{col.title}</th>);
     }
 
     render() {

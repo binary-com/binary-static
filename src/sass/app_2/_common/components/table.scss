@@ -3,6 +3,8 @@
     color: #333333; /* stylelint-disable-line color-no-hex */
     font-size: 16px;
     border-collapse: collapse;
+    table-layout: fixed;
+    width: 100vw;
 
     &-row {
         background-color: $COLOR_WHITE;
@@ -30,7 +32,7 @@
     }
     &-tbody {
         .table-row:hover {
-            background-color: #fdf4ec; /* stylelint-disable-line color-no-hex */
+            background-color: #e4e6f1; /* stylelint-disable-line color-no-hex */
         }
         td {
             padding: 12px;
@@ -44,10 +46,30 @@
             }
         }
         .profit {
-            color: #2e8836; /* stylelint-disable-line color-no-hex */
+            color: #4caf50; /* stylelint-disable-line color-no-hex */
         }
         .loss {
-            color: #c03; /* stylelint-disable-line color-no-hex */
+            color: #f44336; /* stylelint-disable-line color-no-hex */
+        }
+        .amount {
+            font-weight: bold;
+        }
+    }
+    // column widths
+    .date, .ref {
+        width: 6.5em;
+    }
+    .action {
+        width: 7em;
+        text-align: right;
+    }
+    .payout, .amount, .balance {
+        width: 6em;
+        text-align: right;
+    }
+    @media screen and (max-width: 980px) {
+        .desc {
+            display: none;
         }
     }
 }
