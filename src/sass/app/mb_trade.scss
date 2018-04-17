@@ -320,7 +320,7 @@
                 height: 75px;
 
                 > img {
-                    height: 40px;
+                    padding-top: 7px;
                 }
             }
             #underlying {
@@ -401,6 +401,10 @@
                 .buy-price {
                     margin-top: 5px;
                 }
+            }
+            #disable-overlay {
+                top: 81px;
+                height: calc(100% - 81px);
             }
         }
         .price-table {
