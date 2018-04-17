@@ -89,15 +89,28 @@
                         }
                         .nav-caret {
                             position: absolute;
-                            left: 98%;
+                            right: 0.6%;
                             bottom: 25px;
                         }
                     }
-                    #currency .current {
-                        height: 25px;
-                        border: 1px solid $COLOR_GRAY;
-                        border-top-color: $COLOR_LIGHT_GRAY;
-                        border-right: none;
+                    #currency {
+                        .list > div {
+                            height: 27px;
+                        }
+                        .current {
+                            height: 25px;
+                            border: 1px solid $COLOR_GRAY;
+                            border-top-color: $COLOR_LIGHT_GRAY;
+
+                            .nav-caret {
+                                right: 65%;
+                                bottom: 16px;
+
+                                &:not(.invisible) + .symbols:before {
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
                     }
                     &#category {
                         .current, .list > div {
@@ -160,7 +173,7 @@
                 .nav-caret {
                     position: absolute;
                     bottom: 15px;
-                    left: 95%;
+                    right: 3%;
                 }
             }
             #period {

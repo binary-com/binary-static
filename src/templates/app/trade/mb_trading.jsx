@@ -86,8 +86,8 @@ const MBTrading = () => (
                                             </div>
                                             <div className='trade_form gr-12 no-margin'>
                                                 <div className='gr-row'>
-                                                    <FormItem id='currency' className='gr-3 gr-no-gutter' class_current='gr-row' class_list='gr-3 gr-no-gutter' />
-                                                    <input className='gr-9 center-text' type='text' id='payout' maxLength='15' />
+                                                    <FormItem id='currency' className='gr-5 gr-no-gutter' class_current='gr-row' class_list='gr-5 gr-no-gutter' />
+                                                    <input className='gr-7 center-text' type='text' id='payout' maxLength='15' />
                                                 </div>
                                             </div>
                                         </div>
