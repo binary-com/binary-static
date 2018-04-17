@@ -6,11 +6,21 @@
     table-layout: fixed;
     width: 100vw;
 
+    &-container {
+        padding-top: 100px;
+    }
+    &-filter {
+        height: 100px;
+        position: fixed;
+        background-color: $COLOR_WHITE;
+        width: 100%;
+        transform: translateY(-100%);
+    }
     &-row {
         background-color: $COLOR_WHITE;
         border-bottom: 1px solid #d2d3da; /* stylelint-disable-line color-no-hex */
     }
-    &-thead {
+    &-head {
         min-height: 40px;
 
         th {
@@ -30,7 +40,7 @@
             }
         }
     }
-    &-tbody {
+    &-body {
         .table-row:hover {
             background-color: #e4e6f1; /* stylelint-disable-line color-no-hex */
         }
@@ -66,6 +76,18 @@
     .payout, .amount, .balance {
         width: 6em;
         text-align: right;
+    }
+    // styles for fixed table header
+    &.table-clone {
+        position: fixed;
+        pointer-events: none;
+
+        .table-head {
+            pointer-events: auto;
+        }
+        .table-body {
+            visibility: hidden;
+        }
     }
     @media screen and (max-width: 980px) {
         .desc {

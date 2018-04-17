@@ -20,23 +20,13 @@ class DataTable extends React.Component {
         this.state = { chunks: 1 };
     }
 
-    appendFixedHeader(el_table_container) {
+    fixHeaderInPlace(el_table_container) {
+        if (!el_table_container) return;
         const el_table = el_table_container.querySelector('.table');
-        const el_table_clone = el_table.cloneNode(true);
-        // console.log(window.el = el_table_clone);
-        const el_thead_clone = el_table_clone.querySelector('.table-thead');
-        const el_tbody_clone = el_table_clone.querySelector('.table-tbody');
-
-        el_table_clone.id = 'table_clone';
-        el_table_clone.style.position = 'fixed';
-        el_table_clone.style.top = offsetPageTop(el_table) + 'px';
-        el_table_clone.style.pointerEvents = 'none';
-
-        el_thead_clone.style.pointerEvents = 'auto';
-
-        el_tbody_clone.style.visibility = 'hidden';
-
-        el_table_container.appendChild(el_table_clone);
+        const el_clone = el_table.cloneNode(true);
+        el_clone.classList.add('table-clone');
+        el_clone.style.top = offsetPageTop(el_table) + 'px';
+        el_table_container.appendChild(el_clone);
     }
 
     renderRow(transaction, id) {
@@ -63,15 +53,18 @@ class DataTable extends React.Component {
 
     render() {
         return (
-            <div className='table-container' ref={this.appendFixedHeader}>
+            <div className='table-container' ref={this.fixHeaderInPlace}>
+                <div className='table-filter'>
+                    two datepickers
+                </div>
                 <table className='table'>
-                    <thead className='table-thead'>
+                    <thead className='table-head'>
                         <tr className='table-row'>
                             {this.renderHeaders()}
                         </tr>
                     </thead>
 
-                    <tbody className='table-tbody'>
+                    <tbody className='table-body'>
                         {this.renderBodyRows()}
                     </tbody>
                 </table>
