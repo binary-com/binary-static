@@ -43,8 +43,7 @@ const WelcomePage = (() => {
             }
 
             if (show_welcome_msg) {
-
-                setButtonLink('new_account/account_type', 'Upgrade now');
+                setButtonLink(upgrade_info.upgrade_link, 'Upgrade now');
                 // revert to upgrade_info.upgrade_link after ICO
             }
         });

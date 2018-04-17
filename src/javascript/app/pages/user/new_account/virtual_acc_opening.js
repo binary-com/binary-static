@@ -106,16 +106,6 @@ const VirtualAccOpening = (() => {
             const residence   = response.echo_req.residence;
             Client.set('residence', residence, new_account.client_id);
             LocalStore.remove('gclid');
-<<<<<<< HEAD
-            BinarySocket.send({ landing_company: residence }).then(() => {
-                Client.processNewAccount({
-                    email       : new_account.email,
-                    loginid     : new_account.client_id,
-                    token       : new_account.oauth_token,
-                    is_virtual  : true,
-                    redirect_url: urlFor(`new_account/${jp_client ? 'landing_page' : 'welcome'}`),
-                });
-=======
             State.set('skip_response', 'authorize');
             BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
                 if (!response_auth.error) {
@@ -124,10 +114,9 @@ const VirtualAccOpening = (() => {
                         loginid     : new_account.client_id,
                         token       : new_account.oauth_token,
                         is_virtual  : true,
-                        redirect_url: is_jp_client ? urlFor('new_account/landing_page') : urlFor(Client.getUpgradeInfo().upgrade_link),
+                        redirect_url: is_jp_client ? urlFor('new_account/landing_page') : urlFor('new_account/welcome'),
                     });
                 }
->>>>>>> f1c5aa12eb4f9b60b4666877369c31a962709ce7
             });
             return true;
         }
