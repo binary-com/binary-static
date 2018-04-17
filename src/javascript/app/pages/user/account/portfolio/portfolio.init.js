@@ -3,7 +3,6 @@ const ViewPopup           = require('../../view_popup/view_popup');
 const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const BinarySocket        = require('../../../../base/socket');
-const jpClient            = require('../../../../common/country_base').jpClient;
 const formatMoney         = require('../../../../common/currency').formatMoney;
 const GetAppDetails       = require('../../../../common/get_app_details');
 const localize            = require('../../../../../_common/localize').localize;
@@ -18,7 +17,7 @@ const PortfolioInit = (() => {
         is_initialized,
         is_first_response,
         $portfolio_loading,
-        jp_client;
+        is_jp_client;
 
     const init = () => {
         updateBalance();
@@ -29,7 +28,7 @@ const PortfolioInit = (() => {
         currency           = '';
         oauth_apps         = {};
         $portfolio_loading = $('#portfolio-loading');
-        jp_client          = jpClient();
+        is_jp_client       = Client.isJPClient();
         $portfolio_loading.show();
         showLoadingImage($portfolio_loading[0]);
         is_first_response = true;
@@ -55,14 +54,14 @@ const PortfolioInit = (() => {
         const $div      = $('<div/>');
         $div.append($('<tr/>', { class: `tr-first ${new_class} ${data.contract_id}`, id: data.contract_id })
             .append($('<td/>', { class: 'ref' }).append($(`<span ${GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id])} data-balloon-position="right">${data.transaction_id}</span>`)))
-            .append($('<td/>', { class: 'payout' }).append($('<strong/>', { html: formatMoney(data.currency, data.payout) })))
+            .append($('<td/>', { class: 'payout' }).append($('<strong/>', { html: +data.payout ? formatMoney(data.currency, data.payout) : '-' })))
             .append($('<td/>', { class: 'details', text: data.longcode }))
             .append($('<td/>', { class: 'purchase' }).append($('<strong/>', { html: formatMoney(data.currency, data.buy_price) })))
             .append($('<td/>', { class: 'indicative' }).append($('<strong/>', { class: 'indicative_price', text: '--.--' })))
             .append($('<td/>', { class: 'button' }).append($('<button/>', { class: 'button open_contract_details nowrap', contract_id: data.contract_id, text: localize('View') }))))
             .append($('<tr/>', { class: `tr-desc ${new_class} ${data.contract_id}` }).append($('<td/>', { colspan: '6', text: data.longcode })));
 
-        if (jp_client) {
+        if (is_jp_client) {
             const $td = $('<td/>', { class: 'expires nowrap' }).append($('<strong/>', { text: toJapanTimeIfNeeded(data.expiry_time) }));
             $td.insertAfter($div.find('.payout'));
         }
@@ -95,6 +94,7 @@ const PortfolioInit = (() => {
              **/
             $('#portfolio-no-contract').hide();
             $.each(data.portfolio.contracts, (ci, c) => {
+                // TODO: remove ico exception when all ico contracts are removed
                 if (!getPropertyValue(values, c.contract_id) && c.contract_type !== 'BINARYICO') {
                     values[c.contract_id]           = {};
                     values[c.contract_id].buy_price = c.buy_price;
@@ -220,8 +220,7 @@ const PortfolioInit = (() => {
     };
 
     const onUnload = () => {
-        BinarySocket.send({ forget_all: 'proposal_open_contract' });
-        BinarySocket.send({ forget_all: 'transaction' });
+        BinarySocket.send({ forget_all: ['proposal_open_contract', 'transaction'] });
         $('#portfolio-body').empty();
         $('#portfolio-content').setVisibility(0);
         is_initialized = false;

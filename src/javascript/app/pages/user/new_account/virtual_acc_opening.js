@@ -1,22 +1,22 @@
 const Cookies          = require('js-cookie');
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
-const jpClient         = require('../../../common/country_base').jpClient;
 const FormManager      = require('../../../common/form_manager');
 const TrafficSource    = require('../../../common/traffic_source');
 const makeOption       = require('../../../../_common/common_functions').makeOption;
 const localize         = require('../../../../_common/localize').localize;
 const LocalStore       = require('../../../../_common/storage').LocalStore;
+const State            = require('../../../../_common/storage').State;
 const urlFor           = require('../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
-    let jp_client;
+    let is_jp_client;
 
     const onLoad = () => {
-        jp_client = jpClient();
-        if (jp_client) {
+        is_jp_client = Client.isJPClient();
+        if (is_jp_client) {
             handleJPForm();
         } else {
             BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
@@ -106,6 +106,7 @@ const VirtualAccOpening = (() => {
             const residence   = response.echo_req.residence;
             Client.set('residence', residence, new_account.client_id);
             LocalStore.remove('gclid');
+<<<<<<< HEAD
             BinarySocket.send({ landing_company: residence }).then(() => {
                 Client.processNewAccount({
                     email       : new_account.email,
@@ -114,6 +115,19 @@ const VirtualAccOpening = (() => {
                     is_virtual  : true,
                     redirect_url: urlFor(`new_account/${jp_client ? 'landing_page' : 'welcome'}`),
                 });
+=======
+            State.set('skip_response', 'authorize');
+            BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
+                if (!response_auth.error) {
+                    Client.processNewAccount({
+                        email       : new_account.email,
+                        loginid     : new_account.client_id,
+                        token       : new_account.oauth_token,
+                        is_virtual  : true,
+                        redirect_url: is_jp_client ? urlFor('new_account/landing_page') : urlFor(Client.getUpgradeInfo().upgrade_link),
+                    });
+                }
+>>>>>>> f1c5aa12eb4f9b60b4666877369c31a962709ce7
             });
             return true;
         }

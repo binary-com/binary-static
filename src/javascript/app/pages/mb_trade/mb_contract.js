@@ -1,10 +1,11 @@
 const moment        = require('moment');
 const MBDefaults    = require('./mb_defaults');
 const Client        = require('../../base/client');
-const jpClient      = require('../../common/country_base').jpClient;
+const SocketCache   = require('../../base/socket_cache');
 const getLanguage   = require('../../../_common/language').get;
 const localize      = require('../../../_common/localize').localize;
 const padLeft       = require('../../../_common/string_util').padLeft;
+const toTitleCase   = require('../../../_common/string_util').toTitleCase;
 const isEmptyObject = require('../../../_common/utility').isEmptyObject;
 
 /*
@@ -31,9 +32,9 @@ const MBContract = (() => {
         Y: 'year',
     };
 
-    const durationText = (duration) => {
+    const durationText = (duration, is_jp_client) => {
         let dur = duration;
-        if (dur && jpClient()) {
+        if (dur && is_jp_client) {
             dur = dur.replace(/([a-z])/, '$1<br>');
             Object.keys(duration_map).forEach((key) => {
                 dur = dur.replace(key, localize(duration_map[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
@@ -42,7 +43,7 @@ const MBContract = (() => {
         return dur.toUpperCase();
     };
 
-    const periodText = (trading_period) => {
+    const periodText = (trading_period, is_jp_client) => {
         let date_start,
             date_expiry,
             duration;
@@ -59,10 +60,10 @@ const MBContract = (() => {
 
         const toDate = (date) => {
             let text_value = moment.utc(date * 1000)
-                .utcOffset(jpClient() ? '+09:00' : '+00:00')
+                .utcOffset(Client.isJPClient() ? '+09:00' : '+00:00')
                 .locale(getLanguage().toLowerCase())
                 .format('MMM Do, HH:mm');
-            if (jpClient()) {
+            if (Client.isJPClient()) {
                 text_value = text_value.replace(/08:59/, '09:00«');
             }
             return text_value;
@@ -70,11 +71,11 @@ const MBContract = (() => {
         return {
             start   : toDate(date_start),
             end     : toDate(date_expiry),
-            duration: durationText(duration),
+            duration: durationText(duration, is_jp_client),
         };
     };
 
-    const populatePeriods = (rebuild) => {
+    const populatePeriods = (should_rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         let trading_period,
             start_end;
@@ -95,16 +96,30 @@ const MBContract = (() => {
         }
         trading_period_array.sort(sortByExpiryTime);
         const $list = $period.find('.list');
-        if (rebuild) {
+        if (should_rebuild) {
             $list.empty();
         }
+        const is_jp_client = Client.isJPClient();
+
+        const duration_class    = 'gr-3 gr-no-gutter';
+        const end_time_class    = is_jp_client ? 'gr-6 gr-5-m' : 'gr-6';
+        const remain_time_class = is_jp_client ? 'gr-3 gr-4-m gr-no-gutter' : 'gr-6';
         const makeItem = (period) => {
-            const text = periodText(period);
-            return $('<div/>', {
-                value: period,
-                html : `<div class="duration gr-3 gr-no-gutter">${text.duration}</div><div class="end gr-6 gr-5-m">${text.end}</div><div class="remaining-time gr-3 gr-4-m gr-no-gutter"></div>`,
-                class: 'gr-row',
-            });
+            const text = periodText(period, is_jp_client);
+
+            const $div_period      = $('<div/>', { value: period, class: 'gr-row' });
+
+            const $div_end_time    = $('<div/>', { class: `end ${end_time_class}`, text: text.end });
+            const $div_remain_time = $('<div/>', { class: `remaining-time ${remain_time_class}` });
+
+            if (is_jp_client) {
+                const $div_duration = $('<div/>', { class: `duration ${duration_class}`, html: text.duration });
+                $div_period.append($div_duration);
+            }
+
+            $div_period.append($div_end_time).append($div_remain_time);
+
+            return $div_period;
         };
         if ($list.children().length === 0) { // populate for the first time
             let default_value = MBDefaults.get('period');
@@ -118,7 +133,7 @@ const MBContract = (() => {
                 }
             });
             MBDefaults.set('period', $period.attr('value'));
-            MBContract.displayRemainingTime(true);
+            displayRemainingTime(true, is_jp_client);
         } else { // update options
             let existing_array  = [];
             const missing_array = [];
@@ -156,8 +171,8 @@ const MBContract = (() => {
         }
     };
 
-    const displayRemainingTime = (recalculate) => {
-        if (typeof $durations === 'undefined' || recalculate) {
+    const displayRemainingTime = (should_recalculate, is_jp_client) => {
+        if (typeof $durations === 'undefined' || should_recalculate) {
             // period_value = MBDefaults.get('period');
             $period    = $('#period');
             $durations = $period.find('.list > div, .current > div');
@@ -169,6 +184,8 @@ const MBContract = (() => {
 
             const time_left = parseInt($duration.attr('value').split('_')[1]) - window.time.unix();
             if (time_left <= 0) {
+                // clear the expired contracts_for response
+                SocketCache.remove('contracts_for', 1);
                 location.reload();
             } else if (time_left < 120) {
                 $count_down_timer.addClass('alert');
@@ -186,17 +203,26 @@ const MBContract = (() => {
                 second: duration.seconds(),
             };
 
+            let duration_unit_to_show;
             Object.keys(all_durations).forEach((key) => {
                 if (/month|day/.test(key)) {
                     if (all_durations[key]) {
-                        remaining_month_day_string.push(all_durations[key] + localize(key[0].toUpperCase()));
+                        if (is_jp_client) {
+                            duration_unit_to_show = key[0];
+                            remaining_month_day_string
+                                .push(all_durations[key] + localize(toTitleCase(duration_unit_to_show)));
+                        } else {
+                            duration_unit_to_show = all_durations[key] === 1 ? key : `${key}s`;
+                            remaining_month_day_string
+                                .push(`${all_durations[key]} ${localize(toTitleCase(duration_unit_to_show))}`);
+                        }
                     }
                 } else {
                     remaining_time_string.push(padLeft(all_durations[key] || 0, 2, '0'));
                 }
             });
 
-            $count_down_timer.text(`${remaining_month_day_string.join('')} ${remaining_time_string.join(':')}`);
+            $count_down_timer.text(`${remaining_month_day_string.join(is_jp_client ? '' : ' ')} ${remaining_time_string.join(':')}`);
         });
         current_time_left = parseInt($period.attr('value').split('_')[1]) - window.time.unix();
         if (current_time_left < 120) {
@@ -204,7 +230,7 @@ const MBContract = (() => {
             $('.price-button').addClass('inactive');
         }
         if (remaining_timeout) clearRemainingTimeout();
-        remaining_timeout = setTimeout(displayRemainingTime, 500);
+        remaining_timeout = setTimeout(() => { displayRemainingTime(false, is_jp_client); }, 500);
     };
 
     const clearRemainingTimeout = () => { clearTimeout(remaining_timeout); };
@@ -226,13 +252,13 @@ const MBContract = (() => {
         { value: 'staysinout',   type1: 'RANGE',        type2: 'UPORDOWN' },
     ];
 
-    const populateOptions = (rebuild) => {
+    const populateOptions = (should_rebuild) => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         const available_contracts = contracts_for_response.contracts_for.available;
 
         const $category = $('#category');
         const $list     = $category.find('.list');
-        if (rebuild) {
+        if (should_rebuild) {
             $list.empty();
         }
         if ($list.children().length === 0) {
@@ -240,10 +266,19 @@ const MBContract = (() => {
             categories.forEach((category, idx) => {
                 if (available_contracts.find(contract => contract.contract_category === category.value)) {
                     const is_current = (!default_value && idx === 0) || category.value === default_value;
+                    let el_contract_type;
+                    if (Client.isJPClient()) {
+                        el_contract_type =
+                            `<span class="contract-type gr-6 ${category.type1}"><span>${localize(getTemplate(category.type1).name)}</span></span>
+                             <span class="contract-type gr-6 ${category.type2} negative-color"><span>${localize(getTemplate(category.type2).name)}</span></span>`;
+                    } else {
+                        el_contract_type =
+                            `<div class="category-wrapper"><div class="contract-type ${category.type1}" /><div>${localize(getTemplate(category.type1).name)}</div></div>
+                             <div class="category-wrapper"><div class="contract-type ${category.type2} negative-color" /><div>${localize(getTemplate(category.type2).name)}</div></div>`;
+                    }
                     const $current   = $('<div/>', {
                         value: category.value,
-                        html : `<span class="contract-type gr-6 ${category.type1}"><span>${localize(getTemplate(category.type1).name)}</span></span>
-                                <span class="contract-type gr-6 ${category.type2} negative-color"><span>${localize(getTemplate(category.type2).name)}</span></span>`,
+                        html : el_contract_type,
                         class: 'gr-row',
                     });
                     $list.append($current);
@@ -254,7 +289,7 @@ const MBContract = (() => {
             });
             MBDefaults.set('category', $category.attr('value'));
         }
-        populatePeriods(rebuild);
+        populatePeriods(should_rebuild);
     };
 
     const getCurrentContracts = () => {

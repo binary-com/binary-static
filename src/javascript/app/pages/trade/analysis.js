@@ -4,6 +4,7 @@ const getActiveTab   = require('./get_active_tab').getActiveTab;
 const GetTicks       = require('./get_ticks');
 const MBDefaults     = require('../mb_trade/mb_defaults');
 const JapanPortfolio = require('../../japan/portfolio');
+const getElementById = require('../../../_common/common_functions').getElementById;
 const getLanguage    = require('../../../_common/language').get;
 const State          = require('../../../_common/storage').State;
 const Url            = require('../../../_common/url');
@@ -95,21 +96,19 @@ const TradingAnalysis = (() => {
      */
     const toggleActiveAnalysisTabs = () => {
         const current_tab        = getActiveTab();
-        const analysis_container = document.getElementById('bet_bottom_content');
+        const analysis_container = getElementById('bet_bottom_content');
 
-        if (analysis_container) {
-            const child_elements      = analysis_container.children;
-            const current_tab_element = document.getElementById(`${current_tab}-content`);
-            const classes             = current_tab_element.classList;
+        const child_elements      = analysis_container.children;
+        const current_tab_element = getElementById(`${current_tab}-content`);
+        const classes             = current_tab_element.classList;
 
-            for (let i = 0, len = child_elements.length; i < len; i++) {
-                child_elements[i].classList.remove('selectedTab');
-                child_elements[i].classList.add(hidden_class);
-            }
-
-            classes.add('selectedTab');
-            classes.remove(hidden_class);
+        for (let i = 0, len = child_elements.length; i < len; i++) {
+            child_elements[i].classList.remove('selectedTab');
+            child_elements[i].classList.add(hidden_class);
         }
+
+        classes.add('selectedTab');
+        classes.remove(hidden_class);
     };
 
     /*
@@ -154,12 +153,29 @@ const TradingAnalysis = (() => {
                 image1: 'overunder-1.svg',
                 image2: 'overunder-2.svg',
             },
+            lookbackhigh: {
+                image1: 'close-high-image.svg',
+            },
+            lookbacklow: {
+                image1: 'close-low-image.svg',
+            },
+            lookbackhighlow: {
+                image1: 'high-low-image.svg',
+            },
         };
 
         if (images[form_name]) {
             const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(getLanguage() === 'JA' ? 'ja/' : '')}`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
-            $container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
+            if (images[form_name].image2) {
+                $container
+                    .find('#explanation_image_2')
+                    .attr('src', image_path + images[form_name].image2)
+                    .parent()
+                    .setVisibility(1);
+            } else {
+                $container.find('#explanation_image_2').parent().setVisibility(0);
+            }
             $container.find('#explanation_image').setVisibility(1);
         }
     };

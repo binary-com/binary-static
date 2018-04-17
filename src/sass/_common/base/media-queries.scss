@@ -4,10 +4,13 @@
     }
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 1080px) {
     #header ul#menu-top.smaller-font a {
         font-size: $FONT_SIZE_XS;
     }
+}
+
+@media screen and (max-width: 959px) {
     .home-jp-content {
         #banner {
             background-position-x: 0;
@@ -34,27 +37,8 @@
             margin-bottom: 15px;
         }
     }
-    #ico_banner_container .ico-banner .ico-box {
-        div:nth-child(1) {
-            padding-left: unset;
-        }
-        .ico-column {
-            min-height: unset;
-            padding-top: 0;
-            padding-bottom: 0;
-
-            .learn-btn {
-                padding-top: unset;
-
-                a {
-                    text-align: center;
-                }
-            }
-        }
-        p {
-            text-align: center;
-            font-size: $FONT_SIZE_L;
-        }
+    .no-padding-m {
+        padding: 0 !important;
     }
 }
 
@@ -83,14 +67,11 @@
             background-position-x: 15%;
         }
     }
-    #ico_banner_container .ico-banner .ico-box {
-        p {
-            padding-top: 10px;
-            margin-bottom: 10px;
-        }
-        .ico-column .learn-btn a {
-            margin-bottom: 1em;
-        }
+    #content .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li a {
+        font-size: $FONT_SIZE_S;
+    }
+    #content .light .tab-menu-wrap ul.tm-ul li.tm-li.tab-selector {
+        top: 30px;
     }
 }
 

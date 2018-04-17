@@ -29,48 +29,129 @@
         font-size: $FONT_SIZE_S;
 
         #panel {
+            margin-left: 10px;
+
             .selection_wrapper.less-margin-top .trade_form > div {
-                margin-top: -5px;
+                margin-top: -10px;
             }
             #payout {
                 height: auto;
+                border-left: none;
 
                 &:focus {
                     outline: none;
                 }
-            }
-            .gr-row {
-                .gr-no-gutter-left {
-                    padding-right: 5px;
-                }
-                .gr-no-gutter-right {
-                    padding-left: 5px;
+                &.error {
+                    color: $COLOR_RED;
                 }
             }
             #currency {
-                line-height: 40px;
+                line-height: 25px;
             }
             #payout_amount {
-                line-height: 49px;
+                line-height: 32px;
+                white-space: nowrap;
+                font-weight: bold;
             }
-            .trade_form > div .list {
-                background-color: $COLOR_WHITE;
-                border: 1px solid $COLOR_LIGHT_GRAY;
-                border-top: none;
-
-                &.invisible {
-                    border: none;
+            .trade_form {
+                &:not(.no-margin) {
+                    margin-top: 10px;
                 }
                 > div {
-                    background-color: $COLOR_WHITE;
+                    .list {
+                        background-color: $COLOR_WHITE;
+                        border: 1px solid $COLOR_LIGHT_GRAY;
+                        border-top: none;
 
-                    &:hover {
-                        background-color: $COLOR_GRAY !important;
+                        &.invisible {
+                            border: none;
+                        }
+                        > div {
+                            background-color: $COLOR_WHITE;
+
+                            &:hover {
+                                background-color: $COLOR_GRAY !important;
+                            }
+                        }
+                        &:hover {
+                            background-color: $COLOR_WHITE;
+                        }
+                    }
+                    #currency .current {
+                        height: 25px;
+                        border: 1px solid $COLOR_LIGHT_GRAY;
+                        border-right: none;
+                    }
+                    &#category {
+                        .current, .list > div {
+                            height: 59px;
+                        }
                     }
                 }
-                &:hover {
-                    background-color: $COLOR_WHITE;
+                .contract-type {
+                    padding-left: 0;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    line-height: 18px;
+                    height: 36px;
+                    width: 100%;
+                    margin-bottom: 5px;
                 }
+                &:hover {
+                    .header-current {
+                        .gr-row {
+                            cursor: pointer;
+                            background-color: $COLOR_GRAY;
+                        }
+                    }
+                    #period {
+                        .current {
+                            background-color: $COLOR_GRAY;
+                        }
+                    }
+                }
+            }
+            #underlying .list {
+                width: auto;
+            }
+            .header-current {
+                overflow: hidden;
+                width: 100%;
+
+                .gr-row {
+                    margin: 0;
+                }
+                &-text {
+                    padding-top: 10px;
+                    font-weight: 700;
+
+                    &:first-child {
+                        padding-right: 5px;
+                    }
+                    &:last-child {
+                        padding-left: 5px;
+                    }
+                }
+            }
+            #period {
+                .duration {
+                    font-size: $FONT_SIZE_S;
+                }
+                .end {
+                    font-weight: normal;
+                }
+                .current {
+                    height: auto;
+                    padding-bottom: 7px !important;
+
+                    div.head {
+                        font-weight: bold;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .category-wrapper {
+                width: 50%;
             }
         }
         #ja-panel {
@@ -135,12 +216,12 @@
                     line-height: 15px;
                     padding-top: 35px;
                 }
-            }
-            #currency .list > div {
-                height: 15px;
-
-                &:hover {
+                #currency .list > div {
                     height: 15px;
+
+                    &:hover {
+                        height: 15px;
+                    }
                 }
             }
             .gr-row .gr-no-gutter-left {
@@ -152,10 +233,8 @@
             }
         }
         .trade_form {
-            margin-top: 5px;
-
-            &.no-margin {
-                margin-top: 0;
+            &:not(.no-margin) {
+                margin-top: 5px;
             }
             > div {
                 text-align: center;
@@ -241,6 +320,30 @@
                 }
                 .current > div, .list > div {
                     align-items: center;
+                }
+            }
+        }
+        .ja-hide + .price-table {
+            margin-top: 10px;
+            margin-left: 0;
+
+            .prices-wrapper {
+                .heading {
+                    font-weight: bold;
+
+                    .hint {
+                        font-weight: normal;
+                    }
+                }
+                .heading, .price-row {
+                    border: 1px solid $COLOR_LIGHT_GRAY;
+                    border-bottom: none;
+                }
+                .price-row:last-child {
+                    border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+                }
+                .price-row:nth-child(odd) {
+                    background-color: $COLOR_WHITE;
                 }
             }
         }
@@ -419,6 +522,7 @@
         }
         .remaining-time {
             color: $COLOR_BLACK;
+            line-height: 20px;
 
             &.alert {
                 color: $COLOR_RED;
@@ -435,6 +539,13 @@
         @media screen and (max-width: 768px) {
             .gr-12-p {
                 padding-bottom: 10px;
+            }
+            #panel {
+                margin-left: 0;
+
+            }
+            .ja-hide + .price-table {
+                margin-left: -10px;
             }
         }
         @media screen and (max-width: 480px) {

@@ -6,6 +6,7 @@ const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const toTitleCase      = require('../../../../_common/string_util').toTitleCase;
+const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const MetaTrader = (() => {
     const mt_companies  = MetaTraderConfig.mt_companies;
@@ -18,9 +19,15 @@ const MetaTrader = (() => {
     const onLoad = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
             if (isEligible()) {
-                MetaTraderUI.switchToMT5();
-                getAllAccountsInfo();
-                MetaTraderUI.init(submit);
+                if (Client.get('is_virtual')) {
+                    getAllAccountsInfo();
+                } else {
+                    BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
+                }
+            } else if (State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
+                // TODO: remove this elseif when we enable mt account opening for malta
+                // show specific message to clients from malta landing company as long as there is no mt_company for them
+                MetaTraderUI.displayPageError(localize('Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.'));
             } else {
                 MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
             }
@@ -36,10 +43,7 @@ const MetaTrader = (() => {
                 addAccount(company);
             }
         });
-
-        const is_ico_only = /ico_only/.test(State.getResponse('get_account_status.status'));
-
-        return (!is_ico_only && has_mt_company);
+        return has_mt_company;
     };
 
     const addAccount = (company) => {
@@ -63,7 +67,12 @@ const MetaTrader = (() => {
     };
 
     const getAllAccountsInfo = () => {
-        BinarySocket.wait('mt5_login_list').then((response) => {
+        MetaTraderUI.init(submit);
+        BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
+            if (response.error) {
+                MetaTraderUI.displayPageError(response.error.message || localize('Sorry, an error occurred while processing your request.'));
+                return;
+            }
             // Ignore old accounts which are not linked to any group or has deprecated group
             const mt5_login_list = (response.mt5_login_list || []).filter(obj => (
                 obj.group && Client.getMT5AccountType(obj.group) in accounts_info
@@ -156,7 +165,7 @@ const MetaTrader = (() => {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : accounts_info[acc_type].info.login;
                         if (!accounts_info[acc_type].info) {
-                            accounts_info[acc_type].info = { login };
+                            accounts_info[acc_type].info = { login, currency: getPropertyValue(response, ['mt5_new_account', 'currency']) };
                             MetaTraderUI.setAccountType(acc_type, true);
                             BinarySocket.send({ mt5_login_list: 1 });
                         }
@@ -175,13 +184,8 @@ const MetaTrader = (() => {
         }
     };
 
-    const onUnload = () => {
-        MetaTraderUI.switchToMT5(false);
-    };
-
     return {
         onLoad,
-        onUnload,
         isEligible,
     };
 })();

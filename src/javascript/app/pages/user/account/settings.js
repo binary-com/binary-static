@@ -1,41 +1,36 @@
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
-const jpClient         = require('../../../common/country_base').jpClient;
 const State            = require('../../../../_common/storage').State;
-const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const Settings = (() => {
     const onLoad = () => {
-        BinarySocket.wait('get_account_status').then((response) => {
-            const $class_real = $('.real');
-            const is_jp       = jpClient();
+        BinarySocket.wait('get_account_status').then(() => {
+            const $class_real  = $('.real');
+            const is_jp_client = Client.isJPClient();
 
             if (Client.get('is_virtual')) {
                 $class_real.setVisibility(0);
             } else {
-                $class_real.not((is_jp ? '.ja-hide' : '')).setVisibility(1);
+                $class_real.not((is_jp_client ? '.ja-hide' : '')).setVisibility(1);
             }
 
-            const get_account_status = getPropertyValue(response, 'get_account_status');
-            const status             = getPropertyValue(get_account_status, 'status');
+            const status = State.getResponse('get_account_status.status');
             if (!/social_signup/.test(status)) {
                 $('#change_password').setVisibility(1);
             }
 
             const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-            const is_ico_only       = Client.get('is_ico_only');
             // Professional Client menu should only be shown to MF and CR accounts.
-            if (!is_jp && !/professional_requested|professional/.test(status) &&
-                (Client.isAccountOfType('financial')
-                    || (/costarica/.test(financial_company) && Client.isAccountOfType('real'))
-                    || is_ico_only)) {
+            if (!is_jp_client && !/professional_requested|professional/.test(status) &&
+                (Client.isAccountOfType('financial') ||
+                    (/costarica/.test(financial_company) && Client.isAccountOfType('real')))) {
 
                 if (Client.canRequestProfessional()) {
                     $('#professional_client').setVisibility(1);
                 }
             }
 
-            if (!get_account_status.prompt_client_to_authenticate) {
+            if (!State.getResponse('get_account_status.prompt_client_to_authenticate')) {
                 $('#authenticate').setVisibility(0);
             }
 

@@ -1,3 +1,6 @@
+// ==================== _common ====================
+const TabSelector = require('../../_common/tab_selector');
+
 // ==================== app ====================
 const LoggedInHandler      = require('./logged_in');
 const Redirect             = require('./redirect');
@@ -12,7 +15,6 @@ const Endpoint             = require('../pages/endpoint');
 const MBTradePage          = require('../pages/mb_trade/mb_tradepage');
 const AssetIndexUI         = require('../pages/resources/asset_index/asset_index.ui');
 const TradingTimesUI       = require('../pages/resources/trading_times/trading_times.ui');
-const TradePage_Beta       = require('../pages/trade/beta/tradepage');
 const TradePage            = require('../pages/trade/tradepage');
 const Authenticate         = require('../pages/user/account/authenticate');
 const ChangePassword       = require('../pages/user/account/change_password');
@@ -32,11 +34,8 @@ const professionalClient   = require('../pages/user/account/settings/professiona
 const Statement            = require('../pages/user/account/statement/statement.init');
 const TopUpVirtual         = require('../pages/user/account/top_up_virtual');
 const Accounts             = require('../pages/user/accounts');
-const ICOInfo              = require('../pages/user/ico_info');
-const ICOSubscribe         = require('../pages/user/ico_subscribe');
 const LostPassword         = require('../pages/user/lost_password');
 const MetaTrader           = require('../pages/user/metatrader/metatrader');
-const AccountTypeSelection = require('../pages/user/new_account/account_type');
 const FinancialAccOpening  = require('../pages/user/new_account/financial_acc_opening');
 const JapanAccOpening      = require('../pages/user/new_account/japan_acc_opening');
 const RealAccOpening       = require('../pages/user/new_account/real_acc_opening');
@@ -54,9 +53,7 @@ const HomeJP             = require('../../static/japan/home');
 const Charity            = require('../../static/pages/charity');
 const Contact            = require('../../static/pages/contact');
 const GetStarted         = require('../../static/pages/get_started');
-const GetStartedBeta     = require('../../static/pages/get_started_beta');
 const Home               = require('../../static/pages/home');
-const HomeBeta           = require('../../static/pages/home_beta');
 const JobDetails         = require('../../static/pages/job_details');
 const Regulation         = require('../../static/pages/regulation');
 const StaticPages        = require('../../static/pages/static_pages');
@@ -66,7 +63,6 @@ const WhyUs              = require('../../static/pages/why_us');
 /* eslint-disable max-len */
 const pages_config = {
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true, needs_currency: true },
-    account_type             : { module: AccountTypeSelection,       is_authenticated: true },
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
@@ -94,9 +90,9 @@ const pages_config = {
     market_timesws           : { module: TradingTimesUI },
     metatrader               : { module: MetaTrader,                 is_authenticated: true, needs_currency: true },
     multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
-    payment_agent_listws     : { module: PaymentAgentList },
+    payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
-    platforms                : { module: StaticPages.Platforms },
+    platforms                : { module: TabSelector },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     professional             : { module: professionalClient,         is_authenticated: true, only_real: true },
@@ -107,32 +103,31 @@ const pages_config = {
     securityws               : { module: Settings,                   is_authenticated: true },
     self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },
-    signup                   : { module: StaticPages.handleTab },
+    signup                   : { module: TabSelector },
     statementws              : { module: Statement,                  is_authenticated: true, needs_currency: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage,                  needs_currency: true },
-    trading_beta             : { module: TradePage_Beta,             needs_currency: true },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     welcome                  : { module: WelcomePage,                is_authenticated: true, only_virtual: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
-    'binary-options'         : { module: GetStartedBeta.BinaryOptions },
-    'cfds'                   : { module: GetStartedBeta.CFDs },
-    'contract-specifications': { module: StaticPages.ContractSpecifications },
-    'cryptocurrencies'       : { module: GetStartedBeta.Cryptocurrencies },
+    'binary-options'         : { module: GetStarted.BinaryOptions },
+    'careers'                : { module: StaticPages.Careers },
+    'cfds'                   : { module: GetStarted.CFDs },
+    'contract-specifications': { module: TabSelector },
+    'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
-    'forex'                  : { module: GetStartedBeta.Forex },
-    'get-started'            : { module: GetStarted },
-    'get-started-beta'       : { module: GetStartedBeta.GetStartedBeta },
+    'faq'                    : { module: StaticPages.AffiliatesFAQ },
+    'forex'                  : { module: GetStarted.Forex },
+    'get-started'            : { module: TabSelector },
     'get-started-jp'         : { module: GetStartedJP },
-    'home-beta'              : { module: HomeBeta,                   not_authenticated: true },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
-    'how-to-trade-mt5'       : { module: StaticPages.HowToTradeMT5 },
-    'ico-subscribe'          : { module: ICOSubscribe,               is_authenticated: true, needs_currency: true },
-    'ico-info'               : { module: ICOInfo,                    is_authenticated: true, only_real: true, needs_currency: true },
+    'how-to-trade-mt5'       : { module: TabSelector },
+    'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
+    'ib-signup'              : { module: TabSelector },
     'job-details'            : { module: JobDetails },
-    'metals'                 : { module: GetStartedBeta.Metals },
+    'metals'                 : { module: GetStarted.Metals },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
@@ -141,7 +136,6 @@ const pages_config = {
     'terms-and-conditions-jp': { module: TermsAndConditions },
     'types-of-accounts'      : { module: StaticPages.TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
-    'volidx-markets'         : { module: StaticPages.VolidxMarkets },
     'why-us'                 : { module: WhyUs },
     'why-us-jp'              : { module: WhyUs },
     'withdraw-jp'            : { module: CashierJP.Withdraw,         is_authenticated: true, only_real: true },

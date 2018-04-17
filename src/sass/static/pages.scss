@@ -1,5 +1,49 @@
 // styling for static pages that are too short or simple to need their own styling page
 
+.box-row {
+    border-bottom: 1px solid $COLOR_GRAY;
+
+    &__box {
+        padding: 2rem;
+    }
+    &__box:not(:last-child) {
+        border-right: 1px solid $COLOR_GRAY;
+    }
+    &__img {
+        height: 50px;
+    }
+    &--top {
+        &__box {
+            padding-top: 1rem;
+        }
+    }
+    &--bottom {
+        border: none;
+
+        &__box {
+            padding-bottom: 0;
+        }
+    }
+    &--no-border, &--no-border &__box {
+        border: none;
+    }
+    @media screen and (max-width: 480px) {
+        &, &__box {
+            border: none;
+        }
+    }
+}
+
+.steps {
+    @media (max-width: 480px) {
+        flex-direction: column;
+
+        .step:not(:first-child) {
+            margin-top: 2rem;
+        }
+    }
+}
+
 .box-inlay-borders {
     .border-right-top {
         min-height: 200px;
@@ -76,82 +120,27 @@
 }
 
 #payment_methods {
-    h3 {
-        margin: 20px 0 0;
+    h3:not(.no-margin) {
+        margin: 35px 0 0;
     }
-    .payment-logo {
-        width: 72px;
-        height: 58px;
-        background-image: url('../images/pages/cashier/payment_methods_sprite_new.png');
-    }
-    div {
-        align-self: center;
-    }
-    #int_bank_wire {
-        background-position: -7px -9px;
-    }
-    #local_bank_transfer {
-        background-position: -90px -9px;
-    }
-    #western_union {
-        background-position: -174px -9px;
-    }
-    #visa {
-        background-position: -338px -10px;
-    }
-    #mastercard {
-        background-position: -421px -11px;
-    }
-    #cuo_credit_card {
-        background-position: -108px -214px;
-    }
-    #moneybrokers {
-        background-position: -8px -72px;
-    }
-    #neteller {
-        background-position: -90px -72px;
-    }
-    #moneta {
-        background-position: -174px -72px;
-    }
-    #webmoney {
-        background-position: -257px -73px;
-    }
-    #qiwi {
-        background-position: -10px -136px;
-    }
-    #icbc {
-        background-position: -9px -348px;
-    }
-    #fastpay {
-        background-position: -12px -429px;
-    }
-    #perfect_money {
-        background-position: -106px -428px;
-    }
-    #yandex {
-        background-position: -102px -348px;
-    }
-    #paysafecard {
-        background-position: -372px -425px;
-    }
-    #okpay {
-        background-position: -285px -426px;
-    }
-    #btc {
-        background-position: -12px -498px;
-    }
-    #bch {
-        background-position: -106px -498px;
-    }
-    #eth {
-        background-position: -285px -498px;
-    }
-    #etc {
-        background-position: -373px -498px;
-    }
-    #ltc {
-        background-position: -200px -498px;
+    table {
+        thead {
+            border-bottom: 1px solid $COLOR_DARK_GRAY;
+        }
+        td {
+            vertical-align: middle;
+        }
+        th, td {
+            &:nth-child(2) { // for currency column
+                min-width: 150px;
+            }
+            &:nth-child(3), &:nth-child(4) { // for deposit and withdrawal columns
+                min-width: 100px;
+            }
+            &:nth-child(5) { // for processing time column
+                min-width: 200px;
+            }
+        }
     }
 }
 
@@ -242,66 +231,6 @@ body #not_authenticated_financial ul.checked > li {
     list-style: none;
 }
 
-.ico-subscribe-content {
-    .border-radius {
-        border-radius: $BORDER_RADIUS;
-    }
-    .margin-top {
-        margin-top: 4px;
-    }
-    .no-padding {
-        padding: 0;
-    }
-    #frm_ico_bid {
-        input {
-            padding: 2px 3px;
-        }
-        button, input {
-            width: 100%;
-        }
-        .inactive {
-            color: $COLOR_GRAY;
-            background: $COLOR_LIGHT_GRAY;
-
-            &:hover {
-                cursor: auto;
-            }
-        }
-        .error-msg {
-            padding-top: 5px;
-        }
-        #minimum_bid {
-            padding-top: 5px;
-            font-size: $FONT_SIZE_S;
-        }
-        .deposit {
-            font-size: $FONT_SIZE_XXS;
-        }
-    }
-    .timer {
-        .text {
-            font-size: $FONT_SIZE_XS;
-            font-weight: bold;
-        }
-    }
-    #portfolio th.details {
-        width: auto;
-    }
-    #view_ico_info > a > span {
-        background-color: $COLOR_ORANGE;
-        font-size: 16px;
-    }
-    #cancel_bid_confirmation {
-        left: 0;
-        top: 0;
-    }
-    .faded {
-        ol {
-            margin: 0 15px;
-        }
-    }
-}
-
 .liquidity-solutions-content {
     .box {
         border: 1px solid $COLOR_GRAY_SHADE;
@@ -313,19 +242,6 @@ body #not_authenticated_financial ul.checked > li {
     }
     .white-bg {
         background-color: $COLOR_WHITE;
-    }
-}
-
-.omnibus-content {
-    .box {
-        min-height: 156px;
-
-        img {
-            height: 48px;
-        }
-    }
-    .steps img {
-        height: 43px;
     }
 }
 
@@ -372,16 +288,9 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .platforms-content {
-    #binary-content img.responsive {
+    img.responsive {
         max-height: 150px;
-    }
-    #mt5-content {
-        .enhanced img.responsive, img.step {
-            max-height: 128px;
-        }
-        img.step-arrow {
-            max-height: 24px;
-        }
+        width: auto;
     }
 }
 
@@ -399,7 +308,6 @@ body #not_authenticated_financial ul.checked > li {
 
 #how_to_trade_mt5 {
     .border-box {
-        display: inline-flex;
         border: 1px solid $COLOR_BLUE;
         border-radius: $BORDER_RADIUS;
         padding: 25px 50px;
@@ -473,6 +381,223 @@ body #not_authenticated_financial ul.checked > li {
     }
     .center-text .button .barspinner {
         margin: 0 auto;
+    }
+}
+
+.careers-content {
+    .career {
+        margin-top: 0;
+
+        .top-banner {
+            background: url('../images/pages/careers/careers-1_bg.jpg') no-repeat;
+            background-size: cover;
+            min-height: 300px;
+            position: relative;
+            background-position: center;
+
+            .banner-caption {
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                bottom: -100px;
+
+                .caption-text {
+                    margin: 0 auto;
+                    max-width: 960px;
+                    background-color: $COLOR_WHITE;
+                    text-align: center;
+                    padding: 40px 0px 20px;
+
+                    p {
+                        margin: 1em auto;
+                        max-width: 80%;
+                    }
+                }
+            }
+            @media (max-width: 768px) {
+                background-position: 75% -30px;
+            }
+        }
+        .center-banner {
+            background: url('../images/pages/careers/careers-2_bg.jpg') no-repeat;
+            background-size: cover;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-position: center;
+
+            .caption-text {
+                margin: 0 auto;
+                max-width: 960px;
+                text-align: center;
+
+                h1 {
+                    margin-top: 1em;
+                }
+                p {
+                    color: $COLOR_WHITE;
+                    margin: 1em auto;
+                    max-width: 80%;
+                    font-weight: 300;
+                }
+            }
+        }
+        .margin-top-100 {
+            margin-top: 100px;
+        }
+        .btn-margin-top {
+            margin-top: 1.5em;
+        }
+        .column-margin {
+            margin: 0 0 1em;
+        }
+        .header-line {
+            border-color: $COLOR_ORANGE;
+            border-width: 3px;
+            width: 25%;
+        }
+        .fill-text {
+            padding: 1em 0;
+        }
+        .box-container {
+            &.padding {
+                padding: 5px 15px;
+            }
+            > [class*='gr-padding'] {
+                padding-bottom: 0;
+
+                @media (max-width: 768px) {
+                    padding-bottom: unset;
+                }
+            }
+            .box {
+                &.bordered {
+                    border: 1px solid $COLOR_GRAY;
+                    height: 100%;
+                }
+                .items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        padding-top: 20px;
+                        width: 50px;
+                    }
+                    p {
+                        font-weight: 600;
+                        color: $COLOR_BLUE;
+                    }
+                    > .box-item-end {
+                        padding: 0 30px;
+                    }
+                    @media (max-width: 768px) {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+        h4 {
+            color: $COLOR_BLUE;
+        }
+        .graduate-container {
+            position: relative;
+            margin-top: 1em;
+
+            .graduate-box {
+                background-color: $COLOR_BLUE;
+                padding: 30px;
+                position: absolute;
+                top: 50px;
+                width: 100%;
+
+                h1 {
+                    @media (max-width: 480px) {
+                        font-size: $FONT_SIZE_XXL;
+                    }
+                }
+                p {
+                    color: $COLOR_WHITE;
+
+                    @media (max-width: 480px) {
+                        font-size: $FONT_SIZE_S;
+                    }
+                }
+                a.button span {
+                    background-color: $COLOR_WHITE;
+                    color: $COLOR_BLUE;
+                    border-radius: 0;
+                    font-weight: 600;
+                }
+                @media screen and (max-width: 1024px) and (min-width: 769px) {
+                    left: 16%;
+                    bottom: 24%;
+                    top: unset;
+                }
+                @media (max-width: 768px) {
+                    text-align: center;
+                    background-color: transparent;
+                    // Center div to parent
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                @media (max-width: 480px) {
+                    padding: 15px;
+                }
+            }
+        }
+        ul.role-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 0;
+
+            li.role {
+                margin: 0;
+                border-radius: 0;
+                padding: 0;
+
+                a.role-btn {
+                    padding: 15px 20px !important;
+
+                    span {
+                        color: $COLOR_BLUE;
+                        font-weight: 600;
+                        font-size: $FONT_SIZE_L;
+                        text-transform: none;
+                        @media (max-width: 320px) {
+                            font-size: $FONT_SIZE_S;
+                        }
+                    }
+                    &:focus {
+                        border: 0;
+                        outline: 0;
+                    }
+                }
+                &.ui-tabs-active a span {
+                    color: $COLOR_WHITE;
+                }
+                &:focus {
+                    border: 0;
+                    outline: 0;
+                }
+            }
+        }
+        .america-careers-link a {
+            text-transform: capitalize;
+        }
+        .footer-email {
+            margin-bottom: -20px;
+
+            p {
+                color: $COLOR_WHITE;
+                padding: 20px 0;
+                text-align: center;
+            }
+        }
     }
 }
 

@@ -1,19 +1,22 @@
-const jpClient         = require('./country_base').jpClient;
 const getLanguage      = require('../../_common/language').get;
 const localize         = require('../../_common/localize').localize;
+const State            = require('../../_common/storage').State;
 const getPropertyValue = require('../../_common/utility').getPropertyValue;
 
 let currencies_config = {};
 
-const formatMoney = (currency_value, amount, exclude_currency) => {
+const formatMoney = (currency_value, amount, exclude_currency, decimals = 0, minimumFractionDigits = 0) => {
     let money = amount;
     if (money) money = String(money).replace(/,/g, '');
     const sign           = money && Number(money) < 0 ? '-' : '';
-    const decimal_places = getDecimalPlaces(currency_value);
+    const decimal_places = decimals || getDecimalPlaces(currency_value);
 
     money = isNaN(money) ? 0 : Math.abs(money);
     if (typeof Intl !== 'undefined') {
-        const options = { minimumFractionDigits: decimal_places, maximumFractionDigits: decimal_places };
+        const options = {
+            minimumFractionDigits: minimumFractionDigits || decimal_places,
+            maximumFractionDigits: decimal_places,
+        };
         money = new Intl.NumberFormat(getLanguage().toLowerCase().replace('_', '-'), options).format(money);
     } else {
         money = addComma(money, decimal_places);
@@ -38,7 +41,9 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const getFiatDecimalPlaces = () => jpClient() ? 0 : 2;
+const isJPClient = () => JSON.parse(State.get('is_jp_client'));
+
+const getFiatDecimalPlaces = () => isJPClient() ? 0 : 2;
 
 const calcDecimalPlaces = (currency) => isCryptocurrency(currency) ? 8 : getFiatDecimalPlaces();
 
@@ -54,16 +59,18 @@ const setCurrencies = (website_status) => {
 const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type']));
 
 const crypto_config = {
-    BTC: { name: 'Bitcoin' },
-    BCH: { name: 'Bitcoin Cash' },
-    ETH: { name: 'Ether' },
-    ETC: { name: 'Ether Classic' },
-    LTC: { name: 'Litecoin' },
+    BTC: { name: 'Bitcoin',       min_withdrawal: 0.002 },
+    BCH: { name: 'Bitcoin Cash',  min_withdrawal: 0.002 },
+    ETH: { name: 'Ether',         min_withdrawal: 0.002 },
+    ETC: { name: 'Ether Classic', min_withdrawal: 0.002 },
+    LTC: { name: 'Litecoin',      min_withdrawal: 0.002 },
 };
+
+const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'min_withdrawal']) || 0.002 : 1);
 
 const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
 
-const getFiatPayout = () => jpClient() ? 1 : 10;
+const getFiatPayout = () => isJPClient() ? 1 : 10;
 
 const getMinPayout = currency => (
     isCryptocurrency(currency) ? getPropertyValue(currencies_config, [currency, 'stake_default']) : getFiatPayout()
@@ -90,6 +97,7 @@ module.exports = {
     setCurrencies,
     isCryptocurrency,
     getCurrencyName,
+    getMinWithdrawal,
     getMinPayout,
     getCurrencyList,
     getCurrencies: () => currencies_config,

@@ -4,11 +4,16 @@ const Client              = require('./client');
 const GTM                 = require('./gtm');
 const Header              = require('./header');
 const Login               = require('./login');
+const NetworkMonitor      = require('./network_monitor');
 const Page                = require('./page');
 const BinarySocket        = require('./socket');
-const BinarySocketGeneral = require('./socket_general');
+const ContentVisibility   = require('../common/content_visibility');
+const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
+const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
+const ThirdPartyLinks     = require('../../_common/third_party_links');
+const urlFor              = require('../../_common/url').urlFor;
 const createElement       = require('../../_common/utility').createElement;
 
 const BinaryLoader = (() => {
@@ -24,46 +29,61 @@ const BinaryLoader = (() => {
         if (!isStorageSupported(localStorage) || !isStorageSupported(sessionStorage)) {
             Header.displayNotification(localize('[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.', ['Binary.com']),
                 true, 'STORAGE_NOT_SUPPORTED');
-            document.getElementById('btn_login').classList.add('button-disabled');
+            getElementById('btn_login').classList.add('button-disabled');
         }
 
         Page.showNotificationOutdatedBrowser();
 
         Client.init();
-        BinarySocket.init(BinarySocketGeneral.initOptions());
+        NetworkMonitor.init();
 
-        container = document.getElementById('content-holder');
-        if (container) {
-            container.addEventListener('binarypjax:before', beforeContentChange);
-            container.addEventListener('binarypjax:after',  afterContentChange);
+        container = getElementById('content-holder');
+        container.addEventListener('binarypjax:before', beforeContentChange);
+        container.addEventListener('binarypjax:after',  afterContentChange);
+
+        if (Login.isLoginPages()) {
             BinaryPjax.init(container, '#content');
+        } else if (!Client.isLoggedIn()) {
+            Client.setJPFlag();
+            BinaryPjax.init(container, '#content');
+        } else { // client is logged in
+            // we need to set top-nav-menu class so binary-style can add event listener
+            // if we wait for socket.init before doing this binary-style will not initiate the drop-down menu
+            getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
+            // wait for socket to be initialized and authorize response before loading the page. handled in the onOpen function
         }
+
+        ThirdPartyLinks.init();
     };
 
     const beforeContentChange = () => {
         if (active_script) {
-            Page.onUnload();
             BinarySocket.removeOnDisconnect();
             if (typeof active_script.onUnload === 'function') {
                 active_script.onUnload();
             }
             active_script = null;
         }
+        ScrollToAnchor.cleanup();
     };
 
     const afterContentChange = (e) => {
         Page.onLoad();
         GTM.pushDataLayer();
+
         const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {
             loadHandler(pages_config[this_page]);
         } else if (/\/get-started\//i.test(window.location.pathname)) {
             loadHandler(pages_config['get-started']);
         }
+
+        ContentVisibility.init();
+        ScrollToAnchor.init();
     };
 
     const error_messages = {
-        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [`${'java'}${'script:;'}`]),
+        login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_2] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor()}">`]),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
     };
@@ -109,7 +129,7 @@ const BinaryLoader = (() => {
     };
 
     const displayMessage = (message) => {
-        const content       = container.querySelector('#content .container');
+        const content = container.querySelector('#content .container');
         if (!content) {
             return;
         }

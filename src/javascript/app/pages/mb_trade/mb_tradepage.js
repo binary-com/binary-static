@@ -5,11 +5,17 @@ const MBTradingEvents     = require('./mb_event');
 const MBPrice             = require('./mb_price');
 const MBProcess           = require('./mb_process');
 const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupChart;
+const BinaryPjax          = require('../../base/binary_pjax');
+const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
-const jpClient            = require('../../common/country_base').jpClient;
+const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
 const JapanPortfolio      = require('../../japan/portfolio');
+const getElementById      = require('../../../_common/common_functions').getElementById;
+const getLanguage         = require('../../../_common/language').get;
 const localize            = require('../../../_common/localize').localize;
 const State               = require('../../../_common/storage').State;
+const urlFor              = require('../../../_common/url').urlFor;
+const findParent          = require('../../../_common/utility').findParent;
 
 const MBTradePage = (() => {
     let events_initialized = 0;
@@ -21,12 +27,21 @@ const MBTradePage = (() => {
     };
 
     const init = () => {
-        if (jpClient()) {
+        if (/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) {
+            if (getLanguage() === 'JA') {
+                $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: localize('This page is not available in the selected language.') })));
+            } else {
+                BinaryPjax.load(urlFor('trading'));
+            }
+            return;
+        }
+        if (Client.isJPClient()) {
             disableTrading();
             $('#panel').remove();
         } else {
             MBDefaults.set('disable_trading', 0);
             $('#ja-panel').remove();
+            showCurrency(Client.get('currency'));
         }
 
         if (events_initialized === 0) {
@@ -45,6 +60,25 @@ const MBTradePage = (() => {
         State.set('is_chart_allowed', true);
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
         $('.container').css('max-width', '1200px');
+    };
+
+    const showCurrency = (currency) => {
+        if (currency) {
+            const el_payout_amount = getElementById('payout_amount');
+            el_payout_amount.textContent += ` (${currency})`;
+
+            if (getDecimalPlaces(currency) > 2) {
+                const el_category      = getElementById('category');
+                const payout_wrapper   = findParent(el_payout_amount, '.gr-3');
+                const category_wrapper = findParent(el_category, '.gr-9');
+                if (payout_wrapper && category_wrapper) {
+                    payout_wrapper.classList.remove('gr-3');
+                    category_wrapper.classList.remove('gr-9');
+                    payout_wrapper.classList.add('gr-4');
+                    category_wrapper.classList.add('gr-8');
+                }
+            }
+        }
     };
 
     const disableTrading = () => {

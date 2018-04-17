@@ -8,7 +8,6 @@ const commonTrading    = require('../trade/common');
 const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
-const jpClient         = require('../../common/country_base').jpClient;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getLanguage      = require('../../../_common/language').get;
 const localize         = require('../../../_common/localize').localize;
@@ -40,6 +39,10 @@ const MBProcess = (() => {
                 req.landing_company = 'japan';
             }
             BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
+                if (!response.active_symbols || !response.active_symbols.length) {
+                    $('#main_loading').replaceWith($('<p/>', { class: 'notice-msg center-text container', text: localize('Sorry, this feature is not available in your jurisdiction.') }));
+                    return;
+                }
                 processActiveSymbols(response);
             });
         });
@@ -58,7 +61,7 @@ const MBProcess = (() => {
         // populate the Symbols object
         MBSymbols.details(data);
 
-        const is_show_all  = Client.isLoggedIn() && !jpClient();
+        const is_show_all  = Client.isLoggedIn() && !Client.isJPClient();
         const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
         let symbol         = MBDefaults.get('underlying');
 
@@ -169,13 +172,13 @@ const MBProcess = (() => {
             currency     : MBContract.getCurrency(),
             product_type : 'multi_barrier',
         };
-        if (!underlying) {
-            req.passthrough = { action: 'no-proposal' };
-        }
         BinarySocket.send(req).then((response) => {
             MBNotifications.hide('CONNECTION_ERROR');
             MBContract.setContractsResponse(response);
-            processContract(response);
+            // contracts_for is triggered every 15 seconds to check for expired barriers
+            // but we don't want to send proposal in that case
+            // so getContracts will be called without underlying param to distinguish these two cases
+            processContract(response, underlying);
         });
         if (contract_timeout) clearContractTimeout();
         contract_timeout = setTimeout(getContracts, 15000);
@@ -186,7 +189,7 @@ const MBProcess = (() => {
     /*
      * Function to display contract form for current underlying
      */
-    const processContract = (contracts) => {
+    const processContract = (contracts, should_send_proposal) => {
         if (getPropertyValue(contracts, 'error')) {
             MBNotifications.show({ text: contracts.error.message, uid: contracts.error.code });
             return;
@@ -196,13 +199,12 @@ const MBProcess = (() => {
 
         checkMarketStatus(contracts.contracts_for.close);
 
-        const no_rebuild = getPropertyValue(contracts, ['passthrough', 'action']) === 'no-proposal';
-        MBContract.populateOptions((no_rebuild ? null : 'rebuild'));
-        if (no_rebuild) {
+        MBContract.populateOptions(should_send_proposal);
+        if (should_send_proposal) {
+            processPriceRequest();
+        } else {
             processExpiredBarriers();
-            return;
         }
-        processPriceRequest();
     };
 
     const checkMarketStatus = (close) => {
@@ -226,27 +228,27 @@ const MBProcess = (() => {
     const processPriceRequest = () => {
         MBPrice.increaseReqId();
         MBPrice.showPriceOverlay();
-        const available_contracts = MBContract.getCurrentContracts();
-        const durations           = MBDefaults.get('period').split('_');
-        const jp_client           = jpClient();
-        const is_crypto           = isCryptocurrency(MBDefaults.get('currency'));
-        const payout              = parseFloat(MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`));
+        const durations = MBDefaults.get('period').split('_');
+        const is_crypto = isCryptocurrency(MBDefaults.get('currency'));
+        const payout    = parseFloat(MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`));
 
         const req = {
             proposal_array: 1,
             subscribe     : 1,
             basis         : 'payout',
-            amount        : jp_client ? (parseInt(payout) || 1) * 1000 : payout,
+            amount        : Client.isJPClient() ? (parseInt(payout) || 1) * 1000 : payout,
             currency      : MBContract.getCurrency(),
             symbol        : MBDefaults.get('underlying'),
             passthrough   : { req_id: MBPrice.getReqId() },
             date_expiry   : durations[1],
             contract_type : [],
             barriers      : [],
+            product_type  : 'multi_barrier',
 
             trading_period_start: durations[0],
         };
 
+        const available_contracts = MBContract.getCurrentContracts();
         // contract_type
         available_contracts.forEach(c => req.contract_type.push(c.contract_type));
 
@@ -336,9 +338,7 @@ const MBProcess = (() => {
 
     const processForgetProposals = () => {
         MBPrice.showPriceOverlay();
-        const forget_proposal = BinarySocket.send({
-            forget_all: 'proposal_array',
-        });
+        const forget_proposal = BinarySocket.send({ forget_all: 'proposal_array' });
         forget_proposal.then(() => {
             MBPrice.cleanup();
         });

@@ -1,7 +1,12 @@
 const Language = require('../../../_common/language');
 
 const createLanguageDropDown = (website_status) => {
-    const $languages         = $('.languages');
+    const $languages = $('.languages');
+
+    if ($languages.find('#display_language li').attr('class')) {
+        return;
+    }
+
     const select_language_id = '#select_language';
     const current_language   = Language.get();
 
@@ -13,7 +18,7 @@ const createLanguageDropDown = (website_status) => {
     const languages        = website_status.supported_languages.sort((a, b) => ((a === 'EN' || a < b) ? -1 : 1));
     const $select_language = $languages.find(select_language_id);
     languages.forEach((language) => {
-        if (!/es|it/i.test(language)) {
+        if (!/es/i.test(language)) {
             $select_language.append($('<li/>', { class: language, text: mapCodeToLanguage(language) }));
         }
     });

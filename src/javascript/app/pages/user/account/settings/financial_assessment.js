@@ -2,8 +2,8 @@ const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
 const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
-const jpClient         = require('../../../../common/country_base').jpClient;
 const Validation       = require('../../../../common/form_validation');
+const getElementById   = require('../../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const isEmptyObject    = require('../../../../../_common/utility').isEmptyObject;
@@ -16,7 +16,7 @@ const FinancialAssessment = (() => {
     const form_selector = '#frm_assessment';
 
     const onLoad = () => {
-        if (jpClient()) {
+        if (Client.isJPClient()) {
             BinaryPjax.loadPreviousUrl();
         }
 
@@ -36,8 +36,9 @@ const FinancialAssessment = (() => {
         financial_assessment = $.extend({}, response);
 
         if (isEmptyObject(financial_assessment)) {
-            BinarySocket.wait('get_account_status').then((data) => {
-                if (data.get_account_status.risk_classification === 'high') {
+            BinarySocket.wait('get_account_status').then(() => {
+                const risk_classification = State.getResponse('get_account_status.risk_classification');
+                if (risk_classification === 'high') {
                     $('#high_risk_classification').setVisibility(1);
                 }
             });
@@ -79,7 +80,7 @@ const FinancialAssessment = (() => {
             }
 
             const data = { set_financial_assessment: 1 };
-            showLoadingImage(document.getElementById('msg_form'));
+            showLoadingImage(getElementById('msg_form'));
             $(form_selector).find('select').each(function () {
                 financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val();
             });

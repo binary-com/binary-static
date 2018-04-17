@@ -51,6 +51,39 @@
     position: relative;
     opacity: 0;
 
+    #contract_form_name_nav {
+        border-bottom: none;
+        font-size: $FONT_SIZE_N;
+
+        > li {
+            cursor: pointer;
+            padding: 0;
+
+            a.tm-a {
+                padding: 0 5px;
+                width: auto;
+                font-size: $FONT_SIZE_S;
+                line-height: 28px;
+                white-space: nowrap;
+            }
+            .tm-ul-2 {
+                top: 29px;
+                margin-top: -1px;
+                border-top: 1px solid $COLOR_GRAY;
+            }
+        }
+    }
+    #spot {
+        line-height: 25px;
+        white-space: nowrap;
+        padding: 3px;
+        border-radius: 5px;
+        @include BIDIR_PROP(margin-right, margin-left, 8px);
+
+        &.error {
+            font-style: italic;
+        }
+    }
     &.show {
         animation: fade 1s;
         animation-fill-mode: forwards;
@@ -142,6 +175,9 @@
         input[type=number] {
             -moz-appearance: textfield;
         }
+        .gr-gutter-left {
+            padding-left: 5px;
+        }
     }
     .contract_heading {
         text-transform: capitalize;
@@ -213,6 +249,18 @@
         &.EXPIRYMISS {
             background: url('../images/pages/trade/ends-outside_1.png') no-repeat top center;
         }
+        &.LBFLOATPUT {
+            background: url('../images/pages/trade/low_icon.svg') no-repeat center top;
+            background-size: 50%;
+        }
+        &.LBFLOATCALL {
+            background: url('../images/pages/trade/high_icon.svg') no-repeat center top;
+            background-size: 50%;
+        }
+        &.LBHIGHLOW {
+            background: url('../images/pages/trade/high_low_icon.svg') no-repeat center top;
+            background-size: 50%;
+        }
     }
     #contract_prices_container {
         position: relative;
@@ -261,6 +309,22 @@
         }
         .price_container#price_container_top {
             margin-bottom: 1rem;
+        }
+        .price_container#price_container_middle {
+            .price_wrapper {
+                margin: 25px 0 10px;
+                padding: 0 15px 5px;
+            }
+            .payout_wrapper {
+                .contract_quantity {
+                    font-weight: 700;
+                }
+            }
+            .contract_longcode {
+                text-align: center;
+                margin: 10px 15px;
+                line-height: 1.4em;
+            }
         }
         .price_comment, .contract_error, #contract_purchase_balance {
             background-color: $COLOR_GRAY;
@@ -338,7 +402,7 @@
             padding: 0;
             justify-content: flex-end;
         }
-        .contract_amount, .contract_payout {
+        .contract_amount, .contract_payout, .contract_multiplier {
             font-weight: bold;
             font-size: $FONT_SIZE_N;
             border-radius: 5px;
@@ -436,6 +500,7 @@
     }
     .small_width_input {
         width: 70px;
+        margin-right: 5px;
     }
     #currency {
         margin-bottom: 5px;
@@ -476,6 +541,8 @@
         @include BIDIR_PROP(padding-right, padding-left, 8px);
         padding-bottom: 5px;
         cursor: pointer;
+        text-decoration: none;
+        font-weight: normal;
     }
 }
 
@@ -599,43 +666,6 @@
         }
         #expiry_time {
             width: 175px;
-        }
-    }
-}
-
-#trading_socket_container, #trading_socket_container_beta {
-    #spot {
-        line-height: 25px;
-        white-space: nowrap;
-        padding: 3px;
-        border-radius: 5px;
-        @include BIDIR_PROP(margin-right, margin-left, 8px);
-
-        &.error {
-            font-style: italic;
-        }
-    }
-}
-
-#trading_socket_container #contract_form_name_nav {
-    border-bottom: none;
-    font-size: $FONT_SIZE_N;
-
-    > li {
-        cursor: pointer;
-        padding: 0;
-
-        a.tm-a {
-            padding: 0 5px;
-            width: auto;
-            font-size: $FONT_SIZE_S;
-            line-height: 28px;
-            white-space: nowrap;
-        }
-        .tm-ul-2 {
-            top: 29px;
-            margin-top: -1px;
-            border-top: 1px solid $COLOR_GRAY;
         }
     }
 }

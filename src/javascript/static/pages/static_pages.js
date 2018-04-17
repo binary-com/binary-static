@@ -1,19 +1,17 @@
-const tabListener = require('binary-style').tabListener;
-const GetStarted  = require('./get_started');
-const Scroll      = require('../../_common/scroll');
-const TabSelector = require('../../_common/tab_selector');
-const handleHash  = require('../../_common/utility').handleHash;
-const BinaryPjax  = require('../../app/base/binary_pjax');
-const Client      = require('../../app/base/client');
-const Header      = require('../../app/base/header');
+const tabListener  = require('binary-style').tabListener;
+const MenuSelector = require('../../_common/menu_selector');
+const Scroll       = require('../../_common/scroll');
+const handleHash   = require('../../_common/utility').handleHash;
+const BinaryPjax   = require('../../app/base/binary_pjax');
+const Client       = require('../../app/base/client');
+const Header       = require('../../app/base/header');
 
 module.exports = {
     OpenPositions: {
         onLoad: () => { Scroll.scrollToHashSection(); },
     },
-    VolidxMarkets: {
-        onLoad  : () => { Scroll.goToHashSection(); GetStarted.onLoad(); },
-        onUnload: () => { Scroll.offScroll(); },
+    Careers: {
+        onLoad: () => { tabListener(); handleHash(); $('.has-tabs').tabs(); },
     },
     OpenSourceProjects: {
         onLoad  : () => { Scroll.sidebarScroll($('.open-source-projects')); },
@@ -22,18 +20,6 @@ module.exports = {
     PaymentAgent: {
         onLoad  : () => { Scroll.sidebarScroll($('.payment-agent')); },
         onUnload: () => { Scroll.offScroll(); },
-    },
-    Platforms: {
-        onLoad  : () => { TabSelector.init('platforms_tabs', false, ['binary', 'mt5']); },
-        onUnload: () => { TabSelector.clean(); },
-    },
-    HowToTradeMT5: {
-        onLoad  : () => { TabSelector.init('how_to_tabs', false, ['forex', 'volatility', 'metals']); },
-        onUnload: () => { TabSelector.clean(); },
-    },
-    ContractSpecifications: {
-        onLoad  : () => { TabSelector.init('cs_tabs', false, ['forex', 'volatility', 'metals']); },
-        onUnload: () => { TabSelector.clean(); },
     },
     handleTab: {
         onLoad: () => { tabListener(); handleHash(); },
@@ -49,5 +35,13 @@ module.exports = {
                 Header.upgradeMessageVisibility();
             }
         },
+    },
+    AffiliatesFAQ: {
+        onLoad  : () => { MenuSelector.init(['general', 'account-management-and-tracking', 'marketing-and-promotions', 'support']); },
+        onUnload: () => { MenuSelector.clean(); },
+    },
+    IBProgrammeFAQ: {
+        onLoad  : () => { MenuSelector.init(['general', 'account-management', 'marketing-and-promotions']); },
+        onUnload: () => { MenuSelector.clean(); },
     },
 };

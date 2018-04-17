@@ -1,4 +1,5 @@
 const defaultRedirectUrl = require('./client').defaultRedirectUrl;
+const getElementById     = require('../../_common/common_functions').getElementById;
 const getLanguage        = require('../../_common/language').get;
 const State              = require('../../_common/storage').State;
 const Url                = require('../../_common/url');
@@ -38,7 +39,7 @@ const BinaryPjax = (() => {
             params.container.dispatchEvent(new CustomEvent('binarypjax:after', { detail: content }));
         }
 
-        applyToAllElements('a', (el) => { el.addEventListener('click', handleClick); }, '', document.getElementById('all-accounts'));
+        applyToAllElements('a', (el) => { el.addEventListener('click', handleClick); }, '', getElementById('all-accounts'));
         document.addEventListener('click', handleClick);
         window.addEventListener('popstate', handlePopstate);
     };
@@ -162,7 +163,11 @@ const BinaryPjax = (() => {
         $(params.container).append($(content.content).clone());
 
         params.container.dispatchEvent(new CustomEvent('binarypjax:after', { detail: content.content }));
-        $.scrollTo('body', 500);
+
+        const query_params = Url.paramsHash();
+        if (!query_params.anchor) {
+            $.scrollTo('body', 500);
+        }
     };
 
     const cachePut = (url, content) => {

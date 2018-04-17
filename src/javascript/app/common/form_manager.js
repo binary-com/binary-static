@@ -1,6 +1,6 @@
 const Validation       = require('./form_validation');
 const BinarySocket     = require('../base/socket');
-const urlParam         = require('../../_common/url').param;
+const getHashValue     = require('../../_common/url').getHashValue;
 const isEmptyObject    = require('../../_common/utility').isEmptyObject;
 const showLoadingImage = require('../../_common/utility').showLoadingImage;
 
@@ -18,7 +18,7 @@ const FormManager = (() => {
             if (Array.isArray(fields) && fields.length) {
                 if (needs_token) {
                     // eslint-disable-next-line no-param-reassign
-                    fields = fields.concat({ request_field: 'verification_code', value: urlParam('token') });
+                    fields = fields.concat({ request_field: 'verification_code', value: getHashValue('token') });
                 }
                 forms[form_selector].fields = fields;
 
@@ -107,6 +107,18 @@ const FormManager = (() => {
             $btn_submit,
             can_submit;
 
+        const submit = (req) => {
+            disableButton($btn_submit);
+            form.can_submit = false;
+            if (isEmptyObject(req)) {
+                onSuccess();
+            } else {
+                BinarySocket.send(req).then((response) => {
+                    onSuccess(response);
+                });
+            }
+        };
+
         const onSuccess = (response = {}) => {
             if (typeof options.fnc_response_handler === 'function') {
                 if (options.enable_button || 'error' in response) {
@@ -125,17 +137,12 @@ const FormManager = (() => {
             if (!can_submit) return;
             if (Validation.validate(options.form_selector)) {
                 const req = $.extend({}, options.obj_request, getFormData(options.form_selector));
-                if (typeof options.fnc_additional_check === 'function' && !options.fnc_additional_check(req)) {
-                    return;
-                }
-                disableButton($btn_submit);
-                form.can_submit = false;
-                if (isEmptyObject(req)) {
-                    onSuccess();
-                } else {
-                    BinarySocket.send(req).then((response) => {
-                        onSuccess(response);
+                if (typeof options.fnc_additional_check === 'function') {
+                    Promise.resolve(options.fnc_additional_check(req)).then((result) => {
+                        if (result) submit(req);
                     });
+                } else {
+                    submit(req);
                 }
             }
         });

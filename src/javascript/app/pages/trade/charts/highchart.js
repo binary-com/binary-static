@@ -1,15 +1,17 @@
-const HighchartUI  = require('./highchart.ui');
-const MBContract   = require('../../mb_trade/mb_contract');
-const MBDefaults   = require('../../mb_trade/mb_defaults');
-const Defaults     = require('../../trade/defaults');
-const GetTicks     = require('../../trade/get_ticks');
-const ViewPopupUI  = require('../../user/view_popup/view_popup.ui');
-const BinarySocket = require('../../../base/socket');
-const jpClient     = require('../../../common/country_base').jpClient;
-const addComma     = require('../../../common/currency').addComma;
-const getHighstock = require('../../../../_common/common_functions').requireHighstock;
-const localize     = require('../../../../_common/localize').localize;
-const State        = require('../../../../_common/storage').State;
+const HighchartUI      = require('./highchart.ui');
+const MBContract       = require('../../mb_trade/mb_contract');
+const MBDefaults       = require('../../mb_trade/mb_defaults');
+const Defaults         = require('../../trade/defaults');
+const GetTicks         = require('../../trade/get_ticks');
+const Lookback         = require('../../trade/lookback');
+const ViewPopupUI      = require('../../user/view_popup/view_popup.ui');
+const isJPClient       = require('../../../base/client').isJPClient;
+const BinarySocket     = require('../../../base/socket');
+const addComma         = require('../../../common/currency').addComma;
+const getHighstock     = require('../../../../_common/common_functions').requireHighstock;
+const localize         = require('../../../../_common/localize').localize;
+const State            = require('../../../../_common/storage').State;
+const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const Highchart = (() => {
     let chart,
@@ -41,7 +43,8 @@ const Highchart = (() => {
         is_contracts_for_send,
         is_history_send,
         is_entry_tick_barrier_selected,
-        is_response_id_set;
+        is_response_id_set,
+        prev_barriers; // For checking if barrier was updated
 
     const initOnce = () => {
         chart = options = response_id = contract = request = min_point = max_point = '';
@@ -64,6 +67,7 @@ const Highchart = (() => {
         exit_tick_time  = parseInt(contract.exit_tick_time);
         exit_time       = parseInt(is_sold && sell_time < end_time ? sell_spot_time : exit_tick_time || end_time);
         underlying      = contract.underlying;
+        prev_barriers    = [];
     };
 
     // initialize the chart only once with ticks or candles data
@@ -122,10 +126,10 @@ const Highchart = (() => {
             return null;
         }
 
-        const JPClient = jpClient();
+        const is_jp_client = isJPClient();
         HighchartUI.setLabels(is_chart_delayed);
         HighchartUI.setChartOptions({
-            JPClient,
+            is_jp_client,
             type,
             data,
             height    : el.parentElement.offsetHeight,
@@ -136,7 +140,7 @@ const Highchart = (() => {
             user_sold : userSold(),
         });
         return getHighstock((Highcharts) => {
-            Highcharts.setOptions(HighchartUI.getHighchartOptions(JPClient));
+            Highcharts.setOptions(HighchartUI.getHighchartOptions(is_jp_client));
             if (!el) chart = null;
             else {
                 chart          = Highcharts.StockChart(el, HighchartUI.getChartOptions());
@@ -154,6 +158,11 @@ const Highchart = (() => {
         }
     };
 
+    // Remove plotLines by id
+    const removePlotLine = (id, type = 'y') => {
+        chart[(`${type}Axis`)][0].removePlotLine(id);
+    };
+
     const handleResponse = (response) => {
         const type  = response.msg_type;
         const error = response.error;
@@ -167,7 +176,7 @@ const Highchart = (() => {
             response_id   = response[type].id;
             // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
             if (response_id && !is_response_id_set) {
-                if (State.get('is_trading') || State.get('is_mb_trading') || State.get('is_beta_trading')) {
+                if (State.get('is_trading') || State.get('is_mb_trading')) {
                     const page_underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
                     if (page_underlying !== (tick || ohlc).symbol) {
                         ViewPopupUI.storeSubscriptionID(response_id, true);
@@ -355,15 +364,47 @@ const Highchart = (() => {
 
     const drawBarrier = () => {
         if (chart.yAxis[0].plotLinesAndBands.length === 0) {
-            const barrier      = contract.barrier;
-            const high_barrier = contract.high_barrier;
-            const low_barrier  = contract.low_barrier;
+            const {contract_type, barrier, high_barrier, low_barrier} = contract;
             if (barrier) {
-                addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
+                prev_barriers[0] = barrier; // Batman like the kids who "Cache".
+                if (Lookback.isLookback(contract_type)) {
+                    const label = Lookback.getBarrierLabel(contract_type);
+                    addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize(`${label} ([_1])`, [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
+                } else {
+                    addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
+                }
             } else if (high_barrier && low_barrier) {
-                addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
-                addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot' }, 'y');
+                prev_barriers[1] = high_barrier;
+                prev_barriers[0] = low_barrier;
+                if (Lookback.isLookback(contract_type)) {
+                    const [high_label, low_label] = Lookback.getBarrierLabel(contract_type);
+                    addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize(`${high_label} ([_1])`, [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
+                    addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize(`${low_label} ([_1])`, [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
+                } else {
+                    addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
+                    addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
+                }
             }
+        }
+    };
+
+    // Update barriers if needed.
+    const updateBarrier = () => {
+        const barrier      = contract.barrier;
+        const high_barrier = contract.high_barrier;
+        const low_barrier  = contract.low_barrier;
+        // Update barrier only if it doesn't equal previous value
+        if ( barrier && barrier !== prev_barriers[0] ) { // Batman: Good boy!
+            prev_barriers[0] = barrier;
+            removePlotLine('barrier', 'y');
+            drawBarrier();
+        } else if ( high_barrier && low_barrier
+            && (high_barrier !== prev_barriers[1] || low_barrier !== prev_barriers[0] )) {
+            prev_barriers[1] = high_barrier;
+            prev_barriers[0] = low_barrier;
+            removePlotLine('high_barrier', 'y');
+            removePlotLine('low_barrier', 'y');
+            drawBarrier();
         }
     };
 
@@ -524,22 +565,23 @@ const Highchart = (() => {
     };
 
     const setStopStreaming = () => {
-        if (chart && (is_sold || is_settleable) &&
-            chart.series && chart.series[0].options.data.length > 0) {
-            const data    = chart.series[0].options.data;
-            let last_data = data[data.length - 1];
-            let i         = 2;
-            while (last_data.y === null) {
-                last_data = data[data.length - i];
-                i++;
-            }
-            const last = parseInt(last_data.x || last_data[0]);
-            if (last > (end_time * 1000) || last > ((sell_time || sell_spot_time) * 1000)) {
-                stop_streaming = true;
-            } else {
-                // add a null point if the last tick is before end time to bring end time line into view
-                const time = userSold() ? (sell_time || sell_spot_time) : end_time;
-                chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
+        if (chart && (is_sold || is_settleable)) {
+            const data = getPropertyValue(getPropertyValue(chart, ['series'])[0], ['options', 'data']);
+            if (data && data.length > 0) {
+                let last_data = data[data.length - 1];
+                let i         = 2;
+                while (last_data.y === null) {
+                    last_data = data[data.length - i];
+                    i++;
+                }
+                const last = parseInt(last_data.x || last_data[0]);
+                if (last > (end_time * 1000) || last > ((sell_time || sell_spot_time) * 1000)) {
+                    stop_streaming = true;
+                } else {
+                    // add a null point if the last tick is before end time to bring end time line into view
+                    const time = userSold() ? (sell_time || sell_spot_time) : end_time;
+                    chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
+                }
             }
         }
     };
@@ -566,6 +608,7 @@ const Highchart = (() => {
         if (granularity === 0) {
             const data = update_options.tick;
             chart.series[0].addPoint({ x: data.epoch * 1000, y: data.quote * 1 });
+            updateBarrier();
         } else {
             const c    = update_options.ohlc;
             const last = series.data[series.data.length - 1];
