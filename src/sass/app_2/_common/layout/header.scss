@@ -75,11 +75,20 @@
                             font-weight: 300;
                             text-transform: capitalize;
                             color: $COLOR_DARK_BLUE;
-                            padding: 16px;
+                            padding: 16px 18px 16px 34px;
 
                             &:before {
-                                margin-right: 8px;
-                                vertical-align: sub;
+                                position: absolute;
+                                top: 16px;
+                                left: 24px;
+                            }
+                            &:after {
+                                display: block;
+                                content: attr(title);
+                                font-weight: 400;
+                                height: 0;
+                                overflow: hidden;
+                                visibility: hidden;
                             }
                             &.trade:before {
                                 content: url('../images/trading_app/header/icons/ic_trade_normal_light.svg');
@@ -118,7 +127,8 @@
                                 content: '';
                                 height: 3px;
                                 width: 100%;
-                                bottom: 0;
+                                left: 0;
+                                bottom: -3px;
                                 background-color: $COLOR_BLUE;
                             }
                         }
