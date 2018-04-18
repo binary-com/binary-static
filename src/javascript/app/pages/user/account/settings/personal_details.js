@@ -1,3 +1,4 @@
+const SelectMatcher    = require('binary-style').select2Matcher;
 const moment           = require('moment');
 const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
@@ -10,7 +11,6 @@ const CommonFunctions  = require('../../../../../_common/common_functions');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
-require('select2');
 
 const PersonalDetails = (() => {
     const form_id           = '#frmPersonalDetails';
@@ -380,10 +380,20 @@ const PersonalDetails = (() => {
                 BinarySocket.send({ residence_list: 1 }).then(response => {
                     getDetailsResponse(get_settings_data, response.residence_list);
                     populateResidence(response);
+                    $('#place_of_birth').select2({
+                        matcher(params, data) {
+                            return SelectMatcher(params, data);
+                        },
+                    });
                 });
 
                 if (residence) {
                     BinarySocket.send({ states_list: residence }).then(response => populateStates(response));
+                    $('#address_state').select2({
+                        matcher(params, data) {
+                            return SelectMatcher(params, data);
+                        },
+                    });
                 }
             } else {
                 $('#btn_update').setVisibility(0);
