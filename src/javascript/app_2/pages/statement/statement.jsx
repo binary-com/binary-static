@@ -5,7 +5,7 @@ import BinarySocket from '../../../app/base/socket';
 import { toJapanTimeIfNeeded } from '../../../app/base/clock';
 import { jpClient } from '../../../app/common/country_base';
 import { formatMoney } from '../../../app/common/currency';
-import { throttle } from '../../../app/pages/trade/common';
+import { throttlebounce } from '../../../app/pages/trade/common';
 import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
 import DataTable from '../../components/elements/data_table.jsx';
@@ -92,7 +92,7 @@ class Statement extends React.PureComponent {
 
     componentDidMount() {
         this.getNextBatch();
-        this._throttledHandleScroll = throttle(this.handleScroll, 200);
+        this._throttledHandleScroll = throttlebounce(this.handleScroll, 200);
         window.addEventListener('scroll', this._throttledHandleScroll, false);
     }
 
