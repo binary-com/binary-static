@@ -12,8 +12,8 @@ const texts = [
     'Please [_1]log in[_2] or [_3]sign up[_2] to view this page.',
 
     // top bar
-    'Open a Real Account',
-    'Open a Financial Account',
+    'Click here to open a Real Account',
+    'Click here to open a Financial Account',
     'Network status',
     'Online',
     'Offline',
@@ -506,7 +506,7 @@ const texts = [
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',
-    'The main password of account number [_1] has been changed.',
+    'The [_1] password of account number [_2] has been changed.',
     '[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]',
     '[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]',
     'Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.',
@@ -530,10 +530,13 @@ const texts = [
     'Demo Accounts',
     'Real-Money Accounts',
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
-    'for MT5 Account',
     '[_1] Account [_2]',
     'Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.',
     'Do you wish to continue?',
+    'for account [_1]',
+    'Verify Reset Password',
+    'Reset Password',
+    'Please check your email for further instructions.',
 
     // account_transfer
     'Min',

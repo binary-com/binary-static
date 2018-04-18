@@ -1,6 +1,6 @@
 const getLanguage      = require('../../_common/language').get;
 const localize         = require('../../_common/localize').localize;
-const LocalStore       = require('../../_common/storage').LocalStore;
+const State            = require('../../_common/storage').State;
 const getPropertyValue = require('../../_common/utility').getPropertyValue;
 
 let currencies_config = {};
@@ -41,7 +41,7 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const isJPClient = () => JSON.parse(LocalStore.get('is_jp_client'));
+const isJPClient = () => JSON.parse(State.get('is_jp_client'));
 
 const getFiatDecimalPlaces = () => isJPClient() ? 0 : 2;
 

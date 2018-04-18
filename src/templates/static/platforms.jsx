@@ -115,8 +115,8 @@ const Platform = () => (
                 {/* header={it.L('Ladders')}*/}
                 {/* description={it.L('Multi-barrier trading')}*/}
                 {/* text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}*/}
-                {/* // url={it.url_for('multi_barriers_trading')}*/}
-                {/* // button_text={it.L('Trade now')}*/}
+                {/* url={it.url_for('multi_barriers_trading')}*/}
+                {/* button_text={it.L('Trade now')}*/}
                 {/* />*/}
                 {/* <div className='gr-2' data-show='default, virtual, costarica' />*/}
                 <Platforms
