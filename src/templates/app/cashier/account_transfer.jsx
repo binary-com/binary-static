@@ -3,10 +3,10 @@ import { FormRow, SubmitButton, Fieldset } from '../../_common/components/forms.
 
 const Row = ({ id }) => (
     <div className='gr-padding-10 gr-row'>
-        <div className='gr-2 align-end'>
+        <div className='gr-2 gr-4-m align-end'>
             <span id={`${id}_loginid`} />
         </div>
-        <div className='gr-10'>
+        <div className='gr-10 gr-8-m'>
             <span id={`${id}_currency`} />&nbsp;<span id={`${id}_balance`} />
         </div>
     </div>
