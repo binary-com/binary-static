@@ -26,7 +26,7 @@ class TradeApp extends React.Component {
                 </div>
                 <div className='sidebar-container desktop-only'>
 
-                    {this.isVisible('start_date') && <StartDate />}
+                    <StartDate />
                     <Duration />
                     {this.isVisible('barrier') && <Barrier />}
                     {this.isVisible('last_digit') && <LastDigit />}

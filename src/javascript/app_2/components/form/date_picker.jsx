@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { localize } from '../../../_common/localize';
 
-class Calendar extends React.Component {
+class Calendar extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -47,12 +47,6 @@ class Calendar extends React.Component {
 
     componentWillMount() {
         this.setState({ active_view: 'date' });
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        const should_update = (this.state.active_view !== nextState.active_view)
-            || (this.state.date !== nextState.date) || (this.state.selected_date !== nextState.selected_date);
-        return should_update || false;
     }
 
     setToday() {
@@ -164,7 +158,7 @@ class Calendar extends React.Component {
     onChangeInput(e) {
         let value = e.target.value;
 
-        if (this.props.mode === 'duration' && value) {
+        if (this.props.mode === 'duration' && value) { // TODO: these kinds of logic should update store instead of just component's state
             value = moment().add(value || 1, 'days');
         }
 

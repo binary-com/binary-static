@@ -5,25 +5,16 @@ export const onChangeExpiry = ({
     expiry_type,
     duration_unit,
     expiry_date,
-    expiry_time,
     contract_type,
     server_time,
 }) => {
-    // TODO: for contracts that only have daily, date_expiry should have a minimum of daily, not intraday
-    let contract_expiry_type = expiry_type === 'duration' && duration_unit === 'd' ? 'daily' : 'intraday';
-    if (expiry_type === 'endtime') {
-        const time    = ((expiry_time.split(' ') || [])[0] || '').split(':');
-        const expires = moment(expiry_date).utc();
-        if (time.length > 1) {
-            expires.hour(time[0]).minute(time[1]);
-        }
-        if (expires.diff(moment(server_time).utc(), 'days') >= 1) {
-            contract_expiry_type = 'daily';
-        }
-    }
+    const duration_is_day       = expiry_type === 'duration' && duration_unit === 'd';
+    const expiry_is_after_today = expiry_type === 'endtime' && moment.utc(expiry_date).isAfter(moment(server_time).utc(), 'day');
+    const contract_expiry_type  = duration_is_day || expiry_is_after_today ? 'daily' : 'intraday';
 
     return {
         contract_expiry_type,
+        // TODO: there will be no barrier available if contract is only daily but client chooses intraday endtime. we should find a way to handle this.
         ...(contract_type && ContractType.getBarriers(contract_type, contract_expiry_type)), // barrier value changes for intraday/daily
     };
 };

@@ -1,8 +1,10 @@
-import moment from 'moment';
 import DAO from '../../../../data/dao';
 import { cloneObject, getPropertyValue } from '../../../../../_common/utility';
 import { localize } from '../../../../../_common/localize';
 import { get as getLanguage } from '../../../../../_common/language';
+import { toTitleCase } from '../../../../../_common/string_util';
+import { buildBarriersConfig } from './barrier';
+import { buildForwardStartingConfig } from './date_start';
 import { buildDurationConfig } from './duration';
 
 
@@ -12,18 +14,18 @@ const ContractType = (() => {
      *     ['duration', 'amount'] are omitted, as they're available in all contract types
      */
     const contract_types = {
-        rise_fall  : { title: localize('Rise/Fall'),                  trade_types: ['CALL', 'PUT'],               components: ['start_date'], barrier_count: 0 },
-        high_low   : { title: localize('Higher/Lower'),               trade_types: ['CALL', 'PUT'],               components: ['barrier'],    barrier_count: 1 },
-        touch      : { title: localize('Touch/No Touch'),             trade_types: ['ONETOUCH', 'NOTOUCH'],       components: ['barrier'] },
-        end        : { title: localize('Ends Between/Ends Outside'),  trade_types: ['EXPIRYMISS', 'EXPIRYRANGE'], components: ['barrier'] },
-        stay       : { title: localize('Stays Between/Goes Outside'), trade_types: ['RANGE', 'UPORDOWN'],         components: ['barrier'] },
-        asian      : { title: localize('Asians'),                     trade_types: ['ASIANU', 'ASIAND'],          components: [] },
-        match_diff : { title: localize('Matches/Differs'),            trade_types: ['DIGITMATCH', 'DIGITDIFF'],   components: ['last_digit'] },
-        even_odd   : { title: localize('Even/Odd'),                   trade_types: ['DIGITODD', 'DIGITEVEN'],     components: [] },
-        over_under : { title: localize('Over/Under'),                 trade_types: ['DIGITOVER', 'DIGITUNDER'],   components: ['last_digit'] },
-        lb_call    : { title: localize('High-Close'),                 trade_types: ['LBFLOATCALL'],               components: [] },
-        lb_put     : { title: localize('Close-Low'),                  trade_types: ['LBFLOATPUT'],                components: [] },
-        lb_high_low: { title: localize('High-Low'),                   trade_types: ['LBHIGHLOW'],                 components: [] },
+        rise_fall  : { title: localize('Rise/Fall'),                  trade_types: ['CALL', 'PUT'],               basis: ['payout', 'stake'], components: [],            barrier_count: 0 },
+        high_low   : { title: localize('Higher/Lower'),               trade_types: ['CALL', 'PUT'],               basis: ['payout', 'stake'], components: ['barrier'],   barrier_count: 1 },
+        touch      : { title: localize('Touch/No Touch'),             trade_types: ['ONETOUCH', 'NOTOUCH'],       basis: ['payout', 'stake'], components: ['barrier'] },
+        end        : { title: localize('Ends Between/Ends Outside'),  trade_types: ['EXPIRYMISS', 'EXPIRYRANGE'], basis: ['payout', 'stake'], components: ['barrier'] },
+        stay       : { title: localize('Stays Between/Goes Outside'), trade_types: ['RANGE', 'UPORDOWN'],         basis: ['payout', 'stake'], components: ['barrier'] },
+        asian      : { title: localize('Asians'),                     trade_types: ['ASIANU', 'ASIAND'],          basis: ['payout', 'stake'], components: [] },
+        match_diff : { title: localize('Matches/Differs'),            trade_types: ['DIGITMATCH', 'DIGITDIFF'],   basis: ['payout', 'stake'], components: ['last_digit'] },
+        even_odd   : { title: localize('Even/Odd'),                   trade_types: ['DIGITODD', 'DIGITEVEN'],     basis: ['payout', 'stake'], components: [] },
+        over_under : { title: localize('Over/Under'),                 trade_types: ['DIGITOVER', 'DIGITUNDER'],   basis: ['payout', 'stake'], components: ['last_digit'] },
+        lb_call    : { title: localize('Close-Low'),                  trade_types: ['LBFLOATCALL'],               basis: ['multiplier'],      components: [] },
+        lb_put     : { title: localize('High-Close'),                 trade_types: ['LBFLOATPUT'],                basis: ['multiplier'],      components: [] },
+        lb_high_low: { title: localize('High-Low'),                   trade_types: ['LBHIGHLOW'],                 basis: ['multiplier'],      components: [] },
     };
 
     const contract_categories = {
@@ -110,6 +112,7 @@ const ContractType = (() => {
                         'PUT': 'Lower',
                     },
                     barriers: {
+                        count   : 2,
                         intraday: {
                             high_barrier: '+2.12',
                             low_barrier : '-1.12',
@@ -118,7 +121,7 @@ const ContractType = (() => {
                             high_barrier: 1111,
                             low_barrier : 1093,
                         }
-                    }
+                    },
                 }
                 */
 
@@ -126,55 +129,21 @@ const ContractType = (() => {
                     available_contract_types[type].config.has_spot = 1;
                 }
 
-                if (contract.min_contract_duration && contract.max_contract_duration) {
-                    available_contract_types[type].config.durations =
-                        buildDurationConfig(available_contract_types[type].config.durations, contract);
-                }
+                available_contract_types[type].config.durations =
+                    buildDurationConfig(contract, available_contract_types[type].config.durations);
 
                 if (contract.forward_starting_options) {
-                    const forward_starting_options = [];
-
-                    // TODO: handle multiple sessions (right now will create duplicated items in the list)
-                    contract.forward_starting_options.forEach(option => {
-                        forward_starting_options.push({
-                            text : moment.unix(option.open).format('ddd - DD MMM, YYYY'),
-                            value: option.open,
-                            end  : option.close,
-                        });
-                    });
-
-                    available_contract_types[type].config.forward_starting_dates = forward_starting_options;
+                    available_contract_types[type].config.forward_starting_dates =
+                        buildForwardStartingConfig(contract.forward_starting_options);
                 }
 
-                if (contract.contract_display && contract.contract_type) {
-                    const trade_types = available_contract_types[type].config.trade_types || {};
-
-                    trade_types[contract.contract_type] = contract.contract_display;
-
-                    available_contract_types[type].config.trade_types = trade_types;
-                }
+                available_contract_types[type].config.trade_types =
+                    buildTradeTypesConfig(contract, available_contract_types[type].config.trade_types);
 
                 if (contract.barriers) {
-                    if (!available_contract_types[type].config.barriers) {
-                        available_contract_types[type].config.barriers = {};
-                    }
-                    if (!available_contract_types[type].config.barriers[contract.expiry_type]) {
-                        available_contract_types[type].config.barriers[contract.expiry_type] = {};
-                    }
-                    const obj_barrier = {};
-                    if (contract.barrier) {
-                        obj_barrier.barrier = contract.barrier;
-                    } else {
-                        if (contract.low_barrier) {
-                            obj_barrier.low_barrier = contract.low_barrier;
-                        }
-                        if (contract.high_barrier) {
-                            obj_barrier.high_barrier = contract.high_barrier;
-                        }
-                    }
-                    available_contract_types[type].config.barriers[contract.expiry_type] = obj_barrier;
+                    available_contract_types[type].config.barriers =
+                        buildBarriersConfig(contract, available_contract_types[type].config.barriers);
                 }
-
             }
         });
 
@@ -187,8 +156,18 @@ const ContractType = (() => {
         });
     });
 
-    const getContractValues = (contract_type, contract_expiry_type, duration_unit) => {
+    const buildTradeTypesConfig = (contract, trade_types = {}) => {
+        trade_types[contract.contract_type] = contract.contract_display;
+        return trade_types;
+    };
+
+    const getArrayDefaultValue = (arr_new_values, value) => (
+        arr_new_values.indexOf(value) !== -1 ? value : arr_new_values[0]
+    );
+
+    const getContractValues = ({ contract_type, basis, contract_expiry_type, duration_unit }) => {
         const form_components   = getComponents(contract_type);
+        const obj_basis         = getBasis(contract_type, basis);
         const obj_trade_types   = getTradeTypes(contract_type);
         const obj_start_dates   = getStartDates(contract_type);
         const obj_start_type    = getStartType(obj_start_dates.start_date);
@@ -199,6 +178,7 @@ const ContractType = (() => {
 
         return {
             ...form_components,
+            ...obj_basis,
             ...obj_trade_types,
             ...obj_start_dates,
             ...obj_start_type,
@@ -209,10 +189,10 @@ const ContractType = (() => {
     };
 
     const getContractType = (list, contract_type) => {
-        const list_arr = Object.keys(list || {})
+        const arr_list = Object.keys(list || {})
             .reduce((k, l) => ([...k, ...list[l].map(ct => ct.value)]), []);
         return {
-            contract_type: list_arr.indexOf(contract_type) === -1 || !contract_type ? list_arr[0] : contract_type,
+            contract_type: getArrayDefaultValue(arr_list, contract_type),
         };
     };
 
@@ -232,8 +212,7 @@ const ContractType = (() => {
         });
 
         return {
-            duration_unit: (!duration_unit || arr_units.indexOf(duration_unit) === -1) ?
-                arr_units[0] : duration_unit,
+            duration_unit: getArrayDefaultValue(arr_units, duration_unit),
         };
     };
 
@@ -271,12 +250,26 @@ const ContractType = (() => {
     });
 
     const getBarriers = (contract_type, expiry_type) => {
-        const barriers  = getPropertyValue(available_contract_types, [contract_type, 'config', 'barriers', expiry_type]) || {};
-        const barrier_1 = barriers.barrier || barriers.high_barrier || '';
-        const barrier_2 = barriers.low_barrier || '';
+        const barriers       = getPropertyValue(available_contract_types, [contract_type, 'config', 'barriers']) || {};
+        const barrier_values = barriers[expiry_type] || {};
+        const barrier_1      = barrier_values.barrier || barrier_values.high_barrier || '';
+        const barrier_2      = barrier_values.low_barrier || '';
         return {
-            barrier_1: barrier_1.toString(),
-            barrier_2: barrier_2.toString(),
+            barrier_count: barriers.count || 0,
+            barrier_1    : barrier_1.toString(),
+            barrier_2    : barrier_2.toString(),
+        };
+    };
+
+    const getBasis = (contract_type, basis) => {
+        const arr_basis  = getPropertyValue(available_contract_types, [contract_type, 'basis']) || {};
+        const basis_list = arr_basis.reduce((cur, bas) => (
+            [...cur, { text: localize(toTitleCase(bas)), value: bas }]
+        ), []);
+
+        return {
+            basis_list,
+            basis: getArrayDefaultValue(arr_basis, basis),
         };
     };
 

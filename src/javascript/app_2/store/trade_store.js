@@ -2,7 +2,7 @@ import moment from 'moment';
 import { observable, action } from 'mobx';
 import Client from '../../app/base/client';
 import ContractType from '../pages/trading/actions/helpers/contract_type';
-import actions from '../pages/trading/actions/index';
+import actions, { callProposalOnDidUpdate } from '../pages/trading/actions/index';
 
 export default class TradeStore {
     time_interval = undefined;
@@ -31,7 +31,7 @@ export default class TradeStore {
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        this[name] = value;
+        callProposalOnDidUpdate(this, { [name]: value });
     }
 
     // Underlying
@@ -47,13 +47,14 @@ export default class TradeStore {
     @observable form_components      = [];
 
     // Amount
-    @observable basis           = 'stake';
+    @observable basis_list      = [];
+    @observable basis           = '';
     @observable currency        = Client.get('currency');
     @observable currencies_list = {};
     @observable amount          = 5;
 
     // Duration
-    @observable expiry_type         = 'duration';
+    @observable expiry_type         = 'endtime';
     @observable duration            = 15;
     @observable duration_unit       = '';
     @observable duration_units_list = {};
@@ -61,8 +62,9 @@ export default class TradeStore {
     @observable expiry_time         = '09:40 pm';
 
     // Barrier
-    @observable barrier_1 = 0;
-    @observable barrier_2 = 0;
+    @observable barrier_count = 0;
+    @observable barrier_1     = 0;
+    @observable barrier_2     = 0;
 
     // Start Time
     @observable start_dates_list = [];
