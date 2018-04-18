@@ -89,27 +89,20 @@ const MetaTrader = (() => {
 
             // Update types with no account
             Object.keys(accounts_info)
-                .filter(acc_type => !hasAccount(acc_type))
+                .filter(acc_type => !MetaTraderConfig.hasAccount(acc_type))
                 .forEach((acc_type) => { MetaTraderUI.updateAccount(acc_type); });
         });
     };
 
     const getDefaultAccount = () => {
         let default_account = '';
-        if (hasAccount(location.hash.substring(1))) {
-            default_account = location.hash.substring(1);
-            MetaTraderUI.removeUrlHash();
-        } else if (hasAccount(Client.get('mt5_account'))) {
+        if (MetaTraderConfig.hasAccount(Client.get('mt5_account'))) {
             default_account = Client.get('mt5_account');
         } else {
-            default_account = Object.keys(accounts_info)
-                .filter(acc_type => hasAccount(acc_type))
-                .sort(acc_type => (accounts_info[acc_type].is_demo ? 1 : -1))[0] || ''; // real first
+            default_account = MetaTraderConfig.getAllAccounts()[0] || '';
         }
         return default_account;
     };
-
-    const hasAccount = acc_type => (accounts_info[acc_type] || {}).info;
 
     const getAccountDetails = (login, acc_type) => {
         BinarySocket.send({
@@ -133,11 +126,13 @@ const MetaTrader = (() => {
             }
         });
 
-        // set main command
-        req[`mt5_${action}`] = 1;
+        if (action !== 'verify_password_reset') {
+            // set main command
+            req[`mt5_${action}`] = 1;
+        }
 
         // add additional fields
-        $.extend(req, fields[action].additional_fields(acc_type));
+        $.extend(req, fields[action].additional_fields(acc_type, MetaTraderUI.getToken()));
 
         return req;
     };
@@ -161,6 +156,9 @@ const MetaTrader = (() => {
                 BinarySocket.send(req).then((response) => {
                     if (response.error) {
                         MetaTraderUI.displayFormMessage(response.error.message, action);
+                        if (typeof actions_info[action].onError === 'function') {
+                            actions_info[action].onError(response, MetaTraderUI.$form());
+                        }
                     } else {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : accounts_info[acc_type].info.login;
@@ -168,17 +166,22 @@ const MetaTrader = (() => {
                             accounts_info[acc_type].info = { login, currency: getPropertyValue(response, ['mt5_new_account', 'currency']) };
                             MetaTraderUI.setAccountType(acc_type, true);
                             BinarySocket.send({ mt5_login_list: 1 });
+                            MetaTraderUI.loadAction(null, acc_type);
                         }
-                        MetaTraderUI.loadAction(null, acc_type);
                         getAccountDetails(login, acc_type);
                         if (typeof actions_info[action].success_msg === 'function') {
-                            MetaTraderUI.displayMainMessage(actions_info[action].success_msg(response));
+                            const success_msg = actions_info[action].success_msg(response);
+                            if (actions_info[action].success_msg_selector) {
+                                MetaTraderUI.displayMessage(actions_info[action].success_msg_selector, success_msg, 1);
+                            } else {
+                                MetaTraderUI.displayMainMessage(success_msg);
+                            }
                         }
                         if (typeof actions_info[action].onSuccess === 'function') {
-                            actions_info[action].onSuccess(response, acc_type);
+                            actions_info[action].onSuccess(response, MetaTraderUI.$form());
                         }
                     }
-                    MetaTraderUI.enableButton(action);
+                    MetaTraderUI.enableButton(action, response);
                 });
             });
         }
