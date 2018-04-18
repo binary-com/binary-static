@@ -72,7 +72,7 @@ class TradingHeader extends React.Component {
                                 <div className='menu-links'>
                                     {this.props.items.map((item, idx) => (
                                         <BinaryLink key={idx} to={item.link_to}>
-                                            <span className={item.icon}>{item.text}</span>
+                                            <span className={item.icon} title={item.text}>{item.text}</span>
                                         </BinaryLink>
                                     ))}
                                 </div>
