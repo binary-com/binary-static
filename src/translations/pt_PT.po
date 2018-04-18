@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-10 01:32-0400\n"
+"PO-Revision-Date: 2018-04-17 22:58-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -623,7 +623,7 @@ msgid "A list of payment methods you will accept from Clients"
 msgstr "Uma lista de métodos de pagamento que você irá aceitar de clientes"
 
 msgid "A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to \"look back\" over time to determine the payout."
-msgstr "Os prêmios de contratos retroativos dependem da alta ou baixa ótima alcançada pelo mercado. A opção permite que o detentor aja retroativamente ao longo do tempo para determinar o prêmio."
+msgstr "Os prêmios de contratos retrospectivos dependem da alta ou baixa ótima alcançada pelo mercado. A opção permite que o detentor analise o contrato em retrospectiva, ao longo do tempo, para escolher o prêmio."
 
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "Um falante nativo com bom domínio de inglês, tanto na forma oral como escrita"
@@ -1898,6 +1898,9 @@ msgstr "Alterar senha da MT5"
 msgid "Change Password"
 msgstr "Alterar Senha"
 
+msgid "Change password"
+msgstr ""
+
 msgid "Change the Stop Out Level in relation to your account."
 msgstr "Alterar o nível de interrupção automática em relação à sua conta."
 
@@ -1964,9 +1967,6 @@ msgstr "Escolha entre mais de um milhão de variações de negociação, a qualq
 msgid "Choose from three main trade types:"
 msgstr "Escolha entre três principais tipos de negociação:"
 
-msgid "Choose from two types of commission plans when your referred clients trade binary options on our platform."
-msgstr "Escolha entre dois tipos de planos de comissões para quando os seus clientes indicados negociam opções binárias na nossa plataforma."
-
 msgid "Choose the Touch/No touch trade if you want to predict the market touching or not touching a target any time during the contract period."
 msgstr "Escolha Toca/Não toca se deseja lucrar da previsão do mercado tocar ou não tocar um preço-alvo em qualquer momento durante a duração do contrato."
 
@@ -2014,6 +2014,12 @@ msgstr "Clique em OK para avançar."
 
 msgid "Click anywhere outside the menu to save and close."
 msgstr "Clique em qualquer sítio fora do menu para salvar e fechar."
+
+msgid "Click here to open a Financial Account"
+msgstr ""
+
+msgid "Click here to open a Real Account"
+msgstr ""
 
 msgid "Click here to retry"
 msgstr "Clique aqui para tentar novamente"
@@ -2870,6 +2876,9 @@ msgstr "Documentar os processos do departamento para melhorar a capacidade da eq
 msgid "Does Not Touch"
 msgstr "Não toca"
 
+msgid "Don't have an account?"
+msgstr ""
+
 msgid "Don’t worry, you can simply <a href='%1'>reset your password</a>."
 msgstr "Não se preocupe, basta <a href='%1'>redefinir a sua senha</a>."
 
@@ -3575,6 +3584,9 @@ msgstr "Para desktops"
 msgid "For Mobile"
 msgstr "Para celulares"
 
+msgid "For affiliate, partnership, and other marketing-related queries:"
+msgstr ""
+
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "Para métodos de dinheiro eletrônico ou moedas locais não suportados pela %1."
 
@@ -3606,7 +3618,7 @@ msgid "For example, if you wanted to purchase 100 units of a particular asset tr
 msgstr "Por exemplo, caso você quisesse comprar 100 unidades de um determinado ativo que está sendo negociado a 50 USD por unidade através de uma corretora tradicional, iria lhe custar 5.000 USD para essa transação."
 
 msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
-msgstr "Por exemplo, digamos que o mercado alcance uma baixa de 5.200 e um fechamento de 6.000 ao longo da duração do contrato, então um contrato retroativo \"Fechar-Baixo\" com um multiplicador de $2 pagaria um prêmio de:"
+msgstr "Por exemplo, digamos que o mercado alcance uma baixa de 5.200 e um fechamento de 6.000 ao longo da duração do contrato, então um contrato retrospectivo \"Fechar-Baixo\" com um multiplicador de $2 pagaria um prêmio de:"
 
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "Por exemplo, os CPD sobre os Índices Volatility oferecem um contrato de 1 USD por ponto. Caso você compre um contrato Volume 1.0 do Índice Volatility 100 com o preço de venda atual de 20.000 USD e mais tarde o venda por um preço de compra de 20.010 USD, o seu lucro líquido será calculado da seguinte forma:"
@@ -4554,8 +4566,8 @@ msgstr "Neste caso, a Empresa poderá, a seu critério (com ou sem aviso prévio
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "No campo 'Outras Instruções', especifique o método de pagamento e número de conta para a qual o Agente fará o envio dos fundos."
 
-msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%2). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%3), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete [_4]. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "Na UE, produtos financeiros são disponibilizados pela Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenciada e regulamentada como um prestador de serviços de investimentos de categoria 3 pela Malta Financial Services Authority (Autoridade de Serviços Financeiros de Malta - licença IS/70156). Na Ilha de Man e no Reino Unido, os índices \"Volatility\" são disponibilizados pela Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Ilha de Man, Ilhas Britânicas, licenciada e regulamentada pela (1) Comissão de Supervisão de Jogos da Ilha de Man, Ilhas Britânicas (licença atual emitida em 31 de agosto de 2017) e pela (2) Comissão de Jogos no Reino Unido (%2). No resto da UE, os índices \"Volatility\" são disponibilizados pela Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenciada e regulamentada pela (1) Autoridade de Jogos de Malta (licença n.º MGA/CL2/118/ de 26 de maio de 2015) e para os clientes do Reino Unido pela (2) Comissão de Jogos do Reino Unido (%3) e para clientes irlandeses pelas (3) Autoridades Fiscais e Aduaneiras irlandesas (licença de casa de apostas remota n.º 1010285 emitida em 1 de julho de 2017). Ver [_4]. Alguns produtos não estão disponíveis em todos os países. Os serviços deste site não são disponibilizados em determinados países como os EUA, a Costa Rica, em Hong Kong ou a pessoas com idade inferior a 18 anos."
+msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%2), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
 msgstr "No Reino Unido, os nossos clientes negociam através da Binary (IOM) Ltd e a Binary Investments (Europe) Ltd. Na Ilha de Man, eles negociam através da Binary (IOM) Ltd. No Japão, eles negociam através da Binary KK. Na União Europeia (exceto o RU), os clientes negociam através da Binary (Europe) Ltd e da Binary Investments (Europe) Ltd. No resto do mundo, os clientes negociam através da Binary (C.R.) S.A."
@@ -4766,6 +4778,9 @@ msgstr "Fundo de investimento"
 
 msgid "Investments &amp; Dividends"
 msgstr "Investimentos e dividendos"
+
+msgid "Investor"
+msgstr ""
 
 msgid "Investor Compensation Scheme"
 msgstr "Regime de Compensação de Investidores"
@@ -5325,9 +5340,6 @@ msgstr "Japan website Risk For Binary Option Trading Paragraph 2"
 msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
-msgid "Japanese Ladders"
-msgstr "Escadas japonesas"
-
 msgid "Job Details"
 msgstr "Detalhes da função"
 
@@ -5641,7 +5653,7 @@ msgid "Long:"
 msgstr "Longo"
 
 msgid "Lookbacks"
-msgstr "Retroativos"
+msgstr "Retrospectivos"
 
 msgid "Lookbacks options are currently only available for %1Volatility Indices%2."
 msgstr "Opções retroativas são atualmente apenas disponíveis em %1Índices Volatility%2."
@@ -5724,6 +5736,9 @@ msgstr "MacOS"
 msgid "Made an impression in the first interview? We'll invite you to a second interview with our CEO and/or hiring manager."
 msgstr "Fez uma boa impressão na primeira entrevista? Iremos convidá-lo para uma segunda entrevista com o nosso diretor e/ou gestor de recrutamento."
 
+msgid "Main"
+msgstr ""
+
 msgid "Main password"
 msgstr "Senha principal"
 
@@ -5780,6 +5795,9 @@ msgstr "Masculino"
 
 msgid "Malta"
 msgstr "Malta"
+
+msgid "Manage MT5 password"
+msgstr ""
 
 msgid "Manage funds"
 msgstr "Gerenciar fundos"
@@ -6153,9 +6171,6 @@ msgstr "Execução multi-ativo"
 msgid "Multi-asset liquidity solutions"
 msgstr "Soluções de liquidez multi-ativo"
 
-msgid "Multi-barrier trading"
-msgstr "Negociaçao multi-barreira"
-
 msgid "Multiple Accounts Manager"
 msgstr "Gestor de Contas Múltiplas"
 
@@ -6360,6 +6375,9 @@ msgstr "Nota: Para quaisquer dúvidas relacionadas com contas desativadas ou exc
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
 msgstr "Nota: As transferências através de agentes de pagamentos estão apenas disponíveis para contas registradas na Binary (CR) SA. As transações são aceitas somente em doláres dos EUA."
 
+msgid "Note: Transfer between accounts is not available on weekends."
+msgstr ""
+
 msgid "Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent"
 msgstr "Nota: Retiradas através de agentes de pagamento estão disponíveis apenas se você deposita exclusivamente através de agentes de pagamento"
 
@@ -6548,12 +6566,6 @@ msgstr "Posições em aberto"
 
 msgid "Open Source"
 msgstr "Código aberto"
-
-msgid "Open a Financial Account"
-msgstr "Abrir uma conta financeira"
-
-msgid "Open a Real Account"
-msgstr "Abrir uma conta de dinheiro real"
 
 msgid "Open a free account"
 msgstr "Abra uma conta gratuita"
@@ -6810,6 +6822,9 @@ msgstr "Redefinição de senha"
 msgid "Password should have lower and uppercase letters with numbers."
 msgstr "A senha deve conter letras minúsculas, maiúsculas e números."
 
+msgid "Password type"
+msgstr ""
+
 msgid "Patented technology"
 msgstr "Tecnologia patenteada"
 
@@ -6939,6 +6954,9 @@ msgstr "Platina vs. Dólar americano"
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "Por favor %1aceite os termos e condições%2 atualizados para aumentar os seus limites de retirada e negociação."
 
+msgid "Please %1authenticate%2 your account."
+msgstr ""
+
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "Por favor %1complete o perfil de conta%2 para aumentar os seus limites de retirada e negociação."
 
@@ -6959,6 +6977,9 @@ msgstr "Por favor aceite os termos e condições."
 
 msgid "Please check the above form for pending errors."
 msgstr "Consulte o formulário acima para erros subsistentes."
+
+msgid "Please check your email for further instructions."
+msgstr ""
 
 msgid "Please check your email for the password reset link."
 msgstr "Por favor, confira a sua conta de e-mail para o link de redefinição de senha."
@@ -7269,9 +7290,6 @@ msgstr "Conhecimentos e experiência prévia na indústria financeira"
 msgid "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account's Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "Antes de efetuar uma ordem que resulta na abertura de uma transação ou no aumento de uma posição em aberto existente, você confirma que reconhece que é da sua responsabilidade assegurar que a margem livre da sua conta seja suficiente para cobrir a margem necessária em relação à transação em aberto (o \"requisito de margem\") e de cumprir o requisito de forma contínua."
 
-msgid "Privacy & Security"
-msgstr "Privacidade e Segurança"
-
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
@@ -7326,8 +7344,8 @@ msgstr "Lucro / Perda"
 msgid "Profit Table"
 msgstr "Tabela de Lucros"
 
-msgid "Profit from increasingly higher payouts with tiered and laddered commision rates that reward you based on the net revenue generated by your referred clients."
-msgstr "Lucre com cada vez maiores pagamentos de prêmios com taxas de comissão escalonadas e marginais que recompensam com base na receita líquida gerada pelos clientes que você indica."
+msgid "Profit from increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
+msgstr ""
 
 msgid "Profit or Loss"
 msgstr "Lucro ou Perda"
@@ -7506,6 +7524,9 @@ msgstr "Receba notícias e ofertas especiais"
 msgid "Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates."
 msgstr "Receba cotações de uma negociação e de uma negociação oposta. Assim você recebe sempre taxas imparciais e transparentes."
 
+msgid "Receive your affiliate commission once your referred clients start trading on our platform."
+msgstr ""
+
 msgid "Ref."
 msgstr "Ref."
 
@@ -7614,8 +7635,14 @@ msgstr "A revenda não está disponivel"
 msgid "Resale price"
 msgstr "Preço de revenda"
 
+msgid "Reset MT5 password"
+msgstr ""
+
 msgid "Reset Password"
 msgstr "Redefinir senha"
+
+msgid "Reset password"
+msgstr ""
 
 msgid "Reset to Original Settings"
 msgstr "Redefinir para as configurações originais"
@@ -8466,6 +8493,9 @@ msgstr "O grupo de análise quantitativa da %1 é responsável pelo apreçamento
 msgid "The %1 Terms and Conditions;"
 msgstr "Os termos e condições da %1;"
 
+msgid "The %1 password of account number %2 has been changed."
+msgstr ""
+
 msgid "The %1 website is protected by certain copyrights."
 msgstr "O website da %1 está protegido por determinados direitos de autor."
 
@@ -8918,9 +8948,6 @@ msgstr "O nível de proteção oferecido e devido a cada cliente depende da cate
 
 msgid "The leverage ratio refers to the number of times your margin (the amount set aside from your account balance to open and maintain a transaction) can be \"leveraged\" to enter into a Transaction. The denominator of the leverage ratio is always 1. A 50:1 leverage is equivalent to a 2% margin requirement (1 divided by 50 = 2%). The leverage ratio that we/you establish will determine the amount of margin required. As leverage is inversely proportional to margin, the lower the leverage you set for your Account, the higher the margin required to be set aside from your account balance (your margin requirement)."
 msgstr "O rácio de alavancagem se refere ao número de vezes que a sua margem (a quantia reservada do saldo da sua conta para abrir e manter uma transação) pode ser \"alavancada\" para realizar uma transação. O denominador do rácio de alavancagem é sempre 1. Uma alavancagem de 50:1 é equivalente a um requisito de margem de 2% (1 dividido por 50 = 2%). O rácio de alavancagem que se estabelece determinará a quantidade de margem necessária. Como a alavancagem é inversamente proporcional à margem, quanto mais baixa a alavancagem que você definir para a sua conta, mais alta a margem necessária a ser reservada do saldo da sua conta (o seu requisito de margem)."
-
-msgid "The main password of account number %1 has been changed."
-msgstr "A senha principal da conta %1 foi alterada."
 
 msgid "The margin trading services described in this Agreement are conducted over the counter. This means that the market in one or more of the instruments which you ordinarily transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the electronic trading platform as described in this Agreement."
 msgstr "Os serviços de negociação em margem descritos neste Acordo são realizados em mercado de balcão. Isto significa que os mercados, de um ou mais dos instrumentos que você normalmente negocia conosco, apesar de serem cotados em bolsa, não são negociados numa bolsa quando transacionados através da plataforma de negociação eletrônica, conforme descrito neste Acordo."
@@ -9385,6 +9412,9 @@ msgstr "Para se qualificar, você necessitará ter um diploma universitário em 
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "Para redefinir a sua senha, digite o endereço de e-mail que você usou para criar a sua conta no campo abaixo e clique em \"Redefinir senha\"."
 
+msgid "To reset your trading or investor password, please click the button below:"
+msgstr ""
+
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "Para efetuar retiradas de contas financeiras MetaTrader 5, <a href=\"%1\">autentique</a> a sua conta %1."
 
@@ -9451,9 +9481,6 @@ msgstr "Negocie 24/7, mesmo nos finais de semana."
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "Negocie pares de Bitcoin, Ethereum e Litecoin sem os deter. Os nossos pares de criptomoedas, como Bitcoin, são cotadas em relação a moedas fiduciárias, tal como o dólar americano."
 
-msgid "Trade FX binary options on our multi-barrier platform, designed to fully comply with Japanese regulations."
-msgstr "Negocie opções binárias de FX na nossa plataforma multi-barreira, concebida para cumprir todos os regulamentos japoneses."
-
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "Negocie forex e CFDs na nossa popular plataforma multi-ativos."
 
@@ -9507,9 +9534,6 @@ msgstr "Negocie posições longas e curtas, dependendo da sua estratégia prefer
 
 msgid "Trade metals on competitive fixed and variable spreads."
 msgstr "Negocie metais com spreads fixo e variáveis."
-
-msgid "Trade now"
-msgstr "Negocie já"
 
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "Negocie mercados subjacentes que incluem forex, índices, matérias-primas e mais."
@@ -9710,7 +9734,7 @@ msgid "Types of affiliate commission plans"
 msgstr "Tipos de planos de comissões de afiliado"
 
 msgid "Types of lookbacks"
-msgstr "Tipos de retroativos"
+msgstr "Tipos de retrospectivos"
 
 msgid "Types of trades"
 msgstr "Tipos de negociações"
@@ -9937,6 +9961,9 @@ msgstr "Spreads variáveis"
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "O código de verificação está errado. Use o link enviado ao seu e-mail."
 
+msgid "Verify Reset Password"
+msgstr ""
+
 msgid "Verify main password"
 msgstr "Verificar senha principal"
 
@@ -9946,10 +9973,10 @@ msgstr "Verificar a nova senha da MT5"
 msgid "Verify new password"
 msgstr "Verifique a nova senha"
 
-msgid "Version 44. Last modified 2018-03-23."
+msgid "Version 44. Last modified 2018-04-10."
 msgstr ""
 
-msgid "Version 5. Last modified 2018-03-23."
+msgid "Version 5. Last modified 2018-04-10."
 msgstr ""
 
 msgid "Video Room Facility"
@@ -10337,7 +10364,7 @@ msgid "What are binary options"
 msgstr "O que são opções binárias"
 
 msgid "What are lookbacks"
-msgstr "O que são retroativos"
+msgstr "O que são contratos retrospectivos"
 
 msgid "What is CFD trading"
 msgstr "O que são negociações de CFDs"
@@ -11359,8 +11386,8 @@ msgstr "descrever de forma justa e precisa os seus serviços aos Clientes;"
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 msgstr "seguir e/ou implementar e/ou cumprir todas as direções e/ou políticas e/ou procedimentos relacionados com negócios da Empresa, tal como alterado e/ou repetido e/ou substituído de vez em quando;"
 
-msgid "for MT5 Account"
-msgstr "para a conta MT5"
+msgid "for account %1"
+msgstr ""
 
 msgid "h"
 msgstr "h"
@@ -11530,8 +11557,8 @@ msgstr "hoje"
 msgid "today, Fridays"
 msgstr "hoje, sextas-feiras"
 
-msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
-msgstr "mediante o nosso pedido, ele forneça à Empresa quaisquer informações razoavelmente necessárias para totalmente satisfazer quaisquer exigências ou pedidos ou ordens ou necessidades de qualquer governo ou outra autoridade;"
+msgid "upon our request, he provides the Company with any and all information reasonably required to fully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
+msgstr ""
 
 msgid "use its best endeavours and diligence to transfer funds deposited to %1 Agent Account to %1 Client Account;"
 msgstr "usar os seus melhores esforços e a sua diligência para transferir fundos depositados na conta de Agente %1 na conta de Cliente %1;"

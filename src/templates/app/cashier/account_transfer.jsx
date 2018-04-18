@@ -3,10 +3,10 @@ import { FormRow, SubmitButton, Fieldset } from '../../_common/components/forms.
 
 const Row = ({ id }) => (
     <div className='gr-padding-10 gr-row'>
-        <div className='gr-2 align-end'>
+        <div className='gr-2 gr-4-m align-end'>
             <span id={`${id}_loginid`} />
         </div>
-        <div className='gr-10'>
+        <div className='gr-10 gr-8-m'>
             <span id={`${id}_currency`} />&nbsp;<span id={`${id}_balance`} />
         </div>
     </div>
@@ -59,6 +59,10 @@ const AccountTransfer = () => (
 
             <SubmitButton msg_id='form_error' type='submit' text={it.L('Transfer')} />
         </form>
+        
+        <div className='hint invisible' id='transfer_info'>
+            <p>{it.L('Note: Transfer between accounts is not available on weekends.')}</p>
+        </div>
 
         <div className='hint invisible' id='transfer_fee'>
             <p>{it.L('Note: You may only transfer funds between a fiat account and a cryptocurrency account.')}</p>
