@@ -17,7 +17,7 @@ const WelcomePage = () => (
                 <div className='gr-7 gr-12-p gr-12-m gr-padding-30 gr-parent'>
                     <div className='box border-gray gr-gutter gr-padding-10'>
                         <div>
-                            <strong>{it.L('Real Account')}</strong>
+                            <strong id='upgrade_title'/>
                             <p className='payment-icons'>
                                 <img id='USD' className='invisible' src={it.url_for('images/pages/set_currency/usd_icon.svg')} />
                                 <img id='AUD' className='invisible' src={it.url_for('images/pages/set_currency/aud_icon.svg')} />
@@ -29,7 +29,7 @@ const WelcomePage = () => (
                                 <img id='ETH' className='invisible' src={it.url_for('images/pages/set_currency/eth_icon.svg')} />
                                 <img id='ETC' className='invisible' src={it.url_for('images/pages/set_currency/etc_icon.svg')} />
                             </p>
-                            <p className='font-s'>{it.L('Upgrade to a real money account and start trading using a wide range of currencies.')}</p>
+                            <p id='upgrade_text' className='font-s'/>
                         </div>
                         <div className='box-item-end'>
                             <p><a id='upgrade_btn' href='javascript:;' className='button button-disabled' /></p>

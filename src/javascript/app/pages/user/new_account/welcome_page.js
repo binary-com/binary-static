@@ -4,6 +4,7 @@ const localize       = require('../../../../_common/localize').localize;
 const State          = require('../../../../_common/storage').State;
 const createElement  = require('../../../../_common/utility').createElement;
 const getElementById = require('../../../../_common/common_functions').getElementById;
+const toTitleCase    = require('../../../../_common/string_util').toTitleCase;
 const Url            = require('../../../../_common/url');
 
 const WelcomePage = (() => {
@@ -39,7 +40,13 @@ const WelcomePage = (() => {
             };
 
             const welcome_msg = getElementById('welcome_container');
+
             if (welcome_msg) {
+                const upgrade_title_el = getElementById('upgrade_title');
+                const upgrade_text_el  = getElementById('upgrade_text');
+
+                upgrade_title_el.html(localize(`${toTitleCase(upgrade_info.type)} Account`));
+                upgrade_text_el.html(localize(`Upgrade to a ${upgrade_info.type} money account and start trading using a wide range of currencies.`));
                 welcome_msg.setVisibility(1);
             }
 
