@@ -43,15 +43,7 @@ const WelcomePage = (() => {
 
             if (welcome_msg) {
                 const upgrade_title_el = getElementById('upgrade_title');
-                const upgrade_text_el  = getElementById('upgrade_text');
-                let desc_text = localize(`Upgrade to a ${upgrade_info.type} money account and start trading using real money.`);
-
-                if (upgrade_info.type === 'financial') {
-                    desc_text = localize(`Upgrade to a ${upgrade_info.type} account and start trading using real money.`);;
-                }
-
                 upgrade_title_el.html(localize(`${toTitleCase(upgrade_info.type)} Account`));
-                upgrade_text_el.html(desc_text);
                 welcome_msg.setVisibility(1);
             }
 

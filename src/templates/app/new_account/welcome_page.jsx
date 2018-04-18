@@ -14,33 +14,21 @@ const WelcomePage = () => (
 
         <div className='gr-8 gr-10-p gr-12-m gr-centered'>
             <div className='container gr-row box-grid'>
-                <div className='gr-7 gr-12-p gr-12-m gr-padding-30 gr-parent'>
-                    <div className='box border-gray gr-gutter gr-padding-10'>
+                <div className='gr-6 gr-12-p gr-12-m gr-parent'>
+                    <div className='box border-gray gr-padding-10'>
                         <div>
                             <strong id='upgrade_title'/>
-                            <p className='payment-icons'>
-                                <img id='USD' className='invisible' src={it.url_for('images/pages/set_currency/usd_icon.svg')} />
-                                <img id='AUD' className='invisible' src={it.url_for('images/pages/set_currency/aud_icon.svg')} />
-                                <img id='EUR' className='invisible' src={it.url_for('images/pages/set_currency/eur_icon.svg')} />
-                                <img id='GBP' className='invisible' src={it.url_for('images/pages/set_currency/gbp_icon.svg')} />
-                                <img id='BTC' className='invisible' src={it.url_for('images/pages/set_currency/btc.svg')} />
-                                <img id='LTC' className='invisible' src={it.url_for('images/pages/set_currency/ltc.svg')} />
-                                <img id='BCH' className='invisible' src={it.url_for('images/pages/set_currency/bch.svg')} />
-                                <img id='ETH' className='invisible' src={it.url_for('images/pages/set_currency/eth_icon.svg')} />
-                                <img id='ETC' className='invisible' src={it.url_for('images/pages/set_currency/etc_icon.svg')} />
-                            </p>
-                            <p id='upgrade_text' className='font-s'/>
+                            <p id='upgrade_text' className='font-s'>{it.L('Upgrade your account and start trading using real money.')}</p>
                         </div>
                         <div className='box-item-end'>
                             <p><a id='upgrade_btn' href='javascript:;' className='button button-disabled' /></p>
                         </div>
                     </div>
                 </div>
-                <div className='gr-5 gr-12-p gr-12-m gr-padding-30 gr-parent'>
-                    <div className='box border-gray gr-gutter gr-padding-10'>
+                <div className='gr-6 gr-12-p gr-12-m gr-parent'>
+                    <div className='box border-gray gr-padding-10'>
                         <div>
                             <strong>{it.L('Virtual Account')}</strong>
-                            <p className='text-orange'>{it.L('$10,000.00')}</p>
                             <p className='font-s'>{it.L('Practice your trading strategies in a risk-free environment by using virtual funds.')}</p>
                         </div>
                         <div className='box-item-end'>
