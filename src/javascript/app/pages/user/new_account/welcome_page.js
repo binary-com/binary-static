@@ -21,17 +21,6 @@ const WelcomePage = (() => {
             const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
             const show_welcome_msg  = upgrade_info.can_upgrade;
 
-            const allowed_currencies = Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
-
-            if (allowed_currencies && allowed_currencies.length > 0) {
-                for (let i=0; i < allowed_currencies.length; i++) {
-                    const el = getElementById(allowed_currencies[i]);
-                    if (el) {
-                        el.classList.remove('invisible');
-                    }
-                }
-            }
-
             const setButtonLink = (url, msg) => {
                 if (upgrade_btn) {
                     upgrade_btn.html(createElement('span', { text: localize(msg) })).setAttribute('href', Url.urlFor(url));
