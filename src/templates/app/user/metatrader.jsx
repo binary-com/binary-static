@@ -121,8 +121,8 @@ const Metatrader = () => (
                             <a href='javascript:;' className='act_cashier has-account center-text invisible'>
                                 <span>{it.L('Manage funds')}</span>
                             </a>
-                            <a href='javascript:;' className='act_password_change has-account center-text invisible'>
-                                <span>{it.L('Change MT5 password')}</span>
+                            <a href='javascript:;' className='act_manage_password has-account center-text invisible'>
+                                <span>{it.L('Manage MT5 password')}</span>
                             </a>
                         </div>
                         <div className='fst-container mt-container'>
@@ -134,6 +134,7 @@ const Metatrader = () => (
                     </div>
                 </div>
                 <div id='mt_right_panel' className='gr-3 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-left gr-no-gutter-p gr-no-gutter-m'>
+                    <a href={`${it.url_for('get-started')}?get_started_tabs=mt5`} className='get-started-link'>{it.L('Get started with MT5')}</a>
                     <div className='mt-panel'>
                         <div id='account_desc' className='mt-container border-bottom' />
                         <div className='mt-container'>
@@ -141,19 +142,19 @@ const Metatrader = () => (
                             <ul className='platforms'>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/web.svg')} />
-                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>{it.L('Trade on MT5 web platform')}</a>
+                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>{it.L('Trade on web platform')}</a>
                                 </li>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/mac.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg' download>{it.L('Download MT5 for Mac')}</a>
-                                </li>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/windows.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' download>{it.L('Download MT5 for Windows')}</a>
+                                    <a href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg' download>{it.L('Download for Mac')}</a>
                                 </li>
                                 <li>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/linux.svg')} />
-                                    <a href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux' rel='noopener noreferrer' target='_blank'>{it.L('Read instructions for Linux')}</a>
+                                    <a href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux' rel='noopener noreferrer' target='_blank'>{it.L('Instructions for Linux')}</a>
+                                </li>
+                                <li>
+                                    <img src={it.url_for('images/pages/metatrader/dashboard/windows.svg')} />
+                                    <a href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' download>{it.L('Download for Windows')}</a>
                                 </li>
                                 <p className='badges'>
                                     <a href='https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>
@@ -273,22 +274,69 @@ const Metatrader = () => (
                         </div>
                     </form>
 
-                    <form id='frm_password_change'>
+                    <div id='frm_manage_password'>
                         <div className='gr-row'>
-                            <div className='gr-8 gr-12-m'>
-                                <FormRow is_two_rows type='password' id='txt_old_password'    label={it.L('Current MT5 password')} />
-                                <FormRow is_two_rows type='password' id='txt_new_password'    label={it.L('New MT5 password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
-                                <FormRow is_two_rows type='password' id='txt_re_new_password' label={it.L('Verify new MT5 password')} />
-                                <SubmitButton
-                                    no_wrapper
-                                    type='submit'
-                                    id='btn_submit_password_change'
-                                    text={it.L('Change MT5 password')}
-                                    attributes={{ action: 'password_change' }}
-                                />
+                            <div className='gr-6 gr-12-m flex'>
+                                <div className='mt-panel mt-container'>
+                                    <form id='frm_password_change'>
+                                        <div className='center-text hint gr-padding-20 gr-parent'>
+                                            <h3 className='secondary-color'>{it.L('Change password')}</h3>
+                                        </div>
+
+                                        <FormRow is_two_rows type='select' id='ddl_password_type' label={it.L('Password type')}>
+                                            <option value='main'>{it.L('Main')}</option>
+                                            <option value='investor'>{it.L('Investor')}</option>
+                                        </FormRow>
+                                        <FormRow is_two_rows type='password' id='txt_old_password'    label={it.L('Current MT5 password')} />
+                                        <FormRow is_two_rows type='password' id='txt_new_password'    label={it.L('New MT5 password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
+                                        <FormRow is_two_rows type='password' id='txt_re_new_password' label={it.L('Verify new MT5 password')} />
+                                        <SubmitButton
+                                            no_wrapper
+                                            type='submit'
+                                            id='btn_submit_password_change'
+                                            text={it.L('Change MT5 password')}
+                                            attributes={{ action: 'password_change' }}
+                                        />
+                                    </form>
+                                </div>
+                            </div>
+                            <div className='gr-6 gr-12-m flex'>
+                                <div className='mt-panel mt-container'>
+                                    <div className='center-text hint gr-padding-20 gr-parent'>
+                                        <h3 className='secondary-color'>{it.L('Reset password')}</h3>
+                                    </div>
+                                    <form className='invisible' id='frm_verify_password_reset'>
+                                        <div className='gr-padding-10'>
+                                            <p className='center-text notice-msg no-margin invisible' id='token_error'>{it.L('Verification code is wrong. Please use the link sent to your email.')}</p>
+                                            <p className='no-margin'>{it.L('To reset your trading or investor password, please click the button below:')}</p>
+                                            <SubmitButton
+                                                no_wrapper
+                                                type='submit'
+                                                id='btn_submit_verify_password_reset'
+                                                text={it.L('Reset MT5 password')}
+                                                attributes={{ action: 'verify_password_reset' }}
+                                            />
+                                        </div>
+                                    </form>
+                                    <form className='invisible' id='frm_password_reset'>
+                                        <FormRow is_two_rows type='select' id='ddl_reset_password_type' label={it.L('Password type')}>
+                                            <option value='main'>{it.L('Main')}</option>
+                                            <option value='investor'>{it.L('Investor')}</option>
+                                        </FormRow>
+                                        <FormRow is_two_rows type='password' id='txt_reset_new_password'    label={it.L('New MT5 password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
+                                        <FormRow is_two_rows type='password' id='txt_reset_re_new_password' label={it.L('Verify new MT5 password')} />
+                                        <SubmitButton
+                                            no_wrapper
+                                            type='submit'
+                                            id='btn_submit_password_reset'
+                                            text={it.L('Reset MT5 password')}
+                                            attributes={{ action: 'password_reset' }}
+                                        />
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
 
                     <div id='frm_cashier'>
                         <div className='gr-row demo-only invisible'>

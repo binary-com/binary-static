@@ -203,7 +203,7 @@ const Accounts = (() => {
 
     const populateReq = () => {
         const get_settings = State.getResponse('get_settings');
-        const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
+        const dob          = moment.utc(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
         const req          = [
             { request_field: 'new_account_real',       value: 1 },
             { request_field: 'date_of_birth',          value: dob },
@@ -217,6 +217,7 @@ const Accounts = (() => {
             { request_field: 'address_postcode',       value: get_settings.address_postcode },
             { request_field: 'phone',                  value: get_settings.phone },
             { request_field: 'account_opening_reason', value: get_settings.account_opening_reason },
+            { request_field: 'place_of_birth',         value: get_settings.place_of_birth },
             { request_field: 'residence',              value: Client.get('residence') },
         ];
         if (get_settings.tax_identification_number) {
