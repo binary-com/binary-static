@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-17 22:58-0400\n"
+"PO-Revision-Date: 2018-04-18 05:23-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
+
+msgid "\"AUD/JPY\" or \"Apple\""
+msgstr ""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "\"バイナリー\"や\"デジタル\"オプションは、バイナリーオプションの期限が切れるときにイベントが生じるか否かに応じて予め定められた固定金額を支払うオプションです。バイナリーオプションは、”Yes”または”No”のシンプルな方法で２つの起こり\n"
@@ -2197,9 +2200,6 @@ msgstr "Commencement Date"
 msgid "Commission"
 msgstr "手数料"
 
-msgid "Commission (as % of stake)"
-msgstr "コミッション（報酬率）"
-
 msgid "Commission on deposits"
 msgstr "入金手数料"
 
@@ -3499,6 +3499,9 @@ msgstr "%1 までお気軽にご連絡ください。"
 msgid "Female"
 msgstr "女性"
 
+msgid "Fiat"
+msgstr ""
+
 msgid "Fiat Currency"
 msgstr "不換紙幣"
 
@@ -3853,8 +3856,8 @@ msgstr "はじめに"
 msgid "Getting started"
 msgstr "はじめに"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "無料ですぐに始められます - <a href='%1'>申請書を入力</a>して当社からの承認をお待ちいただくだけです。"
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "無料ですぐに始められます - %1申請書%2*を入力して当社からの承認をお待ちいただくだけです。"
@@ -6611,6 +6614,12 @@ msgstr "オープンポジション"
 msgid "Open Source"
 msgstr "オープンソース"
 
+msgid "Open a Financial Account"
+msgstr ""
+
+msgid "Open a Real Account"
+msgstr ""
+
 msgid "Open a free account"
 msgstr "口座開設"
 
@@ -6785,8 +6794,8 @@ msgstr "当社の実績について"
 msgid "Our trading screen is simple to use:"
 msgstr "取引方法は次の5つの取引条件を選択・指定："
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "各トレードのリターン率に基づいた取引金額コミッションプログラムです。獲得顧客のリターン率が高いほど、アフィリエイト報酬率が低いプランです。"
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgstr ""
 
 msgid "Over $1,000,000"
 msgstr "$1,000,001以上"
@@ -7891,6 +7900,9 @@ msgstr "<strong>ローカルへのデータ設定を許可する（推奨）</st
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "左の欄にある<strong>Cookie</strong>を選択してください。"
+
+msgid "Select Asset"
+msgstr ""
 
 msgid "Select currency"
 msgstr "通貨を選択してください"
