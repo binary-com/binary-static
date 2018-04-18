@@ -173,7 +173,7 @@ label {
         text-align: left;
         margin-bottom: 5px;
     }
-    input {
+    input, select {
         width: calc(100% - 6px);
     }
 }
@@ -609,3 +609,24 @@ label + input {
         }
     }
 }
+
+.question {
+    .no-underline {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .show_mobile {
+        &[data-balloon]:before, &[data-balloon]:after {
+            display: block !important;
+            transform: translate(-15%, 0) !important;
+        }
+        &[data-balloon-length=medium]:before {
+            width: 120px;
+        }
+    }
+}
+
