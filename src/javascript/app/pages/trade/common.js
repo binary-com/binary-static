@@ -390,31 +390,6 @@ const commonTrading = (() => {
     };
 
     /*
-     * Function is called only once each ${wait} seconds
-     * last call is debounced
-     */
-    const throttlebounce = (func, wait = 500) => {
-        let recently_called = false;
-        let timeout;
-        return function (...args) {
-            const context = this;
-            clearTimeout(timeout);
-            if (!recently_called) {
-                func.apply(context, args);
-                recently_called = true;
-                setTimeout(() => {
-                    recently_called = false;
-                }, wait);
-            }
-            else {
-                timeout = setTimeout(() => {
-                    func.apply(context, args);
-                }, wait);
-            }
-        };
-    };
-
-    /*
      * check if selected market is allowed for current user
      */
     const getDefaultMarket = () => {
@@ -608,7 +583,6 @@ const commonTrading = (() => {
         toggleActiveCatMenuElement,
         displayCommentPrice,
         debounce,
-        throttlebounce,
         getDefaultMarket,
         addEventListenerForm,
         submitForm,

@@ -5,14 +5,13 @@ import DAO from '../../data/dao';
 import { toJapanTimeIfNeeded } from '../../../app/base/clock';
 import { jpClient } from '../../../app/common/country_base';
 import { formatMoney } from '../../../app/common/currency';
-import { throttlebounce } from '../../../app/pages/trade/common';
 import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
+import { throttlebounce } from '../../../_common/utility';
 import DataTable from '../../components/elements/data_table.jsx';
 
 /* TODO:
       1. to separate logic from UI
-      2. to move socket calls to DAO
       3. to handle errors
       4. display loading, render table only after data is available
 */
