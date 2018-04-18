@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import Client from '../../../app/base/client';
-import BinarySocket from '../../../app/base/socket';
+import DAO from '../../data/dao';
 import { toJapanTimeIfNeeded } from '../../../app/base/clock';
 import { jpClient } from '../../../app/common/country_base';
 import { formatMoney } from '../../../app/common/currency';
@@ -124,25 +124,17 @@ class Statement extends React.PureComponent {
 
         this.setState({ pending_request: true });
 
-        const BATCH_SIZE = 200;
-        const req = {
-            statement  : 1,
-            description: 1,
-            limit      : BATCH_SIZE,
-            offset     : this.state.data_source.length,
-        };
-
         const currency     = Client.get('currency');
         const is_jp_client = jpClient();
 
-        BinarySocket.send(req).then((response) => {
+        DAO.getStatement(this.props.batch_size, this.state.data_source.length).then((response) => {
             console.log(response);
             const formatted_transactions = response.statement.transactions
                 .map(transaction => getStatementData(transaction, currency, is_jp_client));
 
             this.setState({
                 data_source    : [...this.state.data_source, ...formatted_transactions],
-                has_loaded_all : formatted_transactions.length < BATCH_SIZE,
+                has_loaded_all : formatted_transactions.length < this.props.batch_size,
                 pending_request: false,
             });
         });
@@ -164,7 +156,8 @@ class Statement extends React.PureComponent {
 }
 
 Statement.defaultProps = {
-    chunk_size: 50,
+    chunk_size: 50,  // display with chunks
+    batch_size: 200, // request with batches
 };
 
 export default Statement;

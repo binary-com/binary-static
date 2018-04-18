@@ -15,6 +15,8 @@ const DAO = (() => {
 
     const getWebsiteStatus = () => BinarySocket.send({ website_status: 1 });
 
+    const getStatement = (limit, offset) => BinarySocket.send({ statement: 1, description: 1, limit, offset });
+
     const getTicks = (symbol, cb) => BinarySocket.send({ ticks: symbol, subscribe: 1 }, { callback: cb });
 
     return {
@@ -22,6 +24,7 @@ const DAO = (() => {
         getContractsFor,
         getPayoutCurrencies,
         getWebsiteStatus,
+        getStatement,
         getTicks,
     };
 })();
