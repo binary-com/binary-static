@@ -104,7 +104,7 @@ class Statement extends React.PureComponent {
         console.log('scroll');
         const {scrollTop, scrollHeight, clientHeight} = document.scrollingElement;
         const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
-        if (left_to_scroll < 500) {
+        if (left_to_scroll < 1000) {
             this.loadNextChunk();
         }
     }
@@ -124,7 +124,7 @@ class Statement extends React.PureComponent {
 
         this.setState({ pending_request: true });
 
-        const BATCH_SIZE = 20;
+        const BATCH_SIZE = 200;
         const req = {
             statement  : 1,
             description: 1,
@@ -164,7 +164,7 @@ class Statement extends React.PureComponent {
 }
 
 Statement.defaultProps = {
-    chunk_size: 10,
+    chunk_size: 20,
 };
 
 export default Statement;
