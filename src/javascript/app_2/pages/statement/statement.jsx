@@ -164,7 +164,7 @@ class Statement extends React.PureComponent {
 }
 
 Statement.defaultProps = {
-    chunk_size: 20,
+    chunk_size: 50,
 };
 
 export default Statement;
