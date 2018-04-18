@@ -91,6 +91,7 @@ class Statement extends React.PureComponent {
 
     componentDidMount() {
         this.getNextBatch();
+
         this._throttledHandleScroll = throttlebounce(this.handleScroll, 200);
         window.addEventListener('scroll', this._throttledHandleScroll, false);
     }
@@ -101,8 +102,10 @@ class Statement extends React.PureComponent {
 
     handleScroll() {
         console.log('scroll');
+
         const {scrollTop, scrollHeight, clientHeight} = document.scrollingElement;
         const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
+
         if (left_to_scroll < 1000) {
             this.loadNextChunk();
         }
@@ -111,7 +114,9 @@ class Statement extends React.PureComponent {
     loadNextChunk() {
         const { chunk_size } = this.props;
         const { chunks, data_source } = this.state;
+
         this.setState({ chunks: chunks + 1 });
+
         if (data_source.length <= (chunks + 1) * chunk_size) {
             // last chunk has been loaded
             this.getNextBatch();
@@ -128,6 +133,7 @@ class Statement extends React.PureComponent {
 
         DAO.getStatement(this.props.batch_size, this.state.data_source.length).then((response) => {
             console.log(response);
+            
             const formatted_transactions = response.statement.transactions
                 .map(transaction => getStatementData(transaction, currency, is_jp_client));
 
