@@ -15,7 +15,7 @@ const Virtual = () => (
 
                 <FormRow type='password' id='repeat_password' label={it.L('Re-enter password')} />
 
-                <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} />
+                <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} attributes={{single: 'single'}}  />
 
                 <FormRow
                     type='checkbox'
