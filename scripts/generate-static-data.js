@@ -200,7 +200,8 @@ const texts = [
     // welcome page after account opening
     'Financial Account',
     'Upgrade to a real money account and start trading using a wide range of currencies.',
-    'Upgrade to a financial money account and start trading using a wide range of currencies.',
+    'Upgrade to a financial account and start trading using a wide range of currencies.',
+    'Upgrade now',
 
     // real account opening
     'Please select',
