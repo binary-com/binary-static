@@ -150,7 +150,6 @@ hr {
                 padding: 14px 16px;
                 cursor: pointer;
                 font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
-                color: $COLOR_BLUE;
                 box-sizing: border-box;
                 z-index: 1;
 
@@ -166,7 +165,9 @@ hr {
                         display: inline-flex;
                         justify-content: center;
                         align-items: center;
+                        color: $COLOR_BLUE;
                         left: 1rem;
+                        top: 11px;
                     }
                     &:after {
                         content: '\002303';
@@ -179,7 +180,8 @@ hr {
                         right: 1rem;
                         transition: transform 0.25s;
                         transform: rotate(-180deg);
-                        transform-origin: 50% 25%;
+                        transform-origin: 50% 35%;
+                        top: 30%;
                     }
                     &.show:after {
                         transform: none;
@@ -191,11 +193,14 @@ hr {
 
                     span {
                         padding-left: 1.5rem;
+                        color: $COLOR_BLUE;
                     }
                     &:before {
                         content: '\25A2';
+                        color: $COLOR_BLUE;
                         font-size: 1rem;
                         position: absolute;
+                        top: -4px;
                     }
                 }
                 &:hover {
