@@ -53,7 +53,36 @@
         font-size: $FONT_SIZE_XS;
         position: fixed;
         bottom: 0;
-        z-index: 10;
+        z-index: 10000;
         width: 100%;
+    }
+    #status_notification {
+        animation: moveInBottom 0.2s ease-in;
+        background-color: $COLOR_ORANGE;
+        display: none;
+        align-items: center;
+        padding: 10px 7px;
+        position: fixed;
+        bottom: 8px;
+        right: 8px;
+        left: 8px;
+        border-radius: 5px;
+        z-index: 1000;
+
+        &_text {
+            color: $COLOR_WHITE;
+            font-size: $FONT_SIZE_S;
+            margin: 0 auto 0 0;
+        }
+        &_type {
+            padding-right: 7px;
+        }
+        &_close {
+            padding-left: 7px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 }
