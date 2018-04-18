@@ -390,6 +390,22 @@ const commonTrading = (() => {
     };
 
     /*
+     * Function is called only once each ${wait} seconds
+     */
+    const throttle = (func, wait = 500) => {
+        let recently_called = false;
+        return function (...args) {
+            if (!recently_called) {
+                func.apply(this, args);
+                recently_called = true;
+                setTimeout(() => {
+                    recently_called = false;
+                }, wait);
+            }
+        };
+    };
+
+    /*
      * check if selected market is allowed for current user
      */
     const getDefaultMarket = () => {
@@ -583,6 +599,7 @@ const commonTrading = (() => {
         toggleActiveCatMenuElement,
         displayCommentPrice,
         debounce,
+        throttle,
         getDefaultMarket,
         addEventListenerForm,
         submitForm,

@@ -5,7 +5,7 @@ import BinarySocket from '../../../app/base/socket';
 import { toJapanTimeIfNeeded } from '../../../app/base/clock';
 import { jpClient } from '../../../app/common/country_base';
 import { formatMoney } from '../../../app/common/currency';
-import { debounce } from '../../../app/pages/trade/common';
+import { throttle } from '../../../app/pages/trade/common';
 import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
 import DataTable from '../../components/elements/data_table.jsx';
@@ -91,15 +91,16 @@ class Statement extends React.PureComponent {
 
     componentDidMount() {
         this.getNextBatch();
-        this._debouncedHandleScroll = debounce(this.handleScroll, 200);
-        window.addEventListener('scroll', this._debouncedHandleScroll, false);
+        this._throttledHandleScroll = throttle(this.handleScroll, 200);
+        window.addEventListener('scroll', this._throttledHandleScroll, false);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this._debouncedHandleScroll, false);
+        window.removeEventListener('scroll', this._throttledHandleScroll, false);
     }
 
     handleScroll() {
+        console.log('scroll');
         const {scrollTop, scrollHeight, clientHeight} = document.scrollingElement;
         const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
         if (left_to_scroll === 0) {
