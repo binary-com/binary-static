@@ -1,6 +1,7 @@
 import React from 'react';
 
-const offsetPageTop = (el) => {
+const offsetPageTop = (element) => {
+    let el = element;
     let offset = -el.clientTop;
     while (el) {
         offset += el.offsetTop + el.clientTop;
@@ -15,12 +16,12 @@ const offsetPageTop = (el) => {
 */
 
 class DataTable extends React.Component {
-    fixHeaderInPlace(el_table_container) {
+    fixHeaderInPlace = (el_table_container) => {
         if (!el_table_container) return;
         const el_table = el_table_container.querySelector('.table');
         el_table.querySelector('.table-head').style.visibility = 'hidden';
         const el_table_clone = el_table_container.querySelector('.table-clone');
-        el_table_clone.style.top = offsetPageTop(el_table) + 'px';
+        el_table_clone.style.top = `${offsetPageTop(el_table)}px`;
     }
 
     renderRow(transaction, id) {
@@ -45,11 +46,11 @@ class DataTable extends React.Component {
     }
 
     renderTableClone() {
-        {/*
+        /*
             cloned table with one row for fixed header
             inspired by
             https://stackoverflow.com/questions/4709390
-        */}
+        */
         return (
             <table className='table table-clone'>
                 <thead className='table-head'>
