@@ -148,7 +148,7 @@ class Statement extends React.PureComponent {
             <DataTable
                 data_source={this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size)}
                 columns={this.state.columns}
-                has_fixed_header={true}
+                has_fixed_header
             />
         );
     }

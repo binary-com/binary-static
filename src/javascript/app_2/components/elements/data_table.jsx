@@ -89,8 +89,4 @@ class DataTable extends React.Component {
     }
 }
 
-DataTable.defaultProps = {
-    has_fixed_header: false,
-};
-
 export default DataTable;
