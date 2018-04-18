@@ -107,7 +107,7 @@ const Signup = () => (
                             <p className='mobile-text-small'>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
                         </TabContent>
                         <TabContent id='turnover'>
-                            <p className='mobile-text-small'>{it.L('Our turnover-based commission plan depends on the turnover probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate.')}</p>
+                            <p className='mobile-text-small'>{it.L('Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate.')}</p>
                             <div className='gr-padding-20 center-text'>
                                 <Table
                                     data={{
