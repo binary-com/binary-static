@@ -83,9 +83,10 @@ class Statement extends React.PureComponent {
 
         this.state = {
             columns,
-            data_source  : [],
-            has_loaded_all: false,
-            chunks       : 1
+            data_source    : [],
+            pending_request: false,
+            has_loaded_all : false,
+            chunks         : 1,
         };
     }
 
@@ -103,7 +104,7 @@ class Statement extends React.PureComponent {
         console.log('scroll');
         const {scrollTop, scrollHeight, clientHeight} = document.scrollingElement;
         const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
-        if (left_to_scroll === 0) {
+        if (left_to_scroll < 500) {
             this.loadNextChunk();
         }
     }
@@ -119,7 +120,9 @@ class Statement extends React.PureComponent {
     }
 
     getNextBatch() {
-        if (this.state.has_loaded_all) return;
+        if (this.state.has_loaded_all || this.state.pending_request) return;
+
+        this.setState({ pending_request: true });
 
         const BATCH_SIZE = 20;
         const req = {
@@ -138,8 +141,9 @@ class Statement extends React.PureComponent {
                 .map(transaction => getStatementData(transaction, currency, is_jp_client));
 
             this.setState({
-                data_source  : [...this.state.data_source, ...formatted_transactions],
-                has_loaded_all: formatted_transactions.length < BATCH_SIZE,
+                data_source    : [...this.state.data_source, ...formatted_transactions],
+                has_loaded_all : formatted_transactions.length < BATCH_SIZE,
+                pending_request: false,
             });
         });
     }
