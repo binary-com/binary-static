@@ -32,6 +32,11 @@
     .table-container {
         overflow-x: auto;
     }
+    .welcome-content {
+        .box-grid:first-child div {
+            margin-bottom: 0.5rem;
+        }
+    }
     .no-padding-m {
         padding: 0 !important;
     }
