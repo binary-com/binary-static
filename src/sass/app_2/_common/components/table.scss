@@ -6,9 +6,6 @@
     table-layout: fixed;
     width: 100vw;
 
-    &-container {
-        padding-top: 100px;
-    }
     &-row {
         background-color: $COLOR_WHITE;
         border-bottom: 1px solid #d2d3da; /* stylelint-disable-line color-no-hex */

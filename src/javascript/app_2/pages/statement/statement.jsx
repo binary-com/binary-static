@@ -9,6 +9,7 @@ import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
 import { throttlebounce } from '../../../_common/utility';
 import DataTable from '../../components/elements/data_table.jsx';
+import DatePicker from '../../components/form/date_picker.jsx';
 import Loading from '../../../../templates/_common/components/loading.jsx';
 
 /* TODO:
@@ -154,7 +155,17 @@ class Statement extends React.PureComponent {
         return (
             <div className='statement-container'>
                 <div className='statement-filter'>
-                    two datepickers
+                    <span className='statement-filter-text'>Filter by date:</span>
+                    <DatePicker
+                        name='from_date'
+                        onChange={(e) => {console.log(e)}}
+                    />
+                    <span className='statement-filter-text'>to</span>
+                    <DatePicker
+                        name='to_date'
+                        showTodayBtn
+                        onChange={(e) => {console.log(e)}}
+                    />
                 </div>
                 <DataTable
                     data_source={this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size)}
