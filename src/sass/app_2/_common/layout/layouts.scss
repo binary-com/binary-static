@@ -1,6 +1,7 @@
 @supports (display: grid) {
     #app_contents {
         margin: 56px 0 40px;
+        overflow: auto; // prevent margin collapse
     }
     /* trade-app layout */
     #trade_container {

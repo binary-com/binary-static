@@ -9,6 +9,7 @@ import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
 import { throttlebounce } from '../../../_common/utility';
 import DataTable from '../../components/elements/data_table.jsx';
+import Loading from '../../../../templates/_common/components/loading.jsx';
 
 /* TODO:
       1. to separate logic from UI
@@ -133,7 +134,7 @@ class Statement extends React.PureComponent {
 
         DAO.getStatement(this.props.batch_size, this.state.data_source.length).then((response) => {
             console.log(response);
-            
+
             const formatted_transactions = response.statement.transactions
                 .map(transaction => getStatementData(transaction, currency, is_jp_client));
 
@@ -147,7 +148,7 @@ class Statement extends React.PureComponent {
 
     render() {
         if (this.state.data_source.length === 0) {
-            return 'Loading...';
+            return <Loading />;
         }
 
         return (
