@@ -41,7 +41,7 @@
         flex-direction: column;
         position: absolute;
         top: 0;
-        transition: visibility 0s 0s, opacity 0.15s ease-in, transform 0.25s ease-out;
+        transition: visibility 0s 0s, opacity 0.15s ease-in;
         width: 700px;
         z-index: 10000;
         @media (min-width: 320px) and (max-width: 767px) {
@@ -51,11 +51,7 @@
         &.hidden {
             opacity: 0;
             visibility: hidden;
-            transform: translate(-50%, 0) scale(0, 1);
-            transition: visibility 0s 0.5s, opacity 0.25s ease-in 0.1s, transform 0.35s ease-out;
-            @media (min-width: 320px) and (max-width: 767px) {
-                transform: translate(0, -50%) scale(1, 0);
-            }
+            transition: visibility 0s 0.25s, opacity 0.25s ease-in 0.1s;
         }
         .asset-placeholder.mobile {
             margin: 10px 15px 0;
