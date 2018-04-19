@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-18 02:26-0400\n"
+"PO-Revision-Date: 2018-04-19 01:56-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protoco
 msgstr "\"API de Binary.com\" significa el conjunto propio de Binary.com de rutinas de programación, protocolos, herramientas y recursos creados y mantenidos por Binary.com que le permite usar una Aplicación registrada para interactuar con la plataforma de comercio Binary.com."
 
 msgid "\"AUD/JPY\" or \"Apple\""
-msgstr ""
+msgstr "\"AUD/JPY\" o \"Apple\""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "Opciones \"binarias\" o \"digitales\" son las opciones que pagan una cantidad fija predeterminada, dependiendo de si se produce o no un evento  en el momento en el que opción binaria expira. Las opciones binarias sólo pueden tener uno de dos resultados posibles y permiten un enfoque simple de \"sí o no\". Al igual que las opciones tradicionales, las opciones binarias se basan en un activo subyacente, como divisas, materias primas, índices o acciones. Sin embargo, una de las diferencias más significativas frente a las opciones tradicionales, entre otras, es que sólo puede haber dos resultados para la misma opción, o bien que al cliente se le paga en caso de que el evento ocurre o el cliente pierde el monto de la inversión como se determina para cada opción."
@@ -2174,9 +2174,6 @@ msgstr "Fecha de inicio"
 msgid "Commission"
 msgstr "Comisión"
 
-msgid "Commission (as % of stake)"
-msgstr "Comisión (como % de la participación)"
-
 msgid "Commission on deposits"
 msgstr "Comisión por depósitos"
 
@@ -3477,7 +3474,7 @@ msgid "Female"
 msgstr "Mujer"
 
 msgid "Fiat"
-msgstr ""
+msgstr "Dinero fíat"
 
 msgid "Fiat Currency"
 msgstr "Dinero fiat"
@@ -3502,6 +3499,9 @@ msgstr "Precio final"
 
 msgid "Finance"
 msgstr "Finanzas"
+
+msgid "Financial Account"
+msgstr ""
 
 msgid "Financial Account Opening"
 msgstr "Abrir Cuenta Financiera"
@@ -3833,8 +3833,8 @@ msgstr "Cómo empezar"
 msgid "Getting started"
 msgstr "Introducción"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "Comenzar es fácil y gratis: <a href='%1'>solo llene este formulario</a> y espere nuestra aprobación."
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr "Comenzar es gratis y sencillo: solo <a href='%1'>llene este formulario</a>, escoja entre dos tipos de planes de comisión y espere nuestra aprobación."
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "Comenzar es fácil y gratis: solo %1llene este formulario%2 y espere nuestra aprobación."
@@ -6574,10 +6574,10 @@ msgid "Open Source"
 msgstr "Código abierto"
 
 msgid "Open a Financial Account"
-msgstr ""
+msgstr "Abrir una cuenta financiera"
 
 msgid "Open a Real Account"
-msgstr ""
+msgstr "Abrir una cuenta real"
 
 msgid "Open a free account"
 msgstr "Abrir una cuenta gratuita"
@@ -6753,7 +6753,7 @@ msgstr "Nuestra trayectoria"
 msgid "Our trading screen is simple to use:"
 msgstr "Nuestra pantalla de operaciones es fácil de usar:"
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
 msgstr "Nuestro plan de comisiones basado en el volumen de ventas depende de la probabilidad de rentabilidad de cada contrato. Los contratos con mayor rentabilidad para el cliente ofrecen menores comisiones al afiliado."
 
 msgid "Over $1,000,000"
@@ -7190,6 +7190,9 @@ msgstr "Potentes gráficos y análisis técnico"
 
 msgid "Practice account with replenishable USD 10,000 virtual credit."
 msgstr "Cuenta de práctica con crédito virtual renovable de 10.000 USD."
+
+msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
+msgstr ""
 
 msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
 msgstr "Practicar su estrategia de trading con %1 en fondos virtuales en un entorno libre de riesgos."
@@ -7768,10 +7771,10 @@ msgid "Risks of Investment Products"
 msgstr "Riesgos de los productos de inversión"
 
 msgid "Roll-over &mdash; In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day."
-msgstr ""
+msgstr "Rollover (o prórroga)&mdash; En el caso de no recibir una orden de su parte para cerrar una posición abierta al cierre de un día hábil, la Empresa mantendrá dicha posición abierta hasta el siguiente día hábil."
 
 msgid "Roll-over Credit/Debit &mdash; Accounts with Open Positions concerned by the Roll-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company at its sole discretion."
-msgstr ""
+msgstr "Rollover (prórroga) de crédito/débito &mdash; Las cuentas con posiciones abiertas afectadas por la prórroga se acreditarán o debitarán con un valor referido como el crédito/débito de rollover/prórroga, determinado por la Empresa a su criterio exclusivo."
 
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "Ejecutar los informes diarios de pagos y preparar informes de fraude sospechado"
@@ -7858,7 +7861,7 @@ msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "Seleccione <strong>Cookies</strong> en la columna izquierda."
 
 msgid "Select Asset"
-msgstr ""
+msgstr "Seleccionar activo"
 
 msgid "Select currency"
 msgstr "Seleccionar moneda"
@@ -8026,7 +8029,7 @@ msgid "Should be more than %1"
 msgstr "Debe ser mayor a %1"
 
 msgid "Should start with letter or number, and may contain hyphen and underscore."
-msgstr ""
+msgstr "Debe empezar con letra o número y puede contener guión y guión bajo."
 
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "En caso de que estos gastos no sean cubiertos por los fondos en su cuenta nos reservamos el derecho a investigar otros medios alternativos para obtener el pago, por ejemplo: en caso de que su cuenta haya generado cuentas que compran, retendremos el pago de las comisiones de estas cuentas hasta el momento en que la cuenta por perjuicios se haya abonado."
@@ -8038,19 +8041,19 @@ msgid "Sign up"
 msgstr "Crear cuenta"
 
 msgid "Sign up for the %1 Affiliate Programme today:"
-msgstr ""
+msgstr "Regístrese en el programa de afiliados de %1 hoy mismo:"
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "Experiencia importante con los Medios Sociales, el Marketing y/o la Publicidad"
 
 msgid "Silver vs US Dollar"
-msgstr ""
+msgstr "Plata vs dólar estadounidense"
 
 msgid "Similar to Forex trading, you must understand when to buy (or \"go long\") and when to sell (or \"go short\"). In Forex trading, you'll buy a certain currency pair if you think the value of the base currency will rise. The opposite is also true: you will sell a certain currency pair if you think the value of the base currency will fall."
-msgstr ""
+msgstr "Al igual que en el comercio de Forex, usted debe entender cuándo comprar (o \"abrir posición larga\") y cuándo vender (o \"abrir posición corta\"). En las operaciones de Forex, usted comprará un par de divisas determinado si cree que el valor de la moneda base aumentará y viceversa."
 
 msgid "Simple and intuitive"
-msgstr ""
+msgstr "Simple e intuitivo"
 
 msgid "Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. %1 ensures fair and transparent pricing by showing you both sides of the trade."
 msgstr "Simplemente cambie alguno de sus parámetros y el precio del contrato cambia al instante, que le permite saber el potencial de su contrato en tiempo real. %1 garantiza precios justos y transparentes, mostrando las dos posibles direcciones del contrato."
@@ -8065,7 +8068,7 @@ msgid "Since we exclusively deal on own account in Financial Products this means
 msgstr "Como exclusivamente operamos con los productos financieros por cuenta propia, esto significa que actuamos como el centro de ejecución y, en consecuencia, todas las operaciones realizadas con nosotros se ejecutarán fuera de un mercado regulado (bolsa de valores) o un sistema multilateral de negociación."
 
 msgid "Size - the size of your order determined by the volume (number of lots)."
-msgstr ""
+msgstr "Tamaño - el tamaño de su orden, determinado por el volumen (número de lotes)."
 
 msgid "Skill in the application of object-oriented programming languages (C++, Perl and Java) coupled with the ability to produce high quality code"
 msgstr "Habilidad en la aplicación de los lenguajes de programación orientados a objetos (C ++, Perl y Java), junto con la capacidad de producir código de alta calidad"
@@ -8086,10 +8089,10 @@ msgid "Social Media Executive"
 msgstr "Ejecutivo de Medios Sociales"
 
 msgid "Some of the things that cryptocurrencies have in common include:"
-msgstr ""
+msgstr "Algunos puntos en común entre las criptomonedas incluyen:"
 
 msgid "Sorry, account signup is not available in your country."
-msgstr ""
+msgstr "Lo sentimos, pero no es posible abrir una cuenta en su país."
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Lo sentimos, ha ocurrido un error mientras se procesaba su cuenta."
@@ -8171,6 +8174,9 @@ msgstr "Empiece a operar ahora con MetaTrader 5"
 
 msgid "Start time"
 msgstr "Hora de comienzo"
+
+msgid "Start trading"
+msgstr ""
 
 msgid "State/Province"
 msgstr "Estado/Provincia"
@@ -8488,7 +8494,7 @@ msgid "Thank you for submitting the required documents"
 msgstr "Gracias por enviar los documentos requeridos"
 
 msgid "Thank you for your interest in partnering with us. We’ve made it easy for you to apply online. Just fill out the %1online application form%2 with all necessary details. If you are already registered as a %3 affiliate, you can email us at %4 instead. We will contact you directly if your application is successful."
-msgstr ""
+msgstr "Gracias por su interés en asociarse con nosotros. Hemos facilitado el proceso de registro en línea para usted. Simplemente rellene el %1formulario de solicitud en línea%2 con todos los datos necesarios. Si ya está registrado como afiliado de %3, puede enviarnos un correo electrónico a %4. Entraremos en contacto directamente con usted si su solicitud fue aceptada."
 
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "La API de %1 tiene límites de uso que se aplican para prevenir el abuso y/o la reasignación de la API de %1. Estos límites de uso pueden ser cambiados en el futuro sin aviso. Si excede constantemente los límites de uso o abusa del servicio, podemos bloquear su acceso a la API de %1."
@@ -8509,7 +8515,7 @@ msgid "The %1 Terms and Conditions;"
 msgstr "Términos y condiciones de %1;"
 
 msgid "The %1 password of account number %2 has been changed."
-msgstr ""
+msgstr "La contraseña %1 de la cuenta nº %2 ha sido modificada."
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "El sitio web %1 está protegido por ciertos derechos."
@@ -8521,19 +8527,19 @@ msgid "The %1 website's static content (CSS, Javascript) is available as the %2b
 msgstr ""
 
 msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
-msgstr ""
+msgstr "El %1cierre%2 corresponde al último intervalo (tick) en o antes de la %1hora de término%2. Si definió una %1hora de término%2 específica, se respetará dicha hora."
 
 msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
-msgstr ""
+msgstr "El %1período del contrato%2 es aquel entre el %primer intervalo%2 (posterior al inicio) y el %1hora de término%2."
 
 msgid "The %1end time%2 is the selected number of minutes/hours after the %1start time%2."
-msgstr ""
+msgstr "La %1hora de cierre%2 corresponde al número seleccionado de minutos/horas después de la %hora de inicio%2."
 
 msgid "The %1high%2 is the highest point ever reached by the market during the contract period."
-msgstr ""
+msgstr "El %1máximo%2 corresponde al mayor punto alcanzado por el mercado durante el período del contrato."
 
 msgid "The %1low%2 is the lowest point ever reached by the market during the contract period."
-msgstr ""
+msgstr "El %1mínimo%2 corresponde al menor punto alcanzado por el mercado durante el período del contrato."
 
 msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "El %1inicio del contrato%1 es cuando el contrato es procesado por nuestros servidores."
@@ -8551,37 +8557,37 @@ msgid "The <strong>start time</strong> is when the contract is processed by our 
 msgstr "El <strong>inicio</strong> es cuando el contrato esté procesado por nuestros servidores."
 
 msgid "The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices, futures and cryptocurrencies."
-msgstr ""
+msgstr "La cuenta avanzada le proporciona spreads ajustados, mayores tamaños de pedidos y una mayor oferta de productos. Comience a operar en más pares de divisas, índices de CFD, futuros y criptomonedas."
 
 msgid "The Affiliate's Obligations"
 msgstr "Las Obligaciones del Afiliado"
 
 msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
-msgstr ""
+msgstr "El Agente acuerda indemnizar a la empresa por todas y cualquier pérdidas que esta pueda sufrir como resultado de o en conexión con sus actos fraudulentos u omisiones o cualquier tipo de negligencia, mala conducta, incumplimiento intencional y/o violación del presente Acuerdo."
 
 msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-cash or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
-msgstr ""
+msgstr "El Agente puede proporcionar sus servicios a Clientes de la Empresa que deseen depositar o retirar dinero utilizando al Agente. En particular, el Agente podrá prestar sus servicios a Clientes que tengan la intención de utilizar dinero electrónico o métodos de pago electrónico distintos de los utilizados por la Empresa (en lo sucesivo denominados \"pagos electrónicos\"), monedas locales distintas de las aceptadas por la Empresa (en lo sucesivo denominadas \"monedas locales\") o transferencias bancarias locales (en lo sucesivo denominadas \"transferencias bancarias\")."
 
 msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
-msgstr ""
+msgstr "El Agente declara y garantiza que está y estará en cumplimiento con todas las leyes contra el lavado de dinero, así como con cualquier programa de sanciones financieras o económicas en la jurisdicción en la que opera."
 
 msgid "The Agent shall not be authorized to offer its services, under this Agreement, to Clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href=\"%1\">www.binary.com.</a>"
-msgstr ""
+msgstr "El agente no estará autorizado a ofrecer sus servicios, en virtud de este Acuerdo, a aquellos Clientes que residan en países restringidos, según lo estipulado en nuestros términos y condiciones, que se encuentran disponibles en nuestro sitio web, <a href=\"%1\">www.binary.com.</a>"
 
 msgid "The Agent shall not produce any copies of any Confidential Information and/or any content based on the concepts contained within the Confidential Information for personal use and/or for distribution, without the Company’s request."
-msgstr ""
+msgstr "El Agente no producirá copias de ninguna información confidencial y/o ningún contenido basado en los conceptos contenidos en la misma para uso personal y/o distribución, sin previa solicitud de la Compañía."
 
 msgid "The Agent shall not:"
-msgstr ""
+msgstr "El agente no debe:"
 
 msgid "The Agent shall provide any and all information and documentation, required in the context of the due diligence that the Company shall conduct, from time to time. The Company, complying with the law and providing its services under this Agreement, shall be entitled, at any time, to request from the Agent to provide all and any due diligence information and documentation related to itself and any other person connected and/or associated with it for the purposes of this Agreement."
-msgstr ""
+msgstr "El Agente proporcionará toda la información y documentación, requerida en el contexto de la debida diligencia que la Empresa llevará a cabo de vez en cuando. La Empresa, en cumplimiento con la ley y durante la prestación de sus servicios en virtud de este Acuerdo, tendrá derecho, en cualquier momento, a solicitar al Agente que proporcione toda la información y documentación de debida diligencia relacionada consigo misma y con cualquier otra persona conectada y/o asociada con ella para efectos de este Acuerdo."
 
 msgid "The Agent shall submit an application including the following information:"
-msgstr ""
+msgstr "El agente deberá presentar una solicitud incluyendo la siguiente información:"
 
 msgid "The Agent shall treat all information related to the Company and Client including but not limited to Client identity, financial status, trading or transaction performance, as well as Company’s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the “Confidential Information”)."
-msgstr ""
+msgstr "El Agente tratará toda la información relacionada con la Empresa y el Cliente, incluyendo, entre otros, la identidad, estado financiero y desempeño de las operaciones o transacciones del cliente, así como los planes de negocios de la Empresa, sus puntos de precio, ideas, conceptos, formatos, sugerencias, avances, arreglos, programas, técnicas, metodologías, conocimientos técnicos, equipos, etc., de manera confidencial (en adelante, la \"Información confidencial\")."
 
 msgid "The Agent shall upon demand provide the Company with all requested information and/or documentation in regards with its operations and competence including but not limited to its registration and/or incorporation, memberships, authorisations, knowledge, expertise and experience."
 msgstr ""
@@ -9907,6 +9913,12 @@ msgstr "Actualizar configuración"
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "Actualizar el Manual de Lucha contra el Fraude y otros documentos relacionados"
 
+msgid "Upgrade now"
+msgstr ""
+
+msgid "Upgrade your account and start trading using real money."
+msgstr ""
+
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr ""
 
@@ -10942,6 +10954,9 @@ msgstr ""
 
 msgid "You have sold this contract at %1 %2"
 msgstr "Usted ha vendido este contrato en %1 %2"
+
+msgid "You have successfully created your Virtual Account."
+msgstr ""
 
 msgid "You have successfully created your account!"
 msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-18 02:27-0400\n"
+"PO-Revision-Date: 2018-04-19 01:58-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -2172,9 +2172,6 @@ msgstr "วันเริ่มต้น"
 msgid "Commission"
 msgstr "ค่าคอมมิชชั่น"
 
-msgid "Commission (as % of stake)"
-msgstr "คอมมิชชั่น (เป็น%ของเงินเดิมพัน)"
-
 msgid "Commission on deposits"
 msgstr "ค่าธรรมเนียมเมื่อฝากเงิน"
 
@@ -3501,6 +3498,9 @@ msgstr "ราคาสุดท้าย"
 msgid "Finance"
 msgstr "การเงิน"
 
+msgid "Financial Account"
+msgstr ""
+
 msgid "Financial Account Opening"
 msgstr "การเปิดบัญชี"
 
@@ -3832,8 +3832,8 @@ msgstr "เริ่มต้น"
 msgid "Getting started"
 msgstr "เริ่มต้น"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "เริ่มต้นง่ายฟรี เพียงเค่<a href='%1'>กรอกใบสมัคร</a> และรอการอนุมัติของเรา"
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "เริ่มต้นง่ายฟรี เพียงแค่%1fกรอกใบสมัคร%2* และรอการอนุมัติของเรา"
@@ -6753,7 +6753,7 @@ msgstr "บันทึกการติดตามของพวกเรา
 msgid "Our trading screen is simple to use:"
 msgstr "หน้าจอสำหรับซื้อขายของพวกเราใช้งานง่าย:"
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
 msgstr ""
 
 msgid "Over $1,000,000"
@@ -7190,6 +7190,9 @@ msgstr "แผนภูมิกราฟที่เป็นประโยช
 
 msgid "Practice account with replenishable USD 10,000 virtual credit."
 msgstr "บัญชีฝึกหัดกับเครดิตเหมือนจริง 10,000 ดอลลาร์สหรัฐที่เติมเต็มได้"
+
+msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
+msgstr ""
 
 msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
 msgstr "ฝึกฝนการวางกลยุทธการซื้อขายของท่านกับ %1 โดยใช้เงินทุนเสมือน ปราศจากความเสี่ยงใดๆ"
@@ -8171,6 +8174,9 @@ msgstr "เริ่มซื้อขายด้วย MetaTrader 5"
 
 msgid "Start time"
 msgstr "เวลาเริ่ม"
+
+msgid "Start trading"
+msgstr ""
 
 msgid "State/Province"
 msgstr "รัฐ/จังหวัด"
@@ -9909,6 +9915,12 @@ msgstr "การปรับปรุงการตั้งค่า"
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "การปรับปรุงคู่มือการปราบปรามการทุจริตและเอกสารที่เกี่ยวข้อง"
 
+msgid "Upgrade now"
+msgstr ""
+
+msgid "Upgrade your account and start trading using real money."
+msgstr ""
+
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr "เมื่อปิดธุรกรรม กำไร (หรือขาดทุน) ที่เกิดขึ้น ซึ่งแสดงความแตกต่างระหว่างระดับเปิดและระดับปิดของธุรกรรมคุณด้วยจำนวนล็อต (ปริมาณ) จะครบกำหนดและเราจะจ่ายเงินให้แก่คุณ (หรือครบกำหนดและคุณจ่ายเงินให้แก่เราในกรณีการขาดทุน)"
 
@@ -10943,6 +10955,9 @@ msgstr "ท่านได้อ่านข้อกำหนดทางกฎ
 
 msgid "You have sold this contract at %1 %2"
 msgstr "ท่าได้ขายสัญญานี้ที่ %1 %2"
+
+msgid "You have successfully created your Virtual Account."
+msgstr ""
 
 msgid "You have successfully created your account!"
 msgstr "ท่านได้สร้างบัญชีของท่านเรียบร้อยแล้ว!"
