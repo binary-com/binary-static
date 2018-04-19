@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-17 22:58-0400\n"
+"PO-Revision-Date: 2018-04-18 05:23-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API %1\" означает набор программ, протоколов, инструментов и ресурсов %1, созданных и поддерживаемых сайтом %1, а также позволяющих Вам пользоваться доступным приложением для работы на торговой платформе %1."
+
+msgid "\"AUD/JPY\" or \"Apple\""
+msgstr ""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "\"Бинарные\" или \"цифровые\" опционы – это опционы, по которым выплачивается заранее определенная, фиксированная сумма, в зависимости от того, подтверждается или нет сделанный прогноз на момент окончания опциона. Бинарные опционы могут иметь только один из двух возможных вариантов исхода: \"да или нет\". Как и традиционные опционы, бинарные опционы предлагаются на конкретных рынках, например, валютах, сырьевых товарах, индексах или акциях; однако, одно из их самых существенных отличий от традиционных опционов заключается в том, что в сделках есть лишь два варианта исхода: либо клиенту выплачивается выигрыш при подтверждении прогноза, либо он теряет инвестированную в сделку сумму – цену покупки, как заранее оговорено для каждого опциона."
@@ -2170,9 +2173,6 @@ msgstr "Дата начала"
 msgid "Commission"
 msgstr "Комиссия"
 
-msgid "Commission (as % of stake)"
-msgstr "Комиссия (в % от ставки)"
-
 msgid "Commission on deposits"
 msgstr "Комиссионные на пополнения"
 
@@ -3472,6 +3472,9 @@ msgstr "Пожалуйста, свяжитесь с нами по адресу %
 msgid "Female"
 msgstr "Female"
 
+msgid "Fiat"
+msgstr ""
+
 msgid "Fiat Currency"
 msgstr "Обычные деньги"
 
@@ -3826,8 +3829,8 @@ msgstr "С чего начать"
 msgid "Getting started"
 msgstr "С чего начать"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "Начните с простого первого шага – заполните <a href='%1'>анкету регистрации</a> и дождитесь одобрения Вашей заявки."
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "Начните с простого первого шага – %1заполните анкету регистрации%2* и дождитесь одобрения Вашей заявки."
@@ -6565,6 +6568,12 @@ msgstr "Открытые позиции"
 msgid "Open Source"
 msgstr "Открытый код"
 
+msgid "Open a Financial Account"
+msgstr ""
+
+msgid "Open a Real Account"
+msgstr ""
+
 msgid "Open a free account"
 msgstr "Открыть бесплатный счет"
 
@@ -6739,8 +6748,8 @@ msgstr "Наш послужной список"
 msgid "Our trading screen is simple to use:"
 msgstr "Наше торговое окно работает очень просто:"
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "Наш план расчёта комиссионных, основанный на объёме покупок, зависит от прибыльности каждого контракта. Контракты, приносящие клиенту более высокую прибыль, дают низкую комиссию партнёру."
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgstr ""
 
 msgid "Over $1,000,000"
 msgstr "Свыше $1,000,000"
@@ -7842,6 +7851,9 @@ msgstr "Выберите <strong>Разрешить установку внут�
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "Выберите <strong>Куки</strong> в левой колонке."
+
+msgid "Select Asset"
+msgstr ""
 
 msgid "Select currency"
 msgstr "Выберите валюту"

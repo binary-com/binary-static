@@ -20,16 +20,16 @@ const ApiToken = () => (
 
                         <FormRow type='custom' label={it.L('Choose Scopes:')}>
                             <input id='chk_scopes_read' type='checkbox' value='read' checked='checked' readOnly='readonly' />
-                            <label htmlFor='chk_scopes_read' data-balloon={it.L('Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more.')} data-balloon-length='xlarge'>{it.L('Read')}</label>
+                            <label htmlFor='chk_scopes_read'><span data-balloon={it.L('Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more.')} data-balloon-length='xlarge'>{it.L('Read')}</span></label>
 
                             <input id='chk_scopes_trade' type='checkbox' value='trade' />
-                            <label htmlFor='chk_scopes_trade' data-balloon={it.L('Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts.')} data-balloon-length='xlarge'>{it.L('Trade')}</label>
+                            <label htmlFor='chk_scopes_trade'><span data-balloon={it.L('Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts.')} data-balloon-length='xlarge'>{it.L('Trade')}</span></label>
 
                             <input id='chk_scopes_payments' type='checkbox' value='payments' />
-                            <label htmlFor='chk_scopes_payments' data-balloon={it.L('Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords.')} data-balloon-length='xlarge'>{it.L('Payments')}</label>
+                            <label htmlFor='chk_scopes_payments'><span data-balloon={it.L('Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords.')} data-balloon-length='xlarge'>{it.L('Payments')}</span></label>
 
                             <input id='chk_scopes_admin' type='checkbox' value='admin' />
-                            <label htmlFor='chk_scopes_admin' data-balloon={it.L('Can be used to open accounts, set settings, manage token usage, and more.')} data-balloon-length='xlarge'>{it.L('Admin')}</label>
+                            <label htmlFor='chk_scopes_admin'><span data-balloon={it.L('Can be used to open accounts, set settings, manage token usage, and more.')} data-balloon-length='xlarge'>{it.L('Admin')}</span></label>
                         </FormRow>
 
                         <SubmitButton text={it.L('Create')} type='submit' />

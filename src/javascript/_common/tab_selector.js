@@ -157,10 +157,25 @@ const TabSelector = (() => {
         });
     };
 
+    const onChangeTab = (fn) => {
+        applyToAllElements('.go-left', (element) => {
+            element.addEventListener('click', (e) => {
+                fn({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
+            });
+        });
+        applyToAllElements('.go-right', (element) => {
+            element.addEventListener('click', (e) => {
+                fn({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
+            });
+        });
+    };
+
     return {
+        onChangeTab,
         onLoad,
         onUnload,
         repositionSelector,
+        slideSelector,
         updateTabDisplay,
     };
 })();
