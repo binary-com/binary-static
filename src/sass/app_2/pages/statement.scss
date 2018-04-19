@@ -7,6 +7,7 @@ $filter-height: 75px;
     .statement-filter {
         height: $filter-height;
         position: fixed;
+        z-index: 200;
         background-color: $COLOR_WHITE;
         width: 100%;
         padding: 0 2rem;

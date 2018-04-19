@@ -61,6 +61,7 @@
     // styles for fixed table header
     &.table-clone {
         position: fixed;
+        z-index: 100;
         pointer-events: none;
 
         .table-head {
