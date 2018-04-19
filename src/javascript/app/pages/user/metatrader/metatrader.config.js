@@ -24,14 +24,9 @@ const MetaTraderConfig = (() => {
     let $messages;
     const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
-    let rates = {};
-    const setExchangeRates = (exchange_rates) => {
-        rates = exchange_rates.rates;
-    };
-
     // client currency equivalent to 1 USD
     const getMinMT5TransferValue = (client_currency = Client.get('currency')) => (
-        (1 / (rates.USD || 1)).toFixed(Currency.getDecimalPlaces(client_currency))
+        (1 / (State.getResponse('exchange_rates.rates.USD') || 1)).toFixed(Currency.getDecimalPlaces(client_currency))
     );
 
     const actions_info = {
@@ -277,7 +272,6 @@ const MetaTraderConfig = (() => {
         needsRealMessage,
         getCurrency,
         hasAccount,
-        setExchangeRates,
         setMessages   : ($msg) => { $messages = $msg; },
         getAllAccounts: () => (
             Object.keys(accounts_info)
