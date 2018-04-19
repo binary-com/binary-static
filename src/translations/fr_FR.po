@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-17 01:54-0400\n"
+"PO-Revision-Date: 2018-04-18 05:22-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "« L'API %1 » désigne l'ensemble des produits propriétaires de %1, notamment les routines, protocoles, outils et ressources de programmation créés et mis en service par %1, vous permettant d'utiliser une Application enregistrée pour communiquer avec la plateforme de trading %1."
+
+msgid "\"AUD/JPY\" or \"Apple\""
+msgstr ""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "Les options « binaires » ou « digitales » sont des options qui paient un montant fixe, prédéterminé, en fonction de la réalisation ou non d'un événement lorsque l'option binaire arrive à échéance. Les options binaires ne présentent que deux issues possibles et permettent donc d'adopter une approche simple en déterminant si « oui ou non » l'option terminera dans la monnaie. Comme les options traditionnelles, les options binaires sont basées sur des actifs sous-jacents tels que les devises, les matières premières, les indices ou les actions. Cependant, contrairement aux options traditionnelles, elles ne peuvent aboutir qu'à deux résultats possibles : soit l'événement se réalise et le client obtient le paiement correspondant, soit le client perd le montant d'investissement déterminé à l'avance pour chaque option."
@@ -2169,9 +2172,6 @@ msgstr "Date d’entrée en vigueur"
 msgid "Commission"
 msgstr "Commission"
 
-msgid "Commission (as % of stake)"
-msgstr "Commission (en tant que % de participation)"
-
 msgid "Commission on deposits"
 msgstr "Commission sur les dépôts"
 
@@ -3471,6 +3471,9 @@ msgstr "N’hésitez pas à nous contacter à %1. Nous serions ravis de vous ent
 msgid "Female"
 msgstr "Femme"
 
+msgid "Fiat"
+msgstr ""
+
 msgid "Fiat Currency"
 msgstr "Monnaie papier"
 
@@ -3825,8 +3828,8 @@ msgstr "Pour débuter"
 msgid "Getting started"
 msgstr "Pour débuter"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "Débuter est simple et gratuit - <a href='%1'> remplissez simplement le formulaire d'application</a> et attendez notre approbation."
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "Débuter est simple et gratuit. %1Remplissez simplement le formulaire d'application%2 et attendez notre approbation."
@@ -6564,6 +6567,12 @@ msgstr "Postes vacants"
 msgid "Open Source"
 msgstr "Open source"
 
+msgid "Open a Financial Account"
+msgstr ""
+
+msgid "Open a Real Account"
+msgstr ""
+
 msgid "Open a free account"
 msgstr "Ouvrir un compte gratuit"
 
@@ -6738,8 +6747,8 @@ msgstr "Notre expérience"
 msgid "Our trading screen is simple to use:"
 msgstr "Notre écran de trading est simple d'utilisation :"
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "Notre plan de commission axé sur le chiffre d’affaires dépend de la probabilité des rendements pour chaque contrat. Contrats avec des rendements plus élevés pour le client offrent des commissions inférieures à l’affilié."
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgstr ""
 
 msgid "Over $1,000,000"
 msgstr "Plus de $1 000 000"
@@ -7841,6 +7850,9 @@ msgstr "Sélectionnez <strong>Autorisez les données locales d'être définies (
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "Sélectionnez <strong>Cookies</strong> à partir de la colonne gauche."
+
+msgid "Select Asset"
+msgstr ""
 
 msgid "Select currency"
 msgstr "Sélectionnez une devise"

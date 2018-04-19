@@ -170,6 +170,7 @@ const MetaTrader = (() => {
                             accounts_info[acc_type].info = { login, currency: getPropertyValue(response, ['mt5_new_account', 'currency']) };
                             MetaTraderUI.setAccountType(acc_type, true);
                             BinarySocket.send({ mt5_login_list: 1 });
+                            MetaTraderUI.loadAction(null, acc_type);
                         }
                         getAccountDetails(login, acc_type);
                         if (typeof actions_info[action].success_msg === 'function') {

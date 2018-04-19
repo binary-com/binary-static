@@ -80,8 +80,8 @@ const getMinPayout = currency => (
 
 const getCurrencyList = (currencies) => {
     const $currencies       = $('<select/>');
-    const $fiat_currencies  = $('<optgroup/>', { label: localize('Fiat Currency') });
-    const $cryptocurrencies = $('<optgroup/>', { label: localize('Cryptocurrency') });
+    const $fiat_currencies  = $('<optgroup/>', { label: localize('Fiat') });
+    const $cryptocurrencies = $('<optgroup/>', { label: localize('Crypto') });
 
     currencies.forEach((currency) => {
         (isCryptocurrency(currency) ? $cryptocurrencies : $fiat_currencies)

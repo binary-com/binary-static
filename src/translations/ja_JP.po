@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-17 01:54-0400\n"
+"PO-Revision-Date: 2018-04-18 05:23-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
+
+msgid "\"AUD/JPY\" or \"Apple\""
+msgstr ""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "\"バイナリー\"や\"デジタル\"オプションは、バイナリーオプションの期限が切れるときにイベントが生じるか否かに応じて予め定められた固定金額を支払うオプションです。バイナリーオプションは、”Yes”または”No”のシンプルな方法で２つの起こり\n"
@@ -1921,7 +1924,7 @@ msgid "Change Password"
 msgstr "パスワード変更"
 
 msgid "Change password"
-msgstr ""
+msgstr "パスワード変更"
 
 msgid "Change the Stop Out Level in relation to your account."
 msgstr "ロスカットレベルを変更する"
@@ -2196,9 +2199,6 @@ msgstr "Commencement Date"
 
 msgid "Commission"
 msgstr "手数料"
-
-msgid "Commission (as % of stake)"
-msgstr "コミッション（報酬率）"
 
 msgid "Commission on deposits"
 msgstr "入金手数料"
@@ -3499,6 +3499,9 @@ msgstr "%1 までお気軽にご連絡ください。"
 msgid "Female"
 msgstr "女性"
 
+msgid "Fiat"
+msgstr ""
+
 msgid "Fiat Currency"
 msgstr "不換紙幣"
 
@@ -3853,8 +3856,8 @@ msgstr "はじめに"
 msgid "Getting started"
 msgstr "はじめに"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "無料ですぐに始められます - <a href='%1'>申請書を入力</a>して当社からの承認をお待ちいただくだけです。"
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "無料ですぐに始められます - %1申請書%2*を入力して当社からの承認をお待ちいただくだけです。"
@@ -4808,7 +4811,7 @@ msgid "Investments &amp; Dividends"
 msgstr "投資と&amp;配当"
 
 msgid "Investor"
-msgstr ""
+msgstr "投資"
 
 msgid "Investor Compensation Scheme"
 msgstr "投資家補償スキーム"
@@ -5775,7 +5778,7 @@ msgid "Made an impression in the first interview? We'll invite you to a second i
 msgstr "第一面接は印象的なものでしたか？当社のCEO及び/または採用担当者との第二面接へご招待致します。"
 
 msgid "Main"
-msgstr ""
+msgstr "メイン"
 
 msgid "Main password"
 msgstr "メインパスワード"
@@ -5835,7 +5838,7 @@ msgid "Malta"
 msgstr "マルタ共和国"
 
 msgid "Manage MT5 password"
-msgstr ""
+msgstr "MT5パスワード管理"
 
 msgid "Manage funds"
 msgstr "資金管理"
@@ -6611,6 +6614,12 @@ msgstr "オープンポジション"
 msgid "Open Source"
 msgstr "オープンソース"
 
+msgid "Open a Financial Account"
+msgstr ""
+
+msgid "Open a Real Account"
+msgstr ""
+
 msgid "Open a free account"
 msgstr "口座開設"
 
@@ -6785,8 +6794,8 @@ msgstr "当社の実績について"
 msgid "Our trading screen is simple to use:"
 msgstr "取引方法は次の5つの取引条件を選択・指定："
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "各トレードのリターン率に基づいた取引金額コミッションプログラムです。獲得顧客のリターン率が高いほど、アフィリエイト報酬率が低いプランです。"
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgstr ""
 
 msgid "Over $1,000,000"
 msgstr "$1,000,001以上"
@@ -6867,7 +6876,7 @@ msgid "Password should have lower and uppercase letters with numbers."
 msgstr "大文字と小文字を含む英字と数字を組み合わせる必要があります"
 
 msgid "Password type"
-msgstr ""
+msgstr "パスワードタイプ"
 
 msgid "Patented technology"
 msgstr "特許技術"
@@ -7023,7 +7032,7 @@ msgid "Please check the above form for pending errors."
 msgstr "未入力の項目がありますのでご確認ください"
 
 msgid "Please check your email for further instructions."
-msgstr ""
+msgstr "手順などの詳細についてはメールをご確認ください。"
 
 msgid "Please check your email for the password reset link."
 msgstr "ご登録いただいたメールアドレスに認証専用のURLを送信いたしました。"
@@ -7680,13 +7689,13 @@ msgid "Resale price"
 msgstr "売却価格"
 
 msgid "Reset MT5 password"
-msgstr ""
+msgstr "MT5パスワードをリセット"
 
 msgid "Reset Password"
 msgstr "パスワード再設定"
 
 msgid "Reset password"
-msgstr ""
+msgstr "パスワードをリセットする"
 
 msgid "Reset to Original Settings"
 msgstr "初期設定にリセットする"
@@ -7891,6 +7900,9 @@ msgstr "<strong>ローカルへのデータ設定を許可する（推奨）</st
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "左の欄にある<strong>Cookie</strong>を選択してください。"
+
+msgid "Select Asset"
+msgstr ""
 
 msgid "Select currency"
 msgstr "通貨を選択してください"
@@ -8541,7 +8553,7 @@ msgid "The %1 Terms and Conditions;"
 msgstr "店頭バイナリーオプション取引約款"
 
 msgid "The %1 password of account number %2 has been changed."
-msgstr ""
+msgstr "口座番号%2の%1パスワード変更を承りました。"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1のウェブサイトは特定の著作権で保護されています。"
@@ -9544,7 +9556,7 @@ msgid "To reset your password, enter the email address you used to create your a
 msgstr "パスワードを再設定される場合は、口座開設時に登録されたメールアドレスを下の欄に入力し、「パスワード再設定」をクリックしてください。"
 
 msgid "To reset your trading or investor password, please click the button below:"
-msgstr ""
+msgstr "取引パスワードまたは投資パスワードをリセットするには、下のボタンをクリックしてください。"
 
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "MetaTrader 5 金融口座からご出金いただくには、お客さまのバイナリー口座を<a href=\"%1\">認証</a>いただく必要があります。"
@@ -10094,7 +10106,7 @@ msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "ワンタイムパスワードに誤りがあります。メールに表示されているリンクをご利用ください。"
 
 msgid "Verify Reset Password"
-msgstr ""
+msgstr "リセットパスワード（確認用）"
 
 msgid "Verify main password"
 msgstr "メインパスワード（確認用）"
@@ -11541,7 +11553,7 @@ msgid "follow and/or implement and/or comply with all business-related direction
 msgstr "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 
 msgid "for account %1"
-msgstr ""
+msgstr "口座番号%1用"
 
 msgid "h"
 msgstr "時間"

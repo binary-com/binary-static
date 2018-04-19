@@ -13,7 +13,9 @@ const texts = [
 
     // top bar
     'Click here to open a Real Account',
+    'Open a Real Account',
     'Click here to open a Financial Account',
+    'Open a Financial Account',
     'Network status',
     'Online',
     'Offline',
@@ -141,8 +143,8 @@ const texts = [
     'Try our [_1]Volatility Indices[_2].',
     'Try our other markets.',
     'Session',
-    'Cryptocurrency',
-    'Fiat Currency',
+    'Crypto',
+    'Fiat',
     'High',
     'Low',
     'Close',
@@ -150,6 +152,8 @@ const texts = [
     'High-Close',
     'Close-Low',
     'High-Low',
+    '"AUD/JPY" or "Apple"',
+    'Select Asset',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
