@@ -13,7 +13,9 @@ const texts = [
 
     // top bar
     'Click here to open a Real Account',
+    'Open a Real Account',
     'Click here to open a Financial Account',
+    'Open a Financial Account',
     'Network status',
     'Online',
     'Offline',
@@ -141,8 +143,8 @@ const texts = [
     'Try our [_1]Volatility Indices[_2].',
     'Try our other markets.',
     'Session',
-    'Cryptocurrency',
-    'Fiat Currency',
+    'Crypto',
+    'Fiat',
     'High',
     'Low',
     'Close',
@@ -150,6 +152,8 @@ const texts = [
     'High-Close',
     'Close-Low',
     'High-Low',
+    '"AUD/JPY" or "Apple"',
+    'Select Asset',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -508,7 +512,7 @@ const texts = [
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',
-    'The main password of account number [_1] has been changed.',
+    'The [_1] password of account number [_2] has been changed.',
     '[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]',
     '[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]',
     'Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.',
@@ -532,10 +536,13 @@ const texts = [
     'Demo Accounts',
     'Real-Money Accounts',
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
-    'for MT5 Account',
     '[_1] Account [_2]',
     'Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.',
     'Do you wish to continue?',
+    'for account [_1]',
+    'Verify Reset Password',
+    'Reset Password',
+    'Please check your email for further instructions.',
 
     // account_transfer
     'Min',
