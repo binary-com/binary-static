@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-11 03:00-0400\n"
+"PO-Revision-Date: 2018-04-19 01:57-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」是由%1建立和維護的編程例程、議定書、工具和資源集。您可通過%1交易平台使用已經註冊的應用程式介面。"
+
+msgid "\"AUD/JPY\" or \"Apple\""
+msgstr "\"澳元/日元\" 或 \"蘋果\""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "「二元」或「數字」期權是支付已預定和固定金額的期權，支付與否是根據二元期權到期時某事件是否發生而定。二元期權只能在兩個可能中出現一個最後結果，並讓您簡單地挑選「是」或「否」。就像傳統期權一樣，二元期權也是根據如貨幣、商品、指數或股票等標的資產。但是傳統期權最大的不同點是，二元期權只會有兩種結果。要麼事件發生，客戶因此獲得回報，要麼客戶損失每項期權已預定的投資金額。"
@@ -1896,6 +1899,9 @@ msgstr "更改MT5密碼"
 msgid "Change Password"
 msgstr "更改密碼"
 
+msgid "Change password"
+msgstr "更改密碼"
+
 msgid "Change the Stop Out Level in relation to your account."
 msgstr "更改帳戶的止損平倉層次。"
 
@@ -1962,9 +1968,6 @@ msgstr "隨時從一百多萬個交易選項中挑選，並按照您傾向的策
 msgid "Choose from three main trade types:"
 msgstr "從三種主要交易類型中挑選："
 
-msgid "Choose from two types of commission plans when your referred clients trade binary options on our platform."
-msgstr "當您推薦的客戶在我們的平台上交易二元期權時, 請從兩個佣金計劃中任選一種。"
-
 msgid "Choose the Touch/No touch trade if you want to predict the market touching or not touching a target any time during the contract period."
 msgstr "如您希望通過預測市場在合約期限內是否會觸及或不觸及目標價格而獲利，您可以選擇交易「觸及/未觸及」期權。"
 
@@ -2012,6 +2015,12 @@ msgstr "按一下「確定」繼續。"
 
 msgid "Click anywhere outside the menu to save and close."
 msgstr "在功能表外任何地方點擊儲存並關閉。"
+
+msgid "Click here to open a Financial Account"
+msgstr "按一下此處開立財務帳戶"
+
+msgid "Click here to open a Real Account"
+msgstr "按一下此處開立真實帳戶"
 
 msgid "Click here to retry"
 msgstr "點選此處重試"
@@ -2162,9 +2171,6 @@ msgstr "開始日期"
 
 msgid "Commission"
 msgstr "佣金"
-
-msgid "Commission (as % of stake)"
-msgstr "佣金(以投注額的%顯示)"
 
 msgid "Commission on deposits"
 msgstr "存款佣金"
@@ -3465,6 +3471,9 @@ msgstr "隨時透過%1與我們聯繫。我們很樂意為您提供服務。"
 msgid "Female"
 msgstr "Female"
 
+msgid "Fiat"
+msgstr "Fiat"
+
 msgid "Fiat Currency"
 msgstr "法定貨幣"
 
@@ -3488,6 +3497,9 @@ msgstr "最終價格"
 
 msgid "Finance"
 msgstr "金融"
+
+msgid "Financial Account"
+msgstr ""
 
 msgid "Financial Account Opening"
 msgstr "開立金融帳戶"
@@ -3575,6 +3587,9 @@ msgstr "用於桌上型電腦"
 
 msgid "For Mobile"
 msgstr "用於手機"
+
+msgid "For affiliate, partnership, and other marketing-related queries:"
+msgstr "與聯盟、合作夥伴和其他與市場行銷相關的查詢專用:"
 
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "%1不支持的電子現金方式或本地貨幣。"
@@ -3816,8 +3831,8 @@ msgstr "開始交易"
 msgid "Getting started"
 msgstr "開始交易"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "用法簡易，隨時可以免費開始使用，只需<a href='%1'>填寫申請表</a>, 然後等待我們批准。"
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "用法簡易，隨時可以免費開始使用，只需%1填寫申請表%2*, 然後等待我們批准。"
@@ -3946,7 +3961,7 @@ msgid "Hedge your portfolio"
 msgstr "投資組合對沖"
 
 msgid "Hedging"
-msgstr "Hedging"
+msgstr "對沖"
 
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr "以下是歐元/美元貨幣對和買賣價的例子："
@@ -4554,8 +4569,8 @@ msgstr "在這種情況下，公司可自行（不論通知與否）以其認為
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "請在「詳細說明」欄位指定支付方式及代理將轉帳的帳號。"
 
-msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%2). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%3), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete [_4]. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "金融產品在歐盟由Binary Investments (Europe) Ltd. 經營，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構授予執照及監管為3級投資服務提供商（執照號碼為IS/70156)）。波動指數產品由Binary (IOM) Ltd. 在英國和曼島經營，地址為：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；分別由(1) 曼島博彩監管委員會(目前線上博彩執照於2012 年8 月31 日頒發) 和(2) 英國博彩委員會(%2) 授予執照和監管。在歐盟其他地區，波動指數產品由Binary (Europe) Ltd., 經營，地址為：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由(1) 位於馬爾他的馬爾他博彩管理局授予執照和監管，執照號碼為MGA/CL2/118/2000（2015年5 月26 日），而英國客戶由(2) 英國博彩委員會(%3) 授予執照和監管，以及愛爾蘭客戶由(3) 愛爾蘭稅務專員辦事處授予執照和監管，目前遠程執照號碼為1010285 (2017年7 月1 日頒發）。檢視詳細的 [_4]。一些產品不是所有國家都適用。本網站的服務不向一些國家如美國、哥斯大黎加及香港或對年齡不到18歲的使用者提供。"
+msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%2), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgstr "金融產品在歐盟由Binary Investments (Europe) Ltd. 經營，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構授予執照及監管為3級投資服務提供商（執照號碼為IS/70156)）。波動指數產品由Binary (IOM) Ltd. 在英國和曼島經營，地址為：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；分別由(1) 曼島博彩監管委員會(目前線上博彩執照於2012 年8 月31 日頒發) 和(2) 英國博彩委員會(%1) 授予執照和監管。在歐盟其他地區，波動指數產品由Binary (Europe) Ltd., 經營，地址為：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由(1) 位於馬爾他的馬爾他博彩管理局授予執照和監管，執照號碼為MGA/CL2/118/2000（2015年5 月26 日），而英國客戶由(2) 英國博彩委員會(%2) 授予執照和監管，以及愛爾蘭客戶由(3) 愛爾蘭稅務專員辦事處授予執照和監管，目前遠程執照號碼為1010285 (2017年7 月1 日頒發）。檢視詳細的資料%3。一些產品不是所有國家都適用。本網站的服務不向一些國家如美國、哥斯大黎加及香港或對年齡不到18歲的使用者提供。"
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
 msgstr "在英國，我們的客戶通過 Binary (IOM) Ltd. 和 Binary Investments (Europe) Ltd. 進行交易。在曼島，他們通過 Binary (IOM) Ltd. 進行交易。在日本通過Binary KK進行交易。在歐盟（除了英國），他們通過 Binary (Europe) Ltd 和 Binary Investments (Europe) Ltd. 進行交易。在全世界其他地區，他們通過 Binary (C.R.) S.A. 進行交易。"
@@ -4766,6 +4781,9 @@ msgstr "Investment trust"
 
 msgid "Investments &amp; Dividends"
 msgstr "投資&amp;分紅"
+
+msgid "Investor"
+msgstr "投資者"
 
 msgid "Investor Compensation Scheme"
 msgstr "投資者補償方案"
@@ -5403,9 +5421,6 @@ msgstr "吉隆坡辦公室"
 msgid "L. Event of Default"
 msgstr "十二、違約事件"
 
-msgid "Ladders"
-msgstr ""
-
 msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
 msgstr "難民語言課程(LCFR)是由致力於長期提供高素質教育的社會企業，「愛心與尊重轉換中心」為難民組織的教育項目。此項目為從孩童到成人各種年齡的群組提供英語、馬來文和法文教學，目的是要讓他們掌握語言技能，幫助他們在等待遣返回國期間找到職業。"
 
@@ -5724,6 +5739,9 @@ msgstr "MacOS"
 msgid "Made an impression in the first interview? We'll invite you to a second interview with our CEO and/or hiring manager."
 msgstr "在第一次面試中留下了印象？我們將邀請您與首席執行官和/或招聘經理進行第二次面談。"
 
+msgid "Main"
+msgstr "首頁"
+
 msgid "Main password"
 msgstr "主密碼"
 
@@ -5780,6 +5798,9 @@ msgstr "Male"
 
 msgid "Malta"
 msgstr "馬爾他"
+
+msgid "Manage MT5 password"
+msgstr "管理 MT5 密碼"
 
 msgid "Manage funds"
 msgstr "基金管理"
@@ -6153,9 +6174,6 @@ msgstr "多個資產交易執行"
 msgid "Multi-asset liquidity solutions"
 msgstr "多個資產的流動性解決方案"
 
-msgid "Multi-barrier trading"
-msgstr "多重障礙交易"
-
 msgid "Multiple Accounts Manager"
 msgstr "多個帳戶管理器"
 
@@ -6360,6 +6378,9 @@ msgstr "注: 如有任何關於禁用或隔離帳戶的查詢, 請與<a href=\"%
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
 msgstr "注意：僅在Binary (CR) SA註冊的帳號才能通過付款代理匯款。僅接受以美元進行所有交易。"
 
+msgid "Note: Transfer between accounts is not available on weekends."
+msgstr "注意: 帳戶之間的轉帳週末期間不可用。"
+
 msgid "Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent"
 msgstr "注意:您必須完全通過付款代理存款才可使用付款代理提款"
 
@@ -6550,7 +6571,7 @@ msgid "Open Source"
 msgstr "開源"
 
 msgid "Open a Financial Account"
-msgstr "開設金融帳戶"
+msgstr "開立金融帳戶"
 
 msgid "Open a Real Account"
 msgstr "開立真實帳戶"
@@ -6729,8 +6750,8 @@ msgstr "我們的歷史紀錄"
 msgid "Our trading screen is simple to use:"
 msgstr "我們的交易屏幕簡單，容易使用:"
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "我們基於交易額的佣金計劃取決於每個合約的回報率。客戶可賺取的回報越高，會員的佣金率也越低。"
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgstr ""
 
 msgid "Over $1,000,000"
 msgstr "大於$1,000,000"
@@ -6809,6 +6830,9 @@ msgstr "重設密碼"
 
 msgid "Password should have lower and uppercase letters with numbers."
 msgstr "密碼須包含大小寫字母與數字。"
+
+msgid "Password type"
+msgstr "密碼類型"
 
 msgid "Patented technology"
 msgstr "專利保護技術"
@@ -6939,6 +6963,9 @@ msgstr "鉑金兌美元"
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "請%1接受條款和條件%2，以提高存取款限額。"
 
+msgid "Please %1authenticate%2 your account."
+msgstr "請%1驗證%2您的帳戶。"
+
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr "請%1完成帳戶資料%2，以提高取款和交易限額。"
 
@@ -6959,6 +6986,9 @@ msgstr "請接受條款和條件。"
 
 msgid "Please check the above form for pending errors."
 msgstr "請檢查以上表格是否有待定錯誤。"
+
+msgid "Please check your email for further instructions."
+msgstr "請檢查您的電子郵件收取詳細說明。"
 
 msgid "Please check your email for the password reset link."
 msgstr "請檢查您的電郵領取密碼重設連結."
@@ -7158,6 +7188,9 @@ msgstr "功能強大的圖表和技術分析"
 msgid "Practice account with replenishable USD 10,000 virtual credit."
 msgstr "擁有10,000美元可補充虛擬資金的練習帳戶。"
 
+msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
+msgstr ""
+
 msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
 msgstr "在無風險的環境中使用%1 虛擬基金實踐您的交易策略。"
 
@@ -7269,9 +7302,6 @@ msgstr "金融業知識和經驗"
 msgid "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account's Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "下單開盤交易或為目前持倉頭寸加碼前，您確認確保您的帳戶可用保證金足以支付開盤交易所須的保證金（「要求保證金」），並持續滿足保證金要求是您的責任。"
 
-msgid "Privacy & Security"
-msgstr "隱私和安全"
-
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
@@ -7326,7 +7356,7 @@ msgstr "利潤 / 虧損"
 msgid "Profit Table"
 msgstr "利潤表"
 
-msgid "Profit from increasingly higher payouts with tiered and laddered commision rates that reward you based on the net revenue generated by your referred clients."
+msgid "Profit from increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
 msgstr "通過您介紹的客戶產生的淨收入，賺取分級和梯級佣金率，讓您的收入日益增加。"
 
 msgid "Profit or Loss"
@@ -7506,6 +7536,9 @@ msgstr "收取新消息和特別優惠"
 msgid "Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates."
 msgstr "接收交易與反向交易的報價，因此您將始終獲得公正透明的價格。"
 
+msgid "Receive your affiliate commission once your referred clients start trading on our platform."
+msgstr "一旦您的客戶在我們的平台開始交易，您就可得到聯盟佣金。"
+
 msgid "Ref."
 msgstr "參考"
 
@@ -7614,7 +7647,13 @@ msgstr "不提供轉售"
 msgid "Resale price"
 msgstr "轉售價格"
 
+msgid "Reset MT5 password"
+msgstr "重設MT5密碼"
+
 msgid "Reset Password"
+msgstr "重設密碼"
+
+msgid "Reset password"
 msgstr "重設密碼"
 
 msgid "Reset to Original Settings"
@@ -7817,6 +7856,9 @@ msgstr "選擇<strong>允許設定本機資料(推荐)</strong>。"
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "從左欄選擇<strong>Cookies設定</strong>。"
+
+msgid "Select Asset"
+msgstr "選擇資產"
 
 msgid "Select currency"
 msgstr "選擇貨幣"
@@ -8129,6 +8171,9 @@ msgstr "開始使用MetaTrader 5交易"
 
 msgid "Start time"
 msgstr "開始時間"
+
+msgid "Start trading"
+msgstr ""
 
 msgid "State/Province"
 msgstr "州/省"
@@ -8465,6 +8510,9 @@ msgstr "％1的定量分析小組負責在二元期權網站提供訂價及其�
 
 msgid "The %1 Terms and Conditions;"
 msgstr "%1條款和條件"
+
+msgid "The %1 password of account number %2 has been changed."
+msgstr "%2帳號的%1密碼已更改。"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1網站受版權保護。"
@@ -8918,9 +8966,6 @@ msgstr "每個客戶的保護層級和期限是根據分配給客戶的類別而
 
 msgid "The leverage ratio refers to the number of times your margin (the amount set aside from your account balance to open and maintain a transaction) can be \"leveraged\" to enter into a Transaction. The denominator of the leverage ratio is always 1. A 50:1 leverage is equivalent to a 2% margin requirement (1 divided by 50 = 2%). The leverage ratio that we/you establish will determine the amount of margin required. As leverage is inversely proportional to margin, the lower the leverage you set for your Account, the higher the margin required to be set aside from your account balance (your margin requirement)."
 msgstr "槓桿比率指使用您的保證金（為進行交易從您的帳戶餘額撥出並保留的金額） 作為\"槓桿\"進入交易的次數。槓桿比率的分母始終是 1。50: 1 的槓桿比率相當於需要 2%保證金 (1 除以 50 = 2%)。我們替您建立的槓桿比率將確定保證金的數額。槓桿比率與保證金成反比，您的帳戶所設槓桿比率越低，從您的帳戶餘額撥出的保證金額就越高 （所需保證金）。"
-
-msgid "The main password of account number %1 has been changed."
-msgstr "%1帳號的主密碼已更改。"
 
 msgid "The margin trading services described in this Agreement are conducted over the counter. This means that the market in one or more of the instruments which you ordinarily transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the electronic trading platform as described in this Agreement."
 msgstr "本協定所描述的保證金交易服務通過櫃台進行。這意味著，您與我們進行交易的一個或多個工具市場，雖然由交易所報價，但通過本協議所述電子交易平台交易時卻不是在交易所交易。"
@@ -9384,6 +9429,9 @@ msgstr "要獲得錄取資格，您必須擁有物理、金融工程或數學專
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "如要重新設定密碼，在下面的欄位中輸入您註冊的電子郵件地址並點選「重設密碼」。"
 
+msgid "To reset your trading or investor password, please click the button below:"
+msgstr "要重設您的交易或投資者密碼, 請按一下下面的按鈕:"
+
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "如果您想從MetaTrader 5金融帳戶提款，請先通過Binary帳戶的<a href=\"%1\">驗證</a>。"
 
@@ -9450,9 +9498,6 @@ msgstr "全天候進行交易，包括週末。"
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "不需擁有實物也能交易比特幣、以太幣和萊特幣。我們的加密貨幣對報出例如比特幣的加密貨幣與例如美元的法定貨幣的兌換價格。"
 
-msgid "Trade FX binary options on our multi-barrier platform, Ladders."
-msgstr ""
-
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "在我們受歡迎的多資產平台進行外匯和差價合約交易。"
 
@@ -9506,9 +9551,6 @@ msgstr "根據您的首選策略交易多空頭寸。"
 
 msgid "Trade metals on competitive fixed and variable spreads."
 msgstr "透過有競爭力的固定和可變價差交易金屬"
-
-msgid "Trade now"
-msgstr "立刻交易"
 
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "在包括外匯、指數、商品等在內的基本市場交易。"
@@ -9867,6 +9909,12 @@ msgstr "更新設定"
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "更新反欺詐手冊和其他相關文件"
 
+msgid "Upgrade now"
+msgstr ""
+
+msgid "Upgrade your account and start trading using real money."
+msgstr ""
+
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr "平倉交易時實現的利潤（或損失），以交易開盤和收盤價差距乘以手數（交易次數）表示，為我們欠您的應付金額（或如實現虧損則是您欠我們的應付金額）。"
 
@@ -9935,6 +9983,9 @@ msgstr "變數點差"
 
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "驗證碼錯誤。請使用以下連結發送到您的電子郵件。"
+
+msgid "Verify Reset Password"
+msgstr "重設密碼驗證"
 
 msgid "Verify main password"
 msgstr "主密碼驗證"
@@ -10899,6 +10950,9 @@ msgstr "您已經完整閱讀此法律條款及條件頁面，並明白您將在
 msgid "You have sold this contract at %1 %2"
 msgstr "您已經以 %1 %2 賣出此合約"
 
+msgid "You have successfully created your Virtual Account."
+msgstr ""
+
 msgid "You have successfully created your account!"
 msgstr "您已成功開立帳戶！"
 
@@ -11358,8 +11412,8 @@ msgstr "公正準確地向客戶描述其服務。"
 msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
 msgstr "跟踪和/或執行和/或遵守經修訂和/或重新制訂和/或隨時更換的公司所有與業務有關的指示和/或政策和/或程序。"
 
-msgid "for MT5 Account"
-msgstr "mT5帳戶專用"
+msgid "for account %1"
+msgstr "用於帳戶%1"
 
 msgid "h"
 msgstr "小時"
@@ -11529,8 +11583,8 @@ msgstr "今天"
 msgid "today, Fridays"
 msgstr "今天、週五"
 
-msgid "upon our request, he provides the Company with any and all information reasonably required to dully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
-msgstr "根據我們的要求, 他須按照公司的合理要求提供任何和所有資訊, 以滿足任何政府或任何其他當局的任何和所有指示或請求或規定或要求。"
+msgid "upon our request, he provides the Company with any and all information reasonably required to fully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
+msgstr "根據我們的要求, 他須按照公司的合理要求提供任何和所有資訊, 以完全滿足任何政府或任何其他當局的任何和所有指示或請求或規定或要求。"
 
 msgid "use its best endeavours and diligence to transfer funds deposited to %1 Agent Account to %1 Client Account;"
 msgstr "盡全力和責任將存入%1 代理帳戶的資金轉入%1 客戶帳戶。"

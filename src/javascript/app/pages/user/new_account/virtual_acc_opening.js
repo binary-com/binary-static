@@ -1,3 +1,4 @@
+const SelectMatcher    = require('binary-style').select2Matcher;
 const Cookies          = require('js-cookie');
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
@@ -44,6 +45,11 @@ const VirtualAccOpening = (() => {
                 }));
             });
             $residence.html($options_with_disabled.html());
+            $('#residence').select2({
+                matcher(params, data) {
+                    return SelectMatcher(params, data);
+                },
+            });
 
             if (!residence_value) {
                 BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
@@ -114,7 +120,7 @@ const VirtualAccOpening = (() => {
                         loginid     : new_account.client_id,
                         token       : new_account.oauth_token,
                         is_virtual  : true,
-                        redirect_url: is_jp_client ? urlFor('new_account/landing_page') : urlFor(Client.getUpgradeInfo().upgrade_link),
+                        redirect_url: is_jp_client ? urlFor('new_account/landing_page') : urlFor('new_account/welcome'),
                     });
                 }
             });

@@ -18,6 +18,7 @@ const Deposit = () => {
                     <img className='responsive' src={it.url_for('images/common/print.svg')} />
                 </a>
             </div>
+            <p id='cashier_error_message' className='invisible notice-msg center-text' />
             <p id='cashier_locked_message' className='invisible'>{it.L('{JAPAN ONLY}Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', it.url_for('user/security/cashier_passwordws'))}</p>
             <div id='cashier_unlocked_message' className='invisible'>
                 <p>{it.L('{JAPAN ONLY}Please make a bank transfer from your designated bank account to:')}</p>

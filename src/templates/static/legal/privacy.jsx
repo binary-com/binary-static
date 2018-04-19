@@ -2,7 +2,7 @@ import React from 'react';
 
 const Privacy = () => (
     <div>
-        <h2>{it.L('Privacy & Security')}</h2>
+        <h2>{it.L('Security and Privacy')}</h2>
         <p>{it.L('We recognize the importance of protecting your personal and financial information.')}</p>
         <p>{it.L('The personal information that we obtain about you assists us in servicing your account. We know you may be concerned about what we do with this information, and with financial information about your account. The following outlines our privacy practices.')}</p>
 
