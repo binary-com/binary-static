@@ -28,7 +28,7 @@
             &:before {
                 content: '\25EF';
                 font-size: 3rem;
-                padding-top: 5px;
+                top: 0;
                 position: absolute;
             }
             &:after {
@@ -36,7 +36,8 @@
                 font-size: 1.5rem;
                 position: absolute;
                 font-weight: 300;
-                top: 35%;
+                transform-origin: 50% 55%;
+                top: 25%;
                 right: 16px;
                 transition: transform 0.25s;
                 transform: none;
@@ -64,6 +65,7 @@
         .acc-switcher-account {
             cursor: pointer;
             padding: 4px 16px;
+            position: relative;
 
             &.hide {
                 display: none;
@@ -71,7 +73,7 @@
             &:before {
                 content: '\25EF';
                 font-size: 2.5rem;
-                padding-top: 10px;
+                top: 0;
                 position: absolute;
             }
             p.acc-switcher-accountid {
