@@ -29,6 +29,7 @@ const SocketCache = (() => {
         payout_currencies: { expire: 10 },
         active_symbols   : { expire: 10, map_to: ['product_type', 'landing_company'] },
         contracts_for    : { expire: 10, map_to: ['contracts_for', 'product_type', 'currency'] },
+        exchange_rates   : { expire: 60 },
     };
 
     const storage_key = 'ws_cache';

@@ -23,6 +23,7 @@ const MetaTrader = (() => {
                     getAllAccountsInfo();
                 } else {
                     BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
+                    BinarySocket.send({ exchange_rates: 1, base_currency: Client.get('currency') }).then(MetaTraderConfig.setExchangeRates);
                 }
             } else if (State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                 // TODO: remove this elseif when we enable mt account opening for malta
@@ -158,6 +159,9 @@ const MetaTrader = (() => {
                         MetaTraderUI.displayFormMessage(response.error.message, action);
                         if (typeof actions_info[action].onError === 'function') {
                             actions_info[action].onError(response, MetaTraderUI.$form());
+                        }
+                        if (response.error.code === 'MT5DepositError') {
+                            BinarySocket.send({ exchange_rates: 1, base_currency: Client.get('currency') }).then(MetaTraderConfig.setExchangeRates);
                         }
                     } else {
                         const login = actions_info[action].login ?

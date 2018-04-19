@@ -24,6 +24,16 @@ const MetaTraderConfig = (() => {
     let $messages;
     const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
+    let rates = {};
+    const setExchangeRates = (exchange_rates) => {
+        rates = exchange_rates.rates;
+    };
+
+    // client currency equivalent to 1 USD
+    const getMinMT5TransferValue = (client_currency = Client.get('currency')) => (
+        (1 / (rates.USD || 1)).toFixed(Currency.getDecimalPlaces(client_currency))
+    );
+
     const actions_info = {
         new_account: {
             title        : localize('Sign up'),
@@ -99,8 +109,9 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else {
-                    BinarySocket.send({ cashier_password: 1 }).then((response) => {
-                        if (!response.error && response.cashier_password === 1) {
+                    BinarySocket.send({ cashier_password: 1 }).then(() => {
+                        const response_cashier_pass = State.get(['response', 'cashier_password']);
+                        if (!response_cashier_pass.error && response_cashier_pass.cashier_password === 1) {
                             resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', [
                                 urlFor('user/security/cashier_passwordws')]));
                         } else {
@@ -109,7 +120,7 @@ const MetaTraderConfig = (() => {
                                     resolve(localize('Your cashier is locked.')); // Locked from BO
                                 } else {
                                     const limit = State.getResponse('get_limits.remainder');
-                                    if (typeof limit !== 'undefined' && +limit < Currency.getMinWithdrawal(Client.get('currency'))) {
+                                    if (typeof limit !== 'undefined' && +limit < getMinMT5TransferValue()) {
                                         resolve(localize('You have reached the limit.'));
                                     } else {
                                         resolve();
@@ -244,11 +255,11 @@ const MetaTraderConfig = (() => {
                 { selector: fields.password_reset.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_reset.txt_new_password.id }]] },
             ],
             deposit: [
-                { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: Currency.getMinWithdrawal(client_currency), max: Math.min(State.getResponse('get_limits.remainder') || max_withdrawal, max_withdrawal), decimals: Currency.getDecimalPlaces(client_currency) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
+                { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: getMinMT5TransferValue(client_currency), max: Math.min(State.getResponse('get_limits.remainder') || max_withdrawal, max_withdrawal), decimals: Currency.getDecimalPlaces(client_currency) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
             ],
             withdrawal: [
                 { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
-                { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: 1, max: 20000, decimals: 2 }]] },
+                { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: getMinMT5TransferValue(client_currency), max: max_withdrawal, decimals: 2 }]] },
             ],
         };
     };
@@ -266,6 +277,7 @@ const MetaTraderConfig = (() => {
         needsRealMessage,
         getCurrency,
         hasAccount,
+        setExchangeRates,
         setMessages   : ($msg) => { $messages = $msg; },
         getAllAccounts: () => (
             Object.keys(accounts_info)
