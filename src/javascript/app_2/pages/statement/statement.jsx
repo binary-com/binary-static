@@ -152,11 +152,16 @@ class Statement extends React.PureComponent {
         }
 
         return (
-            <DataTable
-                data_source={this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size)}
-                columns={this.state.columns}
-                has_fixed_header
-            />
+            <div className='statement-container'>
+                <div className='statement-filter'>
+                    two datepickers
+                </div>
+                <DataTable
+                    data_source={this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size)}
+                    columns={this.state.columns}
+                    has_fixed_header
+                />
+            </div>
         );
     }
 }

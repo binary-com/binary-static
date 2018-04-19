@@ -69,9 +69,6 @@ class DataTable extends React.Component {
     render() {
         return (
             <div className='table-container' ref={this.props.has_fixed_header && this.fixHeaderInPlace}>
-                <div className='table-filter'>
-                    two datepickers
-                </div>
                 <table className='table'>
                     <thead className='table-head'>
                         <tr className='table-row'>

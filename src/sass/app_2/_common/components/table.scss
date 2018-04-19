@@ -9,13 +9,6 @@
     &-container {
         padding-top: 100px;
     }
-    &-filter {
-        height: 100px;
-        position: fixed;
-        background-color: $COLOR_WHITE;
-        width: 100%;
-        transform: translateY(-100%);
-    }
     &-row {
         background-color: $COLOR_WHITE;
         border-bottom: 1px solid #d2d3da; /* stylelint-disable-line color-no-hex */
