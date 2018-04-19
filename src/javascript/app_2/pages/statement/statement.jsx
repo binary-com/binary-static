@@ -44,6 +44,7 @@ class Statement extends React.PureComponent {
         super(props);
 
         this.handleScroll = this.handleScroll.bind(this);
+        this.handleDateChange = this.handleDateChange.bind(this);
         this.loadNextChunk = this.loadNextChunk.bind(this);
         this.getNextBatch = this.getNextBatch.bind(this);
 
@@ -88,6 +89,8 @@ class Statement extends React.PureComponent {
             pending_request: false,
             has_loaded_all : false,
             chunks         : 1,
+            date_from      : '',
+            date_to        : '',
         };
     }
 
@@ -103,14 +106,18 @@ class Statement extends React.PureComponent {
     }
 
     handleScroll() {
-        console.log('scroll');
-
         const {scrollTop, scrollHeight, clientHeight} = document.scrollingElement;
         const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
 
         if (left_to_scroll < 1000) {
             this.loadNextChunk();
         }
+    }
+
+    handleDateChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value,
+        });
     }
 
     loadNextChunk() {
@@ -134,8 +141,6 @@ class Statement extends React.PureComponent {
         const is_jp_client = jpClient();
 
         DAO.getStatement(this.props.batch_size, this.state.data_source.length).then((response) => {
-            console.log(response);
-
             const formatted_transactions = response.statement.transactions
                 .map(transaction => getStatementData(transaction, currency, is_jp_client));
 
@@ -157,14 +162,20 @@ class Statement extends React.PureComponent {
                 <div className='statement-filter'>
                     <span className='statement-filter-text'>Filter by date:</span>
                     <DatePicker
-                        name='from_date'
-                        onChange={(e) => {console.log(e)}}
+                        name='date_from'
+                        initial_value=''
+                        // minDate={} // default?
+                        // maxDate={} // state.date_to
+                        onChange={this.handleDateChange}
                     />
                     <span className='statement-filter-text'>to</span>
                     <DatePicker
-                        name='to_date'
+                        name='date_to'
+                        initial_value=''
+                        // minDate={} // state.date_from
+                        // maxDate={} // today
                         showTodayBtn
-                        onChange={(e) => {console.log(e)}}
+                        onChange={this.handleDateChange}
                     />
                 </div>
                 <DataTable

@@ -428,8 +428,10 @@ class DatePicker extends React.PureComponent {
         this.handleMouseEnter   = this.handleMouseEnter.bind(this);
         this.handleMouseLeave   = this.handleMouseLeave.bind(this);
 
+        const selected_date = props.initial_value !== undefined ? props.initial_value : moment(this.props.minDate).format(this.props.dateFormat);
+
         this.state = {
-            selected_date       : moment(this.props.minDate).format(this.props.dateFormat),
+            selected_date,
             is_calendar_visible : false,
             is_close_btn_visible: false,
         };
