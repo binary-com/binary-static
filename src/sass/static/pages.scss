@@ -601,3 +601,33 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
 }
+
+.welcome-content {
+    .box-grid .box {
+        display: flex;
+        flex-direction: column;
+        max-height: 100%;
+        min-height: 120px;
+
+        div > p {
+            margin: 1em 0 0.5em;
+
+            &.text-orange {
+                color: $COLOR_ORANGE;
+                font-size: $FONT_SIZE_XXL;
+                font-weight: 300;
+            }
+        }
+    }
+    .account-created:before {
+        content: url('../images/pages/set_currency/congratulations.svg');
+    }
+    .box > .box-item-end {
+        margin-top: auto;
+
+        p {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    }
+}
