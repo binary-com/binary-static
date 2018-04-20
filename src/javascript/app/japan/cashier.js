@@ -52,8 +52,8 @@ const CashierJP = (() => {
             $id.parent().append($('<p/>', { class: 'error-msg', text: localize(message) }));
         };
 
-        if (!/^([1-9][0-9]{0,5}|1000000)$/.test(withdrawal_amount)) {
-            showError(template('Please enter a number between [_1].', ['¥1 - ¥1,000,000']));
+        if (isNaN(withdrawal_amount) || +withdrawal_amount < 1) {
+            showError(template('Should be more than [_1]', ['¥1']));
             return false;
         } else if (parseInt(Client.get('balance')) < withdrawal_amount) {
             showError('Insufficient balance.');
