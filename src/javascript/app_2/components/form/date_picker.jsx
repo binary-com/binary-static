@@ -36,7 +36,7 @@ class Calendar extends React.Component {
         this.resetCalendar = this.resetCalendar.bind(this);
 
         const { startDate, minDate } = {...props};
-        
+
         const current_date = moment(startDate || minDate).format(this.props.dateFormat);
 
         this.state = {
@@ -215,7 +215,7 @@ class Calendar extends React.Component {
         dates.forEach((date) => {
             const is_disabled = moment(date).isBefore(moment(start_of_month))
                 || moment(date).isAfter(moment(end_of_month))
-                || moment(date).isBefore(moment(this.props.minDate).subtract(1, 'day'))
+                || moment(date).isBefore(moment(this.props.minDate))
                 || moment(date).isAfter(moment(this.props.maxDate));
             const is_active = moment(date).isSame(moment(this.state.date)) && this.state.selected_date;
             const is_today  = moment(date).isSame(moment().utc(), 'day');
