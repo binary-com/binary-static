@@ -2,7 +2,6 @@ const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
 const BinarySocket     = require('../../../../base/socket');
 const localize         = require('../../../../../_common/localize').localize;
-const State            = require('../../../../../_common/storage').State;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 
@@ -25,9 +24,8 @@ const professionalClient = (() => {
     };
 
     const populateProfessionalClient = (is_financial) => {
-        const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-        if (!/maltainvest/.test(financial_company) ||    // limited to this landing company
-            (financial_company === 'maltainvest' && !is_financial)) { // then it's not upgrading to financial
+        const is_maltainvest = Client.canRequestProfessional();
+        if (!is_maltainvest || !is_financial) { // then it's not upgrading to financial
             if (is_in_page) {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -38,7 +36,7 @@ const professionalClient = (() => {
         const $info             = $container.find('#professional_info');
         const $popup_contents   = $container.find('#popup');
         const popup_selector    = '#professional_popup';
-        const $error             = $('#form_message');
+        const $error            = $('#form_message');
 
         $container.find('#professional_info_toggle').off('click').on('click', function() {
             $(this).toggleClass('open');
@@ -59,7 +57,7 @@ const professionalClient = (() => {
             }
         });
 
-        if (financial_company === 'maltainvest') {
+        if (is_maltainvest) {
             $container.find('#show_financial').setVisibility(1);
         }
 
