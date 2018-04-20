@@ -12,17 +12,15 @@ const getPropertyValue = require('../../../../_common/utility').getPropertyValue
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
-    let is_jp_client;
 
     const onLoad = () => {
-        is_jp_client = Client.isJPClient();
-        if (is_jp_client) {
-            handleJPForm();
-        } else {
-            BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
-            $('#residence').setVisibility(1);
-            bindValidation();
+        if (Client.isJPClient()) {
+            return;
         }
+
+        BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
+        $('#residence').setVisibility(1);
+        bindValidation();
 
         FormManager.handleSubmit({
             form_selector       : form,
@@ -89,15 +87,6 @@ const VirtualAccOpening = (() => {
         FormManager.init(form, req, true);
     };
 
-    const handleJPForm = () => {
-        // show email consent field for japanese accounts
-        // and don't allow them to change residence
-        const $residence = $('#residence');
-        $residence.replaceWith($('<label/>', { id: 'residence', 'data-value': 'jp', text: localize('Japan') }));
-        $('#email_consent').parent().parent().setVisibility(1);
-        bindValidation();
-    };
-
     const handleNewAccount = (response) => {
         if (!response) return false;
         const error = response.error;
@@ -114,7 +103,7 @@ const VirtualAccOpening = (() => {
                         loginid     : new_account.client_id,
                         token       : new_account.oauth_token,
                         is_virtual  : true,
-                        redirect_url: is_jp_client ? urlFor('new_account/landing_page') : urlFor(Client.getUpgradeInfo().upgrade_link),
+                        redirect_url: urlFor(Client.getUpgradeInfo().upgrade_link),
                     });
                 }
             });
