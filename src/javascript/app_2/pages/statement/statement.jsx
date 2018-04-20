@@ -166,12 +166,12 @@ class Statement extends React.PureComponent {
             <div className='statement-container'>
                 <div className='statement-filter'>
                     <span className='statement-filter-text'>Filter by date:</span>
+                    <span className='statement-filter-text'>from</span>
                     <DatePicker
                         name='date_from'
                         initial_value=''
-                        // minDate={} // default?
                         startDate={moment_now.clone().subtract(30, 'd')}
-                        maxDate={this.state.date_to} // state.date_to
+                        maxDate={this.state.date_to || moment_now}
                         onChange={this.handleDateChange}
                     />
                     <span className='statement-filter-text'>to</span>
@@ -179,8 +179,8 @@ class Statement extends React.PureComponent {
                         name='date_to'
                         initial_value=''
                         startDate={moment_now}
-                        minDate={this.state.date_from} // state.date_from
-                        maxDate={moment_now} // today
+                        minDate={this.state.date_from}
+                        maxDate={moment_now}
                         showTodayBtn
                         onChange={this.handleDateChange}
                     />
