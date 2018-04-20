@@ -34,11 +34,10 @@ const handlePortfolioData = (portfolio_arr) => {
 };
 /* TODO:
     1. Move socket connections to DAO
-    2. Handle errors
-    3. Handle empty portfolio
-    5. Selling both in transactionHandler and updateIndicative?
-    6. Make tooltip appdetails tooltip
-    7. Add styling
+    2. Selling both in transactionHandler and updateIndicative?
+    3. Make tooltip appdetails tooltip
+    4. Add styling
+    5. Translations
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
@@ -101,9 +100,9 @@ class Portfolio extends React.PureComponent  {
         this.state = {
             columns,
             currency,
-            data_source    : [],
-            error          : '', 
-            has_no_contract: false,
+            data_source: [],
+            error      : '', 
+            is_loading : true,
         };
     }
 
@@ -127,7 +126,9 @@ class Portfolio extends React.PureComponent  {
     }
 
     transactionResponseHandler(response) {
-        // handle error
+        if (getPropertyValue(response, 'error')) {
+            this.setState({ error: response.error.message });
+        }
         if (response.transaction.action === 'buy') {
             BinarySocket.send({ portfolio: 1 }).then((res) => {
                 this.updatePortfolio(res);
@@ -138,7 +139,9 @@ class Portfolio extends React.PureComponent  {
     }
 
     updateIndicative(response) {
-        // handle error here
+        if (getPropertyValue(response, 'error')) {
+            return;
+        }
         let data_source = this.state.data_source.slice();
         const proposal    = response.proposal_open_contract;
         // force to sell the expired contract, in order to remove from portfolio
@@ -165,19 +168,18 @@ class Portfolio extends React.PureComponent  {
     }
 
     updateOAuthApps = (response) => {
-        console.log(response);
         const oauth_apps = buildOauthApps(response);
         console.log('oauth_apps: ', oauth_apps);
         // GetAppDetails.addTooltip(oauth_apps);
     };
 
     updatePortfolio(response) {
+        this.setState({ is_loading: false });
         if (getPropertyValue(response, 'error')) {
-            console.log('error: ', response);
             this.setState({ error: response.error.message });
             return;
         }
-        if (response.portfolio.contracts && response.portfolio.contracts.length > 0) {
+        if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
             const data_source = handlePortfolioData(response.portfolio.contracts);
             
             this.setState({ data_source });
@@ -185,21 +187,24 @@ class Portfolio extends React.PureComponent  {
                 { proposal_open_contract: 1, subscribe: 1 }, 
                 { callback: this.updateIndicative }
             );                
-        } else {
-        // empty portfolio
         }
     }
 
     render() {
+        if (this.state.is_loading) {
+            return <div>Loading...</div>;
+        }
+        if (this.state.error) {
+            return <div>{this.state.error}</div>;
+        }
         return (
-            <div>
-                {this.state.error && <div>{this.state.error}</div>}
-                <DataTable
-                    {...this.props}
-                    data_source={this.state.data_source}
-                    columns={this.state.columns}                
-                />
-            </div>
+                this.state.data_source.length > 0 ? 
+                    <DataTable
+                        {...this.props}
+                        data_source={this.state.data_source}
+                        columns={this.state.columns}                
+                    />
+                : <div>No open positions.</div>
         );
     }
 };
