@@ -35,13 +35,13 @@ class Calendar extends React.Component {
         this.onChangeInput = this.onChangeInput.bind(this);
         this.resetCalendar = this.resetCalendar.bind(this);
 
-        const { startDate, minDate } = {...props};
+        const { startDate, minDate, initial_value } = props;
 
         const current_date = moment(startDate || minDate).format(this.props.dateFormat);
 
         this.state = {
             date         : current_date, // calendar dates reference
-            selected_date: current_date, // selected date
+            selected_date: initial_value !== undefined ? initial_value : current_date, // selected date
         };
     }
 
@@ -186,9 +186,11 @@ class Calendar extends React.Component {
     }
 
     resetCalendar() {
-        const date = moment(this.props.minDate).format(this.props.dateFormat);
+        const { startDate, minDate } = this.props;
+        const default_date = moment(startDate || minDate).format(this.props.dateFormat);
+
         this.setState({
-            date,
+            date         : default_date,
             selected_date: '',
         });
     }
@@ -367,7 +369,6 @@ class Calendar extends React.Component {
             </span>
         );
 
-        console.log('calendar render', this.props.name);
         const PanelCalendar = ((is_date_view && this.getDates()) || (is_month_view && this.getMonths())
             || (is_year_view && this.getYears()) || (is_decade_view && this.getDecades())
         );
