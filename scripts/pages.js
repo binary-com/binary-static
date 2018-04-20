@@ -128,6 +128,4 @@ module.exports = [
     ['graduates',                          'landing_pages/graduate_program',            null,        'Binary.com Graduate Program',        'NOT-en'],
     ['hackathon',                          'landing_pages/hackathon',                   null,        'Hackathon Competition',              'NOT-en'],
     ['landing/signup-frame',               'landing_pages/signup_frame',                null,        'Sign up'],
-    ['バイナリーオプション',                  'landing_pages/binary_japan',                null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
-    ['bo_1',                               'landing_pages/binary_japan_2',              null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
 ];
