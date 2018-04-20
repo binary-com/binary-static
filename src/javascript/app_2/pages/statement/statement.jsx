@@ -126,6 +126,11 @@ class Statement extends React.PureComponent {
         const { chunk_size } = this.props;
         const { chunks, data_source } = this.state;
 
+        if (data_source.length <= chunks * chunk_size) {
+            // all content is shown
+            return;
+        }
+
         this.setState({ chunks: chunks + 1 });
 
         if (data_source.length <= (chunks + 1) * chunk_size) {
