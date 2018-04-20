@@ -19,7 +19,7 @@ const Settings = (() => {
             }
 
             // Professional Client menu should only be shown to MF accounts.
-            if ((Client.isAccountOfType('financial')) && !/professional_requested|professional/.test(status)) {
+            if ((Client.isAccountOfType('financial')) && !/professional_requested|professional/.test(status) && Client.canRequestProfessional()) {
 
                 $('#professional_client').setVisibility(1);
             }
