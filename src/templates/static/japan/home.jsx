@@ -209,10 +209,6 @@ const Home = () => {
                             <Steps step='6' image='fund' text={it.L('{JAPAN ONLY}Deposit funds and begin trading')} />
                         </div>
                     </div>
-
-                    <div className='center-text'>
-                        <button className='button' id='start_now'>{it.L('{JAPAN ONLY}Start now')}</button>
-                    </div>
                 </div>
             </div>
 
