@@ -85,10 +85,6 @@ function urlFor(path) {
     return `${url.substring(0, url.indexOf(`/${lang}/`) + lang.length + 2)}${path}.html`;
 }
 
-function urlForLanguage (lang, url = window.location.href, default_language = 'en') {
-    return url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${(lang || default_language).trim().toLowerCase()}/`);
-}
-
 function wsConnect() {
     const config_server = localStorage.getItem('config.server_url');
     const server_url    = config_server || 'frontend.binaryws.com';
@@ -115,18 +111,6 @@ function endpointNotification (config_server) {
         document.body.appendChild(el_end_note);
         document.body.style['padding-bottom'] = `${el_end_note.offsetHeight}px`;
     }
-}
-
-function setSession(key, value) {
-    if (typeof sessionStorage !== 'undefined') {
-        try {
-            sessionStorage.setItem(key, value);
-            return true;
-        } catch (e) {
-            return false;
-        }
-    }
-    return false;
 }
 
 // NodeList foreach polyfill
@@ -176,115 +160,6 @@ function setupCrowdin() {
 
 function commonOnload() {
     setupCrowdin();
-}
-
-function jpClient() {
-    return (getLanguage() === 'ja');
-}
-
-function recordAffiliateExposure() {
-    const Url   = window.location;
-    const token = getParamValue(Url, 't');
-    if (!token || token.length !== 32) {
-        return false;
-    }
-
-    showAfffiliatePopup();
-
-    const token_length  = token.length;
-    const is_subsidiary = /\w{1}/.test(getParamValue(Url, 's'));
-
-    /* global Cookies */
-    const cookie_token = Cookies.getJSON('affiliate_tracking');
-    if (cookie_token) {
-        // Already exposed to some other affiliate.
-        if (is_subsidiary && cookie_token && cookie_token.t) {
-            return false;
-        }
-    }
-
-    // Record the affiliate exposure. Overwrite existing cookie, if any.
-    const cookie_hash = {};
-    if (token_length === 32) {
-        cookie_hash.t = token.toString();
-    }
-    if (is_subsidiary) {
-        cookie_hash.s = '1';
-    }
-
-    Cookies.set('affiliate_tracking', cookie_hash, {
-        expires: 365, // expires in 365 days
-        path   : '/',
-        domain : /\.binary\.com/i.test(location.hostname) ? `.${location.hostname.split('.').slice(-2).join('.')}` : location.hostname,
-    });
-    return true;
-}
-
-function showAfffiliatePopup() {
-    const clients_country = sessionStorage.getItem('clients_country');
-    const xmlhttp = new XMLHttpRequest();
-
-    const container_id       = 'affiliate_disclaimer_popup';
-    const el_affiliate_popup = document.getElementById(container_id);
-
-    if (isLoggedIn()) return;
-    if (jpClient() || clients_country === 'jp') {
-        xmlhttp.onreadystatechange = () => {
-            if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
-                const div     = document.createElement('div');
-                const parser  = new DOMParser();
-                const el      = parser.parseFromString(xmlhttp.response, 'text/html');
-                const element = el.body.firstChild;
-                div.classList.add('lightbox');
-                div.appendChild(element);
-                el_affiliate_popup.appendChild(div);
-
-                const el_affiliate_btn = document.getElementById('btn_affiliate_proceed');
-                el_affiliate_btn.removeEventListener('click', close);
-                el_affiliate_btn.addEventListener('click', close);
-
-                document.body.classList.add('scroll-lock');
-            }
-        };
-
-        xmlhttp.open('GET', urlFor('affiliate_disclaimer'), true);
-        xmlhttp.send();
-    }
-
-    function close() {
-        document.body.classList.remove('scroll-lock');
-        el_affiliate_popup.remove();
-    }
-}
-
-function isLoggedIn () {
-    /**
-     * Returns the client information
-     *
-     * @param {String|null} key     The property name to return the value from, if missing returns the account object
-     * @param {String|null} loginid The account to return the value from
-     */
-    function get(key, loginid = localStorage.getItem('active_loginid')) {
-        let value;
-        const client_object = getAllAccountsObject();
-        if (key === 'loginid') {
-            value = loginid || localStorage.getItem('active_loginid');
-        } else {
-            const current_client = client_object[loginid] || getAllAccountsObject()[loginid] || {};
-
-            value = key ? current_client[key] : current_client;
-        }
-        if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
-            value = JSON.parse(value || false);
-        }
-        return value;
-    }
-
-    function getAllAccountsObject() {
-        return JSON.parse(localStorage.getItem('client.accounts'));
-    }
-
-    return get('loginid') && get('token');
 }
 
 // displays notification on outdated browsers
