@@ -2,7 +2,9 @@ import React from 'react';
 import moment from 'moment';
 import Client from '../../../app/base/client';
 import BinarySocket from '../../../app/base/socket';
+import { buildOauthApps } from '../../../app/common/get_app_details';
 import { localize } from '../../../_common/localize';
+import { getPropertyValue } from '../../../_common/utility';
 import DataTable from '../../components/elements/data_table.jsx';
 
 // return transformed array
@@ -34,17 +36,19 @@ const handlePortfolioData = (portfolio_arr) => {
     1. Move socket connections to DAO
     2. Handle errors
     3. Handle empty portfolio
-    4. Subscribe to transactions to auto update new purchases
-    5. force to sell the expired contract, in order to remove from portfolio?
-    6. Resale not offered?
-    7. updateOAuthApps?
+    5. Selling both in transactionHandler and updateIndicative?
+    6. Make tooltip appdetails tooltip
+    7. Add styling
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
         super(props);
 
         this.getPortfolioData = this.getPortfolioData.bind(this);
+        this.transactionResponseHandler = this.transactionResponseHandler.bind(this);
         this.updateIndicative = this.updateIndicative.bind(this);
+        this.updateOAuthApps = this.updateOAuthApps.bind(this);
+        this.updatePortfolio = this.updatePortfolio.bind(this);
 
         const columns = [
             {
@@ -98,6 +102,7 @@ class Portfolio extends React.PureComponent  {
             columns,
             currency,
             data_source    : [],
+            error          : '', 
             has_no_contract: false,
         };
     }
@@ -110,58 +115,91 @@ class Portfolio extends React.PureComponent  {
         console.log(this.state);
         BinarySocket.send({ forget_all: ['proposal_open_contract', 'transaction'] });
     }
+
     getPortfolioData() {
         BinarySocket.send({ portfolio: 1 }).then((response) => {
-            // Handle error here
-            if (response.portfolio.contracts && response.portfolio.contracts.length > 0) {
-                const formatted_transactions = handlePortfolioData(response.portfolio.contracts);
-                this.setState({
-                    data_source: [...this.state.data_source, ...formatted_transactions],
-                });
-                BinarySocket.send(
-                    { proposal_open_contract: 1, subscribe: 1 }, 
-                    { callback: this.updateIndicative }
-                );                
-            } else {
-            // empty portfolio
-            }
+            this.updatePortfolio(response);
+        });
+        BinarySocket.send({ transaction: 1, subscribe: 1 }, { callback: this.transactionResponseHandler });
+        BinarySocket.send({ oauth_apps: 1 }).then((response) => {
+            this.updateOAuthApps(response);
         });
     }
 
-    updateIndicative(data) {
+    transactionResponseHandler(response) {
+        // handle error
+        if (response.transaction.action === 'buy') {
+            BinarySocket.send({ portfolio: 1 }).then((res) => {
+                this.updatePortfolio(res);
+            });
+        } else if (response.transaction.action === 'sell') {
+             // removeContract(response.transaction.contract_id);
+        }
+    }
+
+    updateIndicative(response) {
         // handle error here
         let data_source = this.state.data_source.slice();
-        const proposal    = data.proposal_open_contract;
+        const proposal    = response.proposal_open_contract;
         // force to sell the expired contract, in order to remove from portfolio
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
             BinarySocket.send({ sell_expired: 1 });
         }
         if (+proposal.is_sold === 1) {
-            data_source = data_source.filter((ds) => ds.id !== +proposal.contract_id);
+            data_source = data_source.filter((portfolio_item) => portfolio_item.id !== +proposal.contract_id);
         } else {
-            data_source.forEach(ds => {
-                if (ds.id === +proposal.contract_id) {
+            data_source.forEach(portfolio_item => {
+                if (portfolio_item.id === +proposal.contract_id) {
                     const amount = parseFloat(proposal.bid_price);
                     let style;
                     if (+proposal.is_valid_to_sell === 1) {
-                        style = proposal.bid_price > ds.indicative.amount ? 'price_moved_up' : 'price_moved_down';
+                        style = proposal.bid_price > portfolio_item.indicative.amount ? 'price_moved_up' : 'price_moved_down';
                     } else {
                         style = 'no_resale';
                     }
-                    ds.indicative = { style, amount };
+                    portfolio_item.indicative = { style, amount };
                 }
             });
         }
         this.setState({ data_source });
     }
 
+    updateOAuthApps = (response) => {
+        console.log(response);
+        const oauth_apps = buildOauthApps(response);
+        console.log('oauth_apps: ', oauth_apps);
+        // GetAppDetails.addTooltip(oauth_apps);
+    };
+
+    updatePortfolio(response) {
+        if (getPropertyValue(response, 'error')) {
+            console.log('error: ', response);
+            this.setState({ error: response.error.message });
+            return;
+        }
+        if (response.portfolio.contracts && response.portfolio.contracts.length > 0) {
+            const data_source = handlePortfolioData(response.portfolio.contracts);
+            
+            this.setState({ data_source });
+            BinarySocket.send(
+                { proposal_open_contract: 1, subscribe: 1 }, 
+                { callback: this.updateIndicative }
+            );                
+        } else {
+        // empty portfolio
+        }
+    }
+
     render() {
         return (
-            <DataTable
-                {...this.props}
-                data_source={this.state.data_source}
-                columns={this.state.columns}                
-            />
+            <div>
+                {this.state.error && <div>{this.state.error}</div>}
+                <DataTable
+                    {...this.props}
+                    data_source={this.state.data_source}
+                    columns={this.state.columns}                
+                />
+            </div>
         );
     }
 };
