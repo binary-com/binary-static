@@ -37,8 +37,12 @@ const Cashier = (() => {
     };
 
     const onLoad = () => {
-        if (Client.isJPClient() && Client.get('residence') !== 'jp') {
-            BinaryPjax.loadPreviousUrl();
+        if (Client.isJPClient()) {
+            if (Client.get('residence') !== 'jp') {
+                BinaryPjax.loadPreviousUrl();
+            } else {
+                $('.deposit').parent().addClass('button-disabled').attr('href', 'javascript:;');
+            }
         }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
