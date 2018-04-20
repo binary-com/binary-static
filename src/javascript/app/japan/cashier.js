@@ -7,6 +7,9 @@ const State        = require('../../_common/storage').State;
 const CashierJP = (() => {
     const onLoad = (action) => {
         if (Client.isJPClient() && Client.get('residence') !== 'jp') BinaryPjax.loadPreviousUrl();
+        if (action === 'deposit') {
+            return;
+        }
         const $container = $('#japan_cashier_container');
         BinarySocket.send({ cashier_password: 1 }).then((response) => {
             if (!response.error && response.cashier_password === 1) {
@@ -22,16 +25,12 @@ const CashierJP = (() => {
                         } else {
                             $container.find('#cashier_unlocked_message').setVisibility(1);
                             BinarySocket.wait('get_settings').then(() => {
-                                if (action === 'deposit') {
-                                    $('#name_id').text(`${(Client.get('loginid') || 'JP12345')} ${(State.getResponse('get_settings.first_name') || 'Joe Bloggs')}`);
-                                } else if (action === 'withdraw') {
-                                    $('#id123-control22598118').val(Client.get('loginid'));
-                                    $('#id123-control22598060').val(Client.get('email'));
-                                    $('#japan_cashier_container button').on('click', (e) => {
-                                        const result = errorHandler();
-                                        if (!result) e.preventDefault();
-                                    });
-                                }
+                                $('#id123-control22598118').val(Client.get('loginid'));
+                                $('#id123-control22598060').val(Client.get('email'));
+                                $('#japan_cashier_container button').on('click', (e) => {
+                                    const result = errorHandler();
+                                    if (!result) e.preventDefault();
+                                });
                             });
                         }
                     }
