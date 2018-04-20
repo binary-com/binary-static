@@ -26,7 +26,7 @@ const professionalClient = (() => {
 
     const populateProfessionalClient = (is_financial) => {
         const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-        if (!/maltainvest/.test(financial_company) ||    // limited to these landing companies
+        if (!/maltainvest/.test(financial_company) ||    // limited to this landing company
             (financial_company === 'maltainvest' && !is_financial)) { // then it's not upgrading to financial
             if (is_in_page) {
                 BinaryPjax.loadPreviousUrl();
