@@ -382,7 +382,6 @@ const Home = () => {
                                             { image: 'internet_bank_transfer' },
                                             { image: 'internet_banking' },
                                             { image: 'neteller' },
-                                            { image: 'okpay' },
                                             { image: 'fasapay' },
                                             { image: 'perfect_money' },
                                             { image: 'skrill' },

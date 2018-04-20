@@ -109,13 +109,6 @@ const PaymentMethods = () => {
                         thead: [ head ],
                         tbody: [
                             [
-                                { text: <PaymentLogo logo='okpay' /> },
-                                { text: 'USD EUR' },
-                                { text: '5 - 10,000' },
-                                { text: '5 - 10,000' },
-                                { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                            ],
-                            [
                                 { text: <PaymentLogo logo='fasapay' /> },
                                 { text: 'USD' },
                                 { text: '5 - 10,000' },
