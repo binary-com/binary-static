@@ -1,6 +1,7 @@
 const BinaryPjax           = require('./binary_pjax');
 const Client               = require('./client');
 const Clock                = require('./clock');
+const Footer               = require('./footer');
 const GTM                  = require('./gtm');
 const Header               = require('./header');
 const Login                = require('./login');
@@ -45,8 +46,12 @@ const BinarySocketGeneral = (() => {
                     is_available = /^up$/i.test(response.website_status.site_status);
                     if (is_available && !BinarySocket.availability()) {
                         window.location.reload();
-                    } else if (!is_available) {
-                        Header.displayNotification(response.website_status.message, true);
+                        return;
+                    }
+                    if (response.website_status.message) {
+                        Footer.displayNotification(response.website_status.message);
+                    } else {
+                        Footer.clearNotification();
                     }
                     BinarySocket.availability(is_available);
                     setCurrencies(response.website_status);

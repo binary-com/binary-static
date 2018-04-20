@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-17 01:55-0400\n"
+"PO-Revision-Date: 2018-04-19 01:57-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」是由%1建立和維護的編程例程、議定書、工具和資源集。您可通過%1交易平台使用已經註冊的應用程式介面。"
+
+msgid "\"AUD/JPY\" or \"Apple\""
+msgstr "\"澳元/日元\" 或 \"蘋果\""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "「二元」或「數字」期權是支付已預定和固定金額的期權，支付與否是根據二元期權到期時某事件是否發生而定。二元期權只能在兩個可能中出現一個最後結果，並讓您簡單地挑選「是」或「否」。就像傳統期權一樣，二元期權也是根據如貨幣、商品、指數或股票等標的資產。但是傳統期權最大的不同點是，二元期權只會有兩種結果。要麼事件發生，客戶因此獲得回報，要麼客戶損失每項期權已預定的投資金額。"
@@ -1897,7 +1900,7 @@ msgid "Change Password"
 msgstr "更改密碼"
 
 msgid "Change password"
-msgstr ""
+msgstr "更改密碼"
 
 msgid "Change the Stop Out Level in relation to your account."
 msgstr "更改帳戶的止損平倉層次。"
@@ -2168,9 +2171,6 @@ msgstr "開始日期"
 
 msgid "Commission"
 msgstr "佣金"
-
-msgid "Commission (as % of stake)"
-msgstr "佣金(以投注額的%顯示)"
 
 msgid "Commission on deposits"
 msgstr "存款佣金"
@@ -3471,6 +3471,9 @@ msgstr "隨時透過%1與我們聯繫。我們很樂意為您提供服務。"
 msgid "Female"
 msgstr "Female"
 
+msgid "Fiat"
+msgstr "Fiat"
+
 msgid "Fiat Currency"
 msgstr "法定貨幣"
 
@@ -3494,6 +3497,9 @@ msgstr "最終價格"
 
 msgid "Finance"
 msgstr "金融"
+
+msgid "Financial Account"
+msgstr ""
 
 msgid "Financial Account Opening"
 msgstr "開立金融帳戶"
@@ -3825,8 +3831,8 @@ msgstr "開始交易"
 msgid "Getting started"
 msgstr "開始交易"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "用法簡易，隨時可以免費開始使用，只需<a href='%1'>填寫申請表</a>, 然後等待我們批准。"
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "用法簡易，隨時可以免費開始使用，只需%1填寫申請表%2*, 然後等待我們批准。"
@@ -3955,7 +3961,7 @@ msgid "Hedge your portfolio"
 msgstr "投資組合對沖"
 
 msgid "Hedging"
-msgstr "Hedging"
+msgstr "對沖"
 
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr "以下是歐元/美元貨幣對和買賣價的例子："
@@ -4777,7 +4783,7 @@ msgid "Investments &amp; Dividends"
 msgstr "投資&amp;分紅"
 
 msgid "Investor"
-msgstr ""
+msgstr "投資者"
 
 msgid "Investor Compensation Scheme"
 msgstr "投資者補償方案"
@@ -5734,7 +5740,7 @@ msgid "Made an impression in the first interview? We'll invite you to a second i
 msgstr "在第一次面試中留下了印象？我們將邀請您與首席執行官和/或招聘經理進行第二次面談。"
 
 msgid "Main"
-msgstr ""
+msgstr "首頁"
 
 msgid "Main password"
 msgstr "主密碼"
@@ -5794,7 +5800,7 @@ msgid "Malta"
 msgstr "馬爾他"
 
 msgid "Manage MT5 password"
-msgstr ""
+msgstr "管理 MT5 密碼"
 
 msgid "Manage funds"
 msgstr "基金管理"
@@ -6564,6 +6570,12 @@ msgstr "空缺"
 msgid "Open Source"
 msgstr "開源"
 
+msgid "Open a Financial Account"
+msgstr "開立金融帳戶"
+
+msgid "Open a Real Account"
+msgstr "開立真實帳戶"
+
 msgid "Open a free account"
 msgstr "開設免費帳戶"
 
@@ -6738,8 +6750,8 @@ msgstr "我們的歷史紀錄"
 msgid "Our trading screen is simple to use:"
 msgstr "我們的交易屏幕簡單，容易使用:"
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "我們基於交易額的佣金計劃取決於每個合約的回報率。客戶可賺取的回報越高，會員的佣金率也越低。"
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgstr ""
 
 msgid "Over $1,000,000"
 msgstr "大於$1,000,000"
@@ -6820,7 +6832,7 @@ msgid "Password should have lower and uppercase letters with numbers."
 msgstr "密碼須包含大小寫字母與數字。"
 
 msgid "Password type"
-msgstr ""
+msgstr "密碼類型"
 
 msgid "Patented technology"
 msgstr "專利保護技術"
@@ -6976,7 +6988,7 @@ msgid "Please check the above form for pending errors."
 msgstr "請檢查以上表格是否有待定錯誤。"
 
 msgid "Please check your email for further instructions."
-msgstr ""
+msgstr "請檢查您的電子郵件收取詳細說明。"
 
 msgid "Please check your email for the password reset link."
 msgstr "請檢查您的電郵領取密碼重設連結."
@@ -7175,6 +7187,9 @@ msgstr "功能強大的圖表和技術分析"
 
 msgid "Practice account with replenishable USD 10,000 virtual credit."
 msgstr "擁有10,000美元可補充虛擬資金的練習帳戶。"
+
+msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
+msgstr ""
 
 msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
 msgstr "在無風險的環境中使用%1 虛擬基金實踐您的交易策略。"
@@ -7633,13 +7648,13 @@ msgid "Resale price"
 msgstr "轉售價格"
 
 msgid "Reset MT5 password"
-msgstr ""
+msgstr "重設MT5密碼"
 
 msgid "Reset Password"
 msgstr "重設密碼"
 
 msgid "Reset password"
-msgstr ""
+msgstr "重設密碼"
 
 msgid "Reset to Original Settings"
 msgstr "重設為原始設定"
@@ -7841,6 +7856,9 @@ msgstr "選擇<strong>允許設定本機資料(推荐)</strong>。"
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "從左欄選擇<strong>Cookies設定</strong>。"
+
+msgid "Select Asset"
+msgstr "選擇資產"
 
 msgid "Select currency"
 msgstr "選擇貨幣"
@@ -8153,6 +8171,9 @@ msgstr "開始使用MetaTrader 5交易"
 
 msgid "Start time"
 msgstr "開始時間"
+
+msgid "Start trading"
+msgstr ""
 
 msgid "State/Province"
 msgstr "州/省"
@@ -8491,7 +8512,7 @@ msgid "The %1 Terms and Conditions;"
 msgstr "%1條款和條件"
 
 msgid "The %1 password of account number %2 has been changed."
-msgstr ""
+msgstr "%2帳號的%1密碼已更改。"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1網站受版權保護。"
@@ -9409,7 +9430,7 @@ msgid "To reset your password, enter the email address you used to create your a
 msgstr "如要重新設定密碼，在下面的欄位中輸入您註冊的電子郵件地址並點選「重設密碼」。"
 
 msgid "To reset your trading or investor password, please click the button below:"
-msgstr ""
+msgstr "要重設您的交易或投資者密碼, 請按一下下面的按鈕:"
 
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "如果您想從MetaTrader 5金融帳戶提款，請先通過Binary帳戶的<a href=\"%1\">驗證</a>。"
@@ -9888,6 +9909,12 @@ msgstr "更新設定"
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "更新反欺詐手冊和其他相關文件"
 
+msgid "Upgrade now"
+msgstr ""
+
+msgid "Upgrade your account and start trading using real money."
+msgstr ""
+
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr "平倉交易時實現的利潤（或損失），以交易開盤和收盤價差距乘以手數（交易次數）表示，為我們欠您的應付金額（或如實現虧損則是您欠我們的應付金額）。"
 
@@ -9958,7 +9985,7 @@ msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "驗證碼錯誤。請使用以下連結發送到您的電子郵件。"
 
 msgid "Verify Reset Password"
-msgstr ""
+msgstr "重設密碼驗證"
 
 msgid "Verify main password"
 msgstr "主密碼驗證"
@@ -10923,6 +10950,9 @@ msgstr "您已經完整閱讀此法律條款及條件頁面，並明白您將在
 msgid "You have sold this contract at %1 %2"
 msgstr "您已經以 %1 %2 賣出此合約"
 
+msgid "You have successfully created your Virtual Account."
+msgstr ""
+
 msgid "You have successfully created your account!"
 msgstr "您已成功開立帳戶！"
 
@@ -11383,7 +11413,7 @@ msgid "follow and/or implement and/or comply with all business-related direction
 msgstr "跟踪和/或執行和/或遵守經修訂和/或重新制訂和/或隨時更換的公司所有與業務有關的指示和/或政策和/或程序。"
 
 msgid "for account %1"
-msgstr ""
+msgstr "用於帳戶%1"
 
 msgid "h"
 msgstr "小時"

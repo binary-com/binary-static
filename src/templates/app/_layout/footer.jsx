@@ -18,6 +18,18 @@ const SocialIcons = ({ networks, is_centered }) => (
     </div>
 );
 
+const StatusNotification = () => (
+    <div id='status_notification'>
+        <div id='status_notification_type'>
+            <img src={it.url_for('images/server_status/ic-warning.svg')}  alt='Information icon'/>
+        </div>
+        <p id='status_notification_text'/>
+        <div id='status_notification_close'>
+            <img src={it.url_for('images/server_status/ic-close.svg')}  alt='Warning icon'/>
+        </div>
+    </div>
+);
+
 const FooterJA = () => (
     <div id='footer' className='no-print'>
         <div id='footer-menu' className='primary-bg-color gr-padding-10'>
@@ -104,6 +116,7 @@ const FooterJA = () => (
             </div>
         </div>
         <div id='end-note' className='invisible content-inverse-color center-text' />
+        <StatusNotification />
     </div>
 );
 
@@ -240,9 +253,9 @@ const FooterNormal = () => (
             </div>
         </div>
         <div id='end-note' className='invisible content-inverse-color center-text' />
+        <StatusNotification />
     </div>
 );
-
 const Footer = () => (
     (it.language.toLowerCase() === 'ja') ? <FooterJA /> : <FooterNormal />
 );

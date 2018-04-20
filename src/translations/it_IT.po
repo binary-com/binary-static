@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-17 01:54-0400\n"
+"PO-Revision-Date: 2018-04-19 01:56-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" indica l'insieme delle routine programmatiche, protocolli e risorse di proprietà di %1 create e gestite da %1 che ti consentono di usare un'Applicazione registrata per interagire con la piattaforma di trading di %1."
+
+msgid "\"AUD/JPY\" or \"Apple\""
+msgstr "\"AUD/JPY\" o \"Apple\""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "Le opzioni \"binarie\" o \"digitali\" sono delle opzioni per le quali viene pagato un importo fisso, prestabilito, in base al verificarsi o meno di un evento alla scadenza dell'Opzione binaria. Le Opzioni binarie possono avere solo uno dei due risultati possibili e consentono di avere un approccio semplice del tipo \"Si o No\". Così come le opzioni tradizionali, le Opzioni binarie si basano su un asset sottostante, ossia valute, materie prime, indici o azioni. Tuttavia, una delle differenze principali rispetto alle opzioni tradizionali è, tra le altre, quella di poter produrre solo due risultati per la stessa opzione: il cliente può ottenere un rendimento al verificarsi dell'evento oppure può perdere l'importo dell'investimento come stabilito in ogni opzione."
@@ -1897,7 +1900,7 @@ msgid "Change Password"
 msgstr "Modifica Password"
 
 msgid "Change password"
-msgstr ""
+msgstr "Cambia password"
 
 msgid "Change the Stop Out Level in relation to your account."
 msgstr "Modifica il livello dello Stop Out in base al tuo account."
@@ -2168,9 +2171,6 @@ msgstr "Data di inizio"
 
 msgid "Commission"
 msgstr "Commissione"
-
-msgid "Commission (as % of stake)"
-msgstr "Commissione (come % della puntata)"
 
 msgid "Commission on deposits"
 msgstr "Commissione sui depositi"
@@ -3471,6 +3471,9 @@ msgstr "Puoi contattarci scrivendo all'indirizzo %1, siamo sempre disponibili e 
 msgid "Female"
 msgstr "Donna"
 
+msgid "Fiat"
+msgstr "Fiat"
+
 msgid "Fiat Currency"
 msgstr "Moneta Fiat"
 
@@ -3494,6 +3497,9 @@ msgstr "Prezzo finale"
 
 msgid "Finance"
 msgstr "Finanza"
+
+msgid "Financial Account"
+msgstr ""
 
 msgid "Financial Account Opening"
 msgstr "Apertura account finanziario"
@@ -3825,8 +3831,8 @@ msgstr "Per iniziare"
 msgid "Getting started"
 msgstr "Per iniziare"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "Iniziare è facile e veloce, basta <a href='%1'>compilare il modulo di iscrizione</a> e attendere la nostra conferma."
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr "Iniziare è facile e veloce, basta <a href='%1'>compilare il modulo di iscrizione</a>, scegliere uno dei due piani di commissione offerti e attendere la nostra conferma."
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "Iniziare è facile e veloce, basta %1compilare il modulo di iscrizione%2* e attendere la nostra conferma."
@@ -4777,7 +4783,7 @@ msgid "Investments &amp; Dividends"
 msgstr "Investimenti &amp; Dividendi"
 
 msgid "Investor"
-msgstr ""
+msgstr "Investitore"
 
 msgid "Investor Compensation Scheme"
 msgstr "Sistema di indennizzo degli investitori"
@@ -5735,7 +5741,7 @@ msgid "Made an impression in the first interview? We'll invite you to a second i
 msgstr "Hai fatto una buona impressione al primo colloquio? Ti inviteremo ad un secondo colloquio con il nostro CEO e/o con il nostro responsabile delle assunzioni."
 
 msgid "Main"
-msgstr ""
+msgstr "Principale"
 
 msgid "Main password"
 msgstr "Password principale"
@@ -5795,7 +5801,7 @@ msgid "Malta"
 msgstr "Malta"
 
 msgid "Manage MT5 password"
-msgstr ""
+msgstr "Gestisci password MT5"
 
 msgid "Manage funds"
 msgstr "Gestisci i fondi"
@@ -6565,6 +6571,12 @@ msgstr "Posizioni aperte"
 msgid "Open Source"
 msgstr "Open Source"
 
+msgid "Open a Financial Account"
+msgstr "Apri un conto finanziario"
+
+msgid "Open a Real Account"
+msgstr "Apri un conto reale"
+
 msgid "Open a free account"
 msgstr "Apri un account gratuito"
 
@@ -6739,8 +6751,8 @@ msgstr "La nostra comprovata esperienza"
 msgid "Our trading screen is simple to use:"
 msgstr "La nostra schermata di trading è facile da usare:"
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "Il nostro piano di commissioni basato sul fatturato dipende dalla probabilità di rendimento per ogni contratto. I contratti con rendimenti più elevati per il cliente comportano commissioni inferiori per l'associato."
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgstr ""
 
 msgid "Over $1,000,000"
 msgstr "Più di $1.000.000"
@@ -7176,6 +7188,9 @@ msgstr "Grafici potenti e analisi tecnica"
 
 msgid "Practice account with replenishable USD 10,000 virtual credit."
 msgstr "Account di pratica con credito virtuale rinnovabile di 10,000 USD."
+
+msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
+msgstr ""
 
 msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
 msgstr "Allena la tua strategia di trading con %1 di fondi virtuali in un ambiente privo di rischi."
@@ -7640,7 +7655,7 @@ msgid "Reset Password"
 msgstr "Ripristina password"
 
 msgid "Reset password"
-msgstr ""
+msgstr "Reimposta password"
 
 msgid "Reset to Original Settings"
 msgstr "Ripristina le impostazioni originarie"
@@ -7842,6 +7857,9 @@ msgstr "Seleziona <strong>Consenti ai dati locali di essere impostati (raccomand
 
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "Seleziona <strong>Cookies</strong> dalla colonna di sinistra."
+
+msgid "Select Asset"
+msgstr "Seleziona asset"
 
 msgid "Select currency"
 msgstr "Seleziona la valuta"
@@ -8154,6 +8172,9 @@ msgstr "Inizia il trading con MetaTrader 5"
 
 msgid "Start time"
 msgstr "Orario d'inizio"
+
+msgid "Start trading"
+msgstr ""
 
 msgid "State/Province"
 msgstr "Stato/Provincia"
@@ -8597,7 +8618,7 @@ msgid "The Company does not provide a market amongst or between Clients for inve
 msgstr "La Società non fornisce un mercato tra Clienti per investimenti, titoli, derivati o speculazioni. Ogni contratto finanziario acquistato dal Cliente tramite questo sito rappresenta un accordo individuale tra il Cliente e la Società e non è un titolo, non è trasferibile, né negoziabile o attribuibile a qualsiasi terza parte."
 
 msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
-msgstr "La Società adotta una policy di Stop Out che impedisce di perdere più di quanto è stato depositato. Tuttavia, nel caso in cui le posizioni aperte non fossero chiuse quando il livello di margine per il conto reale MT5 raggiunge il livello di Stop Out, la Società potrebbe rinunciare, a sua esclusiva discrezione, al saldo negativo del conto effettuando un accredito, se il saldo del conto risulta negativo. Il saldo negativo è determinato dalla somma di tutti i saldi negativi registrati nelle 24 ore precedenti in tutti i conti detenuti dal Cliente. Il Cliente riconosce che l'offerta di protezione dal saldo negativo offerta dalla Società è a esclusiva discrezione della Società stessa; quest'ultima si riserva inoltre il diritto di modificare in qualsiasi momento le caratteristiche e i criteri di idoneità della protezione da saldo negativo. Le disposizioni della protezione da saldo negativo non sono valide nei seguenti casi:"
+msgstr "La Società adotta una policy di Stop Out che impedisce di perdere più di quanto è stato depositato. Tuttavia, nel caso in cui le posizioni aperte non fossero chiuse quando il livello di margine per il conto reale MT5 raggiunge il livello di Stop Out, la Società potrebbe rinunciare, a sua esclusiva discrezione, al saldo negativo del conto effettuando un accredito, se il saldo del conto risulta negativo. Il saldo negativo è determinato dalla somma di tutti i saldi negativi registrati nelle 24 ore precedenti in tutti i conti detenuti dal Cliente. Il Cliente riconosce che l'offerta di protezione dal saldo negativo offerta dalla Società è a esclusiva discrezione della Società stessa; quest'ultima si riserva inoltre il diritto di modificare in qualsiasi momento le caratteristiche e i criteri di idoneità della protezione da saldo negativo. Le disposizioni della protezione dal saldo negativo non sono valide nei seguenti casi:"
 
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "La Società ha e conserva il diritto di cessare qualsiasi azione o trade, incluso, ma senza limitazione, qualsiasi evento di cui sopra."
@@ -9068,7 +9089,7 @@ msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote B
 msgstr "Il termine 'noi', 'ci', 'nostro/a', 'nostri/e', 'la Società', o '%1' indica Binary (V) Ltd."
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd., Binary (C.R.) S.A., or Binary (Europe) Ltd depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
-msgstr "I termini 'noi', 'ci', 'nostro/a', 'nostri/e', 'la Società', o '%1' indicano Binary (V) Ltd., Binary (C.R.) S.A. oppure Binary (Europe) Ltd a seconda della giurisdizione a cui l'account di un cliente è stato associato in conformità con le procedure relative all'apertura dell'account del sito web."
+msgstr "I termini 'noi', 'ci', 'nostro/a', 'nostri/e', 'la Società', o '%1' indicano Binary (V) Ltd., Binary (C.R.) S.A. oppure Binary (Europe) Ltd a seconda della giurisdizione a cui in conto di un cliente è stato associato in conformità con le procedure del sito web relative all'apertura del conto."
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
 msgstr "Le transazioni eseguite su questo sito e il rapporto tra i Clienti e la Società sono gestiti e interpretati in accordo con le leggi del paese di incorporazione della Società (la \"Giurisdizione\"), che sarà l'Isola di Man, Malta o la Costa Rica. Accetti che i tribunali competenti avranno la competenza esclusiva per la risoluzione di qualsiasi controversia eventualmente derivante da tale rapporto. A tal fine, accetti irrevocabilmente di presentarti innanzi alla giurisdizione dei tribunali competenti per qualsiasi controversia che dovesse insorgere contro la Società e che questa potrà essere risolta solo innanzi ai tribunali competenti. Per ulteriori informazioni sui reclami e sulle controversie, fare riferimento alla sezione Reclami e controversie della Società."
@@ -9888,6 +9909,12 @@ msgstr "Aggiorna impostazioni"
 
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "Aggiorna il Manuale anti-frode e gli altri documenti connessi"
+
+msgid "Upgrade now"
+msgstr ""
+
+msgid "Upgrade your account and start trading using real money."
+msgstr ""
 
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr "Al momento della chiusura di una Transazione, l'utile (o la perdita) realizzato, che è rappresentato dalla differenza tra il livello di apertura e il livello di chiusura della Transazione moltiplicato per il numero di lotti (volume), diventa dovuto e pagabile da noi a te (o dovuto e pagabile da te a noi in caso di perdita realizzata)."
@@ -10923,6 +10950,9 @@ msgstr "Hai letto completamente la pagina sui Termini e le Condizioni Legali e h
 
 msgid "You have sold this contract at %1 %2"
 msgstr "Hai venduto questo contratto a %1 %2"
+
+msgid "You have successfully created your Virtual Account."
+msgstr ""
 
 msgid "You have successfully created your account!"
 msgstr "Hai creato con successo il tuo account!"

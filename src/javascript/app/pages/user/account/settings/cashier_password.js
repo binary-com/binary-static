@@ -26,7 +26,10 @@ const CashierPassword = (() => {
 
     const init = (response) => {
         const locked = response.cashier_password;
-        if (locked) {
+        if (response.error) {
+            $('#form_message').addClass('notice-msg center-text').text(response.error.code === 'RateLimit' ? localize('You have reached the rate limit of requests per second. Please try later.') : response.error.message);
+            return;
+        } else if (locked) {
             updatePage({
                 legend: 'Unlock Cashier',
                 info  : 'Your cashier is locked as per your request - to unlock it, please enter the password.',
@@ -57,19 +60,24 @@ const CashierPassword = (() => {
     const handleResponse = (response) => {
         const $form_error   = $('#form_error');
         const $form_message = $('#form_message');
-        $form_message.text('');
+        $form_message.removeClass('notice-msg center-text').text('');
         $form_error.setVisibility(0);
         if (response.error) {
-            let message = response.error.message;
-            if (response.error.code === 'InputValidationFailed') {
-                message = 'Sorry, you have entered an incorrect cashier password';
+            if (response.error.code === 'RateLimit') {
+                $form.setVisibility(0);
+                $form_message.addClass('notice-msg center-text').text(localize('You have reached the rate limit of requests per second. Please try later.'));
+            } else {
+                let message = response.error.message;
+                if (response.error.code === 'InputValidationFailed') {
+                    message = 'Sorry, you have entered an incorrect cashier password';
+                }
+                $form_error.text(localize(message)).setVisibility(1);
             }
-            $form_error.text(localize(message)).setVisibility(1);
-            return;
+        } else {
+            $form.setVisibility(0);
+            $form_message.text(localize('Your settings have been updated successfully.'));
+            setTimeout(redirect, 2000);
         }
-        $form.setVisibility(0);
-        $form_message.text(localize('Your settings have been updated successfully.'));
-        setTimeout(redirect, 2000);
     };
 
     const redirect = () => {

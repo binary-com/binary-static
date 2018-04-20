@@ -4,7 +4,7 @@ import { FormRow, Fieldset } from '../../_common/components/forms.jsx';
 const Virtual = () => (
     <div className='gr-12 static_full'>
         <h1>{it.L('Create New Account')}</h1>
-        <form id='virtual-form' className='gr-padding-10'>
+        <form id='virtual-form' className='gr-padding-10 ja-hide'>
             <Fieldset legend={it.L('Details')}>
                 <FormRow
                     type='password'
@@ -15,7 +15,7 @@ const Virtual = () => (
 
                 <FormRow type='password' id='repeat_password' label={it.L('Re-enter password')} />
 
-                <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} />
+                <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} attributes={{single: 'single'}}  />
 
                 <FormRow
                     type='checkbox'
@@ -32,6 +32,9 @@ const Virtual = () => (
                 <p className='errorfield invisible' id='error-account-opening' />
             </div>
         </form>
+        <div className='invisible ja-show'>
+            <p className='notice-msg center-text'>{it.L('Sorry, this feature is not available in your jurisdiction.')}</p>
+        </div>
     </div>
 );
 

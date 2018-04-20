@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-17 01:54-0400\n"
+"PO-Revision-Date: 2018-04-19 01:56-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "„%1 API“ bedeutet von %1 selbst entwickelte Programmroutinen, Protokolle, Werkzeuge und Mittel, die von %1 erstellt und gepflegt werden, die es Ihnen ermöglichen, eine genehmigte Anwendung zu verwenden, um sich in die %1 Handelsplattform zu integrieren."
+
+msgid "\"AUD/JPY\" or \"Apple\""
+msgstr ""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "\"Binäre\" oder \"digitale\" Optionen sind Optionen, die einen festen, vorher festgelegten Betrag auszahlen. Dies ist davon abhängig, ob ein Ereignis vor Ablauf der Binären Option eintritt oder nicht. Binäre Optionen können nur zwei mögliche Ergebnisse haben und ermöglichen Ihnen einen einfachen \" Ja oder Nein\" Ansatz. Binäre Optionen basieren, wie herkömmliche Optionen, auf den zugrundeliegenden Investitionen wie Währungen, Rohstoffe, Aktienindexe oder Aktien. Allerdings ist u. a. einer der eheblichsten Unterschiede zu herkömmlichen Optionen, dass es für die Option nur zwei Ergebnisse gibt: Entweder wird dem Kunden der Profit bei Eintreten des Ereignisses ausbezahlt oder der Kunde verliert die für jede Option gemachte Investition."
@@ -2169,9 +2172,6 @@ msgstr "Beginndatum"
 msgid "Commission"
 msgstr "Provision"
 
-msgid "Commission (as % of stake)"
-msgstr "Kommission (als % der Anteile)"
-
 msgid "Commission on deposits"
 msgstr "Provision auf Einzahlungen"
 
@@ -3472,6 +3472,9 @@ msgstr "Zögern Sie nicht uns über %1 zu kontaktieren. Wir würden gerne von Ih
 msgid "Female"
 msgstr "Female"
 
+msgid "Fiat"
+msgstr ""
+
 msgid "Fiat Currency"
 msgstr "Fiat-Währung"
 
@@ -3495,6 +3498,9 @@ msgstr "Schlusskurs"
 
 msgid "Finance"
 msgstr "Finanzen"
+
+msgid "Financial Account"
+msgstr ""
 
 msgid "Financial Account Opening"
 msgstr "Eröffnung eines Finanzkontos"
@@ -3826,8 +3832,8 @@ msgstr "Erste Schritte"
 msgid "Getting started"
 msgstr "Erste Schritte"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "Der Einstieg ist einfach und kostenlos – <a href='%1'>füllen Sie nur das Anmeldeformular aus</a> und warten Sie auf unsere Zustimmung."
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "Der Einstieg ist einfach und kostenlos. %1Füllen Sie einfach das Anmeldeformular aus%2* und warten Sie auf unsere Zustimmung."
@@ -6565,6 +6571,12 @@ msgstr "Offene Positionen"
 msgid "Open Source"
 msgstr "Quelle öffnen"
 
+msgid "Open a Financial Account"
+msgstr ""
+
+msgid "Open a Real Account"
+msgstr ""
+
 msgid "Open a free account"
 msgstr "Eröffnen Sie ein kostenloses Konto"
 
@@ -6739,8 +6751,8 @@ msgstr "Unser Erfolgsnachweis"
 msgid "Our trading screen is simple to use:"
 msgstr "Unser Handelsbildschirm ist einfach zu benützen:"
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "Unser auf Umsatz basierender Provisionsplan hängt von den wahrscheinlichen Renditen für jeden Kontrakt ab. Kontrakte mit höheren Renditen für den Kunden haben niedrigere Provisionen für den Partner."
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgstr ""
 
 msgid "Over $1,000,000"
 msgstr "Über 1.000.000$"
@@ -7176,6 +7188,9 @@ msgstr "Leistungsfähiges Charting und leistungsfähige Analyse"
 
 msgid "Practice account with replenishable USD 10,000 virtual credit."
 msgstr "Übungskonto mit einem nachwachsenden 10.000 USD virtuellen Kredit."
+
+msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
+msgstr ""
 
 msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
 msgstr "Üben Sie Ihre Handelsstrategie mit %1 virtuellen Fonds in einer risikofreien Umgebung."
@@ -7843,6 +7858,9 @@ msgstr "Wählen Sie <strong>Lokale Daten festlegen erlauben (empfohlen)</strong>
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "Wählen Sie <strong>Cookies</strong> aus der linken Spalte aus."
 
+msgid "Select Asset"
+msgstr ""
+
 msgid "Select currency"
 msgstr "Währung auswählen"
 
@@ -8154,6 +8172,9 @@ msgstr "Jetzt mit dem Handeln von MetaTrader 5 beginnen"
 
 msgid "Start time"
 msgstr "Startzeit"
+
+msgid "Start trading"
+msgstr ""
 
 msgid "State/Province"
 msgstr "Staat/Provinz"
@@ -9889,6 +9910,12 @@ msgstr "Einstellungen aktualisieren"
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "Das Betrugsbekämpfungshandbuch und weitere diesbezügliche Dokumente aktualisieren"
 
+msgid "Upgrade now"
+msgstr ""
+
+msgid "Upgrade your account and start trading using real money."
+msgstr ""
+
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr "Nach Schließung einer Transaktion, wird der realisierte Gewinn (Verlust), der vom Unterschied zwischen dem Eröffnungsstand und dem Schlussstand der Transaktion, multipliziert mit der Anzahl der Lots (Volumen) dargestellt wird, von uns an Sie fällig und zahlbar (oder von Ihnen an uns fällig und zahlbar, im Fall eines realisierten Verlusts)."
 
@@ -10927,6 +10954,9 @@ msgstr "Sie haben die Seite mit diesen gesetzlichen Bestimmungen und Bedingungen
 
 msgid "You have sold this contract at %1 %2"
 msgstr "Sie haben diesen Kontrakt für %1 %2 verkauft"
+
+msgid "You have successfully created your Virtual Account."
+msgstr ""
 
 msgid "You have successfully created your account!"
 msgstr "Sie haben Ihr Konto erfolgreich erstellt!"
