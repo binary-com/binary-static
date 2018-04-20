@@ -185,9 +185,7 @@ class Statement extends React.PureComponent {
     }
 
     render() {
-        if (this.state.data_source.length === 0) {
-            return <Loading />;
-        }
+        const is_loading = this.state.pending_request && this.state.data_source.length === 0;
 
         const moment_now = moment(this.props.server_time);
         const today = moment_now.format('YYYY-MM-DD');
@@ -215,15 +213,19 @@ class Statement extends React.PureComponent {
                         onChange={this.handleDateChange}
                     />
                 </div>
-                {
-                    this.state.data_source.length === 0
-                        ? <Loading />
-                        : <DataTable
-                              data_source={this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size)}
-                              columns={this.state.columns}
-                              has_fixed_header
-                          />
-                }
+                <div className='statement-content'>
+                    {
+                        is_loading
+                            ? <Loading />
+                            : this.state.data_source.length === 0
+                                ? 'No transactions'
+                                : <DataTable
+                                      data_source={this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size)}
+                                      columns={this.state.columns}
+                                      has_fixed_header
+                                  />
+                    }
+                </div>
                 </div>
         );
     }
