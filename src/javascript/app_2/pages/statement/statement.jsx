@@ -158,7 +158,7 @@ class Statement extends React.PureComponent {
             this.state.data_source.length,
             {
                 ...date_from && {date_from: moment(date_from).unix()},
-                ...date_to   && {date_to  : moment(date_to).unix()},
+                ...date_to   && {date_to  : moment(date_to).add(1, 'd').subtract(1, 's').unix()},
             }
         ).then((response) => {
             const formatted_transactions = response.statement.transactions
