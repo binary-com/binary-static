@@ -15,7 +15,16 @@ const DAO = (() => {
 
     const getWebsiteStatus = () => BinarySocket.send({ website_status: 1 });
 
-    const getStatement = (limit, offset) => BinarySocket.send({ statement: 1, description: 1, limit, offset });
+    const getStatement = (limit, offset, date_boundaries) => {
+        console.log('dao', date_boundaries);
+        return BinarySocket.send({
+            statement: 1,
+            description: 1,
+            limit,
+            offset,
+            ...date_boundaries,
+        });
+    };
 
     const getTicks = (symbol, cb) => BinarySocket.send({ ticks: symbol, subscribe: 1 }, { callback: cb });
 

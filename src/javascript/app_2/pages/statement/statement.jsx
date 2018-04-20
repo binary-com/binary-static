@@ -44,10 +44,11 @@ class Statement extends React.PureComponent {
     constructor(props) {
         super(props);
 
-        this.handleScroll = this.handleScroll.bind(this);
+        this.handleScroll     = this.handleScroll.bind(this);
         this.handleDateChange = this.handleDateChange.bind(this);
-        this.loadNextChunk = this.loadNextChunk.bind(this);
-        this.getNextBatch = this.getNextBatch.bind(this);
+        this.loadNextChunk    = this.loadNextChunk.bind(this);
+        this.fetchNextBatch   = this.fetchNextBatch.bind(this);
+        this.reloadTable      = this.reloadTable.bind(this);
 
         const columns = [
             {
@@ -97,7 +98,7 @@ class Statement extends React.PureComponent {
 
     componentDidMount() {
         window.moment = moment;
-        this.getNextBatch();
+        this.fetchNextBatch();
 
         this._throttledHandleScroll = throttlebounce(this.handleScroll, 200);
         window.addEventListener('scroll', this._throttledHandleScroll, false);
@@ -117,6 +118,9 @@ class Statement extends React.PureComponent {
     }
 
     handleDateChange(e) {
+        if (e.target.value !== this.state[e.target.name]) {
+            this.reloadTable();
+        }
         this.setState({
             [e.target.name]: e.target.value,
         });
@@ -135,11 +139,11 @@ class Statement extends React.PureComponent {
 
         if (data_source.length <= (chunks + 1) * chunk_size) {
             // last chunk has been loaded
-            this.getNextBatch();
+            this.fetchNextBatch();
         }
     }
 
-    getNextBatch() {
+    fetchNextBatch() {
         if (this.state.has_loaded_all || this.state.pending_request) return;
 
         this.setState({ pending_request: true });
@@ -147,7 +151,16 @@ class Statement extends React.PureComponent {
         const currency     = Client.get('currency');
         const is_jp_client = jpClient();
 
-        DAO.getStatement(this.props.batch_size, this.state.data_source.length).then((response) => {
+        const { date_from, date_to } = this.state;
+
+        DAO.getStatement(
+            this.props.batch_size,
+            this.state.data_source.length,
+            {
+                ...date_from && {date_from: moment(date_from).unix()},
+                ...date_to   && {date_to  : moment(date_to).unix()},
+            }
+        ).then((response) => {
             const formatted_transactions = response.statement.transactions
                 .map(transaction => getStatementData(transaction, currency, is_jp_client));
 
@@ -157,6 +170,18 @@ class Statement extends React.PureComponent {
                 pending_request: false,
             });
         });
+    }
+
+    reloadTable() {
+        this.setState(
+            {
+                data_source    : [],
+                has_loaded_all : false,
+                pending_request: false,
+                chunks         : 1,
+            },
+            this.fetchNextBatch
+        );
     }
 
     render() {
@@ -190,12 +215,16 @@ class Statement extends React.PureComponent {
                         onChange={this.handleDateChange}
                     />
                 </div>
-                <DataTable
-                    data_source={this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size)}
-                    columns={this.state.columns}
-                    has_fixed_header
-                />
-            </div>
+                {
+                    this.state.data_source.length === 0
+                        ? <Loading />
+                        : <DataTable
+                              data_source={this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size)}
+                              columns={this.state.columns}
+                              has_fixed_header
+                          />
+                }
+                </div>
         );
     }
 }
