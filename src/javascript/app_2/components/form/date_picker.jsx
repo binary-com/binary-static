@@ -36,7 +36,7 @@ class Calendar extends React.Component {
         this.resetCalendar = this.resetCalendar.bind(this);
 
         const { startDate, minDate } = {...props};
-
+        
         const current_date = moment(startDate || minDate).format(this.props.dateFormat);
 
         this.state = {

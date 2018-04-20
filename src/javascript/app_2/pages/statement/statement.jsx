@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Client from '../../../app/base/client';
 import DAO from '../../data/dao';
+import { connect } from '../../store/connect';
 import { toJapanTimeIfNeeded } from '../../../app/base/clock';
 import { jpClient } from '../../../app/common/country_base';
 import { formatMoney } from '../../../app/common/currency';
@@ -95,6 +96,7 @@ class Statement extends React.PureComponent {
     }
 
     componentDidMount() {
+        window.moment = moment;
         this.getNextBatch();
 
         this._throttledHandleScroll = throttlebounce(this.handleScroll, 200);
@@ -115,6 +117,7 @@ class Statement extends React.PureComponent {
     }
 
     handleDateChange(e) {
+        console.log(e);
         this.setState({
             [e.target.name]: e.target.value,
         });
@@ -157,6 +160,8 @@ class Statement extends React.PureComponent {
             return <Loading />;
         }
 
+        const moment_now = moment(this.props.server_time);
+
         return (
             <div className='statement-container'>
                 <div className='statement-filter'>
@@ -165,15 +170,17 @@ class Statement extends React.PureComponent {
                         name='date_from'
                         initial_value=''
                         // minDate={} // default?
-                        // maxDate={} // state.date_to
+                        startDate={moment_now.clone().subtract(30, 'd')}
+                        maxDate={this.state.date_to} // state.date_to
                         onChange={this.handleDateChange}
                     />
                     <span className='statement-filter-text'>to</span>
                     <DatePicker
                         name='date_to'
                         initial_value=''
-                        // minDate={} // state.date_from
-                        // maxDate={} // today
+                        startDate={moment_now}
+                        minDate={this.state.date_from} // state.date_from
+                        maxDate={moment_now} // today
                         showTodayBtn
                         onChange={this.handleDateChange}
                     />
@@ -193,4 +200,8 @@ Statement.defaultProps = {
     batch_size: 200, // request with batches
 };
 
-export default Statement;
+export default connect(
+    ({trade}) => ({
+        server_time: trade.server_time,
+    })
+)(Statement);
