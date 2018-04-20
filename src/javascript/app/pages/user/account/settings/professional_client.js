@@ -24,8 +24,8 @@ const professionalClient = (() => {
     };
 
     const populateProfessionalClient = (is_financial) => {
-        const is_maltainvest = Client.canRequestProfessional();
-        if (!is_maltainvest || !is_financial) { // then it's not upgrading to financial
+        const has_maltainvest = Client.canRequestProfessional();
+        if (!has_maltainvest || !is_financial) { // then it's not upgrading to financial
             if (is_in_page) {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -57,7 +57,7 @@ const professionalClient = (() => {
             }
         });
 
-        if (is_maltainvest) {
+        if (has_maltainvest) {
             $container.find('#show_financial').setVisibility(1);
         }
 
