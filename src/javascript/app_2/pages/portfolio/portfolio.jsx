@@ -36,6 +36,7 @@ const handlePortfolioData = (portfolio_arr) => {
     1. Move socket connections to DAO
     2. Selling both in transactionHandler and updateIndicative?
     3. Make tooltip appdetails tooltip
+    4. format currency values + date values
     4. Add styling
     5. Translations
 */
