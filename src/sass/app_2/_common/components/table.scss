@@ -3,52 +3,78 @@
     color: #333333; /* stylelint-disable-line color-no-hex */
     font-size: 16px;
     border-collapse: collapse;
+    table-layout: fixed;
+    width: 100vw;
 
     &-row {
         background-color: $COLOR_WHITE;
         border-bottom: 1px solid #d2d3da; /* stylelint-disable-line color-no-hex */
     }
-    &-thead {
+    &-head {
         min-height: 40px;
+        background-color: #fafafb; /* stylelint-disable-line color-no-hex */
 
-        & th {
+        th {
             padding: 12px;
             font-weight: 600;
             text-align: left;
             border: none;
             background-color: #f4f4f6; /* stylelint-disable-line color-no-hex */
         }
-        & th:first-child {
-            padding-left: 16px;
-            border-top-left-radius: 4px;
-        }
-        & th:last-child {
-            padding-right: 16px;
-            border-top-right-radius: 4px;
-        }
     }
-    &-tbody {
-        & .table-row:hover {
-            background-color: #fdf4ec; /* stylelint-disable-line color-no-hex */
+    th:first-child, td:first-child {
+        padding-left: 32px;
+    }
+    th:last-child, td:last-child {
+        padding-right: 32px;
+    }
+    &-body {
+        .table-row:hover {
+            background-color: #e4e6f1; /* stylelint-disable-line color-no-hex */
         }
-        & td {
+        td {
             padding: 12px;
             border: none;
         }
-        & td:first-child {
-            padding-left: 16px;
+        .profit {
+            color: #4caf50; /* stylelint-disable-line color-no-hex */
         }
-        & td:last-child {
-            padding-right: 16px;
+        .loss {
+            color: #f44336; /* stylelint-disable-line color-no-hex */
         }
-        & .profit {
-            color: #2e8836; /* stylelint-disable-line color-no-hex */
-        }
-        & .loss {
-            color: #c03; /* stylelint-disable-line color-no-hex */
+        .amount {
+            font-weight: bold;
         }
     }
-    &-pagination {
-        margin-top: 16px;
+    // column widths
+    .date, .ref {
+        width: 6.5em;
+    }
+    .action {
+        width: 7em;
+        text-align: right;
+    }
+    .payout, .amount, .balance {
+        width: 6em;
+        text-align: right;
+    }
+    // styles for fixed table header
+    &.table-clone {
+        position: fixed;
+        z-index: 100;
+        pointer-events: none;
+
+        .table-head {
+            pointer-events: auto;
+            visibility: visible;
+        }
+        .table-body {
+            visibility: hidden;
+        }
+    }
+    @media screen and (max-width: 980px) {
+        .desc {
+            display: none;
+        }
     }
 }
