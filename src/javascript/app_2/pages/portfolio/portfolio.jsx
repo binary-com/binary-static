@@ -6,11 +6,11 @@ import { localize } from '../../../_common/localize';
 import DataTable from '../../components/elements/data_table.jsx';
 
 // return transformed array
-const handlePortfolioData = (portfolio_data_arr) => {
-    const formatted_data = portfolio_data_arr.map((portfolio_item) => {
-        const date_obj       = new Date(portfolio_item.expiry_time* 1000);
-        const moment_obj     = moment.utc(date_obj);
-        const remaining_time = `${moment_obj.fromNow()} - ${moment_obj.format('h:mm:ss')}`;
+const handlePortfolioData = (portfolio_arr) => {
+    const formatted_portfolio = portfolio_arr.map((portfolio_item) => {
+        const date_obj        = new Date(portfolio_item.expiry_time* 1000);
+        const moment_obj      = moment.utc(date_obj);
+        const remaining_time  = `${moment_obj.fromNow()} - ${moment_obj.format('h:mm:ss')}`;
 
         return {
             ref       : portfolio_item.transaction_id,
@@ -24,14 +24,21 @@ const handlePortfolioData = (portfolio_data_arr) => {
             app_id    : portfolio_item.app_id,
             indicative: {
                 amount: parseFloat(portfolio_item.amount),
-                class : '',
+                style : '',
             },
         };
     });
-    console.log('formatted_data', formatted_data);
-    return formatted_data;
+    return formatted_portfolio;
 };
-
+/* TODO:
+    1. Move socket connections to DAO
+    2. Handle errors
+    3. Handle empty portfolio
+    4. Subscribe to transactions to auto update new purchases
+    5. force to sell the expired contract, in order to remove from portfolio?
+    6. Resale not offered?
+    7. updateOAuthApps?
+*/
 class Portfolio extends React.PureComponent  {
     constructor(props) {
         super(props);
@@ -78,7 +85,11 @@ class Portfolio extends React.PureComponent  {
                     if (is_nan) {
                         return <td key={data_index}>-</td>;
                     }
-                    return <td key={data_index} className={data.class}> <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data.amount}</td>;
+                    return (
+                        <td key={data_index} className={data.style}> 
+                            <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data.amount}
+                            {data.style === 'no_resale' && <div> resell not offered</div>}
+                        </td>);
                 },
             },
         ];
@@ -99,15 +110,9 @@ class Portfolio extends React.PureComponent  {
         console.log(this.state);
         BinarySocket.send({ forget_all: ['proposal_open_contract', 'transaction'] });
     }
-    /* TODO:
-        1. Move socket connections to DAO
-        2. Handle errors
-        3. Handle empty portfolio
-        4. forget_all
-    */
     getPortfolioData() {
         BinarySocket.send({ portfolio: 1 }).then((response) => {
-            // Handle error
+            // Handle error here
             if (response.portfolio.contracts && response.portfolio.contracts.length > 0) {
                 const formatted_transactions = handlePortfolioData(response.portfolio.contracts);
                 this.setState({
@@ -124,15 +129,29 @@ class Portfolio extends React.PureComponent  {
     }
 
     updateIndicative(data) {
-        const amount       = parseFloat(data.proposal_open_contract.bid_price);
-        const data_source  = this.state.data_source.slice();
-        
-        data_source.forEach(ds => {
-            if (ds.ref === data.proposal_open_contract.transaction_ids.buy) {
-                ds.indicative.class = data.proposal_open_contract.bid_price > ds.indicative.amount ? 'price_moved_up' : 'price_moved_down';
-                ds.indicative.amount = amount;
-            }
-        });
+        // handle error here
+        let data_source = this.state.data_source.slice();
+        const proposal    = data.proposal_open_contract;
+        // force to sell the expired contract, in order to remove from portfolio
+        if (+proposal.is_settleable === 1 && !proposal.is_sold) {
+            BinarySocket.send({ sell_expired: 1 });
+        }
+        if (+proposal.is_sold === 1) {
+            data_source = data_source.filter((ds) => ds.id !== +proposal.contract_id);
+        } else {
+            data_source.forEach(ds => {
+                if (ds.id === +proposal.contract_id) {
+                    const amount = parseFloat(proposal.bid_price);
+                    let style;
+                    if (+proposal.is_valid_to_sell === 1) {
+                        style = proposal.bid_price > ds.indicative.amount ? 'price_moved_up' : 'price_moved_down';
+                    } else {
+                        style = 'no_resale';
+                    }
+                    ds.indicative = { style, amount };
+                }
+            });
+        }
         this.setState({ data_source });
     }
 
