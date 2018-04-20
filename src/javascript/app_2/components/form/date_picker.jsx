@@ -50,9 +50,11 @@ class Calendar extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        const should_update = (this.state.active_view !== nextState.active_view)
-            || (this.state.date !== nextState.date) || (this.state.selected_date !== nextState.selected_date);
-        return should_update || false;
+        return (this.state.active_view !== nextState.active_view)
+            || (this.state.date !== nextState.date)
+            || (this.state.selected_date !== nextState.selected_date)
+            || (this.props.minDate !== nextState.minDate)
+            || (this.props.maxDate !== nextState.maxDate);
     }
 
     setToday() {
@@ -365,6 +367,7 @@ class Calendar extends React.Component {
             </span>
         );
 
+        console.log('calendar render', this.props.name);
         const PanelCalendar = ((is_date_view && this.getDates()) || (is_month_view && this.getMonths())
             || (is_year_view && this.getYears()) || (is_decade_view && this.getDecades())
         );

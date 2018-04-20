@@ -117,7 +117,7 @@ class Statement extends React.PureComponent {
     }
 
     handleDateChange(e) {
-        console.log(e);
+        // console.log(e);
         this.setState({
             [e.target.name]: e.target.value,
         });
