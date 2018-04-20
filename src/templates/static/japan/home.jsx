@@ -1,5 +1,4 @@
 import React from 'react';
-import FormVerifyEmail from '../../_common/includes/form_verify_email.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 import { FillBox } from '../../_common/components/elements.jsx';
 
@@ -60,8 +59,6 @@ const Home = () => {
                     <div className='gr-padding-30'>
                         <h1 className='center-text gr-padding-20'>{it.L('{JAPAN ONLY}First-Class FX Binary Options Trading Platform')}</h1>
                         <h3 className='center-text gr-padding-20 gr-child'>{it.L('{JAPAN ONLY}Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform.')}</h3>
-
-                        <FormVerifyEmail padding='8' email_padding='8' button_padding='4' text={it.L('Get started')} />
                     </div>
                 </div>
 

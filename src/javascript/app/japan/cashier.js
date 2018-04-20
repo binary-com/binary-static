@@ -3,7 +3,6 @@ const Client       = require('../base/client');
 const BinarySocket = require('../base/socket');
 const localize     = require('../../_common/localize').localize;
 const State        = require('../../_common/storage').State;
-const template     = require('../../_common/utility').template;
 
 const CashierJP = (() => {
     const onLoad = (action) => {
@@ -52,7 +51,7 @@ const CashierJP = (() => {
         };
 
         if (isNaN(withdrawal_amount) || +withdrawal_amount < 1) {
-            showError(template('Should be more than [_1]', ['¥1']));
+            showError(localize('Should be more than [_1]', ['¥1']));
             return false;
         } else if (parseInt(Client.get('balance')) < withdrawal_amount) {
             showError('Insufficient balance.');
