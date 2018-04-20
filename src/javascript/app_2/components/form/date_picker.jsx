@@ -145,7 +145,6 @@ class Calendar extends React.Component {
         const date = moment(this.state.date)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.dateFormat);
         this.setState({
             date,
-            selected_date: date,
             active_view  : active_view[type],
         });
         this.props.handleDateChange(date, true);
@@ -221,7 +220,7 @@ class Calendar extends React.Component {
                 || moment(date).isAfter(moment(end_of_month))
                 || moment(date).isBefore(moment(this.props.minDate))
                 || moment(date).isAfter(moment(this.props.maxDate));
-            const is_active = moment(date).isSame(moment(this.state.date)) && this.state.selected_date;
+            const is_active = this.state.selected_date && moment(date).isSame(moment(this.state.selected_date));
             const is_today  = moment(date).isSame(moment().utc(), 'day');
 
             days.push(
