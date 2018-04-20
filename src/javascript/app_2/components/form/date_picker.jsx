@@ -411,7 +411,7 @@ class Calendar extends React.Component {
 
 Calendar.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
-    minDate   : moment().utc().subtract(120, 'y').format('YYYY-MM-DD'), // by default, minDate is set to 120 years before today
+    minDate   : moment(0).utc().format('YYYY-MM-DD'),                   // by default, minDate is set to Unix Epoch (January 1st 1970)
     maxDate   : moment().utc().add(120, 'y').format('YYYY-MM-DD'),      // by default, maxDate is set to 120 years after today
 };
 
