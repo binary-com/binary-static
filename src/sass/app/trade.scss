@@ -169,7 +169,7 @@
 
         span.market, span.type {
             @media (max-width: 768px) {
-                overflow-x: hidden;
+                overflow: hidden;
                 text-overflow: ellipsis;
                 max-width: 90%;
                 white-space: nowrap;
