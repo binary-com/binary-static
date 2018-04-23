@@ -22,6 +22,9 @@ $filter-height: 75px;
             margin-right: 1rem;
         }
     }
+    .table-body .table-row {
+        cursor: pointer;
+    }
     // column widths
     .date, .ref {
         width: 6.5em;
