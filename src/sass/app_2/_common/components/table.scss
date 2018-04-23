@@ -1,26 +1,26 @@
 /* Ant style */
 .table {
     color: #333333; /* stylelint-disable-line color-no-hex */
-    font-size: 16px;
+    font-size: 1rem;
     border-collapse: collapse;
     table-layout: fixed;
     width: 100vw;
+    background-color: $COLOR_WHITE;
 
     &-row {
-        background-color: $COLOR_WHITE;
         border-bottom: 1px solid #d2d3da; /* stylelint-disable-line color-no-hex */
     }
-    &-head {
-        min-height: 40px;
-        background-color: #fafafb; /* stylelint-disable-line color-no-hex */
-
-        th {
-            padding: 12px;
-            font-weight: 600;
-            text-align: left;
-            border: none;
-            background-color: #f4f4f6; /* stylelint-disable-line color-no-hex */
-        }
+    &-foot &-row {
+        border: none;
+    }
+    &-head, &-foot {
+        font-weight: 600;
+        text-align: left;
+        background-color: #f4f4f6; /* stylelint-disable-line color-no-hex */
+    }
+    th, td {
+        padding: 0.75rem;
+        border: none;
     }
     th:first-child, td:first-child {
         padding-left: 2rem;
@@ -28,14 +28,8 @@
     th:last-child, td:last-child {
         padding-right: 2rem;
     }
-    &-body {
-        .table-row:hover {
-            background-color: #e4e6f1; /* stylelint-disable-line color-no-hex */
-        }
-        td {
-            padding: 12px;
-            border: none;
-        }
+    &-body &-row:hover {
+        background-color: #e4e6f1; /* stylelint-disable-line color-no-hex */
     }
     // styles for fixed table header
     &.table-clone {
