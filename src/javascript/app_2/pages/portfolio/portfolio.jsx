@@ -38,19 +38,12 @@ const handlePortfolioData = (portfolio_arr) => {
     1. Move socket connections to DAO
     2. Selling both in transactionHandler and updateIndicative?
     3. Make tooltip appdetails tooltip
-    4. format date values
     4. Add styling
     5. Translations
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
         super(props);
-
-        this.getPortfolioData = this.getPortfolioData.bind(this);
-        this.transactionResponseHandler = this.transactionResponseHandler.bind(this);
-        this.updateIndicative = this.updateIndicative.bind(this);
-        this.updateOAuthApps = this.updateOAuthApps.bind(this);
-        this.updatePortfolio = this.updatePortfolio.bind(this);
 
         const columns = [
             {
@@ -94,12 +87,20 @@ class Portfolio extends React.PureComponent  {
                 },
             },
         ];
+        const footer = {
+            ref       : 'Total',
+            payout    : '',
+            purchase  : '',
+            indicative: '',
+        };
+
         const currency = Client.get('currency');
         this.state = {
             columns,
             currency,
             data_source: [],
-            error      : '', 
+            error      : '',
+            footer, 
             is_loading : true,
         };
     }
@@ -113,7 +114,7 @@ class Portfolio extends React.PureComponent  {
         BinarySocket.send({ forget_all: ['proposal_open_contract', 'transaction'] });
     }
 
-    getPortfolioData() {
+    getPortfolioData = () => {
         BinarySocket.send({ portfolio: 1 }).then((response) => {
             this.updatePortfolio(response);
         });
@@ -123,7 +124,7 @@ class Portfolio extends React.PureComponent  {
         });
     }
 
-    transactionResponseHandler(response) {
+    transactionResponseHandler = (response) => {
         if (getPropertyValue(response, 'error')) {
             this.setState({ error: response.error.message });
         }
@@ -136,11 +137,12 @@ class Portfolio extends React.PureComponent  {
         }
     }
 
-    updateIndicative(response) {
+    updateIndicative = (response) => {
         if (getPropertyValue(response, 'error')) {
             return;
         }
         let data_source = this.state.data_source.slice();
+        const footer = Object.assign({}, this.state.footer);
         const proposal    = response.proposal_open_contract;
         // force to sell the expired contract, in order to remove from portfolio
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
@@ -153,9 +155,12 @@ class Portfolio extends React.PureComponent  {
                 if (portfolio_item.id === +proposal.contract_id) {
                     let amount = parseFloat(proposal.bid_price);
                     amount = formatMoney(false, amount, true);
-                    let style;
+                    let style = portfolio_item.indicative.style;
+
                     if (+proposal.is_valid_to_sell === 1) {
-                        style = proposal.bid_price > portfolio_item.indicative.amount ? 'price_moved_up' : 'price_moved_down';
+                        if (proposal.bid_price !== portfolio_item.indicative.amount) {
+                            style = proposal.bid_price > portfolio_item.indicative.amount ? 'price_moved_up' : 'price_moved_down';
+                        }
                     } else {
                         style = 'no_resale';
                     }
@@ -163,8 +168,25 @@ class Portfolio extends React.PureComponent  {
                 }
             });
         }
-        this.setState({ data_source });
+        this.updateTotals(data_source, footer);
+        this.setState({ data_source, footer });
     }
+    
+    updateTotals = (dataArr, footerObj) => {
+        let indicative = 0; 
+        let payout = 0; 
+        let purchase = 0;
+        
+        dataArr.forEach((item) => {
+            indicative += (+item.indicative.amount);
+            payout += (+item.payout);
+            purchase += (+item.purchase);
+        });
+        
+        footerObj.indicative = formatMoney(false, indicative, true);
+        footerObj.payout = formatMoney(false, payout, true);
+        footerObj.purchase = formatMoney(false, purchase, true);
+    } 
 
     updateOAuthApps = (response) => {
         const oauth_apps = buildOauthApps(response);
@@ -172,7 +194,7 @@ class Portfolio extends React.PureComponent  {
         // GetAppDetails.addTooltip(oauth_apps);
     };
 
-    updatePortfolio(response) {
+    updatePortfolio = (response) => {
         this.setState({ is_loading: false });
         if (getPropertyValue(response, 'error')) {
             this.setState({ error: response.error.message });
@@ -180,14 +202,15 @@ class Portfolio extends React.PureComponent  {
         }
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
             const data_source = handlePortfolioData(response.portfolio.contracts);
+            const footer = Object.assign({}, this.state.footer);
             
-            this.setState({ data_source });
+            this.updateTotals(data_source, footer);
+            this.setState({ data_source, footer });
             BinarySocket.send(
                 { proposal_open_contract: 1, subscribe: 1 }, 
                 { callback: this.updateIndicative }
             );                
         }
-        console.log(this.state);
     }
 
     render() {
@@ -200,6 +223,7 @@ class Portfolio extends React.PureComponent  {
         return (
                 this.state.data_source.length > 0 ? 
                     <DataTable
+                        footer={this.state.footer}
                         {...this.props}
                         data_source={this.state.data_source}
                         columns={this.state.columns}                
