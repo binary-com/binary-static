@@ -236,7 +236,7 @@ const DepositWithdraw = (() => {
             const response_cashier_password   = State.get(['response', 'cashier_password']);
             const response_get_account_status = State.get(['response', 'get_account_status']);
             if ('error' in response_cashier_password) {
-                showError('custom_error', response_cashier_password.error.message);
+                showError('custom_error', response_cashier_password.error.code === 'RateLimit' ? localize('You have reached the rate limit of requests per second. Please try later.') : response_cashier_password.error.message);
             } else if (response_cashier_password.cashier_password === 1) {
                 showMessage('cashier_locked_message'); // Locked by client
             } else if (!response_get_account_status.error && /cashier_locked/.test(response_get_account_status.get_account_status.status)) {

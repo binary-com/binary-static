@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-17 01:56-0400\n"
+"PO-Revision-Date: 2018-04-23 02:26-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr "crwdns41400:0crwdne41400:0"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "crwdns37412:0%1crwdnd37412:0%1crwdnd37412:0%1crwdnd37412:0%1crwdne37412:0"
+
+msgid "\"AUD/JPY\" or \"Apple\""
+msgstr "crwdns44588:0crwdne44588:0"
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "crwdns37414:0crwdne37414:0"
@@ -2169,9 +2172,6 @@ msgstr "crwdns41568:0crwdne41568:0"
 msgid "Commission"
 msgstr "crwdns42076:0crwdne42076:0"
 
-msgid "Commission (as % of stake)"
-msgstr "crwdns43863:0crwdne43863:0"
-
 msgid "Commission on deposits"
 msgstr "crwdns38079:0crwdne38079:0"
 
@@ -3471,6 +3471,9 @@ msgstr "crwdns43873:0%1crwdne43873:0"
 msgid "Female"
 msgstr "crwdns38447:0crwdne38447:0"
 
+msgid "Fiat"
+msgstr "crwdns44589:0crwdne44589:0"
+
 msgid "Fiat Currency"
 msgstr "crwdns38448:0crwdne38448:0"
 
@@ -3494,6 +3497,9 @@ msgstr "crwdns38453:0crwdne38453:0"
 
 msgid "Finance"
 msgstr "crwdns38454:0crwdne38454:0"
+
+msgid "Financial Account"
+msgstr "crwdns44595:0crwdne44595:0"
 
 msgid "Financial Account Opening"
 msgstr "crwdns38455:0crwdne38455:0"
@@ -3807,9 +3813,6 @@ msgstr "crwdns38543:0crwdne38543:0"
 msgid "Get paid by the 15th of every month. We’ve never missed a payment since we started our programme in March 2004."
 msgstr "crwdns43876:0crwdne43876:0"
 
-msgid "Get started"
-msgstr "crwdns38545:0crwdne38545:0"
-
 msgid "Get started with MT5"
 msgstr "crwdns43956:0crwdne43956:0"
 
@@ -3825,8 +3828,8 @@ msgstr "crwdns38547:0crwdne38547:0"
 msgid "Getting started"
 msgstr "crwdns38548:0crwdne38548:0"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a> and wait for our approval."
-msgstr "crwdns43877:0%1crwdne43877:0"
+msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
+msgstr "crwdns44593:0%1crwdne44593:0"
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "crwdns44398:0%1fcrwdnd44398:0%2crwdne44398:0"
@@ -4745,9 +4748,6 @@ msgstr "crwdns38814:0crwdne38814:0"
 
 msgid "Invalid document format: \"%1\""
 msgstr "crwdns41753:0%1crwdne41753:0"
-
-msgid "Invalid email address"
-msgstr "crwdns38815:0crwdne38815:0"
 
 msgid "Invalid email address."
 msgstr "crwdns43135:0crwdne43135:0"
@@ -6564,6 +6564,12 @@ msgstr "crwdns39336:0crwdne39336:0"
 msgid "Open Source"
 msgstr "crwdns39337:0crwdne39337:0"
 
+msgid "Open a Financial Account"
+msgstr "crwdns44590:0crwdne44590:0"
+
+msgid "Open a Real Account"
+msgstr "crwdns44591:0crwdne44591:0"
+
 msgid "Open a free account"
 msgstr "crwdns39340:0crwdne39340:0"
 
@@ -6738,8 +6744,8 @@ msgstr "crwdns39392:0crwdne39392:0"
 msgid "Our trading screen is simple to use:"
 msgstr "crwdns39393:0crwdne39393:0"
 
-msgid "Our turnover-based commission plan depends on the probability of returns for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "crwdns43893:0crwdne43893:0"
+msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
+msgstr "crwdns44594:0crwdne44594:0"
 
 msgid "Over $1,000,000"
 msgstr "crwdns39394:0crwdne39394:0"
@@ -7175,6 +7181,9 @@ msgstr "crwdns39525:0crwdne39525:0"
 
 msgid "Practice account with replenishable USD 10,000 virtual credit."
 msgstr "crwdns42334:0crwdne42334:0"
+
+msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
+msgstr "crwdns44596:0crwdne44596:0"
 
 msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
 msgstr "crwdns43141:0%1crwdne43141:0"
@@ -7842,6 +7851,9 @@ msgstr "crwdns39729:0crwdne39729:0"
 msgid "Select <strong>Cookies</strong> from the left column."
 msgstr "crwdns39730:0crwdne39730:0"
 
+msgid "Select Asset"
+msgstr "crwdns44592:0crwdne44592:0"
+
 msgid "Select currency"
 msgstr "crwdns39731:0crwdne39731:0"
 
@@ -8153,6 +8165,9 @@ msgstr "crwdns39827:0crwdne39827:0"
 
 msgid "Start time"
 msgstr "crwdns39831:0crwdne39831:0"
+
+msgid "Start trading"
+msgstr "crwdns44597:0crwdne44597:0"
 
 msgid "State/Province"
 msgstr "crwdns39832:0crwdne39832:0"
@@ -9888,6 +9903,12 @@ msgstr "crwdns40338:0crwdne40338:0"
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr "crwdns40339:0crwdne40339:0"
 
+msgid "Upgrade now"
+msgstr "crwdns44598:0crwdne44598:0"
+
+msgid "Upgrade your account and start trading using real money."
+msgstr "crwdns44599:0crwdne44599:0"
+
 msgid "Upon closing a Transaction, the realised profit (or loss), which is represented by the difference between the opening level and closing level of the Transaction multiplied by the number of lots (volume), becomes due and payable by us to you (or due and payable by you to us in cases of realised loss)."
 msgstr "crwdns40342:0crwdne40342:0"
 
@@ -10923,6 +10944,9 @@ msgstr "crwdns40647:0crwdne40647:0"
 msgid "You have sold this contract at %1 %2"
 msgstr "crwdns40648:0%1crwdnd40648:0%2crwdne40648:0"
 
+msgid "You have successfully created your Virtual Account."
+msgstr "crwdns44600:0crwdne44600:0"
+
 msgid "You have successfully created your account!"
 msgstr "crwdns40649:0crwdne40649:0"
 
@@ -11946,35 +11970,11 @@ msgstr "crwdns40962:0{JAPAN ONLY}crwdne40962:0"
 msgid "{JAPAN ONLY} Affiliate Program Terms & Conditions"
 msgstr "crwdns40963:0{JAPAN ONLY}crwdne40963:0"
 
-msgid "{JAPAN ONLY}#1 Sales Division"
-msgstr "crwdns40964:0{JAPAN ONLY}crwdne40964:0"
-
-msgid "{JAPAN ONLY}$ 100,000 x 110.50 (USD / JPY) x 4% (margin calculation) = ¥ 442,000"
-msgstr "crwdns42963:0{JAPAN ONLY}crwdne42963:0"
-
-msgid "{JAPAN ONLY}%1 is a pioneer in the award-winning online option deal."
-msgstr "crwdns43063:0{JAPAN ONLY}crwdnd43063:0%1crwdne43063:0"
-
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr "crwdns40965:0{JAPAN ONLY}crwdnd40965:0%1crwdne40965:0"
 
 msgid "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and has a proven track record of delivering first class service and maintaining an award winning trading platform, while delivering strong financial performance to our shareholders, for more than 15 years worldwide."
 msgstr "crwdns40966:0{JAPAN ONLY}crwdnd40966:0%1crwdne40966:0"
-
-msgid "{JAPAN ONLY}1 hour"
-msgstr "crwdns42964:0{JAPAN ONLY}crwdne42964:0"
-
-msgid "{JAPAN ONLY}1 lot"
-msgstr "crwdns42965:0{JAPAN ONLY}crwdne42965:0"
-
-msgid "{JAPAN ONLY}1 lot = $ 100,000, margin: "
-msgstr "crwdns42966:0{JAPAN ONLY}crwdne42966:0"
-
-msgid "{JAPAN ONLY}1 lot: Stop loss: - ¥ 10,000 | Get profit: ¥ 15,000"
-msgstr "crwdns42967:0{JAPAN ONLY}crwdne42967:0"
-
-msgid "{JAPAN ONLY}1 week to 1 year terms"
-msgstr "crwdns43064:0{JAPAN ONLY}crwdne43064:0"
 
 msgid "{JAPAN ONLY}1-3 million JPY"
 msgstr "crwdns44428:0{JAPAN ONLY}crwdne44428:0"
@@ -11982,38 +11982,17 @@ msgstr "crwdns44428:0{JAPAN ONLY}crwdne44428:0"
 msgid "{JAPAN ONLY}10-30 million JPY"
 msgstr "crwdns44429:0{JAPAN ONLY}crwdne44429:0"
 
-msgid "{JAPAN ONLY}2 hours to 1 year terms"
-msgstr "crwdns43065:0{JAPAN ONLY}crwdne43065:0"
-
-msgid "{JAPAN ONLY}251"
-msgstr "crwdns40967:0{JAPAN ONLY}crwdne40967:0"
-
 msgid "{JAPAN ONLY}3-5 million JPY"
 msgstr "crwdns44430:0{JAPAN ONLY}crwdne44430:0"
 
 msgid "{JAPAN ONLY}30-50 million JPY"
 msgstr "crwdns44431:0{JAPAN ONLY}crwdne44431:0"
 
-msgid "{JAPAN ONLY}4 options types"
-msgstr "crwdns42968:0{JAPAN ONLY}crwdne42968:0"
-
 msgid "{JAPAN ONLY}5-10 million JPY"
 msgstr "crwdns44432:0{JAPAN ONLY}crwdne44432:0"
 
-msgid "{JAPAN ONLY}50 lots: maximum loss: - ¥ 10,000 | target profit: ¥ 40,000"
-msgstr "crwdns42969:0{JAPAN ONLY}crwdne42969:0"
-
-msgid "{JAPAN ONLY}50 x ￥1,000 - 50 x ￥200 = ￥50,000 - ￥10,000 = ￥40,000"
-msgstr "crwdns42970:0{JAPAN ONLY}crwdne42970:0"
-
 msgid "{JAPAN ONLY}50-100 million JPY"
 msgstr "crwdns44433:0{JAPAN ONLY}crwdne44433:0"
-
-msgid "{JAPAN ONLY}50ロット"
-msgstr "crwdns42971:0{JAPAN ONLY}crwdne42971:0"
-
-msgid "{JAPAN ONLY}7546677"
-msgstr "crwdns40968:0{JAPAN ONLY}crwdne40968:0"
 
 msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
 msgstr "crwdns40969:0{JAPAN ONLY}crwdne40969:0"
@@ -12041,9 +12020,6 @@ msgstr "crwdns40976:0{JAPAN ONLY}crwdne40976:0"
 
 msgid "{JAPAN ONLY}A binary call options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time."
 msgstr "crwdns40977:0{JAPAN ONLY}crwdne40977:0"
-
-msgid "{JAPAN ONLY}A binary option can provide profit opportunities even in a small price range, where FX normally doesn’t. Here is a table comparison of foreign exchange and binary options:"
-msgstr "crwdns42972:0{JAPAN ONLY}crwdne42972:0"
 
 msgid "{JAPAN ONLY}A binary option price cannot exceed the payout amount."
 msgstr "crwdns40978:0{JAPAN ONLY}crwdne40978:0"
@@ -12081,20 +12057,8 @@ msgstr "crwdns40987:0{JAPAN ONLY}crwdne40987:0"
 msgid "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the profit and loss result of all transactions that have been made between the customer, to publish the information in the company's home page, at any time while the customer is doing the transaction before the start, or the transaction, the information Make sure, for that you're willing to trade under the calm judgment, we are committed to a variety of environmental improvement."
 msgstr "crwdns40988:0{JAPAN ONLY}crwdne40988:0"
 
-msgid "{JAPAN ONLY}Academy"
-msgstr "crwdns43066:0{JAPAN ONLY}crwdne43066:0"
-
-msgid "{JAPAN ONLY}Account Name"
-msgstr "crwdns40989:0{JAPAN ONLY}crwdne40989:0"
-
-msgid "{JAPAN ONLY}Account Number"
-msgstr "crwdns40990:0{JAPAN ONLY}crwdne40990:0"
-
 msgid "{JAPAN ONLY}Account Opening"
 msgstr "crwdns42973:0{JAPAN ONLY}crwdne42973:0"
-
-msgid "{JAPAN ONLY}Account Type"
-msgstr "crwdns40991:0{JAPAN ONLY}crwdne40991:0"
 
 msgid "{JAPAN ONLY}Acknowledgment"
 msgstr "crwdns40992:0{JAPAN ONLY}crwdne40992:0"
@@ -12107,12 +12071,6 @@ msgstr "crwdns44435:0{JAPAN ONLY}crwdne44435:0"
 
 msgid "{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away."
 msgstr "crwdns40994:0{JAPAN ONLY}crwdne40994:0"
-
-msgid "{JAPAN ONLY}All customer funds are deposited with JSF Trust & Banking, and in the event of our business failure, they will be refunde via an independent attorney acting as beneficiary agent"
-msgstr "crwdns42974:0{JAPAN ONLY}crwdne42974:0"
-
-msgid "{JAPAN ONLY}All customer funds are deposited with JSF Trust Bank and will be refunded by an independent attorney as a beneficiary agent in case of business failure"
-msgstr "crwdns43067:0{JAPAN ONLY}crwdne43067:0"
 
 msgid "{JAPAN ONLY}All customer funds are segregated and held with JSF Trust Bank."
 msgstr "crwdns44436:0{JAPAN ONLY}crwdne44436:0"
@@ -12131,9 +12089,6 @@ msgstr "crwdns40998:0{JAPAN ONLY}crwdne40998:0"
 
 msgid "{JAPAN ONLY}Apply for Real Money Account"
 msgstr "crwdns40999:0{JAPAN ONLY}crwdne40999:0"
-
-msgid "{JAPAN ONLY}Apply for an account & provide ID"
-msgstr "crwdns42975:0{JAPAN ONLY}crwdne42975:0"
 
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 msgstr "crwdns41000:0{JAPAN ONLY}crwdne41000:0"
@@ -12159,26 +12114,11 @@ msgstr "crwdns41006:0{JAPAN ONLY}crwdne41006:0"
 msgid "{JAPAN ONLY}Association of join"
 msgstr "crwdns41007:0{JAPAN ONLY}crwdne41007:0"
 
-msgid "{JAPAN ONLY}At the judgement time, predit the judgement rate to be less thatn the upper limit barrier and above the lower limit barrier, or above the upper limit barrier or below the lower limit barrier"
-msgstr "crwdns42976:0{JAPAN ONLY}crwdne42976:0"
-
-msgid "{JAPAN ONLY}At the time of the judgement time predice the judgement rate above the barrier price or below the barrier price"
-msgstr "crwdns42977:0{JAPAN ONLY}crwdne42977:0"
-
 msgid "{JAPAN ONLY}At the top of the page as shown above."
 msgstr "crwdns41008:0{JAPAN ONLY}crwdne41008:0"
 
-msgid "{JAPAN ONLY}Available on desktop and mobile platforms"
-msgstr "crwdns43068:0{JAPAN ONLY}crwdne43068:0"
-
-msgid "{JAPAN ONLY}Award-winning trading excellence"
-msgstr "crwdns42978:0{JAPAN ONLY}crwdne42978:0"
-
 msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
 msgstr "crwdns41009:0{JAPAN ONLY}crwdne41009:0"
-
-msgid "{JAPAN ONLY}Bank"
-msgstr "crwdns41010:0{JAPAN ONLY}crwdne41010:0"
 
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "crwdns41011:0{JAPAN ONLY}crwdne41011:0"
@@ -12192,35 +12132,14 @@ msgstr "crwdns41013:0{JAPAN ONLY}crwdne41013:0"
 msgid "{JAPAN ONLY}Binary K. K."
 msgstr "crwdns41014:0{JAPAN ONLY}crwdne41014:0"
 
-msgid "{JAPAN ONLY}Binary K.K. Customer Account"
-msgstr "crwdns41015:0{JAPAN ONLY}crwdne41015:0"
-
 msgid "{JAPAN ONLY}Binary KK is a licensed Type 1 Financial Instruments Business, regulated by the KLFB, and a member of the FFAJ."
 msgstr "crwdns44437:0{JAPAN ONLY}crwdne44437:0"
-
-msgid "{JAPAN ONLY}Binary Options"
-msgstr "crwdns42979:0{JAPAN ONLY}crwdne42979:0"
-
-msgid "{JAPAN ONLY}Binary Options vs FX"
-msgstr "crwdns43069:0{JAPAN ONLY}crwdne43069:0"
-
-msgid "{JAPAN ONLY}Binary option can make a higher profit, for the same risk but less margin"
-msgstr "crwdns42980:0{JAPAN ONLY}crwdne42980:0"
-
-msgid "{JAPAN ONLY}Binary option offer the chance to predit whether the future price of a FX will be above or below a target rate, or between, or outside a target range:"
-msgstr "crwdns42981:0{JAPAN ONLY}crwdne42981:0"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "crwdns41016:0{JAPAN ONLY}crwdne41016:0"
 
 msgid "{JAPAN ONLY}Binary.com page title"
 msgstr "crwdns41017:0{JAPAN ONLY}crwdne41017:0"
-
-msgid "{JAPAN ONLY}Branch"
-msgstr "crwdns41018:0{JAPAN ONLY}crwdne41018:0"
-
-msgid "{JAPAN ONLY}Branch Code"
-msgstr "crwdns41019:0{JAPAN ONLY}crwdne41019:0"
 
 msgid "{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately"
 msgstr "crwdns41020:0{JAPAN ONLY}crwdne41020:0"
@@ -12255,9 +12174,6 @@ msgstr "crwdns41029:0{JAPAN ONLY}crwdne41029:0"
 msgid "{JAPAN ONLY}Current or former member of category 1) or 2)"
 msgstr "crwdns41030:0{JAPAN ONLY}crwdne41030:0"
 
-msgid "{JAPAN ONLY}Daily market report"
-msgstr "crwdns43070:0{JAPAN ONLY}crwdne43070:0"
-
 msgid "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
 msgstr "crwdns41031:0{JAPAN ONLY}crwdnd41031:0%1crwdnd41031:0%2crwdne41031:0"
 
@@ -12272,9 +12188,6 @@ msgstr "crwdns43071:0{JAPAN ONLY}crwdne43071:0"
 
 msgid "{JAPAN ONLY}Designated dispute resolution organization"
 msgstr "crwdns41034:0{JAPAN ONLY}crwdne41034:0"
-
-msgid "{JAPAN ONLY}Disclaimer text here"
-msgstr "crwdns43072:0{JAPAN ONLY}crwdne43072:0"
 
 msgid "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
 msgstr "crwdns41035:0{JAPAN ONLY}crwdne41035:0"
@@ -12306,17 +12219,11 @@ msgstr "crwdns41043:0{JAPAN ONLY}crwdne41043:0"
 msgid "{JAPAN ONLY}Download our latest report here"
 msgstr "crwdns41044:0{JAPAN ONLY}crwdne41044:0"
 
-msgid "{JAPAN ONLY}E-book and video"
-msgstr "crwdns43073:0{JAPAN ONLY}crwdne43073:0"
-
 msgid "{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
 msgstr "crwdns41045:0{JAPAN ONLY}crwdne41045:0"
 
 msgid "{JAPAN ONLY}Earning a second income in their spare time?"
 msgstr "crwdns41046:0{JAPAN ONLY}crwdne41046:0"
-
-msgid "{JAPAN ONLY}Easy to use design. Fast execution; multifunction charting system and smartphone optimized display."
-msgstr "crwdns42982:0{JAPAN ONLY}crwdne42982:0"
 
 msgid "{JAPAN ONLY}Eliminating Antisocial Forces"
 msgstr "crwdns44438:0{JAPAN ONLY}crwdne44438:0"
@@ -12326,12 +12233,6 @@ msgstr "crwdns41047:0{JAPAN ONLY}crwdne41047:0"
 
 msgid "{JAPAN ONLY}Email us your Identity Documents"
 msgstr "crwdns44439:0{JAPAN ONLY}crwdne44439:0"
-
-msgid "{JAPAN ONLY}Enable account with secure e-mail"
-msgstr "crwdns42983:0{JAPAN ONLY}crwdne42983:0"
-
-msgid "{JAPAN ONLY}Enter your email"
-msgstr "crwdns42984:0{JAPAN ONLY}crwdne42984:0"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "crwdns41048:0{JAPAN ONLY}crwdne41048:0"
@@ -12381,9 +12282,6 @@ msgstr "crwdns44443:0{JAPAN ONLY}crwdne44443:0"
 msgid "{JAPAN ONLY}Family members of categories 1) to 3)"
 msgstr "crwdns41059:0{JAPAN ONLY}crwdne41059:0"
 
-msgid "{JAPAN ONLY}Fast execution with one click"
-msgstr "crwdns42985:0{JAPAN ONLY}crwdne42985:0"
-
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "crwdns41060:0{JAPAN ONLY}crwdne41060:0"
 
@@ -12398,9 +12296,6 @@ msgstr "crwdns44444:0{JAPAN ONLY}crwdne44444:0"
 
 msgid "{JAPAN ONLY}Footer regulatory text"
 msgstr "crwdns41548:0{JAPAN ONLY}crwdne41548:0"
-
-msgid "{JAPAN ONLY}Footer text here"
-msgstr "crwdns43074:0{JAPAN ONLY}crwdne43074:0"
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "crwdns41063:0{JAPAN ONLY}crwdne41063:0"
@@ -12450,9 +12345,6 @@ msgstr "crwdns41077:0{JAPAN ONLY}crwdne41077:0"
 msgid "{JAPAN ONLY}Foreign PEP Declaration"
 msgstr "crwdns41078:0{JAPAN ONLY}crwdne41078:0"
 
-msgid "{JAPAN ONLY}Foreign exchange one cancellation order - profit take & stop-loss order"
-msgstr "crwdns42986:0{JAPAN ONLY}crwdne42986:0"
-
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr "crwdns41079:0{JAPAN ONLY}crwdne41079:0"
 
@@ -12468,17 +12360,8 @@ msgstr "crwdns44446:0{JAPAN ONLY}crwdne44446:0"
 msgid "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
 msgstr "crwdns41081:0{JAPAN ONLY}crwdne41081:0"
 
-msgid "{JAPAN ONLY}Here are some random texts."
-msgstr "crwdns43075:0{JAPAN ONLY}crwdne43075:0"
-
 msgid "{JAPAN ONLY}High quality promotional materials with online reporting tools"
 msgstr "crwdns41082:0{JAPAN ONLY}crwdne41082:0"
-
-msgid "{JAPAN ONLY}High speed execution"
-msgstr "crwdns42987:0{JAPAN ONLY}crwdne42987:0"
-
-msgid "{JAPAN ONLY}Higher/lower rate"
-msgstr "crwdns42988:0{JAPAN ONLY}crwdne42988:0"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "crwdns41083:0{JAPAN ONLY}crwdne41083:0"
@@ -12492,15 +12375,6 @@ msgstr "crwdns41085:0{JAPAN ONLY}crwdne41085:0"
 msgid "{JAPAN ONLY}How to begin"
 msgstr "crwdns44447:0{JAPAN ONLY}crwdne44447:0"
 
-msgid "{JAPAN ONLY}How to open account"
-msgstr "crwdns43076:0{JAPAN ONLY}crwdne43076:0"
-
-msgid "{JAPAN ONLY}How to open an account"
-msgstr "crwdns42989:0{JAPAN ONLY}crwdne42989:0"
-
-msgid "{JAPAN ONLY}How?"
-msgstr "crwdns42990:0{JAPAN ONLY}crwdne42990:0"
-
 msgid "{JAPAN ONLY}Identification Documents"
 msgstr "crwdns41086:0{JAPAN ONLY}crwdne41086:0"
 
@@ -12509,9 +12383,6 @@ msgstr "crwdns41087:0{JAPAN ONLY}crwdne41087:0"
 
 msgid "{JAPAN ONLY}If implied volatility increases then the prices of both call and put types of plain vanilla options will increase."
 msgstr "crwdns41088:0{JAPAN ONLY}crwdne41088:0"
-
-msgid "{JAPAN ONLY}If spot rate is at above target rate at judgment time, the profil will be:"
-msgstr "crwdns42991:0{JAPAN ONLY}crwdne42991:0"
 
 msgid "{JAPAN ONLY}If the buyer of an option does not exercise the option rights, there will be no fee payable to the option seller."
 msgstr "crwdns41089:0{JAPAN ONLY}crwdne41089:0"
@@ -12567,9 +12438,6 @@ msgstr "crwdns41105:0{JAPAN ONLY}crwdne41105:0"
 msgid "{JAPAN ONLY}If you sell a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 msgstr "crwdns41106:0{JAPAN ONLY}crwdne41106:0"
 
-msgid "{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support."
-msgstr "crwdns41107:0{JAPAN ONLY}crwdne41107:0"
-
 msgid "{JAPAN ONLY}If your bank account details have changed, please contact Customer Support in order to verify your ID and new account details."
 msgstr "crwdns41108:0{JAPAN ONLY}crwdne41108:0"
 
@@ -12615,9 +12483,6 @@ msgstr "crwdns44448:0{JAPAN ONLY}crwdne44448:0"
 msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 msgstr "crwdns41121:0{JAPAN ONLY}crwdne41121:0"
 
-msgid "{JAPAN ONLY}Interactive webinar"
-msgstr "crwdns43077:0{JAPAN ONLY}crwdne43077:0"
-
 msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "crwdns41122:0{JAPAN ONLY}crwdne41122:0"
 
@@ -12632,9 +12497,6 @@ msgstr "crwdns41124:0{JAPAN ONLY}crwdne41124:0"
 
 msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if the asset price settles outside the two strikes. It is also possible to buy a single range option that will achieve the same result."
 msgstr "crwdns41125:0{JAPAN ONLY}crwdne41125:0"
-
-msgid "{JAPAN ONLY}It predicts whether the market price during the trading period is less than the upper limit barrier and maintains the lower limit barrier excess, or becomes equal to or higher than the upper limit barrier or belowe the lower limit barrier"
-msgstr "crwdns42992:0{JAPAN ONLY}crwdne42992:0"
 
 msgid "{JAPAN ONLY}JSA_Date_1"
 msgstr "crwdns41126:0{JAPAN ONLY}crwdne41126:0"
@@ -12672,15 +12534,6 @@ msgstr "crwdns44450:0{JAPAN ONLY}crwdne44450:0"
 msgid "{JAPAN ONLY}Join our affiliate program to earn income by leveraging your hard-earned network of contact"
 msgstr "crwdns44451:0{JAPAN ONLY}crwdne44451:0"
 
-msgid "{JAPAN ONLY}Just switch this button to prevent misoperation"
-msgstr "crwdns42993:0{JAPAN ONLY}crwdne42993:0"
-
-msgid "{JAPAN ONLY}Key plus point"
-msgstr "crwdns42994:0{JAPAN ONLY}crwdne42994:0"
-
-msgid "{JAPAN ONLY}Key plus points"
-msgstr "crwdns43078:0{JAPAN ONLY}crwdne43078:0"
-
 msgid "{JAPAN ONLY}Knowledge Test"
 msgstr "crwdns41136:0{JAPAN ONLY}crwdne41136:0"
 
@@ -12701,15 +12554,6 @@ msgstr "crwdns41141:0{JAPAN ONLY}crwdne41141:0"
 
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "crwdns41142:0{JAPAN ONLY}crwdne41142:0"
-
-msgid "{JAPAN ONLY}Ladder Options"
-msgstr "crwdns42995:0{JAPAN ONLY}crwdne42995:0"
-
-msgid "{JAPAN ONLY}Learn more about binary options for academies using webinars, ebooks, videos."
-msgstr "crwdns42996:0{JAPAN ONLY}crwdne42996:0"
-
-msgid "{JAPAN ONLY}Learn to become a better trader and get all the latest news and trends on financial transactions for free."
-msgstr "crwdns43079:0{JAPAN ONLY}crwdne43079:0"
 
 msgid "{JAPAN ONLY}Learning to trade online?"
 msgstr "crwdns41143:0{JAPAN ONLY}crwdne41143:0"
@@ -12732,20 +12576,8 @@ msgstr "crwdns41146:0{JAPAN ONLY}crwdne41146:0"
 msgid "{JAPAN ONLY}Main business"
 msgstr "crwdns41147:0{JAPAN ONLY}crwdne41147:0"
 
-msgid "{JAPAN ONLY}Margin: ¥ 10,000"
-msgstr "crwdns42997:0{JAPAN ONLY}crwdne42997:0"
-
-msgid "{JAPAN ONLY}Margin: ¥ 442,000"
-msgstr "crwdns42998:0{JAPAN ONLY}crwdne42998:0"
-
 msgid "{JAPAN ONLY}Matters to attend:"
 msgstr "crwdns41148:0{JAPAN ONLY}crwdne41148:0"
-
-msgid "{JAPAN ONLY}Maximum loss: guaranteed"
-msgstr "crwdns42999:0{JAPAN ONLY}crwdne42999:0"
-
-msgid "{JAPAN ONLY}Maximum loss: not guaranteed"
-msgstr "crwdns43000:0{JAPAN ONLY}crwdne43000:0"
 
 msgid "{JAPAN ONLY}Member Associations: Financial Futures Association Japan"
 msgstr "crwdns41149:0{JAPAN ONLY}crwdne41149:0"
@@ -12762,17 +12594,8 @@ msgstr "crwdns41150:0{JAPAN ONLY}crwdne41150:0"
 msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "crwdns41151:0{JAPAN ONLY}crwdne41151:0"
 
-msgid "{JAPAN ONLY}Normal time"
-msgstr "crwdns43001:0{JAPAN ONLY}crwdne43001:0"
-
 msgid "{JAPAN ONLY}November 7, 2014"
 msgstr "crwdns41152:0{JAPAN ONLY}crwdne41152:0"
-
-msgid "{JAPAN ONLY}Now you can trade fx markets using binary options with one of the origical pioneers of binary options worldwide"
-msgstr "crwdns43002:0{JAPAN ONLY}crwdne43002:0"
-
-msgid "{JAPAN ONLY}Now you can trade the FX market with binary options with one of the original settlers Binary options around the world"
-msgstr "crwdns43080:0{JAPAN ONLY}crwdne43080:0"
 
 msgid "{JAPAN ONLY}Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
 msgstr "crwdns44456:0{JAPAN ONLY}crwdne44456:0"
@@ -12785,9 +12608,6 @@ msgstr "crwdns44457:0{JAPAN ONLY}crwdne44457:0"
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "crwdns41154:0{JAPAN ONLY}crwdne41154:0"
-
-msgid "{JAPAN ONLY}Option price assumes 1 hour to judgment time, volatility = 8.5%, spread = 40 yen"
-msgstr "crwdns43003:0{JAPAN ONLY}crwdne43003:0"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "crwdns41155:0{JAPAN ONLY}crwdne41155:0"
@@ -12834,9 +12654,6 @@ msgstr "crwdns44458:0{JAPAN ONLY}crwdne44458:0"
 msgid "{JAPAN ONLY}Pass our Knowledge Test"
 msgstr "crwdns43081:0{JAPAN ONLY}crwdne43081:0"
 
-msgid "{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account."
-msgstr "crwdns41168:0{JAPAN ONLY}crwdne41168:0"
-
 msgid "{JAPAN ONLY}Please allow up to 5 business days for the funds to be credited to your designated bank account."
 msgstr "crwdns41169:0{JAPAN ONLY}crwdne41169:0"
 
@@ -12867,23 +12684,11 @@ msgstr "crwdns41177:0{JAPAN ONLY}crwdne41177:0"
 msgid "{JAPAN ONLY}Please input the amount you would like to withdraw and press the Request button."
 msgstr "crwdns41178:0{JAPAN ONLY}crwdne41178:0"
 
-msgid "{JAPAN ONLY}Please make a bank transfer from your designated bank account to:"
-msgstr "crwdns41179:0{JAPAN ONLY}crwdne41179:0"
-
-msgid "{JAPAN ONLY}Please make sure you add your %1 account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
-msgstr "crwdns41180:0{JAPAN ONLY}crwdnd41180:0%1crwdne41180:0"
-
-msgid "{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000."
-msgstr "crwdns41181:0{JAPAN ONLY}crwdne41181:0"
-
 msgid "{JAPAN ONLY}Please note that the website that you have just visited is not our site. Information regarding the Company's financial instruments that have been posted on that site, any evaluation, impression, etc. are the sole responsibility of the administrators of that website, and has been created by them only. We can make no guarantee or accept any responsibility for their content."
 msgstr "crwdns41182:0{JAPAN ONLY}crwdne41182:0"
 
 msgid "{JAPAN ONLY}Please note the maximum regular withdrawal amount is ¥1,000,000."
 msgstr "crwdns41183:0{JAPAN ONLY}crwdne41183:0"
-
-msgid "{JAPAN ONLY}Please note we can only accept payments from your designated bank account and no other account in your name."
-msgstr "crwdns41184:0{JAPAN ONLY}crwdne41184:0"
 
 msgid "{JAPAN ONLY}Please note:"
 msgstr "crwdns41185:0{JAPAN ONLY}crwdne41185:0"
@@ -12891,23 +12696,11 @@ msgstr "crwdns41185:0{JAPAN ONLY}crwdne41185:0"
 msgid "{JAPAN ONLY}Policies and Exclusion of Liability"
 msgstr "crwdns44459:0{JAPAN ONLY}crwdne44459:0"
 
-msgid "{JAPAN ONLY}Practice account"
-msgstr "crwdns43082:0{JAPAN ONLY}crwdne43082:0"
-
 msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgstr "crwdns41186:0{JAPAN ONLY}crwdne41186:0"
 
 msgid "{JAPAN ONLY}Pre-contract Document"
 msgstr "crwdns44460:0{JAPAN ONLY}crwdne44460:0"
-
-msgid "{JAPAN ONLY}Predict whether a FX rate will finish higher or lower than a target barrier."
-msgstr "crwdns43083:0{JAPAN ONLY}crwdne43083:0"
-
-msgid "{JAPAN ONLY}Predict whether a FX rate will touch a target barrier or not."
-msgstr "crwdns43084:0{JAPAN ONLY}crwdne43084:0"
-
-msgid "{JAPAN ONLY}Predict whether a FX rate will touch either target barrier before expiry."
-msgstr "crwdns43085:0{JAPAN ONLY}crwdne43085:0"
 
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "crwdns41187:0{JAPAN ONLY}crwdne41187:0"
@@ -12924,26 +12717,8 @@ msgstr "crwdns41189:0{JAPAN ONLY}crwdne41189:0"
 msgid "{JAPAN ONLY}Professional service"
 msgstr "crwdns41190:0{JAPAN ONLY}crwdne41190:0"
 
-msgid "{JAPAN ONLY}Profit / loss per point (0.01) = ¥ 1,000"
-msgstr "crwdns43004:0{JAPAN ONLY}crwdne43004:0"
-
 msgid "{JAPAN ONLY}Purchase, Settlement & Resale"
 msgstr "crwdns41191:0{JAPAN ONLY}crwdne41191:0"
-
-msgid "{JAPAN ONLY}Rakuten Bank"
-msgstr "crwdns41192:0{JAPAN ONLY}crwdne41192:0"
-
-msgid "{JAPAN ONLY}Range Option: Stay-In / Break-Out"
-msgstr "crwdns43005:0{JAPAN ONLY}crwdne43005:0"
-
-msgid "{JAPAN ONLY}Range Options: End-In / End-Out"
-msgstr "crwdns43006:0{JAPAN ONLY}crwdne43006:0"
-
-msgid "{JAPAN ONLY}Range Options: Stay-In / Break-Out"
-msgstr "crwdns43086:0{JAPAN ONLY}crwdne43086:0"
-
-msgid "{JAPAN ONLY}Receive account activation code by secure mail and activate account"
-msgstr "crwdns43087:0{JAPAN ONLY}crwdne43087:0"
 
 msgid "{JAPAN ONLY}Receive your activation code by secure"
 msgstr "crwdns44462:0{JAPAN ONLY}crwdne44462:0"
@@ -12957,17 +12732,11 @@ msgstr "crwdns41194:0{JAPAN ONLY}crwdne41194:0"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "crwdns41195:0{JAPAN ONLY}crwdne41195:0"
 
-msgid "{JAPAN ONLY}Remitter's Name:"
-msgstr "crwdns41196:0{JAPAN ONLY}crwdne41196:0"
-
 msgid "{JAPAN ONLY}Risk For Binary Option Trading"
 msgstr "crwdns44463:0{JAPAN ONLY}crwdne44463:0"
 
 msgid "{JAPAN ONLY}Risk for Binary Option Trading"
 msgstr "crwdns44464:0{JAPAN ONLY}crwdne44464:0"
-
-msgid "{JAPAN ONLY}Savings"
-msgstr "crwdns41197:0{JAPAN ONLY}crwdne41197:0"
 
 msgid "{JAPAN ONLY}Section 1: Structure"
 msgstr "crwdns41198:0{JAPAN ONLY}crwdne41198:0"
@@ -13005,20 +12774,11 @@ msgstr "crwdns41207:0{JAPAN ONLY}crwdne41207:0"
 msgid "{JAPAN ONLY}Service Announcements"
 msgstr "crwdns41208:0{JAPAN ONLY}crwdne41208:0"
 
-msgid "{JAPAN ONLY}Set amount (lot number)"
-msgstr "crwdns43007:0{JAPAN ONLY}crwdne43007:0"
-
-msgid "{JAPAN ONLY}Set exchange rate"
-msgstr "crwdns43008:0{JAPAN ONLY}crwdne43008:0"
-
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "crwdns41209:0{JAPAN ONLY}crwdne41209:0"
 
 msgid "{JAPAN ONLY}Sign me up"
 msgstr "crwdns41210:0{JAPAN ONLY}crwdne41210:0"
-
-msgid "{JAPAN ONLY}Sign up for a free account"
-msgstr "crwdns43009:0{JAPAN ONLY}crwdne43009:0"
 
 msgid "{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today."
 msgstr "crwdns41211:0{JAPAN ONLY}crwdne41211:0"
@@ -13026,17 +12786,8 @@ msgstr "crwdns41211:0{JAPAN ONLY}crwdne41211:0"
 msgid "{JAPAN ONLY}Social Media"
 msgstr "crwdns41212:0{JAPAN ONLY}crwdne41212:0"
 
-msgid "{JAPAN ONLY}Sorry, account signup is not available in your country."
-msgstr "crwdns43122:0{JAPAN ONLY}crwdne43122:0"
-
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "crwdns41213:0{JAPAN ONLY}crwdne41213:0"
-
-msgid "{JAPAN ONLY}Start now"
-msgstr "crwdns44466:0{JAPAN ONLY}crwdne44466:0"
-
-msgid "{JAPAN ONLY}Start trading after depositing money"
-msgstr "crwdns43010:0{JAPAN ONLY}crwdne43010:0"
 
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "crwdns41214:0{JAPAN ONLY}crwdne41214:0"
@@ -13347,14 +13098,8 @@ msgstr "crwdns41315:0{JAPAN ONLY}crwdne41315:0"
 msgid "{JAPAN ONLY}Take our Knowledge Test to confirm your understanding of options."
 msgstr "crwdns41316:0{JAPAN ONLY}crwdne41316:0"
 
-msgid "{JAPAN ONLY}Take the knowledge confirmation test"
-msgstr "crwdns43011:0{JAPAN ONLY}crwdne43011:0"
-
 msgid "{JAPAN ONLY}Terms and Conditions"
 msgstr "crwdns44467:0{JAPAN ONLY}crwdne44467:0"
-
-msgid "{JAPAN ONLY}Thank you for signing up! Please check your email to complete the registration process."
-msgstr "crwdns43012:0{JAPAN ONLY}crwdne43012:0"
 
 msgid "{JAPAN ONLY}Thank you for your withdrawal request."
 msgstr "crwdns41317:0{JAPAN ONLY}crwdne41317:0"
@@ -13374,17 +13119,11 @@ msgstr "crwdns41321:0{JAPAN ONLY}crwdne41321:0"
 msgid "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly"
 msgstr "crwdns41322:0{JAPAN ONLY}crwdne41322:0"
 
-msgid "{JAPAN ONLY}The binary option can provide profit opportunities even at a small price range. Here is a table comparison of foreign exchange and binary options"
-msgstr "crwdns43088:0{JAPAN ONLY}crwdne43088:0"
-
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "crwdns41323:0{JAPAN ONLY}crwdne41323:0"
 
 msgid "{JAPAN ONLY}The exit price is important in binary options. In case of handling the OTC currency-related binary options trading for private individuals, the broker company must perform inspections of the exit prices which have been used for determining option payout, and must check whether there is an error in the data in cases where that the company has used rated data provided by third company."
 msgstr "crwdns41324:0{JAPAN ONLY}crwdne41324:0"
-
-msgid "{JAPAN ONLY}The learning center"
-msgstr "crwdns43013:0{JAPAN ONLY}crwdne43013:0"
 
 msgid "{JAPAN ONLY}The maximum loss for the buyer of an option is the price paid, and the maximium loss for the option seller will be the payout amount minus the opion price he received."
 msgstr "crwdns41325:0{JAPAN ONLY}crwdne41325:0"
@@ -13440,17 +13179,11 @@ msgstr "crwdns41341:0{JAPAN ONLY}crwdne41341:0"
 msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
 msgstr "crwdns41342:0{JAPAN ONLY}crwdne41342:0"
 
-msgid "{JAPAN ONLY}Touch Options"
-msgstr "crwdns43015:0{JAPAN ONLY}crwdne43015:0"
-
 msgid "{JAPAN ONLY}Track your trade in real time:"
 msgstr "crwdns41343:0{JAPAN ONLY}crwdne41343:0"
 
 msgid "{JAPAN ONLY}Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!"
 msgstr "crwdns44468:0{JAPAN ONLY}crwdne44468:0"
-
-msgid "{JAPAN ONLY}Trade with 3 simple steps"
-msgstr "crwdns43016:0{JAPAN ONLY}crwdne43016:0"
 
 msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "crwdns41344:0{JAPAN ONLY}crwdne41344:0"
@@ -13482,17 +13215,11 @@ msgstr "crwdns41351:0{JAPAN ONLY}crwdne41351:0"
 msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr "crwdns41352:0{JAPAN ONLY}crwdne41352:0"
 
-msgid "{JAPAN ONLY}We have a support team to answer your questions: <a href='mailto:support@binary.com'>support@binary.com</a>"
-msgstr "crwdns43123:0{JAPAN ONLY}crwdne43123:0"
-
 msgid "{JAPAN ONLY}We have opened a virtual account for you and credited it with ¥1,000,000 of virtual money."
 msgstr "crwdns41353:0{JAPAN ONLY}crwdne41353:0"
 
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr "crwdns41354:0{JAPAN ONLY}crwdne41354:0"
-
-msgid "{JAPAN ONLY}We offer a minimum trading period of 2 hours up to 1 year"
-msgstr "crwdns43018:0{JAPAN ONLY}crwdne43018:0"
 
 msgid "{JAPAN ONLY}We offer an informative and entertaining way to advertise online; including text ads, customer landing pages and invitations to promotional and educational events for your site visitors."
 msgstr "crwdns41355:0{JAPAN ONLY}crwdne41355:0"
@@ -13506,17 +13233,8 @@ msgstr "crwdns41357:0{JAPAN ONLY}crwdne41357:0"
 msgid "{JAPAN ONLY}We offer transparent 2-way pricing, allowing equal chance to trade in either direction of the market."
 msgstr "crwdns41358:0{JAPAN ONLY}crwdne41358:0"
 
-msgid "{JAPAN ONLY}We predict whether market price will touch barrier price by the end of trading period"
-msgstr "crwdns43019:0{JAPAN ONLY}crwdne43019:0"
-
 msgid "{JAPAN ONLY}We pride ourselves on our responsible trading and high ethical standards, and we only offer our service in jurisdictions where we hold the necessary licenses and legal registrations."
 msgstr "crwdns41359:0{JAPAN ONLY}crwdne41359:0"
-
-msgid "{JAPAN ONLY}We will give you a virtual account that already has ¥ 1,000,000."
-msgstr "crwdns43020:0{JAPAN ONLY}crwdne43020:0"
-
-msgid "{JAPAN ONLY}We will offer a minimum trading period of one week up to one year"
-msgstr "crwdns43021:0{JAPAN ONLY}crwdne43021:0"
 
 msgid "{JAPAN ONLY}We will pass on any possible price improvements for orders in fast moving markets."
 msgstr "crwdns41360:0{JAPAN ONLY}crwdne41360:0"
@@ -13533,44 +13251,20 @@ msgstr "crwdns41363:0{JAPAN ONLY}crwdnd41363:0%1crwdne41363:0"
 msgid "{JAPAN ONLY}Welcome to the site of Binary KK."
 msgstr "crwdns41364:0{JAPAN ONLY}crwdne41364:0"
 
-msgid "{JAPAN ONLY}What are Binary Options?"
-msgstr "crwdns43022:0{JAPAN ONLY}crwdne43022:0"
-
-msgid "{JAPAN ONLY}What trading options do we have?"
-msgstr "crwdns43023:0{JAPAN ONLY}crwdne43023:0"
-
-msgid "{JAPAN ONLY}What?"
-msgstr "crwdns43024:0{JAPAN ONLY}crwdne43024:0"
-
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "crwdns41365:0{JAPAN ONLY}crwdne41365:0"
 
 msgid "{JAPAN ONLY}When buying a vanilla put option, the break-even price at the exercise point is the strike price minus the option price paid in units of the underlying."
 msgstr "crwdns41366:0{JAPAN ONLY}crwdne41366:0"
 
-msgid "{JAPAN ONLY}When our company collapse"
-msgstr "crwdns43025:0{JAPAN ONLY}crwdne43025:0"
-
 msgid "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 msgstr "crwdns41367:0{JAPAN ONLY}crwdne41367:0"
-
-msgid "{JAPAN ONLY}Why Binary.com?"
-msgstr "crwdns43026:0{JAPAN ONLY}crwdne43026:0"
 
 msgid "{JAPAN ONLY}Why become an Affiliate?"
 msgstr "crwdns41368:0{JAPAN ONLY}crwdne41368:0"
 
-msgid "{JAPAN ONLY}Why choose binary options over foreign exchange"
-msgstr "crwdns43027:0{JAPAN ONLY}crwdne43027:0"
-
-msgid "{JAPAN ONLY}Why choose us"
-msgstr "crwdns43089:0{JAPAN ONLY}crwdne43089:0"
-
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "crwdns41369:0{JAPAN ONLY}crwdne41369:0"
-
-msgid "{JAPAN ONLY}YOUR FUNDS ARE HELD SECURELY"
-msgstr "crwdns43028:0{JAPAN ONLY}crwdne43028:0"
 
 msgid "{JAPAN ONLY}You are welcome to use this account to practice trading and to familiarize yourself with our trading platform."
 msgstr "crwdns41370:0{JAPAN ONLY}crwdne41370:0"
@@ -13583,9 +13277,6 @@ msgstr "crwdns41372:0{JAPAN ONLY}crwdnd41372:0%1crwdne41372:0"
 
 msgid "{JAPAN ONLY}You can protect your account value further by setting other limits to encourage trading discipline"
 msgstr "crwdns41373:0{JAPAN ONLY}crwdne41373:0"
-
-msgid "{JAPAN ONLY}You can purchase a trade with one click"
-msgstr "crwdns43029:0{JAPAN ONLY}crwdne43029:0"
 
 msgid "{JAPAN ONLY}You can request a funds transfer to your designated bank account at any time."
 msgstr "crwdns41374:0{JAPAN ONLY}crwdne41374:0"
@@ -13635,65 +13326,11 @@ msgstr "crwdns41385:0{JAPAN ONLY}crwdnd41385:0%1crwdne41385:0"
 msgid "{JAPAN ONLY}Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
 msgstr "crwdns43274:0{JAPAN ONLY}crwdnd43274:0%1crwdne43274:0"
 
-msgid "{JAPAN ONLY}Your funds are kept safe"
-msgstr "crwdns43090:0{JAPAN ONLY}crwdne43090:0"
-
 msgid "{JAPAN ONLY}Your funds are safe"
 msgstr "crwdns41386:0{JAPAN ONLY}crwdne41386:0"
 
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "crwdns41387:0{JAPAN ONLY}crwdne41387:0"
-
-msgid "{JAPAN ONLY}call option buy"
-msgstr "crwdns43030:0{JAPAN ONLY}crwdne43030:0"
-
-msgid "{JAPAN ONLY}if not"
-msgstr "crwdns43031:0{JAPAN ONLY}crwdne43031:0"
-
-msgid "{JAPAN ONLY}no transaction fees"
-msgstr "crwdns43032:0{JAPAN ONLY}crwdne43032:0"
-
-msgid "{JAPAN ONLY}payout (if spot 110.65 or higher)"
-msgstr "crwdns43033:0{JAPAN ONLY}crwdne43033:0"
-
-msgid "{JAPAN ONLY}profit take sell"
-msgstr "crwdns43034:0{JAPAN ONLY}crwdne43034:0"
-
-msgid "{JAPAN ONLY}set daily loss limit"
-msgstr "crwdns43035:0{JAPAN ONLY}crwdne43035:0"
-
-msgid "{JAPAN ONLY}spot"
-msgstr "crwdns43036:0{JAPAN ONLY}crwdne43036:0"
-
-msgid "{JAPAN ONLY}stop-loss sell"
-msgstr "crwdns43037:0{JAPAN ONLY}crwdne43037:0"
-
-msgid "{JAPAN ONLY}trade 9 currencies"
-msgstr "crwdns43038:0{JAPAN ONLY}crwdne43038:0"
-
-msgid "{JAPAN ONLY}trade with 50 yen to 999 yen"
-msgstr "crwdns43039:0{JAPAN ONLY}crwdne43039:0"
-
-msgid "{JAPAN ONLY}trading periods from 2 hours to 1 year"
-msgstr "crwdns43040:0{JAPAN ONLY}crwdne43040:0"
-
-msgid "{JAPAN ONLY}¥0"
-msgstr "crwdns43041:0{JAPAN ONLY}crwdne43041:0"
-
-msgid "{JAPAN ONLY}¥1,000"
-msgstr "crwdns43042:0{JAPAN ONLY}crwdne43042:0"
-
-msgid "{JAPAN ONLY}¥110.40"
-msgstr "crwdns43043:0{JAPAN ONLY}crwdne43043:0"
-
-msgid "{JAPAN ONLY}¥110.50 / lot"
-msgstr "crwdns43044:0{JAPAN ONLY}crwdne43044:0"
-
-msgid "{JAPAN ONLY}¥110.65"
-msgstr "crwdns43045:0{JAPAN ONLY}crwdne43045:0"
-
-msgid "{JAPAN ONLY}¥200 /  lot"
-msgstr "crwdns43046:0{JAPAN ONLY}crwdne43046:0"
 
 msgid "{JAPANY ONLY}1 week to 1 year terms"
 msgstr "crwdns41388:0{JAPANY ONLY}crwdne41388:0"

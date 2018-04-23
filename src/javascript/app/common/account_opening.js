@@ -1,3 +1,4 @@
+const SelectMatcher      = require('binary-style').select2Matcher;
 const Cookies            = require('js-cookie');
 const generateBirthDate  = require('./attach_dom/birth_date_picker');
 const FormManager        = require('./form_manager');
@@ -10,7 +11,6 @@ const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
-require('select2');
 
 const AccountOpening = (() => {
     const redirectAccount = () => {
@@ -77,6 +77,11 @@ const AccountOpening = (() => {
                     } else {
                         $place_of_birth.html($options.html()).val(residence_value);
                     }
+                    $place_of_birth.select2({
+                        matcher(params, data) {
+                            return SelectMatcher(params, data);
+                        },
+                    });
                 });
             }
 
@@ -124,6 +129,11 @@ const AccountOpening = (() => {
                 }
             }
             $address_state.parent().parent().setVisibility(1);
+            $address_state.select2({
+                matcher(params, data) {
+                    return SelectMatcher(params, data);
+                },
+            });
 
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());

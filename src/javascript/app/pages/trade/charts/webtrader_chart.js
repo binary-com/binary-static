@@ -1,3 +1,4 @@
+const getAllSymbols    = require('../symbols').getAllSymbols;
 const MBDefaults       = require('../../mb_trade/mb_defaults');
 const isJPClient       = require('../../../base/client').isJPClient;
 const getElementById   = require('../../../../_common/common_functions').getElementById;
@@ -68,7 +69,7 @@ const WebtraderChart = (() => {
         const is_mb_trading    = State.get('is_mb_trading');
         const $underlying      = $('#underlying');
         const $underlying_code = is_mb_trading ? $underlying.attr('value') : $underlying.val();
-        const $underlying_name = is_mb_trading ? $underlying.find('.current .name').text() : $underlying.find('option:selected').text();
+        const $underlying_name = is_mb_trading ? $underlying.find('.current .name').text() : getAllSymbols()[$underlying_code];
 
         const chart_config = {
             instrumentCode    : $underlying_code,

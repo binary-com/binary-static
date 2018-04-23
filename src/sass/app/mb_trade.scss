@@ -38,7 +38,6 @@
                 height: auto;
                 border-color: $COLOR_GRAY;
                 border-top-color: $COLOR_LIGHT_GRAY;
-                border-left: none;
 
                 &:focus {
                     outline: none;
@@ -653,6 +652,11 @@
                         order: 2;
                     }
                 }
+            }
+        }
+        @media all and (max-width: 480px) {
+            .tab-menu-wrap {
+                display: none;
             }
         }
     }
