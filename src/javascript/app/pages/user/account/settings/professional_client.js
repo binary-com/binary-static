@@ -24,7 +24,7 @@ const professionalClient = (() => {
     };
 
     const populateProfessionalClient = (is_financial) => {
-        const has_maltainvest = Client.canRequestProfessional();
+        const has_maltainvest = Client.get('landing_company_shortcode') === 'maltainvest';
         if (!has_maltainvest || !is_financial) { // then it's not upgrading to financial
             if (is_in_page) {
                 BinaryPjax.loadPreviousUrl();

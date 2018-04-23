@@ -395,8 +395,6 @@ const Client = (() => {
 
     const hasCostaricaAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
-    const canRequestProfessional = () => State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest';
-
     const defaultRedirectUrl = () => urlFor(isJPClient() ? 'multi_barriers_trading' : 'trading');
 
     const setJPFlag = () => {
@@ -434,7 +432,6 @@ const Client = (() => {
         getLandingCompanyValue,
         canTransferFunds,
         hasCostaricaAccount,
-        canRequestProfessional,
         defaultRedirectUrl,
         setJPFlag,
         isJPClient,

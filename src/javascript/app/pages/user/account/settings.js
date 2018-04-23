@@ -19,7 +19,7 @@ const Settings = (() => {
             }
 
             // Professional Client menu should only be shown to MF accounts.
-            if ((Client.isAccountOfType('financial')) && !/professional_requested|professional/.test(status) && Client.canRequestProfessional()) {
+            if ((Client.get('landing_company_shortcode') === 'maltainvest') && !/^(professional_requested|professional)$/.test(status)) {
 
                 $('#professional_client').setVisibility(1);
             }
