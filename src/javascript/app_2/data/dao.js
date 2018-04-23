@@ -16,7 +16,7 @@ const DAO = (() => {
     const getWebsiteStatus = () => BinarySocket.send({ website_status: 1 });
 
     const getStatement = (limit, offset, date_boundaries) => BinarySocket.send({
-        statement: 1,
+        statement  : 1,
         description: 1,
         limit,
         offset,

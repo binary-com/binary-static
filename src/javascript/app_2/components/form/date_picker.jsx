@@ -145,7 +145,7 @@ class Calendar extends React.Component {
         const date = moment(this.state.date)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.dateFormat);
         this.setState({
             date,
-            active_view  : active_view[type],
+            active_view: active_view[type],
         });
         this.props.handleDateChange(date, true);
     }
@@ -431,7 +431,9 @@ class DatePicker extends React.PureComponent {
         this.handleMouseEnter   = this.handleMouseEnter.bind(this);
         this.handleMouseLeave   = this.handleMouseLeave.bind(this);
 
-        const selected_date = props.initial_value !== undefined ? props.initial_value : moment(this.props.minDate).format(this.props.dateFormat);
+        const selected_date = props.initial_value !== undefined
+            ? props.initial_value
+            : moment(this.props.minDate).format(this.props.dateFormat);
 
         this.state = {
             selected_date,

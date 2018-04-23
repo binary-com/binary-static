@@ -16,7 +16,6 @@ import Loading from '../../../../templates/_common/components/loading.jsx';
 /* TODO:
       1. to separate logic from UI
       3. to handle errors
-      4. display loading, render table only after data is available
 */
 const getStatementData = (statement, currency, is_jp_client) => {
     const date_obj   = new Date(statement.transaction_time * 1000);
@@ -158,7 +157,7 @@ class Statement extends React.PureComponent {
             this.state.data_source.length,
             {
                 ...date_from && {date_from: moment(date_from).unix()},
-                ...date_to   && {date_to  : moment(date_to).add(1, 'd').subtract(1, 's').unix()},
+                ...date_to   && {date_to: moment(date_to).add(1, 'd').subtract(1, 's').unix()},
             }
         ).then((response) => {
             const formatted_transactions = response.statement.transactions
@@ -220,13 +219,16 @@ class Statement extends React.PureComponent {
                             : this.state.data_source.length === 0
                                 ? 'No transactions'
                                 : <DataTable
-                                      data_source={this.state.data_source.slice(0, this.state.chunks * this.props.chunk_size)}
-                                      columns={this.state.columns}
-                                      has_fixed_header
-                                  />
+                                    data_source={this.state.data_source.slice(
+                                        0,
+                                        this.state.chunks * this.props.chunk_size
+                                    )}
+                                    columns={this.state.columns}
+                                    has_fixed_header
+                                />
                     }
                 </div>
-                </div>
+            </div>
         );
     }
 }
