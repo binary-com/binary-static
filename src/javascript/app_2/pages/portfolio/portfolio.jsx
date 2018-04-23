@@ -3,6 +3,7 @@ import moment from 'moment';
 import Client from '../../../app/base/client';
 import BinarySocket from '../../../app/base/socket';
 import { buildOauthApps } from '../../../app/common/get_app_details';
+import { formatMoney } from '../../../app/common/currency';
 import { localize } from '../../../_common/localize';
 import { getPropertyValue } from '../../../_common/utility';
 import DataTable from '../../components/elements/data_table.jsx';
@@ -13,19 +14,21 @@ const handlePortfolioData = (portfolio_arr) => {
         const date_obj        = new Date(portfolio_item.expiry_time* 1000);
         const moment_obj      = moment.utc(date_obj);
         const remaining_time  = `${moment_obj.fromNow()} - ${moment_obj.format('h:mm:ss')}`;
+        const purchase        = parseFloat(portfolio_item.buy_price);
+        const payout          = parseFloat(portfolio_item.payout);
 
         return {
             ref       : portfolio_item.transaction_id,
             type      : portfolio_item.contract_type,
             asset     : portfolio_item.symbol,
             details   : localize(portfolio_item.longcode.replace(/\n/g, '<br />')),
-            purchase  : parseFloat(portfolio_item.buy_price),
-            payout    : parseFloat(portfolio_item.payout),
+            purchase  : formatMoney(false, purchase, true),
+            payout    : formatMoney(false, payout, true),
             remaining_time,
             id        : portfolio_item.contract_id,
             app_id    : portfolio_item.app_id,
             indicative: {
-                amount: parseFloat(portfolio_item.amount),
+                amount: '',
                 style : '',
             },
         };
@@ -36,7 +39,7 @@ const handlePortfolioData = (portfolio_arr) => {
     1. Move socket connections to DAO
     2. Selling both in transactionHandler and updateIndicative?
     3. Make tooltip appdetails tooltip
-    4. format currency values + date values
+    4. format date values
     4. Add styling
     5. Translations
 */
@@ -154,7 +157,8 @@ class Portfolio extends React.PureComponent  {
         } else {
             data_source.forEach(portfolio_item => {
                 if (portfolio_item.id === +proposal.contract_id) {
-                    const amount = parseFloat(proposal.bid_price);
+                    let amount = parseFloat(proposal.bid_price);
+                    amount = formatMoney(false, amount, true);
                     let style;
                     if (+proposal.is_valid_to_sell === 1) {
                         style = proposal.bid_price > portfolio_item.indicative.amount ? 'price_moved_up' : 'price_moved_down';
