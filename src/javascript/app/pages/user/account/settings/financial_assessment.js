@@ -44,8 +44,8 @@ const FinancialAssessment = (() => {
             });
         }
 
-        const is_professional = /^(professional|professional_requested)$/.test(State.getResponse('get_account_status.status'));
-        $('#trading_experience_form').setVisibility(!is_professional);
+        const is_mt5_financial = /^(real_vanuatu_standard)$/.test(Client.get('mt5_account'));
+        $('#trading_experience_form').setVisibility(is_mt5_financial);
 
         Object.keys(financial_assessment).forEach((key) => {
             const val = financial_assessment[key];
