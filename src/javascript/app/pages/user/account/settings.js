@@ -18,7 +18,7 @@ const Settings = (() => {
                 $('#change_password').setVisibility(1);
             }
 
-            // Professional Client menu should only be shown to MF accounts.
+            // Professional Client menu should only be shown maltainvest accounts.
             if ((Client.get('landing_company_shortcode') === 'maltainvest') && !/^(professional_requested|professional)$/.test(status)) {
 
                 $('#professional_client').setVisibility(1);

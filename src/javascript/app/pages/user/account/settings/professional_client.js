@@ -2,6 +2,7 @@ const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
 const BinarySocket     = require('../../../../base/socket');
 const localize         = require('../../../../../_common/localize').localize;
+const State            = require('../../../../../_common/storage').State;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 
@@ -24,7 +25,7 @@ const professionalClient = (() => {
     };
 
     const populateProfessionalClient = (is_financial) => {
-        const has_maltainvest = Client.get('landing_company_shortcode') === 'maltainvest';
+        const has_maltainvest = State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest';
         if (!has_maltainvest || !is_financial) { // then it's not upgrading to financial
             if (is_in_page) {
                 BinaryPjax.loadPreviousUrl();
