@@ -131,7 +131,6 @@ const Durations = (() => {
                 selected_duration = {};
             }
         }
-        Dropdown('#duration_units');
         return durationPopulate();
     };
 
@@ -231,6 +230,7 @@ const Durations = (() => {
         unit.value           = Defaults.get('duration_units') &&
             document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
             Defaults.get('duration_units') : unit.value;
+        Dropdown('#duration_units');
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_minimum'), unit_min_value);
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_unit'), localize(duration_map[unit.value] + (+unit_min_value > 1 ? 's' : '')));
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_maximum'), unit_max_value);
