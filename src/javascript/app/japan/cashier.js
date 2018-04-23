@@ -25,15 +25,14 @@ const CashierJP = (() => {
                         if (typeof limit !== 'undefined' && limit < 1) {
                             $container.find('#cashier_locked_message').text(localize('You have reached the withdrawal limit.')).setVisibility(1);
                         } else {
-                            $container.find('#cashier_unlocked_message').setVisibility(1);
-                            BinarySocket.wait('get_settings').then(() => {
-                                $('#id123-control22598118').val(Client.get('loginid'));
-                                $('#id123-control22598060').val(Client.get('email'));
-                                $('#japan_cashier_container button').on('click', (e) => {
-                                    const result = errorHandler();
-                                    if (!result) e.preventDefault();
-                                });
+                            const response_authorize = State.getResponse('authorize');
+                            $('#id123-control22598118').val(response_authorize.loginid || 'undef');
+                            $('#id123-control22598060').val(response_authorize.email || 'undef');
+                            $('#japan_cashier_container button').on('click', (e) => {
+                                const result = errorHandler();
+                                if (!result) e.preventDefault();
                             });
+                            $container.find('#cashier_unlocked_message').setVisibility(1);
                         }
                     }
                 });
@@ -53,7 +52,7 @@ const CashierJP = (() => {
         if (isNaN(withdrawal_amount) || +withdrawal_amount < 1) {
             showError(localize('Should be more than [_1]', ['¥1']));
             return false;
-        } else if (parseInt(Client.get('balance')) < withdrawal_amount) {
+        } else if (parseInt(Client.get('balance')) < +withdrawal_amount) {
             showError('Insufficient balance.');
             return false;
         }
