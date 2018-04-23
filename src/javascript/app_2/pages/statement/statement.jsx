@@ -6,6 +6,7 @@ import { connect } from '../../store/connect';
 import { toJapanTimeIfNeeded } from '../../../app/base/clock';
 import { jpClient } from '../../../app/common/country_base';
 import { formatMoney } from '../../../app/common/currency';
+import { addTooltip, buildOauthApps, showTooltip } from '../../../app/common/get_app_details';
 import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
 import { throttlebounce } from '../../../_common/utility';
@@ -57,6 +58,16 @@ class Statement extends React.PureComponent {
             {
                 title     : localize('Ref.'),
                 data_index: 'ref',
+                // TODO: add data balloon later
+                // renderCell: (data, data_index, transaction) => {
+                //     return (
+                //         <td key={data_index} className={data_index}>
+                //             <span
+                //                 data-balloon={transaction.app_id}
+                //             >{data}</span>
+                //         </td>
+                //     );
+                // },
             },
             {
                 title     : localize('Description'),
@@ -75,7 +86,12 @@ class Statement extends React.PureComponent {
                 data_index: 'amount',
                 renderCell: (data, data_index) => {
                     const parseStrNum = (str) => parseFloat(str.replace(',', '.'));
-                    return <td className={`${data_index} ${(parseStrNum(data) >= 0) ? 'profit' : 'loss'}`} key={data_index}>{data}</td>;
+                    return (
+                        <td
+                            key={data_index}
+                            className={`${data_index} ${(parseStrNum(data) >= 0) ? 'profit' : 'loss'}`}
+                        >{data}</td>
+                    );
                 },
             },
             {
@@ -96,7 +112,11 @@ class Statement extends React.PureComponent {
     }
 
     componentDidMount() {
-        window.moment = moment;
+        // BinarySocket.send({ oauth_apps: 1 }).then((response) => {
+        //     this.oauth_apps = buildOauthApps(response);
+        //     console.log(this.oauth_apps);
+        // });
+
         this.fetchNextBatch();
 
         this._throttledHandleScroll = throttlebounce(this.handleScroll, 200);
