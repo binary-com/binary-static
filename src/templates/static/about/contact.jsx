@@ -47,6 +47,21 @@ const Contact = () => (
                         <div className='gr-padding-10 hint calls_recording'>
                             * {it.L('All calls are recorded for training and monitoring purposes')}
                         </div>
+                        <div className='gr-padding-10 gr-parent'>
+                            <span className='gr-row'>
+                                <label className='gr-5'>{it.L('Chat:')}</label>
+                                <label className='gr-7'>
+                                    <a
+                                        href='https://binary.desk.com/customer/widget/chats/disabled'
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                    >
+                                        Chat Link Here
+                                    </a>
+                                </label>
+                            </span>
+                            <p>{it.L('Chat support available time: 0600-2100 MYT')}</p>
+                        </div>
                     </div>
                     <div className='gr-6 gr-12-t gr-12-p gr-12-m ja-hide'>
                         <div className='gr-padding-10 gr-parent'>
