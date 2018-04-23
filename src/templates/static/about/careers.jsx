@@ -46,7 +46,7 @@ const ColumnSM = ({ gr, header, paragraph }) => (
 
 
 const ColumnLG = ({ center, image, text }) => (
-    <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
+    <div className={`gr-6 gr-12-m${center ? ' center-text' : ''}`}>
         <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
         <div className='white-bg-color'>
             <p className='column-margin fill-text'>{text}</p>
@@ -84,7 +84,6 @@ const Careers = () => (
                     </div>
                     <ColumnLG image='my@2'      text={it.L('Malaysia')} />
                     <ColumnLG image='malta@1'   text={it.L('Malta')} />
-                    <ColumnLG image='japan@1'   text={it.L('Japan')} />
                 </div>
             </div>
 
