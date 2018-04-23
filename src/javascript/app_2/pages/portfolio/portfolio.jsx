@@ -20,7 +20,6 @@ const handlePortfolioData = (portfolio_arr) => {
         return {
             ref       : portfolio_item.transaction_id,
             type      : portfolio_item.contract_type,
-            asset     : portfolio_item.symbol,
             details   : localize(portfolio_item.longcode.replace(/\n/g, '<br />')),
             purchase  : formatMoney(false, purchase, true),
             payout    : formatMoney(false, payout, true),
@@ -63,10 +62,6 @@ class Portfolio extends React.PureComponent  {
                 data_index: 'type',
             },
             {
-                title     : localize('Asset'),
-                data_index: 'asset',
-            },
-            {
                 title     : localize('Contract Details'),
                 data_index: 'details',
             },
@@ -88,8 +83,7 @@ class Portfolio extends React.PureComponent  {
                 title     : localize('Indicative'),
                 data_index: 'indicative',
                 renderCell: (data, data_index) => {
-                    const is_nan = isNaN(data.amount);
-                    if (is_nan) {
+                    if (!data.amount) {
                         return <td key={data_index}>-</td>;
                     }
                     return (
@@ -193,6 +187,7 @@ class Portfolio extends React.PureComponent  {
                 { callback: this.updateIndicative }
             );                
         }
+        console.log(this.state);
     }
 
     render() {
