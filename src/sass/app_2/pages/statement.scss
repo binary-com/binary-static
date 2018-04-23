@@ -22,4 +22,26 @@ $filter-height: 75px;
             margin-right: 1rem;
         }
     }
+    // column widths
+    .date, .ref {
+        width: 6.5em;
+    }
+    .action {
+        width: 7em;
+        text-align: right;
+    }
+    .payout, .amount, .balance {
+        width: 6em;
+        text-align: right;
+    }
+    .amount {
+        font-weight: bold;
+
+        &.profit {
+            color: #4caf50; /* stylelint-disable-line color-no-hex */
+        }
+        &.loss {
+            color: #f44336; /* stylelint-disable-line color-no-hex */
+        }
+    }
 }
