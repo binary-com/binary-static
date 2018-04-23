@@ -23,10 +23,10 @@
         }
     }
     th:first-child, td:first-child {
-        padding-left: 32px;
+        padding-left: 2rem;
     }
     th:last-child, td:last-child {
-        padding-right: 32px;
+        padding-right: 2rem;
     }
     &-body {
         .table-row:hover {
@@ -36,27 +36,6 @@
             padding: 12px;
             border: none;
         }
-        .profit {
-            color: #4caf50; /* stylelint-disable-line color-no-hex */
-        }
-        .loss {
-            color: #f44336; /* stylelint-disable-line color-no-hex */
-        }
-        .amount {
-            font-weight: bold;
-        }
-    }
-    // column widths
-    .date, .ref {
-        width: 6.5em;
-    }
-    .action {
-        width: 7em;
-        text-align: right;
-    }
-    .payout, .amount, .balance {
-        width: 6em;
-        text-align: right;
     }
     // styles for fixed table header
     &.table-clone {
@@ -70,11 +49,6 @@
         }
         .table-body {
             visibility: hidden;
-        }
-    }
-    @media screen and (max-width: 980px) {
-        .desc {
-            display: none;
         }
     }
 }
