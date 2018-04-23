@@ -63,12 +63,9 @@ const ScrollToAnchor = (() => {
     };
 
     const getAnchorTargetElement = () => {
-        const params = Url.paramsHash();
-        const id = params.anchor;
+        const id = Url.paramsHash().anchor;
         if (!id) return null;
-        const candidates = document.querySelectorAll(`[data-anchor="${id}"]`);
-        const el = Array.from(candidates).find(isVisible);
-        return el;
+        return document.querySelector(`[data-anchor="${id}"]`);
     };
 
     const scrollToAnchorInQuery = () => {
