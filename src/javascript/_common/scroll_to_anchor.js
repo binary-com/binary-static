@@ -1,4 +1,3 @@
-const isVisible     = require('./common_functions').isVisible;
 const Url           = require('./url');
 const createElement = require('./utility').createElement;
 
