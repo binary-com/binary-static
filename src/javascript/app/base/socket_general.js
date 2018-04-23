@@ -1,5 +1,7 @@
+const BinaryPjax           = require('./binary_pjax');
 const Client               = require('./client');
 const Clock                = require('./clock');
+const Footer               = require('./footer');
 const GTM                  = require('./gtm');
 const Header               = require('./header');
 const Login                = require('./login');
@@ -9,6 +11,7 @@ const showPopup            = require('../common/attach_dom/popup');
 const setCurrencies        = require('../common/currency').setCurrencies;
 const SessionDurationLimit = require('../common/session_duration_limit');
 const updateBalance        = require('../pages/user/update_balance');
+const getElementById       = require('../../_common/common_functions').getElementById;
 const State                = require('../../_common/storage').State;
 const urlFor               = require('../../_common/url').urlFor;
 const getPropertyValue     = require('../../_common/utility').getPropertyValue;
@@ -23,6 +26,12 @@ const BinarySocketGeneral = (() => {
                     return;
                 }
                 BinarySocket.send({ website_status: 1, subscribe: 1 });
+                if (Client.isLoggedIn()) {
+                    BinarySocket.wait('authorize').then(() => {
+                        Client.setJPFlag();
+                        BinaryPjax.init(getElementById('content-holder'), '#content');
+                    });
+                }
             }
             Clock.startClock();
         }
@@ -37,8 +46,12 @@ const BinarySocketGeneral = (() => {
                     is_available = /^up$/i.test(response.website_status.site_status);
                     if (is_available && !BinarySocket.availability()) {
                         window.location.reload();
-                    } else if (!is_available) {
-                        Header.displayNotification(response.website_status.message, true);
+                        return;
+                    }
+                    if (response.website_status.message) {
+                        Footer.displayNotification(response.website_status.message);
+                    } else {
+                        Footer.clearNotification();
                     }
                     BinarySocket.availability(is_available);
                     setCurrencies(response.website_status);

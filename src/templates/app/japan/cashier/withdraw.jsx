@@ -3,6 +3,7 @@ import React from 'react';
 const Withdraw = () => (
     <div id='japan_cashier_container'>
         <h1>{it.L('Withdraw') }</h1>
+        <p id='cashier_error_message' className='invisible notice-msg center-text' />
         <p id='cashier_locked_message' className='invisible'>{it.L('{JAPAN ONLY}Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', it.url_for('user/security/cashier_passwordws'))}</p>
         <div id='cashier_unlocked_message' className='invisible'>
             <p>{it.L('{JAPAN ONLY}You can request a funds transfer to your designated bank account at any time.')}</p>

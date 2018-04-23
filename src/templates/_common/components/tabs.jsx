@@ -39,7 +39,8 @@ export const TabsSubtabs = ({ className = '', id, items = [] }) => {
             <div className='tab-menu-wrap'>
                 <ul id={id} className='tm-ul'>
                     {items.map((item, idx) => (
-                        <li key={idx} id={item.id} className={`tm-li ${item.className || ''}`} data-show={item.dataShow}>
+                        !item.disabled &&
+                        <li key={idx} id={item.id} className={`tm-li ${item.className || ''}`} data-show={item.dataShow} >
                             { item.subtabs &&
                                 <React.Fragment>
                                     <span className='menu-wrap-a'>

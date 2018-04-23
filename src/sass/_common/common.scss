@@ -173,7 +173,7 @@ label {
         text-align: left;
         margin-bottom: 5px;
     }
-    input {
+    input, select {
         width: calc(100% - 6px);
     }
 }
@@ -459,6 +459,18 @@ ul.bullet.gr-row > li {
     margin-top: 40px;
     margin-bottom: 20px;
 
+    div.select {
+        ul.select-options {
+            position: absolute;
+            margin: 4px 0 0;
+            font-size: 1rem;
+
+            li.select-items {
+                margin: 0;
+                display: block;
+            }
+        }
+    }
     .light {
         .tab-menu-wrap {
             text-align: center;
@@ -606,6 +618,26 @@ label + input {
             &::selection {
                 color: transparent;
             }
+        }
+    }
+}
+
+.question {
+    .no-underline {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .show_mobile {
+        &[data-balloon]:before, &[data-balloon]:after {
+            display: block !important;
+            transform: translate(-15%, 0) !important;
+        }
+        &[data-balloon-length=medium]:before {
+            width: 120px;
         }
     }
 }

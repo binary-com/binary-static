@@ -1,5 +1,6 @@
-const expect   = require('chai').expect;
-const Currency = require('../currency');
+const expect    = require('chai').expect;
+const Currency  = require('../currency');
+const setJPFlag = require('../../base/client').setJPFlag;
 
 describe('Currency', () => {
     const currencies_config = {
@@ -73,6 +74,8 @@ describe('Currency', () => {
     });
 
     describe('.getDecimalPlaces()', () => {
+        before(setJPFlag);
+
         it('works as expected', () => {
             expect(Currency.getDecimalPlaces('AUD')).to.eq(2);
             expect(Currency.getDecimalPlaces('EUR')).to.eq(2);

@@ -40,4 +40,8 @@ module.exports = {
         onLoad  : () => { MenuSelector.init(['general', 'account-management-and-tracking', 'marketing-and-promotions', 'support']); },
         onUnload: () => { MenuSelector.clean(); },
     },
+    IBProgrammeFAQ: {
+        onLoad  : () => { MenuSelector.init(['general', 'account-management', 'marketing-and-promotions']); },
+        onUnload: () => { MenuSelector.clean(); },
+    },
 };

@@ -64,6 +64,12 @@ const Contact = () => (
                                 <label className='gr-7'><a href='mailto:payments@binary.com'>payments@binary.com</a></label>
                             </span>
                         </div>
+                        <div className='gr-padding-10'>
+                            <span className='gr-row'>
+                                <label className='gr-5'>{it.L('For affiliate, partnership, and other marketing-related queries:')}</label>
+                                <label className='gr-7'><a href='mailto:marketing@binary.com'>marketing@binary.com</a></label>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>

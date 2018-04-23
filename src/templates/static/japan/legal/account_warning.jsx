@@ -2,7 +2,7 @@ import React from 'react';
 
 const AccountWarning = () => (
     <div className='gr-padding-30'>
-        <h2>{it.L('General Risk Warning')}</h2>
+        <h2>{it.L('{JAPAN ONLY}General Risk Warning')}</h2>
         <ul className='bullet'>
             <li className='gr-padding-10'>{it.L('Japan website General Risk Warning List item 1')}</li>
             <li className='gr-padding-10'>{it.L('Japan website General Risk Warning List item 2')}</li>

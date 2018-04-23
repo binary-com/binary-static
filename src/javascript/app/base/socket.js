@@ -250,7 +250,9 @@ const BinarySocket = (() => {
                         break;
                     }
                     case 'RateLimit':
-                        config.notify(localize('You have reached the rate limit of requests per second. Please try later.'), true, 'RATE_LIMIT');
+                        if (msg_type !== 'cashier_password') {
+                            config.notify(localize('You have reached the rate limit of requests per second. Please try later.'), true, 'RATE_LIMIT');
+                        }
                         break;
                     case 'InvalidAppID':
                         wrong_app_id = getAppId();
