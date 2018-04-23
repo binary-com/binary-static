@@ -201,6 +201,10 @@ const texts = [
     'Invalid email address.',
     'Thank you for signing up! Please check your email to complete the registration process.',
 
+    // welcome page after account opening
+    'Financial Account',
+    'Upgrade now',
+
     // real account opening
     'Please select',
     'Minimum of [_1] characters required.',
