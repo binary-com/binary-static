@@ -6,44 +6,58 @@ const support_email = 'support@binary.com';
 const Contact = () => (
     <div className='container' id='contact_content'>
         <div className='gr-row gr-parent static_full border-bottom gr-padding-30'>
-            <div className='gr-2 gr-hide-m ja-hide'>
+            {/* <div className='gr-2 gr-hide-m ja-hide'>
                 <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
-            </div>
-            <div className='gr-10 gr-12-m gr-padding-10 gr-parent'>
-                <h1>{it.L('Contact us')}</h1>
+            </div> */}
+            <div className='contact-content'>
+                <h1 className='center-text'>{it.L('Contact us')}</h1>
                 <div className='gr-row'>
-                    <div className='gr-6 gr-12-t gr-12-p gr-12-m'>
+                    <div className='gr-8 gr-12-t gr-12-p gr-12-m'>
                         <div className='gr-padding-10 invisible ja-show gr-parent'>
                             {it.L('JAPAN ONLY CONTACT TEXT')}
                             <p><a href={(`mailto:${support_email}`)} rel='nofollow'>{support_email}</a></p>
                         </div>
                         <div className='gr-padding-10 ja-hide gr-parent'>
                             <div className='gr-row'>
-                                <div className='gr-4'>
-                                    <label htmlFor='cs_telephone_number'>{it.L('Telephone:')}</label>
+                                <div className='contact-icon-container gr-hide-p gr-hide-m'>
+                                    <img className='contact-icon' src={it.url_for('images/pages/contact/contact-icon.svg')} />
                                 </div>
-                                <div className='gr-7 gr-no-gutter'>
-                                    <Select
-                                        id='cs_telephone_number'
-                                        options={[
-                                            { text: it.L('Australia'),      value: it.L('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') },
-                                            { text: it.L('Canada'),         value: '+1 (450) 823 1002' },
-                                            { text: it.L('Indonesia'),      value: it.L('[_1] (Toll Free)', '0018030113641') },
-                                            { text: it.L('Ireland'),        value: it.L('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') },
-                                            { text: it.L('Poland'),         value: '+48 58 881 00 02' },
-                                            { text: it.L('Russia'),         value: it.L('[_1] (Toll Free)', '8 10 8002 8553011') },
-                                            { text: it.L('United Kingdom'), value: it.L('[_1] (Toll Free)', '+44 (0) 1666 800042, 0800 011 9847'), selected: true },
-                                        ]}
-                                    />
+                                <div className='gr-9 gr-12-p gr-12-m'>
+                                    <div className='gr-row'>
+                                        <div className='gr-4 gr-4-t gr-6-p gr-4-m'>
+                                            <label htmlFor='cs_telephone_number' className='u-text-bold'>{it.L('Telephone:')}</label>
+                                        </div>
+                                        <div className='gr-8 gr-4-t gr-6-p gr-8-m'>
+                                            <Select
+                                                id='cs_telephone_number'
+                                                options={[
+                                                    { text: it.L('Australia'),      value: it.L('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') },
+                                                    { text: it.L('Canada'),         value: '+1 (450) 823 1002' },
+                                                    { text: it.L('Indonesia'),      value: it.L('[_1] (Toll Free)', '0018030113641') },
+                                                    { text: it.L('Ireland'),        value: it.L('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') },
+                                                    { text: it.L('Poland'),         value: '+48 58 881 00 02' },
+                                                    { text: it.L('Russia'),         value: it.L('[_1] (Toll Free)', '8 10 8002 8553011') },
+                                                    { text: it.L('United Kingdom'), value: it.L('[_1] (Toll Free)', '+44 (0) 1666 800042, 0800 011 9847'), selected: true },
+                                                ]}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className='gr-row gr-padding-10'>
+                                        <div className='gr-4 gr-4-t gr-6-p gr-4-m'/>
+                                        <div className='gr-8 gr-8-t gr-6-p gr-8-m' id='display_cs_telephone'>
+                                            {('+44 (0) 1666 800042')}
+                                            <br />
+                                            {it.L('[_1] (Toll Free)', '0800 011 9847')}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <span className='gr-8 gr-prefix-4 gr-12-t gr-12-p gr-padding-10 gr-12-m' id='display_cs_telephone'>
-                                {('+44 (0) 1666 800042')}
-                                <br />
-                                {it.L('[_1] (Toll Free)', '0800 011 9847')}
-                            </span>
                         </div>
-                        <p className='ja-hide'>{it.L('If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help.')}</p>
+                        <div className='gr-row'>
+                            <div className='gr-11 gr-12-m'>
+                                <p className='ja-hide'>{it.L('If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help.')}</p>
+                            </div>
+                        </div>
                         <div className='hint calls_recording'>
                             * {it.L('All calls are recorded for training and monitoring purposes')}
                         </div>
@@ -67,27 +81,27 @@ const Contact = () => (
                             </div>
                         </div>
                     </div>
-                    <div className='gr-6 gr-12-t gr-12-p gr-12-m ja-hide'>
-                        <div className='gr-padding-10 gr-parent'>
+                    <div className='gr-4 gr-12-t gr-12-p gr-12-m ja-hide'>
+                        <div className='gr-padding-10 gr-parent u-text-bold'>
                             {it.L('Email:')}
                         </div>
                         <div className='gr-padding-10 gr-parent'>
-                            <span className='gr-row'>
-                                <label className='gr-5'>{it.L('For general support:')}</label>
-                                <label className='gr-7'><a href={(`mailto:${support_email}`)} rel='nofollow'>{support_email}</a></label>
-                            </span>
+                            {it.L('For general support:')}
                         </div>
-                        <div className='gr-padding-10'>
-                            <span className='gr-row'>
-                                <label className='gr-5'>{it.L('For payments-related queries:')}</label>
-                                <label className='gr-7'><a href='mailto:payments@binary.com'>payments@binary.com</a></label>
-                            </span>
+                        <div className='gr-padding-10 gr-parent u-mar-bottom-small'>
+                            <a href={(`mailto:${support_email}`)} rel='nofollow'>{support_email}</a>
                         </div>
-                        <div className='gr-padding-10'>
-                            <span className='gr-row'>
-                                <label className='gr-5'>{it.L('For affiliate, partnership, and other marketing-related queries:')}</label>
-                                <label className='gr-7'><a href='mailto:marketing@binary.com'>marketing@binary.com</a></label>
-                            </span>
+                        <div className='gr-padding-10 gr-parent'>
+                            {it.L('For payments-related queries:')}
+                        </div>
+                        <div className='gr-padding-10 gr-parent u-mar-bottom-small'>
+                            <a href='mailto:payments@binary.com'>payments@binary.com</a>
+                        </div>
+                        <div className='gr-padding-10 gr-parent'>
+                            {it.L('For affiliate, partnership, and other marketing-related queries:')}
+                        </div>
+                        <div className='gr-padding-10 gr-parent'>
+                            <a href='mailto:marketing@binary.com'>marketing@binary.com</a>
                         </div>
                     </div>
                 </div>

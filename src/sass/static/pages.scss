@@ -166,6 +166,28 @@
 }
 
 .contact-content {
+    .contact-content {
+        padding: 0 100px;
+
+        @media screen and (max-width: 1024px) {
+            padding: 0 10px;
+        }
+    }
+    .contact-icon-container {
+        padding-left: 10px;
+        height: auto;
+        max-width: 80px;
+    }
+    .contact-icon {
+        height: 100%;
+        width: 100%;
+    }
+    .u-mar-bottom-small {
+        margin-bottom: 15px;
+    }
+    .u-text-bold {
+        font-weight: bold;
+    }
     #cs_telephone_number {
         width: 100%;
         min-width: 160px;
