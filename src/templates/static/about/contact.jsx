@@ -51,16 +51,14 @@ const Contact = () => (
                             <div className='chat'>
                                 <div className='chat-container'>
                                     <img className='chat-icon' src={it.url_for('images/pages/contact/chat-icon.svg')} />
-                                    <div className='chat-link'>
-                                        <a
-                                            className='chat-text'
-                                            href='https://binary.desk.com/customer/widget/chats/disabled'
-                                            target='_blank'
-                                            rel='noopener noreferrer'
-                                        >
-                                            {it.L('Live Chat')}
-                                        </a>
-                                    </div>
+                                    <a
+                                        className='chat-link'
+                                        href='https://binary.desk.com/customer/widget/chats/disabled'
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                    >
+                                        {it.L('Live Chat')}
+                                    </a>
                                 </div>
                                 <div className='chat-paragraph'>
                                     <p>{it.L('Weekdays: 1000 - 1300 GMT')}</p>
