@@ -82,18 +82,6 @@ const TermsAndConditions = (() => {
             .end()
             .find(content_to_show)
             .setVisibility(1);
-
-        const section  = urlParam('section');
-        const $content = $('#content');
-        if (section) {
-            const $section = $content.find(`a#${section}`);
-            if ($section.length) setTimeout(() => { $.scrollTo($section, 0, { offset: -5 }); }, 500);
-        } else if (hash) {
-            setTimeout(() => { $.scrollTo($content.find('.tab-menu'), 0, { offset: -10 }); }, 500);
-        }
-        if (sub_content) {
-            setTimeout(() => { $.scrollTo($content.find(`#${sub_content}`), 500, { offset: -10 }); }, 500);
-        }
     };
 
     const updateSidebar = () => {

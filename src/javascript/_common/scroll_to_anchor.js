@@ -1,3 +1,4 @@
+const isVisible     = require('./common_functions').isVisible;
 const Url           = require('./url');
 const createElement = require('./utility').createElement;
 
@@ -16,6 +17,12 @@ const ScrollToAnchor = (() => {
     const init = () => {
         addAnchorsToElements();
         scrollToAnchorInQuery();
+        // remove query param if loaded onto a page without target element
+        if (!getAnchorTargetElement()) {
+            Url.updateParamsWithoutReload({
+                anchor: null,
+            }, true);
+        }
     };
 
     const encode = (str) => {
@@ -78,9 +85,9 @@ const ScrollToAnchor = (() => {
 
     const cleanup = () => {
         id_occurrence_count = {};
+        // remove query param if leaving page with corresponding element
         const el = getAnchorTargetElement();
-        // remove anchor param, when leaving the page with target element
-        if (el) {
+        if (el && isVisible(el)) {
             Url.updateParamsWithoutReload({
                 anchor: null,
             }, true);
