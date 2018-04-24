@@ -1,5 +1,4 @@
 const tabListener = require('binary-style').tabListener;
-const sidebar     = require('binary-style').sidebarCollapsible;
 const localize    = require('../../_common/localize').localize;
 const urlParam    = require('../../_common/url').param;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
@@ -11,15 +10,34 @@ const TermsAndConditions = (() => {
         const container = document.getElementsByClassName('sidebar-collapsible-container')[0];
         if (container) sidebar_width = container.offsetWidth;
 
-        handleActiveTab();
+        handleActiveTab(); // adds active class
         TNCApproval.requiresTNCApproval(
             $('#btn_accept'),
             () => { $('.tnc_accept').setVisibility(1); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
         tabListener();
-        sidebar();
 
-        handleSidebar();
+        $('.sidebar-collapsible').on('click', (e) => {
+            const $target = $(e.target);
+            if (!$target.is('a')) return;
+            // if parent : prevent default and change hash to first link instead 
+            const $sublinks = $target.siblings('ul');
+
+            if ($sublinks.length) {
+                // parent link is clicked
+                e.preventDefault();
+
+                if ($sublinks.find('.selected').length) {
+                    // has any selected sublinks
+                    $target.toggleClass('selected').parent('li').toggleClass('active');
+                }
+                else {
+                    window.location.hash = $sublinks.find('a').first()[0].hash;
+                }
+            }
+        });
+        updateSidebar();
+
         checkWidth();
         window.onresize = checkWidth;
 
@@ -78,12 +96,20 @@ const TermsAndConditions = (() => {
         }
     };
 
-    const handleSidebar = () => {
-        const hash     = window.location.hash || '#legal-binary';
-        const $sidebar = $('.sidebar-collapsible');
+    const updateSidebar = () => {
+        const hash = window.location.hash || '#legal-binary';
+        updateSidebarDOM(hash);
+        updateSidebarContentDOM(`${hash}-content`);
+    };
 
-        const $target_link = $sidebar.find(`${hash} a:first`);
-        if ($target_link.length) $target_link[0].click();
+    const updateSidebarDOM = (link_id) => {
+        const $sidebar = $('.sidebar-collapsible');
+        // TODO: update sidebar visual state
+        // link_id is selected
+    };
+
+    const updateSidebarContentDOM = (content_id) => {
+        $(content_id).removeClass('invisible');
     };
 
     const checkWidth = () => {
