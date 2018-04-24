@@ -47,7 +47,7 @@ const Contact = () => (
                         <div className='hint calls_recording'>
                             * {it.L('All calls are recorded for training and monitoring purposes')}
                         </div>
-                        <div className='gr-parent'>
+                        <div className='gr-parent ja-hide'>
                             <div className='chat'>
                                 <div className='chat-container'>
                                     <img className='chat-icon' src={it.url_for('images/pages/contact/chat-icon.svg')} />
