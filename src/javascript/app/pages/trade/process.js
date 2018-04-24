@@ -1,4 +1,4 @@
-const Dropdown          = require('binary-style').selectDropdown;
+const refreshDropdown   = require('binary-style').selectDropdown;
 const moment            = require('moment');
 const TradingAnalysis   = require('./analysis');
 const commonTrading     = require('./common');
@@ -157,7 +157,7 @@ const Process = (() => {
         StartDates.display();
 
         displayPrediction();
-        Dropdown('#prediction');
+        refreshDropdown('#prediction');
         Lookback.display();
 
         let r1;
@@ -185,6 +185,7 @@ const Process = (() => {
         } else {
             Defaults.set('amount_type', getElementById('amount_type').value);
         }
+        refreshDropdown('#amount_type');
         if (Defaults.get('currency')) {
             commonTrading.selectOption(Defaults.get('currency'), getVisibleElement('currency'));
         }
