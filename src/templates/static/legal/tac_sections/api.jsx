@@ -250,10 +250,10 @@ const Api = () => (
                         header     : it.L('Right to Terminate'),
                         list_nested: [
                             {
-                                header     : it.L('At any time and for any reason or no reason, the Company, in its sole discretion, may:'),
+                                header     : it.L('At any time and for any reason or no reason, the Company, in its sole discretion, may immediately:'),
                                 list_nested: [
                                     { text: it.L('Terminate your use of the [_1] API; or', it.website_name) },
-                                    { text: it.L('Terminate this Agreement by giving a minimum of seven days written notice to you.') },
+                                    { text: it.L('Terminate this Agreement') },
                                 ],
                             },
                             { text: it.L('You may terminate this Agreement at any time, but only by giving the Company a minimum of seven days written notice. "Written notice" here includes notice delivered by regular letter mail or by email.') },
