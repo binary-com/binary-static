@@ -255,7 +255,7 @@ const MetaTraderUI = (() => {
             handleNewAccountUI(action, acc_type, $target);
         };
 
-        if (/^manage_password|new_account$/.test(action)) {
+        if (/manage_password|new_account/.test(action)) {
             cloneForm();
             return;
         }
@@ -330,6 +330,11 @@ const MetaTraderUI = (() => {
         }
 
         if (action === 'new_account_mam') { // there is no demo/real to choose from so set existed accounts right away
+            if (Client.get('is_virtual')) {
+                displayMainMessage(MetaTraderConfig.needsRealMessage());
+                $action.find('#frm_action').empty();
+                return;
+            }
             updateAccountTypesUI('real');
         }
 
@@ -373,7 +378,6 @@ const MetaTraderUI = (() => {
     const newAccountGetType = () => `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
 
     const selectAccountTypeUI = (e) => {
-        const action = 'new_account';
         const box_class = 'mt5_type_box';
         let $item = $(e.target);
         if (!$item.hasClass(box_class)) {
@@ -383,6 +387,7 @@ const MetaTraderUI = (() => {
         $item.parents('.type-group').find(`.${box_class}.selected`).removeClass('selected');
         $item.addClass('selected');
         const selected_acc_type = $item.attr('data-acc-type');
+        const action            = `new_account${/mamm/.test(selected_acc_type) ? '_mam' : ''}`;
         if (/(demo|real)/.test(selected_acc_type)) {
             displayAccountDescription(action);
             updateAccountTypesUI(selected_acc_type);

@@ -26,34 +26,43 @@ const MetaTraderConfig = (() => {
     let $messages;
     const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
+    const newAccCheck = (acc_type, message_selector) => (
+        new Promise((resolve) => {
+            if (accounts_info[acc_type].is_demo) {
+                resolve();
+            } else if (Client.get('is_virtual')) {
+                resolve(needsRealMessage());
+            } else if (accounts_info[acc_type].account_type === 'financial') {
+                BinarySocket.wait('get_account_status').then((response_get_account_status) => {
+                    const $message = $messages.find('#msg_real_financial').clone();
+                    let is_ok = true;
+                    if (/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status)) {
+                        $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`);
+                        is_ok = false;
+                    }
+                    if (response_get_account_status.get_account_status.prompt_client_to_authenticate) {
+                        $message.find('.authenticate').setVisibility(1);
+                        is_ok = false;
+                    }
+                    if (is_ok) {
+                        resolve();
+                    } else {
+                        $message.find(message_selector).setVisibility(1);
+                        resolve($message.html());
+                    }
+                });
+            } else {
+                resolve();
+            }
+        })
+    );
+
     const actions_info = {
         new_account: {
             title        : localize('Sign up'),
             login        : response => response.mt5_new_account.login,
             prerequisites: acc_type => (
-                new Promise((resolve) => {
-                    if (accounts_info[acc_type].is_demo) {
-                        resolve();
-                    } else if (Client.get('is_virtual')) {
-                        resolve(needsRealMessage());
-                    } else if (accounts_info[acc_type].account_type === 'financial') {
-                        BinarySocket.wait('get_account_status').then((response_get_account_status) => {
-                            const $message = $messages.find('#msg_real_financial').clone();
-                            let is_ok = true;
-                            if (/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status)) {
-                                $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`);
-                                is_ok = false;
-                            }
-                            if (response_get_account_status.get_account_status.prompt_client_to_authenticate) {
-                                $message.find('.authenticate').setVisibility(1);
-                                is_ok = false;
-                            }
-                            resolve(is_ok ? '' : $message.html());
-                        });
-                    } else {
-                        resolve();
-                    }
-                })
+                newAccCheck(acc_type, '#msg_metatrader_account')
             ),
             pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
@@ -79,14 +88,8 @@ const MetaTraderConfig = (() => {
         new_account_mam: {
             title        : localize('Sign up'),
             login        : response => response.mt5_new_account.login,
-            prerequisites: () => (
-                new Promise((resolve) => {
-                    if (Client.get('is_virtual')) {
-                        resolve(needsRealMessage());
-                    } else {
-                        resolve();
-                    }
-                })
+            prerequisites: acc_type => (
+                newAccCheck(acc_type, '#msg_mam_account')
             ),
             onSuccess: (response) => {
                 GTM.mt5NewAccount(response);
