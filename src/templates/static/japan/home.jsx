@@ -57,8 +57,8 @@ const Home = () => {
                 <div id='banner' />
                 <div className='container gr-padding-30'>
                     <div className='gr-padding-30'>
-                        <h1 className='center-text gr-padding-20'>この度、事業継続が困難との判断から廃業させていただく運びとなりました。</h1>
-                        <h3 className='center-text gr-padding-20 gr-child'>お手数ですが、4月30日までに出金のお手続きをお願い致します。</h3>
+                        <h1 className='center-text gr-padding-20'>{it.L('{JAPAN ONLY}First-Class FX Binary Options Trading Platform')}</h1>
+                        <h3 className='center-text gr-padding-20 gr-child'>{it.L('{JAPAN ONLY}Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform.')}</h3>
                     </div>
                 </div>
 
