@@ -24,11 +24,24 @@ const Withdraw = () => (
                 <input type='hidden' name='activepage' id='activepage' value='1' />
                 <input type='hidden' name='totalpages' id='totalpages' value='1' />
                 <input type='hidden' name='usage' value='e' />
-                <label htmlFor='id123-control22598145' style={{marginRight: '13px'}}>出金額</label>
-                ¥<input id='id123-control22598145' style={{marginLeft: '3px'}} name='control22598145' type='text' autoComplete='off' />
-                <input id='id123-control22598118' name='control22598118' type='hidden' />
-                <input id='id123-control22598060' name='control22598060' type='hidden' />
-                <button type='submit' style={{marginLeft: '16px', marginTop: '-5px'}}>送信</button>
+                <div className='gr-padding-10'>
+                    <label htmlFor='id123-control22598118' style={{marginRight: '13px'}}>口座番号</label>
+                    <input id='id123-control22598118' name='control22598118' />
+                    <p className='error-msg invisible'>{it.L('This field is required.')}</p>
+                </div>
+                <div className='gr-padding-10'>
+                    <label htmlFor='id123-control22598060' style={{marginRight: '13px'}}>メール</label>
+                    <input id='id123-control22598060' name='control22598060' />
+                    <p className='error-msg invisible'>{it.L('This field is required.')}</p>
+                </div>
+                <div className='gr-padding-10'>
+                    <label htmlFor='id123-control22598145' style={{marginRight: '13px'}}>出金額</label>
+                    ¥<input id='id123-control22598145' style={{marginLeft: '3px'}} name='control22598145' type='text' autoComplete='off' />
+                    <p className='error-msg invisible' />
+                </div>
+                <div className='gr-padding-10'>
+                    <button type='submit'>送信</button>
+                </div>
             </form>
         </div>
     </div>
