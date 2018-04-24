@@ -178,6 +178,38 @@
             min-height: 130px;
         }
     }
+
+    .chat {
+        margin-top: 20px;
+
+        &-container {
+            display: flex;
+        }
+        &-icon {
+            margin-right: 5px;
+        }
+        &-link {
+            display: flex;
+            align-items: center;
+            background-color: $COLOR_LIGHT_GRAY;
+            border-radius: 4px;
+            color: $COLOR_DARK_GRAY;
+            height: 26px;
+            padding: 5px 10px;
+        }
+        &-text {
+            font-weight: normal;
+            text-decoration: none;
+        }
+        &-paragraph {
+            margin-top: 10px;
+            font-size: 13px;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
 }
 
 .regulation-content {

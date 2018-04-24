@@ -44,23 +44,29 @@ const Contact = () => (
                             </span>
                         </div>
                         <p className='ja-hide'>{it.L('If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help.')}</p>
-                        <div className='gr-padding-10 hint calls_recording'>
+                        <div className='hint calls_recording'>
                             * {it.L('All calls are recorded for training and monitoring purposes')}
                         </div>
-                        <div className='gr-padding-10 gr-parent'>
-                            <span className='gr-row'>
-                                <label className='gr-5'>{it.L('Chat:')}</label>
-                                <label className='gr-7'>
-                                    <a
-                                        href='https://binary.desk.com/customer/widget/chats/disabled'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                    >
-                                        Chat Link Here
-                                    </a>
-                                </label>
-                            </span>
-                            <p>{it.L('Chat support available time: 0600-2100 MYT')}</p>
+                        <div className='gr-parent'>
+                            <div className='chat'>
+                                <div className='chat-container'>
+                                    <img className='chat-icon' src={it.url_for('images/pages/contact/chat-icon.svg')} />
+                                    <div className='chat-link'>
+                                        <a
+                                            className='chat-text'
+                                            href='https://binary.desk.com/customer/widget/chats/disabled'
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                        >
+                                            {it.L('Live Chat')}
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className='chat-paragraph'>
+                                    <p>{it.L('Weekdays: 1000 - 1300 GMT')}</p>
+                                    <p>{it.L('Weekend: 1200 - 0900 GMT')}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className='gr-6 gr-12-t gr-12-p gr-12-m ja-hide'>
