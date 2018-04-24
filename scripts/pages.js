@@ -25,6 +25,7 @@ module.exports = [
     ['new_account/maltainvestws',          'app/new_account/financial',                 'default',    'Financial Account Opening'],
     ['new_account/realws',                 'app/new_account/real',                      'default',    'Real Money Account Opening'],
     ['new_account/virtualws',              'app/new_account/virtual',                   'default',    'Create New Account'],
+    ['new_account/welcome',                'app/new_account/welcome_page',              'default',    'Welcome to Binary.com'],
 
     ['resources',                          'app/resources/index',                       'default',    'Resources'],
     ['resources/asset_indexws',            'app/resources/asset_index',                 'default',    'Asset Index', 'ja'],
@@ -127,6 +128,4 @@ module.exports = [
     ['graduates',                          'landing_pages/graduate_program',            null,        'Binary.com Graduate Program',        'NOT-en'],
     ['hackathon',                          'landing_pages/hackathon',                   null,        'Hackathon Competition',              'NOT-en'],
     ['landing/signup-frame',               'landing_pages/signup_frame',                null,        'Sign up'],
-    ['バイナリーオプション',                  'landing_pages/binary_japan',                null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
-    ['bo_1',                               'landing_pages/binary_japan_2',              null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
 ];

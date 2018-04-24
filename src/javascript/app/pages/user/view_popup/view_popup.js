@@ -115,7 +115,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
         containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier, false, 3, 2));
         if (Lookback.isLookback(contract.contract_type)) {
-            containerSetText('trade_details_payout', Lookback.getLookbackFormula(contract.contract_type, formatMoney(contract.currency, multiplier, false, 3, 2)));
+            containerSetText('trade_details_payout', Lookback.getFormula(contract.contract_type, formatMoney(contract.currency, multiplier, false, 3, 2)));
         } else {
             containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         }
@@ -499,7 +499,7 @@ const ViewPopup = (() => {
         let [barrier_text, low_barrier_text] = ['Barrier', 'Low Barrier'];
         if (Lookback.isLookback(contract.contract_type)) {
             [barrier_text, low_barrier_text] =
-                Lookback.getLBBarrierLabel(contract.contract_type, contract.barrier_count);
+                Lookback.getBarrierLabel(contract.contract_type, contract.barrier_count);
         } else if (contract.barrier_count > 1) {
             barrier_text = 'High Barrier';
         } else if (/^DIGIT(MATCH|DIFF)$/.test(contract.contract_type)) {
