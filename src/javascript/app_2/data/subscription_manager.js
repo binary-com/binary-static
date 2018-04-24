@@ -82,11 +82,12 @@ const SubscriptionManager = (() => {
     /**
      * To forget a subscription which submitted for a specific callback function
      *
-     * @param {String}   msg_type     msg_type to forget
-     * @param {Function} fncCallback  the same function passed to subscribe()
+     * @param {String}   msg_type      msg_type to forget
+     * @param {Function} fncCallback   the same function passed to subscribe()
      *     (this is the way to distinguish between different subscribers of the same stream at the same time)
+     * @param {Object}   match_values  optional, to only forget subscriptions having request that "contains" provided values
      */
-    const forget = (msg_type, fncCallback) => {
+    const forget = (msg_type, fncCallback, match_values) => {
         if (typeof fncCallback !== 'function') {
             throw new Error(`Missing callback function. To forget all subscriptions of msg_type: ${msg_type}, please call forgetAll().`);
         }
@@ -98,6 +99,9 @@ const SubscriptionManager = (() => {
         ));
 
         sub_ids.forEach((id) => {
+            if (match_values && !hasValues(subscriptions[id].request, match_values)) {
+                return;
+            }
             const stream_id = subscriptions[id].stream_id;
             if (stream_id && subscriptions[id].subscribers.length === 1) {
                 delete subscriptions[id];
@@ -141,6 +145,12 @@ const SubscriptionManager = (() => {
 
     const hasCallbackFunction = (sub_id, fncCallback) =>
         (subscriptions[sub_id] && subscriptions[sub_id].subscribers.indexOf(fncCallback) !== -1);
+
+    const hasValues = (request_obj, values_obj) => (
+        typeof request_obj === 'object' &&
+        typeof values_obj  === 'object' &&
+        Object.keys(values_obj).every(key => request_obj[key] === values_obj[key])
+    );
 
     return {
         subscribe,
