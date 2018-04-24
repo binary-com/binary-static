@@ -23,11 +23,19 @@ const SubscriptionManager = (() => {
     /**
      * To submit request for a new subscription
      *
-     * @param {String}   msg_type     msg_type of the request
-     * @param {Object}   request_obj  the whole object of the request to be made
-     * @param {Function} fncCallback  callback function to pass the responses to
+     * @param {String}   msg_type             msg_type of the request
+     * @param {Object}   request_obj          the whole object of the request to be made
+     * @param {Function} fncCallback          callback function to pass the responses to
+     * @param {Boolean}  should_forget_first  when it's true: forgets the previous subscription, then subscribes after receiving the forget response (if any)
      */
-    const subscribe = (msg_type, request_obj, fncCallback) => {
+    const subscribe = (msg_type, request_obj, fncCallback, should_forget_first = false) => {
+        if (should_forget_first) {
+            forget(msg_type, fncCallback).then(() => {
+                subscribe(msg_type, request_obj, fncCallback);
+            });
+            return;
+        }
+
         let sub_id = Object.keys(subscriptions).find(id => isDeepEqual(request_obj, subscriptions[id].request));
 
         if (!sub_id) {
@@ -98,6 +106,7 @@ const SubscriptionManager = (() => {
             hasCallbackFunction(id, fncCallback)
         ));
 
+        const forgets_list = [];
         sub_ids.forEach((id) => {
             if (match_values && !hasValues(subscriptions[id].request, match_values)) {
                 return;
@@ -105,13 +114,14 @@ const SubscriptionManager = (() => {
             const stream_id = subscriptions[id].stream_id;
             if (stream_id && subscriptions[id].subscribers.length === 1) {
                 delete subscriptions[id];
-                forgetStream(stream_id);
+                forgets_list.push(forgetStream(stream_id));
             } else {
                 // there are other subscribers, or for some reason there is no stream_id:
                 // (i.e. returned an error, or forget() being called before the first response)
                 subscriptions[id].subscribers.splice(subscriptions[id].subscribers.indexOf(fncCallback), 1);
             }
         });
+        return Promise.all(forgets_list);
     };
 
     /**
@@ -132,16 +142,18 @@ const SubscriptionManager = (() => {
             }
         });
 
-        if (!isEmptyObject(types_to_forget)) {
-            BinarySocket.send({ forget_all: Object.keys(types_to_forget) });
-        }
+        return Promise.resolve(
+            !isEmptyObject(types_to_forget) ?
+                BinarySocket.send({ forget_all: Object.keys(types_to_forget) }) :
+                {}
+        );
     };
 
-    const forgetStream = (stream_id) => {
-        if (stream_id) {
-            BinarySocket.send({ forget: stream_id });
-        }
-    };
+    const forgetStream = (stream_id) => Promise.resolve(
+        stream_id ?
+            BinarySocket.send({ forget: stream_id }) :
+            {}
+    );
 
     const hasCallbackFunction = (sub_id, fncCallback) =>
         (subscriptions[sub_id] && subscriptions[sub_id].subscribers.indexOf(fncCallback) !== -1);
