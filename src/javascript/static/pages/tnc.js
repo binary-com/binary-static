@@ -21,18 +21,18 @@ const TermsAndConditions = (() => {
             const $target = $(e.target);
             if (!$target.is('a')) return;
             // if parent : prevent default and change hash to first link instead 
-            const $sublinks = $target.siblings('ul');
+            const $submenu = $target.siblings('ul');
 
-            if ($sublinks.length) {
+            if ($submenu.length) {
                 // parent link is clicked
                 e.preventDefault();
 
-                if ($sublinks.find('.selected').length) {
+                if ($submenu.find('.selected').length) {
                     // has any selected sublinks
-                    $target.toggleClass('selected').parent('li').toggleClass('active');
+                    $target.parent('li').toggleClass('active');
                 }
                 else {
-                    window.location.hash = $sublinks.find('a').first()[0].hash;
+                    window.location.hash = $submenu.find('a')[0].hash;
                 }
             }
         });
@@ -102,10 +102,15 @@ const TermsAndConditions = (() => {
         updateSidebarContentDOM(`${hash}-content`);
     };
 
-    const updateSidebarDOM = (link_id) => {
-        const $sidebar = $('.sidebar-collapsible');
+    const updateSidebarDOM = (id) => {
+        const $li = $(id);
+        const $parent_li = $li.closest('.has-submenu');
         // TODO: update sidebar visual state
-        // link_id is selected
+        // id is selected
+        if ($parent_li.length) {
+            $parent_li.addClass('active').children('a').addClass('selected');
+        }
+        $li.addClass('active').find('a').addClass('selected');
     };
 
     const updateSidebarContentDOM = (content_id) => {

@@ -389,6 +389,10 @@ button .barspinner.white {
 .sidebar-collapsible-container {
     position: relative;
     height: 100%;
+
+    .has-submenu.active ul {
+        height: auto;
+    }
 }
 
 .sidebar {
