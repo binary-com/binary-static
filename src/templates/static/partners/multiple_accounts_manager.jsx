@@ -47,7 +47,7 @@ const MultipleAccountsManager = () => (
                     <BoxRow bottom_row>
                         <MAMBox
                             image='info'
-                            text={it.L('View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price, SL, TP, swap, and profit')}
+                            text={it.L('View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price,  stop loss, take profit, swap, and profit')}
                         />
                         <MAMBox
                             image='exclude'
@@ -71,27 +71,24 @@ const MultipleAccountsManager = () => (
                 <MAMStep
                     image='talktous'
                     header={it.L('Talk to us')}
-                    text={it.L('Learn how to set up and authenticate your master account, link sub accounts, and more.')}
+                    text={it.L('Interested in our MAM tool? [_1]Contact us[_2] for more information on setting up your master account', '<a href="mailto:marketing@binary.com">', '</a>')}
                     circle_no='1'
                 />
                 <MAMStep
                     image='download'
                     header={it.L('Download MAM')}
-                    text={it.L('Download the MAM application after setup is completed. Log in with your master account credentials.')}
+                    text={it.L('[_1]Download the MAM app[_2] after you’ve set up your master account. Your login credentials will be provided', '<a href="https://s3.amazonaws.com/binary-mt5/binarycom_mam.rar" rel="noopener noreferrer">', '</a>')}
                     circle_no='2'
                 />
                 <MAMStep
                     image='monitor'
                     header={it.L('Manage sub accounts')}
-                    text={it.L('Monitor and manage your client list, set allocations and exclusions for individual sub accounts, and more.')}
+                    text={it.L('Monitor and manage your client list, adjust settings for individual sub accounts, and more')}
                     circle_no='3'
                 />
             </div>
 
             <div className='center-text'>
-                <div className='gr-parent gr-padding-20'>
-                    <a className='button' href='https://s3.amazonaws.com/binary-mt5/binarycom_mam.rar' rel='noopener noreferrer'><span>{it.L('Download Now')}</span></a>
-                </div>
                 <p>{it.L('Interested in our MAM tool for MetaTrader 5? Contact us at [_1] for more info.', '<a href="mailto:marketing@binary.com">marketing@binary.com</a>')}</p>
             </div>
         </div>

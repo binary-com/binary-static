@@ -62,7 +62,7 @@ const TypesOfAccounts = () => (
         />
         <Box
             image='volatility_indices'
-            title={it.L('Volatility Indices*')}
+            title={it.L('MAM Volatility Indices*')}
             text={it.L('The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
         />
 
