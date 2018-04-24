@@ -3,6 +3,7 @@ const Client           = require('../../../base/client');
 const formatMoney      = require('../../../common/currency').formatMoney;
 const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
+const LocalStore       = require('../../../../_common/storage').LocalStore;
 const State            = require('../../../../_common/storage').State;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
 const getHashValue     = require('../../../../_common/url').getHashValue;
@@ -376,7 +377,7 @@ const MetaTraderUI = (() => {
             const new_acc_type = newAccountGetType();
             newAccountSetTitle(new_acc_type);
             displayAccountDescription(new_acc_type);
-            Client.set('mt5_account', new_acc_type);
+            LocalStore.set('mt5_account', new_acc_type);
             actions_info[action].prerequisites(new_acc_type).then((error_msg) => {
                 displayMessage('#new_account_msg', error_msg || '');
                 $form.find('#view_1 #btn_next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
