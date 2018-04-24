@@ -42,6 +42,7 @@ const ScrollToAnchor = (() => {
     const addAnchorsToElements = () => {
         const els = document.querySelectorAll('[data-anchor]');
         els.forEach(el => {
+            if (el.querySelector('.data-anchor-link')) return;
             const title = el.innerText;
             const id = encode(title);
             el.dataset.anchor = id;
