@@ -38,8 +38,9 @@ const handlePortfolioData = (portfolio_arr) => {
     1. Move socket connections to DAO
     2. Selling both in transactionHandler and updateIndicative?
     3. Make tooltip appdetails tooltip
-    4. Add styling
-    5. Translations
+    4. Add currencies to totals
+    5. Add styling
+    6. Translations
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
@@ -142,8 +143,8 @@ class Portfolio extends React.PureComponent  {
             return;
         }
         let data_source = this.state.data_source.slice();
-        const footer = Object.assign({}, this.state.footer);
-        const proposal    = response.proposal_open_contract;
+        const footer    = Object.assign({}, this.state.footer);
+        const proposal  = response.proposal_open_contract;
         // force to sell the expired contract, in order to remove from portfolio
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
             BinarySocket.send({ sell_expired: 1 });
@@ -154,8 +155,9 @@ class Portfolio extends React.PureComponent  {
             data_source.forEach(portfolio_item => {
                 if (portfolio_item.id === +proposal.contract_id) {
                     let amount = parseFloat(proposal.bid_price);
-                    amount = formatMoney(false, amount, true);
                     let style = portfolio_item.indicative.style;
+
+                    amount = formatMoney(false, amount, true);
 
                     if (+proposal.is_valid_to_sell === 1) {
                         if (proposal.bid_price !== portfolio_item.indicative.amount) {
@@ -172,20 +174,20 @@ class Portfolio extends React.PureComponent  {
         this.setState({ data_source, footer });
     }
     
-    updateTotals = (dataArr, footerObj) => {
+    updateTotals = (portfolioArr, footerObj) => {
         let indicative = 0; 
         let payout = 0; 
         let purchase = 0;
         
-        dataArr.forEach((item) => {
-            indicative += (+item.indicative.amount);
-            payout += (+item.payout);
-            purchase += (+item.purchase);
+        portfolioArr.forEach((portfolio_item) => {
+            indicative += (+portfolio_item.indicative.amount);
+            payout     += (+portfolio_item.payout);
+            purchase   += (+portfolio_item.purchase);
         });
-        
+
         footerObj.indicative = formatMoney(false, indicative, true);
-        footerObj.payout = formatMoney(false, payout, true);
-        footerObj.purchase = formatMoney(false, purchase, true);
+        footerObj.payout     = formatMoney(false, payout, true);
+        footerObj.purchase   = formatMoney(false, purchase, true);
     } 
 
     updateOAuthApps = (response) => {
