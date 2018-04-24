@@ -5,7 +5,6 @@ const BinarySocket     = require('../../../../base/socket');
 const Validation       = require('../../../../common/form_validation');
 const getElementById   = require('../../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../../_common/localize').localize;
-const LocalStore       = require('../../../../../_common/storage').LocalStore;
 const State            = require('../../../../../_common/storage').State;
 const isEmptyObject    = require('../../../../../_common/utility').isEmptyObject;
 const showLoadingImage = require('../../../../../_common/utility').showLoadingImage;
@@ -45,11 +44,8 @@ const FinancialAssessment = (() => {
             });
         }
 
-        if (LocalStore.get('financial_assessment_redirect')) {
-            const is_mt5_financial = /^(real_vanuatu_standard)$/.test(LocalStore.get('mt5_account'));
-            $('#trading_experience_form').setVisibility(is_mt5_financial);
-            LocalStore.remove('mt5_account');
-        }
+        const is_mt5_financial = /real_vanuatu_standard/.test(localStorage.getItem('financial_assessment_redirect'));
+        $('#trading_experience_form').setVisibility(is_mt5_financial);
 
         Object.keys(financial_assessment).forEach((key) => {
             const val = financial_assessment[key];
@@ -137,8 +133,13 @@ const FinancialAssessment = (() => {
         }
     };
 
+    const onUnload = () => {
+        localStorage.removeItem('financial_assessment_redirect');
+    };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 
