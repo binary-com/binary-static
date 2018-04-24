@@ -182,6 +182,10 @@
     .chat {
         margin-top: 20px;
 
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 20px;
+        }
+
         &-container {
             display: flex;
         }
