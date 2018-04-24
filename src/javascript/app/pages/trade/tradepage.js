@@ -37,8 +37,6 @@ const TradePage = (() => {
             TradingEvents.init();
         }
 
-        Dropdown('#amount_type');
-
         BinarySocket.wait('authorize').then(() => {
             if (Client.get('is_virtual')) {
                 Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
