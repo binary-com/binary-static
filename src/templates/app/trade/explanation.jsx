@@ -10,6 +10,7 @@ const Explanation = () => (
                 <p>{it.L('Asian options settle by comparing the <strong>last tick</strong> with the average spot over the period.')}</p>
                 <p>{it.L('If you select "Asian Rise", you will win the payout if the <strong>last tick</strong> is <strong>higher</strong> than the <strong>average</strong> of the ticks.')}</p>
                 <p>{it.L('If you select "Asian Fall", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks.')}</p>
+                <p>{it.L('If the <strong>last tick</strong> is equal to the average of the ticks, you don\'t win the payout.')}</p>
             </div>
 
             <div id='winning_digits' className='invisible'>
@@ -22,6 +23,7 @@ const Explanation = () => (
                 <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Ends Between", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>.')}</p>
                 <p>{it.L('If you select "Ends Outside", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>.')}</p>
+                <p>{it.L('If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don\'t win the payout.')}</p>
             </div>
 
             <div id='winning_evenodd' className='invisible'>
@@ -34,6 +36,7 @@ const Explanation = () => (
                 <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Higher", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>.')}</p>
                 <p>{it.L('If you select "Lower", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>.')}</p>
+                <p>{it.L('If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don\'t win the payout.')}</p>
             </div>
 
             <div id='winning_overunder' className='invisible'>
@@ -46,6 +49,7 @@ const Explanation = () => (
                 <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Rises", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>.')}</p>
                 <p>{it.L('If you select "Falls", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>.')}</p>
+                <p>{it.L('If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don\'t win the payout.')}</p>
             </div>
 
             <div id='winning_runbet-lucky10' className='invisible'>
