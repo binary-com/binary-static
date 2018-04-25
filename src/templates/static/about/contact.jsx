@@ -63,7 +63,7 @@ const Contact = () => (
                                     <img className='chat-icon' src={it.url_for('images/pages/contact/chat-icon.svg')} />
                                     <a
                                         className='chat-link'
-                                        href='https://binary.desk.com/customer/widget/chats/disabled'
+                                        href='https://binary.desk.com/customer/widget/chats/new'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                     >
