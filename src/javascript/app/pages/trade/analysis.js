@@ -136,7 +136,7 @@ const TradingAnalysis = (() => {
             const array_length = selector_array.length;
             if (options.direction === 'left') {
                 index_to_show = active_index - 1;
-                index_to_show = index_to_show === 0 ? index_to_show: array_length - 1;
+                index_to_show = index_to_show < 0 ? array_length - 1 : index_to_show;
             } else {
                 index_to_show = active_index + 1;
                 index_to_show = index_to_show === array_length ? 0 : index_to_show;

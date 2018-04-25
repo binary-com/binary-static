@@ -292,6 +292,10 @@ body #not_authenticated_financial ul.checked > li {
     img.responsive {
         max-height: 150px;
         width: auto;
+
+        @media (max-width: 350px) {
+            max-width: 290px;
+        }
     }
 }
 
