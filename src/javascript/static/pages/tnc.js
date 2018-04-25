@@ -17,25 +17,7 @@ const TermsAndConditions = (() => {
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
         tabListener();
 
-        $('.sidebar-collapsible').on('click', (e) => {
-            const $target = $(e.target);
-            if (!$target.is('a')) return;
-            // if parent : prevent default and change hash to first link instead 
-            const $submenu = $target.siblings('ul');
-
-            if ($submenu.length) {
-                // parent link is clicked
-                e.preventDefault();
-
-                if ($submenu.find('.selected').length) {
-                    // has any selected sublinks
-                    $target.parent('li').toggleClass('active');
-                }
-                else {
-                    window.location.hash = $submenu.find('a')[0].hash;
-                }
-            }
-        });
+        $('.sidebar-collapsible').on('click', sidebarClickHandler);
         updateSidebar();
 
         checkWidth();
@@ -87,22 +69,39 @@ const TermsAndConditions = (() => {
     const updateSidebar = () => {
         const hash = window.location.hash || '#legal-binary';
         updateSidebarDOM(hash);
-        updateSidebarContentDOM(`${hash}-content`);
     };
 
     const updateSidebarDOM = (id) => {
         const $li = $(id);
         const $parent_li = $li.closest('.has-submenu');
-        // TODO: update sidebar visual state
-        // id is selected
+
         if ($parent_li.length) {
             $parent_li.addClass('active').children('a').addClass('selected');
         }
+
         $li.addClass('active').find('a').addClass('selected');
+
+        const content_id = `${id}-content`;
+        $(content_id).removeClass('invisible');
     };
 
-    const updateSidebarContentDOM = (content_id) => {
-        $(content_id).removeClass('invisible');
+    const sidebarClickHandler = (e) => {
+        const $target = $(e.target);
+        if (!$target.is('a')) return;
+        const $submenu = $target.siblings('ul');
+
+        if ($submenu.length) {
+            // parent link is clicked
+            e.preventDefault();
+
+            if ($submenu.find('.selected').length) {
+                // has selected sublink
+                $target.parent('li').toggleClass('active');
+            }
+            else {
+                window.location.hash = $submenu.find('a')[0].hash;
+            }
+        }
     };
 
     const checkWidth = () => {
