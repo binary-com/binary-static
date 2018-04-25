@@ -89,7 +89,7 @@ const TypesOfAccounts = () => (
                         [{ text: <Row number={6}  text={it.L('Minimum deposit')} />},        { text: it.L('No') },                     { text: it.L('No') },                     { text: it.L('No') }],
                         [{ text: <Row number={7}  text={it.L('Margin call')} />},            { text: it.L('150%') },                   { text: it.L('150%') },                   { text: it.L('100%') }],
                         [{ text: <Row number={8}  text={it.L('Stop out level')} />},         { text: it.L('75%') },                    { text: it.L('75%') },                    { text: it.L('50%') }],
-                        [{ text: <Row number={9}  text={it.L('Number of assets')} />},       { text: it.L('60+') },                    { text: it.L('80+') },                    { text: it.L('8') }],
+                        [{ text: <Row number={9}  text={it.L('Number of assets')} />},       { text: it.L('60+') },                    { text: it.L('70+') },                    { text: it.L('8') }],
                         [{ text: <Row number={10} text={it.L('Maximum ticket size')} />},    { text: it.L('10 lots') },                { text: it.L('50 lots') },                { text: it.L('30 lots') }],
                         [{ text: <Row number={11} text={it.L('Minimum ticket size')} />},    { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') }],
                         [{ text: <Row number={12} text={it.L('Step size')} />},              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') }],

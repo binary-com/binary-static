@@ -419,7 +419,7 @@ const Metatrader = () => (
 
                     <form className='center-text' id='frm_revoke_mam'>
                         <h2>{it.L('Revoke manager')}</h2>
-                        <p>{it.L('You may revoke the current manager\'s access and assign a new manager to your MAM account.')}</p>
+                        <p>{it.L('You may revoke the current manager\'s access.')}</p>
                         <p>{it.L('Assigned manager\'s account ID:')}&nbsp;<span id='mam_id' /></p>
                         <SubmitButton
                             no_wrapper
