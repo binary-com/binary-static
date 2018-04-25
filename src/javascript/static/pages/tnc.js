@@ -72,7 +72,7 @@ const TermsAndConditions = (() => {
         const $parent_li = $li.closest('.has-submenu');
 
         if ($parent_li.length) {
-            $parent_li.addClass('active').children('a').addClass('selected');
+            $parent_li.addClass('active').children('a').addClass('selected no-transition');
         }
 
         $li.addClass('active').find('a').addClass('selected');
@@ -92,7 +92,7 @@ const TermsAndConditions = (() => {
 
             if ($submenu.find('.selected').length) {
                 // has selected sublink
-                $target.parent('li').toggleClass('active');
+                $target.removeClass('no-transition').parent('li').toggleClass('active');
             }
             else {
                 window.location.hash = $submenu.find('a')[0].hash;
