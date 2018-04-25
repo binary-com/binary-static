@@ -15,16 +15,15 @@ const routes = [
 ];
 
 const RouteWithSubRoutes = route => (
-    (route.is_authenticated && !Client.isLoggedIn()) ? // TODO: update the message style
-        <a href='javascript:;' onClick={redirectToLogin}>{localize('Please login to view this page.')}</a>
-        :
-        <Route
-            exact={route.exact}
-            path={route.path}
-            render={props => (
+    <Route
+        exact={route.exact}
+        path={route.path}
+        render={props => (
+            (route.is_authenticated && !Client.isLoggedIn()) ? // TODO: update styling of the message below
+                <a href='javascript:;' onClick={redirectToLogin}>{localize('Please login to view this page.')}</a> :
                 <route.component {...props} routes={route.routes} />
-            )}
-        />
+        )}
+    />
 );
 
 export const BinaryRoutes = () => routes.map((route, idx) => (
