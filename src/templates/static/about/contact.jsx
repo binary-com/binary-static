@@ -6,9 +6,6 @@ const support_email = 'support@binary.com';
 const Contact = () => (
     <div className='container' id='contact_content'>
         <div className='gr-row gr-parent static_full border-bottom gr-padding-30'>
-            {/* <div className='gr-2 gr-hide-m ja-hide'>
-                <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
-            </div> */}
             <div className='contact-content'>
                 <h1 className='center-text'>{it.L('Contact us')}</h1>
                 <div className='gr-row'>
