@@ -143,17 +143,17 @@ const PaymentAgents = () => (
             <li>{it.L('Subject to the law, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to the Agent or Client for any loss, damage or debt whatsoever arising directly or indirectly out of, or in connection with this Agreement. The Agent agrees to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses including all and any legal fees incurred arising out of his failure to comply with any and all of his obligations set forth in this Agreement.')}</li>
         </ol>
 
-        <h2>L. {it.L('Modification/Amendment')}</h2>
+        <h2 data-anchor>L. {it.L('Modification/Amendment')}</h2>
         <p>{it.L('No modification or amendment of any or all clauses or provisions of this Agreement shall be valid unless the clear and unequivocal acceptance of such amendments by both Parties.')}</p>
 
-        <h2>M. {it.L('Intellectual Property Rights')}</h2>
+        <h2 data-anchor>M. {it.L('Intellectual Property Rights')}</h2>
         <ol>
             <li>{it.L('The Company is the sole owner of all rights or titles or interests whatsoever in and to all [_1] electronic systems including but not limited to any and all software, e-mail and email management software, including any modifications.', it.website_name)}</li>
             <li>{it.L('It is further noted that the Company shall be the sole owner of all rights or titles or interests whatsoever of data and/or other information generated and/or produced and/or distributed by or through [_1] electronic systems and other electronic systems used by [_1], including any modifications.', it.website_name)}</li>
             <li>{it.L('All [_1] registered or unregistered proprietary rights including but not limited to patents, trademarks, trade secrets, domain names, URL, pricing information and/or other proprietary rights materials, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, processes, procedures whatsoever shall solely remain with the Company.', it.website_name)}</li>
         </ol>
 
-        <h2>N. {it.L('Force Majeure Event')}</h2>
+        <h2 data-anchor>N. {it.L('Force Majeure Event')}</h2>
         <ol>
             <li>{it.L('No Party shall be deemed liable for a partial or complete failure to meet its obligations, under this Agreement, in case of force majeure events including but not limited to civil war, unrest, insurrection, international intervention, any governmental actions, exchange controls, nationalizations, devaluations, forfeitures, natural disasters, act of God and other inevitable and/or unforeseeable and/or unanticipated and/or unpredicted events, not depending on the will of the Parties.')}</li>
             <li>{it.L('The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall deprive of the right to released form any responsibility, under this Agreement where it fails to duly notify the other Party on time.')}</li>
@@ -161,7 +161,7 @@ const PaymentAgents = () => (
             <li>{it.L('If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately.')}</li>
         </ol>
 
-        <h2>O. {it.L('Confidentiality')}</h2>
+        <h2 data-anchor>O. {it.L('Confidentiality')}</h2>
         <ol>
             <li>{it.L('The Agent shall treat all information related to the Company and Client including but not limited to Client identity, financial status, trading or transaction performance, as well as Company’s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the “Confidential Information”).')}</li>
             <li>{it.L('The Agent shall not produce any copies of any Confidential Information and/or any content based on the concepts contained within the Confidential Information for personal use and/or for distribution, without the Company’s request.')}</li>
@@ -169,7 +169,7 @@ const PaymentAgents = () => (
             <li>{it.L('It is noted that immediately upon termination of the relationship between the Company and the Agent, the Agent shall return to the Company any documents pertaining to the Company’s business whatsoever which are in the Agent’s possession.')}</li>
         </ol>
 
-        <h2>P. {it.L('Termination')}</h2>
+        <h2 data-anchor>P. {it.L('Termination')}</h2>
         <p>{it.L('Subject to the provisions of Sections J and N of this Agreement, it is agreed and understood that any of the Parties may terminate this Agreement by giving 7 days written notice to the other Party.')}</p>
     </div>
 );
