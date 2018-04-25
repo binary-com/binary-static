@@ -16,15 +16,15 @@ const Contact = () => (
                         </div>
                         <div className='gr-padding-10 ja-hide gr-parent'>
                             <div className='gr-row'>
-                                <div className='contact-icon-container gr-hide-p gr-hide-m'>
-                                    <img className='contact-icon' src={it.url_for('images/pages/contact/contact-icon.svg')} />
+                                <div className='gr-3 gr-hide-m'>
+                                    <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
                                 </div>
-                                <div className='gr-9 gr-12-p gr-12-m'>
+                                <div className='gr-9 gr-9-p gr-12-m'>
                                     <div className='gr-row'>
-                                        <div className='gr-4 gr-4-t gr-4-p gr-4-m'>
+                                        <div className='gr-12'>
                                             <label htmlFor='cs_telephone_number' className='u-text-bold'>{it.L('Telephone:')}</label>
                                         </div>
-                                        <div className='gr-8 gr-6-t gr-8-p gr-8-m'>
+                                        <div className='gr-12 gr-padding-10'>
                                             <Select
                                                 id='cs_telephone_number'
                                                 options={[
@@ -39,9 +39,8 @@ const Contact = () => (
                                             />
                                         </div>
                                     </div>
-                                    <div className='gr-row gr-padding-10'>
-                                        <div className='gr-4 gr-4-t gr-4-p gr-4-m'/>
-                                        <div className='gr-8 gr-8-t gr-8-p gr-8-m' id='display_cs_telephone'>
+                                    <div className='gr-row'>
+                                        <div className='gr-12' id='display_cs_telephone'>
                                             {('+44 (0) 1666 800042')}
                                             <br />
                                             {it.L('[_1] (Toll Free)', '0800 011 9847')}
