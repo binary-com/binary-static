@@ -35,10 +35,10 @@ const CashierJP = (() => {
 
                             const response_authorize = State.getResponse('authorize');
                             if (response_authorize.loginid) {
-                                $loginid.val(response_authorize.loginid).attr('disabled', 'disabled');
+                                $loginid.val(response_authorize.loginid).attr('readonly', 'true');
                             }
                             if (response_authorize.email) {
-                                $email.val(response_authorize.email).attr('disabled', 'disabled');
+                                $email.val(response_authorize.email).attr('readonly', 'true');
                             }
                             $('#japan_cashier_container button').on('click', (e) => {
                                 const result = errorHandler();
@@ -67,11 +67,11 @@ const CashierJP = (() => {
             is_ok = false;
         }
         if (!$loginid.val()) {
-            $loginid.removeAttr('disabled').siblings('.error-msg').setVisibility(1);
+            $loginid.removeAttr('readonly').siblings('.error-msg').setVisibility(1);
             is_ok = false;
         }
         if (!$email.val()) {
-            $email.removeAttr('disabled').siblings('.error-msg').setVisibility(1);
+            $email.removeAttr('readonly').siblings('.error-msg').setVisibility(1);
             is_ok = false;
         }
 
