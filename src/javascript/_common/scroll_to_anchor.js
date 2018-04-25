@@ -16,12 +16,16 @@ const ScrollToAnchor = (() => {
 
     const init = () => {
         addAnchorsToElements();
-        scrollToAnchorInQuery();
+        const target = getAnchorTargetElement();
+
         // remove query param if loaded onto a page without target element
-        if (!getAnchorTargetElement()) {
+        if (!target || !isVisible(target)) {
             Url.updateParamsWithoutReload({
                 anchor: null,
             }, true);
+        }
+        else {
+            scrollToAnchorInQuery();
         }
     };
 
@@ -85,13 +89,6 @@ const ScrollToAnchor = (() => {
 
     const cleanup = () => {
         id_occurrence_count = {};
-        // remove query param if leaving page with corresponding element
-        const el = getAnchorTargetElement();
-        if (el && isVisible(el)) {
-            Url.updateParamsWithoutReload({
-                anchor: null,
-            }, true);
-        }
     };
 
     return {
