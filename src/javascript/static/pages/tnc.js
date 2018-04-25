@@ -68,7 +68,7 @@ const TermsAndConditions = (() => {
 
     const updateSidebarDOM = () => {
         const id = window.location.hash || '#legal-binary';
-        const $li = $(id);
+        const $li = $(`${id}-link`);
         const $parent_li = $li.closest('.has-submenu');
 
         if ($parent_li.length) {
@@ -77,8 +77,7 @@ const TermsAndConditions = (() => {
 
         $li.addClass('active').find('a').addClass('selected');
 
-        const content_id = `${id}-content`;
-        $(content_id).removeClass('invisible');
+        $(`${id}-content`).removeClass('invisible');
     };
 
     const sidebarClickHandler = (e) => {
