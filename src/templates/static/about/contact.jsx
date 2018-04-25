@@ -79,22 +79,22 @@ const Contact = () => (
                     </div>
                     <div className='gr-4 gr-4-t gr-5-p gr-12-m ja-hide'>
                         <div className='gr-padding-10 gr-parent u-text-bold'>
-                            {it.L('Email:')}
+                            <p className='no-margin'>{it.L('Email:')}</p>
                         </div>
                         <div className='gr-padding-10 gr-parent'>
-                            {it.L('For general support:')}
+                            <p className='no-margin'>{it.L('For general support:')}</p>
                         </div>
                         <div className='gr-padding-10 gr-parent u-mar-bottom-small'>
                             <a href={(`mailto:${support_email}`)} rel='nofollow'>{support_email}</a>
                         </div>
                         <div className='gr-padding-10 gr-parent'>
-                            {it.L('For payments-related queries:')}
+                            <p className='no-margin'>{it.L('For payments-related queries:')}</p>
                         </div>
                         <div className='gr-padding-10 gr-parent u-mar-bottom-small'>
                             <a href='mailto:payments@binary.com'>payments@binary.com</a>
                         </div>
                         <div className='gr-padding-10 gr-parent'>
-                            {it.L('For affiliate, partnership, and other marketing-related queries:')}
+                            <p className='no-margin'>{it.L('For affiliate, partnership, and other marketing-related queries:')}</p>
                         </div>
                         <div className='gr-padding-10 gr-parent'>
                             <a href='mailto:marketing@binary.com'>marketing@binary.com</a>
