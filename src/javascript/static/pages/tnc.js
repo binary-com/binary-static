@@ -1,6 +1,5 @@
 const tabListener = require('binary-style').tabListener;
 const localize    = require('../../_common/localize').localize;
-const urlParam    = require('../../_common/url').param;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
 
 const TermsAndConditions = (() => {
@@ -28,7 +27,6 @@ const TermsAndConditions = (() => {
     const handleActiveTab = () => {
         const params      = window.location.hash.split('&');
         const hash        = params[0] || '#legal';
-        const sub_content = params[1];
         const menu        = '.tab-menu-wrap';
         const content     = '.tab-content-wrapper';
 
