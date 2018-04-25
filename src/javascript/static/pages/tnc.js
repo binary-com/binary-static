@@ -18,7 +18,7 @@ const TermsAndConditions = (() => {
         tabListener();
 
         $('.sidebar-collapsible').on('click', sidebarClickHandler);
-        updateSidebar();
+        updateSidebarDOM();
 
         checkWidth();
         window.onresize = checkWidth;
@@ -66,12 +66,8 @@ const TermsAndConditions = (() => {
             .setVisibility(1);
     };
 
-    const updateSidebar = () => {
-        const hash = window.location.hash || '#legal-binary';
-        updateSidebarDOM(hash);
-    };
-
-    const updateSidebarDOM = (id) => {
+    const updateSidebarDOM = () => {
+        const id = window.location.hash || '#legal-binary';
         const $li = $(id);
         const $parent_li = $li.closest('.has-submenu');
 
