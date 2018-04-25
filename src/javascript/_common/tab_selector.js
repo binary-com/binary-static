@@ -165,7 +165,7 @@ const TabSelector = (() => {
         });
         applyToAllElements('.go-right', (element) => {
             element.addEventListener('click', (e) => {
-                fn({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
+                fn({ selector: e.target.getAttribute('data-parent'), direction: 'right' });
             });
         });
     };
