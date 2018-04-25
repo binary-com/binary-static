@@ -516,7 +516,11 @@ const MetaTraderUI = (() => {
     };
 
     const showHideMAM = (acc_type) => {
-        $container.find('.has-mam').setVisibility('manager_id' in accounts_info[acc_type]);
+        const has_manager = 'manager_id' in accounts_info[acc_type];
+        $container.find('.has-mam').setVisibility(has_manager);
+        if (!has_manager && $container.find('.acc-actions .has-mam').hasClass('selected')) {
+            loadAction(defaultAction(acc_type));
+        }
     };
 
     return {

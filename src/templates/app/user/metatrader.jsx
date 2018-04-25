@@ -336,6 +336,7 @@ const Metatrader = () => (
                                         <FormRow is_two_rows type='password' id='txt_mam_main_pass'     label={it.L('Main password (trading access)')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_mam_re_main_pass'  label={it.L('Verify main password')} />
                                         <FormRow is_two_rows type='password' id='txt_mam_investor_pass' label={it.L('Investor password (read-only access)')} />
+                                        <FormRow type='checkbox' id='chk_tnc' label={it.L('I understand the risks involved and agree to the [_1]Terms & Conditions of the MAM facility[_2]', `<a href="${it.url_for('terms-and-conditions')}#mam" target="_blank">`, '</a>')} />
                                         <SubmitButton
                                             no_wrapper
                                             type='submit'

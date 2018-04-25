@@ -208,6 +208,7 @@ const MetaTraderConfig = (() => {
             txt_main_pass    : { id: '#txt_mam_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_mam_re_main_pass' },
             txt_investor_pass: { id: '#txt_mam_investor_pass', request_field: 'investPassword' },
+            chk_tnc          : { id: '#chk_tnc' },
             additional_fields:
                 acc_type => (
                     {
@@ -285,6 +286,7 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account_mam.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
             { selector: fields.new_account_mam.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account_mam.txt_main_pass.id }]] },
             { selector: fields.new_account_mam.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account_mam.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
+            { selector: fields.new_account_mam.chk_tnc.id,           validations: ['req'] },
         ],
         password_change: [
             { selector: fields.password_change.ddl_password_type.id,   validations: ['req'] },
