@@ -17,8 +17,7 @@ const TermsAndConditions = (() => {
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
         tabListener();
 
-        $('.sidebar-collapsible').on('click', sidebarClickHandler);
-        updateSidebarDOM();
+        initSidebar();
 
         checkWidth();
         window.onresize = checkWidth;
@@ -66,8 +65,18 @@ const TermsAndConditions = (() => {
             .setVisibility(1);
     };
 
+    const initSidebar = () => {
+        if (!window.location.hash) {
+            const new_url = new URL(window.location);
+            new_url.hash = '#legal-binary';
+            window.history.replaceState({}, '', new_url.href);
+        }
+        $('.sidebar-collapsible').on('click', sidebarClickHandler);
+        updateSidebarDOM();
+    };
+
     const updateSidebarDOM = () => {
-        const id = window.location.hash || '#legal-binary';
+        const id = window.location.hash;
         const $li = $(`${id}-link`);
         const $parent_li = $li.closest('.has-submenu');
 
