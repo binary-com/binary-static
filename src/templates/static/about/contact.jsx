@@ -22,7 +22,7 @@ const Contact = () => (
                                 <div className='gr-9 gr-8-p gr-8-m'>
                                     <div className='gr-row'>
                                         <div className='gr-12'>
-                                            <label htmlFor='cs_telephone_number' className='u-text-bold'>{it.L('Telephone:')}</label>
+                                            <label htmlFor='cs_telephone_number'><strong>{it.L('Telephone:')}</strong></label>
                                         </div>
                                         <div className='gr-12 gr-padding-10'>
                                             <Select
@@ -62,24 +62,24 @@ const Contact = () => (
                                 <div className='chat-container'>
                                     <img className='chat-icon' src={it.url_for('images/pages/contact/chat-icon.svg')} />
                                     <a
-                                        className='chat-link'
+                                        className='button-secondary'
                                         href='https://binary.desk.com/customer/widget/chats/new'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                     >
-                                        {it.L('Live Chat')}
+                                        <span>{it.L('Live Chat')}</span>
                                     </a>
                                 </div>
-                                <div className='chat-paragraph'>
-                                    <p>{it.L('Weekdays: 2200 - 1300 GMT')}</p>
-                                    <p>{it.L('Weekend: 0000 - 0900 GMT')}</p>
+                                <div className='hint gr-padding-10 gr-child'>
+                                    <p className='no-margin'>{it.L('Weekdays: 2200 - 1300 GMT')}</p>
+                                    <p className='no-margin'>{it.L('Weekend: 0000 - 0900 GMT')}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='gr-4 gr-4-t gr-5-p gr-12-m ja-hide'>
-                        <div className='gr-padding-10 gr-parent u-text-bold'>
-                            <p className='no-margin'>{it.L('Email:')}</p>
+                        <div className='gr-padding-10 gr-parent'>
+                            <p className='no-margin'><strong>{it.L('Email:')}</strong></p>
                         </div>
                         <div className='gr-padding-10 gr-parent'>
                             <p className='no-margin'>{it.L('For general support:')}</p>

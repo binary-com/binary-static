@@ -176,9 +176,6 @@
     .u-mar-bottom-small {
         margin-bottom: 15px;
     }
-    .u-text-bold {
-        font-weight: bold;
-    }
     #cs_telephone_number {
         width: 100%;
         min-width: 160px;
@@ -201,36 +198,13 @@
 
         &-container {
             display: flex;
+
+            .button-secondary {
+                margin: 0;
+            }
         }
         &-icon {
             margin-right: 5px;
-        }
-        &-link {
-            display: flex;
-            align-items: center;
-            background-color: $COLOR_LIGHT_GRAY;
-            border-radius: 4px;
-            color: $COLOR_BLACK;
-            height: 26px;
-            padding: 5px 15px;
-            font-weight: 400;
-            text-decoration: none;
-
-            &:hover {
-                background-color: $COLOR_GRAY;
-            }
-        }
-        &-text {
-            font-weight: 400;
-            text-decoration: none;
-        }
-        &-paragraph {
-            margin-top: 10px;
-            font-size: 13px;
-
-            p {
-                margin: 0;
-            }
         }
     }
 }
