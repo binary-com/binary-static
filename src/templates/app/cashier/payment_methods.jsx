@@ -65,8 +65,8 @@ const PaymentMethods = () => {
                             [
                                 { text: <PaymentLogo logo='bank_transfer' /> },
                                 { text: 'USD GBP EUR AUD' },
-                                { text: '500 - 100,000' },
-                                { text: '500 - 100,000' },
+                                { text: '1,000 - 100,000' },
+                                { text: '1,000 - 100,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${working_day}`, 1), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                             ],
                             [
