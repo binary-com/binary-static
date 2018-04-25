@@ -16,10 +16,10 @@ const Contact = () => (
                         </div>
                         <div className='gr-padding-10 ja-hide gr-parent'>
                             <div className='gr-row'>
-                                <div className='gr-3 gr-4-p gr-3-m'>
+                                <div className='gr-3 gr-4-p gr-4-m'>
                                     <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
                                 </div>
-                                <div className='gr-9 gr-8-p gr-9-m'>
+                                <div className='gr-9 gr-8-p gr-8-m'>
                                     <div className='gr-row'>
                                         <div className='gr-12'>
                                             <label htmlFor='cs_telephone_number' className='u-text-bold'>{it.L('Telephone:')}</label>
@@ -71,8 +71,8 @@ const Contact = () => (
                                     </a>
                                 </div>
                                 <div className='chat-paragraph'>
-                                    <p>{it.L('Weekdays: 1000 - 1300 GMT')}</p>
-                                    <p>{it.L('Weekend: 1200 - 0900 GMT')}</p>
+                                    <p>{it.L('Weekdays: 2200 - 1300 GMT')}</p>
+                                    <p>{it.L('Weekend: 0000 - 0900 GMT')}</p>
                                 </div>
                             </div>
                         </div>
