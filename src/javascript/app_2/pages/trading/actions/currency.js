@@ -11,16 +11,17 @@ export const getCurrenciesAsync = function* ({ currency }) {
         (isCryptocurrency(cur) ? crypto : fiat).push({ text: cur, value: cur });
     });
 
-    const fields = {
-        currencies_list: {
-            [localize('Fiat Currency')] : fiat,
-            [localize('Cryptocurrency')]: crypto,
-        },
+    const currencies_list = {
+        [localize('Fiat Currency')] : fiat,
+        [localize('Cryptocurrency')]: crypto,
     };
 
-    if (!currency) {
-        fields.currency = Object.values(fields.currencies_list).reduce((a, b) => [...a, ...b]).find(c => c).value;
-    }
+    const fields = {
+        currencies_list,
+        ...(!currency &&
+            { currency: Object.values(currencies_list).reduce((a, b) => [...a, ...b]).find(c => c).value }
+        ),
+    };
 
     return fields;
 };

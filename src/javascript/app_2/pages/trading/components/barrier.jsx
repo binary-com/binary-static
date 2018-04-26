@@ -5,12 +5,13 @@ import { connect } from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
 
 const Barrier = ({
+    barrier_count,
     barrier_1,
     barrier_2,
     onChange,
 }) =>  (
     <Fieldset
-        header={localize(barrier_2 ? 'High barrier' : 'Barrier')}
+        header={localize(barrier_count === 2 ? 'High barrier' : 'Barrier')}
         icon='barriers'
         tooltip={localize('Text for Barriers goes here.')}
     >
@@ -21,7 +22,7 @@ const Barrier = ({
             onChange={onChange}
         />
 
-        {!!barrier_2 &&
+        {barrier_count === 2 &&
             <InputField
                 type='text'
                 name='barrier_2'
@@ -34,8 +35,9 @@ const Barrier = ({
 
 export default connect(
     ({trade}) => ({
-        barrier_1: trade.barrier_1,
-        barrier_2: trade.barrier_2,
-        onChange : trade.handleChange,
+        barrier_count: trade.barrier_count,
+        barrier_1    : trade.barrier_1,
+        barrier_2    : trade.barrier_2,
+        onChange     : trade.handleChange,
     })
 )(Barrier);

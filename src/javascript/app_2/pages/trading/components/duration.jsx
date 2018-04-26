@@ -13,12 +13,14 @@ const expiry_list = [
     { text: localize('End Time'), value: 'endtime' },
 ];
 
-let min_date_duration,
+let now_date,
+    min_date_duration,
     max_date_duration,
     min_date_expiry;
 
 const Duration = ({
     expiry_type,
+    expiry_date,
     expiry_time,
     duration,
     duration_unit,
@@ -27,11 +29,13 @@ const Duration = ({
     onChange,
 }) => {
     const moment_now = moment(server_time);
-    if (!min_date_expiry || moment_now.date() !== min_date_expiry.date()) {
+    if (!now_date || moment_now.date() !== now_date.date()) {
+        now_date          = moment_now.clone();
         min_date_duration = moment_now.clone().add(1, 'd');
         max_date_duration = moment_now.clone().add(365, 'd');
         min_date_expiry   = moment_now.clone();
     }
+    const is_same_day = moment.utc(expiry_date).isSame(moment_now, 'day');
     return (
         <Fieldset
             time={server_time}
@@ -80,7 +84,8 @@ const Duration = ({
                         minDate={min_date_expiry}
                         onChange={onChange}
                     />
-                    <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
+                    {is_same_day &&
+                        <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />}
                 </React.Fragment>
             }
         </Fieldset>
@@ -90,6 +95,7 @@ const Duration = ({
 export default connect(
     ({trade}) => ({
         expiry_type        : trade.expiry_type,
+        expiry_date        : trade.expiry_date,
         expiry_time        : trade.expiry_time,
         duration           : trade.duration,
         duration_unit      : trade.duration_unit,

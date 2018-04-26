@@ -8,7 +8,7 @@ const duration_maps = {
     d: { display: 'days',    order: 5, to_second: 60 * 60 * 24 },
 };
 
-const buildDurationConfig = (durations = { min_max: {}, units_display: {} }, contract) => {
+const buildDurationConfig = (contract, durations = { min_max: {}, units_display: {} }) => {
     durations.min_max[contract.start_type]       = durations.min_max[contract.start_type] || {};
     durations.units_display[contract.start_type] = durations.units_display[contract.start_type] || [];
 
