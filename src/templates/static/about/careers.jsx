@@ -46,7 +46,7 @@ const ColumnSM = ({ gr, header, paragraph }) => (
 
 
 const ColumnLG = ({ center, image, text }) => (
-    <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
+    <div className={`gr-6 gr-12-m${center ? ' center-text' : ''}`}>
         <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
         <div className='white-bg-color'>
             <p className='column-margin fill-text'>{text}</p>
@@ -84,7 +84,6 @@ const Careers = () => (
                     </div>
                     <ColumnLG image='my@2'      text={it.L('Malaysia')} />
                     <ColumnLG image='malta@1'   text={it.L('Malta')} />
-                    <ColumnLG image='japan@1'   text={it.L('Japan')} />
                 </div>
             </div>
 
@@ -92,7 +91,7 @@ const Careers = () => (
                 <div className='gr-row gr-padding-30'>
                     <ColumnSM gr='4' header={it.L('Want to telecommute?')} paragraph={it.L('[_1] is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we\'re open to it.', it.website_name) } />
                     <ColumnSM gr='4' header={it.L('Where you can go')}     paragraph={it.L('Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.') } />
-                    <ColumnSM gr='4' header={it.L('More benefits')}        paragraph={it.L('We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\'re in Malta, Malaysia, or Japan.')} />
+                    <ColumnSM gr='4' header={it.L('More benefits')}        paragraph={it.L('We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\'re in Malta, or Malaysia.')} />
                 </div>
                 <div className='gr-padding-20'>
                     <div className='gr-padding-30 center-text'>

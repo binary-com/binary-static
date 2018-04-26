@@ -31,7 +31,7 @@ const AccountOpening = (() => {
     const populateForm = (form_id, getValidations, is_financial) => {
         getResidence(form_id, getValidations);
         generateBirthDate();
-        if (Client.canRequestProfessional()) {
+        if (State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest') {
             professionalClient.init(is_financial, false);
         }
         if (Client.get('residence') !== 'jp') {
