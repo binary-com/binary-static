@@ -99,8 +99,7 @@ const TermsAndConditions = (() => {
             if ($submenu.find('.selected').length) {
                 // has selected sublink
                 $target.removeClass('no-transition').parent('li').toggleClass('active');
-            }
-            else {
+            } else {
                 window.location.hash = $submenu.find('a')[0].hash;
             }
         }

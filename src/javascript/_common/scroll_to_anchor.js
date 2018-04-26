@@ -23,8 +23,7 @@ const ScrollToAnchor = (() => {
             Url.updateParamsWithoutReload({
                 anchor: null,
             }, true);
-        }
-        else {
+        } else {
             scrollToAnchorInQuery();
         }
     };
