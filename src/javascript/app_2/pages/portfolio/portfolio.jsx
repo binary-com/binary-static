@@ -8,7 +8,6 @@ import { localize } from '../../../_common/localize';
 import { getPropertyValue } from '../../../_common/utility';
 import DataTable from '../../components/elements/data_table.jsx';
 
-// return transformed array
 const handlePortfolioData = (portfolio_arr) => {
     const formatted_portfolio = portfolio_arr.map((portfolio_item) => {
         const date_obj        = new Date(portfolio_item.expiry_time* 1000);
@@ -34,6 +33,32 @@ const handlePortfolioData = (portfolio_arr) => {
     });
     return formatted_portfolio;
 };
+
+// TODO: move to common
+const contract_type_display = {
+    ASIANU      : 'Asian Up',
+    ASIAND      : 'Asian Down',
+    CALL        : 'Higher',
+    CALLE       : 'Higher or equal',
+    PUT         : 'Lower',
+    DIGITMATCH  : 'Digit Matches',
+    DIGITDIFF   : 'Digit Differs',
+    DIGITODD    : 'Digit Odd',
+    DIGITEVEN   : 'Digit Even',
+    DIGITOVER   : 'Digit Over',
+    DIGITUNDER  : 'Digit Under',
+    EXPIRYMISS  : 'Ends Outside',
+    EXPIRYRANGE : 'Ends Between',
+    EXPIRYRANGEE: 'Ends Between',
+    LBFLOATCALL : 'Close-Low',
+    LBFLOATPUT  : 'High-Close',
+    LBHIGHLOW   : 'High-Low',
+    RANGE       : 'Stays Between',
+    UPORDOWN    : 'Goes Outside',
+    ONETOUCH    : 'Touches',
+    NOTOUCH     : 'Does Not Touch',
+};
+
 /* TODO:
     1. Move socket connections to DAO
     2. Selling both in transactionHandler and updateIndicative?
@@ -54,6 +79,7 @@ class Portfolio extends React.PureComponent  {
             {
                 title     : localize('Contract Type'),
                 data_index: 'type',
+                renderCell: (data, data_index) => (<td key={data_index}>{contract_type_display[data]}</td>),
             },
             {
                 title     : localize('Contract Details'),
