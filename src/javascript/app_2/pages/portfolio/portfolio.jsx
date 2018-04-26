@@ -61,11 +61,10 @@ const contract_type_display = {
 
 /* TODO:
     1. Move socket connections to DAO
-    2. Selling both in transactionHandler and updateIndicative?
-    3. Make tooltip appdetails tooltip
-    4. Add currencies to totals
-    5. Add styling
-    6. Translations
+    2. Make tooltip appdetails tooltip
+    3. Add currencies to totals
+    4. Add styling
+    5. Translations
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
@@ -155,28 +154,25 @@ class Portfolio extends React.PureComponent  {
         if (getPropertyValue(response, 'error')) {
             this.setState({ error: response.error.message });
         }
-        if (response.transaction.action === 'buy') {
-            BinarySocket.send({ portfolio: 1 }).then((res) => {
-                this.updatePortfolio(res);
-            });
-        } else if (response.transaction.action === 'sell') {
-             // removeContract(response.transaction.contract_id);
-        }
+        // Update portfolio for added / sold 
+        BinarySocket.send({ portfolio: 1 }).then((res) => {
+            this.updatePortfolio(res);
+        });
     }
 
     updateIndicative = (response) => {
         if (getPropertyValue(response, 'error')) {
             return;
         }
-        let data_source = this.state.data_source.slice();
+        const data_source = this.state.data_source.slice();
         const footer    = Object.assign({}, this.state.footer);
         const proposal  = response.proposal_open_contract;
         // force to sell the expired contract, in order to remove from portfolio
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
-            BinarySocket.send({ sell_expired: 1 });
+            // BinarySocket.send({ sell_expired: 1 });
         }
         if (+proposal.is_sold === 1) {
-            data_source = data_source.filter((portfolio_item) => portfolio_item.id !== +proposal.contract_id);
+            // data_source = data_source.filter((portfolio_item) => portfolio_item.id !== +proposal.contract_id);
         } else {
             data_source.forEach(portfolio_item => {
                 if (portfolio_item.id === +proposal.contract_id) {
