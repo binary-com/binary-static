@@ -71,8 +71,8 @@ const Contact = () => (
                                     </a>
                                 </div>
                                 <div className='hint gr-padding-10 gr-child'>
-                                    <p className='no-margin'>{it.L('Weekdays: 2200 - 1300 GMT')}</p>
-                                    <p className='no-margin'>{it.L('Weekend: 0000 - 0900 GMT')}</p>
+                                    <p className='no-margin'>{it.L('Weekdays:')} 2200 - 1300 GMT</p>
+                                    <p className='no-margin'>{it.L('Weekend:')} 0000 - 0900 GMT</p>
                                 </div>
                             </div>
                         </div>
