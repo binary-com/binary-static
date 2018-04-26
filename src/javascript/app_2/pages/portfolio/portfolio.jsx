@@ -216,21 +216,28 @@ class Portfolio extends React.PureComponent  {
     }
 
     render() {
-        if (this.state.is_loading) {
-            return <div>Loading...</div>;
-        }
-        if (this.state.error) {
-            return <div>{this.state.error}</div>;
-        }
         return (
-                this.state.data_source.length > 0 ? 
-                    <DataTable
-                        footer={this.state.footer}
-                        {...this.props}
-                        data_source={this.state.data_source}
-                        columns={this.state.columns}                
-                    />
-                : <div>No open positions.</div>
+            <div>
+                <h2>Portfolio</h2>
+                {(() => {
+                    if (this.state.is_loading) {
+                        return <div>Loading...</div>;
+                    }
+                    if (this.state.error) {
+                        return <div>{this.state.error}</div>;
+                    }
+                    return (
+                            this.state.data_source.length > 0 ?
+                                <DataTable
+                                    footer={this.state.footer}
+                                    {...this.props}
+                                    data_source={this.state.data_source}
+                                    columns={this.state.columns}
+                                />
+                            : <div>No open positions.</div>
+                    );
+                })()}
+            </div>
         );
     }
 };
