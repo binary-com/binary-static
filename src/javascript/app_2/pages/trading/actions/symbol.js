@@ -1,5 +1,13 @@
 import ContractType from '../actions/helpers/contract_type';
 import { getTicks } from './test';
+import { getActiveSymbols } from '../../../data/dao';
+
+export const getActiveSymbolAsync = function *() {
+    const active_symbols = yield getActiveSymbols();
+    return {
+        active_symbols,
+    };
+};
 
 export const onChangeSymbolAsync = function *({ symbol, contract_type, contract_expiry_type, duration_unit }) {
     yield ContractType.buildContractTypesConfig(symbol);
