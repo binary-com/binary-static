@@ -137,9 +137,7 @@ const FinancialInformationForm = () => (
 
 const FinancialForm = () => (
     <React.Fragment>
-        <div data-show='maltainvest, costarica'>
-            <TradingExperienceForm />
-        </div>
+        <TradingExperienceForm />
         <FinancialInformationForm />
     </React.Fragment>
 );

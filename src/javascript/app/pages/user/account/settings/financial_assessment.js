@@ -44,8 +44,9 @@ const FinancialAssessment = (() => {
             });
         }
 
-        const is_mt5_financial = /real_vanuatu_standard/.test(localStorage.getItem('financial_assessment_redirect'));
-        $('#trading_experience_form').setVisibility(is_mt5_financial);
+        const is_mf            = /^(maltainvest)$/.test(Client.get('landing_company_shortcode'));
+        const is_mt5_financial = /real_vanuatu_(standard|advanced)/.test(localStorage.getItem('financial_assessment_redirect'));
+        $('#trading_experience_form').setVisibility(is_mt5_financial || is_mf);
 
         Object.keys(financial_assessment).forEach((key) => {
             const val = financial_assessment[key];

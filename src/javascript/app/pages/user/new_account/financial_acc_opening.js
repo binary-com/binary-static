@@ -41,6 +41,7 @@ const FinancialAccOpening = (() => {
             const get_settings = response.get_settings;
             let $element,
                 value;
+
             Object.keys(get_settings).forEach((key) => {
                 $element = $(`#${key}`);
                 value    = get_settings[key];
@@ -52,7 +53,10 @@ const FinancialAccOpening = (() => {
                 }
                 if (value) $element.val(value);
             });
+
+            $('#trading_experience_form').setVisibility(/^(financial)$/.test(Client.getUpgradeInfo().type));
         });
+
 
         FormManager.handleSubmit({
             form_selector       : form_id,
