@@ -42,9 +42,9 @@ const LimitsUI = (() => {
 
         $client_limits = $('#client-limits');
 
-        setText(open_position, limits.open_positions);
-        setText(account_balance, formatMoney(currency, limits.account_balance, 1));
-        setText(payout, formatMoney(currency, limits.payout, 1));
+        setText(open_position, 'open_positions' in limits ? limits.open_positions : '');
+        setText(account_balance, 'account_balance' in limits ? formatMoney(currency, limits.account_balance, 1) : '');
+        setText(payout, 'payout' in limits ? formatMoney(currency, limits.payout, 1) : '');
 
         if (limits.market_specific) {
             Object.keys(limits.market_specific).forEach((key) => {
