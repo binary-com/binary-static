@@ -36,8 +36,8 @@ export default class TradeStore {
 
     // Underlying
     @observable active_symbols = {};
-    @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
-    @observable symbol       = Object.keys(this.symbols_list)[0];
+    @observable symbols_list   = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
+    @observable symbol         = Object.keys(this.symbols_list)[0];
 
     // Contract Type
     @observable contract_type        = '';
