@@ -68,7 +68,12 @@ class Calendar extends React.Component {
     }
 
     updateDate(value, unit, is_add) {
-        this.setState({ date: moment(this.state.date)[is_add ? 'add' : 'subtract'](value, unit).format(this.props.dateFormat) });
+        const new_date = moment(this.state.date)[is_add ? 'add' : 'subtract'](value, unit).format(this.props.dateFormat);
+        if (this.isMonthDisabled(new_date)) {
+            console.log('disabled month');
+        } else {
+            this.setState({ date: new_date });
+        }
     }
 
     nextMonth() {
@@ -192,6 +197,13 @@ class Calendar extends React.Component {
             date         : default_date,
             selected_date: '',
         });
+    }
+
+    isMonthDisabled(date) {
+        const start_of_month = moment(date).startOf('month');
+        const end_of_month   = moment(date).endOf('month');
+        return end_of_month.isBefore(moment(this.props.minDate))
+            || start_of_month.isAfter(moment(this.props.maxDate));
     }
 
     getDays() {
