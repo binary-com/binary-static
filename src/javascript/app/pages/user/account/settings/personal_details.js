@@ -1,15 +1,16 @@
-const moment          = require('moment');
-const BinaryPjax      = require('../../../../base/binary_pjax');
-const Client          = require('../../../../base/client');
-const Header          = require('../../../../base/header');
-const BinarySocket    = require('../../../../base/socket');
-const formatMoney     = require('../../../../common/currency').formatMoney;
-const FormManager     = require('../../../../common/form_manager');
-const Geocoder        = require('../../../../../_common/geocoder');
-const CommonFunctions = require('../../../../../_common/common_functions');
-const localize        = require('../../../../../_common/localize').localize;
-const State           = require('../../../../../_common/storage').State;
-require('select2');
+const SelectMatcher    = require('binary-style').select2Matcher;
+const moment           = require('moment');
+const BinaryPjax       = require('../../../../base/binary_pjax');
+const Client           = require('../../../../base/client');
+const Header           = require('../../../../base/header');
+const BinarySocket     = require('../../../../base/socket');
+const formatMoney      = require('../../../../common/currency').formatMoney;
+const FormManager      = require('../../../../common/form_manager');
+const Geocoder         = require('../../../../../_common/geocoder');
+const CommonFunctions  = require('../../../../../_common/common_functions');
+const localize         = require('../../../../../_common/localize').localize;
+const State            = require('../../../../../_common/storage').State;
+const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
     const form_id           = '#frmPersonalDetails';
@@ -19,7 +20,7 @@ const PersonalDetails = (() => {
     let need_to_accept_tin = false;
 
     let editable_fields,
-        is_jp,
+        is_jp_client,
         is_virtual,
         residence,
         get_settings_data,
@@ -30,8 +31,8 @@ const PersonalDetails = (() => {
         get_settings_data = {};
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
-        is_jp             = residence === 'jp';
-        if (is_jp && !is_virtual) {
+        is_jp_client      = residence === 'jp'; // we need to check with residence so we know which fields will be present in get_settings response
+        if (is_jp_client && !is_virtual) {
             setVisibility('#fieldset_email_consent');
             showHideTaxMessage();
         }
@@ -63,7 +64,7 @@ const PersonalDetails = (() => {
     };
 
     const showHideLabel = (get_settings) => {
-        if (!is_jp) {
+        if (!is_jp_client) {
             ['place_of_birth', 'account_opening_reason'].forEach((id) => {
                 if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
                     if (get_settings[id]) {
@@ -90,7 +91,7 @@ const PersonalDetails = (() => {
         const hide_name            = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
         if (!hide_name) {
             setVisibility('#row_name');
-            get_settings.name = is_jp ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
+            get_settings.name = is_jp_client ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
         if (get_settings.place_of_birth) {
@@ -105,7 +106,7 @@ const PersonalDetails = (() => {
 
         if (is_virtual) {
             $(real_acc_elements).remove();
-        } else if (is_jp) {
+        } else if (is_jp_client) {
             const jp_settings = get_settings.jp_settings;
             switch (jp_settings.gender) {
                 case 'f':
@@ -138,7 +139,7 @@ const PersonalDetails = (() => {
             fnc_additional_check: additionalCheck,
             enable_button       : true,
         });
-        if (!is_virtual && !is_jp) {
+        if (!is_virtual && !is_jp_client) {
             Geocoder.validate(form_id);
         }
     };
@@ -151,7 +152,7 @@ const PersonalDetails = (() => {
             el_key     = document.getElementById(key);
             el_lbl_key = document.getElementById(`lbl_${key}`);
             // prioritise labels for japan account
-            el_key = is_jp ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
+            el_key = is_jp_client ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
             if (el_key) {
                 data_key             = /format_money/.test(el_key.className) && data[key] !== null ? formatMoney(currency, data[key]) : (data[key] || '');
                 editable_fields[key] = data_key;
@@ -192,7 +193,7 @@ const PersonalDetails = (() => {
 
     const getValidations = (data) => {
         let validations;
-        if (is_jp) {
+        if (is_jp_client) {
             validations = [
                 { request_field: 'address_line_1',   value: data.address_line_1 },
                 { request_field: 'address_line_2',   value: data.address_line_2 },
@@ -266,7 +267,7 @@ const PersonalDetails = (() => {
             });
         }
         showFormMessage(is_error ?
-            'Sorry, an error occurred while processing your account.' :
+            (getPropertyValue(response, ['error', 'message']) || 'Sorry, an error occurred while processing your account.') :
             'Your settings have been updated successfully.', !is_error);
     };
 
@@ -295,7 +296,7 @@ const PersonalDetails = (() => {
 
             if (residence) {
                 const $tax_residence = $('#tax_residence');
-                $tax_residence.html($options.html()).promise().done(() => {
+                $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(get_settings_data.tax_residence ? get_settings_data.tax_residence.split(',') : '').trigger('change');
@@ -310,11 +311,16 @@ const PersonalDetails = (() => {
                         .val(residence);
                 }
             } else {
-                $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
+                $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence', single: 'single' }));
                 const $residence = $('#residence');
                 $options_with_disabled.prepend($('<option/>', { text: localize('Please select a country'), value: '' }));
                 $residence.html($options_with_disabled.html());
                 initFormManager();
+                $residence.select2({
+                    matcher(params, data) {
+                        return SelectMatcher(params, data);
+                    },
+                });
             }
         }
     };
@@ -322,7 +328,7 @@ const PersonalDetails = (() => {
     const populateStates = (response) => {
         const states = response.states_list;
 
-        if (is_jp) {
+        if (is_jp_client) {
             const state_text = (states.filter(state => state.value === get_settings_data.address_state)[0] || {}).text;
             $('#lbl_address_state').text(state_text || get_settings_data.address_state);
         } else {
@@ -344,7 +350,7 @@ const PersonalDetails = (() => {
         }
 
         initFormManager();
-        if (is_jp && !is_virtual) {
+        if (is_jp_client && !is_virtual) {
             // detect hedging needs to be called after FormManager.init
             // or all previously bound event listeners on form elements will be removed
             CommonFunctions.detectHedging($('#trading_purpose'), $('.hedge'));
@@ -379,10 +385,20 @@ const PersonalDetails = (() => {
                 BinarySocket.send({ residence_list: 1 }).then(response => {
                     getDetailsResponse(get_settings_data, response.residence_list);
                     populateResidence(response);
+                    $('#place_of_birth').select2({
+                        matcher(params, data) {
+                            return SelectMatcher(params, data);
+                        },
+                    });
                 });
 
                 if (residence) {
                     BinarySocket.send({ states_list: residence }).then(response => populateStates(response));
+                    $('#address_state').select2({
+                        matcher(params, data) {
+                            return SelectMatcher(params, data);
+                        },
+                    });
                 }
             } else {
                 $('#btn_update').setVisibility(0);

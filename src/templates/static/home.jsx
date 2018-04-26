@@ -382,7 +382,6 @@ const Home = () => {
                                             { image: 'internet_bank_transfer' },
                                             { image: 'internet_banking' },
                                             { image: 'neteller' },
-                                            { image: 'okpay' },
                                             { image: 'fasapay' },
                                             { image: 'perfect_money' },
                                             { image: 'skrill' },
@@ -392,7 +391,6 @@ const Home = () => {
                                             { image: 'bitcoin', dataShow: '-malta, -maltainvest' },
                                             { image: 'bitcoin_cash', dataShow: '-malta, -maltainvest' },
                                             { image: 'litecoin', dataShow: '-malta, -maltainvest' },
-                                            { image: 'union_pay', dataShow: '-malta, -maltainvest' },
                                         ]}
                                     />
                                 </div>

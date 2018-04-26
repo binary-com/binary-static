@@ -31,6 +31,9 @@ module.exports = function (grunt) {
                 warnings: false,
             },
         }),
+        new webpack.DefinePlugin({
+            '__REACT_DEVTOOLS_GLOBAL_HOOK__': '({ isDisabled: true })'
+        }),
         // new UnusedFilesWebpackPlugin({
         //     patterns: [
         //         'src/javascript/**/*.*',
@@ -78,7 +81,7 @@ module.exports = function (grunt) {
             path         : path.resolve(__dirname, `../${global.dist}/js/`),
             filename     : '[name].js',
             chunkFilename: '[name]_[chunkhash].min.js',
-            publicPath   : `${isProduction ? '' : '/binary-static'}${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}/js/`,
+            publicPath   : `${isProduction || grunt.file.exists(`${process.cwd()}/scripts/CNAME`) ? '' : '/binary-static'}${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}/js/`,
         },
         resolve: {
             extensions: ['.js', '.jsx'],
@@ -90,8 +93,12 @@ module.exports = function (grunt) {
                     exclude: /node_modules/,
                     loader : 'babel-loader',
                     query  : {
-                        plugins: ['transform-decorators-legacy' ],
-                        presets: ['es2015', 'stage-1', 'react'],
+                        presets: ['env', 'stage-1', 'react'],
+                        plugins: [
+                            'transform-decorators-legacy',
+                            'transform-object-rest-spread',
+                            'transform-class-properties'
+                        ],
                         compact: false,
                     },
                 },

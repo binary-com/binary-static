@@ -80,6 +80,12 @@ const MBTrading = () => (
                             <div className='gr-row selection_wrapper'>
                                 <div className='gr-12 gr-no-gutter'>
                                     <div className='trade_form'>
+                                        <div className='header-current'>
+                                            <div className='gr-row'>
+                                                <div className='header-current-text gr-6'>{it.L('End Time')}</div>
+                                                <div className='header-current-text gr-6'>{it.L('Remaining Time')}</div>
+                                            </div>
+                                        </div>
                                         <FormItem id='period' class_list='gr-12' />
                                     </div>
                                     <div className='gr-row'>

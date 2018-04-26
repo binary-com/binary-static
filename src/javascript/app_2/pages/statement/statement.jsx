@@ -3,7 +3,6 @@ import moment from 'moment';
 import Client from '../../../app/base/client';
 import BinarySocket from '../../../app/base/socket';
 import { toJapanTimeIfNeeded } from '../../../app/base/clock';
-import { jpClient } from '../../../app/common/country_base';
 import { formatMoney } from '../../../app/common/currency';
 import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
@@ -104,7 +103,7 @@ class Statement extends React.PureComponent {
         };
 
         const currency     = Client.get('currency');
-        const is_jp_client = jpClient();
+        const is_jp_client = Client.isJPClient();
 
         BinarySocket.send(req).then((response) => {
             const formatted_transactions = response.statement.transactions

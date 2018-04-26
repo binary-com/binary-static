@@ -1,4 +1,5 @@
 import React from 'react';
+import ConflictsPolicy from './conflicts_policy.jsx';
 import Copyright from './copyright.jsx';
 import Datafeed from './datafeed.jsx';
 import OrderExecutionBinary from './order_execution.jsx';
@@ -25,9 +26,10 @@ const Tac = () => (
                       { id: 'legal-mt',     text: it.L('MetaTrader') },
                         ],
                     },
-                    { id: 'datafeed',  text: it.L('Data Feed') },
-                    { id: 'privacy',   text: it.L('Security and Privacy') },
-                    { id: 'copyright', text: it.L('Copyright') },
+                    { id: 'datafeed',         text: it.L('Data Feed') },
+                    { id: 'privacy',          text: it.L('Security and Privacy') },
+                    { id: 'conflicts-policy', text: it.L('Conflicts Policy') },
+                    { id: 'copyright',        text: it.L('Copyright') },
                     {
                         id     : 'risk',
                         text   : it.L('Risk Disclaimer'),
@@ -65,6 +67,10 @@ const Tac = () => (
 
                 <SidebarContent id='privacy'>
                     <Privacy />
+                </SidebarContent>
+
+                <SidebarContent id='conflicts-policy'>
+                    <ConflictsPolicy />
                 </SidebarContent>
 
                 <SidebarContent id='copyright'>

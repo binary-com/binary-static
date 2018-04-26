@@ -79,27 +79,11 @@ const TermsAndConditions = (() => {
     };
 
     const handleSidebar = () => {
-        const hash     = window.location.hash || '#legal';
+        const hash     = window.location.hash || '#legal-binary';
         const $sidebar = $('.sidebar-collapsible');
-        const $content = $('.sidebar-collapsible-content');
 
-        $sidebar.on('click', () => {
-            if (!checkWidth()) $.scrollTo($content, 250, { offset: -10 });
-        });
-
-        const is_submenu = /-binary|-mt/.test(hash);
-        if (is_submenu) {
-            let parent_hash = hash;
-            if (/-binary/.test(hash)) {
-                parent_hash = hash.split('-binary')[0];
-            } else if (/-mt/.test(hash)) {
-                parent_hash = hash.split('-mt')[0];
-            }
-            $sidebar.find(`${parent_hash} a:first`).trigger('click'); // click mainmenu
-            $sidebar.find(`${hash} a:first`).trigger('click');  // click submenu
-        } else {
-            $sidebar.find(`${hash} a:first`).trigger('click');
-        }
+        const $target_link = $sidebar.find(`${hash} a:first`);
+        if ($target_link.length) $target_link[0].click();
     };
 
     const checkWidth = () => {
@@ -131,7 +115,7 @@ const TermsAndConditions = (() => {
     };
 
     const onUnload = () => {
-        $('.sidebar-collapsible a').off('click');
+        $('.sidebar-collapsible').off('click');
     };
 
     return {

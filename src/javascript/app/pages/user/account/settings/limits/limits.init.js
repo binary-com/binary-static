@@ -1,6 +1,5 @@
 const LimitsUI           = require('./limits.ui');
 const Client             = require('../../../../../base/client');
-const jpClient           = require('../../../../../common/country_base').jpClient;
 const formatMoney        = require('../../../../../common/currency').formatMoney;
 const elementInnerHtml   = require('../../../../../../_common/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../../../../_common/common_functions').elementTextContent;
@@ -13,7 +12,7 @@ const LimitsInit = (() => {
         const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);
 
-        if (jpClient()) {
+        if (Client.isJPClient()) {
             return;
         }
 
@@ -29,8 +28,6 @@ const LimitsInit = (() => {
             let txt_current_max_withdrawal = 'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).';
             const currency                 = Client.get('currency') || Client.currentLandingCompany().legal_default_currency;
             const days_limit               = formatMoney(currency, limits.num_of_days_limit, 1);
-            // no need for formatMoney since it is already string like "1,000"
-            const withdrawn                = limits.withdrawal_since_inception_monetary;
             const remainder                = formatMoney(currency, limits.remainder, 1);
 
             if ((/^(iom)$/i).test(Client.get('landing_company_shortcode'))) { // MX
@@ -39,7 +36,7 @@ const LimitsInit = (() => {
                 elementInnerHtml(el_withdraw_limit,
                     localize(txt_withdraw_lim, [limits.num_of_days, currency, days_limit]));
                 elementTextContent(el_withdrawn,
-                    localize(txt_withdraw_amt, [currency, withdrawn, limits.num_of_days]));
+                    localize(txt_withdraw_amt, [currency, limits.withdrawal_for_x_days_monetary, limits.num_of_days]));
             } else {
                 if ((/^(costarica|japan)$/i).test(Client.get('landing_company_shortcode'))) { // CR , JP
                     txt_withdraw_lim           = 'Your withdrawal limit is [_1] [_2].';
@@ -47,7 +44,8 @@ const LimitsInit = (() => {
                     txt_current_max_withdrawal = 'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].';
                 }
                 elementInnerHtml(el_withdraw_limit, localize(txt_withdraw_lim, [currency, days_limit]));
-                elementTextContent(el_withdrawn, localize(txt_withdraw_amt, [currency, withdrawn]));
+                elementTextContent(el_withdrawn,
+                    localize(txt_withdraw_amt, [currency, limits.withdrawal_since_inception_monetary]));
             }
             elementInnerHtml(el_withdraw_limit_agg, localize(txt_current_max_withdrawal, [currency, remainder]));
         }
