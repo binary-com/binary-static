@@ -71,36 +71,38 @@ const updateStore = (store, new_state) => {
 
 const proposal_fields = ['amount', 'basis', 'currency', 'symbol', 'start_date', 'start_time', 'duration', 'duration_unit', 'expiry_type', 'expiry_date', 'expiry_time', 'barrier_1', 'barrier_2', 'last_digit'];
 
-// TODO: find instances such as datepicker value changes which cause proposal to be sent twice
+// TODO: improve this logic in case of any exceptions that are found
 export const callProposalOnDidUpdate = (store, obj_new_values = {}) => {
+    // first update store. only values that were changed will be stored in new_store
     const new_store = updateStore(store, cloneObject(obj_new_values));
+
+    // if a new value that is being updated in store is part of proposal
     if (Object.keys(obj_new_values).find(key => proposal_fields.indexOf(key) !== -1)) {
-        console.log(obj_new_values, new_store);
+        // see if any of the new values that were updated in store will trigger some other values to be updated
         const in_reaction = Object.keys(new_store).find(key => key in reaction_map);
+
+        // if it's going to update other values, flag it to send proposal in future after those values are updated
         if (in_reaction) {
             should_send_proposal = 1;
-            console.log('set flag and return', in_reaction);
             return;
         }
+
+        // if we have a flag from before, or there is a new value in store related to proposal that didn't need to trigger anything else
         if (should_send_proposal || !isEmptyObject(new_store)) {
-            console.log('sending proposal', should_send_proposal);
             should_send_proposal = 0;
             DAO.forgetAll('proposal').then(() => {
+                const proposalCallback = (response) => {
+                    const id      = response.error ? '' : response.proposal.id;
+                    const message = response.error ? response.error.message : response.proposal.longcode;
+                    store.proposals[response.echo_req.contract_type] = { id, message };
+                };
+
                 Object.keys(store.trade_types).forEach(type => {
                     DAO.subscribeProposal(store, type, proposalCallback);
                 });
             });
         }
     }
-};
-
-
-const proposalCallback = () => {
-    // if (response.error) {
-    //     console.log(response.error);
-    // } else {
-    //     console.log(response.proposal.longcode);
-    // }
 };
 
 export default defaultExports;

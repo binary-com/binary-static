@@ -41,7 +41,7 @@ export default class TradeStore {
     // Contract Type
     @observable contract_type        = '';
     @observable contract_types_list  = {};
-    @observable trade_types          = [];
+    @observable trade_types          = {};
     @observable contract_start_type  = '';
     @observable contract_expiry_type = '';
     @observable form_components      = [];
@@ -75,8 +75,9 @@ export default class TradeStore {
     @observable last_digit = 3;
 
     // Test
-    @observable message = '';
-    @observable tick    = '';
+    @observable message   = '';
+    @observable tick      = '';
+    @observable proposals = {};
 
     // TODO: retrieve from upper state
     @observable server_time = moment.utc();
