@@ -237,7 +237,7 @@ class Statement extends React.PureComponent {
                         is_loading
                             ? <Loading />
                             : this.state.data_source.length === 0
-                                ? 'No transactions'
+                                ? <div className='statement-no-activity-msg'>{localize('Your account has no trading activity.')}</div>
                                 : <DataTable
                                     data_source={this.state.data_source.slice(
                                         0,

@@ -4,6 +4,9 @@ $filter-height: 75px;
     .statement-content {
         padding-top: $filter-height;
     }
+    .statement-no-activity-msg {
+        padding: 1rem 2rem;
+    }
     .statement-filter {
         height: $filter-height;
         position: fixed;
