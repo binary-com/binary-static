@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-25 08:17-0400\n"
+"PO-Revision-Date: 2018-04-26 23:13-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -4248,6 +4248,9 @@ msgstr "crwdns44610:0crwdne44610:0"
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "crwdns44611:0crwdne44611:0"
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
+msgstr "crwdns44614:0crwdne44614:0"
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
 msgstr "crwdns44612:0crwdne44612:0"
 
@@ -4385,6 +4388,9 @@ msgstr "crwdns38691:0crwdne38691:0"
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "crwdns38692:0crwdne38692:0"
+
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>."
+msgstr "crwdns44615:0crwdne44615:0"
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "crwdns38693:0crwdne38693:0"
@@ -8553,6 +8559,9 @@ msgstr "crwdns39930:0crwdne39930:0"
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "crwdns39932:0crwdne39932:0"
 
+msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr "crwdns44616:0crwdne44616:0"
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "crwdns39934:0crwdne39934:0"
 
@@ -9617,6 +9626,9 @@ msgstr "crwdns40259:0crwdne40259:0"
 
 msgid "Trading Times"
 msgstr "crwdns40260:0crwdne40260:0"
+
+msgid "Trading Window"
+msgstr "crwdns44617:0crwdne44617:0"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "crwdns40261:0crwdne40261:0"

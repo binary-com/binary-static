@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-25 08:16-0400\n"
+"PO-Revision-Date: 2018-04-26 23:12-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -4248,6 +4248,9 @@ msgstr ""
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr ""
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
 msgstr ""
 
@@ -4385,6 +4388,9 @@ msgstr "如果您選擇「下跌」期權，只要<strong>退市現價</strong>�
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "如果您選擇「超出區間外」期權，只要市場在<strong>合約期限內的</strong>任何時候觸 及<strong>高障礙</strong>或<strong>低障礙</strong>，您將得獲得賠付。"
+
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>."
+msgstr ""
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "如果您選擇「高於」期權，只要<strong>退市現價</strong>嚴格高於<strong>障礙</strong>，您將獲得賠付。"
@@ -8553,6 +8559,9 @@ msgstr "合約<strong>結束時間</strong>是指合約<strong>開始時間</str
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>退市現價</strong>是合約<strong>結束時或之前的</strong>最後跳動價點。"
 
+msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合約<strong>開始時間</strong>即我們的伺服器處理合約的時間。"
 
@@ -9617,6 +9626,9 @@ msgstr "交易規則"
 
 msgid "Trading Times"
 msgstr "交易時間"
+
+msgid "Trading Window"
+msgstr ""
 
 msgid "Trading and Withdrawal Limits"
 msgstr "交易和取款限額"

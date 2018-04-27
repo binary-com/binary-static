@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-25 08:15-0400\n"
+"PO-Revision-Date: 2018-04-26 23:11-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -4249,6 +4249,9 @@ msgstr ""
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr ""
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
 msgstr ""
 
@@ -4386,6 +4389,9 @@ msgstr "Wenn Sie „Fällt\" auswählen, erhalten Sie eine Auszahlung, wenn der 
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "Wenn Sie „Geht außerhalb\" auswählen, erhalten Sie eine Auszahlung, wenn der Kurst während der <strong>Kontraktlaufzeit</strong> zu einem bestimmten Zeitpunkt entweder die <strong>ObereSchwelle</strong> oder die <strong>Untere Schwelle</strong> berührt."
+
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>."
+msgstr ""
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Wenn Sie „Höher\" auswählen, erhalten Sie eine Auszahlung, wenn der <strong>Kurs zum Vertragsende</strong> genau über der <strong>Schwelle</strong> liegt."
@@ -8554,6 +8560,9 @@ msgstr "Die <strong>Endzeit</strong> ist die ausgewählte Anzahl an Minuten/Stun
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "Der <strong>Schlusskurs</strong> ist der späteste Tick auf oder bevor der <strong>Endzeit</strong>."
 
+msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "Die <strong>Startzeit</strong> beginnt, wenn der Kontrakt von unseren Servern bearbeitet wird."
 
@@ -9618,6 +9627,9 @@ msgstr "Handelsregeln"
 
 msgid "Trading Times"
 msgstr "Börsenzeiten"
+
+msgid "Trading Window"
+msgstr ""
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Handels- und Abhebelimits"

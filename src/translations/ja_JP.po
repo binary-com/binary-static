@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-25 08:15-0400\n"
+"PO-Revision-Date: 2018-04-26 23:12-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -4272,16 +4272,19 @@ msgid "If force majeure events last for more than 30 business days, the Party no
 msgstr "If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately."
 
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
-msgstr ""
+msgstr "<strong>判定レート</strong>が<strong>低バリア値</strong>または<strong>高バリア値</strong>のどちらかと同等であった場合、ペイアウトは獲得できません。"
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
+msgstr "<strong>判定レート</strong>が<strong>バリア値</strong>と同等であった場合、ペイアウトは獲得できません。"
+
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr ""
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr ""
+msgstr "<strong>判定レート</strong>が<strong>取引時レート</strong>と同等であった場合、ペイアウトは獲得できません。"
 
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
-msgstr ""
+msgstr "<strong>最後のTick</strong>がTickの平均値と同等であった場合、ペイアウトは獲得できません。"
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "当社が単独の裁量で顧客がこれらの条件を遵守していないと判断した場合、または顧客が当社からの合理的な要求を遵守しない場合、当社は顧客の口座を停止し、 そこに蓄積された資金を保留することがあります。"
@@ -4414,6 +4417,9 @@ msgstr "「ダウン」を選択された場合、 <strong>終値</strong>が<st
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "「BREAK-OUT」を選択された場合、<strong>取引期間が終了までに</strong>市場価格が<strong>上下に設定されたバリア価格</strong>の<strong>レンジ外に出れば</strong>ペイアウトを受け取れます。"
+
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>."
+msgstr ""
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "「HIGH」を選択された場合、判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格</strong>以上の場合、ペイアウトを受け取れます。"
@@ -8603,6 +8609,9 @@ msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時�
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
 
+msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>取引開始時間</strong>とは回号の取引開始時刻のことです。各回号の詳細につきまして契約締結前交付書面をご確認ください。"
 
@@ -9752,6 +9761,9 @@ msgstr "取引ルール"
 
 msgid "Trading Times"
 msgstr "トレード対応時間"
+
+msgid "Trading Window"
+msgstr ""
 
 msgid "Trading and Withdrawal Limits"
 msgstr "取引上限及び出金限度額の設定"

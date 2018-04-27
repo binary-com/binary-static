@@ -365,6 +365,7 @@ const texts = [
     'Lots',
     'Payout per lot = 1,000',
     'This page is not available in the selected language.',
+    'Trading Window',
 
     // digit_info
     'Percentage',

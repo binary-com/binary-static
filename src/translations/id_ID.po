@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-25 08:16-0400\n"
+"PO-Revision-Date: 2018-04-26 23:13-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -4243,16 +4243,19 @@ msgid "If force majeure events last for more than 30 business days, the Party no
 msgstr "Jika peristiwa keadaan memaksa terjadi lebih dari 30 hari bisnis, Pihak bersangkutan dapat menghentikan Perjanjian ini dengan serta merta."
 
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
-msgstr ""
+msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>Batasan rendah</strong> atau<strong>Batasan tinggi</strong>, maka Anda tidak akan memperoleh hasil."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
+msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>batasan</strong>, Anda tidak akan memperoleh hasil."
+
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr ""
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr ""
+msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>spot awal</strong>, Anda tidak akan memperoleh hasil."
 
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
-msgstr ""
+msgstr "Jika <strong>tik akhir</strong> sama dengan tik rata-rata, Anda tidak akan memperoleh hasil."
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "Jika Perusahaan (dengan kebijakannya sendiri) tidak puas meskipun Pelanggan sudah memenuhi persyaratan, atau Klien tidak mematuhi permintaan wajar mengenai informasi yang diperlukan oleh Perusahaan, maka Perusahaan dapat membatalkan akun Klien dan menahan saldo yang ada."
@@ -4385,6 +4388,9 @@ msgstr "Pilih \"Turun\", maka anda akan memperoleh hasil jika <strong>spot akhir
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "Pilih \"Goes Outside\", Anda mendapat hasil jika pasar menyentuh salah satu <strong>Batasan tinggi</strong> atau <strong>Batasan rendah</strong> kapan saja selama <strong>periode kontrak</strong>."
+
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>."
+msgstr ""
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Pilih \"Higher\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>batasan</strong>."
@@ -8554,6 +8560,9 @@ msgstr "<strong>Waktu akhir</strong> adalah menit/jam yang dipilih setelah <stro
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>Spot akhir</strong> adalah tik terakhir pada atau sebelum <strong>waktu akhir</strong>."
 
+msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>Waktu mulai</strong> adalah waktu ketika kontrak diproses oleh server kami."
 
@@ -9618,6 +9627,9 @@ msgstr "Aturan Trading"
 
 msgid "Trading Times"
 msgstr "Waktu Trading"
+
+msgid "Trading Window"
+msgstr ""
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Batasan Penarikan"
