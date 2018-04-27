@@ -92,8 +92,6 @@ const MetaTrader = (() => {
             Object.keys(accounts_info)
                 .filter(acc_type => !MetaTraderConfig.hasAccount(acc_type))
                 .forEach((acc_type) => { MetaTraderUI.updateAccount(acc_type); });
-
-            MetaTraderUI.setValidations();
         });
     };
 

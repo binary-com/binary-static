@@ -42,6 +42,8 @@ const MetaTraderUI = (() => {
 
         MetaTraderConfig.setMessages($templates.find('#messages'));
 
+        validations = MetaTraderConfig.validations();
+
         populateAccountTypes();
         populateAccountList();
     };
@@ -503,9 +505,8 @@ const MetaTraderUI = (() => {
         disableButton,
         enableButton,
 
-        $form         : () => $form,
-        getToken      : () => token,
-        setValidations: () => { validations = MetaTraderConfig.validations(); },
+        $form   : () => $form,
+        getToken: () => token,
     };
 })();
 

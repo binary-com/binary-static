@@ -101,16 +101,22 @@ const submarketSort = (a, b) => {
 class Markets extends React.Component {
     constructor (props) {
         super(props);
-        const market_symbol = Defaults.get('market');
+        let market_symbol = Defaults.get('market');
         this.markets = Symbols.markets();
+
+
         this.underlyings = Symbols.getAllSymbols() || {};
         let underlying_symbol = Defaults.get('underlying');
-        if (!underlying_symbol || ! this.underlyings[underlying_symbol]) {
+        if (!underlying_symbol || !this.underlyings[underlying_symbol]) {
             const submarket = Object.keys(this.markets[market_symbol].submarkets).sort(submarketSort)[0];
             underlying_symbol = Object.keys(this.markets[market_symbol].submarkets[submarket].symbols).sort()[0];
         }
         const markets_arr = Object.entries(this.markets).sort((a, b) => submarketSort(a[0], b[0]));
         this.markets_all = markets_arr.slice();
+        if (!(market_symbol in this.markets)) {
+            market_symbol = Object.keys(this.markets).find(m => this.markets[m].submarkets[market_symbol]);
+            Defaults.set('market', market_symbol);
+        }
         this.el_underlying = getElementById('underlying');
         this.references = {};
         this.state = {
@@ -171,7 +177,7 @@ class Markets extends React.Component {
         let curr_market = null;
         Object.entries(market_nodes).forEach(([key, node]) => {
 
-            if (node && node.offsetParent && node.offsetTop - 40 <= position) {
+            if (node && node.offsetParent && node.offsetTop - 41 <= position) {
                 arr.push(key);
             }
         });

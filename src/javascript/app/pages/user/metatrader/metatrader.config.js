@@ -24,9 +24,11 @@ const MetaTraderConfig = (() => {
     let $messages;
     const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
-    // client currency equivalent to 1 USD
-    const getMinMT5TransferValue = (client_currency = Client.get('currency')) => (
-        (1 / (State.getResponse('exchange_rates.rates.USD') || 1)).toFixed(Currency.getDecimalPlaces(client_currency))
+    const min_allowed_transfer_in_usd = 1;
+    // currency equivalent to 1 USD
+    const getMinMT5TransferValue = (currency) => (
+        (currency === 'USD' ? min_allowed_transfer_in_usd :
+            (min_allowed_transfer_in_usd / (+State.getResponse('exchange_rates.rates.USD') || min_allowed_transfer_in_usd))).toFixed(Currency.getDecimalPlaces(currency))
     );
 
     const actions_info = {
@@ -104,9 +106,8 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else {
-                    BinarySocket.send({ cashier_password: 1 }).then(() => {
-                        const response_cashier_pass = State.get(['response', 'cashier_password']);
-                        if (!response_cashier_pass.error && response_cashier_pass.cashier_password === 1) {
+                    BinarySocket.send({ cashier_password: 1 }).then((response) => {
+                        if (!response.error && response.cashier_password === 1) {
                             resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', [
                                 urlFor('user/security/cashier_passwordws')]));
                         } else {
@@ -115,7 +116,7 @@ const MetaTraderConfig = (() => {
                                     resolve(localize('Your cashier is locked.')); // Locked from BO
                                 } else {
                                     const limit = State.getResponse('get_limits.remainder');
-                                    if (typeof limit !== 'undefined' && +limit < getMinMT5TransferValue()) {
+                                    if (typeof limit !== 'undefined' && +limit < getMinMT5TransferValue(Client.get('currency'))) {
                                         resolve(localize('You have reached the limit.'));
                                     } else {
                                         resolve();
@@ -230,7 +231,6 @@ const MetaTraderConfig = (() => {
 
     const validations = () => {
         const client_currency = Client.get('currency');
-        const mt_acc_currency = getCurrency(Client.get('mt5_account'));
         const max_withdrawal  = Currency.getMaxWithdrawal(client_currency);
         return {
             new_account: [
@@ -251,11 +251,11 @@ const MetaTraderConfig = (() => {
                 { selector: fields.password_reset.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_reset.txt_new_password.id }]] },
             ],
             deposit: [
-                { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: getMinMT5TransferValue(client_currency), max: Math.min(State.getResponse('get_limits.remainder') || max_withdrawal, max_withdrawal), decimals: Currency.getDecimalPlaces(client_currency) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
+                { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(client_currency), max: Math.min(State.getResponse('get_limits.remainder') || max_withdrawal, max_withdrawal), decimals: Currency.getDecimalPlaces(client_currency) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
             ],
             withdrawal: [
                 { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
-                { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: getMinMT5TransferValue(mt_acc_currency), max: Currency.getMaxWithdrawal(mt_acc_currency), decimals: 2 }]] },
+                { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => Currency.getMaxWithdrawal(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
             ],
         };
     };
