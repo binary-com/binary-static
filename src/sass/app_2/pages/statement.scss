@@ -1,4 +1,4 @@
-$filter-height: 75px;
+$filter-height: 60px;
 
 .statement-container {
     .statement-content {
@@ -25,6 +25,9 @@ $filter-height: 75px;
             margin-right: 1rem;
         }
     }
+    .table-head {
+        white-space: nowrap;
+    }
     .table-body .table-row {
         cursor: pointer;
     }
@@ -38,6 +41,9 @@ $filter-height: 75px;
     .payout, .amount, .balance {
         width: 6em;
         text-align: right;
+    }
+    th.payout {
+        direction: rtl;
     }
     .amount {
         font-weight: bold;
