@@ -414,6 +414,7 @@ const Metatrader = () => (
 
                     <div id='messages'>
                         <div id='title_new_account'>{it.L('Create MetaTrader 5 [_1] account', '[_1]')}</div>
+                        <div id='msg_set_currency'>{it.L('To perform this action, please set the [_1]currency[_2] of your account.', `<a href="${it.url_for('user/set-currency')}">`, '</a>')}</div>
                         <div id='msg_switch'>{it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}</div>
                         <div id='msg_upgrade'>{it.L('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', it.url_for('new_account/realws'), it.website_name)}</div>
                         <div id='msg_real_financial'>

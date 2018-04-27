@@ -269,9 +269,17 @@ const MetaTraderUI = (() => {
                 });
             });
 
-            if (!accounts_info[acc_type].is_demo && Client.get('is_virtual')) {
-                displayMainMessage(MetaTraderConfig.needsRealMessage(), false);
-                $action.find('#frm_cashier').setVisibility(0);
+            if (!accounts_info[acc_type].is_demo) {
+                let msg = '';
+                if (Client.get('is_virtual')) {
+                    msg = MetaTraderConfig.needsRealMessage();
+                } else if (!Client.get('currency')) { // client should set currency before accessing fund management section
+                    msg = $templates.find('#msg_set_currency').text();
+                }
+                if (msg) {
+                    displayMainMessage(msg, false);
+                    $action.find('#frm_cashier').setVisibility(0);
+                }
             }
             return;
         }
