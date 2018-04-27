@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-25 08:15-0400\n"
+"PO-Revision-Date: 2018-04-27 02:41-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -3328,6 +3328,9 @@ msgstr "6年以上の除外期間は設定することはできません。"
 msgid "Exclude time cannot be less than 6 months."
 msgstr "5ヶ月以下の除外時間を設定することはできません。"
 
+msgid "Excluded from the website until"
+msgstr ""
+
 msgid "Exclusive binary trading technology."
 msgstr "優れたバイナリー取引に関するテクノロジー"
 
@@ -3780,6 +3783,9 @@ msgstr "外国為替証拠金取引"
 
 msgid "G. Order Handling"
 msgstr "G. 注文処理"
+
+msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
+msgstr ""
 
 msgid "GBP 1 per point"
 msgstr "1ポイント＝GBP 1"
@@ -4272,16 +4278,19 @@ msgid "If force majeure events last for more than 30 business days, the Party no
 msgstr "If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately."
 
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
-msgstr ""
+msgstr "<strong>判定レート</strong>が<strong>低バリア値</strong>または<strong>高バリア値</strong>のどちらかと同等であった場合、ペイアウトは獲得できません。"
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
+msgstr "<strong>判定レート</strong>が<strong>バリア値</strong>と同等であった場合、ペイアウトは獲得できません。"
+
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr ""
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr ""
+msgstr "<strong>判定レート</strong>が<strong>取引時レート</strong>と同等であった場合、ペイアウトは獲得できません。"
 
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
-msgstr ""
+msgstr "<strong>最後のTick</strong>がTickの平均値と同等であった場合、ペイアウトは獲得できません。"
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "当社が単独の裁量で顧客がこれらの条件を遵守していないと判断した場合、または顧客が当社からの合理的な要求を遵守しない場合、当社は顧客の口座を停止し、 そこに蓄積された資金を保留することがあります。"
@@ -4315,6 +4324,9 @@ msgstr "%1のアフィリエイト会員である場合、%1アフィリエイ�
 
 msgid "If you are an individual, you are over 18 years old and you have full capacity to enter into this Agreement;"
 msgstr "個人の場合、18歳以上であり、且つ本契約を締結するにあたり十分な能力がある必要があります。"
+
+msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
+msgstr ""
 
 msgid "If you are developing on our API on behalf of a company or other entity, you represent and warrant that you have full legal authority to register an Application on behalf of that entity and bind it to these Terms. If you are not authorized, you may not accept these Terms or register an Application for someone else."
 msgstr "企業あるいはその他事業体を代表して当APIを開発される場合、事業体を代表してのアプリケーションの登録及びこれら規約に拘束される完全な法的権限を表明し、保証します。権限がない場合は本規約に同意または代理でアプリケーションの登録をしないでください。"
@@ -4414,6 +4426,9 @@ msgstr "「ダウン」を選択された場合、 <strong>終値</strong>が<st
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "「BREAK-OUT」を選択された場合、<strong>取引期間が終了までに</strong>市場価格が<strong>上下に設定されたバリア価格</strong>の<strong>レンジ外に出れば</strong>ペイアウトを受け取れます。"
+
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>."
+msgstr ""
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "「HIGH」を選択された場合、判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格</strong>以上の場合、ペイアウトを受け取れます。"
@@ -8603,6 +8618,9 @@ msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時�
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
 
+msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>取引開始時間</strong>とは回号の取引開始時刻のことです。各回号の詳細につきまして契約締結前交付書面をご確認ください。"
 
@@ -9489,6 +9507,9 @@ msgstr "終了時間は明日以降として設定して下さい。"
 msgid "Time out until"
 msgstr "xxxまで利用禁止"
 
+msgid "Timed out until"
+msgstr ""
+
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "時代のニーズを汲み、ペイアウト金額を増大させることで顧客の利益拡大を目指します。"
 
@@ -9524,6 +9545,9 @@ msgstr "ご利用中のブラウザのバージョンの指示に従ってクッ
 
 msgid "To exchange one currency for another in order to make profit."
 msgstr "ある通貨を別の通貨に交換して利益を上げることです。"
+
+msgid "To find out more and to sign up with GAMSTOP, please visit %1."
+msgstr ""
 
 msgid "To go long, you will click on 'Buy' to purchase GBP 1 for USD 1.22781. To go short, you will click on 'Sell' to sell GBP 1 and receive USD 1.22771 in return."
 msgstr "ロンポジションをとるには、GBP 1をUSD 1.22781で買うために「購入する」をクリックします。ショートポジションをとるには、GBP 1を売るために「売却」ボタンをクリックして、USD 1.22771のリターンを受取ります。"
@@ -9569,6 +9593,9 @@ msgstr "パスワードを再設定される場合は、口座開設時に登録
 
 msgid "To reset your trading or investor password, please click the button below:"
 msgstr "取引パスワードまたは投資パスワードをリセットするには、下のボタンをクリックしてください。"
+
+msgid "To self-exclude from all online gambling companies licensed in Great Britain, go to %1."
+msgstr ""
 
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "MetaTrader 5 金融口座からご出金いただくには、お客さまのバイナリー口座を<a href=\"%1\">認証</a>いただく必要があります。"
@@ -9752,6 +9779,9 @@ msgstr "取引ルール"
 
 msgid "Trading Times"
 msgstr "トレード対応時間"
+
+msgid "Trading Window"
+msgstr ""
 
 msgid "Trading and Withdrawal Limits"
 msgstr "取引上限及び出金限度額の設定"

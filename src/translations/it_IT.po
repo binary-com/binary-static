@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-25 08:15-0400\n"
+"PO-Revision-Date: 2018-04-27 02:40-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -3300,6 +3300,9 @@ msgstr "Il periodo di esclusione non può essere superiore a 5 anni."
 msgid "Exclude time cannot be less than 6 months."
 msgstr "Il periodo di esclusione non può essere inferiore a 6 mesi."
 
+msgid "Excluded from the website until"
+msgstr ""
+
 msgid "Exclusive binary trading technology."
 msgstr "Tecnologia esclusiva per il trading binario."
 
@@ -3752,6 +3755,9 @@ msgstr "G. Margine"
 
 msgid "G. Order Handling"
 msgstr "G. Gestione degli Ordini"
+
+msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
+msgstr ""
 
 msgid "GBP 1 per point"
 msgstr "GBP 1 per punto"
@@ -4248,6 +4254,9 @@ msgstr ""
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr ""
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
 msgstr ""
 
@@ -4286,6 +4295,9 @@ msgstr "Se sei un affiliato di %1, devi inoltre conformarti ai Termini e condizi
 
 msgid "If you are an individual, you are over 18 years old and you have full capacity to enter into this Agreement;"
 msgstr "Se sei un individuo, hai più di 18 anni e hai piena capacità di sottoscrivere questo Accordo;"
+
+msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
+msgstr ""
 
 msgid "If you are developing on our API on behalf of a company or other entity, you represent and warrant that you have full legal authority to register an Application on behalf of that entity and bind it to these Terms. If you are not authorized, you may not accept these Terms or register an Application for someone else."
 msgstr "Se ti stai sviluppando sulla nostra API nell'interesse di una società o altra organizzazione, rappresenti e garantisci di avere la piena autorità di registrare un'Applicazione per conto di tale organizzazione e di vincolarti ai presenti Termini. Se non sei autorizzato, puoi non accettare i presenti Termini o registrare un'Applicazione per qualcun'altro."
@@ -4385,6 +4397,9 @@ msgstr "Se selezioni \"Ribassa\", vinci il payout se lo <strong>spot d'uscita</s
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "Se selezioni \"Goes Outside\" (Esce fuori), vinci il payout se il mercato tocca la <strong>Barriera superiore</strong> o la <strong>Barriera inferiore</strong> in qualsiasi momento del <strong>periodo del contratto</strong>."
+
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>."
+msgstr ""
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Se selezioni \"High\", vinci il payout se lo <strong>spot d'uscita</strong> è notevolmente superiore alla <strong>barriera</strong>."
@@ -8554,6 +8569,9 @@ msgstr "L'<strong>orario di fine</strong> è il numero di minuti/ore selezionati
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "Lo <strong>spot d'uscita</strong> è l'ultimo tick entro l'<strong>orario di fine</strong>."
 
+msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "L'<strong>orario d'inizio</strong> indica il momento in cui il contratto viene elaborato dai nostri server."
 
@@ -9355,6 +9373,9 @@ msgstr "La scadenza non può essere nella giornata di oggi."
 msgid "Time out until"
 msgstr "Tempo scaduto fino a"
 
+msgid "Timed out until"
+msgstr ""
+
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "I tempi stanno cambiando. Aumentiamo i payout in modo che i nostri clienti possano ottenere il massimo dai loro trade vincenti."
 
@@ -9390,6 +9411,9 @@ msgstr "Per abilitare i cookie, segui le istruzioni sottostanti per la versione 
 
 msgid "To exchange one currency for another in order to make profit."
 msgstr "Per scambiare una valuta con un'altra al fine di realizzare profitto."
+
+msgid "To find out more and to sign up with GAMSTOP, please visit %1."
+msgstr ""
 
 msgid "To go long, you will click on 'Buy' to purchase GBP 1 for USD 1.22781. To go short, you will click on 'Sell' to sell GBP 1 and receive USD 1.22771 in return."
 msgstr "Per aprire una posizione long, clicca su \"Acquista\" per acquistare 1 GBP per 1,22781 USD. Per aprire una posizione short, clicca su \"Vendi\" per vendere 1 GBP e ricevere 1,22771 USD in cambio."
@@ -9435,6 +9459,9 @@ msgstr "Per reimpostare la password, inserisci nel campo sottostante l'indirizzo
 
 msgid "To reset your trading or investor password, please click the button below:"
 msgstr "Per reimpostare la password dell'investitore o quella per accedere al trading, clicca il pulsante qui sotto:"
+
+msgid "To self-exclude from all online gambling companies licensed in Great Britain, go to %1."
+msgstr ""
 
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "Per prelevare dal tuo Account MetaTrader 5 Financial ti chiediamo di <a href=\"%1\">Autenticare</a> il tuo account Binary."
@@ -9618,6 +9645,9 @@ msgstr "Regole del trading"
 
 msgid "Trading Times"
 msgstr "Orari di trading"
+
+msgid "Trading Window"
+msgstr ""
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Limiti di trading e dei prelievi"
