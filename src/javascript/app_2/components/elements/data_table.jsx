@@ -25,6 +25,7 @@ class DataTable extends React.Component {
     }
 
     renderRow(transaction, id) {
+        if (!transaction) return null;
         const defaultRenderCell = (data, data_index) => <td className={data_index} key={data_index}>{data}</td>;
 
         return (

@@ -235,17 +235,35 @@ class Statement extends React.PureComponent {
                 <div className='statement-content'>
                     {
                         is_loading
-                            ? <Loading />
-                            : this.state.data_source.length === 0
-                                ? <div className='statement-no-activity-msg'>{localize('Your account has no trading activity.')}</div>
-                                : <DataTable
-                                    data_source={this.state.data_source.slice(
-                                        0,
-                                        this.state.chunks * this.props.chunk_size
-                                    )}
-                                    columns={this.state.columns}
-                                    has_fixed_header
-                                />
+                            && (
+                                <React.Fragment>
+                                    <DataTable data_source={[]} columns={this.state.columns} has_fixed_header />
+                                    <Loading />
+                                </React.Fragment>
+                            )
+
+                        ||
+
+                        this.state.data_source.length === 0
+                            && (
+                                <React.Fragment>
+                                    <DataTable data_source={[]} columns={this.state.columns} has_fixed_header />
+                                    <div className='statement-no-activity-msg'>
+                                        {localize('Your account has no trading activity.')}
+                                    </div>
+                                </React.Fragment>
+                            )
+
+                        ||
+
+                        <DataTable
+                            data_source={this.state.data_source.slice(
+                                0,
+                                this.state.chunks * this.props.chunk_size
+                            )}
+                            columns={this.state.columns}
+                            has_fixed_header
+                        />
                     }
                 </div>
             </div>
