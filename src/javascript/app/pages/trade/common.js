@@ -238,7 +238,7 @@ const commonTrading = (() => {
         if (!mkt || !markets[mkt]) {
             const sorted_markets = Object.keys(Symbols.markets()).filter(v => markets[v].is_active)
                 .sort((a, b) => getMarketsOrder(a) - getMarketsOrder(b));
-            mkt                  = sorted_markets[0];
+            mkt                  = sorted_markets[0] || Object.keys(Symbols.markets())[0];
         }
         return mkt;
     };

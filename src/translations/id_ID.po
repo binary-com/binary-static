@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-23 02:25-0400\n"
+"PO-Revision-Date: 2018-04-26 23:13-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -525,8 +525,8 @@ msgstr "<a href=\"%1\">Kembali ke halaman trading</a>"
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Didirikan</a> Oktober 1999"
 
-msgid "<a href='%1'>Offices</a> in Malta, Malaysia and Japan"
-msgstr "<a href='%1'>Kantor</a> di Malta, Malaysia dan Jepang"
+msgid "<a href='%1'>Offices</a> in Malta and Malaysia"
+msgstr "<a href='%1'>Kantor</a> di Malta dan Malaysia"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Ketepatan Test: PERINGATAN:</strong> Dalam memberikan pelayanan, kami diharuskan untuk memperoleh informasi dari Anda untuk memastikan apakah produk atau layanan yang diberikan adalah tepat untuk Anda (yaitu, apakah Anda memiliki pengalaman dan pengetahuan untuk memahami risiko yang terlibat)."
@@ -1637,9 +1637,6 @@ msgstr "Binary K.K."
 
 msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
 msgstr "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Berlisensi dan diatur sebagai Instrumen Bisnis Keuangan Jenis 1 oleh KLFB (Nomor Lisensi: 2949) dan anggota FFAJ (nomor keanggotaan: 1590)."
-
-msgid "Binary K.K., Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
-msgstr "Binary K.K., Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 
 msgid "Binary KK granted Japan license"
 msgstr "Binary KK telah menerima lisensi Jepang"
@@ -4245,6 +4242,21 @@ msgstr "Jika ada ketentuan dalam Perjanjian ini dianggap tidak sah atau tidak da
 msgid "If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately."
 msgstr "Jika peristiwa keadaan memaksa terjadi lebih dari 30 hari bisnis, Pihak bersangkutan dapat menghentikan Perjanjian ini dengan serta merta."
 
+msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
+msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>Batasan rendah</strong> atau<strong>Batasan tinggi</strong>, maka Anda tidak akan memperoleh hasil."
+
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
+msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>batasan</strong>, Anda tidak akan memperoleh hasil."
+
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
+msgstr ""
+
+msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
+msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>spot awal</strong>, Anda tidak akan memperoleh hasil."
+
+msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
+msgstr "Jika <strong>tik akhir</strong> sama dengan tik rata-rata, Anda tidak akan memperoleh hasil."
+
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "Jika Perusahaan (dengan kebijakannya sendiri) tidak puas meskipun Pelanggan sudah memenuhi persyaratan, atau Klien tidak mematuhi permintaan wajar mengenai informasi yang diperlukan oleh Perusahaan, maka Perusahaan dapat membatalkan akun Klien dan menahan saldo yang ada."
 
@@ -4376,6 +4388,9 @@ msgstr "Pilih \"Turun\", maka anda akan memperoleh hasil jika <strong>spot akhir
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "Pilih \"Goes Outside\", Anda mendapat hasil jika pasar menyentuh salah satu <strong>Batasan tinggi</strong> atau <strong>Batasan rendah</strong> kapan saja selama <strong>periode kontrak</strong>."
+
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>."
+msgstr ""
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Pilih \"Higher\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>batasan</strong>."
@@ -8545,6 +8560,9 @@ msgstr "<strong>Waktu akhir</strong> adalah menit/jam yang dipilih setelah <stro
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>Spot akhir</strong> adalah tik terakhir pada atau sebelum <strong>waktu akhir</strong>."
 
+msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>Waktu mulai</strong> adalah waktu ketika kontrak diproses oleh server kami."
 
@@ -9610,6 +9628,9 @@ msgstr "Aturan Trading"
 msgid "Trading Times"
 msgstr "Waktu Trading"
 
+msgid "Trading Window"
+msgstr ""
+
 msgid "Trading and Withdrawal Limits"
 msgstr "Batasan Penarikan"
 
@@ -10246,8 +10267,8 @@ msgstr "Kami mungkin, dengan kebijaksanaan mutlak, menolak Order Anda jika terja
 msgid "We may, however, withhold your withdrawal request from your MT5 Real Account to your Binary Options Real Account, in whole or in part, if:"
 msgstr "Kami mungkin, bagaimanapun juga dapat menahan permohonan penarikan Akun Riil mt5 Anda ke Akun Riil Opsi Binary, secara keseluruhan atau sebagian, jika:"
 
-msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, Malaysia, or Japan."
-msgstr "Kami menawarkan gaji berdasarkan pasar, bonus kinerja tahunan, manfaat kesehatan, tunjangan internet dan perjalanan, serta wisata perusahaan. Nikmati standar hidup yang tinggi, baik Anda di Malta, Malaysia, atau Jepang."
+msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, or Malaysia."
+msgstr "Kami menawarkan gaji berdasarkan pasar, bonus kinerja tahunan, manfaat kesehatan, wisata dan tunjangan internet dan perjalanan perusahaan. Nikmati standar hidup yang tinggi, baik Anda di Malta atau Malaysia."
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
 msgstr "Kami menawarkan keempat logam mulia - emas, perak, paladium, dan platina - serta energi dalam daftar komoditas kami."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-23 02:24-0400\n"
+"PO-Revision-Date: 2018-04-26 23:12-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -540,9 +540,9 @@ msgstr "<a href=\"%1\">取引ページヘ戻る</a>"
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>設立日</a> 1999年10月"
 
-msgid "<a href='%1'>Offices</a> in Malta, Malaysia and Japan"
+msgid "<a href='%1'>Offices</a> in Malta and Malaysia"
 msgstr "<a href='%1'>事務所</a>\n"
-"マルタ・マレーシア・日本"
+"マルタ・マレーシア"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>適正テスト: 警告:</strong>当サービスでは、どの所定の製品またはサービスがお客様に適しているか評価するためにお客さまの情報を必要とします。（関連するリスクを理解する経験や知識があるかどうかわかります。）"
@@ -1660,9 +1660,6 @@ msgstr "Binary K.K."
 
 msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
 msgstr "Binary株式会社 (和文名称 バイナリー株式会社)：〒150-0012 東京都 渋谷区 広尾 1−9−16 広尾宮田ビル 3F<br>第一種金融商品取引業者として登録完了（関東財務局長(金商)第2949号）金融先物取引業協会に加入（会員番号1590号）"
-
-msgid "Binary K.K., Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
-msgstr "Binary株式会社 (和文名称 バイナリー株式会社) 所在地：<br>150-0012 東京都渋谷区広尾1-9-16 広尾宮田ビル3F"
 
 msgid "Binary KK granted Japan license"
 msgstr "第一種金融商品取引業者として登録"
@@ -4274,6 +4271,21 @@ msgstr "本契約の一部条項が裁判所又は各管轄先の規制機関に
 msgid "If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately."
 msgstr "If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately."
 
+msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
+msgstr "<strong>判定レート</strong>が<strong>低バリア値</strong>または<strong>高バリア値</strong>のどちらかと同等であった場合、ペイアウトは獲得できません。"
+
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
+msgstr "<strong>判定レート</strong>が<strong>バリア値</strong>と同等であった場合、ペイアウトは獲得できません。"
+
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
+msgstr ""
+
+msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
+msgstr "<strong>判定レート</strong>が<strong>取引時レート</strong>と同等であった場合、ペイアウトは獲得できません。"
+
+msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
+msgstr "<strong>最後のTick</strong>がTickの平均値と同等であった場合、ペイアウトは獲得できません。"
+
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "当社が単独の裁量で顧客がこれらの条件を遵守していないと判断した場合、または顧客が当社からの合理的な要求を遵守しない場合、当社は顧客の口座を停止し、 そこに蓄積された資金を保留することがあります。"
 
@@ -4405,6 +4417,9 @@ msgstr "「ダウン」を選択された場合、 <strong>終値</strong>が<st
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "「BREAK-OUT」を選択された場合、<strong>取引期間が終了までに</strong>市場価格が<strong>上下に設定されたバリア価格</strong>の<strong>レンジ外に出れば</strong>ペイアウトを受け取れます。"
+
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>."
+msgstr ""
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "「HIGH」を選択された場合、判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格</strong>以上の場合、ペイアウトを受け取れます。"
@@ -8594,6 +8609,9 @@ msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時�
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
 
+msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>取引開始時間</strong>とは回号の取引開始時刻のことです。各回号の詳細につきまして契約締結前交付書面をご確認ください。"
 
@@ -9744,6 +9762,9 @@ msgstr "取引ルール"
 msgid "Trading Times"
 msgstr "トレード対応時間"
 
+msgid "Trading Window"
+msgstr ""
+
 msgid "Trading and Withdrawal Limits"
 msgstr "取引上限及び出金限度額の設定"
 
@@ -10381,8 +10402,8 @@ msgstr "We may, at our absolute discretion, disregard your Order if an Event tak
 msgid "We may, however, withhold your withdrawal request from your MT5 Real Account to your Binary Options Real Account, in whole or in part, if:"
 msgstr "We may, however, withhold your withdrawal request from your MT5 Real Account to your Binary Options Real Account, in whole or in part, if:"
 
-msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, Malaysia, or Japan."
-msgstr "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, Malaysia, or Japan."
+msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, or Malaysia."
+msgstr "当社では、ボーナス、健康保険、旅行、インターネット、社員旅行といった魅力的な福利厚生を提供しています。マルタまたはマレーシアでハイスタンダードな生活をお楽しみいただけます。"
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
 msgstr "全貴金属商品を提供しています - 金・銀・パラジウム・プラチナ"
@@ -12455,7 +12476,7 @@ msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 msgstr "特定非営利活動法人証券・金融商品あっせん相談センター"
 
 msgid "{JAPAN ONLY}First-Class FX Binary Options Trading Platform"
-msgstr "最高水準のバイナリーオプション取引プラットフォーム"
+msgstr "この度、事業継続が困難との判断から廃業させていただく運びとなりました。"
 
 msgid "{JAPAN ONLY}Footer regulatory text"
 msgstr "■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合は支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。1)1取引の取引上限は100ロット。2)1日の取引上限額は50万円。前記2)に達した時点でその日は取引ができなくなります。■取引手数料は無料。当該日から遡り12ヶ月間、新規又は売却取引がなかった場合は口座維持手数料（2,500円税込）が発生、引き続き取引等がない場合、6ヶ月毎に同額が発生します。3,000円未満を出金の際は250円（税込）の出金手数料がかかります。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引開始前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
@@ -12883,7 +12904,7 @@ msgid "{JAPAN ONLY}November 7, 2014"
 msgstr "2014年11月17日"
 
 msgid "{JAPAN ONLY}Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
-msgstr "見やすく利便性の高いプラットフォームにてお取引をお試しいただけます"
+msgstr "お手数ですが、4月30日までに出金のお手続きをお願い致します。"
 
 msgid "{JAPAN ONLY}On-time Payments Every Time"
 msgstr "報酬金額の支払い期日"

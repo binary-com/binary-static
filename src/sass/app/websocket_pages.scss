@@ -85,6 +85,17 @@
     }
 }
 
+#frm_account_transfer {
+    div.select {
+        select.select-hidden {
+            min-width: 200px;
+        }
+        @media screen and (max-width: 480px) {
+            width: calc(100% - 1rem);
+        }
+    }
+}
+
 #knowledge-test-container {
     #knowledge-test-msg {
         white-space: pre-line;
