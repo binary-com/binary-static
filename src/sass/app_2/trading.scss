@@ -19,6 +19,21 @@
             z-index: 1;
             color: $COLOR_BLUE;
         }
+        .purchase-option {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .btn {
+                margin: 4px;
+                text-transform: capitalize;
+                width: calc(100% - 0.5rem);
+            }
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
         .clock-header, .fieldset-header {
             height: 1.5rem;
             position: relative;
