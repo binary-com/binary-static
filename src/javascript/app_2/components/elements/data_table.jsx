@@ -48,9 +48,9 @@ class DataTable extends React.Component {
     renderFooters() {
         const { footer } = this.props;
         return this.props.columns.map(col => (
-                <td className={col.data_index} key={col.data_index}>
-                    {footer[col.data_index] ? footer[col.data_index] : ''}
-                </td>
+            <td className={col.data_index} key={col.data_index}>
+                {footer[col.data_index] ? footer[col.data_index] : ''}
+            </td>
         ));
     }
 
