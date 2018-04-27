@@ -162,7 +162,6 @@ class Calendar extends React.Component {
             date,
             active_view: active_view[type],
         });
-        this.props.handleDateChange(date, true);
     }
 
     handleMonthSelected(e) {
