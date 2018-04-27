@@ -39,14 +39,14 @@ const contract_type_display = {
     ASIANU      : {name: 'Asian Up', icon: 'asia_up'},
     ASIAND      : {name: 'Asian Down', icon: 'asia_down'},
     CALL        : {name: 'Higher', icon: 'higher'},
-    CALLE       : {name: 'Higher or equal', icon: ''},
+    CALLE       : {name: 'Higher or equal', icon: 'higher'},
     PUT         : {name: 'Lower', icon: 'lower'},
-    DIGITMATCH  : {name: 'Digit Matches', icon: 'matches'},
-    DIGITDIFF   : {name: 'Digit Differs', icon: 'differs'},
-    DIGITODD    : {name: 'Digit Odd', icon: 'odd'},
-    DIGITEVEN   : {name: 'Digit Even', icon: 'even'},
-    DIGITOVER   : {name: 'Digit Over', icon: 'over'},
-    DIGITUNDER  : {name: 'Digit Under', icon: 'under'},
+    DIGITMATCH  : {name: 'Digit Matches', icon: 'digit_matches'},
+    DIGITDIFF   : {name: 'Digit Differs', icon: 'digit_differs'},
+    DIGITODD    : {name: 'Digit Odd', icon: 'digit_odd'},
+    DIGITEVEN   : {name: 'Digit Even', icon: 'digit_even'},
+    DIGITOVER   : {name: 'Digit Over', icon: 'digit_over'},
+    DIGITUNDER  : {name: 'Digit Under', icon: 'digit_under'},
     EXPIRYMISS  : {name: 'Ends Outside', icon: 'ends_outside'},
     EXPIRYRANGE : {name: 'Ends Between', icon: 'ends_between'},
     EXPIRYRANGEE: {name: 'Ends Between', icon: 'ends_between'},
@@ -78,7 +78,11 @@ class Portfolio extends React.PureComponent  {
             {
                 title     : localize('Contract Type'),
                 data_index: 'type',
-                renderCell: (data, data_index) => (<td key={data_index}>{contract_type_display[data].name}</td>),
+                renderCell: (data, data_index) => (
+                    <td key={data_index}>
+                        <i className={`trade_type_icon ${contract_type_display[data].icon}`} /> {contract_type_display[data].name}
+                    </td>
+                ),
             },
             {
                 title     : localize('Contract Details'),
@@ -103,7 +107,7 @@ class Portfolio extends React.PureComponent  {
                 data_index: 'indicative',
                 renderCell: (data, data_index) => (
                         data.amount ?
-                            <td key={data_index} className={data.style}>
+                            <td key={data_index} className={`indicative ${data.style}`}>
                                 <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data.amount}
                                 {data.style === 'no_resale' && <div> resell not offered</div>}
                             </td>

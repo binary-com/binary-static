@@ -1,0 +1,72 @@
+.indicative {
+    font-weight: bold;
+
+    &.price_moved_up {
+        color: $COLOR_LIGHT_GREEN;
+    }
+    &.price_moved_down {
+        color: $COLOR_RED;
+    }
+    &.no_resale {
+        color: $COLOR_LIGHT_GRAY_2;
+    }
+}
+
+.table-body {
+    td.ref {
+        color: $COLOR_TEXT_BLUE;
+    }
+}
+
+// add to common .scss
+// TODO: Add rest of icons
+.trade_type_icon {
+    &.asia_up {
+        content: url('../images/trading_app/contracts/trade_types/light/asian/ic-light-asia-up.svg');
+    }
+    &.asia_down {
+        content: url('../images/trading_app/contracts/trade_types/light/asian/ic-light-asia-down.svg');
+    }
+    &.higher {
+        content: url('../images/trading_app/contracts/trade_types/light/higher_lower/ic-light-higher.svg');
+    }
+    &.lower {
+        content: url('../images/trading_app/contracts/trade_types/light/higher_lower/ic-light-lower.svg');
+    }
+    &.digit_matches {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.digit_differs {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.digit_odd {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.digit_even {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.digit_over {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.digit_under {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.ends_outside {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.ends_between {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.stays_between {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.goes_outside {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.touch {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+    &.no_touch {
+        content: url('../images/trading_app/contracts/rise_fall.svg');
+    }
+}
