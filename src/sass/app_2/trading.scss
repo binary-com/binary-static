@@ -20,18 +20,59 @@
             color: $COLOR_BLUE;
         }
         .purchase-option {
+            margin: 8px 0;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
 
-            .btn {
-                margin: 4px;
-                text-transform: capitalize;
-                width: calc(100% - 0.5rem);
+            &.closed {
+                grid-template-columns: 1fr 1fr;
             }
-            div {
+            span.tooltip[data-tooltip] {
+                &:before {
+                    max-width: unset;
+                    width: 250px;
+                    white-space: normal;
+                }
+                .btn {
+                    text-transform: capitalize;
+                    min-width: 90px;
+                    min-height: 90px;
+                    margin: 4px;
+                }
+            }
+            div.box {
                 display: flex;
+                flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
+
+                h4 {
+                    font-size: 0.88rem;
+                    padding-bottom: 0;
+                    padding-top: 0;
+                    margin: 0.5rem 0 auto;
+                    font-weight: 300;
+
+                    &.net-profit-header, &.payout-header {
+                        margin: auto 0 0;
+                    }
+                }
+                div.amount {
+                    position: relative;
+
+                    span.symbols {
+                        left: -0.6rem;
+                        top: 6px;
+                        font-size: 0.88rem;
+                    }
+                }
+                span:not(.purchase-return):not(.symbols) {
+                    font-size: 0.88rem;
+                    position: relative;
+                }
+                span.purchase-return {
+                    color: $COLOR_ORANGE;
+                }
             }
         }
         .clock-header, .fieldset-header {
