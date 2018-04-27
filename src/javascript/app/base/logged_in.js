@@ -7,6 +7,7 @@ const SocketCache        = require('./socket_cache');
 const getElementById     = require('../../_common/common_functions').getElementById;
 const getLanguage        = require('../../_common/language').get;
 const urlLang            = require('../../_common/language').urlLang;
+const removeCookies      = require('../../_common/storage').removeCookies;
 const isStorageSupported = require('../../_common/storage').isStorageSupported;
 const paramsHash         = require('../../_common/url').paramsHash;
 const urlFor             = require('../../_common/url').urlFor;
@@ -99,7 +100,7 @@ const LoggedInHandler = (() => {
             GTM.setLoginFlag();
             Client.set('session_start', parseInt(moment().valueOf() / 1000));
             // Remove cookies that were set by the old code
-            Client.cleanupCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
+            removeCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
         }
     };
 
