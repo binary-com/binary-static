@@ -69,11 +69,17 @@ class Calendar extends React.Component {
 
     updateDate(value, unit, is_add) {
         const new_date = moment(this.state.date)[is_add ? 'add' : 'subtract'](value, unit).format(this.props.dateFormat);
-        if (this.isMonthDisabled(new_date)) {
-            console.log('disabled month');
-        } else {
-            this.setState({ date: new_date });
-        }
+
+        if (this.isPeriodDisabled(new_date, 'month')) return;
+
+        this.setState({ date: new_date });
+    }
+
+    isPeriodDisabled(date, unit) {
+        const start_of_period = moment(date).startOf(unit);
+        const end_of_period   = moment(date).endOf(unit);
+        return end_of_period.isBefore(moment(this.props.minDate))
+            || start_of_period.isAfter(moment(this.props.maxDate));
     }
 
     nextMonth() {
@@ -148,6 +154,9 @@ class Calendar extends React.Component {
             decade: 'year',
         };
         const date = moment(this.state.date)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.dateFormat);
+
+        if (this.isPeriodDisabled(date, type)) return;
+
         this.setState({
             date,
             active_view: active_view[type],
@@ -197,13 +206,6 @@ class Calendar extends React.Component {
             date         : default_date,
             selected_date: '',
         });
-    }
-
-    isMonthDisabled(date) {
-        const start_of_month = moment(date).startOf('month');
-        const end_of_month   = moment(date).endOf('month');
-        return end_of_month.isBefore(moment(this.props.minDate))
-            || start_of_month.isAfter(moment(this.props.maxDate));
     }
 
     getDays() {
@@ -267,16 +269,20 @@ class Calendar extends React.Component {
         const month_headers = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         return (
             <div className='calendar-month-panel'>
-                {month_headers.map((item, idx) => (
-                    <span
-                        key={idx}
-                        className={`calendar-month${idx === is_active ? ' active' : ''}`}
-                        onClick={this.handleMonthSelected}
-                        data-month={idx}
-                    >
-                        {localize(item)}
-                    </span>
-                ))}
+                {month_headers.map((item, idx) => {
+                    const date = moment(this.state.date).month(item);
+                    const is_disabled = this.isPeriodDisabled(date, 'month');
+                    return (
+                        <span
+                            key={idx}
+                            className={`calendar-month${idx === is_active ? ' active' : ''}${is_disabled ? ' disabled' : ''}`}
+                            onClick={this.handleMonthSelected}
+                            data-month={idx}
+                        >
+                            {localize(item)}
+                        </span>
+                    );
+                })}
             </div>
         );
     }
