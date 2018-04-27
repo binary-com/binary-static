@@ -101,16 +101,14 @@ class Portfolio extends React.PureComponent  {
             {
                 title     : localize('Indicative'),
                 data_index: 'indicative',
-                renderCell: (data, data_index) => {
-                    if (!data.amount) {
-                        return <td key={data_index}>-</td>;
-                    }
-                    return (
-                        <td key={data_index} className={data.style}> 
-                            <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data.amount}
-                            {data.style === 'no_resale' && <div> resell not offered</div>}
-                        </td>);
-                },
+                renderCell: (data, data_index) => (
+                        data.amount ?
+                            <td key={data_index} className={data.style}>
+                                <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data.amount}
+                                {data.style === 'no_resale' && <div> resell not offered</div>}
+                            </td>
+                            : <td key={data_index}>-</td>
+                ),
             },
         ];
         const footer = {
@@ -164,15 +162,15 @@ class Portfolio extends React.PureComponent  {
         if (getPropertyValue(response, 'error')) {
             return;
         }
-        const data_source = this.state.data_source.slice();
+        let data_source = this.state.data_source.slice();
         const footer    = Object.assign({}, this.state.footer);
         const proposal  = response.proposal_open_contract;
         // force to sell the expired contract, in order to remove from portfolio
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
-            // BinarySocket.send({ sell_expired: 1 });
+            BinarySocket.send({ sell_expired: 1 });
         }
         if (+proposal.is_sold === 1) {
-            // data_source = data_source.filter((portfolio_item) => portfolio_item.id !== +proposal.contract_id);
+            data_source = data_source.filter((portfolio_item) => portfolio_item.id !== +proposal.contract_id);
         } else {
             data_source.forEach(portfolio_item => {
                 if (portfolio_item.id === +proposal.contract_id) {
