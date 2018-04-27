@@ -37,7 +37,6 @@ const professionalClient = (() => {
         const $info             = $container.find('#professional_info');
         const $popup_contents   = $container.find('#popup');
         const $error            = $('#form_message');
-        const $frm_trading_exp  = $('#trading_experience_form');
         const popup_selector    = '#professional_popup';
 
         $container.find('#professional_info_toggle').off('click').on('click', function() {
@@ -54,13 +53,9 @@ const professionalClient = (() => {
                 $popup.find('#btn_accept, #btn_decline').off('click').on('click dblclick', function() {
                     if ($(this).attr('data-value') === 'decline') {
                         $chk_professional.prop('checked', false);
-                        $frm_trading_exp.setVisibility(1);
                     }
                     $popup.remove();
                 });
-                $frm_trading_exp.setVisibility(0);
-            } else {
-                $frm_trading_exp.setVisibility(1);
             }
         });
 

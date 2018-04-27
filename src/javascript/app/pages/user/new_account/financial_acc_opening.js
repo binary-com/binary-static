@@ -53,8 +53,6 @@ const FinancialAccOpening = (() => {
                 }
                 if (value) $element.val(value);
             });
-
-            $('#trading_experience_form').setVisibility(/^(financial)$/.test(Client.getUpgradeInfo().type));
         });
 
 
