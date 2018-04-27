@@ -212,8 +212,8 @@ class Statement extends React.PureComponent {
         return (
             <div className='statement-container'>
                 <div className='statement-filter'>
-                    <span className='statement-filter-text'>Filter by date:</span>
-                    <span className='statement-filter-text'>from</span>
+                    <span className='statement-filter-text'>{localize('Filter by date:')}</span>
+                    <span className='statement-filter-text'>{localize('from')}</span>
                     <DatePicker
                         name='date_from'
                         initial_value=''
@@ -221,7 +221,7 @@ class Statement extends React.PureComponent {
                         maxDate={this.state.date_to || today}
                         onChange={this.handleDateChange}
                     />
-                    <span className='statement-filter-text'>to</span>
+                    <span className='statement-filter-text'>{localize('to')}</span>
                     <DatePicker
                         name='date_to'
                         initial_value=''
