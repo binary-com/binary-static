@@ -279,6 +279,8 @@ const texts = [
     'Exclude time cannot be less than 6 months.',
     'Exclude time cannot be for more than 5 years.',
     'When you click "OK" you will be excluded from trading on the site until the selected date.',
+    'Timed out until',
+    'Excluded from the website until',
 
     // portfolio
     'Ref.',
@@ -365,6 +367,7 @@ const texts = [
     'Lots',
     'Payout per lot = 1,000',
     'This page is not available in the selected language.',
+    'Trading Window',
 
     // digit_info
     'Percentage',

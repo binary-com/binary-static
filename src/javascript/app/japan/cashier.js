@@ -5,6 +5,10 @@ const localize     = require('../../_common/localize').localize;
 const State        = require('../../_common/storage').State;
 
 const CashierJP = (() => {
+    let $amount,
+        $loginid,
+        $email;
+
     const onLoad = (action) => {
         if (Client.isJPClient() && Client.get('residence') !== 'jp') BinaryPjax.loadPreviousUrl();
         if (action === 'deposit') {
@@ -25,9 +29,17 @@ const CashierJP = (() => {
                         if (typeof limit !== 'undefined' && limit < 1) {
                             $container.find('#cashier_locked_message').text(localize('You have reached the withdrawal limit.')).setVisibility(1);
                         } else {
+                            $amount  = $('#id123-control22598145');
+                            $loginid = $('#id123-control22598118');
+                            $email   = $('#id123-control22598060');
+
                             const response_authorize = State.getResponse('authorize');
-                            $('#id123-control22598118').val(response_authorize.loginid || 'undef');
-                            $('#id123-control22598060').val(response_authorize.email || 'undef');
+                            if (response_authorize.loginid) {
+                                $loginid.val(response_authorize.loginid).attr('readonly', 'true');
+                            }
+                            if (response_authorize.email) {
+                                $email.val(response_authorize.email).attr('readonly', 'true');
+                            }
                             $('#japan_cashier_container button').on('click', (e) => {
                                 const result = errorHandler();
                                 if (!result) e.preventDefault();
@@ -41,22 +53,29 @@ const CashierJP = (() => {
     };
 
     const errorHandler = () => {
-        $('.error-msg').remove();
-        const $id               = $('#id123-control22598145');
-        const withdrawal_amount = $id.val();
+        $amount.siblings('.error-msg').setVisibility(0);
+        $loginid.siblings('.error-msg').setVisibility(0);
+        $email.siblings('.error-msg').setVisibility(0);
 
-        const showError = (message) => {
-            $id.parent().append($('<p/>', { class: 'error-msg', text: localize(message) }));
-        };
+        let is_ok = true;
 
-        if (isNaN(withdrawal_amount) || +withdrawal_amount < 1) {
-            showError(localize('Should be more than [_1]', ['¥1']));
-            return false;
-        } else if (parseInt(Client.get('balance')) < +withdrawal_amount) {
-            showError('Insufficient balance.');
-            return false;
+        if (isNaN($amount.val()) || +$amount.val() < 1) {
+            $amount.siblings('.error-msg').text(localize('Should be more than [_1]', ['¥1'])).setVisibility(1);
+            is_ok = false;
+        } else if (parseInt(Client.get('balance')) < +$amount.val()) {
+            $amount.siblings('.error-msg').text(localize('Insufficient balance.')).setVisibility(1);
+            is_ok = false;
         }
-        return true;
+        if (!$loginid.val()) {
+            $loginid.removeAttr('readonly').siblings('.error-msg').setVisibility(1);
+            is_ok = false;
+        }
+        if (!$email.val()) {
+            $email.removeAttr('readonly').siblings('.error-msg').setVisibility(1);
+            is_ok = false;
+        }
+
+        return is_ok;
     };
 
     return {
