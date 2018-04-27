@@ -230,6 +230,7 @@ const MetaTraderConfig = (() => {
 
     const validations = () => {
         const client_currency = Client.get('currency');
+        const mt_acc_currency = getCurrency(Client.get('mt5_account'));
         const max_withdrawal  = Currency.getMaxWithdrawal(client_currency);
         return {
             new_account: [
@@ -254,7 +255,7 @@ const MetaTraderConfig = (() => {
             ],
             withdrawal: [
                 { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
-                { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: getMinMT5TransferValue(client_currency), max: max_withdrawal, decimals: 2 }]] },
+                { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: getMinMT5TransferValue(mt_acc_currency), max: Currency.getMaxWithdrawal(mt_acc_currency), decimals: 2 }]] },
             ],
         };
     };
