@@ -36,6 +36,8 @@
             }
             #payout {
                 height: auto;
+                border-color: $COLOR_GRAY;
+                border-top-color: $COLOR_LIGHT_GRAY;
 
                 &:focus {
                     outline: none;
@@ -59,7 +61,7 @@
                 > div {
                     .list {
                         background-color: $COLOR_WHITE;
-                        border: 1px solid $COLOR_LIGHT_GRAY;
+                        border: 1px solid $COLOR_GRAY;
                         border-top: none;
 
                         &.invisible {
@@ -67,6 +69,7 @@
                         }
                         > div {
                             background-color: $COLOR_WHITE;
+                            border-color: $COLOR_GRAY;
 
                             &:hover {
                                 background-color: $COLOR_GRAY !important;
@@ -76,10 +79,37 @@
                             background-color: $COLOR_WHITE;
                         }
                     }
-                    #currency .current {
-                        height: 25px;
-                        border: 1px solid $COLOR_LIGHT_GRAY;
-                        border-right: none;
+                    .current {
+                        background-color: $COLOR_WHITE;
+                        border: 1px solid $COLOR_GRAY;
+
+                        &:hover, &.primary-border-color {
+                            border-color: $COLOR_BLUE;
+                        }
+                        .nav-caret {
+                            position: absolute;
+                            right: 0.6%;
+                            bottom: 25px;
+                        }
+                    }
+                    #currency {
+                        .list > div {
+                            height: 27px;
+                        }
+                        .current {
+                            height: 25px;
+                            border: 1px solid $COLOR_GRAY;
+                            border-top-color: $COLOR_LIGHT_GRAY;
+
+                            .nav-caret {
+                                right: 65%;
+                                bottom: 16px;
+
+                                &:not(.invisible) + .symbols:before {
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
                     }
                     &#category {
                         .current, .list > div {
@@ -100,12 +130,6 @@
                     .header-current {
                         .gr-row {
                             cursor: pointer;
-                            background-color: $COLOR_GRAY;
-                        }
-                    }
-                    #period {
-                        .current {
-                            background-color: $COLOR_GRAY;
                         }
                     }
                 }
@@ -115,13 +139,19 @@
             }
             .header-current {
                 overflow: hidden;
-                width: 100%;
+                width: auto;
+                border: 1px solid $COLOR_GRAY;
+                border-bottom: none;
+                background-color: $COLOR_WHITE;
 
+                &.primary-border-color {
+                    border-color: $COLOR_BLUE;
+                }
                 .gr-row {
                     margin: 0;
                 }
                 &-text {
-                    padding-top: 10px;
+                    padding: 10px 5px;
                     font-weight: 700;
 
                     &:first-child {
@@ -130,6 +160,19 @@
                     &:last-child {
                         padding-left: 5px;
                     }
+                }
+                > div {
+                    background-color: $COLOR_WHITE;
+                }
+                &:hover {
+                    &, + #period .current {
+                        border-color: $COLOR_BLUE;
+                    }
+                }
+                .nav-caret {
+                    position: absolute;
+                    bottom: 15px;
+                    right: 3%;
                 }
             }
             #period {
@@ -141,6 +184,7 @@
                 }
                 .current {
                     height: auto;
+                    border-top: none;
                     padding-bottom: 7px !important;
 
                     div.head {
@@ -148,9 +192,6 @@
                         margin-bottom: 5px;
                     }
                 }
-            }
-            .category-wrapper {
-                width: 50%;
             }
         }
         #ja-panel {
@@ -278,7 +319,7 @@
                 height: 75px;
 
                 > img {
-                    height: 40px;
+                    padding-top: 7px;
                 }
             }
             #underlying {
@@ -335,15 +376,34 @@
                     }
                 }
                 .heading, .price-row {
-                    border: 1px solid $COLOR_LIGHT_GRAY;
+                    border: 1px solid $COLOR_GRAY;
                     border-bottom: none;
                 }
+                .contract-type {
+                    padding-left: 0;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    line-height: 18px;
+                    height: 36px;
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
                 .price-row:last-child {
-                    border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+                    border-bottom: 1px solid $COLOR_GRAY;
                 }
                 .price-row:nth-child(odd) {
                     background-color: $COLOR_WHITE;
                 }
+                .sell-price {
+                    display: none;
+                }
+                .buy-price {
+                    margin-top: 5px;
+                }
+            }
+            #disable-overlay {
+                top: 81px;
+                height: calc(100% - 81px);
             }
         }
         .price-table {
@@ -574,15 +634,23 @@
         #tab_portfolio-content {
             overflow-x: auto;
         }
-        #tab_explanation-content #winning_higherlower {
-            display: flex;
-            flex-direction: column;
+        #tab_explanation-content {
+            .hide-mb {
+                display: none;
+            }
+            .show-mb {
+                display: block;
+            }
+            #winning_higherlower {
+                display: flex;
+                flex-direction: column;
 
-            p {
-                margin-top: 0;
+                p {
+                    margin-top: 0;
 
-                &:first-child {
-                    order: 2;
+                    &:first-child {
+                        order: 2;
+                    }
                 }
             }
         }
