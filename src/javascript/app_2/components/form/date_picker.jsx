@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import classnames from 'classnames';
 import { localize } from '../../../_common/localize';
 
 class Calendar extends React.Component {
@@ -296,16 +297,23 @@ class Calendar extends React.Component {
         }
         return (
             <div className='calendar-year-panel'>
-                {years.map((year, idx) => (
-                    <span
-                        key={idx}
-                        className={`calendar-year${(idx === 0 || idx === 11 ) ? ' disabled' : ''}${year === is_active ? ' active' : ''}`}
-                        onClick={this.handleYearSelected}
-                        data-year={year}
-                    >
-                        {year}
-                    </span>
-                ))}
+                {years.map((year, idx) => {
+                    const date = moment(this.state.date).year(year);
+                    const is_disabled = this.isPeriodDisabled(date, 'year');
+                    return (
+                        <span
+                            key={idx}
+                            className={classnames('calendar-year', {
+                                disabled: is_disabled,
+                                active  : year === is_active,
+                            })}
+                            onClick={this.handleYearSelected}
+                            data-year={year}
+                        >
+                            {year}
+                        </span>
+                    );
+                })}
             </div>
         );
     }
