@@ -71,6 +71,7 @@ const Contact = () => (
                                     </a>
                                 </div>
                                 <div className='hint gr-padding-10 gr-child'>
+                                    { /*  &zwj; to prevent number linking as phone number in iOS  */ }
                                     <p className='no-margin'>{it.L('Weekdays:')} &zwj;2200 - 1300 GMT</p>
                                     <p className='no-margin'>{it.L('Weekend:')} &zwj;0000 - 0900 GMT</p>
                                 </div>
