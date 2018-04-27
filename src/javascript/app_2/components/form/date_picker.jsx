@@ -241,7 +241,11 @@ class Calendar extends React.Component {
             days.push(
                 <span
                     key={date}
-                    className={`calendar-date${is_active ? ' active' : ''}${is_today ? ' today' : ''}${is_disabled ? ' disabled' : ''}`}
+                    className={classnames('calendar-date', {
+                        active  : is_active,
+                        today   : is_today,
+                        disabled: is_disabled,
+                    })}
                     onClick={this.handleDateSelected}
                     data-date={date}
                 >
@@ -276,7 +280,10 @@ class Calendar extends React.Component {
                     return (
                         <span
                             key={idx}
-                            className={`calendar-month${idx === is_active ? ' active' : ''}${is_disabled ? ' disabled' : ''}`}
+                            className={classnames('calendar-month', {
+                                active  : idx === is_active,
+                                disabled: is_disabled,
+                            })}
                             onClick={this.handleMonthSelected}
                             data-month={idx}
                         >
@@ -554,15 +561,23 @@ class DatePicker extends React.PureComponent {
                         onClick={this.handleVisibility}
                     />
                     <span
-                        className={`picker-calendar-icon ${this.state.is_close_btn_visible ? '': 'show'}`}
+                        className={classnames('picker-calendar-icon', {
+                            show: !this.state.is_close_btn_visible,
+                        })}
                         onClick={this.handleVisibility}
                     />
                     <span
-                        className={`close-circle-icon ${this.state.is_close_btn_visible ? 'show': ''}`}
+                        className={classnames('close-circle-icon', {
+                            show: this.state.is_close_btn_visible,
+                        })}
                         onClick={this.clearDateInput}
                     />
                 </div>
-                <div className={`datepicker-calendar ${this.state.is_calendar_visible ? 'show' : ''}`}>
+                <div
+                    className={classnames('datepicker-calendar', {
+                        show: this.state.is_calendar_visible,
+                    })}
+                >
                     <Calendar
                         ref={node => { this.calendar = node; }}
                         handleDateChange={this.handleDateChange}
