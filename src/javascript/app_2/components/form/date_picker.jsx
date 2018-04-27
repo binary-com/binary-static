@@ -333,16 +333,26 @@ class Calendar extends React.Component {
 
         return (
             <div className='calendar-decade-panel'>
-                {decades.map((range, idx) => (
-                    <span
-                        key={idx}
-                        className={`calendar-decade${(idx === 0 || idx === 11) ? ' disabled' : ''}${range.split('-')[0] === is_active ? 'active' : ''}`}
-                        onClick={this.handleDecadeSelected}
-                        data-decade={range}
-                    >
-                        {range}
-                    </span>
-                ))}
+                {decades.map((range, idx) => {
+                    const [start_year, end_year] = range.split('-');
+                    const start_date = moment(this.state.date).year(start_year);
+                    const end_date   = moment(this.state.date).year(end_year);
+                    const is_disabled = this.isPeriodDisabled(start_date, 'year')
+                                     && this.isPeriodDisabled(end_date, 'year');
+                    return (
+                        <span
+                            key={idx}
+                            className={classnames('calendar-decade', {
+                                disabled: is_disabled,
+                                active  : start_year === is_active,
+                            })}
+                            onClick={this.handleDecadeSelected}
+                            data-decade={range}
+                        >
+                            {range}
+                        </span>
+                    );
+                })}
             </div>
         );
     }
