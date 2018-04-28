@@ -311,11 +311,16 @@ const PersonalDetails = (() => {
                         .val(residence);
                 }
             } else {
-                $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
+                $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence', single: 'single' }));
                 const $residence = $('#residence');
                 $options_with_disabled.prepend($('<option/>', { text: localize('Please select a country'), value: '' }));
                 $residence.html($options_with_disabled.html());
                 initFormManager();
+                $residence.select2({
+                    matcher(params, data) {
+                        return SelectMatcher(params, data);
+                    },
+                });
             }
         }
     };
