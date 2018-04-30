@@ -7,6 +7,7 @@ import { formatMoney } from '../../../app/common/currency';
 import { localize } from '../../../_common/localize';
 import { getPropertyValue } from '../../../_common/utility';
 import DataTable from '../../components/elements/data_table.jsx';
+import Loading from '../../../../templates/_common/components/loading.jsx';
 
 const handlePortfolioData = (portfolio_arr) => {
     const formatted_portfolio = portfolio_arr.map((portfolio_item) => {
@@ -63,8 +64,7 @@ const contract_type_display = {
     1. Move socket connections to DAO
     2. Make tooltip appdetails tooltip
     3. Add currencies to totals
-    4. Add styling
-    5. Translations
+    4. Translations
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
@@ -247,7 +247,7 @@ class Portfolio extends React.PureComponent  {
                 <div className='portfolio-header-container'><h2>Portfolio</h2></div>
                 {(() => {
                     if (this.state.is_loading) {
-                        return <div>Loading...</div>;
+                        return <Loading />;
                     }
                     if (this.state.error) {
                         return <div>{this.state.error}</div>;
