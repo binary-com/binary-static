@@ -31,9 +31,10 @@ class DataTable extends React.Component {
 
         return (
             <tr className='table-row' key={id}>
-                {this.props.columns.map(({ data_index, renderCell }) => (
-                    (renderCell || defaultRenderCell)(transaction[data_index], data_index, transaction)
-                ))}
+                {this.props.columns.map(({ data_index, renderCell }) => {
+                    const data = transaction[data_index] || '';
+                    return (renderCell || defaultRenderCell)(data, data_index, transaction);
+                })}
             </tr>
         );
     }
@@ -45,15 +46,6 @@ class DataTable extends React.Component {
 
     renderHeaders() {
         return this.props.columns.map(col => <th className={col.data_index} key={col.data_index}>{col.title}</th>);
-    }
-
-    renderFooters() {
-        const { footer } = this.props;
-        return this.props.columns.map(col => (
-            <td className={col.data_index} key={col.data_index}>
-                {footer[col.data_index] ? footer[col.data_index] : ''}
-            </td>
-        ));
     }
 
     renderTableClone() {
@@ -89,9 +81,7 @@ class DataTable extends React.Component {
 
                     {this.props.footer &&
                         <tfoot className='table-foot'>
-                            <tr className='table-row'>
-                                {this.renderFooters()}
-                            </tr>
+                            {this.renderRow(this.props.footer, 0)}
                         </tfoot>
                     }
 
