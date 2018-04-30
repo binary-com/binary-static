@@ -78,15 +78,13 @@ const Cryptocurrencies = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US Dollar')          }, { text: one }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US Dollar')         }, { text: one }, { text: tenth     }, { text: hundredth }],
-                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US Dollar')         }, { text: one }, { text: tenth     }, { text: hundredth }],
-                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US Dollar')     }, { text: one }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'ETC/USD' }, { text: it.L('Ethereum Classic vs US Dollar') }, { text: one }, { text: one       }, { text: one       }],
-                                [{ text: 'ZEC/USD' }, { text: it.L('Zcash vs US Dollar')            }, { text: one }, { text: one       }, { text: one       }],
-                                [{ text: 'XMR/USD' }, { text: it.L('Monero vs US Dollar')           }, { text: one }, { text: one       }, { text: one       }],
-                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US Dollar')           }, { text: one }, { text: hundred   }, { text: hundred   }],
-                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US Dollar')             }, { text: one }, { text: one       }, { text: one       }],
+                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US Dollar')      }, { text: one }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US Dollar')     }, { text: one }, { text: tenth     }, { text: hundredth }],
+                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US Dollar')     }, { text: one }, { text: tenth     }, { text: hundredth }],
+                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US Dollar') }, { text: one }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US Dollar')       }, { text: one }, { text: hundred   }, { text: hundred   }],
+                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US Dollar')         }, { text: one }, { text: one       }, { text: one       }],
+                                [{ text: 'EMC/USD' }, { text: it.L('Emercoin vs US Dollar')     }, { text: one }, { text: hundredth }, { text: hundredth }],
                             ],
                         }}
                     />
