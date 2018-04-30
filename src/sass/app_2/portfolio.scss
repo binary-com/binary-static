@@ -1,6 +1,3 @@
-.portfolio-header-container {
-    padding-left: 10px;
-}
 
 .indicative {
     font-weight: bold;
@@ -16,31 +13,38 @@
     }
 }
 
-th {
-    &.details {
-        width: 30%;
+.portfolio {
+    .portfolio-header-container {
+        padding-left: 10px;
     }
-    &.type {
-        text-align: center;
+    th {
+        &.details {
+            width: 30%;
+        }
+        &.type {
+            text-align: center;
+        }
     }
-}
+    .payout, .indicative, .purchase, td.remaining_time {
+        text-align: right;
+    }
+    .table-body {
+        td.ref {
+            color: $COLOR_TEXT_BLUE;
+        }
+        .type-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-.table-body {
-    td.ref {
-        color: $COLOR_TEXT_BLUE;
-    }
-    .type-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        i {
-            width: 20px;
-            height: 20px;
-            padding: 5px;
-            margin-bottom: 3px;
-            border-radius: 100%;
-            background-color: $COLOR_LIGHT_GRAY;
+            i {
+                width: 20px;
+                height: 20px;
+                padding: 5px;
+                margin-bottom: 3px;
+                border-radius: 100%;
+                background-color: $COLOR_LIGHT_GRAY;
+            }
         }
     }
 }

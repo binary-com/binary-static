@@ -97,12 +97,12 @@ class Portfolio extends React.PureComponent  {
             {
                 title     : localize('Potential Payout'),
                 data_index: 'payout',
-                renderCell: (data, data_index) => (<td key={data_index}> <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data}</td>),
+                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data}</td>),
             },
             {
                 title     : localize('Purchase'),
                 data_index: 'purchase',
-                renderCell: (data, data_index) => (<td key={data_index}> <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data}</td>),
+                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data}</td>),
             },
             {
                 title     : localize('Indicative'),
@@ -243,7 +243,7 @@ class Portfolio extends React.PureComponent  {
 
     render() {
         return (
-            <div>
+            <div className='portfolio'>
                 <div className='portfolio-header-container'><h2>{localize('Portfolio')}</h2></div>
                 {(() => {
                     if (this.state.is_loading) {
