@@ -2,7 +2,7 @@ const Client             = require('./client');
 const getElementById     = require('../../_common/common_functions').getElementById;
 const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const findParent         = require('../../_common/utility').findParent;
-
+const State              = require('../../_common/storage').State;
 require('../../_common/lib/mmenu/jquery.mmenu.min.all.js');
 
 const Menu = (() => {
@@ -10,7 +10,12 @@ const Menu = (() => {
         const menu_top = getElementById('menu-top');
 
         applyToAllElements('li', (el) => { el.classList.remove('active', 'active-parent'); }, '', menu_top);
-        applyToAllElements('.cr-only', (el) => { el.setVisibility(Client.hasCostaricaAccount()); });
+        if (Client.isLoggedIn()) {
+            applyToAllElements('.cr-only', (el) => {
+                const is_upgradable_to_cr = State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1;
+                el.setVisibility(Client.hasCostaricaAccount() || is_upgradable_to_cr);
+            });
+        }
 
         const menu_top_item_for_page =  Array.from(menu_top.getElementsByTagName('a'))
             .find(link => !/invisible/.test(findParent(link, 'li').classList) && link.href !== 'javascript:;' && window.location.pathname.indexOf(link.pathname.replace(/\.html/, '')) >= 0 && link.target !== '_blank');
