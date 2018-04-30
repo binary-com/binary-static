@@ -50,9 +50,9 @@ const contract_type_display = {
     EXPIRYMISS  : {name: 'Ends Outside', icon: 'ends_outside'},
     EXPIRYRANGE : {name: 'Ends Between', icon: 'ends_between'},
     EXPIRYRANGEE: {name: 'Ends Between', icon: 'ends_between'},
-    LBFLOATCALL : {name: 'Close-Low', icon: ''},
-    LBFLOATPUT  : {name: 'High-Close', icon: ''},
-    LBHIGHLOW   : {name: 'High-Low', icon: ''},
+    LBFLOATCALL : {name: 'Close-Low', icon: 'lower'},
+    LBFLOATPUT  : {name: 'High-Close', icon: 'higher'},
+    LBHIGHLOW   : {name: 'High-Low', icon: 'higher'},
     RANGE       : {name: 'Stays Between', icon: 'stays_between'},
     UPORDOWN    : {name: 'Goes Outside', icon: 'goes_outside'},
     ONETOUCH    : {name: 'Touches', icon: 'touch'},
@@ -72,7 +72,7 @@ class Portfolio extends React.PureComponent  {
 
         const columns = [
             {
-                title     : localize('Ref No'),
+                title     : localize('Reference No.'),
                 data_index: 'ref',
             },
             {
@@ -80,7 +80,9 @@ class Portfolio extends React.PureComponent  {
                 data_index: 'type',
                 renderCell: (data, data_index) => (
                     <td key={data_index}>
-                        <i className={`trade_type_icon ${contract_type_display[data].icon}`} /> {contract_type_display[data].name}
+                        <div className={`${data_index}-container`}>
+                            <i className={`trade_type_icon ${contract_type_display[data].icon}`} /> {contract_type_display[data].name}
+                        </div>
                     </td>
                 ),
             },
@@ -200,8 +202,8 @@ class Portfolio extends React.PureComponent  {
     
     updateTotals = (portfolioArr, footerObj) => {
         let indicative = 0; 
-        let payout = 0; 
-        let purchase = 0;
+        let payout     = 0; 
+        let purchase   = 0;
         
         portfolioArr.forEach((portfolio_item) => {
             indicative += (+portfolio_item.indicative.amount);
@@ -242,7 +244,7 @@ class Portfolio extends React.PureComponent  {
     render() {
         return (
             <div>
-                <h2>Portfolio</h2>
+                <div className='portfolio-header-container'><h2>Portfolio</h2></div>
                 {(() => {
                     if (this.state.is_loading) {
                         return <div>Loading...</div>;
