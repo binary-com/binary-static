@@ -207,10 +207,12 @@ div.datepicker-container {
         transition: all 0.3s;
         user-select: none;
         opacity: 0;
+        pointer-events: none;
         cursor: pointer;
 
         &.show {
             opacity: 1;
+            pointer-events: auto;
         }
         &.picker-calendar-icon:before {
             content: url('../images/trading_app/common/calendar.svg');
