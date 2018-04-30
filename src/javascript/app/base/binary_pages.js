@@ -128,6 +128,7 @@ const pages_config = {
     'ib-signup'              : { module: TabSelector },
     'job-details'            : { module: JobDetails },
     'metals'                 : { module: GetStarted.Metals },
+    'economic-calendar'      : { module: StaticPages.EconomicCalendar },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
