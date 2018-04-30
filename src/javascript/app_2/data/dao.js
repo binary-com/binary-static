@@ -1,11 +1,6 @@
 import BinarySocket from '../../app/base/socket';
+import SubscriptionManager from './subscription_manager';
 
-/* TODO:
-      1. to manage subscriptions and subscription ids
-      2. to handle forget and then resubscribe when needed
-      3. to handle another request with the same values while the previous one still valid (either stream or not)
-      4. to ...
-*/
 const DAO = (() => {
     const getActiveSymbols = () => BinarySocket.send({ active_symbols: 'brief' });
 
@@ -15,15 +10,23 @@ const DAO = (() => {
 
     const getWebsiteStatus = () => BinarySocket.send({ website_status: 1 });
 
-    const getTicks = (symbol, cb) => BinarySocket.send({ ticks: symbol, subscribe: 1 }, { callback: cb });
+    // ----- Streaming calls -----
+    const subscribeTicks = (symbol, cb, should_forget_first) =>
+        SubscriptionManager.subscribe('ticks', { ticks: symbol, subscribe: 1 }, cb, should_forget_first);
+
+    const forget = (msg_type, cb) => SubscriptionManager.forget(msg_type, cb);
+
+    const forgetAll = (...msg_types) => SubscriptionManager.forgetAll(...msg_types);
 
     return {
         getActiveSymbols,
         getContractsFor,
         getPayoutCurrencies,
         getWebsiteStatus,
-        getTicks,
+        subscribeTicks,
+        forget,
+        forgetAll,
     };
 })();
 
-module.exports = DAO;
+export default DAO;
