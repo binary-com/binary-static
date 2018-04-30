@@ -389,10 +389,10 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
-.careers-content {
-    .career {
-        margin-top: 0;
+#content.careers-content {
+    margin-top: 0;
 
+    .career {
         .top-banner {
             background: url('../images/pages/careers/careers-1_bg.jpg') no-repeat;
             background-size: cover;
