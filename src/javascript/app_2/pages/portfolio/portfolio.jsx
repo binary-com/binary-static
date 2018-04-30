@@ -37,34 +37,33 @@ const handlePortfolioData = (portfolio_arr) => {
 
 // TODO: move to common
 const contract_type_display = {
-    ASIANU      : {name: 'Asian Up', icon: 'asia_up'},
-    ASIAND      : {name: 'Asian Down', icon: 'asia_down'},
-    CALL        : {name: 'Higher', icon: 'higher'},
-    CALLE       : {name: 'Higher or equal', icon: 'higher'},
-    PUT         : {name: 'Lower', icon: 'lower'},
-    DIGITMATCH  : {name: 'Digit Matches', icon: 'digit_matches'},
-    DIGITDIFF   : {name: 'Digit Differs', icon: 'digit_differs'},
-    DIGITODD    : {name: 'Digit Odd', icon: 'digit_odd'},
-    DIGITEVEN   : {name: 'Digit Even', icon: 'digit_even'},
-    DIGITOVER   : {name: 'Digit Over', icon: 'digit_over'},
-    DIGITUNDER  : {name: 'Digit Under', icon: 'digit_under'},
-    EXPIRYMISS  : {name: 'Ends Outside', icon: 'ends_outside'},
-    EXPIRYRANGE : {name: 'Ends Between', icon: 'ends_between'},
-    EXPIRYRANGEE: {name: 'Ends Between', icon: 'ends_between'},
-    LBFLOATCALL : {name: 'Close-Low', icon: 'lower'},
-    LBFLOATPUT  : {name: 'High-Close', icon: 'higher'},
-    LBHIGHLOW   : {name: 'High-Low', icon: 'higher'},
-    RANGE       : {name: 'Stays Between', icon: 'stays_between'},
-    UPORDOWN    : {name: 'Goes Outside', icon: 'goes_outside'},
-    ONETOUCH    : {name: 'Touches', icon: 'touch'},
-    NOTOUCH     : {name: 'Does Not Touch', icon: 'no_touch'},
+    ASIANU      : {name: localize('Asian Up'), icon: 'asia_up'},
+    ASIAND      : {name: localize('Asian Down'), icon: 'asia_down'},
+    CALL        : {name: localize('Higher'), icon: 'higher'},
+    CALLE       : {name: localize('Higher or equal'), icon: 'higher'},
+    PUT         : {name: localize('Lower'), icon: 'lower'},
+    DIGITMATCH  : {name: localize('Digit Matches'), icon: 'digit_matches'},
+    DIGITDIFF   : {name: localize('Digit Differs'), icon: 'digit_differs'},
+    DIGITODD    : {name: localize('Digit Odd'), icon: 'digit_odd'},
+    DIGITEVEN   : {name: localize('Digit Even'), icon: 'digit_even'},
+    DIGITOVER   : {name: localize('Digit Over'), icon: 'digit_over'},
+    DIGITUNDER  : {name: localize('Digit Under'), icon: 'digit_under'},
+    EXPIRYMISS  : {name: localize('Ends Outside'), icon: 'ends_outside'},
+    EXPIRYRANGE : {name: localize('Ends Between'), icon: 'ends_between'},
+    EXPIRYRANGEE: {name: localize('Ends Between'), icon: 'ends_between'},
+    LBFLOATCALL : {name: localize('Close-Low'), icon: 'lower'},
+    LBFLOATPUT  : {name: localize('High-Close'), icon: 'higher'},
+    LBHIGHLOW   : {name: localize('High-Low'), icon: 'higher'},
+    RANGE       : {name: localize('Stays Between'), icon: 'stays_between'},
+    UPORDOWN    : {name: localize('Goes Outside'), icon: 'goes_outside'},
+    ONETOUCH    : {name: localize('Touches'), icon: 'touch'},
+    NOTOUCH     : {name: localize('Does Not Touch'), icon: 'no_touch'},
 };
 
 /* TODO:
     1. Move socket connections to DAO
     2. Make tooltip appdetails tooltip
     3. Add currencies to totals
-    4. Translations
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
@@ -81,7 +80,8 @@ class Portfolio extends React.PureComponent  {
                 renderCell: (data, data_index) => (
                     <td key={data_index}>
                         <div className={`${data_index}-container`}>
-                            <i className={`trade_type_icon ${contract_type_display[data].icon}`} /> {contract_type_display[data].name}
+                            <i className={`trade_type_icon ${contract_type_display[data].icon}`} /> 
+                            {contract_type_display[data].name}
                         </div>
                     </td>
                 ),
@@ -111,7 +111,7 @@ class Portfolio extends React.PureComponent  {
                         data.amount ?
                             <td key={data_index} className={`indicative ${data.style}`}>
                                 <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data.amount}
-                                {data.style === 'no_resale' && <div> resell not offered</div>}
+                                {data.style === 'no_resale' && <div> {localize('resell not offered')}</div>}
                             </td>
                             : <td key={data_index}>-</td>
                 ),
@@ -244,7 +244,7 @@ class Portfolio extends React.PureComponent  {
     render() {
         return (
             <div>
-                <div className='portfolio-header-container'><h2>Portfolio</h2></div>
+                <div className='portfolio-header-container'><h2>{localize('Portfolio')}</h2></div>
                 {(() => {
                     if (this.state.is_loading) {
                         return <Loading />;
@@ -260,7 +260,7 @@ class Portfolio extends React.PureComponent  {
                                     data_source={this.state.data_source}
                                     columns={this.state.columns}
                                 />
-                            : <div>No open positions.</div>
+                            : <div>{localize('No open positions.')}</div>
                     );
                 })()}
             </div>
