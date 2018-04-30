@@ -50,9 +50,9 @@ class DataTable extends React.Component {
     renderFooters() {
         const { footer } = this.props;
         return this.props.columns.map(col => (
-                <td className={col.data_index} key={col.data_index}>
-                    {footer[col.data_index] ? footer[col.data_index] : ''}
-                </td>
+            <td className={col.data_index} key={col.data_index}>
+                {footer[col.data_index] ? footer[col.data_index] : ''}
+            </td>
         ));
     }
 
@@ -63,9 +63,7 @@ class DataTable extends React.Component {
             https://stackoverflow.com/questions/4709390
         */
         return (
-            <table className={classnames('table', 'table-clone', {
-                'table-full-width': this.props.is_full_width,
-            })}>
+            <table className={classnames('table', 'table-clone', { 'table-full-width': this.props.is_full_width })}>
                 <thead className='table-head'>
                     <tr className='table-row'>
                         {this.renderHeaders()}
@@ -82,9 +80,7 @@ class DataTable extends React.Component {
     render() {
         return (
             <div className='table-container' ref={this.props.has_fixed_header && this.fixHeaderInPlace}>
-                <table className={classnames('table', {
-                    'table-full-width': this.props.is_full_width,
-                })}>
+                <table className={classnames('table', { 'table-full-width': this.props.is_full_width })}>
                     <thead className='table-head'>
                         <tr className='table-row'>
                             {this.renderHeaders()}

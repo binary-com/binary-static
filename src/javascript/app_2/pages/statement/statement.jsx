@@ -6,7 +6,7 @@ import { connect } from '../../store/connect';
 import { toJapanTimeIfNeeded } from '../../../app/base/clock';
 import { jpClient } from '../../../app/common/country_base';
 import { formatMoney } from '../../../app/common/currency';
-import { addTooltip, buildOauthApps, showTooltip } from '../../../app/common/get_app_details';
+// import { addTooltip, buildOauthApps, showTooltip } from '../../../app/common/get_app_details';
 import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
 import { throttlebounce } from '../../../_common/utility';
@@ -90,7 +90,9 @@ class Statement extends React.PureComponent {
                         <td
                             key={data_index}
                             className={`${data_index} ${(parseStrNum(data) >= 0) ? 'profit' : 'loss'}`}
-                        >{data}</td>
+                        >
+                            {data}
+                        </td>
                     );
                 },
             },
@@ -239,7 +241,12 @@ class Statement extends React.PureComponent {
                         is_loading
                             && (
                                 <React.Fragment>
-                                    <DataTable data_source={[]} columns={this.state.columns} has_fixed_header is_full_width />
+                                    <DataTable
+                                        data_source={[]}
+                                        columns={this.state.columns}
+                                        has_fixed_header
+                                        is_full_width
+                                    />
                                     <Loading />
                                 </React.Fragment>
                             )
@@ -249,7 +256,12 @@ class Statement extends React.PureComponent {
                         this.state.data_source.length === 0
                             && (
                                 <React.Fragment>
-                                    <DataTable data_source={[]} columns={this.state.columns} has_fixed_header is_full_width />
+                                    <DataTable
+                                        data_source={[]}
+                                        columns={this.state.columns}
+                                        has_fixed_header
+                                        is_full_width
+                                    />
                                     <div className='statement-no-activity-msg'>
                                         {
                                             !this.state.date_from && !this.state.date_to
