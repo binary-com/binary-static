@@ -169,7 +169,6 @@ class Portfolio extends React.PureComponent  {
             return;
         }
         let data_source = this.state.data_source.slice();
-        const footer    = Object.assign({}, this.state.footer);
         const proposal  = response.proposal_open_contract;
         // force to sell the expired contract, in order to remove from portfolio
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
@@ -196,11 +195,11 @@ class Portfolio extends React.PureComponent  {
                 }
             });
         }
-        this.updateTotals(data_source, footer);
+        const footer = this.updateFooter(data_source);
         this.setState({ data_source, footer });
     }
-    
-    updateTotals = (portfolioArr, footerObj) => {
+
+    updateFooter = (portfolioArr) => {
         let indicative = 0; 
         let payout     = 0; 
         let purchase   = 0;
@@ -210,10 +209,12 @@ class Portfolio extends React.PureComponent  {
             payout     += (+portfolio_item.payout);
             purchase   += (+portfolio_item.purchase);
         });
-
-        footerObj.indicative = formatMoney(false, indicative, true);
-        footerObj.payout     = formatMoney(false, payout, true);
-        footerObj.purchase   = formatMoney(false, purchase, true);
+        return {
+            ...this.state.footer,
+            indicative: formatMoney(false, indicative, true),
+            payout    : formatMoney(false, payout, true),
+            purchase  : formatMoney(false, purchase, true),
+        };
     } 
 
     updateOAuthApps = (response) => {
@@ -229,10 +230,9 @@ class Portfolio extends React.PureComponent  {
             return;
         }
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
-            const data_source = handlePortfolioData(response.portfolio.contracts);
-            const footer = Object.assign({}, this.state.footer);
-            
-            this.updateTotals(data_source, footer);
+            const data_source = handlePortfolioData(response.portfolio.contracts);            
+            const footer      = this.updateFooter(data_source);
+
             this.setState({ data_source, footer });
             BinarySocket.send(
                 { proposal_open_contract: 1, subscribe: 1 }, 
