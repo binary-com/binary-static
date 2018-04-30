@@ -249,7 +249,11 @@ class Statement extends React.PureComponent {
                                 <React.Fragment>
                                     <DataTable data_source={[]} columns={this.state.columns} has_fixed_header />
                                     <div className='statement-no-activity-msg'>
-                                        {localize('Your account has no trading activity.')}
+                                        {
+                                            !this.state.date_from && !this.state.date_to
+                                                ? localize('Your account has no trading activity.')
+                                                : localize('Your account has no trading activity for the selected period.')
+                                        }
                                     </div>
                                 </React.Fragment>
                             )
