@@ -13,16 +13,20 @@ $filter-height: 60px;
         z-index: 200;
         background-color: $COLOR_WHITE;
         width: 100%;
-        padding: 0 2rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
 
+        & .container {
+            height: 100%;
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            & > * {
+                margin-right: 1rem;
+            }
+        }
         &-text {
             font-size: 1rem;
-        }
-        > * {
-            margin-right: 1rem;
         }
     }
     .table-head {

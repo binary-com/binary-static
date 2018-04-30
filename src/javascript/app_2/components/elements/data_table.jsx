@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 const offsetPageTop = (element) => {
     let el = element;
@@ -62,7 +63,9 @@ class DataTable extends React.Component {
             https://stackoverflow.com/questions/4709390
         */
         return (
-            <table className='table table-clone'>
+            <table className={classnames('table', 'table-clone', {
+                'table-full-width': this.props.is_full_width,
+            })}>
                 <thead className='table-head'>
                     <tr className='table-row'>
                         {this.renderHeaders()}
@@ -79,7 +82,9 @@ class DataTable extends React.Component {
     render() {
         return (
             <div className='table-container' ref={this.props.has_fixed_header && this.fixHeaderInPlace}>
-                <table className='table'>
+                <table className={classnames('table', {
+                    'table-full-width': this.props.is_full_width,
+                })}>
                     <thead className='table-head'>
                         <tr className='table-row'>
                             {this.renderHeaders()}

@@ -212,32 +212,34 @@ class Statement extends React.PureComponent {
         return (
             <div className='statement-container'>
                 <div className='statement-filter'>
-                    <span className='statement-filter-text'>{localize('Filter by date:')}</span>
-                    <span className='statement-filter-text'>{localize('from')}</span>
-                    <DatePicker
-                        name='date_from'
-                        initial_value=''
-                        startDate={moment_now.clone().subtract(30, 'd').format('YYYY-MM-DD')}
-                        maxDate={this.state.date_to || today}
-                        onChange={this.handleDateChange}
-                    />
-                    <span className='statement-filter-text'>{localize('to')}</span>
-                    <DatePicker
-                        name='date_to'
-                        initial_value=''
-                        startDate={today}
-                        minDate={this.state.date_from}
-                        maxDate={today}
-                        showTodayBtn
-                        onChange={this.handleDateChange}
-                    />
+                    <div className='container'>
+                        <span className='statement-filter-text'>{localize('Filter by date:')}</span>
+                        <span className='statement-filter-text'>{localize('from')}</span>
+                        <DatePicker
+                            name='date_from'
+                            initial_value=''
+                            startDate={moment_now.clone().subtract(30, 'd').format('YYYY-MM-DD')}
+                            maxDate={this.state.date_to || today}
+                            onChange={this.handleDateChange}
+                        />
+                        <span className='statement-filter-text'>{localize('to')}</span>
+                        <DatePicker
+                            name='date_to'
+                            initial_value=''
+                            startDate={today}
+                            minDate={this.state.date_from}
+                            maxDate={today}
+                            showTodayBtn
+                            onChange={this.handleDateChange}
+                        />
+                    </div>
                 </div>
                 <div className='statement-content'>
                     {
                         is_loading
                             && (
                                 <React.Fragment>
-                                    <DataTable data_source={[]} columns={this.state.columns} has_fixed_header />
+                                    <DataTable data_source={[]} columns={this.state.columns} has_fixed_header is_full_width />
                                     <Loading />
                                 </React.Fragment>
                             )
@@ -247,7 +249,7 @@ class Statement extends React.PureComponent {
                         this.state.data_source.length === 0
                             && (
                                 <React.Fragment>
-                                    <DataTable data_source={[]} columns={this.state.columns} has_fixed_header />
+                                    <DataTable data_source={[]} columns={this.state.columns} has_fixed_header is_full_width />
                                     <div className='statement-no-activity-msg'>
                                         {
                                             !this.state.date_from && !this.state.date_to
@@ -267,6 +269,7 @@ class Statement extends React.PureComponent {
                             )}
                             columns={this.state.columns}
                             has_fixed_header
+                            is_full_width
                         />
                     }
                 </div>

@@ -40,3 +40,10 @@ fieldset {
 :-moz-placeholder { /* Firefox 18- */
     color: $COLOR_DARK_WHITE;
 }
+
+.container {
+    width: 100%;
+    max-width: $MAX_CONTAINER_WIDTH;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
