@@ -166,6 +166,16 @@
 }
 
 .contact-content {
+    .contact-content {
+        padding: 0 100px;
+
+        @media screen and (max-width: 1024px) {
+            padding: 0 10px;
+        }
+    }
+    .u-mar-bottom-small {
+        margin-bottom: 15px;
+    }
     #cs_telephone_number {
         width: 100%;
         min-width: 160px;
@@ -176,6 +186,27 @@
     @media screen and (max-width: 480px) {
         #company_addresses .border-bottom {
             min-height: 130px;
+        }
+    }
+
+    .chat {
+        margin-top: 20px;
+
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 20px;
+        }
+
+        &-container {
+            display: flex;
+
+            .button-secondary {
+                margin: 0;
+            }
+        }
+        &-icon {
+            margin-right: 5px;
+            height: 38px;
+            width: 38px;
         }
     }
 }
@@ -292,6 +323,10 @@ body #not_authenticated_financial ul.checked > li {
     img.responsive {
         max-height: 150px;
         width: auto;
+
+        @media (max-width: 350px) {
+            max-width: 290px;
+        }
     }
 }
 
@@ -385,10 +420,10 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
-.careers-content {
-    .career {
-        margin-top: 0;
+#content.careers-content {
+    margin-top: 0;
 
+    .career {
         .top-banner {
             background: url('../images/pages/careers/careers-1_bg.jpg') no-repeat;
             background-size: cover;
