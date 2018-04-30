@@ -1,10 +1,11 @@
-/* Ant style */
+$side-padding: 2rem;
+
 .table {
     color: #333333; /* stylelint-disable-line color-no-hex */
-    font-size: 1rem;
+    font-size: 14px;
     border-collapse: collapse;
     table-layout: fixed;
-    width: 100vw;
+    width: 100%;
 
     &-row {
         border-bottom: 1px solid #d2d3da; /* stylelint-disable-line color-no-hex */
@@ -20,12 +21,30 @@
     th, td {
         padding: 0.75rem;
         border: none;
+
+        &:first-child {
+            padding-left: $side-padding;
+        }
+        &:last-child {
+            padding-right: $side-padding;
+        }
     }
-    th:first-child, td:first-child {
-        padding-left: 2rem;
-    }
-    th:last-child, td:last-child {
-        padding-right: 2rem;
+    &.table-full-width {
+        @media only screen and (min-width: $MAX_CONTAINER_WIDTH) {
+            $new-side-padding: calc((100vw - #{$MAX_CONTAINER_WIDTH}) / 2 + #{$side-padding});
+
+            .table {
+                color: #f00 !important; /* stylelint-disable-line color-no-hex */
+            }
+            th, td {
+                &:first-child {
+                    padding-left: $new-side-padding;
+                }
+                &:last-child {
+                    padding-right: $new-side-padding;
+                }
+            }
+        }
     }
     &-body &-row:hover {
         background-color: #e4e6f1; /* stylelint-disable-line color-no-hex */
