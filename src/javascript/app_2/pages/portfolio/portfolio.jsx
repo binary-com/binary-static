@@ -77,14 +77,18 @@ class Portfolio extends React.PureComponent  {
             {
                 title     : localize('Contract Type'),
                 data_index: 'type',
-                renderCell: (data, data_index) => (
-                    <td key={data_index}>
-                        <div className={`${data_index}-container`}>
-                            <i className={`trade_type_icon ${contract_type_display[data].icon}`} /> 
-                            {contract_type_display[data].name}
-                        </div>
-                    </td>
-                ),
+                renderCell: (data, data_index) => {
+                    if (data) {
+                        return (
+                            <td key={data_index}>
+                                <div className={`${data_index}-container`}>
+                                    <i className={`trade_type_icon ${contract_type_display[data].icon}`} /> 
+                                    {contract_type_display[data].name}
+                                </div>
+                            </td>);
+                    }
+                    return ( <td key={data_index} />);
+                },
             },
             {
                 title     : localize('Contract Details'),
@@ -107,14 +111,19 @@ class Portfolio extends React.PureComponent  {
             {
                 title     : localize('Indicative'),
                 data_index: 'indicative',
-                renderCell: (data, data_index) => (
-                        data.amount ?
+                renderCell: (data, data_index) => {
+                    if (data.amount) {
+                        return (
                             <td key={data_index} className={`indicative ${data.style}`}>
                                 <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data.amount}
                                 {data.style === 'no_resale' && <div> {localize('resell not offered')}</div>}
-                            </td>
-                            : <td key={data_index}>-</td>
-                ),
+                            </td>);
+                    }
+                    if (data && typeof data === 'string') {
+                        return <td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data}</td>;
+                    }
+                    return <td key={data_index}>-</td>;
+                },
             },
         ];
         const footer = {
