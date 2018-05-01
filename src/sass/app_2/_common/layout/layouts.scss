@@ -51,7 +51,11 @@
                             grid-template-columns: 1.5fr 1fr;
                         }
                         div.amount-container {
-                            grid-template-columns: 1fr 1.5fr;
+                            grid-template-columns: 1fr 1fr 1fr;
+
+                            &.has-currency {
+                                grid-template-columns: 1fr 1.5fr;
+                            }
                         }
                     }
                 }

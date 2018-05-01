@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import Dropdown from '../../../components/form/dropdown.jsx';
 import Fieldset from '../../../components/form/fieldset.jsx';
 import InputField from '../../../components/form/input_field.jsx';
@@ -17,39 +18,44 @@ const Amount = ({
     currencies_list,
     amount,
     onChange,
-}) => (
-    <Fieldset
-        header={localize('Invest Amount')}
-        icon='invest-amount'
-        tooltip={localize('Text for Invest Amount goes here.')}
-    >
-        <div className='amount-container'>
-            <Dropdown
-                list={basis_list}
-                value={basis}
-                name='basis'
-                onChange={onChange}
-            />
-            <InputField
-                type='number'
-                name='amount'
-                value={amount}
-                onChange={onChange}
-                is_currency
-                prefix={currency}
-            />
-        </div>
-
-        {!Client.get('currency') &&
-            <Dropdown
-                list={currencies_list}
-                value={currency}
-                name='currency'
-                onChange={onChange}
-            />
-        }
-    </Fieldset>
-);
+}) => {
+    const has_currency = Client.get('currency');
+    const amount_container_class = classNames('amount-container', {
+        'has-currency': has_currency,
+    });
+    return (
+        <Fieldset
+            header={localize('Invest Amount')}
+            icon='invest-amount'
+            tooltip={localize('Text for Invest Amount goes here.')}
+        >
+            <div className={amount_container_class}>
+                <Dropdown
+                    list={basis_list}
+                    value={basis}
+                    name='basis'
+                    onChange={onChange}
+                />
+                {!has_currency &&
+                    <Dropdown
+                        list={currencies_list}
+                        value={currency}
+                        name='currency'
+                        onChange={onChange}
+                    />
+                }
+                <InputField
+                    type='number'
+                    name='amount'
+                    value={amount}
+                    onChange={onChange}
+                    is_currency
+                    prefix={currency}
+                />
+            </div>
+        </Fieldset>
+    );
+};
 
 export default connect(
     ({trade}) => ({
