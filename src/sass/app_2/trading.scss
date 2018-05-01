@@ -20,7 +20,7 @@
             color: $COLOR_BLUE;
         }
         .purchase-option {
-            margin: 8px 0;
+            margin: 2px 0;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
 
@@ -54,16 +54,26 @@
                     font-weight: 300;
 
                     &.net-profit-header, &.payout-header {
-                        margin: auto 0 0;
+                        margin: 0.5rem 0 0;
                     }
                 }
                 div.amount {
                     position: relative;
 
+                    &.down {
+                        color: $COLOR_RED;
+                    }
+                    &.up {
+                        color: $COLOR_LIGHT_BLUE;
+                    }
                     span.symbols {
                         left: -0.6rem;
                         top: 6px;
                         font-size: 0.88rem;
+                        color: inherit;
+                    }
+                    span.payout {
+                        font-weight: 600;
                     }
                 }
                 span:not(.purchase-return):not(.symbols) {
@@ -73,6 +83,13 @@
                 span.purchase-return {
                     color: $COLOR_ORANGE;
                 }
+            }
+        }
+        hr {
+            margin: 0.5em 0;
+
+            &.hide {
+                display: none;
             }
         }
         .clock-header, .fieldset-header {
