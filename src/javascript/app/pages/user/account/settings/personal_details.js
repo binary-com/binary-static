@@ -10,6 +10,7 @@ const Geocoder         = require('../../../../../_common/geocoder');
 const CommonFunctions  = require('../../../../../_common/common_functions');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
+const findParent       = require('../../../../../_common/utility').findParent;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
@@ -46,7 +47,15 @@ const PersonalDetails = (() => {
         const $tax_information_info = $('#tax_information_info');
 
         if (Client.shouldCompleteTax()) {
-            $form_fieldsets.setVisibility(0);       // hide all fieldsets
+            $form_fieldsets.setVisibility(0); // hide all
+            // hide all fields that are not required and empty
+            const validations = getValidations();
+            validations.forEach((validation) => {
+                if (/req/.test(validation.validations) && $(validation.selector).val() === '') {
+                    const fieldset = findParent(CommonFunctions.getElementById(validation.selector.replace('#', '')), 'fieldset');
+                    if (fieldset) fieldset.setVisibility(1);
+                }
+            });
             $tax_info_notice.setVisibility(1);      // show tax notice message
             $tax_info_form.setVisibility(1);        // show tax info fieldset
             need_to_accept_tin = true;
@@ -191,8 +200,9 @@ const PersonalDetails = (() => {
         ));
     };
 
-    const getValidations = (data) => {
+    const getValidations = () => {
         let validations;
+        const data = get_settings_data;
         if (is_jp_client) {
             validations = [
                 { request_field: 'address_line_1',   value: data.address_line_1 },
@@ -357,7 +367,7 @@ const PersonalDetails = (() => {
         }
     };
 
-    const initFormManager = () => { FormManager.init(form_id, getValidations(get_settings_data)); };
+    const initFormManager = () => { FormManager.init(form_id, getValidations()); };
 
     const setVisibility = (el) => {
         if (is_for_new_account) {
