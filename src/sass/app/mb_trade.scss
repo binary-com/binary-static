@@ -37,7 +37,9 @@
             #payout {
                 height: auto;
                 border-color: $COLOR_GRAY;
-                border-top-color: $COLOR_LIGHT_GRAY;
+                border-top: 0;
+                border-radius: 0;
+                border-left: 0;
 
                 &:focus {
                     outline: none;
@@ -53,6 +55,7 @@
                 line-height: 32px;
                 white-space: nowrap;
                 font-weight: bold;
+                border: 1px solid $COLOR_GRAY;
             }
             .trade_form {
                 &:not(.no-margin) {
@@ -99,7 +102,7 @@
                         .current {
                             height: 25px;
                             border: 1px solid $COLOR_GRAY;
-                            border-top-color: $COLOR_LIGHT_GRAY;
+                            border-top: 0;
 
                             .nav-caret {
                                 right: 65%;
@@ -185,7 +188,7 @@
                 .current {
                     height: auto;
                     border-top: none;
-                    padding-bottom: 7px !important;
+                    padding-bottom: 9px !important;
 
                     div.head {
                         font-weight: bold;
