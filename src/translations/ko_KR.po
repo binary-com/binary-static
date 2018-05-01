@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-29 21:33-0400\n"
+"PO-Revision-Date: 2018-04-30 22:05-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -694,9 +694,6 @@ msgstr "타사 응용 프로그램들을 위한 API 토큰."
 
 msgid "ATM"
 msgstr "ATM"
-
-msgid "AUD 1 per point"
-msgstr ""
 
 msgid "AUD Index – Measures the value of the Australian Dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%"
 msgstr ""
@@ -2070,7 +2067,7 @@ msgid "Client withdrawals prior to this year amounted to almost USD 500 million.
 msgstr ""
 
 msgid "Client's Liability"
-msgstr ""
+msgstr "고객의 책임"
 
 msgid "Client's deposits or withdrawals are immediately reflected in the corresponding master account balance in real time"
 msgstr ""
@@ -2747,6 +2744,9 @@ msgstr ""
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
 msgstr ""
 
+msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
+msgstr ""
+
 msgid "Derivative"
 msgstr ""
 
@@ -3098,6 +3098,9 @@ msgstr "이메일 주소"
 msgid "Email:"
 msgstr "이메일:"
 
+msgid "Emercoin vs US Dollar"
+msgstr ""
+
 msgid "Employed"
 msgstr ""
 
@@ -3202,9 +3205,6 @@ msgstr ""
 
 msgid "Ether Classic"
 msgstr ""
-
-msgid "Ethereum Classic vs US Dollar"
-msgstr "이더리움 클래식 vs 미국 달러"
 
 msgid "Ethereum vs US Dollar"
 msgstr "이더리움 vs 미국 달러"
@@ -3768,9 +3768,6 @@ msgid "G. Order Handling"
 msgstr ""
 
 msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
-msgstr ""
-
-msgid "GBP 1 per point"
 msgstr ""
 
 msgid "GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%"
@@ -4913,9 +4910,6 @@ msgstr ""
 msgid "JAPAN ONLY CONTACT TEXT"
 msgstr "JAPAN ONLY CONTACT TEXT"
 
-msgid "JPY 1 per point"
-msgstr "포인트당 JPY 1엔화"
-
 msgid "Jan"
 msgstr "1월"
 
@@ -5642,6 +5636,9 @@ msgstr ""
 msgid "Litecoin vs US Dollar"
 msgstr "라이트코인 vs 미국 달러"
 
+msgid "Live Chat"
+msgstr ""
+
 msgid "Lock Cashier"
 msgstr ""
 
@@ -6124,9 +6121,6 @@ msgstr ""
 
 msgid "Monday"
 msgstr ""
-
-msgid "Monero vs US Dollar"
-msgstr "모네로 vs 미국 달러"
 
 msgid "Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients."
 msgstr ""
@@ -7395,7 +7389,7 @@ msgid "Profit/Loss"
 msgstr ""
 
 msgid "Prohibited Trades"
-msgstr ""
+msgstr "금지된 거래"
 
 msgid "Promote %1"
 msgstr "%1를 홍보하세요"
@@ -8712,7 +8706,7 @@ msgid "The Company reserves the right to change any part of this Agreement at an
 msgstr ""
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:"
-msgstr ""
+msgstr "본 회사는 다음과 같은 거래행위를 행하는 고객들에 한해 해당고객과의 거래를 역이행, 취소, 거절할 권리를 가지고 있습니다:"
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr ""
@@ -9662,6 +9656,9 @@ msgstr ""
 msgid "Trading and Withdrawal Limits"
 msgstr "거래 및 인출 한도"
 
+msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
+msgstr ""
+
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
 msgstr "바이너리 옵션 거래가 여러분 모두에게는 적합하지 않을 수 있습니다. 그러므로, 따를 수 있는 위험에 대해서 완전히 이해하시기 바랍니다. 잃게 되는 금액이 초입금을 초과할 수 있고 기초자산에서 발생한 이익이 없어질 수 있습니다. 도박상품인 바이너리 옵션에 관해서, 도박은 중독적이라는 것을 유념하시기 바랍니다 - 책임감 있게 하시길 바랍니다. %1책임감 있는 거래%2에 관해 읽어보세요."
 
@@ -10397,8 +10394,14 @@ msgstr "수요일"
 msgid "Weekday"
 msgstr "평일"
 
+msgid "Weekdays:"
+msgstr ""
+
 msgid "Weekend quotes"
 msgstr "주말 할당"
+
+msgid "Weekend:"
+msgstr ""
 
 msgid "Welcome to Binary.com"
 msgstr "Binary.com에 환영합니다"
@@ -10734,6 +10737,9 @@ msgid "Withdrawal: %1 working day"
 msgstr ""
 
 msgid "Withdrawal: Not applicable"
+msgstr ""
+
+msgid "Withdrawals have been disabled on your account. Please check your email for more details."
 msgstr ""
 
 msgid "Without margin, purchasing one lot of the XAU/USD pair will cost you:"
@@ -11366,9 +11372,6 @@ msgstr ""
 msgid "You’ve worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr ""
 
-msgid "Zcash vs US Dollar"
-msgstr "지캐시 vs 미국 달러"
-
 msgid "a definite or indefinite period during which you wish to exclude yourself from the website."
 msgstr ""
 
@@ -11583,7 +11586,7 @@ msgid "sublicense any of the rights granted under these Terms, other than as per
 msgstr ""
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
-msgstr ""
+msgstr "어떠한 종류의 교환, 금융시장, 또는 금융 규제 환경을 통치하는 법규, 규정, 규칙, 법령, 원칙을 위반하는 경우; 또는"
 
 msgid "the characteristics of financial instruments that are the subject of that order;"
 msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-29 21:34-0400\n"
+"PO-Revision-Date: 2018-04-30 22:06-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -693,9 +693,6 @@ msgstr "Mã API cho ứng dụng của bên thứ ba."
 
 msgid "ATM"
 msgstr "MÁY ATM"
-
-msgid "AUD 1 per point"
-msgstr "1 AUD cho 1 điểm"
 
 msgid "AUD Index – Measures the value of the Australian Dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%"
 msgstr "AUD Index-các biện pháp giá trị của đồng đô la Úc chống lại một giỏ 5 loại tiền tệ toàn cầu (USD, EUR, GBP, JPY, CAD), mỗi trọng 20%"
@@ -2746,6 +2743,9 @@ msgstr "Gửi tiền: tức thì"
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
 msgstr "Tiền gửi và tiền rút tài khoản MetaTrader 5 luôn vượt qua thông qua tài khoản binary options của bạn."
 
+msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
+msgstr ""
+
 msgid "Derivative"
 msgstr "Phái sinh"
 
@@ -3097,6 +3097,9 @@ msgstr "Địa chỉ Email"
 msgid "Email:"
 msgstr "Email:"
 
+msgid "Emercoin vs US Dollar"
+msgstr ""
+
 msgid "Employed"
 msgstr "Tuyển dụng"
 
@@ -3201,9 +3204,6 @@ msgstr "Ether"
 
 msgid "Ether Classic"
 msgstr "Ether Classic"
-
-msgid "Ethereum Classic vs US Dollar"
-msgstr "Ethereum cổ điển vs đô-la Mỹ"
 
 msgid "Ethereum vs US Dollar"
 msgstr "Ethereum vs đô la Mỹ"
@@ -3768,9 +3768,6 @@ msgstr "G. Bộ phận xử lý lệnh"
 
 msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
 msgstr ""
-
-msgid "GBP 1 per point"
-msgstr "1GBP cho mỗi điểm"
 
 msgid "GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%"
 msgstr "GBP Index-các biện pháp giá trị của đồng bảng Anh chống lại một giỏ 5 loại tiền tệ toàn cầu (USD, EUR, AUD, JPY, CAD), mỗi trọng 20%"
@@ -4914,9 +4911,6 @@ msgstr "J. Giao Dịch Kinh Doanh"
 msgid "JAPAN ONLY CONTACT TEXT"
 msgstr "LIÊN LẠC CHỈ SỬ DỤNG CHO NHẬT BẢN"
 
-msgid "JPY 1 per point"
-msgstr "1 JPY cho mỗi điểm"
-
 msgid "Jan"
 msgstr "Tháng Một"
 
@@ -5643,6 +5637,9 @@ msgstr "Litecoin"
 msgid "Litecoin vs US Dollar"
 msgstr "Litecoin vs đô-la Mỹ"
 
+msgid "Live Chat"
+msgstr ""
+
 msgid "Lock Cashier"
 msgstr "Khóa quầy Thu Ngân"
 
@@ -6125,9 +6122,6 @@ msgstr "Điều chỉnh/sửa đổi"
 
 msgid "Monday"
 msgstr "Thứ Hai"
-
-msgid "Monero vs US Dollar"
-msgstr "Monero vs đô-la Mỹ"
 
 msgid "Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients."
 msgstr "Tiền thu từ Khách hàng không được thay mặt Khách Hàng đầu tư vào chứng khoán, hợp đồng tương lai, ngoại tệ, các công cụ phái sinh hoặc những đầu tư khác."
@@ -9663,6 +9657,9 @@ msgstr ""
 msgid "Trading and Withdrawal Limits"
 msgstr "Giới Hạn Giao Dịch và Giới Hạn Rút Tiền"
 
+msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
+msgstr ""
+
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
 msgstr "Giao dịch Binary Options có thể không thích hợp cho tất cả mọi người, vì vậy vui lòng bảo đảo rằng bạn đã hiểu hoàn toàn về rủi ro có liên quan. Thất thoát của bạn có thể vượt quá số tiền cọc ban đầu và bạn sẽ không được sở hữu hay có bất kì tiền lãi nào trong tài sản cơ sở. <span class=\"ja-hide\">Đọc về Giao Dịch Có Trách Nhiệm </span>."
 
@@ -10398,8 +10395,14 @@ msgstr "Thứ Tư"
 msgid "Weekday"
 msgstr "Ngày trong tuần"
 
+msgid "Weekdays:"
+msgstr ""
+
 msgid "Weekend quotes"
 msgstr "Yết giá cuối tuần"
+
+msgid "Weekend:"
+msgstr ""
 
 msgid "Welcome to Binary.com"
 msgstr "Chào mừng đến với Binary.com"
@@ -10736,6 +10739,9 @@ msgstr "Rút tiền:%1 ngày làm việc"
 
 msgid "Withdrawal: Not applicable"
 msgstr "Rút tiền: Không khả dụng"
+
+msgid "Withdrawals have been disabled on your account. Please check your email for more details."
+msgstr ""
 
 msgid "Without margin, purchasing one lot of the XAU/USD pair will cost you:"
 msgstr "Nếu không có biên, khi mua một lô cặp XAU/USD bạn sẽ tốn:"
@@ -11367,9 +11373,6 @@ msgstr "Bạn đã thực hiện các giao dịch đáng kể trên thị trư�
 
 msgid "You’ve worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "Bạn đã từng làm việc trong lĩnh vực tài chính cho tối thiểu là một năm trong một vai trò mà đòi hỏi kiến thức cho dự định giao dịch của mình trên nền tảng của chúng tôi"
-
-msgid "Zcash vs US Dollar"
-msgstr "Zcash vs đô-la Mỹ"
 
 msgid "a definite or indefinite period during which you wish to exclude yourself from the website."
 msgstr "Thời gian xác định hoặc không xác định trong suốt giai đoạn bạn muốn loại trừ ra khỏi trang web."
