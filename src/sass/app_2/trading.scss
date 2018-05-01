@@ -35,9 +35,18 @@
                 }
                 .btn {
                     text-transform: capitalize;
-                    min-width: 90px;
-                    min-height: 90px;
+                    width: 96px;
+                    height: 96px;
                     margin: 4px;
+                    box-shadow: 1px 3px 4px 0 rgba(76, 175, 80, 0.14), 1px 3px 4px 0 rgba(76, 175, 80, 0.14);
+
+                    img {
+                        width: 42px;
+                        margin: 0 auto;
+                    }
+                    span {
+                        display: block;
+                    }
                 }
             }
             div.box {
@@ -62,9 +71,19 @@
 
                     &.down {
                         color: $COLOR_RED;
+
+                        &:after {
+                            content: url('../images/trading_app/purchase/ic_pricedown.svg');
+                            position: absolute;
+                        }
                     }
                     &.up {
                         color: $COLOR_LIGHT_BLUE;
+
+                        &:after {
+                            content: url('../images/trading_app/purchase/ic_priceup.svg');
+                            position: absolute;
+                        }
                     }
                     span.symbols {
                         left: -0.6rem;

@@ -9,7 +9,7 @@
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: repeat(2, [row] auto);
-        grid-gap: 20px;
+        grid-gap: 4px;
 
         .chart-container {
             padding: 10px;

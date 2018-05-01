@@ -1,9 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import Button from '../../../components/form/button.jsx';
-import { connect } from '../../../store/connect';
 import Tooltip from '../../../components/elements/tooltip.jsx';
+import { connect } from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
+import Url from '../../../../_common/url';
 
 const NetProfit = ({ amount, symbol }) => (
     <React.Fragment>
@@ -36,9 +37,9 @@ const Return = ({ amount }) => (
     </React.Fragment>
 );
 
-const Stake = ({ amount, symbol, type, status }) => {
+const Stake = ({ amount, symbol, status }) => {
     const stake_text_class    = classNames('symbols', symbol);
-    const amount_status_class = classNames('amount', status, type.toLowerCase());
+    const amount_status_class = classNames('amount', status);
     return (
         <React.Fragment>
             <h4 className='purchase-stake-header'>{localize('Stake')}:</h4>
@@ -75,6 +76,7 @@ const Purchase = ({
                         >
                             <Button
                                 id={`purchase_${type}`}
+                                icon={Url.urlForStatic(`images/trading_app/purchase/ic_dark_${trade_types[type].toLowerCase()}.svg`) || undefined}
                                 className='primary green'
                                 has_effect
                                 text={trade_types[type]}
