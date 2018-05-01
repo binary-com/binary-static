@@ -161,6 +161,9 @@ const Contract = (() => {
                         trade_contract_forms.lookbackhigh    = localize('High-Close');
                         trade_contract_forms.lookbacklow     = localize('Close-Low');
                         trade_contract_forms.lookbackhighlow = localize('High-Low');
+                    } else if (contract_category === 'reset') {
+                        trade_contract_forms.resetcall = localize('Reset Call');
+                        trade_contract_forms.resetput  = localize('Reset Put');
                     }
                 }
             }

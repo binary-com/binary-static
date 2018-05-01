@@ -240,6 +240,11 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Even/Odd')}        text={it.L('Predict that the last digit is an even number or odd number after the last tick')} />
                             <ListStrong header={it.L('Over/Under')}      text={it.L('Predict that the last digit is higher or lower')} />
                         </SectionLarge>
+                        <SectionLarge header={it.L('Reset')} image='types-of-trades/reset' text={it.L('There are two types of two types of reset trades:')}>
+                            <ListStrong header={it.L('Reset Call')} text={it.L('Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)')} />
+                            <ListStrong header={it.L('Reset Put')}  text={it.L('Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)')} />
+                            <p>{it.L('At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot.')}</p>
+                        </SectionLarge>
                         <p>{it.L('Please note that Asians and Digits are available exclusively with our Volatility Indices.')}</p>
                     </Section>
                     <Section id='range-of-markets' header={it.L('Range of markets')}>

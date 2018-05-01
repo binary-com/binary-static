@@ -57,6 +57,8 @@ const commonTrading = (() => {
             name = 'digits';
         } else if (/lookback/.test(form_name)) {
             name = 'lookback';
+        } else if (/reset/.test(form_name)) {
+            name = 'reset';
         }
         return {
             form_name       : name,
@@ -95,6 +97,8 @@ const commonTrading = (() => {
         LBFLOATCALL : 'middle',
         LBFLOATPUT  : 'middle',
         LBHIGHLOW   : 'middle',
+        RESETCALL   : 'top',
+        RESETPUT    : 'bottom',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');
@@ -128,6 +132,7 @@ const commonTrading = (() => {
             ['lookback',
                 ['lookbackhigh', 'lookbacklow', 'lookbackhighlow'],
             ],
+            'reset',
         ];
 
         if (elements) {

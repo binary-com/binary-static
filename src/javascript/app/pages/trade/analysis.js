@@ -223,6 +223,10 @@ const TradingAnalysis = (() => {
             lookbackhighlow: {
                 image1: 'high-low-image.svg',
             },
+            reset: {
+                image1: 'reset-call.svg',
+                image2: 'reset-put.svg',
+            },
         };
 
         if (images[form_name]) {

@@ -166,6 +166,7 @@ const Highchart = (() => {
     const handleResponse = (response) => {
         const type  = response.msg_type;
         const error = response.error;
+
         if (/history|candles|tick|ohlc/.test(type) && !error) {
             options       = { title: contract.display_name };
             options[type] = response[type];

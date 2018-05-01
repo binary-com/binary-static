@@ -68,6 +68,8 @@ const ViewPopup = (() => {
         // Lookback multiplier value
         multiplier = contract.multiplier;
 
+        console.log(contract, response.proposal_open_contract);
+
         if (contract && document.getElementById(wrapper_id)) {
             update();
             return;
@@ -102,6 +104,8 @@ const ViewPopup = (() => {
             LBFLOATPUT  : 'High-Close',
             LBHIGHLOW   : 'High-Low',
             RANGE       : 'Stays Between',
+            RESETCALL   : 'Reset Call',
+            RESETPUT    : 'Reset Put',
             UPORDOWN    : 'Goes Outside',
             ONETOUCH    : 'Touches',
             NOTOUCH     : 'Does Not Touch',
