@@ -68,8 +68,6 @@ const ViewPopup = (() => {
         // Lookback multiplier value
         multiplier = contract.multiplier;
 
-        console.log(contract, response.proposal_open_contract);
-
         if (contract && document.getElementById(wrapper_id)) {
             update();
             return;

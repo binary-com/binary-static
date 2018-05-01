@@ -152,6 +152,8 @@ const texts = [
     'High-Close',
     'Close-Low',
     'High-Low',
+    'Reset Call',
+    'Reset Put',
     '"AUD/JPY" or "Apple"',
     'Select Asset',
 
@@ -411,6 +413,7 @@ const texts = [
     'High Barrier',
     'High Barrier ([_1])',
     'Barrier ([_1])',
+    'Reset Barrier ([_1])',
     'This contract won',
     'This contract lost',
     'Spot',
