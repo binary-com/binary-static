@@ -233,10 +233,10 @@ class Calendar extends React.Component {
                 <span
                     key={date}
                     className={classnames('calendar-date', {
-                        active       : is_active,
-                        today        : is_today,
-                        disabled     : is_disabled,
-                        hidden       : is_other_month,
+                        active  : is_active,
+                        today   : is_today,
+                        disabled: is_disabled,
+                        hidden  : is_other_month,
                     })}
                     onClick={this.handleDateSelected}
                     data-date={date}

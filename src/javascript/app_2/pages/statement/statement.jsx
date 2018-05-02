@@ -182,6 +182,8 @@ class Statement extends React.PureComponent {
                 ...date_to   && {date_to: moment(date_to).add(1, 'd').subtract(1, 's').unix()},
             }
         ).then((response) => {
+            if (!this.el) return;
+
             const formatted_transactions = response.statement.transactions
                 .map(transaction => getStatementData(transaction, currency, is_jp_client));
 
@@ -212,7 +214,7 @@ class Statement extends React.PureComponent {
         const today = moment_now.format('YYYY-MM-DD');
 
         return (
-            <div className='statement-container'>
+            <div className='statement-container' ref={(el) => this.el = el}>
                 <div className='statement-filter'>
                     <div className='container'>
                         <span className='statement-filter-text'>{localize('Filter by date:')}</span>
