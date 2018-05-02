@@ -232,7 +232,7 @@ class Calendar extends React.Component {
                         active       : is_active,
                         today        : is_today,
                         disabled     : is_disabled,
-                        'other-month': is_other_month,
+                        hidden       : is_other_month,
                     })}
                     onClick={this.handleDateSelected}
                     data-date={date}
@@ -360,13 +360,31 @@ class Calendar extends React.Component {
         const is_year_view   = (view === 'year');
         const is_decade_view = (view === 'decade');
 
-        const BtnPrevMonth = (is_date_view && <span type='button' className='calendar-next-month-btn' onClick={this.nextMonth} />);
-        const BtnNextMonth = (is_date_view && <span type='button' className='calendar-prev-month-btn' onClick={this.previousMonth} />);
+        const BtnPrevMonth = (is_date_view &&
+            <span
+                type='button'
+                className={classnames('calendar-prev-month-btn', {
+                    hidden: this.isPeriodDisabled(moment(this.state.date).subtract(1, 'month'), 'month'),
+                })}
+                onClick={this.previousMonth}
+            />
+        );
+        const BtnNextMonth = (is_date_view &&
+            <span
+                type='button'
+                className={classnames('calendar-next-month-btn', {
+                    hidden: this.isPeriodDisabled(moment(this.state.date).add(1, 'month'), 'month'),
+                })}
+                onClick={this.nextMonth}
+            />
+        );
 
         const BtnPrevYear = (
             <span
                 type='button'
-                className='calendar-prev-year-btn'
+                className={classnames('calendar-prev-year-btn', {
+                    hidden: this.isPeriodDisabled(moment(this.state.date).subtract(1, 'year'), 'year'),
+                })}
                 onClick={() => (((is_date_view || is_month_view) && this.previousYear())
                     || (is_year_view && this.previousDecade()) || (is_decade_view && this.previousCentury()) )}
             />
@@ -375,7 +393,9 @@ class Calendar extends React.Component {
         const BtnNextYear = (
             <span
                 type='button'
-                className='calendar-next-year-btn'
+                className={classnames('calendar-next-year-btn', {
+                    hidden: this.isPeriodDisabled(moment(this.state.date).add(1, 'year'), 'year'),
+                })}
                 onClick={() => (((is_date_view || is_month_view) && this.nextYear())
                     || (is_year_view && this.nextDecade()) || (is_decade_view && this.nextCentury()) )}
             />

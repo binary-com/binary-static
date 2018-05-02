@@ -164,10 +164,6 @@
                 color: #e9e9ed !important; /* stylelint-disable-line color-no-hex */
                 cursor: default;
             }
-            &.other-month {
-                visibility: hidden;
-                transition: none;
-            }
             &:hover {
                 &:not(.disabled) {
                     cursor: pointer;

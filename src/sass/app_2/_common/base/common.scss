@@ -47,3 +47,8 @@ fieldset {
     margin: 0 auto;
     box-sizing: border-box;
 }
+
+.hidden {
+    visibility: hidden !important;
+    transition: none !important;
+}
