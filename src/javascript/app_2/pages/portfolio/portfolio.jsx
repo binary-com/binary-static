@@ -63,7 +63,6 @@ const contract_type_display = {
 /* TODO:
     1. Move socket connections to DAO
     2. Make tooltip appdetails tooltip
-    3. Add currencies to totals
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
@@ -145,7 +144,7 @@ class Portfolio extends React.PureComponent  {
     }
 
     componentWillMount() {
-        this.getPortfolioData();
+        this.initializePortfolio();
     }
 
     componentWillUnmount() {
@@ -153,8 +152,9 @@ class Portfolio extends React.PureComponent  {
         BinarySocket.send({ forget_all: ['proposal_open_contract', 'transaction'] });
     }
 
-    getPortfolioData = () => {
+    initializePortfolio = () => {
         BinarySocket.send({ portfolio: 1 }).then((response) => {
+            this.setState({ is_loading: false });
             this.updatePortfolio(response);
         });
         BinarySocket.send({ transaction: 1, subscribe: 1 }, { callback: this.transactionResponseHandler });
@@ -233,7 +233,6 @@ class Portfolio extends React.PureComponent  {
     };
 
     updatePortfolio = (response) => {
-        this.setState({ is_loading: false });
         if (getPropertyValue(response, 'error')) {
             this.setState({ error: response.error.message });
             return;
@@ -253,7 +252,9 @@ class Portfolio extends React.PureComponent  {
     render() {
         return (
             <div className='portfolio'>
-                <div className='portfolio-header-container'><h2>{localize('Portfolio')}</h2></div>
+                <div className='portfolio-header-container'>
+                    <h2>{localize('Portfolio')}</h2>
+                </div>
                 {(() => {
                     if (this.state.is_loading) {
                         return <Loading />;
@@ -264,10 +265,10 @@ class Portfolio extends React.PureComponent  {
                     return (
                             this.state.data_source.length > 0 ?
                                 <DataTable
-                                    footer={this.state.footer}
                                     {...this.props}
-                                    data_source={this.state.data_source}
                                     columns={this.state.columns}
+                                    data_source={this.state.data_source}
+                                    footer={this.state.footer}
                                 />
                             : <div>{localize('No open positions.')}</div>
                     );
