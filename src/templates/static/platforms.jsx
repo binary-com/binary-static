@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Platforms = ({
+    className,
     data_show,
     image_class,
     image_path = 'platforms',
@@ -13,7 +14,7 @@ const Platforms = ({
     button_text,
     google_play_url = '',
 }) => (
-    <div className='gr-5 gr-12-m gr-12-p' data-show={data_show}>
+    <div className={`gr-5 gr-12-m gr-12-p ${className || ''}`} data-show={data_show}>
         <div className={image_class}>
             <img className='responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
@@ -108,17 +109,17 @@ const Platform = () => (
                 />
             </div>
             <div className='gr-row gr-padding-30'>
-                {/* <Platforms*/}
-                {/* image_class='gr-10 gr-7-p gr-9-m'*/}
-                {/* image='trading-multibarrier'*/}
-                {/* data_show='default, virtual, costarica'*/}
-                {/* header={it.L('Ladders')}*/}
-                {/* description={it.L('Multi-barrier trading')}*/}
-                {/* text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}*/}
-                {/* url={it.url_for('multi_barriers_trading')}*/}
-                {/* button_text={it.L('Trade now')}*/}
-                {/* />*/}
-                {/* <div className='gr-2' data-show='default, virtual, costarica' />*/}
+                <Platforms
+                    image_class='gr-10 gr-7-p gr-9-m'
+                    image='trading-multibarrier'
+                    header={it.L('Ladders')}
+                    className='cr-only'
+                    description={it.L('Multi-barrier trading')}
+                    text={it.L('Trade FX binary options on our multi-barrier platform, Ladders.')}
+                    url={it.url_for('multi_barriers_trading')}
+                    button_text={it.L('Trade now')}
+                />
+                <div className='gr-2 cr-only'  />
                 <Platforms
                     image_class='gr-10 gr-5-p gr-9-m'
                     image='chart'
