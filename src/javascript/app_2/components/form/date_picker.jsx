@@ -120,32 +120,20 @@ class Calendar extends React.Component {
     }
 
     handleDateSelected(e) {
-        const current_date = moment(this.state.date);
         const date         = moment(e.target.dataset.date);
         const min_date     = moment(this.props.minDate).format(this.props.dateFormat);
         const max_date     = moment(this.props.maxDate).format(this.props.dateFormat);
+        const is_before    = date.isBefore(min_date);
+        const is_after     = date.isAfter(max_date);
 
-        const is_before     = date.isBefore(min_date);
-        const is_today      = date.isSame(min_date);
-        const is_after      = date.isAfter(max_date);
-        const is_prev_month = date.month() < current_date.month();
-        const is_next_month = date.month() > current_date.month();
+        if (is_before || is_after) return;
 
-        if (is_prev_month && !is_before) {
-            this.previousMonth();
-        }
-        if (is_next_month) {
-            this.nextMonth();
-        }
-
-        if ((!is_before && !is_after)|| is_today) {
-            const formatted_date = date.format(this.props.dateFormat);
-            this.setState({
-                date         : formatted_date,
-                selected_date: formatted_date,
-            });
-            this.props.handleDateChange(formatted_date);
-        }
+        const formatted_date = date.format(this.props.dateFormat);
+        this.setState({
+            date         : formatted_date,
+            selected_date: formatted_date,
+        });
+        this.props.handleDateChange(formatted_date);
     }
 
     updateSelected(e, type) {
@@ -230,10 +218,10 @@ class Calendar extends React.Component {
         }
 
         dates.forEach((date) => {
-            const is_disabled = moment(date).isBefore(moment(start_of_month))
-                || moment(date).isAfter(moment(end_of_month))
-                || moment(date).isBefore(moment(this.props.minDate))
+            const is_disabled = moment(date).isBefore(moment(this.props.minDate))
                 || moment(date).isAfter(moment(this.props.maxDate));
+            const is_other_month = moment(date).isBefore(moment(start_of_month))
+                || moment(date).isAfter(moment(end_of_month));
             const is_active = this.state.selected_date && moment(date).isSame(moment(this.state.selected_date));
             const is_today  = moment(date).isSame(moment().utc(), 'day');
 
@@ -241,9 +229,10 @@ class Calendar extends React.Component {
                 <span
                     key={date}
                     className={classnames('calendar-date', {
-                        active  : is_active,
-                        today   : is_today,
-                        disabled: is_disabled,
+                        active       : is_active,
+                        today        : is_today,
+                        disabled     : is_disabled,
+                        'other-month': is_other_month,
                     })}
                     onClick={this.handleDateSelected}
                     data-date={date}
