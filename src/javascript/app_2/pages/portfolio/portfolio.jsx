@@ -1,16 +1,15 @@
 import React from 'react';
 import moment from 'moment';
 import DAO from '../../data/dao';
+import DataTable from '../../components/elements/data_table.jsx';
 import Client from '../../../app/base/client';
-import BinarySocket from '../../../app/base/socket';
+import Loading from '../../../../templates/_common/components/loading.jsx';
 import { buildOauthApps } from '../../../app/common/get_app_details';
 import { formatMoney } from '../../../app/common/currency';
 import { localize } from '../../../_common/localize';
 import { getPropertyValue } from '../../../_common/utility';
-import DataTable from '../../components/elements/data_table.jsx';
-import Loading from '../../../../templates/_common/components/loading.jsx';
 
-const handlePortfolioData = (portfolio_arr) => {
+const formatPortfolioData = (portfolio_arr) => {
     const formatted_portfolio = portfolio_arr.map((portfolio_item) => {
         const date_obj        = new Date(portfolio_item.expiry_time* 1000);
         const moment_obj      = moment.utc(date_obj);
@@ -235,7 +234,7 @@ class Portfolio extends React.PureComponent  {
             return;
         }
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
-            const data_source = handlePortfolioData(response.portfolio.contracts);            
+            const data_source = formatPortfolioData(response.portfolio.contracts);
             const footer      = this.updateFooterTotals(data_source);
 
             this.setState({ data_source, footer });
