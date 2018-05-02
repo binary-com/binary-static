@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import BinarySocket from '../../../app/base/socket';
-import { formatMoney } from '../../../app/common/currency';
 import Client from '../../../_common/base/client_base';
+import { formatMoney } from '../../../_common/base/currency_base';
 import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
 import DataTable from '../../components/elements/data_table.jsx';
