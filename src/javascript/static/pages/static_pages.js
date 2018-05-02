@@ -44,10 +44,4 @@ module.exports = {
         onLoad  : () => { MenuSelector.init(['general', 'account-management', 'marketing-and-promotions']); },
         onUnload: () => { MenuSelector.clean(); },
     },
-    EconomicCalendar: {
-        onLoad: () => { $.getScript( 'https://c.mql5.com/js/widgets/calendar/widget.v3.js' )
-          .done(() => {
-              new economicCalendar({ width: '100%', height: '500px', mode: 2 }); // eslint-disable-line new-cap, no-new, no-undef
-          });},
-    },
 };

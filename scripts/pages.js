@@ -30,6 +30,8 @@ module.exports = [
     ['resources',                          'app/resources/index',                       'default',    'Resources'],
     ['resources/asset_indexws',            'app/resources/asset_index',                 'default',    'Asset Index', 'ja'],
     ['resources/market_timesws',           'app/resources/trading_times',               'default',    'Trading Times'],
+    ['resources/economic_calendar',        'app/resources/economic_calendar',           'default',    'Economic Calendar'],
+
 
     ['user/accounts',                      'app/user/accounts',                         'default',    'Accounts',                          'ja'],
     ['user/authenticate',                  'app/user/authenticate',                     'default',    'Authenticate',                      'ja'],
@@ -120,7 +122,6 @@ module.exports = [
     ['metatrader/download',                'static/metatrader/download',                'default',     'Start Trading with MetaTrader 5',  'ja'],
     ['metatrader/how-to-trade-mt5',        'static/metatrader/how_to_trade_mt5',        'default',     'How to Trade in MetaTrader 5',     'ja'],
     ['metatrader/types-of-accounts',       'static/metatrader/types_of_accounts',       'default',     'Types of MetaTrader 5 accounts'],
-    ['metatrader/economic-calendar',       'static/metatrader/economic_calendar',       'default',     'Economic Calendar',                'ja'],
 
     ['affiliate_disclaimer',               'static/japan/affiliates/popup',             null,          '',                                 'NOT-ja,en'],
 
