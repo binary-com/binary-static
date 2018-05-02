@@ -121,12 +121,12 @@ class Statement extends React.PureComponent {
 
         this.fetchNextBatch();
 
-        this._throttledHandleScroll = throttlebounce(this.handleScroll, 200);
-        window.addEventListener('scroll', this._throttledHandleScroll, false);
+        this.throttledHandleScroll = throttlebounce(this.handleScroll, 200);
+        window.addEventListener('scroll', this.throttledHandleScroll, false);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this._throttledHandleScroll, false);
+        window.removeEventListener('scroll', this.throttledHandleScroll, false);
     }
 
     handleScroll() {
