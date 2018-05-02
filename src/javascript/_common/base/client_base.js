@@ -1,11 +1,10 @@
-const moment             = require('moment');
-const isCryptocurrency   = require('./currency_base').isCryptocurrency;
-const SocketCache        = require('./socket_cache');
-const LocalStore         = require('../storage').LocalStore;
-const State              = require('../storage').State;
-const getPropertyValue   = require('../utility').getPropertyValue;
-const isEmptyObject      = require('../utility').isEmptyObject;
-const BinarySocket       = require('../../app/base/socket');
+const moment           = require('moment');
+const isCryptocurrency = require('./currency_base').isCryptocurrency;
+const SocketCache      = require('./socket_cache');
+const LocalStore       = require('../storage').LocalStore;
+const State            = require('../storage').State;
+const getPropertyValue = require('../utility').getPropertyValue;
+const isEmptyObject    = require('../utility').isEmptyObject;
 
 const ClientBase = (() => {
     const storage_key = 'client.accounts';
@@ -172,13 +171,6 @@ const ClientBase = (() => {
         return true;
     };
 
-    const sendLogoutRequest = (show_login_page) => {
-        if (show_login_page) {
-            sessionStorage.setItem('showLoginPage', 1);
-        }
-        BinarySocket.send({ logout: '1' });
-    };
-
     const currentLandingCompany = () => {
         const landing_company_response = State.getResponse('landing_company') || {};
         const this_shortcode           = get('landing_company_shortcode');
@@ -301,7 +293,6 @@ const ClientBase = (() => {
         shouldAcceptTnc,
         clearAllAccounts,
         setNewAccount,
-        sendLogoutRequest,
         currentLandingCompany,
         shouldCompleteTax,
         getMT5AccountType,

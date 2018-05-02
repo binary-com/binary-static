@@ -3,9 +3,9 @@ import 'promise-polyfill';
 import jquery from 'jquery';
 
 import initApp             from './app';
+import NetworkMonitor      from './base/network_monitor';
 import Client              from '../_common/base/client_base';
 import { checkNewRelease } from '../_common/check_new_release';
-import NetworkMonitor      from '../app/base/network_monitor';
 
 // TODO: remove all dependencies to app folder, jquery, ...
 

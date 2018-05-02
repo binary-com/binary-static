@@ -65,6 +65,13 @@ const Client = (() => {
         }
     };
 
+    const sendLogoutRequest = (show_login_page) => {
+        if (show_login_page) {
+            sessionStorage.setItem('showLoginPage', 1);
+        }
+        BinarySocket.send({ logout: '1' });
+    };
+
     const doLogout = (response) => {
         if (response.logout !== 1) return;
         removeCookies('login', 'loginid', 'loginid_list', 'email', 'residence', 'settings'); // backward compatibility
@@ -114,6 +121,7 @@ const Client = (() => {
     return Object.assign({
         processNewAccount,
         activateByClientType,
+        sendLogoutRequest,
         doLogout,
         getUpgradeInfo,
         defaultRedirectUrl,

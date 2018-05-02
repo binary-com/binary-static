@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import BinarySocket from '../../../app/base/socket';
+import BinarySocket from '../../../_common/base/socket_base';
 import Client from '../../../_common/base/client_base';
 import { formatMoney } from '../../../_common/base/currency_base';
 import { localize } from '../../../_common/localize';
