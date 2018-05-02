@@ -87,6 +87,15 @@
     &.ends_between {
         content: url('../images/trading_app/contracts/trade_types/light/ends_between_ends_outside/ic-light-ends-between.svg');
     }
+    &.lb_close_low {
+        content: url('../images/trading_app/contracts/trade_types/light/lookbacks/ic-lookback-close-low.svg');
+    }
+    &.lb_high_low {
+        content: url('../images/trading_app/contracts/trade_types/light/lookbacks/ic-lookback-high-low.svg');
+    }
+    &.lb_high_close {
+        content: url('../images/trading_app/contracts/trade_types/light/lookbacks/ic-lookback-high-close.svg');
+    }
     &.stays_between {
         content: url('../images/trading_app/contracts/trade_types/light/stays_between_goes_outside/ic-light-stays-between.svg');
     }
