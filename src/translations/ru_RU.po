@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-29 21:33-0400\n"
+"PO-Revision-Date: 2018-04-30 22:06-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -692,9 +692,6 @@ msgstr "Ключ API для независимых приложений."
 
 msgid "ATM"
 msgstr "ATM"
-
-msgid "AUD 1 per point"
-msgstr "AUD 1 за пункт"
 
 msgid "AUD Index – Measures the value of the Australian Dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%"
 msgstr "Индекс AUD, измеряющий значение австралийского доллара против корзины из 5 основных мировых валют (USD, EUR, GBP, JPY, CAD), каждая из которых взвешена на 20%"
@@ -2745,6 +2742,9 @@ msgstr "Пополнения: Мгновенно"
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
 msgstr "Пополнение и вывод средств со счёта MetaTrader 5 всегда осуществляется через счёт на бинарных опционах."
 
+msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
+msgstr ""
+
 msgid "Derivative"
 msgstr "Производные"
 
@@ -3096,6 +3096,9 @@ msgstr "Эл. адрес"
 msgid "Email:"
 msgstr "Email:"
 
+msgid "Emercoin vs US Dollar"
+msgstr ""
+
 msgid "Employed"
 msgstr "Работающий"
 
@@ -3200,9 +3203,6 @@ msgstr "Ether"
 
 msgid "Ether Classic"
 msgstr "Ether Classic"
-
-msgid "Ethereum Classic vs US Dollar"
-msgstr "Ethereum Classic против доллара США"
 
 msgid "Ethereum vs US Dollar"
 msgstr "Ethereum против доллара США"
@@ -3767,9 +3767,6 @@ msgstr "G. Обработка ордера"
 
 msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
 msgstr ""
-
-msgid "GBP 1 per point"
-msgstr "GBP 1 за пункт"
 
 msgid "GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%"
 msgstr "Индекс GBP, измеряющий значение британского фунта против корзины из 5 основных мировых валют (USD, EUR, AUD, JPY, CAD), каждая из которых взвешена на 20%"
@@ -4911,9 +4908,6 @@ msgstr "J. Торговые контракты"
 msgid "JAPAN ONLY CONTACT TEXT"
 msgstr "JAPAN ONLY CONTACT TEXT"
 
-msgid "JPY 1 per point"
-msgstr "JPY 1 за пункт"
-
 msgid "Jan"
 msgstr "Янв"
 
@@ -5640,6 +5634,9 @@ msgstr "Litecoin"
 msgid "Litecoin vs US Dollar"
 msgstr "Litecoin против доллара США"
 
+msgid "Live Chat"
+msgstr ""
+
 msgid "Lock Cashier"
 msgstr "Закрыть кассу паролем"
 
@@ -6122,9 +6119,6 @@ msgstr "Изменения/поправки"
 
 msgid "Monday"
 msgstr "Понедельник"
-
-msgid "Monero vs US Dollar"
-msgstr "Monero против доллара США"
 
 msgid "Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients."
 msgstr "Денежные средства, полученные от Клиентов, не могут быть инвестированы в какие-либо ценные бумаги, фьючерсы, валюты, производные и другие активы от имени Клиентов."
@@ -9660,6 +9654,9 @@ msgstr ""
 msgid "Trading and Withdrawal Limits"
 msgstr "Лимиты на торговлю и вывод"
 
+msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
+msgstr ""
+
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
 msgstr "Торговля бинарными опционами подходит далеко не каждому, поэтому убедитесь, что Вы полностью осознаёте все связанные с ней риски. Ваши потери могут превысить первоначальную инвестицию, а Вы не владеете и не получаете процентов от основного актива. В отношении бинарных опционов, которые являются продуктами игорной деятельности: помните, что азартные игры могут перерасти в зависимость. Поэтому, пожалуйста, играйте ответственно. Узнайте больше об %1ответственной торговле%2."
 
@@ -10395,8 +10392,14 @@ msgstr "Среда"
 msgid "Weekday"
 msgstr "День недели"
 
+msgid "Weekdays:"
+msgstr ""
+
 msgid "Weekend quotes"
 msgstr "Котировки в выходные"
+
+msgid "Weekend:"
+msgstr ""
 
 msgid "Welcome to Binary.com"
 msgstr "Добро пожаловать на Binary.com"
@@ -10733,6 +10736,9 @@ msgstr "Вывод: %1 раб. дн"
 
 msgid "Withdrawal: Not applicable"
 msgstr "Вывод: не предлагается"
+
+msgid "Withdrawals have been disabled on your account. Please check your email for more details."
+msgstr ""
 
 msgid "Without margin, purchasing one lot of the XAU/USD pair will cost you:"
 msgstr "Покупка одного лота на паре XAU/USD без использования маржи обойдётся Вам в:"
@@ -11363,9 +11369,6 @@ msgstr "Вы провели значительное количество кон
 
 msgid "You’ve worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "Вы работали в сфере финансов на протяжении года и занимали позицию, требующую знаний, необходимых для проведения сделок на нашей платформе"
-
-msgid "Zcash vs US Dollar"
-msgstr "Zcash против доллара США"
 
 msgid "a definite or indefinite period during which you wish to exclude yourself from the website."
 msgstr "определенный или неопределенный период, на который Вы желаете исключить себя из пользования сайтом."
