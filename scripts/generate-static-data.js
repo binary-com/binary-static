@@ -152,7 +152,7 @@ const texts = [
     'High-Close',
     'Close-Low',
     'High-Low',
-    '"AUD/JPY" or "Apple"',
+    '"AUD/JPY"',
     'Select Asset',
 
     // limits
