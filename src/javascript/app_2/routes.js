@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, NavLink } from 'react-router-dom';
 
 import Client from '../_common/base/client_base';
-import { redirectToLogin } from '../app/base/login';
+import { redirectToLogin } from '../_common/base/login';
 import { localize } from '../_common/localize';
 
 import TradeApp  from './pages/trading/trade_app.jsx';
