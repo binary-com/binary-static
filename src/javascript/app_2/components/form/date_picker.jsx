@@ -55,7 +55,22 @@ class Calendar extends React.Component {
             || (this.state.date !== nextState.date)
             || (this.state.selected_date !== nextState.selected_date)
             || (this.props.minDate !== nextState.minDate)
-            || (this.props.maxDate !== nextState.maxDate);
+            || (this.props.maxDate !== nextState.maxDate)
+            || (this.props.startDate !== nextState.startDate);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const date = moment(this.state.date);
+        
+        if (date.isBefore(moment(nextProps.minDate))) {
+            this.setState({
+                date: nextProps.minDate,
+            });
+        } else if (date.isAfter(moment(nextProps.maxDate))) {
+            this.setState({
+                date: nextProps.maxDate,
+            });
+        }
     }
 
     setToday() {

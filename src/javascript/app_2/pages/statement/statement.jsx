@@ -222,7 +222,7 @@ class Statement extends React.PureComponent {
                         <DatePicker
                             name='date_from'
                             initial_value=''
-                            startDate={moment_now.clone().subtract(30, 'd').format('YYYY-MM-DD')}
+                            startDate={this.state.date_to || today}
                             maxDate={this.state.date_to || today}
                             onChange={this.handleDateChange}
                         />
