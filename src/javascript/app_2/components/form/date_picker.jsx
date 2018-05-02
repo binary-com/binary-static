@@ -69,9 +69,13 @@ class Calendar extends React.Component {
     }
 
     updateDate(value, unit, is_add) {
-        const new_date = moment(this.state.date)[is_add ? 'add' : 'subtract'](value, unit).format(this.props.dateFormat);
+        let new_date = moment(this.state.date)[is_add ? 'add' : 'subtract'](value, unit).format(this.props.dateFormat);
 
-        if (this.isPeriodDisabled(new_date, 'month')) return;
+        if (unit === 'months' && this.isPeriodDisabled(new_date, 'month')) return;
+
+        if (unit === 'years'  && this.isPeriodDisabled(new_date, 'month')) {
+            new_date = is_add ? this.props.maxDate : this.props.minDate;
+        }
 
         this.setState({ date: new_date });
     }
@@ -383,7 +387,7 @@ class Calendar extends React.Component {
             <span
                 type='button'
                 className={classnames('calendar-prev-year-btn', {
-                    hidden: this.isPeriodDisabled(moment(this.state.date).subtract(1, 'year'), 'year'),
+                    hidden: this.isPeriodDisabled(moment(this.state.date).subtract(1, 'month'), 'month'),
                 })}
                 onClick={() => (((is_date_view || is_month_view) && this.previousYear())
                     || (is_year_view && this.previousDecade()) || (is_decade_view && this.previousCentury()) )}
@@ -394,7 +398,7 @@ class Calendar extends React.Component {
             <span
                 type='button'
                 className={classnames('calendar-next-year-btn', {
-                    hidden: this.isPeriodDisabled(moment(this.state.date).add(1, 'year'), 'year'),
+                    hidden: this.isPeriodDisabled(moment(this.state.date).add(1, 'month'), 'month'),
                 })}
                 onClick={() => (((is_date_view || is_month_view) && this.nextYear())
                     || (is_year_view && this.nextDecade()) || (is_decade_view && this.nextCentury()) )}
