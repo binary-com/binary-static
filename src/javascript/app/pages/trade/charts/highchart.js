@@ -371,10 +371,10 @@ const Highchart = (() => {
                 prev_barriers[0] = barrier; // Batman like the kids who "Cache".
                 if (Lookback.isLookback(contract_type)) {
                     const label = Lookback.getBarrierLabel(contract_type);
-                    addPlotLine({ id: 'barrier',       value: barrier * 1,            label: localize(`${label} ([_1])`,  [addComma(barrier)]),     dashStyle: 'Dot'   }, 'y');
+                    addPlotLine({ id: 'barrier',       value: barrier * 1,            label: localize(`${label} ([_1])`,  [addComma(barrier)]),          dashStyle: 'Dot'   }, 'y');
                 } else if (prev_reset_barrier) {
-                    addPlotLine({ id: 'barrier',       value: prev_reset_barrier * 1, label: localize('Barrier ([_1])', [addComma(barrier)]),       dashStyle: 'Dot'   }, 'y');
-                    addPlotLine({ id: 'reset_barrier', value: barrier * 1,            label: localize('Reset Barrier ([_1])', [addComma(barrier)]), dashStyle: 'Solid' }, 'y');
+                    addPlotLine({ id: 'barrier',       value: prev_reset_barrier * 1, label: localize('Barrier ([_1])', [addComma(prev_reset_barrier)]), dashStyle: 'Dot'   }, 'y');
+                    addPlotLine({ id: 'reset_barrier', value: barrier * 1,            label: localize('Reset Barrier ([_1])', [addComma(barrier)]),      dashStyle: 'Solid' }, 'y');
                     drawLineX({
                         value: current_spot_time, // TODO: time is currently inaccurate in highcharts
                         label: localize('Reset Time'),
