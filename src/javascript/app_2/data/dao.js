@@ -6,13 +6,25 @@ const DAO = (() => {
 
     const getContractsFor = (symbol) => BinarySocket.send({ contracts_for: symbol });
 
+    const getOauthApps = () =>  BinarySocket.send({ oauth_apps: 1 });
+
     const getPayoutCurrencies = () => BinarySocket.send({ payout_currencies: 1 });
+
+    const getPortfolio = () => BinarySocket.send({ portfolio: 1 });
 
     const getWebsiteStatus = () => BinarySocket.send({ website_status: 1 });
 
+    const sellExpired = () => BinarySocket.send({ sell_expired: 1 });
+
     // ----- Streaming calls -----
+    const subscribeProposalOpenContract = (type, cb, should_forget_first) =>
+        SubscriptionManager.subscribe('proposal_open_contract', { proposal_open_contract: type, subscribe: 1 }, cb, should_forget_first);
+
     const subscribeTicks = (symbol, cb, should_forget_first) =>
         SubscriptionManager.subscribe('ticks', { ticks: symbol, subscribe: 1 }, cb, should_forget_first);
+
+    const subscribeTransaction = (type, cb, should_forget_first) =>
+        SubscriptionManager.subscribe('transaction', { transaction: type, subscribe: 1 }, cb, should_forget_first);
 
     const forget = (msg_type, cb) => SubscriptionManager.forget(msg_type, cb);
 
@@ -21,9 +33,14 @@ const DAO = (() => {
     return {
         getActiveSymbols,
         getContractsFor,
+        getOauthApps,
         getPayoutCurrencies,
+        getPortfolio,
         getWebsiteStatus,
+        sellExpired,
+        subscribeProposalOpenContract,
         subscribeTicks,
+        subscribeTransaction,
         forget,
         forgetAll,
     };

@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import DAO from '../../data/dao';
 import Client from '../../../app/base/client';
 import BinarySocket from '../../../app/base/socket';
 import { buildOauthApps } from '../../../app/common/get_app_details';
@@ -61,8 +62,7 @@ const contract_type_display = {
 };
 
 /* TODO:
-    1. Move socket connections to DAO
-    2. Make tooltip appdetails tooltip
+    1. Make tooltip appdetails tooltip
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
@@ -131,7 +131,6 @@ class Portfolio extends React.PureComponent  {
             purchase  : '',
             indicative: '',
         };
-        this.is_mounted = true;
         const currency = Client.get('currency');
         this.state = {
             columns,
@@ -148,19 +147,17 @@ class Portfolio extends React.PureComponent  {
     }
 
     componentWillUnmount() {
-        this.is_mounted = false;
-        BinarySocket.send({ forget_all: ['proposal_open_contract', 'transaction'] });
+        console.log(this.state);
+        DAO.forgetAll('proposal_open_contract', 'transaction');
     }
 
     initializePortfolio = () => {
-        BinarySocket.send({ portfolio: 1 }).then((response) => {
+        DAO.getPortfolio().then((response) => {
             this.setState({ is_loading: false });
             this.updatePortfolio(response);
         });
-        BinarySocket.send({ transaction: 1, subscribe: 1 }, { callback: this.transactionResponseHandler });
-        BinarySocket.send({ oauth_apps: 1 }).then((response) => {
-            this.updateOAuthApps(response);
-        });
+        DAO.subscribeTransaction(1, this.transactionResponseHandler, false);
+        DAO.getOauthApps().then((response) => this.updateOAuthApps(response));
     }
 
     transactionResponseHandler = (response) => {
@@ -168,12 +165,12 @@ class Portfolio extends React.PureComponent  {
             this.setState({ error: response.error.message });
         }
         // Update portfolio for added / sold 
-        BinarySocket.send({ portfolio: 1 }).then((res) => {
-            this.updatePortfolio(res);
-        });
+        DAO.getPortfolio().then((res) => this.updatePortfolio(res));
     }
 
     updateIndicative = (response) => {
+        // prevent callback after component has unmounted
+        if (!this.el) return;
         if (getPropertyValue(response, 'error')) {
             return;
         }
@@ -181,7 +178,7 @@ class Portfolio extends React.PureComponent  {
         const proposal  = response.proposal_open_contract;
         // force to sell the expired contract, in order to remove from portfolio
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
-            BinarySocket.send({ sell_expired: 1 });
+            DAO.sellExpired();
         }
         if (+proposal.is_sold === 1) {
             data_source = data_source.filter((portfolio_item) => portfolio_item.id !== +proposal.contract_id);
@@ -204,14 +201,11 @@ class Portfolio extends React.PureComponent  {
                 }
             });
         }
-        const footer = this.updateFooter(data_source);
-        // prevent setState from firing in callback after component has unmounted
-        if (this.is_mounted) {
-            this.setState({ data_source, footer });
-        }
+        const footer = this.updateFooterTotals(data_source);
+        this.setState({ data_source, footer });
     }
 
-    updateFooter = (portfolioArr) => {
+    updateFooterTotals = (portfolioArr) => {
         let indicative = 0; 
         let payout     = 0; 
         let purchase   = 0;
@@ -242,19 +236,17 @@ class Portfolio extends React.PureComponent  {
         }
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
             const data_source = handlePortfolioData(response.portfolio.contracts);            
-            const footer      = this.updateFooter(data_source);
+            const footer      = this.updateFooterTotals(data_source);
 
             this.setState({ data_source, footer });
-            BinarySocket.send(
-                { proposal_open_contract: 1, subscribe: 1 }, 
-                { callback: this.updateIndicative }
-            );                
+
+            DAO.subscribeProposalOpenContract(1, this.updateIndicative, false);
         }
     }
 
     render() {
         return (
-            <div className='portfolio'>
+            <div className='portfolio' ref={(el) => this.el = el}>
                 <div className='portfolio-header-container'>
                     <h2>{localize('Portfolio')}</h2>
                 </div>
@@ -273,7 +265,7 @@ class Portfolio extends React.PureComponent  {
                                     data_source={this.state.data_source}
                                     footer={this.state.footer}
                                 />
-                            : <div>{localize('No open positions.')}</div>
+                            : <div><p>{localize('No open positions.')}</p></div>
                     );
                 })()}
             </div>
