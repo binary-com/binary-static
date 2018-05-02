@@ -131,7 +131,7 @@ class Portfolio extends React.PureComponent  {
             purchase  : '',
             indicative: '',
         };
-
+        this.is_mounted = true;
         const currency = Client.get('currency');
         this.state = {
             columns,
@@ -148,7 +148,7 @@ class Portfolio extends React.PureComponent  {
     }
 
     componentWillUnmount() {
-        console.log(this.state);
+        this.is_mounted = false;
         BinarySocket.send({ forget_all: ['proposal_open_contract', 'transaction'] });
     }
 
@@ -205,7 +205,10 @@ class Portfolio extends React.PureComponent  {
             });
         }
         const footer = this.updateFooter(data_source);
-        this.setState({ data_source, footer });
+        // prevent setState from firing in callback after component has unmounted
+        if (this.is_mounted) {
+            this.setState({ data_source, footer });
+        }
     }
 
     updateFooter = (portfolioArr) => {
