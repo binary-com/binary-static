@@ -234,6 +234,10 @@ div.datepicker-container {
             transform: scale(1, 0);
             transform-origin: top;
             transition: all 0.25s;
+
+            & span {
+                user-select: none;
+            }
         }
         &.show > div.calendar {
             opacity: 1;
