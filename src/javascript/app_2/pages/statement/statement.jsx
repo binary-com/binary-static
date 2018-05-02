@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import Client from '../../../app/base/client';
+import Client from '../../../_common/base/client_base';
 import BinarySocket from '../../../app/base/socket';
 import { toJapanTimeIfNeeded } from '../../../app/base/clock';
 import { formatMoney } from '../../../app/common/currency';

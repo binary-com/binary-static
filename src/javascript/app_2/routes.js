@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, NavLink } from 'react-router-dom';
 
-import Client from '../app/base/client';
+import Client from '../_common/base/client_base';
 import { redirectToLogin } from '../app/base/login';
 import { localize } from '../_common/localize';
 
