@@ -51,7 +51,7 @@ const MultipleAccountsManager = () => (
                         />
                         <MAMBox
                             image='exclude'
-                            text={it.L('Use multiple exclusion rules to temporarily exclude client accounts from allocations without affecting their current positions')}
+                            text={it.L('Use two different exclusion types: \'Allocation\' excludes a client from future trades only, while \'Full\' also closes open positions and removes its balance from the master account. Clients can choose to close any open position.')}
                         />
                         <MAMBox
                             image='manage'
