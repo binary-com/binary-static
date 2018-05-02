@@ -107,9 +107,9 @@ const Explanation = () => (
             </div>
             <div id='winning_reset' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
-                <p>{it.L('If you select "Reset-Call", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time.')}</p>
-                <p>{it.L('If you select "Reset-Put", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time.')}</p>
-                <p>{it.L('If you <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <strong>new barrier (if a reset occurs)</strong>, you don\'t win the payout.')}</p>
+                <p>{it.L('If you select Reset-Call, you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time.')}</p>
+                <p>{it.L('If you select Reset-Put, you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time.')}</p>
+                <p>{it.L('If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don\'t win the payout.')}</p>
             </div>
         </div>
 
@@ -243,7 +243,7 @@ const Explanation = () => (
                 <p>{it.L('The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>.')}</p>
                 <p>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>.')}</p>
                 <p>{it.L('The <strong>start time</strong> is when the contract is processed by our servers.')}</p>
-                <p>{it.L('The <strong>entry spot</strong> is the fist tick after the contract is processed by our servers.')}</p>
+                <p>{it.L('The <strong>entry spot</strong> is the first tick after the contract is processed by our servers.')}</p>
             </div>
         </div>
     </div>
