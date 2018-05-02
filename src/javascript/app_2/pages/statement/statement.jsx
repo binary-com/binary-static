@@ -264,12 +264,14 @@ class Statement extends React.PureComponent {
                                         has_fixed_header
                                         is_full_width
                                     />
-                                    <div className='statement-no-activity-msg'>
-                                        {
-                                            !this.state.date_from && !this.state.date_to
-                                                ? localize('Your account has no trading activity.')
-                                                : localize('Your account has no trading activity for the selected period.')
-                                        }
+                                    <div className='container'>
+                                        <div className='statement-no-activity-msg'>
+                                            {
+                                                !this.state.date_from && !this.state.date_to
+                                                    ? localize('Your account has no trading activity.')
+                                                    : localize('Your account has no trading activity for the selected period.')
+                                            }
+                                        </div>
                                     </div>
                                 </React.Fragment>
                             )
