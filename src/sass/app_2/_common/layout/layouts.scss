@@ -40,7 +40,7 @@
                 fieldset {
                     grid-column: 1;
 
-                    div.duration-container, div.amount-container {
+                    div.duration-container, div.amount-container, div.endtime-container {
                         display: grid;
                         grid-column-gap: 15px;
                         grid-template-columns: 1fr;
@@ -49,6 +49,9 @@
                     @media (min-width: 979px) {
                         div.duration-container {
                             grid-template-columns: 1.5fr 1fr;
+                        }
+                        div.endtime-container {
+                            grid-template-columns: 1fr 1fr;
                         }
                         div.amount-container {
                             grid-template-columns: 1fr 1fr 1fr;
