@@ -1,8 +1,8 @@
 const moment           = require('moment');
-const getStaticHash    = require('../../_common/check_new_release').getStaticHash;
-const LocalStore       = require('../../_common/storage').LocalStore;
-const getPropertyValue = require('../../_common/utility').getPropertyValue;
-const isEmptyObject    = require('../../_common/utility').isEmptyObject;
+const getStaticHash    = require('../check_new_release').getStaticHash;
+const LocalStore       = require('../storage').LocalStore;
+const getPropertyValue = require('../utility').getPropertyValue;
+const isEmptyObject    = require('../utility').isEmptyObject;
 
 /*
  * Caches WS responses to reduce delay time and number of requests
