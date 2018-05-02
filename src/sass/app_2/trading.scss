@@ -40,7 +40,7 @@
                     margin: 4px;
                     box-shadow: 1px 3px 4px 0 rgba(76, 175, 80, 0.14), 1px 3px 4px 0 rgba(76, 175, 80, 0.14);
 
-                    img {
+                    img.btn-icon {
                         width: 42px;
                         margin: 0 auto;
                     }
@@ -71,6 +71,7 @@
                         &:after {
                             content: url('../images/trading_app/purchase/ic_pricedown.svg');
                             position: absolute;
+                            top: 2px;
                         }
                     }
                     &.up {
@@ -79,6 +80,7 @@
                         &:after {
                             content: url('../images/trading_app/purchase/ic_priceup.svg');
                             position: absolute;
+                            top: 2px;
                         }
                     }
                     span.symbols {
