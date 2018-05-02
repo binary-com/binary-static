@@ -568,6 +568,9 @@ const texts = [
     'You have reached the rate limit of requests per second. Please try later.',
     '[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.',
     'We are reviewing your documents. For more details [_1]contact us[_2].',
+    'Deposits and withdrawals have been disabled on your account. Please check your email for more details.',
+    'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
+    'Withdrawals have been disabled on your account. Please check your email for more details.',
 
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
