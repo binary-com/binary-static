@@ -62,6 +62,7 @@ const contract_type_display = {
 
 /* TODO:
     1. Make tooltip appdetails tooltip
+    2. Get trade types from trade_store.js
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
@@ -79,7 +80,7 @@ class Portfolio extends React.PureComponent  {
                     if (data) {
                         return (
                             <td key={data_index}>
-                                <div className={`${data_index}-container`}>
+                                <div className={`${data_index}_container`}>
                                     <i className={`trade_type_icon ${contract_type_display[data].icon}`} /> 
                                     {contract_type_display[data].name}
                                 </div>
@@ -117,6 +118,7 @@ class Portfolio extends React.PureComponent  {
                                 {data.style === 'no_resale' && <div> {localize('resell not offered')}</div>}
                             </td>);
                     }
+                    // Footer total:
                     if (data && typeof data === 'string') {
                         return <td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data}</td>;
                     }
@@ -246,7 +248,7 @@ class Portfolio extends React.PureComponent  {
     render() {
         return (
             <div className='portfolio' ref={(el) => this.el = el}>
-                <div className='portfolio-header-container'>
+                <div className='portfolio_header_container'>
                     <h2>{localize('Portfolio')}</h2>
                 </div>
                 {(() => {
