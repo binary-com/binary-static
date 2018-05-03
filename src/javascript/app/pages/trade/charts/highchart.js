@@ -45,7 +45,8 @@ const Highchart = (() => {
         is_entry_tick_barrier_selected,
         is_response_id_set,
         prev_barriers, // For checking if barrier was updated
-        prev_reset_barrier;
+        prev_reset_barrier,
+        prev_tick;
 
     const initOnce = () => {
         chart = options = response_id = contract = request = min_point = max_point = '';
@@ -68,7 +69,9 @@ const Highchart = (() => {
         exit_tick_time  = parseInt(contract.exit_tick_time);
         exit_time       = parseInt(is_sold && sell_time < end_time ? sell_spot_time : exit_tick_time || end_time);
         underlying      = contract.underlying;
-        prev_barriers    = [];
+        prev_barriers   = [];
+        prev_reset_barrier = false;
+        prev_tick       = [];
     };
 
     // initialize the chart only once with ticks or candles data
@@ -90,6 +93,7 @@ const Highchart = (() => {
                 y     : price * 1,
                 marker: is_match_entry || is_match_exit ? HighchartUI.getMarkerObject(tick_type) : '',
             });
+            prev_tick = data; // Store ticks globally
         };
 
         let history = '';
@@ -366,7 +370,7 @@ const Highchart = (() => {
 
     const drawBarrier = () => {
         if (chart.yAxis[0].plotLinesAndBands.length === 0) {
-            const { contract_type, barrier, high_barrier, low_barrier, current_spot_time } = contract;
+            const { contract_type, barrier, high_barrier, low_barrier } = contract;
             if (barrier) {
                 prev_barriers[0] = barrier; // Batman like the kids who "Cache".
                 if (Lookback.isLookback(contract_type)) {
@@ -376,7 +380,7 @@ const Highchart = (() => {
                     addPlotLine({ id: 'barrier',       value: prev_reset_barrier * 1, label: localize('Barrier ([_1])', [addComma(prev_reset_barrier)]), dashStyle: 'Dot'   }, 'y');
                     addPlotLine({ id: 'reset_barrier', value: barrier * 1,            label: localize('Reset Barrier ([_1])', [addComma(barrier)]),      dashStyle: 'Solid' }, 'y');
                     drawLineX({
-                        value: current_spot_time, // TODO: time is currently inaccurate in highcharts
+                        value: (prev_tick.filter((tick) => (tick.y === barrier * 1))[0].x) / 1000,
                         label: localize('Reset Time'),
                         color: '#000',
                     });
