@@ -605,6 +605,7 @@ const texts = [
     'Ether',
     'Ether Classic',
     'Litecoin',
+    'Dai',
 
     // Authentication errors
     'Invalid document format: "[_1]"',
