@@ -370,15 +370,15 @@ const Highchart = (() => {
 
     const drawBarrier = () => {
         if (chart.yAxis[0].plotLinesAndBands.length === 0) {
-            const { contract_type, barrier, high_barrier, low_barrier } = contract;
+            const { barrier, contract_type, entry_spot, high_barrier, low_barrier } = contract;
             if (barrier) {
                 prev_barriers[0] = barrier; // Batman like the kids who "Cache".
                 if (Lookback.isLookback(contract_type)) {
                     const label = Lookback.getBarrierLabel(contract_type);
                     addPlotLine({ id: 'barrier',       value: barrier * 1,            label: localize(`${label} ([_1])`,  [addComma(barrier)]),          dashStyle: 'Dot'   }, 'y');
-                } else if (prev_reset_barrier) {
-                    addPlotLine({ id: 'barrier',       value: prev_reset_barrier * 1, label: localize('Barrier ([_1])', [addComma(prev_reset_barrier)]), dashStyle: 'Dot'   }, 'y');
-                    addPlotLine({ id: 'reset_barrier', value: barrier * 1,            label: localize('Reset Barrier ([_1])', [addComma(barrier)]),      dashStyle: 'Solid' }, 'y');
+                } else if (/^(RESETCALL|RESETPUT)$/.test(contract_type) && (entry_spot !== barrier)) {
+                    addPlotLine({ id: 'barrier',       value: entry_spot * 1,         label: localize('Barrier ([_1])', [addComma(entry_spot)]),    dashStyle: 'Dot'   }, 'y');
+                    addPlotLine({ id: 'reset_barrier', value: barrier * 1,            label: localize('Reset Barrier ([_1])', [addComma(barrier)]), dashStyle: 'Solid' }, 'y');
                     drawLineX({
                         value: (prev_tick.filter((tick) => (tick.y === barrier * 1))[0].x) / 1000,
                         label: localize('Reset Time'),
