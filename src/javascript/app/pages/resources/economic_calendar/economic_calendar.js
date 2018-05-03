@@ -13,8 +13,7 @@ const EconomicCalendar = (() => {
                 populateCalendar(curr_language);
                 is_loaded = true;
             });
-        }
-        else {
+        } else {
             populateCalendar(curr_language);
         }
     };
@@ -24,6 +23,7 @@ const EconomicCalendar = (() => {
         const loader = $('#economicCalendarWidget').find('.barspinner');
         if (loader) loader.remove();
     };
+
     return {
         onLoad,
     };
