@@ -17,14 +17,14 @@ const DAO = (() => {
     const sellExpired = () => BinarySocket.send({ sell_expired: 1 });
 
     // ----- Streaming calls -----
-    const subscribeProposalOpenContract = (type, cb, should_forget_first) =>
-        SubscriptionManager.subscribe('proposal_open_contract', { proposal_open_contract: type, subscribe: 1 }, cb, should_forget_first);
+    const subscribeProposalOpenContract = (cb, should_forget_first) => 
+        SubscriptionManager.subscribe('proposal_open_contract', { proposal_open_contract: 1, subscribe: 1 }, cb, should_forget_first);
 
     const subscribeTicks = (symbol, cb, should_forget_first) =>
         SubscriptionManager.subscribe('ticks', { ticks: symbol, subscribe: 1 }, cb, should_forget_first);
 
-    const subscribeTransaction = (type, cb, should_forget_first) =>
-        SubscriptionManager.subscribe('transaction', { transaction: type, subscribe: 1 }, cb, should_forget_first);
+    const subscribeTransaction = (cb, should_forget_first) =>
+        SubscriptionManager.subscribe('transaction', { transaction: 1, subscribe: 1 }, cb, should_forget_first);
 
     const forget = (msg_type, cb) => SubscriptionManager.forget(msg_type, cb);
 

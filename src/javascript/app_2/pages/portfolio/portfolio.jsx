@@ -157,7 +157,7 @@ class Portfolio extends React.PureComponent  {
             this.setState({ is_loading: false });
             this.updatePortfolio(response);
         });
-        DAO.subscribeTransaction(1, this.transactionResponseHandler, false);
+        DAO.subscribeTransaction(this.transactionResponseHandler, false);
         DAO.getOauthApps().then((response) => this.updateOAuthApps(response));
     }
 
@@ -241,7 +241,7 @@ class Portfolio extends React.PureComponent  {
 
             this.setState({ data_source, footer });
 
-            DAO.subscribeProposalOpenContract(1, this.updateIndicative, false);
+            DAO.subscribeProposalOpenContract(this.updateIndicative, false);
         }
     }
 
