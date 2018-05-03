@@ -9,7 +9,9 @@ const EconomicCalendar = () => (
             <p>{it.L('With the Economic Calendar, you can see a breakdown of all the scheduled economic events due to take place on any given day.')}</p>
             <p>{it.L('Click on an individual event to be presented with further information and links to more in-depth data about it. The information provided by the Economic  Calendar will help you make more informed trading decisions.')}</p>
         </div>
-        <div id='economicCalendarWidget' />
+        <div className='gr-padding-10'>
+            <div id='economicCalendarWidget' />
+        </div>
     </div>
 );
 export default EconomicCalendar;
