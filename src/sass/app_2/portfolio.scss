@@ -49,69 +49,70 @@
     }
 }
 
+@function tradetypeicon($trade_type) {
+    @return url('../images/trading_app/contracts/trade_types/light/ic-light-' + $trade_type + '.svg');
+}
+
 // add to common .scss
 .trade_type_icon {
     &.asianu {
-        content: url('../images/trading_app/contracts/trade_types/light/asian/ic-light-asia-up.svg');
-    }
-    &.asiand {
-        content: url('../images/trading_app/contracts/trade_types/light/asian/ic-light-asia-down.svg');
+        content: tradetypeicon('asianu');
     }
     &.call {
-        content: url('../images/trading_app/contracts/trade_types/light/higher_lower/ic-light-higher.svg');
-    }
-    &.calle {
-        content: url('../images/trading_app/contracts/trade_types/light/higher_lower/ic-light-higher.svg');
+        content: tradetypeicon('call');
     }
     &.put {
-        content: url('../images/trading_app/contracts/trade_types/light/higher_lower/ic-light-lower.svg');
-    }
-    &.digitmatch {
-        content: url('../images/trading_app/contracts/trade_types/light/matches_differs/ic-light-matches.svg');
+        content: tradetypeicon('put');
     }
     &.digitdiff {
-        content: url('../images/trading_app/contracts/trade_types/light/matches_differs/ic-light-differs.svg');
-    }
-    &.digitodd {
-        content: url('../images/trading_app/contracts/trade_types/light/even_odd/ic-light-digit-odd.svg');
+        content: tradetypeicon('digitdiff');
     }
     &.digiteven {
-        content: url('../images/trading_app/contracts/trade_types/light/even_odd/ic-light-digit-even.svg');
+        content: tradetypeicon('digiteven');
+    }
+    &.digitmatch {
+        content: tradetypeicon('digitmatch');
+    }
+    &.digitodd {
+        content: tradetypeicon('digitodd');
     }
     &.digitover {
-        content: url('../images/trading_app/contracts/trade_types/light/over_under/ic-light-digit-over.svg');
+        content: tradetypeicon('digitover');
     }
     &.digitunder {
-        content: url('../images/trading_app/contracts/trade_types/light/over_under/ic-light-digit-under.svg');
+        content: tradetypeicon('digitunder');
     }
     &.expirymiss {
-        content: url('../images/trading_app/contracts/trade_types/light/ends_between_ends_outside/ic-light-ends-outside.svg');
+        content: tradetypeicon('expirymiss');
     }
     &.expiryrange {
-        content: url('../images/trading_app/contracts/trade_types/light/ends_between_ends_outside/ic-light-ends-between.svg');
+        content: tradetypeicon('expiryrange');
     }
-    &.expiryrangee {
-        content: url('../images/trading_app/contracts/trade_types/light/ends_between_ends_outside/ic-light-ends-between.svg');
-    }
-    &.lbfloatcall {
-        content: url('../images/trading_app/contracts/trade_types/light/lookbacks/ic-lookback-close-low.svg');
-    }
-    &.lbhighlow {
-        content: url('../images/trading_app/contracts/trade_types/light/lookbacks/ic-lookback-high-low.svg');
-    }
-    &.lbfloatput {
-        content: url('../images/trading_app/contracts/trade_types/light/lookbacks/ic-lookback-high-close.svg');
-    }
-    &.range {
-        content: url('../images/trading_app/contracts/trade_types/light/stays_between_goes_outside/ic-light-stays-between.svg');
-    }
-    &.upordown {
-        content: url('../images/trading_app/contracts/trade_types/light/stays_between_goes_outside/ic-light-goes-outside.svg');
-    }
-    &.onetouch {
-        content: url('../images/trading_app/contracts/trade_types/light/touch_no_touch/ic-light-touch.svg');
+    &.fall {
+        content: tradetypeicon('fall');
     }
     &.notouch {
-        content: url('../images/trading_app/contracts/trade_types/light/touch_no_touch/ic-light-no-touch.svg');
+        content: tradetypeicon('notouch');
+    }
+    &.touch {
+        content: tradetypeicon('touch');
+    }
+    &.range {
+        content: tradetypeicon('range');
+    }
+    &.rise {
+        content: tradetypeicon('rise');
+    }
+    &.upordown {
+        content: tradetypeicon('upordown');
+    }
+    &.lbfloatcall {
+        content: tradetypeicon('lbfloatcall');
+    }
+    &.lbfloatput {
+        content: tradetypeicon('lbfloatput');
+    }
+    &.lbhighlow {
+        content: tradetypeicon('lbhighlow');
     }
 }
