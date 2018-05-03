@@ -38,8 +38,8 @@ const ResponsibleTrading = () => (
 
             <h2>{it.L('Filtering Controls')}</h2>
             <p>{it.L('Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one\'s access to our site.')}</p>
-            <p>{it.L('[_1] supports [_2] which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling.', it.website_name, '<a target=\'_blank\' href=\'https://about.gambleaware.org/\' rel=\'noopener noreferrer\'>GambleAware</a>')}</p>
-            <p>{it.L('[_1] also provides links to an online quiz to assess a potential gambling problem and an online gambling calculator to see how much you can really spend.', '<a target=\'_blank\' href=\'https://www.gambleaware.org/\' rel=\'noopener noreferrer\'>GambleAware</a>')}</p>
+            <p>{it.L('[_1] supports [_2] which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling.', it.website_name, '<a target=\'_blank\' href=\'https://www.begambleaware.org/about-us/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
+            <p>{it.L('[_1] also provides links to an online quiz to assess a potential gambling problem and an online gambling calculator to see how much you can really spend.', '<a target=\'_blank\' href=\'https://www.begambleaware.org/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
         </div>
     </div>
 );
