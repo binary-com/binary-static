@@ -150,6 +150,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                     </div>
+                                    <div className='row' id='reset_time' />
                                 </form>
                             </div>
                             <div id='open_positions_container'>

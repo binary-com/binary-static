@@ -4,6 +4,7 @@ const MBDefaults       = require('../../mb_trade/mb_defaults');
 const Defaults         = require('../../trade/defaults');
 const GetTicks         = require('../../trade/get_ticks');
 const Lookback         = require('../../trade/lookback');
+const Reset            = require('../../trade/reset');
 const ViewPopupUI      = require('../../user/view_popup/view_popup.ui');
 const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
@@ -44,8 +45,7 @@ const Highchart = (() => {
         is_history_send,
         is_entry_tick_barrier_selected,
         is_response_id_set,
-        prev_barriers, // For checking if barrier was updated
-        reset_ticks;
+        prev_barriers; // For checking if barrier was updated
 
     const initOnce = () => {
         chart = options = response_id = contract = request = min_point = max_point = '';
@@ -69,7 +69,6 @@ const Highchart = (() => {
         exit_time       = parseInt(is_sold && sell_time < end_time ? sell_spot_time : exit_tick_time || end_time);
         underlying      = contract.underlying;
         prev_barriers   = [];
-        reset_ticks     = [];
     };
 
     // initialize the chart only once with ticks or candles data
@@ -91,8 +90,8 @@ const Highchart = (() => {
                 y     : price * 1,
                 marker: is_match_entry || is_match_exit ? HighchartUI.getMarkerObject(tick_type) : '',
             });
-            if (isReset()) {
-                reset_ticks = data; // Store Reset ticks
+            if (Reset.isReset(contract.contract_type)) {
+                Reset.ticks = data; // Store Reset ticks
             }
         };
 
@@ -376,11 +375,11 @@ const Highchart = (() => {
                 if (Lookback.isLookback(contract_type)) {
                     const label = Lookback.getBarrierLabel(contract_type);
                     addPlotLine({ id: 'barrier',       value: barrier * 1,            label: localize(`${label} ([_1])`,  [addComma(barrier)]),          dashStyle: 'Dot'   }, 'y');
-                } else if (isReset() && (entry_spot !== barrier)) {
+                } else if (Reset.isReset(contract_type) && (entry_spot !== barrier)) {
                     addPlotLine({ id: 'barrier',       value: entry_spot * 1,         label: localize('Barrier ([_1])', [addComma(entry_spot)]),    dashStyle: 'Dot'   }, 'y');
                     addPlotLine({ id: 'reset_barrier', value: barrier * 1,            label: localize('Reset Barrier ([_1])', [addComma(barrier)]), dashStyle: 'Solid' }, 'y');
                     drawLineX({
-                        value: (reset_ticks.filter((tick) => (tick.y === barrier * 1))[0].x) / 1000,
+                        value: (Reset.ticks.filter((tick) => (tick.y === barrier * 1))[0].x) / 1000,
                         label: localize('Reset Time'),
                         color: '#000',
                     });
@@ -654,8 +653,6 @@ const Highchart = (() => {
     const userSold = () => (
         (sell_time && sell_time < end_time) || (!sell_time && sell_spot_time && sell_spot_time < end_time)
     );
-
-    const isReset = () => (/^(RESETCALL|RESETPUT)$/.test(contract.contract_type));
 
     return {
         showChart,

@@ -6,6 +6,7 @@ const commonIndependent  = require('./common_independent');
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
 const Price              = require('./price');
+const Reset              = require('./reset');
 const BinarySocket       = require('../../base/socket');
 const DatePicker         = require('../../components/date_picker');
 const CommonFunctions    = require('../../../_common/common_functions');
@@ -547,18 +548,25 @@ const Durations = (() => {
 
         const duration_min_element = CommonFunctions.getElementById('duration_minimum');
         const duration_max_element = CommonFunctions.getElementById('duration_maximum');
+        const reset_time_element   = CommonFunctions.getElementById('reset_time');
         duration_wrapper_element.setVisibility(1);
 
         if (+duration_amount_element.value < +duration_min_element.textContent) {
             duration_amount_element.classList.add('error-field');
             duration_wrapper_element.classList.add('error-msg');
+            reset_time_element.style.display = 'none';
         } else if (+duration_max_element.textContent &&
             +duration_amount_element.value > +duration_max_element.textContent) {
             duration_amount_element.classList.add('error-field');
             duration_wrapper_element.classList.remove('error-msg');
+            reset_time_element.style.display = 'none';
         } else {
             duration_amount_element.classList.remove('error-field');
             duration_wrapper_element.classList.remove('error-msg');
+            if (Reset.isReset(Contract.form())) {
+                reset_time_element.setAttribute('style', '');
+                Reset.displayResetTime(duration_amount_element.value, Defaults.get('duration_units'));
+            }
         }
     };
 
