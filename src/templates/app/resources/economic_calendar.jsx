@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from '../../_common/components/loading.jsx';
 
 const EconomicCalendar = () => (
     <div id='economic_calendar' className='static_full'>
@@ -10,8 +11,13 @@ const EconomicCalendar = () => (
             <p>{it.L('Click on an individual event to be presented with further information and links to more in-depth data about it. The information provided by the Economic  Calendar will help you make more informed trading decisions.')}</p>
         </div>
         <div className='gr-padding-10'>
-            <div id='economicCalendarWidget' />
+            <div id='economicCalendarWidget'>
+                <Loading />
+            </div>
         </div>
+        <p className='hint'>
+            * {it.L('Disclaimer: The Economic Calendar tool is a third-party application developed by MetaQuotes Software Corp. and Binary.com is not responsible for the content or accuracy of its data, or for any loss or damage of any sort resulting from its data.')}
+        </p>
     </div>
 );
 export default EconomicCalendar;
