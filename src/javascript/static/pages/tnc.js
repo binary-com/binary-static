@@ -64,11 +64,14 @@ const TermsAndConditions = (() => {
     };
 
     const initSidebar = () => {
-        if (!window.location.hash) {
-            const new_url = new URL(window.location);
-            new_url.hash = '#legal-binary';
-            window.history.replaceState({}, '', new_url.href);
+        const { hash, pathname } = window.location;
+
+        if (!hash) {
+            window.history.replaceState({}, '', `${pathname}#legal-binary`);
+        } else if ($(`${hash}-link`).is('.has-submenu')) {
+            window.history.replaceState({}, '', `${pathname}${hash}-binary`);
         }
+
         $('.sidebar-collapsible').on('click', sidebarClickHandler);
         updateSidebarDOM();
     };
