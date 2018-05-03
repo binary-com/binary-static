@@ -20,7 +20,7 @@ const EconomicCalendar = (() => {
     };
 
     const populateCalendar = (lang) => {
-        new economicCalendar({ width: '100%', height: '500px', mode: 2, lang}); // eslint-disable-line new-cap, no-new, no-undef
+        new economicCalendar({ width: '100%', height: '500px', mode: 2, lang }); // eslint-disable-line new-cap, no-new, no-undef
         const loader = $('#economicCalendarWidget').find('.barspinner');
         if (loader) loader.remove();
     };
