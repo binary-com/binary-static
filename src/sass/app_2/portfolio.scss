@@ -51,61 +51,67 @@
 
 // add to common .scss
 .trade_type_icon {
-    &.asia_up {
+    &.asianu {
         content: url('../images/trading_app/contracts/trade_types/light/asian/ic-light-asia-up.svg');
     }
-    &.asia_down {
+    &.asiand {
         content: url('../images/trading_app/contracts/trade_types/light/asian/ic-light-asia-down.svg');
     }
-    &.higher {
+    &.call {
         content: url('../images/trading_app/contracts/trade_types/light/higher_lower/ic-light-higher.svg');
     }
-    &.lower {
+    &.calle {
+        content: url('../images/trading_app/contracts/trade_types/light/higher_lower/ic-light-higher.svg');
+    }
+    &.put {
         content: url('../images/trading_app/contracts/trade_types/light/higher_lower/ic-light-lower.svg');
     }
-    &.digit_matches {
+    &.digitmatch {
         content: url('../images/trading_app/contracts/trade_types/light/matches_differs/ic-light-matches.svg');
     }
-    &.digit_differs {
+    &.digitdiff {
         content: url('../images/trading_app/contracts/trade_types/light/matches_differs/ic-light-differs.svg');
     }
-    &.digit_odd {
+    &.digitodd {
         content: url('../images/trading_app/contracts/trade_types/light/even_odd/ic-light-digit-odd.svg');
     }
-    &.digit_even {
+    &.digiteven {
         content: url('../images/trading_app/contracts/trade_types/light/even_odd/ic-light-digit-even.svg');
     }
-    &.digit_over {
+    &.digitover {
         content: url('../images/trading_app/contracts/trade_types/light/over_under/ic-light-digit-over.svg');
     }
-    &.digit_under {
+    &.digitunder {
         content: url('../images/trading_app/contracts/trade_types/light/over_under/ic-light-digit-under.svg');
     }
-    &.ends_outside {
+    &.expirymiss {
         content: url('../images/trading_app/contracts/trade_types/light/ends_between_ends_outside/ic-light-ends-outside.svg');
     }
-    &.ends_between {
+    &.expiryrange {
         content: url('../images/trading_app/contracts/trade_types/light/ends_between_ends_outside/ic-light-ends-between.svg');
     }
-    &.lb_close_low {
+    &.expiryrangee {
+        content: url('../images/trading_app/contracts/trade_types/light/ends_between_ends_outside/ic-light-ends-between.svg');
+    }
+    &.lbfloatcall {
         content: url('../images/trading_app/contracts/trade_types/light/lookbacks/ic-lookback-close-low.svg');
     }
-    &.lb_high_low {
+    &.lbhighlow {
         content: url('../images/trading_app/contracts/trade_types/light/lookbacks/ic-lookback-high-low.svg');
     }
-    &.lb_high_close {
+    &.lbfloatput {
         content: url('../images/trading_app/contracts/trade_types/light/lookbacks/ic-lookback-high-close.svg');
     }
-    &.stays_between {
+    &.range {
         content: url('../images/trading_app/contracts/trade_types/light/stays_between_goes_outside/ic-light-stays-between.svg');
     }
-    &.goes_outside {
+    &.upordown {
         content: url('../images/trading_app/contracts/trade_types/light/stays_between_goes_outside/ic-light-goes-outside.svg');
     }
-    &.touch {
+    &.onetouch {
         content: url('../images/trading_app/contracts/trade_types/light/touch_no_touch/ic-light-touch.svg');
     }
-    &.no_touch {
+    &.notouch {
         content: url('../images/trading_app/contracts/trade_types/light/touch_no_touch/ic-light-no-touch.svg');
     }
 }

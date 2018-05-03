@@ -37,27 +37,27 @@ const formatPortfolioData = (portfolio_arr) => {
 
 // TODO: move to common
 const contract_type_display = {
-    ASIANU      : {name: localize('Asian Up'), icon: 'asia_up'},
-    ASIAND      : {name: localize('Asian Down'), icon: 'asia_down'},
-    CALL        : {name: localize('Higher'), icon: 'higher'},
-    CALLE       : {name: localize('Higher or equal'), icon: 'higher'},
-    PUT         : {name: localize('Lower'), icon: 'lower'},
-    DIGITMATCH  : {name: localize('Digit Matches'), icon: 'digit_matches'},
-    DIGITDIFF   : {name: localize('Digit Differs'), icon: 'digit_differs'},
-    DIGITODD    : {name: localize('Digit Odd'), icon: 'digit_odd'},
-    DIGITEVEN   : {name: localize('Digit Even'), icon: 'digit_even'},
-    DIGITOVER   : {name: localize('Digit Over'), icon: 'digit_over'},
-    DIGITUNDER  : {name: localize('Digit Under'), icon: 'digit_under'},
-    EXPIRYMISS  : {name: localize('Ends Outside'), icon: 'ends_outside'},
-    EXPIRYRANGE : {name: localize('Ends Between'), icon: 'ends_between'},
-    EXPIRYRANGEE: {name: localize('Ends Between'), icon: 'ends_between'},
-    LBFLOATCALL : {name: localize('Close-Low'), icon: 'lb_close_low'},
-    LBFLOATPUT  : {name: localize('High-Close'), icon: 'lb_high_close'},
-    LBHIGHLOW   : {name: localize('High-Low'), icon: 'lb_high_low'},
-    RANGE       : {name: localize('Stays Between'), icon: 'stays_between'},
-    UPORDOWN    : {name: localize('Goes Outside'), icon: 'goes_outside'},
-    ONETOUCH    : {name: localize('Touches'), icon: 'touch'},
-    NOTOUCH     : {name: localize('Does Not Touch'), icon: 'no_touch'},
+    ASIANU      : localize('Asian Up'),
+    ASIAND      : localize('Asian Down'),
+    CALL        : localize('Higher'),
+    CALLE       : localize('Higher or equal'),
+    PUT         : localize('Lower'),
+    DIGITMATCH  : localize('Digit Matches'),
+    DIGITDIFF   : localize('Digit Differs'),
+    DIGITODD    : localize('Digit Odd'),
+    DIGITEVEN   : localize('Digit Even'),
+    DIGITOVER   : localize('Digit Over'),
+    DIGITUNDER  : localize('Digit Under'),
+    EXPIRYMISS  : localize('Ends Outside'),
+    EXPIRYRANGE : localize('Ends Between'),
+    EXPIRYRANGEE: localize('Ends Between'),
+    LBFLOATCALL : localize('Close-Low'),
+    LBFLOATPUT  : localize('High-Close'),
+    LBHIGHLOW   : localize('High-Low'),
+    RANGE       : localize('Stays Between'),
+    UPORDOWN    : localize('Goes Outside'),
+    ONETOUCH    : localize('Touches'),
+    NOTOUCH     : localize('Does Not Touch'),
 };
 
 /* TODO:
@@ -81,8 +81,8 @@ class Portfolio extends React.PureComponent  {
                         return (
                             <td key={data_index}>
                                 <div className={`${data_index}_container`}>
-                                    <i className={`trade_type_icon ${contract_type_display[data].icon}`} /> 
-                                    {contract_type_display[data].name}
+                                    <i className={`trade_type_icon ${data.toLowerCase()}`} /> 
+                                    {contract_type_display[data]}
                                 </div>
                             </td>);
                     }
@@ -186,14 +186,13 @@ class Portfolio extends React.PureComponent  {
         } else {
             data_source.forEach(portfolio_item => {
                 if (portfolio_item.id === +proposal.contract_id) {
-                    let amount = parseFloat(proposal.bid_price);
+                    const indicative = portfolio_item.indicative.amount || '0.00';
+                    const amount = formatMoney(false, proposal.bid_price, true);
                     let style = portfolio_item.indicative.style;
 
-                    amount = formatMoney(false, amount, true);
-
                     if (+proposal.is_valid_to_sell === 1) {
-                        if (proposal.bid_price !== portfolio_item.indicative.amount) {
-                            style = proposal.bid_price > portfolio_item.indicative.amount ? 'price_moved_up' : 'price_moved_down';
+                        if (amount !== indicative) {
+                            style = amount > indicative ? 'price_moved_up' : 'price_moved_down';
                         }
                     } else {
                         style = 'no_resale';
