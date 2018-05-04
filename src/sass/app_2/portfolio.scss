@@ -37,7 +37,7 @@
             flex-direction: column;
             align-items: center;
 
-            i {
+            .trade_type_icon {
                 width: 20px;
                 height: 20px;
                 padding: 5px;
@@ -49,70 +49,16 @@
     }
 }
 
-@function tradetypeicon($trade_type) {
-    @return url('../images/trading_app/contracts/trade_types/light/ic-light-' + $trade_type + '.svg');
+$icons: asianu call put digitdiff digiteven digitmatch digitodd digitover digitunder expirymiss
+    expiryrange fall notouch touch range rise upordown lbfloatcall lbfloatput lbhighlow;
+
+// $style: light or dark
+@function tradetypeicon($style, $trade_type) {
+    @return url('../images/trading_app/contracts/trade_types/' + $style + '/ic-light-' + $trade_type + '.svg');
 }
 
-// add to common .scss
-.trade_type_icon {
-    &.asianu {
-        content: tradetypeicon('asianu');
-    }
-    &.call {
-        content: tradetypeicon('call');
-    }
-    &.put {
-        content: tradetypeicon('put');
-    }
-    &.digitdiff {
-        content: tradetypeicon('digitdiff');
-    }
-    &.digiteven {
-        content: tradetypeicon('digiteven');
-    }
-    &.digitmatch {
-        content: tradetypeicon('digitmatch');
-    }
-    &.digitodd {
-        content: tradetypeicon('digitodd');
-    }
-    &.digitover {
-        content: tradetypeicon('digitover');
-    }
-    &.digitunder {
-        content: tradetypeicon('digitunder');
-    }
-    &.expirymiss {
-        content: tradetypeicon('expirymiss');
-    }
-    &.expiryrange {
-        content: tradetypeicon('expiryrange');
-    }
-    &.fall {
-        content: tradetypeicon('fall');
-    }
-    &.notouch {
-        content: tradetypeicon('notouch');
-    }
-    &.touch {
-        content: tradetypeicon('touch');
-    }
-    &.range {
-        content: tradetypeicon('range');
-    }
-    &.rise {
-        content: tradetypeicon('rise');
-    }
-    &.upordown {
-        content: tradetypeicon('upordown');
-    }
-    &.lbfloatcall {
-        content: tradetypeicon('lbfloatcall');
-    }
-    &.lbfloatput {
-        content: tradetypeicon('lbfloatput');
-    }
-    &.lbhighlow {
-        content: tradetypeicon('lbhighlow');
+@each $icon in $icons {
+    .#{$icon} {
+        content: tradetypeicon('light', $icon);
     }
 }
