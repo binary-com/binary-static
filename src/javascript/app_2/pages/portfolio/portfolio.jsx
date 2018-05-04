@@ -4,7 +4,7 @@ import DAO from '../../data/dao';
 import DataTable from '../../components/elements/data_table.jsx';
 import Client from '../../../app/base/client';
 import Loading from '../../../../templates/_common/components/loading.jsx';
-import { buildOauthApps } from '../../../app/common/get_app_details';
+import { buildOauthApps } from '../../../app/common/get_app_details'; // eslint-disable-line
 import { formatMoney } from '../../../app/common/currency';
 import { localize } from '../../../_common/localize';
 import { getPropertyValue } from '../../../_common/utility';
@@ -62,7 +62,6 @@ const contract_type_display = {
 
 /* TODO:
     1. Make tooltip appdetails tooltip
-    2. Get trade types from trade_store.js
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
@@ -81,7 +80,7 @@ class Portfolio extends React.PureComponent  {
                         return (
                             <td key={data_index}>
                                 <div className={`${data_index}_container`}>
-                                    <i className={`trade_type_icon icon_${data.toLowerCase()}`} /> 
+                                    <i className={`trade_type_icon icon_${data.toLowerCase()}--light`} />
                                     {contract_type_display[data]}
                                 </div>
                             </td>);
@@ -147,8 +146,7 @@ class Portfolio extends React.PureComponent  {
         this.initializePortfolio();
     }
 
-    componentWillUnmount() {
-        console.log(this.state);
+    componentWillUnmount() {     // eslint-disable-line class-methods-use-this
         DAO.forgetAll('proposal_open_contract', 'transaction');
     }
 
@@ -223,9 +221,8 @@ class Portfolio extends React.PureComponent  {
         };
     } 
 
-    updateOAuthApps = (response) => {
-        const oauth_apps = buildOauthApps(response);
-        console.log('oauth_apps: ', oauth_apps);
+    updateOAuthApps = (response) => { // eslint-disable-line
+        // const oauth_apps = buildOauthApps(response);
         // GetAppDetails.addTooltip(oauth_apps);
     };
 

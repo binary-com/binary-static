@@ -49,16 +49,17 @@
     }
 }
 
+// Contract type => Icon name
 $ICON_LIST: asianu call calle put digitdiff digiteven digitmatch digitodd digitover digitunder expirymiss
     expiryrange expiryrangee fall notouch touch range rise upordown lbfloatcall lbfloatput lbhighlow;
 
 // $style: light or dark
 @function tradetypeicon($style, $trade_type) {
-    @return url('../images/trading_app/contracts/trade_types/' + $style + '/ic-light-' + $trade_type + '.svg');
+    @return url('../images/trading_app/contracts/trade_types/' + $style + '/ic-' + $style +'-' + $trade_type + '.svg');
 }
 
 @each $icon in $ICON_LIST {
-    .icon_#{$icon} {
+    .icon_#{$icon}--light {
         content: tradetypeicon('light', $icon);
     }
 }
