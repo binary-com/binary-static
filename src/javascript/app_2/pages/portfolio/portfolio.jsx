@@ -81,7 +81,7 @@ class Portfolio extends React.PureComponent  {
                         return (
                             <td key={data_index}>
                                 <div className={`${data_index}_container`}>
-                                    <i className={`trade_type_icon ${data.toLowerCase()}`} /> 
+                                    <i className={`trade_type_icon icon_${data.toLowerCase()}`} /> 
                                     {contract_type_display[data]}
                                 </div>
                             </td>);
