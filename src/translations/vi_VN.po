@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-02 01:34-0400\n"
+"PO-Revision-Date: 2018-05-03 21:30-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -23,9 +23,6 @@ msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" có nghĩa là một bộ chương trình lập trình độc quyền, các lệnh, các công cụ và nguồn lực được tạo ra và duy trì bởi %1 cái mà cho phép bạn sử dụng Ứng dụng đã được đăng ký để giao dịch trên sàn giao dịch %1."
-
-msgid "\"AUD/JPY\" or \"Apple\""
-msgstr ""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "Quyền chọn \"Nhị phân\" hay \"Thông thường\" là quyền chọn thanh toán số tiền đã được định trước, cố định và phụ thuộc vào sự kiện có xảy ra hay không tại thời điểm quyền chọn \"Nhị phân\" hết hạn. Quyền chọn \"Nhị phân\" chỉ có một trong hai kết quả có thể xảy ra và cho phép bạn lựa chọn đơn giản \" Có hoặc Không\". Quyền chọn \"Nhị phân\" được dựa trên tài sản cơ sở như ngoại tệ, hàng hóa, chỉ số hoặc chứng khoán, tuy nhiên một trong những khác biệt đáng kể nhất so với quyền chọn \"Thông thường\" là chỉ có hai kết quả có thể xảy ra (1) hoặc là khách hàng nhận được lợi nhuận dựa trên hoạt động đang xảy ra (2) hoặc là khách hàng bị lỗ khoản tiền đã đầu tư trong mỗi quyền chọn."
@@ -650,7 +647,7 @@ msgid "A tertiary level education"
 msgstr "Học vấn trình độ đại học"
 
 msgid "A tick is the minimum upward or downward movement in the price of a market."
-msgstr "Một điểm là chuyển động nhỏ nhất lên trên hoặc xuống dưới trong giá của thị trường."
+msgstr "Một tick là chuyển động nhỏ nhất lên trên hoặc xuống dưới trong giá của thị trường."
 
 msgid "A university degree in Marketing, Communication, Business Administration, or related discipline"
 msgstr "Tốt nghiệp đại học chuyên ngành Marketing, Truyền thông, Quản trị kinh doanh hoặc những chuyên ngành liên quan"
@@ -1298,7 +1295,7 @@ msgid "Asian contracts will be refunded at the purchase price if the contract do
 msgstr "Các hợp đồng Châu Á sẽ được hoàn tiền tại giá mua nếu hợp đồng không kết thúc trong vòng 5 phút."
 
 msgid "Asian options settle by comparing the <strong>last tick</strong> with the average spot over the period."
-msgstr "Quyền chọn châu Á ổn định bằng cách so sánh <strong>điểm chuyển động cuối cùng</strong> với điểm trung bình trên một chu kì."
+msgstr "Quyền chọn châu Á ổn định bằng cách so sánh <strong>tick chuyển động cuối cùng</strong> với điểm trung bình trên một chu kì."
 
 msgid "Asians"
 msgstr "Châu Á"
@@ -1661,7 +1658,7 @@ msgid "Binary Shop"
 msgstr "Cửa hàng Binary"
 
 msgid "Binary Tick Trade App"
-msgstr "Ứng dụng giao dịch bước giá"
+msgstr "Ứng dụng giao dịch Tick"
 
 msgid "Binary WebTrader"
 msgstr "Nhà Giao Dịch Mạng Binary"
@@ -2708,7 +2705,7 @@ msgid "Depending on the level of risk that we are exposed to acting as your coun
 msgstr "Tùy theo mức độ rủi ro mà chúng tôi đang tiếp xúc với vai trò của counterparty, chúng tôi chủ yếu là hành động về năng lực chính của ngành nghề của bạn. Như vậy, địa điểm thực hiện thường sẽ là %1. Tuy nhiên, chúng tôi có thể truyền lệnh của bạn cho bên thứ ba nhà cung cấp thanh khoản, trong trường hợp này chúng tôi sẽ xác định địa điểm thực hiện bản thân trên cơ sở mô tả ở trên."
 
 msgid "Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers."
-msgstr "Tuỳ thuộc vào chất lượng của nguồn dữ liệu nhận được từ những bên cung cấp dữ liệu, máy chủ của chúng tôi áp dụng thuật toán lọc điểm. Mục đích của thuật toán lọc này là để lọc các điểm đi lạc. Các điểm đi lạc là các điểm mà nằm ngoài vùng giao dịch hiện tại của thị trường, những điểm này thường do sự giao dịch bị trì hoãn hoặc ngân hàng có lỗi về yết giá, lỗi về nhân sự, hoặc lỗi dữ liệu tại bất cứ điểm nào giữa nơi yết giá và máy chủ của chúng tôi."
+msgstr "Tùy thuộc vào chất lượng của nguồn dữ liệu nhận được từ những bên cung cấp dữ liệu, máy chủ của chúng tôi áp dụng thuật toán lọc tick. Mục đích của thuật toán lọc này là để lọc các tick đi lạc. Các tick đi lạc là các tick mà nằm ngoài vùng giao dịch hiện tại của thị trường, những tick này thường do sự giao dịch bị trì hoãn hoặc ngân hàng có lỗi về yết giá, lỗi về nhân sự, hoặc lỗi dữ liệu tại bất cứ tick nào giữa nơi yết giá và máy chủ của chúng tôi."
 
 msgid "Depending on the quality of the feeds received from our feed providers, our servers might also apply a very short-term smoothing algorithm to the data feed. This smoothing algorithm removes a little of the \"random noise\" surrounding the data feed, and ensures that clients who buy path-dependent contracts (such as the one-touch or barrier-range contracts) will not have their contracts knocked-in or knocked-out by random short-term market noise that does not reflect the true market price."
 msgstr "Tuỳ thuộc vào chất lượng của nguồn dữ liệu nhận được từ các bên cấp dữ liệu, máy chủ của chúng tôi sẽ thực hiện một thuật toán trơn ngắn với nguồn cấp dữ liệu. Thuật toán trơn này sẽ gỡ bỏ một số \"rắc rối ngẫu nhiên\" xung quanh nguồn dữ liệu, và bảo đảm rằng khách hàng người mua hợp đồng phụ thuộc (như là hợp đồng một chạm hoặc hợp đồng có rào cản) sẽ không có những hợp đồng bị những rắc rối của thị trường ngẫu nhiên thâm nhập vào cái mà không có phản ánh giá đúng của trị trường."
@@ -3128,7 +3125,7 @@ msgid "Ends Between/Ends Outside"
 msgstr "Kết Thúc Giữa / Kết Thúc Ra Ngoài"
 
 msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Hợp đồng Kết Thúc Giữa / Kết Thúc Ra Ngoài sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 sự thay đổi giá giữa thời điểm hợp đồng bắt đầu và kết thúc."
+msgstr "Hợp đồng Kết Thúc Giữa / Kết Thúc Ra Ngoài sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 tick giữa thời điểm hợp đồng bắt đầu và kết thúc."
 
 msgid "Ends Between/Ends Outside trades"
 msgstr "Kết Thúc Giữa / Kết Thúc Ra Ngoài"
@@ -3992,7 +3989,7 @@ msgid "High conversions"
 msgstr "Chuyển đổi cao"
 
 msgid "High frequency (2 ticks per second)"
-msgstr "Tần số cao (2 tíc trên giây)"
+msgstr "Tần số cao (2 tick trên giây)"
 
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "Mức độ an ninh cao - mỗi giao dịch cryptocurrency được đảm bảo thông qua nâng cao kỹ thuật mã hóa mà làm cho nó hầu như không thể làm giả"
@@ -4016,7 +4013,7 @@ msgid "Higher/Lower"
 msgstr "Cao Hơn/Thấp Hơn"
 
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Hợp đồng giá trên/ dưới sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 bước giá giữa thời điểm bắt đầu và kết thúc hợp đồng."
+msgstr "Hợp đồng giá trên/ dưới sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 tick giữa thời điểm bắt đầu và kết thúc hợp đồng."
 
 msgid "Higher/Lower trades"
 msgstr "Giao dịch Cao Hơn/Thấp Hơn"
@@ -4380,13 +4377,13 @@ msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 f
 msgstr "Nếu bạn thấy EUR/USD có giá mua vào là 1.05229, bạn sẽ mua 1.05229 USD cho mỗi 1 EUR bạn bán."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
-msgstr "Nếu bạn chọn \"Châu Á Giảm\", bạn sẽ giành chiến thắng nếu <strong> giá ở giây cuối cùng </strong> là <strong>thấp hơn</strong> so với <strong>trung bình</strong> của giá trong suốt giao dịch."
+msgstr "Nếu bạn chọn \"Châu Á Giảm\", bạn sẽ giành chiến thắng nếu <strong> giá ở tick cuối cùng </strong> là <strong>thấp hơn</strong> so với <strong>trung bình</strong> của giá trong suốt giao dịch."
 
 msgid "If you select \"Asian Rise\", you will win the payout if the <strong>last tick</strong> is <strong>higher</strong> than the <strong>average</strong> of the ticks."
-msgstr "Nếu bạn chọn \"Châu Á Tăng\", bạn sẽ giành chiến thắng nếu <strong> giá ở giây cuối cùng</strong> là <strong>cao hơn</strong> so với <strong>bình quân</strong> của giá trong toàn thời gian giao dịch."
+msgstr "Nếu bạn chọn \"Châu Á Tăng\", bạn sẽ giành chiến thắng nếu <strong> giá ở tick cuối cùng</strong> là <strong>cao hơn</strong> so với <strong>bình quân</strong> của giá trong toàn thời gian giao dịch."
 
 msgid "If you select \"Differs\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>not the same</strong> as your <strong>prediction</strong>."
-msgstr "Nếu bạn chọn \"Khác nhau\", bạn sẽ giành chiến thắng nếu <strong>chữ số cuối cùng</strong> ở giây cuối cùng <strong>không giống</strong> như <strong>dự đoán của bạn</strong>."
+msgstr "Nếu bạn chọn \"Khác nhau\", bạn sẽ giành chiến thắng nếu <strong>chữ số cuối cùng</strong> ở tick cuối cùng <strong>không giống</strong> như <strong>dự đoán của bạn</strong>."
 
 msgid "If you select \"Does Not Touch\", you win the payout if the market never touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "Nếu bạn chọn \"Không Chạm\", bạn sẽ giành chiến thắng nếu thị trường không bao giờ chạm tới <strong>giới hạn</strong> bất cứ lúc nào trong suốt<strong>thời hạn hợp đồng</strong>."
@@ -4398,7 +4395,7 @@ msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit sp
 msgstr "Nếu bạn chọn \"Kết Thúc Ra Ngoàii\", bạn sẽ chiến thắng nếu <strong>giá giao ngay kết thúc</strong> HOẶC cao hơn <strong>Giới hạn trên</strong>, HOẶC thấp hơn <strong>Giới hạn dưới</strong>."
 
 msgid "If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>"
-msgstr "Nếu bạn chọn \"Chẵn\", bạn sẽ chiến thắng nếu <strong>chữ số cuối cùng</strong> của biến động cuối cùng là<strong>một số chẵn (ví dụ: 2, 4, 6, 8 hoặc 0)</strong>"
+msgstr "Nếu bạn chọn \"Chẵn\", bạn sẽ chiến thắng nếu <strong>chữ số cuối cùng</strong> của tick cuối cùng là<strong>một số chẵn (ví dụ: 2, 4, 6, 8 hoặc 0)</strong>"
 
 msgid "If you select \"Falls\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
 msgstr "Nếu bạn chọn \"Giảm\", bạn sẽ giành chiến thắng nếu <strong>giá tại thời điểm kết thúc giao dịch</strong> thấp hơn <strong>giá khởi điểm</strong>."
@@ -4422,7 +4419,7 @@ msgid "If you select \"Odd\", you will win the payout if the <strong>last digit
 msgstr "Nếu bạn chọn \"Lẻ\", bạn sẽ giành chiến thắng nếu <strong>chữ số cuối cùng</strong> giá tại thời điểm kết thúc giao dịch là một<strong>số lẻ (ví dụ: 1, 3, 5, 7, hoặc 9).</strong>"
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
-msgstr "Nếu bạn chọn \"Trên\", bạn sẽ giành chiến thắng nếu <strong>chữ số cuối cùng</strong> của biến động cuối cùng <strong>lớn hơn so với dự đoán của bạn.</strong>"
+msgstr "Nếu bạn chọn \"Trên\", bạn sẽ giành chiến thắng nếu <strong>chữ số cuối cùng</strong> của tick cuối cùng <strong>lớn hơn so với dự đoán của bạn.</strong>"
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Nếu bạn chọn \"Tăng\", bạn sẽ giành chiến thắng nếu <strong> giá tại thời điểm kết thúc giao dịch</strong> cao hơn <strong>giá khởi điểm </strong>."
@@ -4455,7 +4452,7 @@ msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end t
 msgstr "Nếu bạn chọn <strong>thời gian bắt đầu</strong> \"Ngay bây giờ\", <strong>thời gian kết thúc</strong> là số giờ/ phút đã được chọn sau <strong>thời gian bắt đầu</strong> (nếu ít hơn một ngày trong thời hạn), hoặc vào cuối ngày giao dịch (nếu một ngày hoặc nhiều hơn trong thời hạn)."
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "Nếu bạn chọn <strong>thời gian bắt đầu là </strong> \"Ngay bây giờ\", <strong>thời gian bắt đầu</strong> là khi hợp đồng được xử lý bởi trình duyệt của chúng tôi và <strong>giá giao ngay nhập vào thị trường</strong> là <strong>điểm biến động tiếp theo</strong> sau đó."
+msgstr "Nếu bạn chọn <strong>thời gian bắt đầu là </strong> \"Ngay bây giờ\", <strong>thời gian bắt đầu</strong> là khi hợp đồng được xử lý bởi trình duyệt của chúng tôi và <strong>giá giao ngay nhập vào thị trường</strong> là <strong>tick biến động tiếp theo</strong> sau đó."
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Nếu bạn chọn <strong>thời gian kết thúc cụ thể</strong>, <strong>thời gian kết thúc</strong> là thời gian đã được lựa chọn."
@@ -5467,7 +5464,7 @@ msgid "Last Used"
 msgstr "Lần Sử Dụng Gần Đây"
 
 msgid "Last digit stats for the latest %1 ticks on %2"
-msgstr "Chữ số cuối cùng cho điểm %1 gần nhất trên %2"
+msgstr "Chữ số cuối cùng cho tick %1 gần nhất trên %2"
 
 msgid "Latest bank statement or any government-issued letter which contains your name and address"
 msgstr "Đặt báo cáo ngân hàng hoặc bất kỳ thư chính phủ phát hành mà có tên và địa chỉ của bạn"
@@ -5911,7 +5908,7 @@ msgid "Market is closed. Please try again later."
 msgstr "Thị trường đã đóng cửa. Vui lòng thử lại sau."
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company data feed."
-msgstr "Giá thị trường được cập nhật nhiều nhất một lần một giây. Đối với bất kì giây nào được đưa ra, giá thị trường sẽ được cập nhật từ biến động đầu tiên, nếu có thì sẽ nhận ngay trong giây cụ thể trên bảng thông báo dữ liệu của công ty."
+msgstr "Giá thị trường được cập nhật nhiều nhất một lần một giây. Đối với bất kì giây nào được đưa ra, giá thị trường sẽ được cập nhật từ tick biến động đầu tiên, nếu có thì sẽ nhận ngay trong giây cụ thể trên bảng thông báo dữ liệu của công ty."
 
 msgid "Market volatility – Political, economic, or social instability may lead to more volatile financial markets that affect the prices of certain metals"
 msgstr "Biến động thị trường - Chính trị, kinh tế, hoặc sự mất ổn định xã hội có thể dẫn đến biến động thị trường tài chính và ảnh hưởng đến giá của một số kim loại"
@@ -6454,7 +6451,7 @@ msgid "Number of employees and contractors"
 msgstr "Số lượng nhân viên và các nhà thầu"
 
 msgid "Number of ticks:"
-msgstr "Số điểm:"
+msgstr "Số tick:"
 
 msgid "Number of transactions"
 msgstr "Số lượng giao dịch"
@@ -6888,6 +6885,9 @@ msgstr "Chuyển khoản tại Đại Lý Thanh Toán"
 msgid "Payment Agent Withdrawal"
 msgstr "Rút tiền tại Đại Lý Thanh Toán"
 
+msgid "Payment Agent services are not available in your country or in your preferred currency."
+msgstr ""
+
 msgid "Payment Agent transfer"
 msgstr "Chuyển khoảng tại Đại lý Thanh toán"
 
@@ -6899,9 +6899,6 @@ msgstr "Điều khoản đại lý thanh toán"
 
 msgid "Payment Methods"
 msgstr "Phương Thức Thanh Toán"
-
-msgid "Payment agent is unavailable in your country."
-msgstr "Đại lý thanh toán không khả dụng trong quốc gia của bạn."
 
 msgid "Payment methods"
 msgstr "Phương thức thanh toán"
@@ -7237,7 +7234,7 @@ msgid "Predict market movement using up/down, touch/no touch, and in/out trade t
 msgstr "Dự đoán chuyển động thị trường bằng cách sử dụng các loại giao dịch lên/xuống, chạm/không chạm, và vào/ra."
 
 msgid "Predict that the last digit is an even number or odd number after the last tick"
-msgstr "Dự đoán rằng chữ số cuối là một số chẵn hoặc lẻ số sau giây cuối cùng"
+msgstr "Dự đoán rằng chữ số cuối là một số chẵn hoặc lẻ số sau tick cuối cùng"
 
 msgid "Predict that the last digit is higher or lower"
 msgstr "Dự đoán chữ số cuối là cao hơn hoặc thấp hơn"
@@ -7771,7 +7768,7 @@ msgid "Rise/Fall"
 msgstr "Tăng/Giảm"
 
 msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
-msgstr "Hợp đồng Tăng/Giảm sẽ được hoàn lại bằng giá mua trong những trường hợp sau: (1) có ít hơn 2 lần thay đổi giá trong khoảng thời gian từ khi bắt đầu đến thời điểm kết thúc, hoặc (2) đối với các hợp đồng có thời hạn, nếu hợp đồng không kết thúc trong vòng 5 phút, hoặc (3) đối với những hợp đồng có thời gian bắt đầu trong tương lai, nếu không có sự thay đổi giá nào trong vòng 5 phút trước khi hợp đồng bắt đầu."
+msgstr "Hợp đồng Tăng/Giảm sẽ được hoàn lại bằng giá mua trong những trường hợp sau: (1) có ít hơn 2 tick trong khoảng thời gian từ khi bắt đầu đến thời điểm kết thúc, hoặc (2) đối với các hợp đồng có thời hạn tick, nếu hợp đồng không kết thúc trong vòng 5 phút, hoặc (3) đối với những hợp đồng có thời gian bắt đầu trong tương lai, nếu không có tick nào trong vòng 5 phút trước khi hợp đồng bắt đầu."
 
 msgid "Rise/Fall trades"
 msgstr "Giao dịch Tăng/Giảm"
@@ -7841,6 +7838,9 @@ msgstr "Phạm vi"
 
 msgid "Score"
 msgstr "Điểm số"
+
+msgid "Search..."
+msgstr ""
 
 msgid "Second line of home address"
 msgstr "Dòng thứ hai của địa chỉ nhà"
@@ -8233,7 +8233,7 @@ msgid "Stays Between/Goes Outside"
 msgstr "Nằm Giữa/ Ra Ngoài"
 
 msgid "Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Các hợp đồng Nằm Giữa/ Ra Ngoài sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 sự thay đổi giá giữa thời điểm hợp đồng bắt đầu và kết thúc."
+msgstr "Các hợp đồng Nằm Giữa/ Ra Ngoài sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 tick giữa thời điểm hợp đồng bắt đầu và kết thúc."
 
 msgid "Stays Between/Goes Outside trades"
 msgstr "Giao dịch Nằm Giữa/ Ra Ngoài"
@@ -8554,7 +8554,7 @@ msgid "The %1 website's static content (CSS, Javascript) is available as the %2b
 msgstr "Nội dung tĩnh của trang web %1 (CSS, Javascript) có sẵn như là các dự án mã nguồn mở %2binary-static%3 trên github. Bạn có muốn để thay đổi diện mạo trang web %1, hoặc cải thiện khả năng tương thích của trình duyệt, trang web hiển thị tốc độ hoặc Javascript hiệu suất? Xin vui lòng đề xuất dự án và nộp pull-request về các code thay đổi theo đề xuất của bạn."
 
 msgid "The %1close%2 is the latest tick at or before the %1end time%2. If you selected a specific %1end time,%2 the %1end time%2 is the selected time."
-msgstr "%1đóng%2 là các đánh dấu vào đặt tại hoặc trước khi %1thời gian kết thúc%2. Nếu bạn đã chọn một %1thời gian kết thúc%2 cụ thể, %1thời gian kết thúc%2 là thời gian đã chọn."
+msgstr "%1đóng%2 là các tick gần nhất đặt sau hoặc trước khi %1thời gian kết thúc%2. Nếu bạn đã chọn một %1thời gian kết thúc%2 cụ thể, %1thời gian kết thúc%2 là thời gian đã chọn."
 
 msgid "The %1contract period%2 is the period between the %1first tick%2 (after start time) and the %1end time%2."
 msgstr "%1Thời hạn hợp đồng%2 là giai đoạn từ %1Giây di chuyển đầu tiên%2 (sau thời gian bắt đầu) và %1thời gian kết thúc%2."
@@ -8572,13 +8572,13 @@ msgid "The %1start time%2 begins when the contract is processed by our servers."
 msgstr "%1thời gian bắt đầu%2 bắt đầu khi hợp đồng được xử lý bởi máy chủ của chúng tôi."
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
-msgstr "<strong>Thời hạn hợp đồng</strong> là khoảng thời gian giữa <strong>giây tiếp theo</strong> sau <strong>thời gian bắt đầu</strong> và <strong>thời gian kết thúc</strong>."
+msgstr "<strong>Thời hạn hợp đồng</strong> là khoảng thời gian giữa <strong>tick tiếp theo</strong> sau <strong>thời gian bắt đầu</strong> và <strong>thời gian kết thúc</strong>."
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Thời gian kết thúc</strong> được lựa chọn là số phút/giờ sau <strong>thời gian bắt đầu</strong> (nếu thời khoảng ít một ngày), hoặc vào cuối ngày giao dịch (nếu thời khoảng là một ngày hoặc hơn)."
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
-msgstr "<strong>Điểm thoát</strong> là các đánh dấu vào thời điểm hoặc trước khi <strong>thời gian kết thúc</strong>."
+msgstr "<strong>Điểm thoát</strong> là tick gần nhất sau hoặc trước khi <strong>thời gian kết thúc</strong>."
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr ""
@@ -8776,7 +8776,7 @@ msgid "The Financial Products that we offer to deal in are contracts entered int
 msgstr "Các Sản Phẩm Tài Chính mà chúng tôi cung cấp để giao dịch là các hợp đồng được nhập vào giữa bạn và chúng tôi. Theo các hợp đồng này và theo các điều khoản cụ thể của hơp đồng có liên quan, trong việc xem xét mức phí hoặc mức giá mà bạn trả cho chúng tôi, chúng tôi hứa sẽ trả cho bạn một số tiền nhất định nếu tài sản tham chiếu hoặc các công cụ đo lường hoạt động một cách cụ thể. Các hợp đồng này không phải là các công cụ mà chúng tôi giữ thay mặt bạn và không được hưởng lợi từ việc bảo vệ tài sản của khách hàng trong trường hợp mất khả năng thanh toán của chúng tôi. Tương tự, phí bảo hiểm hoặc giá mà bạn phải trả để mua hàng không phải là khoản tiền của khách hàng mà là khoản chi phí phải trả cho cam kết của chúng tôi."
 
 msgid "The First Tick"
-msgstr "Giây di chuyển đầu tiên"
+msgstr "Tick đầu tiên"
 
 msgid "The Foreign Exchange Market (Forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "Thị Trường Ngoại Hối là thị trường thanh khoản lớn nhất của thế giới – nơi mà ai cũng có thể bán, mua, và trao đổi các tiền tệ."
@@ -8804,9 +8804,6 @@ msgstr "Nền tảng MetaTrader sẽ không còn sẽ hỗ trợ Windows XP, Win
 
 msgid "The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall deprive of the right to released form any responsibility, under this Agreement where it fails to duly notify the other Party on time."
 msgstr "Bên mà không có khả năng đáp ứng các nghĩa vụ theo Thỏa Thuận này do sự kiện bất khả kháng sẽ, trong vòng 5 ngày sau khi sự kiện như vậy đã xảy ra, thông báo bằng văn bản cho bên kia. Nếu không có sự thông báo đúng hạn cho Bên còn lại, Bên bị sự kiện bất khả kháng sẽ không thể bắt Bên còn lại chịu trách nhiệm bất kì nào theo Thỏa thuận này."
-
-msgid "The Payment Agent facility is currently not available in your country."
-msgstr "Các cơ sở đại lý thanh toán hiện không có trong đất nước của bạn."
 
 msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
 msgstr "Cột 3 công bố báo cáo Công ty TNHH Đầu Tư Binary (Châu Âu) đã được chuẩn bị phù hợp với yêu cầu vốn chỉ thị IV và quy định yêu cầu về vốn. Hãy đọc báo công bố Cột 3 của chúng tôi để hiểu cách chúng tôi tuân thủ theo quy chế thị trường như là một người tham gia thị trường."
@@ -8869,7 +8866,7 @@ msgid "The ask price of the currency pair indicates how much of the quote curren
 msgstr "Giá chào bán của cặp tiền tệ cho biết có bao nhiêu đơn vị tiền tệ báo là cần thiết để mua một đơn vị cơ sở tiền tệ khác. Điều này thường được gọi là tỷ giá hối đoái."
 
 msgid "The average is the average of the ticks, including the first and the last tick."
-msgstr "Trung bình là bình quân của số giây, bao gồm cả giây đầu và giây cuối cùng."
+msgstr "Trung bình là bình quân của số tích, bao gồm cả tick đầu và tick cuối cùng."
 
 msgid "The barrier of a binary option trade is the price target you set for the underlying. You can choose trades that stay below or go above a price target, or stay between two targets."
 msgstr "Giới hạn của một giao dịch Binary Options là các mức giá mục tiêu bạn đặt ra cho các cơ sở. Bạn có thể lựa chọn giao dịch thấp hơn hoặc vượt trên giá mục tiêu, hoặc ở giữa hai mục tiêu."
@@ -8956,7 +8953,7 @@ msgid "The factor listed above are not listed in order of priority. Ordinarily, 
 msgstr "Các yếu tố nêu trên không được liệt kê theo thứ tự ưu tiên. Thông thường, giá sẽ xứng một tầm quan trọng tương đối cao trong việc đạt được kết quả tốt nhất có thể cho bạn. Tuy nhiên, tầm quan trọng tương đối của các yếu tố được liệt kê ở trên có thể thay đổi theo:"
 
 msgid "The filtering algorithm may for example be similar to the \"Bollinger Bands\" volatility system - i.e., short-term volatility bands are determined around the present market value, and ticks that are manifestly outside of such bands are removed."
-msgstr "Thuật toán lọc điểm sẽ tương tự như hệ thống biến động \"Dải Bollinger\" - ví dụ, các dải biến động ngắn hạn được xác định xung quanh giá trị thị trường hiện tại, và điểm nằm bên ngoài của những dải này được loại bỏ."
+msgstr "Thuật toán lọc điểm sẽ tương tự như hệ thống biến động \"Dải Bollinger\" - ví dụ, các dải biến động ngắn hạn được xác định xung quanh giá trị thị trường hiện tại, và các tick nằm bên ngoài của những dải này được loại bỏ."
 
 msgid "The financial trading services contained within this site are only suitable for Clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts."
 msgstr "Các dịch vụ kinh doanh tài chính có trên trang web này chỉ thích hợp cho những khách hàng có khả năng chịu mất tất cả số tiền họ đầu tư và những người hiểu và có kinh nghiệm về các rủi ro liên quan đến việc mua lại các hợp đồng tài chính."
@@ -8968,7 +8965,7 @@ msgid "The first step is to set the parameters of your trade. There are five tra
 msgstr "Bước đầu tiên là thiết lập thông số cho giao dịch của bạn. Có năm thông số giao dịch bạn cần phải điều chỉnh để có thể nhận được một mức giá cho hợp đồng:"
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "Điểm đầu tiên là giây đầu tiên sau khi hợp đồng được xử lý bởi máy chủ của chúng tôi."
+msgstr "Tick đầu tiên là điểm đầu tiên sau khi hợp đồng được xử lý bởi máy chủ của chúng tôi."
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "Thị trường ngoại hối (Forex) là thị trường thanh khoản và được giao dịch nhiều nhất của thế giới, nơi mà các giao dịch đáng giá hàng tỷ được hoàn thành mỗi ngày."
@@ -9364,7 +9361,7 @@ msgid "Thursday"
 msgstr "Thứ Năm"
 
 msgid "Tick"
-msgstr "Giây"
+msgstr "Tick"
 
 msgid "Tier"
 msgstr "Lớp"
@@ -9511,7 +9508,7 @@ msgid "Touch/No Touch"
 msgstr "Chạm/Không Chạm"
 
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Hợp đồng chạm/ không chạm sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 lần thay đổi giá trong khoảng thời gian từ khi hợp đồng bắt đầu cho tới lúc kết thúc."
+msgstr "Hợp đồng chạm/ không chạm sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 tick trong khoảng thời gian từ khi hợp đồng bắt đầu cho tới lúc kết thúc."
 
 msgid "Touch/No touch"
 msgstr "Chạm/ Không Chạm"
@@ -9994,7 +9991,7 @@ msgid "Use of Information"
 msgstr "Sử dụng thông tin"
 
 msgid "Use of bid/ask prices: when the market is illiquid, the data feed may contain many bid and ask prices, without there actually being any traded price for quite a while. By taking an average of the bid/ask price (i.e. bid + ask, divided by 2), a market quote is generated that reflects the current market, without it actually being a traded price. Our system will generate prices from these bid and ask prices, whereas other websites might not. As a result, our website might display ticks that do not appear in the data feeds of other websites."
-msgstr "Sử dụng giá mua vào/bán ra: khi thị trường có tính thanh khoản thấp, các nguồn dữ liệu có thể chứa nhiều giá mua và giá bán, mà không phải giá đang giao dịch nào trong một lúc. Bằng cách lấy trung bình của giá bán/ mua (tức là bán + mua, chia 2), một giá niêm yết của thị trường được tạo ra phản ánh thị trường hiện tại, mà không phải giá đang giao dịch thực. Hệ thống của chúng tôi sẽ tạo ra giá từ những giá mua và giá bán này, trong khi các trang web khác có thể không. Kết quả là, trang web của chúng tôi có thể hiển thị điểm mà không xuất hiện trên nguồn dữ liệu của các trang web khác."
+msgstr "Sử dụng giá mua vào/bán ra: khi thị trường có tính thanh khoản thấp, các nguồn dữ liệu có thể chứa nhiều giá mua và giá bán, mà không phải giá đang giao dịch nào trong một lúc. Bằng cách lấy trung bình của giá bán/ mua (tức là bán + mua, chia 2), một giá niêm yết của thị trường được tạo ra phản ánh thị trường hiện tại, mà không phải giá đang giao dịch thực. Hệ thống của chúng tôi sẽ tạo ra giá từ những giá mua và giá bán này, trong khi các trang web khác có thể không. Kết quả là, trang web của chúng tôi có thể hiển thị tick mà không xuất hiện trên nguồn dữ liệu của các trang web khác."
 
 msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
 msgstr "Trang web của chúng tôi cung cấp tài khoản thử miễn phí, trong đó có tiền ảo, hãy tận dụng cơ hội này để làm quen với công cụ này. Điều này sẽ giúp bạn dần quen với chức năng và quy định của trang web."
@@ -10174,10 +10171,10 @@ msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 
 msgid "Waiting for entry tick."
-msgstr "Vui lòng đợi cho đến khi gia nhập phiên."
+msgstr "Vui lòng đợi dấu tick gia nhập."
 
 msgid "Waiting for exit tick."
-msgstr "Vui lòng đợi cho đến khi thoát phiên."
+msgstr "Vui lòng đợi dấu tick thoát."
 
 msgid "Want to help us enhance the strength and security of our platform?"
 msgstr "Bạn muốn giúp chúng tôi nâng cao sức mạnh và bảo mật của nền tảng của chúng tôi?"
@@ -11633,10 +11630,10 @@ msgid "thousand"
 msgstr "nghìn"
 
 msgid "tick"
-msgstr "giây"
+msgstr "tick"
 
 msgid "ticks"
-msgstr "điểm thay đổi giá"
+msgstr "tick"
 
 msgid "today"
 msgstr "hôm nay"

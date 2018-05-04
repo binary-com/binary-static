@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-02 01:34-0400\n"
+"PO-Revision-Date: 2018-05-03 21:30-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -23,9 +23,6 @@ msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API ของ %1\" หมายถึง ระบบของ %1 ที่ประกอบด้วย ชุดคำสั่งต่างๆ โปรโตคอลต่างๆ เครื่องมือต่างๆ และทรัพยากรต่างๆ ที่ถูกพัฒนาขึ้นและดำเนินการโดย %1 ซึ่งท่านสามารถใช้งานแอพพลิเคชันได้เพื่อเชื่อมต่อกับแพลตฟอร์มการซื้อขายของ %1"
-
-msgid "\"AUD/JPY\" or \"Apple\""
-msgstr "\"AUD/JPY\" หรือ \"Apple\""
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "ตัวเลือก \"Binary\" หรือ \"Digital\" คือ ผลิตภัณฑ์ทางการเงินประเภทหนึ่งซึ่งจะมีการกำหนดมูลค่า หรือ มูลค่าคงที่ ขึ้นกับวาระการหมดอายุของไบนารีออปชั่นดังกล่าว ในที่นี้จะใช้ Binary Option แทนด้วยคำว่า ไบนารีออปชั่น ไบนารีออปชั่นมีผลลัพธ์เพียง 2 ทาง ซึ่งจะทำให้ท่านพิจารณาว่า ใช่ หรือ ไม่ใช่ เช่นเดียวกับวิธีการดั้งเดิม ไบนารีออปชั่น เป็นสิ่งที่มีพื้นฐานขึ้นกับสินทรัพย์ ได้แก่ สกุลเงินต่างๆ คอมโมดิตี้ต่างๆ (สินค้าโภคภัณฑ์ ได้แก่ สินค้าอุปโภค และ สินค้าบริโภคต่างๆ) ดัชนีต่างๆ รวมถึง หลักทรัพย์ต่างๆ อย่างไรก็ตาม มีสิ่งสำคัญที่ทำให้ไบนารีออปชั่นในปัจจุบันมีความแตกต่างจากไบนารีออปชั่นดั้งเดิม คือ ไบนารีออปชั่นมีผลลัพธ์เพียง 2 ทาง อันได้แก่ ลูกค้าได้รับผลตอบแทนจากสิ่งที่เกิดขึ้นในธุรกรรมนั้น หรือ ลูกค้าขาดทุนจากการลงทุนนั้น เท่านั้น"
@@ -6890,6 +6887,9 @@ msgstr "ตัวแทนรับชำระเงินสำหรับก
 msgid "Payment Agent Withdrawal"
 msgstr "ตัวแทนรับชำระเงินสำหรับถอนเงิน"
 
+msgid "Payment Agent services are not available in your country or in your preferred currency."
+msgstr ""
+
 msgid "Payment Agent transfer"
 msgstr "ตัวแทนรับชำระเงินสำหรับการโอนเงิน"
 
@@ -6901,9 +6901,6 @@ msgstr "ข้อตกลงและเงื่อนไขของตัว
 
 msgid "Payment Methods"
 msgstr "วิธีการชำระเงิน"
-
-msgid "Payment agent is unavailable in your country."
-msgstr "ไม่สามารถใช้ตัวแทนรับชำระเงินในประเทศของท่าน"
 
 msgid "Payment methods"
 msgstr "วิธีการชำระเงิน"
@@ -7020,7 +7017,7 @@ msgid "Please check the above form for pending errors."
 msgstr "โปรดตรวจสอบแบบฟอร์มข้างต้นสำหรับรายการข้อผิดพลาด"
 
 msgid "Please check your email for further instructions."
-msgstr "กรุณาเช็คอีเมลเพื่อดูวิธีการใช้ต่อไป"
+msgstr "กรุณาตรวจสอบอีเมล์ของท่านเพื่อแนะนำวิธีการใช้งาน"
 
 msgid "Please check your email for the password reset link."
 msgstr "กรุณาตรวจสอบอีเมล์ของท่านสำหรับลิงค์การตั้งค่ารหัสผ่านใหม่"
@@ -7843,6 +7840,9 @@ msgstr "ขอบเขต"
 
 msgid "Score"
 msgstr "คะแนน"
+
+msgid "Search..."
+msgstr ""
 
 msgid "Second line of home address"
 msgstr "บรรทัดที่สองของที่อยู่ที่พัก"
@@ -8809,9 +8809,6 @@ msgstr "แพลตฟอร์ม MetaTrader จะไม่สนับสน
 msgid "The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall deprive of the right to released form any responsibility, under this Agreement where it fails to duly notify the other Party on time."
 msgstr "คู่สัญญาที่ไม่สามารถตอบสนองข้อผูกมัดภายใต้สัญญานี้ได้เนื่องจากเหตุการณ์สุดวิสัยจะต้องแจ้งเป็นลายลักษณ์อักษรให้แก่อีกฝ่ายภายใน 5 วันทำการหลังจากเหตุการณ์นั้นเกิดขึ้น คู่สัญญาจะเพิกถอนสิทธิ์ในการถูกปลดปล่อยจากความรับผิดชอบใดๆภายใต้สัญญานี้ ถ้าไม่ได้แจ้งให้แก่อีกฝ่ายทราบตามเวลาที่กำหนด"
 
-msgid "The Payment Agent facility is currently not available in your country."
-msgstr "ขณะนี้ไม่มีบริการตัวแทนรับชำระเงินในประเทศของท่าน"
-
 msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
 msgstr "Pillar 3 รายงานที่เปิดเผยข้อมูล Binary Investments (Europe) Limited ได้มีการจัดเตรียมตามเงื่อนไขหลักเกณฑ์ของ Capital Requirements Directive IV และ Capital Requirements Regulation ศึกษา Pillar 3 รายงานที่เปิดเผยข้อมูล เพื่อทำความเข้าใจว่า พวกเราปฏิบัติตามหลักการของตลาดประหนึ่งสมาชิกของตลาด"
 
@@ -9181,7 +9178,7 @@ msgid "There was some invalid character in an input field."
 msgstr "มีบางอักขระไม่ถูกต้องจากข้อมูลที่ป้อนเข้ามา"
 
 msgid "There will be no charges for fund transfers from your Binary Options Real Account to your MT5 Real Account."
-msgstr "ไม่มีค่าธรรมเนียมในการโอนเงินจากบัญชีจริงไบนารีออปชั่นของคุณไปบัญชีจริง MT5"
+msgstr "ไม่มีค่าธรรมเนียมในการโอนเงินจากบัญชีจริงไบนารีออปชั่นของท่านไปบัญชีจริง MT5"
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
 msgstr "ดังนั้น วงเงินการถอนมากที่สุดของท่านขณะนี้ (หากบัญชีท่านมีวงเงินเพียงพอ) คือ %1 %2 (หรือเทียบเท่าในสกุลเงินอื่น)"
@@ -9604,7 +9601,7 @@ msgid "Trade metals on competitive fixed and variable spreads."
 msgstr "ซื้อขายโลหะด้วยสเปรดคงที่หรือเปลี่ยนแปลงได้ที่สามารถแข่งขันได้"
 
 msgid "Trade now"
-msgstr ""
+msgstr "ซื้อขายทันที"
 
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "ซื้อขายบนตลาดที่รวมฟอเร็กซ์ ดัชนี สินค้าโภคภัณฑ์ และอื่นๆอีกมาก"
@@ -9652,7 +9649,7 @@ msgid "Trading"
 msgstr "การซื้อขาย"
 
 msgid "Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly."
-msgstr "ซื้อขายสัญญาส่วนต่าง (CFDs) บนดัชนีผันผวนอาจะไม่เหมาะสมสำหรับทุกคน โปรดแน่ใจว่าคุณเข้าใจถึงความเสี่ยงที่เกี่ยวข้องอย่างแท้จริง รวมถึงความเป็นไปได้ที่จะสูญเสียเงินทุนในบัญชี MT5 ของคุณ การพนันสามารถเสพติดได้ กรุณาเล่นอย่างรับผิดชอบ"
+msgstr "ซื้อขายสัญญาส่วนต่าง (CFDs) ดัชนีผันผวนอาจะไม่เหมาะสมสำหรับทุกคน โปรดแน่ใจว่า ท่านเข้าใจถึงความเสี่ยงที่เกี่ยวข้องอย่างแท้จริง รวมถึงความเป็นไปได้ที่จะสูญเสียเงินทุนในบัญชี MT5 ของท่าน การพนันสามารถเสพติดได้ กรุณาซื้อขายอย่างรับผิดชอบ"
 
 msgid "Trading Experience"
 msgstr "ประสบการณ์การซื้อขาย"
@@ -9676,7 +9673,7 @@ msgid "Trading and Withdrawal Limits"
 msgstr "วงเงินซื้อขายและถอนเงิน"
 
 msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "ได้มีการปิดการใช้งานในการซื้อขายและฝากเงินในบัญชีของคุณ กรุณา%1cติดฝ่ายสนับสนุนลูกค้า%2เพื่อรับความช่วยเหลือ"
+msgstr "ได้มีการปิดการใช้งานในการซื้อขายและฝากเงินในบัญชีของท่าน กรุณา%1ติดฝ่ายสนับสนุนลูกค้า%2เพื่อรับความช่วยเหลือ"
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
 msgstr "การซื้อขายไบนารีออปชั่นอาจจะไม่เหมาะสมกับทุกคน ดังนั้นโปรดแน่ใจว่า ท่านมีความเข้าใจอย่างครบถ้วนเกี่ยวกับความเสี่ยงที่เกี่ยวข้อง การขาดทุนของท่านสามารถเกินจำนวนเงินฝากเริ่มต้น และท่านจะไม่ได้รับผลตอบแทนใดๆ จากสินทรัพย์ที่อ้างถึงนั้น อนึ่ง ไบนารีออปชั่น เป็นผลิตภัณฑ์เพื่อการเสี่ยงโชค โปรดทราบว่า การเสี่ยงโชคอาจเป็นพฤติกรรมเสพติด โปรดใช้ความระมัดระวังในการซื้อขาย ศึกษาเพิ่มเติมเกี่ยวกับ %1ความรับผิดชอบในการซื้อขาย%2"
@@ -10414,13 +10411,13 @@ msgid "Weekday"
 msgstr "วันธรรมดาที่ไม่ใช่วันเสาร์อาทิตย์"
 
 msgid "Weekdays:"
-msgstr ""
+msgstr "วันธรรมดาที่ไม่ใช่วันเสาร์อาทิตย์"
 
 msgid "Weekend quotes"
 msgstr "ราคาวันหยุด"
 
 msgid "Weekend:"
-msgstr ""
+msgstr "วันหยุดสุดสัปดาห์"
 
 msgid "Welcome to Binary.com"
 msgstr "ยินดีต้อนรับสู่ Binary.com"
@@ -10681,7 +10678,7 @@ msgid "Why you should join the %1 Affiliate Programme"
 msgstr "ทำคุณจึงควรเข้าร่วมโปรแกรมพันธมิตร %1"
 
 msgid "Why you should join the %1 IB Programme"
-msgstr "ทำไมคุณจึงควรเข้าร่วมโปรแกรมพันธมิตร %1"
+msgstr "ทำไมท่านจึงควรเข้าร่วมโปรแกรมพันธมิตร %1"
 
 msgid "Why you should trade binary options with %1"
 msgstr "ทำไมจึงควรซื้อขายไบนารีออปชันกับ%1"
@@ -10759,7 +10756,7 @@ msgid "Withdrawal: Not applicable"
 msgstr "การถอนเงิน: ไม่เกี่ยวข้อง"
 
 msgid "Withdrawals have been disabled on your account. Please check your email for more details."
-msgstr ""
+msgstr "ได้มีการปิดการใช้งานการถอนเงินในบัญชีของท่าน กรุณาตรวจสอบอีเมล์เพื่อศึกษารายละเอียดเพิ่มเติม"
 
 msgid "Without margin, purchasing one lot of the XAU/USD pair will cost you:"
 msgstr "โดยไม่มีมาร์จิน การซื้อหนึ่งล็อตของคู่ XAU/USD จะเป็นต้นทุนของคุณ:"
@@ -10855,7 +10852,7 @@ msgid "You agree that by developing on the %1 API, you are entering into a legal
 msgstr "ท่านยอมรับว่า การพัฒนาโปรแกรมบน API ของ %1 ท่านกำลังเกี่ยวข้องกับข้อตกลงทางกฎหมายกับบริษัทฯ"
 
 msgid "You agree that we may use Personal Information provided by you in order to conduct appropriate anti-fraud checks. Personal Information that you provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information."
-msgstr "คุณยินยอมที่จะให้พวกเราใช้ข้อมูลส่วนบุคคลในการตรวจสอบการปราบปรามการทุจริตตามความเหมาะสม ข้อมูลส่วนบุคคลนั้นจะถูกเปิดเผยต่อหน่วยงานอ้างอิงเครดิต หรือหน่วยงานป้องกันการทุจริตที่เก็บข้อมูลดังกล่าวเอาไว้"
+msgstr "ท่านยินยอมที่จะให้พวกเราใช้ข้อมูลส่วนบุคคลในการตรวจสอบการปราบปรามการทุจริตตามความเหมาะสม ข้อมูลส่วนบุคคลนั้นจะถูกเปิดเผยต่อหน่วยงานอ้างอิงเครดิต หรือหน่วยงานป้องกันการทุจริตที่เก็บข้อมูลดังกล่าวเอาไว้"
 
 msgid "You agree that you will not:"
 msgstr "ท่านยอมรับว่า ท่านจะไม่:"
@@ -11020,7 +11017,7 @@ msgid "You have sold this contract at %1 %2"
 msgstr "ท่าได้ขายสัญญานี้ที่ %1 %2"
 
 msgid "You have successfully created your Virtual Account."
-msgstr "คุณได้สร้างบัญชีทดลองใช้เรียบร้อยแล้ว"
+msgstr "ท่านได้สร้างบัญชีทดลองใช้เรียบร้อยแล้ว"
 
 msgid "You have successfully created your account!"
 msgstr "ท่านได้สร้างบัญชีของท่านเรียบร้อยแล้ว!"
@@ -11032,7 +11029,7 @@ msgid "You have to register and get App ID before you can use different OAuth se
 msgstr "ท่านต้องลงทะเบียน และขอรหัส App ID ก่อนที่ท่านจะใช้เซิร์ฟเวอร์ OAuth ที่ต่างกันในการพิสูจน์ตัวตน สำหรับข้อมูลเพิ่มเติมสามารถอ้างอิงรายละเอียด OAuth จาก https://developers.binary.com"
 
 msgid "You have unrealised losses on your MT5 Real Account; and/or"
-msgstr "คุณมีการขาดทุนที่ยังไม่รับรู้ในบัญชี MT5 จริง และ/หรือ"
+msgstr "ท่านมีการขาดทุนที่ยังไม่รับรู้ในบัญชี MT5 จริง และ/หรือ"
 
 msgid "You hereby agree that you will not participate in any illegal, deceptive, misleading or unethical practices including, but not limited to, disparagement of the MT5 Trading Platform or other practices which may be detrimental to the MT5 Trading Platform, Licensor or the public interest."
 msgstr "โดยฉะนี้ คุณตกลงว่าคุณจะไม่เข้าร่วมในการปฏิบัติที่ผิดกฎหมาย หลอกลวง หลงผิด หรือผิดจริยธรรม รวมถึงแต่ไม่จำกัดเพียง การทำให้แพลตฟอร์มการซื้อขาย MT5 เสื่อมเสีย หรือการปฏิบัติอื่นๆซึ่งอาจจะเป็นภัยต่อแพลตฟอร์มการซื้อขาย MT5 ผู้ให้ใบอนุญาต และผลประโยชน์ของสาธารณะ"
