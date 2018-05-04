@@ -66,6 +66,7 @@ const contract_type_display = {
 class Portfolio extends React.PureComponent  {
     constructor(props) {
         super(props);
+        const currency = Client.get('currency').toLowerCase();
 
         const columns = [
             {
@@ -99,12 +100,12 @@ class Portfolio extends React.PureComponent  {
             {
                 title     : localize('Potential Payout'),
                 data_index: 'payout',
-                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data}</td>),
+                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${currency}`}/>{data}</td>),
             },
             {
                 title     : localize('Purchase'),
                 data_index: 'purchase',
-                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data}</td>),
+                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${currency}`}/>{data}</td>),
             },
             {
                 title     : localize('Indicative'),
@@ -113,13 +114,13 @@ class Portfolio extends React.PureComponent  {
                     if (data.amount) {
                         return (
                             <td key={data_index} className={`indicative ${data.style}`}>
-                                <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data.amount}
+                                <span className={`symbols ${currency}`}/>{data.amount}
                                 {data.style === 'no_resale' && <div> {localize('resell not offered')}</div>}
                             </td>);
                     }
                     // Footer total:
                     if (data && typeof data === 'string') {
-                        return <td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency.toLowerCase()}`}/>{data}</td>;
+                        return <td key={data_index} className={data_index}> <span className={`symbols ${currency}`}/>{data}</td>;
                     }
                     return <td key={data_index}>-</td>;
                 },
@@ -131,10 +132,8 @@ class Portfolio extends React.PureComponent  {
             purchase  : '',
             indicative: '',
         };
-        const currency = Client.get('currency');
         this.state = {
             columns,
-            currency,
             data_source: [],
             error      : '',
             footer, 
