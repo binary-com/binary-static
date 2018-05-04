@@ -131,8 +131,8 @@ const Purchase = (() => {
                 ASIANU  : 'up',
                 PUT     : 'down',
                 ASIAND  : 'down',
-                ONETOUCH: 'touch',
-                NOTOUCH : 'notouch',
+                // ONETOUCH: 'touch',
+                // NOTOUCH : 'notouch',
             };
             const contract_sentiment = type_to_sentiment[passthrough.contract_type];
 
@@ -152,7 +152,7 @@ const Purchase = (() => {
             TickDisplay.init({
                 contract_sentiment,
                 symbol              : passthrough.symbol,
-                barrier             : sessionStorage.getItem('formname') === 'higherlower' ? passthrough.barrier : undefined,
+                barrier             : ['higherlower', 'touchnotouch'].includes(sessionStorage.getItem('formname')) ? passthrough.barrier : undefined,
                 number_of_ticks     : passthrough.duration,
                 previous_tick_epoch : receipt.start_time,
                 contract_category   : sessionStorage.getItem('formname') === 'asian' ? 'asian' : 'callput',
