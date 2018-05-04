@@ -239,6 +239,10 @@ const ViewPopup = (() => {
             $container.find('#errMsg').setVisibility(0);
         }
 
+        const { barrier, entry_spot } = contract;
+        if (barrier * 1 !== entry_spot * 1) {
+            TickDisplay.plotResetSpot(barrier * 1);
+        }
         sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
         contract.chart_validation_error = contract.validation_error;
         contract.validation_error       = '';

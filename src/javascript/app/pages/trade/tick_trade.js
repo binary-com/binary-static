@@ -1,4 +1,5 @@
 const moment               = require('moment');
+const Reset                = require('./reset');
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
@@ -37,7 +38,9 @@ const TickDisplay = (() => {
         tick_shortcode,
         tick_init,
         subscribe,
-        responseID;
+        responseID,
+        entry_spot,
+        reset_spot_plotted;
 
     const initialize = (data, options) => {
         // setting up globals
@@ -50,6 +53,7 @@ const TickDisplay = (() => {
         abs_barrier          = data.abs_barrier;
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
+        reset_spot_plotted   = false;
 
         if (data.show_contract_result) {
             contract_sentiment = data.contract_sentiment;
@@ -196,12 +200,13 @@ const TickDisplay = (() => {
             }
 
             chart.yAxis[0].addPlotLine({
-                id    : 'tick-barrier',
-                value : barrier_tick.quote,
-                label : { text: `Barrier (${barrier_tick.quote})`, align: 'center' },
-                color : 'green',
-                width : 2,
-                zIndex: 2,
+                id       : 'tick-barrier',
+                value    : barrier_tick.quote,
+                label    : { text: `Barrier (${barrier_tick.quote})`, align: 'center' },
+                color    : 'green',
+                width    : 2,
+                zIndex   : 2,
+                dashStyle: 'dot',
             });
             contract_barrier = barrier_tick.quote;
             set_barrier      = false;
@@ -239,7 +244,7 @@ const TickDisplay = (() => {
             value : indicator.index,
             id    : indicator.id,
             label : { text: indicator.label, x: /start_tick|entry_tick/.test(indicator.id) ? -15 : 5 },
-            color : '#e98024',
+            color : indicator.color || '#e98024',
             width : 2,
             zIndex: 2,
         });
@@ -297,6 +302,7 @@ const TickDisplay = (() => {
         let epoches,
             spots2,
             chart_display_decimals;
+
         if (document.getElementById('sell_content_wrapper')) {
             if (data.tick) {
                 Tick.details(data);
@@ -366,6 +372,7 @@ const TickDisplay = (() => {
                     const indicator_key    = `_${counter}`;
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
                         x_indicators[indicator_key].index = counter;
+
                         add(x_indicators[indicator_key]);
                     }
 
@@ -374,6 +381,55 @@ const TickDisplay = (() => {
                     counter++;
                 }
             }
+            if (data.history) {
+                plotResetSpot();
+            }
+        }
+    };
+
+    const removePlotLine = (id, type = 'y') => {
+        if (!chart) return;
+        chart[(`${type}Axis`)][0].removePlotLine(id);
+    };
+
+    const plotResetSpot = (r_barrier) => {
+        if (reset_spot_plotted || !chart) return;
+
+        const reset_time_index = Math.floor(number_of_ticks / 2);
+        const entry_barrier    = entry_spot * 1;
+        const reset_barrier    = r_barrier || absolute_barrier * 1;
+
+        if (entry_barrier !== reset_barrier) {
+            removePlotLine('tick-barrier', 'y');
+
+            chart.yAxis[0].addPlotLine({
+                id    : 'tick-reset-barrier',
+                value : reset_barrier,
+                label : { text: `Reset Barrier (${reset_barrier})`, align: 'center' },
+                color : 'green',
+                width : 2,
+                zIndex: 2,
+            });
+            chart.yAxis[0].addPlotLine({
+                id       : 'tick-barrier',
+                value    : entry_barrier,
+                label    : { text: `Barrier (${entry_barrier})`, align: 'center' },
+                color    : 'green',
+                width    : 2,
+                zIndex   : 2,
+                dashStyle: 'dot',
+            });
+
+            x_indicators[`_${reset_time_index}`] = {
+                index: reset_time_index,
+                label: 'Reset Time',
+                id   : 'reset_tick',
+                color: '#000',
+            };
+            x_indicators[`_${reset_time_index}`].index = reset_time_index;
+            add(x_indicators[`_${reset_time_index}`]);
+
+            reset_spot_plotted = true;
         }
     };
 
@@ -388,6 +444,8 @@ const TickDisplay = (() => {
             absolute_barrier  = contract.barrier;
             tick_shortcode    = contract.shortcode;
             tick_init         = '';
+            entry_spot        = contract.entry_spot;
+
             const request     = {
                 ticks_history: contract.underlying,
                 start        : contract.date_start,
@@ -406,6 +464,7 @@ const TickDisplay = (() => {
     };
 
     return {
+        plotResetSpot,
         updateChart,
         init      : initialize,
         resetSpots: () => { spots_list = {}; },
