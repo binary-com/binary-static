@@ -44,6 +44,11 @@ module.exports = function (grunt) {
             new webpack.DefinePlugin({
                 '__REACT_DEVTOOLS_GLOBAL_HOOK__': `({ isDisabled: true })`
             }),
+            new webpack.DefinePlugin({
+                'process.env': {
+                    NODE_ENV: JSON.stringify('production'),
+                },
+            }),
         );
     } else {
         plugins.push(
