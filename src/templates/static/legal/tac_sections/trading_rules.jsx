@@ -25,7 +25,8 @@ const TradingRules = () => (
             <p>{it.L('The charting data made available to Clients by the Company is indicative only and may at times differ from the real market values. The Company\'s decision as to the calculation of a financial contract price will be final and binding. The Company allows the option to sell contracts before expiry time of some contracts but will not be obliged to do so and can suspend this option depending on the current market conditions. Contracts may be amended when the underlying asset value is adjusted by corporate actions during the contract period.')}</p>
             <p>{it.L('Should a disruption occur in the data feeds which cannot be readily rectified by the Company, the Company reserves the right to refund the contract purchase.')}</p>
             <h2 data-anchor>{it.L('Trading Limits')}</h2>
-            <p>{it.L('The Company may impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit.')}</p>
+            <p>{it.L('The Company reserves the right to have in place risk limits, which affects the trading limits of all clients trading, and may not be limited solely to instruments and contract types.')}</p>
+            <p>{it.L('The Company may also impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit.')}</p>
         </p>
     </div>
 );
