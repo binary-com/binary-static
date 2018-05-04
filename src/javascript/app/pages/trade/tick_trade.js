@@ -1,5 +1,4 @@
 const moment               = require('moment');
-const Reset                = require('./reset');
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
