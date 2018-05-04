@@ -126,12 +126,15 @@ const Purchase = (() => {
         }
 
         if (show_chart) {
-            let contract_sentiment;
-            if (passthrough.contract_type === 'CALL' || passthrough.contract_type === 'ASIANU') {
-                contract_sentiment = 'up';
-            } else {
-                contract_sentiment = 'down';
-            }
+            const type_to_sentiment = {
+                CALL    : 'up',
+                ASIANU  : 'up',
+                PUT     : 'down',
+                ASIAND  : 'down',
+                ONETOUCH: 'touch',
+                NOTOUCH : 'notouch',
+            };
+            const contract_sentiment = type_to_sentiment[passthrough.contract_type];
 
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying

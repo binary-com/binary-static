@@ -155,23 +155,16 @@ const TickDisplay = (() => {
     };
 
     const applyChartBackgroundColor = (tick) => {
-        if (!show_contract_result) {
-            return;
-        }
+        if (!show_contract_result) return;
+
         const chart_container = $('#tick_chart');
-        if (contract_sentiment === 'up') {
-            if (tick.quote > contract_barrier) {
-                chart_container.css('background-color', 'rgba(46,136,54,0.198039)');
-            } else {
-                chart_container.css('background-color', 'rgba(204,0,0,0.098039)');
-            }
-        } else if (contract_sentiment === 'down') {
-            if (tick.quote < contract_barrier) {
-                chart_container.css('background-color', 'rgba(46,136,54,0.198039)');
-            } else {
-                chart_container.css('background-color', 'rgba(204,0,0,0.098039)');
-            }
-        }
+
+        const winning = contract_sentiment === 'up' && tick.quote > contract_barrier
+            || contract_sentiment === 'down' && tick.quote < contract_barrier;
+
+        chart_container.css('background-color', winning
+            ? 'rgba(46,136,54,0.198039)'
+            : 'rgba(204,0,0,0.098039)');
     };
 
     const addBarrier = () => {
