@@ -16,7 +16,6 @@ const localize             = require('../../_common/localize').localize;
 const State                = require('../../_common/storage').State;
 const urlFor               = require('../../_common/url').urlFor;
 const getPropertyValue     = require('../../_common/utility').getPropertyValue;
-const getAppId             = require('../../config').getAppId;
 
 const BinarySocketGeneral = (() => {
     const onOpen = (is_ready) => {
