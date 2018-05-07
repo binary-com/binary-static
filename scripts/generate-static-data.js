@@ -152,7 +152,7 @@ const texts = [
     'High-Close',
     'Close-Low',
     'High-Low',
-    '"AUD/JPY" or "Apple"',
+    'Search...',
     'Select Asset',
 
     // limits
@@ -228,7 +228,7 @@ const texts = [
 
     // paymentagent_withdraw
     'Please select a payment agent',
-    'The Payment Agent facility is currently not available in your country.',
+    'Payment Agent services are not available in your country or in your preferred currency.',
     'Invalid amount, minimum is',
     'Invalid amount, maximum is',
     'Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.',
