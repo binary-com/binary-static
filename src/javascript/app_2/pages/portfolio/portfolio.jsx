@@ -13,7 +13,7 @@ const formatPortfolioData = (portfolio_arr) => {
     const formatted_portfolio = portfolio_arr.map((portfolio_item) => {
         const date_obj        = new Date(portfolio_item.expiry_time* 1000);
         const moment_obj      = moment.utc(date_obj);
-        const remaining_time  = `${moment_obj.fromNow()} - ${moment_obj.format('h:mm:ss')}`;
+        const remaining_time  = `${moment_obj.fromNow(true)} - ${moment_obj.format('h:mm:ss')}`;
         const purchase        = parseFloat(portfolio_item.buy_price);
         const payout          = parseFloat(portfolio_item.payout);
 
