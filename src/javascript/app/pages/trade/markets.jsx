@@ -396,7 +396,7 @@ class Markets extends React.Component {
                             type='text'
                             maxLength={20}
                             onInput={searchSymbols}
-                            placeholder={localize('"AUD/JPY" or "Apple"')}
+                            placeholder={localize('Search...')}
                             value={query}
                         />
                         <span className='icon' />
