@@ -219,7 +219,7 @@ const TradingAnalysis = (() => {
         };
 
         if (images[form_name]) {
-            const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(getLanguage() === 'JA' ? 'ja/' : '')}`);
+            const image_path = Url.urlForStatic('images/pages/trade-explanation/');
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             if (images[form_name].image2) {
                 $container
