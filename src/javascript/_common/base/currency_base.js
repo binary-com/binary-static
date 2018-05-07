@@ -41,7 +41,7 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const isJPClient = () => JSON.parse(State.get('is_jp_client'));
+const isJPClient = () => !!State.get('is_jp_client');
 
 const getFiatDecimalPlaces = () => isJPClient() ? 0 : 2;
 
