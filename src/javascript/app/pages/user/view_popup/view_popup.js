@@ -3,7 +3,6 @@ const ViewPopupUI    = require('./view_popup.ui');
 const Highchart      = require('../../trade/charts/highchart');
 const Lookback       = require('../../trade/lookback');
 const TickDisplay    = require('../../trade/tick_trade');
-const isJPClient     = require('../../../base/client').isJPClient;
 const Clock          = require('../../../base/clock');
 const BinarySocket   = require('../../../base/socket');
 const getElementById = require('../../../../_common/common_functions').getElementById;
@@ -283,9 +282,7 @@ const ViewPopup = (() => {
         $container.find('#errMsg').setVisibility(0);
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
-        // don't show for japanese clients or contracts that are manually sold before starting
-        if (contract.audit_details && !isJPClient() &&
-            (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
+        if (contract.audit_details && (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
             initAuditTable(0);
         }
     };
@@ -551,7 +548,7 @@ const ViewPopup = (() => {
 
     const epochToDateTime = epoch => {
         const date_time = moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
-        return isJPClient() ? Clock.toJapanTimeIfNeeded(date_time) : `${date_time} GMT`;
+        return `${date_time} GMT`;
     };
 
     // ===== Tools =====

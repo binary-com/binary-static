@@ -178,9 +178,6 @@ const TradingTimesUI = (() => {
 
     const sendRequest = (date, should_request_active_symbols) => {
         const req = { active_symbols: 'brief' };
-        if (isJPClient()) {
-            req.landing_company = 'japan';
-        }
         if (should_request_active_symbols) {
             BinarySocket.wait('authorize').then(() => {
                 BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {

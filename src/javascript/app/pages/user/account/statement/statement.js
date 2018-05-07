@@ -1,10 +1,9 @@
-const moment              = require('moment');
-const Client              = require('../../../../base/client');
-const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
-const formatCurrency      = require('../../../../common/currency').formatCurrency;
-const formatMoney         = require('../../../../common/currency').formatMoney;
-const localize            = require('../../../../../_common/localize').localize;
-const toTitleCase         = require('../../../../../_common/string_util').toTitleCase;
+const moment         = require('moment');
+const Client         = require('../../../../base/client');
+const formatCurrency = require('../../../../common/currency').formatCurrency;
+const formatMoney    = require('../../../../common/currency').formatMoney;
+const localize       = require('../../../../../_common/localize').localize;
+const toTitleCase    = require('../../../../../_common/string_util').toTitleCase;
 
 const Statement = (() => {
     const getStatementData = (statement, currency, jp_client) => {
@@ -24,7 +23,7 @@ const Statement = (() => {
 
         return {
             action,
-            date   : jp_client ? toJapanTimeIfNeeded(+statement.transaction_time) : `${date_str}\n${time_str}`,
+            date   : `${date_str}\n${time_str}`,
             ref    : statement.transaction_id,
             payout : isNaN(payout) || is_ico_bid || !+payout ? '-' : formatMoney(currency, payout, !jp_client),
             amount : isNaN(amount) ? '-' : formatMoney(currency, amount, !jp_client),

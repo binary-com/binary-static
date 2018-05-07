@@ -1,10 +1,9 @@
-const ProfitTable         = require('./profit_table');
-const Client              = require('../../../../base/client');
-const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
-const Table               = require('../../../../common/attach_dom/table');
-const formatMoney         = require('../../../../common/currency').formatMoney;
-const showTooltip         = require('../../../../common/get_app_details').showTooltip;
-const localize            = require('../../../../../_common/localize').localize;
+const ProfitTable = require('./profit_table');
+const Client      = require('../../../../base/client');
+const Table       = require('../../../../common/attach_dom/table');
+const formatMoney = require('../../../../common/currency').formatMoney;
+const showTooltip = require('../../../../common/get_app_details').showTooltip;
+const localize    = require('../../../../../_common/localize').localize;
 
 const ProfitTableUI = (() => {
     let oauth_apps   = {};
@@ -69,15 +68,14 @@ const ProfitTableUI = (() => {
     const createProfitTableRow = (transaction) => {
         const profit_table_data = ProfitTable.getProfitTabletData(transaction);
         const pl_type           = Number(transaction.sell_price - transaction.buy_price) >= 0 ? 'profit' : 'loss';
-        const is_jp_client      = Client.isJPClient();
 
         const data = [
-            is_jp_client ? toJapanTimeIfNeeded(parseInt(transaction.purchase_time)) : profit_table_data.buyDate,
+            profit_table_data.buyDate,
             `<span ${showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id])}>${profit_table_data.ref}</span>`,
             /binaryico/i.test(profit_table_data.shortcode) ? '-' : profit_table_data.payout, // TODO: remove ico exception when all ico contracts are removed
             '',
             profit_table_data.buyPrice,
-            is_jp_client ? toJapanTimeIfNeeded(parseInt(transaction.sell_time)) : profit_table_data.sellDate,
+            profit_table_data.sellDate,
             profit_table_data.sellPrice,
             profit_table_data.pl,
             '',

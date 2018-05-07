@@ -9,7 +9,6 @@ const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
-const getLanguage      = require('../../../_common/language').get;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const urlForStatic     = require('../../../_common/url').urlForStatic;
@@ -22,7 +21,7 @@ const MBProcess = (() => {
         contract_timeout;
 
     const getSymbols = () => {
-        BinarySocket.wait('website_status').then((website_status) => {
+        BinarySocket.wait('landing_company').then(() => {
             const landing_company_obj = State.getResponse('landing_company');
             const allowed_markets     = Client.currentLandingCompany().legal_allowed_markets;
             if (Client.isLoggedIn() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
@@ -33,10 +32,8 @@ const MBProcess = (() => {
                 active_symbols: 'brief',
                 product_type  : 'multi_barrier',
             };
-            if (landing_company_obj) {
-                req.landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
-            } else if (website_status.website_status.clients_country === 'jp' || getLanguage() === 'JA') {
-                req.landing_company = 'japan';
+            if (landing_company_obj && landing_company_obj.financial_company) {
+                req.landing_company = landing_company_obj.financial_company.shortcode;
             }
             BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
                 if (!response.active_symbols || !response.active_symbols.length) {
@@ -99,7 +96,7 @@ const MBProcess = (() => {
         const $list = $underlyings.find('.list');
         $list.empty();
         $underlyings.find('.current').html($('<div/>', { class: 'gr-row' })
-            .append($('<span/>', { class: 'nav-caret ja-hide' }))
+            .append($('<span/>', { class: 'nav-caret' }))
             .append($('<img/>', { class: 'gr-3 gr-no-gutter-m' }))
             .append($('<span/>', { class: 'name gr-6 gr-5-m align-self-center' }))
             .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' })));

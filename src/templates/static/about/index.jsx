@@ -36,8 +36,7 @@ const Index = () => (
                 </h1>
                 <div className='gr-row'>
                     <div className='gr-6 gr-12-m gr-padding-20'>
-                        <img className='mac ja-hide' src={it.url_for('images/pages/about/mac.svg')} />
-                        <img className='mac invisible ja-show responsive' src={it.url_for('images/pages/about/mac-ja.png')} />
+                        <img className='mac' src={it.url_for('images/pages/about/mac.svg')} />
                     </div>
                     <div className='gr-1 gr-hide-t gr-hide-p gr-hide-m' />
                     <div className='gr-5 gr-12-m'>

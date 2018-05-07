@@ -37,10 +37,8 @@ const MBTradePage = (() => {
         }
         if (Client.isJPClient()) {
             disableTrading();
-            $('#panel').remove();
         } else {
             MBDefaults.set('disable_trading', 0);
-            $('#ja-panel').remove();
             showCurrency(Client.get('currency'));
         }
 

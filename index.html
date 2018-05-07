@@ -27,7 +27,6 @@
                     'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
                     'id': 'id',
                     'it': 'it',
-                    'ja': 'jp',
                     'ko': 'kr',
                     'pl': 'po',
                     'pt': 'br|mz|ao|pt|gw|pg|cv|st',
@@ -47,8 +46,7 @@
             }
             function redirect() {
                 window.location.href = (lang || 'en').toLowerCase() + '/' +
-                    (getCookieItem('loginid') ? (lang === 'ja' ? 'multi_barriers_trading' : 'trading') : 'home' + (lang === 'ja' ? '-jp' : '')) +
-                    '.html' + window.location.search;
+                    (getCookieItem('loginid') ? 'trading' : 'home') + '.html' + window.location.search;
             }
             function isDelayedRedirect() {
                 if(isGtmApplicable() && !redirectTimeOut) {

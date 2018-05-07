@@ -5,7 +5,6 @@ const SocketCache        = require('./socket_cache');
 const isCryptocurrency   = require('../common/currency').isCryptocurrency;
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 const getElementById     = require('../../_common/common_functions').getElementById;
-const urlLang            = require('../../_common/language').urlLang;
 const LocalStore         = require('../../_common/storage').LocalStore;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
@@ -184,10 +183,6 @@ const Client = (() => {
         window.location.href = options.redirect_url || defaultRedirectUrl();
     };
 
-    const shouldShowJP = (el) => (
-        isJPClient() ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
-    );
-
     const activateByClientType = (section_id) => {
         const topbar_class = getElementById('topbar').classList;
         const el_section   = section_id ? getElementById(section_id) : document.body;
@@ -201,9 +196,7 @@ const Client = (() => {
                 client_logged_in.classList.add('gr-centered');
 
                 applyToAllElements('.client_logged_in', (el) => {
-                    if (shouldShowJP(el)) {
-                        el.setVisibility(1);
-                    }
+                    el.setVisibility(1);
                 });
 
                 if (get('is_virtual')) {
@@ -212,9 +205,7 @@ const Client = (() => {
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
                     applyToAllElements('.client_real', (el) => {
-                        if (shouldShowJP(el)) {
-                            el.setVisibility(1);
-                        }
+                        el.setVisibility(1);
                     }, '', el_section);
                     topbar_class.add(primary_bg_color_dark);
                     topbar_class.remove(secondary_bg_color);
@@ -222,9 +213,7 @@ const Client = (() => {
             });
         } else {
             applyToAllElements('.client_logged_out', (el) => {
-                if (shouldShowJP(el)) {
-                    el.setVisibility(1);
-                }
+                el.setVisibility(1);
             }, '', el_section);
             topbar_class.add(primary_bg_color_dark);
             topbar_class.remove(secondary_bg_color);
@@ -288,7 +277,7 @@ const Client = (() => {
 
     const shouldCompleteTax = () => isAccountOfType('financial') && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
-    const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/\_(\d+|master)/, '') : ''); // remove manager id or master distinction from group
+    const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/_(\d+|master)/, '') : ''); // remove manager id or master distinction from group
 
     const getUpgradeInfo = () => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
@@ -318,9 +307,6 @@ const Client = (() => {
             } else if (canUpgrade(['maltainvest'])) {
                 type         = 'financial';
                 upgrade_link = 'maltainvestws';
-            } else if (canUpgrade(['japan'])) {
-                type         = 'real';
-                upgrade_link = 'japanws';
             } else {
                 can_upgrade = false;
             }
@@ -341,7 +327,7 @@ const Client = (() => {
         } else if (loginid.real || isAccountOfType('real', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'gaming_company');
 
-            // handle accounts such as japan that don't have gaming company
+            // handle accounts that don't have gaming company
             if (!landing_company_object) {
                 landing_company_object = getPropertyValue(landing_company, 'financial_company');
             }
@@ -398,7 +384,7 @@ const Client = (() => {
     const defaultRedirectUrl = () => urlFor(isJPClient() ? 'multi_barriers_trading' : 'trading');
 
     const setJPFlag = () => {
-        const is_jp_client = urlLang() === 'ja' || get('residence') === 'jp';
+        const is_jp_client = get('residence') === 'jp';
         State.set('is_jp_client', is_jp_client); // accessible by files that cannot call Client
     };
 

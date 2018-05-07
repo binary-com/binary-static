@@ -31,7 +31,6 @@ const affiliates_signup_language_map = { // object used instead of array to prev
     ZH_CN: 10,
     ZH_TW: 11,
     TH   : 12,
-    JA   : 13,
 };
 exports.getAffiliateSignupLanguage = (lang = '') => (affiliates_signup_language_map[lang.toUpperCase()] || 0);
 

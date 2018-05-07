@@ -146,13 +146,9 @@ const PersonalDetails = (() => {
 
     const displayGetSettingsData = (data, populate = true) => {
         let el_key,
-            el_lbl_key,
             data_key;
         Object.keys(data).forEach((key) => {
-            el_key     = document.getElementById(key);
-            el_lbl_key = document.getElementById(`lbl_${key}`);
-            // prioritise labels for japan account
-            el_key = is_jp_client ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
+            el_key = document.getElementById(key) || document.getElementById(`lbl_${key}`);
             if (el_key) {
                 data_key             = /format_money/.test(el_key.className) && data[key] !== null ? formatMoney(currency, data[key]) : (data[key] || '');
                 editable_fields[key] = data_key;

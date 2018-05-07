@@ -13,7 +13,7 @@ import EthicsLiability from './ethics_liability.jsx';
 import Affiliates from './affiliates.jsx';
 
 const TAC = () => (
-    <div className='invisible ja-show'>
+    <div>
         <TabContainer className='static_full tab-with-subsection' >
             <TabsSubtabs
                 className='static_full'

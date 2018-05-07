@@ -167,15 +167,6 @@ describe('Client', () => {
             expect(ugprade_info.upgrade_link).to.eq('new_account/maltainvestws');
             expect(ugprade_info.is_current_path).to.eq(false);
         });
-        it('returns as expected for accounts that can upgrade to japan', () => {
-            State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ 'japan' ]);
-            const ugprade_info = Client.getUpgradeInfo();
-            expect(ugprade_info.can_upgrade).to.eq(true);
-            expect(ugprade_info.type).to.eq('real');
-            expect(ugprade_info.can_open_multi).to.eq(false);
-            expect(ugprade_info.upgrade_link).to.eq('new_account/japanws');
-            expect(ugprade_info.is_current_path).to.eq(false);
-        });
         it('returns as expected for multi account opening', () => {
             State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ 'costarica' ]);
             Client.set('landing_company_shortcode', 'costarica');
@@ -281,11 +272,6 @@ describe('Client', () => {
     describe('.defaultRedirectUrl()', () => {
         it('redirects to trading for non-jp clients', () => {
             expect(Client.defaultRedirectUrl()).to.eq(Url.urlFor('trading'));
-        });
-        it('redirects to multi_barriers_trading for jp clients', () => {
-            setURL(`${Url.websiteUrl()}ja/home-jp.html`);
-            Client.setJPFlag();
-            expect(Client.defaultRedirectUrl()).to.eq(Url.urlFor('multi_barriers_trading'));
         });
     });
 

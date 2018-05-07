@@ -126,7 +126,6 @@ const MBPrice = (() => {
 
                 const order = contract_types[contract_type].order;
                 const el_buy  = el_row.querySelectorAll('.buy-price button')[order];
-                const el_sell = el_row.querySelectorAll('.sell-price .price-wrapper')[order];
 
                 el_buy.setAttribute('data-barrier', barrier);
                 el_buy.setAttribute('data-contract_type', contract_type);
@@ -136,14 +135,9 @@ const MBPrice = (() => {
                     dyn: el_buy.getElementsByClassName('dynamics')[0],
                     val: el_buy.getElementsByClassName('value')[0],
                 };
-                el_rows[barrier][contract_type].sell = {
-                    sell: el_sell,
-                    val : el_sell.getElementsByClassName('value')[0],
-                };
 
                 if (Client.isJPClient()) {
-                    el_rows[barrier][contract_type].buy.base_value  = el_buy.getElementsByClassName('base-value')[0];
-                    el_rows[barrier][contract_type].sell.base_value = el_sell.getElementsByClassName('base-value')[0];
+                    el_rows[barrier][contract_type].buy.base_value = el_buy.getElementsByClassName('base-value')[0];
                 }
 
                 updatePriceRow(getValues(prices[barrier][contract_type], contract_type));

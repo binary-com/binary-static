@@ -77,11 +77,11 @@ const PersonalDetails = () => (
                 </FormRow>
             </Fieldset>
 
-            <Fieldset id='tax_information_form' className='invisible RealAcc ja-hide' legend={it.L('Tax Information')}>
+            <Fieldset id='tax_information_form' className='invisible RealAcc' legend={it.L('Tax Information')}>
                 <TaxInformationForm />
             </Fieldset>
 
-            <Fieldset id='address_form' className='invisible RealAcc ja-hide' legend={it.L('Address')}>
+            <Fieldset id='address_form' className='invisible RealAcc' legend={it.L('Address')}>
                 <p className='hint'>{it.L('Please enter your full address to avoid authentication delays.')}</p>
                 <AddressLine1 no_hint />
                 <AddressLine2 />

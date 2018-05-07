@@ -1,11 +1,10 @@
-const Cookies             = require('js-cookie');
-const KnowledgeTestUI     = require('./knowledge_test.ui');
-const BinaryPjax          = require('../../base/binary_pjax');
-const Client              = require('../../base/client');
-const toJapanTimeIfNeeded = require('../../base/clock').toJapanTimeIfNeeded;
-const Header              = require('../../base/header');
-const BinarySocket        = require('../../base/socket');
-const localize            = require('../../../_common/localize').localize;
+const Cookies         = require('js-cookie');
+const KnowledgeTestUI = require('./knowledge_test.ui');
+const BinaryPjax      = require('../../base/binary_pjax');
+const Client          = require('../../base/client');
+const Header          = require('../../base/header');
+const BinarySocket    = require('../../base/socket');
+const localize        = require('../../../_common/localize').localize;
 
 const KnowledgeTest = (() => {
     const submitted        = {};
@@ -214,8 +213,8 @@ const KnowledgeTest = (() => {
 
     const showDisallowedMsg = jp_status => (
         showMessage(localize('{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].', [
-            toJapanTimeIfNeeded(+jp_status.next_test_epoch),
-            toJapanTimeIfNeeded(+jp_status.last_test_epoch),
+            +jp_status.next_test_epoch,
+            +jp_status.last_test_epoch,
         ]))
     );
 

@@ -215,7 +215,7 @@ const MetaTraderConfig = (() => {
                         account_type    : accounts_info[acc_type].account_type,
                         email           : Client.get('email'),
                         leverage        : accounts_info[acc_type].max_leverage,
-                        mt5_account_type: accounts_info[acc_type].mt5_account_type.replace(/mamm(\_)*/, '') || 'standard', // for gaming just send standard to distinguish
+                        mt5_account_type: accounts_info[acc_type].mt5_account_type.replace(/mamm(_)*/, '') || 'standard', // for gaming just send standard to distinguish
                     }
                 ),
         },

@@ -23,29 +23,6 @@ const Clock = (() => {
         });
     };
 
-    const toJapanTimeIfNeeded = (gmt_time_str, show_time_zone, hide_seconds) => {
-        let time;
-
-        if (typeof gmt_time_str === 'number') {
-            time = moment.utc(gmt_time_str * 1000);
-        } else if (gmt_time_str) {
-            time = moment.utc(gmt_time_str, 'YYYY-MM-DD HH:mm:ss');
-        }
-
-        if (!time || !time.isValid()) {
-            return null;
-        }
-
-        let offset    = '+00:00';
-        let time_zone = 'Z';
-        if (isJPClient()) {
-            offset    = '+09:00';
-            time_zone = 'zZ';
-        }
-
-        return time.utcOffset(offset).format(`YYYY-MM-DD HH:mm${hide_seconds ? '' : ':ss'}${show_time_zone ? ` ${time_zone}` : ''}`);
-    };
-
     const getTime = () => {
         client_time = moment().valueOf();
         BinarySocket.send({ time: 1 }).then((response) => {
@@ -81,12 +58,8 @@ const Clock = (() => {
         const updateTime = () => {
             window.time = moment((server_time_at_response + moment().valueOf()) - client_time_at_response).utc();
             const time_str = `${window.time.format('YYYY-MM-DD HH:mm:ss')} GMT`;
-            if (isJPClient()) {
-                elementInnerHtml(el_clock, toJapanTimeIfNeeded(time_str, 1, 1));
-            } else {
-                elementInnerHtml(el_clock, time_str);
-                showLocalTimeOnHover('#gmt-clock');
-            }
+            elementInnerHtml(el_clock, time_str);
+            showLocalTimeOnHover('#gmt-clock');
 
             if (typeof view_popup_timer_func === 'function') {
                 view_popup_timer_func();
@@ -99,7 +72,6 @@ const Clock = (() => {
     return {
         startClock,
         showLocalTimeOnHover,
-        toJapanTimeIfNeeded,
 
         setViewPopupTimer: (func) => { view_popup_timer_func = func; },
     };
