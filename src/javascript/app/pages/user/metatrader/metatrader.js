@@ -54,14 +54,16 @@ const MetaTrader = (() => {
                 const title            = localize(`${toTitleCase(type)} ${company_info.title}`);
                 const is_demo          = type === 'demo';
 
-                accounts_info[`${type}_${mt_company[company]}${mt5_account_type ? `_${mt5_account_type}` : ''}`] = {
-                    title,
-                    is_demo,
-                    mt5_account_type,
-                    account_type: is_demo ? 'demo' : company,
-                    max_leverage: company_info.max_leverage,
-                    short_title : company_info.title,
-                };
+                if (!(is_demo && company_info.is_real_only)) {
+                    accounts_info[`${type}_${mt_company[company]}${mt5_account_type ? `_${mt5_account_type}` : ''}`] = {
+                        title,
+                        is_demo,
+                        mt5_account_type,
+                        account_type: is_demo ? 'demo' : company,
+                        max_leverage: company_info.max_leverage,
+                        short_title : company_info.title,
+                    };
+                }
             });
         });
     };
@@ -83,9 +85,16 @@ const MetaTrader = (() => {
                 const acc_type = Client.getMT5AccountType(obj.group);
                 accounts_info[acc_type].info = { login: obj.login };
                 getAccountDetails(obj.login, acc_type);
+                setMAM(obj.login, acc_type);
             });
 
-            Client.set('mt5_account', getDefaultAccount());
+            const current_acc_type = getDefaultAccount();
+            Client.set('mt5_account', current_acc_type);
+            if (getPropertyValue(accounts_info, [current_acc_type, 'info', 'login'])) {
+                setMAM(accounts_info[current_acc_type].info.login, current_acc_type).then(() => { // promise to avoid race condition
+                    MetaTraderUI.showHideMAM(current_acc_type);
+                });
+            }
 
             // Update types with no account
             Object.keys(accounts_info)
@@ -93,6 +102,23 @@ const MetaTrader = (() => {
                 .forEach((acc_type) => { MetaTraderUI.updateAccount(acc_type); });
         });
     };
+
+    const setMAM = (login, acc_type) => (
+        new Promise((resolve) => {
+            if (/mam/.test(acc_type)) {
+                BinarySocket.send({ mt5_mamm: 1, login }).then((response) => {
+                    if (getPropertyValue(response, ['mt5_mamm', 'manager_id'])) {
+                        accounts_info[acc_type].manager_id = response.mt5_mamm.manager_id;
+                    } else {
+                        delete accounts_info[acc_type].manager_id;
+                    }
+                    resolve();
+                });
+            } else {
+                resolve();
+            }
+        })
+    );
 
     const getDefaultAccount = () => {
         let default_account = '';
@@ -126,9 +152,9 @@ const MetaTrader = (() => {
             }
         });
 
-        if (action !== 'verify_password_reset') {
+        if (!/^(verify_password_reset|revoke_mam)$/.test(action)) {
             // set main command
-            req[`mt5_${action}`] = 1;
+            req[`mt5_${action.replace(action === 'new_account_mam' ? '_mam' : '', '')}`] = 1;
         }
 
         // add additional fields
@@ -179,6 +205,11 @@ const MetaTrader = (() => {
                         }
                         if (typeof actions_info[action].onSuccess === 'function') {
                             actions_info[action].onSuccess(response, MetaTraderUI.$form());
+                        }
+                        if (/^(revoke_mam|new_account_mam)/.test(action)) {
+                            setMAM(login, acc_type).then(() => {
+                                MetaTraderUI.showHideMAM(acc_type);
+                            });
                         }
                     }
                     MetaTraderUI.enableButton(action, response);
