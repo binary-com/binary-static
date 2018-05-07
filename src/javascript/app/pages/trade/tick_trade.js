@@ -175,28 +175,28 @@ const TickDisplay = (() => {
         const barrier_type = contract_category.match('asian') ? 'asian' : 'static';
 
         if (barrier_type === 'static') {
-            const barrier_tick = applicable_ticks[0];
+            const first_quote = applicable_ticks[0].quote;
+            let barrier_quote = first_quote;
 
             if (barrier) {
-                let final_barrier = barrier_tick.quote + parseFloat(barrier);
+                let final_barrier = barrier_quote + parseFloat(barrier);
                 // sometimes due to rounding issues, result is 1.009999 while it should
                 // be 1.01
                 final_barrier = Number(`${Math.round(`${final_barrier}e${display_decimals}`)}e-${display_decimals}`);
-
-                barrier_tick.quote = final_barrier;
+                barrier_quote = final_barrier;
             } else if (abs_barrier) {
-                barrier_tick.quote = parseFloat(abs_barrier);
+                barrier_quote = parseFloat(abs_barrier);
             }
 
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-barrier',
-                value : barrier_tick.quote,
-                label : { text: `Barrier (${barrier_tick.quote})`, align: 'center' },
+                value : barrier_quote,
+                label : { text: `Barrier (${barrier_quote})`, align: 'center' },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
             });
-            contract_barrier = barrier_tick.quote;
+            contract_barrier = barrier_quote;
             set_barrier      = false;
         }
 
@@ -249,7 +249,7 @@ const TickDisplay = (() => {
         // TODO: handle touchnotouch
 
         if (contract_sentiment === 'up' && exit_spot > contract_barrier
-            && contract_sentiment === 'down' && exit_spot < contract_barrier) {
+            || contract_sentiment === 'down' && exit_spot < contract_barrier) {
             win();
         } else {
             lose();
