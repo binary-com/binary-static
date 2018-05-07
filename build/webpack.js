@@ -80,7 +80,7 @@ module.exports = function (grunt) {
             path         : path.resolve(__dirname, `../${global.dist}/js/`),
             filename     : '[name].js',
             chunkFilename: '[name]_[chunkhash].min.js',
-            publicPath   : `${isProduction ? '' : '/binary-static'}${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}/js/`,
+            publicPath   : `${isProduction || grunt.file.exists(`${process.cwd()}/scripts/CNAME`) ? '' : '/binary-static'}${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}/js/`,
         },
         module: {
             loaders: [
