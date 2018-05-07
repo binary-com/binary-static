@@ -149,13 +149,18 @@ const Purchase = (() => {
                 }
             }
 
+            let category = sessionStorage.getItem('formname');
+            if (['risefall', 'higherlower'].includes(category)) {
+                category = 'callput';
+            }
+
             TickDisplay.init({
                 contract_sentiment,
                 symbol              : passthrough.symbol,
                 barrier             : ['higherlower', 'touchnotouch'].includes(sessionStorage.getItem('formname')) ? passthrough.barrier : undefined,
                 number_of_ticks     : passthrough.duration,
                 previous_tick_epoch : receipt.start_time,
-                contract_category   : sessionStorage.getItem('formname'),
+                contract_category   : category,
                 display_symbol      : Symbols.getName(passthrough.symbol),
                 contract_start      : receipt.start_time,
                 display_decimals    : decimal_points,
