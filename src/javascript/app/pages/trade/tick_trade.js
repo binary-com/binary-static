@@ -154,13 +154,15 @@ const TickDisplay = (() => {
         }
     };
 
-    const applyChartBackgroundColor = (tick) => {
+    const applyChartBackgroundColor = (tick, has_touched) => {
         if (!show_contract_result) return;
 
         const chart_container = $('#tick_chart');
 
         const winning = contract_sentiment === 'up' && tick.quote > contract_barrier
-            || contract_sentiment === 'down' && tick.quote < contract_barrier;
+            || contract_sentiment === 'down' && tick.quote < contract_barrier
+            || contract_sentiment === 'touch' && hasTouched()
+            || contract_sentiment === 'notouch' && !hasTouched();
 
         chart_container.css('background-color', winning
             ? 'rgba(46,136,54,0.198039)'
@@ -249,7 +251,9 @@ const TickDisplay = (() => {
         // TODO: handle touchnotouch
 
         if (contract_sentiment === 'up' && exit_spot > contract_barrier
-            || contract_sentiment === 'down' && exit_spot < contract_barrier) {
+            || contract_sentiment === 'down' && exit_spot < contract_barrier
+            || contract_sentiment === 'touch' && hasTouched()
+            || contract_sentiment === 'notouch' && !hasTouched()) {
             win();
         } else {
             lose();
@@ -268,6 +272,13 @@ const TickDisplay = (() => {
         contract_start_moment = moment(contract_start_ms).utc();
         counter               = 0;
         applicable_ticks      = [];
+    };
+
+    const hasTouched = () => {
+        return !(
+            applicable_ticks.every(tick => tick.quote > contract_barrier)
+            || applicable_ticks.every(tick => tick.quote < contract_barrier)
+        );
     };
 
     const dispatch = (data) => {
@@ -326,24 +337,9 @@ const TickDisplay = (() => {
             epoches = data.history.times;
         }
 
-        // calculate if touch happend, call evaluateContractOutcome on touch
-        // barrier is between first and last ticks -> touch
-        const first_quote = applicable_ticks.length && applicable_ticks[0].quote,
-              last_quote  = data && data.tick && data.tick.quote;
-
-        const has_touched = contract_barrier
-            && first_quote
-            && last_quote
-            && (
-                first_quote < contract_barrier && last_quote >= contract_barrier
-             || first_quote > contract_barrier && last_quote <= contract_barrier
-            );
-
-        // console.log(has_touched);
-
         const has_reached_end = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
 
-        if (has_reached_end) {
+        if (has_reached_end || contract_category === 'touchnotouch' && hasTouched()) {
             evaluateContractOutcome();
             if (responseID) {
                 BinarySocket.send({ forget: responseID });
