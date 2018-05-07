@@ -560,7 +560,7 @@ const texts = [
     'Please set the [_1]currency[_2] of your account.',
     'Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.',
     'Please set [_1]country of residence[_2] before upgrading to a real-money account.',
-    'Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
+    'Trading and deposits have been disabled on your account. Please complete the [_1]financial assessment form[_2] to resolve this issue.',
     'Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
     'Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
     'Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
