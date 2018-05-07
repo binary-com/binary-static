@@ -31,7 +31,7 @@ const urls = [
     ['open-positions/job-details',         'monthly', 0.80],
 
     ['affiliate/signup',                   'monthly', 0.80],
-    ['charity',                            'monthly', 0.8],
+    ['charity',                            'monthly', 0.80],
     ['legal/us_patents',                   'monthly', 0.80],
     ['regulation',                         'monthly', 0.80, 'id'],
     ['responsible-trading',                'monthly', 0.80],
