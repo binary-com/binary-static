@@ -305,11 +305,6 @@ const texts = [
     // authenticate
     'This feature is not relevant to virtual-money accounts.',
 
-    // japan account opening
-    '{JAPAN ONLY}Take knowledge test',
-    '{JAPAN ONLY}Your Application is Being Processed.',
-    '{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.',
-
     // contract types display names
     'Asian Up',
     'Asian Down',

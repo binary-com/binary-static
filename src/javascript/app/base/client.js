@@ -381,14 +381,7 @@ const Client = (() => {
 
     const hasCostaricaAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
-    const defaultRedirectUrl = () => urlFor(isJPClient() ? 'multi_barriers_trading' : 'trading');
-
-    const setJPFlag = () => {
-        const is_jp_client = get('residence') === 'jp';
-        State.set('is_jp_client', is_jp_client); // accessible by files that cannot call Client
-    };
-
-    const isJPClient = () => State.get('is_jp_client');
+    const defaultRedirectUrl = () => urlFor('trading');
 
     return {
         init,
@@ -419,8 +412,6 @@ const Client = (() => {
         canTransferFunds,
         hasCostaricaAccount,
         defaultRedirectUrl,
-        setJPFlag,
-        isJPClient,
     };
 })();
 

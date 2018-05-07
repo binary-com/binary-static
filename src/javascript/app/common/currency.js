@@ -1,6 +1,5 @@
 const getLanguage      = require('../../_common/language').get;
 const localize         = require('../../_common/localize').localize;
-const State            = require('../../_common/storage').State;
 const getPropertyValue = require('../../_common/utility').getPropertyValue;
 
 let currencies_config = {};
@@ -41,11 +40,7 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const isJPClient = () => JSON.parse(State.get('is_jp_client'));
-
-const getFiatDecimalPlaces = () => isJPClient() ? 0 : 2;
-
-const calcDecimalPlaces = (currency) => isCryptocurrency(currency) ? 8 : getFiatDecimalPlaces();
+const calcDecimalPlaces = (currency) => isCryptocurrency(currency) ? 8 : 2;
 
 const getDecimalPlaces = (currency) => (
     // need to check currencies_config[currency] exists instead of || in case of 0 value
@@ -70,10 +65,8 @@ const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyVa
 
 const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
 
-const getFiatPayout = () => isJPClient() ? 1 : 10;
-
 const getMinPayout = currency => (
-    isCryptocurrency(currency) ? getPropertyValue(currencies_config, [currency, 'stake_default']) : getFiatPayout()
+    isCryptocurrency(currency) ? getPropertyValue(currencies_config, [currency, 'stake_default']) : 10
 );
 
 const getCurrencyList = (currencies) => {
