@@ -537,9 +537,12 @@ const texts = [
     'Real Standard',
     'Real Advanced',
     'Real Volatility Indices',
+    'MAM Advanced',
+    'MAM Volatility Indices',
     'Change Password',
     'Demo Accounts',
     'Real-Money Accounts',
+    'MAM Accounts',
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
     '[_1] Account [_2]',
     'Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.',
@@ -548,6 +551,8 @@ const texts = [
     'Verify Reset Password',
     'Reset Password',
     'Please check your email for further instructions.',
+    'Revoke MAM',
+    'Manager successfully revoked',
 
     // account_transfer
     'Min',
