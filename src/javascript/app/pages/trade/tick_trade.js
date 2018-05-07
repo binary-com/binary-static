@@ -154,7 +154,7 @@ const TickDisplay = (() => {
         }
     };
 
-    const applyChartBackgroundColor = (tick, has_touched) => {
+    const applyChartBackgroundColor = (tick) => {
         if (!show_contract_result) return;
 
         const chart_container = $('#tick_chart');
