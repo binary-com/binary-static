@@ -273,6 +273,8 @@ const TickDisplay = (() => {
     };
 
     const hasTouched = () => {
+        if (!contract_barrier) return false;
+
         return !(
             applicable_ticks.every(tick => tick.quote > contract_barrier)
             || applicable_ticks.every(tick => tick.quote < contract_barrier)
@@ -336,8 +338,9 @@ const TickDisplay = (() => {
         }
 
         const has_reached_end = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
+        const has_touched = contract_category === 'touchnotouch' && hasTouched();
 
-        if (has_reached_end || contract_category === 'touchnotouch' && hasTouched()) {
+        if (has_reached_end || has_touched) {
             evaluateContractOutcome();
             if (responseID) {
                 BinarySocket.send({ forget: responseID });
@@ -363,8 +366,19 @@ const TickDisplay = (() => {
                     applicable_ticks.push(tick);
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
+
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
                         x_indicators[indicator_key].index = counter;
+                        add(x_indicators[indicator_key]);
+                    }
+
+                    // mark exit spot if touched
+                    if (contract_category === 'touchnotouch' && hasTouched()) {
+                        x_indicators[indicator_key] = {
+                            index: counter,
+                            label: 'Exit Spot',
+                            id   : 'exit_tick',
+                        };
                         add(x_indicators[indicator_key]);
                     }
 
