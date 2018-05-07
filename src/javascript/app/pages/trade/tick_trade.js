@@ -248,8 +248,6 @@ const TickDisplay = (() => {
         const exit_tick_index = applicable_ticks.length - 1;
         const exit_spot       = applicable_ticks[exit_tick_index].quote;
 
-        // TODO: handle touchnotouch
-
         if (contract_sentiment === 'up' && exit_spot > contract_barrier
             || contract_sentiment === 'down' && exit_spot < contract_barrier
             || contract_sentiment === 'touch' && hasTouched()
