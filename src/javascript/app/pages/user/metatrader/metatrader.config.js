@@ -11,11 +11,13 @@ const urlFor       = require('../../../../_common/url').urlFor;
 const MetaTraderConfig = (() => {
     const mt_companies = {
         financial: {
-            standard: { mt5_account_type: 'standard', max_leverage: 500, title: 'Standard' },
-            advanced: { mt5_account_type: 'advanced', max_leverage: 100, title: 'Advanced' },
+            standard: { mt5_account_type: 'standard',      max_leverage: 500, title: 'Standard' },
+            advanced: { mt5_account_type: 'advanced',      max_leverage: 100, title: 'Advanced' },
+            mamm    : { mt5_account_type: 'mamm_advanced', max_leverage: 100, title: 'MAM Advanced', is_real_only: 1 },
         },
         gaming: {
-            volatility: { mt5_account_type: '', max_leverage: 500, title: 'Volatility Indices' },
+            volatility: { mt5_account_type: '',     max_leverage: 500, title: 'Volatility Indices' },
+            mamm      : { mt5_account_type: 'mamm', max_leverage: 500, title: 'MAM Volatility Indices', is_real_only: 1 },
         },
     };
 
@@ -34,34 +36,43 @@ const MetaTraderConfig = (() => {
         (+getMinMT5TransferValue(currency) * 20000).toFixed(Currency.getDecimalPlaces(currency))
     );
 
+    const newAccCheck = (acc_type, message_selector) => (
+        new Promise((resolve) => {
+            if (accounts_info[acc_type].is_demo) {
+                resolve();
+            } else if (Client.get('is_virtual')) {
+                resolve(needsRealMessage());
+            } else if (accounts_info[acc_type].account_type === 'financial') {
+                BinarySocket.wait('get_account_status').then((response_get_account_status) => {
+                    const $message = $messages.find('#msg_real_financial').clone();
+                    let is_ok = true;
+                    if (/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status)) {
+                        $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`);
+                        is_ok = false;
+                    }
+                    if (response_get_account_status.get_account_status.prompt_client_to_authenticate) {
+                        $message.find('.authenticate').setVisibility(1);
+                        is_ok = false;
+                    }
+                    if (is_ok) {
+                        resolve();
+                    } else {
+                        $message.find(message_selector).setVisibility(1);
+                        resolve($message.html());
+                    }
+                });
+            } else {
+                resolve();
+            }
+        })
+    );
+
     const actions_info = {
         new_account: {
             title        : localize('Sign up'),
             login        : response => response.mt5_new_account.login,
             prerequisites: acc_type => (
-                new Promise((resolve) => {
-                    if (accounts_info[acc_type].is_demo) {
-                        resolve();
-                    } else if (Client.get('is_virtual')) {
-                        resolve(needsRealMessage());
-                    } else if (accounts_info[acc_type].account_type === 'financial') {
-                        BinarySocket.wait('get_account_status').then((response_get_account_status) => {
-                            const $message = $messages.find('#msg_real_financial').clone();
-                            let is_ok = true;
-                            if (/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status)) {
-                                $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`);
-                                is_ok = false;
-                            }
-                            if (response_get_account_status.get_account_status.prompt_client_to_authenticate) {
-                                $message.find('.authenticate').setVisibility(1);
-                                is_ok = false;
-                            }
-                            resolve(is_ok ? '' : $message.html());
-                        });
-                    } else {
-                        resolve();
-                    }
-                })
+                newAccCheck(acc_type, '#msg_metatrader_account')
             ),
             pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
@@ -84,6 +95,16 @@ const MetaTraderConfig = (() => {
                 GTM.mt5NewAccount(response);
             },
         },
+        new_account_mam: {
+            title        : localize('Sign up'),
+            login        : response => response.mt5_new_account.login,
+            prerequisites: acc_type => (
+                newAccCheck(acc_type, '#msg_mam_account')
+            ),
+            onSuccess: (response) => {
+                GTM.mt5NewAccount(response);
+            },
+        },
         password_change: {
             title        : localize('Change Password'),
             success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]),
@@ -96,6 +117,11 @@ const MetaTraderConfig = (() => {
             title               : localize('Verify Reset Password'),
             success_msg         : () => localize('Please check your email for further instructions.'),
             success_msg_selector: '#frm_verify_password_reset',
+        },
+        revoke_mam: {
+            title        : localize('Revoke MAM'),
+            success_msg  : () => localize('Manager successfully revoked'),
+            prerequisites: () => new Promise(resolve => resolve('')),
         },
         deposit: {
             title      : localize('Deposit'),
@@ -186,6 +212,23 @@ const MetaTraderConfig = (() => {
                         mt5_account_type: accounts_info[acc_type].mt5_account_type,
                     } : {})),
         },
+        new_account_mam: {
+            txt_name         : { id: '#txt_mam_name',          request_field: 'name' },
+            txt_manager_id   : { id: '#txt_manager_id',        request_field: 'manager_id' },
+            txt_main_pass    : { id: '#txt_mam_main_pass',     request_field: 'mainPassword' },
+            txt_re_main_pass : { id: '#txt_mam_re_main_pass' },
+            txt_investor_pass: { id: '#txt_mam_investor_pass', request_field: 'investPassword' },
+            chk_tnc          : { id: '#chk_tnc' },
+            additional_fields:
+                acc_type => (
+                    {
+                        account_type    : accounts_info[acc_type].account_type,
+                        email           : Client.get('email'),
+                        leverage        : accounts_info[acc_type].max_leverage,
+                        mt5_account_type: accounts_info[acc_type].mt5_account_type.replace(/mamm(_)*/, '') || 'standard', // for gaming just send standard to distinguish
+                    }
+                ),
+        },
         password_change: {
             ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type' },
             txt_old_password   : { id: '#txt_old_password',  request_field: 'old_password' },
@@ -213,6 +256,14 @@ const MetaTraderConfig = (() => {
                     type        : 'mt5_password_reset',
                 }),
         },
+        revoke_mam: {
+            additional_fields:
+                acc_type => ({
+                    mt5_mamm: 1,
+                    login   : accounts_info[acc_type].info.login,
+                    action  : 'revoke',
+                }),
+        },
         deposit: {
             txt_amount       : { id: '#txt_amount_deposit', request_field: 'amount' },
             additional_fields:
@@ -232,40 +283,44 @@ const MetaTraderConfig = (() => {
         },
     };
 
-    const validations = () => {
-        const client_currency = Client.get('currency');
-        const max_withdrawal  = getMaxMT5TransferValue(client_currency);
-        return {
-            new_account: [
-                { selector: fields.new_account.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-                { selector: fields.new_account.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
-                { selector: fields.new_account.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account.txt_main_pass.id }]] },
-                { selector: fields.new_account.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
-            ],
-            password_change: [
-                { selector: fields.password_change.ddl_password_type.id,   validations: ['req'] },
-                { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },
-                { selector: fields.password_change.txt_new_password.id,    validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
-                { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
-            ],
-            password_reset: [
-                { selector: fields.password_reset.ddl_password_type.id,   validations: ['req'] },
-                { selector: fields.password_reset.txt_new_password.id,    validations: ['req', ['password', 'mt']], re_check_field: fields.password_reset.txt_re_new_password.id },
-                { selector: fields.password_reset.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_reset.txt_new_password.id }]] },
-            ],
-            deposit: [
-                { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(client_currency), max: Math.min(State.getResponse('get_limits.remainder') || max_withdrawal, max_withdrawal), decimals: Currency.getDecimalPlaces(client_currency) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
-            ],
-            withdrawal: [
-                { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
-                { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => getMaxMT5TransferValue(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
-            ],
-        };
-    };
-
-    const getCurrency = acc_type => accounts_info[acc_type].info.currency;
+    const validations = () => ({
+        new_account: [
+            { selector: fields.new_account.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: fields.new_account.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
+            { selector: fields.new_account.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account.txt_main_pass.id }]] },
+            { selector: fields.new_account.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
+        ],
+        new_account_mam: [
+            { selector: fields.new_account_mam.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: fields.new_account_mam.txt_manager_id.id,    validations: ['req', ['length', { min: 0, max: 15 }]] },
+            { selector: fields.new_account_mam.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
+            { selector: fields.new_account_mam.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account_mam.txt_main_pass.id }]] },
+            { selector: fields.new_account_mam.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account_mam.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
+            { selector: fields.new_account_mam.chk_tnc.id,           validations: ['req'] },
+        ],
+        password_change: [
+            { selector: fields.password_change.ddl_password_type.id,   validations: ['req'] },
+            { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },
+            { selector: fields.password_change.txt_new_password.id,    validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
+            { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
+        ],
+        password_reset: [
+            { selector: fields.password_reset.ddl_password_type.id,   validations: ['req'] },
+            { selector: fields.password_reset.txt_new_password.id,    validations: ['req', ['password', 'mt']], re_check_field: fields.password_reset.txt_re_new_password.id },
+            { selector: fields.password_reset.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_reset.txt_new_password.id }]] },
+        ],
+        deposit: [
+            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(Client.get('currency')), max: Math.min(State.getResponse('get_limits.remainder') || getMaxMT5TransferValue(Client.get('currency')), getMaxMT5TransferValue(Client.get('currency'))).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
+        ],
+        withdrawal: [
+            { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
+            { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => getMaxMT5TransferValue(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
+        ],
+    });
 
     const hasAccount = acc_type => (accounts_info[acc_type] || {}).info;
+
+    const getCurrency = acc_type => accounts_info[acc_type].info.currency;
 
     return {
         mt_companies,
@@ -274,8 +329,8 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
-        getCurrency,
         hasAccount,
+        getCurrency,
         setMessages   : ($msg) => { $messages = $msg; },
         getAllAccounts: () => (
             Object.keys(accounts_info)
