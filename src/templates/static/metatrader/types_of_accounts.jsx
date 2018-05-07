@@ -55,6 +55,20 @@ const TypesOfAccounts = () => (
             title={it.L('Volatility Indices')}
             text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
         />
+        <Box
+            image='advanced'
+            title={it.L('MAM Advanced*')}
+            text={it.L('The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same.')}
+        />
+        <Box
+            image='volatility_indices'
+            title={it.L('MAM Volatility Indices*')}
+            text={it.L('The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
+        />
+
+        <div className='gr-padding-10 gr-child'>
+            <a href={it.url_for('multiple-accounts-manager')} target='_blank'>*&nbsp;{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
+        </div>
 
         <div className='gr-padding-30' />
 
@@ -75,7 +89,7 @@ const TypesOfAccounts = () => (
                         [{ text: <Row number={6}  text={it.L('Minimum deposit')} />},        { text: it.L('No') },                     { text: it.L('No') },                     { text: it.L('No') }],
                         [{ text: <Row number={7}  text={it.L('Margin call')} />},            { text: it.L('150%') },                   { text: it.L('150%') },                   { text: it.L('100%') }],
                         [{ text: <Row number={8}  text={it.L('Stop out level')} />},         { text: it.L('75%') },                    { text: it.L('75%') },                    { text: it.L('50%') }],
-                        [{ text: <Row number={9}  text={it.L('Number of assets')} />},       { text: it.L('60+') },                    { text: it.L('80+') },                    { text: it.L('8') }],
+                        [{ text: <Row number={9}  text={it.L('Number of assets')} />},       { text: it.L('60+') },                    { text: it.L('70+') },                    { text: it.L('8') }],
                         [{ text: <Row number={10} text={it.L('Maximum ticket size')} />},    { text: it.L('10 lots') },                { text: it.L('50 lots') },                { text: it.L('30 lots') }],
                         [{ text: <Row number={11} text={it.L('Minimum ticket size')} />},    { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') }],
                         [{ text: <Row number={12} text={it.L('Step size')} />},              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') }],
