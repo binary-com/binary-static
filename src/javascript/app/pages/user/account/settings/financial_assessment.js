@@ -38,7 +38,7 @@ const FinancialAssessment = (() => {
         if (isEmptyObject(financial_assessment)) {
             BinarySocket.wait('get_account_status').then(() => {
                 const risk_classification = State.getResponse('get_account_status.risk_classification');
-                if (risk_classification === 'high') {
+                if (risk_classification === 'high' && /financial_assessment_not_complete/.test(State.getResponse('get_account_status.status'))) {
                     $('#high_risk_classification').setVisibility(1);
                 }
             });
