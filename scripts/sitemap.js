@@ -17,11 +17,8 @@ const urls = [
     // path (without .html),               changefreq, priority, exclude languages
     // ==================== Section: "static" ====================
     ['home',                               'monthly', 1.00],
-    ['home-jp',                            'monthly', 1.00, 'NOT-ja'],
     ['tour',                               'monthly', 0.80],
-    ['tour-jp',                            'monthly', 0.80, 'NOT-ja'],
     ['why-us',                             'monthly', 0.80],
-    ['why-us-jp',                          'monthly', 0.80, 'NOT-ja'],
     ['platforms',                          'monthly', 0.80],
 
     ['about-us',                           'monthly', 0.80],
@@ -34,15 +31,11 @@ const urls = [
     ['open-positions/job-details',         'monthly', 0.80],
 
     ['affiliate/signup',                   'monthly', 0.80],
-    ['affiliate/signup-jp',                'monthly', 0.80, 'NOT-ja'],
     ['charity',                            'monthly', 0.8],
-    ['company-profile',                    'monthly', 0.80, 'NOT-ja'],
     ['legal/us_patents',                   'monthly', 0.80],
     ['regulation',                         'monthly', 0.80, 'id'],
     ['responsible-trading',                'monthly', 0.80],
-    ['service-announcements',              'monthly', 0.80, 'NOT-ja'],
     ['terms-and-conditions',               'monthly', 0.80],
-    ['terms-and-conditions-jp',            'monthly', 0.80, 'NOT-ja'],
 //    ['user/browser-support',               'monthly', 0.80],
 
     ['liquidity-solutions',                'monthly', 0.80],
@@ -58,8 +51,6 @@ const urls = [
     ['get-started/cryptocurrencies',       'monthly', 0.80],
     ['get-started/forex',                  'monthly', 0.80],
     ['get-started/metals',                 'monthly', 0.80],
-
-    ['get-started-jp',                     'monthly', 0.80, 'NOT-ja'],
 
     ['metatrader/contract-specifications', 'monthly', 0.80],
     ['metatrader/download',                'monthly', 0.80],

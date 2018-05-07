@@ -10,8 +10,6 @@ const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
 const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
 const getElementById      = require('../../../_common/common_functions').getElementById;
-const getLanguage         = require('../../../_common/language').get;
-const localize            = require('../../../_common/localize').localize;
 const State               = require('../../../_common/storage').State;
 const urlFor              = require('../../../_common/url').urlFor;
 const findParent          = require('../../../_common/utility').findParent;
@@ -27,11 +25,7 @@ const MBTradePage = (() => {
 
     const init = () => {
         if (/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) {
-            if (getLanguage() === 'JA') {
-                $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: localize('This page is not available in the selected language.') })));
-            } else {
-                BinaryPjax.load(urlFor('trading'));
-            }
+            BinaryPjax.load(urlFor('trading'));
             return;
         }
         if (Client.isJPClient()) {

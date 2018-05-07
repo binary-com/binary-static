@@ -11,7 +11,6 @@ exports.pages = require('./pages.js').map(p => ({
     layout       : p[2],
     title        : p[3],
     excludes     : p[4],
-    only_ja      : p[4] && /^NOT-ja,en$/.test(p[4]),
     current_route: p[0].replace(/^(.+)\//, ''),
 }));
 

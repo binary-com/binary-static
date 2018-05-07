@@ -306,28 +306,9 @@ const texts = [
     'This feature is not relevant to virtual-money accounts.',
 
     // japan account opening
-    'Japan',
-    'Questions',
-    'True',
-    'False',
-    'There was some invalid character in an input field.',
-    'Please follow the pattern 3 numbers, a dash, followed by 4 numbers.',
-    'Score',
     '{JAPAN ONLY}Take knowledge test',
-    '{JAPAN ONLY}Knowledge Test Result',
-    '{JAPAN ONLY}Knowledge Test',
-    '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.',
-    '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.',
-    '{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].',
-    '{JAPAN ONLY}Dear customer, you\'ve already completed the knowledge test, please proceed to next step.',
-    '{JAPAN ONLY}Please complete the following questions.',
-    '{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.',
-    '{JAPAN ONLY}You need to finish all 20 questions.',
-    'Weekday',
     '{JAPAN ONLY}Your Application is Being Processed.',
     '{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.',
-    'Processing your request...',
-    'Please check the above form for pending errors.',
 
     // contract types display names
     'Asian Up',
@@ -514,6 +495,7 @@ const texts = [
     'Should start with letter or number, and may contain hyphen and underscore.',
     'Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.',
     'Validate address',
+    'There was some invalid character in an input field.',
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',

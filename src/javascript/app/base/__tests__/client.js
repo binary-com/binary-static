@@ -270,7 +270,7 @@ describe('Client', () => {
     });
 
     describe('.defaultRedirectUrl()', () => {
-        it('redirects to trading for non-jp clients', () => {
+        it('redirects to trading for logged-in clients', () => {
             expect(Client.defaultRedirectUrl()).to.eq(Url.urlFor('trading'));
         });
     });
