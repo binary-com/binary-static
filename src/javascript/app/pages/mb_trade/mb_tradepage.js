@@ -9,7 +9,6 @@ const BinaryPjax          = require('../../base/binary_pjax');
 const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
 const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
-const JapanPortfolio      = require('../../japan/portfolio');
 const getElementById      = require('../../../_common/common_functions').getElementById;
 const getLanguage         = require('../../../_common/language').get;
 const localize            = require('../../../_common/localize').localize;
@@ -91,7 +90,6 @@ const MBTradePage = (() => {
     const onUnload = () => {
         cleanupChart();
         State.set('is_chart_allowed', false);
-        JapanPortfolio.hide();
         State.remove('is_mb_trading');
         events_initialized = 0;
         MBContract.onUnload();

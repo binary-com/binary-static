@@ -15,7 +15,7 @@ exports.pages = require('./pages.js').map(p => ({
     current_route: p[0].replace(/^(.+)\//, ''),
 }));
 
-exports.languages = ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'JA', 'KO', 'PL', 'PT', 'RU', 'TH', 'VI', 'ZH_CN', 'ZH_TW'];
+exports.languages = ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'KO', 'PL', 'PT', 'RU', 'TH', 'VI', 'ZH_CN', 'ZH_TW'];
 
 const affiliates_signup_language_map = { // object used instead of array to prevent accidental index changes
     EN   : 0,
