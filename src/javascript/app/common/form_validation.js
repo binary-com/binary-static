@@ -1,4 +1,4 @@
-const Dropdown              = require('binary-style').selectDropdown;
+const Dropdown              = require('@binary-com/binary-style').selectDropdown;
 const addComma              = require('./currency').addComma;
 const getDecimalPlaces      = require('./currency').getDecimalPlaces;
 const Client                = require('../base/client');

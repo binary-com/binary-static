@@ -1,4 +1,4 @@
-const SelectMatcher    = require('binary-style').select2Matcher;
+const SelectMatcher    = require('@binary-com/binary-style').select2Matcher;
 const moment           = require('moment');
 const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
