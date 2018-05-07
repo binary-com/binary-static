@@ -267,6 +267,7 @@ const Header = (() => {
 
             const messages = {
                 authenticate         : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',                                      'user/authenticate'),
+                cashier_locked       : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
                 currency             : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                                                    'user/set-currency'),
                 document_needs_action: () => buildMessage('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.', 'user/authenticate'),
                 document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
@@ -276,11 +277,13 @@ const Header = (() => {
                 risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',                                   'user/settings/assessmentws'),
                 tax                  : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                                            'user/settings/detailsws'),
                 tnc                  : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',                                  'user/tnc_approvalws'),
-                unwelcome            : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                                                 'contact'),
+                unwelcome            : () => buildMessage('Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                    'contact'),
+                withdrawal_locked    : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
             };
 
             const validations = {
                 authenticate         : () => +get_account_status.prompt_client_to_authenticate,
+                cashier_locked       : () => /cashier_locked/.test(status),
                 currency             : () => !Client.get('currency'),
                 document_needs_action: () => /document_needs_action/.test(status),
                 document_review      : () => /document_under_review/.test(status),
@@ -290,7 +293,8 @@ const Header = (() => {
                 risk                 : () => riskAssessment(),
                 tax                  : () => Client.shouldCompleteTax(),
                 tnc                  : () => Client.shouldAcceptTnc(),
-                unwelcome            : () => /unwelcome|(cashier|withdrawal)_locked/.test(status),
+                unwelcome            : () => /unwelcome/.test(status),
+                withdrawal_locked    : () => /withdrawal_locked/.test(status),
             };
 
             // real account checks in order
@@ -304,6 +308,8 @@ const Header = (() => {
                 'document_review',
                 'document_needs_action',
                 'authenticate',
+                'cashier_locked',
+                'withdrawal_locked',
                 'unwelcome',
             ];
 

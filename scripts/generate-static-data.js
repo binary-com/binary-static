@@ -152,7 +152,7 @@ const texts = [
     'High-Close',
     'Close-Low',
     'High-Low',
-    '"AUD/JPY" or "Apple"',
+    'Search...',
     'Select Asset',
 
     // limits
@@ -228,7 +228,7 @@ const texts = [
 
     // paymentagent_withdraw
     'Please select a payment agent',
-    'The Payment Agent facility is currently not available in your country.',
+    'Payment Agent services are not available in your country or in your preferred currency.',
     'Invalid amount, minimum is',
     'Invalid amount, maximum is',
     'Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.',
@@ -279,6 +279,8 @@ const texts = [
     'Exclude time cannot be less than 6 months.',
     'Exclude time cannot be for more than 5 years.',
     'When you click "OK" you will be excluded from trading on the site until the selected date.',
+    'Timed out until',
+    'Excluded from the website until',
 
     // portfolio
     'Ref.',
@@ -365,6 +367,7 @@ const texts = [
     'Lots',
     'Payout per lot = 1,000',
     'This page is not available in the selected language.',
+    'Trading Window',
 
     // digit_info
     'Percentage',
@@ -570,6 +573,9 @@ const texts = [
     'You have reached the rate limit of requests per second. Please try later.',
     '[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.',
     'We are reviewing your documents. For more details [_1]contact us[_2].',
+    'Deposits and withdrawals have been disabled on your account. Please check your email for more details.',
+    'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
+    'Withdrawals have been disabled on your account. Please check your email for more details.',
 
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',

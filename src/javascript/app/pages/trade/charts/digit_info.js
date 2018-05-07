@@ -148,6 +148,7 @@ const DigitInfo = (() => {
     };
 
     const showChart = (underlying, underlying_spots) => {
+        if (underlying_spots.length !== +$('#tick_count').val()) return;
         getHighstock((Highcharts) => {
             const new_spots = underlying_spots;
             if (typeof new_spots === 'undefined' || new_spots.length <= 0) {
@@ -166,17 +167,12 @@ const DigitInfo = (() => {
             );
 
             spots = new_spots;
-            if (chart && $('#last_digit_histo').html()) {
-                chart.xAxis[0].update({ title: getTitle() }, true);
-                chart.series[0].name = underlying;
-            } else {
-                addContent(underlying); // this creates #last_digit_title
-                chart_config.xAxis.title = getTitle();
-                chart = new Highcharts.Chart(chart_config);
-                chart.addSeries({ name: underlying, data: [] });
-                onLatest();
-                stream_id = null;
-            }
+            if (chart) chart.destroy();
+            addContent(underlying); // this creates #last_digit_title
+            chart_config.xAxis.title = getTitle();
+            chart = new Highcharts.Chart(chart_config);
+            chart.addSeries({ name: underlying, data: [] });
+            onLatest();
             update();
         });
     };
