@@ -4,14 +4,11 @@ module.exports = [
     ['cashier',                            'app/cashier/index',                         'default',    'Cashier'],
     ['cashier/account_transfer',           'app/cashier/account_transfer',              'default',    'Transfer Between Accounts'],
     ['cashier/confirmation',               'app/cashier/confirmation',                  'default',    'Confirm'],
-    ['cashier/deposit-jp',                 'app/japan/cashier/deposit',                 'default',    'Deposit',                           'NOT-ja,en'],
     ['cashier/epg_forwardws',              'app/cashier/deposit_withdraw',              'default',    'Cashier'],
     ['cashier/forwardws',                  'app/cashier/deposit_withdraw',              'default',    'Cashier'],
     ['cashier/payment_agent_listws',       'app/cashier/payment_agent_list',            'default',    'Payment Agent Deposit'],
     ['cashier/payment_methods',            'app/cashier/payment_methods',               'default',    'Payment Methods'],
-    ['cashier/submit-withdraw-jp',         'app/japan/cashier/submit',                  'default',    'Acknowledgement',                   'NOT-ja,en'],
     ['cashier/top_up_virtualws',           'app/user/top_up_virtual',                   'default',    'Top Up Virtual Account'],
-    ['cashier/withdraw-jp',                'app/japan/cashier/withdraw',                'default',    'Withdraw',                          'NOT-ja,en'],
 
     ['paymentagent/transferws',            'app/cashier/paymentagent_transfer',         'default',    'Payment Agent Transfer'],
     ['paymentagent/withdrawws',            'app/cashier/paymentagent_withdraw',         'default',    'Payment Agent Withdrawal'],
@@ -19,9 +16,6 @@ module.exports = [
     ['multi_barriers_trading',             'app/trade/mb_trading',                      'full_width', 'Trusted by traders since 2000'],
     ['trading',                            'app/trade/trading',                         'default',    'Trusted by traders since 2000'],
 
-    ['new_account/japanws',                'app/new_account/japan',                     'default',    'Real Money Account Opening',        'NOT-ja,en'],
-    ['new_account/knowledge_testws',       'app/japan/knowledge_test',                  'default',    'Real Money Account Opening',        'NOT-ja,en'],
-    ['new_account/landing_page',           'app/new_account/landing_page',              'default',    'Welcome to Binary.com',             'NOT-ja,en'],
     ['new_account/maltainvestws',          'app/new_account/financial',                 'default',    'Financial Account Opening'],
     ['new_account/realws',                 'app/new_account/real',                      'default',    'Real Money Account Opening'],
     ['new_account/virtualws',              'app/new_account/virtual',                   'default',    'Create New Account'],
@@ -69,11 +63,8 @@ module.exports = [
     // ==================== Section: "static" ====================
     ['404',                                'static/404',                                'full_width', '404'],
     ['home',                               'static/home',                               'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
-    ['home-jp',                            'static/japan/home',                         'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
     ['tour',                               'static/tour',                               'full_width', 'Tour'],
-    ['tour-jp',                            'static/japan/tour',                         'full_width', 'Tour',                              'NOT-ja,en'],
     ['why-us',                             'static/why_us',                             'full_width', 'Why Us'],
-    ['why-us-jp',                          'static/japan/why_us',                       'full_width', 'Why Us',                            'NOT-ja,en'],
     ['platforms',                          'static/platforms',                          'full_width', 'Trading Platforms'],
 
     ['about-us',                           'static/about/index',                        'full_width', 'About Us'],
@@ -86,18 +77,14 @@ module.exports = [
     ['open-positions/job-details',         'static/about/job_details',                  'full_width', 'Job Details'],
 
     ['affiliate/signup',                   'static/affiliates/signup',                  'full_width', 'Affiliate'],
-    ['affiliate/signup-jp',                'static/japan/affiliates/signup',            'default',    'Affiliate',                         'NOT-ja,en'],
     ['affiliate/faq',                      'static/affiliates/faq',                     'default',    'Affiliate FAQ'],
     ['charity',                            'static/charity',                            'default',    'Charity'],
-    ['company-profile',                    'static/japan/company_profile',              'default',    'Company Profile',                   'NOT-ja,en'],
     ['ib-programme/ib-signup',             'static/ib_programme/ib_signup',             'full_width', 'IB programme'],
     ['ib-programme/ib-faq',                'static/ib_programme/ib_faq',                'default',    'IB programme FAQ'],
     ['legal/us_patents',                   'static/legal/us_patents',                   'default',    'US Patents'],
     ['regulation',                         'static/legal/regulation',                   'default',    'Regulation'],
     ['responsible-trading',                'static/responsible_trading',                'full_width', 'Responsible Trading'],
-    ['service-announcements',              'static/japan/service-announcements',        'default',    'Service Announcements',              'NOT-ja,en'],
     ['terms-and-conditions',               'static/legal/tac',                          'default',    'Terms and Conditions'],
-    ['terms-and-conditions-jp',            'static/japan/legal/tac',                    'default',    'Terms and Conditions',              'NOT-ja,en'],
     ['user/browser-support',               'static/browser_support',                    'default',    'Login trouble'],
 
     ['liquidity-solutions',                'static/partners/liquidity_solutions',       'full_width', 'Multi-asset Liquidity Solutions'],
@@ -114,15 +101,10 @@ module.exports = [
     ['get-started/forex',                  'static/get_started/forex',                  'default',     'Forex'],
     ['get-started/metals',                 'static/get_started/metals',                 'default',     'Metals'],
 
-    ['get-started-jp',                     'static/japan/get_started',                  'default',     'Get Started',                      'NOT-ja,en'],
-
     ['metatrader/contract-specifications', 'static/metatrader/contract_specifications', 'default',     'Contract Specifications'],
     ['metatrader/download',                'static/metatrader/download',                'default',     'Start Trading with MetaTrader 5'],
     ['metatrader/how-to-trade-mt5',        'static/metatrader/how_to_trade_mt5',        'default',     'How to Trade in MetaTrader 5'],
     ['metatrader/types-of-accounts',       'static/metatrader/types_of_accounts',       'default',     'Types of MetaTrader 5 accounts'],
-
-    ['affiliate_disclaimer',               'static/japan/affiliates/popup',             null,          '',                                 'NOT-ja,en'],
-
 
     // ==================== Section: "landing_pages" ====================
     ['graduates',                          'landing_pages/graduate_program',            null,        'Binary.com Graduate Program',        'NOT-en'],
