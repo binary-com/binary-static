@@ -546,10 +546,7 @@ const ViewPopup = (() => {
         `<tr${(is_hidden ? ` class="${hidden_class}"` : '')}><td${(label_id ? ` id="${label_id}"` : '')}>${localize(label)}</td><td${(value_id ? ` id="${value_id}"` : '')}>${(value || '')}</td></tr>`
     );
 
-    const epochToDateTime = epoch => {
-        const date_time = moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
-        return `${date_time} GMT`;
-    };
+    const epochToDateTime = epoch => `${moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss')} GMT`;
 
     // ===== Tools =====
     const containerSetText = (id, string, attributes, is_visible) => {

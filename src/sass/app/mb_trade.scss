@@ -434,51 +434,6 @@
                 }
             }
         }
-        #trading_status {
-            margin: 0;
-            display: flex;
-
-            div > div {
-                &:first-child {
-                    padding-right: 2px;
-                }
-                &:nth-child(2) {
-                    padding-left: 2px;
-                }
-                .trading-status {
-                    height: 40px;
-                    display: block;
-
-                    span {
-                        padding: 9px 0;
-                        width: 100%;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        height: 31px;
-                        line-height: 31px;
-
-                        &#allow {
-                            background-image: svg-icon('unlock', $COLOR_BLACK);
-
-                            &.selected {
-                                background-image: svg-icon('unlock', $COLOR_WHITE);
-                            }
-                        }
-                        &#disallow {
-                            background-image: svg-icon('lock', $COLOR_BLACK);
-
-                            &.selected {
-                                background-image: svg-icon('lock', $COLOR_WHITE);
-                            }
-                        }
-                        &.selected {
-                            color: $COLOR_WHITE;
-                            background-color: $COLOR_BLUE;
-                        }
-                    }
-                }
-            }
-        }
         .remaining-time {
             color: $COLOR_BLACK;
             line-height: 20px;

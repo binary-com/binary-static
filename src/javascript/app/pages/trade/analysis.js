@@ -4,7 +4,6 @@ const getActiveTab   = require('./get_active_tab').getActiveTab;
 const GetTicks       = require('./get_ticks');
 const MBDefaults     = require('../mb_trade/mb_defaults');
 const getElementById = require('../../../_common/common_functions').getElementById;
-const getLanguage    = require('../../../_common/language').get;
 const State          = require('../../../_common/storage').State;
 const TabSelector    = require('../../../_common/tab_selector');
 const Url            = require('../../../_common/url');

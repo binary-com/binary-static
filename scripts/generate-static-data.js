@@ -480,7 +480,6 @@ const texts = [
     'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.',
     'Only letters, space, hyphen, period, and apostrophe are allowed.',
     'Only letters, numbers, and hyphen are allowed.',
-    'Only numbers, space, and hyphen are allowed.',
     'Only numbers and spaces are allowed.',
     'Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /',
     'The two passwords that you entered do not match.',

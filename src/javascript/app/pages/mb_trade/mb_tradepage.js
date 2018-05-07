@@ -1,6 +1,5 @@
 const MBContract          = require('./mb_contract');
 const MBDisplayCurrencies = require('./mb_currency');
-const MBDefaults          = require('./mb_defaults');
 const MBTradingEvents     = require('./mb_event');
 const MBPrice             = require('./mb_price');
 const MBProcess           = require('./mb_process');
@@ -28,12 +27,7 @@ const MBTradePage = (() => {
             BinaryPjax.load(urlFor('trading'));
             return;
         }
-        if (Client.isJPClient()) {
-            disableTrading();
-        } else {
-            MBDefaults.set('disable_trading', 0);
-            showCurrency(Client.get('currency'));
-        }
+        showCurrency(Client.get('currency'));
 
         if (events_initialized === 0) {
             events_initialized = 1;
@@ -69,12 +63,6 @@ const MBTradePage = (() => {
                 }
             }
         }
-    };
-
-    const disableTrading = () => {
-        MBDefaults.set('disable_trading', 1);
-        $('#allow').removeClass('selected');
-        $('#disallow').addClass('selected');
     };
 
     const reload = () => {
