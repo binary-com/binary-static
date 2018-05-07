@@ -34,7 +34,7 @@ const PaymentAgentWithdraw = (() => {
         if (pa_list.length > 0) {
             checkToken($ddl_agents, pa_list);
         } else {
-            showPageError(localize('The Payment Agent facility is currently not available in your country.'));
+            showPageError(localize('Payment Agent services are not available in your country or in your preferred currency.'));
         }
     };
 
