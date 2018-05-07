@@ -274,7 +274,7 @@ const MetaTraderUI = (() => {
                 if (Client.get('is_virtual')) {
                     msg = MetaTraderConfig.needsRealMessage();
                 } else if (!Client.get('currency')) { // client should set currency before accessing fund management section
-                    msg = $templates.find('#msg_set_currency').text();
+                    msg = $templates.find('#msg_set_currency').html();
                 }
                 if (msg) {
                     displayMainMessage(msg, false);
