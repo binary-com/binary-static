@@ -12,10 +12,6 @@ const LimitsInit = (() => {
         const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);
 
-        if (Client.isJPClient()) {
-            return;
-        }
-
         const el_withdraw_limit     = getElementById('withdrawal-limit');
         const el_withdrawn          = getElementById('already-withdraw');
         const el_withdraw_limit_agg = getElementById('withdrawal-limit-aggregate');

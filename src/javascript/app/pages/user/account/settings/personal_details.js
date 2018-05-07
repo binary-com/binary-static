@@ -20,7 +20,6 @@ const PersonalDetails = (() => {
     let need_to_accept_tin = false;
 
     let editable_fields,
-        is_jp_client,
         is_virtual,
         residence,
         get_settings_data,
@@ -31,11 +30,6 @@ const PersonalDetails = (() => {
         get_settings_data = {};
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
-        is_jp_client      = residence === 'jp'; // we need to check with residence so we know which fields will be present in get_settings response
-        if (is_jp_client && !is_virtual) {
-            setVisibility('#fieldset_email_consent');
-            showHideTaxMessage();
-        }
     };
 
     const showHideTaxMessage = () => {
@@ -64,23 +58,21 @@ const PersonalDetails = (() => {
     };
 
     const showHideLabel = (get_settings) => {
-        if (!is_jp_client) {
-            ['place_of_birth', 'account_opening_reason'].forEach((id) => {
-                if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
-                    if (get_settings[id]) {
-                        // we have to show text here instead of relying on displayGetSettingsData()
-                        // since it prioritizes showing data instead of label
-                        const $label = $(`#lbl_${id}`);
-                        $label.text(get_settings[id]);
-                        $(`#row_${id}`).setVisibility(0);
-                        $(`#row_lbl_${id}`).setVisibility(1);
-                    } else {
-                        $(`#row_lbl_${id}`).setVisibility(0);
-                        $(`#row_${id}`).setVisibility(1);
-                    }
+        ['place_of_birth', 'account_opening_reason'].forEach((id) => {
+            if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
+                if (get_settings[id]) {
+                    // we have to show text here instead of relying on displayGetSettingsData()
+                    // since it prioritizes showing data instead of label
+                    const $label = $(`#lbl_${id}`);
+                    $label.text(get_settings[id]);
+                    $(`#row_${id}`).setVisibility(0);
+                    $(`#row_lbl_${id}`).setVisibility(1);
+                } else {
+                    $(`#row_lbl_${id}`).setVisibility(0);
+                    $(`#row_${id}`).setVisibility(1);
                 }
-            });
-        }
+            }
+        });
     };
 
     const getDetailsResponse = (data, residence_list = State.getResponse('residence_list')) => {
@@ -91,7 +83,7 @@ const PersonalDetails = (() => {
         const hide_name            = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
         if (!hide_name) {
             setVisibility('#row_name');
-            get_settings.name = is_jp_client ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
+            get_settings.name = `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
         if (get_settings.place_of_birth) {
@@ -106,23 +98,6 @@ const PersonalDetails = (() => {
 
         if (is_virtual) {
             $(real_acc_elements).remove();
-        } else if (is_jp_client) {
-            const jp_settings = get_settings.jp_settings;
-            switch (jp_settings.gender) {
-                case 'f':
-                    jp_settings.gender = localize('Female');
-                    break;
-                case 'm':
-                    jp_settings.gender = localize('Male');
-                    break;
-                default:
-                    break;
-            }
-            displayGetSettingsData(jp_settings);
-            if (jp_settings.hedge_asset !== null && jp_settings.hedge_asset_amount !== null) {
-                setVisibility('.hedge');
-            }
-            setVisibility('.JpAcc');
         } else {
             setVisibility(real_acc_elements);
             showHideTaxMessage();
@@ -139,7 +114,7 @@ const PersonalDetails = (() => {
             fnc_additional_check: additionalCheck,
             enable_button       : true,
         });
-        if (!is_virtual && !is_jp_client) {
+        if (!is_virtual) {
             Geocoder.validate(form_id);
         }
     };
@@ -173,7 +148,7 @@ const PersonalDetails = (() => {
     };
 
     const additionalCheck = (data) => {
-        if (!isChanged(data) && (!data.jp_settings || !isChanged(data.jp_settings))) {
+        if (!isChanged(data)) {
             showFormMessage('You did not change anything.', false);
             return false;
         }
@@ -183,33 +158,13 @@ const PersonalDetails = (() => {
     const isChanged = (data) => {
         const compare_data = $.extend({}, data);
         return Object.keys(compare_data).some(key => (
-            key !== 'set_settings' && key !== 'jp_settings' && editable_fields[key] !== compare_data[key]
+            key !== 'set_settings' && editable_fields[key] !== compare_data[key]
         ));
     };
 
-    const getValidations = (data) => {
+    const getValidations = () => {
         let validations;
-        if (is_jp_client) {
-            validations = [
-                { request_field: 'address_line_1',   value: data.address_line_1 },
-                { request_field: 'address_line_2',   value: data.address_line_2 },
-                { request_field: 'address_city',     value: data.address_city },
-                { request_field: 'address_state',    value: data.address_state },
-                { request_field: 'address_postcode', value: data.address_postcode },
-                { request_field: 'phone',            value: data.phone },
-
-                { selector: '#email_consent' },
-
-                { selector: '#hedge_asset_amount',       validations: ['req', 'number'], parent_node: 'jp_settings' },
-                { selector: '#hedge_asset',              validations: ['req'],           parent_node: 'jp_settings' },
-                { selector: '#motivation_circumstances', validations: ['req'],           parent_node: 'jp_settings' },
-                { selector: '#account_opening_reason',   validations: ['req'] },
-
-            ];
-            $(form_id).find('select').each(function () {
-                validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
-            });
-        } else if (is_virtual) {
+        if (is_virtual) {
             validations = [{ selector: '#residence', validations: ['req'] }];
         } else {
             validations = [
@@ -323,34 +278,23 @@ const PersonalDetails = (() => {
 
     const populateStates = (response) => {
         const states = response.states_list;
+        const address_state = '#address_state';
+        let $field          = $(address_state);
 
-        if (is_jp_client) {
-            const state_text = (states.filter(state => state.value === get_settings_data.address_state)[0] || {}).text;
-            $('#lbl_address_state').text(state_text || get_settings_data.address_state);
+        $field.empty();
+
+        if (states && states.length > 0) {
+            $field.append($('<option/>', { value: '', text: localize('Please select') }));
+            states.forEach((state) => {
+                $field.append($('<option/>', { value: state.value, text: state.text }));
+            });
         } else {
-            const address_state = '#address_state';
-            let $field          = $(address_state);
-
-            $field.empty();
-
-            if (states && states.length > 0) {
-                $field.append($('<option/>', { value: '', text: localize('Please select') }));
-                states.forEach((state) => {
-                    $field.append($('<option/>', { value: state.value, text: state.text }));
-                });
-            } else {
-                $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
-                $field = $(address_state);
-            }
-            $field.val(get_settings_data.address_state);
+            $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+            $field = $(address_state);
         }
+        $field.val(get_settings_data.address_state);
 
         initFormManager();
-        if (is_jp_client && !is_virtual) {
-            // detect hedging needs to be called after FormManager.init
-            // or all previously bound event listeners on form elements will be removed
-            CommonFunctions.detectHedging($('#trading_purpose'), $('.hedge'));
-        }
     };
 
     const initFormManager = () => { FormManager.init(form_id, getValidations(get_settings_data)); };

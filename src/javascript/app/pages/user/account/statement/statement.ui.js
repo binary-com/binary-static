@@ -26,7 +26,7 @@ const StatementUI = (() => {
 
         const currency = Client.get('currency');
 
-        header[6] += (Client.isJPClient() || !currency) ? '' : ` (${currency})`;
+        header[6] += currency ? ` (${currency})` : '';
 
         const metadata = {
             id  : table_id,
@@ -43,7 +43,7 @@ const StatementUI = (() => {
     };
 
     const createStatementRow = (transaction) => {
-        const statement_data = Statement.getStatementData(transaction, Client.get('currency'), Client.isJPClient());
+        const statement_data = Statement.getStatementData(transaction, Client.get('currency'));
         all_data.push($.extend({}, statement_data, {
             action: localize(statement_data.action),
             desc  : localize(statement_data.desc),
@@ -89,7 +89,7 @@ const StatementUI = (() => {
 
     const exportCSV = () => {
         downloadCSV(
-            Statement.generateCSV(all_data, Client.isJPClient()),
+            Statement.generateCSV(all_data),
             `Statement_${Client.get('loginid')}_latest${$('#rows_count').text()}_${window.time.replace(/\s/g, '_').replace(/:/g, '')}.csv`);
     };
 

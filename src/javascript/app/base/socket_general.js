@@ -28,7 +28,6 @@ const BinarySocketGeneral = (() => {
                 BinarySocket.send({ website_status: 1, subscribe: 1 });
                 if (Client.isLoggedIn()) {
                     BinarySocket.wait('authorize').then(() => {
-                        Client.setJPFlag();
                         BinaryPjax.init(getElementById('content-holder'), '#content');
                     });
                 }

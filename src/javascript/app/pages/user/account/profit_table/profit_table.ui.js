@@ -30,7 +30,7 @@ const ProfitTableUI = (() => {
 
         currency = Client.get('currency');
 
-        header[7] += (Client.isJPClient() || !currency) ? '' : ` (${currency})`;
+        header[7] += currency ? ` (${currency})` : '';
 
         const footer = [localize('Total Profit/Loss'), '', '', '', '', '', '', '', ''];
 
@@ -60,7 +60,7 @@ const ProfitTableUI = (() => {
 
         const sub_total_type = (total_profit >= 0) ? 'profit' : 'loss';
 
-        $('#pl-day-total').find(' > .pl').html(formatMoney(currency, Number(total_profit), !Client.isJPClient()))
+        $('#pl-day-total').find(' > .pl').html(formatMoney(currency, Number(total_profit), true))
             .removeClass('profit loss')
             .addClass(sub_total_type);
     };

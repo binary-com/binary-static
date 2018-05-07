@@ -44,7 +44,6 @@ const BinaryLoader = (() => {
         if (Login.isLoginPages()) {
             BinaryPjax.init(container, '#content');
         } else if (!Client.isLoggedIn()) {
-            Client.setJPFlag();
             BinaryPjax.init(container, '#content');
         } else { // client is logged in
             // we need to set top-nav-menu class so binary-style can add event listener
