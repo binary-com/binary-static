@@ -112,15 +112,9 @@ const HighchartUI = (() => {
         }
     };
 
-    const getHighchartOptions = () => (
-        {
-            // use comma as separator instead of space
-            lang  : { thousandsSep: ',' },
-            global: {
-                timezoneOffset: 0,
-            },
-        }
-    );
+    const getHighchartOptions = () => ({
+        lang: { thousandsSep: ',' }, // use comma as separator instead of space
+    });
 
     const replaceExitLabelWithSell = (subtitle) => {
         const subtitle_length = subtitle.childNodes.length;

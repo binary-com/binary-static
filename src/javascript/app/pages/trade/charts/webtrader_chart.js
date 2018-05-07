@@ -77,7 +77,6 @@ const WebtraderChart = (() => {
             timePeriod        : getChartSettings().time_frame,
             type              : getChartSettings().chart_type,
             lang              : getLanguage().toLowerCase(),
-            timezoneOffset    : 0,
             showShare         : !is_mb_trading,
         };
 
