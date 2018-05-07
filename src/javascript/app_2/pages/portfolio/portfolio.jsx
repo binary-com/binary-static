@@ -61,7 +61,7 @@ const contract_type_display = {
 };
 
 /* TODO:
-    1. Make tooltip appdetails tooltip
+    1. Make tooltip appdetails tooltip?
 */
 class Portfolio extends React.PureComponent  {
     constructor(props) {
@@ -162,7 +162,7 @@ class Portfolio extends React.PureComponent  {
         if (getPropertyValue(response, 'error')) {
             this.setState({ error: response.error.message });
         }
-        // Update portfolio for added / sold 
+        // Update portfolio for added / sold
         DAO.getPortfolio().then((res) => this.updatePortfolio(res));
     }
 
