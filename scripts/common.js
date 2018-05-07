@@ -39,7 +39,7 @@ exports.print = (text) => {
     process.stdout.write(text);
 };
 
-exports.messageStart = (msg, no_pad) => `${color.cyan('>')} ${msg} ${no_pad ? '' : '.'.repeat(33 - msg.length)}`;
+exports.messageStart = (msg, no_pad) => `${color.cyan('>')} ${msg} ${no_pad ? '' : '.'.repeat((this.languages.length + 18) - msg.length)}`;
 exports.messageEnd   = (duration, no_new_line) => (
     `${color.green(' ✓ Done')}${duration ? color.blackBright(`  (${duration.toLocaleString().padStart(6)} ms)`) : ''}${no_new_line ? '' : '\n'}`
 );
