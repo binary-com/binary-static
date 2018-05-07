@@ -83,7 +83,7 @@ const TickDisplay = (() => {
                 label: 'Exit Spot',
                 id   : 'exit_tick',
             };
-        } else if (contract_category.match('callput')) {
+        } else if (contract_category.match('callput') || contract_category.match('higherlower')) {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
                 _0: { label: 'Entry Spot', id: 'entry_tick' },
@@ -326,7 +326,28 @@ const TickDisplay = (() => {
             epoches = data.history.times;
         }
 
-        if (applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed) {
+        // TODO: calculate if touch happend, call evaluateContractOutcome on touch
+        // barrier is between first and last ticks -> touch
+
+        // applicable_ticks[0].quote
+        // console.log(contract_barrier, data);
+
+        const first_quote = applicable_ticks.length && applicable_ticks[0].quote,
+              last_quote  = data && data.tick.quote;
+
+        const has_touched = contract_barrier
+            && first_quote
+            && last_quote
+            && (
+                first_quote < contract_barrier && last_quote >= contract_barrier
+             || first_quote > contract_barrier && last_quote <= contract_barrier
+            );
+
+        console.log(has_touched, contract_category);
+
+        const has_reached_end = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
+
+        if (has_reached_end) {
             evaluateContractOutcome();
             if (responseID) {
                 BinarySocket.send({ forget: responseID });
