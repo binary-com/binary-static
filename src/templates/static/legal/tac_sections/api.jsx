@@ -3,7 +3,7 @@ import ListNested from '../../../_common/components/list_nested.jsx';
 
 const Api = () => (
     <div>
-        <h2>{it.L('[_1] Application Program Interface ("API") Terms and Conditions', it.website_name)}</h2>
+        <h2 data-anchor>{it.L('[_1] Application Program Interface ("API") Terms and Conditions', it.website_name)}</h2>
         <p>{it.L('This document (the "Agreement") sets out the terms and conditions ("Terms") between "the Company" which is Binary Services Ltd ("we," "us," and "our"), and you (the person who registered for the [_1] Application Program Interface ("API"); "you", or "your").', it.website_name)}</p>
         <ol className='reset_ol'>
             <ListNested
@@ -250,10 +250,10 @@ const Api = () => (
                         header     : it.L('Right to Terminate'),
                         list_nested: [
                             {
-                                header     : it.L('At any time and for any reason or no reason, the Company, in its sole discretion, may:'),
+                                header     : it.L('At any time and for any reason or no reason, the Company, in its sole discretion, may immediately:'),
                                 list_nested: [
                                     { text: it.L('Terminate your use of the [_1] API; or', it.website_name) },
-                                    { text: it.L('Terminate this Agreement by giving a minimum of seven days written notice to you.') },
+                                    { text: it.L('Terminate this Agreement') },
                                 ],
                             },
                             { text: it.L('You may terminate this Agreement at any time, but only by giving the Company a minimum of seven days written notice. "Written notice" here includes notice delivered by regular letter mail or by email.') },
