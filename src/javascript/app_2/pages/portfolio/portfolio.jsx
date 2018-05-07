@@ -251,7 +251,7 @@ class Portfolio extends React.PureComponent  {
                         return <Loading />;
                     }
                     if (this.state.error) {
-                        return <div>{this.state.error}</div>;
+                        return <p>{this.state.error}</p>;
                     }
                     return (
                             this.state.data_source.length > 0 ?
@@ -261,7 +261,7 @@ class Portfolio extends React.PureComponent  {
                                     data_source={this.state.data_source}
                                     footer={this.state.footer}
                                 />
-                            : <div><p>{localize('No open positions.')}</p></div>
+                            : <p>{localize('No open positions.')}</p>
                     );
                 })()}
             </div>
