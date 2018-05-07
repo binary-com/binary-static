@@ -59,16 +59,14 @@ const setCurrencies = (website_status) => {
 const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type']));
 
 const crypto_config = {
-    BTC: { name: 'Bitcoin',       min_withdrawal: 0.002, max_withdrawal: 100 },
-    BCH: { name: 'Bitcoin Cash',  min_withdrawal: 0.002, max_withdrawal: 100 },
-    ETH: { name: 'Ether',         min_withdrawal: 0.002, max_withdrawal: 100 },
-    ETC: { name: 'Ether Classic', min_withdrawal: 0.002, max_withdrawal: 100 },
-    LTC: { name: 'Litecoin',      min_withdrawal: 0.002, max_withdrawal: 100 },
+    BTC: { name: 'Bitcoin',       min_withdrawal: 0.002 },
+    BCH: { name: 'Bitcoin Cash',  min_withdrawal: 0.002 },
+    ETH: { name: 'Ether',         min_withdrawal: 0.002 },
+    ETC: { name: 'Ether Classic', min_withdrawal: 0.002 },
+    LTC: { name: 'Litecoin',      min_withdrawal: 0.002 },
 };
 
 const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'min_withdrawal']) || 0.002 : 1);
-
-const getMaxWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'max_withdrawal']) || 100 : 20000);
 
 const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
 
@@ -100,7 +98,6 @@ module.exports = {
     isCryptocurrency,
     getCurrencyName,
     getMinWithdrawal,
-    getMaxWithdrawal,
     getMinPayout,
     getCurrencyList,
     getCurrencies: () => currencies_config,

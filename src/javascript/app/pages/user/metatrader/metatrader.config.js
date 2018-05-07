@@ -24,11 +24,14 @@ const MetaTraderConfig = (() => {
     let $messages;
     const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
-    const min_allowed_transfer_in_usd = 1;
     // currency equivalent to 1 USD
     const getMinMT5TransferValue = (currency) => (
-        (currency === 'USD' ? min_allowed_transfer_in_usd :
-            (min_allowed_transfer_in_usd / (+State.getResponse('exchange_rates.rates.USD') || min_allowed_transfer_in_usd))).toFixed(Currency.getDecimalPlaces(currency))
+        (+State.getResponse(`exchange_rates.rates.${currency}`) || 1).toFixed(Currency.getDecimalPlaces(currency))
+    );
+
+    // currency equivalent to 20000 USD
+    const getMaxMT5TransferValue = (currency) => (
+        (+getMinMT5TransferValue(currency) * 20000).toFixed(Currency.getDecimalPlaces(currency))
     );
 
     const actions_info = {
@@ -231,7 +234,7 @@ const MetaTraderConfig = (() => {
 
     const validations = () => {
         const client_currency = Client.get('currency');
-        const max_withdrawal  = Currency.getMaxWithdrawal(client_currency);
+        const max_withdrawal  = getMaxMT5TransferValue(client_currency);
         return {
             new_account: [
                 { selector: fields.new_account.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
@@ -255,7 +258,7 @@ const MetaTraderConfig = (() => {
             ],
             withdrawal: [
                 { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
-                { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => Currency.getMaxWithdrawal(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
+                { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => getMaxMT5TransferValue(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
             ],
         };
     };

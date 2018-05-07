@@ -23,7 +23,7 @@ const MetaTrader = (() => {
                     getAllAccountsInfo();
                 } else {
                     BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
-                    BinarySocket.send({ exchange_rates: 1, base_currency: Client.get('currency') });
+                    getExchangeRates();
                 }
             } else if (State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                 // TODO: remove this elseif when we enable mt account opening for malta
@@ -34,6 +34,9 @@ const MetaTrader = (() => {
             }
         });
     };
+
+    // we need to calculate min/max equivalent to 1 and 20000 USD, so get exchange rates for all currencies based on USD
+    const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
     const isEligible = () => {
         let has_mt_company = false;
@@ -161,7 +164,7 @@ const MetaTrader = (() => {
                             actions_info[action].onError(response, MetaTraderUI.$form());
                         }
                         if (/^MT5(Deposit|Withdrawal)Error$/.test(response.error.code)) {
-                            BinarySocket.send({ exchange_rates: 1, base_currency: Client.get('currency') });
+                            getExchangeRates();
                         }
                     } else {
                         const login = actions_info[action].login ?
