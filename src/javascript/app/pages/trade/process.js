@@ -1,4 +1,4 @@
-const refreshDropdown   = require('binary-style').selectDropdown;
+const refreshDropdown   = require('@binary-com/binary-style').selectDropdown;
 const moment            = require('moment');
 const TradingAnalysis   = require('./analysis');
 const commonTrading     = require('./common');
