@@ -259,8 +259,9 @@ const Header = (() => {
                 status;
 
             const riskAssessment = () => (
-                (get_account_status.risk_classification === 'high' || Client.isAccountOfType('financial')) &&
-                /financial_assessment_not_complete/.test(status) && !Client.isJPClient()
+                (get_account_status.risk_classification === 'high' && Client.isAccountOfType('financial')) ?
+                    /(financial_assessment|trading_experience)_not_complete/.test(status) :
+                    /financial_assessment_not_complete/.test(status) && !Client.isJPClient()
             );
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);

@@ -30,23 +30,29 @@ const FinancialAssessment = (() => {
         });
     };
 
+    const displayHighRiskClassification = () => {
+        const status       = State.getResponse('get_account_status.status');
+        const is_high_risk = /high/.test(State.getResponse('get_account_status.risk_classification'));
+
+        $('#high_risk_classification').setVisibility(
+            is_high_risk && Client.isAccountOfType('financial') ?
+                /(financial_assessment|trading_experience)_not_complete/.test(status) :
+                /financial_assessment_not_complete/.test(status)
+        );
+    };
+
     const handleForm = (response = State.getResponse('get_financial_assessment')) => {
         hideLoadingImg(true);
 
         financial_assessment = $.extend({}, response);
 
         if (isEmptyObject(financial_assessment)) {
-            BinarySocket.wait('get_account_status').then(() => {
-                const risk_classification = State.getResponse('get_account_status.risk_classification');
-                if (risk_classification === 'high' && /financial_assessment_not_complete/.test(State.getResponse('get_account_status.status'))) {
-                    $('#high_risk_classification').setVisibility(1);
-                }
-            });
+            BinarySocket.wait('get_account_status').then(() => { displayHighRiskClassification(); });
         }
 
-        const is_mf            = /^(maltainvest)$/.test(Client.get('landing_company_shortcode'));
-        const is_mt5_financial = /real_vanuatu_(standard|advanced)/.test(localStorage.getItem('financial_assessment_redirect'));
-        $('#trading_experience_form').setVisibility(is_mt5_financial || is_mf);
+        // display Trading Experience only for financial & MT5 financial accounts
+        const is_mt5_financial = /real_vanuatu_(standard|advanced|mamm_advanced)/.test(localStorage.getItem('financial_assessment_redirect'));
+        $('#trading_experience_form').setVisibility(is_mt5_financial || Client.isAccountOfType('financial'));
 
         Object.keys(financial_assessment).forEach((key) => {
             const val = financial_assessment[key];
@@ -97,6 +103,7 @@ const FinancialAssessment = (() => {
                     // need to remove financial_assessment_not_complete from status if any
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
                         Header.displayAccountStatus();
+                        displayHighRiskClassification();
                     });
                 }
             });
