@@ -3,6 +3,7 @@ const TradingAnalysis       = require('./analysis');
 const Barriers              = require('./barriers');
 const CommonTrading         = require('./common');
 const CommonIndependent     = require('./common_independent');
+const Contract              = require('./contract');
 const Defaults              = require('./defaults');
 const Durations             = require('./duration');
 const GetTicks              = require('./get_ticks');
@@ -10,6 +11,7 @@ const Notifications         = require('./notifications');
 const Price                 = require('./price');
 const Process               = require('./process');
 const Purchase              = require('./purchase');
+const ViewPopup             = require('../user/view_popup/view_popup');
 const Tick                  = require('./tick');
 const GTM                   = require('../../base/gtm');
 const BinarySocket          = require('../../base/socket');
@@ -321,7 +323,12 @@ const TradingEvents = (() => {
             if (id && ask_price) {
                 $('.purchase_button').css('visibility', 'hidden');
                 BinarySocket.send(params).then((response) => {
-                    Purchase.display(response);
+                    if (Contract.form() === 'digits') {
+                        Purchase.display(response);
+                    } else {
+                        ViewPopup.init($('<div />', { contract_id: response.buy.contract_id }).get(0));
+                        Price.processPriceRequest();
+                    }
                     GTM.pushPurchaseData(response);
                 });
                 Price.incrFormId();
