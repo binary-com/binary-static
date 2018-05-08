@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-07 06:17-0400\n"
+"PO-Revision-Date: 2018-05-07 23:45-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -361,6 +361,9 @@ msgstr "%1は、ギャンブルに関連する害を最小限にすることを�
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "ロンドンで開催された名誉あるEGRオペレーター賞授賞式にて金融ベッティングオペレーター部門で最優秀賞を受賞しました。"
+
+msgid "%1 transfer fee between different currencies"
+msgstr ""
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "口座番号%2から%3へのご出金が完了しました。取引参照ID：%4"
@@ -7287,9 +7290,6 @@ msgstr "ご希望のリアリティチェック間隔を分単位で指定して
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "<a href='mailto:%1'>%1</a>まで上記の情報をご提出ください。"
 
-msgid "Please switch to a %1 account to manage funds."
-msgstr "資金を管理するために%1口座に切り替えてください。"
-
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "当社のスワップレートは、ポジションをオープンにした日にちと時間によって異なりますのでご注意ください："
 
@@ -9707,6 +9707,9 @@ msgstr "金融商品取引のMT5リアルマネー口座を開設するには、
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "このアクションを実行するには、<a href=\"%1\">%2リアル口座へアップグレード</a>いただく必要があります。"
+
+msgid "To perform this action, please set the %1currency%2 of your account."
+msgstr ""
 
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "このアクションを実行するには、お客さまの%1リアル口座に切り替えてください。"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-07 06:16-0400\n"
+"PO-Revision-Date: 2018-05-07 23:45-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -25,34 +25,35 @@ msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protoco
 msgstr "« L'API %1 » désigne l'ensemble des produits propriétaires de %1, notamment les routines, protocoles, outils et ressources de programmation créés et mis en service par %1, vous permettant d'utiliser une Application enregistrée pour communiquer avec la plateforme de trading %1."
 
 msgid "\"Account\" means Client Trading Account opened with Binary (V) Ltd."
-msgstr ""
+msgstr "« Compte »  signifie le compte de Trading Client ouvert avec Binary (V) Ltd."
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "Les options « binaires » ou « digitales » sont des options qui paient un montant fixe, prédéterminé, en fonction de la réalisation ou non d'un événement lorsque l'option binaire arrive à échéance. Les options binaires ne présentent que deux issues possibles et permettent donc d'adopter une approche simple en déterminant si « oui ou non » l'option terminera dans la monnaie. Comme les options traditionnelles, les options binaires sont basées sur des actifs sous-jacents tels que les devises, les matières premières, les indices ou les actions. Cependant, contrairement aux options traditionnelles, elles ne peuvent aboutir qu'à deux résultats possibles : soit l'événement se réalise et le client obtient le paiement correspondant, soit le client perd le montant d'investissement déterminé à l'avance pour chaque option."
 
 msgid "\"Client Agreement\" means the Agreement between the Client and the Company including but not limited to the Terms and Conditions, Order Execution Policy, and Slippage Policy."
-msgstr ""
+msgstr "« Contrat client » désigne l’accord entre le Client et la société y compris mais non limité aux Conditions Générales, à la \n"
+"Politique d’Exécution des Ordres et à la Politique de Gilissement."
 
 msgid "\"Commencement Date of this Agreement\" shall mean the date on which an appointment of a Money Manager is made by the Client."
-msgstr ""
+msgstr "« Date du Début de ce Contrat » désigne la date à laquelle la nomination d’un Gestionnaire de Fonds est faite par le Client."
 
 msgid "\"Company\" means Binary (V) Ltd, operating under the brand or trademark of Binary.com, incorporated and registered in the Republic of Vanuatu, under the International Companies Act Cap. 222 and Financial Dealers Licensing Act (Cap. 70), licensed to provide Investment services and dealing with Securities."
-msgstr ""
+msgstr "« Entreprise » désigne Binary (V) Ltd., opérant sous la marque ou une marque de Binary.com, constituée et enregistrée dans la République de Vanuatu, au travers de la loi sur les Sociétés Internationales. (Cap. 222) et la Loi sur les Opérateurs Financiers sous Licence (Cap. 70), autorisées à fournir des services d’investissement et de négocier des valeurs mobilières."
 
 msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
 msgstr "« Contenu(s) » désigne tous types de données ou de contenus issus de notre site Web ou accessibles via l'API. Notre « site Web » désigne le site Web de Binary.com à l'adresse www.binary.com et tout autre site Web ou service détenu ou exploité par Binary.com."
 
 msgid "\"Money Manager\" means any physical person including any executor, representative, administrator or successor in law, authorised to manage the Account on behalf of the Client in accordance with this Agreement."
-msgstr ""
+msgstr "« Manageur de Fonds » correspond à toute personne physique, y compris tout exécuteur, représentant, administrateur ou successeur en droit, habilitée à gérer le compte au nom du Client conformément au présent Accord."
 
 msgid "\"Orders\" means any Order or Orders for any transaction, under the Client Agreement and this Multi-Account Manager (MAM) Agreement."
-msgstr ""
+msgstr "« Commandes » désigne un ou plusieurs ordres pour toute transaction, en vertu de l’Accord Client et cet Accord Manageur Multi-Compte (MAM)."
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "« Tiers fournisseur(s) » désigne la tierce partie (non-affiliée) offrant l'accès à différentes caractéristiques et fonctionnalités par le biais de l'API Binary.com."
 
 msgid "\"Transaction\" means any purchase or sale of any financial Instrument including but not limited to CFDs, Rolling Spot FX, Commodities and any other securities or products may be offered by the Company to the Client, from time to time in accordance with the Client Agreement."
-msgstr ""
+msgstr "« Transaction » désigne tout achat ou vente de tout Instrument financier, y compris mais non limité aux CFD, Rolling Spot FX, matières premières et tout autres titres ou produits peuvent être offerts par l’Entreprise au Client, de temps en temps selon l'Accord Client."
 
 msgid "$100,000 - $250,000"
 msgstr "$100,000 - $250,000"
@@ -348,6 +349,9 @@ msgstr "%1 soutient la %2, une importante organisation caritative du Royaume-Uni
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 remporte le premier prix récompensant les meilleurs services de courtage en ligne, lors de la prestigieuse cérémonie organisée par eGaming Review en 2015, à Londres."
 
+msgid "%1 transfer fee between different currencies"
+msgstr ""
+
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "Le retrait %1 à partir du numéo de compte %2 vers %3 a été effectué. Identifiant de transaction : %4"
 
@@ -385,7 +389,7 @@ msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Contactez nous%2 pour arranger une date et une heure pour l’appel vidéo."
 
 msgid "%1Download the MAM app%2 after you’ve set up your master account. Your login credentials will be provided"
-msgstr ""
+msgstr "%1Télécharger l'app%2 MAM après que vous ayez configuré votre compte principal. Vos identifiants seront fournis"
 
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1Votre preuve d’Identité ou Preuve de Domicile%2 ne satisfont pas nos exigences. Veuillez vérifier votre email pour obtenir des instructions supplémentaires."
@@ -529,7 +533,7 @@ msgid "7-day turnover limit"
 msgstr "Limite du volume des transactions sur 7 jours"
 
 msgid "70+"
-msgstr ""
+msgstr "70 +"
 
 msgid "75%"
 msgstr "75%"
@@ -547,7 +551,7 @@ msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Fondée en</a> octobre 1999"
 
 msgid "<a href='%1'>Offices</a> in Malta and Malaysia"
-msgstr ""
+msgstr "<a href='%1'>Bureaux</a> à Malte et en Malaisie"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Test de pertinence : ATTENTION :</strong> Dans le cadre des services que nous vous fournissons, nous sommes dans l'obligation d'obtenir des informations de votre part afin de déterminer si un produit ou service donné est pertinent dans votre cas (c'est-à-dire si vous possédez l'expérience et les connaissances nécessaires pour comprendre les risques impliqués)."
@@ -586,7 +590,7 @@ msgid "A Forex trader has one objective in mind when trading which is:"
 msgstr "Un trader Forex a un seul objectif à l’esprit lorsqu'il trade qui est :"
 
 msgid "A MAM account can be assigned to a money manager who will trade on your behalf. You can view all the trades executed by a money manager."
-msgstr ""
+msgstr "Un compte MAM peut être assigné à un gestionnaire de fonds qui tradera en votre nom. Vous pouvez visualiser toutes les transactions exécutées par un gestionnaire de fonds."
 
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
 msgstr "Un PEP est un individu auquel a été confié une fonction publique proéminente. Ce statut s'étend à la famille et aux proches associés des PEP."
@@ -1357,7 +1361,7 @@ msgid "Assign and manage multiple sub-accounts seamlessly via one interface – 
 msgstr "Attribuer et gérer plusieurs sous-comptes en toute transparence via une seule interface – le gestionnaire de comptes multiples (MAM)."
 
 msgid "Assigned manager's account ID:"
-msgstr ""
+msgstr "Identifiants de compte du gestionnaire assigné :"
 
 msgid "Assist in the proofreading and recording of video presentations"
 msgstr "Aide à la révision et à l'enregistrement des présentations vidéo"
@@ -1375,7 +1379,7 @@ msgid "Assisting with the regulatory and statutory audit of Binary Group compani
 msgstr "Contribuer au bon déroulement de l'audit réglementaire et légal des sociétés Binary Group à l'international"
 
 msgid "At any time and for any reason or no reason, the Company, in its sole discretion, may immediately:"
-msgstr ""
+msgstr "À tout moment, avec ou sans raison et pour quelque raison que ce soit, la Société peut, à sa seule discrétion :"
 
 msgid "At least 1 year working experience is required for this position"
 msgstr "Pour ce poste, vous devez justifier d'au moins un an d'expérience professionnelle"
@@ -1570,7 +1574,7 @@ msgid "Best of all, there is no minimum deposit requirement."
 msgstr "Le meilleur de tous, il n’y a aucune obligation de dépôt minimum."
 
 msgid "Best of all, your commissions are credited into your account instantly."
-msgstr ""
+msgstr "Surtout, vos commissions sont créditées sur votre compte instantanément."
 
 msgid "BetOnMarkets goes live"
 msgstr "Lancement de BetOnMarkets"
@@ -1597,10 +1601,10 @@ msgid "Bid price"
 msgstr "Prix de mise"
 
 msgid "Binary (BVI) Ltd"
-msgstr ""
+msgstr "Binary (BVI) Ltd"
 
 msgid "Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
-msgstr ""
+msgstr "Binaire (BVI) Ltd., 2e étage, O'Neal Marketing Associates Building, Wickham's Cay II, P.O. Box 3174, Road Town, Tortola BV1110, Iles Vierges Britanniques. Agréée et réglementée par la Commission des Services Financiers des Iles Vierges Britanniques - %1voir licence%2."
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -1615,7 +1619,7 @@ msgid "Binary (Europe) Limited & Binary Investments (Europe) Ltd, Mompalao Build
 msgstr "Binary (Europe) Limited et Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - %2view licence%3."
-msgstr ""
+msgstr "Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte. Société autorisée et réglementée (pour les produits de jeux uniquement : Indices de Volatilité %1) par l'Autorité Maltaise des Jeux (licence n° MGA/CL2/118/2000), et pour les clients du Royaume-Uni, par la Commission des jeux du Royaume-Uni : %2afficher la licence%3."
 
 msgid "Binary (IOM) Limited"
 msgstr "Binary (IOM) Limited"
@@ -1624,13 +1628,13 @@ msgid "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Dougl
 msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
 msgid "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) and for UK clients by the UK Gambling Commission - %1view licence%2."
-msgstr ""
+msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Société autorisée et réglementée par la Commission de Supervision des Jeux de l'Ile de Man (licence actuelle pour les services de jeux en ligne délivrée le 31 août 2017), et pour les clients du Royaume-Uni par la Commission des jeux du Royaume-Uni - %1afficher la licence%2."
 
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
 
 msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
-msgstr ""
+msgstr "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republique de Vanuatu. Autorisée et réglementée par la Commission des Services Financiers de Vanuatu -%1afficher la licence%2."
 
 msgid "Binary Bot"
 msgstr "Binary Bot"
@@ -7245,9 +7249,6 @@ msgstr "Veuillez indiquer la périodicité souhaitée en minutes pour les averti
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "Veuillez envoyer les informations listées ci-dessus à <a href='mailto:%1'>%1</a>."
 
-msgid "Please switch to a %1 account to manage funds."
-msgstr "S’il vous plaît passer à un compte %1 pour gérer des fonds."
-
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "S'il vous plait notez que notre taux swap dépend également du temps en heures et jours que vous maintenez vos positions ouvertes:"
 
@@ -9593,6 +9594,9 @@ msgstr "Pour ouvrir un Compte Réel MT5 pour instruments financiers, vous devez 
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "Pour effectuer cette action, veuillez <a href=\"%1\">ouvrir un compte réel %2</a>."
+
+msgid "To perform this action, please set the %1currency%2 of your account."
+msgstr ""
 
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Pour effectuer cette action, veuillez vous connecter à votre compte réel %1."
