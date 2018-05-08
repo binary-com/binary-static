@@ -184,9 +184,9 @@ const BinaryOptions = () => {
 
                         <CircleHeader header={it.L('Trade type')} text={it.L('Choose from three main trade types:')}>
                             <ul className='bullet'>
-                                <ListStrong header={it.L('Up/Down')}        text={it.L('Major and minor pairs, plus Smart FX indices')} />
-                                <ListStrong header={it.L('Touch/No touch')} text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
-                                <ListStrong header={it.L('In/Out')}         text={it.L('Blue-chip stock contracts sourced from the over-the-counter market')} />
+                                <ListStrong header={it.L('Up/Down')}        text={it.L('Predict if the market will rise or fall from its current level, or if it will end higher or lower than a price target')} />
+                                <ListStrong header={it.L('Touch/No touch')} text={it.L('Predict if the market will touch or not touch a price target')} />
+                                <ListStrong header={it.L('In/Out')}         text={it.L('Predict if the market will stay between or go outside two price targets')} />
                             </ul>
                             <p>{it.L('Aside from the three main trade types above, you also get Asians and Digits trade types exclusively with our Volatility Indices.')}</p>
                         </CircleHeader>
