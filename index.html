@@ -45,8 +45,11 @@
                 return conLang;
             }
             function redirect() {
+                var loginid      = localStorage.getItem('active_loginid');
+                var client_info  = JSON.parse(localStorage.getItem('client.accounts') || '{}')[loginid];
+                var is_logged_in = client_info && client_info['token'];
                 window.location.href = (lang || 'en').toLowerCase() + '/' +
-                    (getCookieItem('loginid') ? 'trading' : 'home') + '.html' + window.location.search;
+                    (is_logged_in ? 'trading' : 'home') + '.html' + window.location.search;
             }
             function isDelayedRedirect() {
                 if(isGtmApplicable() && !redirectTimeOut) {
