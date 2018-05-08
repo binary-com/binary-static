@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-07 06:18-0400\n"
+"PO-Revision-Date: 2018-05-07 23:46-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -347,6 +347,9 @@ msgstr "%1 поддерживает %2 – ведущую благотворит
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 завоевал первое место в категории Оператор по финансовому беттингу (Financial Betting Operator) на престижной церемонии 2015 EGR Operator Awards, которая состоялась в Лондоне."
+
+msgid "%1 transfer fee between different currencies"
+msgstr ""
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "Вывод средств %1 со счёта %2 на счёт %3 завершен. Номер транзакции: %4"
@@ -7245,9 +7248,6 @@ msgstr "Пожалуйста, укажите желаемый интервал �
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "Пожалуйста, отправьте вышеуказанную информацию по адресу <a href='mailto:%1'>%1</a>."
 
-msgid "Please switch to a %1 account to manage funds."
-msgstr "Чтобы управлять средствами, пожалуйста, перейдите на счёт %1."
-
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "Пожалуйста, примите во внимание, что наш курс своп также зависит от времени и дней, в течение которых Вы сохраняете позиции открытыми:"
 
@@ -9593,6 +9593,9 @@ msgstr ""
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "Чтобы выполнить данное действие, <a href=\"%1\">откройте Реальный счет %2</a>."
+
+msgid "To perform this action, please set the %1currency%2 of your account."
+msgstr ""
 
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Чтобы выполнить данное действие, перейдите на Реальный счет %1."

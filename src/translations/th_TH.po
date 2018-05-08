@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-07 06:18-0400\n"
+"PO-Revision-Date: 2018-05-07 23:46-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -347,6 +347,9 @@ msgstr "%1 ให้การสนับสนุน %2 ซึ่งเป็�
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 ได้รับรางวัลชนะเลิศ ประเภท Financial Betting Operator ในงานเกียรติยศ EGR Operator Awards ปี 2015 จัดที่เมืองลอนดอน"
+
+msgid "%1 transfer fee between different currencies"
+msgstr ""
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "%1 ได้ถอนเงินจากเลขที่บัญชี %2 ไปยัง %3 เรียบร้อยแล้ว หมายเลขอ้างอิงธุรกรรม: %4"
@@ -7250,9 +7253,6 @@ msgstr "โปรดระบุช่วงเวลาการตรวจส
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "โปรดส่งข้อมูลข้างต้นมาที่ <a href='mailto:%1'>%1</a>"
 
-msgid "Please switch to a %1 account to manage funds."
-msgstr "โปรดสลับไปที่บัญชี %1 เพื่อจัดการเงินทุน"
-
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "กรุณารับทราบว่าอัตราในการแลกเปลี่ยนดอกเบี้ย (swap rate) ของเราขึ้นอยู่กับเวลาและวันที่คุณถือตำแหน่งเปิดของคุณ:"
 
@@ -9600,6 +9600,9 @@ msgstr "เพื่อเปิดบัญชี MT5 จริงสำหร�
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "เพื่อดำเนินการ โปรด <a href=\"%1\"> อัพเกรดเป็น %2 บัญชีจริง</a>"
+
+msgid "To perform this action, please set the %1currency%2 of your account."
+msgstr ""
 
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "เพื่อดำเนินการส่วนนี้ โปรดเปลี่ยนบัญชีของท่านเป็นบัญชีเงินจริง %1"

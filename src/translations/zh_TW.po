@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-07 06:18-0400\n"
+"PO-Revision-Date: 2018-05-07 23:46-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -25,16 +25,16 @@ msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protoco
 msgstr "「%1 API」是由%1建立和維護的編程例程、議定書、工具和資源集。您可通過%1交易平台使用已經註冊的應用程式介面。"
 
 msgid "\"Account\" means Client Trading Account opened with Binary (V) Ltd."
-msgstr ""
+msgstr "「帳戶」指在Binary (V) 有限公司開立的客戶交易帳戶。"
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "「二元」或「數字」期權是支付已預定和固定金額的期權，支付與否是根據二元期權到期時某事件是否發生而定。二元期權只能在兩個可能中出現一個最後結果，並讓您簡單地挑選「是」或「否」。就像傳統期權一樣，二元期權也是根據如貨幣、商品、指數或股票等標的資產。但是傳統期權最大的不同點是，二元期權只會有兩種結果。要麼事件發生，客戶因此獲得回報，要麼客戶損失每項期權已預定的投資金額。"
 
 msgid "\"Client Agreement\" means the Agreement between the Client and the Company including but not limited to the Terms and Conditions, Order Execution Policy, and Slippage Policy."
-msgstr ""
+msgstr "「客戶協定」指客戶與公司之間的協定, 包括但不限於條款及條件、訂單執行策略和滑動策略。"
 
 msgid "\"Commencement Date of this Agreement\" shall mean the date on which an appointment of a Money Manager is made by the Client."
-msgstr ""
+msgstr "「本協定的生效日期」是指客戶任命資金經理的日期。"
 
 msgid "\"Company\" means Binary (V) Ltd, operating under the brand or trademark of Binary.com, incorporated and registered in the Republic of Vanuatu, under the International Companies Act Cap. 222 and Financial Dealers Licensing Act (Cap. 70), licensed to provide Investment services and dealing with Securities."
 msgstr ""
@@ -347,6 +347,9 @@ msgstr "%1支持%2。這是英國一家領先的慈善機構，致力於消除�
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1在久負盛名的倫敦EGR操作員頒獎儀式中榮獲2015年金融搏彩操作員第一獎。"
+
+msgid "%1 transfer fee between different currencies"
+msgstr ""
 
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "已完成從賬號%2至%3的%1提款。交易編號: %4"
@@ -7245,9 +7248,6 @@ msgstr "請指定您的優選實況調查間隔時間分鐘數"
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "請將以上資訊傳到<a href='mailto:%1'>%1</a>。"
 
-msgid "Please switch to a %1 account to manage funds."
-msgstr "請切換到％1帳戶以管理資金。"
-
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "請注意，我們的掉期率也取決於您的持倉時間和天數︰"
 
@@ -9593,6 +9593,9 @@ msgstr "要為金融工具開立MT5真實帳戶，您必須擁有經過驗證的
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "如要執行此操作，請<a href=\"%1\">升級到 %2 真實帳戶</a>。"
+
+msgid "To perform this action, please set the %1currency%2 of your account."
+msgstr ""
 
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "如要執行此操作，請切換到 %1 真實帳戶。"
