@@ -17,7 +17,7 @@ $filter-height: 60px;
 
         & .container {
             height: 100%;
-            padding-left: 2rem;
+            @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -40,6 +40,9 @@ $filter-height: 60px;
     // column widths
     .date, .ref {
         width: 6.5em;
+    }
+    .desc {
+        padding-right: 3rem !important;
     }
     .action {
         width: 6.5em;

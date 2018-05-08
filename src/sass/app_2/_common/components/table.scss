@@ -30,6 +30,17 @@ $side-padding: 2rem;
         }
     }
     &.table-full-width {
+        th, td {
+            @include interpolate(padding-left, 981px, 1440px, 8px, 20px);
+            @include interpolate(padding-right, 981px, 1440px, 8px, 20px);
+
+            &:first-child {
+                @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
+            }
+            &:last-child {
+                @include interpolate(padding-right, 981px, 1440px, 16px, 32px);
+            }
+        }
         @media only screen and (min-width: $MAX_CONTAINER_WIDTH) {
             $new-side-padding: calc((100vw - #{$MAX_CONTAINER_WIDTH}) / 2 + #{$side-padding});
 
