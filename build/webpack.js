@@ -44,6 +44,11 @@ module.exports = function (grunt) {
             new webpack.DefinePlugin({
                 '__REACT_DEVTOOLS_GLOBAL_HOOK__': '({ isDisabled: true })'
             }),
+            new webpack.DefinePlugin({
+                'process.env': {
+                    NODE_ENV: JSON.stringify('production'),
+                },
+            }),
         );
     } else {
         plugins.push(
@@ -85,22 +90,17 @@ module.exports = function (grunt) {
             chunkFilename: '[name]_[chunkhash].min.js',
             publicPath   : `${isProduction || grunt.file.exists(`${process.cwd()}/scripts/CNAME`) ? '' : '/binary-static'}${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}/js/`,
         },
+        resolve: {
+            extensions: ['.js', '.jsx'],
+        },
         module: {
             loaders: [
                 {
-                    test   : /\.js$/,
+                    test   : /\.jsx?$/,
                     exclude: /node_modules/,
                     loader : 'babel-loader',
                     query  : {
-                        presets: ['env'],
-                        compact: false,
-                    },
-                }, {
-                    test   : /\.jsx$/,
-                    exclude: /node_modules/,
-                    loader : 'babel-loader',
-                    query  : {
-                        presets: ['react','env'],
+                        presets: ['env', 'react'],
                         plugins: [
                             'transform-object-rest-spread',
                             'transform-class-properties'
