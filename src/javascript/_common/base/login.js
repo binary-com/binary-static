@@ -1,6 +1,6 @@
-const Client             = require('./client');
-const getLanguage        = require('../../_common/language').get;
-const isStorageSupported = require('../../_common/storage').isStorageSupported;
+const Client             = require('./client_base');
+const getLanguage        = require('../language').get;
+const isStorageSupported = require('../storage').isStorageSupported;
 const getAppId           = require('../../config').getAppId;
 
 const Login = (() => {
