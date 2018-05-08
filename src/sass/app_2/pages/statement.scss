@@ -21,13 +21,14 @@ $filter-height: 60px;
             display: flex;
             flex-direction: row;
             align-items: center;
-
-            & > * {
-                margin-right: 1rem;
-            }
         }
         &-text {
             font-size: 14px;
+            margin-right: 0.6rem;
+        }
+        &-dash {
+            font-size: 14px;
+            margin: 0 0.6rem;
         }
     }
     .table-head {
