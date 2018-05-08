@@ -84,7 +84,6 @@ const Client = (() => {
             const upgrade_link_map = {
                 realws       : ['costarica', 'iom', 'malta'],
                 maltainvestws: ['maltainvest'],
-                japanws      : ['japan'],
             };
             upgrade_link = Object.keys(upgrade_link_map).find(link =>
                 upgrade_link_map[link].indexOf(upgrade_info.can_upgrade_to) !== -1

@@ -202,7 +202,7 @@ const ClientBase = (() => {
                 upgradeable_landing_companies.indexOf(landing_company) !== -1
             ));
 
-            can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest', 'japan');
+            can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
             if (can_upgrade_to) {
                 type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
             }
