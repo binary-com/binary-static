@@ -1,5 +1,5 @@
 const expect   = require('chai').expect;
-const Currency = require('../currency');
+const Currency = require('../currency_base');
 
 describe('Currency', () => {
     const currencies_config = {
