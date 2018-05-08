@@ -60,7 +60,7 @@ const SetCurrency = () => (
                 </form>
             </div>
 
-            <div data-show='iom' className='center-text invisible has_currency'>
+            <div id='upgrade_to_mf' className='center-text invisible'>
                 <SeparatorLine show_mobile className='gr-child gr-padding-10' />
 
                 <p><strong>{it.L('Open a Financial Account')}</strong></p>

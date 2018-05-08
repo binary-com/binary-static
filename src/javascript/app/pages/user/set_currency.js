@@ -16,6 +16,9 @@ const SetCurrency = (() => {
         const el = is_new_account ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
 
+        const { can_upgrade, type } = Client.getUpgradeInfo();
+        $('#upgrade_to_mf').setVisibility(can_upgrade && type === 'financial');
+
         if (Client.get('currency')) {
             if (is_new_account) {
                 $('#set_currency_loading').remove();
