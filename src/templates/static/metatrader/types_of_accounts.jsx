@@ -71,7 +71,8 @@ const TypesOfAccounts = () => (
             text={it.L('The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
         />
 
-        <div className='gr-padding-10 gr-child'>
+        {/* toEnableMAM: remove 'invisible' from className */}
+        <div className='gr-padding-10 gr-child invisible'>
             <a href={it.url_for('multiple-accounts-manager')} target='_blank'>*&nbsp;{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
         </div>
 
