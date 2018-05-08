@@ -173,7 +173,6 @@ const PersonalDetails = (() => {
 
     const getValidations = () => {
         let validations;
-        const data = get_settings_data;
         if (is_virtual) {
             validations = [{ selector: '#residence', validations: ['req'] }];
         } else {
