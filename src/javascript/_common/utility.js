@@ -184,7 +184,6 @@ module.exports = {
     getHighestZIndex,
     downloadCSV,
     template,
-    cloneObject,
     isEmptyObject,
     cloneObject,
     getPropertyValue,
