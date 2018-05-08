@@ -1,4 +1,4 @@
-const CreateDropdown = require('binary-style').selectDropdown;
+const CreateDropdown = require('@binary-com/binary-style').selectDropdown;
 const getHighstock   = require('../common').requireHighstock;
 const Symbols        = require('../symbols');
 const BinarySocket   = require('../../../base/socket');

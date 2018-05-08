@@ -23,6 +23,7 @@ const MetaTrader = (() => {
                     getAllAccountsInfo();
                 } else {
                     BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
+                    getExchangeRates();
                 }
             } else if (State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                 // TODO: remove this elseif when we enable mt account opening for malta
@@ -33,6 +34,9 @@ const MetaTrader = (() => {
             }
         });
     };
+
+    // we need to calculate min/max equivalent to 1 and 20000 USD, so get exchange rates for all currencies based on USD
+    const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
     const isEligible = () => {
         let has_mt_company = false;
@@ -185,6 +189,9 @@ const MetaTrader = (() => {
                         if (typeof actions_info[action].onError === 'function') {
                             actions_info[action].onError(response, MetaTraderUI.$form());
                         }
+                        if (/^MT5(Deposit|Withdrawal)Error$/.test(response.error.code)) {
+                            getExchangeRates();
+                        }
                     } else {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : accounts_info[acc_type].info.login;
@@ -196,7 +203,7 @@ const MetaTrader = (() => {
                         }
                         getAccountDetails(login, acc_type);
                         if (typeof actions_info[action].success_msg === 'function') {
-                            const success_msg = actions_info[action].success_msg(response);
+                            const success_msg = actions_info[action].success_msg(response, acc_type);
                             if (actions_info[action].success_msg_selector) {
                                 MetaTraderUI.displayMessage(actions_info[action].success_msg_selector, success_msg, 1);
                             } else {

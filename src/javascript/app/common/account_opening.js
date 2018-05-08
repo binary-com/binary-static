@@ -1,4 +1,4 @@
-const SelectMatcher      = require('binary-style').select2Matcher;
+const SelectMatcher      = require('@binary-com/binary-style').select2Matcher;
 const Cookies            = require('js-cookie');
 const generateBirthDate  = require('./attach_dom/birth_date_picker');
 const FormManager        = require('./form_manager');
