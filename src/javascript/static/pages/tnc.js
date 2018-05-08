@@ -1,4 +1,4 @@
-const tabListener = require('binary-style').tabListener;
+const tabListener = require('@binary-com/binary-style').tabListener;
 const localize    = require('../../_common/localize').localize;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
 
