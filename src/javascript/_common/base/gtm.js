@@ -1,12 +1,12 @@
 const Cookies        = require('js-cookie');
 const moment         = require('moment');
-const Client         = require('./client');
-const BinarySocket   = require('./socket');
-const Login          = require('../../_common/base/login');
-const getElementById = require('../../_common/common_functions').getElementById;
-const isVisible      = require('../../_common/common_functions').isVisible;
-const getLanguage    = require('../../_common/language').get;
-const State          = require('../../_common/storage').State;
+const ClientBase     = require('./client_base');
+const Login          = require('./login');
+const BinarySocket   = require('./socket_base');
+const getElementById = require('../common_functions').getElementById;
+const isVisible      = require('../common_functions').isVisible;
+const getLanguage    = require('../language').get;
+const State          = require('../storage').State;
 const getAppId       = require('../../config').getAppId;
 
 const GTM = (() => {
@@ -20,11 +20,11 @@ const GTM = (() => {
             url      : document.URL,
             event    : 'page_load',
         };
-        if (Client.isLoggedIn()) {
-            data_layer_info.visitorId = Client.get('loginid');
+        if (ClientBase.isLoggedIn()) {
+            data_layer_info.visitorId = ClientBase.get('loginid');
         }
 
-        $.extend(true, data_layer_info, data);
+        Object.assign(data_layer_info, data);
 
         const event = data_layer_info.event;
         delete data_layer_info.event;
@@ -64,8 +64,8 @@ const GTM = (() => {
         }
 
         const data = {
-            visitorId         : Client.get('loginid'),
-            bom_currency      : Client.get('currency'),
+            visitorId         : ClientBase.get('loginid'),
+            bom_currency      : ClientBase.get('currency'),
             bom_country       : get_settings.country,
             bom_country_abbrev: get_settings.country_code,
             bom_email         : get_settings.email,
@@ -76,7 +76,7 @@ const GTM = (() => {
         if (is_new_account) {
             data.bom_date_joined = data.bom_today;
         }
-        if (!Client.get('is_virtual')) {
+        if (!ClientBase.get('is_virtual')) {
             data.bom_age       = parseInt((moment().unix() - get_settings.date_of_birth) / 31557600);
             data.bom_firstname = get_settings.first_name;
             data.bom_lastname  = get_settings.last_name;
@@ -86,7 +86,7 @@ const GTM = (() => {
         if (is_login) {
             BinarySocket.wait('mt5_login_list').then((response) => {
                 (response.mt5_login_list || []).forEach((obj) => {
-                    const acc_type = (Client.getMT5AccountType(obj.group) || '')
+                    const acc_type = (ClientBase.getMT5AccountType(obj.group) || '')
                         .replace('real_vanuatu', 'financial').replace('vanuatu_', '').replace('costarica', 'gaming'); // i.e. financial_cent, demo_cent, demo_gaming, real_gaming
                     if (acc_type) {
                         data[`mt5_${acc_type}_id`] = obj.login;
@@ -100,13 +100,13 @@ const GTM = (() => {
     };
 
     const pushPurchaseData = (response) => {
-        if (!isGtmApplicable() || Client.get('is_virtual')) return;
+        if (!isGtmApplicable() || ClientBase.get('is_virtual')) return;
         const buy = response.buy;
         if (!buy) return;
         const req  = response.echo_req.passthrough;
         const data = {
             event             : 'buy_contract',
-            visitorId         : Client.get('loginid'),
+            visitorId         : ClientBase.get('loginid'),
             bom_symbol        : req.symbol,
             bom_market        : getElementById('contract_markets').value,
             bom_currency      : req.currency,
@@ -116,13 +116,13 @@ const GTM = (() => {
             bom_buy_price     : buy.buy_price,
             bom_payout        : buy.payout,
         };
-        $.extend(data, {
+        Object.assign(data, {
             bom_amount     : req.amount,
             bom_basis      : req.basis,
             bom_expiry_type: getElementById('expiry_type').value,
         });
         if (data.bom_expiry_type === 'duration') {
-            $.extend(data, {
+            Object.assign(data, {
                 bom_duration     : req.duration,
                 bom_duration_unit: req.duration_unit,
             });
@@ -147,15 +147,15 @@ const GTM = (() => {
 
         const gtm_data = {
             event          : 'mt5_new_account',
-            bom_email      : Client.get('email'),
+            bom_email      : ClientBase.get('email'),
             bom_country    : State.getResponse('get_settings.country'),
             mt5_last_signup: acc_type,
         };
 
         gtm_data[`mt5_${acc_type}_id`] = response.mt5_new_account.login;
 
-        if (/demo/.test(acc_type) && !Client.get('is_virtual')) {
-            gtm_data.visitorId = Client.getAccountOfType('virtual').loginid;
+        if (/demo/.test(acc_type) && !ClientBase.get('is_virtual')) {
+            gtm_data.visitorId = ClientBase.getAccountOfType('virtual').loginid;
         }
 
         pushDataLayer(gtm_data);
