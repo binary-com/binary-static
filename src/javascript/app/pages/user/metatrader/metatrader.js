@@ -6,6 +6,7 @@ const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const toTitleCase      = require('../../../../_common/string_util').toTitleCase;
+const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const MetaTrader = (() => {
     const mt_companies  = MetaTraderConfig.mt_companies;
@@ -171,6 +172,9 @@ const MetaTrader = (() => {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : accounts_info[acc_type].info.login;
                         if (!accounts_info[acc_type].info) {
+                            accounts_info[acc_type].info = { login, currency: getPropertyValue(response, ['mt5_new_account', 'currency']) };
+                            MetaTraderUI.setAccountType(acc_type, true);
+                            BinarySocket.send({ mt5_login_list: 1 });
                             MetaTraderUI.loadAction(null, acc_type);
                         }
                         BinarySocket.send({ mt5_login_list: 1 }).then((response_login_list) => {
