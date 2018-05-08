@@ -5,9 +5,8 @@ const LocalStore       = require('../storage').LocalStore;
 const State            = require('../storage').State;
 const getPropertyValue = require('../utility').getPropertyValue;
 const isEmptyObject    = require('../utility').isEmptyObject;
-const BinarySocket     = require('../../app/base/socket');
 
-const Client = (() => {
+const ClientBase = (() => {
     const storage_key = 'client.accounts';
     let client_object = {};
     let current_loginid;
@@ -172,13 +171,6 @@ const Client = (() => {
         return true;
     };
 
-    const sendLogoutRequest = (show_login_page) => {
-        if (show_login_page) {
-            sessionStorage.setItem('showLoginPage', 1);
-        }
-        BinarySocket.send({ logout: '1' });
-    };
-
     const currentLandingCompany = () => {
         const landing_company_response = State.getResponse('landing_company') || {};
         const this_shortcode           = get('landing_company_shortcode');
@@ -302,7 +294,6 @@ const Client = (() => {
         shouldAcceptTnc,
         clearAllAccounts,
         setNewAccount,
-        sendLogoutRequest,
         currentLandingCompany,
         shouldCompleteTax,
         getMT5AccountType,
@@ -313,4 +304,4 @@ const Client = (() => {
     };
 })();
 
-module.exports = Client;
+module.exports = ClientBase;
