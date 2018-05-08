@@ -1,4 +1,4 @@
-const Dropdown          = require('binary-style').selectDropdown;
+const Dropdown          = require('@binary-com/binary-style').selectDropdown;
 const moment            = require('moment');
 const CommonIndependent = require('./common_independent');
 const Contract          = require('./contract');
