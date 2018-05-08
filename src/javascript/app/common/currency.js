@@ -1,6 +1,6 @@
 const getLanguage      = require('../../_common/language').get;
 const localize         = require('../../_common/localize').localize;
-const LocalStore       = require('../../_common/storage').LocalStore;
+const State            = require('../../_common/storage').State;
 const getPropertyValue = require('../../_common/utility').getPropertyValue;
 
 let currencies_config = {};
@@ -41,7 +41,7 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const isJPClient = () => JSON.parse(LocalStore.get('is_jp_client'));
+const isJPClient = () => JSON.parse(State.get('is_jp_client'));
 
 const getFiatDecimalPlaces = () => isJPClient() ? 0 : 2;
 
@@ -64,6 +64,7 @@ const crypto_config = {
     ETH: { name: 'Ether',         min_withdrawal: 0.002 },
     ETC: { name: 'Ether Classic', min_withdrawal: 0.002 },
     LTC: { name: 'Litecoin',      min_withdrawal: 0.002 },
+    DAI: { name: 'Dai',           min_withdrawal: 0.002 },
 };
 
 const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'min_withdrawal']) || 0.002 : 1);
@@ -78,8 +79,8 @@ const getMinPayout = currency => (
 
 const getCurrencyList = (currencies) => {
     const $currencies       = $('<select/>');
-    const $fiat_currencies  = $('<optgroup/>', { label: localize('Fiat Currency') });
-    const $cryptocurrencies = $('<optgroup/>', { label: localize('Cryptocurrency') });
+    const $fiat_currencies  = $('<optgroup/>', { label: localize('Fiat') });
+    const $cryptocurrencies = $('<optgroup/>', { label: localize('Crypto') });
 
     currencies.forEach((currency) => {
         (isCryptocurrency(currency) ? $cryptocurrencies : $fiat_currencies)

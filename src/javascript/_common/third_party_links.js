@@ -39,7 +39,13 @@ const ThirdPartyLinks = (() => {
     };
 
     const isThirdPartyLink = (href) => {
-        const destination = new URL(href);
+        let destination;
+        try {
+            destination = new URL(href);
+        }
+        catch (e) {
+            return false;
+        }
         return !!destination.host
             && !/^.*\.binary\.com$/.test(destination.host) // destination host is not binary subdomain
             && window.location.host !== destination.host;

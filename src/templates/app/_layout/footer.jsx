@@ -18,6 +18,18 @@ const SocialIcons = ({ networks, is_centered }) => (
     </div>
 );
 
+const StatusNotification = () => (
+    <div id='status_notification'>
+        <div id='status_notification_type'>
+            <img src={it.url_for('images/server_status/ic-warning.svg')}  alt='Information icon'/>
+        </div>
+        <p id='status_notification_text'/>
+        <div id='status_notification_close'>
+            <img src={it.url_for('images/server_status/ic-close.svg')}  alt='Warning icon'/>
+        </div>
+    </div>
+);
+
 const FooterJA = () => (
     <div id='footer' className='no-print'>
         <div id='footer-menu' className='primary-bg-color gr-padding-10'>
@@ -104,6 +116,7 @@ const FooterJA = () => (
             </div>
         </div>
         <div id='end-note' className='invisible content-inverse-color center-text' />
+        <StatusNotification />
     </div>
 );
 
@@ -156,7 +169,7 @@ const FooterNormal = () => (
                                     { text: it.L('Terms and Conditions'), href: it.url_for('terms-and-conditions') },
                                     { text: it.L('Security and Privacy'), href: it.url_for('terms-and-conditions'), param: '?#privacy' },
                                     { text: it.L('Responsible Trading'),  href: it.url_for('responsible-trading') },
-                                    { text: it.L('Complaints'),           href: it.url_for('terms-and-conditions?section=complaints-disputes') },
+                                    { text: it.L('Complaints'),           href: it.url_for('terms-and-conditions?anchor=complaints-and-disputes#legal-binary') },
                                 ]}
                             />
 
@@ -191,22 +204,29 @@ const FooterNormal = () => (
                 <div className='gr-row'>
                     <p id='regulatory-text' className='gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color no-margin'>
                         {it.L(
-                            'In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK ([_2]). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission ([_3]), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker\'s Licence no. 1010285 issued on 1 July 2017). View complete [_4]. Some products are not available in all countries. This website\'s services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.',
+                            'In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK ([_1]). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission ([_2]), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker\'s Licence no. 1010285 issued on 1 July 2017). View complete [_3]. Some products are not available in all countries. This website\'s services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.',
                             `<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39172" target="_blank">${it.L('license reference no: 39172')}</a>`,
                             `<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39495" target="_blank">${it.L('license reference no: 39495')}</a>`,
                             `<a href=${it.url_for('regulation')}>${it.L('Regulatory Information')}</a>`,
                         )}
                     </p>
                     <div className='gr-3 gr-12-m gr-5-p center-text' id='social-networks'>
-                        <div className='gr-row id-hide'>
-                            <div className='gr-5'>
+                        <div className='gr-row gr-row-align-center-m gr-padding-10 gr-parent id-hide'>
+                            <div className='gr-5 gr-4-m'>
                                 <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
                                     <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                 </a>
                             </div>
-                            <div className='gr-7'>
+                            <div className='gr-7 gr-5-m'>
                                 <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
                                     <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
+                                </a>
+                            </div>
+                        </div>
+                        <div data-show='iom, malta, default' className='id-hide gr-row gr-row-align-center-m'>
+                            <div className='gr-9 gr-7-m'>
+                                <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
+                                    <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
                                 </a>
                             </div>
                         </div>
@@ -240,9 +260,9 @@ const FooterNormal = () => (
             </div>
         </div>
         <div id='end-note' className='invisible content-inverse-color center-text' />
+        <StatusNotification />
     </div>
 );
-
 const Footer = () => (
     (it.language.toLowerCase() === 'ja') ? <FooterJA /> : <FooterNormal />
 );

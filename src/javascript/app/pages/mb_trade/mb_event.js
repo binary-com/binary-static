@@ -23,6 +23,7 @@ const MBTradingEvents = (() => {
     const initiate = () => {
         const $form        = $('.trade_form');
         const hidden_class = 'invisible';
+        const border_class = 'primary-border-color';
         const is_jp_client = Client.isJPClient();
 
         $(document).on('click', (e) => {
@@ -30,13 +31,20 @@ const MBTradingEvents = (() => {
             makeListsInvisible();
         });
 
-        $form.find('.current').on('click', function (e) {
+        $form.find('.current, .header-current').on('click', function (e) {
             e.stopPropagation();
-            const $list = $(this).siblings('.list');
+            const $this = $(this);
+            let $list = $this.siblings('.list');
+            if (!$list.length) {
+                $list = $this.siblings().find('.list'); // in case of .header-current
+            };
             if ($list.hasClass(hidden_class)) {
                 makeListsInvisible();
             }
             $list.toggleClass(hidden_class);
+            $this.toggleClass(border_class)
+                .siblings().find('.current').toggleClass(border_class).end().end()
+                .parent().siblings('.header-current').toggleClass(border_class);
         });
 
         /*
@@ -83,6 +91,18 @@ const MBTradingEvents = (() => {
                 $('.remaining-time').removeClass('alert');
                 MBContract.displayRemainingTime(true, is_jp_client);
             });
+            if (!is_jp_client) {
+                const $header_cur = $form.find('.header-current');
+                $period.on('mouseover', (e) => {
+                    e.stopPropagation();
+                    $header_cur.addClass(border_class);
+                }).on('mouseleave', (e) => {
+                    e.stopPropagation();
+                    if ($period.find('.list').hasClass(hidden_class)) {
+                        $header_cur.removeClass(border_class);
+                    }
+                });
+            }
         }
 
         const validatePayout = (payout_amount, $error_wrapper) => {
@@ -265,6 +285,7 @@ const MBTradingEvents = (() => {
             $form.find('.list, #payout_list').setVisibility(0).end()
                 .find('#period, #category')
                 .setVisibility(1);
+            $form.find('.current, .header-current').removeClass(border_class);
         };
     };
 

@@ -17,7 +17,6 @@ const Client = (() => {
     const storage_key = 'client.accounts';
     let client_object = {};
     let current_loginid;
-    let is_jp_client = false;
 
     const init = () => {
         current_loginid = LocalStore.get('active_loginid');
@@ -186,7 +185,7 @@ const Client = (() => {
     };
 
     const shouldShowJP = (el) => (
-        is_jp_client ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
+        isJPClient() ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
     );
 
     const activateByClientType = (section_id) => {
@@ -289,7 +288,7 @@ const Client = (() => {
 
     const shouldCompleteTax = () => isAccountOfType('financial') && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
-    const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
+    const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/\_(\d+|master)/, '') : ''); // remove manager id or master distinction from group
 
     const getUpgradeInfo = () => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
@@ -396,20 +395,14 @@ const Client = (() => {
 
     const hasCostaricaAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
-    const canRequestProfessional = () => {
-        const residence = get('residence');
-        /* Austria, Italy, Belgium, Latvia, Bulgaria,	Lithuania, Croatia, Luxembourg, Cyprus, Malta, Czech Republic,	Netherlands, Denmark, Poland, Estonia, Portugal, Finland, Romania, France, Slovakia, Germany, Slovenia, Greece, Spain, Hungary, Sweden, Ireland, United Kingdom, Australia, New Zealand, Singapore, Canada, Switzerland */
-        const countries = ['at', 'it', 'be', 'lv', 'bg', 'lt', 'hr', 'lu', 'cy', 'mt', 'cf', 'nl', 'dk', 'pl', 'ee', 'pt', 'fi', 'ro', 'fr', 'sk', 'de', 'si', 'gr', 'es', 'hu', 'se', 'ie', 'gb', 'au', 'nz', 'sg', 'ca', 'ch'];
-        return countries.indexOf(residence.toLowerCase()) !== -1;
-
-    };
-
-    const defaultRedirectUrl = () => urlFor(is_jp_client ? 'multi_barriers_trading' : 'trading');
+    const defaultRedirectUrl = () => urlFor(isJPClient() ? 'multi_barriers_trading' : 'trading');
 
     const setJPFlag = () => {
-        is_jp_client = urlLang() === 'ja' || get('residence') === 'jp';
-        LocalStore.set('is_jp_client', is_jp_client); // accessible by files that cannot call Client
+        const is_jp_client = urlLang() === 'ja' || get('residence') === 'jp';
+        State.set('is_jp_client', is_jp_client); // accessible by files that cannot call Client
     };
+
+    const isJPClient = () => State.get('is_jp_client');
 
     return {
         init,
@@ -439,10 +432,9 @@ const Client = (() => {
         getLandingCompanyValue,
         canTransferFunds,
         hasCostaricaAccount,
-        canRequestProfessional,
         defaultRedirectUrl,
         setJPFlag,
-        isJPClient: () => is_jp_client,
+        isJPClient,
     };
 })();
 
