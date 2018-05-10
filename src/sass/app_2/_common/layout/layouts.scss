@@ -18,6 +18,10 @@
             cq-context { // stylelint-disable-line selector-type-no-unknown
                 top: 0;
                 left: 0;
+
+                div.chartContainer {
+                    background: transparent;
+                }
             }
             div.debug-text {
                 display: none;
