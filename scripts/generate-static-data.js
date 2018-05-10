@@ -152,7 +152,7 @@ const texts = [
     'High-Close',
     'Close-Low',
     'High-Low',
-    '"AUD/JPY" or "Apple"',
+    'Search...',
     'Select Asset',
 
     // limits
@@ -228,7 +228,7 @@ const texts = [
 
     // paymentagent_withdraw
     'Please select a payment agent',
-    'The Payment Agent facility is currently not available in your country.',
+    'Payment Agent services are not available in your country or in your preferred currency.',
     'Invalid amount, minimum is',
     'Invalid amount, maximum is',
     'Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.',
@@ -537,9 +537,12 @@ const texts = [
     'Real Standard',
     'Real Advanced',
     'Real Volatility Indices',
+    'MAM Advanced',
+    'MAM Volatility Indices',
     'Change Password',
     'Demo Accounts',
     'Real-Money Accounts',
+    'MAM Accounts',
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
     '[_1] Account [_2]',
     'Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.',
@@ -548,6 +551,8 @@ const texts = [
     'Verify Reset Password',
     'Reset Password',
     'Please check your email for further instructions.',
+    'Revoke MAM',
+    'Manager successfully revoked',
 
     // account_transfer
     'Min',
@@ -605,6 +610,7 @@ const texts = [
     'Ether',
     'Ether Classic',
     'Litecoin',
+    'Dai',
 
     // Authentication errors
     'Invalid document format: "[_1]"',
