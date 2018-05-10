@@ -91,7 +91,7 @@
     "ws": "1.1.5"
   },
   "dependencies": {
-    "@binary-com/smartcharts": "0.0.0",
+    "@binary-com/smartcharts": "^0.1.0",
     "babel-polyfill": "6.26.0",
     "binary-document-uploader": "2.3.2",
     "binary-style": "0.2.3",
@@ -104,9 +104,9 @@
     "jquery.scrollto": "2.1.2",
     "js-cookie": "2.2.0",
     "kinetic": "5.2.0",
-    "mobx": "3.4.1",
-    "mobx-react": "4.3.5",
-    "mobx-utils": "3.2.2",
+    "mobx": "^4.2.0",
+    "mobx-react": "^5.1.2",
+    "mobx-utils": "^4.0.1",
     "moment": "2.19.4",
     "promise-polyfill": "6.1.0",
     "react": "16.2.0",

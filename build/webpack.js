@@ -98,6 +98,9 @@ module.exports = function (grunt) {
             ],
         },
         plugins,
+        externals: {
+            CIQ: 'CIQ',
+        },
     };
 
     const watch_options = Object.assign({ watch: true }, common_options);

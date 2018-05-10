@@ -9,11 +9,19 @@
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: repeat(2, [row] auto);
-        grid-gap: 20px;
+        grid-gap: 4px;
 
         .chart-container {
             padding: 10px;
             position: relative;
+
+            cq-context { // stylelint-disable-line selector-type-no-unknown
+                top: 0;
+                left: 0;
+            }
+            div.debug-text {
+                display: none;
+            }
         }
         .sidebar-container {
             position: relative;
@@ -40,7 +48,7 @@
                 fieldset {
                     grid-column: 1;
 
-                    div.duration-container, div.amount-container {
+                    div.duration-container, div.amount-container, div.endtime-container {
                         display: grid;
                         grid-column-gap: 15px;
                         grid-template-columns: 1fr;
@@ -50,8 +58,15 @@
                         div.duration-container {
                             grid-template-columns: 1.5fr 1fr;
                         }
+                        div.endtime-container {
+                            grid-template-columns: 1fr 1fr;
+                        }
                         div.amount-container {
-                            grid-template-columns: 1fr 1.5fr;
+                            grid-template-columns: 1fr 1fr 1fr;
+
+                            &.has-currency {
+                                grid-template-columns: 1fr 1.5fr;
+                            }
                         }
                     }
                 }

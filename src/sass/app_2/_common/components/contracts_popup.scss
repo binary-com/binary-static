@@ -1,8 +1,9 @@
 div.contracts-popup-container {
     position: absolute;
     margin: 8px 0;
-    top: 0;
-    left: 30%;
+    top: 10px;
+    left: 35%;
+    z-index: 2;
 
     .contracts-popup-display {
         display: inline-flex;
@@ -12,7 +13,7 @@ div.contracts-popup-container {
         max-width: 200px;
         width: 100%;
         background: $COLOR_WHITE;
-        height: 30px;
+        height: 28px;
         cursor: pointer;
         border: solid 1px $COLOR_LIGHT_GRAY;
         border-radius: 4px;

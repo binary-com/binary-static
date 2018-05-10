@@ -17,6 +17,10 @@ module.exports = {
             { expand: true, cwd: 'src/javascript/_common/lib/pushwooshSDK/',      src: ['**'], dest: global.dist }, /* serves pushwoosh sdks from root */
             { expand: true, cwd: 'src/javascript/',                               src: ['manifest.json'], dest: global.dist },
 
+            // chartiq-dependency
+            { expand: true, cwd: 'node_modules/@binary-com/smartcharts/dist/',    src: ['chartiq.min.js'], dest: global.dist + '/js' },
+            { expand: true, cwd: 'node_modules/@binary-com/smartcharts/dist/',    src: ['smartcharts.css'], dest: global.dist + '/css', },
+
             // binary-style
             { expand: true, cwd: 'node_modules/binary-style/src/images/favicons', src: ['**'], dest: global.dist + '/images/favicons/', },
             { expand: true, cwd: 'node_modules/binary-style/src/images/favicons', src: ['favicon.ico'], dest: global.dist },

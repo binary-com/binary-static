@@ -1,4 +1,4 @@
-import { useStrict, action, reaction } from 'mobx';
+import { action, reaction } from 'mobx';
 import { asyncAction } from 'mobx-utils';
 import { cloneObject } from '../../../../_common/utility';
 
@@ -10,7 +10,7 @@ import * as StartDate from './start_date';
 import * as Symbol from './symbol';
 import * as Test from './test';
 
-useStrict(true);
+// useStrict(true); SmartCharts libary is not using this
 
 const reaction_disposers = [];
 

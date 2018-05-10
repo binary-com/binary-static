@@ -152,6 +152,7 @@ const createContextBuilder = async () => {
         } catch (e) { } // eslint-disable-line
     }
     const vendor_hash = await fileHash(Path.join(config.dist_path, 'js/vendor.min.js'));
+    const chartiq_hash = await fileHash(Path.join(config.dist_path, 'js/chartiq.min.js'));
     if (!is_translation) {
         await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
     }
@@ -161,9 +162,10 @@ const createContextBuilder = async () => {
             `${config.root_url}js/texts/{PLACEHOLDER_FOR_LANG}.js?${static_hash}`,
             `${config.root_url}js/manifest.js?${static_hash}`,
             `${config.root_url}js/vendor.min.js?${vendor_hash}`,
+            `${config.root_url}js/chartiq.min.js?${chartiq_hash}`,
             `${config.root_url}js/binary${is_app ? '_app' : ''}${program.dev ? '' : '.min'}.js?${static_hash}`,
         ],
-        css_files: is_app ? [`${config.root_url}css/app_2.min.css?${static_hash}`] : [
+        css_files: is_app ? [`${config.root_url}css/app_2.min.css?${static_hash}`, `${config.root_url}css/smartcharts.css`] : [
             `${config.root_url}css/common.min.css?${static_hash}`,
             ...config.sections.map(section => `${config.root_url}css/${section}.min.css?${static_hash}`),
         ],
