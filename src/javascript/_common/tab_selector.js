@@ -1,4 +1,4 @@
-const tabListener        = require('binary-style').tabListener;
+const tabListener        = require('@binary-com/binary-style').tabListener;
 const getElementById     = require('./common_functions').getElementById;
 const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;

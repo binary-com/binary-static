@@ -8,11 +8,7 @@ const createElement = require('./utility').createElement;
     but rely on URL params instead
 
     HOW TO USE:
-        <h1 data-anchor='some string'>Some title</h1>   // passed string doesn't have to be unique
-
-        or
-
-        <HeaderSecondary header={it.L('Forex')} has_data_anchor />
+        <h1 data-anchor>Some title</h1>
 */
 
 const ScrollToAnchor = (() => {
@@ -20,11 +16,20 @@ const ScrollToAnchor = (() => {
 
     const init = () => {
         addAnchorsToElements();
-        scrollToAnchorInQuery();
+        const target = getAnchorTargetElement();
+
+        // remove query param if loaded onto a page without target element
+        if (!target || !isVisible(target)) {
+            Url.updateParamsWithoutReload({
+                anchor: null,
+            }, true);
+        } else {
+            scrollToAnchorInQuery();
+        }
     };
 
     const encode = (str) => {
-        const encoded = str.toLowerCase().replace(/\s/g, '-');
+        const encoded = str.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
         let appendix = '';
         if (id_occurrence_count[encoded]) {
             appendix = `-${++id_occurrence_count[encoded]}`;
@@ -47,7 +52,8 @@ const ScrollToAnchor = (() => {
     const addAnchorsToElements = () => {
         const els = document.querySelectorAll('[data-anchor]');
         els.forEach(el => {
-            const title = el.dataset.anchor;
+            if (el.querySelector('.data-anchor-link')) return;
+            const title = el.innerText;
             const id = encode(title);
             el.dataset.anchor = id;
             const anchor_link = makeAnchorLink(id);
@@ -67,12 +73,9 @@ const ScrollToAnchor = (() => {
     };
 
     const getAnchorTargetElement = () => {
-        const params = Url.paramsHash();
-        const id = params.anchor;
+        const id = Url.paramsHash().anchor;
         if (!id) return null;
-        const candidates = document.querySelectorAll(`[data-anchor="${id}"]`);
-        const el = Array.from(candidates).find(isVisible);
-        return el;
+        return document.querySelector(`[data-anchor="${id}"]`);
     };
 
     const scrollToAnchorInQuery = () => {
@@ -85,13 +88,6 @@ const ScrollToAnchor = (() => {
 
     const cleanup = () => {
         id_occurrence_count = {};
-        const el = getAnchorTargetElement();
-        // remove anchor param, when leaving the page with target element
-        if (el) {
-            Url.updateParamsWithoutReload({
-                anchor: null,
-            }, true);
-        }
     };
 
     return {
