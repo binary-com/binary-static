@@ -30,7 +30,7 @@ const ViewPopup = (() => {
     const wrapper_id   = 'sell_content_wrapper';
     const hidden_class = 'invisible';
 
-    const init = (button) => {
+    const init = (button, onClose) => {
         btn_view          = button;
         contract_id       = $(btn_view).attr('contract_id');
         contract          = {};
@@ -41,6 +41,10 @@ const ViewPopup = (() => {
         chart_updated     = false;
         sell_text_updated = false;
         $container        = '';
+
+        if (typeof onClose === 'function') {
+            ViewPopupUI.setOnCloseFunction(onClose);
+        }
 
         if (btn_view) {
             ViewPopupUI.disableButton($(btn_view));
