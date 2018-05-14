@@ -37,7 +37,8 @@ const TickDisplay = (() => {
         tick_shortcode,
         tick_init,
         subscribe,
-        responseID;
+        responseID,
+        sell_spot_time;
 
     let id_render = 'tick_chart';
 
@@ -364,6 +365,13 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
+                    if (tick.epoch === sell_spot_time) {
+                        x_indicators[indicator_key] = {
+                            index: counter,
+                            dashStyle: 'Dash',
+                        }
+                    }
+
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
                         x_indicators[indicator_key].index = counter;
                         add(x_indicators[indicator_key]);
@@ -375,22 +383,22 @@ const TickDisplay = (() => {
                 }
         }
     };
-// TODO: draw sell line
+// TODO: draw sell line for statement
 
     const updateChart = (data, contract) => {
         subscribe = 'false';
-        if (data.is_sold) {
+        if (data.is_sold && applicable_ticks) {
             console.log(contract);
             const index = applicable_ticks.findIndex(({ epoch }) => epoch === +contract.sell_spot_time);
             const indicator_key = `_${index}`;
             x_indicators[indicator_key] = {
                 index,
-                // id   : 'exit_tick',
                 dashStyle: 'Dash',
             };
             add(x_indicators[indicator_key]);
         }
-        else if (contract) {
+        if (contract) {
+            console.log(contract);
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
             tick_longcode     = contract.longcode;
@@ -399,6 +407,7 @@ const TickDisplay = (() => {
             absolute_barrier  = contract.barrier;
             tick_shortcode    = contract.shortcode;
             tick_init         = '';
+            sell_spot_time    = +contract.sell_spot_time;
             const request     = {
                 ticks_history: contract.underlying,
                 start        : contract.date_start,
@@ -407,6 +416,8 @@ const TickDisplay = (() => {
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
                 subscribe         = 'true';
+            } else if (contract.sell_time < contract.date_expiry) {
+                request.end = contract.sell_time;
             } else {
                 request.end = contract.date_expiry;
             }
