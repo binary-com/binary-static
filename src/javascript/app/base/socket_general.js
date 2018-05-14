@@ -1,17 +1,16 @@
-const BinaryPjax           = require('./binary_pjax');
 const Client               = require('./client');
 const Clock                = require('./clock');
 const Footer               = require('./footer');
-const GTM                  = require('./gtm');
 const Header               = require('./header');
-const Login                = require('./login');
 const BinarySocket         = require('./socket');
 const Dialog               = require('../common/attach_dom/dialog');
 const showPopup            = require('../common/attach_dom/popup');
 const setCurrencies        = require('../common/currency').setCurrencies;
 const SessionDurationLimit = require('../common/session_duration_limit');
 const updateBalance        = require('../pages/user/update_balance');
-const getElementById       = require('../../_common/common_functions').getElementById;
+const GTM                  = require('../../_common/base/gtm');
+const Login                = require('../../_common/base/login');
+const localize             = require('../../_common/localize').localize;
 const State                = require('../../_common/storage').State;
 const urlFor               = require('../../_common/url').urlFor;
 const getPropertyValue     = require('../../_common/utility').getPropertyValue;
@@ -26,18 +25,13 @@ const BinarySocketGeneral = (() => {
                     return;
                 }
                 BinarySocket.send({ website_status: 1, subscribe: 1 });
-                if (Client.isLoggedIn()) {
-                    BinarySocket.wait('authorize').then(() => {
-                        Client.setJPFlag();
-                        BinaryPjax.init(getElementById('content-holder'), '#content');
-                    });
-                }
             }
             Clock.startClock();
         }
     };
 
     const onMessage = (response) => {
+        handleError(response);
         Header.hideNotification('CONNECTION_ERROR');
         let is_available = false;
         switch (response.msg_type) {
@@ -129,16 +123,40 @@ const BinarySocketGeneral = (() => {
         }
     };
 
-    const initOptions = () => ({
-        onOpen,
-        onMessage,
-        notify        : Header.displayNotification,
-        isLoggedIn    : Client.isLoggedIn,
-        getClientValue: Client.get,
-    });
+    const handleError = (response) => {
+        const msg_type   = response.msg_type;
+        const error_code = getPropertyValue(response, ['error', 'code']);
+        switch (error_code) {
+            case 'WrongResponse':
+            case 'InternalServerError':
+            case 'OutputValidationFailed': {
+                if (msg_type !== 'mt5_login_list') {
+                    showNoticeMessage(response.error.message);
+                }
+                break;
+            }
+            case 'RateLimit':
+                if (msg_type !== 'cashier_password') {
+                    Header.displayNotification(localize('You have reached the rate limit of requests per second. Please try later.'), true, 'RATE_LIMIT');
+                }
+                break;
+            case 'InvalidAppID':
+                Header.displayNotification(response.error.message, true, 'INVALID_APP_ID');
+                break;
+            case 'DisabledClient':
+                showNoticeMessage(response.error.message);
+                break;
+            // no default
+        }
+    };
+
+    const showNoticeMessage = (text) => {
+        $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text })));
+    };
 
     return {
-        initOptions,
+        onOpen,
+        onMessage,
     };
 })();
 

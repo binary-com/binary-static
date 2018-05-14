@@ -1,5 +1,3 @@
-const BinaryPjax           = require('../../../../base/binary_pjax');
-const isJPClient           = require('../../../../base/client').isJPClient;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
 const Dialog               = require('../../../../common/attach_dom/dialog');
@@ -17,11 +15,6 @@ const APIToken = (() => {
         $form;
 
     const onLoad = () => {
-        if (isJPClient()) {
-            BinaryPjax.loadPreviousUrl();
-            return;
-        }
-
         $table_container = $('#tokens_list');
         $form            = $(form_id);
 
