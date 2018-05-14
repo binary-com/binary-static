@@ -35,7 +35,7 @@ const Purchase = (() => {
         const descr              = CommonFunctions.getElementById('contract_purchase_descr');
         const barrier_element    = CommonFunctions.getElementById('contract_purchase_barrier');
         const reference          = CommonFunctions.getElementById('contract_purchase_reference');
-        const chart              = CommonFunctions.getElementById('tick_chart');
+        const chart              = CommonFunctions.getElementById('trade_tick_chart');
         const payout             = CommonFunctions.getElementById('contract_purchase_payout');
         const cost               = CommonFunctions.getElementById('contract_purchase_cost');
         const profit             = CommonFunctions.getElementById('contract_purchase_profit');
@@ -118,10 +118,10 @@ const Purchase = (() => {
                 CommonFunctions.elementTextContent(button, localize('View'));
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
-                $('.open_contract_details').attr('contract_id', receipt.contract_id).setVisibility(1);
+                $('#confirmation_message_container .open_contract_details').attr('contract_id', receipt.contract_id).setVisibility(1);
             } else {
                 button.hide();
-                $('.open_contract_details').setVisibility(0);
+                $('#confirmation_message_container .open_contract_details').setVisibility(0);
             }
         }
 
@@ -168,6 +168,7 @@ const Purchase = (() => {
                 payout              : receipt.payout,
                 show_contract_result: 1,
                 width               : $('#confirmation_message').width(),
+                id_render           : 'trade_tick_chart',
             });
             TickDisplay.resetSpots();
         }

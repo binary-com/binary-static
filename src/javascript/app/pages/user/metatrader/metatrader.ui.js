@@ -8,7 +8,6 @@ const urlForStatic     = require('../../../../_common/url').urlForStatic;
 const getHashValue     = require('../../../../_common/url').getHashValue;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
-const template         = require('../../../../_common/utility').template;
 
 const MetaTraderUI = (() => {
     let $container,
@@ -242,7 +241,7 @@ const MetaTraderUI = (() => {
             }
 
             if (action === 'revoke_mam') {
-                $form.find('#mam_id').text(accounts_info[acc_type].manager_id);
+                $form.find('#mam_id').text(accounts_info[acc_type].info.manager_id);
             }
 
             $form.find('button[type="submit"]').each(function() { // cashier has two different actions
@@ -261,12 +260,18 @@ const MetaTraderUI = (() => {
         }
 
         if (action === 'cashier') { // Manage Fund
+            const client_currency = Client.get('currency');
+            const mt_currency     = MetaTraderConfig.getCurrency(acc_type);
             cloneForm();
             $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
-            $form.find('.binary-balance').html(`${formatMoney(Client.get('currency'), Client.get('balance'))}`);
+            $form.find('.binary-balance').html(`${formatMoney(client_currency, Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
-            $form.find('.mt5-balance').html(`${formatMoney(MetaTraderConfig.getCurrency(acc_type), accounts_info[acc_type].info.balance)}`);
-            $form.find('label[for^="txt_amount_"]').append(` ${MetaTraderConfig.getCurrency(acc_type)}`);
+            $form.find('.mt5-balance').html(`${formatMoney(mt_currency, accounts_info[acc_type].info.balance)}`);
+            $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
+            $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
+
+            $form.find('#txt_amount_deposit, #txt_amount_withdrawal').siblings('.hint').setVisibility(client_currency !== mt_currency);
+
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {
                     if (error_msg) {
@@ -280,8 +285,8 @@ const MetaTraderUI = (() => {
                 let msg = '';
                 if (Client.get('is_virtual')) {
                     msg = MetaTraderConfig.needsRealMessage();
-                } else if (Client.get('currency') !== MetaTraderConfig.getCurrency(acc_type)) {
-                    msg = template($templates.find('#msg_currency_not_match').text(), [MetaTraderConfig.getCurrency(acc_type)]);
+                } else if (!Client.get('currency')) { // client should set currency before accessing fund management section
+                    msg = $templates.find('#msg_set_currency').html();
                 }
                 if (msg) {
                     displayMainMessage(msg, false);
@@ -316,7 +321,7 @@ const MetaTraderUI = (() => {
         const $acc_actions = $container.find('.acc-actions');
         $acc_actions.find('.new-account').setVisibility(is_new_account);
         $acc_actions.find('.has-account').setVisibility(!is_new_account);
-        $acc_actions.find('.has-mam').setVisibility(is_new_account ? 0 : ('manager_id' in accounts_info[Client.get('mt5_account')]));
+        $acc_actions.find('.has-mam').setVisibility(is_new_account ? 0 : getPropertyValue(accounts_info, [Client.get('mt5_account'), 'info', 'manager_id']));
         $detail.setVisibility(!is_new_account);
 
         $container.find('[class*="act_"]').removeClass('selected');
@@ -516,7 +521,7 @@ const MetaTraderUI = (() => {
     };
 
     const showHideMAM = (acc_type) => {
-        const has_manager = 'manager_id' in accounts_info[acc_type];
+        const has_manager = getPropertyValue(accounts_info, [acc_type, 'info', 'manager_id']);
         $container.find('.has-mam').setVisibility(has_manager);
         if (!has_manager && $container.find('.acc-actions .has-mam').hasClass('selected')) {
             loadAction(defaultAction(acc_type));

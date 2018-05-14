@@ -119,7 +119,8 @@ const Metatrader = () => (
                             <a href='javascript:;' className='act_new_account new-account center-text invisible'>
                                 <span>{it.L('Create MetaTrader 5 account')}</span>
                             </a>
-                            <a href='javascript:;' className='act_new_account_mam new-account center-text invisible'>
+                            {/* toEnableMAM: add 'new-account' to className */}
+                            <a href='javascript:;' className='act_new_account_mam center-text invisible'>
                                 <span>{it.L('Create MAM account')}</span>
                             </a>
                             <a href='javascript:;' className='act_cashier has-account center-text invisible'>
@@ -467,7 +468,7 @@ const Metatrader = () => (
                                             <CashierDesc title={it.L('Transfer funds to your MT5 account')} arrow_direction='right' desc={it.L('Transfer funds from your binary options account into your MetaTrader 5 account.')} />
 
                                             <div className='form'>
-                                                <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} />
+                                                <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('[_1] transfer fee between different currencies', '1%')} />
                                                 <SubmitButton
                                                     is_centered
                                                     is_full_width
@@ -486,7 +487,7 @@ const Metatrader = () => (
                                             <CashierDesc title={it.L('Withdraw funds from your MT5 account')} arrow_direction='left' desc={it.L('Transfer funds from your MetaTrader 5 account into your binary options account.')} />
 
                                             <div className='form'>
-                                                <FormRow is_two_rows type='text' id='txt_amount_withdrawal' label={it.L('Amount')} attributes={{ maxLength: 10 }} />
+                                                <FormRow is_two_rows type='text' id='txt_amount_withdrawal' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('[_1] transfer fee between different currencies', '1%')} />
                                                 <FormRow is_two_rows type='password' id='txt_main_pass_wd' label={it.L('MetaTrader 5 main password')} />
                                                 <SubmitButton
                                                     is_centered
@@ -505,9 +506,9 @@ const Metatrader = () => (
                     </div>
 
                     <div id='messages'>
+                        <div id='msg_set_currency'>{it.L('To perform this action, please set the [_1]currency[_2] of your account.', `<a href="${it.url_for('user/set-currency')}">`, '</a>')}</div>
                         <div id='msg_switch'>{it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}</div>
                         <div id='msg_upgrade'>{it.L('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', it.url_for('new_account/realws'), it.website_name)}</div>
-                        <div id='msg_currency_not_match'>{it.L('Please switch to a [_1] account to manage funds.', '[_1]')}</div>
                         <div id='msg_real_financial'>
                             <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 real account, please:')}</span>
                             <span id='msg_mam_account' className='invisible'>{it.L('To create a MAM real account, please:')}</span>
