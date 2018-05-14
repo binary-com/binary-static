@@ -331,9 +331,9 @@ const TickDisplay = (() => {
             epoches = data.history.times;
         }
 
-        const has_reached_end = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
+        const has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed || sell_spot_time;
 
-        if (!has_reached_end) {
+        if (!has_finished) {
             for (let d = 0; d < epoches.length; d++) {
                 let tick;
                 if (data.tick) {
@@ -378,7 +378,8 @@ const TickDisplay = (() => {
     const updateChart = (data, contract) => {
         subscribe = 'false';
         if (data.is_sold && applicable_ticks) {
-            const index = applicable_ticks.findIndex(({ epoch }) => epoch === +contract.sell_spot_time);
+            sell_spot_time = +contract.sell_spot_time;
+            const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
             const indicator_key = `_${index}`;
             x_indicators[indicator_key] = {
                 index,
