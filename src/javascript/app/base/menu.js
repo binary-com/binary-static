@@ -11,9 +11,11 @@ const Menu = (() => {
 
         applyToAllElements('li', (el) => { el.classList.remove('active', 'active-parent'); }, '', menu_top);
         if (Client.isLoggedIn()) {
-            applyToAllElements('.cr-only', (el) => {
-                const is_upgradable_to_cr = State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1;
-                el.setVisibility(Client.hasCostaricaAccount() || is_upgradable_to_cr);
+            // client is virtual and they are allowed to have costarica/maltainvest financial account
+            // or client is real and current landing company is costarica/maltainvest
+            const has_financial_markets = /costarica|maltainvest/.test(Client.get('is_virtual') ? State.getResponse('landing_company.financial_company.shortcode') : Client.get('landing_company_shortcode'));
+            applyToAllElements('.financial-only', (el) => {
+                el.setVisibility(has_financial_markets);
             });
         }
 
