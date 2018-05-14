@@ -92,12 +92,18 @@ const Durations = (() => {
                 switch (min_unit) {
                     case 's':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
-                        duration_list.m         = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max, true);
-                        duration_list.h         = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
+                        if (+text_mapping_min.value > 60) {
+                            duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max, true);
+                            if (+text_mapping_min.value > 3600) {
+                                duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
+                            }
+                        }
                         break;
                     case 'm':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max, true);
-                        duration_list.h         = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
+                        if (+text_mapping_min.value > 60) {
+                            duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
+                        }
                         break;
                     case 'h':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
