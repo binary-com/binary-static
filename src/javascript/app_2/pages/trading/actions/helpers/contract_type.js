@@ -46,6 +46,7 @@ const ContractType = (() => {
                 contract_types[key].trade_types.indexOf(contract.contract_type) !== -1 &&
                 (typeof contract_types[key].barrier_count === 'undefined' || +contract_types[key].barrier_count === contract.barriers) // To distinguish betweeen Rise/Fall & Higher/Lower
             ));
+            if (!type) return; // ignore unsupported contract types
 
             if (!Exceptions.isExcluded(type)) {
                 if (!available_contract_types[type]) {

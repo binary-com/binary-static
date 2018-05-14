@@ -33,36 +33,42 @@ const getAppId = () => {
 const getSocketURL = () => {
     let server_url = window.localStorage.getItem('config.server_url');
     if (!server_url) {
-    // const toGreenPercent = { real: 100, virtual: 0, logged_out: 0 }; // default percentage
-    // const categoryMap    = ['real', 'virtual', 'logged_out'];
-    // const percentValues  = Cookies.get('connection_setup'); // set by GTM
-    //
-    // // override defaults by cookie values
-    // if (percentValues && percentValues.indexOf(',') > 0) {
-    //     const cookie_percents = percentValues.split(',');
-    //     categoryMap.map((cat, idx) => {
-    //         if (cookie_percents[idx] && !isNaN(cookie_percents[idx])) {
-    //             toGreenPercent[cat] = +cookie_percents[idx].trim();
-    //         }
-    //     });
-    // }
+        // const to_green_percent = { real: 100, virtual: 0, logged_out: 0 }; // default percentage
+        // const category_map     = ['real', 'virtual', 'logged_out'];
+        // const percent_values   = Cookies.get('connection_setup'); // set by GTM
+        //
+        // // override defaults by cookie values
+        // if (percent_values && percent_values.indexOf(',') > 0) {
+        //     const cookie_percents = percent_values.split(',');
+        //     category_map.map((cat, idx) => {
+        //         if (cookie_percents[idx] && !isNaN(cookie_percents[idx])) {
+        //             to_green_percent[cat] = +cookie_percents[idx].trim();
+        //         }
+        //     });
+        // }
 
-    // let server = 'blue';
-    // if (!/staging\.binary\.com/i.test(window.location.hostname)) {
-    //     const loginid = window.localStorage.getItem('active_loginid');
-    //     let client_type = categoryMap[2];
-    //     if (loginid) {
-    //         client_type = /^VRT/.test(loginid) ? categoryMap[1] : categoryMap[0];
-    //     }
+        // let server = 'blue';
+        // if (/www\.binary\.com/i.test(window.location.hostname)) {
+        //     const loginid = window.localStorage.getItem('active_loginid');
+        //     let client_type = category_map[2];
+        //     if (loginid) {
+        //         client_type = /^VRT/.test(loginid) ? category_map[1] : category_map[0];
+        //     }
+        //
+        //     const random_percent = Math.random() * 100;
+        //     if (random_percent < to_green_percent[client_type]) {
+        //         server = 'green';
+        //     }
+        // }
 
-    // const randomPercent = Math.random() * 100;
-    // if (randomPercent < toGreenPercent[client_type]) {
-    //     server = 'green';
-    // }
-    // }
+        // TODO: in order to use connection_setup config, uncomment the above section and remove next lines
 
-    // server_url = `${server}.binaryws.com`;
-        server_url = 'frontend.binaryws.com';
+        const is_production = /www\.binary\.com/i.test(window.location.hostname);
+        const loginid       = window.localStorage.getItem('active_loginid');
+        const is_real       = loginid && !/^VRT/.test(loginid);
+        const server        = is_production && is_real ? 'green' : 'blue';
+
+        server_url = `${server}.binaryws.com`;
     }
     return `wss://${server_url}/websockets/v3`;
 };
