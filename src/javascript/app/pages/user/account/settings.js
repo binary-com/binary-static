@@ -5,7 +5,13 @@ const State            = require('../../../../_common/storage').State;
 const Settings = (() => {
     const onLoad = () => {
         BinarySocket.wait('get_account_status').then(() => {
-            $('.real').setVisibility(!Client.get('is_virtual'));
+            const $class_real  = $('.real');
+
+            if (Client.get('is_virtual')) {
+                $class_real.setVisibility(0);
+            } else {
+                $class_real.not((Client.isJPClient() ? '.ja-hide' : '')).setVisibility(1);
+            }
 
             const status = State.getResponse('get_account_status.status');
             if (!/social_signup/.test(status)) {

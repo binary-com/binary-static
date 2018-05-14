@@ -65,7 +65,7 @@ const Limits = () => {
                 </div>
                 <div id='limits_error' />
             </div>
-            <div className='invisible' id='withdrawal-limits'>
+            <div className='invisible ja-hide' id='withdrawal-limits'>
                 <h2 id='withdrawal-title'>{it.L('Withdrawal Limits')}</h2>
                 <div>
                     <p id='withdrawal-limit' />

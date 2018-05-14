@@ -2,6 +2,7 @@ const Client         = require('../base/client');
 const CookieStorage  = require('../../_common/storage').CookieStorage;
 const LocalStore     = require('../../_common/storage').LocalStore;
 const Url            = require('../../_common/url');
+const AffiliatePopup = require('../../static/japan/affiliate_popup');
 
 /*
  * Handles utm parameters/referrer to use on signup
@@ -59,6 +60,7 @@ const TrafficSource = (() => {
         // Store gclid
         if (params.gclid && !Client.isLoggedIn()) {
             LocalStore.set('gclid', params.gclid);
+            AffiliatePopup.show();
         }
 
         const doc_ref = document.referrer;

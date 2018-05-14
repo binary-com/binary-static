@@ -86,17 +86,24 @@ const Header = () => (
                                     className='center-text nowrap'
                                     items={[
                                         // Logged out
-                                        { text: it.L('Why Us?'),     href: it.url_for('why-us'),      className: 'client_logged_out invisible' },
-                                        { text: it.L('Get Started'), href: it.url_for('get-started'), className: 'client_logged_out invisible' },
-                                        { text: it.L('Tour'),        href: it.url_for('tour'),        className: 'client_logged_out invisible' },
-                                        { text: it.L('Platforms'),   href: it.url_for('platforms'),   className: 'client_logged_out invisible' },
+                                        // General
+                                        { text: it.L('Why Us?'),     href: it.url_for('why-us'),      className: 'ja-hide client_logged_out invisible' },
+                                        { text: it.L('Get Started'), href: it.url_for('get-started'), className: 'ja-hide client_logged_out invisible' },
+                                        { text: it.L('Tour'),        href: it.url_for('tour'),        className: 'ja-hide client_logged_out invisible' },
+                                        { text: it.L('Platforms'),   href: it.url_for('platforms'),   className: 'ja-hide client_logged_out invisible' },
+                                        // Japan
+                                        { text: it.L('Why Us?'),     href: it.url_for('why-us-jp'),              className: 'invisible ja-show client_logged_out' },
+                                        { text: it.L('Get Started'), href: it.url_for('get-started-jp'),         className: 'invisible ja-show client_logged_out' },
+                                        { text: it.L('Tour'),        href: it.url_for('tour-jp'),                className: 'invisible ja-show client_logged_out' },
+                                        { text: it.L('Trade'),       href: it.url_for('multi_barriers_trading'), className: 'invisible ja-show' },
 
                                         // Logged in
+                                        // General
                                         {
                                             type     : 'nested',
                                             text     : it.L('Trade'),
                                             href     : 'javascript:;',
-                                            className: 'ico-only-hide client_logged_in nav-dropdown-toggle invisible',
+                                            className: 'ja-hide ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('SmartTrader'),  href: it.url_for('trading'),          className: 'no-capitalize' },
                                                 { text: it.L('WebTrader'),    href: 'https://webtrader.binary.com', target: '_blank' },
@@ -115,10 +122,10 @@ const Header = () => (
                                             href     : 'javascript:;',
                                             className: 'ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
-                                                { text: it.L('Asset Index'),   href: it.url_for('resources/asset_indexws') },
+                                                { text: it.L('Asset Index'),   href: it.url_for('resources/asset_indexws'), className: 'ja-hide' },
                                                 { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
-                                                { text: it.L('TradingView'),   href: 'https://tradingview.binary.com',      target: '_blank' },
-                                                { text: it.L('SmartCharts'),   href: 'https://charts.binary.com/',          target: '_blank' },
+                                                { text: it.L('TradingView'),   href: 'https://tradingview.binary.com',      className: 'ja-hide', target: '_blank' },
+                                                { text: it.L('SmartCharts'),   href: 'https://charts.binary.com/',          className: 'ja-hide', target: '_blank' },
                                             ],
                                         },
                                         {
@@ -148,10 +155,10 @@ const Header = () => (
                                         <Account />
                                         <ul>
                                             <div className='login-id-list' />
-                                            <a className='link invisible' id='user_menu_metatrader' href={it.url_for('user/metatrader')}>
+                                            <a className='link ja-hide invisible' id='user_menu_metatrader' href={it.url_for('user/metatrader')}>
                                                 <li className='topMenuMetaTrader'>{it.L('MetaTrader')}</li>
                                             </a>
-                                            <a className='link' id='user_accounts' href={it.url_for('user/accounts')}>
+                                            <a className='link ja-hide' id='user_accounts' href={it.url_for('user/accounts')}>
                                                 <li className='topMenuAccounts'>{it.L('Accounts List')}</li>
                                             </a>
                                             <a className='link invisible' id='user_menu_account_transfer' href={it.url_for('cashier/account_transfer')}>

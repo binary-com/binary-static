@@ -1,4 +1,3 @@
-const extend = require('extend');
 require('./lib/polyfills/element.matches');
 
 /**
@@ -14,11 +13,11 @@ const showLoadingImage = (container, theme = 'dark') => {
 
 /**
  * Returns the highest z-index in the page.
- * Accepts a selector to only check those elements,
+ * Accepts a jquery style selector to only check those elements,
  * uses all container tags by default
  * If no element found, returns null.
  *
- * @param selector: a selector for target elements
+ * @param selector: a jquery style selector for target elements
  * @return int|null
  */
 const getHighestZIndex = (selector = 'div,p,area,nav,section,header,canvas,aside,span') => {
@@ -67,7 +66,7 @@ const isEmptyObject = (obj) => {
     return is_empty;
 };
 
-const cloneObject = obj => (!isEmptyObject(obj) ? extend(true, Array.isArray(obj) ? [] : {}, obj) : obj);
+const cloneObject = obj => (!isEmptyObject(obj) ? $.extend(true, Array.isArray(obj) ? [] : {}, obj) : obj);
 
 const getPropertyValue = (obj, k) => {
     let keys = k;
@@ -173,24 +172,17 @@ const findParent = (el, selector) => {
     return null;
 };
 
-let static_hash;
-const getStaticHash = () => {
-    static_hash = static_hash || (document.querySelector('script[src*="vendor.min.js"]').getAttribute('src') || '').split('?')[1];
-    return static_hash;
-};
-
 module.exports = {
     showLoadingImage,
     getHighestZIndex,
     downloadCSV,
     template,
-    isEmptyObject,
     cloneObject,
+    isEmptyObject,
     getPropertyValue,
     handleHash,
     clearable,
     createElement,
     applyToAllElements,
     findParent,
-    getStaticHash,
 };
