@@ -228,8 +228,6 @@ const ViewPopup = (() => {
             is_sold = true;
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
             else TickDisplay.updateChart({ is_sold: true }, contract);
-            // TODO: exit tick
-            console.log('sold!');
         }
         if (is_ended) {
             contractEnded(parseFloat(profit_loss) >= 0);

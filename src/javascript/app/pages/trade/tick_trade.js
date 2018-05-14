@@ -166,9 +166,7 @@ const TickDisplay = (() => {
         const chart_container = $(`#${id_render}`);
 
         const winning = contract_sentiment === 'up' && tick.quote > contract_barrier
-            || contract_sentiment === 'down' && tick.quote < contract_barrier
-            || contract_sentiment === 'touch' && hasTouched()
-            || contract_sentiment === 'notouch' && !hasTouched();
+            || contract_sentiment === 'down' && tick.quote < contract_barrier;
 
         chart_container.css('background-color', winning
             ? 'rgba(46,136,54,0.198039)'
@@ -256,9 +254,7 @@ const TickDisplay = (() => {
         const exit_spot       = applicable_ticks[exit_tick_index].quote;
 
         if (contract_sentiment === 'up' && exit_spot > contract_barrier
-            || contract_sentiment === 'down' && exit_spot < contract_barrier
-            || contract_sentiment === 'touch' && hasTouched()
-            || contract_sentiment === 'notouch' && !hasTouched()) {
+            || contract_sentiment === 'down' && exit_spot < contract_barrier) {
             win();
         } else {
             lose();
@@ -277,15 +273,6 @@ const TickDisplay = (() => {
         contract_start_moment = moment(contract_start_ms).utc();
         counter               = 0;
         applicable_ticks      = [];
-    };
-
-    const hasTouched = () => {
-        if (!contract_barrier) return false;
-
-        return !(
-            applicable_ticks.every(tick => tick.quote > contract_barrier)
-            || applicable_ticks.every(tick => tick.quote < contract_barrier)
-        );
     };
 
     const dispatch = (data) => {
@@ -387,12 +374,10 @@ const TickDisplay = (() => {
             }
         }
     };
-// TODO: draw sell line for statement
 
     const updateChart = (data, contract) => {
         subscribe = 'false';
         if (data.is_sold && applicable_ticks) {
-            console.log(contract);
             const index = applicable_ticks.findIndex(({ epoch }) => epoch === +contract.sell_spot_time);
             const indicator_key = `_${index}`;
             x_indicators[indicator_key] = {
@@ -400,9 +385,7 @@ const TickDisplay = (() => {
                 dashStyle: 'Dash',
             };
             add(x_indicators[indicator_key]);
-        }
-        else if (contract) {
-            console.log(contract);
+        } else if (contract) {
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
             tick_longcode     = contract.longcode;
