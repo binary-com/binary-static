@@ -207,6 +207,20 @@ class Statement extends React.PureComponent {
         );
     }
 
+    renderNoActivityMessage() {
+        return (
+            <div className='container'>
+                <div className='statement-no-activity-msg'>
+                    {
+                        !this.state.date_from && !this.state.date_to
+                            ? localize('Your account has no trading activity.')
+                            : localize('Your account has no trading activity for the selected period.')
+                    }
+                </div>
+            </div>
+        );
+    }
+
     render() {
         const is_loading = this.state.pending_request && this.state.data_source.length === 0;
 
@@ -240,55 +254,17 @@ class Statement extends React.PureComponent {
                     </div>
                 </div>
                 <div className='statement-content'>
-                    {
-                        is_loading
-                            && (
-                                <React.Fragment>
-                                    <DataTable
-                                        data_source={[]}
-                                        columns={this.state.columns}
-                                        has_fixed_header
-                                        is_full_width
-                                    />
-                                    <Loading />
-                                </React.Fragment>
-                            )
-
-                        ||
-
-                        this.state.data_source.length === 0
-                            && (
-                                <React.Fragment>
-                                    <DataTable
-                                        data_source={[]}
-                                        columns={this.state.columns}
-                                        has_fixed_header
-                                        is_full_width
-                                    />
-                                    <div className='container'>
-                                        <div className='statement-no-activity-msg'>
-                                            {
-                                                !this.state.date_from && !this.state.date_to
-                                                    ? localize('Your account has no trading activity.')
-                                                    : localize('Your account has no trading activity for the selected period.')
-                                            }
-                                        </div>
-                                    </div>
-                                </React.Fragment>
-                            )
-
-                        ||
-
-                        <DataTable
-                            data_source={this.state.data_source.slice(
-                                0,
-                                this.state.chunks * this.props.chunk_size
-                            )}
-                            columns={this.state.columns}
-                            has_fixed_header
-                            is_full_width
-                        />
-                    }
+                    <DataTable
+                        data_source={this.state.data_source.slice(
+                            0,
+                            this.state.chunks * this.props.chunk_size
+                        )}
+                        columns={this.state.columns}
+                        has_fixed_header
+                        is_full_width
+                    />
+                    {is_loading && <Loading />
+                        || this.state.data_source.length === 0 && this.renderNoActivityMessage()}
                 </div>
             </div>
         );
