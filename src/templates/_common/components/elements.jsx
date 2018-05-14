@@ -157,7 +157,7 @@ export const Tbody = ({ trs, tbody_id }) => (
             <tr key={inx_tr}>
                 {tr.map((td, inx_td) => (
                     td.header ?
-                        <th key={inx_td} className={td.className} {...td.balloon ? { 'data-balloon': td.balloon } : {}} {...(td.attributes || {})}>
+                        <th key={inx_td} className={td.className} id={td.id} {...td.balloon ? { 'data-balloon': td.balloon } : {}} {...(td.attributes || {})}>
                             {td.header}
                         </th>
                         :
