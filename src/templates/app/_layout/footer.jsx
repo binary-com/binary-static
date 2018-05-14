@@ -30,97 +30,7 @@ const StatusNotification = () => (
     </div>
 );
 
-const FooterJA = () => (
-    <div id='footer' className='no-print'>
-        <div id='footer-menu' className='primary-bg-color gr-padding-10'>
-            <div className='container'>
-                <div className='gr-row gr-padding-10'>
-                    <div className='gr-6 gr-12-m gr-parent gr-no-gutter'>
-                        <div className='gr-row'>
-                            <FooterColumn
-                                header={it.L('Our Company')}
-                                items={[
-                                    { text: it.L('About Us'),               href: it.url_for('about-us') },
-                                    { text: it.L('Contact Us'),             href: it.url_for('contact'),           className: 'gr-hide gr-show-m' },
-                                    { text: it.L('Regulatory Information'), href: it.url_for('regulation') },
-                                    { text: it.L('Group History'),          href: it.url_for('group-history') },
-                                    { text: it.L('Binary in Numbers'),      href: it.url_for('binary-in-numbers') },
-                                ]}
-                            />
-
-                            <FooterColumn
-                                header={it.L('Education')}
-                                items={[
-                                    { text: it.L('Why Us?'),                           href: it.url_for('why-us-jp') },
-                                    { text: it.L('Getting Started'),                   href: it.url_for('get-started-jp') },
-                                    { text: it.L('Platform Tour'),                     href: it.url_for('tour-jp') },
-                                    { text: it.L('{JAPAN ONLY}Service Announcements'), href: it.url_for('service-announcements') },
-                                    { text: it.L('Affiliate Program'),                 href: it.url_for('affiliate/signup-jp') },
-                                ]}
-                            />
-
-                            <FooterColumn
-                                header={it.L('Banking')}
-                                items={[
-                                    { text: it.L('Cashier'), href: it.url_for('cashier') },
-                                ]}
-                            />
-                        </div>
-                    </div>
-                    <div className='gr-6 gr-12-m gr-parent gr-no-gutter'>
-                        <div className='gr-row'>
-                            <FooterColumn
-                                header={it.L('Legal')}
-                                items={[
-                                    { text: it.L('Terms and Conditions'), href: it.url_for('terms-and-conditions-jp') },
-                                    { text: it.L('Security and Privacy'), href: it.url_for('terms-and-conditions-jp'), param: '?#account-privacy' },
-                                ]}
-                            />
-
-                            <FooterColumn
-                                header={it.L('{JAPAN ONLY}Company Profile')}
-                                items={[
-                                    { text: it.L('{JAPAN ONLY}Company Profile & Disclosure'), href: it.url_for('company-profile') },
-                                ]}
-                            />
-
-                            <div className='gr-4'>
-                                <h4 className='secondary-color'><strong>{it.L('{JAPAN ONLY}Social Media')}</strong></h4>
-                                <SocialIcons
-                                    networks={[
-                                        { media: 'youtube',  href: 'https://www.youtube.com/channel/UC0BZmStXHJdsrjboyLgcf8A' },
-                                        { media: 'facebook', href: 'https://www.facebook.com/BinaryKK/' },
-                                        { media: 'twitter',  href: 'https://twitter.com/binarykk' },
-                                    ]}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10 gr-child'>
-            <div className='container'>
-                <p id='regulatory-text' className='gr-padding-10 gr-parent content-inverse-color no-margin'>
-                    {it.L('{JAPAN ONLY}Footer regulatory text')}
-                </p>
-            </div>
-        </div>
-        <div id='footer-last' className='primary-bg-color'>
-            <div className='container'>
-                <div className='gr-padding-10'>
-                    <p className='gambling content-inverse-color no-para-margin'>
-                        {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about [_1]Responsible Trading[_2].', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div id='end-note' className='invisible content-inverse-color center-text' />
-        <StatusNotification />
-    </div>
-);
-
-const FooterNormal = () => (
+const Footer = () => (
     <div id='footer' className='no-print'>
         <div id='footer-menu' className='primary-bg-color gr-padding-10'>
             <div className='container'>
@@ -262,9 +172,6 @@ const FooterNormal = () => (
         <div id='end-note' className='invisible content-inverse-color center-text' />
         <StatusNotification />
     </div>
-);
-const Footer = () => (
-    (it.language.toLowerCase() === 'ja') ? <FooterJA /> : <FooterNormal />
 );
 
 export default Footer;

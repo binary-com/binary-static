@@ -1,10 +1,9 @@
-const Statement           = require('./statement');
-const Client              = require('../../../../base/client');
-const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
-const Table               = require('../../../../common/attach_dom/table');
-const showTooltip         = require('../../../../common/get_app_details').showTooltip;
-const localize            = require('../../../../../_common/localize').localize;
-const downloadCSV         = require('../../../../../_common/utility').downloadCSV;
+const Statement   = require('./statement');
+const Client      = require('../../../../base/client');
+const Table       = require('../../../../common/attach_dom/table');
+const showTooltip = require('../../../../common/get_app_details').showTooltip;
+const localize    = require('../../../../../_common/localize').localize;
+const downloadCSV = require('../../../../../_common/utility').downloadCSV;
 
 const StatementUI = (() => {
     let all_data   = [];
@@ -27,7 +26,7 @@ const StatementUI = (() => {
 
         const currency = Client.get('currency');
 
-        header[6] += (Client.isJPClient() || !currency) ? '' : ` (${currency})`;
+        header[6] += currency ? ` (${currency})` : '';
 
         const metadata = {
             id  : table_id,
@@ -44,7 +43,7 @@ const StatementUI = (() => {
     };
 
     const createStatementRow = (transaction) => {
-        const statement_data = Statement.getStatementData(transaction, Client.get('currency'), Client.isJPClient());
+        const statement_data = Statement.getStatementData(transaction, Client.get('currency'));
         all_data.push($.extend({}, statement_data, {
             action: localize(statement_data.action),
             desc  : localize(statement_data.desc),
@@ -90,8 +89,8 @@ const StatementUI = (() => {
 
     const exportCSV = () => {
         downloadCSV(
-            Statement.generateCSV(all_data, Client.isJPClient()),
-            `Statement_${Client.get('loginid')}_latest${$('#rows_count').text()}_${toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '')}.csv`);
+            Statement.generateCSV(all_data),
+            `Statement_${Client.get('loginid')}_latest${$('#rows_count').text()}_${window.time.replace(/\s/g, '_').replace(/:/g, '')}.csv`);
     };
 
     return {

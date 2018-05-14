@@ -282,10 +282,6 @@ const SelfExclusion = (() => {
                 BinaryPjax.loadPreviousUrl();
             } else {
                 getData();
-                if (Client.isJPClient()) {
-                    // need to update daily_loss_limit value inside jp_settings object
-                    BinarySocket.send({ get_settings: 1 }, { forced: true });
-                }
             }
         });
     };

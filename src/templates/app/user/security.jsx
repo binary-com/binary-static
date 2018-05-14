@@ -35,11 +35,11 @@ const Security = () => (
 
                 <Column className='real invisible' url='limitsws' image='limits' header={it.L('Limits')} text={it.L('View your trading and withdrawal limits.')} />
 
-                <Column className='ja-hide' url='iphistoryws' image='iphistory' header={it.L('Login History')} text={it.L('View your login history.')} />
+                <Column url='iphistoryws' image='iphistory' header={it.L('Login History')} text={it.L('View your login history.')} />
 
-                <Column className='ja-hide' url='api_tokenws' image='api-token' header={it.L('API Token')} text={it.L('API token for third party applications.')} />
+                <Column url='api_tokenws' image='api-token' header={it.L('API Token')} text={it.L('API token for third party applications.')} />
 
-                <Column className='ja-hide' url='authorised_appsws' image='applications' header={it.L('Authorised Applications')} text={it.L('Manage your authorised applications.')} />
+                <Column url='authorised_appsws' image='applications' header={it.L('Authorised Applications')} text={it.L('Manage your authorised applications.')} />
             </div>
         </div>
     </React.Fragment>

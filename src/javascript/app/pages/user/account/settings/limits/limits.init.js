@@ -12,10 +12,6 @@ const LimitsInit = (() => {
         const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);
 
-        if (Client.isJPClient()) {
-            return;
-        }
-
         const el_withdraw_limit     = getElementById('withdrawal-limit');
         const el_withdrawn          = getElementById('already-withdraw');
         const el_withdraw_limit_agg = getElementById('withdrawal-limit-aggregate');
@@ -30,7 +26,7 @@ const LimitsInit = (() => {
             const days_limit               = formatMoney(currency, limits.num_of_days_limit, 1);
             const remainder                = formatMoney(currency, limits.remainder, 1);
 
-            if ((/^(iom)$/i).test(Client.get('landing_company_shortcode'))) { // MX
+            if (Client.get('landing_company_shortcode') === 'iom') {
                 txt_withdraw_lim = 'Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).';
                 txt_withdraw_amt = 'You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.';
                 elementInnerHtml(el_withdraw_limit,
@@ -38,7 +34,7 @@ const LimitsInit = (() => {
                 elementTextContent(el_withdrawn,
                     localize(txt_withdraw_amt, [currency, limits.withdrawal_for_x_days_monetary, limits.num_of_days]));
             } else {
-                if ((/^(costarica|japan)$/i).test(Client.get('landing_company_shortcode'))) { // CR , JP
+                if (Client.get('landing_company_shortcode' === 'costarica')) {
                     txt_withdraw_lim           = 'Your withdrawal limit is [_1] [_2].';
                     txt_withdraw_amt           = 'You have already withdrawn [_1] [_2].';
                     txt_current_max_withdrawal = 'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].';

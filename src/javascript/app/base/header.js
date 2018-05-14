@@ -1,11 +1,11 @@
 const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
-const GTM                 = require('./gtm');
-const Login               = require('./login');
 const BinarySocket        = require('./socket');
-const SocketCache         = require('./socket_cache');
 const checkClientsCountry = require('../common/country_base').checkClientsCountry;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
+const GTM                 = require('../../_common/base/gtm');
+const Login               = require('../../_common/base/login');
+const SocketCache         = require('../../_common/base/socket_cache');
 const elementInnerHtml    = require('../../_common/common_functions').elementInnerHtml;
 const elementTextContent  = require('../../_common/common_functions').elementTextContent;
 const getElementById      = require('../../_common/common_functions').getElementById;
@@ -25,6 +25,7 @@ const Header = (() => {
             checkClientsCountry();
         }
         if (Client.isLoggedIn()) {
+            getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
             displayAccountStatus();
             if (!Client.get('is_virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
@@ -109,7 +110,7 @@ const Header = (() => {
 
     const metatraderMenuItemVisibility = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-            if (MetaTrader.isEligible() && !Client.isJPClient()) {
+            if (MetaTrader.isEligible()) {
                 getElementById('user_menu_metatrader').setVisibility(1);
             }
         });
@@ -159,10 +160,8 @@ const Header = (() => {
                 });
             };
 
-            const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
-            const upgrade_info      = Client.getUpgradeInfo();
-            const show_upgrade_msg  = upgrade_info.can_upgrade;
-            const virtual_text      = getElementById('virtual-text');
+            const upgrade_info     = Client.getUpgradeInfo();
+            const show_upgrade_msg = upgrade_info.can_upgrade;
 
             if (Client.get('is_virtual')) {
                 applyToAllElements(upgrade_msg, (el) => {
@@ -174,19 +173,7 @@ const Header = (() => {
                     applyToAllElements('a', (ele) => { ele.setVisibility(0); }, '', el);
                 });
 
-                if (jp_account_status) {
-                    const has_disabled_jp = Client.isJPClient() && Client.getAccountOfType('real').is_disabled;
-                    if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not returns the correct timeshow upgrade for user that filled up form
-                        showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
-                    } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
-                        applyToAllElements(upgrade_msg, (el) => { el.setVisibility(1); });
-                        if (jp_account_status === 'jp_activation_pending' && !document.getElementsByClassName('activation-message')) {
-                            virtual_text.appendChild(createElement('div', { class: 'activation-message', text: ` ${localize('{JAPAN ONLY}Your Application is Being Processed.')}` }));
-                        } else if (jp_account_status === 'activated' && !document.getElementsByClassName('activated-message')) {
-                            virtual_text.appendChild(createElement('div', { class: 'activated-message', text: ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}` }));
-                        }
-                    }
-                } else if (show_upgrade_msg) {
+                if (show_upgrade_msg) {
                     showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
                     showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
                 } else {
@@ -260,7 +247,7 @@ const Header = (() => {
 
             const riskAssessment = () => (
                 (get_account_status.risk_classification === 'high' || Client.isAccountOfType('financial')) &&
-                /financial_assessment_not_complete/.test(status) && !Client.isJPClient()
+                /financial_assessment_not_complete/.test(status)
             );
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);

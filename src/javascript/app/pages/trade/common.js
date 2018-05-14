@@ -376,6 +376,13 @@ const commonTrading = (() => {
         return true;
     };
 
+    const requireHighstock = callback => (
+        require.ensure([], (require) => {
+            const Highstock = require('highstock-release');
+            return callback(Highstock);
+        }, 'highstock')
+    );
+
     return {
         getFormNameBarrierCategory,
         contractTypeDisplayMapping,
@@ -395,6 +402,7 @@ const commonTrading = (() => {
         displayContractForms,
         displayMarkets,
         timeIsValid,
+        requireHighstock,
         showPriceOverlay: () => { showHideOverlay('loading_container2', 'block'); },
         hidePriceOverlay: () => { showHideOverlay('loading_container2', 'none'); },
         hideFormOverlay : () => { showHideOverlay('loading_container3', 'none'); },

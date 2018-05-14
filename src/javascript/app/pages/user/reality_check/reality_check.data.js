@@ -61,13 +61,18 @@ const RealityCheckData = (() => {
         return value;
     };
 
-    const clear_storage_values = () => {
+    const clear = () => {
         // clear all reality check values from local storage
         Object.keys(localStorage).forEach((c) => {
             if (/^reality_check\./.test(c)) {
                 LocalStore.set(c, '');
             }
         });
+
+        const hash = window.location.hash;
+        if (/no-reality-check/.test(hash)) {
+            window.location.hash = hash.replace('no-reality-check', '');
+        }
     };
 
     return {
@@ -76,7 +81,7 @@ const RealityCheckData = (() => {
         set,
         get,
 
-        clear: clear_storage_values,
+        clear,
     };
 })();
 
