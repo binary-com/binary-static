@@ -206,12 +206,10 @@ async function compile(page) {
             layout         : page.layout,
             language       : lang.toUpperCase(),
             root_url       : config.root_url,
-            only_ja        : page.only_ja,
             current_path   : page.save_as,
             current_route  : page.current_route,
             is_pjax_request: false,
 
-            japan_docs_url        : 'https://japan-docs.binary.com',
             affiliate_signup_url  : `https://login.binary.com/signup.php?lang=${affiliate_language_code}`,
             affiliate_password_url: `https://login.binary.com/password-reset.php?lang=${affiliate_language_code}`,
             affiliate_email       : 'affiliates@binary.com',

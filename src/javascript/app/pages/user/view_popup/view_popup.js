@@ -3,7 +3,6 @@ const ViewPopupUI    = require('./view_popup.ui');
 const Highchart      = require('../../trade/charts/highchart');
 const Lookback       = require('../../trade/lookback');
 const TickDisplay    = require('../../trade/tick_trade');
-const isJPClient     = require('../../../base/client').isJPClient;
 const Clock          = require('../../../base/clock');
 const BinarySocket   = require('../../../base/socket');
 const getElementById = require('../../../../_common/common_functions').getElementById;
@@ -283,9 +282,7 @@ const ViewPopup = (() => {
         $container.find('#errMsg').setVisibility(0);
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
-        // don't show for japanese clients or contracts that are manually sold before starting
-        if (contract.audit_details && !isJPClient() &&
-            (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
+        if (contract.audit_details && (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
             initAuditTable(0);
         }
     };
@@ -549,10 +546,7 @@ const ViewPopup = (() => {
         `<tr${(is_hidden ? ` class="${hidden_class}"` : '')}><td${(label_id ? ` id="${label_id}"` : '')}>${localize(label)}</td><td${(value_id ? ` id="${value_id}"` : '')}>${(value || '')}</td></tr>`
     );
 
-    const epochToDateTime = epoch => {
-        const date_time = moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
-        return isJPClient() ? Clock.toJapanTimeIfNeeded(date_time) : `${date_time} GMT`;
-    };
+    const epochToDateTime = epoch => `${moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss')} GMT`;
 
     // ===== Tools =====
     const containerSetText = (id, string, attributes, is_visible) => {
