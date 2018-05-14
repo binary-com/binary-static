@@ -1,5 +1,6 @@
 const getAllSymbols    = require('../symbols').getAllSymbols;
 const MBDefaults       = require('../../mb_trade/mb_defaults');
+const isJPClient       = require('../../../base/client').isJPClient;
 const getElementById   = require('../../../../_common/common_functions').getElementById;
 const getLanguage      = require('../../../../_common/language').get;
 const localize         = require('../../../../_common/localize').localize;
@@ -77,6 +78,7 @@ const WebtraderChart = (() => {
             timePeriod        : getChartSettings().time_frame,
             type              : getChartSettings().chart_type,
             lang              : getLanguage().toLowerCase(),
+            timezoneOffset    : (isJPClient() ? -9 : 0) * 60,
             showShare         : !is_mb_trading,
         };
 

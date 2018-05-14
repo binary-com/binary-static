@@ -92,6 +92,27 @@ const Regulation = () => {
                 <p>{it.L('Binary Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
             </Box>
 
+            <Box header={it.L('Binary K.K.')} >
+                <p>{it.L('Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590).')}</p>
+                <p>{it.L('Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations.')}</p>
+                <p><strong>{it.L('Regulators:')}</strong></p>
+                <RegulatorImage
+                    padding='3'
+                    padding_m='6'
+                    href='http://www.fsa.go.jp'
+                    image='images/pages/regulation/fsa-logo.png'
+                />
+                <RegulatorImage
+                    padding='4'
+                    padding_m='8'
+                    href='http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon'
+                    image='images/pages/regulation/binarykk-logo.gif'
+                />
+                <div className='ja-hide center-text gr-padding-20 gr-child'>
+                    <button id='visit_japan'>{it.L('View Japanese website')}</button>
+                </div>
+            </Box>
+
             <Box header={it.L('Binary Investments (Europe) Ltd')} >
                 <p>{it.L('Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf')}" target="_blank" download=1>`, '</a>')}</p>
                 <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd.')}</p>

@@ -1,5 +1,6 @@
 const MBContract          = require('./mb_contract');
 const MBDisplayCurrencies = require('./mb_currency');
+const MBDefaults          = require('./mb_defaults');
 const MBTradingEvents     = require('./mb_event');
 const MBPrice             = require('./mb_price');
 const MBProcess           = require('./mb_process');
@@ -8,7 +9,10 @@ const BinaryPjax          = require('../../base/binary_pjax');
 const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
 const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
+const JapanPortfolio      = require('../../japan/portfolio');
 const getElementById      = require('../../../_common/common_functions').getElementById;
+const getLanguage         = require('../../../_common/language').get;
+const localize            = require('../../../_common/localize').localize;
 const State               = require('../../../_common/storage').State;
 const urlFor              = require('../../../_common/url').urlFor;
 const findParent          = require('../../../_common/utility').findParent;
@@ -24,10 +28,21 @@ const MBTradePage = (() => {
 
     const init = () => {
         if (/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) {
-            BinaryPjax.load(urlFor('trading'));
+            if (getLanguage() === 'JA') {
+                $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: localize('This page is not available in the selected language.') })));
+            } else {
+                BinaryPjax.load(urlFor('trading'));
+            }
             return;
         }
-        showCurrency(Client.get('currency'));
+        if (Client.isJPClient()) {
+            disableTrading();
+            $('#panel').remove();
+        } else {
+            MBDefaults.set('disable_trading', 0);
+            $('#ja-panel').remove();
+            showCurrency(Client.get('currency'));
+        }
 
         if (events_initialized === 0) {
             events_initialized = 1;
@@ -65,6 +80,12 @@ const MBTradePage = (() => {
         }
     };
 
+    const disableTrading = () => {
+        MBDefaults.set('disable_trading', 1);
+        $('#allow').removeClass('selected');
+        $('#disallow').addClass('selected');
+    };
+
     const reload = () => {
         window.location.reload();
     };
@@ -72,6 +93,7 @@ const MBTradePage = (() => {
     const onUnload = () => {
         cleanupChart();
         State.set('is_chart_allowed', false);
+        JapanPortfolio.hide();
         State.remove('is_mb_trading');
         events_initialized = 0;
         MBContract.onUnload();
