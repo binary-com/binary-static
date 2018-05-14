@@ -1,5 +1,5 @@
 const getPropertyValue = require('./utility').getPropertyValue;
-const Client           = require('./base/client_base');
+const Client           = require('../app/base/client');
 const BinarySocket     = require('../app/base/socket');
 const Dialog           = require('../app/common/attach_dom/dialog');
 

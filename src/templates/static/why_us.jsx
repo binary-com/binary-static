@@ -102,7 +102,7 @@ const WhyUs = () => (
                             <p>{it.L('With [_1], you can count on us to serve you with integrity and reliability.', it.website_name)}</p>
                             <ul className='checked'>
                                 <li>{it.L('We have a proven track record since we launched our platform in 2000.')}</li>
-                                <li>{it.L('We are licensed and regulated in the British Isles and in Malta since 2015.')}</li>
+                                <li>{it.L('We are licensed and regulated in the British Isles, Japan, and in Malta since 2015.')}</li>
                                 <li>{it.L('We segregate your funds and keep them in secure and licensed financial institutions.')}</li>
                             </ul>
                         </div>

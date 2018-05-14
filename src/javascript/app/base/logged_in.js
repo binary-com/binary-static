@@ -1,14 +1,13 @@
 const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const Client             = require('./client');
+const GTM                = require('./gtm');
 const BinarySocket       = require('./socket');
-const GTM                = require('../../_common/base/gtm');
-const SocketCache        = require('../../_common/base/socket_cache');
+const SocketCache        = require('./socket_cache');
 const getElementById     = require('../../_common/common_functions').getElementById;
 const getLanguage        = require('../../_common/language').get;
 const urlLang            = require('../../_common/language').urlLang;
 const isStorageSupported = require('../../_common/storage').isStorageSupported;
-const removeCookies      = require('../../_common/storage').removeCookies;
 const paramsHash         = require('../../_common/url').paramsHash;
 const urlFor             = require('../../_common/url').urlFor;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
@@ -33,7 +32,7 @@ const LoggedInHandler = (() => {
             // redirect back
             let set_default = true;
             if (redirect_url) {
-                const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', '404'];
+                const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', 'home-jp', '404'];
                 const reg             = new RegExp(do_not_redirect.join('|'), 'i');
                 if (!reg.test(redirect_url) && urlFor('') !== redirect_url) {
                     set_default = false;
@@ -100,7 +99,7 @@ const LoggedInHandler = (() => {
             GTM.setLoginFlag();
             Client.set('session_start', parseInt(moment().valueOf() / 1000));
             // Remove cookies that were set by the old code
-            removeCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
+            Client.cleanupCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
         }
     };
 

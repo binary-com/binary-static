@@ -22,6 +22,52 @@ body.EN {
     }
 }
 
+body.JA {
+    .ja-hide {
+        display: none !important;
+    }
+    .regulatory-logo {
+        display: none !important;
+    }
+    #header #menu-top li {
+        white-space: nowrap;
+    }
+    #profit-table, #statement-table {
+        .buy-price, .sell-price, .payout, .pl.loss, .act {
+            white-space: nowrap;
+        }
+    }
+    #email_consent_label {
+        font-size: $FONT_SIZE_XS;
+    }
+    #footer #footer-regulatory {
+        #regulatory-text {
+            font-size: $FONT_SIZE_S;
+        }
+        .gr-9, .gr-7-p {
+            width: 100% !important;
+        }
+    }
+    #mb_trading {
+        .payout-input {
+            .hint, label {
+                font-size: $FONT_SIZE_XXS;
+            }
+        }
+        #currency {
+            font-size: $FONT_SIZE_XXS;
+        }
+        @media screen and (max-width: 480px) {
+            .trade_form {
+                font-size: $FONT_SIZE_N;
+
+                #spot, .current .name {
+                    font-size: $FONT_SIZE_L;
+                }
+            }
+        }
+    }
+}
 /*Vietnamese Language */
 body.VI {
     font-kerning: none;
@@ -175,6 +221,7 @@ $list:
     ('FR', 'fr'),
     ('ID', 'id'),
     ('IT', 'it'),
+    ('JA', 'ja'),
     ('PL', 'pl'),
     ('PT', 'pt'),
     ('RU', 'ru'),

@@ -31,6 +31,9 @@ module.exports = function (grunt) {
                 warnings: false,
             },
         }),
+        new webpack.DefinePlugin({
+            '__REACT_DEVTOOLS_GLOBAL_HOOK__': '({ isDisabled: true })'
+        }),
         // new UnusedFilesWebpackPlugin({
         //     patterns: [
         //         'src/javascript/**/*.*',
@@ -39,18 +42,7 @@ module.exports = function (grunt) {
         // }),
     ];
 
-    if (isProduction) {
-        plugins.push(
-            new webpack.DefinePlugin({
-                '__REACT_DEVTOOLS_GLOBAL_HOOK__': '({ isDisabled: true })'
-            }),
-            new webpack.DefinePlugin({
-                'process.env': {
-                    NODE_ENV: JSON.stringify('production'),
-                },
-            }),
-        );
-    } else {
+    if (!isProduction) {
         plugins.push(
             function() {
                 this.plugin('watch-run', (watching, callback) => {
@@ -68,7 +60,7 @@ module.exports = function (grunt) {
 
                     callback();
                 });
-            },
+            }
         );
     }
 
@@ -90,17 +82,22 @@ module.exports = function (grunt) {
             chunkFilename: '[name]_[chunkhash].min.js',
             publicPath   : `${isProduction || grunt.file.exists(`${process.cwd()}/scripts/CNAME`) ? '' : '/binary-static'}${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}/js/`,
         },
-        resolve: {
-            extensions: ['.js', '.jsx'],
-        },
         module: {
             loaders: [
                 {
-                    test   : /\.jsx?$/,
+                    test   : /\.js$/,
                     exclude: /node_modules/,
                     loader : 'babel-loader',
                     query  : {
-                        presets: ['env', 'react'],
+                        presets: ['env'],
+                        compact: false,
+                    },
+                }, {
+                    test   : /\.jsx$/,
+                    exclude: /node_modules/,
+                    loader : 'babel-loader',
+                    query  : {
+                        presets: ['react','env'],
                         plugins: [
                             'transform-object-rest-spread',
                             'transform-class-properties'
