@@ -242,6 +242,7 @@ const TickDisplay = (() => {
             color : '#e98024',
             width : 2,
             zIndex: 2,
+            dashStyle: indicator.dashStyle || '',
         });
     };
 
@@ -342,15 +343,6 @@ const TickDisplay = (() => {
             epoches = data.history.times;
         }
 
-        const has_reached_end = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
-        const has_touched = contract_category === 'touchnotouch' && hasTouched();
-
-        if (has_reached_end || has_touched) {
-            evaluateContractOutcome();
-            if (responseID) {
-                BinarySocket.send({ forget: responseID });
-            }
-        } else {
             for (let d = 0; d < epoches.length; d++) {
                 let tick;
                 if (data.tick) {
@@ -377,27 +369,28 @@ const TickDisplay = (() => {
                         add(x_indicators[indicator_key]);
                     }
 
-                    // mark exit spot if touched
-                    if (contract_category === 'touchnotouch' && hasTouched()) {
-                        x_indicators[indicator_key] = {
-                            index: counter,
-                            label: 'Exit Spot',
-                            id   : 'exit_tick',
-                        };
-                        add(x_indicators[indicator_key]);
-                    }
-
                     addBarrier();
                     applyChartBackgroundColor(tick);
                     counter++;
                 }
-            }
         }
     };
+// TODO: draw sell line
 
     const updateChart = (data, contract) => {
         subscribe = 'false';
-        if (contract) {
+        if (data.is_sold) {
+            console.log(contract);
+            const index = applicable_ticks.findIndex(({ epoch }) => epoch === +contract.sell_spot_time);
+            const indicator_key = `_${index}`;
+            x_indicators[indicator_key] = {
+                index,
+                // id   : 'exit_tick',
+                dashStyle: 'Dash',
+            };
+            add(x_indicators[indicator_key]);
+        }
+        else if (contract) {
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
             tick_longcode     = contract.longcode;
