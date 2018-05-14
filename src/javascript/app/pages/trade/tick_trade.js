@@ -344,6 +344,9 @@ const TickDisplay = (() => {
             epoches = data.history.times;
         }
 
+        const has_reached_end = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
+
+        if (!has_reached_end) {
             for (let d = 0; d < epoches.length; d++) {
                 let tick;
                 if (data.tick) {
@@ -381,6 +384,7 @@ const TickDisplay = (() => {
                     applyChartBackgroundColor(tick);
                     counter++;
                 }
+            }
         }
     };
 // TODO: draw sell line for statement
@@ -397,7 +401,7 @@ const TickDisplay = (() => {
             };
             add(x_indicators[indicator_key]);
         }
-        if (contract) {
+        else if (contract) {
             console.log(contract);
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
