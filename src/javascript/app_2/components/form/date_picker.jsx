@@ -448,7 +448,7 @@ class Calendar extends React.Component {
             <div className='calendar'>
                 <input
                     type='text'
-                    placeholder={this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date')}
+                    placeholder={this.props.placeholder || (this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date'))}
                     value={value}
                     onChange={this.onChangeInput}
                     className='calendar-input'
@@ -584,7 +584,7 @@ class DatePicker extends React.PureComponent {
                         className='datepicker-display'
                         value={value}
                         readOnly
-                        placeholder={this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date')}
+                        placeholder={this.props.placeholder || (this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date'))}
                         onClick={this.handleVisibility}
                     />
                     <span

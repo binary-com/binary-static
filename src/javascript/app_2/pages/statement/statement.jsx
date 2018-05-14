@@ -221,6 +221,7 @@ class Statement extends React.PureComponent {
                         <DatePicker
                             name='date_from'
                             initial_value=''
+                            placeholder={localize('Start date')}
                             startDate={this.state.date_to || today}
                             maxDate={this.state.date_to || today}
                             onChange={this.handleDateChange}
@@ -229,6 +230,7 @@ class Statement extends React.PureComponent {
                         <DatePicker
                             name='date_to'
                             initial_value=''
+                            placeholder={localize('End date')}
                             startDate={today}
                             minDate={this.state.date_from}
                             maxDate={today}
