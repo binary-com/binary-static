@@ -1,5 +1,5 @@
 import DAO from '../../../data/dao';
-import { isCryptocurrency } from '../../../../app/common/currency';
+import { isCryptocurrency } from '../../../../_common/base/currency_base';
 import { localize } from '../../../../_common/localize';
 
 export const getCurrenciesAsync = function* ({ currency }) {

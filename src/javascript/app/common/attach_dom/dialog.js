@@ -1,6 +1,7 @@
-const showPopup          = require('./popup');
-const elementTextContent = require('../../../_common/common_functions').elementTextContent;
-const urlFor             = require('../../../_common/url').urlFor;
+const showPopup        = require('./popup');
+const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
+const localize         = require('../../../_common/localize').localize;
+const urlFor           = require('../../../_common/url').urlFor;
 
 const Dialog = (() => {
     const baseDialog = (options, is_alert = false) => (
@@ -17,7 +18,8 @@ const Dialog = (() => {
 
                     if (!el_dialog) return;
 
-                    elementTextContent(container.querySelector('#dialog_message'), options.message);
+                    const message = Array.isArray(options.message) ? options.message.join('<p />') : options.message;
+                    elementInnerHtml(container.querySelector('#dialog_message'), localize(message));
 
                     if (is_alert) {
                         el_btn_cancel.classList.add('invisible');

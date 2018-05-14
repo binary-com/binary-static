@@ -39,10 +39,10 @@ const generate_static_data = require('./generate-static-data');
 const Gettext              = require('./gettext');
 
 program
-    .version('0.2.0')
+    .version('0.2.1')
     .description('Build .jsx templates into /dist folder')
     .option('-d, --dev', 'Build for your gh-pages')
-    .option('-b, --branch [branchname]', 'Build your changes to a sub-folder named: br_branchname')
+    .option('-b, --branch [branchname]', 'Build your changes to a sub-folder named: branchname')
     .option('-p, --path [save_as]', 'Compile only the template/s that match the regex save_as')
     .option('-v, --verbose', 'Displays the list of paths to be compiled')
     .option('-t, --translations', 'Update messages.pot with new translations')
@@ -68,7 +68,7 @@ const getConfig = () => (
         dist_path       : Path.join(common.root_path, 'dist', (program.branch || '')),
         languages       : program.branch === 'translations' ? ['ACH'] : common.languages,
         root_path       : common.root_path,
-        root_url        : `/${program.dev ? 'binary-static/' : ''}${program.branch ? `${program.branch}/` : ''}`,
+        root_url        : `/${program.dev && !fs.existsSync(Path.join(common.root_path, 'scripts', 'CNAME')) ? 'binary-static/' : ''}${program.branch ? `${program.branch}/` : ''}`,
         sections        : ['app', 'static'],
     }
 );

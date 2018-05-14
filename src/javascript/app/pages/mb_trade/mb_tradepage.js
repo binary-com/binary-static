@@ -8,10 +8,9 @@ const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupCh
 const BinaryPjax          = require('../../base/binary_pjax');
 const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
-const jpClient            = require('../../common/country_base').jpClient;
 const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
 const JapanPortfolio      = require('../../japan/portfolio');
-const getElementById       = require('../../../_common/common_functions').getElementById;
+const getElementById      = require('../../../_common/common_functions').getElementById;
 const getLanguage         = require('../../../_common/language').get;
 const localize            = require('../../../_common/localize').localize;
 const State               = require('../../../_common/storage').State;
@@ -36,7 +35,7 @@ const MBTradePage = (() => {
             }
             return;
         }
-        if (jpClient()) {
+        if (Client.isJPClient()) {
             disableTrading();
             $('#panel').remove();
         } else {
@@ -55,9 +54,6 @@ const MBTradePage = (() => {
             MBProcess.getSymbols();
         });
 
-        $('#tab_portfolio').find('a').text(localize('Portfolio'));
-        $('#tab_graph').find('a').text(localize('Chart'));
-        $('#tab_explanation').find('a').text(localize('Explanation'));
         State.set('is_chart_allowed', true);
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
         $('.container').css('max-width', '1200px');
@@ -66,7 +62,9 @@ const MBTradePage = (() => {
     const showCurrency = (currency) => {
         if (currency) {
             const el_payout_amount = getElementById('payout_amount');
-            el_payout_amount.textContent += ` (${currency})`;
+            if (!new RegExp(currency).test(el_payout_amount.textContent)) {
+                el_payout_amount.textContent += ` (${currency})`;
+            }
 
             if (getDecimalPlaces(currency) > 2) {
                 const el_category      = getElementById('category');

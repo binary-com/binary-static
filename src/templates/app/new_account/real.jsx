@@ -31,7 +31,7 @@ const Real = () => (
                 <FirstName />
                 <LastName />
                 <DateOfBirth />
-                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} />
+                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{single: 'single'}} />
                 <Residence />
                 <AccountOpeningReason />
             </Fieldset>
