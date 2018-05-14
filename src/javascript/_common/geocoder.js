@@ -1,9 +1,9 @@
 /* global google */
 const scriptjs           = require('scriptjs');
+const localize           = require('./localize').localize;
 const applyToAllElements = require('./utility').applyToAllElements;
 const createElement      = require('./utility').createElement;
 const Client             = require('../app/base/client');
-const localize           = require('../_common/localize').localize;
 
 const Geocoder = (() => {
     let el_btn_validate,

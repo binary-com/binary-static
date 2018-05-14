@@ -17,10 +17,7 @@ const Portfolio = () => (
                 {/* If the account balance is zero we show the following button, otherwise we remove it */}
                 <span id='if-balance-zero' className='invisible'>
                     &nbsp;
-                    <a href={it.url_for('cashier/forwardws?action=deposit')} className='button nowrap ja-hide'>
-                        <span>{it.L('Make a Deposit')}</span>
-                    </a>
-                    <a href={it.url_for('cashier/deposit-jp')} className='button nowrap invisible ja-show'>
+                    <a href={it.url_for('cashier/forwardws?action=deposit')} className='button nowrap'>
                         <span>{it.L('Make a Deposit')}</span>
                     </a>
                 </span>
@@ -39,7 +36,6 @@ const Portfolio = () => (
                         [
                             { className: 'ref',                              text: it.L('Ref.') },
                             { className: 'payout nowrap',                    text: it.L('Potential Payout') },
-                            { className: 'expires nowrap invisible ja-show', text: it.L('{JAPAN ONLY}Expiry') },
                             { className: 'details',                          text: it.L('Contract Details') },
                             { className: 'purchase',                         text: it.L('Purchase') },
                             { className: 'indicative nowrap',                text: it.L('Indicative') },
@@ -49,8 +45,7 @@ const Portfolio = () => (
                     tfoot: [
                         [
                             { text: it.L('Total') },
-                            { className: 'ref ja-hide',           attributes: { colSpan: 2 } },
-                            { className: 'ref invisible ja-show', attributes: { colSpan: 3 } },
+                            { className: 'ref',                   attributes: { colSpan: 2 } },
                             { className: 'cost',                  id: 'cost-of-open-positions' },
                             { className: 'value',                 id: 'value-of-open-positions', attributes: { colSpan: 2 } },
                         ],

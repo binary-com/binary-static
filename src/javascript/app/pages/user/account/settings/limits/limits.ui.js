@@ -52,9 +52,7 @@ const LimitsUI = (() => {
                 if (object.length && object.length > 0) {
                     appendRowTable(localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
                     Object.keys(object).forEach((c) => {
-                        if (Client.get('residence') !== 'jp' || /Major Pairs/.test(object[c].name)) {
-                            appendRowTable(object[c].name, object[c].turnover_limit !== 'null' ? formatMoney(currency, object[c].turnover_limit, 1) : 0, '25px', 'normal');
-                        }
+                        appendRowTable(object[c].name, object[c].turnover_limit !== 'null' ? formatMoney(currency, object[c].turnover_limit, 1) : 0, '25px', 'normal');
                     });
                 } else {
                     appendRowTable(object.name, object.turnover_limit !== 'null' ? formatMoney(currency, object.turnover_limit, 1) : 0, 'auto', 'bold');
@@ -73,9 +71,7 @@ const LimitsUI = (() => {
             $('#withdrawal-title').prepend(`${login_id} - `);
         }
         $('#limits-title').setVisibility(1);
-        if (!Client.isJPClient()) {
-            $('#withdrawal-limits').setVisibility(1);
-        }
+        $('#withdrawal-limits').setVisibility(1);
     };
 
     const clearTableContent = () => {
