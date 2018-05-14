@@ -11,9 +11,10 @@ const Menu = (() => {
 
         applyToAllElements('li', (el) => { el.classList.remove('active', 'active-parent'); }, '', menu_top);
         if (Client.isLoggedIn()) {
-            // client is virtual and they are allowed to have costarica/maltainvest financial account
-            // or client is real and current landing company is costarica/maltainvest
-            const has_financial_markets = /costarica|maltainvest/.test(Client.get('is_virtual') ? State.getResponse('landing_company.financial_company.shortcode') : Client.get('landing_company_shortcode'));
+            const financial_shortcode = State.getResponse('landing_company.financial_company.shortcode');
+            // client is virtual and they are allowed to have a financial account
+            // or client is real and current account is financial
+            const has_financial_markets = Client.get('is_virtual') ? !!(financial_shortcode) : Client.get('landing_company_shortcode') === financial_shortcode;
             applyToAllElements('.financial-only', (el) => {
                 el.setVisibility(has_financial_markets);
             });
