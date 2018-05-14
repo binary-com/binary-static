@@ -218,8 +218,10 @@ const ViewPopup = (() => {
                 chart_started = true;
             }
         } else if (contract.tick_count && !chart_updated) {
-            TickDisplay.updateChart('', contract);
-            chart_updated = true;
+            if (contract.barrier) {
+                TickDisplay.updateChart('', contract);
+                chart_updated = true;
+            }
         }
 
         if (!is_sold && user_sold) {
