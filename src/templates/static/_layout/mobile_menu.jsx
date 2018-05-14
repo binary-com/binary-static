@@ -32,11 +32,11 @@ const MobileMenu = () => (
                     href={it.url_for('resources')}
                     className='ico-only-hide client_logged_in invisible'
                     subitems={[
-                        { text: it.L('Asset Index'),   href: it.url_for('resources/asset_indexws') },
-                        { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
+                        { text: it.L('Asset Index'),       href: it.url_for('resources/asset_indexws') },
+                        { text: it.L('Trading Times'),     href: it.url_for('resources/market_timesws') },
                         { text: it.L('Economic Calendar'), href: it.url_for('resources/economic_calendar') },
-                        { text: it.L('TradingView'),   href: 'https://tradingview.binary.com',      target: '_blank' },
-                        { text: it.L('SmartCharts'),   href: 'https://charts.binary.com/',          target: '_blank' },
+                        { text: it.L('TradingView'),       href: 'https://tradingview.binary.com',      target: '_blank' },
+                        { text: it.L('SmartCharts'),       href: 'https://charts.binary.com/',          target: '_blank' },
                     ]}
                 />
                 <Li text={it.L('Profile')}            href={it.url_for('user/settingsws')}         className='client_logged_in invisible' />
