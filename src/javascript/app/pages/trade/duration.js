@@ -87,21 +87,22 @@ const Durations = (() => {
             const text_mapping_min = durationTextValueMappings(duration_container[duration].min_contract_duration);
             const text_mapping_max = durationTextValueMappings(duration_container[duration].max_contract_duration);
             const min_unit         = text_mapping_min.unit;
+            const max_to_min_base  = convertDurationUnit(+text_mapping_max.value, text_mapping_max.unit, min_unit);
 
             if (duration === 'intraday') {
                 switch (min_unit) {
                     case 's':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
-                        if (+text_mapping_min.value > 60) {
+                        if (max_to_min_base > 60) {
                             duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max, true);
-                            if (+text_mapping_min.value > 3600) {
+                            if (max_to_min_base > 3600) {
                                 duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
                             }
                         }
                         break;
                     case 'm':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max, true);
-                        if (+text_mapping_min.value > 60) {
+                        if (max_to_min_base > 60) {
                             duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
                         }
                         break;
