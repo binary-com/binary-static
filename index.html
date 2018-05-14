@@ -27,6 +27,7 @@
                     'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
                     'id': 'id',
                     'it': 'it',
+                    'ja': 'jp',
                     'ko': 'kr',
                     'pl': 'po',
                     'pt': 'br|mz|ao|pt|gw|pg|cv|st',
@@ -45,11 +46,9 @@
                 return conLang;
             }
             function redirect() {
-                var loginid      = localStorage.getItem('active_loginid');
-                var client_info  = JSON.parse(localStorage.getItem('client.accounts') || '{}')[loginid];
-                var is_logged_in = client_info && client_info['token'];
                 window.location.href = (lang || 'en').toLowerCase() + '/' +
-                    (is_logged_in ? 'trading' : 'home') + '.html' + window.location.search;
+                    (getCookieItem('loginid') ? (lang === 'ja' ? 'multi_barriers_trading' : 'trading') : 'home' + (lang === 'ja' ? '-jp' : '')) +
+                    '.html' + window.location.search;
             }
             function isDelayedRedirect() {
                 if(isGtmApplicable() && !redirectTimeOut) {

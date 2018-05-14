@@ -195,6 +195,12 @@ const DepositWithdraw = (() => {
                 case 'ASK_FINANCIAL_RISK_APPROVAL':
                     showError('financial_risk_error');
                     break;
+                case 'ASK_JP_KNOWLEDGE_TEST':
+                    showError('knowledge_test_error');
+                    break;
+                case 'JP_NOT_ACTIVATION':
+                    showError('activation_error');
+                    break;
                 case 'ASK_AGE_VERIFICATION':
                     showError('age_error');
                     break;

@@ -1,3 +1,4 @@
+const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const Header           = require('../../base/header');
 const BinarySocket     = require('../../base/socket');
@@ -16,8 +17,9 @@ const Cashier = (() => {
 
     const displayTopUpButton = () => {
         BinarySocket.wait('balance').then((response) => {
+            const currency  = response.balance.currency;
             const balance   = +response.balance.balance;
-            const can_topup = balance <= 1000;
+            const can_topup = (currency !== 'JPY' && balance <= 1000) || (currency === 'JPY' && balance <= 100000);
             const top_up_id = '#VRT_topup_link';
             const $a        = $(top_up_id);
             if (!$a) {
@@ -35,6 +37,13 @@ const Cashier = (() => {
     };
 
     const onLoad = () => {
+        if (Client.isJPClient()) {
+            if (Client.get('residence') !== 'jp') {
+                BinaryPjax.loadPreviousUrl();
+            } else {
+                $('.deposit').parent().addClass('button-disabled').attr('href', 'javascript:;');
+            }
+        }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
                 const is_virtual = Client.get('is_virtual');

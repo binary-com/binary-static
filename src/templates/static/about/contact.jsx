@@ -10,7 +10,11 @@ const Contact = () => (
                 <h1 className='center-text'>{it.L('Contact us')}</h1>
                 <div className='gr-row'>
                     <div className='gr-8 gr-8-t gr-7-p gr-12-m'>
-                        <div className='gr-padding-10 gr-parent'>
+                        <div className='gr-padding-10 invisible ja-show gr-parent'>
+                            {it.L('JAPAN ONLY CONTACT TEXT')}
+                            <p><a href={(`mailto:${support_email}`)} rel='nofollow'>{support_email}</a></p>
+                        </div>
+                        <div className='gr-padding-10 ja-hide gr-parent'>
                             <div className='gr-row'>
                                 <div className='gr-3 gr-4-p gr-4-m'>
                                     <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
@@ -47,13 +51,13 @@ const Contact = () => (
                         </div>
                         <div className='gr-row'>
                             <div className='gr-11 gr-10-t gr-12-p gr-12-m'>
-                                <p>{it.L('If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help.')}</p>
+                                <p className='ja-hide'>{it.L('If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help.')}</p>
                             </div>
                         </div>
                         <div className='hint calls_recording'>
                             * {it.L('All calls are recorded for training and monitoring purposes')}
                         </div>
-                        <div className='gr-parent'>
+                        <div className='gr-parent ja-hide'>
                             <div className='chat'>
                                 <div className='chat-container'>
                                     <img className='chat-icon' src={it.url_for('images/pages/contact/chat-icon.svg')} />
@@ -74,7 +78,7 @@ const Contact = () => (
                             </div>
                         </div>
                     </div>
-                    <div className='gr-4 gr-4-t gr-5-p gr-12-m'>
+                    <div className='gr-4 gr-4-t gr-5-p gr-12-m ja-hide'>
                         <div className='gr-padding-10 gr-parent'>
                             <p className='no-margin'><strong>{it.L('Email:')}</strong></p>
                         </div>

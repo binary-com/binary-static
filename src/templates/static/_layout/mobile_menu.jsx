@@ -6,15 +6,22 @@ const MobileMenu = () => (
         <div className='gr-hide' id='mobile-menu'>
             <ul>
                 {/* Logged out */}
-                <Li text={it.L('Why Us?')}     href={it.url_for('why-us')}      className='client_logged_out invisible' />
-                <Li text={it.L('Get Started')} href={it.url_for('get-started')} className='client_logged_out invisible' />
-                <Li text={it.L('Tour')}        href={it.url_for('tour')}        className='client_logged_out invisible' />
-                <Li text={it.L('Platforms')}   href={it.url_for('platforms')}   className='client_logged_out invisible' />
+                {/* General */}
+                <Li text={it.L('Why Us?')}     href={it.url_for('why-us')}      className='ja-hide client_logged_out invisible' />
+                <Li text={it.L('Get Started')} href={it.url_for('get-started')} className='ja-hide client_logged_out invisible' />
+                <Li text={it.L('Tour')}        href={it.url_for('tour')}        className='ja-hide client_logged_out invisible' />
+                <Li text={it.L('Platforms')}   href={it.url_for('platforms')}   className='ja-hide client_logged_out invisible' />
+                {/* Japan */}
+                <Li text={it.L('Why Us?')}     href={it.url_for('why-us-jp')}              className='invisible ja-show client_logged_out' />
+                <Li text={it.L('Get Started')} href={it.url_for('get-started-jp')}         className='invisible ja-show client_logged_out' />
+                <Li text={it.L('Tour')}        href={it.url_for('tour-jp')}                className='invisible ja-show client_logged_out' />
+                <Li text={it.L('Trade')}       href={it.url_for('multi_barriers_trading')} className='invisible ja-show' />
                 {/* Logged in */}
+                {/* General */}
                 <Li
                     text={it.L('Trade')}
                     href={it.url_for('trading')}
-                    className='ico-only-hide client_logged_in invisible'
+                    className='ja-hide ico-only-hide client_logged_in invisible'
                     subitems={[
                         { text: it.L('SmartTrader'),  href: it.url_for('trading'), className: 'no-capitalize' },
                         { text: it.L('WebTrader'),    href: 'https://webtrader.binary.com', target: '_blank' },
@@ -32,10 +39,10 @@ const MobileMenu = () => (
                     href={it.url_for('resources')}
                     className='ico-only-hide client_logged_in invisible'
                     subitems={[
-                        { text: it.L('Asset Index'),   href: it.url_for('resources/asset_indexws') },
+                        { text: it.L('Asset Index'),   href: it.url_for('resources/asset_indexws'), className: 'ja-hide' },
                         { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
-                        { text: it.L('TradingView'),   href: 'https://tradingview.binary.com',      target: '_blank' },
-                        { text: it.L('SmartCharts'),   href: 'https://charts.binary.com/',          target: '_blank' },
+                        { text: it.L('TradingView'),   href: 'https://tradingview.binary.com',      className: 'ja-hide', target: '_blank' },
+                        { text: it.L('SmartCharts'),   href: 'https://charts.binary.com/',          className: 'ja-hide', target: '_blank' },
                     ]}
                 />
                 <Li text={it.L('Profile')}            href={it.url_for('user/settingsws')}         className='client_logged_in invisible' />

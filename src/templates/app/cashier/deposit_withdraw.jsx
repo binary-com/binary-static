@@ -24,6 +24,8 @@ const DepositWithdraw = () => (
         <div id='errors' className='invisible'>
             <p className='center-text notice-msg'>
                 <span id='financial_risk_error'>{it.L('Financial Risk approval is required. Please contact <a href="[_1]">customer support</a> for more information.', it.url_for('contact'))}</span>
+                <span id='knowledge_test_error'>{it.L('You must complete the knowledge test to activate this account.')}</span>
+                <span id='activation_error'>{it.L('Account not activated, please contact <a href="[_1]">customer support</a> for more information.', it.url_for('contact'))}</span>
                 <span id='age_error'>{it.L('Account needs age verification, please contact <a href="[_1]">customer support</a> for more information.', it.url_for('contact'))}</span>
                 <span id='tnc_error'>{it.L('Please <a href="[_1]">accept the updated Terms and Conditions</a>.', it.url_for('user/tnc_approvalws'))}</span>
                 <span id='limits_error'>{it.L('Please set your <a href="[_1]">30-day turnover limit</a> to access the cashier.', it.url_for('user/security/self_exclusionws'))}</span>
