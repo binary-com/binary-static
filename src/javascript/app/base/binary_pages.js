@@ -4,6 +4,8 @@ const TabSelector = require('../../_common/tab_selector');
 // ==================== app ====================
 const LoggedInHandler      = require('./logged_in');
 const Redirect             = require('./redirect');
+const CashierJP            = require('../japan/cashier');
+const KnowledgeTest        = require('../japan/knowledge_test/knowledge_test');
 const AccountTransfer      = require('../pages/cashier/account_transfer');
 const Cashier              = require('../pages/cashier/cashier');
 const DepositWithdraw      = require('../pages/cashier/deposit_withdraw');
@@ -35,6 +37,7 @@ const Accounts             = require('../pages/user/accounts');
 const LostPassword         = require('../pages/user/lost_password');
 const MetaTrader           = require('../pages/user/metatrader/metatrader');
 const FinancialAccOpening  = require('../pages/user/new_account/financial_acc_opening');
+const JapanAccOpening      = require('../pages/user/new_account/japan_acc_opening');
 const RealAccOpening       = require('../pages/user/new_account/real_acc_opening');
 const VirtualAccOpening    = require('../pages/user/new_account/virtual_acc_opening');
 const WelcomePage          = require('../pages/user/new_account/welcome_page');
@@ -45,6 +48,8 @@ const TNCApproval          = require('../pages/user/tnc_approval');
 const VideoFacility        = require('../pages/user/video_facility');
 
 // ==================== static ====================
+const GetStartedJP       = require('../../static/japan/get_started');
+const HomeJP             = require('../../static/japan/home');
 const Charity            = require('../../static/pages/charity');
 const Contact            = require('../../static/pages/contact');
 const GetStarted         = require('../../static/pages/get_started');
@@ -75,6 +80,8 @@ const pages_config = {
     forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
     home                     : { module: Home,                       not_authenticated: true },
     iphistoryws              : { module: IPHistory,                  is_authenticated: true },
+    japanws                  : { module: JapanAccOpening,            is_authenticated: true, only_virtual: true },
+    knowledge_testws         : { module: KnowledgeTest,              is_authenticated: true, only_virtual: true },
     landing_page             : { module: StaticPages.LandingPage,    is_authenticated: true, only_virtual: true },
     limitsws                 : { module: Limits,                     is_authenticated: true, only_real: true, needs_currency: true },
     logged_inws              : { module: LoggedInHandler },
@@ -110,9 +117,12 @@ const pages_config = {
     'cfds'                   : { module: GetStarted.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
+    'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'faq'                    : { module: StaticPages.AffiliatesFAQ },
     'forex'                  : { module: GetStarted.Forex },
     'get-started'            : { module: TabSelector },
+    'get-started-jp'         : { module: GetStartedJP },
+    'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'how-to-trade-mt5'       : { module: TabSelector },
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
     'ib-signup'              : { module: TabSelector },
@@ -123,9 +133,12 @@ const pages_config = {
     'payment-agent'          : { module: StaticPages.PaymentAgent },
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
     'terms-and-conditions'   : { module: TermsAndConditions },
+    'terms-and-conditions-jp': { module: TermsAndConditions },
     'types-of-accounts'      : { module: StaticPages.TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
+    'why-us-jp'              : { module: WhyUs },
+    'withdraw-jp'            : { module: CashierJP.Withdraw,         is_authenticated: true, only_real: true },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
 };
 /* eslint-enable max-len */

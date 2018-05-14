@@ -8,6 +8,7 @@ const TradingEvents     = require('./event');
 const Price             = require('./price');
 const Process           = require('./process');
 const ViewPopup         = require('../user/view_popup/view_popup');
+const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
 const Header            = require('../../base/header');
 const BinarySocket      = require('../../base/socket');
@@ -25,6 +26,10 @@ const TradePage = (() => {
     };
 
     const init = () => {
+        if (Client.isJPClient()) {
+            BinaryPjax.load('multi_barriers_trading');
+            return;
+        }
         State.set('is_trading', true);
         Price.clearFormId();
         if (events_initialized === 0) {

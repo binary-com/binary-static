@@ -55,7 +55,7 @@ const HighchartUI = (() => {
             },
             credits: { enabled: false },
             tooltip: {
-                xDateFormat  : '%A, %b %e, %H:%M:%S GMT',
+                xDateFormat  : (params.is_jp_client ? '%Y/%m/%d, %H:%M:%S' : '%A, %b %e, %H:%M:%S GMT'),
                 valueDecimals: params.decimals.split('.')[1].length || 3,
             },
             subtitle: {
@@ -112,9 +112,15 @@ const HighchartUI = (() => {
         }
     };
 
-    const getHighchartOptions = () => ({
-        lang: { thousandsSep: ',' }, // use comma as separator instead of space
-    });
+    const getHighchartOptions = is_jp_client => (
+        {
+            // use comma as separator instead of space
+            lang  : { thousandsSep: ',' },
+            global: {
+                timezoneOffset: is_jp_client ? -9 * 60 : 0, // Converting chart time to JST.
+            },
+        }
+    );
 
     const replaceExitLabelWithSell = (subtitle) => {
         const subtitle_length = subtitle.childNodes.length;

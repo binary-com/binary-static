@@ -96,6 +96,21 @@
     }
 }
 
+#knowledge-test-container {
+    #knowledge-test-msg {
+        white-space: pre-line;
+    }
+    .kv-pairs {
+        width: auto;
+        margin-left: 15px;
+        margin-bottom: 10px;
+
+        td {
+            border: none;
+        }
+    }
+}
+
 #profit-table-container {
     th {
         padding-right: 8px;

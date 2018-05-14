@@ -1,5 +1,6 @@
 const moment           = require('moment');
 const TradingTimes     = require('./trading_times');
+const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
 const Table            = require('../../../common/attach_dom/table');
 const DatePicker       = require('../../../components/date_picker');
@@ -56,9 +57,11 @@ const TradingTimesUI = (() => {
 
         $('#errorMsg').setVisibility(0);
 
+        const is_japan_trading = isJPClient();
+
         const markets = trading_times.markets;
 
-        const $ul       = $('<ul/>');
+        const $ul       = $('<ul/>', { class: is_japan_trading ? 'invisible' : '' });
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {
@@ -66,12 +69,14 @@ const TradingTimesUI = (() => {
 
             // contents
             const $market = $('<div/>', { id: tab_id });
-            $market.append(createMarketTables(markets[m]));
+            $market.append(createMarketTables(markets[m], is_japan_trading));
             if ($market.find('table tr').length) {
                 $contents.append($market);
 
                 // tabs
-                $ul.append($('<li/>').append($('<a/>', { href: `#${tab_id}`, text: markets[m].name, id: 'outline' })));
+                if (!is_japan_trading) {
+                    $ul.append($('<li/>').append($('<a/>', { href: `#${tab_id}`, text: markets[m].name, id: 'outline' })));
+                }
             }
         }
 
@@ -83,7 +88,7 @@ const TradingTimesUI = (() => {
         $container.tabs();
     };
 
-    const createMarketTables = (market) => {
+    const createMarketTables = (market, is_japan_trading) => {
         const $market_tables = $('<div/>');
 
         // submarkets of this market
@@ -91,6 +96,14 @@ const TradingTimesUI = (() => {
         let should_populate;
         for (let s = 0; s < submarkets.length; s++) {
             should_populate = true;
+            // display only "Major Pairs" for Japan
+            if (is_japan_trading) {
+                const submarket_info = TradingTimes.getSubmarketInfo(active_symbols, submarkets[s].name);
+                if (submarket_info.length === 0 || submarket_info[0].submarket !== 'major_pairs') {
+                    should_populate = false;
+                }
+            }
+
             if (should_populate) {
                 // submarket table
                 const $submarket_table = createEmptyTable(`${market.name}-${s}`);
@@ -165,6 +178,9 @@ const TradingTimesUI = (() => {
 
     const sendRequest = (date, should_request_active_symbols) => {
         const req = { active_symbols: 'brief' };
+        if (isJPClient()) {
+            req.landing_company = 'japan';
+        }
         if (should_request_active_symbols) {
             BinarySocket.wait('authorize').then(() => {
                 BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {

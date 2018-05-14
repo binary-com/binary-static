@@ -15,6 +15,10 @@ const VirtualAccOpening = (() => {
     const form = '#virtual-form';
 
     const onLoad = () => {
+        if (Client.isJPClient()) {
+            return;
+        }
+
         BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
         $('#residence').setVisibility(1);
         bindValidation();
