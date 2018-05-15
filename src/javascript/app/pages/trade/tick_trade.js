@@ -39,6 +39,8 @@ const TickDisplay = (() => {
         subscribe,
         responseID;
 
+    let id_render = 'tick_chart';
+
     const initialize = (data, options) => {
         // setting up globals
         number_of_ticks      = parseInt(data.number_of_ticks);
@@ -50,6 +52,9 @@ const TickDisplay = (() => {
         abs_barrier          = data.abs_barrier;
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
+        if (options.id_render) {
+            id_render = options.id_render;
+        }
 
         if (data.show_contract_result) {
             contract_sentiment = data.contract_sentiment;
@@ -110,7 +115,7 @@ const TickDisplay = (() => {
         chart = new Highcharts.Chart({
             chart: {
                 type           : 'line',
-                renderTo       : 'tick_chart',
+                renderTo       : id_render,
                 width          : config.width || (config.minimize ? 394 : null),
                 height         : config.minimize ? 143 : null,
                 backgroundColor: null,
@@ -158,7 +163,7 @@ const TickDisplay = (() => {
         if (!show_contract_result) {
             return;
         }
-        const chart_container = $('#tick_chart');
+        const chart_container = $(`#${id_render}`);
         if (contract_sentiment === 'up') {
             if (tick.quote > contract_barrier) {
                 chart_container.css('background-color', 'rgba(46,136,54,0.198039)');
@@ -283,7 +288,7 @@ const TickDisplay = (() => {
     };
 
     const dispatch = (data) => {
-        const tick_chart = CommonFunctions.getElementById('tick_chart');
+        const tick_chart = CommonFunctions.getElementById(id_render);
 
         if (!CommonFunctions.isVisible(tick_chart) || !data || (!data.tick && !data.history)) {
             return;
