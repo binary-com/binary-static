@@ -233,12 +233,12 @@ const TickDisplay = (() => {
     const evaluateContractOutcome = () => {
         if (status === 'won') {
             if (show_contract_result) {
-                $('#tick_chart').css('background-color', 'rgba(46,136,54,0.198039)');
+                $('#tick_chart').css('background-color', 'rgba(46, 136, 54, 0.2)');
             }
             updatePurchaseStatus(payout, price, localize('This contract won'), status);
         } else if (status === 'lost') {
             if (show_contract_result) {
-                $('#tick_chart').css('background-color', 'rgba(204,0,0,0.098039)');
+                $('#tick_chart').css('background-color', 'rgba(204, 0, 0, 0.1)');
             }
             updatePurchaseStatus(0, -price, localize('This contract lost'), status);
         }

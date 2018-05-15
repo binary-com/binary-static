@@ -133,16 +133,16 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
-        const final_price        = contract.sell_price || contract.bid_price;
-        const is_started         = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const sold_before_expiry = contract.status === 'sold' || (contract.sell_time && contract.sell_time < contract.date_expiry);
-        const is_ended           = contract.status !== 'open';
-        const indicative_price   = final_price && is_ended ? final_price : (contract.bid_price || null);
-        const sold_before_start  = contract.sell_time && contract.sell_time < contract.date_start;
+        const final_price           = contract.sell_price || contract.bid_price;
+        const is_started            = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
+        const is_sold_before_expiry = contract.status === 'sold' || (contract.sell_time && contract.sell_time < contract.date_expiry);
+        const is_ended              = contract.status !== 'open';
+        const indicative_price      = final_price && is_ended ? final_price : (contract.bid_price || null);
+        const is_sold_before_start  = contract.sell_time && contract.sell_time < contract.date_start;
 
         if (contract.barrier_count > 1) {
-            containerSetText('trade_details_barrier', sold_before_start ? '-' : addComma(contract.high_barrier), '', true);
-            containerSetText('trade_details_barrier_low', sold_before_start ? '-' : addComma(contract.low_barrier), '', true);
+            containerSetText('trade_details_barrier', is_sold_before_start ? '-' : addComma(contract.high_barrier), '', true);
+            containerSetText('trade_details_barrier_low', is_sold_before_start ? '-' : addComma(contract.low_barrier), '', true);
         } else if (contract.barrier) {
             const formatted_barrier = addComma(contract.barrier);
             const mapping           = {
@@ -154,7 +154,7 @@ const ViewPopup = (() => {
             // only show entry spot if available and contract was not sold before start time
             containerSetText(
                 'trade_details_barrier',
-                contract.entry_tick_time && sold_before_start ? '-' : (barrier_prefix + formatted_barrier),
+                contract.entry_tick_time && is_sold_before_start ? '-' : (barrier_prefix + formatted_barrier),
                 '',
                 true);
         }
@@ -162,8 +162,8 @@ const ViewPopup = (() => {
         let current_spot      = contract.current_spot;
         let current_spot_time = contract.current_spot_time;
         if (is_ended) {
-            current_spot      = sold_before_expiry ? '' : contract.exit_tick;
-            current_spot_time = sold_before_expiry ? '' : contract.exit_tick_time;
+            current_spot      = is_sold_before_expiry ? '' : contract.exit_tick;
+            current_spot_time = is_sold_before_expiry ? '' : contract.exit_tick_time;
         }
 
         if (current_spot) {
@@ -209,7 +209,7 @@ const ViewPopup = (() => {
         } else {
             if (contract.entry_spot > 0) {
                 // only show entry spot if available and contract was not sold before start time
-                containerSetText('trade_details_entry_spot > span', sold_before_start ? '-' : addComma(contract.entry_spot));
+                containerSetText('trade_details_entry_spot > span', is_sold_before_start ? '-' : addComma(contract.entry_spot));
             }
             containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
@@ -228,7 +228,7 @@ const ViewPopup = (() => {
             chart_updated = true;
         }
 
-        if (!is_sold && sold_before_expiry) {
+        if (!is_sold && is_sold_before_expiry) {
             is_sold = true;
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
         }
