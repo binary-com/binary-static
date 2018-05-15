@@ -45,7 +45,7 @@ const Purchase = (() => {
         const button             = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
-        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian' || sessionStorage.formname === 'touchnotouch');
+        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && /^risefall|higherlower|asian|touchnotouch$/.test(sessionStorage.formname);
 
         contracts_list.style.display = 'none';
 
@@ -150,14 +150,14 @@ const Purchase = (() => {
             }
 
             let category = sessionStorage.getItem('formname');
-            if (['risefall', 'higherlower'].includes(category)) {
+            if (/^risefall|higherlower$/.test(category)) {
                 category = 'callput';
             }
 
             TickDisplay.init({
                 contract_sentiment,
                 symbol              : passthrough.symbol,
-                barrier             : ['higherlower', 'touchnotouch'].includes(sessionStorage.getItem('formname')) ? passthrough.barrier : undefined,
+                barrier             : /^higherlower|touchnotouch$/.test(sessionStorage.getItem('formname')) ? passthrough.barrier : undefined,
                 number_of_ticks     : passthrough.duration,
                 previous_tick_epoch : receipt.start_time,
                 contract_category   : category,
