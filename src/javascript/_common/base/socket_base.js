@@ -2,6 +2,7 @@ const ClientBase       = require('./client_base');
 const SocketCache      = require('../base/socket_cache');
 const getLanguage      = require('../language').get;
 const State            = require('../storage').State;
+const cloneObject      = require('../utility').cloneObject;
 const getPropertyValue = require('../utility').getPropertyValue;
 const isEmptyObject    = require('../utility').isEmptyObject;
 const getAppId         = require('../../config').getAppId;
@@ -69,7 +70,7 @@ const BinarySocketBase = (() => {
             Object.keys(waiting_list.items)
                 .some(type => (
                     type !== msg_type &&
-                    $.inArray(pr, waiting_list.items[type]) >= 0
+                    waiting_list.items[type].indexOf(pr) !== -1
                 ))
         ),
     };
@@ -132,7 +133,7 @@ const BinarySocketBase = (() => {
         if (!options.forced) {
             const response = SocketCache.get(data, msg_type);
             if (response) {
-                State.set(['response', msg_type], $.extend({}, response));
+                State.set(['response', msg_type], cloneObject(response));
                 if (isReady() && is_available) { // make the request to keep the cache updated
                     binary_socket.send(JSON.stringify(data));
                 }
@@ -181,7 +182,7 @@ const BinarySocketBase = (() => {
                 sent_requests.add(msg_type);
             }
         } else if (+data.time !== 1) { // Do not buffer all time requests
-            buffered_sends.push({ request: data, options: $.extend(options, { promise: promise_obj }) });
+            buffered_sends.push({ request: data, options: Object.assign(options, { promise: promise_obj }) });
         }
 
         return promise_obj.promise;
@@ -225,7 +226,7 @@ const BinarySocketBase = (() => {
 
                 // store in State
                 if (!getPropertyValue(response, ['echo_req', 'subscribe']) || /balance|website_status/.test(msg_type)) {
-                    State.set(['response', msg_type], $.extend({}, response));
+                    State.set(['response', msg_type], cloneObject(response));
                 }
                 // resolve the send promise
                 const this_req_id = response.req_id;
