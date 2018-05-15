@@ -5,9 +5,9 @@ const TradingAnalysis = require('../trade/analysis');
 const redrawChart     = require('../trade/charts/webtrader_chart').redrawChart;
 const ViewPopup       = require('../user/view_popup/view_popup');
 const Client          = require('../../base/client');
-const GTM             = require('../../base/gtm');
 const BinarySocket    = require('../../base/socket');
 const formatMoney     = require('../../common/currency').formatMoney;
+const GTM             = require('../../../_common/base/gtm');
 const localize        = require('../../../_common/localize').localize;
 const isEmptyObject   = require('../../../_common/utility').isEmptyObject;
 
