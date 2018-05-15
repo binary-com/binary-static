@@ -135,7 +135,7 @@ const ViewPopup = (() => {
     const update = () => {
         const final_price       = contract.sell_price || contract.bid_price;
         const is_started        = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const user_sold         = contract.sell_time && contract.sell_time < contract.date_expiry;
+        const user_sold         = contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry;
         const is_ended          = contract.is_settleable || contract.is_sold || user_sold;
         const indicative_price  = final_price && is_ended ? final_price : (contract.bid_price || null);
         const sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
@@ -166,15 +166,13 @@ const ViewPopup = (() => {
             current_spot_time = user_sold ? '' : contract.exit_tick_time;
         }
 
-        const is_touchnotouch_tick_contract = /touch/i.test(contract.contract_type) && contract.tick_count;
-
-        if (current_spot && !is_touchnotouch_tick_contract) {
+        if (current_spot) {
             containerSetText('trade_details_current_spot > span', addComma(current_spot));
         } else {
             $('#trade_details_current_spot').parent().setVisibility(0);
         }
 
-        if (current_spot_time && !is_touchnotouch_tick_contract) {
+        if (current_spot_time) {
             if (window.time && current_spot_time > window.time.unix()) {
                 window.time = moment(current_spot_time).utc();
                 updateTimers();
