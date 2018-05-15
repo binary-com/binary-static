@@ -179,8 +179,8 @@ const ViewPopupUI = (() => {
         repositionConfirmation,
         storeSubscriptionID,
 
-        setStreamFunction : (onCloseFnc) => { triggerOnClose = onCloseFnc; },
-        setOnCloseFunction: (streamFnc) => { getPageTickStream = streamFnc; },
+        setStreamFunction : (streamFnc) => { getPageTickStream = streamFnc; },
+        setOnCloseFunction: (onCloseFnc) => { triggerOnClose = onCloseFnc; },
     };
 })();
 

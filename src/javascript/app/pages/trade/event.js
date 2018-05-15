@@ -327,6 +327,7 @@ const TradingEvents = (() => {
                     } else {
                         this.setAttribute('contract_id', response.buy.contract_id);
                         ViewPopup.init(this, () => {
+                            GetTicks.request();
                             CommonTrading.hideOverlayContainer();
                             Price.processPriceRequest();
                         });
