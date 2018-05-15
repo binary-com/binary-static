@@ -331,9 +331,12 @@ const TickDisplay = (() => {
             epoches = data.history.times;
         }
 
-        const has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed || sell_spot_time;
+        const has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
+        const has_sold = sell_spot_time
+            && applicable_ticks
+            && applicable_ticks.find(({ epoch }) => epoch === sell_spot_time) !== undefined;
 
-        if (!has_finished) {
+        if (!has_finished && !has_sold) {
             for (let d = 0; d < epoches.length; d++) {
                 let tick;
                 if (data.tick) {
