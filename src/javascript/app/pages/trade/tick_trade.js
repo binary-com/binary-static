@@ -84,7 +84,7 @@ const TickDisplay = (() => {
                 label: 'Exit Spot',
                 id   : 'exit_tick',
             };
-        } else if (contract_category.match('callput') || contract_category.match('touchnotouch')) {
+        } else if (contract_category.match('callput')) {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
                 _0: { label: 'Entry Spot', id: 'entry_tick' },
@@ -92,6 +92,11 @@ const TickDisplay = (() => {
             x_indicators[`_${number_of_ticks}`] = {
                 label: 'Exit Spot',
                 id   : 'exit_tick',
+            };
+        } else if (contract_category.match('touchnotouch')) {
+            ticks_needed = number_of_ticks + 1;
+            x_indicators = {
+                _0: { label: 'Entry Spot', id: 'entry_tick' },
             };
         } else if (contract_category.match('digits')) {
             ticks_needed = number_of_ticks;
@@ -278,6 +283,8 @@ const TickDisplay = (() => {
                     category = 'asian';
                 } else if (/digit/i.test(tick_shortcode)) {
                     category = 'digits';
+                } else if (/touch/i.test(tick_shortcode)) {
+                    category = 'touchnotouch';
                 }
                 initialize({
                     symbol              : tick_underlying,
@@ -329,7 +336,8 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    if (tick.epoch === sell_spot_time && !x_indicators[indicator_key]) {
+                    if (tick.epoch === sell_spot_time) {
+                        console.log('line in dispatch');
                         x_indicators[indicator_key] = {
                             index    : counter,
                             dashStyle: 'Dash',
@@ -357,13 +365,12 @@ const TickDisplay = (() => {
             const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
             const indicator_key = `_${index}`;
 
-            if (!x_indicators[indicator_key]) {
-                x_indicators[indicator_key] = {
-                    index,
-                    dashStyle: 'Dash',
-                };
-                add(x_indicators[indicator_key]);
-            }
+            console.log('line in updateChart');
+            x_indicators[indicator_key] = {
+                index,
+                dashStyle: 'Dash',
+            };
+            add(x_indicators[indicator_key]);
         } else if (contract) {
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;

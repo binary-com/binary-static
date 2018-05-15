@@ -236,6 +236,7 @@ const ViewPopup = (() => {
                 });
             }
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
+            else TickDisplay.updateChart({ is_sold: true }, contract);
         }
 
         if (!contract.is_valid_to_sell) {
