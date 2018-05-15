@@ -33,7 +33,6 @@ const PersonalDetails = (() => {
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
         is_jp_client      = residence === 'jp'; // we need to check with residence so we know which fields will be present in get_settings response
-        setVisibility('#fieldset_email_consent');
         if (is_jp_client && !is_virtual) {
             showHideTaxMessage();
         }
