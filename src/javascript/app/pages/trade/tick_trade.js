@@ -1,4 +1,5 @@
 const moment               = require('moment');
+const requireHighstock     = require('./common').requireHighstock;
 const Tick                 = require('./tick');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
@@ -62,7 +63,7 @@ const TickDisplay = (() => {
         const end_time = parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * 5);
 
         setXIndicators();
-        CommonFunctions.requireHighstock((Highstock) => {
+        requireHighstock((Highstock) => {
             Highcharts = Highstock;
             initializeChart({
                 minimize,
