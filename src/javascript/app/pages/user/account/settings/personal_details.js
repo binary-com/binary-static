@@ -193,7 +193,6 @@ const PersonalDetails = (() => {
     };
 
     const isChanged = (data) => {
-        console.log('isChanged: ',data);
         const compare_data = $.extend({}, data);
         return Object.keys(compare_data).some(key => (
             key !== 'set_settings' && key !== 'jp_settings' && editable_fields[key] !== compare_data[key]
@@ -286,7 +285,6 @@ const PersonalDetails = (() => {
     };
 
     const showFormMessage = (msg, is_success) => {
-        console.log('showFormMessage: ', msg, is_success);
         $('#formMessage')
             .attr('class', is_success ? 'success-msg' : 'errorfield')
             .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
