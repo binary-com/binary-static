@@ -99,13 +99,6 @@ const PaymentMethods = () => {
                                 { text: '10 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                             ],
-                            [
-                                { text: <PaymentLogo logo='union_pay' /> },
-                                { text: 'USD' },
-                                { text: '10 - 1,000' },
-                                { text: 'N/A' },
-                                { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
-                            ],
                         ],
                     }}
                 />
@@ -115,13 +108,6 @@ const PaymentMethods = () => {
                     data={{
                         thead: [ head ],
                         tbody: [
-                            [
-                                { text: <PaymentLogo logo='okpay' /> },
-                                { text: 'USD EUR' },
-                                { text: '5 - 10,000' },
-                                { text: '5 - 10,000' },
-                                { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                            ],
                             [
                                 { text: <PaymentLogo logo='fasapay' /> },
                                 { text: 'USD' },

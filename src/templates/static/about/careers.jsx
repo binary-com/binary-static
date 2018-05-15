@@ -1,5 +1,6 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
+import Step from '../../_common/components/step.jsx';
 
 const Box = ({
     gr,
@@ -45,7 +46,7 @@ const ColumnSM = ({ gr, header, paragraph }) => (
 
 
 const ColumnLG = ({ center, image, text }) => (
-    <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
+    <div className={`gr-6 gr-12-m${center ? ' center-text' : ''}`}>
         <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
         <div className='white-bg-color'>
             <p className='column-margin fill-text'>{text}</p>
@@ -53,18 +54,9 @@ const ColumnLG = ({ center, image, text }) => (
     </div>
 );
 
-const Step = ({ circle_no, text }) => {
-    const circle = circle_no ? <div className='circle'>{circle_no}</div> : '';
-    return (
-        <div className='step'>
-            <div className='border-bottom' />
-            {circle}
-            <div className='gr-padding-20 gr-gutter'>
-                <p className='no-margin gr-padding-10'>{text}</p>
-            </div>
-        </div>
-    );
-};
+const CareerStep = ({ ...props }) => (
+    <Step centered={false} {...props} />
+);
 
 
 const Careers = () => (
@@ -92,7 +84,6 @@ const Careers = () => (
                     </div>
                     <ColumnLG image='my@2'      text={it.L('Malaysia')} />
                     <ColumnLG image='malta@1'   text={it.L('Malta')} />
-                    <ColumnLG image='japan@1'   text={it.L('Japan')} />
                 </div>
             </div>
 
@@ -100,7 +91,7 @@ const Careers = () => (
                 <div className='gr-row gr-padding-30'>
                     <ColumnSM gr='4' header={it.L('Want to telecommute?')} paragraph={it.L('[_1] is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we\'re open to it.', it.website_name) } />
                     <ColumnSM gr='4' header={it.L('Where you can go')}     paragraph={it.L('Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.') } />
-                    <ColumnSM gr='4' header={it.L('More benefits')}        paragraph={it.L('We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\'re in Malta, Malaysia, or Japan.')} />
+                    <ColumnSM gr='4' header={it.L('More benefits')}        paragraph={it.L('We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\'re in Malta, or Malaysia.')} />
                 </div>
                 <div className='gr-padding-20'>
                     <div className='gr-padding-30 center-text'>
@@ -215,29 +206,29 @@ const Careers = () => (
                 <div id='technical'>
                     <div className='gr-padding-30'>
                         <div className='steps gr-padding-10'>
-                            <Step
+                            <CareerStep
                                 text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
                                 circle_no='1'
                             />
-                            <Step
+                            <CareerStep
                                 text={it.L('If you\'re shortlisted, we\'ll invite you to a hackathon or send you a talent test.')}
                                 circle_no='2'
                             />
-                            <Step
+                            <CareerStep
                                 text={it.L('If you score well in the hackathon or talent test, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we\'ll invite you for an interview with a member of our recruitment team.')}
                                 circle_no='3'
                             />
                         </div>
                         <div className='steps gr-padding-10'>
-                            <Step
+                            <CareerStep
                                 text={it.L('Made an impression in the first interview? We\'ll invite you to a second interview with our CEO and/or hiring manager.')}
                                 circle_no='4'
                             />
-                            <Step
+                            <CareerStep
                                 text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
                                 circle_no='5'
                             />
-                            <Step
+                            <CareerStep
                                 text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and we don\'t make you negotiate in order to eliminate salary inequities and stress.')}
                                 circle_no='6'
                             />
@@ -247,29 +238,29 @@ const Careers = () => (
                 <div id='non-technical'>
                     <div className='gr-padding-30'>
                         <div className='steps gr-padding-10'>
-                            <Step
+                            <CareerStep
                                 text={it.L('Send us your CV and cover letter. We\'ll compare your skills and experience with our requirements.')}
                                 circle_no='1'
                             />
-                            <Step
+                            <CareerStep
                                 text={it.L('If you\'re shortlisted, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire.')}
                                 circle_no='2'
                             />
-                            <Step
+                            <CareerStep
                                 text={it.L('If you score well on the SATI, we\'ll send you a talent test. Do well on the talent test and and we\'ll invite you for an interview with a member of our recruitment team.')}
                                 circle_no='3'
                             />
                         </div>
                         <div className='steps gr-padding-10'>
-                            <Step
+                            <CareerStep
                                 text={it.L('Made an impression in the first interview? We\'ll invite you to a second interview with our CEO and/or hiring manager.')}
                                 circle_no='4'
                             />
-                            <Step
+                            <CareerStep
                                 text={it.L('If we decide to extend an offer, we\'ll conduct background and reference checks.')}
                                 circle_no='5'
                             />
-                            <Step
+                            <CareerStep
                                 text={it.L('Congratulations! We\'ll make you a fair and competitive offer, and we don\'t make you negotiate in order to eliminate salary inequities and stress.')}
                                 circle_no='6'
                             />

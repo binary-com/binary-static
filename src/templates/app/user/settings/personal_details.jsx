@@ -15,14 +15,14 @@ import Loading from '../../../_common/components/loading.jsx';
 
 const Money = () => (
     <React.Fragment>
-        <option value='Less than 1 million JPY'>{it.L('Less than 1 million JPY')}</option>
-        <option value='1-3 million JPY'>{it.L('1-3 million JPY')}</option>
-        <option value='3-5 million JPY'>{it.L('3-5 million JPY')}</option>
-        <option value='5-10 million JPY'>{it.L('5-10 million JPY')}</option>
-        <option value='10-30 million JPY'>{it.L('10-30 million JPY')}</option>
-        <option value='30-50 million JPY'>{it.L('30-50 million JPY')}</option>
-        <option value='50-100 million JPY'>{it.L('50-100 million JPY')}</option>
-        <option value='Over 100 million JPY'>{it.L('Over 100 million JPY')}</option>
+        <option value='Less than 1 million JPY'>{it.L('{JAPAN ONLY}Less than 1 million JPY')}</option>
+        <option value='1-3 million JPY'>{it.L('{JAPAN ONLY}1-3 million JPY')}</option>
+        <option value='3-5 million JPY'>{it.L('{JAPAN ONLY}3-5 million JPY')}</option>
+        <option value='5-10 million JPY'>{it.L('{JAPAN ONLY}5-10 million JPY')}</option>
+        <option value='10-30 million JPY'>{it.L('{JAPAN ONLY}10-30 million JPY')}</option>
+        <option value='30-50 million JPY'>{it.L('{JAPAN ONLY}30-50 million JPY')}</option>
+        <option value='50-100 million JPY'>{it.L('{JAPAN ONLY}50-100 million JPY')}</option>
+        <option value='Over 100 million JPY'>{it.L('{JAPAN ONLY}Over 100 million JPY')}</option>
     </React.Fragment>
 );
 
@@ -55,15 +55,15 @@ const PersonalDetails = () => (
 
         <form className='form gr-padding-10 invisible' id='frmPersonalDetails'>
             <Fieldset legend={it.L('Details')}>
-                <FormRow type='label' label={it.L('Name')} is_bold id='lbl_name' row_class='invisible' row_id='row_name' />
-                <FormRow type='label' label={it.L('Gender')} is_bold id='lbl_gender' row_class='invisible JpAcc' />
-                <FormRow type='label' label={it.L('Date of birth')} is_bold id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' />
-                <FormRow type='label' label={it.L('Place of birth')} id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible' />
-                <FormRow type='select' label={it.L('Place of birth')} id='place_of_birth' row_id='row_place_of_birth' row_class='invisible' />
-                <FormRow type='label' label={it.L('Country of Residence')} is_bold id='lbl_country' row_id='row_country' />
-                <FormRow type='label' label={it.L('Email address')} is_bold id='lbl_email' row_id='row_email' />
-                <FormRow type='label' label={it.L('Account Opening Reason')} id='lbl_account_opening_reason' row_id='row_lbl_account_opening_reason' row_class='invisible' />
-                <AccountOpeningReason row_id='row_account_opening_reason' row_class='invisible' />
+                <FormRow type='label'  label={it.L('Name')} is_bold id='lbl_name' row_class='invisible' row_id='row_name' />
+                <FormRow type='label'  label={it.L('Gender')} is_bold id='lbl_gender' row_class='invisible JpAcc' />
+                <FormRow type='label'  label={it.L('Date of birth')} is_bold id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' />
+                <FormRow type='label'  label={it.L('Place of birth')} id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible' />
+                <FormRow type='select' label={it.L('Place of birth')} id='place_of_birth' row_id='row_place_of_birth' row_class='invisible' attributes={{single: 'single'}} />
+                <FormRow type='label'  label={it.L('Country of Residence')} is_bold id='lbl_country' row_id='row_country' />
+                <FormRow type='label'  label={it.L('Email address')} is_bold id='lbl_email' row_id='row_email' />
+                <FormRow type='label'  label={it.L('Account Opening Reason')} id='lbl_account_opening_reason' row_id='row_lbl_account_opening_reason' row_class='invisible' />
+                <AccountOpeningReason  row_id='row_account_opening_reason' row_class='invisible' />
                 <FormRow type='select' label={it.L('Occupation')} id='occupation' className='jp_value' row_class='invisible JpAcc'>
                     <option value='Office worker'>{it.L('Office worker')}</option>
                     <option value='Director'>{it.L('Director')}</option>

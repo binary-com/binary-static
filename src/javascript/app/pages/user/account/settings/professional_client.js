@@ -25,9 +25,8 @@ const professionalClient = (() => {
     };
 
     const populateProfessionalClient = (is_financial) => {
-        const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-        if (!/costarica|maltainvest/.test(financial_company) ||    // limited to these landing companies
-            (financial_company === 'maltainvest' && !is_financial)) { // then it's not upgrading to financial
+        const has_maltainvest = State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest';
+        if (!has_maltainvest || !is_financial) { // then it's not upgrading to financial
             if (is_in_page) {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -38,7 +37,7 @@ const professionalClient = (() => {
         const $info             = $container.find('#professional_info');
         const $popup_contents   = $container.find('#popup');
         const popup_selector    = '#professional_popup';
-        const $error             = $('#form_message');
+        const $error            = $('#form_message');
 
         $container.find('#professional_info_toggle').off('click').on('click', function() {
             $(this).toggleClass('open');
@@ -59,7 +58,7 @@ const professionalClient = (() => {
             }
         });
 
-        if (financial_company === 'maltainvest') {
+        if (has_maltainvest) {
             $container.find('#show_financial').setVisibility(1);
         }
 

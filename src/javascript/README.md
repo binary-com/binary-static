@@ -1,11 +1,23 @@
-JavaScript Rules
+JavaScript Guidelines
 =============
+
+### General Guidelines
+In order to improve the clarity, quality and development time it is worth considering the following principles whenever possible:
+- [DRY (Don't Repeat Yourself)](https://en.wikipedia.org/wiki/Don't_repeat_yourself)
+- [KISS (Keep It Simple, Stupid)](https://en.wikipedia.org/wiki/KISS_principle)
+- [SoC (Separation of Concerns)](https://en.wikipedia.org/wiki/Separation_of_concerns)
+- [Single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle)
+- [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter)
+
+---
 
 ### Style Guide
 
-Most styling issues will be caught by ESLint, so before pushing your changes remember to run `grunt eslint` to catch and fix any issues that it finds.
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript/blob/master/README.md) is partially being followed in our code base.
 
-Check below for the rules that are not caught by ESLint but should be followed.
+- Most styling issues will be caught by ESLint, so before pushing your changes remember to run `grunt eslint` to catch and fix any issues that it finds.
+
+- Check below for the rules that are not caught by ESLint but should be followed.
 
 ### Naming Conventions
 
