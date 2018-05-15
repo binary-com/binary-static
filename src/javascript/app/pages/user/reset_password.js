@@ -1,6 +1,6 @@
-const Login             = require('../../base/login');
 const generateBirthDate = require('../../common/attach_dom/birth_date_picker');
 const FormManager       = require('../../common/form_manager');
+const Login             = require('../../../_common/base/login');
 const localize          = require('../../../_common/localize').localize;
 
 const ResetPassword = (() => {
