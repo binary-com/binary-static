@@ -71,6 +71,7 @@ const VirtualAccOpening = (() => {
     const bindValidation = () => {
         // Add TrafficSource parameters
         const utm_data = TrafficSource.getData();
+
         const req = [
             { selector: '#client_password', validations: ['req', 'password'], re_check_field: '#repeat_password' },
             { selector: '#repeat_password', validations: ['req', ['compare', { to: '#client_password' }]], exclude_request: 1 },
