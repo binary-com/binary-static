@@ -1,11 +1,11 @@
 const moment           = require('moment');
 const isCryptocurrency = require('./currency_base').isCryptocurrency;
+const SocketCache      = require('./socket_cache');
 const LocalStore       = require('../storage').LocalStore;
 const State            = require('../storage').State;
 const getPropertyValue = require('../utility').getPropertyValue;
 const isEmptyObject    = require('../utility').isEmptyObject;
 const BinarySocket     = require('../../app/base/socket');
-const SocketCache      = require('../../app/base/socket_cache');
 
 const ClientBase = (() => {
     const storage_key = 'client.accounts';

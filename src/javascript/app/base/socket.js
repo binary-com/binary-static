@@ -1,4 +1,4 @@
-const SocketCache      = require('./socket_cache');
+const SocketCache      = require('../../_common/base/socket_cache');
 const getLanguage      = require('../../_common/language').get;
 const localize         = require('../../_common/localize').localize;
 const State            = require('../../_common/storage').State;
