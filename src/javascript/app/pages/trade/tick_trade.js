@@ -382,8 +382,8 @@ const TickDisplay = (() => {
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
                 subscribe         = 'true';
-            } else if (contract.sell_time < contract.date_expiry) {
-                request.end = contract.sell_time;
+            } else if (+contract.sell_spot_time < contract.date_expiry) {
+                request.end = contract.sell_spot_time;
             } else {
                 request.end = contract.date_expiry;
             }
