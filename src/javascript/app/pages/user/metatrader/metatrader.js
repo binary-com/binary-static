@@ -171,11 +171,15 @@ const MetaTrader = (() => {
                     } else {
                         const login = actions_info[action].login ?
                             actions_info[action].login(response) : accounts_info[acc_type].info.login;
-                        if (!accounts_info[acc_type].info) {
+                        if (!accounts_info[acc_type].info) { // it's a new account
                             accounts_info[acc_type].info = { login, currency: getPropertyValue(response, ['mt5_new_account', 'currency']) };
                             MetaTraderUI.setAccountType(acc_type, true);
                             BinarySocket.send({ mt5_login_list: 1 });
                             MetaTraderUI.loadAction(null, acc_type);
+                        } else {
+                            // other than revoke mam, other actions are two forms in one action, so we need the parent action to be loaded for them
+                            const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
+                            MetaTraderUI.loadAction(action === 'revoke_mam' ? action : parent_action);
                         }
                         BinarySocket.send({ mt5_login_list: 1 }).then((response_login_list) => {
                             setAccountDetails(login, acc_type, response_login_list);
