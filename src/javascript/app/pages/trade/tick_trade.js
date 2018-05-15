@@ -1,6 +1,5 @@
 const moment               = require('moment');
 const Tick                 = require('./tick');
-const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
 const CommonFunctions      = require('../../../_common/common_functions');
@@ -17,8 +16,6 @@ const TickDisplay = (() => {
         display_decimals,
         show_contract_result,
         contract_sentiment,
-        price,
-        payout,
         ticks_needed,
         x_indicators,
         chart,
@@ -59,8 +56,6 @@ const TickDisplay = (() => {
 
         if (data.show_contract_result) {
             contract_sentiment = data.contract_sentiment;
-            price              = parseFloat(data.price);
-            payout             = parseFloat(data.payout);
         }
 
         const minimize = data.show_contract_result;
@@ -235,38 +230,14 @@ const TickDisplay = (() => {
 
     const add = (indicator) => {
         chart.xAxis[0].addPlotLine({
-            value : indicator.index,
-            id    : indicator.id,
-            label : { text: indicator.label, x: /start_tick|entry_tick/.test(indicator.id) ? -15 : 5 },
-            color : '#e98024',
-            width : 2,
-            zIndex: 2,
+            value    : indicator.index,
+            id       : indicator.id,
+            label    : { text: indicator.label, x: /start_tick|entry_tick/.test(indicator.id) ? -15 : 5 },
+            color    : '#e98024',
+            width    : 2,
+            zIndex   : 2,
             dashStyle: indicator.dashStyle || '',
         });
-    };
-
-    const evaluateContractOutcome = () => {
-        if (!contract_barrier) {
-            return; // can't do anything without barrier
-        }
-
-        const exit_tick_index = applicable_ticks.length - 1;
-        const exit_spot       = applicable_ticks[exit_tick_index].quote;
-
-        if (contract_sentiment === 'up' && exit_spot > contract_barrier
-            || contract_sentiment === 'down' && exit_spot < contract_barrier) {
-            win();
-        } else {
-            lose();
-        }
-    };
-
-    const win = () => {
-        updatePurchaseStatus(payout, price, localize('This contract won'));
-    };
-
-    const lose = () => {
-        updatePurchaseStatus(0, -price, localize('This contract lost'));
     };
 
     const plot = () => {
@@ -360,9 +331,9 @@ const TickDisplay = (() => {
 
                     if (tick.epoch === sell_spot_time && !x_indicators[indicator_key]) {
                         x_indicators[indicator_key] = {
-                            index: counter,
+                            index    : counter,
                             dashStyle: 'Dash',
-                        }
+                        };
                     }
 
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
