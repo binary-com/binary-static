@@ -8,7 +8,7 @@
         margin: 0 15px;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
-        grid-template-rows: repeat(2, [row] auto);
+        grid-template-rows: 1fr;
         grid-gap: 4px;
 
         .chart-container {
@@ -21,6 +21,7 @@
 
                 div.chartContainer {
                     background: transparent;
+                    min-height: 100%;
                 }
             }
             div.debug-text {
