@@ -1,3 +1,4 @@
+const Dropdown          = require('@binary-com/binary-style').selectDropdown;
 const moment            = require('moment');
 const CommonIndependent = require('./common_independent');
 const Contract          = require('./contract');
@@ -91,6 +92,7 @@ const StartDates = (() => {
             });
             if (target) {
                 target.appendChild(fragment);
+                Dropdown('#date_start');
                 Defaults.set('date_start', target.value);
                 CommonIndependent.showAssetOpenHours(target.value === 'now' ? '' : $(target));
                 $('#time_start_row').setVisibility(target.value !== 'now');

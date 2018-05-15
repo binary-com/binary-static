@@ -389,6 +389,10 @@ button .barspinner.white {
 .sidebar-collapsible-container {
     position: relative;
     height: 100%;
+
+    .has-submenu.active ul {
+        height: auto;
+    }
 }
 
 .sidebar {
@@ -459,6 +463,18 @@ ul.bullet.gr-row > li {
     margin-top: 40px;
     margin-bottom: 20px;
 
+    div.select {
+        ul.select-options {
+            position: absolute;
+            margin: 4px 0 0;
+            font-size: 1rem;
+
+            li.select-items {
+                margin: 0;
+                display: block;
+            }
+        }
+    }
     .light {
         .tab-menu-wrap {
             text-align: center;
@@ -629,4 +645,3 @@ label + input {
         }
     }
 }
-
