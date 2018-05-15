@@ -172,6 +172,12 @@ const findParent = (el, selector) => {
     return null;
 };
 
+let static_hash;
+const getStaticHash = () => {
+    static_hash = static_hash || ($('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src') || '').split('?')[1];
+    return static_hash;
+};
+
 module.exports = {
     showLoadingImage,
     getHighestZIndex,
@@ -185,4 +191,5 @@ module.exports = {
     createElement,
     applyToAllElements,
     findParent,
+    getStaticHash,
 };

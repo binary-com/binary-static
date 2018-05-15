@@ -1,7 +1,7 @@
 const moment           = require('moment');
-const getStaticHash    = require('../check_new_release').getStaticHash;
 const LocalStore       = require('../storage').LocalStore;
 const getPropertyValue = require('../utility').getPropertyValue;
+const getStaticHash    = require('../utility').getStaticHash;
 const isEmptyObject    = require('../utility').isEmptyObject;
 
 /*
