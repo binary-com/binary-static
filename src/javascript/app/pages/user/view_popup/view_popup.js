@@ -135,7 +135,10 @@ const ViewPopup = (() => {
     const update = () => {
         const final_price       = contract.sell_price || contract.bid_price;
         const is_started        = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const user_sold         = contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry;
+        const is_touch_tick     = /touch/i.test(contract.contract_type) && contract.tick_count;
+        const user_sold         = is_touch_tick
+            ? contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry
+            : contract.sell_time && contract.sell_time < contract.date_expiry;
         const is_ended          = contract.is_settleable || contract.is_sold || user_sold;
         const indicative_price  = final_price && is_ended ? final_price : (contract.bid_price || null);
         const sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
