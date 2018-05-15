@@ -18,6 +18,7 @@ const SmartCharts = () =>  (
             requestSubscribe={subscribe}
             requestForget={forget}
             requestAPI={DAO.sendRequest.bind(DAO)}
+            onSymbolChange={(symbol) => console.log('Symbol has changed to:', symbol)}
         />
     </React.Fragment>
 );
@@ -25,6 +26,5 @@ const SmartCharts = () =>  (
 export default connect(
     ({trade}) => ({
         active_symbols: trade.active_symbols,
-
     })
 )(SmartCharts);

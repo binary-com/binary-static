@@ -10,9 +10,11 @@
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: 1fr;
         grid-gap: 4px;
+        height: calc(100vh - 110px);
 
         .chart-container {
             padding: 10px;
+            margin-left: -15px;
             position: relative;
 
             cq-context { // stylelint-disable-line selector-type-no-unknown
