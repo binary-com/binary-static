@@ -166,13 +166,15 @@ const ViewPopup = (() => {
             current_spot_time = user_sold ? '' : contract.exit_tick_time;
         }
 
-        if (current_spot) {
+        const is_touchnotouch_tick_contract = /touch/i.test(contract.contract_type) && contract.tick_count;
+
+        if (current_spot && !is_touchnotouch_tick_contract) {
             containerSetText('trade_details_current_spot > span', addComma(current_spot));
         } else {
             $('#trade_details_current_spot').parent().setVisibility(0);
         }
 
-        if (current_spot_time) {
+        if (current_spot_time && !is_touchnotouch_tick_contract) {
             if (window.time && current_spot_time > window.time.unix()) {
                 window.time = moment(current_spot_time).utc();
                 updateTimers();
@@ -282,6 +284,7 @@ const ViewPopup = (() => {
             containerSetText('trade_details_spot_label', localize('Exit Spot'));
             containerSetText('trade_details_spottime_label', localize('Exit Spot Time'));
         }
+
         // show validation error if contract is not settled yet
         if (!(contract.is_settleable && !contract.is_sold)) {
             containerSetText('trade_details_message', '&nbsp;');

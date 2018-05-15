@@ -337,7 +337,6 @@ const TickDisplay = (() => {
                     const indicator_key    = `_${counter}`;
 
                     if (tick.epoch === sell_spot_time) {
-                        console.log('line in dispatch');
                         x_indicators[indicator_key] = {
                             index    : counter,
                             dashStyle: 'Dash',
@@ -365,7 +364,6 @@ const TickDisplay = (() => {
             const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
             const indicator_key = `_${index}`;
 
-            console.log('line in updateChart');
             x_indicators[indicator_key] = {
                 index,
                 dashStyle: 'Dash',
