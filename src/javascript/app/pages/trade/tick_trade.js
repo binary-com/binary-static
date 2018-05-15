@@ -358,7 +358,7 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    if (tick.epoch === sell_spot_time) {
+                    if (tick.epoch === sell_spot_time && !x_indicators[indicator_key]) {
                         x_indicators[indicator_key] = {
                             index: counter,
                             dashStyle: 'Dash',
@@ -382,13 +382,17 @@ const TickDisplay = (() => {
         subscribe = 'false';
         if (data.is_sold && applicable_ticks) {
             sell_spot_time = +contract.sell_spot_time;
+
             const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
             const indicator_key = `_${index}`;
-            x_indicators[indicator_key] = {
-                index,
-                dashStyle: 'Dash',
-            };
-            add(x_indicators[indicator_key]);
+
+            if (!x_indicators[indicator_key]) {
+                x_indicators[indicator_key] = {
+                    index,
+                    dashStyle: 'Dash',
+                };
+                add(x_indicators[indicator_key]);
+            }
         } else if (contract) {
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
