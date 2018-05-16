@@ -46,6 +46,11 @@ export const FormRow = ({
                         maxLength={type === 'password' ? 25 : undefined}
                         {...attributes}
                     />
+                    {type === 'checkbox' && spaced ?
+                        <label htmlFor={id} />
+                        :
+                        undefined
+                    }
                 </React.Fragment>
             );
         }

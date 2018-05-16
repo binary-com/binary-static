@@ -1,3 +1,4 @@
+const refreshDropdown   = require('@binary-com/binary-style').selectDropdown;
 const moment            = require('moment');
 const TradingAnalysis   = require('./analysis');
 const commonTrading     = require('./common');
@@ -36,7 +37,7 @@ const Process = (() => {
             // store the market
             Defaults.set('market', market);
 
-            commonTrading.displayMarkets('contract_markets', Symbols.markets(), market);
+            commonTrading.displayMarkets();
             processMarket();
         });
     };
@@ -59,7 +60,6 @@ const Process = (() => {
         if ((!symbol || !Symbols.underlyings()[market][symbol])) {
             symbol = undefined;
         }
-        commonTrading.displayUnderlyings('underlying', Symbols.underlyings()[market], symbol);
 
         processMarketUnderlying();
     };
@@ -69,14 +69,8 @@ const Process = (() => {
      */
     const processMarketUnderlying = () => {
         const underlying_element = document.getElementById('underlying');
-        if (!underlying_element) {
-            return;
-        }
-
-        if (underlying_element.selectedIndex < 0) {
-            underlying_element.selectedIndex = 0;
-        }
         const underlying = underlying_element.value;
+
         Defaults.set('underlying', underlying);
 
         commonTrading.showFormOverlay();
@@ -163,6 +157,7 @@ const Process = (() => {
         StartDates.display();
 
         displayPrediction();
+        refreshDropdown('#prediction');
         Lookback.display();
 
         let r1;
@@ -190,6 +185,7 @@ const Process = (() => {
         } else {
             Defaults.set('amount_type', getElementById('amount_type').value);
         }
+        refreshDropdown('#amount_type');
         if (Defaults.get('currency')) {
             commonTrading.selectOption(Defaults.get('currency'), getVisibleElement('currency'));
         }

@@ -34,7 +34,7 @@ const PaymentAgentWithdraw = (() => {
         if (pa_list.length > 0) {
             checkToken($ddl_agents, pa_list);
         } else {
-            showPageError(localize('The Payment Agent facility is currently not available in your country.'));
+            showPageError(localize('Payment Agent services are not available in your country or in your preferred currency.'));
         }
     };
 
@@ -123,7 +123,7 @@ const PaymentAgentWithdraw = (() => {
                     setActiveView(view_ids.form);
                     $('#formMessage').setVisibility(1).html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
-                    showPageError(localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.', ['<a href="javascript:;" onclick="window.location.reload();">', '</a>']));
+                    showPageError(localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.', ['<a href="javascript:;" onclick="var url = location.href.split(\'#\')[0]; window.history.replaceState({ url }, document.title, url); window.location.reload();">', '</a>']));
                 } else {
                     showPageError(response.error.message);
                 }

@@ -7,8 +7,8 @@ module.exports = {
             {
                 src: [
                     global.dist + '/css/common.css',
-                    process.cwd() + '/node_modules/binary-style/binary.css',
-                    process.cwd() + '/node_modules/binary-style/binary.more.css',
+                    process.cwd() + '/node_modules/@binary-com/binary-style/binary.css',
+                    process.cwd() + '/node_modules/@binary-com/binary-style/binary.more.css',
                 ],
                 dest: global.dist + '/css/common.min.css',
             },

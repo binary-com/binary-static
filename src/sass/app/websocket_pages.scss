@@ -41,8 +41,59 @@
     height: 800px;
 }
 
+.detailsws-content {
+    #address_form {
+        select.select-hidden {
+            min-width: 205px;
+        }
+        @media all and (max-width: 480px) {
+            div.select {
+                width: 85%;
+
+                select.select-hidden {
+                    min-width: unset;
+                }
+            }
+        }
+    }
+}
+
 #limits-container thead {
     @include BIDIR_VALUE(text-align, left, right);
+}
+
+#frm_assessment, #financial-form {
+    div.select {
+        min-width: 150px;
+    }
+    #source_of_wealth {
+        min-width: 300px;
+    }
+    @media screen and (max-width: 480px) {
+        label {
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+#financial-form {
+    @media screen and (max-width: 480px) {
+        div.select {
+            width: calc(100% - 3rem);
+        }
+    }
+}
+
+#frm_account_transfer {
+    div.select {
+        select.select-hidden {
+            min-width: 200px;
+        }
+        @media screen and (max-width: 480px) {
+            width: calc(100% - 1rem);
+        }
+    }
 }
 
 #knowledge-test-container {

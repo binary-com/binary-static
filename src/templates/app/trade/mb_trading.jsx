@@ -79,23 +79,27 @@ const MBTrading = () => (
                             </div>
                             <div className='gr-row selection_wrapper'>
                                 <div className='gr-12 gr-no-gutter'>
-                                    <div className='trade_form'>
-                                        <FormItem id='period' class_list='gr-12' />
-                                    </div>
                                     <div className='gr-row'>
-                                        <div className='gr-3 gr-6-m gr-no-gutter'>
+                                        <div className='gr-3 gr-6-m gr-no-gutter gr-12-m gr-order-2-m'>
                                             <div className='trade_form'>
                                                 <div id='payout_amount'>{it.L('Payout')}</div>
                                             </div>
                                             <div className='trade_form gr-12 no-margin'>
                                                 <div className='gr-row'>
-                                                    <FormItem id='currency' className='gr-3 gr-no-gutter' class_current='gr-row' class_list='gr-3 gr-no-gutter' />
-                                                    <input className='gr-9 center-text' type='text' id='payout' maxLength='15' />
+                                                    <FormItem id='currency' className='gr-5 gr-no-gutter' class_current='gr-row' class_list='gr-5 gr-no-gutter' />
+                                                    <input className='gr-7 center-text gr-no-gutter' type='text' id='payout' maxLength='15' />
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='trade_form gr-9 gr-6-m gr-no-gutter-right'>
-                                            <FormItem id='category' class_list='gr-12' />
+                                        <div className='trade_form gr-9 gr-6-m gr-no-gutter-right gr-12-m gr-no-gutter-left-m'>
+                                            <div className='header-current'>
+                                                <div className='gr-row'>
+                                                    <span className='nav-caret' />
+                                                    <div className='header-current-text gr-6'>{it.L('Trading Window')}</div>
+                                                    <div className='header-current-text gr-6'>{it.L('Remaining Time')}</div>
+                                                </div>
+                                            </div>
+                                            <FormItem id='period' class_list='gr-12' />
                                         </div>
                                     </div>
                                 </div>
@@ -157,11 +161,15 @@ const MBTrading = () => (
                             <div className='prices-wrapper gr-12'>
                                 <div className='gr-row heading'>
                                     <div className='gr-4 barrier align-self-center'>{it.L('Barrier')}</div>
-                                    <div className='gr-4 buy-price gr-no-gutter-left'>
+                                    <div className='gr-8 ja-hide' id='category'>
+                                        <div className='current gr-12 gr-no-gutter-left' />
+                                        <div className='list' />
+                                    </div>
+                                    <div className='gr-4 buy-price gr-no-gutter-left invisible ja-show'>
                                         {it.L('Buy Price')}
                                         <div className='hint sell-price'>{it.L('Sell Price')}</div>
                                     </div>
-                                    <div className='gr-4 buy-price gr-no-gutter-left'>
+                                    <div className='gr-4 buy-price gr-no-gutter-left invisible ja-show'>
                                         {it.L('Buy Price')}
                                         <div className='hint sell-price'>{it.L('Sell Price')}</div>
                                     </div>

@@ -2,7 +2,6 @@ const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
 const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
-const jpClient         = require('../../../../common/country_base').jpClient;
 const Validation       = require('../../../../common/form_validation');
 const getElementById   = require('../../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../../_common/localize').localize;
@@ -17,7 +16,7 @@ const FinancialAssessment = (() => {
     const form_selector = '#frm_assessment';
 
     const onLoad = () => {
-        if (jpClient()) {
+        if (Client.isJPClient()) {
             BinaryPjax.loadPreviousUrl();
         }
 

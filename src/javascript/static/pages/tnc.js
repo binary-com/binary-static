@@ -1,7 +1,5 @@
-const tabListener = require('binary-style').tabListener;
-const sidebar     = require('binary-style').sidebarCollapsible;
+const tabListener = require('@binary-com/binary-style').tabListener;
 const localize    = require('../../_common/localize').localize;
-const urlParam    = require('../../_common/url').param;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
 
 const TermsAndConditions = (() => {
@@ -11,15 +9,15 @@ const TermsAndConditions = (() => {
         const container = document.getElementsByClassName('sidebar-collapsible-container')[0];
         if (container) sidebar_width = container.offsetWidth;
 
-        handleActiveTab();
+        handleActiveTab(); // adds active class
         TNCApproval.requiresTNCApproval(
             $('#btn_accept'),
             () => { $('.tnc_accept').setVisibility(1); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
         tabListener();
-        sidebar();
 
-        handleSidebar();
+        initSidebar();
+
         checkWidth();
         window.onresize = checkWidth;
 
@@ -29,7 +27,6 @@ const TermsAndConditions = (() => {
     const handleActiveTab = () => {
         const params      = window.location.hash.split('&');
         const hash        = params[0] || '#legal';
-        const sub_content = params[1];
         const menu        = '.tab-menu-wrap';
         const content     = '.tab-content-wrapper';
 
@@ -64,41 +61,50 @@ const TermsAndConditions = (() => {
             .end()
             .find(content_to_show)
             .setVisibility(1);
-
-        const section  = urlParam('section');
-        const $content = $('#content');
-        if (section) {
-            const $section = $content.find(`a#${section}`);
-            if ($section.length) setTimeout(() => { $.scrollTo($section, 0, { offset: -5 }); }, 500);
-        } else if (hash) {
-            setTimeout(() => { $.scrollTo($content.find('.tab-menu'), 0, { offset: -10 }); }, 500);
-        }
-        if (sub_content) {
-            setTimeout(() => { $.scrollTo($content.find(`#${sub_content}`), 500, { offset: -10 }); }, 500);
-        }
     };
 
-    const handleSidebar = () => {
-        const hash     = window.location.hash || '#legal';
-        const $sidebar = $('.sidebar-collapsible');
-        const $content = $('.sidebar-collapsible-content');
+    const initSidebar = () => {
+        const { hash, pathname } = window.location;
 
-        $sidebar.on('click', () => {
-            if (!checkWidth()) $.scrollTo($content, 250, { offset: -10 });
-        });
+        if (!hash) {
+            window.history.replaceState({}, '', `${pathname}#legal-binary`);
+        } else if ($(`${hash}-link`).is('.has-submenu')) {
+            window.history.replaceState({}, '', `${pathname}${hash}-binary`);
+        }
 
-        const is_submenu = /-binary|-mt/.test(hash);
-        if (is_submenu) {
-            let parent_hash = hash;
-            if (/-binary/.test(hash)) {
-                parent_hash = hash.split('-binary')[0];
-            } else if (/-mt/.test(hash)) {
-                parent_hash = hash.split('-mt')[0];
+        $('.sidebar-collapsible').on('click', sidebarClickHandler);
+        updateSidebarDOM();
+    };
+
+    const updateSidebarDOM = () => {
+        const id = window.location.hash;
+        const $li = $(`${id}-link`);
+        const $parent_li = $li.closest('.has-submenu');
+
+        if ($parent_li.length) {
+            $parent_li.addClass('active').children('a').addClass('selected no-transition');
+        }
+
+        $li.addClass('active').find('a').addClass('selected');
+
+        $(`${id}-content`).removeClass('invisible');
+    };
+
+    const sidebarClickHandler = (e) => {
+        const $target = $(e.target);
+        if (!$target.is('a')) return;
+        const $submenu = $target.siblings('ul');
+
+        if ($submenu.length) {
+            // parent link is clicked
+            e.preventDefault();
+
+            if ($submenu.find('.selected').length) {
+                // has selected sublink
+                $target.removeClass('no-transition').parent('li').toggleClass('active');
+            } else {
+                window.location.hash = $submenu.find('a')[0].hash;
             }
-            $sidebar.find(`${parent_hash} a:first`).trigger('click'); // click mainmenu
-            $sidebar.find(`${hash} a:first`).trigger('click');  // click submenu
-        } else {
-            $sidebar.find(`${hash} a:first`).trigger('click');
         }
     };
 
@@ -131,7 +137,7 @@ const TermsAndConditions = (() => {
     };
 
     const onUnload = () => {
-        $('.sidebar-collapsible a').off('click');
+        $('.sidebar-collapsible').off('click');
     };
 
     return {

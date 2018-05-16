@@ -11,11 +11,12 @@ export const Li = ({
     p,
     subitems = [],
     type,
+    dataShow,
 }) => {
     const content = p ? <p>{text}</p> : text;
 
     return (
-        <li id={id} className={className}>
+        <li id={id} className={className} data-show={dataShow}>
             { header && (
                 text ? <strong className='margin-right'>{header}</strong> : <h3>{header}</h3>
             )}
@@ -156,11 +157,11 @@ export const Tbody = ({ trs, tbody_id }) => (
             <tr key={inx_tr}>
                 {tr.map((td, inx_td) => (
                     td.header ?
-                        <th key={inx_td} className={td.className} {...td.balloon ? { 'data-balloon': td.balloon } : {}}>
+                        <th key={inx_td} className={td.className} id={td.id} {...td.balloon ? { 'data-balloon': td.balloon } : {}} {...(td.attributes || {})}>
                             {td.header}
                         </th>
                         :
-                        <td key={inx_td} className={td.className} id={td.id}>
+                        <td key={inx_td} className={td.className} id={td.id} {...(td.attributes || {})}>
                             {td.text}
                         </td>
                 ))}

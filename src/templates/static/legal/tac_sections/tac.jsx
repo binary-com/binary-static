@@ -2,15 +2,15 @@ import React from 'react';
 
 const Tac = () => (
     <div>
-        <h2>{it.L('Terms and Conditions')}</h2>
-        <p><i>{it.L('Version 43. Last modified 2016-11-09.')}</i></p>
+        <h2 data-anchor>{it.L('Terms and Conditions')}</h2>
+        <p><i>{it.L('Version 44. Last modified 2018-04-10.')}</i></p>
         <p>{it.L('It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
-        <h2>A. {it.L('Interpretation')}</h2>
-        <p>{it.L('The term "the Company" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156; or Binary (CR) S.A., depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website.')}</p>
+        <h2 data-anchor>A. {it.L('Interpretation')}</h2>
+        <p>{it.L('The term "the Company" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website.')}</p>
         <p>{it.L('These Terms and Conditions may be supplemented from time to time by Supplementary Terms and Conditions applicable to a particular Company or products.')}</p>
 
-        <h2>B. {it.L('Introduction')}</h2>
+        <h2 data-anchor>B. {it.L('Introduction')}</h2>
         <p>{it.L('The financial trading services contained within this site are only suitable for Clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts.')}</p>
         <p>{it.L('International currency, stock index or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract')}</p>
         <p>{it.L('The maximum loss that may be incurred by any Client is the amount of money paid by oneself to the Company.')}</p>
@@ -22,23 +22,23 @@ const Tac = () => (
             <li>{it.L('any restriction to its Clients from purchasing any contracts during certain hours.')}</li>
         </ul>
 
-        <h2>C. {it.L('Languages')}</h2>
+        <h2 data-anchor>C. {it.L('Languages')}</h2>
         <p>{it.L('These Terms and Conditions, for the convenience of our Clients are provided in several different languages; however, these translations do reflect the same principles. We attempt, as much as possible to provide a faithful translation in English of the prevailing language. In the event of any differences between the English version of the website and any other language, the English version shall prevail.')}</p>
         <p>{it.L('You may communicate with us through this website by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page.')}</p>
         <p>{it.L('Generally we will communicate with you through this website or by email to the email address used when opening your account. We will communicate with you in English or, if you select another preferred language when opening your account, in that language.')}</p>
 
-        <h2>D. {it.L('Governing Laws and Jurisdiction')}</h2>
+        <h2 data-anchor>D. {it.L('Governing Laws and Jurisdiction')}</h2>
         <p>{it.L('Laws regarding financial contracts vary throughout the world, and it is the responsibility of persons accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, persons accessing this site are required to inform themselves about and to observe such restrictions.')}</p>
         <p>{it.L('The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the "Jurisdiction"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction\'s courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company\'s Complaints and Disputes section.')}</p>
 
-        <h2>E. {it.L('Contracts')}</h2>
+        <h2 data-anchor>E. {it.L('Contracts')}</h2>
         <p>{it.L('The Company does not provide a market amongst or between Clients for investments, securities, derivatives or speculations. Each financial contract purchased by a Client via this site is an individual agreement between that Client and the Company and is not a security, nor is it transferable, negotiable or assignable to or with any third party.')}</p>
         <p>{it.L('Acquisition of financial contracts through this site must be effected in accordance with the terms and conditions presented on the pages of this site. Acquisition of a financial contract is completed when the financial contract has been customised, the premium (or the payout, as the case may be) has been calculated and payment has been verified.')}</p>
 
-        <h2>F. {it.L('Client\'s Liability')}</h2>
-        <p>{it.L('Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client\'s family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remains fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client\'s failure to perform or settle such a transaction. Online Gambling debts are enforceable in law in the Isle of Man.')}</p>
+        <h2 data-anchor>F. {it.L('Client\'s Liability')}</h2>
+        <p>{it.L('Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client\'s family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remain fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client\'s failure to perform or settle such a transaction. In regards to customers of Binary (IOM) Ltd., online gambling debts are enforceable in law in the Isle of Man.')}</p>
 
-        <h2>G. {it.L('Customer Funds')}</h2>
+        <h2 data-anchor>G. {it.L('Customer Funds')}</h2>
         <p>{it.L('Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients.')}</p>
         <p>{it.L('We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency [_1].',
             '<a href="%" target="_blank" rel="noopener noreferrer">%</a>'.replace(/%/g, 'http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx'))}
@@ -49,7 +49,7 @@ const Tac = () => (
         </p>
         <p>{it.L('Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account.')}</p>
 
-        <h2>H. {it.L('Prohibited Trades')}</h2>
+        <h2 data-anchor>H. {it.L('Prohibited Trades')}</h2>
         <p>{it.L('The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:')}</p>
         <ul className='bullet'>
             <li>{it.L('that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or')}</li>
@@ -64,33 +64,33 @@ const Tac = () => (
         <p>{it.L('The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms.')}</p>
         <p>{it.L('If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein.')}</p>
 
-        <h2>I. {it.L('Fraud and Money Laundering')}</h2>
+        <h2 data-anchor>I. {it.L('Fraud and Money Laundering')}</h2>
         <p>{it.L('No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering which may have several effects on Clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities.')}</p>
         <p>{it.L('The anti-money laundering processes have the following effects on Clients:')}
             <ul className='bullet'>
                 <li>{it.L('Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, and contact email and personal telephone number.')}</li>
-                <li>{it.L('Winnings may only be paid to the initiator of an account. When a Client maintains an account by means of telegraphic deposits, winnings are only paid to the holder of the originating bank account, and it is the onus of the Client to ensure that account number and name accompany all transfers to the Company. When a Client maintains an account by means of credit/debit card deposits, winnings are only paid back to the same card.')}</li>
+                <li>{it.L('Withdrawals may only be paid to the initiator of an account. When a Client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the Client to ensure that account number and name accompany all transfers to the Company. When a Client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card.')}</li>
                 <li>{it.L('Clients must register personally.')}</li>
                 <li>{it.L('Clients shall not hold or pool third party funds into their own account held with the Company.')}</li>
                 <li>{it.L('It is prohibited to sell, transfer and/or acquire accounts to/from other clients. Transfer of funds among other clients is also prohibited.')}</li>
-                <li>{it.L('Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person.')}</li>
-                <li>{it.L('The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate "Know Your Customer" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300.')}</li>
-                <li>{it.L('You agree that we may use Personal information provided by you in order to conduct appropriate anti-fraud checks. Personal Information that you provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information.')}</li>
-                <li>{it.L('Telephone conversations may be recorded and/or monitored by designated staff for quality and antifraud purposes.')}</li>
+                <li>{it.L('Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person.')}</li>
+                <li>{it.L('The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate "Know Your Customer" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. If you open an account with Binary (Europe) Ltd or Binary (IOM) Ltd, you’ll need to provide us with age verification documentation when you perform a deposit for the first time. If you open an account with Binary (Europe) Ltd, you’ll also be required to provide KYC documentation to verify your identity for cumulative withdrawals of EUR 2,000.00. If you open an account with Binary Investments (Europe) Ltd, you’ll need to provide KYC documentation as part of your account opening process.')}</li>
+                <li>{it.L('You agree that we may use Personal Information provided by you in order to conduct appropriate anti-fraud checks. Personal Information that you provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information.')}</li>
+                <li>{it.L('We have the obligation to record and monitor telephone conversations and/or electronic communications involving transactions when dealing on own account and the provision of client order services that relate to the reception, transmission and execution of client orders. Recordings may also be used for quality and antifraud purposes.')}</li>
             </ul>
         </p>
         <p>{it.L('We have the right and obligation not to accept the information provided by you if we know or have a reason to believe that it is incorrect, inaccurate or incomplete. In such case, we may ask you to clarify or correct the details provided.')}</p>
 
-        <h2>J. {it.L('Company\'s Right')}</h2>
+        <h2 data-anchor>J. {it.L('Company\'s Right')}</h2>
         <p>{it.L('The Company reserves the right to suspend the operation of this site or sections thereof:')}
             <ul className='bullet'>
                 <li>{it.L('When, as a result of political, economic, military or monetary events (including unusual market volatility or illiquidity) or any circumstances outside the control, responsibility and power of the Company, the continued operation of this site is not reasonably practicable without materially and adversely affecting and prejudicing the interests of Clients or the Company, or if, in the opinion of the Company, a price cannot be calculated for financial contracts.')}</li>
                 <li>{it.L('When there is a breakdown in the means of communication normally employed in determining the price or value of any of the financial contracts or where the price or value of any of the financial contracts cannot be promptly or accurately ascertained.')}</li>
-                <li>{it.L('The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events.')}</li>
                 <li>{it.L('In any event of an error in current prices, published odds or trading software.')}</li>
-                <li>{it.L('In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client\'s account maybe frozen, suspended or cancelled.')}</li>
             </ul>
         </p>
+        <p>{it.L('The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events.')}</p>
+        <p>{it.L('In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client\'s account may be frozen, suspended or cancelled.')}</p>
         <p>{it.L('In such an event, the Company may at its sole discretion (with or without notice) close out Client\'s open financial contracts at prices it considers fair and reasonable at such a time and no claims may be entertained against the Company in connection thereto.')}</p>
         <p>{it.L('Further, the Company, under the above circumstances, or any other, reserves the right to adjust a client\'s account should any trade result in a disruption, miscarry or aborted trade.')}</p>
         <p>{it.L('Although the Company has and retains all rights to refuse or to close a Client\'s account, the Company does warrant that all contractual obligations already made, shall be honoured.')}</p>
@@ -99,27 +99,27 @@ const Tac = () => (
         <p>{it.L('Any information given on these pages and/or emails or newsletters sent by the company related thereto, is not intended as financial or investment advice and the Company will not accept any liability in this respect, nor will the Company accept any responsibility for the accuracy or comprehensiveness of the information provided on this site.')}</p>
         <p>{it.L('The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company\'s responsibility to notify Clients before any changes to its terms come into effect.')}</p>
 
-        <h2>K. {it.L('Dormant and Inactive Accounts')}</h2>
+        <h2 data-anchor>K. {it.L('Dormant and Inactive Accounts')}</h2>
         <p>{it.L('The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client\'s account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts.')}</p>
 
-        <h2>L. {it.L('Liability')}</h2>
+        <h2 data-anchor>L. {it.L('Liability')}</h2>
         <p>{it.L('The Company will not be liable in any way to any persons in the event of force majeure, or for the act of any Government or legal authority or for the failure of or damage or destruction to, its computer systems, data or records or any part thereof, or for delays, losses, errors or omissions resulting from the failure or mismanagement of any telecommunications or computer equipment or software. The Company shall not be responsible for any damages or losses deemed or alleged to have resulted from or been caused by this site or its content. This includes any client\'s use or misuse of its content, the inability of any client to connect with or use the site, delay in operations or transmission, failure of communication lines, or any errors or omissions in content.')}</p>
 
-        <h2>M. {it.L('Marketing and Promotion')}</h2>
+        <h2 data-anchor>M. {it.L('Marketing and Promotion')}</h2>
         <p>{it.L('The Company may from time to time inform you about changes on the website, new services and promotions. If you, however, wish to opt out of such a service and do not wish to receive any direct marketing data you can either unsubscribe to the service or email our customer support team. If you decide to opt in again into receiving promotional material, you can also do so by contacting us.')}</p>
 
-        <h2>N. {it.L('Account Opening')}</h2>
+        <h2 data-anchor>N. {it.L('Account Opening')}</h2>
         <p>{it.L('You may only open an account at this site on condition that:')}
             <ul className='bullet'>
                 <li>{it.L('you have read this Legal Terms and Conditions page in full and understood that you will be buying and selling financial contracts subject to these terms and conditions;')}</li>
                 <li>{it.L('you have read our privacy statement and hereby give us consent to process your personal information as outlined there;')}</li>
                 <li>{it.L('you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;')}</li>
-                <li>{it.L('you are not resident in a restricted country such as Bosnia and Herzegovina, Costa Rica, Democratic People\'s Republic of Korea (DPRK), Ethiopia, Hong Kong, Iran, Iraq, Israel, Jersey, Malaysia, Malta, Syria, USA, Vanuatu or Yemen;')}</li>
+                <li>{it.L('you are not resident in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;')}</li>
                 <li>{it.L('you have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site.')}</li>
             </ul>
         </p>
 
-        <h2>O. {it.L('Account Closure')}</h2>
+        <h2 data-anchor>O. {it.L('Account Closure')}</h2>
         <p>{it.L('You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested "Know Your Client" procedures to enable you to withdraw any pending funds in your account.')}</p>
     </div>
 );

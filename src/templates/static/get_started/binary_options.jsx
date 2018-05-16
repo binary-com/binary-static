@@ -34,7 +34,7 @@ const SectionLarge = ({ header, text, image, children }) => (
                 <img src={it.url_for(`images/pages/get-started/binary-options/${image}.svg`)} />
             </div>
             <div className='gr-9 gr-12-m gr-12-p'>
-                <h3 data-anchor={header} className='secondary-color'>{header}</h3>
+                <h3 data-anchor className='secondary-color'>{header}</h3>
                 <p>{text}</p>
                 <ul className='bullet'>
                     {children}
@@ -84,7 +84,7 @@ const CircleHeader = ({ className, header, text, children }) => {
 const Glossary = ({ glossary }) => (
     glossary.map((item, idx) => (
         <React.Fragment key={idx}>
-            <HeaderSecondary header={item.word} has_data_anchor />
+            <HeaderSecondary header={item.word} data-anchor />
             <p>{item.definition}</p>
         </React.Fragment>
     ))
@@ -184,9 +184,9 @@ const BinaryOptions = () => {
 
                         <CircleHeader header={it.L('Trade type')} text={it.L('Choose from three main trade types:')}>
                             <ul className='bullet'>
-                                <ListStrong header={it.L('Up/Down')}        text={it.L('Major and minor pairs, plus Smart FX indices')} />
-                                <ListStrong header={it.L('Touch/No touch')} text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
-                                <ListStrong header={it.L('In/Out')}         text={it.L('Blue-chip stock contracts sourced from the over-the-counter market')} />
+                                <ListStrong header={it.L('Up/Down')}        text={it.L('Predict if the market will rise or fall from its current level, or if it will end higher or lower than a price target')} />
+                                <ListStrong header={it.L('Touch/No touch')} text={it.L('Predict if the market will touch or not touch a price target')} />
+                                <ListStrong header={it.L('In/Out')}         text={it.L('Predict if the market will stay between or go outside two price targets')} />
                             </ul>
                             <p>{it.L('Aside from the three main trade types above, you also get Asians and Digits trade types exclusively with our Volatility Indices.')}</p>
                         </CircleHeader>
@@ -245,7 +245,7 @@ const BinaryOptions = () => {
                     <Section id='range-of-markets' header={it.L('Range of markets')}>
                         <p>{it.L('Binary options allow you to trade on a wide range of underlying markets. One of the advantages of trading binary options is that you are not buying or selling an actual asset, only a contract that determines how that asset performs over a period of time. This limits your risk and makes it easy for anyone to start trading.')}</p>
 
-                        <HeaderSecondary header={it.L('Available markets')} has_data_anchor />
+                        <HeaderSecondary header={it.L('Available markets')} data-anchor />
                         <div className='gr-row'>
                             <SectionSmall image='range-of-markets/forex'   header={it.L('Forex')}       text={it.L('Major pairs, minor pairs, and Smart FX indices.')} />
                             <SectionSmall image='range-of-markets/indices' header={it.L('OTC Indices')} text={it.L('Major worldwide stock indices sourced from the OTC market.')} />
@@ -255,7 +255,7 @@ const BinaryOptions = () => {
                             <SectionSmall image='range-of-markets/volatility'  header={it.L('Volatility Indices')} text={it.L('Synthetic indices that mimic market volatility.')} />
                         </div>
 
-                        <HeaderSecondary header={it.L('Forex')} has_data_anchor />
+                        <HeaderSecondary header={it.L('Forex')} data-anchor />
                         <p>{it.L('Trade popular major and minor currency pairs, plus Smart FX indices – weighted indices that measure the value of a currency against a basket of major currencies.')}</p>
                         <p>{it.L('There are four types of Smart FX indices that you can trade:')}</p>
                         <ul className='bullet'>
@@ -265,14 +265,14 @@ const BinaryOptions = () => {
                             <li>{it.L('USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%')}</li>
                         </ul>
 
-                        <HeaderSecondary header={it.L('OTC stocks and indices')} has_data_anchor />
+                        <HeaderSecondary header={it.L('OTC stocks and indices')} data-anchor />
                         <p>{it.L('Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing.')}</p>
                         <p>{it.L('Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges.')}</p>
 
-                        <HeaderSecondary header={it.L('Commodities')} has_data_anchor />
+                        <HeaderSecondary header={it.L('Commodities')} data-anchor />
                         <p>{it.L('We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities.')}</p>
 
-                        <HeaderSecondary header={it.L('Volatility Indices')} has_data_anchor />
+                        <HeaderSecondary header={it.L('Volatility Indices')} data-anchor />
                         <p>{it.L('[_1]\'s Volatility Indices are synthetic indices that mimic real-world market volatility and are available for trading 24/7. They are based on a cryptographically secure random number generator audited for fairness by an independent third party.', it.website_name)}</p>
                         <p>{it.L('You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That\'s not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits.')}</p>
                         <p>{it.L('Volatility Indices are further categorised into two classes:')}</p>

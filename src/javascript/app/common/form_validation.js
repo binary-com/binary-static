@@ -1,3 +1,4 @@
+const Dropdown              = require('@binary-com/binary-style').selectDropdown;
 const addComma              = require('./currency').addComma;
 const getDecimalPlaces      = require('./currency').getDecimalPlaces;
 const Client                = require('../base/client');
@@ -5,6 +6,7 @@ const Password              = require('../../_common/check_password');
 const localize              = require('../../_common/localize').localize;
 const compareBigUnsignedInt = require('../../_common/string_util').compareBigUnsignedInt;
 const getHashValue          = require('../../_common/url').getHashValue;
+const cloneObject           = require('../../_common/utility').cloneObject;
 const isEmptyObject         = require('../../_common/utility').isEmptyObject;
 
 const Validation = (() => {
@@ -92,6 +94,14 @@ const Validation = (() => {
                 });
             }
         }
+
+        // need to init Dropdown after we have responses from ws
+        const el_all_select = document.querySelectorAll('select:not([multiple]):not([single])');
+        el_all_select.forEach((el) => {
+            if (el.id) {
+                Dropdown(`#${el.id}`);
+            }
+        });
     };
 
     // ------------------------------
@@ -129,13 +139,21 @@ const Validation = (() => {
         (options.max ? value.length <= options.max : true)
     );
 
-    const validNumber = (value, options) => {
+    const validNumber = (value, opts) => {
+        const options = cloneObject(opts);
         if (options.allow_empty && value.length === 0) {
             return true;
         }
 
         let is_ok   = true;
         let message = '';
+
+        if ('min' in options && typeof options.min === 'function') {
+            options.min = options.min();
+        }
+        if ('max' in options && typeof options.max === 'function') {
+            options.max = options.max();
+        }
 
         if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
             is_ok   = false;

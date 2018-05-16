@@ -1,14 +1,14 @@
 const HighchartUI      = require('./highchart.ui');
+const getHighstock     = require('../common').requireHighstock;
 const MBContract       = require('../../mb_trade/mb_contract');
 const MBDefaults       = require('../../mb_trade/mb_defaults');
 const Defaults         = require('../../trade/defaults');
 const GetTicks         = require('../../trade/get_ticks');
 const Lookback         = require('../../trade/lookback');
 const ViewPopupUI      = require('../../user/view_popup/view_popup.ui');
+const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
-const jpClient         = require('../../../common/country_base').jpClient;
 const addComma         = require('../../../common/currency').addComma;
-const getHighstock     = require('../../../../_common/common_functions').requireHighstock;
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
@@ -126,10 +126,10 @@ const Highchart = (() => {
             return null;
         }
 
-        const JPClient = jpClient();
+        const is_jp_client = isJPClient();
         HighchartUI.setLabels(is_chart_delayed);
         HighchartUI.setChartOptions({
-            JPClient,
+            is_jp_client,
             type,
             data,
             height    : el.parentElement.offsetHeight,
@@ -140,7 +140,7 @@ const Highchart = (() => {
             user_sold : userSold(),
         });
         return getHighstock((Highcharts) => {
-            Highcharts.setOptions(HighchartUI.getHighchartOptions(JPClient));
+            Highcharts.setOptions(HighchartUI.getHighchartOptions(is_jp_client));
             if (!el) chart = null;
             else {
                 chart          = Highcharts.StockChart(el, HighchartUI.getChartOptions());

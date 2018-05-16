@@ -14,10 +14,6 @@ const HomeJP = (() => {
     const onLoad = () => {
         Home.onLoad();
 
-        $('#start_now').click(() => {
-            $.scrollTo($('#frm_verify_email'), 500, { offset: -10 });
-        });
-
         margin             = 0;
         $go_right          = $('.go-right');
         $go_left           = $('.go-left');

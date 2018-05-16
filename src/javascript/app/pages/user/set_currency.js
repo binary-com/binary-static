@@ -13,7 +13,6 @@ const SetCurrency = (() => {
 
     const onLoad = () => {
         is_new_account = localStorage.getItem('is_new_account');
-        localStorage.removeItem('is_new_account');
         const el = is_new_account ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
 
@@ -68,6 +67,7 @@ const SetCurrency = (() => {
                         if (response_c.error) {
                             $error.text(response_c.error.message).setVisibility(1);
                         } else {
+                            localStorage.removeItem('is_new_account');
                             Client.set('currency', response_c.echo_req.set_account_currency);
                             BinarySocket.send({ balance: 1 });
                             BinarySocket.send({ payout_currencies: 1 }, { forced: true });
@@ -88,6 +88,7 @@ const SetCurrency = (() => {
                             } else {
                                 redirect_url = BinaryPjax.getPreviousUrl();
                             }
+
                             if (redirect_url) {
                                 window.location.href = redirect_url; // load without pjax
                             } else {

@@ -1,6 +1,6 @@
 const MBContract     = require('./mb_contract');
 const MBDefaults     = require('./mb_defaults');
-const jpClient       = require('../../common/country_base').jpClient;
+const isJPClient     = require('../../base/client').isJPClient;
 const formatCurrency = require('../../common/currency').formatCurrency;
 const localize       = require('../../../_common/localize').localize;
 const State          = require('../../../_common/storage').State;
@@ -12,16 +12,16 @@ const State          = require('../../../_common/storage').State;
  * and display them
  */
 const MBDisplayCurrencies = () => {
-    const $currency  = $('.trade_form #currency');
-    const $list      = $currency.find('.list');
-    const $current   = $currency.find('.current');
-    const currencies = State.getResponse('payout_currencies');
-    const jp_client  = jpClient();
+    const $currency    = $('.trade_form #currency');
+    const $list        = $currency.find('.list');
+    const $current     = $currency.find('.current');
+    const currencies   = State.getResponse('payout_currencies');
+    const is_jp_client = isJPClient();
     let def_value;
 
     if (!$currency.length) return;
     $list.empty();
-    if (!jp_client) {
+    if (!is_jp_client) {
         const def_curr = MBDefaults.get('currency');
         def_value      = def_curr && currencies.indexOf(def_curr) >= 0 ? def_curr : currencies[0];
         if (currencies.length > 1) {
@@ -32,7 +32,7 @@ const MBDisplayCurrencies = () => {
                 }
             });
         }
-        $current.html(formatCurrency(def_value));
+        $current.html($('<span/>', { class: 'nav-caret' })).append(formatCurrency(def_value));
     } else {
         def_value = 'JPY';
         $current.html($('<span/>', { text: localize('Lots'), 'data-balloon': localize('Payout per lot = 1,000') }));
@@ -41,11 +41,18 @@ const MBDisplayCurrencies = () => {
     MBDefaults.set('currency', def_value);
     // if there is no currency drop down, remove hover style from currency
     if (!$list.children().length) {
+        if (!is_jp_client) {
+            $currency.removeClass('gr-5').addClass('gr-3')
+                .siblings('#payout').removeClass('gr-7').addClass('gr-9');
+        }
         $current
-            .css({ 'background-color': 'white' })
+            .css({ 'background-color': 'white', 'border-right': 'none' })
             .hover(function () {
                 $(this).css({ 'background-color': 'white', cursor: 'auto' });
-            });
+            })
+            .off('click')
+            .find('.nav-caret').addClass('invisible').end()
+            .find('.symbols:before').css({ 'margin-right': '2px' });
     }
 };
 
