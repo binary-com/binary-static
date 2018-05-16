@@ -30,7 +30,7 @@ const ViewPopup = (() => {
     const wrapper_id   = 'sell_content_wrapper';
     const hidden_class = 'invisible';
 
-    const init = (button) => {
+    const init = (button, onClose) => {
         btn_view          = button;
         contract_id       = $(btn_view).attr('contract_id');
         contract          = {};
@@ -41,6 +41,10 @@ const ViewPopup = (() => {
         chart_updated     = false;
         sell_text_updated = false;
         $container        = '';
+
+        if (typeof onClose === 'function') {
+            ViewPopupUI.setOnCloseFunction(onClose);
+        }
 
         if (btn_view) {
             ViewPopupUI.disableButton($(btn_view));
@@ -213,7 +217,7 @@ const ViewPopup = (() => {
             if (contract.entry_tick_time) {
                 chart_started = true;
             }
-        } else if (contract.tick_count && !chart_updated) {
+        } else if (contract.tick_count && !chart_updated && 'barrier' in contract) {
             TickDisplay.updateChart('', contract);
             chart_updated = true;
         }
@@ -231,6 +235,8 @@ const ViewPopup = (() => {
                 });
             }
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
+        } else {
+            $container.find('#notice_ongoing').setVisibility(1);
         }
 
         if (!contract.is_valid_to_sell) {
@@ -281,6 +287,7 @@ const ViewPopup = (() => {
             containerSetText('trade_details_message', '&nbsp;');
         }
         $container.find('#errMsg').setVisibility(0);
+        $container.find('#notice_ongoing').setVisibility(0);
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
         // don't show for japanese clients or contracts that are manually sold before starting
@@ -539,7 +546,8 @@ const ViewPopup = (() => {
 
         $container.find(`#${wrapper_id}`)
             .append($sections.html())
-            .append($('<div/>', { id: 'errMsg', class: `notice-msg ${hidden_class}` }));
+            .append($('<div/>', { id: 'errMsg', class: `notice-msg ${hidden_class}` }))
+            .append($('<div/>', { id: 'notice_ongoing', class: `fill-bg-color gr-padding-10 ${hidden_class}`, text: localize('You can close this window without interrupting your trade.') }));
 
         ViewPopupUI.showInpagePopup(`<div class="${popupbox_id}">${$container.html()}</div>`, '', '#sell_bet_desc');
         return $(`#${wrapper_id}`);

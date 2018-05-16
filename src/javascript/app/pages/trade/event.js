@@ -11,12 +11,13 @@ const Price                 = require('./price');
 const Process               = require('./process');
 const Purchase              = require('./purchase');
 const Tick                  = require('./tick');
-const GTM                   = require('../../base/gtm');
+const ViewPopup             = require('../user/view_popup/view_popup');
 const BinarySocket          = require('../../base/socket');
 const getDecimalPlaces      = require('../../common/currency').getDecimalPlaces;
 const isCryptocurrency      = require('../../common/currency').isCryptocurrency;
 const onlyNumericOnKeypress = require('../../common/event_handler');
 const TimePicker            = require('../../components/time_picker');
+const GTM                   = require('../../../_common/base/gtm');
 const dateValueChanged      = require('../../../_common/common_functions').dateValueChanged;
 const isVisible             = require('../../../_common/common_functions').isVisible;
 const getElementById        = require('../../../_common/common_functions').getElementById;
@@ -321,7 +322,16 @@ const TradingEvents = (() => {
             if (id && ask_price) {
                 $('.purchase_button').css('visibility', 'hidden');
                 BinarySocket.send(params).then((response) => {
-                    Purchase.display(response);
+                    if (response.error || /digit/i.test(response.echo_req.passthrough.contract_type)) {
+                        Purchase.display(response);
+                    } else {
+                        this.setAttribute('contract_id', response.buy.contract_id);
+                        ViewPopup.init(this, () => {
+                            GetTicks.request();
+                            CommonTrading.hideOverlayContainer();
+                            Price.processPriceRequest();
+                        });
+                    }
                     GTM.pushPurchaseData(response);
                 });
                 Price.incrFormId();
