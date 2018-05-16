@@ -455,6 +455,7 @@ const texts = [
     'Contract Ends',
     'Start Time and Entry Spot',
     'Exit Time and Exit Spot',
+    'You can close this window without interrupting your trade.',
 
     // financial assessment
     'Please select a value',
