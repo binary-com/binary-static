@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-14 22:08-0400\n"
+"PO-Revision-Date: 2018-05-16 04:26-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -306,6 +306,9 @@ msgstr "%1在吉隆坡市中心QSentral辦公大樓開設辦公室，進一步�
 msgid "%1 owes you a duty of best execution when executing orders on your behalf, i.e., when you are placing a legitimate reliance on us to safeguard your interest in relation to the execution of your order."
 msgstr "當我們代替您執行訂單時，也就是說，當您依法託付我們執行您的訂單並維護您的利益時，%1有義務以最佳方式執行。"
 
+msgid "%1 per lot"
+msgstr ""
+
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 通過以下計劃提供商業夥伴關係服務。"
 
@@ -423,14 +426,8 @@ msgstr "（售出價 - 購入價） x 交易量 x 每點的價格 = 利潤"
 msgid "(max)"
 msgstr "（最大）"
 
-msgid "**Volatility Indices commission rates in account currency per round trade. Example: A buy of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
-msgstr "** 波動指數佣金按每次完成交易的帳戶貨幣計算。例如: 透過美元計價的帳戶購入1手波動性100指數將支付0.75 美元。"
-
 msgid "*Already registered as an affiliate? Send us an email at %1 instead."
 msgstr "* 已註冊為聯盟會員？請在 %1 發電子郵件給我們。"
-
-msgid "*Represents the amount in base currency per round trade. Example: A buy of 1 lot of EUR/USD would pay EUR 6 on standard accounts."
-msgstr "*代表每次完成交易的基礎貨幣金額。例如: 透過標準帳戶購入1手歐元/美元將支付6歐元。"
 
 msgid "0-1 year"
 msgstr "0-1 年"
@@ -440,15 +437,6 @@ msgstr "過去12個月內0-5次交易"
 
 msgid "0.01 lots"
 msgstr "0.01手"
-
-msgid "0.1 per lot"
-msgstr "0.1/手"
-
-msgid "0.25 per lot"
-msgstr "0.25/手"
-
-msgid "0.75 per lot"
-msgstr "0.75/手"
 
 msgid "1 million transactions/day"
 msgstr "1百萬筆交易/天"
@@ -474,9 +462,6 @@ msgstr "150%"
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6,000 – 5,200) = $1600"
 
-msgid "2 per lot"
-msgstr "2/手"
-
 msgid "2-3 years of applicable experience in a web application testing role"
 msgstr "具有2 - 3年的實際網絡應用測試經驗"
 
@@ -485,9 +470,6 @@ msgstr "雙向報價"
 
 msgid "2. Proof of address"
 msgstr "2. 地址證明"
-
-msgid "2.25 per lot"
-msgstr "2.25/手"
 
 msgid "24/7"
 msgstr "全天候"
@@ -515,9 +497,6 @@ msgstr "50%"
 
 msgid "6 months to 1 year"
 msgstr "6 months to 1 year"
-
-msgid "6 per lot"
-msgstr "6/手"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "過去12個月內6-10次交易"
@@ -1764,6 +1743,9 @@ msgstr "源自場外交易市場的藍籌股股票合約。"
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "源自場外交易市場的藍籌股股票合約"
 
+msgid "Both accounts need to be authenticated separately."
+msgstr ""
+
 msgid "Both the above"
 msgstr "Both the above"
 
@@ -2514,6 +2496,9 @@ msgstr "新增"
 msgid "Create Account"
 msgstr "開立帳戶"
 
+msgid "Create Financial Account"
+msgstr ""
+
 msgid "Create Free Account"
 msgstr "開立免費帳戶"
 
@@ -2567,6 +2552,9 @@ msgstr "加密貨幣是極易受市場波動影響的波動性資產。進行加
 
 msgid "Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading in cryptocurrencies is a highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and /or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital."
 msgstr "加密貨幣是極易受市場波動影響的波動性資產。進行加密貨幣交易是高度投機的投資, 因為加密貨幣的價格可以上升和下跌 &mdash; 至潛在性的無 (零) 價值。通過槓桿帳戶投資於加密貨幣的差價合約將使此潛在的波動性風險加大, 使得價格的變化更加顯著。除非您完全理解並意識到涉及加密貨幣的交易和/或投資是複雜和高風險的, 您不應該進行加密貨幣交易。因您不僅會在短時間內承擔重大損失, 而且還冒著失去所有投資資本的風險。"
+
+msgid "Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account."
+msgstr ""
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "像比特幣和以太幣這樣的加密貨幣是分散式的數字資產，可以在全世界任何地方即時支付。"
@@ -3720,8 +3708,8 @@ msgstr "外幣存款"
 msgid "Forex"
 msgstr "外匯"
 
-msgid "Forex & Metals*"
-msgstr "外匯和金屬 *"
+msgid "Forex & Metals"
+msgstr ""
 
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr "外匯和差價交易合約涉及高風險，是一種投機活動，因為您可推測基礎金融工具價格的短期變動。除非您能接受比您存入資金更大的虧損，不然您不適合參與外匯交易和 （或） 簽訂差價交易合約。重要的是您需了解，如果要從持倉頭寸獲取任何回報，您必須參與相應的交易將持倉頭寸平倉，有時候在一些市場條件下您可能很難或無法做到此點。"
@@ -3794,6 +3782,9 @@ msgstr "帳戶之間不可轉帳。"
 
 msgid "Funding of MT5 Real Account"
 msgstr "MT5真實帳戶資金存入"
+
+msgid "Funds cannot be transferred between financial and gaming accounts."
+msgstr ""
 
 msgid "Further Instructions"
 msgstr "詳細說明"
@@ -6483,6 +6474,9 @@ msgstr "不知道保證金是怎麼一回事？請閱讀我們的保證金政策
 msgid "Note"
 msgstr "備註"
 
+msgid "Note:"
+msgstr ""
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "注: 如有任何關於禁用或隔離帳戶的查詢, 請與<a href=\"%1\">客服部</a>聯繫。"
 
@@ -7082,6 +7076,9 @@ msgstr "鉑金兌美元"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "請%1接受條款和條件%2，以提高存取款限額。"
+
+msgid "Please %1authenticate%2 your account before you make a deposit."
+msgstr ""
 
 msgid "Please %1authenticate%2 your account."
 msgstr "請%1驗證%2您的帳戶。"
@@ -7757,6 +7754,9 @@ msgstr "陳述和保證"
 
 msgid "Representations and Warranties"
 msgstr "陳述和保證"
+
+msgid "Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account."
+msgstr ""
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "表示您的帳戶中可持有的最高現金額。如果達到該最高額，將會要求您提取資金。"
@@ -10305,8 +10305,8 @@ msgstr "波動率指數帳戶: 1:500"
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "波動率指數進一步分為兩種級別 ："
 
-msgid "Volatility Indices**"
-msgstr "波動率指數**"
+msgid "Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
+msgstr ""
 
 msgid "Volume"
 msgstr "交易量"
@@ -11106,6 +11106,9 @@ msgstr "您可以從兩種類型的聯盟佣金計劃中選擇一種："
 msgid "You can choose to be treated as a Retail Client at any time, even if you would qualify as a Professional Client."
 msgstr "即使您具備專業客戶的資格，您可隨時選擇成為零售客戶。"
 
+msgid "You can close this window without interrupting your trade."
+msgstr ""
+
 msgid "You can determine the margin for our CFDs by using the formula below:"
 msgstr "您可以使用以下公式算出我們的差價合約保證金:"
 
@@ -11205,11 +11208,11 @@ msgstr "您已經完整閱讀此法律條款及條件頁面，並明白您將在
 msgid "You have sold this contract at %1 %2"
 msgstr "您已經以 %1 %2 賣出此合約"
 
+msgid "You have successfully created your %1account!"
+msgstr ""
+
 msgid "You have successfully created your Virtual Account."
 msgstr "您已成功開立虛擬帳戶。"
-
-msgid "You have successfully created your account!"
-msgstr "您已成功開立帳戶！"
 
 msgid "You have sufficient experience and knowledge in matters of contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site."
 msgstr "您擁有足夠的差價合約經驗和知識，有能力評估經由本網站購買合約的收益與風險，並且不依賴於本網站包含的任何資訊作出購買決定。"
@@ -11505,6 +11508,9 @@ msgstr "您與%1的外匯和差價合約交易與一種標的金融工具相連�
 msgid "Your fund transfer is successful. Your new balances are:"
 msgstr "您已成功轉帳。最新餘額是:"
 
+msgid "Your gaming account (MX) limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead."
+msgstr ""
+
 msgid "Your name, email address and contact number"
 msgstr "您的名字、電子郵件地址和電話號"
 
@@ -11675,6 +11681,9 @@ msgstr "跟踪和/或執行和/或遵守經修訂和/或重新制訂和/或隨�
 
 msgid "for account %1"
 msgstr "用於帳戶%1"
+
+msgid "gaming"
+msgstr ""
 
 msgid "h"
 msgstr "小時"
