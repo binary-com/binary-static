@@ -1,4 +1,4 @@
-const Dropdown          = require('binary-style').selectDropdown;
+const Dropdown          = require('@binary-com/binary-style').selectDropdown;
 const TradingAnalysis   = require('./analysis');
 const commonTrading     = require('./common');
 const cleanupChart      = require('./charts/webtrader_chart').cleanupChart;
@@ -7,7 +7,7 @@ const Defaults          = require('./defaults');
 const TradingEvents     = require('./event');
 const Price             = require('./price');
 const Process           = require('./process');
-const ViewPopup         = require('../user/view_popup/view_popup');
+// const ViewPopup         = require('../user/view_popup/view_popup');
 const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
 const Header            = require('../../base/header');
@@ -73,7 +73,7 @@ const TradePage = (() => {
         });
         TradingAnalysis.bindAnalysisTabEvent();
 
-        ViewPopup.viewButtonOnClick('#contract_confirmation_container');
+        // ViewPopup.viewButtonOnClick('#contract_confirmation_container');
     };
 
     const reload = () => {
