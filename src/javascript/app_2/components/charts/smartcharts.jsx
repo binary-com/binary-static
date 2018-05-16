@@ -12,14 +12,13 @@ const forget = (callback, match_values) => (
     DAO.forget('ticks_history', callback, match_values)
 );
 
-const SmartCharts = ( { initial_symbol} ) =>  (
+const SmartCharts = () =>  (
     <React.Fragment>
         <SmartChart
             requestSubscribe={subscribe}
             requestForget={forget}
             requestAPI={DAO.sendRequest.bind(DAO)}
             onSymbolChange={(symbol) => console.log('Symbol has changed to:', symbol)}
-            initialSymbol={initial_symbol}
         />
     </React.Fragment>
 );
