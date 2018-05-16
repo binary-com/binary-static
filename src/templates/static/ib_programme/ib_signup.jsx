@@ -108,8 +108,8 @@ const Signup = () => (
                     }}
                 />
             </div>
-            <p className='mobile-text-small'>*{it.L('Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay 5 USD on advanced account.')}</p>
-            <p className='mobile-text-small'>**{it.L('Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTCUSD with spot price of 10.000 will pay USD 30 on standard account.')}</p>
+            <p className='mobile-text-small'>*{it.L('Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account.')}</p>
+            <p className='mobile-text-small'>**{it.L('Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account.')}</p>
             <p className='mobile-text-small'>***{it.L('Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account.')}</p>
             <div className='gr-padding-20 center-text'>
                 <a className='button' href={it.affiliate_signup_url}>
