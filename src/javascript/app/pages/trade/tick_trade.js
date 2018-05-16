@@ -340,8 +340,8 @@ const TickDisplay = (() => {
 
                     if (contract_category === 'touchnotouch' && tick.epoch === sell_spot_time) {
                         x_indicators[indicator_key] = {
-                            index    : counter,
-                            label    : sell_spot_time === exit_tick_time
+                            index: counter,
+                            label: sell_spot_time === exit_tick_time
                                 ? 'Exit Spot'
                                 : 'Sell Spot',
                             dashStyle: 'Dash',
@@ -374,7 +374,7 @@ const TickDisplay = (() => {
 
                 x_indicators[indicator_key] = {
                     index,
-                    label    : sell_spot_time === exit_tick_time
+                    label: sell_spot_time === exit_tick_time
                         ? 'Exit Spot'
                         : 'Sell Spot',
                     dashStyle: 'Dash',
