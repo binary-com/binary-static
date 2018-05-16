@@ -21,7 +21,13 @@ const Virtual = () => (
                     type='checkbox'
                     id='email_consent'
                     label_row_id='email_consent_label'
-                    label={it.L('I would like to receive marketing communications and offers. I understand that I can change my preference at any stage from my setting section.')}
+                    label=
+                        {it.L('I would like to receive marketing communications and offers. I understand that I can change my preference at any stage from my setting section. By clicking the button below you are confirming that you accept [_1]Terms & conditions[_2] and [_3]Privacy Policy[_4] as published in this site.',
+                            `<a href="${it.url_for('terms-and-conditions')}" target="_blank">`,
+                            '</a>',
+                            `<a href="${it.url_for('terms-and-conditions#privacy')}" target="_blank">`,
+                            '</a>',
+                        )}
                 />
             </Fieldset>
 
