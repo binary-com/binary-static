@@ -21,7 +21,7 @@ const Virtual = () => (
                     type='checkbox'
                     id='email_consent'
                     label_row_id='email_consent_label'
-                    label={it.L('Receive news and special offers')}
+                    label={it.L('I would like to receive marketing communications and offers. I understand that I can change my preference at any stage from my setting section.')}
                 />
             </Fieldset>
 
