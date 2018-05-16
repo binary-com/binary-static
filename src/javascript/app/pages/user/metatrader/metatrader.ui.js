@@ -241,7 +241,7 @@ const MetaTraderUI = (() => {
             }
 
             if (action === 'revoke_mam') {
-                $form.find('#mam_id').text(accounts_info[acc_type].manager_id);
+                $form.find('#mam_id').text(accounts_info[acc_type].info.manager_id);
             }
 
             $form.find('button[type="submit"]').each(function() { // cashier has two different actions
@@ -321,7 +321,7 @@ const MetaTraderUI = (() => {
         const $acc_actions = $container.find('.acc-actions');
         $acc_actions.find('.new-account').setVisibility(is_new_account);
         $acc_actions.find('.has-account').setVisibility(!is_new_account);
-        $acc_actions.find('.has-mam').setVisibility(is_new_account ? 0 : ('manager_id' in accounts_info[Client.get('mt5_account')]));
+        $acc_actions.find('.has-mam').setVisibility(is_new_account ? 0 : getPropertyValue(accounts_info, [Client.get('mt5_account'), 'info', 'manager_id']));
         $detail.setVisibility(!is_new_account);
 
         $container.find('[class*="act_"]').removeClass('selected');
@@ -521,7 +521,7 @@ const MetaTraderUI = (() => {
     };
 
     const showHideMAM = (acc_type) => {
-        const has_manager = 'manager_id' in accounts_info[acc_type];
+        const has_manager = getPropertyValue(accounts_info, [acc_type, 'info', 'manager_id']);
         $container.find('.has-mam').setVisibility(has_manager);
         if (!has_manager && $container.find('.acc-actions .has-mam').hasClass('selected')) {
             loadAction(defaultAction(acc_type));
