@@ -218,18 +218,27 @@ const FooterNormal = () => (
                                 </a>
                             </div>
                             <div className='gr-7 gr-5-m'>
-                                <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
-                                    <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
-                                </a>
+                                <div className='gr-row'>
+                                    <div className='gr-12'>
+                                        <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
+                                            <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
+                                        </a>
+                                    </div>
+                                    <div className='gr-12'>
+                                        <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
+                                            <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div data-show='iom, malta, default' className='id-hide gr-row gr-row-align-center-m'>
+                        {/* <div data-show='iom, malta, default' className='id-hide gr-row gr-row-align-center-m'>
                             <div className='gr-9 gr-7-m'>
                                 <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
                                     <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
                                 </a>
                             </div>
-                        </div>
+                        </div> */}
 
                         <SocialIcons
                             is_centered
