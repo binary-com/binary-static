@@ -5,20 +5,21 @@ import { connect } from '../../store/connect';
 
 const subscribe = (request_object, callback) => {
     if (request_object.subscribe !== 1) return;
-    DAO.requestTicksHistory(request_object, callback);
+    DAO.subscribeTicksHistory(request_object, callback);
 };
 
 const forget = (match_values, callback) => (
-    DAO.forget('ticks_history', callback, match_values)
+    DAO.forget('ticks_history', match_values, callback)
 );
 
-const SmartCharts = () =>  (
+const SmartCharts = ( { initial_symbol} ) =>  (
     <React.Fragment>
         <SmartChart
             requestSubscribe={subscribe}
             requestForget={forget}
             requestAPI={DAO.sendRequest.bind(DAO)}
             onSymbolChange={(symbol) => console.log('Symbol has changed to:', symbol)}
+            initialSymbol={initial_symbol}
         />
     </React.Fragment>
 );
@@ -26,5 +27,6 @@ const SmartCharts = () =>  (
 export default connect(
     ({trade}) => ({
         active_symbols: trade.active_symbols,
+        initial_symbol: trade.symbol,
     })
 )(SmartCharts);

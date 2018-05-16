@@ -25,6 +25,9 @@
                     background: transparent;
                     min-height: 100%;
                 }
+                div.cq-chart-controls {
+                    box-shadow: none;
+                }
             }
             div.debug-text {
                 display: none;
