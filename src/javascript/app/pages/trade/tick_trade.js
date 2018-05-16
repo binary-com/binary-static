@@ -36,7 +36,8 @@ const TickDisplay = (() => {
         tick_init,
         subscribe,
         responseID,
-        sell_spot_time;
+        sell_spot_time,
+        exit_tick_time;
 
     let id_render = 'tick_chart';
 
@@ -337,9 +338,12 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    if (tick.epoch === sell_spot_time) {
+                    if (contract_category === 'touchnotouch' && tick.epoch === sell_spot_time) {
                         x_indicators[indicator_key] = {
                             index    : counter,
+                            label    : sell_spot_time === exit_tick_time
+                                ? 'Exit Spot'
+                                : 'Sell Spot',
                             dashStyle: 'Dash',
                         };
                     }
@@ -359,17 +363,24 @@ const TickDisplay = (() => {
 
     const updateChart = (data, contract) => {
         subscribe = 'false';
-        if (data.is_sold && applicable_ticks) {
+        if (contract_category === 'touchnotouch' && data.is_sold && applicable_ticks) {
             sell_spot_time = +contract.sell_spot_time;
+            exit_tick_time = +contract.exit_tick_time;
 
             const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
-            const indicator_key = `_${index}`;
 
-            x_indicators[indicator_key] = {
-                index,
-                dashStyle: 'Dash',
-            };
-            add(x_indicators[indicator_key]);
+            if (index >= 0) {
+                const indicator_key = `_${index}`;
+
+                x_indicators[indicator_key] = {
+                    index,
+                    label    : sell_spot_time === exit_tick_time
+                        ? 'Exit Spot'
+                        : 'Sell Spot',
+                    dashStyle: 'Dash',
+                };
+                add(x_indicators[indicator_key]);
+            }
         } else if (contract) {
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
@@ -380,6 +391,7 @@ const TickDisplay = (() => {
             tick_shortcode    = contract.shortcode;
             tick_init         = '';
             sell_spot_time    = +contract.sell_spot_time;
+            exit_tick_time    = +contract.exit_tick_time;
             const request     = {
                 ticks_history: contract.underlying,
                 start        : contract.date_start,
