@@ -8,8 +8,8 @@ const subscribe = (request_object, callback) => {
     DAO.subscribeTicksHistory(request_object, callback);
 };
 
-const forget = (match_values, callback) => (
-    DAO.forget('ticks_history', match_values, callback)
+const forget = (callback, match_values) => (
+    DAO.forget('ticks_history', callback, match_values)
 );
 
 const SmartCharts = ( { initial_symbol} ) =>  (
