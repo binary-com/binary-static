@@ -160,8 +160,8 @@ const PersonalDetails = () => (
                 </FormRow>
             </Fieldset>
 
-            <Fieldset id='fieldset_email_consent' legend={it.L('Preferences')}>
-                <FormRow type='checkbox' label={it.L('I would like to receive marketing communications and offers. I understand that I can change my preference at any stage from my setting section.')} id='email_consent' label_row_id='email_consent_label' />
+            <Fieldset id='fieldset_email_consent' legend={it.L('Email Preferences')}>
+                <FormRow type='checkbox' label={it.L('Receive emails on Binary.com products, services, and events')} id='email_consent' label_row_id='email_consent_label' />
             </Fieldset>
 
             <SubmitButton id='btn_update' msg_id='formMessage' type='submit' text={it.L('Update')} />
