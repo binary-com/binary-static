@@ -121,6 +121,11 @@ const AccountOpening = (() => {
                 if (client_state) {
                     $address_state.val(client_state);
                 }
+                $address_state.select2({
+                    matcher(params, data) {
+                        return SelectMatcher(params, data);
+                    },
+                });
             } else {
                 $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35' }));
                 $address_state = $(address_state_id);
@@ -129,11 +134,6 @@ const AccountOpening = (() => {
                 }
             }
             $address_state.parent().parent().setVisibility(1);
-            $address_state.select2({
-                matcher(params, data) {
-                    return SelectMatcher(params, data);
-                },
-            });
 
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());
