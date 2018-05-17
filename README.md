@@ -11,7 +11,7 @@ You will also need to install the following on your development machine:
 
 - Ruby, RubyGems
 - Sass (`sudo gem install sass`)
-- Node.js and NPM (see <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>)
+- Node.js and NPM (see <https://nodejs.org/en/download/package-manager/>)
 - Go to project root, then run `npm install`
 - Grunt (`sudo npm install -g grunt-cli`)
 

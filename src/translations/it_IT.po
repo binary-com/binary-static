@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-14 22:07-0400\n"
+"PO-Revision-Date: 2018-05-16 22:02-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -306,6 +306,9 @@ msgstr "%1 apre una sede nella struttura di QSentral, nella centrale Kuala Lumpu
 msgid "%1 owes you a duty of best execution when executing orders on your behalf, i.e., when you are placing a legitimate reliance on us to safeguard your interest in relation to the execution of your order."
 msgstr "%1 ha l'obbligo della migliore esecuzione possibile quando vengono eseguiti ordini per tuo conto, cioè quando fai legittimo affidamento su di noi per salvaguardare il tuo interesse in relazione all'esecuzione del tuo ordine."
 
+msgid "%1 per lot"
+msgstr "%1 per lotto"
+
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 fornisce servizi di partnership aziendale attraverso i seguenti programmi."
 
@@ -423,14 +426,8 @@ msgstr "(Prezzo di vendita - Prezzo d'acquisto) x Volume x Prezzo per punto = Pr
 msgid "(max)"
 msgstr "(max)"
 
-msgid "**Volatility Indices commission rates in account currency per round trade. Example: A buy of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
-msgstr "**Commissioni per indici di volatilità nella valuta del conto per trade. Esempio: un acquisto di 1 lotto di indice di volatilità 100 varrebbe 0,75 USD per un conto denominato in USD."
-
 msgid "*Already registered as an affiliate? Send us an email at %1 instead."
 msgstr "*Sei già registrato come associato? Allora scrivici all'indirizzo e-mail %1."
-
-msgid "*Represents the amount in base currency per round trade. Example: A buy of 1 lot of EUR/USD would pay EUR 6 on standard accounts."
-msgstr "Rappresenta il totale nella valuta di base per trade. Esempio: un acquisto di 1 lotto di EUR/USD varrebbe 6 EUR per i conti standard."
 
 msgid "0-1 year"
 msgstr "da 0 a 1 anno"
@@ -440,15 +437,6 @@ msgstr "0-5 transazioni negli ultimi 12 mesi"
 
 msgid "0.01 lots"
 msgstr "0.01 lotti"
-
-msgid "0.1 per lot"
-msgstr "0,1 per lotto"
-
-msgid "0.25 per lot"
-msgstr "0,25 per lotto"
-
-msgid "0.75 per lot"
-msgstr "0,75 per lotto"
 
 msgid "1 million transactions/day"
 msgstr "1 milione di transazioni al giorno"
@@ -474,9 +462,6 @@ msgstr "150%"
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6.000 – 5.200) = $1600"
 
-msgid "2 per lot"
-msgstr "2 per lotto"
-
 msgid "2-3 years of applicable experience in a web application testing role"
 msgstr "2-3 anni di esperienza come tester di applicazioni web"
 
@@ -485,9 +470,6 @@ msgstr "Determinazione del prezzo in 2 direzioni"
 
 msgid "2. Proof of address"
 msgstr "2. Prova dell'indirizzo"
-
-msgid "2.25 per lot"
-msgstr "2,25 per lotto"
 
 msgid "24/7"
 msgstr "24/7"
@@ -515,9 +497,6 @@ msgstr "50%"
 
 msgid "6 months to 1 year"
 msgstr "Da 6 mesi a 1 anno"
-
-msgid "6 per lot"
-msgstr "6 per lotto"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 transazioni negli ultimi 12 mesi"
@@ -1764,6 +1743,9 @@ msgstr "I contratti di azioni Blue-chip provengono dal mercato OTC."
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "I contratti di azioni Blue-chip provengono dal mercato OTC (over-the-counter)"
 
+msgid "Both accounts need to be authenticated separately."
+msgstr "Per entrambi i conti è necessario effettuare l'autenticazione separatamente."
+
 msgid "Both the above"
 msgstr "Entrambe le soluzioni sopracitate"
 
@@ -2514,6 +2496,9 @@ msgstr "Crea"
 msgid "Create Account"
 msgstr "Crea un account"
 
+msgid "Create Financial Account"
+msgstr "Crea conto finanziario"
+
 msgid "Create Free Account"
 msgstr "Crea un Account gratuito"
 
@@ -2567,6 +2552,9 @@ msgstr "Le criptovalute sono asset volatili estremamente vulnerabili alle fluttu
 
 msgid "Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading in cryptocurrencies is a highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and /or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital."
 msgstr "Le criptovalute sono assett volatili estremamente esposte alle fluttuazioni del mercato. Il trading in criptovalute è un investimento altamente speculativo, perché i prezzi delle criptovalute possono andare su e giù &mdash; potenzialmente fino a un valore nullo (zero). Non dovresti negoziare in criptovalute a meno che tu non comprenda pienamente e sia consapevole che le negoziazioni e / o gli investimenti in criptovalute sono complessi e ad alto rischio per loro natura, e che non solo rischi di incorrere in perdite significative nel breve periodo ma anche di perdere tutto il capitale investito."
+
+msgid "Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account."
+msgstr "Commissione sulle criptovalute per trade. Esempio: un trade di 1 lotto di BTC/USD con prezzo spot di 10.000 varrà 30 USD su un conto standard."
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "Criptovalute come Bitcoin e Ethereum sono asset digitali decentralizzati che consentono pagamenti istantanei in qualsiasi parte del mondo."
@@ -3720,8 +3708,8 @@ msgstr "Foreign currency deposit"
 msgid "Forex"
 msgstr "Forex"
 
-msgid "Forex & Metals*"
-msgstr "Forex e metalli*"
+msgid "Forex & Metals"
+msgstr "Forex e metalli"
 
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr "Transazioni Forex e su contratti per differenze comportano un grado elevato di rischio e sono speculativi, poiché consentono di speculare sui movimenti a breve termine del prezzo degli strumenti finanziari sottostanti. Non dovresti entrare in transazioni forex e/o in contratti per differenze, a meno che tu non sia in grado di sostenere perdite che superano i fondi depositati. È importante per te capire che per poter realizzare qualsiasi valore dalle posizioni aperte, dovrai stipulare una transazione corrispondente per chiudere le posizioni aperte e può risultare difficile o impossibile farlo in determinate condizioni di mercato."
@@ -3794,6 +3782,9 @@ msgstr "I trasferimenti di fondi tra account non sono disponibili."
 
 msgid "Funding of MT5 Real Account"
 msgstr "Trasferimento di fondi sul conto reale MT5"
+
+msgid "Funds cannot be transferred between financial and gaming accounts."
+msgstr "Non è possibile trasferire i fondi da un conto finanziario a uno di gioco e viceversa."
 
 msgid "Further Instructions"
 msgstr "Ulteriori istruzioni"
@@ -5809,7 +5800,7 @@ msgid "MAM Volatility Indices"
 msgstr "MAM indici di volatilità"
 
 msgid "MAM Volatility Indices Account"
-msgstr ""
+msgstr "Conto d'indici di volatilità MAM"
 
 msgid "MAM Volatility Indices*"
 msgstr "MAM indici di volatilità*"
@@ -6486,6 +6477,9 @@ msgstr "Non sei sicuro di come funziona il margine? Leggi la nostra policy sul m
 msgid "Note"
 msgstr "Nota"
 
+msgid "Note:"
+msgstr "Nota:"
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Nota: Per qualsiasi richiesta relativa ad account disattivati o esclusi, sei pregato di contattare il nostro <a href=\"%1\">Customer Support</a>."
 
@@ -6778,7 +6772,7 @@ msgid "Our MAM Advanced account can be assigned to a money manager who will trad
 msgstr "Il nostro conto avanzato MAM può essere assegnato a un gestore di fondi che si occuperà del trade a tuo nome con spread più competitivi rispetto a un conto avanzato standard."
 
 msgid "Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
-msgstr ""
+msgstr "Il nostro conto d'indici di volatilità MAM può essere assegnato a un gestore di fondi che si occuperà del trade a tuo nome con le stesse specifiche di un conto d'indici di volatilità standard."
 
 msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
 msgstr "Il nostro servizio di MT5 non è attualmente disponibile per i residenti UE, questo è dovuto all'attesa di approvazione regolamentare."
@@ -7086,6 +7080,9 @@ msgstr "Platino vs Dollaro Statunitense"
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "Per aumentare il limite dei prelievi e del trading, %1accetta i Termini e condizioni aggiornati%2."
 
+msgid "Please %1authenticate%2 your account before you make a deposit."
+msgstr "Ti preghiamo di %1verificare%2 il tuo conto prima di effettuare un deposito."
+
 msgid "Please %1authenticate%2 your account."
 msgstr "Ti preghiamo di %1autenticare%2 il tuo conto."
 
@@ -7321,13 +7318,13 @@ msgid "Precious metals are harder to come by and are more valuable than industri
 msgstr "I metalli preziosi sono più difficili da trovare e hanno più valore dei metalli industriali. Poiché i metalli preziosi sono più mallebili e meno reattivi, sono ampiamente utilizzati in gioielleria, dispositivi medici ed elettronica."
 
 msgid "Predict if the market will rise or fall from its current level, or if it will end higher or lower than a price target"
-msgstr ""
+msgstr "Prevedi se il mercato crescerà o calerà rispetto al livello attuale, oppure se chiuderà a un prezzo superiore o inferiore rispetto al prezzo target"
 
 msgid "Predict if the market will stay between or go outside two price targets"
-msgstr ""
+msgstr "Prevedi se il mercato resterà tra due prezzi target o uscirà da questo intervallo"
 
 msgid "Predict if the market will touch or not touch a price target"
-msgstr ""
+msgstr "Prevedi se il mercato toccherà o non toccherà un prezzo target"
 
 msgid "Predict market movement using up/down, touch/no touch, and in/out trade types."
 msgstr "Prevedi il movimento del mercato usando i diversi tipi di trade alto/basso, tocca/non tocca, e dentro/fuori."
@@ -7760,6 +7757,9 @@ msgstr "Dichiarazione e garanzia"
 
 msgid "Representations and Warranties"
 msgstr "Dichiarazioni e Garanzie"
+
+msgid "Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account."
+msgstr "Rappresenta l'importo in valuta di base per trade. Esempio: un trade di 1 lotto di EUR/USD varrebbe 10 EUR su un conto standard. Un trade di 1 lotto di USD/CAD varrebbe 5 USD su un conto avanzato."
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "Rappresenta l'importo massimo di denaro che può essere tenuto sul tuo account. Se raggiungi tale valore massimo, ti verrà richiesto di prelevare fondi."
@@ -8815,7 +8815,7 @@ msgid "The Company may withhold payment of funds accumulated in a Client’s acc
 msgstr "La Società può sospendere il pagamento dei fondi accumulati nell'account di un cliente mentre sono necessari passaggi per verificare la conformità con questi termini."
 
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. If you open an account with Binary (Europe) Ltd or Binary (IOM) Ltd, you’ll need to provide us with age verification documentation when you perform a deposit for the first time. If you open an account with Binary (Europe) Ltd, you’ll also be required to provide KYC documentation to verify your identity for cumulative withdrawals of EUR 2,000.00. If you open an account with Binary Investments (Europe) Ltd, you’ll need to provide KYC documentation as part of your account opening process."
-msgstr ""
+msgstr "La Società può, di volta in volta, a sua esclusiva discrezione, o come richiesto dai regolamenti in atto, eseguire le idonee procedure per \"Conoscere i tuoi clienti\" e chiedere a un Cliente di fornire un'attestazione dell'identità (ad esempio una copia autenticata del passaporto o di un altro strumento di verifica dell'identità come ritenuto necessario dalla Società in tali circostanze) e può a sua esclusiva discrezione sospendere un conto fino a quando non vengano fornite informazioni soddisfacenti d'identificazione, attestazione dell'identità e dell'indirizzo, fonte dei fondi e/o fonte della ricchezza. Aprendo un conto con Binary (Europe) Ltd o Binary (IOM) Ltd, occorre presentare un documento di verifica dell'età quando si effettua un deposito per la prima volta. Anche aprendo un conto con Binary (Europe) Ltd, occorre presentare la documentazione KYC come attestazione dell'identità del richiedente per i prelievi cumulativi del valore di 2.000,00 EUR. Aprendo un conto con Binary Investments (Europe) Ltd, occorre presentare la documentazione KYC durante la fase di apertura del conto."
 
 msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
 msgstr "La Società fornisce l'API di %1 sulla base di \"come è\" e \"come disponibile\" senza garanzie, espresse o implicite, di alcun tipo. Nella misura più ampia possibile consentita dalla legge in vigore, la Società declina qualsiasi responsabilità e rappresentanza, incluse, senza alcuna limitazione, qualsiasi garanzia implicita di commerciabilità, idoneità per uno scopo specifico, titolo, precisione dei dati e accertamento negativo della contraffazione."
@@ -8866,7 +8866,7 @@ msgid "The Company shall not be responsible or liable to the Client for any frau
 msgstr "La Società non sarà ritenuta colpevole o responsabile nei confronti dei Clienti per qualsiasi atto fraudolento o omissione e/o qualsiasi tipo di negligenza o cattiva condotta e/o inadempienza volontaria fatta dall'Agente. Allo stesso modo, la Società non sarà colpevole o responsabile nei confronti dei Clienti se termini e/o condizioni e/o disposizioni di questo Accordo sono violati dall'Agente."
 
 msgid "The Company shall not be responsible or liable to you for any negligence, misconduct, fraudulent acts and omissions made by you or your Money Manager."
-msgstr ""
+msgstr "La Società declina ogni responsabilità per qualsiasi tipo di negligenza, cattiva condotta, atti fraudolenti e omissioni attribuibili al Cliente o al suo Gestore di fondi."
 
 msgid "The Company shall not perform any supervisory function in regards with any financial services whatsoever provided by the Agent."
 msgstr "La Società non deve effettuare alcuna funzione di vigilanza sui servizi finanziari forniti dall'Agente."
@@ -8875,7 +8875,7 @@ msgid "The Company shall pay you the currently published percentage of net reven
 msgstr "La Società dovrà pagarti la percentuale attualmente pubblicata delle entrate nette (come indicato nella pagina delle commissioni del tuo Account di affiliazione) ricevuta durante l'Accordo. I pagamenti d'affiliazione saranno dovuti solo per il riferimento di clienti in buona fede e la Società si riserva il diritto di ignorare gli account duplicati o quelli nominati che la Società considera non autentici a sua esclusiva discrezione."
 
 msgid "The Company shall provide you with online access to the trading platform on which the balance, margin, credit, and equity is displayed so you are able to monitor the status and performance of the Account. You agree that in case of incongruity, you will immediately contact the Company at %1."
-msgstr ""
+msgstr "La Società fornirà al cliente l'accesso online alla piattaforma di trading su cui è possibile consultare saldo, margine, credito ed equity per monitorare lo stato e l'andamento del conto. Il Cliente dichiara inoltre che, in caso di incongruenze, contatterà immediatamente la Società a %1."
 
 msgid "The Company shall provide you with statements accessible through an electronic system detailing the revenues generated by clients you have referred, if any, which have accrued to you over the course of the calendar month. Such statements shall be updated daily. At the end of a calendar month, the Company shall record your total share of Net Revenues, if any, during the previous calendar month. In the event that a revenue share in any calendar month is a negative amount, the Company shall be entitled but not obliged to carry forward and set off such negative amount against future revenue shares which would otherwise be payable to you. However, the Company shall also be entitled but not obliged to zeroise the negative balance that would otherwise be carried forward."
 msgstr "La Società fornirà degli estratti conto accessibili attraverso un sistema elettronico con il dettaglio delle entrate generate dai clienti da te presentati, se presenti, e accumulate durante il mese solare. Tali estratti verranno aggiornati quotidianamente. Alla fine del mese solare, la Società registrerà la quota complessiva delle entrate nette del Cliente, se presenti, durante il mese precedente. Nel caso in cui una quota delle entrate in un mese sia un importo negativo, la Società sarà autorizzata, ma non obbligata, ad applicare e compensare tale importo negativo per le quote di entrate future che sarebbero altrimenti dovute al Cliente. Tuttavia, la Società sarà anche autorizzata, ma non obbligata, ad azzerare il saldo negativo per non mantenerlo tale."
@@ -8923,10 +8923,10 @@ msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lots</i> is
 msgstr "Il Forex è tipicamente negoziato in <i>lotti</i>. Un <i lotto</i> standard equivale a 100.000 unità. Ogni volta che apri una posizione su un simbolo di valuta, puoi iniziare con una transazione minima di <i> 0,01 lotti</i>."
 
 msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
-msgstr ""
+msgstr "Il conto avanzato MAM può essere assegnato a un gestore di fondi che si occuperà del trade a tuo nome con spread più competitivi rispetto a un conto avanzato standard. Altre eventuali specifiche rimangono invariate."
 
 msgid "The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
-msgstr ""
+msgstr "Il conto d'indici di volatilità MAM può essere assegnato a un gestore di fondi che si occuperà del trade a tuo nome con le stesse specifiche di un conto d'indici di volatilità standard."
 
 msgid "The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control."
 msgstr "Lo strumento MAM è ideale per gestori di fondi che vogliono gestire facilmente account cliente multipli. Ti dà la possibilità di simultaneamente vedere, seguire e il fare trading per conto di tutti gli account cliente MT5 sotto il tuo controllo."
@@ -9250,7 +9250,7 @@ msgid "The system fills orders on a first-in-first out basis, i.e. based on the 
 msgstr "Il sistema gestisce gli ordini in base al principio \"first in - first out\", ovvero in base alla sequenza dell'ordine ricevuto, e questo è fuori dal nostro controllo. Di conseguenza, potrebbe essere per te difficile o impossibile chiudere una posizione al prezzo previsto nel tuo Stop Order in determinate condizioni di mercato. Il collocamento di Stop Order da parte tua, sebbene sia utile come strumento di gestione del rischio, non limiterà necessariamente le tue perdite agli importi previsti, in caso di condizioni di trading altamente volatili, poiché le condizioni di mercato potrebbero rendere impossibile l'esecuzione di tali ordini e c'è incertezza sul possibile prezzo di uscita. In breve, uno Stop Order non è garantito perché non può operare indipendentemente dalle circostanze del mercato."
 
 msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
-msgstr ""
+msgstr "Il termine \"la Società\" indica la Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isola di Man, Arcipelago britannico, autorizzata e regolamentata dalla (1) Gambling Supervision Commission dell'Isola di Man, Arcipelago britannico, attuale licenza per il gioco d'azzardo online emessa il 31 Agosto 2012, e per i clienti del Regno Unito dalla (2) UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, autorizzata e regolamentata dalla (1) Malta Gaming Authority di Malta per i prodotti connessi al gioco d'azzardo, licenza n. MGA/CL2/118/2000 del 26 Maggio 2010 e per i clienti del Regno Unito dalla (2) UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regolamentata dalla Malta Financial Services Authority per i prodotti d'investimento, con licenza per i Servizi d'investimento, Categoria 3, n. IS/ 70156 del 19 maggio 2015; oppure Binary (CR) S.A., in base alla giurisdizione applicata al conto del Cliente secondo le procedure di apertura del conto del sito internet e come specificato nella sezione Chi siamo del sito internet."
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote Binary (V) Ltd."
 msgstr "Il termine 'noi', 'ci', 'nostro/a', 'nostri/e', 'la Società', o '%1' indica Binary (V) Ltd."
@@ -9364,7 +9364,7 @@ msgid "This Agreement constitutes the entire Agreement between the Parties and n
 msgstr "Questo Accordo costituisce l'intero Accordo tra le Parti e nessuna rappresentazione precedente o disposizione o accordo scritto o orale relativi a qualsiasi argomento affrontato in questo Accordo tra le Parti ha alcuna forza o effetto prima della Data di inizio."
 
 msgid "This Agreement constitutes the entire Agreement between the Parties and no earlier representation, arrangement or agreement written or oral relation to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
-msgstr ""
+msgstr "Il presente Contratto costituisce l'intero Contratto tra le Parti e nessuna precedente rappresentazione, disposizione, accordo o relazione scritta od orale relativi a qualsiasi argomento affrontato nel presente Contratto tra le Parti risulta in vigore o ha effetto prima della data di inizio."
 
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "Il presente Accordo contiene l'intero accordo tra le parti in merito alla questione in oggetto e sostituisce tutti gli accordi precedenti e le intese tra le parti rispetto alla questione in oggetto."
@@ -9559,7 +9559,7 @@ msgid "To change your name, date of birth, country of residence, or email, pleas
 msgstr "Per modificare il tuo nome, data di nascita, paese di residenza o email, contatta l'<a href=\"%1\">Assistenza Clienti</a>."
 
 msgid "To create a MAM real account, please:"
-msgstr ""
+msgstr "Per creare un conto reale MAM, ti preghiamo di:"
 
 msgid "To create a MetaTrader 5 real account, please:"
 msgstr "Per creare un account reale MetaTrader 5, per favore:"
@@ -10308,8 +10308,8 @@ msgstr "Account con Indici di Volatilità: 1:500"
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "Gli Indici di Volatilità sono ulteriormente categorizzati in due classi:"
 
-msgid "Volatility Indices**"
-msgstr "Indici di volatilità**"
+msgid "Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
+msgstr ""
 
 msgid "Volume"
 msgstr "Volume"
@@ -10555,13 +10555,13 @@ msgid "Weekday"
 msgstr "Giorno feriale"
 
 msgid "Weekdays:"
-msgstr ""
+msgstr "Giorni feriali:"
 
 msgid "Weekend quotes"
 msgstr "Quotazioni dei weekend"
 
 msgid "Weekend:"
-msgstr ""
+msgstr "Weekend:"
 
 msgid "Welcome to Binary.com"
 msgstr "Benvenuto su Binary.com"
@@ -10603,7 +10603,7 @@ msgid "What is Forex trading"
 msgstr "Cos'è il trading Forex"
 
 msgid "What is a MAM account?"
-msgstr ""
+msgstr "Cos'è un conto MAM?"
 
 msgid "What is cryptocurrency trading"
 msgstr "Cos'è il trading di criptovaluta"
@@ -11109,6 +11109,9 @@ msgstr "Puoi scegliere tra due diversi tipi di piani di commissioni per associat
 msgid "You can choose to be treated as a Retail Client at any time, even if you would qualify as a Professional Client."
 msgstr "Puoi scegliere di essere trattato come un Cliente al Dettaglio in qualsiasi momento, anche se ti qualificassi come Cliente Professionale."
 
+msgid "You can close this window without interrupting your trade."
+msgstr ""
+
 msgid "You can determine the margin for our CFDs by using the formula below:"
 msgstr "Puoi determinare il margine per i nostri CFD utilizzando la seguente formula:"
 
@@ -11208,11 +11211,11 @@ msgstr "Hai letto completamente la pagina sui Termini e le Condizioni Legali e h
 msgid "You have sold this contract at %1 %2"
 msgstr "Hai venduto questo contratto a %1 %2"
 
-msgid "You have successfully created your Virtual Account."
+msgid "You have successfully created your %1account!"
 msgstr ""
 
-msgid "You have successfully created your account!"
-msgstr "Hai creato con successo il tuo account!"
+msgid "You have successfully created your Virtual Account."
+msgstr ""
 
 msgid "You have sufficient experience and knowledge in matters of contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site."
 msgstr ""
@@ -11508,6 +11511,9 @@ msgstr "Le tue transazioni in forex e contratti per differenze con %1 sono colle
 msgid "Your fund transfer is successful. Your new balances are:"
 msgstr "Il tuo trasferimento di fondi è riuscito. Il tuoi nuovo saldo è:"
 
+msgid "Your gaming account (MX) limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead."
+msgstr ""
+
 msgid "Your name, email address and contact number"
 msgstr "Il tuo nome, il tuo indirizzo email e il tuo numero di telefono"
 
@@ -11678,6 +11684,9 @@ msgstr "seguire e/o applicare e/o conformarsi alle indicazioni relative agli aff
 
 msgid "for account %1"
 msgstr "per il conto %1"
+
+msgid "gaming"
+msgstr ""
 
 msgid "h"
 msgstr "h"
