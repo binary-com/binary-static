@@ -21,14 +21,17 @@ const Virtual = () => (
                     type='checkbox'
                     id='email_consent'
                     label_row_id='email_consent_label'
-                    label=
-                        {it.L('I would like to receive marketing communications and offers. I understand that I can change my preference at any stage from my setting section. By clicking the button below you are confirming that you accept [_1]Terms & Conditions[_2] and [_3]Privacy Policy[_4] as published in this site.',
+                    label={it.L('Yes, I would like to receive emails on Binary.com products, services, and events. I understand that I can unsubscribe from these emails at any time from my profile settings.')}
+                />
+
+                <div>
+                    {it.L('By creating my account, I confirm that I’ve read and agree to your [_1]Terms & Conditions[_2] and [_3]Privacy Policy[_4]',
                             `<a href="${it.url_for('terms-and-conditions')}" target="_blank">`,
                             '</a>',
                             `<a href="${it.url_for('terms-and-conditions#privacy')}" target="_blank">`,
                             '</a>',
-                        )}
-                />
+                    )}
+                </div>
             </Fieldset>
 
             <div className='center-text'>
