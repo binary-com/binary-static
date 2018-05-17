@@ -366,6 +366,14 @@ const PersonalDetails = (() => {
                     $field = $(address_state);
                 }
                 $field.val(get_settings_data.address_state);
+
+                if (states && states.length > 0) {
+                    $('#address_state').select2({
+                        matcher(params, data) {
+                            return SelectMatcher(params, data);
+                        },
+                    });
+                }
             }
 
             if (is_jp_client && !is_virtual) {
