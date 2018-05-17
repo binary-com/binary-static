@@ -356,11 +356,6 @@ const PersonalDetails = (() => {
                     states.forEach((state) => {
                         $field.append($('<option/>', { value: state.value, text: state.text }));
                     });
-                    $('#address_state').select2({
-                        matcher(params, data) {
-                            return SelectMatcher(params, data);
-                        },
-                    });
                 } else {
                     $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
                     $field = $(address_state);
