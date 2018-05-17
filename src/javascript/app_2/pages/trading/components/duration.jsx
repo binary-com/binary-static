@@ -73,15 +73,20 @@ const Duration = ({
                         />
                     </div>
                 </React.Fragment> :
-                <React.Fragment>
+                <div className='endtime-container'>
                     <Datepicker
                         name='expiry_date'
                         showTodayBtn
                         minDate={min_date_expiry}
                         onChange={onChange}
                     />
-                    <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
-                </React.Fragment>
+                    <TimePicker
+                        onChange={onChange}
+                        name='expiry_time'
+                        value={expiry_time}
+                        placeholder='12:00 pm'
+                    />
+                </div>
             }
         </Fieldset>
     );

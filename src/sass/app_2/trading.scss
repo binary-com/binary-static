@@ -19,6 +19,100 @@
             z-index: 1;
             color: $COLOR_BLUE;
         }
+        .purchase-option {
+            margin: 2px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            &.closed {
+                grid-template-columns: 1fr 1fr;
+            }
+            span.tooltip[data-tooltip] {
+                &:before {
+                    max-width: unset;
+                    width: 250px;
+                    white-space: normal;
+                }
+                .btn {
+                    text-transform: capitalize;
+                    width: 96px;
+                    height: 96px;
+                    margin: 4px;
+                    box-shadow: 1px 3px 4px 0 rgba(76, 175, 80, 0.14), 1px 3px 4px 0 rgba(76, 175, 80, 0.14);
+
+                    img.btn-icon {
+                        width: 42px;
+                        margin: 0 auto;
+                    }
+                    span {
+                        display: block;
+                    }
+                }
+            }
+            div.box {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0 0.5rem;
+                justify-content: flex-start;
+
+                h4 {
+                    font-size: 0.88rem;
+                    padding-bottom: 0;
+                    padding-top: 0;
+                    margin: 0.5rem 0 auto;
+                    font-weight: 300;
+                }
+                div.amount {
+                    position: relative;
+
+                    &.down {
+                        color: $COLOR_RED;
+
+                        &:after {
+                            content: url('../images/trading_app/purchase/ic_pricedown.svg');
+                            position: absolute;
+                            top: 2px;
+                            right: 0.5rem;
+                        }
+                    }
+                    &.up {
+                        color: $COLOR_LIGHT_BLUE;
+
+                        &:after {
+                            content: url('../images/trading_app/purchase/ic_priceup.svg');
+                            position: absolute;
+                            top: 2px;
+                            right: 0.5rem;
+                        }
+                    }
+                    span.symbols {
+                        left: 0;
+                        top: 6px;
+                        font-size: 0.88rem;
+                        color: inherit;
+                    }
+                    span.payout {
+                        font-weight: 600;
+                    }
+                }
+                span:not(.purchase-return):not(.symbols) {
+                    font-size: 0.88rem;
+                    position: relative;
+                    margin-left: 0.5rem;
+                }
+                span.purchase-return {
+                    color: $COLOR_ORANGE;
+                }
+            }
+        }
+        hr {
+            margin: 0.5em 0;
+
+            &.hide {
+                display: none;
+            }
+        }
         .clock-header, .fieldset-header {
             height: 1.5rem;
             position: relative;

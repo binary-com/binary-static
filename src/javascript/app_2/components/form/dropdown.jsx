@@ -95,7 +95,6 @@ class Dropdown extends React.PureComponent {
                             /> :
                             Object.keys(this.props.list).map(key => (
                                 <React.Fragment key={key}>
-                                    <div className='list-label'><span>{key}</span></div>
                                     <Items
                                         items={this.props.list[key]}
                                         name={this.props.name}

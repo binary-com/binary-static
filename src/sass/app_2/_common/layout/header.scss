@@ -2,7 +2,7 @@
     position: fixed;
     z-index: 999;
     width: 100%;
-    max-height: 50px;
+    max-height: 56px;
     top: 0;
 
     header {
@@ -38,6 +38,8 @@
                 &.notify-toggle {
                     order: 2;
                     padding: 6px;
+                    display: flex;
+                    align-items: center;
 
                     img {
                         width: 32px;
@@ -53,6 +55,9 @@
 
                 .menu-toggle {
                     align-self: center;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
 
                     img {
                         width: 24px;
@@ -193,6 +198,7 @@
             .notifications-toggle {
                 justify-content: flex-end;
                 align-self: center;
+
             }
         }
     }
