@@ -5,7 +5,8 @@ $filter-height: 60px;
         padding-top: $filter-height;
     }
     .statement-no-activity-msg {
-        padding: 1rem 2rem;
+        padding: 1rem;
+        @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
         font-size: 1rem;
     }
     .statement-filter {
@@ -42,7 +43,7 @@ $filter-height: 60px;
         width: 6.5em;
     }
     .desc {
-        padding-right: 3rem !important;
+        padding-right: 2rem !important;
     }
     .action {
         width: 6.5em;
