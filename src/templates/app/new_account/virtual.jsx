@@ -23,7 +23,7 @@ const Virtual = () => (
                     type='checkbox'
                     id='email_consent'
                     label_row_id='email_consent_label'
-                    label={it.L('Yes, I would like to receive emails on Binary.com products, services, and events. \n I understand that I can unsubscribe from these emails at any time from my profile settings.')}
+                    label={it.L('Yes, I would like to receive emails on [_1] products, services, and events. [_2] I understand that I can unsubscribe from these emails at any time from my profile settings.', it.website_name, '\n')}
                 />
             </Fieldset>
 
