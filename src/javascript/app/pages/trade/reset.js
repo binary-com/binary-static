@@ -34,17 +34,21 @@ const Reset = (() => {
             }
         } else {
             val = (duration_unit === 't') ? Math.floor(mid_point) : Math.ceil(mid_point);
-            reset_time_str = `${val} ${duration_map[duration_unit]}`;
+            reset_time_str = `${val} ${localize(duration_map[duration_unit])}`;
         }
 
         CommonFunctions.getElementById('reset_time')
-            .html(localize('The reset time is [_1]', [reset_time_str]));
+            .html(localize('The reset time is [_1]', [reset_time_str]))
+            .setAttribute('style', '');
     };
+
+    const hideResetTime = () => { CommonFunctions.getElementById('reset_time').style.display = 'none'; };
 
     const isReset = (contract_type) => /^(RESETCALL|RESETPUT|reset)$/.test(contract_type);
 
     return {
         displayResetTime,
+        hideResetTime,
         isReset,
         ticks: [], // store ticks for Reset
     };

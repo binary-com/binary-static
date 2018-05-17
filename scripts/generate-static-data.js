@@ -156,6 +156,7 @@ const texts = [
     'Reset Put',
     'Search...',
     'Select Asset',
+    'The reset time is [_1]',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
