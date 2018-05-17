@@ -24,7 +24,10 @@
             max-width: 90px;
         }
         #lga_icon_footer {
-            max-width: 140px;
+            max-width: 70px;
+        }
+        #gamstop_icon_footer {
+            max-width: 120px;
         }
         #ratelimit-error-message, #site-status-message {
             position: fixed;
@@ -36,6 +39,13 @@
         #site-status-message {
             z-index: 9999;
         }
+    }
+    .lga-gamstop-icon-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
     }
     #footer-last {
         .gambling {
