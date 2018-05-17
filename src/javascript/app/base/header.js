@@ -1,12 +1,11 @@
 const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
-const GTM                 = require('./gtm');
-const Login               = require('./login');
 const BinarySocket        = require('./socket');
-const SocketCache         = require('./socket_cache');
 const checkClientsCountry = require('../common/country_base').checkClientsCountry;
-const jpClient            = require('../common/country_base').jpClient;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
+const GTM                 = require('../../_common/base/gtm');
+const Login               = require('../../_common/base/login');
+const SocketCache         = require('../../_common/base/socket_cache');
 const elementInnerHtml    = require('../../_common/common_functions').elementInnerHtml;
 const elementTextContent  = require('../../_common/common_functions').elementTextContent;
 const getElementById      = require('../../_common/common_functions').getElementById;
@@ -26,7 +25,6 @@ const Header = (() => {
             checkClientsCountry();
         }
         if (Client.isLoggedIn()) {
-            getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
             displayAccountStatus();
             if (!Client.get('is_virtual')) {
                 BinarySocket.wait('website_status', 'authorize', 'balance').then(() => {
@@ -111,12 +109,8 @@ const Header = (() => {
 
     const metatraderMenuItemVisibility = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
-            if (MetaTrader.isEligible() && !jpClient()) {
-                // TODO: a workaround for new-app, can be reverted once dependencies are dropped
-                const el_mt_menu_item = getElementById('user_menu_metatrader');
-                if (el_mt_menu_item && typeof el_mt_menu_item.setVisibility === 'function') {
-                    el_mt_menu_item.setVisibility(1);
-                }
+            if (MetaTrader.isEligible() && !Client.isJPClient()) {
+                getElementById('user_menu_metatrader').setVisibility(1);
             }
         });
     };
@@ -156,6 +150,15 @@ const Header = (() => {
                 });
             };
 
+            const showUpgradeBtn = (url, msg) => {
+                applyToAllElements(upgrade_msg, (el) => {
+                    el.setVisibility(1);
+                    applyToAllElements('a.button', (ele) => {
+                        ele.html(createElement('span', { text: localize(msg) })).setVisibility(1).setAttribute('href', Url.urlFor(url));
+                    }, '', el);
+                });
+            };
+
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
             const upgrade_info      = Client.getUpgradeInfo();
             const show_upgrade_msg  = upgrade_info.can_upgrade;
@@ -172,19 +175,20 @@ const Header = (() => {
                 });
 
                 if (jp_account_status) {
-                    const has_disabled_jp = jpClient() && Client.getAccountOfType('real').is_disabled;
-                    if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
+                    const has_disabled_jp = Client.isJPClient() && Client.getAccountOfType('real').is_disabled;
+                    if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not returns the correct timeshow upgrade for user that filled up form
                         showUpgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else if (show_upgrade_msg || (has_disabled_jp && jp_account_status !== 'disabled')) {
                         applyToAllElements(upgrade_msg, (el) => { el.setVisibility(1); });
                         if (jp_account_status === 'jp_activation_pending' && !document.getElementsByClassName('activation-message')) {
-                            virtual_text.appendChild(createElement('div', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
+                            virtual_text.appendChild(createElement('div', { class: 'activation-message', text: ` ${localize('{JAPAN ONLY}Your Application is Being Processed.')}` }));
                         } else if (jp_account_status === 'activated' && !document.getElementsByClassName('activated-message')) {
                             virtual_text.appendChild(createElement('div', { class: 'activated-message', text: ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}` }));
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    showUpgrade(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
+                    showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
+                    showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
                 } else {
                     applyToAllElements(upgrade_msg, (el) => {
                         applyToAllElements('a', (ele) => {
@@ -194,7 +198,8 @@ const Header = (() => {
                 }
             } else if (show_upgrade_msg) {
                 getElementById('virtual-wrapper').setVisibility(0);
-                showUpgrade(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
+                showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
+                showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
             } else {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
             }
@@ -255,13 +260,14 @@ const Header = (() => {
 
             const riskAssessment = () => (
                 (get_account_status.risk_classification === 'high' || Client.isAccountOfType('financial')) &&
-                /financial_assessment_not_complete/.test(status) && !jpClient()
+                /financial_assessment_not_complete/.test(status) && !Client.isJPClient()
             );
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
 
             const messages = {
                 authenticate         : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',                                      'user/authenticate'),
+                cashier_locked       : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
                 currency             : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                                                    'user/set-currency'),
                 document_needs_action: () => buildMessage('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.', 'user/authenticate'),
                 document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
@@ -271,11 +277,13 @@ const Header = (() => {
                 risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',                                   'user/settings/assessmentws'),
                 tax                  : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                                            'user/settings/detailsws'),
                 tnc                  : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',                                  'user/tnc_approvalws'),
-                unwelcome            : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                                                 'contact'),
+                unwelcome            : () => buildMessage('Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                    'contact'),
+                withdrawal_locked    : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
             };
 
             const validations = {
                 authenticate         : () => +get_account_status.prompt_client_to_authenticate,
+                cashier_locked       : () => /cashier_locked/.test(status),
                 currency             : () => !Client.get('currency'),
                 document_needs_action: () => /document_needs_action/.test(status),
                 document_review      : () => /document_under_review/.test(status),
@@ -285,7 +293,8 @@ const Header = (() => {
                 risk                 : () => riskAssessment(),
                 tax                  : () => Client.shouldCompleteTax(),
                 tnc                  : () => Client.shouldAcceptTnc(),
-                unwelcome            : () => /unwelcome|(cashier|withdrawal)_locked/.test(status),
+                unwelcome            : () => /unwelcome/.test(status),
+                withdrawal_locked    : () => /withdrawal_locked/.test(status),
             };
 
             // real account checks in order
@@ -299,6 +308,8 @@ const Header = (() => {
                 'document_review',
                 'document_needs_action',
                 'authenticate',
+                'cashier_locked',
+                'withdrawal_locked',
                 'unwelcome',
             ];
 
