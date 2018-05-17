@@ -339,7 +339,7 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    if (contract_category === 'touchnotouch' && tick.epoch === sell_spot_time) {
+                    if (!x_indicators[indicator_key] && tick.epoch === sell_spot_time) {
                         x_indicators[indicator_key] = {
                             index: counter,
                             label: sell_spot_time === exit_tick_time
@@ -363,8 +363,7 @@ const TickDisplay = (() => {
     };
 
     const addSellSpot = (contract) => {
-        // for tick trades only touchnotouch can have sell spot before exit spot
-        if (contract_category !== 'touchnotouch' || !applicable_ticks) return;
+        if (!applicable_ticks) return;
 
         sell_spot_time = +contract.sell_spot_time;
         exit_tick_time = +contract.exit_tick_time;
@@ -375,6 +374,8 @@ const TickDisplay = (() => {
 
         const indicator_key = `_${index}`;
 
+        if (x_indicators[indicator_key]) return;
+
         x_indicators[indicator_key] = {
             index,
             label: sell_spot_time === exit_tick_time
@@ -382,6 +383,7 @@ const TickDisplay = (() => {
                 : 'Sell Spot',
             dashStyle: 'Dash',
         };
+        
         add(x_indicators[indicator_key]);
     };
 
