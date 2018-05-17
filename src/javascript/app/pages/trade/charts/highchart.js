@@ -1,4 +1,5 @@
 const HighchartUI      = require('./highchart.ui');
+const getHighstock     = require('../common').requireHighstock;
 const MBContract       = require('../../mb_trade/mb_contract');
 const MBDefaults       = require('../../mb_trade/mb_defaults');
 const Defaults         = require('../../trade/defaults');
@@ -9,7 +10,6 @@ const ViewPopupUI      = require('../../user/view_popup/view_popup.ui');
 const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
 const addComma         = require('../../../common/currency').addComma;
-const getHighstock     = require('../../../../_common/common_functions').requireHighstock;
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;

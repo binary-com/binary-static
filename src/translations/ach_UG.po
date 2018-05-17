@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-29 21:34-0400\n"
+"PO-Revision-Date: 2018-05-16 22:04-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -24,17 +24,35 @@ msgstr "crwdns41400:0crwdne41400:0"
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "crwdns37412:0%1crwdnd37412:0%1crwdnd37412:0%1crwdnd37412:0%1crwdne37412:0"
 
-msgid "\"AUD/JPY\" or \"Apple\""
-msgstr "crwdns44588:0crwdne44588:0"
+msgid "\"Account\" means Client Trading Account opened with Binary (V) Ltd."
+msgstr "crwdns44647:0crwdne44647:0"
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "crwdns37414:0crwdne37414:0"
 
+msgid "\"Client Agreement\" means the Agreement between the Client and the Company including but not limited to the Terms and Conditions, Order Execution Policy, and Slippage Policy."
+msgstr "crwdns44648:0crwdne44648:0"
+
+msgid "\"Commencement Date of this Agreement\" shall mean the date on which an appointment of a Money Manager is made by the Client."
+msgstr "crwdns44649:0crwdne44649:0"
+
+msgid "\"Company\" means Binary (V) Ltd, operating under the brand or trademark of Binary.com, incorporated and registered in the Republic of Vanuatu, under the International Companies Act Cap. 222 and Financial Dealers Licensing Act (Cap. 70), licensed to provide Investment services and dealing with Securities."
+msgstr "crwdns44650:0crwdne44650:0"
+
 msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
 msgstr "crwdns37415:0%1crwdnd37415:0%1crwdne37415:0"
 
+msgid "\"Money Manager\" means any physical person including any executor, representative, administrator or successor in law, authorised to manage the Account on behalf of the Client in accordance with this Agreement."
+msgstr "crwdns44651:0crwdne44651:0"
+
+msgid "\"Orders\" means any Order or Orders for any transaction, under the Client Agreement and this Multi-Account Manager (MAM) Agreement."
+msgstr "crwdns44652:0crwdne44652:0"
+
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "crwdns37417:0%1crwdne37417:0"
+
+msgid "\"Transaction\" means any purchase or sale of any financial Instrument including but not limited to CFDs, Rolling Spot FX, Commodities and any other securities or products may be offered by the Company to the Client, from time to time in accordance with the Client Agreement."
+msgstr "crwdns44653:0crwdne44653:0"
 
 msgid "$100,000 - $250,000"
 msgstr "crwdns37419:0crwdne37419:0"
@@ -288,6 +306,9 @@ msgstr "crwdns37510:0%1crwdne37510:0"
 msgid "%1 owes you a duty of best execution when executing orders on your behalf, i.e., when you are placing a legitimate reliance on us to safeguard your interest in relation to the execution of your order."
 msgstr "crwdns37511:0%1crwdne37511:0"
 
+msgid "%1 per lot"
+msgstr "crwdns44753:0%1crwdne44753:0"
+
 msgid "%1 provides business partnership services via the following programs."
 msgstr "crwdns37512:0%1crwdne37512:0"
 
@@ -330,6 +351,9 @@ msgstr "crwdns37524:0%1crwdnd37524:0%2crwdne37524:0"
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "crwdns37525:0%1crwdne37525:0"
 
+msgid "%1 transfer fee between different currencies"
+msgstr "crwdns44741:0%1crwdne44741:0"
+
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "crwdns37529:0%1crwdnd37529:0%2crwdnd37529:0%3crwdnd37529:0%4crwdne37529:0"
 
@@ -366,6 +390,9 @@ msgstr "crwdns37543:0%1crwdnd37543:0%2crwdne37543:0"
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "crwdns37544:0%1Ccrwdnd37544:0%2crwdne37544:0"
 
+msgid "%1Download the MAM app%2 after you’ve set up your master account. Your login credentials will be provided"
+msgstr "crwdns44654:0%1crwdnd44654:0%2crwdne44654:0"
+
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "crwdns41779:0%1crwdnd41779:0%2crwdne41779:0"
 
@@ -399,14 +426,8 @@ msgstr "crwdns37554:0crwdne37554:0"
 msgid "(max)"
 msgstr "crwdns37555:0crwdne37555:0"
 
-msgid "**Volatility Indices commission rates in account currency per round trade. Example: A buy of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
-msgstr "crwdns44374:0crwdne44374:0"
-
 msgid "*Already registered as an affiliate? Send us an email at %1 instead."
 msgstr "crwdns44375:0%1crwdne44375:0"
-
-msgid "*Represents the amount in base currency per round trade. Example: A buy of 1 lot of EUR/USD would pay EUR 6 on standard accounts."
-msgstr "crwdns44376:0crwdne44376:0"
 
 msgid "0-1 year"
 msgstr "crwdns37558:0crwdne37558:0"
@@ -416,15 +437,6 @@ msgstr "crwdns37559:0crwdne37559:0"
 
 msgid "0.01 lots"
 msgstr "crwdns43124:0crwdne43124:0"
-
-msgid "0.1 per lot"
-msgstr "crwdns44377:0crwdne44377:0"
-
-msgid "0.25 per lot"
-msgstr "crwdns44378:0crwdne44378:0"
-
-msgid "0.75 per lot"
-msgstr "crwdns44379:0crwdne44379:0"
 
 msgid "1 million transactions/day"
 msgstr "crwdns37560:0crwdne37560:0"
@@ -450,9 +462,6 @@ msgstr "crwdns43125:0crwdne43125:0"
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "crwdns43575:0crwdne43575:0"
 
-msgid "2 per lot"
-msgstr "crwdns44380:0crwdne44380:0"
-
 msgid "2-3 years of applicable experience in a web application testing role"
 msgstr "crwdns37565:0crwdne37565:0"
 
@@ -461,9 +470,6 @@ msgstr "crwdns37566:0crwdne37566:0"
 
 msgid "2. Proof of address"
 msgstr "crwdns41738:0crwdne41738:0"
-
-msgid "2.25 per lot"
-msgstr "crwdns44381:0crwdne44381:0"
 
 msgid "24/7"
 msgstr "crwdns43418:0crwdne43418:0"
@@ -492,9 +498,6 @@ msgstr "crwdns41981:0crwdne41981:0"
 msgid "6 months to 1 year"
 msgstr "crwdns37577:0crwdne37577:0"
 
-msgid "6 per lot"
-msgstr "crwdns44382:0crwdne44382:0"
-
 msgid "6-10 transactions in the past 12 months"
 msgstr "crwdns37578:0crwdne37578:0"
 
@@ -507,11 +510,11 @@ msgstr "crwdns37579:0crwdne37579:0"
 msgid "7-day turnover limit"
 msgstr "crwdns37580:0crwdne37580:0"
 
+msgid "70+"
+msgstr "crwdns44655:0crwdne44655:0"
+
 msgid "75%"
 msgstr "crwdns43126:0crwdne43126:0"
-
-msgid "80+"
-msgstr "crwdns43422:0crwdne43422:0"
 
 msgid "<< Back to Job Descriptions"
 msgstr "crwdns37581:0crwdne37581:0"
@@ -563,6 +566,9 @@ msgstr "crwdns41985:0crwdne41985:0"
 
 msgid "A Forex trader has one objective in mind when trading which is:"
 msgstr "crwdns41986:0crwdne41986:0"
+
+msgid "A MAM account can be assigned to a money manager who will trade on your behalf. You can view all the trades executed by a money manager."
+msgstr "crwdns44656:0crwdne44656:0"
 
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
 msgstr "crwdns37597:0crwdne37597:0"
@@ -692,9 +698,6 @@ msgstr "crwdns37638:0crwdne37638:0"
 
 msgid "ATM"
 msgstr "crwdns41497:0crwdne41497:0"
-
-msgid "AUD 1 per point"
-msgstr "crwdns37639:0crwdne37639:0"
 
 msgid "AUD Index – Measures the value of the Australian Dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%"
 msgstr "crwdns41988:0crwdne41988:0"
@@ -1272,8 +1275,8 @@ msgstr "crwdns37804:0crwdne37804:0"
 msgid "As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company."
 msgstr "crwdns37807:0crwdne37807:0"
 
-msgid "As an EU citizen, you are also required to verify the above documents by %1video call%2."
-msgstr "crwdns37808:0%1crwdnd37808:0%2crwdne37808:0"
+msgid "As an EU resident, you are also required to verify the above documents by %1video call%2."
+msgstr "crwdns44746:0%1crwdnd44746:0%2crwdne44746:0"
 
 msgid "As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the %1 API, and all elements, components, and executables of the %1 API."
 msgstr "crwdns37809:0%1crwdnd37809:0%1crwdne37809:0"
@@ -1335,6 +1338,9 @@ msgstr "crwdns43451:0crwdne43451:0"
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
 msgstr "crwdns37820:0crwdne37820:0"
 
+msgid "Assigned manager's account ID:"
+msgstr "crwdns44657:0crwdne44657:0"
+
 msgid "Assist in the proofreading and recording of video presentations"
 msgstr "crwdns37821:0crwdne37821:0"
 
@@ -1350,8 +1356,8 @@ msgstr "crwdns37824:0crwdne37824:0"
 msgid "Assisting with the regulatory and statutory audit of Binary Group companies worldwide"
 msgstr "crwdns37825:0crwdne37825:0"
 
-msgid "At any time and for any reason or no reason, the Company, in its sole discretion, may:"
-msgstr "crwdns37826:0crwdne37826:0"
+msgid "At any time and for any reason or no reason, the Company, in its sole discretion, may immediately:"
+msgstr "crwdns44726:0crwdne44726:0"
 
 msgid "At least 1 year working experience is required for this position"
 msgstr "crwdns37827:0crwdne37827:0"
@@ -1545,6 +1551,9 @@ msgstr "crwdns37880:0crwdne37880:0"
 msgid "Best of all, there is no minimum deposit requirement."
 msgstr "crwdns43185:0crwdne43185:0"
 
+msgid "Best of all, your commissions are credited into your account instantly."
+msgstr "crwdns44658:0crwdne44658:0"
+
 msgid "BetOnMarkets goes live"
 msgstr "crwdns37881:0crwdne37881:0"
 
@@ -1695,6 +1704,9 @@ msgstr "crwdns37934:0crwdne37934:0"
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "crwdns42035:0crwdne42035:0"
 
+msgid "Binary options transactions fall out of the scope of this Multi-Account Manager (MAM) Agreement."
+msgstr "crwdns44659:0crwdne44659:0"
+
 msgid "Binary's Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan."
 msgstr "crwdns37939:0crwdne37939:0"
 
@@ -1730,6 +1742,9 @@ msgstr "crwdns42039:0crwdne42039:0"
 
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "crwdns42040:0crwdne42040:0"
+
+msgid "Both accounts need to be authenticated separately."
+msgstr "crwdns44754:0crwdne44754:0"
 
 msgid "Both the above"
 msgstr "crwdns37946:0crwdne37946:0"
@@ -1775,6 +1790,9 @@ msgstr "crwdns42053:0crwdne42053:0"
 
 msgid "Buy your first currency pairs"
 msgstr "crwdns42054:0crwdne42054:0"
+
+msgid "By accepting this Agreement, you agree to authorise the Money Manager to manage your Account on your behalf in accordance with the Client Agreement."
+msgstr "crwdns44660:0crwdne44660:0"
 
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "crwdns37958:0crwdne37958:0"
@@ -2001,8 +2019,8 @@ msgstr "crwdns38023:0crwdne38023:0"
 msgid "Christmas Day"
 msgstr "crwdns38024:0crwdne38024:0"
 
-msgid "Citizens of Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr "crwdns44483:0crwdne44483:0"
+msgid "Citizens of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+msgstr "crwdns44727:0crwdne44727:0"
 
 msgid "Classification of assets requiring hedge"
 msgstr "crwdns38027:0crwdne38027:0"
@@ -2070,6 +2088,9 @@ msgstr "crwdns43616:0crwdne43616:0"
 msgid "Client's Liability"
 msgstr "crwdns38047:0crwdne38047:0"
 
+msgid "Client's Representation"
+msgstr "crwdns44661:0crwdne44661:0"
+
 msgid "Client's deposits or withdrawals are immediately reflected in the corresponding master account balance in real time"
 msgstr "crwdns38048:0crwdne38048:0"
 
@@ -2078,9 +2099,6 @@ msgstr "crwdns44484:0crwdne44484:0"
 
 msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
 msgstr "crwdns38050:0crwdne38050:0"
-
-msgid "Clients can close out trades"
-msgstr "crwdns38051:0crwdne38051:0"
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. %1 is not available in the British Virgin Islands."
 msgstr "crwdns44630:0%1crwdne44630:0"
@@ -2129,9 +2147,6 @@ msgstr "crwdns38064:0crwdne38064:0"
 
 msgid "Clients' Money"
 msgstr "crwdns38065:0crwdne38065:0"
-
-msgid "Clients' trade allocations start from 0.01 lots"
-msgstr "crwdns38066:0crwdne38066:0"
 
 msgid "Close"
 msgstr "crwdns43505:0crwdne43505:0"
@@ -2222,6 +2237,9 @@ msgstr "crwdns38089:0crwdne38089:0"
 
 msgid "Company's Obligations"
 msgstr "crwdns41569:0crwdne41569:0"
+
+msgid "Company's Representation"
+msgstr "crwdns44662:0crwdne44662:0"
 
 msgid "Company's Right"
 msgstr "crwdns38090:0crwdne38090:0"
@@ -2478,11 +2496,20 @@ msgstr "crwdns38165:0crwdne38165:0"
 msgid "Create Account"
 msgstr "crwdns38166:0crwdne38166:0"
 
+msgid "Create Financial Account"
+msgstr "crwdns44755:0crwdne44755:0"
+
 msgid "Create Free Account"
 msgstr "crwdns38167:0crwdne38167:0"
 
-msgid "Create MetaTrader 5 %1 account"
-msgstr "crwdns42086:0%1crwdne42086:0"
+msgid "Create MAM Account"
+msgstr "crwdns44663:0crwdne44663:0"
+
+msgid "Create MAM account"
+msgstr "crwdns44664:0crwdne44664:0"
+
+msgid "Create MetaTrader 5 account"
+msgstr "crwdns44665:0crwdne44665:0"
 
 msgid "Create New Account"
 msgstr "crwdns38168:0crwdne38168:0"
@@ -2525,6 +2552,9 @@ msgstr "crwdns43446:0crwdne43446:0"
 
 msgid "Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading in cryptocurrencies is a highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and /or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital."
 msgstr "crwdns43447:0crwdne43447:0"
+
+msgid "Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account."
+msgstr "crwdns44756:0crwdne44756:0"
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "crwdns42091:0crwdne42091:0"
@@ -2609,6 +2639,9 @@ msgstr "crwdns38194:0crwdne38194:0"
 
 msgid "DECLINE"
 msgstr "crwdns41800:0crwdne41800:0"
+
+msgid "Dai"
+msgstr "crwdns44728:0crwdne44728:0"
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively."
 msgstr "crwdns42096:0crwdne42096:0"
@@ -2744,6 +2777,9 @@ msgstr "crwdns38229:0crwdne38229:0"
 
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
 msgstr "crwdns43132:0crwdne43132:0"
+
+msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
+msgstr "crwdns44634:0crwdne44634:0"
 
 msgid "Derivative"
 msgstr "crwdns38231:0crwdne38231:0"
@@ -2904,17 +2940,11 @@ msgstr "crwdns38278:0crwdne38278:0"
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "crwdns38279:0crwdne38279:0"
 
-msgid "Download Now"
-msgstr "crwdns38280:0crwdne38280:0"
-
 msgid "Download for Mac"
 msgstr "crwdns43954:0crwdne43954:0"
 
 msgid "Download for Windows"
 msgstr "crwdns43955:0crwdne43955:0"
-
-msgid "Download the MAM application after setup is completed. Log in with your master account credentials."
-msgstr "crwdns38281:0crwdne38281:0"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "crwdns38282:0crwdne38282:0"
@@ -2996,6 +3026,9 @@ msgstr "crwdns42118:0crwdne42118:0"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "crwdns41570:0crwdne41570:0"
+
+msgid "Each Party shall do anything reasonably required by the other Party to give effect to the terms of this Agreement."
+msgstr "crwdns44666:0crwdne44666:0"
 
 msgid "Each binary option is a prediction on the future movement of an underlying market."
 msgstr "crwdns38305:0crwdne38305:0"
@@ -3095,6 +3128,9 @@ msgstr "crwdns38333:0crwdne38333:0"
 
 msgid "Email:"
 msgstr "crwdns43571:0crwdne43571:0"
+
+msgid "Emercoin vs US Dollar"
+msgstr "crwdns44635:0crwdne44635:0"
 
 msgid "Employed"
 msgstr "crwdns38336:0crwdne38336:0"
@@ -3200,9 +3236,6 @@ msgstr "crwdns38369:0crwdne38369:0"
 
 msgid "Ether Classic"
 msgstr "crwdns38370:0crwdne38370:0"
-
-msgid "Ethereum Classic vs US Dollar"
-msgstr "crwdns43194:0crwdne43194:0"
 
 msgid "Ethereum vs US Dollar"
 msgstr "crwdns43195:0crwdne43195:0"
@@ -3657,6 +3690,9 @@ msgstr "crwdns38488:0crwdne38488:0"
 msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
 msgstr "crwdns43210:0crwdne43210:0"
 
+msgid "For the purposes of this Agreement, the following shall mean:"
+msgstr "crwdns44667:0crwdne44667:0"
+
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "crwdns38489:0crwdne38489:0"
 
@@ -3672,8 +3708,8 @@ msgstr "crwdns38490:0crwdne38490:0"
 msgid "Forex"
 msgstr "crwdns38491:0crwdne38491:0"
 
-msgid "Forex & Metals*"
-msgstr "crwdns44396:0crwdne44396:0"
+msgid "Forex & Metals"
+msgstr "crwdns44757:0crwdne44757:0"
 
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr "crwdns38492:0crwdne38492:0"
@@ -3747,6 +3783,9 @@ msgstr "crwdns38517:0crwdne38517:0"
 msgid "Funding of MT5 Real Account"
 msgstr "crwdns44490:0crwdne44490:0"
 
+msgid "Funds cannot be transferred between financial and gaming accounts."
+msgstr "crwdns44758:0crwdne44758:0"
+
 msgid "Further Instructions"
 msgstr "crwdns38519:0crwdne38519:0"
 
@@ -3767,9 +3806,6 @@ msgstr "crwdns38524:0crwdne38524:0"
 
 msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
 msgstr "crwdns44619:0crwdne44619:0"
-
-msgid "GBP 1 per point"
-msgstr "crwdns38525:0crwdne38525:0"
 
 msgid "GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%"
 msgstr "crwdns42169:0crwdne42169:0"
@@ -4170,6 +4206,9 @@ msgstr "crwdns43560:0crwdne43560:0"
 msgid "I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction."
 msgstr "crwdns38640:0crwdne38640:0"
 
+msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
+msgstr "crwdns44668:0%1crwdnd44668:0%2crwdne44668:0"
+
 msgid "I want to be treated as a professional client."
 msgstr "crwdns41801:0crwdne41801:0"
 
@@ -4253,6 +4292,9 @@ msgstr "crwdns38657:0crwdne38657:0"
 
 msgid "If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect."
 msgstr "crwdns38658:0crwdne38658:0"
+
+msgid "If any terms of this Agreement be held invalid, void, or unenforceable by any relevant authority or regulatory body, the remainder of this Agreement shall remain in full force and effect."
+msgstr "crwdns44669:0crwdne44669:0"
 
 msgid "If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately."
 msgstr "crwdns41576:0crwdne41576:0"
@@ -4719,9 +4761,6 @@ msgstr "crwdns38796:0crwdne38796:0"
 msgid "Instant access"
 msgstr "crwdns38798:0crwdne38798:0"
 
-msgid "Instant, daily, and monthly commissions available to money managers"
-msgstr "crwdns38800:0crwdne38800:0"
-
 msgid "Instructions for Linux"
 msgstr "crwdns43957:0crwdne43957:0"
 
@@ -4739,6 +4778,9 @@ msgstr "crwdns43223:0crwdne43223:0"
 
 msgid "Interested in our MAM tool for MetaTrader 5? Contact us at %1 for more info."
 msgstr "crwdns38803:0%1crwdne38803:0"
+
+msgid "Interested in our MAM tool? %1Contact us%2 for more information on setting up your master account"
+msgstr "crwdns44670:0%1Ccrwdnd44670:0%2crwdne44670:0"
 
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "crwdns38804:0%1crwdne38804:0"
@@ -4910,9 +4952,6 @@ msgstr "crwdns38847:0crwdne38847:0"
 
 msgid "JAPAN ONLY CONTACT TEXT"
 msgstr "crwdns38848:0crwdne38848:0"
-
-msgid "JPY 1 per point"
-msgstr "crwdns38849:0crwdne38849:0"
 
 msgid "Jan"
 msgstr "crwdns38850:0crwdne38850:0"
@@ -5448,6 +5487,9 @@ msgstr "crwdns39028:0crwdne39028:0"
 msgid "L. Event of Default"
 msgstr "crwdns39029:0crwdne39029:0"
 
+msgid "Ladders"
+msgstr "crwdns44641:0crwdne44641:0"
+
 msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
 msgstr "crwdns39030:0crwdne39030:0"
 
@@ -5484,14 +5526,14 @@ msgstr "crwdns39040:0crwdne39040:0"
 msgid "Learn how to read currency pairs, when to go long or short, and how to buy your first currency pair."
 msgstr "crwdns42222:0crwdne42222:0"
 
-msgid "Learn how to set up and authenticate your master account, link sub accounts, and more."
-msgstr "crwdns39041:0crwdne39041:0"
-
 msgid "Learn how to trade with our award-winning binary options platform in this simple step-by-step guide."
 msgstr "crwdns42223:0crwdne42223:0"
 
 msgid "Learn more"
 msgstr "crwdns39042:0crwdne39042:0"
+
+msgid "Learn more about our Multiple Accounts Manager (MAM) facility for money managers"
+msgstr "crwdns44671:0crwdne44671:0"
 
 msgid "Learn more about our corporate culture"
 msgstr "crwdns39043:0crwdne39043:0"
@@ -5640,6 +5682,9 @@ msgstr "crwdns39084:0crwdne39084:0"
 msgid "Litecoin vs US Dollar"
 msgstr "crwdns43224:0crwdne43224:0"
 
+msgid "Live Chat"
+msgstr "crwdns44636:0crwdne44636:0"
+
 msgid "Lock Cashier"
 msgstr "crwdns39085:0crwdne39085:0"
 
@@ -5663,6 +5708,9 @@ msgstr "crwdns39091:0crwdne39091:0"
 
 msgid "Login ID"
 msgstr "crwdns39092:0crwdne39092:0"
+
+msgid "Login ID of money manager who will trade on your behalf"
+msgstr "crwdns44672:0crwdne44672:0"
 
 msgid "Login time:"
 msgstr "crwdns39094:0crwdne39094:0"
@@ -5729,6 +5777,30 @@ msgstr "crwdns39111:0crwdne39111:0"
 
 msgid "M. Manifest Error"
 msgstr "crwdns39112:0crwdne39112:0"
+
+msgid "MAM"
+msgstr "crwdns44673:0crwdne44673:0"
+
+msgid "MAM Accounts"
+msgstr "crwdns44674:0crwdne44674:0"
+
+msgid "MAM Advanced"
+msgstr "crwdns44675:0crwdne44675:0"
+
+msgid "MAM Advanced account"
+msgstr "crwdns44676:0crwdne44676:0"
+
+msgid "MAM Advanced*"
+msgstr "crwdns44677:0crwdne44677:0"
+
+msgid "MAM Volatility Indices"
+msgstr "crwdns44678:0crwdne44678:0"
+
+msgid "MAM Volatility Indices Account"
+msgstr "crwdns44679:0crwdne44679:0"
+
+msgid "MAM Volatility Indices*"
+msgstr "crwdns44680:0crwdne44680:0"
 
 msgid "MENA FFXPO Award"
 msgstr "crwdns39113:0crwdne39113:0"
@@ -5826,6 +5898,9 @@ msgstr "crwdns39124:0crwdne39124:0"
 msgid "Malta"
 msgstr "crwdns39125:0crwdne39125:0"
 
+msgid "Manage MAM account"
+msgstr "crwdns44681:0crwdne44681:0"
+
 msgid "Manage MT5 password"
 msgstr "crwdns44579:0crwdne44579:0"
 
@@ -5846,6 +5921,12 @@ msgstr "crwdns39129:0crwdne39129:0"
 
 msgid "Manage your authorised applications."
 msgstr "crwdns39130:0crwdne39130:0"
+
+msgid "Manager ID"
+msgstr "crwdns44682:0crwdne44682:0"
+
+msgid "Manager successfully revoked"
+msgstr "crwdns44683:0crwdne44683:0"
 
 msgid "Managers"
 msgstr "crwdns39131:0crwdne39131:0"
@@ -5966,15 +6047,6 @@ msgstr "crwdns39171:0%1scrwdnd39171:0%2crwdne39171:0"
 
 msgid "Maximum aggregate payouts on open positions"
 msgstr "crwdns39172:0crwdne39172:0"
-
-msgid "Maximum aggregate payouts on open positions per symbol"
-msgstr "crwdns41502:0crwdne41502:0"
-
-msgid "Maximum aggregate payouts on open positions per symbol and contract type"
-msgstr "crwdns39173:0crwdne39173:0"
-
-msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
-msgstr "crwdns39174:0crwdne39174:0"
 
 msgid "Maximum daily turnover"
 msgstr "crwdns39175:0crwdne39175:0"
@@ -6123,9 +6195,6 @@ msgstr "crwdns41591:0crwdne41591:0"
 msgid "Monday"
 msgstr "crwdns39203:0crwdne39203:0"
 
-msgid "Monero vs US Dollar"
-msgstr "crwdns43227:0crwdne43227:0"
-
 msgid "Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients."
 msgstr "crwdns39204:0crwdne39204:0"
 
@@ -6135,8 +6204,8 @@ msgstr "crwdns39205:0crwdne39205:0"
 msgid "Monies deposited by you with us in advance of a trade or pending withdrawal is treated by us as clients' money. We hold such monies in pooled or omnibus clients' money bank accounts opened with banks or other institutions (\"Institutions\"), segregated from our own money. Such clients' money bank accounts may be opened with EEA Institutions or Institutions outside the EEA. Where clients money is held with non-EEA Institutions this means that such accounts will be subject to laws other than those of an EEA member state and your rights may differ accordingly."
 msgstr "crwdns39206:0crwdne39206:0"
 
-msgid "Monitor and manage your client list, set allocations and exclusions for individual sub accounts, and more."
-msgstr "crwdns39207:0crwdne39207:0"
+msgid "Monitor and manage your client list, adjust settings for individual sub accounts, and more"
+msgstr "crwdns44684:0crwdne44684:0"
 
 msgid "Monitor and optimize website trading activity"
 msgstr "crwdns39208:0crwdne39208:0"
@@ -6192,6 +6261,9 @@ msgstr "crwdns39222:0crwdne39222:0"
 msgid "Multi award-winning trading platform."
 msgstr "crwdns39223:0crwdne39223:0"
 
+msgid "Multi-Account Manager (MAM) Agreement"
+msgstr "crwdns44685:0crwdne44685:0"
+
 msgid "Multi-asset Liquidity Solutions"
 msgstr "crwdns41409:0crwdne41409:0"
 
@@ -6200,6 +6272,9 @@ msgstr "crwdns39224:0crwdne39224:0"
 
 msgid "Multi-asset liquidity solutions"
 msgstr "crwdns39225:0crwdne39225:0"
+
+msgid "Multi-barrier trading"
+msgstr "crwdns44642:0crwdne44642:0"
 
 msgid "Multiple Accounts Manager"
 msgstr "crwdns41411:0crwdne41411:0"
@@ -6399,6 +6474,9 @@ msgstr "crwdns42300:0crwdne42300:0"
 msgid "Note"
 msgstr "crwdns39275:0crwdne39275:0"
 
+msgid "Note:"
+msgstr "crwdns44759:0crwdne44759:0"
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "crwdns41964:0%1crwdne41964:0"
 
@@ -6576,8 +6654,8 @@ msgstr "crwdns39329:0crwdne39329:0"
 msgid "Only numbers, space, and hyphen are allowed."
 msgstr "crwdns39330:0crwdne39330:0"
 
-msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
-msgstr "crwdns39331:0crwdne39331:0"
+msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
+msgstr "crwdns44729:0crwdne44729:0"
 
 msgid "Oops... Page Not Available"
 msgstr "crwdns39332:0crwdne39332:0"
@@ -6686,6 +6764,12 @@ msgstr "crwdns39362:0crwdne39362:0"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "crwdns39363:0crwdne39363:0"
+
+msgid "Our MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account."
+msgstr "crwdns44686:0crwdne44686:0"
+
+msgid "Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
+msgstr "crwdns44687:0crwdne44687:0"
 
 msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
 msgstr "crwdns43472:0crwdne43472:0"
@@ -6801,6 +6885,9 @@ msgstr "crwdns39401:0crwdne39401:0"
 msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
 msgstr "crwdns39402:0crwdne39402:0"
 
+msgid "Over 70 available assets"
+msgstr "crwdns44688:0crwdne44688:0"
+
 msgid "Over two billion dollars in trades to date."
 msgstr "crwdns39403:0crwdne39403:0"
 
@@ -6885,6 +6972,9 @@ msgstr "crwdns41420:0crwdne41420:0"
 msgid "Payment Agent Withdrawal"
 msgstr "crwdns39426:0crwdne39426:0"
 
+msgid "Payment Agent services are not available in your country or in your preferred currency."
+msgstr "crwdns44645:0crwdne44645:0"
+
 msgid "Payment Agent transfer"
 msgstr "crwdns39427:0crwdne39427:0"
 
@@ -6896,9 +6986,6 @@ msgstr "crwdns41595:0crwdne41595:0"
 
 msgid "Payment Methods"
 msgstr "crwdns39429:0crwdne39429:0"
-
-msgid "Payment agent is unavailable in your country."
-msgstr "crwdns39430:0crwdne39430:0"
 
 msgid "Payment methods"
 msgstr "crwdns39431:0crwdne39431:0"
@@ -6990,6 +7077,9 @@ msgstr "crwdns42325:0crwdne42325:0"
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "crwdns39460:0%1acrwdnd39460:0%2crwdne39460:0"
 
+msgid "Please %1authenticate%2 your account before you make a deposit."
+msgstr "crwdns44760:0%1acrwdnd44760:0%2crwdne44760:0"
+
 msgid "Please %1authenticate%2 your account."
 msgstr "crwdns44570:0%1acrwdnd44570:0%2crwdne44570:0"
 
@@ -7040,9 +7130,6 @@ msgstr "crwdns39474:0crwdne39474:0"
 
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "crwdns39475:0crwdne39475:0"
-
-msgid "Please ensure that your current account has been authenticated before you proceed."
-msgstr "crwdns42954:0crwdne42954:0"
 
 msgid "Please enter a number between %1."
 msgstr "crwdns39477:0%1crwdne39477:0"
@@ -7158,9 +7245,6 @@ msgstr "crwdns39508:0crwdne39508:0"
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "crwdns39509:0%1crwdnd39509:0%1crwdne39509:0"
 
-msgid "Please switch to a %1 account to manage funds."
-msgstr "crwdns42330:0%1crwdne42330:0"
-
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "crwdns42331:0crwdne42331:0"
 
@@ -7229,6 +7313,15 @@ msgstr "crwdns42337:0crwdne42337:0"
 
 msgid "Precious metals are harder to come by and are more valuable than industrial metals. Because precious metals are softer and less reactive, they are widely used in jewellery, medical devices, and electronics."
 msgstr "crwdns42338:0crwdne42338:0"
+
+msgid "Predict if the market will rise or fall from its current level, or if it will end higher or lower than a price target"
+msgstr "crwdns44743:0crwdne44743:0"
+
+msgid "Predict if the market will stay between or go outside two price targets"
+msgstr "crwdns44744:0crwdne44744:0"
+
+msgid "Predict if the market will touch or not touch a price target"
+msgstr "crwdns44745:0crwdne44745:0"
 
 msgid "Predict market movement using up/down, touch/no touch, and in/out trade types."
 msgstr "crwdns42339:0crwdne42339:0"
@@ -7422,11 +7515,17 @@ msgstr "crwdns39577:0crwdne39577:0"
 msgid "Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration."
 msgstr "crwdns39578:0crwdne39578:0"
 
+msgid "Provide such information to the licensee as they may reasonably require in order to enable the licensee to comply with their information reporting and other obligations to the UK Gambling Commission."
+msgstr "crwdns44730:0crwdne44730:0"
+
 msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
 msgstr "crwdns39579:0crwdne39579:0"
 
 msgid "Provision of Services"
 msgstr "crwdns41596:0crwdne41596:0"
+
+msgid "Provisions of Agreement"
+msgstr "crwdns44689:0crwdne44689:0"
 
 msgid "Public and corporation bond"
 msgstr "crwdns39580:0crwdne39580:0"
@@ -7650,8 +7749,14 @@ msgstr "crwdns39653:0crwdne39653:0"
 msgid "Remaining time"
 msgstr "crwdns39654:0crwdne39654:0"
 
+msgid "Representation or Warranty"
+msgstr "crwdns44690:0crwdne44690:0"
+
 msgid "Representations and Warranties"
 msgstr "crwdns41598:0crwdne41598:0"
+
+msgid "Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account."
+msgstr "crwdns44761:0crwdne44761:0"
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "crwdns39655:0crwdne39655:0"
@@ -7752,8 +7857,17 @@ msgstr "crwdns39680:0crwdne39680:0"
 msgid "Revisions to the %1 API"
 msgstr "crwdns39681:0%1crwdne39681:0"
 
+msgid "Revoke MAM"
+msgstr "crwdns44691:0crwdne44691:0"
+
+msgid "Revoke Manager"
+msgstr "crwdns44692:0crwdne44692:0"
+
 msgid "Revoke access"
 msgstr "crwdns39682:0crwdne39682:0"
+
+msgid "Revoke manager"
+msgstr "crwdns44693:0crwdne44693:0"
 
 msgid "Right to Terminate"
 msgstr "crwdns39683:0crwdne39683:0"
@@ -7838,6 +7952,9 @@ msgstr "crwdns39711:0crwdne39711:0"
 
 msgid "Score"
 msgstr "crwdns39712:0crwdne39712:0"
+
+msgid "Search..."
+msgstr "crwdns44646:0crwdne44646:0"
 
 msgid "Second line of home address"
 msgstr "crwdns39714:0crwdne39714:0"
@@ -8346,11 +8463,17 @@ msgstr "crwdns39870:0crwdne39870:0"
 msgid "Subject to network latency, we endeavour to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price."
 msgstr "crwdns39871:0crwdne39871:0"
 
+msgid "Subject to the applicable governing law and the Client Agreement, you represent and acknowledge that this Agreement shall be admissible as an evidence in any legal, judicial, administrative, arbitration or mediation proceedings."
+msgstr "crwdns44694:0crwdne44694:0"
+
 msgid "Subject to the availability and sufficiency of funds in your MT5 Real Account, you may withdraw your funds from your MT5 Real Account to your Binary Options Real Account."
 msgstr "crwdns44500:0crwdne44500:0"
 
 msgid "Subject to the law and the terms and/or conditions and/or provisions and/or clauses of this Agreement, the Company shall not be liable, to the Agent for any matter arising out of or in relation to this Agreement."
 msgstr "crwdns41600:0crwdne41600:0"
+
+msgid "Subject to the law and the terms of the Client Agreement, the Company shall not be liable to you or your Money Manager for any matter arising out of or in relation to this Agreement."
+msgstr "crwdns44695:0crwdne44695:0"
 
 msgid "Subject to the law, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to the Agent or Client for any loss, damage or debt whatsoever arising directly or indirectly out of, or in connection with this Agreement. The Agent agrees to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses including all and any legal fees incurred arising out of his failure to comply with any and all of his obligations set forth in this Agreement."
 msgstr "crwdns41601:0crwdne41601:0"
@@ -8475,8 +8598,8 @@ msgstr "crwdns39904:0crwdne39904:0"
 msgid "Term & Termination"
 msgstr "crwdns39905:0crwdne39905:0"
 
-msgid "Terminate this Agreement by giving a minimum of seven days written notice to you."
-msgstr "crwdns39906:0crwdne39906:0"
+msgid "Terminate this Agreement"
+msgstr "crwdns44731:0crwdne44731:0"
 
 msgid "Terminate your use of the %1 API; or"
 msgstr "crwdns39907:0%1crwdne39907:0"
@@ -8667,6 +8790,9 @@ msgstr "crwdns41616:0%1crwdne41616:0"
 msgid "The Company makes no claims that the %1 website will be uninterrupted or provide an error free service, and will not be liable for the consequences of any such errors or interruptions."
 msgstr "crwdns39948:0%1crwdne39948:0"
 
+msgid "The Company may also impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
+msgstr "crwdns44732:0crwdne44732:0"
+
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavour to ensure affiliates are notified when changes have been made to the commission structure."
 msgstr "crwdns39949:0crwdne39949:0"
 
@@ -8679,17 +8805,14 @@ msgstr "crwdns39951:0crwdne39951:0"
 msgid "The Company may impose certain rules and restrictions in relation to the placing of market orders on this website. Such rules may change from time to time, according to market conditions and other factors. The following indicative rules are currently in place:"
 msgstr "crwdns39952:0crwdne39952:0"
 
-msgid "The Company may impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
-msgstr "crwdns44504:0crwdne44504:0"
-
 msgid "The Company may use or disclose (or choose not to use or disclose) such Contributions for any purpose, in any way, in any media worldwide;"
 msgstr "crwdns39954:0crwdne39954:0"
 
 msgid "The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms."
 msgstr "crwdns39955:0crwdne39955:0"
 
-msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,000."
-msgstr "crwdns44505:0crwdne44505:0"
+msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. If you open an account with Binary (Europe) Ltd or Binary (IOM) Ltd, you’ll need to provide us with age verification documentation when you perform a deposit for the first time. If you open an account with Binary (Europe) Ltd, you’ll also be required to provide KYC documentation to verify your identity for cumulative withdrawals of EUR 2,000.00. If you open an account with Binary Investments (Europe) Ltd, you’ll need to provide KYC documentation as part of your account opening process."
+msgstr "crwdns44733:0crwdne44733:0"
 
 msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
 msgstr "crwdns39957:0%1crwdne39957:0"
@@ -8708,6 +8831,9 @@ msgstr "crwdns39961:0crwdne39961:0"
 
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate programme after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "crwdns44506:0crwdne44506:0"
+
+msgid "The Company reserves the right to have in place risk limits, which affects the trading limits of all clients trading, and may not be limited solely to instruments and contract types."
+msgstr "crwdns44734:0crwdne44734:0"
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:"
 msgstr "crwdns39963:0crwdne39963:0"
@@ -8736,11 +8862,17 @@ msgstr "crwdns41617:0crwdne41617:0"
 msgid "The Company shall not be responsible or liable to the Client for any fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default made by the Agent. Likewise, the Company shall not be responsible and/or liable to the Client if any terms and/or conditions and/or provisions of this Agreement are breached by the Agent."
 msgstr "crwdns41618:0crwdne41618:0"
 
+msgid "The Company shall not be responsible or liable to you for any negligence, misconduct, fraudulent acts and omissions made by you or your Money Manager."
+msgstr "crwdns44696:0crwdne44696:0"
+
 msgid "The Company shall not perform any supervisory function in regards with any financial services whatsoever provided by the Agent."
 msgstr "crwdns41619:0crwdne41619:0"
 
 msgid "The Company shall pay you the currently published percentage of net revenues (as detailed on the commission page of your affiliate account) received during the term of the Agreement. The affiliate commission payments due shall only be for bona fide client referrals and the Company reserves the right to disregard duplicate accounts or nominee accounts that the Company sees as non-bona fide clients, at its sole discretion."
 msgstr "crwdns39970:0crwdne39970:0"
+
+msgid "The Company shall provide you with online access to the trading platform on which the balance, margin, credit, and equity is displayed so you are able to monitor the status and performance of the Account. You agree that in case of incongruity, you will immediately contact the Company at %1."
+msgstr "crwdns44697:0%1crwdne44697:0"
 
 msgid "The Company shall provide you with statements accessible through an electronic system detailing the revenues generated by clients you have referred, if any, which have accrued to you over the course of the calendar month. Such statements shall be updated daily. At the end of a calendar month, the Company shall record your total share of Net Revenues, if any, during the previous calendar month. In the event that a revenue share in any calendar month is a negative amount, the Company shall be entitled but not obliged to carry forward and set off such negative amount against future revenue shares which would otherwise be payable to you. However, the Company shall also be entitled but not obliged to zeroise the negative balance that would otherwise be carried forward."
 msgstr "crwdns44508:0crwdne44508:0"
@@ -8787,6 +8919,12 @@ msgstr "crwdns42398:0crwdne42398:0"
 msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lots</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
 msgstr "crwdns39984:0crwdne39984:0"
 
+msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
+msgstr "crwdns44698:0crwdne44698:0"
+
+msgid "The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
+msgstr "crwdns44699:0crwdne44699:0"
+
 msgid "The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control."
 msgstr "crwdns39988:0crwdne39988:0"
 
@@ -8801,9 +8939,6 @@ msgstr "crwdns42399:0crwdne42399:0"
 
 msgid "The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall deprive of the right to released form any responsibility, under this Agreement where it fails to duly notify the other Party on time."
 msgstr "crwdns41621:0crwdne41621:0"
-
-msgid "The Payment Agent facility is currently not available in your country."
-msgstr "crwdns39991:0crwdne39991:0"
 
 msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
 msgstr "crwdns39992:0crwdne39992:0"
@@ -9111,8 +9246,8 @@ msgstr "crwdns40098:0crwdne40098:0"
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "crwdns40099:0crwdne40099:0"
 
-msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
-msgstr "crwdns40100:0crwdne40100:0"
+msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
+msgstr "crwdns44735:0crwdne44735:0"
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote Binary (V) Ltd."
 msgstr "crwdns40101:0%1crwdne40101:0"
@@ -9225,6 +9360,9 @@ msgstr "crwdns42420:0crwdne42420:0"
 msgid "This Agreement constitutes the entire Agreement between the Parties and no earlier representation or arrangement or agreement written or oral relating to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
 msgstr "crwdns41624:0crwdne41624:0"
 
+msgid "This Agreement constitutes the entire Agreement between the Parties and no earlier representation, arrangement or agreement written or oral relation to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
+msgstr "crwdns44700:0crwdne44700:0"
+
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "crwdns40141:0crwdne40141:0"
 
@@ -9234,8 +9372,14 @@ msgstr "crwdns40142:0crwdne40142:0"
 msgid "This Agreement is between Binary (C.R) S.A. (hereinafter referred to as “the Company” or “%1”, “we”, “us”, “our”, “ours”, “it”, “its”) and Payment Agent (hereinafter referred to as “the Agent”, “he”, “his”, “him”, “himself”, “it”, “its”, “itself”), both of whom agree to be bound by this Agreement."
 msgstr "crwdns41625:0%1crwdne41625:0"
 
+msgid "This Agreement is between Binary (V) Ltd (hereinafter referred to as 'the Company') and Client who authorises a Multi-Account Manager (hereinafter referred to as 'Money Manager') to manage the Account on behalf of the Client, both of whom agree to bound by this Agreement as a supplement to the Client Agreement."
+msgstr "crwdns44701:0crwdne44701:0"
+
 msgid "This Agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy or misspelling and as a result by misunderstanding or misinterpretation of any of the terms and/or conditions and/or clauses and/or provisions of any translated versions of this Agreement."
 msgstr "crwdns41626:0crwdne41626:0"
+
+msgid "This Agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail."
+msgstr "crwdns44702:0crwdne44702:0"
 
 msgid "This Agreement is supplied to you in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. We will not be made responsible for any damage or loss caused by an error, inaccuracy, misunderstanding or misspelling with regards to the translations."
 msgstr "crwdns40143:0crwdne40143:0"
@@ -9411,6 +9555,9 @@ msgstr "crwdns40193:0crwdne40193:0"
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "crwdns40194:0%1crwdne40194:0"
 
+msgid "To create a MAM real account, please:"
+msgstr "crwdns44703:0crwdne44703:0"
+
 msgid "To create a MetaTrader 5 real account, please:"
 msgstr "crwdns43152:0crwdne43152:0"
 
@@ -9455,6 +9602,9 @@ msgstr "crwdns44518:0%1crwdne44518:0"
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "crwdns40205:0%1crwdnd40205:0%2crwdne40205:0"
+
+msgid "To perform this action, please set the %1currency%2 of your account."
+msgstr "crwdns44742:0%1ccrwdnd44742:0%2crwdne44742:0"
 
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "crwdns40206:0%1crwdne40206:0"
@@ -9537,6 +9687,9 @@ msgstr "crwdns42441:0crwdne42441:0"
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "crwdns42442:0crwdne42442:0"
 
+msgid "Trade FX binary options on our multi-barrier platform, Ladders."
+msgstr "crwdns44643:0crwdne44643:0"
+
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "crwdns43251:0crwdne43251:0"
 
@@ -9590,6 +9743,9 @@ msgstr "crwdns42452:0crwdne42452:0"
 
 msgid "Trade metals on competitive fixed and variable spreads."
 msgstr "crwdns42453:0crwdne42453:0"
+
+msgid "Trade now"
+msgstr "crwdns44644:0crwdne44644:0"
 
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "crwdns42454:0crwdne42454:0"
@@ -9659,6 +9815,9 @@ msgstr "crwdns44617:0crwdne44617:0"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "crwdns40261:0crwdne40261:0"
+
+msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
+msgstr "crwdns44637:0%1ccrwdnd44637:0%2crwdne44637:0"
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
 msgstr "crwdns41546:0%1crwdnd41546:0%2crwdne41546:0"
@@ -9963,20 +10122,20 @@ msgstr "crwdns40342:0crwdne40342:0"
 msgid "Upon opening a Transaction, the sum due and payable by you to us are deducted from your Account Balance."
 msgstr "crwdns40343:0crwdne40343:0"
 
+msgid "Upon revocation, you acknowledge and understand that your Money Manager will lose all authorisation to manage your Account."
+msgstr "crwdns44704:0crwdne44704:0"
+
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "crwdns40344:0%1crwdnd40344:0%1crwdne40344:0"
 
 msgid "Usage Limit"
 msgstr "crwdns40345:0crwdne40345:0"
 
-msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes"
-msgstr "crwdns40346:0crwdne40346:0"
+msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes, starting from 0.01 lots"
+msgstr "crwdns44705:0crwdne44705:0"
 
 msgid "Use appropriate terminology, taking into account the style and nuance of the original text"
 msgstr "crwdns40347:0crwdne40347:0"
-
-msgid "Use multiple exclusion rules to temporarily exclude client accounts from allocations without affecting their current positions"
-msgstr "crwdns40348:0crwdne40348:0"
 
 msgid "Use of Information"
 msgstr "crwdns40349:0crwdne40349:0"
@@ -9989,6 +10148,9 @@ msgstr "crwdns40351:0crwdne40351:0"
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
 msgstr "crwdns40352:0crwdne40352:0"
+
+msgid "Use two different exclusion types: 'Allocation' excludes a client from future trades only, while 'Full' also closes open positions and removes its balance from the master account. Clients can choose to close any open position."
+msgstr "crwdns44706:0crwdne44706:0"
 
 msgid "Use your unique affiliate link and the marketing tools we provide to advertise %1 to your audience."
 msgstr "crwdns43908:0%1crwdne43908:0"
@@ -10068,8 +10230,8 @@ msgstr "crwdns40368:0crwdne40368:0"
 msgid "View available payment methods"
 msgstr "crwdns40369:0crwdne40369:0"
 
-msgid "View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price, SL, TP, swap, and profit"
-msgstr "crwdns40370:0crwdne40370:0"
+msgid "View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price,  stop loss, take profit, swap, and profit"
+msgstr "crwdns44707:0crwdne44707:0"
 
 msgid "View open positions"
 msgstr "crwdns40372:0crwdne40372:0"
@@ -10143,8 +10305,8 @@ msgstr "crwdns43269:0crwdne43269:0"
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "crwdns42489:0crwdne42489:0"
 
-msgid "Volatility Indices**"
-msgstr "crwdns44422:0crwdne44422:0"
+msgid "Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
+msgstr "crwdns44762:0crwdne44762:0"
 
 msgid "Volume"
 msgstr "crwdns42491:0crwdne42491:0"
@@ -10190,9 +10352,6 @@ msgstr "crwdns40403:0crwdne40403:0"
 
 msgid "We accept"
 msgstr "crwdns41775:0crwdne41775:0"
-
-msgid "We aim to establish and maintain and operate effective organisational and administrative arrangements with a view to taking all reasonable steps to prevent conflicts of interest from constituting or giving rise to a material risk of damage to the interests of our clients."
-msgstr "crwdns40404:0crwdne40404:0"
 
 msgid "We aim to keep a record of the kinds of activity we carry on in which a material conflict could arise or has arisen. We also maintain procedures to manage actual or potential conflicts. This includes procedures to maintain appropriate independence between members of our staff who are involved in potentially conflicting activities, for example, through the operation of information barriers, physical separation of staff, the segregation of duties and responsibilities and maintenance of a policy of independence which requires our staff, when providing services to a client, to act in the best interests of the client and to disregard any conflicts of interest; and, in some circumstances declining to act for a client or potential client."
 msgstr "crwdns40405:0crwdne40405:0"
@@ -10347,9 +10506,6 @@ msgstr "crwdns42500:0crwdne42500:0"
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
 msgstr "crwdns40456:0crwdne40456:0"
 
-msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
-msgstr "crwdns40457:0crwdne40457:0"
-
 msgid "We will act on any instructions given, or appearing to be given by you and received by us in relation to the margin trading services provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us."
 msgstr "crwdns40458:0crwdne40458:0"
 
@@ -10395,8 +10551,14 @@ msgstr "crwdns40476:0crwdne40476:0"
 msgid "Weekday"
 msgstr "crwdns40477:0crwdne40477:0"
 
+msgid "Weekdays:"
+msgstr "crwdns44638:0crwdne44638:0"
+
 msgid "Weekend quotes"
 msgstr "crwdns40478:0crwdne40478:0"
+
+msgid "Weekend:"
+msgstr "crwdns44639:0crwdne44639:0"
 
 msgid "Welcome to Binary.com"
 msgstr "crwdns41422:0crwdne41422:0"
@@ -10436,6 +10598,9 @@ msgstr "crwdns42504:0crwdne42504:0"
 
 msgid "What is Forex trading"
 msgstr "crwdns42505:0crwdne42505:0"
+
+msgid "What is a MAM account?"
+msgstr "crwdns44708:0crwdne44708:0"
 
 msgid "What is cryptocurrency trading"
 msgstr "crwdns42506:0crwdne42506:0"
@@ -10683,9 +10848,6 @@ msgstr "crwdns42528:0crwdne42528:0"
 msgid "Winning the contract"
 msgstr "crwdns40553:0crwdne40553:0"
 
-msgid "Winnings may only be paid to the initiator of an account. When a Client maintains an account by means of telegraphic deposits, winnings are only paid to the holder of the originating bank account, and it is the onus of the Client to ensure that account number and name accompany all transfers to the Company. When a Client maintains an account by means of credit/debit card deposits, winnings are only paid back to the same card."
-msgstr "crwdns40554:0crwdne40554:0"
-
 msgid "With %1, you can count on us to serve you with integrity and reliability."
 msgstr "crwdns40556:0%1crwdne40556:0"
 
@@ -10725,17 +10887,23 @@ msgstr "crwdns40567:0crwdne40567:0"
 msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr "crwdns44531:0crwdne44531:0"
 
-msgid "Withdrawal of funds from your MT5 Real Account must be made in the same currency maintained in your Binary Options Real Account."
-msgstr "crwdns44532:0crwdne44532:0"
-
 msgid "Withdrawal: %1 working day"
 msgstr "crwdns41931:0%1crwdne41931:0"
 
 msgid "Withdrawal: Not applicable"
 msgstr "crwdns41933:0crwdne41933:0"
 
+msgid "Withdrawals have been disabled on your account. Please check your email for more details."
+msgstr "crwdns44640:0crwdne44640:0"
+
+msgid "Withdrawals may only be paid to the initiator of an account. When a Client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the Client to ensure that account number and name accompany all transfers to the Company. When a Client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card."
+msgstr "crwdns44736:0crwdne44736:0"
+
 msgid "Without margin, purchasing one lot of the XAU/USD pair will cost you:"
 msgstr "crwdns42532:0crwdne42532:0"
+
+msgid "Without prejudice of any right of the Company to decline any Order placed by the Money Manager, you hereby authorise the Company to accept Orders from the Money Manager and proceed transactions for your Account."
+msgstr "crwdns44709:0crwdne44709:0"
 
 msgid "Without prejudice to any other terms of this Agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to you in relation to any loss that you incurred whether directly or indirectly by any cause beyond our control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 Trading Platform or any systems or network links."
 msgstr "crwdns40570:0crwdne40570:0"
@@ -10788,6 +10956,9 @@ msgstr "crwdns43921:0crwdne43921:0"
 msgid "You acknowledge and accept that a Transaction may be subject to market rules laid down in by-laws, rules, provisions, customs, and practices of an exchange, a market, a clearing house, a body or any other organisation involved in the execution, clearing, and/or settlement of said Transaction. Should any such organisation take decisions or measures which affect a Transaction or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) which it, at its sole discretion, considers reasonable. This clause does not apply to Volatility Indices."
 msgstr "crwdns40591:0crwdne40591:0"
 
+msgid "You acknowledge and agree that it is your absolute responsibility to ensure that all orders or positions have been closed in your Account prior to revocation."
+msgstr "crwdns44710:0crwdne44710:0"
+
 msgid "You acknowledge and agree that the Company may, at any time without prior notice and at its discretion, change the trading rules in relation to:"
 msgstr "crwdns40593:0crwdne40593:0"
 
@@ -10803,8 +10974,23 @@ msgstr "crwdns40596:0crwdne40596:0"
 msgid "You acknowledge that it is your responsibility to understand the features, characteristics, terms and conditions of an Order and the implications of executing an Order before you place an Order with us."
 msgstr "crwdns40597:0crwdne40597:0"
 
-msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the latter, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
-msgstr "crwdns40598:0crwdne40598:0"
+msgid "You acknowledge that the Company cannot guarantee that the Software provided to the Money Manager is free of any errors. Thus, you agree that the Company shall not be liable or responsible for any damage and loss that incurs as a result of such error."
+msgstr "crwdns44711:0crwdne44711:0"
+
+msgid "You acknowledge that the Company may accept Orders and proceed with transactions for your Account executed by any employees or representatives of the Money Manager."
+msgstr "crwdns44712:0crwdne44712:0"
+
+msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
+msgstr "crwdns44737:0crwdne44737:0"
+
+msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgstr "crwdns44713:0crwdne44713:0"
+
+msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
+msgstr "crwdns44714:0crwdne44714:0"
+
+msgid "You acknowledge that the Money Manager is not authorised to withdraw or give instructions in relation to any payment transactions for your Account to any person other than yourself. Likewise, the Money Manager is not authorised to accept or amend any of the terms of the Client Agreement."
+msgstr "crwdns44715:0crwdne44715:0"
 
 msgid "You acknowledge that we may use, store, or otherwise process personal information provided by you in connection with the provision of margin trading services described in this Agreement. You consent to the processing and transmittal of your personal information for the purposes of performing the contract and administering the relationship between you and us."
 msgstr "crwdns40599:0crwdne40599:0"
@@ -10815,6 +11001,15 @@ msgstr "crwdns40600:0crwdne40600:0"
 msgid "You acknowledge that we reserve the right to void or close out one or more of your Transactions if we observe any breaches of warranty given under this Agreement."
 msgstr "crwdns40601:0crwdne40601:0"
 
+msgid "You acknowledge that you have full legal power and capacity to submit and execute this Agreement and grant authorisation to the Money Manager to place any Order or proceed any transaction for your Account."
+msgstr "crwdns44716:0crwdne44716:0"
+
+msgid "You acknowledge that your Account shall be managed and traded only by the Money Manager and not by any other third parties."
+msgstr "crwdns44717:0crwdne44717:0"
+
+msgid "You acknowledge that your decision to assign all rights in relation to the management, trading and operation of the Account to the Money Manager is duly clear, voluntary and unqualified. You also declare that you took into consideration the risks associated with trading of Rolling Spot FX, CFDs, Commodities and any other securities or products that may be offered by the Company to you, from time to time in accordance with the Client Agreement."
+msgstr "crwdns44718:0crwdne44718:0"
+
 msgid "You acknowledge that, in the course of dealing under these Terms, you may obtain confidential information relating to the Company and its parent, subsidiaries, affiliates or other third party. Such confidential information shall belong solely to the Company."
 msgstr "crwdns40602:0crwdne40602:0"
 
@@ -10824,8 +11019,17 @@ msgstr "crwdns40603:0crwdne40603:0"
 msgid "You act in breach of any warranty or representation made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
 msgstr "crwdns40604:0crwdne40604:0"
 
+msgid "You agree and authorise the Company to disclose to the Money Manager any data or information related to your Account."
+msgstr "crwdns44719:0crwdne44719:0"
+
+msgid "You agree and authorise the Money Manager to place all Orders and transactions for your Account in the same way and validity as you might place such Orders for your Account."
+msgstr "crwdns44720:0crwdne44720:0"
+
 msgid "You agree that by developing on the %1 API, you are entering into a legally binding agreement with the Company."
 msgstr "crwdns40605:0%1crwdne40605:0"
+
+msgid "You agree that this Agreement shall become effective on the Commencement Date. You also agree that unless this Agreement is revoked or terminated in accordance with Section E below, this Agreement shall remain valid and in full force."
+msgstr "crwdns44721:0crwdne44721:0"
 
 msgid "You agree that we may use Personal Information provided by you in order to conduct appropriate anti-fraud checks. Personal Information that you provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information."
 msgstr "crwdns44533:0crwdne44533:0"
@@ -10887,6 +11091,9 @@ msgstr "crwdns40620:0%1crwdne40620:0"
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "crwdns42536:0crwdne42536:0"
 
+msgid "You are unilaterally entitled to request the revocation of the appointment of your Money Manager by electronically revoking your Money Manager's authorisation through the relevant functions provided in the system."
+msgstr "crwdns44722:0crwdne44722:0"
+
 msgid "You are warned of the following additional risks:"
 msgstr "crwdns40621:0crwdne40621:0"
 
@@ -10898,6 +11105,9 @@ msgstr "crwdns43922:0crwdne43922:0"
 
 msgid "You can choose to be treated as a Retail Client at any time, even if you would qualify as a Professional Client."
 msgstr "crwdns43594:0crwdne43594:0"
+
+msgid "You can close this window without interrupting your trade."
+msgstr "crwdns44763:0crwdne44763:0"
 
 msgid "You can determine the margin for our CFDs by using the formula below:"
 msgstr "crwdns42537:0crwdne42537:0"
@@ -10941,6 +11151,9 @@ msgstr "crwdns42543:0%1crwdne42543:0"
 msgid "You further acknowledge and agree that we will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused, or alleged to be caused by, or in connection with a Manifest Error."
 msgstr "crwdns40633:0crwdne40633:0"
 
+msgid "You further agree to indemnify the Company from any loss, damage or liability arising out of your failure or refuse to confirm all Orders and/or transactions proceeded."
+msgstr "crwdns44723:0crwdne44723:0"
+
 msgid "You have all necessary authority, powers, consents, licences and authorisations and have taken all necessary actions to enable you to enter into, and perform this Agreement and such Transactions lawfully;"
 msgstr "crwdns40634:0crwdne40634:0"
 
@@ -10968,6 +11181,9 @@ msgstr "crwdns40642:0crwdne40642:0"
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "crwdns40643:0crwdne40643:0"
 
+msgid "You have placed digital advertisements for the licensed activities on websites providing unauthorised access to copyrighted content."
+msgstr "crwdns44738:0crwdne44738:0"
+
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of Forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "crwdns42545:0crwdne42545:0"
 
@@ -10992,11 +11208,11 @@ msgstr "crwdns40647:0crwdne40647:0"
 msgid "You have sold this contract at %1 %2"
 msgstr "crwdns40648:0%1crwdnd40648:0%2crwdne40648:0"
 
+msgid "You have successfully created your %1account!"
+msgstr "crwdns44764:0%1acrwdne44764:0"
+
 msgid "You have successfully created your Virtual Account."
 msgstr "crwdns44600:0crwdne44600:0"
-
-msgid "You have successfully created your account!"
-msgstr "crwdns40649:0crwdne40649:0"
 
 msgid "You have sufficient experience and knowledge in matters of contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site."
 msgstr "crwdns44537:0crwdne44537:0"
@@ -11009,6 +11225,9 @@ msgstr "crwdns44538:0crwdne44538:0"
 
 msgid "You hereby agree that you will not participate in any illegal, deceptive, misleading or unethical practices including, but not limited to, disparagement of the MT5 Trading Platform or other practices which may be detrimental to the MT5 Trading Platform, Licensor or the public interest."
 msgstr "crwdns40653:0crwdne40653:0"
+
+msgid "You hereby confirm that in addition to the Client Agreement, you have carefully read and duly understood the contents of this Agreement and agree to be legally bound thereby."
+msgstr "crwdns44724:0crwdne44724:0"
 
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr "crwdns40654:0crwdne40654:0"
@@ -11043,6 +11262,9 @@ msgstr "crwdns40665:0crwdne40665:0"
 msgid "You may only open an account at this site on condition that:"
 msgstr "crwdns40666:0crwdne40666:0"
 
+msgid "You may revoke the current manager's access."
+msgstr "crwdns44725:0crwdne44725:0"
+
 msgid "You may specify your instruction of a Stop Order or a Limit Order may be applied for a limited duration or for an indefinite period (a \"good till cancelled\" or \"GTC\" Order)."
 msgstr "crwdns40667:0crwdne40667:0"
 
@@ -11060,6 +11282,9 @@ msgstr "crwdns40672:0crwdne40672:0"
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "crwdns40673:0%1crwdne40673:0"
+
+msgid "You must ensure that you do not place digital advertisements on websites providing unauthorised access to copyrighted content."
+msgstr "crwdns44739:0crwdne44739:0"
 
 msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
 msgstr "crwdns40674:0crwdne40674:0"
@@ -11121,8 +11346,8 @@ msgstr "crwdns40694:0%1crwdne40694:0"
 msgid "You shall not resort to high-pressure sales tactics or false promises."
 msgstr "crwdns40695:0crwdne40695:0"
 
-msgid "You shall not target any of your marketing, advertising, and promotional activities to any persons under the age of 18 years old."
-msgstr "crwdns40696:0crwdne40696:0"
+msgid "You shall not target any of your marketing, advertising, and promotional activities to any persons unless they are over 18 years old, or for Estonian residents whereby they have to be over 21 years old."
+msgstr "crwdns44740:0crwdne44740:0"
 
 msgid "You should enter %1 characters."
 msgstr "crwdns40697:0%1crwdne40697:0"
@@ -11283,6 +11508,9 @@ msgstr "crwdns40745:0%1crwdne40745:0"
 msgid "Your fund transfer is successful. Your new balances are:"
 msgstr "crwdns40746:0crwdne40746:0"
 
+msgid "Your gaming account (MX) limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead."
+msgstr "crwdns44765:0crwdne44765:0"
+
 msgid "Your name, email address and contact number"
 msgstr "crwdns40747:0crwdne40747:0"
 
@@ -11363,9 +11591,6 @@ msgstr "crwdns43595:0crwdne43595:0"
 
 msgid "You’ve worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "crwdns43596:0crwdne43596:0"
-
-msgid "Zcash vs US Dollar"
-msgstr "crwdns43273:0crwdne43273:0"
 
 msgid "a definite or indefinite period during which you wish to exclude yourself from the website."
 msgstr "crwdns40772:0crwdne40772:0"
@@ -11456,6 +11681,9 @@ msgstr "crwdns41649:0crwdne41649:0"
 
 msgid "for account %1"
 msgstr "crwdns44587:0%1crwdne44587:0"
+
+msgid "gaming"
+msgstr "crwdns44766:0crwdne44766:0"
 
 msgid "h"
 msgstr "crwdns40796:0crwdne40796:0"

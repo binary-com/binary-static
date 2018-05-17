@@ -1,8 +1,8 @@
-const CreateDropdown     = require('binary-style').selectDropdown;
-const Symbols      = require('../symbols');
-const BinarySocket = require('../../../base/socket');
-const getHighstock = require('../../../../_common/common_functions').requireHighstock;
-const localize     = require('../../../../_common/localize').localize;
+const CreateDropdown = require('@binary-com/binary-style').selectDropdown;
+const getHighstock   = require('../common').requireHighstock;
+const Symbols        = require('../symbols');
+const BinarySocket   = require('../../../base/socket');
+const localize       = require('../../../../_common/localize').localize;
 
 const DigitInfo = (() => {
     let spots          = [];

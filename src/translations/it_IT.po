@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-04-29 21:33-0400\n"
+"PO-Revision-Date: 2018-05-16 22:02-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -24,17 +24,35 @@ msgstr "404"
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" indica l'insieme delle routine programmatiche, protocolli e risorse di proprietà di %1 create e gestite da %1 che ti consentono di usare un'Applicazione registrata per interagire con la piattaforma di trading di %1."
 
-msgid "\"AUD/JPY\" or \"Apple\""
-msgstr "\"AUD/JPY\" o \"Apple\""
+msgid "\"Account\" means Client Trading Account opened with Binary (V) Ltd."
+msgstr "\"Conto\" si riferisce al conto per il trading del cliente aperto con Binary (V) Ltd."
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "Le opzioni \"binarie\" o \"digitali\" sono delle opzioni per le quali viene pagato un importo fisso, prestabilito, in base al verificarsi o meno di un evento alla scadenza dell'Opzione binaria. Le Opzioni binarie possono avere solo uno dei due risultati possibili e consentono di avere un approccio semplice del tipo \"Si o No\". Così come le opzioni tradizionali, le Opzioni binarie si basano su un asset sottostante, ossia valute, materie prime, indici o azioni. Tuttavia, una delle differenze principali rispetto alle opzioni tradizionali è, tra le altre, quella di poter produrre solo due risultati per la stessa opzione: il cliente può ottenere un rendimento al verificarsi dell'evento oppure può perdere l'importo dell'investimento come stabilito in ogni opzione."
 
+msgid "\"Client Agreement\" means the Agreement between the Client and the Company including but not limited to the Terms and Conditions, Order Execution Policy, and Slippage Policy."
+msgstr "\"Contratto con il Cliente\" indica il contratto tra il Cliente e la Società, inclusi, ma senza limitazione alcuna, i termini e le condizioni, la politica di esecuzione degli ordini e la politica sulla slippage."
+
+msgid "\"Commencement Date of this Agreement\" shall mean the date on which an appointment of a Money Manager is made by the Client."
+msgstr "\"Data di inizio del Contratto\" indica la data in cui il Cliente nomina un gestore di fondi."
+
+msgid "\"Company\" means Binary (V) Ltd, operating under the brand or trademark of Binary.com, incorporated and registered in the Republic of Vanuatu, under the International Companies Act Cap. 222 and Financial Dealers Licensing Act (Cap. 70), licensed to provide Investment services and dealing with Securities."
+msgstr "\"Società\" indica Binary (V) Ltd, operativa con il marchio Binary.com, costituita e registrata nella Repubblica di Vanuatu ai sensi dell'International Companies Act (Cap. 222) e del Financial Dealers Licensing Act (Cap. 70), autorizzata a fornire servizi d'investimento e a operare con titoli."
+
 msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
 msgstr "\"Contenuto\" indica qualsiasi dato o contenuto del nostro Sito internet o cui si può accedere tramite l'API. Il nostro \"Sito internet\" indica il sito internet di %1 su www.binary.com e qualsiasi altro sito o servizio di proprietà o gestito da %1."
 
+msgid "\"Money Manager\" means any physical person including any executor, representative, administrator or successor in law, authorised to manage the Account on behalf of the Client in accordance with this Agreement."
+msgstr "\"Gestore di fondi\" indica ogni persona fisica, inclusi esecutori, rappresentanti, amministratori e legittimi successori, autorizzata a gestire il conto a nome del Cliente ai sensi del presente Contratto."
+
+msgid "\"Orders\" means any Order or Orders for any transaction, under the Client Agreement and this Multi-Account Manager (MAM) Agreement."
+msgstr "\"Ordini\" indica ogni ordine per qualsiasi tipo di operazione, ai sensi del contratto con il Cliente e del presente contratto Multi-Account Manager (MAM)."
+
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"Provider esterno(i)\" indica un'organizzazione esterna (non affiliata) che rende disponibile le funzionalità e le funzioni attraverso l'uso dell'API di %1."
+
+msgid "\"Transaction\" means any purchase or sale of any financial Instrument including but not limited to CFDs, Rolling Spot FX, Commodities and any other securities or products may be offered by the Company to the Client, from time to time in accordance with the Client Agreement."
+msgstr "\"Transazione\" indica l'acquisto o la vendita di uno strumento finanziario inclusi, ma senza limitazioni a essi, CFD, Rolling Spot FX, materie prime ed eventuali titoli o prodotti che la Società potrebbe offrire al Cliente in alcune circostanze, ai sensi del contratto con il Cliente."
 
 msgid "$100,000 - $250,000"
 msgstr "$100.000 - $250.000"
@@ -288,6 +306,9 @@ msgstr "%1 apre una sede nella struttura di QSentral, nella centrale Kuala Lumpu
 msgid "%1 owes you a duty of best execution when executing orders on your behalf, i.e., when you are placing a legitimate reliance on us to safeguard your interest in relation to the execution of your order."
 msgstr "%1 ha l'obbligo della migliore esecuzione possibile quando vengono eseguiti ordini per tuo conto, cioè quando fai legittimo affidamento su di noi per salvaguardare il tuo interesse in relazione all'esecuzione del tuo ordine."
 
+msgid "%1 per lot"
+msgstr "%1 per lotto"
+
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 fornisce servizi di partnership aziendale attraverso i seguenti programmi."
 
@@ -330,6 +351,9 @@ msgstr "%1 supporta %2 che è la principale organizzazione di beneficenza del Re
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 ottiene il primo premio nella categoria Financial Betting Operator durante la prestigiosa cerimonia degli EGR Operator Awards 2015, tenutasi a Londra."
 
+msgid "%1 transfer fee between different currencies"
+msgstr "Commissione di trasferimento %1 tra valute diverse"
+
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
 msgstr "Il prelievo di %1 dall'account numero %2 su %3 è stato eseguito. ID della transazione: %4"
 
@@ -366,6 +390,9 @@ msgstr "%1Convalida il tuo account%2 ora per approfittare di tutti i metodi di p
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Contattaci%2 per organizzare una data e un orario per una video chiamata."
 
+msgid "%1Download the MAM app%2 after you’ve set up your master account. Your login credentials will be provided"
+msgstr "%1Scarica l'app MAM%2 dopo aver creato il tuo conto master. Riceverai le tue credenziali di accesso"
+
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1 La Verifica dell'identità o la Verifica della residenza%2 non hanno soddisfatto i nostri requisiti. Controlla la tua e-mail per ulteriori istruzioni."
 
@@ -399,14 +426,8 @@ msgstr "(Prezzo di vendita - Prezzo d'acquisto) x Volume x Prezzo per punto = Pr
 msgid "(max)"
 msgstr "(max)"
 
-msgid "**Volatility Indices commission rates in account currency per round trade. Example: A buy of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
-msgstr "**Commissioni per indici di volatilità nella valuta del conto per trade. Esempio: un acquisto di 1 lotto di indice di volatilità 100 varrebbe 0,75 USD per un conto denominato in USD."
-
 msgid "*Already registered as an affiliate? Send us an email at %1 instead."
 msgstr "*Sei già registrato come associato? Allora scrivici all'indirizzo e-mail %1."
-
-msgid "*Represents the amount in base currency per round trade. Example: A buy of 1 lot of EUR/USD would pay EUR 6 on standard accounts."
-msgstr "Rappresenta il totale nella valuta di base per trade. Esempio: un acquisto di 1 lotto di EUR/USD varrebbe 6 EUR per i conti standard."
 
 msgid "0-1 year"
 msgstr "da 0 a 1 anno"
@@ -416,15 +437,6 @@ msgstr "0-5 transazioni negli ultimi 12 mesi"
 
 msgid "0.01 lots"
 msgstr "0.01 lotti"
-
-msgid "0.1 per lot"
-msgstr "0,1 per lotto"
-
-msgid "0.25 per lot"
-msgstr "0,25 per lotto"
-
-msgid "0.75 per lot"
-msgstr "0,75 per lotto"
 
 msgid "1 million transactions/day"
 msgstr "1 milione di transazioni al giorno"
@@ -450,9 +462,6 @@ msgstr "150%"
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6.000 – 5.200) = $1600"
 
-msgid "2 per lot"
-msgstr "2 per lotto"
-
 msgid "2-3 years of applicable experience in a web application testing role"
 msgstr "2-3 anni di esperienza come tester di applicazioni web"
 
@@ -461,9 +470,6 @@ msgstr "Determinazione del prezzo in 2 direzioni"
 
 msgid "2. Proof of address"
 msgstr "2. Prova dell'indirizzo"
-
-msgid "2.25 per lot"
-msgstr "2,25 per lotto"
 
 msgid "24/7"
 msgstr "24/7"
@@ -492,9 +498,6 @@ msgstr "50%"
 msgid "6 months to 1 year"
 msgstr "Da 6 mesi a 1 anno"
 
-msgid "6 per lot"
-msgstr "6 per lotto"
-
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 transazioni negli ultimi 12 mesi"
 
@@ -507,11 +510,11 @@ msgstr "Limite di 7 giorni sulle perdite"
 msgid "7-day turnover limit"
 msgstr "Limite di 7 giorni sul turnover"
 
+msgid "70+"
+msgstr "70+"
+
 msgid "75%"
 msgstr "75%"
-
-msgid "80+"
-msgstr "80+"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Torna su Descrizioni dei lavori"
@@ -526,7 +529,7 @@ msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Fondata</a> nell'ottobre del 1999"
 
 msgid "<a href='%1'>Offices</a> in Malta and Malaysia"
-msgstr ""
+msgstr "<a href='%1'>Sedi</a> a Malta e in Malesia"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Test di adeguatezza: ATTENZIONE:</strong> Per la fornitura dei nostri servizi, siamo tenuti ad ottenere tue informazioni al fine di valutare se un dato prodotto o servizio sia adatto alla tua situazione (ossia se possiedi l'esperienza e la conoscenza idonea per la comprensione dei rischi connessi)."
@@ -563,6 +566,9 @@ msgstr "Un trader in Forex ha sempre un obiettivo quando fa trading: scambiare u
 
 msgid "A Forex trader has one objective in mind when trading which is:"
 msgstr "Un trader in Forex ha sempre un obiettivo in mente quando fa trading:"
+
+msgid "A MAM account can be assigned to a money manager who will trade on your behalf. You can view all the trades executed by a money manager."
+msgstr "Un conto MAM può essere assegnato a un gestore di fondi che si occuperà del trading a nome del cliente. È possibile visualizzare ogni trade effettuato da un gestore di fondi."
 
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
 msgstr "Un PEP è un individuo che è o che è stato incaricato di un'importante funzione pubblica. Questo status si estende ai parenti e stretti collaboratori del PEP."
@@ -692,9 +698,6 @@ msgstr "Token API per applicazioni di terze parti."
 
 msgid "ATM"
 msgstr "Bancomat"
-
-msgid "AUD 1 per point"
-msgstr "AUD 1 per punto"
 
 msgid "AUD Index – Measures the value of the Australian Dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%"
 msgstr "Indice AUD: misura il valore del Dollaro Australiano rispetto a un paniere di cinque valute globali (USD, EUR, GBP, JPY e CAD) ognuna ponderata del 20%"
@@ -1272,8 +1275,8 @@ msgstr "In qualità di membro del nostro team addetto al Servizio Clienti, sarai
 msgid "As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company."
 msgstr "In qualità di Executive addetto agli account e ai pagamenti sarai responsabile per l'elaborazione dei pagamenti ai clienti, gestione e risoluzione delle richieste di pagamento ai clienti, assistenza degli account di gestione delle società del nostro gruppo, esecuzione delle riconciliazioni, preparazione dei report e collaborazione costante con tutti i dipartimenti della società in merito ai pagamenti e agli account dei clienti. Lavorerai all'interno di un team multinazionale utilizzando i sistemi contabili e di backoffice brevettati forniti dalla società."
 
-msgid "As an EU citizen, you are also required to verify the above documents by %1video call%2."
-msgstr "In qualità di cittadino europeo, ti è richiesta anche la verifica dei suddetti documenti tramite %1video chiamata%2."
+msgid "As an EU resident, you are also required to verify the above documents by %1video call%2."
+msgstr "In qualità di soggetto residente nell'UE, ti è richiesta anche la verifica dei suddetti documenti tramite %1video chiamata%2."
 
 msgid "As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the %1 API, and all elements, components, and executables of the %1 API."
 msgstr "Come controparti, possediamo tutti i diritti, titoli e interessi, inclusi tutti i diritti di proprietà intellettuale sull'API di %1 e su tutti gli elementi, componenti ed eseguibili dell'API di %1."
@@ -1335,6 +1338,9 @@ msgstr "Orari di inizio trading dell'asset:"
 msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
 msgstr "Assegna e gestisci molteplici sub-account senza soluzione di continuità tramite un'unica interfaccia – il Multiple Accounts Manager (MAM)."
 
+msgid "Assigned manager's account ID:"
+msgstr "ID conto del gestore assegnato:"
+
 msgid "Assist in the proofreading and recording of video presentations"
 msgstr "Assistere nella procedura di controllo e registrazione delle presentazioni video"
 
@@ -1350,8 +1356,8 @@ msgstr "Assistere il Capo della Conformità nell'applicazione delle licenze rich
 msgid "Assisting with the regulatory and statutory audit of Binary Group companies worldwide"
 msgstr "Assistere l'audit regolamentare e legale delle società del gruppo Binary a livello mondiale"
 
-msgid "At any time and for any reason or no reason, the Company, in its sole discretion, may:"
-msgstr "In qualsiasi momento e per qualsiasi o alcun motivo, la Società, a sua esclusiva discrezione può:"
+msgid "At any time and for any reason or no reason, the Company, in its sole discretion, may immediately:"
+msgstr "In qualsiasi momento e per qualsiasi o alcun motivo, la Società, a sua esclusiva discrezione può immediatamente:"
 
 msgid "At least 1 year working experience is required for this position"
 msgstr "Per questa posizione è richiesto almeno 1 anno di esperienza lavorativa"
@@ -1545,6 +1551,9 @@ msgstr "La migliore esecuzione è il requisito per prendere tutte le misure suff
 msgid "Best of all, there is no minimum deposit requirement."
 msgstr "Cosa più importante, non esiste alcun obbligo di deposito minimo."
 
+msgid "Best of all, your commissions are credited into your account instantly."
+msgstr "Inoltre, le commissioni vengono accreditate istantaneamente sul tuo conto."
+
 msgid "BetOnMarkets goes live"
 msgstr "BetOnMarkets va online"
 
@@ -1573,7 +1582,7 @@ msgid "Binary (BVI) Ltd"
 msgstr "Binary (BVI) Ltd"
 
 msgid "Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
-msgstr ""
+msgstr "Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, Isole Vergini Britanniche. Autorizzata e regolamentata dalla British Virgin Islands Financial Services Commission - %1vedi licenza%2."
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
@@ -1588,7 +1597,7 @@ msgid "Binary (Europe) Limited & Binary Investments (Europe) Ltd, Mompalao Build
 msgstr "Binary (Europe) Limited & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - %2view licence%3."
-msgstr ""
+msgstr "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Autorizzata e regolamentata (solo per i prodotti di gioco d'azzardo - indici di volatilità di %1) dalla Malta Gaming Authority di Malta (licenza n. MGA/CL2/118/2000) e per i clienti del Regno Unito dalla UK Gambling Commission - %2vedi licenza%3."
 
 msgid "Binary (IOM) Limited"
 msgstr "Binary (IOM) Limited"
@@ -1597,13 +1606,13 @@ msgid "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Dougl
 msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
 msgid "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) and for UK clients by the UK Gambling Commission - %1view licence%2."
-msgstr ""
+msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isola di Man, IM2 4RW. Autorizzata e regolamentata dalla Gambling Supervision Commission dell'Isola di Man (attuale licenza per il gioco d'azzardo online concessa il 31 agosto 2017) e per i clienti del Regno Unito dalla UK Gambling Commission - %1vedi licenza%2."
 
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
 
 msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
-msgstr ""
+msgstr "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Repubblica di Vanuatu. Autorizzata e regolamentata dalla Vanuatu Financial Services Commission - %1vedi licenza%2."
 
 msgid "Binary Bot"
 msgstr "Binary Bot"
@@ -1633,7 +1642,7 @@ msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, B
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA e tutti gli altri membri del Gruppo Binary sono a volte collettivamente indicati come \"%1\", \"ci\" o \"noi\"."
 
 msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
-msgstr ""
+msgstr "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Autorizzata e regolamentata come appartenente alla categoria 3 dei fornitori di servizi di investimento dalla Malta Financial Services Authority (%1licenza n. IS/70156%2)."
 
 msgid "Binary Investments (Europe) Ltd. is required to collect your tax information."
 msgstr "Binary Investments (Europe) Ltd. ha l'obbligo di raccogliere i tuoi dati fiscali."
@@ -1695,6 +1704,9 @@ msgstr "Frequenza del trading in opzioni binarie o altri prodotti finanziari der
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "Il trading di opzioni binarie è relativamente facile. È possibile acquistare un contratto in soli tre passaggi:"
 
+msgid "Binary options transactions fall out of the scope of this Multi-Account Manager (MAM) Agreement."
+msgstr "Le operazioni relative alle opzioni binarie non rientrano nell'ambito del presente contratto Multi-Account Manager (MAM)."
+
 msgid "Binary's Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan."
 msgstr "Binary KK, la sussidiaria giapponese di Binary, è autorizzata dal KLFB come Financial Instruments Business, Tipo 1, in Giappone."
 
@@ -1730,6 +1742,9 @@ msgstr "I contratti di azioni Blue-chip provengono dal mercato OTC."
 
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "I contratti di azioni Blue-chip provengono dal mercato OTC (over-the-counter)"
+
+msgid "Both accounts need to be authenticated separately."
+msgstr "Per entrambi i conti è necessario effettuare l'autenticazione separatamente."
 
 msgid "Both the above"
 msgstr "Entrambe le soluzioni sopracitate"
@@ -1775,6 +1790,9 @@ msgstr "Acquista il contratto o ridefinisci la tua posizione."
 
 msgid "Buy your first currency pairs"
 msgstr "Acquista le tue prime coppie di valute"
+
+msgid "By accepting this Agreement, you agree to authorise the Money Manager to manage your Account on your behalf in accordance with the Client Agreement."
+msgstr "Accettando il presente contratto, si autorizza il gestore di fondi a operare sul conto a proprio nome, in base a quanto riportato nel contratto con il Cliente."
 
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "Cliccando su <strong>Accetta</strong> qui sotto e procedendo con l'Apertura di un Account bisogna tenere in considerazione la propria esposizione a dei rischi (che possono essere consistenti, incluso il rischio di perdita dell'intera somma investita) per i quali potrebbe mancare l'esperienza e la conoscenza necessaria per un'adeguata valutazione o attenuazione."
@@ -2001,8 +2019,8 @@ msgstr "Scegli il tuo strike."
 msgid "Christmas Day"
 msgstr "Giorno di Natale"
 
-msgid "Citizens of Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr "I cittadini di Costa Rica, Hong Kong, Israele, Jersey, Malesia, Malta, USA, o qualsiasi altro paese sottoposto a restrizioni e al quale il Gruppo d'Azione Finanziaria Internazionale (FATF) attribuisce carenze strategiche verrà sottoposto a restrizioni nell'apertura di un conto con Binary Investments (Europe) Ltd."
+msgid "Citizens of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+msgstr "I cittadini dei paesi ai quali il Gruppo d'Azione Finanziaria Internazionale (FATF) attribuisce carenze strategiche verranno sottoposti a restrizioni nell'apertura di un conto con Binary Investments (Europe) Ltd."
 
 msgid "Classification of assets requiring hedge"
 msgstr "Classificazione degli asset che richiedono copertura dai rischi"
@@ -2070,6 +2088,9 @@ msgstr "I prelievi effettuati dai clienti prima di quest'anno ammontavano a quas
 msgid "Client's Liability"
 msgstr "Responsabilità del cliente"
 
+msgid "Client's Representation"
+msgstr "Dichiarazione del Cliente"
+
 msgid "Client's deposits or withdrawals are immediately reflected in the corresponding master account balance in real time"
 msgstr "I depositi o i prelievi dei clienti si ripercuotono immediatamente sul saldo del relativo account principale in tempo reale"
 
@@ -2079,11 +2100,8 @@ msgstr "I Clienti accettano la loro piena e personale responsabilità per la con
 msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
 msgstr "I clienti accettano di soddisfare le richieste ragionevoli effettuate dalla Società, al fine di verificare la conformità a tale condizione."
 
-msgid "Clients can close out trades"
-msgstr "I clienti possono chiudere i trade"
-
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. %1 is not available in the British Virgin Islands."
-msgstr ""
+msgstr "Per i clienti nel resto del mondo (esclusi alcuni paesi come gli USA, la Costa Rica e Hong Kong) il conto Metatrader 5 FX e CFD verrà aperto con Binary (BVI) Ltd. %1 non è disponibile nelle Isole Vergini Britanniche."
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
 msgstr "I clienti nel resto del mondo (esclusi alcuni paesi come gli USA, la Costa Rica e Hong Kong) avranno il loro account Metatrader 5 FX e CFD aperto con Binary (V) Ltd. %1 non è disponibile nella Repubblica di Vanuatu."
@@ -2129,9 +2147,6 @@ msgstr "I clienti che desiderano autoescludersi devono essere consapevoli del fa
 
 msgid "Clients' Money"
 msgstr "Denaro dei clienti"
-
-msgid "Clients' trade allocations start from 0.01 lots"
-msgstr "L'assegnazione dei trade dei clienti parte da 0.01 lotti"
 
 msgid "Close"
 msgstr "Chiudi"
@@ -2222,6 +2237,9 @@ msgstr "Indirizzi della società"
 
 msgid "Company's Obligations"
 msgstr "Obblighi della Società"
+
+msgid "Company's Representation"
+msgstr "Dichiarazione della Società"
 
 msgid "Company's Right"
 msgstr "Diritto della Società"
@@ -2478,11 +2496,20 @@ msgstr "Crea"
 msgid "Create Account"
 msgstr "Crea un account"
 
+msgid "Create Financial Account"
+msgstr "Crea conto finanziario"
+
 msgid "Create Free Account"
 msgstr "Crea un Account gratuito"
 
-msgid "Create MetaTrader 5 %1 account"
-msgstr "Crea un account MetaTrader 5 %1"
+msgid "Create MAM Account"
+msgstr "Crea un conto MAM"
+
+msgid "Create MAM account"
+msgstr "Crea un conto MAM"
+
+msgid "Create MetaTrader 5 account"
+msgstr "Crea un conto MetaTrader 5"
 
 msgid "Create New Account"
 msgstr "Crea un nuovo account"
@@ -2525,6 +2552,9 @@ msgstr "Le criptovalute sono asset volatili estremamente vulnerabili alle fluttu
 
 msgid "Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading in cryptocurrencies is a highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and /or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital."
 msgstr "Le criptovalute sono assett volatili estremamente esposte alle fluttuazioni del mercato. Il trading in criptovalute è un investimento altamente speculativo, perché i prezzi delle criptovalute possono andare su e giù &mdash; potenzialmente fino a un valore nullo (zero). Non dovresti negoziare in criptovalute a meno che tu non comprenda pienamente e sia consapevole che le negoziazioni e / o gli investimenti in criptovalute sono complessi e ad alto rischio per loro natura, e che non solo rischi di incorrere in perdite significative nel breve periodo ma anche di perdere tutto il capitale investito."
+
+msgid "Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account."
+msgstr "Commissione sulle criptovalute per trade. Esempio: un trade di 1 lotto di BTC/USD con prezzo spot di 10.000 varrà 30 USD su un conto standard."
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "Criptovalute come Bitcoin e Ethereum sono asset digitali decentralizzati che consentono pagamenti istantanei in qualsiasi parte del mondo."
@@ -2609,6 +2639,9 @@ msgstr "D. Istruzioni dei clienti"
 
 msgid "DECLINE"
 msgstr "RIFIUTA"
+
+msgid "Dai"
+msgstr "Dai"
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively."
 msgstr "Indici di Reset giornalieri – Indici di Reset giornalieri riproducono i mercati con un trend rialzista e ribassista con volatilità costante. Gli indici di mercato rialzista (Bull Market) e mercato ribassista (Bear Market) iniziano alle 00:00 GMT ogni giorno, replicando rispettivamente i mercati rialzisti e ribassisti."
@@ -2744,6 +2777,9 @@ msgstr "Deposito: istantaneo"
 
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
 msgstr "Depositi e prelievi del tuo account MetaTrader 5 passano sempre attraverso il tuo account di opzioni binarie."
+
+msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
+msgstr "La funzione di deposito e prelievo è stata disabilitata per il tuo conto. Ti invitiamo a controllare il tuo indirizzo e-mail per ulteriori indicazioni."
 
 msgid "Derivative"
 msgstr "Derivato"
@@ -2904,17 +2940,11 @@ msgstr "Scarica MAM"
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "Scarica MT5 per desktop o portatile per accedere alle funzioni e ai potenti strumenti utilizzati da milioni di trader."
 
-msgid "Download Now"
-msgstr "Scarica ora"
-
 msgid "Download for Mac"
 msgstr "Download per Mac"
 
 msgid "Download for Windows"
 msgstr "Download per Windows"
-
-msgid "Download the MAM application after setup is completed. Log in with your master account credentials."
-msgstr "Al termine della configurazione, scarica l'applicazione MAM. Accedi con le credenziali del tuo account master."
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Guidare la rapida crescita e lo sviluppo aziendale per supportare le vendite e gli obiettivi commerciali della società"
@@ -2996,6 +3026,9 @@ msgstr "Indice EUR: misura il valore dell'Euro rispetto a un paniere di cinque v
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "Ognuna delle Parti farà quanto ragionevolmente richiesto dalla controparte per dare effetto alle disposizioni e/o ai termini e/o alle clausole del presente Accordo."
+
+msgid "Each Party shall do anything reasonably required by the other Party to give effect to the terms of this Agreement."
+msgstr "Ognuna delle Parti farà quanto ragionevolmente richiesto dalla Controparte per dare effetto ai termini del presente Contratto."
 
 msgid "Each binary option is a prediction on the future movement of an underlying market."
 msgstr "Ogni opzione binaria riguarda una previsione sul movimento futuro di un mercato sottostante."
@@ -3095,6 +3128,9 @@ msgstr "Indirizzo email"
 
 msgid "Email:"
 msgstr "Email:"
+
+msgid "Emercoin vs US Dollar"
+msgstr "Emercoin vs Dollaro statunitense"
 
 msgid "Employed"
 msgstr "Impiegato"
@@ -3200,9 +3236,6 @@ msgstr "Ether"
 
 msgid "Ether Classic"
 msgstr "Ether Classic"
-
-msgid "Ethereum Classic vs US Dollar"
-msgstr "Ethereum Classic vs Dollaro statunitense"
 
 msgid "Ethereum vs US Dollar"
 msgstr "Ethereum vs Dollaro statunitense"
@@ -3310,7 +3343,7 @@ msgid "Exclude time cannot be less than 6 months."
 msgstr "Il periodo di esclusione non può essere inferiore a 6 mesi."
 
 msgid "Excluded from the website until"
-msgstr ""
+msgstr "Esclusione dal sito fino a"
 
 msgid "Exclusive binary trading technology."
 msgstr "Tecnologia esclusiva per il trading binario."
@@ -3657,6 +3690,9 @@ msgstr "Per le richieste legate ai pagamenti:"
 msgid "For perfectly hedged positions, no margin will be charged. However, swaps and other applicable fees can cause your Account Equity to turn negative. In such cases, the company reserves the right to close out your hedged positions in order to protect your Account Equity from decreasing further."
 msgstr "Per posizioni perfettamente coperte, non verrà addebitato alcun margine. Tuttavia, swap e altre commissioni applicabili possono far si che l'equity del tuo account diventi negativo. In tali casi, la società si riserva il diritto di chiudere le tue posizioni coperte per proteggere il tuo equity dal ulteriori diminuzioni."
 
+msgid "For the purposes of this Agreement, the following shall mean:"
+msgstr "Ai fini del presente Contratto, si intende quanto segue:"
+
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "Per il terzo anno consecutivo, BetOnMarkets.com è stato votato come il \"Miglior provider di opzioni finanziarie con probabilità fisse\" da parte di Shares Magazine UK. Questa sarà l'ultima volta che ci aggiudichiamo tale premio in quanto Shares Magazine smetterà di attribuire premi in questa categoria."
 
@@ -3672,8 +3708,8 @@ msgstr "Foreign currency deposit"
 msgid "Forex"
 msgstr "Forex"
 
-msgid "Forex & Metals*"
-msgstr "Forex e metalli*"
+msgid "Forex & Metals"
+msgstr "Forex e metalli"
 
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr "Transazioni Forex e su contratti per differenze comportano un grado elevato di rischio e sono speculativi, poiché consentono di speculare sui movimenti a breve termine del prezzo degli strumenti finanziari sottostanti. Non dovresti entrare in transazioni forex e/o in contratti per differenze, a meno che tu non sia in grado di sostenere perdite che superano i fondi depositati. È importante per te capire che per poter realizzare qualsiasi valore dalle posizioni aperte, dovrai stipulare una transazione corrispondente per chiudere le posizioni aperte e può risultare difficile o impossibile farlo in determinate condizioni di mercato."
@@ -3747,6 +3783,9 @@ msgstr "I trasferimenti di fondi tra account non sono disponibili."
 msgid "Funding of MT5 Real Account"
 msgstr "Trasferimento di fondi sul conto reale MT5"
 
+msgid "Funds cannot be transferred between financial and gaming accounts."
+msgstr "Non è possibile trasferire i fondi da un conto finanziario a uno di gioco e viceversa."
+
 msgid "Further Instructions"
 msgstr "Ulteriori istruzioni"
 
@@ -3766,10 +3805,7 @@ msgid "G. Order Handling"
 msgstr "G. Gestione degli Ordini"
 
 msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
-msgstr ""
-
-msgid "GBP 1 per point"
-msgstr "GBP 1 per punto"
+msgstr "GAMSTOP è un servizio gratuito che ti permette di autoescluderti da qualsiasi società di gioco d'azzardo online autorizzata in Gran Bretagna."
 
 msgid "GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%"
 msgstr "Indice GBP - Misura il valore della Sterlina Britannica rispetto a un paniere di cinque valute globali (USD, EUR, AUD, JPY, CAD), ciascuna ponderata del 20%"
@@ -4170,6 +4206,11 @@ msgstr "Con la presente confermo che le informazioni fiscali fornite sono veriti
 msgid "I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction."
 msgstr "I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction."
 
+msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
+msgstr "Comprendo i possibili rischi e accetto i %1termini e le condizioni della funzione MAM%2\n"
+" \n"
+"Context | Request Context"
+
 msgid "I want to be treated as a professional client."
 msgstr "Voglio essere trattato come cliente professionale."
 
@@ -4254,23 +4295,26 @@ msgstr "Nel caso in cui una qualsiasi disposizione del presente Accordo dovesse 
 msgid "If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect."
 msgstr "Se qualsiasi disposizione del presente Accordo sarà ritenuta non valida o inapplicabile da un tribunale o da un organismo di regolamentazione della giurisdizione competente, la rimanente parte del presente Accordo rimarrà in pieno vigore ed effetto."
 
+msgid "If any terms of this Agreement be held invalid, void, or unenforceable by any relevant authority or regulatory body, the remainder of this Agreement shall remain in full force and effect."
+msgstr "Se qualsiasi disposizione del presente Contratto sarà ritenuta non valida o inapplicabile da un organismo di regolamentazione o un'autorità competente, la rimanente parte del presente Contratto rimarrà comunque pienamente in vigore ed efficace."
+
 msgid "If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately."
 msgstr "Se gli eventi di forza maggiore durano per più di 30 giorni lavorativi, la Parte che non è sottoposta a eventi di forza maggiore può terminare questo Accordo immediatamente."
 
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
-msgstr ""
+msgstr "Se <strong>il punto di uscita</strong> corrisponde alla <strong>barriera inferiore</strong> o alla <strong>barriera superiore</strong>, non ottieni il payout."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
-msgstr ""
+msgstr "Se il <strong>punto di uscita</strong> corrisponde alla <strong>barriera</strong>, non ottieni il payout."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
-msgstr ""
+msgstr "Se il <strong>punto di uscita</strong> corrisponde alla <strong>barriera</strong>, ottieni il payout solo per i contratti di tipo \"Superiore\""
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr ""
+msgstr "Se il <strong>punto di uscita</strong> corrisponde al <strong>punto di entrata</strong>, non ottieni il payout."
 
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
-msgstr ""
+msgstr "Se <strong>l'ultimo tick</strong> corrisponde alla media dei tick, non ottieni il payout."
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "Se la Società (a sua esclusiva discrezione) non è soddisfatta del rispetto di un Cliente verso questi termini, oppure se un Cliente non adempie ad una ragionevole richiesta di informazioni fatta dalla Società, la Società può eliminare l'account del cliente e trattenere tutti i fondi accumulato in esso."
@@ -4306,7 +4350,7 @@ msgid "If you are an individual, you are over 18 years old and you have full cap
 msgstr "Se sei un individuo, hai più di 18 anni e hai piena capacità di sottoscrivere questo Accordo;"
 
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
-msgstr ""
+msgstr "Se stai valutando l'autoesclusione, potresti volere registrarti con GAMSTOP."
 
 msgid "If you are developing on our API on behalf of a company or other entity, you represent and warrant that you have full legal authority to register an Application on behalf of that entity and bind it to these Terms. If you are not authorized, you may not accept these Terms or register an Application for someone else."
 msgstr "Se ti stai sviluppando sulla nostra API nell'interesse di una società o altra organizzazione, rappresenti e garantisci di avere la piena autorità di registrare un'Applicazione per conto di tale organizzazione e di vincolarti ai presenti Termini. Se non sei autorizzato, puoi non accettare i presenti Termini o registrare un'Applicazione per qualcun'altro."
@@ -4408,7 +4452,7 @@ msgid "If you select \"Goes Outside\", you win the payout if the market touches 
 msgstr "Se selezioni \"Goes Outside\" (Esce fuori), vinci il payout se il mercato tocca la <strong>Barriera superiore</strong> o la <strong>Barriera inferiore</strong> in qualsiasi momento del <strong>periodo del contratto</strong>."
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is higher than the <strong>barrier</strong>."
-msgstr ""
+msgstr "Selezionando \"Superiore\", ottieni il payout se il <strong>punto di uscita</strong> è superiore rispetto alla <strong>barriera</strong>."
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Se selezioni \"High\", vinci il payout se lo <strong>spot d'uscita</strong> è notevolmente superiore alla <strong>barriera</strong>."
@@ -4719,9 +4763,6 @@ msgstr "Initial Coin Offering (ICO)"
 msgid "Instant access"
 msgstr "Accesso istantaneo"
 
-msgid "Instant, daily, and monthly commissions available to money managers"
-msgstr "Commissioni immediate, giornaliere e mensili disponibili per i gestori di fondi"
-
 msgid "Instructions for Linux"
 msgstr "Istruzioni per Linux"
 
@@ -4739,6 +4780,9 @@ msgstr "Webinar interattivi"
 
 msgid "Interested in our MAM tool for MetaTrader 5? Contact us at %1 for more info."
 msgstr "Ti interessa il nostro strumento MAM per MetaTrader 5? Contattarci su %1 per maggiori informazioni."
+
+msgid "Interested in our MAM tool? %1Contact us%2 for more information on setting up your master account"
+msgstr "Sei interessato al nostro strumento MAM? %1Contattaci%2 per sapere come impostare il tuo conto master"
 
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Sei interessato alle nostre soluzioni di liquidità? Per ulteriori informazioni, contattaci su %1."
@@ -4910,9 +4954,6 @@ msgstr "J. Transazioni di trading"
 
 msgid "JAPAN ONLY CONTACT TEXT"
 msgstr "JAPAN ONLY CONTACT TEXT"
-
-msgid "JPY 1 per point"
-msgstr "JPY 1 per punto"
 
 msgid "Jan"
 msgstr "Gen"
@@ -5448,6 +5489,9 @@ msgstr "Ufficio di Kuala Lumpur"
 msgid "L. Event of Default"
 msgstr "L. Eventi di Inadempienza ( Eventi di Default)"
 
+msgid "Ladders"
+msgstr ""
+
 msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
 msgstr "Corsi di lingua per i Rifugiati (LCFR) è un programma educativo per rifugiati organizzato dal 'Love & Respect Transformation Centre' -\n"
 " un'impresa sociale impegnata nell'educazione di qualità a lungo termine. Questo programma insegna inglese, malese e francese a gruppi di età che vanno dai bambini agli adulti, al fine di fornire loro competenze linguistiche che li aiuteranno a trovare un lavoro mentre stanno aspettando di essere rimpatriati."
@@ -5485,14 +5529,14 @@ msgstr "Impara da noi"
 msgid "Learn how to read currency pairs, when to go long or short, and how to buy your first currency pair."
 msgstr "Impara come leggere le coppie di valute, quando aprire una posizione long o short e come acquistare la tua prima coppia di valuta."
 
-msgid "Learn how to set up and authenticate your master account, link sub accounts, and more."
-msgstr "Scopri come aprire e autenticare il tuo account master, collegare account secondari, e molto altro."
-
 msgid "Learn how to trade with our award-winning binary options platform in this simple step-by-step guide."
 msgstr "Scopri come fare trading con la nostra pluripremiata piattaforma di opzioni binarie in questa semplice guida passo-passo."
 
 msgid "Learn more"
 msgstr "Per saperne di più"
+
+msgid "Learn more about our Multiple Accounts Manager (MAM) facility for money managers"
+msgstr "Scopri di più sulla nostra funzione Multiple Accounts Manager (MAM) per i gestori di fondi"
 
 msgid "Learn more about our corporate culture"
 msgstr "Ulteriori informazioni sulla nostra cultura aziendale"
@@ -5641,6 +5685,9 @@ msgstr "Litecoin"
 msgid "Litecoin vs US Dollar"
 msgstr "Litecoin vs Dollaro Statunitense"
 
+msgid "Live Chat"
+msgstr "Chat live"
+
 msgid "Lock Cashier"
 msgstr "Blocca la Cassa"
 
@@ -5664,6 +5711,9 @@ msgstr "Cronologia dei login"
 
 msgid "Login ID"
 msgstr "ID di accesso"
+
+msgid "Login ID of money manager who will trade on your behalf"
+msgstr "Credenziali d'accesso del gestore di fondi che si occuperà del trade a tuo nome"
 
 msgid "Login time:"
 msgstr "Orario d'accesso:"
@@ -5730,6 +5780,30 @@ msgstr "M"
 
 msgid "M. Manifest Error"
 msgstr "M. Errore Palese"
+
+msgid "MAM"
+msgstr "MAM"
+
+msgid "MAM Accounts"
+msgstr "Conti MAM"
+
+msgid "MAM Advanced"
+msgstr "MAM avanzato"
+
+msgid "MAM Advanced account"
+msgstr "Conto MAM avanzato"
+
+msgid "MAM Advanced*"
+msgstr "MAM avanzato*"
+
+msgid "MAM Volatility Indices"
+msgstr "MAM indici di volatilità"
+
+msgid "MAM Volatility Indices Account"
+msgstr "Conto d'indici di volatilità MAM"
+
+msgid "MAM Volatility Indices*"
+msgstr "MAM indici di volatilità*"
 
 msgid "MENA FFXPO Award"
 msgstr "Riconoscimeno MENA FFXPO"
@@ -5827,6 +5901,9 @@ msgstr "Male"
 msgid "Malta"
 msgstr "Malta"
 
+msgid "Manage MAM account"
+msgstr "Gestisci conto MAM"
+
 msgid "Manage MT5 password"
 msgstr "Gestisci password MT5"
 
@@ -5847,6 +5924,12 @@ msgstr "Gestisci i fondi del tuo account in criptovalute."
 
 msgid "Manage your authorised applications."
 msgstr "Gestisci le tue applicazioni autorizzate."
+
+msgid "Manager ID"
+msgstr "ID gestore"
+
+msgid "Manager successfully revoked"
+msgstr "Revoca del gestore avvenuta con successo"
 
 msgid "Managers"
 msgstr "Manager"
@@ -5967,15 +6050,6 @@ msgstr "Perdita massima aggregata giornaliera. Aggiorna questo valore nella nost
 
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Payout totali massimi su posizioni aperte"
-
-msgid "Maximum aggregate payouts on open positions per symbol"
-msgstr "Payout massimi aggregati su posizioni aperte per simbolo"
-
-msgid "Maximum aggregate payouts on open positions per symbol and contract type"
-msgstr "Payout massimi aggregati su posizioni aperte per simbolo e tipo di contratto"
-
-msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
-msgstr "Payout massimi aggregati su posizioni aperte per simbolo e tipo di contratto. Questo limite può essere superato fino al limite di payout complessivo se non esiste una posizione aperta precedente."
 
 msgid "Maximum daily turnover"
 msgstr "Turnover massimo giornaliero"
@@ -6124,9 +6198,6 @@ msgstr "Modifiche/Correzioni"
 msgid "Monday"
 msgstr "Lunedì"
 
-msgid "Monero vs US Dollar"
-msgstr "Monero vs Dollaro Statunitense"
-
 msgid "Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients."
 msgstr "Il denaro raccolto dai Clienti non viene investito in alcun titolo, futures, valute, derivati o altri investimenti, per conto dei Clienti."
 
@@ -6136,8 +6207,8 @@ msgstr "Il denaro raccolto dai Clienti non viene investito in alcun titolo, futu
 msgid "Monies deposited by you with us in advance of a trade or pending withdrawal is treated by us as clients' money. We hold such monies in pooled or omnibus clients' money bank accounts opened with banks or other institutions (\"Institutions\"), segregated from our own money. Such clients' money bank accounts may be opened with EEA Institutions or Institutions outside the EEA. Where clients money is held with non-EEA Institutions this means that such accounts will be subject to laws other than those of an EEA member state and your rights may differ accordingly."
 msgstr "I soldi da te depositati con noi prima di un trade o i prelievi in sospeso vengono da noi trattati come soldi dei clienti. Deteniamo tale denaro dei clienti in conti bancari di gruppo o omnibus aperti con banche o altri istituti (\"Istituti\"), separati dai nostri fondi. Questi conti bancari con i soldi dei clienti possono essere aperti con Istituti appartenenti al SEE oppure Istituti fuori dal SEE. Laddove il denaro dei clienti venga tenuto in Istituti non appartenenti al SEE significa che tali conti saranno soggetti a leggi diverse da quelle applicabili agli stati membri del SEE e, di conseguenza, i tuoi diritti possono essere diversi."
 
-msgid "Monitor and manage your client list, set allocations and exclusions for individual sub accounts, and more."
-msgstr "Monitora e gestisci il tuo elenco clienti, imposta allocazioni ed esclusioni per singoli account secondari e altro ancora."
+msgid "Monitor and manage your client list, adjust settings for individual sub accounts, and more"
+msgstr "Gestisci e controlla la lista clienti, regola le impostazioni per i sottoconti individuali, e molto altro"
 
 msgid "Monitor and optimize website trading activity"
 msgstr "Monitorare e ottimizzare l'attività di trading del sito internet"
@@ -6193,6 +6264,9 @@ msgstr "Sig.ra"
 msgid "Multi award-winning trading platform."
 msgstr "Una piattaforma di trading pluripremiata."
 
+msgid "Multi-Account Manager (MAM) Agreement"
+msgstr "Contratto Multi-Account Manager (MAM)"
+
 msgid "Multi-asset Liquidity Solutions"
 msgstr "Soluzioni di liquidità multi-asset"
 
@@ -6201,6 +6275,9 @@ msgstr "Esecuzione multi-asset"
 
 msgid "Multi-asset liquidity solutions"
 msgstr "Soluzioni di liquidità multi-asset"
+
+msgid "Multi-barrier trading"
+msgstr "Trading con barriere multiple"
 
 msgid "Multiple Accounts Manager"
 msgstr "Manager di account multipli"
@@ -6400,6 +6477,9 @@ msgstr "Non sei sicuro di come funziona il margine? Leggi la nostra policy sul m
 msgid "Note"
 msgstr "Nota"
 
+msgid "Note:"
+msgstr "Nota:"
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Nota: Per qualsiasi richiesta relativa ad account disattivati o esclusi, sei pregato di contattare il nostro <a href=\"%1\">Customer Support</a>."
 
@@ -6577,8 +6657,8 @@ msgstr "Sono consentiti solo numeri e spazi."
 msgid "Only numbers, space, and hyphen are allowed."
 msgstr "Sono consentiti solo numeri, spazi e trattini."
 
-msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
-msgstr "Per ogni soggetto è consentita l'apertura di un solo account. Nessuna vincita e/o rimborso può essere ottenuto su account aperti con nomi falsi o su account multipli aperti dalla stessa persona."
+msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
+msgstr "È possibile avere un solo conto per persona. Non è consentito effettuare prelievi e/o rimborsi da e verso conti aperti sotto falso nome o conti multipli aperti dalla stessa persona."
 
 msgid "Oops... Page Not Available"
 msgstr "Ops... Pagina non disponibile"
@@ -6688,6 +6768,12 @@ msgstr "La nostra società"
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
 msgstr "Il nostro Programma di Affiliazione Internazionale ha sempre effettuato pagamenti puntuali fin dal nostro lancio ufficiale avvenuto a Marzo 2004. In Giappone, la tua commissione verrà accreditata sul tuo account di affiliazione entro trenta giorni dalla fine del mese in cui i tuoi referenti hanno soddisfatto le condizioni richieste."
 
+msgid "Our MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account."
+msgstr "Il nostro conto avanzato MAM può essere assegnato a un gestore di fondi che si occuperà del trade a tuo nome con spread più competitivi rispetto a un conto avanzato standard."
+
+msgid "Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
+msgstr "Il nostro conto d'indici di volatilità MAM può essere assegnato a un gestore di fondi che si occuperà del trade a tuo nome con le stesse specifiche di un conto d'indici di volatilità standard."
+
 msgid "Our MT5 service is currently unavailable to EU residents due to pending regulatory approval."
 msgstr "Il nostro servizio di MT5 non è attualmente disponibile per i residenti UE, questo è dovuto all'attesa di approvazione regolamentare."
 
@@ -6779,7 +6865,7 @@ msgid "Our trading screen is simple to use:"
 msgstr "La nostra schermata di trading è facile da usare:"
 
 msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr ""
+msgstr "Il nostro piano di commissioni basato sul fatturato dipende dalla probabilità di payout per ogni contratto. I contratti con rendimenti più elevati per il cliente comportano commissioni inferiori per l'associato."
 
 msgid "Over $1,000,000"
 msgstr "Più di $1.000.000"
@@ -6801,6 +6887,9 @@ msgstr "Over 5 years"
 
 msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
 msgstr "Più di 50 coppie FX, oltre a spot di metalli, indici CFD, materie prime e criptovalute."
+
+msgid "Over 70 available assets"
+msgstr "Oltre 70 asset disponibili"
 
 msgid "Over two billion dollars in trades to date."
 msgstr "Ad oggi oltre due miliardi di dollari di trade effettuati."
@@ -6860,7 +6949,7 @@ msgid "Password should have lower and uppercase letters with numbers."
 msgstr "La password deve contenere lettere minuscole e maiuscole con numeri."
 
 msgid "Password type"
-msgstr ""
+msgstr "Tipo di password"
 
 msgid "Patented technology"
 msgstr "Tecnologia brevettata"
@@ -6886,6 +6975,9 @@ msgstr "Trasferimento dell'Agente di pagamento"
 msgid "Payment Agent Withdrawal"
 msgstr "Prelievo dell'Agente di pagamento"
 
+msgid "Payment Agent services are not available in your country or in your preferred currency."
+msgstr "I servizi relativi agli agenti di pagamento non sono disponibili nel tuo paese o nella valuta selezionata."
+
 msgid "Payment Agent transfer"
 msgstr "Trasferimento dell'Agente di pagamento"
 
@@ -6897,9 +6989,6 @@ msgstr "Termini e Condizioni relative agli Agenti di Pagamento"
 
 msgid "Payment Methods"
 msgstr "Modalità di pagamento"
-
-msgid "Payment agent is unavailable in your country."
-msgstr "L'Agente di pagamento non è disponibile nel tuo paese."
 
 msgid "Payment methods"
 msgstr "Modalità di pagamento"
@@ -6991,6 +7080,9 @@ msgstr "Platino vs Dollaro Statunitense"
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "Per aumentare il limite dei prelievi e del trading, %1accetta i Termini e condizioni aggiornati%2."
 
+msgid "Please %1authenticate%2 your account before you make a deposit."
+msgstr "Ti preghiamo di %1verificare%2 il tuo conto prima di effettuare un deposito."
+
 msgid "Please %1authenticate%2 your account."
 msgstr "Ti preghiamo di %1autenticare%2 il tuo conto."
 
@@ -7041,9 +7133,6 @@ msgstr "Ti chiediamo di confermare che non sei una persona politicamente esposta
 
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "Per completare il trasferimento, conferma i dettagli della transazione:"
-
-msgid "Please ensure that your current account has been authenticated before you proceed."
-msgstr "Assicurati che il tuo account sia stato autenticato prima di procedere."
 
 msgid "Please enter a number between %1."
 msgstr "Inserisci un numero compreso tra %1."
@@ -7159,9 +7248,6 @@ msgstr "Specifica il tuo intervallo preferito di verifica della realtà in minut
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "Si prega di inviare le succitate informazioni a <a href='mailto:%1'>%1</a>."
 
-msgid "Please switch to a %1 account to manage funds."
-msgstr "Per poter gestire fondi ti chiediamo di passare ad un account %1."
-
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "Tieni presente che il nostro tasso swap dipende anche dal tempo e dai giorni in cui hai tenuto le posizioni aperte:"
 
@@ -7217,7 +7303,7 @@ msgid "Practice account with replenishable USD 10,000 virtual credit."
 msgstr "Account di pratica con credito virtuale rinnovabile di 10,000 USD."
 
 msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
-msgstr ""
+msgstr "Fai pratica con le tue strategie di trading in un ambiente privo di rischi utilizzando fondi virtuali."
 
 msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
 msgstr "Allena la tua strategia di trading con %1 di fondi virtuali in un ambiente privo di rischi."
@@ -7230,6 +7316,15 @@ msgstr "Metalli preziosi"
 
 msgid "Precious metals are harder to come by and are more valuable than industrial metals. Because precious metals are softer and less reactive, they are widely used in jewellery, medical devices, and electronics."
 msgstr "I metalli preziosi sono più difficili da trovare e hanno più valore dei metalli industriali. Poiché i metalli preziosi sono più mallebili e meno reattivi, sono ampiamente utilizzati in gioielleria, dispositivi medici ed elettronica."
+
+msgid "Predict if the market will rise or fall from its current level, or if it will end higher or lower than a price target"
+msgstr "Prevedi se il mercato crescerà o calerà rispetto al livello attuale, oppure se chiuderà a un prezzo superiore o inferiore rispetto al prezzo target"
+
+msgid "Predict if the market will stay between or go outside two price targets"
+msgstr "Prevedi se il mercato resterà tra due prezzi target o uscirà da questo intervallo"
+
+msgid "Predict if the market will touch or not touch a price target"
+msgstr "Prevedi se il mercato toccherà o non toccherà un prezzo target"
 
 msgid "Predict market movement using up/down, touch/no touch, and in/out trade types."
 msgstr "Prevedi il movimento del mercato usando i diversi tipi di trade alto/basso, tocca/non tocca, e dentro/fuori."
@@ -7423,11 +7518,17 @@ msgstr "La comprovata conoscenza degli standard di revisione, procedure, leggi, 
 msgid "Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration."
 msgstr "Fornire assistenza amministrativa in aree connesse alla gestione dei venditori, pianificazione degli eventi, contabilità e amministrazione delle risorse umane."
 
+msgid "Provide such information to the licensee as they may reasonably require in order to enable the licensee to comply with their information reporting and other obligations to the UK Gambling Commission."
+msgstr ""
+
 msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
 msgstr "Fornisci il seguente codice di verifica a quattro cifre all'agente dell'assistenza clienti per la conferma."
 
 msgid "Provision of Services"
 msgstr "Fornitura di Servizi"
+
+msgid "Provisions of Agreement"
+msgstr "Disposizioni del Contratto"
 
 msgid "Public and corporation bond"
 msgstr "Public and corporation bond"
@@ -7565,7 +7666,7 @@ msgid "Receive quotes for a trade and countertrade, so you always get unbiased, 
 msgstr "Ricevi quotazioni per un i contratti di trading e per i loro contratti opposti, in questo modo ottieni sempre tariffe imparziali e trasparenti."
 
 msgid "Receive your affiliate commission once your referred clients start trading on our platform."
-msgstr ""
+msgstr "Riceverai la commissione per associati dopo che i clienti da te individuati inizieranno a fare trading sulla nostra piattaforma."
 
 msgid "Ref."
 msgstr "Rif."
@@ -7651,8 +7752,14 @@ msgstr "Tempo residuo"
 msgid "Remaining time"
 msgstr "Tempo residuo"
 
+msgid "Representation or Warranty"
+msgstr "Dichiarazione e garanzia"
+
 msgid "Representations and Warranties"
 msgstr "Dichiarazioni e Garanzie"
+
+msgid "Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account."
+msgstr "Rappresenta l'importo in valuta di base per trade. Esempio: un trade di 1 lotto di EUR/USD varrebbe 10 EUR su un conto standard. Un trade di 1 lotto di USD/CAD varrebbe 5 USD su un conto avanzato."
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "Rappresenta l'importo massimo di denaro che può essere tenuto sul tuo account. Se raggiungi tale valore massimo, ti verrà richiesto di prelevare fondi."
@@ -7753,8 +7860,17 @@ msgstr "Esaminare, sviluppare e migliorare i codici utilizzati nei programmi per
 msgid "Revisions to the %1 API"
 msgstr "Revisioni dell'API di %1"
 
+msgid "Revoke MAM"
+msgstr "Annulla MAM"
+
+msgid "Revoke Manager"
+msgstr "Revoca gestore"
+
 msgid "Revoke access"
 msgstr "Revocare l'accesso"
+
+msgid "Revoke manager"
+msgstr "Revoca gestore"
 
 msgid "Right to Terminate"
 msgstr "Diritto di risoluzione"
@@ -7839,6 +7955,9 @@ msgstr "Scopi"
 
 msgid "Score"
 msgstr "Punteggio"
+
+msgid "Search..."
+msgstr "Cerca..."
 
 msgid "Second line of home address"
 msgstr "Seconda riga dell'indirizzo di residenza"
@@ -8347,11 +8466,17 @@ msgstr "Soggetto a qualsiasi istruzione specifica da te eventualmente fornita, d
 msgid "Subject to network latency, we endeavour to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price."
 msgstr "Salvo latenza di rete, faremo il possibile per eseguire l'Ordine entro un termine ragionevole dal momento in cui l'Ordine è attivato, al Prezzo più vicino a tuo Prezzo specificato. Non garantiamo che una Transazione sarà aperta/chiusa a fronte di un Ordine da te richiesto al tuo Prezzo specificato."
 
+msgid "Subject to the applicable governing law and the Client Agreement, you represent and acknowledge that this Agreement shall be admissible as an evidence in any legal, judicial, administrative, arbitration or mediation proceedings."
+msgstr "Ai sensi del diritto applicabile e del contratto con il Cliente, il Cliente dichiara di accettare che il presente Contratto verrà utilizzato come prova ammissibile in qualsiasi procedimento legale, giudiziale, amministrativo, di mediazione o arbitrato."
+
 msgid "Subject to the availability and sufficiency of funds in your MT5 Real Account, you may withdraw your funds from your MT5 Real Account to your Binary Options Real Account."
 msgstr "A fronte di disponibilità e sufficienza dei fondi nel conto reale MT5, l'utente può trasferire fondi dal conto reale MT5 al conto reale di opzioni binarie."
 
 msgid "Subject to the law and the terms and/or conditions and/or provisions and/or clauses of this Agreement, the Company shall not be liable, to the Agent for any matter arising out of or in relation to this Agreement."
 msgstr "Soggetta alla legge e ai termini e/o condizioni o disposizioni e/o clausole del presente Accordo, la Società declina ogni responsabilità, nei confronti dell'Agente per qualsiasi questione derivante da o in relazione al presente Accordo."
+
+msgid "Subject to the law and the terms of the Client Agreement, the Company shall not be liable to you or your Money Manager for any matter arising out of or in relation to this Agreement."
+msgstr "Ai sensi del diritto applicabile e dei termini del Contratto con il Cliente, la Società declina ogni responsabilità verso il Cliente o il gestore di fondi per qualsiasi questione derivante dal o in relazione al presente Contratto."
 
 msgid "Subject to the law, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to the Agent or Client for any loss, damage or debt whatsoever arising directly or indirectly out of, or in connection with this Agreement. The Agent agrees to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses including all and any legal fees incurred arising out of his failure to comply with any and all of his obligations set forth in this Agreement."
 msgstr "Soggetti alla legge, né la Società né alcuno dei suoi amministratori, funzionari, dirigenti, dipendenti o agenti sarà responsabili nei confronti dell'Agente o del Cliente per qualsiasi perdita, danno o debito derivante direttamente o indirettamente da o correlato al presente Accordo. L' Agente si impegna a tenere indenne la Società e suoi direttori, funzionari, dirigenti, dipendenti o agenti da e contro ogni e tutte le responsabilità, perdite, danni, costi e spese incluse tulle le spese legali sostenute derivanti dall'inosservanza dei suoi obblighi stabiliti nel presente contratto."
@@ -8476,8 +8601,8 @@ msgstr "Durata"
 msgid "Term & Termination"
 msgstr "Durata e Risoluzione"
 
-msgid "Terminate this Agreement by giving a minimum of seven days written notice to you."
-msgstr "Risolvere il presente Accordo con un preavviso scritto di minimo sette giorni."
+msgid "Terminate this Agreement"
+msgstr "Recesso dal presente Contratto"
 
 msgid "Terminate your use of the %1 API; or"
 msgstr "Terminare il tuo utilizzo dell'API di %1; o"
@@ -8540,7 +8665,7 @@ msgid "The %1 Terms and Conditions;"
 msgstr "I Termini e condizioni di %1;"
 
 msgid "The %1 password of account number %2 has been changed."
-msgstr ""
+msgstr "La password %1 del conto numero %2 è stata modificata."
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Il sito internet di %1 è protetto da alcuni copyright."
@@ -8579,7 +8704,7 @@ msgid "The <strong>exit spot</strong> is the latest tick at or before the <stron
 msgstr "Lo <strong>spot d'uscita</strong> è l'ultimo tick entro l'<strong>orario di fine</strong>."
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
-msgstr ""
+msgstr "Il <strong>tempo rimanente</strong> è il tempo che rimane fino alla scadenza del contratto."
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "L'<strong>orario d'inizio</strong> indica il momento in cui il contratto viene elaborato dai nostri server."
@@ -8668,6 +8793,9 @@ msgstr "La Società è l'unica proprietaria di tutti i diritti o titoli o intere
 msgid "The Company makes no claims that the %1 website will be uninterrupted or provide an error free service, and will not be liable for the consequences of any such errors or interruptions."
 msgstr "La Società non dichiara in alcun modo che il sito internet di %1 fornisca un servizio privo di errori o interruzioni, e non sarà responsabile per le conseguenze di tali errori o interruzioni."
 
+msgid "The Company may also impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
+msgstr "La Società può anche imporre limiti al volume di trading sui conti dei clienti a sua esclusiva discrezione. È possibile prendere visione dei limiti del volume di trading nella sezione Protezione e limiti del conto personale. Se il saldo supera l'importo massimo del conto, occorre effettuare alcuni prelievi per riportarlo al di sotto del limite."
+
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavour to ensure affiliates are notified when changes have been made to the commission structure."
 msgstr "La Società può modificare la struttura delle commissioni in qualsiasi momento, a sua esclusiva discrezione. Faremo di tutto per garantire che gli affiliati vengano informati al momento di tali modifiche alla struttura delle commissioni."
 
@@ -8680,17 +8808,14 @@ msgstr "La Società ti informerà di volta in volta in merito alle modifiche app
 msgid "The Company may impose certain rules and restrictions in relation to the placing of market orders on this website. Such rules may change from time to time, according to market conditions and other factors. The following indicative rules are currently in place:"
 msgstr "La Società può imporre talune regole e restrizioni in relazione al collocamento degli ordini di mercato su questo sito internet. Tali regole possono di volta in volta cambiare in base alle condizioni del mercato e ad altri fattori. Al momento sono in vigore le seguenti regole:"
 
-msgid "The Company may impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
-msgstr "La Società può imporre limiti al volume di trading sui conti dei clienti a sua esclusiva discrezione. È possibile prendere visione dei limiti del volume di trading nella sezione Protezione e limiti del conto personale. Se il saldo supera l'importo massimo del conto, occorre effettuare alcuni prelievi per riportarlo al di sotto del limite."
-
 msgid "The Company may use or disclose (or choose not to use or disclose) such Contributions for any purpose, in any way, in any media worldwide;"
 msgstr "La Società può usare o divulgare (o scegliere di non usare o non divulgare) tali Contributi per alcuno scopo, in nessun modo, su nessun mezzo multimediale a livello mondiale;"
 
 msgid "The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms."
 msgstr "La Società può sospendere il pagamento dei fondi accumulati nell'account di un cliente mentre sono necessari passaggi per verificare la conformità con questi termini."
 
-msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,000."
-msgstr "La Società può, di volta in volta, a sua esclusiva discrezione, oppure come richiesto dai regolamenti in atto, eseguire le idonee procedure per \"Conoscere i tuoi clienti\" e chiedere a un Cliente di fornire un'attestazione dell'identità (ad esempio una copia autenticata del passaporto o di un altro strumento di verifica dell'identità come ritenuto necessario dalla Società in tali circostanze) e può a sua esclusiva discrezione sospendere un conto fino a quando non vengano fornite informazioni soddisfacenti d'identificazione, attestazione dell'identità e dell'indirizzo, fonte dei fondi e/o fonte della ricchezza. I documenti \"Conoscere i tuoi clienti\" saranno richiesti quando un Cliente deposita fondi nel conto. Nel caso in cui un cliente apra un conto con Binary (Europe) Ltd, la soglia per la verifica è pari a 2.000 EUR per i prelievi cumulativi."
+msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. If you open an account with Binary (Europe) Ltd or Binary (IOM) Ltd, you’ll need to provide us with age verification documentation when you perform a deposit for the first time. If you open an account with Binary (Europe) Ltd, you’ll also be required to provide KYC documentation to verify your identity for cumulative withdrawals of EUR 2,000.00. If you open an account with Binary Investments (Europe) Ltd, you’ll need to provide KYC documentation as part of your account opening process."
+msgstr "La Società può, di volta in volta, a sua esclusiva discrezione, o come richiesto dai regolamenti in atto, eseguire le idonee procedure per \"Conoscere i tuoi clienti\" e chiedere a un Cliente di fornire un'attestazione dell'identità (ad esempio una copia autenticata del passaporto o di un altro strumento di verifica dell'identità come ritenuto necessario dalla Società in tali circostanze) e può a sua esclusiva discrezione sospendere un conto fino a quando non vengano fornite informazioni soddisfacenti d'identificazione, attestazione dell'identità e dell'indirizzo, fonte dei fondi e/o fonte della ricchezza. Aprendo un conto con Binary (Europe) Ltd o Binary (IOM) Ltd, occorre presentare un documento di verifica dell'età quando si effettua un deposito per la prima volta. Anche aprendo un conto con Binary (Europe) Ltd, occorre presentare la documentazione KYC come attestazione dell'identità del richiedente per i prelievi cumulativi del valore di 2.000,00 EUR. Aprendo un conto con Binary Investments (Europe) Ltd, occorre presentare la documentazione KYC durante la fase di apertura del conto."
 
 msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
 msgstr "La Società fornisce l'API di %1 sulla base di \"come è\" e \"come disponibile\" senza garanzie, espresse o implicite, di alcun tipo. Nella misura più ampia possibile consentita dalla legge in vigore, la Società declina qualsiasi responsabilità e rappresentanza, incluse, senza alcuna limitazione, qualsiasi garanzia implicita di commerciabilità, idoneità per uno scopo specifico, titolo, precisione dei dati e accertamento negativo della contraffazione."
@@ -8709,6 +8834,9 @@ msgstr "La Società si riserva il diritto di annullare/opporre transazioni o mod
 
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate programme after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "La Società si riserva il diritto di modificare qualsiasi parte del presente contratto in qualsiasi momento. Ci impegniamo a garantire che agli associati vengano notificate eventuali variazioni del presente contratto, tuttavia la responsabilità della verifica regolare dei termini e delle condizioni qui elencati è essenzialmente del Cliente. La partecipazione continua al nostro programma per associati in seguito alla pubblicazione di tali modifiche verrà considerata quale accettazione vincolante delle stesse."
+
+msgid "The Company reserves the right to have in place risk limits, which affects the trading limits of all clients trading, and may not be limited solely to instruments and contract types."
+msgstr "La Società si riserva il diritto di dotarsi di limitazioni del rischio che influenzano i limiti del trading per tutti i clienti, e che potrebbero non riguardare solamente gli strumenti e alcune tipologie di contratti."
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:"
 msgstr "La Società si riserva il diritto di rifiutare una relazione commerciale con, di interrompere un'attività commerciale con, e di revocare le transazioni dei Clienti impegnati in altre attività di trading:"
@@ -8737,17 +8865,23 @@ msgstr "La Società non sarà ritenuta responsabile per qualsiasi consiglio su s
 msgid "The Company shall not be responsible or liable to the Client for any fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default made by the Agent. Likewise, the Company shall not be responsible and/or liable to the Client if any terms and/or conditions and/or provisions of this Agreement are breached by the Agent."
 msgstr "La Società non sarà ritenuta colpevole o responsabile nei confronti dei Clienti per qualsiasi atto fraudolento o omissione e/o qualsiasi tipo di negligenza o cattiva condotta e/o inadempienza volontaria fatta dall'Agente. Allo stesso modo, la Società non sarà colpevole o responsabile nei confronti dei Clienti se termini e/o condizioni e/o disposizioni di questo Accordo sono violati dall'Agente."
 
+msgid "The Company shall not be responsible or liable to you for any negligence, misconduct, fraudulent acts and omissions made by you or your Money Manager."
+msgstr "La Società declina ogni responsabilità per qualsiasi tipo di negligenza, cattiva condotta, atti fraudolenti e omissioni attribuibili al Cliente o al suo Gestore di fondi."
+
 msgid "The Company shall not perform any supervisory function in regards with any financial services whatsoever provided by the Agent."
 msgstr "La Società non deve effettuare alcuna funzione di vigilanza sui servizi finanziari forniti dall'Agente."
 
 msgid "The Company shall pay you the currently published percentage of net revenues (as detailed on the commission page of your affiliate account) received during the term of the Agreement. The affiliate commission payments due shall only be for bona fide client referrals and the Company reserves the right to disregard duplicate accounts or nominee accounts that the Company sees as non-bona fide clients, at its sole discretion."
 msgstr "La Società dovrà pagarti la percentuale attualmente pubblicata delle entrate nette (come indicato nella pagina delle commissioni del tuo Account di affiliazione) ricevuta durante l'Accordo. I pagamenti d'affiliazione saranno dovuti solo per il riferimento di clienti in buona fede e la Società si riserva il diritto di ignorare gli account duplicati o quelli nominati che la Società considera non autentici a sua esclusiva discrezione."
 
+msgid "The Company shall provide you with online access to the trading platform on which the balance, margin, credit, and equity is displayed so you are able to monitor the status and performance of the Account. You agree that in case of incongruity, you will immediately contact the Company at %1."
+msgstr "La Società fornirà al cliente l'accesso online alla piattaforma di trading su cui è possibile consultare saldo, margine, credito ed equity per monitorare lo stato e l'andamento del conto. Il Cliente dichiara inoltre che, in caso di incongruenze, contatterà immediatamente la Società a %1."
+
 msgid "The Company shall provide you with statements accessible through an electronic system detailing the revenues generated by clients you have referred, if any, which have accrued to you over the course of the calendar month. Such statements shall be updated daily. At the end of a calendar month, the Company shall record your total share of Net Revenues, if any, during the previous calendar month. In the event that a revenue share in any calendar month is a negative amount, the Company shall be entitled but not obliged to carry forward and set off such negative amount against future revenue shares which would otherwise be payable to you. However, the Company shall also be entitled but not obliged to zeroise the negative balance that would otherwise be carried forward."
 msgstr "La Società fornirà degli estratti conto accessibili attraverso un sistema elettronico con il dettaglio delle entrate generate dai clienti da te presentati, se presenti, e accumulate durante il mese solare. Tali estratti verranno aggiornati quotidianamente. Alla fine del mese solare, la Società registrerà la quota complessiva delle entrate nette del Cliente, se presenti, durante il mese precedente. Nel caso in cui una quota delle entrate in un mese sia un importo negativo, la Società sarà autorizzata, ma non obbligata, ad applicare e compensare tale importo negativo per le quote di entrate future che sarebbero altrimenti dovute al Cliente. Tuttavia, la Società sarà anche autorizzata, ma non obbligata, ad azzerare il saldo negativo per non mantenerlo tale."
 
 msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing your Transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by us or the prime brokers to yourselves. You acknowledge and agree that such data is proprietary to us and any such provider, and you will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. You represent and warrant that you will only use such data for purposes of facilitating your entry into Transactions with us on your MT5 Real Account in accordance with this Agreement and not for any other purpose. This clause does not apply to Volatility Indices."
-msgstr "La Società ottiene i dati di mercato dagli intermediari principali che fungono da fornitori di liquidità, quindi esegue le transazioni attraverso un gruppo di liquidità aggregata formato da banche di primo livello. I servizi offerti dalla Società non includono la consegna fisica di valuta estera da parte nostra o da parte degli intermediari. L'utente riconosce e accetta che tali dati sono di proprietà nostra e di questi fornitori e che l'utente non ritrasmetterà, ridistribuirà, pubblicherà, divulgherà o mostrerà in tutto o in parte tali dati a terze parti. L'utente dichiara e garantisce che utilizzerà tali dati esclusivamente per facilitare l'accesso alle transazioni con noi sul proprio conto reale MT5 in conformità al presente contratto e non per altri scopi. Questa clausola non si applica agli indici di volatilità."
+msgstr "La Società ottiene i dati di mercato dai prime broker che fungono da fornitori di liquidità, quindi esegue le transazioni attraverso un gruppo di liquidità aggregata formato da banche di primo livello. I servizi offerti dalla Società non includono la consegna fisica di valuta estera da parte nostra o da parte degli intermediari. L'utente riconosce e accetta che tali dati sono di proprietà nostra e di questi fornitori e che l'utente non ritrasmetterà, ridistribuirà, pubblicherà, divulgherà o mostrerà in tutto o in parte tali dati a terze parti. L'utente dichiara e garantisce che utilizzerà tali dati esclusivamente per facilitare l'accesso alle transazioni con noi sul proprio conto reale MT5 in conformità al presente Contratto e non per altri scopi. Questa clausola non si applica agli indici di volatilità."
 
 msgid "The Company will not be liable in any way to any persons in the event of force majeure, or for the act of any Government or legal authority or for the failure of or damage or destruction to, its computer systems, data or records or any part thereof, or for delays, losses, errors or omissions resulting from the failure or mismanagement of any telecommunications or computer equipment or software. The Company shall not be responsible for any damages or losses deemed or alleged to have resulted from or been caused by this site or its content. This includes any client's use or misuse of its content, the inability of any client to connect with or use the site, delay in operations or transmission, failure of communication lines, or any errors or omissions in content."
 msgstr "La Società non sarà in alcun modo responsabile nei confronti di nessuno in caso di forza maggiore, o per qualsiasi atto governativo o autorità legale o per il fallimento, danno o distruzione dei suoi sistemi operativi, dati o registrazioni di qualsiasi altra parte, o per i ritardi, perdite, errori o omissioni derivanti dalla mancata o cattiva gestione di qualsiasi attrezzatura o software per le telecomunicazioni o computer. La Società non sarà responsabile per eventuali danni o perdite considerate o per cui si presume che siano conseguenti o causate dal presente sito o dai suoi contenuti. Ciò comprende qualsiasi utilizzo o uso improprio da parte di qualsiasi cliente dei suoi contenuti, l'incapacità di qualsiasi cliente di collegarsi o utilizzare il sito, ritardo nelle operazioni o trasmissione, mancanza delle linee di comunicazione oppure qualsiasi errore o omissione di contenuto."
@@ -8788,6 +8922,12 @@ msgstr "Il Forex è tipicamente negoziato in <i>lotti</i>. Un <i lotto</i> stand
 msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lots</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
 msgstr "Il Forex è tipicamente negoziato in <i>lotti</i>. Un <i lotto</i> standard equivale a 100.000 unità. Ogni volta che apri una posizione su un simbolo di valuta, puoi iniziare con una transazione minima di <i> 0,01 lotti</i>."
 
+msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
+msgstr "Il conto avanzato MAM può essere assegnato a un gestore di fondi che si occuperà del trade a tuo nome con spread più competitivi rispetto a un conto avanzato standard. Altre eventuali specifiche rimangono invariate."
+
+msgid "The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account."
+msgstr "Il conto d'indici di volatilità MAM può essere assegnato a un gestore di fondi che si occuperà del trade a tuo nome con le stesse specifiche di un conto d'indici di volatilità standard."
+
 msgid "The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control."
 msgstr "Lo strumento MAM è ideale per gestori di fondi che vogliono gestire facilmente account cliente multipli. Ti dà la possibilità di simultaneamente vedere, seguire e il fare trading per conto di tutti gli account cliente MT5 sotto il tuo controllo."
 
@@ -8802,9 +8942,6 @@ msgstr "La piattaforma MetaTrader, dal il 01 ottobre 2017, non supporterà Windo
 
 msgid "The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall deprive of the right to released form any responsibility, under this Agreement where it fails to duly notify the other Party on time."
 msgstr "La Parte che non è in grado di far fronte ai suoi obblighi, derivanti dal presente Accordo a causa di eventi di forza maggiore, deve, entro 5 giorni lavorativi dopo tale evento, informare per iscritto l'altra Parte. La Parte si priverà del diritto di rilasciare qualsiasi forma di responsabilità, ai sensi di questo Accordo, dove manchi di notificare debitamente l' altra Parte in tempo."
-
-msgid "The Payment Agent facility is currently not available in your country."
-msgstr "La funzione dell'Agente di pagamento al momento non è disponibile nel tuo paese."
 
 msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
 msgstr "Il report di divulgazione Pilastro 3 di Binary Investments (Europe) Limited è stato preparato in conformità con la IV Direttiva sui Fabbisogni di Capitale e il Regolamento sui Fabbisogni di Capitale. Leggi il nostro report di divulgazione Pilastro 3 per capire come ottemperiamo alla disciplina di mercato come suo partecipante."
@@ -9112,8 +9249,8 @@ msgstr "Il tasso swap dipenderà dalla direzione della posizione che prendi:"
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "Il sistema gestisce gli ordini in base al principio \"first in - first out\", ovvero in base alla sequenza dell'ordine ricevuto, e questo è fuori dal nostro controllo. Di conseguenza, potrebbe essere per te difficile o impossibile chiudere una posizione al prezzo previsto nel tuo Stop Order in determinate condizioni di mercato. Il collocamento di Stop Order da parte tua, sebbene sia utile come strumento di gestione del rischio, non limiterà necessariamente le tue perdite agli importi previsti, in caso di condizioni di trading altamente volatili, poiché le condizioni di mercato potrebbero rendere impossibile l'esecuzione di tali ordini e c'è incertezza sul possibile prezzo di uscita. In breve, uno Stop Order non è garantito perché non può operare indipendentemente dalle circostanze del mercato."
 
-msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
-msgstr "Il termine \"la Società\" indica la Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isola di Man, Arcipelago britannico, autorizzata e regolamentata dalla (1) Gambling Supervision Commission nell'Isola di Man, Arcipelago britannico, attuale autorizzazione per il gioco d'azzardo online emessa il 31 Agosto 2012, e per i clienti del Regno Unito dalla (2) UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, autorizzata e regolamentata dalla (1) Malta Gaming Authority di Malta per i prodotti connessi al gioco d'azzardo, autorizzazione numero MGA/CL2/118/2000 del 26 Maggio 2010 e per i clienti del Regno Unito dalla (2) UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regolamentata dalla Malta Financial Services Authority per i prodotti d'investimento, con autorizzazione per i Servizi d'investimento, Categoria 3, numero IS/ 70156; oppure Binary (CR) S.A., in base alla giurisdizione applicata all'account del Cliente secondo le procedure di apertura dell'account del sito internet come specificato nella sezione Chi siamo del sito internet."
+msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
+msgstr "Il termine \"la Società\" indica la Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isola di Man, Arcipelago britannico, autorizzata e regolamentata dalla (1) Gambling Supervision Commission dell'Isola di Man, Arcipelago britannico, attuale licenza per il gioco d'azzardo online emessa il 31 Agosto 2012, e per i clienti del Regno Unito dalla (2) UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, autorizzata e regolamentata dalla (1) Malta Gaming Authority di Malta per i prodotti connessi al gioco d'azzardo, licenza n. MGA/CL2/118/2000 del 26 Maggio 2010 e per i clienti del Regno Unito dalla (2) UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regolamentata dalla Malta Financial Services Authority per i prodotti d'investimento, con licenza per i Servizi d'investimento, Categoria 3, n. IS/ 70156 del 19 maggio 2015; oppure Binary (CR) S.A., in base alla giurisdizione applicata al conto del Cliente secondo le procedure di apertura del conto del sito internet e come specificato nella sezione Chi siamo del sito internet."
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote Binary (V) Ltd."
 msgstr "Il termine 'noi', 'ci', 'nostro/a', 'nostri/e', 'la Società', o '%1' indica Binary (V) Ltd."
@@ -9226,6 +9363,9 @@ msgstr "Pensi che certe valute andranno su o giù? Impara quando devi comprare (
 msgid "This Agreement constitutes the entire Agreement between the Parties and no earlier representation or arrangement or agreement written or oral relating to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
 msgstr "Questo Accordo costituisce l'intero Accordo tra le Parti e nessuna rappresentazione precedente o disposizione o accordo scritto o orale relativi a qualsiasi argomento affrontato in questo Accordo tra le Parti ha alcuna forza o effetto prima della Data di inizio."
 
+msgid "This Agreement constitutes the entire Agreement between the Parties and no earlier representation, arrangement or agreement written or oral relation to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
+msgstr "Il presente Contratto costituisce l'intero Contratto tra le Parti e nessuna precedente rappresentazione, disposizione, accordo o relazione scritta od orale relativi a qualsiasi argomento affrontato nel presente Contratto tra le Parti risulta in vigore o ha effetto prima della data di inizio."
+
 msgid "This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter."
 msgstr "Il presente Accordo contiene l'intero accordo tra le parti in merito alla questione in oggetto e sostituisce tutti gli accordi precedenti e le intese tra le parti rispetto alla questione in oggetto."
 
@@ -9235,8 +9375,14 @@ msgstr "Il presente Accordo gestisce l'uso della nostra API a meno che tu non ab
 msgid "This Agreement is between Binary (C.R) S.A. (hereinafter referred to as “the Company” or “%1”, “we”, “us”, “our”, “ours”, “it”, “its”) and Payment Agent (hereinafter referred to as “the Agent”, “he”, “his”, “him”, “himself”, “it”, “its”, “itself”), both of whom agree to be bound by this Agreement."
 msgstr "Questo Accordo è tra Binary (C.R) S.A. (da ora in avanti riferita come \"la Società\" o \"%1\", \"noi\", \"ci\", \"nostro/a\", \"nostri/e\", \"il\", \"suo/a/e\") e l' Agente di Pagamento (da ora in avanti riferito come \"l'Agente\", \"lui\", \"suo/a/e\", \"egli\", \"lui stesso\", \"il\", \"suoi\", \"se stesso\"), entrambi i quali accettano di essere vincolati dal presente Accordo."
 
+msgid "This Agreement is between Binary (V) Ltd (hereinafter referred to as 'the Company') and Client who authorises a Multi-Account Manager (hereinafter referred to as 'Money Manager') to manage the Account on behalf of the Client, both of whom agree to bound by this Agreement as a supplement to the Client Agreement."
+msgstr ""
+
 msgid "This Agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy or misspelling and as a result by misunderstanding or misinterpretation of any of the terms and/or conditions and/or clauses and/or provisions of any translated versions of this Agreement."
 msgstr "Questo Accordo viene fornito in Inglese. Nel caso in cui ci sia una differenza tra la versione Inglese e qualsiasi versione tradotta di questo documento, la versione Inglese prevarrà. La Società non è responsabile per qualsiasi danno o perdita in qualsiasi modo causata da un errore, imprecisione, o errata ortografia e come risultato di incomprensioni o errate interpretazioni di ognuno dei termini e/o condizioni e/o clausole e/o disposizioni di ogni versione tradotta di questo Accordo."
+
+msgid "This Agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail."
+msgstr ""
 
 msgid "This Agreement is supplied to you in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. We will not be made responsible for any damage or loss caused by an error, inaccuracy, misunderstanding or misspelling with regards to the translations."
 msgstr "Il presente contratto viene fornito in inglese. Nel caso in cui ci sia una differenza tra la versione inglese e qualsiasi versione tradotta di questo documento, la versione inglese prevarrà. Noi non saremo responsabili per qualsiasi danno o perdita causata da un errore, imprecisione, incomprensione o errata ortografia per quanto riguarda le traduzioni."
@@ -9412,6 +9558,9 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Per modificare il tuo nome, data di nascita, paese di residenza o email, contatta l'<a href=\"%1\">Assistenza Clienti</a>."
 
+msgid "To create a MAM real account, please:"
+msgstr "Per creare un conto reale MAM, ti preghiamo di:"
+
 msgid "To create a MetaTrader 5 real account, please:"
 msgstr "Per creare un account reale MetaTrader 5, per favore:"
 
@@ -9456,6 +9605,9 @@ msgstr "Per aprire un conto reale MT5 per strumenti finanziari, è necessario di
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "Per eseguire questa azione, ti preghiamo di <a href=\"%1\"> eseguire l'upgrade all'account reale %2</a>."
+
+msgid "To perform this action, please set the %1currency%2 of your account."
+msgstr ""
 
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Per effettuare questa azione, passa al tuo Account Reale in %1."
@@ -9538,6 +9690,9 @@ msgstr "Fai trading 24/7, anche durante i weekend."
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "Fia trading su coppie di Bitcoin, Ethereum e Litecoin senza possederli. Le nostre coppie di criptovalute quotano una criptovaluta, come as esempio Bitcoin, contro una moneta legale (moneta fiat), come il Dollaro Statunitense."
 
+msgid "Trade FX binary options on our multi-barrier platform, Ladders."
+msgstr ""
+
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "Fai trading su Forex e CFD sulla nostra famosa piattaforma multi-asset."
 
@@ -9591,6 +9746,9 @@ msgstr "Fai trading con posizioni lunghe o brevi, a seconda della tua strategia 
 
 msgid "Trade metals on competitive fixed and variable spreads."
 msgstr "Fai trading di metalli su spread competitivi fissi e variabili."
+
+msgid "Trade now"
+msgstr "Fai trading ora"
 
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "Fai trading sui mercati sottostanti che includono Forex, indici, materie prime e molto di più."
@@ -9656,10 +9814,13 @@ msgid "Trading Times"
 msgstr "Orari di trading"
 
 msgid "Trading Window"
-msgstr ""
+msgstr "Finestra di trading"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Limiti di trading e dei prelievi"
+
+msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
+msgstr ""
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
 msgstr "Il trading in opzioni binarie può non essere adatto a tutti, quindi assicurati di aver compreso appieno i rischi connessi. Le tue perdite possono superare il deposito iniziale e non possiederai, né avrai alcun interesse su alcun asset sottostante. In merito alle opzioni binarie, che sono prodotti d'azzardo, si ricorda che il gioco d'azzardo può creare dipendenza, gioca responsabilmente. Leggi altro sul %1Trading responsabile%2."
@@ -9964,20 +10125,20 @@ msgstr "Al momento della chiusura di una Transazione, l'utile (o la perdita) rea
 msgid "Upon opening a Transaction, the sum due and payable by you to us are deducted from your Account Balance."
 msgstr "All'apertura di una Transazione, la somma dovuta e pagabile da te a noi viene detratta dal saldo del tuo Account."
 
+msgid "Upon revocation, you acknowledge and understand that your Money Manager will lose all authorisation to manage your Account."
+msgstr ""
+
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "Alla scadenza o alla risoluzione del presente Accordo, per qualsiasi motivo, tutti i diritti e licenza a te concessi con il presente Accordo, incluso l'uso dell'API di %1, verranno risolti immediatamente. Accetti di annullare prontamente qualsiasi uso ulteriore dell'API di %1. La risoluzione del presente Accordo non agisce quale rinuncia di qualsiasi violazione del presente Accordo e non agirà quale responsabilità per la violazione dei suoi obblighi secondo il presente Accordo. La Società non sarà ritenuta responsabile nei tuoi confronti per i danni di qualsiasi tipo quale risultato della risoluzione del presente Accordo secondo i suoi termini."
 
 msgid "Usage Limit"
 msgstr "Limiti d'utilizzo"
 
-msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes"
-msgstr "Utilizza una varietà di metodi di allocazione (ad esempio equity, saldo, equilibro e lotto) per distribuire i volumi del trading"
+msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes, starting from 0.01 lots"
+msgstr ""
 
 msgid "Use appropriate terminology, taking into account the style and nuance of the original text"
 msgstr "Usa una terminologia adeguata considerando lo stile e le sfumature del testo originale"
-
-msgid "Use multiple exclusion rules to temporarily exclude client accounts from allocations without affecting their current positions"
-msgstr "Utilizza più regole di esclusione per escludere temporaneamente gli account dei clienti dalle allocazioni senza influire sulle loro posizioni correnti"
 
 msgid "Use of Information"
 msgstr "Uso delle informazioni"
@@ -9990,6 +10151,9 @@ msgstr "Utilizza l'opportunità offerta dal nostro sito internet per fare pratic
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
 msgstr "Utilizza la piattaforma Web da qualsiasi sistema operativo Windows, MacOS o Linux: nessun download o installazione sono richiesti."
+
+msgid "Use two different exclusion types: 'Allocation' excludes a client from future trades only, while 'Full' also closes open positions and removes its balance from the master account. Clients can choose to close any open position."
+msgstr ""
 
 msgid "Use your unique affiliate link and the marketing tools we provide to advertise %1 to your audience."
 msgstr "Usa il tuo link unico di associato e gli strumenti di marketing da noi forniti per sponsorizzare %1 al tuo pubblico."
@@ -10069,8 +10233,8 @@ msgstr "Visualizza tutte le informazioni di cui hai bisogno per gestire il tuo e
 msgid "View available payment methods"
 msgstr "Mostra le modalità di pagamento disponibili"
 
-msgid "View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price, SL, TP, swap, and profit"
-msgstr "Vedi le informazioni essenziali per le posizioni aperte associate a ciascun ID di accesso, inclusi il tipo di ordine (acquisto / vendita), orario di apertura, prezzo di apertura, SL, TP, swap e profitto"
+msgid "View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price,  stop loss, take profit, swap, and profit"
+msgstr ""
 
 msgid "View open positions"
 msgstr "Mostra le posizioni aperte"
@@ -10144,8 +10308,8 @@ msgstr "Account con Indici di Volatilità: 1:500"
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "Gli Indici di Volatilità sono ulteriormente categorizzati in due classi:"
 
-msgid "Volatility Indices**"
-msgstr "Indici di volatilità**"
+msgid "Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
+msgstr ""
 
 msgid "Volume"
 msgstr "Volume"
@@ -10191,9 +10355,6 @@ msgstr "Noi"
 
 msgid "We accept"
 msgstr "Accettiamo"
-
-msgid "We aim to establish and maintain and operate effective organisational and administrative arrangements with a view to taking all reasonable steps to prevent conflicts of interest from constituting or giving rise to a material risk of damage to the interests of our clients."
-msgstr "Il nostro obiettivo è quello di stabilire, mantenere e applicare strutture organizzative e amministrative efficienti al fine di adottare tutte le misure ragionevoli per prevenire conflitti d'interesse tali da costituire o dar luogo a rischi materiali a danno degli interessi dei nostri clienti."
 
 msgid "We aim to keep a record of the kinds of activity we carry on in which a material conflict could arise or has arisen. We also maintain procedures to manage actual or potential conflicts. This includes procedures to maintain appropriate independence between members of our staff who are involved in potentially conflicting activities, for example, through the operation of information barriers, physical separation of staff, the segregation of duties and responsibilities and maintenance of a policy of independence which requires our staff, when providing services to a client, to act in the best interests of the client and to disregard any conflicts of interest; and, in some circumstances declining to act for a client or potential client."
 msgstr "Il nostro obiettivo è quello di mantenere un registro delle tipologie di attività che effettuiamo per le quali è possibile che insorga o che ne sia derivato un conflitto materiale. Inoltre manteniamo procedure per gestire conflitti reali e potenziali. Ciò comprende procedure per mantenere un'adeguata indipendenza tra i membri del nostro staff che sono coinvolti in attività potenzialmente in conflitto, ad esempio attraverso l'impiego di barriere di informazioni, la separazione fisica dello staff, la separazione delle funzioni e delle responsabilità e il mantenimento di una politica di indipendenza che richiede al nostro staff, durante la fornitura dei servizi a un cliente, di agire nel miglior interesse del cliente e di ignorare qualsiasi conflitto d'interesse; e, in alcune circostanze, rifiutarsi di agire per un cliente o per un potenziale cliente."
@@ -10265,7 +10426,7 @@ msgid "We have in place adequate internal procedures to ensure that you are in a
 msgstr "Abbiamo attuato procedimenti interni adeguati per garantirti di essere sempre trattato in maniera giusta e che il rischio di danno agli interessi del cliente venga mitigato."
 
 msgid "We have the obligation to record and monitor telephone conversations and/or electronic communications involving transactions when dealing on own account and the provision of client order services that relate to the reception, transmission and execution of client orders. Recordings may also be used for quality and antifraud purposes."
-msgstr "Abbiamo l'obbligo di registrare e monitorare le conversazioni telefoniche e/o le comunicazioni elettroniche che comprendono le operazioni legate al conto personale, e la fornitura dei servizi ordine ai clienti legati alla ricezione, trasmissione ed esecuzione di tali ordini. Le registrazioni potrebbero inoltre essere utilizzate per verifiche di qualità e a scopo antifrode."
+msgstr "Abbiamo l'obbligo di registrare e monitorare le conversazioni telefoniche e/o le comunicazioni elettroniche che comprendono le operazioni legate al conto personale e la fornitura dei servizi ordine ai clienti legati alla ricezione, trasmissione ed esecuzione di tali ordini. Le registrazioni potrebbero inoltre essere utilizzate per verifiche di qualità e a scopo antifrode."
 
 msgid "We have the right and obligation not to accept the information provided by you if we know or have a reason to believe that it is incorrect, inaccurate or incomplete. In such case, we may ask you to clarify or correct the details provided."
 msgstr "Abbiamo il diritto e l'obbligo di non accettare le informazioni fornite da un Cliente se sappiamo o abbiamo motivo di credere che siano inesatte, imprecise o incomplete. In tal caso, possiamo chiederti di chiarire o correggere i dati forniti."
@@ -10331,7 +10492,7 @@ msgid "We reserve the right to refuse your referrals' application to open an acc
 msgstr "Ci riserviamo il diritto di rifiutare la richiesta dei referenti di aprire un account (o chiudere i propri account), come necessario, per conformarsi a qualsiasi requisito periodicamente definito e/o richiesto secondo le leggi, norme e regolamenti applicabili."
 
 msgid "We reserve the right to refuse your request to open an MT5 Real Account for any reason, and any MT5 Real Account may be closed at our discretion at any time."
-msgstr "Ci riserviamo il diritto di rifiutare, per qualsiasi motivazione, la tua richiesta di aprire un conto reale MT5, e qualsiasi conto reale può essere chiuso a nostra discrezione in qualsiasi momento."
+msgstr "Ci riserviamo il diritto di rifiutare, per qualsiasi motivazione, la tua richiesta di aprire un conto reale MT5 e qualsiasi conto reale può essere chiuso a nostra discrezione in qualsiasi momento."
 
 msgid "We reserve the right to void or amend the contractual terms of any Transactions that we reasonably believe are entered into at prices that do not reflect fair market prices or that are entered into at an abnormally low level of risk due to an obvious or palpable error (a “Manifest Error”). In deciding whether an error is a Manifest Error, we may take into account any relevant information, including the state of the underlying market at the time of the error and any error within, or lack of clarity of, any information source or pronouncement. You have a duty to report to us any such problems, errors, or suspected system inadequacies that you may experience and may not abuse or arbitrage such system problems or errors for profit. We will endeavour to resolve any such difficulties in the shortest time possible."
 msgstr "Ci riserviamo il diritto di annullare o modificare le condizioni contrattuali di tutte le transazioni che ragionevolmente crediamo siano stipulate a prezzi che non riflettono prezzi equi di mercato o che siano stati inseriti ad un livello di rischio anormalmente basso a causa di un errore evidente o palpabile (un \"Errore Palese\"). Nel decidere se un errore è un Errore Palese, possiamo prendere in considerazione tutte le informazioni rilevanti, compreso lo stato del mercato sottostante al momento dell'errore e qualsiasi errore all'interno di, o mancanza di chiarezza di, qualsiasi fonte di informazioni o dichiarazione. Tu hai il dovere di segnalarci eventuali problemi, errori o sospette inadeguatezze del sistema che puoi aver riscontrato e non dovresti abusare o esercitare arbitrage su tali problemi o errori di sistema allo scopo di ottenere un profitto. Cercheremo di risolvere tali difficoltà nel più breve tempo possibile."
@@ -10346,9 +10507,6 @@ msgid "We support hundreds of deposit and withdrawal options, including Bitcoin.
 msgstr "Sono disponibili centinaia di opzioni di deposito e prelievo, tra cui Bitcoin."
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
-msgstr "Utilizziamo servizi per la verifica dell'identità e misure di rilevamento di frodi in tempo reale per aiutarti a proteggerti da accessi non autorizzati sul tuo account. Monitoriamo anche l'attività dell'account per rilevare la presenza di attività inusuali che potrebbero indicare una frode e collaboriamo con agenzie di riscossione e forze dell'ordine per risolvere i problemi di frode."
-
-msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
 msgstr "Utilizziamo servizi per la verifica dell'identità e misure di rilevamento di frodi in tempo reale per aiutarti a proteggerti da accessi non autorizzati sul tuo account. Monitoriamo anche l'attività dell'account per rilevare la presenza di attività inusuali che potrebbero indicare una frode e collaboriamo con agenzie di riscossione e forze dell'ordine per risolvere i problemi di frode."
 
 msgid "We will act on any instructions given, or appearing to be given by you and received by us in relation to the margin trading services provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us."
@@ -10396,8 +10554,14 @@ msgstr "Mercoledì"
 msgid "Weekday"
 msgstr "Giorno feriale"
 
+msgid "Weekdays:"
+msgstr "Giorni feriali:"
+
 msgid "Weekend quotes"
 msgstr "Quotazioni dei weekend"
+
+msgid "Weekend:"
+msgstr "Weekend:"
 
 msgid "Welcome to Binary.com"
 msgstr "Benvenuto su Binary.com"
@@ -10437,6 +10601,9 @@ msgstr "Cos'è il trading su CFD"
 
 msgid "What is Forex trading"
 msgstr "Cos'è il trading Forex"
+
+msgid "What is a MAM account?"
+msgstr "Cos'è un conto MAM?"
 
 msgid "What is cryptocurrency trading"
 msgstr "Cos'è il trading di criptovaluta"
@@ -10544,7 +10711,7 @@ msgid "Where a particular venue has been specified in your instructions with res
 msgstr "Dove un preciso ambito è stato specificato nelle istruzioni per quanto riguarda l'esecuzione di un ordine, non saremo responsabili per la selezione del suddetto ambito."
 
 msgid "Where an account is funded solely by means of a bonus code, the bonus amount plus any winnings cannot be withdrawn until you have exceeded an account turnover of 25 times the bonus amount value. The maximum amount of winnings allowed on such accounts shall be 25 times the amount of such bonus amount."
-msgstr "Quando un conto viene finanziato esclusivamente attraverso un codice bonus, l'importo del bonus più qualsiasi vincita non può essere prelevato fino a quando il turnover del conto non sarà pari a 25 volte il valore del bonus. L'importo massimo delle vincite consentito per tali conti sarà pari a 25 volte l'importo di tale bonus."
+msgstr "Quando un conto viene finanziato esclusivamente attraverso un codice bonus, l'importo del bonus così come qualsiasi vincita non può essere prelevato fino a quando il turnover del conto non sarà pari a 25 volte il valore del bonus. L'importo massimo delle vincite consentito per tali conti sarà pari a 25 volte l'importo di tale bonus."
 
 msgid "Where any law-suit, action or other legal or administrative proceedings whatsoever in connection to this Agreement are initiated for any execution, any attachment or garnishment, or distress against the Agent or where an encumbrance takes possession of, the entire or any part of the Agent’s property, undertakings or assets including tangible and intangible."
 msgstr "Dove ogni procedimento legale, azione o altri atti legali o amministrativi, in qualunque modo relativi al presente Accordo, sono mirati a qualsiasi esecuzione, sequestro o pignoramento o afflizione contro l'Agente o dove una responsabilità prende possesso dell'intero o di parte delle sue proprietà dell'Agente, imprese o attività sia tangibili che intangibili."
@@ -10684,9 +10851,6 @@ msgstr "Windows 7 o versioni successive"
 msgid "Winning the contract"
 msgstr "Vincere il contratto"
 
-msgid "Winnings may only be paid to the initiator of an account. When a Client maintains an account by means of telegraphic deposits, winnings are only paid to the holder of the originating bank account, and it is the onus of the Client to ensure that account number and name accompany all transfers to the Company. When a Client maintains an account by means of credit/debit card deposits, winnings are only paid back to the same card."
-msgstr "Le vincite possono essere pagate solo al proprietario di un account. Quando un Cliente sostiene un account attraverso depositi telegrafici, le vincite vengono pagate solo al titolare del conto bancario originale, e spetta al Cliente l'onere di garantire che il numero dell'account e il nome accompagnino tutti i trasferimenti alla Società. Quando un Cliente sostiene un account tramite depositi con carte di credito/debito, le vincite vengono pagate solo sulla stessa carta."
-
 msgid "With %1, you can count on us to serve you with integrity and reliability."
 msgstr "Conta su %1, al tuo servizio con integrità e affidabilità."
 
@@ -10726,17 +10890,23 @@ msgstr "Limite per i prelievi"
 msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr "Prelievo di fondi dal conto reale MT5"
 
-msgid "Withdrawal of funds from your MT5 Real Account must be made in the same currency maintained in your Binary Options Real Account."
-msgstr "Il prelievo di fondi dal tuo conto reale MT5 deve essere effettuato nella stessa valuta del tuo conto reale di opzioni binarie."
-
 msgid "Withdrawal: %1 working day"
 msgstr "Prelievo: %1 giorno lavorativo"
 
 msgid "Withdrawal: Not applicable"
 msgstr "Prelievo: non applicabile"
 
+msgid "Withdrawals have been disabled on your account. Please check your email for more details."
+msgstr ""
+
+msgid "Withdrawals may only be paid to the initiator of an account. When a Client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the Client to ensure that account number and name accompany all transfers to the Company. When a Client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card."
+msgstr ""
+
 msgid "Without margin, purchasing one lot of the XAU/USD pair will cost you:"
 msgstr "Senza margine, l'acquisto di un lotto della coppia XAU/USD ti costerà:"
+
+msgid "Without prejudice of any right of the Company to decline any Order placed by the Money Manager, you hereby authorise the Company to accept Orders from the Money Manager and proceed transactions for your Account."
+msgstr ""
 
 msgid "Without prejudice to any other terms of this Agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to you in relation to any loss that you incurred whether directly or indirectly by any cause beyond our control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 Trading Platform or any systems or network links."
 msgstr "Fatti salvi eventuali altri termini del presente Accordo, né la Società né alcuno dei suoi amministratori, funzionari, dirigenti, dipendenti o agenti potranno essere responsabili nei tuoi confronti in relazione a qualsiasi perdita da te subita, direttamente o indirettamente, per qualsiasi causa di fuori del nostro controllo, incluse, ma non limitate a, qualsiasi ritardo o difetto o mancanza dell'intero o di una parte della Piattaforma di Trading MT5 o di qualsiasi sistema o collegamento di rete."
@@ -10789,6 +10959,9 @@ msgstr "Sì. Ti invitiamo a contattare il tuo manager di riferimento per gli ass
 msgid "You acknowledge and accept that a Transaction may be subject to market rules laid down in by-laws, rules, provisions, customs, and practices of an exchange, a market, a clearing house, a body or any other organisation involved in the execution, clearing, and/or settlement of said Transaction. Should any such organisation take decisions or measures which affect a Transaction or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) which it, at its sole discretion, considers reasonable. This clause does not apply to Volatility Indices."
 msgstr "Riconosci e accetti che una Transazione può essere soggetta a regole di mercato stabilite da leggi, norme, disposizioni, usi e pratiche di una borsa, un mercato, una stanza di compensazione, un organismo o qualsiasi altra organizzazione coinvolta nell'esecuzione, compensazione e/o regolamento di detta Transazione. Qualora una tale organizzazione prenda decisioni o misure che riguardano una Transazione o una Posizione Aperta, la Società avrà il diritto di intraprendere qualsiasi azione (inclusa la chiusura di qualsiasi Posizione Aperta del cliente) che, a sua esclusiva discrezione, riterrà ragionevole. Questa clausola non si applica agli Indici di Volatilità."
 
+msgid "You acknowledge and agree that it is your absolute responsibility to ensure that all orders or positions have been closed in your Account prior to revocation."
+msgstr ""
+
 msgid "You acknowledge and agree that the Company may, at any time without prior notice and at its discretion, change the trading rules in relation to:"
 msgstr "Sei a conoscenza e accetti che la Società può, in qualsiasi momento senza preavviso e a propria discrezione, modificare le regole di trading in relazione a:"
 
@@ -10804,8 +10977,23 @@ msgstr "Sei a conoscenza che è tua responsabilità controllare il Saldo dell'Ac
 msgid "You acknowledge that it is your responsibility to understand the features, characteristics, terms and conditions of an Order and the implications of executing an Order before you place an Order with us."
 msgstr "Sei a conoscenza che è tua responsabilità comprendere le qualità, caratteristiche, termini e condizioni di un Ordine e le implicazioni dell'esecuzione di un Ordine prima di collocare un Ordine con noi."
 
-msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the latter, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
-msgstr "Sei a conoscenza che la Società determinerà, a sua discrezione, le Transazioni che verranno mantenute nel libro della Società (conosciuto come B booking) e le Transazioni che passeranno per i broker primari che fungono da fornitori di liquidità per la Società (conosciuto come A booking). Per questi ultimi, la Società è la controparte di queste transazioni ed esiste una correlazione tra il profitto/perdita del cliente e il profitto/perdita della Società. In qualsiasi momento potremmo stipulare o potremmo aver stipulato transazioni con un elevato numero di clienti, i cui interessi del singolo potrebbero discostarsi da quelli di altri clienti. In conseguenza di questo, la Società potrebbe detenere Posizioni Aperte che potrebbero non essere allineate ai vostri obiettivi / interessi come singoli clienti della Società."
+msgid "You acknowledge that the Company cannot guarantee that the Software provided to the Money Manager is free of any errors. Thus, you agree that the Company shall not be liable or responsible for any damage and loss that incurs as a result of such error."
+msgstr ""
+
+msgid "You acknowledge that the Company may accept Orders and proceed with transactions for your Account executed by any employees or representatives of the Money Manager."
+msgstr ""
+
+msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
+msgstr ""
+
+msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgstr ""
+
+msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
+msgstr ""
+
+msgid "You acknowledge that the Money Manager is not authorised to withdraw or give instructions in relation to any payment transactions for your Account to any person other than yourself. Likewise, the Money Manager is not authorised to accept or amend any of the terms of the Client Agreement."
+msgstr ""
 
 msgid "You acknowledge that we may use, store, or otherwise process personal information provided by you in connection with the provision of margin trading services described in this Agreement. You consent to the processing and transmittal of your personal information for the purposes of performing the contract and administering the relationship between you and us."
 msgstr "Tu sei a conoscenza riconosce che possiamo utilizzare, archiviare o altrimenti elaborare le informazioni personali da te fornite in connessione con la fornitura di servizi di trading a margine descritti nel presente Accordo. Acconsenti al trattamento e alla trasmissione delle tue informazioni personali ai fini dell'esecuzione del contratto e della gestione della relazione tra te e noi."
@@ -10816,6 +11004,15 @@ msgstr "Sei a conoscenza che ci riserviamo il diritto di stabilire una dimension
 msgid "You acknowledge that we reserve the right to void or close out one or more of your Transactions if we observe any breaches of warranty given under this Agreement."
 msgstr "Sei a conoscenza che ci riserviamo il diritto di annullare o chiudere una o più delle tue Transazioni se osserviamo eventuali violazioni della garanzia fornita ai sensi del presente Accordo."
 
+msgid "You acknowledge that you have full legal power and capacity to submit and execute this Agreement and grant authorisation to the Money Manager to place any Order or proceed any transaction for your Account."
+msgstr ""
+
+msgid "You acknowledge that your Account shall be managed and traded only by the Money Manager and not by any other third parties."
+msgstr ""
+
+msgid "You acknowledge that your decision to assign all rights in relation to the management, trading and operation of the Account to the Money Manager is duly clear, voluntary and unqualified. You also declare that you took into consideration the risks associated with trading of Rolling Spot FX, CFDs, Commodities and any other securities or products that may be offered by the Company to you, from time to time in accordance with the Client Agreement."
+msgstr ""
+
 msgid "You acknowledge that, in the course of dealing under these Terms, you may obtain confidential information relating to the Company and its parent, subsidiaries, affiliates or other third party. Such confidential information shall belong solely to the Company."
 msgstr "Accetti che, in caso di trattamento secondo i presenti Termini, puoi ottenere le informazioni confidenziali connesse alla Società e suo capogruppo, sussidiari, affiliati o terze parti. Tali informazioni confidenziali apparterranno esclusivamente alla Società."
 
@@ -10825,11 +11022,20 @@ msgstr "Sei a conoscenza, comprendi, dichiari e garantisci di essere consapevole
 msgid "You act in breach of any warranty or representation made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
 msgstr "Agisci in violazione di qualsiasi garanzia o dichiarazione fatta in base al presente Accordo, e/o se le informazioni a noi fornite in relazione al presente Accordo sono, o diventano, false o fuorvianti;"
 
+msgid "You agree and authorise the Company to disclose to the Money Manager any data or information related to your Account."
+msgstr ""
+
+msgid "You agree and authorise the Money Manager to place all Orders and transactions for your Account in the same way and validity as you might place such Orders for your Account."
+msgstr ""
+
 msgid "You agree that by developing on the %1 API, you are entering into a legally binding agreement with the Company."
 msgstr "Accetti che sviluppando con l'API di %1, stipuli un accordo legalmente vincolante con la Società."
 
+msgid "You agree that this Agreement shall become effective on the Commencement Date. You also agree that unless this Agreement is revoked or terminated in accordance with Section E below, this Agreement shall remain valid and in full force."
+msgstr ""
+
 msgid "You agree that we may use Personal Information provided by you in order to conduct appropriate anti-fraud checks. Personal Information that you provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information."
-msgstr "Si accetta il possibile utilizzo da parte nostra delle informazioni personali fornite al fine di effettuare adeguati controlli anti frode. Le Informazioni personali possono essere divulgate ad alcune agenzie di controllo del credito e di prevenzione alla frode, che potrebbero tenerne traccia."
+msgstr "Si accetta il possibile utilizzo da parte nostra delle informazioni personali fornite al fine di effettuare adeguati controlli antifrode. Le informazioni personali possono essere divulgate ad alcune agenzie di controllo del credito e di prevenzione alla frode che potrebbero tenerne traccia."
 
 msgid "You agree that you will not:"
 msgstr "Accetti che non:"
@@ -10888,6 +11094,9 @@ msgstr "Sei responsabile per la gestione fiscale e giuridica degli affari inclus
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "Stai vendendo la valuta di base e comprando la valuta di quotazione."
 
+msgid "You are unilaterally entitled to request the revocation of the appointment of your Money Manager by electronically revoking your Money Manager's authorisation through the relevant functions provided in the system."
+msgstr ""
+
 msgid "You are warned of the following additional risks:"
 msgstr "Sei avvisato dei seguenti rischi aggiuntivi:"
 
@@ -10899,6 +11108,9 @@ msgstr "Puoi scegliere tra due diversi tipi di piani di commissioni per associat
 
 msgid "You can choose to be treated as a Retail Client at any time, even if you would qualify as a Professional Client."
 msgstr "Puoi scegliere di essere trattato come un Cliente al Dettaglio in qualsiasi momento, anche se ti qualificassi come Cliente Professionale."
+
+msgid "You can close this window without interrupting your trade."
+msgstr ""
 
 msgid "You can determine the margin for our CFDs by using the formula below:"
 msgstr "Puoi determinare il margine per i nostri CFD utilizzando la seguente formula:"
@@ -10942,6 +11154,9 @@ msgstr "Ti aspetti che %1 aumenti di valore, quindi di poterla rivendere con pro
 msgid "You further acknowledge and agree that we will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused, or alleged to be caused by, or in connection with a Manifest Error."
 msgstr "Sei a conoscenza e accetti inoltre che non saremo ritenuti responsabili o colpevoli, direttamente o indirettamente, di eventuali perdite, spese o danni causati o presunti di essere causati da o in connessione con un Errore Palese."
 
+msgid "You further agree to indemnify the Company from any loss, damage or liability arising out of your failure or refuse to confirm all Orders and/or transactions proceeded."
+msgstr ""
+
 msgid "You have all necessary authority, powers, consents, licences and authorisations and have taken all necessary actions to enable you to enter into, and perform this Agreement and such Transactions lawfully;"
 msgstr "Hai l'autorità, i poteri, i consensi, le licenze e le autorizzazioni necessari e hai intrapreso tutte le azioni necessarie per consentirti di entrare e di eseguire il presente Accordo e tali Transazioni in modo lecito;"
 
@@ -10969,6 +11184,9 @@ msgstr "Non hai accesso ad alcuna applicazione."
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "Non hai ottenuto e non manterrai tutte le licenze e i consensi necessari per operare all'interno di qualsiasi legge, norma e regolamento applicabile in base all'autorità di qualsiasi ente regolatore della giurisdizione competente su cui operi o rivolgi la tua attività;"
 
+msgid "You have placed digital advertisements for the licensed activities on websites providing unauthorised access to copyrighted content."
+msgstr ""
+
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of Forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "Probabilmente hai visto i termini 'aprire una posizione long' (going long) e 'aprire una posizione short' (going short) usati da molti broker e trader Forex. Confrontiamo le differenze tra i due termini:"
 
@@ -10993,11 +11211,11 @@ msgstr "Hai letto completamente la pagina sui Termini e le Condizioni Legali e h
 msgid "You have sold this contract at %1 %2"
 msgstr "Hai venduto questo contratto a %1 %2"
 
-msgid "You have successfully created your Virtual Account."
+msgid "You have successfully created your %1account!"
 msgstr ""
 
-msgid "You have successfully created your account!"
-msgstr "Hai creato con successo il tuo account!"
+msgid "You have successfully created your Virtual Account."
+msgstr ""
 
 msgid "You have sufficient experience and knowledge in matters of contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site."
 msgstr ""
@@ -11010,6 +11228,9 @@ msgstr ""
 
 msgid "You hereby agree that you will not participate in any illegal, deceptive, misleading or unethical practices including, but not limited to, disparagement of the MT5 Trading Platform or other practices which may be detrimental to the MT5 Trading Platform, Licensor or the public interest."
 msgstr "Sei d'accordo di non partecipare a pratiche illegali, ingannevoli, fuorvianti o immorali, tra cui, a titolo esemplificativo, la denigrazione della Piattaforma di Trading MT5 o altre pratiche che potrebbero essere dannose per la Piattaforma di Trading MT5, il Licenziante o l'interesse pubblico."
+
+msgid "You hereby confirm that in addition to the Client Agreement, you have carefully read and duly understood the contents of this Agreement and agree to be legally bound thereby."
+msgstr ""
 
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr "Autorizzi in modo irrevocabile e non esclusivo alla Società il diritto di utilizzare i tuoi Contributi; e"
@@ -11044,6 +11265,9 @@ msgstr "Non è possibile annullare o modificare il livello dello Stop e Limit Or
 msgid "You may only open an account at this site on condition that:"
 msgstr "Puoi aprire un account su questo sito solo a condizione che:"
 
+msgid "You may revoke the current manager's access."
+msgstr ""
+
 msgid "You may specify your instruction of a Stop Order or a Limit Order may be applied for a limited duration or for an indefinite period (a \"good till cancelled\" or \"GTC\" Order)."
 msgstr "È possibile specificare le istruzioni per uno Stop Order o un Limit Order che può essere applicato per una durata limitata o per un periodo indefinito (un ordine \"good till cancelled-buono fino alla cancellazione\" o \"GTC\")."
 
@@ -11061,6 +11285,9 @@ msgstr "Per attivare il tuo account è necessario completare il processo di aute
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Per poter utilizzare l'API di %1 devi conformarti ai presenti Termini."
+
+msgid "You must ensure that you do not place digital advertisements on websites providing unauthorised access to copyrighted content."
+msgstr ""
 
 msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
 msgstr "È necessario che tu disponga di una connessione a Internet stabile e veloce poiché screenshot dei tuoi documenti sono necessari per i nostri registri"
@@ -11122,8 +11349,8 @@ msgstr "Non dovrai acquistare o registrare parole chiave, termini di ricerca o a
 msgid "You shall not resort to high-pressure sales tactics or false promises."
 msgstr "Non dovrai ricorrere a tattiche di vendita opprimenti o a promesse infondate."
 
-msgid "You shall not target any of your marketing, advertising, and promotional activities to any persons under the age of 18 years old."
-msgstr "Non potrai rivolgere alcuna attività commerciale, pubblicitaria o promozionale ad alcun soggetto minorenne."
+msgid "You shall not target any of your marketing, advertising, and promotional activities to any persons unless they are over 18 years old, or for Estonian residents whereby they have to be over 21 years old."
+msgstr ""
 
 msgid "You should enter %1 characters."
 msgstr "Dovresti inserire %1 caratteri."
@@ -11216,7 +11443,7 @@ msgid "Your Existing Accounts"
 msgstr "I tuoi Account esistenti"
 
 msgid "Your MT5 Real Account password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;"
-msgstr "La password del tuo conto reale MT5 e le tue credenziali di accesso sono uniche; le password sono protette dalla funzione hash, così neanche il personale di %1 può visualizzarle. Per questo motivo, nel caso non ti ricordassi la tua password, noi non siamo in grado di recuperarla e dobbiamo inviartene una nuova al tuo indirizzo e-mail;"
+msgstr "La password del tuo conto reale MT5 e le tue credenziali di accesso sono uniche; le password sono protette dalla funzione hash, così neanche il personale di %1 può visualizzarle. Per questo motivo, nel caso non ricordassi la tua password, noi non siamo in grado di recuperarla e dobbiamo inviartene una nuova al tuo indirizzo e-mail;"
 
 msgid "Your MT5 Real Account shall be funded by transferring funds from your Binary Options Real Account, subject to the availability and sufficiency of funds in your Binary Options Real Account. No fund transfers shall be made to any other account in the name of any third party."
 msgstr "Il conto reale del Cliente verrà finanziato attraverso un trasferimento di fondi dal suo conto reale di opzioni binarie, in base alla disponibilità e sufficienza di fondi di quest'ultimo. Nessun trasferimento di fondi può essere effettuato verso qualsiasi altro conto intestato a terzi."
@@ -11283,6 +11510,9 @@ msgstr "Le tue transazioni in forex e contratti per differenze con %1 sono colle
 
 msgid "Your fund transfer is successful. Your new balances are:"
 msgstr "Il tuo trasferimento di fondi è riuscito. Il tuoi nuovo saldo è:"
+
+msgid "Your gaming account (MX) limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead."
+msgstr ""
 
 msgid "Your name, email address and contact number"
 msgstr "Il tuo nome, il tuo indirizzo email e il tuo numero di telefono"
@@ -11364,9 +11594,6 @@ msgstr "Tu hai già eseguito operazioni significative su mercati simili a quelli
 
 msgid "You’ve worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "Hai lavorato nel settore finanziario per almeno un anno in un ruolo che richiede la conoscenza delle transazioni che andrai ad eseguire sulla nostra piattaforma"
-
-msgid "Zcash vs US Dollar"
-msgstr "Zcash vs Dollaro Statunitense"
 
 msgid "a definite or indefinite period during which you wish to exclude yourself from the website."
 msgstr "un periodo definito o indefinito durante il quale desideri escluderti dal sito internet."
@@ -11457,6 +11684,9 @@ msgstr "seguire e/o applicare e/o conformarsi alle indicazioni relative agli aff
 
 msgid "for account %1"
 msgstr "per il conto %1"
+
+msgid "gaming"
+msgstr ""
 
 msgid "h"
 msgstr "h"
