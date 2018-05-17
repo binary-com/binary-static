@@ -65,11 +65,7 @@ class Header extends React.Component {
                     <div className='menu-items'>
                         <div className='menu-left'>
                             <ToggleDrawer alignment='left' has_footer>
-                                <AccountSwitcher
-                                    active_account={[ // TODO: remove dummy values
-                                        { id: 'VRTC1234567', account_type: 'Virtual' },
-                                    ]}
-                                />
+                                <AccountSwitcher />
                                 <MenuDrawer />
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>
