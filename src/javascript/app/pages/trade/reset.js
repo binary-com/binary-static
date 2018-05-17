@@ -25,10 +25,10 @@ const Reset = (() => {
             val = Math.floor(mid_point);
             switch (duration_unit) {
                 case 'm':
-                    reset_time_str = `${val ? `${val} minutes` : ''} 30 seconds`;
+                    reset_time_str = `${val ? `${val} ${localize('minutes')}` : ''} 30 ${localize('seconds')}`;
                     break;
                 case 'h':
-                    reset_time_str = `${val || ''} 30 minutes`;
+                    reset_time_str = `${val || ''} 30 ${localize('minutes')}`;
                     break;
                 default: // no default
             }
