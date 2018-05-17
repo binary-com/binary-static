@@ -16,25 +16,26 @@ const Virtual = () => (
                 <FormRow type='password' id='repeat_password' label={it.L('Re-enter password')} />
 
                 <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} attributes={{single: 'single'}}  />
+            </Fieldset>
 
+            <Fieldset>
                 <FormRow
                     type='checkbox'
                     id='email_consent'
                     label_row_id='email_consent_label'
-                    label={it.L('Yes, I would like to receive emails on Binary.com products, services, and events. I understand that I can unsubscribe from these emails at any time from my profile settings.')}
+                    label={it.L('Yes, I would like to receive emails on Binary.com products, services, and events. \n I understand that I can unsubscribe from these emails at any time from my profile settings.')}
                 />
+            </Fieldset>
 
-                <div>
+            <div className='center-text'>
+                <p>
                     {it.L('By creating my account, I confirm that I’ve read and agree to your [_1]Terms & Conditions[_2] and [_3]Privacy Policy[_4]',
                             `<a href="${it.url_for('terms-and-conditions')}" target="_blank">`,
                             '</a>',
                             `<a href="${it.url_for('terms-and-conditions#privacy')}" target="_blank">`,
                             '</a>',
                     )}
-                </div>
-            </Fieldset>
-
-            <div className='center-text'>
+                </p>
                 <button className='button' type='submit'>{it.L('Create New Account')}</button>
                 <p className='errorfield invisible' id='error-account-opening' />
             </div>
