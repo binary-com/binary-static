@@ -39,6 +39,13 @@ const Resources = () => (
                 text={it.L('View the operating hours of the markets you can trade.')}
                 url='market_timesws'
             />
+
+            <Column
+                header={it.L('Economic Calendar')}
+                image='economic-calendar'
+                text={it.L('Keep up with breaking news and events on global markets.')}
+                url='economic_calendar'
+            />
         </div>
     </React.Fragment>
 );
