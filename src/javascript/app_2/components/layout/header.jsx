@@ -7,6 +7,7 @@ import Button from '../form/button.jsx';
 import { localize } from '../../../_common/localize';
 import Client from '../../../_common/base/client_base';
 import { formatMoney } from '../../../_common/base/currency_base';
+import { redirectToLogin } from '../../../_common/base/login';
 import Url from '../../../_common/url';
 import { BinaryLink } from '../../routes';
 import { connect } from '../../store/connect';
@@ -106,7 +107,6 @@ const AccountBalance = connect(
     })
 )(({
     balance,
-    onClickLogin,
     onClick,
 }) => {
     const is_virtual = Client.get('is_virtual');
@@ -138,7 +138,7 @@ const AccountBalance = connect(
                     className='primary green'
                     has_effect
                     text={localize('Login')}
-                    onClick={onClickLogin}
+                    handleClick={redirectToLogin}
                 />
             }
         </div>
