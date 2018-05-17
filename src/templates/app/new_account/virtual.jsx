@@ -29,7 +29,7 @@ const Virtual = () => (
 
             <div className='center-text'>
                 <p>
-                    {it.L('By creating my account, I confirm that I’ve read and agree to your [_1]Terms & Conditions[_2] and [_3]Privacy Policy[_4]',
+                    {it.L('By creating my account, I confirm that I’ve read and agree to your [_1]Terms & Conditions[_2] and [_3]Privacy Policy[_4].',
                             `<a href="${it.url_for('terms-and-conditions')}" target="_blank">`,
                             '</a>',
                             `<a href="${it.url_for('terms-and-conditions#privacy')}" target="_blank">`,
