@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
 import NetworkMonitor from './base/network_monitor';
 import { MobxProvider } from './store/connect';
+import ClientStore from './store/client_store';
 import TradeStore from './store/trade_store';
 import UIStore from './store/ui_store';
 import TradingHeader from './components/layout/header.jsx';
@@ -13,13 +14,14 @@ import Client from '../_common/base/client_base';
 import { localize } from '../_common/localize';
 
 const stores = {
-    trade: new TradeStore(),
-    ui   : new UIStore(),
+    client: new ClientStore(),
+    trade : new TradeStore(),
+    ui    : new UIStore(),
 };
 
 const initApp = () => {
     Client.init();
-    NetworkMonitor.init();
+    NetworkMonitor.init(stores.client);
 
     initActions(stores.trade);
     stores.trade.init();
