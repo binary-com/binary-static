@@ -1,17 +1,14 @@
-const Defaults           = require('./defaults');
-const Notifications      = require('./notifications');
-const Symbols            = require('./symbols');
-const Tick               = require('./tick');
-const formatMoney        = require('../../common/currency').formatMoney;
-const ActiveSymbols      = require('../../common/active_symbols');
-const elementInnerHtml   = require('../../../_common/common_functions').elementInnerHtml;
-const elementTextContent = require('../../../_common/common_functions').elementTextContent;
-const getElementById     = require('../../../_common/common_functions').getElementById;
-const localize           = require('../../../_common/localize').localize;
-const urlFor             = require('../../../_common/url').urlFor;
-const createElement      = require('../../../_common/utility').createElement;
-const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
-const isEmptyObject      = require('../../../_common/utility').isEmptyObject;
+const Defaults         = require('./defaults');
+const Symbols          = require('./symbols');
+const Tick             = require('./tick');
+const contractsElement = require('./contracts.jsx');
+const marketsElement   = require('./markets.jsx');
+const formatMoney      = require('../../common/currency').formatMoney;
+const ActiveSymbols    = require('../../common/active_symbols');
+const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
+const getElementById   = require('../../../_common/common_functions').getElementById;
+const localize         = require('../../../_common/localize').localize;
+const urlFor           = require('../../../_common/url').urlFor;
 
 /*
  * This contains common functions we need for processing the response
@@ -21,182 +18,25 @@ const commonTrading = (() => {
     /*
      * display contract form as element of ul
      */
+    let contracts_element = null;
     const displayContractForms = (id, elements, selected) => {
         if (!id || !elements || !selected) return;
-        const target   = getElementById(id);
-        const fragment = document.createDocumentFragment();
 
-        elementInnerHtml(target, '');
+        const contracts_tree = getContractCategoryTree(elements);
 
-        if (elements) {
-            const tree = getContractCategoryTree(elements);
-            for (let i = 0; i < tree.length; i++) {
-                const el1 = tree[i];
-                const li  = createElement('li', { class: 'tm-li' });
-
-                if (i === 0) {
-                    li.classList.add('first');
-                } else if (i === tree.length - 1) {
-                    li.classList.add('last');
-                }
-
-                if (typeof el1 === 'object') {
-                    const fragment2 = document.createDocumentFragment();
-                    let flag        = 0;
-                    let first       = '';
-                    for (let j = 0; j < el1[1].length; j++) {
-                        const el2      = el1[1][j];
-                        const li2      = createElement('li', { class: 'tm-li-2' });
-                        const a2       = createElement('a', { class: 'tm-a-2', menuitem: el2.toLowerCase(), id: el2.toLowerCase() });
-                        const content2 = document.createTextNode(elements[el2]);
-
-                        if (j === 0) {
-                            first = el2.toLowerCase();
-                            li2.classList.add('first');
-                        } else if (j === el1[1].length - 1) {
-                            li2.classList.add('last');
-                        }
-
-                        if (selected && selected === el2.toLowerCase()) {
-                            li2.classList.add('active');
-                            a2.classList.add('a-active');
-                            flag = 1;
-                        }
-
-                        a2.appendChild(content2);
-                        li2.appendChild(a2);
-                        fragment2.appendChild(li2);
-                    }
-                    if (fragment2.hasChildNodes()) {
-                        const ul = createElement('ul', { class: 'tm-ul-2', id: `${el1[0]}-submenu` });
-                        const a  = createElement('a', { class: 'tm-a', menuitem: first, text: elements[el1[0]] });
-
-                        ul.appendChild(fragment2);
-
-                        if (flag) {
-                            li.classList.add('active');
-                        }
-
-                        li.appendChild(a);
-                        li.appendChild(ul);
-                    }
-                } else {
-                    const content3 = document.createTextNode(elements[el1]);
-                    const a3       = createElement('a', { class: 'tm-a', menuitem: el1, id: el1.toLowerCase() });
-
-                    if (selected && selected === el1.toLowerCase()) {
-                        a3.classList.add('a-active');
-                        li.classList.add('active');
-                    }
-                    a3.appendChild(content3);
-                    li.appendChild(a3);
-                }
-                fragment.appendChild(li);
-            }
-            if (target) {
-                target.appendChild(fragment);
-                const list = target.getElementsByClassName('tm-li');
-                for (let k = 0; k < list.length; k++) {
-                    const li4 = list[k];
-                    li4.addEventListener('mouseover', function () {
-                        this.classList.add('hover');
-                    });
-                    li4.addEventListener('mouseout', function () {
-                        this.classList.remove('hover');
-                    });
-                }
-            }
+        if (!contracts_element) {
+            contracts_element = contractsElement.init(elements, contracts_tree);
+        } else { // Update the component.
+            contracts_element.updater.enqueueSetState(contracts_element, {
+                contracts_tree,
+                contracts: elements,
+                formname : Defaults.get('formname'),
+            });
         }
     };
 
-    const displayMarkets = (id, elements, selected) => {
-        const target   = document.getElementById(id);
-        const fragment = document.createDocumentFragment();
-
-        while (target && target.firstChild) {
-            target.removeChild(target.firstChild);
-        }
-
-        const keys1 = Object.keys(elements).sort(submarketSort);
-        for (let i = 0; i < keys1.length; i++) {
-            const key     = keys1[i];
-            let option    = createElement('option', { value: key, text: elements[key].name });
-            if (selected && selected === key) {
-                option.setAttribute('selected', 'selected');
-            }
-            fragment.appendChild(option);
-
-            if (elements[key].submarkets && !isEmptyObject(elements[key].submarkets)) {
-                const keys2 = Object.keys(elements[key].submarkets).sort(submarketSort);
-                for (let j = 0; j < keys2.length; j++) {
-                    const key2 = keys2[j];
-                    option     = createElement('option', { value: key2 });
-                    if (selected && selected === key2) {
-                        option.setAttribute('selected', 'selected');
-                    }
-                    elementTextContent(option, `\xA0\xA0\xA0\xA0${elements[key].submarkets[key2].name}`);
-                    fragment.appendChild(option);
-                }
-            }
-        }
-        if (target) {
-            target.appendChild(fragment);
-
-            if (target.selectedIndex < 0) {
-                target.selectedIndex = 0;
-            }
-            const current = target.options[target.selectedIndex];
-            if (selected !== current.value) {
-                Defaults.set('market', current.value);
-            }
-
-            if (current.disabled) { // there is no open market
-                Notifications.show({ text: localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
-                getElementById('trading_init_progress').style.display = 'none';
-            }
-        }
-    };
-
-    /*
-     * display underlyings
-     */
-    const displayUnderlyings = (id, elements, selected) => {
-        const target = document.getElementById(id);
-        if (!target) return;
-
-        while (target.firstChild) {
-            target.removeChild(target.firstChild);
-        }
-
-        if (!isEmptyObject(elements)) {
-            target.appendChild(generateUnderlyingOptions(elements, selected));
-        }
-    };
-
-    const generateUnderlyingOptions = (elements, selected) => {
-        const fragment   = document.createDocumentFragment();
-        const keys       = Object.keys(elements).sort((a, b) => (
-            elements[a].display.localeCompare(elements[b].display, {}, { numeric: true }))
-        );
-        const submarkets = {};
-        for (let i = 0; i < keys.length; i++) {
-            if (!getPropertyValue(submarkets, elements[keys[i]].submarket)) {
-                submarkets[elements[keys[i]].submarket] = [];
-            }
-            submarkets[elements[keys[i]].submarket].push(keys[i]);
-        }
-        const keys2 = Object.keys(submarkets).sort(submarketSort);
-        for (let j = 0; j < keys2.length; j++) {
-            for (let k = 0; k < submarkets[keys2[j]].length; k++) {
-                const key    = submarkets[keys2[j]][k];
-                const option = createElement('option', { value: key, text: localize(elements[key].display) });
-                if (selected && selected === key) {
-                    option.setAttribute('selected', 'selected');
-                }
-                fragment.appendChild(option);
-            }
-        }
-        return fragment;
+    const displayMarkets = () => {
+        marketsElement.init();
     };
 
     /*
@@ -398,7 +238,7 @@ const commonTrading = (() => {
         if (!mkt || !markets[mkt]) {
             const sorted_markets = Object.keys(Symbols.markets()).filter(v => markets[v].is_active)
                 .sort((a, b) => getMarketsOrder(a) - getMarketsOrder(b));
-            mkt                  = sorted_markets[0];
+            mkt                  = sorted_markets[0] || Object.keys(Symbols.markets())[0];
         }
         return mkt;
     };
@@ -445,43 +285,6 @@ const commonTrading = (() => {
         m: 3,
         h: 4,
         d: 5,
-    };
-
-    const submarket_order = {
-        forex          : 0,
-        major_pairs    : 1,
-        minor_pairs    : 2,
-        smart_fx       : 3,
-        indices        : 4,
-        asia_oceania   : 5,
-        europe_africa  : 6,
-        americas       : 7,
-        otc_index      : 8,
-        stocks         : 9,
-        au_otc_stock   : 10,
-        ge_otc_stock   : 11,
-        india_otc_stock: 12,
-        uk_otc_stock   : 13,
-        us_otc_stock   : 14,
-        commodities    : 15,
-        metals         : 16,
-        energy         : 17,
-        volidx         : 18,
-        random_index   : 19,
-        random_daily   : 20,
-        random_nightly : 21,
-    };
-
-    const submarketOrder = market => submarket_order[market];
-
-    const submarketSort = (a, b) => {
-        if (submarketOrder(a) > submarketOrder(b)) {
-            return 1;
-        } else if (submarketOrder(a) < submarketOrder(b)) {
-            return -1;
-        }
-
-        return 0;
     };
 
     const displayTooltip = () => {
@@ -573,8 +376,14 @@ const commonTrading = (() => {
         return true;
     };
 
+    const requireHighstock = callback => (
+        require.ensure([], (require) => {
+            const Highstock = require('highstock-release');
+            return callback(Highstock);
+        }, 'highstock')
+    );
+
     return {
-        displayUnderlyings,
         getFormNameBarrierCategory,
         contractTypeDisplayMapping,
         hideOverlayContainer,
@@ -593,12 +402,13 @@ const commonTrading = (() => {
         displayContractForms,
         displayMarkets,
         timeIsValid,
+        requireHighstock,
         showPriceOverlay: () => { showHideOverlay('loading_container2', 'block'); },
         hidePriceOverlay: () => { showHideOverlay('loading_container2', 'none'); },
         hideFormOverlay : () => { showHideOverlay('loading_container3', 'none'); },
         showFormOverlay : () => { showHideOverlay('loading_container3', 'block'); },
         durationOrder   : duration => duration_order[duration],
-        clean           : () => { $chart = null; },
+        clean           : () => { $chart = null; contracts_element = null; },
     };
 })();
 

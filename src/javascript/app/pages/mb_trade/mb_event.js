@@ -7,7 +7,6 @@ const MBTick                = require('./mb_tick');
 const TradingAnalysis       = require('../trade/analysis');
 const debounce              = require('../trade/common').debounce;
 const Client                = require('../../base/client');
-const jpClient              = require('../../common/country_base').jpClient;
 const Currency              = require('../../common/currency');
 const onlyNumericOnKeypress = require('../../common/event_handler');
 const localize              = require('../../../_common/localize').localize;
@@ -24,19 +23,28 @@ const MBTradingEvents = (() => {
     const initiate = () => {
         const $form        = $('.trade_form');
         const hidden_class = 'invisible';
+        const border_class = 'primary-border-color';
+        const is_jp_client = Client.isJPClient();
 
         $(document).on('click', (e) => {
             if ($(e.target).parents('#payout_list').length) return;
             makeListsInvisible();
         });
 
-        $form.find('.current').on('click', function (e) {
+        $form.find('.current, .header-current').on('click', function (e) {
             e.stopPropagation();
-            const $list = $(this).siblings('.list');
+            const $this = $(this);
+            let $list = $this.siblings('.list');
+            if (!$list.length) {
+                $list = $this.siblings().find('.list'); // in case of .header-current
+            };
             if ($list.hasClass(hidden_class)) {
                 makeListsInvisible();
             }
             $list.toggleClass(hidden_class);
+            $this.toggleClass(border_class)
+                .siblings().find('.current').toggleClass(border_class).end().end()
+                .parent().siblings('.header-current').toggleClass(border_class);
         });
 
         /*
@@ -81,16 +89,27 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('period', period);
                 MBProcess.processPriceRequest();
                 $('.remaining-time').removeClass('alert');
-                MBContract.displayRemainingTime('recalculate');
+                MBContract.displayRemainingTime(true, is_jp_client);
             });
+            if (!is_jp_client) {
+                const $header_cur = $form.find('.header-current');
+                $period.on('mouseover', (e) => {
+                    e.stopPropagation();
+                    $header_cur.addClass(border_class);
+                }).on('mouseleave', (e) => {
+                    e.stopPropagation();
+                    if ($period.find('.list').hasClass(hidden_class)) {
+                        $header_cur.removeClass(border_class);
+                    }
+                });
+            }
         }
 
         const validatePayout = (payout_amount, $error_wrapper) => {
             const contract            = MBContract.getCurrentContracts();
-            const jp_client           = jpClient();
-            const min_amount          = jp_client ? 1 : 0;
+            const min_amount          = is_jp_client ? 1 : 0;
             const max_contract_amount = Array.isArray(contract) && contract.length && contract[0].expiry_type !== 'intraday' ? 20000 : 5000;
-            const max_client_amount   = jp_client ? 100 : max_contract_amount;
+            const max_client_amount   = is_jp_client ? 100 : max_contract_amount;
 
             let is_valid  = true;
             let error_msg = '';
@@ -130,7 +149,6 @@ const MBTradingEvents = (() => {
         const $payout = $form.find('#payout');
         if ($payout.length) {
             const $payout_list = $form.find('#payout_list');
-            const jp_client    = jpClient();
 
             const appendActualPayout = (payout) => {
                 $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', html: Currency.formatMoney('JPY', payout * 1000) })));
@@ -148,12 +166,12 @@ const MBTradingEvents = (() => {
                 $payout.value = payout_def;
                 MBDefaults.set(amount, payout_def);
                 $payout.attr('value', payout_def);
-                if (jp_client) {
+                if (is_jp_client) {
                     $payout.find('.current').html(payout_def);
                     appendActualPayout(payout_def);
                 }
             }
-            if (jp_client) {
+            if (is_jp_client) {
                 $payout.find('.current').on('click', function () {
                     old_value      = +this.childNodes[0].nodeValue;
                     const $list    = $(`#${$(this).parent().attr('id')}_list`);
@@ -193,7 +211,7 @@ const MBTradingEvents = (() => {
                     let new_payout;
                     if (/\+|-/.test(value)) {
                         new_payout = payout + parseInt(value);
-                        if (new_payout < 1 && jp_client) {
+                        if (new_payout < 1 && is_jp_client) {
                             new_payout = 1;
                         }
                     } else if (/ok|cancel/.test(value)) {
@@ -207,7 +225,7 @@ const MBTradingEvents = (() => {
                         $('.price-table').setVisibility(1);
                         MBDefaults.set('payout', new_payout);
                         $payout.attr('value', new_payout).find('.current').html(new_payout);
-                        if (jp_client) {
+                        if (is_jp_client) {
                             appendActualPayout(new_payout);
                         }
                         MBProcess.processPriceRequest();
@@ -223,7 +241,7 @@ const MBTradingEvents = (() => {
                 const currency = $(this).attr('value');
                 MBContract.setCurrentItem($currency, currency);
                 MBDefaults.set('currency', currency);
-                if (jpClient()) {
+                if (is_jp_client) {
                     MBProcess.processPriceRequest();
                 } else {
                     const is_crypto = Currency.isCryptocurrency(currency);
@@ -267,6 +285,7 @@ const MBTradingEvents = (() => {
             $form.find('.list, #payout_list').setVisibility(0).end()
                 .find('#period, #category')
                 .setVisibility(1);
+            $form.find('.current, .header-current').removeClass(border_class);
         };
     };
 

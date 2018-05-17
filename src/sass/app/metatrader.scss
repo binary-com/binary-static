@@ -11,10 +11,29 @@
         border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
         margin-bottom: 20px;
-        flex: 1;
     }
     .flex {
         display: flex;
+    }
+    .get-started-link {
+        display: block;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        border-radius: $BORDER_RADIUS;
+        color: $COLOR_BLUE;
+        background: $COLOR_LIGHT_GRAY;
+        font-weight: bold;
+
+        &:before {
+            content: '';
+            background-image: url('../images/pages/metatrader/dashboard/get_started.svg');
+            background-size: 16px 16px;
+            height: 16px;
+            width: 16px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
     }
     #account_selector {
         position: relative;
@@ -100,22 +119,39 @@
     #mt_right_panel {
         font-size: $FONT_SIZE_S;
 
-        .platforms li {
-            margin-bottom: 10px;
+        .platforms {
             display: flex;
             flex-direction: row;
-            align-items: center;
+            flex-wrap: wrap;
+            @media (min-width: 992px) {
+                margin-left: -10px;
+                margin-right: -10px;
+            }
 
-            img {
-                width: 16px;
-                height: 16px;
-                margin-right: 10px;
+            li {
+                width: 50%;
+                text-align: center;
+                margin-bottom: 20px;
+                padding: 0 5px;
+                box-sizing: border-box;
+
+                img {
+                    display: block;
+                    height: 30px;
+                    margin: 0 auto 10px;
+                }
             }
         }
-        .badges span {
-            width: 85px;
-            height: 25px;
-            background-size: contain;
+        .badges {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+
+            span {
+                width: 85px;
+                height: 25px;
+                background-size: contain;
+            }
         }
     }
     #account_details {
@@ -176,10 +212,34 @@
                 .mt-panel {
                     margin-bottom: 0;
                     padding: 15px;
+                    flex: 1;
                 }
                 .binary-balance, .mt5-balance {
                     font-weight: bold;
                     color: $COLOR_GRAY_SHADE;
+                }
+            }
+            #frm_manage_password {
+                #token_error {
+                    margin-bottom: 10px;
+                }
+                select:focus {
+                    outline: none;
+                }
+                button[type='submit'] {
+                    line-height: 22px;
+                }
+            }
+            #frm_revoke_mam #msg_form {
+                text-align: center;
+            }
+            #frm_new_account_mam {
+                .margin-left-right-20 {
+                    margin-left: -20px;
+                    margin-right: -20px;
+                }
+                .fill-bg-color.margin-left-right-20 {
+                    margin-bottom: -20px;
                 }
             }
             .type-group {

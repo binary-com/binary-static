@@ -1,8 +1,7 @@
 const moment        = require('moment');
 const MBDefaults    = require('./mb_defaults');
 const Client        = require('../../base/client');
-const SocketCache   = require('../../base/socket_cache');
-const jpClient      = require('../../common/country_base').jpClient;
+const SocketCache   = require('../../../_common/base/socket_cache');
 const getLanguage   = require('../../../_common/language').get;
 const localize      = require('../../../_common/localize').localize;
 const padLeft       = require('../../../_common/string_util').padLeft;
@@ -61,17 +60,17 @@ const MBContract = (() => {
 
         const toDate = (date) => {
             let text_value = moment.utc(date * 1000)
-                .utcOffset(jpClient() ? '+09:00' : '+00:00')
-                .locale(getLanguage().toLowerCase())
-                .format('MMM Do, HH:mm');
-            if (jpClient()) {
-                text_value = text_value.replace(/08:59/, '09:00«');
+                .utcOffset(is_jp_client ? '+09:00' : '+00:00')
+                .locale(getLanguage().toLowerCase());
+            if (is_jp_client) {
+                text_value = text_value.format('MMM Do, HH:mm').replace(/08:59/, '09:00«');
+            } else {
+                text_value = text_value.format('HH:mm');
             }
             return text_value;
         };
         return {
-            start   : toDate(date_start),
-            end     : toDate(date_expiry),
+            end     : is_jp_client ? toDate(date_expiry) : `${[toDate(date_start), toDate(date_expiry)].join('-')} GMT`,
             duration: durationText(duration, is_jp_client),
         };
     };
@@ -100,7 +99,7 @@ const MBContract = (() => {
         if (should_rebuild) {
             $list.empty();
         }
-        const is_jp_client = jpClient();
+        const is_jp_client = Client.isJPClient();
 
         const duration_class    = 'gr-3 gr-no-gutter';
         const end_time_class    = is_jp_client ? 'gr-6 gr-5-m' : 'gr-6';
@@ -130,13 +129,6 @@ const MBContract = (() => {
                 const $current   = makeItem(period);
                 $list.append($current);
                 if (is_current) {
-                    if (!is_jp_client) {
-                        const $head_end_time    = $('<div/>', { class: `head ${end_time_class}`, text: localize('End Time') });
-                        const $head_remain_time = $('<div/>', { class: `head ${remain_time_class}`, text: localize('Remaining Time') });
-
-                        $current.prepend($('<div/>').append($head_end_time).append($head_remain_time).html());
-                    }
-
                     setCurrentItem($period, period);
                 }
             });
@@ -179,8 +171,8 @@ const MBContract = (() => {
         }
     };
 
-    const displayRemainingTime = (recalculate, is_jp_client) => {
-        if (typeof $durations === 'undefined' || recalculate) {
+    const displayRemainingTime = (should_recalculate, is_jp_client) => {
+        if (typeof $durations === 'undefined' || should_recalculate) {
             // period_value = MBDefaults.get('period');
             $period    = $('#period');
             $durations = $period.find('.list > div, .current > div');
@@ -271,18 +263,19 @@ const MBContract = (() => {
         }
         if ($list.children().length === 0) {
             const default_value = MBDefaults.get('category');
+            const is_jp_client  = Client.isJPClient();
             categories.forEach((category, idx) => {
                 if (available_contracts.find(contract => contract.contract_category === category.value)) {
                     const is_current = (!default_value && idx === 0) || category.value === default_value;
                     let el_contract_type;
-                    if (jpClient()) {
+                    if (is_jp_client) {
                         el_contract_type =
                             `<span class="contract-type gr-6 ${category.type1}"><span>${localize(getTemplate(category.type1).name)}</span></span>
                              <span class="contract-type gr-6 ${category.type2} negative-color"><span>${localize(getTemplate(category.type2).name)}</span></span>`;
                     } else {
                         el_contract_type =
-                            `<div class="category-wrapper"><div class="contract-type ${category.type1}" /><div>${localize(getTemplate(category.type1).name)}</div></div>
-                             <div class="category-wrapper"><div class="contract-type ${category.type2} negative-color" /><div>${localize(getTemplate(category.type2).name)}</div></div>`;
+                            `<div class="category-wrapper gr-6"><div class="contract-type ${category.type2}" /><div>${localize(getTemplate(category.type2).name)}</div></div>
+                             <div class="category-wrapper gr-6"><div class="contract-type ${category.type1} negative-color" /><div>${localize(getTemplate(category.type1).name)}</div></div>`;
                     }
                     const $current   = $('<div/>', {
                         value: category.value,
@@ -316,16 +309,17 @@ const MBContract = (() => {
     };
 
     const getTemplate = (contract_type) => {
+        const is_jp_client = Client.isJPClient();
         const templates = {
             PUT: {
                 opposite   : 'CALLE',
-                order      : 0,
+                order      : is_jp_client ? 0 : 1,
                 name       : 'Lower',
                 description: '[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].',
             },
             CALLE: {
                 opposite   : 'PUT',
-                order      : 1,
+                order      : is_jp_client ? 1 : 0,
                 name       : 'Higher',
                 description: '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
             },
