@@ -90,7 +90,7 @@
     "ws": "1.1.5"
   },
   "dependencies": {
-    "@binary-com/binary-style": "0.2.6",
+    "@binary-com/binary-style": "0.2.7",
     "babel-polyfill": "6.26.0",
     "binary-document-uploader": "2.3.2",
     "custom-event-polyfill": "0.3.0",
@@ -107,6 +107,6 @@
     "scriptjs": "2.5.8",
     "url-polyfill": "1.0.9",
     "web-push-notifications": "3.0.8",
-    "webtrader-charts": "0.3.14"
+    "@binary-com/webtrader-charts": "0.4.2"
   }
 }
