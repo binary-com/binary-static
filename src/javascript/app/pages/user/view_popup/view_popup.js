@@ -2,6 +2,7 @@ const moment         = require('moment');
 const ViewPopupUI    = require('./view_popup.ui');
 const Highchart      = require('../../trade/charts/highchart');
 const Lookback       = require('../../trade/lookback');
+const Reset          = require('../../trade/reset');
 const TickDisplay    = require('../../trade/tick_trade');
 const isJPClient     = require('../../../base/client').isJPClient;
 const Clock          = require('../../../base/clock');
@@ -252,8 +253,8 @@ const ViewPopup = (() => {
             $container.find('#errMsg').setVisibility(0);
         }
 
-        const { barrier, entry_spot } = contract;
-        if (barrier * 1 !== entry_spot * 1) {
+        const { barrier, contract_type, entry_spot } = contract;
+        if (Reset.isReset(contract_type) && (entry_spot !== barrier)) {
             TickDisplay.plotResetSpot(barrier * 1);
         }
         sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);

@@ -292,6 +292,8 @@ const TickDisplay = (() => {
                     category = 'digits';
                 } else if (/touch/i.test(tick_shortcode)) {
                     category = 'touchnotouch';
+                } else if (/reset/i.test(tick_shortcode)) {
+                    category = 'reset';
                 }
                 initialize({
                     symbol              : tick_underlying,
@@ -364,7 +366,7 @@ const TickDisplay = (() => {
                     counter++;
                 }
             }
-            if (data.history) {
+            if (contract_category === 'reset' && data.history) {
                 plotResetSpot();
             }
         }
@@ -462,6 +464,7 @@ const TickDisplay = (() => {
             } else {
                 request.end = contract.date_expiry;
             }
+
             BinarySocket.send(request, { callback: dispatch });
         } else {
             dispatch(data);
