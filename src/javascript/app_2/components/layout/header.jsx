@@ -106,11 +106,11 @@ const AccountBalance = connect(
     })
 )(({
     balance,
-    onClick,
 }) => {
-    const is_virtual = Client.get('is_virtual');
-    const loginid    = Client.get('loginid');
-    const currency   = Client.get('currency');
+    const loginid      = Client.get('loginid');
+    const currency     = Client.get('currency');
+    const upgrade_info = Client.getBasicUpgradeInfo();
+    const can_upgrade  = upgrade_info.can_upgrade || upgrade_info.can_open_multi;
 
     return (
         <div className='acc-balance-container'>
@@ -125,13 +125,15 @@ const AccountBalance = connect(
                             </p>
                         }
                     </div>
-                    <Button
-                        id='acc-balance-btn'
-                        className='primary orange'
-                        has_effect
-                        text={localize(is_virtual ? 'Upgrade' : 'Deposit')}
-                        onClick={onClick}
-                    />
+                    {can_upgrade &&
+                        <Button
+                            id='acc-balance-btn'
+                            className='primary orange'
+                            has_effect
+                            text={localize('Upgrade')}
+                            // onClick={onClickUpgrade} TODO
+                        />
+                    }
                 </React.Fragment> :
                 <Button
                     className='primary green'
