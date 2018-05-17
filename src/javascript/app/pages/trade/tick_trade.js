@@ -362,26 +362,33 @@ const TickDisplay = (() => {
         }
     };
 
+    const addSellSpot = (contract) => {
+        // for tick trades only touchnotouch can have sell spot before exit spot
+        if (contract_category !== 'touchnotouch' || !applicable_ticks) return;
+
+        sell_spot_time = +contract.sell_spot_time;
+        exit_tick_time = +contract.exit_tick_time;
+
+        const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
+
+        if (index === -1) return;
+
+        const indicator_key = `_${index}`;
+
+        x_indicators[indicator_key] = {
+            index,
+            label: sell_spot_time === exit_tick_time
+                ? 'Exit Spot'
+                : 'Sell Spot',
+            dashStyle: 'Dash',
+        };
+        add(x_indicators[indicator_key]);
+    };
+
     const updateChart = (data, contract) => {
         subscribe = 'false';
-        if (contract_category === 'touchnotouch' && data.is_sold && applicable_ticks) {
-            sell_spot_time = +contract.sell_spot_time;
-            exit_tick_time = +contract.exit_tick_time;
-
-            const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
-
-            if (index >= 0) {
-                const indicator_key = `_${index}`;
-
-                x_indicators[indicator_key] = {
-                    index,
-                    label: sell_spot_time === exit_tick_time
-                        ? 'Exit Spot'
-                        : 'Sell Spot',
-                    dashStyle: 'Dash',
-                };
-                add(x_indicators[indicator_key]);
-            }
+        if (data.is_sold) {
+            addSellSpot(contract);
         } else if (contract) {
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
@@ -401,8 +408,8 @@ const TickDisplay = (() => {
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
                 subscribe         = 'true';
-            } else if (+contract.sell_spot_time < contract.date_expiry) {
-                request.end = contract.sell_spot_time;
+            } else if (sell_spot_time && sell_spot_time < contract.date_expiry) {
+                request.end = sell_spot_time;
             } else {
                 request.end = contract.date_expiry;
             }
