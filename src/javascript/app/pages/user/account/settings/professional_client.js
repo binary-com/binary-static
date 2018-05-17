@@ -90,9 +90,9 @@ const professionalClient = (() => {
                 .setVisibility(1);
         }
 
-        $(document).on('keydown', (e) => {
+        $(document).on('keydown click', (e) => {
             const $popup = $(popup_selector);
-            if (e.which === 27 && $popup.length) {
+            if ((e.which === 27 || $(e.target).hasClass('lightbox')) && $popup.length) {
                 $popup.remove();
                 $chk_professional.prop('checked', false);
             }
