@@ -1,11 +1,11 @@
 const moment               = require('moment');
-const { requireHighstock } = require('./common');
+const requireHighstock     = require('./common').requireHighstock;
 const Tick                 = require('./tick');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
-const { addComma }         = require('../../../_common/base/currency_base');
+const addComma             = require('../../../_common/base/currency_base').addComma;
 const CommonFunctions      = require('../../../_common/common_functions');
-const { localize }         = require('../../../_common/localize');
+const localize             = require('../../../_common/localize').localize;
 
 const TickDisplay = (() => {
     let number_of_ticks,
