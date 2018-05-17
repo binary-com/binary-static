@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import Button from '../../../components/form/button.jsx';
+import Popover from '../../../components/elements/popover.jsx';
 import Tooltip from '../../../components/elements/tooltip.jsx';
 import { connect } from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
@@ -74,13 +75,17 @@ const Purchase = ({
                             alignment='left'
                             message={localize('Win payout if AUD/JPY is strictly higher than entry spot at close on 2018-04-04.')}
                         >
-                            <Button
-                                id={`purchase_${type}`}
-                                icon={Url.urlForStatic(`images/trading_app/purchase/ic_dark_${trade_types[type].toLowerCase()}.svg`) || undefined}
-                                className='primary green'
-                                has_effect
-                                text={trade_types[type]}
-                            />
+                            <Popover
+                                subtitle='Test PopOver'
+                            >
+                                <Button
+                                    id={`purchase_${type}`}
+                                    icon={Url.urlForStatic(`images/trading_app/purchase/ic_dark_${trade_types[type].toLowerCase()}.svg`) || undefined}
+                                    className='primary green'
+                                    has_effect
+                                    text={trade_types[type]}
+                                />
+                            </Popover>
                         </Tooltip>
                     </div>
                 </div>
