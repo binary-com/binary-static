@@ -176,7 +176,7 @@ const Trading = () => (
                                     <span id='contract_purchase_button' className='button open_contract_details' />
                                 </div>
                                 <div id='contract_purchase_spots' />
-                                <div id='tick_chart' />
+                                <div id='trade_tick_chart' />
                                 <div id='contract_purchase_balance' />
                             </div>
                             <div id='confirmation_error' />
@@ -201,7 +201,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                         <div className='contract_purchase button'>
-                                            <span className='purchase_button contract_description no-underline' id='purchase_button_top' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
+                                            <span className='purchase_button contract_description no-underline open_contract_details' id='purchase_button_top' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
                                         </div>
                                     </span>
                                 </div>
@@ -225,7 +225,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                         <div className='contract_purchase button'>
-                                            <span className='purchase_button contract_description no-underline' id='purchase_button_bottom' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
+                                            <span className='purchase_button contract_description no-underline open_contract_details' id='purchase_button_bottom' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
                                         </div>
                                     </span>
                                 </div>
@@ -249,7 +249,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                         <div className='contract_purchase button'>
-                                            <span className='purchase_button no-underline' id='purchase_button_middle' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
+                                            <span className='purchase_button no-underline open_contract_details' id='purchase_button_middle' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
                                         </div>
                                     </span>
                                 </div>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-07 23:45-0400\n"
+"PO-Revision-Date: 2018-05-16 22:02-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -320,6 +320,9 @@ msgstr "新たなIT開発チームの拠点としてクアラルンプールの�
 msgid "%1 owes you a duty of best execution when executing orders on your behalf, i.e., when you are placing a legitimate reliance on us to safeguard your interest in relation to the execution of your order."
 msgstr "%1にはお客さまに代わって注文を執行する際、最良執行を行う義務があります。"
 
+msgid "%1 per lot"
+msgstr ""
+
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 は下記のプログラムを通じて業務提携サービスを提供しています。"
 
@@ -438,14 +441,8 @@ msgstr "（売却価格 - 購入価格 ）× 数量 × ポイント単価 = 利�
 msgid "(max)"
 msgstr "（上限）"
 
-msgid "**Volatility Indices commission rates in account currency per round trade. Example: A buy of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
-msgstr "**ボラティリティインデックスは、1回の取引当りの基準通貨で手数料率を表しています。 例：1ロットのボラティリティインデックス100を購入すると、米ドル建ての口座に対して0.75ドルが支払われます。"
-
 msgid "*Already registered as an affiliate? Send us an email at %1 instead."
 msgstr "*既にアフィリエイトに登録されていますか？%1までご連絡ください。"
-
-msgid "*Represents the amount in base currency per round trade. Example: A buy of 1 lot of EUR/USD would pay EUR 6 on standard accounts."
-msgstr "*1回の取引の基準通貨単位の金額を表します。 例：EUR / USDの1ロットを購入すると、スタンダード口座に6ユーロが支払われます。\n"
 
 msgid "0-1 year"
 msgstr "0~1年"
@@ -455,15 +452,6 @@ msgstr "過去12ヶ月で0-5のお取引"
 
 msgid "0.01 lots"
 msgstr "0.01 ロット"
-
-msgid "0.1 per lot"
-msgstr "1ロット＝0.1"
-
-msgid "0.25 per lot"
-msgstr "1ロット＝0.25"
-
-msgid "0.75 per lot"
-msgstr "1ロット＝0.75"
 
 msgid "1 million transactions/day"
 msgstr "1日に100万件の取引"
@@ -489,9 +477,6 @@ msgstr "150%"
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6,000 – 5,200) = $1600"
 
-msgid "2 per lot"
-msgstr "1ロット＝2"
-
 msgid "2-3 years of applicable experience in a web application testing role"
 msgstr "Webアプリケーションテストの実施経験 2-3年"
 
@@ -500,9 +485,6 @@ msgstr "2ウェイ・プライス（購入・売却）を表示"
 
 msgid "2. Proof of address"
 msgstr "2. 住所証明"
-
-msgid "2.25 per lot"
-msgstr "1ロット＝2.25"
 
 msgid "24/7"
 msgstr "365日"
@@ -530,9 +512,6 @@ msgstr "50%"
 
 msgid "6 months to 1 year"
 msgstr "6ヶ月から1年"
-
-msgid "6 per lot"
-msgstr "1ロット＝6"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "過去12ヶ月で6~10のお取引"
@@ -1313,8 +1292,8 @@ msgstr "当社のグローバルクライアントサービスチームの一員
 msgid "As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company."
 msgstr "顧客・支払担当者は顧客の支払処理、支払に関するお問い合わせの応答、グループ会社内でのアカウント管理のアシスタント、照合、報告書の作成、顧客の支払いまたはアカウントに関して常に他部署と連携します。多国籍なチーム内で作業し、当社が提供する独自の会計またはバックオフィスシステムを利用します。"
 
-msgid "As an EU citizen, you are also required to verify the above documents by %1video call%2."
-msgstr "欧州連合の方は、%1ビデオ電話%2にて上記の本人証明書の提示も必要となります。"
+msgid "As an EU resident, you are also required to verify the above documents by %1video call%2."
+msgstr ""
 
 msgid "As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the %1 API, and all elements, components, and executables of the %1 API."
 msgstr "お客さまと当社間において、%1 APIでの全知的財産権を含む全ての権利、権原、所有権、及び%1 APIの全ての要素、構成、執行を当社が所有しています。"
@@ -1784,6 +1763,9 @@ msgstr "店頭市場から優良株を提供。"
 
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "店頭市場から優良株を提供"
+
+msgid "Both accounts need to be authenticated separately."
+msgstr ""
 
 msgid "Both the above"
 msgstr "上記の両方"
@@ -2540,6 +2522,9 @@ msgstr "作成"
 msgid "Create Account"
 msgstr "口座開設"
 
+msgid "Create Financial Account"
+msgstr ""
+
 msgid "Create Free Account"
 msgstr "口座開設"
 
@@ -2593,6 +2578,9 @@ msgstr "Cryptocurrencies are volatile assets that are extremely vulnerable to ma
 
 msgid "Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading in cryptocurrencies is a highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and /or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital."
 msgstr "Cryptocurrencies are volatile assets that are extremely vulnerable to market fluctuations. Trading in cryptocurrencies is a highly speculative investment because prices of cryptocurrencies can go up and down &mdash; potentially to a worthless (zero) value. You should not trade in cryptocurrencies unless you fully understand and are aware that trades and /or investments involving cryptocurrencies are complex and high risk in nature and you not only risk incurring significant losses over a short period of time but also risk losing all your invested capital."
+
+msgid "Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account."
+msgstr ""
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "ビットコインやイーサリアムなどの仮想通貨は、世界中どこにいてもすぐに支払いができる、分散型デジタル資産です。"
@@ -3746,8 +3734,8 @@ msgstr "外貨預金"
 msgid "Forex"
 msgstr "外国為替"
 
-msgid "Forex & Metals*"
-msgstr "外国為替＆金属商品*"
+msgid "Forex & Metals"
+msgstr ""
 
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr "外国為替取引と差金決済取引は、原資産金融商品の短期間の価格変動を推測することになるので、高い危険性を含みます。口座資金を超えないよう損失額を維持できない限り、外国為替取引及び/または差金決済取引を行べきではありません。オープンポジショから得られるまたは失う値を理解しておくことは大切です。オープンポジションを閉じるために常に意識をして対応して頂き、特定の市場状況において難しいまたは不可能な事象を把握していくことが必要となります。"
@@ -3820,6 +3808,9 @@ msgstr "口座振替はご利用いただけません。"
 
 msgid "Funding of MT5 Real Account"
 msgstr "MT5リアル口座へ振替"
+
+msgid "Funds cannot be transferred between financial and gaming accounts."
+msgstr ""
 
 msgid "Further Instructions"
 msgstr "詳細説明"
@@ -6525,6 +6516,9 @@ msgstr "マージンの仕組みを把握できていますか？当社のマー
 msgid "Note"
 msgstr "注意"
 
+msgid "Note:"
+msgstr ""
+
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 
@@ -7125,6 +7119,9 @@ msgstr "プラチナ vs 米ドル"
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "出金制限及び取引制限を解除するには、%1契約締結前交付書面に同意%2いただく必要があります。"
 
+msgid "Please %1authenticate%2 your account before you make a deposit."
+msgstr ""
+
 msgid "Please %1authenticate%2 your account."
 msgstr "口座%1認証%2を行ってください。"
 
@@ -7358,6 +7355,15 @@ msgstr "貴金属"
 
 msgid "Precious metals are harder to come by and are more valuable than industrial metals. Because precious metals are softer and less reactive, they are widely used in jewellery, medical devices, and electronics."
 msgstr "Precious metals are harder to come by and are more valuable than industrial metals. Because precious metals are softer and less reactive, they are widely used in jewellery, medical devices, and electronics."
+
+msgid "Predict if the market will rise or fall from its current level, or if it will end higher or lower than a price target"
+msgstr ""
+
+msgid "Predict if the market will stay between or go outside two price targets"
+msgstr ""
+
+msgid "Predict if the market will touch or not touch a price target"
+msgstr ""
 
 msgid "Predict market movement using up/down, touch/no touch, and in/out trade types."
 msgstr "UP/DOWN, TOUCH/NO TOUCH,IN/OUTのトレードタイプで市場の動向を予測しましょう。"
@@ -7790,6 +7796,9 @@ msgstr ""
 
 msgid "Representations and Warranties"
 msgstr "Representations and Warranties"
+
+msgid "Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account."
+msgstr ""
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "口座で保有可能な口座残高の限度額を示します。限度額を超えた場合は出金手続きをお願いいたします。"
@@ -10411,8 +10420,8 @@ msgstr "ボラティリティインデックス口座：1:500"
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "ボラティリティインデックスは更に２種類に分類されます。："
 
-msgid "Volatility Indices**"
-msgstr "ボラティリティインデックス**"
+msgid "Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account."
+msgstr ""
 
 msgid "Volume"
 msgstr "数量"
@@ -11212,6 +11221,9 @@ msgstr "2つの報酬タイプからご選択いただけます。"
 msgid "You can choose to be treated as a Retail Client at any time, even if you would qualify as a Professional Client."
 msgstr "プロ顧客に認定された後でも、リテール顧客に変更することができます。"
 
+msgid "You can close this window without interrupting your trade."
+msgstr ""
+
 msgid "You can determine the margin for our CFDs by using the formula below:"
 msgstr "以下の数式を使用して、CFD取引のマージンを決定することができます："
 
@@ -11311,11 +11323,11 @@ msgstr "ご利用規約を通読し同意し、金融トレードの売買をご
 msgid "You have sold this contract at %1 %2"
 msgstr "%1 %2でこのトレードを売却しました"
 
+msgid "You have successfully created your %1account!"
+msgstr ""
+
 msgid "You have successfully created your Virtual Account."
 msgstr "デモ口座の開設が完了しました！"
-
-msgid "You have successfully created your account!"
-msgstr "口座の開設が完了しました！"
 
 msgid "You have sufficient experience and knowledge in matters of contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site."
 msgstr "当サービス利用するうえで必要なメリットとリスクが判断でき、かつ当サイトに掲載されている情報だけに依存せずに金融トレードを行ってきた十分な経験と知識があります。"
@@ -11619,6 +11631,9 @@ msgstr "Your forex and contracts for differences transactions with %1 are linked
 msgid "Your fund transfer is successful. Your new balances are:"
 msgstr "口座振替が完了しました。移行後残高："
 
+msgid "Your gaming account (MX) limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead."
+msgstr ""
+
 msgid "Your name, email address and contact number"
 msgstr "氏名、メールアドレス、電話番号"
 
@@ -11800,6 +11815,9 @@ msgstr "follow and/or implement and/or comply with all business-related directio
 
 msgid "for account %1"
 msgstr "口座番号%1用"
+
+msgid "gaming"
+msgstr ""
 
 msgid "h"
 msgstr "時間"
@@ -12689,7 +12707,7 @@ msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 msgstr "特定非営利活動法人証券・金融商品あっせん相談センター"
 
 msgid "{JAPAN ONLY}First-Class FX Binary Options Trading Platform"
-msgstr "この度、事業継続が困難との判断から廃業させていただく運びとなりました。"
+msgstr "本年4月20日に金商業を廃止予定である旨を告知させていただきましたが、その後、複数社より当社全株式を取得したい旨の申し出があり、現在、廃止手続きと並行してデューデリジェンスを実施しており、金商業の「廃止」もしくは「業務休止を経ての継続」が選択肢となりました。詳細は、追ってお知らせさせていただきますので何卒ご理解のほど宜しくお願い申し上げます。"
 
 msgid "{JAPAN ONLY}Footer regulatory text"
 msgstr "■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合は支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。1)1取引の取引上限は100ロット。2)1日の取引上限額は50万円。前記2)に達した時点でその日は取引ができなくなります。■取引手数料は無料。当該日から遡り12ヶ月間、新規又は売却取引がなかった場合は口座維持手数料（2,500円税込）が発生、引き続き取引等がない場合、6ヶ月毎に同額が発生します。3,000円未満を出金の際は250円（税込）の出金手数料がかかります。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引開始前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
@@ -12896,133 +12914,13 @@ msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if 
 msgstr "２つのオプションを用い、バリア価格の高いバイナリーコールオプションとバリア価格の低いバイナリープットオプションを購入すれば、判定レートが２つのオプションのバリア価格で作られた価格帯の外となった場合に収益が得られ、判定レートが所定の価格帯の外であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができます。"
 
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "4/2/2018"
+msgstr "5/10/2018"
 
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "2/2/2018"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "<p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span\n"
-"style='font-size:10.0pt;font-family:\"ＭＳ 明朝\";mso-bidi-font-family:\"ＭＳ Ｐゴシック\";\n"
-"color:#222222;background:white;mso-font-kerning:0pt'>お客様　各位</span><span\n"
-"lang=EN-US style='font-size:12.0pt;font-family:\"ＭＳ 明朝\";mso-bidi-font-family:\n"
-"\"ＭＳ Ｐゴシック\";mso-font-kerning:0pt'><o:p></o:p></span></p>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>　この度、<span lang=EN-US>Binary</span>株式会社は、事業継続が困難との判断から廃業させていただく運びとなりました。平成<span\n"
-"lang=EN-US>29</span>年<span lang=EN-US>6</span>月に業務を開始以来、皆様のご愛顧に心から感謝を申し上げますと共に、廃業によりお客様及び関係各位に多大なるご迷惑をおかけしますことを深くお詫び申し上げます。<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>　なお、弊社ではお客様のご資産は法令に基づき、日証金信託銀行へ全額信託を行っておりますので確実に保全されております。お客様のご資産は、受益者代理人による管理の下、順次遅滞なく返還してまいります。<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>皆様のご愛顧に重ねて感謝申し上げますと共に、皆様の今後のご健勝とご発展を心よりお祈り申し上げます。<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>平成<span lang=EN-US>30</span>年<span lang=EN-US>4</span>月<span\n"
-"lang=EN-US>20</span>日<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal align=right style='text-align:right'><span lang=EN-US\n"
-"style='font-family:\"ＭＳ 明朝\"'>Binary</span><span style='font-family:\"ＭＳ 明朝\"'>株式会社<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>【お客様のご資産の返還及び口座の解約について】<span lang=EN-US><o:p></o:p></span></span></b></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>　大変申し訳ございませんが、弊社の廃業にあたり、お客様から下記の期日までにご依頼が<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>ない場合は、弊社によりご資産を返還のうえ口座を解約させていただきます。<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>（店頭通貨バイナリーオプション取引約款第<span lang=EN-US>20</span>条第<span\n"
-"lang=EN-US>2</span>項第<span lang=EN-US>8</span>号）<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US\n"
-"style='font-family:\"ＭＳ 明朝\"'>(1) </span></b><b style='mso-bidi-font-weight:normal'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>ポジションを保有されていないお客様へ<span lang=EN-US><o:p></o:p></span></span></b></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>　誠に勝手ながら、<u>平成<span\n"
-"lang=EN-US>30</span>年<span lang=EN-US>4</span>月<span lang=EN-US>27</span>日（金）午前<span\n"
-"lang=EN-US>6</span>時（日本時間）</u>までに出金依頼、口座<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>解約の手続き（メールで「口座解約希望」の旨、お知らせください）をお願いいたします。<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>上記日時までにお客様からの出金依頼がない場合は、弊社にて残高の返還、口座解約の手<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>続きを平成<span lang=EN-US>30</span>年<span lang=EN-US>5</span>月<span\n"
-"lang=EN-US>1</span>日より、順次行わせていただきます。<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US\n"
-"style='font-family:\"ＭＳ 明朝\"'>(2) </span></b><b style='mso-bidi-font-weight:normal'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>ポジションを保有されているお客様へ<span lang=EN-US><o:p></o:p></span></span></b></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>　●<span lang=EN-US>1</span>週間物（判定日時）<span\n"
-"lang=EN-US>4</span>月<span lang=EN-US>21</span>日午前<span lang=EN-US>6</span>時<span\n"
-"lang=EN-US>00</span>分<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>　　通常どおり、判定時刻に判定されます。<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>　●<span lang=EN-US>1</span>ヶ月物（判定日時）<span\n"
-"lang=EN-US>5</span>月<span lang=EN-US>1</span>日午前<span lang=EN-US>8</span>時<span\n"
-"lang=EN-US>59</span>分<span lang=EN-US>59</span>秒<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>　　通常どおり、判定時刻に判定されます。<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>　●<span lang=EN-US>1</span>年物（判定日時）<span\n"
-"lang=EN-US>2019</span>年<span lang=EN-US>1</span>月<span lang=EN-US>1</span>日午前<span\n"
-"lang=EN-US>8</span>時<span lang=EN-US>59</span>分<span lang=EN-US>59</span>秒<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal style='text-indent:21.0pt;mso-char-indent-count:2.0'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>①転売いただいた場合は、転売価格を返還いたします。<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal style='text-indent:21.0pt;mso-char-indent-count:2.0'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>②転売いただかない場合は、購入価格を返還いたします。<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>　<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<div style='mso-element:para-border-div;border:none;border-bottom:double windowtext 2.25pt;\n"
-"padding:0mm 0mm 1.0pt 0mm'>\n\n"
-"<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0;\n"
-"border:none;mso-border-bottom-alt:double windowtext 2.25pt;padding:0mm;\n"
-"mso-padding-alt:0mm 0mm 1.0pt 0mm'><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"</div>\n\n"
-"<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>出金依頼されるにあたって<span lang=EN-US><o:p></o:p></span></span></b></p>\n\n"
-"<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>お客様のご資産の返還は、弊社にご登録いただいておりますご指定の金融機関口座への<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>振り込みにより行わせていただきます。<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>出金依頼をされる前に、ご登録いただいておりますお振込先金融機関情報をご確認くださいますようお願い申し上げます。<span\n"
-"lang=EN-US><o:p></o:p></span></span></b></p>\n\n"
-"<div style='mso-element:para-border-div;border:none;border-bottom:double windowtext 2.25pt;\n"
-"padding:0mm 0mm 1.0pt 0mm'>\n\n"
-"<p class=MsoNormal style='border:none;mso-border-bottom-alt:double windowtext 2.25pt;\n"
-"padding:0mm;mso-padding-alt:0mm 0mm 1.0pt 0mm'><span style='font-family:\"ＭＳ 明朝\"'>　ご登録情報（金融機関名や口座番号）に相違がある場合は、出金依頼をされる前に必ず弊社にメールにてご連絡くださいますようお願い申し上げます。<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"</div>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>その他の事項<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoListParagraph style='margin-left:18.0pt;mso-para-margin-left:0gd;\n"
-"text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span\n"
-"lang=EN-US style='font-family:\"ＭＳ 明朝\";mso-bidi-font-family:\"ＭＳ 明朝\"'><span\n"
-"style='mso-list:Ignore'>※<span style='font:7.0pt \"Times New Roman\"'>&nbsp; </span></span></span><![endif]><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>出金に係る振込手数料は、弊社にて負担させていただきます。<span lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoListParagraph style='margin-left:18.0pt;mso-para-margin-left:0gd;\n"
-"text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span\n"
-"lang=EN-US style='font-family:\"ＭＳ 明朝\";mso-bidi-font-family:\"ＭＳ 明朝\"'><span\n"
-"style='mso-list:Ignore'>※<span style='font:7.0pt \"Times New Roman\"'>&nbsp; </span></span></span><![endif]><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>ご資産の返還は順次遅滞なく進めてまいりますが、振込完了まで日数がかかる場合がございますので、あらかじめご理解くださいますようお願い申し上げます。<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>本件に関しまして、ご不明な点等ございましたら、下記の弊社カスタマーサポート担当までご連絡くださいますようお願い申し上げます。<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p>&nbsp;</o:p></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>【本件に関するお問い合わせ先】<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>連絡先　：カスタマーリレーション部カスタマーサポート担当<span\n"
-"lang=EN-US><o:p></o:p></span></span></p>\n\n"
-"<p class=MsoNormal><span lang=EN-US style='font-family:\"ＭＳ 明朝\"'>e-mail</span><span\n"
-"style='font-family:\"ＭＳ 明朝\"'>　：</span><span lang=EN-US><a\n"
-"href=\"mailto:support@binary.com\"><span style='font-family:\"ＭＳ 明朝\"'>support@binary.com</span></a></span><span\n"
-"lang=EN-US style='font-family:\"ＭＳ 明朝\"'><o:p></o:p></span></p>\n\n"
-"<p class=MsoNormal><span style='font-family:\"ＭＳ 明朝\"'>受付時間：午前<span lang=EN-US>9</span>時～午後<span\n"
-"lang=EN-US>5</span>時（日本時間）※土日、祝日を除きます。<span lang=EN-US><o:p></o:p></span></span></p>\n"
+msgstr "お客様各位<br>平素は格別のご高配を賜り厚く御礼申し上げます。<br>本年4月20日に金商業を廃止予定である旨を告知させていただきましたが、その後、複数社より当社全株式を取得したい旨の申し出があり、現在、廃止手続きと並行してデューデリジェンスを実施しており、金商業の「廃止」もしくは「業務休止を経ての継続」が選択肢となりました。<br>詳細は、追ってお知らせさせていただきますので何卒ご理解のほど宜しくお願い申し上げます。"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
 msgstr "."
@@ -13117,7 +13015,7 @@ msgid "{JAPAN ONLY}November 7, 2014"
 msgstr "2014年11月17日"
 
 msgid "{JAPAN ONLY}Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
-msgstr "お手数ですが、4月30日までに出金のお手続きをお願い致します。"
+msgstr "取引等に関する不明点等ございましたらsupport@binary.comまでご連絡くださいますようお願い申し上げます。"
 
 msgid "{JAPAN ONLY}On-time Payments Every Time"
 msgstr "報酬金額の支払い期日"
