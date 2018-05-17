@@ -3,6 +3,7 @@ const requireHighstock     = require('./common').requireHighstock;
 const Tick                 = require('./tick');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
+const Currency             = require('../../../_common/base/currency_base');
 const CommonFunctions      = require('../../../_common/common_functions');
 const localize             = require('../../../_common/localize').localize;
 
@@ -199,7 +200,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-barrier',
                 value : barrier_quote,
-                label : { text: `Barrier (${barrier_quote})`, align: 'center' },
+                label : { text: `Barrier (${Currency.addComma(barrier_quote)})`, align: 'center' },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
@@ -222,7 +223,7 @@ const TickDisplay = (() => {
                 value: calc_barrier,
                 color: 'green',
                 label: {
-                    text : `Average (${calc_barrier})`,
+                    text : `Average (${Currency.addComma(calc_barrier)})`,
                     align: 'center',
                 },
                 width : 2,
