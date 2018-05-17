@@ -6,8 +6,8 @@ import ClientStore              from './store/client_store';
 import { MobxProvider }         from './store/connect';
 import TradeStore               from './store/trade_store';
 import UIStore                  from './store/ui_store';
-import TradingFooter            from './components/layout/footer.jsx';
-import TradingHeader            from './components/layout/header.jsx';
+import Footer                   from './components/layout/footer.jsx';
+import Header                   from './components/layout/header.jsx';
 import { initActions }          from './pages/trading/actions';
 import { BinaryRoutes }         from './routes';
 import Client                   from '../_common/base/client_base';
@@ -43,7 +43,7 @@ const BinaryApp = () => (
         <MobxProvider store={stores}>
             <div>
                 <div id='trading_header'>
-                    <TradingHeader
+                    <Header
                         items={[
                             { icon: 'trade',     text: localize('Trade'),     link_to: '/' },
                             { icon: 'portfolio', text: localize('Portfolio') },
@@ -56,7 +56,7 @@ const BinaryApp = () => (
                     <BinaryRoutes />
                 </div>
                 <footer id='trading_footer'>
-                    <TradingFooter
+                    <Footer
                         items={[
                             { icon: 'ic-statement',   text: localize('Statement'), link_to: 'statement' },
                             { icon: 'ic-chat-bubble', text: localize('Notification') },

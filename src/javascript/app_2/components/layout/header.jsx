@@ -57,7 +57,7 @@ const MenuDrawer = () => (
     </div>
 );
 
-class TradingHeader extends React.Component {
+class Header extends React.Component {
     render() {
         return (
             <React.Fragment>
@@ -148,4 +148,4 @@ const AccountBalance = connect(
     );
 });
 
-export default TradingHeader;
+export default Header;
