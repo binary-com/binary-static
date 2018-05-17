@@ -3,6 +3,7 @@ const requireHighstock     = require('./common').requireHighstock;
 const Tick                 = require('./tick');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
+const addComma             = require('../../../_common/base/currency_base').addComma;
 const CommonFunctions      = require('../../../_common/common_functions');
 const localize             = require('../../../_common/localize').localize;
 
@@ -90,7 +91,7 @@ const TickDisplay = (() => {
                 label: 'Exit Spot',
                 id   : 'exit_tick',
             };
-        } else if (contract_category.match('callput')) {
+        } else if (contract_category.match('callput') || contract_category.match('reset')) {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
                 _0: { label: 'Entry Spot', id: 'entry_tick' },
@@ -203,7 +204,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-barrier',
                 value : barrier_quote,
-                label : { text: `Barrier (${barrier_quote})`, align: 'center' },
+                label : { text: `Barrier (${addComma(barrier_quote)})`, align: 'center' },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
@@ -390,7 +391,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-reset-barrier',
                 value : reset_barrier,
-                label : { text: `Reset Barrier (${reset_barrier})`, align: 'center' },
+                label : { text: `Reset Barrier (${addComma(reset_barrier)})`, align: 'center' },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
@@ -398,7 +399,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id       : 'tick-barrier',
                 value    : entry_barrier,
-                label    : { text: `Barrier (${entry_barrier})`, align: 'center' },
+                label    : { text: `Barrier (${addComma(entry_barrier)})`, align: 'center' },
                 color    : 'green',
                 width    : 2,
                 zIndex   : 2,
