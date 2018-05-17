@@ -5,8 +5,11 @@ import LanguageSwitcher from '../elements/language_switcher.jsx';
 import AccountSwitcher from '../elements/account_switcher.jsx';
 import Button from '../form/button.jsx';
 import { localize } from '../../../_common/localize';
+import Client from '../../../_common/base/client_base';
+import { formatMoney } from '../../../_common/base/currency_base';
 import Url from '../../../_common/url';
 import { BinaryLink } from '../../routes';
+import { connect } from '../../store/connect';
 
 const MenuDrawer = () => (
     <div className='drawer-items-container'>
@@ -79,10 +82,7 @@ class TradingHeader extends React.Component {
                             }
                         </div>
                         <div className='menu-right'>
-                            <AccountBalance
-                                active_loginid={this.props.active_loginid}
-                                client_accounts={this.props.client_accounts}
-                            />
+                            <AccountBalance />
                         </div>
                         <ToggleDrawer
                             icon_class='notify-toggle'
@@ -100,42 +100,49 @@ class TradingHeader extends React.Component {
     }
 }
 
-const AccountBalance = ({
-    active_loginid,
-    client_accounts,
+const AccountBalance = connect(
+    ({ client }) => ({
+        balance: client.balance,
+    })
+)(({
+    balance,
+    onClickLogin,
     onClick,
 }) => {
-    // TODO: Use Client.get()
-    const account     = client_accounts[Object.keys(client_accounts)[0]];
-    const button_text = account.is_virtual ? 'Upgrade' : 'Deposit';
-    const balance     = account.balance;
-    let currency      = account.currency;
-    currency = currency ? currency.toLowerCase() : null;
+    const is_virtual = Client.get('is_virtual');
+    const loginid    = Client.get('loginid');
+    const currency   = Client.get('currency');
 
     return (
         <div className='acc-balance-container'>
-            <div className='acc-balance'>
-                <p className='acc-balance-accountid'>{active_loginid || null}</p>
-                <p className='acc-balance-amount'>
-                    <i><span className={`symbols ${currency}`} /></i>
-                    {balance || null}
-                </p>
-            </div>
-            <Button
-                id='acc-balance-btn'
-                className='primary orange'
-                has_effect
-                text={`${localize(button_text)}`}
-                onClick={onClick}
-            />
+            {Client.isLoggedIn() ?
+                <React.Fragment>
+                    <div className='acc-balance'>
+                        <p className='acc-balance-accountid'>{loginid}</p>
+                        {typeof balance !== 'undefined' &&
+                            <p className='acc-balance-amount'>
+                                <i><span className={`symbols ${(currency || '').toLowerCase()}`}/></i>
+                                {formatMoney(currency, balance, true)}
+                            </p>
+                        }
+                    </div>
+                    <Button
+                        id='acc-balance-btn'
+                        className='primary orange'
+                        has_effect
+                        text={localize(is_virtual ? 'Upgrade' : 'Deposit')}
+                        onClick={onClick}
+                    />
+                </React.Fragment> :
+                <Button
+                    className='primary green'
+                    has_effect
+                    text={localize('Login')}
+                    onClick={onClickLogin}
+                />
+            }
         </div>
     );
-};
-
-// TODO: Remove defaultProps dummy values and use Client.get()
-TradingHeader.defaultProps = {
-    active_loginid : 'VRTC1234567',
-    client_accounts: {'VRTC1234567': {'currency': 'AUD','is_disabled': 0,'is_virtual': 1,'balance': '10000.00'}},
-};
+});
 
 export default TradingHeader;
