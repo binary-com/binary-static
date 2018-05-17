@@ -89,6 +89,14 @@ const professionalClient = (() => {
                 })
                 .setVisibility(1);
         }
+
+        $(document).on('keydown', (e) => {
+            const $popup = $(popup_selector);
+            if (e.which === 27 && $popup.length) {
+                $popup.remove();
+                $chk_professional.prop('checked', false);
+            }
+        });
     };
 
     const populateReq = (get_settings) => {
