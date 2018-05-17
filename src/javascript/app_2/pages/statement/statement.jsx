@@ -40,6 +40,13 @@ const getStatementData = (statement, currency, is_jp_client) => {
     };
 };
 
+const StatementCard = ({}) => (
+    // TODO: use BEM
+    // TODO: pass className prop or figure out a better way
+    <div className='statement-card'>
+    </div>
+);
+
 class Statement extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -228,6 +235,7 @@ class Statement extends React.PureComponent {
         const today = moment_now.format('YYYY-MM-DD');
 
         return (
+            // TODO: use BEM
             <div className='statement-container' ref={(el) => this.el = el}>
                 <div className='statement-filter'>
                     <div className='container'>
