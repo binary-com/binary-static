@@ -6,7 +6,8 @@ const ViewPopupUI = (() => {
     let $container,
         stream_ids,
         chart_stream_ids,
-        getPageTickStream;
+        getPageTickStream,
+        triggerOnClose;
 
     const init = () => {
         $container = null;
@@ -44,6 +45,10 @@ const ViewPopupUI = (() => {
         closeContainer();
         init();
         if (typeof getPageTickStream === 'function') getPageTickStream();
+        if (typeof triggerOnClose === 'function') {
+            triggerOnClose();
+            triggerOnClose = '';
+        }
         $(window).off('resize', () => { repositionConfirmation(); });
     };
 
@@ -174,7 +179,8 @@ const ViewPopupUI = (() => {
         repositionConfirmation,
         storeSubscriptionID,
 
-        setStreamFunction: (streamFnc) => { getPageTickStream = streamFnc; },
+        setStreamFunction : (streamFnc) => { getPageTickStream = streamFnc; },
+        setOnCloseFunction: (onCloseFnc) => { triggerOnClose = onCloseFnc; },
     };
 })();
 

@@ -35,7 +35,7 @@ const Purchase = (() => {
         const descr              = CommonFunctions.getElementById('contract_purchase_descr');
         const barrier_element    = CommonFunctions.getElementById('contract_purchase_barrier');
         const reference          = CommonFunctions.getElementById('contract_purchase_reference');
-        const chart              = CommonFunctions.getElementById('tick_chart');
+        const chart              = CommonFunctions.getElementById('trade_tick_chart');
         const payout             = CommonFunctions.getElementById('contract_purchase_payout');
         const cost               = CommonFunctions.getElementById('contract_purchase_cost');
         const profit             = CommonFunctions.getElementById('contract_purchase_profit');
@@ -45,7 +45,7 @@ const Purchase = (() => {
         const button             = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
-        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
+        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && /^(risefall|higherlower|asian|touchnotouch)$/.test(sessionStorage.formname);
 
         contracts_list.style.display = 'none';
 
@@ -118,20 +118,23 @@ const Purchase = (() => {
                 CommonFunctions.elementTextContent(button, localize('View'));
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
-                $('.open_contract_details').attr('contract_id', receipt.contract_id).setVisibility(1);
+                $('#confirmation_message_container .open_contract_details').attr('contract_id', receipt.contract_id).setVisibility(1);
             } else {
                 button.hide();
-                $('.open_contract_details').setVisibility(0);
+                $('#confirmation_message_container .open_contract_details').setVisibility(0);
             }
         }
 
         if (show_chart) {
-            let contract_sentiment;
-            if (passthrough.contract_type === 'CALL' || passthrough.contract_type === 'ASIANU') {
-                contract_sentiment = 'up';
-            } else {
-                contract_sentiment = 'down';
-            }
+            const type_to_sentiment = {
+                CALL    : 'up',
+                ASIANU  : 'up',
+                PUT     : 'down',
+                ASIAND  : 'down',
+                ONETOUCH: 'touch',
+                NOTOUCH : 'notouch',
+            };
+            const contract_sentiment = type_to_sentiment[passthrough.contract_type];
 
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying
@@ -146,13 +149,18 @@ const Purchase = (() => {
                 }
             }
 
+            let category = sessionStorage.getItem('formname');
+            if (/^(risefall|higherlower)$/.test(category)) {
+                category = 'callput';
+            }
+
             TickDisplay.init({
                 contract_sentiment,
                 symbol              : passthrough.symbol,
-                barrier             : sessionStorage.getItem('formname') === 'higherlower' ? passthrough.barrier : undefined,
+                barrier             : /^(higherlower|touchnotouch)$/.test(sessionStorage.getItem('formname')) ? passthrough.barrier : undefined,
                 number_of_ticks     : passthrough.duration,
                 previous_tick_epoch : receipt.start_time,
-                contract_category   : sessionStorage.getItem('formname') === 'asian' ? 'asian' : 'callput',
+                contract_category   : category,
                 display_symbol      : Symbols.getName(passthrough.symbol),
                 contract_start      : receipt.start_time,
                 display_decimals    : decimal_points,
@@ -160,6 +168,7 @@ const Purchase = (() => {
                 payout              : receipt.payout,
                 show_contract_result: 1,
                 width               : $('#confirmation_message').width(),
+                id_render           : 'trade_tick_chart',
             });
             TickDisplay.resetSpots();
         }
