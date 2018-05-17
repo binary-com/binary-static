@@ -1,4 +1,4 @@
-import BinarySocket from '../../_common/base/socket_base';
+import BinarySocket        from '../../_common/base/socket_base';
 import SubscriptionManager from './subscription_manager';
 
 const DAO = (() => {

@@ -1,7 +1,7 @@
-import React from 'react';
-import Popover from '../elements/popover.jsx';
-import { connect } from '../../store/connect';
+import React          from 'react';
+import Popover        from '../elements/popover.jsx';
 import { BinaryLink } from '../../routes';
+import { connect }    from '../../store/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (
     <Popover

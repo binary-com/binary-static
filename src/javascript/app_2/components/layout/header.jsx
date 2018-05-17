@@ -1,16 +1,19 @@
-import React from 'react';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import { ToggleDrawer, DrawerItems, DrawerItem } from '../elements/drawer.jsx';
-import LanguageSwitcher from '../elements/language_switcher.jsx';
-import AccountSwitcher from '../elements/account_switcher.jsx';
-import Button from '../form/button.jsx';
-import { localize } from '../../../_common/localize';
-import Client from '../../../_common/base/client_base';
-import { formatMoney } from '../../../_common/base/currency_base';
+import React               from 'react';
+import PerfectScrollbar    from 'react-perfect-scrollbar';
+import AccountSwitcher     from '../elements/account_switcher.jsx';
+import {
+    DrawerItem,
+    DrawerItems,
+    ToggleDrawer }         from '../elements/drawer.jsx';
+import LanguageSwitcher    from '../elements/language_switcher.jsx';
+import Button              from '../form/button.jsx';
+import Client              from '../../../_common/base/client_base';
+import { formatMoney }     from '../../../_common/base/currency_base';
 import { redirectToLogin } from '../../../_common/base/login';
-import Url from '../../../_common/url';
-import { BinaryLink } from '../../routes';
-import { connect } from '../../store/connect';
+import { localize }        from '../../../_common/localize';
+import Url                 from '../../../_common/url';
+import { BinaryLink }      from '../../routes';
+import { connect }         from '../../store/connect';
 
 const MenuDrawer = () => (
     <div className='drawer-items-container'>

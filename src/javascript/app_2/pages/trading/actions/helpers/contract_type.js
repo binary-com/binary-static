@@ -1,9 +1,11 @@
-import moment from 'moment';
-import DAO from '../../../../data/dao';
-import { cloneObject, getPropertyValue } from '../../../../../_common/utility';
-import { localize } from '../../../../../_common/localize';
-import { get as getLanguage } from '../../../../../_common/language';
-import { buildDurationConfig } from './duration';
+import moment                   from 'moment';
+import { buildDurationConfig }  from './duration';
+import DAO                      from '../../../../data/dao';
+import { get as getLanguage }   from '../../../../../_common/language';
+import { localize }             from '../../../../../_common/localize';
+import {
+    cloneObject,
+    getPropertyValue }          from '../../../../../_common/utility';
 
 
 const ContractType = (() => {

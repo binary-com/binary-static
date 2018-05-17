@@ -1,9 +1,9 @@
-import DAO from '../data/dao';
-import Client from '../../_common/base/client_base';
-import { setCurrencies } from '../../_common/base/currency_base';
-import Login from '../../_common/base/login';
-import BinarySocket from '../../_common/base/socket_base';
-import { State } from '../../_common/storage';
+import DAO                  from '../data/dao';
+import Client               from '../../_common/base/client_base';
+import { setCurrencies }    from '../../_common/base/currency_base';
+import Login                from '../../_common/base/login';
+import BinarySocket         from '../../_common/base/socket_base';
+import { State }            from '../../_common/storage';
 import { getPropertyValue } from '../../_common/utility';
 
 let client_store;
