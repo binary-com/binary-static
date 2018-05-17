@@ -18,10 +18,6 @@ const Limits = () => {
         'Maximum aggregate payouts on open positions',
         'Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions.'
     );
-    const payout_per_symbol_and_contract_type = balloonReplace(
-        'Maximum aggregate payouts on open positions per symbol and contract type',
-        'Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position.'
-    );
     const limit = balloonReplace(
         'Maximum daily turnover',
         'Represents the maximum volume of contracts that you may purchase in any given trading day.'
@@ -52,19 +48,11 @@ const Limits = () => {
                                         { id: 'payout' },
                                     ],
                                     [
-                                        { text: payout_per_symbol_and_contract_type },
-                                        { id: 'payout-per-symbol-and-contract-type' },
-                                    ],
-                                    [
-                                        { text: it.L('Maximum aggregate payouts on open positions per symbol') },
-                                        { id: 'payout-per-symbol' },
-                                    ],
-                                    [
                                         { className: 'gr-padding-10', id: 'gap' },
                                         { text: '' },
                                     ],
                                     [
-                                        { header: limit, className: 'align-start' },
+                                        { header: limit, className: 'align-start', id: 'market_specific' },
                                         { header: it.L('Limit'), className: 'limit align-start' },
                                     ],
                                 ],

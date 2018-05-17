@@ -28,15 +28,13 @@ const Financial = () => (
     <div className='gr-12 static_full'>
         <h1>{it.L('Financial Account Opening')}</h1>
 
-        <p className='notice-msg invisible' id='authentication_notice_message'>{it.L('Please ensure that your current account has been authenticated before you proceed.')}</p>
-
         <form id='financial-form' className='gr-padding-10'>
             <Fieldset legend={it.L('Details')}>
                 <Salutation className='input-disabled' />
                 <FirstName className='input-disabled' />
                 <LastName className='input-disabled' />
                 <DateOfBirth className='input-disabled' />
-                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} />
+                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{single: 'single'}} />
                 <Residence />
                 <AccountOpeningReason />
             </Fieldset>
@@ -70,7 +68,7 @@ const Financial = () => (
                     <p>{it.L('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.')}</p>
                 </div>
             </fieldset>
-            
+
             <Tnc />
         </form>
 

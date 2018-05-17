@@ -86,8 +86,10 @@ const Authenticate = (() => {
         const resetLabel = (event) => {
             const $e = $(event.target);
             let default_text = toTitleCase($e.attr('id').split('_')[0]);
-            default_text = default_text === 'Back' ? localize('Reverse Side')
-                : localize('Front Side');
+            if (default_text !== 'Add') {
+                default_text = default_text === 'Back' ? localize('Reverse Side')
+                    : localize('Front Side');
+            }
             fileTracker($e, false);
             // Remove previously selected file and set the label
             $e.val('').parent().find('label').text(default_text)

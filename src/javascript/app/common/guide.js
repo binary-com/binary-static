@@ -112,32 +112,26 @@ const Guide = (() => {
         }
         return [
             {
-                selector   : '#contract_markets',
-                description: `<h1>${localize('Step')} 1</h1>${localize('Select your market')}`,
+                selector   : '#underlying_component',
+                description: `<h1>${localize('Step')} 1</h1>${localize('Select your market and underlying asset')}`,
                 event_type : 'next',
                 nextButton : btn_next,
             },
             {
-                selector   : '#underlying',
-                description: `<h1>${localize('Step')} 2</h1>${localize('Select your underlying asset')}`,
-                event_type : 'next',
-                nextButton : btn_next,
-            },
-            {
-                selector   : '#contract_form_name_nav',
-                description: `<h1>${localize('Step')} 3</h1>${localize('Select your trade type')}`,
+                selector   : '#contract_component',
+                description: `<h1>${localize('Step')} 2</h1>${localize('Select your trade type')}`,
                 event_type : 'next',
                 nextButton : btn_next,
             },
             {
                 selector   : '#websocket_form',
-                description: `<h1>${localize('Step')} 4</h1>${localize('Adjust trade parameters')}`,
+                description: `<h1>${localize('Step')} 3</h1>${localize('Adjust trade parameters')}`,
                 event_type : 'next',
                 nextButton : btn_next,
             },
             {
                 selector   : '#contracts_list',
-                description: `<h1>${localize('Step')} 5</h1>${localize('Predict the direction<br />and purchase')}`,
+                description: `<h1>${localize('Step')} 4</h1>${localize('Predict the direction<br />and purchase')}`,
                 event_type : 'next',
                 nextButton : btn_finish,
             },

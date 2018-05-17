@@ -78,7 +78,7 @@ const Url = (() => {
      */
     const updateParamsWithoutReload = (new_params, should_preserve_old) => {
         const updated_params = should_preserve_old
-            ? $.extend(paramsHash(), new_params)
+            ? Object.assign(paramsHash(), new_params)
             : new_params;
         Object.keys(new_params).forEach(key => {
             if (new_params[key] === null) {

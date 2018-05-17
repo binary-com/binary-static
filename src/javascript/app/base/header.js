@@ -1,11 +1,11 @@
 const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
-const GTM                 = require('./gtm');
-const Login               = require('./login');
 const BinarySocket        = require('./socket');
-const SocketCache         = require('./socket_cache');
 const checkClientsCountry = require('../common/country_base').checkClientsCountry;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
+const GTM                 = require('../../_common/base/gtm');
+const Login               = require('../../_common/base/login');
+const SocketCache         = require('../../_common/base/socket_cache');
 const elementInnerHtml    = require('../../_common/common_functions').elementInnerHtml;
 const elementTextContent  = require('../../_common/common_functions').elementTextContent;
 const getElementById      = require('../../_common/common_functions').getElementById;
@@ -150,6 +150,15 @@ const Header = (() => {
                 });
             };
 
+            const showUpgradeBtn = (url, msg) => {
+                applyToAllElements(upgrade_msg, (el) => {
+                    el.setVisibility(1);
+                    applyToAllElements('a.button', (ele) => {
+                        ele.html(createElement('span', { text: localize(msg) })).setVisibility(1).setAttribute('href', Url.urlFor(url));
+                    }, '', el);
+                });
+            };
+
             const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
             const upgrade_info      = Client.getUpgradeInfo();
             const show_upgrade_msg  = upgrade_info.can_upgrade;
@@ -178,7 +187,8 @@ const Header = (() => {
                         }
                     }
                 } else if (show_upgrade_msg) {
-                    showUpgrade(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
+                    showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
+                    showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
                 } else {
                     applyToAllElements(upgrade_msg, (el) => {
                         applyToAllElements('a', (ele) => {
@@ -188,7 +198,8 @@ const Header = (() => {
                 }
             } else if (show_upgrade_msg) {
                 getElementById('virtual-wrapper').setVisibility(0);
-                showUpgrade(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
+                showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
+                showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
             } else {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
             }
@@ -256,6 +267,7 @@ const Header = (() => {
 
             const messages = {
                 authenticate         : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',                                      'user/authenticate'),
+                cashier_locked       : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
                 currency             : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                                                    'user/set-currency'),
                 document_needs_action: () => buildMessage('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.', 'user/authenticate'),
                 document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
@@ -265,11 +277,13 @@ const Header = (() => {
                 risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',                                   'user/settings/assessmentws'),
                 tax                  : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                                            'user/settings/detailsws'),
                 tnc                  : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',                                  'user/tnc_approvalws'),
-                unwelcome            : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                                                 'contact'),
+                unwelcome            : () => buildMessage('Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                    'contact'),
+                withdrawal_locked    : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
             };
 
             const validations = {
                 authenticate         : () => +get_account_status.prompt_client_to_authenticate,
+                cashier_locked       : () => /cashier_locked/.test(status),
                 currency             : () => !Client.get('currency'),
                 document_needs_action: () => /document_needs_action/.test(status),
                 document_review      : () => /document_under_review/.test(status),
@@ -279,7 +293,8 @@ const Header = (() => {
                 risk                 : () => riskAssessment(),
                 tax                  : () => Client.shouldCompleteTax(),
                 tnc                  : () => Client.shouldAcceptTnc(),
-                unwelcome            : () => /unwelcome|(cashier|withdrawal)_locked/.test(status),
+                unwelcome            : () => /unwelcome/.test(status),
+                withdrawal_locked    : () => /withdrawal_locked/.test(status),
             };
 
             // real account checks in order
@@ -293,6 +308,8 @@ const Header = (() => {
                 'document_review',
                 'document_needs_action',
                 'authenticate',
+                'cashier_locked',
+                'withdrawal_locked',
                 'unwelcome',
             ];
 

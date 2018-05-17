@@ -11,12 +11,13 @@ const Price                 = require('./price');
 const Process               = require('./process');
 const Purchase              = require('./purchase');
 const Tick                  = require('./tick');
-const GTM                   = require('../../base/gtm');
+const ViewPopup             = require('../user/view_popup/view_popup');
 const BinarySocket          = require('../../base/socket');
 const getDecimalPlaces      = require('../../common/currency').getDecimalPlaces;
 const isCryptocurrency      = require('../../common/currency').isCryptocurrency;
 const onlyNumericOnKeypress = require('../../common/event_handler');
 const TimePicker            = require('../../components/time_picker');
+const GTM                   = require('../../../_common/base/gtm');
 const dateValueChanged      = require('../../../_common/common_functions').dateValueChanged;
 const isVisible             = require('../../../_common/common_functions').isVisible;
 const getElementById        = require('../../../_common/common_functions').getElementById;
@@ -59,51 +60,14 @@ const TradingEvents = (() => {
             TimePicker.init(initObj);
         };
 
-        /*
-         * attach event to market list, so when client change market we need to update undelryings
-         * and request for new Contract details to populate the form and request price accordingly
-         */
-        const onMarketChange = (market) => {
-            CommonTrading.showPriceOverlay();
-            Defaults.set('market', market);
-
-            // as different markets have different forms so remove from sessionStorage
-            // it will default to proper one
-            Defaults.remove('formname');
-            Defaults.remove('underlying');
-            Process.processMarket();
-            CommonTrading.displayTooltip();
-        };
-
-        getElementById('contract_markets').addEventListener('change', (e) => {
-            onMarketChange(e.target.value);
-        });
-
-        /*
-         * attach event to form list, so when client click on different form we need to update form
-         * and request for new Contract details to populate the form and request price accordingly
-         */
-        const contractFormEventChange = () => {
+        const contract_input = getElementById('contract');
+        contract_input.addEventListener('change', () => {
+            /*
+             * attach event to form list, so when client click on different form we need to update form
+             * and request for new Contract details to populate the form and request price accordingly
+             */
             Process.processContractForm();
             TradingAnalysis.request();
-        };
-
-        const form_nav_element = getElementById('contract_form_name_nav');
-        form_nav_element.addEventListener('click', (e) => {
-            const clicked_form = e.target;
-            if (clicked_form && clicked_form.getAttribute('menuitem')) {
-                const menuitem_id    = clicked_form.getAttribute('menuitem');
-                const is_form_active = clicked_form.classList.contains('active') || clicked_form.parentElement.classList.contains('active');
-                const is_menu_active = getElementById(menuitem_id).classList.contains('a-active');
-                Defaults.set('formname', menuitem_id);
-
-                // if form is already active then no need to send same request again
-                CommonTrading.toggleActiveCatMenuElement(form_nav_element, e.target.getAttribute('menuitem'));
-
-                if (!is_form_active || !is_menu_active) {
-                    contractFormEventChange();
-                }
-            }
         });
 
         /*
@@ -113,9 +77,6 @@ const TradingEvents = (() => {
             if (e.target) {
                 CommonTrading.showFormOverlay();
                 CommonTrading.showPriceOverlay();
-                if (e.target.selectedIndex < 0) {
-                    e.target.selectedIndex = 0;
-                }
                 const underlying = e.target.value;
                 Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                 Defaults.set('underlying', underlying);
@@ -128,6 +89,8 @@ const TradingEvents = (() => {
 
                 // get ticks for current underlying
                 GetTicks.request(underlying);
+
+                CommonTrading.displayTooltip();
             }
         });
 
@@ -359,7 +322,16 @@ const TradingEvents = (() => {
             if (id && ask_price) {
                 $('.purchase_button').css('visibility', 'hidden');
                 BinarySocket.send(params).then((response) => {
-                    Purchase.display(response);
+                    if (response.error || /digit/i.test(response.echo_req.passthrough.contract_type)) {
+                        Purchase.display(response);
+                    } else {
+                        this.setAttribute('contract_id', response.buy.contract_id);
+                        ViewPopup.init(this, () => {
+                            GetTicks.request();
+                            CommonTrading.hideOverlayContainer();
+                            Price.processPriceRequest();
+                        });
+                    }
                     GTM.pushPurchaseData(response);
                 });
                 Price.incrFormId();
