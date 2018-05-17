@@ -2,6 +2,8 @@ import classNames       from 'classnames';
 import React            from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import Client           from '../../../_common/base/client_base';
+import GTM              from '../../../_common/base/gtm';
+import SocketCache      from '../../../_common/base/socket_cache';
 import { localize }     from '../../../_common/localize';
 
 const getAccountInfo = (loginid) => {
@@ -40,6 +42,21 @@ class AccountSwitcher extends React.PureComponent {
         });
     };
 
+    switchAccount = (loginid) => {
+        if (!loginid || !Client.get('token', loginid)) {
+            return;
+        }
+
+        sessionStorage.setItem('active_tab', '1');
+        // set local storage
+        GTM.setLoginFlag();
+        Client.set('cashier_confirmed', 0);
+        Client.set('accepted_bch', 0);
+        Client.set('loginid', loginid);
+        SocketCache.clear();
+        window.location.reload();
+    };
+
     render() {
         const account_list_collapsed = {
             visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
@@ -69,7 +86,10 @@ class AccountSwitcher extends React.PureComponent {
                         <div className='acc-switcher-items'>
                             {this.state.accounts_list.map((account) => (
                                 <React.Fragment key={account.loginid}>
-                                    <div className={classNames('acc-switcher-account', account.icon)}>
+                                    <div
+                                        className={classNames('acc-switcher-account', account.icon)}
+                                        onClick={this.switchAccount.bind(null, account.loginid)}
+                                    >
                                         <p className='acc-switcher-accountid'>{account.loginid}</p>
                                         <p className='acc-switcher-currency'>{account.title}</p>
                                     </div>
