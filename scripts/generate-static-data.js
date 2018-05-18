@@ -340,8 +340,8 @@ const texts = [
     'Digit Under',
 
     // multi_barriers_trading
-    '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
-    '[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].',
+    '[_1] [_2] payout if [_3] is higher than or equal to Barrier at close on [_4].',
+    '[_1] [_2] payout if [_3] is lower than or equal to Barrier at close on [_4].',
     '[_1] [_2] payout if [_3] does not touch Barrier through close on [_4].',
     '[_1] [_2] payout if [_3] touches Barrier through close on [_4].',
     '[_1] [_2] payout if [_3] ends on or between low and high values of Barrier at close on [_4].',

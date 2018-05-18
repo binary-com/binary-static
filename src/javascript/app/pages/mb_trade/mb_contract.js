@@ -246,7 +246,7 @@ const MBContract = (() => {
     };
 
     const categories  = [
-        { value: 'callput',      type1: 'PUT',          type2: 'CALLE' },
+        { value: 'callputequal', type1: 'PUTE',         type2: 'CALLE' },
         { value: 'touchnotouch', type1: 'ONETOUCH',     type2: 'NOTOUCH' },
         { value: 'endsinout',    type1: 'EXPIRYRANGEE', type2: 'EXPIRYMISS' },
         { value: 'staysinout',   type1: 'RANGE',        type2: 'UPORDOWN' },
@@ -311,17 +311,17 @@ const MBContract = (() => {
     const getTemplate = (contract_type) => {
         const is_jp_client = Client.isJPClient();
         const templates = {
-            PUT: {
+            PUTE: {
                 opposite   : 'CALLE',
                 order      : is_jp_client ? 0 : 1,
                 name       : 'Lower',
-                description: '[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].',
+                description: '[_1] [_2] payout if [_3] is lower than or euqal to Barrier at close on [_4].',
             },
             CALLE: {
-                opposite   : 'PUT',
+                opposite   : 'PUTE',
                 order      : is_jp_client ? 1 : 0,
                 name       : 'Higher',
-                description: '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
+                description: '[_1] [_2] payout if [_3] is higher than or equal to Barrier at close on [_4].',
             },
             ONETOUCH: {
                 opposite   : 'NOTOUCH',
