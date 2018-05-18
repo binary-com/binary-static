@@ -254,7 +254,7 @@ const ViewPopup = (() => {
         }
 
         const { barrier, contract_type, entry_spot } = contract;
-        if (Reset.isReset(contract_type) && (entry_spot !== barrier)) {
+        if (Reset.isReset(contract_type) && (+entry_spot !== +barrier)) {
             TickDisplay.plotResetSpot(barrier * 1);
         }
         sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
