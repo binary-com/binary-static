@@ -26,8 +26,8 @@ const NetworkMonitorBase = (() => {
         updateUI;
 
     const init = (socket_general_functions, fncUpdateUI) => {
-        updateUI   = fncUpdateUI;
-        ws_config  = Object.assign({ wsEvent, isOnline }, socket_general_functions);
+        updateUI  = fncUpdateUI;
+        ws_config = Object.assign({ wsEvent, isOnline }, socket_general_functions);
 
         if ('onLine' in navigator) {
             window.addEventListener('online',  setStatus);
