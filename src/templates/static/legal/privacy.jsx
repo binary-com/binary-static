@@ -8,7 +8,8 @@ const Privacy = () => (
         <p>{it.L('We have outlined for you our privacy practices as follows:')}</p>
 
         <h2 data-anchor>{it.L('Use of Information')}</h2>
-        <p>{it.L('We operate in full compliance with the General Data Protection Regulation (GDPR) and other applicable Data Protection laws. These regulatory measures place obligations on users of personal data like us. They also lay down the principles for fair and lawful processing of all the information we acquire. It is our commitment to safeguard your privacy online at all times. We only use your personal information to help us service your account, to improve our services to you, and to provide you with products you have requested. We do not sell your personal information to third parties, but we may provide it to payment providers to facilitate transactions on your account.')}</p>
+        <p>{it.L('We operate in full compliance with the General Data Protection Regulation (GDPR) and other applicable Data Protection laws. These regulatory measures place obligations on users of personal data like us. They also lay down the principles for fair and lawful processing of all the information we acquire.')}</p>
+        <p>{it.L('It is our commitment to safeguard your privacy online at all times. We only use your personal information to help us service your account, to improve our services to you, and to provide you with products you have requested. We do not sell your personal information to third parties, but we may provide it to payment providers to facilitate transactions on your account.')}</p>
         <p>{it.L('Your personal information is used primarily as a way of validating you as the legitimate account owner and proper recipient of withdrawal payments. We also use this information to process your trades. We collect from you all personal and financial data directly relating to you when you fill in our account opening form. In all instances, you have either a legal or a contractual obligation to provide us with the information. If such information is not provided, we will be unable to provide you with our services.')}</p>
         <p>{it.L('We reserve the right to request further information from you whenever deemed appropriate under the circumstances. For example, we may ask you to send us additional acceptable documents to confirm the authenticity of your account details or of any withdrawal request.')}</p>
         <p>{it.L('We hold all personal data we collect from you with due diligence and only process them for purposes as required or allowed by law. This includes the process of obtaining and sharing of certain information with third parties for credit or identity checks to comply with legal and regulatory obligations. In certain cases, we may process your data to fulfill our contractual obligations with you.')}</p>
@@ -36,7 +37,7 @@ const Privacy = () => (
 
         <h2 data-anchor>{it.L('Access to Personal Data')}</h2>
         <p>{it.L('Access to your personal data is strictly prohibited with the exception of key Binary.com personnel and only as needed in the performance of their duties.')}</p>
-        <p>{it.L('If Binary.com is legally required to disclose your personal or financial information by law, regulation, or pursuant to the order of a court of competent jurisdiction or a governmental agency,we will promptly notify you to give you the opportunity to seek protection for the information as it deems appropriate. We will do so unless legally prohibited. Such required disclosure shall not be interpreted as a breach of this Terms and Conditions Agreement.')}</p>
+        <p>{it.L('If Binary.com is legally required to disclose your personal or financial information by law, regulation, or pursuant to the order of a court of competent jurisdiction or a governmental agency, we will promptly notify you to give you the opportunity to seek protection for the information as it deems appropriate. We will do so unless legally prohibited. Such required disclosure shall not be interpreted as a breach of this Terms and Conditions Agreement.')}</p>
         <p>{it.L('You also have the right to request us to copy, modify, or remove your personal information as long as such actions do not breach any legal or regulatory obligations we may have.')}</p>
 
         <h2 data-anchor>{it.L('Data Retention')}</h2>
@@ -65,7 +66,7 @@ const Privacy = () => (
         <p>{it.L('For full contact details of Binary.com, kindly check our [_1]Contact Us[_2] page.', `<a href=${it.url_for('contact')}>`, '</a>')}</p>
 
         <h2 data-anchor>{it.L('Complaints')}</h2>
-        <p>{it.L('For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our Complaints and Disputes section.')}</p>
+        <p>{it.L('For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our [_1]Complaints and Disputes[_2] section.', `<a href=${it.url_for('terms-and-conditions?anchor=complaints-and-disputes#legal-binary')}>`, '</a>')}</p>
 
     </div>
 );
