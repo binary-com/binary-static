@@ -225,7 +225,7 @@ class Statement extends React.PureComponent {
     renderNoActivityMessage() {
         return (
             <div className='container'>
-                <div className='statement-no-activity-msg'>
+                <div className='statement__no-activity-msg'>
                     {
                         !this.state.date_from && !this.state.date_to
                             ? localize('Your account has no trading activity.')
@@ -244,10 +244,10 @@ class Statement extends React.PureComponent {
 
         return (
             // TODO: use BEM
-            <div className='statement-container' ref={(el) => this.el = el}>
-                <div className='statement-filter'>
+            <div className='statement' ref={(el) => this.el = el}>
+                <div className='statement__filter'>
                     <div className='container'>
-                        <span className='statement-filter-text'>{localize('Filter by date:')}</span>
+                        <span className='statement__filter-text'>{localize('Filter by date:')}</span>
                         <DatePicker
                             name='date_from'
                             initial_value=''
@@ -256,7 +256,7 @@ class Statement extends React.PureComponent {
                             maxDate={this.state.date_to || today}
                             onChange={this.handleDateChange}
                         />
-                        <span className='statement-filter-dash'>&mdash;</span>
+                        <span className='statement__filter-dash'>&mdash;</span>
                         <DatePicker
                             name='date_to'
                             initial_value=''
@@ -269,7 +269,7 @@ class Statement extends React.PureComponent {
                         />
                     </div>
                 </div>
-                <div className='statement-content'>
+                <div className='statement__content'>
                     <div className='desktop-only'>
                         <DataTable
                             data_source={this.state.data_source.slice(

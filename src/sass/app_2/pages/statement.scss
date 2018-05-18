@@ -1,15 +1,15 @@
 $filter-height: 60px;
 
-.statement-container {
-    .statement-content {
+.statement {
+    &__content {
         padding-top: $filter-height;
     }
-    .statement-no-activity-msg {
+    &__no-activity-msg {
         padding: 1rem;
         @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
         font-size: 1rem;
     }
-    .statement-filter {
+    &__filter {
         height: $filter-height;
         position: fixed;
         z-index: 200;
@@ -39,7 +39,7 @@ $filter-height: 60px;
         cursor: pointer;
     }
     // column widths
-    .date, .ref {
+    .date, .refid {
         width: 6.5em;
     }
     .desc {
