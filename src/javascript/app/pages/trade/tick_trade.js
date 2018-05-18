@@ -3,6 +3,7 @@ const requireHighstock     = require('./common').requireHighstock;
 const Tick                 = require('./tick');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
+const addComma             = require('../../../_common/base/currency_base').addComma;
 const CommonFunctions      = require('../../../_common/common_functions');
 const localize             = require('../../../_common/localize').localize;
 
@@ -199,7 +200,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-barrier',
                 value : barrier_quote,
-                label : { text: `Barrier (${barrier_quote})`, align: 'center' },
+                label : { text: `Barrier (${addComma(barrier_quote)})`, align: 'center' },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
@@ -222,7 +223,7 @@ const TickDisplay = (() => {
                 value: calc_barrier,
                 color: 'green',
                 label: {
-                    text : `Average (${calc_barrier})`,
+                    text : `Average (${addComma(calc_barrier)})`,
                     align: 'center',
                 },
                 width : 2,
@@ -338,7 +339,7 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    if (contract_category === 'touchnotouch' && tick.epoch === sell_spot_time) {
+                    if (!x_indicators[indicator_key] && tick.epoch === sell_spot_time) {
                         x_indicators[indicator_key] = {
                             index: counter,
                             label: sell_spot_time === exit_tick_time
@@ -361,26 +362,35 @@ const TickDisplay = (() => {
         }
     };
 
+    const addSellSpot = (contract) => {
+        if (!applicable_ticks) return;
+
+        sell_spot_time = +contract.sell_spot_time;
+        exit_tick_time = +contract.exit_tick_time;
+
+        const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
+
+        if (index === -1) return;
+
+        const indicator_key = `_${index}`;
+
+        if (x_indicators[indicator_key]) return;
+
+        x_indicators[indicator_key] = {
+            index,
+            label: sell_spot_time === exit_tick_time
+                ? 'Exit Spot'
+                : 'Sell Spot',
+            dashStyle: 'Dash',
+        };
+        
+        add(x_indicators[indicator_key]);
+    };
+
     const updateChart = (data, contract) => {
         subscribe = 'false';
-        if (contract_category === 'touchnotouch' && data.is_sold && applicable_ticks) {
-            sell_spot_time = +contract.sell_spot_time;
-            exit_tick_time = +contract.exit_tick_time;
-
-            const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
-
-            if (index >= 0) {
-                const indicator_key = `_${index}`;
-
-                x_indicators[indicator_key] = {
-                    index,
-                    label: sell_spot_time === exit_tick_time
-                        ? 'Exit Spot'
-                        : 'Sell Spot',
-                    dashStyle: 'Dash',
-                };
-                add(x_indicators[indicator_key]);
-            }
+        if (data.is_sold) {
+            addSellSpot(contract);
         } else if (contract) {
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
@@ -400,8 +410,8 @@ const TickDisplay = (() => {
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
                 subscribe         = 'true';
-            } else if (+contract.sell_spot_time < contract.date_expiry) {
-                request.end = contract.sell_spot_time;
+            } else if (sell_spot_time && sell_spot_time < contract.date_expiry) {
+                request.end = sell_spot_time;
             } else {
                 request.end = contract.date_expiry;
             }
