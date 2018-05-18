@@ -1,5 +1,5 @@
-import React from 'react';
-import moment from 'moment';
+import moment       from 'moment';
+import React        from 'react';
 import { localize } from '../../../_common/localize';
 
 class Calendar extends React.Component {

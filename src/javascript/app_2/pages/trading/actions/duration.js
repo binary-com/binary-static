@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment       from 'moment';
 import ContractType from './helpers/contract_type';
 
 export const onChangeExpiry = ({

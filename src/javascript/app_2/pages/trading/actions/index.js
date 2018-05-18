@@ -1,16 +1,19 @@
-import { useStrict, action, reaction } from 'mobx';
+import {
+    action,
+    reaction,
+    useStrict }        from 'mobx';
 import { asyncAction } from 'mobx-utils';
 import { cloneObject } from '../../../../_common/utility';
 
 // add files containing actions here.
 import * as ContractType from './contract_type';
-import * as Currency from './currency';
-import * as Duration from './duration';
-import * as StartDate from './start_date';
-import * as Symbol from './symbol';
-import * as Test from './test';
+import * as Currency     from './currency';
+import * as Duration     from './duration';
+import * as StartDate    from './start_date';
+import * as Symbol       from './symbol';
+import * as Test         from './test';
 
-useStrict(true);
+useStrict(false); // TODO: fix issues to enable useStrict
 
 const reaction_disposers = [];
 

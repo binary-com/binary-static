@@ -1,9 +1,12 @@
-import Client from '../../_common/base/client_base';
-import { setCurrencies } from '../../_common/base/currency_base';
-import Login from '../../_common/base/login';
-import BinarySocket from '../../_common/base/socket_base';
-import { State } from '../../_common/storage';
+import DAO                  from '../data/dao';
+import Client               from '../../_common/base/client_base';
+import { setCurrencies }    from '../../_common/base/currency_base';
+import Login                from '../../_common/base/login';
+import BinarySocket         from '../../_common/base/socket_base';
+import { State }            from '../../_common/storage';
 import { getPropertyValue } from '../../_common/utility';
+
+let client_store;
 
 // TODO: update commented statements to the corresponding functions from app_2
 const BinarySocketGeneral = (() => {
@@ -15,7 +18,7 @@ const BinarySocketGeneral = (() => {
                     Client.sendLogoutRequest();
                     return;
                 }
-                BinarySocket.send({ website_status: 1, subscribe: 1 });
+                DAO.subscribeWebsiteStatus(ResponseHandlers.websiteStatus);
             }
             // Clock.startClock();
         }
@@ -24,24 +27,7 @@ const BinarySocketGeneral = (() => {
     const onMessage = (response) => {
         handleError(response);
         // Header.hideNotification('CONNECTION_ERROR');
-        let is_available = false;
         switch (response.msg_type) {
-            case 'website_status':
-                if (response.website_status) {
-                    is_available = /^up$/i.test(response.website_status.site_status);
-                    if (is_available && !BinarySocket.availability()) {
-                        window.location.reload();
-                        return;
-                    }
-                    if (response.website_status.message) {
-                        // Footer.displayNotification(response.website_status.message);
-                    } else {
-                        // Footer.clearNotification();
-                    }
-                    BinarySocket.availability(is_available);
-                    setCurrencies(response.website_status);
-                }
-                break;
             case 'authorize':
                 if (response.error) {
                     const is_active_tab = sessionStorage.getItem('active_tab') === '1';
@@ -55,14 +41,15 @@ const BinarySocketGeneral = (() => {
                         Client.sendLogoutRequest(true);
                     } else {
                         Client.responseAuthorize(response);
-                        BinarySocket.send({ balance: 1, subscribe: 1 });
-                        BinarySocket.send({ get_settings: 1 });
-                        BinarySocket.send({ get_account_status: 1 });
-                        BinarySocket.send({ payout_currencies: 1 });
-                        BinarySocket.send({ mt5_login_list: 1 });
+                        setBalance(response.authorize.balance);
+                        DAO.subscribeBalance(ResponseHandlers.balance);
+                        DAO.getSettings();
+                        DAO.getAccountStatus();
+                        DAO.getPayoutCurrencies();
+                        DAO.getMt5LoginList();
                         setResidence(response.authorize.country || Client.get('residence'));
                         if (!Client.get('is_virtual')) {
-                            BinarySocket.send({ get_self_exclusion: 1 });
+                            DAO.getSelfExclusion();
                         }
                         BinarySocket.sendBuffered();
                         if (/bch/i.test(response.authorize.currency) && !Client.get('accepted_bch')) {
@@ -77,12 +64,6 @@ const BinarySocketGeneral = (() => {
                         }
                     }
                 }
-                break;
-            case 'balance':
-                // updateBalance(response);
-                break;
-            case 'logout':
-                Client.doLogout(response);
                 break;
             case 'landing_company':
                 // Header.upgradeMessageVisibility();
@@ -107,8 +88,15 @@ const BinarySocketGeneral = (() => {
     const setResidence = (residence) => {
         if (residence) {
             Client.set('residence', residence);
-            BinarySocket.send({ landing_company: residence });
+            DAO.getLandingCompany(residence);
         }
+    };
+
+    const setBalance = (balance) => {
+        BinarySocket.wait('website_status').then(() => {
+            Client.set('balance', balance);
+            client_store.balance = balance;
+        });
     };
 
     const handleError = (response) => {
@@ -138,10 +126,50 @@ const BinarySocketGeneral = (() => {
         }
     };
 
+    const init = (store) => {
+        client_store = store;
+
+        return {
+            onOpen,
+            onMessage,
+        };
+    };
+
     return {
-        onOpen,
-        onMessage,
+        init,
+        setBalance,
     };
 })();
 
 export default BinarySocketGeneral;
+
+const ResponseHandlers = (() => {
+    let is_available = false;
+    const websiteStatus = (response) => {
+        if (response.website_status) {
+            is_available = /^up$/i.test(response.website_status.site_status);
+            if (is_available && !BinarySocket.availability()) {
+                window.location.reload();
+                return;
+            }
+            if (response.website_status.message) {
+                // Footer.displayNotification(response.website_status.message);
+            } else {
+                // Footer.clearNotification();
+            }
+            BinarySocket.availability(is_available);
+            setCurrencies(response.website_status);
+        }
+    };
+
+    const balance = (response) => {
+        if (!response.error){
+            BinarySocketGeneral.setBalance(response.balance.balance);
+        }
+    };
+
+    return {
+        websiteStatus,
+        balance,
+    };
+})();

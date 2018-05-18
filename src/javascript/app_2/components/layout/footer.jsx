@@ -1,7 +1,7 @@
-import React from 'react';
-import Popover from '../elements/popover.jsx';
-import { connect } from '../../store/connect';
+import React          from 'react';
+import Popover        from '../elements/popover.jsx';
 import { BinaryLink } from '../../routes';
+import { connect }    from '../../store/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (
     <Popover
@@ -72,7 +72,7 @@ class ToggleFullScreen extends React.Component {
     }
 }
 
-class TradingFooter extends React.Component {
+class Footer extends React.Component {
     render() {
         return (
             <React.Fragment>
@@ -102,4 +102,4 @@ export default connect(
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
     })
-)(TradingFooter);
+)(Footer);
