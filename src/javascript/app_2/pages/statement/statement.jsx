@@ -238,39 +238,50 @@ class Statement extends React.PureComponent {
         );
     }
 
-    render() {
-        const is_loading = this.state.pending_request && this.state.data_source.length === 0;
-
+    renderFilter(is_mobile) {
         const moment_now = moment(this.props.server_time);
         const today = moment_now.format('YYYY-MM-DD');
 
         return (
-            // TODO: use BEM
-            <div className='statement' ref={(el) => this.el = el}>
-                <div className='statement__filter'>
-                    <div className='container'>
-                        <span className='statement__filter-label desktop-only'>{localize('Filter by date:')}</span>
-                        <DatePicker
-                            name='date_from'
-                            initial_value=''
-                            placeholder={localize('Start date')}
-                            startDate={this.state.date_to || today}
-                            maxDate={this.state.date_to || today}
-                            onChange={this.handleDateChange}
-                        />
-                        <span className='statement__filter-dash'>&mdash;</span>
-                        <DatePicker
-                            name='date_to'
-                            initial_value=''
-                            placeholder={localize('End date')}
-                            startDate={today}
-                            minDate={this.state.date_from}
-                            maxDate={today}
-                            showTodayBtn
-                            onChange={this.handleDateChange}
-                        />
-                    </div>
+            <div className={classnames('statement-filter', {
+                'mobile-only' : is_mobile,
+                'desktop-only': !is_mobile,
+            })}>
+                <div className='statement-filter__content container'>
+                    <span className='statement-filter__label'>{localize('Filter by date:')}</span>
+                    <DatePicker
+                        name='date_from'
+                        initial_value=''
+                        placeholder={localize('Start date')}
+                        startDate={this.state.date_to || today}
+                        maxDate={this.state.date_to || today}
+                        onChange={this.handleDateChange}
+                    />
+                    <span className='statement-filter__dash'>&mdash;</span>
+                    <DatePicker
+                        name='date_to'
+                        initial_value=''
+                        placeholder={localize('End date')}
+                        startDate={today}
+                        minDate={this.state.date_from}
+                        maxDate={today}
+                        showTodayBtn
+                        onChange={this.handleDateChange}
+                    />
                 </div>
+            </div>
+        );
+    }
+
+    render() {
+        const is_loading = this.state.pending_request && this.state.data_source.length === 0;
+
+        return (
+            <div className='statement' ref={(el) => this.el = el}>
+
+                {this.renderFilter(false)}
+                {this.renderFilter(true)}
+
                 <div className='statement__content'>
                     <div className='desktop-only'>
                         <DataTable
