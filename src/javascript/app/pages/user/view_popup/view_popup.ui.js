@@ -6,7 +6,6 @@ const ViewPopupUI = (() => {
     let $container,
         stream_ids,
         chart_stream_ids,
-        getPageTickStream,
         triggerOnClose;
 
     const init = () => {
@@ -44,7 +43,6 @@ const ViewPopupUI = (() => {
         setViewPopupTimer(null);
         closeContainer();
         init();
-        if (typeof getPageTickStream === 'function') getPageTickStream();
         if (typeof triggerOnClose === 'function') {
             triggerOnClose();
             if (is_close) {
@@ -181,7 +179,6 @@ const ViewPopupUI = (() => {
         repositionConfirmation,
         storeSubscriptionID,
 
-        setStreamFunction : (streamFnc) => { getPageTickStream = streamFnc; },
         setOnCloseFunction: (onCloseFnc) => { triggerOnClose = onCloseFnc; },
     };
 })();
