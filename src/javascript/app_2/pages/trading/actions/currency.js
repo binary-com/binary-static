@@ -1,6 +1,6 @@
-import DAO from '../../../data/dao';
+import DAO                  from '../../../data/dao';
 import { isCryptocurrency } from '../../../../_common/base/currency_base';
-import { localize } from '../../../../_common/localize';
+import { localize }         from '../../../../_common/localize';
 
 export const getCurrenciesAsync = function* ({ currency }) {
     const r = yield DAO.getPayoutCurrencies();

@@ -1,5 +1,5 @@
-import ContractType from '../actions/helpers/contract_type';
 import { getTicks } from './test';
+import ContractType from '../actions/helpers/contract_type';
 import { getActiveSymbols } from '../../../data/dao';
 
 export const getActiveSymbolAsync = function *() {

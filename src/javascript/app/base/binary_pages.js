@@ -13,6 +13,7 @@ const PaymentAgentList     = require('../pages/cashier/payment_agent_list');
 const PaymentAgentWithdraw = require('../pages/cashier/payment_agent_withdraw');
 const Endpoint             = require('../pages/endpoint');
 const MBTradePage          = require('../pages/mb_trade/mb_tradepage');
+const EconomicCalendar     = require('../pages/resources/economic_calendar/economic_calendar');
 const AssetIndexUI         = require('../pages/resources/asset_index/asset_index.ui');
 const TradingTimesUI       = require('../pages/resources/trading_times/trading_times.ui');
 const TradePage            = require('../pages/trade/tradepage');
@@ -75,6 +76,7 @@ const pages_config = {
     charity                  : { module: Charity },
     contact                  : { module: Contact },
     detailsws                : { module: PersonalDetails,            is_authenticated: true, needs_currency: true },
+    economic_calendar        : { module: EconomicCalendar },
     endpoint                 : { module: Endpoint },
     epg_forwardws            : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
     forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },

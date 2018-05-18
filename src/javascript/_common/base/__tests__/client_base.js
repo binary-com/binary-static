@@ -4,7 +4,7 @@ const { api, expect, setURL } = require('../../__tests__/tests_common');
 const State                   = require('../../storage').State;
 const Url                     = require('../../url');
 
-describe('Client', () => {
+describe('ClientBase', () => {
     const loginid_invalid   = 'ZZ123456789';
     const loginid_virtual   = 'VRTC123456789';
     const loginid_real      = 'CR123456789';

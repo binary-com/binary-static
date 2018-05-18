@@ -1,7 +1,7 @@
-import React from 'react';
-import classNames from 'classnames';
-import Url from '../../../_common/url';
+import classNames     from 'classnames';
+import React          from 'react';
 import { BinaryLink } from '../../routes';
+import Url            from '../../../_common/url';
 
 class ToggleDrawer extends React.PureComponent {
     constructor(props) {
@@ -41,7 +41,7 @@ class ToggleDrawer extends React.PureComponent {
                     ref={this.setRef}
                     alignment={this.props.alignment}
                     closeBtn={this.closeDrawer}
-                    has_footer={this.props.has_footer}
+                    footer={this.props.footer}
                 >
                     {this.props.children}
                 </Drawer>
@@ -98,6 +98,9 @@ class Drawer extends React.PureComponent {
         const drawer_class = classNames('drawer', {
             'visible': this.state.is_drawer_visible,
         }, this.props.alignment);
+
+        const DrawerFooter = this.props.footer;
+
         return (
             <aside className='drawer-container'>
                 <div
@@ -115,10 +118,10 @@ class Drawer extends React.PureComponent {
                             closeBtn={this.props.closeBtn}
                         />
                         {this.props.children}
-                        {this.props.has_footer ?
-                            <div className='drawer-footer' />
-                        :
-                            null
+                        {DrawerFooter &&
+                            <div className='drawer-footer'>
+                                <DrawerFooter />
+                            </div>
                         }
                     </div>
                 </div>

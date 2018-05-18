@@ -1,6 +1,11 @@
-import React, { Component } from 'react';
+import {
+    isBoxedObservable,
+    isObservable,
+    isObservableArray,
+    isObservableMap,
+    toJS }                  from 'mobx';
 import { inject, Provider } from 'mobx-react';
-import { isBoxedObservable, isObservable, isObservableArray, isObservableMap, toJS } from 'mobx';
+import React, { Component } from 'react';
 
 const SPECIAL_REACT_KEYS = { children: true, key: true, ref: true };
 
