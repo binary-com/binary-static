@@ -1,6 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import classnames from 'classnames';
+import DAO from '../../data/dao';
+import { connect } from '../../store/connect';
 import BinarySocket from '../../../_common/base/socket_base';
 import Client from '../../../_common/base/client_base';
 import { formatMoney } from '../../../_common/base/currency_base';
@@ -267,15 +269,17 @@ class Statement extends React.PureComponent {
                     </div>
                 </div>
                 <div className='statement-content'>
-                    <DataTable
-                        data_source={this.state.data_source.slice(
-                            0,
-                            this.state.chunks * this.props.chunk_size
-                        )}
-                        columns={this.state.columns}
-                        has_fixed_header
-                        is_full_width
-                    />
+                    <div className='desktop-only'>
+                        <DataTable
+                            data_source={this.state.data_source.slice(
+                                0,
+                                this.state.chunks * this.props.chunk_size
+                            )}
+                            columns={this.state.columns}
+                            has_fixed_header
+                            is_full_width
+                        />
+                    </div>
                     {is_loading && <Loading />
                         || this.state.data_source.length === 0 && this.renderNoActivityMessage()}
                 </div>
