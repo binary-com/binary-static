@@ -341,7 +341,7 @@ const commonTrading = (() => {
     let $chart;
 
     const updateWarmChart = () => {
-        $chart      = $chart || $('#trading_worm_chart');
+        $chart      = $chart && $chart.length ? $chart : $('#trading_worm_chart');
         const spots = Object.keys(Tick.spots()).sort((a, b) => a - b).map(v => Tick.spots()[v]);
         if ($chart && typeof $chart.sparkline === 'function') {
             $chart.sparkline(spots, chart_config);
