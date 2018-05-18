@@ -49,7 +49,7 @@ const Purchase = (() => {
         const button             = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
-        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
+        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && /^(risefall|higherlower|asian|touchnotouch)$/.test(sessionStorage.formname);
 
         contracts_list.style.display = 'none';
 
@@ -143,12 +143,17 @@ const Purchase = (() => {
                 }
             }
 
+            let category = sessionStorage.getItem('formname');
+            if (/^(risefall|higherlower)$/.test(category)) {
+                category = 'callput';
+            }
+
             TickDisplay.init({
                 symbol              : passthrough.symbol,
-                barrier             : sessionStorage.getItem('formname') === 'higherlower' ? passthrough.barrier : undefined,
+                barrier             : /^(higherlower|touchnotouch)$/.test(sessionStorage.getItem('formname')) ? passthrough.barrier : undefined,
                 number_of_ticks     : passthrough.duration,
                 previous_tick_epoch : receipt.start_time,
-                contract_category   : sessionStorage.getItem('formname') === 'asian' ? 'asian' : 'callput',
+                contract_category   : category,
                 display_symbol      : Symbols.getName(passthrough.symbol),
                 contract_start      : receipt.start_time,
                 display_decimals    : decimal_points,

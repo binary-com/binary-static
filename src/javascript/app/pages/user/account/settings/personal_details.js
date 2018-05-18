@@ -357,10 +357,18 @@ const PersonalDetails = (() => {
                         $field.append($('<option/>', { value: state.value, text: state.text }));
                     });
                 } else {
-                    $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+                    $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35', 'data-lpignore': true }));
                     $field = $(address_state);
                 }
                 $field.val(get_settings_data.address_state);
+
+                if (states && states.length > 0) {
+                    $('#address_state').select2({
+                        matcher(params, data) {
+                            return SelectMatcher(params, data);
+                        },
+                    });
+                }
             }
 
             if (is_jp_client && !is_virtual) {
@@ -401,11 +409,6 @@ const PersonalDetails = (() => {
                             BinarySocket.send({ states_list: residence }).then(response_state => {
                                 populateStates(response_state).then(() => {
                                     getDetailsResponse(get_settings_data, response.residence_list);
-                                });
-                                $('#address_state').select2({
-                                    matcher(params, data) {
-                                        return SelectMatcher(params, data);
-                                    },
                                 });
                             });
                         } else {

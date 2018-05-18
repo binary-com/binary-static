@@ -4,6 +4,7 @@ const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
+const addComma             = require('../../../_common/base/currency_base').addComma;
 const CommonFunctions      = require('../../../_common/common_functions');
 const localize             = require('../../../_common/localize').localize;
 
@@ -38,7 +39,9 @@ const TickDisplay = (() => {
         tick_init,
         subscribe,
         response_id,
-        status;
+        status,
+        sell_spot_time,
+        exit_tick_time;
 
     let id_render = 'tick_chart';
 
@@ -96,6 +99,11 @@ const TickDisplay = (() => {
             x_indicators[`_${number_of_ticks}`] = {
                 label: 'Exit Spot',
                 id   : 'exit_tick',
+            };
+        } else if (contract_category.match('touchnotouch')) {
+            ticks_needed = number_of_ticks + 1;
+            x_indicators = {
+                _0: { label: 'Entry Spot', id: 'entry_tick' },
             };
         } else if (contract_category.match('digits')) {
             ticks_needed = number_of_ticks;
@@ -167,28 +175,28 @@ const TickDisplay = (() => {
         const barrier_type = contract_category.match('asian') ? 'asian' : 'static';
 
         if (barrier_type === 'static') {
-            const barrier_tick = applicable_ticks[0];
+            const first_quote = applicable_ticks[0].quote;
+            let barrier_quote = first_quote;
 
             if (barrier) {
-                let final_barrier = barrier_tick.quote + parseFloat(barrier);
+                let final_barrier = barrier_quote + parseFloat(barrier);
                 // sometimes due to rounding issues, result is 1.009999 while it should
                 // be 1.01
                 final_barrier = Number(`${Math.round(`${final_barrier}e${display_decimals}`)}e-${display_decimals}`);
-
-                barrier_tick.quote = final_barrier;
+                barrier_quote = final_barrier;
             } else if (abs_barrier) {
-                barrier_tick.quote = parseFloat(abs_barrier);
+                barrier_quote = parseFloat(abs_barrier);
             }
 
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-barrier',
-                value : barrier_tick.quote,
-                label : { text: `Barrier (${barrier_tick.quote})`, align: 'center' },
+                value : barrier_quote,
+                label : { text: `Barrier (${addComma(barrier_quote)})`, align: 'center' },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
             });
-            contract_barrier = barrier_tick.quote;
+            contract_barrier = barrier_quote;
             set_barrier      = false;
         }
 
@@ -206,7 +214,7 @@ const TickDisplay = (() => {
                 value: calc_barrier,
                 color: 'green',
                 label: {
-                    text : `Average (${calc_barrier})`,
+                    text : `Average (${addComma(calc_barrier)})`,
                     align: 'center',
                 },
                 width : 2,
@@ -221,12 +229,13 @@ const TickDisplay = (() => {
 
     const add = (indicator) => {
         chart.xAxis[0].addPlotLine({
-            value : indicator.index,
-            id    : indicator.id,
-            label : { text: indicator.label, x: /start_tick|entry_tick/.test(indicator.id) ? -15 : 5 },
-            color : '#e98024',
-            width : 2,
-            zIndex: 2,
+            value    : indicator.index,
+            id       : indicator.id,
+            label    : { text: indicator.label, x: /start_tick|entry_tick/.test(indicator.id) ? -15 : 5 },
+            color    : '#e98024',
+            width    : 2,
+            zIndex   : 2,
+            dashStyle: indicator.dashStyle || '',
         });
     };
 
@@ -282,6 +291,8 @@ const TickDisplay = (() => {
                     category = 'asian';
                 } else if (/digit/i.test(tick_shortcode)) {
                     category = 'digits';
+                } else if (/touch/i.test(tick_shortcode)) {
+                    category = 'touchnotouch';
                 }
                 initialize({
                     symbol              : tick_underlying,
@@ -306,12 +317,12 @@ const TickDisplay = (() => {
             epoches = data.history.times;
         }
 
-        if (applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed) {
-            evaluateContractOutcome();
-            if (response_id) {
-                BinarySocket.send({ forget: response_id });
-            }
-        } else {
+        const has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
+        const has_sold = sell_spot_time
+            && applicable_ticks
+            && applicable_ticks.find(({ epoch }) => epoch === sell_spot_time) !== undefined;
+
+        if (!has_finished && !has_sold) {
             for (let d = 0; d < epoches.length; d++) {
                 let tick;
                 if (data.tick) {
@@ -332,21 +343,60 @@ const TickDisplay = (() => {
                     applicable_ticks.push(tick);
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
+
+                    if (!x_indicators[indicator_key] && tick.epoch === sell_spot_time) {
+                        x_indicators[indicator_key] = {
+                            index: counter,
+                            label: sell_spot_time === exit_tick_time
+                                ? 'Exit Spot'
+                                : 'Sell Spot',
+                            dashStyle: 'Dash',
+                        };
+                    }
+
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
                         x_indicators[indicator_key].index = counter;
                         add(x_indicators[indicator_key]);
                     }
 
                     addBarrier();
+                    evaluateContractOutcome();
                     counter++;
                 }
             }
         }
     };
 
+    const addSellSpot = (contract) => {
+        if (!applicable_ticks) return;
+
+        sell_spot_time = +contract.sell_spot_time;
+        exit_tick_time = +contract.exit_tick_time;
+
+        const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
+
+        if (index === -1) return;
+
+        const indicator_key = `_${index}`;
+
+        if (x_indicators[indicator_key]) return;
+
+        x_indicators[indicator_key] = {
+            index,
+            label: sell_spot_time === exit_tick_time
+                ? 'Exit Spot'
+                : 'Sell Spot',
+            dashStyle: 'Dash',
+        };
+        
+        add(x_indicators[indicator_key]);
+    };
+
     const updateChart = (data, contract) => {
         subscribe = 'false';
-        if (contract) {
+        if (data.is_sold) {
+            addSellSpot(contract);
+        } else if (contract) {
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
             tick_longcode     = contract.longcode;
@@ -356,6 +406,8 @@ const TickDisplay = (() => {
             tick_shortcode    = contract.shortcode;
             tick_init         = '';
             status            = contract.status;
+            sell_spot_time    = +contract.sell_spot_time;
+            exit_tick_time    = +contract.exit_tick_time;
             const request     = {
                 ticks_history: contract.underlying,
                 start        : contract.date_start,
@@ -364,6 +416,8 @@ const TickDisplay = (() => {
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
                 subscribe         = 'true';
+            } else if (sell_spot_time && sell_spot_time < contract.date_expiry) {
+                request.end = sell_spot_time;
             } else {
                 request.end = contract.date_expiry;
             }
