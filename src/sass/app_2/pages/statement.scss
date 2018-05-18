@@ -126,6 +126,14 @@ $filter-height: 60px;
             vertical-align: middle;
             margin-right: 5px;
         }
+        &__amount {
+            &--buy, &--withdrawal {
+                color: $COLOR_LIGHT_GREEN;
+            }
+            &--sell, &--deposit {
+                color: $COLOR_LIGHT_RED;
+            }
+        }
         &__payout:before {
             background-image: url('../images/trading_app/statement/ic_payout.svg');
         }

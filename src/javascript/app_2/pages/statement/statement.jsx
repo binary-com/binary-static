@@ -50,7 +50,12 @@ const StatementCard = ({ date, refid, desc, action, amount, payout, balance, cla
         <div className='statement-card__body'>
             <div className='statement-card__desc'>{desc}</div>
             <div className='statement-card__row'>
-                <div className='statement-card__cell statement-card__amount'>
+                <div className={classnames('statement-card__cell statement-card__amount', {
+                    'statement-card__amount--buy'       : action === 'Buy',
+                    'statement-card__amount--sell'      : action === 'Sell',
+                    'statement-card__amount--deposit'   : action === 'Deposit',
+                    'statement-card__amount--withdrawal': action === 'Withdrawal',
+                })}>
                     <span className='statement-card__cell-text'>
                         {amount}
                     </span>
