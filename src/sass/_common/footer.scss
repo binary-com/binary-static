@@ -46,6 +46,10 @@
         align-items: center;
         flex-direction: column;
         justify-content: space-around;
+
+        div, a {
+            width: 100%;
+        }
     }
     #footer-last {
         .gambling {
