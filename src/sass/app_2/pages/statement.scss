@@ -114,5 +114,23 @@ $filter-height: 60px;
             grid-template-columns: repeat(3, 1fr);
             font-weight: bold;
         }
+        &__cell-text {
+            vertical-align: middle;
+        }
+        &__cell:before {
+            content: '';
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            background-size: 16px 16px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        &__payout:before {
+            background-image: url('../images/trading_app/statement/ic_payout.svg');
+        }
+        &__balance:before {
+            background-image: url('../images/trading_app/statement/ic_wallet.svg');
+        }
     }
 }
