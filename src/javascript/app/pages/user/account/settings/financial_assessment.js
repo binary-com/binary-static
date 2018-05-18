@@ -31,14 +31,7 @@ const FinancialAssessment = (() => {
     };
 
     const displayHighRiskClassification = () => {
-        const status       = State.getResponse('get_account_status.status');
-        const is_high_risk = /high/.test(State.getResponse('get_account_status.risk_classification'));
-
-        $('#high_risk_classification').setVisibility(
-            is_high_risk && Client.isAccountOfType('financial') ?
-                /(financial_assessment|trading_experience)_not_complete/.test(status) :
-                /financial_assessment_not_complete/.test(status)
-        );
+        $('#high_risk_classification').setVisibility(Client.getRiskAssessment());
     };
 
     const handleForm = (response = State.getResponse('get_financial_assessment')) => {
