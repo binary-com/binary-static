@@ -31,13 +31,14 @@ $filter-height: 60px;
             margin: 0 0.5rem;
         }
     }
+
+    /* TABLE STYLES START */
     .table-head {
         white-space: nowrap;
     }
     .table-body .table-row {
         cursor: pointer;
     }
-    // column widths
     .date, .refid {
         width: 6.5em;
     }
@@ -63,5 +64,11 @@ $filter-height: 60px;
         &.loss {
             color: #f44336; /* stylelint-disable-line color-no-hex */
         }
+    }
+    /* TABLE STYLES END */
+
+    &-card {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+        border-radius: 4px;
     }
 }
