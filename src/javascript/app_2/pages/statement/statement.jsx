@@ -247,7 +247,7 @@ class Statement extends React.PureComponent {
             <div className='statement' ref={(el) => this.el = el}>
                 <div className='statement__filter'>
                     <div className='container'>
-                        <span className='statement__filter-text'>{localize('Filter by date:')}</span>
+                        <span className='statement__filter-label'>{localize('Filter by date:')}</span>
                         <DatePicker
                             name='date_from'
                             initial_value=''
