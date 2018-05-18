@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import classnames from 'classnames';
 import BinarySocket from '../../../_common/base/socket_base';
 import Client from '../../../_common/base/client_base';
 import { formatMoney } from '../../../_common/base/currency_base';
@@ -37,10 +38,18 @@ const getStatementData = (statement, currency) => {
     };
 };
 
-const StatementCard = ({}) => (
-    // TODO: use BEM
-    // TODO: pass className prop or figure out a better way
-    <div className='statement-card'>
+const StatementCard = ({ date, ref, desc, action, amount, payout, balance, className }) => (
+    <div className={classnames('statement-card', className)}>
+        <div className='statement-card__header'>
+            <span className='statement-card__date'>{date}</span>
+            <span className='statement-card__ref'>{ref}</span>
+        </div>
+        <div className='statement-card__desc'>{desc}</div>
+        <div className='statement-card__row'>
+            <span className='statement-card__amount'>{amount}</span>
+            <span className='statement-card__payout'>{payout}</span>
+            <span className='statement-card__balance'>{balance}</span>
+        </div>
     </div>
 );
 
