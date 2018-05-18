@@ -70,5 +70,28 @@ $filter-height: 60px;
     &-card {
         border: 1px solid $COLOR_LIGHT_GRAY;
         border-radius: 4px;
+
+        &__header {
+            font-size: 10px;
+            padding: 0.5rem;
+            border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+            display: flex;
+            justify-content: space-between;
+        }
+        &__refid {
+            color: $COLOR_LIGHT_BLUE;
+        }
+        &__body {
+            padding: 0.5rem;
+            font-size: 12px;
+        }
+        &__desc {
+            margin-bottom: 0.5rem;
+        }
+        &__row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            font-weight: bold;
+        }
     }
 }

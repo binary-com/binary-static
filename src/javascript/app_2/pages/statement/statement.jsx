@@ -47,11 +47,13 @@ const StatementCard = ({ date, refid, desc, action, amount, payout, balance, cla
             <span className='statement-card__date'>{date}</span>
             <span className='statement-card__refid'>{refid}</span>
         </div>
-        <div className='statement-card__desc'>{desc}</div>
-        <div className='statement-card__row'>
-            <span className='statement-card__amount'>{amount}</span>
-            <span className='statement-card__payout'>{payout}</span>
-            <span className='statement-card__balance'>{balance}</span>
+        <div className='statement-card__body'>
+            <div className='statement-card__desc'>{desc}</div>
+            <div className='statement-card__row'>
+                <span className='statement-card__amount'>{amount}</span>
+                <span className='statement-card__payout'>{payout}</span>
+                <span className='statement-card__balance'>{balance}</span>
+            </div>
         </div>
     </div>
 );
@@ -247,7 +249,7 @@ class Statement extends React.PureComponent {
             <div className='statement' ref={(el) => this.el = el}>
                 <div className='statement__filter'>
                     <div className='container'>
-                        <span className='statement__filter-label'>{localize('Filter by date:')}</span>
+                        <span className='statement__filter-label desktop-only'>{localize('Filter by date:')}</span>
                         <DatePicker
                             name='date_from'
                             initial_value=''
