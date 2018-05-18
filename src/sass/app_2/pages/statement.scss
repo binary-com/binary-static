@@ -16,6 +16,7 @@ $filter-height: 60px;
         background-color: $COLOR_WHITE;
         width: 100%;
         font-size: 14px;
+        border-bottom: 1px solid $COLOR_GRAY;
 
         & .container {
             height: 100%;
@@ -68,13 +69,10 @@ $filter-height: 60px;
     /* TABLE STYLES END */
 
     &-card {
-        border: 1px solid $COLOR_LIGHT_GRAY;
-        border-radius: 4px;
-
         &__header {
             font-size: 10px;
             padding: 0.5rem;
-            border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+            border-bottom: 1px solid $COLOR_GRAY;
             display: flex;
             justify-content: space-between;
         }

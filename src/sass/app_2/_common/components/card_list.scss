@@ -1,5 +1,13 @@
 .card-list {
+    background-color: #fafafa; /* stylelint-disable-line color-no-hex */
+    padding: 0 0.5rem;
+    overflow: auto; // fixes margin collapse
+
     &__card {
-        margin: 1rem;
+        max-width: 450px;
+        margin: 1rem auto;
+        background-color: $COLOR_WHITE;
+        border: 1px solid $COLOR_GRAY;
+        border-radius: 4px;
     }
 }
