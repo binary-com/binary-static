@@ -1,7 +1,6 @@
 import {
     action,
-    reaction,
-    useStrict }        from 'mobx';
+    reaction }         from 'mobx'; // TODO: add useStrict once issues are fixed
 import { asyncAction } from 'mobx-utils';
 import { cloneObject } from '../../../../_common/utility';
 
@@ -13,7 +12,7 @@ import * as StartDate    from './start_date';
 import * as Symbol       from './symbol';
 import * as Test         from './test';
 
-useStrict(false); // TODO: fix issues to enable useStrict
+// useStrict(false); // TODO: fix issues to enable useStrict
 
 const reaction_disposers = [];
 
