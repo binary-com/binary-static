@@ -9,6 +9,7 @@ import { formatMoney } from '../../../_common/base/currency_base';
 import { localize } from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
 import { throttlebounce } from '../../../_common/utility';
+import CardList from '../../components/elements/card_list.jsx';
 import DataTable from '../../components/elements/data_table.jsx';
 import DatePicker from '../../components/form/date_picker.jsx';
 import Loading from '../../../../templates/_common/components/loading.jsx';
@@ -30,7 +31,7 @@ const getStatementData = (statement, currency) => {
     return {
         action : localize(toTitleCase(statement.action_type)),
         date   : `${date_str}\n${time_str}`,
-        ref    : statement.transaction_id,
+        refid  : statement.transaction_id,
         payout : isNaN(payout)  ? '-' : formatMoney(currency, payout,  should_exclude_currency),
         amount : isNaN(amount)  ? '-' : formatMoney(currency, amount,  should_exclude_currency),
         balance: isNaN(balance) ? '-' : formatMoney(currency, balance, should_exclude_currency),
@@ -40,11 +41,11 @@ const getStatementData = (statement, currency) => {
     };
 };
 
-const StatementCard = ({ date, ref, desc, action, amount, payout, balance, className }) => (
+const StatementCard = ({ date, refid, desc, action, amount, payout, balance, className }) => (
     <div className={classnames('statement-card', className)}>
         <div className='statement-card__header'>
             <span className='statement-card__date'>{date}</span>
-            <span className='statement-card__ref'>{ref}</span>
+            <span className='statement-card__refid'>{refid}</span>
         </div>
         <div className='statement-card__desc'>{desc}</div>
         <div className='statement-card__row'>
@@ -72,7 +73,7 @@ class Statement extends React.PureComponent {
             },
             {
                 title     : localize('Ref.'),
-                data_index: 'ref',
+                data_index: 'refid',
                 // TODO: add data balloon later
                 // renderCell: (data, data_index, transaction) => {
                 //     return (
@@ -278,6 +279,15 @@ class Statement extends React.PureComponent {
                             columns={this.state.columns}
                             has_fixed_header
                             is_full_width
+                        />
+                    </div>
+                    <div className='mobile-only'>
+                        <CardList
+                            data_source={this.state.data_source.slice(
+                                0,
+                                this.state.chunks * this.props.chunk_size
+                            )}
+                            Card={StatementCard}
                         />
                     </div>
                     {is_loading && <Loading />
