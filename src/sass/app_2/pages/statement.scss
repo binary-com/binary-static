@@ -127,11 +127,17 @@ $filter-height: 60px;
             margin-right: 5px;
         }
         &__amount {
-            &--buy, &--withdrawal {
+            &--sell, &--deposit {
                 color: $COLOR_LIGHT_GREEN;
             }
-            &--sell, &--deposit {
+            &--buy, &--withdrawal {
                 color: $COLOR_LIGHT_RED;
+            }
+            &--sell:before {
+                background-image: url('../images/trading_app/statement/ic_sell.svg');
+            }
+            &--buy:before {
+                background-image: url('../images/trading_app/statement/ic_buy.svg');
             }
         }
         &__payout:before {
