@@ -7,13 +7,14 @@ import {
     ToggleDrawer }         from '../elements/drawer.jsx';
 import LanguageSwitcher    from '../elements/language_switcher.jsx';
 import Button              from '../form/button.jsx';
+import { requestLogout }   from '../../base/common';
+import { BinaryLink }      from '../../routes';
+import { connect }         from '../../store/connect';
 import Client              from '../../../_common/base/client_base';
 import { formatMoney }     from '../../../_common/base/currency_base';
 import { redirectToLogin } from '../../../_common/base/login';
 import { localize }        from '../../../_common/localize';
 import Url                 from '../../../_common/url';
-import { BinaryLink }      from '../../routes';
-import { connect }         from '../../store/connect';
 
 const MenuDrawer = () => (
     <div className='drawer-items-container'>
@@ -57,6 +58,10 @@ const MenuDrawer = () => (
     </div>
 );
 
+const DrawerFooter = () => ( // TODO: update the UI
+    <a href='javascript:;' onClick={requestLogout}>{localize('Log out')}</a>
+);
+
 class Header extends React.Component {
     render() {
         return (
@@ -64,7 +69,7 @@ class Header extends React.Component {
                 <header id={this.props.id} className='shadow'>
                     <div className='menu-items'>
                         <div className='menu-left'>
-                            <ToggleDrawer alignment='left' has_footer>
+                            <ToggleDrawer alignment='left' footer={DrawerFooter}>
                                 <AccountSwitcher />
                                 <MenuDrawer />
                             </ToggleDrawer>

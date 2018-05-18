@@ -65,9 +65,6 @@ const BinarySocketGeneral = (() => {
                     }
                 }
                 break;
-            case 'logout':
-                Client.doLogout(response);
-                break;
             case 'landing_company':
                 // Header.upgradeMessageVisibility();
                 break;

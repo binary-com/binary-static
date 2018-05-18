@@ -29,6 +29,9 @@ const DAO = (() => {
     const getWebsiteStatus = () =>
         BinarySocket.send({ website_status: 1 });
 
+    const sendLogout = () =>
+        BinarySocket.send({ logout: 1 });
+
     // ----- Streaming calls -----
     const subscribeBalance = (cb) =>
         SubscriptionManager.subscribe('balance', { balance: 1, subscribe: 1 }, cb);
@@ -55,6 +58,7 @@ const DAO = (() => {
         getSelfExclusion,
         getSettings,
         getWebsiteStatus,
+        sendLogout,
 
         // streams
         subscribeBalance,
