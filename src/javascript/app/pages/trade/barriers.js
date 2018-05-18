@@ -21,7 +21,7 @@ const Barriers = (() => {
         const barriers  = Contract.barriers()[Defaults.get('underlying')];
         const form_name = Contract.form();
 
-        if (barriers && form_name && !/risefall|reset/.test(Defaults.get('formname'))) {
+        if (barriers && form_name && !/risefall|reset/i.test(Defaults.get('formname'))) {
             const barrier = barriers[form_name];
             if (barrier) {
                 const current_tick   = Tick.quote();

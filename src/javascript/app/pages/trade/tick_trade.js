@@ -91,7 +91,7 @@ const TickDisplay = (() => {
                 label: 'Exit Spot',
                 id   : 'exit_tick',
             };
-        } else if (contract_category.match('callput') || contract_category.match('reset')) {
+        } else if (contract_category.match(/callput|reset/i)) {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
                 _0: { label: 'Entry Spot', id: 'entry_tick' },
@@ -391,7 +391,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-reset-barrier',
                 value : reset_barrier,
-                label : { text: `Reset Barrier (${addComma(reset_barrier)})`, align: 'center' },
+                label : { text: localize('Reset Barrier ([_1])', [addComma(reset_barrier)]), align: 'center' },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
@@ -399,7 +399,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id       : 'tick-barrier',
                 value    : entry_barrier,
-                label    : { text: `Barrier (${addComma(entry_barrier)})`, align: 'center' },
+                label    : { text: localize('Barrier ([_1])', [addComma(entry_barrier)]), align: 'center' },
                 color    : 'green',
                 width    : 2,
                 zIndex   : 2,

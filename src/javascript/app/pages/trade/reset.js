@@ -1,5 +1,5 @@
-const CommonFunctions    = require('../../../_common/common_functions');
-const localize           = require('../../../_common/localize').localize;
+const CommonFunctions = require('../../../_common/common_functions');
+const localize        = require('../../../_common/localize').localize;
 
 /*
  * Handle Reset option
@@ -44,7 +44,7 @@ const Reset = (() => {
 
     const hideResetTime = () => { CommonFunctions.getElementById('reset_time').style.display = 'none'; };
 
-    const isReset = (contract_type) => /^(RESETCALL|RESETPUT|reset)$/.test(contract_type);
+    const isReset = (contract_type) => /reset/i.test(contract_type);
 
     return {
         displayResetTime,
