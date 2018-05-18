@@ -357,7 +357,7 @@ const PersonalDetails = (() => {
                         $field.append($('<option/>', { value: state.value, text: state.text }));
                     });
                 } else {
-                    $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+                    $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35', 'data-lpignore': true }));
                     $field = $(address_state);
                 }
                 $field.val(get_settings_data.address_state);
