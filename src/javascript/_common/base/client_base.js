@@ -24,7 +24,7 @@ const ClientBase = (() => {
 
     const isValidLoginid = () => {
         if (!isLoggedIn()) return true;
-        const valid_login_ids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG|VRTJ|JP)[0-9]+$', 'i');
+        const valid_login_ids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG)[0-9]+$', 'i');
         return getAllLoginids().every(loginid => valid_login_ids.test(loginid));
     };
 
@@ -182,12 +182,12 @@ const ClientBase = (() => {
 
     const shouldCompleteTax = () => isAccountOfType('financial') && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
-    const getMT5AccountType = group => (group ? group.replace('\\', '_') : '');
+    const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/_(\d+|master)/, '') : ''); // remove manager id or master distinction from group
 
     const getBasicUpgradeInfo = () => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
 
-        let can_open_multi  = false;
+        let can_open_multi = false;
         let type,
             can_upgrade_to;
 
@@ -223,7 +223,7 @@ const ClientBase = (() => {
         } else if (loginid.real || isAccountOfType('real', loginid)) {
             landing_company_object = getPropertyValue(landing_company, 'gaming_company');
 
-            // handle accounts such as japan that don't have gaming company
+            // handle accounts that don't have gaming company
             if (!landing_company_object) {
                 landing_company_object = getPropertyValue(landing_company, 'financial_company');
             }

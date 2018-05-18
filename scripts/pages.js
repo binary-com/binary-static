@@ -30,6 +30,8 @@ module.exports = [
     ['resources',                          'app/resources/index',                       'default',    'Resources'],
     ['resources/asset_indexws',            'app/resources/asset_index',                 'default',    'Asset Index', 'ja'],
     ['resources/market_timesws',           'app/resources/trading_times',               'default',    'Trading Times'],
+    ['resources/economic_calendar',        'app/resources/economic_calendar',           'default',    'Economic Calendar', 'ja'],
+
 
     ['user/accounts',                      'app/user/accounts',                         'default',    'Accounts',                          'ja'],
     ['user/authenticate',                  'app/user/authenticate',                     'default',    'Authenticate',                      'ja'],
