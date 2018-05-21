@@ -11,7 +11,7 @@ const FooterColumn = ({ header, items }) => (
 const SocialIcons = ({ networks, is_centered }) => (
     <div className={`gr-padding-10 gr-row ${is_centered && 'gr-row-align-center' || ''}`}>
         { networks.map((net, idx) => (
-            <a key={idx} href={net.href} target='_blank' className={`${is_centered ? 'gr-2 gr-1-m' : 'gr-3'} gr-no-gutter-right`} rel='noopener noreferrer'>
+            <a key={idx} href={net.href} target='_blank' className={`${is_centered ? 'gr-2' : 'gr-3'} gr-no-gutter-right`} rel='noopener noreferrer'>
                 <img className='responsive' src={it.url_for(`images/pages/footer/${net.media}.svg`)} />
             </a>
         ))}
