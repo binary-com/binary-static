@@ -128,9 +128,3 @@
         display: none !important;
     }
 }
-
-.mobile-only {
-    @media (min-width: 769px) {
-        display: none;
-    }
-}
