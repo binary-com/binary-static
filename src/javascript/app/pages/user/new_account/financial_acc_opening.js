@@ -43,7 +43,10 @@ const FinancialAccOpening = (() => {
                 if (key === 'date_of_birth') {
                     const moment_val = moment.utc(value * 1000);
                     value = moment_val.format('DD MMM, YYYY');
-                    $element.attr('data-value', toISOFormat(moment_val));
+                    $element.attr({
+                        'data-value': toISOFormat(moment_val),
+                        'type'      : 'text',
+                    });
                     $('.input-disabled').attr('disabled', 'disabled');
                 }
                 if (value) $element.val(value);
