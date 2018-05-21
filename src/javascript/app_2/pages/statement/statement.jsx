@@ -273,6 +273,7 @@ class Statement extends React.PureComponent {
                         startDate={this.state.date_to || today}
                         maxDate={this.state.date_to || today}
                         onChange={this.handleDateChange}
+                        is_nativepicker={is_mobile}
                     />
                     <span className='statement-filter__dash'>&mdash;</span>
                     <DatePicker
@@ -284,6 +285,7 @@ class Statement extends React.PureComponent {
                         maxDate={today}
                         showTodayBtn
                         onChange={this.handleDateChange}
+                        is_nativepicker={is_mobile}
                     />
                 </div>
             </div>

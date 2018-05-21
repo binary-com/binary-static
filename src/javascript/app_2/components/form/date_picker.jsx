@@ -577,6 +577,7 @@ class DatePicker extends React.PureComponent {
                     <input
                         id={this.props.id}
                         name={this.props.name}
+                        className='datepicker-display'
                         type='date'
                         value={value}
                         onChange={(e) => {
