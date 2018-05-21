@@ -1,9 +1,11 @@
-import moment from 'moment';
-import DAO from '../../../../data/dao';
-import { cloneObject, getPropertyValue } from '../../../../../_common/utility';
-import { localize } from '../../../../../_common/localize';
-import { get as getLanguage } from '../../../../../_common/language';
-import { buildDurationConfig } from './duration';
+import moment                   from 'moment';
+import { buildDurationConfig }  from './duration';
+import DAO                      from '../../../../data/dao';
+import { get as getLanguage }   from '../../../../../_common/language';
+import { localize }             from '../../../../../_common/localize';
+import {
+    cloneObject,
+    getPropertyValue }          from '../../../../../_common/utility';
 
 
 const ContractType = (() => {
@@ -46,6 +48,7 @@ const ContractType = (() => {
                 contract_types[key].trade_types.indexOf(contract.contract_type) !== -1 &&
                 (typeof contract_types[key].barrier_count === 'undefined' || +contract_types[key].barrier_count === contract.barriers) // To distinguish betweeen Rise/Fall & Higher/Lower
             ));
+            if (!type) return; // ignore unsupported contract types
 
             if (!Exceptions.isExcluded(type)) {
                 if (!available_contract_types[type]) {

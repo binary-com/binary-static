@@ -1,13 +1,11 @@
-import React from 'react';
-import moment from 'moment';
-import Client from '../../../app/base/client';
-import BinarySocket from '../../../app/base/socket';
-import { toJapanTimeIfNeeded } from '../../../app/base/clock';
-import { jpClient } from '../../../app/common/country_base';
-import { formatMoney } from '../../../app/common/currency';
-import { localize } from '../../../_common/localize';
+import moment          from 'moment';
+import React           from 'react';
+import DataTable       from '../../components/elements/data_table.jsx';
+import Client          from '../../../_common/base/client_base';
+import { formatMoney } from '../../../_common/base/currency_base';
+import BinarySocket    from '../../../_common/base/socket_base';
+import { localize }    from '../../../_common/localize';
 import { toTitleCase } from '../../../_common/string_util';
-import DataTable from '../../components/elements/data_table.jsx';
 
 /* TODO:
       1. to separate logic from UI
@@ -15,7 +13,7 @@ import DataTable from '../../components/elements/data_table.jsx';
       3. to handle errors
       4. display loading, render table only after data is available
 */
-const getStatementData = (statement, currency, is_jp_client) => {
+const getStatementData = (statement, currency) => {
     const date_obj   = new Date(statement.transaction_time * 1000);
     const moment_obj = moment.utc(date_obj);
     const date_str   = moment_obj.format('YYYY-MM-DD');
@@ -23,14 +21,15 @@ const getStatementData = (statement, currency, is_jp_client) => {
     const payout     = parseFloat(statement.payout);
     const amount     = parseFloat(statement.amount);
     const balance    = parseFloat(statement.balance_after);
+    const should_exclude_currency = true;
 
     return {
         action : localize(toTitleCase(statement.action_type)),
-        date   : is_jp_client ? toJapanTimeIfNeeded(+statement.transaction_time) : `${date_str}\n${time_str}`,
+        date   : `${date_str}\n${time_str}`,
         ref    : statement.transaction_id,
-        payout : isNaN(payout)  ? '-' : formatMoney(currency, payout,  !is_jp_client),
-        amount : isNaN(amount)  ? '-' : formatMoney(currency, amount,  !is_jp_client),
-        balance: isNaN(balance) ? '-' : formatMoney(currency, balance, !is_jp_client),
+        payout : isNaN(payout)  ? '-' : formatMoney(currency, payout,  should_exclude_currency),
+        amount : isNaN(amount)  ? '-' : formatMoney(currency, amount,  should_exclude_currency),
+        balance: isNaN(balance) ? '-' : formatMoney(currency, balance, should_exclude_currency),
         desc   : localize(statement.longcode.replace(/\n/g, '<br />')),
         id     : statement.contract_id,
         app_id : statement.app_id,
@@ -104,11 +103,10 @@ class Statement extends React.PureComponent {
         };
 
         const currency     = Client.get('currency');
-        const is_jp_client = jpClient();
 
         BinarySocket.send(req).then((response) => {
             const formatted_transactions = response.statement.transactions
-                .map(transaction => getStatementData(transaction, currency, is_jp_client));
+                .map(transaction => getStatementData(transaction, currency));
 
             this.setState({
                 data_source  : [...this.state.data_source, ...formatted_transactions],

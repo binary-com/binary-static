@@ -1,11 +1,11 @@
 const StatementUI          = require('./statement.ui');
 const ViewPopup            = require('../../view_popup/view_popup');
+const Client               = require('../../../../base/client');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
 const DateTo               = require('../../../../common/attach_dom/date_to');
 const addTooltip           = require('../../../../common/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common/get_app_details').buildOauthApps;
-const jpResidence          = require('../../../../common/country_base').jpResidence;
 const getLanguage          = require('../../../../../_common/language').get;
 const localize             = require('../../../../../_common/localize').localize;
 
@@ -81,7 +81,7 @@ const StatementInit = (() => {
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             } else {
                 $('#util_row').setVisibility(1);
-                if (getLanguage() === 'JA' && jpResidence()) {
+                if (getLanguage() === 'JA' && Client.get('residence') === 'jp') {
                     $('#download_csv')
                         .setVisibility(1)
                         .find('a')

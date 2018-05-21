@@ -25,10 +25,13 @@ module.exports = [
     ['new_account/maltainvestws',          'app/new_account/financial',                 'default',    'Financial Account Opening'],
     ['new_account/realws',                 'app/new_account/real',                      'default',    'Real Money Account Opening'],
     ['new_account/virtualws',              'app/new_account/virtual',                   'default',    'Create New Account'],
+    ['new_account/welcome',                'app/new_account/welcome_page',              'default',    'Welcome to Binary.com'],
 
     ['resources',                          'app/resources/index',                       'default',    'Resources'],
     ['resources/asset_indexws',            'app/resources/asset_index',                 'default',    'Asset Index', 'ja'],
     ['resources/market_timesws',           'app/resources/trading_times',               'default',    'Trading Times'],
+    ['resources/economic_calendar',        'app/resources/economic_calendar',           'default',    'Economic Calendar', 'ja'],
+
 
     ['user/accounts',                      'app/user/accounts',                         'default',    'Accounts',                          'ja'],
     ['user/authenticate',                  'app/user/authenticate',                     'default',    'Authenticate',                      'ja'],
@@ -89,10 +92,13 @@ module.exports = [
     ['open-positions',                     'static/about/job_descriptions',             'full_width', 'Open Positions'],
     ['open-positions/job-details',         'static/about/job_details',                  'full_width', 'Job Details'],
 
-    ['affiliate/signup',                   'static/affiliates/signup',                  'default',    'Affiliate',                         'ja'],
+    ['affiliate/signup',                   'static/affiliates/signup',                  'full_width', 'Affiliate',                         'ja'],
     ['affiliate/signup-jp',                'static/japan/affiliates/signup',            'default',    'Affiliate',                         'NOT-ja,en'],
+    ['affiliate/faq',                      'static/affiliates/faq',                     'default',    'Affiliate FAQ',                     'ja'],
     ['charity',                            'static/charity',                            'default',    'Charity'],
     ['company-profile',                    'static/japan/company_profile',              'default',    'Company Profile',                   'NOT-ja,en'],
+    ['ib-programme/ib-signup',             'static/ib_programme/ib_signup',             'full_width', 'IB programme',                         'ja'],
+    ['ib-programme/ib-faq',                'static/ib_programme/ib_faq',                'default',    'IB programme FAQ',                     'ja'],
     ['legal/us_patents',                   'static/legal/us_patents',                   'default',    'US Patents',                        'ja'],
     ['regulation',                         'static/legal/regulation',                   'default',    'Regulation',                        'id'],
     ['responsible-trading',                'static/responsible_trading',                'full_width', 'Responsible Trading',               'ja'],
@@ -106,7 +112,6 @@ module.exports = [
     ['open-source-projects',               'static/partners/open_source_projects',      'full_width', 'Open-Source Projects',              'ja'],
     ['partners',                           'static/partners/partners',                  'full_width', 'Partners',                          'ja'],
     ['payment-agent',                      'static/partners/payment_agent',             'full_width', 'Payment Agents',                    'ja'],
-    ['pull-requests',                      'static/partners/pull_requests',             'full_width', 'Get Paid for Pull Requests',        'ja'],
     ['security-testing',                   'static/partners/security_testing',          'full_width', 'Security Testing',                  'ja'],
 
     ['get-started',                        'static/get_started/index',                  'default',     'Get Started',                      'ja'],
@@ -132,6 +137,4 @@ module.exports = [
     ['graduates',                          'landing_pages/graduate_program',            null,        'Binary.com Graduate Program',        'NOT-en'],
     ['hackathon',                          'landing_pages/hackathon',                   null,        'Hackathon Competition',              'NOT-en'],
     ['landing/signup-frame',               'landing_pages/signup_frame',                null,        'Sign up'],
-    ['バイナリーオプション',                  'landing_pages/binary_japan',                null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
-    ['bo_1',                               'landing_pages/binary_japan_2',              null,        'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
 ];

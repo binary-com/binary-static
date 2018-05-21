@@ -109,6 +109,7 @@ const Header = () => (
                                                 { text: it.L('WebTrader'),    href: 'https://webtrader.binary.com', target: '_blank' },
                                                 { text: it.L('Binary Bot'),   href: 'https://bot.binary.com',       target: '_blank' },
                                                 { text: it.L('MetaTrader 5'), href: it.url_for('user/metatrader') },
+                                                { text: it.L('Ladders'),      href: it.url_for('multi_barriers_trading'), className: 'financial-only' },
                                             ],
                                         },
                                         { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),    className: 'ico-only-hide client_logged_in invisible' },
@@ -121,8 +122,11 @@ const Header = () => (
                                             href     : 'javascript:;',
                                             className: 'ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
-                                                { text: it.L('Asset Index'),   href: it.url_for('resources/asset_indexws'), className: 'ja-hide' },
-                                                { text: it.L('Trading Times'), href: it.url_for('resources/market_timesws') },
+                                                { text: it.L('Asset Index'),       href: it.url_for('resources/asset_indexws'), className: 'ja-hide' },
+                                                { text: it.L('Trading Times'),     href: it.url_for('resources/market_timesws') },
+                                                { text: it.L('Economic Calendar'), href: it.url_for('resources/economic_calendar'), className: 'ja-hide' },
+                                                { text: it.L('TradingView'),       href: 'https://tradingview.binary.com',      className: 'ja-hide', target: '_blank' },
+                                                { text: it.L('SmartCharts'),       href: 'https://charts.binary.com/',          className: 'ja-hide', target: '_blank' },
                                             ],
                                         },
                                         {

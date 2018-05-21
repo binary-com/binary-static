@@ -1,4 +1,4 @@
-import React from 'react';
+import React        from 'react';
 import { localize } from '../../../_common/localize';
 
 class LanguageSwitcher extends React.PureComponent {

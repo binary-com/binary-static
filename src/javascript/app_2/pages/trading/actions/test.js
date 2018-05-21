@@ -1,5 +1,5 @@
 import moment from 'moment';
-import DAO from '../../../data/dao';
+import DAO    from '../../../data/dao';
 
 export const getCountryAsync = function* () {
     const r = yield DAO.getWebsiteStatus();
@@ -11,11 +11,15 @@ export const getCountryAsync = function* () {
 /* This action does not modify state directlly.
  * The payload will be the callback that get's called for each tick
  */
-export const getTicks = function(store, callback) {
-    DAO.getTicks('frxEURUSD', (r) => {
-        const data = `${new Date(r.tick.epoch * 1000).toUTCString()}: ${r.tick.quote}`;
-        callback(data);
-    });
+let cb;
+const ticksCallback = (response) => {
+    const data = response.error ? response.error.message : `${new Date(response.tick.epoch * 1000).toUTCString()}: ${response.tick.quote}`;
+    cb(data);
+};
+
+export const getTicks = function({ symbol }, callback) {
+    cb = callback;
+    DAO.subscribeTicks(symbol, ticksCallback, true);
     return { };
 };
 

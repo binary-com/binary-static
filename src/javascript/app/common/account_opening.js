@@ -1,3 +1,4 @@
+const SelectMatcher      = require('@binary-com/binary-style').select2Matcher;
 const Cookies            = require('js-cookie');
 const generateBirthDate  = require('./attach_dom/birth_date_picker');
 const FormManager        = require('./form_manager');
@@ -10,7 +11,6 @@ const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
-require('select2');
 
 const AccountOpening = (() => {
     const redirectAccount = () => {
@@ -31,7 +31,7 @@ const AccountOpening = (() => {
     const populateForm = (form_id, getValidations, is_financial) => {
         getResidence(form_id, getValidations);
         generateBirthDate();
-        if (Client.canRequestProfessional()) {
+        if (State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest') {
             professionalClient.init(is_financial, false);
         }
         if (Client.get('residence') !== 'jp') {
@@ -55,7 +55,7 @@ const AccountOpening = (() => {
 
             const $options = $('<div/>');
             residence_list.forEach((res) => {
-                $options.append(makeOption({ text: res.text, value: res.value }));
+                $options.append(makeOption({ text: res.text, value: res.value, is_disabled: res.disabled }));
 
                 if (residence_value === res.value) {
                     residence_text = res.text;
@@ -77,6 +77,11 @@ const AccountOpening = (() => {
                     } else {
                         $place_of_birth.html($options.html()).val(residence_value);
                     }
+                    $place_of_birth.select2({
+                        matcher(params, data) {
+                            return SelectMatcher(params, data);
+                        },
+                    });
                 });
             }
 
@@ -116,6 +121,11 @@ const AccountOpening = (() => {
                 if (client_state) {
                     $address_state.val(client_state);
                 }
+                $address_state.select2({
+                    matcher(params, data) {
+                        return SelectMatcher(params, data);
+                    },
+                });
             } else {
                 $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35' }));
                 $address_state = $(address_state_id);

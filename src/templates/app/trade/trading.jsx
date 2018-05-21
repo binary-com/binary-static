@@ -22,21 +22,21 @@ const Trading = () => (
             <div className='client_virtual client_logged_out invisible' id='guideBtn' />
             <div className='row' id='contract_symbol_container'>
                 <div id='contract_markets_container'>
-                    <select id='contract_markets' />
+                    <div id='underlying_component' />
+                    <input type='hidden' id='underlying'/>
                 </div>
-                <div>
-                    <select id='underlying' />
-                    <a className='unicode-info-icon' id='symbol_tip' href='#'>&#9432;</a>
-                    <span id='spot' />
+                <div id='contract_type_container'>
+                    <div id='contract_component' />
+                    <input type='hidden' id='contract'/>
+                </div>
+                <div id='underlying_details'>
                     <span id='trading_worm_chart' />
+                    <span id='spot' />
                 </div>
-                <ul id='market_menu' />
+                <a className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</a>
             </div>
             <div className='row clear' id='contract_form_content_wrapper'>
                 <div className='col row-inner'>
-                    <div id='contract_market_form_container'>
-                        <ul className='nav tm-ul follow-default' id='contract_form_name_nav' />
-                    </div>
                     <div id='contract_container' className='col row'>
                         <div id='loading_container3' className='overlay_container' />
                         <div id='contract_form_container' className='col'>
@@ -47,7 +47,7 @@ const Trading = () => (
                                         <div className='big-col'>
                                             <select id='date_start' />
                                             <div id='time_start_row' className='invisible'>
-                                                <input type='text' id='time_start' autoComplete='off' readOnly='readonly' className='medium_width_input' />
+                                                <input type='text' data-lpignore='true' id='time_start' autoComplete='off' readOnly='readonly' className='medium_width_input' />
                                                 <span className='gr-gutter-left'>GMT</span>
                                             </div>
                                             <div>
@@ -69,9 +69,9 @@ const Trading = () => (
                                                 <span id='duration_maximum' className='invisible' />
                                             </div>
                                             <div id='expiry_type_endtime'>
-                                                <input id='expiry_date' type='text' readOnly='readonly' autoComplete='off' />
+                                                <input id='expiry_date' type='text' data-lpignore='true' readOnly='readonly' autoComplete='off' />
                                                 <div id='expiry_time_row'>
-                                                    <input id='expiry_time' type='text' autoComplete='off' readOnly='readonly' className='medium_width_input' />
+                                                    <input id='expiry_time' type='text' data-lpignore='true' autoComplete='off' readOnly='readonly' className='medium_width_input' />
                                                     <span className='gr-gutter-left'>GMT</span>
                                                 </div>
                                             </div>
@@ -85,7 +85,7 @@ const Trading = () => (
                                             </label>
                                         </div>
                                         <div className='big-col'>
-                                            <input id='barrier' type='text' name='H' autoComplete='off' />
+                                            <input id='barrier' type='text' data-lpignore='true' name='H' autoComplete='off' />
                                             <span id='indicative_barrier_tooltip' data-balloon={it.L('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')} data-balloon-length='xlarge' />
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@ const Trading = () => (
                                             </label>
                                         </div>
                                         <div className='big-col'>
-                                            <input id='barrier_high' type='text' name='H' autoComplete='off' />
+                                            <input id='barrier_high' type='text' data-lpignore='true' name='H' autoComplete='off' />
                                             <span id='indicative_high_barrier_tooltip' data-balloon={it.L('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')} data-balloon-length='xlarge' />
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@ const Trading = () => (
                                             </label>
                                         </div>
                                         <div className='big-col'>
-                                            <input id='barrier_low' type='text' name='L' autoComplete='off' />
+                                            <input id='barrier_low' type='text' data-lpignore='true' name='L' autoComplete='off' />
                                             <span id='indicative_low_barrier_tooltip' data-balloon={it.L('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')} data-balloon-length='xlarge' />
                                         </div>
                                     </div>
@@ -131,8 +131,8 @@ const Trading = () => (
                                         </div>
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
-                                                <select className='currency small_width_input' />
-                                                <input type='text' defaultValue='1' step='any' maxLength='10' name='multiplier' id='multiplier' className='small_width_input' />
+                                                <select id='multiplier_currency' className='currency small_width_input' />
+                                                <input type='text' data-lpignore='true' defaultValue='1' step='any' maxLength='10' name='multiplier' id='multiplier' className='small_width_input' />
                                             </div>
                                         </div>
                                     </div>
@@ -145,8 +145,8 @@ const Trading = () => (
                                         </div>
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
-                                                <select className='currency small_width_input' />
-                                                <input id='amount' type='text' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
+                                                <select id='currency' className='currency small_width_input' />
+                                                <input id='amount' type='text' data-lpignore='true' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
                                             </div>
                                         </div>
                                     </div>
@@ -176,7 +176,7 @@ const Trading = () => (
                                     <span id='contract_purchase_button' className='button open_contract_details' />
                                 </div>
                                 <div id='contract_purchase_spots' />
-                                <div id='tick_chart' />
+                                <div id='trade_tick_chart' />
                                 <div id='contract_purchase_balance' />
                             </div>
                             <div id='confirmation_error' />
@@ -201,7 +201,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                         <div className='contract_purchase button'>
-                                            <span className='purchase_button contract_description no-underline' id='purchase_button_top' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
+                                            <span className='purchase_button contract_description no-underline open_contract_details' id='purchase_button_top' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
                                         </div>
                                     </span>
                                 </div>
@@ -225,7 +225,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                         <div className='contract_purchase button'>
-                                            <span className='purchase_button contract_description no-underline' id='purchase_button_bottom' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
+                                            <span className='purchase_button contract_description no-underline open_contract_details' id='purchase_button_bottom' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
                                         </div>
                                     </span>
                                 </div>
@@ -249,7 +249,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                         <div className='contract_purchase button'>
-                                            <span className='purchase_button no-underline' id='purchase_button_middle' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
+                                            <span className='purchase_button no-underline open_contract_details' id='purchase_button_middle' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
                                         </div>
                                     </span>
                                 </div>
@@ -261,9 +261,9 @@ const Trading = () => (
                     </div>
                 </div>
             </div>
+            <div id='all_prices' />
+            <Analysis />
         </div>
-        <div id='all_prices' />
-        <Analysis />
         <div id='trading_init_progress'>
             <Loading />
         </div>

@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from '../../../store/connect';
+import React          from 'react';
 import ContractsPopUp from './elements/contracts_popup.jsx';
+import { connect }    from '../../../store/connect';
 
 const Contract = ({
     contract_type,

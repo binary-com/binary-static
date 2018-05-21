@@ -2,7 +2,7 @@ import React from 'react';
 
 const AccountAntisocial = () => (
     <div className='gr-12 gr-padding-30 gr-no-gutter'>
-        <h2>{it.L('No Connections With Antisocial Forces')}</h2>
+        <h2>{it.L('{JAPAN ONLY}No Connections With Antisocial Forces')}</h2>
         <p>{it.L('Japan website No Connections With Antisocial Forces Paragraph 1')}</p>
         <ol>
             <li>

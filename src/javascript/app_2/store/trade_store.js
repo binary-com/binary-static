@@ -1,8 +1,10 @@
-import moment from 'moment';
-import { observable, action } from 'mobx';
-import Client from '../../app/base/client';
-import ContractType from '../pages/trading/actions/helpers/contract_type';
-import actions from '../pages/trading/actions/index';
+import {
+    action,
+    observable }     from 'mobx';
+import moment        from 'moment';
+import ContractType  from '../pages/trading/actions/helpers/contract_type';
+import actions       from '../pages/trading/actions/index';
+import Client        from '../../_common/base/client_base';
 
 export default class TradeStore {
     time_interval = undefined;

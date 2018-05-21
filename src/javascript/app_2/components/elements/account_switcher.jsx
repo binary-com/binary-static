@@ -1,14 +1,38 @@
-import React from 'react';
+import classNames       from 'classnames';
+import React            from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import classNames from 'classnames';
-import { localize } from '../../../_common/localize';
+import Client           from '../../../_common/base/client_base';
+import GTM              from '../../../_common/base/gtm';
+import SocketCache      from '../../../_common/base/socket_cache';
+import { localize }     from '../../../_common/localize';
+
+const getAccountInfo = (loginid) => {
+    const currency     = Client.get('currency', loginid);
+    const is_virtual   = Client.get('is_virtual', loginid);
+    const account_type = !is_virtual && currency ? currency : Client.getAccountTitle(loginid);
+    return {
+        loginid,
+        is_virtual,
+        icon : account_type.toLowerCase(), // TODO: display the icon
+        title: localize('[_1] Account', [account_type]),
+    };
+};
+
+const makeAccountsList = () => Client.getAllLoginids().map(loginid => (
+    loginid !== Client.get('loginid') &&
+    !Client.get('is_disabled', loginid) &&
+    Client.get('token', loginid) ?
+        getAccountInfo(loginid) :
+        undefined
+)).filter(account => account);
 
 class AccountSwitcher extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
             is_collapsed  : false,
-            active_account: this.props.active_account[0],
+            active_account: getAccountInfo(Client.get('loginid')),
+            accounts_list : makeAccountsList(),
         };
     }
 
@@ -18,15 +42,19 @@ class AccountSwitcher extends React.PureComponent {
         });
     };
 
-    switchAccount = (account) => {
-        this.setState({
-            active_account: account,
-        });
-        if (account.id !== this.state.active_account.id) {
-            if (this.props.onChange) {
-                this.props.onChange({ target: { name: 'currency', value: account.account_type } });
-            }
+    switchAccount = (loginid) => {
+        if (!loginid || !Client.get('token', loginid)) {
+            return;
         }
+
+        sessionStorage.setItem('active_tab', '1');
+        // set local storage
+        GTM.setLoginFlag();
+        Client.set('cashier_confirmed', 0);
+        Client.set('accepted_bch', 0);
+        Client.set('loginid', loginid);
+        SocketCache.clear();
+        window.location.reload();
     };
 
     render() {
@@ -34,14 +62,10 @@ class AccountSwitcher extends React.PureComponent {
             visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
         };
 
-        const isAccountHidden = (account) => (account.id === this.state.active_account.id);
-        const getSwitcherAccountClass = (account) => classNames('acc-switcher-account', {
-            'hide': isAccountHidden(account),
-        });
-
-        const switcher_active_login_class = classNames('acc-switcher-active-login', {
+        const switcher_active_login_class = classNames('acc-switcher-active-login', this.state.active_account.icon, {
             'collapsed': this.state.is_collapsed,
         });
+
         const switcher_list_class = classNames('acc-switcher-list', {
             'collapsed': this.state.is_collapsed,
         });
@@ -50,8 +74,8 @@ class AccountSwitcher extends React.PureComponent {
             <div className='acc-switcher-container'>
                 <div className='acc-switcher-header' onClick={this.toggleAccountsList}>
                     <div className={switcher_active_login_class}>
-                        <p className='acc-switcher-accountid'>{this.state.active_account.id}</p>
-                        <p className='acc-switcher-currency'>{`${this.state.active_account.account_type} ${localize('Account')}`}</p>
+                        <p className='acc-switcher-accountid'>{this.state.active_account.loginid}</p>
+                        <p className='acc-switcher-currency'>{this.state.active_account.title}</p>
                     </div>
                 </div>
                 <div
@@ -60,14 +84,14 @@ class AccountSwitcher extends React.PureComponent {
                 >
                     <PerfectScrollbar>
                         <div className='acc-switcher-items'>
-                            {this.props.accounts.map((account, idx) => (
-                                <React.Fragment key={idx}>
+                            {this.state.accounts_list.map((account) => (
+                                <React.Fragment key={account.loginid}>
                                     <div
-                                        className={getSwitcherAccountClass(account)}
-                                        onClick={this.switchAccount.bind(null, account)}
+                                        className={classNames('acc-switcher-account', account.icon)}
+                                        onClick={this.switchAccount.bind(null, account.loginid)}
                                     >
-                                        <p className='acc-switcher-accountid'>{account.id}</p>
-                                        <p className='acc-switcher-currency'>{`${account.account_type} ${localize('Account')}`}</p>
+                                        <p className='acc-switcher-accountid'>{account.loginid}</p>
+                                        <p className='acc-switcher-currency'>{account.title}</p>
                                     </div>
                                 </React.Fragment>
                             ))}
@@ -78,18 +102,5 @@ class AccountSwitcher extends React.PureComponent {
         );
     }
 }
-
-
-// TODO: Remove defaultProps and parse accounts from websockets/localstorage
-AccountSwitcher.defaultProps = {
-    accounts: [
-      { id: 'VRTC1234567', account_type: 'Virtual' },
-      { id: 'CR198765',    account_type: 'USD' },
-      { id: 'CR986754',    account_type: 'BTC' },
-      { id: 'CR985761',    account_type: 'ETH' },
-      { id: 'CR247698',    account_type: 'LTC' },
-      { id: 'CR579857',    account_type: 'BCH' },
-    ],
-};
 
 export default AccountSwitcher;

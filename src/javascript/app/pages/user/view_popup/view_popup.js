@@ -1,28 +1,23 @@
-const moment               = require('moment');
-const ViewPopupUI          = require('./view_popup.ui');
-const Highchart            = require('../../trade/charts/highchart');
-const getLookbackFormula   = require('../../trade/lookback').getFormula;
-const getLBBarrierLabel    = require('../../trade/lookback').getBarrierLabel;
-const isLookback           = require('../../trade/lookback').isLookback;
-const TickDisplay          = require('../../trade/tick_trade');
-const setViewPopupTimer    = require('../../../base/clock').setViewPopupTimer;
-const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
-const toJapanTimeIfNeeded  = require('../../../base/clock').toJapanTimeIfNeeded;
-const BinarySocket         = require('../../../base/socket');
-const jpClient             = require('../../../common/country_base').jpClient;
-const getElementById       = require('../../../../_common/common_functions').getElementById;
-const localize             = require('../../../../_common/localize').localize;
-const State                = require('../../../../_common/storage').State;
-const urlFor               = require('../../../../_common/url').urlFor;
-const createElement        = require('../../../../_common/utility').createElement;
-const getPropertyValue     = require('../../../../_common/utility').getPropertyValue;
-const isEmptyObject        = require('../../../../_common/utility').isEmptyObject;
+const moment         = require('moment');
+const ViewPopupUI    = require('./view_popup.ui');
+const Highchart      = require('../../trade/charts/highchart');
+const Lookback       = require('../../trade/lookback');
+const TickDisplay    = require('../../trade/tick_trade');
+const isJPClient     = require('../../../base/client').isJPClient;
+const Clock          = require('../../../base/clock');
+const BinarySocket   = require('../../../base/socket');
+const getElementById = require('../../../../_common/common_functions').getElementById;
+const localize       = require('../../../../_common/localize').localize;
+const State          = require('../../../../_common/storage').State;
+const urlFor         = require('../../../../_common/url').urlFor;
+const Utility        = require('../../../../_common/utility');
 
 const ViewPopup = (() => {
     let contract_id,
         contract,
         is_sold,
         is_sell_clicked,
+        is_user_sold,
         chart_started,
         chart_init,
         chart_updated,
@@ -36,17 +31,22 @@ const ViewPopup = (() => {
     const wrapper_id   = 'sell_content_wrapper';
     const hidden_class = 'invisible';
 
-    const init = (button) => {
+    const init = (button, onClose) => {
         btn_view          = button;
         contract_id       = $(btn_view).attr('contract_id');
         contract          = {};
         is_sold           = false;
         is_sell_clicked   = false;
+        is_user_sold      = false;
         chart_started     = false;
         chart_init        = false;
         chart_updated     = false;
         sell_text_updated = false;
         $container        = '';
+
+        if (typeof onClose === 'function') {
+            ViewPopupUI.setOnCloseFunction(onClose);
+        }
 
         if (btn_view) {
             ViewPopupUI.disableButton($(btn_view));
@@ -59,13 +59,13 @@ const ViewPopup = (() => {
     };
 
     const responseContract = (response) => {
-        if (!response.proposal_open_contract || isEmptyObject(response.proposal_open_contract)) {
+        if (!response.proposal_open_contract || Utility.isEmptyObject(response.proposal_open_contract)) {
             showErrorPopup(response);
             return;
         }
         // In case of error such as legacy shortcode, this call is returning the error message
         // but no error field. To specify those cases, we check for other fields existence
-        if (!getPropertyValue(response, ['proposal_open_contract', 'shortcode'])) {
+        if (!Utility.getPropertyValue(response, ['proposal_open_contract', 'shortcode'])) {
             showErrorPopup(response, response.proposal_open_contract.validation_error);
             return;
         }
@@ -120,12 +120,12 @@ const ViewPopup = (() => {
         containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
         containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier, false, 3, 2));
-        if (isLookback(contract.contract_type)) {
-            containerSetText('trade_details_payout', getLookbackFormula(contract.contract_type, formatMoney(contract.currency, multiplier, false, 3, 2)));
+        if (Lookback.isLookback(contract.contract_type)) {
+            containerSetText('trade_details_payout', Lookback.getFormula(contract.contract_type, formatMoney(contract.currency, multiplier, false, 3, 2)));
         } else {
             containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         }
-        setViewPopupTimer(updateTimers);
+        Clock.setViewPopupTimer(updateTimers);
         update();
         ViewPopupUI.repositionConfirmation();
 
@@ -137,10 +137,13 @@ const ViewPopup = (() => {
     const update = () => {
         const final_price       = contract.sell_price || contract.bid_price;
         const is_started        = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const user_sold         = contract.sell_time && contract.sell_time < contract.date_expiry;
-        const is_ended          = contract.is_settleable || contract.is_sold || user_sold;
+        const is_ended          = contract.is_settleable || contract.is_sold || is_user_sold;
         const indicative_price  = final_price && is_ended ? final_price : (contract.bid_price || null);
         const sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
+        const is_touch_tick     = /touch/i.test(contract.contract_type) && contract.tick_count;
+        is_user_sold            = is_touch_tick
+            ? contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry
+            : contract.sell_time && contract.sell_time < contract.date_expiry;
 
         if (contract.barrier_count > 1) {
             containerSetText('trade_details_barrier', sold_before_start ? '-' : addComma(contract.high_barrier), '', true);
@@ -164,8 +167,8 @@ const ViewPopup = (() => {
         let current_spot      = contract.current_spot;
         let current_spot_time = contract.current_spot_time;
         if (is_ended) {
-            current_spot      = user_sold ? '' : contract.exit_tick;
-            current_spot_time = user_sold ? '' : contract.exit_tick_time;
+            current_spot      = is_user_sold ? '' : contract.exit_tick;
+            current_spot_time = is_user_sold ? '' : contract.exit_tick_time;
         }
 
         if (current_spot) {
@@ -219,14 +222,15 @@ const ViewPopup = (() => {
             if (contract.entry_tick_time) {
                 chart_started = true;
             }
-        } else if (contract.tick_count && !chart_updated) {
+        } else if (contract.tick_count && !chart_updated && 'barrier' in contract) {
             TickDisplay.updateChart('', contract);
             chart_updated = true;
         }
 
-        if (!is_sold && user_sold) {
+        if (!is_sold && is_user_sold) {
             is_sold = true;
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
+            else TickDisplay.updateChart({ is_sold: true }, contract);
         }
         if (is_ended) {
             contractEnded(parseFloat(profit_loss) >= 0);
@@ -237,6 +241,9 @@ const ViewPopup = (() => {
                 });
             }
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
+            else TickDisplay.updateChart({ is_sold: true }, contract);
+        } else {
+            $container.find('#notice_ongoing').setVisibility(1);
         }
 
         if (!contract.is_valid_to_sell) {
@@ -252,7 +259,7 @@ const ViewPopup = (() => {
     const updateTimers = () => {
         const now = Math.max(Math.floor((window.time || 0) / 1000), contract.current_spot_time || 0);
         containerSetText('trade_details_live_date', epochToDateTime(now));
-        showLocalTimeOnHover('#trade_details_live_date');
+        Clock.showLocalTimeOnHover('#trade_details_live_date');
 
         const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended   = contract.is_settleable || contract.is_sold;
@@ -275,30 +282,32 @@ const ViewPopup = (() => {
         containerSetText('trade_details_current_title', localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
 
         containerSetText('trade_details_indicative_label', localize('Price'));
-        if (isLookback(contract.contract_type)) {
+        if (Lookback.isLookback(contract.contract_type)) {
             containerSetText('trade_details_spot_label', localize('Close'));
             containerSetText('trade_details_spottime_label', localize('Close Time'));
         } else {
             containerSetText('trade_details_spot_label', localize('Exit Spot'));
             containerSetText('trade_details_spottime_label', localize('Exit Spot Time'));
         }
+
         // show validation error if contract is not settled yet
         if (!(contract.is_settleable && !contract.is_sold)) {
             containerSetText('trade_details_message', '&nbsp;');
         }
         $container.find('#errMsg').setVisibility(0);
+        $container.find('#notice_ongoing').setVisibility(0);
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
         // don't show for japanese clients or contracts that are manually sold before starting
-        if (contract.audit_details && !jpClient() &&
+        if (contract.audit_details && !isJPClient() &&
             (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
             initAuditTable(0);
         }
     };
 
     const appendAuditLink = (element_id) => {
-        const link = createElement('a', { href: `${'javascript:;'}`, class: 'link-audit button-secondary' });
-        const span = createElement('span', { text: localize('Audit') });
+        const link = Utility.createElement('a', { href: `${'javascript:;'}`, class: 'link-audit button-secondary' });
+        const span = Utility.createElement('span', { text: localize('Audit') });
         link.appendChild(span);
         link.addEventListener('click', () => { initAuditTable(1); });
         getElementById(element_id).appendChild(link);
@@ -329,20 +338,20 @@ const ViewPopup = (() => {
             return;
         }
 
-        const div         = createElement('div', { id: 'sell_details_audit', class: 'gr-8 gr-12-m gr-no-gutter invisible' });
-        const table       = createElement('table', { id: 'audit_header', class: 'gr-12' });
-        const tr          = createElement('tr', { class: 'gr-row' });
-        const th_previous = createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' });
-        const link        = createElement('a', { class: 'previous-wrapper' });
+        const div         = Utility.createElement('div', { id: 'sell_details_audit', class: 'gr-8 gr-12-m gr-no-gutter invisible' });
+        const table       = Utility.createElement('table', { id: 'audit_header', class: 'gr-12' });
+        const tr          = Utility.createElement('tr', { class: 'gr-row' });
+        const th_previous = Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' });
+        const link        = Utility.createElement('a', { class: 'previous-wrapper' });
 
-        link.appendChild(createElement('span', { class: 'previous align-self-center' }));
-        link.appendChild(createElement('span', { class: 'nowrap', text: localize('View Chart') }));
+        link.appendChild(Utility.createElement('span', { class: 'previous align-self-center' }));
+        link.appendChild(Utility.createElement('span', { class: 'nowrap', text: localize('View Chart') }));
         link.addEventListener('click', () => { setAuditVisibility(0); });
         th_previous.appendChild(link);
 
         tr.appendChild(th_previous);
-        tr.appendChild(createElement('th', { class: 'gr-8 gr-6-t gr-6-p gr-6-m', text: localize('Audit Page') }));
-        tr.appendChild(createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' }));
+        tr.appendChild(Utility.createElement('th', { class: 'gr-8 gr-6-t gr-6-p gr-6-m', text: localize('Audit Page') }));
+        tr.appendChild(Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' }));
         table.appendChild(tr);
         div.appendChild(table);
         div.insertAfter(getElementById('sell_details_chart_wrapper'));
@@ -375,7 +384,7 @@ const ViewPopup = (() => {
             if (this.readyState !== 4 || this.status !== 200) {
                 return;
             }
-            const div_response = createElement('div', { html: this.responseText });
+            const div_response = Utility.createElement('div', { html: this.responseText });
             const div_to_show = div_response.querySelector(`#${explanation_section}`);
             if (div_to_show) {
                 div_to_show.classList.add('align-start', 'gr-padding-20', 'explanation-section', 'gr-parent');
@@ -405,10 +414,10 @@ const ViewPopup = (() => {
     );
 
     const createAuditTable = (title) => {
-        const div      = createElement('div', { class: 'audit-table' });
-        const fieldset = createElement('fieldset', { class: 'align-start' });
-        const table    = createElement('table', { class: 'gr-10 gr-centered gr-12-p gr-12-m' });
-        fieldset.appendChild(createElement('legend', { text: localize(`Contract ${title}`) }));
+        const div      = Utility.createElement('div', { class: 'audit-table' });
+        const fieldset = Utility.createElement('fieldset', { class: 'align-start' });
+        const table    = Utility.createElement('table', { class: 'gr-10 gr-centered gr-12-p gr-12-m' });
+        fieldset.appendChild(Utility.createElement('legend', { text: localize(`Contract ${title}`) }));
         fieldset.appendChild(table);
         div.appendChild(fieldset);
         let insert_after = getElementById('audit_header');
@@ -424,11 +433,11 @@ const ViewPopup = (() => {
     };
 
     const createAuditHeader = (table) => {
-        const tr = createElement('tr', { class: 'gr-row' });
+        const tr = Utility.createElement('tr', { class: 'gr-row' });
 
-        tr.appendChild(createElement('td', { class: 'gr-3' }));
-        tr.appendChild(createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot') }));
-        tr.appendChild(createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time (GMT)') }));
+        tr.appendChild(Utility.createElement('td', { class: 'gr-3' }));
+        tr.appendChild(Utility.createElement('td', { class: 'gr-4 no-margin secondary-color', text: localize('Spot') }));
+        tr.appendChild(Utility.createElement('td', { class: 'gr-5 no-margin secondary-color', text: localize('Spot Time (GMT)') }));
 
         table.insertBefore(tr, table.childNodes[0]);
     };
@@ -440,10 +449,10 @@ const ViewPopup = (() => {
             return;
         }
 
-        const tr        = createElement('tr', { class: 'gr-row' });
-        const td_remark = createElement('td', { class: 'gr-3 remark', text: remark || '' });
-        const td_tick   = createElement('td', { class: 'gr-4', text: (tick && !isNaN(tick) ? addComma(tick) : (tick || '')) });
-        const td_date   = createElement('td', { class: 'gr-5 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
+        const tr        = Utility.createElement('tr', { class: 'gr-row' });
+        const td_remark = Utility.createElement('td', { class: 'gr-3 remark', text: remark || '' });
+        const td_tick   = Utility.createElement('td', { class: 'gr-4', text: (tick && !isNaN(tick) ? addComma(tick) : (tick || '')) });
+        const td_date   = Utility.createElement('td', { class: 'gr-5 audit-dates', 'data-value': date, 'data-balloon-pos': 'down', text: (date && !isNaN(date) ? moment.unix(date).utc().format('YYYY-MM-DD HH:mm:ss') : (date || '')) });
 
         tr.appendChild(td_remark);
         tr.appendChild(td_tick);
@@ -471,7 +480,7 @@ const ViewPopup = (() => {
                 contract_starts.div.remove();
             }
             // don't show exit tick information if missing or manual sold
-            if (contract.exit_tick_time && !(contract.sell_time && contract.sell_time < contract.date_expiry)
+            if (contract.exit_tick_time && !is_user_sold
                 // Hide audit table for Lookback.
                 && !/^(LBHIGHLOW|LBFLOATPUT|LBFLOATCALL)/.test(contract.shortcode)) {
                 const contract_ends = createAuditTable('Ends');
@@ -491,7 +500,7 @@ const ViewPopup = (() => {
     };
 
     const onAuditTableComplete = (show_audit_table) => {
-        showLocalTimeOnHover('.audit-dates');
+        Clock.showLocalTimeOnHover('.audit-dates');
         setAuditVisibility(show_audit_table);
     };
 
@@ -503,8 +512,9 @@ const ViewPopup = (() => {
         $container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode }));
         const $sections  = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
         let [barrier_text, low_barrier_text] = ['Barrier', 'Low Barrier'];
-        if (isLookback(contract.contract_type)) {
-            [barrier_text, low_barrier_text] = getLBBarrierLabel(contract.contract_type, contract.barrier_count);
+        if (Lookback.isLookback(contract.contract_type)) {
+            [barrier_text, low_barrier_text] =
+                Lookback.getBarrierLabel(contract.contract_type, contract.barrier_count);
         } else if (contract.barrier_count > 1) {
             barrier_text = 'High Barrier';
         } else if (/^DIGIT(MATCH|DIFF)$/.test(contract.contract_type)) {
@@ -520,7 +530,7 @@ const ViewPopup = (() => {
             ${createRow('Start Time', '', 'trade_details_start_date')}
             ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
                 createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
-            ${!isLookback(contract.contract_type) ? createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
+            ${!Lookback.isLookback(contract.contract_type) ? createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
             ${(contract.barrier_count > 1 ? createRow(low_barrier_text, '', 'trade_details_barrier_low', true) : '')}
             ${createRow('Potential Payout', '', 'trade_details_payout')}
@@ -544,7 +554,8 @@ const ViewPopup = (() => {
 
         $container.find(`#${wrapper_id}`)
             .append($sections.html())
-            .append($('<div/>', { id: 'errMsg', class: `notice-msg ${hidden_class}` }));
+            .append($('<div/>', { id: 'errMsg', class: `notice-msg ${hidden_class}` }))
+            .append($('<div/>', { id: 'notice_ongoing', class: `fill-bg-color gr-padding-10 ${hidden_class}`, text: localize('You can close this window without interrupting your trade.') }));
 
         ViewPopupUI.showInpagePopup(`<div class="${popupbox_id}">${$container.html()}</div>`, '', '#sell_bet_desc');
         return $(`#${wrapper_id}`);
@@ -556,7 +567,7 @@ const ViewPopup = (() => {
 
     const epochToDateTime = epoch => {
         const date_time = moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
-        return jpClient() ? toJapanTimeIfNeeded(date_time) : `${date_time} GMT`;
+        return isJPClient() ? Clock.toJapanTimeIfNeeded(date_time) : `${date_time} GMT`;
     };
 
     // ===== Tools =====
@@ -666,7 +677,7 @@ const ViewPopup = (() => {
     };
 
     const responseSell = (response) => {
-        if (getPropertyValue(response, 'error')) {
+        if (Utility.getPropertyValue(response, 'error')) {
             if (response.error.code === 'NoOpenPosition') {
                 getContract();
             } else {
@@ -703,7 +714,7 @@ const ViewPopup = (() => {
         }
         const dates = ['#trade_details_start_date', '#trade_details_end_date', '#trade_details_current_date', '#trade_details_live_date'];
         for (let i = 0; i < dates.length; i++) {
-            showLocalTimeOnHover(dates[i]);
+            Clock.showLocalTimeOnHover(dates[i]);
             $(dates[i]).attr('data-balloon-pos', 'left');
         }
     };

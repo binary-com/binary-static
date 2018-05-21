@@ -1,12 +1,20 @@
-import React from 'react';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import { ToggleDrawer, DrawerItems, DrawerItem } from '../elements/drawer.jsx';
-import LanguageSwitcher from '../elements/language_switcher.jsx';
-import AccountSwitcher from '../elements/account_switcher.jsx';
-import Button from '../form/button.jsx';
-import { localize } from '../../../_common/localize';
-import Url from '../../../_common/url';
-import { BinaryLink } from '../../routes';
+import React               from 'react';
+import PerfectScrollbar    from 'react-perfect-scrollbar';
+import AccountSwitcher     from '../elements/account_switcher.jsx';
+import {
+    DrawerItem,
+    DrawerItems,
+    ToggleDrawer }         from '../elements/drawer.jsx';
+import LanguageSwitcher    from '../elements/language_switcher.jsx';
+import Button              from '../form/button.jsx';
+import { requestLogout }   from '../../base/common';
+import { BinaryLink }      from '../../routes';
+import { connect }         from '../../store/connect';
+import Client              from '../../../_common/base/client_base';
+import { formatMoney }     from '../../../_common/base/currency_base';
+import { redirectToLogin } from '../../../_common/base/login';
+import { localize }        from '../../../_common/localize';
+import Url                 from '../../../_common/url';
 
 const MenuDrawer = () => (
     <div className='drawer-items-container'>
@@ -50,19 +58,19 @@ const MenuDrawer = () => (
     </div>
 );
 
-class TradingHeader extends React.Component {
+const DrawerFooter = () => ( // TODO: update the UI
+    <a href='javascript:;' onClick={requestLogout}>{localize('Log out')}</a>
+);
+
+class Header extends React.Component {
     render() {
         return (
             <React.Fragment>
                 <header id={this.props.id} className='shadow'>
                     <div className='menu-items'>
                         <div className='menu-left'>
-                            <ToggleDrawer alignment='left' has_footer>
-                                <AccountSwitcher
-                                    active_account={[ // TODO: remove dummy values
-                                        { id: 'VRTC1234567', account_type: 'Virtual' },
-                                    ]}
-                                />
+                            <ToggleDrawer alignment='left' footer={DrawerFooter}>
+                                <AccountSwitcher />
                                 <MenuDrawer />
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>
@@ -79,10 +87,7 @@ class TradingHeader extends React.Component {
                             }
                         </div>
                         <div className='menu-right'>
-                            <AccountBalance
-                                active_loginid={this.props.active_loginid}
-                                client_accounts={this.props.client_accounts}
-                            />
+                            <AccountBalance />
                         </div>
                         <ToggleDrawer
                             icon_class='notify-toggle'
@@ -100,42 +105,50 @@ class TradingHeader extends React.Component {
     }
 }
 
-const AccountBalance = ({
-    active_loginid,
-    client_accounts,
-    onClick,
+const AccountBalance = connect(
+    ({ client }) => ({
+        balance: client.balance,
+    })
+)(({
+    balance,
 }) => {
-    // TODO: Use Client.get()
-    const account     = client_accounts[Object.keys(client_accounts)[0]];
-    const button_text = account.is_virtual ? 'Upgrade' : 'Deposit';
-    const balance     = account.balance;
-    let currency      = account.currency;
-    currency = currency ? currency.toLowerCase() : null;
+    const loginid      = Client.get('loginid');
+    const currency     = Client.get('currency');
+    const upgrade_info = Client.getBasicUpgradeInfo();
+    const can_upgrade  = upgrade_info.can_upgrade || upgrade_info.can_open_multi;
 
     return (
         <div className='acc-balance-container'>
-            <div className='acc-balance'>
-                <p className='acc-balance-accountid'>{active_loginid || null}</p>
-                <p className='acc-balance-amount'>
-                    <i><span className={`symbols ${currency}`} /></i>
-                    {balance || null}
-                </p>
-            </div>
-            <Button
-                id='acc-balance-btn'
-                className='primary orange'
-                has_effect
-                text={`${localize(button_text)}`}
-                onClick={onClick}
-            />
+            {Client.isLoggedIn() ?
+                <React.Fragment>
+                    <div className='acc-balance'>
+                        <p className='acc-balance-accountid'>{loginid}</p>
+                        {typeof balance !== 'undefined' &&
+                            <p className='acc-balance-amount'>
+                                <i><span className={`symbols ${(currency || '').toLowerCase()}`}/></i>
+                                {formatMoney(currency, balance, true)}
+                            </p>
+                        }
+                    </div>
+                    {can_upgrade &&
+                        <Button
+                            id='acc-balance-btn'
+                            className='primary orange'
+                            has_effect
+                            text={localize('Upgrade')}
+                            // onClick={onClickUpgrade} TODO
+                        />
+                    }
+                </React.Fragment> :
+                <Button
+                    className='primary green'
+                    has_effect
+                    text={localize('Login')}
+                    handleClick={redirectToLogin}
+                />
+            }
         </div>
     );
-};
+});
 
-// TODO: Remove defaultProps dummy values and use Client.get()
-TradingHeader.defaultProps = {
-    active_loginid : 'VRTC1234567',
-    client_accounts: {'VRTC1234567': {'currency': 'AUD','is_disabled': 0,'is_virtual': 1,'balance': '10000.00'}},
-};
-
-export default TradingHeader;
+export default Header;

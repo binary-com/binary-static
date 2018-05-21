@@ -12,7 +12,9 @@ const texts = [
     'Please [_1]log in[_2] or [_3]sign up[_2] to view this page.',
 
     // top bar
+    'Click here to open a Real Account',
     'Open a Real Account',
+    'Click here to open a Financial Account',
     'Open a Financial Account',
     'Network status',
     'Online',
@@ -141,8 +143,8 @@ const texts = [
     'Try our [_1]Volatility Indices[_2].',
     'Try our other markets.',
     'Session',
-    'Cryptocurrency',
-    'Fiat Currency',
+    'Crypto',
+    'Fiat',
     'High',
     'Low',
     'Close',
@@ -150,6 +152,8 @@ const texts = [
     'High-Close',
     'Close-Low',
     'High-Low',
+    'Search...',
+    'Select Asset',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -197,6 +201,10 @@ const texts = [
     'Invalid email address.',
     'Thank you for signing up! Please check your email to complete the registration process.',
 
+    // welcome page after account opening
+    'Financial Account',
+    'Upgrade now',
+
     // real account opening
     'Please select',
     'Minimum of [_1] characters required.',
@@ -220,7 +228,7 @@ const texts = [
 
     // paymentagent_withdraw
     'Please select a payment agent',
-    'The Payment Agent facility is currently not available in your country.',
+    'Payment Agent services are not available in your country or in your preferred currency.',
     'Invalid amount, minimum is',
     'Invalid amount, maximum is',
     'Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.',
@@ -271,6 +279,8 @@ const texts = [
     'Exclude time cannot be less than 6 months.',
     'Exclude time cannot be for more than 5 years.',
     'When you click "OK" you will be excluded from trading on the site until the selected date.',
+    'Timed out until',
+    'Excluded from the website until',
 
     // portfolio
     'Ref.',
@@ -312,9 +322,9 @@ const texts = [
     '{JAPAN ONLY}Dear customer, you\'ve already completed the knowledge test, please proceed to next step.',
     '{JAPAN ONLY}Please complete the following questions.',
     '{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.',
-    'You need to finish all 20 questions.',
+    '{JAPAN ONLY}You need to finish all 20 questions.',
     'Weekday',
-    'Your Application is Being Processed.',
+    '{JAPAN ONLY}Your Application is Being Processed.',
     '{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.',
     'Processing your request...',
     'Please check the above form for pending errors.',
@@ -357,6 +367,7 @@ const texts = [
     'Lots',
     'Payout per lot = 1,000',
     'This page is not available in the selected language.',
+    'Trading Window',
 
     // digit_info
     'Percentage',
@@ -444,6 +455,7 @@ const texts = [
     'Contract Ends',
     'Start Time and Entry Spot',
     'Exit Time and Exit Spot',
+    'You can close this window without interrupting your trade.',
 
     // financial assessment
     'Please select a value',
@@ -506,7 +518,7 @@ const texts = [
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',
-    'The main password of account number [_1] has been changed.',
+    'The [_1] password of account number [_2] has been changed.',
     '[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]',
     '[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]',
     'Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.',
@@ -526,12 +538,22 @@ const texts = [
     'Real Standard',
     'Real Advanced',
     'Real Volatility Indices',
+    'MAM Advanced',
+    'MAM Volatility Indices',
     'Change Password',
     'Demo Accounts',
     'Real-Money Accounts',
+    'MAM Accounts',
     'Our MT5 service is currently unavailable to EU residents due to pending regulatory approval.',
-    'for MT5 Account',
     '[_1] Account [_2]',
+    'Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.',
+    'Do you wish to continue?',
+    'for account [_1]',
+    'Verify Reset Password',
+    'Reset Password',
+    'Please check your email for further instructions.',
+    'Revoke MAM',
+    'Manager successfully revoked',
 
     // account_transfer
     'Min',
@@ -552,6 +574,9 @@ const texts = [
     'You have reached the rate limit of requests per second. Please try later.',
     '[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.',
     'We are reviewing your documents. For more details [_1]contact us[_2].',
+    'Deposits and withdrawals have been disabled on your account. Please check your email for more details.',
+    'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
+    'Withdrawals have been disabled on your account. Please check your email for more details.',
 
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
@@ -586,6 +611,7 @@ const texts = [
     'Ether',
     'Ether Classic',
     'Litecoin',
+    'Dai',
 
     // Authentication errors
     'Invalid document format: "[_1]"',
@@ -601,6 +627,10 @@ const texts = [
     'Front and reverse side photos of [_1] are required.',
     '[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.',
     'Following file(s) were already uploaded: [_1]',
+
+    // third party link confirmation dialog/popup
+    'You will be redirected to a third-party website which is not owned by Binary.com.',
+    'Click OK to proceed.',
 ];
 
 /* eslint-disable no-console */

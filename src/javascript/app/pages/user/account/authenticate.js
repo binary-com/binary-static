@@ -12,6 +12,7 @@ const Authenticate = (() => {
 
     const onLoad = () => {
         BinarySocket.send({ get_account_status: 1 }).then((response) => {
+            $('#loading_authenticate').remove();
             if (response.error) {
                 $('#error_message').setVisibility(1).text(response.error.message);
             } else {
@@ -85,8 +86,10 @@ const Authenticate = (() => {
         const resetLabel = (event) => {
             const $e = $(event.target);
             let default_text = toTitleCase($e.attr('id').split('_')[0]);
-            default_text = default_text === 'Back' ? localize('Reverse Side')
-                : localize('Front Side');
+            if (default_text !== 'Add') {
+                default_text = default_text === 'Back' ? localize('Reverse Side')
+                    : localize('Front Side');
+            }
             fileTracker($e, false);
             // Remove previously selected file and set the label
             $e.val('').parent().find('label').text(default_text)
@@ -229,7 +232,7 @@ const Authenticate = (() => {
             if (selected) {
                 file_checks[doc_type] = file_checks[doc_type] || {};
                 file_checks[doc_type][file_type] = true;
-            } else {
+            } else if (file_checks[doc_type]) {
                 file_checks[doc_type][file_type] = false;
             }
         };
