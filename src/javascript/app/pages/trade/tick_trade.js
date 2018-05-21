@@ -56,6 +56,7 @@ const TickDisplay = (() => {
         abs_barrier          = data.abs_barrier;
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
+        status               = '';
 
         if (data.id_render) {
             id_render = data.id_render;
@@ -240,7 +241,7 @@ const TickDisplay = (() => {
         });
     };
 
-    const evaluateContractOutcome = (contract) => {
+    const evaluateContractOutcome = () => {
         if (status !== 'open') {
             if (status === 'won') {
                 if (show_contract_result) {
@@ -254,9 +255,7 @@ const TickDisplay = (() => {
                 updatePurchaseStatus(0, -price, localize('This contract lost'));
             }
 
-            if (contract) {
-                addSellSpot(contract);
-            }
+            addSellSpot();
         }
     };
 
@@ -354,9 +353,9 @@ const TickDisplay = (() => {
                     if (!x_indicators[indicator_key] && tick.epoch === sell_spot_time) {
                         x_indicators[indicator_key] = {
                             index: counter,
-                            label: sell_spot_time === exit_tick_time
-                                ? 'Exit Spot'
-                                : 'Sell Spot',
+                            label: sell_spot_time < exit_tick_time
+                                ? 'Sell Spot'
+                                : 'Exit Spot',
                             dashStyle: 'Dash',
                         };
                     }
@@ -374,13 +373,15 @@ const TickDisplay = (() => {
         evaluateContractOutcome();
     };
 
-    const addSellSpot = (contract) => {
+    const addSellSpot = () => {
         if (!applicable_ticks) return;
 
-        sell_spot_time = +contract.sell_spot_time;
-        exit_tick_time = +contract.exit_tick_time;
+        let index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
 
-        const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
+        // if sell spot time is later than exit tick time, use that instead
+        if (index === -1) {
+            index = applicable_ticks.findIndex(({ epoch }) => epoch === exit_tick_time);
+        }
 
         if (index === -1) return;
 
@@ -390,9 +391,9 @@ const TickDisplay = (() => {
 
         x_indicators[indicator_key] = {
             index,
-            label: sell_spot_time === exit_tick_time
-                ? 'Exit Spot'
-                : 'Sell Spot',
+            label: sell_spot_time < exit_tick_time
+                ? 'Sell Spot'
+                : 'Exit Spot',
             dashStyle: 'Dash',
         };
         
@@ -401,8 +402,13 @@ const TickDisplay = (() => {
 
     const updateChart = (data, contract) => {
         subscribe = 'false';
+        if (contract) {
+            sell_spot_time = +contract.sell_spot_time;
+            exit_tick_time = +contract.exit_tick_time;
+        }
+
         if (data.is_sold) {
-            addSellSpot(contract);
+            addSellSpot();
         } else if (contract) {
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
@@ -413,8 +419,6 @@ const TickDisplay = (() => {
             tick_shortcode    = contract.shortcode;
             tick_init         = '';
             status            = contract.status;
-            sell_spot_time    = +contract.sell_spot_time;
-            exit_tick_time    = +contract.exit_tick_time;
 
             if (data.id_render) {
                 id_render = data.id_render;
@@ -443,7 +447,12 @@ const TickDisplay = (() => {
         updateChart,
         init      : initialize,
         resetSpots: () => { spots_list = {}; $(`#${id_render}`).css('background-color', '#F2F2F2'); },
-        setStatus : (contract) => { status = contract.status; evaluateContractOutcome(contract); },
+        setStatus : (contract) => {
+            status = contract.status;
+            sell_spot_time = +contract.sell_spot_time;
+            exit_tick_time = +contract.exit_tick_time;
+            evaluateContractOutcome();
+        },
     };
 })();
 
