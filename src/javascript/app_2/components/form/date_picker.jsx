@@ -575,7 +575,7 @@ class DatePicker extends React.PureComponent {
             return (
                 <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
                     <input
-                        id={this.props.id}
+                        id={this.props.name}
                         name={this.props.name}
                         className='datepicker-display'
                         type='date'
@@ -586,6 +586,7 @@ class DatePicker extends React.PureComponent {
                             this.handleDateChange(e.target.value);
                         }}
                     />
+                    {!value && <label className='datepicker-native-placeholder' htmlFor={this.props.name}>{this.props.placeholder}</label>}
                 </div>
             );
         }

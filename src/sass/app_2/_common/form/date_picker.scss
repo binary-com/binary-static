@@ -185,7 +185,7 @@ div.datepicker-container {
             }
         }
     }
-    .datepicker-display {
+    .datepicker-display, .datepicker-native-placeholder {
         background: $COLOR_WHITE;
         height: 32px;
         cursor: pointer;
@@ -198,6 +198,18 @@ div.datepicker-container {
         box-sizing: border-box;
         font-weight: 300;
         transition: border 0.25s;
+    }
+    .datepicker-native-placeholder {
+        text-align: left;
+        position: absolute;
+        width: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+        left: 0;
+        top: 0;
+    }
+    .datepicker-display:focus + .datepicker-native-placeholder {
+        visibility: hidden;
     }
     .picker-calendar-icon, .close-circle-icon {
         position: absolute;
