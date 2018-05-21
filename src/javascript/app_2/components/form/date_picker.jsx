@@ -580,6 +580,8 @@ class DatePicker extends React.PureComponent {
                         className='datepicker-display'
                         type='date'
                         value={value}
+                        min={this.props.minDate}
+                        max={this.props.maxDate}
                         onChange={(e) => {
                             this.handleDateChange(e.target.value);
                         }}
