@@ -3,7 +3,6 @@ import moment             from 'moment';
 import classnames         from 'classnames';
 import DAO                from '../../data/dao';
 import { connect }        from '../../store/connect';
-import BinarySocket       from '../../../_common/base/socket_base';
 import Client             from '../../../_common/base/client_base';
 import { formatMoney }    from '../../../_common/base/currency_base';
 import BinarySocket       from '../../../_common/base/socket_base';
