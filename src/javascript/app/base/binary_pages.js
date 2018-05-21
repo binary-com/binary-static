@@ -13,6 +13,7 @@ const PaymentAgentList     = require('../pages/cashier/payment_agent_list');
 const PaymentAgentWithdraw = require('../pages/cashier/payment_agent_withdraw');
 const Endpoint             = require('../pages/endpoint');
 const MBTradePage          = require('../pages/mb_trade/mb_tradepage');
+const EconomicCalendar     = require('../pages/resources/economic_calendar/economic_calendar');
 const AssetIndexUI         = require('../pages/resources/asset_index/asset_index.ui');
 const TradingTimesUI       = require('../pages/resources/trading_times/trading_times.ui');
 const TradePage            = require('../pages/trade/tradepage');
@@ -40,6 +41,7 @@ const FinancialAccOpening  = require('../pages/user/new_account/financial_acc_op
 const JapanAccOpening      = require('../pages/user/new_account/japan_acc_opening');
 const RealAccOpening       = require('../pages/user/new_account/real_acc_opening');
 const VirtualAccOpening    = require('../pages/user/new_account/virtual_acc_opening');
+const WelcomePage          = require('../pages/user/new_account/welcome_page');
 const ResetPassword        = require('../pages/user/reset_password');
 const SetCurrency          = require('../pages/user/set_currency');
 const TelegramBot          = require('../pages/user/telegram_bot');
@@ -74,6 +76,7 @@ const pages_config = {
     charity                  : { module: Charity },
     contact                  : { module: Contact },
     detailsws                : { module: PersonalDetails,            is_authenticated: true, needs_currency: true },
+    economic_calendar        : { module: EconomicCalendar },
     endpoint                 : { module: Endpoint },
     epg_forwardws            : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
     forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
@@ -102,13 +105,14 @@ const pages_config = {
     securityws               : { module: Settings,                   is_authenticated: true },
     self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },
-    signup                   : { module: StaticPages.handleTab },
+    signup                   : { module: TabSelector },
     statementws              : { module: Statement,                  is_authenticated: true, needs_currency: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage,                  needs_currency: true },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
+    welcome                  : { module: WelcomePage,                is_authenticated: true, only_virtual: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStarted.BinaryOptions },
     'careers'                : { module: StaticPages.Careers },
@@ -116,11 +120,14 @@ const pages_config = {
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
+    'faq'                    : { module: StaticPages.AffiliatesFAQ },
     'forex'                  : { module: GetStarted.Forex },
     'get-started'            : { module: TabSelector },
     'get-started-jp'         : { module: GetStartedJP },
     'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'how-to-trade-mt5'       : { module: TabSelector },
+    'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
+    'ib-signup'              : { module: TabSelector },
     'job-details'            : { module: JobDetails },
     'metals'                 : { module: GetStarted.Metals },
     'open-positions'         : { module: StaticPages.OpenPositions },

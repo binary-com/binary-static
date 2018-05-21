@@ -10,8 +10,8 @@ const TradingTimes = () => (
         <p>{it.L('All times are in GMT (Greenwich Mean Time).')}</p>
 
         <div className='gr-padding-10'>
-            <p className='error-msg invisible' id='errorMsg'></p>
-            <div id='trading-times' className='has-tabs gr-parent'></div>
+            <p className='error-msg invisible' id='errorMsg' />
+            <div id='trading-times' className='has-tabs gr-parent' />
         </div>
     </React.Fragment>
 );

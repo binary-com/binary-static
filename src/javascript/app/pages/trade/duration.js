@@ -1,3 +1,4 @@
+const Dropdown           = require('@binary-com/binary-style').selectDropdown;
 const moment             = require('moment');
 const Barriers           = require('./barriers');
 const commonTrading      = require('./common');
@@ -86,17 +87,24 @@ const Durations = (() => {
             const text_mapping_min = durationTextValueMappings(duration_container[duration].min_contract_duration);
             const text_mapping_max = durationTextValueMappings(duration_container[duration].max_contract_duration);
             const min_unit         = text_mapping_min.unit;
+            const max_to_min_base  = convertDurationUnit(+text_mapping_max.value, text_mapping_max.unit, min_unit);
 
             if (duration === 'intraday') {
                 switch (min_unit) {
                     case 's':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
-                        duration_list.m         = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max, true);
-                        duration_list.h         = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
+                        if (max_to_min_base >= 60) {
+                            duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max, true);
+                            if (max_to_min_base >= 3600) {
+                                duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
+                            }
+                        }
                         break;
                     case 'm':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max, true);
-                        duration_list.h         = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
+                        if (max_to_min_base >= 60) {
+                            duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
+                        }
                         break;
                     case 'h':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
@@ -130,7 +138,6 @@ const Durations = (() => {
                 selected_duration = {};
             }
         }
-
         return durationPopulate();
     };
 
@@ -230,6 +237,7 @@ const Durations = (() => {
         unit.value           = Defaults.get('duration_units') &&
             document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
             Defaults.get('duration_units') : unit.value;
+        Dropdown('#duration_units');
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_minimum'), unit_min_value);
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_unit'), localize(duration_map[unit.value] + (+unit_min_value > 1 ? 's' : '')));
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_maximum'), unit_max_value);
@@ -239,6 +247,7 @@ const Durations = (() => {
         CommonFunctions.getElementById('duration_amount').value = unit_value;
         Defaults.set('duration_amount', unit_value);
         displayExpiryType();
+        Dropdown('#expiry_type');
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
@@ -302,6 +311,16 @@ const Durations = (() => {
         });
     };
 
+    const removeCustomDropDown = (element) => {
+        // restore back from custom dropdown to input
+        if (element.is('input') && element.parent('div.select').length) {
+            element.parent().replaceWith(() => {
+                const curr_element = element;
+                return curr_element;
+            });
+        }
+    };
+
     const changeExpiryTimeType = () => {
         let requested = -1;
         if (CommonFunctions.getElementById('expiry_type').value === 'endtime') {
@@ -316,6 +335,7 @@ const Durations = (() => {
                         .val(toReadableFormat($expiry_date.attr('data-value')));
                     $expiry_date = $('#expiry_date');
                     expiryDateOnChange($expiry_date);
+                    removeCustomDropDown($expiry_date);
                 }
                 DatePicker.init({
                     selector: '#expiry_date',
@@ -372,6 +392,7 @@ const Durations = (() => {
         if ($('#expiry_type').find(`option[value=${Defaults.get('expiry_type')}]`).length === 0 && target.value) {
             Defaults.set('expiry_type', target.value);
         }
+
         const current_selected = Defaults.get('expiry_type') || target.value || 'duration';
 
         CommonFunctions.getElementById(`expiry_type_${current_selected}`).style.display = 'flex';
@@ -400,7 +421,7 @@ const Durations = (() => {
     };
 
     const isNow = date_start => (date_start ? date_start === 'now' : (!State.get('is_start_dates_displayed') || CommonFunctions.getElementById('date_start').value === 'now'));
-    
+
     const isSameDay = () => {
         const expiry_date  = CommonFunctions.getElementById('expiry_date');
         let date_start_val = CommonFunctions.getElementById('date_start').value;
@@ -420,9 +441,12 @@ const Durations = (() => {
         const end_date_readable = toReadableFormat(end_date);
         const end_date_iso      = toISOFormat(end_date);
         const $expiry_date      = $('#expiry_date');
+        Dropdown('#expiry_date');
         if ($expiry_date.is('input')) {
             $expiry_date.val(end_date_readable)
                 .attr('data-value', end_date_iso);
+
+            removeCustomDropDown($expiry_date);
         }
         Defaults.set('expiry_date', end_date_iso);
         if (isNow() && !isSameDay()) {

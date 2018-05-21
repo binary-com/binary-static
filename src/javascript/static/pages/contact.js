@@ -1,6 +1,10 @@
+const Dropdown = require('@binary-com/binary-style').selectDropdown;
+
 const Contact = (() => {
+
     const onLoad = () => {
-        $('.contact-content').on('change', '#cs_telephone_number', function () {
+        Dropdown('#cs_telephone_number');
+        $('#cs_telephone_number').on('change.cs', function () {
             const val = $(this).val().split(',');
             $('#display_cs_telephone').html(val[0] + (val.length > 1 ? `<br />${val[1]}` : ''));
         });

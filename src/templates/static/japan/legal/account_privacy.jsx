@@ -29,26 +29,32 @@ const AccountPrivacy = () => {
         { header: it.L('Japan website Privacy Policy Bold list item 9'),  texts: [ { text: it.L('Japan website Privacy Policy Explanation of item 9') }] },
         { header: it.L('Japan website Privacy Policy Bold list item 10'), texts: [ { text: it.L('Japan website Privacy Policy Explanation of item 10') }] },
         { header: it.L('Japan website Privacy Policy Bold list item 11'), texts: [ { text: it.L('Japan website Privacy Policy Explanation of item 11') }] },
-        { header: it.L('Japan website Privacy Policy Bold list item 12'), texts : [
+        {
+            header: it.L('Japan website Privacy Policy Bold list item 12'),
+            texts : [
                 { text: it.L('Japan website Privacy Policy list item 12 Paragraph 1.1') },
                 { text: it.L('Japan website Privacy Policy list item 12 Paragraph 1.2') },
                 { text: it.L('Japan website Privacy Policy list item 12 Paragraph 1.3') },
                 { text: it.L('Japan website Privacy Policy list item 12 Paragraph 1.4') },
                 { text: it.L('Japan website Privacy Policy list item 12 Paragraph 1.5') },
-        ]},
-        { header: it.L('Japan website Privacy Policy Bold list item 13'), texts : [
+            ],
+        },
+        {
+            header: it.L('Japan website Privacy Policy Bold list item 13'),
+            texts : [
                 { text: it.L('Japan website Privacy Policy Paragraph list item 13 1.1') },
                 { text: it.L('Japan website Privacy Policy Paragraph list item 13 1.2') },
                 { text: it.L('Japan website Privacy Policy Paragraph list item 13 1.3') },
                 { text: it.L('Japan website Privacy Policy Paragraph list item 13 1.4') },
-        ]},
+            ],
+        },
     ];
 
     return (
         <div className='gr-12 gr-padding-30 gr-no-gutter'>
             <h2>{it.L('Privacy Policy')}</h2>
             <p>{it.L('Japan website Privacy Policy Paragraph 1')}</p>
-        	<ListMultiline items={items} />
+            <ListMultiline items={items} />
         </div>
     );
 };

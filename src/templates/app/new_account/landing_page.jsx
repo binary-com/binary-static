@@ -12,7 +12,7 @@ const LandingPage = () => (
         <div className='box bordered gr-10 gr-centered'>
             <p>{it.L('{JAPAN ONLY}You can apply to open a real money account at any time by clicking the:')}</p>
             <div className='upgrademessage'>
-                <a className='pulser invisible'></a>
+                <a className='pulser invisible' />
             </div>
             <p>{it.L('{JAPAN ONLY}At the top of the page as shown above.')}</p>
             <p>{it.L('{JAPAN ONLY}Or, if you want to apply straight away, please click the button below:')}</p>

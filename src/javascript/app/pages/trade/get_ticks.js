@@ -55,9 +55,7 @@ const GetTicks = (() => {
             };
 
             if (!req || req.subscribe) {
-                const forget_tick   = BinarySocket.send({ forget_all: 'ticks' });
-                const forget_candle = BinarySocket.send({ forget_all: 'candles' });
-                Promise.all([forget_tick, forget_candle]).then(() => {
+                BinarySocket.send({ forget_all: ['ticks', 'candles'] }).then(() => {
                     sendRequest();
                 });
             } else {

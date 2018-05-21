@@ -95,10 +95,10 @@ const Metals = () => (
                 </p>
                 <p className='border-box'>
                     <Equation
-                        operand_1={<React.Fragment>US<span className='symbols usd'></span>1,255.80</React.Fragment>}
-                        operand_2={<React.Fragment>US<span className='symbols usd'></span>1,255.06</React.Fragment>}
+                        operand_1={<React.Fragment>US<span className='symbols usd' />1,255.80</React.Fragment>}
+                        operand_2={<React.Fragment>US<span className='symbols usd' />1,255.06</React.Fragment>}
                         operand_3={100}
-                        operand_4={<React.Fragment>US<span className='symbols usd'></span>74</React.Fragment>}
+                        operand_4={<React.Fragment>US<span className='symbols usd' />74</React.Fragment>}
                     />
                 </p>
             </div>

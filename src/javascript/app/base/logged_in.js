@@ -1,13 +1,14 @@
 const Cookies            = require('js-cookie');
 const moment             = require('moment');
 const Client             = require('./client');
-const GTM                = require('./gtm');
 const BinarySocket       = require('./socket');
-const SocketCache        = require('./socket_cache');
+const GTM                = require('../../_common/base/gtm');
+const SocketCache        = require('../../_common/base/socket_cache');
 const getElementById     = require('../../_common/common_functions').getElementById;
 const getLanguage        = require('../../_common/language').get;
 const urlLang            = require('../../_common/language').urlLang;
 const isStorageSupported = require('../../_common/storage').isStorageSupported;
+const removeCookies      = require('../../_common/storage').removeCookies;
 const paramsHash         = require('../../_common/url').paramsHash;
 const urlFor             = require('../../_common/url').urlFor;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
@@ -65,14 +66,11 @@ const LoggedInHandler = (() => {
         // Clear all accounts before entering the loop
         Client.clearAllAccounts();
 
-        let is_loginid_set = false;
         account_list.forEach((account) => {
             Object.keys(account).forEach((param) => {
                 if (param === 'loginid') {
-                    if (!is_loginid_set && !account.is_virtual &&
-                        !account.is_disabled && !account.excluded_until) {
+                    if (!Client.get('loginid') && !account.is_virtual && !account.is_disabled) {
                         Client.set(param, account[param]);
-                        is_loginid_set = true;
                     }
                 } else {
                     const param_to_set = map_names[param] || param;
@@ -81,12 +79,6 @@ const LoggedInHandler = (() => {
                 }
             });
         });
-
-        // if didn't find any login ID that matched the above condition, set the first one at the end of the loop
-        if (!is_loginid_set) {
-            Client.set('loginid', params.acct1 || account_list[0].loginid);
-            is_loginid_set = true;
-        }
 
         let i = 1;
         while (params[`acct${i}`]) {
@@ -98,11 +90,17 @@ const LoggedInHandler = (() => {
             i++;
         }
 
+        // if didn't find any login ID that matched the above condition
+        // or the selected one doesn't have a token, set the first one
+        if (!Client.get('loginid') || !Client.get('token')) {
+            Client.set('loginid', params.acct1 || account_list[0].loginid);
+        }
+
         if (Client.isLoggedIn()) {
             GTM.setLoginFlag();
             Client.set('session_start', parseInt(moment().valueOf() / 1000));
             // Remove cookies that were set by the old code
-            Client.cleanupCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
+            removeCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
         }
     };
 

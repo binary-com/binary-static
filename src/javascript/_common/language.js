@@ -2,6 +2,7 @@ const Cookies            = require('js-cookie');
 const elementTextContent = require('./common_functions').elementTextContent;
 const getElementById     = require('./common_functions').getElementById;
 const CookieStorage      = require('./storage').CookieStorage;
+const LocalStore         = require('./storage').LocalStore;
 const applyToAllElements = require('./utility').applyToAllElements;
 
 const Language = (() => {
@@ -71,6 +72,7 @@ const Language = (() => {
                 const lang = e.target.getAttribute('class');
                 if (getLanguage() === lang) return;
                 elementTextContent(getElementById('display_language').getElementsByClassName('language'), e.target.textContent);
+                LocalStore.remove('ws_cache');
                 setCookieLanguage(lang);
                 document.location = urlForLanguage(lang);
             });

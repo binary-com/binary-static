@@ -29,48 +29,171 @@
         font-size: $FONT_SIZE_S;
 
         #panel {
+            margin-left: 10px;
+
             .selection_wrapper.less-margin-top .trade_form > div {
-                margin-top: -5px;
+                margin-top: -10px;
             }
             #payout {
                 height: auto;
+                border-color: $COLOR_GRAY;
+                border-top: 0;
+                border-radius: 0;
+                border-left: 0;
 
                 &:focus {
                     outline: none;
                 }
-            }
-            .gr-row {
-                .gr-no-gutter-left {
-                    padding-right: 5px;
-                }
-                .gr-no-gutter-right {
-                    padding-left: 5px;
+                &.error {
+                    color: $COLOR_RED;
                 }
             }
             #currency {
-                line-height: 40px;
+                line-height: 25px;
             }
             #payout_amount {
-                line-height: 49px;
+                line-height: 32px;
                 white-space: nowrap;
+                font-weight: bold;
+                border: 1px solid $COLOR_GRAY;
             }
-            .trade_form > div .list {
-                background-color: $COLOR_WHITE;
-                border: 1px solid $COLOR_LIGHT_GRAY;
-                border-top: none;
+            .trade_form {
+                &:not(.no-margin) {
+                    margin-top: 10px;
+                }
+                > div {
+                    .list {
+                        background-color: $COLOR_WHITE;
+                        border: 1px solid $COLOR_GRAY;
+                        border-top: none;
 
-                &.invisible {
-                    border: none;
+                        &.invisible {
+                            border: none;
+                        }
+                        > div {
+                            background-color: $COLOR_WHITE;
+                            border-color: $COLOR_GRAY;
+
+                            &:hover {
+                                background-color: $COLOR_GRAY !important;
+                            }
+                        }
+                        &:hover {
+                            background-color: $COLOR_WHITE;
+                        }
+                    }
+                    .current {
+                        background-color: $COLOR_WHITE;
+                        border: 1px solid $COLOR_GRAY;
+
+                        &:hover, &.primary-border-color {
+                            border-color: $COLOR_BLUE;
+                        }
+                        .nav-caret {
+                            position: absolute;
+                            right: 0.6%;
+                            bottom: 25px;
+                        }
+                    }
+                    #currency {
+                        .list > div {
+                            height: 27px;
+                        }
+                        .current {
+                            height: 25px;
+                            border: 1px solid $COLOR_GRAY;
+                            border-top: 0;
+
+                            .nav-caret {
+                                right: 65%;
+                                bottom: 16px;
+
+                                &:not(.invisible) + .symbols:before {
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                    &#category {
+                        .current, .list > div {
+                            height: 59px;
+                        }
+                    }
+                }
+                .contract-type {
+                    padding-left: 0;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    line-height: 18px;
+                    height: 36px;
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
+                &:hover {
+                    .header-current {
+                        .gr-row {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            #underlying .list {
+                width: auto;
+            }
+            .header-current {
+                overflow: hidden;
+                width: auto;
+                border: 1px solid $COLOR_GRAY;
+                border-bottom: none;
+                background-color: $COLOR_WHITE;
+
+                &.primary-border-color {
+                    border-color: $COLOR_BLUE;
+                }
+                .gr-row {
+                    margin: 0;
+                }
+                &-text {
+                    padding: 10px 5px;
+                    font-weight: 700;
+
+                    &:first-child {
+                        padding-right: 5px;
+                    }
+                    &:last-child {
+                        padding-left: 5px;
+                    }
                 }
                 > div {
                     background-color: $COLOR_WHITE;
-
-                    &:hover {
-                        background-color: $COLOR_GRAY !important;
-                    }
                 }
                 &:hover {
-                    background-color: $COLOR_WHITE;
+                    &, + #period .current {
+                        border-color: $COLOR_BLUE;
+                    }
+                }
+                .nav-caret {
+                    position: absolute;
+                    bottom: 15px;
+                    right: 3%;
+                }
+            }
+            #period {
+                .duration {
+                    font-size: $FONT_SIZE_S;
+                }
+                .end {
+                    font-weight: normal;
+                }
+                .current {
+                    height: auto;
+                    border-top: none;
+                    padding-bottom: 9px !important;
+
+                    div.head {
+                        font-weight: bold;
+                        margin-bottom: 5px;
+                    }
                 }
             }
         }
@@ -136,12 +259,12 @@
                     line-height: 15px;
                     padding-top: 35px;
                 }
-            }
-            #currency .list > div {
-                height: 15px;
-
-                &:hover {
+                #currency .list > div {
                     height: 15px;
+
+                    &:hover {
+                        height: 15px;
+                    }
                 }
             }
             .gr-row .gr-no-gutter-left {
@@ -153,10 +276,8 @@
             }
         }
         .trade_form {
-            margin-top: 5px;
-
-            &.no-margin {
-                margin-top: 0;
+            &:not(.no-margin) {
+                margin-top: 5px;
             }
             > div {
                 text-align: center;
@@ -201,7 +322,7 @@
                 height: 75px;
 
                 > img {
-                    height: 40px;
+                    padding-top: 7px;
                 }
             }
             #underlying {
@@ -243,6 +364,49 @@
                 .current > div, .list > div {
                     align-items: center;
                 }
+            }
+        }
+        .ja-hide + .price-table {
+            margin-top: 10px;
+            margin-left: 0;
+
+            .prices-wrapper {
+                .heading {
+                    font-weight: bold;
+
+                    .hint {
+                        font-weight: normal;
+                    }
+                }
+                .heading, .price-row {
+                    border: 1px solid $COLOR_GRAY;
+                    border-bottom: none;
+                }
+                .contract-type {
+                    padding-left: 0;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    line-height: 18px;
+                    height: 36px;
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
+                .price-row:last-child {
+                    border-bottom: 1px solid $COLOR_GRAY;
+                }
+                .price-row:nth-child(odd) {
+                    background-color: $COLOR_WHITE;
+                }
+                .sell-price {
+                    display: none;
+                }
+                .buy-price {
+                    margin-top: 5px;
+                }
+            }
+            #disable-overlay {
+                top: 81px;
+                height: calc(100% - 81px);
             }
         }
         .price-table {
@@ -420,6 +584,7 @@
         }
         .remaining-time {
             color: $COLOR_BLACK;
+            line-height: 20px;
 
             &.alert {
                 color: $COLOR_RED;
@@ -436,6 +601,13 @@
         @media screen and (max-width: 768px) {
             .gr-12-p {
                 padding-bottom: 10px;
+            }
+            #panel {
+                margin-left: 0;
+
+            }
+            .ja-hide + .price-table {
+                margin-left: -10px;
             }
         }
         @media screen and (max-width: 480px) {
@@ -465,16 +637,29 @@
         #tab_portfolio-content {
             overflow-x: auto;
         }
-        #tab_explanation-content #winning_higherlower {
-            display: flex;
-            flex-direction: column;
+        #tab_explanation-content {
+            .hide-mb {
+                display: none;
+            }
+            .show-mb {
+                display: block;
+            }
+            #winning_higherlower {
+                display: flex;
+                flex-direction: column;
 
-            p {
-                margin-top: 0;
+                p {
+                    margin-top: 0;
 
-                &:first-child {
-                    order: 2;
+                    &:first-child {
+                        order: 2;
+                    }
                 }
+            }
+        }
+        @media all and (max-width: 480px) {
+            .tab-menu-wrap {
+                display: none;
             }
         }
     }

@@ -22,7 +22,7 @@ const TncApproval = () => (
                 </div>
             </div>
 
-            <p className='gr-12 gr-parent invisible error-msg center-text' id='err_message'></p>
+            <p className='gr-12 gr-parent invisible error-msg center-text' id='err_message' />
         </div>
     </React.Fragment>
 );

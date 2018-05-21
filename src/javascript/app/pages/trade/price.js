@@ -277,9 +277,7 @@ const Price = (() => {
      */
     const processForgetProposals = () => {
         commonTrading.showPriceOverlay();
-        const forget_proposal = BinarySocket.send({
-            forget_all: 'proposal',
-        });
+        const forget_proposal = BinarySocket.send({ forget_all: 'proposal' });
         forget_proposal.then(() => {
             Price.clearMapping();
         });

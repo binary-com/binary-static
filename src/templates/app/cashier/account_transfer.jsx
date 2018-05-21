@@ -3,10 +3,10 @@ import { FormRow, SubmitButton, Fieldset } from '../../_common/components/forms.
 
 const Row = ({ id }) => (
     <div className='gr-padding-10 gr-row'>
-        <div className='gr-2 align-end'>
+        <div className='gr-2 gr-4-m align-end'>
             <span id={`${id}_loginid`} />
         </div>
-        <div className='gr-10'>
+        <div className='gr-10 gr-8-m'>
             <span id={`${id}_currency`} />&nbsp;<span id={`${id}_balance`} />
         </div>
     </div>
@@ -32,7 +32,7 @@ const AccountTransfer = () => (
         </div>
 
         <div className='invisible' id='error_message'>
-            <p className='center-text notice-msg'></p>
+            <p className='center-text notice-msg' />
         </div>
 
         <div className='invisible' id='success_form'>
@@ -51,14 +51,18 @@ const AccountTransfer = () => (
                 <FormRow label={it.L('Transfer from')} type='label'  id='lbl_transfer_from' />
                 <FormRow label={it.L('Transfer to')}   type='select' id='transfer_to' />
                 <FormRow label={it.L('Amount')}        type='custom' id='transfer_amount'>
-                    <label id='currency'></label>
+                    <label id='currency' />
                     <input id='amount' name='amount' type='text' maxLength='20' autoComplete='off' />
-                    <div className='hint' id='range_hint'></div>
+                    <div className='hint' id='range_hint' />
                 </FormRow>
             </Fieldset>
 
             <SubmitButton msg_id='form_error' type='submit' text={it.L('Transfer')} />
         </form>
+        
+        <div className='hint invisible' id='transfer_info'>
+            <p>{it.L('Note: Transfer between accounts is not available on weekends.')}</p>
+        </div>
 
         <div className='hint invisible' id='transfer_fee'>
             <p>{it.L('Note: You may only transfer funds between a fiat account and a cryptocurrency account.')}</p>

@@ -3,7 +3,7 @@ import Loading from '../../_common/components/loading.jsx';
 import { Fieldset, FormRow, SubmitButton } from '../../_common/components/forms.jsx';
 
 const StrongLabel = ({ id }) => (
-    <strong><label id={id}></label></strong>
+    <strong><label id={id} /></strong>
 );
 
 const PaymentagentTransfer = () => (
@@ -33,7 +33,7 @@ const PaymentagentTransfer = () => (
         </form>
 
         <div id='pa_transfer_done' className='invisible'>
-            <p id='confirm_msg' className='invisible'></p>
+            <p id='confirm_msg' className='invisible' />
             <p>
                 <a className='button' href={it.url_for('user/statementws')}>
                     <span className='button'>{it.L('View your statement')}</span>

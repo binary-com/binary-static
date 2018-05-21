@@ -12,7 +12,7 @@ const SeparatorLine = ({
 
     return (
         <div className={!no_wrapper ? classes1 : undefined} >
-            <div className={classes2 || undefined}></div>
+            <div className={classes2 || undefined} />
         </div>
     );
 };

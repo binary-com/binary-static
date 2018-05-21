@@ -1,4 +1,4 @@
-const tabListener        = require('binary-style').tabListener;
+const tabListener        = require('@binary-com/binary-style').tabListener;
 const getElementById     = require('./common_functions').getElementById;
 const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
@@ -70,10 +70,9 @@ const TabSelector = (() => {
     };
 
     const updateURL = (selector, tab_id) => {
-        const params_hash = Url.paramsHash();
-        params_hash[selector] = tab_id;
-        const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params_hash)}`;
-        window.history.replaceState({ url: updated_url }, null, updated_url);
+        Url.updateParamsWithoutReload({
+            [selector]: tab_id,
+        }, true);
     };
 
     const goLeft = (e) => {
@@ -124,6 +123,25 @@ const TabSelector = (() => {
         }
     };
 
+    const updateTabDisplay = () => {
+        applyToAllElements('.tab-menu', (el_tab_menu) => {
+            // hide tabs if there is only one tab visible
+            const ul = el_tab_menu.querySelector('ul');
+            if (ul) {
+                const visible_tabs = Array.from(ul.children).filter(el => (
+                    !el.classList.contains('tab-selector')
+                    && (!el.dataset.show
+                        || el.dataset.show && el.classList.contains('data-show-visible'))
+                ));
+                if (visible_tabs.length <= 1) el_tab_menu.setVisibility(0);
+            }
+            // resize tab selector
+            if (el_tab_menu.querySelector('.tab-selector')) {
+                repositionSelector();
+            }
+        });
+    };
+
     const onUnload = () => {
         window.removeEventListener('resize', repositionSelector);
 
@@ -139,10 +157,26 @@ const TabSelector = (() => {
         });
     };
 
+    const onChangeTab = (fn) => {
+        applyToAllElements('.go-left', (element) => {
+            element.addEventListener('click', (e) => {
+                fn({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
+            });
+        });
+        applyToAllElements('.go-right', (element) => {
+            element.addEventListener('click', (e) => {
+                fn({ selector: e.target.getAttribute('data-parent'), direction: 'right' });
+            });
+        });
+    };
+
     return {
+        onChangeTab,
         onLoad,
         onUnload,
         repositionSelector,
+        slideSelector,
+        updateTabDisplay,
     };
 })();
 
