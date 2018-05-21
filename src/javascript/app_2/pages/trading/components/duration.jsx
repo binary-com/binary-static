@@ -19,18 +19,33 @@ let min_date_duration,
 
 const Duration = ({
     expiry_type,
+    expiry_date,
     expiry_time,
     duration,
     duration_unit,
     duration_units_list,
     server_time,
     onChange,
+    is_nativepicker,
+    is_minimized,
 }) => {
     const moment_now = moment(server_time);
     if (!min_date_expiry || moment_now.date() !== min_date_expiry.date()) {
         min_date_duration = moment_now.clone().add(1, 'd');
         max_date_duration = moment_now.clone().add(365, 'd');
         min_date_expiry   = moment_now.clone();
+    }
+    if (is_minimized) {
+        const duration_unit_text = (duration_units_list.find(o => o.value === duration_unit) || {}).text;
+        return (
+            <div className='fieldset-minimized duration'>
+                <span className='icon trade-duration' />
+                {expiry_type === 'duration'
+                    ? `${duration} ${duration_unit_text}`
+                    : `${moment(expiry_date).format('ddd - DD MMM, YYYY')}\n${expiry_time}`
+                }
+            </div>
+        );
     }
     return (
         <Fieldset
@@ -44,18 +59,20 @@ const Duration = ({
                 value={expiry_type}
                 name='expiry_type'
                 onChange={onChange}
+                is_nativepicker={is_nativepicker}
             />
 
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
-                        {duration_unit === 'd' ?
+                        {duration_unit === 'd' && !is_nativepicker ?
                             <Datepicker
                                 name='duration'
                                 minDate={min_date_duration}
                                 maxDate={max_date_duration}
                                 mode='duration'
                                 onChange={onChange}
+                                is_nativepicker={is_nativepicker}
                                 footer={localize('The minimum duration is 1 day')}
                             /> :
                             <InputField
@@ -63,6 +80,7 @@ const Duration = ({
                                 name='duration'
                                 value={duration}
                                 onChange={onChange}
+                                is_nativepicker={is_nativepicker}
                             />
                         }
                         <Dropdown
@@ -70,6 +88,7 @@ const Duration = ({
                             value={duration_unit}
                             name='duration_unit'
                             onChange={onChange}
+                            is_nativepicker={is_nativepicker}
                         />
                     </div>
                 </React.Fragment> :
@@ -79,8 +98,15 @@ const Duration = ({
                         showTodayBtn
                         minDate={min_date_expiry}
                         onChange={onChange}
+                        is_nativepicker={is_nativepicker}
                     />
-                    <TimePicker onChange={onChange} name='expiry_time' value={expiry_time} placeholder='12:00 pm' />
+                    <TimePicker
+                        onChange={onChange}
+                        name='expiry_time'
+                        value={expiry_time}
+                        placeholder='12:00 pm'
+                        is_nativepicker={is_nativepicker}
+                    />
                 </React.Fragment>
             }
         </Fieldset>
@@ -90,6 +116,7 @@ const Duration = ({
 export default connect(
     ({trade}) => ({
         expiry_type        : trade.expiry_type,
+        expiry_date        : trade.expiry_date,
         expiry_time        : trade.expiry_time,
         duration           : trade.duration,
         duration_unit      : trade.duration_unit,
