@@ -339,6 +339,7 @@ const Price = (() => {
             }
         }
 
+        BinarySocket.send({ forget_all: 'proposal_open_contract' });
         processForgetProposals().then(() => {
             Object.keys(types || {}).forEach((type_of_contract) => {
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
