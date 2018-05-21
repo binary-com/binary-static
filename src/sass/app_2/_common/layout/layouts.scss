@@ -13,9 +13,8 @@
         min-height: calc(100vh - 110px);
 
         .chart-container {
-            padding: 10px;
-            margin-left: -15px;
             position: relative;
+            height: 100%;
 
             cq-context { // stylelint-disable-line selector-type-no-unknown
                 top: 0;
@@ -43,9 +42,14 @@
         & > * {
             grid-column: col-start / span 12;
         }
+        @media (max-width: 768px) {
+            grid-template-rows: 0.85fr 1fr;
+        }
         @media (min-width: 769px) {
             .chart-container {
                 grid-column: col-start 1 / span 9;
+                padding: 10px;
+                margin-left: -15px;
 
                 fieldset {
                     display: inline-grid;
