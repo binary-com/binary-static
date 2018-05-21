@@ -1,11 +1,11 @@
-import React from 'react';
-import moment from 'moment';
-import InputField from '../../../components/form/input_field.jsx';
-import Datepicker from '../../../components/form/date_picker.jsx';
-import Dropdown from '../../../components/form/dropdown.jsx';
-import Fieldset from '../../../components/form/fieldset.jsx';
-import TimePicker from '../../../components/form/time_picker.jsx';
-import { connect } from '../../../store/connect';
+import moment       from 'moment';
+import React        from 'react';
+import Datepicker   from '../../../components/form/date_picker.jsx';
+import Dropdown     from '../../../components/form/dropdown.jsx';
+import Fieldset     from '../../../components/form/fieldset.jsx';
+import InputField   from '../../../components/form/input_field.jsx';
+import TimePicker   from '../../../components/form/time_picker.jsx';
+import { connect }  from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
 
 const expiry_list = [

@@ -13,8 +13,7 @@ const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 const Client = (() => {
     const processNewAccount = (options) => {
         if (ClientBase.setNewAccount(options)) {
-            // need to redirect not using pjax
-            window.location.href = options.redirect_url || defaultRedirectUrl();
+            window.location.href = options.redirect_url || defaultRedirectUrl(); // need to redirect not using pjax
         }
     };
 

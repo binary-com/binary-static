@@ -1,5 +1,5 @@
-import ContractType from '../actions/helpers/contract_type';
 import { getTicks } from './test';
+import ContractType from '../actions/helpers/contract_type';
 
 export const onChangeSymbolAsync = function *({ symbol, contract_type, contract_expiry_type, duration_unit }) {
     yield ContractType.buildContractTypesConfig(symbol);

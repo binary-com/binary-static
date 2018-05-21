@@ -14,11 +14,11 @@ const showLoadingImage = (container, theme = 'dark') => {
 
 /**
  * Returns the highest z-index in the page.
- * Accepts a style selector to only check those elements,
+ * Accepts a selector to only check those elements,
  * uses all container tags by default
  * If no element found, returns null.
  *
- * @param selector: a style selector for target elements
+ * @param selector: a selector for target elements
  * @return int|null
  */
 const getHighestZIndex = (selector = 'div,p,area,nav,section,header,canvas,aside,span') => {

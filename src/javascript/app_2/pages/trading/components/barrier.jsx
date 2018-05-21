@@ -1,7 +1,7 @@
-import React from 'react';
-import Fieldset from '../../../components/form/fieldset.jsx';
-import InputField from '../../../components/form/input_field.jsx';
-import { connect } from '../../../store/connect';
+import React        from 'react';
+import Fieldset     from '../../../components/form/fieldset.jsx';
+import InputField   from '../../../components/form/input_field.jsx';
+import { connect }  from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
 
 const Barrier = ({

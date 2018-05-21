@@ -1,18 +1,19 @@
-import React from 'react';
-import moment from 'moment';
-import classnames from 'classnames';
-import DAO from '../../data/dao';
-import { connect } from '../../store/connect';
-import BinarySocket from '../../../_common/base/socket_base';
-import Client from '../../../_common/base/client_base';
-import { formatMoney } from '../../../_common/base/currency_base';
-import { localize } from '../../../_common/localize';
-import { toTitleCase } from '../../../_common/string_util';
+import React              from 'react';
+import moment             from 'moment';
+import classnames         from 'classnames';
+import DAO                from '../../data/dao';
+import { connect }        from '../../store/connect';
+import BinarySocket       from '../../../_common/base/socket_base';
+import Client             from '../../../_common/base/client_base';
+import { formatMoney }    from '../../../_common/base/currency_base';
+import BinarySocket       from '../../../_common/base/socket_base';
+import { localize }       from '../../../_common/localize';
+import { toTitleCase }    from '../../../_common/string_util';
 import { throttlebounce } from '../../../_common/utility';
-import CardList from '../../components/elements/card_list.jsx';
-import DataTable from '../../components/elements/data_table.jsx';
-import DatePicker from '../../components/form/date_picker.jsx';
-import Loading from '../../../../templates/_common/components/loading.jsx';
+import CardList           from '../../components/elements/card_list.jsx';
+import DataTable          from '../../components/elements/data_table.jsx';
+import DatePicker         from '../../components/form/date_picker.jsx';
+import Loading            from '../../../../templates/_common/components/loading.jsx';
 
 /* TODO:
       1. to separate logic from UI
