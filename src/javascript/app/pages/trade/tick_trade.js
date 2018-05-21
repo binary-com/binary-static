@@ -90,8 +90,9 @@ const TickDisplay = (() => {
                 _0: { label: 'Entry Spot', id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label: 'Exit Spot',
-                id   : 'exit_tick',
+                label    : 'Exit Spot',
+                id       : 'exit_tick',
+                dashStyle: 'Dash',
             };
         } else if (contract_category.match('callput')) {
             ticks_needed = number_of_ticks + 1;
@@ -99,8 +100,9 @@ const TickDisplay = (() => {
                 _0: { label: 'Entry Spot', id: 'entry_tick' },
             };
             x_indicators[`_${number_of_ticks}`] = {
-                label: 'Exit Spot',
-                id   : 'exit_tick',
+                label    : 'Exit Spot',
+                id       : 'exit_tick',
+                dashStyle: 'Dash',
             };
         } else if (contract_category.match('touchnotouch')) {
             ticks_needed = number_of_ticks + 1;
@@ -113,8 +115,9 @@ const TickDisplay = (() => {
                 _0: { label: 'Tick 1', id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label: `Tick ${number_of_ticks}`,
-                id   : 'last_tick',
+                label    : `Tick ${number_of_ticks}`,
+                id       : 'last_tick',
+                dashStyle: 'Dash',
             };
         } else {
             x_indicators = {};
@@ -242,7 +245,7 @@ const TickDisplay = (() => {
     };
 
     const evaluateContractOutcome = () => {
-        if (status !== 'open') {
+        if (status && status !== 'open') {
             if (status === 'won') {
                 if (show_contract_result) {
                     $(`#${id_render}`).css('background-color', 'rgba(46, 136, 54, 0.2)');
@@ -328,7 +331,7 @@ const TickDisplay = (() => {
             && applicable_ticks
             && applicable_ticks.find(({ epoch }) => epoch === sell_spot_time) !== undefined;
 
-        if (!has_finished && !has_sold && (!data.tick || status === 'open')) {
+        if (!has_finished && !has_sold && (!data.tick || !status || status === 'open')) {
             for (let d = 0; d < epoches.length; d++) {
                 let tick;
                 if (data.tick) {
