@@ -30,11 +30,10 @@ $filter-height: 60px;
             &__content {
                 padding: 0;
                 max-width: 450px;
-                justify-content: center;
+                display: grid;
+                grid-template-columns: 1fr 30px 1fr;
+                text-align: center;
 
-                .datepicker-container {
-                    flex-grow: 1;
-                }
                 .datepicker-display {
                     width: 100%;
                 }
