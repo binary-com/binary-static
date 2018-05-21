@@ -29,7 +29,12 @@ $side-padding: 2rem;
             padding-right: $side-padding;
         }
     }
-    &.table-full-width {
+    &--fixed-header:not(.table-clone) {
+        .table-head {
+            visibility: hidden;
+        }
+    }
+    &--full-width {
         th, td {
             @include interpolate(padding-left, 981px, 1440px, 8px, 20px);
             @include interpolate(padding-right, 981px, 1440px, 8px, 20px);
@@ -63,7 +68,7 @@ $side-padding: 2rem;
     // styles for fixed table header
     &.table-clone {
         position: fixed;
-        z-index: 100;
+        z-index: 90;
         pointer-events: none;
 
         .table-head {
