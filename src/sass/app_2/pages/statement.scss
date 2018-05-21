@@ -139,6 +139,12 @@ $filter-height: 60px;
             &--buy:before {
                 background-image: url('../images/trading_app/statement/ic_buy.svg');
             }
+            &--deposit:before {
+                background-image: url('../images/trading_app/statement/ic_deposit.svg');
+            }
+            &--withdrawal:before {
+                background-image: url('../images/trading_app/statement/ic_withdrawal.svg');
+            }
         }
         &__payout:before {
             background-image: url('../images/trading_app/statement/ic_payout.svg');
