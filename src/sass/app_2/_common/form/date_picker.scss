@@ -189,7 +189,7 @@ div.datepicker-container {
         background: $COLOR_WHITE;
         height: 32px;
         cursor: pointer;
-        border: solid 1px $COLOR_GRAY;
+        border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
         font-size: 14px;
         line-height: 32px;
@@ -200,17 +200,24 @@ div.datepicker-container {
         transition: border 0.25s;
     }
     .datepicker-native-placeholder {
-        text-align: left;
         position: absolute;
-        width: 100%;
-        padding-top: 0;
-        padding-bottom: 0;
         left: 0;
         top: 0;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        line-height: 30px;
+        margin: 1px;
+        padding-top: 0;
+        padding-bottom: 0;
+        border: none;
+        text-align: left;
     }
-    .datepicker-display:focus + .datepicker-native-placeholder {
-        visibility: hidden;
-    }
+    // hides placeholder when input is in focus
+    // on mobile: press clear -> focused and empty :(
+    // on desktop (small width): focused input doesn't necessarily causes popup
+    // .datepicker-display:focus + .datepicker-native-placeholder {
+    //     visibility: hidden;
+    // }
     .picker-calendar-icon, .close-circle-icon {
         position: absolute;
         width: 14px;
