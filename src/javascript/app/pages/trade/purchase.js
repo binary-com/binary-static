@@ -184,7 +184,8 @@ const Purchase = (() => {
     };
 
     const updateSpotList = () => {
-        if ($('#contract_purchase_spots:hidden').length) {
+        const $spots = $('#contract_purchase_spots');
+        if (!$spots.length || $spots.is(':hidden')) {
             return;
         }
 

@@ -284,6 +284,9 @@ const Price = (() => {
         return forget_proposal;
     };
 
+    const processForgetProposalOpenContract = () =>
+        BinarySocket.send({ forget_all: 'proposal_open_contract' });
+
     /*
      * Function to process and calculate price based on current form
      * parameters or change in form parameters
@@ -339,7 +342,7 @@ const Price = (() => {
             }
         }
 
-        BinarySocket.send({ forget_all: 'proposal_open_contract' });
+        processForgetProposalOpenContract();
         processForgetProposals().then(() => {
             Object.keys(types || {}).forEach((type_of_contract) => {
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
@@ -359,6 +362,7 @@ const Price = (() => {
         clearMapping,
         clearFormId,
         processForgetProposals,
+        processForgetProposalOpenContract,
         processPriceRequest,
 
         proposal        : createProposal,

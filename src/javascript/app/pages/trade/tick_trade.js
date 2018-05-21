@@ -353,7 +353,9 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    if (!x_indicators[indicator_key] && tick.epoch === sell_spot_time) {
+                    const exit_time = sell_spot_time < exit_tick_time ? sell_spot_time : exit_tick_time;
+
+                    if (!x_indicators[indicator_key] && tick.epoch === exit_time) {
                         x_indicators[indicator_key] = {
                             index: counter,
                             label: sell_spot_time < exit_tick_time
