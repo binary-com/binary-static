@@ -353,14 +353,19 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    const exit_time = sell_spot_time < exit_tick_time ? sell_spot_time : exit_tick_time;
+                    let exit_time = sell_spot_time || exit_tick_time;
+                    if (sell_spot_time && exit_tick_time) {
+                        exit_time = sell_spot_time < exit_tick_time ? sell_spot_time : exit_tick_time;
+                    }
 
                     if (!x_indicators[indicator_key] && tick.epoch === exit_time) {
+                        let label = 'Sell Spot';
+                        if (sell_spot_time && exit_tick_time && sell_spot_time >= exit_tick_time) {
+                            label = 'Exit Spot';
+                        }
                         x_indicators[indicator_key] = {
-                            index: counter,
-                            label: sell_spot_time < exit_tick_time
-                                ? 'Sell Spot'
-                                : 'Exit Spot',
+                            label,
+                            index    : counter,
                             dashStyle: 'Dash',
                         };
                     }
@@ -394,11 +399,14 @@ const TickDisplay = (() => {
 
         if (x_indicators[indicator_key]) return;
 
+        let label = 'Sell Spot';
+        if (sell_spot_time && exit_tick_time && sell_spot_time >= exit_tick_time) {
+            label = 'Exit Spot';
+        }
+
         x_indicators[indicator_key] = {
             index,
-            label: sell_spot_time < exit_tick_time
-                ? 'Sell Spot'
-                : 'Exit Spot',
+            label,
             dashStyle: 'Dash',
         };
         
