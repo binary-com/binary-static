@@ -33,8 +33,8 @@ const Metals = () => (
                     <List
                         className='bullet'
                         items={[
-                            { text: it.L('Standard account: 1:500') },
-                            { text: it.L('Advanced account: 1:100') },
+                            { text: it.L('Standard account: 1:1000') },
+                            { text: it.L('Advanced account: 1:300') },
                             { text: it.L('Volatility Indices account: 1:500') },
                         ]}
                     />
