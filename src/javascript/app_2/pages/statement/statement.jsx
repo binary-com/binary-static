@@ -5,7 +5,6 @@ import DAO                from '../../data/dao';
 import { connect }        from '../../store/connect';
 import Client             from '../../../_common/base/client_base';
 import { formatMoney }    from '../../../_common/base/currency_base';
-import BinarySocket       from '../../../_common/base/socket_base';
 import { localize }       from '../../../_common/localize';
 import { toTitleCase }    from '../../../_common/string_util';
 import { throttlebounce } from '../../../_common/utility';
@@ -55,7 +54,8 @@ const StatementCard = ({ date, refid, desc, action, amount, payout, balance, cla
                     'statement-card__amount--sell'      : action === 'Sell',
                     'statement-card__amount--deposit'   : action === 'Deposit',
                     'statement-card__amount--withdrawal': action === 'Withdrawal',
-                })}>
+                })}
+                >
                     <span className='statement-card__cell-text'>
                         {amount}
                     </span>
@@ -258,12 +258,13 @@ class Statement extends React.PureComponent {
     renderFilter(is_mobile) {
         const moment_now = moment(this.props.server_time);
         const today = moment_now.format('YYYY-MM-DD');
+        const filter_class = classnames('statement-filter', {
+            'mobile-only' : is_mobile,
+            'desktop-only': !is_mobile,
+        });
 
         return (
-            <div className={classnames('statement-filter', {
-                'mobile-only' : is_mobile,
-                'desktop-only': !is_mobile,
-            })}>
+            <div className={filter_class}>
                 <div className='statement-filter__content container'>
                     <span className='statement-filter__label'>{localize('Filter by date:')}</span>
                     <DatePicker
