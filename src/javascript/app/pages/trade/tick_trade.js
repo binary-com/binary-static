@@ -353,19 +353,12 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    let exit_time = sell_spot_time || exit_tick_time;
-                    if (sell_spot_time && exit_tick_time) {
-                        exit_time = sell_spot_time < exit_tick_time ? sell_spot_time : exit_tick_time;
-                    }
+                    const exit_time = Math.min(sell_spot_time, exit_tick_time) || sell_spot_time || exit_tick_time;
 
                     if (!x_indicators[indicator_key] && tick.epoch === exit_time) {
-                        let label = 'Sell Spot';
-                        if (sell_spot_time && exit_tick_time && sell_spot_time >= exit_tick_time) {
-                            label = 'Exit Spot';
-                        }
                         x_indicators[indicator_key] = {
-                            label,
                             index    : counter,
+                            label    : getExitLabel(),
                             dashStyle: 'Dash',
                         };
                     }
@@ -399,19 +392,17 @@ const TickDisplay = (() => {
 
         if (x_indicators[indicator_key]) return;
 
-        let label = 'Sell Spot';
-        if (sell_spot_time && exit_tick_time && sell_spot_time >= exit_tick_time) {
-            label = 'Exit Spot';
-        }
-
         x_indicators[indicator_key] = {
             index,
-            label,
+            label    : getExitLabel(),
             dashStyle: 'Dash',
         };
         
         add(x_indicators[indicator_key]);
     };
+
+    const getExitLabel = () =>
+        sell_spot_time && exit_tick_time && sell_spot_time >= exit_tick_time ? 'Exit Spot' : 'Sell Spot';
 
     const updateChart = (data, contract) => {
         subscribe = 'false';
