@@ -43,9 +43,7 @@ class TradeApp extends React.Component {
     renderParamPickers() {
         return form_components
             .filter(({ name }) => this.isVisible(name))
-            .map(({ name, Component }) => {
-                return <Component key={name} />
-            });
+            .map(({ name, Component }) => <Component key={name} />);
     }
 
     render() {
