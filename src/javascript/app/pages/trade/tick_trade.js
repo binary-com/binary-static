@@ -244,12 +244,12 @@ const TickDisplay = (() => {
         if (status !== 'open') {
             if (status === 'won') {
                 if (show_contract_result) {
-                    $('#tick_chart').css('background-color', 'rgba(46, 136, 54, 0.2)');
+                    $(`#${id_render}`).css('background-color', 'rgba(46, 136, 54, 0.2)');
                 }
                 updatePurchaseStatus(payout, price, localize('This contract won'));
             } else if (status === 'lost') {
                 if (show_contract_result) {
-                    $('#tick_chart').css('background-color', 'rgba(204, 0, 0, 0.1)');
+                    $(`#${id_render}`).css('background-color', 'rgba(204, 0, 0, 0.1)');
                 }
                 updatePurchaseStatus(0, -price, localize('This contract lost'));
             }
@@ -442,7 +442,7 @@ const TickDisplay = (() => {
     return {
         updateChart,
         init      : initialize,
-        resetSpots: () => { spots_list = {}; $('#tick_chart').css('background-color', '#F2F2F2'); },
+        resetSpots: () => { spots_list = {}; $(`#${id_render}`).css('background-color', '#F2F2F2'); },
         setStatus : (contract) => { status = contract.status; evaluateContractOutcome(contract); },
     };
 })();
