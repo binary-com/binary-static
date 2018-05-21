@@ -6,12 +6,14 @@ const Tick               = require('./tick');
 const TickDisplay        = require('./tick_trade');
 const updateValues       = require('./update_values');
 const Client             = require('../../base/client');
+const BinarySocket       = require('../../base/socket');
 const formatMoney        = require('../../common/currency').formatMoney;
 const CommonFunctions    = require('../../../_common/common_functions');
 const localize           = require('../../../_common/localize').localize;
 const padLeft            = require('../../../_common/string_util').padLeft;
 const urlFor             = require('../../../_common/url').urlFor;
 const createElement      = require('../../../_common/utility').createElement;
+const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 /*
  * Purchase object that handles all the functions related to
@@ -22,10 +24,12 @@ const Purchase = (() => {
     let purchase_data = {};
 
     let payout_value,
-        cost_value;
+        cost_value,
+        status;
 
     const display = (details) => {
         purchase_data = details;
+        status        = '';
 
         const receipt            = details.buy;
         const passthrough        = details.echo_req.passthrough;
@@ -126,16 +130,6 @@ const Purchase = (() => {
         }
 
         if (show_chart) {
-            const type_to_sentiment = {
-                CALL    : 'up',
-                ASIANU  : 'up',
-                PUT     : 'down',
-                ASIAND  : 'down',
-                ONETOUCH: 'touch',
-                NOTOUCH : 'notouch',
-            };
-            const contract_sentiment = type_to_sentiment[passthrough.contract_type];
-
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying
             let decimal_points     = 2;
@@ -155,7 +149,6 @@ const Purchase = (() => {
             }
 
             TickDisplay.init({
-                contract_sentiment,
                 symbol              : passthrough.symbol,
                 barrier             : /^(higherlower|touchnotouch)$/.test(sessionStorage.getItem('formname')) ? passthrough.barrier : undefined,
                 number_of_ticks     : passthrough.duration,
@@ -171,6 +164,22 @@ const Purchase = (() => {
                 id_render           : 'trade_tick_chart',
             });
             TickDisplay.resetSpots();
+
+            const request = {
+                proposal_open_contract: 1,
+                contract_id           : receipt.contract_id,
+                subscribe             : 1,
+            };
+            BinarySocket.send(request, { callback: (response) => {
+                if (response.proposal_open_contract) {
+                    TickDisplay.setStatus(response.proposal_open_contract);
+                    // force to sell the expired contract, in order to get the final status
+                    if (+response.proposal_open_contract.is_settleable === 1 &&
+                        !response.proposal_open_contract.is_sold) {
+                        BinarySocket.send({ sell_expired: 1 });
+                    }
+                }
+            } });
         }
     };
 
@@ -179,8 +188,7 @@ const Purchase = (() => {
             return;
         }
 
-        let duration = purchase_data.echo_req && purchase_data.echo_req.passthrough ?
-            purchase_data.echo_req.passthrough.duration : null;
+        let duration = +getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']);
 
         if (!duration) {
             return;
@@ -191,8 +199,25 @@ const Purchase = (() => {
         const epoches = Object.keys(spots2).sort((a, b) => a - b);
         CommonFunctions.elementTextContent(spots, '');
 
-        let last_digit;
-        const replace = (d) => { last_digit = d; return `<strong>${d}</strong>`; };
+        if (!status) {
+            const request = {
+                proposal_open_contract: 1,
+                contract_id           : purchase_data.buy.contract_id,
+                subscribe             : 1,
+            };
+            BinarySocket.send(request, { callback: (response) => {
+                status = getPropertyValue(response, ['proposal_open_contract', 'status']);
+                if (status && status !== 'open') {
+                    spots.className = status;
+                    if (status === 'won') {
+                        updateValues.updatePurchaseStatus(payout_value, cost_value, localize('This contract won'));
+                    } else if (status === 'lost') {
+                        updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
+                    }
+                }
+            } });
+        }
+        const replace = d => `<strong>${d}</strong>`;
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
@@ -219,35 +244,6 @@ const Purchase = (() => {
 
                 spots.appendChild(fragment);
                 spots.scrollTop = spots.scrollHeight;
-
-                if (last_digit && duration === 1) {
-                    let contract_status,
-                        final_price,
-                        pnl;
-                    const pass_contract_type = purchase_data.echo_req.passthrough.contract_type;
-                    const pass_barrier       = purchase_data.echo_req.passthrough.barrier;
-
-                    if (
-                        (pass_contract_type === 'DIGITMATCH' && +last_digit === +pass_barrier) ||
-                        (pass_contract_type === 'DIGITDIFF'  && +last_digit !== +pass_barrier) ||
-                        (pass_contract_type === 'DIGITEVEN'  && +last_digit % 2 === 0) ||
-                        (pass_contract_type === 'DIGITODD'   && +last_digit % 2) ||
-                        (pass_contract_type === 'DIGITOVER'  && +last_digit > pass_barrier) ||
-                        (pass_contract_type === 'DIGITUNDER' && +last_digit < pass_barrier)
-                    ) {
-                        spots.className = 'won';
-                        final_price     = payout_value;
-                        pnl             = cost_value;
-                        contract_status = localize('This contract won');
-                    } else {
-                        spots.className = 'lost';
-                        final_price     = 0;
-                        pnl             = -cost_value;
-                        contract_status = localize('This contract lost');
-                    }
-
-                    updateValues.updatePurchaseStatus(final_price, pnl, contract_status);
-                }
 
                 duration--;
                 if (!duration) {

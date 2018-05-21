@@ -11,7 +11,6 @@ const Price                 = require('./price');
 const Process               = require('./process');
 const Purchase              = require('./purchase');
 const Tick                  = require('./tick');
-const ViewPopup             = require('../user/view_popup/view_popup');
 const BinarySocket          = require('../../base/socket');
 const getDecimalPlaces      = require('../../common/currency').getDecimalPlaces;
 const isCryptocurrency      = require('../../common/currency').isCryptocurrency;
@@ -322,16 +321,7 @@ const TradingEvents = (() => {
             if (id && ask_price) {
                 $('.purchase_button').css('visibility', 'hidden');
                 BinarySocket.send(params).then((response) => {
-                    if (response.error || /digit/i.test(response.echo_req.passthrough.contract_type)) {
-                        Purchase.display(response);
-                    } else {
-                        this.setAttribute('contract_id', response.buy.contract_id);
-                        ViewPopup.init(this, () => {
-                            GetTicks.request();
-                            CommonTrading.hideOverlayContainer();
-                            Price.processPriceRequest();
-                        });
-                    }
+                    Purchase.display(response);
                     GTM.pushPurchaseData(response);
                 });
                 Price.incrFormId();
@@ -345,6 +335,7 @@ const TradingEvents = (() => {
         $('#close_confirmation_container').on('click dblclick', (e) => {
             if (e.target && isVisible(getElementById('confirmation_message_container'))) {
                 e.preventDefault();
+                BinarySocket.send({ forget_all: 'proposal_open_contract' });
                 CommonTrading.hideOverlayContainer();
                 Price.processPriceRequest();
             }

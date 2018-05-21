@@ -1,6 +1,7 @@
 const moment               = require('moment');
 const requireHighstock     = require('./common').requireHighstock;
 const Tick                 = require('./tick');
+const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
 const addComma             = require('../../../_common/base/currency_base').addComma;
@@ -17,7 +18,8 @@ const TickDisplay = (() => {
         abs_barrier,
         display_decimals,
         show_contract_result,
-        contract_sentiment,
+        price,
+        payout,
         ticks_needed,
         x_indicators,
         chart,
@@ -36,9 +38,10 @@ const TickDisplay = (() => {
         tick_shortcode,
         tick_init,
         subscribe,
-        responseID,
+        response_id,
         sell_spot_time,
-        exit_tick_time;
+        exit_tick_time,
+        status;
 
     let id_render = 'tick_chart';
 
@@ -53,12 +56,14 @@ const TickDisplay = (() => {
         abs_barrier          = data.abs_barrier;
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
-        if (options.id_render) {
-            id_render = options.id_render;
+
+        if (data.id_render) {
+            id_render = data.id_render;
         }
 
         if (data.show_contract_result) {
-            contract_sentiment = data.contract_sentiment;
+            price  = parseFloat(data.price);
+            payout = parseFloat(data.payout);
         }
 
         const minimize = data.show_contract_result;
@@ -163,19 +168,6 @@ const TickDisplay = (() => {
         }
     };
 
-    const applyChartBackgroundColor = (tick) => {
-        if (!show_contract_result) return;
-
-        const chart_container = $(`#${id_render}`);
-
-        const winning = contract_sentiment === 'up' && tick.quote > contract_barrier
-            || contract_sentiment === 'down' && tick.quote < contract_barrier;
-
-        chart_container.css('background-color', winning
-            ? 'rgba(46,136,54,0.198039)'
-            : 'rgba(204,0,0,0.098039)');
-    };
-
     const addBarrier = () => {
         if (!set_barrier) {
             return;
@@ -248,6 +240,26 @@ const TickDisplay = (() => {
         });
     };
 
+    const evaluateContractOutcome = (contract) => {
+        if (status !== 'open') {
+            if (status === 'won') {
+                if (show_contract_result) {
+                    $('#tick_chart').css('background-color', 'rgba(46, 136, 54, 0.2)');
+                }
+                updatePurchaseStatus(payout, price, localize('This contract won'));
+            } else if (status === 'lost') {
+                if (show_contract_result) {
+                    $('#tick_chart').css('background-color', 'rgba(204, 0, 0, 0.1)');
+                }
+                updatePurchaseStatus(0, -price, localize('This contract lost'));
+            }
+
+            if (contract) {
+                addSellSpot(contract);
+            }
+        }
+    };
+
     const plot = () => {
         contract_start_moment = moment(contract_start_ms).utc();
         counter               = 0;
@@ -262,8 +274,8 @@ const TickDisplay = (() => {
         }
 
         if (subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-            responseID = data.tick.id;
-            ViewPopupUI.storeSubscriptionID(responseID);
+            response_id = data.tick.id;
+            ViewPopupUI.storeSubscriptionID(response_id);
         }
 
         let epoches,
@@ -317,7 +329,7 @@ const TickDisplay = (() => {
             && applicable_ticks
             && applicable_ticks.find(({ epoch }) => epoch === sell_spot_time) !== undefined;
 
-        if (!has_finished && !has_sold) {
+        if (!has_finished && !has_sold && (!data.tick || status === 'open')) {
             for (let d = 0; d < epoches.length; d++) {
                 let tick;
                 if (data.tick) {
@@ -355,11 +367,11 @@ const TickDisplay = (() => {
                     }
 
                     addBarrier();
-                    applyChartBackgroundColor(tick);
                     counter++;
                 }
             }
         }
+        evaluateContractOutcome();
     };
 
     const addSellSpot = (contract) => {
@@ -400,8 +412,14 @@ const TickDisplay = (() => {
             absolute_barrier  = contract.barrier;
             tick_shortcode    = contract.shortcode;
             tick_init         = '';
+            status            = contract.status;
             sell_spot_time    = +contract.sell_spot_time;
             exit_tick_time    = +contract.exit_tick_time;
+
+            if (data.id_render) {
+                id_render = data.id_render;
+            }
+
             const request     = {
                 ticks_history: contract.underlying,
                 start        : contract.date_start,
@@ -424,7 +442,8 @@ const TickDisplay = (() => {
     return {
         updateChart,
         init      : initialize,
-        resetSpots: () => { spots_list = {}; },
+        resetSpots: () => { spots_list = {}; $('#tick_chart').css('background-color', '#F2F2F2'); },
+        setStatus : (contract) => { status = contract.status; evaluateContractOutcome(contract); },
     };
 })();
 
