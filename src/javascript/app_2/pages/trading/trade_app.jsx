@@ -12,21 +12,28 @@ import MobileWidget    from './components/elements/mobile_widget.jsx';
 import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
 import { connect }     from '../../store/connect';
 
-const form_components_in_order = [
-    'start_date',
-    'duration',
-    'barrier',
-    'last_digit',
-    'amount',
+const form_components = [
+    {
+        name     : 'start_date',
+        Component: StartDate,
+    },
+    {
+        name     : 'duration',
+        Component: Duration,
+    },
+    {
+        name     : 'barrier',
+        Component: Barrier,
+    },
+    {
+        name     : 'last_digit',
+        Component: LastDigit,
+    },
+    {
+        name     : 'amount',
+        Component: Amount,
+    },
 ];
-
-const form_components = {
-    start_date: StartDate,
-    duration  : Duration,
-    barrier   : Barrier,
-    last_digit: LastDigit,
-    amount    : Amount,
-};
 
 class TradeApp extends React.Component {
     isVisible(component_name) {
@@ -34,11 +41,10 @@ class TradeApp extends React.Component {
     }
 
     renderParamPickers() {
-        return form_components_in_order
-            .filter(this.isVisible.bind(this))
-            .map(code => {
-                const FormComponent = form_components[code];
-                return <FormComponent key={code} />
+        return form_components
+            .filter(({ name }) => this.isVisible(name))
+            .map(({ name, Component }) => {
+                return <Component key={name} />
             });
     }
 
