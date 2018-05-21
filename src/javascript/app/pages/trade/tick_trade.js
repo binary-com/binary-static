@@ -470,6 +470,7 @@ const TickDisplay = (() => {
         if (data.is_sold) {
             addSellSpot();
         } else if (contract) {
+            entry_spot        = contract.entry_spot;
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
             tick_longcode     = contract.longcode;
