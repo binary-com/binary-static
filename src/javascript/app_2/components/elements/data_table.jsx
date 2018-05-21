@@ -37,7 +37,7 @@ class DataTable extends React.Component {
             https://stackoverflow.com/questions/4709390
         */
         return (
-            <table className={classnames('table', 'table-clone', { 'table-full-width': this.props.is_full_width })}>
+            <table className={classnames('table', 'table-clone', { 'table--full-width': this.props.is_full_width })}>
                 <thead className='table-head'>
                     <tr className='table-row'>
                         {this.renderHeaders()}
