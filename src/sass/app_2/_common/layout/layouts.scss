@@ -112,6 +112,11 @@
 }
 
 // Helpers
+.no-scroll {
+    overflow: hidden;
+    max-height: 100vh;
+}
+
 .desktop-only {
     @media (max-width: 768px) {
         display: none !important;
@@ -121,5 +126,11 @@
 .mobile-only {
     @media (min-width: 769px) {
         display: none !important;
+    }
+}
+
+.mobile-only {
+    @media (min-width: 769px) {
+        display: none;
     }
 }

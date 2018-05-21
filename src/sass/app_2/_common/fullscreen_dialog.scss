@@ -1,0 +1,96 @@
+/* stylelint-disable color-no-hex */
+$animation-duration: 0.2s;
+
+$header-height: 3.2rem;
+$shadow-cover-height: 3.6rem;
+
+$header-index: 4;
+$shadow-cover-index: 3;
+$shadow-index: 2;
+$content-index: 1;
+
+.fullscreen-dialog {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $animation-duration;
+    background: #fff;
+    // transform here would break fixed header
+
+    &--open {
+        opacity: 1;
+        pointer-events: auto;
+
+        & .fullscreen-dialog__content {
+            transform: scale(1);
+        }
+        & .fullscreen-dialog__header {
+            transform: translateY(0);
+        }
+    }
+    &__content {
+        box-sizing: border-box;
+        position: relative;
+        padding-top: $shadow-cover-height;
+        padding-bottom: 70px; // ios bottom bar fix
+        z-index: $content-index;
+        background: #fff;
+        transform: scale(0);
+        transition: all $animation-duration ease-out;
+    }
+    &__header {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        padding: 1rem;
+        height: $header-height;
+        z-index: $header-index;
+        background: #fff;
+        transform: translateY(-100%);
+        transition: all $animation-duration ease-out;
+        transition-delay: $animation-duration;
+    }
+    &__header-shadow-cover {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: $shadow-cover-height;
+        z-index: $shadow-cover-index;
+        background-color: #fff;
+    }
+    &__header-shadow {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: $header-height;
+        z-index: $shadow-index;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+    }
+    &__close-btn img {
+        display: block;
+    }
+    fieldset {
+        border: none;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
+/* stylelint-enable color-no-hex */
