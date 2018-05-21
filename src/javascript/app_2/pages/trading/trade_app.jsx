@@ -8,28 +8,38 @@ import Purchase        from './components/purchase.jsx';
 import StartDate       from './components/start_date.jsx';
 import Symbol          from './components/symbol.jsx';
 import Test            from './components/test.jsx';
+import MobileWidget    from './components/elements/mobile_widget.jsx';
 import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
 import { connect }     from '../../store/connect';
 
+const form_components_in_order = [
+    'start_date',
+    'duration',
+    'barrier',
+    'last_digit',
+    'amount',
+];
+
+const form_components = {
+    start_date: StartDate,
+    duration  : Duration,
+    barrier   : Barrier,
+    last_digit: LastDigit,
+    amount    : Amount,
+};
+
 class TradeApp extends React.Component {
     isVisible(component_name) {
-        const { form_components } = this.props;
-        return ['duration', 'amount', ...form_components].includes(component_name);
+        return this.props.form_components.includes(component_name);
     }
 
     renderParamPickers() {
-        // TODO: there must be a better way
-        const code_to_component = {
-            start_date: <StartDate key='start_date' />,
-            duration  : <Duration key='duration' />,
-            barrier   : <Barrier key='barrier' />,
-            last_digit: <LastDigit key='last_digit' />,
-            amount    : <Amount key='amount' />,
-        };
-
-        return Object.keys(code_to_component)
+        return form_components_in_order
             .filter(this.isVisible.bind(this))
-            .map(code => code_to_component[code]);
+            .map(code => {
+                const FormComponent = form_components[code];
+                return <FormComponent key={code} />
+            });
     }
 
     render() {
