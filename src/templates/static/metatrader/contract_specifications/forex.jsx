@@ -4,7 +4,7 @@ import { Table } from '../../../_common/components/elements.jsx';
 const Forex = () => {
     const txt_100000 = { text: '100,000' };
     const txt_01     = { text: '0.01' };
-    const txt_1000   =  { text: '1000:1' };
+    const txt_1000   = { text: '1000:1' };
     const txt_5000   = { text: '5000' };
     const txt_100    = { text: '100' };
 
