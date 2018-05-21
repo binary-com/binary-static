@@ -24,12 +24,12 @@ class MobileWidget extends React.PureComponent {
     }
 
     render() {
-        const minimized_children = React.Children.map(this.props.children, child => 
+        const minimized_param_values = React.Children.map(this.props.children, child => 
             React.cloneElement(child, {
                 is_minimized: true,
             }));
 
-        const full_children = React.Children.map(this.props.children, child => 
+        const param_pickers = React.Children.map(this.props.children, child => 
             React.cloneElement(child, {
                 is_nativepicker: true,
             }));
@@ -37,7 +37,7 @@ class MobileWidget extends React.PureComponent {
         return (
             <React.Fragment>
                 <div className='mobile-widget' onClick={this.handleWidgetClick}>
-                    {minimized_children}
+                    {minimized_param_values}
                 </div>
                 
                 <FullscreenDialog
@@ -45,7 +45,7 @@ class MobileWidget extends React.PureComponent {
                     visible={this.state.open}
                     onClose={this.handleDialogClose}
                 >
-                    {full_children}
+                    {param_pickers}
                 </FullscreenDialog>
             </React.Fragment>
         );
