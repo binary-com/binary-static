@@ -123,7 +123,7 @@
             cursor: pointer;
             margin: 0 auto;
             border: 1px solid transparent;
-            border-radius: 3px;
+            border-radius: $BORDER_RADIUS;
             padding: 0;
             color: rgba(0, 0, 0, 0.65);
             text-align: center;
@@ -161,14 +161,14 @@
             }
             &.disabled {
                 background: $COLOR_WHITE !important;
-                color: #e9e9ed !important; /* stylelint-disable-line color-no-hex */
+                color: $COLOR_GRAY !important;
                 cursor: default;
             }
             &:hover {
                 &:not(.disabled) {
                     cursor: pointer;
                 }
-                background: #e9e9ed; /* stylelint-disable-line color-no-hex */
+                background: $COLOR_GRAY;
             }
         }
     }
@@ -189,8 +189,8 @@ div.datepicker-container {
         background: $COLOR_WHITE;
         height: 32px;
         cursor: pointer;
-        border: solid 1px #e9e9ed; /* stylelint-disable-line color-no-hex */
-        border-radius: 4px;
+        border: solid 1px $COLOR_GRAY;
+        border-radius: $BORDER_RADIUS;
         font-size: 14px;
         line-height: 32px;
         vertical-align: middle;
