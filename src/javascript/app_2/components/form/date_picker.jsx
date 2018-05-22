@@ -583,6 +583,12 @@ class DatePicker extends React.PureComponent {
                         min={this.props.minDate}
                         max={this.props.maxDate}
                         onChange={(e) => {
+                            // fix for ios clear issue
+                            // https://github.com/facebook/react/issues/8938
+                            const target = e.nativeEvent.target;
+                            function iosClearDefault() { target.defaultValue = ''; }
+                            window.setTimeout(iosClearDefault, 0);
+
                             this.handleDateChange(e.target.value);
                         }}
                     />

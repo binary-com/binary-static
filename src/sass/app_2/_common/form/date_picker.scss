@@ -208,6 +208,7 @@ div.datepicker-container {
     }
     // style native date picker
     input[type=date] {
+        appearance: none;
         // sometimes we have 2 different elements with hover and focus in chrome mobile
         &:hover:not(:focus) {
             border-color: $COLOR_GRAY;
