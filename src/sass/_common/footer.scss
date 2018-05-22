@@ -29,6 +29,18 @@
         #gamstop_icon_footer {
             max-width: 120px;
         }
+        @media screen and (max-width: 480px) {
+            #iom_icon_footer {
+                max-width: 100px;
+            }
+            #lga_icon_footer {
+                max-width: 80px;
+            }
+            #gamstop_icon_footer {
+                max-width: 130px;
+            }
+        }
+
         #ratelimit-error-message, #site-status-message {
             position: fixed;
             top: 0;
@@ -51,9 +63,11 @@
             width: 100%;
         }
     }
-    #social-networks {
-        div {
-            padding-right: 10px !important;
+    #social-icons {
+        padding-right: 10px !important;
+
+        img {
+            max-height: 35px;
         }
     }
     #footer-last {
