@@ -122,11 +122,9 @@ const Client = (() => {
         const is_high_risk = /high/.test(State.getResponse('get_account_status.risk_classification'));
 
         return (
-            is_high_risk && (
-                ClientBase.isAccountOfType('financial') ?
-                    /(financial_assessment|trading_experience)_not_complete/.test(status) :
-                    /financial_assessment_not_complete/.test(status)
-            )
+            ClientBase.isAccountOfType('financial') ?
+                /(financial_assessment|trading_experience)_not_complete/.test(status) :
+                (is_high_risk && /financial_assessment_not_complete/.test(status))
         );
     };
 
