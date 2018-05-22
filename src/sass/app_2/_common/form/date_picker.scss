@@ -181,7 +181,7 @@ div.datepicker-container {
     &:hover .datepicker-display, .datepicker-display:focus {
         border-color: $COLOR_BLUE;
     }
-    &:hover .datepicker-native-overlay, .datepicker-display:focus + .datepicker-native-overlay {
+    .datepicker-display:focus + .datepicker-native-overlay {
         .datepicker-native-overlay__arrowhead .arrow-path {
             fill: $COLOR_BLUE;
         }
