@@ -370,6 +370,7 @@ const ViewPopup = (() => {
         'digit'         : 'digits',
         'upordown|range': 'staysinout',
         'touch'         : 'touchnotouch',
+        'reset'         : 'reset',
         'call|put'      : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
     };
 
