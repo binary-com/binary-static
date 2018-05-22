@@ -2,10 +2,9 @@ import React from 'react';
 import moment from 'moment';
 import DAO from '../../data/dao';
 import DataTable from '../../components/elements/data_table.jsx';
-import Client from '../../../app/base/client';
+import ClientBase from '../../../_common/base/client_base';
 import Loading from '../../../../templates/_common/components/loading.jsx';
-import { buildOauthApps } from '../../../app/common/get_app_details'; // eslint-disable-line
-import { formatMoney } from '../../../app/common/currency';
+import { formatMoney } from '../../../_common/base/currency_base';
 import { localize } from '../../../_common/localize';
 import { getPropertyValue } from '../../../_common/utility';
 
@@ -66,7 +65,7 @@ const contract_type_display = {
 class Portfolio extends React.PureComponent  {
     constructor(props) {
         super(props);
-        const currency = Client.get('currency').toLowerCase();
+        const currency = ClientBase.get('currency').toLowerCase();
 
         const columns = [
             {

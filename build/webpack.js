@@ -4,7 +4,7 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 // const UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin')['default'];
 
 module.exports = function (grunt) {
-    const isProduction = grunt.cli.tasks[0] === 'release';
+    const is_production = grunt.cli.tasks[0] === 'release';
     const plugins = [
         new CircularDependencyPlugin({
             failOnError: true,
@@ -39,10 +39,10 @@ module.exports = function (grunt) {
         // }),
     ];
 
-    if (isProduction) {
+    if (is_production) {
         plugins.push(
             new webpack.DefinePlugin({
-                '__REACT_DEVTOOLS_GLOBAL_HOOK__': `({ isDisabled: true })`
+                '__REACT_DEVTOOLS_GLOBAL_HOOK__': '({ isDisabled: true })'
             }),
             new webpack.DefinePlugin({
                 'process.env': {
@@ -76,20 +76,20 @@ module.exports = function (grunt) {
         node: {
             fs: 'empty',
         },
-        // devtool: isProduction ? 'source-map' : 'cheap-source-map',
+        // devtool: is_production ? 'source-map' : 'cheap-source-map',
         cache: true,
         stats: {
             chunks: false,
         },
         entry: {
-            [isProduction ? 'binary.min'     :'binary']    : './src/javascript',
-            [isProduction ? 'binary_app.min' :'binary_app']: './src/javascript/app_2',
+            [is_production ? 'binary.min'     :'binary']    : './src/javascript',
+            [is_production ? 'binary_app.min' :'binary_app']: './src/javascript/app_2',
         },
         output: {
             path         : path.resolve(__dirname, `../${global.dist}/js/`),
             filename     : '[name].js',
             chunkFilename: '[name]_[chunkhash].min.js',
-            publicPath   : `${isProduction || grunt.file.exists(`${process.cwd()}/scripts/CNAME`) ? '' : '/binary-static'}${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}/js/`,
+            publicPath   : `${is_production || grunt.file.exists(`${process.cwd()}/scripts/CNAME`) ? '' : '/binary-static'}${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}/js/`,
         },
         resolve: {
             extensions: ['.js', '.jsx'],
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
                         plugins: [
                             'transform-decorators-legacy',
                             'transform-object-rest-spread',
-                            'transform-class-properties'
+                            'transform-class-properties',
                         ],
                         compact: false,
                     },

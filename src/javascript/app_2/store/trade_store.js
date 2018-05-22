@@ -1,8 +1,10 @@
-import moment from 'moment';
-import { observable, action } from 'mobx';
-import Client from '../../_common/base/client_base';
-import ContractType from '../pages/trading/actions/helpers/contract_type';
-import actions from '../pages/trading/actions/index';
+import {
+    action,
+    observable }     from 'mobx';
+import moment        from 'moment';
+import ContractType  from '../pages/trading/actions/helpers/contract_type';
+import actions       from '../pages/trading/actions/index';
+import Client        from '../../_common/base/client_base';
 
 export default class TradeStore {
     time_interval = undefined;
@@ -56,7 +58,7 @@ export default class TradeStore {
     @observable expiry_type         = 'duration';
     @observable duration            = 15;
     @observable duration_unit       = '';
-    @observable duration_units_list = {};
+    @observable duration_units_list = [];
     @observable expiry_date         = null;
     @observable expiry_time         = '09:40 pm';
 

@@ -1,9 +1,11 @@
-import moment from 'moment';
-import DAO from '../../../../data/dao';
-import { cloneObject, getPropertyValue } from '../../../../../_common/utility';
-import { localize } from '../../../../../_common/localize';
-import { get as getLanguage } from '../../../../../_common/language';
-import { buildDurationConfig } from './duration';
+import moment                   from 'moment';
+import { buildDurationConfig }  from './duration';
+import DAO                      from '../../../../data/dao';
+import { get as getLanguage }   from '../../../../../_common/language';
+import { localize }             from '../../../../../_common/localize';
+import {
+    cloneObject,
+    getPropertyValue }          from '../../../../../_common/utility';
 
 
 const ContractType = (() => {
@@ -217,7 +219,7 @@ const ContractType = (() => {
         };
     };
 
-    const getComponents = (c_type) => ({ form_components: contract_types[c_type].components });
+    const getComponents = (c_type) => ({ form_components: ['duration', 'amount', ...contract_types[c_type].components] });
 
     const getDurationUnitsList = (contract_type, contract_start_type) => {
         const duration_units_list = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'units_display', contract_start_type]) || [];
