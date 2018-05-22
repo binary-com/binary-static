@@ -249,6 +249,7 @@ const Durations = (() => {
         Defaults.set('duration_amount', unit_value);
         displayExpiryType();
         Dropdown('#expiry_type');
+
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
@@ -571,6 +572,8 @@ const Durations = (() => {
             duration_wrapper_element.classList.remove('error-msg');
             if (Reset.isReset(Contract.form())) {
                 Reset.displayResetTime(duration_amount_element.value, Defaults.get('duration_units'));
+            } else {
+                Reset.hideResetTime();
             }
         }
     };
