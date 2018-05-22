@@ -101,11 +101,11 @@ class ContractsPopUp extends React.PureComponent {
             <div
                 ref={this.setWrapperRef}
                 className={container_classes.join(' ')}
+                onClick={this.handleVisibility}
+                onBlur={this.handleVisibility}
             >
                 <div
                     className={`contracts-popup-display ${this.state.is_list_visible ? 'clicked': ''}`}
-                    onClick={this.handleVisibility}
-                    onBlur={this.handleVisibility}
                 >
                     <i className={`contract-icon ic-${this.props.value}`} />
                     <span name={this.props.name} value={this.props.value}>

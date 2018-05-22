@@ -1,23 +1,20 @@
 div.contracts-popup-container {
-    position: absolute;
+    position: relative;
     margin: 8px 0;
-    top: 10px;
-    left: 35%;
-    z-index: 2;
+    z-index: 99;
+    cursor: pointer;
+    background: $COLOR_WHITE;
+    border: solid 1px $COLOR_LIGHT_GRAY;
+    border-radius: 4px;
 
+    &.mobile-only {
+        border: solid 1px $COLOR_BLUE;
+    }
     .contracts-popup-display {
         display: inline-flex;
         align-items: center;
         justify-content: flex-start;
-        min-width: 200px;
-        max-width: 200px;
-        width: 100%;
-        background: $COLOR_WHITE;
-        height: 28px;
-        cursor: pointer;
-        border: solid 1px $COLOR_LIGHT_GRAY;
-        border-radius: 4px;
-        padding: 10px 8px;
+        padding: 2px 8px;
 
         span {
             font-size: 1rem;
@@ -101,20 +98,14 @@ div.contracts-popup-container {
 
         .list-container {
             position: absolute;
-            width: 200%;
-            min-width: 500px;
+            width: 100%;
             display: grid;
             z-index: 2;
             background: $COLOR_WHITE;
             border: solid 1px $COLOR_LIGHT_GRAY;
 
             .list-item {
-                &:nth-child(odd) {
-                    grid-column: 1;
-                }
-                &:nth-child(even) {
-                    grid-column: 2;
-                }
+                grid-column: 1;
             }
         }
     }

@@ -52,21 +52,20 @@ class TradeApp extends React.Component {
                 <div className='chart-container notice-msg'>
                     <SmartCharts />
                     {/* }<Test /> */}
-                    <ContractType className='desktop-only' />
-                    <ContractType className='mobile-only' is_mobile_widget />
                 </div>
-
                 <div className='sidebar-container desktop-only'>
+                    <fieldset className='trade-types'>
+                        <ContractType className='desktop-only' />
+                    </fieldset>
                     {this.renderParamPickers()}
                     <Purchase />
                 </div>
-
+                <ContractType className='mobile-only' is_mobile_widget />
                 <div className='mobile-only'>
                     <MobileWidget>
                         {this.renderParamPickers()}
                     </MobileWidget>
                 </div>
-
                 <div className='offset-container'>
                     <PortfolioDrawer
                         onClick={this.props.togglePortfolioDrawer}

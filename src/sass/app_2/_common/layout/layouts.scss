@@ -38,11 +38,14 @@
         .sidebar-container {
             position: relative;
         }
+        .offset-container {
+            display: none;
+        }
         & > * {
             grid-column: col-start / span 12;
         }
         @media (max-width: 768px) {
-            grid-template-rows: 0.85fr 1fr;
+            grid-template-rows: 1fr auto auto;
         }
         @media (min-width: 769px) {
             .chart-container {
@@ -84,6 +87,7 @@
         }
         @media (min-width: 1025px) {
             .offset-container {
+                display: unset;
                 position: absolute;
                 height: 100vh;
                 width: 100%;
