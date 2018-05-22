@@ -182,8 +182,8 @@ div.datepicker-container {
         border-color: $COLOR_BLUE;
     }
     &:hover .datepicker-native-overlay, .datepicker-display:focus + .datepicker-native-overlay {
-        &:after {
-            color: $COLOR_BLUE;
+        .datepicker-native-overlay__arrowhead .arrow-path {
+            fill: $COLOR_BLUE;
         }
     }
     .datepicker-display, .datepicker-native-overlay {
@@ -211,15 +211,15 @@ div.datepicker-container {
         background-clip: padding-box;
         text-align: left;
 
-        &:after {
-            content: '\002303';
-            color: $COLOR_LIGHT_GRAY;
+        &__arrowhead {
             display: block;
             position: absolute;
-            top: -3px;
+            top: 8px;
             right: 8px;
-            font-size: 1.1rem;
-            transform: rotate(180deg);
+
+            & .arrow-path {
+                fill: $COLOR_LIGHT_GRAY;
+            }
         }
     }
     // style native date picker

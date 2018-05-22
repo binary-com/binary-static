@@ -1,6 +1,7 @@
 import moment       from 'moment';
 import React        from 'react';
 import classnames   from 'classnames';
+import ArrowHead    from '../elements/arrowhead.jsx';
 import { localize } from '../../../_common/localize';
 
 class Calendar extends React.Component {
@@ -594,6 +595,7 @@ class DatePicker extends React.PureComponent {
                     />
                     <label className='datepicker-native-overlay' htmlFor={this.props.name}>
                         {value || this.props.placeholder}
+                        <ArrowHead className='datepicker-native-overlay__arrowhead' />
                     </label>
                 </div>
             );
