@@ -412,7 +412,7 @@ const Durations = (() => {
         }
         fragment.appendChild(option);
 
-        if (has_end_date) {
+        if (has_end_date && !Reset.isReset(Contract.form())) {
             option = createElement('option', { value: 'endtime', text: localize('End Time') });
             if (current_selected === 'endtime') {
                 option.setAttribute('selected', 'selected');
