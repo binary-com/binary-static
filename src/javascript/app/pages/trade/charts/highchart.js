@@ -180,12 +180,13 @@ const Highchart = (() => {
                     const page_underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
                     if (page_underlying !== (tick || ohlc).symbol) {
                         ViewPopupUI.storeSubscriptionID(response_id, true);
-                        ViewPopupUI.setStreamFunction();
+                        ViewPopupUI.setOnCloseFunction();
                     } else {
-                        ViewPopupUI.setStreamFunction(GetTicks.request);
+                        ViewPopupUI.setOnCloseFunction(GetTicks.request);
                     }
                 } else {
                     ViewPopupUI.storeSubscriptionID(response_id, true);
+                    ViewPopupUI.setOnCloseFunction();
                 }
                 is_response_id_set = true;
             }
