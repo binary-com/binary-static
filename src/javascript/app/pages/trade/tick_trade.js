@@ -399,7 +399,7 @@ const TickDisplay = (() => {
 
         if (entry_barrier !== reset_barrier) {
             removePlotLine('tick-barrier', 'y');
-
+            
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-reset-barrier',
                 value : reset_barrier,
@@ -511,9 +511,15 @@ const TickDisplay = (() => {
         init      : initialize,
         resetSpots: () => { spots_list = {}; $(`#${id_render}`).css('background-color', '#F2F2F2'); },
         setStatus : (contract) => {
-            status = contract.status;
+            status         = contract.status;
             sell_spot_time = +contract.sell_spot_time;
             exit_tick_time = +contract.exit_tick_time;
+            barrier        = contract.barrier;
+            entry_spot     = contract.entry_spot;
+            if (contract_category === 'reset' && (+entry_spot !== +barrier)) {
+                if (!barrier || !entry_spot) return;
+                plotResetSpot(barrier * 1);
+            }
             evaluateContractOutcome();
         },
     };
