@@ -6,7 +6,6 @@ import Duration        from './components/duration.jsx';
 import LastDigit       from './components/last_digit.jsx';
 import Purchase        from './components/purchase.jsx';
 import StartDate       from './components/start_date.jsx';
-import Symbol          from './components/symbol.jsx';
 // import Test         from './components/test.jsx';
 import SmartCharts     from '../../components/charts/smartcharts.jsx';
 import MobileWidget    from './components/elements/mobile_widget.jsx';
@@ -52,7 +51,6 @@ class TradeApp extends React.Component {
             <div id='trade_container' className={this.props.is_portfolio_drawer_on ? 'show' : undefined}>
                 <div className='chart-container notice-msg'>
                     <SmartCharts />
-                    <Symbol />
                     {/* }<Test /> */}
                     <ContractType className='desktop-only' />
                     <ContractType className='mobile-only' is_mobile_widget />

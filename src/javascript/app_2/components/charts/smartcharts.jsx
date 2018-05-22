@@ -12,7 +12,7 @@ const forget = (match_values, callback) => (
     DAO.forget('ticks_history', callback, match_values)
 );
 
-const SmartCharts = () =>  {
+const SmartCharts = ({ onSymbolChange }) =>  {
     const is_mobile = window.innerWidth <= 767;
     return (
         <React.Fragment>
@@ -20,7 +20,14 @@ const SmartCharts = () =>  {
                 requestSubscribe={subscribe}
                 requestForget={forget}
                 requestAPI={DAO.sendRequest.bind(DAO)}
-                onSymbolChange={(symbol) => console.log('Symbol has changed to:', symbol)}
+                onSymbolChange={(symbol_obj) => {
+                    onSymbolChange({
+                        target: {
+                            name : 'symbol',
+                            value: symbol_obj.symbol,
+                        },
+                    });
+                }}
                 isMobile={is_mobile}
             />
         </React.Fragment>
@@ -29,7 +36,7 @@ const SmartCharts = () =>  {
 
 export default connect(
     ({trade}) => ({
-        active_symbols: trade.active_symbols,
+        onSymbolChange: trade.handleChange,
         initial_symbol: trade.symbol,
     })
 )(SmartCharts);
