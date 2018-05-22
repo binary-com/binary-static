@@ -203,14 +203,15 @@ div.datepicker-container {
         position: absolute;
         left: 0;
         top: 0;
-        width: calc(100% - 2px);
-        height: calc(100% - 2px);
-        line-height: 30px;
-        margin: 1px;
         padding-top: 0;
         padding-bottom: 0;
-        border: none;
+        border-color: transparent;
+        background-clip: padding-box;
         text-align: left;
+    }
+    .datepicker-display::-webkit-date-and-time-value {
+        // style chrome native date picker
+        margin: 0;
     }
     // hides placeholder when input is in focus
     // on mobile: press clear -> focused and empty :(
