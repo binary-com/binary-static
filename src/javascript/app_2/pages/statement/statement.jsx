@@ -7,7 +7,6 @@ import Client             from '../../../_common/base/client_base';
 import { formatMoney }    from '../../../_common/base/currency_base';
 import { localize }       from '../../../_common/localize';
 import { toTitleCase }    from '../../../_common/string_util';
-import { throttlebounce } from '../../../_common/utility';
 import CardList           from '../../components/elements/card_list.jsx';
 import DataTable          from '../../components/elements/data_table.jsx';
 import DatePicker         from '../../components/form/date_picker.jsx';

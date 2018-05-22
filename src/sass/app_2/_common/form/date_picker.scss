@@ -178,10 +178,8 @@ div.datepicker-container {
     position: relative;
     margin: 8px 0;
 
-    .datepicker-display {
-        &:hover, &:focus {
-            border-color: $COLOR_BLUE;
-        }
+    &:hover .datepicker-display, .datepicker-display:focus {
+        border-color: $COLOR_BLUE;
     }
     .datepicker-display, .datepicker-native-placeholder {
         background: $COLOR_WHITE;
