@@ -592,7 +592,9 @@ class DatePicker extends React.PureComponent {
                             this.handleDateChange(e.target.value);
                         }}
                     />
-                    {!value && <label className='datepicker-native-placeholder' htmlFor={this.props.name}>{this.props.placeholder}</label>}
+                    <label className='datepicker-native-overlay' htmlFor={this.props.name}>
+                        {value || this.props.placeholder}
+                    </label>
                 </div>
             );
         }

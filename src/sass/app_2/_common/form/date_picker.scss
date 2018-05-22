@@ -195,16 +195,25 @@ div.datepicker-container {
         font-weight: 300;
         transition: border 0.25s;
     }
-    .datepicker-native-placeholder {
+    .datepicker-native-overlay {
         position: absolute;
         left: 0;
         top: 0;
-        width: 80%;
+        width: 100%;
         padding-top: 0;
         padding-bottom: 0;
         border-color: transparent;
         background-clip: padding-box;
         text-align: left;
+
+        &:after {
+            content: '\25bc';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 8px;
+            font-size: 10px;
+        }
     }
     // style native date picker
     input[type=date] {
@@ -217,12 +226,6 @@ div.datepicker-container {
             margin: 0;
         }
     }
-    // hides placeholder when input is in focus
-    // on mobile: press clear -> focused and empty :(
-    // on desktop (small width): focused input doesn't necessarily causes popup
-    // .datepicker-display:focus + .datepicker-native-placeholder {
-    //     visibility: hidden;
-    // }
     .picker-calendar-icon, .close-circle-icon {
         position: absolute;
         width: 14px;
