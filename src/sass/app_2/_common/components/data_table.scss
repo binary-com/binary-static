@@ -68,7 +68,7 @@ $side-padding: 2rem;
     // styles for fixed table header
     &.table-clone {
         position: fixed;
-        z-index: 90;
+        z-index: 80;
         pointer-events: none;
 
         .table-head {
