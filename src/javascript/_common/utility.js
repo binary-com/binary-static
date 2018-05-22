@@ -201,31 +201,6 @@ const findParent = (el, selector) => {
     return null;
 };
 
-/*
- * Function is called only once each ${wait} seconds
- * last call is debounced
- */
-const throttlebounce = (func, wait = 500) => {
-    let recently_called = false;
-    let timeout;
-    return function (...args) {
-        const context = this;
-        clearTimeout(timeout);
-        if (!recently_called) {
-            func.apply(context, args);
-            recently_called = true;
-            setTimeout(() => {
-                recently_called = false;
-            }, wait);
-        }
-        else {
-            timeout = setTimeout(() => {
-                func.apply(context, args);
-            }, wait);
-        }
-    };
-};
-  
 let static_hash;
 const getStaticHash = () => {
     static_hash = static_hash || (document.querySelector('script[src*="vendor.min.js"]').getAttribute('src') || '').split('?')[1];
@@ -246,6 +221,5 @@ module.exports = {
     createElement,
     applyToAllElements,
     findParent,
-    throttlebounce,
     getStaticHash,
 };
