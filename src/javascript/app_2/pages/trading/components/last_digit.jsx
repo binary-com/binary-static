@@ -12,20 +12,33 @@ const last_digit_numbers = [...Array(10).keys()].map(number => ({
 const LastDigit = ({
     last_digit,
     onChange,
-}) =>  (
-    <Fieldset
-        header={localize('Last Digit Prediction')}
-        icon='digits'
-        tooltip={localize('Text for Last Digits goes here.')}
-    >
-        <Dropdown
-            list={last_digit_numbers}
-            value={last_digit}
-            name='last_digit'
-            onChange={onChange}
-        />
-    </Fieldset>
-);
+    is_nativepicker,
+    is_minimized,
+}) =>  {
+    if (is_minimized) {
+        return (
+            <div className='fieldset-minimized'>
+                <span className='icon digits' />
+                {`${localize('Last Digit')}: ${last_digit}`}
+            </div>
+        );
+    }
+    return (
+        <Fieldset
+            header={localize('Last Digit Prediction')}
+            icon='digits'
+            tooltip={localize('Text for Last Digits goes here.')}
+        >
+            <Dropdown
+                list={last_digit_numbers}
+                value={last_digit}
+                name='last_digit'
+                onChange={onChange}
+                is_nativepicker={is_nativepicker}
+            />
+        </Fieldset>
+    );
+};
 
 export default connect(
     ({trade}) => ({

@@ -9,12 +9,42 @@ import StartDate       from './components/start_date.jsx';
 import Symbol          from './components/symbol.jsx';
 // import Test         from './components/test.jsx';
 import SmartCharts     from '../../components/charts/smartcharts.jsx';
+import MobileWidget    from './components/elements/mobile_widget.jsx';
 import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
 import { connect }     from '../../store/connect';
 
+const form_components = [
+    {
+        name     : 'start_date',
+        Component: StartDate,
+    },
+    {
+        name     : 'duration',
+        Component: Duration,
+    },
+    {
+        name     : 'barrier',
+        Component: Barrier,
+    },
+    {
+        name     : 'last_digit',
+        Component: LastDigit,
+    },
+    {
+        name     : 'amount',
+        Component: Amount,
+    },
+];
+
 class TradeApp extends React.Component {
     isVisible(component_name) {
-        return this.props.form_components.indexOf(component_name) >= 0;
+        return this.props.form_components.includes(component_name);
+    }
+
+    renderParamPickers() {
+        return form_components
+            .filter(({ name }) => this.isVisible(name))
+            .map(({ name, Component }) => <Component key={name} />);
     }
 
     render() {
@@ -23,18 +53,20 @@ class TradeApp extends React.Component {
                 <div className='chart-container notice-msg'>
                     <SmartCharts />
                     <Symbol />
-                    <ContractType />
                     {/* }<Test /> */}
+                    <ContractType className='desktop-only' />
+                    <ContractType className='mobile-only' is_mobile_widget />
                 </div>
+
                 <div className='sidebar-container desktop-only'>
-
-                    {this.isVisible('start_date') && <StartDate />}
-                    <Duration />
-                    {this.isVisible('barrier') && <Barrier />}
-                    {this.isVisible('last_digit') && <LastDigit />}
-                    <Amount />
-
+                    {this.renderParamPickers()}
                     <Purchase />
+                </div>
+
+                <div className='mobile-only'>
+                    <MobileWidget>
+                        {this.renderParamPickers()}
+                    </MobileWidget>
                 </div>
 
                 <div className='offset-container'>

@@ -219,7 +219,7 @@ const ContractType = (() => {
         };
     };
 
-    const getComponents = (c_type) => ({ form_components: contract_types[c_type].components });
+    const getComponents = (c_type) => ({ form_components: ['duration', 'amount', ...contract_types[c_type].components] });
 
     const getDurationUnitsList = (contract_type, contract_start_type) => {
         const duration_units_list = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'units_display', contract_start_type]) || [];

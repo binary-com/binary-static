@@ -494,6 +494,21 @@ class DatePicker extends React.PureComponent {
 
     render() {
         const value = this.getPickerValue();
+        if (this.props.is_nativepicker) {
+            return (
+                <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
+                    <input
+                        id={this.props.id}
+                        name={this.props.name}
+                        type='date'
+                        value={value}
+                        onChange={(e) => {
+                            this.handleDateChange(e.target.value);
+                        }}
+                    />
+                </div>
+            );
+        }
         return (
             <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
                 <div
