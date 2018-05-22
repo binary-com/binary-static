@@ -135,7 +135,7 @@ class Portfolio extends React.PureComponent  {
             columns,
             data_source: [],
             error      : '',
-            footer, 
+            footer,
             is_loading : true,
         };
     }
@@ -202,10 +202,10 @@ class Portfolio extends React.PureComponent  {
     }
 
     updateFooterTotals = (portfolioArr) => {
-        let indicative = 0; 
-        let payout     = 0; 
+        let indicative = 0;
+        let payout     = 0;
         let purchase   = 0;
-        
+
         portfolioArr.forEach((portfolio_item) => {
             indicative += (+portfolio_item.indicative.amount);
             payout     += (+portfolio_item.payout);
