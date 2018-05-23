@@ -44,11 +44,14 @@ const Reset = (() => {
 
     const hideResetTime = () => { CommonFunctions.getElementById('reset_time').style.display = 'none'; };
 
+    const isNewBarrier = (entry_barrier, current_barrier) => (+entry_barrier !== +current_barrier);
+
     const isReset = (contract_type) => /reset/i.test(contract_type);
 
     return {
         displayResetTime,
         hideResetTime,
+        isNewBarrier,
         isReset,
         ticks: [], // store ticks for Reset
     };

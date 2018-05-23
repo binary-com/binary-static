@@ -391,11 +391,11 @@ const TickDisplay = (() => {
     };
 
     const plotResetSpot = (r_barrier) => {
-        if (reset_spot_plotted || !chart) return;
+        if (reset_spot_plotted || !chart || !entry_spot) return;
 
         const reset_time_index = Math.floor(number_of_ticks / 2);
         const entry_barrier    = entry_spot * 1;
-        const reset_barrier    = r_barrier || absolute_barrier * 1;
+        const reset_barrier    = (r_barrier || absolute_barrier) * 1;
 
         if (entry_barrier !== reset_barrier) {
             removePlotLine('tick-barrier', 'y');
@@ -514,11 +514,10 @@ const TickDisplay = (() => {
             status         = contract.status;
             sell_spot_time = +contract.sell_spot_time;
             exit_tick_time = +contract.exit_tick_time;
-            barrier        = contract.barrier;
-            entry_spot     = contract.entry_spot;
-            if (contract_category === 'reset' && (+entry_spot !== +barrier)) {
-                if (!barrier || !entry_spot) return;
-                plotResetSpot(barrier * 1);
+            barrier        = +contract.barrier;
+            entry_spot     = +contract.entry_spot;
+            if (contract_category === 'reset' && (entry_spot !== barrier)) {
+                plotResetSpot(barrier);
             }
             evaluateContractOutcome();
         },

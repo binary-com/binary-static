@@ -162,7 +162,7 @@ const ViewPopup = (() => {
                 '',
                 true);
 
-            if (Reset.isReset(contract.contract_type) && +contract.entry_spot !== +contract.barrier) {
+            if (Reset.isReset(contract.contract_type) && Reset.isNewBarrier(contract.entry_spot, contract.barrier)) {
                 containerSetText(
                     'trade_details_barrier',
                     sold_before_start ? '-' : addComma(contract.entry_spot),
@@ -263,8 +263,8 @@ const ViewPopup = (() => {
         }
 
         const { barrier, contract_type, entry_spot } = contract;
-        if (Reset.isReset(contract_type) && (+entry_spot !== +barrier)) {
-            TickDisplay.plotResetSpot(barrier * 1);
+        if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)) {
+            TickDisplay.plotResetSpot(barrier);
         }
         sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
         contract.chart_validation_error = contract.validation_error;
