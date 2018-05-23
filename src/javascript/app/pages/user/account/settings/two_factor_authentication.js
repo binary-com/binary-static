@@ -1,8 +1,19 @@
+const BinarySocket = require('../../../../base/socket');
+const Client = require('../../../../base/client');
 const FormManager  = require('../../../../common/form_manager');
-const BinarySocket         = require('../../../../base/socket');
+const QRCode = require('./../../../../../../../node_modules/davidshimjs-qrcodejs/qrcode');
+const localize     = require('../../../../../_common/localize').localize;
+const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
+
+// TODO:
+// 1. Setup library
+// 2. Error handling
+// 3. state handling
+// 4. ui
 
 const TwoFactorAuthentication = (() => {
-    let enabled_state;
+    let enabled_state,
+        qrcode;
     // loader
     const onLoad = () => {
         // initialize form
@@ -12,9 +23,13 @@ const TwoFactorAuthentication = (() => {
     const init = () => {
         BinarySocket.send({ account_security: 1, totp_action: 'status'}).then((res) => {
             // TODO: handle error
-
-            enabled_state = res.account_security.totp.is_enabled ? 'should_disable' : 'should_enable';
+            enabled_state = res.account_security.totp.is_enabled ? 'enabled' : 'disabled';
             const form_id = '#frm_two_factor_auth';
+
+            $('#two_factor_loading').remove();
+            $(`#${enabled_state}`).setVisibility(1);
+            $(form_id).setVisibility(1);
+            console.log($(form_id));
 
             FormManager.init(form_id, [
                 { selector: '#otp', validations: ['req'], request_field: 'otp' },
@@ -26,40 +41,46 @@ const TwoFactorAuthentication = (() => {
                 fnc_response_handler: handler,
             });
 
-            $(`#${enabled_state}`).setVisibility(1);
-            if (enabled_state === 'should_enable') {
-                initEnable();
-            } else if (enabled_state === 'should_disable') {
-                initDisable();
+            if (enabled_state === 'disabled') {
+                initQRCode();
             }
         });
     };
 
-    const initEnable = () => {
-        // initEnabled
-        // 1. get key
+    const initQRCode = () => {
         BinarySocket.send({ account_security: 1, totp_action: 'generate'}).then((res) => {
             // TODO: handle error
+            $('#qrcode_loading').setVisibility(0);
             makeQrCode(res.account_security.totp.secret_key);
         });
     };
 
-    const initDisable = () => {
-        // init disable
-        // disabled state:
-    };
-
     const makeQrCode = (key) => {
-        console.log(key);
-        handler();
-        // create QR code from key
+        const otpAuth = `otpauth://totp/${Client.get('email')}?secret=${key}&issuer=Binary.com`;
+        qrcode = new QRCode(document.getElementById('qrcode'), {
+            text  : otpAuth,
+            width : 130,
+            height: 130,
+        });
+        console.log(qrcode);
     };
 
-    const handler = () => {
-        // handle submit of the form
-        // 1. error - show error
-        // 2. enabled - show success + initialize enabled state (?)
-        // 3. disabled - show success + initialize disabled state (?)
+    const handler = (res) => {
+        console.log('handler: ', res);
+        if ('error' in res) {
+            showFormMessage(getPropertyValue(res, ['error', 'message']) || 'Sorry, an error occurred.');
+        } else {
+            showFormMessage(`You have successfully ${enabled_state === 'enabled' ? 'disabled' : 'enabled' } two-factor authentication for your account`, true);
+        }
+    };
+
+    const showFormMessage = (msg, is_success) => {
+        $('#formMessage')
+            .attr('class', is_success ? 'success-msg' : 'error-msg')
+            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
+            .css('display', 'block')
+            .delay(5000)
+            .fadeOut(1000);
     };
 
     return {
