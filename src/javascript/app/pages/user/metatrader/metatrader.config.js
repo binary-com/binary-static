@@ -46,8 +46,8 @@ const MetaTraderConfig = (() => {
                 BinarySocket.wait('get_account_status').then((response_get_account_status) => {
                     const $message = $messages.find('#msg_real_financial').clone();
                     let is_ok = true;
-                    if (/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status)) {
-                        $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`);
+                    if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.get_account_status.status)) {
+                        $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
                         is_ok = false;
                     }
                     if (response_get_account_status.get_account_status.prompt_client_to_authenticate) {
