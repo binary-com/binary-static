@@ -1,5 +1,8 @@
+const FormManager  = require('../../../../common/form_manager');
+const BinarySocket         = require('../../../../base/socket');
+
 const TwoFactorAuthentication = (() => {
-    // two factor auth logic here
+    let enabled_state;
     // loader
     const onLoad = () => {
         // initialize form
@@ -7,17 +10,46 @@ const TwoFactorAuthentication = (() => {
     };
 
     const init = () => {
-        // ws - getStatus
-        // enabled state: show form
-        // disabled state:
-        // 1. get key
-        // show signup + form
-        // ws - generateKey
-        // 2. make QR
-        initQR('key');
+        BinarySocket.send({ account_security: 1, totp_action: 'status'}).then((res) => {
+            // TODO: handle error
+
+            enabled_state = res.account_security.totp.is_enabled ? 'should_disable' : 'should_enable';
+            const form_id = '#frm_two_factor_auth';
+
+            FormManager.init(form_id, [
+                { selector: '#otp', validations: ['req'], request_field: 'otp' },
+                { request_field: 'account_security', value: 1 },
+                { request_field: 'totp_action', value: res.account_security.totp.is_enabled ? 'disable' : 'enable' },
+            ]);
+            FormManager.handleSubmit({
+                form_selector       : form_id,
+                fnc_response_handler: handler,
+            });
+
+            $(`#${enabled_state}`).setVisibility(1);
+            if (enabled_state === 'should_enable') {
+                initEnable();
+            } else if (enabled_state === 'should_disable') {
+                initDisable();
+            }
+        });
     };
 
-    const initQR = (key) => {
+    const initEnable = () => {
+        // initEnabled
+        // 1. get key
+        BinarySocket.send({ account_security: 1, totp_action: 'generate'}).then((res) => {
+            // TODO: handle error
+            makeQrCode(res.account_security.totp.secret_key);
+        });
+    };
+
+    const initDisable = () => {
+        // init disable
+        // disabled state:
+    };
+
+    const makeQrCode = (key) => {
         console.log(key);
         handler();
         // create QR code from key
