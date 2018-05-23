@@ -1,11 +1,13 @@
 @supports (display: grid) {
     #app_contents {
-        margin: 70px 0 40px;
+        margin: 56px 0 40px;
+        overflow: auto; // prevent margin collapse
     }
     /* trade-app layout */
     #trade_container {
         position: relative;
         margin: 0 15px;
+        padding-top: 14px;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: repeat(2, [row] auto);
@@ -117,12 +119,12 @@
 
 .desktop-only {
     @media (max-width: 768px) {
-        display: none;
+        display: none !important;
     }
 }
 
 .mobile-only {
     @media (min-width: 769px) {
-        display: none;
+        display: none !important;
     }
 }

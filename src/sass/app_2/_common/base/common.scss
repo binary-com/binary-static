@@ -14,7 +14,7 @@ select, input, textarea {
     font-weight: inherit;
     font-style: inherit;
     padding: 2px 3px;
-    border: 1px solid $COLOR_LIGHT_GRAY;
+    border: 1px solid $COLOR_GRAY;
     border-radius: $BORDER_RADIUS;
 }
 
@@ -39,4 +39,16 @@ fieldset {
 
 :-moz-placeholder { /* Firefox 18- */
     color: $COLOR_DARK_WHITE;
+}
+
+.container {
+    width: 100%;
+    max-width: $MAX_CONTAINER_WIDTH;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.hidden {
+    visibility: hidden !important;
+    transition: none !important;
 }
