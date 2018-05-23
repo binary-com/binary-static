@@ -235,14 +235,14 @@ const ViewPopup = (() => {
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
             else TickDisplay.updateChart({ is_sold: true }, contract);
         }
+        if (contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !is_sell_clicked) {
+            ViewPopupUI.forgetStreams();
+            BinarySocket.send({ sell_expired: 1 }).then((response) => {
+                getContract(response);
+            });
+        }
         if (is_ended) {
             contractEnded();
-            if (contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !is_sell_clicked) {
-                ViewPopupUI.forgetStreams();
-                BinarySocket.send({ sell_expired: 1 }).then((response) => {
-                    getContract(response);
-                });
-            }
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
             else TickDisplay.updateChart({ is_sold: true }, contract);
         } else {
