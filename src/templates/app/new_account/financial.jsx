@@ -59,9 +59,9 @@ const Financial = () => (
                 <SecretAnswer />
             </Fieldset>
 
+            <ProfessionalClient />
             <FinancialForm />
             <PepDeclaration />
-            <ProfessionalClient />
 
             <fieldset>
                 <div className='gr-12'>

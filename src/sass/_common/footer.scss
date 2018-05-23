@@ -24,8 +24,23 @@
             max-width: 90px;
         }
         #lga_icon_footer {
-            max-width: 140px;
+            max-width: 70px;
         }
+        #gamstop_icon_footer {
+            max-width: 120px;
+        }
+        @media screen and (max-width: 480px) {
+            #iom_icon_footer {
+                max-width: 110px;
+            }
+            #lga_icon_footer {
+                max-width: 80px;
+            }
+            #gamstop_icon_footer {
+                max-width: 130px;
+            }
+        }
+
         #ratelimit-error-message, #site-status-message {
             position: fixed;
             top: 0;
@@ -35,6 +50,24 @@
         }
         #site-status-message {
             z-index: 9999;
+        }
+    }
+    .lga-gamstop-icon-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+
+        div, a {
+            width: 100%;
+        }
+    }
+    #social-icons {
+        padding-right: 10px !important;
+
+        img {
+            max-height: 35px;
         }
     }
     #footer-last {
