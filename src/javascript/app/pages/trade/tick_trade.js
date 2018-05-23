@@ -198,7 +198,7 @@ const TickDisplay = (() => {
 
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-barrier',
-                value : addComma(barrier_quote),
+                value : barrier_quote,
                 label : { text: `Barrier (${addComma(barrier_quote)})`, align: 'center' },
                 color : 'green',
                 width : 2,
@@ -219,7 +219,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].removePlotLine('tick-barrier');
             chart.yAxis[0].addPlotLine({
                 id   : 'tick-barrier',
-                value: addComma(calc_barrier),
+                value: calc_barrier,
                 color: 'green',
                 label: {
                     text : `Average (${addComma(calc_barrier)})`,
@@ -237,7 +237,7 @@ const TickDisplay = (() => {
 
     const add = (indicator) => {
         chart.xAxis[0].addPlotLine({
-            value    : addComma(indicator.index),
+            value    : indicator.index,
             id       : indicator.id,
             label    : { text: indicator.label, x: /start_tick|entry_tick/.test(indicator.id) ? -15 : 5 },
             color    : '#e98024',
