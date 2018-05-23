@@ -235,27 +235,31 @@ div.datepicker-container {
     }
     .picker-calendar-icon, .close-circle-icon {
         position: absolute;
-        width: 14px;
-        height: 14px;
         right: 12px;
         top: 50%;
-        margin-top: -7px;
-        line-height: 14px;
+        transform: translateY(-50%);
         transition: all 0.3s;
         user-select: none;
         opacity: 0;
         pointer-events: none;
         cursor: pointer;
 
+        &:before {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 14px;
+            background-size: 14px 14px;
+        }
         &.show {
             opacity: 1;
             pointer-events: auto;
         }
         &.picker-calendar-icon:before {
-            content: url('../images/trading_app/common/calendar.svg');
+            background-image: url('../images/trading_app/common/calendar.svg');
         }
         &.close-circle-icon:before {
-            content: url('../images/trading_app/common/close_circle.svg');
+            background-image: url('../images/trading_app/common/close_circle.svg');
         }
     }
     .datepicker-calendar {
