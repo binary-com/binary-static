@@ -216,6 +216,7 @@ const Process = (() => {
 
     const forgetTradingStreams = () => {
         Price.processForgetProposals();
+        Price.processForgetProposalOpenContract();
         processForgetTicks();
     };
 

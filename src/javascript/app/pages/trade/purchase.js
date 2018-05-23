@@ -171,14 +171,27 @@ const Purchase = (() => {
                 subscribe             : 1,
             };
             BinarySocket.send(request, { callback: (response) => {
-                TickDisplay.setStatus(getPropertyValue(response, ['proposal_open_contract', 'status']));
+                if (response.proposal_open_contract) {
+                    TickDisplay.setStatus(response.proposal_open_contract);
+                    // force to sell the expired contract, in order to get the final status
+                    if (+response.proposal_open_contract.is_settleable === 1 &&
+                        !response.proposal_open_contract.is_sold) {
+                        BinarySocket.send({ sell_expired: 1 });
+                    }
+                }
             } });
         }
     };
 
     const updateSpotList = () => {
+        const $spots = $('#contract_purchase_spots');
+        if (!$spots.length || $spots.is(':hidden')) {
+            return;
+        }
+
         let duration = +getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']);
-        if ($('#contract_purchase_spots:hidden').length || !duration) {
+
+        if (!duration) {
             return;
         }
 
@@ -205,7 +218,6 @@ const Purchase = (() => {
                 }
             } });
         }
-
         const replace = d => `<strong>${d}</strong>`;
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {

@@ -39,9 +39,9 @@ const TickDisplay = (() => {
         tick_init,
         subscribe,
         response_id,
-        status,
         sell_spot_time,
-        exit_tick_time;
+        exit_tick_time,
+        status;
 
     let id_render = 'tick_chart';
 
@@ -56,8 +56,10 @@ const TickDisplay = (() => {
         abs_barrier          = data.abs_barrier;
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
-        if (options.id_render) {
-            id_render = options.id_render;
+        status               = '';
+
+        if (data.id_render) {
+            id_render = data.id_render;
         }
 
         if (data.show_contract_result) {
@@ -88,8 +90,9 @@ const TickDisplay = (() => {
                 _0: { label: 'Entry Spot', id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label: 'Exit Spot',
-                id   : 'exit_tick',
+                label    : 'Exit Spot',
+                id       : 'exit_tick',
+                dashStyle: 'Dash',
             };
         } else if (contract_category.match('callput')) {
             ticks_needed = number_of_ticks + 1;
@@ -97,8 +100,9 @@ const TickDisplay = (() => {
                 _0: { label: 'Entry Spot', id: 'entry_tick' },
             };
             x_indicators[`_${number_of_ticks}`] = {
-                label: 'Exit Spot',
-                id   : 'exit_tick',
+                label    : 'Exit Spot',
+                id       : 'exit_tick',
+                dashStyle: 'Dash',
             };
         } else if (contract_category.match('touchnotouch')) {
             ticks_needed = number_of_ticks + 1;
@@ -111,8 +115,9 @@ const TickDisplay = (() => {
                 _0: { label: 'Tick 1', id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label: `Tick ${number_of_ticks}`,
-                id   : 'last_tick',
+                label    : `Tick ${number_of_ticks}`,
+                id       : 'last_tick',
+                dashStyle: 'Dash',
             };
         } else {
             x_indicators = {};
@@ -240,16 +245,20 @@ const TickDisplay = (() => {
     };
 
     const evaluateContractOutcome = () => {
-        if (status === 'won') {
-            if (show_contract_result) {
-                $('#tick_chart').css('background-color', 'rgba(46, 136, 54, 0.2)');
+        if (status && status !== 'open') {
+            if (status === 'won') {
+                if (show_contract_result) {
+                    $(`#${id_render}`).css('background-color', 'rgba(46, 136, 54, 0.2)');
+                }
+                updatePurchaseStatus(payout, price, localize('This contract won'));
+            } else if (status === 'lost') {
+                if (show_contract_result) {
+                    $(`#${id_render}`).css('background-color', 'rgba(204, 0, 0, 0.1)');
+                }
+                updatePurchaseStatus(0, -price, localize('This contract lost'));
             }
-            updatePurchaseStatus(payout, price, localize('This contract won'), status);
-        } else if (status === 'lost') {
-            if (show_contract_result) {
-                $('#tick_chart').css('background-color', 'rgba(204, 0, 0, 0.1)');
-            }
-            updatePurchaseStatus(0, -price, localize('This contract lost'), status);
+
+            addSellSpot();
         }
     };
 
@@ -322,7 +331,7 @@ const TickDisplay = (() => {
             && applicable_ticks
             && applicable_ticks.find(({ epoch }) => epoch === sell_spot_time) !== undefined;
 
-        if (!has_finished && !has_sold) {
+        if (!has_finished && !has_sold && (!data.tick || !status || status === 'open')) {
             for (let d = 0; d < epoches.length; d++) {
                 let tick;
                 if (data.tick) {
@@ -344,12 +353,12 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    if (!x_indicators[indicator_key] && tick.epoch === sell_spot_time) {
+                    const exit_time = Math.min(sell_spot_time, exit_tick_time) || sell_spot_time || exit_tick_time;
+
+                    if (!x_indicators[indicator_key] && tick.epoch === exit_time) {
                         x_indicators[indicator_key] = {
-                            index: counter,
-                            label: sell_spot_time === exit_tick_time
-                                ? 'Exit Spot'
-                                : 'Sell Spot',
+                            index    : counter,
+                            label    : getExitLabel(),
                             dashStyle: 'Dash',
                         };
                     }
@@ -360,20 +369,22 @@ const TickDisplay = (() => {
                     }
 
                     addBarrier();
-                    evaluateContractOutcome();
                     counter++;
                 }
             }
         }
+        evaluateContractOutcome();
     };
 
-    const addSellSpot = (contract) => {
+    const addSellSpot = () => {
         if (!applicable_ticks) return;
 
-        sell_spot_time = +contract.sell_spot_time;
-        exit_tick_time = +contract.exit_tick_time;
+        let index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
 
-        const index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
+        // if sell spot time is later than exit tick time, use that instead
+        if (index === -1) {
+            index = applicable_ticks.findIndex(({ epoch }) => epoch === exit_tick_time);
+        }
 
         if (index === -1) return;
 
@@ -383,19 +394,25 @@ const TickDisplay = (() => {
 
         x_indicators[indicator_key] = {
             index,
-            label: sell_spot_time === exit_tick_time
-                ? 'Exit Spot'
-                : 'Sell Spot',
+            label    : getExitLabel(),
             dashStyle: 'Dash',
         };
         
         add(x_indicators[indicator_key]);
     };
 
+    const getExitLabel = () =>
+        sell_spot_time && exit_tick_time && sell_spot_time >= exit_tick_time ? 'Exit Spot' : 'Sell Spot';
+
     const updateChart = (data, contract) => {
         subscribe = 'false';
+        if (contract) {
+            sell_spot_time = +contract.sell_spot_time;
+            exit_tick_time = +contract.exit_tick_time;
+        }
+
         if (data.is_sold) {
-            addSellSpot(contract);
+            addSellSpot();
         } else if (contract) {
             tick_underlying   = contract.underlying;
             tick_count        = contract.tick_count;
@@ -406,8 +423,11 @@ const TickDisplay = (() => {
             tick_shortcode    = contract.shortcode;
             tick_init         = '';
             status            = contract.status;
-            sell_spot_time    = +contract.sell_spot_time;
-            exit_tick_time    = +contract.exit_tick_time;
+
+            if (data.id_render) {
+                id_render = data.id_render;
+            }
+
             const request     = {
                 ticks_history: contract.underlying,
                 start        : contract.date_start,
@@ -430,8 +450,13 @@ const TickDisplay = (() => {
     return {
         updateChart,
         init      : initialize,
-        resetSpots: () => { spots_list = {}; $('#tick_chart').css('background-color', '#F2F2F2'); },
-        setStatus : (status_update) => { status = status_update; },
+        resetSpots: () => { spots_list = {}; $(`#${id_render}`).css('background-color', '#F2F2F2'); },
+        setStatus : (contract) => {
+            status = contract.status;
+            sell_spot_time = +contract.sell_spot_time;
+            exit_tick_time = +contract.exit_tick_time;
+            evaluateContractOutcome();
+        },
     };
 })();
 
