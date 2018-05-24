@@ -687,11 +687,14 @@ body #not_authenticated_financial ul.checked > li {
             left: -20px;
         }
         .content {
-            padding: 8px 0 70px 40px;
+            padding: 8px 0 0 40px;
 
             p {
                 margin: 0;
                 padding-bottom: 15px;
+            }
+            #qrcode {
+                padding-bottom: 60px;
             }
         }
     }
