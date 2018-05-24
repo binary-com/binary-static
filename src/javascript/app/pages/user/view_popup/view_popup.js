@@ -131,16 +131,16 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
+        const is_touch_tick   = /touch/i.test(contract.contract_type) && contract.tick_count;
+        is_sold_before_expiry = is_touch_tick
+            ? contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry
+            : contract.status === 'sold' || (contract.sell_time && contract.sell_time < contract.date_expiry);
+
         const final_price          = contract.sell_price || contract.bid_price;
         const is_started           = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended             = contract.status !== 'open';
         const indicative_price     = final_price && is_ended ? final_price : (contract.bid_price || null);
         const is_sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
-        const is_touch_tick        = /touch/i.test(contract.contract_type) && contract.tick_count;
-
-        is_sold_before_expiry = is_touch_tick
-            ? contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry
-            : contract.status === 'sold' || (contract.sell_time && contract.sell_time < contract.date_expiry);
 
         if (contract.barrier_count > 1) {
             containerSetText('trade_details_barrier', is_sold_before_start ? '-' : addComma(contract.high_barrier), '', true);
