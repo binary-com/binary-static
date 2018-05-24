@@ -672,9 +672,14 @@ body #not_authenticated_financial ul.checked > li {
 
 .otp-form {
     display: flex;
+    align-items: flex-start;
 
-    .gr-row {
-        width: 100%;
+    input {
+        box-sizing: border-box;
+        height: 37px;
+        width: 140px;
+        margin-bottom: 5px;
+        margin-right: 5px;
     }
 }
 

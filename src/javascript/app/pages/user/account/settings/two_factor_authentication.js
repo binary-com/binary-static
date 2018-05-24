@@ -84,6 +84,7 @@ const TwoFactorAuthentication = (() => {
         if ('error' in res) {
             showFormMessage(getPropertyValue(res, ['error', 'message']) || 'Sorry, an error occurred.');
         } else {
+            $('#otp').val('');
             showFormMessage(`You have successfully ${next_state}d two-factor authentication for your account`, true);
         }
     };
