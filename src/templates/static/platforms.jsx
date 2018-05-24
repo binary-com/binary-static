@@ -14,7 +14,7 @@ const Platforms = ({
     button_class = '',
     google_play_url = '',
 }) => (
-    <div className={`gr-5 gr-12-m gr-12-p center-text-m ${className || ''}`} data-show={data_show}>
+    <div className={`gr-5 gr-12-m gr-12-p center-text-p ${className || ''}`} data-show={data_show}>
         <div className='gr-12 gr-centered-m gr-centered-p'>
             <img className='responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
