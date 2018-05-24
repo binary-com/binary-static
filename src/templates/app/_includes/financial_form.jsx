@@ -37,10 +37,10 @@ const Values = () => (
 const TradingExperienceForm = () => (
     <Fieldset id='trading_experience_form' legend={it.L('Trading Experience')}>
         <SelectRow con={Experience} id='forex_trading_experience' label={it.L('Forex Trading Experience')} />
-        <SelectRow con={Frequency}  id='forex_trading_frequency'  label={it.L('Forex Trading Trequency')} />
+        <SelectRow con={Frequency}  id='forex_trading_frequency'  label={it.L('Forex Trading Frequency')} />
 
         <SelectRow con={Experience} id='binary_options_trading_experience' label={it.L('Binary Options Trading Experience')} />
-        <SelectRow con={Frequency}  id='binary_options_trading_frequency'  label={it.L('Binary Options Trading Trequency')} />
+        <SelectRow con={Frequency}  id='binary_options_trading_frequency'  label={it.L('Binary Options Trading Frequency')} />
 
         <SelectRow con={Experience} id='cfd_trading_experience' label={it.L('CFD Trading Experience')} />
         <SelectRow con={Frequency}  id='cfd_trading_frequency'  label={it.L('CFD Trading Frequency')} />
