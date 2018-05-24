@@ -15,8 +15,8 @@ const Platforms = ({
     button_class = '',
     google_play_url = '',
 }) => (
-    <div className={`gr-5 gr-12-m gr-12-p ${className || ''}`} data-show={data_show}>
-        <div className={image_class}>
+    <div className={`gr-5 gr-12-m gr-12-p center-text-m ${className || ''}`} data-show={data_show}>
+        <div className='gr-12 gr-centered-m gr-centered-p'>
             <img className='responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-padding-30'>
@@ -26,7 +26,7 @@ const Platforms = ({
             <div className='gr-row'>
                 <div className='gr-12'>
                     { google_play_url &&
-                        <a className='gr-float-left' href={google_play_url} target='_blank' rel='noopener noreferrer'>
+                        <a className='' href={google_play_url} target='_blank' rel='noopener noreferrer'>
                             <div className='google-play-badge' />
                         </a>
                     }
@@ -46,7 +46,6 @@ const Platform = () => (
 
             <div className='gr-row gr-padding-30'>
                 <Platforms
-                    image_class='gr-12 gr-7-p gr-10-m'
                     image='trading-page'
                     header='SmartTrader'
                     description={it.L('Premier binary options trading platform')}
@@ -56,7 +55,6 @@ const Platform = () => (
                 />
                 <div className='gr-2' />
                 <Platforms
-                    image_class='gr-12 gr-7-p gr-10-m'
                     image='mt5'
                     header={it.L('MetaTrader 5')}
                     description={it.L('Advanced multi-asset trading platform')}
@@ -67,7 +65,6 @@ const Platform = () => (
             </div>
             <div className='gr-row gr-padding-30'>
                 <Platforms
-                    image_class='gr-7 gr-5-p gr-7-m'
                     image='tick-trade'
                     header={it.L('Binary Tick Trade App')}
                     description={it.L('Ultra fast on-the-go trading')}
@@ -80,7 +77,6 @@ const Platform = () => (
                 />
                 <div className='gr-2' />
                 <Platforms
-                    image_class='gr-8 gr-5-p gr-7-m'
                     image='webtrader'
                     header={it.L('Binary WebTrader')}
                     description={it.L('Advanced binary options trading interface')}
@@ -92,7 +88,6 @@ const Platform = () => (
             </div>
             <div className='gr-row gr-padding-30'>
                 <Platforms
-                    image_class='gr-10 gr-7-p gr-9-m'
                     image='binarybot'
                     header={it.L('Binary Bot')}
                     description={it.L('Auto-trader programming tool')}
@@ -103,7 +98,6 @@ const Platform = () => (
                 />
                 <div className='gr-2' />
                 <Platforms
-                    image_class='gr-10 gr-5-p gr-9-m'
                     image='tradingview'
                     header={it.L('TradingView for [_1]', it.website_name)}
                     description={it.L('Powerful charting and technical analysis')}
@@ -115,7 +109,6 @@ const Platform = () => (
             </div>
             <div className='gr-row gr-padding-30'>
                 <Platforms
-                    image_class='gr-10 gr-7-p gr-9-m'
                     image='trading-multibarrier'
                     header={it.L('Ladders')}
                     className='financial-only'
@@ -126,7 +119,6 @@ const Platform = () => (
                 />
                 <div className='gr-2 financial-only'  />
                 <Platforms
-                    image_class='gr-10 gr-5-p gr-9-m'
                     image='chart'
                     header={it.L('SmartCharts')}
                     description={it.L('Interactive charting tool')}
