@@ -10,9 +10,11 @@ const getPropertyValue = require('../../../../../_common/utility').getPropertyVa
 // 2. Error handling
 // 3. state handling
 // 4. ui
+// tooltip to form?
 
 const TwoFactorAuthentication = (() => {
     let enabled_state,
+        next_state,
         qrcode;
     // loader
     const onLoad = () => {
@@ -24,21 +26,23 @@ const TwoFactorAuthentication = (() => {
         BinarySocket.send({ account_security: 1, totp_action: 'status'}).then((res) => {
             // TODO: handle error
             enabled_state = res.account_security.totp.is_enabled ? 'enabled' : 'disabled';
+            next_state = res.account_security.totp.is_enabled ? 'disable' : 'enable';
             const form_id = '#frm_two_factor_auth';
 
             $('#two_factor_loading').remove();
             $(`#${enabled_state}`).setVisibility(1);
+            $('#btn_submit').text(next_state);
             $(form_id).setVisibility(1);
-            console.log($(form_id));
 
             FormManager.init(form_id, [
                 { selector: '#otp', validations: ['req'], request_field: 'otp' },
                 { request_field: 'account_security', value: 1 },
-                { request_field: 'totp_action', value: res.account_security.totp.is_enabled ? 'disable' : 'enable' },
+                { request_field: 'totp_action', value: next_state },
             ]);
             FormManager.handleSubmit({
                 form_selector       : form_id,
                 fnc_response_handler: handler,
+                enable_button       : true,
             });
 
             if (enabled_state === 'disabled') {
@@ -70,12 +74,12 @@ const TwoFactorAuthentication = (() => {
         if ('error' in res) {
             showFormMessage(getPropertyValue(res, ['error', 'message']) || 'Sorry, an error occurred.');
         } else {
-            showFormMessage(`You have successfully ${enabled_state === 'enabled' ? 'disabled' : 'enabled' } two-factor authentication for your account`, true);
+            showFormMessage(`You have successfully ${next_state}d two-factor authentication for your account`, true);
         }
     };
 
     const showFormMessage = (msg, is_success) => {
-        $('#formMessage')
+        $('#form_message')
             .attr('class', is_success ? 'success-msg' : 'error-msg')
             .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
