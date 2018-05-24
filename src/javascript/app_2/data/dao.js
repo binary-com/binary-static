@@ -1,6 +1,6 @@
 import BinarySocket        from '../../_common/base/socket_base';
 import SubscriptionManager from './subscription_manager';
-import { isEmptyObject } from '../../_common/utility';
+import { isEmptyObject }   from '../../_common/utility';
 
 const DAO = (() => {
     const getAccountStatus = () =>
