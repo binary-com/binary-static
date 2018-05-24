@@ -50,6 +50,8 @@ const commonTrading = (() => {
         if (/higherlower/.test(form_name)) {
             name    = 'callput';
             barrier = 'euro_non_atm';
+        } else if (/callputspread/.test(form_name)) {
+            name = 'callputspread';
         } else if (/risefall|callput/.test(form_name)) {
             name    = 'callput';
             barrier = 'euro_atm';
@@ -58,6 +60,7 @@ const commonTrading = (() => {
         } else if (/lookback/.test(form_name)) {
             name = 'lookback';
         }
+        console.log(name);
         return {
             form_name       : name,
             barrier_category: barrier,
@@ -95,6 +98,8 @@ const commonTrading = (() => {
         LBFLOATCALL : 'middle',
         LBFLOATPUT  : 'middle',
         LBHIGHLOW   : 'middle',
+        CALLSPREAD  : 'top',
+        PUTSPREAD   : 'bottom',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');
@@ -115,7 +120,7 @@ const commonTrading = (() => {
     const getContractCategoryTree = (elements) => {
         let tree = [
             ['updown',
-                ['risefall', 'higherlower', 'callputspread'],
+                ['risefall', 'higherlower'],
             ],
             'touchnotouch',
             ['inout',
@@ -128,6 +133,7 @@ const commonTrading = (() => {
             ['lookback',
                 ['lookbackhigh', 'lookbacklow', 'lookbackhighlow'],
             ],
+            'callputspread',
         ];
 
         if (elements) {
