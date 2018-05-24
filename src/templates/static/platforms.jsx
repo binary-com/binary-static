@@ -3,7 +3,6 @@ import React from 'react';
 const Platforms = ({
     className,
     data_show,
-    image_class,
     image_path = 'platforms',
     image,
     header,
