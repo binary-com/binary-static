@@ -670,6 +670,33 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.steps.steps-vertical {
+    flex-direction: column;
+    padding-left: 20px;
+
+    .step {
+        position: relative;
+        margin-top: 0px;
+
+        &:not(:last-child) {
+            border-left: 1px solid $COLOR_LIGHT_GRAY;
+        }
+        .circle {
+            margin: 0;
+            position: absolute;
+            left: -20px;
+        }
+        .content {
+            padding: 8px 0 70px 40px;
+
+            p {
+                margin: 0;
+                padding-bottom: 15px;
+            }
+        }
+    }
+}
+
 .two-fa-status {
     display: flex;
     justify-content: center;
