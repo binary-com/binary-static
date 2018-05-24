@@ -24,7 +24,7 @@ const Platforms = ({
             <strong>{description}</strong>
             <p>{text}</p>
             <div className='gr-row'>
-                <div className='gr-12'>
+                <div className='gr-12 center-row-elements'>
                     { google_play_url &&
                         <a className='' href={google_play_url} target='_blank' rel='noopener noreferrer'>
                             <div className='google-play-badge' />

@@ -1,5 +1,11 @@
 // styling for static pages that are too short or simple to need their own styling page
 
+.center-row-elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .box-row {
     border-bottom: 1px solid $COLOR_GRAY;
 
