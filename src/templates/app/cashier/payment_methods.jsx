@@ -193,7 +193,7 @@ const PaymentMethods = () => {
                                     { text: <PaymentLogo logo='bitcoin' /> },
                                     { text: 'BTC' },
                                     { text: '0.002' },
-                                    { text: '0.004' },
+                                    { text: '0.003' },
                                     { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                 ],
                                 [
