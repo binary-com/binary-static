@@ -68,7 +68,7 @@
                 background: $COLOR_WHITE;
                 pointer-events: auto;
 
-                &.invisible {
+                &.disabled {
                     pointer-events: none;
                 }
             }
