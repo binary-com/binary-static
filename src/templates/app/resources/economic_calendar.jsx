@@ -4,8 +4,8 @@ import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const EconomicCalendar = () => (
     <div id='economic_calendar' className='static_full'>
+        <h1>{it.L('Economic Calendar')}</h1>
         <div className='gr-padding-10'>
-            <h1>{it.L('Economic Calendar')}</h1>
             <div id='economicCalendarWidget'>
                 <Loading />
             </div>

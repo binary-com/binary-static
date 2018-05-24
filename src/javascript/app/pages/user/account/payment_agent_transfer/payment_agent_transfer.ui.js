@@ -1,4 +1,5 @@
-const localize = require('../../../../../_common/localize').localize;
+const getElementById = require('../../../../../_common/common_functions').getElementById;
+const localize       = require('../../../../../_common/localize').localize;
 
 const PaymentAgentTransferUI = (() => {
     let $paymentagent_transfer,
@@ -19,7 +20,10 @@ const PaymentAgentTransferUI = (() => {
 
     const hideConfirmation = () => { $confirm_transfer.setVisibility(0); };
 
-    const showConfirmation = () => { $confirm_transfer.find('#msg_form').setVisibility(0).end().setVisibility(1); };
+    const showConfirmation = () => {
+        $confirm_transfer.find('#msg_form').setVisibility(0).end().setVisibility(1);
+        getElementById('transfer_info').setVisibility(0);
+    };
 
     const hideDone = () => { $done_transfer.setVisibility(0); };
 
