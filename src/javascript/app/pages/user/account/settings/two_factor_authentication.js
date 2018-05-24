@@ -8,7 +8,6 @@ const localize         = require('../../../../../_common/localize').localize;
 // 1. Error handling
 // 2. ui
 // 3. tooltip to form?
-// 4. handle after success
 
 const TwoFactorAuthentication = (() => {
     let enabled_state,
@@ -53,6 +52,12 @@ const TwoFactorAuthentication = (() => {
         });
     };
 
+    const resetComponent = () => {
+        $(`#${enabled_state}`).setVisibility(0);
+        $('#qrcode').html('');
+        init();
+    };
+
     const initQRCode = () => {
         BinarySocket.send({ account_security: 1, totp_action: 'generate'}).then((res) => {
             $('#qrcode_loading').setVisibility(0);
@@ -93,7 +98,7 @@ const TwoFactorAuthentication = (() => {
             .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
             .delay(5000)
-            .fadeOut(1000);
+            .fadeOut(1000, resetComponent);
     };
 
     return {
