@@ -15,8 +15,8 @@ const OtpForm = () => (
                     <input type='text' id='otp' />
                 </div>
                 <button type='submit' id='btn_submit' />
+                <p id='form_message'/>
             </div>
-            <p id='form_message'/>
         </form>
     </React.Fragment>
 );

@@ -5,8 +5,8 @@ const FormManager      = require('../../../../common/form_manager');
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 const localize         = require('../../../../../_common/localize').localize;
 // TODO:
-// 1. Error handling
-// 2. ui
+// 1. Error handling ui
+// 2. ui - success + hide form
 // 3. tooltip to form?
 
 const TwoFactorAuthentication = (() => {
@@ -47,6 +47,7 @@ const TwoFactorAuthentication = (() => {
             });
 
             if (enabled_state === 'disabled') {
+                $('.otp-form').css('padding-left', '60px');
                 initQRCode();
             }
         });
@@ -55,6 +56,7 @@ const TwoFactorAuthentication = (() => {
     const resetComponent = () => {
         $(`#${enabled_state}`).setVisibility(0);
         $('#qrcode').html('');
+        $('.otp-form').css('padding-left', '');
         init();
     };
 
@@ -98,7 +100,7 @@ const TwoFactorAuthentication = (() => {
             .attr('class', is_success ? 'success-msg' : 'error-msg')
             .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
-            .delay(5000)
+            .delay(3000)
             .fadeOut(1000, is_success? resetComponent: '');
     };
 
