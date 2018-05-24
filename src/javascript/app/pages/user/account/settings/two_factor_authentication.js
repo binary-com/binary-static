@@ -1,21 +1,21 @@
+import QRCode from 'davidshimjs-qrcodejs';
+
 const BinarySocket = require('../../../../base/socket');
 const Client = require('../../../../base/client');
 const FormManager  = require('../../../../common/form_manager');
-const QRCode = require('./../../../../../../../node_modules/davidshimjs-qrcodejs/qrcode');
 const localize     = require('../../../../../_common/localize').localize;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 // TODO:
-// 1. Setup library
-// 2. Error handling
-// 3. state handling
-// 4. ui
-// tooltip to form?
+// 1. Error handling
+// 2. ui
+// 3. tooltip to form?
+// 4. after success?
 
 const TwoFactorAuthentication = (() => {
     let enabled_state,
         next_state,
-        qrcode;
+        qrcode; // eslint-disable-line 
     // loader
     const onLoad = () => {
         // initialize form
@@ -24,12 +24,12 @@ const TwoFactorAuthentication = (() => {
 
     const init = () => {
         BinarySocket.send({ account_security: 1, totp_action: 'status'}).then((res) => {
-            // TODO: handle error
+            $('#two_factor_loading').remove();
+            // TODO: handle error?
             enabled_state = res.account_security.totp.is_enabled ? 'enabled' : 'disabled';
             next_state = res.account_security.totp.is_enabled ? 'disable' : 'enable';
             const form_id = '#frm_two_factor_auth';
 
-            $('#two_factor_loading').remove();
             $(`#${enabled_state}`).setVisibility(1);
             $('#btn_submit').text(next_state);
             $(form_id).setVisibility(1);
@@ -53,7 +53,7 @@ const TwoFactorAuthentication = (() => {
 
     const initQRCode = () => {
         BinarySocket.send({ account_security: 1, totp_action: 'generate'}).then((res) => {
-            // TODO: handle error
+            // TODO: handle error?
             $('#qrcode_loading').setVisibility(0);
             makeQrCode(res.account_security.totp.secret_key);
         });
@@ -66,11 +66,9 @@ const TwoFactorAuthentication = (() => {
             width : 130,
             height: 130,
         });
-        console.log(qrcode);
     };
 
     const handler = (res) => {
-        console.log('handler: ', res);
         if ('error' in res) {
             showFormMessage(getPropertyValue(res, ['error', 'message']) || 'Sorry, an error occurred.');
         } else {
