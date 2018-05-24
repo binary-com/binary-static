@@ -26,7 +26,7 @@ const Platforms = ({
             <div className='gr-row'>
                 <div className='gr-12'>
                     { google_play_url &&
-                        <a className='float-left' href={google_play_url} target='_blank' rel='noopener noreferrer'>
+                        <a className='gr-float-left' href={google_play_url} target='_blank' rel='noopener noreferrer'>
                             <div className='google-play-badge' />
                         </a>
                     }
