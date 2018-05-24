@@ -670,6 +670,14 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.otp-form {
+    display: flex;
+
+    .gr-row {
+        width: 100%;
+    }
+}
+
 .steps.steps-vertical {
     flex-direction: column;
     padding-left: 20px;

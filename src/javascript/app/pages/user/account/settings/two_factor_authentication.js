@@ -98,7 +98,7 @@ const TwoFactorAuthentication = (() => {
             .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
             .delay(5000)
-            .fadeOut(1000, resetComponent);
+            .fadeOut(1000, is_success? resetComponent: '');
     };
 
     return {

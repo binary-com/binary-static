@@ -1,6 +1,5 @@
 import React from 'react';
 import Loading from '../../../_common/components/loading.jsx';
-import { FormRow, SubmitButton } from '../../../_common/components/forms.jsx';
 
 const ErrorMessage = ({id}) => (
     <React.Fragment>
@@ -11,8 +10,14 @@ const ErrorMessage = ({id}) => (
 const OtpForm = () => (
     <React.Fragment>
         <form id='frm_two_factor_auth' className='invisible'>
-            <FormRow is_two_rows type='text' id='otp' />
-            <SubmitButton no_wrapper msg_id='form_message' type='submit' />
+            <div className='otp-form'>
+                <div className='otp-form-bar'>
+                    <input type='text' id='otp' />
+                </div>
+                <div className='otp-form-bar'>
+                    <button type='submit' id='btn_submit' />
+                </div>
+            </div>
         </form>
     </React.Fragment>
 );
