@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-23 21:44-0400\n"
+"PO-Revision-Date: 2018-05-24 02:46-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -14,9 +14,6 @@ msgstr ""
 "X-Crowdin-Language: vi\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: vi_VN\n"
-
-msgid "8"
-msgstr "8"
 
 msgid "404"
 msgstr "404"
@@ -267,6 +264,9 @@ msgstr "%1 ra mắt tài khoản Bitcoin"
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "ra mắt một trang web thương mại điện tử cho hàng hóa có thương hiệu - cho phép khách hàng, chi nhánh, và các nhà phát triển để mua và bán các sản phẩm."
 
+msgid "%1 lots"
+msgstr ""
+
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr "%1 sẽ nỗ lực làm cho giá niêm yết của mỗi tài sản trên Binary Option hợp lý với giá thực tế của tài sản này trên thị trường. %1 không đảm bảo, niêm yết hay thể hiện rằng giá được đưa ra thể hiện giá thị trường tại thời điểm đó."
 
@@ -420,9 +420,6 @@ msgstr "Giải thưởng 'Nhà điều hành Cá cược Tài chính của năm'
 msgid "(One) Touch trades"
 msgstr "(Một) giao dịch Chạm"
 
-msgid "(Sell Price - Buy Price) x Volume x Price Per Point = Profit"
-msgstr "(Giá bán - giá mua) x khối lượng x giá cho mỗi điểm = lợi nhuận"
-
 msgid "(max)"
 msgstr "(tối đa)"
 
@@ -434,9 +431,6 @@ msgstr "0-1 năm"
 
 msgid "0-5 transactions in the past 12 months"
 msgstr "0-5 giao dịch trong 12 tháng trước"
-
-msgid "0.01 lots"
-msgstr "các lô 0.01"
 
 msgid "1 million transactions/day"
 msgstr "1 triệu giao dịch/ ngày"
@@ -450,15 +444,6 @@ msgstr "1-3 years"
 msgid "1. Proof of identity"
 msgstr "1. chứng minh nhân thân"
 
-msgid "10 lots"
-msgstr "10 lô"
-
-msgid "100%"
-msgstr "100%"
-
-msgid "150%"
-msgstr "150%"
-
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6,000 – 5,200) = $1600"
 
@@ -471,14 +456,8 @@ msgstr "Giá 2 chiều"
 msgid "2. Proof of address"
 msgstr "2. Chứng minh về địa chỉ"
 
-msgid "24/7"
-msgstr "24/7"
-
 msgid "3-5 years"
 msgstr "3 - 5 Năm"
-
-msgid "30 lots"
-msgstr "30 lô"
 
 msgid "30-day limit on losses"
 msgstr "Giới hạn 30 ngày thua lỗ"
@@ -489,32 +468,17 @@ msgstr "Giới hạn doanh thu 30 ngày"
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 giao dịch hoặc nhiều hơn trong 12 tháng vừa qua"
 
-msgid "50 lots"
-msgstr "50 lô"
-
-msgid "50%"
-msgstr "50%"
-
 msgid "6 months to 1 year"
 msgstr "6 Tháng tới 1 Năm"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 giao dịch trong vòng 12 tháng trước"
 
-msgid "60+"
-msgstr "60 +"
-
 msgid "7-day limit on losses"
 msgstr "Giới hạn 7 ngày thua lỗ"
 
 msgid "7-day turnover limit"
 msgstr "Giới hạn doanh thu 7 ngày"
-
-msgid "70+"
-msgstr ""
-
-msgid "75%"
-msgstr "75%"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Quay lại Mô Tả Công Việc"
@@ -537,17 +501,11 @@ msgstr "<strong>Kiểm tra Tính tương thích: CẢNH BÁO:</strong> Trong
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>Rủi ro Tỉ giá Hối đoái</strong>: Tỉ giá hối đoái giữa đồng ngoại tệ có thể thay đổi nhanh do hàng loạt các điều kiện như kinh tế, chính trị, và các điều kiện khác, tiết lộ cho bạn thất thoát từ rủi ro tỉ giá hối đoái và cùng với đó là thất thoát từ rủi ro của việc giao dịch đầu tư vào tài sản cơ sở. Nếu bạn gửi tiền bằng một loại đồng tiền khác với loại đồng tiền đã được chỉ định để giao dịch Hợp đồng, bạn sẽ lãi hoặc lỗ trong việc đầu tư tài sản cơ sở do sự thay đổi về tỉ giá hối đoái giữa các đồng tiền."
 
-msgid "<strong>Long positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr "<strong>Thế giá lên</strong>: chúng tôi tính phí một khoản phí 2% trên đầu trang của lãi suất cho vay liên ngân hàng."
-
 msgid "<strong>Open menu</strong> and select <strong>Preferences</strong>."
 msgstr "<strong>Mở trình đơn</strong> và chọn <strong>Tùy chọn</strong>."
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr "<strong>Rủi ro Khác</strong>: Có những rủi ro khác liên quan tới việc giao dịch sản phẩm đầu tư và giao dịch ngoại tệ không thể mô tả chi tiết  trong văn bản này. Tuy nhiên, nhìn chung, chứng khoán, quyền chọn và giao dịch tiền tệ có liên quan sẽ bị ảnh hưởng bởi những nhân tố rủi ro sau: rủi ro thị trường, rủi ro tín dụng, rủi ro đặt lệnh, rủi ro thanh khoản, rủi ro hoạt động và rủi ro pháp lý. VÍ dụ, có thể có gián đoạn thị trường nghiêm trọng nếu có những sự kiện kinh tế, chính trị trong nước hoặc quốc tế không được dự báo trước làm ảnh hưởng tới thị trường. Thêm nữa, còn có những loại rủi ro khác nữa đó là các vấn đề thuế và kế toán bạn nên cân nhắc."
-
-msgid "<strong>Short positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr "<strong>Thế giá xuống</strong>: chúng tôi tính một khoản phí gồm 2% trên lãi suất cho vay liên ngân hàng."
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "Cử nhân Khoa Học Máy Tính, hoặc một sự kết hợp tương đương giáo dục chuyên môn, đào tạo và kinh nghiệm làm việc"
@@ -908,9 +866,6 @@ msgstr "Nâng cao"
 
 msgid "Advanced Account"
 msgstr "Tài khoản nâng cao"
-
-msgid "Advanced account: 1:100"
-msgstr "Tài khoản nâng cao: 1: 100"
 
 msgid "Advanced binary options trading interface"
 msgstr "Giao diện giao dịch Binary Options nâng cao"
@@ -1845,9 +1800,6 @@ msgstr "C. Định nghĩa về quá trình thực thi tốt nhất"
 msgid "C. Provision of Services"
 msgstr "C. Các Điều Khoản về Dịch Vụ"
 
-msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
-msgstr "CFD (hợp đồng cho sự khác biệt): CFD là một công cụ cho phép bạn có lợi nhuận bằng cách dự đoán về tăng hoặc sụp đổ của một phương tiện. Lợi nhuận/tổn thất ước tính như là một chức năng của sự khác biệt trong mức giá mua/bán của các công cụ hữu quan."
-
 msgid "CFD Trading Experience"
 msgstr ""
 
@@ -2391,9 +2343,6 @@ msgstr "Rủi ro Hợp đồng"
 msgid "Contract Sold"
 msgstr "Hợp đồng đã được bán"
 
-msgid "Contract Specifications"
-msgstr "Điều khoản đặc biệt của Hợp Đồng"
-
 msgid "Contract Starts"
 msgstr "Hợp đồng bắt đầu"
 
@@ -2600,9 +2549,6 @@ msgstr "Đơn vị tiền tệ"
 
 msgid "Currency"
 msgstr "Tiền tệ"
-
-msgid "Currency Symbol"
-msgstr "Ký hiệu tiền tệ"
 
 msgid "Currency of the funds accepted in your trading account."
 msgstr "Loại tiền tệ của các khoản tiền được chấp nhận trong tài khoản giao dịch của bạn."
@@ -3068,9 +3014,6 @@ msgstr "Each option transaction has a specified expiry time and date, known as t
 
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
 msgstr "Mỗi bên liên quan tới Hiệp định này đều đại diện và bảo đảm cho bên kia, và sẽ có tất cả các quyền, danh hiệu và quyền hạn để cấp cho bên kia các quyền và giấy phép đã cấp trong Hiệp định này cũng như thực hiện mọi nghĩa vụ theo Hiệp định trong suốt kì hạn để truy cập vào Hiệp định này."
-
-msgid "Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index."
-msgstr "Mỗi khi bạn mở một phiên trên một ký hiệu chỉ số biến động, bạn có thể bắt đầu với một giao dịch khối lượng tối thiểu của 0,01 (kích thước giao dịch), mà biến dạng thành 0,01 USD cho mỗi điểm chuyển động của các chỉ số."
 
 msgid "Each time you open a position on a cryptocurrency pair, you can start with a minimum volume as indicated in the table above."
 msgstr "Mỗi khi bạn mở một phiên trên một cặp cryptocurrency, bạn có thể bắt đầu với một khối lượng tối thiểu như nêu trong bảng trên."
@@ -3696,9 +3639,6 @@ msgstr "Ví dụ, nếu bạn muốn mua 100 đơn vị của một tài sản c
 msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
 msgstr "Ví dụ, giả sử trên thị trường có mức thấp là 5.200 và một mức gần là 6.000 trong thời gian thực hiện hợp đồng, sau đó lookback 'Đóng thấp' với một hệ số là $ 2 sẽ có một khoảng được trả là:"
 
-msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr "Ví dụ, các hợp đồng chênh lệch giá trên Chỉ Số Biến Động cung cấp 1 USD cho mỗi hợp đồng. Nếu mua vào một khối hợp đồng 1.0 trên sàn biến động 100 với mức giá chào bán là 20,000 và sau đó bán lại với giá mua vào là 20,010 USD, lợi nhuận ròng của bạn sẽ được tính như sau:"
-
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product Disclosure Statement. This policy is an appendix to the overarching %1 Order Execution Policy and should be read in conjunction with the overarching %1 Order Execution Policy."
 msgstr "Đối với các tính năng và các minh hoạ thương mại của Spot FX được cung cấp bởi %1, tham khảo các báo cáo công bố sản phẩm. Chính sách này là một phụ lục bao quát %1 đặt hàng thực hiện chính sách và nên được đọc cùng với bao quát %1 đặt hàng thực hiện chính sách."
 
@@ -4062,9 +4002,6 @@ msgstr "Giới hạn độ lệch trên"
 msgid "High conversions"
 msgstr "Chuyển đổi cao"
 
-msgid "High frequency (2 ticks per second)"
-msgstr "Tần số cao (2 tick trên giây)"
-
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "Mức độ an ninh cao - mỗi giao dịch cryptocurrency được đảm bảo thông qua nâng cao kỹ thuật mã hóa mà làm cho nó hầu như không thể làm giả"
 
@@ -4133,12 +4070,6 @@ msgstr "Làm sao để biết tôi đã kiếm được bao nhiều tiền?"
 
 msgid "How do I register to become a %1 IB?"
 msgstr "Làm thế nào để đăng ký để trở thành một %1 IB?"
-
-msgid "How do we calculate interest fees for long positions?"
-msgstr "Chúng tôi tính toán lợi nhuận thế giá lên bằng cách nào?"
-
-msgid "How do we calculate interest fees for short positions?"
-msgstr "Chúng tôi tính toán chi phí lãi thế giá xuống bằng cách nào?"
 
 msgid "How does it work?"
 msgstr "Nó hoạt động như thế nào?"
@@ -4248,9 +4179,6 @@ msgstr "Tôi muốn được đối xử như một khách hàng chuyên nghiệ
 
 msgid "I. Quotes"
 msgstr "I. Các trích dẫn"
-
-msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
-msgstr "tức là (20010-20000) x1 x1 = 10 USD"
 
 msgid "IB Programme"
 msgstr "Chương trình IB"
@@ -4437,9 +4365,6 @@ msgstr "Nếu bạn có những kĩ năng mà chúng tôi cần, bạn sẽ tr�
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "Nếu bạn giữ cho bất kỳ phiên mở nào qua đêm, điều chỉnh lãi suất sẽ được thực hiện cho tài khoản giao dịch như là một dấu hiệu của các chi phí cần thiết để giữ phiên của bạn mở."
-
-msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open. This adjustment is based on interbank lending rates, on top of a 2% fee."
-msgstr "Nếu bạn giữ cho bất kỳ phiên nào hoạt động qua đêm, điều chỉnh lãi suất sẽ được thực hiện cho tài khoản giao dịch như là dấu hiệu của các chi phí cần thiết để giữ phiên của bạn mở. Điều chỉnh này dựa trên tỷ giá cho vay liên ngân hàng, với phí cao nhất là 2%."
 
 msgid "If you lose your cryptocurrencies as a result of exchanges and wallet providers being hacked or becoming insolvent, there is no assurance of a recourse. It is your responsibility to store your cryptocurrencies securely. %1 will not accept liability for any loss or damage that arise, directly or indirectly, from theft of your cryptocurrency or insolvency of exchanges and wallet providers that you use."
 msgstr "Nếu bạn mất cryptocurrencies của bạn khi trao đổi và ví của nhà cung cấp bị hack hoặc trở nên khánh kiệt, chúng tôi không đảm bảo sao lưu dữ liệu này. Đó là trách nhiệm của bạn để lưu trữ các cryptocurrencies của bạn một cách an toàn. %1 sẽ không chấp nhận trách nhiệm về bất kỳ tổn thất hoặc thiệt hại phát sinh, trực tiếp hay gián tiếp, từ trộm cắp của cryptocurrency của bạn hoặc phá sản do trao đổi và nhà cung cấp ví bạn sử dụng."
@@ -5621,12 +5546,6 @@ msgstr "Hãy so sánh sự khác nhau giữa mua và bán, sử dụng EUR/USD l
 msgid "Let's say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to 'go long' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you."
 msgstr "Ví dụ rằng một hợp đồng US 100 có giá trị 1 USD cho mỗi điểm trong tài sản nằm bên dưới. Nếu bạn quyết định 'đi lên' trên 100 US, và giá tài sản tăng 10 điểm, đại diện cho một lợi nhuận USD 10 cho bạn."
 
-msgid "Let's say the points adjustment for a long position on the EUR/USD symbol is -5.64. This would require an overnight fee of 5.64 points for one lot of open position in EUR/USD, where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will incur an interest fee of EUR5.64 for keeping the position open overnight."
-msgstr "Giả sử việc điều chỉnh điểm cho một thế giá lên trên cặp ký hiệu EUR/USD là-5.64. Điều này sẽ yêu cầu một khoản phí qua đêm là 5,64 điểm cho một lô của các phiên mở trong EUR/USD, kích thước của một lô là 100.000 đơn vị. Những điểm sau đó sẽ được chuyển đổi thành các loại tiền tệ đặt cọc (là đồng euro trong ví dụ này). Kết quả là, bạn sẽ phải chịu một khoản phí lãi suất của 5.64 EUR để giữ cho các phiên mở qua đêm."
-
-msgid "Let's say the points adjustment for a short position on the EUR/USD symbol is 1.64. This would result in an overnight credit of 1.64 points for one lot of open position in EUR/USD where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will be credited with EUR1.64 for keeping the position open overnight."
-msgstr "Giả sử việc điều chỉnh điểm cho một thế giá xuống vào ký hiệu EUR/USD là 1,64. Điều này sẽ yêu cầu một khoản phí qua đêm là 1.64 điểm cho một lô phiên mở trong EUR/USD, kích thước của một lô là 100.000 đơn vị. Những điểm sau đó sẽ được chuyển đổi thành các loại tiền tệ đặt cọc (là đồng euro trong ví dụ này). Kết quả là, bạn sẽ phải chịu một khoản phí lãi suất của 1.64 EUR để giữ cho các phiên mở qua đêm."
-
 msgid "Let's use the US 100 index as an example:"
 msgstr "Hãy sử dụng chỉ số US 100 như một ví dụ:"
 
@@ -5648,20 +5567,11 @@ msgstr "Đòn bẩy có thể được sử dụng để tạo ra lợi nhuận 
 msgid "Leverage gives you the ability to trade a larger position using your existing capital."
 msgstr "Đòn bẩy cung cấp cho bạn khả năng thương mại vị trí lớn hơn bằng cách sử dụng vốn sẵn có của bạn."
 
-msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "Đòn bẩy cho biết số lượng vốn bạn có thể kiểm soát dựa trên tiền gửi ban đầu của bạn. Ví dụ, một đòn bẩy với tỉ lệ 100: 1 sẽ cho phép bạn kiểm soát lên đến 100.000 USD bằng cách sử dụng chỉ USD 1000 tiền riêng của mình như là tiền đặt cọc."
-
-msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 1:100 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "Đòn bẩy cho biết số lượng vốn bạn có thể kiểm soát dựa trên tiền gửi ban đầu của bạn. Ví dụ, một đòn bẩy với tỉ lệ 1:100 sẽ cho phép bạn kiểm soát lên đến 100.000 USD bằng cách sử dụng chỉ USD 1000 tiền riêng của mình như là tiền đặt cọc."
-
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "Tận dụng các kênh và công cụ truyền thông công cộng để xác nhận, thu hút và chuyển đổi những khách hàng và đối tác tiềm năng mới"
 
-msgid "Leverage up to 1:100"
-msgstr "Thúc đẩy tới 1: 100"
-
-msgid "Leverage up to 1:500"
-msgstr "Thúc đẩy tới 1: 500"
+msgid "Leverage up to %1"
+msgstr ""
 
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that you would be able to enter into a trade position that is of 50 times higher than your margin. When you invest in a leveraged product, your profit or loss is based on the leveraged position, i.e., the increased/amplified value of your trade determined based on the leverage ratio you set for your account."
 msgstr "Đòn bẩy, trong trường hợp giao dịch ký quỹ, ý nói đến việc sử dụng biên để tăng/khuếch đại giá trị của một giao dịch. Đòn bẩy được thể hiện như một tỷ lệ. Ví dụ, một đòn bẩy với tỉ lệ 50: 1, có nghĩa là bạn sẽ có thể mở một phiên giao dịch gấp 50 lần so với biên của bạn. Khi bạn đầu tư vào một sản phẩm sử dụng đòn bẩy, lợi nhuận hoặc thua lỗ của bạn được xác định dựa trên phiên đòn bẩy, tức là, giá trị gia tăng/khuếch đại của giao dịch của bạn được xác định dựa trên tỷ lệ đòn bẩy bạn đặt cho tài khoản của bạn."
@@ -5762,9 +5672,6 @@ msgstr "Gặp rắc rối về đăng nhập"
 msgid "Long"
 msgstr "Lên"
 
-msgid "Long positions"
-msgstr "Thế giá lên"
-
 msgid "Long-term partnership:"
 msgstr "Quan hệ đối tác lâu dài:"
 
@@ -5779,9 +5686,6 @@ msgstr "Tùy chọn Lookbacks hiện thời chỉ có sẵn cho %1Chỉ Số Bi�
 
 msgid "Loss"
 msgstr "Thua lỗ"
-
-msgid "Lot Size (Volume = 1.0)"
-msgstr "Kích thước lô (Khối lượng = 1.0)"
 
 msgid "Lot size"
 msgstr "Kích thước lô"
@@ -5978,9 +5882,6 @@ msgstr "Tháng Ba"
 msgid "March"
 msgstr "Tháng Ba"
 
-msgid "Margin"
-msgstr "Biên"
-
 msgid "Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
 msgstr "Biên &mdash; số tiền đặt sang một bên bởi chúng tôi từ Số Dư Tài Khoản của bạn để mở và duy trì một Giao Dịch, để trang trải các chi phí của chúng tôi với tư cách là một đối tác đối với hợp đồng của bạn."
 
@@ -6010,9 +5911,6 @@ msgstr "Biên cho phép bạn để giao dịch trên đòn bẩy - có nghĩa l
 
 msgid "Margin call"
 msgstr "Gọi vốn biên"
-
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
-msgstr "Biên cho biết số lượng đầu tư mà bạn có thể kiểm soát dựa trên vốn ban đầu của bạn. Ví dụ, Biên 0,2% sẽ cho phép bạn kiểm soát lên đến 500.000 USD bằng cách sử dụng chỉ 1000 USD tiền riêng của mình như là tiền đặt cọc."
 
 msgid "Market"
 msgstr "Thị trường"
@@ -6058,9 +5956,6 @@ msgstr "Khớp/Khác nhau"
 
 msgid "Max"
 msgstr "Tối đa"
-
-msgid "Maximum Leverage"
-msgstr "Đòn Bẩy Tối Đa"
 
 msgid "Maximum account cash balance"
 msgstr "Số dư tài khoản tiền mặt tối đa"
@@ -6172,24 +6067,6 @@ msgstr "Số tiền gửi Tối đa-Tối thiểu"
 
 msgid "Min-Max Withdrawal"
 msgstr "Số tiền rút Tối đa-Tối thiểu"
-
-msgid "Min. Volume Increment"
-msgstr "Khối lượng tối thiểu tăng"
-
-msgid "Min. Volume<br>(Lot Size)"
-msgstr "Khối lượng tối thiểu <br>(kích thước lô)"
-
-msgid "Minimum Spread"
-msgstr "Biên lãi tối thiểu"
-
-msgid "Minimum Volume"
-msgstr "Khối lượng tối thiểu"
-
-msgid "Minimum Volume (Trade Size)"
-msgstr "Khối lượng tối thiểu (Kích thước giao dịch)"
-
-msgid "Minimum Volume Increment"
-msgstr "Khối lượng tối thiểu tăng"
 
 msgid "Minimum deposit"
 msgstr "Tiền gửi tối thiểu"
@@ -6872,9 +6749,6 @@ msgstr "Địa chỉ chúng tôi"
 msgid "Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots."
 msgstr "Các cặp kim loại của chúng tôi thường được giao dịch theo các lô. Một lô tiêu chuẩn là tương đương với 100 đơn vị ngoại trừ bạc mà 1 lô tương đương 5.000 đơn vị. Mỗi khi bạn mở một phiên trên một ký hiệu, bạn có thể bắt đầu với một giao dịch tối thiểu là 0,01 lô."
 
-msgid "Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5.000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots."
-msgstr "Các cặp kim loại của chúng tôi thường được giao dịch theo các lô. Một lô tiêu chuẩn là tương đương với 100 đơn vị ngoại trừ bạc mà 1 lô tương đương 5.000 đơn vị. Mỗi khi bạn mở một phiên trên một ký hiệu, bạn có thể bắt đầu với một giao dịch tối thiểu là 0,01 lô."
-
 msgid "Our proprietary synthetic indices that simulate market forces"
 msgstr "Chúng tôi chỉ số tổng hợp độc quyền để mô phỏng các lực lượng thị trường"
 
@@ -7088,9 +6962,6 @@ msgstr "Báo cáo tiết lộ cột 3"
 msgid "Pip"
 msgstr "Pip"
 
-msgid "Pip Size"
-msgstr "Cỡ Pip"
-
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pip là viết tắt của 'Percentage in point' tức là Điểm Phần Trăm được tính từ vị trí thứ tư sau dấu thập phân (ví dụ 0.0001)."
 
@@ -7286,9 +7157,6 @@ msgstr "Vui lòng gửi thông tin trên tới <a href='%1'>%2</a>."
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "Xin hãy lưu ý rằng tỷ lệ trao đổi của chúng tôi cũng phụ thuộc vào thời gian và ngày bạn giữ mở phiên của bạn:"
 
-msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
-msgstr "Xin hãy lưu ý rằng tỷ lệ trao đổi của chúng tôi cũng phụ thuộc vào thời gian và ngày bạn giữ mở phiên của bạn: "
-
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "Xin vui lòng chờ đợi để xác nhận. Nhóm hỗ trợ khách hàng của chúng tôi sẽ liên lạc với bạn về trạng thái tài khoản thông qua email trong vòng bốn giờ."
 
@@ -7306,9 +7174,6 @@ msgstr "Các phiên vẫn mở vào Thứ Tư lúc 23:59:59 GMT sẽ phải tr�
 
 msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends – a standard practice for all brokers."
 msgstr "Các phiên vẫn mở vào thứ tư lúc 23:59:59 GMT sẽ phải trả gấp ba lần theo tỷ lệ trao đổi vào tài khoản cho ngày cuối tuần - một tiêu chuẩn cho tất cả các môi giới."
-
-msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends, a standard practice for all Forex brokers."
-msgstr "Các phiên vẫn mở vào thứ tư lúc 23:59:59 GMT sẽ phải trả gấp ba lần theo tỷ lệ trao đổi vào tài khoản cho ngày cuối tuần, một tiêu chuẩn cho tất cả các môi giới ngoại hối."
 
 msgid "Postal Code / ZIP"
 msgstr "Mã Bưu Điện/ ZIP"
@@ -7712,8 +7577,8 @@ msgstr "Tham khảo."
 msgid "Refer new clients to our MetaTrader 5 platform and earn a commission on their Forex and CFD trading activity."
 msgstr "Giới thiệu khách hàng mới đến sàn giao dịch MetaTrader 5 của chúng tôi và kiếm được một khoản hoa hồng trên ngoại hối và hoạt động kinh doanh CFD của họ."
 
-msgid "Refers to the maximum volume or lots per order."
-msgstr "Đề cập đến khối lượng tối đa hay lô cho mỗi đơn đặt hàng."
+msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
+msgstr ""
 
 msgid "Refers to the total number of available symbols for your account."
 msgstr "Đề cập đến tổng số của các ký hiệu có sẵn cho tài khoản của bạn."
@@ -8189,9 +8054,6 @@ msgstr "Shelter Home’s Shelter Community Learning Centre 3"
 msgid "Short"
 msgstr "Xuống"
 
-msgid "Short positions"
-msgstr "Thế giá xuống"
-
 msgid "Short to long-term durations"
 msgstr "Thời gian ngắn đến dài hạn"
 
@@ -8347,9 +8209,6 @@ msgstr "Tiêu chuẩn"
 
 msgid "Standard Account"
 msgstr "Tài khoản tiêu chuẩn"
-
-msgid "Standard account: 1:500"
-msgstr "Tài khoản tiêu chuẩn: 1: 500"
 
 msgid "Start Time"
 msgstr "Thời gian bắt đầu"
@@ -8954,9 +8813,6 @@ msgstr "Ngoại hối là một thị trường chứng khoán phi tập trung, 
 msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
 msgstr "Thị trường ngoại hối thường được giao dịch <i>theo các lô</i>. Một trong những tiêu chuẩn <i>rất nhiều</i> là tương đương với 100.000 đơn vị. Mỗi khi bạn mở một phiên trên một ký hiệu tiền tệ, bạn có thể bắt đầu với một giao dịch tối thiểu là <i>0,01 lô</i>."
 
-msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lots</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
-msgstr "Thị trường ngoại hối thường được giao dịch <i>theo các lô</i>. Một trong những tiêu chuẩn <i>rất nhiều</i> là tương đương với 100.000 đơn vị. Mỗi khi bạn mở một phiên trên một ký hiệu tiền tệ, bạn có thể bắt đầu với một giao dịch tối thiểu là <i>0,01 lô</i>."
-
 msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
 msgstr ""
 
@@ -9271,9 +9127,6 @@ msgstr "Vốn đầu tư là số tiền nhà giao dịch cần phải tra�
 
 msgid "The sum received in the %1 Agent Account shall be transferred by the Agent to the %1 Client Account."
 msgstr "Số tiền đã nhận được trong %1 tài khoản đại lý sẽ được chuyển giao bởi các đại lý cho %1 tài khoản khách hàng."
-
-msgid "The swap rate will depend on the direction of the position you take:"
-msgstr "Tỷ lệ trao đổi sẽ phụ thuộc vào sự chỉ đạo của các phiên bạn tham gia:"
 
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "Hệ thống điền lệnh dựa trên lần đầu trong lần đầu xuất hiện, tức là dựa trên các chuỗi theo thứ tự nhận được, và điều này là ngoài tầm kiểm soát của chúng tôi. Kết quả là, bạn có thể tìm thấy nó khó khăn hoặc không thể đóng một phiên dự định mức quy định để ngăn chặn của bạn trong điều kiện thị trường nhất định. Sự đặt vào của Lệnh Dừng bởi bạn, mặc dù hữu ích như là một công cụ quản lý rủi ro, sẽ không nhất thiết giới hạn thiệt hại của bạn với số lượng dự định của bạn, trong trường hợp có điều kiện kinh doanh rất dễ bay hơi, vì điều kiện thị trường có thể làm cho nó không thể thực hiện các đơn đặt hàng như vậy và không chắc chắn về giá của bạn có thể thoát khỏi. Trong ngắn hạn, một Lệnh Dừng lại không được bảo đảm bởi vì nó không thể hoạt động thị trường trường hợp bất cứ điều gì."
@@ -9613,15 +9466,6 @@ msgstr "Để biết thêm, vui lòng đọc <a href='%1'>chi tiết hợp đồ
 
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "Để biết thêm, vui lòng đọc %1Chính Sách Biên%2 của chúng tôi sẽ giải thích về điều kiện biên."
-
-msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
-msgstr "Để biết thêm, vui lòng đọc <a href=\"%1\"> Chính sách biên CFD</a> của chúng tôi sẽ giải thích 50% mức thanh lý bắt buộc cho Chỉ Số Biến Động."
-
-msgid "To learn more, read our <a href=\"%1\">Forex Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
-msgstr "Để biết thêm, vui lòng đọc <a href=\"%1\"> Chính Sách Biên Ngoại Hối</a> của chúng tôi sẽ giải thích 100% mức thanh lý bắt buộc cho ngoại hối."
-
-msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "Để biết thêm, vui lòng đọc <a href=\"%1\">Chính Sách Biên Kim Loại</a> của chúng tôi sẽ giải thích 100% mức thanh lý bắt buộc cho các cặp kim loại của chúng tôi."
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "Để mở một tài khoản giao dịch, khách hàng của chúng tôi phải xác nhận họ hiểu đầy đủ cơ chế và rủi ro của giao dịch. Vui lòng thừa nhận sự hiểu biết và thỏa thuận của bạn với từng tuyên bố sau bằng cách đánh dấu vào các ô bên cạnh."
@@ -10124,14 +9968,11 @@ msgstr "Mở Khóa Thu Ngân"
 msgid "Up"
 msgstr "Lên"
 
+msgid "Up to %1"
+msgstr ""
+
 msgid "Up to %1 decimal places are allowed."
 msgstr "Lên đến %1 chữ số thập phân sau dấu phẩy được cho phép."
-
-msgid "Up to 1:100"
-msgstr "Lên đến 1: 100"
-
-msgid "Up to 1:500"
-msgstr "Lên đến 1: 500"
 
 msgid "Up/Down"
 msgstr "Lên/Xuống"
@@ -10214,11 +10055,8 @@ msgstr "Hóa đơn điện nước (điện, nước, ga, truyền hình cáp v�
 msgid "Validate address"
 msgstr "Xác nhận địa chỉ"
 
-msgid "Variable from 0.9 pips"
-msgstr "Thay đổi từ 0.9 pips"
-
-msgid "Variable from 1.2 pips"
-msgstr "Thay đổi từ 1.2 pips"
+msgid "Variable from %1 pips"
+msgstr ""
 
 msgid "Variable spreads"
 msgstr "Biên lãi đa dạng"
@@ -10337,9 +10175,6 @@ msgstr "Chỉ Số Biến Động"
 msgid "Volatility Indices Account"
 msgstr "Tài Khoản Chỉ Số Biến Động"
 
-msgid "Volatility Indices account: 1:500"
-msgstr "Chỉ số biến động: 1:500"
-
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "Các Chỉ Số Biến Động được phân loại thành hai loại:"
 
@@ -10348,12 +10183,6 @@ msgstr ""
 
 msgid "Volume"
 msgstr "Khối lượng"
-
-msgid "Volume 1.0 (Trade Size)"
-msgstr "Khối 1.0(kích thước giao dịch)"
-
-msgid "Volume 1.0<br>(Lot Size)"
-msgstr "Khối lượng 1.0<br>(kích thước lô)"
 
 msgid "Volume step"
 msgstr "Bước khối lượng"
@@ -10435,9 +10264,6 @@ msgstr "Chúng tôi đang xem xét các tài liệu của bạn và sẽ phản 
 
 msgid "We are reviewing your documents. For more details %1contact us%2."
 msgstr "Chúng tôi đang xem xét các tài liệu của bạn. Để biết thêm chi tiết %1liên hệ%2."
-
-msgid "We charge a 2% fee on top of market rates."
-msgstr "Chúng tôi tính phí một khoản phí 2% lên trên giá thị trường."
 
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr ""
@@ -11842,13 +11668,13 @@ msgid "name, email address and contact number;"
 msgstr "tên, địa chỉ email và số điện thoại liên lạc;"
 
 msgid "net of any other money credited to your MT5 Real Account and debited from your MT5 Real Account. Your account balance includes Margin Requirement. The amount of your account balance in excess of Margin Requirement is available for your withdrawal. The amount set aside for Margin Requirement is not available for your withdrawal."
-msgstr "biểu đồ của bất cứ khoản tiền nào khác ghi có vào tài khoản thực sự của bạn và ghi nợ từ tài khoản thực sự của bạn. Tài khoản của bạn bao gồm các yêu cầu ký quỹ. Số lượng tài khoản của bạn vượt quá yêu cầu ký quỹ có sẵn để rút tiền của bạn. Số lượng dành cho yêu cầu ký quỹ không phải là có sẵn để rút tiền của bạn."
+msgstr "tổng bất cứ khoản tiền nào khác ghi có vào Tài Khoản Thực MT5 của bạn và ghi nợ từ Tài Khoản Thực MT5 của bạn. Số dư tài khoản của bạn bao gồm các Điều Kiện Biên. Lượng số dư tài khoản của bạn vượt quá Điều Kiện Biên có sẵn để rút tiền của bạn. Số lượng dành cho Điều Kiện Biên không khả dụng để bạn rút tiền."
 
 msgid "net of fund transfers between your Binary Options Account and your MT5 Real Account;"
 msgstr "biểu đồ của quỹ chuyển giao giữa Tài Khoản Thực Binary Options và Tài Khoản Thực MT5 của bạn;"
 
 msgid "net of realised profits credited to your MT5 Real Account and realised losses debited from your MT5 Real Account;"
-msgstr "biểu đồ của các lợi nhuận được biết đến tài khoản thực MT5 của bạn và các thiệt hại biết đến được ghi nợ từ tài khoản thực MT5 của bạn;"
+msgstr "tổng của các lợi nhuận sẽ được gửi đến Tài Khoản Thực MT5 của bạn và các thua lỗ cũng sẽ được trừ vào Tài Khoản Thực MT5 của bạn;"
 
 msgid "numbers"
 msgstr "số"

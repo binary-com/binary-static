@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-23 21:44-0400\n"
+"PO-Revision-Date: 2018-05-24 02:46-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -14,9 +14,6 @@ msgstr ""
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: zh_CN\n"
-
-msgid "8"
-msgstr "8"
 
 msgid "404"
 msgstr "404"
@@ -267,6 +264,9 @@ msgstr "%1 推出比特币账户"
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 启动了品牌商品%3专用电子商务网站%2– 让客户、联盟会员和程序开发员买卖%1的产品。"
 
+msgid "%1 lots"
+msgstr ""
+
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr "%1 努力让二元期权所提交的每个标的资产报价与市场现有资产的实际价格合理相近。%1 不保证、表达或意味着所报的价代表市价。"
 
@@ -420,9 +420,6 @@ msgstr "《 eGaming Review》颁发的“年度最佳金融投注运营商”奖
 msgid "(One) Touch trades"
 msgstr "一触即付交易"
 
-msgid "(Sell Price - Buy Price) x Volume x Price Per Point = Profit"
-msgstr "（售出价 - 购入价） x 交易量 x 每点的价格 = 利润"
-
 msgid "(max)"
 msgstr "（最大）"
 
@@ -434,9 +431,6 @@ msgstr "0-1 年"
 
 msgid "0-5 transactions in the past 12 months"
 msgstr "过去12个月内0-5次交易"
-
-msgid "0.01 lots"
-msgstr "0.01手"
 
 msgid "1 million transactions/day"
 msgstr "一百万笔交易/天"
@@ -450,15 +444,6 @@ msgstr "1-3 years"
 msgid "1. Proof of identity"
 msgstr "1. 身份证明"
 
-msgid "10 lots"
-msgstr "10手"
-
-msgid "100%"
-msgstr "100%"
-
-msgid "150%"
-msgstr "150%"
-
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6,000 – 5,200) = $1600"
 
@@ -471,14 +456,8 @@ msgstr "双边报价"
 msgid "2. Proof of address"
 msgstr "2. 地址证明"
 
-msgid "24/7"
-msgstr "全天候"
-
 msgid "3-5 years"
 msgstr "3-5 years"
-
-msgid "30 lots"
-msgstr "30手"
 
 msgid "30-day limit on losses"
 msgstr "30天损失限额"
@@ -489,32 +468,17 @@ msgstr "30天交易限额"
 msgid "40 transactions or more in the past 12 months"
 msgstr "过去12个月内40次交易或以上"
 
-msgid "50 lots"
-msgstr "50手"
-
-msgid "50%"
-msgstr "50%"
-
 msgid "6 months to 1 year"
 msgstr "6 months to 1 year"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "过去12个月内6-10次交易"
 
-msgid "60+"
-msgstr "60+"
-
 msgid "7-day limit on losses"
 msgstr "7天期损失限额"
 
 msgid "7-day turnover limit"
 msgstr "7天期交易限额"
-
-msgid "70+"
-msgstr "70+"
-
-msgid "75%"
-msgstr "75%"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< 返回工作说明"
@@ -537,17 +501,11 @@ msgstr "<strong>合适性测试:警告:</strong>为了给您提供服务，我�
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>兑换率风险</strong>: 外汇兑换率可能会因为广泛的经济、政治和其他条件而快速改变，因此，您在进行标的投资产品交易时除了隐藏性损失风险之外，还冒着兑换率损失风险。如果您以某一种货币存入资金，但以另一种货币进行合同交易计价，您的标的投资收益或损失可能会受到两种货币间兑换率变动的影响。"
 
-msgid "<strong>Long positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr "<strong>多头头寸</strong>: 我们收取比银行间贷款利率高 2% 的费用。"
-
 msgid "<strong>Open menu</strong> and select <strong>Preferences</strong>."
 msgstr "<strong>打开菜单</strong>并选择<strong>首选项</strong>。"
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr "<strong>其他风险</strong>: 关于投资产品交易、外汇交易的其他风险无法在此文件中逐一说明。但一般来说，证券、期权和货币交易所牵涉的集合性风险包括：市场风险、信用风险、结算风险、流动性风险、运作风险和法律风险。例如，本地或海外可能会发生经济、政治或其他不可预测的事件，造成严重的市场纷乱。除了这些风险以外，会计和税务处理问题等因素也是您必须考虑的。"
-
-msgid "<strong>Short positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr "<strong>空头头寸</strong>: 我们收取比银行间贷款利率高 2% 的费用。"
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "计算机科学大学本科学历，或拥有同等的技术教育、培训和工作经验"
@@ -908,9 +866,6 @@ msgstr "高级"
 
 msgid "Advanced Account"
 msgstr "高级账户"
-
-msgid "Advanced account: 1:100"
-msgstr "高级账户: 1:100"
 
 msgid "Advanced binary options trading interface"
 msgstr "高级二元期权交易界面"
@@ -1845,9 +1800,6 @@ msgstr "三、最佳执行方案的定义"
 msgid "C. Provision of Services"
 msgstr "三、提供服务"
 
-msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
-msgstr "CFD （差价合约）︰ CFD 是允许您通过预测一种工具的价格是否会上涨或下跌而获利的工具。损益的估计方式是以标的工具买入/卖出价格差异的函数计算。"
-
 msgid "CFD Trading Experience"
 msgstr "差价合约交易经验"
 
@@ -2392,9 +2344,6 @@ msgstr "合约风险"
 msgid "Contract Sold"
 msgstr "售出合约"
 
-msgid "Contract Specifications"
-msgstr "合约规格"
-
 msgid "Contract Starts"
 msgstr "合约开始时间"
 
@@ -2601,9 +2550,6 @@ msgstr "货币"
 
 msgid "Currency"
 msgstr "货币"
-
-msgid "Currency Symbol"
-msgstr "货币符号"
 
 msgid "Currency of the funds accepted in your trading account."
 msgstr "您的交易账户能接受的资金货币。"
@@ -3069,9 +3015,6 @@ msgstr "每个期权交易都有指定的到期时间和日期，称为判断时
 
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
 msgstr "协议各方向另一方陈述并保证，已经拥有并将在协议期间继续保留所有签订本协议、并向另一方授予本协议所授予的权利、所有权和许可以及履行本协议下所有相应义务的权利和权限。"
-
-msgid "Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index."
-msgstr "每次您在波动性指数符号上开盘交易时，您可以从最小交易量 0.01（交易额）开始，这将转换成每一指数变动点 0.01 美元。"
 
 msgid "Each time you open a position on a cryptocurrency pair, you can start with a minimum volume as indicated in the table above."
 msgstr "每次开加密货币对头寸时, 您都可以由上表所示的最小交易额开始。"
@@ -3697,9 +3640,6 @@ msgstr "例如，如果您想通过传统经纪人以每单位 50 美元的价�
 msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
 msgstr "例如, 假设市场在合约持续时间内的最低价为5200和收盘时为6000, 那么倍数值为2美元的\"收盘-最低价\" 回顾回报为:"
 
-msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr "例如，波动率指数的差价合约报价每点1美元。如果您以当前20,000 美元的卖出价格购入 1.0 股波动率 100 指数，然后以20,010 美元的买入价格出售，您的净利润计算方法如下︰"
-
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product Disclosure Statement. This policy is an appendix to the overarching %1 Order Execution Policy and should be read in conjunction with the overarching %1 Order Execution Policy."
 msgstr "关于%1提供的Spot FX 特点和交易说明，请参阅产品披露声明。这项政策是%1综合性订单执行政策的附录，须与%1综合性订单执行政策一起阅读。"
 
@@ -4063,9 +4003,6 @@ msgstr "高障碍位移"
 msgid "High conversions"
 msgstr "高转换率"
 
-msgid "High frequency (2 ticks per second)"
-msgstr "高频率 （每秒 2 次跳动点）"
-
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "高度安全保障 - 每一个加密货币交易都透过先进的加密技术提供安全保障，因此伪造是几乎不可能发生的"
 
@@ -4134,12 +4071,6 @@ msgstr "我怎么知道我赚了多少？"
 
 msgid "How do I register to become a %1 IB?"
 msgstr "如何注册成为 %1 IB？"
-
-msgid "How do we calculate interest fees for long positions?"
-msgstr "多头头寸的利息费用如何计算？"
-
-msgid "How do we calculate interest fees for short positions?"
-msgstr "空头头寸的利息费用如何计算？"
 
 msgid "How does it work?"
 msgstr "如何运作？"
@@ -4248,9 +4179,6 @@ msgstr "我要被视为专业客户。"
 
 msgid "I. Quotes"
 msgstr "九、 报价"
-
-msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
-msgstr "即 (20010 - 20000) x 1 x 1 = 10 美元"
 
 msgid "IB Programme"
 msgstr "IB 计划"
@@ -4437,9 +4365,6 @@ msgstr "如果您拥有我们需要的技能，您将有机会加入一个优秀
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "如果您持仓隔夜，需付持仓费。此费用将以利息名义在您的交易账户中扣除。"
-
-msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open. This adjustment is based on interbank lending rates, on top of a 2% fee."
-msgstr "如果您持仓过夜，系统将对您的账户收取持仓成本隔夜利息。此费用基于银行间贷款利率加上2%费用。"
 
 msgid "If you lose your cryptocurrencies as a result of exchanges and wallet providers being hacked or becoming insolvent, there is no assurance of a recourse. It is your responsibility to store your cryptocurrencies securely. %1 will not accept liability for any loss or damage that arise, directly or indirectly, from theft of your cryptocurrency or insolvency of exchanges and wallet providers that you use."
 msgstr "如果您由于交易所和钱包供应商被骇客入侵或无力偿债而损失加密货币, 将没有任何补偿的保障。安全保存加密货币是您的责任。%1 将不对您由于加密货币被盗窃或交易所和钱包供应商破产所造成的直接或间接损失或损害承担任何责任。"
@@ -5620,12 +5545,6 @@ msgstr "让我们比较买入和卖出的区别，以欧元/美元为例:"
 msgid "Let's say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to 'go long' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you."
 msgstr "比方说，美国100合约在标的资产中每点值1美元。如果您决定开美国100“多头头寸”，而资产价格上涨10点，意味着您将获得10美元利润。"
 
-msgid "Let's say the points adjustment for a long position on the EUR/USD symbol is -5.64. This would require an overnight fee of 5.64 points for one lot of open position in EUR/USD, where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will incur an interest fee of EUR5.64 for keeping the position open overnight."
-msgstr "比如说，欧元/美元符号的多头头寸点调整是-5.64。如果一手大小是 100,000单位，欧元/美元持仓头寸需要 5.64 点过夜费。点数将被转换成存款货币（在这个例子中是欧元）。因此，要持仓过夜，您需付 5.64 欧元利息费用。"
-
-msgid "Let's say the points adjustment for a short position on the EUR/USD symbol is 1.64. This would result in an overnight credit of 1.64 points for one lot of open position in EUR/USD where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will be credited with EUR1.64 for keeping the position open overnight."
-msgstr "比如说，欧元/美元符号的空头头寸点调整是1.64。如果一手大小是 100,000单位，欧元/美元持仓头寸带来 1.64 点过夜信贷。点数将被转换成存款货币（在这个例子中是欧元）。因此，持仓过夜可获取 1.64 欧元隔夜信贷。"
-
 msgid "Let's use the US 100 index as an example:"
 msgstr "让我们以美国100指数为例:"
 
@@ -5647,20 +5566,11 @@ msgstr "杠杆可以用于生成比从您的账户余额拨出进行开盘持仓
 msgid "Leverage gives you the ability to trade a larger position using your existing capital."
 msgstr "杠杆使您能够以现有资本进行更大头寸交易。"
 
-msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "杠杆率是基于初始存款的可控制资本额。例如，100: 1杠杆将允许您仅使用1,000美元本身存款控制100,000美元。"
-
-msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 1:100 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "杠杆率是基于初始存款的可控制资本额。例如，1:100杠杆将允许您仅使用1,000美元本身存款控制100,000美元。"
-
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "通过杠杆社交媒体工具标识、引入并转换潜在新客户和业务合作伙伴"
 
-msgid "Leverage up to 1:100"
-msgstr "杠杆率高达1: 100"
-
-msgid "Leverage up to 1:500"
-msgstr "杠杆率高达 1: 500"
+msgid "Leverage up to %1"
+msgstr ""
 
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that you would be able to enter into a trade position that is of 50 times higher than your margin. When you invest in a leveraged product, your profit or loss is based on the leveraged position, i.e., the increased/amplified value of your trade determined based on the leverage ratio you set for your account."
 msgstr "融资融券交易中，杠杆指使用保证金增加/扩大交易数值。杠杆的表达方式是比率。举个例子，如果杠杆是50: 1，您将能够持有比保证金高出50倍的交易头寸。当您投资一种杠杆产品时，您的盈利或亏损将根据杠杆的头寸计算，也就是说，您为账户设置的杠杆比率决定了您的交易增加/扩大数值。"
@@ -5761,9 +5671,6 @@ msgstr "登录故障"
 msgid "Long"
 msgstr "长仓"
 
-msgid "Long positions"
-msgstr "多头部位"
-
 msgid "Long-term partnership:"
 msgstr "长期合作伙伴："
 
@@ -5778,9 +5685,6 @@ msgstr "回顾选项目前仅适用于 %1波动指数%2。"
 
 msgid "Loss"
 msgstr "亏损"
-
-msgid "Lot Size (Volume = 1.0)"
-msgstr "手大小 (交易量 = 1.0)"
 
 msgid "Lot size"
 msgstr "手大小"
@@ -5977,9 +5881,6 @@ msgstr "三月"
 msgid "March"
 msgstr "三月"
 
-msgid "Margin"
-msgstr "保证金"
-
 msgid "Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
 msgstr "保证金 &mdash; 我们从您的账户余额拨出进行开盘持仓交易，以支付我们作为您的合约交易对手的金额。"
 
@@ -6009,9 +5910,6 @@ msgstr "保证金允许您进行杠杆交易，让您以现有资金使用更高
 
 msgid "Margin call"
 msgstr "追加保证金通知"
-
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
-msgstr "保证金是基于初始资金的可控制投资额。例如，0.2%保证金将允许您仅使用 1,000 美元本身存款控制高达500,000 美元。"
 
 msgid "Market"
 msgstr "市场"
@@ -6057,9 +5955,6 @@ msgstr "符合/相差"
 
 msgid "Max"
 msgstr "最大"
-
-msgid "Maximum Leverage"
-msgstr "最大杠杆"
 
 msgid "Maximum account cash balance"
 msgstr "最大账户现金余额"
@@ -6171,24 +6066,6 @@ msgstr "存款金额范围"
 
 msgid "Min-Max Withdrawal"
 msgstr "取款金额范围"
-
-msgid "Min. Volume Increment"
-msgstr "最小交易增额"
-
-msgid "Min. Volume<br>(Lot Size)"
-msgstr "最小交易额<br>(手量)"
-
-msgid "Minimum Spread"
-msgstr "最小价差"
-
-msgid "Minimum Volume"
-msgstr "最小交易额"
-
-msgid "Minimum Volume (Trade Size)"
-msgstr "最小量额 （交易量）"
-
-msgid "Minimum Volume Increment"
-msgstr "最小交易增额"
 
 msgid "Minimum deposit"
 msgstr "最小存款额"
@@ -6871,9 +6748,6 @@ msgstr "我们的位置"
 msgid "Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots."
 msgstr "我们的金属对通常以手为交易单位。一个标准手数相当于100个单位，除了白银是一手等于5,000个单位。每次当您为某个符号开仓时，您可以从0.01手的最小交易量开始。"
 
-msgid "Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5.000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots."
-msgstr "我们的金属对通常以手为交易单位。一个标准手数相当于100个单位，除了白银是一手等于5.000个单位。每次当您为某个符号开仓时，您可以从0.01手的最小交易量开始。"
-
 msgid "Our proprietary synthetic indices that simulate market forces"
 msgstr "我们专有的、模拟市场力量的综合指数"
 
@@ -7087,9 +6961,6 @@ msgstr "第3支柱资料披露报告"
 msgid "Pip"
 msgstr "点"
 
-msgid "Pip Size"
-msgstr "点数大小"
-
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "点（percentage in point，缩写为pip）一般来说是指小数点后第4位数（如0.0001）。"
 
@@ -7285,9 +7156,6 @@ msgstr "请将以上信息发送到<a href='mailto:%1'>%1</a>。"
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "请注意，我们的掉期率也取决于您的持仓时间和天数︰"
 
-msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
-msgstr "请注意，我们的掉期率也取决于您的持仓时间和天数︰ "
-
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "请等待确认。我们的客服团队将于四小时内将账户状态以电子邮件方式通知您。"
 
@@ -7305,9 +7173,6 @@ msgstr "按照所有外汇经纪商标准操作规程，周三格林威治时间
 
 msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends – a standard practice for all brokers."
 msgstr "按照所有经纪商标准操作规程，周三格林威治时间23:59:59 过后仍未平仓的头寸须付掉期利率的三倍为周末费率。"
-
-msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends, a standard practice for all Forex brokers."
-msgstr "按照所有外汇经纪商标准操作规程，周三23:59:59 GMT过后仍未平仓的头寸须付掉期利率的三倍为周末费率。"
 
 msgid "Postal Code / ZIP"
 msgstr "邮编"
@@ -7712,8 +7577,8 @@ msgstr "参考"
 msgid "Refer new clients to our MetaTrader 5 platform and earn a commission on their Forex and CFD trading activity."
 msgstr "请将我们的 MetaTrader 5 平台介绍给新客户, 并在其进行外汇和差价合约交易时赚取佣金。"
 
-msgid "Refers to the maximum volume or lots per order."
-msgstr "指每个订单的最大交易量或手量。"
+msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
+msgstr ""
 
 msgid "Refers to the total number of available symbols for your account."
 msgstr "指的是您账户的可用符号总数。"
@@ -8189,9 +8054,6 @@ msgstr "庇护所社区第3学习中心"
 msgid "Short"
 msgstr "短仓"
 
-msgid "Short positions"
-msgstr "空头部位"
-
 msgid "Short to long-term durations"
 msgstr "短期限到长期限"
 
@@ -8347,9 +8209,6 @@ msgstr "标准"
 
 msgid "Standard Account"
 msgstr "标准账户"
-
-msgid "Standard account: 1:500"
-msgstr "标准账户: 1:500"
 
 msgid "Start Time"
 msgstr "开始时间"
@@ -8955,9 +8814,6 @@ msgstr "外汇是场外交易市场，由两方直接交易，不经过中间交
 msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
 msgstr "外汇交易通常以<i>手</i>计量。一个标准 <i>手</i>相当于100,000个单位。每次您在货币符号上开盘交易，可以<i>0.01 手</i>为最小交易量开始。"
 
-msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lots</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
-msgstr "外汇交易通常以<i>手</i>计量。一个标准 <i>手</i>相当于100,000个单位。每次您在货币符号上开盘交易，可以<i>0.01 手</i>为最小交易量开始。"
-
 msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
 msgstr "资金经理可以获得分配MAM高级账户，代表您进行比普通高级账户更有竞争力的利差交易。其它账户规范没有变更。"
 
@@ -9272,9 +9128,6 @@ msgstr "投注金额即交易者为了执行交易而必需支付的金额。"
 
 msgid "The sum received in the %1 Agent Account shall be transferred by the Agent to the %1 Client Account."
 msgstr "%1代理账户收到的金额须由代理转移到%1客户账户。"
-
-msgid "The swap rate will depend on the direction of the position you take:"
-msgstr "掉期利率将取决于您的头寸方向︰"
 
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "系统按先进先出的次序，即按照收到订单的顺序处理订单，这是我们无法控制的。因此，您可能会发现很难或无法在某些市场条件下按照您的止损单规定的预期价位平仓。您设定的止损单虽然是有用的风险管理工具，却不一定能按照您原先设想的数额限制损失。在极不稳定的交易条件下，由于市场情况可能无法执行这些指令，您的退出价格具不确定性。简而言之，止损单是无法提供保证的，因为无法在所有市场情况下运作。"
@@ -9614,15 +9467,6 @@ msgstr "要了解详情, 请阅读我们的<a href='%1'>差价合约规格</a>�
 
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "要了解关于保证金要求的更多信息，请阅读我们的%1保证金政策%2。"
-
-msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
-msgstr "要了解关于波动率指数50%强制清算水平的更多信息，请阅读我们的<a href=\"%1\">差价合约保证金政策</a>。"
-
-msgid "To learn more, read our <a href=\"%1\">Forex Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
-msgstr "要了解关于外汇100%强制清算水平的更多信息，请阅读我们的<a href=\"%1\">外汇保证金政策</a>。"
-
-msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "要了解关于金属对100%强制清算水平的更多信息，请阅读我们的<a href=\"%1\">金属交易保证金政策</a>。"
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
@@ -10125,14 +9969,11 @@ msgstr "解锁收银台"
 msgid "Up"
 msgstr "上涨"
 
+msgid "Up to %1"
+msgstr ""
+
 msgid "Up to %1 decimal places are allowed."
 msgstr "允许 % 个小数位。"
-
-msgid "Up to 1:100"
-msgstr "高达1:100"
-
-msgid "Up to 1:500"
-msgstr "高达1:500"
 
 msgid "Up/Down"
 msgstr "涨/跌"
@@ -10215,11 +10056,8 @@ msgstr "水电费 (电、水、煤气、宽带和电话)"
 msgid "Validate address"
 msgstr "地址验证"
 
-msgid "Variable from 0.9 pips"
-msgstr "变量从0.9 点开始"
-
-msgid "Variable from 1.2 pips"
-msgstr "变量从1.2 点开始"
+msgid "Variable from %1 pips"
+msgstr ""
 
 msgid "Variable spreads"
 msgstr "变数点差"
@@ -10338,9 +10176,6 @@ msgstr "波动率指数"
 msgid "Volatility Indices Account"
 msgstr "波动率指数账户"
 
-msgid "Volatility Indices account: 1:500"
-msgstr "波动率指数账户: 1:500"
-
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "波动率指数进一步分为两种级别："
 
@@ -10349,12 +10184,6 @@ msgstr "波动指数佣金按每次完成交易的账户货币计算。例如: �
 
 msgid "Volume"
 msgstr "交易量"
-
-msgid "Volume 1.0 (Trade Size)"
-msgstr "量额 1.0（交易量）"
-
-msgid "Volume 1.0<br>(Lot Size)"
-msgstr "量额 1.0<br>（手量）"
 
 msgid "Volume step"
 msgstr "量额步骤"
@@ -10436,9 +10265,6 @@ msgstr "我们正在审阅您的文件, 将于一个工作日内回复。"
 
 msgid "We are reviewing your documents. For more details %1contact us%2."
 msgstr "我们正在审阅您的文件。若要取得详细信息, 请 %1联系我们%2。"
-
-msgid "We charge a 2% fee on top of market rates."
-msgstr "我们收取比市场利率高 2% 的费用。"
 
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr ""
