@@ -76,7 +76,7 @@ const Platform = () => (
                     url='https://ticktrade.binary.com'
                     target='_blank'
                     button_text={it.L('Try Web Version')}
-                    button_class='tick-trade-app-link'
+                    button_class='gr-hide gr-show-m gr-show-p'
                 />
                 <div className='gr-2' />
                 <Platforms
