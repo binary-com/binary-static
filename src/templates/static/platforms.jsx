@@ -12,6 +12,7 @@ const Platforms = ({
     url = '',
     target,
     button_text,
+    button_class = '',
     google_play_url = '',
 }) => (
     <div className={`gr-5 gr-12-m gr-12-p ${className || ''}`} data-show={data_show}>
@@ -30,7 +31,7 @@ const Platforms = ({
                         </a>
                     }
                     { url &&
-                        <a className='button' href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                        <a className={`button ${button_class}`} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                     }
                 </div>
             </div>
@@ -75,6 +76,7 @@ const Platform = () => (
                     url='https://ticktrade.binary.com'
                     target='_blank'
                     button_text={it.L('Try Web Version')}
+                    button_class='tick-trade-app-link'
                 />
                 <div className='gr-2' />
                 <Platforms
