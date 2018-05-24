@@ -33,7 +33,7 @@ const TradingAnalysis = (() => {
         form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
 
         const map_obj = { matchdiff: 'digits', callput: 'higherlower' };
-        const regex   = new RegExp(Object.keys(map_obj).join('|'), 'gi');
+        const regex   = new RegExp(`^(${Object.keys(map_obj).join('|')})$`, 'gi');
         form_name     = form_name.replace(regex, matched => map_obj[matched]);
 
         $('#tab_last_digit').setVisibility(/digits|overunder|evenodd/.test(form_name));
