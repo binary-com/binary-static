@@ -17,6 +17,15 @@ const OtpForm = () => (
     </React.Fragment>
 );
 
+const TwoFactorStatus = ({type}) => (
+    <div className='two-fa-status'>
+        <div className='two-fa-status-container'>
+            <img className='responsive two-fa-status-icon' src={it.url_for(`images/pages/settings/2fa-${type}.svg`)} />
+            <p className='two-fa-status-text'>{it.L(`Two-factor authentication is currently ${type}.`)}</p>
+        </div>
+    </div>
+);
+
 const TwoFactorAuthentication = () => (
     <React.Fragment>
         <h1>{it.L('Two-Factor Authentication')}</h1>
@@ -26,9 +35,7 @@ const TwoFactorAuthentication = () => (
         <ErrorMessage id='status_error' />
 
         <div id='disabled' className='invisible'>
-            <div>
-                <p>{it.L('Two-factor authentication is currently disabled.')}</p>
-            </div>
+            <TwoFactorStatus type='disabled' />
 
             <h2>{it.L('How to setup two-factor authentication for your [_1] account', it.website_name)}</h2>
 
@@ -54,9 +61,7 @@ const TwoFactorAuthentication = () => (
         </div>
 
         <div id='enabled' className='invisible'>
-            <div>
-                <p>{it.L('Two-factor authentication is currently enabled.')}</p>
-            </div>
+            <TwoFactorStatus type='enabled' />
         </div>
 
         <OtpForm />

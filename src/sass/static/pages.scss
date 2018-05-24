@@ -669,3 +669,22 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
 }
+
+.two-fa-status {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+
+    &-container {
+        display: flex;
+        align-items: center;
+        padding: 10px 30px 10px 15px;
+        background: $COLOR_LIGHT_GRAY;
+    }
+    &-icon {
+        max-width: 60px;
+        max-height: 55px;
+        padding-right: 15px;
+    }
+}
