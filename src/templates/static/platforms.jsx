@@ -24,7 +24,7 @@ const Platforms = ({
             <strong>{description}</strong>
             <p>{text}</p>
             <div className='gr-row'>
-                <div className='gr-12 center-row-elements'>
+                <div className='gr-12'>
                     { google_play_url &&
                         <a className='' href={google_play_url} target='_blank' rel='noopener noreferrer'>
                             <div className='google-play-badge' />
@@ -53,7 +53,8 @@ const Platform = () => (
                     url={it.url_for('trading')}
                     button_text={it.L('Trade Now')}
                 />
-                <div className='gr-2' />
+                <div className='gr-2 gr-hide-m gr-hide-p' />
+                <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />
                 <Platforms
                     image='mt5'
                     header={it.L('MetaTrader 5')}
@@ -73,9 +74,10 @@ const Platform = () => (
                     url='https://ticktrade.binary.com'
                     target='_blank'
                     button_text={it.L('Try Web Version')}
-                    button_class='gr-hide gr-show-m gr-show-p'
+                    button_class='gr-hide gr-show-inline-m gr-show-inline-p no-margin no-scroll'
                 />
-                <div className='gr-2' />
+                <div className='gr-2 gr-hide-m gr-hide-p' />
+                <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />
                 <Platforms
                     image='webtrader'
                     header={it.L('Binary WebTrader')}
@@ -96,7 +98,8 @@ const Platform = () => (
                     target='_blank'
                     button_text={it.L('Try Binary Bot')}
                 />
-                <div className='gr-2' />
+                <div className='gr-2 gr-hide-m gr-hide-p' />
+                <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />
                 <Platforms
                     image='tradingview'
                     header={it.L('TradingView for [_1]', it.website_name)}
@@ -117,7 +120,8 @@ const Platform = () => (
                     url={it.url_for('multi_barriers_trading')}
                     button_text={it.L('Trade now')}
                 />
-                <div className='gr-2 financial-only'  />
+                <div className='gr-2 financial-only gr-hide-m gr-hide-p' />
+                <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />
                 <Platforms
                     image='chart'
                     header={it.L('SmartCharts')}
