@@ -2,21 +2,21 @@ import React from 'react';
 
 const Biel = () => (
     <div>
-        <h2 data-anchor>{it.L('Supplementary Terms and Conditions for Financial Products offered by Binary Investments (Europe) Ltd.')}</h2>
+        <h2 data-anchor>{it.L('Supplementary Terms and Conditions for Financial Products Offered by Binary Investments (Europe) Ltd ')}</h2>
         <p>{it.L('These Supplementary Terms and Conditions (these "ST&Cs") apply solely to clients ("you") of Binary Investments (Europe) Ltd ("BIEL", "we" or "us") and will govern the relationship between you and us when trading Financial Products (as defined below) with us.')}</p>
         <p>{it.L('These ST&Cs form part of and need to be read together with the General Terms and Conditions relating to the use of [_1].', it.website_name)}</p>
         <p>{it.L('You should read these ST&Cs carefully as well as the Summary Order Execution Policy and Summary Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you.')}</p>
         <p>{it.L('These ST&Cs begin to apply on the date we open your account, and, for any new versions after that, on the date we notify you.')}</p>
 
-        <h2 data-anchor>{it.L('About Us and our Regulator')}</h2>
+        <h2 data-anchor>{it.L('About Us and Our Regulator')}</h2>
         <p>{it.L('BIEL is a company established in Malta under registration number C70156 and having its registered office at Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta.')}</p>
         <p>{it.L('We are authorised and regulated by the Malta Financial Services Authority ("MFSA") under the Investment Services Act (Cap. 370, Laws of Malta) (the "Act") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets ("Financial Products"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm.')}</p>
         <p>{it.L('In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the "Rules"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail.')}</p>
 
         <h2 data-anchor>{it.L('Restrictions')}</h2>
-        <p>{it.L('Citizens of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd.')}</p>
+        <p>{it.L('Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd.')}</p>
 
-        <h2 data-anchor>{it.L('Client classification')}</h2>
+        <h2 data-anchor>{it.L('Client Classification')}</h2>
         <p>{it.L('Under the Rules, clients may be categorised into one of the following three categories:')}</p>
         <ul className='bullet'>
             <li>{it.L('Retail Clients')}</li>
@@ -24,7 +24,7 @@ const Biel = () => (
             <li>{it.L('Eligible Counterparty')}</li>
         </ul>
         <p>{it.L('The level of protection offered and due to each client depends on the category to which each client is assigned. Retail Clients benefit from the highest degree of protection.')}</p>
-        <p>{it.L('Unless otherwise advised, we shall treat you as a Retail Client. You may also request, in writing, us to change the category in which you have been classified and this may have an effect on the level of protection afforded to you. Professional Clients do not fall within the scope of the Investor Compensation Scheme. We reserve the right to accept or refuse any such request for change in classification.')}</p>
+        <p>{it.L('Unless otherwise advised, we shall treat you as a Retail Client. You may also request by writing to us to change the category in which you have been classified and this may have an effect on the level of protection afforded to you. Professional Clients do not fall within the scope of the Investor Compensation Scheme. We reserve the right to accept or refuse any such request for change in classification.')}</p>
         <p>{it.L('Notwithstanding the above, you hereby declare that you are dealing with us outside the scope of your economic or professional activity and we will therefore treat you as an individual retail client for the purposes of EMIR compliance, unless advised otherwise.')}</p>
         <p>{it.L('We are entitled under the Rules to rely upon information provided by you. You should ensure that you provide us with accurate and complete information and notify us in the event that any information supplied to us changes. You should note that if you provide us with inaccurate information, or if you fail to notify us of any changes to information previously supplied by you, this may adversely affect the quality of the services that we can provide.')}</p>
 

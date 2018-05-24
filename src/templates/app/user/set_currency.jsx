@@ -64,15 +64,15 @@ const SetCurrency = () => (
                 <SeparatorLine show_mobile className='gr-child gr-padding-10' />
 
                 <p><strong>{it.L('Open a Financial Account')}</strong></p>
-                <p>{it.L('Your gaming account (MX) limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead.')}</p>
+                <p>{it.L('Your gaming account [_1] limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead.', '<span data-show="iom">(MX)</span><span data-show="malta">(MLT)</span>')}</p>
                 <a className='button-secondary' href={it.url_for('new_account/maltainvestws')}><span>{it.L('Create Financial Account')}</span></a>
 
                 <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
 
-                <ul className='hint'>
+                <ul className='hint bullet list-style-inside'>
                     {it.L('Note:')}
-                    <li>1. {it.L('Funds cannot be transferred between financial and gaming accounts.')}</li>
-                    <li>2. {it.L('Both accounts need to be authenticated separately.')}</li>
+                    <li data-show='iom'>{it.L('Funds cannot be transferred between financial and gaming accounts.')}</li>
+                    <li>{it.L('Both accounts need to be authenticated separately.')}</li>
                 </ul>
             </div>
 
