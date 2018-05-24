@@ -115,7 +115,7 @@ const commonTrading = (() => {
     const getContractCategoryTree = (elements) => {
         let tree = [
             ['updown',
-                ['risefall', 'higherlower'],
+                ['risefall', 'higherlower', 'callputspread'],
             ],
             'touchnotouch',
             ['inout',

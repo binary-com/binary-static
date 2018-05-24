@@ -148,6 +148,7 @@ const Contract = (() => {
                         trade_contract_forms.risefall = localize('Rise/Fall');
                     } else {
                         trade_contract_forms.higherlower = localize('Higher/Lower');
+                        trade_contract_forms.callputspread = localize('Spread Higher/Spread Lower');
                     }
                 } else {
                     trade_contract_forms[contract_category] = localize(current_obj.contract_category_display);
@@ -176,6 +177,7 @@ const Contract = (() => {
             trade_contract_forms.inout = localize('In/Out');
         }
 
+        console.log(trade_contract_forms);
         return trade_contract_forms;
     };
 
