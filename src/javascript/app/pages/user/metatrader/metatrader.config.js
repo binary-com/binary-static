@@ -11,9 +11,9 @@ const urlFor       = require('../../../../_common/url').urlFor;
 const MetaTraderConfig = (() => {
     const mt_companies = {
         financial: {
-            standard: { mt5_account_type: 'standard',      max_leverage: 500, title: 'Standard' },
-            advanced: { mt5_account_type: 'advanced',      max_leverage: 100, title: 'Advanced' },
-            mamm    : { mt5_account_type: 'mamm_advanced', max_leverage: 100, title: 'MAM Advanced', is_real_only: 1 },
+            standard: { mt5_account_type: 'standard',      max_leverage: 1000, title: 'Standard' },
+            advanced: { mt5_account_type: 'advanced',      max_leverage: 300,  title: 'Advanced' },
+            mamm    : { mt5_account_type: 'mamm_advanced', max_leverage: 300,  title: 'MAM Advanced', is_real_only: 1 },
         },
         gaming: {
             volatility: { mt5_account_type: '',     max_leverage: 500, title: 'Volatility Indices' },
