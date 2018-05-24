@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-23 21:43-0400\n"
+"PO-Revision-Date: 2018-05-24 02:45-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -14,9 +14,6 @@ msgstr ""
 "X-Crowdin-Language: it\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: it_IT\n"
-
-msgid "8"
-msgstr "8"
 
 msgid "404"
 msgstr "404"
@@ -267,6 +264,9 @@ msgstr "%1 lancia gli account di Bitcoin"
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 lancia un %2sito di e-commerce per prodotti marchiati%3 – per consentire ai clienti, agli affiliati e agli sviluppatori di acquistare e vendere i prodotti di %1."
 
+msgid "%1 lots"
+msgstr ""
+
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr "%1 si impegna affinché i prezzi quotati di ogni asset sottostante cui si riferisce un'Opzione Binaria siano ragionevolmente connessi ai prezzi attuali di tali asset disponibili sul mercato. %1 non garantisce, in maniera espressa o implicita, che i prezzi quotati rappresentino quelli prevalenti sul mercato."
 
@@ -420,9 +420,6 @@ msgstr "Premio come 'Operatore di scommesse finanziarie dell'anno' da parte di e
 msgid "(One) Touch trades"
 msgstr "Trade Tocca"
 
-msgid "(Sell Price - Buy Price) x Volume x Price Per Point = Profit"
-msgstr "(Prezzo di vendita - Prezzo d'acquisto) x Volume x Prezzo per punto = Profitto"
-
 msgid "(max)"
 msgstr "(max)"
 
@@ -434,9 +431,6 @@ msgstr "da 0 a 1 anno"
 
 msgid "0-5 transactions in the past 12 months"
 msgstr "0-5 transazioni negli ultimi 12 mesi"
-
-msgid "0.01 lots"
-msgstr "0.01 lotti"
 
 msgid "1 million transactions/day"
 msgstr "1 milione di transazioni al giorno"
@@ -450,15 +444,6 @@ msgstr "1-3 anni"
 msgid "1. Proof of identity"
 msgstr "1. Prova dell'identità"
 
-msgid "10 lots"
-msgstr "10 lotti"
-
-msgid "100%"
-msgstr "100%"
-
-msgid "150%"
-msgstr "150%"
-
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6.000 – 5.200) = $1600"
 
@@ -471,14 +456,8 @@ msgstr "Determinazione del prezzo in 2 direzioni"
 msgid "2. Proof of address"
 msgstr "2. Prova dell'indirizzo"
 
-msgid "24/7"
-msgstr "24/7"
-
 msgid "3-5 years"
 msgstr "3-5 anni"
-
-msgid "30 lots"
-msgstr "30 lotti"
 
 msgid "30-day limit on losses"
 msgstr "Limite di 30 giorni sulle perdite"
@@ -489,32 +468,17 @@ msgstr "Limite di 30 giorni sul turnover"
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 transazioni o più negli ultimi 12 mesi"
 
-msgid "50 lots"
-msgstr "50 lotti"
-
-msgid "50%"
-msgstr "50%"
-
 msgid "6 months to 1 year"
 msgstr "Da 6 mesi a 1 anno"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 transazioni negli ultimi 12 mesi"
 
-msgid "60+"
-msgstr "60+"
-
 msgid "7-day limit on losses"
 msgstr "Limite di 7 giorni sulle perdite"
 
 msgid "7-day turnover limit"
 msgstr "Limite di 7 giorni sul turnover"
-
-msgid "70+"
-msgstr "70+"
-
-msgid "75%"
-msgstr "75%"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Torna su Descrizioni dei lavori"
@@ -537,17 +501,11 @@ msgstr "<strong>Test di adeguatezza: ATTENZIONE:</strong> Per la fornitura dei n
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>Rischio del Tasso di Cambio</strong>: I tassi di cambio delle valute estere possono cambiare rapidamente a causa di una vasta gamma di condizioni economiche, politiche e altro, esponendoti così al rischio di perdite di cambio oltre al rischio intrinseco connesso alla perdita derivante dal trading nel prodotto d'investimento sottostante. Se depositi fondi in una valuta, per fare trading su Contratti denominati in una valuta diversa, il tuo guadagno o la tua perdita sull'investimento sottostante può quindi essere influenzato dai cambiamenti nel tasso di cambio delle valute."
 
-msgid "<strong>Long positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr "<strong>Posizioni a lungo termine</strong>: applichiamo una commissione del 2% sui tassi di prestito interbancari."
-
 msgid "<strong>Open menu</strong> and select <strong>Preferences</strong>."
 msgstr "<strong>Apri il menu</strong> e seleziona <strong>Preferenze</strong>."
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr "<strong>Altri rischi</strong>: esistono altri rischi connessi al trading in prodotti di investimento e valute estere che non possono essere descritti nel dettaglio in questo documento. Ad ogni modo, in genere i titoli, le opzioni e le transazioni in valuta comportano l'esposizione ai seguenti fattori di rischio: rischio del mercato, rischio di credito, rischio di regolamento, rischio di liquidità, rischio operativo e legale. Ad esempio, possono verificarsi serie distorsioni del mercato nel caso in cui eventi economici, politici o altre situazioni imprevedibili a livello locale o globale influenzino il mercato. Oltre a queste tipologie di rischio vanno considerati altri fattori come ad esempio i problemi contabili e fiscali."
-
-msgid "<strong>Short positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr "<strong>Posizioni a breve termine</strong>: applichiamo una commissione del 2% sui tassi di prestito interbancari."
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "Una laurea in Informatica o un mix equivalente di formazione tecnica, training ed esperienza lavorativa"
@@ -908,9 +866,6 @@ msgstr "Avanzato"
 
 msgid "Advanced Account"
 msgstr "Account Avanzato"
-
-msgid "Advanced account: 1:100"
-msgstr "Account Avanzato: 1:100"
 
 msgid "Advanced binary options trading interface"
 msgstr "Interfaccia di trading avanzata in opzioni binarie"
@@ -1845,9 +1800,6 @@ msgstr "C. Definizione di Migliore Esecuzione"
 msgid "C. Provision of Services"
 msgstr "C. Fornitura di servizi"
 
-msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
-msgstr "CFD (Contratto per differenza): CFD è uno strumento che ti consente di trarre profitto speculando sull'aumento o sulla diminuzione di uno strumento. Il profitto/La perdita è stimato in funzione della differenza dei prezzi d'acquisto/vendita dello strumento sottostante."
-
 msgid "CFD Trading Experience"
 msgstr "Esperienza di trading CFD"
 
@@ -2391,9 +2343,6 @@ msgstr "Rischi del contratto"
 msgid "Contract Sold"
 msgstr "Contratto venduto"
 
-msgid "Contract Specifications"
-msgstr "Specifiche contrattuali"
-
 msgid "Contract Starts"
 msgstr "Il contratto inizia"
 
@@ -2600,9 +2549,6 @@ msgstr "Valute"
 
 msgid "Currency"
 msgstr "Valuta"
-
-msgid "Currency Symbol"
-msgstr "Simbolo della valuta"
 
 msgid "Currency of the funds accepted in your trading account."
 msgstr "Valuta dei fondi accettati nel tuo account di trading."
@@ -3068,9 +3014,6 @@ msgstr "Ogni transazione di opzioni ha un periodo e una data di scadenza specifi
 
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
 msgstr "Ciascuna parte del presente Accordo rappresenta e garantisce all'altra di avere, e di conservare per la durata del presente Accordo, tutti i diritti, titoli e poteri di stipulare il presente Accordo, concedere all'altra parte i diritti e le autorizzazioni concesse con il presente Accordo e di soddisfare tutti gli obblighi previsti nel presente Accordo."
-
-msgid "Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index."
-msgstr "Ogni volta che apri una posizione su un simbolo di Indice di Volatilità, puoi iniziare con una transazione minima di volume pari a 0,01 (dimensione del trade), che si traduce in 0,01 USD per ogni movimento di punto dell'indice."
 
 msgid "Each time you open a position on a cryptocurrency pair, you can start with a minimum volume as indicated in the table above."
 msgstr "Ogni volta che apri una posizione su una coppia di criptovalute, puoi iniziare con un volume minimo come indicato nella tabella sopra."
@@ -3696,9 +3639,6 @@ msgstr "Ad esempio, se tu volessi acquistare 100 unità di un particolare asset 
 msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
 msgstr "Ad esempio, supponiamo che il mercato ha un livello più basso (low) di 5.200 e una chiusura (close) a 6.000 nel corso della durata del contratto, allora un'opzione retrospettiva 'Close-Low' con un moltiplicatore di $2 avrebbe un payout di:"
 
-msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr "Ad esempio, i CFD sugli Indici di Volatilità offrono un contratto di 1 USD per punto. Se acquisti un contratto a Volume 1.0 per l'Indice Volatility 100 con un corrente prezzo di acquisto di USD 20.000 e successivamente lo vendi a un prezzo di vendita di USD 20.010, il tuo profitto netto sarà calcolato come segue:"
-
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product Disclosure Statement. This policy is an appendix to the overarching %1 Order Execution Policy and should be read in conjunction with the overarching %1 Order Execution Policy."
 msgstr "Per le caratteristiche e la spiegazione del trading di Spot FX offerti da%1, fai riferimento all'Informativa sul Prodotto. Questa policy è in appendice alla onnicomprensiva Policy di Esecuzione degli Ordini di %1 e deve essere letta insieme alla onnicomprensiva Policy di Esecuzione degli Ordini di %1."
 
@@ -4062,9 +4002,6 @@ msgstr "Sfasamento della barriera superiore"
 msgid "High conversions"
 msgstr "Conversioni alte"
 
-msgid "High frequency (2 ticks per second)"
-msgstr "Alta frequenza (2 tick al secondo)"
-
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "Elevato livello di sicurezza: ogni transazione di criptovaluta viene protetta mediante avanzate tecniche di crittografia che ne rendono pressoché impossibile la contraffazione"
 
@@ -4133,12 +4070,6 @@ msgstr "Come posso sapere quanto ho guadagnato?"
 
 msgid "How do I register to become a %1 IB?"
 msgstr "Come posso registrarmi per diventare un IB di %1?"
-
-msgid "How do we calculate interest fees for long positions?"
-msgstr "Come calcoliamo i tassi di interesse per le posizioni a lungo termine?"
-
-msgid "How do we calculate interest fees for short positions?"
-msgstr "Come calcoliamo le commissioni di interesse per le posizioni a breve termine?"
 
 msgid "How does it work?"
 msgstr "Come funziona?"
@@ -4249,9 +4180,6 @@ msgstr "Voglio essere trattato come cliente professionale."
 
 msgid "I. Quotes"
 msgstr "I. Quotazioni"
-
-msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
-msgstr "per esempio (20010 - 20000) x 1 x 1 = USD 10"
 
 msgid "IB Programme"
 msgstr "Programma IB"
@@ -4438,9 +4366,6 @@ msgstr "Se hai l'insieme di abilità richieste, diventerai un valido membro del 
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "Se mantieni posizioni aperte durante la notte, verrà effettuato un aggiustamento degli interessi sul tuo conto di trading ad indicazione del costo necessario per mantenere aperta la tua posizione."
-
-msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open. This adjustment is based on interbank lending rates, on top of a 2% fee."
-msgstr "Se mantieni posizioni aperte durante la notte, verrà effettuato un aggiustamento degli interessi sul tuo conto di trading come indicazione del costo richiesto per mantenere aperta la tua posizione. Questo aggiustamento si basa su tassi di prestito interbancari, oltre a una commissione del 2%."
 
 msgid "If you lose your cryptocurrencies as a result of exchanges and wallet providers being hacked or becoming insolvent, there is no assurance of a recourse. It is your responsibility to store your cryptocurrencies securely. %1 will not accept liability for any loss or damage that arise, directly or indirectly, from theft of your cryptocurrency or insolvency of exchanges and wallet providers that you use."
 msgstr "Se perdi le tue criptovalute in seguito all'hackeraggio subito da uno dei fornitori di scambi o di portafoglio o se questi diventano insolventi, non esiste alcuna garanzia di un ricorso. È tua responsabilità conservare in modo sicuro le tue criptovalute. %1 non si assume responsabilità per eventuali perdite o danni che derivano, direttamente o indirettamente, dal furto della tua criptovaluta o insolvenza dei fornitori di scambi e di portafoglio che utilizzi."
@@ -5622,12 +5547,6 @@ msgstr "Mettiamo a confronto le differenze tra acquisto e vendita, utilizzando i
 msgid "Let's say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to 'go long' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you."
 msgstr "Diciamo che un contratto US 100 vale di 1 USD per ogni punto dell'asset sottostante. Se decidi di 'aprire una posizione long' su US 100 e il prezzo dell' asset aumenta di 10 punti, questo rappresenta un profitto di USD 10 per te."
 
-msgid "Let's say the points adjustment for a long position on the EUR/USD symbol is -5.64. This would require an overnight fee of 5.64 points for one lot of open position in EUR/USD, where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will incur an interest fee of EUR5.64 for keeping the position open overnight."
-msgstr "Diciamo che l'adeguamento dei punti per una posizione long sul simbolo del EUR/USD è-5.64. Questo richiederebbe una commissione overnight di 5,64 punti per un lotto di posizione aperta in EUR/USD, dove la grandezza di un lotto è di 100.000 unità. I punti saranno poi convertiti nella valuta del deposito (che è l'euro in questo esempio). Di conseguenza, sosterrai una commissione di interesse di EUR5.64 per mantenere la posizione aperta durante la notte."
-
-msgid "Let's say the points adjustment for a short position on the EUR/USD symbol is 1.64. This would result in an overnight credit of 1.64 points for one lot of open position in EUR/USD where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will be credited with EUR1.64 for keeping the position open overnight."
-msgstr "Diciamo che l'adeguamento dei punti per una posizione short sul simbolo del EUR/USD è 1.64. Questo comporterebbe un credito overnight di 1,64 punti per un lotto di posizione aperta in EUR/USD dove la grandezza di un lotto è di 100.000 unità. I punti saranno poi convertiti nella valuta del deposito (che è l'euro in questo esempio). Di conseguenza, vi saranno accreditati con EUR1.64 per mantenere la posizione aperta durante la notte."
-
 msgid "Let's use the US 100 index as an example:"
 msgstr "Usiamo l'Indice US 100 come esempio:"
 
@@ -5649,20 +5568,11 @@ msgstr "La Leva può essere utilizzata per generare rendimenti che sono di più 
 msgid "Leverage gives you the ability to trade a larger position using your existing capital."
 msgstr "La Leva ti dà la possibilità di tradare una posizione più grande utilizzando il vostro capitale esistente."
 
-msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "La Leva indica quanto capitale puoi controllare in base al tuo deposito iniziale. Ad esempio, una leva 1:100 ti consentirà di controllare fino a 100.000 USD utilizzando solo 1.000 USD del tuo denaro depositato."
-
-msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 1:100 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "La Leva indica quanto capitale puoi controllare in base al tuo deposito iniziale. Ad esempio, una leva 1:100 ti consentirà di controllare fino a 100.000 USD utilizzando solo 1.000 USD del tuo denaro depositato."
-
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "Fare leva sugli strumenti e sui canali dei social media per identificare, coinvolgere e convertire nuovi potenziali clienti e partner"
 
-msgid "Leverage up to 1:100"
-msgstr "Leva fino a 1:100"
-
-msgid "Leverage up to 1:500"
-msgstr "Leva fino a 1:500"
+msgid "Leverage up to %1"
+msgstr ""
 
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that you would be able to enter into a trade position that is of 50 times higher than your margin. When you invest in a leveraged product, your profit or loss is based on the leveraged position, i.e., the increased/amplified value of your trade determined based on the leverage ratio you set for your account."
 msgstr "Leva, nel contesto di trading a margine, si riferisce all'uso del margine per aumentare/amplificare il valore di un trade. La Leva è espressa come un rapporto. Una leva 50:1, ad esempio, significa che tu saresti in grado di collocare un trade che è di 50 volte superiore rispetto al tuo margine. Quando investi in un prodotto a leva finanziaria, il profitto o la perdita si basano sulla posizione di leva, cioè, al valore aumentato/amplificato del tuo trade determinato sulla base del rapporto di leva che hai impostato per l'account."
@@ -5763,9 +5673,6 @@ msgstr "Problemi con l'accesso"
 msgid "Long"
 msgstr "A lungo"
 
-msgid "Long positions"
-msgstr "Posizioni a lungo termine"
-
 msgid "Long-term partnership:"
 msgstr "Partnership a lungo termine:"
 
@@ -5780,9 +5687,6 @@ msgstr "Le Opzioni Retrospettive (Lookbacks) sono, al momento, disponibili solo 
 
 msgid "Loss"
 msgstr "Perdita"
-
-msgid "Lot Size (Volume = 1.0)"
-msgstr "Dimensioni del lotto (Volume = 1.0)"
 
 msgid "Lot size"
 msgstr "Dimensione del lotto"
@@ -5979,9 +5883,6 @@ msgstr "Mar"
 msgid "March"
 msgstr "Marzo"
 
-msgid "Margin"
-msgstr "Margine"
-
 msgid "Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
 msgstr "Margine &mdash; l'importo accantonato da noi dal saldo del tuo Account per aprire e mantenere una Transazione, per coprire la nostra esposizione come controparte del tuo contratto."
 
@@ -6011,9 +5912,6 @@ msgstr "Il Margine ti consente di fare trading con leva – questo significa che
 
 msgid "Margin call"
 msgstr "Margin Call (Chiamata a margine)"
-
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
-msgstr "Il Margine indica quanto investimento puoi controllare sulla base del tuo capitale iniziale. Ad esempio, un margine di 0,2% ti permetterà di controllare fino a USD 500.000 utilizzando solo USD 1.000 del tuo denaro come deposito."
 
 msgid "Market"
 msgstr "Mercato"
@@ -6059,9 +5957,6 @@ msgstr "Combacia/Differisce"
 
 msgid "Max"
 msgstr "Max"
-
-msgid "Maximum Leverage"
-msgstr "Leva massima"
 
 msgid "Maximum account cash balance"
 msgstr "Saldo di cassa massimo sull'account"
@@ -6173,24 +6068,6 @@ msgstr "Deposito min/max"
 
 msgid "Min-Max Withdrawal"
 msgstr "Prelievo min/max"
-
-msgid "Min. Volume Increment"
-msgstr "Incremento minimo di volume"
-
-msgid "Min. Volume<br>(Lot Size)"
-msgstr "Volume Minimo<br>(Dimensione del Lotto)"
-
-msgid "Minimum Spread"
-msgstr "Spread minimo"
-
-msgid "Minimum Volume"
-msgstr "Volume minimo"
-
-msgid "Minimum Volume (Trade Size)"
-msgstr "Volume Minimo (dimensione del trade)"
-
-msgid "Minimum Volume Increment"
-msgstr "Incremento del volume minimo"
 
 msgid "Minimum deposit"
 msgstr "Deposito minimo"
@@ -6873,9 +6750,6 @@ msgstr "Le nostre sedi"
 msgid "Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots."
 msgstr "Le nostre coppie di metalli sono tipicamente scambiate in lotti. Un lotto standard equivale a 100 unità ad eccezione dell'argento dove 1 lotto equivale a 5.000 unità. Ogni volta che apri una posizione su un simbolo, puoi iniziare con una transazione minima di 0,01 lotti."
 
-msgid "Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5.000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots."
-msgstr "Le nostre coppie di metalli sono tipicamente scambiate in lotti. Un lotto standard equivale a 100 unità ad eccezione dell'argento dove 1 lotto equivale a 5.000 unità. Ogni volta che apri una posizione su un simbolo, puoi iniziare con una transazione minima di 0,01 lotti."
-
 msgid "Our proprietary synthetic indices that simulate market forces"
 msgstr "I nostri indici sintetici proprietari che simulano le forze del mercato"
 
@@ -7089,9 +6963,6 @@ msgstr "Report di divulgazione Pilastro 3"
 msgid "Pip"
 msgstr "Pip"
 
-msgid "Pip Size"
-msgstr "Dimensione del Pip"
-
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pip è l'acronimo di 'percentuale in punti', generalmente indicato dalla quarta cifra decimale (ad esempio 0,0001)."
 
@@ -7287,9 +7158,6 @@ msgstr "Si prega di inviare le succitate informazioni a <a href='mailto:%1'>%1</
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "Tieni presente che il nostro tasso swap dipende anche dal tempo e dai giorni in cui hai tenuto le posizioni aperte:"
 
-msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
-msgstr "Tieni presente che il nostro tasso swap dipende anche dal tempo e dai giorni in cui hai tenuto le tue posizioni aperte: "
-
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "Ti preghiamo di attendere la conferma. Il nostro team di assistenza clienti ti risponderà via email entro quattro ore in merito allo stato del tuo account."
 
@@ -7307,9 +7175,6 @@ msgstr "Le Posizioni che sono ancora aperte il mercoledì alle 23:59:59 GMT verr
 
 msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends – a standard practice for all brokers."
 msgstr "Le Posizioni che sono ancora aperte il mercoledì alle 23:59:59 GMT verranno addebitate tre volte il tasso swap per tenere conto dei fine settimana, una pratica standard per tutti i broker."
-
-msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends, a standard practice for all Forex brokers."
-msgstr "Le Posizioni che sono ancora aperte il mercoledì alle 23:59:59 GMT verranno addebitate tre volte il tasso swap per tenere conto dei fine settimana, una pratica standard per tutti i broker Forex."
 
 msgid "Postal Code / ZIP"
 msgstr "Codice postale/CAP"
@@ -7713,8 +7578,8 @@ msgstr "Rif."
 msgid "Refer new clients to our MetaTrader 5 platform and earn a commission on their Forex and CFD trading activity."
 msgstr "Grazie a questo programma, quando indirizzi nuovi clienti alla nostra piattaforma MetaTrader 5 ricevi una commissione sulle loro attività di trading in Forex e CFD."
 
-msgid "Refers to the maximum volume or lots per order."
-msgstr "Si riferisce al volume massimo o ai lotti per ordine."
+msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
+msgstr ""
 
 msgid "Refers to the total number of available symbols for your account."
 msgstr "Fa riferimento al numero totale di simboli disponibili per il tuo account."
@@ -8190,9 +8055,6 @@ msgstr "Shelter Home’s Shelter Community Learning Centre 3"
 msgid "Short"
 msgstr "Breve"
 
-msgid "Short positions"
-msgstr "Posizioni a breve termine"
-
 msgid "Short to long-term durations"
 msgstr "Durate brevi o a lungo termine"
 
@@ -8348,9 +8210,6 @@ msgstr "Standard"
 
 msgid "Standard Account"
 msgstr "Account Standard"
-
-msgid "Standard account: 1:500"
-msgstr "Account Standard: 1:500"
 
 msgid "Start Time"
 msgstr "Orario di inizio"
@@ -8955,9 +8814,6 @@ msgstr "Il Forex è un mercato over-the-counter in cui il trading avviene tra du
 msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
 msgstr "Il Forex è tipicamente negoziato in <i>lotti</i>. Un <i lotto</i> standard equivale a 100.000 unità. Ogni volta che apri una posizione su un simbolo di valuta, puoi iniziare con una transazione minima di <i> 0,01 lotti</i>."
 
-msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lots</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
-msgstr "Il Forex è tipicamente negoziato in <i>lotti</i>. Un <i lotto</i> standard equivale a 100.000 unità. Ogni volta che apri una posizione su un simbolo di valuta, puoi iniziare con una transazione minima di <i> 0,01 lotti</i>."
-
 msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
 msgstr "Il conto avanzato MAM può essere assegnato a un gestore di fondi che si occuperà del trade a tuo nome con spread più competitivi rispetto a un conto avanzato standard. Altre eventuali specifiche rimangono invariate."
 
@@ -9272,9 +9128,6 @@ msgstr "La puntata è l'importo che un trader deve pagare per iniziare un trade.
 
 msgid "The sum received in the %1 Agent Account shall be transferred by the Agent to the %1 Client Account."
 msgstr "Le somme ricevute nell'Account dell'Agente in %1 sono trasferite dall'Agente nell'Account del Cliente in %1."
-
-msgid "The swap rate will depend on the direction of the position you take:"
-msgstr "Il tasso swap dipenderà dalla direzione della posizione che prendi:"
 
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "Il sistema gestisce gli ordini in base al principio \"first in - first out\", ovvero in base alla sequenza dell'ordine ricevuto, e questo è fuori dal nostro controllo. Di conseguenza, potrebbe essere per te difficile o impossibile chiudere una posizione al prezzo previsto nel tuo Stop Order in determinate condizioni di mercato. Il collocamento di Stop Order da parte tua, sebbene sia utile come strumento di gestione del rischio, non limiterà necessariamente le tue perdite agli importi previsti, in caso di condizioni di trading altamente volatili, poiché le condizioni di mercato potrebbero rendere impossibile l'esecuzione di tali ordini e c'è incertezza sul possibile prezzo di uscita. In breve, uno Stop Order non è garantito perché non può operare indipendentemente dalle circostanze del mercato."
@@ -9614,15 +9467,6 @@ msgstr "Per ulteriori informazioni, leggi le nostre <a href='%1'> specifiche del
 
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "Per ulteriori informazioni, leggi la nostra %1Policy sul Margine%2 che spiega ulteriormente i nostri requisiti di margine."
-
-msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
-msgstr "Per ulteriori informazioni, leggi la nostra <a href=\"%1\"> Politicy sui margini dei CFD </a> che spiega ulteriormente il nostro livello di liquidazione forzata del 50% per gli Indici di Volatilità."
-
-msgid "To learn more, read our <a href=\"%1\">Forex Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
-msgstr "Per ulteriori informazioni, leggi la nostra <a href=\"%1\"> Policy sul Margine Forex </a> che spiega ulteriormente il nostro livello di liquidazione forzata del 100% per il Forex."
-
-msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "Per ulteriori informazioni, leggi la nostra <a href=\"%1\"> Policy sul Margine dei Metalli </a> che spiega ulteriormente il nostro livello di liquidazione forzata del 100% sulle coppie di metalli."
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "Per aprire un account di trading, i nostri clienti devono confermare di comprendere appieno i meccanismi e i rischi delle transazioni. Ti chiediamo di confermare la tua comprensione e accettazione di ciascuna delle seguenti affermazioni, mettendo un segno di spunta nelle caselle a fianco."
@@ -10125,14 +9969,11 @@ msgstr "Sblocca Cassa"
 msgid "Up"
 msgstr "Up"
 
+msgid "Up to %1"
+msgstr ""
+
 msgid "Up to %1 decimal places are allowed."
 msgstr "Sono ammessi fino a %1 decimali."
-
-msgid "Up to 1:100"
-msgstr "Fino a 1:100"
-
-msgid "Up to 1:500"
-msgstr "Fino a 1:500"
 
 msgid "Up/Down"
 msgstr "Alto/Basso"
@@ -10215,11 +10056,8 @@ msgstr "Fatture relative a servizi di uso domestico (elettricità, acqua, gas, b
 msgid "Validate address"
 msgstr "Convalida l'indirizzo"
 
-msgid "Variable from 0.9 pips"
-msgstr "Variabile da 0.9 pip"
-
-msgid "Variable from 1.2 pips"
-msgstr "Variabile da 1.2 pip"
+msgid "Variable from %1 pips"
+msgstr ""
 
 msgid "Variable spreads"
 msgstr "Spread variabili"
@@ -10338,9 +10176,6 @@ msgstr "Indici di Volatilità"
 msgid "Volatility Indices Account"
 msgstr "Account con Indici di Volatilità"
 
-msgid "Volatility Indices account: 1:500"
-msgstr "Account con Indici di Volatilità: 1:500"
-
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "Gli Indici di Volatilità sono ulteriormente categorizzati in due classi:"
 
@@ -10349,12 +10184,6 @@ msgstr "Commissioni per indici di volatilità nella valuta del conto per trade. 
 
 msgid "Volume"
 msgstr "Volume"
-
-msgid "Volume 1.0 (Trade Size)"
-msgstr "Volume 1.0 (dimensione del trade)"
-
-msgid "Volume 1.0<br>(Lot Size)"
-msgstr "Volume 1.0<br>(Dimensione del Lotto)"
 
 msgid "Volume step"
 msgstr "Volume del passo"
@@ -10436,9 +10265,6 @@ msgstr "Stiamo verificando i tuoi documenti e ti risponderemo entro un giorno la
 
 msgid "We are reviewing your documents. For more details %1contact us%2."
 msgstr "Stiamo verificando i tuoi documenti. Per ulteriori informazioni %1contattaci%2."
-
-msgid "We charge a 2% fee on top of market rates."
-msgstr "Addebitiamo una commissione del 2% in aggiunta a tasso di mercato."
 
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr ""
