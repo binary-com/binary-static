@@ -204,6 +204,7 @@ const Header = (() => {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
             }
             showHideNewAccount(upgrade_info);
+            Client.hideUpgradePulser();
         });
     };
 

@@ -52,6 +52,7 @@ const Client = (() => {
                     topbar_class.add(primary_bg_color_dark);
                     topbar_class.remove(secondary_bg_color);
                 }
+                hideUpgradePulser();
             });
         } else {
             applyToAllElements('.client_logged_out', (el) => {
@@ -108,6 +109,10 @@ const Client = (() => {
         });
     };
 
+    const hideUpgradePulser = () => {
+        $('#topbar-msg').children('a').setVisibility(!/maltainvest/.test(window.location.href));
+    };
+
     const defaultRedirectUrl = () => urlFor(isJPClient() ? 'multi_barriers_trading' : 'trading');
 
     const setJPFlag = () => {
@@ -126,6 +131,7 @@ const Client = (() => {
         defaultRedirectUrl,
         setJPFlag,
         isJPClient,
+        hideUpgradePulser,
     }, ClientBase);
 })();
 
