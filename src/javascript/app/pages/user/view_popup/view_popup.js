@@ -193,16 +193,10 @@ const ViewPopup = (() => {
         if (final_price) {
             profit_loss = final_price - contract.buy_price;
             percentage  = addComma((profit_loss * 100) / contract.buy_price, 2);
-            let profit_loss_class;
-            if (contract.status === 'won') {
-                profit_loss_class = 'profit';
-            } else if (contract.status === 'lost') {
-                profit_loss_class = 'loss';
-            }
             containerSetText('trade_details_profit_loss',
-                `${formatMoney(contract.currency, profit_loss)}<span class="percent">(${(percentage > 0 ? '+' : '')}${percentage}%)</span>`, { class: profit_loss_class });
+                `${formatMoney(contract.currency, profit_loss)}<span class="percent">(${(percentage > 0 ? '+' : '')}${percentage}%)</span>`, { class: (profit_loss >= 0 ? 'profit' : 'loss') });
         } else {
-            containerSetText('trade_details_profit_loss', '-');
+            containerSetText('trade_details_profit_loss', '-', { class: 'loss' });
         }
 
         if (!is_started) {
@@ -265,8 +259,7 @@ const ViewPopup = (() => {
         Clock.showLocalTimeOnHover('#trade_details_live_date');
 
         const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const is_ended   = contract.status !== 'open';
-        if (!is_started || is_ended) {
+        if (!is_started || contract.status !== 'open') {
             containerSetText('trade_details_live_remaining', '-');
         } else {
             let remained = contract.date_expiry - now;
