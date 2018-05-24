@@ -60,7 +60,6 @@ const commonTrading = (() => {
         } else if (/lookback/.test(form_name)) {
             name = 'lookback';
         }
-        console.log(name);
         return {
             form_name       : name,
             barrier_category: barrier,

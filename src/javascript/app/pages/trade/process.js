@@ -100,7 +100,6 @@ const Process = (() => {
      * Function to display contract form for current underlying
      */
     const processContract = (contracts) => {
-        console.log(contracts);
         if (getPropertyValue(contracts, ['error', 'code']) === 'InvalidSymbol') {
             Price.processForgetProposals();
             getElementById('contract_confirmation_container').style.display      = 'block';
@@ -123,7 +122,6 @@ const Process = (() => {
             Defaults.update();
         }
 
-        console.log(contracts);
         Contract.setContracts(contracts);
 
         const contract_categories = Contract.contractForms();
