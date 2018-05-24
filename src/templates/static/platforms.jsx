@@ -22,18 +22,18 @@ const Platforms = ({
             <h3>{header}</h3>
             <strong>{description}</strong>
             <p>{text}</p>
-            { url &&
-            <p>
-                <a className='button' href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
-            </p>
-            }
-            { google_play_url &&
             <div className='gr-row'>
-                <a className='gr-5 gr-6-m' href={google_play_url} target='_blank' rel='noopener noreferrer'>
-                    <div className='google-play-badge' />
-                </a>
+                <div className='gr-12'>
+                    { google_play_url &&
+                        <a className='float-left' href={google_play_url} target='_blank' rel='noopener noreferrer'>
+                            <div className='google-play-badge' />
+                        </a>
+                    }
+                    { url &&
+                        <a className='button' href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                    }
+                </div>
             </div>
-            }
         </div>
     </div>
 );
@@ -72,6 +72,9 @@ const Platform = () => (
                     description={it.L('Ultra fast on-the-go trading')}
                     text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
                     google_play_url='https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page'
+                    url='https://ticktrade.binary.com'
+                    target='_blank'
+                    button_text={it.L('Try Web Version')}
                 />
                 <div className='gr-2' />
                 <Platforms
