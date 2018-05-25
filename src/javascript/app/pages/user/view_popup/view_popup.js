@@ -532,7 +532,7 @@ const ViewPopup = (() => {
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
             ${(contract.barrier_count > 1 ? createRow(low_barrier_text, '', 'trade_details_barrier_low', true) : '')}
             ${createRow('Potential Payout', '', 'trade_details_payout')}
-            ${multiplier ? createRow('Multiplier', '', 'trade_details_multiplier') : ''}
+            ${multiplier && Lookback.isLookback(contract.contract_type) ? createRow('Multiplier', '', 'trade_details_multiplier') : ''}
             ${createRow('Purchase Price', '', 'trade_details_purchase_price')}
             </tbody>
             <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>
