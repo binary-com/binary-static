@@ -6,12 +6,12 @@
     /* trade-app layout */
     #trade_container {
         position: relative;
-        margin: 0 15px;
-        padding-top: 14px;
+        padding: 14px 15px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: 1fr;
         grid-gap: 4px;
+        overflow: hidden;
         min-height: calc(100vh - 110px);
 
         .chart-container {
