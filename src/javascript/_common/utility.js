@@ -180,12 +180,11 @@ const getStaticHash = () => {
 };
 
 const upgradePulser = (() => {
-    const show = () => { $('.upgrademessage').children('a').setVisibility(1); };
-    const hide = () => { $('.upgrademessage').children('a').setVisibility(0); };
+    const showHidePulser = (should_show) => { $('.upgrademessage').children('a').setVisibility(should_show); };
 
     return {
-        show,
-        hide,
+        show: () => { showHidePulser(1); },
+        hide: () => { showHidePulser(0); },
     };
 })();
 
