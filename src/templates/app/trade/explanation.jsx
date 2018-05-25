@@ -110,13 +110,13 @@ const Explanation = () => (
             <div id='winning_callputspread' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
                 <h4>{it.L('Call Spread')}</h4>
-                <ul>
+                <ul className='bullet'>
                     <li>{it.L('Win the maximum payout if the exit spot is higher than or equal to the upper barrier')}</li>
                     <li>{it.L('Win a payout in proportion of the relative distance of exit spot from lower barrier if exit spot is between lower and upper barrier')}</li>
                     <li>{it.L('No payout if exit spot is below or equal to the lower barrier')}</li>
                 </ul>
                 <h4>{it.L('Put Spread')}</h4>
-                <ul>
+                <ul className='bullet'>
                     <li>{it.L('Win the maximum payout if the exit spot is lower than or equal to the lower barrier')}</li>
                     <li>{it.L('Win a payout in proportion of the relative distance of exit spot from upper barrier if exit spot is between lower and upper barrier')}</li>
                     <li>{it.L('No payout if exit spot is above or equal to the upper barrier')}</li>
