@@ -10,13 +10,13 @@ const ErrorMessage = ({id}) => (
 const OtpForm = () => (
     <React.Fragment>
         <form id='frm_two_factor_auth' className='invisible'>
-            <div className='otp-form'>
+            <div className='otp-form-group'>
                 <div>
-                    <input type='text' id='otp' />
+                    <input type='text' id='otp' placeholder={it.L('6-digit code')} />
                 </div>
                 <button type='submit' id='btn_submit' />
-                <p id='form_message'/>
             </div>
+            <p id='form_message'/>
         </form>
     </React.Fragment>
 );

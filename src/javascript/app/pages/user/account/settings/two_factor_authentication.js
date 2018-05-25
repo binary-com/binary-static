@@ -4,15 +4,12 @@ const Client           = require('../../../../base/client');
 const FormManager      = require('../../../../common/form_manager');
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 const localize         = require('../../../../../_common/localize').localize;
-// TODO:
-// 1. Error handling ui
-// 2. ui - success + hide form
-// 3. tooltip to form?
 
 const TwoFactorAuthentication = (() => {
+    const form_id = '#frm_two_factor_auth';
     let enabled_state,
         next_state,
-        qrcode; // eslint-disable-line 
+        qrcode; // eslint-disable-line
 
     const onLoad = () => {
         init();
@@ -29,7 +26,6 @@ const TwoFactorAuthentication = (() => {
 
             enabled_state = res.account_security.totp.is_enabled ? 'enabled' : 'disabled';
             next_state = res.account_security.totp.is_enabled ? 'disable' : 'enable';
-            const form_id = '#frm_two_factor_auth';
 
             $(`#${enabled_state}`).setVisibility(1);
             $('#btn_submit').text(next_state);
@@ -47,7 +43,7 @@ const TwoFactorAuthentication = (() => {
             });
 
             if (enabled_state === 'disabled') {
-                $('.otp-form').css('padding-left', '60px');
+                $('.otp-form-group').css('padding-left', '60px');
                 initQRCode();
             }
         });
@@ -55,8 +51,9 @@ const TwoFactorAuthentication = (() => {
 
     const resetComponent = () => {
         $(`#${enabled_state}`).setVisibility(0);
+        $(form_id).setVisibility(0);
         $('#qrcode').html('');
-        $('.otp-form').css('padding-left', '');
+        $('.otp-form-group').css('padding-left', '');
         init();
     };
 
@@ -91,8 +88,8 @@ const TwoFactorAuthentication = (() => {
         }
     };
 
-    const handleError = (id, err_msg = 'Sorry, an error occurred.') => {
-        $(`#${id}_error`).setVisibility(1).text(localize(err_msg));
+    const handleError = (id, err_msg) => {
+        $(`#${id}_error`).setVisibility(1).text(localize(err_msg || 'Sorry, an error occurred.'));
     };
 
     const showFormMessage = (msg, is_success) => {

@@ -670,7 +670,7 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
-.otp-form {
+.otp-form-group {
     display: flex;
     align-items: flex-start;
 
@@ -708,6 +708,9 @@ body #not_authenticated_financial ul.checked > li {
             }
             #qrcode {
                 padding-bottom: 60px;
+                @media (max-width: 480px) {
+                    padding-bottom: 10px;
+                }
             }
         }
     }
@@ -716,8 +719,8 @@ body #not_authenticated_financial ul.checked > li {
 .two-fa-status {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 50px;
 
     &-container {
         display: flex;
@@ -726,7 +729,7 @@ body #not_authenticated_financial ul.checked > li {
         background: $COLOR_LIGHT_GRAY;
     }
     &-icon {
-        max-width: 60px;
+        max-width: 55px;
         max-height: 55px;
         padding-right: 15px;
     }
