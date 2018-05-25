@@ -3,6 +3,7 @@ const Client         = require('../../../base/client');
 const AccountOpening = require('../../../common/account_opening');
 const FormManager    = require('../../../common/form_manager');
 const detectHedging  = require('../../../../_common/common_functions').detectHedging;
+const upgrdePulser   = require('../../../../_common/utility').upgradePulser;
 
 const JapanAccOpening = (() => {
     const onLoad = () => {
@@ -35,6 +36,8 @@ const JapanAccOpening = (() => {
             form_selector       : form_id,
             fnc_response_handler: handleResponse,
         });
+
+        upgrdePulser.hide();
     };
 
     const handleResponse = (response) => {
@@ -42,12 +45,14 @@ const JapanAccOpening = (() => {
             AccountOpening.handleNewAccount(response, response.msg_type);
         } else {
             BinaryPjax.load('new_account/knowledge_testws');
-            $('#topbar-msg').children('a').setVisibility(0);
         }
     };
 
+    const onUnload = () => { upgrdePulser.show(); };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 

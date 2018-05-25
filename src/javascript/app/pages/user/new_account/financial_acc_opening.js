@@ -6,6 +6,7 @@ const AccountOpening = require('../../../common/account_opening');
 const FormManager    = require('../../../common/form_manager');
 const localize       = require('../../../../_common/localize').localize;
 const isEmptyObject  = require('../../../../_common/utility').isEmptyObject;
+const upgrdePulser   = require('../../../../_common/utility').upgradePulser;
 const State          = require('../../../../_common/storage').State;
 const toISOFormat    = require('../../../../_common/string_util').toISOFormat;
 
@@ -51,7 +52,6 @@ const FinancialAccOpening = (() => {
             });
         });
 
-
         FormManager.handleSubmit({
             form_selector       : form_id,
             obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
@@ -63,6 +63,8 @@ const FinancialAccOpening = (() => {
             $('#tax_information_note_toggle').toggleClass('open');
             $('#tax_information_note').slideToggle();
         });
+
+        upgrdePulser.hide();
     };
 
     const getValidations = () => {
@@ -100,8 +102,11 @@ const FinancialAccOpening = (() => {
         }
     };
 
+    const onUnload = () => { upgrdePulser.show(); };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 

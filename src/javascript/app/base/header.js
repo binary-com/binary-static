@@ -16,6 +16,7 @@ const Url                 = require('../../_common/url');
 const applyToAllElements  = require('../../_common/utility').applyToAllElements;
 const createElement       = require('../../_common/utility').createElement;
 const findParent          = require('../../_common/utility').findParent;
+const upgradePulser      = require('../../_common/utility').upgradePulser;
 
 const Header = (() => {
     const onLoad = () => {
@@ -200,11 +201,14 @@ const Header = (() => {
                 getElementById('virtual-wrapper').setVisibility(0);
                 showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
                 showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
+
+                if (/new_account/.test(window.location.href)) {
+                    upgradePulser.hide();
+                }
             } else {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
             }
             showHideNewAccount(upgrade_info);
-            Client.hideUpgradePulser();
         });
     };
 

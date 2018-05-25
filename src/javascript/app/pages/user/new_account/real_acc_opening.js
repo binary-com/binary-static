@@ -4,6 +4,7 @@ const BinarySocket   = require('../../../base/socket');
 const AccountOpening = require('../../../common/account_opening');
 const FormManager    = require('../../../common/form_manager');
 const State          = require('../../../../_common/storage').State;
+const upgrdePulser   = require('../../../../_common/utility').upgradePulser;
 
 const RealAccOpening = (() => {
     const form_id = '#frm_real';
@@ -24,6 +25,7 @@ const RealAccOpening = (() => {
         } else {
             BinaryPjax.loadPreviousUrl();
         }
+        upgrdePulser.hide();
     };
 
     const getValidations = () => {
@@ -37,8 +39,11 @@ const RealAccOpening = (() => {
 
     const handleResponse = response => (AccountOpening.handleNewAccount(response, response.msg_type));
 
+    const onUnload = () => { upgrdePulser.show(); };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 
