@@ -1,6 +1,7 @@
 const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
 const BinarySocket        = require('./socket');
+const showHidePulser      = require('../common/account_opening').showHidePulser;
 const checkClientsCountry = require('../common/country_base').checkClientsCountry;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
 const GTM                 = require('../../_common/base/gtm');
@@ -200,6 +201,10 @@ const Header = (() => {
                 getElementById('virtual-wrapper').setVisibility(0);
                 showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
                 showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
+
+                if (/new_account/.test(window.location.href)) {
+                    showHidePulser(0);
+                }
             } else {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });
             }
