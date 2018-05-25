@@ -1,6 +1,7 @@
 const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
 const BinarySocket        = require('./socket');
+const showHidePulser      = require('../common/account_opening').showHidePulser;
 const checkClientsCountry = require('../common/country_base').checkClientsCountry;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
 const GTM                 = require('../../_common/base/gtm');
@@ -16,7 +17,6 @@ const Url                 = require('../../_common/url');
 const applyToAllElements  = require('../../_common/utility').applyToAllElements;
 const createElement       = require('../../_common/utility').createElement;
 const findParent          = require('../../_common/utility').findParent;
-const upgradePulser       = require('../../_common/utility').upgradePulser;
 
 const Header = (() => {
     const onLoad = () => {
@@ -203,7 +203,7 @@ const Header = (() => {
                 showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
 
                 if (/new_account/.test(window.location.href)) {
-                    upgradePulser.hide();
+                    showHidePulser(0);
                 }
             } else {
                 applyToAllElements(upgrade_msg, (el) => { el.setVisibility(0); });

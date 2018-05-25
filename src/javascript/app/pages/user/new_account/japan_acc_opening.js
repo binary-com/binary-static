@@ -3,7 +3,6 @@ const Client         = require('../../../base/client');
 const AccountOpening = require('../../../common/account_opening');
 const FormManager    = require('../../../common/form_manager');
 const detectHedging  = require('../../../../_common/common_functions').detectHedging;
-const upgrdePulser   = require('../../../../_common/utility').upgradePulser;
 
 const JapanAccOpening = (() => {
     const onLoad = () => {
@@ -37,7 +36,7 @@ const JapanAccOpening = (() => {
             fnc_response_handler: handleResponse,
         });
 
-        upgrdePulser.hide();
+        AccountOpening.showHidePulser(0);
     };
 
     const handleResponse = (response) => {
@@ -48,7 +47,7 @@ const JapanAccOpening = (() => {
         }
     };
 
-    const onUnload = () => { upgrdePulser.show(); };
+    const onUnload = () => { AccountOpening.showHidePulser(1);; };
 
     return {
         onLoad,

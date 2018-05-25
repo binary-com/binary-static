@@ -6,7 +6,6 @@ const AccountOpening = require('../../../common/account_opening');
 const FormManager    = require('../../../common/form_manager');
 const localize       = require('../../../../_common/localize').localize;
 const isEmptyObject  = require('../../../../_common/utility').isEmptyObject;
-const upgrdePulser   = require('../../../../_common/utility').upgradePulser;
 const State          = require('../../../../_common/storage').State;
 const toISOFormat    = require('../../../../_common/string_util').toISOFormat;
 
@@ -64,7 +63,7 @@ const FinancialAccOpening = (() => {
             $('#tax_information_note').slideToggle();
         });
 
-        upgrdePulser.hide();
+        AccountOpening.showHidePulser(0);
     };
 
     const getValidations = () => {
@@ -102,7 +101,7 @@ const FinancialAccOpening = (() => {
         }
     };
 
-    const onUnload = () => { upgrdePulser.show(); };
+    const onUnload = () => { AccountOpening.showHidePulser(1); };
 
     return {
         onLoad,

@@ -179,15 +179,6 @@ const getStaticHash = () => {
     return static_hash;
 };
 
-const upgradePulser = (() => {
-    const showHidePulser = (should_show) => { $('.upgrademessage').children('a').setVisibility(should_show); };
-
-    return {
-        show: () => { showHidePulser(1); },
-        hide: () => { showHidePulser(0); },
-    };
-})();
-
 module.exports = {
     showLoadingImage,
     getHighestZIndex,
@@ -202,5 +193,4 @@ module.exports = {
     applyToAllElements,
     findParent,
     getStaticHash,
-    upgradePulser,
 };
