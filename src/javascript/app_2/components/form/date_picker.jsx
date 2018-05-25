@@ -1,6 +1,7 @@
 import moment       from 'moment';
 import React        from 'react';
 import classnames   from 'classnames';
+import PropTypes    from 'prop-types';
 import ArrowHead    from '../elements/arrowhead.jsx';
 import { localize } from '../../../_common/localize';
 
@@ -62,7 +63,7 @@ class Calendar extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         const date = moment(this.state.date);
-        
+
         if (date.isBefore(moment(nextProps.minDate))) {
             this.setState({
                 date: nextProps.minDate,
@@ -649,6 +650,19 @@ class DatePicker extends React.PureComponent {
 DatePicker.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
     mode      : 'date',
+};
+
+DatePicker.propTypes = {
+    name         : PropTypes.string,
+    initial_value: PropTypes.string,
+    placeholder  : PropTypes.string,
+    startDate    : PropTypes.string,
+    maxDate      : PropTypes.string,
+    minDate      : PropTypes.string,
+    dateFormat   : PropTypes.string,
+    mode         : PropTypes.string,
+    onChange     : PropTypes.func,
+    showTodayBtn : PropTypes.bool,
 };
 
 export default DatePicker;

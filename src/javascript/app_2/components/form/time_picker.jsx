@@ -1,6 +1,7 @@
 import React,
     { PureComponent } from 'react';
 import IScroll        from 'iscroll';
+import PropTypes      from 'prop-types';
 import { localize }   from '../../../_common/localize';
 
 /* TODO:
@@ -333,5 +334,14 @@ class TimePicker extends PureComponent {
         );
     }
 }
+
+TimePicker.propTypes = {
+    className: PropTypes.string,
+    value    : PropTypes.string,
+    onChange : PropTypes.func,
+    name     : PropTypes.string,
+    padding  : PropTypes.string,
+    toggle   : PropTypes.func,
+};
 
 export default TimePicker;

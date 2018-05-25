@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class InputField extends React.PureComponent {
     render() {
@@ -27,5 +28,15 @@ class InputField extends React.PureComponent {
         );
     }
 }
+
+InputField.propTypes = {
+    type           : PropTypes.string,
+    number         : PropTypes.string,
+    value          : PropTypes.number,
+    onChange       : PropTypes.func,
+    is_currency    : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
+    prefix         : PropTypes.string,
+};
 
 export default InputField;

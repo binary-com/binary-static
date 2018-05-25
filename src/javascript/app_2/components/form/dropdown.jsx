@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Dropdown extends React.PureComponent {
     constructor(props) {
@@ -170,5 +171,13 @@ const NativeSelect = ({
         </select>
     </div>
 );
+
+Dropdown.propTypes = {
+    is_nativepicker: PropTypes.bool,
+    list           : PropTypes.array,
+    name           : PropTypes.string,
+    onChange       : PropTypes.func,
+    value          : PropTypes.string,
+};
 
 export default Dropdown;

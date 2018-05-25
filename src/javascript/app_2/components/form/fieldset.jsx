@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import moment     from 'moment';
 import React      from 'react';
+import PropTypes  from 'prop-types';
 import Tooltip    from '../elements/tooltip.jsx';
 
 class Fieldset extends React.PureComponent {
@@ -28,5 +29,12 @@ class Fieldset extends React.PureComponent {
         );
     }
 }
+
+Fieldset.propTypes = {
+    time    : PropTypes.object,
+    header  : PropTypes.string,
+    tooltip : PropTypes.string,
+    children: PropTypes.array,
+};
 
 export default Fieldset;

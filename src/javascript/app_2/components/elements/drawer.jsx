@@ -1,5 +1,6 @@
 import classNames     from 'classnames';
 import React          from 'react';
+import PropTypes      from 'prop-types';
 import { BinaryLink } from '../../routes';
 import Url            from '../../../_common/url';
 
@@ -217,6 +218,13 @@ const DrawerHeader = ({
         }
         </React.Fragment>
     );
+};
+
+ToggleDrawer.propTypes = {
+    alignment: PropTypes.string,
+    children : PropTypes.array,
+    closeBtn : PropTypes.func,
+    footer   : PropTypes.func,
 };
 
 module.exports = {

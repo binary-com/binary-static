@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import { localize } from '../../../_common/localize';
 
 class Popover extends React.Component {
@@ -10,7 +11,7 @@ class Popover extends React.Component {
     }
 
     render() {
-        const popver = (
+        const popover = (
             <div className={`popover ${this.state.is_open ? 'open' : ''} ${this.props.alignment ? this.props.alignment : ''}`}>
                 { this.props.title && <div className='popover-title'>{localize(this.props.title)}</div> }
                 { this.props.subtitle && <div className='popover-subtitle'>{localize(this.props.subtitle)}</div> }
@@ -24,12 +25,19 @@ class Popover extends React.Component {
                         React.cloneElement(child, {
                             onMouseEnter: () => this.setState({ is_open: true }),
                             onMouseLeave: () => this.setState({ is_open: false }),
-                        }, popver)
+                        }, popover)
                     ))
                 }
             </React.Fragment>
         );
     }
 }
+
+Popover.propTypes = {
+    title    : PropTypes.string,
+    alignment: PropTypes.string,
+    subtitle : PropTypes.string,
+    children : PropTypes.object,
+};
 
 export default Popover;
