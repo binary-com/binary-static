@@ -76,6 +76,13 @@ const PaymentMethods = () => {
                                 { text: '25 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${working_day}`, 1), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                             ],
+                            [
+                                { text: <PaymentLogo logo='paysec' /> },
+                                { text: 'USD' },
+                                { text: '25 - 10,000' },
+                                { text: '25 - 10,000' },
+                                { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                            ],
                         ],
                     }}
                 />
