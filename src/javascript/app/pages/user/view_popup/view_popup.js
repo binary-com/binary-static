@@ -107,6 +107,8 @@ const ViewPopup = (() => {
             UPORDOWN    : 'Goes Outside',
             ONETOUCH    : 'Touches',
             NOTOUCH     : 'Does Not Touch',
+            CALLSPREAD  : 'Call Spread',
+            PUTSPREAD   : 'Put Spread',
         };
 
         containerSetText('trade_details_contract_type', localize(contract_type_display[contract.contract_type]));
