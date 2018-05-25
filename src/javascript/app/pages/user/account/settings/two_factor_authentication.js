@@ -32,13 +32,13 @@ const TwoFactorAuthentication = (() => {
             $(form_id).setVisibility(1);
 
             FormManager.init(form_id, [
-                { selector: '#otp', validations: ['req'], request_field: 'otp' },
+                { selector: '#otp', validations: ['req'], request_field: 'otp', no_scroll: true },
                 { request_field: 'account_security', value: 1 },
                 { request_field: 'totp_action', value: next_state },
             ]);
             FormManager.handleSubmit({
                 form_selector       : form_id,
-                fnc_response_handler: handleSubmit,
+                fnc_response_handler: handleSubmitResponse,
                 enable_button       : true,
             });
 
@@ -79,7 +79,7 @@ const TwoFactorAuthentication = (() => {
         });
     };
 
-    const handleSubmit = (res) => {
+    const handleSubmitResponse = (res) => {
         if ('error' in res) {
             showFormMessage(getPropertyValue(res, ['error', 'message']) || 'Sorry, an error occurred.');
         } else {
