@@ -16,7 +16,7 @@ const Url                 = require('../../_common/url');
 const applyToAllElements  = require('../../_common/utility').applyToAllElements;
 const createElement       = require('../../_common/utility').createElement;
 const findParent          = require('../../_common/utility').findParent;
-const upgradePulser      = require('../../_common/utility').upgradePulser;
+const upgradePulser       = require('../../_common/utility').upgradePulser;
 
 const Header = (() => {
     const onLoad = () => {

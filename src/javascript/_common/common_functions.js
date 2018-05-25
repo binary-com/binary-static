@@ -97,7 +97,6 @@ const getElementById = (id_selector, parent = document) => parent.getElementById
 const getVisibleElement = (class_name, parent = document) =>
     Array.from(parent.getElementsByClassName(class_name)).find((el) => isVisible(el));
 
-
 module.exports = {
     detectHedging,
     jqueryuiTabsToDropdown,
