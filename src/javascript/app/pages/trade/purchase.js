@@ -94,9 +94,12 @@ const Purchase = (() => {
 
             CommonFunctions.elementInnerHtml(cost,   `${localize('Total Cost')} <p>${formatMoney(currency, cost_value)}</p>`);
             if (isLookback(contract_type)) {
-                // TODO: change to maximumum for callputspread
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formula}</p>`);
                 profit.setVisibility(0);
+            } else if (/^(CALLSPREAD|PUTSPREAD)$/.test(contract_type)) {
+                profit.setVisibility(1);
+                CommonFunctions.elementInnerHtml(payout, `${localize('Maximum Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
+                CommonFunctions.elementInnerHtml(profit, `${localize('Maximum Profit')} <p>${profit_value}</p>`);
             } else {
                 profit.setVisibility(1);
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
