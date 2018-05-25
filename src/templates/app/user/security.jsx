@@ -41,7 +41,7 @@ const Security = () => (
 
                 <Column className='ja-hide' url='authorised_appsws' image='applications' header={it.L('Authorised Applications')} text={it.L('Manage your authorised applications.')} />
 
-                <Column url='two_factor_authentication' image='2fa' header={it.L('2-Factor Authentication')} text={it.L('Lorem ipsum dolor sit amet.')} />
+                <Column url='two_factor_authentication' image='2fa' header={it.L('Two-Factor Authentication')} text={it.L('Enable two-factor authentication for an extra layer of security.')} />
             </div>
         </div>
     </React.Fragment>
