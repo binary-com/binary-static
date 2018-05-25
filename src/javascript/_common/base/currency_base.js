@@ -56,7 +56,7 @@ const setCurrencies = (website_status) => {
     currencies_config = website_status.currencies_config;
 };
 
-const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type']));
+const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type'])) || (currency in crypto_config);
 
 const crypto_config = {
     BTC: { name: 'Bitcoin',       min_withdrawal: 0.002 },
