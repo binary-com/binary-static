@@ -653,16 +653,16 @@ DatePicker.defaultProps = {
 };
 
 DatePicker.propTypes = {
-    name         : PropTypes.string,
+    dateFormat   : PropTypes.string,
     initial_value: PropTypes.string,
-    placeholder  : PropTypes.string,
-    startDate    : PropTypes.string,
     maxDate      : PropTypes.string,
     minDate      : PropTypes.string,
-    dateFormat   : PropTypes.string,
     mode         : PropTypes.string,
+    name         : PropTypes.string,
     onChange     : PropTypes.func,
+    placeholder  : PropTypes.string,
     showTodayBtn : PropTypes.bool,
+    startDate    : PropTypes.string,
 };
 
 export default DatePicker;

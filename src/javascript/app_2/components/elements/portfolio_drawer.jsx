@@ -94,9 +94,9 @@ class PortfolioDrawer extends React.Component {
 }
 
 PortfolioDrawer.propTypes = {
-    subtitle : PropTypes.number,
-    children : PropTypes.object,
     alignment: PropTypes.string,
+    children : PropTypes.object,
+    subtitle : PropTypes.number,
 };
 
 module.exports = PortfolioDrawer;

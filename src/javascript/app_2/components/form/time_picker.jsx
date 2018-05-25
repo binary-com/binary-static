@@ -337,11 +337,11 @@ class TimePicker extends PureComponent {
 
 TimePicker.propTypes = {
     className: PropTypes.string,
-    value    : PropTypes.string,
-    onChange : PropTypes.func,
     name     : PropTypes.string,
+    onChange : PropTypes.func,
     padding  : PropTypes.string,
     toggle   : PropTypes.func,
+    value    : PropTypes.string,
 };
 
 export default TimePicker;

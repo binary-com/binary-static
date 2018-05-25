@@ -34,10 +34,10 @@ class Popover extends React.Component {
 }
 
 Popover.propTypes = {
-    title    : PropTypes.string,
     alignment: PropTypes.string,
-    subtitle : PropTypes.string,
     children : PropTypes.object,
+    subtitle : PropTypes.string,
+    title    : PropTypes.string,
 };
 
 export default Popover;

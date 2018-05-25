@@ -31,10 +31,10 @@ class Fieldset extends React.PureComponent {
 }
 
 Fieldset.propTypes = {
-    time    : PropTypes.object,
-    header  : PropTypes.string,
-    tooltip : PropTypes.string,
     children: PropTypes.array,
+    header  : PropTypes.string,
+    time    : PropTypes.object,
+    tooltip : PropTypes.string,
 };
 
 export default Fieldset;

@@ -86,9 +86,9 @@ class DataTable extends React.Component {
 DataTable.propTypes = {
     columns         : PropTypes.array,
     data_source     : PropTypes.array,
-    is_full_width   : PropTypes.bool,
-    has_fixed_header: PropTypes.bool,
     footer          : PropTypes.string,
+    has_fixed_header: PropTypes.bool,
+    is_full_width   : PropTypes.bool,
 };
 
 
