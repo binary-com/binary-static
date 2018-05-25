@@ -9,6 +9,7 @@ const elementInnerHtml = require('../../../_common/common_functions').elementInn
 const getElementById   = require('../../../_common/common_functions').getElementById;
 const localize         = require('../../../_common/localize').localize;
 const urlFor           = require('../../../_common/url').urlFor;
+const cloneObject      = require('../../../_common/utility').cloneObject;
 
 /*
  * This contains common functions we need for processing the response
@@ -22,15 +23,18 @@ const commonTrading = (() => {
     const displayContractForms = (id, elements, selected) => {
         if (!id || !elements || !selected) return;
 
-        const contracts_tree = getContractCategoryTree(elements);
+        const all_contracts = cloneObject(elements);
+        delete all_contracts.callputequal; // don't include callputequal in contract drop-down
+
+        const contracts_tree = getContractCategoryTree(all_contracts);
 
         if (!contracts_element) {
-            contracts_element = contractsElement.init(elements, contracts_tree);
+            contracts_element = contractsElement.init(all_contracts, contracts_tree, selected);
         } else { // Update the component.
             contracts_element.updater.enqueueSetState(contracts_element, {
                 contracts_tree,
-                contracts: elements,
-                formname : Defaults.get('formname'),
+                contracts: all_contracts,
+                formname : selected || Defaults.get('formname'),
             });
         }
     };
@@ -50,6 +54,8 @@ const commonTrading = (() => {
         if (/higherlower/.test(form_name)) {
             name    = 'callput';
             barrier = 'euro_non_atm';
+        } else if (/callputequal/.test(form_name)) {
+            barrier = 'euro_atm';
         } else if (/risefall|callput/.test(form_name)) {
             name    = 'callput';
             barrier = 'euro_atm';

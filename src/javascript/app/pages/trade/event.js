@@ -70,6 +70,16 @@ const TradingEvents = (() => {
             TradingAnalysis.request();
         });
 
+        const el_equal = getElementById('callputequal');
+        el_equal.addEventListener('change', function () {
+            const is_equal = $(this).is(':checked');
+            const formname = is_equal ? this.getAttribute('id') : contract_input.value;
+            Defaults.set('is_equal', is_equal);
+            Defaults.set('formname', formname);
+            Process.processContractForm();
+            TradingAnalysis.request();
+        });
+
         /*
          * attach event to underlying change, event need to request new contract details and price
          */

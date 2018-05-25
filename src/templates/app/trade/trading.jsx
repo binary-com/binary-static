@@ -150,6 +150,10 @@ const Trading = () => (
                                             </div>
                                         </div>
                                     </div>
+                                    <div className='row invisible' id='equals_row'>
+                                        <input id='callputequal' type='checkbox' />
+                                        <label htmlFor='callputequal'><span data-balloon-length='xlarge' data-balloon={it.L('The settlement condition would change to greater than or equal to for Higher and lower than or equal to for Lower contracts.')}>{it.L('Include equals')}</span></label>
+                                    </div>
                                 </form>
                             </div>
                             <div id='open_positions_container'>

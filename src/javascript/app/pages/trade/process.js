@@ -139,10 +139,22 @@ const Process = (() => {
             }
         }
 
+        const equals = getElementById('callputequal');
+        let formname_to_display = formname;
+        if (/^(callputequal|risefall)$/.test(formname)) {
+            if (Defaults.get('is_equal')) {
+                equals.checked = true;
+            }
+            formname_to_display = 'risefall';
+            equals.parentElement.setVisibility(1);
+        } else {
+            equals.parentElement.setVisibility(0);
+        }
+
         // set form to session storage
         Defaults.set('formname', formname);
 
-        commonTrading.displayContractForms('contract_form_name_nav', contract_categories, formname);
+        commonTrading.displayContractForms('contract_form_name_nav', contract_categories, formname_to_display);
 
         processContractForm();
 
