@@ -20,6 +20,7 @@ const GTM                   = require('../../../_common/base/gtm');
 const dateValueChanged      = require('../../../_common/common_functions').dateValueChanged;
 const isVisible             = require('../../../_common/common_functions').isVisible;
 const getElementById        = require('../../../_common/common_functions').getElementById;
+const localize              = require('../../../_common/localize').localize;
 
 /*
  * TradingEvents object contains all the event handler function for
@@ -300,7 +301,8 @@ const TradingEvents = (() => {
         /*
          * attach event to purchase buttons to buy the current contract
          */
-        $('.purchase_button').on('click dblclick', function () {
+        const $purchase_button = $('.purchase_button');
+        $purchase_button.on('click dblclick', function () {
             if (isVisible(getElementById('confirmation_message_container')) || /disabled/.test(this.parentNode.classList)) {
                 return;
             }
@@ -319,7 +321,7 @@ const TradingEvents = (() => {
                 }
             }, this);
             if (id && ask_price) {
-                $('.purchase_button').css('visibility', 'hidden');
+                $purchase_button.text(localize('Purchase request sent')).parent().addClass('disabled button-disabled');
                 BinarySocket.send(params).then((response) => {
                     Purchase.display(response);
                     GTM.pushPurchaseData(response);

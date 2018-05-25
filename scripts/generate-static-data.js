@@ -154,6 +154,8 @@ const texts = [
     'High-Low',
     'Search...',
     'Select Asset',
+    'Purchase',
+    'Purchase request sent',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
