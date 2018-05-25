@@ -28,13 +28,15 @@
 @import 'app_2/_common/form/time_picker';
 
 // Components
+@import 'app_2/_common/components/card_list';
 @import 'app_2/_common/components/contracts_popup';
-@import 'app_2/_common/components/table';
+@import 'app_2/_common/components/data_table';
 @import 'app_2/_common/components/pagination';
 @import 'app_2/_common/components/popover';
 @import 'app_2/_common/fullscreen_dialog';
 @import 'app_2/_common/mobile_widget';
 
 // Pages
-@import 'app_2/trading';
 @import 'app_2/portfolio';
+@import 'app_2/pages/statement';
+@import 'app_2/pages/trading';

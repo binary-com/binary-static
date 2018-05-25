@@ -8,7 +8,7 @@ const BinaryApp = () => (
         <Head />
         <body className={it.language}>
             <GTM />
-            <div id='binary_app'>
+            <div id='binary_app' className='binary-app'>
                 <Loading />
             </div>
         </body>

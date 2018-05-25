@@ -1,5 +1,7 @@
 import moment       from 'moment';
 import React        from 'react';
+import classnames   from 'classnames';
+import ArrowHead    from '../elements/arrowhead.jsx';
 import { localize } from '../../../_common/localize';
 
 class Calendar extends React.Component {
@@ -35,13 +37,13 @@ class Calendar extends React.Component {
         this.onChangeInput = this.onChangeInput.bind(this);
         this.resetCalendar = this.resetCalendar.bind(this);
 
-        const { startDate, minDate } = {...props};
+        const { startDate, minDate, initial_value } = props;
 
         const current_date = moment(startDate || minDate).format(this.props.dateFormat);
 
         this.state = {
             date         : current_date, // calendar dates reference
-            selected_date: current_date, // selected date
+            selected_date: initial_value !== undefined ? initial_value : current_date, // selected date
         };
     }
 
@@ -50,9 +52,26 @@ class Calendar extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        const should_update = (this.state.active_view !== nextState.active_view)
-            || (this.state.date !== nextState.date) || (this.state.selected_date !== nextState.selected_date);
-        return should_update || false;
+        return (this.state.active_view !== nextState.active_view)
+            || (this.state.date !== nextState.date)
+            || (this.state.selected_date !== nextState.selected_date)
+            || (this.props.minDate !== nextState.minDate)
+            || (this.props.maxDate !== nextState.maxDate)
+            || (this.props.startDate !== nextState.startDate);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const date = moment(this.state.date);
+        
+        if (date.isBefore(moment(nextProps.minDate))) {
+            this.setState({
+                date: nextProps.minDate,
+            });
+        } else if (date.isAfter(moment(nextProps.maxDate))) {
+            this.setState({
+                date: nextProps.maxDate,
+            });
+        }
     }
 
     setToday() {
@@ -66,7 +85,22 @@ class Calendar extends React.Component {
     }
 
     updateDate(value, unit, is_add) {
-        this.setState({ date: moment(this.state.date)[is_add ? 'add' : 'subtract'](value, unit).format(this.props.dateFormat) });
+        let new_date = moment(this.state.date)[is_add ? 'add' : 'subtract'](value, unit).format(this.props.dateFormat);
+
+        if (unit === 'months' && this.isPeriodDisabled(new_date, 'month')) return;
+
+        if (unit === 'years'  && this.isPeriodDisabled(new_date, 'month')) {
+            new_date = is_add ? this.props.maxDate : this.props.minDate;
+        }
+
+        this.setState({ date: new_date });
+    }
+
+    isPeriodDisabled(date, unit) {
+        const start_of_period = moment(date).startOf(unit);
+        const end_of_period   = moment(date).endOf(unit);
+        return end_of_period.isBefore(moment(this.props.minDate))
+            || start_of_period.isAfter(moment(this.props.maxDate));
     }
 
     nextMonth() {
@@ -106,32 +140,20 @@ class Calendar extends React.Component {
     }
 
     handleDateSelected(e) {
-        const current_date = moment(this.state.date);
         const date         = moment(e.target.dataset.date);
         const min_date     = moment(this.props.minDate).format(this.props.dateFormat);
         const max_date     = moment(this.props.maxDate).format(this.props.dateFormat);
+        const is_before    = date.isBefore(min_date);
+        const is_after     = date.isAfter(max_date);
 
-        const is_before     = date.isBefore(min_date);
-        const is_today      = date.isSame(min_date);
-        const is_after      = date.isAfter(max_date);
-        const is_prev_month = date.month() < current_date.month();
-        const is_next_month = date.month() > current_date.month();
+        if (is_before || is_after) return;
 
-        if (is_prev_month && !is_before) {
-            this.previousMonth();
-        }
-        if (is_next_month) {
-            this.nextMonth();
-        }
-
-        if ((!is_before && !is_after)|| is_today) {
-            const formatted_date = date.format(this.props.dateFormat);
-            this.setState({
-                date         : formatted_date,
-                selected_date: formatted_date,
-            });
-            this.props.handleDateChange(formatted_date);
-        }
+        const formatted_date = date.format(this.props.dateFormat);
+        this.setState({
+            date         : formatted_date,
+            selected_date: formatted_date,
+        });
+        this.props.handleDateChange(formatted_date);
     }
 
     updateSelected(e, type) {
@@ -141,12 +163,13 @@ class Calendar extends React.Component {
             decade: 'year',
         };
         const date = moment(this.state.date)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.dateFormat);
+
+        if (this.isPeriodDisabled(date, type)) return;
+
         this.setState({
             date,
-            selected_date: date,
-            active_view  : active_view[type],
+            active_view: active_view[type],
         });
-        this.props.handleDateChange(date, true);
     }
 
     handleMonthSelected(e) {
@@ -184,9 +207,11 @@ class Calendar extends React.Component {
     }
 
     resetCalendar() {
-        const date = moment(this.props.minDate).format(this.props.dateFormat);
+        const { startDate, minDate } = this.props;
+        const default_date = moment(startDate || minDate).format(this.props.dateFormat);
+
         this.setState({
-            date,
+            date         : default_date,
             selected_date: '',
         });
     }
@@ -213,17 +238,22 @@ class Calendar extends React.Component {
         }
 
         dates.forEach((date) => {
-            const is_disabled = moment(date).isBefore(moment(start_of_month))
-                || moment(date).isAfter(moment(end_of_month))
-                || moment(date).isBefore(moment(this.props.minDate).subtract(1, 'day'))
+            const is_disabled = moment(date).isBefore(moment(this.props.minDate))
                 || moment(date).isAfter(moment(this.props.maxDate));
-            const is_active = moment(date).isSame(moment(this.state.date)) && this.state.selected_date;
+            const is_other_month = moment(date).isBefore(moment(start_of_month))
+                || moment(date).isAfter(moment(end_of_month));
+            const is_active = this.state.selected_date && moment(date).isSame(moment(this.state.selected_date));
             const is_today  = moment(date).isSame(moment().utc(), 'day');
 
             days.push(
                 <span
                     key={date}
-                    className={`calendar-date${is_active ? ' active' : ''}${is_today ? ' today' : ''}${is_disabled ? ' disabled' : ''}`}
+                    className={classnames('calendar-date', {
+                        active  : is_active,
+                        today   : is_today,
+                        disabled: is_disabled,
+                        hidden  : is_other_month,
+                    })}
                     onClick={this.handleDateSelected}
                     data-date={date}
                 >
@@ -252,16 +282,23 @@ class Calendar extends React.Component {
         const month_headers = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         return (
             <div className='calendar-month-panel'>
-                {month_headers.map((item, idx) => (
-                    <span
-                        key={idx}
-                        className={`calendar-month${idx === is_active ? ' active' : ''}`}
-                        onClick={this.handleMonthSelected}
-                        data-month={idx}
-                    >
-                        {localize(item)}
-                    </span>
-                ))}
+                {month_headers.map((item, idx) => {
+                    const date = moment(this.state.date).month(item);
+                    const is_disabled = this.isPeriodDisabled(date, 'month');
+                    return (
+                        <span
+                            key={idx}
+                            className={classnames('calendar-month', {
+                                active  : idx === is_active,
+                                disabled: is_disabled,
+                            })}
+                            onClick={this.handleMonthSelected}
+                            data-month={idx}
+                        >
+                            {localize(item)}
+                        </span>
+                    );
+                })}
             </div>
         );
     }
@@ -275,16 +312,23 @@ class Calendar extends React.Component {
         }
         return (
             <div className='calendar-year-panel'>
-                {years.map((year, idx) => (
-                    <span
-                        key={idx}
-                        className={`calendar-year${(idx === 0 || idx === 11 ) ? ' disabled' : ''}${year === is_active ? ' active' : ''}`}
-                        onClick={this.handleYearSelected}
-                        data-year={year}
-                    >
-                        {year}
-                    </span>
-                ))}
+                {years.map((year, idx) => {
+                    const date = moment(this.state.date).year(year);
+                    const is_disabled = this.isPeriodDisabled(date, 'year');
+                    return (
+                        <span
+                            key={idx}
+                            className={classnames('calendar-year', {
+                                disabled: is_disabled,
+                                active  : year === is_active,
+                            })}
+                            onClick={this.handleYearSelected}
+                            data-year={year}
+                        >
+                            {year}
+                        </span>
+                    );
+                })}
             </div>
         );
     }
@@ -304,16 +348,26 @@ class Calendar extends React.Component {
 
         return (
             <div className='calendar-decade-panel'>
-                {decades.map((range, idx) => (
-                    <span
-                        key={idx}
-                        className={`calendar-decade${(idx === 0 || idx === 11) ? ' disabled' : ''}${range.split('-')[0] === is_active ? 'active' : ''}`}
-                        onClick={this.handleDecadeSelected}
-                        data-decade={range}
-                    >
-                        {range}
-                    </span>
-                ))}
+                {decades.map((range, idx) => {
+                    const [start_year, end_year] = range.split('-');
+                    const start_date = moment(this.state.date).year(start_year);
+                    const end_date   = moment(this.state.date).year(end_year);
+                    const is_disabled = this.isPeriodDisabled(start_date, 'year')
+                                     && this.isPeriodDisabled(end_date, 'year');
+                    return (
+                        <span
+                            key={idx}
+                            className={classnames('calendar-decade', {
+                                disabled: is_disabled,
+                                active  : start_year === is_active,
+                            })}
+                            onClick={this.handleDecadeSelected}
+                            data-decade={range}
+                        >
+                            {range}
+                        </span>
+                    );
+                })}
             </div>
         );
     }
@@ -326,13 +380,31 @@ class Calendar extends React.Component {
         const is_year_view   = (view === 'year');
         const is_decade_view = (view === 'decade');
 
-        const BtnPrevMonth = (is_date_view && <span type='button' className='calendar-next-month-btn' onClick={this.nextMonth} />);
-        const BtnNextMonth = (is_date_view && <span type='button' className='calendar-prev-month-btn' onClick={this.previousMonth} />);
+        const BtnPrevMonth = (is_date_view &&
+            <span
+                type='button'
+                className={classnames('calendar-prev-month-btn', {
+                    hidden: this.isPeriodDisabled(moment(this.state.date).subtract(1, 'month'), 'month'),
+                })}
+                onClick={this.previousMonth}
+            />
+        );
+        const BtnNextMonth = (is_date_view &&
+            <span
+                type='button'
+                className={classnames('calendar-next-month-btn', {
+                    hidden: this.isPeriodDisabled(moment(this.state.date).add(1, 'month'), 'month'),
+                })}
+                onClick={this.nextMonth}
+            />
+        );
 
         const BtnPrevYear = (
             <span
                 type='button'
-                className='calendar-prev-year-btn'
+                className={classnames('calendar-prev-year-btn', {
+                    hidden: this.isPeriodDisabled(moment(this.state.date).subtract(1, 'month'), 'month'),
+                })}
                 onClick={() => (((is_date_view || is_month_view) && this.previousYear())
                     || (is_year_view && this.previousDecade()) || (is_decade_view && this.previousCentury()) )}
             />
@@ -341,7 +413,9 @@ class Calendar extends React.Component {
         const BtnNextYear = (
             <span
                 type='button'
-                className='calendar-next-year-btn'
+                className={classnames('calendar-next-year-btn', {
+                    hidden: this.isPeriodDisabled(moment(this.state.date).add(1, 'month'), 'month'),
+                })}
                 onClick={() => (((is_date_view || is_month_view) && this.nextYear())
                     || (is_year_view && this.nextDecade()) || (is_decade_view && this.nextCentury()) )}
             />
@@ -375,7 +449,7 @@ class Calendar extends React.Component {
             <div className='calendar'>
                 <input
                     type='text'
-                    placeholder={this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date')}
+                    placeholder={this.props.placeholder || (this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date'))}
                     value={value}
                     onChange={this.onChangeInput}
                     className='calendar-input'
@@ -408,7 +482,7 @@ class Calendar extends React.Component {
 
 Calendar.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
-    minDate   : moment().utc().subtract(120, 'y').format('YYYY-MM-DD'), // by default, minDate is set to 120 years before today
+    minDate   : moment(0).utc().format('YYYY-MM-DD'),                   // by default, minDate is set to Unix Epoch (January 1st 1970)
     maxDate   : moment().utc().add(120, 'y').format('YYYY-MM-DD'),      // by default, maxDate is set to 120 years after today
 };
 
@@ -428,18 +502,18 @@ class DatePicker extends React.PureComponent {
         this.handleMouseEnter   = this.handleMouseEnter.bind(this);
         this.handleMouseLeave   = this.handleMouseLeave.bind(this);
 
+        const selected_date = props.initial_value !== undefined
+            ? props.initial_value
+            : moment(this.props.minDate).format(this.props.dateFormat);
+
         this.state = {
-            selected_date       : moment(this.props.minDate).format(this.props.dateFormat),
+            selected_date,
             is_calendar_visible : false,
             is_close_btn_visible: false,
         };
     }
 
     componentDidMount() {
-        this.props.onChange({ target: { name: this.props.name, value: this.getPickerValue() } });
-    }
-
-    componentDidUpdate() {
         this.props.onChange({ target: { name: this.props.name, value: this.getPickerValue() } });
     }
 
@@ -482,11 +556,16 @@ class DatePicker extends React.PureComponent {
         this.setState({
             selected_date: value,
             is_calendar_visible,
-        });
+        },
+        this.changeCallback);
     }
 
+    changeCallback = () => {
+        this.props.onChange({ target: { name: this.props.name, value: this.getPickerValue() } });
+    };
+
     clearDateInput = () => {
-        this.setState({ selected_date: '' });
+        this.setState({ selected_date: '' }, this.changeCallback);
         this.calendar.resetCalendar();
     };
 
@@ -498,14 +577,27 @@ class DatePicker extends React.PureComponent {
             return (
                 <div ref={node => { this.mainNode = node; }} className='datepicker-container'>
                     <input
-                        id={this.props.id}
+                        id={this.props.name}
                         name={this.props.name}
+                        className='datepicker-display'
                         type='date'
                         value={value}
+                        min={this.props.minDate}
+                        max={this.props.maxDate}
                         onChange={(e) => {
+                            // fix for ios issue: clear button doesn't work
+                            // https://github.com/facebook/react/issues/8938
+                            const target = e.nativeEvent.target;
+                            function iosClearDefault() { target.defaultValue = ''; }
+                            window.setTimeout(iosClearDefault, 0);
+
                             this.handleDateChange(e.target.value);
                         }}
                     />
+                    <label className='datepicker-native-overlay' htmlFor={this.props.name}>
+                        {value || this.props.placeholder}
+                        <ArrowHead className='datepicker-native-overlay__arrowhead' />
+                    </label>
                 </div>
             );
         }
@@ -522,19 +614,27 @@ class DatePicker extends React.PureComponent {
                         className='datepicker-display'
                         value={value}
                         readOnly
-                        placeholder={this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date')}
+                        placeholder={this.props.placeholder || (this.props.mode === 'duration' ? localize('Select a duration') : localize('Select date'))}
                         onClick={this.handleVisibility}
                     />
                     <span
-                        className={`picker-calendar-icon ${this.state.is_close_btn_visible ? '': 'show'}`}
+                        className={classnames('picker-calendar-icon', {
+                            show: !this.state.is_close_btn_visible,
+                        })}
                         onClick={this.handleVisibility}
                     />
                     <span
-                        className={`close-circle-icon ${this.state.is_close_btn_visible ? 'show': ''}`}
+                        className={classnames('close-circle-icon', {
+                            show: this.state.is_close_btn_visible,
+                        })}
                         onClick={this.clearDateInput}
                     />
                 </div>
-                <div className={`datepicker-calendar ${this.state.is_calendar_visible ? 'show' : ''}`}>
+                <div
+                    className={classnames('datepicker-calendar', {
+                        show: this.state.is_calendar_visible,
+                    })}
+                >
                     <Calendar
                         ref={node => { this.calendar = node; }}
                         handleDateChange={this.handleDateChange}
