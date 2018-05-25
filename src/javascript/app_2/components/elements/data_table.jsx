@@ -37,11 +37,7 @@ class DataTable extends React.Component {
             https://stackoverflow.com/questions/4709390
         */
         return (
-<<<<<<< HEAD
-            <table className={classnames('table', 'table-clone', { 'table-full-width': this.props.is_full_width })}>
-=======
             <table className={classnames('table', 'table-clone', { 'table--full-width': this.props.is_full_width })}>
->>>>>>> dba3a2c2ca9cb144a247fe74f017d736bae5c577
                 <thead className='table-head'>
                     <tr className='table-row'>
                         {this.renderHeaders()}
@@ -61,15 +57,10 @@ class DataTable extends React.Component {
             'table--fixed-header': this.props.has_fixed_header,
         });
         return (
-<<<<<<< HEAD
-            <div className='table-container' ref={this.props.has_fixed_header && this.fixHeaderInPlace}>
-                <table className={classnames('table', { 'table-full-width': this.props.is_full_width })}>
-=======
             <div className='table-container'>
                 {this.props.has_fixed_header && this.renderTableClone()}
 
                 <table className={table_class}>
->>>>>>> dba3a2c2ca9cb144a247fe74f017d736bae5c577
                     <thead className='table-head'>
                         <tr className='table-row'>
                             {this.renderHeaders()}
