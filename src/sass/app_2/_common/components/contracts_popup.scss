@@ -1,7 +1,7 @@
 div.contracts-popup-container {
     position: relative;
     margin: 8px 0;
-    z-index: 99;
+    z-index: 2;
     cursor: pointer;
     background: $COLOR_WHITE;
     border: solid 1px $COLOR_LIGHT_GRAY;
@@ -36,18 +36,22 @@ div.contracts-popup-container {
         outline: 0;
         border-radius: 4px;
     }
-    &.show > div.contracts-popup-list {
-        top: 100%;
-        max-height: 100%;
-        opacity: 1;
-        pointer-events: auto;
-    }
-    &.show > .clicked {
-        border-color: $COLOR_BLUE;
-    }
-    &.show > .select-arrow {
-        top: 40%;
-        transform: rotate(180deg);
+    &.show {
+        z-index: 99;
+
+        & > div.contracts-popup-list {
+            top: 100%;
+            max-height: 100%;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        & > .clicked {
+            border-color: $COLOR_BLUE;
+        }
+        & > .select-arrow {
+            top: 40%;
+            transform: rotate(180deg);
+        }
     }
     .list-item {
         width: 100%;
