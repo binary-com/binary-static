@@ -71,9 +71,9 @@ const TwoFactorAuthentication = (() => {
     };
 
     const makeQrCode = (key) => {
-        const otpAuth = `otpauth://totp/${Client.get('email')}?secret=${key}&issuer=Binary.com`;
+        const text = `otpauth://totp/${Client.get('email')}?secret=${key}&issuer=Binary.com`;
         qrcode = new QRCode(document.getElementById('qrcode'), {
-            text  : otpAuth,
+            text,
             width : 130,
             height: 130,
         });
