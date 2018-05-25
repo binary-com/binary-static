@@ -11,7 +11,7 @@
             width: 30px;
             line-height: 30px;
             margin: 1px;
-            border-radius: 4px 0 0 4px;
+            border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
             background: $COLOR_LIGHT_GRAY;
             box-sizing: border-box;
 
@@ -40,8 +40,8 @@
         color: $COLOR_BLACK;
         background-color: $COLOR_WHITE;
         background-image: none;
-        border: 1px solid $COLOR_LIGHT_GRAY;
-        border-radius: 4px;
+        border: 1px solid $COLOR_GRAY;
+        border-radius: $BORDER_RADIUS;
         transition: all 0.3s;
 
         &:hover {
@@ -49,7 +49,7 @@
         }
         &:active, &:focus {
             outline: 0;
-            border-radius: 4px;
+            border-radius: $BORDER_RADIUS;
             border-color: $COLOR_BLUE;
             box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
         }

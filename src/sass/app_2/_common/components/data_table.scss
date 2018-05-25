@@ -1,0 +1,82 @@
+$side-padding: 2rem;
+
+.table {
+    color: #333333; /* stylelint-disable-line color-no-hex */
+    font-size: 14px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+
+    &-row {
+        border-bottom: 1px solid #e9e9ed; /* stylelint-disable-line color-no-hex */
+    }
+    &-foot &-row {
+        border: none;
+    }
+    &-head, &-foot {
+        font-weight: 600;
+        text-align: left;
+        background-color: #fafafb; /* stylelint-disable-line color-no-hex */
+    }
+    th, td {
+        padding: 0.75rem;
+        border: none;
+
+        &:first-child {
+            padding-left: $side-padding;
+        }
+        &:last-child {
+            padding-right: $side-padding;
+        }
+    }
+    &--fixed-header:not(.table-clone) {
+        .table-head {
+            visibility: hidden;
+        }
+    }
+    &--full-width {
+        th, td {
+            @include interpolate(padding-left, 981px, 1440px, 8px, 20px);
+            @include interpolate(padding-right, 981px, 1440px, 8px, 20px);
+
+            &:first-child {
+                @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
+            }
+            &:last-child {
+                @include interpolate(padding-right, 981px, 1440px, 16px, 32px);
+            }
+        }
+        @media only screen and (min-width: $MAX_CONTAINER_WIDTH) {
+            $new-side-padding: calc((100vw - #{$MAX_CONTAINER_WIDTH}) / 2 + #{$side-padding});
+
+            .table {
+                color: #f00 !important; /* stylelint-disable-line color-no-hex */
+            }
+            th, td {
+                &:first-child {
+                    padding-left: $new-side-padding;
+                }
+                &:last-child {
+                    padding-right: $new-side-padding;
+                }
+            }
+        }
+    }
+    &-body &-row:hover {
+        background-color: #e4e6f1; /* stylelint-disable-line color-no-hex */
+    }
+    // styles for fixed table header
+    &.table-clone {
+        position: fixed;
+        z-index: 80;
+        pointer-events: none;
+
+        .table-head {
+            pointer-events: auto;
+            visibility: visible;
+        }
+        .table-body {
+            visibility: hidden;
+        }
+    }
+}

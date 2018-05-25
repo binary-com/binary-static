@@ -33,6 +33,14 @@ const DAO = (() => {
     const sendLogout = () =>
         BinarySocket.send({ logout: 1 });
 
+    const getStatement = (limit, offset, date_boundaries) => BinarySocket.send({
+        statement  : 1,
+        description: 1,
+        limit,
+        offset,
+        ...date_boundaries,
+    });
+
     // ----- Streaming calls -----
     const subscribeBalance = (cb) =>
         SubscriptionManager.subscribe('balance', { balance: 1, subscribe: 1 }, cb);
@@ -71,6 +79,7 @@ const DAO = (() => {
         getSelfExclusion,
         getSettings,
         getWebsiteStatus,
+        getStatement,
         sendLogout,
 
         // streams
