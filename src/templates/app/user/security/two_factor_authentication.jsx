@@ -3,7 +3,7 @@ import Loading from '../../../_common/components/loading.jsx';
 
 const ErrorMessage = ({id}) => (
     <React.Fragment>
-        <p className='invisible' id={id}>Error Message here</p>
+        <p className='invisible notice-msg center-text' id={id}>Error Message here</p>
     </React.Fragment>
 );
 
