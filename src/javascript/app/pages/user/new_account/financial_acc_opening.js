@@ -51,7 +51,6 @@ const FinancialAccOpening = (() => {
             });
         });
 
-
         FormManager.handleSubmit({
             form_selector       : form_id,
             obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
@@ -63,6 +62,8 @@ const FinancialAccOpening = (() => {
             $('#tax_information_note_toggle').toggleClass('open');
             $('#tax_information_note').slideToggle();
         });
+
+        AccountOpening.showHidePulser(0);
     };
 
     const getValidations = () => {
@@ -100,8 +101,11 @@ const FinancialAccOpening = (() => {
         }
     };
 
+    const onUnload = () => { AccountOpening.showHidePulser(1); };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 
