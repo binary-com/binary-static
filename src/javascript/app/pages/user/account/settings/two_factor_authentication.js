@@ -32,7 +32,7 @@ const TwoFactorAuthentication = (() => {
             $(form_id).setVisibility(1);
 
             FormManager.init(form_id, [
-                { selector: '#otp', validations: ['req'], request_field: 'otp', no_scroll: true },
+                { selector: '#otp', validations: ['req', 'number'], request_field: 'otp', no_scroll: true },
                 { request_field: 'account_security', value: 1 },
                 { request_field: 'totp_action', value: next_state },
             ]);
