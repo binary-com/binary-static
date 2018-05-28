@@ -42,7 +42,7 @@ const LastDigit = ({
 };
 
 LastDigit.propTypes = {
-    is_minimized   : PropTypes.number,
+    is_minimized   : PropTypes.bool,
     is_nativepicker: PropTypes.bool,
     last_digit     : PropTypes.number,
     onChange       : PropTypes.func,
