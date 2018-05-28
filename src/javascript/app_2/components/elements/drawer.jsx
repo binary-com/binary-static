@@ -182,14 +182,19 @@ class DrawerItems extends React.PureComponent {
 
 class DrawerItem extends React.PureComponent {
     render() {
+        console.log(this.props);
+
         return (
             <div className='drawer-item'>
-                <a href={this.props.href || 'javascript:;' }>
+                <BinaryLink to={this.props.link_to}>
                     <span className={this.props.icon || undefined}>{this.props.text}</span>
-                </a>
+                </BinaryLink>
             </div>
         );
     }
+    // <a href={this.props.href || 'javascript:;' }>
+    //     <span className={this.props.icon || undefined}>{this.props.text}</span>
+    // </a>
 }
 
 
