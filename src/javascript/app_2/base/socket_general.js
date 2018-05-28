@@ -1,3 +1,4 @@
+import { flow }             from 'mobx';
 import DAO                  from '../data/dao';
 import Client               from '../../_common/base/client_base';
 import { setCurrencies }    from '../../_common/base/currency_base';
@@ -92,12 +93,11 @@ const BinarySocketGeneral = (() => {
         }
     };
 
-    const setBalance = (balance) => {
-        BinarySocket.wait('website_status').then(() => {
-            Client.set('balance', balance);
-            client_store.balance = balance;
-        });
-    };
+    const setBalance = flow(function* (balance) {
+        yield BinarySocket.wait('website_status');
+        Client.set('balance', balance);
+        client_store.balance = balance;
+    });
 
     const handleError = (response) => {
         const msg_type   = response.msg_type;
