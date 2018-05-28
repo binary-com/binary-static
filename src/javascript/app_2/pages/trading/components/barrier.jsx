@@ -60,8 +60,14 @@ const Barrier = ({
 };
 
 Barrier.propTypes = {
-    barrier_1   : PropTypes.bool,
-    barrier_2   : PropTypes.bool,
+    barrier_1: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    barrier_2: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     is_minimized: PropTypes.bool,
     onChange    : PropTypes.func,
 };

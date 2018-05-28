@@ -72,7 +72,10 @@ const Amount = ({
 };
 
 Amount.propTypes = {
-    amount         : PropTypes.number,
+    amount: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     basis          : PropTypes.string,
     currencies_list: PropTypes.object,
     currency       : PropTypes.string,

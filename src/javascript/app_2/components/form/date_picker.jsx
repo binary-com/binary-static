@@ -659,12 +659,18 @@ Calendar.propTypes = {
     id              : PropTypes.number,
     initial_value   : PropTypes.string,
     is_nativepicker : PropTypes.bool,
-    maxDate         : PropTypes.string,
-    minDate         : PropTypes.string,
-    mode            : PropTypes.string,
-    placeholder     : PropTypes.string,
-    showTodayBtn    : PropTypes.bool,
-    startDate       : PropTypes.string,
+    maxDate         : PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    minDate: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    mode        : PropTypes.string,
+    placeholder : PropTypes.string,
+    showTodayBtn: PropTypes.bool,
+    startDate   : PropTypes.string,
 };
 
 DatePicker.propTypes = {
@@ -672,13 +678,19 @@ DatePicker.propTypes = {
     id             : PropTypes.number,
     initial_value  : PropTypes.string,
     is_nativepicker: PropTypes.bool,
-    maxDate        : PropTypes.string,
-    minDate        : PropTypes.string,
-    mode           : PropTypes.string,
-    name           : PropTypes.string,
-    onChange       : PropTypes.func,
-    placeholder    : PropTypes.string,
-    showTodayBtn   : PropTypes.bool,
+    maxDate        : PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    minDate: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    mode        : PropTypes.string,
+    name        : PropTypes.string,
+    onChange    : PropTypes.func,
+    placeholder : PropTypes.string,
+    showTodayBtn: PropTypes.bool,
 };
 
 export default DatePicker;
