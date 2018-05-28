@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-23 21:43-0400\n"
+"PO-Revision-Date: 2018-05-25 05:25-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -14,9 +14,6 @@ msgstr ""
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: messages.pot\n"
 "Language: ja_JP\n"
-
-msgid "8"
-msgstr "8"
 
 msgid "404"
 msgstr "404"
@@ -279,6 +276,9 @@ msgstr "ビットコイン口座の提供を開始（日本を除く）"
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "海外で自社ブランド商品の%2ECサイト%3を開設 - お客様、アフィリエイト会員、開発者の方々が自社ブランドの売買がご利用いただけます。"
 
+msgid "%1 lots"
+msgstr ""
+
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr "%1は、バイナリーオプションが参照する各原資産の相場価格が市場で入手できる資産のような実際の価格に適度に合うよう努めております。\n"
 "%1は、参考価格が市場実勢価格を表していることを保証、明示または暗示するものではありません。"
@@ -435,9 +435,6 @@ msgstr "eGaming Reviewから「最優秀取引業者」を受賞"
 msgid "(One) Touch trades"
 msgstr "Touchトレード"
 
-msgid "(Sell Price - Buy Price) x Volume x Price Per Point = Profit"
-msgstr "（売却価格 - 購入価格 ）× 数量 × ポイント単価 = 利益"
-
 msgid "(max)"
 msgstr "（上限）"
 
@@ -449,9 +446,6 @@ msgstr "0~1年"
 
 msgid "0-5 transactions in the past 12 months"
 msgstr "過去12ヶ月で0-5のお取引"
-
-msgid "0.01 lots"
-msgstr "0.01 ロット"
 
 msgid "1 million transactions/day"
 msgstr "1日に100万件の取引"
@@ -465,15 +459,6 @@ msgstr "1〜3年"
 msgid "1. Proof of identity"
 msgstr "1. 身分証明"
 
-msgid "10 lots"
-msgstr "10 ロット"
-
-msgid "100%"
-msgstr "100%"
-
-msgid "150%"
-msgstr "150%"
-
 msgid "2 * (6,000 – 5,200) = $1600"
 msgstr "2 * (6,000 – 5,200) = $1600"
 
@@ -486,14 +471,8 @@ msgstr "2ウェイ・プライス（購入・売却）を表示"
 msgid "2. Proof of address"
 msgstr "2. 住所証明"
 
-msgid "24/7"
-msgstr "365日"
-
 msgid "3-5 years"
 msgstr "3〜5年"
-
-msgid "30 lots"
-msgstr "30 ロット"
 
 msgid "30-day limit on losses"
 msgstr "損失限度額（30日間）"
@@ -504,32 +483,17 @@ msgstr "取引限度額（30日間）"
 msgid "40 transactions or more in the past 12 months"
 msgstr "過去12ヶ月で40以上のお取引"
 
-msgid "50 lots"
-msgstr "50 ロット"
-
-msgid "50%"
-msgstr "50%"
-
 msgid "6 months to 1 year"
 msgstr "6ヶ月から1年"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "過去12ヶ月で6~10のお取引"
 
-msgid "60+"
-msgstr "60+"
-
 msgid "7-day limit on losses"
 msgstr "損失限度額（7日間）"
 
 msgid "7-day turnover limit"
 msgstr "取引限度額（7日間）"
-
-msgid "70+"
-msgstr ""
-
-msgid "75%"
-msgstr "75%"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<<職務内容に戻る"
@@ -553,17 +517,11 @@ msgstr "<strong>適正テスト: 警告:</strong>当サービスでは、どの�
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>為替リスク</strong>: 基本投資商品の取引の損失による固有のリスクに加えて、為替レート損失のリスクを受ける経済的、政治的、またはその他の条件によって、外国通貨間の為替レートは急速に変化します。そのため、異なる通貨建ての契約を取引するために通貨で資金を入金される場合は、通貨間の為替レートの変動によって原資産の損益に影響する可能性があります。"
 
-msgid "<strong>Long positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr "<strong>ロングポジション</strong>:インターバンクの貸出金利の2%の手数料を課します。"
-
 msgid "<strong>Open menu</strong> and select <strong>Preferences</strong>."
 msgstr "<strong>メニュー</strong>を開いて<strong>設定</strong>を選択してください。"
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr "<strong>その他のリスク</strong>: この文書には詳細に説明することができない取引投資商品や取引外貨に関するその他のリスクがあります。一般的にオプションや通貨取引には市場リスク、信用リスク、決済リスク、流動性リスク、運用リスク、法的リスクを受ける可能性があります。例えば、経済的、政治的、またはその他不測の事態がローカルまたは海外市場に影響を与える場合、深刻な市場の混乱が起こりうります。これらのリスクタイプに加えて、考慮すべき会計·税務処理問題などの他の要因があるかもしれません。"
-
-msgid "<strong>Short positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr "<strong>ショートポジション</strong>: インターバンクの貸出金利の2%の手数料を課します。"
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "情報工学の学位または同種の技術教育、技術訓練、実務経験"
@@ -925,9 +883,6 @@ msgstr "アドバンス"
 
 msgid "Advanced Account"
 msgstr "アドバンス口座"
-
-msgid "Advanced account: 1:100"
-msgstr "アドバンス口座：1:100"
 
 msgid "Advanced binary options trading interface"
 msgstr "最高水準のバイナリーオプション取引プラットフォーム"
@@ -1866,9 +1821,6 @@ msgstr "C. 最良執行の定義"
 msgid "C. Provision of Services"
 msgstr "C. サービス提供"
 
-msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
-msgstr "CFD（差金決済取引）：CFDとは金融商品の上昇または下降の推測から利益を得られる金融商品のことをいいます。利益/損失は原資産商品の購入/売却価格の差額として推定されます。"
-
 msgid "CFD Trading Experience"
 msgstr ""
 
@@ -1986,9 +1938,6 @@ msgstr "この対象のチャート表示は不可能です"
 msgid "Check out some technical terms before you start."
 msgstr "取引を開始する前に専門用語を確認する"
 
-msgid "Check out the latest economic events and indicators from all over the world. All data are collected and updated in real time."
-msgstr ""
-
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "下記リストの決済サービスでご利用できるお支払い方法をご確認ください。"
 
@@ -2081,9 +2030,6 @@ msgstr "リアル口座を開設するにはここをクリック"
 
 msgid "Click here to retry"
 msgstr "再試行するにはこちらをクリックしてください"
-
-msgid "Click on an individual event to be presented with further information and links to more in-depth data about it. The information provided by the Economic  Calendar will help you make more informed trading decisions."
-msgstr ""
 
 msgid "Click on the <strong>Advanced</strong> button."
 msgstr "<strong>高度な設定</strong>ボタンをクリックしてください。"
@@ -2416,9 +2362,6 @@ msgstr "トレードのリスク"
 msgid "Contract Sold"
 msgstr "売却"
 
-msgid "Contract Specifications"
-msgstr "トレード詳細"
-
 msgid "Contract Starts"
 msgstr "トレード開始"
 
@@ -2625,9 +2568,6 @@ msgstr "対応通貨"
 
 msgid "Currency"
 msgstr "通貨"
-
-msgid "Currency Symbol"
-msgstr "通貨記号"
 
 msgid "Currency of the funds accepted in your trading account."
 msgstr "あなたの取引口座で仮想通貨を資金としてご利用いただけます"
@@ -3094,9 +3034,6 @@ msgstr "本取引が期日のある取引であること。（契約締結前交
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
 msgstr "本契約に関わる当事者は、契約の締結、本契約で譲渡される権利とライセンスの受諾、本契約に基づいた義務を履行するのに必要な全ての権利、権限、権原を契約期間中に有し、維持することをここに代表して保証するものとします。"
 
-msgid "Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index."
-msgstr "ボラティリティインデックスのシンボルのポジションをオープンにする度に、0.01（取引数量）の最小取引量で始めることができます。インデックスの1ポイントにつきUSD 0.01 に変換されます。"
-
 msgid "Each time you open a position on a cryptocurrency pair, you can start with a minimum volume as indicated in the table above."
 msgstr "Each time you open a position on a cryptocurrency pair, you can start with a minimum volume as indicated in the table above."
 
@@ -3174,6 +3111,9 @@ msgstr "適格カウンターパーティー"
 
 msgid "Email"
 msgstr "メール"
+
+msgid "Email Preferences"
+msgstr ""
 
 msgid "Email address"
 msgstr "メールアドレス"
@@ -3721,9 +3661,6 @@ msgstr "例えば、従来のブローカーを通して1単位USD50の特定の
 msgid "For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:"
 msgstr "例えば、取引間中の安値が5,200・終値が6,000とします。終値-安値に＄2を掛けた額がペイアウトなるので、ペイアウトは"
 
-msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr "例えば、ボラティリティインデックスでCFD取引は１ポイントUSD 1としてトレードを提供しています。現行価格USD 20,000のボラティリティインデックス100を1.0の数量で購入し、その後USD 20,010の価格で売却した場合、純利益は以下のように算出されます。"
-
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product Disclosure Statement. This policy is an appendix to the overarching %1 Order Execution Policy and should be read in conjunction with the overarching %1 Order Execution Policy."
 msgstr "%1が提供するスポットFXの機能及び取引の解説は、商品開示文書をご参照ください。このポリシーは%1注文執行ポリシーの付録文書であり、%1注文執行ポリシーと合せて熟読ください。"
 
@@ -4087,9 +4024,6 @@ msgstr "上限追加バリア値"
 msgid "High conversions"
 msgstr "高いコンバージョン率"
 
-msgid "High frequency (2 ticks per second)"
-msgstr "高頻度（1秒に2 Tick）"
-
 msgid "High level of security – Each cryptocurrency transaction is secured through advanced cryptographic techniques that make it almost impossible to counterfeit"
 msgstr "高レベルセキュリティ - 各仮想通貨取引は高度な暗号技術によって保護されているため、偽装することはほぼ不可能です。"
 
@@ -4158,12 +4092,6 @@ msgstr "アフィリエイト報酬データの参照方法を教えて下さい
 
 msgid "How do I register to become a %1 IB?"
 msgstr "%1 IBへの参加方法は？"
-
-msgid "How do we calculate interest fees for long positions?"
-msgstr "ロングポジションの金利手数料の算出方法は？"
-
-msgid "How do we calculate interest fees for short positions?"
-msgstr "ショートポジションの金利手数料の算出方法は？"
 
 msgid "How does it work?"
 msgstr "参加方法について"
@@ -4273,9 +4201,6 @@ msgstr "I want to be treated as a professional client."
 
 msgid "I. Quotes"
 msgstr "I. 引用"
-
-msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
-msgstr "(20010 - 20000) x 1 x 1 = USD 10"
 
 msgid "IB Programme"
 msgstr "IBプログラム"
@@ -4462,9 +4387,6 @@ msgstr "当社が求めるスキルをお持ちでしたら、バイナリーオ
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
-
-msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open. This adjustment is based on interbank lending rates, on top of a 2% fee."
-msgstr "一晩中ポジションをオープンのまま保持されると、ポジションをオープンに保つのに必要な手数料としてお客さまの口座に金利調整が行われます。この調整はインターバンクの貸出金利に基づいた２％の手数料が課せられます。"
 
 msgid "If you lose your cryptocurrencies as a result of exchanges and wallet providers being hacked or becoming insolvent, there is no assurance of a recourse. It is your responsibility to store your cryptocurrencies securely. %1 will not accept liability for any loss or damage that arise, directly or indirectly, from theft of your cryptocurrency or insolvency of exchanges and wallet providers that you use."
 msgstr "If you lose your cryptocurrencies as a result of exchanges and wallet providers being hacked or becoming insolvent, there is no assurance of a recourse. It is your responsibility to store your cryptocurrencies securely. %1 will not accept liability for any loss or damage that arise, directly or indirectly, from theft of your cryptocurrency or insolvency of exchanges and wallet providers that you use."
@@ -5656,12 +5578,6 @@ msgstr "例として、EUR/USDの買値と売値の差を比較してみまし�
 msgid "Let's say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to 'go long' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you."
 msgstr "US 100 トレードの原資産1ポイントUSD 1とすると、ロングポジションをとり資産価格が10ポイントまで上昇した場合、US 100 の利益が生じたことになります。"
 
-msgid "Let's say the points adjustment for a long position on the EUR/USD symbol is -5.64. This would require an overnight fee of 5.64 points for one lot of open position in EUR/USD, where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will incur an interest fee of EUR5.64 for keeping the position open overnight."
-msgstr "Let's say the points adjustment for a long position on the EUR/USD symbol is -5.64. This would require an overnight fee of 5.64 points for one lot of open position in EUR/USD, where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will incur an interest fee of EUR5.64 for keeping the position open overnight."
-
-msgid "Let's say the points adjustment for a short position on the EUR/USD symbol is 1.64. This would result in an overnight credit of 1.64 points for one lot of open position in EUR/USD where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will be credited with EUR1.64 for keeping the position open overnight."
-msgstr "Let's say the points adjustment for a short position on the EUR/USD symbol is 1.64. This would result in an overnight credit of 1.64 points for one lot of open position in EUR/USD where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will be credited with EUR1.64 for keeping the position open overnight."
-
 msgid "Let's use the US 100 index as an example:"
 msgstr "米国100インデックスを例に考えましょう："
 
@@ -5683,20 +5599,11 @@ msgstr "Leverage can be used to generate returns that are of multiple times high
 msgid "Leverage gives you the ability to trade a larger position using your existing capital."
 msgstr "レバレッジを利用すると、今ある資本よりも大きいポジションの取引が可能になります。"
 
-msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-
-msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 1:100 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr "Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "新規顧客およびパートナーへの情報確認、関係強化、会員への推進のため、ソーシャルメディアツールとチャンネルの活用"
 
-msgid "Leverage up to 1:100"
-msgstr "Leverage up to 1:100"
-
-msgid "Leverage up to 1:500"
-msgstr "レバレッジは1:500まで"
+msgid "Leverage up to %1"
+msgstr ""
 
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that you would be able to enter into a trade position that is of 50 times higher than your margin. When you invest in a leveraged product, your profit or loss is based on the leveraged position, i.e., the increased/amplified value of your trade determined based on the leverage ratio you set for your account."
 msgstr "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that you would be able to enter into a trade position that is of 50 times higher than your margin. When you invest in a leveraged product, your profit or loss is based on the leveraged position, i.e., the increased/amplified value of your trade determined based on the leverage ratio you set for your account."
@@ -5797,9 +5704,6 @@ msgstr "ログインにお困りの場合"
 msgid "Long"
 msgstr "ロング"
 
-msgid "Long positions"
-msgstr "ロングポジション"
-
 msgid "Long-term partnership:"
 msgstr "長期にわたるサポート体制を提供"
 
@@ -5814,9 +5718,6 @@ msgstr "Lookbacks options are currently only available for %1Volatility Indices%
 
 msgid "Loss"
 msgstr "損益"
-
-msgid "Lot Size (Volume = 1.0)"
-msgstr "ロット数（数量=1.0）"
 
 msgid "Lot size"
 msgstr "ロット数"
@@ -6013,9 +5914,6 @@ msgstr "3"
 msgid "March"
 msgstr "３月"
 
-msgid "Margin"
-msgstr "証拠金取引"
-
 msgid "Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
 msgstr "Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
 
@@ -6045,9 +5943,6 @@ msgstr "マージンならレバレッジを利用してお取引が可能 - 保
 
 msgid "Margin call"
 msgstr "マージンコール"
-
-msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
-msgstr "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
 
 msgid "Market"
 msgstr "市場"
@@ -6093,9 +5988,6 @@ msgstr "MATCH/DIFFER"
 
 msgid "Max"
 msgstr "最大"
-
-msgid "Maximum Leverage"
-msgstr "最大レバレッジ"
 
 msgid "Maximum account cash balance"
 msgstr "口座残高限度額"
@@ -6207,24 +6099,6 @@ msgstr "最低ー最高　ご入金額"
 
 msgid "Min-Max Withdrawal"
 msgstr "最低ー最高　出金額"
-
-msgid "Min. Volume Increment"
-msgstr "最小数量の増加"
-
-msgid "Min. Volume<br>(Lot Size)"
-msgstr "最小数量<br>（取引数量）"
-
-msgid "Minimum Spread"
-msgstr "最小スプレッド"
-
-msgid "Minimum Volume"
-msgstr "最小値"
-
-msgid "Minimum Volume (Trade Size)"
-msgstr "最小数量（取引数量）"
-
-msgid "Minimum Volume Increment"
-msgstr "最小数量の増加"
 
 msgid "Minimum deposit"
 msgstr "最小入金額"
@@ -6909,9 +6783,6 @@ msgstr "所在地"
 msgid "Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots."
 msgstr "当社の金属商品ペアは通常ロットで取引されています。1ロット5,000単位に相当する銀を除いて、通常1ロット100単位に値します。最小取引単位の0.01ロットからお取引が可能です。"
 
-msgid "Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5.000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots."
-msgstr "当社の金属商品ペアは通常ロットで取引されています。1ロット5,000単位に相当する銀を除いて、通常1ロット100単位に値します。最小取引単位の0.01ロットからお取引が可能です。"
-
 msgid "Our proprietary synthetic indices that simulate market forces"
 msgstr "日本国内では提供しておりません。"
 
@@ -7125,9 +6996,6 @@ msgstr "開示レポート（第3の柱に基づく報告)"
 msgid "Pip"
 msgstr "Pip"
 
-msgid "Pip Size"
-msgstr "Pipのサイズ"
-
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pipとは ‘percentage in point’の略語であり、通常は小数第４位の値を示します。例）0.0001"
 
@@ -7323,9 +7191,6 @@ msgstr "<a href='mailto:%1'>%1</a>まで上記の情報をご提出ください�
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "当社のスワップレートは、ポジションをオープンにした日にちと時間によって異なりますのでご注意ください："
 
-msgid "Please take note that our swap rate also depends on the time and days you hold your positions open: "
-msgstr "当社のスワップレートは、保有しているポジションのオープン日時にも関係しますのでご注意ください。 "
-
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "只今確認中です。しばらくお待ちください。カスタマーサポートチームがEメールにて口座状況に関する返信をさせていただきます。"
 
@@ -7343,9 +7208,6 @@ msgstr "ポジションが水曜日 23:59:59 GMTの時点でまだオープン�
 
 msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends – a standard practice for all brokers."
 msgstr "ポジションが水曜日 23:59:59 GMTの時点でまだオープンである場合、週末に3倍のスワップレートが課されます。- これは全ブローカー標準の慣行です。"
-
-msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends, a standard practice for all Forex brokers."
-msgstr "水曜日の23:59:59 GMTにまだオープン中のポジションは、週末に3倍のスワップレートが口座に課されます。これは全外国為替ブローカーの標準方法です。"
 
 msgid "Postal Code / ZIP"
 msgstr "郵便番号"
@@ -7433,9 +7295,6 @@ msgstr "方向性<br />を予測して購入"
 
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "DIGITトレードではスポット価格の下一桁を予測します。3つの取引タイプがあります。"
-
-msgid "Preferences"
-msgstr "設定"
 
 msgid "Preferences:"
 msgstr "設定："
@@ -7626,6 +7485,9 @@ msgstr "購入金額"
 msgid "Purchase Time"
 msgstr "購入時間"
 
+msgid "Purchase request sent"
+msgstr ""
+
 msgid "Purpose of trading"
 msgstr "投資の目的"
 
@@ -7731,6 +7593,9 @@ msgstr "リアリティチェック"
 msgid "Receive back-office support for post-trade risk management and real-time trade/position monitoring."
 msgstr "Receive back-office support for post-trade risk management and real-time trade/position monitoring."
 
+msgid "Receive emails on %1 products, services, and events"
+msgstr ""
+
 msgid "Receive instant prices based on your position."
 msgstr "ポジションに基づいた購入価格を確認。"
 
@@ -7749,8 +7614,8 @@ msgstr "約定番号"
 msgid "Refer new clients to our MetaTrader 5 platform and earn a commission on their Forex and CFD trading activity."
 msgstr "顧客にMetaTrader 5 プラットフォームを紹介して、獲得会員が外国為替とCFD取引を行った際に報酬を受け取れるプログラムです。"
 
-msgid "Refers to the maximum volume or lots per order."
-msgstr "1オーダーの最大数量またはロットを指します。"
+msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
+msgstr ""
 
 msgid "Refers to the total number of available symbols for your account."
 msgstr "口座でご利用いただける通貨シンボルの合計数を指します。"
@@ -8100,14 +7965,11 @@ msgstr "取引市場を選択："
 msgid "Select the <strong>Override automatic cookie handling</strong>."
 msgstr "<strong>自動Cookie処理を上書きする</strong>を選択してください。"
 
-msgid "Select your market"
-msgstr "取引市場を選択"
+msgid "Select your market and underlying asset"
+msgstr ""
 
 msgid "Select your trade type"
 msgstr "取引タイプを選択して下さい"
-
-msgid "Select your underlying asset"
-msgstr "原資産を選択して下さい"
 
 msgid "Self Exclusion"
 msgstr "取引制限"
@@ -8228,9 +8090,6 @@ msgstr "シェルターコミュニティ学習センター3"
 
 msgid "Short"
 msgstr "ショート"
-
-msgid "Short positions"
-msgstr "ショートポジション"
 
 msgid "Short to long-term durations"
 msgstr "短期から長期にわたる取引期間"
@@ -8387,9 +8246,6 @@ msgstr "スタンダード"
 
 msgid "Standard Account"
 msgstr "スタンダード口座"
-
-msgid "Standard account: 1:500"
-msgstr "スタンダード口座：1:500"
 
 msgid "Start Time"
 msgstr "取引開始時刻"
@@ -9000,9 +8856,6 @@ msgstr "外国為替取引は、二人の当事者間で行われる店頭市場
 msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
 msgstr "外国為替では通常<i>ロット数</i>にて取引を行います。1スタンダード<i>ロット</i>100,000単位相当です。通貨シンボルを用いてポジションをオープンする際、最小数量である<i>0.01ロット</i>からお取引を開始いただけます。"
 
-msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lots</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
-msgstr "外国為替では通常<i>ロット数</i>にて取引を行います。1スタンダード<i>ロット</i>100,000単位相当です。通貨シンボルを用いてポジションをオープンする際、最小数量である<i>0.01ロット</i>からお取引を開始いただけます。"
-
 msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
 msgstr ""
 
@@ -9371,9 +9224,6 @@ msgstr "購入金額とは、トレード開始のために支払わなければ
 msgid "The sum received in the %1 Agent Account shall be transferred by the Agent to the %1 Client Account."
 msgstr "The sum received in the %1 Agent Account shall be transferred by the Agent to the %1 Client Account."
 
-msgid "The swap rate will depend on the direction of the position you take:"
-msgstr "スワップレートはお客さまが保持するポジションの動向によって決まります。"
-
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 
@@ -9723,15 +9573,6 @@ msgstr "詳細は<a href='%1'>CFDトレード詳細</a>からご確認くださ�
 msgid "To learn more, read our %1Margin Policy%2 that further explains our margin requirements."
 msgstr "詳細はマージンの要件が記載されている当社の%1マージンポリシー%2をご確認ください。"
 
-msgid "To learn more, read our <a href=\"%1\">CFD Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
-msgstr "詳細については、ボラティリティインデックスの50%強制ロスカットレベルが記載されている<a href=\"%1\">CFDマージンポリシー</a>をご確認ください。"
-
-msgid "To learn more, read our <a href=\"%1\">Forex Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
-msgstr "詳細については、外国為替の100%強制ロスカットレベルが記載されている<a href=\"%1\">外国為替マージンポリシー</a>をご確認ください。"
-
-msgid "To learn more, read our <a href=\"%1\">Metals Margin Policy</a> that further explains our 100% forced liquidation level for our metal pairs."
-msgstr "詳細については、金属商品ペアの100%強制ロスカットレベルが記載されている<a href=\"%1\">金属商品マージンポリシー</a>をご確認ください。"
-
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "お客さまが当社とバイナリーオプション取引口座を開設にあたり、取引の仕組みやリスクを十分に理解いただく必要があります。下記事項につき、ご理解、同意いただけましたら、チェックをお願いいたします。"
 
@@ -10063,6 +9904,9 @@ msgstr "SmartChartsを試す"
 msgid "Try TradingView"
 msgstr "TradingViewを試す"
 
+msgid "Try Web Version"
+msgstr ""
+
 msgid "Try WebTrader"
 msgstr "WebTraderを試す"
 
@@ -10234,14 +10078,11 @@ msgstr "入出金ロック解除"
 msgid "Up"
 msgstr "アップ"
 
+msgid "Up to %1"
+msgstr ""
+
 msgid "Up to %1 decimal places are allowed."
 msgstr "小数点以下は%桁までご利用いただけます。"
-
-msgid "Up to 1:100"
-msgstr "1:100まで"
-
-msgid "Up to 1:500"
-msgstr "1:500まで"
 
 msgid "Up/Down"
 msgstr "ラダー"
@@ -10324,11 +10165,8 @@ msgstr "Utility bills (electricity, water, gas, broadband and landline)"
 msgid "Validate address"
 msgstr "住所確認"
 
-msgid "Variable from 0.9 pips"
-msgstr "変動 0.9 pipsから"
-
-msgid "Variable from 1.2 pips"
-msgstr "変動 1.2 pipsから"
+msgid "Variable from %1 pips"
+msgstr ""
 
 msgid "Variable spreads"
 msgstr "Variable spreads"
@@ -10447,9 +10285,6 @@ msgstr "ボラティリティ指数"
 msgid "Volatility Indices Account"
 msgstr "ボラティリティインデックス口座"
 
-msgid "Volatility Indices account: 1:500"
-msgstr "ボラティリティインデックス口座：1:500"
-
 msgid "Volatility Indices are further categorised into two classes:"
 msgstr "ボラティリティインデックスは更に２種類に分類されます。："
 
@@ -10458,12 +10293,6 @@ msgstr ""
 
 msgid "Volume"
 msgstr "数量"
-
-msgid "Volume 1.0 (Trade Size)"
-msgstr "数量1.0（取引数量）"
-
-msgid "Volume 1.0<br>(Lot Size)"
-msgstr "数量1.0<br>（ロット数）"
 
 msgid "Volume step"
 msgstr "Volume step"
@@ -10545,9 +10374,6 @@ msgstr "現在書類確認を行っております。1営業日以内にご連�
 
 msgid "We are reviewing your documents. For more details %1contact us%2."
 msgstr "現在書類確認を行っております。詳細を確認されたい場合は、%1お問い合わせ%2ください。"
-
-msgid "We charge a 2% fee on top of market rates."
-msgstr "長期間の取引期間をご指定して頂いたトレードは、最新の市場価格で売ることができる場合があります。"
 
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr ""
@@ -11035,9 +10861,6 @@ msgstr "レバレッジなら、ほんの一部のコストで同じ資産を100
 msgid "With regards to tracking your referrals accessing %1 via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to %1 through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
 msgstr "獲得会員がプロモーションサイトのリンク、またはアフィリエイトIDを通じてBinay.comへアクセスし、会員登録、または当社でトレードを行う度に、アフィリエイト会員の紹介に由来するものか確実にお調べ致します。しかし、獲得会員の紹介先を当社が特定できない場合、当社が責任を負うことはありません。適切にタグ付けされた獲得会員のみ、各アフィリエイト会員に割り当てられます。全てのリンクに適切なタグが付いていることを確認するのはアフィリエイト会員の責任となります。"
 
-msgid "With the Economic Calendar, you can see a breakdown of all the scheduled economic events due to take place on any given day."
-msgstr ""
-
 msgid "Withdraw"
 msgstr "出金"
 
@@ -11301,9 +11124,6 @@ msgstr "以下の数式を使用して、金属商品ペアのマージン要件
 
 msgid "You can generate all kinds of insightful reports, including the following:"
 msgstr "洞察力に富んだ下記のレポートを作成いただけます。"
-
-msgid "You can monitor macroeconomic indicators straight from the MetaTrader 5 platform using release time labels displayed on %1financial symbol charts%2."
-msgstr ""
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "利益を守り、損失を最小限に抑えるために、判定時刻前にポジションを売却をすることができます。"
