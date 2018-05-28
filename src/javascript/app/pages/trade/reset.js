@@ -53,7 +53,6 @@ const Reset = (() => {
         hideResetTime,
         isNewBarrier,
         isReset,
-        ticks: [], // store ticks for Reset
     };
 })();
 

@@ -90,9 +90,6 @@ const Highchart = (() => {
                 y     : price * 1,
                 marker: is_match_entry || is_match_exit ? HighchartUI.getMarkerObject(tick_type) : '',
             });
-            if (Reset.isReset(contract.contract_type)) {
-                Reset.ticks = data; // Store Reset ticks
-            }
         };
 
         let history = '';
@@ -376,14 +373,17 @@ const Highchart = (() => {
                 if (Lookback.isLookback(contract_type)) {
                     const label = Lookback.getBarrierLabel(contract_type);
                     addPlotLine({ id: 'barrier',       value: barrier * 1,      label: localize(`${label} ([_1])`, [addComma(barrier)]),           dashStyle: 'Dot'   }, 'y');
-                } else if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)) {
-                    addPlotLine({ id: 'barrier',       value: entry_spot * 1,   label: localize('Barrier ([_1])', [addComma(entry_spot)]),         dashStyle: 'Dot'   }, 'y');
-                    addPlotLine({ id: 'reset_barrier', value: barrier * 1,      label: localize('Reset Barrier ([_1])', [addComma(barrier)]),      dashStyle: 'Solid' }, 'y');
+                } else if (Reset.isReset(contract_type)) {
+                    const { reset_time } = contract; // use epoch to draw non-ticks reset_time
                     drawLineX({
-                        value: (Reset.ticks.filter((tick) => (tick.y === barrier * 1))[0].x) / 1000,
+                        value: parseInt(reset_time),
                         label: localize('Reset Time'),
                         color: '#000',
                     });
+                    if (Reset.isNewBarrier(entry_spot, barrier)) {
+                        addPlotLine({ id: 'barrier',       value: entry_spot * 1,   label: localize('Barrier ([_1])', [addComma(entry_spot)]),         dashStyle: 'Dot'   }, 'y');
+                        addPlotLine({ id: 'reset_barrier', value: barrier * 1,      label: localize('Reset Barrier ([_1])', [addComma(barrier)]),      dashStyle: 'Solid' }, 'y');
+                    }
                 } else {
                     addPlotLine({ id: 'barrier',       value: barrier * 1,      label: localize('Barrier ([_1])', [addComma(barrier)]),            dashStyle: 'Dot' },   'y');
                 }

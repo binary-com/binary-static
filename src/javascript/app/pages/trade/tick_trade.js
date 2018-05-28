@@ -107,6 +107,15 @@ const TickDisplay = (() => {
                 id       : 'exit_tick',
                 dashStyle: 'Dash',
             };
+            if (contract_category.match('reset')) {
+                const reset_time_index = Math.floor(number_of_ticks / 2); // use index to draw ticks reset_time
+                x_indicators[`_${reset_time_index}`] = {
+                    index: reset_time_index,
+                    label: 'Reset Time',
+                    id   : 'reset_tick',
+                    color: '#000',
+                };
+            }
         } else if (contract_category.match('touchnotouch')) {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
@@ -396,7 +405,6 @@ const TickDisplay = (() => {
     const plotResetSpot = (r_barrier) => {
         if (reset_spot_plotted || !chart || !entry_spot) return;
 
-        const reset_time_index = Math.floor(number_of_ticks / 2);
         const entry_barrier    = entry_spot * 1;
         const reset_barrier    = (r_barrier || absolute_barrier) * 1;
 
@@ -421,17 +429,9 @@ const TickDisplay = (() => {
                 dashStyle: 'dot',
             });
 
-            x_indicators[`_${reset_time_index}`] = {
-                index: reset_time_index,
-                label: 'Reset Time',
-                id   : 'reset_tick',
-                color: '#000',
-            };
-            x_indicators[`_${reset_time_index}`].index = reset_time_index;
-            add(x_indicators[`_${reset_time_index}`]);
-
             reset_spot_plotted = true;
         }
+
         evaluateContractOutcome();
     };
 

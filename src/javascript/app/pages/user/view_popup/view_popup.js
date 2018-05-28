@@ -166,12 +166,12 @@ const ViewPopup = (() => {
             if (Reset.isReset(contract.contract_type) && Reset.isNewBarrier(contract.entry_spot, contract.barrier)) {
                 containerSetText(
                     'trade_details_barrier',
-                    sold_before_start ? '-' : addComma(contract.entry_spot),
+                    is_sold_before_start ? '-' : addComma(contract.entry_spot),
                     '',
                     true);
                 containerSetText(
                     'trade_details_reset_barrier',
-                    contract.entry_tick_time && sold_before_start ? '-' : (barrier_prefix + formatted_barrier),
+                    contract.entry_tick_time && is_sold_before_start ? '-' : (barrier_prefix + formatted_barrier),
                     '',
                     true);
             }
