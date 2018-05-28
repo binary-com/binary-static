@@ -1,6 +1,5 @@
 import {
     action,
-    configure,
     flow,
     reaction }         from 'mobx';
 import { cloneObject } from '../../../../_common/utility';
@@ -12,8 +11,6 @@ import * as Duration     from './duration';
 import * as StartDate    from './start_date';
 import * as Symbol       from './symbol';
 import * as Test         from './test';
-
-configure({ enforceActions: true });
 
 const reaction_disposers = [];
 
