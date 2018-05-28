@@ -632,6 +632,10 @@ const texts = [
     // third party link confirmation dialog/popup
     'You will be redirected to a third-party website which is not owned by Binary.com.',
     'Click OK to proceed.',
+
+    // two factor authentication
+    'You have successfully enabled two-factor authentication for your account',
+    'You have successfully disabled two-factor authentication for your account',
 ];
 
 /* eslint-disable no-console */
