@@ -30,7 +30,6 @@ module.exports = {
         'react/jsx-indent'                  : ['error', 4],
         'react/jsx-indent-props'            : ['error', 4],
         'react/jsx-max-props-per-line'      : ['error', { when: 'multiline' }],
-        'react/prop-types'                  : 0,
         'react/self-closing-comp'           : 'error',
     },
     extends: [

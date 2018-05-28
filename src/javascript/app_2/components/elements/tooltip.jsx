@@ -1,4 +1,5 @@
-import React from 'react';
+import React     from 'react';
+import PropTypes from 'prop-types';
 
 const Tooltip = ({
     message,
@@ -15,5 +16,11 @@ const Tooltip = ({
     </span>
 );
 
+Tooltip.propTypes = {
+    alignment: PropTypes.string,
+    children : PropTypes.string,
+    is_icon  : PropTypes.bool,
+    message  : PropTypes.string,
+};
 
 export default Tooltip;
