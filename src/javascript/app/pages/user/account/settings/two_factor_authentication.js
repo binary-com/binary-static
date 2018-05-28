@@ -29,7 +29,7 @@ const TwoFactorAuthentication = (() => {
             next_state    = state[+(!res.account_security.totp.is_enabled)].slice(0, -1);
 
             $(`#${current_state}`).setVisibility(1);
-            $('#btn_submit').text(next_state);
+            $('#btn_submit').text(localize(next_state));
             $(form_id).setVisibility(1);
 
             FormManager.init(form_id, [

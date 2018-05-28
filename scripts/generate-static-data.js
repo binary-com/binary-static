@@ -636,6 +636,8 @@ const texts = [
     // two factor authentication
     'You have successfully enabled two-factor authentication for your account.',
     'You have successfully disabled two-factor authentication for your account.',
+    'Enable',
+    'Disable',
 ];
 
 /* eslint-disable no-console */
