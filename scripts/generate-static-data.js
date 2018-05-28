@@ -634,8 +634,8 @@ const texts = [
     'Click OK to proceed.',
 
     // two factor authentication
-    'You have successfully enabled two-factor authentication for your account',
-    'You have successfully disabled two-factor authentication for your account',
+    'You have successfully enabled two-factor authentication for your account.',
+    'You have successfully disabled two-factor authentication for your account.',
 ];
 
 /* eslint-disable no-console */
