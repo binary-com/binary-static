@@ -71,18 +71,24 @@ const SelfExclusion = () => (
 
                 <FormRow type='text' id='exclude_until' label={it.L('Exclude me from the website until')} attributes={{ maxLength: 15, autoComplete: 'off', readOnly: 'readonly' }} className='clearable' hint={it.L('Please enter date in the format DD MMM, YYYY.')} />
 
+                <div id='gamstop_info_bottom' className='gr-row invisible'>
+                    <div className='gr-8 gr-push-4 gr-12-m gr-push-0-m'>
+                        <p className='notice-msg'>{it.L('To self-exclude from all online gambling companies licensed in Great Britain, go to [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
+                    </div>
+                </div>
+
+                <SubmitButton text={it.L('Update Settings')} type='submit' />
+
                 <div id='ukgc_requirement_notice' data-show='iom, malta' className='gr-row invisible'>
                     <div className='gr-8 gr-push-4 gr-12-m gr-push-0-m'>
                         <div className='notice-msg gr-child gr-parent'>
                             <p>{it.L('Self-exclusion on this website only applies to your [_1] account and does not include other companies or websites.', it.website_name)}</p>
                             <p>{it.L('Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for.')}</p>
-                            <p id='gamstop_info_bottom' className='invisible'>{it.L('To self-exclude from all online gambling companies licensed in Great Britain, go to [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
+                            <p className='invisible'>{it.L('To self-exclude from all online gambling companies licensed in Great Britain, go to [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
                             <p>{it.L('Thank you for trading with [_1].', it.website_name)}</p>
                         </div>
                     </div>
                 </div>
-
-                <SubmitButton text={it.L('Update Settings')} type='submit' />
             </Fieldset>
         </form>
     </React.Fragment>

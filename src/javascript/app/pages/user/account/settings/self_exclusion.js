@@ -228,7 +228,6 @@ const SelfExclusion = (() => {
 
         $(`${timeout_date_id}, ${exclude_until_id}`).change(function () {
             dateValueChanged(this, 'date');
-            $('#ukgc_requirement_notice').setVisibility(this.getAttribute('data-value'));
             $('#gamstop_info_bottom').setVisibility(is_gamstop_client && this.getAttribute('data-value'));
         });
     };
@@ -269,6 +268,7 @@ const SelfExclusion = (() => {
             return;
         }
         showFormMessage('Your changes have been updated.', true);
+        $('#ukgc_requirement_notice').setVisibility($('#exclude_until').attr('data-value'));
         Client.set('session_start', moment().unix()); // used to handle session duration limit
         const {exclude_until, timeout_until} = response.echo_req;
         if (exclude_until || timeout_until) {
