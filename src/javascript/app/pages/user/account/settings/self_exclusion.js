@@ -228,6 +228,7 @@ const SelfExclusion = (() => {
 
         $(`${timeout_date_id}, ${exclude_until_id}`).change(function () {
             dateValueChanged(this, 'date');
+            $('#ukgc_requirement_notice').setVisibility(this.getAttribute('data-value'));
             $('#gamstop_info_bottom').setVisibility(is_gamstop_client && this.getAttribute('data-value'));
         });
     };
