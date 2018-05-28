@@ -66,6 +66,11 @@
                 left: 0;
                 border-bottom: 1px solid $COLOR_GRAY;
                 background: $COLOR_WHITE;
+                pointer-events: auto;
+
+                &.disabled {
+                    pointer-events: none;
+                }
             }
 
             span {

@@ -19,6 +19,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    .center-text-p {
+        text-align: center;
+    }
     #sell_popup_container {
         padding: 0;
         width: 100%;
