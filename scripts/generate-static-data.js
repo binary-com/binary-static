@@ -157,6 +157,8 @@ const texts = [
     'Search...',
     'Select Asset',
     'The reset time is [_1]',
+    'Purchase',
+    'Purchase request sent',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -256,8 +258,7 @@ const texts = [
     'Step',
 
     // Guide -> trading page
-    'Select your market',
-    'Select your underlying asset',
+    'Select your market and underlying asset',
     'Select your trade type',
     'Adjust trade parameters',
     'Predict the direction<br />and purchase',

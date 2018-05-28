@@ -76,6 +76,13 @@ const PaymentMethods = () => {
                                 { text: '25 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${working_day}`, 1), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                             ],
+                            [
+                                { text: <PaymentLogo logo='paysec' /> },
+                                { text: 'USD' },
+                                { text: '25 - 10,000' },
+                                { text: '25 - 10,000' },
+                                { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                            ],
                         ],
                     }}
                 />
@@ -193,7 +200,7 @@ const PaymentMethods = () => {
                                     { text: <PaymentLogo logo='bitcoin' /> },
                                     { text: 'BTC' },
                                     { text: '0.002' },
-                                    { text: '0.004' },
+                                    { text: '0.0003' },
                                     { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                 ],
                                 [

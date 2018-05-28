@@ -18,7 +18,7 @@ const ViewPopup = (() => {
         contract,
         is_sold,
         is_sell_clicked,
-        is_user_sold,
+        is_sold_before_expiry,
         chart_started,
         chart_init,
         chart_updated,
@@ -33,17 +33,17 @@ const ViewPopup = (() => {
     const hidden_class = 'invisible';
 
     const init = (button) => {
-        btn_view          = button;
-        contract_id       = $(btn_view).attr('contract_id');
-        contract          = {};
-        is_sold           = false;
-        is_sell_clicked   = false;
-        is_user_sold      = false;
-        chart_started     = false;
-        chart_init        = false;
-        chart_updated     = false;
-        sell_text_updated = false;
-        $container        = '';
+        btn_view              = button;
+        contract_id           = $(btn_view).attr('contract_id');
+        contract              = {};
+        is_sold               = false;
+        is_sell_clicked       = false;
+        is_sold_before_expiry = false;
+        chart_started         = false;
+        chart_init            = false;
+        chart_updated         = false;
+        sell_text_updated     = false;
+        $container            = '';
 
         if (btn_view) {
             ViewPopupUI.disableButton($(btn_view));
@@ -134,19 +134,20 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
-        const final_price       = contract.sell_price || contract.bid_price;
-        const is_started        = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const is_ended          = contract.is_settleable || contract.is_sold || is_user_sold;
-        const indicative_price  = final_price && is_ended ? final_price : (contract.bid_price || null);
-        const sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
         const is_touch_tick     = /touch/i.test(contract.contract_type) && contract.tick_count;
-        is_user_sold            = is_touch_tick
+        is_sold_before_expiry   = is_touch_tick
             ? contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry
             : contract.sell_time && contract.sell_time < contract.date_expiry;
 
+        const final_price          = contract.sell_price || contract.bid_price;
+        const is_started           = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
+        const is_ended             = contract.is_settleable || contract.is_sold || is_sold_before_expiry;
+        const indicative_price     = final_price && is_ended ? final_price : (contract.bid_price || null);
+        const is_sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
+
         if (contract.barrier_count > 1) {
-            containerSetText('trade_details_barrier', sold_before_start ? '-' : addComma(contract.high_barrier), '', true);
-            containerSetText('trade_details_barrier_low', sold_before_start ? '-' : addComma(contract.low_barrier), '', true);
+            containerSetText('trade_details_barrier', is_sold_before_start ? '-' : addComma(contract.high_barrier), '', true);
+            containerSetText('trade_details_barrier_low', is_sold_before_start ? '-' : addComma(contract.low_barrier), '', true);
         } else if (contract.barrier) {
             const formatted_barrier = addComma(contract.barrier);
             const mapping           = {
@@ -158,7 +159,7 @@ const ViewPopup = (() => {
             // only show entry spot if available and contract was not sold before start time
             containerSetText(
                 'trade_details_barrier',
-                contract.entry_tick_time && sold_before_start ? '-' : (barrier_prefix + formatted_barrier),
+                contract.entry_tick_time && is_sold_before_start ? '-' : (barrier_prefix + formatted_barrier),
                 '',
                 true);
 
@@ -179,8 +180,8 @@ const ViewPopup = (() => {
         let current_spot      = contract.current_spot;
         let current_spot_time = contract.current_spot_time;
         if (is_ended) {
-            current_spot      = is_user_sold ? '' : contract.exit_tick;
-            current_spot_time = is_user_sold ? '' : contract.exit_tick_time;
+            current_spot      = is_sold_before_expiry ? '' : contract.exit_tick;
+            current_spot_time = is_sold_before_expiry ? '' : contract.exit_tick_time;
         }
 
         if (current_spot) {
@@ -220,7 +221,7 @@ const ViewPopup = (() => {
         } else {
             if (contract.entry_spot > 0) {
                 // only show entry spot if available and contract was not sold before start time
-                containerSetText('trade_details_entry_spot > span', sold_before_start ? '-' : addComma(contract.entry_spot));
+                containerSetText('trade_details_entry_spot > span', is_sold_before_start ? '-' : addComma(contract.entry_spot));
             }
             containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
         }
@@ -239,7 +240,7 @@ const ViewPopup = (() => {
             chart_updated = true;
         }
 
-        if (!is_sold && is_user_sold) {
+        if (!is_sold && is_sold_before_expiry) {
             is_sold = true;
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
             else TickDisplay.updateChart({ is_sold: true }, contract);
@@ -497,7 +498,7 @@ const ViewPopup = (() => {
                 contract_starts.div.remove();
             }
             // don't show exit tick information if missing or manual sold
-            if (contract.exit_tick_time && !is_user_sold
+            if (contract.exit_tick_time && !is_sold_before_expiry
                 // Hide audit table for Lookback.
                 && !/^(LBHIGHLOW|LBFLOATPUT|LBFLOATCALL)/.test(contract.shortcode)) {
                 const contract_ends = createAuditTable('Ends');

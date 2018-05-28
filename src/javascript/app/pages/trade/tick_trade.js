@@ -128,6 +128,9 @@ const TickDisplay = (() => {
     };
 
     const initializeChart = (config, data) => {
+        Highcharts.setOptions({
+            lang: { thousandsSep: ',' },
+        });
         chart = new Highcharts.Chart({
             chart: {
                 type           : 'line',
@@ -141,7 +144,7 @@ const TickDisplay = (() => {
             credits: { enabled: false },
             tooltip: {
                 formatter() {
-                    const new_y = this.y.toFixed(display_decimals);
+                    const new_y = addComma(this.y.toFixed(display_decimals));
                     const mom   = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
                     return `${mom}<br/>${display_symbol} ${new_y}`;
                 },
@@ -157,6 +160,9 @@ const TickDisplay = (() => {
                 labels  : {
                     align: 'left',
                     x    : 0,
+                    formatter() {
+                        return addComma(this.value.toFixed(display_decimals));
+                    },
                 },
                 title: '',
             },
@@ -166,9 +172,6 @@ const TickDisplay = (() => {
             title    : '',
             exporting: { enabled: false, enableImages: false },
             legend   : { enabled: false },
-        });
-        Highcharts.setOptions({
-            lang: { thousandsSep: ',' },
         });
         if (data) {
             dispatch(data);
