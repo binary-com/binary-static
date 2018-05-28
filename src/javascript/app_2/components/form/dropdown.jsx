@@ -173,10 +173,23 @@ const NativeSelect = ({
 );
 
 Dropdown.propTypes = {
+    className      : PropTypes.string,
     is_nativepicker: PropTypes.bool,
     list           : PropTypes.oneOfType([
         PropTypes.array,
         PropTypes.object,
+    ]),
+    name    : PropTypes.string,
+    onChange: PropTypes.func,
+    type    : PropTypes.string,
+    value   : PropTypes.string,
+
+};
+
+NativeSelect.propTypes = {
+    list: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.array,
     ]),
     name    : PropTypes.string,
     onChange: PropTypes.func,

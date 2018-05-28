@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Button       from '../../../components/form/button.jsx';
 import { connect }  from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
@@ -18,6 +19,13 @@ const Purchase = ({
         ))}
     </fieldset>
 );
+
+Purchase.propTypes = {
+    trade_types: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
+};
 
 export default connect(
     ({trade}) => ({

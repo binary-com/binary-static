@@ -1,4 +1,5 @@
-import React from 'react';
+import React            from 'react';
+import PropTypes        from 'prop-types';
 import FullscreenDialog from './fullscreen_dialog.jsx';
 
 class ContractsPopUp extends React.PureComponent {
@@ -144,5 +145,14 @@ const Contracts = ({
         </div>
     ))
 );
+
+ContractsPopUp.propTypes = {
+    className       : PropTypes.string,
+    is_mobile_widget: PropTypes.bool,
+    list            : PropTypes.object,
+    name            : PropTypes.string,
+    onChange        : PropTypes.func,
+    value           : PropTypes.string,
+};
 
 export default ContractsPopUp;

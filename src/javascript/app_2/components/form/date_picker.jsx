@@ -652,17 +652,33 @@ DatePicker.defaultProps = {
     mode      : 'date',
 };
 
+Calendar.propTypes = {
+    dateFormat      : PropTypes.string,
+    footer          : PropTypes.string,
+    handleDateChange: PropTypes.func,
+    id              : PropTypes.number,
+    initial_value   : PropTypes.string,
+    is_nativepicker : PropTypes.bool,
+    maxDate         : PropTypes.string,
+    minDate         : PropTypes.string,
+    mode            : PropTypes.string,
+    placeholder     : PropTypes.string,
+    showTodayBtn    : PropTypes.bool,
+    startDate       : PropTypes.string,
+};
+
 DatePicker.propTypes = {
-    dateFormat   : PropTypes.string,
-    initial_value: PropTypes.string,
-    maxDate      : PropTypes.string,
-    minDate      : PropTypes.string,
-    mode         : PropTypes.string,
-    name         : PropTypes.string,
-    onChange     : PropTypes.func,
-    placeholder  : PropTypes.string,
-    showTodayBtn : PropTypes.bool,
-    startDate    : PropTypes.string,
+    dateFormat     : PropTypes.string,
+    id             : PropTypes.number,
+    initial_value  : PropTypes.string,
+    is_nativepicker: PropTypes.bool,
+    maxDate        : PropTypes.string,
+    minDate        : PropTypes.string,
+    mode           : PropTypes.string,
+    name           : PropTypes.string,
+    onChange       : PropTypes.func,
+    placeholder    : PropTypes.string,
+    showTodayBtn   : PropTypes.bool,
 };
 
 export default DatePicker;

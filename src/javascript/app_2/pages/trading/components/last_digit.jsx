@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import { connect }  from '../../../store/connect';
@@ -38,6 +39,13 @@ const LastDigit = ({
             />
         </Fieldset>
     );
+};
+
+LastDigit.propTypes = {
+    is_minimized   : PropTypes.number,
+    is_nativepicker: PropTypes.bool,
+    last_digit     : PropTypes.number,
+    onChange       : PropTypes.func,
 };
 
 export default connect(

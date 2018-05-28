@@ -30,11 +30,18 @@ class InputField extends React.PureComponent {
 }
 
 InputField.propTypes = {
+    className      : PropTypes.string,
+    helper         : PropTypes.bool,
     is_currency    : PropTypes.bool,
+    is_disabled    : PropTypes.string,
     is_nativepicker: PropTypes.bool,
+    label          : PropTypes.string,
+    name           : PropTypes.string,
     number         : PropTypes.string,
     onChange       : PropTypes.func,
+    placeholder    : PropTypes.string,
     prefix         : PropTypes.string,
+    required       : PropTypes.bool,
     type           : PropTypes.string,
     value          : PropTypes.number,
 };

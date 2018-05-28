@@ -220,11 +220,43 @@ const DrawerHeader = ({
     );
 };
 
+Drawer.propTypes = {
+    alignment: PropTypes.string,
+    children : PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
+    closeBtn  : PropTypes.func,
+    footer    : PropTypes.func,
+    icon_class: PropTypes.string,
+    icon_link : PropTypes.string,
+};
+
 ToggleDrawer.propTypes = {
     alignment: PropTypes.string,
-    children : PropTypes.array,
+    children : PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
+    footer    : PropTypes.func,
+    icon_class: PropTypes.string,
+    icon_link : PropTypes.string,
+};
+
+DrawerHeader.propTypes = {
+    alignment: PropTypes.string,
     closeBtn : PropTypes.func,
-    footer   : PropTypes.func,
+};
+
+DrawerItems.propTypes = {
+    items: PropTypes.array,
+    text : PropTypes.string,
+};
+
+DrawerItem.propTypes = {
+    href: PropTypes.string,
+    icon: PropTypes.string,
+    text: PropTypes.string,
 };
 
 module.exports = {

@@ -336,12 +336,21 @@ class TimePicker extends PureComponent {
 }
 
 TimePicker.propTypes = {
-    className: PropTypes.string,
-    name     : PropTypes.string,
-    onChange : PropTypes.func,
-    padding  : PropTypes.string,
-    toggle   : PropTypes.func,
-    value    : PropTypes.string,
+    is_nativepicker: PropTypes.bool,
+    name           : PropTypes.string,
+    onChange       : PropTypes.func,
+    padding        : PropTypes.string,
+    placeholder    : PropTypes.string,
+    value          : PropTypes.object,
+};
+
+TimePickerDropdown.propTypes = {
+    className  : PropTypes.string,
+    onChange   : PropTypes.func,
+    preClass   : PropTypes.string,
+    toggle     : PropTypes.func,
+    value      : PropTypes.object,
+    value_split: PropTypes.bool,
 };
 
 export default TimePicker;

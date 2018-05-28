@@ -100,8 +100,11 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
+    items: PropTypes.array,
+};
+
+TogglePortfolioDrawer.propTypes = {
     is_portfolio_drawer_on: PropTypes.bool,
-    items                 : PropTypes.array,
     togglePortfolioDrawer : PropTypes.func,
 };
 
