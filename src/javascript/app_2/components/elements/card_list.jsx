@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CardList = ({ data_source, Card }) => (
     <div className='card-list'>
@@ -9,5 +10,10 @@ const CardList = ({ data_source, Card }) => (
         }
     </div>
 );
+
+CardList.propTypes = {
+    Card       : PropTypes.func,
+    data_source: PropTypes.array,
+};
 
 export default CardList;

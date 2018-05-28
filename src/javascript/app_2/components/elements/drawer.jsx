@@ -1,5 +1,6 @@
 import classNames     from 'classnames';
 import React          from 'react';
+import PropTypes      from 'prop-types';
 import { BinaryLink } from '../../routes';
 import Url            from '../../../_common/url';
 
@@ -217,6 +218,45 @@ const DrawerHeader = ({
         }
         </React.Fragment>
     );
+};
+
+Drawer.propTypes = {
+    alignment: PropTypes.string,
+    children : PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
+    closeBtn  : PropTypes.func,
+    footer    : PropTypes.func,
+    icon_class: PropTypes.string,
+    icon_link : PropTypes.string,
+};
+
+ToggleDrawer.propTypes = {
+    alignment: PropTypes.string,
+    children : PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
+    footer    : PropTypes.func,
+    icon_class: PropTypes.string,
+    icon_link : PropTypes.string,
+};
+
+DrawerHeader.propTypes = {
+    alignment: PropTypes.string,
+    closeBtn : PropTypes.func,
+};
+
+DrawerItems.propTypes = {
+    items: PropTypes.array,
+    text : PropTypes.string,
+};
+
+DrawerItem.propTypes = {
+    href: PropTypes.string,
+    icon: PropTypes.string,
+    text: PropTypes.string,
 };
 
 module.exports = {

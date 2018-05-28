@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Button = ({
     id,
@@ -14,6 +15,15 @@ const Button = ({
             <span>{text}</span>
         </button>
     );
+};
+
+Button.propTypes = {
+    className  : PropTypes.string,
+    handleClick: PropTypes.func,
+    has_effect : PropTypes.bool,
+    id         : PropTypes.string,
+    is_disabled: PropTypes.bool,
+    text       : PropTypes.string,
 };
 
 export default Button;

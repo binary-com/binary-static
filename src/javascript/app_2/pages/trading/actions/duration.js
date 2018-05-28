@@ -11,6 +11,7 @@ export const onChangeExpiry = ({
 }) => {
     // TODO: for contracts that only have daily, date_expiry should have a minimum of daily, not intraday
     let contract_expiry_type = expiry_type === 'duration' && duration_unit === 'd' ? 'daily' : 'intraday';
+
     if (expiry_type === 'endtime') {
         const time    = ((expiry_time.split(' ') || [])[0] || '').split(':');
         const expires = moment(expiry_date).utc();

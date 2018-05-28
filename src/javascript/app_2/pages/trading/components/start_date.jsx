@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import TimePicker   from '../../../components/form/time_picker.jsx';
@@ -53,6 +54,19 @@ const StartDate = ({
             }
         </Fieldset>
     );
+};
+
+StartDate.propTypes = {
+    is_minimized   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
+    onChange       : PropTypes.func,
+    server_time    : PropTypes.object,
+    start_date     : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    start_dates_list: PropTypes.array,
+    start_time      : PropTypes.string,
 };
 
 export default connect(

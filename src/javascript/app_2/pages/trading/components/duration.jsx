@@ -1,5 +1,6 @@
 import moment       from 'moment';
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Datepicker   from '../../../components/form/date_picker.jsx';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
@@ -111,6 +112,22 @@ const Duration = ({
             }
         </Fieldset>
     );
+};
+
+Duration.propTypes = {
+    duration: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    duration_unit      : PropTypes.string,
+    duration_units_list: PropTypes.array,
+    expiry_date        : PropTypes.string,
+    expiry_time        : PropTypes.string,
+    expiry_type        : PropTypes.string,
+    is_minimized       : PropTypes.bool,
+    is_nativepicker    : PropTypes.bool,
+    onChange           : PropTypes.func,
+    server_time        : PropTypes.object,
 };
 
 export default connect(
