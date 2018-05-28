@@ -383,7 +383,6 @@ const TickDisplay = (() => {
 
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
                         x_indicators[indicator_key].index = counter;
-
                         add(x_indicators[indicator_key]);
                     }
 

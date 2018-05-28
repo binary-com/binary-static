@@ -83,6 +83,7 @@ const texts = [
     'End time',
     'Sell time',
     'Charting for this underlying is delayed',
+    'Reset Time',
 
     // trading page
     'year',
@@ -415,6 +416,7 @@ const texts = [
     'High Barrier',
     'High Barrier ([_1])',
     'Barrier ([_1])',
+    'Reset Barrier',
     'Reset Barrier ([_1])',
     'This contract won',
     'This contract lost',
