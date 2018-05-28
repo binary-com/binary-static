@@ -404,8 +404,8 @@ const TickDisplay = (() => {
     const plotResetSpot = (r_barrier) => {
         if (reset_spot_plotted || !chart || !entry_spot) return;
 
-        const entry_barrier    = entry_spot * 1;
-        const reset_barrier    = (r_barrier || absolute_barrier) * 1;
+        const entry_barrier = +entry_spot;
+        const reset_barrier = +r_barrier || +absolute_barrier;
 
         if (entry_barrier !== reset_barrier) {
             removePlotLine('tick-barrier', 'y');
