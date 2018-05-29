@@ -444,10 +444,8 @@ const TickDisplay = (() => {
         updateChart,
         init      : initialize,
         resetSpots: () => { spots_list = {}; $(`#${id_render}`).css('background-color', '#F2F2F2'); },
-        setStatus : (proposal_open_contract) => {
-            if (proposal_open_contract) {
-                contract = proposal_open_contract;
-            }
+        setStatus : (proposal_open_contract = {}) => {
+            contract = proposal_open_contract;
             evaluateContractOutcome();
         },
     };
