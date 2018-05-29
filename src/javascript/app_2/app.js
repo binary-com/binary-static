@@ -1,3 +1,4 @@
+import { configure }            from 'mobx';
 import React                    from 'react';
 import { render }               from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
@@ -12,6 +13,8 @@ import { initActions }          from './pages/trading/actions';
 import { BinaryRoutes }         from './routes';
 import Client                   from '../_common/base/client_base';
 import { localize }             from '../_common/localize';
+
+configure({ enforceActions: true });
 
 const stores = {
     client: new ClientStore(),
