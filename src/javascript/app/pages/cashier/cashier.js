@@ -56,7 +56,7 @@ const Cashier = (() => {
                 if (residence) {
                     BinarySocket.send({ paymentagent_list: residence }).then((response) => {
                         const list = getPropertyValue(response, ['paymentagent_list', 'list']);
-                        if (list && list.length && client_cur && list.find(pa => pa.currencies === client_cur)) {
+                        if (client_cur && (list || []).find(pa => new RegExp(client_cur).test(pa.currencies))) {
                             $('#payment-agent-section').setVisibility(1);
                         }
                     });
