@@ -44,7 +44,7 @@ const TypeGroup = ({ title, children, types }) => (
                         <img src={it.url_for(`images/pages/metatrader/icons/acc_${box.desc.toLowerCase()}.svg`)} />
                     }
                 </div>
-                <p className={`no-margin gr-padding-10 ${box.title ? 'hint' : ''}`}>{box.desc}</p>
+                <p className={`gr-padding-10 ${box.title ? 'hint' : ''}`}>{box.desc}</p>
             </div>
         ))}
     </div>
