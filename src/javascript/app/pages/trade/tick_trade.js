@@ -255,12 +255,6 @@ const TickDisplay = (() => {
             }
 
             addSellSpot();
-        } else if (show_contract_result) {
-            const final_price = contract.sell_price || contract.bid_price;
-            if (final_price) {
-                const profit_loss = final_price - contract.buy_price;
-                $(`#${id_render}`).css('background-color', profit_loss >= 0 ? winning_color : losing_color);
-            }
         }
     };
 
