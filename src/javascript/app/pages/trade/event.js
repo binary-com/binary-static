@@ -321,7 +321,8 @@ const TradingEvents = (() => {
                 }
             }, this);
             if (id && ask_price) {
-                $purchase_button.text(localize('Purchase request sent')).parent().addClass('disabled button-disabled');
+                $purchase_button.parent().addClass('button-disabled');
+                $(this).text(localize('Purchase request sent'));
                 BinarySocket.send(params).then((response) => {
                     Purchase.display(response);
                     GTM.pushPurchaseData(response);
