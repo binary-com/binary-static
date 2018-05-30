@@ -8,6 +8,7 @@ import Loading from '../../../../templates/_common/components/loading.jsx';
 import { formatMoney } from '../../../_common/base/currency_base';
 import { localize } from '../../../_common/localize';
 import { getPropertyValue } from '../../../_common/utility';
+import { getAppId } from '../../../config';
 
 const formatPortfolioData = (portfolio_arr) => {
     const formatted_portfolio = portfolio_arr.map((portfolio_item) => {
@@ -18,14 +19,16 @@ const formatPortfolioData = (portfolio_arr) => {
         const payout          = parseFloat(portfolio_item.payout);
 
         return {
-            ref       : portfolio_item.transaction_id,
+            ref: {
+                transaction_id: portfolio_item.transaction_id,
+                app_id        : portfolio_item.app_id,
+            },
             type      : portfolio_item.contract_type,
             details   : localize(portfolio_item.longcode.replace(/\n/g, '<br />')),
             purchase  : formatMoney(false, purchase, true),
             payout    : formatMoney(false, payout, true),
             remaining_time,
             id        : portfolio_item.contract_id,
-            app_id    : portfolio_item.app_id,
             indicative: {
                 amount: '',
                 style : '',
@@ -60,33 +63,42 @@ const contract_type_display = {
     NOTOUCH     : localize('Does Not Touch'),
 };
 
-/* TODO:
-    1. Make tooltip appdetails tooltip?
-*/
+// TODO: move to common
+const buildOauthApps = (response) => {
+    if (!response || !response.oauth_apps) return {};
+    const obj_oauth_apps = { 2: 'Binary.com Autoexpiry' };
+    response.oauth_apps.forEach((app) => {
+        obj_oauth_apps[app.app_id] = app.name;
+    });
+    return obj_oauth_apps;
+};
+
 class Portfolio extends React.PureComponent  {
     constructor(props) {
         super(props);
-        const currency = ClientBase.get('currency').toLowerCase();
+        const currency       = ClientBase.get('currency').toLowerCase();
+        const app_id = getAppId();
 
         const columns = [
             {
                 title     : localize('Reference No.'),
                 data_index: 'ref',
-                renderCell: (data, data_index) => {
-                    if (data !== 'Total') {
+                renderCell: (data = '', data_index) => {
+                    const has_tooltip = data.transaction_id && data.app_id === app_id && this.state.oauth_apps;
+                    if (has_tooltip) {
                         return (
                             <td key={data_index} className={data_index}>
                                 <Tooltip
-                                    alignment='top'
-                                    message={'App id:'}
+                                    alignment='right'
+                                    message={localize('Transaction performed by [_1] (APP ID: [_2])', [this.state.oauth_apps[data.app_id], data.app_id])}
                                 >
-                                    {data}
+                                    {data.transaction_id}
                                 </Tooltip>
                             </td>);
                     }
                     return (
                         <td key={data_index}>
-                            {data}
+                            {data.transaction_id ? data.transaction_id : data}
                         </td>
                     );
                 },
@@ -153,9 +165,10 @@ class Portfolio extends React.PureComponent  {
         this.state = {
             columns,
             data_source: [],
-            error      : '',
+            error      : null,
             footer,
             is_loading : true,
+            oauth_apps : null,
         };
     }
 
@@ -239,9 +252,8 @@ class Portfolio extends React.PureComponent  {
     }
 
     updateOAuthApps = (response) => { // eslint-disable-line
-        console.log('updateOAuthApps: ', response);
-        // const oauth_apps = buildOauthApps(response);
-        // GetAppDetails.addTooltip(oauth_apps);
+        const oauth_apps = buildOauthApps(response);
+        this.setState({ oauth_apps });
     };
 
     updatePortfolio = (response) => {
