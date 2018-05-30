@@ -131,14 +131,14 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
-        const is_touch_tick     = /touch/i.test(contract.contract_type) && contract.tick_count;
-        is_sold_before_expiry   = is_touch_tick
+        const is_touch_tick   = /touch/i.test(contract.contract_type) && contract.tick_count;
+        is_sold_before_expiry = is_touch_tick
             ? contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry
-            : contract.sell_time && contract.sell_time < contract.date_expiry;
+            : contract.status === 'sold' || (contract.sell_time && contract.sell_time < contract.date_expiry);
 
         const final_price          = contract.sell_price || contract.bid_price;
         const is_started           = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const is_ended             = contract.is_settleable || contract.is_sold || is_sold_before_expiry;
+        const is_ended             = contract.status !== 'open';
         const indicative_price     = final_price && is_ended ? final_price : (contract.bid_price || null);
         const is_sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
 
@@ -229,14 +229,14 @@ const ViewPopup = (() => {
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
             else TickDisplay.updateChart({ is_sold: true }, contract);
         }
+        if (contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !is_sell_clicked) {
+            ViewPopupUI.forgetStreams();
+            BinarySocket.send({ sell_expired: 1 }).then((response) => {
+                getContract(response);
+            });
+        }
         if (is_ended) {
-            contractEnded(parseFloat(profit_loss) >= 0);
-            if (contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !is_sell_clicked) {
-                ViewPopupUI.forgetStreams();
-                BinarySocket.send({ sell_expired: 1 }).then((response) => {
-                    getContract(response);
-                });
-            }
+            contractEnded();
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
             else TickDisplay.updateChart({ is_sold: true }, contract);
         } else {
@@ -259,8 +259,7 @@ const ViewPopup = (() => {
         Clock.showLocalTimeOnHover('#trade_details_live_date');
 
         const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const is_ended   = contract.is_settleable || contract.is_sold;
-        if ((!is_started || is_ended || now >= contract.date_expiry)) {
+        if (!is_started || contract.status !== 'open') {
             containerSetText('trade_details_live_remaining', '-');
         } else {
             let remained = contract.date_expiry - now;
@@ -276,7 +275,7 @@ const ViewPopup = (() => {
     };
 
     const contractEnded = () => {
-        containerSetText('trade_details_current_title', localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
+        containerSetText('trade_details_current_title', localize(contract.status === 'sold' || (contract.sell_spot_time < contract.date_expiry) ? 'Contract Sold' : 'Contract Expiry'));
 
         containerSetText('trade_details_indicative_label', localize('Price'));
         if (Lookback.isLookback(contract.contract_type)) {
@@ -296,7 +295,7 @@ const ViewPopup = (() => {
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
         // don't show for japanese clients or contracts that are manually sold before starting
-        if (contract.audit_details && !isJPClient() &&
+        if (contract.audit_details && !isJPClient() && contract.status !== 'sold' &&
             (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
             initAuditTable(0);
         }
