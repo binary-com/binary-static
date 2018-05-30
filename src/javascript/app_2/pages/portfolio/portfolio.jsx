@@ -250,7 +250,7 @@ class Portfolio extends React.PureComponent  {
         };
     }
 
-    updateOAuthApps = (response) => { // eslint-disable-line
+    updateOAuthApps = (response) => {
         const oauth_apps = buildOauthApps(response);
         this.setState({ oauth_apps });
     };

@@ -13,7 +13,6 @@ const buildOauthApps = (response) => {
 const addTooltip = (oauth_apps) => {
     Object.keys(oauth_apps).forEach((key) => {
         const tooltip_text = addAppIdName(key, oauth_apps[key]);
-        console.log('tooltip_text: ', tooltip_text);
         if (tooltip_text) {
             $(`.${key}`).attr('data-balloon', tooltip_text);
         }
