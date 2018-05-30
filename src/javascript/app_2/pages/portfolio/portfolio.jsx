@@ -84,13 +84,13 @@ class Portfolio extends React.PureComponent  {
                 title     : localize('Reference No.'),
                 data_index: 'ref',
                 renderCell: (data = '', data_index) => {
-                    const has_tooltip = data.transaction_id && data.app_id === app_id && this.state.oauth_apps;
-                    if (has_tooltip) {
+                    const tooltip = data.app_id !== app_id && this.state.oauth_apps && this.state.oauth_apps[data.app_id];
+                    if (tooltip) {
                         return (
                             <td key={data_index} className={data_index}>
                                 <Tooltip
                                     alignment='right'
-                                    message={localize('Transaction performed by [_1] (APP ID: [_2])', [this.state.oauth_apps[data.app_id], data.app_id])}
+                                    message={localize('Transaction performed by [_1] (APP ID: [_2])', [tooltip, data.app_id])}
                                 >
                                     {data.transaction_id}
                                 </Tooltip>
@@ -98,7 +98,7 @@ class Portfolio extends React.PureComponent  {
                     }
                     return (
                         <td key={data_index}>
-                            {data.transaction_id ? data.transaction_id : data}
+                            {data.transaction_id || data}
                         </td>
                     );
                 },
@@ -193,7 +193,6 @@ class Portfolio extends React.PureComponent  {
         if (getPropertyValue(response, 'error')) {
             this.setState({ error: response.error.message });
         }
-        // Update portfolio for added / sold
         DAO.getPortfolio().then((res) => this.updatePortfolio(res));
     }
 
