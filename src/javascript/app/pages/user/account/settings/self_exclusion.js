@@ -89,8 +89,8 @@ const SelfExclusion = (() => {
                     if (key === 'exclude_until') {
                         setDateTimePicker(exclude_until_id, value);
                         $form.find('label[for="exclude_until"]').text('Excluded from the website until');
-                        $('#ukgc_requirement_notice').setVisibility(1);
                         $('#ukgc_gamstop').setVisibility(is_gamstop_client);
+                        $('#ukgc_requirement_notice').setVisibility(1);
                         return;
                     }
                     if (key === 'max_30day_turnover') {
@@ -271,8 +271,9 @@ const SelfExclusion = (() => {
         }
         showFormMessage('Your changes have been updated.', true);
         if ($('#exclude_until').attr('data-value')) {
-            $('#ukgc_requirement_notice').setVisibility(1);
             $('#gamstop_info_bottom').setVisibility(0);
+            $('#ukgc_gamstop').setVisibility(is_gamstop_client);
+            $('#ukgc_requirement_notice').setVisibility(1);
         }
         Client.set('session_start', moment().unix()); // used to handle session duration limit
         const {exclude_until, timeout_until} = response.echo_req;
