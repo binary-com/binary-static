@@ -55,11 +55,11 @@ export default class TradeStore {
     @observable basis           = '';
     @observable currency        = Client.get('currency');
     @observable currencies_list = {};
-    @observable amount          = 5;
+    @observable amount          = 10;
 
     // Duration
-    @observable expiry_type         = 'endtime';
-    @observable duration            = 15;
+    @observable expiry_type         = 'duration';
+    @observable duration            = 5;
     @observable duration_unit       = '';
     @observable duration_units_list = [];
     @observable expiry_date         = null;
