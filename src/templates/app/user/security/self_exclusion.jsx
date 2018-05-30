@@ -84,6 +84,7 @@ const SelfExclusion = () => (
                         <div className='notice-msg gr-child gr-parent'>
                             <p>{it.L('Self-exclusion on this website only applies to your [_1] account and does not include other companies or websites.', it.website_name)}</p>
                             <p>{it.L('Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for.')}</p>
+                            <p id='ukgc_gamstop'>{it.L('To self-exclude from all online gambling companies licensed in Great Britain, go to [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
                         </div>
                     </div>
                 </div>
