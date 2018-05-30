@@ -113,7 +113,7 @@ const commonTrading = (() => {
     const hideOverlayContainer = () => {
         showHideOverlay('contract_confirmation_container', 'none');
         showHideOverlay('contracts_list', 'flex');
-        $('.purchase_button').css('visibility', '');
+        $('.purchase_button').text(localize('Purchase'));
     };
 
     const getContractCategoryTree = (elements) => {

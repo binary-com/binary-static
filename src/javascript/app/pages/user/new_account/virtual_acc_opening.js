@@ -10,6 +10,7 @@ const LocalStore       = require('../../../../_common/storage').LocalStore;
 const State            = require('../../../../_common/storage').State;
 const urlFor           = require('../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
+const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
@@ -20,9 +21,8 @@ const VirtualAccOpening = (() => {
         }
 
         BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
-        $('#residence').setVisibility(1);
-        bindValidation();
 
+        bindValidation();
         FormManager.handleSubmit({
             form_selector       : form,
             fnc_response_handler: handleNewAccount,
@@ -30,10 +30,8 @@ const VirtualAccOpening = (() => {
     };
 
     const handleResidenceList = (residence_list) => {
+        const $residence = $('#residence');
         if (residence_list.length > 0) {
-            const $residence      = $('#residence');
-            const residence_value = Client.get('residence') || '';
-
             const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
                 $options_with_disabled.append(makeOption({
@@ -43,29 +41,29 @@ const VirtualAccOpening = (() => {
                 }));
             });
             $residence.html($options_with_disabled.html());
-            $('#residence').select2({
-                matcher(params, data) {
-                    return SelectMatcher(params, data);
-                },
-            });
 
-            if (!residence_value) {
-                BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
-            }
+            BinarySocket.wait('website_status').then(response => handleWebsiteStatus(response.website_status, $residence));
+        } else {
+            $residence.setVisibility(1);
         }
     };
 
-    const handleWebsiteStatus = (website_status) => {
-        const clients_country = (website_status || {}).clients_country;
-        if (!clients_country) return;
-        const $residence = $('#residence');
+    const handleWebsiteStatus = (website_status = {}, $residence) => {
+        if (!website_status || isEmptyObject(website_status)) return;
+        const clients_country = website_status.clients_country;
 
-        // set residence value to client's country, detected by IP address from back-end
+        // set residence value to client's country, detected by IP address from API
         const $clients_country = $residence.find(`option[value="${clients_country}"]`);
         if (!$clients_country.attr('disabled')) {
             $clients_country.prop('selected', true);
         }
-        $residence.setVisibility(1);
+        $residence
+            .select2({
+                matcher(params, data) {
+                    return SelectMatcher(params, data);
+                },
+            })
+            .setVisibility(1);
     };
 
     const bindValidation = () => {

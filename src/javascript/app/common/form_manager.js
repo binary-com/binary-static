@@ -54,8 +54,6 @@ const FormManager = (() => {
                     value = val || '';
                     if (field.value) {
                         value = typeof field.value === 'function' ? field.value() : field.value;
-                    } else if (field.$.attr('data-picker') === 'native') {
-                        value = val;
                     } else if (field.$.attr('data-value')) {
                         value = field.$.attr('data-value');
                     } else if (/lbl_/.test(key)) {

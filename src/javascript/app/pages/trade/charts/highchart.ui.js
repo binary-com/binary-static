@@ -1,3 +1,4 @@
+const addComma = require('../../../common/currency').addComma;
 const localize = require('../../../../_common/localize').localize;
 
 const HighchartUI = (() => {
@@ -53,6 +54,7 @@ const HighchartUI = (() => {
     };
 
     const setChartOptions = (params) => {
+        const display_decimals = params.decimals.split('.')[1].length || 3;
         chart_options = {
             chart: {
                 backgroundColor: null, /* make background transparent */
@@ -99,7 +101,7 @@ const HighchartUI = (() => {
             credits: { enabled: false },
             tooltip: {
                 xDateFormat  : (params.is_jp_client ? '%Y/%m/%d, %H:%M:%S' : '%A, %b %e, %H:%M:%S GMT'),
-                valueDecimals: params.decimals.split('.')[1].length || 3,
+                valueDecimals: display_decimals,
             },
             subtitle: {
                 text   : txt,

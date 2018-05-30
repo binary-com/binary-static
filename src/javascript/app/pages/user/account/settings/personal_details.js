@@ -34,7 +34,6 @@ const PersonalDetails = (() => {
         residence         = Client.get('residence');
         is_jp_client      = residence === 'jp'; // we need to check with residence so we know which fields will be present in get_settings response
         if (is_jp_client && !is_virtual) {
-            setVisibility('#fieldset_email_consent');
             showHideTaxMessage();
         }
     };
@@ -181,7 +180,6 @@ const PersonalDetails = (() => {
         if (data.country) {
             $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'lbl_country' })));
             $('#lbl_country').text(data.country);
-            if (is_virtual) $('#btn_update').setVisibility(0);
         }
     };
 
@@ -224,7 +222,10 @@ const PersonalDetails = (() => {
                 validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
             });
         } else if (is_virtual) {
-            validations = [{ selector: '#residence', validations: ['req'] }];
+            validations = [
+                { selector: '#email_consent' },
+                { selector: '#residence', validations: ['req'] },
+            ];
         } else {
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
@@ -232,6 +233,7 @@ const PersonalDetails = (() => {
                 { selector: '#address_city',           validations: ['req', 'letter_symbol'] },
                 { selector: '#address_state',          validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
                 { selector: '#address_postcode',       validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+                { selector: '#email_consent' },
                 { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 6, max: 35, value: () => $('#phone').val().replace(/^\+/, '')  }]] },
                 { selector: '#account_opening_reason', validations: ['req'] },
 
@@ -401,8 +403,6 @@ const PersonalDetails = (() => {
             }
 
             if (!is_virtual || !residence) {
-                $('#btn_update').setVisibility(1);
-
                 BinarySocket.send({ residence_list: 1 }).then(response => {
                     populateResidence(response).then(() => {
                         if (residence) {
@@ -421,8 +421,6 @@ const PersonalDetails = (() => {
                         });
                     });
                 });
-            } else {
-                $('#btn_update').setVisibility(0);
             }
         });
     };
