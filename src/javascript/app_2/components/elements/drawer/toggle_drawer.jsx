@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import classNames     from 'classnames';
 import PropTypes      from 'prop-types';
-import Drawer         from './drawer';
+import { Drawer }         from './drawer';
 import Url            from '../../../../_common/url';
+import { connect }    from '../../../store/connect';
 
 class ToggleDrawer extends React.PureComponent {
 
@@ -11,11 +12,19 @@ class ToggleDrawer extends React.PureComponent {
     }
 
     showDrawer = () => {
-        this.ref.show();
+        console.log('toggle_drawer:show_drawer');
+        this.props.showMainDrawer();
+        console.log(this.props.is_main_drawer_on);
+        // this.ref.show();
+        // this.props.togglePortfolioDrawer;
+        // console.log(this.props);
     }
 
     closeDrawer = () => {
-        this.ref.hide();
+        console.log('toggle_drawer:closeDrawer');
+        this.props.hideMainDrawer();
+        // this.ref.hide();
+        // this.props.togglePortfolioDrawer;
     }
 
     render() {
@@ -45,15 +54,12 @@ class ToggleDrawer extends React.PureComponent {
     }
 }
 
-ToggleDrawer.propTypes = {
-    alignment: PropTypes.string,
-    children : PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object,
-    ]),
-    footer    : PropTypes.func,
-    icon_class: PropTypes.string,
-    icon_link : PropTypes.string,
-};
+const drawer_component = connect(
+    ({ ui: {
+        is_main_drawer_on, toggleMainDrawer, showMainDrawer, hideMainDrawer,
+    } }) => ({
+        is_main_drawer_on, toggleMainDrawer, showMainDrawer, hideMainDrawer,
+    })
+)(ToggleDrawer);
 
-export { ToggleDrawer };
+export { drawer_component as ToggleDrawer };

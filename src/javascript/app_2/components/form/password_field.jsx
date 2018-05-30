@@ -43,7 +43,7 @@ PasswordField.propTypes = {
     prefix         : PropTypes.string,
     required       : PropTypes.bool,
     type           : PropTypes.string,
-    value          : PropTypes.number,
+    value          : PropTypes.string,
 };
 
 export default PasswordField;

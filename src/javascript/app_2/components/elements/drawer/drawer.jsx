@@ -2,21 +2,15 @@ import React, { PureComponent } from 'react'
 import classNames     from 'classnames';
 import PropTypes      from 'prop-types';
 import { DrawerHeader }   from './drawer_header';
+import { connect }    from '../../../store/connect';
 
 
 class Drawer extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            is_drawer_visible: false,
-        };
-        this.setRef = this.setRef.bind(this);
-        this.show   = this.show.bind(this);
-        this.hide   = this.hide.bind(this);
-        this.handleClickOutside = this.handleClickOutside.bind(this);
-    }
+    state = {
+        is_drawer_visible: this.props.is_main_drawer_on
+    };
 
-    setRef(node) {
+    setRef = (node) => {
         this.ref = node;
     }
 
@@ -25,17 +19,24 @@ class Drawer extends React.PureComponent {
         document.body.classList.toggle('no-scroll', this.is_open);
     }
 
-    show() {
-        this.setState({ is_drawer_visible: true });
+    show = () => {
         this.scrollToggle(true);
+        console.log('drawer:show')
+        this.props.showMainDrawer();
+        // this.props.toggleMainDrawer();
+        // this.setState({is_drawer_visible: !this.state.is_drawer_visible})
     }
 
-    hide() {
-        this.setState({ is_drawer_visible: false });
+    hide = () => {
         this.scrollToggle(false);
+        console.log('drawer:hide');
+        console.log(this.props.is_main_drawer_on);
+        this.props.hideMainDrawer();
+        // this.props.toggleMainDrawer();
+        // this.setState({is_drawer_visible: !this.state.is_drawer_visible})
     }
 
-    handleClickOutside(event) {
+    handleClickOutside = (event) => {
         event.stopPropagation();
         if (this.ref && !this.ref.contains(event.target)) {
             this.hide();
@@ -44,13 +45,13 @@ class Drawer extends React.PureComponent {
 
     render() {
         const visibility = {
-            visibility: `${!this.state.is_drawer_visible ? 'hidden' : 'visible'}`,
+            visibility: `${!this.props.is_main_drawer_on ? 'hidden' : 'visible'}`,
         };
         const drawer_bg_class = classNames('drawer-bg', {
-            'show': this.state.is_drawer_visible,
+            'show': this.props.is_main_drawer_on,
         });
         const drawer_class = classNames('drawer', {
-            'visible': this.state.is_drawer_visible,
+            'visible': this.props.is_main_drawer_on,
         }, this.props.alignment);
 
         const DrawerFooter = this.props.footer;
@@ -96,4 +97,12 @@ Drawer.propTypes = {
     icon_link : PropTypes.string,
 };
 
-export default Drawer;
+const drawer_component = connect(
+    ({ ui: {
+        is_main_drawer_on, toggleMainDrawer, showMainDrawer, hideMainDrawer,
+    }}) => ({
+        is_main_drawer_on, toggleMainDrawer, showMainDrawer, hideMainDrawer,
+    })
+)(Drawer);
+
+export { drawer_component as Drawer };

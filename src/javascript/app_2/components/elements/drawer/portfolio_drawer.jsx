@@ -1,7 +1,7 @@
 import moment       from 'moment';
 import React        from 'react';
 import PropTypes    from 'prop-types';
-import { localize } from '../../../_common/localize';
+import { localize } from '../../../../_common/localize';
 
 class PortfolioDrawer extends React.Component {
     constructor(props) {
@@ -102,4 +102,4 @@ PortfolioDrawer.propTypes = {
     subtitle   : PropTypes.number,
 };
 
-module.exports = PortfolioDrawer;
+export { PortfolioDrawer };
