@@ -1,10 +1,12 @@
 import {
     action,
-    observable }     from 'mobx';
-import moment        from 'moment';
-import ContractType  from '../pages/trading/actions/helpers/contract_type';
-import actions       from '../pages/trading/actions/index';
-import Client        from '../../_common/base/client_base';
+    observable }              from 'mobx';
+import moment                 from 'moment';
+import ContractType           from '../pages/trading/actions/helpers/contract_type';
+import
+    actions, {
+    callProposalOnDidUpdate } from '../pages/trading/actions/index';
+import Client                 from '../../_common/base/client_base';
 
 export default class TradeStore {
     time_interval = undefined;
@@ -33,7 +35,7 @@ export default class TradeStore {
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        this[name] = value;
+        callProposalOnDidUpdate(this, { [name]: value });
     }
 
     // Underlying
@@ -43,19 +45,20 @@ export default class TradeStore {
     // Contract Type
     @observable contract_type        = '';
     @observable contract_types_list  = {};
-    @observable trade_types          = [];
+    @observable trade_types          = {};
     @observable contract_start_type  = '';
     @observable contract_expiry_type = '';
     @observable form_components      = [];
 
     // Amount
-    @observable basis           = 'stake';
+    @observable basis_list      = [];
+    @observable basis           = '';
     @observable currency        = Client.get('currency');
     @observable currencies_list = {};
     @observable amount          = 5;
 
     // Duration
-    @observable expiry_type         = 'duration';
+    @observable expiry_type         = 'endtime';
     @observable duration            = 15;
     @observable duration_unit       = '';
     @observable duration_units_list = [];
@@ -63,8 +66,9 @@ export default class TradeStore {
     @observable expiry_time         = '09:40 pm';
 
     // Barrier
-    @observable barrier_1 = 0;
-    @observable barrier_2 = 0;
+    @observable barrier_count = 0;
+    @observable barrier_1     = 0;
+    @observable barrier_2     = 0;
 
     // Start Time
     @observable start_dates_list = [];
@@ -75,8 +79,9 @@ export default class TradeStore {
     @observable last_digit = 3;
 
     // Test
-    @observable message = '';
-    @observable tick    = '';
+    @observable message   = '';
+    @observable tick      = '';
+    @observable proposals = {};
 
     // TODO: retrieve from upper state
     @observable server_time = moment.utc();

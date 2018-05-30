@@ -4,7 +4,7 @@ import classnames   from 'classnames';
 import ArrowHead    from '../elements/arrowhead.jsx';
 import { localize } from '../../../_common/localize';
 
-class Calendar extends React.Component {
+class Calendar extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -51,18 +51,9 @@ class Calendar extends React.Component {
         this.setState({ active_view: 'date' });
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return (this.state.active_view !== nextState.active_view)
-            || (this.state.date !== nextState.date)
-            || (this.state.selected_date !== nextState.selected_date)
-            || (this.props.minDate !== nextState.minDate)
-            || (this.props.maxDate !== nextState.maxDate)
-            || (this.props.startDate !== nextState.startDate);
-    }
-
     componentWillReceiveProps(nextProps) {
         const date = moment(this.state.date);
-        
+
         if (date.isBefore(moment(nextProps.minDate))) {
             this.setState({
                 date: nextProps.minDate,
@@ -187,7 +178,7 @@ class Calendar extends React.Component {
     onChangeInput(e) {
         let value = e.target.value;
 
-        if (this.props.mode === 'duration' && value) {
+        if (this.props.mode === 'duration' && value) { // TODO: these kinds of logic should update store instead of just component's state
             value = moment().add(value || 1, 'days');
         }
 

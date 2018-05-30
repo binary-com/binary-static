@@ -13,7 +13,8 @@ const expiry_list = [
     { text: localize('End Time'), value: 'endtime' },
 ];
 
-let min_date_duration,
+let now_date,
+    min_date_duration,
     max_date_duration,
     min_date_expiry;
 
@@ -30,11 +31,13 @@ const Duration = ({
     is_minimized,
 }) => {
     const moment_now = moment(server_time);
-    if (!min_date_expiry || moment_now.date() !== min_date_expiry.date()) {
+    if (!now_date || moment_now.date() !== now_date.date()) {
+        now_date          = moment_now.clone();
         min_date_duration = moment_now.clone().add(1, 'd');
         max_date_duration = moment_now.clone().add(365, 'd');
         min_date_expiry   = moment_now.clone();
     }
+    const is_same_day = moment.utc(expiry_date).isSame(moment_now, 'day');
     if (is_minimized) {
         const duration_unit_text = (duration_units_list.find(o => o.value === duration_unit) || {}).text;
         return (
@@ -47,6 +50,7 @@ const Duration = ({
             </div>
         );
     }
+
     return (
         <Fieldset
             time={server_time}
@@ -100,13 +104,15 @@ const Duration = ({
                         onChange={onChange}
                         is_nativepicker={is_nativepicker}
                     />
-                    <TimePicker
-                        onChange={onChange}
-                        name='expiry_time'
-                        value={expiry_time}
-                        placeholder='12:00 pm'
-                        is_nativepicker={is_nativepicker}
-                    />
+                    {is_same_day &&
+                        <TimePicker
+                            onChange={onChange}
+                            name='expiry_time'
+                            value={expiry_time}
+                            placeholder='12:00 pm'
+                            is_nativepicker={is_nativepicker}
+                        />
+                    }
                 </React.Fragment>
             }
         </Fieldset>

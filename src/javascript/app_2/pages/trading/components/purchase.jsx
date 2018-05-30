@@ -4,9 +4,13 @@ import { connect }  from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
 
 const Purchase = ({
+    proposals,
     trade_types,
 }) =>  (
     <fieldset>
+        {Object.keys(proposals).map((type, idx) => (
+            <p key={idx}>{proposals[type].message}</p>
+        ))}
         {Object.keys(trade_types).map((type, idx) => (
             <Button
                 key={idx}
@@ -22,5 +26,6 @@ const Purchase = ({
 export default connect(
     ({trade}) => ({
         trade_types: trade.trade_types,
+        proposals  : trade.proposals,
     })
 )(Purchase);

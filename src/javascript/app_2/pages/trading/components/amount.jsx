@@ -7,12 +7,8 @@ import Client       from '../../../../_common/base/client_base';
 import { addComma } from '../../../../_common/base/currency_base';
 import { localize } from '../../../../_common/localize';
 
-const basis_list = [
-    { text: localize('Payout'), value: 'payout' },
-    { text: localize('Stake'),  value: 'stake' },
-];
-
 const Amount = ({
+    basis_list,
     basis,
     currency,
     currencies_list,
@@ -72,6 +68,7 @@ const Amount = ({
 
 export default connect(
     ({trade}) => ({
+        basis_list     : trade.basis_list,
         basis          : trade.basis,
         currency       : trade.currency,
         currencies_list: trade.currencies_list,
