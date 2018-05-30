@@ -46,34 +46,35 @@ const DAO = (() => {
         SubscriptionManager.subscribe('balance', { balance: 1, subscribe: 1 }, cb);
 
     const subscribeProposal = (store, type_of_contract, cb, should_forget_first) => {
+        const proposal = store.proposal;
         const req = {
             proposal     : 1,
             subscribe    : 1,
-            amount       : parseFloat(store.amount),
-            basis        : store.basis,
+            amount       : parseFloat(proposal.amount),
+            basis        : proposal.basis,
             contract_type: type_of_contract,
-            currency     : store.currency,
-            symbol       : store.symbol,
+            currency     : proposal.currency,
+            symbol       : proposal.symbol,
             ...(
-                store.start_date !== 'now' &&
-                { date_start: convertDateTimetoUnix(store.start_date, store.start_time) }
+                proposal.start_date !== 'now' &&
+                { date_start: convertDateTimetoUnix(proposal.start_date, proposal.start_time) }
             ),
             ...(
-                store.expiry_type === 'duration' ?
+                proposal.expiry_type === 'duration' ?
                 {
-                    duration     : parseInt(store.duration),
-                    duration_unit: store.duration_unit,
+                    duration     : parseInt(proposal.duration),
+                    duration_unit: proposal.duration_unit,
                 }
                 :
-                { date_expiry: convertDateTimetoUnix(store.expiry_date, store.expiry_time) }
+                { date_expiry: convertDateTimetoUnix(proposal.expiry_date, proposal.expiry_time) }
             ),
             ...(
                 (store.barrier_count > 0 || store.form_components.indexOf('last_digit') !== -1) &&
-                { barrier: store.barrier_1 || store.last_digit }
+                { barrier: proposal.barrier_1 || proposal.last_digit }
             ),
             ...(
                 store.barrier_count === 2 &&
-                { barrier2: store.barrier_2 }
+                { barrier2: proposal.barrier_2 }
             ),
         };
 

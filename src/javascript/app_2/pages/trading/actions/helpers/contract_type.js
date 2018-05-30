@@ -156,7 +156,8 @@ const ContractType = (() => {
         arr_new_values.indexOf(value) !== -1 ? value : arr_new_values[0]
     );
 
-    const getContractValues = ({ contract_type, basis, contract_expiry_type, duration_unit }) => {
+    const getContractValues = ({ proposal, contract_expiry_type }) => {
+        const { contract_type, basis, duration_unit } = proposal;
         const form_components   = getComponents(contract_type);
         const obj_basis         = getBasis(contract_type, basis);
         const obj_trade_types   = getTradeTypes(contract_type);
@@ -167,15 +168,21 @@ const ContractType = (() => {
 
         const obj_duration_units_list = getDurationUnitsList(contract_type, obj_start_type.contract_start_type);
 
+        // TODO: centralize deciding which key belongs to 'store.proposal' object, then refactor the following object accordingly
         return {
             ...form_components,
-            ...obj_basis,
             ...obj_trade_types,
-            ...obj_start_dates,
             ...obj_start_type,
-            ...obj_barrier,
             ...obj_duration_units_list,
-            ...obj_duration_unit,
+            start_dates_list: obj_start_dates.start_dates_list,
+            barrier_count   : obj_barrier.barrier_count,
+            proposal        : Object.assign(proposal, {
+                ...obj_basis,
+                ...obj_duration_unit,
+                start_date: obj_start_dates.start_date,
+                barrier_1 : obj_barrier.barrier_1,
+                barrier_2 : obj_barrier.barrier_2,
+            }),
         };
     };
 

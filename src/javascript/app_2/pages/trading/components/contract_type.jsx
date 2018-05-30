@@ -19,7 +19,7 @@ const Contract = ({
 
 export default connect(
     ({trade}) => ({
-        contract_type      : trade.contract_type,
+        contract_type      : trade.proposal.contract_type,
         contract_types_list: trade.contract_types_list,
         onChange           : trade.handleChange,
     })

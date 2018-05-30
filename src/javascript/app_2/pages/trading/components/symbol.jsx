@@ -17,7 +17,7 @@ const Symbol = ({
 
 export default connect(
     ({trade}) => ({
-        symbol      : trade.symbol,
+        symbol      : trade.proposal.symbol,
         symbols_list: trade.symbols_list,
         onChange    : trade.handleChange,
     })

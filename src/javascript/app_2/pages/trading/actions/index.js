@@ -51,7 +51,9 @@ export const initActions = (store) => {
     });
 
     Object.keys(reaction_map).forEach((reaction_key) => {
-        const disposer = reaction(() => store[reaction_key], reaction_map[reaction_key]());
+        const disposer = reaction(
+            () => (reaction_key in store.proposal ? store.proposal[reaction_key] : store[reaction_key]),
+            reaction_map[reaction_key]());
         reaction_disposers.push(disposer);
     });
 };
@@ -62,10 +64,11 @@ export const disposeActions = () => {
 
 const updateStore = (store, new_state) => {
     Object.keys(new_state).forEach((key) => {
-        if (JSON.stringify(store[key]) === JSON.stringify(new_state[key])) {
+        const source = key in store ? store : store.proposal;
+        if (JSON.stringify(source[key]) === JSON.stringify(new_state[key])) {
             delete new_state[key];
         } else {
-            store[key] = new_state[key];
+            source[key] = new_state[key];
         }
     });
     return new_state;
