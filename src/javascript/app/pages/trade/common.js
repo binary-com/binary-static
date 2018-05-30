@@ -26,15 +26,16 @@ const commonTrading = (() => {
         const all_contracts = cloneObject(elements);
         delete all_contracts.callputequal; // don't include callputequal in contract drop-down
 
-        const contracts_tree = getContractCategoryTree(all_contracts);
+        const contracts_tree   = getContractCategoryTree(all_contracts);
+        const contract_to_show = /^(callputequal)$/.test(selected) ? 'risefall' : selected;
 
         if (!contracts_element) {
-            contracts_element = contractsElement.init(all_contracts, contracts_tree, selected);
+            contracts_element = contractsElement.init(all_contracts, contracts_tree, contract_to_show);
         } else { // Update the component.
             contracts_element.updater.enqueueSetState(contracts_element, {
                 contracts_tree,
                 contracts: all_contracts,
-                formname : selected || Defaults.get('formname'),
+                formname : contract_to_show || Defaults.get('formname'),
             });
         }
     };

@@ -354,6 +354,7 @@ const texts = [
     'Higher',
     'Higher or equal',
     'Lower',
+    'Lower or equal',
     'Touches',
     'Does Not Touch',
     'Ends Between',

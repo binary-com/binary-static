@@ -71,11 +71,8 @@ const TradingEvents = (() => {
         });
 
         const el_equal = getElementById('callputequal');
-        el_equal.addEventListener('change', function () {
-            const is_equal = $(this).is(':checked');
-            const formname = is_equal ? this.getAttribute('id') : contract_input.value;
-            Defaults.set('is_equal', is_equal);
-            Defaults.set('formname', formname);
+        el_equal.addEventListener('change', (e) => {
+            Defaults.set('is_equal', +e.target.checked);
             Process.processContractForm();
             TradingAnalysis.request();
         });

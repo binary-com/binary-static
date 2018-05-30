@@ -139,32 +139,23 @@ const Process = (() => {
             }
         }
 
-        const equals = getElementById('callputequal');
-        let formname_to_display = formname;
-        if (/^(callputequal|risefall)$/.test(formname)) {
-            if (Defaults.get('is_equal')) {
-                equals.checked = true;
-            }
-            formname_to_display = 'risefall';
-            equals.parentElement.setVisibility(1);
-        } else {
-            equals.parentElement.setVisibility(0);
-        }
+        const available_contracts = getPropertyValue(contracts, ['contracts_for', 'available']);
 
-        // set form to session storage
-        Defaults.set('formname', formname);
+        commonTrading.displayContractForms('contract_form_name_nav', contract_categories, formname);
 
-        commonTrading.displayContractForms('contract_form_name_nav', contract_categories, formname_to_display);
-
-        processContractForm();
+        processContractForm(available_contracts, formname);
 
         TradingAnalysis.request();
 
         commonTrading.hideFormOverlay();
     };
 
-    const processContractForm = () => {
-        Contract.details(sessionStorage.getItem('formname'));
+    const processContractForm = (available_contracts = State.getResponse('contracts_for.available'), formname_to_set = getElementById('contract').value || Defaults.get('formname')) => {
+        setFormName(formname_to_set, available_contracts);
+        displayEquals(formname_to_set, available_contracts);
+
+        // get updated formname
+        Contract.details(Defaults.get('formname'));
 
         StartDates.display();
 
@@ -224,6 +215,29 @@ const Process = (() => {
             prediction_row.hide();
             Defaults.remove('prediction');
         }
+    };
+
+    const displayEquals = (formname = Defaults.get('formname'), contracts = State.getResponse('contracts_for.available')) => {
+        const el_equals = getElementById('callputequal');
+        if (/^(callputequal|risefall)$/.test(formname) && (contracts || []).find(contract => contract.contract_category === 'callputequal')) {
+            if (+Defaults.get('is_equal')) {
+                el_equals.checked = true;
+            }
+            el_equals.parentElement.setVisibility(1);
+        } else {
+            el_equals.parentElement.setVisibility(0);
+        }
+    };
+
+    const setFormName = (formname = Defaults.get('formname'), contracts = State.getResponse('contracts_for.available')) => {
+        let formname_to_set    = formname;
+        const has_callputequal = (contracts || []).find(contract => contract.contract_category === 'callputequal');
+        if (/^(callputequal)$/.test(formname_to_set) && !has_callputequal) {
+            formname_to_set = 'risefall';
+        } else if (/^(risefall)$/.test(formname_to_set) && has_callputequal && +Defaults.get('is_equal')) {
+            formname_to_set = 'callputequal';
+        }
+        Defaults.set('formname', formname_to_set);
     };
 
     const forgetTradingStreams = () => {
