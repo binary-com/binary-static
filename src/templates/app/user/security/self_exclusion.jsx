@@ -84,7 +84,6 @@ const SelfExclusion = () => (
                         <div className='notice-msg gr-child gr-parent'>
                             <p>{it.L('Self-exclusion on this website only applies to your [_1] account and does not include other companies or websites.', it.website_name)}</p>
                             <p>{it.L('Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for.')}</p>
-                            <p>{it.L('Thank you for trading with [_1].', it.website_name)}</p>
                         </div>
                     </div>
                 </div>
