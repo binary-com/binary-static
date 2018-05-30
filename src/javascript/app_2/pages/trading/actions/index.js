@@ -87,7 +87,7 @@ export const callProposalOnDidUpdate = (store, obj_new_values = {}) => {
         const in_reaction = Object.keys(new_store).find(key => key in reaction_map);
 
         // if it's going to update other values, flag it to send proposal in future after those values are updated
-        if (in_reaction) {
+        if (in_reaction === 'symbol') {
             should_send_proposal = 1;
             return;
         }
