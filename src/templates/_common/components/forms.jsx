@@ -116,9 +116,6 @@ export const SubmitButton = ({
 }) => {
     const content =
         <React.Fragment>
-            { !no_error &&
-                <p id={msg_id || 'msg_form'} className={`${is_centered ? 'center-text' : ''} error-msg no-margin invisible`} />
-            }
             <div className='gr-padding-10'>
                 { custom_btn_text &&
                     <a className={`button ${custom_btn_class||''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
@@ -134,6 +131,9 @@ export const SubmitButton = ({
                     {text}
                 </button>
             </div>
+            { !no_error &&
+                <p id={msg_id || 'msg_form'} className={`${is_centered ? 'center-text' : ''} error-msg no-margin invisible`} />
+            }
         </React.Fragment>;
 
     if (!no_wrapper) {
