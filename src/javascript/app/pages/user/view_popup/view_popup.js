@@ -549,7 +549,7 @@ const ViewPopup = (() => {
                 createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
             ${!Lookback.isLookback(contract.contract_type) ? createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
-            ${Reset.isReset(contract.contract_type) && createRow('Reset Barrier', '', 'trade_details_reset_barrier', true)}
+            ${Reset.isReset(contract.contract_type) ? createRow('Reset Barrier', '', 'trade_details_reset_barrier', true) : ''}
             ${(contract.barrier_count > 1 ? createRow(low_barrier_text, '', 'trade_details_barrier_low', true) : '')}
             ${createRow('Potential Payout', '', 'trade_details_payout')}
             ${multiplier ? createRow('Multiplier', '', 'trade_details_multiplier') : ''}
