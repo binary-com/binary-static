@@ -6,8 +6,7 @@ import { BinaryLink } from '../../../routes';
 class DrawerItem extends PureComponent {
 
     drawerItemClicked = () => {
-        console.log('Drawer Item clicked');
-        this.props.hideMainDrawer();
+        this.props.hideDrawers();
     }
 
     render() {
@@ -32,9 +31,9 @@ DrawerItem.propTypes = {
 
 const drawer_item_component = connect(
     ({ ui: {
-        is_main_drawer_on, toggleMainDrawer, hideMainDrawer
+        is_main_drawer_on, toggleMainDrawer, hideDrawers
     }}) => ({
-        is_main_drawer_on, toggleMainDrawer, hideMainDrawer
+        is_main_drawer_on, toggleMainDrawer, hideDrawers
     })
 )(DrawerItem);
 

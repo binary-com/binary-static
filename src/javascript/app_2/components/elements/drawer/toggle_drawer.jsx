@@ -7,24 +7,20 @@ import { connect }    from '../../../store/connect';
 
 class ToggleDrawer extends React.PureComponent {
 
-    setRef = (node) =>  {
-        this.ref = node;
-    }
-
     showDrawer = () => {
-        console.log('toggle_drawer:show_drawer');
-        this.props.showMainDrawer();
-        console.log(this.props.is_main_drawer_on);
-        // this.ref.show();
-        // this.props.togglePortfolioDrawer;
-        // console.log(this.props);
+        let { alignment } = this.props;
+        if(alignment && alignment == "left") {
+            console.log('CLICKED LEFT')
+            this.props.showMainDrawer();
+        } else if(alignment && alignment == "right"){
+            console.log('CLICKED RIGHT');
+            this.props.showPortfolioDrawer();
+        }
     }
 
     closeDrawer = () => {
         console.log('toggle_drawer:closeDrawer');
-        this.props.hideMainDrawer();
-        // this.ref.hide();
-        // this.props.togglePortfolioDrawer;
+        this.props.hideDrawers();
     }
 
     render() {
@@ -42,7 +38,6 @@ class ToggleDrawer extends React.PureComponent {
                     }
                 </div>
                 <Drawer
-                    ref={this.setRef}
                     alignment={this.props.alignment}
                     closeBtn={this.closeDrawer}
                     footer={this.props.footer}
@@ -56,9 +51,9 @@ class ToggleDrawer extends React.PureComponent {
 
 const drawer_component = connect(
     ({ ui: {
-        is_main_drawer_on, toggleMainDrawer, showMainDrawer, hideMainDrawer,
+        showMainDrawer, hideDrawers, showPortfolioDrawer,
     } }) => ({
-        is_main_drawer_on, toggleMainDrawer, showMainDrawer, hideMainDrawer,
+        showMainDrawer, hideDrawers, showPortfolioDrawer,
     })
 )(ToggleDrawer);
 
