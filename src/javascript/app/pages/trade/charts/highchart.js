@@ -374,6 +374,15 @@ const Highchart = (() => {
                 } else {
                     addPlotLine({ id: 'barrier',      value: +barrier,      label: localize('Barrier ([_1])', [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
                 }
+                // TODO: maybe one series with type scatter?
+                chart.addSeries({
+                    name: 'barrier_dot',
+                    marker: { enabled: false },
+                    data: [{
+                        y: +barrier,
+                        x: chart.series[0].data[0].x,
+                    }],
+                });
             } else if (high_barrier && low_barrier) {
                 prev_barriers[1] = high_barrier;
                 prev_barriers[0] = low_barrier;
@@ -385,6 +394,22 @@ const Highchart = (() => {
                     addPlotLine({ id: 'high_barrier', value: +high_barrier, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
                     addPlotLine({ id: 'low_barrier',  value: +low_barrier,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
                 }
+                chart.addSeries({
+                    name: 'high_barrier_dot',
+                    marker: { enabled: false },
+                    data: [{
+                        y: +high_barrier,
+                        x: chart.series[0].data[0].x,
+                    }],
+                });
+                chart.addSeries({
+                    name: 'low_barrier_dot',
+                    marker: { enabled: false },
+                    data: [{
+                        y: +low_barrier,
+                        x: chart.series[0].data[0].x,
+                    }],
+                });
             }
         }
     };
