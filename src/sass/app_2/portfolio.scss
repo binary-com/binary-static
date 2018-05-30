@@ -32,8 +32,9 @@
         text-align: right;
     }
     .table-body {
-        td.ref {
+        td.ref span.tooltip {
             color: $COLOR_TEXT_BLUE;
+            text-decoration: none;
         }
         .type_container {
             display: flex;

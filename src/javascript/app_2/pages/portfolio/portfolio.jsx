@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import DAO from '../../data/dao';
 import DataTable from '../../components/elements/data_table.jsx';
+import Tooltip from '../../components/elements/tooltip.jsx';
 import ClientBase from '../../../_common/base/client_base';
 import Loading from '../../../../templates/_common/components/loading.jsx';
 import { formatMoney } from '../../../_common/base/currency_base';
@@ -71,6 +72,24 @@ class Portfolio extends React.PureComponent  {
             {
                 title     : localize('Reference No.'),
                 data_index: 'ref',
+                renderCell: (data, data_index) => {
+                    if (data !== 'Total') {
+                        return (
+                            <td key={data_index} className={data_index}>
+                                <Tooltip
+                                    alignment='top'
+                                    message={'App id:'}
+                                >
+                                    {data}
+                                </Tooltip>
+                            </td>);
+                    }
+                    return (
+                        <td key={data_index}>
+                            {data}
+                        </td>
+                    );
+                },
             },
             {
                 title     : localize('Contract Type'),
@@ -217,9 +236,10 @@ class Portfolio extends React.PureComponent  {
             payout    : formatMoney(false, payout, true),
             purchase  : formatMoney(false, purchase, true),
         };
-    } 
+    }
 
     updateOAuthApps = (response) => { // eslint-disable-line
+        console.log('updateOAuthApps: ', response);
         // const oauth_apps = buildOauthApps(response);
         // GetAppDetails.addTooltip(oauth_apps);
     };
