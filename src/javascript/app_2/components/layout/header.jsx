@@ -2,10 +2,7 @@ import React               from 'react';
 import PerfectScrollbar    from 'react-perfect-scrollbar';
 import PropTypes           from 'prop-types';
 import AccountSwitcher     from '../elements/account_switcher.jsx';
-import {
-    DrawerItem,
-    DrawerItems,
-    ToggleDrawer }         from '../elements/drawer.jsx';
+import { DrawerItems, ToggleDrawer, DrawerItem }         from '../elements/drawer';
 import LanguageSwitcher    from '../elements/language_switcher.jsx';
 import Button              from '../form/button.jsx';
 import { requestLogout }   from '../../base/common';
