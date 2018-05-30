@@ -1,6 +1,6 @@
 import { buildBarriersConfig }        from './barrier';
-import { buildForwardStartingConfig } from './date_start';
 import { buildDurationConfig }        from './duration';
+import { buildForwardStartingConfig } from './start_date';
 import DAO                            from '../../../../data/dao';
 import { get as getLanguage }         from '../../../../../_common/language';
 import { localize }                   from '../../../../../_common/localize';
@@ -128,26 +128,12 @@ const ContractType = (() => {
             }
             const config = available_contract_types[type].config || {};
 
-            // ----- has_spot -----
-            if (contract.start_type === 'spot') {
-                config.has_spot = 1;
-            }
-
-            // ----- durations -----
-            config.durations = buildDurationConfig(contract, config.durations);
-
-            // ----- forward_starting_dates -----
-            if (contract.forward_starting_options) {
-                config.forward_starting_dates = buildForwardStartingConfig(contract.forward_starting_options);
-            }
-
-            // ----- trade_types -----
-            config.trade_types = buildTradeTypesConfig(contract, config.trade_types);
-
-            // ----- barriers -----
-            if (contract.barriers) {
-                config.barriers = buildBarriersConfig(contract, config.barriers);
-            }
+            // set config values
+            config.has_spot               = contract.start_type === 'spot';
+            config.durations              = buildDurationConfig(contract, config.durations);
+            config.forward_starting_dates = buildForwardStartingConfig(contract.forward_starting_options);
+            config.trade_types            = buildTradeTypesConfig(contract, config.trade_types);
+            config.barriers               = buildBarriersConfig(contract, config.barriers);
 
             available_contract_types[type].config = config;
         });
@@ -203,11 +189,9 @@ const ContractType = (() => {
 
     const getComponents = (c_type) => ({ form_components: ['duration', 'amount', ...contract_types[c_type].components] });
 
-    const getDurationUnitsList = (contract_type, contract_start_type) => {
-        const duration_units_list = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'units_display', contract_start_type]) || [];
-
-        return { duration_units_list };
-    };
+    const getDurationUnitsList = (contract_type, contract_start_type) => ({
+        duration_units_list: getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'units_display', contract_start_type]) || [],
+    });
 
     const getDurationUnit = (duration_unit, contract_type, contract_start_type) => {
         const duration_units = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'units_display', contract_start_type]) || [];
@@ -222,17 +206,13 @@ const ContractType = (() => {
     };
 
     // TODO: use this getter function to dynamically compare min/max versus duration amount
-    const getDurationMinMax = (contract_type, contract_start_type, contract_expiry_type) => {
-        const duration_min_max = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'min_max', contract_start_type, contract_expiry_type]) || {};
+    const getDurationMinMax = (contract_type, contract_start_type, contract_expiry_type) => ({
+        duration_min_max: getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'min_max', contract_start_type, contract_expiry_type]) || {},
+    });
 
-        return { duration_min_max };
-    };
-
-    const getStartType = (start_date) => {
-        const contract_start_type = start_date === 'now' ? 'spot' : 'forward';
-
-        return { contract_start_type };
-    };
+    const getStartType = (start_date) => ({
+        contract_start_type: start_date === 'now' ? 'spot' : 'forward',
+    });
 
     const getStartDates = (contract_type) => {
         const config           = getPropertyValue(available_contract_types, [contract_type, 'config']);

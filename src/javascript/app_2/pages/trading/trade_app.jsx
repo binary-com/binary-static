@@ -13,26 +13,11 @@ import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
 import { connect }     from '../../store/connect';
 
 const form_components = [
-    {
-        name     : 'start_date',
-        Component: StartDate,
-    },
-    {
-        name     : 'duration',
-        Component: Duration,
-    },
-    {
-        name     : 'barrier',
-        Component: Barrier,
-    },
-    {
-        name     : 'last_digit',
-        Component: LastDigit,
-    },
-    {
-        name     : 'amount',
-        Component: Amount,
-    },
+    { name: 'start_date', Component: StartDate },
+    { name: 'duration',   Component: Duration },
+    { name: 'barrier',    Component: Barrier },
+    { name: 'last_digit', Component: LastDigit },
+    { name: 'amount',     Component: Amount },
 ];
 
 class TradeApp extends React.Component {

@@ -1,4 +1,8 @@
 export const buildBarriersConfig = (contract, barriers = { count: contract.barriers }) => {
+    if (!contract.barriers) {
+        return undefined;
+    }
+
     const obj_barrier = {};
 
     ['barrier', 'low_barrier', 'high_barrier'].forEach((field) => {
