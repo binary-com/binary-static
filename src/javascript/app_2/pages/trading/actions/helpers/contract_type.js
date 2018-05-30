@@ -16,8 +16,8 @@ const ContractType = (() => {
      *     ['duration', 'amount'] are omitted, as they're available in all contract types
      */
     const contract_types = {
-        rise_fall  : { title: localize('Rise/Fall'),                  trade_types: ['CALL', 'PUT'],               basis: ['payout', 'stake'], components: [],            barrier_count: 0 },
-        high_low   : { title: localize('Higher/Lower'),               trade_types: ['CALL', 'PUT'],               basis: ['payout', 'stake'], components: ['barrier'],   barrier_count: 1 },
+        rise_fall  : { title: localize('Rise/Fall'),                  trade_types: ['CALL', 'PUT'],               basis: ['payout', 'stake'], components: ['start_date'], barrier_count: 0 },
+        high_low   : { title: localize('Higher/Lower'),               trade_types: ['CALL', 'PUT'],               basis: ['payout', 'stake'], components: ['barrier'],    barrier_count: 1 },
         touch      : { title: localize('Touch/No Touch'),             trade_types: ['ONETOUCH', 'NOTOUCH'],       basis: ['payout', 'stake'], components: ['barrier'] },
         end        : { title: localize('Ends Between/Ends Outside'),  trade_types: ['EXPIRYMISS', 'EXPIRYRANGE'], basis: ['payout', 'stake'], components: ['barrier'] },
         stay       : { title: localize('Stays Between/Goes Outside'), trade_types: ['RANGE', 'UPORDOWN'],         basis: ['payout', 'stake'], components: ['barrier'] },
