@@ -1,13 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import classNames     from 'classnames';
 import PropTypes      from 'prop-types';
-import { DrawerHeader }   from './drawer_header';
+import { DrawerHeader }   from './drawer_header.jsx';
 import { connect }    from '../../../store/connect';
 
 
-class Drawer extends React.Component {
+class Drawer extends Component {
     state = {
-        is_this_drawer_on : false
+        is_this_drawer_on: false,
+    }
+
+    setRef = (node) => {
+        this.ref = node;
     }
 
     scrollToggle(state) {
@@ -16,10 +20,10 @@ class Drawer extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(this.props.alignment=="left") {
-            this.setState({is_this_drawer_on:nextProps.is_main_drawer_on})
-        } else if(this.props.alignment=="right"){
-            this.setState({is_this_drawer_on:nextProps.is_portfolio_drawer_on})
+        if (this.props.alignment==='left') {
+            this.setState({is_this_drawer_on: nextProps.is_main_drawer_on});
+        } else if (this.props.alignment==='right'){
+            this.setState({is_this_drawer_on: nextProps.is_portfolio_drawer_on});
         }
     }
 
@@ -29,12 +33,17 @@ class Drawer extends React.Component {
     }
 
     handleClickOutside = (event) => {
-        event.stopPropagation();
-        this.hide();
+        if (this.state.is_this_drawer_on) {
+            if (this.ref && !this.ref.contains(event.target)) {
+                this.hide();
+            }
+        }
     }
 
     render() {
-        let { is_this_drawer_on } = this.state;
+        const { is_this_drawer_on } = this.state;
+        const { alignment, closeBtn, children, footer } = this.props;
+
         const visibility = {
             visibility: `${!is_this_drawer_on ? 'hidden' : 'visible'}`,
         };
@@ -43,9 +52,9 @@ class Drawer extends React.Component {
         });
         const drawer_class = classNames('drawer', {
             'visible': is_this_drawer_on,
-        }, this.props.alignment);
+        }, alignment);
 
-        const DrawerFooter = this.props.footer;
+        const DrawerFooter = footer;
 
         return (
             <aside className='drawer-container'>
@@ -60,10 +69,10 @@ class Drawer extends React.Component {
                         style={visibility}
                     >
                         <DrawerHeader
-                            alignment={this.props.alignment}
-                            closeBtn={this.props.closeBtn}
+                            alignment={alignment}
+                            closeBtn={closeBtn}
                         />
-                        {this.props.children}
+                        {children}
                         {DrawerFooter &&
                             <div className='drawer-footer'>
                                 <DrawerFooter />
@@ -82,17 +91,20 @@ Drawer.propTypes = {
         PropTypes.array,
         PropTypes.object,
     ]),
-    closeBtn  : PropTypes.func,
-    footer    : PropTypes.func,
-    icon_class: PropTypes.string,
-    icon_link : PropTypes.string,
+    closeBtn              : PropTypes.func,
+    footer                : PropTypes.func,
+    hideDrawers           : PropTypes.func,
+    icon_class            : PropTypes.string,
+    icon_link             : PropTypes.string,
+    is_main_drawer_on     : PropTypes.func,
+    is_portfolio_drawer_on: PropTypes.func,
 };
 
 const drawer_component = connect(
     ({ ui: {
-        is_main_drawer_on, hideDrawers, is_portfolio_drawer_on,
+        is_main_drawer_on, is_portfolio_drawer_on, hideDrawers,
     }}) => ({
-        is_main_drawer_on, hideDrawers, is_portfolio_drawer_on,
+        is_main_drawer_on, is_portfolio_drawer_on, hideDrawers,
     })
 )(Drawer);
 

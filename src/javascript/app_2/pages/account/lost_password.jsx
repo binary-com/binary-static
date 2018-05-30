@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import { connect }          from '../../store/connect';
-import Button               from '../../components/form/button';
-import PasswordField       from '../../components/form/password_field';
+import React, { Component }    from 'react';
+import Button                  from '../../components/form/button.jsx';
+import PasswordField           from '../../components/form/password_field.jsx';
 import { localize }            from '../../../_common/localize';
 
 class LostPassword extends Component {
     state = {
-        password: ''
+        password: '',
     }
 
     onChange = (password) => {
         this.setState({password});
-        console.log(this.state.password);
     }
 
     render() {

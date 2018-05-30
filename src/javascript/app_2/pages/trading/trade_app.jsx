@@ -1,17 +1,17 @@
-import React           from 'react';
-import PropTypes       from 'prop-types';
-import Amount          from './components/amount.jsx';
-import Barrier         from './components/barrier.jsx';
-import ContractType    from './components/contract_type.jsx';
-import Duration        from './components/duration.jsx';
-import LastDigit       from './components/last_digit.jsx';
-import Purchase        from './components/purchase.jsx';
-import StartDate       from './components/start_date.jsx';
-import Symbol          from './components/symbol.jsx';
-import Test            from './components/test.jsx';
-import MobileWidget    from './components/elements/mobile_widget.jsx';
-import { PortfolioDrawer } from '../../components/elements/drawer';
-import { connect }     from '../../store/connect';
+import React                from 'react';
+import PropTypes            from 'prop-types';
+import Amount               from './components/amount.jsx';
+import Barrier              from './components/barrier.jsx';
+import ContractType         from './components/contract_type.jsx';
+import Duration             from './components/duration.jsx';
+import LastDigit            from './components/last_digit.jsx';
+import Purchase             from './components/purchase.jsx';
+import StartDate            from './components/start_date.jsx';
+import Symbol               from './components/symbol.jsx';
+import Test                 from './components/test.jsx';
+import MobileWidget         from './components/elements/mobile_widget.jsx';
+import { PortfolioDrawer }  from '../../components/elements/drawer/index.jsx';
+import { connect }          from '../../store/connect';
 
 const form_components = [
     {

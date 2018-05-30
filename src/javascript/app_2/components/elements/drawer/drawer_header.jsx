@@ -1,7 +1,6 @@
-import React from 'react';
+import React          from 'react';
 import classNames     from 'classnames';
 import PropTypes      from 'prop-types';
-
 import Url            from '../../../../_common/url';
 
 export const DrawerHeader = ({

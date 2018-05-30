@@ -1,59 +1,71 @@
 import React, { PureComponent } from 'react';
-import classNames     from 'classnames';
-import PropTypes      from 'prop-types';
-import { Drawer }         from './drawer';
-import Url            from '../../../../_common/url';
-import { connect }    from '../../../store/connect';
+import classNames               from 'classnames';
+import PropTypes                from 'prop-types';
+import { Drawer }               from './drawer.jsx';
+import Url                      from '../../../../_common/url';
+import { connect }              from '../../../store/connect';
 
-class ToggleDrawer extends React.PureComponent {
-
+class ToggleDrawer extends PureComponent {
     showDrawer = () => {
-        let { alignment } = this.props;
-        if(alignment && alignment == "left") {
-            console.log('CLICKED LEFT')
+        const { alignment } = this.props;
+        if (alignment && alignment === 'left') {
             this.props.showMainDrawer();
-        } else if(alignment && alignment == "right"){
-            console.log('CLICKED RIGHT');
+        } else if (alignment && alignment === 'right'){
             this.props.showPortfolioDrawer();
         }
     }
 
     closeDrawer = () => {
-        console.log('toggle_drawer:closeDrawer');
         this.props.hideDrawers();
     }
 
     render() {
-        const toggle_class = classNames('navbar-icons', this.props.icon_class, {
-            'menu-toggle': !this.props.icon_class,
+        const { icon_class, icon_link, alignment, footer, children } = this.props;
+
+        const toggle_class = classNames('navbar-icons', icon_class, {
+            'menu-toggle': !icon_class,
         });
 
         return (
             <React.Fragment>
                 <div className={toggle_class} onClick={this.showDrawer}>
-                    {this.props.icon_link ?
-                        <img src={this.props.icon_link} />
+                    {icon_link ?
+                        <img src={icon_link} />
                     :
                         <img src={Url.urlForStatic('images/trading_app/header/menu.svg')} />
                     }
                 </div>
                 <Drawer
-                    alignment={this.props.alignment}
+                    alignment={alignment}
                     closeBtn={this.closeDrawer}
-                    footer={this.props.footer}
+                    footer={footer}
                 >
-                    {this.props.children}
+                    {children}
                 </Drawer>
             </React.Fragment>
         );
     }
 }
 
+ToggleDrawer.propTypes = {
+    alignment: PropTypes.string,
+    children : PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
+    footer             : PropTypes.func,
+    hideDrawers        : PropTypes.func,
+    icon_class         : PropTypes.string,
+    icon_link          : PropTypes.string,
+    showMainDrawer     : PropTypes.func,
+    showPortfolioDrawer: PropTypes.func,
+};
+
 const drawer_component = connect(
     ({ ui: {
-        showMainDrawer, hideDrawers, showPortfolioDrawer,
+        showMainDrawer, showPortfolioDrawer, hideDrawers,
     } }) => ({
-        showMainDrawer, hideDrawers, showPortfolioDrawer,
+        showMainDrawer, showPortfolioDrawer, hideDrawers,
     })
 )(ToggleDrawer);
 

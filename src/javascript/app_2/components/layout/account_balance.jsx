@@ -1,6 +1,6 @@
-import React from 'react';
-
+import React               from 'react';
 import Client              from '../../../_common/base/client_base';
+import { formatMoney }     from '../../../_common/base/currency_base';
 import { connect }         from '../../store/connect';
 import Button              from '../form/button.jsx';
 import { localize }        from '../../../_common/localize';

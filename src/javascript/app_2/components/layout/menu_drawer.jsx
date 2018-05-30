@@ -1,7 +1,7 @@
 import React from 'react';
 import PerfectScrollbar    from 'react-perfect-scrollbar';
 import { localize }        from '../../../_common/localize';
-import { DrawerItems, ToggleDrawer, DrawerItem }         from '../elements/drawer';
+import { DrawerItems, DrawerItem }         from '../elements/drawer/index.jsx';
 import LanguageSwitcher    from '../elements/language_switcher.jsx';
 
 export const MenuDrawer = () => (
@@ -36,7 +36,7 @@ export const MenuDrawer = () => (
                 />
                 <DrawerItem text={localize('Cashier')} />
                 <hr />
-                <DrawerItem text={localize('Forgot Password')}  link_to="account"/>
+                <DrawerItem text={localize('Forgot Password')}  link_to='account'/>
                 <DrawerItem text={localize('Manage Password')} />
                 <DrawerItem text={localize('Useful Resources')}/>
                 <DrawerItem text={localize('Login History')}/>
