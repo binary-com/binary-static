@@ -29,21 +29,15 @@ const TickDisplay = (() => {
         contract_start_moment,
         counter,
         spots_list,
-        tick_underlying,
-        tick_count,
-        tick_longcode,
-        tick_display_name,
-        tick_date_start,
-        absolute_barrier,
-        tick_shortcode,
         tick_init,
         subscribe,
         response_id,
-        sell_spot_time,
-        exit_tick_time,
-        status;
+        contract;
 
     let id_render = 'tick_chart';
+
+    const winning_color = 'rgba(46, 136, 54, 0.2)';
+    const losing_color  = 'rgba(204, 0, 0, 0.1)';
 
     const initialize = (data, options) => {
         // setting up globals
@@ -56,7 +50,6 @@ const TickDisplay = (() => {
         abs_barrier          = data.abs_barrier;
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
-        status               = '';
 
         if (data.id_render) {
             id_render = data.id_render;
@@ -248,15 +241,15 @@ const TickDisplay = (() => {
     };
 
     const evaluateContractOutcome = () => {
-        if (status && status !== 'open') {
-            if (status === 'won') {
+        if (contract.status && contract.status !== 'open') {
+            if (contract.status === 'won') {
                 if (show_contract_result) {
-                    $(`#${id_render}`).css('background-color', 'rgba(46, 136, 54, 0.2)');
+                    $(`#${id_render}`).css('background-color', winning_color);
                 }
                 updatePurchaseStatus(payout, price, localize('This contract won'));
-            } else if (status === 'lost') {
+            } else if (contract.status === 'lost') {
                 if (show_contract_result) {
-                    $(`#${id_render}`).css('background-color', 'rgba(204, 0, 0, 0.1)');
+                    $(`#${id_render}`).css('background-color', losing_color);
                 }
                 updatePurchaseStatus(0, -price, localize('This contract lost'));
             }
@@ -297,23 +290,23 @@ const TickDisplay = (() => {
                     chart_display_decimals = data.history.prices[0].split('.')[1].length || 2;
                 }
             }
-            if (!tick_init) {
+            if (!tick_init && contract) {
                 let category = 'callput';
-                if (/asian/i.test(tick_shortcode)) {
+                if (/asian/i.test(contract.shortcode)) {
                     category = 'asian';
-                } else if (/digit/i.test(tick_shortcode)) {
+                } else if (/digit/i.test(contract.shortcode)) {
                     category = 'digits';
-                } else if (/touch/i.test(tick_shortcode)) {
+                } else if (/touch/i.test(contract.shortcode)) {
                     category = 'touchnotouch';
                 }
                 initialize({
-                    symbol              : tick_underlying,
-                    number_of_ticks     : tick_count,
+                    symbol              : contract.underlying,
+                    number_of_ticks     : contract.tick_count,
                     contract_category   : category,
-                    longcode            : tick_longcode,
-                    display_symbol      : tick_display_name,
-                    contract_start      : tick_date_start,
-                    abs_barrier         : absolute_barrier,
+                    longcode            : contract.longcode,
+                    display_symbol      : contract.display_name,
+                    contract_start      : contract.date_start,
+                    abs_barrier         : contract.barrier,
                     display_decimals    : chart_display_decimals,
                     show_contract_result: 0,
                 }, data);
@@ -330,11 +323,10 @@ const TickDisplay = (() => {
         }
 
         const has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
-        const has_sold = sell_spot_time
-            && applicable_ticks
-            && applicable_ticks.find(({ epoch }) => epoch === sell_spot_time) !== undefined;
+        const has_sold     = contract && contract.sell_spot_time && applicable_ticks
+            && applicable_ticks.find(({ epoch }) => epoch === contract.sell_spot_time) !== undefined;
 
-        if (!has_finished && !has_sold && (!data.tick || !status || status === 'open')) {
+        if (!has_finished && !has_sold && (!data.tick || !contract.status || contract.status === 'open')) {
             for (let d = 0; d < epoches.length; d++) {
                 let tick;
                 if (data.tick) {
@@ -356,7 +348,8 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    const exit_time = Math.min(sell_spot_time, exit_tick_time) || sell_spot_time || exit_tick_time;
+                    const exit_time = contract ? Math.min(contract.sell_spot_time, contract.exit_tick_time) ||
+                        contract.sell_spot_time || contract.exit_tick_time : '';
 
                     if (!x_indicators[indicator_key] && tick.epoch === exit_time) {
                         x_indicators[indicator_key] = {
@@ -380,13 +373,13 @@ const TickDisplay = (() => {
     };
 
     const addSellSpot = () => {
-        if (!applicable_ticks) return;
+        if (!applicable_ticks || !contract) return;
 
-        let index = applicable_ticks.findIndex(({ epoch }) => epoch === sell_spot_time);
+        let index = applicable_ticks.findIndex(({ epoch }) => epoch === contract.sell_spot_time);
 
         // if sell spot time is later than exit tick time, use that instead
         if (index === -1) {
-            index = applicable_ticks.findIndex(({ epoch }) => epoch === exit_tick_time);
+            index = applicable_ticks.findIndex(({ epoch }) => epoch === contract.exit_tick_time);
         }
 
         if (index === -1) return;
@@ -405,27 +398,18 @@ const TickDisplay = (() => {
     };
 
     const getExitLabel = () =>
-        sell_spot_time && exit_tick_time && sell_spot_time >= exit_tick_time ? 'Exit Spot' : 'Sell Spot';
+        contract && contract.sell_spot_time && contract.exit_tick_time && contract.sell_spot_time >= contract.exit_tick_time ? 'Exit Spot' : 'Sell Spot';
 
-    const updateChart = (data, contract) => {
+    const updateChart = (data, proposal_open_contract) => {
         subscribe = 'false';
-        if (contract) {
-            sell_spot_time = +contract.sell_spot_time;
-            exit_tick_time = +contract.exit_tick_time;
+        if (proposal_open_contract) {
+            contract = proposal_open_contract;
         }
 
         if (data.is_sold) {
             addSellSpot();
-        } else if (contract) {
-            tick_underlying   = contract.underlying;
-            tick_count        = contract.tick_count;
-            tick_longcode     = contract.longcode;
-            tick_display_name = contract.display_name;
-            tick_date_start   = contract.date_start;
-            absolute_barrier  = contract.barrier;
-            tick_shortcode    = contract.shortcode;
-            tick_init         = '';
-            status            = contract.status;
+        } else if (proposal_open_contract) {
+            tick_init = '';
 
             if (data.id_render) {
                 id_render = data.id_render;
@@ -439,8 +423,8 @@ const TickDisplay = (() => {
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
                 subscribe         = 'true';
-            } else if (sell_spot_time && sell_spot_time < contract.date_expiry) {
-                request.end = sell_spot_time;
+            } else if (contract.sell_spot_time && contract.sell_spot_time < contract.date_expiry) {
+                request.end = contract.sell_spot_time;
             } else {
                 request.end = contract.date_expiry;
             }
@@ -454,10 +438,8 @@ const TickDisplay = (() => {
         updateChart,
         init      : initialize,
         resetSpots: () => { spots_list = {}; $(`#${id_render}`).css('background-color', '#F2F2F2'); },
-        setStatus : (contract) => {
-            status = contract.status;
-            sell_spot_time = +contract.sell_spot_time;
-            exit_tick_time = +contract.exit_tick_time;
+        setStatus : (proposal_open_contract = {}) => {
+            contract = proposal_open_contract;
             evaluateContractOutcome();
         },
     };

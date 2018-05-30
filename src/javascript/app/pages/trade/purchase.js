@@ -164,6 +164,7 @@ const Purchase = (() => {
                 id_render           : 'trade_tick_chart',
             });
             TickDisplay.resetSpots();
+            TickDisplay.setStatus(); // reset status first
 
             const request = {
                 proposal_open_contract: 1,
