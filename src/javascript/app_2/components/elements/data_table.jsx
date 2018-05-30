@@ -6,7 +6,7 @@ import classnames from 'classnames';
       2. implement filtering per column
 */
 
-class DataTable extends React.Component {
+class DataTable extends React.PureComponent {
     renderRow(transaction, id) {
         if (!transaction) return null;
         const defaultRenderCell = (data, data_index) => <td className={data_index} key={data_index}>{data}</td>;

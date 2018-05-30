@@ -22,7 +22,7 @@ const fullscreen_map = {
     fnc_exit : ['exitFullscreen',    'webkitExitFullscreen',    'mozCancelFullScreen',  'msExitFullscreen'],
 };
 
-class ToggleFullScreen extends React.Component {
+class ToggleFullScreen extends React.PureComponent {
     constructor(props) {
         super(props);
         this.toggleFullScreen = this.toggleFullScreen.bind(this);
@@ -72,7 +72,7 @@ class ToggleFullScreen extends React.Component {
     }
 }
 
-class Footer extends React.Component {
+class Footer extends React.PureComponent {
     render() {
         return (
             <React.Fragment>

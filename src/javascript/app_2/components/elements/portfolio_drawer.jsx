@@ -2,7 +2,7 @@ import moment       from 'moment';
 import React        from 'react';
 import { localize } from '../../../_common/localize';
 
-class PortfolioDrawer extends React.Component {
+class PortfolioDrawer extends React.PureComponent {
     constructor(props) {
         super(props);
         this.handleVisibility = this.handleVisibility.bind(this);

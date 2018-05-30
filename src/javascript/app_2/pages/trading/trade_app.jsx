@@ -20,7 +20,7 @@ const form_components = [
     { name: 'amount',     Component: Amount },
 ];
 
-class TradeApp extends React.Component {
+class TradeApp extends React.PureComponent {
     isVisible(component_name) {
         return this.props.form_components.includes(component_name);
     }
