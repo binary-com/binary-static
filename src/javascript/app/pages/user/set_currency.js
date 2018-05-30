@@ -35,7 +35,7 @@ const SetCurrency = (() => {
             const $cryptocurrencies = $('<div/>');
             payout_currencies.forEach((c) => {
                 (isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies)
-                    .append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
+                    .append($('<div/>', { class: 'gr-2 gr-3-m currency_wrapper', id: c })
                         .append($('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
                         .append($('<div/>', { class: 'currency-name', html: (isCryptocurrency(c) ? `${getCurrencyName(c)}<br />(${c})` : c) })));
             });
