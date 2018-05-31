@@ -24,11 +24,12 @@ class DrawerItem extends PureComponent {
 }
 
 DrawerItem.propTypes = {
-    href       : PropTypes.string,
-    icon       : PropTypes.string,
-    text       : PropTypes.string,
-    hideDrawers: PropTypes.func,
-    link_to    : PropTypes.string,
+    collapseItems: PropTypes.func,
+    href         : PropTypes.string,
+    icon         : PropTypes.string,
+    text         : PropTypes.string,
+    hideDrawers  : PropTypes.func,
+    link_to      : PropTypes.string,
 };
 
 const drawer_item_component = connect(({ ui: { hideDrawers }}) => ({
