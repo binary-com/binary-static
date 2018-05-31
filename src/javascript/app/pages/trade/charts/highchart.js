@@ -228,13 +228,7 @@ const Highchart = (() => {
                         }
 
                         if (Reset.isReset(contract.contract_type)) {
-                            const { reset_time } = contract; // use epoch to draw non-ticks reset_time
-                            if (!reset_time) return;
-                            drawLineX({
-                                value: parseInt(reset_time),
-                                label: localize('Reset Time'),
-                                color: '#000',
-                            });
+                            drawResetTimeLine();
                         }
                     });
                 }
@@ -373,6 +367,16 @@ const Highchart = (() => {
             const value = type === 'entry' ? entry_tick_time : exit_time;
             chart.series[0].zones[(type === 'entry' ? 0 : 1)].value = value * 1000;
         }
+    };
+
+    const drawResetTimeLine = () => {
+        const { reset_time } = contract; // use epoch to draw non-ticks reset_time
+        if (!reset_time) return;
+        drawLineX({
+            value: parseInt(reset_time),
+            label: localize('Reset Time'),
+            color: '#000',
+        });
     };
 
     const drawBarrier = () => {
@@ -636,6 +640,9 @@ const Highchart = (() => {
             } else {
                 last.update(ohlc, true);
             }
+        }
+        if (Reset.isReset(contract.contract_type)) {
+            drawResetTimeLine();
         }
     };
 
