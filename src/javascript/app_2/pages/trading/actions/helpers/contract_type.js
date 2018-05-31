@@ -174,11 +174,12 @@ const ContractType = (() => {
             ...obj_trade_types,
             ...obj_start_type,
             ...obj_duration_units_list,
+            basis_list      : obj_basis.basis_list,
             start_dates_list: obj_start_dates.start_dates_list,
             barrier_count   : obj_barrier.barrier_count,
             proposal        : Object.assign(proposal, {
-                ...obj_basis,
                 ...obj_duration_unit,
+                basis     : obj_basis.basis,
                 start_date: obj_start_dates.start_date,
                 barrier_1 : obj_barrier.barrier_1,
                 barrier_2 : obj_barrier.barrier_2,
