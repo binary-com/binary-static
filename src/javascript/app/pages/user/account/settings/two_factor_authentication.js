@@ -33,7 +33,7 @@ const TwoFactorAuthentication = (() => {
             $(form_id).setVisibility(1);
 
             FormManager.init(form_id, [
-                { selector: '#otp', validations: ['req', 'number'], request_field: 'otp', no_scroll: true },
+                { selector: '#otp', validations: ['req', 'number', ['length', { min: 6, max: 6   }]], request_field: 'otp', no_scroll: true },
                 { request_field: 'account_security', value: 1 },
                 { request_field: 'totp_action', value: next_state },
             ]);
@@ -75,8 +75,9 @@ const TwoFactorAuthentication = (() => {
         const text = `otpauth://totp/${Client.get('email')}?secret=${key}&issuer=Binary.com`;
         qrcode = new QRCode(document.getElementById('qrcode'), {
             text,
-            width : 130,
-            height: 130,
+            width       : 160,
+            height      : 160,
+            correctLevel: QRCode.CorrectLevel.H,
         });
     };
 
