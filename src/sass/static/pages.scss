@@ -704,7 +704,10 @@ body #not_authenticated_financial ul.checked > li {
 
                 p {
                     margin: 0;
-                    padding-bottom: 15px;
+
+                    &:not(:first-child) {
+                        padding-bottom: 15px;
+                    }
                 }
                 #qrcode {
                     padding-bottom: 60px;

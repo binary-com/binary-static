@@ -54,6 +54,7 @@ const TwoFactorAuthentication = (() => {
         $(`#${current_state}`).setVisibility(0);
         $(form_id).setVisibility(0);
         $('#qrcode').html('');
+        $('#qrcode_key').text('');
         $('.otp-form-group').css('padding-left', '');
         init();
     };
@@ -66,13 +67,15 @@ const TwoFactorAuthentication = (() => {
                 handleError('generate', res.error.message);
                 return;
             }
+            const secret_key = res.account_security.totp.secret_key;
+            $('#qrcode_key').text(secret_key);
 
-            makeQrCode(res.account_security.totp.secret_key);
+            makeQrCode(secret_key);
         });
     };
 
-    const makeQrCode = (key) => {
-        const text = `otpauth://totp/${Client.get('email')}?secret=${key}&issuer=Binary.com`;
+    const makeQrCode = (secret_key) => {
+        const text = `otpauth://totp/${Client.get('email')}?secret=${secret_key}&issuer=Binary.com`;
         qrcode = new QRCode(document.getElementById('qrcode'), {
             text,
             width       : 160,
