@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import classNames               from 'classnames';
 import PropTypes                from 'prop-types';
-import { BinaryLink }           from '../binary_link.jsx';
+import { DrawerItem }           from './drawer_item.jsx';
 
 class DrawerItems extends PureComponent {
     state = { is_collapsed: false };
@@ -36,11 +36,7 @@ class DrawerItems extends PureComponent {
                 >
                     <div className='items-group'>
                         {items.map((item, idx) => (
-                            <div className='drawer-item' key={idx}>
-                                <BinaryLink to={item.link_to}>
-                                    <span className={item.icon || undefined}>{item.text}</span>
-                                </BinaryLink>
-                            </div>
+                            <DrawerItem key={idx} {...item} collapseItems={this.collapseItems}/>
                         ))}
                     </div>
                 </div>

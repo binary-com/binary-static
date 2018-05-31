@@ -5,11 +5,12 @@ import {
     ToggleDrawer,
     DrawerItem }           from '../elements/drawer/index.jsx';
 import { requestLogout }   from '../../base/common';
-import { BinaryLink }      from '../elements/binary_link.jsx';
+import { BinaryLink }      from '../../routes';
 import { localize }        from '../../../_common/localize';
 import Url                 from '../../../_common/url';
 import { AccountBalance }  from './account_balance.jsx';
 import { MenuDrawer }      from './menu_drawer.jsx';
+
 
 const DrawerFooter = () => ( // TODO: update the UI
     <a href='javascript:;' onClick={requestLogout}>{localize('Log out')}</a>

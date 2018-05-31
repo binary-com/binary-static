@@ -1,11 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes                from 'prop-types';
 import { connect }              from '../../../store/connect';
-import { BinaryLink }           from '../binary_link.jsx';
+import { BinaryLink }           from '../../../routes';
 
 class DrawerItem extends PureComponent {
     drawerItemClicked = () => {
         this.props.hideDrawers();
+        if (this.props.collapseItems) {
+            this.props.collapseItems();
+        }
     }
 
     render() {

@@ -96,8 +96,8 @@ Drawer.propTypes = {
     hideDrawers           : PropTypes.func,
     icon_class            : PropTypes.string,
     icon_link             : PropTypes.string,
-    is_main_drawer_on     : PropTypes.func,
-    is_portfolio_drawer_on: PropTypes.func,
+    is_main_drawer_on     : PropTypes.bool,
+    is_portfolio_drawer_on: PropTypes.bool,
 };
 
 const drawer_component = connect(
