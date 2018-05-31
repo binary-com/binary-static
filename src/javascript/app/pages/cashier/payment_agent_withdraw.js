@@ -54,8 +54,10 @@ const PaymentAgentWithdraw = (() => {
 
             const currency = Client.get('currency');
             const form_id  = `#${$(view_ids.form).find('form').attr('id')}`;
-            const min      = isCryptocurrency(currency) && currency !== 'DAI' ? 0.002 : 10;
-            const max      = isCryptocurrency(currency) && currency !== 'DAI' ? 5 : 2000;
+            const is_crypto_not_dai = isCryptocurrency(currency) && currency !== 'DAI';
+            const min      = is_crypto_not_dai ? 0.002 : 10;
+            const max      = is_crypto_not_dai ? 5 : 2000;
+
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
                 { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
