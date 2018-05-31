@@ -1,13 +1,13 @@
 import {
     action,
     extendObservable,
-    observable }              from 'mobx';
-import moment                 from 'moment';
-import ContractType           from '../pages/trading/actions/helpers/contract_type';
+    observable }    from 'mobx';
+import moment       from 'moment';
+import ContractType from '../pages/trading/actions/helpers/contract_type';
 import
     actions, {
-    callProposalOnDidUpdate } from '../pages/trading/actions/index';
-import Client                 from '../../_common/base/client_base';
+    updateStore }   from '../pages/trading/actions/index';
+import Client       from '../../_common/base/client_base';
 
 export default class TradeStore {
     time_interval = undefined;
@@ -61,7 +61,7 @@ export default class TradeStore {
         const obj_new_values = Object.keys(this.proposal).indexOf(name) !== -1 ?
             Object.assign({}, this.proposal, { [name]: value }) :
             { [name]: value };
-        callProposalOnDidUpdate(this, obj_new_values);
+        updateStore(this, obj_new_values);
     }
 
     // Underlying
