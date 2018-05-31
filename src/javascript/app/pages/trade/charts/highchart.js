@@ -128,7 +128,7 @@ const Highchart = (() => {
         }
 
         const is_jp_client = isJPClient();
-        HighchartUI.setLabels(is_chart_delayed);
+        HighchartUI.setLabels(is_chart_delayed, Reset.isReset(contract.contract_type));
         HighchartUI.setChartOptions({
             is_jp_client,
             type,
@@ -374,7 +374,6 @@ const Highchart = (() => {
         if (!reset_time) return;
         drawLineX({
             value: parseInt(reset_time),
-            label: localize('Reset Time'),
             color: '#000',
         });
     };

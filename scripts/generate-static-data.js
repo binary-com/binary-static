@@ -83,7 +83,7 @@ const texts = [
     'End time',
     'Sell time',
     'Charting for this underlying is delayed',
-    'Reset Time',
+    'Reset time',
 
     // trading page
     'year',

@@ -4,12 +4,14 @@ const localize = require('../../../../_common/localize').localize;
 const HighchartUI = (() => {
     let common_time_style,
         common_spot_style,
+        reset_time_style,
         txt,
         chart_options;
 
     const initLabels = () => {
         common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
         common_spot_style = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
+        reset_time_style  = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #000; display: inline-block;';
     };
 
     const getLabels = (option) => {
@@ -25,6 +27,8 @@ const HighchartUI = (() => {
                 return `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `;
             case 'end_time':
                 return `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `;
+            case 'reset_time':
+                return `<div style="${reset_time_style}  border-style: solid;"></div> ${localize('Reset time')} `;
             case 'delay':
                 return `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`;
             default:
@@ -32,12 +36,12 @@ const HighchartUI = (() => {
         }
     };
 
-    const setLabels = (chart_delayed) => {
+    const setLabels = (chart_delayed, is_reset_contract) => {
         // display a guide for clients to know how we are marking entry and exit spots
         txt = (chart_delayed ? getLabels('delay') : '') +
             getLabels('start_time') +
             (history ? getLabels('entry_spot') + getLabels('exit_spot') : '') +
-            getLabels('end_time');
+            getLabels('end_time') + (is_reset_contract ? getLabels('reset_time') : '');
     };
 
     const setChartOptions = (params) => {
