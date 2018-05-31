@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import classNames     from 'classnames';
-import PropTypes      from 'prop-types';
-import { DrawerHeader }   from './drawer_header.jsx';
-import { connect }    from '../../../store/connect';
+import classNames           from 'classnames';
+import PropTypes            from 'prop-types';
+import { DrawerHeader }     from './drawer_header.jsx';
+import { connect }          from '../../../store/connect';
 
 
 class Drawer extends Component {

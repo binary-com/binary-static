@@ -6,9 +6,9 @@ import Client              from '../_common/base/client_base';
 import { redirectToLogin } from '../_common/base/login';
 import { localize }        from '../_common/localize';
 
-import TradeApp             from './pages/trading/trade_app.jsx';
-import Statement            from './pages/statement/statement.jsx';
-import LostPassword         from './pages/account/lost_password.jsx';
+import TradeApp            from './pages/trading/trade_app.jsx';
+import Statement           from './pages/statement/statement.jsx';
+import LostPassword        from './pages/account/lost_password.jsx';
 
 
 const routes = [
@@ -38,7 +38,7 @@ export const BinaryLink = ({ to, children, ...props }) => {
     const route = routes.find(r => r.path === path);
     if (to && route) {
         return (
-            <NavLink replace to={path} activeClassName='active' exact={route.exact} {...props}>
+            <NavLink to={path} activeClassName='active' exact={route.exact} {...props}>
                 {children}
             </NavLink>
         );
