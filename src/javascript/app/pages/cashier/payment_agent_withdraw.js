@@ -20,6 +20,10 @@ const PaymentAgentWithdraw = (() => {
         txt_amount: '#txtAmount',
         txt_desc  : '#txtDescription',
     };
+    const currency = Client.get('currency');
+    const is_crypto_not_dai = isCryptocurrency(currency) && currency !== 'DAI';
+    const min_withdrawal    = is_crypto_not_dai ? 0.002 : 10;
+    const max_withdrawal    = is_crypto_not_dai ? 5 : 2000;
 
     let $views,
         agent_name;
@@ -52,16 +56,12 @@ const PaymentAgentWithdraw = (() => {
             }
             setActiveView(view_ids.form);
 
-            const currency = Client.get('currency');
             const form_id  = `#${$(view_ids.form).find('form').attr('id')}`;
-            const is_crypto_not_dai = isCryptocurrency(currency) && currency !== 'DAI';
-            const min      = is_crypto_not_dai ? 0.002 : 10;
-            const max      = is_crypto_not_dai ? 5 : 2000;
 
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
                 { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
-                { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
+                { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min_withdrawal, max_withdrawal }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
                 { selector: field_ids.txt_desc,          validations: ['general'], request_field: 'description' },
 
                 { request_field: 'currency',              value: currency },
