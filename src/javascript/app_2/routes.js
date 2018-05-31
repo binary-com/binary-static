@@ -1,18 +1,20 @@
 import React               from 'react';
 import { Route, NavLink }  from 'react-router-dom';
-import PropTypes from 'prop-types';
+import PropTypes           from 'prop-types';
 
 import Client              from '../_common/base/client_base';
 import { redirectToLogin } from '../_common/base/login';
 import { localize }        from '../_common/localize';
 
-import TradeApp  from './pages/trading/trade_app.jsx';
-import Statement from './pages/statement/statement.jsx';
+import TradeApp            from './pages/trading/trade_app.jsx';
+import Statement           from './pages/statement/statement.jsx';
+import LostPassword        from './pages/account/lost_password.jsx';
 
 
 const routes = [
-    { path: '/',          component: TradeApp, exact: true },
     { path: '/statement', component: Statement, is_authenticated: true },
+    { path: '/account',   component: LostPassword, is_authenticated: false },
+    { path: '/',          component: TradeApp, exact: true },
 ];
 
 const RouteWithSubRoutes = route => (
