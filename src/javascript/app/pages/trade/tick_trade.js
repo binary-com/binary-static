@@ -1,5 +1,6 @@
 const moment               = require('moment');
 const requireHighstock     = require('./common').requireHighstock;
+const Reset                = require('./reset');
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
@@ -201,9 +202,13 @@ const TickDisplay = (() => {
             }
 
             chart.yAxis[0].addPlotLine({
-                id    : 'tick-barrier',
-                value : barrier_quote,
-                label : { text: `Barrier (${addComma(barrier_quote)})`, align: 'center' },
+                id   : 'tick-barrier',
+                value: barrier_quote,
+                label: {
+                    text : `Barrier (${addComma(barrier_quote)})`,
+                    align: Reset.isReset(contract_category) ? 'right' : 'center',
+                    x    : Reset.isReset(contract_category) ? -60 : 0,
+                },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
@@ -268,7 +273,7 @@ const TickDisplay = (() => {
             addSellSpot();
         }
 
-        if (contract_category === 'reset' && (+contract.entry_spot !== +contract.barrier)) {
+        if (Reset.isReset(contract_category) && Reset.isNewBarrier(contract.entry_spot, contract.barrier)) {
             plotResetSpot(+contract.barrier);
         }
     };
@@ -386,7 +391,7 @@ const TickDisplay = (() => {
                     counter++;
                 }
             }
-            if (contract_category === 'reset' && data.history) {
+            if (Reset.isReset(contract_category) && data.history) {
                 plotResetSpot();
             }
         }
@@ -400,29 +405,30 @@ const TickDisplay = (() => {
     const plotResetSpot = (r_barrier) => {
         if (reset_spot_plotted || !chart) return;
 
+        const is_RESETCALL  = contract.contract_type === 'RESETCALL';
         const entry_barrier = +contract.entry_spot;
         const reset_barrier = +r_barrier || +abs_barrier;
 
         if (!entry_barrier || !reset_barrier) return;
-        
+
         if (entry_barrier !== reset_barrier) {
             removePlotLine('tick-barrier', 'y');
             
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-reset-barrier',
                 value : reset_barrier,
-                label : { text: localize('Reset Barrier ([_1])', [addComma(reset_barrier)]), align: 'center' },
+                label : { text: localize('Reset Barrier ([_1])', [addComma(reset_barrier)]), align: 'right', x: -60, y: is_RESETCALL ? 15 : -5 },
                 color : 'green',
                 width : 2,
-                zIndex: 2,
+                zIndex: 3,
             });
             chart.yAxis[0].addPlotLine({
                 id       : 'tick-barrier',
                 value    : entry_barrier,
-                label    : { text: localize('Barrier ([_1])', [addComma(entry_barrier)]), align: 'center' },
+                label    : { text: localize('Barrier ([_1])', [addComma(entry_barrier)]),    align: 'right', x: -60, y: is_RESETCALL ? -5 : 15 },
                 color    : 'green',
                 width    : 2,
-                zIndex   : 2,
+                zIndex   : 3,
                 dashStyle: 'dot',
             });
 

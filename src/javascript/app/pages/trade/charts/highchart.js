@@ -387,9 +387,12 @@ const Highchart = (() => {
                     const label = Lookback.getBarrierLabel(contract_type);
                     addPlotLine({ id: 'barrier',       value: barrier * 1,      label: localize(`${label} ([_1])`, [addComma(barrier)]),           dashStyle: 'Dot'   }, 'y');
                 } else if (Reset.isReset(contract_type)) {
-                    addPlotLine({ id: 'barrier',       value: entry_spot * 1,   label: localize('Barrier ([_1])', [addComma(entry_spot)]),         dashStyle: 'Dot'   }, 'y');
                     if (Reset.isNewBarrier(entry_spot, barrier)) {
-                        addPlotLine({ id: 'reset_barrier', value: barrier * 1,  label: localize('Reset Barrier ([_1])', [addComma(barrier)]),      dashStyle: 'Solid' }, 'y');
+                        addPlotLine({ id: 'barrier',       value: entry_spot * 1, label: localize('Barrier ([_1])', [addComma(entry_spot)]),     dashStyle: 'Dot',   textBottom: contract_type !== 'RESETCALL', x: -60, align: 'right'  }, 'y');
+                        addPlotLine({ id: 'reset_barrier', value: barrier * 1,    label: localize('Reset Barrier ([_1])', [addComma(barrier)]),  dashStyle: 'Solid', textBottom: contract_type === 'RESETCALL', x: -60, align: 'right'   }, 'y');
+                    } else {
+                        addPlotLine({ id: 'barrier',       value: entry_spot * 1, label: localize('Barrier ([_1])', [addComma(entry_spot)]),     dashStyle: 'Dot', x: -60, align: 'right'  }, 'y');
+
                     }
                 } else {
                     addPlotLine({ id: 'barrier',       value: barrier * 1,      label: localize('Barrier ([_1])', [addComma(barrier)]),            dashStyle: 'Dot' },   'y');
