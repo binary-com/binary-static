@@ -33,24 +33,31 @@ export const BinaryRoutes = () => routes.map((route, idx) => (
     <RouteWithSubRoutes key={idx} {...route} />
 ));
 
+const normalizePath = (path) => /^\//.test(path) ? path : `/${path || ''}`; // Default to '/'
+
+const getRouteInfo = (path) => routes.find(r => r.path === normalizePath(path));
+
+export const isRouteVisible = (path, route = getRouteInfo(path)) =>
+    !(route && route.is_authenticated && !Client.isLoggedIn());
+
 export const BinaryLink = ({ to, children, ...props }) => {
-    const path = /^\//.test(to) ? to : `/${to || ''}`; // Default to '/'
-    const route = routes.find(r => r.path === path);
-    if (to && route) {
-        return (
+    const path  = normalizePath(to);
+    const route = getRouteInfo(path);
+
+    if (!route) {
+        throw new Error(`Route not found: ${to}`);
+    }
+
+    return (
+        to ?
             <NavLink to={path} activeClassName='active' exact={route.exact} {...props}>
                 {children}
             </NavLink>
-        );
-    } else if (!to) {
-        return (
+        :
             <a href='javascript:;' {...props}>
                 {children}
             </a>
-        );
-    }
-    // else
-    throw new Error(`Route not found: ${to}`);
+    );
 };
 
 BinaryLink.propTypes = {

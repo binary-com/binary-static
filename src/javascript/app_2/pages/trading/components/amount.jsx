@@ -5,8 +5,8 @@ import Fieldset     from '../../../components/form/fieldset.jsx';
 import InputField   from '../../../components/form/input_field.jsx';
 import { connect }  from '../../../store/connect';
 import Client       from '../../../../_common/base/client_base';
+import { addComma } from '../../../../_common/base/currency_base';
 import { localize } from '../../../../_common/localize';
-import { addComma } from '../../../../app/common/currency';
 
 const basis_list = [
     { text: localize('Payout'), value: 'payout' },

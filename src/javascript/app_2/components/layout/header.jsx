@@ -12,7 +12,7 @@ import { AccountBalance }  from './account_balance.jsx';
 import { MenuDrawer }      from './menu_drawer.jsx';
 
 
-const DrawerFooter = () => ( // TODO: update the UI
+const DrawerFooter = () => (Client.isLoggedIn() && // TODO: update the UI
     <a href='javascript:;' onClick={requestLogout}>{localize('Log out')}</a>
 );
 
