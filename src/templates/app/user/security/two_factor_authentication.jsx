@@ -49,7 +49,7 @@ const TwoFactorAuthentication = () => (
                         <div className='circle'>1</div>
                         <div className='content'>
                             <p>{it.L('Scan the QR code below with your authentication app (such as [_1], [_2], and [_3]).', '<strong>Google Authenticator</strong>', '<strong>Authy</strong>', '<strong>Duo Mobile</strong>')}</p>
-                            <p>{it.L('\nIf you can\'t use a barcode enter this text code instead')} <strong><span id='qrcode_key' /></strong></p>
+                            <p>{it.L('If you can\'t use a barcode enter this text code instead')} <strong><span id='qrcode_key' /></strong></p>
                             <div id='qrcode_loading'><Loading /></div>
                             <ErrorMessage id='generate_error' />
                             <div id='qrcode' />
