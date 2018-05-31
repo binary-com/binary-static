@@ -10,7 +10,7 @@ import { localize }        from '../../../_common/localize';
 import Url                 from '../../../_common/url';
 import { AccountBalance }  from './account_balance.jsx';
 import { MenuDrawer }      from './menu_drawer.jsx';
-
+import Client              from '../../../_common/base/client_base';
 
 const DrawerFooter = () => (Client.isLoggedIn() && // TODO: update the UI
     <a href='javascript:;' onClick={requestLogout}>{localize('Log out')}</a>
