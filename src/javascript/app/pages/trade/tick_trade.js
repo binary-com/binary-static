@@ -426,6 +426,7 @@ const TickDisplay = (() => {
                 dashStyle: 'dot',
             });
 
+            CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Reset Barrier')}: ${reset_barrier}`);
             reset_spot_plotted = true;
         }
 
