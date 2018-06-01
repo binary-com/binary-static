@@ -20,10 +20,6 @@ const PaymentAgentWithdraw = (() => {
         txt_amount: '#txtAmount',
         txt_desc  : '#txtDescription',
     };
-    const currency = Client.get('currency');
-    const is_crypto_not_dai = isCryptocurrency(currency) && currency !== 'DAI';
-    const min_withdrawal    = is_crypto_not_dai ? 0.002 : 10;
-    const max_withdrawal    = is_crypto_not_dai ? 5 : 2000;
 
     let $views,
         agent_name;
@@ -56,7 +52,11 @@ const PaymentAgentWithdraw = (() => {
             }
             setActiveView(view_ids.form);
 
-            const form_id  = `#${$(view_ids.form).find('form').attr('id')}`;
+            const form_id           = `#${$(view_ids.form).find('form').attr('id')}`;
+            const currency          = Client.get('currency');
+            const is_crypto_not_dai = isCryptocurrency(currency) && currency !== 'DAI';
+            const min_withdrawal    = is_crypto_not_dai ? 0.002 : 10;
+            const max_withdrawal    = is_crypto_not_dai ? 5 : 2000;
 
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
