@@ -120,7 +120,7 @@ const MBTradingEvents = (() => {
                 error_msg = localize('Should be a valid number.');
             } else if (+payout_amount > max_client_amount) {
                 is_valid  = false;
-                error_msg = localize('Should be below [_1]', [max_client_amount]);
+                error_msg = localize('Should be less than [_1]', [max_client_amount]);
             }
 
             // if value has decimal places
