@@ -417,7 +417,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-reset-barrier',
                 value : reset_barrier,
-                label : { text: localize('Reset Barrier ([_1])', [addComma(reset_barrier)]), align: 'right', x: -60, y: is_resetcall ? 15 : -5 },
+                label : { text: `${localize('Reset Barrier')} (${addComma(reset_barrier)})`, align: 'right', x: -60, y: is_resetcall ? 15 : -5 },
                 color : 'green',
                 width : 2,
                 zIndex: 3,
@@ -425,7 +425,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id       : 'tick-barrier',
                 value    : entry_barrier,
-                label    : { text: localize('Barrier ([_1])', [addComma(entry_barrier)]),    align: 'right', x: -60, y: is_resetcall ? -5 : 15 },
+                label    : { text: `${localize('Barrier')} (${addComma(entry_barrier)})`,    align: 'right', x: -60, y: is_resetcall ? -5 : 15 },
                 color    : 'green',
                 width    : 2,
                 zIndex   : 3,
