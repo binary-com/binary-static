@@ -215,7 +215,7 @@ const TickDisplay = (() => {
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-barrier',
                 value : barrier_quote,
-                label : { text: localize('Barrier ([_1])', [addComma(barrier_quote)]), align: 'center' },
+                label : { text: `${localize('Barrier')} (${addComma(barrier_quote)})`, align: 'center' },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
