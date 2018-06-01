@@ -1,5 +1,18 @@
 const Callputspread = (() => {
-    let el_slider, el_interval;
+    const state = {
+        slider: {
+            el: null,
+        },
+        interval: {
+            el: null,
+            x : undefined,
+            y0: undefined,
+            y1: undefined,
+            cap_width: 10,
+            stroke: '#2a3052',
+            strokeWidth: 2,
+        },
+    };
 
     const getSliderPath = (x, y, width, height) => {
         const half = height / 2;
@@ -25,11 +38,23 @@ const Callputspread = (() => {
         ];
     };
 
+    const redrawVerticalInterval = (chart) => {
+        if (state.interval.el) {
+            state.interval.el.destroy();
+        }
+        const { x, y0, y1, cap_width, stroke, strokeWidth } = state.interval;
+        state.interval.el = chart.renderer
+            .path(getVerticalIntervalPath(x, y0, y1, cap_width))
+            .attr({
+                stroke,
+                'stroke-width': strokeWidth,
+            })
+            .add();
+    };
+
     const redrawHandler = (e) => {
         window.chart = e.target;
         if (!e.target) return;
-        if (el_slider) el_slider.destroy();
-        if (el_interval) el_interval.destroy();
 
         // TODO: vertical line can be series added with .addSeries and removed with .destroy
         // or SVG added with renderer
@@ -37,41 +62,20 @@ const Callputspread = (() => {
         const chart = e.target;
         // TODO: point slider to calculated Y point
         // pass from highcharts.js in params
-        const points = chart.series[0].data;
-        const last_point = points[points.length - 1];
 
         const plot_end_x = chart.plotWidth + chart.plotLeft;
 
         const [high_plot_y, low_plot_y] = chart.series
             .find(series => series.name === 'barrier_points')
             .data
-            .map(point => point.plotY);
+            .map(point => point.plotY + chart.plotTop);
 
-        el_slider = chart.renderer
-            .path(getSliderPath(
-                chart.plotWidth + chart.plotLeft + 5,
-                last_point.plotY + chart.plotTop,
-                40,
-                15
-            ))
-            .attr({
-                fill: '#FF0000',
-                'stroke-width': 0,
-            })
-            .add();
-
-        el_interval = chart.renderer
-            .path(getVerticalIntervalPath(
-                plot_end_x,
-                high_plot_y + chart.plotTop,
-                low_plot_y + chart.plotTop,
-                10
-            ))
-            .attr({
-                stroke: '#2a3052',
-                'stroke-width': 1,
-            })
-            .add();
+        if (high_plot_y !== state.interval.y0 || low_plot_y !== state.interval.y1) {
+            state.interval.x  = plot_end_x;
+            state.interval.y0 = high_plot_y;
+            state.interval.y1 = low_plot_y;
+            redrawVerticalInterval(chart);
+        }
     };
 
     const isCallputspread = (contract_type) => (
