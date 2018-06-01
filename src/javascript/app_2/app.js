@@ -5,6 +5,7 @@ import { HashRouter as Router } from 'react-router-dom';
 import NetworkMonitor           from './base/network_monitor';
 import ClientStore              from './store/client_store';
 import { MobxProvider }         from './store/connect';
+import MainStore                from './store/main_store';
 import TradeStore               from './store/trade_store';
 import UIStore                  from './store/ui_store';
 import Footer                   from './components/layout/footer.jsx';
@@ -17,13 +18,14 @@ configure({ enforceActions: true });
 
 const stores = {
     client: new ClientStore(),
+    main  : new MainStore(),
     trade : new TradeStore(),
     ui    : new UIStore(),
 };
 
 const initApp = () => {
     Client.init();
-    NetworkMonitor.init(stores.client);
+    NetworkMonitor.init(stores);
 
     stores.trade.init();
 

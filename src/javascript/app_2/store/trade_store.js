@@ -10,11 +10,6 @@ export default class TradeStore {
     time_interval = undefined;
 
     @action.bound init() {
-        // this.time_interval = setInterval(actions.initTime, 1000);
-        // actions.getCountryAsync();
-        //
-        // actions.getTicks(action('getTicks', (r) => { this.tick = r; }));
-
         ContractType.buildContractTypesConfig(this.proposal.symbol).then(action(() => {
             updateStore(this, ContractType.getContractCategories());
         }));
@@ -83,9 +78,6 @@ export default class TradeStore {
     @observable message   = '';
     @observable tick      = '';
     @observable proposals = {};
-
-    // TODO: retrieve from upper state
-    @observable server_time = moment.utc();
 
     // TODO: to remove dummy portfolio value
     @observable portfolios = [

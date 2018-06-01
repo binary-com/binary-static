@@ -1,13 +1,15 @@
-import { flow }             from 'mobx';
+import { action, flow }     from 'mobx';
 import DAO                  from '../data/dao';
 import Client               from '../../_common/base/client_base';
 import { setCurrencies }    from '../../_common/base/currency_base';
 import Login                from '../../_common/base/login';
+import ServerTime           from '../../_common/base/server_time';
 import BinarySocket         from '../../_common/base/socket_base';
 import { State }            from '../../_common/storage';
 import { getPropertyValue } from '../../_common/utility';
 
-let client_store;
+let client_store,
+    main_store;
 
 // TODO: update commented statements to the corresponding functions from app_2
 const BinarySocketGeneral = (() => {
@@ -21,7 +23,7 @@ const BinarySocketGeneral = (() => {
                 }
                 DAO.subscribeWebsiteStatus(ResponseHandlers.websiteStatus);
             }
-            // Clock.startClock();
+            ServerTime.init(action('setTime', () => { main_store.server_time = ServerTime.get(); }));
         }
     };
 
@@ -127,7 +129,8 @@ const BinarySocketGeneral = (() => {
     };
 
     const init = (store) => {
-        client_store = store;
+        client_store = store.client;
+        main_store   = store.main;
 
         return {
             onOpen,

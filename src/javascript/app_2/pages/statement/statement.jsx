@@ -335,7 +335,7 @@ Statement.defaultProps = {
 };
 
 export default connect(
-    ({trade}) => ({
-        server_time: trade.server_time,
+    ({ main }) => ({
+        server_time: main.server_time,
     })
 )(Statement);

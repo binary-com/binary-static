@@ -65,10 +65,10 @@ class TradeApp extends React.PureComponent {
 }
 
 export default connect(
-    ({ trade, ui }) => ({
+    ({ main, trade, ui }) => ({
+        server_time           : main.server_time,
         form_components       : trade.form_components,
         portfolios            : trade.portfolios,
-        server_time           : trade.server_time,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
     })
