@@ -41,12 +41,8 @@ const PersonalDetails = () => (
     <React.Fragment>
         <h1>{it.L('Personal Details')}</h1>
 
-        <p className='notice-msg center-text invisible' id='tax_information_notice'>
-            {it.L('Please complete the tax information before proceeding.')}
-        </p>
-
-        <p className='notice-msg center-text invisible' id='account_opening_reason_notice'>
-            {it.L('Please set your account opening reason before proceeding.')}
+        <p className='notice-msg center-text invisible' id='missing_details_notice'>
+            {it.L('Please complete the missing information before proceeding.')}
         </p>
 
         <div id='loading'>
@@ -55,7 +51,7 @@ const PersonalDetails = () => (
 
         <form className='form gr-padding-10 invisible' id='frmPersonalDetails'>
             <Fieldset legend={it.L('Details')}>
-                <FormRow type='label'  label={it.L('Name')} is_bold id='lbl_name' row_class='invisible' row_id='row_name' />
+                <FormRow type='label'  label={it.L('Name')} is_bold id='lbl_name' row_class='invisible RealAcc JpAcc' row_id='row_name' />
                 <FormRow type='label'  label={it.L('Gender')} is_bold id='lbl_gender' row_class='invisible JpAcc' />
                 <FormRow type='label'  label={it.L('Date of birth')} is_bold id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' />
                 <FormRow type='label'  label={it.L('Place of birth')} id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible' />
