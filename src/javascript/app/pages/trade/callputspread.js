@@ -1,6 +1,6 @@
 const Callputspread = (() => {
     let el_slider;
-    
+
     const getSliderPath = (x, y, width, height) => {
         const half = height / 2;
         return [
@@ -24,8 +24,10 @@ const Callputspread = (() => {
         const chart = e.target;
         // TODO: point slider to calculated Y point
         // pass from highcharts.js in params
+        console.log(chart.series);
         const points = chart.series[0].data;
         const last_point = points[points.length - 1];
+
         el_slider = chart.renderer
             .path(getSliderPath(
                 last_point.plotX + chart.plotLeft + 5,
@@ -49,9 +51,31 @@ const Callputspread = (() => {
         chart_options.redrawHandler = redrawHandler;
     };
 
+    const alwaysShowBarriers = (chart, high_barrier, low_barrier) => {
+        // Add invisible points to barriers,
+        // so barriers are always visible on the chart
+        const x0 = chart.series[0].data[0].x;
+        chart.addSeries({
+            name: 'barrier_points',
+            type: 'scatter',
+            marker: { enabled: false },
+            data: [
+                {
+                    y: +high_barrier,
+                    x: x0,
+                },
+                {
+                    y: +low_barrier,
+                    x: x0,
+                },
+            ],
+        });
+    };
+
     return {
         augmentChartOptions,
         isCallputspread,
+        alwaysShowBarriers,
     };
 })();
 

@@ -393,24 +393,7 @@ const Highchart = (() => {
                     addPlotLine({ id: 'low_barrier',  value: +low_barrier,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
                 }
                 if (Callputspread.isCallputspread(contract_type)) {
-                    // Add invisible points to barriers,
-                    // so barriers are always visible on the chart
-                    const x0 = chart.series[0].data[0].x;
-                    chart.addSeries({
-                        name: 'barrier_points',
-                        type: 'scatter',
-                        marker: { enabled: false },
-                        data: [
-                            {
-                                y: +high_barrier,
-                                x: x0,
-                            },
-                            {
-                                y: +low_barrier,
-                                x: x0,
-                            },
-                        ],
-                    });
+                    Callputspread.alwaysShowBarriers(chart, high_barrier, low_barrier);
                 }
             }
         }
