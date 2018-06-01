@@ -53,7 +53,6 @@ const Duration = ({
 
     return (
         <Fieldset
-            time={server_time}
             header={localize('Trade Duration')}
             icon='trade-duration'
             tooltip={localize('Text for Duration goes here.')}

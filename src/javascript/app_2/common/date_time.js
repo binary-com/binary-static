@@ -10,3 +10,5 @@ export const momentDateTime = (date, time) => {
 };
 
 export const convertDateTimetoUnix = (date, time) => momentDateTime(date, time).unix();
+
+export const toGMTFormat = (time) => moment(time || undefined).utc().format('YYYY-MM-DD HH:mm:ss [GMT]');

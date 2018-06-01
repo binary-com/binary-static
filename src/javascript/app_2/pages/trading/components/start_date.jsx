@@ -9,7 +9,6 @@ const StartDate = ({
     start_date,
     start_dates_list,
     start_time,
-    server_time,
     onChange,
     is_nativepicker,
     is_minimized,
@@ -27,7 +26,6 @@ const StartDate = ({
     }
     return (
         <Fieldset
-            time={server_time}
             header={localize('Start time')}
             icon='start-time'
             tooltip={localize('Text for Start Time goes here.')}
@@ -57,7 +55,6 @@ const StartDate = ({
 
 export default connect(
     ({ main, trade }) => ({
-        server_time     : main.server_time,
         start_date      : trade.proposal.start_date,
         start_dates_list: trade.start_dates_list,
         start_time      : trade.proposal.start_time,

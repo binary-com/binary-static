@@ -1,7 +1,8 @@
-import React          from 'react';
-import Popover        from '../elements/popover.jsx';
-import { BinaryLink } from '../../routes';
-import { connect }    from '../../store/connect';
+import React           from 'react';
+import Popover         from '../elements/popover.jsx';
+import { toGMTFormat } from '../../common/date_time';
+import { BinaryLink }  from '../../routes';
+import { connect }     from '../../store/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (
     <Popover
@@ -76,6 +77,7 @@ class Footer extends React.PureComponent {
     render() {
         return (
             <React.Fragment>
+                <div className='server-time'>{toGMTFormat(this.props.server_time)}</div>
                 {this.props.items.length &&
                     <div className='footer-links'>
                         <TogglePortfolioDrawer {...this.props} />
@@ -98,7 +100,8 @@ class Footer extends React.PureComponent {
 }
 
 export default connect(
-    ({ ui }) => ({
+    ({ main, ui }) => ({
+        server_time           : main.server_time,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
     })
