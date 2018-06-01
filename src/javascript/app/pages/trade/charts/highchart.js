@@ -364,6 +364,7 @@ const Highchart = (() => {
     };
 
     const drawBarrier = () => {
+        console.log('draw barrier is called');
         if (chart.yAxis[0].plotLinesAndBands.length === 0) {
             const {contract_type, barrier, high_barrier, low_barrier} = contract;
             if (barrier) {
@@ -374,15 +375,6 @@ const Highchart = (() => {
                 } else {
                     addPlotLine({ id: 'barrier',      value: +barrier,      label: localize('Barrier ([_1])', [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
                 }
-                // TODO: maybe one series with type scatter?
-                chart.addSeries({
-                    name: 'barrier_dot',
-                    marker: { enabled: false },
-                    data: [{
-                        y: +barrier,
-                        x: chart.series[0].data[0].x,
-                    }],
-                });
             } else if (high_barrier && low_barrier) {
                 prev_barriers[1] = high_barrier;
                 prev_barriers[0] = low_barrier;
@@ -394,21 +386,23 @@ const Highchart = (() => {
                     addPlotLine({ id: 'high_barrier', value: +high_barrier, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
                     addPlotLine({ id: 'low_barrier',  value: +low_barrier,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
                 }
+                console.log(contract_type);
+                // TODO: only for call put spread
+                // Add points to barriers, so they are always visible on the chart
                 chart.addSeries({
-                    name: 'high_barrier_dot',
+                    name: 'barrier_points',
+                    type: 'scatter',
                     marker: { enabled: false },
-                    data: [{
-                        y: +high_barrier,
-                        x: chart.series[0].data[0].x,
-                    }],
-                });
-                chart.addSeries({
-                    name: 'low_barrier_dot',
-                    marker: { enabled: false },
-                    data: [{
-                        y: +low_barrier,
-                        x: chart.series[0].data[0].x,
-                    }],
+                    data: [
+                        {
+                            y: +high_barrier,
+                            x: chart.series[0].data[0].x,
+                        },
+                        {
+                            y: +low_barrier,
+                            x: chart.series[0].data[0].x,
+                        },
+                    ],
                 });
             }
         }
