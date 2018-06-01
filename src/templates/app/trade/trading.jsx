@@ -146,7 +146,7 @@ const Trading = () => (
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
                                                 <select id='currency' className='currency small_width_input' />
-                                                <input id='amount' type='text' data-lpignore='true' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
+                                                <input id='amount' type='text' data-lpignore='true' step='any' maxLength='10' className='medium_width_input' autoComplete='off' />
                                             </div>
                                         </div>
                                     </div>
