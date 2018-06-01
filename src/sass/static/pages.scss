@@ -671,8 +671,8 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .two_factor_auth {
-    .padding-left-50 {
-        padding-left: 50px;
+    .padding-left-medium {
+        padding-left: 45px;
     }
     .otp-form-group {
         display: flex;
@@ -688,7 +688,7 @@ body #not_authenticated_financial ul.checked > li {
     }
     .steps.steps-vertical {
         flex-direction: column;
-        padding-left: 20px;
+        padding-left: 15px;
 
         .step {
             position: relative;

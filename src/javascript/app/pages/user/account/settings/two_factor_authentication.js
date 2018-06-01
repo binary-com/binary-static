@@ -54,7 +54,7 @@ const TwoFactorAuthentication = (() => {
             });
 
             if (current_state === 'disabled') {
-                $form.addClass('padding-left-50');
+                $form.addClass('padding-left-medium');
                 initQRCode();
             }
         });
@@ -62,13 +62,11 @@ const TwoFactorAuthentication = (() => {
 
     const resetComponent = () => {
         $(`#${current_state}`).setVisibility(0);
-        $form.setVisibility(0).removeClass('padding-left-50');
+        $form.setVisibility(0).removeClass('padding-left-medium');
+        $qrcode_key.text('');
 
         $two_factor_loading.setVisibility(1);
         $qrcode_loading.setVisibility(1);
-
-        $('#qrcode').html('');
-        $qrcode_key.text('');
 
         init();
     };
@@ -89,6 +87,7 @@ const TwoFactorAuthentication = (() => {
     };
 
     const makeQrCode = (secret_key) => {
+        $('#qrcode').html('');
         const text = `otpauth://totp/${Client.get('email')}?secret=${secret_key}&issuer=Binary.com`;
         const qrcode = new QRCode(document.getElementById('qrcode'), {  // eslint-disable-line no-unused-vars
             text,
