@@ -10,21 +10,25 @@ const TwoFactorAuthentication = (() => {
     const state = ['disabled', 'enabled'];
     let $btn_submit,
         $form,
+        $two_factor_loading,
+        $qrcode_loading,
         $qrcode_key,
         current_state,
         next_state;
 
     const onLoad = () => {
-        $btn_submit = $('#btn_submit');
-        $form       = $(`${form_id}`);
-        $qrcode_key = $('#qrcode_key');
+        $btn_submit         = $('#btn_submit');
+        $form               = $(`${form_id}`);
+        $two_factor_loading = $('#two_factor_loading');
+        $qrcode_loading     = $('#qrcode_loading');
+        $qrcode_key         = $('#qrcode_key');
 
         init();
     };
 
     const init = () => {
         BinarySocket.send({ account_security: 1, totp_action: 'status'}).then((res) => {
-            $('#two_factor_loading').remove();
+            $two_factor_loading.setVisibility(0);
 
             if (res.error) {
                 handleError('status', res.error.message);
@@ -59,14 +63,19 @@ const TwoFactorAuthentication = (() => {
     const resetComponent = () => {
         $(`#${current_state}`).setVisibility(0);
         $form.setVisibility(0).removeClass('padding-left-50');
+
+        $two_factor_loading.setVisibility(1);
+        $qrcode_loading.setVisibility(1);
+
         $('#qrcode').html('');
         $qrcode_key.text('');
+
         init();
     };
 
     const initQRCode = () => {
         BinarySocket.send({ account_security: 1, totp_action: 'generate'}).then((res) => {
-            $('#qrcode_loading').setVisibility(0);
+            $qrcode_loading.setVisibility(0);
 
             if (res.error) {
                 handleError('generate', res.error.message);
