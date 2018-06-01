@@ -110,7 +110,6 @@ const MBTradingEvents = (() => {
         const validatePayout = (payout_amount, $error_wrapper) => {
             const market              = MBSymbols.getAllSymbols()[MBDefaults.get('underlying')].market;
             const selected_currency   = MBDefaults.get('currency');
-            const min_amount          = State.getResponse(`landing_company.financial_company.currency_config.${market}.${selected_currency}.min_payout`) || 0;
             const max_client_amount   = State.getResponse(`landing_company.financial_company.currency_config.${market}.${selected_currency}.max_payout`) || 5000;
 
             let is_valid  = true;
@@ -119,9 +118,9 @@ const MBTradingEvents = (() => {
             if (!payout_amount || isNaN(payout_amount)) {
                 is_valid  = false;
                 error_msg = localize('Should be a valid number.');
-            } else if (+payout_amount < min_amount || +payout_amount > max_client_amount) {
+            } else if (+payout_amount > max_client_amount) {
                 is_valid  = false;
-                error_msg = localize('Should be between [_1] and [_2]', [min_amount, max_client_amount]);
+                error_msg = localize('Should be below [_1]', [max_client_amount]);
             }
 
             // if value has decimal places
