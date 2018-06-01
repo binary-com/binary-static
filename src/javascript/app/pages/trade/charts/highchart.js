@@ -2,6 +2,7 @@ const HighchartUI      = require('./highchart.ui');
 const getHighstock     = require('../common').requireHighstock;
 const MBContract       = require('../../mb_trade/mb_contract');
 const MBDefaults       = require('../../mb_trade/mb_defaults');
+const Callputspread    = require('../../trade/callputspread');
 const Defaults         = require('../../trade/defaults');
 const GetTicks         = require('../../trade/get_ticks');
 const Lookback         = require('../../trade/lookback');
@@ -128,7 +129,8 @@ const Highchart = (() => {
 
         const is_jp_client = isJPClient();
         HighchartUI.setLabels(is_chart_delayed);
-        HighchartUI.setChartOptions({
+
+        const chart_options = {
             is_jp_client,
             type,
             data,
@@ -138,7 +140,12 @@ const Highchart = (() => {
             entry_time: entry_tick_time ? entry_tick_time * 1000 : start_time * 1000,
             exit_time : exit_time ? exit_time * 1000 : null,
             user_sold : isSoldBeforeExpiry(),
-        });
+        };
+        if (Callputspread.isCallputspread(contract.contract_type)) {
+            Callputspread.augmentChartOptions(chart_options);
+        }
+        HighchartUI.setChartOptions(chart_options);
+
         return getHighstock((Highcharts) => {
             Highcharts.setOptions(HighchartUI.getHighchartOptions(is_jp_client));
             if (!el) chart = null;
@@ -364,7 +371,6 @@ const Highchart = (() => {
     };
 
     const drawBarrier = () => {
-        console.log('draw barrier is called');
         if (chart.yAxis[0].plotLinesAndBands.length === 0) {
             const {contract_type, barrier, high_barrier, low_barrier} = contract;
             if (barrier) {
@@ -388,7 +394,8 @@ const Highchart = (() => {
                 }
                 console.log(contract_type);
                 // TODO: only for call put spread
-                // Add points to barriers, so they are always visible on the chart
+                // Add invisible points to barriers,
+                // so barriers are always visible on the chart
                 chart.addSeries({
                     name: 'barrier_points',
                     type: 'scatter',

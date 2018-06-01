@@ -1,5 +1,6 @@
-const addComma = require('../../../common/currency').addComma;
-const localize = require('../../../../_common/localize').localize;
+const addComma      = require('../../../common/currency').addComma;
+const localize      = require('../../../../_common/localize').localize;
+const Callputspread = require('../../trade/callputspread');
 
 const HighchartUI = (() => {
     let common_time_style,
@@ -33,18 +34,6 @@ const HighchartUI = (() => {
         }
     };
 
-    function getSliderPath(x, y, width, height) {
-        const half = height / 2;
-        return [
-            'M', x, y,
-            'l', half, -half,
-            'h', width,
-            'v', height,
-            'h', -width,
-            'z',
-        ];
-    }
-
     const setLabels = (chart_delayed) => {
         // display a guide for clients to know how we are marking entry and exit spots
         txt = (chart_delayed ? getLabels('delay') : '') +
@@ -62,37 +51,10 @@ const HighchartUI = (() => {
                 renderTo       : params.el,
                 animation      : false,
                 marginLeft     : 30,
-                // TODO: 60 for call put spread only
-                marginRight    : 60,
-                // TODO: add slider for call put spread only
+                marginRight    : params.marginRight || 30,
                 events: {
-                    redraw: (e) => {
-                        window.chart = e.target;
-                        if (!e.target) return;
-                        if (el_slider) el_slider.destroy();
-
-                        // TODO: vertical line can be series added with .addSeries and removed with .destroy
-                        // or SVG added with renderer
-
-                        const chart = e.target;
-                        // TODO: point slider to calculated Y point
-                        // pass from highcharts.js in params
-                        const points = chart.series[0].data;
-                        const last_point = points[points.length - 1];
-                        el_slider = chart.renderer
-                            .path(getSliderPath(
-                                last_point.plotX + chart.plotLeft + 5,
-                                last_point.plotY + chart.plotTop,
-                                40,
-                                15,
-                            ))
-                            .attr({
-                                fill: '#FF0000',
-                                'stroke-width': 0,
-                            })
-                            .add();
-                    },
-                }
+                    redraw: params.redrawHandler,
+                },
             },
             title: {
                 text : params.title,
