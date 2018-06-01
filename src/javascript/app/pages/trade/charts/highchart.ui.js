@@ -2,33 +2,24 @@ const addComma = require('../../../common/currency').addComma;
 const localize = require('../../../../_common/localize').localize;
 
 const HighchartUI = (() => {
-    let common_time_style,
-        common_spot_style,
-        reset_time_style,
-        txt,
+    const common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; display: inline-block;';
+    const common_spot_style = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
+
+    let txt,
         chart_options;
 
-    const initLabels = () => {
-        common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
-        common_spot_style = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
-        reset_time_style  = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #000; display: inline-block;';
-    };
-
     const getLabels = (option) => {
-        if (!common_time_style || !common_spot_style) {
-            initLabels();
-        }
         switch (option) {
             case 'start_time':
-                return `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start time')} `;
+                return `<div style="${common_time_style} border-color: #e98024; border-style: solid;"></div> ${localize('Start time')} `;
             case 'entry_spot':
                 return `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry spot')} `;
             case 'exit_spot':
                 return `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `;
             case 'end_time':
-                return `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `;
+                return `<div style="${common_time_style} border-color: #e98024; border-style: dashed;"></div> ${localize('End time')} `;
             case 'reset_time':
-                return `<div style="${reset_time_style}  border-style: solid;"></div> ${localize('Reset time')} `;
+                return `<div style="${common_time_style} border-color: #000; border-style: solid;"></div> ${localize('Reset time')} `;
             case 'delay':
                 return `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`;
             default:
