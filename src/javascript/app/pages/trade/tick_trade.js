@@ -205,7 +205,7 @@ const TickDisplay = (() => {
                 id   : 'tick-barrier',
                 value: barrier_quote,
                 label: {
-                    text : `Barrier (${addComma(barrier_quote)})`,
+                    text : `${localize('Barrier')} (${addComma(barrier_quote)})`,
                     align: Reset.isReset(contract_category) ? 'right' : 'center',
                     x    : Reset.isReset(contract_category) ? -60 : 0,
                 },
@@ -231,7 +231,7 @@ const TickDisplay = (() => {
                 value: calc_barrier,
                 color: 'green',
                 label: {
-                    text : `Average (${addComma(calc_barrier)})`,
+                    text : `${localize('Average')} (${addComma(calc_barrier)})`,
                     align: 'center',
                 },
                 width : 2,
