@@ -139,8 +139,8 @@ const Trading = () => (
                                     <div className='row' id='payout_row'>
                                         <div className='col form_label'>
                                             <select id='amount_type'>
-                                                <option value='payout' id='payout_option'>{it.L('Payout')}</option>
                                                 <option value='stake' id='stake_option'>{it.L('Stake')}</option>
+                                                <option value='payout' id='payout_option'>{it.L('Payout')}</option>
                                             </select>
                                         </div>
                                         <div className='row-inner big-col'>
