@@ -392,25 +392,26 @@ const Highchart = (() => {
                     addPlotLine({ id: 'high_barrier', value: +high_barrier, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
                     addPlotLine({ id: 'low_barrier',  value: +low_barrier,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
                 }
-                console.log(contract_type);
-                // TODO: only for call put spread
-                // Add invisible points to barriers,
-                // so barriers are always visible on the chart
-                chart.addSeries({
-                    name: 'barrier_points',
-                    type: 'scatter',
-                    marker: { enabled: false },
-                    data: [
-                        {
-                            y: +high_barrier,
-                            x: chart.series[0].data[0].x,
-                        },
-                        {
-                            y: +low_barrier,
-                            x: chart.series[0].data[0].x,
-                        },
-                    ],
-                });
+                if (Callputspread.isCallputspread(contract_type)) {
+                    // Add invisible points to barriers,
+                    // so barriers are always visible on the chart
+                    const x0 = chart.series[0].data[0].x;
+                    chart.addSeries({
+                        name: 'barrier_points',
+                        type: 'scatter',
+                        marker: { enabled: false },
+                        data: [
+                            {
+                                y: +high_barrier,
+                                x: x0,
+                            },
+                            {
+                                y: +low_barrier,
+                                x: x0,
+                            },
+                        ],
+                    });
+                }
             }
         }
     };
