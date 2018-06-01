@@ -2,8 +2,8 @@ import DAO                  from '../../../data/dao';
 import { isCryptocurrency } from '../../../../_common/base/currency_base';
 import { localize }         from '../../../../_common/localize';
 
-export const getCurrenciesAsync = function* ({ currency }) {
-    const r = yield DAO.getPayoutCurrencies();
+export const getCurrenciesAsync = async(currency) => {
+    const r = await DAO.getPayoutCurrencies();
     const fiat   = [];
     const crypto = [];
 
@@ -16,12 +16,10 @@ export const getCurrenciesAsync = function* ({ currency }) {
         [localize('Cryptocurrency')]: crypto,
     };
 
-    const fields = {
+    return {
         currencies_list,
         ...(!currency &&
             { currency: Object.values(currencies_list).reduce((a, b) => [...a, ...b]).find(c => c).value }
         ),
     };
-
-    return fields;
 };

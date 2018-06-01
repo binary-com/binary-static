@@ -9,7 +9,6 @@ import TradeStore               from './store/trade_store';
 import UIStore                  from './store/ui_store';
 import Footer                   from './components/layout/footer.jsx';
 import Header                   from './components/layout/header.jsx';
-import { initActions }          from './pages/trading/actions';
 import { BinaryRoutes }         from './routes';
 import Client                   from '../_common/base/client_base';
 import { localize }             from '../_common/localize';
@@ -26,7 +25,6 @@ const initApp = () => {
     Client.init();
     NetworkMonitor.init(stores.client);
 
-    initActions(stores.trade);
     stores.trade.init();
 
     const app = document.getElementById('binary_app');

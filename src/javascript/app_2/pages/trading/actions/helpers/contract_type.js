@@ -156,14 +156,14 @@ const ContractType = (() => {
         arr_new_values.indexOf(value) !== -1 ? value : arr_new_values[0]
     );
 
-    const getContractValues = ({ proposal, contract_expiry_type }) => {
-        const { contract_type, basis, duration_unit } = proposal;
+    const getContractValues = (store) => {
+        const { contract_type, basis, duration_unit } = store.proposal;
         const form_components   = getComponents(contract_type);
         const obj_basis         = getBasis(contract_type, basis);
         const obj_trade_types   = getTradeTypes(contract_type);
         const obj_start_dates   = getStartDates(contract_type);
         const obj_start_type    = getStartType(obj_start_dates.start_date);
-        const obj_barrier       = getBarriers(contract_type, contract_expiry_type);
+        const obj_barrier       = getBarriers(contract_type, store.contract_expiry_type);
         const obj_duration_unit = getDurationUnit(duration_unit, contract_type, obj_start_type.contract_start_type);
 
         const obj_duration_units_list = getDurationUnitsList(contract_type, obj_start_type.contract_start_type);
@@ -177,7 +177,7 @@ const ContractType = (() => {
             basis_list      : obj_basis.basis_list,
             start_dates_list: obj_start_dates.start_dates_list,
             barrier_count   : obj_barrier.barrier_count,
-            proposal        : Object.assign(proposal, {
+            proposal        : Object.assign(store.proposal, {
                 ...obj_duration_unit,
                 basis     : obj_basis.basis,
                 start_date: obj_start_dates.start_date,
@@ -191,7 +191,9 @@ const ContractType = (() => {
         const arr_list = Object.keys(list || {})
             .reduce((k, l) => ([...k, ...list[l].map(ct => ct.value)]), []);
         return {
-            contract_type: getArrayDefaultValue(arr_list, contract_type),
+            proposal: {
+                contract_type: getArrayDefaultValue(arr_list, contract_type),
+            },
         };
     };
 
@@ -276,7 +278,7 @@ const ContractType = (() => {
         getStartType,
         getBarriers,
 
-        getContractCategories: () => available_categories,
+        getContractCategories: () => ({ contract_types_list: available_categories }),
     };
 })();
 

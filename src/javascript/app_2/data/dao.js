@@ -1,6 +1,5 @@
-import BinarySocket        from '../../_common/base/socket_base';
 import SubscriptionManager from './subscription_manager';
-import { convertDateTimetoUnix } from '../common/date_time';
+import BinarySocket        from '../../_common/base/socket_base';
 
 const DAO = (() => {
     const getAccountStatus = () =>
@@ -45,41 +44,8 @@ const DAO = (() => {
     const subscribeBalance = (cb) =>
         SubscriptionManager.subscribe('balance', { balance: 1, subscribe: 1 }, cb);
 
-    const subscribeProposal = (store, type_of_contract, cb, should_forget_first) => {
-        const proposal = store.proposal;
-        const req = {
-            proposal     : 1,
-            subscribe    : 1,
-            amount       : parseFloat(proposal.amount),
-            basis        : proposal.basis,
-            contract_type: type_of_contract,
-            currency     : proposal.currency,
-            symbol       : proposal.symbol,
-            ...(
-                proposal.start_date !== 'now' &&
-                { date_start: convertDateTimetoUnix(proposal.start_date, proposal.start_time) }
-            ),
-            ...(
-                proposal.expiry_type === 'duration' ?
-                {
-                    duration     : parseInt(proposal.duration),
-                    duration_unit: proposal.duration_unit,
-                }
-                :
-                { date_expiry: convertDateTimetoUnix(proposal.expiry_date, proposal.expiry_time) }
-            ),
-            ...(
-                (store.barrier_count > 0 || store.form_components.indexOf('last_digit') !== -1) &&
-                { barrier: proposal.barrier_1 || proposal.last_digit }
-            ),
-            ...(
-                store.barrier_count === 2 &&
-                { barrier2: proposal.barrier_2 }
-            ),
-        };
-
+    const subscribeProposal = (req, cb, should_forget_first) =>
         SubscriptionManager.subscribe('proposal', req, cb, should_forget_first);
-    };
 
     const subscribeTicks = (symbol, cb, should_forget_first) =>
         SubscriptionManager.subscribe('ticks', { ticks: symbol, subscribe: 1 }, cb, should_forget_first);

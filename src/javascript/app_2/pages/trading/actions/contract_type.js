@@ -1,7 +1,7 @@
 import ContractType from './helpers/contract_type';
 
-export const onChangeContractTypeList = ({ proposal, contract_types_list }) => (
-    ContractType.getContractType(contract_types_list, proposal.contract_type)
+export const onChangeContractTypeList = (store) => (
+    ContractType.getContractType(store.contract_types_list, store.proposal.contract_type)
 );
 
 export const onChangeContractType = (store) => (

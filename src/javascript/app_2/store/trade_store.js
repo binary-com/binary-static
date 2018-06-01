@@ -1,49 +1,22 @@
 import {
     action,
-    extendObservable,
-    observable }    from 'mobx';
-import moment       from 'moment';
-import ContractType from '../pages/trading/actions/helpers/contract_type';
-import
-    actions, {
-    updateStore }   from '../pages/trading/actions/index';
-import Client       from '../../_common/base/client_base';
+    observable }       from 'mobx';
+import moment          from 'moment';
+import ContractType    from '../pages/trading/actions/helpers/contract_type';
+import { updateStore } from '../pages/trading/actions/index';
+import Client          from '../../_common/base/client_base';
 
 export default class TradeStore {
     time_interval = undefined;
 
-    constructor() {
-        extendObservable(this.proposal, {
-            symbol       : Object.keys(this.symbols_list)[0],
-            contract_type: '',
-            amount       : 10,
-            basis        : '',
-            currency     : Client.get('currency'),
-            start_date   : 'now',
-            start_time   : '12:30 am',
-            duration     : 5,
-            duration_unit: '',
-            expiry_type  : 'duration',
-            expiry_date  : null,
-            expiry_time  : '09:40 pm',
-            barrier_1    : 0,
-            barrier_2    : 0,
-            last_digit   : 3,
-        });
-    }
-
     @action.bound init() {
-        this.time_interval = setInterval(actions.initTime, 1000);
-        actions.getCountryAsync();
-
-        actions.getTicks(action('getTicks', (r) => { this.tick = r; }));
-
-        if (!Client.get('currency')) {
-            actions.getCurrenciesAsync();
-        }
+        // this.time_interval = setInterval(actions.initTime, 1000);
+        // actions.getCountryAsync();
+        //
+        // actions.getTicks(action('getTicks', (r) => { this.tick = r; }));
 
         ContractType.buildContractTypesConfig(this.proposal.symbol).then(action(() => {
-            this.contract_types_list = ContractType.getContractCategories();
+            updateStore(this, ContractType.getContractCategories());
         }));
     }
 
@@ -61,14 +34,30 @@ export default class TradeStore {
         const obj_new_values = Object.keys(this.proposal).indexOf(name) !== -1 ?
             Object.assign({}, this.proposal, { [name]: value }) :
             { [name]: value };
-        updateStore(this, obj_new_values);
+        updateStore(this, obj_new_values, true);
     }
 
     // Underlying
     @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
 
     // proposal
-    @observable proposal = {};
+    @observable proposal = {
+        amount       : 10,
+        barrier_1    : 0,
+        barrier_2    : 0,
+        basis        : '',
+        contract_type: '',
+        currency     : Client.get('currency'),
+        duration     : 5,
+        duration_unit: '',
+        expiry_date  : null,
+        expiry_time  : '09:40 pm',
+        expiry_type  : 'duration',
+        last_digit   : 3,
+        start_date   : 'now',
+        start_time   : '12:30 am',
+        symbol       : Object.keys(this.symbols_list)[0],
+    };
 
     // Contract Type
     @observable contract_types_list  = {};
