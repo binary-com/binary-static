@@ -1,11 +1,12 @@
-const Client           = require('../../base/client');
-const BinarySocket     = require('../../base/socket');
-const getDecimalPlaces = require('../../common/currency').getDecimalPlaces;
-const isCryptocurrency = require('../../common/currency').isCryptocurrency;
-const FormManager      = require('../../common/form_manager');
-const validEmailToken  = require('../../common/form_validation').validEmailToken;
-const localize         = require('../../../_common/localize').localize;
-const getHashValue     = require('../../../_common/url').getHashValue;
+const Client             = require('../../base/client');
+const BinarySocket       = require('../../base/socket');
+const getDecimalPlaces   = require('../../common/currency').getDecimalPlaces;
+const getPaMaxWithdrawal = require('../../common/currency').getPaMaxWithdrawal;
+const getPaMinWithdrawal = require('../../common/currency').getPaMinWithdrawal;
+const FormManager        = require('../../common/form_manager');
+const validEmailToken    = require('../../common/form_validation').validEmailToken;
+const localize           = require('../../../_common/localize').localize;
+const getHashValue       = require('../../../_common/url').getHashValue;
 
 const PaymentAgentWithdraw = (() => {
     const view_ids  = {
@@ -54,9 +55,8 @@ const PaymentAgentWithdraw = (() => {
             setActiveView(view_ids.form);
 
             const form_id           = `#${$(view_ids.form).find('form').attr('id')}`;
-            const is_crypto_not_dai = isCryptocurrency(currency) && currency !== 'DAI';
-            const min_withdrawal    = is_crypto_not_dai ? 0.002 : 10;
-            const max_withdrawal    = is_crypto_not_dai ? 5 : 2000;
+            const min_withdrawal    = getPaMinWithdrawal(currency);
+            const max_withdrawal    = getPaMaxWithdrawal(currency);
 
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
