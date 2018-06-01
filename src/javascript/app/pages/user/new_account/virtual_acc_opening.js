@@ -1,5 +1,4 @@
 const SelectMatcher    = require('@binary-com/binary-style').select2Matcher;
-const SelectFocus      = require('@binary-com/binary-style').select2onFocus;
 const Cookies          = require('js-cookie');
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
@@ -65,7 +64,6 @@ const VirtualAccOpening = (() => {
                 },
             })
             .setVisibility(1);
-        SelectFocus();
     };
 
     const bindValidation = () => {
