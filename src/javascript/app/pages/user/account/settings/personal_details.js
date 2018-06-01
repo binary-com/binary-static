@@ -1,4 +1,5 @@
 const SelectMatcher    = require('@binary-com/binary-style').select2Matcher;
+const SelectFocus      = require('@binary-com/binary-style').select2onFocus;
 const moment           = require('moment');
 const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
@@ -422,6 +423,8 @@ const PersonalDetails = (() => {
                     });
                 });
             }
+
+            SelectFocus();
         });
     };
 

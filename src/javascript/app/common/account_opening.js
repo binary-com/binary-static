@@ -1,4 +1,5 @@
 const SelectMatcher      = require('@binary-com/binary-style').select2Matcher;
+const SelectFocus        = require('@binary-com/binary-style').select2onFocus;
 const Cookies            = require('js-cookie');
 const generateBirthDate  = require('./attach_dom/birth_date_picker');
 const FormManager        = require('./form_manager');
@@ -94,6 +95,7 @@ const AccountOpening = (() => {
                     }, 500);
                 });
             }
+            SelectFocus();
 
             BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         }
