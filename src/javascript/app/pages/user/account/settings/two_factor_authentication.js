@@ -50,7 +50,7 @@ const TwoFactorAuthentication = (() => {
             });
 
             if (current_state === 'disabled') {
-                $form.addClass('padding-left-60');
+                $form.addClass('padding-left-50');
                 initQRCode();
             }
         });
@@ -58,7 +58,7 @@ const TwoFactorAuthentication = (() => {
 
     const resetComponent = () => {
         $(`#${current_state}`).setVisibility(0);
-        $form.setVisibility(0).removeClass('padding-left-60');
+        $form.setVisibility(0).removeClass('padding-left-50');
         $('#qrcode').html('');
         $qrcode_key.text('');
         init();

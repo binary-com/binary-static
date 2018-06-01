@@ -670,11 +670,10 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
-.padding-left-60 {
-    padding-left: 60px;
-}
-
 .two_factor_auth {
+    .padding-left-50 {
+        padding-left: 50px;
+    }
     .otp-form-group {
         display: flex;
         align-items: flex-start;
