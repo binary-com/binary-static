@@ -295,7 +295,7 @@ const ViewPopup = (() => {
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
         // don't show for japanese clients or contracts that are manually sold before starting
-        if (contract.audit_details && !isJPClient() && contract.status !== 'sold' &&
+        if (contract.audit_details && !isJPClient() &&
             (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
             initAuditTable(0);
         }
