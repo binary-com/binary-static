@@ -2,17 +2,23 @@ const QRCode           = require('davidshimjs-qrcodejs');
 const Client           = require('../../../../base/client');
 const BinarySocket     = require('../../../../base/socket');
 const FormManager      = require('../../../../common/form_manager');
-const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 const localize         = require('../../../../../_common/localize').localize;
+const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const TwoFactorAuthentication = (() => {
     const form_id = '#frm_two_factor_auth';
     const state = ['disabled', 'enabled'];
-    let current_state,
-        next_state,
-        qrcode; // eslint-disable-line
+    let $btn_submit,
+        $form,
+        $qrcode_key,
+        current_state,
+        next_state;
 
     const onLoad = () => {
+        $btn_submit = $('#btn_submit');
+        $form       = $(`${form_id}`);
+        $qrcode_key = $('#qrcode_key');
+
         init();
     };
 
@@ -29,13 +35,13 @@ const TwoFactorAuthentication = (() => {
             next_state    = state[+(!res.account_security.totp.is_enabled)].slice(0, -1);
 
             $(`#${current_state}`).setVisibility(1);
-            $('#btn_submit').text(localize(next_state));
-            $(form_id).setVisibility(1);
+            $btn_submit.text(localize(next_state));
+            $form.setVisibility(1);
 
             FormManager.init(form_id, [
-                { selector: '#otp', validations: ['req', 'number', ['length', { min: 6, max: 6   }]], request_field: 'otp', no_scroll: true },
+                { selector: '#otp', validations: ['req', 'number', ['length', { min: 6, max: 6 }]], request_field: 'otp', no_scroll: true },
                 { request_field: 'account_security', value: 1 },
-                { request_field: 'totp_action', value: next_state },
+                { request_field: 'totp_action',      value: next_state },
             ]);
             FormManager.handleSubmit({
                 form_selector       : form_id,
@@ -44,7 +50,7 @@ const TwoFactorAuthentication = (() => {
             });
 
             if (current_state === 'disabled') {
-                $('.otp-form-group').css('padding-left', '60px');
+                $form.addClass('padding-left-60');
                 initQRCode();
             }
         });
@@ -52,10 +58,9 @@ const TwoFactorAuthentication = (() => {
 
     const resetComponent = () => {
         $(`#${current_state}`).setVisibility(0);
-        $(form_id).setVisibility(0);
+        $form.setVisibility(0).removeClass('padding-left-60');
         $('#qrcode').html('');
-        $('#qrcode_key').text('');
-        $('.otp-form-group').css('padding-left', '');
+        $qrcode_key.text('');
         init();
     };
 
@@ -68,7 +73,7 @@ const TwoFactorAuthentication = (() => {
                 return;
             }
             const secret_key = res.account_security.totp.secret_key;
-            $('#qrcode_key').text(secret_key);
+            $qrcode_key.text(secret_key);
 
             makeQrCode(secret_key);
         });
@@ -76,7 +81,7 @@ const TwoFactorAuthentication = (() => {
 
     const makeQrCode = (secret_key) => {
         const text = `otpauth://totp/${Client.get('email')}?secret=${secret_key}&issuer=Binary.com`;
-        qrcode = new QRCode(document.getElementById('qrcode'), {
+        const qrcode = new QRCode(document.getElementById('qrcode'), {  // eslint-disable-line no-unused-vars
             text,
             width       : 160,
             height      : 160,
@@ -91,12 +96,12 @@ const TwoFactorAuthentication = (() => {
             const disabled_text = 'If you’d like to re-enable two-factor authentication, please delete Binary.com from your authentication app and scan the QR code again.';
             $('#otp').val('');
             showFormMessage(
-                `You have successfully ${next_state}d two-factor authentication for your account. ${next_state === 'disable' ? disabled_text : ''}`, true);
+                `You have successfully ${next_state}d two-factor authentication for your account.${next_state === 'disable' ? ` ${disabled_text}` : ''}`, true);
         }
     };
 
     const handleError = (id, err_msg) => {
-        $(`#${id}_error`).setVisibility(1).text(localize(err_msg ||'Sorry, an error occurred while processing your request.'));
+        $(`#${id}_error`).text(localize(err_msg ||'Sorry, an error occurred while processing your request.')).setVisibility(1);
     };
 
     const showFormMessage = (msg, is_success) => {
@@ -105,7 +110,7 @@ const TwoFactorAuthentication = (() => {
             .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
             .delay(3000)
-            .fadeOut(1000, is_success? resetComponent: '');
+            .fadeOut(1000, is_success ? resetComponent: '');
     };
 
     return {
