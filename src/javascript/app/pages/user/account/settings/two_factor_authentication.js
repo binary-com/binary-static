@@ -96,7 +96,7 @@ const TwoFactorAuthentication = (() => {
     };
 
     const handleError = (id, err_msg) => {
-        $(`#${id}_error`).setVisibility(1).text(localize(err_msg || localize('Sorry, an error occurred while processing your request.')));
+        $(`#${id}_error`).setVisibility(1).text(localize(err_msg ||'Sorry, an error occurred while processing your request.'));
     };
 
     const showFormMessage = (msg, is_success) => {
