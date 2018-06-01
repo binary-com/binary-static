@@ -48,137 +48,121 @@ const ContractType = (() => {
                 contract_types[key].trade_types.indexOf(contract.contract_type) !== -1 &&
                 (typeof contract_types[key].barrier_count === 'undefined' || +contract_types[key].barrier_count === contract.barriers) // To distinguish betweeen Rise/Fall & Higher/Lower
             ));
-            if (!type) return; // ignore unsupported contract types
 
-            if (!Exceptions.isExcluded(type)) {
-                if (!available_contract_types[type]) {
-                    // extend contract_categories to include what is needed to create the contract list
-                    const sub_cats = available_categories[Object.keys(available_categories)
-                        .find(key => available_categories[key].indexOf(type) !== -1)];
-                    sub_cats[sub_cats.indexOf(type)] = { value: type, text: localize(contract_types[type].title) };
+            if (!type || Exceptions.isExcluded(type)) return; // ignore unsupported/excepted contract types
 
-                    // populate available contract types
-                    available_contract_types[type]        = cloneObject(contract_types[type]);
-                    available_contract_types[type].config = {};
-                }
-
-                /*
-                add to this config if a value you are looking for does not exist yet
-                accordingly create a function to retrieve the value
-                config: {
-                    has_spot: 1,
-                    durations: {
-                        min_max: {
-                            spot: {
-                                tick: {
-                                    min: 5, // value in ticks, as cannot convert to seconds
-                                    max: 10,
-                                },
-                                intraday: {
-                                    min: 18000, // all values converted to seconds
-                                    max: 86400,
-                                },
-                                daily: {
-                                    min: 86400,
-                                    max: 432000,
-                                },
+            /*
+            add to this config if a value you are looking for does not exist yet
+            accordingly create a function to retrieve the value
+            config: {
+                has_spot: 1,
+                durations: {
+                    min_max: {
+                        spot: {
+                            tick: {
+                                min: 5, // value in ticks, as cannot convert to seconds
+                                max: 10,
                             },
-                            forward: {
-                                intraday: {
-                                    min: 18000,
-                                    max: 86400,
-                                },
+                            intraday: {
+                                min: 18000, // all values converted to seconds
+                                max: 86400,
+                            },
+                            daily: {
+                                min: 86400,
+                                max: 432000,
                             },
                         },
-                        units_display: {
-                            spot: [
-                                { text: 'ticks', value: 't' },
-                                { text: 'seconds', value: 's' },
-                                { text: 'minutes', value: 'm' },
-                                { text: 'hours', value: 'h' },
-                                { text: 'days', value: 'd' },
-                            ],
-                            forward: [
-                                { text: 'days', value: 'd' },
-                            ],
+                        forward: {
+                            intraday: {
+                                min: 18000,
+                                max: 86400,
+                            },
                         },
                     },
-                    forward_starting_dates: [
-                        { text: 'Mon - 19 Mar, 2018', open: 1517356800, close: 1517443199 },
-                        { text: 'Tue - 20 Mar, 2018', open: 1517443200, close: 1517529599 },
-                        { text: 'Wed - 21 Mar, 2018', open: 1517529600, close: 1517615999 },
-                    ],
-                    trade_types: {
-                        'CALL': 'Higher',
-                        'PUT': 'Lower',
+                    units_display: {
+                        spot: [
+                            { text: 'ticks',   value: 't' },
+                            { text: 'seconds', value: 's' },
+                            { text: 'minutes', value: 'm' },
+                            { text: 'hours',   value: 'h' },
+                            { text: 'days',    value: 'd' },
+                        ],
+                        forward: [
+                            { text: 'days',    value: 'd' },
+                        ],
                     },
-                    barriers: {
-                        intraday: {
-                            high_barrier: '+2.12',
-                            low_barrier : '-1.12',
-                        },
-                        daily: {
-                            high_barrier: 1111,
-                            low_barrier : 1093,
-                        }
+                },
+                forward_starting_dates: [
+                    { text: 'Mon - 19 Mar, 2018', open: 1517356800, close: 1517443199 },
+                    { text: 'Tue - 20 Mar, 2018', open: 1517443200, close: 1517529599 },
+                    { text: 'Wed - 21 Mar, 2018', open: 1517529600, close: 1517615999 },
+                ],
+                trade_types: {
+                    'CALL': 'Higher',
+                    'PUT' : 'Lower',
+                },
+                barriers: {
+                    intraday: {
+                        high_barrier: '+2.12',
+                        low_barrier : '-1.12',
+                    },
+                    daily: {
+                        high_barrier: 1111,
+                        low_barrier : 1093,
                     }
                 }
-                */
-
-                if (contract.start_type === 'spot') {
-                    available_contract_types[type].config.has_spot = 1;
-                }
-
-                if (contract.min_contract_duration && contract.max_contract_duration) {
-                    available_contract_types[type].config.durations =
-                        buildDurationConfig(available_contract_types[type].config.durations, contract);
-                }
-
-                if (contract.forward_starting_options) {
-                    const forward_starting_options = [];
-
-                    // TODO: handle multiple sessions (right now will create duplicated items in the list)
-                    contract.forward_starting_options.forEach(option => {
-                        forward_starting_options.push({
-                            text : moment.unix(option.open).format('ddd - DD MMM, YYYY'),
-                            value: option.open,
-                            end  : option.close,
-                        });
-                    });
-
-                    available_contract_types[type].config.forward_starting_dates = forward_starting_options;
-                }
-
-                if (contract.contract_display && contract.contract_type) {
-                    const trade_types = available_contract_types[type].config.trade_types || {};
-
-                    trade_types[contract.contract_type] = contract.contract_display;
-
-                    available_contract_types[type].config.trade_types = trade_types;
-                }
-
-                if (contract.barriers) {
-                    if (!available_contract_types[type].config.barriers) {
-                        available_contract_types[type].config.barriers = {};
-                    }
-                    if (!available_contract_types[type].config.barriers[contract.expiry_type]) {
-                        available_contract_types[type].config.barriers[contract.expiry_type] = {};
-                    }
-                    const obj_barrier = {};
-                    if (contract.barrier) {
-                        obj_barrier.barrier = contract.barrier;
-                    } else {
-                        if (contract.low_barrier) {
-                            obj_barrier.low_barrier = contract.low_barrier;
-                        }
-                        if (contract.high_barrier) {
-                            obj_barrier.high_barrier = contract.high_barrier;
-                        }
-                    }
-                    available_contract_types[type].config.barriers[contract.expiry_type] = obj_barrier;
-                }
-
             }
+            */
+
+            if (!available_contract_types[type]) {
+                // extend contract_categories to include what is needed to create the contract list
+                const sub_cats = available_categories[Object.keys(available_categories)
+                    .find(key => available_categories[key].indexOf(type) !== -1)];
+                sub_cats[sub_cats.indexOf(type)] = { value: type, text: localize(contract_types[type].title) };
+
+                // populate available contract types
+                available_contract_types[type] = cloneObject(contract_types[type]);
+            }
+            const config = available_contract_types[type].config || {};
+
+            // ----- has_spot -----
+            if (contract.start_type === 'spot') {
+                config.has_spot = 1;
+            }
+
+            // ----- durations -----
+            if (contract.min_contract_duration && contract.max_contract_duration) {
+                config.durations = buildDurationConfig(config.durations, contract);
+            }
+
+            // ----- forward_starting_dates -----
+            if (contract.forward_starting_options) {
+                config.forward_starting_dates = contract.forward_starting_options.map(option => ({
+                    text : moment.unix(option.open).format('ddd - DD MMM, YYYY'),
+                    value: option.open,
+                    end  : option.close,
+                }));
+            }
+
+            // ----- trade_types -----
+            if (contract.contract_display && contract.contract_type) {
+                config.trade_types = Object.assign(config.trade_types || {}, {
+                    [contract.contract_type]: contract.contract_display,
+                });
+            }
+
+            // ----- barriers -----
+            if (contract.barriers) {
+                const obj_barrier = {};
+                ['barrier', 'low_barrier', 'high_barrier'].forEach((field) => {
+                    if (field in contract) obj_barrier[field] = contract[field];
+                });
+                config.barriers = Object.assign(config.barriers || {}, {
+                    [contract.expiry_type]: obj_barrier,
+                });
+            }
+
+            available_contract_types[type].config = config;
         });
 
         // cleanup categories

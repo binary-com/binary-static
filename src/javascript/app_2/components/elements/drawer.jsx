@@ -1,7 +1,9 @@
 import classNames     from 'classnames';
 import React          from 'react';
 import PropTypes      from 'prop-types';
-import { BinaryLink } from '../../routes';
+import {
+    BinaryLink,
+    isRouteVisible }  from '../../routes';
 import Url            from '../../../_common/url';
 
 class ToggleDrawer extends React.PureComponent {
@@ -147,6 +149,8 @@ class DrawerItems extends React.PureComponent {
     }
 
     render() {
+        if (this.props.items.every(item => !isRouteVisible(item.link_to))) return false;
+
         const list_is_collapsed = {
             visibility: `${this.state.is_collapsed ? 'visible' : 'hidden'}`,
         };
@@ -156,6 +160,7 @@ class DrawerItems extends React.PureComponent {
         const drawer_items_class = classNames('drawer-items', {
             'show': this.state.is_collapsed,
         });
+
         return (
             <React.Fragment>
                 <div className='drawer-item' onClick={this.collapseItems}>
@@ -167,11 +172,7 @@ class DrawerItems extends React.PureComponent {
                 >
                     <div className='items-group'>
                         {this.props.items.map((item, idx) => (
-                            <div className='drawer-item' key={idx}>
-                                <BinaryLink to={item.link_to}>
-                                    <span className={item.icon || undefined}>{item.text}</span>
-                                </BinaryLink>
-                            </div>
+                            <DrawerItem key={idx} {...item} />
                         ))}
                     </div>
                 </div>
@@ -180,17 +181,17 @@ class DrawerItems extends React.PureComponent {
     }
 }
 
-class DrawerItem extends React.PureComponent {
-    render() {
-        return (
-            <div className='drawer-item'>
-                <a href={this.props.href || 'javascript:;' }>
-                    <span className={this.props.icon || undefined}>{this.props.text}</span>
-                </a>
-            </div>
-        );
-    }
-}
+const DrawerItem = ({
+    link_to,
+    text,
+    icon,
+}) => (isRouteVisible(link_to) &&
+    <div className='drawer-item'>
+        <BinaryLink to={link_to}>
+            <span className={icon || undefined}>{text}</span>
+        </BinaryLink>
+    </div>
+);
 
 
 const DrawerHeader = ({

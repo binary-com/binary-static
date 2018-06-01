@@ -94,10 +94,11 @@ const SubscriptionManager = (() => {
     /**
      * To forget a subscription which submitted for a specific callback function
      *
-     * @param {String}   msg_type      msg_type to forget
-     * @param {Function} fncCallback   the same function passed to subscribe()
+     * @param  {String}   msg_type      msg_type to forget
+     * @param  {Function} fncCallback   the same function passed to subscribe()
      *     (this is the way to distinguish between different subscribers of the same stream at the same time)
-     * @param {Object}   match_values  optional, to only forget subscriptions having request that "contains" provided values
+     * @param  {Object}   match_values  optional, to only forget subscriptions having request that "contains" provided values
+     * @return {Promise}  the promise object of all possible forget requests
      */
     const forget = (msg_type, fncCallback, match_values) => {
         if (typeof fncCallback !== 'function') {
@@ -131,7 +132,8 @@ const SubscriptionManager = (() => {
     /**
      * To forget all active subscriptions of a list of msg_types
      *
-     * @param {String} msg_types  list of msg_types to forget
+     * @param  {String}  msg_types  list of msg_types to forget
+     * @return {Promise} the promise object of all possible forget_all requests
      */
     const forgetAll = (...msg_types) => {
         const types_to_forget = {};
