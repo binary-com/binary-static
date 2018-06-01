@@ -1,16 +1,31 @@
+const constants = {
+    slider: {
+        width: 50,
+        height: 15,
+    },
+    interval: {
+        cap_width: 10,
+        stroke: '#2a3052',
+        strokeWidth: 2,
+    },
+    chart: {
+        marginRight: 60,
+    },
+    barrier_series_name: 'barrier_points',
+};
+
 const Callputspread = (() => {
     const state = {
         slider: {
             el: null,
+            x: undefined,
+            y: undefined,
         },
         interval: {
             el: null,
             x : undefined,
             y0: undefined,
             y1: undefined,
-            cap_width: 10,
-            stroke: '#2a3052',
-            strokeWidth: 2,
         },
     };
 
@@ -42,7 +57,9 @@ const Callputspread = (() => {
         if (state.interval.el) {
             state.interval.el.destroy();
         }
-        const { x, y0, y1, cap_width, stroke, strokeWidth } = state.interval;
+        const { x, y0, y1 } = state.interval;
+        const { cap_width, stroke, strokeWidth } = constants.interval;
+
         state.interval.el = chart.renderer
             .path(getVerticalIntervalPath(x, y0, y1, cap_width))
             .attr({
@@ -66,7 +83,7 @@ const Callputspread = (() => {
         const plot_end_x = chart.plotWidth + chart.plotLeft;
 
         const [high_plot_y, low_plot_y] = chart.series
-            .find(series => series.name === 'barrier_points')
+            .find(series => series.name === constants.barrier_series_name)
             .data
             .map(point => point.plotY + chart.plotTop);
 
@@ -83,7 +100,7 @@ const Callputspread = (() => {
     );
 
     const augmentChartOptions = (chart_options) => {
-        chart_options.marginRight = 60;
+        chart_options.marginRight = constants.chart.marginRight;
         chart_options.redrawHandler = redrawHandler;
     };
 
@@ -92,7 +109,7 @@ const Callputspread = (() => {
         // so barriers are always visible on the chart
         const x0 = chart.series[0].data[0].x;
         chart.addSeries({
-            name: 'barrier_points',
+            name: constants.barrier_series_name,
             type: 'scatter',
             marker: { enabled: false },
             data: [
