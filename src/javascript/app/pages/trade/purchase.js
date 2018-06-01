@@ -227,8 +227,9 @@ const Purchase = (() => {
             } });
         }
 
-        const is_tick_high = /^tickhigh$/i.test(purchase_data.echo_req.passthrough.contract_type);
-        const is_tick_low  = /^ticklow$/i.test(purchase_data.echo_req.passthrough.contract_type);
+        const contract_type = purchase_data.echo_req.passthrough.contract_type;
+        const is_tick_high  = /^tickhigh$/i.test(contract_type);
+        const is_tick_low   = /^ticklow$/i.test(contract_type);
 
         let selected_tick = '';
         if (is_tick_high || is_tick_low) {
