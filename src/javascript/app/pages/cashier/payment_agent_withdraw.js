@@ -22,7 +22,8 @@ const PaymentAgentWithdraw = (() => {
     };
 
     let $views,
-        agent_name;
+        agent_name,
+        currency;
 
     // -----------------------
     // ----- Agents List -----
@@ -53,7 +54,6 @@ const PaymentAgentWithdraw = (() => {
             setActiveView(view_ids.form);
 
             const form_id           = `#${$(view_ids.form).find('form').attr('id')}`;
-            const currency          = Client.get('currency');
             const is_crypto_not_dai = isCryptocurrency(currency) && currency !== 'DAI';
             const min_withdrawal    = is_crypto_not_dai ? 0.002 : 10;
             const max_withdrawal    = is_crypto_not_dai ? 5 : 2000;
@@ -161,9 +161,10 @@ const PaymentAgentWithdraw = (() => {
             if (/(withdrawal|cashier)_locked/.test(data.get_account_status.status)) {
                 showPageError('', 'withdrawal-locked-error');
             } else {
+                currency = Client.get('currency');
                 BinarySocket.send({
                     paymentagent_list: Client.get('residence'),
-                    currency         : Client.get('currency'),
+                    currency,
                 })
                     .then(response => populateAgentsList(response));
             }
