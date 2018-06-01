@@ -67,12 +67,12 @@ const Amount = ({
 };
 
 export default connect(
-    ({trade}) => ({
+    ({ trade }) => ({
         basis_list     : trade.basis_list,
-        basis          : trade.proposal.basis,
-        currency       : trade.proposal.currency,
+        basis          : trade.basis,
+        currency       : trade.currency,
         currencies_list: trade.currencies_list,
-        amount         : trade.proposal.amount,
+        amount         : trade.amount,
         onChange       : trade.handleChange,
     })
 )(Amount);

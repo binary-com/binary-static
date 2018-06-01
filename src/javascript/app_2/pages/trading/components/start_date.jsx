@@ -55,9 +55,9 @@ const StartDate = ({
 
 export default connect(
     ({ trade }) => ({
-        start_date      : trade.proposal.start_date,
+        start_date      : trade.start_date,
         start_dates_list: trade.start_dates_list,
-        start_time      : trade.proposal.start_time,
+        start_time      : trade.start_time,
         onChange        : trade.handleChange,
     })
 )(StartDate);

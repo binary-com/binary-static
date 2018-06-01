@@ -121,11 +121,11 @@ const Duration = ({
 export default connect(
     ({ main, trade }) => ({
         server_time        : main.server_time,
-        expiry_type        : trade.proposal.expiry_type,
-        expiry_date        : trade.proposal.expiry_date,
-        expiry_time        : trade.proposal.expiry_time,
-        duration           : trade.proposal.duration,
-        duration_unit      : trade.proposal.duration_unit,
+        expiry_type        : trade.expiry_type,
+        expiry_date        : trade.expiry_date,
+        expiry_time        : trade.expiry_time,
+        duration           : trade.duration,
+        duration_unit      : trade.duration_unit,
         duration_units_list: trade.duration_units_list,
         onChange           : trade.handleChange,
     })

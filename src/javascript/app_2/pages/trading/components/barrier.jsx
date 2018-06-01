@@ -60,10 +60,10 @@ const Barrier = ({
 };
 
 export default connect(
-    ({trade}) => ({
+    ({ trade }) => ({
         barrier_count: trade.barrier_count,
-        barrier_1    : trade.proposal.barrier_1,
-        barrier_2    : trade.proposal.barrier_2,
+        barrier_1    : trade.barrier_1,
+        barrier_2    : trade.barrier_2,
         onChange     : trade.handleChange,
     })
 )(Barrier);

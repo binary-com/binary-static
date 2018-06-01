@@ -2,9 +2,9 @@ import moment       from 'moment';
 import ContractType from './helpers/contract_type';
 
 export const onChangeExpiry = (store) => {
-    const { contract_type, duration_unit, expiry_date, expiry_type } = store.proposal;
+    const { contract_type, duration_unit, expiry_date, expiry_type, server_time } = store;
     const duration_is_day       = expiry_type === 'duration' && duration_unit === 'd';
-    const expiry_is_after_today = expiry_type === 'endtime' && moment.utc(expiry_date).isAfter(moment(store.server_time).utc(), 'day');
+    const expiry_is_after_today = expiry_type === 'endtime' && moment.utc(expiry_date).isAfter(moment(server_time).utc(), 'day');
     const contract_expiry_type  = duration_is_day || expiry_is_after_today ? 'daily' : 'intraday';
 
     return {

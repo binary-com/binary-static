@@ -9,7 +9,7 @@ export default class TradeStore {
     time_interval = undefined;
 
     @action.bound init() {
-        ContractType.buildContractTypesConfig(this.proposal.symbol).then(action(() => {
+        ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
             updateStore(this, ContractType.getContractCategories());
         }));
     }
@@ -21,57 +21,51 @@ export default class TradeStore {
 
     @action.bound handleChange(e) {
         const { name, value } = e.target;
-        if (!(name in this) && !(name in this.proposal)) {
+        if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-
-        const obj_new_values = Object.keys(this.proposal).indexOf(name) !== -1 ?
-            Object.assign({}, this.proposal, { [name]: value }) :
-            { [name]: value };
-        updateStore(this, obj_new_values, true);
+        updateStore(this, { [name]: value }, true);
     }
 
     // Underlying
     @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
-
-    // proposal
-    @observable proposal = {
-        amount       : 10,
-        barrier_1    : 0,
-        barrier_2    : 0,
-        basis        : '',
-        contract_type: '',
-        currency     : Client.get('currency'),
-        duration     : 5,
-        duration_unit: '',
-        expiry_date  : null,
-        expiry_time  : '09:40 pm',
-        expiry_type  : 'duration',
-        last_digit   : 3,
-        start_date   : 'now',
-        start_time   : '12:30 am',
-        symbol       : Object.keys(this.symbols_list)[0],
-    };
+    @observable symbol       = Object.keys(this.symbols_list)[0];
 
     // Contract Type
-    @observable contract_types_list  = {};
-    @observable trade_types          = {};
-    @observable contract_start_type  = '';
     @observable contract_expiry_type = '';
+    @observable contract_start_type  = '';
+    @observable contract_type        = '';
+    @observable contract_types_list  = {};
     @observable form_components      = [];
+    @observable trade_types          = {};
 
     // Amount
+    @observable amount          = 10;
+    @observable basis           = '';
     @observable basis_list      = [];
     @observable currencies_list = {};
+    @observable currency        = Client.get('currency');
 
     // Duration
+    @observable duration            = 5;
+    @observable duration_unit       = '';
     @observable duration_units_list = [];
+    @observable expiry_date         = null;
+    @observable expiry_time         = '09:40 pm';
+    @observable expiry_type         = 'duration';
 
     // Barrier
+    @observable barrier_1     = 0;
+    @observable barrier_2     = 0;
     @observable barrier_count = 0;
 
     // Start Time
+    @observable start_date       = 'now';
     @observable start_dates_list = [];
+    @observable start_time       = '12:30 am';
+
+    // Last Digit
+    @observable last_digit = 3;
 
     // Purchase
     @observable proposal_info = {};

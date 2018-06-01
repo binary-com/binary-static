@@ -41,8 +41,8 @@ const LastDigit = ({
 };
 
 export default connect(
-    ({trade}) => ({
-        last_digit: trade.proposal.last_digit,
+    ({ trade }) => ({
+        last_digit: trade.last_digit,
         onChange  : trade.handleChange,
     })
 )(LastDigit);

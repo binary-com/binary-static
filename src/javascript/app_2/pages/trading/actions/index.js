@@ -19,11 +19,10 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
     runInAction(() => {
         const new_state = cloneObject(obj_new_values);
         Object.keys(new_state).forEach((key) => {
-            const source = key in store ? store : store.proposal;
-            if (JSON.stringify(source[key]) === JSON.stringify(new_state[key])) {
+            if (JSON.stringify(store[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
             } else {
-                source[key] = new_state[key];
+                store[key] = new_state[key];
             }
         });
     });
@@ -48,7 +47,7 @@ const process = async(store) => {
     const snapshot = cloneObject(store);
 
     if (!Client.get('currency') && isEmptyObject(store.currencies_list)) {
-        extendOrReplace(snapshot, await Currency.getCurrenciesAsync(store.proposal.currency));
+        extendOrReplace(snapshot, await Currency.getCurrenciesAsync(store.currency));
     }
 
     methods.forEach((fnc) => {
