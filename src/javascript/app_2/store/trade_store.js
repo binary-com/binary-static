@@ -1,7 +1,6 @@
 import {
     action,
     observable }       from 'mobx';
-import moment          from 'moment';
 import ContractType    from '../pages/trading/actions/helpers/contract_type';
 import { updateStore } from '../pages/trading/actions/index';
 import Client          from '../../_common/base/client_base';
@@ -74,10 +73,8 @@ export default class TradeStore {
     // Start Time
     @observable start_dates_list = [];
 
-    // Test
-    @observable message   = '';
-    @observable tick      = '';
-    @observable proposals = {};
+    // Purchase
+    @observable proposal_info = {};
 
     // TODO: to remove dummy portfolio value
     @observable portfolios = [
