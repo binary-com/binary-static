@@ -43,7 +43,10 @@ InputField.propTypes = {
     prefix         : PropTypes.string,
     required       : PropTypes.bool,
     type           : PropTypes.string,
-    value          : PropTypes.number,
+    value          : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 };
 
 export default InputField;

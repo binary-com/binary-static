@@ -182,7 +182,10 @@ Dropdown.propTypes = {
     name    : PropTypes.string,
     onChange: PropTypes.func,
     type    : PropTypes.string,
-    value   : PropTypes.string,
+    value   : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 
 };
 
@@ -193,7 +196,10 @@ NativeSelect.propTypes = {
     ]),
     name    : PropTypes.string,
     onChange: PropTypes.func,
-    value   : PropTypes.string,
+    value   : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 };
 
 export default Dropdown;

@@ -341,7 +341,7 @@ TimePicker.propTypes = {
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
-    value          : PropTypes.object,
+    value          : PropTypes.string,
 };
 
 TimePickerDropdown.propTypes = {
@@ -349,7 +349,7 @@ TimePickerDropdown.propTypes = {
     onChange   : PropTypes.func,
     preClass   : PropTypes.string,
     toggle     : PropTypes.func,
-    value      : PropTypes.object,
+    value      : PropTypes.string,
     value_split: PropTypes.bool,
 };
 
