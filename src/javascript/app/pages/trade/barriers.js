@@ -21,6 +21,7 @@ const Barriers = (() => {
         const barriers  = Contract.barriers()[Defaults.get('underlying')];
         const form_name = Contract.form();
 
+        // TODO: remove `reset` when API stops sending barrier for Resets in contracts_for response
         if (barriers && form_name && !/risefall|reset/i.test(Defaults.get('formname'))) {
             const barrier = barriers[form_name];
             if (barrier) {

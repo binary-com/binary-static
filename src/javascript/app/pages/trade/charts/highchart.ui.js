@@ -40,8 +40,8 @@ const HighchartUI = (() => {
         // display a guide for clients to know how we are marking entry and exit spots
         txt = (chart_delayed ? getLabels('delay') : '') +
             getLabels('start_time') +
-            (history ? getLabels('entry_spot') + getLabels('exit_spot') : '') +
-            getLabels('end_time') + (is_reset_contract ? getLabels('reset_time') : '');
+            (history ? getLabels('entry_spot') + (is_reset_contract ? getLabels('reset_time') : '') + getLabels('exit_spot') : '') +
+            getLabels('end_time');
     };
 
     const setChartOptions = (params) => {
