@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import DAO from '../../data/dao';
+import CardList from '../../components/elements/card_list.jsx';
 import DataTable from '../../components/elements/data_table.jsx';
 import Tooltip from '../../components/elements/tooltip.jsx';
 import ClientBase from '../../../_common/base/client_base';
@@ -62,6 +63,10 @@ const contract_type_display = {
     ONETOUCH    : localize('Touches'),
     NOTOUCH     : localize('Does Not Touch'),
 };
+
+const PortfolioCard = () => (
+    <h1>Test</h1>
+);
 
 // TODO: move to common
 const buildOauthApps = (response) => {
@@ -285,12 +290,22 @@ class Portfolio extends React.PureComponent  {
                     }
                     return (
                             this.state.data_source.length > 0 ?
-                                <DataTable
-                                    {...this.props}
-                                    columns={this.state.columns}
-                                    data_source={this.state.data_source}
-                                    footer={this.state.footer}
-                                />
+                                <div>
+                                    <div className='desktop-only'>
+                                        <DataTable
+                                            {...this.props}
+                                            columns={this.state.columns}
+                                            data_source={this.state.data_source}
+                                            footer={this.state.footer}
+                                        />
+                                    </div>
+                                    <div className='mobile-only'>
+                                        {this.state.data_source.map((transaction, id) => {
+                                            console.log(transaction);
+                                            return <h1 key={id}>{transaction.indicative && transaction.indicative.amount }</h1>;
+                                        })}
+                                    </div>
+                                </div>
                             : <p>{localize('No open positions.')}</p>
                     );
                 })()}
