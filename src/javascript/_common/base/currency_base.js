@@ -70,9 +70,8 @@ const crypto_config = {
 
 const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'min_withdrawal']) || 0.002 : 1);
 
-const getPaMaxWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'pa_max_withdrawal']) : 2000);
-
-const getPaMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'pa_min_withdrawal']) : 10);
+// @param {String} limit - 'max' or 'min'
+const getPaWithdrawalLimit = (currency, limit) => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, `pa_${limit}_withdrawal`]) : 2000);
 
 const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
 
@@ -92,7 +91,6 @@ module.exports = {
     getCurrencyName,
     getMinWithdrawal,
     getMinPayout,
-    getPaMaxWithdrawal,
-    getPaMinWithdrawal,
+    getPaWithdrawalLimit,
     getCurrencies: () => currencies_config,
 };

@@ -1,8 +1,7 @@
 const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
 const getDecimalPlaces   = require('../../common/currency').getDecimalPlaces;
-const getPaMaxWithdrawal = require('../../common/currency').getPaMaxWithdrawal;
-const getPaMinWithdrawal = require('../../common/currency').getPaMinWithdrawal;
+const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLimit;
 const FormManager        = require('../../common/form_manager');
 const validEmailToken    = require('../../common/form_validation').validEmailToken;
 const localize           = require('../../../_common/localize').localize;
@@ -55,8 +54,8 @@ const PaymentAgentWithdraw = (() => {
             setActiveView(view_ids.form);
 
             const form_id           = `#${$(view_ids.form).find('form').attr('id')}`;
-            const min_withdrawal    = getPaMinWithdrawal(currency);
-            const max_withdrawal    = getPaMaxWithdrawal(currency);
+            const min_withdrawal    = getPaWithdrawalLimit(currency, 'max');
+            const max_withdrawal    = getPaWithdrawalLimit(currency, 'min');
 
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
