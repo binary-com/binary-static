@@ -262,8 +262,8 @@ const ContractType = (() => {
         const barrier_1 = barriers.barrier || barriers.high_barrier || '';
         const barrier_2 = barriers.low_barrier || '';
         return {
-            barrier_1: barrier_1.toString(),
-            barrier_2: barrier_2.toString(),
+            barrier_1: Number(barrier_1),
+            barrier_2: Number(barrier_2),
         };
     };
 
