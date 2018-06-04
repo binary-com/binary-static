@@ -27,6 +27,7 @@ const Callputspread = (() => {
             y0: undefined,
             y1: undefined,
         },
+        // TODO: set contract info here from view_popup.js
     };
 
     const getSliderPath = (x, y, width, height) => {
@@ -70,24 +71,18 @@ const Callputspread = (() => {
     };
 
     const redrawHandler = (e) => {
-        window.chart = e.target;
         if (!e.target) return;
 
-        // TODO: vertical line can be series added with .addSeries and removed with .destroy
-        // or SVG added with renderer
-
         const chart = e.target;
-        // TODO: point slider to calculated Y point
-        // pass from highcharts.js in params
-
         const plot_end_x = chart.plotWidth + chart.plotLeft;
-
         const [high_plot_y, low_plot_y] = chart.series
             .find(series => series.name === constants.barrier_series_name)
             .data
             .map(point => point.plotY + chart.plotTop);
 
-        if (high_plot_y !== state.interval.y0 || low_plot_y !== state.interval.y1) {
+        if (plot_end_x !== state.interval.x
+                || high_plot_y !== state.interval.y0
+                || low_plot_y  !== state.interval.y1) {
             state.interval.x  = plot_end_x;
             state.interval.y0 = high_plot_y;
             state.interval.y1 = low_plot_y;
