@@ -18,7 +18,6 @@ const Barriers = (() => {
     let is_barrier_updated = false;
 
     const display = () => {
-
         const barriers  = Contract.barriers()[Defaults.get('underlying')];
         const form_name = Contract.form();
 
@@ -75,6 +74,7 @@ const Barriers = (() => {
                     Defaults.set('barrier', elm.value);
                     Defaults.remove('barrier_high', 'barrier_low');
                     Barriers.validateBarrier();
+                    showHideRelativeTip(barrier.barrier, [tooltip, span]);
                     return;
                 } else if (barrier.count === 2) {
                     getElementById('barrier_row').style.display = 'none';
@@ -96,9 +96,7 @@ const Barriers = (() => {
                         defaults_low : (barrier.barrier1 || 0);
                     let value_high,
                         value_low;
-                    if ((unit && isVisible(unit) && unit.value === 'd') ||
-                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
-                        !String(barrier.barrier).match(/^[+-]/)) {
+                    if (is_daily || !String(barrier.barrier).match(/^[+-]/)) {
                         if (current_tick && !isNaN(current_tick) && String(barrier_high).match(/^[+-]/)) {
                             value_high = (parseFloat(current_tick) + parseFloat(barrier_high)).toFixed(decimal_places);
                             value_low  = (parseFloat(current_tick) + parseFloat(barrier_low)).toFixed(decimal_places);
@@ -147,6 +145,7 @@ const Barriers = (() => {
                     Defaults.set('barrier_high', high_elm.value);
                     Defaults.set('barrier_low', low_elm.value);
                     Defaults.remove('barrier');
+                    showHideRelativeTip(barrier.barrier, [high_tooltip, high_span, low_tooltip, low_span]);
                     return;
                 }
             }
@@ -167,6 +166,20 @@ const Barriers = (() => {
         } else {
             barrier_element.classList.remove('error-field');
         }
+    };
+
+    const showHideRelativeTip = (barrier, arr_el) => {
+        const has_relative_barrier = String(barrier).match(/^[+-]/);
+        const barrier_text         = 'Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.';
+        arr_el.forEach((el) => {
+            if (has_relative_barrier) {
+                el.setAttribute('data-balloon', barrier_text);
+                el.setAttribute('data-balloon-length', 'xlarge');
+            } else {
+                el.removeAttribute('data-balloon');
+                el.removeAttribute('data-balloon-length');
+            }
+        });
     };
 
     return {

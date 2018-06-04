@@ -3,8 +3,6 @@ import Analysis from './analysis.jsx';
 import Portfolio from '../user/portfolio.jsx';
 import Loading from '../../_common/components/loading.jsx';
 
-const barrier_text = 'Add +/– to use a relative barrier where you can specify the difference from the spot price, instead of an absolute barrier. For example, if you enter +0.005, then you will be purchasing a contract with a relative barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received.';
-
 const Trading = () => (
     <React.Fragment>
         <div id='trading_socket_container' className='tab-menu-wrap'>
@@ -82,7 +80,7 @@ const Trading = () => (
                                     <div className='row barrier_class' id='barrier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='H' id='barrier_label'>
-                                                <span id='barrier_tooltip' data-balloon={it.L(barrier_text)} data-balloon-length='xlarge'>{it.L('Barrier offset')}</span>
+                                                <span id='barrier_tooltip'>{it.L('Barrier offset')}</span>
                                                 <span id='barrier_span'>{it.L('Barrier')}</span>
                                             </label>
                                         </div>
@@ -94,7 +92,7 @@ const Trading = () => (
                                     <div className='row barrier_class' id='high_barrier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='H' id='barrier_high_label'>
-                                                <span id='barrier_high_tooltip' data-balloon={it.L(barrier_text)} data-balloon-length='xlarge'>{it.L('High barrier offset')}</span>
+                                                <span id='barrier_high_tooltip'>{it.L('High barrier offset')}</span>
                                                 <span id='barrier_high_span'>{it.L('High barrier')}</span>
                                             </label>
                                         </div>
@@ -106,7 +104,7 @@ const Trading = () => (
                                     <div className='row barrier_class' id='low_barrier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='L' id='barrier_low_label'>
-                                                <span id='barrier_low_tooltip' data-balloon={it.L(barrier_text)} data-balloon-length='xlarge'>{it.L('Low barrier offset')}</span>
+                                                <span id='barrier_low_tooltip'>{it.L('Low barrier offset')}</span>
                                                 <span id='barrier_low_span'>{it.L('Low barrier')}</span>
                                             </label>
                                         </div>
