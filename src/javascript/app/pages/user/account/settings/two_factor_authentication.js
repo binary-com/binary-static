@@ -8,6 +8,8 @@ const getPropertyValue = require('../../../../../_common/utility').getPropertyVa
 const TwoFactorAuthentication = (() => {
     const form_id = '#frm_two_factor_auth';
     const state = ['disabled', 'enabled'];
+    const default_res_error_msg = 'Sorry, an error occurred while processing your request.';
+
     let $btn_submit,
         $form,
         $two_factor_loading,
@@ -99,7 +101,7 @@ const TwoFactorAuthentication = (() => {
 
     const handleSubmitResponse = (res) => {
         if ('error' in res) {
-            showFormMessage(getPropertyValue(res, ['error', 'message']) || 'Sorry, an error occurred while processing your request.');
+            showFormMessage(getPropertyValue(res, ['error', 'message']) || default_res_error_msg);
         } else {
             $('#otp').val('');
             showFormMessage(`You have successfully ${next_state}d two-factor authentication for your account.`, true);
@@ -107,16 +109,16 @@ const TwoFactorAuthentication = (() => {
     };
 
     const handleError = (id, err_msg) => {
-        $(`#${id}_error`).text(localize(err_msg ||'Sorry, an error occurred while processing your request.')).setVisibility(1);
+        $(`#${id}_error`).text(localize(err_msg || default_res_error_msg)).setVisibility(1);
     };
 
     const showFormMessage = (msg, is_success) => {
         if (is_success) {
             $(`${form_id}_success`)
-            .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })))
-            .css('display', 'block')
-            .delay(3000)
-            .fadeOut(1000, resetComponent);
+                .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })))
+                .css('display', 'block')
+                .delay(3000)
+                .fadeOut(1000, resetComponent);
         } else {
             $(`${form_id}_error`).text(localize(msg));
         }
