@@ -1,7 +1,7 @@
 import {
     action,
-    reaction }         from 'mobx'; // TODO: add useStrict once issues are fixed
-import { asyncAction } from 'mobx-utils';
+    flow,
+    reaction }         from 'mobx';
 import { cloneObject } from '../../../../_common/utility';
 
 // add files containing actions here.
@@ -12,8 +12,6 @@ import * as StartDate    from './start_date';
 import * as Symbol       from './symbol';
 import * as Test         from './test';
 
-// useStrict(false); // TODO: fix issues to enable useStrict
-
 const reaction_disposers = [];
 
 const defaultExports = { ...ContractType, ...Currency, ...Duration, ...Symbol, ...StartDate, ...Test };
@@ -23,9 +21,9 @@ export const initActions = (store) => {
         const method = defaultExports[methodName];
 
         if (/.*async$/i.test(methodName)) {
-            defaultExports[methodName] = asyncAction(`${methodName}.wrapper`, function* (payload) {
+            defaultExports[methodName] = flow(function* (payload) {
                 const snapshot = cloneObject(store);
-                const new_state = yield asyncAction(methodName, method)(snapshot, payload);
+                const new_state = yield flow(method)(snapshot, payload);
                 Object.keys(new_state).forEach((key) => {
                     store[key] = new_state[key];
                 });
