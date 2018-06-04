@@ -23,12 +23,12 @@ export const requestProposal = (store, updateStore) => {
         };
 
         Object.keys(store.trade_types).forEach(type => {
-            DAO.subscribeProposal(makeProposalRequest(store, type), proposalCallback);
+            DAO.subscribeProposal(createProposalRequest(store, type), proposalCallback);
         });
     });
 };
 
-const makeProposalRequest = (store, type_of_contract) => ({
+const createProposalRequest = (store, type_of_contract) => ({
     proposal     : 1,
     subscribe    : 1,
     amount       : parseFloat(store.amount),
