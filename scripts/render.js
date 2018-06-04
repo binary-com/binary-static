@@ -18,13 +18,12 @@ const ReactDOMServer = require('../node_modules/react-dom/server.js');
 const renderComponent = (context, path) => {
     const Component = require(path).default; // eslint-disable-line
 
-    global.it    = context;
-    const result = ReactDOMServer.renderToStaticMarkup(
+    global.it = context;
+    return ReactDOMServer.renderToStaticMarkup(
         React.createElement(
             Component
         )
     );
-    return result;
 };
 
 const color                = require('cli-color');
@@ -151,7 +150,7 @@ const createContextBuilder = async () => {
             static_hash = await common.readFile(Path.join(config.dist_path, 'version'));
         } catch (e) { } // eslint-disable-line
     }
-    const vendor_hash = await fileHash(Path.join(config.dist_path, 'js/vendor.min.js'));
+    const vendor_hash  = await fileHash(Path.join(config.dist_path, 'js/vendor.min.js'));
     const chartiq_hash = await fileHash(Path.join(config.dist_path, 'js/chartiq.min.js'));
     if (!is_translation) {
         await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
@@ -165,7 +164,10 @@ const createContextBuilder = async () => {
             ...(is_app ? [`${config.root_url}js/chartiq.min.js?${chartiq_hash}`] : []),
             `${config.root_url}js/binary${is_app ? '_app' : ''}${program.dev ? '' : '.min'}.js?${static_hash}`,
         ],
-        css_files: is_app ? [`${config.root_url}css/app_2.min.css?${static_hash}`, `${config.root_url}css/smartcharts.css`] : [
+        css_files: is_app ? [
+            `${config.root_url}css/app_2.min.css?${static_hash}`,
+            `${config.root_url}css/smartcharts.css?${static_hash}`,
+        ] : [
             `${config.root_url}css/common.min.css?${static_hash}`,
             ...config.sections.map(section => `${config.root_url}css/${section}.min.css?${static_hash}`),
         ],
