@@ -15,7 +15,6 @@ const TwoFactorAuthentication = (() => {
         $qrcode_key,
         current_state,
         next_state;
-    let err = false;
 
     const onLoad = () => {
         $btn_submit         = $('#btn_submit');
@@ -23,13 +22,6 @@ const TwoFactorAuthentication = (() => {
         $two_factor_loading = $('#two_factor_loading');
         $qrcode_loading     = $('#qrcode_loading');
         $qrcode_key         = $('#qrcode_key');
-
-        $('#otp').on('input', () => {
-            if (err) {
-                err = false;
-                $('#form_message').setVisibility(0);
-            }
-        });
 
         init();
     };
@@ -51,7 +43,7 @@ const TwoFactorAuthentication = (() => {
             $form.setVisibility(1);
 
             FormManager.init(form_id, [
-                { selector: '#otp', validations: ['req', 'number', ['length', { min: 6, max: 6 }]], request_field: 'otp', no_scroll: true },
+                { selector: '#otp', validations: ['req', 'number', ['length', { min: 6, max: 6 }]], request_field: 'otp', no_scroll: true, clearResErrorOnInput: true },
                 { request_field: 'account_security', value: 1 },
                 { request_field: 'totp_action',      value: next_state },
             ]);
@@ -107,7 +99,6 @@ const TwoFactorAuthentication = (() => {
 
     const handleSubmitResponse = (res) => {
         if ('error' in res) {
-            err = true;
             showFormMessage(getPropertyValue(res, ['error', 'message']) || 'Sorry, an error occurred while processing your request.');
         } else {
             const disabled_text = 'If you’d like to re-enable two-factor authentication, please delete Binary.com from your authentication app and scan the QR code again.';
@@ -122,12 +113,15 @@ const TwoFactorAuthentication = (() => {
     };
 
     const showFormMessage = (msg, is_success) => {
-        $('#form_message')
-            .attr('class', is_success ? 'success-msg' : 'error-msg')
-            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
+        if (is_success) {
+            $(`${form_id}_success`)
+            .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })))
             .css('display', 'block')
             .delay(3000)
-            .fadeOut(1000, is_success ? resetComponent: '');
+            .fadeOut(1000, resetComponent);
+        } else {
+            $(`${form_id}_error`).text(localize(msg));
+        }
     };
 
     return {

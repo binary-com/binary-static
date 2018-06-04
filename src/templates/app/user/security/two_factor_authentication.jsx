@@ -16,7 +16,8 @@ const OtpForm = () => (
                     <button type='submit' id='btn_submit' />
                 </div>
             </div>
-            <p id='form_message'/>
+            <p id='frm_two_factor_auth_error' className='error-msg' />
+            <p id='frm_two_factor_auth_success' className='success-msg' />
         </form>
     </React.Fragment>
 );
