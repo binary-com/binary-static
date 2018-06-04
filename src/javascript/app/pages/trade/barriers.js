@@ -18,17 +18,21 @@ const Barriers = (() => {
     let is_barrier_updated = false;
 
     const display = () => {
+
         const barriers  = Contract.barriers()[Defaults.get('underlying')];
         const form_name = Contract.form();
 
         if (barriers && form_name && Defaults.get('formname') !== 'risefall') {
-            const barrier = barriers[form_name];
+            const unit     = getElementById('duration_units');
+            const end_time = getElementById('expiry_date');
+            const is_daily = (unit && isVisible(unit) && unit.value === 'd') ||
+                (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day'));
+
+            const barrier = barriers[form_name][is_daily ? 'daily' : 'intraday'];
             if (barrier) {
                 const current_tick   = Tick.quote();
                 const decimal_places = countDecimalPlaces(current_tick);
 
-                const unit                            = getElementById('duration_units');
-                const end_time                        = getElementById('expiry_date');
                 const indicative_barrier_tooltip      = getElementById('indicative_barrier_tooltip');
                 const indicative_high_barrier_tooltip = getElementById('indicative_high_barrier_tooltip');
                 const indicative_low_barrier_tooltip  = getElementById('indicative_low_barrier_tooltip');
@@ -45,9 +49,7 @@ const Barriers = (() => {
                     let barrier_def        = defaults_barrier && !isNaN(defaults_barrier) ?
                         defaults_barrier : (barrier.barrier || 0);
                     let value;
-                    if ((unit && isVisible(unit) && unit.value === 'd') ||
-                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
-                        !String(barrier.barrier).match(/^[+-]/)) {
+                    if (is_daily || !String(barrier.barrier).match(/^[+-]/)) {
                         if (current_tick && !isNaN(current_tick) && String(barrier_def).match(/^[+-]/)) {
                             value = (parseFloat(current_tick) + parseFloat(barrier_def)).toFixed(decimal_places);
                         } else {
