@@ -75,9 +75,7 @@ class ContractsPopUp extends React.PureComponent {
                 visible={this.state.is_list_visible}
                 onClose={this.handleVisibility}
             >
-                <div className='contracts-modal-list'>
-                    {this.renderList()}
-                </div>
+                {this.renderList()}
             </FullscreenDialog>
         );
     }

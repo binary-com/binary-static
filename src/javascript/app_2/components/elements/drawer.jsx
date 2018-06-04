@@ -223,10 +223,7 @@ const DrawerHeader = ({
 
 Drawer.propTypes = {
     alignment: PropTypes.string,
-    children : PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object,
-    ]),
+    children : PropTypes.array,
     closeBtn  : PropTypes.func,
     footer    : PropTypes.func,
     icon_class: PropTypes.string,
@@ -235,10 +232,7 @@ Drawer.propTypes = {
 
 ToggleDrawer.propTypes = {
     alignment: PropTypes.string,
-    children : PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object,
-    ]),
+    children : PropTypes.array,
     footer    : PropTypes.func,
     icon_class: PropTypes.string,
     icon_link : PropTypes.string,

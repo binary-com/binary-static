@@ -33,8 +33,18 @@ export default class TradeStore {
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        this[name] = value;
+        // To-Do: combine handleChange(e) and handleChangeToString method later
+        this[name] = isNaN(value) ? value: Number(value);
+        // this[name] = Number(value;
     }
+
+    // @action.bound handleChangeToString(e) {
+    //     const { name, value } = e.target;
+    //     if (!(name in this)) {
+    //         throw new Error(`Invalid Argument: ${name}`);
+    //     }
+    //     this[name] = String(value);
+    // }
 
     // Underlying
     @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };

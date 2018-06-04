@@ -31,10 +31,7 @@ class Fieldset extends React.PureComponent {
 }
 
 Fieldset.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object,
-    ]),
+    children: PropTypes.array,
     header : PropTypes.string,
     icon   : PropTypes.string,
     time   : PropTypes.object,
