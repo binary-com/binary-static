@@ -17,7 +17,7 @@ const constants = {
         label: {
             color: '#000',
             fontSize: '12px',
-            offsetX: 10,
+            offsetX: 2,
             offsetY: 4,
         }
     },
@@ -173,14 +173,10 @@ const Callputspread = (() => {
             .data
             .map(point => point.plotY + chart.plotTop);
 
-        if (plot_end_x !== state.interval.x
-                || high_plot_y !== state.interval.y0
-                || low_plot_y  !== state.interval.y1) {
-            state.interval.x  = plot_end_x;
-            state.interval.y0 = high_plot_y;
-            state.interval.y1 = low_plot_y;
-            redrawVerticalInterval(chart);
-        }
+        state.interval.x  = plot_end_x;
+        state.interval.y0 = high_plot_y;
+        state.interval.y1 = low_plot_y;
+        redrawVerticalInterval(chart);
 
         if (!state.contract.maximum_payout || !state.contract.price) return;
 
@@ -192,14 +188,10 @@ const Callputspread = (() => {
 
         const price_y = high_plot_y + (low_plot_y - high_plot_y) * k;
 
-        if (plot_end_x !== state.slider.x
-                || price_y !== state.slider.y) {
-            const x_offset = (constants.interval.cap_width + constants.interval.strokeWidth) / 2;
-            state.slider.x = plot_end_x + x_offset;
-            state.slider.y = price_y;
-            redrawSlider(chart);
-        }
-
+        const x_offset = (constants.interval.cap_width + constants.interval.strokeWidth) / 2;
+        state.slider.x = plot_end_x + x_offset;
+        state.slider.y = price_y;
+        redrawSlider(chart);
     };
 
     const isCallputspread = (contract_type) => (
@@ -234,9 +226,6 @@ const Callputspread = (() => {
 
     const updateContractState = (new_contract_state) => {
         $.extend(state.contract, new_contract_state);
-
-        state.slider.x = undefined;
-        state.interval.x = undefined;
     };
 
     return {
