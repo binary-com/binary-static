@@ -45,7 +45,7 @@ const TwoFactorAuthentication = (() => {
             $form.setVisibility(1);
 
             FormManager.init(form_id, [
-                { selector: '#otp', validations: ['req', 'number', ['length', { min: 6, max: 6 }]], request_field: 'otp', no_scroll: true, clear_res_error_on_input: true },
+                { selector: '#otp', validations: ['req', 'number', ['length', { min: 6, max: 6 }]], request_field: 'otp', no_scroll: true, clear_form_error_on_input: true },
                 { request_field: 'account_security', value: 1 },
                 { request_field: 'totp_action',      value: next_state },
             ]);
