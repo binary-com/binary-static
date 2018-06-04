@@ -3,12 +3,12 @@ import Amount          from './components/amount.jsx';
 import Barrier         from './components/barrier.jsx';
 import ContractType    from './components/contract_type.jsx';
 import Duration        from './components/duration.jsx';
+import MobileWidget    from './components/elements/mobile_widget.jsx';
 import LastDigit       from './components/last_digit.jsx';
 import Purchase        from './components/purchase.jsx';
 import StartDate       from './components/start_date.jsx';
-// import Test         from './components/test.jsx';
+import Test            from './components/test.jsx';
 import SmartCharts     from '../../components/charts/smartcharts.jsx';
-import MobileWidget    from './components/elements/mobile_widget.jsx';
 import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
 import { connect }     from '../../store/connect';
 
@@ -36,7 +36,7 @@ class TradeApp extends React.PureComponent {
             <div id='trade_container' className={this.props.is_portfolio_drawer_on ? 'show' : undefined}>
                 <div className='chart-container notice-msg'>
                     <SmartCharts />
-                    {/* }<Test /> */}
+                    <Test />
                 </div>
                 <div className='sidebar-container desktop-only'>
                     <fieldset className='trade-types'>
