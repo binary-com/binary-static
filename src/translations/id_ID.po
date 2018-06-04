@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-31 06:19-0400\n"
+"PO-Revision-Date: 2018-06-04 05:09-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1028,6 +1028,9 @@ msgstr "Memberi Klien untuk mendeposit dengan jumlah lebih rendah (mata uang lok
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Memberi Klien menggunakan metode e-wallet yang tidak di sediakan di %1"
+
+msgid "Allow equals"
+msgstr ""
 
 msgid "Also known as counter currency"
 msgstr "Juga dikenal sebagai mata uang counter"
@@ -3172,7 +3175,7 @@ msgid "Ensuring that the Binary Group of companies are in full compliance with t
 msgstr "Memastikan Grup Perusahaan Binary mematuhi secara menyeluruh peraturan rezim yang mereka harus patuhi"
 
 msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "Masukan batasan yang merupakan selisih harga spot. Jika Anda memasukan +0.005, maka Anda akan membeli kontrak dengan batasan 0.005 lebih tinggi dari spot masuk. Spot masuk adalah tik setelah kontrak Anda diproses"
+msgstr ""
 
 msgid "Enter your email"
 msgstr "Masukkan email Anda"
@@ -4269,9 +4272,6 @@ msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>batasan</strong>, A
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "Jika <strong>spot akhir</strong> adalah sama dengan <strong>batasan</strong>, Anda hanya akan memperoleh hasil pada kontrak \"Higher\""
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>spot awal</strong>, Anda tidak akan memperoleh hasil."
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "Jika <strong>tik akhir</strong> sama dengan tik rata-rata, Anda tidak akan memperoleh hasil."
 
@@ -4380,6 +4380,9 @@ msgstr "Jika hasil SATI Anda bagus, kami akan mengirimkan uji bakat. Lakukan uji
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "Jika Anda melihat EUR/USD memiliki harga bid 1,05229, Anda akan menjual USD 1,05229 untuk setiap 1 EUR yang Anda jual."
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Pilih \"Asian Fall\", untuk memperoleh hasil jika <strong>tik terakhir</strong> <strong>lebih rendah</strong> dari <strong>jumlah rata rata</strong> tik."
 
@@ -4413,8 +4416,14 @@ msgstr "Pilih \"Higher\", Anda akan memperoleh hasil jika <strong>spot akhir</st
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Pilih \"Higher\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>batasan</strong>."
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Pilih \"Lower\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih rendah dari <strong>batasan</strong>."
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Pilih \"Matches\", Anda akan memperoleh hasil jika <strong>digit terakhir</strong> pada tik akhir adalah <strong>sama</strong> dengan <strong>analisa</strong> Anda."
@@ -5711,6 +5720,9 @@ msgstr "Modal minimal rendah"
 
 msgid "Lower"
 msgstr "Lower"
+
+msgid "Lower or equal"
+msgstr ""
 
 msgid "M"
 msgstr "M"
@@ -7945,7 +7957,7 @@ msgid "Self-employed"
 msgstr "Self-employed"
 
 msgid "Self-exclusion on this website only applies to your %1 account and does not include other companies or websites."
-msgstr ""
+msgstr "Pengecualian diri pada situs web ini hanya berlaku untuk akun %1 Anda dan tidak termasuk perusahaan atau situs web lain."
 
 msgid "Sell"
 msgstr "Jual"
@@ -8116,7 +8128,7 @@ msgid "Since we exclusively deal on own account in Financial Products this means
 msgstr "Berhubung kami menangani langsung secara eklusif akun kami sendiri pada Produk Keuangan hal ini berarti kami bertindak sebagai tempat eksekusi dan berdasarkan semua transaksi yang dilakukan akan dieksekusi diluar pasar regulasi (bursa Efek) atau fasilitas perdagangan multilateral."
 
 msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
-msgstr ""
+msgstr "Berhubung Anda merasa perlu mengecualikan diri, kami sangat menyarankan Anda untuk mengecualikan diri Anda dari layanan serupa yang mungkin telah Anda daftarkan."
 
 msgid "Size - the size of your order determined by the volume (number of lots)."
 msgstr "Ukuran - ukuran order Anda ditentukan oleh volume (jumlah banyak)."
@@ -9497,7 +9509,7 @@ msgid "To self-exclude from all online gambling companies licensed in Great Brit
 msgstr "Untuk mengecualikan diri dari semua perusahaan gaming yang berlisensi di Inggris Raya, kunjungi %1."
 
 msgid "To self-exclude from all online gambling companies licensed in Great Britain, you may go to %1."
-msgstr ""
+msgstr "Untuk mengecualikan diri dari semua perusahaan yang berlisensi di Inggris Raya, Anda dapat mengunjungi %1."
 
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "Untuk menarik dana dari Akun Finansial MetaTrader 5 silahkan <a href=\"%1\">Otentikasi</a> akun Binary Anda."
@@ -10726,6 +10738,9 @@ msgstr "Mengapa Anda harus bertrading opsi binary dengan %1"
 
 msgid "Why you should trade precious metals with %1"
 msgstr "Mengapa Anda harus bertrading logam mulia dengan %1"
+
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
 
 msgid "Win the multiplier times the close minus low."
 msgstr "Hasil multiplier dikali close dikurangi low."
