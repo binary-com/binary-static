@@ -69,9 +69,9 @@ class FullscreenDialog extends React.PureComponent {
 
 FullscreenDialog.propTypes = {
     children: PropTypes.array,
-    onClose: PropTypes.func,
-    title  : PropTypes.string,
-    visible: PropTypes.bool,
+    onClose : PropTypes.func,
+    title   : PropTypes.string,
+    visible : PropTypes.bool,
 };
 
 export default FullscreenDialog;

@@ -238,6 +238,7 @@ class TimePicker extends PureComponent {
     };
 
     handleChange = (arg) => {
+        
         // To handle nativepicker;
         const value = typeof arg === 'object' ? this.convertTo12h(arg.target.value) : arg;
 
