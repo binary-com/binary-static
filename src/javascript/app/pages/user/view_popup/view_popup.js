@@ -153,9 +153,7 @@ const ViewPopup = (() => {
                 type: contract.contract_type,
                 maximum_payout: contract.payout,
                 price: indicative_price,
-                display_price: formatMoney(contract.currency, indicative_price),
-                display_maximum_payout: formatMoney(contract.currency, contract.payout),
-                display_minimum_payout: formatMoney(contract.currency, 0),
+                currency: contract.currency,
             });
         }
 

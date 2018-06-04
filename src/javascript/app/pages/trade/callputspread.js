@@ -1,6 +1,8 @@
+const formatMoney = require('../../common/currency').formatMoney;
+
 const constants = {
     slider: {
-        width: 45,
+        width: 60,
         height: 14,
         fill: '#e98024',
         label: {
@@ -22,7 +24,7 @@ const constants = {
         }
     },
     chart: {
-        marginRight: 60,
+        marginRight: 75,
     },
     barrier_series_name: 'barrier_points',
 };
@@ -53,9 +55,6 @@ const Callputspread = (() => {
             type: undefined,
             maximum_payout: undefined,
             price: undefined,
-            display_price: undefined,
-            display_maximum_payout: undefined,
-            display_minimum_payout: undefined,
         }
     };
 
@@ -112,7 +111,8 @@ const Callputspread = (() => {
             'z-index': -1,
         };
 
-        const { display_maximum_payout, display_minimum_payout } = state.contract;
+        const [display_maximum_payout, display_minimum_payout] = [state.contract.maximum_payout, 0]
+            .map(payout => formatMoney(state.contract.currency, payout));
 
         const [top_label, bottom_label] = state.contract.type === 'CALLSPREAD'
             ? [display_maximum_payout, display_minimum_payout]
@@ -151,7 +151,7 @@ const Callputspread = (() => {
         const { color, fontSize, offsetX, offsetY } = constants.slider.label;
         
         state.slider.label.el = chart.renderer
-            .text(state.contract.display_price, x + offsetX, y + offsetY, true)
+            .text(formatMoney(state.contract.currency, state.contract.price), x + offsetX, y + offsetY, true)
             .css({
                 color,
                 fontSize,
@@ -199,7 +199,9 @@ const Callputspread = (() => {
     );
 
     const augmentChartOptions = (chart_options) => {
-        chart_options.marginRight = constants.chart.marginRight;
+        console.log('augment Chart Options');
+        const formatted_max_payout = formatMoney(null, state.contract.maximum_payout, true);
+        chart_options.marginRight = 10 + 7.5 * formatted_max_payout.length;
         chart_options.redrawHandler = redrawHandler;
     };
 
@@ -225,6 +227,7 @@ const Callputspread = (() => {
     };
 
     const updateContractState = (new_contract_state) => {
+        console.log('update contract state');
         $.extend(state.contract, new_contract_state);
     };
 
