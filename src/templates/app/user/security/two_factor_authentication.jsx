@@ -13,8 +13,8 @@ const OtpForm = () => (
             <div className='otp-form-group'>
                 <div>
                     <input type='text' id='otp' placeholder={it.L('6-digit code')} />
+                    <button type='submit' id='btn_submit' />
                 </div>
-                <button type='submit' id='btn_submit' />
             </div>
             <p id='form_message'/>
         </form>
