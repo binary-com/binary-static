@@ -46,12 +46,17 @@ class ContractsPopUp extends React.PureComponent {
         return (
             Object.keys(this.props.list).map(key => (
                 <React.Fragment key={key}>
-                    <Contracts
-                        contracts={this.props.list[key]}
-                        name={this.props.name}
-                        value={this.props.value}
-                        handleSelect={this.handleSelect}
-                    />
+                    <div className='list-group'>
+                        <div className='list-label'><span>{key}</span></div>
+                        <div className='list-items'>
+                            <Contracts
+                                contracts={this.props.list[key]}
+                                name={this.props.name}
+                                value={this.props.value}
+                                handleSelect={this.handleSelect}
+                            />
+                        </div>
+                    </div>
                 </React.Fragment>
             ))
         );
