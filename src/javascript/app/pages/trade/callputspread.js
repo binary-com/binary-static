@@ -1,8 +1,14 @@
 const constants = {
     slider: {
-        width: 50,
-        height: 15,
-        fill: '#FF0000',
+        width: 40,
+        height: 14,
+        fill: '#e98024',
+        label: {
+            color: '#fff',
+            fontSize: '8px',
+            offsetY: 3,
+            offsetX: 25,
+        }
     },
     interval: {
         cap_width: 10,
@@ -10,7 +16,7 @@ const constants = {
         strokeWidth: 2,
     },
     chart: {
-        marginRight: 60,
+        marginRight: 55,
     },
     barrier_series_name: 'barrier_points',
 };
@@ -21,6 +27,9 @@ const Callputspread = (() => {
             el: null,
             x: undefined,
             y: undefined,
+            label: {
+                el: null,
+            }
         },
         interval: {
             el: null,
@@ -89,6 +98,16 @@ const Callputspread = (() => {
                 'stroke-width': 0,
             })
             .add();
+
+        const { color, fontSize, offsetX, offsetY } = constants.slider.label;
+        
+        state.slider.label.el = chart.renderer
+            .text(state.contract.price, x + offsetX, y + offsetY)
+            .attr({
+                'text-anchor': 'middle',
+            })
+            .css({ color, fontSize })
+            .add();
     };
 
     const redrawHandler = (e) => {
@@ -143,7 +162,7 @@ const Callputspread = (() => {
     };
 
     const alwaysShowBarriers = (chart, high_barrier, low_barrier) => {
-        // Add invisible points to barriers,
+        // Adds invisible points with barrier coordinates,
         // so barriers are always visible on the chart
         const x0 = chart.series[0].data[0].x;
         chart.addSeries({
