@@ -111,9 +111,10 @@ const Callputspread = (() => {
             .css({
                 color,
                 fontSize,
-                display: 'block',
-                width: `${width}px`, // doesn't work somehow
-                textAlign: 'center',
+                // OUTRAGEOUS, WIDTH IS IGNORED!!!
+                // display: 'block',
+                // width: '50px',
+                // textAlign: 'center',
             })
             .add();
     };
