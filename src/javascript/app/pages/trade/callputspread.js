@@ -14,6 +14,12 @@ const constants = {
         cap_width: 10,
         stroke: '#2a3052',
         strokeWidth: 2,
+        label: {
+            color: '#000',
+            fontSize: '12px',
+            offsetX: 10,
+            offsetY: 4,
+        }
     },
     chart: {
         marginRight: 60,
@@ -36,6 +42,12 @@ const Callputspread = (() => {
             x : undefined,
             y0: undefined,
             y1: undefined,
+            top_label: {
+                el: null,
+            },
+            bottom_label: {
+                el: null,
+            },
         },
         contract: {
             type: undefined,
@@ -82,6 +94,23 @@ const Callputspread = (() => {
                 stroke,
                 'stroke-width': strokeWidth,
             })
+            .add();
+
+        const { color, fontSize, offsetX, offsetY } = constants.interval.label;
+        const label_styles = {
+            color,
+            fontSize,
+            'z-index': -1,
+        };
+        
+        state.interval.top_label.el = chart.renderer
+            .text(state.contract.display_price, x + offsetX, y0 - offsetY, true)
+            .css(label_styles)
+            .add();
+
+        state.interval.bottom_label.el = chart.renderer
+            .text(state.contract.display_price, x + offsetX, y1 + offsetY + 9, true)
+            .css(label_styles)
             .add();
     };
 
