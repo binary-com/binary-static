@@ -42,7 +42,7 @@ const PersonalDetails = () => (
         <h1>{it.L('Personal Details')}</h1>
 
         <p className='notice-msg center-text invisible' id='missing_details_notice'>
-            {it.L('Please complete the missing information before proceeding.')}
+            {it.L('Please complete your personal details before you proceed.')}
         </p>
 
         <div id='loading'>
