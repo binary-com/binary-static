@@ -162,7 +162,7 @@ const createContextBuilder = async () => {
             `${config.root_url}js/texts/{PLACEHOLDER_FOR_LANG}.js?${static_hash}`,
             `${config.root_url}js/manifest.js?${static_hash}`,
             `${config.root_url}js/vendor.min.js?${vendor_hash}`,
-            `${config.root_url}js/chartiq.min.js?${chartiq_hash}`,
+            ...(is_app ? [`${config.root_url}js/chartiq.min.js?${chartiq_hash}`] : []),
             `${config.root_url}js/binary${is_app ? '_app' : ''}${program.dev ? '' : '.min'}.js?${static_hash}`,
         ],
         css_files: is_app ? [`${config.root_url}css/app_2.min.css?${static_hash}`, `${config.root_url}css/smartcharts.css`] : [
