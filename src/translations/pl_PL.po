@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-24 22:48-0400\n"
+"PO-Revision-Date: 2018-06-03 22:54-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -1917,9 +1917,6 @@ msgstr "Dla tego rynku podstawowego wykresy są opóźnione"
 msgid "Check out some technical terms before you start."
 msgstr "Zapoznaj się z terminami technicznymi, zanim zaczniesz handlować."
 
-msgid "Check out the latest economic events and indicators from all over the world. All data are collected and updated in real time."
-msgstr "Zobacz najnowsze wskaźniki i wydarzenia gospodarcze z całego świata. Wszystkie dane są gromadzone i uaktualniane w czasie rzeczywistym."
-
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "Zapoznaj się z metodami płatności akceptowanymi przez pośredników płatności (lista poniżej)."
 
@@ -2013,9 +2010,6 @@ msgstr "Kliknij tutaj, aby otworzyć prawdziwe konto"
 
 msgid "Click here to retry"
 msgstr "Kliknij tutaj, aby otworzyć stronę"
-
-msgid "Click on an individual event to be presented with further information and links to more in-depth data about it. The information provided by the Economic  Calendar will help you make more informed trading decisions."
-msgstr "Kliknij poszczególne wydarzenie, aby zobaczyć więcej informacji i łącza do powiązanych z nimi bardziej szczegółowych danych. Informacje z Kalendarza ekonomicznego pomogą Ci podjąć bardziej świadome decyzje handlowe."
 
 msgid "Click on the <strong>Advanced</strong> button."
 msgstr "Kliknij przycisk <strong>Zaawansowane</strong>."
@@ -3093,6 +3087,9 @@ msgstr "Podmiot kwalifikowany"
 
 msgid "Email"
 msgstr "E-mail"
+
+msgid "Email Preferences"
+msgstr "Preferencje dot. wiadomości e-mail"
 
 msgid "Email address"
 msgstr "Adres e-mail"
@@ -7261,9 +7258,6 @@ msgstr "Oszacuj kierunek zmian<br />i kup"
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "Prognozuj ostatnią cyfrę ceny spot. Są trzy rodzaje zakładów typu „Cyfry”:"
 
-msgid "Preferences"
-msgstr "Preferencje"
-
 msgid "Preferences:"
 msgstr "Preferencje:"
 
@@ -7453,6 +7447,9 @@ msgstr "Cena zakupu"
 msgid "Purchase Time"
 msgstr "Godzina zakupu"
 
+msgid "Purchase request sent"
+msgstr "Zgłoszono chęć zakupu"
+
 msgid "Purpose of trading"
 msgstr "Purpose of trading"
 
@@ -7557,6 +7554,9 @@ msgstr "Bieżąca kontrola konta"
 
 msgid "Receive back-office support for post-trade risk management and real-time trade/position monitoring."
 msgstr "Uzyskaj wsparcie w zakresie potransakcyjnego zarządzania ryzykiem i monitorowania w czasie rzeczywistym zakładu/pozycji."
+
+msgid "Receive emails on %1 products, services, and events"
+msgstr "Otrzymuj wiadomości e-mail dotyczące produktów i usług %1 oraz wydarzeń organizowanych przez %1"
 
 msgid "Receive instant prices based on your position."
 msgstr "Otrzymuj ceny w czasie rzeczywistym, w zależności od Twojej pozycji."
@@ -7924,14 +7924,11 @@ msgstr "Wybierz rynek:"
 msgid "Select the <strong>Override automatic cookie handling</strong>."
 msgstr "Wybierz opcję <strong>Zastąp automatyczną obsługę plików cookie</strong>."
 
-msgid "Select your market"
-msgstr "Wybierz rynek"
+msgid "Select your market and underlying asset"
+msgstr "Wybierz swój rynek i aktywa bazowe"
 
 msgid "Select your trade type"
 msgstr "Wybierz rodzaj zakładu"
-
-msgid "Select your underlying asset"
-msgstr "Wybierz aktywa bazowe"
 
 msgid "Self Exclusion"
 msgstr "Samodzielne wyłączenie"
@@ -7947,6 +7944,9 @@ msgstr "Limity samodzielnego wykluczenia"
 
 msgid "Self-employed"
 msgstr "Self-employed"
+
+msgid "Self-exclusion on this website only applies to your %1 account and does not include other companies or websites."
+msgstr "Opcja samo-wykluczenia dostępna na tej witrynie odnosi się wyłącznie do Twojego konta %1 i nie obejmuje innych firm czy witryn internetowych."
 
 msgid "Sell"
 msgstr "Sprzedaj"
@@ -8115,6 +8115,9 @@ msgstr "W związku z tym, że proces handlowania na stronie internetowej %1 jest
 
 msgid "Since we exclusively deal on own account in Financial Products this means that we act as the execution venue and accordingly all transactions entered into with us will be executed outside a regulated market (stock exchange) or multilateral trading facility."
 msgstr "Ze względu na to, że w przypadku Produktów finansowych prowadzimy transakcje wyłącznie na własny rachunek, nasza rola sprowadza się do zapewnienia miejsca realizacji kontraktów i wszystkie transakcje zawierane za naszym pośrednictwem będą realizowane poza rynkiem regulowanym (giełda papierów wartościowych) i wielostronną platformą obrotu."
+
+msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
+msgstr "Skoro czujesz potrzebę skorzystania z opcji samo-wykluczenia, zachęcamy do samo-wykluczenia również z podobnych usług, z których być może korzystasz."
 
 msgid "Size - the size of your order determined by the volume (number of lots)."
 msgstr "Wielkość – wielkość Twojego zlecenia zależna od wolumenu (liczby partii)."
@@ -9493,6 +9496,9 @@ msgstr "Aby zresetować swoje hasło handlowe lub inwestycyjne, kliknij poniższ
 msgid "To self-exclude from all online gambling companies licensed in Great Britain, go to %1."
 msgstr "Aby dokonać samo-wyłączenia ze wszystkich firm oferujących handel online w Wielkiej Brytanii, przejdź do %1."
 
+msgid "To self-exclude from all online gambling companies licensed in Great Britain, you may go to %1."
+msgstr "Aby dokonać samo-wyłączenia ze wszystkich firm oferujących handel online w Wielkiej Brytanii, przejdź do %1."
+
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "Aby wypłacić środki z Konta finansowego MetaTrader 5, proszę <a href=\"%1\">zweryfikować</a> swoje konto Binary."
 
@@ -9795,6 +9801,9 @@ msgstr "Wypróbuj wykresy Smart"
 
 msgid "Try TradingView"
 msgstr "Wypróbuj widok handlowy (TradingView)"
+
+msgid "Try Web Version"
+msgstr "Wypróbuj wersję internetową"
 
 msgid "Try WebTrader"
 msgstr "Wypróbuj WebTrader"
@@ -10750,9 +10759,6 @@ msgstr "Dzięki dźwigni możesz zakupić 100 jednostek tego samego aktywa, pła
 msgid "With regards to tracking your referrals accessing %1 via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to %1 through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
 msgstr "W odniesieniu do śledzenia Twoich danych logowania podczas uzyskiwania dostępu do portalu %1 poprzez łącza znajdujące się na Twojej stronie internetowej lub podczas podawania identyfikatorów partnerskich w procesie rejestracji, Firma dołoży wszelkich starań, by zapewnić, że za każdym razem, gdy klient zostaje przekierowany na stronę %1 przez te łącza lub identyfikatory partnerskie i gdy zawiera transakcję lub w inny sposób współpracuje z Firmą, będzie identyfikowany jako klient, który został przekierowany z Twojej strony. Jednakże Firma nie poniesie żadnej odpowiedzialności, jeśli nie będzie w stanie stwierdzić, że klient został przekierowany przez Ciebie lub z Twojej strony. Jedynie poprawnie otagowani klienci mogą zostać Ci przypisani. Zapewnienie poprawnego otagowania łączy jest Twoim obowiązkiem."
 
-msgid "With the Economic Calendar, you can see a breakdown of all the scheduled economic events due to take place on any given day."
-msgstr "Kalendarz ekonomiczny daje Ci podgląd na wszystkie zaplanowane wydarzenia gospodarcze, które mają się odbyć w określonym dniu."
-
 msgid "Withdraw"
 msgstr "Wypłata"
 
@@ -11016,9 +11022,6 @@ msgstr "Możesz określić wysokość wymaganego depozytu zabezpieczającego dla
 
 msgid "You can generate all kinds of insightful reports, including the following:"
 msgstr "Możesz generować różnego rodzaju przydatne raporty, m.in.:"
-
-msgid "You can monitor macroeconomic indicators straight from the MetaTrader 5 platform using release time labels displayed on %1financial symbol charts%2."
-msgstr "Możesz monitorować wskaźniki makroekonomiczne bezpośrednio z platformy MetaTrader 5, korzystając ze znaczników czasu widocznych na %1wykresie z symbolami finansowymi%2."
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Możesz sprzedać swój kontrakt przed datą jego wygaśnięcia, aby zachować potencjalne zyski lub ograniczyć straty."

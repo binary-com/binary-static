@@ -144,6 +144,7 @@ const AccountTransfer = (() => {
 
         el_transfer_fee.setVisibility(0);
         el_success_form.setVisibility(1);
+        getElementById('transfer_info').setVisibility(0);
     };
 
     const onClickReset = () => {

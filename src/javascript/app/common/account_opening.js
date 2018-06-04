@@ -203,12 +203,15 @@ const AccountOpening = (() => {
         return validations;
     };
 
+    const showHidePulser = (should_show) => { $('.upgrademessage').children('a').setVisibility(should_show); };
+
     return {
         redirectAccount,
         populateForm,
         handleNewAccount,
         commonValidations,
         selectCheckboxValidation,
+        showHidePulser,
     };
 })();
 

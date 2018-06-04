@@ -1,4 +1,4 @@
-const localize = require('../../../../../_common/localize').localize;
+const localize       = require('../../../../../_common/localize').localize;
 
 const PaymentAgentTransferUI = (() => {
     let $paymentagent_transfer,
