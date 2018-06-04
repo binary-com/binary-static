@@ -1,11 +1,11 @@
-const Client             = require('../../base/client');
-const BinarySocket       = require('../../base/socket');
-const getDecimalPlaces   = require('../../common/currency').getDecimalPlaces;
+const Client               = require('../../base/client');
+const BinarySocket         = require('../../base/socket');
+const getDecimalPlaces     = require('../../common/currency').getDecimalPlaces;
 const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLimit;
-const FormManager        = require('../../common/form_manager');
-const validEmailToken    = require('../../common/form_validation').validEmailToken;
-const localize           = require('../../../_common/localize').localize;
-const getHashValue       = require('../../../_common/url').getHashValue;
+const FormManager          = require('../../common/form_manager');
+const validEmailToken      = require('../../common/form_validation').validEmailToken;
+const localize             = require('../../../_common/localize').localize;
+const getHashValue         = require('../../../_common/url').getHashValue;
 
 const PaymentAgentWithdraw = (() => {
     const view_ids  = {
