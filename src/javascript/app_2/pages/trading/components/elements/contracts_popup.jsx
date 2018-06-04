@@ -1,4 +1,5 @@
-import React from 'react';
+import React            from 'react';
+import PropTypes        from 'prop-types';
 import FullscreenDialog from './fullscreen_dialog.jsx';
 
 class ContractsPopUp extends React.PureComponent {
@@ -74,9 +75,7 @@ class ContractsPopUp extends React.PureComponent {
                 visible={this.state.is_list_visible}
                 onClose={this.handleVisibility}
             >
-                <div className='contracts-modal-list'>
-                    {this.renderList()}
-                </div>
+                {this.renderList()}
             </FullscreenDialog>
         );
     }
@@ -144,5 +143,14 @@ const Contracts = ({
         </div>
     ))
 );
+
+ContractsPopUp.propTypes = {
+    className       : PropTypes.string,
+    is_mobile_widget: PropTypes.bool,
+    list            : PropTypes.object,
+    name            : PropTypes.string,
+    onChange        : PropTypes.func,
+    value           : PropTypes.string,
+};
 
 export default ContractsPopUp;

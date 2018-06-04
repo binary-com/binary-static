@@ -33,8 +33,29 @@ export default class TradeStore {
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        this[name] = value;
+        this[name] = isNaN(value) ? value: Number(value);
     }
+
+    @action.bound handleChangeToString(e) {
+        // To-Do: combine handleChange(e) and handleChangeToString method later
+        // What this function is for:
+        // Some fields require to handle changes for 0 as a String.
+        const { name, value } = e.target;
+        if (!(name in this)) {
+            throw new Error(`Invalid Argument: ${name}`);
+        }
+        // force to handle the change for 'value' as a String.
+        this[name] = value.toString();
+    }
+    //
+    // // Change strictly to String.
+    // @action.bound handleChangeToString(e) {
+    //     const { name, value } = e.target;
+    //     if (!(name in this)) {
+    //         throw new Error(`Invalid Argument: ${name}`);
+    //     }
+    //     this[name] = String(value);
+    // }
 
     // Underlying
     @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
@@ -43,7 +64,7 @@ export default class TradeStore {
     // Contract Type
     @observable contract_type        = '';
     @observable contract_types_list  = {};
-    @observable trade_types          = [];
+    @observable trade_types          = {};
     @observable contract_start_type  = '';
     @observable contract_expiry_type = '';
     @observable form_components      = [];
@@ -51,15 +72,15 @@ export default class TradeStore {
     // Amount
     @observable basis           = 'stake';
     @observable currency        = Client.get('currency');
-    @observable currencies_list = {};
-    @observable amount          = 5;
+    @observable currencies_list = [];
+    @observable amount          = '5';
 
     // Duration
     @observable expiry_type         = 'duration';
     @observable duration            = 15;
     @observable duration_unit       = '';
     @observable duration_units_list = [];
-    @observable expiry_date         = null;
+    @observable expiry_date         = '';
     @observable expiry_time         = '09:40 pm';
 
     // Barrier
@@ -68,7 +89,11 @@ export default class TradeStore {
 
     // Start Time
     @observable start_dates_list = [];
-    @observable start_date       = 'now';
+<<<<<<< HEAD
+    @observable start_date       = 999;
+=======
+    @observable start_date       = Number(-191);
+>>>>>>> add-propchanges
     @observable start_time       = '12:30 am';
 
     // Last Digit

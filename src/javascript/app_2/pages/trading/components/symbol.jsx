@@ -1,4 +1,5 @@
 import React       from 'react';
+import PropTypes   from 'prop-types';
 import { connect } from '../../../store/connect';
 
 const Symbol = ({
@@ -14,6 +15,12 @@ const Symbol = ({
         </select>
     </fieldset>
 );
+
+Symbol.propTypes = {
+    onChange    : PropTypes.func,
+    symbol      : PropTypes.string,
+    symbols_list: PropTypes.object,
+};
 
 export default connect(
     ({trade}) => ({
