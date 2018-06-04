@@ -6,26 +6,54 @@
     /* trade-app layout */
     #trade_container {
         position: relative;
-        margin: 0 15px;
-        padding-top: 14px;
+        padding: 14px 15px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
-        grid-template-rows: repeat(2, [row] auto);
-        grid-gap: 20px;
+        grid-template-rows: 1fr;
+        grid-gap: 4px;
+        overflow: hidden;
+        min-height: calc(100vh - 110px);
 
         .chart-container {
-            padding: 10px;
             position: relative;
+
+            cq-context { // stylelint-disable-line selector-type-no-unknown
+                top: 0;
+                left: 0;
+
+                div.ciq-chart {
+                    height: calc(100% - 50px);
+
+                    div.chartContainer {
+                        background: transparent;
+                        min-height: 100%;
+                    }
+                    div.cq-chart-controls {
+                        box-shadow: none;
+                    }
+                }
+            }
+            div.debug-text {
+                display: none;
+            }
         }
         .sidebar-container {
             position: relative;
         }
+        .offset-container {
+            display: none;
+        }
         & > * {
             grid-column: col-start / span 12;
+        }
+        @media (max-width: 768px) {
+            grid-template-rows: 1fr auto auto;
         }
         @media (min-width: 769px) {
             .chart-container {
                 grid-column: col-start 1 / span 9;
+                padding: 10px;
+                margin-left: -15px;
 
                 fieldset {
                     display: inline-grid;
@@ -61,6 +89,7 @@
         }
         @media (min-width: 1025px) {
             .offset-container {
+                display: unset;
                 position: absolute;
                 height: 100vh;
                 width: 100%;

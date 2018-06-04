@@ -9,9 +9,11 @@ export default class TradeStore {
     time_interval = undefined;
 
     @action.bound init() {
-        ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
-            updateStore(this, ContractType.getContractCategories());
-        }));
+        if (this.symbol) {
+            ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
+                updateStore(this, ContractType.getContractCategories());
+            }));
+        }
     }
 
     @action.bound dispose() {
@@ -28,8 +30,7 @@ export default class TradeStore {
     }
 
     // Underlying
-    @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
-    @observable symbol       = Object.keys(this.symbols_list)[0];
+    @observable symbol;
 
     // Contract Type
     @observable contract_expiry_type = '';

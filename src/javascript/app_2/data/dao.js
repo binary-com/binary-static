@@ -1,5 +1,6 @@
 import SubscriptionManager from './subscription_manager';
 import BinarySocket        from '../../_common/base/socket_base';
+import { isEmptyObject }   from '../../_common/utility';
 
 const DAO = (() => {
     const getAccountStatus = () =>
@@ -59,6 +60,18 @@ const DAO = (() => {
     const forgetAll = (...msg_types) =>
         SubscriptionManager.forgetAll(...msg_types);
 
+    // ------ SmartCharts calls ----
+    const subscribeTicksHistory = (request_object, cb, should_forget_first) =>
+        SubscriptionManager.subscribe('ticks_history', request_object, cb, should_forget_first);
+
+    const sendRequest = (request_object) => (
+        Promise.resolve(
+            !isEmptyObject(request_object) ?
+                BinarySocket.send(request_object) :
+                {}
+        )
+    );
+
     return {
         getAccountStatus,
         getActiveSymbols,
@@ -73,9 +86,11 @@ const DAO = (() => {
         sendLogout,
 
         // streams
+        sendRequest,
         subscribeBalance,
         subscribeProposal,
         subscribeTicks,
+        subscribeTicksHistory,
         subscribeWebsiteStatus,
         forget,
         forgetAll,
