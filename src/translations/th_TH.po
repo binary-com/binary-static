@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-03 22:55-0400\n"
+"PO-Revision-Date: 2018-06-04 05:09-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1028,6 +1028,9 @@ msgstr "ยินยอมให้ลูกค้าฝากเงินใน
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "ยินยอมให้ลูกค้าใช้กระเป๋าเงินอิเล็กทรอนิกส์ ซึ่งไม่มีบริการโดยตรงจาก %1"
+
+msgid "Allow equals"
+msgstr ""
 
 msgid "Also known as counter currency"
 msgstr "ที่รู้จักกันในชื่อ ค่าเงินอ้างอิง"
@@ -3172,7 +3175,7 @@ msgid "Ensuring that the Binary Group of companies are in full compliance with t
 msgstr "มั่นใจว่าบริษัทในเครือ Binary ปฏิบัติตามระเบียบปฏิบัติตามระบอบของแต่ละท้องที่"
 
 msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "เริ่มต้น Barrier ในความแตกต่างของจุดราคา หากท่านเพิ่ม +0.005 แล้ว หมายถึง คำสั่งของท่านจะซื้อที่ราคาที่สูงกว่าสปอตเริ่มต้นด้วย Barrier 0.005 สปอตเริ่มต้นจะเป็นช่วงราคาถัดไปหลังจากระบบได้รับคำสั่งของท่าน"
+msgstr ""
 
 msgid "Enter your email"
 msgstr "ป้อนอีเมล์ของท่าน"
@@ -4269,9 +4272,6 @@ msgstr "ถ้า<strong>สปอตสิ้นสุด</strong>มีค่�
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "ถ้า<strong>สปอตสิ้นสุด</strong>มีค่าเท่ากับ<strong>Barrier</strong>แล้ว คุณจะได้รับเงินแค่จากสัญญาที่ \"สูงกว่า\""
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "ถ้า<strong>สปอตสิ้นสุด</strong>มีค่าเท่ากับ<strong>สปอตเริ่มต้น</strong>แล้ว คุณจะไม่ได้เงิน"
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "ถ้า<strong>ช่วงราคาสุดท้าย</strong>เท่ากับ ค่าเฉลี่ยของช่วงราคา ท่านจะไม่ได้รับเงิน"
 
@@ -4380,6 +4380,9 @@ msgstr "ถ้าท่านทำคะแนน SATI เป็นที่พ
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "หากพบว่า EUR/USD มีราคาเสนอซื้อที่ 1.05229 ท่านจะซื้อ 1.05229 ดอลลาร์สหรัฐ สำหรับทุกๆ 1 ยูโรที่ท่านขาย"
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "หากท่านเลือก \"Asian Fall\" ท่านจะได้รับชำระเงินเมื่อ <strong>ช่วงราคาสุดท้าย</strong> มีค่า <strong>ต่ำ</strong> กว่า <strong>ค่าเฉลี่ย</strong> ของช่วงราคา"
 
@@ -4413,8 +4416,14 @@ msgstr "หากคุณเลือก \"สูงกว่า\" ท่าน
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "หากท่านเลือก \"สูงกว่า\" ท่านจะได้รับชำระเงินเมื่อ <strong>สปอตสุดท้าย</strong> มีค่าสูงกว่า <strong>ค่า Barrier</strong>"
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "หากท่านเลือก \"ต่ำกว่า\" ท่านจะได้รับชำระเงินเมื่อ <strong>สปอตสุดท้าย</strong> มีค่าต่ำกว่า <strong>ค่า Barrier</strong>"
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "หากท่านเลือก \"Matches\" ท่านจะได้รับชำระเงินเมื่อ <strong>เลขหลักสุดท้าย</strong> ของช่วงราคาสุดท้ายมีค่า <strong>เหมือนกัน</strong> กับ<strong>ค่าที่ท่านทำนาย</strong>"
@@ -5712,6 +5721,9 @@ msgstr "เงินเดิมพันขั้นต่ำที่ต่ำ
 
 msgid "Lower"
 msgstr "ต่ำกว่า"
+
+msgid "Lower or equal"
+msgstr ""
 
 msgid "M"
 msgstr "ด"
@@ -10731,6 +10743,9 @@ msgstr "ทำไมจึงควรซื้อขายไบนารีอ
 
 msgid "Why you should trade precious metals with %1"
 msgstr "ทำไมจึงควรซื้อขายโลหะมีค่ากับ%1"
+
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
 
 msgid "Win the multiplier times the close minus low."
 msgstr "ชนะด้วย ตัวคูณคูณตัวปิดลบจุดต่ำ"
