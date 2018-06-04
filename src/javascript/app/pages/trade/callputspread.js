@@ -1,13 +1,13 @@
 const constants = {
     slider: {
-        width: 40,
+        width: 45,
         height: 14,
         fill: '#e98024',
         label: {
             color: '#fff',
-            fontSize: '8px',
-            offsetY: 3,
-            offsetX: 25,
+            fontSize: '9px',
+            offsetY: 4,
+            offsetX: 7,
         }
     },
     interval: {
@@ -16,7 +16,7 @@ const constants = {
         strokeWidth: 2,
     },
     chart: {
-        marginRight: 55,
+        marginRight: 60,
     },
     barrier_series_name: 'barrier_points',
 };
@@ -41,6 +41,7 @@ const Callputspread = (() => {
             type: undefined,
             maximum_payout: undefined,
             price: undefined,
+            display_price: undefined,
         }
     };
 
@@ -99,14 +100,21 @@ const Callputspread = (() => {
             })
             .add();
 
+        if (state.slider.label.el) {
+            state.slider.label.el.destroy();
+        }
+
         const { color, fontSize, offsetX, offsetY } = constants.slider.label;
         
         state.slider.label.el = chart.renderer
-            .text(state.contract.price, x + offsetX, y + offsetY)
-            .attr({
-                'text-anchor': 'middle',
+            .text(state.contract.display_price, x + offsetX, y + offsetY, true)
+            .css({
+                color,
+                fontSize,
+                display: 'block',
+                width: `${width}px`, // doesn't work somehow
+                textAlign: 'center',
             })
-            .css({ color, fontSize })
             .add();
     };
 
@@ -130,9 +138,6 @@ const Callputspread = (() => {
         }
 
         if (!state.contract.maximum_payout || !state.contract.price) return;
-
-        // TODO: update slider position based on price
-        // TODO: flip logic for put spread
 
         const { type, maximum_payout, price } = state.contract;
 

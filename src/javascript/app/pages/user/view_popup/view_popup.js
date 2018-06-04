@@ -154,6 +154,7 @@ const ViewPopup = (() => {
                 type: contract.contract_type,
                 maximum_payout: contract.payout,
                 price: indicative_price,
+                display_price: formatMoney(contract.currency, contract.payout),
             });
         }
 
