@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-31 06:19-0400\n"
+"PO-Revision-Date: 2018-06-04 05:08-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -1028,6 +1028,9 @@ msgstr "允許客戶以較少金額（通過本地貨幣）充值"
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "允許客戶使用%1並不直接提供之電子貨幣"
+
+msgid "Allow equals"
+msgstr ""
 
 msgid "Also known as counter currency"
 msgstr "也稱為相對貨幣"
@@ -3172,7 +3175,7 @@ msgid "Ensuring that the Binary Group of companies are in full compliance with t
 msgstr "確保Binary公司集團充分遵循相關監管制度"
 
 msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "請按與現貨價格差額的形式輸入障礙水平。如果您輸入+0.005 ，那麼您將買入障礙水平比入市現價高0.005 的合約。入市現價為收到您訂單之後的下一個價格"
+msgstr ""
 
 msgid "Enter your email"
 msgstr "請輸入您的電子郵件"
@@ -4269,9 +4272,6 @@ msgstr "如果 <strong>退市現價</strong> 等於 <strong>障礙價格</strong
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "如果 <strong>退市現價</strong> 等於 <strong>障礙價格</strong>, 您將僅贏得「高於」合約的賠付。"
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "如果 <strong>退市現價</strong> 等於 <strong>入市現價</strong>, 您將不會贏得賠付。"
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "如果 <strong>最後跳動點</strong> 等於平均跳動點, 您將不會贏得賠付。"
 
@@ -4380,6 +4380,9 @@ msgstr "如果您在 SATI 測試中取得高分，我們將向您發送一份人
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "如果您看到歐元/美元的買入價為1.05229，那麼您每賣出1歐元就買入1.05229美元。"
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "如果您選擇「亞洲下跌」期權，<strong>當</strong><strong>最新價格</strong>低於<strong>平均</strong>價格時，您將獲得賠付。"
 
@@ -4413,8 +4416,14 @@ msgstr "如果您選擇「高於」期權，只要<strong>退市現價</strong>�
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "如果您選擇「高於」期權，只要<strong>退市現價</strong>嚴格高於<strong>障礙</strong>，您將獲得賠付。"
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "如果您選擇「低於」期權，只要<strong>退市現價</strong>嚴格低於<strong>障礙</strong>，您將獲得賠付。"
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "如果您選擇「符合」期權，只要<strong>最新價格的</strong>最後一個數字<strong>與您的</strong>預測<strong>相同，您將獲得賠付。</strong>"
@@ -5711,6 +5720,9 @@ msgstr "低額最小投入資金"
 
 msgid "Lower"
 msgstr "低於"
+
+msgid "Lower or equal"
+msgstr ""
 
 msgid "M"
 msgstr "M"
@@ -7945,7 +7957,7 @@ msgid "Self-employed"
 msgstr "Self-employed"
 
 msgid "Self-exclusion on this website only applies to your %1 account and does not include other companies or websites."
-msgstr ""
+msgstr "此網站的自我禁止功能僅適用于您的 %1 帳戶, 不包括其他公司或網站。"
 
 msgid "Sell"
 msgstr "賣出"
@@ -8116,7 +8128,7 @@ msgid "Since we exclusively deal on own account in Financial Products this means
 msgstr "我們的客戶僅能在自己的帳戶進行金融產品交易，這表示我們是執行場所，因此所有經過我們的交易都在受監管（股票證卷）市場或多元化交易設施以外執行。"
 
 msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
-msgstr ""
+msgstr "由於您覺得有必要啟用自我禁止功能, 我們強烈鼓勵您禁止自己使用已註冊的類似服務。"
 
 msgid "Size - the size of your order determined by the volume (number of lots)."
 msgstr "大小 - 您的訂單大小根據數量 （手數） 而定。"
@@ -9496,7 +9508,7 @@ msgid "To self-exclude from all online gambling companies licensed in Great Brit
 msgstr "要自我禁止在英國註冊的所有線上博彩公司交易, 請轉到 %1。"
 
 msgid "To self-exclude from all online gambling companies licensed in Great Britain, you may go to %1."
-msgstr ""
+msgstr "要自我禁止在英國註冊的所有線上博彩公司交易, 可前往 %1。"
 
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "如果您想從MetaTrader 5金融帳戶提款，請先通過Binary帳戶的<a href=\"%1\">驗證</a>。"
@@ -10724,6 +10736,9 @@ msgstr "為什麼要用%1 進行二元期權交易"
 
 msgid "Why you should trade precious metals with %1"
 msgstr "為什麼要用%1 進行貴重金屬交易"
+
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
 
 msgid "Win the multiplier times the close minus low."
 msgstr "贏取倍數值乘以收盤值減去最低值。"

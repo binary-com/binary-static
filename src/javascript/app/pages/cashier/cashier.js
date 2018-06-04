@@ -47,8 +47,7 @@ const Cashier = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
                 const is_virtual = Client.get('is_virtual');
-                const client_cur = Client.get('currency');
-                const is_crypto  = isCryptocurrency(client_cur);
+                const is_crypto  = isCryptocurrency(Client.get('currency'));
                 if (is_virtual) {
                     displayTopUpButton();
                 }
@@ -56,7 +55,7 @@ const Cashier = (() => {
                 if (residence) {
                     BinarySocket.send({ paymentagent_list: residence }).then((response) => {
                         const list = getPropertyValue(response, ['paymentagent_list', 'list']);
-                        if (client_cur && (list || []).find(pa => new RegExp(client_cur).test(pa.currencies))) {
+                        if (list && list.length) {
                             $('#payment-agent-section').setVisibility(1);
                         }
                     });
