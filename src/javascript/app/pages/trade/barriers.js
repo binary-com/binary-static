@@ -6,6 +6,7 @@ const Tick               = require('./tick');
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const isVisible          = require('../../../_common/common_functions').isVisible;
+const localize           = require('../../../_common/localize').localize;
 
 /*
  * Handles barrier processing and display
@@ -170,7 +171,7 @@ const Barriers = (() => {
 
     const showHideRelativeTip = (barrier, arr_el) => {
         const has_relative_barrier = String(barrier).match(/^[+-]/);
-        const barrier_text         = 'Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.';
+        const barrier_text         = localize('Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.');
         arr_el.forEach((el) => {
             if (has_relative_barrier) {
                 el.setAttribute('data-balloon', barrier_text);
