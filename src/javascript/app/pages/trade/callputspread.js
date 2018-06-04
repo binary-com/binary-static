@@ -234,6 +234,9 @@ const Callputspread = (() => {
 
     const updateContractState = (new_contract_state) => {
         $.extend(state.contract, new_contract_state);
+
+        state.slider.x = undefined;
+        state.interval.x = undefined;
     };
 
     return {
