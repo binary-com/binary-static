@@ -54,8 +54,8 @@ const DAO = (() => {
     const subscribeWebsiteStatus = (cb) =>
         SubscriptionManager.subscribe('website_status', { website_status: 1, subscribe: 1 }, cb);
 
-    const forget = (msg_type, cb) =>
-        SubscriptionManager.forget(msg_type, cb);
+    const forget = (msg_type, cb, match_values) =>
+        SubscriptionManager.forget(msg_type, cb, match_values);
 
     const forgetAll = (...msg_types) =>
         SubscriptionManager.forgetAll(...msg_types);
