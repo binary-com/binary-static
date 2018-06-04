@@ -1,6 +1,7 @@
 const moment         = require('moment');
 const ViewPopupUI    = require('./view_popup.ui');
 const Highchart      = require('../../trade/charts/highchart');
+const Callputspread  = require('../../trade/callputspread');
 const Lookback       = require('../../trade/lookback');
 const TickDisplay    = require('../../trade/tick_trade');
 const isJPClient     = require('../../../base/client').isJPClient;
@@ -141,6 +142,8 @@ const ViewPopup = (() => {
         const is_started           = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended             = contract.status !== 'open';
         const indicative_price     = final_price && is_ended ? final_price : (contract.bid_price || null);
+        // TODO: get this indicative price
+        console.log(indicative_price);
         const is_sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
 
         if (contract.barrier_count > 1) {
@@ -530,7 +533,7 @@ const ViewPopup = (() => {
             ${!Lookback.isLookback(contract.contract_type) ? createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
             ${(contract.barrier_count > 1 ? createRow(low_barrier_text, '', 'trade_details_barrier_low', true) : '')}
-            ${createRow('Potential Payout', '', 'trade_details_payout')}
+            ${createRow(Callputspread.isCallputspread(contract.contract_type) ? 'Maximum payout' : 'Potential Payout', '', 'trade_details_payout')}
             ${multiplier && Lookback.isLookback(contract.contract_type) ? createRow('Multiplier', '', 'trade_details_multiplier') : ''}
             ${createRow('Purchase Price', '', 'trade_details_purchase_price')}
             </tbody>
