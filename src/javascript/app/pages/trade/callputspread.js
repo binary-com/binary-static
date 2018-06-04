@@ -98,6 +98,13 @@ const Callputspread = (() => {
             })
             .add();
 
+        if (state.interval.top_label.el) {
+            state.interval.top_label.el.destroy();
+        }
+        if (state.interval.bottom_label.el) {
+            state.interval.bottom_label.el.destroy();
+        }
+
         const { color, fontSize, offsetX, offsetY } = constants.interval.label;
         const label_styles = {
             color,
