@@ -1,6 +1,7 @@
 const Contract           = require('./contract');
 const getLookBackFormula = require('./lookback').getFormula;
 const isLookback         = require('./lookback').isLookback;
+const isCallputspread    = require('./callputspread').isCallputspread;
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
 const TickDisplay        = require('./tick_trade');
@@ -96,7 +97,7 @@ const Purchase = (() => {
             if (isLookback(contract_type)) {
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formula}</p>`);
                 profit.setVisibility(0);
-            } else if (/^(CALLSPREAD|PUTSPREAD)$/.test(contract_type)) {
+            } else if (isCallputspread(contract_type)) {
                 profit.setVisibility(1);
                 CommonFunctions.elementInnerHtml(payout, `${localize('Maximum Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
                 CommonFunctions.elementInnerHtml(profit, `${localize('Maximum Profit')} <p>${profit_value}</p>`);
