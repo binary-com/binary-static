@@ -51,7 +51,6 @@ const Explanation = () => (
                 <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('If you select "Higher", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>.')}</p>
                 <p>{it.L('If you select "Lower", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>.')}</p>
-                <p>{it.L('If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don\'t win the payout.')}</p>
                 <p>{it.L('If you select "Allow equals", you win the payout if exit spot is higher than or equal to entry spot for "Higher". Similarly, you win the payout if exit spot is lower than or equal to entry spot for "Lower".')}</p>
             </div>
 
