@@ -223,6 +223,10 @@ const TradingAnalysis = (() => {
             lookbackhighlow: {
                 image1: 'high-low-image.svg',
             },
+            highlowticks: {
+                image1: 'high-low-1.svg',
+                image2: 'high-low-2.svg',
+            },
         };
 
         if (images[form_name]) {

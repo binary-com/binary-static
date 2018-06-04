@@ -108,8 +108,8 @@ const Explanation = () => (
 
             <div id='winning_highlowticks' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
-                <p>{it.L('If you select [_1]"High Tick"[_2], you win the payout if the selected tick is the [_1]highest[_2] among the next five ticks.', '<strong>', '</strong>')}</p>
-                <p>{it.L('If you select [_1]"Low Tick"[_2], you win the payout if the selected tick is the [_1]lowest[_2] among the next five ticks.', '<strong>', '</strong>')}</p>
+                <p>{it.L('If you select [_1]"High Tick"[_2], you win the payout if the selected tick is the [_1]highest among the next five ticks[_2].', '<strong>', '</strong>')}</p>
+                <p>{it.L('If you select [_1]"Low Tick"[_2], you win the payout if the selected tick is the [_1]lowest among the next five ticks[_2].', '<strong>', '</strong>')}</p>
             </div>
         </div>
 
@@ -240,9 +240,9 @@ const Explanation = () => (
 
             <div id='explain_highlowticks' className='invisible'>
                 <h3>{it.L('Entry tick')}</h3>
-                <p>{it.L('The [_1]start time[_2] is when the contract is processed by our servers. The [_1]entry tick[_2] is the next tick after the start time.', '<strong>','</strong>')}</p>
+                <p>{it.L('The start time is when the contract is processed by our servers. The entry tick is the next tick after the start time.')}</p>
                 <h3>{it.L('Exit tick')}</h3>
-                <p>{it.L('The [_1]exit tick[_2] is the [_1]fifth tick[_2] from the [_1]entry tick[_2].', '<strong>','</strong>')}</p>
+                <p>{it.L('The exit tick is the fifth tick from the entry tick.')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('High Tick/Low Tick contracts have a strict duration of five ticks.')}</p>
             </div>
         </div>

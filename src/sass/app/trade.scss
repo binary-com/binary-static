@@ -352,6 +352,12 @@
             background: url('../images/pages/trade/high_low_icon.svg') no-repeat center top;
             background-size: 50%;
         }
+        &.TICKHIGH {
+            background: url('../images/pages/trade/high_tick.svg') no-repeat center top;
+        }
+        &.TICKLOW {
+            background: url('../images/pages/trade/low_tick.svg') no-repeat center top;
+        }
     }
     #contract_prices_container {
         position: relative;
