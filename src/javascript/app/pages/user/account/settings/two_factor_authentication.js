@@ -101,10 +101,8 @@ const TwoFactorAuthentication = (() => {
         if ('error' in res) {
             showFormMessage(getPropertyValue(res, ['error', 'message']) || 'Sorry, an error occurred while processing your request.');
         } else {
-            const disabled_text = 'If you’d like to re-enable two-factor authentication, please delete Binary.com from your authentication app and scan the QR code again.';
             $('#otp').val('');
-            showFormMessage(
-                `You have successfully ${next_state}d two-factor authentication for your account.${next_state === 'disable' ? ` ${disabled_text}` : ''}`, true);
+            showFormMessage(`You have successfully ${next_state}d two-factor authentication for your account.`, true);
         }
     };
 

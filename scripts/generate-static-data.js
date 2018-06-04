@@ -635,7 +635,7 @@ const texts = [
 
     // two factor authentication
     'You have successfully enabled two-factor authentication for your account.',
-    'You have successfully disabled two-factor authentication for your account. If you’d like to re-enable two-factor authentication, please delete Binary.com from your authentication app and scan the QR code again.',
+    'You have successfully disabled two-factor authentication for your account.',
     'Enable',
     'Disable',
 ];
