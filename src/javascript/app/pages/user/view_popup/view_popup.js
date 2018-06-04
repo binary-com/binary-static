@@ -112,6 +112,10 @@ const ViewPopup = (() => {
             PUTSPREAD   : 'Put Spread',
         };
 
+        if (Callputspread.isCallputspread(contract.contract_type)) {
+            contract.payout = 10; // TODO: remove this line once backend has it
+        }
+
         containerSetText('trade_details_contract_type', localize(contract_type_display[contract.contract_type]));
         containerSetText('trade_details_contract_id', contract.contract_id);
         containerSetText('trade_details_start_date', epochToDateTime(contract.date_start));
@@ -142,9 +146,16 @@ const ViewPopup = (() => {
         const is_started           = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended             = contract.status !== 'open';
         const indicative_price     = final_price && is_ended ? final_price : (contract.bid_price || null);
-        // TODO: get this indicative price
-        console.log(indicative_price);
         const is_sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
+
+        // TODO: get this indicative price
+        if (Callputspread.isCallputspread(contract.contract_type)) {
+            Callputspread.updateContractState({
+                type: contract.contract_type,
+                maximum_payout: contract.payout,
+                price: indicative_price,
+            });
+        }
 
         if (contract.barrier_count > 1) {
             containerSetText('trade_details_barrier', is_sold_before_start ? '-' : addComma(contract.high_barrier), '', true);

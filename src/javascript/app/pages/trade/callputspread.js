@@ -2,6 +2,7 @@ const constants = {
     slider: {
         width: 50,
         height: 15,
+        fill: '#FF0000',
     },
     interval: {
         cap_width: 10,
@@ -27,7 +28,11 @@ const Callputspread = (() => {
             y0: undefined,
             y1: undefined,
         },
-        // TODO: set contract info here from view_popup.js
+        contract: {
+            type: undefined,
+            maximum_payout: undefined,
+            price: undefined,
+        }
     };
 
     const getSliderPath = (x, y, width, height) => {
@@ -70,6 +75,22 @@ const Callputspread = (() => {
             .add();
     };
 
+    const redrawSlider = (chart) => {
+        if (state.slider.el) {
+            state.slider.el.destroy();
+        }
+        const { el, x, y } = state.slider;
+        const { width, height, fill } = constants.slider;
+
+        state.slider.el = chart.renderer
+            .path(getSliderPath(x, y, width, height))
+            .attr({
+                fill,
+                'stroke-width': 0,
+            })
+            .add();
+    };
+
     const redrawHandler = (e) => {
         if (!e.target) return;
 
@@ -88,6 +109,28 @@ const Callputspread = (() => {
             state.interval.y1 = low_plot_y;
             redrawVerticalInterval(chart);
         }
+
+        if (!state.contract.maximum_payout || !state.contract.price) return;
+
+        // TODO: update slider position based on price
+        // TODO: flip logic for put spread
+
+        const { type, maximum_payout, price } = state.contract;
+
+        const k = type === 'CALLSPREAD'
+            ? 1 - (price / maximum_payout)
+            :      price / maximum_payout;
+
+        const price_y = high_plot_y + (low_plot_y - high_plot_y) * k;
+
+        if (plot_end_x !== state.slider.x
+                || price_y !== state.slider.y) {
+            const x_offset = (constants.interval.cap_width + constants.interval.strokeWidth) / 2;
+            state.slider.x = plot_end_x + x_offset;
+            state.slider.y = price_y;
+            redrawSlider(chart);
+        }
+
     };
 
     const isCallputspread = (contract_type) => (
@@ -120,10 +163,15 @@ const Callputspread = (() => {
         });
     };
 
+    const updateContractState = (new_contract_state) => {
+        $.extend(state.contract, new_contract_state);
+    };
+
     return {
         augmentChartOptions,
         isCallputspread,
         alwaysShowBarriers,
+        updateContractState,
     };
 })();
 
