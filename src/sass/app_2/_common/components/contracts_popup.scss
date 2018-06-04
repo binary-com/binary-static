@@ -37,8 +37,9 @@ div.contracts-popup-container {
         border-radius: 4px;
     }
     &.show {
-        z-index: 99;
-
+        &.mobile-only {
+            z-index: 99;
+        }
         & > div.contracts-popup-list {
             right: 0;
             max-height: 100%;
