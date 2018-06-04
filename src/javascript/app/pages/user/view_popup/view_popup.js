@@ -148,13 +148,14 @@ const ViewPopup = (() => {
         const indicative_price     = final_price && is_ended ? final_price : (contract.bid_price || null);
         const is_sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
 
-        // TODO: get this indicative price
         if (Callputspread.isCallputspread(contract.contract_type)) {
             Callputspread.updateContractState({
                 type: contract.contract_type,
                 maximum_payout: contract.payout,
                 price: indicative_price,
                 display_price: formatMoney(contract.currency, indicative_price),
+                display_maximum_payout: formatMoney(contract.currency, contract.payout),
+                display_minimum_payout: formatMoney(contract.currency, 0),
             });
         }
 

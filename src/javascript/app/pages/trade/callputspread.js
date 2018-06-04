@@ -54,6 +54,8 @@ const Callputspread = (() => {
             maximum_payout: undefined,
             price: undefined,
             display_price: undefined,
+            display_maximum_payout: undefined,
+            display_minimum_payout: undefined,
         }
     };
 
@@ -102,14 +104,20 @@ const Callputspread = (() => {
             fontSize,
             'z-index': -1,
         };
+
+        const { display_maximum_payout, display_minimum_payout } = state.contract;
+
+        const [top_label, bottom_label] = state.contract.type === 'CALLSPREAD'
+            ? [display_maximum_payout, display_minimum_payout]
+            : [display_minimum_payout, display_maximum_payout];
         
         state.interval.top_label.el = chart.renderer
-            .text(state.contract.display_price, x + offsetX, y0 - offsetY, true)
+            .text(top_label, x + offsetX, y0 - offsetY, true)
             .css(label_styles)
             .add();
 
         state.interval.bottom_label.el = chart.renderer
-            .text(state.contract.display_price, x + offsetX, y1 + offsetY + 9, true)
+            .text(bottom_label, x + offsetX, y1 + offsetY + 9, true)
             .css(label_styles)
             .add();
     };
