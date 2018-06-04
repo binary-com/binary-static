@@ -54,8 +54,8 @@ const PaymentAgentWithdraw = (() => {
             setActiveView(view_ids.form);
 
             const form_id        = `#${$(view_ids.form).find('form').attr('id')}`;
-            const min_withdrawal = getPaWithdrawalLimit(currency, 'max');
-            const max_withdrawal = getPaWithdrawalLimit(currency, 'min');
+            const min_withdrawal = getPaWithdrawalLimit(currency, 'min');
+            const max_withdrawal = getPaWithdrawalLimit(currency, 'max');
 
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
