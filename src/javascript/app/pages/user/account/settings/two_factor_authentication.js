@@ -15,6 +15,7 @@ const TwoFactorAuthentication = (() => {
         $qrcode_key,
         current_state,
         next_state;
+    let err = false;
 
     const onLoad = () => {
         $btn_submit         = $('#btn_submit');
@@ -22,6 +23,13 @@ const TwoFactorAuthentication = (() => {
         $two_factor_loading = $('#two_factor_loading');
         $qrcode_loading     = $('#qrcode_loading');
         $qrcode_key         = $('#qrcode_key');
+
+        $('#otp').on('input', () => {
+            if (err) {
+                err = false;
+                $('#form_message').setVisibility(0);
+            }
+        });
 
         init();
     };
@@ -99,6 +107,7 @@ const TwoFactorAuthentication = (() => {
 
     const handleSubmitResponse = (res) => {
         if ('error' in res) {
+            err = true;
             showFormMessage(getPropertyValue(res, ['error', 'message']) || 'Sorry, an error occurred while processing your request.');
         } else {
             const disabled_text = 'If you’d like to re-enable two-factor authentication, please delete Binary.com from your authentication app and scan the QR code again.';
