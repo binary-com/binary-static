@@ -80,8 +80,8 @@ const HighchartUI = (() => {
                         return addComma(this.value.toFixed(display_decimals));
                     },
                 },
-                maxPadding: 0,
-                minPadding: 0,
+                maxPadding: 0.05,
+                minPadding: 0.05,
             },
             series: [{
                 type : params.type,

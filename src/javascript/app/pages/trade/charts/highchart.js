@@ -142,7 +142,7 @@ const Highchart = (() => {
             user_sold : isSoldBeforeExpiry(),
         };
         if (Callputspread.isCallputspread(contract.contract_type)) {
-            Callputspread.augmentChartOptions(chart_options);
+            $.extend(chart_options, Callputspread.getChartOptions(chart_options));
         }
         HighchartUI.setChartOptions(chart_options);
 
@@ -152,6 +152,10 @@ const Highchart = (() => {
             else {
                 chart          = Highcharts.StockChart(el, HighchartUI.getChartOptions());
                 is_initialized = true;
+
+                if (Callputspread.isCallputspread(contract.contract_type)) {
+                    Callputspread.init(chart, contract);
+                }
             }
         });
     };
@@ -391,9 +395,6 @@ const Highchart = (() => {
                 } else {
                     addPlotLine({ id: 'high_barrier', value: +high_barrier, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
                     addPlotLine({ id: 'low_barrier',  value: +low_barrier,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
-                }
-                if (Callputspread.isCallputspread(contract_type)) {
-                    Callputspread.alwaysShowBarriers(chart, high_barrier, low_barrier);
                 }
             }
         }
