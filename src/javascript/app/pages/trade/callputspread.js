@@ -42,33 +42,6 @@ const Callputspread = (() => {
         contract: null,
     };
 
-    const init = (chart, contract) => {
-        // Adds invisible points with barrier coordinates,
-        // so barriers are always visible on the chart
-        const x0 = chart.series[0].data[0].x;
-        const { high_barrier, low_barrier } = contract;
-        chart.addSeries({
-            name: constants.barrier_series_name,
-            type: 'scatter',
-            marker: { enabled: false },
-            data: [
-                {
-                    y: +high_barrier,
-                    x: x0,
-                },
-                {
-                    y: +low_barrier,
-                    x: x0,
-                },
-            ],
-        });
-        updateState(chart, contract);
-    };
-
-    const isCallputspread = (contract_type) => (
-        /^(CALLSPREAD|PUTSPREAD)$/.test(contract_type)
-    );
-
     // Called on Highcharts 'redraw' event
     const redrawHandler = (e) => {
         redrawInterval();
@@ -76,7 +49,7 @@ const Callputspread = (() => {
     };
 
     /*
-        METHODS THAT DRAW ON CHART USING VALUES FROM STATE OBJECT:
+        METHODS THAT DRAW ON CHART:
     */
 
     const redrawInterval = () => {
@@ -87,7 +60,7 @@ const Callputspread = (() => {
         const { x, y0, y1, top_label, bottom_label } = calcIntervalState(state.chart, state.contract, constants);
         const { cap_width, stroke, strokeWidth } = constants.interval;
         state.el_interval = state.chart.renderer
-            .path(getVerticalIntervalPath(x, y0, y1, cap_width))
+            .path(getIntervalPath(x, y0, y1, cap_width))
             .attr({
                 stroke,
                 'stroke-width': strokeWidth,
@@ -145,19 +118,9 @@ const Callputspread = (() => {
             .add();
     };
 
-    /*
-        METHODS THAT UPDATE STATE OBJECT:
-    */
-
-    const getChartOptions = (chart_options, contract) => {
-        return {
-            marginRight: calcMarginRight(contract),
-            redrawHandler,
-        };
-    };
 
     /*
-        Calc Functions are PURE FUNCTIONS
+        Calc Functions are PURE FUNCTIONS:
     */
 
     const calcMarginRight = (contract) => {
@@ -204,10 +167,48 @@ const Callputspread = (() => {
         };
     };
 
+
+    /*
+        PUBLIC API:
+    */
+
+    const init = (chart, contract) => {
+        // Adds invisible points with barrier coordinates,
+        // so barriers are always visible on the chart
+        const x0 = chart.series[0].data[0].x;
+        const { high_barrier, low_barrier } = contract;
+        chart.addSeries({
+            name: constants.barrier_series_name,
+            type: 'scatter',
+            marker: { enabled: false },
+            data: [
+                {
+                    y: +high_barrier,
+                    x: x0,
+                },
+                {
+                    y: +low_barrier,
+                    x: x0,
+                },
+            ],
+        });
+        updateState(chart, contract);
+    };
+
+    const isCallputspread = (contract_type) => (
+        /^(CALLSPREAD|PUTSPREAD)$/.test(contract_type)
+    );
+
+    const getChartOptions = (contract) => {
+        return {
+            marginRight: calcMarginRight(contract),
+            redrawHandler,
+        };
+    };
+
     const updateState = (chart, contract, should_redraw_slider = false) => {
         state.chart = chart || state.chart;
         state.contract = contract || state.contract;
-
         // slider with indicative price lags behind sidebar value
         // if only drawn on 'redraw' chart event
         if (should_redraw_slider) redrawSlider();
@@ -238,7 +239,7 @@ const getSliderPath = (x, y, width, height) => {
     ];
 };
 
-const getVerticalIntervalPath = (x, y0, y1, cap_width) => {
+const getIntervalPath = (x, y0, y1, cap_width) => {
     const half_cap = cap_width / 2;
     return [
         'M', x, y0,

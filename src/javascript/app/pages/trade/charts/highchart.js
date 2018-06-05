@@ -142,7 +142,7 @@ const Highchart = (() => {
             user_sold : isSoldBeforeExpiry(),
         };
         if (Callputspread.isCallputspread(contract.contract_type)) {
-            $.extend(chart_options, Callputspread.getChartOptions(chart_options, contract));
+            $.extend(chart_options, Callputspread.getChartOptions(contract));
         }
         HighchartUI.setChartOptions(chart_options);
 
