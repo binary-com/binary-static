@@ -1,4 +1,5 @@
 import React       from 'react';
+import PropTypes   from 'prop-types';
 import { connect } from '../../../store/connect';
 
 const Test = ({
@@ -11,6 +12,11 @@ const Test = ({
         {json}
     </div>
 );
+
+Test.propTypes = {
+    entries: PropTypes.array,
+    json   : PropTypes.string,
+};
 
 export default connect(
     ({trade}) => ({

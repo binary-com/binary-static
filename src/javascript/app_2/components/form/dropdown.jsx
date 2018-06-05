@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Dropdown extends React.PureComponent {
     constructor(props) {
@@ -170,5 +171,38 @@ const NativeSelect = ({
         </select>
     </div>
 );
+
+// ToDo: Refactor Drop-down.
+// It's now too risky to refactor Dropdown for 'list' and 'value' prop types.
+Dropdown.propTypes = {
+    className      : PropTypes.string,
+    is_nativepicker: PropTypes.bool,
+    list           : PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
+    name    : PropTypes.string,
+    onChange: PropTypes.func,
+    type    : PropTypes.string,
+    value   : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+
+};
+
+// ToDo: Refactor NativeSelect
+NativeSelect.propTypes = {
+    list: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.array,
+    ]),
+    name    : PropTypes.string,
+    onChange: PropTypes.func,
+    value   : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+};
 
 export default Dropdown;

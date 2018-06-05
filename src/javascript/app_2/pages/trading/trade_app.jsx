@@ -1,4 +1,5 @@
 import React           from 'react';
+import PropTypes       from 'prop-types';
 import Amount          from './components/amount.jsx';
 import Barrier         from './components/barrier.jsx';
 import ContractType    from './components/contract_type.jsx';
@@ -77,6 +78,14 @@ class TradeApp extends React.Component {
         );
     }
 }
+
+TradeApp.propTypes = {
+    form_components       : PropTypes.array,
+    is_portfolio_drawer_on: PropTypes.bool,
+    portfolios            : PropTypes.array,
+    server_time           : PropTypes.object,
+    togglePortfolioDrawer : PropTypes.func,
+};
 
 export default connect(
     ({ trade, ui }) => ({

@@ -1,5 +1,6 @@
-import React from 'react';
+import React      from 'react';
 import classnames from 'classnames';
+import PropTypes  from 'prop-types';
 
 /* TODO:
       1. implement sorting by column (ASC/DESC)
@@ -81,5 +82,15 @@ class DataTable extends React.Component {
         );
     }
 }
+
+DataTable.propTypes = {
+    columns         : PropTypes.array,
+    data_source     : PropTypes.array,
+    footer          : PropTypes.string,
+    has_fixed_header: PropTypes.bool,
+    is_full_width   : PropTypes.bool,
+};
+
+
 
 export default DataTable;

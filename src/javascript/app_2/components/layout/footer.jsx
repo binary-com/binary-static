@@ -1,4 +1,5 @@
 import React          from 'react';
+import PropTypes      from 'prop-types';
 import Popover        from '../elements/popover.jsx';
 import { BinaryLink } from '../../routes';
 import { connect }    from '../../store/connect';
@@ -73,6 +74,7 @@ class ToggleFullScreen extends React.Component {
 }
 
 class Footer extends React.Component {
+
     render() {
         return (
             <React.Fragment>
@@ -96,6 +98,15 @@ class Footer extends React.Component {
         );
     }
 }
+
+Footer.propTypes = {
+    items: PropTypes.array,
+};
+
+TogglePortfolioDrawer.propTypes = {
+    is_portfolio_drawer_on: PropTypes.bool,
+    togglePortfolioDrawer : PropTypes.func,
+};
 
 export default connect(
     ({ ui }) => ({

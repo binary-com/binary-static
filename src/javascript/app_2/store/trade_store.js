@@ -25,11 +25,12 @@ export default class TradeStore {
     }
 
     @action.bound handleChange(e) {
-        const { name, value } = e.target;
+        const { name, value, type } = e.target;
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        this[name] = value;
+        this[name] = type === 'number' ? +value : value;
+        // this[name] = isNaN(value) ? value: Number(value);
     }
 
     // Underlying
@@ -38,7 +39,7 @@ export default class TradeStore {
     // Contract Type
     @observable contract_type        = '';
     @observable contract_types_list  = {};
-    @observable trade_types          = [];
+    @observable trade_types          = {};
     @observable contract_start_type  = '';
     @observable contract_expiry_type = '';
     @observable form_components      = [];
@@ -54,16 +55,16 @@ export default class TradeStore {
     @observable duration            = 15;
     @observable duration_unit       = '';
     @observable duration_units_list = [];
-    @observable expiry_date         = null;
+    @observable expiry_date         = '';
     @observable expiry_time         = '09:40 pm';
 
     // Barrier
-    @observable barrier_1 = 0;
-    @observable barrier_2 = 0;
+    @observable barrier_1 = '';
+    @observable barrier_2 = '';
 
     // Start Time
     @observable start_dates_list = [];
-    @observable start_date       = 'now';
+    @observable start_date       = Number(0); // Number(0) refers to 'now'
     @observable start_time       = '12:30 am';
 
     // Last Digit
