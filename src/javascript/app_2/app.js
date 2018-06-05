@@ -5,11 +5,11 @@ import { HashRouter as Router } from 'react-router-dom';
 import NetworkMonitor           from './base/network_monitor';
 import ClientStore              from './store/client_store';
 import { MobxProvider }         from './store/connect';
+import MainStore                from './store/main_store';
 import TradeStore               from './store/trade_store';
 import UIStore                  from './store/ui_store';
 import Footer                   from './components/layout/footer.jsx';
 import Header                   from './components/layout/header.jsx';
-import { initActions }          from './pages/trading/actions';
 import { BinaryRoutes }         from './routes';
 import Client                   from '../_common/base/client_base';
 import { localize }             from '../_common/localize';
@@ -18,15 +18,15 @@ import { localize }             from '../_common/localize';
 
 const stores = {
     client: new ClientStore(),
+    main  : new MainStore(),
     trade : new TradeStore(),
     ui    : new UIStore(),
 };
 
 const initApp = () => {
     Client.init();
-    NetworkMonitor.init(stores.client);
+    NetworkMonitor.init(stores);
 
-    initActions(stores.trade);
     stores.trade.init();
 
     const app = document.getElementById('binary_app');

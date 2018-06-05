@@ -3,7 +3,7 @@ import React        from 'react';
 import PropTypes    from 'prop-types';
 import { localize } from '../../../../_common/localize';
 
-class PortfolioDrawer extends React.Component {
+class PortfolioDrawer extends React.PureComponent {
     state = { is_open: true, width: window.innerWidth };
 
     componentWillMount() {

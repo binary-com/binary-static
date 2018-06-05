@@ -49,7 +49,7 @@ LastDigit.propTypes = {
 };
 
 export default connect(
-    ({trade}) => ({
+    ({ trade }) => ({
         last_digit: trade.last_digit,
         onChange  : trade.handleChange,
     })
