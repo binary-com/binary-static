@@ -21,7 +21,9 @@ import {
  * subscribers: an array of callbacks to dispatch the response to
  */
 const SubscriptionManager = (() => {
-    const subscriptions = {};
+    const subscriptions    = {};
+    const forget_requested = {};
+
     let subscription_id = 0;
 
     /**
@@ -66,7 +68,9 @@ const SubscriptionManager = (() => {
         const stream_id = getPropertyValue(response, [response.msg_type, 'id']);
 
         if (!subscriptions[sub_id]) {
-            forgetStream(stream_id);
+            if (!forget_requested[stream_id]) {
+                forgetStream(stream_id);
+            }
             return;
         }
 
@@ -155,11 +159,14 @@ const SubscriptionManager = (() => {
         );
     };
 
-    const forgetStream = (stream_id) => Promise.resolve(
-        stream_id ?
-            BinarySocket.send({ forget: stream_id }) :
-            {}
-    );
+    const forgetStream = (stream_id) => {
+        forget_requested[stream_id] = true; // to prevent forgetting multiple times
+        return Promise.resolve(
+            stream_id ?
+                BinarySocket.send({ forget: stream_id }).then(() => { delete forget_requested[stream_id]; }) :
+                {}
+        );
+    };
 
     const hasCallbackFunction = (sub_id, fncCallback) =>
         (subscriptions[sub_id] && subscriptions[sub_id].subscribers.indexOf(fncCallback) !== -1);

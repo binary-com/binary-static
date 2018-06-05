@@ -1,64 +1,72 @@
+import extend          from 'extend';
+import { runInAction } from 'mobx';
+import Client          from '../../../../_common/base/client_base';
 import {
-    action,
-    flow,
-    reaction }         from 'mobx';
-import { cloneObject } from '../../../../_common/utility';
+    cloneObject,
+    isEmptyObject }    from '../../../../_common/utility';
+
+import ContractTypeHelper  from './helpers/contract_type';
+import { requestProposal } from './helpers/proposal';
 
 // add files containing actions here.
-import * as ContractType from './contract_type';
-import * as Currency     from './currency';
-import * as Duration     from './duration';
-import * as StartDate    from './start_date';
-import * as Symbol       from './symbol';
-import * as Test         from './test';
+import * as ContractType  from './contract_type';
+import * as Currency      from './currency';
+import * as Duration      from './duration';
+import * as StartDate     from './start_date';
+import * as Symbol        from './symbol';
 
-const reaction_disposers = [];
+export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
+    runInAction(() => {
+        const new_state = cloneObject(obj_new_values);
+        Object.keys(new_state).forEach((key) => {
+            if (JSON.stringify(store[key]) === JSON.stringify(new_state[key])) {
+                delete new_state[key];
+            } else {
+                store[key] = new_state[key];
+            }
+        });
+    });
 
-const defaultExports = { ...ContractType, ...Currency, ...Duration, ...Symbol, ...StartDate, ...Test };
+    if (is_by_user || /^(symbol|contract_types_list)$/.test(Object.keys(obj_new_values))) {
+        if ('symbol' in obj_new_values) {
+            await Symbol.onChangeSymbolAsync(obj_new_values.symbol);
+        }
+        process(store);
+    }
+};
 
-export const initActions = (store) => {
-    Object.keys(defaultExports).forEach((methodName) => {
-        const method = defaultExports[methodName];
+const process_methods = [
+    ContractTypeHelper.getContractCategories,
+    ContractType.onChangeContractTypeList,
+    ContractType.onChangeContractType,
+    Duration.onChangeExpiry,
+    StartDate.onChangeStartDate,
+];
+const process = async(store) => {
+    const snapshot = cloneObject(store);
 
-        if (/.*async$/i.test(methodName)) {
-            defaultExports[methodName] = flow(function* (payload) {
-                const snapshot = cloneObject(store);
-                const new_state = yield flow(method)(snapshot, payload);
-                Object.keys(new_state).forEach((key) => {
-                    store[key] = new_state[key];
-                });
-            });
-        } else {
-            defaultExports[methodName] = action(methodName, (payload) => {
-                const snapshot = cloneObject(store);
-                const new_state = method(snapshot, payload);
-                Object.keys(new_state).forEach((key) => {
-                    store[key] = new_state[key];
-                });
-            });
+    if (!Client.get('currency') && isEmptyObject(store.currencies_list)) {
+        extendOrReplace(snapshot, await Currency.getCurrenciesAsync(store.currency));
+    }
+
+    process_methods.forEach((fnc) => {
+        extendOrReplace(snapshot, fnc(snapshot));
+    });
+
+    updateStore(store, snapshot);
+
+    requestProposal(store, updateStore);
+};
+
+// Some values need to be replaced, not extended
+const extendOrReplace = (source, new_values) => {
+    const to_replace = ['contract_types_list', 'trade_types'];
+
+    to_replace.forEach((key) => {
+        if (key in new_values) {
+            source[key] = undefined;
         }
     });
 
-    const reaction_map = {
-        symbol             : defaultExports.onChangeSymbolAsync,
-        contract_types_list: defaultExports.onChangeContractTypeList,
-        contract_type      : defaultExports.onChangeContractType,
-        amount             : defaultExports.onChangeAmount,
-        expiry_type        : defaultExports.onChangeExpiry,
-        expiry_date        : defaultExports.onChangeExpiry,
-        expiry_time        : defaultExports.onChangeExpiry,
-        duration_unit      : defaultExports.onChangeExpiry,
-        start_date         : defaultExports.onChangeStartDate,
-    };
-
-    Object.keys(reaction_map).forEach((reaction_key) => {
-        const disposer = reaction(() => store[reaction_key], reaction_map[reaction_key]);
-        reaction_disposers.push(disposer);
-    });
+    extend(true, source, new_values);
 };
-
-export const disposeActions = () => {
-    reaction_disposers.forEach((disposer) => { disposer(); });
-};
-
-export default defaultExports;

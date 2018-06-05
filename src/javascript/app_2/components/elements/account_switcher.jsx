@@ -42,7 +42,6 @@ class AccountSwitcher extends React.PureComponent {
                 is_collapsed: !this.state.is_collapsed,
             });
         }
-        console.log(this.active_account);
     };
 
     switchAccount = (loginid) => {

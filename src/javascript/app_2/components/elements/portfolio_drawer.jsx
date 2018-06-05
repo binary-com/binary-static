@@ -3,7 +3,7 @@ import React        from 'react';
 import PropTypes    from 'prop-types';
 import { localize } from '../../../_common/localize';
 
-class PortfolioDrawer extends React.Component {
+class PortfolioDrawer extends React.PureComponent {
     constructor(props) {
         super(props);
         this.handleVisibility = this.handleVisibility.bind(this);
