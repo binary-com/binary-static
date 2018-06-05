@@ -58,6 +58,55 @@ const Callputspread = (() => {
         contract: null,
     };
 
+    const init = (chart, contract) => {
+        // Adds invisible points with barrier coordinates,
+        // so barriers are always visible on the chart
+        const x0 = chart.series[0].data[0].x;
+        const { high_barrier, low_barrier } = contract;
+        chart.addSeries({
+            name: constants.barrier_series_name,
+            type: 'scatter',
+            marker: { enabled: false },
+            data: [
+                {
+                    y: +high_barrier,
+                    x: x0,
+                },
+                {
+                    y: +low_barrier,
+                    x: x0,
+                },
+            ],
+        });
+        updateState(chart, contract);
+    };
+
+    const isCallputspread = (contract_type) => (
+        /^(CALLSPREAD|PUTSPREAD)$/.test(contract_type)
+    );
+
+    const getChartOptions = (chart_options) => {
+        const formatted_max_payout = formatMoney(null, state.contract.payout, true);
+        // margin size is based on max payout char length
+        const marginRight = 15 + 7.5 * formatted_max_payout.length;
+        state.slider.width = marginRight - 17;
+        return {
+            marginRight,
+            redrawHandler,
+        };
+    };
+
+    const redrawHandler = (e) => {
+        // Called on Highcharts 'redraw' event
+        updateState(e.target, null);
+        redrawVerticalInterval();
+        redrawSlider();
+    };
+
+    /*
+        METHODS THAT DRAW ON CHART USING VALUES FROM STATE OBJECT:
+    */
+
     const redrawVerticalInterval = () => {
         if (state.interval.el) {
             state.interval.el.destroy();
@@ -139,6 +188,10 @@ const Callputspread = (() => {
             .add();
     };
 
+    /*
+        METHODS THAT MODIFY STATE OBJECT:
+    */
+
     const updateSliderState = () => {
         // Calculates new X Y coordinates for slider based on state
         const plot_end_x = state.chart.plotWidth + state.chart.plotLeft;
@@ -173,51 +226,6 @@ const Callputspread = (() => {
         state.interval.y1 = low_plot_y;
     };
 
-    const redrawHandler = (e) => {
-        // Called on Highcharts 'redraw' event
-        updateState(e.target, null);
-        redrawVerticalInterval();
-        redrawSlider();
-    };
-
-    const isCallputspread = (contract_type) => (
-        /^(CALLSPREAD|PUTSPREAD)$/.test(contract_type)
-    );
-
-    const getChartOptions = (chart_options) => {
-        const formatted_max_payout = formatMoney(null, state.contract.payout, true);
-        // margin size is based on max payout char length
-        const marginRight = 15 + 7.5 * formatted_max_payout.length;
-        state.slider.width = marginRight - 17;
-        return {
-            marginRight,
-            redrawHandler,
-        };
-    };
-
-    const init = (chart, contract) => {
-        // Adds invisible points with barrier coordinates,
-        // so barriers are always visible on the chart
-        const x0 = chart.series[0].data[0].x;
-        const { high_barrier, low_barrier } = contract;
-        chart.addSeries({
-            name: constants.barrier_series_name,
-            type: 'scatter',
-            marker: { enabled: false },
-            data: [
-                {
-                    y: +high_barrier,
-                    x: x0,
-                },
-                {
-                    y: +low_barrier,
-                    x: x0,
-                },
-            ],
-        });
-        updateState(chart, contract);
-    };
-
     const updateState = (chart, contract, should_redraw_slider = false) => {
         state.chart = chart || state.chart;
         state.contract = contract || state.contract;
@@ -239,7 +247,9 @@ const Callputspread = (() => {
 })();
 
 
-/* HELPER FUNCTIONS THAT RETURN SVG PATH: */
+/*
+    HELPER FUNCTIONS THAT RETURN SVG PATH:
+*/
 
 const getSliderPath = (x, y, width, height) => {
     const half = height / 2;
