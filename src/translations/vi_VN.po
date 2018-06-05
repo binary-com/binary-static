@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-29 20:59-0400\n"
+"PO-Revision-Date: 2018-06-04 05:09-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1028,6 +1028,9 @@ msgstr "Cho phép Khách hàng gửi tiền với số lượng ít hơ
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Cho phép Khách hàng sử dụng ví điện tử, mà không có trực tiếp trên %1"
+
+msgid "Allow equals"
+msgstr ""
 
 msgid "Also known as counter currency"
 msgstr "Còn được gọi là tiền tệ thứ hai"
@@ -3172,7 +3175,7 @@ msgid "Ensuring that the Binary Group of companies are in full compliance with t
 msgstr "Đảm bảo rằng Tập Đoàn Binary luôn tuân thủ đầy đủ các quy định của nhà nước sở tại"
 
 msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "Nhập giá giới hạn khác với giá giao ngay. Nếu bạn nhập +0.005, bạn sẽ có thể mua được một hợp đồng với giá giới hạn cao hơn 0.005 so với điểm khởi đầu. Giá tại điểm khởi đầu được nhập sẽ là giá tiếp theo sau khi lệnh của bạn được nhận"
+msgstr ""
 
 msgid "Enter your email"
 msgstr "Nhập địa chỉ email của bạn"
@@ -4270,9 +4273,6 @@ msgstr "Nếu</strong>điểm chốt<strong> bằng với <strong>giới hạn</
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "Nếu <strong>điểm chốt</strong> bằng với <strong>giới hạn</strong>, bạn chỉ thắng khoảng thanh toán cho các hợp đồng \"Cao hơn\""
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "Nếu <strong>điểm chốt</strong> bằng với <strong>điểm khởi đầu</strong>, bạn sẽ không thắng các thanh toán."
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "Nếu <strong>tick cuối</strong> bằng với trung bình các tick, bạn sẽ không thắng các thanh toán."
 
@@ -4381,6 +4381,9 @@ msgstr "Nếu bạn có điểm số tốt trên SATI, chúng tôi sẽ gửi ch
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "Nếu bạn thấy EUR/USD có giá mua vào là 1.05229, bạn sẽ mua 1.05229 USD cho mỗi 1 EUR bạn bán."
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Nếu bạn chọn \"Châu Á Giảm\", bạn sẽ giành chiến thắng nếu <strong> giá ở tick cuối cùng </strong> là <strong>thấp hơn</strong> so với <strong>trung bình</strong> của giá trong suốt giao dịch."
 
@@ -4414,8 +4417,14 @@ msgstr "Nếu bạn chọn \"Cao\", bạn giành chiến thắng các thanh toá
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Nếu bạn chọn \"Cao hơn\", bạn sẽ giành chiến thắng nếu <strong> điểm chốt</strong> cao hơn <strong> giới hạn </strong>."
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Nếu bạn chọn \"Thấp hơn\", bạn sẽ giành chiến thắng nếu <strong>điểm chốt</strong> thấp hơn <strong> giới hạn </strong>."
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Nếu bạn chọn \"Khớp\", bạn sẽ giành chiến thắng nếu <strong>chữ số cuối cùng</strong> của giá tại thời điểm kết thúc giao dịch <strong>same</strong> giống với <strong>dự đoán của bạn</strong>"
@@ -5713,6 +5722,9 @@ msgstr "Vốn đầu tư tối thiểu"
 
 msgid "Lower"
 msgstr "Thấp hơn"
+
+msgid "Lower or equal"
+msgstr ""
 
 msgid "M"
 msgstr "M"
@@ -7946,6 +7958,9 @@ msgstr "Giới hạn tự loại trừ"
 msgid "Self-employed"
 msgstr "Tự làm chủ"
 
+msgid "Self-exclusion on this website only applies to your %1 account and does not include other companies or websites."
+msgstr ""
+
 msgid "Sell"
 msgstr "Bán"
 
@@ -8113,6 +8128,9 @@ msgstr "Vì tất cả các giao dịch trên trang web %1 hoàn toàn tự đ�
 
 msgid "Since we exclusively deal on own account in Financial Products this means that we act as the execution venue and accordingly all transactions entered into with us will be executed outside a regulated market (stock exchange) or multilateral trading facility."
 msgstr "Từ khi chúng tôi mở tài khoản của mình vào Sản Phẩm Tài Chính, điều này có nghĩa là chúng tôi hoạt động như trung tâm thực hiện và theo đó tất cả các giao dịch được nhập vào với chúng tôi sẽ được thực hiện bên ngoài thị trường quy định (giao dịch chứng khoán) hoặc cơ sở thương mại đa phương."
+
+msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
+msgstr ""
 
 msgid "Size - the size of your order determined by the volume (number of lots)."
 msgstr "Kích thước - kích thước của lệnh của bạn được xác định theo khối lượng (số lượng của các lô)."
@@ -9491,6 +9509,9 @@ msgstr "Để đổi mật khẩu giao dịch hoặc đầu tư của bạn, xin
 msgid "To self-exclude from all online gambling companies licensed in Great Britain, go to %1."
 msgstr "Để tự loại trừ khỏi tất cả công ty cờ bạc trực tuyến có giấy phép trong Anh Quốc, đi tới %1."
 
+msgid "To self-exclude from all online gambling companies licensed in Great Britain, you may go to %1."
+msgstr ""
+
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "Để rút tiền từ MetaTrader 5 tài khoản tài chính xin vui lòng <a href=\"%1\">xác thực</a> tài khoản Binary của bạn."
 
@@ -10717,6 +10738,9 @@ msgstr "Tại sao bạn nên giao dịch binary options với %1"
 
 msgid "Why you should trade precious metals with %1"
 msgstr "Tại sao bạn nên giao dịch kim loại quý với %1"
+
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
 
 msgid "Win the multiplier times the close minus low."
 msgstr "Thắng hệ số lần đóng âm thấp."

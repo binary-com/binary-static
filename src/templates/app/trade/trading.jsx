@@ -80,7 +80,7 @@ const Trading = () => (
                                     <div className='row barrier_class' id='barrier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='H' id='barrier_label'>
-                                                <span id='barrier_tooltip'  data-balloon={it.L('Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received')} data-balloon-length='xlarge'>{it.L('Barrier offset')}</span>
+                                                <span id='barrier_tooltip'>{it.L('Barrier offset')}</span>
                                                 <span id='barrier_span'>{it.L('Barrier')}</span>
                                             </label>
                                         </div>
@@ -92,7 +92,7 @@ const Trading = () => (
                                     <div className='row barrier_class' id='high_barrier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='H' id='barrier_high_label'>
-                                                <span id='barrier_high_tooltip' data-balloon={it.L('Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received')} data-balloon-length='xlarge'>{it.L('High barrier offset')}</span>
+                                                <span id='barrier_high_tooltip'>{it.L('High barrier offset')}</span>
                                                 <span id='barrier_high_span'>{it.L('High barrier')}</span>
                                             </label>
                                         </div>
@@ -104,7 +104,7 @@ const Trading = () => (
                                     <div className='row barrier_class' id='low_barrier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='L' id='barrier_low_label'>
-                                                <span id='barrier_low_tooltip' data-balloon={it.L('Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received')} data-balloon-length='xlarge'>{it.L('Low barrier offset')}</span>
+                                                <span id='barrier_low_tooltip'>{it.L('Low barrier offset')}</span>
                                                 <span id='barrier_low_span'>{it.L('Low barrier')}</span>
                                             </label>
                                         </div>
@@ -149,6 +149,10 @@ const Trading = () => (
                                                 <input id='amount' type='text' data-lpignore='true' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
                                             </div>
                                         </div>
+                                    </div>
+                                    <div className='row invisible' id='equals_row'>
+                                        <input id='callputequal' type='checkbox' />
+                                        <label htmlFor='callputequal'><span data-balloon-length='xlarge' data-balloon={it.L('Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower.')}>{it.L('Allow equals')}</span></label>
                                     </div>
                                 </form>
                             </div>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-29 20:58-0400\n"
+"PO-Revision-Date: 2018-06-04 05:08-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -1028,6 +1028,9 @@ msgstr "Klienci mogą wpłacać małe kwoty (w lokalnej walucie)"
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Klienci mogą korzystać z e-portfela, co nie jest możliwe bezpośrednio na %1"
+
+msgid "Allow equals"
+msgstr ""
 
 msgid "Also known as counter currency"
 msgstr "Zwana również walutą kwotowania"
@@ -3173,7 +3176,7 @@ msgid "Ensuring that the Binary Group of companies are in full compliance with t
 msgstr "Zapewnianie, że spółki grupy Binary Group spełniają wszystkie wymogi nadzorcze, którym podlegają"
 
 msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "Wprowadź limit w zakresie różnicy od aktualnej ceny. Jeśli wprowadzisz +0,005, zakupisz kontrakt z limitem 0,005 wyższym niż pozycja wejściowa. Pozycja wejściowa to następny najmniejszy przyrost ceny po otrzymaniu zamówienia"
+msgstr ""
 
 msgid "Enter your email"
 msgstr "Wpisz swój adres e-mail"
@@ -4270,9 +4273,6 @@ msgstr "Jeśli <strong>punkt wyjściowy</strong> jest równy <strong>limitowi</s
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "Jeśli <strong>punkt wyjściowy</strong> jest równy <strong>limitowi</strong>, zyskujesz tylko wypłatę powiązaną z kontraktami „powyżej limitu”"
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "Jeśli <strong>punkt wyjściowy</strong> jest równy <strong>punktowi wejściowemu</strong>, nie zdobywasz wypłaty."
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "Jeśli <strong>ostatnia najmniejsza zmiana ceny</strong> jest równa średniej ostatnich najmniejszych zmian cen, nie zdobywasz wypłaty."
 
@@ -4381,6 +4381,9 @@ msgstr "Jeśli Twój wynik kwestionariusza SATI będzie satysfakcjonujący, prze
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "Jeśli para walutowa EUR/USD ma cenę sprzedaży wynoszącą 1,05229, kupisz 1,05229 USD za każde sprzedane 1 EUR."
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Jeśli wybierzesz zakład „Azjatycki - spadnie”, zdobędziesz wypłatę, gdy <strong>ostatni najmniejszy przyrost ceny</strong> będzie <strong>niższy</strong> niż <strong>średnia</strong> najmniejszych przyrostów ceny."
 
@@ -4414,8 +4417,14 @@ msgstr "Jeśli wybierzesz „wzrośnie”, zdobędziesz wypłatę, gdy <strong>p
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Jeśli wybierzesz „wzrośnie”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> będzie znacząco wyższy niż <strong>limit</strong>."
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Jeśli wybierzesz „niższy”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> będzie znacząco niższy niż <strong>limit</strong>."
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Jeśli wybierzesz „zgadza się”, zdobędziesz wypłatę, gdy <strong>ostatnia cyfra</strong> ostatniego najmniejszego przyrostu ceny będzie <strong>taka sama</strong> jak Twoje <strong>przewidywania.</strong>"
@@ -5712,6 +5721,9 @@ msgstr "Niskie stawki minimalne"
 
 msgid "Lower"
 msgstr "Niższe"
+
+msgid "Lower or equal"
+msgstr ""
 
 msgid "M"
 msgstr "M"
@@ -7945,6 +7957,9 @@ msgstr "Limity samodzielnego wykluczenia"
 msgid "Self-employed"
 msgstr "Self-employed"
 
+msgid "Self-exclusion on this website only applies to your %1 account and does not include other companies or websites."
+msgstr "Opcja samo-wykluczenia dostępna na tej witrynie odnosi się wyłącznie do Twojego konta %1 i nie obejmuje innych firm czy witryn internetowych."
+
 msgid "Sell"
 msgstr "Sprzedaj"
 
@@ -8112,6 +8127,9 @@ msgstr "W związku z tym, że proces handlowania na stronie internetowej %1 jest
 
 msgid "Since we exclusively deal on own account in Financial Products this means that we act as the execution venue and accordingly all transactions entered into with us will be executed outside a regulated market (stock exchange) or multilateral trading facility."
 msgstr "Ze względu na to, że w przypadku Produktów finansowych prowadzimy transakcje wyłącznie na własny rachunek, nasza rola sprowadza się do zapewnienia miejsca realizacji kontraktów i wszystkie transakcje zawierane za naszym pośrednictwem będą realizowane poza rynkiem regulowanym (giełda papierów wartościowych) i wielostronną platformą obrotu."
+
+msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
+msgstr "Skoro czujesz potrzebę skorzystania z opcji samo-wykluczenia, zachęcamy do samo-wykluczenia również z podobnych usług, z których być może korzystasz."
 
 msgid "Size - the size of your order determined by the volume (number of lots)."
 msgstr "Wielkość – wielkość Twojego zlecenia zależna od wolumenu (liczby partii)."
@@ -9490,6 +9508,9 @@ msgstr "Aby zresetować swoje hasło handlowe lub inwestycyjne, kliknij poniższ
 msgid "To self-exclude from all online gambling companies licensed in Great Britain, go to %1."
 msgstr "Aby dokonać samo-wyłączenia ze wszystkich firm oferujących handel online w Wielkiej Brytanii, przejdź do %1."
 
+msgid "To self-exclude from all online gambling companies licensed in Great Britain, you may go to %1."
+msgstr "Aby dokonać samo-wyłączenia ze wszystkich firm oferujących handel online w Wielkiej Brytanii, przejdź do %1."
+
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "Aby wypłacić środki z Konta finansowego MetaTrader 5, proszę <a href=\"%1\">zweryfikować</a> swoje konto Binary."
 
@@ -10716,6 +10737,9 @@ msgstr "Dlaczego powinieneś handlować opcjami binarnymi z %1"
 
 msgid "Why you should trade precious metals with %1"
 msgstr "Dlaczego powinieneś handlować metalami szlachetnymi z %1"
+
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
 
 msgid "Win the multiplier times the close minus low."
 msgstr "Zyskaj wypłatę odpowiadającą mnożnikowi pomnożonemu przez cenę zamknięcia minus niską cenę."

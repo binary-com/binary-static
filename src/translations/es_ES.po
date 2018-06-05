@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-29 20:58-0400\n"
+"PO-Revision-Date: 2018-06-04 05:07-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -1029,6 +1029,9 @@ msgstr "Permitir que los clientes depositen cantidades menores (en la moneda loc
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Permitir a los clientes utilizar monederos electrónicos que no están disponibles directamente en %1"
+
+msgid "Allow equals"
+msgstr ""
 
 msgid "Also known as counter currency"
 msgstr "También conocida como moneda secundaria"
@@ -3174,7 +3177,7 @@ msgid "Ensuring that the Binary Group of companies are in full compliance with t
 msgstr "Garantizar que el grupo de empresas Binary Group cumple plenamente con los regímenes legales a los que está sujeto"
 
 msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "Introduzca el límite en términos de la diferencia con el precio al contado. Si usted introduce +0.005, estará adquiriendo un contrato con un límite 0.005 por encima del precio al contado. El precio al contado es el precio recibido una vez ejecutada la orden de la compra"
+msgstr ""
 
 msgid "Enter your email"
 msgstr "Ingrese su correo electrónico"
@@ -4271,9 +4274,6 @@ msgstr "Si el <strong>punto de salida</strong> es igual a la <strong>barrera</st
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "Si el <strong>punto de salida</strong> es igual a la <strong>barrera</strong>, sólo recibirá el premio para los contratos de tipo \"Superior\""
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "Si el <strong>punto de salida</strong> es igual a la <strong>punto de entrada</strong>, no recibirá el premio."
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "Si el <strong>último intervalo</strong> es igual a la media de los intervalos, no recibirá el premio."
 
@@ -4382,6 +4382,9 @@ msgstr "Si obtiene una buena puntuación en SATI (entrevista de autoevaluación 
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "Si el precio de compra del par EUR/USD es 1,05229, usted comprará 1,05229 USD por cada euro que venda."
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Si selecciona \"Asiáticas - Baja\", ganará el pago si el <strong>último intervalo</strong> es <strong>inferior</strong> a la <strong>media</strong> de los intervalos."
 
@@ -4415,8 +4418,14 @@ msgstr "Si selecciona \"Superior\", recibirá el pago si el <strong>precio de sa
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Si selecciona \"Superior\", ganará el pago si el <strong>precio de salida</strong> es estrictamente superior a la <strong>barrera</strong>."
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Si selecciona \"Inferior\", ganará el pago si el <strong>precio de salida</strong> es estrictamente inferior a la <strong>barrera</strong>."
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Si selecciona \"Iguales\", ganará el pago si el <strong>último dígito</strong> del último intervalo <strong>coincide</strong> con su <strong>predicción.</strong>"
@@ -5714,6 +5723,9 @@ msgstr "Apuestas inferiores mínimas"
 
 msgid "Lower"
 msgstr "Inferior"
+
+msgid "Lower or equal"
+msgstr ""
 
 msgid "M"
 msgstr "M"
@@ -7417,7 +7429,7 @@ msgid "Provide administrative support in areas related to vendor management, eve
 msgstr "Proporcionar el apoyo administrativo en áreas relacionadas con la gestión de proveedores, planificación de eventos, contabilidad y administración de recursos humanos."
 
 msgid "Provide such information to the licensee as they may reasonably require in order to enable the licensee to comply with their information reporting and other obligations to the UK Gambling Commission."
-msgstr ""
+msgstr "Proporcionar dicha información al licenciatario, ya que la puede requerir razonablemente para cumplir con sus informes y otras obligaciones ante la Comisión de Apuestas del Reino Unido."
 
 msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
 msgstr "Proporcione al agente de atención al cliente el siguiente código de verificación de cuatro dígitos para su confirmación."
@@ -7947,6 +7959,9 @@ msgstr "Límites de autoexclusión"
 msgid "Self-employed"
 msgstr "Autónomo"
 
+msgid "Self-exclusion on this website only applies to your %1 account and does not include other companies or websites."
+msgstr ""
+
 msgid "Sell"
 msgstr "Venta"
 
@@ -8114,6 +8129,9 @@ msgstr "Puesto que todo el comercio en el sitio web de %1 está totalmente autom
 
 msgid "Since we exclusively deal on own account in Financial Products this means that we act as the execution venue and accordingly all transactions entered into with us will be executed outside a regulated market (stock exchange) or multilateral trading facility."
 msgstr "Como exclusivamente operamos con los productos financieros por cuenta propia, esto significa que actuamos como el centro de ejecución y, en consecuencia, todas las operaciones realizadas con nosotros se ejecutarán fuera de un mercado regulado (bolsa de valores) o un sistema multilateral de negociación."
+
+msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
+msgstr ""
 
 msgid "Size - the size of your order determined by the volume (number of lots)."
 msgstr "Tamaño - el tamaño de su orden, determinado por el volumen (número de lotes)."
@@ -8689,7 +8707,7 @@ msgid "The Company makes no claims that the %1 website will be uninterrupted or 
 msgstr "La Compañía no afirma que el sitio web %1 no será interrumpido o que proporcionará un servicio libre de errores y no será responsable por las consecuencias de dichos errores o interrupciones."
 
 msgid "The Company may also impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
-msgstr ""
+msgstr "La Compañía también puede imponer límites a volumen de operación en las cuentas del Cliente a su absoluta discreción. Los límites de volumen de operación se pueden ver en la sección de Seguridad y Límites de su cuenta. Si el saldo de la cuenta excede la capacidad máxima de la cuenta, se deben realizar retiros para llevar el saldo por debajo de este límite.\n"
 
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavour to ensure affiliates are notified when changes have been made to the commission structure."
 msgstr "La Compañía puede cambiar la estructura de la comisión en cualquier momento a su sola y absoluta discreción. Nos esforzaremos para asegurar que los afiliados son notificados cuando se realizan estos cambios a la estructura de la comisión."
@@ -9314,7 +9332,7 @@ msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Te
 msgstr "Este documento (el \"Acuerdo\") expone los términos y condiciones  (\"Términos\") entre \"la Compañía\", que es Binary Services Ltd (\"nosotros,\" y \"nuestro\"), y usted (la persona que se registró para la Interfaz del Programa de Aplicación (API) de %1; \"usted\", o \"su\")."
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\" which is Binary Services Ltd, and you (the person who applied for this programme; \"you\", \"your\", or \"Affiliate\"), in relation to your application to setup an affiliate account (and membership of the affiliate programme if your application is deemed successful)."
-msgstr ""
+msgstr "Este documento (el \"Acuerdo\") establece los términos y condiciones entre \"la Compañía\" en este caso Binary Services Ltd y usted (la persona que solicitó participación en este programa; \"usted\", \"su\" o \"Afiliado\"), en relación con su solicitud para establecer una cuenta de afiliado (y la inscripción al programa de afiliados si su solicitud se considera exitosa).\n"
 
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Esta característica no es relevante para cuentas de dinero virtual."
@@ -9491,6 +9509,9 @@ msgid "To reset your trading or investor password, please click the button below
 msgstr ""
 
 msgid "To self-exclude from all online gambling companies licensed in Great Britain, go to %1."
+msgstr ""
+
+msgid "To self-exclude from all online gambling companies licensed in Great Britain, you may go to %1."
 msgstr ""
 
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
@@ -10722,6 +10743,9 @@ msgstr ""
 msgid "Why you should trade precious metals with %1"
 msgstr ""
 
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
+
 msgid "Win the multiplier times the close minus low."
 msgstr "Gane el multiplicador por el cierre menos el bajo."
 
@@ -11077,7 +11101,7 @@ msgid "You have not obtained and have not maintained all necessary licences and 
 msgstr "No ha obtenido y no ha mantenido todas las licencias y autorizaciones necesarias para operar según las leyes, normas y reglamentos aplicables bajo la autoridad de cualquier organismo regulador de la jurisdicción en la que opera o centra su negocio;"
 
 msgid "You have placed digital advertisements for the licensed activities on websites providing unauthorised access to copyrighted content."
-msgstr ""
+msgstr "Ha colocado anuncios digitales para las actividades autorizadas en sitios web que brindan acceso no autorizado a contenido protegido por derechos de autor."
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of Forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr ""
@@ -11185,7 +11209,7 @@ msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Usted debe cumplir con estos Términos para poder utilizar la API de %1."
 
 msgid "You must ensure that you do not place digital advertisements on websites providing unauthorised access to copyrighted content."
-msgstr ""
+msgstr "Usted debe garantizar que no va a colocar anuncios digitales en sitios web que brinden acceso no autorizado a contenido protegido por derechos de autor."
 
 msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
 msgstr ""
@@ -11248,7 +11272,7 @@ msgid "You shall not resort to high-pressure sales tactics or false promises."
 msgstr "Usted no deberá recurrir a tácticas de ventas de alta presión o falsas promesas."
 
 msgid "You shall not target any of your marketing, advertising, and promotional activities to any persons unless they are over 18 years old, or for Estonian residents whereby they have to be over 21 years old."
-msgstr ""
+msgstr "Usted no deberá dirigir ninguna de sus actividades de marketing, publicidad y promoción a cualquier persona, a menos que las personas sean mayores de 18 años, o para los residentes de Estonia mayores de 21 años."
 
 msgid "You should enter %1 characters."
 msgstr ""
@@ -11707,7 +11731,7 @@ msgid "space"
 msgstr "espacio"
 
 msgid "sublicense any of the rights granted under these Terms, other than as permitted by these Terms;"
-msgstr "sub-licenciar cualquiera de los derechos otorgados por estos Términos, de una manera diferente a lo permitido por estos Términos;"
+msgstr "sub-licenciará cualquiera de los derechos otorgados por estos Términos, de una manera diferente a lo permitido por estos Términos;"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
 msgstr "contravenga las leyes, regulaciones, instrumentos, ordenanzas o reglas que rigen el funcionamiento de cualquier intercambio, mercado financiero, o ambiente de regulador financiero; o"
@@ -11761,10 +11785,10 @@ msgid "use its best endeavours and diligence to transfer funds deposited to %1 A
 msgstr ""
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms; or"
-msgstr ""
+msgstr "utilizará o reproducirá la API de %1 de una manera diferente a lo permitido por estos Términos; o"
 
 msgid "use the %1 API for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy or rights of personality, or in any manner inconsistent with these Terms or privacy policy."
-msgstr "usar la API de %1 para cualquier propósito que viole cualquier ley o reglamento, cualquier derecho de cualquier persona, incluyendo pero no limitado a la intelectual propiedad, los derechos de privacidad o los derechos de la personalidad, o sea incompatible de cualquier forma con estos Términos o la política de privacidad."
+msgstr "usará la API de %1 para cualquier propósito que viole cualquier ley o reglamento, cualquier derecho de cualquier persona, incluyendo pero no limitado a la intelectual propiedad, los derechos de privacidad o los derechos de la personalidad, o sea incompatible de cualquier forma con estos Términos o la política de privacidad."
 
 msgid "use the Company’s name and/or Trademark in its advertising activities without a written authorisation to be given by the Company;"
 msgstr ""
