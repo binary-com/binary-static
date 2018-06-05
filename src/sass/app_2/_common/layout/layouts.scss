@@ -6,7 +6,7 @@
     /* trade-app layout */
     #trade_container {
         position: relative;
-        padding: 14px 15px 0;
+        padding: 12px 12px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: 1fr;
@@ -20,6 +20,7 @@
             cq-context { // stylelint-disable-line selector-type-no-unknown
                 top: 0;
                 left: 0;
+                z-index: 0;
 
                 div.ciq-chart {
                     height: calc(100% - 50px);
@@ -72,7 +73,7 @@
 
                     div.duration-container, div.amount-container {
                         display: grid;
-                        grid-column-gap: 15px;
+                        grid-gap: 8px;
                         grid-template-columns: 1fr;
                         grid-auto-columns: auto;
                     }
@@ -93,7 +94,7 @@
                 position: absolute;
                 height: 100vh;
                 width: 100%;
-                left: calc(100% + 20px);
+                left: calc(100% + 40px);
                 transition: all 0.25s;
                 grid-column: col-start 11 / span 2;
             }
@@ -101,10 +102,10 @@
                 margin-right: 0;
 
                 .chart-container {
-                    grid-column: col-start 1 / span 7;
+                    grid-column: col-start 1 / span 8;
                 }
                 .sidebar-container {
-                    transform: translate(-70%);
+                    transform: translate(-100%);
                 }
                 .offset-container {
                     transform: translate(calc(-100% - 20px));
@@ -137,7 +138,7 @@
 }
 
 .shadow {
-    box-shadow: 0 2px 8px #f0f1f2; /* stylelint-disable-line color-no-hex */
+    box-shadow: 0 1px 0 0 $COLOR_GRAY;
 }
 
 // Helpers

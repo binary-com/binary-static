@@ -2,7 +2,7 @@
     position: fixed;
     z-index: 99;
     width: 100%;
-    max-height: 50px;
+    max-height: 48px;
     top: 0;
 
     header {
@@ -24,15 +24,20 @@
                 align-self: center;
 
                 &.binary-logo {
-                    border-left: 1px solid $COLOR_LIGHT_GRAY;
-                    padding: 6px 12px;
+                    border-left: 1px solid $COLOR_GRAY;
+                    display: flex;
+                    max-height: 36px;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
                 }
                 img {
                     width: 1.5rem;
                     height: auto;
 
                     &.logo-img {
-                        width: 2.5rem;
+                        width: 30px;
+                        height: 30px;
                     }
                 }
                 &.notify-toggle {
@@ -53,6 +58,7 @@
 
                 .menu-toggle {
                     align-self: center;
+                    display: flex;
 
                     img {
                         width: 24px;
@@ -71,15 +77,15 @@
                         justify-content: space-evenly;
 
                         span {
-                            font-size: 1rem;
+                            font-size: 0.75rem; /* stylelint-disable-line number-max-precision */
                             font-weight: 300;
                             text-transform: capitalize;
                             color: $COLOR_DARK_BLUE;
-                            padding: 16px 18px 16px 34px;
+                            padding: 14px 18px 12px 34px;
 
                             &:before {
                                 position: absolute;
-                                top: 16px;
+                                top: 12px;
                                 left: 24px;
                             }
                             &:after {
@@ -125,10 +131,10 @@
                                 display: block;
                                 position: absolute;
                                 content: '';
-                                height: 3px;
+                                height: 2px;
                                 width: 100%;
                                 left: 0;
-                                bottom: -3px;
+                                bottom: -4px;
                                 background-color: $COLOR_BLUE;
                             }
                         }
@@ -142,7 +148,7 @@
                 justify-content: flex-end;
                 order: 1;
                 display: inline-flex;
-                border-right: 1px solid $COLOR_LIGHT_GRAY;
+                border-right: 1px solid $COLOR_GRAY;
 
                 .acc-balance-container {
                     display: inline-flex;

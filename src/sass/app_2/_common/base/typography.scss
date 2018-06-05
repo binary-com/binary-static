@@ -34,12 +34,19 @@ body, input {
 }
 
 .btn span {
-    @include interpolate(font-size, 320px, 1440px, 14px, 16px);
+    @include interpolate(font-size, 320px, 1440px, 12px, 14px);
 }
 
 .sidebar-container {
-    .contracts-popup-container.desktop-only {
-        span, span.contract-title {
+    .contracts-popup-container {
+        &.desktop-only {
+            span {
+                @include interpolate(font-size, 320px, 1440px, 11px, 12px);
+            }
+        }
+    }
+    fieldset {
+        div, input, span {
             @include interpolate(font-size, 320px, 1440px, 11px, 12px);
         }
     }
