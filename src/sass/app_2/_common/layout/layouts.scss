@@ -51,7 +51,7 @@
         }
         @media (min-width: 769px) {
             .chart-container {
-                grid-column: col-start 1 / span 9;
+                grid-column: col-start 1 / span 10;
                 padding: 10px;
                 margin-left: -15px;
 
@@ -62,7 +62,7 @@
                 }
             }
             .sidebar-container {
-                grid-column: col-start 10 / span 3;
+                grid-column: col-start 11 / span 2;
                 grid-gap: 10px;
                 grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
                 transition: all 0.25s;
