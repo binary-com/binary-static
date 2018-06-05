@@ -1,6 +1,7 @@
 import moment       from 'moment';
 import React        from 'react';
 import classnames   from 'classnames';
+import PropTypes    from 'prop-types';
 import ArrowHead    from '../elements/arrowhead.jsx';
 import { localize } from '../../../_common/localize';
 
@@ -200,7 +201,6 @@ class Calendar extends React.PureComponent {
     resetCalendar() {
         const { startDate, minDate } = this.props;
         const default_date = moment(startDate || minDate).format(this.props.dateFormat);
-
         this.setState({
             date         : default_date,
             selected_date: '',
@@ -560,7 +560,12 @@ class DatePicker extends React.PureComponent {
         this.calendar.resetCalendar();
     };
 
-    getPickerValue = () => (this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date);
+    getPickerValue = () => {
+        const { mode } = this.props;
+        const { selected_date } = this.state;
+        return mode === 'duration' ? getDayDifference(selected_date) : selected_date;
+    }
+
 
     render() {
         const value = this.getPickerValue();
@@ -640,6 +645,45 @@ class DatePicker extends React.PureComponent {
 DatePicker.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
     mode      : 'date',
+};
+
+// ToDo: Refactor Calendar and trade_store.
+// Need major refactorization in helper function.
+Calendar.propTypes = {
+    dateFormat      : PropTypes.string,
+    footer          : PropTypes.string,
+    handleDateChange: PropTypes.func,
+    id              : PropTypes.number,
+    initial_value   : PropTypes.string,
+    is_nativepicker : PropTypes.bool,
+    maxDate         : PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    minDate     : PropTypes.object,
+    mode        : PropTypes.string,
+    placeholder : PropTypes.string,
+    showTodayBtn: PropTypes.bool,
+    startDate   : PropTypes.string,
+};
+
+// ToDo: Refactor DatePicker and trade_store.
+// Need major refactorization in helper function.
+DatePicker.propTypes = {
+    dateFormat     : PropTypes.string,
+    id             : PropTypes.number,
+    initial_value  : PropTypes.string,
+    is_nativepicker: PropTypes.bool,
+    maxDate        : PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    minDate     : PropTypes.object,
+    mode        : PropTypes.string,
+    name        : PropTypes.string,
+    onChange    : PropTypes.func,
+    placeholder : PropTypes.string,
+    showTodayBtn: PropTypes.bool,
 };
 
 export default DatePicker;

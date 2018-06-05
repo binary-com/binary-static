@@ -1,4 +1,5 @@
 import React       from 'react';
+import PropTypes   from 'prop-types';
 import { connect } from '../../../store/connect';
 
 class Test extends React.PureComponent {
@@ -27,6 +28,11 @@ class Test extends React.PureComponent {
         );
     }
 }
+
+Test.propTypes = {
+    entries: PropTypes.array,
+    json   : PropTypes.string,
+};
 
 export default connect(
     ({ trade }) => ({

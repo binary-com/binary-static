@@ -1,3 +1,4 @@
+import PropTypes       from 'prop-types';
 import React           from 'react';
 import Popover         from '../elements/popover.jsx';
 import { toGMTFormat } from '../../common/date_time';
@@ -98,6 +99,16 @@ class Footer extends React.PureComponent {
         );
     }
 }
+
+Footer.propTypes = {
+    items      : PropTypes.array,
+    server_time: PropTypes.object,
+};
+
+TogglePortfolioDrawer.propTypes = {
+    is_portfolio_drawer_on: PropTypes.bool,
+    togglePortfolioDrawer : PropTypes.func,
+};
 
 export default connect(
     ({ main, ui }) => ({

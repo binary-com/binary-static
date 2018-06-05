@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Button       from '../../../components/form/button.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import { connect }  from '../../../store/connect';
@@ -26,6 +27,10 @@ const Purchase = ({
         );
     })
 );
+
+Purchase.propTypes = {
+    trade_types: PropTypes.object,
+};
 
 export default connect(
     ({ trade }) => ({

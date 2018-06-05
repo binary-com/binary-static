@@ -22,11 +22,11 @@ export default class TradeStore {
     }
 
     @action.bound handleChange(e) {
-        const { name, value } = e.target;
+        const { name, value, type } = e.target;
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        updateStore(this, { [name]: value }, true);
+        updateStore(this, { [name]: (type === 'number' ? +value : value) }, true);
     }
 
     // Underlying
@@ -51,17 +51,17 @@ export default class TradeStore {
     @observable duration            = 5;
     @observable duration_unit       = '';
     @observable duration_units_list = [];
-    @observable expiry_date         = null;
+    @observable expiry_date         = '';
     @observable expiry_time         = '09:40 pm';
     @observable expiry_type         = 'duration';
 
     // Barrier
-    @observable barrier_1     = 0;
-    @observable barrier_2     = 0;
+    @observable barrier_1     = '';
+    @observable barrier_2     = '';
     @observable barrier_count = 0;
 
     // Start Time
-    @observable start_date       = 'now';
+    @observable start_date       = Number(0); // Number(0) refers to 'now'
     @observable start_dates_list = [];
     @observable start_time       = '12:30 am';
 

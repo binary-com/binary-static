@@ -1,6 +1,7 @@
 import React              from 'react';
 import moment             from 'moment';
 import classnames         from 'classnames';
+import PropTypes          from 'prop-types';
 import DAO                from '../../data/dao';
 import { connect }        from '../../store/connect';
 import Client             from '../../../_common/base/client_base';
@@ -330,8 +331,25 @@ class Statement extends React.PureComponent {
 }
 
 Statement.defaultProps = {
-    chunk_size: 50,  // display with chunks
     batch_size: 200, // request with batches
+    chunk_size: 50,  // display with chunks
+};
+
+StatementCard.propTypes = {
+    action   : PropTypes.string,
+    amount   : PropTypes.string,
+    balance  : PropTypes.string,
+    className: PropTypes.string,
+    date     : PropTypes.string,
+    desc     : PropTypes.string,
+    payout   : PropTypes.string,
+    refid    : PropTypes.string,
+};
+
+Statement.propTypes = {
+    batch_size : PropTypes.number,
+    chunk_size : PropTypes.number,
+    server_time: PropTypes.object,
 };
 
 export default connect(
