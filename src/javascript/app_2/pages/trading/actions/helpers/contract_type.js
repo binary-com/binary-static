@@ -232,7 +232,8 @@ const ContractType = (() => {
     };
 
     const getStartType = (start_date) => {
-        const contract_start_type = start_date === Number(-191) ? 'spot' : 'forward';
+        // Number(0) refers to 'now'
+        const contract_start_type = start_date === Number(0) ? 'spot' : 'forward';
 
         return { contract_start_type };
     };
@@ -242,7 +243,8 @@ const ContractType = (() => {
         const start_dates_list = [];
 
         if (config.has_spot) {
-            start_dates_list.push({ text: localize('Now'), value: Number(-191) });
+            // Number(0) refers to 'now'
+            start_dates_list.push({ text: localize('Now'), value: Number(0) });
         }
         if (config.forward_starting_dates) {
             start_dates_list.push(...config.forward_starting_dates);

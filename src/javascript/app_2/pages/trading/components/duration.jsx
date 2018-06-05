@@ -27,7 +27,6 @@ const Duration = ({
     duration_units_list,
     server_time,
     onChange,
-    onStringChange,
     is_nativepicker,
     is_minimized,
 }) => {
@@ -52,9 +51,9 @@ const Duration = ({
 
     function onDurationChange(fieldItem) {
         if (fieldItem === 'expiry_date') {
-            return onStringChange(fieldItem);
+            return onChange(fieldItem);
         }
-        return typeof duration === 'number' ? onChange(fieldItem) : onStringChange(fieldItem);
+        return typeof duration === 'number' ? onChange(fieldItem) : onChange(fieldItem);
     }
 
     return (
@@ -140,7 +139,6 @@ Duration.propTypes = {
     is_minimized   : PropTypes.bool,
     is_nativepicker: PropTypes.bool,
     onChange       : PropTypes.func,
-    onStringChange : PropTypes.func,
     server_time    : PropTypes.object,
 };
 
@@ -153,7 +151,6 @@ export default connect(
         duration_unit      : trade.duration_unit,
         duration_units_list: trade.duration_units_list,
         server_time        : trade.server_time,
-        onStringChange     : trade.handleChangeToString,
         onChange           : trade.handleChange,
     })
 )(Duration);

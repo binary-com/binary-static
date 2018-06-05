@@ -29,23 +29,12 @@ export default class TradeStore {
     }
 
     @action.bound handleChange(e) {
-        const { name, value } = e.target;
+        const { name, value, type } = e.target;
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        this[name] = isNaN(value) ? value: Number(value);
-    }
-
-    @action.bound handleChangeToString(e) {
-        // To-Do: combine handleChange(e) and handleChangeToString method later
-        // What this function is for:
-        // Some fields require to handle changes for 0 as a String.
-        const { name, value } = e.target;
-        if (!(name in this)) {
-            throw new Error(`Invalid Argument: ${name}`);
-        }
-        // force to handle the change for 'value' as a String.
-        this[name] = value.toString();
+        this[name] = type === 'number' ? +value : value;
+        // this[name] = isNaN(value) ? value: Number(value);
     }
 
     // Underlying
@@ -75,12 +64,12 @@ export default class TradeStore {
     @observable expiry_time         = '09:40 pm';
 
     // Barrier
-    @observable barrier_1 = 0;
-    @observable barrier_2 = 0;
+    @observable barrier_1 = '+0';
+    @observable barrier_2 = '-0';
 
     // Start Time
     @observable start_dates_list = [];
-    @observable start_date       = Number(-191);
+    @observable start_date       = Number(0); // Number(0) refers to 'now'
     @observable start_time       = '12:30 am';
 
     // Last Digit

@@ -11,6 +11,7 @@ const Barrier = ({
     onChange,
     is_minimized,
 }) =>  {
+    barrier_1 = parseSignToPostiiveInteger(barrier_1);
     if (is_minimized) {
         if (!barrier_2) {
             return (
@@ -58,6 +59,13 @@ const Barrier = ({
         </Fieldset>
     );
 };
+
+function parseSignToPostiiveInteger(value) {
+    if (typeof value == 'number' && value > 0) {
+        return "+" + value.toString()
+    }
+    return value
+}
 
 Barrier.propTypes = {
     barrier_1   : PropTypes.number,
