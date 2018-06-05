@@ -3,29 +3,29 @@ const formatMoney = require('../../common/currency').formatMoney;
 const constants = {
     slider: {
         height: 14,
-        fill: '#e98024',
-        label: {
-            color: '#fff',
+        fill  : '#e98024',
+        label : {
+            color   : '#fff',
             fontSize: '9px',
-            offsetY: 4,
-            offsetX: 6,
-        }
+            offsetY : 4,
+            offsetX : 6,
+        },
     },
     interval: {
-        cap_width: 10,
-        stroke: '#2a3052',
+        cap_width  : 10,
+        stroke     : '#2a3052',
         strokeWidth: 2,
-        label: {
-            color: '#000',
+        label      : {
+            color   : '#000',
             fontSize: '12px',
-            offsetX: 2,
+            offsetX : 2,
         },
         top_label: {
             offsetY: -4,
         },
         bottom_label: {
             offsetY: 13,
-        }
+        },
     },
     barrier_series_name: 'barrier_points',
 };
@@ -33,17 +33,17 @@ const constants = {
 
 const Callputspread = (() => {
     const state = {
-        el_slider: null,
-        el_slider_label: null,
-        el_interval: null,
-        el_interval_top_label: null,
+        el_slider               : null,
+        el_slider_label         : null,
+        el_interval             : null,
+        el_interval_top_label   : null,
         el_interval_bottom_laber: null,
-        chart: null,
-        contract: null,
+        chart                   : null,
+        contract                : null,
     };
 
     // Called on Highcharts 'redraw' event
-    const redrawHandler = (e) => {
+    const redrawHandler = () => {
         redrawInterval();
         redrawSlider();
     };
@@ -120,7 +120,7 @@ const Callputspread = (() => {
 
 
     /*
-        Calc Functions are PURE FUNCTIONS:
+        Calc Functions (no side effects!):
     */
 
     const calcMarginRight = (contract) => {
@@ -129,7 +129,7 @@ const Callputspread = (() => {
         return 15 + 7.5 * formatted_max_payout.length;
     };
 
-    const calcSliderState = (chart, contract, constants) => {
+    const calcSliderState = (chart, contract) => {
         const plot_end_x = chart.plotWidth + chart.plotLeft;
         const x_offset = (constants.interval.cap_width + constants.interval.strokeWidth) / 2;
         const [high_barrier_y, low_barrier_y] = chart.series
@@ -141,13 +141,13 @@ const Callputspread = (() => {
             ? 1 - (bid_price / payout)
             :      bid_price / payout;
         return {
-            x: plot_end_x + x_offset,
-            y: high_barrier_y + (low_barrier_y - high_barrier_y) * k,
+            x    : plot_end_x + x_offset,
+            y    : high_barrier_y + (low_barrier_y - high_barrier_y) * k,
             width: calcMarginRight(contract) - 17,
         };
     };
 
-    const calcIntervalState = (chart, contract, constants) => {
+    const calcIntervalState = (chart, contract) => {
         const plot_end_x = chart.plotWidth + chart.plotLeft;
         const [high_barrier_y, low_barrier_y] = chart.series
             .find(series => series.name === constants.barrier_series_name)
@@ -159,7 +159,7 @@ const Callputspread = (() => {
             ? [display_maximum_payout, display_minimum_payout]
             : [display_minimum_payout, display_maximum_payout];
         return {
-            x: plot_end_x,
+            x : plot_end_x,
             y0: high_barrier_y,
             y1: low_barrier_y,
             top_label,
@@ -178,10 +178,10 @@ const Callputspread = (() => {
         const x0 = chart.series[0].data[0].x;
         const { high_barrier, low_barrier } = contract;
         chart.addSeries({
-            name: constants.barrier_series_name,
-            type: 'scatter',
+            name  : constants.barrier_series_name,
+            type  : 'scatter',
             marker: { enabled: false },
-            data: [
+            data  : [
                 {
                     y: +high_barrier,
                     x: x0,
@@ -199,12 +199,10 @@ const Callputspread = (() => {
         /^(CALLSPREAD|PUTSPREAD)$/.test(contract_type)
     );
 
-    const getChartOptions = (contract) => {
-        return {
-            marginRight: calcMarginRight(contract),
-            redrawHandler,
-        };
-    };
+    const getChartOptions = (contract) => ({
+        marginRight: calcMarginRight(contract),
+        redrawHandler,
+    });
 
     const updateState = (chart, contract, should_redraw_slider = false) => {
         state.chart = chart || state.chart;

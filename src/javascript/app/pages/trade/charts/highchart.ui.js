@@ -1,13 +1,11 @@
 const addComma      = require('../../../common/currency').addComma;
 const localize      = require('../../../../_common/localize').localize;
-const Callputspread = require('../../trade/callputspread');
 
 const HighchartUI = (() => {
     let common_time_style,
         common_spot_style,
         txt,
-        chart_options,
-        el_slider;
+        chart_options;
 
     const initLabels = () => {
         common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
@@ -52,7 +50,7 @@ const HighchartUI = (() => {
                 animation      : false,
                 marginLeft     : 30,
                 marginRight    : params.marginRight || 30,
-                events: {
+                events         : {
                     redraw: params.redrawHandler,
                 },
             },
