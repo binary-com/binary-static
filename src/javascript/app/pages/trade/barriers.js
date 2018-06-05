@@ -22,7 +22,7 @@ const Barriers = (() => {
         const barriers  = Contract.barriers()[Defaults.get('underlying')];
         const form_name = Contract.form();
 
-        if (barriers && form_name && Defaults.get('formname') !== 'risefall') {
+        if (barriers && form_name && barriers[form_name] && Defaults.get('formname') !== 'risefall') {
             const unit     = getElementById('duration_units');
             const end_time = getElementById('expiry_date');
             const is_daily = (unit && isVisible(unit) && unit.value === 'd') ||
