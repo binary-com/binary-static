@@ -35,7 +35,7 @@ const Barrier = ({
     }
     return (
         <Fieldset
-            header={localize(barrier_count === 2 ? 'High barrier' : 'Barrier')}
+            header={localize(barrier_count > 1 ? 'Barriers' : 'Barrier')}
             icon='barriers'
             tooltip={localize('Text for Barriers goes here.')}
         >

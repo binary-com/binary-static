@@ -35,22 +35,21 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
     }
 };
 
+const process_methods = [
+    ContractTypeHelper.getContractCategories,
+    ContractType.onChangeContractTypeList,
+    ContractType.onChangeContractType,
+    Duration.onChangeExpiry,
+    StartDate.onChangeStartDate,
+];
 const process = async(store) => {
-    const methods = [
-        ContractTypeHelper.getContractCategories,
-        ContractType.onChangeContractTypeList,
-        ContractType.onChangeContractType,
-        Duration.onChangeExpiry,
-        StartDate.onChangeStartDate,
-    ];
-
     const snapshot = cloneObject(store);
 
     if (!Client.get('currency') && isEmptyObject(store.currencies_list)) {
         extendOrReplace(snapshot, await Currency.getCurrenciesAsync(store.currency));
     }
 
-    methods.forEach((fnc) => {
+    process_methods.forEach((fnc) => {
         extendOrReplace(snapshot, fnc(snapshot));
     });
 
