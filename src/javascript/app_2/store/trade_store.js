@@ -64,8 +64,8 @@ export default class TradeStore {
     @observable expiry_time         = '09:40 pm';
 
     // Barrier
-    @observable barrier_1 = '+0';
-    @observable barrier_2 = '-0';
+    @observable barrier_1 = '';
+    @observable barrier_2 = '';
 
     // Start Time
     @observable start_dates_list = [];
