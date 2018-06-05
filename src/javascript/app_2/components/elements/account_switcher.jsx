@@ -37,9 +37,11 @@ class AccountSwitcher extends React.PureComponent {
     }
 
     toggleAccountsList = () => {
-        this.setState({
-            is_collapsed: !this.state.is_collapsed,
-        });
+        if (this.accounts_list) {
+            this.setState({
+                is_collapsed: !this.state.is_collapsed,
+            });
+        }
     };
 
     switchAccount = (loginid) => {

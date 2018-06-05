@@ -1,8 +1,9 @@
 import moment       from 'moment';
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import { localize } from '../../../_common/localize';
 
-class PortfolioDrawer extends React.Component {
+class PortfolioDrawer extends React.PureComponent {
     constructor(props) {
         super(props);
         this.handleVisibility = this.handleVisibility.bind(this);
@@ -91,5 +92,14 @@ class PortfolioDrawer extends React.Component {
         );
     }
 }
+
+PortfolioDrawer.propTypes = {
+    alignment  : PropTypes.string,
+    children   : PropTypes.object,
+    onClick    : PropTypes.func,
+    portfolios : PropTypes.array,
+    server_time: PropTypes.object,
+    subtitle   : PropTypes.number,
+};
 
 module.exports = PortfolioDrawer;

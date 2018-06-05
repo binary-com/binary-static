@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import { connect }  from '../../../store/connect';
@@ -40,8 +41,15 @@ const LastDigit = ({
     );
 };
 
+LastDigit.propTypes = {
+    is_minimized   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
+    last_digit     : PropTypes.number,
+    onChange       : PropTypes.func,
+};
+
 export default connect(
-    ({trade}) => ({
+    ({ trade }) => ({
         last_digit: trade.last_digit,
         onChange  : trade.handleChange,
     })

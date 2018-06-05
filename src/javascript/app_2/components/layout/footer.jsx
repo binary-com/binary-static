@@ -1,7 +1,9 @@
-import React          from 'react';
-import Popover        from '../elements/popover.jsx';
-import { BinaryLink } from '../../routes';
-import { connect }    from '../../store/connect';
+import PropTypes       from 'prop-types';
+import React           from 'react';
+import Popover         from '../elements/popover.jsx';
+import { toGMTFormat } from '../../common/date_time';
+import { BinaryLink }  from '../../routes';
+import { connect }     from '../../store/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (
     <Popover
@@ -22,7 +24,7 @@ const fullscreen_map = {
     fnc_exit : ['exitFullscreen',    'webkitExitFullscreen',    'mozCancelFullScreen',  'msExitFullscreen'],
 };
 
-class ToggleFullScreen extends React.Component {
+class ToggleFullScreen extends React.PureComponent {
     constructor(props) {
         super(props);
         this.toggleFullScreen = this.toggleFullScreen.bind(this);
@@ -72,10 +74,11 @@ class ToggleFullScreen extends React.Component {
     }
 }
 
-class Footer extends React.Component {
+class Footer extends React.PureComponent {
     render() {
         return (
             <React.Fragment>
+                <div className='server-time'>{toGMTFormat(this.props.server_time)}</div>
                 {this.props.items.length &&
                     <div className='footer-links'>
                         <TogglePortfolioDrawer {...this.props} />
@@ -97,8 +100,19 @@ class Footer extends React.Component {
     }
 }
 
+Footer.propTypes = {
+    items      : PropTypes.array,
+    server_time: PropTypes.object,
+};
+
+TogglePortfolioDrawer.propTypes = {
+    is_portfolio_drawer_on: PropTypes.bool,
+    togglePortfolioDrawer : PropTypes.func,
+};
+
 export default connect(
-    ({ ui }) => ({
+    ({ main, ui }) => ({
+        server_time           : main.server_time,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
     })

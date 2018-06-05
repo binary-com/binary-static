@@ -1,12 +1,13 @@
-import React from 'react';
+import React      from 'react';
 import classnames from 'classnames';
+import PropTypes  from 'prop-types';
 
 /* TODO:
       1. implement sorting by column (ASC/DESC)
       2. implement filtering per column
 */
 
-class DataTable extends React.Component {
+class DataTable extends React.PureComponent {
     renderRow(transaction, id) {
         if (!transaction) return null;
         const defaultRenderCell = (data, data_index) => <td className={data_index} key={data_index}>{data}</td>;
@@ -81,5 +82,15 @@ class DataTable extends React.Component {
         );
     }
 }
+
+DataTable.propTypes = {
+    columns         : PropTypes.array,
+    data_source     : PropTypes.array,
+    footer          : PropTypes.string,
+    has_fixed_header: PropTypes.bool,
+    is_full_width   : PropTypes.bool,
+};
+
+
 
 export default DataTable;

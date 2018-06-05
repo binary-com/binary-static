@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import TimePicker   from '../../../components/form/time_picker.jsx';
@@ -9,16 +10,16 @@ const StartDate = ({
     start_date,
     start_dates_list,
     start_time,
-    server_time,
     onChange,
     is_nativepicker,
     is_minimized,
 }) => {
+    // Number(0) refers to 'now'
     if (is_minimized) {
         return (
             <div className='fieldset-minimized start-date'>
                 <span className='icon start-time' />
-                {start_date === 'now'
+                {start_date === Number(0)
                     ? localize('Now')
                     : `${(start_dates_list.find(o => o.value === +start_date) || {}).text}\n${start_time}`
                 }
@@ -27,7 +28,6 @@ const StartDate = ({
     }
     return (
         <Fieldset
-            time={server_time}
             header={localize('Start time')}
             icon='start-time'
             tooltip={localize('Text for Start Time goes here.')}
@@ -40,7 +40,7 @@ const StartDate = ({
                 type='date'
                 is_nativepicker={is_nativepicker}
             />
-            {start_date !== 'now' &&
+            {start_date !== Number(0) &&
                 <React.Fragment>
                     <TimePicker
                         onChange={onChange}
@@ -55,12 +55,21 @@ const StartDate = ({
     );
 };
 
+StartDate.propTypes = {
+    is_minimized    : PropTypes.bool,
+    is_nativepicker : PropTypes.bool,
+    onChange        : PropTypes.func,
+    server_time     : PropTypes.object,
+    start_date      : PropTypes.number,
+    start_dates_list: PropTypes.array,
+    start_time      : PropTypes.string,
+};
+
 export default connect(
-    ({trade}) => ({
+    ({ trade }) => ({
         start_date      : trade.start_date,
         start_dates_list: trade.start_dates_list,
         start_time      : trade.start_time,
-        server_time     : trade.server_time,
         onChange        : trade.handleChange,
     })
 )(StartDate);

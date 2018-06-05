@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import InputField   from '../../../components/form/input_field.jsx';
@@ -7,12 +8,8 @@ import Client       from '../../../../_common/base/client_base';
 import { addComma } from '../../../../_common/base/currency_base';
 import { localize } from '../../../../_common/localize';
 
-const basis_list = [
-    { text: localize('Payout'), value: 'payout' },
-    { text: localize('Stake'),  value: 'stake' },
-];
-
 const Amount = ({
+    basis_list,
     basis,
     currency,
     currencies_list,
@@ -70,8 +67,20 @@ const Amount = ({
     );
 };
 
+Amount.propTypes = {
+    basis_list     : PropTypes.array,
+    amount         : PropTypes.number,
+    basis          : PropTypes.string,
+    currencies_list: PropTypes.object,
+    currency       : PropTypes.string,
+    is_minimized   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
+    onChange       : PropTypes.func,
+};
+
 export default connect(
-    ({trade}) => ({
+    ({ trade }) => ({
+        basis_list     : trade.basis_list,
         basis          : trade.basis,
         currency       : trade.currency,
         currencies_list: trade.currencies_list,

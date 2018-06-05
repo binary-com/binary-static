@@ -1,5 +1,6 @@
 import React               from 'react';
 import PerfectScrollbar    from 'react-perfect-scrollbar';
+import PropTypes           from 'prop-types';
 import AccountSwitcher     from '../elements/account_switcher.jsx';
 import {
     DrawerItem,
@@ -62,11 +63,11 @@ const DrawerFooter = () => (Client.isLoggedIn() && // TODO: update the UI
     <a href='javascript:;' onClick={requestLogout}>{localize('Log out')}</a>
 );
 
-class Header extends React.Component {
+class Header extends React.PureComponent {
     render() {
         return (
             <React.Fragment>
-                <header id={this.props.id} className='shadow'>
+                <header className='shadow'>
                     <div className='menu-items'>
                         <div className='menu-left'>
                             <ToggleDrawer alignment='left' footer={DrawerFooter}>
@@ -150,5 +151,9 @@ const AccountBalance = connect(
         </div>
     );
 });
+
+Header.propTypes = {
+    items: PropTypes.array,
+};
 
 export default Header;

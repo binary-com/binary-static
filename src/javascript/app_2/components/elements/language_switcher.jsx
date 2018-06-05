@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import { localize } from '../../../_common/localize';
 
 class LanguageSwitcher extends React.PureComponent {
@@ -79,6 +80,10 @@ LanguageSwitcher.defaultProps = {
         { id: 'ZH_CN', name: '简体中文' },
         { id: 'ZH_TW', name: '繁體中文' },
     ],
+};
+
+LanguageSwitcher.propTypes = {
+    languages: PropTypes.array,
 };
 
 export default LanguageSwitcher;

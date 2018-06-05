@@ -1,22 +1,20 @@
 div.contracts-popup-container {
-    position: absolute;
+    position: relative;
     margin: 8px 0;
-    top: 0;
-    left: 30%;
+    z-index: 2;
+    cursor: pointer;
+    background: $COLOR_WHITE;
+    border: solid 1px $COLOR_LIGHT_GRAY;
+    border-radius: 4px;
 
+    &.mobile-only {
+        border: solid 1px $COLOR_BLUE;
+    }
     .contracts-popup-display {
         display: inline-flex;
         align-items: center;
         justify-content: flex-start;
-        min-width: 200px;
-        max-width: 200px;
-        width: 100%;
-        background: $COLOR_WHITE;
-        height: 30px;
-        cursor: pointer;
-        border: solid 1px $COLOR_LIGHT_GRAY;
-        border-radius: 4px;
-        padding: 10px 8px;
+        padding: 2px 8px;
 
         span {
             font-size: 1rem;
@@ -38,18 +36,23 @@ div.contracts-popup-container {
         outline: 0;
         border-radius: 4px;
     }
-    &.show > div.contracts-popup-list {
-        top: 100%;
-        max-height: 100%;
-        opacity: 1;
-        pointer-events: auto;
-    }
-    &.show > .clicked {
-        border-color: $COLOR_BLUE;
-    }
-    &.show > .select-arrow {
-        top: 40%;
-        transform: rotate(180deg);
+    &.show {
+        &.mobile-only {
+            z-index: 99;
+        }
+        & > div.contracts-popup-list {
+            right: 0;
+            max-height: 100%;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        & > .clicked {
+            border-color: $COLOR_BLUE;
+        }
+        & > .select-arrow {
+            top: 40%;
+            transform: rotate(180deg);
+        }
     }
     .list-item {
         width: 100%;
@@ -68,7 +71,7 @@ div.contracts-popup-container {
             pointer-events: none;
 
             .contract-title {
-                color: #dedede; /* stylelint-disable-line color-no-hex */
+                color: $COLOR_GRAY;
             }
         }
         &.selected {
@@ -88,8 +91,7 @@ div.contracts-popup-container {
         }
     }
     .contracts-popup-list {
-        left: 0;
-        top: 50%;
+        right: -50%;
         width: 100%;
         pointer-events: none;
         position: absolute;
@@ -100,19 +102,61 @@ div.contracts-popup-container {
 
         .list-container {
             position: absolute;
-            width: 200%;
-            min-width: 500px;
+            width: 560px;
+            right: calc(100% + 10px);
+            top: -36px;
             display: grid;
+            grid-auto-columns: 1fr;
             z-index: 2;
-            background: $COLOR_WHITE;
-            border: solid 1px $COLOR_LIGHT_GRAY;
+            background: $COLOR_LIGHT_GRAY;
+            border: solid 1px $COLOR_GRAY;
+            border-radius: 4px;
 
-            .list-item {
+            .list-group {
+                padding: 1rem;
+
+                .list-label span {
+                    font-size: 0.8rem;
+                    padding-left: 10px;
+                }
                 &:nth-child(odd) {
                     grid-column: 1;
+                    padding: 1rem 0.5rem 1rem 1rem;
                 }
                 &:nth-child(even) {
                     grid-column: 2;
+                    padding: 1rem 1rem 1rem 0.5rem;
+                }
+                .list-items {
+                    .list-item {
+                        border: 1px solid $COLOR_GRAY;
+                        background-color: $COLOR_WHITE;
+
+                        &:first-child {
+                            border-top-left-radius: 4px;
+                            border-top-right-radius: 4px;
+                            border-bottom: none;
+                        }
+                        &:last-child {
+                            border-top: none;
+                            border-bottom-left-radius: 4px;
+                            border-bottom-right-radius: 4px;
+                        }
+                        &:only-child {
+                            border-radius: 4px;
+                            border: 1px solid $COLOR_GRAY;
+                        }
+                        &:first-child:nth-last-child(2) {
+                            border-bottom: 1px solid $COLOR_GRAY;
+                        }
+                        &.selected {
+                            background: $COLOR_BLUE;
+                            color: $COLOR_WHITE;
+                        }
+                        &:hover:not(.selected) {
+                            background: $COLOR_GRAY;
+                        }
+                    }
                 }
             }
         }

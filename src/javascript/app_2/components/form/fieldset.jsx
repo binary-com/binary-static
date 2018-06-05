@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import moment     from 'moment';
 import React      from 'react';
+import PropTypes  from 'prop-types';
 import Tooltip    from '../elements/tooltip.jsx';
 
 class Fieldset extends React.PureComponent {
@@ -28,5 +29,20 @@ class Fieldset extends React.PureComponent {
         );
     }
 }
+
+// ToDo:
+// - Refactor Last Digit to keep the children as array type.
+//   Currently last_digit.jsx returns object (React-Element) as 'children'
+//   props type.
+Fieldset.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
+    header : PropTypes.string,
+    icon   : PropTypes.string,
+    time   : PropTypes.object,
+    tooltip: PropTypes.string,
+};
 
 export default Fieldset;

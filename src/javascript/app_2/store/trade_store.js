@@ -1,26 +1,19 @@
 import {
     action,
-    observable }     from 'mobx';
-import moment        from 'moment';
-import ContractType  from '../pages/trading/actions/helpers/contract_type';
-import actions       from '../pages/trading/actions/index';
-import Client        from '../../_common/base/client_base';
+    observable }       from 'mobx';
+import ContractType    from '../pages/trading/actions/helpers/contract_type';
+import { updateStore } from '../pages/trading/actions/index';
+import Client          from '../../_common/base/client_base';
 
 export default class TradeStore {
     time_interval = undefined;
 
     @action.bound init() {
-        this.time_interval = setInterval(actions.initTime, 1000);
-        actions.getCountryAsync();
-
-        actions.getTicks(action('getTicks', (r) => { this.tick = r; }));
-
-        if (!Client.get('currency')) {
-            actions.getCurrenciesAsync();
+        if (this.symbol) {
+            ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
+                updateStore(this, ContractType.getContractCategories());
+            }));
         }
-        ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
-            this.contract_types_list = ContractType.getContractCategories();
-        }));
     }
 
     @action.bound dispose() {
@@ -29,57 +22,54 @@ export default class TradeStore {
     }
 
     @action.bound handleChange(e) {
-        const { name, value } = e.target;
+        const { name, value, type } = e.target;
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
-        this[name] = value;
+        updateStore(this, { [name]: (type === 'number' ? +value : value) }, true);
     }
 
     // Underlying
-    @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
-    @observable symbol       = Object.keys(this.symbols_list)[0];
+    @observable symbol;
 
     // Contract Type
+    @observable contract_expiry_type = '';
+    @observable contract_start_type  = '';
     @observable contract_type        = '';
     @observable contract_types_list  = {};
-    @observable trade_types          = [];
-    @observable contract_start_type  = '';
-    @observable contract_expiry_type = '';
     @observable form_components      = [];
+    @observable trade_types          = {};
 
     // Amount
-    @observable basis           = 'stake';
-    @observable currency        = Client.get('currency');
+    @observable amount          = 10;
+    @observable basis           = '';
+    @observable basis_list      = [];
     @observable currencies_list = {};
-    @observable amount          = 5;
+    @observable currency        = Client.get('currency');
 
     // Duration
-    @observable expiry_type         = 'duration';
-    @observable duration            = 15;
+    @observable duration            = 5;
     @observable duration_unit       = '';
     @observable duration_units_list = [];
-    @observable expiry_date         = null;
+    @observable expiry_date         = '';
     @observable expiry_time         = '09:40 pm';
+    @observable expiry_type         = 'duration';
 
     // Barrier
-    @observable barrier_1 = 0;
-    @observable barrier_2 = 0;
+    @observable barrier_1     = '';
+    @observable barrier_2     = '';
+    @observable barrier_count = 0;
 
     // Start Time
+    @observable start_date       = Number(0); // Number(0) refers to 'now'
     @observable start_dates_list = [];
-    @observable start_date       = 'now';
     @observable start_time       = '12:30 am';
 
     // Last Digit
     @observable last_digit = 3;
 
-    // Test
-    @observable message = '';
-    @observable tick    = '';
-
-    // TODO: retrieve from upper state
-    @observable server_time = moment.utc();
+    // Purchase
+    @observable proposal_info = {};
 
     // TODO: to remove dummy portfolio value
     @observable portfolios = [

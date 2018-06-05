@@ -93,6 +93,7 @@
   },
   "dependencies": {
     "@binary-com/binary-style": "0.2.7",
+    "@binary-com/smartcharts": "0.1.7",
     "@binary-com/webtrader-charts": "0.4.2",
     "babel-polyfill": "6.26.0",
     "binary-document-uploader": "2.3.2",
@@ -110,6 +111,7 @@
     "mobx-react": "5.1.2",
     "moment": "2.19.4",
     "promise-polyfill": "6.1.0",
+    "prop-types": "15.6.1",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-perfect-scrollbar": "1.0.0",

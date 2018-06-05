@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FullscreenDialog from './fullscreen_dialog.jsx';
 
 class MobileWidget extends React.PureComponent {
@@ -24,12 +25,12 @@ class MobileWidget extends React.PureComponent {
     }
 
     render() {
-        const minimized_param_values = React.Children.map(this.props.children, child => 
+        const minimized_param_values = React.Children.map(this.props.children, child =>
             React.cloneElement(child, {
                 is_minimized: true,
             }));
 
-        const param_pickers = React.Children.map(this.props.children, child => 
+        const param_pickers = React.Children.map(this.props.children, child =>
             React.cloneElement(child, {
                 is_nativepicker: true,
             }));
@@ -39,7 +40,7 @@ class MobileWidget extends React.PureComponent {
                 <div className='mobile-widget' onClick={this.handleWidgetClick}>
                     {minimized_param_values}
                 </div>
-                
+
                 <FullscreenDialog
                     title='Set parameters'
                     visible={this.state.open}
@@ -51,5 +52,9 @@ class MobileWidget extends React.PureComponent {
         );
     }
 }
+
+MobileWidget.propTypes = {
+    children: PropTypes.array,
+};
 
 export default MobileWidget;

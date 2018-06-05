@@ -1,10 +1,11 @@
 import moment       from 'moment';
 import React        from 'react';
 import classnames   from 'classnames';
+import PropTypes    from 'prop-types';
 import ArrowHead    from '../elements/arrowhead.jsx';
 import { localize } from '../../../_common/localize';
 
-class Calendar extends React.Component {
+class Calendar extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -51,18 +52,9 @@ class Calendar extends React.Component {
         this.setState({ active_view: 'date' });
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return (this.state.active_view !== nextState.active_view)
-            || (this.state.date !== nextState.date)
-            || (this.state.selected_date !== nextState.selected_date)
-            || (this.props.minDate !== nextState.minDate)
-            || (this.props.maxDate !== nextState.maxDate)
-            || (this.props.startDate !== nextState.startDate);
-    }
-
     componentWillReceiveProps(nextProps) {
         const date = moment(this.state.date);
-        
+
         if (date.isBefore(moment(nextProps.minDate))) {
             this.setState({
                 date: nextProps.minDate,
@@ -187,7 +179,7 @@ class Calendar extends React.Component {
     onChangeInput(e) {
         let value = e.target.value;
 
-        if (this.props.mode === 'duration' && value) {
+        if (this.props.mode === 'duration' && value) { // TODO: these kinds of logic should update store instead of just component's state
             value = moment().add(value || 1, 'days');
         }
 
@@ -209,7 +201,6 @@ class Calendar extends React.Component {
     resetCalendar() {
         const { startDate, minDate } = this.props;
         const default_date = moment(startDate || minDate).format(this.props.dateFormat);
-
         this.setState({
             date         : default_date,
             selected_date: '',
@@ -569,7 +560,12 @@ class DatePicker extends React.PureComponent {
         this.calendar.resetCalendar();
     };
 
-    getPickerValue = () => (this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date);
+    getPickerValue = () => {
+        const { mode } = this.props;
+        const { selected_date } = this.state;
+        return mode === 'duration' ? getDayDifference(selected_date) : selected_date;
+    }
+
 
     render() {
         const value = this.getPickerValue();
@@ -649,6 +645,45 @@ class DatePicker extends React.PureComponent {
 DatePicker.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
     mode      : 'date',
+};
+
+// ToDo: Refactor Calendar and trade_store.
+// Need major refactorization in helper function.
+Calendar.propTypes = {
+    dateFormat      : PropTypes.string,
+    footer          : PropTypes.string,
+    handleDateChange: PropTypes.func,
+    id              : PropTypes.number,
+    initial_value   : PropTypes.string,
+    is_nativepicker : PropTypes.bool,
+    maxDate         : PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    minDate     : PropTypes.object,
+    mode        : PropTypes.string,
+    placeholder : PropTypes.string,
+    showTodayBtn: PropTypes.bool,
+    startDate   : PropTypes.string,
+};
+
+// ToDo: Refactor DatePicker and trade_store.
+// Need major refactorization in helper function.
+DatePicker.propTypes = {
+    dateFormat     : PropTypes.string,
+    id             : PropTypes.number,
+    initial_value  : PropTypes.string,
+    is_nativepicker: PropTypes.bool,
+    maxDate        : PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    minDate     : PropTypes.object,
+    mode        : PropTypes.string,
+    name        : PropTypes.string,
+    onChange    : PropTypes.func,
+    placeholder : PropTypes.string,
+    showTodayBtn: PropTypes.bool,
 };
 
 export default DatePicker;

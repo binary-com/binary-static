@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import Defaults from './defaults';
 import {getElementById} from '../../../_common/common_functions';
 import {localize} from '../../../_common/localize';
@@ -174,5 +175,10 @@ export const init = (contracts, contracts_tree) => ReactDOM.render(
     getElementById('contract_component')
 );
 /* eslint-enable react/no-render-return-value */
+
+Contracts.propTypes = {
+    contracts     : PropTypes.string,
+    contracts_tree: PropTypes.string,
+};
 
 export default init;
