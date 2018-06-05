@@ -95,4 +95,4 @@ PortfolioDrawer.propTypes = {
     subtitle   : PropTypes.number,
 };
 
-export default PortfolioDrawer;
+module.exports = PortfolioDrawer;
