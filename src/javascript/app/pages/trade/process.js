@@ -151,8 +151,7 @@ const Process = (() => {
     };
 
     const processContractForm = (available_contracts = State.getResponse('contracts_for.available'), formname_to_set = getElementById('contract').value || Defaults.get('formname')) => {
-        setFormName(formname_to_set, available_contracts);
-        displayEquals(formname_to_set, available_contracts);
+        setFormName(formname_to_set);
 
         // get updated formname
         Contract.details(Defaults.get('formname'));
@@ -170,6 +169,9 @@ const Process = (() => {
         } else {
             Durations.display();
         }
+
+        // needs to be called after durations are populated
+        displayEquals();
 
         const currency  = Defaults.get('currency') || getVisibleElement('currency').value;
         const is_crypto = isCryptocurrency(currency);
@@ -217,9 +219,22 @@ const Process = (() => {
         }
     };
 
-    const displayEquals = (formname = Defaults.get('formname'), contracts = State.getResponse('contracts_for.available')) => {
-        const el_equals = getElementById('callputequal');
-        if (/^(callputequal|risefall)$/.test(formname) && (contracts || []).find(contract => contract.contract_category === 'callputequal')) {
+    const duration_type = {
+        t: 'tick',
+        s: 'intraday',
+        m: 'intraday',
+        h: 'intraday',
+        d: 'daily',
+    };
+
+    const hasCallPutEqual = (contracts = getPropertyValue(Contract.contracts(), ['contracts_for', 'available']) || []) =>
+        contracts.find(contract => contract.contract_category === 'callputequal');
+
+    const displayEquals = () => {
+        const formname  = Defaults.get('formname');
+        const el_equals = document.getElementById('callputequal');
+        const durations = getPropertyValue(Contract.durations(), [duration_type[Defaults.get('duration_units')]]) || [];
+        if (/^(callputequal|risefall)$/.test(formname) && 'callputequal' in durations && hasCallPutEqual()) {
             if (+Defaults.get('is_equal')) {
                 el_equals.checked = true;
             }
@@ -229,10 +244,10 @@ const Process = (() => {
         }
     };
 
-    const setFormName = (formname = Defaults.get('formname'), contracts = State.getResponse('contracts_for.available')) => {
+    const setFormName = (formname) => {
         let formname_to_set    = formname;
-        const has_callputequal = (contracts || []).find(contract => contract.contract_category === 'callputequal');
-        if (/^(callputequal)$/.test(formname_to_set) && !has_callputequal) {
+        const has_callputequal = hasCallPutEqual();
+        if (/^(callputequal)$/.test(formname_to_set) && (!has_callputequal || !+Defaults.get('is_equal'))) {
             formname_to_set = 'risefall';
         } else if (/^(risefall)$/.test(formname_to_set) && has_callputequal && +Defaults.get('is_equal')) {
             formname_to_set = 'callputequal';
