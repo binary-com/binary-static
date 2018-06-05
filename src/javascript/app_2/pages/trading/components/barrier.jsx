@@ -11,7 +11,6 @@ const Barrier = ({
     onChange,
     is_minimized,
 }) =>  {
-    barrier_1 = parseSignToPostiiveInteger(barrier_1);
     if (is_minimized) {
         if (!barrier_2) {
             return (
@@ -41,7 +40,7 @@ const Barrier = ({
             tooltip={localize('Text for Barriers goes here.')}
         >
             <InputField
-                type='number'
+                type='string'
                 name='barrier_1'
                 value={barrier_1}
                 onChange={onChange}
@@ -49,7 +48,7 @@ const Barrier = ({
 
             {!!barrier_2 &&
                 <InputField
-                    type='number'
+                    type='string'
                     name='barrier_2'
                     value={barrier_2}
                     onChange={onChange}
@@ -60,16 +59,9 @@ const Barrier = ({
     );
 };
 
-function parseSignToPostiiveInteger(value) {
-    if (typeof value == 'number' && value > 0) {
-        return "+" + value.toString()
-    }
-    return value
-}
-
 Barrier.propTypes = {
-    barrier_1   : PropTypes.number,
-    barrier_2   : PropTypes.number,
+    barrier_1   : PropTypes.string,
+    barrier_2   : PropTypes.string,
     is_minimized: PropTypes.bool,
     onChange    : PropTypes.func,
 };
