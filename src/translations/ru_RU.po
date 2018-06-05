@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-03 22:55-0400\n"
+"PO-Revision-Date: 2018-06-04 05:08-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1028,6 +1028,9 @@ msgstr "Позволяют Клиентам пополнять счет небо
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Позволяют клиентам использовать электронные кошельки, которые недоступны на %1"
+
+msgid "Allow equals"
+msgstr ""
 
 msgid "Also known as counter currency"
 msgstr "Также известная как котируемая валюта"
@@ -3172,7 +3175,7 @@ msgid "Ensuring that the Binary Group of companies are in full compliance with t
 msgstr "Обеспечение полного соответствия группы компаний Binary Group системам нормативно-правового регулирования, которым они подчиняются"
 
 msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "Внесите барьер для изменения спот-котировки. Если Вы внесете +0.005, Вы покупаете контракт с барьером на 0.005 выше, чем спот-котировка. Спот-котировкой считается следующий тик после покупки контракта"
+msgstr ""
 
 msgid "Enter your email"
 msgstr "Введите свой email"
@@ -4269,9 +4272,6 @@ msgstr "Если <strong>котировка на выходе</strong> совп�
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "Если <strong>котировка на выходе</strong> совпадёт с <strong>барьером</strong>, Вы получите выплату только на контрактах \"Выше\""
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "Если <strong>котировка на выходе</strong> равна <strong>котировке на входе</strong>, Вы не получите прибыли."
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "Если <strong>последний тик</strong> равен среднему значению тиков, Вы не получите прибыли."
 
@@ -4380,6 +4380,9 @@ msgstr "Если Вы хорошо пройдёте тест SATI, мы отпр
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "Если цена бид пары EUR/USD равна 1.05229, Вы купите 1.05229 USD за каждый проданный 1 EUR."
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Если Вы выбираете \"Азиатские – Падение\", Вы выигрываете, если <strong>последняя котировка</strong> окажется <strong>ниже</strong>, чем <strong>общее среднее значение</strong> котировок."
 
@@ -4413,8 +4416,14 @@ msgstr "Если Вы выбираете \"Выше\", Вы выигрывает
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Если Вы выбираете \"Выше\", Вы выигрываете, если <strong>выходная котировка</strong> строго выше, чем <strong>выбранный барьер</strong>."
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Если Вы выбираете \"Ниже\", Вы выигрываете, если <strong>выходная котировка</strong> строго ниже, чем <strong>выбранный барьер</strong>."
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Если Вы выбираете \"Совпадет\", Вы выигрываете, если <strong>последняя десятичная</strong> последней котировки <strong>равна</strong> Вашему <strong>прогнозу</strong>"
@@ -5711,6 +5720,9 @@ msgstr "Низкие минимальные ставки"
 
 msgid "Lower"
 msgstr "Ниже"
+
+msgid "Lower or equal"
+msgstr ""
 
 msgid "M"
 msgstr "М"
@@ -10724,6 +10736,9 @@ msgstr "Преимущества торговли бинарными опцио�
 
 msgid "Why you should trade precious metals with %1"
 msgstr "Преимущества торговли драгоценными металлами на %1"
+
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
 
 msgid "Win the multiplier times the close minus low."
 msgstr "Получите выплату в размере цены Закрытия ‒ Мин., помноженной на размер множителя."

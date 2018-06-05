@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-03 22:54-0400\n"
+"PO-Revision-Date: 2018-06-04 05:07-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -1028,6 +1028,9 @@ msgstr "Consentono ai Clienti di effettuare depositi con importi inferiori (tram
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Consentono ai Clienti di utilizzare e-wallet che non sono direttamente disponibili su %1"
+
+msgid "Allow equals"
+msgstr ""
 
 msgid "Also known as counter currency"
 msgstr "Anche nota come contro valuta o valuta incerta"
@@ -3172,7 +3175,7 @@ msgid "Ensuring that the Binary Group of companies are in full compliance with t
 msgstr "Garantire che le società del Gruppo Binary siano in totale conformità con i regimi regolamentari cui sono soggetti"
 
 msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "Inserisci il limite in termini di differenza dal prezzo spot. Se inserisci +0.005, allora starai acquistando un contratto con un limite 0.005 più alto rispetto al punto d'ingresso. Quest'ultimo sarà il tick successivo dopo aver ricevuto l'ordine"
+msgstr ""
 
 msgid "Enter your email"
 msgstr "Inserisci il tuo indirizzo email"
@@ -4271,9 +4274,6 @@ msgstr "Se il <strong>punto di uscita</strong> corrisponde alla <strong>barriera
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "Se il <strong>punto di uscita</strong> corrisponde alla <strong>barriera</strong>, ottieni il payout solo per i contratti di tipo \"Superiore\""
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "Se il <strong>punto di uscita</strong> corrisponde al <strong>punto di entrata</strong>, non ottieni il payout."
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "Se <strong>l'ultimo tick</strong> corrisponde alla media dei tick, non ottieni il payout."
 
@@ -4382,6 +4382,9 @@ msgstr "Se otterrai un buon punteggio su SATI, ti invieremo un test di talento. 
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "Se vedi che EUR/USD ha un prezzo di offerta di 1,05229, acquisterai USD 1.05229 per ogni EUR 1 che vendi."
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Se selezioni \"Ribasso Asiatiche\", vincerai il payout se l'<strong>ultimo tick</strong> è <strong>inferiore</strong> alla <strong>media</strong> dei tick."
 
@@ -4415,8 +4418,14 @@ msgstr "Selezionando \"Superiore\", ottieni il payout se il <strong>punto di usc
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Se selezioni \"High\", vinci il payout se lo <strong>spot d'uscita</strong> è notevolmente superiore alla <strong>barriera</strong>."
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Se selezioni \"Low\", vinci il payout se lo <strong>spot d'uscita</strong> è notevolmente inferiore alla <strong>barriera</strong>."
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Se selezioni \"Combacia\", vincerai il payout se l'<strong>ultima cifra</strong> dell'ultimo tick è <strong>uguale</strong> alla tua <strong>previsione.</strong>"
@@ -5714,6 +5723,9 @@ msgstr "Puntate minime"
 
 msgid "Lower"
 msgstr "Inferiore"
+
+msgid "Lower or equal"
+msgstr ""
 
 msgid "M"
 msgstr "M"
@@ -10727,6 +10739,9 @@ msgstr "Perché dovresti fare trading di opzioni binarie con %1"
 
 msgid "Why you should trade precious metals with %1"
 msgstr "Perché dovresti fare trading in metalli preziosi con %1"
+
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
 
 msgid "Win the multiplier times the close minus low."
 msgstr "Vinci il multiplo di close meno low."
