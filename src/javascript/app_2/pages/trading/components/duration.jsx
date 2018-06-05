@@ -48,6 +48,14 @@ const Duration = ({
             </div>
         );
     }
+
+    function onDurationChange(fieldItem) {
+        if (fieldItem === 'expiry_date') {
+            return onChange(fieldItem);
+        }
+        return typeof duration === 'number' ? onChange(fieldItem) : onChange(fieldItem);
+    }
+
     return (
         <Fieldset
             time={server_time}
@@ -59,7 +67,7 @@ const Duration = ({
                 list={expiry_list}
                 value={expiry_type}
                 name='expiry_type'
-                onChange={onChange}
+                onChange={onDurationChange}
                 is_nativepicker={is_nativepicker}
             />
 
@@ -72,7 +80,7 @@ const Duration = ({
                                 minDate={min_date_duration}
                                 maxDate={max_date_duration}
                                 mode='duration'
-                                onChange={onChange}
+                                onChange={onDurationChange}
                                 is_nativepicker={is_nativepicker}
                                 footer={localize('The minimum duration is 1 day')}
                             /> :
@@ -80,7 +88,7 @@ const Duration = ({
                                 type='number'
                                 name='duration'
                                 value={duration}
-                                onChange={onChange}
+                                onChange={onDurationChange}
                                 is_nativepicker={is_nativepicker}
                             />
                         }
@@ -88,7 +96,7 @@ const Duration = ({
                             list={duration_units_list}
                             value={duration_unit}
                             name='duration_unit'
-                            onChange={onChange}
+                            onChange={onDurationChange}
                             is_nativepicker={is_nativepicker}
                         />
                     </div>
@@ -98,11 +106,11 @@ const Duration = ({
                         name='expiry_date'
                         showTodayBtn
                         minDate={min_date_expiry}
-                        onChange={onChange}
+                        onChange={onDurationChange}
                         is_nativepicker={is_nativepicker}
                     />
                     <TimePicker
-                        onChange={onChange}
+                        onChange={onDurationChange}
                         name='expiry_time'
                         value={expiry_time}
                         placeholder='12:00 pm'
@@ -114,6 +122,7 @@ const Duration = ({
     );
 };
 
+// ToDo: Refactor Duration.jsx and date_picker.jsx
 Duration.propTypes = {
     duration: PropTypes.oneOfType([
         PropTypes.number,
@@ -121,13 +130,16 @@ Duration.propTypes = {
     ]),
     duration_unit      : PropTypes.string,
     duration_units_list: PropTypes.array,
-    expiry_date        : PropTypes.string,
-    expiry_time        : PropTypes.string,
-    expiry_type        : PropTypes.string,
-    is_minimized       : PropTypes.bool,
-    is_nativepicker    : PropTypes.bool,
-    onChange           : PropTypes.func,
-    server_time        : PropTypes.object,
+    expiry_date        : PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
+    expiry_time    : PropTypes.string,
+    expiry_type    : PropTypes.string,
+    is_minimized   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
+    onChange       : PropTypes.func,
+    server_time    : PropTypes.object,
 };
 
 export default connect(

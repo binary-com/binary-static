@@ -47,12 +47,17 @@ class ContractsPopUp extends React.PureComponent {
         return (
             Object.keys(this.props.list).map(key => (
                 <React.Fragment key={key}>
-                    <Contracts
-                        contracts={this.props.list[key]}
-                        name={this.props.name}
-                        value={this.props.value}
-                        handleSelect={this.handleSelect}
-                    />
+                    <div className='list-group'>
+                        <div className='list-label'><span>{key}</span></div>
+                        <div className='list-items'>
+                            <Contracts
+                                contracts={this.props.list[key]}
+                                name={this.props.name}
+                                value={this.props.value}
+                                handleSelect={this.handleSelect}
+                            />
+                        </div>
+                    </div>
                 </React.Fragment>
             ))
         );
@@ -75,9 +80,7 @@ class ContractsPopUp extends React.PureComponent {
                 visible={this.state.is_list_visible}
                 onClose={this.handleVisibility}
             >
-                <div className='contracts-modal-list'>
-                    {this.renderList()}
-                </div>
+                {this.renderList()}
             </FullscreenDialog>
         );
     }
@@ -102,11 +105,11 @@ class ContractsPopUp extends React.PureComponent {
             <div
                 ref={this.setWrapperRef}
                 className={container_classes.join(' ')}
+                onClick={this.handleVisibility}
+                onBlur={this.handleVisibility}
             >
                 <div
                     className={`contracts-popup-display ${this.state.is_list_visible ? 'clicked': ''}`}
-                    onClick={this.handleVisibility}
-                    onBlur={this.handleVisibility}
                 >
                     <i className={`contract-icon ic-${this.props.value}`} />
                     <span name={this.props.name} value={this.props.value}>

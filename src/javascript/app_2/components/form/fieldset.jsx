@@ -30,6 +30,10 @@ class Fieldset extends React.PureComponent {
     }
 }
 
+// ToDo:
+// - Refactor Last Digit to keep the children as array type.
+//   Currently last_digit.jsx returns object (React-Element) as 'children'
+//   props type.
 Fieldset.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.array,

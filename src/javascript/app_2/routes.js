@@ -47,7 +47,7 @@ export const BinaryLink = ({ to, children, ...props }) => {
     if (!route) {
         throw new Error(`Route not found: ${to}`);
     }
-
+    
     return (
         to ?
             <NavLink to={path} activeClassName='active' exact={route.exact} {...props}>
@@ -61,9 +61,6 @@ export const BinaryLink = ({ to, children, ...props }) => {
 };
 
 BinaryLink.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object,
-    ]),
-    to: PropTypes.string,
+    children: PropTypes.object,
+    to      : PropTypes.string,
 };

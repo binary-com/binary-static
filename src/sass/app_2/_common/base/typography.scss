@@ -37,6 +37,14 @@ body, input {
     @include interpolate(font-size, 320px, 1440px, 14px, 16px);
 }
 
+.sidebar-container {
+    .contracts-popup-container.desktop-only {
+        span, span.contract-title {
+            @include interpolate(font-size, 320px, 1440px, 11px, 12px);
+        }
+    }
+}
+
 /* Multiple properties with same values */
 h1, h2, h3, h4, h5 {
     @include interpolate((padding-top, padding-bottom), 20rem, 70rem, 0rem, 0.5rem);
