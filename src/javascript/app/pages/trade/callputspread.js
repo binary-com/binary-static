@@ -33,15 +33,8 @@ const constants = {
 
 const Callputspread = (() => {
     const state = {
-        slider: {
-            el: null,
-            width: undefined,
-            x: undefined,
-            y: undefined,
-            label: {
-                el: null,
-            }
-        },
+        el_slider: null,
+        el_slider_label: null,
         interval: {
             el: null,
             x : undefined,
@@ -145,13 +138,13 @@ const Callputspread = (() => {
     };
 
     const redrawSlider = () => {
-        if (state.slider.el) {
-            state.slider.el.destroy();
+        if (state.el_slider) {
+            state.el_slider.destroy();
         }
-        const { el, width, x, y } = state.slider;
+        const { x, y, width } = calcSliderState(state.chart, state.contract, constants);
         const { height, fill } = constants.slider;
 
-        state.slider.el = state.chart.renderer
+        state.el_slider = state.chart.renderer
             .path(getSliderPath(x, y, width, height))
             .attr({
                 fill,
@@ -159,16 +152,16 @@ const Callputspread = (() => {
             })
             .add();
 
-        if (state.slider.label.el) {
-            state.slider.label.el.destroy();
+        if (state.el_slider_label) {
+            state.el_slider_label.destroy();
         }
 
         const { color, fontSize, offsetX, offsetY } = constants.slider.label;
         
-        state.slider.label.el = state.chart.renderer
+        state.el_slider_label = state.chart.renderer
             .text(
                 formatMoney(state.contract.currency, state.contract.bid_price),
-                x + state.slider.width / 2 + offsetX,
+                x + width / 2 + offsetX,
                 y + offsetY,
                 true
             )
@@ -187,35 +180,41 @@ const Callputspread = (() => {
     */
 
     const getChartOptions = (chart_options, contract) => {
-        const formatted_max_payout = formatMoney(null, contract.payout, true);
-        // margin size is based on max payout char length
-        const marginRight = 15 + 7.5 * formatted_max_payout.length;
-        state.slider.width = marginRight - 17;
         return {
-            marginRight,
+            marginRight: calcMarginRight(contract),
             redrawHandler,
         };
     };
 
-    const updateSliderState = () => {
-        // Calculates new X Y coordinates for slider based on state
-        const plot_end_x = state.chart.plotWidth + state.chart.plotLeft;
-        const [high_plot_y, low_plot_y] = state.chart.series
+    /*
+        Calc Functions are PURE FUNCTIONS
+    */
+
+    const calcMarginRight = (contract) => {
+        const formatted_max_payout = formatMoney(null, contract.payout, true);
+        // margin size is based on max payout char length
+        return 15 + 7.5 * formatted_max_payout.length;
+    };
+
+    const calcSliderState = (chart, contract, constants) => {
+        // for x coordinate:
+        const plot_end_x = chart.plotWidth + chart.plotLeft;
+        const x_offset = (constants.interval.cap_width + constants.interval.strokeWidth) / 2;
+        // for y coordinate:
+        const [high_barrier_y, low_barrier_y] = chart.series
             .find(series => series.name === constants.barrier_series_name)
             .data
-            .map(point => point.plotY + state.chart.plotTop);
-
-        const { contract_type, payout, bid_price } = state.contract;
-
+            .map(point => point.plotY + chart.plotTop);
+        const { contract_type, payout, bid_price } = contract;
         const k = contract_type === 'CALLSPREAD'
             ? 1 - (bid_price / payout)
             :      bid_price / payout;
 
-        const price_y = high_plot_y + (low_plot_y - high_plot_y) * k;
-
-        const x_offset = (constants.interval.cap_width + constants.interval.strokeWidth) / 2;
-        state.slider.x = plot_end_x + x_offset;
-        state.slider.y = price_y;
+        return {
+            x: plot_end_x + x_offset,
+            y: high_barrier_y + (low_barrier_y - high_barrier_y) * k,
+            width: calcMarginRight(contract) - 17,
+        };
     };
 
     const updateVerticalIntervalState = () => {
@@ -235,7 +234,6 @@ const Callputspread = (() => {
         state.chart = chart || state.chart;
         state.contract = contract || state.contract;
         if (!state.chart || !state.contract) return;
-        updateSliderState();
         updateVerticalIntervalState();
 
         // slider with indicative price lags behind sidebar value
