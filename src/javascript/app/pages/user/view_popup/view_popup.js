@@ -91,6 +91,7 @@ const ViewPopup = (() => {
             CALL        : 'Higher',
             CALLE       : 'Higher or equal',
             PUT         : 'Lower',
+            PUTE        : 'Lower or equal',
             DIGITMATCH  : 'Digit Matches',
             DIGITDIFF   : 'Digit Differs',
             DIGITODD    : 'Digit Odd',
