@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import DAO from '../../data/dao';
-import CardList from '../../components/elements/card_list.jsx';
 import DataTable from '../../components/elements/data_table.jsx';
 import Tooltip from '../../components/elements/tooltip.jsx';
 import ClientBase from '../../../_common/base/client_base';
@@ -64,8 +63,33 @@ const contract_type_display = {
     NOTOUCH     : localize('Does Not Touch'),
 };
 
-const PortfolioCard = () => (
-    <h1>Test</h1>
+const PortfolioCard = ({id, details, remaining_time}) => ( // eslint-disable-line
+    <div className='statement-card card-list__card'>
+        <div className='statement-card__header'>
+            <span className='statement-card__refid'>{ id }</span>
+            <span className='statement-card__date'>{ remaining_time }</span>
+        </div>
+        <div className='statement-card__body'>
+            <div className='statement-card__desc'>{details}</div>
+            <div className='statement-card__row'>
+                <div className='statement-card__cell statement-card__amount statement-card__amount--sell'>
+                    <span className='statement-card__cell-text'>
+                        Amount
+                    </span>
+                </div>
+                <div className='statement-card__cell statement-card__payout'>
+                    <span className='statement-card__cell-text'>
+                        payout
+                    </span>
+                </div>
+                <div className='statement-card__cell statement-card__balance'>
+                    <span className='statement-card__cell-text'>
+                        Indicative
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 );
 
 // TODO: move to common
@@ -300,9 +324,17 @@ class Portfolio extends React.PureComponent  {
                                         />
                                     </div>
                                     <div className='mobile-only'>
-                                        {this.state.data_source.map((transaction, id) => {
+                                        {this.state.data_source.map((transaction, idx) => {
                                             console.log(transaction);
-                                            return <h1 key={id}>{transaction.indicative && transaction.indicative.amount }</h1>;
+                                            return (
+                                                <div key={idx} className='card-list'>
+                                                    <PortfolioCard
+                                                        details={transaction.details}
+                                                        id={transaction.id}
+                                                        remaining_time={transaction.remaining_time}
+                                                    />
+                                                </div>
+                                            );
                                         })}
                                     </div>
                                 </div>
