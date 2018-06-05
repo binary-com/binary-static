@@ -1,5 +1,5 @@
 export * from './drawer_header.jsx';
-export * from './portfolio_drawer.jsx';
+// export * from './portfolio_drawer.jsx';
 export * from './drawer_item.jsx';
 export * from './drawer_items.jsx';
 export * from './drawer.jsx';

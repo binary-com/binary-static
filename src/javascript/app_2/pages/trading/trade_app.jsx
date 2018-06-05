@@ -10,7 +10,7 @@ import StartDate       from './components/start_date.jsx';
 // import Test         from './components/test.jsx';
 import SmartCharts     from '../../components/charts/smartcharts.jsx';
 import MobileWidget    from './components/elements/mobile_widget.jsx';
-import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
+import PortfolioDrawer from '../../components/elements/drawer/portfolio_drawer.jsx';
 import { connect }     from '../../store/connect';
 
 const form_components = [
