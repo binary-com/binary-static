@@ -8,7 +8,7 @@ const constants = {
             color: '#fff',
             fontSize: '9px',
             offsetY: 4,
-            offsetX: 7,
+            offsetX: 6,
         }
     },
     interval: {
@@ -166,14 +166,18 @@ const Callputspread = (() => {
         const { color, fontSize, offsetX, offsetY } = constants.slider.label;
         
         state.slider.label.el = state.chart.renderer
-            .text(formatMoney(state.contract.currency, state.contract.bid_price), x + offsetX, y + offsetY, true)
+            .text(
+                formatMoney(state.contract.currency, state.contract.bid_price),
+                x + state.slider.width / 2 + offsetX,
+                y + offsetY,
+                true
+            )
+            .attr({
+                align: 'center',
+            })
             .css({
                 color,
                 fontSize,
-                // OUTRAGEOUS, WIDTH IS IGNORED!!!
-                // display: 'block',
-                // width: '50px',
-                // textAlign: 'center',
             })
             .add();
     };

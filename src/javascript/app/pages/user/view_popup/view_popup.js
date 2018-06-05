@@ -113,10 +113,6 @@ const ViewPopup = (() => {
             PUTSPREAD   : 'Put Spread',
         };
 
-        if (Callputspread.isCallputspread(contract.contract_type)) {
-            contract.payout = 10; // TODO: remove this line once backend has it
-        }
-
         containerSetText('trade_details_contract_type', localize(contract_type_display[contract.contract_type]));
         containerSetText('trade_details_contract_id', contract.contract_id);
         containerSetText('trade_details_start_date', epochToDateTime(contract.date_start));
