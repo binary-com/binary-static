@@ -2,7 +2,6 @@ import {
     action,
     observable }     from 'mobx';
 import moment        from 'moment';
-import ContractType  from '../pages/trading/actions/helpers/contract_type';
 import actions       from '../pages/trading/actions/index';
 import Client        from '../../_common/base/client_base';
 
@@ -18,9 +17,6 @@ export default class TradeStore {
         if (!Client.get('currency')) {
             actions.getCurrenciesAsync();
         }
-        ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
-            this.contract_types_list = ContractType.getContractCategories();
-        }));
     }
 
     @action.bound dispose() {
@@ -38,8 +34,7 @@ export default class TradeStore {
     }
 
     // Underlying
-    @observable symbols_list = { frxAUDJPY: 'AUD/JPY', AS51: 'Australian Index', HSI: 'Hong Kong Index', DEAIR: 'Airbus', frxXAUUSD: 'Gold/USD', R_10: 'Volatility 10 Index' };
-    @observable symbol       = Object.keys(this.symbols_list)[0];
+    @observable symbol;
 
     // Contract Type
     @observable contract_type        = '';

@@ -7,8 +7,8 @@ import Duration        from './components/duration.jsx';
 import LastDigit       from './components/last_digit.jsx';
 import Purchase        from './components/purchase.jsx';
 import StartDate       from './components/start_date.jsx';
-import Symbol          from './components/symbol.jsx';
-import Test            from './components/test.jsx';
+// import Test         from './components/test.jsx';
+import SmartCharts     from '../../components/charts/smartcharts.jsx';
 import MobileWidget    from './components/elements/mobile_widget.jsx';
 import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
 import { connect }     from '../../store/connect';
@@ -51,23 +51,22 @@ class TradeApp extends React.Component {
         return (
             <div id='trade_container' className={this.props.is_portfolio_drawer_on ? 'show' : undefined}>
                 <div className='chart-container notice-msg'>
-                    <Symbol />
-                    <ContractType className='desktop-only' />
-                    <ContractType className='mobile-only' is_mobile_widget />
-                    <Test />
+                    <SmartCharts />
+                    {/* }<Test /> */}
                 </div>
-
                 <div className='sidebar-container desktop-only'>
+                    <fieldset className='trade-types'>
+                        <ContractType className='desktop-only' />
+                    </fieldset>
                     {this.renderParamPickers()}
                     <Purchase />
                 </div>
-
+                <ContractType className='mobile-only' is_mobile_widget />
                 <div className='mobile-only'>
                     <MobileWidget>
                         {this.renderParamPickers()}
                     </MobileWidget>
                 </div>
-
                 <div className='offset-container'>
                     <PortfolioDrawer
                         onClick={this.props.togglePortfolioDrawer}

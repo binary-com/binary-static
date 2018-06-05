@@ -3,7 +3,6 @@
 
     .notice-msg {
         background: unset;
-        border: 1px solid $COLOR_LIGHT_GRAY;
     }
     .icon {
         &:before {
@@ -115,6 +114,11 @@
                     font-size: 0.5625rem; /* stylelint-disable-line number-max-precision */
                 }
             }
+        }
+        &.trade-types {
+            border: 0;
+            padding: 0;
+            margin-bottom: 0;
         }
     }
 }

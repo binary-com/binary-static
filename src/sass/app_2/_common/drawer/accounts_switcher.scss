@@ -28,7 +28,7 @@
             &:before {
                 content: '\25EF';
                 font-size: 3rem;
-                top: 0;
+                top: -8px;
                 position: absolute;
             }
             &:after {
@@ -60,7 +60,7 @@
             opacity: 1;
             transform: scale(1, 1);
             height: 100%;
-            max-height: calc(100% - 156px);
+            max-height: calc(100% - 140px);
         }
         .acc-switcher-account {
             cursor: pointer;
