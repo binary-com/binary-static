@@ -1,6 +1,7 @@
 import moment       from 'moment';
 import React        from 'react';
 import classnames   from 'classnames';
+import PropTypes    from 'prop-types';
 import ArrowHead    from '../elements/arrowhead.jsx';
 import { localize } from '../../../_common/localize';
 
@@ -62,7 +63,7 @@ class Calendar extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         const date = moment(this.state.date);
-        
+
         if (date.isBefore(moment(nextProps.minDate))) {
             this.setState({
                 date: nextProps.minDate,
@@ -649,6 +650,47 @@ class DatePicker extends React.PureComponent {
 DatePicker.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
     mode      : 'date',
+};
+
+Calendar.propTypes = {
+    dateFormat      : PropTypes.string,
+    footer          : PropTypes.string,
+    handleDateChange: PropTypes.func,
+    id              : PropTypes.number,
+    initial_value   : PropTypes.string,
+    is_nativepicker : PropTypes.bool,
+    maxDate         : PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    minDate: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    mode        : PropTypes.string,
+    placeholder : PropTypes.string,
+    showTodayBtn: PropTypes.bool,
+    startDate   : PropTypes.string,
+};
+
+DatePicker.propTypes = {
+    dateFormat     : PropTypes.string,
+    id             : PropTypes.number,
+    initial_value  : PropTypes.string,
+    is_nativepicker: PropTypes.bool,
+    maxDate        : PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    minDate: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
+    mode        : PropTypes.string,
+    name        : PropTypes.string,
+    onChange    : PropTypes.func,
+    placeholder : PropTypes.string,
+    showTodayBtn: PropTypes.bool,
 };
 
 export default DatePicker;

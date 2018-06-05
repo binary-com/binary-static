@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import InputField   from '../../../components/form/input_field.jsx';
@@ -68,6 +69,19 @@ const Amount = ({
             }
         </Fieldset>
     );
+};
+
+Amount.propTypes = {
+    amount: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    basis          : PropTypes.string,
+    currencies_list: PropTypes.object,
+    currency       : PropTypes.string,
+    is_minimized   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
+    onChange       : PropTypes.func,
 };
 
 export default connect(

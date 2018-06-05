@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import InputField   from '../../../components/form/input_field.jsx';
 import { connect }  from '../../../store/connect';
@@ -56,6 +57,19 @@ const Barrier = ({
             }
         </Fieldset>
     );
+};
+
+Barrier.propTypes = {
+    barrier_1: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    barrier_2: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    is_minimized: PropTypes.bool,
+    onChange    : PropTypes.func,
 };
 
 export default connect(

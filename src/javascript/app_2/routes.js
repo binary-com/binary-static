@@ -1,5 +1,6 @@
 import React               from 'react';
 import { Route, NavLink }  from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import Client              from '../_common/base/client_base';
 import { redirectToLogin } from '../_common/base/login';
@@ -55,4 +56,12 @@ export const BinaryLink = ({ to, children, ...props }) => {
                 {children}
             </a>
     );
+};
+
+BinaryLink.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
+    to: PropTypes.string,
 };
