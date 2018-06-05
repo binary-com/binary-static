@@ -385,7 +385,6 @@ const Home = () => {
                                             { image: 'fasapay' },
                                             { image: 'perfect_money' },
                                             { image: 'skrill' },
-                                            { image: 'ecopayz' },
                                             { image: 'qiwi' },
                                             { image: 'ethereum_black', dataShow: '-malta, -maltainvest' },
                                             { image: 'bitcoin', dataShow: '-malta, -maltainvest' },
