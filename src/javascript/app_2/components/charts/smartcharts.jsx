@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { SmartChart } from '@binary-com/smartcharts';
-import DAO from '../../data/dao';
-import { connect } from '../../store/connect';
+import PropTypes      from 'prop-types';
+import React          from 'react';
+import DAO            from '../../data/dao';
+import { connect }    from '../../store/connect';
 
 const subscribe = (request_object, callback) => {
     if (request_object.subscribe !== 1) return;
@@ -40,7 +40,7 @@ SmartCharts.propTypes = {
 };
 
 export default connect(
-    ({trade}) => ({
+    ({ trade }) => ({
         onSymbolChange: trade.handleChange,
         initial_symbol: trade.symbol,
     })

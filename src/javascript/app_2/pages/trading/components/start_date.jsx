@@ -66,11 +66,10 @@ StartDate.propTypes = {
 };
 
 export default connect(
-    ({trade}) => ({
+    ({ trade }) => ({
         start_date      : trade.start_date,
         start_dates_list: trade.start_dates_list,
         start_time      : trade.start_time,
-        server_time     : trade.server_time,
         onChange        : trade.handleChange,
     })
 )(StartDate);

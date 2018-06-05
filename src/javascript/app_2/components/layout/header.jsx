@@ -63,8 +63,7 @@ const DrawerFooter = () => (Client.isLoggedIn() && // TODO: update the UI
     <a href='javascript:;' onClick={requestLogout}>{localize('Log out')}</a>
 );
 
-class Header extends React.Component {
-
+class Header extends React.PureComponent {
     render() {
         return (
             <React.Fragment>
