@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-03 22:54-0400\n"
+"PO-Revision-Date: 2018-06-04 05:07-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -1029,6 +1029,9 @@ msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr ""
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
+msgstr ""
+
+msgid "Allow equals"
 msgstr ""
 
 msgid "Also known as counter currency"
@@ -4271,9 +4274,6 @@ msgstr ""
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr ""
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr ""
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr ""
 
@@ -4382,6 +4382,9 @@ msgstr ""
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr ""
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr ""
 
@@ -4415,7 +4418,13 @@ msgstr ""
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr ""
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
+msgstr ""
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
 msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
@@ -5712,6 +5721,9 @@ msgid "Low minimum stakes"
 msgstr ""
 
 msgid "Lower"
+msgstr ""
+
+msgid "Lower or equal"
 msgstr ""
 
 msgid "M"
@@ -10726,6 +10738,9 @@ msgstr "귀하께서 %1를 통해 바이너리 옵션거래를 해야 하는 이
 
 msgid "Why you should trade precious metals with %1"
 msgstr "귀하께서 %1를 통해 귀금속을 거래해야 하는 이유"
+
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
 
 msgid "Win the multiplier times the close minus low."
 msgstr "종가에서 저가를 뺀 금액에 승수를 곱한 금액을 획득하세요."
