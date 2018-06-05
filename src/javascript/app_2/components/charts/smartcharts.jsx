@@ -1,4 +1,5 @@
 import { SmartChart } from '@binary-com/smartcharts';
+import PropTypes      from 'prop-types';
 import React          from 'react';
 import DAO            from '../../data/dao';
 import { connect }    from '../../store/connect';
@@ -32,6 +33,10 @@ const SmartCharts = ({ onSymbolChange }) =>  {
             />
         </React.Fragment>
     );
+};
+
+SmartCharts.propTypes = {
+    onSymbolChange: PropTypes.func,
 };
 
 export default connect(

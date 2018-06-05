@@ -68,6 +68,7 @@ const Amount = ({
 };
 
 Amount.propTypes = {
+    basis_list     : PropTypes.array,
     amount         : PropTypes.number,
     basis          : PropTypes.string,
     currencies_list: PropTypes.object,
