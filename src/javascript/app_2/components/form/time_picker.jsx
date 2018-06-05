@@ -1,6 +1,7 @@
 import React,
     { PureComponent } from 'react';
 import IScroll        from 'iscroll';
+import PropTypes      from 'prop-types';
 import { localize }   from '../../../_common/localize';
 
 /* TODO:
@@ -237,6 +238,7 @@ class TimePicker extends PureComponent {
     };
 
     handleChange = (arg) => {
+        
         // To handle nativepicker;
         const value = typeof arg === 'object' ? this.convertTo12h(arg.target.value) : arg;
 
@@ -333,5 +335,23 @@ class TimePicker extends PureComponent {
         );
     }
 }
+
+TimePicker.propTypes = {
+    is_nativepicker: PropTypes.bool,
+    name           : PropTypes.string,
+    onChange       : PropTypes.func,
+    padding        : PropTypes.string,
+    placeholder    : PropTypes.string,
+    value          : PropTypes.string,
+};
+
+TimePickerDropdown.propTypes = {
+    className  : PropTypes.string,
+    onChange   : PropTypes.func,
+    preClass   : PropTypes.string,
+    toggle     : PropTypes.func,
+    value      : PropTypes.string,
+    value_split: PropTypes.bool,
+};
 
 export default TimePicker;

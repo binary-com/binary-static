@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Url from '../../../../../_common/url';
 
 class FullscreenDialog extends React.PureComponent {
@@ -57,11 +58,20 @@ class FullscreenDialog extends React.PureComponent {
                 <div className='fullscreen-dialog__header-shadow-cover' />
                 <div className='fullscreen-dialog__header-shadow' />
                 <div className='fullscreen-dialog__content'>
-                    {children}
+                    <div className='contracts-modal-list'>
+                        {children}
+                    </div>
                 </div>
             </div>
         );
     }
 }
+
+FullscreenDialog.propTypes = {
+    children: PropTypes.array,
+    onClose : PropTypes.func,
+    title   : PropTypes.string,
+    visible : PropTypes.bool,
+};
 
 export default FullscreenDialog;

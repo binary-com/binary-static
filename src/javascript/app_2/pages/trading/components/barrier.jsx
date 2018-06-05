@@ -1,4 +1,5 @@
 import React        from 'react';
+import PropTypes    from 'prop-types';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import InputField   from '../../../components/form/input_field.jsx';
 import { connect }  from '../../../store/connect';
@@ -39,7 +40,7 @@ const Barrier = ({
             tooltip={localize('Text for Barriers goes here.')}
         >
             <InputField
-                type='number'
+                type='string'
                 name='barrier_1'
                 value={barrier_1}
                 onChange={onChange}
@@ -47,7 +48,7 @@ const Barrier = ({
 
             {!!barrier_2 &&
                 <InputField
-                    type='number'
+                    type='string'
                     name='barrier_2'
                     value={barrier_2}
                     onChange={onChange}
@@ -56,6 +57,13 @@ const Barrier = ({
             }
         </Fieldset>
     );
+};
+
+Barrier.propTypes = {
+    barrier_1   : PropTypes.string,
+    barrier_2   : PropTypes.string,
+    is_minimized: PropTypes.bool,
+    onChange    : PropTypes.func,
 };
 
 export default connect(
