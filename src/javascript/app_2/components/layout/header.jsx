@@ -49,7 +49,7 @@ const MenuDrawer = () => (
                 />
                 <DrawerItem text={localize('Cashier')} />
                 <hr />
-                <DrawerItem text={localize('Manage Password')} />
+                <DrawerItem text={localize('Manage Password')} link_to='accounts/forgotpassword'/>
                 <DrawerItem text={localize('Useful Resources')}/>
                 <DrawerItem text={localize('Login History')}/>
                 <hr />

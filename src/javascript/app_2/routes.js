@@ -6,13 +6,14 @@ import Client              from '../_common/base/client_base';
 import { redirectToLogin } from '../_common/base/login';
 import { localize }        from '../_common/localize';
 
-import TradeApp  from './pages/trading/trade_app.jsx';
-import Statement from './pages/statement/statement.jsx';
-
+import TradeApp       from './pages/trading/trade_app.jsx';
+import Statement      from './pages/statement/statement.jsx';
+import ForgotPassword from './pages/accounts/forgot_password.jsx';
 
 const routes = [
-    { path: '/',          component: TradeApp, exact: true },
-    { path: '/statement', component: Statement, is_authenticated: true },
+    { path: '/',               component: TradeApp, exact: true },
+    { path: '/statement',      component: Statement, is_authenticated: true },
+    { path: '/accounts/forgotpassword', component: ForgotPassword, is_authenticated: false },
 ];
 
 const RouteWithSubRoutes = route => (
