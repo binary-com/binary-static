@@ -35,18 +35,9 @@ const Callputspread = (() => {
     const state = {
         el_slider: null,
         el_slider_label: null,
-        interval: {
-            el: null,
-            x : undefined,
-            y0: undefined,
-            y1: undefined,
-            top_label: {
-                el: null,
-            },
-            bottom_label: {
-                el: null,
-            },
-        },
+        el_interval: null,
+        el_interval_top_label: null,
+        el_interval_bottom_laber: null,
         chart: null,
         contract: null,
     };
@@ -78,11 +69,9 @@ const Callputspread = (() => {
         /^(CALLSPREAD|PUTSPREAD)$/.test(contract_type)
     );
 
+    // Called on Highcharts 'redraw' event
     const redrawHandler = (e) => {
-        // Called on Highcharts 'redraw' event
-        updateState(e.target, null);
-        if (!state.chart || !state.contract) return;
-        redrawVerticalInterval();
+        redrawInterval();
         redrawSlider();
     };
 
@@ -90,60 +79,49 @@ const Callputspread = (() => {
         METHODS THAT DRAW ON CHART USING VALUES FROM STATE OBJECT:
     */
 
-    const redrawVerticalInterval = () => {
-        if (state.interval.el) {
-            state.interval.el.destroy();
+    const redrawInterval = () => {
+        if (!state.chart || !state.contract) return;
+        if (state.el_interval) {
+            state.el_interval.destroy();
         }
-        const { x, y0, y1 } = state.interval;
+        const { x, y0, y1, top_label, bottom_label } = calcIntervalState(state.chart, state.contract, constants);
         const { cap_width, stroke, strokeWidth } = constants.interval;
-
-        state.interval.el = state.chart.renderer
+        state.el_interval = state.chart.renderer
             .path(getVerticalIntervalPath(x, y0, y1, cap_width))
             .attr({
                 stroke,
                 'stroke-width': strokeWidth,
             })
             .add();
-
-        if (state.interval.top_label.el) {
-            state.interval.top_label.el.destroy();
+        if (state.el_interval_top_label) {
+            state.el_interval_top_label.destroy();
         }
-        if (state.interval.bottom_label.el) {
-            state.interval.bottom_label.el.destroy();
+        if (state.el_interval_bottom_laber) {
+            state.el_interval_bottom_laber.destroy();
         }
-
         const { color, fontSize, offsetX } = constants.interval.label;
         const label_styles = {
             color,
             fontSize,
             'z-index': -1,
         };
-
-        const [display_maximum_payout, display_minimum_payout] = [state.contract.payout, 0]
-            .map(payout => formatMoney(state.contract.currency, payout));
-
-        const [top_label, bottom_label] = state.contract.contract_type === 'CALLSPREAD'
-            ? [display_maximum_payout, display_minimum_payout]
-            : [display_minimum_payout, display_maximum_payout];
-        
-        state.interval.top_label.el = state.chart.renderer
+        state.el_interval_top_label = state.chart.renderer
             .text(top_label, x + offsetX, y0 + constants.interval.top_label.offsetY, true)
             .css(label_styles)
             .add();
-
-        state.interval.bottom_label.el = state.chart.renderer
+        state.el_interval_bottom_laber = state.chart.renderer
             .text(bottom_label, x + offsetX, y1 + constants.interval.bottom_label.offsetY, true)
             .css(label_styles)
             .add();
     };
 
     const redrawSlider = () => {
+        if (!state.chart || !state.contract) return;
         if (state.el_slider) {
             state.el_slider.destroy();
         }
         const { x, y, width } = calcSliderState(state.chart, state.contract, constants);
         const { height, fill } = constants.slider;
-
         state.el_slider = state.chart.renderer
             .path(getSliderPath(x, y, width, height))
             .attr({
@@ -151,13 +129,10 @@ const Callputspread = (() => {
                 'stroke-width': 0,
             })
             .add();
-
         if (state.el_slider_label) {
             state.el_slider_label.destroy();
         }
-
         const { color, fontSize, offsetX, offsetY } = constants.slider.label;
-        
         state.el_slider_label = state.chart.renderer
             .text(
                 formatMoney(state.contract.currency, state.contract.bid_price),
@@ -165,13 +140,8 @@ const Callputspread = (() => {
                 y + offsetY,
                 true
             )
-            .attr({
-                align: 'center',
-            })
-            .css({
-                color,
-                fontSize,
-            })
+            .attr({ align: 'center' })
+            .css({ color, fontSize })
             .add();
     };
 
@@ -197,10 +167,8 @@ const Callputspread = (() => {
     };
 
     const calcSliderState = (chart, contract, constants) => {
-        // for x coordinate:
         const plot_end_x = chart.plotWidth + chart.plotLeft;
         const x_offset = (constants.interval.cap_width + constants.interval.strokeWidth) / 2;
-        // for y coordinate:
         const [high_barrier_y, low_barrier_y] = chart.series
             .find(series => series.name === constants.barrier_series_name)
             .data
@@ -209,7 +177,6 @@ const Callputspread = (() => {
         const k = contract_type === 'CALLSPREAD'
             ? 1 - (bid_price / payout)
             :      bid_price / payout;
-
         return {
             x: plot_end_x + x_offset,
             y: high_barrier_y + (low_barrier_y - high_barrier_y) * k,
@@ -217,24 +184,29 @@ const Callputspread = (() => {
         };
     };
 
-    const updateVerticalIntervalState = () => {
-        // Calculates new X Y coordinates for interval based on state
-        const plot_end_x = state.chart.plotWidth + state.chart.plotLeft;
-        const [high_plot_y, low_plot_y] = state.chart.series
+    const calcIntervalState = (chart, contract, constants) => {
+        const plot_end_x = chart.plotWidth + chart.plotLeft;
+        const [high_barrier_y, low_barrier_y] = chart.series
             .find(series => series.name === constants.barrier_series_name)
             .data
-            .map(point => point.plotY + state.chart.plotTop);
-
-        state.interval.x  = plot_end_x;
-        state.interval.y0 = high_plot_y;
-        state.interval.y1 = low_plot_y;
+            .map(point => point.plotY + chart.plotTop);
+        const [display_maximum_payout, display_minimum_payout] = [contract.payout, 0]
+            .map(payout => formatMoney(contract.currency, payout));
+        const [top_label, bottom_label] = contract.contract_type === 'CALLSPREAD'
+            ? [display_maximum_payout, display_minimum_payout]
+            : [display_minimum_payout, display_maximum_payout];
+        return {
+            x: plot_end_x,
+            y0: high_barrier_y,
+            y1: low_barrier_y,
+            top_label,
+            bottom_label,
+        };
     };
 
     const updateState = (chart, contract, should_redraw_slider = false) => {
         state.chart = chart || state.chart;
         state.contract = contract || state.contract;
-        if (!state.chart || !state.contract) return;
-        updateVerticalIntervalState();
 
         // slider with indicative price lags behind sidebar value
         // if only drawn on 'redraw' chart event
