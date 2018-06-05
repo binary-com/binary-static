@@ -37,7 +37,7 @@ const createProposalRequest = (store, type_of_contract) => ({
     currency     : store.currency,
     symbol       : store.symbol,
     ...(
-        store.start_date !== 'now' &&
+        store.start_date &&
         { date_start: convertDateTimetoUnix(store.start_date, store.start_time) }
     ),
     ...(
