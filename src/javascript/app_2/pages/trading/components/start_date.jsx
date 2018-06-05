@@ -15,11 +15,12 @@ const StartDate = ({
     is_nativepicker,
     is_minimized,
 }) => {
+    // Number(0) refers to 'now'
     if (is_minimized) {
         return (
             <div className='fieldset-minimized start-date'>
                 <span className='icon start-time' />
-                {start_date === 'now'
+                {start_date === Number(0)
                     ? localize('Now')
                     : `${(start_dates_list.find(o => o.value === +start_date) || {}).text}\n${start_time}`
                 }
@@ -41,7 +42,7 @@ const StartDate = ({
                 type='date'
                 is_nativepicker={is_nativepicker}
             />
-            {start_date !== 'now' &&
+            {start_date !== Number(0) &&
                 <React.Fragment>
                     <TimePicker
                         onChange={onChange}
@@ -57,14 +58,11 @@ const StartDate = ({
 };
 
 StartDate.propTypes = {
-    is_minimized   : PropTypes.bool,
-    is_nativepicker: PropTypes.bool,
-    onChange       : PropTypes.func,
-    server_time    : PropTypes.object,
-    start_date     : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    is_minimized    : PropTypes.bool,
+    is_nativepicker : PropTypes.bool,
+    onChange        : PropTypes.func,
+    server_time     : PropTypes.object,
+    start_date      : PropTypes.number,
     start_dates_list: PropTypes.array,
     start_time      : PropTypes.string,
 };

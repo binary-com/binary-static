@@ -40,7 +40,7 @@ const Barrier = ({
             tooltip={localize('Text for Barriers goes here.')}
         >
             <InputField
-                type='number'
+                type='string'
                 name='barrier_1'
                 value={barrier_1}
                 onChange={onChange}
@@ -48,7 +48,7 @@ const Barrier = ({
 
             {!!barrier_2 &&
                 <InputField
-                    type='number'
+                    type='string'
                     name='barrier_2'
                     value={barrier_2}
                     onChange={onChange}
@@ -60,14 +60,8 @@ const Barrier = ({
 };
 
 Barrier.propTypes = {
-    barrier_1: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    barrier_2: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    barrier_1   : PropTypes.string,
+    barrier_2   : PropTypes.string,
     is_minimized: PropTypes.bool,
     onChange    : PropTypes.func,
 };

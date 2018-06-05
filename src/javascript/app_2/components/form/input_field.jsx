@@ -29,6 +29,9 @@ class InputField extends React.PureComponent {
     }
 }
 
+// ToDo: Refactor input_field
+// supports more than two different types of 'value' as a prop.
+// Quick Solution - Pass two different props to input field.
 InputField.propTypes = {
     className      : PropTypes.string,
     helper         : PropTypes.bool,

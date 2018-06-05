@@ -18,6 +18,10 @@ module.exports = {
             { expand: true, cwd: 'src/javascript/',                               src: ['manifest.json'], dest: global.dist },
             { expand: true, cwd: 'scripts',                                       src: ['CNAME'], dest: 'dist' },
 
+            // chartiq-dependency
+            { expand: true, cwd: 'node_modules/@binary-com/smartcharts/dist/',    src: ['chartiq.min.js'], dest: global.dist + '/js' },
+            { expand: true, cwd: 'node_modules/@binary-com/smartcharts/dist/',    src: ['smartcharts.css'], dest: global.dist + '/css', },
+
             // binary-style
             { expand: true, cwd: 'node_modules/@binary-com/binary-style/src/images/favicons', src: ['**'], dest: global.dist + '/images/favicons/', },
             { expand: true, cwd: 'node_modules/@binary-com/binary-style/src/images/favicons', src: ['favicon.ico'], dest: global.dist },

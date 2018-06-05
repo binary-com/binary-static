@@ -210,7 +210,6 @@ class Calendar extends React.Component {
     resetCalendar() {
         const { startDate, minDate } = this.props;
         const default_date = moment(startDate || minDate).format(this.props.dateFormat);
-
         this.setState({
             date         : default_date,
             selected_date: '',
@@ -570,7 +569,12 @@ class DatePicker extends React.PureComponent {
         this.calendar.resetCalendar();
     };
 
-    getPickerValue = () => (this.props.mode === 'duration' ? getDayDifference(this.state.selected_date) : this.state.selected_date);
+    getPickerValue = () => {
+        const { mode } = this.props;
+        const { selected_date } = this.state;
+        return mode === 'duration' ? getDayDifference(selected_date) : selected_date;
+    }
+
 
     render() {
         const value = this.getPickerValue();
@@ -652,6 +656,8 @@ DatePicker.defaultProps = {
     mode      : 'date',
 };
 
+// ToDo: Refactor Calendar and trade_store.
+// Need major refactorization in helper function.
 Calendar.propTypes = {
     dateFormat      : PropTypes.string,
     footer          : PropTypes.string,
@@ -663,16 +669,15 @@ Calendar.propTypes = {
         PropTypes.object,
         PropTypes.string,
     ]),
-    minDate: PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.string,
-    ]),
+    minDate     : PropTypes.object,
     mode        : PropTypes.string,
     placeholder : PropTypes.string,
     showTodayBtn: PropTypes.bool,
     startDate   : PropTypes.string,
 };
 
+// ToDo: Refactor DatePicker and trade_store.
+// Need major refactorization in helper function.
 DatePicker.propTypes = {
     dateFormat     : PropTypes.string,
     id             : PropTypes.number,
@@ -682,10 +687,7 @@ DatePicker.propTypes = {
         PropTypes.object,
         PropTypes.string,
     ]),
-    minDate: PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.string,
-    ]),
+    minDate     : PropTypes.object,
     mode        : PropTypes.string,
     name        : PropTypes.string,
     onChange    : PropTypes.func,
