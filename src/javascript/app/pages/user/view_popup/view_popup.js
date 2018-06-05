@@ -149,7 +149,7 @@ const ViewPopup = (() => {
         const is_sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
 
         if (Callputspread.isCallputspread(contract.contract_type)) {
-            Callputspread.updateState(null, contract);
+            Callputspread.updateState(null, contract, true);
         }
 
         if (contract.barrier_count > 1) {

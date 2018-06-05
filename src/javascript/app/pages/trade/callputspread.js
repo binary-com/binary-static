@@ -2,7 +2,6 @@ const formatMoney = require('../../common/currency').formatMoney;
 
 const constants = {
     slider: {
-        width: 60,
         height: 14,
         fill: '#e98024',
         label: {
@@ -31,6 +30,7 @@ const Callputspread = (() => {
     const state = {
         slider: {
             el: null,
+            width: undefined,
             x: undefined,
             y: undefined,
             label: {
@@ -104,8 +104,8 @@ const Callputspread = (() => {
         if (state.slider.el) {
             state.slider.el.destroy();
         }
-        const { el, x, y } = state.slider;
-        const { width, height, fill } = constants.slider;
+        const { el, width, x, y } = state.slider;
+        const { height, fill } = constants.slider;
 
         state.slider.el = state.chart.renderer
             .path(getSliderPath(x, y, width, height))
@@ -181,7 +181,8 @@ const Callputspread = (() => {
 
     const getChartOptions = (chart_options) => {
         const formatted_max_payout = formatMoney(null, state.contract.payout, true);
-        const marginRight = 10 + 7.5 * formatted_max_payout.length;
+        const marginRight = 15 + 7.5 * formatted_max_payout.length;
+        state.slider.width = marginRight - 17;
         return {
             marginRight,
             redrawHandler,
@@ -211,12 +212,13 @@ const Callputspread = (() => {
         updateState(chart, contract);
     };
 
-    const updateState = (chart, contract) => {
+    const updateState = (chart, contract, should_redraw_slider = false) => {
         state.chart = chart || state.chart;
         state.contract = contract || state.contract;
         if (!state.chart || !state.contract) return;
         updateSliderState();
         updateVerticalIntervalState();
+        if (should_redraw_slider) redrawSlider();
     };
 
     return {
