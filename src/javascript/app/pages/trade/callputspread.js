@@ -85,20 +85,10 @@ const Callputspread = (() => {
         /^(CALLSPREAD|PUTSPREAD)$/.test(contract_type)
     );
 
-    const getChartOptions = (chart_options) => {
-        const formatted_max_payout = formatMoney(null, state.contract.payout, true);
-        // margin size is based on max payout char length
-        const marginRight = 15 + 7.5 * formatted_max_payout.length;
-        state.slider.width = marginRight - 17;
-        return {
-            marginRight,
-            redrawHandler,
-        };
-    };
-
     const redrawHandler = (e) => {
         // Called on Highcharts 'redraw' event
         updateState(e.target, null);
+        if (!state.chart || !state.contract) return;
         redrawVerticalInterval();
         redrawSlider();
     };
@@ -189,8 +179,19 @@ const Callputspread = (() => {
     };
 
     /*
-        METHODS THAT MODIFY STATE OBJECT:
+        METHODS THAT UPDATE STATE OBJECT:
     */
+
+    const getChartOptions = (chart_options, contract) => {
+        const formatted_max_payout = formatMoney(null, contract.payout, true);
+        // margin size is based on max payout char length
+        const marginRight = 15 + 7.5 * formatted_max_payout.length;
+        state.slider.width = marginRight - 17;
+        return {
+            marginRight,
+            redrawHandler,
+        };
+    };
 
     const updateSliderState = () => {
         // Calculates new X Y coordinates for slider based on state
