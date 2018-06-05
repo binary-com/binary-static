@@ -19,7 +19,12 @@ const constants = {
             color: '#000',
             fontSize: '12px',
             offsetX: 2,
-            offsetY: 4,
+        },
+        top_label: {
+            offsetY: -4,
+        },
+        bottom_label: {
+            offsetY: 13,
         }
     },
     barrier_series_name: 'barrier_points',
@@ -75,7 +80,7 @@ const Callputspread = (() => {
             state.interval.bottom_label.el.destroy();
         }
 
-        const { color, fontSize, offsetX, offsetY } = constants.interval.label;
+        const { color, fontSize, offsetX } = constants.interval.label;
         const label_styles = {
             color,
             fontSize,
@@ -90,12 +95,12 @@ const Callputspread = (() => {
             : [display_minimum_payout, display_maximum_payout];
         
         state.interval.top_label.el = state.chart.renderer
-            .text(top_label, x + offsetX, y0 - offsetY, true)
+            .text(top_label, x + offsetX, y0 + constants.interval.top_label.offsetY, true)
             .css(label_styles)
             .add();
 
         state.interval.bottom_label.el = state.chart.renderer
-            .text(bottom_label, x + offsetX, y1 + offsetY + 9, true)
+            .text(bottom_label, x + offsetX, y1 + constants.interval.bottom_label.offsetY, true)
             .css(label_styles)
             .add();
     };
@@ -181,6 +186,7 @@ const Callputspread = (() => {
 
     const getChartOptions = (chart_options) => {
         const formatted_max_payout = formatMoney(null, state.contract.payout, true);
+        // margin size is based on max payout char length
         const marginRight = 15 + 7.5 * formatted_max_payout.length;
         state.slider.width = marginRight - 17;
         return {
@@ -218,6 +224,9 @@ const Callputspread = (() => {
         if (!state.chart || !state.contract) return;
         updateSliderState();
         updateVerticalIntervalState();
+
+        // slider with indicative price lags behind sidebar value
+        // if only drawn on 'redraw' chart event
         if (should_redraw_slider) redrawSlider();
     };
 
