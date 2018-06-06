@@ -143,7 +143,6 @@ hr {
             .drawer-item {
                 position: relative;
                 width: 100%;
-                // padding: 14px 16px;
                 cursor: pointer;
                 font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
                 box-sizing: border-box;
@@ -199,9 +198,6 @@ hr {
                     &:before {
                         content: '\25A2';
                         color: $COLOR_BLUE;
-                        // font-size: 1rem;
-                        // position: absolute;
-                        // top: -4px;
                     }
                 }
                 &:hover {

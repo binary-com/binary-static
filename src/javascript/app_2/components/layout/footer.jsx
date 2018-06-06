@@ -74,7 +74,12 @@ class ToggleFullScreen extends React.PureComponent {
     }
 }
 
-class Footer extends React.PureComponent {
+// Better to keep this class as a Component.
+// Because new 'server_time' props will be passed every second,
+// so it will force to render the PureComponent anyway.
+// PureComponent uses shallow-copy before it renders,
+// therefore this with PureComponent gives you slower performance than Component
+class Footer extends React.Component {
     render() {
         return (
             <React.Fragment>

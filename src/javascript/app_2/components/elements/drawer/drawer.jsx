@@ -101,10 +101,10 @@ Drawer.propTypes = {
 };
 
 const drawer_component = connect(
-    ({ ui: {
-        is_main_drawer_on, is_portfolio_drawer_on, hideDrawers,
-    }}) => ({
-        is_main_drawer_on, is_portfolio_drawer_on, hideDrawers,
+    ({ ui }) => ({
+        is_main_drawer_on     : ui.is_main_drawer_on,
+        is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
+        hideDrawers           : ui.hideDrawers,
     })
 )(Drawer);
 

@@ -8,13 +8,10 @@ import { localize }        from '../_common/localize';
 
 import TradeApp            from './pages/trading/trade_app.jsx';
 import Statement           from './pages/statement/statement.jsx';
-import LostPassword        from './pages/account/lost_password.jsx';
-
 
 const routes = [
     { path: '/',          component: TradeApp, exact: true },
     { path: '/statement', component: Statement, is_authenticated: true },
-    { path: '/account',   component: LostPassword, is_authenticated: false },
 ];
 
 const RouteWithSubRoutes = route => (

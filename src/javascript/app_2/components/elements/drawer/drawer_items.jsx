@@ -17,7 +17,7 @@ class DrawerItems extends PureComponent {
         const { text, items } = this.props;
 
         const list_is_collapsed = {
-            visibility: `${is_collapsed ? 'visible' : 'hidden'}`,
+            visibility: is_collapsed ? 'visible' : 'hidden',
         };
         const parent_item_class = classNames('parent-item', {
             'show': is_collapsed,
