@@ -20,6 +20,9 @@
     th {
         &.details {
             width: 30%;
+            @media (max-width: 900px) {
+                width: 20%;
+            }
         }
         &.remaining_time {
             width: 16%;
