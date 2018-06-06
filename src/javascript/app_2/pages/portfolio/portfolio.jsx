@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import PortfolioCard from './portfolio_card.jsx';
 import DAO from '../../data/dao';
 import DataTable from '../../components/elements/data_table.jsx';
 import Tooltip from '../../components/elements/tooltip.jsx';
@@ -62,40 +63,6 @@ const contract_type_display = {
     ONETOUCH    : localize('Touches'),
     NOTOUCH     : localize('Does Not Touch'),
 };
-
-const PortfolioCard = ({id, details, remaining_time, indicative, payout, purchase, currency }) => ( // eslint-disable-line
-    <div className='statement-card card-list__card'>
-        <div className='statement-card__header'>
-            <span className='statement-card__refid'>{ id }</span>
-            <span className='statement-card__date'>{ remaining_time }</span>
-        </div>
-        <div className='statement-card__body'>
-            <div className='statement-card__desc'>{details}</div>
-            <div className='statement-card__row'>
-                {indicative.amount &&
-                    <div className={`statement-card__cell statement-card__amount--${indicative.style && indicative.style === 'price_moved_up' ? 'buy' : 'sell'}`}>
-                        <span className='statement-card__cell-text'>
-                            <span className={`symbols ${currency}`}/>
-                            {indicative.amount}
-                        </span>
-                    </div>
-                }
-                <div className='statement-card__cell statement-card__payout'>
-                    <span className='statement-card__cell-text'>
-                        <span className={`symbols ${currency}`}/>
-                        {payout}
-                    </span>
-                </div>
-                <div className='statement-card__cell statement-card__balance'>
-                    <span className='statement-card__cell-text'>
-                        <span className={`symbols ${currency}`}/>
-                        {purchase}
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-);
 
 // TODO: move to common
 const buildOauthApps = (response) => {
@@ -306,10 +273,12 @@ class Portfolio extends React.PureComponent  {
                     <h2>{localize('Portfolio')}</h2>
                 </div>
                 {(() => {
-                    if (this.state.is_loading) {
+                    const {error, is_loading} = this.state;
+
+                    if (is_loading) {
                         return <Loading />;
                     }
-                    if (this.state.error) {
+                    if (error) {
                         return <p>{this.state.error}</p>;
                     }
                     return (
@@ -324,22 +293,14 @@ class Portfolio extends React.PureComponent  {
                                         />
                                     </div>
                                     <div className='mobile-only'>
-                                        {this.state.data_source.map((transaction, idx) => {
-                                            console.log(transaction);
-                                            return (
-                                                <div key={idx} className='card-list'>
-                                                    <PortfolioCard
-                                                        currency={this.state.currency}
-                                                        details={transaction.details}
-                                                        id={transaction.id}
-                                                        remaining_time={transaction.remaining_time}
-                                                        indicative={transaction.indicative}
-                                                        payout={transaction.payout}
-                                                        purchase={transaction.purchase}
-                                                    />
-                                                </div>
-                                            );
-                                        })}
+                                        {this.state.data_source.map((transaction, idx) => (
+                                            <div key={idx} className='card-list'>
+                                                <PortfolioCard
+                                                    currency={this.state.currency}
+                                                    {...transaction}
+                                                />
+                                            </div>)
+                                        )}
                                     </div>
                                 </div>
                             : <p>{localize('No open positions.')}</p>
