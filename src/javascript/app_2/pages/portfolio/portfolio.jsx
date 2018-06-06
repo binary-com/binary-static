@@ -63,7 +63,7 @@ const contract_type_display = {
     NOTOUCH     : localize('Does Not Touch'),
 };
 
-const PortfolioCard = ({id, details, remaining_time}) => ( // eslint-disable-line
+const PortfolioCard = ({id, details, remaining_time, indicative, payout, purchase }) => ( // eslint-disable-line
     <div className='statement-card card-list__card'>
         <div className='statement-card__header'>
             <span className='statement-card__refid'>{ id }</span>
@@ -72,19 +72,21 @@ const PortfolioCard = ({id, details, remaining_time}) => ( // eslint-disable-lin
         <div className='statement-card__body'>
             <div className='statement-card__desc'>{details}</div>
             <div className='statement-card__row'>
-                <div className='statement-card__cell statement-card__amount statement-card__amount--sell'>
-                    <span className='statement-card__cell-text'>
-                        Amount
-                    </span>
-                </div>
+                {indicative.amount &&
+                    <div className={`statement-card__cell statement-card__amount--${indicative.style && indicative.style === 'price_moved_up' ? 'buy' : 'sell'}`}>
+                        <span className='statement-card__cell-text'>
+                            {indicative.amount}
+                        </span>
+                    </div>
+                }
                 <div className='statement-card__cell statement-card__payout'>
                     <span className='statement-card__cell-text'>
-                        payout
+                        {payout}
                     </span>
                 </div>
                 <div className='statement-card__cell statement-card__balance'>
                     <span className='statement-card__cell-text'>
-                        Indicative
+                        {purchase}
                     </span>
                 </div>
             </div>
@@ -332,6 +334,9 @@ class Portfolio extends React.PureComponent  {
                                                         details={transaction.details}
                                                         id={transaction.id}
                                                         remaining_time={transaction.remaining_time}
+                                                        indicative={transaction.indicative}
+                                                        payout={transaction.payout}
+                                                        purchase={transaction.purchase}
                                                     />
                                                 </div>
                                             );
