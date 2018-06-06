@@ -64,7 +64,6 @@ const Contract = (() => {
 
     const details = (form_name) => {
         const contracts = Contract.contracts().contracts_for;
-        let barrier_category;
 
         if (!contracts) return;
 
@@ -78,14 +77,14 @@ const Contract = (() => {
         if (!form) {
             return;
         }
-        barrier = barrier_category = form_barrier.barrier_category;
+        barrier = form_barrier.barrier_category;
 
         contracts.available.forEach((current_obj) => {
             const contract_category = current_obj.contract_category;
             // for callput and callputequals, populate duration for both
             if (form === contract_category || (/callput/.test(form) && /callput/.test(contract_category))) {
-                if (barrier_category) {
-                    if (barrier_category === current_obj.barrier_category) {
+                if (barrier) {
+                    if (barrier === current_obj.barrier_category) {
                         populateDurations(current_obj);
                     }
                 } else {
@@ -137,8 +136,8 @@ const Contract = (() => {
             }
         });
 
-        if (barrier_category) {
-            if (barriers && barriers[form] && barriers[form].barrier_category !== barrier_category) {
+        if (barrier) {
+            if (barriers && barriers[form] && barriers[form].barrier_category !== barrier) {
                 barriers = {};
             }
         }
