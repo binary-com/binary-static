@@ -64,7 +64,6 @@ const Contract = (() => {
 
     const details = (form_name) => {
         const contracts = Contract.contracts().contracts_for;
-        let barrier_category;
 
         if (!contracts) return;
 
@@ -75,20 +74,24 @@ const Contract = (() => {
 
         const form_barrier = getFormNameBarrierCategory(form_name);
         form               = form_barrier.form_name;
-        barrier            = barrier_category = form_barrier.barrier_category;
+        if (!form) {
+            return;
+        }
+        barrier = form_barrier.barrier_category;
 
         contracts.available.forEach((current_obj) => {
             const contract_category = current_obj.contract_category;
-
-            if (form && form === contract_category) {
-                if (barrier_category) {
-                    if (barrier_category === current_obj.barrier_category) {
+            // for callput and callputequals, populate duration for both
+            if (form === contract_category || (/callput/.test(form) && /callput/.test(contract_category))) {
+                if (barrier) {
+                    if (barrier === current_obj.barrier_category) {
                         populateDurations(current_obj);
                     }
                 } else {
                     populateDurations(current_obj);
                 }
-
+            }
+            if (form === contract_category) {
                 if (current_obj.forward_starting_options && current_obj.start_type === 'forward' && sessionStorage.formname !== 'higherlower') {
                     start_dates.list = current_obj.forward_starting_options;
                 } else if (current_obj.start_type === 'spot') {
@@ -133,8 +136,8 @@ const Contract = (() => {
             }
         });
 
-        if (form && barrier_category) {
-            if (barriers && barriers[form] && barriers[form].barrier_category !== barrier_category) {
+        if (barrier) {
+            if (barriers && barriers[form] && barriers[form].barrier_category !== barrier) {
                 barriers = {};
             }
         }
