@@ -4,7 +4,7 @@ import { connect }              from '../../../store/connect';
 import { BinaryLink }           from '../../../routes';
 
 class DrawerItem extends PureComponent {
-    drawerItemClicked = () => {
+    drawerItemClicked = (e) => {
         this.props.hideDrawers();
         if (this.props.collapseItems) {
             this.props.collapseItems();
@@ -13,8 +13,9 @@ class DrawerItem extends PureComponent {
 
     render() {
         const { link_to, text, icon } = this.props;
+        
         return (
-            <div className='drawer-item' onClick={()=>this.drawerItemClicked()}>
+            <div className='drawer-item' onClick={this.drawerItemClicked}>
                 <BinaryLink to={link_to}>
                     <span className={icon || undefined}>{text}</span>
                 </BinaryLink>

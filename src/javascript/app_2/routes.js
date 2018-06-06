@@ -12,9 +12,9 @@ import LostPassword        from './pages/account/lost_password.jsx';
 
 
 const routes = [
+    { path: '/',          component: TradeApp, exact: true },
     { path: '/statement', component: Statement, is_authenticated: true },
     { path: '/account',   component: LostPassword, is_authenticated: false },
-    { path: '/',          component: TradeApp, exact: true },
 ];
 
 const RouteWithSubRoutes = route => (
@@ -47,7 +47,7 @@ export const BinaryLink = ({ to, children, ...props }) => {
     if (!route) {
         throw new Error(`Route not found: ${to}`);
     }
-    
+
     return (
         to ?
             <NavLink to={path} activeClassName='active' exact={route.exact} {...props}>
