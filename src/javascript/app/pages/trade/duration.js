@@ -44,12 +44,17 @@ const Durations = (() => {
             start_type = 'spot';
         }
 
-        let durations = Contract.durations();
         if (Defaults.get('formname') === 'highlowticks') {
             Barriers.display(); // hide barrier field, instead of selecting barrier we select tick number
-            durations = false;  // only allows 5 ticks, so display label instead of populating durations
+            Defaults.set('expiry_type', 'duration');
+            Defaults.set('duration_amount', 5);
+            Defaults.set('duration_units', 't');
+            // display label instead of populating durations
+            CommonFunctions.getElementById('expiry_row').style.display = 'none';
+            return false;
         }
 
+        const durations = Contract.durations();
         if (durations === false) {
             CommonFunctions.getElementById('expiry_row').style.display = 'none';
             Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time');
@@ -68,7 +73,7 @@ const Durations = (() => {
         }
 
         Object.keys(durations).forEach((key) => {
-            Object.keys(durations[key][form_name]).forEach((form) => {
+            Object.keys(durations[key][form_name] || []).forEach((form) => {
                 let obj = {};
                 if (barrier_category) {
                     obj = durations[key][form_name][barrier_category];

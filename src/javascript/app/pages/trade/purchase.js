@@ -51,7 +51,7 @@ const Purchase = (() => {
 
         const error      = details.error;
         const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
-        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && has_chart;
+        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't';
 
         contracts_list.style.display = 'none';
 
@@ -107,7 +107,7 @@ const Purchase = (() => {
 
             updateValues.updateContractBalance(receipt.balance_after);
 
-            if (show_chart) {
+            if (show_chart && has_chart) {
                 chart.show();
             } else {
                 chart.hide();
@@ -132,7 +132,7 @@ const Purchase = (() => {
             }
         }
 
-        if (show_chart) {
+        if (show_chart && has_chart) {
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying
             let decimal_points     = 2;
@@ -169,25 +169,27 @@ const Purchase = (() => {
             TickDisplay.resetSpots();
         }
 
-        const request = {
-            proposal_open_contract: 1,
-            contract_id           : receipt.contract_id,
-            subscribe             : 1,
-        };
-        BinarySocket.send(request, { callback: (response) => {
-            const contract = response.proposal_open_contract;
-            if (contract) {
-                status = contract.status;
-                TickDisplay.setStatus(contract);
-                if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
-                    TickDisplay.updateChart({ is_sold: true }, contract);
+        if (show_chart) {
+            const request = {
+                proposal_open_contract: 1,
+                contract_id           : receipt.contract_id,
+                subscribe             : 1,
+            };
+            BinarySocket.send(request, { callback: (response) => {
+                const contract = response.proposal_open_contract;
+                if (contract) {
+                    status = contract.status;
+                    TickDisplay.setStatus(contract);
+                    if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
+                        TickDisplay.updateChart({ is_sold: true }, contract);
+                    }
+                    // force to sell the expired contract, in order to get the final status
+                    if (+contract.is_settleable === 1 && !contract.is_sold) {
+                        BinarySocket.send({ sell_expired: 1 });
+                    }
                 }
-                // force to sell the expired contract, in order to get the final status
-                if (+contract.is_settleable === 1 && !contract.is_sold) {
-                    BinarySocket.send({ sell_expired: 1 });
-                }
-            }
-        } });
+            } });
+        }
     };
 
     const makeBold = d => `<strong>${d}</strong>`;

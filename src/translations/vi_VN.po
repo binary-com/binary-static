@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-04 05:09-0400\n"
+"PO-Revision-Date: 2018-06-05 23:50-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -833,6 +833,9 @@ msgstr "Thích nghi với các ngữ điệu giọng nói để phù hợp với
 
 msgid "Add"
 msgstr "Thêm"
+
+msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
+msgstr ""
 
 msgid "Add funds"
 msgstr "Thêm quỹ"
@@ -3173,9 +3176,6 @@ msgstr "Đảm bảo rằng Tập Đoàn Binary tuân thủ đầy đủ các qu
 
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr "Đảm bảo rằng Tập Đoàn Binary luôn tuân thủ đầy đủ các quy định của nhà nước sở tại"
-
-msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr ""
 
 msgid "Enter your email"
 msgstr "Nhập địa chỉ email của bạn"
@@ -10895,8 +10895,8 @@ msgstr "Bạn thừa nhận rằng Công Ty có thể chấp nhận Lệnh và t
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr "Bạn thừa nhận rằng Công Ty có quyền xác định, với ý kiến của mình, các giao dịch sẽ được lưu giữ trong sổ sách của Công Ty (được biết như B booking) và các giao dịch sẽ được chuyển qua cho môi giới chính, những người hoạt động như các nhà cung cấp thanh khoản cho Công Ty (được biết như A đặt trước). Cho vế sau, Công Ty đối tác trong các giao dịch và sự tương quan giữa lợi nhuận/tổn thất được thực hiện bởi khách hàng và lợi nhuận/tổn thất được thực hiện bởi Công Ty tồn tại. Tại bất kỳ điểm nào trong thời gian, chúng tôi có thể nhập vào hoặc có thể đã nhập vào các giao dịch với một số lượng lớn các khách hàng, mỗi người có quyền lợi có thể phân ra các khách hàng khác. Như vậy, Công Ty có thể giữ mở các vị trí có thể không được liên kết với lợi ích/mục tiêu của bạn là một khách hàng cá nhân của Công Ty."
 
-msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
-msgstr "Bạn thừa nhận rằng Nhà Quản Lý Tiền Bạc có quyền nhận được USD $20 / cho mỗi lô phí Hoa Hồng như chi phí lệ phí. Bạn cũng đồng ý rằng Công Ty có quyền để sửa đổi những chi phí lệ phí theo thời gian. Bạn công nhận thêm rằng các Công Ty có trách nhiệm tính phí lệ phí, thông qua hệ thống tự động của mình. Vì vậy, Công Ty sẽ được hợp lệ được ủy quyền để khấu trừ số tiền, được xác định như Hoa Hồng, từ các Tài Khoản và trả Nhà Quản Lý Tiền Bạc."
+msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgstr ""
 
 msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
 msgstr "Bạn thừa nhận rằng Nhà Quản Lý Tiền Bạc không phải là một nhân viên hoặc người đại diện của Công Ty. Vì thế, bạn đồng ý rằng bạn có một trách nhiệm tuyệt đối để siêng năng giám sát hiệu suất toàn bộ Tài Khoản của bạn."

@@ -157,7 +157,7 @@ const TradingEvents = (() => {
         getElementById('duration_units').addEventListener('change', (e) => {
             Defaults.remove('barrier', 'barrier_high', 'barrier_low');
             Process.onDurationUnitChange(e.target.value);
-            Price.processPriceRequest();
+            Process.processContractForm();
         });
 
         /*

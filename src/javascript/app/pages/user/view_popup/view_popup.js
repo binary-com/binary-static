@@ -386,6 +386,7 @@ const ViewPopup = (() => {
         'digit'         : 'digits',
         'upordown|range': 'staysinout',
         'touch'         : 'touchnotouch',
+        'tick(high|low)': 'highlowticks',
         'call|put'      : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
     };
 

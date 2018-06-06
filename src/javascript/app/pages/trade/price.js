@@ -133,8 +133,8 @@ const Price = (() => {
             proposal.selected_tick = parseInt(selected_tick.value);
             // the only possibility for duration and duration tick is 5 ticks
             // so we show a label and directly pass those values here
-            proposal.duration      = 5;
-            proposal.duration_unit = 't';
+            proposal.duration      = Defaults.get('duration_amount');
+            proposal.duration_unit = Defaults.get('duration_units');
         }
 
         if (contract_type) {

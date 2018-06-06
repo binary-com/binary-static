@@ -439,7 +439,12 @@ const TickDisplay = (() => {
     };
 
     const addSellSpot = () => {
-        if (!applicable_ticks || !contract || contract_category === 'highlowticks') return;
+        if (!applicable_ticks || !contract) return;
+
+        if (contract_category === 'highlowticks') {
+            addBarrier();
+            return;
+        }
 
         let index = applicable_ticks.findIndex(({ epoch }) => epoch === +contract.sell_spot_time);
 
