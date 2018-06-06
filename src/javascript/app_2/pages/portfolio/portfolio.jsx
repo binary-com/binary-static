@@ -63,7 +63,7 @@ const contract_type_display = {
     NOTOUCH     : localize('Does Not Touch'),
 };
 
-const PortfolioCard = ({id, details, remaining_time, indicative, payout, purchase }) => ( // eslint-disable-line
+const PortfolioCard = ({id, details, remaining_time, indicative, payout, purchase, currency }) => ( // eslint-disable-line
     <div className='statement-card card-list__card'>
         <div className='statement-card__header'>
             <span className='statement-card__refid'>{ id }</span>
@@ -75,17 +75,20 @@ const PortfolioCard = ({id, details, remaining_time, indicative, payout, purchas
                 {indicative.amount &&
                     <div className={`statement-card__cell statement-card__amount--${indicative.style && indicative.style === 'price_moved_up' ? 'buy' : 'sell'}`}>
                         <span className='statement-card__cell-text'>
+                            <span className={`symbols ${currency}`}/>
                             {indicative.amount}
                         </span>
                     </div>
                 }
                 <div className='statement-card__cell statement-card__payout'>
                     <span className='statement-card__cell-text'>
+                        <span className={`symbols ${currency}`}/>
                         {payout}
                     </span>
                 </div>
                 <div className='statement-card__cell statement-card__balance'>
                     <span className='statement-card__cell-text'>
+                        <span className={`symbols ${currency}`}/>
                         {purchase}
                     </span>
                 </div>
@@ -104,13 +107,11 @@ const buildOauthApps = (response) => {
     return obj_oauth_apps;
 };
 
-class Portfolio extends React.PureComponent  {
-    constructor(props) {
-        super(props);
-        const currency       = ClientBase.get('currency').toLowerCase();
-        const app_id = getAppId();
+const app_id   = getAppId();
 
-        const columns = [
+class Portfolio extends React.PureComponent  {
+    state = {
+        columns: [
             {
                 title     : localize('Reference No.'),
                 data_index: 'ref',
@@ -161,12 +162,12 @@ class Portfolio extends React.PureComponent  {
             {
                 title     : localize('Potential Payout'),
                 data_index: 'payout',
-                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${currency}`}/>{data}</td>),
+                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.currency}`}/>{data}</td>),
             },
             {
                 title     : localize('Purchase'),
                 data_index: 'purchase',
-                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${currency}`}/>{data}</td>),
+                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.currency}`}/>{data}</td>),
             },
             {
                 title     : localize('Indicative'),
@@ -175,32 +176,29 @@ class Portfolio extends React.PureComponent  {
                     if (data.amount) {
                         return (
                             <td key={data_index} className={`indicative ${data.style}`}>
-                                <span className={`symbols ${currency}`}/>{data.amount}
+                                <span className={`symbols ${this.currency}`}/>{data.amount}
                                 {data.style === 'no_resale' && <div> {localize('resell not offered')}</div>}
                             </td>);
                     }
                     // Footer total:
                     if (data && typeof data === 'string') {
-                        return <td key={data_index} className={data_index}> <span className={`symbols ${currency}`}/>{data}</td>;
+                        return <td key={data_index} className={data_index}> <span className={`symbols ${this.currency}`}/>{data}</td>;
                     }
                     return <td key={data_index}>-</td>;
                 },
             },
-        ];
-        const footer = {
+        ],
+        currency   : ClientBase.get('currency').toLowerCase(),
+        data_source: [],
+        error      : null,
+        footer     : {
             ref       : 'Total',
             payout    : '',
             purchase  : '',
             indicative: '',
-        };
-        this.state = {
-            columns,
-            data_source: [],
-            error      : null,
-            footer,
-            is_loading : true,
-            oauth_apps : null,
-        };
+        },
+        is_loading: true,
+        oauth_apps: null,
     }
 
     componentWillMount() {
@@ -331,6 +329,7 @@ class Portfolio extends React.PureComponent  {
                                             return (
                                                 <div key={idx} className='card-list'>
                                                     <PortfolioCard
+                                                        currency={this.state.currency}
                                                         details={transaction.details}
                                                         id={transaction.id}
                                                         remaining_time={transaction.remaining_time}
