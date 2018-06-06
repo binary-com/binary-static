@@ -18,7 +18,6 @@ const formatPortfolioData = (portfolio_arr) => {
         const remaining_time  = `${moment_obj.fromNow(true)} - ${moment_obj.format('h:mm:ss')}`;
         const purchase        = parseFloat(portfolio_item.buy_price);
         const payout          = parseFloat(portfolio_item.payout);
-
         return {
             reference: {
                 transaction_id: portfolio_item.transaction_id,
@@ -81,7 +80,7 @@ class Portfolio extends React.PureComponent  {
         columns: [
             {
                 title     : localize('Reference No.'),
-                data_index: 'Reference',
+                data_index: 'reference',
                 renderCell: (data = '', data_index) => {
                     const tooltip = data.app_id !== app_id && this.state.oauth_apps && this.state.oauth_apps[data.app_id]; // eslint-disable-line
                     if (tooltip) {
@@ -129,12 +128,12 @@ class Portfolio extends React.PureComponent  {
             {
                 title     : localize('Potential Payout'),
                 data_index: 'payout',
-                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.currency}`}/>{data}</td>),
+                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency}`}/>{data}</td>),
             },
             {
                 title     : localize('Purchase'),
                 data_index: 'purchase',
-                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.currency}`}/>{data}</td>),
+                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency}`}/>{data}</td>),
             },
             {
                 title     : localize('Indicative'),
@@ -143,13 +142,13 @@ class Portfolio extends React.PureComponent  {
                     if (data.amount) {
                         return (
                             <td key={data_index} className={`indicative ${data.style}`}>
-                                <span className={`symbols ${this.currency}`}/>{data.amount}
+                                <span className={`symbols ${this.state.currency}`}/>{data.amount}
                                 {data.style === 'no_resale' && <div> {localize('resell not offered')}</div>}
                             </td>);
                     }
                     // Footer total:
                     if (data && typeof data === 'string') {
-                        return <td key={data_index} className={data_index}> <span className={`symbols ${this.currency}`}/>{data}</td>;
+                        return <td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency}`}/>{data}</td>;
                     }
                     return <td key={data_index}>-</td>;
                 },
@@ -296,8 +295,8 @@ class Portfolio extends React.PureComponent  {
                                         {this.state.data_source.map((transaction, idx) => (
                                             <div key={idx} className='card-list'>
                                                 <PortfolioCard
-                                                    currency={this.state.currency}
                                                     {...transaction}
+                                                    currency={this.state.currency}
                                                 />
                                             </div>)
                                         )}
