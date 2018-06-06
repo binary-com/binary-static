@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-03 22:54-0400\n"
+"PO-Revision-Date: 2018-06-05 23:48-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -835,6 +835,9 @@ msgstr "Adapter le style de communication en fonction des différents publics ci
 msgid "Add"
 msgstr "Ajouter"
 
+msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
+msgstr ""
+
 msgid "Add funds"
 msgstr "Ajouter des fonds"
 
@@ -1029,6 +1032,9 @@ msgstr "Autoriser les Clients à effectuer des dépôts pour des sommes inférie
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Autoriser les Clients à utiliser les services de paiement électronique qui ne sont pas disponible directement sur %1"
+
+msgid "Allow equals"
+msgstr ""
 
 msgid "Also known as counter currency"
 msgstr "Également connu sous le nom de contre devise"
@@ -3172,9 +3178,6 @@ msgstr "Vous veillerez à la parfaite conformité des sociétés Binary Group au
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr "Veiller à la parfaite conformité des sociétés Binary Group aux régimes de réglementation en vigueur"
 
-msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "Saisissez une barrière, c’est-à-dire une différence par rapport au prix spot. Si vous saisissez +0.005, vous achèterez alors un contrat avec une barrière supérieure de 0,005 par rapport au spot d'entrée. Le spot d'entrée correspond au tick qui suit la réception de votre ordre"
-
 msgid "Enter your email"
 msgstr "Saisissez votre adresse e-mail"
 
@@ -4270,9 +4273,6 @@ msgstr "Si la <strong>sortie spot</strong> est égale à la <strong>barrière</s
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "Si la <strong>sortie spot</strong> est égale à la <strong>barrière</strong>, vous gagnez seulement le versement pour les contrats dits \"Supérieurs\"."
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "Si la <strong>sortie spot</strong> est égale à l'<strong>entrée spot</strong>, vous ne gagnez pas le paiement."
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "Si le <strong>dernier tick</strong> est égal à la moyenne des ticks, vous ne gagnez pas le paiement."
 
@@ -4381,6 +4381,9 @@ msgstr "Si vous obtenez une bonne note au SATI, nous vous ferons parvenir un tes
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "Si vous voyez EUR/USD a un prix de 1.05229, vous achèterez 1.05229 USD pour chaque euro que vous vendez."
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Si vous sélectionnez « Asiatique/baisse », vous gagnez si le <strong>dernier tick<strong> est <strong>inférieur<strong> à la <strong>moyenne<strong> des ticks."
 
@@ -4414,8 +4417,14 @@ msgstr "Si vous sélectionnez « Supérieur », vous gagnez si le <strong>spot
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Si vous sélectionnez « Supérieur », vous gagnez si le <strong>point de sortie</strong> est strictement supérieur à la </strong>barrière</strong>."
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Si vous sélectionnez « Inférieur », vous gagnez si le <strong>point de sortie</strong> est strictement inférieur à la </strong>barrière</strong>."
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Si vous sélectionnez « Égal », vous gagnez si le <strong>dernier chiffre</strong> du dernier tick est <strong>égal</strong> à votre <strong>prédiction</strong>."
@@ -5712,6 +5721,9 @@ msgstr "Faibles mises minimum"
 
 msgid "Lower"
 msgstr "Inférieur"
+
+msgid "Lower or equal"
+msgstr ""
 
 msgid "M"
 msgstr "M"
@@ -10726,6 +10738,9 @@ msgstr "Pourquoi vous devriez trader des options binaires avec %1"
 msgid "Why you should trade precious metals with %1"
 msgstr "Pourquoi vous devriez trader les métaux précieux avec %1"
 
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
+
 msgid "Win the multiplier times the close minus low."
 msgstr "Gagner plusieurs fois le montant de la clotûre moins le plus bas."
 
@@ -10879,8 +10894,8 @@ msgstr "Vous reconnaissez que la société peut accepter des Ordres et procéder
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr "Vous reconnaissez que l'Entreprise déterminera, à notre discrétion, les Transactions qui seront conservées sur le propre livre de l'Entreprise (connu sous le nom de livre B) et les Transactions qui passeront par les meilleurs courtiers qui agissent comme des fournisseurs de liquidité pour l'Entreprise (connu comme livre A). Pour cette dernière, l'Entreprise est la contrepartie dans ces transactions et une corrélation entre le profit/perte fait par le client et le profit/perte fait par l'Entreprise existe. Comme tel, l'Entreprise peut détenir des Positions Ouvertes qui peuvent être alignées avec vos objectifs/intérêts comme un client de l'Entreprise."
 
-msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
-msgstr "Vous reconnaissez que le gestionnaire de fonds est admissible au bénéfice de USD $20 / par lot pour la Commission en tant que frais. Vous acceptez également que la société se réserve le droit de réviser les tarifs de temps en temps. Vous reconnaissez en outre que la compagnie sera responsable pour calculer les tarifs, par l’intermédiaire de ses systèmes automatisés. Ainsi, la société est dûment autorisée à déduire du montant, défini comme la Commission, sur le compte et à payer au gestionnaire de fonds."
+msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgstr ""
 
 msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
 msgstr "Vous reconnaissez que le Gestionnaire de Fonds n’est pas un employé ou un mandataire de la Société. Par conséquent, vous convenez que vous avez une responsabilité absolue de surveiller avec diligence la performance d’ensemble de votre Compte."

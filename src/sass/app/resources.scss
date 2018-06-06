@@ -25,20 +25,27 @@
     td.asset {
         font-weight: 700;
     }
+    .ui-tabs-anchor:focus {
+        outline: none;
+    }
 }
 
-#asset-index {
-    th {
-        width: 16%;
+#asset_index_wrapper {
+    max-width: 1200px;
 
-        &:nth-child(2):nth-last-child(1) {
-            width: 24%;
+    #asset-index {
+        &.has-tabs.ui-tabs .ui-tabs-panel {
+            padding: 0;
         }
-        &:nth-child(2):nth-last-child(2), &:nth-child(3):nth-last-child(1) {
-            width: 18%;
+        th {
+            width: calc(100% / 7);
+
+            &:nth-child(2):nth-last-child(1) {
+                width: 24%;
+            }
+            &:nth-child(2):nth-last-child(2), &:nth-child(3):nth-last-child(1) {
+                width: 18%;
+            }
         }
-    }
-    .asset {
-        width: 18%;
     }
 }

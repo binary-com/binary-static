@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-03 22:55-0400\n"
+"PO-Revision-Date: 2018-06-05 23:50-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -834,6 +834,9 @@ msgstr "crwdns37694:0crwdne37694:0"
 msgid "Add"
 msgstr "crwdns41739:0crwdne41739:0"
 
+msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
+msgstr "crwdns45174:0crwdne45174:0"
+
 msgid "Add funds"
 msgstr "crwdns43127:0crwdne43127:0"
 
@@ -1028,6 +1031,9 @@ msgstr "crwdns37738:0crwdne37738:0"
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "crwdns37739:0%1crwdne37739:0"
+
+msgid "Allow equals"
+msgstr "crwdns45164:0crwdne45164:0"
 
 msgid "Also known as counter currency"
 msgstr "crwdns42010:0crwdne42010:0"
@@ -3171,9 +3177,6 @@ msgstr "crwdns38358:0crwdne38358:0"
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr "crwdns38359:0crwdne38359:0"
 
-msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "crwdns38360:0crwdne38360:0"
-
 msgid "Enter your email"
 msgstr "crwdns38361:0crwdne38361:0"
 
@@ -4269,9 +4272,6 @@ msgstr "crwdns44611:0crwdne44611:0"
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "crwdns44614:0crwdne44614:0"
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "crwdns44612:0crwdne44612:0"
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "crwdns44613:0crwdne44613:0"
 
@@ -4380,6 +4380,9 @@ msgstr "crwdns43107:0crwdne43107:0"
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "crwdns43222:0crwdne43222:0"
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr "crwdns45165:0crwdne45165:0"
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "crwdns38684:0crwdne38684:0"
 
@@ -4413,8 +4416,14 @@ msgstr "crwdns44615:0crwdne44615:0"
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "crwdns38693:0crwdne38693:0"
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr "crwdns45166:0crwdne45166:0"
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "crwdns38694:0crwdne38694:0"
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr "crwdns45167:0crwdne45167:0"
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "crwdns38695:0crwdne38695:0"
@@ -5711,6 +5720,9 @@ msgstr "crwdns39109:0crwdne39109:0"
 
 msgid "Lower"
 msgstr "crwdns39110:0crwdne39110:0"
+
+msgid "Lower or equal"
+msgstr "crwdns45168:0crwdne45168:0"
 
 msgid "M"
 msgstr "crwdns39111:0crwdne39111:0"
@@ -10725,6 +10737,9 @@ msgstr "crwdns42525:0%1crwdne42525:0"
 msgid "Why you should trade precious metals with %1"
 msgstr "crwdns42526:0%1crwdne42526:0"
 
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr "crwdns45171:0crwdne45171:0"
+
 msgid "Win the multiplier times the close minus low."
 msgstr "crwdns43527:0crwdne43527:0"
 
@@ -10878,8 +10893,8 @@ msgstr "crwdns44712:0crwdne44712:0"
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr "crwdns44737:0crwdne44737:0"
 
-msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
-msgstr "crwdns44713:0crwdne44713:0"
+msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgstr "crwdns45175:0crwdne45175:0"
 
 msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
 msgstr "crwdns44714:0crwdne44714:0"
