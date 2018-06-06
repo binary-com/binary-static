@@ -219,21 +219,13 @@ const Process = (() => {
         }
     };
 
-    const duration_type = {
-        t: 'tick',
-        s: 'intraday',
-        m: 'intraday',
-        h: 'intraday',
-        d: 'daily',
-    };
-
     const hasCallPutEqual = (contracts = getPropertyValue(Contract.contracts(), ['contracts_for', 'available']) || []) =>
         contracts.find(contract => contract.contract_category === 'callputequal');
 
     const displayEquals = () => {
         const formname  = Defaults.get('formname');
         const el_equals = document.getElementById('callputequal');
-        const durations = getPropertyValue(Contract.durations(), [duration_type[Defaults.get('duration_units')]]) || [];
+        const durations = getPropertyValue(Contract.durations(), [commonTrading.durationType(Defaults.get('duration_units'))]) || [];
         if (/^(callputequal|risefall)$/.test(formname) && 'callputequal' in durations && hasCallPutEqual()) {
             if (+Defaults.get('is_equal')) {
                 el_equals.checked = true;

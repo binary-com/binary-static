@@ -294,6 +294,14 @@ const commonTrading = (() => {
         d: 5,
     };
 
+    const duration_type = {
+        t: 'tick',
+        s: 'intraday',
+        m: 'intraday',
+        h: 'intraday',
+        d: 'daily',
+    };
+
     const displayTooltip = () => {
         const tip = getElementById('symbol_tip');
         if (tip) {
@@ -415,6 +423,7 @@ const commonTrading = (() => {
         hideFormOverlay : () => { showHideOverlay('loading_container3', 'none'); },
         showFormOverlay : () => { showHideOverlay('loading_container3', 'block'); },
         durationOrder   : duration => duration_order[duration],
+        durationType    : duration => duration_type[duration],
         clean           : () => { $chart = null; contracts_element = null; },
     };
 })();
