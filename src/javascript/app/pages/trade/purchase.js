@@ -274,8 +274,12 @@ const Purchase = (() => {
 
                 duration--;
 
-                if (is_winning_tick && current_tick_count > +selected_tick) {
-                    duration = 0; // no need to keep drawing ticks
+                if (is_tick_high || is_tick_low) {
+                    const lost_on_selected_tick    = !is_winning_tick && current_tick_count === +selected_tick;
+                    const lost_after_selected_tick = is_winning_tick && current_tick_count > +selected_tick;
+                    if (lost_on_selected_tick || lost_after_selected_tick) {
+                        duration = 0; // no need to keep drawing ticks
+                    }
                 }
 
                 if (!duration) {
