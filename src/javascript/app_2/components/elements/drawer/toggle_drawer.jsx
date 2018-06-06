@@ -58,10 +58,10 @@ ToggleDrawer.propTypes = {
 };
 
 const drawer_component = connect(
-    ({ ui: {
-        showMainDrawer, showPortfolioDrawer, hideDrawers,
-    } }) => ({
-        showMainDrawer, showPortfolioDrawer, hideDrawers,
+    ({ ui }) => ({
+        showMainDrawer     : ui.showMainDrawer,
+        showPortfolioDrawer: ui.showPortfolioDrawer,
+        hideDrawers        : ui.hideDrawers,
     })
 )(ToggleDrawer);
 

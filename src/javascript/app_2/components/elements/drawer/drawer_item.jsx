@@ -33,8 +33,8 @@ DrawerItem.propTypes = {
     link_to      : PropTypes.string,
 };
 
-const drawer_item_component = connect(({ ui: { hideDrawers }}) => ({
-    hideDrawers,
+const drawer_item_component = connect(({ ui }) => ({
+    hideDrawers: ui.hideDrawers,
 }))(DrawerItem);
 
 export { drawer_item_component as DrawerItem };
