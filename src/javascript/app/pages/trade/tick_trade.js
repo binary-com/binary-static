@@ -158,7 +158,7 @@ const TickDisplay = (() => {
                 },
             },
             title: {
-                text : display_symbol,
+                text : show_contract_result ? '' : display_symbol,
                 style: { fontSize: '16px' },
             },
             ...(contract_category === 'highlowticks' && { subtitle: { text: `<div style="${selected_tick_style}"></div> ${localize('Selected Tick')}`, useHTML: true } }),

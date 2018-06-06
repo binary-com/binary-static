@@ -167,26 +167,27 @@ const Purchase = (() => {
                 id_render           : 'trade_tick_chart',
             });
             TickDisplay.resetSpots();
-
-            const request = {
-                proposal_open_contract: 1,
-                contract_id           : receipt.contract_id,
-                subscribe             : 1,
-            };
-            BinarySocket.send(request, { callback: (response) => {
-                const contract = response.proposal_open_contract;
-                if (contract) {
-                    TickDisplay.setStatus(contract);
-                    if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
-                        TickDisplay.updateChart({ is_sold: true }, contract);
-                    }
-                    // force to sell the expired contract, in order to get the final status
-                    if (+contract.is_settleable === 1 && !contract.is_sold) {
-                        BinarySocket.send({ sell_expired: 1 });
-                    }
-                }
-            } });
         }
+
+        const request = {
+            proposal_open_contract: 1,
+            contract_id           : receipt.contract_id,
+            subscribe             : 1,
+        };
+        BinarySocket.send(request, { callback: (response) => {
+            const contract = response.proposal_open_contract;
+            if (contract) {
+                status = contract.status;
+                TickDisplay.setStatus(contract);
+                if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
+                    TickDisplay.updateChart({ is_sold: true }, contract);
+                }
+                // force to sell the expired contract, in order to get the final status
+                if (+contract.is_settleable === 1 && !contract.is_sold) {
+                    BinarySocket.send({ sell_expired: 1 });
+                }
+            }
+        } });
     };
 
     const makeBold = d => `<strong>${d}</strong>`;
@@ -197,35 +198,26 @@ const Purchase = (() => {
             return;
         }
 
-        let duration = +getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']);
+        const spots = CommonFunctions.getElementById('contract_purchase_spots');
+        if (status && status !== 'open') {
+            if (!new RegExp(status).test(spots.classList)) {
+                spots.className = status;
+                if (status === 'won') {
+                    updateValues.updatePurchaseStatus(payout_value, cost_value, localize('This contract won'));
+                } else if (status === 'lost') {
+                    updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
+                }
+            }
+        }
 
+        let duration = +getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']);
         if (!duration) {
             return;
         }
 
-        const spots   = CommonFunctions.getElementById('contract_purchase_spots');
         const spots2  = Tick.spots();
         const epoches = Object.keys(spots2).sort((a, b) => a - b);
         CommonFunctions.elementTextContent(spots, '');
-
-        if (!status) {
-            const request = {
-                proposal_open_contract: 1,
-                contract_id           : purchase_data.buy.contract_id,
-                subscribe             : 1,
-            };
-            BinarySocket.send(request, { callback: (response) => {
-                status = getPropertyValue(response, ['proposal_open_contract', 'status']);
-                if (status && status !== 'open') {
-                    spots.className = status;
-                    if (status === 'won') {
-                        updateValues.updatePurchaseStatus(payout_value, cost_value, localize('This contract won'));
-                    } else if (status === 'lost') {
-                        updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
-                    }
-                }
-            } });
-        }
 
         const contract_type = purchase_data.echo_req.passthrough.contract_type;
         const is_tick_high  = /^tickhigh$/i.test(contract_type);
@@ -283,7 +275,6 @@ const Purchase = (() => {
                 duration--;
 
                 if (is_winning_tick && current_tick_count > +selected_tick) {
-                    BinarySocket.send({ sell_expired: 1 });
                     duration = 0; // no need to keep drawing ticks
                 }
 
