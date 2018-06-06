@@ -223,8 +223,8 @@ const TradingAnalysis = (() => {
                 image1: 'high-low-image.svg',
             },
             callputspread: {
-                image1: 'call-spread-image.svg',
-                image2: 'put-spread-image.svg',
+                image1: 'call-spread.svg',
+                image2: 'put-spread.svg',
             },
         };
 
