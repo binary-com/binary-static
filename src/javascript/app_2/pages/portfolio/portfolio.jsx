@@ -20,7 +20,7 @@ const formatPortfolioData = (portfolio_arr) => {
         const payout          = parseFloat(portfolio_item.payout);
 
         return {
-            ref: {
+            reference: {
                 transaction_id: portfolio_item.transaction_id,
                 app_id        : portfolio_item.app_id,
             },
@@ -74,14 +74,14 @@ const buildOauthApps = (response) => {
     return obj_oauth_apps;
 };
 
-const app_id   = getAppId();
+const app_id = getAppId();
 
 class Portfolio extends React.PureComponent  {
     state = {
         columns: [
             {
                 title     : localize('Reference No.'),
-                data_index: 'ref',
+                data_index: 'Reference',
                 renderCell: (data = '', data_index) => {
                     const tooltip = data.app_id !== app_id && this.state.oauth_apps && this.state.oauth_apps[data.app_id]; // eslint-disable-line
                     if (tooltip) {
@@ -159,7 +159,7 @@ class Portfolio extends React.PureComponent  {
         data_source: [],
         error      : null,
         footer     : {
-            ref       : 'Total',
+            reference : 'Total',
             payout    : '',
             purchase  : '',
             indicative: '',
