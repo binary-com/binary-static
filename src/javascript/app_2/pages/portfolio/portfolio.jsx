@@ -1,15 +1,15 @@
-import React from 'react';
-import moment from 'moment';
-import PortfolioCard from './portfolio_card.jsx';
-import DAO from '../../data/dao';
-import DataTable from '../../components/elements/data_table.jsx';
-import Tooltip from '../../components/elements/tooltip.jsx';
-import ClientBase from '../../../_common/base/client_base';
-import Loading from '../../../../templates/_common/components/loading.jsx';
-import { formatMoney } from '../../../_common/base/currency_base';
-import { localize } from '../../../_common/localize';
+import React                from 'react';
+import moment               from 'moment';
+import PortfolioCard        from './portfolio_card.jsx';
+import DAO                  from '../../data/dao';
+import DataTable            from '../../components/elements/data_table.jsx';
+import Tooltip              from '../../components/elements/tooltip.jsx';
+import { getAppId }         from '../../../config';
+import ClientBase           from '../../../_common/base/client_base';
+import { formatMoney }      from '../../../_common/base/currency_base';
+import { localize }         from '../../../_common/localize';
 import { getPropertyValue } from '../../../_common/utility';
-import { getAppId } from '../../../config';
+import Loading              from '../../../../templates/_common/components/loading.jsx';
 
 const formatPortfolioData = (portfolio_arr) => {
     const formatted_portfolio = portfolio_arr.map((portfolio_item) => {

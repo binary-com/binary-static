@@ -2,7 +2,7 @@ import React     from 'react';
 import PropTypes from 'prop-types';
 
 const PortfolioCard = ({
-        id,
+        reference,
         details,
         remaining_time,
         indicative,
@@ -12,7 +12,7 @@ const PortfolioCard = ({
     }) => (
         <div className='statement-card card-list__card'>
             <div className='statement-card__header'>
-                <span className='statement-card__refid'>{ id }</span>
+                <span className='statement-card__refid'>{ reference.transaction_id }</span>
                 <span className='statement-card__date'>{ remaining_time }</span>
             </div>
             <div className='statement-card__body'>
@@ -46,7 +46,7 @@ const PortfolioCard = ({
 export default PortfolioCard;
 
 PortfolioCard.propTypes = {
-    id            : PropTypes.number,
+    reference     : PropTypes.object,
     details       : PropTypes.string,
     remaining_time: PropTypes.string,
     indicative    : PropTypes.object,
