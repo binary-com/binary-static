@@ -247,14 +247,16 @@ const Purchase = (() => {
                 const current_tick_count = spots.getElementsByClassName('row').length + 1;
 
                 let is_winning_tick = false;
-                const $winning_row  = $spots.find('.winning-tick-row');
-                if (!winning_tick ||
-                    (winning_tick === tick_d.quote && !$winning_row.length) ||
-                    (is_tick_high && +tick_d.quote > winning_tick) ||
-                    (is_tick_low && +tick_d.quote < winning_tick)) {
-                    is_winning_tick = true;
-                    winning_tick = tick_d.quote;
-                    $winning_row.removeClass('winning-tick-row');
+                if (is_tick_high || is_tick_low) {
+                    const $winning_row  = $spots.find('.winning-tick-row');
+                    if (!winning_tick ||
+                        (winning_tick === tick_d.quote && !$winning_row.length) ||
+                        (is_tick_high && +tick_d.quote > winning_tick) ||
+                        (is_tick_low && +tick_d.quote < winning_tick)) {
+                        is_winning_tick = true;
+                        winning_tick = tick_d.quote;
+                        $winning_row.removeClass('winning-tick-row');
+                    }
                 }
 
                 const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row': ''}` });
