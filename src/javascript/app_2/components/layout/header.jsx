@@ -8,8 +8,8 @@ import { requestLogout }   from '../../base/common';
 import { BinaryLink }      from '../../routes';
 import { localize }        from '../../../_common/localize';
 import Url                 from '../../../_common/url';
-import { AccountBalance }  from './account_balance.jsx';
-import { MenuDrawer }      from './menu_drawer.jsx';
+import { AccountBalance }  from '../elements/account_balance.jsx';
+import { MenuDrawer }      from '../elements/menu_drawer.jsx';
 import Client              from '../../../_common/base/client_base';
 
 const DrawerFooter = () => (Client.isLoggedIn() && // TODO: update the UI
