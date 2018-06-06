@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-04 05:06-0400\n"
+"PO-Revision-Date: 2018-06-05 23:48-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -834,6 +834,9 @@ msgstr "Adapter le style de communication en fonction des différents publics ci
 
 msgid "Add"
 msgstr "Ajouter"
+
+msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
+msgstr ""
 
 msgid "Add funds"
 msgstr "Ajouter des fonds"
@@ -3174,9 +3177,6 @@ msgstr "Vous veillerez à la parfaite conformité des sociétés Binary Group au
 
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr "Veiller à la parfaite conformité des sociétés Binary Group aux régimes de réglementation en vigueur"
-
-msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr ""
 
 msgid "Enter your email"
 msgstr "Saisissez votre adresse e-mail"
@@ -10894,8 +10894,8 @@ msgstr "Vous reconnaissez que la société peut accepter des Ordres et procéder
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr "Vous reconnaissez que l'Entreprise déterminera, à notre discrétion, les Transactions qui seront conservées sur le propre livre de l'Entreprise (connu sous le nom de livre B) et les Transactions qui passeront par les meilleurs courtiers qui agissent comme des fournisseurs de liquidité pour l'Entreprise (connu comme livre A). Pour cette dernière, l'Entreprise est la contrepartie dans ces transactions et une corrélation entre le profit/perte fait par le client et le profit/perte fait par l'Entreprise existe. Comme tel, l'Entreprise peut détenir des Positions Ouvertes qui peuvent être alignées avec vos objectifs/intérêts comme un client de l'Entreprise."
 
-msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
-msgstr "Vous reconnaissez que le gestionnaire de fonds est admissible au bénéfice de USD $20 / par lot pour la Commission en tant que frais. Vous acceptez également que la société se réserve le droit de réviser les tarifs de temps en temps. Vous reconnaissez en outre que la compagnie sera responsable pour calculer les tarifs, par l’intermédiaire de ses systèmes automatisés. Ainsi, la société est dûment autorisée à déduire du montant, défini comme la Commission, sur le compte et à payer au gestionnaire de fonds."
+msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgstr ""
 
 msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
 msgstr "Vous reconnaissez que le Gestionnaire de Fonds n’est pas un employé ou un mandataire de la Société. Par conséquent, vous convenez que vous avez une responsabilité absolue de surveiller avec diligence la performance d’ensemble de votre Compte."
